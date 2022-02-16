@@ -140,7 +140,7 @@
         "Code niet ontvangen?"
       ],
       "Didn't receive the code?": [
-        ""
+        "Code niet ontvangen?"
       ],
       "Done": [
         "Klaar"
@@ -170,7 +170,7 @@
         "Wijzig telefoonnummer"
       ],
       "Edit sign-in details": [
-        ""
+        "Bewerk aanmeldgegevens"
       ],
       "Email me my username(s)": [
         "E-mail me mijn gebruikersnaam(namen)"
@@ -398,7 +398,7 @@
         "Verifiëren"
       ],
       "Verify account": [
-        ""
+        "Verifieer account"
       ],
       "Verify code": [
         "Bevestig de code"
@@ -407,7 +407,7 @@
         "Verifieer code opnieuw"
       ],
       "Verify email": [
-        ""
+        "Verifieer e-mailadres"
       ],
       "View": [
         "Bekijk"
@@ -764,6 +764,773 @@
         "${ monthsWithYears } maanden"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abchazië"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albanië"
+      ],
+      "Algeria": [
+        "Algerije"
+      ],
+      "American Samoa": [
+        "Amerikaans Samoa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarctica"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua en Barbuda"
+      ],
+      "Argentina": [
+        "Argentinië"
+      ],
+      "Armenia": [
+        "Armenië"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension"
+      ],
+      "Australia": [
+        "Australië"
+      ],
+      "Austria": [
+        "Oostenrijk"
+      ],
+      "Azerbaijan": [
+        "Azerbeidzjan"
+      ],
+      "Bahamas": [
+        "Bahama's"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Wit-Rusland"
+      ],
+      "Belgium": [
+        "België"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius en Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnië en Herzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvet Eiland"
+      ],
+      "Brazil": [
+        "Brazilië"
+      ],
+      "British Indian Ocean Territory": [
+        "Brits Indische Oceaan Territorium"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgarije"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        "Myanmar"
+      ],
+      "Burundi": [
+        "Boeroendi"
+      ],
+      "Cambodia": [
+        "Cambodja"
+      ],
+      "Cameroon": [
+        "Kameroen"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Kaapverdië"
+      ],
+      "Cayman Islands": [
+        "Kaaiman Eilanden"
+      ],
+      "Central African Republic": [
+        "Centraal Afrikaanse Republiek"
+      ],
+      "Chad": [
+        "Tsjaad"
+      ],
+      "Chile": [
+        "Chili"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Kersteiland"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocoseilanden"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Comoren"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, Democratische Republiek"
+      ],
+      "Cook Islands": [
+        "Cook Eilanden"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Cote d'Ivoire\"": [
+        "Ivoorkust"
+      ],
+      "Croatia": [
+        "Kroatië"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cyprus"
+      ],
+      "Czech Republic": [
+        "Tsjechië"
+      ],
+      "Denmark": [
+        "Denemarken"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Dominicaanse Republiek"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egypte"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Equatoriaal Guinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estland"
+      ],
+      "Ethiopia": [
+        "Ethiopië"
+      ],
+      "Falkland Islands": [
+        "Falklandeilanden"
+      ],
+      "Faroe Islands": [
+        "Faeröer Eilanden"
+      ],
+      "Federated States of Micronesia": [
+        "Federale Staten van Micronesië"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finland"
+      ],
+      "France": [
+        "Frankrijk"
+      ],
+      "French Guiana": [
+        "Franse Guinee"
+      ],
+      "French Polynesia": [
+        "Frans-Polynesië"
+      ],
+      "French Southern Territories": [
+        "Franse Zuidelijke en Antarctische Gebieden"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgië"
+      ],
+      "Germany": [
+        "Duitsland"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Griekenland"
+      ],
+      "Greenland": [
+        "Groenland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinee"
+      ],
+      "Guinea-Bissau": [
+        "Guinee-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haïti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard- en MacDonaldeilanden"
+      ],
+      "Holy See (Vatican City State)": [
+        "Heilige Stoel (Vaticaanstad)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hongarije"
+      ],
+      "Iceland": [
+        "IJsland"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonesië"
+      ],
+      "International": [
+        "Internationaal"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Ierland"
+      ],
+      "Isle of Man": [
+        "Isle of Man"
+      ],
+      "Israel": [
+        "Israël"
+      ],
+      "Italy": [
+        "Italië"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordanië"
+      ],
+      "Kazakhstan": [
+        "Kazachstan"
+      ],
+      "Kenya": [
+        "Kenia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Koeweit"
+      ],
+      "Kyrgyzstan": [
+        "Kirgizië"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letland"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libië"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Litouwen"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macau"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Maleisië"
+      ],
+      "Maldives": [
+        "Malediven"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshall Eilanden"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauritanië"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexico"
+      ],
+      "Moldova": [
+        "Moldavië"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolië"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marokko"
+      ],
+      "Mozambique": [
+        "Mozambique"
+      ],
+      "Namibia": [
+        "Namibië"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Nederland"
+      ],
+      "New Caledonia": [
+        "Nieuw-Caledonië"
+      ],
+      "New Zealand": [
+        "Nieuw-Zeeland"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk eiland"
+      ],
+      "North Korea": [
+        "Noord-Korea"
+      ],
+      "North Macedonia": [
+        "Noord-Macedonië"
+      ],
+      "Northern Mariana Islands": [
+        "Noordelijke Marianen"
+      ],
+      "Norway": [
+        "Noorwegen"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papoea-Nieuw-Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipijnen"
+      ],
+      "Pitcairn": [
+        "Pitcairneilanden"
+      ],
+      "Poland": [
+        "Polen"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Roemenië"
+      ],
+      "Russia": [
+        "Rusland"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Sint-Bartholomeus"
+      ],
+      "Saint Helena": [
+        "Sint-Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts en Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Sint Maarten (Frans deel)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint-Pierre en Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent en de Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tomé en Principe"
+      ],
+      "Saudi Arabia": [
+        "Saudi-Arabië"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Servië"
+      ],
+      "Seychelles": [
+        "Seychellen"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slowakije"
+      ],
+      "Slovenia": [
+        "Slovenië"
+      ],
+      "Solomon Islands": [
+        "Salomonseilanden"
+      ],
+      "Somalia": [
+        "Somalië"
+      ],
+      "South Africa": [
+        "Zuid-Afrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Zuid-Georgië en de Zuidelijke Sandwicheilanden"
+      ],
+      "South Korea": [
+        "Zuid-Korea"
+      ],
+      "South Ossetia": [
+        "Zuid-Ossetië"
+      ],
+      "South Sudan": [
+        "Zuid-Soedan"
+      ],
+      "Spain": [
+        "Spanje"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Soedan"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Spitsbergen en Jan Mayen"
+      ],
+      "Swaziland": [
+        "Swaziland"
+      ],
+      "Sweden": [
+        "Zweden"
+      ],
+      "Switzerland": [
+        "Zwitserland"
+      ],
+      "Syria": [
+        "Syrië"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tadjikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailand"
+      ],
+      "Timor-Leste": [
+        "Oost-Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad en Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunesië"
+      ],
+      "Turkey": [
+        "Turkije"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "De Turks- en Caicoseilanden"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Oeganda"
+      ],
+      "Ukraine": [
+        "Oekraïne"
+      ],
+      "United Arab Emirates": [
+        "Verenigde Arabische Emiraten"
+      ],
+      "United Kingdom": [
+        "Verenigd Koninkrijk"
+      ],
+      "United States": [
+        "Verenigde Staten"
+      ],
+      "United States Minor Outlying Islands": [
+        "Amerikaanse ondergeschikte afgelegen eilanden"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Oezbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Maagdeneilanden, Verenigd Koninkrijk"
+      ],
+      "Virgin Islands, U.S.": [
+        "Maagdeneilanden, Verenigde Staten."
+      ],
+      "Wallis and Futuna": [
+        "Wallis en Futuna"
+      ],
+      "Western Sahara": [
+        "Westelijke Sahara"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Aland Eilanden"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(via ${ entryCountryName })"
@@ -865,11 +1632,11 @@
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
       ],
-      "Incorrect login credentials. Please try again": [
-        "Onjuiste inloggegevens. Gelieve opnieuw te proberen"
+      "Incorrect login credentials. Please try again.": [
+        "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
+      "Incorrect mailbox password. Please try again.": [
+        "Onjuist mailbox-wachtwoord. Probeer het opnieuw."
       ],
       "Invalid ${ name } code": [
         "Ongeldige ${ name } code"
@@ -938,7 +1705,7 @@
         "Proces afgebroken"
       ],
       "Request timed out": [
-        ""
+        "Reactietijd verzoek overschreden"
       ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
@@ -1452,7 +2219,7 @@
         "Installeer een serverconfiguratie bestand om te verbinden met een specifieke server in het land van uw keuze."
       ],
       "Internet connection lost": [
-        ""
+        "Internetverbinding verbroken"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbinding verbroken. Controleer uw internetverbinding."
@@ -1495,9 +2262,6 @@
       ],
       "No results found": [
         "Geen resultaten gevonden"
-      ],
-      "No subscription yet": [
-        "Nog geen abonnement"
       ],
       "Not customizable": [
         "Niet aanpasbaar"
@@ -1609,7 +2373,7 @@
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
       "Session timed out": [
-        ""
+        "Sessie verlopen"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
@@ -1634,9 +2398,6 @@
       ],
       "Thank you for supporting our mission.": [
         "Bedankt voor uw steun aan onze missie."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Er zijn geen facturatiegegevens beschikbaar voor uw huidige abonnement."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Deze configuratiebestanden laten u kiezen met welke ProtonVPN-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
@@ -1704,9 +2465,6 @@
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Upgrade naar een betaald abonnement om toegang te krijgen tot premium functies en uw opslagruimte te vergroten."
-      ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gebruik de volgende inloggegevens bij het verbinden met ProtonVPN servers zonder toepassing. Voorbeelden gebruiken gevallen zoals: Tunnelblick on macOS, OpenVPN op GNU/Linux."
       ],
@@ -1741,7 +2499,7 @@
         "We sturen een reset code naar uw herstel e-mailadres om uw wachtwoord te resetten."
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "We hebben een herstelcode naar uw herstel-e-mailadres gestuurd, die een uur geldig is tot u een nieuwe code aanvraagt. Voer de code hieronder in om door te gaan."
@@ -1756,7 +2514,7 @@
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
       "You already have a free account": [
         "U heeft al een gratis account"
@@ -2017,7 +2775,7 @@
         "Categorie"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "Code is 6 cijfers zonder spaties"
       ],
       "Confirm login password": [
         "Bevestig inlogwachtwoord"
@@ -2376,9 +3134,6 @@
       ],
       "Upgrade account": [
         "Account upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
       ],
       "View guide": [
         "Bekijk gids"
@@ -2950,6 +3705,32 @@
         "Prime Video"
       ]
     },
+    "Recovery Email": {
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Email address has been verified.": [
+        "E-mailadres werd geverifieerd."
+      ],
+      "Email address not yet verified.": [
+        "E-mailadres nog niet geverifieerd."
+      ],
+      "Send verification email": [
+        "Verzend verificatiemail"
+      ],
+      "Verification email sent to ${ email.Value }": [
+        "Verificatiemail verzonden naar ${ email.Value }"
+      ],
+      "Verify now": [
+        "Verifieer nu"
+      ],
+      "Verify recovery email?": [
+        "Herstel-e-mailadres verifiëren?"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Uw e-mailadres verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Account downgraden, even geduld"
@@ -3242,9 +4023,6 @@
       "Gift code": [
         "Geschenkcode"
       ],
-      "Gift Code": [
-        "Geschenk Code"
-      ],
       "Human verification": [
         "Persoonsverificatie"
       ],
@@ -3421,9 +4199,6 @@
       ],
       "Unsupported browser": [
         "Niet-ondersteunde browser"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ],
       "Upgrade and get more": [
         "Upgrade en krijg meer"

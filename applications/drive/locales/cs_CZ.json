@@ -449,6 +449,9 @@
       "Share file": [
         "Sdílet odkaz"
       ],
+      "Share item": [
+        "Sdílet položku"
+      ],
       "Share options": [
         "Možnosti sdílení"
       ],
@@ -568,9 +571,6 @@
       ],
       "View invoice": [
         "Zobrazit fakturu"
-      ],
-      "View more": [
-        "Zobrazit více"
       ],
       "Zoom in": [
         "Přiblížit"
@@ -998,6 +998,773 @@
         "${ monthsWithYears } měsíců"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abcházie"
+      ],
+      "Afghanistan": [
+        "Afghánistán"
+      ],
+      "Albania": [
+        "Albánie"
+      ],
+      "Algeria": [
+        "Alžírsko"
+      ],
+      "American Samoa": [
+        "Americká Samoa"
+      ],
+      "Andorra": [
+        "Andora"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktida"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua a Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Arménie"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ostrov Ascension"
+      ],
+      "Australia": [
+        "Austrálie"
+      ],
+      "Austria": [
+        "Rakousko"
+      ],
+      "Azerbaijan": [
+        "Ázerbájdžán"
+      ],
+      "Bahamas": [
+        "Bahamy"
+      ],
+      "Bahrain": [
+        "Bahrajn"
+      ],
+      "Bangladesh": [
+        "Bangladéš"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Bělorusko"
+      ],
+      "Belgium": [
+        "Belgie"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermudy"
+      ],
+      "Bhutan": [
+        "Bhútán"
+      ],
+      "Bolivia": [
+        "Bolívie"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius a Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosna a Hercegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvetův ostrov"
+      ],
+      "Brazil": [
+        "Brazílie"
+      ],
+      "British Indian Ocean Territory": [
+        "Britské indickooceánské území"
+      ],
+      "Brunei Darussalam": [
+        "Brunej Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulharsko"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        "Barma"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kambodža"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Kapverdské ostrovy"
+      ],
+      "Cayman Islands": [
+        "Kajmanské ostrovy"
+      ],
+      "Central African Republic": [
+        "Středoafrická republika"
+      ],
+      "Chad": [
+        "Čad"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "Čína"
+      ],
+      "Christmas Island": [
+        "Vánoční ostrov"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Kokosové (Keelingovy) ostrovy"
+      ],
+      "Colombia": [
+        "Kolumbie"
+      ],
+      "Comoros": [
+        "Komory"
+      ],
+      "Congo": [
+        "Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Demokratická republika Kongo"
+      ],
+      "Cook Islands": [
+        "Cookovy ostrovy"
+      ],
+      "Costa Rica": [
+        "Kostarika"
+      ],
+      "Cote d'Ivoire\"": [
+        "Pobřeží slonoviny"
+      ],
+      "Croatia": [
+        "Chorvatsko"
+      ],
+      "Cuba": [
+        "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Kypr"
+      ],
+      "Czech Republic": [
+        "Česká republika"
+      ],
+      "Denmark": [
+        "Dánsko"
+      ],
+      "Djibouti": [
+        "Džibutsko"
+      ],
+      "Dominica": [
+        "Dominika"
+      ],
+      "Dominican Republic": [
+        "Dominikánská republika"
+      ],
+      "Ecuador": [
+        "Ekvádor"
+      ],
+      "Egypt": [
+        "Egypt"
+      ],
+      "El Salvador": [
+        "Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Rovníková Guinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonsko"
+      ],
+      "Ethiopia": [
+        "Etiopie"
+      ],
+      "Falkland Islands": [
+        "Falklandské ostrovy"
+      ],
+      "Faroe Islands": [
+        "Faerské ostrovy"
+      ],
+      "Federated States of Micronesia": [
+        "Federativní státy Mikronésie"
+      ],
+      "Fiji": [
+        "Fidži"
+      ],
+      "Finland": [
+        "Finsko"
+      ],
+      "France": [
+        "Francie"
+      ],
+      "French Guiana": [
+        "Francouzská Guyana"
+      ],
+      "French Polynesia": [
+        "Francouzská Polynésie"
+      ],
+      "French Southern Territories": [
+        "Francouzská jižní území"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambie"
+      ],
+      "Georgia": [
+        "Gruzie"
+      ],
+      "Germany": [
+        "Německo"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Řecko"
+      ],
+      "Greenland": [
+        "Grónsko"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heardův ostrov a McDonaldovy ostrovy"
+      ],
+      "Holy See (Vatican City State)": [
+        "Svatý stolec (Vatikánský městský stát)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Maďarsko"
+      ],
+      "Iceland": [
+        "Island"
+      ],
+      "India": [
+        "Indie"
+      ],
+      "Indonesia": [
+        "Indonésie"
+      ],
+      "International": [
+        "Mezinárodní"
+      ],
+      "Iran": [
+        "Írán"
+      ],
+      "Iraq": [
+        "Irák"
+      ],
+      "Ireland": [
+        "Irsko"
+      ],
+      "Isle of Man": [
+        "Ostrov Man"
+      ],
+      "Israel": [
+        "Izrael"
+      ],
+      "Italy": [
+        "Itálie"
+      ],
+      "Jamaica": [
+        "Jamajka"
+      ],
+      "Japan": [
+        "Japonsko"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordánsko"
+      ],
+      "Kazakhstan": [
+        "Kazachstán"
+      ],
+      "Kenya": [
+        "Keňa"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuvajt"
+      ],
+      "Kyrgyzstan": [
+        "Kyrgyzstán"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Lotyšsko"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Libérie"
+      ],
+      "Libya": [
+        "Libye"
+      ],
+      "Liechtenstein": [
+        "Lichtenštejnsko"
+      ],
+      "Lithuania": [
+        "Litva"
+      ],
+      "Luxembourg": [
+        "Lucembursko"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malajsie"
+      ],
+      "Maldives": [
+        "Maledivy"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshallovy ostrovy"
+      ],
+      "Martinique": [
+        "Martinik"
+      ],
+      "Mauritania": [
+        "Mauretánie"
+      ],
+      "Mauritius": [
+        "Mauricius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexiko"
+      ],
+      "Moldova": [
+        "Moldavsko"
+      ],
+      "Monaco": [
+        "Monako"
+      ],
+      "Mongolia": [
+        "Mongolsko"
+      ],
+      "Montenegro": [
+        "Černá Hora"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Maroko"
+      ],
+      "Mozambique": [
+        "Mosambik"
+      ],
+      "Namibia": [
+        "Namibie"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepál"
+      ],
+      "Netherlands": [
+        "Nizozemsko"
+      ],
+      "New Caledonia": [
+        "Nová Kaledonie"
+      ],
+      "New Zealand": [
+        "Nový Zéland"
+      ],
+      "Nicaragua": [
+        "Nikaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigérie"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk"
+      ],
+      "North Korea": [
+        "Severní Korea"
+      ],
+      "North Macedonia": [
+        "Severní Makedonie"
+      ],
+      "Northern Mariana Islands": [
+        "Severní Mariany"
+      ],
+      "Norway": [
+        "Norsko"
+      ],
+      "Oman": [
+        "Omán"
+      ],
+      "Pakistan": [
+        "Pákistán"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua-Nová Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipíny"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polsko"
+      ],
+      "Portugal": [
+        "Portugalsko"
+      ],
+      "Puerto Rico": [
+        "Portoriko"
+      ],
+      "Qatar": [
+        "Katar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Rumunsko"
+      ],
+      "Russia": [
+        "Rusko"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Svatý Bartoloměj"
+      ],
+      "Saint Helena": [
+        "Svatá Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Svatý Kryštof a Nevis"
+      ],
+      "Saint Lucia": [
+        "Svatá Lucie"
+      ],
+      "Saint Martin (French Part)": [
+        "Svatý Martin (francouzská část)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint-Pierre a Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Svatý Vincenc a Grenadiny"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Svatý Tomáš a Princův ostrov"
+      ],
+      "Saudi Arabia": [
+        "Saúdská Arábie"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Srbsko"
+      ],
+      "Seychelles": [
+        "Seychely"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Sint Maarten": [
+        "Svatý Martin"
+      ],
+      "Slovakia": [
+        "Slovensko"
+      ],
+      "Slovenia": [
+        "Slovinsko"
+      ],
+      "Solomon Islands": [
+        "Šalamounovy ostrovy"
+      ],
+      "Somalia": [
+        "Somálsko"
+      ],
+      "South Africa": [
+        "Jižní Afrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Jižní Georgie a Jižní Sandwichovy ostrovy"
+      ],
+      "South Korea": [
+        "Jižní Korea"
+      ],
+      "South Ossetia": [
+        "Jižní Osetie"
+      ],
+      "South Sudan": [
+        "Jižní Súdán"
+      ],
+      "Spain": [
+        "Španělsko"
+      ],
+      "Sri Lanka": [
+        "Srí Lanka"
+      ],
+      "Sudan": [
+        "Súdán"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard a Jan Mayen"
+      ],
+      "Swaziland": [
+        "Svazijsko"
+      ],
+      "Sweden": [
+        "Švédsko"
+      ],
+      "Switzerland": [
+        "Švýcarsko"
+      ],
+      "Syria": [
+        "Sýrie"
+      ],
+      "Taiwan": [
+        "Tchaj-wan"
+      ],
+      "Tajikistan": [
+        "Tádžikistán"
+      ],
+      "Tanzania": [
+        "Tanzanie"
+      ],
+      "Thailand": [
+        "Thajsko"
+      ],
+      "Timor-Leste": [
+        "Východní Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad a Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisko"
+      ],
+      "Turkey": [
+        "Turecko"
+      ],
+      "Turkmenistan": [
+        "Turkmenistán"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks a Caicos ostrovy"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukrajina"
+      ],
+      "United Arab Emirates": [
+        "Spojené arabské emiráty"
+      ],
+      "United Kingdom": [
+        "Velká Británie"
+      ],
+      "United States": [
+        "Spojené státy"
+      ],
+      "United States Minor Outlying Islands": [
+        "Menší odlehlé ostrovy USA"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistán"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Britské Panenské ostrovy"
+      ],
+      "Virgin Islands, U.S.": [
+        "Americké Panenské ostrovy"
+      ],
+      "Wallis and Futuna": [
+        "Wallis a Futuna"
+      ],
+      "Western Sahara": [
+        "Západní Sahara"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Zambie"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Ålandské ostrovy"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Neznámé"
@@ -1143,9 +1910,6 @@
       "Failed to download a folder": [
         "Nepodařilo se stáhnout složku"
       ],
-      "Failed to load the link": [
-        "Nepodařilo se načíst odkaz"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Soubor \"${ item.name }\" nelze nahrát kvůli chybě \"${ error }\""
       ],
@@ -1170,11 +1934,11 @@
       "Image upload failed": [
         "Nahrání obrázku se nezdařilo"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Nesprávné přihlašovací údaje. Zkuste to prosím znovu"
+      "Incorrect login credentials. Please try again.": [
+        "Nesprávné přihlašovací údaje. Zkuste to prosím znovu."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Nesprávné heslo k e-mailové schránce. Zkuste to znovu"
+      "Incorrect mailbox password. Please try again.": [
+        "Nesprávné heslo k e-mailové schránce. Zkuste to znovu."
       ],
       "Incorrect password. Please try again.": [
         "Nesprávné heslo. Zkuste to znovu."
@@ -2148,9 +2912,6 @@
       "Loading ${ appName }": [
         "Načtení aplikace ${ appName }"
       ],
-      "Loading folder contents": [
-        "Nahrávání obsahu souboru"
-      ],
       "Loading preview": [
         "Načítání náhledu"
       ],
@@ -2322,8 +3083,8 @@
       "Screenshot(s) attached": [
         "Snímek/snímky byly připojeny"
       ],
-      "Select an uploaded file and create a link to it.": [
-        "Vyberte nahraný soubor a vytvořte k němu odkazový řádek."
+      "Select an uploaded file or folder and create a link to it.": [
+        "Vyberte nahraný soubor nebo složku a vytvořte na ně odkaz."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
@@ -2668,6 +3429,9 @@
       ]
     },
     "Label": {
+      "# of accesses": [
+        "# přístupů"
+      ],
       "(Expired)": [
         "(Vypršelo)"
       ],
@@ -2763,6 +3527,9 @@
         "Smazat disky?",
         "Smazat disky?",
         "Smazat disky?"
+      ],
+      "Deleted": [
+        "Odstraněno"
       ],
       "Display name": [
         "Zobrazované jméno"
@@ -2868,6 +3635,9 @@
       ],
       "Merge a folder": [
         "Sloučit složku"
+      ],
+      "Modified": [
+        "Upraveno"
       ],
       "Name": [
         "Název"
@@ -3001,9 +3771,6 @@
       "Upload picture": [
         "Nahrát obrázek"
       ],
-      "Uploaded": [
-        "Nahráno"
-      ],
       "Username or ProtonMail address": [
         "Uživatelské jméno nebo e-mailová adresa ProtonMail"
       ],
@@ -3093,20 +3860,11 @@
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } z ${ calendarsToBeCreated } vytvořen",
-        "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeny",
-        "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeno",
-        "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeno"
-      ],
-      "${ createdCalendars } of 1 created": [
-        "",
-        "",
-        "",
-        ""
-      ],
       "Almost there": [
         "Téměř hotovo"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Počet vytvořených kalendářů: ${ createdCalendars } z ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Vytvořit nový kalendář"
@@ -3271,6 +4029,12 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" obnoveno z koše"
       ],
+      "${ count } item failed to be decrypted": [
+        "${ count } položku se nepodařilo dešifrovat",
+        "${ count } položky se nepodařilo dešifrovat",
+        "${ count } položek se nepodařilo dešifrovat",
+        "${ count } položek se nepodařilo dešifrovat"
+      ],
       "${ deletedCount } link to your file was deleted": [
         "${ deletedCount } odkaz na Váš soubor byl odstraněn",
         "${ deletedCount } odkazy na Vaše soubory byl odstraněny",
@@ -3406,6 +4170,9 @@
       "File or folder is missing a name": [
         "Souboru nebo složce chybí název"
       ],
+      "Link failed to be loaded": [
+        "Nepodařilo se načíst odkaz"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Přesunout ${ itemsToMoveCount } soubor",
         "Přesunout ${ itemsToMoveCount } soubory",
@@ -3442,14 +4209,26 @@
         "Přestěhuj ${ movingCount } položek",
         "Přestěhuj ${ movingCount } položek"
       ],
+      "Next page failed to be loaded": [
+        "Další stránku se nepodařilo načíst"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Není dostatek místa pro nahrání ${ formattedTotal }"
+      ],
+      "Root folder failed to be loaded": [
+        "Kořenovou složku se nepodařilo načíst"
+      ],
+      "Subfolder failed to be loaded": [
+        "Podsložku se nepodařilo načíst"
       ],
       "The link to your file failed to be deleted": [
         "Odkaz na váš soubor se nepodařilo odstranit"
       ],
       "The link to your file was deleted": [
         "Odkaz na váš soubor byl odstraněn"
+      ],
+      "Trash failed to be emptied": [
+        "Odpadkový koš se nepodařilo vysypat"
       ],
       "Your old files will be deleted in 72 hours": [
         "Vaše staré soubory budou smazány do 72 hodin"
@@ -3819,8 +4598,8 @@
       ]
     },
     "Success": {
-      "\"${ formattedName }\" created successfully": [
-        "\"${ formattedName }\" vytvořeno úspěšně"
+      "\"${ name }\" created successfully": [
+        "\"${ name }\" úspěšně vytvořen."
       ],
       "${ nameElement } renamed successfully": [
         "${ nameElement } úspěšně přejmenováno"
@@ -3878,9 +4657,6 @@
       ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Vaše soubory byly úspěšně obnoveny do složky \"Moje soubory\"."
       ]
     },
     "Suffix for price": {
@@ -4223,6 +4999,9 @@
       "Folder details": [
         "Podrobnosti složky"
       ],
+      "Folders details": [
+        "Detaily složek"
+      ],
       "Gift code": [
         "Dárkový kód"
       ],
@@ -4240,6 +5019,9 @@
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
+      ],
+      "Items details": [
+        "Detaily položek"
       ],
       "Link confirmation": [
         "Potvrzení odkazu"
@@ -4279,6 +5061,12 @@
       ],
       "Number of files": [
         "Počet souborů"
+      ],
+      "Number of folders": [
+        "Počet složek"
+      ],
+      "Number of items": [
+        "Počet položek"
       ],
       "Open actions dropdown": [
         "Otevřít seznam akcí"

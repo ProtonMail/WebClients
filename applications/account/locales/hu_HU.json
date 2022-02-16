@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktiválása"
@@ -197,7 +197,7 @@
         "Importálás folytatása"
       ],
       "Continue with": [
-        ""
+        "Folytatás ezzel:"
       ],
       "Continue with Google": [
         "Folytatás Google fiókkal"
@@ -263,7 +263,7 @@
         "Nem kapta meg a kódot?"
       ],
       "Didn't receive the code?": [
-        ""
+        "Nem kapta meg a kódot?"
       ],
       "Disable recovery phrase": [
         "Helyreállító jelmondat kikapcsolása"
@@ -314,7 +314,7 @@
         "Sieve szűrő szerkesztése"
       ],
       "Edit sign-in details": [
-        ""
+        "Bejelentkezési adatok szerkesztése"
       ],
       "enable desktop notifications": [
         "asztali értesítések engedélyezése"
@@ -324,9 +324,6 @@
       ],
       "Export": [
         "Exportálás"
-      ],
-      "Export contacts": [
-        "Névjegyek exportálása"
       ],
       "Export ICS": [
         "ICS exportálása"
@@ -342,9 +339,6 @@
       ],
       "Generate new recovery phrase": [
         "Új helyreállító jelmondat létrehozása"
-      ],
-      "Generate new recovery phrase?": [
-        "Új helyreállító jelmondat létrehozása?"
       ],
       "Generate recovery phrase": [
         "Helyreállító jelmondat létrehozása"
@@ -661,9 +655,6 @@
       "Sign in": [
         "Bejelentkezés"
       ],
-      "Sign in again to continue": [
-        "Lépjen be újból a folytatáshoz"
-      ],
       "Sign out": [
         "Kijelentkezés"
       ],
@@ -671,7 +662,7 @@
         "Minden fiók kiléptetése"
       ],
       "Sign out from": [
-        ""
+        "Kijelentkezés innen:"
       ],
       "Signing in": [
         "Bejelentkezés"
@@ -745,9 +736,6 @@
       "Upgrade": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade now": [
-        "Frissítés most"
-      ],
       "Upgrade to Plus": [
         "Váltás a Plus csomagra"
       ],
@@ -785,10 +773,10 @@
         "Ellenőrzés"
       ],
       "Verify account": [
-        ""
+        "Fiók ellenőrzése"
       ],
       "Verify email": [
-        ""
+        "E-mail ellenőrzése"
       ],
       "View": [
         "Megtekintés"
@@ -1224,6 +1212,17 @@
         "Elérte a maximálisan lehetséges ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } feliratkozott naptárat."
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        ""
+      ],
+      "Label deleted": [
+        ""
+      ],
+      "Label edited": [
+        ""
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Aktív"
@@ -1437,6 +1436,773 @@
         "${ monthsWithYears } hónap"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        ""
+      ],
+      "Afghanistan": [
+        ""
+      ],
+      "Albania": [
+        ""
+      ],
+      "Algeria": [
+        ""
+      ],
+      "American Samoa": [
+        ""
+      ],
+      "Andorra": [
+        ""
+      ],
+      "Angola": [
+        ""
+      ],
+      "Anguilla": [
+        ""
+      ],
+      "Antarctica": [
+        ""
+      ],
+      "Antigua and Barbuda": [
+        ""
+      ],
+      "Argentina": [
+        ""
+      ],
+      "Armenia": [
+        ""
+      ],
+      "Aruba": [
+        ""
+      ],
+      "Ascension Island": [
+        ""
+      ],
+      "Australia": [
+        ""
+      ],
+      "Austria": [
+        ""
+      ],
+      "Azerbaijan": [
+        ""
+      ],
+      "Bahamas": [
+        ""
+      ],
+      "Bahrain": [
+        ""
+      ],
+      "Bangladesh": [
+        ""
+      ],
+      "Barbados": [
+        ""
+      ],
+      "Belarus": [
+        ""
+      ],
+      "Belgium": [
+        ""
+      ],
+      "Belize": [
+        ""
+      ],
+      "Benin": [
+        ""
+      ],
+      "Bermuda": [
+        ""
+      ],
+      "Bhutan": [
+        ""
+      ],
+      "Bolivia": [
+        ""
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        ""
+      ],
+      "Bosnia and Herzegovina": [
+        ""
+      ],
+      "Botswana": [
+        ""
+      ],
+      "Bouvet Island": [
+        ""
+      ],
+      "Brazil": [
+        ""
+      ],
+      "British Indian Ocean Territory": [
+        ""
+      ],
+      "Brunei Darussalam": [
+        ""
+      ],
+      "Bulgaria": [
+        ""
+      ],
+      "Burkina Faso": [
+        ""
+      ],
+      "Burma": [
+        ""
+      ],
+      "Burundi": [
+        ""
+      ],
+      "Cambodia": [
+        ""
+      ],
+      "Cameroon": [
+        ""
+      ],
+      "Canada": [
+        ""
+      ],
+      "Cape Verde": [
+        ""
+      ],
+      "Cayman Islands": [
+        ""
+      ],
+      "Central African Republic": [
+        ""
+      ],
+      "Chad": [
+        ""
+      ],
+      "Chile": [
+        ""
+      ],
+      "China": [
+        ""
+      ],
+      "Christmas Island": [
+        ""
+      ],
+      "Cocos (Keeling) Islands": [
+        ""
+      ],
+      "Colombia": [
+        ""
+      ],
+      "Comoros": [
+        ""
+      ],
+      "Congo": [
+        ""
+      ],
+      "Congo, Democratic Republic of the": [
+        ""
+      ],
+      "Cook Islands": [
+        ""
+      ],
+      "Costa Rica": [
+        ""
+      ],
+      "Cote d'Ivoire\"": [
+        ""
+      ],
+      "Croatia": [
+        ""
+      ],
+      "Cuba": [
+        ""
+      ],
+      "Curaçao": [
+        ""
+      ],
+      "Cyprus": [
+        ""
+      ],
+      "Czech Republic": [
+        ""
+      ],
+      "Denmark": [
+        ""
+      ],
+      "Djibouti": [
+        ""
+      ],
+      "Dominica": [
+        ""
+      ],
+      "Dominican Republic": [
+        ""
+      ],
+      "Ecuador": [
+        ""
+      ],
+      "Egypt": [
+        ""
+      ],
+      "El Salvador": [
+        ""
+      ],
+      "Equatorial Guinea": [
+        ""
+      ],
+      "Eritrea": [
+        ""
+      ],
+      "Estonia": [
+        ""
+      ],
+      "Ethiopia": [
+        ""
+      ],
+      "Falkland Islands": [
+        ""
+      ],
+      "Faroe Islands": [
+        ""
+      ],
+      "Federated States of Micronesia": [
+        ""
+      ],
+      "Fiji": [
+        ""
+      ],
+      "Finland": [
+        ""
+      ],
+      "France": [
+        ""
+      ],
+      "French Guiana": [
+        ""
+      ],
+      "French Polynesia": [
+        ""
+      ],
+      "French Southern Territories": [
+        ""
+      ],
+      "Gabon": [
+        ""
+      ],
+      "Gambia": [
+        ""
+      ],
+      "Georgia": [
+        ""
+      ],
+      "Germany": [
+        ""
+      ],
+      "Ghana": [
+        ""
+      ],
+      "Gibraltar": [
+        ""
+      ],
+      "Greece": [
+        ""
+      ],
+      "Greenland": [
+        ""
+      ],
+      "Grenada": [
+        ""
+      ],
+      "Guadeloupe": [
+        ""
+      ],
+      "Guam": [
+        ""
+      ],
+      "Guatemala": [
+        ""
+      ],
+      "Guernsey": [
+        ""
+      ],
+      "Guinea": [
+        ""
+      ],
+      "Guinea-Bissau": [
+        ""
+      ],
+      "Guyana": [
+        ""
+      ],
+      "Haiti": [
+        ""
+      ],
+      "Heard Island and McDonald Islands": [
+        ""
+      ],
+      "Holy See (Vatican City State)": [
+        ""
+      ],
+      "Honduras": [
+        ""
+      ],
+      "Hong Kong": [
+        ""
+      ],
+      "Hungary": [
+        ""
+      ],
+      "Iceland": [
+        ""
+      ],
+      "India": [
+        ""
+      ],
+      "Indonesia": [
+        ""
+      ],
+      "International": [
+        ""
+      ],
+      "Iran": [
+        ""
+      ],
+      "Iraq": [
+        ""
+      ],
+      "Ireland": [
+        ""
+      ],
+      "Isle of Man": [
+        ""
+      ],
+      "Israel": [
+        ""
+      ],
+      "Italy": [
+        ""
+      ],
+      "Jamaica": [
+        ""
+      ],
+      "Japan": [
+        ""
+      ],
+      "Jersey": [
+        ""
+      ],
+      "Jordan": [
+        ""
+      ],
+      "Kazakhstan": [
+        ""
+      ],
+      "Kenya": [
+        ""
+      ],
+      "Kiribati": [
+        ""
+      ],
+      "Kosovo": [
+        ""
+      ],
+      "Kuwait": [
+        ""
+      ],
+      "Kyrgyzstan": [
+        ""
+      ],
+      "Laos": [
+        ""
+      ],
+      "Latvia": [
+        ""
+      ],
+      "Lebanon": [
+        ""
+      ],
+      "Lesotho": [
+        ""
+      ],
+      "Liberia": [
+        ""
+      ],
+      "Libya": [
+        ""
+      ],
+      "Liechtenstein": [
+        ""
+      ],
+      "Lithuania": [
+        ""
+      ],
+      "Luxembourg": [
+        ""
+      ],
+      "Macao": [
+        ""
+      ],
+      "Madagascar": [
+        ""
+      ],
+      "Malawi": [
+        ""
+      ],
+      "Malaysia": [
+        ""
+      ],
+      "Maldives": [
+        ""
+      ],
+      "Mali": [
+        ""
+      ],
+      "Malta": [
+        ""
+      ],
+      "Marshall Islands": [
+        ""
+      ],
+      "Martinique": [
+        ""
+      ],
+      "Mauritania": [
+        ""
+      ],
+      "Mauritius": [
+        ""
+      ],
+      "Mayotte": [
+        ""
+      ],
+      "Mexico": [
+        ""
+      ],
+      "Moldova": [
+        ""
+      ],
+      "Monaco": [
+        ""
+      ],
+      "Mongolia": [
+        ""
+      ],
+      "Montenegro": [
+        ""
+      ],
+      "Montserrat": [
+        ""
+      ],
+      "Morocco": [
+        ""
+      ],
+      "Mozambique": [
+        ""
+      ],
+      "Namibia": [
+        ""
+      ],
+      "Nauru": [
+        ""
+      ],
+      "Nepal": [
+        ""
+      ],
+      "Netherlands": [
+        ""
+      ],
+      "New Caledonia": [
+        ""
+      ],
+      "New Zealand": [
+        ""
+      ],
+      "Nicaragua": [
+        ""
+      ],
+      "Niger": [
+        ""
+      ],
+      "Nigeria": [
+        ""
+      ],
+      "Niue": [
+        ""
+      ],
+      "Norfolk Island": [
+        ""
+      ],
+      "North Korea": [
+        ""
+      ],
+      "North Macedonia": [
+        ""
+      ],
+      "Northern Mariana Islands": [
+        ""
+      ],
+      "Norway": [
+        ""
+      ],
+      "Oman": [
+        ""
+      ],
+      "Pakistan": [
+        ""
+      ],
+      "Palau": [
+        ""
+      ],
+      "Palestine": [
+        ""
+      ],
+      "Panama": [
+        ""
+      ],
+      "Papua New Guinea": [
+        ""
+      ],
+      "Paraguay": [
+        ""
+      ],
+      "Peru": [
+        ""
+      ],
+      "Philippines": [
+        ""
+      ],
+      "Pitcairn": [
+        ""
+      ],
+      "Poland": [
+        ""
+      ],
+      "Portugal": [
+        ""
+      ],
+      "Puerto Rico": [
+        ""
+      ],
+      "Qatar": [
+        ""
+      ],
+      "Reunion": [
+        ""
+      ],
+      "Romania": [
+        ""
+      ],
+      "Russia": [
+        ""
+      ],
+      "Rwanda": [
+        ""
+      ],
+      "Saint Barthélemy": [
+        ""
+      ],
+      "Saint Helena": [
+        ""
+      ],
+      "Saint Kitts and Nevis": [
+        ""
+      ],
+      "Saint Lucia": [
+        ""
+      ],
+      "Saint Martin (French Part)": [
+        ""
+      ],
+      "Saint Pierre and Miquelon": [
+        ""
+      ],
+      "Saint Vincent and the Grenadines": [
+        ""
+      ],
+      "Samoa": [
+        ""
+      ],
+      "San Marino": [
+        ""
+      ],
+      "Sao Tome and Principe": [
+        ""
+      ],
+      "Saudi Arabia": [
+        ""
+      ],
+      "Senegal": [
+        ""
+      ],
+      "Serbia": [
+        ""
+      ],
+      "Seychelles": [
+        ""
+      ],
+      "Sierra Leone": [
+        ""
+      ],
+      "Singapore": [
+        ""
+      ],
+      "Sint Maarten": [
+        ""
+      ],
+      "Slovakia": [
+        ""
+      ],
+      "Slovenia": [
+        ""
+      ],
+      "Solomon Islands": [
+        ""
+      ],
+      "Somalia": [
+        ""
+      ],
+      "South Africa": [
+        ""
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        ""
+      ],
+      "South Korea": [
+        ""
+      ],
+      "South Ossetia": [
+        ""
+      ],
+      "South Sudan": [
+        ""
+      ],
+      "Spain": [
+        ""
+      ],
+      "Sri Lanka": [
+        ""
+      ],
+      "Sudan": [
+        ""
+      ],
+      "Suriname": [
+        ""
+      ],
+      "Svalbard and Jan Mayen": [
+        ""
+      ],
+      "Swaziland": [
+        ""
+      ],
+      "Sweden": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "Syria": [
+        ""
+      ],
+      "Taiwan": [
+        ""
+      ],
+      "Tajikistan": [
+        ""
+      ],
+      "Tanzania": [
+        ""
+      ],
+      "Thailand": [
+        ""
+      ],
+      "Timor-Leste": [
+        ""
+      ],
+      "Togo": [
+        ""
+      ],
+      "Tokelau": [
+        ""
+      ],
+      "Tonga": [
+        ""
+      ],
+      "Trinidad and Tobago": [
+        ""
+      ],
+      "Tristan da Cunha": [
+        ""
+      ],
+      "Tunisia": [
+        ""
+      ],
+      "Turkey": [
+        ""
+      ],
+      "Turkmenistan": [
+        ""
+      ],
+      "Turks and Caicos Islands": [
+        ""
+      ],
+      "Tuvalu": [
+        ""
+      ],
+      "Uganda": [
+        ""
+      ],
+      "Ukraine": [
+        ""
+      ],
+      "United Arab Emirates": [
+        ""
+      ],
+      "United Kingdom": [
+        ""
+      ],
+      "United States": [
+        ""
+      ],
+      "United States Minor Outlying Islands": [
+        ""
+      ],
+      "Uruguay": [
+        ""
+      ],
+      "Uzbekistan": [
+        ""
+      ],
+      "Vanuatu": [
+        ""
+      ],
+      "Venezuela": [
+        ""
+      ],
+      "Vietnam": [
+        ""
+      ],
+      "Virgin Islands, British": [
+        ""
+      ],
+      "Virgin Islands, U.S.": [
+        ""
+      ],
+      "Wallis and Futuna": [
+        ""
+      ],
+      "Western Sahara": [
+        ""
+      ],
+      "Yemen": [
+        ""
+      ],
+      "Zambia": [
+        ""
+      ],
+      "Zimbabwe": [
+        ""
+      ],
+      "Åland Islands": [
+        ""
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(${ entryCountryName }-on keresztül)"
@@ -1511,9 +2277,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Névjegyek visszafejtése. Ez eltarthat néhány percig. A folyamat végeztével letölthető lesz az exportált névjegy lista."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
@@ -1735,9 +2498,6 @@
       "Condition incomplete": [
         "Hiányos feltétel"
       ],
-      "Contact signature not verified": [
-        "Névjegy aláírása nincs ellenőrizve"
-      ],
       "Could not find address ${ email }.": [
         "A(z) ${ email }. e-mail cím nem található."
       ],
@@ -1774,7 +2534,7 @@
         "Hiba az egyik feltételben"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        ""
+        "Az aktív munkamenetek betöltése nem sikerült, ${ refresh } vagy próbálja meg később."
       ],
       "File has no contents to preview": [
         "Nincs előnézeti tartalom"
@@ -1842,9 +2602,6 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal",
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal"
-      ],
-      "Missing signature": [
-        "Hiányzó aláírás"
       ],
       "Name on card required": [
         "Kártyára írt név megadása kötelező"
@@ -1935,16 +2692,13 @@
         "Folyamat megszakítva"
       ],
       "Request timed out": [
-        ""
+        "A kérés túllépte az időkorlátot"
       ],
       "Require at least one action": [
         "Legalább egy művelet szükséges"
       ],
       "Require at least one condition": [
         "Legalább egy feltétel szükséges"
-      ],
-      "Signature not verified": [
-        "Aláírás nincs ellenőrizve"
       ],
       "Signature verification failed": [
         "Aláírás ellenőrzése sikertelen"
@@ -2301,13 +3055,13 @@
         "Érvénytelen válasz"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "Az eseményt nem sikerült felvenni a naptárába. Válasz nem került elküldésre"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Az eseményt nem sikerült frissíteni a naptárában. Válasz nem került elküldésre"
       ],
       "Unexpected error": [
-        ""
+        "Váratlan hiba"
       ],
       "Unsupported invitation": [
         "Nem támogatott meghívó"
@@ -2328,7 +3082,7 @@
         "A válasz elküldésre került, de az eseményt nem sikerült a naptárához adni"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
+        "A válasz elküldésre került, de az eseményt nem sikerült a naptárában frissíteni"
       ]
     },
     "Event title": {
@@ -2607,6 +3361,15 @@
       ],
       "Value / Data / Points to": [
         "Érték / Adat / Cél cím"
+      ]
+    },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "",
+        ""
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        ""
       ]
     },
     "Human verification method": {
@@ -3427,9 +4190,6 @@
       "Creating your Proton account": [
         "Proton fiók létrehozása"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Támogatottak az Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és más alkalmazások CSV fájljai, illetve a vCard 3.1 és 4.0 formátum (UTF-8 kódolással)."
-      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Jelenleg az összes tárhely kiosztásra került az adminisztrátor fiókhoz. Kérjük csökkentse az adminisztrátor fiókhoz kiosztott tárhelyet, hogy helyet szabadítson fel a többi felhasználónak. Bármikor növelheti a rendelkezésre álló tárhelyet nagyobb csomagra váltással."
       ],
@@ -3745,7 +4505,7 @@
         "Telepítsen egy szerverkonfigurációs fájlt, ha egy adott szerverhez szeretne kapcsolódni a választott országban."
       ],
       "Internet connection lost": [
-        ""
+        "Az internetkapcsolat megszakadt"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
@@ -3811,7 +4571,7 @@
         "Előnézet betöltése"
       ],
       "Log in to ProtonMail to activate your address": [
-        ""
+        "Jelentkezzen be a ProtonMailbe a cím aktiválásához"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "A naplók minden azonosítási kísérletet tárolnak az összes Proton szolgáltatáshoz, amelyek az ön Proton bejelentkezését használják."
@@ -3891,9 +4651,6 @@
       "No results found": [
         "Nincs találat"
       ],
-      "No subscription yet": [
-        "Még nincs előfizetés"
-      ],
       "Normal": [
         "Normál"
       ],
@@ -3907,7 +4664,7 @@
         "Nincs beállítva"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        ""
+        "Nem saját eszköze? Használjon privát ablakot a bejelentkezéshez és zárja be amikor készen van. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "A felhasználókhoz rendelhető összes VPN kapcsolat száma. Minden eszköznek egy VPN kapcsolatra van szüksége."
@@ -4067,7 +4824,7 @@
         "először elolvasni a kétlépcsős hitelesítésről szóló útmutatót"
       ],
       "Recovery file downloaded": [
-        ""
+        "Helyreállító fájl letöltve"
       ],
       "Recovery files have been voided": [
         "A helyreállítási fájlok érvénytelenítésre kerültek"
@@ -4076,7 +4833,7 @@
         "A helyreállító jelmondat a vágólapra másolva"
       ],
       "Recovery phrase downloaded": [
-        ""
+        "Helyreállító jelmondat letöltve"
       ],
       "Recovery phrase has been disabled": [
         "A helyreállító jelmondat kikpacsolva"
@@ -4120,6 +4877,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a maximum 20-as korlátig."
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "<a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> biztonságos e-maillel küldve."
+      ],
       "Server is currently down": [
         "A szerver jelenleg nem működik"
       ],
@@ -4130,7 +4890,7 @@
         "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
       ],
       "Session timed out": [
-        ""
+        "A munkamenet lejárt"
       ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
@@ -4160,7 +4920,7 @@
         "Váltson ${ professionalPlan } csomagra további felhasználók hozzáadásához."
       ],
       "Temporarily unavailable. Please check back later.": [
-        ""
+        "Átmenetileg nem elérhető. Próbálja meg később."
       ],
       "Test link": [
         "Link kipróbálása"
@@ -4174,9 +4934,6 @@
       "Thank you for supporting our mission.": [
         "Köszönjük, hogy támogatja céljaink elérését."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Az alkalmazásnak helyben kell visszafejtenie a névjegyeket az exportáláshoz. A folyamat végén egy VCF fájl fog létrejönni, amelyet letölthet."
-      ],
       "The calendar will be removed from your account.": [
         "Ez a naptár eltávolításra kerül a fiókjából."
       ],
@@ -4188,9 +4945,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "A név látható lesz a bejelentkezett felhasználóinak."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Jelenlegi előfizetéshez nem tartoznak számlázási információk."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ezekkel a beállítási fájlokkal egy külső VPN alkalmazással csatlakozhat a ProtonVPN-hez, vagy a routerén állíthatja be a kapcsolatot."
@@ -4274,7 +5028,7 @@
         "A visszafejtéshez, az e-mailek és egyéb adatok megjelenítéséhez, helyreállító fájlra van szüksége."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        ""
+        "A levelek és egyéb adatok visszafejtéshez és megjelenítéséhez, helyreállító fájlra vagy jelmondatra van szüksége."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "A visszafejtéshez, az e-mailek és egyéb adatok megjelenítéséhez, helyreállító jelmondatra van szüksége."
@@ -4283,7 +5037,7 @@
         "A jelszó visszaállítás után zárolt adatainak visszafejtéséhez és megjelenítéséhez, válasszon egy helyreállítási módszert."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        ""
+        "A fiók folyamatos elérhetőségének biztosításához, állítson be valamilyen helyreállítási módot"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
@@ -4298,7 +5052,7 @@
         "Az internetkapcsolatának biztonságosabbá tételéhez, töltse le és telepítse a ProtonVPN alkalmazást és kapcsolódjon egy ProtonVPN szerverhez."
       ],
       "To use ${ toAppName }, please create an address.": [
-        ""
+        "${ toAppName } használatához, hozzon létre egy címet."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Töltse fel egyenlegét kreditekkel, melyből magasabb előfizetést vásárolhat, vagy meghosszabbíthatja jelenlegi előfizetését. Minden egyes ${ i18nCurrency } egy kreditet ér."
@@ -4343,10 +5097,7 @@
         "Váltson a ${ PLAN_NAMES[PLANS.VISIONARY] } vagy ${ PLAN_NAMES[PLANS.PROFESSIONAL] } csomagra az induláshoz."
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
-        ""
-      ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "További prémium funkciókért és nagyobb tárhelyért váltson előfizetéses csomagra."
+        "Váltson ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } vagy ${ PLAN_NAMES[PLANS.PLUS] } csomagra, hogy távolléte esetén a automatikus válaszokat küldhessen a feladóknak."
       ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Váltson előfizetéses csomagra, hogy használhassa az IMAP/SMTP elérést a ProtonMail Bridge segítségével."
@@ -4368,9 +5119,6 @@
       ],
       "Users": [
         "Felhasználók"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "A felhasználók nem kezelhetik a szervezet beállításait. Ha magasabb jogosultságra lenne szüksége, keresse meg a szervezet adminisztrátorát."
       ],
       "Verification can take a few minutes.": [
         "Az ellenőrzés néhány percet is igénybe vehet."
@@ -4415,7 +5163,7 @@
         "Érdesíteni fogjuk az importálás végeztével."
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
       "Web URL": [
         "Weblap link"
@@ -4451,7 +5199,7 @@
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "Szeretne kapni egy új ellenőrzési kódot?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "A Yahoo olvassa az ön személyes adatait, hogy hirdetőknek, USA titkosügynökségeknek és más külső feleknek adja át. A személyes adatai védelme érdekében, hozza létre titkosított e-mail címét."
@@ -4553,7 +5301,7 @@
         "Nem fogja tudni helyreállítani az adatait, egy fiók jelszó visszaállítás után, a letöltött helyreállítási fájlokkal."
       ],
       "You'll stay signed in even after you close the browser.": [
-        ""
+        "Bejelentkezve marad, a böngésző bezárása után is."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "A ${ BRAND_NAME } fiókja ${ externalEmailAddress } címhez kapcsolódik. A ${ toAppName } használatához hozzon létre egy címet."
@@ -5043,7 +5791,7 @@
         "${ UsedMembers } a ${ MaxMembers } felhasználóból"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        ""
+        "(Átmenetileg nem elérhető. Próbálja meg később.)"
       ],
       "Account storage": [
         "Fiók tárhely"
@@ -5108,9 +5856,6 @@
       "Auto-load embedded images": [
         "Beágyazott képek automatikus betöltése"
       ],
-      "Automatically save contacts": [
-        "Névjegyek automatikus létrehozása"
-      ],
       "Block email tracking": [
         "E-mail követés megakadályozása"
       ],
@@ -5151,7 +5896,7 @@
         "Kód"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "A kód hatjegyű, szóközök nélkül"
       ],
       "Color": [
         "Szín"
@@ -5229,13 +5974,13 @@
         "A hét napjai"
       ],
       "Default email address": [
-        ""
+        "Alapértelmezett email cím"
       ],
       "Default event duration": [
-        ""
+        "Az események alapértelmezett hossza"
       ],
       "Default full day notifications": [
-        ""
+        "Alapértelmezett emlékeztetők (egész napos)"
       ],
       "Default language": [
         "Alapértelmezett nyelv"
@@ -5244,7 +5989,7 @@
         "Alapértelmezett nyelv (${ defaultLanguage })"
       ],
       "Default notifications": [
-        ""
+        "Alapértelmezett emlékeztetők"
       ],
       "Default PGP scheme": [
         "Alapértelmezett PGP séma"
@@ -5385,7 +6130,7 @@
         "Intervallum"
       ],
       "Keep me signed in": [
-        ""
+        "Maradjon bejelentkezve"
       ],
       "Keep messages in Sent/Drafts": [
         "Üzenetek megőrzése az Elküldött és Piszkozatok mappában"
@@ -5559,7 +6304,7 @@
         "Proton felhasználónév"
       ],
       "ProtonMail address": [
-        ""
+        "ProtonMail cím"
       ],
       "ProtonMail footer": [
         "ProtonMail aláírás"
@@ -5934,6 +6679,9 @@
       "Go to subscription plans": [
         "Előfizetési csomagok megnyitása"
       ],
+      "How to unlock data": [
+        ""
+      ],
       "Learn more": [
         "További információk"
       ],
@@ -5972,15 +6720,17 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Mi a különbség az UDP és a TCP protokollok között?"
+      ],
+      "Why set recovery methods?": [
+        ""
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } / ${ calendarsToBeCreated } létrehozva",
-        "${ createdCalendars } / ${ calendarsToBeCreated } létrehozva"
-      ],
       "Almost there": [
         "Majdnem kész"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        ""
       ],
       "Connecting to your email provider": [
         "Csatlakozás az e-mailszolgáltatójához"
@@ -6346,9 +7096,6 @@
     "Navigation": {
       "Back to Calendar": [
         "Vissza a naptárhoz"
-      ],
-      "Back to Contacts": [
-        "Vissza a névjegyekhez"
       ],
       "Back to Drive": [
         "Vissza a Drive-ba"
@@ -6819,6 +7566,9 @@
       "Proton username": [
         "Proton felhasználónév"
       ],
+      "Search settings": [
+        ""
+      ],
       "Search users": [
         "Felhasználók keresése "
       ],
@@ -6974,14 +7724,6 @@
         "privát"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts })."
-      ],
-      "No contacts exported.": [
-        "Egyetlen névjegy sem került exportálásra."
-      ]
-    },
     "Property type": {
       "Address": [
         "Cím"
@@ -7012,6 +7754,47 @@
       ],
       "Work": [
         "Munkahelyi"
+      ]
+    },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        ""
+      ],
+      "Cancel": [
+        ""
+      ],
+      "Email address has been verified.": [
+        ""
+      ],
+      "Email address not yet verified.": [
+        ""
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        ""
+      ],
+      "Send verification email": [
+        ""
+      ],
+      "There was a problem verifying your email address.": [
+        ""
+      ],
+      "Verification email sent to ${ email.Value }": [
+        ""
+      ],
+      "Verify now": [
+        ""
+      ],
+      "Verify recovery email?": [
+        ""
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        ""
+      ],
+      "You can safely close this tab.": [
+        ""
+      ],
+      "Your recovery email has been successfully verified.": [
+        ""
       ]
     },
     "Recovery method": {
@@ -7078,64 +7861,13 @@
       "Account": [
         "Fiók"
       ],
-      "Appearance": [
-        "Megjelenés"
-      ],
-      "Auto reply": [
-        "Automatikus válasz"
-      ],
-      "Backup and export": [
-        "Mentés és exportálás"
-      ],
-      "Calendars": [
-        "Naptárak"
-      ],
-      "Domain names": [
-        "Domain nevek"
-      ],
-      "Email privacy": [
-        "E-mail adatvédelem"
-      ],
-      "Encryption and keys": [
-        "Titkosítás és kulcsok"
-      ],
-      "Filters": [
-        "Szűrők"
-      ],
-      "Folders and labels": [
-        "Mappák és címkék"
-      ],
-      "General": [
-        "Általános"
-      ],
-      "Identity and addresses": [
-        "Személyazonosság és címek"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Import & export": [
-        "Importálás és exportálás"
-      ],
-      "Multi-user support": [
-        "Többfelhasználós lehetőség"
-      ],
       "Organization": [
         "Szervezet"
-      ],
-      "Organization and keys": [
-        ""
-      ],
-      "Users and addresses": [
-        "Felhasználók és címek"
-      ],
-      "VPN apps": [
-        "VPN alkalmazások"
       ]
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        ""
+        "Beállítások frissítése sikertelen"
       ]
     },
     "Settings/filters": {
@@ -7552,7 +8284,7 @@
         "3. Beállítási fájl kiválasztása és letöltése"
       ],
       "Account and password": [
-        ""
+        "Fiók és jelszó"
       ],
       "Account recovery": [
         "Fiók helyreállítás"
@@ -7660,7 +8392,7 @@
         "Vissza"
       ],
       "Backup and export": [
-        ""
+        "Mentés és exportálás"
       ],
       "Billing cycle": [
         "Számlázási ciklus"
@@ -7734,9 +8466,6 @@
       "Contact encryption keys": [
         "Partner titkosítási kulcsai"
       ],
-      "Contacts": [
-        "Kapcsolatok"
-      ],
       "Continue with partial import?": [
         "Folytatja részleges importálással?"
       ],
@@ -7765,7 +8494,7 @@
         "Pénznem"
       ],
       "Current and past imports": [
-        ""
+        "Jelenlegi és korábbi importálások"
       ],
       "Current plan": [
         "Jelenlegi csomag"
@@ -7837,7 +8566,7 @@
         "Kétlépcsős hitelesítés kikapcsolása"
       ],
       "Display name and signature": [
-        ""
+        "Megjelenített név és aláírás"
       ],
       "Domain names": [
         "Domain nevek"
@@ -7873,7 +8602,7 @@
         "E-mail"
       ],
       "Email composer": [
-        ""
+        "E-mail szerkesztő"
       ],
       "Email encryption keys": [
         "E-mail titkosítási kulcsai"
@@ -7888,13 +8617,10 @@
         "Gyorsbillentyűk engedélyezése"
       ],
       "Encryption and keys": [
-        ""
+        "Titkosítás és kulcsok"
       ],
       "Error": [
         "Hiba"
-      ],
-      "Export": [
-        "Exportálás"
       ],
       "Export calendar": [
         "Naptár exportálása"
@@ -7904,9 +8630,6 @@
       ],
       "Export public key": [
         "Nyilvános kulcs exportálása"
-      ],
-      "Exporting contacts": [
-        "Névjegyek exportálása"
       ],
       "External PGP settings": [
         "Külső PGP beállítások"
@@ -7921,13 +8644,16 @@
         "Mappák"
       ],
       "Folders and labels": [
-        ""
+        "Mappák és címkék"
       ],
       "General": [
         "Általános"
       ],
       "Generate missing keys": [
         "Hiányzó kulcsok generálása"
+      ],
+      "Generate new recovery phrase?": [
+        ""
       ],
       "Get ProtonVPN Plus to access all servers": [
         "Fizessen elő ProtonVPN Plus csomagra az összes szerver használatához"
@@ -7939,16 +8665,13 @@
         "Robot ellenőrzés"
       ],
       "Identity and addresses": [
-        ""
+        "Személyazonosság és címek"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
       ],
       "Import": [
         "Importálás"
-      ],
-      "Import & export": [
-        "Importálás és exportálás"
       ],
       "Import as simple event?": [
         "Importálás egyszerű eseményként?",
@@ -7991,7 +8714,7 @@
         "Címkék"
       ],
       "Language and time": [
-        ""
+        "Nyelv és idő"
       ],
       "Layout": [
         "Elrendezés"
@@ -8042,7 +8765,7 @@
         "Szervezet"
       ],
       "Organization and keys": [
-        ""
+        "Szervezet és kulcsok"
       ],
       "Other": [
         "Egyéb"
@@ -8051,7 +8774,7 @@
         "Jelszó"
       ],
       "Password and keys": [
-        ""
+        "Jelszó és kulcsok"
       ],
       "Passwords": [
         "Jelszavak"
@@ -8135,7 +8858,7 @@
         "Adminisztrátori jogok visszaállítása"
       ],
       "Security": [
-        ""
+        "Biztonság"
       ],
       "Security logs": [
         "Biztonsági napló"
@@ -8200,9 +8923,6 @@
       "Sign in again to continue": [
         "Lépjen be újból a folytatáshoz"
       ],
-      "Sorry, you can't access this page": [
-        "Nincs jogosultsága az oldal eléréséhez"
-      ],
       "Sort folders alphabetically": [
         "Mappák rendezése betűrendbe"
       ],
@@ -8211,9 +8931,6 @@
       ],
       "Spam filters": [
         "Levélszemét szűrők"
-      ],
-      "Spy Tracker Protection": [
-        "Kémkövető védelem"
       ],
       "Start a new import": [
         "Új importálás indítása"
@@ -8269,11 +8986,8 @@
       "Unsupported browser": [
         "Nem támogatott böngésző"
       ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
       "Username": [
-        ""
+        "Felhasználónév"
       ],
       "Users and addresses": [
         "Felhasználók és címek"
@@ -8464,6 +9178,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül."
       ],
+      "Set how your list of messages looks like by default.": [
+        "Kiválasztja, hogy alapértelmezetten hogyan jelenjen meg az üzenetek listája."
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "A levél szerkesztő alapértelmezett méretének beállítása kicsire vagy teljes képernyősre."
       ],
@@ -8518,9 +9235,6 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "A csaló weboldalak elkerülése érdekében, egy jóváhagyás jelenik meg a teljes URL-lel, amikor egy hivatkozásra kattint."
       ],
-      "You do not have any contacts to export": [
-        "Önnek nincs exportálható névjegye"
-      ],
       "You have locally decrypted this key": [
         "Ezt a kulcsot helyileg visszafejtette"
       ],
@@ -8556,10 +9270,10 @@
     },
     "Tor out of date": {
       "stable release": [
-        ""
+        "stabil kiadásra"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
+        "Az a Tor Browser verzió nem támogatott. Kérjük, frissítsen a legfrissebb ${ stableRelease }"
       ]
     },
     "Update font modal": {

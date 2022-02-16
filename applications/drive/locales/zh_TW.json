@@ -318,7 +318,7 @@
         "移至垃圾桶"
       ],
       "New upload": [
-        "新上載"
+        "上傳"
       ],
       "Next": [
         "下一個"
@@ -443,6 +443,9 @@
       "Share file": [
         "分享檔案"
       ],
+      "Share item": [
+        "分享項目"
+      ],
       "Share options": [
         "分享選項"
       ],
@@ -562,9 +565,6 @@
       ],
       "View invoice": [
         "查看帳單"
-      ],
-      "View more": [
-        "查看更多"
       ],
       "Zoom in": [
         "放大"
@@ -974,6 +974,773 @@
         "${ monthsWithYears } 個月"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        ""
+      ],
+      "Afghanistan": [
+        ""
+      ],
+      "Albania": [
+        ""
+      ],
+      "Algeria": [
+        ""
+      ],
+      "American Samoa": [
+        ""
+      ],
+      "Andorra": [
+        ""
+      ],
+      "Angola": [
+        ""
+      ],
+      "Anguilla": [
+        ""
+      ],
+      "Antarctica": [
+        ""
+      ],
+      "Antigua and Barbuda": [
+        ""
+      ],
+      "Argentina": [
+        ""
+      ],
+      "Armenia": [
+        ""
+      ],
+      "Aruba": [
+        ""
+      ],
+      "Ascension Island": [
+        ""
+      ],
+      "Australia": [
+        ""
+      ],
+      "Austria": [
+        ""
+      ],
+      "Azerbaijan": [
+        ""
+      ],
+      "Bahamas": [
+        ""
+      ],
+      "Bahrain": [
+        ""
+      ],
+      "Bangladesh": [
+        ""
+      ],
+      "Barbados": [
+        ""
+      ],
+      "Belarus": [
+        ""
+      ],
+      "Belgium": [
+        ""
+      ],
+      "Belize": [
+        ""
+      ],
+      "Benin": [
+        ""
+      ],
+      "Bermuda": [
+        ""
+      ],
+      "Bhutan": [
+        ""
+      ],
+      "Bolivia": [
+        ""
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        ""
+      ],
+      "Bosnia and Herzegovina": [
+        ""
+      ],
+      "Botswana": [
+        ""
+      ],
+      "Bouvet Island": [
+        ""
+      ],
+      "Brazil": [
+        ""
+      ],
+      "British Indian Ocean Territory": [
+        ""
+      ],
+      "Brunei Darussalam": [
+        ""
+      ],
+      "Bulgaria": [
+        ""
+      ],
+      "Burkina Faso": [
+        ""
+      ],
+      "Burma": [
+        ""
+      ],
+      "Burundi": [
+        ""
+      ],
+      "Cambodia": [
+        ""
+      ],
+      "Cameroon": [
+        ""
+      ],
+      "Canada": [
+        ""
+      ],
+      "Cape Verde": [
+        ""
+      ],
+      "Cayman Islands": [
+        ""
+      ],
+      "Central African Republic": [
+        ""
+      ],
+      "Chad": [
+        ""
+      ],
+      "Chile": [
+        ""
+      ],
+      "China": [
+        ""
+      ],
+      "Christmas Island": [
+        ""
+      ],
+      "Cocos (Keeling) Islands": [
+        ""
+      ],
+      "Colombia": [
+        ""
+      ],
+      "Comoros": [
+        ""
+      ],
+      "Congo": [
+        ""
+      ],
+      "Congo, Democratic Republic of the": [
+        ""
+      ],
+      "Cook Islands": [
+        ""
+      ],
+      "Costa Rica": [
+        ""
+      ],
+      "Cote d'Ivoire\"": [
+        ""
+      ],
+      "Croatia": [
+        ""
+      ],
+      "Cuba": [
+        ""
+      ],
+      "Curaçao": [
+        ""
+      ],
+      "Cyprus": [
+        ""
+      ],
+      "Czech Republic": [
+        ""
+      ],
+      "Denmark": [
+        ""
+      ],
+      "Djibouti": [
+        ""
+      ],
+      "Dominica": [
+        ""
+      ],
+      "Dominican Republic": [
+        ""
+      ],
+      "Ecuador": [
+        ""
+      ],
+      "Egypt": [
+        ""
+      ],
+      "El Salvador": [
+        ""
+      ],
+      "Equatorial Guinea": [
+        ""
+      ],
+      "Eritrea": [
+        ""
+      ],
+      "Estonia": [
+        ""
+      ],
+      "Ethiopia": [
+        ""
+      ],
+      "Falkland Islands": [
+        ""
+      ],
+      "Faroe Islands": [
+        ""
+      ],
+      "Federated States of Micronesia": [
+        ""
+      ],
+      "Fiji": [
+        ""
+      ],
+      "Finland": [
+        ""
+      ],
+      "France": [
+        ""
+      ],
+      "French Guiana": [
+        ""
+      ],
+      "French Polynesia": [
+        ""
+      ],
+      "French Southern Territories": [
+        ""
+      ],
+      "Gabon": [
+        ""
+      ],
+      "Gambia": [
+        ""
+      ],
+      "Georgia": [
+        ""
+      ],
+      "Germany": [
+        ""
+      ],
+      "Ghana": [
+        ""
+      ],
+      "Gibraltar": [
+        ""
+      ],
+      "Greece": [
+        ""
+      ],
+      "Greenland": [
+        ""
+      ],
+      "Grenada": [
+        ""
+      ],
+      "Guadeloupe": [
+        ""
+      ],
+      "Guam": [
+        ""
+      ],
+      "Guatemala": [
+        ""
+      ],
+      "Guernsey": [
+        ""
+      ],
+      "Guinea": [
+        ""
+      ],
+      "Guinea-Bissau": [
+        ""
+      ],
+      "Guyana": [
+        ""
+      ],
+      "Haiti": [
+        ""
+      ],
+      "Heard Island and McDonald Islands": [
+        ""
+      ],
+      "Holy See (Vatican City State)": [
+        ""
+      ],
+      "Honduras": [
+        ""
+      ],
+      "Hong Kong": [
+        ""
+      ],
+      "Hungary": [
+        ""
+      ],
+      "Iceland": [
+        ""
+      ],
+      "India": [
+        ""
+      ],
+      "Indonesia": [
+        ""
+      ],
+      "International": [
+        ""
+      ],
+      "Iran": [
+        ""
+      ],
+      "Iraq": [
+        ""
+      ],
+      "Ireland": [
+        ""
+      ],
+      "Isle of Man": [
+        ""
+      ],
+      "Israel": [
+        ""
+      ],
+      "Italy": [
+        ""
+      ],
+      "Jamaica": [
+        ""
+      ],
+      "Japan": [
+        ""
+      ],
+      "Jersey": [
+        ""
+      ],
+      "Jordan": [
+        ""
+      ],
+      "Kazakhstan": [
+        ""
+      ],
+      "Kenya": [
+        ""
+      ],
+      "Kiribati": [
+        ""
+      ],
+      "Kosovo": [
+        ""
+      ],
+      "Kuwait": [
+        ""
+      ],
+      "Kyrgyzstan": [
+        ""
+      ],
+      "Laos": [
+        ""
+      ],
+      "Latvia": [
+        ""
+      ],
+      "Lebanon": [
+        ""
+      ],
+      "Lesotho": [
+        ""
+      ],
+      "Liberia": [
+        ""
+      ],
+      "Libya": [
+        ""
+      ],
+      "Liechtenstein": [
+        ""
+      ],
+      "Lithuania": [
+        ""
+      ],
+      "Luxembourg": [
+        ""
+      ],
+      "Macao": [
+        ""
+      ],
+      "Madagascar": [
+        ""
+      ],
+      "Malawi": [
+        ""
+      ],
+      "Malaysia": [
+        ""
+      ],
+      "Maldives": [
+        ""
+      ],
+      "Mali": [
+        ""
+      ],
+      "Malta": [
+        ""
+      ],
+      "Marshall Islands": [
+        ""
+      ],
+      "Martinique": [
+        ""
+      ],
+      "Mauritania": [
+        ""
+      ],
+      "Mauritius": [
+        ""
+      ],
+      "Mayotte": [
+        ""
+      ],
+      "Mexico": [
+        ""
+      ],
+      "Moldova": [
+        ""
+      ],
+      "Monaco": [
+        ""
+      ],
+      "Mongolia": [
+        ""
+      ],
+      "Montenegro": [
+        ""
+      ],
+      "Montserrat": [
+        ""
+      ],
+      "Morocco": [
+        ""
+      ],
+      "Mozambique": [
+        ""
+      ],
+      "Namibia": [
+        ""
+      ],
+      "Nauru": [
+        ""
+      ],
+      "Nepal": [
+        ""
+      ],
+      "Netherlands": [
+        ""
+      ],
+      "New Caledonia": [
+        ""
+      ],
+      "New Zealand": [
+        ""
+      ],
+      "Nicaragua": [
+        ""
+      ],
+      "Niger": [
+        ""
+      ],
+      "Nigeria": [
+        ""
+      ],
+      "Niue": [
+        ""
+      ],
+      "Norfolk Island": [
+        ""
+      ],
+      "North Korea": [
+        ""
+      ],
+      "North Macedonia": [
+        ""
+      ],
+      "Northern Mariana Islands": [
+        ""
+      ],
+      "Norway": [
+        ""
+      ],
+      "Oman": [
+        ""
+      ],
+      "Pakistan": [
+        ""
+      ],
+      "Palau": [
+        ""
+      ],
+      "Palestine": [
+        ""
+      ],
+      "Panama": [
+        ""
+      ],
+      "Papua New Guinea": [
+        ""
+      ],
+      "Paraguay": [
+        ""
+      ],
+      "Peru": [
+        ""
+      ],
+      "Philippines": [
+        ""
+      ],
+      "Pitcairn": [
+        ""
+      ],
+      "Poland": [
+        ""
+      ],
+      "Portugal": [
+        ""
+      ],
+      "Puerto Rico": [
+        ""
+      ],
+      "Qatar": [
+        ""
+      ],
+      "Reunion": [
+        ""
+      ],
+      "Romania": [
+        ""
+      ],
+      "Russia": [
+        ""
+      ],
+      "Rwanda": [
+        ""
+      ],
+      "Saint Barthélemy": [
+        ""
+      ],
+      "Saint Helena": [
+        ""
+      ],
+      "Saint Kitts and Nevis": [
+        ""
+      ],
+      "Saint Lucia": [
+        ""
+      ],
+      "Saint Martin (French Part)": [
+        ""
+      ],
+      "Saint Pierre and Miquelon": [
+        ""
+      ],
+      "Saint Vincent and the Grenadines": [
+        ""
+      ],
+      "Samoa": [
+        ""
+      ],
+      "San Marino": [
+        ""
+      ],
+      "Sao Tome and Principe": [
+        ""
+      ],
+      "Saudi Arabia": [
+        ""
+      ],
+      "Senegal": [
+        ""
+      ],
+      "Serbia": [
+        ""
+      ],
+      "Seychelles": [
+        ""
+      ],
+      "Sierra Leone": [
+        ""
+      ],
+      "Singapore": [
+        ""
+      ],
+      "Sint Maarten": [
+        ""
+      ],
+      "Slovakia": [
+        ""
+      ],
+      "Slovenia": [
+        ""
+      ],
+      "Solomon Islands": [
+        ""
+      ],
+      "Somalia": [
+        ""
+      ],
+      "South Africa": [
+        ""
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        ""
+      ],
+      "South Korea": [
+        ""
+      ],
+      "South Ossetia": [
+        ""
+      ],
+      "South Sudan": [
+        ""
+      ],
+      "Spain": [
+        ""
+      ],
+      "Sri Lanka": [
+        ""
+      ],
+      "Sudan": [
+        ""
+      ],
+      "Suriname": [
+        ""
+      ],
+      "Svalbard and Jan Mayen": [
+        ""
+      ],
+      "Swaziland": [
+        ""
+      ],
+      "Sweden": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "Syria": [
+        ""
+      ],
+      "Taiwan": [
+        ""
+      ],
+      "Tajikistan": [
+        ""
+      ],
+      "Tanzania": [
+        ""
+      ],
+      "Thailand": [
+        ""
+      ],
+      "Timor-Leste": [
+        ""
+      ],
+      "Togo": [
+        ""
+      ],
+      "Tokelau": [
+        ""
+      ],
+      "Tonga": [
+        ""
+      ],
+      "Trinidad and Tobago": [
+        ""
+      ],
+      "Tristan da Cunha": [
+        ""
+      ],
+      "Tunisia": [
+        ""
+      ],
+      "Turkey": [
+        ""
+      ],
+      "Turkmenistan": [
+        ""
+      ],
+      "Turks and Caicos Islands": [
+        ""
+      ],
+      "Tuvalu": [
+        ""
+      ],
+      "Uganda": [
+        ""
+      ],
+      "Ukraine": [
+        ""
+      ],
+      "United Arab Emirates": [
+        ""
+      ],
+      "United Kingdom": [
+        ""
+      ],
+      "United States": [
+        ""
+      ],
+      "United States Minor Outlying Islands": [
+        ""
+      ],
+      "Uruguay": [
+        ""
+      ],
+      "Uzbekistan": [
+        ""
+      ],
+      "Vanuatu": [
+        ""
+      ],
+      "Venezuela": [
+        ""
+      ],
+      "Vietnam": [
+        ""
+      ],
+      "Virgin Islands, British": [
+        ""
+      ],
+      "Virgin Islands, U.S.": [
+        ""
+      ],
+      "Wallis and Futuna": [
+        ""
+      ],
+      "Western Sahara": [
+        ""
+      ],
+      "Yemen": [
+        ""
+      ],
+      "Zambia": [
+        ""
+      ],
+      "Zimbabwe": [
+        ""
+      ],
+      "Åland Islands": [
+        ""
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "未知"
@@ -1110,9 +1877,6 @@
       "Failed to download a folder": [
         "資料夾下載失敗"
       ],
-      "Failed to load the link": [
-        "連結載入失敗"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由於“${ error }”錯誤，檔案“${ item.name }”無法上載"
       ],
@@ -1137,11 +1901,11 @@
       "Image upload failed": [
         "圖片上載失敗"
       ],
-      "Incorrect login credentials. Please try again": [
-        "登入憑證不正確。請再試一次"
+      "Incorrect login credentials. Please try again.": [
+        ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "郵箱密碼不正確。請再試一次"
+      "Incorrect mailbox password. Please try again.": [
+        ""
       ],
       "Incorrect password. Please try again.": [
         "密碼不正確。請再試一次。"
@@ -1998,9 +2762,6 @@
       "Loading ${ appName }": [
         "正在載入 ${ appName }"
       ],
-      "Loading folder contents": [
-        "正在載入資料夾內容"
-      ],
       "Loading preview": [
         "正在載入預覽"
       ],
@@ -2169,8 +2930,8 @@
       "Screenshot(s) attached": [
         "已附加的螢幕截圖"
       ],
-      "Select an uploaded file and create a link to it.": [
-        "選取已上載的檔案並為其建立連結。"
+      "Select an uploaded file or folder and create a link to it.": [
+        "選取已上傳的檔案或資料夾並為其建立連結。"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇向該電子郵件地址傳送時的預設格式"
@@ -2512,6 +3273,9 @@
       ]
     },
     "Label": {
+      "# of accesses": [
+        "存取次數"
+      ],
       "(Expired)": [
         "(已失效)"
       ],
@@ -2605,6 +3369,9 @@
       "Delete drive?": [
         "刪除雲端硬碟?"
       ],
+      "Deleted": [
+        "已刪除"
+      ],
       "Display name": [
         "顯示名稱"
       ],
@@ -2681,7 +3448,7 @@
         "匯入聯絡人"
       ],
       "Import interval": [
-        "匯入間距"
+        "匯入頻率"
       ],
       "Import to email address": [
         "匯入至電子郵件地址"
@@ -2709,6 +3476,9 @@
       ],
       "Merge a folder": [
         "合併資料夾"
+      ],
+      "Modified": [
+        "已修改"
       ],
       "Name": [
         "名稱"
@@ -2842,9 +3612,6 @@
       "Upload picture": [
         "上載相片"
       ],
-      "Uploaded": [
-        "已上傳"
-      ],
       "Username or ProtonMail address": [
         "使用者名稱或 ProtonMail 電子郵件地址"
       ],
@@ -2934,14 +3701,11 @@
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } / ${ calendarsToBeCreated } 已建立"
-      ],
-      "${ createdCalendars } of 1 created": [
-        ""
-      ],
       "Almost there": [
         "快完成了"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "已建立行事曆：${ createdCalendars }/${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "正在建立新行事曆"
@@ -3100,6 +3864,9 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" 已從垃圾桶中還原"
       ],
+      "${ count } item failed to be decrypted": [
+        "${ count } 個項目解密失敗"
+      ],
       "${ deletedCount } link to your file was deleted": [
         "${ deletedCount } 個檔案連結已刪除"
       ],
@@ -3181,6 +3948,9 @@
       "File or folder is missing a name": [
         "檔案或資料夾缺少名稱"
       ],
+      "Link failed to be loaded": [
+        "連結載入失敗"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "移動 ${ itemsToMoveCount } 個檔案"
       ],
@@ -3199,14 +3969,26 @@
       "Move ${ movingCount } item": [
         "移動 ${ movingCount } 個項目"
       ],
+      "Next page failed to be loaded": [
+        "下一頁載入失敗"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "空間不足，無法上載 ${ formattedTotal }"
+      ],
+      "Root folder failed to be loaded": [
+        "根資料夾載入失敗"
+      ],
+      "Subfolder failed to be loaded": [
+        "子資料夾載入失敗"
       ],
       "The link to your file failed to be deleted": [
         "未能刪除您的檔案連結"
       ],
       "The link to your file was deleted": [
         "已刪除此檔案的連結"
+      ],
+      "Trash failed to be emptied": [
+        "無法清空垃圾桶"
       ],
       "Your old files will be deleted in 72 hours": [
         "您的舊資料夾將於72小時後刪除"
@@ -3570,8 +4352,8 @@
       ]
     },
     "Success": {
-      "\"${ formattedName }\" created successfully": [
-        "\"${ formattedName }\" 已成功建立"
+      "\"${ name }\" created successfully": [
+        "「${ name }」已成功建立"
       ],
       "${ nameElement } renamed successfully": [
         "${ nameElement } 已成功重新命名"
@@ -3623,9 +4405,6 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂閱"
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "您的檔案已成功還原至「我的檔案」。"
       ]
     },
     "Suffix for price": {
@@ -3664,7 +4443,7 @@
     },
     "TableHeader": {
       "# of accesses": [
-        "存取次數"
+        "#存取次數"
       ],
       "Actions": [
         "操作"
@@ -3950,6 +4729,9 @@
       "Folder details": [
         "資料夾詳細資訊"
       ],
+      "Folders details": [
+        "資料夾詳細資訊"
+      ],
       "Gift code": [
         "禮品代碼"
       ],
@@ -3967,6 +4749,9 @@
       ],
       "Invalid verification code": [
         "驗證碼無效"
+      ],
+      "Items details": [
+        "項目詳細資訊"
       ],
       "Link confirmation": [
         "確認開啟連結"
@@ -4006,6 +4791,12 @@
       ],
       "Number of files": [
         "檔案數量"
+      ],
+      "Number of folders": [
+        "資料夾數量"
+      ],
+      "Number of items": [
+        "項目數量"
       ],
       "Open actions dropdown": [
         "展開操作下拉選單"
