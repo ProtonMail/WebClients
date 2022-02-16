@@ -494,7 +494,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
         });
         setES.Enabled(userID);
 
-        const showError = (notSupported?: boolean) => {
+        const handleError = (notSupported?: boolean) => {
             if (notify) {
                 createNotification({
                     text: notSupported
@@ -504,7 +504,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
                     type: 'error',
                 });
             }
-            setESStatus({ ...defaultESStatus, esSupported: !notSupported });
+            setESStatus(() => ({ ...defaultESStatus, esSupported: !notSupported }));
         };
 
         removeES.Pause(userID);
@@ -524,7 +524,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
                 esHelpers.getPreviousEventID
             );
             if (!newIndexKey) {
-                return showError(notSupported);
+                return handleError(notSupported);
             }
             indexKey = newIndexKey;
         } else {
