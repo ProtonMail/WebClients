@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "магазин ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ Name }@pm.me": [
         "Активировать ${ Name }@pm.me"
@@ -325,9 +325,6 @@
       "Export": [
         "Экспортировать"
       ],
-      "Export contacts": [
-        "Экспорт контактов"
-      ],
       "Export ICS": [
         "Экспорт в файл ICS"
       ],
@@ -342,9 +339,6 @@
       ],
       "Generate new recovery phrase": [
         "Создать новую фразу для восстановления"
-      ],
-      "Generate new recovery phrase?": [
-        "Создать новую фразу для восстановления?"
       ],
       "Generate recovery phrase": [
         "Создать фразу для восстановления"
@@ -661,9 +655,6 @@
       "Sign in": [
         "Войти"
       ],
-      "Sign in again to continue": [
-        "Войдите снова, чтобы продолжить"
-      ],
       "Sign out": [
         "Выйти из учетной записи"
       ],
@@ -744,9 +735,6 @@
       ],
       "Upgrade": [
         "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ],
       "Upgrade to Plus": [
         "Улучшить до Plus"
@@ -1244,6 +1232,17 @@
         "Вы достигли максимума из ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } подписанных календаря(ей)."
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Ярлык добавлен"
+      ],
+      "Label deleted": [
+        "Ярлык удален"
+      ],
+      "Label edited": [
+        "Ярлык изменен"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Активен"
@@ -1461,6 +1460,773 @@
         "${ monthsWithYears } месяцев(а)"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Абхазия"
+      ],
+      "Afghanistan": [
+        "Афганистан"
+      ],
+      "Albania": [
+        "Албания"
+      ],
+      "Algeria": [
+        "Алжир"
+      ],
+      "American Samoa": [
+        "Американское Самоа"
+      ],
+      "Andorra": [
+        "Андорра"
+      ],
+      "Angola": [
+        "Ангола"
+      ],
+      "Anguilla": [
+        "Ангилья"
+      ],
+      "Antarctica": [
+        "Антарктида"
+      ],
+      "Antigua and Barbuda": [
+        "Антигуа и Барбуда"
+      ],
+      "Argentina": [
+        "Аргентина"
+      ],
+      "Armenia": [
+        "Армения"
+      ],
+      "Aruba": [
+        "Аруба"
+      ],
+      "Ascension Island": [
+        "Остров Вознесения"
+      ],
+      "Australia": [
+        "Австралия"
+      ],
+      "Austria": [
+        "Австрия"
+      ],
+      "Azerbaijan": [
+        "Азербайджан"
+      ],
+      "Bahamas": [
+        "Багамские острова"
+      ],
+      "Bahrain": [
+        "Бахрейн"
+      ],
+      "Bangladesh": [
+        "Бангладеш"
+      ],
+      "Barbados": [
+        "Барбадос"
+      ],
+      "Belarus": [
+        "Беларусь"
+      ],
+      "Belgium": [
+        "Бельгия"
+      ],
+      "Belize": [
+        "Белиз"
+      ],
+      "Benin": [
+        "Бенин"
+      ],
+      "Bermuda": [
+        "Бермуды"
+      ],
+      "Bhutan": [
+        "Бутан"
+      ],
+      "Bolivia": [
+        "Боливия"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Бонайре, Синт-Эстатиус и Саба"
+      ],
+      "Bosnia and Herzegovina": [
+        "Босния и Герцеговина"
+      ],
+      "Botswana": [
+        "Ботсвана"
+      ],
+      "Bouvet Island": [
+        "Остров Буве"
+      ],
+      "Brazil": [
+        "Бразилия"
+      ],
+      "British Indian Ocean Territory": [
+        "Британская территория в Индийском океане"
+      ],
+      "Brunei Darussalam": [
+        "Бруней-Даруссалам"
+      ],
+      "Bulgaria": [
+        "Болгария"
+      ],
+      "Burkina Faso": [
+        "Буркина-Фасо"
+      ],
+      "Burma": [
+        "Бирма"
+      ],
+      "Burundi": [
+        "Бурунди"
+      ],
+      "Cambodia": [
+        "Камбоджа"
+      ],
+      "Cameroon": [
+        "Камерун"
+      ],
+      "Canada": [
+        "Канада"
+      ],
+      "Cape Verde": [
+        "Острова Зеленого Мыса"
+      ],
+      "Cayman Islands": [
+        "Каймановы острова"
+      ],
+      "Central African Republic": [
+        "Центральноафриканская Республика"
+      ],
+      "Chad": [
+        "Чад"
+      ],
+      "Chile": [
+        "Чили"
+      ],
+      "China": [
+        "Китай"
+      ],
+      "Christmas Island": [
+        "Остров Рождества"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Кокосовые (Килинговые) острова"
+      ],
+      "Colombia": [
+        "Колумбия"
+      ],
+      "Comoros": [
+        "Коморские острова"
+      ],
+      "Congo": [
+        "Конго"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Демократическая Республика Конго"
+      ],
+      "Cook Islands": [
+        "Острова Кука"
+      ],
+      "Costa Rica": [
+        "Коста-Рика"
+      ],
+      "Cote d'Ivoire\"": [
+        "Берег Слоновой Кости"
+      ],
+      "Croatia": [
+        "Хорватия"
+      ],
+      "Cuba": [
+        "Куба"
+      ],
+      "Curaçao": [
+        "Кюрасао"
+      ],
+      "Cyprus": [
+        "Кипр"
+      ],
+      "Czech Republic": [
+        "Чешская Республика"
+      ],
+      "Denmark": [
+        "Дания"
+      ],
+      "Djibouti": [
+        "Джибути"
+      ],
+      "Dominica": [
+        "Доминика"
+      ],
+      "Dominican Republic": [
+        "Доминиканская Республика"
+      ],
+      "Ecuador": [
+        "Эквадор"
+      ],
+      "Egypt": [
+        "Египет"
+      ],
+      "El Salvador": [
+        "Сальвадор"
+      ],
+      "Equatorial Guinea": [
+        "Экваториальная Гвинея"
+      ],
+      "Eritrea": [
+        "Эритрея"
+      ],
+      "Estonia": [
+        "Эстония"
+      ],
+      "Ethiopia": [
+        "Эфиопия"
+      ],
+      "Falkland Islands": [
+        "Фолклендские острова"
+      ],
+      "Faroe Islands": [
+        "Фарерские острова"
+      ],
+      "Federated States of Micronesia": [
+        "Федеративные Штаты Микронезии"
+      ],
+      "Fiji": [
+        "Фиджи"
+      ],
+      "Finland": [
+        "Финляндия"
+      ],
+      "France": [
+        "Франция"
+      ],
+      "French Guiana": [
+        "Французская Гвиана"
+      ],
+      "French Polynesia": [
+        "Французская Полинезия"
+      ],
+      "French Southern Territories": [
+        "Французские Южные территории"
+      ],
+      "Gabon": [
+        "Габон"
+      ],
+      "Gambia": [
+        "Гамбия"
+      ],
+      "Georgia": [
+        "Грузия"
+      ],
+      "Germany": [
+        "Германия"
+      ],
+      "Ghana": [
+        "Гана"
+      ],
+      "Gibraltar": [
+        "Гибралтар"
+      ],
+      "Greece": [
+        "Греция"
+      ],
+      "Greenland": [
+        "Гренландия"
+      ],
+      "Grenada": [
+        "Гренада"
+      ],
+      "Guadeloupe": [
+        "Гваделупа"
+      ],
+      "Guam": [
+        "Гуам"
+      ],
+      "Guatemala": [
+        "Гватемала"
+      ],
+      "Guernsey": [
+        "Гернси"
+      ],
+      "Guinea": [
+        "Гвинея"
+      ],
+      "Guinea-Bissau": [
+        "Гвинея-Бисау"
+      ],
+      "Guyana": [
+        "Гайана"
+      ],
+      "Haiti": [
+        "Гаити"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Остров Херд и острова Макдональд"
+      ],
+      "Holy See (Vatican City State)": [
+        "Святой Престол (Государство-Город Ватикан)"
+      ],
+      "Honduras": [
+        "Гондурас"
+      ],
+      "Hong Kong": [
+        "Гонконг"
+      ],
+      "Hungary": [
+        "Венгрия"
+      ],
+      "Iceland": [
+        "Исландия"
+      ],
+      "India": [
+        "Индия"
+      ],
+      "Indonesia": [
+        "Индонезия"
+      ],
+      "International": [
+        "Международный"
+      ],
+      "Iran": [
+        "Иран"
+      ],
+      "Iraq": [
+        "Ирак"
+      ],
+      "Ireland": [
+        "Ирландия"
+      ],
+      "Isle of Man": [
+        "Остров Мэн"
+      ],
+      "Israel": [
+        "Израиль"
+      ],
+      "Italy": [
+        "Италия"
+      ],
+      "Jamaica": [
+        "Ямайка"
+      ],
+      "Japan": [
+        "Япония"
+      ],
+      "Jersey": [
+        "Джерси"
+      ],
+      "Jordan": [
+        "Иордания"
+      ],
+      "Kazakhstan": [
+        "Казахстан"
+      ],
+      "Kenya": [
+        "Кения"
+      ],
+      "Kiribati": [
+        "Кирибати"
+      ],
+      "Kosovo": [
+        "Косово"
+      ],
+      "Kuwait": [
+        "Кувейт"
+      ],
+      "Kyrgyzstan": [
+        "Кыргызстан"
+      ],
+      "Laos": [
+        "Лаос"
+      ],
+      "Latvia": [
+        "Латвия"
+      ],
+      "Lebanon": [
+        "Ливан"
+      ],
+      "Lesotho": [
+        "Лесото"
+      ],
+      "Liberia": [
+        "Либерия"
+      ],
+      "Libya": [
+        "Ливия"
+      ],
+      "Liechtenstein": [
+        "Лихтенштейн"
+      ],
+      "Lithuania": [
+        "Литва"
+      ],
+      "Luxembourg": [
+        "Люксембург"
+      ],
+      "Macao": [
+        "Макао"
+      ],
+      "Madagascar": [
+        "Мадагаскар"
+      ],
+      "Malawi": [
+        "Малави"
+      ],
+      "Malaysia": [
+        "Малайзия"
+      ],
+      "Maldives": [
+        "Мальдивы"
+      ],
+      "Mali": [
+        "Мали"
+      ],
+      "Malta": [
+        "Мальта"
+      ],
+      "Marshall Islands": [
+        "Маршалловы Острова"
+      ],
+      "Martinique": [
+        "Мартиника"
+      ],
+      "Mauritania": [
+        "Мавритания"
+      ],
+      "Mauritius": [
+        "Маврикий"
+      ],
+      "Mayotte": [
+        "Майотта"
+      ],
+      "Mexico": [
+        "Мексика"
+      ],
+      "Moldova": [
+        "Молдова"
+      ],
+      "Monaco": [
+        "Монако"
+      ],
+      "Mongolia": [
+        "Монголия"
+      ],
+      "Montenegro": [
+        "Черногория"
+      ],
+      "Montserrat": [
+        "Монтсеррат"
+      ],
+      "Morocco": [
+        "Марокко"
+      ],
+      "Mozambique": [
+        "Мозамбик"
+      ],
+      "Namibia": [
+        "Намибия"
+      ],
+      "Nauru": [
+        "Науру"
+      ],
+      "Nepal": [
+        "Непал"
+      ],
+      "Netherlands": [
+        "Голландия"
+      ],
+      "New Caledonia": [
+        "Новая Каледония"
+      ],
+      "New Zealand": [
+        "Новая Зеландия"
+      ],
+      "Nicaragua": [
+        "Никарагуа"
+      ],
+      "Niger": [
+        "Нигер"
+      ],
+      "Nigeria": [
+        "Нигерия"
+      ],
+      "Niue": [
+        "Ниуэ"
+      ],
+      "Norfolk Island": [
+        "Остров Норфолк"
+      ],
+      "North Korea": [
+        "Северная Корея"
+      ],
+      "North Macedonia": [
+        "Северная Македония"
+      ],
+      "Northern Mariana Islands": [
+        "Северные Марианские Острова"
+      ],
+      "Norway": [
+        "Норвегия"
+      ],
+      "Oman": [
+        "Оман"
+      ],
+      "Pakistan": [
+        "Пакистан"
+      ],
+      "Palau": [
+        "Палау"
+      ],
+      "Palestine": [
+        "Палестина"
+      ],
+      "Panama": [
+        "Панама"
+      ],
+      "Papua New Guinea": [
+        "Папуа-Новая Гвинея"
+      ],
+      "Paraguay": [
+        "Парагвай"
+      ],
+      "Peru": [
+        "Перу"
+      ],
+      "Philippines": [
+        "Филиппины"
+      ],
+      "Pitcairn": [
+        "Питкэрн"
+      ],
+      "Poland": [
+        "Польша"
+      ],
+      "Portugal": [
+        "Португалия"
+      ],
+      "Puerto Rico": [
+        "Пуэрто-Рико"
+      ],
+      "Qatar": [
+        "Катар"
+      ],
+      "Reunion": [
+        "Реюньон"
+      ],
+      "Romania": [
+        "Румыния"
+      ],
+      "Russia": [
+        "Россия"
+      ],
+      "Rwanda": [
+        "Руанда"
+      ],
+      "Saint Barthélemy": [
+        "Сен-Бартелеми"
+      ],
+      "Saint Helena": [
+        "Остров Святой Елены"
+      ],
+      "Saint Kitts and Nevis": [
+        "Сент-Китс и Невис"
+      ],
+      "Saint Lucia": [
+        "Сент-Люсия"
+      ],
+      "Saint Martin (French Part)": [
+        "Сен-Мартен (французская часть)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Сен-Пьер и Микелон"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Сент-Винсент и Гренадины"
+      ],
+      "Samoa": [
+        "Самоа"
+      ],
+      "San Marino": [
+        "Сан-Марино"
+      ],
+      "Sao Tome and Principe": [
+        "Сан-Томе и Принсипи"
+      ],
+      "Saudi Arabia": [
+        "Саудовская Аравия"
+      ],
+      "Senegal": [
+        "Сенегал"
+      ],
+      "Serbia": [
+        "Сербия"
+      ],
+      "Seychelles": [
+        "Сейшелы"
+      ],
+      "Sierra Leone": [
+        "Сьерра-Леоне"
+      ],
+      "Singapore": [
+        "Сингапур"
+      ],
+      "Sint Maarten": [
+        "Сен-Мартен"
+      ],
+      "Slovakia": [
+        "Словакия"
+      ],
+      "Slovenia": [
+        "Словения"
+      ],
+      "Solomon Islands": [
+        "Соломоновы Острова"
+      ],
+      "Somalia": [
+        "Сомали"
+      ],
+      "South Africa": [
+        "Южная Африка"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Южная Георгия и Южные Сандвичевы острова"
+      ],
+      "South Korea": [
+        "Южная Корея"
+      ],
+      "South Ossetia": [
+        "Южная Осетия"
+      ],
+      "South Sudan": [
+        "Южный Судан"
+      ],
+      "Spain": [
+        "Испания"
+      ],
+      "Sri Lanka": [
+        "Шри-Ланка"
+      ],
+      "Sudan": [
+        "Судан"
+      ],
+      "Suriname": [
+        "Суринам"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Шпицберген и Ян-Майен"
+      ],
+      "Swaziland": [
+        "Свазиленд"
+      ],
+      "Sweden": [
+        "Швеция"
+      ],
+      "Switzerland": [
+        "Швейцария"
+      ],
+      "Syria": [
+        "Сирия"
+      ],
+      "Taiwan": [
+        "Тайвань"
+      ],
+      "Tajikistan": [
+        "Таджикистан"
+      ],
+      "Tanzania": [
+        "Танзания"
+      ],
+      "Thailand": [
+        "Таиланд"
+      ],
+      "Timor-Leste": [
+        "Восточный Тимор"
+      ],
+      "Togo": [
+        "Того"
+      ],
+      "Tokelau": [
+        "Токелау"
+      ],
+      "Tonga": [
+        "Тонга"
+      ],
+      "Trinidad and Tobago": [
+        "Тринидад и Тобаго"
+      ],
+      "Tristan da Cunha": [
+        "Тристан да Кунья"
+      ],
+      "Tunisia": [
+        "Тунис"
+      ],
+      "Turkey": [
+        "Турция"
+      ],
+      "Turkmenistan": [
+        "Туркменистан"
+      ],
+      "Turks and Caicos Islands": [
+        "Острова Теркс и Кайкос"
+      ],
+      "Tuvalu": [
+        "Тувалу"
+      ],
+      "Uganda": [
+        "Уганда"
+      ],
+      "Ukraine": [
+        "Украина"
+      ],
+      "United Arab Emirates": [
+        "Объединенные Арабские Эмираты"
+      ],
+      "United Kingdom": [
+        "Великобритания"
+      ],
+      "United States": [
+        "Соединенные Штаты Америки"
+      ],
+      "United States Minor Outlying Islands": [
+        "Внешние малые острова США"
+      ],
+      "Uruguay": [
+        "Уругвай"
+      ],
+      "Uzbekistan": [
+        "Узбекистан"
+      ],
+      "Vanuatu": [
+        "Вануату"
+      ],
+      "Venezuela": [
+        "Венесуэла"
+      ],
+      "Vietnam": [
+        "Вьетнам"
+      ],
+      "Virgin Islands, British": [
+        "Британские Виргинские острова"
+      ],
+      "Virgin Islands, U.S.": [
+        "Американские Виргинские острова"
+      ],
+      "Wallis and Futuna": [
+        "Уоллис и Футуна"
+      ],
+      "Western Sahara": [
+        "Западная Сахара"
+      ],
+      "Yemen": [
+        "Йемен"
+      ],
+      "Zambia": [
+        "Замбия"
+      ],
+      "Zimbabwe": [
+        "Зимбабве"
+      ],
+      "Åland Islands": [
+        "Аландские острова"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(через ${ entryCountryName })"
@@ -1543,9 +2309,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Идёт расшифровка контактов, и это может занять несколько минут. Когда процесс завершится, вы сможете скачать файл со всеми своими контактами."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идёт шифрование и импортирование контактов, и это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
@@ -1769,9 +2532,6 @@
       "Condition incomplete": [
         "Условие неполное"
       ],
-      "Contact signature not verified": [
-        "Подпись контакта не проверена"
-      ],
       "Could not find address ${ email }.": [
         "Не могу найти адрес ${ email }."
       ],
@@ -1883,9 +2643,6 @@
         "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
         "Объединить по крайней мере ${ calendarToFixCount } календарь(ей) с существующим календарем Proton"
       ],
-      "Missing signature": [
-        "Подпись отсутствует"
-      ],
       "Name on card required": [
         "Требуется ввести имя, указанное на карте"
       ],
@@ -1984,9 +2741,6 @@
       ],
       "Require at least one condition": [
         "Требуется как минимум одно условие"
-      ],
-      "Signature not verified": [
-        "Подпись не проверена"
       ],
       "Signature verification failed": [
         "Проверка подписи не удалась"
@@ -2653,6 +3407,17 @@
       ],
       "Value / Data / Points to": [
         "Значение / Данные / Указывать на"
+      ]
+    },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Найдено ${ items.length } предложение, используйте клавиатуру для навигации.",
+        "Найдено ${ items.length } предложения, используйте клавиатуру для навигации.",
+        "Найдено ${ items.length } предложений, используйте клавиатуру для навигации.",
+        "Найдено ${ items.length } предложений, используйте клавиатуру для навигации."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Используйте клавиши \"Вверх\" и \"Вниз\" для доступа к предложениям и их просмотра после ввода. Нажмите \"Enter\" для подтверждения выбора или \"Escape\", чтобы закрыть окно предложений."
       ]
     },
     "Human verification method": {
@@ -3537,9 +4302,6 @@
       "Creating your Proton account": [
         "Создание учётной записи Proton"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Поддерживаются файлы CSV из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и некоторых других приложений, а также форматы vCard 3.1 и 4.0 (кодировка UTF-8)."
-      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "В настоящее время всё хранилище принадлежит учётной записи администратора. Пожалуйста, уменьшите выделенный для неё объём, чтобы освободить место для дополнительных пользователей. Вы можете увеличить общий объём хранилища в любое время, выбрав другой тариф."
       ],
@@ -4005,9 +4767,6 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "No subscription yet": [
-        "У вас еще нет подписок"
-      ],
       "Normal": [
         "Обычный"
       ],
@@ -4236,6 +4995,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Отправлено с помощью <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> защищенной электронной почты."
+      ],
       "Server is currently down": [
         "Сервер сейчас не работает"
       ],
@@ -4290,9 +5052,6 @@
       "Thank you for supporting our mission.": [
         "Спасибо за поддержку нашей миссии."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Прежде чем экспортировать контакты, приложению необходимо расшифровать ваши контакты. В конце процесса будет сгенерирован файл VCF, и вы сможете его скачать."
-      ],
       "The calendar will be removed from your account.": [
         "Календарь будет удален из вашей учетной записи."
       ],
@@ -4304,9 +5063,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "Имя будет видно вашим пользователям, когда они войдут в систему."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Нет платежных данных для вашей текущей подписки."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти конфигурационные файлы позволяют выбрать сервер ProtonVPN для подключения при использовании стороннего приложения VPN или настройке VPN соединения на маршрутизаторе."
@@ -4461,9 +5217,6 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "Улучите до ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } или ${ PLAN_NAMES[PLANS.PLUS] } плана чтобы включить автоматические ответы, когда вас нет в офисе."
       ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Перейдите на платный тариф, чтобы разблокировать платный функционал и увеличить пространство для хранения."
-      ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Перейдите на платный план, чтобы разблокировать поддержку IMAP/SMTP \nс помощью ProtonMail Bridge."
       ],
@@ -4484,9 +5237,6 @@
       ],
       "Users": [
         "Пользователи"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "Пользователи не могут менять настройки организации. Если вам нужны права администратора, обратитесь к вашему системному администратору."
       ],
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
@@ -5231,9 +5981,6 @@
       ],
       "Auto-load embedded images": [
         "Авто-показ встроенных изображений"
-      ],
-      "Automatically save contacts": [
-        "Автоматически сохранять контакты"
       ],
       "Block email tracking": [
         "Блокировать отслеживание электронной почты"
@@ -6058,6 +6805,9 @@
       "Go to subscription plans": [
         "Перейти на страницу подписки"
       ],
+      "How to unlock data": [
+        "Как разблокировать данные"
+      ],
       "Learn more": [
         "Подробнее"
       ],
@@ -6096,17 +6846,17 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Какова разница между протоколами UDP и TCP?"
+      ],
+      "Why set recovery methods?": [
+        "Зачем устанавливать способы восстановления?"
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } из ${ calendarsToBeCreated } создано",
-        "${ createdCalendars } из ${ calendarsToBeCreated } создано",
-        "${ createdCalendars } из ${ calendarsToBeCreated } создано",
-        "${ createdCalendars } из ${ calendarsToBeCreated } создано"
-      ],
       "Almost there": [
         "Почти там"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Количество созданных календарей: ${ createdCalendars } из ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Подключение к провайдеру электронной почты"
@@ -6484,9 +7234,6 @@
     "Navigation": {
       "Back to Calendar": [
         "Вернуться к календарю"
-      ],
-      "Back to Contacts": [
-        "Вернуться к контактам"
       ],
       "Back to Drive": [
         "Вернуться к диску"
@@ -6965,6 +7712,9 @@
       "Proton username": [
         "Имя пользователя в Proton"
       ],
+      "Search settings": [
+        "Искать настройки"
+      ],
       "Search users": [
         "Поиск пользователей"
       ],
@@ -7122,14 +7872,6 @@
         "конфиденциальный"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } из ${ countContacts } контактов успешно экспортировано."
-      ],
-      "No contacts exported.": [
-        "Никакие контакты не были экспортированы."
-      ]
-    },
     "Property type": {
       "Address": [
         "Адрес"
@@ -7160,6 +7902,47 @@
       ],
       "Work": [
         "Рабочий"
+      ]
+    },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        "Обратно к ${ signIn }."
+      ],
+      "Cancel": [
+        "Отменить"
+      ],
+      "Email address has been verified.": [
+        "Адрес электронной почты был проверен."
+      ],
+      "Email address not yet verified.": [
+        "Адрес электронной почты еще не проверен."
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "Пожалуйста, ${ signIn }, чтобы повторно отправить запрос на проверку резервного адреса электронной почты."
+      ],
+      "Send verification email": [
+        "Отправить электронное письмо для проверки"
+      ],
+      "There was a problem verifying your email address.": [
+        "Возникла проблема с проверкой вашего адреса электронной почты."
+      ],
+      "Verification email sent to ${ email.Value }": [
+        "Электронное письмо с подтверждением отправлено на ${ email.Value }"
+      ],
+      "Verify now": [
+        "Проверить сейчас"
+      ],
+      "Verify recovery email?": [
+        "Проверить резервный адрес электронной почты?"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Проверка адреса электронной почты повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
+      ],
+      "You can safely close this tab.": [
+        "Вы можете спокойно закрыть эту вкладку."
+      ],
+      "Your recovery email has been successfully verified.": [
+        "Резервный адрес электронной почты был успешно подтвержден."
       ]
     },
     "Recovery method": {
@@ -7226,59 +8009,8 @@
       "Account": [
         "Аккаунт"
       ],
-      "Appearance": [
-        "Внешний вид"
-      ],
-      "Auto reply": [
-        "Автоответ"
-      ],
-      "Backup and export": [
-        "Резервное копирование и экспорт"
-      ],
-      "Calendars": [
-        "Календари"
-      ],
-      "Domain names": [
-        "Доменные имена"
-      ],
-      "Email privacy": [
-        "Конфиденциальность эл. почты"
-      ],
-      "Encryption and keys": [
-        "Шифрование и ключи"
-      ],
-      "Filters": [
-        "Фильтры"
-      ],
-      "Folders and labels": [
-        "Папки и ярлыки"
-      ],
-      "General": [
-        "Основные"
-      ],
-      "Identity and addresses": [
-        "Личные данные и адреса"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Import & export": [
-        "Импорт и экспорт"
-      ],
-      "Multi-user support": [
-        "Многопользовательский режим"
-      ],
       "Organization": [
         "Организация"
-      ],
-      "Organization and keys": [
-        "Организация и ключи"
-      ],
-      "Users and addresses": [
-        "Пользователи и адреса"
-      ],
-      "VPN apps": [
-        "Приложения VPN"
       ]
     },
     "Settings update growler warning": {
@@ -7886,9 +8618,6 @@
       "Contact encryption keys": [
         "Ключи шифрования контакта"
       ],
-      "Contacts": [
-        "Контакты"
-      ],
       "Continue with partial import?": [
         "Продолжить частичный импорт?"
       ],
@@ -8045,9 +8774,6 @@
       "Error": [
         "Ошибка"
       ],
-      "Export": [
-        "Экспорт"
-      ],
       "Export calendar": [
         "Экспорт календаря"
       ],
@@ -8056,9 +8782,6 @@
       ],
       "Export public key": [
         "Экспорт публичного ключа"
-      ],
-      "Exporting contacts": [
-        "Экспортирование контактов"
       ],
       "External PGP settings": [
         "Настройки внешнего PGP"
@@ -8081,6 +8804,9 @@
       "Generate missing keys": [
         "Сгенерировать недостающие ключи"
       ],
+      "Generate new recovery phrase?": [
+        "Сгенерировать новую фразу для восстановления?"
+      ],
       "Get ProtonVPN Plus to access all servers": [
         "Перейдите на ProtonVPN Plus для доступа ко всем серверам"
       ],
@@ -8098,9 +8824,6 @@
       ],
       "Import": [
         "Импортировать"
-      ],
-      "Import & export": [
-        "Импорт и экспорт"
       ],
       "Import as simple event?": [
         "Импортировать как простое событие?",
@@ -8354,9 +9077,6 @@
       "Sign in again to continue": [
         "Войдите снова, чтобы продолжить"
       ],
-      "Sorry, you can't access this page": [
-        "Извините, у Вас нет доступа к этой странице"
-      ],
       "Sort folders alphabetically": [
         "Сортировать папки по алфавиту"
       ],
@@ -8365,9 +9085,6 @@
       ],
       "Spam filters": [
         "Фильтры спама"
-      ],
-      "Spy Tracker Protection": [
-        "Защита от шпионских трекеров"
       ],
       "Start a new import": [
         "Начать новый импорт"
@@ -8422,9 +9139,6 @@
       ],
       "Unsupported browser": [
         "Неподдерживаемый браузер"
-      ],
-      "Upgrade": [
-        "Улучшить"
       ],
       "Username": [
         "Имя пользователя"
@@ -8618,6 +9332,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "Отправляет весь ваш трафик через сеть Tor одним щелчком."
       ],
+      "Set how your list of messages looks like by default.": [
+        "Установите, как выглядит список сообщений по умолчанию."
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "Задать изначальный размер всплывающего окна редактора сообщений — небольшой или на полный экран."
       ],
@@ -8671,9 +9388,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "При нажатии на ссылку эта функция антифишинга попросит подтвердить URL веб-страницы."
-      ],
-      "You do not have any contacts to export": [
-        "У вас нет контактов для экспорта"
       ],
       "You have locally decrypted this key": [
         "Вы расшифровали этот ключ локально"

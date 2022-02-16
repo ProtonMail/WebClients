@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
@@ -325,9 +325,6 @@
       "Export": [
         "Εξαγωγή"
       ],
-      "Export contacts": [
-        "Εξαγωγή Επαφών"
-      ],
       "Export ICS": [
         "Εξαγωγή ICS"
       ],
@@ -342,9 +339,6 @@
       ],
       "Generate new recovery phrase": [
         "Παραγωγή νέας φράσης ανάκτησης"
-      ],
-      "Generate new recovery phrase?": [
-        "Παραγωγή νέας φράσης ανάκτησης;"
       ],
       "Generate recovery phrase": [
         "Παραγωγή φράσης ανάκτησης"
@@ -386,7 +380,7 @@
         "Εισαγωγή επαφών"
       ],
       "Import emails": [
-        ""
+        "Εισαγωγή email"
       ],
       "Import from .ics": [
         "Εισαγωγή από αρχείο .ics"
@@ -602,7 +596,7 @@
         "Επιλέξτε αρχεία"
       ],
       "Select language for invitation emails": [
-        ""
+        "Επιλέξτε γλώσσα για τα προσκλητήρια email"
       ],
       "Select plan": [
         "Επιλέξτε πλάνο"
@@ -660,9 +654,6 @@
       ],
       "Sign in": [
         "Είσοδος"
-      ],
-      "Sign in again to continue": [
-        "Εισέλθετε ξανά για να συνεχίσετε"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -744,9 +735,6 @@
       ],
       "Upgrade": [
         "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
       ],
       "Upgrade to Plus": [
         "Αναβάθμιση σε Plus"
@@ -1121,11 +1109,22 @@
     },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
-        ""
+        "Έχετε φθάσει τον μέγιστο αριθμό των προσωπικών ημερολογίων που μπορείτε να δημιουργήσετε με το πλάνο σας."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Έχετε φτάσει τον μέγιστο αριθμό του ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } συνδρομητικού ημερολογίου.",
         "Έχετε φτάσει τον μέγιστο αριθμό των ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } συνδρομητικών ημερολογίων."
+      ]
+    },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Η ετικέτα προστέθηκε"
+      ],
+      "Label deleted": [
+        "Η ετικέτα διαγράφηκε"
+      ],
+      "Label edited": [
+        "Η ετικέτα διορθώθηκε"
       ]
     },
     "Calendar status": {
@@ -1341,6 +1340,773 @@
         "${ monthsWithYears } μήνες"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Αμπχαζία"
+      ],
+      "Afghanistan": [
+        "Αφγανιστάν"
+      ],
+      "Albania": [
+        "Αλβανία"
+      ],
+      "Algeria": [
+        "Αλγερία"
+      ],
+      "American Samoa": [
+        "Αμερικανική Σαμόα"
+      ],
+      "Andorra": [
+        "Ανδόρα"
+      ],
+      "Angola": [
+        "Αγκόλα"
+      ],
+      "Anguilla": [
+        "Ανγκουίλα"
+      ],
+      "Antarctica": [
+        "Ανταρκτική"
+      ],
+      "Antigua and Barbuda": [
+        "Αντίγκουα και Μπαρμπούντα"
+      ],
+      "Argentina": [
+        "Αργεντινή"
+      ],
+      "Armenia": [
+        "Αρμενία"
+      ],
+      "Aruba": [
+        "Αρούμπα"
+      ],
+      "Ascension Island": [
+        "Νήσος Αναλήψεως"
+      ],
+      "Australia": [
+        "Αυστραλία"
+      ],
+      "Austria": [
+        "Αυστρία"
+      ],
+      "Azerbaijan": [
+        "Αζερμπαϊτζάν"
+      ],
+      "Bahamas": [
+        "Μπαχάμες"
+      ],
+      "Bahrain": [
+        "Μπαχρέιν"
+      ],
+      "Bangladesh": [
+        "Μπαγκλαντές"
+      ],
+      "Barbados": [
+        "Μπαρμπάντος"
+      ],
+      "Belarus": [
+        "Λευκορωσία"
+      ],
+      "Belgium": [
+        "Βέλγιο"
+      ],
+      "Belize": [
+        "Μπελίζ"
+      ],
+      "Benin": [
+        "Μπενίν"
+      ],
+      "Bermuda": [
+        "Βερμούδες"
+      ],
+      "Bhutan": [
+        "Μπουτάν"
+      ],
+      "Bolivia": [
+        "Βολιβία"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        ""
+      ],
+      "Bosnia and Herzegovina": [
+        "Βοσνία Ερζεγοβίνη"
+      ],
+      "Botswana": [
+        "Μποτσουάνα"
+      ],
+      "Bouvet Island": [
+        "Μπουβέ"
+      ],
+      "Brazil": [
+        "Βραζιλία"
+      ],
+      "British Indian Ocean Territory": [
+        ""
+      ],
+      "Brunei Darussalam": [
+        "Μπρουνέι"
+      ],
+      "Bulgaria": [
+        "Βουλγαρία"
+      ],
+      "Burkina Faso": [
+        "Μπουρκίνα Φάσο"
+      ],
+      "Burma": [
+        "Βιρμανία"
+      ],
+      "Burundi": [
+        "Μπουρούντι"
+      ],
+      "Cambodia": [
+        "Καμπότζη"
+      ],
+      "Cameroon": [
+        "Καμερούν"
+      ],
+      "Canada": [
+        "Καναδάς"
+      ],
+      "Cape Verde": [
+        "Πράσινο Ακρωτήριo"
+      ],
+      "Cayman Islands": [
+        "Νήσοι Κέιμαν"
+      ],
+      "Central African Republic": [
+        "Κεντροαφρικανική Δημοκρατία"
+      ],
+      "Chad": [
+        "Τσαντ"
+      ],
+      "Chile": [
+        "Χιλή"
+      ],
+      "China": [
+        "Κίνα"
+      ],
+      "Christmas Island": [
+        "Νήσος Χριστουγέννων"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Νήσοι Κόκος"
+      ],
+      "Colombia": [
+        "Κολομβία"
+      ],
+      "Comoros": [
+        "Κομόρες"
+      ],
+      "Congo": [
+        "Κογκό"
+      ],
+      "Congo, Democratic Republic of the": [
+        ""
+      ],
+      "Cook Islands": [
+        "Νήσοι Κουκ"
+      ],
+      "Costa Rica": [
+        "Κόστα Ρίκα"
+      ],
+      "Cote d'Ivoire\"": [
+        "Ακτή Ελεφαντοστού"
+      ],
+      "Croatia": [
+        "Κροατία"
+      ],
+      "Cuba": [
+        "Κούβα"
+      ],
+      "Curaçao": [
+        "Κουρασάο"
+      ],
+      "Cyprus": [
+        "Κύπρος"
+      ],
+      "Czech Republic": [
+        "Τσεχία"
+      ],
+      "Denmark": [
+        "Δανία"
+      ],
+      "Djibouti": [
+        "Τζιμπουτί"
+      ],
+      "Dominica": [
+        "Δομινίκα"
+      ],
+      "Dominican Republic": [
+        "Δομινικανή Δημοκρατία"
+      ],
+      "Ecuador": [
+        "Ισημερινός"
+      ],
+      "Egypt": [
+        "Αίγυπτος"
+      ],
+      "El Salvador": [
+        "Ελ Σαλβαδόρ"
+      ],
+      "Equatorial Guinea": [
+        "Ισημερινή Γουινέα"
+      ],
+      "Eritrea": [
+        "Ερυθραία"
+      ],
+      "Estonia": [
+        "Εσθονία"
+      ],
+      "Ethiopia": [
+        "Αιθιοπία"
+      ],
+      "Falkland Islands": [
+        "Νήσοι Φόκλαντ"
+      ],
+      "Faroe Islands": [
+        "Φερόες"
+      ],
+      "Federated States of Micronesia": [
+        "Ομόσπονδες Πολιτείες της Μικρονησίας"
+      ],
+      "Fiji": [
+        "Φίτζι"
+      ],
+      "Finland": [
+        "Φινλανδία"
+      ],
+      "France": [
+        "Γαλλία"
+      ],
+      "French Guiana": [
+        "Γαλλική Γουιάνα"
+      ],
+      "French Polynesia": [
+        "Γαλλική Πολυνησία"
+      ],
+      "French Southern Territories": [
+        ""
+      ],
+      "Gabon": [
+        "Γκαμπόν"
+      ],
+      "Gambia": [
+        "Γκάμπια"
+      ],
+      "Georgia": [
+        "Γεωργία"
+      ],
+      "Germany": [
+        "Γερμανία"
+      ],
+      "Ghana": [
+        "Γκάνα"
+      ],
+      "Gibraltar": [
+        "Γιβραλτάρ"
+      ],
+      "Greece": [
+        "Ελλάδα"
+      ],
+      "Greenland": [
+        "Γροιλανδία"
+      ],
+      "Grenada": [
+        "Γρενάδα"
+      ],
+      "Guadeloupe": [
+        "Γουαδελούπη"
+      ],
+      "Guam": [
+        "Γκουάμ"
+      ],
+      "Guatemala": [
+        "Γουατεμάλα"
+      ],
+      "Guernsey": [
+        ""
+      ],
+      "Guinea": [
+        "Γουινέα"
+      ],
+      "Guinea-Bissau": [
+        "Γουινέα-Μπισάου"
+      ],
+      "Guyana": [
+        "Γουιάνα"
+      ],
+      "Haiti": [
+        "Αϊτή"
+      ],
+      "Heard Island and McDonald Islands": [
+        ""
+      ],
+      "Holy See (Vatican City State)": [
+        "Βατικανό"
+      ],
+      "Honduras": [
+        "Ονδούρα"
+      ],
+      "Hong Kong": [
+        "Χονγκ Κονγκ"
+      ],
+      "Hungary": [
+        "Ουγγαρία"
+      ],
+      "Iceland": [
+        "Ισλανδία"
+      ],
+      "India": [
+        "Ινδία"
+      ],
+      "Indonesia": [
+        "Ινδονησία"
+      ],
+      "International": [
+        ""
+      ],
+      "Iran": [
+        "Ιράν"
+      ],
+      "Iraq": [
+        "Ιράκ"
+      ],
+      "Ireland": [
+        "Ιρλανδία"
+      ],
+      "Isle of Man": [
+        "Νήσος Μαν"
+      ],
+      "Israel": [
+        "Ισραήλ"
+      ],
+      "Italy": [
+        "Ιταλία"
+      ],
+      "Jamaica": [
+        "Τζαμάικα"
+      ],
+      "Japan": [
+        "Ιαπωνία"
+      ],
+      "Jersey": [
+        ""
+      ],
+      "Jordan": [
+        "Ιορδανία"
+      ],
+      "Kazakhstan": [
+        "Καζακστάν"
+      ],
+      "Kenya": [
+        "Κένυα"
+      ],
+      "Kiribati": [
+        "Κιριμπάτι"
+      ],
+      "Kosovo": [
+        ""
+      ],
+      "Kuwait": [
+        "Κουβέιτ"
+      ],
+      "Kyrgyzstan": [
+        "Κιργιστάν"
+      ],
+      "Laos": [
+        "Λάος"
+      ],
+      "Latvia": [
+        "Λετονία"
+      ],
+      "Lebanon": [
+        "Λίβανος"
+      ],
+      "Lesotho": [
+        "Λεσότο"
+      ],
+      "Liberia": [
+        "Λιβερία"
+      ],
+      "Libya": [
+        "Λιβύη"
+      ],
+      "Liechtenstein": [
+        "Λιχτενστάιν"
+      ],
+      "Lithuania": [
+        "Λιθουανία"
+      ],
+      "Luxembourg": [
+        "Λουξεμβούργο"
+      ],
+      "Macao": [
+        "Μακάο"
+      ],
+      "Madagascar": [
+        "Μαδαγασκάρη"
+      ],
+      "Malawi": [
+        "Μαλάουι"
+      ],
+      "Malaysia": [
+        "Μαλαισία"
+      ],
+      "Maldives": [
+        "Μαλδίβες"
+      ],
+      "Mali": [
+        "Μάλι"
+      ],
+      "Malta": [
+        "Μάλτα"
+      ],
+      "Marshall Islands": [
+        "Νήσοι Μάρσαλ"
+      ],
+      "Martinique": [
+        "Μαρτινίκα"
+      ],
+      "Mauritania": [
+        "Μαυριτανία"
+      ],
+      "Mauritius": [
+        "Μαυρίκιος"
+      ],
+      "Mayotte": [
+        ""
+      ],
+      "Mexico": [
+        "Μεξικό"
+      ],
+      "Moldova": [
+        "Μολδαβία"
+      ],
+      "Monaco": [
+        "Μονακό"
+      ],
+      "Mongolia": [
+        "Μογγολία"
+      ],
+      "Montenegro": [
+        "Μαυροβούνιο"
+      ],
+      "Montserrat": [
+        "Μονσεράτ"
+      ],
+      "Morocco": [
+        "Μαρόκο"
+      ],
+      "Mozambique": [
+        "Μοζαμβίκη"
+      ],
+      "Namibia": [
+        "Ναμίμπια"
+      ],
+      "Nauru": [
+        "Ναούρου"
+      ],
+      "Nepal": [
+        "Νεπάλ"
+      ],
+      "Netherlands": [
+        "Ολλανδία"
+      ],
+      "New Caledonia": [
+        "Νέα Καληδονία"
+      ],
+      "New Zealand": [
+        "Νέα Ζηλανδία"
+      ],
+      "Nicaragua": [
+        "Νικαράγουα"
+      ],
+      "Niger": [
+        "Νίγηρας"
+      ],
+      "Nigeria": [
+        "Νιγηρία"
+      ],
+      "Niue": [
+        "Νιούε"
+      ],
+      "Norfolk Island": [
+        "Νήσος Νόρφολκ"
+      ],
+      "North Korea": [
+        "Βόρεια Κορέα"
+      ],
+      "North Macedonia": [
+        "Σκόπια"
+      ],
+      "Northern Mariana Islands": [
+        "Βόρειες Μαριάνες"
+      ],
+      "Norway": [
+        "Νορβηγία"
+      ],
+      "Oman": [
+        "Ομάν"
+      ],
+      "Pakistan": [
+        "Πακιστάν"
+      ],
+      "Palau": [
+        "Παλάου"
+      ],
+      "Palestine": [
+        "Παλαιστίνη"
+      ],
+      "Panama": [
+        "Παναμάς"
+      ],
+      "Papua New Guinea": [
+        "Παπούα Νέα Γουινέα"
+      ],
+      "Paraguay": [
+        "Παραγουάη"
+      ],
+      "Peru": [
+        "Περού"
+      ],
+      "Philippines": [
+        "Φιλιππίνες"
+      ],
+      "Pitcairn": [
+        "Πίτκαιρν"
+      ],
+      "Poland": [
+        "Πολωνία"
+      ],
+      "Portugal": [
+        "Πορτογαλία"
+      ],
+      "Puerto Rico": [
+        "Πουέρτο Ρίκο"
+      ],
+      "Qatar": [
+        "Κατάρ"
+      ],
+      "Reunion": [
+        "Ρεϋνιόν"
+      ],
+      "Romania": [
+        "Ρουμανία"
+      ],
+      "Russia": [
+        "Ρωσία"
+      ],
+      "Rwanda": [
+        "Ρουάντα"
+      ],
+      "Saint Barthélemy": [
+        "Άγιος Βαρθολομαίος"
+      ],
+      "Saint Helena": [
+        "Αγία Ελένη"
+      ],
+      "Saint Kitts and Nevis": [
+        "Άγιος Χριστόφορος και Νέβις"
+      ],
+      "Saint Lucia": [
+        "Αγία Λουκία"
+      ],
+      "Saint Martin (French Part)": [
+        "Άγιος Μαρτίνος (Γαλλικό τμήμα)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Άγιος Πέτρος Μικελόν"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Άγιος Βικέντιος"
+      ],
+      "Samoa": [
+        ""
+      ],
+      "San Marino": [
+        "Άγιος Μαρίνος"
+      ],
+      "Sao Tome and Principe": [
+        "Άγιος Θωμάς"
+      ],
+      "Saudi Arabia": [
+        "Σαουδική Αραβία"
+      ],
+      "Senegal": [
+        "Σενεγάλη"
+      ],
+      "Serbia": [
+        "Σερβία"
+      ],
+      "Seychelles": [
+        "Σεϊχέλες"
+      ],
+      "Sierra Leone": [
+        "Σιέρα Λεόνε"
+      ],
+      "Singapore": [
+        "Σιγκαπούρη"
+      ],
+      "Sint Maarten": [
+        "Άγιος Μαρτίνος"
+      ],
+      "Slovakia": [
+        "Σλοβακία"
+      ],
+      "Slovenia": [
+        "Σλοβενία"
+      ],
+      "Solomon Islands": [
+        "Νήσοι Σολομώντος"
+      ],
+      "Somalia": [
+        "Σομαλία"
+      ],
+      "South Africa": [
+        ""
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        ""
+      ],
+      "South Korea": [
+        "Νότια Κορέα"
+      ],
+      "South Ossetia": [
+        "Νότια Οσετία"
+      ],
+      "South Sudan": [
+        "Νότιο Σουδάν"
+      ],
+      "Spain": [
+        "Ισπανία"
+      ],
+      "Sri Lanka": [
+        "Σρι Λάνκα"
+      ],
+      "Sudan": [
+        "Σουδάν"
+      ],
+      "Suriname": [
+        "Σουρινάμ"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Σβάλμπαρντ"
+      ],
+      "Swaziland": [
+        "Σουαζιλάνδη"
+      ],
+      "Sweden": [
+        "Σουηδία"
+      ],
+      "Switzerland": [
+        "Ελβετία"
+      ],
+      "Syria": [
+        "Συρία"
+      ],
+      "Taiwan": [
+        "Ταϊβάν"
+      ],
+      "Tajikistan": [
+        "Τατζικιστάν"
+      ],
+      "Tanzania": [
+        "Τανζανία"
+      ],
+      "Thailand": [
+        "Ταϊλάνδη"
+      ],
+      "Timor-Leste": [
+        "Ανατολικό Τιμόρ"
+      ],
+      "Togo": [
+        "Τόγκο"
+      ],
+      "Tokelau": [
+        "Τοκελάου"
+      ],
+      "Tonga": [
+        "Τόνγκα"
+      ],
+      "Trinidad and Tobago": [
+        "Τρινιντάντ"
+      ],
+      "Tristan da Cunha": [
+        "Τριστάν ντα Κούνια"
+      ],
+      "Tunisia": [
+        "Τυνησία"
+      ],
+      "Turkey": [
+        "Τουρκία"
+      ],
+      "Turkmenistan": [
+        "Τουρκμενιστάν"
+      ],
+      "Turks and Caicos Islands": [
+        "Νήσοι Τερκς και Κάικος"
+      ],
+      "Tuvalu": [
+        "Τουβαλού"
+      ],
+      "Uganda": [
+        "Ουγκάντα"
+      ],
+      "Ukraine": [
+        "Ουκρανία"
+      ],
+      "United Arab Emirates": [
+        "Ηνωμένα Αραβικά Εμιράτα"
+      ],
+      "United Kingdom": [
+        "Ηνωμένο Βασίλειο"
+      ],
+      "United States": [
+        "Ηνωμένες Πολιτείες"
+      ],
+      "United States Minor Outlying Islands": [
+        ""
+      ],
+      "Uruguay": [
+        "Ουρουγουάη"
+      ],
+      "Uzbekistan": [
+        "Ουζμπεκιστάν"
+      ],
+      "Vanuatu": [
+        "Βανουάτου"
+      ],
+      "Venezuela": [
+        "Βενεζουέλα"
+      ],
+      "Vietnam": [
+        "Βιετνάμ"
+      ],
+      "Virgin Islands, British": [
+        "Βρετανικές Παρθένες Νήσοι"
+      ],
+      "Virgin Islands, U.S.": [
+        "Αμερικανικές Παρθένες Νήσοι"
+      ],
+      "Wallis and Futuna": [
+        ""
+      ],
+      "Western Sahara": [
+        "Δυτική Σαχάρα"
+      ],
+      "Yemen": [
+        ""
+      ],
+      "Zambia": [
+        ""
+      ],
+      "Zimbabwe": [
+        ""
+      ],
+      "Åland Islands": [
+        "Νήσοι Άλαντ"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(μέσω ${ entryCountryName })"
@@ -1415,9 +2181,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Αποκρυπτογράφηση επαφών... Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, θα μπορείτε να κάνετε λήψη του αρχείου με όλες τις επαφές που έχουν εξαχθεί."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Η διαδικασία μπορεί να πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
@@ -1639,9 +2402,6 @@
       "Condition incomplete": [
         "Μη ολοκληρωμένη συνθήκη"
       ],
-      "Contact signature not verified": [
-        "Η υπογραφή επαφής δεν πιστοποιήθηκε"
-      ],
       "Could not find address ${ email }.": [
         "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
       ],
@@ -1747,9 +2507,6 @@
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του Proton"
       ],
-      "Missing signature": [
-        "Λείπει η υπογραφή"
-      ],
       "Name on card required": [
         "Απαιτείται το όνομα κατόχου της κάρτας"
       ],
@@ -1846,9 +2603,6 @@
       ],
       "Require at least one condition": [
         "Απαιτείται τουλάχιστον μία συνθήκη"
-      ],
-      "Signature not verified": [
-        "Υπογραφή δεν πιστοποιήθηκε"
       ],
       "Signature verification failed": [
         "Η επαλήθευση υπογραφής απέτυχε"
@@ -1971,7 +2725,7 @@
         "Πρέπει να ορίσετε ένα όνομα"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        ""
+        "Ο λογαριασμός ή ο οργανισμός σας έχει μια εκπρόθεσμη οικονομική εκκρεμότητα. Παρακαλούμε πληρώστε όλες τις εκκρεμότητες."
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
@@ -2513,6 +3267,15 @@
         "Τιμή / Δεδομένα / Σημεία προς"
       ]
     },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "",
+        ""
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        ""
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -2536,8 +3299,8 @@
         "${ totalImported }/${ totalToImport } εκδηλώσεις κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "",
-        ""
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη του γεγονότος. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς.",
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη των γεγονότων. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της εκδήλωσής σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος.",
@@ -2808,7 +3571,7 @@
         "κωδικός εφαρμογής"
       ],
       "Can view all details": [
-        ""
+        "Μπορεί να δει κάθε λεπτομέρεια"
       ],
       "Export": [
         "Εξαγωγή"
@@ -2823,13 +3586,13 @@
         "ICS"
       ],
       "in the next step you need to select all the permissions": [
-        ""
+        "στο επόμενο βήμα χρειάζεται να επιλέξετε όλες τις άδειες"
       ],
       "Manage": [
         "Διαχείριση"
       ],
       "Publish a calendar": [
-        ""
+        "Δημοσίευση ημερολογίου"
       ]
     },
     "Import instructions link": {
@@ -2936,8 +3699,8 @@
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "",
-        ""
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονότα δεν θα εισαχθούν. Επεκτείνετε για λεπτομέρειες.",
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονότα δεν θα εισαχθούν. Επεκτείνετε για λεπτομέρειες."
       ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
@@ -3128,7 +3891,7 @@
         "Διευθύνσεις"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
-        ""
+        "Έπειτα από την επαναφορά του κωδικού τα δεδομένα σας κλειδώνονται σε κρυπτογραφημένη μορφή για να διασφαλίσουμε."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Αφού κάνετε την πληρωμή Bitcoin, ακολουθήστε τις παρακάτω οδηγίες για αναβάθμιση."
@@ -3331,9 +4094,6 @@
       "Creating your Proton account": [
         "Γίνεται δημιουργία του λογαριασμού σας Proton"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
-      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Προς το παρόν, όλος ο διαθέσιμος αποθηκευτικός χώρος, διατίθεται στο λογαριασμό διαχειριστή. Μειώστε την κατανομή λογαριασμού διαχειριστή για να ελευθερώσετε χώρο για επιπλέον χρήστες. Μπορείτε να αυξήσετε το συνολικό χώρο αποθήκευσης ανά πάσα στιγμή, αναβαθμίζοντας το λογαριασμό σας."
       ],
@@ -3468,7 +4228,7 @@
         "Εισάγετε τον αριθμό τηλεφώνου ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
       "Event invites and RSVPs will be sent in this language.": [
-        ""
+        "Οι προσκλήσεις συμβάντων και τα RSVP θα αποσταλλούν σε αυτή τη γλώσσα."
       ],
       "Expired": [
         "Ληγμένο"
@@ -3604,7 +4364,7 @@
         "Εισαγωγή γραμματοκιβωτίου"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        ""
+        "Εισάγετε τα email σας, τα ημερολόγια, και τις επαφές σας από μια άλλη υπηρεσία στην Proton. Θα σας καθοδηγήσουμε σε κάθε βήμα της διαδικασίας και θα κρυπτογραφήσουμε τα δεδομένα κατά τη μετακίνηση. Καλώς ήρθατε στον κόσμο της ιδιωτικότητας."
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "ΣΗΜΑΝΤΙΚΟ: η λήψη των ιδιωτικών σας κλειδιών και η αποστολή τους ή η αποθήκευσή τους σε μη ασφαλή πολυμέσα μπορεί να θέσουν σε κίνδυνο την ασφάλεια του λογαριασμού σας!"
@@ -3795,9 +4555,6 @@
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
-      "No subscription yet": [
-        "Δεν υπάρχει συνδρομή ακόμα"
-      ],
       "Normal": [
         "Κανονικό"
       ],
@@ -3841,13 +4598,13 @@
         "Υπάρχουν και άλλοι διαχειριστές στον οργανισμό σας, είστε υπεύθυνοι για την ενημέρωση τους σχετικά με τον νέο κωδικό πρόσβασης."
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        ""
+        "Απαρχαιωμένο αρχείο ανάκτησης. Ενημερώστε για να διασφαλίσετε πρόσβαση στα δεδομένα σας"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        ""
+        "Απαρχαιωμένες μέθοδοι ανάκτησης. Ενημερώστε για να διασφαλίσετε πρόσβαση στα δεδομένα σας"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        ""
+        "Απαρχαιωμένη φράση ανάκτησης. Ενημερώστε για να διασφαλίσετε πρόσβαση στα δεδομένα σας"
       ],
       "P2P": [
         "P2P"
@@ -4024,6 +4781,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Στάλθηκε με διασφαλισμένο ταχυδρομείο <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "Server is currently down": [
         "Ο διακομιστής είναι προσωρινά εκτός"
       ],
@@ -4078,9 +4838,6 @@
       "Thank you for supporting our mission.": [
         "Σας ευχαριστούμε που υποστηρίζετε την αποστολή μας."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
-      ],
       "The calendar will be removed from your account.": [
         "Το ημερολόγιο θα αφαιρεθεί από τον λογαριασμό σας."
       ],
@@ -4092,9 +4849,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Δεν υπάρχουν διαθέσιμα στοιχεία χρέωσης για την τρέχουσα συνδρομή σας."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Αυτά τα αρχεία διαμόρφωσης σας επιτρέπουν να επιλέξετε με ποιον διακομιστή ProtonVPN συνδέεστε όταν χρησιμοποιείτε μια εφαρμογή VPN τρίτων ή ρυθμίζετε μια σύνδεση VPN σε έναν δρομολογητή."
@@ -4175,19 +4929,19 @@
         "για συνέχιση στο ${ toAppName }"
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
-        ""
+        "Για να αποκρυπτογραφήσετε και να δείτε τα email και άλλα δεδομένα, χρειάζεστε ένα αρχείο ανάκτησης."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        ""
+        "Για να αποκρυπτογραφήσετε και να δείτε τα email και άλλα δεδομένα, χρειάζεστε μια φράση ανάκτησης ή ένα αρχείο ανάκτησης."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        ""
+        "Για να αποκρυπτογραφήσετε και να δείτε τα email και άλλα δεδομένα, χρειάζεστε μια φράση ανάκτησης."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Για αποκρυπτογράφηση και προβολή των κλειδωμένων δεδομένων σας μετά από επαναφορά κωδικού πρόσβασης, επιλέξτε μια μέθοδο ανάκτησης."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        ""
+        "Για να εξασφαλίσετε συνεχή πρόσβαση στον λογαριασμό σας, ορίστε μια μέθοδο ανάκτησης λογαριασμού"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση των ενοχλήσεων και των καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
@@ -4247,10 +5001,7 @@
         "Αναβαθμήστε σε ${ PLAN_NAMES[PLANS.VISIONARY] } ή ${ PLAN_NAMES[PLANS.PROFESSIONAL] } πλάνο για να ξεκινήσετε."
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
-        ""
-      ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Αναβαθμίστε σε ένα λογαριασμό επί πληρωμή για να αποκτήσετε πρόσβαση σε κορυφαίες λειτουργίες και να αυξήσετε το χώρο αποθήκευσής σας."
+        "Αναβαθμίστε σε ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } ή ${ PLAN_NAMES[PLANS.PLUS] } πλάνο για να ενεργοποιήσετε τις αυτόματες απαντήσεις για όταν βρίσκεστε εκτός γραφείου."
       ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Αναβαθμίστε σε ένα πλάνο επί πληρωμή για να ξεκλειδώσετε την υποστήριξη IMAP / SMTP μέσω του ProtonMail Bridge."
@@ -4272,9 +5023,6 @@
       ],
       "Users": [
         "Χρήστες"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "Οι χρήστες δεν μπορούν να κάνουν αλλαγές στις ρυθμίσεις του οργανισμού. Εάν χρειάζεστε δικαιώματα διαχειριστή, επικοινωνήστε με το διαχειριστή του συστήματός σας."
       ],
       "Verification can take a few minutes.": [
         "Η επαλήθευση μπορεί να πάρει μερικά λεπτά."
@@ -4656,7 +5404,7 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        ""
+        "Υπάρχει ήδη ένα κλειδί με τον ίδιο αλγόριθμο κρυπτογράφησης. Η δημιουργία ενός άλλο θα προκαλέσει βραδύτερη φόρτωση του λογαριασμού. Είστε σίγουροι ότι θέλετε να συνεχίσετε;"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Ένα κλειδί με τον ίδιο αλγόριθμο κρυπτογράφησης είναι ήδη ενεργό για αυτήν τη διεύθυνση. Η δημιουργία ενός άλλου κλειδιού θα προκαλέσει πιο αργή φόρτωση του λογαριασμού και η διαγραφή αυτού του κλειδιού μπορεί να προκαλέσει προβλήματα. Αν δημιουργείτε ένα νέο κλειδί επειδή το παλιό σας κλειδί είναι παραβιασμένο/εκτεθειμένο, επισημάνετε το κλειδί ως εκτεθειμένο. Είστε σίγουροι ότι θέλετε να συνεχίσετε;"
@@ -5011,9 +5759,6 @@
       ],
       "Auto-load embedded images": [
         "Αυτόματη φόρτωση ενσωματωμένων εικόνων"
-      ],
-      "Automatically save contacts": [
-        "Αυτόματη αποθήκευση επαφών"
       ],
       "Block email tracking": [
         "Φραγή ιχνηλάτησης μηνυμάτων"
@@ -5838,6 +6583,9 @@
       "Go to subscription plans": [
         "Μεταβείτε στα προγράμματα συνδρομής"
       ],
+      "How to unlock data": [
+        "Πώς να ξεκλειδώσετε τα δεδομένα"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -5876,15 +6624,17 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Ποια είναι η διαφορά μεταξύ των πρωτοκόλλων UDP και TCP;"
+      ],
+      "Why set recovery methods?": [
+        "Γιατί να ορίσετε μεθόδους ανάκτησης;"
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "Δημιουργήθηκε ${ createdCalendars } από ${ calendarsToBeCreated }",
-        "Δημιουργήθηκαν ${ createdCalendars } από ${ calendarsToBeCreated }"
-      ],
       "Almost there": [
         "Σχεδόν εκεί"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendars } από ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Γίνεται σύνδεση με τον πάροχο ηλεκτρονικού ταχυδρομείου σας"
@@ -6063,31 +6813,31 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        ""
+        "Πώς να εισάγετε ημερολόγια από μια άλλη υπηρεσία"
       ],
       "How to import calendars from Outlook": [
-        ""
+        "Πώς να εισάγετε ημερολόγια από το Outlook"
       ],
       "How to import calendars from Yahoo": [
-        ""
+        "Πώς να εισάγετε ημερολόγια από το Yahoo"
       ],
       "How to import contacts from another service": [
-        ""
+        "Πώς να εισάγετε επαφές από μια άλλη υπηρεασία"
       ],
       "How to import contacts from Outlook": [
-        ""
+        "Πώς να εισάγετε επαφές από το Outlook"
       ],
       "How to import contacts from Yahoo": [
-        ""
+        "Πώς να εισάγετε επαφές από το Yahoo"
       ],
       "How to import emails from another service": [
-        ""
+        "Πώς να εισάγετε email από μια άλλη υπηρεσία"
       ],
       "How to import emails from Outlook": [
-        ""
+        "Πώς να εισάγετε email από το Outlook"
       ],
       "How to import emails from Yahoo": [
-        ""
+        "Πώς να εισάγετε email από το Yahoo"
       ]
     },
     "Modal title and action": {
@@ -6251,9 +7001,6 @@
       "Back to Calendar": [
         "Πίσω στο Ημερολόγιο"
       ],
-      "Back to Contacts": [
-        "Πίσω στις Επαφές"
-      ],
       "Back to Drive": [
         "Πίσω στο Drive"
       ],
@@ -6327,7 +7074,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Παρακαλούμε σημειώστε ότι, για να εκκινήσει η εισαγωγή, ${ boldNextStep } που ζητά η εφαρμογή."
       ]
     },
     "Onboarding Proton": {
@@ -6723,6 +7470,9 @@
       "Proton username": [
         "Όνομα χρήστη Proton"
       ],
+      "Search settings": [
+        "Ρυθμίσεις αναζήτησης"
+      ],
       "Search users": [
         "Αναζήτηση χρηστών"
       ],
@@ -6878,14 +7628,6 @@
         "ιδιωτικό"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } από τις ${ countContacts } επαφές που έχουν εξαχθεί με επιτυχία."
-      ],
-      "No contacts exported.": [
-        "Δεν εξήχθησαν επαφές."
-      ]
-    },
     "Property type": {
       "Address": [
         "Διεύθυνση"
@@ -6916,6 +7658,47 @@
       ],
       "Work": [
         "Εργασία"
+      ]
+    },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        "Πίσω στην ${ signIn }."
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Email address has been verified.": [
+        "Η ηλ. διεύθυνση έχει επαληθευθεί."
+      ],
+      "Email address not yet verified.": [
+        "Η ηλ. διεύθυνση δεν έχει επαληθευθεί ακόμα."
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "Παρακαλούμε ${ signIn } για επαναποστολή αιτήματος επαλήθευσης της ηλ. διεύθυνσης ανάκτησης."
+      ],
+      "Send verification email": [
+        "Αποστολή μηνύματος επαλήθευσης"
+      ],
+      "There was a problem verifying your email address.": [
+        "Προέκυψε πρόβλημα κατά την επαλήθευση της ηλ. διεύθυνσής σας."
+      ],
+      "Verification email sent to ${ email.Value }": [
+        "Στάλθηκε μήνυμα επαλήθευσης στο ${ email.Value }"
+      ],
+      "Verify now": [
+        "Επαλήθευση τώρα"
+      ],
+      "Verify recovery email?": [
+        "Επαλήθευση ηλ. διεύθυνσης ανάκτησης;"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Η επαλήθευση της ηλ. διεύθυνσής σας αυξάνει τη διασφάλιση του λογαριασμού σας και επιτρέπει πρόσθετες επιλογές ανάκτησης."
+      ],
+      "You can safely close this tab.": [
+        "Μπορείτε να κλείσετε με ασφάλεια αυτήν την καρτέλα."
+      ],
+      "Your recovery email has been successfully verified.": [
+        "Η ηλ. διεύθυνσή σας ανάκτησης επαληθεύθηκε επιτυχώς."
       ]
     },
     "Recovery method": {
@@ -6982,59 +7765,8 @@
       "Account": [
         "Λογαριασμός"
       ],
-      "Appearance": [
-        "Εμφάνιση"
-      ],
-      "Auto reply": [
-        "Αυτόματη απάντηση"
-      ],
-      "Backup and export": [
-        "Αντίγραφο ασφαλείας και εξαγωγή"
-      ],
-      "Calendars": [
-        "Ημερολόγια"
-      ],
-      "Domain names": [
-        "Ονόματα τομέων"
-      ],
-      "Email privacy": [
-        "Προστασία προσωπικών δεδομένων Ηλεκτρονικού Ταχυδρομείου"
-      ],
-      "Encryption and keys": [
-        "Κρυπτογράφηση και κλειδιά"
-      ],
-      "Filters": [
-        "Φίλτρα"
-      ],
-      "Folders and labels": [
-        "Φάκελοι και ετικέτες"
-      ],
-      "General": [
-        "Γενικά"
-      ],
-      "Identity and addresses": [
-        "Ταυτότητα και διευθύνσεις"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Import & export": [
-        "Εισαγωγή & εξαγωγή"
-      ],
-      "Multi-user support": [
-        "Υποστήριξη Πολλαπλών Χρηστών"
-      ],
       "Organization": [
         "Οργανισμός"
-      ],
-      "Organization and keys": [
-        "Οργανισμός και κλειδιά"
-      ],
-      "Users and addresses": [
-        "Χρήστες και διευθύνσεις"
-      ],
-      "VPN apps": [
-        "Εφαρμογές VPN"
       ]
     },
     "Settings update growler warning": {
@@ -7173,7 +7905,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        ""
+        "${ server.Domain } αντιγράφηκε στο πρόχειρο σας"
       ],
       "Account deleted. Logging out...": [
         "Ο λογαριασμός διαγράφηκε. Αποσύνδεση..."
@@ -7638,9 +8370,6 @@
       "Contact encryption keys": [
         "Κλειδιά κρυπτογράφησης επαφής"
       ],
-      "Contacts": [
-        "Επαφές"
-      ],
       "Continue with partial import?": [
         "Συνέχιση με μερική εισαγωγή;"
       ],
@@ -7797,9 +8526,6 @@
       "Error": [
         "Σφάλμα"
       ],
-      "Export": [
-        "Εξαγωγή"
-      ],
       "Export calendar": [
         "Εξαγωγή Ημερολογίου"
       ],
@@ -7808,9 +8534,6 @@
       ],
       "Export public key": [
         "Εξαγωγή δημόσιου κλειδιού"
-      ],
-      "Exporting contacts": [
-        "Γίνεται εξαγωγή επαφών"
       ],
       "External PGP settings": [
         "Εξωτερικές ρυθμίσεις PGP"
@@ -7833,6 +8556,9 @@
       "Generate missing keys": [
         "Δημιουργία των κλειδιών που λείπουν"
       ],
+      "Generate new recovery phrase?": [
+        "Παραγωγή νέας φράσης ανάκτησης;"
+      ],
       "Get ProtonVPN Plus to access all servers": [
         "Για πρόσβαση σε όλους τους διακομιστές, αποκτήστε το ProtonVPN Plus"
       ],
@@ -7850,9 +8576,6 @@
       ],
       "Import": [
         "Εισαγωγή"
-      ],
-      "Import & export": [
-        "Εισαγωγή & εξαγωγή"
       ],
       "Import as simple event?": [
         "Εισαγωγή ως απλή εκδήλωση;",
@@ -8054,7 +8777,7 @@
         "Επιλογή ομάδας επαφών"
       ],
       "Select permissions": [
-        ""
+        "Επιλογή αδειών"
       ],
       "Select plan": [
         "Επιλέξτε πακέτο"
@@ -8104,9 +8827,6 @@
       "Sign in again to continue": [
         "Συνδεθείτε ξανά για να συνεχίσετε"
       ],
-      "Sorry, you can't access this page": [
-        "Δυστυχώς, δεν μπορείτε να αποκτήσετε πρόσβαση σε αυτήν τη σελίδα"
-      ],
       "Sort folders alphabetically": [
         "Ταξινόμηση φακέλων αλφαβητικά"
       ],
@@ -8115,9 +8835,6 @@
       ],
       "Spam filters": [
         "Φίλτρα Ανεπιθύμητων"
-      ],
-      "Spy Tracker Protection": [
-        "Προστασία κατά Κρυφών Ιχνηλατών"
       ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"
@@ -8172,9 +8889,6 @@
       ],
       "Unsupported browser": [
         "Μη υποστηριζόμενο πρόγραμμα περιήγησης"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
       ],
       "Username": [
         "Όνομα χρήστη"
@@ -8368,6 +9082,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "Δρομολογήστε την κυκλοφορία σας στο Διαδίκτυο μέσω του δικτύου Tor με ένα μόνο κλικ."
       ],
+      "Set how your list of messages looks like by default.": [
+        "Ορίστε πώς να μοιάζει η λίστα μηνυμάτων σας από προεπιλογή."
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "Ορίστε το προεπιλεγμένο μέγεθος του αναδυόμενου παραθύρου του Συντάκτη ως μικρό ή σε πλήρη οθόνη."
       ],
@@ -8422,9 +9139,6 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Όταν κάνετε κλικ σε έναν σύνδεσμο, αυτή η λειτουργία εναντίον του ηλεκτρονικού «ψαρέματος» (phishing) θα σας ζητά να επιβεβαιώσετε τη διεύθυνση URL της ιστοσελίδας."
       ],
-      "You do not have any contacts to export": [
-        "Δεν έχετε επαφές προς εξαγωγή"
-      ],
       "You have locally decrypted this key": [
         "Έχετε αποκρυπτογραφήσει τοπικά αυτό το κλειδί"
       ],
@@ -8468,7 +9182,7 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        ""
+        "Σήμερα είναι μια καλή μέρα για να γράψετε ένα email"
       ],
       "Update default font and size": [
         "Ενημέρωση προεπιλεγμένης γραμματοσειράς και μεγέθους"
@@ -8744,10 +9458,10 @@
         "Δεν θα βλέπετε πλέον αυτήν την καρτέλα εισαγωγής στη λίστα."
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "Το αρχείο ανάκτησης είναι ξεπερασμένο; Δεν μπορεί να ανακτήσει νέα δεδομένα αν θέλετε να επαναφέρετε ξανά τον λογαριασμό σας."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "Η φράση ανάκτησης είναι ξεπερασμένη; Δεν μπορεί να ανακτήσει νέα δεδομένα αν θέλετε να επαναφέρετε ξανά τον λογαριασμό σας."
       ]
     },
     "Warning for domain modal": {

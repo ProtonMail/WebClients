@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ Name }@pm.me": [
         "Activer ${ Name }@pm.me"
@@ -263,7 +263,7 @@
         "Vous n'avez pas reçu de code?"
       ],
       "Didn't receive the code?": [
-        ""
+        "Vous n'avez pas reçu le code?"
       ],
       "Disable recovery phrase": [
         "Désactiver la phrase de récupération"
@@ -314,7 +314,7 @@
         "Modifier le filtre Sieve"
       ],
       "Edit sign-in details": [
-        ""
+        "Modifier les détails de connexion"
       ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
@@ -324,9 +324,6 @@
       ],
       "Export": [
         "Exporter"
-      ],
-      "Export contacts": [
-        "Exporter les contacts"
       ],
       "Export ICS": [
         "Exporter l'ICS"
@@ -342,9 +339,6 @@
       ],
       "Generate new recovery phrase": [
         "Générer une nouvelle phrase de récupération"
-      ],
-      "Generate new recovery phrase?": [
-        "Générer une nouvelle phrase de récupération?"
       ],
       "Generate recovery phrase": [
         "Générer une phrase de récupération"
@@ -661,9 +655,6 @@
       "Sign in": [
         "Se connecter"
       ],
-      "Sign in again to continue": [
-        "Connectez-vous à nouveau pour continuer"
-      ],
       "Sign out": [
         "Se déconnecter"
       ],
@@ -745,9 +736,6 @@
       "Upgrade": [
         "Changer d'offre"
       ],
-      "Upgrade now": [
-        "Passer à l'offre supérieure maintenant"
-      ],
       "Upgrade to Plus": [
         "Passer à l'offre Plus"
       ],
@@ -785,10 +773,10 @@
         "Vérifier"
       ],
       "Verify account": [
-        ""
+        "Vérifier le compte"
       ],
       "Verify email": [
-        ""
+        "Vérifier le courriel"
       ],
       "View": [
         "Voir"
@@ -1224,6 +1212,17 @@
         "Vous avez atteint le maximum de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendriers souscrits."
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Label ajouté"
+      ],
+      "Label deleted": [
+        "Label supprimé"
+      ],
+      "Label edited": [
+        "Label modifié"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Actif"
@@ -1437,6 +1436,773 @@
         "${ monthsWithYears } mois"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        ""
+      ],
+      "Afghanistan": [
+        ""
+      ],
+      "Albania": [
+        ""
+      ],
+      "Algeria": [
+        ""
+      ],
+      "American Samoa": [
+        ""
+      ],
+      "Andorra": [
+        ""
+      ],
+      "Angola": [
+        ""
+      ],
+      "Anguilla": [
+        ""
+      ],
+      "Antarctica": [
+        ""
+      ],
+      "Antigua and Barbuda": [
+        ""
+      ],
+      "Argentina": [
+        ""
+      ],
+      "Armenia": [
+        ""
+      ],
+      "Aruba": [
+        ""
+      ],
+      "Ascension Island": [
+        ""
+      ],
+      "Australia": [
+        ""
+      ],
+      "Austria": [
+        ""
+      ],
+      "Azerbaijan": [
+        ""
+      ],
+      "Bahamas": [
+        ""
+      ],
+      "Bahrain": [
+        ""
+      ],
+      "Bangladesh": [
+        ""
+      ],
+      "Barbados": [
+        ""
+      ],
+      "Belarus": [
+        ""
+      ],
+      "Belgium": [
+        ""
+      ],
+      "Belize": [
+        ""
+      ],
+      "Benin": [
+        ""
+      ],
+      "Bermuda": [
+        ""
+      ],
+      "Bhutan": [
+        ""
+      ],
+      "Bolivia": [
+        ""
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        ""
+      ],
+      "Bosnia and Herzegovina": [
+        ""
+      ],
+      "Botswana": [
+        ""
+      ],
+      "Bouvet Island": [
+        ""
+      ],
+      "Brazil": [
+        ""
+      ],
+      "British Indian Ocean Territory": [
+        ""
+      ],
+      "Brunei Darussalam": [
+        ""
+      ],
+      "Bulgaria": [
+        ""
+      ],
+      "Burkina Faso": [
+        ""
+      ],
+      "Burma": [
+        ""
+      ],
+      "Burundi": [
+        ""
+      ],
+      "Cambodia": [
+        ""
+      ],
+      "Cameroon": [
+        ""
+      ],
+      "Canada": [
+        ""
+      ],
+      "Cape Verde": [
+        ""
+      ],
+      "Cayman Islands": [
+        ""
+      ],
+      "Central African Republic": [
+        ""
+      ],
+      "Chad": [
+        ""
+      ],
+      "Chile": [
+        ""
+      ],
+      "China": [
+        ""
+      ],
+      "Christmas Island": [
+        ""
+      ],
+      "Cocos (Keeling) Islands": [
+        ""
+      ],
+      "Colombia": [
+        ""
+      ],
+      "Comoros": [
+        ""
+      ],
+      "Congo": [
+        ""
+      ],
+      "Congo, Democratic Republic of the": [
+        ""
+      ],
+      "Cook Islands": [
+        ""
+      ],
+      "Costa Rica": [
+        ""
+      ],
+      "Cote d'Ivoire\"": [
+        ""
+      ],
+      "Croatia": [
+        ""
+      ],
+      "Cuba": [
+        ""
+      ],
+      "Curaçao": [
+        ""
+      ],
+      "Cyprus": [
+        ""
+      ],
+      "Czech Republic": [
+        ""
+      ],
+      "Denmark": [
+        ""
+      ],
+      "Djibouti": [
+        ""
+      ],
+      "Dominica": [
+        ""
+      ],
+      "Dominican Republic": [
+        ""
+      ],
+      "Ecuador": [
+        ""
+      ],
+      "Egypt": [
+        ""
+      ],
+      "El Salvador": [
+        ""
+      ],
+      "Equatorial Guinea": [
+        ""
+      ],
+      "Eritrea": [
+        ""
+      ],
+      "Estonia": [
+        ""
+      ],
+      "Ethiopia": [
+        ""
+      ],
+      "Falkland Islands": [
+        ""
+      ],
+      "Faroe Islands": [
+        ""
+      ],
+      "Federated States of Micronesia": [
+        ""
+      ],
+      "Fiji": [
+        ""
+      ],
+      "Finland": [
+        ""
+      ],
+      "France": [
+        ""
+      ],
+      "French Guiana": [
+        ""
+      ],
+      "French Polynesia": [
+        ""
+      ],
+      "French Southern Territories": [
+        ""
+      ],
+      "Gabon": [
+        ""
+      ],
+      "Gambia": [
+        ""
+      ],
+      "Georgia": [
+        ""
+      ],
+      "Germany": [
+        ""
+      ],
+      "Ghana": [
+        ""
+      ],
+      "Gibraltar": [
+        ""
+      ],
+      "Greece": [
+        ""
+      ],
+      "Greenland": [
+        ""
+      ],
+      "Grenada": [
+        ""
+      ],
+      "Guadeloupe": [
+        ""
+      ],
+      "Guam": [
+        ""
+      ],
+      "Guatemala": [
+        ""
+      ],
+      "Guernsey": [
+        ""
+      ],
+      "Guinea": [
+        ""
+      ],
+      "Guinea-Bissau": [
+        ""
+      ],
+      "Guyana": [
+        ""
+      ],
+      "Haiti": [
+        ""
+      ],
+      "Heard Island and McDonald Islands": [
+        ""
+      ],
+      "Holy See (Vatican City State)": [
+        ""
+      ],
+      "Honduras": [
+        ""
+      ],
+      "Hong Kong": [
+        ""
+      ],
+      "Hungary": [
+        ""
+      ],
+      "Iceland": [
+        ""
+      ],
+      "India": [
+        ""
+      ],
+      "Indonesia": [
+        ""
+      ],
+      "International": [
+        ""
+      ],
+      "Iran": [
+        ""
+      ],
+      "Iraq": [
+        ""
+      ],
+      "Ireland": [
+        ""
+      ],
+      "Isle of Man": [
+        ""
+      ],
+      "Israel": [
+        ""
+      ],
+      "Italy": [
+        ""
+      ],
+      "Jamaica": [
+        ""
+      ],
+      "Japan": [
+        ""
+      ],
+      "Jersey": [
+        ""
+      ],
+      "Jordan": [
+        ""
+      ],
+      "Kazakhstan": [
+        ""
+      ],
+      "Kenya": [
+        ""
+      ],
+      "Kiribati": [
+        ""
+      ],
+      "Kosovo": [
+        ""
+      ],
+      "Kuwait": [
+        ""
+      ],
+      "Kyrgyzstan": [
+        ""
+      ],
+      "Laos": [
+        ""
+      ],
+      "Latvia": [
+        ""
+      ],
+      "Lebanon": [
+        ""
+      ],
+      "Lesotho": [
+        ""
+      ],
+      "Liberia": [
+        ""
+      ],
+      "Libya": [
+        ""
+      ],
+      "Liechtenstein": [
+        ""
+      ],
+      "Lithuania": [
+        ""
+      ],
+      "Luxembourg": [
+        ""
+      ],
+      "Macao": [
+        ""
+      ],
+      "Madagascar": [
+        ""
+      ],
+      "Malawi": [
+        ""
+      ],
+      "Malaysia": [
+        ""
+      ],
+      "Maldives": [
+        ""
+      ],
+      "Mali": [
+        ""
+      ],
+      "Malta": [
+        ""
+      ],
+      "Marshall Islands": [
+        ""
+      ],
+      "Martinique": [
+        ""
+      ],
+      "Mauritania": [
+        ""
+      ],
+      "Mauritius": [
+        ""
+      ],
+      "Mayotte": [
+        ""
+      ],
+      "Mexico": [
+        ""
+      ],
+      "Moldova": [
+        ""
+      ],
+      "Monaco": [
+        ""
+      ],
+      "Mongolia": [
+        ""
+      ],
+      "Montenegro": [
+        ""
+      ],
+      "Montserrat": [
+        ""
+      ],
+      "Morocco": [
+        ""
+      ],
+      "Mozambique": [
+        ""
+      ],
+      "Namibia": [
+        ""
+      ],
+      "Nauru": [
+        ""
+      ],
+      "Nepal": [
+        ""
+      ],
+      "Netherlands": [
+        ""
+      ],
+      "New Caledonia": [
+        ""
+      ],
+      "New Zealand": [
+        ""
+      ],
+      "Nicaragua": [
+        ""
+      ],
+      "Niger": [
+        ""
+      ],
+      "Nigeria": [
+        ""
+      ],
+      "Niue": [
+        ""
+      ],
+      "Norfolk Island": [
+        ""
+      ],
+      "North Korea": [
+        ""
+      ],
+      "North Macedonia": [
+        ""
+      ],
+      "Northern Mariana Islands": [
+        ""
+      ],
+      "Norway": [
+        ""
+      ],
+      "Oman": [
+        ""
+      ],
+      "Pakistan": [
+        ""
+      ],
+      "Palau": [
+        ""
+      ],
+      "Palestine": [
+        ""
+      ],
+      "Panama": [
+        ""
+      ],
+      "Papua New Guinea": [
+        ""
+      ],
+      "Paraguay": [
+        ""
+      ],
+      "Peru": [
+        ""
+      ],
+      "Philippines": [
+        ""
+      ],
+      "Pitcairn": [
+        ""
+      ],
+      "Poland": [
+        ""
+      ],
+      "Portugal": [
+        ""
+      ],
+      "Puerto Rico": [
+        ""
+      ],
+      "Qatar": [
+        ""
+      ],
+      "Reunion": [
+        ""
+      ],
+      "Romania": [
+        ""
+      ],
+      "Russia": [
+        ""
+      ],
+      "Rwanda": [
+        ""
+      ],
+      "Saint Barthélemy": [
+        ""
+      ],
+      "Saint Helena": [
+        ""
+      ],
+      "Saint Kitts and Nevis": [
+        ""
+      ],
+      "Saint Lucia": [
+        ""
+      ],
+      "Saint Martin (French Part)": [
+        ""
+      ],
+      "Saint Pierre and Miquelon": [
+        ""
+      ],
+      "Saint Vincent and the Grenadines": [
+        ""
+      ],
+      "Samoa": [
+        ""
+      ],
+      "San Marino": [
+        ""
+      ],
+      "Sao Tome and Principe": [
+        ""
+      ],
+      "Saudi Arabia": [
+        ""
+      ],
+      "Senegal": [
+        ""
+      ],
+      "Serbia": [
+        ""
+      ],
+      "Seychelles": [
+        ""
+      ],
+      "Sierra Leone": [
+        ""
+      ],
+      "Singapore": [
+        ""
+      ],
+      "Sint Maarten": [
+        ""
+      ],
+      "Slovakia": [
+        ""
+      ],
+      "Slovenia": [
+        ""
+      ],
+      "Solomon Islands": [
+        ""
+      ],
+      "Somalia": [
+        ""
+      ],
+      "South Africa": [
+        ""
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        ""
+      ],
+      "South Korea": [
+        ""
+      ],
+      "South Ossetia": [
+        ""
+      ],
+      "South Sudan": [
+        ""
+      ],
+      "Spain": [
+        ""
+      ],
+      "Sri Lanka": [
+        ""
+      ],
+      "Sudan": [
+        ""
+      ],
+      "Suriname": [
+        ""
+      ],
+      "Svalbard and Jan Mayen": [
+        ""
+      ],
+      "Swaziland": [
+        ""
+      ],
+      "Sweden": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "Syria": [
+        ""
+      ],
+      "Taiwan": [
+        ""
+      ],
+      "Tajikistan": [
+        ""
+      ],
+      "Tanzania": [
+        ""
+      ],
+      "Thailand": [
+        ""
+      ],
+      "Timor-Leste": [
+        ""
+      ],
+      "Togo": [
+        ""
+      ],
+      "Tokelau": [
+        ""
+      ],
+      "Tonga": [
+        ""
+      ],
+      "Trinidad and Tobago": [
+        ""
+      ],
+      "Tristan da Cunha": [
+        ""
+      ],
+      "Tunisia": [
+        ""
+      ],
+      "Turkey": [
+        ""
+      ],
+      "Turkmenistan": [
+        ""
+      ],
+      "Turks and Caicos Islands": [
+        ""
+      ],
+      "Tuvalu": [
+        ""
+      ],
+      "Uganda": [
+        ""
+      ],
+      "Ukraine": [
+        ""
+      ],
+      "United Arab Emirates": [
+        ""
+      ],
+      "United Kingdom": [
+        ""
+      ],
+      "United States": [
+        ""
+      ],
+      "United States Minor Outlying Islands": [
+        ""
+      ],
+      "Uruguay": [
+        ""
+      ],
+      "Uzbekistan": [
+        ""
+      ],
+      "Vanuatu": [
+        ""
+      ],
+      "Venezuela": [
+        ""
+      ],
+      "Vietnam": [
+        ""
+      ],
+      "Virgin Islands, British": [
+        ""
+      ],
+      "Virgin Islands, U.S.": [
+        ""
+      ],
+      "Wallis and Futuna": [
+        ""
+      ],
+      "Western Sahara": [
+        ""
+      ],
+      "Yemen": [
+        ""
+      ],
+      "Zambia": [
+        ""
+      ],
+      "Zimbabwe": [
+        ""
+      ],
+      "Åland Islands": [
+        ""
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(via ${ entryCountryName })"
@@ -1511,9 +2277,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Déchiffrement des contacts en cours... Ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts... Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pouvez fermer cette boîte de dialogue."
       ],
@@ -1735,9 +2498,6 @@
       "Condition incomplete": [
         "Condition incomplète"
       ],
-      "Contact signature not verified": [
-        "Signature du contact non vérifiée"
-      ],
       "Could not find address ${ email }.": [
         "Impossible de trouver l'adresse ${ email }."
       ],
@@ -1843,9 +2603,6 @@
         "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant",
         "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers Proton existants"
       ],
-      "Missing signature": [
-        "Signature manquante"
-      ],
       "Name on card required": [
         "Nom sur la carte obligatoire"
       ],
@@ -1935,16 +2692,13 @@
         "Processus abandonné"
       ],
       "Request timed out": [
-        ""
+        "La requête a expiré"
       ],
       "Require at least one action": [
         "Nécessite au moins une action"
       ],
       "Require at least one condition": [
         "Nécessite au moins une condition"
-      ],
-      "Signature not verified": [
-        "Signature non vérifiée"
       ],
       "Signature verification failed": [
         "La vérification de la signature a échoué"
@@ -2607,6 +3361,15 @@
       ],
       "Value / Data / Points to": [
         "Valeur / Données / Pointe vers"
+      ]
+    },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "",
+        ""
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        ""
       ]
     },
     "Human verification method": {
@@ -3427,9 +4190,6 @@
       "Creating your Proton account": [
         "Création de votre compte Proton"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
-      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actuellement tout le stockage disponible est alloué au compte administrateur. Veuillez réduire le stockage du compte admin afin de libérer de l’espace pour les autres utilisateurs. Vous pouvez augmenter le stockage total à tout moment en améliorant votre compte."
       ],
@@ -3745,7 +4505,7 @@
         "Installez un fichier de configuration serveur pour vous connecter à un serveur spécifique du pays de votre choix."
       ],
       "Internet connection lost": [
-        ""
+        "Connexion Internet perdue"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Connexion Internet perdue. Veuillez vérifier la connectivité de votre appareil."
@@ -3890,9 +4650,6 @@
       ],
       "No results found": [
         "Aucun résultat trouvé"
-      ],
-      "No subscription yet": [
-        "Aucun abonnement pour l'instant"
       ],
       "Normal": [
         "Normal"
@@ -4120,6 +4877,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Envoyé avec la messagerie sécurisée <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "Server is currently down": [
         "Ce serveur est actuellement indisponible"
       ],
@@ -4130,7 +4890,7 @@
         "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
       ],
       "Session timed out": [
-        ""
+        "Session expirée"
       ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
@@ -4174,9 +4934,6 @@
       "Thank you for supporting our mission.": [
         "Merci de soutenir notre mission."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'application a besoin de déchiffrer localement vos contacts avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
-      ],
       "The calendar will be removed from your account.": [
         "Le calendrier sera retiré de votre compte."
       ],
@@ -4188,9 +4945,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "Le nom sera visible par vos utilisateurs lorsqu'ils seront connectés."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Il n'y a aucun détail de facturation disponible pour votre abonnement actuel."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ces fichiers de configuration vous permettent de choisir le serveur ProtonVPN auquel vous vous connectez lorsque vous utilisez une application VPN tierce ou que vous configurez une connexion VPN sur un routeur."
@@ -4345,9 +5099,6 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "Passez à l'offre ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } ou ${ PLAN_NAMES[PLANS.PLUS] } pour activer les réponses automatiques quand vous n'êtes pas au bureau."
       ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Passez à une offre payante pour accéder à des fonctionnalités haut de gamme et augmenter votre espace de stockage."
-      ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Passez à une offre payante pour débloquer la prise en charge IMAP/SMTP via ProtonMail Bridge."
       ],
@@ -4368,9 +5119,6 @@
       ],
       "Users": [
         "Utilisateurs"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "Les utilisateurs ne peuvent pas modifier les paramètres de l'organisation. Si vous avez besoin des privilèges administrateur, contactez votre administrateur système."
       ],
       "Verification can take a few minutes.": [
         "La vérification peut prendre quelques minutes."
@@ -4415,7 +5163,7 @@
         "Nous vous informerons quand l'importation sera terminée."
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "Nous enverrons un nouveau code de vérification à ${ strong }"
       ],
       "Web URL": [
         "URL Web"
@@ -4451,7 +5199,7 @@
         "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "Souhaiteriez-vous recevoir un nouveau code de vérification?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo lit vos données personnelles afin de permettre aux annonceurs, aux agences de renseignements américaines et à d'autres tiers d’y accéder. Pour une meilleure protection de la vie privée, créez une adresse électronique sécurisée."
@@ -5043,7 +5791,7 @@
         "${ UsedMembers } sur ${ MaxMembers } utilisateurs"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        ""
+        "(temporairement indisponible. Veuillez vérifier plus tard)"
       ],
       "Account storage": [
         "Espace de stockage du compte"
@@ -5108,9 +5856,6 @@
       "Auto-load embedded images": [
         "Charger automatiquement les images intégrées"
       ],
-      "Automatically save contacts": [
-        "Enregistrer automatiquement les contacts"
-      ],
       "Block email tracking": [
         "Bloquer le suivi des courriels"
       ],
@@ -5151,7 +5896,7 @@
         "Code"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "Le code est composé de 6 chiffres sans espaces"
       ],
       "Color": [
         "Couleur"
@@ -5934,6 +6679,9 @@
       "Go to subscription plans": [
         "Aller aux abonnements"
       ],
+      "How to unlock data": [
+        "Comment déverrouiller les données"
+      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -5972,15 +6720,17 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quelle est la différence entre les protocoles UDP et TCP?"
+      ],
+      "Why set recovery methods?": [
+        "Pourquoi définir une méthode de récupération?"
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } sur ${ calendarsToBeCreated } créé",
-        "${ createdCalendars } sur ${ calendarsToBeCreated } créés"
-      ],
       "Almost there": [
         "Nous y sommes presque"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        ""
       ],
       "Connecting to your email provider": [
         "Connexion à votre fournisseur de messagerie"
@@ -6346,9 +7096,6 @@
     "Navigation": {
       "Back to Calendar": [
         "Revenir au calendrier"
-      ],
-      "Back to Contacts": [
-        "Retour aux contacts"
       ],
       "Back to Drive": [
         "Revenir à Drive"
@@ -6819,6 +7566,9 @@
       "Proton username": [
         "Nom d'utilisateur Proton"
       ],
+      "Search settings": [
+        "Paramètres de recherche"
+      ],
       "Search users": [
         "Rechercher des utilisateurs"
       ],
@@ -6974,14 +7724,6 @@
         "privé"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } sur ${ countContacts } contacts exportés avec succès."
-      ],
-      "No contacts exported.": [
-        "Aucun contact exporté."
-      ]
-    },
     "Property type": {
       "Address": [
         "Adresse"
@@ -7012,6 +7754,47 @@
       ],
       "Work": [
         "Bureau"
+      ]
+    },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        ""
+      ],
+      "Cancel": [
+        "Annuler"
+      ],
+      "Email address has been verified.": [
+        ""
+      ],
+      "Email address not yet verified.": [
+        ""
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        ""
+      ],
+      "Send verification email": [
+        "Envoyer le courriel de vérification"
+      ],
+      "There was a problem verifying your email address.": [
+        ""
+      ],
+      "Verification email sent to ${ email.Value }": [
+        "Courriel de vérification envoyé à ${ email.Value }"
+      ],
+      "Verify now": [
+        ""
+      ],
+      "Verify recovery email?": [
+        "Vérifier le courriel de récupération?"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        ""
+      ],
+      "You can safely close this tab.": [
+        ""
+      ],
+      "Your recovery email has been successfully verified.": [
+        ""
       ]
     },
     "Recovery method": {
@@ -7078,59 +7861,8 @@
       "Account": [
         "Compte"
       ],
-      "Appearance": [
-        "Apparence"
-      ],
-      "Auto reply": [
-        "Réponses automatiques"
-      ],
-      "Backup and export": [
-        "Sauvegarde et exportation"
-      ],
-      "Calendars": [
-        "Calendriers"
-      ],
-      "Domain names": [
-        "Noms de domaine"
-      ],
-      "Email privacy": [
-        "Confidentialité des courriels"
-      ],
-      "Encryption and keys": [
-        "Chiffrement et clés"
-      ],
-      "Filters": [
-        "Filtres"
-      ],
-      "Folders and labels": [
-        "Dossiers et labels"
-      ],
-      "General": [
-        "Général"
-      ],
-      "Identity and addresses": [
-        "Identité et adresses"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Import & export": [
-        "Importation & exportation"
-      ],
-      "Multi-user support": [
-        "Prise en charge multiutilisateur·rice"
-      ],
       "Organization": [
         "Organisation"
-      ],
-      "Organization and keys": [
-        "Organisation et clés"
-      ],
-      "Users and addresses": [
-        "Utilisateurs et adresses"
-      ],
-      "VPN apps": [
-        "Applications RPV"
       ]
     },
     "Settings update growler warning": {
@@ -7734,9 +8466,6 @@
       "Contact encryption keys": [
         "Clés de chiffrement des contacts"
       ],
-      "Contacts": [
-        "Contacts"
-      ],
       "Continue with partial import?": [
         "Poursuivre l'importation partielle?"
       ],
@@ -7873,7 +8602,7 @@
         "Courriel"
       ],
       "Email composer": [
-        ""
+        "Composeur de message"
       ],
       "Email encryption keys": [
         "Clés de chiffrement des courriels"
@@ -7893,9 +8622,6 @@
       "Error": [
         "Erreur"
       ],
-      "Export": [
-        "Exporter"
-      ],
       "Export calendar": [
         "Exporter le calendrier"
       ],
@@ -7904,9 +8630,6 @@
       ],
       "Export public key": [
         "Exporter la clé publique"
-      ],
-      "Exporting contacts": [
-        "Exportation des contacts"
       ],
       "External PGP settings": [
         "Paramètres PGP externes"
@@ -7929,6 +8652,9 @@
       "Generate missing keys": [
         "Générer les clés manquantes"
       ],
+      "Generate new recovery phrase?": [
+        "Générer une nouvelle phrase de récupération?"
+      ],
       "Get ProtonVPN Plus to access all servers": [
         "Obtenez ProtonVPN Plus pour accéder à tous les serveurs"
       ],
@@ -7946,9 +8672,6 @@
       ],
       "Import": [
         "Importer"
-      ],
-      "Import & export": [
-        "Importation & exportation"
       ],
       "Import as simple event?": [
         "Importer comme simple événement?",
@@ -8200,9 +8923,6 @@
       "Sign in again to continue": [
         "Connectez-vous à nouveau pour continuer"
       ],
-      "Sorry, you can't access this page": [
-        "Désolé, vous ne pouvez pas accéder à cette page"
-      ],
       "Sort folders alphabetically": [
         "Trier les dossiers par ordre alphabétique"
       ],
@@ -8211,9 +8931,6 @@
       ],
       "Spam filters": [
         "Filtres antipourriels"
-      ],
-      "Spy Tracker Protection": [
-        "Protection contre les traqueurs espions"
       ],
       "Start a new import": [
         "Démarrer une nouvelle importation"
@@ -8268,9 +8985,6 @@
       ],
       "Unsupported browser": [
         "Navigateur non supporté"
-      ],
-      "Upgrade": [
-        "Changer d'offre"
       ],
       "Username": [
         "Nom d'utilisateur·rice"
@@ -8464,6 +9178,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "Envoyez l'ensemble de votre trafic à travers le réseau Tor en un seul clic."
       ],
+      "Set how your list of messages looks like by default.": [
+        "Sélectionnez l'apparence par défaut de votre liste de messages."
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "Définissez la taille par défaut de la fenêtre contextuelle du composeur comme devant être petite ou en plein écran."
       ],
@@ -8517,9 +9234,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Lorsque vous cliquez sur un lien, cette fonction d'anti-hameçonnage vous demandera de confirmer l'URL de la page Web."
-      ],
-      "You do not have any contacts to export": [
-        "Vous n'avez pas de contacts à exporter"
       ],
       "You have locally decrypted this key": [
         "Vous avez déchiffré cette clé localement"

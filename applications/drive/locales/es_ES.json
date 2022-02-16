@@ -445,6 +445,9 @@
       "Share file": [
         "Compartir archivo"
       ],
+      "Share item": [
+        ""
+      ],
       "Share options": [
         "Opciones de compartición"
       ],
@@ -564,9 +567,6 @@
       ],
       "View invoice": [
         "Ver factura"
-      ],
-      "View more": [
-        "Ver más"
       ],
       "Zoom in": [
         "Acercar"
@@ -982,6 +982,773 @@
         "${ monthsWithYears } meses"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        ""
+      ],
+      "Afghanistan": [
+        "Afganistán"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Argelia"
+      ],
+      "American Samoa": [
+        "Samoa Americana"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguila"
+      ],
+      "Antarctica": [
+        "Antártida"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua y Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        ""
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Austria"
+      ],
+      "Azerbaijan": [
+        "Azerbaiyán"
+      ],
+      "Bahamas": [
+        ""
+      ],
+      "Bahrain": [
+        ""
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        ""
+      ],
+      "Belgium": [
+        "Bélgica"
+      ],
+      "Belize": [
+        ""
+      ],
+      "Benin": [
+        ""
+      ],
+      "Bermuda": [
+        ""
+      ],
+      "Bhutan": [
+        ""
+      ],
+      "Bolivia": [
+        ""
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        ""
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia Herzegovina"
+      ],
+      "Botswana": [
+        ""
+      ],
+      "Bouvet Island": [
+        ""
+      ],
+      "Brazil": [
+        ""
+      ],
+      "British Indian Ocean Territory": [
+        ""
+      ],
+      "Brunei Darussalam": [
+        ""
+      ],
+      "Bulgaria": [
+        ""
+      ],
+      "Burkina Faso": [
+        ""
+      ],
+      "Burma": [
+        ""
+      ],
+      "Burundi": [
+        ""
+      ],
+      "Cambodia": [
+        ""
+      ],
+      "Cameroon": [
+        "Camerún"
+      ],
+      "Canada": [
+        ""
+      ],
+      "Cape Verde": [
+        "Cabo Verde"
+      ],
+      "Cayman Islands": [
+        ""
+      ],
+      "Central African Republic": [
+        "República Centroafricana"
+      ],
+      "Chad": [
+        ""
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Isla de Navidad"
+      ],
+      "Cocos (Keeling) Islands": [
+        ""
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        ""
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        ""
+      ],
+      "Cook Islands": [
+        "Islas Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Cote d'Ivoire\"": [
+        "Costa de Marfil"
+      ],
+      "Croatia": [
+        ""
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curazao"
+      ],
+      "Cyprus": [
+        "Chipre"
+      ],
+      "Czech Republic": [
+        "República Checa"
+      ],
+      "Denmark": [
+        "Dinamarca"
+      ],
+      "Djibouti": [
+        "Yibuti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "República Dominicana"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egipto"
+      ],
+      "El Salvador": [
+        ""
+      ],
+      "Equatorial Guinea": [
+        "Guinea Ecuatorial"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Ethiopia": [
+        "Etiopía"
+      ],
+      "Falkland Islands": [
+        ""
+      ],
+      "Faroe Islands": [
+        "Islas Faroe"
+      ],
+      "Federated States of Micronesia": [
+        ""
+      ],
+      "Fiji": [
+        ""
+      ],
+      "Finland": [
+        "Finlandia"
+      ],
+      "France": [
+        "Francia"
+      ],
+      "French Guiana": [
+        "Guyana Francesa"
+      ],
+      "French Polynesia": [
+        "Polinesia Francesa"
+      ],
+      "French Southern Territories": [
+        ""
+      ],
+      "Gabon": [
+        "Gabón"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Alemania"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grecia"
+      ],
+      "Greenland": [
+        "Groenlandia"
+      ],
+      "Grenada": [
+        "Granada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guam": [
+        ""
+      ],
+      "Guatemala": [
+        ""
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        ""
+      ],
+      "Guyana": [
+        ""
+      ],
+      "Haiti": [
+        ""
+      ],
+      "Heard Island and McDonald Islands": [
+        ""
+      ],
+      "Holy See (Vatican City State)": [
+        ""
+      ],
+      "Honduras": [
+        ""
+      ],
+      "Hong Kong": [
+        ""
+      ],
+      "Hungary": [
+        ""
+      ],
+      "Iceland": [
+        ""
+      ],
+      "India": [
+        ""
+      ],
+      "Indonesia": [
+        ""
+      ],
+      "International": [
+        ""
+      ],
+      "Iran": [
+        ""
+      ],
+      "Iraq": [
+        ""
+      ],
+      "Ireland": [
+        ""
+      ],
+      "Isle of Man": [
+        ""
+      ],
+      "Israel": [
+        ""
+      ],
+      "Italy": [
+        ""
+      ],
+      "Jamaica": [
+        ""
+      ],
+      "Japan": [
+        ""
+      ],
+      "Jersey": [
+        ""
+      ],
+      "Jordan": [
+        ""
+      ],
+      "Kazakhstan": [
+        ""
+      ],
+      "Kenya": [
+        ""
+      ],
+      "Kiribati": [
+        ""
+      ],
+      "Kosovo": [
+        ""
+      ],
+      "Kuwait": [
+        ""
+      ],
+      "Kyrgyzstan": [
+        ""
+      ],
+      "Laos": [
+        ""
+      ],
+      "Latvia": [
+        ""
+      ],
+      "Lebanon": [
+        ""
+      ],
+      "Lesotho": [
+        ""
+      ],
+      "Liberia": [
+        ""
+      ],
+      "Libya": [
+        ""
+      ],
+      "Liechtenstein": [
+        ""
+      ],
+      "Lithuania": [
+        ""
+      ],
+      "Luxembourg": [
+        ""
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagascar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malasia"
+      ],
+      "Maldives": [
+        "Maldivas"
+      ],
+      "Mali": [
+        "Malí"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Islas Marshall"
+      ],
+      "Martinique": [
+        ""
+      ],
+      "Mauritania": [
+        "Mauritania"
+      ],
+      "Mauritius": [
+        "Mauricio, islas"
+      ],
+      "Mayotte": [
+        ""
+      ],
+      "Mexico": [
+        "México"
+      ],
+      "Moldova": [
+        "Moldavia"
+      ],
+      "Monaco": [
+        "Mónaco"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        ""
+      ],
+      "Mozambique": [
+        "Mozambique"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        ""
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Países Bajos"
+      ],
+      "New Caledonia": [
+        "Nueva Caledonia"
+      ],
+      "New Zealand": [
+        "Nueva Zelanda"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "República del Níger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        ""
+      ],
+      "Norfolk Island": [
+        "Isla Norfolk"
+      ],
+      "North Korea": [
+        ""
+      ],
+      "North Macedonia": [
+        "Macedonia del Norte"
+      ],
+      "Northern Mariana Islands": [
+        ""
+      ],
+      "Norway": [
+        "Noruega"
+      ],
+      "Oman": [
+        "Omán"
+      ],
+      "Pakistan": [
+        "Pakistán"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panamá"
+      ],
+      "Papua New Guinea": [
+        "Papua Nueva Guinea"
+      ],
+      "Paraguay": [
+        ""
+      ],
+      "Peru": [
+        "Perú"
+      ],
+      "Philippines": [
+        "Filipinas"
+      ],
+      "Pitcairn": [
+        ""
+      ],
+      "Poland": [
+        "Polonia"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        ""
+      ],
+      "Reunion": [
+        ""
+      ],
+      "Romania": [
+        ""
+      ],
+      "Russia": [
+        ""
+      ],
+      "Rwanda": [
+        ""
+      ],
+      "Saint Barthélemy": [
+        ""
+      ],
+      "Saint Helena": [
+        ""
+      ],
+      "Saint Kitts and Nevis": [
+        ""
+      ],
+      "Saint Lucia": [
+        ""
+      ],
+      "Saint Martin (French Part)": [
+        "San Martín (parte francesa)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "San Pedro y Miquelón"
+      ],
+      "Saint Vincent and the Grenadines": [
+        ""
+      ],
+      "Samoa": [
+        ""
+      ],
+      "San Marino": [
+        ""
+      ],
+      "Sao Tome and Principe": [
+        ""
+      ],
+      "Saudi Arabia": [
+        ""
+      ],
+      "Senegal": [
+        ""
+      ],
+      "Serbia": [
+        ""
+      ],
+      "Seychelles": [
+        ""
+      ],
+      "Sierra Leone": [
+        ""
+      ],
+      "Singapore": [
+        ""
+      ],
+      "Sint Maarten": [
+        ""
+      ],
+      "Slovakia": [
+        ""
+      ],
+      "Slovenia": [
+        ""
+      ],
+      "Solomon Islands": [
+        ""
+      ],
+      "Somalia": [
+        ""
+      ],
+      "South Africa": [
+        ""
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Georgia del sur y las Islas Sandwich del sur"
+      ],
+      "South Korea": [
+        ""
+      ],
+      "South Ossetia": [
+        ""
+      ],
+      "South Sudan": [
+        ""
+      ],
+      "Spain": [
+        "España"
+      ],
+      "Sri Lanka": [
+        ""
+      ],
+      "Sudan": [
+        ""
+      ],
+      "Suriname": [
+        ""
+      ],
+      "Svalbard and Jan Mayen": [
+        ""
+      ],
+      "Swaziland": [
+        ""
+      ],
+      "Sweden": [
+        ""
+      ],
+      "Switzerland": [
+        "Suiza"
+      ],
+      "Syria": [
+        ""
+      ],
+      "Taiwan": [
+        "Taiwán"
+      ],
+      "Tajikistan": [
+        ""
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        ""
+      ],
+      "Timor-Leste": [
+        ""
+      ],
+      "Togo": [
+        ""
+      ],
+      "Tokelau": [
+        ""
+      ],
+      "Tonga": [
+        ""
+      ],
+      "Trinidad and Tobago": [
+        ""
+      ],
+      "Tristan da Cunha": [
+        ""
+      ],
+      "Tunisia": [
+        ""
+      ],
+      "Turkey": [
+        ""
+      ],
+      "Turkmenistan": [
+        ""
+      ],
+      "Turks and Caicos Islands": [
+        ""
+      ],
+      "Tuvalu": [
+        ""
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucrania"
+      ],
+      "United Arab Emirates": [
+        "Emiratos Árabes Unidos"
+      ],
+      "United Kingdom": [
+        "Reino Unido"
+      ],
+      "United States": [
+        "Estados Unidos"
+      ],
+      "United States Minor Outlying Islands": [
+        ""
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        ""
+      ],
+      "Vanuatu": [
+        ""
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        ""
+      ],
+      "Virgin Islands, U.S.": [
+        ""
+      ],
+      "Wallis and Futuna": [
+        ""
+      ],
+      "Western Sahara": [
+        "Sáhara Occidental"
+      ],
+      "Yemen": [
+        ""
+      ],
+      "Zambia": [
+        ""
+      ],
+      "Zimbabwe": [
+        ""
+      ],
+      "Åland Islands": [
+        "Islas Aland"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Desconocido"
@@ -1121,9 +1888,6 @@
       "Failed to download a folder": [
         ""
       ],
-      "Failed to load the link": [
-        ""
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
       ],
@@ -1148,11 +1912,11 @@
       "Image upload failed": [
         "Error al cargar la imagen"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Credenciales de acceso incorrectas. Por favor, inténtalo de nuevo"
+      "Incorrect login credentials. Please try again.": [
+        ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Contraseña del buzón incorrecta. Por favor, inténtalo de nuevo"
+      "Incorrect mailbox password. Please try again.": [
+        ""
       ],
       "Incorrect password. Please try again.": [
         "Contraseña incorrecta. Por favor, inténtalo de nuevo."
@@ -1246,7 +2010,7 @@
         "El proceso fue anulado"
       ],
       "Request timed out": [
-        ""
+        "Tiempo de espera agotado"
       ],
       "Signature not verified": [
         "Firma no verificada"
@@ -1300,7 +2064,7 @@
         ""
       ],
       "The original file has missing session key": [
-        ""
+        "Al archivo original le falta una clave de sesión"
       ],
       "The original file is not uploaded yet, please try again later": [
         "El archivo original aún no se ha cargado, inténtelo de nuevo más tarde"
@@ -2016,7 +2780,7 @@
         "Inicializando"
       ],
       "Internet connection lost": [
-        ""
+        "Sin conexión a Internet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Se ha perdido la conexión a Internet. Comprueba la conectividad de tu dispositivo."
@@ -2047,9 +2811,6 @@
       ],
       "Loading ${ appName }": [
         "Cargando ${ appName }"
-      ],
-      "Loading folder contents": [
-        "Cargando contenido de la carpeta"
       ],
       "Loading preview": [
         "Cargando previsualización"
@@ -2187,7 +2948,7 @@
         "Preparando enlace al archivo"
       ],
       "Preparing link to folder": [
-        ""
+        "Preparando enlace a la carpeta"
       ],
       "Preview": [
         "Previsualizar"
@@ -2220,8 +2981,8 @@
       "Screenshot(s) attached": [
         "Captura(s) de pantalla adjuntada(s)"
       ],
-      "Select an uploaded file and create a link to it.": [
-        "Selecciona un archivo subido y crea un enlace para él."
+      "Select an uploaded file or folder and create a link to it.": [
+        ""
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que deseas utilizar por defecto al enviar un correo electrónico a esta dirección."
@@ -2233,7 +2994,7 @@
         "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
       ],
       "Session timed out": [
-        ""
+        "Sesión agotada"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Configurar PGP te permite enviar correos electrónicos cifrados de extremo a extremo a usuarios fuera de ProtonMail que utilizan un servicio compatible con PGP."
@@ -2378,7 +3139,7 @@
         ""
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "Enviaremos un código de verificación nuevo a ${ strong }"
       ],
       "Week": [
         "Semana"
@@ -2564,6 +3325,9 @@
       ]
     },
     "Label": {
+      "# of accesses": [
+        ""
+      ],
       "(Expired)": [
         "(Expirado)"
       ],
@@ -2656,6 +3420,9 @@
       ],
       "Delete drive?": [
         "",
+        ""
+      ],
+      "Deleted": [
         ""
       ],
       "Display name": [
@@ -2761,6 +3528,9 @@
         "Gestionar etiquetas"
       ],
       "Merge a folder": [
+        ""
+      ],
+      "Modified": [
         ""
       ],
       "Name": [
@@ -2895,9 +3665,6 @@
       "Upload picture": [
         "Cargar imagen"
       ],
-      "Uploaded": [
-        "Subido"
-      ],
       "Username or ProtonMail address": [
         "Nombre de usuario o dirección de ProtonMail"
       ],
@@ -2987,16 +3754,11 @@
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } de ${ calendarsToBeCreated } creado",
-        "${ createdCalendars } de ${ calendarsToBeCreated } creados"
-      ],
-      "${ createdCalendars } of 1 created": [
-        "",
-        ""
-      ],
       "Almost there": [
         "Ya casi está"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        ""
       ],
       "Creating new calendars": [
         "Creando calendarios nuevos"
@@ -3157,6 +3919,10 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" restaurado de la papelera"
       ],
+      "${ count } item failed to be decrypted": [
+        "",
+        ""
+      ],
       "${ deletedCount } link to your file was deleted": [
         "${ deletedCount } enlace a tu archivo fue eliminado",
         "${ deletedCount } enlaces a tus archivos fueron eliminados"
@@ -3256,6 +4022,9 @@
       "File or folder is missing a name": [
         ""
       ],
+      "Link failed to be loaded": [
+        ""
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Mover ${ itemsToMoveCount } archivo",
         "Mover ${ itemsToMoveCount } archivos"
@@ -3280,13 +4049,25 @@
         "Mover ${ movingCount } elemento",
         "Mover ${ movingCount } elementos"
       ],
+      "Next page failed to be loaded": [
+        ""
+      ],
       "Not enough space to upload ${ formattedTotal }": [
+        ""
+      ],
+      "Root folder failed to be loaded": [
+        ""
+      ],
+      "Subfolder failed to be loaded": [
         ""
       ],
       "The link to your file failed to be deleted": [
         ""
       ],
       "The link to your file was deleted": [
+        ""
+      ],
+      "Trash failed to be emptied": [
         ""
       ],
       "Your old files will be deleted in 72 hours": [
@@ -3653,8 +4434,8 @@
       ]
     },
     "Success": {
-      "\"${ formattedName }\" created successfully": [
-        "\"${ formattedName }\" creado con éxito"
+      "\"${ name }\" created successfully": [
+        ""
       ],
       "${ nameElement } renamed successfully": [
         "${ nameElement } renombrado con éxito"
@@ -3708,9 +4489,6 @@
       ],
       "You have successfully unsubscribed": [
         "Ha cancelado su suscripción satisfactoriamente"
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        ""
       ]
     },
     "Suffix for price": {
@@ -4041,6 +4819,9 @@
       "Folder details": [
         "Detalles de la carpeta"
       ],
+      "Folders details": [
+        ""
+      ],
       "Gift code": [
         "Código promocional"
       ],
@@ -4058,6 +4839,9 @@
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
+      ],
+      "Items details": [
+        ""
       ],
       "Link confirmation": [
         "Confirmación de enlace"
@@ -4097,6 +4881,12 @@
       ],
       "Number of files": [
         "Número de archivos"
+      ],
+      "Number of folders": [
+        ""
+      ],
+      "Number of items": [
+        ""
       ],
       "Open actions dropdown": [
         "Abrir acciones desplegables"

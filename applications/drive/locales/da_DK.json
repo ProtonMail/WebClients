@@ -185,7 +185,7 @@
         "Detaljer"
       ],
       "Didn't receive the code?": [
-        ""
+        "Ikke modtaget koden?"
       ],
       "Done": [
         "Færdig"
@@ -209,7 +209,7 @@
         "Rediger telefonnummer"
       ],
       "Edit sign-in details": [
-        ""
+        "Rediger login-detaljer"
       ],
       "Email settings": [
         "E-mailindstillinger"
@@ -445,6 +445,9 @@
       "Share file": [
         "Del fil"
       ],
+      "Share item": [
+        "Del element"
+      ],
       "Share options": [
         "Delemuligheder"
       ],
@@ -554,19 +557,16 @@
         "Verificer"
       ],
       "Verify account": [
-        ""
+        "Verificer konto"
       ],
       "Verify email": [
-        ""
+        "Verificer e-mail"
       ],
       "View": [
         "Vis"
       ],
       "View invoice": [
         "Vis faktura"
-      ],
-      "View more": [
-        "Vis mere"
       ],
       "Zoom in": [
         "Zoom ind"
@@ -982,6 +982,773 @@
         "${ monthsWithYears } måneder"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abkhasien"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albanien"
+      ],
+      "Algeria": [
+        "Algeriet"
+      ],
+      "American Samoa": [
+        "Amerikansk Samoa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktis"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua og Barbudas"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenien"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension"
+      ],
+      "Australia": [
+        "Australien"
+      ],
+      "Austria": [
+        "Østrig"
+      ],
+      "Azerbaijan": [
+        "Aserbajdsjan"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Hviderusland"
+      ],
+      "Belgium": [
+        "Belgien"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius og Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnien-Hercegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvetøen"
+      ],
+      "Brazil": [
+        "Brasilien"
+      ],
+      "British Indian Ocean Territory": [
+        "Britiske territorium i Det Indiske Ocean"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgarien"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        "Burma"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambodja"
+      ],
+      "Cameroon": [
+        "Cameroon"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Kap Verde"
+      ],
+      "Cayman Islands": [
+        "Caymanøerne"
+      ],
+      "Central African Republic": [
+        "Den Centralafrikanske Republik"
+      ],
+      "Chad": [
+        "Tchad"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "Kina"
+      ],
+      "Christmas Island": [
+        "Christmas Island"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocosøerne"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Comorerne"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, Demokratiske Republik"
+      ],
+      "Cook Islands": [
+        "Cookøerne"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Cote d'Ivoire\"": [
+        "Elfenbenskysten"
+      ],
+      "Croatia": [
+        "Kroatien"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cypern"
+      ],
+      "Czech Republic": [
+        "Tjekkiet"
+      ],
+      "Denmark": [
+        "Danmark"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Dominikanske Republik"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egypten"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Ækvatorialguinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estland"
+      ],
+      "Ethiopia": [
+        "Etiopien"
+      ],
+      "Falkland Islands": [
+        "Falklandsøerne"
+      ],
+      "Faroe Islands": [
+        "Færøerne"
+      ],
+      "Federated States of Micronesia": [
+        "Mikronesien"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finland"
+      ],
+      "France": [
+        "Frankrig"
+      ],
+      "French Guiana": [
+        "Fransk Guyana"
+      ],
+      "French Polynesia": [
+        "Fransk Polynesien"
+      ],
+      "French Southern Territories": [
+        "Franske sydlige territorier"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgien"
+      ],
+      "Germany": [
+        "Tyskland"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grækenland"
+      ],
+      "Greenland": [
+        "Grønland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard Island og McDonald Islands"
+      ],
+      "Holy See (Vatican City State)": [
+        "Den Hellige Stol (Vatikanstaten)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Ungarn"
+      ],
+      "Iceland": [
+        "Island"
+      ],
+      "India": [
+        "Indien"
+      ],
+      "Indonesia": [
+        "Indonesien"
+      ],
+      "International": [
+        "International"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irland"
+      ],
+      "Isle of Man": [
+        "Isle of Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italien"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordan"
+      ],
+      "Kazakhstan": [
+        "Kasakhstan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirgisistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letland"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libyen"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Litauen"
+      ],
+      "Luxembourg": [
+        "Luxembourg"
+      ],
+      "Macao": [
+        "Macau"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaysia"
+      ],
+      "Maldives": [
+        "Maldiverne"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshalløerne"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauretanien"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexico"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongoliet"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marokko"
+      ],
+      "Mozambique": [
+        "Mozambique"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Nederlandene"
+      ],
+      "New Caledonia": [
+        "Ny Kaledonien"
+      ],
+      "New Zealand": [
+        "New Zealand"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk Island"
+      ],
+      "North Korea": [
+        "Nordkorea"
+      ],
+      "North Macedonia": [
+        "Nordmakedonien"
+      ],
+      "Northern Mariana Islands": [
+        "Nordmarianerne"
+      ],
+      "Norway": [
+        "Norge"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palæstina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Ny Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filippinerne"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polen"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Reunion"
+      ],
+      "Romania": [
+        "Rumænien"
+      ],
+      "Russia": [
+        "Rusland"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Skt. Barthélemy"
+      ],
+      "Saint Helena": [
+        "Sankt Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts og Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (franske del)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre og Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent og Grenadinerne"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome og Principe"
+      ],
+      "Saudi Arabia": [
+        "Saudi-Arabien"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbien"
+      ],
+      "Seychelles": [
+        "Seychellerne"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovakiet"
+      ],
+      "Slovenia": [
+        "Slovenien"
+      ],
+      "Solomon Islands": [
+        "Salomon-øerne"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Sydafrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Sydgeorgien og de sydlige Sandwichøer"
+      ],
+      "South Korea": [
+        "Sydkorea"
+      ],
+      "South Ossetia": [
+        "Sydossetien"
+      ],
+      "South Sudan": [
+        "Sydsudan"
+      ],
+      "Spain": [
+        "Spanien"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard og Jan Mayen"
+      ],
+      "Swaziland": [
+        "Swaziland"
+      ],
+      "Sweden": [
+        "Sverige"
+      ],
+      "Switzerland": [
+        "Schweiz"
+      ],
+      "Syria": [
+        "Syrien"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tadsjikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailand"
+      ],
+      "Timor-Leste": [
+        "Timor-Leste"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad og Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunesien"
+      ],
+      "Turkey": [
+        "Tyrkiet"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks- og Caicosøerne"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukraine"
+      ],
+      "United Arab Emirates": [
+        "Forenede Arabiske Emirater"
+      ],
+      "United Kingdom": [
+        "Storbritannien"
+      ],
+      "United States": [
+        "USA"
+      ],
+      "United States Minor Outlying Islands": [
+        "USA's ydre småøer"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Jomfruøerne, britiske"
+      ],
+      "Virgin Islands, U.S.": [
+        "Jomfruøerne, USA"
+      ],
+      "Wallis and Futuna": [
+        "Wallis og Futuna"
+      ],
+      "Western Sahara": [
+        "Vestsahara"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Ålandsøerne"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Ukendt"
@@ -1121,9 +1888,6 @@
       "Failed to download a folder": [
         "Kunne ikke downloade en mappe"
       ],
-      "Failed to load the link": [
-        "Linket kunne ikke indlæses"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen \"${ item.name }\" kan ikke uploades på grund af \"${ error }\" fejl"
       ],
@@ -1148,11 +1912,11 @@
       "Image upload failed": [
         "Billed-upload mislykkedes"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Forkerte login-oplysninger. Prøv venligst igen"
+      "Incorrect login credentials. Please try again.": [
+        "Forkerte loginoplysninger. Prøv venligst igen."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Forkert adgangskode til postkasse. Prøv venligst igen"
+      "Incorrect mailbox password. Please try again.": [
+        "Forkert adgangskode til postkasse. Prøv venligst igen."
       ],
       "Incorrect password. Please try again.": [
         "Forkert adgangskode, prøv venligst igen."
@@ -1246,7 +2010,7 @@
         "Proces afbrudt"
       ],
       "Request timed out": [
-        ""
+        "Forespørgsel fik timeout"
       ],
       "Signature not verified": [
         "Signatur ikke bekræftet"
@@ -1578,16 +2342,16 @@
     },
     "Info": {
       "${ activeDownloadsCount } downloading": [
-        "",
-        ""
+        "${ activeDownloadsCount } downloader",
+        "${ activeDownloadsCount } downloader"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "",
-        ""
+        "${ activeDownloadsCount } downloader (${ downloadProgress }%)",
+        "${ activeDownloadsCount } downloader (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "",
-        ""
+        "${ activeUploadsCount } uploader (${ uploadProgress }%)",
+        "${ activeUploadsCount } uploader (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadresse",
@@ -1610,7 +2374,7 @@
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } annulleret",
-        ""
+        "${ canceledCount } annulleret"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } medlem",
@@ -1637,12 +2401,12 @@
         "${ doneCount } færdig"
       ],
       "${ doneDownloadsCount } downloaded": [
-        "",
-        ""
+        "${ doneDownloadsCount } downloadet",
+        "${ doneDownloadsCount } downloadet"
       ],
       "${ doneUploadsCount } uploaded": [
-        "",
-        ""
+        "${ doneUploadsCount } uploadet",
+        "${ doneUploadsCount } uploadet"
       ],
       "${ errorCount } failed": [
         "${ errorCount } mislykkedes",
@@ -1670,8 +2434,8 @@
         "${ numContacts } kontakter"
       ],
       "${ pausedCount } paused": [
-        "",
-        ""
+        "${ pausedCount } sat på pause",
+        "${ pausedCount } sat på pause"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } på dit abonnement ved at skifte til ${ annualBilling }"
@@ -2016,7 +2780,7 @@
         "Initialiserer"
       ],
       "Internet connection lost": [
-        ""
+        "Internetforbindelse mistet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetforbindelse tabt. Kontroller venligst din enheds forbindelse."
@@ -2047,9 +2811,6 @@
       ],
       "Loading ${ appName }": [
         "Indlæser ${ appName }"
-      ],
-      "Loading folder contents": [
-        "Indlæser mappens indhold"
       ],
       "Loading preview": [
         "Indlæser forhåndsvisning"
@@ -2220,8 +2981,8 @@
       "Screenshot(s) attached": [
         "Screenshot(s) vedhæftet"
       ],
-      "Select an uploaded file and create a link to it.": [
-        "Vælg en uploadet fil og opret et link til den."
+      "Select an uploaded file or folder and create a link to it.": [
+        "Vælg en uploadet fil eller mappe og opret et link til den."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
@@ -2233,7 +2994,7 @@
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
       "Session timed out": [
-        ""
+        "Session er udløbet"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail-bruger, der benytter en PGP-kompatibel tjeneste."
@@ -2378,7 +3139,7 @@
         "Vi giver dig besked, når importen er færdig."
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
       "Week": [
         "Uge"
@@ -2396,7 +3157,7 @@
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "Ønsker du at modtage en ny verifikationskode?"
       ],
       "Would you like to restore your files?": [
         "Ønsker du at gendanne dine filer?"
@@ -2564,11 +3325,14 @@
       ]
     },
     "Label": {
+      "# of accesses": [
+        "# af adgange"
+      ],
       "(Expired)": [
         "(Udløbet)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        ""
+        "(Midlertidigt utilgængelig. Tjek igen senere.)"
       ],
       "Active": [
         "Aktiv"
@@ -2634,7 +3398,7 @@
         "By"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "Kode er på 6 cifre uden mellemrum"
       ],
       "Completed": [
         "Fuldført"
@@ -2657,6 +3421,9 @@
       "Delete drive?": [
         "Slet drev?",
         "Slet drev?"
+      ],
+      "Deleted": [
+        "Slettet"
       ],
       "Display name": [
         "Vist navn"
@@ -2762,6 +3529,9 @@
       ],
       "Merge a folder": [
         "Flet en mappe"
+      ],
+      "Modified": [
+        "Ændret"
       ],
       "Name": [
         "Navn"
@@ -2895,9 +3665,6 @@
       "Upload picture": [
         "Upload billed"
       ],
-      "Uploaded": [
-        "Uploadet"
-      ],
       "Username or ProtonMail address": [
         "Brugernavn eller ProtonMail-adresse"
       ],
@@ -2987,16 +3754,11 @@
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } af ${ calendarsToBeCreated } oprettet",
-        "${ createdCalendars } af ${ calendarsToBeCreated } oprettet"
-      ],
-      "${ createdCalendars } of 1 created": [
-        "",
-        ""
-      ],
       "Almost there": [
         "Næsten færdig"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Antal oprettede kalendere: ${ createdCalendars } ud af ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Opretter nye kalendere"
@@ -3157,6 +3919,10 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" gendannet fra papirkurv"
       ],
+      "${ count } item failed to be decrypted": [
+        "${ count } emne kunne ikke dekrypteres",
+        "${ count } emner kunne ikke dekrypteres"
+      ],
       "${ deletedCount } link to your file was deleted": [
         "${ deletedCount } link til din fil blev slettet",
         "${ deletedCount } links til dine filer blev slettet"
@@ -3256,6 +4022,9 @@
       "File or folder is missing a name": [
         "Der mangler et navn på en fil eller mappe"
       ],
+      "Link failed to be loaded": [
+        "Link kunne ikke indlæses"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Flyt ${ itemsToMoveCount } fil",
         "Flyt ${ itemsToMoveCount } filer"
@@ -3280,14 +4049,26 @@
         "Flyt ${ movingCount } element",
         "Flyt ${ movingCount } elementer"
       ],
+      "Next page failed to be loaded": [
+        "Næste side kunne ikke indlæses"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ikke nok plads til at uploade ${ formattedTotal }"
+      ],
+      "Root folder failed to be loaded": [
+        "Rodmappe kunne ikke indlæses"
+      ],
+      "Subfolder failed to be loaded": [
+        "Undermappe kunne ikke indlæses"
       ],
       "The link to your file failed to be deleted": [
         "Linket til din fil kunne ikke slettes"
       ],
       "The link to your file was deleted": [
         "Linket til din fil blev slettet"
+      ],
+      "Trash failed to be emptied": [
+        "Papirkurv kunne ikke tømmes"
       ],
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer vil blive slettet om 72 timer"
@@ -3653,8 +4434,8 @@
       ]
     },
     "Success": {
-      "\"${ formattedName }\" created successfully": [
-        "\"${ formattedName }\" oprettet"
+      "\"${ name }\" created successfully": [
+        "\"${ name }\" oprettet"
       ],
       "${ nameElement } renamed successfully": [
         "${ nameElement } omdøbt"
@@ -3708,9 +4489,6 @@
       ],
       "You have successfully unsubscribed": [
         "Du har nu afmeldt dig"
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Dine filer er blevet gendannet under \"Mine filer\"."
       ]
     },
     "Suffix for price": {
@@ -4041,6 +4819,9 @@
       "Folder details": [
         "Mappedetaljer"
       ],
+      "Folders details": [
+        "Mappedetaljer"
+      ],
       "Gift code": [
         "Gavekode"
       ],
@@ -4058,6 +4839,9 @@
       ],
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
+      ],
+      "Items details": [
+        "Elementdetaljer"
       ],
       "Link confirmation": [
         "Linkbekræftelse"
@@ -4097,6 +4881,12 @@
       ],
       "Number of files": [
         "Antal filer"
+      ],
+      "Number of folders": [
+        "Antal mapper"
+      ],
+      "Number of items": [
+        "Antal elementer"
       ],
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
