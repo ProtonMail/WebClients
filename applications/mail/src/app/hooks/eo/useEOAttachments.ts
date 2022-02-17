@@ -1,9 +1,11 @@
 import { RefObject, useState } from 'react';
 import { OpenPGPKey } from 'pmcrypto';
+import { c } from 'ttag';
 
 import { useHandler, useNotifications } from '@proton/components';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
+import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import {
@@ -72,6 +74,20 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
     const handleAddAttachments = useHandler(async (files: File[]) => {
         const embeddable = files.every((file) => isEmbeddable(file.type));
         const plainText = isPlainText(message.data);
+
+        const numAttachmentsAlreadyLinkedToMessage = message.data?.Attachments.length || 0;
+
+        if (numAttachmentsAlreadyLinkedToMessage + files.length > EO_REPLY_NUM_ATTACHMENTS_LIMIT) {
+            /*
+             * translator: EO_REPLY_NUM_ATTACHMENTS_LIMIT is the number of attachments maximum that we can have in an encrypted outside message
+             * Currently it's 10 written in digits
+             */
+            createNotification({
+                text: c('Error').t`Maximum number of attachments (${EO_REPLY_NUM_ATTACHMENTS_LIMIT}) exceeded.`,
+                type: 'error',
+            });
+            return;
+        }
 
         if (checkSize(createNotification, message, files)) {
             return;
