@@ -14,7 +14,7 @@ const ELEMENTS = [
 const getBaseURL = (base: HTMLBaseElement) => {
     // Make sure base has trailing slash
     const baseUrl = base.getAttribute('href') || '';
-    if (baseUrl.substr(-1, 1) !== '/') {
+    if (baseUrl.substring(baseUrl.length - 1, baseUrl.length) !== '/') {
         return `${baseUrl}/`;
     }
     return baseUrl;
