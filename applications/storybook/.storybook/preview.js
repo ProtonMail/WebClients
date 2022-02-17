@@ -37,15 +37,13 @@ const order = [
     'introduction-',
     'changelog-',
     'core-concepts-',
-    'core-concepts-theming-explanations-',
-    'core-concepts-theming-usage-',
-    'core-concepts-theming-taxonomy-',
+    '-theming-explanations-',
+    '-theming-usage-',
+    '-theming-taxonomy-',
     'components-',
-    'css-utilities-',
     'to-update-',
+    'css-utilities-',
 ];
-
-const priority = ['introduction-', 'changelog-', 'core-concepts-'];
 
 export const parameters = {
     viewMode: 'docs',
@@ -57,7 +55,7 @@ export const parameters = {
             const aName = a[0];
             const bName = b[0];
 
-            if (priority.some((name) => aName.includes(name) || bName.includes(name))) {
+            if (order.some((name) => aName.includes(name) || bName.includes(name))) {
                 const aIdx = order.findIndex((i) => aName.indexOf(i) > -1);
                 const bIdx = order.findIndex((i) => bName.indexOf(i) > -1);
                 return aIdx - bIdx;
