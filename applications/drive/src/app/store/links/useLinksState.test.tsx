@@ -78,6 +78,7 @@ describe('useLinksState', () => {
                     linkId0: ['linkId1', 'linkId4', 'linkId7'],
                     linkId1: ['linkId2', 'linkId3'],
                     linkId4: ['linkId5', 'linkId6'],
+                    linkId7: ['linkId8', 'linkId9'],
                 },
             },
         };
@@ -88,7 +89,7 @@ describe('useLinksState', () => {
         // Removed links from links.
         expect(Object.keys(result.shareId.links)).toMatchObject(['linkId0', 'linkId4', 'linkId5', 'linkId7']);
         // Removed parent from tree.
-        expect(Object.keys(result.shareId.tree)).toMatchObject(['linkId0', 'linkId4']);
+        expect(Object.keys(result.shareId.tree)).toMatchObject(['linkId0', 'linkId4', 'linkId7']);
         // Removed children from tree.
         expect(result.shareId.tree.linkId4).toMatchObject(['linkId5']);
     });
@@ -214,6 +215,14 @@ describe('useLinksState', () => {
                     trashed: 12345678,
                 } as EncryptedLink,
             },
+            {
+                encrypted: {
+                    linkId: 'linkId8',
+                    name: 'linkId8',
+                    parentLinkId: 'linkId7',
+                    trashed: 123456789,
+                } as EncryptedLink,
+            },
         ]);
         expect(result1.shareId.links.linkId7).toMatchObject({
             decrypted: { linkId: 'linkId7', name: 'linkId7', isStale: false },
@@ -221,6 +230,10 @@ describe('useLinksState', () => {
         });
         // Trashed link is removed from the parent.
         expect(result1.shareId.tree.linkId0).toMatchObject(['linkId1', 'linkId4']);
+        // Trashed parent trashes automatically also children.
+        expect(result1.shareId.links.linkId7.encrypted.trashed).toBe(12345678);
+        expect(result1.shareId.links.linkId8.encrypted.trashed).toBe(123456789);
+        expect(result1.shareId.links.linkId9.encrypted.trashed).toBe(12345678);
 
         // Restoring from trash re-adds link back to its parent.
         const result2 = addOrUpdate(result1, 'shareId', [
@@ -234,6 +247,10 @@ describe('useLinksState', () => {
             },
         ]);
         expect(result2.shareId.tree.linkId0).toMatchObject(['linkId1', 'linkId4', 'linkId7']);
+        // Restoring from trash removes also trashed flag to its children which were trashed with it.
+        expect(result1.shareId.links.linkId7.encrypted.trashed).toBe(null);
+        expect(result1.shareId.links.linkId8.encrypted.trashed).toBe(123456789);
+        expect(result1.shareId.links.linkId9.encrypted.trashed).toBe(null);
     });
 
     it('locks and unlocks links', () => {
@@ -437,7 +454,7 @@ describe('useLinksState', () => {
             'linkId9',
             'newLink',
         ]);
-        expect(Object.keys(result.shareId.tree)).toMatchObject(['linkId0']);
+        expect(Object.keys(result.shareId.tree)).toMatchObject(['linkId0', 'linkId7']);
         expect(result.shareId.links.linkId7).toMatchObject({
             decrypted: { linkId: 'linkId7', name: 'linkId7', isStale: true },
             encrypted: { linkId: 'linkId7' },

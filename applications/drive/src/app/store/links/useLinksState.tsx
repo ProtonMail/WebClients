@@ -180,6 +180,7 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): 
         const { linkId, parentLinkId } = link.encrypted;
 
         const original = state[shareId].links[linkId];
+        const originalTrashed = original?.encrypted.trashed;
         if (original) {
             const originalParentId = original.encrypted.parentLinkId;
             if (originalParentId !== parentLinkId) {
@@ -212,9 +213,13 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): 
             if (parent) {
                 if (link.encrypted.trashed) {
                     state[shareId].tree[parentLinkId] = parent.filter((childId) => childId !== linkId);
+                    recursivelyTrashChildren(state, shareId, linkId, link.encrypted.trashed);
                 } else {
                     if (!parent.includes(linkId)) {
                         parent.push(linkId);
+                    }
+                    if (originalTrashed) {
+                        recursivelyRestoreChildren(state, shareId, linkId, originalTrashed);
                     }
                 }
             } else {
@@ -224,6 +229,59 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): 
     });
 
     return { ...state };
+}
+
+/**
+ * recursivelyTrashChildren sets trashed flag to all children of the parent.
+ * When parent is trashed, API do not create event for every child, therefore
+ * we need to update trashed flag the same way for all of them in our cache.
+ */
+function recursivelyTrashChildren(state: LinksState, shareId: string, linkId: string, trashed: number) {
+    recursivelyUpdateLinks(state, shareId, linkId, (link) => {
+        link.encrypted.trashed ||= trashed;
+        if (link.decrypted) {
+            link.decrypted.trashed ||= trashed;
+        }
+    });
+}
+
+/**
+ * recursivelyRestoreChildren unsets trashed flag to children of the parent.
+ * It's similar to trashing: API do not create event for the childs, therefore
+ * we need to remove trashed flag from children but only the ones which have
+ * the same value because if the child was trashed first and then parent, user
+ * will restore only parent and the previosly trashed child still needs to stay
+ * in trash.
+ */
+function recursivelyRestoreChildren(state: LinksState, shareId: string, linkId: string, originalTrashed: number) {
+    recursivelyUpdateLinks(state, shareId, linkId, (link) => {
+        if (link.encrypted.trashed === originalTrashed) {
+            link.encrypted.trashed = null;
+            if (link.decrypted) {
+                link.decrypted.trashed = null;
+            }
+        }
+    });
+}
+
+/**
+ * recursivelyUpdateLinks recursively calls updateCallback for every cached
+ * child of the provided linkId in scope of shareId.
+ */
+function recursivelyUpdateLinks(
+    state: LinksState,
+    shareId: string,
+    linkId: string,
+    updateCallback: (link: Link) => void
+) {
+    state[shareId].tree[linkId]?.forEach((linkId) => {
+        const child = state[shareId].links[linkId];
+        if (!child) {
+            return;
+        }
+        updateCallback(child);
+        recursivelyUpdateLinks(state, shareId, child.encrypted.linkId, updateCallback);
+    });
 }
 
 /**
