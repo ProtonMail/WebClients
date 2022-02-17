@@ -134,6 +134,20 @@ export const Adornments = () => {
                     icon={<Icon name="credit-card" />}
                 />
             </div>
+            <div className="mb1">
+                <InputFieldTwo
+                    label="Input with prefix icon"
+                    className="pl0"
+                    prefix={<Icon className="ml0-5" name="magnifying-glass" />}
+                />
+            </div>
+            <div className="mb1">
+                <InputFieldTwo
+                    label="Input with prefix text"
+                    className="pl0"
+                    prefix={<span className="ml0-5">Prefiiiiix</span>}
+                />
+            </div>
             <div className="mt1">
                 <InputFieldTwo label="Input with suffix" placeholder="username" suffix="@protonmail.com" />
             </div>
