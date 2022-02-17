@@ -1,0 +1,21 @@
+{
+    "name": "@proton/colors",
+    "description": "Package containing the logic for Proton's design system color computations",
+    "scripts": {
+        "test": "jest"
+    },
+    "dependencies": {
+        "@proton/shared": "workspace:^",
+        "css-tree": "^2.0.4",
+        "prettier": "^2.6.2",
+        "tinycolor2": "^1.4.2"
+    },
+    "devDependencies": {
+        "@types/css-tree": "^1.0.7",
+        "@types/jest": "^27.4.1",
+        "@types/tinycolor2": "^1.4.3",
+        "jest": "^27.5.1",
+        "ts-jest": "^27.1.3",
+        "typescript": "^4.6.3"
+    }
+}
