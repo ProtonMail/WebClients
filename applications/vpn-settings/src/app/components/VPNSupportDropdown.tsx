@@ -7,7 +7,7 @@ import {
     DropdownMenuLink,
     Icon,
     BugModal,
-    useModals,
+    useModalState,
 } from '@proton/components';
 
 import SimpleDropdown, { Props as SimpleDropdownProps } from '@proton/components/components/dropdown/SimpleDropdown';
@@ -15,41 +15,44 @@ import SimpleDropdown, { Props as SimpleDropdownProps } from '@proton/components
 interface Props extends Omit<SimpleDropdownProps<typeof Button>, 'as' | 'content'> {}
 
 const VPNSupportDropdown = (props: Props) => {
-    const { createModal } = useModals();
+    const [bugReportModal, setBugReportModal, render] = useModalState();
 
     const handleBugReportClick = () => {
-        createModal(<BugModal />);
+        setBugReportModal(true);
     };
 
     return (
-        <SimpleDropdown
-            as={Button}
-            content={
-                <>
-                    <Icon name="life-ring" className="mr0-5" /> {c('Header').t`Help`}
-                </>
-            }
-            {...props}
-        >
-            <DropdownMenu>
-                <DropdownMenuLink
-                    className="flex flex-nowrap text-left"
-                    href="https://protonvpn.com/support/"
-                    target="_blank"
-                >
-                    <Icon className="mt0-25 mr0-5" name="circle-question" />
-                    {c('Action').t`I have a question`}
-                </DropdownMenuLink>
-                <DropdownMenuLink href="https://protonmail.uservoice.com/" target="_blank">
-                    <Icon className="mt0-25 mr0-5" name="messages" />
-                    {c('Action').t`Request a feature`}
-                </DropdownMenuLink>
-                <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleBugReportClick}>
-                    <Icon className="mt0-25 mr0-5" name="bug" />
-                    {c('Action').t`Report bug`}
-                </DropdownMenuButton>
-            </DropdownMenu>
-        </SimpleDropdown>
+        <>
+            {render && <BugModal {...bugReportModal} />}
+            <SimpleDropdown
+                as={Button}
+                content={
+                    <>
+                        <Icon name="life-ring" className="mr0-5" /> {c('Header').t`Help`}
+                    </>
+                }
+                {...props}
+            >
+                <DropdownMenu>
+                    <DropdownMenuLink
+                        className="flex flex-nowrap text-left"
+                        href="https://protonvpn.com/support/"
+                        target="_blank"
+                    >
+                        <Icon className="mt0-25 mr0-5" name="circle-question" />
+                        {c('Action').t`I have a question`}
+                    </DropdownMenuLink>
+                    <DropdownMenuLink href="https://protonmail.uservoice.com/" target="_blank">
+                        <Icon className="mt0-25 mr0-5" name="messages" />
+                        {c('Action').t`Request a feature`}
+                    </DropdownMenuLink>
+                    <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleBugReportClick}>
+                        <Icon className="mt0-25 mr0-5" name="bug" />
+                        {c('Action').t`Report bug`}
+                    </DropdownMenuButton>
+                </DropdownMenu>
+            </SimpleDropdown>
+        </>
     );
 };
 
