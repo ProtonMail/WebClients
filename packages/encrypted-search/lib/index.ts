@@ -1,10 +1,4 @@
-export * from './esAPI';
-export * from './esBuild';
-export * from './esCache';
-export * from './esHighlight';
-export * from './esSearch';
-export * from './esSync';
-export * from './esUtils';
-export * from './constants';
+export * from './esHelpers';
 export * from './interfaces';
+export { ES_MAX_PARALLEL_ITEMS, defaultESIndexingState, defaultESContext } from './constants';
 export { default as useEncryptedSearch } from './useEncryptedSearch';

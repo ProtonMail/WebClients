@@ -46,6 +46,7 @@ export const ES_MAX_CACHE = 600000000; // 600 MB
  * chronological order
  */
 export const ES_MAX_ITEMS_PER_BATCH = 1000;
+export const ES_TEMPORARY_ERRORS = [408, 429, 502, 503];
 
 export const AesKeyGenParams: AesKeyGenParams = { name: 'AES-GCM', length: 128 };
 export const KeyUsages: KeyUsage[] = ['encrypt', `decrypt`];

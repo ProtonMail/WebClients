@@ -1,11 +1,10 @@
-import { ReactNode } from 'react';
 import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import { ES_MAX_INITIAL_CHARS } from './constants';
 
 /**
  * Removes overlapping intervals to highlight
  */
-export const sanitisePositions = (positions: [number, number][]) => {
+const sanitisePositions = (positions: [number, number][]) => {
     if (positions.length < 2) {
         return positions;
     }
@@ -30,10 +29,10 @@ export const sanitisePositions = (positions: [number, number][]) => {
 /**
  * Find occurrences of a keyword in a text
  */
-const findOccurrences = (text: string, normalisedKeywords: string[]) => {
+const findOccurrences = (text: string, normalizedKeywords: string[]) => {
     const positions: [number, number][] = [];
     const searchString = removeDiacritics(text.toLocaleLowerCase());
-    for (const keyword of normalisedKeywords) {
+    for (const keyword of normalizedKeywords) {
         let finder = 0;
         let startFrom = 0;
         while (finder !== -1) {
@@ -72,12 +71,12 @@ const recursiveBodyTraversal = (node: Node, applySearchMarkup: (text: string) =>
 /**
  * Insert the highlighting HTML tags inside a content given as a string
  */
-export const insertMarks = (content: string, normalisedKeywords: string[], setAutoScroll: boolean) => {
+export const insertMarks = (content: string, normalizedKeywords: string[], setAutoScroll: boolean) => {
     const domParser = new DOMParser();
     const html = domParser.parseFromString(content, 'text/html');
 
     const applySearchMarkup = (text: string) => {
-        const sanitisedPositions = findOccurrences(text, normalisedKeywords);
+        const sanitisedPositions = findOccurrences(text, normalizedKeywords);
         if (!sanitisedPositions.length) {
             return;
         }
@@ -115,11 +114,11 @@ export const insertMarks = (content: string, normalisedKeywords: string[], setAu
  */
 export const highlightJSX = (
     metadata: string,
-    normalisedKeywords: string[],
+    normalizedKeywords: string[],
     isBold: boolean = false,
     trim: boolean = false
 ) => {
-    const sanitisedPositions = findOccurrences(metadata, normalisedKeywords);
+    const sanitisedPositions = findOccurrences(metadata, normalizedKeywords);
 
     if (!sanitisedPositions.length) {
         return {
@@ -168,38 +167,4 @@ export const highlightJSX = (
             </span>
         ),
     };
-};
-
-/**
- * Insert highlighting markers only if a ReactNode is a string or can be parsed as such
- */
-export const highlightNode = (
-    node: ReactNode,
-    highlightMetadata: (
-        metadata: string,
-        isBold?: boolean,
-        trim?: boolean
-    ) => { numOccurrences: number; resultJSX: JSX.Element }
-) => {
-    const nodeValue = node?.valueOf();
-    if (typeof nodeValue === 'string') {
-        return highlightMetadata(nodeValue).resultJSX;
-    }
-    if (
-        !!nodeValue &&
-        Object.prototype.isPrototypeOf.call(Object.prototype, nodeValue) &&
-        Object.prototype.hasOwnProperty.call(nodeValue, 'props')
-    ) {
-        const { props } = nodeValue as { props: any };
-        if (
-            Object.prototype.isPrototypeOf.call(Object.prototype, props) &&
-            Object.prototype.hasOwnProperty.call(props, 'children')
-        ) {
-            const { children } = props;
-            if (Array.isArray(props.children) && children.every((child: any) => typeof child === 'string')) {
-                return highlightMetadata(children.join('')).resultJSX;
-            }
-        }
-    }
-    return node;
 };

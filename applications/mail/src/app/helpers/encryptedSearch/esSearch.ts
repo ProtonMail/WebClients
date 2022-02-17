@@ -1,6 +1,6 @@
-import { normaliseKeyword } from '@proton/encrypted-search';
+import { normalizeKeyword } from '@proton/encrypted-search';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
-import { ESMessage, NormalisedSearchParams } from '../../models/encryptedSearch';
+import { ESMessage, NormalizedSearchParams } from '../../models/encryptedSearch';
 
 /**
  * Remove wildcard, normalise keyword and recipients
@@ -12,19 +12,19 @@ export const normaliseSearchParams = (
     sort?: Sort
 ) => {
     const { wildcard, keyword, to, from, ...otherParams } = searchParams;
-    let normalisedKeywords: string[] | undefined;
+    let normalizedKeywords: string[] | undefined;
     if (keyword) {
-        normalisedKeywords = normaliseKeyword(keyword);
+        normalizedKeywords = normalizeKeyword(keyword);
     }
 
-    const normalisedSearchParams: NormalisedSearchParams = {
+    const normalisedSearchParams: NormalizedSearchParams = {
         labelID,
         search: {
             from: from ? from.toLocaleLowerCase() : undefined,
             to: to ? to.toLocaleLowerCase() : undefined,
             ...otherParams,
         },
-        normalisedKeywords,
+        normalizedKeywords,
         filter: filter || {},
         sort: sort || { sort: 'Time', desc: true },
     };
@@ -36,7 +36,7 @@ export const normaliseSearchParams = (
  * Test whether a given message fulfills every metadata requirement
  */
 export const testMetadata = (
-    normalisedSearchParams: NormalisedSearchParams,
+    normalisedSearchParams: NormalizedSearchParams,
     messageToSearch: ESMessage,
     recipients: string[],
     sender: string[]
@@ -68,14 +68,14 @@ export const testMetadata = (
  * rather than executing a new search
  */
 export const shouldOnlySortResults = (
-    normalisedSearchParams: NormalisedSearchParams,
-    previousNormSearchParams: NormalisedSearchParams
+    normalisedSearchParams: NormalizedSearchParams,
+    previousNormSearchParams: NormalizedSearchParams
 ) => {
     const {
         labelID,
         filter,
         search: { address, from, to, begin, end, attachments },
-        normalisedKeywords,
+        normalizedKeywords,
         decryptionError,
     } = normalisedSearchParams;
     const {
@@ -89,7 +89,7 @@ export const shouldOnlySortResults = (
             end: prevEnd,
             attachments: prevAttachments,
         },
-        normalisedKeywords: prevNormalisedKeywords,
+        normalizedKeywords: prevNormalisedKeywords,
         decryptionError: prevDecryptionError,
     } = previousNormSearchParams;
 
@@ -103,19 +103,19 @@ export const shouldOnlySortResults = (
         end !== prevEnd ||
         attachments !== prevAttachments ||
         decryptionError !== prevDecryptionError ||
-        !!normalisedKeywords !== !!prevNormalisedKeywords ||
+        !!normalizedKeywords !== !!prevNormalisedKeywords ||
         filter?.Unread !== prevFilter?.Unread
     ) {
         return false;
     }
 
     // Same goes for keywords
-    if (normalisedKeywords && prevNormalisedKeywords) {
-        if (normalisedKeywords.length !== prevNormalisedKeywords.length) {
+    if (normalizedKeywords && prevNormalisedKeywords) {
+        if (normalizedKeywords.length !== prevNormalisedKeywords.length) {
             return false;
         }
-        for (let i = 0; i < normalisedKeywords.length; i++) {
-            if (normalisedKeywords[i] !== prevNormalisedKeywords[i]) {
+        for (let i = 0; i < normalizedKeywords.length; i++) {
+            if (normalizedKeywords[i] !== prevNormalisedKeywords[i]) {
                 return false;
             }
         }
