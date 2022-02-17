@@ -62,7 +62,7 @@ interface Props {
     onMouseDown?: OnMouseDown;
     formatTime?: (date: Date) => string;
     onClickDate?: (date: Date) => void;
-    weekdaysLong?: string[];
+    weekdays?: string[];
     actionRef: RefObject<TimeGridActionRef>;
 }
 
@@ -83,7 +83,7 @@ const TimeGrid = ({
     isInteractionEnabled = false,
     isScrollDisabled = false,
     isDropzoneHovered = false,
-    weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     targetEventRef,
     targetEventData,
     targetMoreRef,
@@ -299,13 +299,7 @@ const TimeGrid = ({
                         <div className="calendar-aside flex flex-column flex-justify-end">
                             <div className="text-center">{primaryTimezone}</div>
                         </div>
-                        <DayButtons
-                            days={days}
-                            now={now}
-                            date={date}
-                            onClickDate={onClickDate}
-                            weekdaysLong={weekdaysLong}
-                        />
+                        <DayButtons days={days} now={now} date={date} onClickDate={onClickDate} weekdays={weekdays} />
                     </div>
 
                     <div className="flex calendar-fullday-row">
