@@ -112,7 +112,8 @@ describe('transformEscape', () => {
         <div style="background: \u0075\u0072\u006c('https://TRACKING10/')">test10</div>
         <div style="background: &#x75r\\6c('https://TRACKING11/')">test11</div>
         <div style="background: \\75&#x72;\\6C('https://TRACKING12/')">test12</div>
-        <div style="background: \\75r&#x6c;('https://TRACKING12/')">test13</div>
+        <div style="background: \\75r&#x6c;('https://TRACKING13/')">test13</div>
+        <div style="background: \\75r&#x6c;('https://TRACKING14/')">test14</div>
     `;
 
     const BACKGROUND_URL_SAFE = `
@@ -128,6 +129,17 @@ describe('transformEscape', () => {
     // TODO: Fix those 2
     // <div style="inline-size: 500px; block-size: 500px; content: &quot; background:url(test)&quot;">ddewdwed</div>
     // <div style="inline-size: 500px; block-size: 500px; content: &apos; background:url(test)&apos;">ddewdwed</div>
+
+    // Firefox support image-set :/
+    // https://jira.protontech.ch/browse/MAILWEB-2993
+    const BACKGROUND_IMAGE_SET = `
+        <div style='background: image-set("https://TRACKING/");'>
+    `;
+
+    // That's a nasty one!
+    const BACKGROUND_DOUBLE_ESCAPING = `
+        <div style="background: ur\\\\5C\\\\6C(https://TRACKING/); /* url( */"></div>
+    `;
 
     const setup = (content = DOM) => {
         const doc = transformEscape(content, base64Cache);
@@ -392,6 +404,20 @@ describe('transformEscape', () => {
         it('should not escape anything', () => {
             const { document } = setup(BACKGROUND_URL_SAFE);
             expect(document.innerHTML).not.toMatch(/proton-/);
+        });
+    });
+
+    describe('Escape BACKGROUND_IMAGE_SET', () => {
+        it('should escape image-set', () => {
+            const { document } = setup(BACKGROUND_IMAGE_SET);
+            expect(document.innerHTML).toMatch(/proton-/);
+        });
+    });
+
+    describe('Escape BACKGROUND_DOUBLE_ESCAPING', () => {
+        it('should escape double escaping', () => {
+            const { document } = setup(BACKGROUND_DOUBLE_ESCAPING);
+            expect(document.innerHTML).toMatch(/proton-url\(https/);
         });
     });
 });
