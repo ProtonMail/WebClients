@@ -244,7 +244,14 @@ export const createNewDraft = (
 
     const plain = isPlainText({ MIMEType });
     const document = plain ? undefined : parseInDiv(content);
-    const plainText = plain ? `\n\n${exportPlainText(content)}` : undefined;
+
+    // Prevent nested ternary
+    const getPlainTextContent = (content: string) => {
+        const exported = exportPlainText(content);
+        return exported === '' ? '' : `\n\n${exported}`;
+    };
+
+    const plainText = plain ? getPlainTextContent(content) : undefined;
 
     return {
         localID: generateUID(DRAFT_ID_PREFIX),
