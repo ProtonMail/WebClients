@@ -3,5 +3,11 @@
     "extends": ["config:base", "group:allNonMajor"],
     "postUpdateOptions": ["yarnDedupeHighest"],
     "rangeStrategy": "bump",
-    "rebaseWhen": "conflicted"
+    "rebaseWhen": "conflicted",
+    "packageRules": [
+        {
+            "matchPackagePatterns": ["^roosterjs"],
+            "groupName": "roosterjs packages"
+        }
+    ]
 }
