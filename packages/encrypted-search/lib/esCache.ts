@@ -30,7 +30,7 @@ export const sizeOfESItem = (value: any): number => {
 /**
  * Check whether the cache is limited
  */
-export const checkIsCacheLimited = async <ESItem>(
+const checkIsCacheLimited = async <ESItem>(
     userID: string,
     esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
     storeName: string
@@ -42,7 +42,7 @@ export const checkIsCacheLimited = async <ESItem>(
 /**
  * Remove extra items from cache
  */
-export const trimCache = <ESItem>(esCacheRef: React.MutableRefObject<ESCache<ESItem>>) => {
+const trimCache = <ESItem>(esCacheRef: React.MutableRefObject<ESCache<ESItem>>) => {
     let rollingSize = 0;
     for (let index = 0; index < esCacheRef.current.esCache.length; index++) {
         if (rollingSize >= ES_MAX_CACHE) {
@@ -58,7 +58,7 @@ export const trimCache = <ESItem>(esCacheRef: React.MutableRefObject<ESCache<ESI
 /**
  * Callback to sort cached messages by Time and Order, such that the last element is the oldest
  */
-export const sortCachedItems =
+const sortCachedItems =
     <ESItem>(getTimePoint: (item: ESItem) => [number, number]) =>
     (firstEl: ESItem, secondEl: ESItem) => {
         const [firstTime, firstOrder] = getTimePoint(firstEl);
@@ -125,7 +125,7 @@ export const cacheDB = async <ESItem, ESCiphertext>(
 /**
  * Check whether an item should be added to cache or not
  */
-export const checkAddToCache = <ESItem>(
+const checkAddToCache = <ESItem>(
     newESItem: ESItem,
     esCache: ESItem[],
     getTimePoint: (item: ESItem) => [number, number]

@@ -1,12 +1,13 @@
 import { IDBPDatabase } from 'idb';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { esSentryReport, getNumItemsDB, getOldestItem, openESDB, updateSizeIDB } from './esUtils';
+import { getNumItemsDB, getOldestItem, openESDB, updateSizeIDB } from './esUtils';
 import { decryptFromDB, uncachedSearch } from './esSearch';
 import { ESCache, ESItemEvent, ESSyncingHelpers } from './interfaces';
 import { ES_MAX_PARALLEL_ITEMS } from './constants';
 import { addToESCache, findItemIndex, removeFromESCache, replaceInESCache, sizeOfESItem } from './esCache';
 import { encryptToDB } from './esBuild';
+import { esSentryReport } from './esHelpers';
 
 /**
  * Check whether the DB is limited, either after indexing or if it became so
@@ -21,7 +22,7 @@ export const checkIsDBLimited = async (userID: string, storeName: string, getTot
 /**
  * Get item from IndexedDB
  */
-export const getItemFromDB = async <ESItem, ESCiphertext>(
+const getItemFromDB = async <ESItem, ESCiphertext>(
     ID: string,
     indexKey: CryptoKey,
     esDB: IDBPDatabase,
@@ -47,7 +48,7 @@ const isTimePointLessThan = (esTimeBound1: [number, number], esTimeBound2: [numb
  * Stores an item to IndexedDB. If there is not enough space, older items are
  * removed in favour of new ones
  */
-export const storeToDB = async <ESCiphertext>(
+const storeToDB = async <ESCiphertext>(
     newCiphertextToStore: ESCiphertext,
     esDB: IDBPDatabase,
     storeName: string,
@@ -94,7 +95,7 @@ export const storeToDB = async <ESCiphertext>(
 /**
  * Remove messages from and add messages to IDB
  */
-export const executeIDBOperations = async <ESCiphertext>(
+const executeIDBOperations = async <ESCiphertext>(
     esDB: IDBPDatabase,
     itemsToRemove: string[],
     itemsToAdd: ESCiphertext[],

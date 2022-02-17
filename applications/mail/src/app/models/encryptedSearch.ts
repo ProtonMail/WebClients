@@ -35,7 +35,7 @@ export interface ESDBStatusMail {
 
 export interface EncryptedSearchFunctionsMail
     extends Pick<
-        EncryptedSearchFunctions<ESMessage, ESItemChangesMail, NormalisedSearchParams>,
+        EncryptedSearchFunctions<ESMessage, ESItemChangesMail, NormalizedSearchParams>,
         | 'encryptedSearch'
         | 'highlightString'
         | 'highlightMetadata'
@@ -51,7 +51,7 @@ export interface EncryptedSearchFunctionsMail
     openDropdown: () => void;
     closeDropdown: () => void;
     setTemporaryToggleOff: () => void;
-    getESDBStatus: () => ESDBStatusMail & ESDBStatus<ESMessage, NormalisedSearchParams>;
+    getESDBStatus: () => ESDBStatusMail & ESDBStatus<ESMessage, NormalizedSearchParams>;
 }
 
 export interface ESMessage extends ESBaseMessage {
@@ -62,12 +62,12 @@ export interface ESMessage extends ESBaseMessage {
 
 export interface StoredCiphertext extends ESStoredItem, Pick<ESMessage, 'ID' | 'LabelIDs' | 'Time' | 'Order'> {}
 
-export interface NormalisedSearchParams extends Omit<SearchParameters, 'wildcard' | 'keyword'> {
+export interface NormalizedSearchParams extends Omit<SearchParameters, 'wildcard' | 'keyword'> {
     labelID: string;
     sort: Sort;
     filter: Filter;
     search: SearchParameters;
-    normalisedKeywords: string[] | undefined;
+    normalizedKeywords: string[] | undefined;
     decryptionError?: boolean;
 }
 

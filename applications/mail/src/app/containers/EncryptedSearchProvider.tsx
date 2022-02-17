@@ -18,7 +18,7 @@ import {
     ESDBStatusMail,
     ESItemChangesMail,
     ESMessage,
-    NormalisedSearchParams,
+    NormalizedSearchParams,
     StoredCiphertext,
 } from '../models/encryptedSearch';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
@@ -75,7 +75,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         toggleEncryptedSearch,
         getESDBStatus: getLibraryStatus,
         ...esLibraryFunctions
-    } = useEncryptedSearch<Message, ESMessage, NormalisedSearchParams, ESItemChangesMail, StoredCiphertext>({
+    } = useEncryptedSearch<Message, ESMessage, NormalizedSearchParams, ESItemChangesMail, StoredCiphertext>({
         storeName,
         indexName,
         primaryKeyName,
