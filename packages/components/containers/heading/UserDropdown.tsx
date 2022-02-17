@@ -32,20 +32,19 @@ import {
     useSpotlightOnFeature,
     FeatureCode,
     ReferralSpotlight,
+    useModalState,
 } from '@proton/components';
 
 import { classnames, generateUID } from '../../helpers';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 import { OnboardingModal } from '../onboarding';
-import { AuthenticatedBugModal, BugModal } from '../support';
+import { AuthenticatedBugModal } from '../support';
 
 interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onClick'> {
     onOpenChat?: () => void;
 }
 
 const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
-    const { UID } = useAuthentication();
-    const isAuthenticated = !!UID;
     const { APP_NAME } = useConfig();
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
@@ -59,6 +58,8 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { createModal } = useModals();
+    const [bugReportModal, setBugReportModal, render] = useModalState();
+
     const recoveryNotification = useRecoveryNotification(true);
     const { feature: referralProgramFeature } = useFeature(FeatureCode.ReferralProgram);
     const {
@@ -116,7 +117,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     };
 
     const handleBugReportClick = () => {
-        createModal(isAuthenticated ? <AuthenticatedBugModal /> : <BugModal />);
+        setBugReportModal(true);
     };
 
     const userVoiceLinks: Partial<{ [key in APP_NAMES]: string }> = {
@@ -142,6 +143,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
 
     return (
         <>
+            {render && <AuthenticatedBugModal {...bugReportModal} />}
             <ReferralSpotlight
                 show={showSpotlight}
                 anchorRef={anchorRef}
