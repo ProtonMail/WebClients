@@ -41,7 +41,6 @@ const order = [
     '-theming-usage-',
     '-theming-taxonomy-',
     'components-',
-    'to-update-',
     'css-utilities-',
 ];
 
