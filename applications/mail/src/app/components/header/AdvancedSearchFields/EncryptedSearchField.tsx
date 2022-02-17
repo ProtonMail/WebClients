@@ -14,13 +14,13 @@ import {
     useModalState,
 } from '@proton/components';
 import {
-    getES,
     getESCurrentProgress,
     getESTotal,
     ESIndexingState,
     indexKeyExists,
     isDBReadyAfterBuilding,
     wasIndexingDone,
+    esStorageHelpers,
 } from '@proton/encrypted-search';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
@@ -37,6 +37,7 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
     const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch } = useEncryptedSearchContext();
     const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
     const { esProgress, oldestTime, totalIndexingMessages, estimatedMinutes, currentProgressValue } = esState;
+    const { getES } = esStorageHelpers();
 
     const [enableESModalProps, setEnableESModalOpen] = useModalState();
 
