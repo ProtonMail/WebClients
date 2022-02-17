@@ -3653,6 +3653,7 @@ __metadata:
     eslint-plugin-es: ^4.1.0
     eslint-plugin-import: ^2.25.4
     eslint-plugin-monorepo-cop: ^1.0.2
+    eslint-plugin-no-only-tests: ^2.6.0
     eslint-plugin-react: ^7.28.0
     eslint-plugin-react-hooks: ^4.3.0
   peerDependencies:
@@ -13678,6 +13679,13 @@ __metadata:
     read-pkg-up: ^6.0.0
     requireindex: ~1.1.0
   checksum: b7bf5fb745bece7c92db0864d7beb59203ac24987d99c12b1af9dba2a8f6b53b57c10ee418c8e8ac2d27d53c8f7bffa560430ec333f7750ee5d9f9b54c64058e
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-no-only-tests@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "eslint-plugin-no-only-tests@npm:2.6.0"
+  checksum: 4e3c9cc7e09c13e855fd7af4a8969128f766dcf32a0680715ebcaa903c7fe44db8e45e994c8b908443a6019cbd9ea1b51f413bf968a0c58214aded930a863df9
   languageName: node
   linkType: hard
 
