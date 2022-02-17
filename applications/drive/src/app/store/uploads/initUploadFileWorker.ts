@@ -25,7 +25,7 @@ export function initUploadFileWorker(
     // need to wait for creation of revision on API.
     const mimeTypePromise = mimeTypeFromFile(file);
 
-    const start = async ({ onInit, onProgress, onFinalize }: UploadFileProgressCallbacks = {}) => {
+    const start = async ({ onInit, onProgress, onNetworkError, onFinalize }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Lets start creating
         // revision on API and making thumbnail a bit sooner.
         const setupPromise = mimeTypePromise.then(async (mimeType) => {
@@ -55,6 +55,9 @@ export function initUploadFileWorker(
                 finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string) => {
                     onFinalize?.();
                     finalize(blockTokens, signature, signatureAddress).then(resolve).catch(reject);
+                },
+                onNetworkError: (error: string) => {
+                    onNetworkError?.(error);
                 },
                 onError: (error: string) => {
                     reject(new Error(error));

@@ -55,11 +55,22 @@ export const getIsUnreachableError = (e: any) => {
     );
 };
 
+export const getIsNetworkError = (e: any) => {
+    if (!e) {
+        return false;
+    }
+    return e.name === 'NetworkError' || e.message?.toLowerCase() === 'network error';
+};
+
 export const getIsTimeoutError = (e: any) => {
     if (!e) {
         return false;
     }
     return e.name === 'TimeoutError';
+};
+
+export const getIsConnectionIssue = (e: any) => {
+    return getIsOfflineError(e) || getIsUnreachableError(e) || getIsNetworkError(e) || getIsTimeoutError(e);
 };
 
 export const getApiErrorMessage = (e: Error) => {

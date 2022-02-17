@@ -6,11 +6,12 @@ import { Pauser } from './pauser';
 
 describe('upload jobs', () => {
     const mockProgressCallback = jest.fn();
+    const mockNetworkErrorCallback = jest.fn();
 
     let pauser: Pauser;
 
     beforeEach(() => {
-        mockProgressCallback.mockClear();
+        jest.clearAllMocks();
 
         pauser = new Pauser();
     });
@@ -27,9 +28,15 @@ describe('upload jobs', () => {
         }
 
         const mockUploadBlockCallback = jest.fn();
-        await startUploadJobs(pauser, generator(), mockProgressCallback, mockUploadBlockCallback);
+        await startUploadJobs(
+            pauser,
+            generator(),
+            mockProgressCallback,
+            mockNetworkErrorCallback,
+            mockUploadBlockCallback
+        );
 
-        expect(mockUploadBlockCallback.mock.calls.length).toBe(blocksCount);
+        expect(mockUploadBlockCallback).toBeCalledTimes(blocksCount);
         expect(mockUploadBlockCallback.mock.calls.map((call) => call[0])).toMatchObject(expectedLinks);
     });
 
@@ -44,26 +51,65 @@ describe('upload jobs', () => {
                 setTimeout(() => pauser.resume(), 500);
                 throw new Error('Upload aborted');
             }
+            return Promise.resolve();
         });
-        // @ts-ignore
-        await startUploadJobs(pauser, generator(), mockProgressCallback, mockUploadBlockCallback);
+        await startUploadJobs(
+            pauser,
+            generator(),
+            mockProgressCallback,
+            mockNetworkErrorCallback,
+            mockUploadBlockCallback
+        );
         expect(pauser.isPaused).toBe(false);
-        expect(mockUploadBlockCallback.mock.calls.length).toBe(2); // First call and after resume.
+        expect(mockUploadBlockCallback).toBeCalledTimes(2); // First call and after resume.
         // @ts-ignore
         expect(mockUploadBlockCallback.mock.calls.map((call) => call[0])).toMatchObject(['link1', 'link1']);
     });
 
-    it('retries the same block number times before giving up when network error happens', async () => {
+    it('retries the same block number times before giving up when error happens', async () => {
         async function* generator(): AsyncGenerator<UploadingBlock> {
             yield createUploadingBlock(1);
         }
 
-        const err = new Error('Network error');
+        const err = new Error('Some not-network error');
         const mockUploadBlockCallback = jest.fn(() => {
             throw err;
         });
-        const promise = startUploadJobs(pauser, generator(), mockProgressCallback, mockUploadBlockCallback);
+        const promise = startUploadJobs(
+            pauser,
+            generator(),
+            mockProgressCallback,
+            mockNetworkErrorCallback,
+            mockUploadBlockCallback
+        );
         await expect(promise).rejects.toBe(err);
-        expect(mockUploadBlockCallback.mock.calls.length).toBe(1 + MAX_RETRIES_BEFORE_FAIL); // First call + retries.
+        expect(mockUploadBlockCallback).toBeCalledTimes(1 + MAX_RETRIES_BEFORE_FAIL); // First call + retries.
+    });
+
+    it('pauses and notifies about network error', async () => {
+        async function* generator(): AsyncGenerator<UploadingBlock> {
+            yield createUploadingBlock(1);
+        }
+
+        const mockUploadBlockCallback = jest.fn(() => {
+            if (mockUploadBlockCallback.mock.calls.length === 1) {
+                throw new Error('network error');
+            }
+            return Promise.resolve();
+        });
+        mockNetworkErrorCallback.mockImplementation(() => {
+            expect(pauser.isPaused).toBeTruthy();
+            pauser.resume();
+        });
+        await startUploadJobs(
+            pauser,
+            generator(),
+            mockProgressCallback,
+            mockNetworkErrorCallback,
+            mockUploadBlockCallback
+        );
+        expect(mockUploadBlockCallback).toBeCalledTimes(2); // First call + resume.
+        expect(mockNetworkErrorCallback).toBeCalledTimes(1);
+        expect(mockNetworkErrorCallback).toBeCalledWith('network error');
     });
 });

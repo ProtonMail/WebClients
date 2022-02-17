@@ -81,6 +81,11 @@ type DoneMessage = {
     signatureAddress: string;
 };
 
+type NetworkErrorMessage = {
+    command: 'network_error';
+    error: string;
+};
+
 type ErrorMessage = {
     command: 'error';
     error: string;
@@ -91,7 +96,7 @@ type ErrorMessage = {
  * web worker to the main thread.
  */
 type WorkerEvent = {
-    data: CreateBlockMessage | ProgressMessage | DoneMessage | ErrorMessage;
+    data: CreateBlockMessage | ProgressMessage | DoneMessage | NetworkErrorMessage | ErrorMessage;
 };
 
 /**
@@ -103,6 +108,7 @@ interface WorkerControllerHandlers {
     createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlock?: ThumbnailRequestBlock) => void;
     onProgress: (increment: number) => void;
     finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string) => void;
+    onNetworkError: (error: string) => void;
     onError: (error: string) => void;
     onCancel: () => void;
 }
@@ -205,6 +211,13 @@ export class UploadWorker {
         } as DoneMessage);
     }
 
+    postNetworkError(error: string) {
+        this.worker.postMessage({
+            command: 'network_error',
+            error,
+        } as NetworkErrorMessage);
+    }
+
     postError(error: string) {
         this.worker.postMessage({
             command: 'error',
@@ -223,7 +236,10 @@ export class UploadWorkerController {
 
     onCancel: () => void;
 
-    constructor(worker: Worker, { createBlocks, onProgress, finalize, onError, onCancel }: WorkerControllerHandlers) {
+    constructor(
+        worker: Worker,
+        { createBlocks, onProgress, finalize, onNetworkError, onError, onCancel }: WorkerControllerHandlers
+    ) {
         this.worker = worker;
         this.onCancel = onCancel;
         worker.addEventListener('message', ({ data }: WorkerEvent) => {
@@ -236,6 +252,9 @@ export class UploadWorkerController {
                     break;
                 case 'done':
                     finalize(data.blockTokens, data.signature, data.signatureAddress);
+                    break;
+                case 'network_error':
+                    onNetworkError(data.error);
                     break;
                 case 'error':
                     onError(data.error);
