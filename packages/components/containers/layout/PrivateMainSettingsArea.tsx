@@ -107,6 +107,7 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, children, config 
         }
         return (
             <SubSettingsSection
+                key={config.id}
                 id={config.id}
                 title={config.text}
                 observer={sectionObserver}
