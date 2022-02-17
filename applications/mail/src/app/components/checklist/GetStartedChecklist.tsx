@@ -33,7 +33,7 @@ const GetStartedChecklistComplete = () => {
     const api = useApi();
 
     useEffect(() => {
-        api({ ...seenCompletedChecklist('get-started'), silence: true });
+        void api({ ...seenCompletedChecklist('get-started'), silence: true });
     }, []);
 
     return (

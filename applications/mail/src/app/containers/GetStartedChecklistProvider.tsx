@@ -48,7 +48,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         if (userSettings.Checklists?.includes('get-started')) {
-            withLoading(
+            void withLoading(
                 api<{ Items: GetStartedChecklistKey[]; CreatedAt: number }>(getChecklist('get-started')).then(
                     setChecklist
                 )

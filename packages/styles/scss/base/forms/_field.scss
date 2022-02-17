@@ -213,12 +213,11 @@ textarea.field {
  * Only for composer for the moment
  */
 .field-lighter {
-	border-radius: 0;
-	border-block-start-width: 0;
-	border-inline-width: 0;
-	//padding-block: em(5) em(7);
-
 	&#{&} {
+		border-radius: 0;
+		border-block-start-width: 0;
+		border-inline-width: 0;
+
 		min-block-size: em(44);
 	}
 	// normal select

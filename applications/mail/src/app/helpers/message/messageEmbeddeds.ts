@@ -19,7 +19,7 @@ const trimQuotes = (input: string) => {
     const value = `${input || ''}`.trim(); // input can be a number
 
     if (['"', "'", '<'].indexOf(value.charAt(0)) > -1 && ['"', "'", '>'].indexOf(value.charAt(value.length - 1)) > -1) {
-        return value.substr(1, value.length - 2);
+        return value.substring(1, value.length - 1);
     }
 
     return value;
