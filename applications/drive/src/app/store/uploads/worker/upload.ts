@@ -1,3 +1,4 @@
+import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { serializeFormData } from '@proton/shared/lib/fetch/helpers';
 import { STATUS_CODE, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
@@ -13,11 +14,14 @@ export default async function startUploadJobs(
     pauser: Pauser,
     generator: AsyncGenerator<UploadingBlock>,
     progressCallback: (progress: number) => void,
+    networkErrorCallback: (error: string) => void,
     uploadBlockDataCallback = uploadBlockData
 ) {
     const promises: Promise<void>[] = [];
     for (let idx = 0; idx < MAX_UPLOAD_JOBS; idx++) {
-        promises.push(startUploadJob(pauser, generator, progressCallback, uploadBlockDataCallback));
+        promises.push(
+            startUploadJob(pauser, generator, progressCallback, networkErrorCallback, uploadBlockDataCallback)
+        );
     }
     return Promise.all(promises);
 }
@@ -26,11 +30,12 @@ async function startUploadJob(
     pauser: Pauser,
     generator: AsyncGenerator<UploadingBlock>,
     progressCallback: (progress: number) => void,
+    networkErrorCallback: (error: string) => void,
     uploadBlockDataCallback = uploadBlockData
 ) {
     for await (const block of generator) {
         await pauser.waitIfPaused();
-        await uploadBlock(block, pauser, progressCallback, uploadBlockDataCallback);
+        await uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback);
     }
 }
 
@@ -38,6 +43,7 @@ async function uploadBlock(
     block: UploadingBlock,
     pauser: Pauser,
     progressCallback: (progress: number) => void,
+    networkErrorCallback: (error: string) => void,
     uploadBlockDataCallback = uploadBlockData,
     numRetries = 0
 ): Promise<void> {
@@ -69,7 +75,7 @@ async function uploadBlock(
 
         if (pauser.isPaused) {
             await pauser.waitIfPaused();
-            return uploadBlock(block, pauser, progressCallback, uploadBlockDataCallback, 0);
+            return uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback, 0);
         }
 
         // Upload can be cancelled at the moment when the block is already
@@ -80,9 +86,23 @@ async function uploadBlock(
             return;
         }
 
+        if (networkErrorCallback && getIsConnectionIssue(err)) {
+            pauser.pause();
+            networkErrorCallback(err.message || err.status);
+            await pauser.waitIfPaused();
+            return uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback, 0);
+        }
+
         if (err.statusCode !== STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
             console.warn(`Failed block #${block.index} upload. Retry num: ${numRetries}`);
-            return uploadBlock(block, pauser, progressCallback, uploadBlockDataCallback, numRetries + 1);
+            return uploadBlock(
+                block,
+                pauser,
+                progressCallback,
+                networkErrorCallback,
+                uploadBlockDataCallback,
+                numRetries + 1
+            );
         }
 
         throw err;
@@ -135,8 +155,7 @@ async function uploadBlockData(
         xhr.upload.onerror = () => {
             // onerror provides ProgressEvent, not any error.
             // It can happen when internet is down, for example.
-            // On this place would be good to pause the progress instead.
-            reject(new Error('Upload interrupted'));
+            reject(new Error('network error'));
         };
         xhr.onerror = () => {
             // onerror provides ProgressEvent, not any error.

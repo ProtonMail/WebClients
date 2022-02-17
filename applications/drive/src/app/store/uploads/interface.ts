@@ -21,6 +21,7 @@ export interface UploadFileControls {
 export interface UploadFileProgressCallbacks {
     onInit?: (mimeType: string, fileName: string) => void;
     onProgress?: (bytes: number) => void;
+    onNetworkError?: (error: any) => void;
     onFinalize?: () => void;
 }
 
