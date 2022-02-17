@@ -36,6 +36,8 @@ const MailGetStartedChecklistModal = ({ onClose, onSendMessage, ...rest }: MailG
     return (
         <>
             <MnemonicPromptModal {...mnemonicPromptModal} />
+            {/* TODO Modal refactor */}
+            {/* eslint-disable-next-line deprecation/deprecation */}
             <DialogModal intermediate onClose={onClose} {...rest}>
                 <ModalCloseButton onClose={onClose} />
                 <InnerModal className="modal-content pb2 pt2">

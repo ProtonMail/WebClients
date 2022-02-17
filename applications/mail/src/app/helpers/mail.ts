@@ -34,6 +34,6 @@ export const splitMail = (mail: string) => {
     }
     const headers = mail.substring(0, headersEnd);
     // remove leading newlines
-    const body = mail.substring(headersEnd).trimLeft();
+    const body = mail.substring(headersEnd).trimStart();
     return { headers, body };
 };

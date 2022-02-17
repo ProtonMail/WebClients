@@ -19,7 +19,7 @@ const extractContentValue = (value = '') => {
     if (semicolonIndex === -1) {
         return value;
     }
-    return value.substr(0, semicolonIndex);
+    return value.substring(0, semicolonIndex);
 };
 
 const getAttachmentsByType = (attachments: Download[], messageImages: MessageImages | undefined, inline: boolean) =>

@@ -30,7 +30,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
             return;
         }
         const contact = { contactID: contactEmail.ContactID };
-        const senderName = message?.SenderName || ''; // No optional in translations
+        const senderName = message?.Sender?.Name || ''; // No optional in translations
 
         createModal(
             <ContactResignModal
