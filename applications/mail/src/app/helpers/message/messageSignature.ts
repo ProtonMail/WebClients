@@ -139,7 +139,18 @@ export const changeSignature = (
         const content = getPlainTextContent(message);
         const oldSignatureText = exportPlainText(oldTemplate).trim();
         const newSignatureText = exportPlainText(newTemplate).trim();
-        return content.replace(oldSignatureText, newSignatureText);
+
+        // Special case when there was no signature before
+        if (oldSignatureText === '') {
+            return `${content}\n\n${newSignatureText}`;
+        }
+
+        return (
+            content
+                .replace(oldSignatureText, newSignatureText)
+                // Remove empty lines at the end, remove all lines if no signatures
+                .trimEnd()
+        );
     }
     const document = message.messageDocument?.document as Element;
 
