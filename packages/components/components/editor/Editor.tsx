@@ -96,10 +96,15 @@ const Editor = ({
             className={classnames([
                 className,
                 simple && 'simple-editor',
-                'editor w100 h100 rounded flex flex-column-reverse',
+                'editor w100 h100 rounded flex flex-column-reverse flex-item-fluid',
             ])}
         >
-            <div className={classnames(['w100 h100 flex-item-fluid relative', disabled && 'editor--disabled'])}>
+            <div
+                className={classnames([
+                    'w100 h100 flex-item-fluid flex flex-column relative',
+                    disabled && 'editor--disabled',
+                ])}
+            >
                 {metadata.isPlainText ? (
                     <PlainTextEditor
                         onChange={onChange}
@@ -111,7 +116,6 @@ const Editor = ({
                     <RoosterEditor
                         placeholder={placeholder}
                         onChange={onChange}
-                        disabled={disabled}
                         onReady={onReady}
                         showBlockquoteToggle={showBlockquoteToggle}
                         onBlockquoteToggleClick={onBlockquoteToggleClick}
