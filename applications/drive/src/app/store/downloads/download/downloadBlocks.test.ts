@@ -64,7 +64,7 @@ const mockDownloadBlock = jest.fn(
     }
 );
 
-describe.only('initDownload', () => {
+describe('initDownload', () => {
     beforeEach(() => {
         mockDownloadBlock.mockClear();
         responseDelay = 0;
