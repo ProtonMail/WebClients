@@ -58,7 +58,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
     const { moveTo } = actions;
     const { isOpen } = moveTo;
 
-    const [{ open: isEditLabelOpen, ...editLabelProps }, setEditLabelModalOpen] = useModalState();
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     const handleChangeModel = (payload: Partial<ChangePayload>) => {
         handleUpdateActions({
@@ -141,12 +141,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                         <Button shape="outline" className="mt1" onClick={() => setEditLabelModalOpen(true)}>
                             {c('Action').t`Create folder`}
                         </Button>
-                        <EditLabelModal
-                            {...editLabelProps}
-                            onAdd={handleCreateFolder}
-                            type="folder"
-                            isOpen={isEditLabelOpen}
-                        />
+                        <EditLabelModal {...editLabelProps} onAdd={handleCreateFolder} type="folder" />
                     </div>
                 ) : (
                     renderClosed()

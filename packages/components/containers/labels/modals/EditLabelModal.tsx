@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from '@proton/shared/lib/constants';
@@ -8,7 +8,15 @@ import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import {
+    Button,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    useFormErrors,
+} from '../../../components';
 import { useEventManager, useLoading, useApi, useNotifications } from '../../../hooks';
 import NewLabelForm from '../NewLabelForm';
 
@@ -28,6 +36,7 @@ interface Props extends ModalProps {
     onAdd?: (label: LabelModel) => void;
     onEdit?: (label: LabelModel) => void;
     onCheckAvailable?: (label: LabelModel) => void;
+    onCloseCustomAction?: () => void;
 }
 
 const prepareLabel = (label: LabelModel) => {
@@ -44,12 +53,14 @@ const EditLabelModal = ({
     onEdit = noop,
     onCheckAvailable = noop,
     type = 'label',
+    onCloseCustomAction,
     ...rest
 }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
     const [loading, withLoading] = useLoading();
+    const { validator, onFormSubmit } = useFormErrors();
 
     const { onClose } = rest;
 
@@ -63,6 +74,23 @@ const EditLabelModal = ({
         }
     );
 
+    useEffect(() => {
+        setModel(
+            label || {
+                Name: '',
+                Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+                Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
+                ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
+                Notify: type === 'folder' ? 1 : 0,
+            }
+        );
+    }, [type]);
+
+    const handleClose = () => {
+        onCloseCustomAction?.();
+        onClose?.();
+    };
+
     const create = async (label: LabelModel) => {
         const { Label } = await api(createLabel(prepareLabel(label)));
         await call();
@@ -70,7 +98,7 @@ const EditLabelModal = ({
             text: c('label/folder notification').t`${Label.Name} created`,
         });
         onAdd(Label);
-        onClose?.();
+        handleClose();
     };
 
     const update = async (label: LabelModel) => {
@@ -82,16 +110,20 @@ const EditLabelModal = ({
             });
             onEdit(Label);
         }
-        onClose?.();
+        handleClose();
     };
 
     const checkIsAvailable = async (label: LabelModel) => {
         await api(checkLabelAvailability(label));
         onCheckAvailable(model);
-        onClose?.();
+        handleClose();
     };
 
     const handleSubmit = async () => {
+        if (!onFormSubmit()) {
+            return;
+        }
+
         switch (mode) {
             case 'create':
                 await withLoading(create(model));
@@ -114,10 +146,10 @@ const EditLabelModal = ({
         });
     };
 
-    const handleChangeName = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    const handleChangeName = (value: string) => {
         setModel({
             ...model,
-            Name: target.value,
+            Name: value,
         });
     };
 
@@ -144,7 +176,7 @@ const EditLabelModal = ({
     };
 
     return (
-        <ModalTwo {...rest}>
+        <ModalTwo size="large" {...rest}>
             <ModalTwoHeader title={getTitle()} />
             <ModalTwoContent>
                 <NewLabelForm
@@ -153,10 +185,11 @@ const EditLabelModal = ({
                     onChangeColor={handleChangeColor}
                     onChangeParentID={handleChangeParentID}
                     onChangeNotify={handleChangeNotify}
+                    validator={validator}
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
                 <Button color="norm" loading={loading} onClick={handleSubmit}>{c('Action').t`Save`}</Button>
             </ModalTwoFooter>
         </ModalTwo>

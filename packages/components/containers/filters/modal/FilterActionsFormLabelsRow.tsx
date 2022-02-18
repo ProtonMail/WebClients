@@ -25,7 +25,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
     const { labelAs } = actions;
     const { isOpen } = labelAs;
 
-    const [{ open: isEditLabelOpen, ...editLabelProps }, setEditLabelModalOpen] = useModalState();
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     const handleChangeModel = (payload: Partial<ChangePayload>) => {
         handleUpdateActions({
@@ -122,12 +122,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                         <Button shape="outline" className="mt0" onClick={() => setEditLabelModalOpen(true)}>
                             {c('Action').t`Create label`}
                         </Button>
-                        <EditLabelModal
-                            {...editLabelProps}
-                            onAdd={handleCreateLabel}
-                            type="label"
-                            isOpen={isEditLabelOpen}
-                        />
+                        <EditLabelModal {...editLabelProps} onAdd={handleCreateLabel} type="label" />
                     </>
                 ) : (
                     <div className="mt0-5">{renderClosed()}</div>

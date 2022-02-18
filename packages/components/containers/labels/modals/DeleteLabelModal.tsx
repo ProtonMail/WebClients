@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { Label } from '@proton/shared/lib/interfaces';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import { Alert, AlertModal, Button, ErrorButton, ModalProps } from '../../../components';
+import { AlertModal, Button, ErrorButton, ModalProps } from '../../../components';
 
 interface Props extends ModalProps {
     label: Label;
@@ -38,12 +38,10 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
             ]}
             {...rest}
         >
-            <Alert className="mb1" type="info">
-                {I18N[label.Type].content}
-            </Alert>
-            <Alert className="mb1" type="error">
-                {I18N[label.Type].confirm}
-            </Alert>
+            {I18N[label.Type].content}
+            <br />
+            <br />
+            {I18N[label.Type].confirm}
         </AlertModal>
     );
 };

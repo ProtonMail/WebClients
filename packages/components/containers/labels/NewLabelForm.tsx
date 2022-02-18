@@ -1,24 +1,32 @@
-import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
-import { Alert, Input, Label, Row, Field, ColorPicker, Toggle, Info } from '../../components';
+import { Label, Row, Field, ColorPicker, Toggle, Info, InputFieldTwo } from '../../components';
 
 import ParentFolderSelector from './ParentFolderSelector';
 import { useMailSettings } from '../../hooks';
 
 interface Props {
     label: Partial<tsLabel | Folder>;
-    onChangeName: (e: ChangeEvent<HTMLInputElement>) => void;
+    onChangeName: (value: string) => void;
     onChangeColor: (color: string) => void;
     onChangeParentID?: (parentID: string | number) => void;
     onChangeNotify?: (value: number) => void;
+    validator: (validations: string[]) => string;
 }
 
-function NewLabelForm({ label: labelOrFolder, onChangeColor, onChangeName, onChangeParentID, onChangeNotify }: Props) {
+function NewLabelForm({
+    label: labelOrFolder,
+    onChangeColor,
+    onChangeName,
+    onChangeParentID,
+    onChangeNotify,
+    validator,
+}: Props) {
     const [mailSettings] = useMailSettings();
 
     const labelRenderer = () => {
@@ -84,8 +92,10 @@ function NewLabelForm({ label: labelOrFolder, onChangeColor, onChangeName, onCha
     return (
         <div className="center flex-item-fluid">
             {!labelOrFolder.ID && labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER ? (
-                <Alert className="mb1">{c('Info')
-                    .t`Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.`}</Alert>
+                <div className="mb1">
+                    {c('Info')
+                        .t`Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.`}
+                </div>
             ) : null}
             <Row>
                 <Label htmlFor="accountName">
@@ -94,18 +104,18 @@ function NewLabelForm({ label: labelOrFolder, onChangeColor, onChangeName, onCha
                         : c('New Label form').t`Label name`}
                 </Label>
                 <Field>
-                    <Input
+                    <InputFieldTwo
                         id="accountName"
                         value={labelOrFolder.Name}
-                        onChange={onChangeName}
+                        onValue={onChangeName}
                         placeholder={
                             labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER
                                 ? c('New Label form').t`Folder name`
                                 : c('New Label form').t`Label name`
                         }
-                        required
                         data-test-id="label/folder-modal:name"
                         autoFocus
+                        error={validator([requiredValidator(labelOrFolder.Name)])}
                     />
                 </Field>
             </Row>
