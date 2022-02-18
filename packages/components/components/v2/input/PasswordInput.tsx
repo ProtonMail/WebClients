@@ -18,7 +18,7 @@ const PasswordInputTwo = ({ disabled, ...rest }: Omit<InputTwoProps, 'type'>) =>
             {...rest}
             type={type}
             disabled={disabled}
-            icon={
+            suffix={
                 <button
                     title={type === 'password' ? c('Label').t`Reveal password` : c('Label').t`Hide password`}
                     className="inline-flex flex-item-noshrink"

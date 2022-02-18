@@ -139,7 +139,8 @@ select {
 	}
 
 	// field icon container
-	&-icon-container {
+	&-icon-container,
+	&-suffix-container {
 		@extend .inputform-field; // added focus-within inside on inputform-field for this fake-field :)
 		padding: 0;
 		height: rem($default-height-fields-inputforms);
@@ -152,7 +153,6 @@ select {
 			&,
 			&:focus {
 				border: 0;
-				inline-size: calc(100% - 1.5em);
 				outline: 0;
 			}
 
@@ -185,13 +185,22 @@ select {
 			}
 		}
 	}
+	&-icon-container {
+		.inputform-field {
+			&,
+			&:focus {
+				inline-size: calc(100% - 1.5em);
+			}
+		}
+	}
 
 	// bigger inputs
 	&-container--bigger {
 		.right-icon,
 		input.inputform-field,
 		.select,
-		.inputform-icon-container {
+		.inputform-icon-container,
+		.inputform-suffix-container {
 			block-size: rem($bigger-height-fields-inputforms);
 		}
 
@@ -202,7 +211,8 @@ select {
 			}
 		}
 
-		.inputform-icon-container {
+		.inputform-icon-container,
+		.inputform-suffix-container {
 			&-empty {
 				// for drive, to keep the same height
 				min-block-size: calc(#{rem($bigger-height-fields-inputforms)} + 2px);
