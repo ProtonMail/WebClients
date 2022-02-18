@@ -92,6 +92,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
         >
             <AlertModal
                 open={verifyModalOpen}
+                onClose={() => setVerifyModalOpen(false)}
                 title={c('Recovery Email').t`Verify recovery email?`}
                 buttons={[
                     <Button
