@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, useMemo } from 'react';
+import { useState, FormEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { checkSieveFilter, addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';
@@ -163,11 +163,11 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
     return (
         <>
             <ModalTwo
-                onClose={handleClose}
                 size="large"
                 as={Form}
                 onSubmit={(event: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(event))}
                 {...rest}
+                onClose={handleClose}
             >
                 <ModalTwoHeader title={title} />
                 <ModalTwoContent>

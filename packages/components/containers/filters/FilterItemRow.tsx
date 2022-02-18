@@ -25,9 +25,9 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
-    const [filterModalProps, setFilterModalOpen] = useModalState();
-    const [advancedFilterModalProps, setAdvancedFilterModalOpen] = useModalState();
-    const [deleteFilterModalProps, setDeleteFilterModalOpen] = useModalState();
+    const [filterModalProps, setFilterModalOpen, renderFilterModal] = useModalState();
+    const [advancedFilterModalProps, setAdvancedFilterModalOpen, renderAdvancedFilterModal] = useModalState();
+    const [deleteFilterModalProps, setDeleteFilterModalOpen, renderDeleteFilterModal] = useModalState();
 
     const { ID, Name, Status } = filter;
 
@@ -90,9 +90,11 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
                 {...rest}
                 className="on-mobile-hide-td3"
             />
-            <FilterModal {...filterModalProps} filter={filter} />
-            <AdvancedFilterModal {...advancedFilterModalProps} filter={filter} />
-            <DeleteFilterModal {...deleteFilterModalProps} filterName={filter.Name} handleDelete={handleRemove} />
+            {renderFilterModal && <FilterModal {...filterModalProps} filter={filter} />}
+            {renderAdvancedFilterModal && <AdvancedFilterModal {...advancedFilterModalProps} filter={filter} />}
+            {renderDeleteFilterModal && (
+                <DeleteFilterModal {...deleteFilterModalProps} filterName={filter.Name} handleDelete={handleRemove} />
+            )}
         </>
     );
 }
