@@ -1,3 +1,18 @@
+## Release 4.0.17 - Mar 9, 2022
+
+# Improvements
+
+-   Adjusted the email tracker count to only count tracker within the present message, excluding previous messages within a conversation. Tracker protection still applies to the entire conversation.
+-   Moved the "Daily email notifications" setting to the "General" section in Settings
+
+### Bug fixes
+
+-   Fixed an issue where empty lines would be added at the beginning of a new message in plain text mode if a signature is present
+-   Fixed an issue where some images in newsletters would be displayed incorrectly if the height has been set as a percentage by the sender
+-   Fixed an issue where a "Message processing error" would occur for some very old messages in an account
+-   Fixed a sidebar display issue for labels with longer names
+-   Fixed an issue where mailto: links containing more than one email address were not handled correctly if using the Firefox browser
+
 ## Release 4.0.16 - Feb 16, 2022
 
 ### Improvements
