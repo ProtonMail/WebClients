@@ -1,0 +1,306 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import { Alert, Details } from '@proton/components';
+import { getTitle } from '../../../helpers/title';
+
+<Meta title={getTitle(__filename)} />
+
+# Taxonomy
+
+<Alert type="warning">
+    Remember that when you use a variable,{' '}
+    <strong>never choose it by its look but by the usage it was created for</strong>.
+</Alert>
+
+The taxonomy of theming variables works together with the [Standard and Prominent layout](/docs/core-concepts-theming-explanations--page#standard-and-prominent-layout-parts).
+
+This taxonomy is composed by two kinds of variables: [mandatory variables](#mandatory-variables) and [optional variables](#optional-variables). Their naming conventions differ but they always use train-case.
+
+Each color of this taxonomy has been tested for [contrast and visual accessibility](https://snook.ca/technical/colour_contrast/colour.html#fg=33FF33,bg=333333) in their typical context of use. Meaning that, for example, the [Text](#text), [Signal](#signal), and [Primary](#primary) groups have been tested with the [Background](#background) group.
+
+## Mandatory variables
+
+Mandatory variables use a naming abstraction to make them usable in many cases. They use the naming convention `--context[-variant][-state]`.
+
+<Alert type="info">
+    Mandatory variables should not be defined by anyone other than the design team in collaboration with the core team.
+    If you think a variable is missing, please refer it to them.
+</Alert>
+
+<Details className="border-none mt2 mb2">
+    <summary className="inline-block p0 link">View all mandatory variables without explanation</summary>
+    <Source
+        language='css'
+        format
+        copy={false}
+        code={`
+--primary
+--primary-contrast
+ 
+--signal-danger
+--signal-danger-hover
+--signal-danger-active
+--signal-danger-contrast
+ 
+--signal-warning
+--signal-warning-hover
+--signal-warning-active
+--signal-warning-contrast
+ 
+--signal-success
+--signal-success-hover
+--signal-success-active
+--signal-success-contrast
+ 
+--signal-info
+--signal-info-hover
+--signal-info-active
+--signal-info-contrast
+ 
+--text-norm
+--text-weak
+--text-hint
+--text-disabled
+--text-invert
+ 
+--field-norm
+--field-hover
+--field-disabled
+ 
+--border-norm
+--border-weak
+ 
+--background-norm
+--background-weak
+--background-strong
+ 
+--interaction-norm
+--interaction-norm-hover
+--interaction-norm-active
+--interaction-norm-contrast
+ 
+--interaction-weak
+--interaction-weak-hover
+--interaction-weak-active
+ 
+--interaction-default
+--interaction-default-hover
+--interaction-default-active
+ 
+--shadow-norm-opacity
+--shadow-lifted-opacity
+ 
+--backdrop-norm
+    `}
+    />
+</Details>
+
+### Keywords
+
+The `hover` and `active` keywords are for values to be used on the css pseudo classes `:hover` (as well as `:focus`) and `:active` (key down state) respectively. From an accessibility standpoint, for a light background the `hover` color should be darker than the default, and the `active` color should be darker than `hover`. The opposite is true on a dark background, meaning the `hover` color should be lighter than the default, and `active` color should be lighter than `hover`.
+
+The `contrast` keyword is for colors that are meant to be used to contrast the other colors of the same group. For example, if `--primary` is a dark color, used as background, `--primary-contrast` will be a light color that can be used for text. Note that those variables should be removed when [`color-contrast()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-contrast()>) will be compatible enough.
+
+### Primary
+
+The primary group is used for content that you need to give visual focus on. This must only be for content without interaction.
+
+```css
+--primary
+--primary-contrast
+```
+
+### Signal
+
+The signal group is used for content that needs user's attention or interaction. For example, visual feedback after an interaction.
+
+-   **Info** for simple attention requests
+-   **Danger** for something wrong, such as errors or risky interaction
+-   **Warning** for warnings
+-   **Success** for something good, such as validation
+
+```css
+--signal-info
+--signal-info-hover
+--signal-info-active
+--signal-info-contrast
+
+--signal-danger
+--signal-danger-hover
+--signal-danger-active
+--signal-danger-contrast
+
+--signal-warning
+--signal-warning-hover
+--signal-warning-active
+--signal-warning-contrast
+
+--signal-success
+--signal-success-hover
+--signal-success-active
+--signal-success-contrast
+```
+
+### Text
+
+The text group defines all the possible text colors in addition to the signal and primary groups. This should only be for text without interaction.
+
+```css
+--text-norm
+--text-weak
+--text-hint
+--text-disabled
+--text-invert
+```
+
+### Border
+
+The border group defines border colors for anywhere in applications. This should only be for content without interaction.
+
+```css
+--border-norm
+--border-weak
+```
+
+### Background
+
+The background group defines all background colors.
+
+```css
+--background-norm
+--background-weak
+--background-strong
+```
+
+### Field
+
+The field group defines border colors for input field states.
+
+```css
+--field-norm
+--field-hover
+--field-disabled
+```
+
+### Interaction
+
+The interaction groups defines backgrounds and borders for interaction only. For example for buttons or navigation.
+
+-   **Interaction norm** for the most visible
+-   **Interaction weak** for secondary actions
+-   **Interaction default** for usual interaction needs
+
+```css
+--interaction-norm
+--interaction-norm-hover
+--interaction-norm-active
+--interaction-norm-contrast
+
+--interaction-weak
+--interaction-weak-hover
+--interaction-weak-active
+
+--interaction-default
+--interaction-default-hover
+--interaction-default-active
+```
+
+### Shadow opacity
+
+Shadow offsets, blur and spread radiuses are always the same and always use a black color, but we can change the opacity.
+
+```css
+--shadow-norm-opacity
+--shadow-lifted-opacity
+```
+
+### Backdrop
+
+The backdrop is a box the size of the viewport which is rendered immediately beneath an element which is above everything else - a modal for instance.
+
+```css
+--backdrop-norm
+```
+
+## Optional variables
+
+Optional variables closely describe their context of use. This helps to understand the impact quickly.
+
+They use the naming convention `--usage-location[-state]-impacted-property`.
+
+### Current optional variable list
+
+Since they should closely describe their context of use, no further explanation should be needed.
+
+```css
+--selection-background-color
+--selection-text-color
+
+--header-background-color
+--sidebar-background-color
+
+--navigation-item-count-background-color
+--navigation-item-count-text-color
+--navigation-current-item-marker-color
+--navigation-current-item-background-color
+--navigation-current-item-text-color
+
+--main-box-shadow
+--main-border-color
+
+--toolbar-background-color
+--toolbar-border-bottom-color
+--toolbar-text-color
+--toolbar-separator-color
+
+--scrollbar-thumb-color
+--scrollbar-thumb-hover-color
+
+--tooltip-background-color
+--tooltip-text-color
+
+--email-item-unread-background-color
+--email-item-unread-text-color
+--email-item-unread-icon-background-color
+--email-item-unread-icon-text-color
+--email-item-read-background-color
+--email-item-read-background-color-inverted
+--email-item-read-text-color
+--email-item-read-icon-background-color
+--email-item-read-icon-text-color
+--email-item-selected-background-color
+--email-item-selected-text-color
+--email-item-selected-icon-background-color
+--email-item-selected-icon-text-color
+--email-item-focus-marker-color
+--email-item-selected-focus-marker-color
+
+--email-message-view-background-color
+
+--field-background-color
+--field-text-color
+--field-placeholder-color
+--field-hover-background-color
+--field-hover-text-color
+--field-focus-background-color
+--field-focus-text-color
+--field-disabled-background-color
+--field-disabled-text-color
+
+--select-background-color
+
+--favorite-icon-color
+
+--mark-background-color
+--mark-text-color
+--mark-font-weight
+
+--modal-background-color
+--modal-text-color
+
+--file-preview-text-color
+--file-preview-background-color
+
+--border-radius
+
+--font-family
+```

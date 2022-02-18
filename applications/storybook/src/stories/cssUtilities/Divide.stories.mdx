@@ -1,0 +1,127 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import {
+    Alert,
+    Table,
+    TableHeader,
+    TableRow,
+    TableCell,
+    TableBody,
+} from '@proton/components';
+import { getTitle } from '../../helpers/title';
+
+<Meta title={getTitle(__filename)} />
+
+# Borders between element's children
+
+## Adding division
+
+Utilities for adding a border between children of an element.
+
+<Alert type="info">
+    These utilities apply a border of <code>1px</code> size, and a <code>--border-norm</code> color as default.
+</Alert>
+
+<Table className="color-norm">
+    <TableHeader>
+        <TableRow>
+            <TableCell type="header">
+                Class
+            </TableCell>
+            <TableCell type="header" className="w50">
+                Explanation
+            </TableCell>
+            <TableCell type="header" className="text-right">
+                Quick look
+            </TableCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableCell>
+                <code>divide-x</code>
+            </TableCell>
+            <TableCell>
+                Add borders between horizontal children.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-flex divide-x">
+                    <span className="px0-5 py0-25">1</span>
+                    <span className="px0-5 py0-25">2</span>
+                    <span className="px0-5 py0-25">3</span>
+                </span>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>divide-y</code>
+            </TableCell>
+            <TableCell>
+                Add borders between vertical children
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-flex w50p text-center flex-column divide-y">
+                    <span className="px0-5 py0-25">1</span>
+                    <span className="px0-5 py0-25">2</span>
+                    <span className="px0-5 py0-25">3</span>
+                </span>
+            </TableCell>
+        </TableRow>
+    </TableBody>
+</Table>
+
+## Divide color
+
+Utilities for controlling the color of border between children of an element.
+
+<Alert type="info">
+    These classes need to be used in addition with one of <code>divide-x</code> or <code>divide-y</code> classes.
+</Alert>
+
+<Table className="color-norm">
+    <TableHeader>
+        <TableRow>
+            <TableCell type="header">
+                Class
+            </TableCell>
+            <TableCell type="header" className="w50">
+                Explanation
+            </TableCell>
+            <TableCell type="header" className="text-right">
+                Quick look
+            </TableCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableCell>
+                <code>divide-weak</code>
+            </TableCell>
+            <TableCell>
+                Changes the color of borders between children to <code>--border-weak</code>.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-flex divide-x divide-weak">
+                    <span className="px0-5 py0-25">1</span>
+                    <span className="px0-5 py0-25">2</span>
+                    <span className="px0-5 py0-25">3</span>
+                </span>
+            </TableCell>
+        </TableRow>
+    </TableBody>
+</Table>
+
+## Example
+
+Add borders between vertical children, then override the color to weak.
+
+<Source
+    language='html'
+    format
+    code={`
+<ul className="divide-y divide-weak">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+`}
+/>

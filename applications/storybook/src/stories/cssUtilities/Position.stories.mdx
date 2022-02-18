@@ -1,5 +1,6 @@
 import { Meta, Source } from '@storybook/addon-docs';
 import {
+    Alert,
     Table,
     TableHeader,
     TableRow,
@@ -22,7 +23,7 @@ Utilities for controlling the position of an element.
             <TableCell type="header">
                 Class
             </TableCell>
-            <TableCell type="header">
+            <TableCell type="header" className="w75">
                 Explanation
             </TableCell>
         </TableRow>
@@ -46,18 +47,18 @@ Utilities for controlling the position of an element.
         </TableRow>
         <TableRow>
             <TableCell>
-                <code>absolute-center-x</code>
+                <code>absolute-center</code>
             </TableCell>
             <TableCell>
-                Position an element outside of the normal flow of the document, and center it horizontaly inside the nearest parent that has a <code>relative</code> position.
+                Position an element outside of the normal flow of the document, and center it horizontaly and verticaly inside the nearest positioned parent.
             </TableCell>
         </TableRow>
         <TableRow>
             <TableCell>
-                <code>absolute-center</code>
+                <code>absolute-center-x</code>
             </TableCell>
             <TableCell>
-                Position an element outside of the normal flow of the document, and center it horizontaly and verticaly inside the nearest parent that has a <code>relative</code> position.
+                Position an element outside of the normal flow of the document, and center it horizontaly inside the nearest positioned parent.
             </TableCell>
         </TableRow>
         <TableRow>
@@ -65,7 +66,121 @@ Utilities for controlling the position of an element.
                 <code>absolute-cover</code>
             </TableCell>
             <TableCell>
-                Position an element outside of the normal flow of the document, and cover the nearest parent that has a <code>relative</code> position.
+                Position an element outside of the normal flow of the document, and cover the nearest positioned parent.
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>fixed</code>
+            </TableCell>
+            <TableCell>
+                Position an element relative to the viewport.
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>sticky-top</code>
+            </TableCell>
+            <TableCell>
+                Position an element relative to the normal flow of the document until its containing block crosses the <code>top</code> edge of the viewport, and treated as "stuck" until meeting the opposite edge of its containing block.
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>sticky-bottom</code>
+            </TableCell>
+            <TableCell>
+                Position an element relative to the normal flow of the document until its containing block crosses the <code>bottom</code> edge of the viewport, and treated as "stuck" until meeting the opposite edge of its containing block.
+            </TableCell>
+        </TableRow>
+    </TableBody>
+</Table>
+
+## Placements
+
+Utilities for controlling the placement of positioned elements.
+
+<Alert type="info">
+    These classes need to be used in addition with <code>absolute</code> class.
+</Alert>
+
+<Table className="color-norm">
+    <TableHeader>
+        <TableRow>
+            <TableCell type="header">
+                Class
+            </TableCell>
+            <TableCell type="header" className="w75">
+                Explanation
+            </TableCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableCell>
+                <code>top</code>
+            </TableCell>
+            <TableCell>
+                Anchor the <code>top</code> edge of an absolute positioned element against the <code>top</code> edge of the nearest positioned parent.
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>right</code>
+            </TableCell>
+            <TableCell>
+                Anchor the <code>right</code> edge of an absolute positioned element against the <code>right</code> edge of the nearest positioned parent.
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>bottom</code>
+            </TableCell>
+            <TableCell>
+                Anchor the <code>bottom</code> edge of an absolute positioned element against the <code>bottom</code> edge of the nearest positioned parent.
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>left</code>
+            </TableCell>
+            <TableCell>
+                Anchor the <code>left</code> edge of an absolute positioned element against the <code>left</code> edge of the nearest positioned parent.
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>inset</code>
+            </TableCell>
+            <TableCell>
+                Anchor every edges of an absolute positioned element against every edges of the nearest positioned parent.
+            </TableCell>
+        </TableRow>
+    </TableBody>
+</Table>
+
+## Layers
+
+Utilities for controlling the the stack order of an element.
+
+<Table className="color-norm">
+    <TableHeader>
+        <TableRow>
+            <TableCell type="header">
+                Class
+            </TableCell>
+            <TableCell type="header" className="w75">
+                Explanation
+            </TableCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableCell>
+                <code>upper-layer</code>
+            </TableCell>
+            <TableCell>
+                Position an element on a layer over other elements, even positioned. Read the <a href="?path=/docs/core-concepts-layers-management--page">layer management page</a> to learn more.
             </TableCell>
         </TableRow>
     </TableBody>
@@ -73,12 +188,12 @@ Utilities for controlling the position of an element.
 
 ## Example
 
-Applies the common border radius on this element.
+Position an element outside of the normal flow of the document, and anchor it against the top and right edges of the nearest positioned parent, and finally make sure that it's on a stacking layer over the other elements.
 
 <Source
     language='html'
     format
     code={`
-<div className="rounded">Lorem ipsum dolor sit amet</div>
+<div className="absolute top right upper-layer">Lorem ipsum dolor sit amet</div>
 `}
 />
