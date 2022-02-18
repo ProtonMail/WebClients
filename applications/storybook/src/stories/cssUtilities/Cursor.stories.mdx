@@ -1,0 +1,156 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import {
+    Alert,
+    Table,
+    TableHeader,
+    TableRow,
+    TableCell,
+    TableBody,
+} from '@proton/components';
+import { getTitle } from '../../helpers/title';
+
+<Meta title={getTitle(__filename)} />
+
+# Cursor
+
+## Displaying a specific cursor
+
+Utilities for controlling the cursor style when hovering over an element.
+
+<Alert type="warning">
+    Use these utilities wisely, and only when you have to. Do <strong className="text-uppercase">not</strong> change element native cursor.
+</Alert>
+
+<Table className="color-norm">
+    <TableHeader>
+        <TableRow>
+            <TableCell type="header">
+                Class
+            </TableCell>
+            <TableCell type="header" className="w50">
+                Explanation
+            </TableCell>
+            <TableCell type="header" className="text-right">
+                Quick look
+            </TableCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableCell>
+                <code>cursor-default</code>
+            </TableCell>
+            <TableCell>
+                Display a <code>default</code> cursor when hovering over an element.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-block border py0-25 px0-5 cursor-default">
+                    hover me
+                </span>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>cursor-help</code>
+            </TableCell>
+            <TableCell>
+                Display a <code>help</code> cursor when hovering over an element.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-block border py0-25 px0-5 cursor-help">
+                    hover me
+                </span>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>cursor-wait</code>
+            </TableCell>
+            <TableCell>
+                Display a <code>wait</code> cursor when hovering over an element.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-block border py0-25 px0-5 cursor-wait">
+                    hover me
+                </span>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>cursor-grab</code>
+            </TableCell>
+            <TableCell>
+                Display a <code>grab</code> cursor when hovering over an element.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-block border py0-25 px0-5 cursor-grab">
+                    hover me
+                </span>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>cursor-row-resize</code>
+            </TableCell>
+            <TableCell>
+                Display a <code>row-resize</code> cursor when hovering over an element.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-block border py0-25 px0-5 cursor-row-resize">
+                    hover me
+                </span>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>cursor-col-resize</code>
+            </TableCell>
+            <TableCell>
+                Display a <code>col-resize</code> cursor when hovering over an element.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-block border py0-25 px0-5 cursor-col-resize">
+                    hover me
+                </span>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>cursor-pointer</code>
+            </TableCell>
+            <TableCell>
+                Display a <code>pointer</code> cursor when hovering over an element.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-block border py0-25 px0-5 cursor-pointer">
+                    hover me
+                </span>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>cursor-move</code>
+            </TableCell>
+            <TableCell>
+                Display a <code>move</code> cursor when hovering over an element.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-block border py0-25 px0-5 cursor-move">
+                    hover me
+                </span>
+            </TableCell>
+        </TableRow>
+    </TableBody>
+</Table>
+
+## Example
+
+Set this element to display a grab cursor when hovering over it.
+
+<Source
+    language='html'
+    format
+    code={`
+<div className="cursor-grab">Lorem ipsum dolor sit amet</div>
+`}
+/>

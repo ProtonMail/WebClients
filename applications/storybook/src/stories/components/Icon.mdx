@@ -3,16 +3,22 @@ import { Icon } from '@proton/components'
 
 # Icon
 
-Icons can have different sizes, configurable via the `size` prop. Icons are colored via text color and inherit the parent container's text color by default.
+Icon component can have different sizes, configurable via the `size` prop, 16 pixels like by default. They are colored via text color helpers and inherit the parent container's text color by default.
+
+All the available icons in our icon set are reachable in the [icon dedicated documentation page](/docs/core-concepts-icons--primary-icons).
+
+## How to use
+
+```html
+<Icon name="brand-proton-mail" />
+```
 
 <Canvas>
     <Story id="components-icon--color" />
 </Canvas>
 
+## Playground
+
+<Primary />
+
 <ArgsTable story={PRIMARY_STORY} />
-
-### Search
-
-<Canvas>
-    <Story id="proton-ui-icons--primary-icons" />
-</Canvas>
