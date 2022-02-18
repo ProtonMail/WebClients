@@ -76,7 +76,7 @@ const CustomizeMailImportModal = ({
     const { createModal } = useModals();
     const [isEditing, setIsEditing] = useState(false);
 
-    const [{ open: isEditLabelOpen, ...editLabelProps }, setEditLabelModalOpen] = useModalState();
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     const { getMailMappingErrors } = useIAMailPayload({
         email: importedEmail,
@@ -254,7 +254,6 @@ const CustomizeMailImportModal = ({
                         label={customizedPayload.ImportLabel}
                         type="label"
                         onCheckAvailable={handleEditLabel}
-                        isOpen={isEditLabelOpen}
                         mode="checkAvailable"
                     />
                 </Row>
