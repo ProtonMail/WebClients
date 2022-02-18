@@ -133,7 +133,7 @@ html,
 
 .main {
 	overflow: hidden;
-	border-start-start-radius: 4px;
+	border-start-start-radius: var(--border-radius-md);
 	border: solid var(--main-border-color);
 	border-block-start-width: 1px;
 	border-block-end-width: 0;
