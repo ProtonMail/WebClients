@@ -36,15 +36,13 @@ export const decorators = [
 const order = [
     'introduction-',
     'changelog-',
+    'core-concepts-',
+    '-theming-explanations-',
+    '-theming-usage-',
+    '-theming-taxonomy-',
     'components-',
-    'css-',
-    'theming-explanations-',
-    'theming-usage-',
-    'theming-taxonomy-',
-    'proton-ui-',
+    'css-utilities-',
 ];
-
-const priority = ['introduction-', 'changelog-', 'theming-'];
 
 export const parameters = {
     viewMode: 'docs',
@@ -56,7 +54,7 @@ export const parameters = {
             const aName = a[0];
             const bName = b[0];
 
-            if (priority.some((name) => aName.includes(name) || bName.includes(name))) {
+            if (order.some((name) => aName.includes(name) || bName.includes(name))) {
                 const aIdx = order.findIndex((i) => aName.indexOf(i) > -1);
                 const bIdx = order.findIndex((i) => bName.indexOf(i) > -1);
                 return aIdx - bIdx;
