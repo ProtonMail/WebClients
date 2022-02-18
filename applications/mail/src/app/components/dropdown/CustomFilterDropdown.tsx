@@ -1,9 +1,7 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import * as React from 'react';
 import {
-    AddFilterModal,
-    useModals,
     PrimaryButton,
     Checkbox,
     useUser,
@@ -11,12 +9,14 @@ import {
     useNotifications,
     FilterUtils,
     FilterConstants,
+    useModalState,
 } from '@proton/components';
 import { c } from 'ttag';
 
 import { identity } from '@proton/shared/lib/helpers/function';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
+import FilterModal from '@proton/components/containers/filters/modal/FilterModal';
 
 import { Filter, ConditionType, ConditionComparator } from '@proton/components/containers/filters/interfaces';
 
@@ -36,9 +36,16 @@ type FilterType = {
 interface Props {
     message: Message;
     onClose: () => void;
+    onLock: (lock: boolean) => void;
 }
 
-const CustomFilterDropdown = ({ message, onClose }: Props) => {
+const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
+    const [containFocus, setContainFocus] = useState(true);
+
+    const [filterModalProps, setFilterModalOpen, renderFilterModal] = useModalState();
+
+    useEffect(() => onLock(!containFocus), [containFocus]);
+
     const [filtersState, setFiltersState] = useState<FiltersState>({
         [ConditionType.SELECT]: false,
         [ConditionType.SUBJECT]: false,
@@ -46,7 +53,6 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
         [ConditionType.RECIPIENT]: false,
         [ConditionType.ATTACHMENTS]: false,
     });
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [user] = useUser();
     const [filters = []] = useFilters() as [Filter[], boolean, Error];
@@ -114,16 +120,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
         });
     };
 
-    const handleNext = () => {
-        if (!isPaid(user) && filters.filter((filter) => filter.Status === FILTER_STATUS.ENABLED).length > 0) {
-            createNotification({
-                text: c('Error').t`Too many active filters. Please upgrade to a paid plan to activate more filters.`,
-                type: 'error',
-            });
-            onClose();
-            return;
-        }
-
+    const filter = useMemo(() => {
         const filter = newFilter();
         const conditions = [];
         let filterType: ConditionType;
@@ -147,14 +144,20 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
             },
         };
 
-        createModal(
-            <AddFilterModal
-                filter={{
-                    ...filter,
-                    Tree: computeTree(filter),
-                }}
-            />
-        );
+        return filter;
+    }, [filtersState]);
+
+    const handleNext = () => {
+        if (!isPaid(user) && filters.filter((filter) => filter.Status === FILTER_STATUS.ENABLED).length > 0) {
+            createNotification({
+                text: c('Error').t`Too many active filters. Please upgrade to a paid plan to activate more filters.`,
+                type: 'error',
+            });
+            onClose();
+            return;
+        }
+        setContainFocus(false);
+        setFilterModalOpen(true);
     };
 
     const buttonDisabled = !Object.values(filtersState).some(identity);
@@ -165,40 +168,57 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="m1">
-                <span className="text-bold" tabIndex={-2}>
-                    {c('CustomFilter').t`Filter on`}
-                </span>
-            </div>
-            <ul className="unstyled mt1 mb1">
-                {FILTER_TYPES.map((filterType: FilterType) => (
-                    <li
-                        key={filterType.value}
-                        className="dropdown-item w100 flex flex-nowrap flex-align-items-center p0-5 pl1 pr1"
-                    >
-                        <Checkbox
-                            className="flex-item-noshrink"
-                            id={filterType.value}
-                            checked={filtersState[filterType.value]}
-                            onChange={() => toggleFilterType(filterType.value)}
-                        />
-                        <label
-                            htmlFor={filterType.value}
-                            title={filterType.label}
-                            className="flex-item-fluid text-ellipsis"
+        <>
+            <form onSubmit={handleSubmit}>
+                <div className="m1">
+                    <span className="text-bold" tabIndex={-2}>
+                        {c('CustomFilter').t`Filter on`}
+                    </span>
+                </div>
+                <ul className="unstyled mt1 mb1">
+                    {FILTER_TYPES.map((filterType: FilterType) => (
+                        <li
+                            key={filterType.value}
+                            className="dropdown-item w100 flex flex-nowrap flex-align-items-center p0-5 pl1 pr1"
                         >
-                            {filterType.label}
-                        </label>
-                    </li>
-                ))}
-            </ul>
-            <div className="m1">
-                <PrimaryButton className="w100" disabled={buttonDisabled} data-prevent-arrow-navigation type="submit">
-                    {c('CustomFilter').t`Next`}
-                </PrimaryButton>
-            </div>
-        </form>
+                            <Checkbox
+                                className="flex-item-noshrink"
+                                id={filterType.value}
+                                checked={filtersState[filterType.value]}
+                                onChange={() => toggleFilterType(filterType.value)}
+                            />
+                            <label
+                                htmlFor={filterType.value}
+                                title={filterType.label}
+                                className="flex-item-fluid text-ellipsis"
+                            >
+                                {filterType.label}
+                            </label>
+                        </li>
+                    ))}
+                </ul>
+                <div className="m1">
+                    <PrimaryButton
+                        className="w100"
+                        disabled={buttonDisabled}
+                        data-prevent-arrow-navigation
+                        type="submit"
+                    >
+                        {c('CustomFilter').t`Next`}
+                    </PrimaryButton>
+                </div>
+            </form>
+            {renderFilterModal && (
+                <FilterModal
+                    filter={{
+                        ...filter,
+                        Tree: computeTree(filter),
+                    }}
+                    onCloseCustomAction={() => setContainFocus(true)}
+                    {...filterModalProps}
+                />
+            )}
+        </>
     );
 };
 

@@ -33,6 +33,8 @@ import FilterActionsForm from './FilterActionsForm';
 import FilterConditionsForm from './FilterConditionsForm';
 import FilterPreview from './FilterPreview';
 
+import './Filtermodal.scss';
+
 import {
     SimpleFilterModalModel,
     Filter,
@@ -53,6 +55,7 @@ import CloseFilterModal from './CloseFilterModal';
 
 interface Props extends ModalProps {
     filter?: Filter;
+    onCloseCustomAction?: () => void;
 }
 
 const checkNameErrors = (filters: Filter[], name: string): string => {
@@ -107,7 +110,7 @@ const modelHasChanged = (a: SimpleFilterModalModel, b: SimpleFilterModalModel): 
     return false;
 };
 
-const FilterModal = ({ filter, ...rest }: Props) => {
+const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [filters = []] = useFilters();
     const [labels = [], loadingLabels] = useLabels();
@@ -204,6 +207,11 @@ const FilterModal = ({ filter, ...rest }: Props) => {
     const reqCreate = useApiWithoutResult<{ Filter: Filter }>(addTreeFilter);
     const reqUpdate = useApiWithoutResult<{ Filter: Filter }>(updateFilter);
 
+    const handleCloseModal = () => {
+        onCloseCustomAction?.();
+        onClose?.();
+    };
+
     const createFilter = async (filter: Filter) => {
         try {
             const { Filter } = await reqCreate.request(filter);
@@ -214,7 +222,7 @@ const FilterModal = ({ filter, ...rest }: Props) => {
             // Some failed request will add the filter but in disabled mode
             // So we have to refresh the list in both cases
             await call();
-            onClose?.();
+            handleCloseModal();
         }
     };
 
@@ -224,7 +232,7 @@ const FilterModal = ({ filter, ...rest }: Props) => {
         createNotification({
             text: c('Filter notification').t`Filter ${Filter.Name} updated`,
         });
-        onClose?.();
+        handleCloseModal();
     };
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -255,7 +263,7 @@ const FilterModal = ({ filter, ...rest }: Props) => {
 
     const handleClose = () => {
         if (!modelHasChanged(model, initializeModel(filter))) {
-            return onClose?.();
+            return handleCloseModal();
         }
 
         setCloseFilterModalOpen(true);
@@ -302,13 +310,13 @@ const FilterModal = ({ filter, ...rest }: Props) => {
     return (
         <>
             <ModalTwo
-                onClose={handleClose}
                 as={Form}
-                size="large"
+                className="mail-filter-modal"
                 onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
                     withLoading(handleSubmit(event));
                 }}
                 {...rest}
+                onClose={handleClose}
             >
                 <ModalTwoHeader title={title} />
                 <ModalTwoContent>
@@ -329,7 +337,7 @@ const FilterModal = ({ filter, ...rest }: Props) => {
                     />
                 </ModalTwoFooter>
             </ModalTwo>
-            <CloseFilterModal {...closeFilterModalProps} handleDiscard={onClose} />
+            <CloseFilterModal {...closeFilterModalProps} handleDiscard={handleCloseModal} />
         </>
     );
 };

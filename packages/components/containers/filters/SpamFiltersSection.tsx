@@ -30,7 +30,7 @@ function SpamFiltersSection() {
     const reqSearch = useApiWithoutResult(getIncomingDefaults);
     const { blackList, whiteList, refreshWhiteList, refreshBlackList, move, remove, search, create } = useSpamList();
 
-    const [type, setType] = useState<WHITE_OR_BLACK_LOCATION>(WHITELIST_LOCATION);
+    const [tmpType, setTmpType] = useState<WHITE_OR_BLACK_LOCATION>(WHITELIST_LOCATION);
     const [addToMailListModalProps, setAddToMailListModalOpen] = useModalState();
 
     const {
@@ -86,12 +86,12 @@ function SpamFiltersSection() {
     };
 
     const handleAddFilter = (type: WHITE_OR_BLACK_LOCATION) => {
-        setType(type);
+        setTmpType(type);
         setAddToMailListModalOpen(true);
     };
 
     const handleCreate = (data: IncomingDefault) => {
-        create(type, data);
+        create(tmpType, data);
     };
 
     const handleMove = async (incomingDefault: IncomingDefault) => {
@@ -154,7 +154,7 @@ function SpamFiltersSection() {
                     onMove={handleMove}
                 />
             </div>
-            <AddEmailToListModal type={type} onAdd={handleCreate} {...addToMailListModalProps} />
+            <AddEmailToListModal type={tmpType} onAdd={handleCreate} {...addToMailListModalProps} />
         </SettingsSectionWide>
     );
 }
