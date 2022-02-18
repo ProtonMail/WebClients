@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
 import { classnames } from '../../helpers';
 import Icon from '../icon/Icon';
 
@@ -24,7 +24,7 @@ const Breadcrumb = ({ list, current = 0, onClick, className, getIsDisabled }: Pr
                 const isLast = index === list.length - 1;
                 const isDisabled = getIsDisabled?.(index) ?? false;
                 return (
-                    <>
+                    <Fragment key={key}>
                         <li className="breadcrumb-item" key={key}>
                             <button
                                 type="button"
@@ -42,7 +42,7 @@ const Breadcrumb = ({ list, current = 0, onClick, className, getIsDisabled }: Pr
                                 <Icon size={14} className="flex-item-noshrink mauto" name="angle-down" rotate={270} />
                             </li>
                         )}
-                    </>
+                    </Fragment>
                 );
             })}
         </ul>

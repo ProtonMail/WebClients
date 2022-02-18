@@ -147,7 +147,9 @@ const HeaderMoreDropdown = ({
     const { isNarrow } = breakpoints;
     const additionalDropdowns: DropdownRender[] | undefined = isNarrow
         ? [
-              ({ onClose }) => <CustomFilterDropdown message={message.data as Message} onClose={onClose} />,
+              ({ onClose, onLock }) => (
+                  <CustomFilterDropdown message={message.data as Message} onClose={onClose} onLock={onLock} />
+              ),
               ({ onClose, onLock }) => (
                   <MoveDropdown
                       labelID={fromFolderID}
