@@ -5,20 +5,21 @@ import {
     SearchInput,
     Icon,
     Mark,
-    useModals,
     PrimaryButton,
-    LabelModal,
     Tooltip,
     useLoading,
     Checkbox,
     generateUID,
     Button,
+    useModalState,
 } from '@proton/components';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { LABEL_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
 import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+
 import { Element } from '../../models/element';
 import { getLabelIDs } from '../../helpers/elements';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
@@ -79,7 +80,6 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
     const labelIDs = labels.map(({ ID }) => ID);
     const [uid] = useState(generateUID('label-dropdown'));
     const [loading, withLoading] = useLoading();
-    const { createModal } = useModals();
     const [search, updateSearch] = useState('');
     const [containFocus, setContainFocus] = useState(true);
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
@@ -87,6 +87,8 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
     const getElementsFromIDs = useGetElementsFromIDs();
     const applyLabels = useApplyLabels();
     const moveToFolder = useMoveToFolder();
+
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     const initialState = useMemo(
         () => getInitialState(labels, getElementsFromIDs(selectedIDs)),
@@ -99,6 +101,12 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
     if (!selectedIDs || !selectedIDs.length) {
         return null;
     }
+
+    const newLabel: Pick<Label, 'Name' | 'Color' | 'Type'> = {
+        Name: search,
+        Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+        Type: LABEL_TYPE.MESSAGE_LABEL,
+    };
 
     // The dropdown is several times in the view, native html ids has to be different each time
     const searchInputID = `${uid}-search`;
@@ -180,18 +188,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
 
     const handleCreate = () => {
         setContainFocus(false);
-        const newLabel: Pick<Label, 'Name' | 'Color' | 'Type'> = {
-            Name: search,
-            Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
-            Type: LABEL_TYPE.MESSAGE_LABEL,
-        };
-        createModal(
-            <LabelModal
-                label={newLabel}
-                onAdd={(label) => handleAddNewLabel(label)}
-                onClose={() => setContainFocus(true)}
-            />
-        );
+        setEditLabelModalOpen(true);
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -218,6 +215,12 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                         <Icon name="tag" /> +
                     </Button>
                 </Tooltip>
+                <EditLabelModal
+                    label={newLabel}
+                    onAdd={(label) => handleAddNewLabel(label)}
+                    onCloseCustomAction={() => setContainFocus(true)}
+                    {...editLabelProps}
+                />
             </div>
             <div className="m1 mb0">
                 <SearchInput

@@ -5,7 +5,6 @@ import {
     FeatureCode,
     HotkeyTuple,
     Icon,
-    LabelModal,
     SidebarList,
     SidebarListItemHeaderLink,
     SimpleSidebarListItemHeader,
@@ -17,7 +16,7 @@ import {
     useLocalState,
     useMailSettings,
     useMessageCounts,
-    useModals,
+    useModalState,
     useUser,
 } from '@proton/components';
 import { APPS, MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
@@ -26,6 +25,8 @@ import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
+import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+
 import { getCounterMap } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import SidebarItem from './SidebarItem';
@@ -51,7 +52,6 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     const [displayLabels, toggleLabels] = useLocalState(true, `${user.ID}-display-labels`);
     const [labels] = useLabels();
     const [folders, loadingFolders] = useFolders();
-    const { createModal } = useModals();
     const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
 
     const sidebarRef = useRef<HTMLDivElement>(null);
@@ -59,6 +59,9 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     const [focusedItem, setFocusedItem] = useState<string | null>(null);
 
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
+
+    const [labelType, setLabelType] = useState<'label' | 'folder'>();
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     const foldersTreeview = useMemo(() => buildTreeview(foldersUI), [foldersUI]);
 
@@ -230,6 +233,11 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         totalMessagesCount: totalMessagesMap[labelID] || 0,
     });
 
+    const handleOpenLabelModal = (labelType: 'label' | 'folder') => {
+        setLabelType(labelType);
+        setEditLabelModalOpen(true);
+    };
+
     return (
         <div ref={sidebarRef} tabIndex={-1} className="outline-none">
             <SidebarList>
@@ -332,7 +340,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                                 <button
                                     type="button"
                                     className="flex navigation-link-header-group-control flex-item-noshrink"
-                                    onClick={() => createModal(<LabelModal type="folder" />)}
+                                    onClick={() => handleOpenLabelModal('folder')}
                                     title={c('Title').t`Create a new folder`}
                                     data-testid="navigation-link:add-folder"
                                 >
@@ -375,7 +383,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                                 <button
                                     type="button"
                                     className="flex navigation-link-header-group-control flex-item-noshrink"
-                                    onClick={() => createModal(<LabelModal />)}
+                                    onClick={() => handleOpenLabelModal('label')}
                                     title={c('Title').t`Create a new label`}
                                     data-testid="navigation-link:add-label"
                                 >
@@ -403,6 +411,8 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     />
                 )}
             </SidebarList>
+
+            <EditLabelModal type={labelType} {...editLabelProps} />
         </div>
     );
 };
