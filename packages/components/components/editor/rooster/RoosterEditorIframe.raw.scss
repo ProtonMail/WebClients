@@ -142,6 +142,11 @@ blockquote blockquote blockquote {
 	position: relative;
 }
 
+ul,
+ol {
+	padding-inline-start: 1.429em;
+}
+
 li {
 	list-style-position: inside;
 }
