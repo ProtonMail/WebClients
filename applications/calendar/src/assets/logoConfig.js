@@ -1,7 +1,7 @@
 module.exports = {
     logo: 'src/assets/protoncalendar.svg',
     favicons: {
-        appName: 'ProtonCalendar',
+        appName: 'Proton Calendar',
         appDescription:
             'Keep your plans private with an encrypted, open source calendar from the developers of ProtonMail.',
         developerName: 'Proton AG',
