@@ -479,6 +479,13 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     const resumeIndexing: ResumeIndexing = async ({ notify, isRefreshed } = { notify: true, isRefreshed: false }) => {
         const isResumed = getES.Pause(userID);
 
+        // If an indexing instance is already in progress, or if indexing
+        // had already been completed, don't start a new one
+        const { esEnabled, isBuilding, dbExists } = esStatus;
+        if ((!isResumed && esEnabled) || isBuilding || dbExists) {
+            return;
+        }
+
         setESStatus((esStatus) => {
             return {
                 ...esStatus,
