@@ -210,8 +210,15 @@ export const getOccurrences = ({
 
     const { eventDuration, isAllDay, dtstart, modifiedRrule, exdateMap } = cache.start;
 
-    const rrule = internalValueToIcalValue('recur', modifiedRrule.value);
-    const iterator = rrule.iterator(dtstart);
+    let iterator;
+    try {
+        const rrule = internalValueToIcalValue('recur', modifiedRrule.value);
+        iterator = rrule.iterator(dtstart);
+    } catch (e: any) {
+        console.error(e);
+        // Pretend it was ok
+        return [];
+    }
     const result = [];
 
     let next;
@@ -260,12 +267,11 @@ export const getOccurrencesBetween = (
     }
 
     if (!cache.iteration || start < cache.iteration.interval[0] || end > cache.iteration.interval[1]) {
-        const rrule = internalValueToIcalValue('recur', modifiedRrule.value);
-        const iterator = rrule.iterator(dtstart);
-
-        const interval = [start - YEAR_IN_MS, end + YEAR_IN_MS];
-
         try {
+            const rrule = internalValueToIcalValue('recur', modifiedRrule.value);
+            const iterator = rrule.iterator(dtstart);
+
+            const interval = [start - YEAR_IN_MS, end + YEAR_IN_MS];
             const result = fillOccurrencesBetween({
                 interval,
                 iterator,
