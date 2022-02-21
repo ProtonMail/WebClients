@@ -116,11 +116,12 @@ export const getMaxDepth = (node: ChildNode) => {
 export const checkContrast = (node: ChildNode, window: Window): boolean => {
     if (node.nodeType === Node.ELEMENT_NODE) {
         const style = window.getComputedStyle(node as Element);
-        const color = tinycolor(style.color) || tinycolor('#fff');
-        const background = tinycolor(style.backgroundColor) || tinycolor('#000');
+        const color = style.color ? tinycolor(style.color) : tinycolor('#fff');
+        const background = style.backgroundColor ? tinycolor(style.backgroundColor) : tinycolor('#000');
         const result =
             (color?.isDark() && (background?.isLight() || background?.getAlpha() === 0)) ||
             (color?.isLight() && background?.isDark());
+
         if (!result) {
             return false;
         }
