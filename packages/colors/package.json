@@ -2,7 +2,8 @@
     "name": "@proton/colors",
     "description": "Package containing the logic for Proton's design system color computations",
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "build": "webpack-cli"
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
@@ -16,6 +17,8 @@
         "@types/tinycolor2": "^1.4.3",
         "jest": "^27.5.1",
         "ts-jest": "^27.1.3",
-        "typescript": "^4.6.3"
+        "ts-loader": "^9.2.8",
+        "typescript": "^4.6.3",
+        "webpack-cli": "^4.9.2"
     }
 }
