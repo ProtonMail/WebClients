@@ -13,7 +13,7 @@ form.addEventListener('submit', e => {
 
   if (!value) { return }
 
-  const shades = genButtonShades(tinycolor(value))
+  const shades = genButtonShades(tinycolor(value), true)
 
   const children = shades.map(
     shade => {
