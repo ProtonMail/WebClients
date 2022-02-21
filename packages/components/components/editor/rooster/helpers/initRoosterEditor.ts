@@ -7,8 +7,8 @@ import { EditorActions, OnEditorEventListened } from '../../interface';
 import EditorEventListener from '../plugins/EditorEventListener';
 import UndoSnapshots from '../plugins/UndoSnapshots';
 import getRoosterEditorActions from './getRoosterEditorActions';
-import { ModalLinkProps } from '../../hooks/useModalLink';
 import EditorCustomPastePlugin from '../plugins/EditorCustomPastePlugin';
+import { ModalLinkProps } from '../../hooks/interface';
 
 interface Options {
     onEditorEvent: OnEditorEventListened;
