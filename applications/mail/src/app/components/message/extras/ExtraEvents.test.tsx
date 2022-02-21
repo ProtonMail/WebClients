@@ -1,3 +1,7 @@
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { concatArrays } from 'pmcrypto';
+
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import {
     CALENDAR_FLAGS,
@@ -6,7 +10,7 @@ import {
     ICAL_METHOD,
     SETTINGS_VIEW,
 } from '@proton/shared/lib/calendar/constants';
-import { API_CODES, LABEL_COLORS } from '@proton/shared/lib/constants';
+import { API_CODES, APPS, LABEL_COLORS } from '@proton/shared/lib/constants';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -20,9 +24,8 @@ import {
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
-import { screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { concatArrays } from 'pmcrypto';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+
 import { generateApiCalendarEvent } from '../../../helpers/test/calendar';
 import {
     addAddressToCache,
@@ -291,7 +294,7 @@ END:VCALENDAR`;
         expect(screen.queryByText('Event already ended')).toBeInTheDocument();
 
         // test link
-        expect(screen.queryByText('Open in ProtonCalendar')).not.toBeInTheDocument();
+        expect(screen.queryByText(`Open in ${getAppName(APPS.PROTONCALENDAR)}`)).not.toBeInTheDocument();
 
         // test buttons
         expect(screen.queryByText('Attending?')).toBeInTheDocument();
@@ -405,7 +408,7 @@ END:VCALENDAR`;
         expect(screen.queryByText('Event already ended')).toBeInTheDocument();
 
         // test link
-        expect(screen.queryByText('Open in ProtonCalendar')).toBeInTheDocument();
+        expect(screen.queryByText(`Open in ${getAppName(APPS.PROTONCALENDAR)}`)).toBeInTheDocument();
 
         // test buttons
         expect(screen.queryByText('Attending?')).toBeInTheDocument();

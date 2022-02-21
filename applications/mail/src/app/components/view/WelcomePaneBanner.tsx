@@ -8,6 +8,9 @@ import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
+
 import { WELCOME_PANE_OPTIONS_URLS } from '../../constants';
 
 interface MessageOption {
@@ -43,6 +46,8 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
         openShop: c('Action').t`Open shop`,
         openCalendar: c('Action').t`Open calendar`,
     };
+
+    const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
     const messagesOptions: MessageOption[] = [
         {
@@ -315,7 +320,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
         },
         calendars?.length === 0 && {
             id: 21,
-            text: c('Info').t`Use Proton Calendar to keep your agenda private.`,
+            text: c('Info').t`Use ${calendarAppName} to keep your agenda private.`,
             cta: (
                 <Href url={WELCOME_PANE_OPTIONS_URLS.calendar} className="text-bold link align-baseline color-inherit">
                     {callToActionTexts.openCalendar}

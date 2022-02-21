@@ -1,6 +1,9 @@
 import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
+
 import { Button, Checkbox, FormModal } from '../../components';
 import useEarlyAccess from '../../hooks/useEarlyAccess';
 import useSynchronizingState from '../../hooks/useSynchronizingState';
@@ -18,6 +21,9 @@ const EarlyAccessModal = (props: { onClose?: () => void }) => {
         await earlyAccess.update(earlyAccessEnabled);
         window.location.reload();
     };
+
+    const mailAppName = getAppName(APPS.PROTONMAIL);
+    const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
     return (
         <FormModal
@@ -40,7 +46,7 @@ const EarlyAccessModal = (props: { onClose?: () => void }) => {
             <div className="h2">{c('Title').t`Beta Access`}</div>
             <p>
                 {c('Beta access description')
-                    .t`Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.`}
+                    .t`Beta Access lets you use the beta version of ${mailAppName}, ${calendarAppName}, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.`}
             </p>
             <p>{c('Beta access description').t`If you encounter issues, you can always disable Beta Access.`}</p>
             <div className="mb0-5 flex flex-align-items-center">
