@@ -18,7 +18,6 @@ export { default as useCalendarSubscribeFeature } from './useCalendarSubscribeFe
 export { default as useCalendarEmailNotificationsFeature } from './useCalendarEmailNotificationsFeature';
 export * from './useCalendarUserSettings';
 export { default as useCanReactivateKeys } from './useCanReactivateKeys';
-export { default as useChanged } from './useChanged';
 export { useLabels, useFolders, useContactGroups } from './useCategories';
 export { default as useClickOutside } from './useClickOutside';
 export { default as useCombinedRefs } from './useCombinedRefs';
@@ -94,6 +93,7 @@ export { default as usePlans } from './usePlans';
 export { default as usePremiumDomains } from './usePremiumDomains';
 export { default as usePreventLeave, PreventLeaveProvider } from './usePreventLeave';
 export { default as usePrimaryRecoverySecret } from './usePrimaryRecoverySecret';
+export { default as usePrevious } from './usePrevious';
 export { default as useProductPayerPeriod } from './useProductPayerPeriod';
 export { default as usePromiseResult } from './usePromiseResult';
 export { default as useRecoverySecrets } from './useRecoverySecrets';
