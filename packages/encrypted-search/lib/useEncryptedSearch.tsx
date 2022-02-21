@@ -248,13 +248,13 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
                 };
             });
 
-            await cacheDB<ESItem, ESCiphertext, ESSearchParameters>(
+            await cacheDB<ESItem, ESCiphertext>(
                 indexKey,
                 userID,
                 esCacheRef,
                 storeName,
                 indexName,
-                esHelpers
+                esHelpers.getTimePoint
             );
 
             esCacheRef.current.isCacheReady = true;
@@ -361,13 +361,13 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
         }
 
         // In case many items were removed from cache, fill the remaining space
-        await refreshESCache<ESItem, ESCiphertext, ESSearchParameters>(
+        await refreshESCache<ESItem, ESCiphertext>(
             indexKey,
             userID,
             esCacheRef,
             storeName,
             indexName,
-            esHelpers
+            esHelpers.getTimePoint
         );
 
         // Check if DB became limited after the update
@@ -574,8 +574,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
                 recordProgressLocal,
                 storeName,
                 indexName,
-                esHelpers,
-                esHelpers.sizeOfESItem
+                esHelpers
             );
 
             // Kill switch in case user logs out or pauses

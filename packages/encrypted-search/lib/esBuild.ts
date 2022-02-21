@@ -20,6 +20,7 @@ import {
     updateSizeIDB,
 } from './esUtils';
 import { sendESMetrics } from './esAPI';
+import { sizeOfESItem } from './esCache';
 
 /**
  * Decrypt the given armored index key.
@@ -100,8 +101,7 @@ const storeItems = async <ESItemMetadata, ESItem, ESCiphertext>(
     abortIndexingRef: React.MutableRefObject<AbortController>,
     storeName: string,
     recordLocalProgress: (localProgress: number) => void,
-    esIndexingHelpers: ESIndexingHelpers<ESItemMetadata, ESItem, ESCiphertext>,
-    sizeOfESItem: (esItem: ESItem) => number
+    esIndexingHelpers: ESIndexingHelpers<ESItemMetadata, ESItem, ESCiphertext>
 ): Promise<{ lastStoredItem: ESCiphertext; batchSize: number }> => {
     const { fetchESItem, getItemID, prepareCiphertext } = esIndexingHelpers;
 
@@ -155,8 +155,7 @@ const storeItemsBatches = async <ESItemMetadata, ESItem, ESCiphertext>(
     oldestItem: ESCiphertext | undefined,
     storeName: string,
     recordProgress: (progress: number) => void,
-    esIndexingHelpers: ESIndexingHelpers<ESItemMetadata, ESItem, ESCiphertext>,
-    sizeOfESItem: (esItem: ESItem) => number
+    esIndexingHelpers: ESIndexingHelpers<ESItemMetadata, ESItem, ESCiphertext>
 ) => {
     const { queryItemsMetadata } = esIndexingHelpers;
     let lastStoredItem = oldestItem;
@@ -186,8 +185,7 @@ const storeItemsBatches = async <ESItemMetadata, ESItem, ESCiphertext>(
             abortIndexingRef,
             storeName,
             recordLocalProgress,
-            esIndexingHelpers,
-            sizeOfESItem
+            esIndexingHelpers
         ).catch((error: any) => {
             if (
                 !(error.message && error.message === 'Operation aborted') &&
@@ -245,8 +243,7 @@ export const buildDB = async <ESItemMetadata, ESItem, ESCiphertext>(
     recordProgress: (progress: number) => void,
     storeName: string,
     indexName: string,
-    esIndexingHelpers: ESIndexingHelpers<ESItemMetadata, ESItem, ESCiphertext>,
-    sizeOfESItem: (esItem: ESItem) => number
+    esIndexingHelpers: ESIndexingHelpers<ESItemMetadata, ESItem, ESCiphertext>
 ) => {
     addESTimestamp(userID, 'start');
     const esDB = await openESDB(userID);
@@ -264,8 +261,7 @@ export const buildDB = async <ESItemMetadata, ESItem, ESCiphertext>(
         oldestItem,
         storeName,
         recordProgress,
-        esIndexingHelpers,
-        sizeOfESItem
+        esIndexingHelpers
     );
 
     esDB.close();

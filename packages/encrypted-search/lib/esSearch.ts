@@ -501,7 +501,7 @@ export const hybridSearch = async <ESItem, ESCiphertext, ESSearchParameters>(
     const isReverse = checkIsReverse(esSearchParams);
 
     // Messages in cache are the most recent ones, therefore if the cache is not ready and full and the search
-    // is in descending order, we cannot used cached messages
+    // is in descending order, we cannot used cached items
     if (isReverse || (esCacheRef.current.isCacheReady && !esCacheRef.current.isCacheLimited)) {
         // searchResults is initialized with the first portion of cached results
         let lastLength = esCacheRef.current.esCache.length;
@@ -569,9 +569,9 @@ export const hybridSearch = async <ESItem, ESCiphertext, ESSearchParameters>(
             };
         }
 
-        // If enough messages to fill two pages were already found, we don't continue the search
+        // If enough items to fill two pages were already found, we don't continue the search
         if (searchResults.length >= 2 * ES_EXTRA_RESULTS_LIMIT || abortSearchingRef.current.signal.aborted) {
-            // The last message in cache is assumed to be the oldest
+            // The last item in cache is assumed to be the oldest
             const lastEmailInCache = getTimePoint(esCacheRef.current.esCache[esCacheRef.current.esCache.length - 1]);
             return {
                 searchResults,
@@ -591,7 +591,7 @@ export const hybridSearch = async <ESItem, ESCiphertext, ESSearchParameters>(
     let shouldKeepSearching = !abortSearchingRef.current.signal.aborted;
     let timePoint: [number, number] | undefined;
     if (isReverse) {
-        // The remaining messages are searched from DB, but only if the indicated timespan
+        // The remaining items are searched from DB, but only if the indicated timespan
         // hasn't been already covered by cache. The cache is ordered such that the last item is the oldest
         ({ shouldKeepSearching, esSearchParams, timePoint } = checkCacheTimespan<ESItem, ESSearchParameters>(
             esSearchParams,

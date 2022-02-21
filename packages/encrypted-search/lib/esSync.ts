@@ -5,7 +5,7 @@ import { esSentryReport, getNumItemsDB, getOldestItem, openESDB, updateSizeIDB }
 import { decryptFromDB, uncachedSearch } from './esSearch';
 import { ESCache, ESItemEvent, ESSyncingHelpers } from './interfaces';
 import { ES_MAX_PARALLEL_ITEMS } from './constants';
-import { addToESCache, findItemIndex, removeFromESCache, replaceInESCache } from './esCache';
+import { addToESCache, findItemIndex, removeFromESCache, replaceInESCache, sizeOfESItem } from './esCache';
 import { encryptToDB } from './esBuild';
 
 /**
@@ -154,8 +154,7 @@ export const syncMessageEvents = async <ESItem, ESItemMetadata, ESItemChanges, E
     esSyncingHelpers: ESSyncingHelpers<ESItemMetadata, ESItem, ESItemChanges, ESCiphertext, ESSearchParameters>,
     recordProgressLocal?: () => void
 ) => {
-    const { sizeOfESItem, applySearch, updateESItem, getItemID, prepareCiphertext, fetchESItem, getTimePoint } =
-        esSyncingHelpers;
+    const { applySearch, updateESItem, getItemID, prepareCiphertext, fetchESItem, getTimePoint } = esSyncingHelpers;
 
     const esDB = await openESDB(userID);
     let searchChanged = false;
@@ -208,7 +207,7 @@ export const syncMessageEvents = async <ESItem, ESItemMetadata, ESItemChanges, E
             //   - if results are being shown, delete it from there too
             if (Action === EVENT_ACTIONS.DELETE) {
                 itemsToRemove.push(ID);
-                const size = removeFromESCache<ESItem>(ID, esCacheRef, sizeOfESItem, getItemID) || 0;
+                const size = removeFromESCache<ESItem>(ID, esCacheRef, getItemID) || 0;
                 updateSizeIDB(userID, -size);
 
                 const resultIndex = findItemIndex(ID, permanentResults, getItemID);
@@ -239,7 +238,7 @@ export const syncMessageEvents = async <ESItem, ESItemMetadata, ESItemChanges, E
 
                 const size = sizeOfESItem(itemToCache);
                 updateSizeIDB(userID, size);
-                addToESCache(itemToCache, esCacheRef, sizeOfESItem, getTimePoint, size);
+                addToESCache(itemToCache, esCacheRef, getTimePoint, size);
 
                 if (isSearch && applySearch(esSearchParams, itemToCache)) {
                     updatePermanentResults({ itemToCache });
@@ -295,7 +294,6 @@ export const syncMessageEvents = async <ESItem, ESItemMetadata, ESItemChanges, E
                 replaceInESCache<ESItem>(
                     newItemToCache,
                     esCacheRef,
-                    sizeOfESItem,
                     getItemID,
                     getTimePoint,
                     Action === EVENT_ACTIONS.UPDATE_DRAFT,
@@ -348,8 +346,7 @@ export const correctDecryptionErrors = async <ESItemMetadata, ESItem, ESItemChan
     recordProgress: (progress: number, total: number) => void,
     esCacheRef?: React.MutableRefObject<ESCache<ESItem>>
 ) => {
-    const { fetchESItem, getDecryptionErrorParams, getItemID, prepareCiphertext, sizeOfESItem, getTimePoint } =
-        esSyncingHelpers;
+    const { fetchESItem, getDecryptionErrorParams, getItemID, prepareCiphertext, getTimePoint } = esSyncingHelpers;
 
     const searchParameters = getDecryptionErrorParams();
 
@@ -392,7 +389,7 @@ export const correctDecryptionErrors = async <ESItemMetadata, ESItem, ESItemChan
                 const size = sizeOfESItem(newItem);
                 updateSizeIDB(userID, size);
                 if (esCacheRef) {
-                    addToESCache<ESItem>(newItem, esCacheRef, sizeOfESItem, getTimePoint, size);
+                    addToESCache<ESItem>(newItem, esCacheRef, getTimePoint, size);
                 }
                 recordProgress(++counter, searchResults.length);
 
