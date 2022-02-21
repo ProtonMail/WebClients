@@ -26,6 +26,7 @@ import {
     UsernameSection,
     YourPlanSection,
 } from '@proton/components';
+import { InviteSection, ReferralInvitesContextProvider, RewardSection } from '@proton/components/containers/referral';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
 import { getAccountAppRoutes } from './routes';
@@ -58,7 +59,7 @@ const AccountSettingsRouter = ({
     const location = useLocation();
 
     const {
-        routes: { dashboard, easySwitch, recovery, security, password, language },
+        routes: { dashboard, easySwitch, referral, recovery, security, password, language },
     } = accountAppRoutes;
 
     return (
@@ -107,6 +108,16 @@ const AccountSettingsRouter = ({
                     <LogsSection />
                 </PrivateMainSettingsArea>
             </Route>
+            {getIsSectionAvailable(referral) && (
+                <Route path={getSectionPath(path, referral)}>
+                    <ReferralInvitesContextProvider>
+                        <PrivateMainSettingsArea location={location} config={referral}>
+                            <InviteSection />
+                            <RewardSection />
+                        </PrivateMainSettingsArea>
+                    </ReferralInvitesContextProvider>
+                </Route>
+            )}
             <Route path={getSectionPath(path, easySwitch)}>
                 <PrivateMainSettingsArea location={location} config={easySwitch}>
                     <AccountEasySwitchSection />

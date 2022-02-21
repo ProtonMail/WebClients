@@ -2,7 +2,7 @@ import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { useToggle, useNotifications, useEventManager, useApiWithoutResult } from '../../hooks';
 import { Toggle } from '../../components';
@@ -10,9 +10,10 @@ import { Toggle } from '../../components';
 interface Props {
     id: string;
     mailSettings?: Partial<MailSettings>;
+    userSettings?: Partial<UserSettings>;
 }
 
-const PMSignature = ({ id, mailSettings = {} }: Props) => {
+const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { request, loading } = useApiWithoutResult(updatePMSignature);
@@ -30,7 +31,12 @@ const PMSignature = ({ id, mailSettings = {} }: Props) => {
             <div
                 className="border-container flex-item-fluid pr1 pt0-5 pb0-5 mb1"
                 // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{ __html: getProtonMailSignature() }}
+                dangerouslySetInnerHTML={{
+                    __html: getProtonMailSignature({
+                        isReferralProgramLinkEnabled: !!mailSettings.PMSignatureReferralLink,
+                        referralProgramUserLink: userSettings.Referral?.Link,
+                    }),
+                }}
             />
             <div className="ml0-5 pt0-5 on-mobile-ml0" data-testid="settings:identity-section:signature-toggle">
                 <Toggle loading={loading} id={id} checked={state} onChange={handleChange} />

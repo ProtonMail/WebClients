@@ -13,6 +13,7 @@ export * from './Member';
 export * from './Organization';
 export * from './OrganizationKey';
 export * from './Payment';
+export * from './Referrals';
 export * from './SignedKeyList';
 export * from './Subscription';
 export * from './User';
