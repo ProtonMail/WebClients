@@ -57,6 +57,8 @@ export enum FeatureCode {
     EasySwitch = 'EasySwitch',
     SpotlightDiscoverProtonServices = 'SpotlightDiscoverProtonServices',
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
+    ReferralProgram = 'ReferralProgram',
+    ReferralProgramSpotlight = 'ReferralProgramSpotlight',
 }
 
 export interface FeaturesContextValue {

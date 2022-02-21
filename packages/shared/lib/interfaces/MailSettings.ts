@@ -30,6 +30,7 @@ export interface MailSettings {
     Hotkeys: number; // used by v3 (Angular)
     Shortcuts: number; // used by v4
     PMSignature: number;
+    PMSignatureReferralLink: number;
     ImageProxy: number;
     TLS: number;
     RightToLeft: number;

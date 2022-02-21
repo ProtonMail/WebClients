@@ -48,6 +48,7 @@ export const eoDefaultMailSettings = {
     InheritParentFolderColor: 1,
     FontFace: null,
     FontSize: null,
+    PMSignatureReferralLink: 0,
 } as MailSettings;
 
 export const eoDefaultAddress = {} as Address[];
