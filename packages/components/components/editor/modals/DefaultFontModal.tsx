@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSettings';
 
-import FontSizeSelect from '../../../containers/layouts/FontSizeSelect';
-import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
-import FontFaceSelect from '../../../containers/layouts/FontFaceSelect';
+import { Button, ModalTwo, ModalTwoContent, ModalTwoHeader, ModalTwoFooter, Form } from '../../../components';
 import { useMailSettings, useNotifications, useApi, useEventManager } from '../../../hooks';
-import { TitleModal, FormModal } from '../../modal';
+import FontSizeSelect from '../../../containers/layouts/FontSizeSelect';
+import FontFaceSelect from '../../../containers/layouts/FontFaceSelect';
+import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
 
 interface Props {
     onClose?: () => void;
-    onChange: (nextFontFace: string, nextFontSize: number) => void;
+    onChange?: (nextFontFace: string, nextFontSize: number) => void;
 }
 
 const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
@@ -44,44 +44,51 @@ const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
             notifyPreferenceSaved();
         }
 
-        onChange(fontFace, fontSize);
+        onChange?.(fontFace, fontSize);
 
         setLoading(false);
         onClose?.();
     };
 
     return (
-        <FormModal
-            {...rest}
-            onSubmit={onSubmit}
-            loading={loading}
-            submitProps={{ disabled: !somethingChanged }}
-            onClose={onClose}
-            submit={c('Action').t`Update`}
-            small
-        >
-            <div>
-                <TitleModal id="update-font-modal" className="mb1">{c('Update font modal')
-                    .t`Update default font and size`}</TitleModal>
-                <div className="flex flex-row">
-                    <div className="mr1">
-                        <FontFaceSelect id="fontFace" fontFace={fontFace} onChange={setFontFace} loading={loading} />
+        <ModalTwo onSubmit={onSubmit} onClose={onClose} as={Form} size="small" {...rest}>
+            <ModalTwoHeader title={c('Update font modal').t`Update default font and size`} />
+            <ModalTwoContent>
+                <div>
+                    <div className="flex flex-row">
+                        <div className="mr1">
+                            <FontFaceSelect
+                                id="fontFace"
+                                fontFace={fontFace}
+                                onChange={setFontFace}
+                                loading={loading}
+                            />
+                        </div>
+                        <div>
+                            <FontSizeSelect
+                                id="fontSize"
+                                fontSize={fontSize}
+                                onChange={setFontSize}
+                                loading={loading}
+                            />
+                        </div>
                     </div>
-                    <div>
-                        <FontSizeSelect id="fontSize" fontSize={fontSize} onChange={setFontSize} loading={loading} />
-                    </div>
-                </div>
 
-                <p>
-                    <span className="color-weak">{c('Update font modal')
-                        .t`Your default font will look like following:`}</span>
-                    <br />
-                    <span className="mt0" style={{ fontFamily: fontFace, fontSize: `${fontSize}px` }}>{c(
-                        'Update font modal'
-                    ).t`Today is a good day to write an email`}</span>
-                </p>
-            </div>
-        </FormModal>
+                    <p>
+                        <span className="color-weak">{c('Update font modal')
+                            .t`Your default font will look like following:`}</span>
+                        <br />
+                        <span className="mt0" style={{ fontFamily: fontFace, fontSize: `${fontSize}px` }}>{c(
+                            'Update font modal'
+                        ).t`Today is a good day to write an email`}</span>
+                    </p>
+                </div>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button type="reset" onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" type="submit" disabled={!somethingChanged}>{c('Action').t`Update`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
