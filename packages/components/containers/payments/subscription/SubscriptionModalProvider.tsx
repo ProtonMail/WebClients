@@ -24,9 +24,9 @@ interface OpenCallbackProps {
     disableBackButton?: boolean;
 }
 
-type OpenCallback = (props: OpenCallbackProps) => void;
+export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;
 
-type ContextProps = [OpenCallback, boolean];
+type ContextProps = [OpenSubscriptionModalCallback, boolean];
 
 const SubscriptionModalContext = createContext<ContextProps>([noop, false]);
 
