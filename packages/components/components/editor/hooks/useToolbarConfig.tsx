@@ -3,9 +3,7 @@ import { useIsMounted } from '../../../hooks';
 
 import { getToolbarConfig, ToolbarConfig } from '../helpers/getToolbarConfig';
 import { EditorMetadata, SetEditorToolbarConfig } from '../interface';
-import { ModalDefaultFontProps } from './useModalDefaultFont';
-import { ModalImageProps } from './useModalImage';
-import { ModalLinkProps } from './useModalLink';
+import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from './interface';
 
 interface Props {
     showModalLink: (options: ModalLinkProps) => void;
