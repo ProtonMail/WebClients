@@ -99,4 +99,16 @@ export interface UserSettings {
     EarlyAccess: number;
     Flags: Flags;
     Checklists?: string[];
+    Referral?: {
+        /**
+         * The referral link
+         * will always be a string containing the link.
+         */
+        Link: string;
+        /**
+         * 0 - Not elligible to
+         * 1 - Elligible to "refer a friend"
+         */
+        Eligible: boolean;
+    };
 }

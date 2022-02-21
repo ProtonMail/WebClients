@@ -47,6 +47,12 @@ export const updatePMSignature = (PMSignature: number) => ({
     data: { PMSignature },
 });
 
+export const updatePMSignatureReferralLink = (PMSignatureReferralLink: 0 | 1) => ({
+    url: '/mail/v4/settings/pmsignature-referral',
+    method: 'put',
+    data: { PMSignatureReferralLink },
+});
+
 export const updateComposerMode = (ComposerMode: number) => ({
     url: 'mail/v4/settings/composermode',
     method: 'put',

@@ -28,6 +28,8 @@ export const queryCreateUser = (data: {
     Phone?: string;
     Type: 1 | 2; // 1 = mail, 2 = VPN
     Referrer?: string;
+    ReferralIdentifier?: string;
+    ReferralID?: string; // Invite
     Payload?: {
         [key: string]: string;
     };

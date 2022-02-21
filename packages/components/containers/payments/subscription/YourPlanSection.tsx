@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 import { PLANS, PLAN_NAMES, APPS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import percentage from '@proton/shared/lib/helpers/percentage';
-import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getPlanIDs, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import { Href, Loader, Meter, Button } from '../../../components';
@@ -17,6 +17,8 @@ import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 import SubscriptionModal from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
+import YourReferralPlanSection from './YourReferralPlanSection';
+import { classnames } from '../../..';
 
 const getVpnConnectionsText = (n = 0) => {
     return c('Label').ngettext(msgid`${n} VPN connection available`, `${n} VPN connections available`, n);
@@ -145,38 +147,49 @@ const YourPlanSection = () => {
     const VPNPlanName = mailPlanName === PLANS.VISIONARY ? formattedMailPlanName : formattedVPNPlanName;
     const planType = hasPaidVpn ? VPNPlanName : c('Plan').t`Free`;
 
+    const isReferralTrial = isTrial(subscription);
+
     return (
-        <SettingsSection>
-            <div className="border mb2">
-                <SettingsLayout className="pb1 pt1 pl2 pr2">
-                    <SettingsLayoutLeft className="text-semibold">
-                        {hasPaidMail ? (
-                            `${mailAppName} ${formattedMailPlanName}`
-                        ) : hasAddresses ? (
-                            c('Plan').t`${mailAppName} Free`
-                        ) : (
-                            <Href url="https://mail.protonmail.com/login">{c('Action').t`Activate`}</Href>
-                        )}
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex-item-fluid">
-                        {mailAddons}
-                        <UpsellMailSubscription />
-                    </SettingsLayoutRight>
-                </SettingsLayout>
+        <>
+            {isReferralTrial && (
+                <div className="mb1 max-w69e">
+                    <YourReferralPlanSection expirationDate={subscription.PeriodEnd} mailAddons={mailAddons} />
+                </div>
+            )}
+            <SettingsSection>
+                <div className="border mb2">
+                    {!isReferralTrial && (
+                        <SettingsLayout className="pb1 pt1 pl2 pr2">
+                            <SettingsLayoutLeft className="text-semibold">
+                                {hasPaidMail ? (
+                                    `${mailAppName} ${formattedMailPlanName}`
+                                ) : hasAddresses ? (
+                                    c('Plan').t`${mailAppName} Free`
+                                ) : (
+                                    <Href url="https://mail.protonmail.com/login">{c('Action').t`Activate`}</Href>
+                                )}
+                            </SettingsLayoutLeft>
+                            <SettingsLayoutRight className="flex-item-fluid">
+                                {mailAddons}
+                                <UpsellMailSubscription />
+                            </SettingsLayoutRight>
+                        </SettingsLayout>
+                    )}
 
-                <SettingsLayout className="pb1 pt1 pl2 pr2 border-top">
-                    <SettingsLayoutLeft className="text-semibold">{`${vpnAppName} ${planType}`}</SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex-item-fluid pt0-5">
-                        {getVpnConnectionsText(hasPaidVpn ? MaxVPN : 1)}
-                        <UpsellVPNSubscription />
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-            </div>
+                    <SettingsLayout className={classnames(['pb1 pt1 pl2 pr2', !isReferralTrial && 'border-top'])}>
+                        <SettingsLayoutLeft className="text-semibold">{`${vpnAppName} ${planType}`}</SettingsLayoutLeft>
+                        <SettingsLayoutRight className="flex-item-fluid pt0-5">
+                            {getVpnConnectionsText(hasPaidVpn ? MaxVPN : 1)}
+                            <UpsellVPNSubscription />
+                        </SettingsLayoutRight>
+                    </SettingsLayout>
+                </div>
 
-            <Button shape="outline" onClick={handleModal}>
-                {c('Action').t`Customize subscription`}
-            </Button>
-        </SettingsSection>
+                <Button shape="outline" onClick={handleModal}>
+                    {c('Action').t`Customize subscription`}
+                </Button>
+            </SettingsSection>
+        </>
     );
 };
 

@@ -55,6 +55,7 @@ export * from './shortcuts';
 export * from './spotlight';
 export * from './stepDot';
 export * from './stepDots';
+export * from './strippedList';
 export * from './table';
 export * from './tabs';
 export * from './text';
