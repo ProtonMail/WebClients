@@ -11,6 +11,9 @@ export const WEEK = 7 * DAY;
 export const MONTH = 4 * WEEK;
 export const YEAR = 12 * MONTH;
 
+export const MAX_CALENDARS_FREE = 1;
+export const MAX_CALENDARS_PAID = 20;
+
 // Max quantity for all addons
 export const MAX_VPN_ADDON = 2000;
 export const MAX_MEMBER_ADDON = 5000;
@@ -456,7 +459,7 @@ export const COVID_PLUS_BONUS_STORAGE = 5 * GIGA;
 export const COVID_PROFESSIONAL_BONUS_STORAGE = 5 * GIGA;
 export const COVID_VISIONARY_BONUS_STORAGE = 10 * GIGA;
 
-export const DEFAULT_CYCLE = 12;
+export const DEFAULT_CYCLE = 24;
 
 export enum CYCLE {
     MONTHLY = 1,

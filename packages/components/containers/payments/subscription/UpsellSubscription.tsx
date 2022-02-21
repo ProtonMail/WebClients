@@ -1,47 +1,19 @@
 import * as React from 'react';
-import {
-    getPlanIDs,
-    getHasB2BPlan,
-    hasMail,
-    hasBundle,
-    hasDrive,
-    hasVPN,
-    hasMailPro,
-} from '@proton/shared/lib/helpers/subscription';
-import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { hasMail, hasBundle, hasDrive, hasVPN, hasMailPro } from '@proton/shared/lib/helpers/subscription';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { c } from 'ttag';
-import { PlansMap, Audience } from '@proton/shared/lib/interfaces';
+import { PlansMap } from '@proton/shared/lib/interfaces';
 
 import { Loader, Button, Card, Price } from '../../../components';
-import { useSubscription, useModals, usePlans } from '../../../hooks';
-import SubscriptionModal from './SubscriptionModal';
-import { SUBSCRIPTION_STEPS } from './constants';
+import { useSubscription, usePlans } from '../../../hooks';
 import UpsellItem from './UpsellItem';
 
-const UpsellMailSubscription = () => {
+const UpsellSubscription = ({ onUpgrade }: { onUpgrade: (plan: PLANS) => void }) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [plans = [], loadingPlans] = usePlans();
     const { Currency = DEFAULT_CURRENCY, Cycle = DEFAULT_CYCLE } = subscription || {};
-    const { createModal } = useModals();
     const plansMap = toMap(plans, 'Name') as PlansMap;
-    const planIDs = getPlanIDs(subscription);
-
-    const handleUpgradeClick = (plan: PLANS) => () => {
-        createModal(
-            <SubscriptionModal
-                currency={Currency}
-                cycle={Cycle}
-                planIDs={switchPlan({
-                    planIDs,
-                    planID: plansMap[plan]?.Name,
-                })}
-                step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
-                defaultAudience={getHasB2BPlan(subscription) ? Audience.B2B : Audience.B2C}
-            />
-        );
-    };
 
     if (loadingSubscription || loadingPlans) {
         return <Loader />;
@@ -69,7 +41,7 @@ const UpsellMailSubscription = () => {
                             .t`Cover more ground with support for 10 custom email domains`}</UpsellItem>
                     </div>
                     <div className="flex-item-noshrink ml1 mr1">
-                        <Button color="norm" className="mt1" onClick={handleUpgradeClick(PLANS.BUNDLE)}>
+                        <Button color="norm" className="mt1" onClick={() => onUpgrade(PLANS.BUNDLE)}>
                             {c('Action').jt`From ${monthlyPrice} /user`}
                         </Button>
                     </div>
@@ -115,7 +87,7 @@ const UpsellMailSubscription = () => {
                         ) : null}
                     </div>
                     <div className="flex-item-noshrink ml1 mr1">
-                        <Button color="norm" className="mt1" onClick={handleUpgradeClick(PLANS.BUNDLE)}>
+                        <Button color="norm" className="mt1" onClick={() => onUpgrade(PLANS.BUNDLE)}>
                             {c('Action').jt`From ${monthlyPrice}`}
                         </Button>
                     </div>
@@ -148,7 +120,7 @@ const UpsellMailSubscription = () => {
                             .t`Get 2.5 TB total storage to share among the whole family`}</UpsellItem>
                     </div>
                     <div className="flex-item-noshrink ml1 mr1">
-                        <Button color="norm" className="mt1" onClick={handleUpgradeClick(PLANS.FAMILY)}>
+                        <Button color="norm" className="mt1" onClick={() => onUpgrade(PLANS.FAMILY)}>
                             {c('Action').jt`From ${monthlyPrice}`}
                         </Button>
                     </div>
@@ -160,4 +132,4 @@ const UpsellMailSubscription = () => {
     return null;
 };
 
-export default UpsellMailSubscription;
+export default UpsellSubscription;

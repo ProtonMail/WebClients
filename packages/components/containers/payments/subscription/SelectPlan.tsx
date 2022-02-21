@@ -19,9 +19,9 @@ const SelectPlan = ({ planName = PLANS.MAIL, target, onChange }: Props) => {
                 <Option value={PLANS.MAIL} title={PLAN_NAMES[PLANS.MAIL]}>
                     {PLAN_NAMES[PLANS.MAIL]}
                 </Option>
-                <Option value={PLANS.DRIVE} title={PLAN_NAMES[PLANS.DRIVE]}>
+                {/* <Option value={PLANS.DRIVE} title={PLAN_NAMES[PLANS.DRIVE]}>
                     {PLAN_NAMES[PLANS.DRIVE]}
-                </Option>
+                </Option> */}
                 <Option value={PLANS.VPN} title={PLAN_NAMES[PLANS.VPN]}>
                     {PLAN_NAMES[PLANS.VPN]}
                 </Option>
