@@ -1,9 +1,48 @@
+/**
+ * Number of batches of items to process during indexing before
+ * refreshing openpgp workers. This is done to address some memory
+ * leaks in the latter and is a trade-off between the performance
+ * penalty of refreshing the workers and the magnitude of the leak
+ */
 export const OPENPGP_REFRESH_CUTOFF = 10;
+
+/**
+ * Number of items to add to the search results list during
+ * a partial search. It corresponds to one page of results in mail
+ */
 export const ES_EXTRA_RESULTS_LIMIT = 50;
+
+/**
+ * Size of a batch of items during indexing and syncing.
+ * It corresponds to the maximum number of messages' metadata returned
+ * by mail API
+ */
 export const ES_MAX_PARALLEL_ITEMS = 150;
+
+/**
+ * Number of items to fetch and process concurrently during indexing
+ */
 export const ES_MAX_CONCURRENT = 10;
+
+/**
+ * Number of characters to retain from an item's metadata when highlighting it
+ */
 export const ES_MAX_INITIAL_CHARS = 20;
-export const ES_MAX_CACHE = 500000000; // 500 MB
+
+/**
+ * Maximum size of cached items expressed in MB. It is heuristically determined
+ * so to cover most users (it should be enough for ~50k emails, and more than 95% of
+ * paid users have less than that, based on an extrapolation made in 2021) yet not
+ * to be too heavy on their devices' memory. The target size is 500 MB, however the
+ * number is larger due to our size estimation function being more conservative
+ * than the actual memory occupation
+ */
+export const ES_MAX_CACHE = 600000000; // 600 MB
+
+/**
+ * Number of items queried from IndexedDB when search is performed from disk in
+ * chronological order
+ */
 export const ES_MAX_ITEMS_PER_BATCH = 1000;
 
 export const AesKeyGenParams: AesKeyGenParams = { name: 'AES-GCM', length: 128 };
