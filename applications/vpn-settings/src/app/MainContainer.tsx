@@ -37,6 +37,8 @@ import {
     AccountRecoverySection,
     EmailSubscriptionSection,
     DeleteSection,
+    AutomaticSubscriptionModal,
+    SubscriptionModalProvider,
     useModalState,
 } from '@proton/components';
 import LiveChatZendesk, {
@@ -51,7 +53,6 @@ import { BugModalMode } from '@proton/components/containers/support/BugModal';
 import { getRoutes } from './routes';
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 import TVContainer from './containers/TVContainer';
-import DashboardAutomaticModal from './containers/DashboardAutomaticModal';
 
 const MainContainer = () => {
     const [user] = useUser();
@@ -156,19 +157,21 @@ const MainContainer = () => {
                         <Switch>
                             {getIsSectionAvailable(routes.dashboard) && (
                                 <Route path={routes.dashboard.to}>
-                                    <DashboardAutomaticModal />
-                                    <PrivateMainSettingsArea
-                                        setActiveSection={setActiveSection}
-                                        location={location}
-                                        config={routes.dashboard}
-                                    >
-                                        <PlansSection />
-                                        <YourPlanSection />
-                                        <BillingSection />
-                                        <CreditsSection />
-                                        <GiftCodeSection />
-                                        <CancelSubscriptionSection />
-                                    </PrivateMainSettingsArea>
+                                    <SubscriptionModalProvider>
+                                        <AutomaticSubscriptionModal />
+                                        <PrivateMainSettingsArea
+                                            setActiveSection={setActiveSection}
+                                            location={location}
+                                            config={routes.dashboard}
+                                        >
+                                            <PlansSection />
+                                            <YourPlanSection />
+                                            <BillingSection />
+                                            <CreditsSection />
+                                            <GiftCodeSection />
+                                            <CancelSubscriptionSection />
+                                        </PrivateMainSettingsArea>
+                                    </SubscriptionModalProvider>
                                 </Route>
                             )}
                             <Route path={routes.general.to}>

@@ -1,11 +1,8 @@
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
-import { PlanIDs, Cycle, Currency } from '@proton/shared/lib/interfaces';
 
 import { useModals, useConfig } from '../../hooks';
-import { Icon } from '../../components';
-import SubscriptionModal from '../payments/subscription/SubscriptionModal';
-import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
+import { Icon, useSettingsLink } from '../../components';
 import { EligibleOffer } from '../payments/interface';
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
@@ -22,29 +19,7 @@ const TopNavbarListItemBlackFridayButton = ({ offer }: Props) => {
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const hasRedDot = isVPN || offer.name === 'black-friday';
     const text = c('blackfriday: VPNspecialoffer Promo title, need to be short').t`Special offer`;
-
-    const onSelect = ({
-        planIDs,
-        cycle,
-        currency,
-        couponCode,
-    }: {
-        planIDs: PlanIDs;
-        cycle: Cycle;
-        currency: Currency;
-        couponCode?: string | null;
-    }) => {
-        createModal(
-            <SubscriptionModal
-                planIDs={planIDs}
-                cycle={cycle}
-                currency={currency}
-                coupon={couponCode}
-                step={SUBSCRIPTION_STEPS.CHECKOUT}
-                disableBackButton
-            />
-        );
-    };
+    const settingsLink = useSettingsLink();
 
     return (
         <TopNavbarListItemButton
@@ -55,7 +30,24 @@ const TopNavbarListItemBlackFridayButton = ({ offer }: Props) => {
             icon={<Icon name="bag-percent" />}
             text={text}
             onClick={() => {
-                createModal(<BlackFridayModal offer={offer} onSelect={onSelect} />);
+                createModal(
+                    <BlackFridayModal
+                        offer={offer}
+                        onSelect={({ offer, plan, cycle, currency, couponCode }) => {
+                            const params = new URLSearchParams();
+                            params.set('cycle', `${cycle}`);
+                            params.set('currency', currency);
+                            if (couponCode) {
+                                params.set('coupon', couponCode);
+                            }
+                            params.set('plan', plan);
+                            params.set('type', 'offer');
+                            params.set('edit', 'disable');
+                            params.set('offer', offer.name);
+                            settingsLink(`/dashboard?${params.toString()}`);
+                        }}
+                    />
+                );
             }}
         />
     );

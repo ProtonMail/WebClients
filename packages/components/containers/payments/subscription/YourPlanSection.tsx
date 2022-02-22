@@ -1,12 +1,14 @@
 import { c, msgid } from 'ttag';
-import { PLANS, PLAN_NAMES, APPS } from '@proton/shared/lib/constants';
+import { APPS, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import percentage from '@proton/shared/lib/helpers/percentage';
-import { getPlanIDs, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
-import { Href, Loader, Meter, Button } from '../../../components';
-import { useModals, useSubscription, useOrganization, useUser, useAddresses } from '../../../hooks';
+import { Button, Href, Loader, Meter } from '../../../components';
+import { useAddresses, useOrganization, useSubscription, useUser } from '../../../hooks';
+import { classnames } from '../../../helpers';
+
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
 import { formatPlans } from './helpers';
 import { SettingsSection } from '../../account';
@@ -15,10 +17,9 @@ import UpsellVPNSubscription from './UpsellVPNSubscription';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
-import SubscriptionModal from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
 import YourReferralPlanSection from './YourReferralPlanSection';
-import { classnames } from '../../..';
+import { useSubscriptionModal } from './SubscriptionModalProvider';
 
 const getVpnConnectionsText = (n = 0) => {
     return c('Label').ngettext(msgid`${n} VPN connection available`, `${n} VPN connections available`, n);
@@ -31,15 +32,15 @@ const YourPlanSection = () => {
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
     const [subscription, loadingSubscription] = useSubscription();
-    const { createModal } = useModals();
     const [organization, loadingOrganization] = useOrganization();
-    const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
+    const [open] = useSubscriptionModal();
 
     if (loadingSubscription || loadingOrganization || loadingAddresses) {
         return <Loader />;
     }
 
-    const { Plans = [], Cycle, CouponCode, Currency, isManagedByMozilla } = subscription;
+    const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
+    const { Plans = [], isManagedByMozilla } = subscription || {};
 
     if (isManagedByMozilla) {
         return <MozillaInfoPanel />;
@@ -88,18 +89,6 @@ const YourPlanSection = () => {
     const { mailPlan, vpnPlan } = formatPlans(Plans);
     const { Name: mailPlanName } = mailPlan || {};
     const { Name: vpnPlanName } = vpnPlan || {};
-
-    const handleModal = () => {
-        createModal(
-            <SubscriptionModal
-                planIDs={getPlanIDs(subscription)}
-                coupon={CouponCode || undefined} // CouponCode can equal null
-                currency={Currency}
-                cycle={Cycle}
-                step={isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION}
-            />
-        );
-    };
 
     const humanUsedSpace = humanSize(UsedSpace);
     const humanMaxSpace = humanSize(MaxSpace);
@@ -153,7 +142,13 @@ const YourPlanSection = () => {
         <>
             {isReferralTrial && (
                 <div className="mb1 max-w69e">
-                    <YourReferralPlanSection expirationDate={subscription.PeriodEnd} mailAddons={mailAddons} />
+                    <YourReferralPlanSection
+                        expirationDate={subscription.PeriodEnd}
+                        mailAddons={mailAddons}
+                        onUpgrade={(plan, step) => {
+                            open({ plan, step });
+                        }}
+                    />
                 </div>
             )}
             <SettingsSection>
@@ -171,7 +166,15 @@ const YourPlanSection = () => {
                             </SettingsLayoutLeft>
                             <SettingsLayoutRight className="flex-item-fluid">
                                 {mailAddons}
-                                <UpsellMailSubscription />
+                                {hasAddresses && (
+                                    <UpsellMailSubscription
+                                        subscription={subscription}
+                                        user={user}
+                                        onUpgrade={(plan: PLANS) => {
+                                            open({ plan, step: SUBSCRIPTION_STEPS.CUSTOMIZATION });
+                                        }}
+                                    />
+                                )}
                             </SettingsLayoutRight>
                         </SettingsLayout>
                     )}
@@ -180,12 +183,22 @@ const YourPlanSection = () => {
                         <SettingsLayoutLeft className="text-semibold">{`${vpnAppName} ${planType}`}</SettingsLayoutLeft>
                         <SettingsLayoutRight className="flex-item-fluid pt0-5">
                             {getVpnConnectionsText(hasPaidVpn ? MaxVPN : 1)}
-                            <UpsellVPNSubscription />
+                            <UpsellVPNSubscription
+                                subscription={subscription}
+                                user={user}
+                                onUpgrade={() => {
+                                    open({ plan: PLANS.VPNPLUS, step: SUBSCRIPTION_STEPS.CUSTOMIZATION });
+                                }}
+                            />
                         </SettingsLayoutRight>
                     </SettingsLayout>
                 </div>
-
-                <Button shape="outline" onClick={handleModal}>
+                <Button
+                    shape="outline"
+                    onClick={() => {
+                        open({ step: isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION });
+                    }}
+                >
                     {c('Action').t`Customize subscription`}
                 </Button>
             </SettingsSection>

@@ -2,12 +2,10 @@ import { ReactNode } from 'react';
 import { hasMailPlus } from '@proton/shared/lib/helpers/subscription';
 import { PLANS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { Loader, Button, Card } from '../../../components';
-import { useUser, useSubscription, useAddresses } from '../../../hooks';
+import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { Button, Card } from '../../../components';
 
 import UpsellItem from './UpsellItem';
-import useSubscriptionModal from './useSubscriptionModal';
-import { SUBSCRIPTION_STEPS } from './constants';
 
 const UpsellMailTemplate = ({ children }: { children: ReactNode }) => (
     <Card rounded border={false} className="mt1-5">
@@ -18,41 +16,29 @@ const UpsellMailTemplate = ({ children }: { children: ReactNode }) => (
     </Card>
 );
 
-const UpsellMailSubscription = () => {
-    const [{ hasPaidMail }, loadingUser] = useUser();
-    const [subscription, loadingSubscription] = useSubscription();
-    const isFreeMail = !hasPaidMail;
-    const [addresses, loadingAddresses] = useAddresses();
-    const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
+interface Props {
+    subscription: Subscription;
+    user: UserModel;
+    onUpgrade: (plan: PLANS) => void;
+}
 
-    const [showModalCallback, loadingModal] = useSubscriptionModal();
+const UpsellMailSubscription = ({ subscription, user, onUpgrade }: Props) => {
+    const isFreeMail = !user.hasPaidMail;
 
-    if (loadingModal || loadingAddresses || loadingUser || loadingSubscription) {
-        return <Loader />;
-    }
-
-    if (isFreeMail && hasAddresses) {
+    if (isFreeMail) {
         return (
             <UpsellMailTemplate>
-                <Button
-                    color="norm"
-                    className="mt1"
-                    onClick={() => showModalCallback(PLANS.PLUS, SUBSCRIPTION_STEPS.CUSTOMIZATION)}
-                >
+                <Button color="norm" className="mt1" onClick={() => onUpgrade(PLANS.PLUS)}>
                     {c('Action').t`Upgrade to Plus`}
                 </Button>
             </UpsellMailTemplate>
         );
     }
 
-    if (hasMailPlus(subscription) && hasAddresses) {
+    if (hasMailPlus(subscription)) {
         return (
             <UpsellMailTemplate>
-                <Button
-                    color="norm"
-                    className="mt1"
-                    onClick={() => showModalCallback(PLANS.PROFESSIONAL, SUBSCRIPTION_STEPS.CUSTOMIZATION)}
-                >
+                <Button color="norm" className="mt1" onClick={() => onUpgrade(PLANS.PROFESSIONAL)}>
                     {c('Action').t`Upgrade to Professional`}
                 </Button>
             </UpsellMailTemplate>
