@@ -1,5 +1,5 @@
 import { getCalendars } from '@proton/shared/lib/models/calendarsModel';
-import { useEffect, useRef, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
@@ -16,7 +16,15 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { unary } from '@proton/shared/lib/helpers/function';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 
-import { Alert, FormModal } from '../../../components';
+import {
+    Alert,
+    Button,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '../../../components';
 import {
     useApi,
     useConfig,
@@ -44,16 +52,14 @@ import SubscriptionCheckout from './SubscriptionCheckout';
 import './SubscriptionModal.scss';
 import { handlePaymentToken } from '../paymentTokenHelper';
 import PlanCustomization from './PlanCustomization';
-import SubscriptionModalHeader from './SubscriptionModalHeader';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
 
-interface Props {
+interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     step?: SUBSCRIPTION_STEPS;
     cycle?: Cycle;
     currency?: Currency;
     planIDs?: PlanIDs;
-    onClose?: (e?: any) => void;
     coupon?: string | null;
     disableBackButton?: boolean;
 }
@@ -69,6 +75,7 @@ interface Model {
 }
 
 const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
+    [SUBSCRIPTION_STEPS.CUSTOMIZATION]: SUBSCRIPTION_STEPS.PLAN_SELECTION,
     [SUBSCRIPTION_STEPS.CHECKOUT]: SUBSCRIPTION_STEPS.CUSTOMIZATION,
 };
 
@@ -91,19 +98,19 @@ const SubscriptionModal = ({
         [SUBSCRIPTION_STEPS.THANKS]: '',
     };
 
-    const innerRef = useRef<HTMLDivElement>();
+    const topRef = useRef<HTMLDivElement>(null);
     const api = useApi();
     const { APP_NAME } = useConfig();
     const app = getAppFromPathnameSafe(window.location.pathname);
     const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS || app === APPS.PROTONVPN_SETTINGS;
     const [user] = useUser();
-    const [subscription, loadingSubscription] = useSubscription();
     const [vpnCountries] = useVPNCountriesCount();
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
-    const [plans = [], loadingPlans] = usePlans();
-    const [organization, loadingOrganization] = useOrganization();
+    const [subscription] = useSubscription();
+    const [plans = []] = usePlans();
+    const [organization] = useOrganization();
     const [loading, withLoading] = useLoading();
     const [loadingCheck, withLoadingCheck] = useLoading();
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>();
@@ -282,8 +289,8 @@ const SubscriptionModal = ({
     );
 
     const subscriptionCheckout = (
-        <div className="subscriptionCheckout-column bg-weak on-mobile-w100">
-            <div className="subscriptionCheckout-container">
+        <div className="subscriptionCheckout-column on-mobile-w100 ml2 on-mobile-ml0">
+            <div className="subscriptionCheckout-container bg-weak rounded">
                 <SubscriptionCheckout
                     submit={submitButton}
                     plans={plans}
@@ -303,125 +310,128 @@ const SubscriptionModal = ({
         </div>
     );
 
-    // Each time the user switch between steps, it takes the user to the top of the modal
     useEffect(() => {
-        if (innerRef?.current) {
-            innerRef.current.scrollTop = 0;
-        }
+        // Each time the user switch between steps, it takes the user to the top of the modal
+        topRef.current?.scrollIntoView();
     }, [model.step]);
 
     return (
-        <FormModal
-            footer={null}
-            innerRef={innerRef}
+        <ModalTwo
             className={classnames([
                 'subscription-modal',
                 [
                     SUBSCRIPTION_STEPS.PLAN_SELECTION,
                     SUBSCRIPTION_STEPS.CUSTOMIZATION,
                     SUBSCRIPTION_STEPS.CHECKOUT,
-                ].includes(model.step) && 'modal--full',
-                user.isFree && 'is-free-user',
+                ].includes(model.step) && 'subscription-modal--fixed-height',
+                [SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(model.step) && 'subscription-modal--large-width',
+                [SUBSCRIPTION_STEPS.CUSTOMIZATION, SUBSCRIPTION_STEPS.CHECKOUT].includes(model.step) &&
+                    'subscription-modal--medium-width',
             ])}
-            title={
-                <SubscriptionModalHeader
-                    title={TITLE[model.step]}
-                    onBack={
-                        disableBackButton || backStep === undefined
-                            ? undefined
-                            : () => setModel({ ...model, step: backStep })
-                    }
-                />
-            }
-            loading={loading || loadingPlans || loadingOrganization || loadingSubscription}
-            onSubmit={() => withLoading(handleCheckout())}
+            onSubmit={(e: FormEvent) => {
+                e.preventDefault();
+                withLoading(handleCheckout());
+            }}
             onClose={onClose}
             {...rest}
+            as="form"
+            size="large"
         >
-            {model.step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
-            {model.step === SUBSCRIPTION_STEPS.PLAN_SELECTION && (
-                <PlanSelection
-                    loading={loadingCheck}
-                    plans={plans}
-                    currency={model.currency}
-                    cycle={model.cycle}
-                    planIDs={model.planIDs}
-                    organization={organization}
-                    subscription={subscription}
-                    vpnCountries={vpnCountries}
-                    service={model.service}
-                    onChangePlanIDs={(planIDs) =>
-                        withLoadingCheck(check({ ...model, planIDs, step: SUBSCRIPTION_STEPS.CUSTOMIZATION }))
-                    }
-                    onChangeCurrency={(currency) => setModel({ ...model, currency })}
-                    onChangeCycle={(cycle) => setModel({ ...model, cycle })}
-                />
-            )}
-            {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
-                <div className="flex-no-min-children on-mobile-flex-column">
-                    <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0">
-                        <div className="mlauto mrauto max-w50e divide-y">
-                            <PlanCustomization
-                                plans={plans}
-                                loading={loadingCheck}
-                                currency={model.currency}
-                                cycle={model.cycle}
-                                planIDs={model.planIDs}
-                                subscription={subscription}
-                                organization={organization}
-                                service={currentService}
-                                onChangePlanIDs={(planIDs) => withLoadingCheck(check({ ...model, planIDs }))}
-                                onChangeCycle={(cycle) => setModel({ ...model, cycle })}
-                                onBack={(service: PLAN_SERVICES) =>
-                                    setModel({ ...model, service, step: SUBSCRIPTION_STEPS.PLAN_SELECTION })
-                                }
-                            />
+            <ModalTwoHeader title={TITLE[model.step]} />
+            <ModalTwoContent>
+                <div ref={topRef} />
+                {model.step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
+                {model.step === SUBSCRIPTION_STEPS.PLAN_SELECTION && (
+                    <PlanSelection
+                        loading={loadingCheck}
+                        plans={plans}
+                        currency={model.currency}
+                        cycle={model.cycle}
+                        planIDs={model.planIDs}
+                        organization={organization}
+                        subscription={subscription}
+                        vpnCountries={vpnCountries}
+                        service={model.service}
+                        onChangePlanIDs={(planIDs) =>
+                            withLoadingCheck(check({ ...model, planIDs, step: SUBSCRIPTION_STEPS.CUSTOMIZATION }))
+                        }
+                        onChangeCurrency={(currency) => setModel({ ...model, currency })}
+                        onChangeCycle={(cycle) => setModel({ ...model, cycle })}
+                    />
+                )}
+                {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
+                    <div className="flex flex-no-min-children on-mobile-flex-column">
+                        <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
+                            <div className="max-w50e">
+                                <PlanCustomization
+                                    plans={plans}
+                                    loading={loadingCheck}
+                                    currency={model.currency}
+                                    cycle={model.cycle}
+                                    planIDs={model.planIDs}
+                                    subscription={subscription}
+                                    organization={organization}
+                                    service={currentService}
+                                    onChangePlanIDs={(planIDs) => withLoadingCheck(check({ ...model, planIDs }))}
+                                    onChangeCycle={(cycle) => setModel({ ...model, cycle })}
+                                />
+                            </div>
                         </div>
+                        {subscriptionCheckout}
                     </div>
-                    {subscriptionCheckout}
-                </div>
-            )}
-            {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
-                <div className="flex-no-min-children on-mobile-flex-column">
-                    <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0">
-                        <div className="mlauto mrauto max-w37e on-mobile-max-w100  ">
-                            {checkResult?.AmountDue ? (
-                                <>
-                                    <Payment
-                                        type="subscription"
-                                        paypal={paypal}
-                                        paypalCredit={paypalCredit}
-                                        method={method}
-                                        amount={checkResult.AmountDue}
-                                        currency={checkResult.Currency}
-                                        coupon={couponCode}
-                                        card={card}
-                                        onMethod={setMethod}
-                                        onCard={setCard}
-                                        errors={errors}
-                                    />
-                                </>
-                            ) : (
-                                <>
-                                    <Alert className="mb1">{c('Info').t`No payment is required at this time.`}</Alert>
-                                    {checkResult?.Credit && creditsRemaining ? (
+                )}
+                {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
+                    <div className="flex-no-min-children on-mobile-flex-column">
+                        <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
+                            <div className="mlauto mrauto max-w37e on-mobile-max-w100  ">
+                                {checkResult?.AmountDue ? (
+                                    <>
+                                        <Payment
+                                            type="subscription"
+                                            paypal={paypal}
+                                            paypalCredit={paypalCredit}
+                                            method={method}
+                                            amount={checkResult.AmountDue}
+                                            currency={checkResult.Currency}
+                                            coupon={couponCode}
+                                            card={card}
+                                            onMethod={setMethod}
+                                            onCard={setCard}
+                                            errors={errors}
+                                        />
+                                    </>
+                                ) : (
+                                    <>
                                         <Alert className="mb1">{c('Info')
-                                            .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</Alert>
-                                    ) : null}
-                                </>
-                            )}
+                                            .t`No payment is required at this time.`}</Alert>
+                                        {checkResult?.Credit && creditsRemaining ? (
+                                            <Alert className="mb1">{c('Info')
+                                                .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</Alert>
+                                        ) : null}
+                                    </>
+                                )}
+                            </div>
                         </div>
+                        {subscriptionCheckout}
                     </div>
-                    {subscriptionCheckout}
-                </div>
+                )}
+                {model.step === SUBSCRIPTION_STEPS.UPGRADE && (
+                    <div className="text-center">
+                        <SubscriptionUpgrade />
+                    </div>
+                )}
+                {model.step === SUBSCRIPTION_STEPS.THANKS && <SubscriptionThanks method={method} onClose={onClose} />}
+            </ModalTwoContent>
+            {disableBackButton || backStep === undefined ? null : (
+                <ModalTwoFooter>
+                    <Button
+                        onClick={() => {
+                            setModel({ ...model, step: backStep });
+                        }}
+                    >{c('Action').t`Back`}</Button>
+                </ModalTwoFooter>
             )}
-            {model.step === SUBSCRIPTION_STEPS.UPGRADE && (
-                <div className="text-center">
-                    <SubscriptionUpgrade />
-                </div>
-            )}
-            {model.step === SUBSCRIPTION_STEPS.THANKS && <SubscriptionThanks method={method} onClose={onClose} />}
-        </FormModal>
+        </ModalTwo>
     );
 };
 

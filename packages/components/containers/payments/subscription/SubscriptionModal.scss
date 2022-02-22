@@ -1,58 +1,20 @@
 @import '~@proton/styles/scss/config';
 
-// Hide show all features link in the modal
-.subscription-modal .subscriptionTable-show-features-container {
-	display: none;
-}
-// Hide images in subscription table
-.subscription-modal .subscriptionTable-image-container {
-	display: none;
-}
+.subscription-modal {
+	&--large-width {
+		--size: #{rem(1200)};
+		--margin: #{rem(32)};
+	}
 
-// Hide customize button in subscription table
-.subscription-modal .subscriptionTable-customize-button {
-	display: none;
-}
-
-// Hide first subscription table in the subscription modal
-.subscription-modal.is-free-user .subscriptionCustomization-section:first-child .vpnSubscriptionTable-container,
-.subscription-modal.is-free-user .subscriptionCustomization-section:first-child .mailSubscriptionTable-container {
-	display: none;
-}
-
-// Hide visionary plan for the second table in the subscription modal
-.subscription-modal .subscriptionCustomization-section:nth-child(2) [data-plan-name='visionary'] {
-	display: none;
-}
-
-// Adjust header height
-.subscription-modal .subscriptionTable-header {
-	min-block-size: rem(110);
-}
-
-.subscription-modal .subscriptionTable-description,
-.subscription-modal .subscriptionTable-footer {
-	min-block-size: auto;
-}
-
-.subscription-modal .label.payment-left {
-	inline-size: 30%;
-	min-inline-size: var(--label-width, 18em);
-}
-
-.subscription-modal .field-container.payment-right {
-	inline-size: 70%;
-}
-
-@include respond-to(1500) {
-	.subscriptionTable-plan .suffix {
-		inline-size: 100%;
+	&--medium-width {
+		--size: #{rem(900)};
+		--margin: #{rem(24)};
 	}
 }
 
-@include respond-to($breakpoint-small) {
-	.subscription-modal .label.payment-left,
-	.subscription-modal .field-container.payment-right {
-		inline-size: 100%;
+@include respond-to($breakpoint-medium, 'min') {
+	// Set height to avoid it switching between steps
+	.subscription-modal--fixed-height {
+		block-size: rem(900);
 	}
 }

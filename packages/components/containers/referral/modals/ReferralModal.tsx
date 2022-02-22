@@ -8,16 +8,15 @@ import emptyMailboxSvg from '@proton/styles/assets/img/placeholders/empty-mailbo
 import {
     Button,
     Loader,
-    ReferralFeaturesList,
-    useSubscription,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
+    ModalTwoHeader,
+    ReferralFeaturesList,
+    useSettingsLink,
+    useSubscription,
 } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import useSubscriptionModal from '../../payments/subscription/useSubscriptionModal';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 
 const ReferralModal = () => {
     const appName = getAppName(APPS.PROTONMAIL);
@@ -25,7 +24,7 @@ const ReferralModal = () => {
     const [showModal, setShowModal] = useState(false);
     const [formattedEndDate, setFormattedEndDate] = useState('');
     const [subscription, loadingSubscription] = useSubscription();
-    const [showSubscriptionModalCallback, loadingSubscriptionModal] = useSubscriptionModal();
+    const settingsLink = useSettingsLink();
 
     useEffect(() => {
         if (subscription?.PeriodEnd && isTrial(subscription)) {
@@ -39,6 +38,14 @@ const ReferralModal = () => {
         }
     }, [subscription?.PeriodEnd]);
 
+    const handlePlan = (plan: PLANS, target: 'compare' | 'checkout') => {
+        const params = new URLSearchParams();
+        params.set('plan', plan);
+        params.set('type', 'referral');
+        params.set('target', target);
+        settingsLink(`/dashboard?${params.toString()}`);
+    };
+
     return (
         <ModalTwo open={showModal}>
             <ModalTwoHeader
@@ -48,7 +55,7 @@ const ReferralModal = () => {
                 }
             />
             <ModalTwoContent>
-                {loadingSubscription || loadingSubscriptionModal ? (
+                {loadingSubscription ? (
                     <Loader />
                 ) : (
                     <>
@@ -65,13 +72,17 @@ const ReferralModal = () => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 {/** TODO */}
-                <Button onClick={() => showSubscriptionModalCallback(PLANS.PLUS)} shape="outline">{c('Info')
-                    .t`Other options`}</Button>
+                <Button
+                    onClick={() => {
+                        handlePlan(PLANS.PLUS, 'compare');
+                    }}
+                    shape="outline"
+                >{c('Info').t`Other options`}</Button>
                 <Button
                     color="norm"
-                    loading={loadingSubscriptionModal}
-                    disabled={loadingSubscriptionModal}
-                    onClick={() => showSubscriptionModalCallback(PLANS.PLUS, SUBSCRIPTION_STEPS.CHECKOUT)}
+                    onClick={() => {
+                        handlePlan(PLANS.PLUS, 'checkout');
+                    }}
                 >{c('Info').t`Continue with plus`}</Button>
             </ModalTwoFooter>
         </ModalTwo>

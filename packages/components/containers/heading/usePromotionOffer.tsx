@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { isProductPayer } from '@proton/shared/lib/helpers/blackfriday';
 import { LatestSubscription } from '@proton/shared/lib/interfaces';
-import { APPS, BLACK_FRIDAY, CYCLE } from '@proton/shared/lib/constants';
+import { APPS, BLACK_FRIDAY, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import {
-    useLoading,
-    useUser,
-    useSubscription,
-    usePlans,
     useApi,
-    useConfig,
-    useProductPayerPeriod,
     useBlackFridayPeriod,
+    useConfig,
+    useLoading,
+    usePlans,
+    useProductPayerPeriod,
+    useSubscription,
+    useUser,
 } from '../../hooks';
 import { EligibleOffer } from '../payments/interface';
 import { getBlackFridayEligibility } from '../payments/subscription/helpers';
@@ -62,23 +62,22 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
                   {
                       name: '',
                       cycle: CYCLE.TWO_YEARS,
-                      planIDs: {
-                          [plansMap.vpnplus.ID]: 1,
-                      },
+                      plan: PLANS.VPNPLUS,
+                      planIDs: { [plansMap.vpnplus.ID]: 1 },
                       couponCode: BLACK_FRIDAY.COUPON_CODE,
                       popular: true,
                   },
                   {
                       name: '',
                       cycle: CYCLE.YEARLY,
-                      planIDs: {
-                          [plansMap.vpnplus.ID]: 1,
-                      },
+                      plan: PLANS.VPNPLUS,
+                      planIDs: { [plansMap.vpnplus.ID]: 1 },
                       couponCode: BLACK_FRIDAY.COUPON_CODE,
                   },
                   {
                       name: '',
                       cycle: CYCLE.MONTHLY,
+                      plan: PLANS.VPNPLUS,
                       planIDs: { [plansMap.vpnplus.ID]: 1 },
                       couponCode: BLACK_FRIDAY.COUPON_CODE,
                   },
@@ -96,6 +95,7 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
                               ? 'ProtonVPN Plus + ProtonMail Plus'
                               : 'ProtonMail Plus + ProtonVPN Plus',
                       cycle: CYCLE.TWO_YEARS,
+                      plan: [PLANS.PLUS, PLANS.VPNPLUS].join('_'),
                       planIDs: {
                           [plansMap.plus.ID]: 1,
                           [plansMap.vpnplus.ID]: 1,

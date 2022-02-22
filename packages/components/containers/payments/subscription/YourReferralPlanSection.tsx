@@ -1,23 +1,22 @@
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { format } from 'date-fns';
 import { Button, ReferralFeaturesList } from '@proton/components';
 import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import UnsubscribeButton from './UnsubscribeButton';
-import useSubscriptionModal from './useSubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 interface Props {
     expirationDate: number;
-    mailAddons: React.ReactNode;
+    mailAddons: ReactNode;
+    onUpgrade: (plan: PLANS, step: SUBSCRIPTION_STEPS) => void;
 }
 
-const YourReferralPlanSection = ({ expirationDate, mailAddons }: Props) => {
+const YourReferralPlanSection = ({ expirationDate, mailAddons, onUpgrade }: Props) => {
     const formattedTrialExpirationDate = format(expirationDate, 'MMMM d, y');
     const appName = getAppName(APPS.PROTONMAIL);
     const planName = PLAN_NAMES[PLANS.PLUS];
-
-    const [showSubscriptionModalCallback, loadingModal] = useSubscriptionModal();
 
     return (
         <div className="flex flex-gap-1 on-tablet-flex-column">
@@ -34,12 +33,8 @@ const YourReferralPlanSection = ({ expirationDate, mailAddons }: Props) => {
 
                 <div className="flex flex-justify-space-between">
                     <UnsubscribeButton>{c('Info').t`Cancel trial`}</UnsubscribeButton>
-                    <Button
-                        color="norm"
-                        loading={loadingModal}
-                        disabled={loadingModal}
-                        onClick={() => showSubscriptionModalCallback(PLANS.PLUS, SUBSCRIPTION_STEPS.CHECKOUT)}
-                    >{c('Info').t`Continue with ${planName}`}</Button>
+                    <Button color="norm" onClick={() => onUpgrade(PLANS.PLUS, SUBSCRIPTION_STEPS.CHECKOUT)}>{c('Info')
+                        .t`Continue with ${planName}`}</Button>
                 </div>
             </div>
             <div className="border px2 py1 flex-item-fluid">
