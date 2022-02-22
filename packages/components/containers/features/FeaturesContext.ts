@@ -59,6 +59,7 @@ export enum FeatureCode {
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
     ReferralProgram = 'ReferralProgram',
     ReferralProgramSpotlight = 'ReferralProgramSpotlight',
+    SpotlightEmailNotifications = 'SpotlightEmailNotifications',
 }
 
 export interface FeaturesContextValue {

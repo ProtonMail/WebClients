@@ -12,6 +12,7 @@ import {
 import { c } from 'ttag';
 
 import discoverIllustration from '@proton/styles/assets/img/shared/discover.svg';
+import newIllustration from '@proton/styles/assets/img/shared/new.svg';
 
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import Portal from '../portal/Portal';
@@ -22,7 +23,7 @@ import { Icon } from '../icon';
 import { usePopper, usePopperAnchor } from '../popper';
 import { shouldShowSideRadius } from '../popper/utils';
 
-type SpotlightType = 'discover';
+type SpotlightType = 'discover' | 'new';
 
 export interface SpotlightProps {
     children: ReactElement;
@@ -97,6 +98,7 @@ const Spotlight = ({
     const illustrationURL = type
         ? {
               discover: discoverIllustration as string,
+              new: newIllustration as string,
           }[type]
         : null;
 
