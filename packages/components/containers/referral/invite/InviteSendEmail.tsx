@@ -106,10 +106,10 @@ const InviteSendEmail = () => {
                                 }}
                             />
                         ))}
-                        <div className="flex-item-fluid">
+                        <div className="flex-item-fluid flex referral-program-invite-input">
                             <AddressesAutocomplete
                                 id="recipientsAutocomplete"
-                                className="border-none"
+                                className="border-none p0-25"
                                 ref={anchorRef}
                                 anchorRef={anchorRef}
                                 disabled={contactEmailIsLoading}

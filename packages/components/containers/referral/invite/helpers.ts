@@ -2,10 +2,15 @@ import { getEmailParts, PROTONMAIL_DOMAINS, validateEmailAddress } from '@proton
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-export const isValidEmailAdressToRefer = (address: string) => {
+export const isProtonAddress = (address: string) => {
     const [, domain] = getEmailParts(address);
+
+    return PROTONMAIL_DOMAINS.includes(domain);
+};
+
+export const isValidEmailAdressToRefer = (address: string) => {
     const isValid = validateEmailAddress(address);
-    return isValid && !PROTONMAIL_DOMAINS.includes(domain);
+    return isValid && !isProtonAddress(address);
 };
 
 export const filterContactEmails = (contactEmails: ContactEmail[]) => {
