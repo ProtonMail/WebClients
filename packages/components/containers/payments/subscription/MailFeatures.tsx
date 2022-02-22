@@ -38,8 +38,8 @@ const getFeatures = (): MailFeature[] => {
         },
         {
             name: 'custom domains',
-            label: c('Mail feature').t`Custom email addresses`,
-            tooltip: c('Tooltip').t`Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com`,
+            label: c('Mail feature').t`Custom domains`,
+            tooltip: c('Tooltip').t`Use your own custom email domain addresses, e.g., you@yourname.com`,
             free: EmDash,
             [PLANS.PLUS]: '1 *',
             [PLANS.PROFESSIONAL]: '2 *',
