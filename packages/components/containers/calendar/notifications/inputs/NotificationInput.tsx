@@ -15,7 +15,9 @@ import {
     getWeeksBefore,
 } from './notificationOptions';
 import { classnames } from '../../../../helpers';
-import { Option, SelectTwo, IntegerInput, TimeInput } from '../../../../components';
+import { Option, SelectTwo, IntegerInput, TimeInput, Spotlight, useSpotlightShow } from '../../../../components';
+import { FeatureCode } from '../../..';
+import { useSpotlightOnFeature } from '../../../..';
 
 const { EMAIL, DEVICE /* BOTH */ } = SETTINGS_NOTIFICATION_TYPE;
 
@@ -57,30 +59,54 @@ const NotificationInput = ({
 
     const errorProps = typeof error === 'string' ? { 'aria-invalid': true } : {};
 
+    const {
+        show,
+        onDisplayed,
+        onClose: onCloseSpotlight,
+    } = useSpotlightOnFeature(FeatureCode.SpotlightEmailNotifications);
+    const shouldShowSpotlight = useSpotlightShow(show);
+
     return (
         <div className={classnames(['flex flex-nowrap flex-item-fluid on-mobile-flex-column', className])}>
             {hasType && (
-                <span
-                    className={classnames([
-                        'flex flex-nowrap on-mobile-mt0-5 on-mobile-mb0-5 mr0-5',
-                        isAllDay && at ? 'on-tiny-mobile-ml0' : 'w10e on-mobile-ml0',
-                    ])}
+                <Spotlight
+                    show={shouldShowSpotlight}
+                    onDisplayed={onDisplayed}
+                    type="new"
+                    content={
+                        <>
+                            <div className="text-lg text-bold mb0-25">{c('Spotlight')
+                                .t`No more missed appointments`}</div>
+                            <p className="m0">
+                                {c('Spotlight')
+                                    .t`With email notifications, you decide which events to be notified about and when.`}
+                            </p>
+                        </>
+                    }
                 >
-                    <SelectTwo
-                        value={type}
-                        onChange={({ value }) => onChange({ ...notification, type: +value })}
-                        title={c('Title').t`Select the way to send this notification`}
-                        {...errorProps}
+                    <span
+                        className={classnames([
+                            'flex flex-nowrap on-mobile-mt0-5 on-mobile-mb0-5 mr0-5',
+                            isAllDay && at ? 'on-tiny-mobile-ml0' : 'w10e on-mobile-ml0',
+                        ])}
                     >
-                        {[
-                            { text: c('Notification type').t`notification`, value: DEVICE },
-                            { text: c('Notification type').t`email`, value: EMAIL },
-                            // { text: c('Notification type').t`both notification and email`, value: BOTH },
-                        ].map(({ value, text }) => (
-                            <Option key={value} value={value} title={text} />
-                        ))}
-                    </SelectTwo>
-                </span>
+                        <SelectTwo
+                            value={type}
+                            onChange={({ value }) => onChange({ ...notification, type: +value })}
+                            title={c('Title').t`Select the way to send this notification`}
+                            onOpen={onCloseSpotlight}
+                            {...errorProps}
+                        >
+                            {[
+                                { text: c('Notification type').t`notification`, value: DEVICE },
+                                { text: c('Notification type').t`email`, value: EMAIL },
+                                // { text: c('Notification type').t`both notification and email`, value: BOTH },
+                            ].map(({ value, text }) => (
+                                <Option key={value} value={value} title={text} />
+                            ))}
+                        </SelectTwo>
+                    </span>
+                </Spotlight>
             )}
             <span className="flex flex-nowrap flex-item-fluid">
                 {hasValueInput && (
