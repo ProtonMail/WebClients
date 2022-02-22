@@ -24,7 +24,9 @@ interface SendEmailInvitationResult {
 
 const InviteSendEmail = () => {
     const api = useApi();
-    const [, setInvitedReferrals] = useReferralInvitesContext();
+    const {
+        invitedReferralsState: [, setInvitedReferrals],
+    } = useReferralInvitesContext();
     const anchorRef = useRef<HTMLInputElement>(null);
     const [recipients, setRecipients] = useState<Recipient[]>([]);
     const [hasInvalidRecipients, setHasInvalidRecipients] = useState<boolean>(false);

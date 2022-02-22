@@ -6,7 +6,7 @@ import { useApi } from '../../../hooks';
 
 type Action = { type: 'success'; payload: ReferralStatus } | { type: 'error' };
 
-interface ReducerState {
+export interface UseReferralStatusReducerState {
     rewards: ReferralStatus['Rewards'];
     rewardsLimit: ReferralStatus['RewardsLimit'];
     emailsAvailable: ReferralStatus['EmailsAvailable'];
@@ -15,7 +15,7 @@ interface ReducerState {
 
 const useReferralRewardStatus = () => {
     const api = useApi();
-    const [referralState, dispatch] = useReducer<Reducer<ReducerState, Action>>(
+    const [referralState, dispatch] = useReducer<Reducer<UseReferralStatusReducerState, Action>>(
         (prevState, action) => {
             if (action.type === 'error') {
                 return { ...prevState, loading: false };
