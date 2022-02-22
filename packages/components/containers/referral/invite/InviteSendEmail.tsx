@@ -112,7 +112,7 @@ const InviteSendEmail = () => {
                                 className="border-none"
                                 ref={anchorRef}
                                 anchorRef={anchorRef}
-                                loading={contactEmailIsLoading}
+                                disabled={contactEmailIsLoading}
                                 recipients={recipients}
                                 contactEmails={filteredContactEmails}
                                 hasEmailPasting
