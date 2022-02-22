@@ -309,7 +309,10 @@ const EditorWrapper = ({
     }, [blockquoteSaved]);
 
     useEffect(() => {
-        editorActionsRef.current?.focus();
+        // Warning: disabled is not in useEffects deps and should not be
+        if (!disabled) {
+            editorActionsRef.current?.focus();
+        }
     }, [blockquoteExpanded, blockquoteSaved, isPlainText]);
 
     return canRenderEditor ? (
