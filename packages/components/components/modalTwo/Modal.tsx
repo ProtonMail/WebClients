@@ -1,6 +1,6 @@
-import { AnimationEvent, ElementType, createContext, useLayoutEffect, useState, useRef } from 'react';
+import { ElementType, createContext, useLayoutEffect, useState, useRef } from 'react';
 
-import { useChanged, useHotkeys, useInstance } from '../../hooks';
+import { usePrevious, useHotkeys, useInstance } from '../../hooks';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { classnames, generateUID } from '../../helpers';
 import { useFocusTrap } from '../focus';
@@ -49,6 +49,12 @@ export interface ModalOwnProps {
     onExit?: () => void;
 }
 
+enum ExitState {
+    idle,
+    exiting,
+    exited,
+}
+
 const defaultElement = 'div';
 
 export type ModalProps<E extends ElementType = typeof defaultElement> = PolymorphicComponentProps<E, ModalOwnProps>;
@@ -65,11 +71,14 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     ...rest
 }: PolymorphicComponentProps<E, ModalOwnProps>) => {
     const last = useModalPosition(open || false);
-    const [exiting, setExiting] = useState(false);
+    const [exit, setExit] = useState(() => (open ? ExitState.idle : ExitState.exited));
     const id = useInstance(() => generateUID('modal'));
     const dialogRef = useRef(null);
+
+    const active = exit !== ExitState.exited;
+
     const focusTrapProps = useFocusTrap({
-        active: open,
+        active,
         rootRef: dialogRef,
     });
 
@@ -81,17 +90,15 @@ const Modal = <E extends ElementType = typeof defaultElement>({
         disableCloseOnEscape,
     };
 
-    useChanged(
-        {
-            value: open,
-            from: true,
-            to: false,
-            effectFn: useLayoutEffect,
-        },
-        () => {
-            setExiting(true);
+    const previousOpen = usePrevious(open);
+
+    useLayoutEffect(() => {
+        if (!previousOpen && open) {
+            setExit(ExitState.idle);
+        } else if (previousOpen && !open) {
+            setExit(ExitState.exiting);
         }
-    );
+    }, [previousOpen, open]);
 
     useHotkeys(
         dialogRef,
@@ -99,41 +106,37 @@ const Modal = <E extends ElementType = typeof defaultElement>({
             [
                 'Escape',
                 (e) => {
-                    if (!open) {
+                    if (!active || disableCloseOnEscape) {
                         return;
                     }
-                    if (!disableCloseOnEscape) {
-                        e.stopPropagation();
-                        onClose?.();
-                    }
+                    e.stopPropagation();
+                    onClose?.();
                 },
             ],
         ],
-        { dependencies: [open] }
+        { dependencies: [active, disableCloseOnEscape] }
     );
 
-    if (!open && !exiting) {
+    if (!active) {
         return null;
     }
-
-    const handleAnimationEnd = ({ animationName }: AnimationEvent<HTMLDivElement>) => {
-        if (animationName === 'anime-modal-two-out') {
-            setExiting(false);
-            onExit?.();
-        }
-    };
 
     return (
         <Portal>
             <div
                 className={classnames([
                     'modal-two',
-                    exiting && 'modal-two--out',
+                    exit === ExitState.exiting && 'modal-two--out',
                     fullscreenOnMobile && 'modal-two--fullscreen-on-mobile',
                     fullscreen && 'modal-two--fullscreen',
                     !last && 'modal-two--is-behind-backdrop',
                 ])}
-                onAnimationEnd={handleAnimationEnd}
+                onAnimationEnd={({ animationName }) => {
+                    if (animationName === 'anime-modal-two-out') {
+                        setExit(ExitState.exited);
+                        onExit?.();
+                    }
+                }}
             >
                 <dialog
                     ref={dialogRef}
