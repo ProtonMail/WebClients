@@ -175,8 +175,7 @@ const ProtonPlanCustomizer = ({
     const infoTooltip = {
         [ADDON_NAMES.SPACE]: '',
         [ADDON_NAMES.MEMBER]: '',
-        [ADDON_NAMES.DOMAIN]: c('Info')
-            .t`Allows you to host emails for your own domain(s) at ${mailAppName}, e.g. john.smith@example.com`,
+        [ADDON_NAMES.DOMAIN]: c('Info').t`Use your own custom email domain addresses, e.g., you@yourname.com`,
         [ADDON_NAMES.ADDRESS]: c('Info').t`Add additional addresses to your account like user2@protonmail.com`,
         [ADDON_NAMES.VPN]: c('Info')
             .t`Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.`,

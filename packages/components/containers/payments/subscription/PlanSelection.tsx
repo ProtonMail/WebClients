@@ -177,13 +177,8 @@ export const getPlanFeatures = (
     }
 
     const customEmail = {
-        content: c('Plan feature').t`Custom email addresses`,
-        info: (
-            <Info
-                title={c('Tooltip')
-                    .t`Host emails for your own domain(s) at ${mailAppName}, e.g. john.smith@example.com`}
-            />
-        ),
+        content: c('Plan feature').t`Custom domains`,
+        info: <Info title={c('Tooltip').t`Use your own custom email domain addresses, e.g., you@yourname.com`} />,
     };
 
     const accessProtonDrive = {
