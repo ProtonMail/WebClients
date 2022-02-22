@@ -6,101 +6,80 @@ const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL } = PLAN_SERVICES;
 const { PLUS, VPNPLUS, VPNBASIC, VISIONARY, PROFESSIONAL } = PLANS;
 
-export const getPlan = ({ Plans = [] }: Subscription, service: PLAN_SERVICES = MAIL) => {
-    return Plans.find(({ Services, Type }) => Type === PLAN && Services & service);
+export const getPlan = (subscription: Subscription | undefined, service: PLAN_SERVICES = MAIL) => {
+    return (subscription?.Plans || []).find(({ Services, Type }) => Type === PLAN && Services & service);
 };
 
-export const getPlans = ({ Plans = [] }: Subscription) => Plans.filter(({ Type }) => Type === PLAN);
-export const getAddons = ({ Plans = [] }: Subscription) => Plans.filter(({ Type }) => Type === ADDON);
-export const hasAddons = ({ Plans = [] }: Subscription) => Plans.some(({ Type }) => Type === ADDON);
+export const getAddons = (subscription: Subscription | undefined) =>
+    (subscription?.Plans || []).filter(({ Type }) => Type === ADDON);
+export const hasAddons = (subscription: Subscription | undefined) =>
+    (subscription?.Plans || []).some(({ Type }) => Type === ADDON);
 
-export const getPlanName = (subscription: Subscription, service: PLAN_SERVICES = MAIL) => {
+export const getPlanName = (subscription: Subscription | undefined, service: PLAN_SERVICES = MAIL) => {
     const plan = getPlan(subscription, service);
     return plan?.Name;
 };
 
-export const isBundleEligible = (subscription: Subscription) => {
-    const { Plans = [], CouponCode = '' } = subscription;
-
-    if (CouponCode) {
-        return false;
-    }
-
-    if (!Plans.length) {
-        return true;
-    }
-
-    const plans = getPlans(subscription);
-
-    if (plans.length > 1) {
-        return false;
-    }
-
-    const [{ Name }] = plans;
-
-    return [PLUS, VPNPLUS].includes(Name as PLANS);
+const hasSomePlan = (subscription: Subscription | undefined, planName: PLANS) => {
+    return (subscription?.Plans || []).some(({ Name }) => Name === planName);
 };
 
-export const hasLifetime = (subscription: Subscription) => {
-    const { CouponCode = '' } = subscription;
-    return CouponCode === 'LIFETIME';
+export const hasLifetime = (subscription: Subscription | undefined) => {
+    return subscription?.CouponCode === COUPON_CODES.LIFETIME;
 };
 
-export const hasVisionary = (subscription: Subscription) => {
-    const { Plans = [] } = subscription;
-    return Plans.some(({ Name }) => Name === VISIONARY);
+export const hasVisionary = (subscription: Subscription | undefined) => {
+    return hasSomePlan(subscription, VISIONARY);
 };
 
-export const hasMailPlus = (subscription: Subscription) => {
-    const { Plans = [] } = subscription;
-    return Plans.some(({ Name }) => Name === PLUS);
+export const hasMailPlus = (subscription: Subscription | undefined) => {
+    return hasSomePlan(subscription, PLUS);
 };
 
-export const hasMailProfessional = (subscription: Subscription) => {
-    const { Plans = [] } = subscription;
-    return Plans.some(({ Name }) => Name === PROFESSIONAL);
+export const hasMailProfessional = (subscription: Subscription | undefined) => {
+    return hasSomePlan(subscription, PROFESSIONAL);
 };
 
-export const hasVpnBasic = (subscription: Subscription) => {
-    const { Plans = [] } = subscription;
-    return Plans.some(({ Name }) => Name === VPNBASIC);
+export const hasVpnBasic = (subscription: Subscription | undefined) => {
+    return hasSomePlan(subscription, VPNBASIC);
 };
 
-export const hasVpnPlus = (subscription: Subscription) => {
-    const { Plans = [] } = subscription;
-    return Plans.some(({ Name }) => Name === VPNPLUS);
+export const hasVpnPlus = (subscription: Subscription | undefined) => {
+    return hasSomePlan(subscription, VPNPLUS);
 };
 
-export const getMonthlyBaseAmount = (name: PLANS | ADDON_NAMES, plans: Plan[], subscription: Subscription) => {
+export const getMonthlyBaseAmount = (
+    name: PLANS | ADDON_NAMES,
+    plans: Plan[],
+    subscription: Subscription | undefined
+) => {
     const base = plans.find(({ Name }) => Name === name);
     if (!base) {
         return 0;
     }
-    return subscription.Plans.filter(({ Name }) => Name === name).reduce((acc) => acc + base.Pricing[CYCLE.MONTHLY], 0);
+    return (subscription?.Plans || [])
+        .filter(({ Name }) => Name === name)
+        .reduce((acc) => acc + base.Pricing[CYCLE.MONTHLY], 0);
 };
 
-export const getPlanIDs = (subscription: Subscription) => {
-    const { Plans = [] } = subscription;
-    return Plans.reduce<PlanIDs>((acc, { ID, Quantity }) => {
+export const getPlanIDs = (subscription: Subscription | undefined) => {
+    return (subscription?.Plans || []).reduce<PlanIDs>((acc, { ID, Quantity }) => {
         acc[ID] = acc[ID] || 0;
         acc[ID] += Quantity;
         return acc;
     }, {});
 };
 
-export const isTrial = (subscription: Subscription) => {
-    const { CouponCode = '' } = subscription;
-    return CouponCode === COUPON_CODES.REFERRAL;
+export const isTrial = (subscription: Subscription | undefined) => {
+    return subscription?.CouponCode === COUPON_CODES.REFERRAL;
 };
 
-export const isTrialExpired = (subscription: Subscription) => {
-    const { PeriodEnd } = subscription;
+export const isTrialExpired = (subscription: Subscription | undefined) => {
     const now = new Date();
-    return now > fromUnixTime(PeriodEnd);
+    return now > fromUnixTime(subscription?.PeriodEnd || 0);
 };
 
-export const willTrialExpire = (subscription: Subscription) => {
-    const { PeriodEnd } = subscription;
+export const willTrialExpire = (subscription: Subscription | undefined) => {
     const now = new Date();
-    return isBefore(fromUnixTime(PeriodEnd), addWeeks(now, 1));
+    return isBefore(fromUnixTime(subscription?.PeriodEnd || 0), addWeeks(now, 1));
 };
