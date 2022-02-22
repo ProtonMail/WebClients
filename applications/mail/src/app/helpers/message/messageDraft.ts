@@ -175,7 +175,7 @@ const generateBlockquote = (
 
     return `<div class="${CLASSNAME_BLOCKQUOTE}">
         ${ORIGINAL_MESSAGE}<br>
-        ${previously}<br>
+        ${previously}<br><br>
         <blockquote class="${CLASSNAME_BLOCKQUOTE}" type="cite">
             ${previousContent}
         </blockquote><br>
