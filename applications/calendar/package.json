@@ -13,7 +13,6 @@
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "postinstall": "proton-pack config",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
-        "lint:warning": "eslint src --ext .js,.ts,.tsx",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "proton-pack dev-server --appMode=standalone",
         "test": "jest --runInBand --ci"

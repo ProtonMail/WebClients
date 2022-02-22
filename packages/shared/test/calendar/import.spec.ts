@@ -360,17 +360,28 @@ END:VEVENT`;
     });
 
     it('should catch inconsistent rrules', () => {
-        const vevent = `BEGIN:VEVENT
+        const veventNoOccurrenceOnDtstart = `BEGIN:VEVENT
 DTSTART;TZID=Europe/Vilnius:20200503T150000
 DTEND;TZID=Europe/Vilnius:20200503T160000
 RRULE:FREQ=MONTHLY;BYDAY=1MO
 DTSTAMP:20200508T121218Z
 UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
 END:VEVENT`;
-        const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Malformed recurring event'
-        );
+        const eventNoOccurrenceOnDtstart = parse(veventNoOccurrenceOnDtstart) as VcalVeventComponent;
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: eventNoOccurrenceOnDtstart, hasXWrTimezone: false })
+        ).toThrowError('Malformed recurring event');
+
+        const veventWithByyeardayNotYearly = `BEGIN:VEVENT
+DTSTART;TZID=Europe/Vilnius:20200103T150000
+RRULE:FREQ=MONTHLY;BYYEARDAY=3
+DTSTAMP:20200508T121218Z
+UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
+END:VEVENT`;
+        const eventWithByyeardayNotYearly = parse(veventWithByyeardayNotYearly) as VcalVeventComponent;
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: eventWithByyeardayNotYearly, hasXWrTimezone: false })
+        ).toThrowError('Malformed recurring event');
     });
 
     it('should catch malformed rrules', () => {
