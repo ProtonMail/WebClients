@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { checkSubscription } from '@proton/shared/lib/api/payments';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, APPS } from '@proton/shared/lib/constants';
+import { APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import {
     Currency,
@@ -16,27 +16,25 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 
 import { Button, Loader } from '../../components';
 import {
-    useSubscription,
-    useOrganization,
-    usePlans,
     useApi,
-    useModals,
     useConfig,
     useLoading,
+    useOrganization,
+    usePlans,
+    useSubscription,
     useVPNCountriesCount,
 } from '../../hooks';
 
-import SubscriptionModal from './subscription/SubscriptionModal';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
 import PlanSelection from './subscription/PlanSelection';
+import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 
 const FREE_SUBSCRIPTION = {} as Subscription;
 const FREE_ORGANIZATION = {} as Organization;
 
 const PlansSection = () => {
     const { APP_NAME } = useConfig();
-    const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
     const [vpnCountries] = useVPNCountriesCount();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
@@ -44,6 +42,7 @@ const PlansSection = () => {
     const [plans = [], loadingPlans] = usePlans();
     const api = useApi();
     const app = getAppFromPathnameSafe(window.location.pathname);
+    const [open] = useSubscriptionModal();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS || app === APPS.PROTONVPN_SETTINGS;
 
     const service = isVPN ? PLAN_SERVICES.VPN : PLAN_SERVICES.MAIL;
@@ -69,16 +68,7 @@ const PlansSection = () => {
         );
 
         const coupon = Coupon ? Coupon.Code : undefined; // Coupon can equals null
-
-        createModal(
-            <SubscriptionModal
-                planIDs={newPlanIDs}
-                coupon={coupon}
-                currency={currency}
-                cycle={cycle}
-                step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
-            />
-        );
+        open({ planIDs: newPlanIDs, coupon, step: SUBSCRIPTION_STEPS.CUSTOMIZATION, cycle, currency });
     };
 
     useEffect(() => {
@@ -125,15 +115,7 @@ const PlansSection = () => {
                 shape="ghost"
                 className="flex center mb1"
                 onClick={() => {
-                    createModal(
-                        <SubscriptionModal
-                            planIDs={currentPlanIDs}
-                            coupon={CouponCode}
-                            currency={currency}
-                            cycle={cycle}
-                            step={SUBSCRIPTION_STEPS.PLAN_SELECTION}
-                        />
-                    );
+                    open({ step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
                 }}
             >
                 {c('Action').t`Compare plans`}
