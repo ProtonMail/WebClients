@@ -1,9 +1,16 @@
 import { createContext, useContext, useState, Dispatch, SetStateAction } from 'react';
 import { Referral } from '@proton/shared/lib/interfaces';
 
-type ReferralContext = [Referral[], Dispatch<SetStateAction<Referral[]>>];
+import useReferrals, { UseReferralsReducerState } from './hooks/useReferrals';
+import useReferralRewardStatus, { UseReferralStatusReducerState } from './hooks/useReferralRewardStatus';
 
-const referralContext = createContext<ReferralContext | undefined>(undefined);
+interface ReferralProgramContext {
+    invitedReferralsState: [Referral[], Dispatch<SetStateAction<Referral[]>>];
+    fetchedReferrals: UseReferralsReducerState;
+    fetchedReferralStatus: UseReferralStatusReducerState;
+}
+
+const referralContext = createContext<ReferralProgramContext | undefined>(undefined);
 
 export const useReferralInvitesContext = () => {
     const context = useContext(referralContext);
@@ -16,7 +23,19 @@ export const useReferralInvitesContext = () => {
 };
 
 export const ReferralInvitesContextProvider = ({ children }: { children: React.ReactNode }) => {
+    const fetchedReferrals = useReferrals();
+    const fetchedReferralStatus = useReferralRewardStatus();
     const invitedReferralsState = useState<Referral[]>([]);
 
-    return <referralContext.Provider value={invitedReferralsState}>{children}</referralContext.Provider>;
+    return (
+        <referralContext.Provider
+            value={{
+                fetchedReferrals,
+                invitedReferralsState,
+                fetchedReferralStatus,
+            }}
+        >
+            {children}
+        </referralContext.Provider>
+    );
 };
