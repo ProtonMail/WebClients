@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -27,6 +27,7 @@ const InviteSendEmail = () => {
     const [, setInvitedReferrals] = useReferralInvitesContext();
     const anchorRef = useRef<HTMLInputElement>(null);
     const [recipients, setRecipients] = useState<Recipient[]>([]);
+    const [hasInvalidRecipients, setHasInvalidRecipients] = useState<boolean>(false);
     const [contactEmails, contactEmailIsLoading] = useContactEmails();
     const { createNotification } = useNotifications();
     const [apiLoading, withLoading] = useLoading();
@@ -74,6 +75,15 @@ const InviteSendEmail = () => {
         setRecipients(dedupRecipients);
     };
 
+    useEffect(() => {
+        if (recipients.some((recipient) => !isValidEmailAdressToRefer(recipient.Address))) {
+            setHasInvalidRecipients(true);
+            return;
+        }
+
+        setHasInvalidRecipients(false);
+    }, [recipients]);
+
     return (
         <div>
             <h3 className="text-bold">{c('Label').t`Invite via email`}</h3>
@@ -119,6 +129,7 @@ const InviteSendEmail = () => {
                         color="norm"
                         onClick={handleSendEmails}
                         loading={apiLoading || contactEmailIsLoading}
+                        disabled={hasInvalidRecipients}
                     >
                         <Icon name="paper-plane" /> {c('Button').t`Invite`}
                     </Button>
