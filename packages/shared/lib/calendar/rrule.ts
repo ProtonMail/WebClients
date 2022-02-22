@@ -19,12 +19,12 @@ import {
     VcalVeventComponent,
 } from '../interfaces/calendar/VcalModel';
 import {
-    MAXIMUM_DATE,
-    MAXIMUM_DATE_UTC,
     FREQUENCY,
     FREQUENCY_COUNT_MAX,
-    FREQUENCY_INTERVALS_MAX,
     FREQUENCY_COUNT_MAX_INVITATION,
+    FREQUENCY_INTERVALS_MAX,
+    MAXIMUM_DATE,
+    MAXIMUM_DATE_UTC,
 } from './constants';
 
 export const getIsStandardByday = (byday = ''): byday is VcalDaysKeys => {
@@ -60,69 +60,66 @@ export const getRruleValue = (rrule: VcalRruleProperty | undefined) => {
     return { ...rrule.value };
 };
 
-export const SUPPORTED_RRULE_PROPERTIES = [
-    'freq',
-    'count',
-    'interval',
-    'until',
-    'wkst',
-    'bysetpos',
-    'byday',
-    'bymonthday',
-    'bymonth',
-    'byyearday',
-];
-export const SUPPORTED_RRULE_PROPERTIES_INVITATION = [
-    'freq',
-    'count',
-    'interval',
-    'until',
-    'wkst',
-    'bysetpos',
-    'bysecond',
-    'byminute',
-    'byhour',
-    'byday',
-    'byweekno',
-    'bymonthday',
-    'bymonth',
-    'byyearday',
-];
-export const SUPPORTED_RRULE_PROPERTIES_DAILY: (keyof VcalRrulePropertyValue)[] = [
-    'freq',
-    'count',
-    'interval',
-    'until',
-    'wkst',
-];
-export const SUPPORTED_RRULE_PROPERTIES_WEEKLY: (keyof VcalRrulePropertyValue)[] = [
-    'freq',
-    'count',
-    'interval',
-    'until',
-    'wkst',
-    'byday',
-];
-export const SUPPORTED_RRULE_PROPERTIES_MONTHLY: (keyof VcalRrulePropertyValue)[] = [
-    'freq',
-    'count',
-    'interval',
-    'until',
-    'wkst',
-    'bymonthday',
-    'byday',
-    'bysetpos',
-];
-export const SUPPORTED_RRULE_PROPERTIES_YEARLY: (keyof VcalRrulePropertyValue)[] = [
-    'freq',
-    'count',
-    'interval',
-    'until',
-    'wkst',
-    'bymonthday',
-    'bymonth',
-    'byyearday',
-];
+export const getSupportedRruleProperties = (rrule: VcalRrulePropertyValue, isInvitation = false) => {
+    const { freq } = rrule;
+
+    if (isInvitation) {
+        return [
+            'freq',
+            'count',
+            'interval',
+            'until',
+            'wkst',
+            'bysetpos',
+            'bysecond',
+            'byminute',
+            'byhour',
+            'byday',
+            'byweekno',
+            'bymonthday',
+            'bymonth',
+            'byyearday',
+        ];
+    }
+    if (freq === 'DAILY') {
+        return [
+            'freq',
+            'count',
+            'interval',
+            'until',
+            'wkst',
+            'byyearday', // supported but invalid
+        ];
+    }
+    if (freq === 'WEEKLY') {
+        return [
+            'freq',
+            'count',
+            'interval',
+            'until',
+            'wkst',
+            'byday',
+            'byyearday', // supported but invalid
+        ];
+    }
+    if (freq === 'MONTHLY') {
+        return [
+            'freq',
+            'count',
+            'interval',
+            'until',
+            'wkst',
+            'bymonthday',
+            'byday',
+            'bysetpos',
+            'byyearday', // supported but invalid
+        ];
+    }
+    if (freq === 'YEARLY') {
+        return ['freq', 'count', 'interval', 'until', 'wkst', 'bymonthday', 'bymonth', 'byyearday'];
+    }
+    return ['freq', 'count', 'interval', 'until', 'wkst', 'bysetpos', 'byday', 'bymonthday', 'bymonth', 'byyearday'];
+};
 const ALLOWED_BYSETPOS = [-1, 1, 2, 3, 4];
 
 export const getIsSupportedSetpos = (setpos: number) => {
@@ -133,6 +130,15 @@ const isLongArray = <T>(arg: T | T[] | undefined): arg is T[] => {
     return Array.isArray(arg) && arg.length > 1;
 };
 
+const getHasUnsupportedProperties = (rruleProperty: VcalRrulePropertyValue, isInvitation = false) => {
+    const rruleProperties = Object.entries(rruleProperty)
+        .filter(([, value]) => value !== undefined)
+        .map(([field]) => field);
+    const supportedRruleProperties = getSupportedRruleProperties(rruleProperty, isInvitation);
+
+    return rruleProperties.some((property) => !supportedRruleProperties.includes(property));
+};
+
 /**
  * Given an rrule, return true it's one of the non-custom rules that we support
  */
@@ -140,43 +146,27 @@ export const getIsRruleSimple = (rrule?: VcalRrulePropertyValue): boolean => {
     if (!rrule) {
         return false;
     }
-    const nonEmptyFields = Object.entries(rrule)
-        .filter(([, value]) => value !== undefined)
-        .map(([field]) => field) as (keyof VcalRrulePropertyValue)[];
     const { freq, count, interval, until, bysetpos, byday, bymonth, bymonthday, byyearday } = rrule;
-    const hasUnsupportedFields = nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES.includes(field));
-    if (!freq || hasUnsupportedFields) {
+    if (!freq || getHasUnsupportedProperties(rrule)) {
         return false;
     }
     const isBasicSimple = (!interval || interval === 1) && !count && !until;
     if (freq === FREQUENCY.DAILY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_DAILY.includes(field))) {
-            return false;
-        }
         return isBasicSimple;
     }
     if (freq === FREQUENCY.WEEKLY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_WEEKLY.includes(field))) {
-            return false;
-        }
         if (isLongArray(byday)) {
             return false;
         }
         return isBasicSimple;
     }
     if (freq === FREQUENCY.MONTHLY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_MONTHLY.includes(field))) {
-            return false;
-        }
         if (byday || isLongArray(bymonthday) || bysetpos) {
             return false;
         }
         return isBasicSimple;
     }
     if (freq === FREQUENCY.YEARLY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_YEARLY.includes(field))) {
-            return false;
-        }
         if (isLongArray(bymonthday) || isLongArray(bymonth) || byyearday) {
             return false;
         }
@@ -193,31 +183,18 @@ export const getIsRruleCustom = (rrule?: VcalRrulePropertyValue): boolean => {
     if (!rrule) {
         return false;
     }
-    const nonEmptyFields = Object.entries(rrule)
-        .filter(([, value]) => value !== undefined)
-        .map(([field]) => field) as (keyof VcalRrulePropertyValue)[];
     const { freq, count, interval, until, bysetpos, byday, bymonth, bymonthday, byyearday } = rrule;
-    const hasUnsupportedFields = nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES.includes(field));
-    if (!freq || hasUnsupportedFields) {
+    if (!freq || getHasUnsupportedProperties(rrule)) {
         return false;
     }
     const isBasicCustom = (interval && interval > 1) || (count && count >= 1) || !!until;
     if (freq === FREQUENCY.DAILY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_DAILY.includes(field))) {
-            return false;
-        }
         return isBasicCustom;
     }
     if (freq === FREQUENCY.WEEKLY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_WEEKLY.includes(field))) {
-            return false;
-        }
         return isLongArray(byday) || isBasicCustom;
     }
     if (freq === FREQUENCY.MONTHLY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_MONTHLY.includes(field))) {
-            return false;
-        }
         if (isLongArray(byday) || isLongArray(bymonthday) || isLongArray(bysetpos)) {
             return false;
         }
@@ -225,9 +202,6 @@ export const getIsRruleCustom = (rrule?: VcalRrulePropertyValue): boolean => {
         return (setpos && !!byday) || isBasicCustom;
     }
     if (freq === FREQUENCY.YEARLY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_YEARLY.includes(field))) {
-            return false;
-        }
         if (isLongArray(bymonthday) || isLongArray(bymonth) || isLongArray(byyearday)) {
             return false;
         }
@@ -240,11 +214,7 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isIn
     if (!rruleProperty) {
         return false;
     }
-    const rruleProperties = Object.keys(rruleProperty) as (keyof VcalRrulePropertyValue)[];
-    const hasUnsupportedProperties = isInvitation
-        ? rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_INVITATION.includes(property))
-        : rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES.includes(property));
-    if (hasUnsupportedProperties) {
+    if (getHasUnsupportedProperties(rruleProperty, isInvitation)) {
         return false;
     }
     const { freq, interval = 1, count, until, byday, bysetpos, bymonthday, bymonth, byyearday } = rruleProperty;
@@ -267,34 +237,16 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isIn
         if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
             return false;
         }
-        if (isInvitation) {
-            return !rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_INVITATION.includes(property));
-        }
-        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_DAILY.includes(property))) {
-            return false;
-        }
         return true;
     }
     if (freq === 'WEEKLY') {
         if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
             return false;
         }
-        if (isInvitation) {
-            return !rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_INVITATION.includes(property));
-        }
-        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_WEEKLY.includes(property))) {
-            return false;
-        }
         return true;
     }
     if (freq === 'MONTHLY') {
         if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
-            return false;
-        }
-        if (isInvitation) {
-            return !rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_INVITATION.includes(property));
-        }
-        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_MONTHLY.includes(property))) {
             return false;
         }
         if (isLongArray(byday) || isLongArray(bysetpos) || isLongArray(bymonthday)) {
@@ -320,10 +272,7 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isIn
                 // The API will reject them, so we want to block them as well
                 return false;
             }
-            return !rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_INVITATION.includes(property));
-        }
-        if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_YEARLY.includes(property))) {
-            return false;
+            return true;
         }
         if (isLongArray(bymonthday) || isLongArray(bymonth) || isLongArray(byyearday)) {
             return false;
@@ -420,7 +369,13 @@ export const getHasConsistentRrule = (vevent: RequireSome<Partial<VcalVeventComp
         return true;
     }
 
-    const { until, count } = rrule.value;
+    const { freq, until, count, byyearday } = rrule.value;
+
+    if (byyearday && freq !== 'YEARLY') {
+        // According to the RFC, the BYYEARDAY rule part MUST NOT be specified when the FREQ
+        // rule part is set to DAILY, WEEKLY, or MONTHLY
+        return false;
+    }
 
     if (until && count !== undefined) {
         return false;
