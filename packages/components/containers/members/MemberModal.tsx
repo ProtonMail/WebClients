@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 import {
     ADDRESS_STATUS,
@@ -8,11 +8,30 @@ import {
     MEMBER_ROLE,
 } from '@proton/shared/lib/constants';
 import { createMember, createMemberAddress, updateRole } from '@proton/shared/lib/api/members';
+import {
+    confirmPasswordValidator,
+    passwordLengthValidator,
+    requiredValidator,
+} from '@proton/shared/lib/helpers/formValidators';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { Domain, Organization, Address, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import { setupMemberKey } from '@proton/shared/lib/keys';
 import { useApi, useNotifications, useEventManager, useGetAddresses } from '../../hooks';
-import { FormModal, Row, Field, Label, PasswordInput, Input, Toggle, SelectTwo, Option } from '../../components';
+import {
+    Button,
+    InputFieldTwo,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    Option,
+    PasswordInputTwo,
+    SelectTwo,
+    Toggle,
+    useFormErrors,
+} from '../../components';
 
 import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
 import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';
@@ -21,21 +40,23 @@ import SelectEncryption from '../keys/addKey/SelectEncryption';
 const FIVE_GIGA = 5 * GIGA;
 
 interface Props {
-    onClose?: () => void;
     organization: Organization;
     organizationKey: CachedOrganizationKey;
     domains: Domain[];
     domainsAddressesMap: { [domainID: string]: Address[] };
+    open: ModalProps['open'];
+    onClose: ModalProps['onClose'];
+    onExit: ModalProps['onExit'];
 }
 
-const MemberModal = ({ onClose, organization, organizationKey, domains, domainsAddressesMap, ...rest }: Props) => {
+const MemberModal = ({ organization, organizationKey, domains, domainsAddressesMap, open, onClose, onExit }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
     const getAddresses = useGetAddresses();
     const storageRange = getStorageRange({}, organization);
     const vpnRange = getVPNRange({}, organization);
-    const [model, updateModel] = useState({
+    const [model, setModel] = useState({
         name: '',
         private: false,
         admin: false,
@@ -46,24 +67,18 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
         vpn: vpnRange[0],
         storage: Math.min(storageRange[1], FIVE_GIGA),
     });
-    const update = (key: string, value: any) => updateModel({ ...model, [key]: value });
 
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
-    const [loading, setLoading] = useState(false);
+    const [submitting, setSubmitting] = useState(false);
+
+    const { validator, onFormSubmit } = useFormErrors();
 
     const hasVPN = !!organization.MaxVPN;
 
     const domainOptions = domains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
-    // TODO: better typings
-    const handleChange =
-        (key: string) =>
-        ({ target }: any) =>
-            update(key, target.value);
-    const handleChangePrivate = ({ target }: any) => update('private', target.checked);
-    const handleChangeAdmin = ({ target }: any) => update('admin', target.checked);
-    const handleChangeStorage = (value: any) => update('storage', value);
-    const handleChangeVPN = (value: any) => update('vpn', value);
+    const handleChange = (key: keyof typeof model) => (value: typeof model[typeof key]) =>
+        setModel({ ...model, [key]: value });
 
     const save = async () => {
         const { Member } = await srpVerify({
@@ -106,18 +121,6 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
     };
 
     const validate = () => {
-        if (!model.name.length) {
-            return c('Error').t`Invalid name`;
-        }
-
-        if (!model.private && model.password !== model.confirm) {
-            return c('Error').t`Invalid password`;
-        }
-
-        if (!model.address.length) {
-            return c('Error').t`Invalid address`;
-        }
-
         const domain = domains.find(({ DomainName }) => DomainName === model.domain);
         const nonDisabledCustomAddressExists = domainsAddressesMap[domain?.ID || ''].some?.((address) => {
             return (
@@ -138,136 +141,154 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
         }
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        if (!onFormSubmit()) {
+            return;
+        }
+
         const error = validate();
         if (error) {
             return createNotification({ type: 'error', text: error });
         }
 
         try {
-            setLoading(true);
+            setSubmitting(true);
             await save();
             await call();
             onClose?.();
             createNotification({ text: c('Success').t`User created` });
         } catch (e: any) {
-            setLoading(false);
+            setSubmitting(false);
         }
     };
 
+    const handleClose = submitting ? noop : onClose;
+
     return (
-        <FormModal
-            title={c('Title').t`Add user`}
-            loading={loading}
-            onSubmit={handleSubmit}
-            onClose={onClose}
-            submit={c('Action').t`Save`}
-            {...rest}
-        >
-            <Row>
-                <Label htmlFor="nameInput">{c('Label').t`Name`}</Label>
-                <Field>
-                    <Input
-                        id="nameInput"
-                        placeholder="Thomas A. Anderson"
-                        onChange={handleChange('name')}
-                        value={model.name}
+        <Modal as="form" open={open} onClose={handleClose} onExit={onExit} onSubmit={handleSubmit}>
+            <ModalHeader title={c('Title').t`Add user`} />
+            <ModalContent>
+                <InputFieldTwo
+                    autoFocus
+                    required
+                    id="name"
+                    value={model.name}
+                    error={validator([requiredValidator(model.name)])}
+                    onValue={handleChange('name')}
+                    label={c('Label').t`Name`}
+                    placeholder="Thomas A. Anderson"
+                />
+
+                <div className="flex on-mobile-flex-column">
+                    <InputFieldTwo
+                        rootClassName="flex-item-fluid"
                         required
-                    />
-                </Field>
-            </Row>
-            <Row>
-                <Label htmlFor="address-input">{c('Label').t`Address`}</Label>
-                <Field>
-                    <Input
-                        id="address-input"
+                        id="address"
                         value={model.address}
-                        onChange={handleChange('address')}
+                        error={validator([requiredValidator(model.address)])}
+                        onValue={handleChange('address')}
+                        label={c('Label').t`Address`}
                         placeholder={c('Placeholder').t`Address`}
-                        required
                     />
-                </Field>
-                <div className="ml1 on-mobile-ml0 flex flex-nowrap flex-align-items-center">
-                    {domainOptions.length === 1 ? (
-                        <span className="text-ellipsis" title={`@${domainOptions[0].value}`}>
-                            @{domainOptions[0].value}
-                        </span>
-                    ) : (
-                        <>
-                            <SelectTwo value={model.domain} onChange={({ value }) => update('domain', value)}>
+                    <div className="ml1 on-mobile-ml0 on-mobile-mb1-25 flex flex-nowrap flex-align-items-center">
+                        {domainOptions.length === 1 ? (
+                            <span className="text-ellipsis" title={`@${domainOptions[0].value}`}>
+                                @{domainOptions[0].value}
+                            </span>
+                        ) : (
+                            <SelectTwo value={model.domain} onChange={({ value }) => handleChange('domain')(value)}>
                                 {domainOptions.map((option) => (
-                                    <Option value={option.value} title={option.text}>
+                                    <Option key={option.value} value={option.value} title={option.text}>
                                         @{option.text}
                                     </Option>
                                 ))}
                             </SelectTwo>
-                        </>
-                    )}
+                        )}
+                    </div>
                 </div>
-            </Row>
-            <Row>
-                <Label>{c('Label').t`Password`}</Label>
-                <Field>
-                    <div className="mb1">
-                        <PasswordInput
-                            value={model.password}
-                            onChange={handleChange('password')}
-                            placeholder={c('Placeholder').t`Password`}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <PasswordInput
-                            value={model.confirm}
-                            onChange={handleChange('confirm')}
-                            placeholder={c('Placeholder').t`Confirm password`}
-                            required
-                        />
-                    </div>
-                </Field>
-            </Row>
-            {model.private ? null : (
-                <Row>
-                    <Label>{c('Label').t`Key strength`}</Label>
-                    <div>
+
+                <InputFieldTwo
+                    required
+                    id="password"
+                    as={PasswordInputTwo}
+                    value={model.password}
+                    error={validator([requiredValidator(model.password), passwordLengthValidator(model.password)])}
+                    onValue={handleChange('password')}
+                    label={c('Label').t`Password`}
+                    placeholder={c('Placeholder').t`Password`}
+                />
+
+                <InputFieldTwo
+                    required
+                    id="confirm-password"
+                    as={PasswordInputTwo}
+                    value={model.confirm}
+                    error={validator([
+                        requiredValidator(model.confirm),
+                        confirmPasswordValidator(model.password, model.confirm),
+                    ])}
+                    onValue={handleChange('confirm')}
+                    label={c('Label').t`Confirm password`}
+                    placeholder={c('Placeholder').t`Confirm password`}
+                />
+
+                {model.private ? null : (
+                    <div className="mb1-5">
+                        <div className="text-semibold mb0-25">{c('Label').t`Key strength`}</div>
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
                     </div>
-                </Row>
-            )}
-            <Row>
-                <Label>{c('Label').t`Account storage`}</Label>
-                <Field>
+                )}
+
+                <div className="mb1-5">
+                    <div className="text-semibold mb0-25">{c('Label').t`Account storage`}</div>
                     <MemberStorageSelector
                         value={model.storage}
                         step={GIGA}
                         range={storageRange}
-                        onChange={handleChangeStorage}
+                        onChange={handleChange('storage')}
                     />
-                </Field>
-            </Row>
-            {hasVPN ? (
-                <Row>
-                    <Label>{c('Label').t`VPN connections`}</Label>
-                    <Field>
-                        <MemberVPNSelector value={model.vpn} step={1} range={vpnRange} onChange={handleChangeVPN} />
-                    </Field>
-                </Row>
-            ) : null}
+                </div>
 
-            <Row>
-                <Label htmlFor="private-toggle">{c('Label for new member').t`Private`}</Label>
-                <Field>
-                    <Toggle id="private-toggle" checked={model.private} onChange={handleChangePrivate} />
-                </Field>
-            </Row>
+                {hasVPN ? (
+                    <div className="mb1-5">
+                        <div className="text-semibold mb0-25">{c('Label').t`VPN connections`}</div>
+                        <MemberVPNSelector value={model.vpn} step={1} range={vpnRange} onChange={handleChange('vpn')} />
+                    </div>
+                ) : null}
 
-            <Row>
-                <Label htmlFor="admin-toggle">{c('Label for new member').t`Admin`}</Label>
-                <Field>
-                    <Toggle id="admin-toggle" checked={model.admin} onChange={handleChangeAdmin} />
-                </Field>
-            </Row>
-        </FormModal>
+                <div className="flex flex-align-center mb1-5">
+                    <label className="text-semibold mr1" htmlFor="private-toggle">
+                        {c('Label for new member').t`Private`}
+                    </label>
+                    <Toggle
+                        id="private-toggle"
+                        checked={model.private}
+                        onChange={({ target }) => handleChange('private')(target.checked)}
+                    />
+                </div>
+
+                <div className="flex flex-align-center mb1-5">
+                    <label className="text-semibold mr1" htmlFor="admin-toggle">
+                        {c('Label for new member').t`Admin`}
+                    </label>
+                    <Toggle
+                        id="admin-toggle"
+                        checked={model.admin}
+                        onChange={({ target }) => handleChange('admin')(target.checked)}
+                    />
+                </div>
+            </ModalContent>
+            <ModalFooter>
+                <Button onClick={handleClose} disabled={submitting}>
+                    {c('Action').t`Cancel`}
+                </Button>
+                <Button loading={submitting} type="submit" color="norm">
+                    {c('Action').t`Save`}
+                </Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 

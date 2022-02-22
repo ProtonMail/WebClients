@@ -15,6 +15,7 @@ import {
     TableRow,
     Badge,
     Button,
+    useModalState,
 } from '../../components';
 import {
     useMembers,
@@ -79,16 +80,21 @@ const validateAddUser = (
 const { DOMAIN_STATE_ACTIVE } = DOMAIN_STATE;
 
 const UsersAndAddressesSection = () => {
-    const [members, membersLoading] = useMembers();
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const [domains, loadingDomains] = useDomains();
     const [domainsAddressesMap, loadingDomainAddresses] = useDomainsAddresses(domains);
+    const [members, loadingMembers] = useMembers();
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [keywords, setKeywords] = useState('');
 
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
+    const [memberModalProps, setMemberModalOpen] = useModalState();
+    const verifiedDomains = useMemo(
+        () => (domains || []).filter(({ State }) => State === DOMAIN_STATE_ACTIVE),
+        [domains]
+    );
 
     const handleSearch = (value: string) => setKeywords(value);
 
@@ -113,8 +119,6 @@ const UsersAndAddressesSection = () => {
     }, [keywords, members]);
 
     const handleAddUser = () => {
-        const verifiedDomains = domains.filter(({ State }) => State === DOMAIN_STATE_ACTIVE);
-
         const error = validateAddUser(organization, organizationKey, verifiedDomains);
         if (error) {
             return createNotification({ type: 'error', text: error });
@@ -123,14 +127,7 @@ const UsersAndAddressesSection = () => {
             return createNotification({ type: 'error', text: c('Error').t`Organization key is not decrypted` });
         }
 
-        createModal(
-            <MemberModal
-                organization={organization}
-                organizationKey={organizationKey}
-                domains={verifiedDomains}
-                domainsAddressesMap={domainsAddressesMap}
-            />
-        );
+        setMemberModalOpen(true);
     };
 
     const handleAddAddress = () => {
@@ -190,9 +187,16 @@ const UsersAndAddressesSection = () => {
                 {c('Info for members section')
                     .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.`}
             </SettingsParagraph>
-            {/* <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/user-roles/">{c('Info for members section')
-                .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more.`}</Alert> */}
             <Block className="flex flex-align-items-start">
+                {organizationKey && domains?.length && (
+                    <MemberModal
+                        organization={organization}
+                        organizationKey={organizationKey}
+                        domains={verifiedDomains}
+                        domainsAddressesMap={domainsAddressesMap}
+                        {...memberModalProps}
+                    />
+                )}
                 <Button
                     color="norm"
                     disabled={loadingOrganization || loadingDomains || loadingDomainAddresses || loadingOrganizationKey}
@@ -226,7 +230,7 @@ const UsersAndAddressesSection = () => {
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
-                <TableBody loading={membersLoading || loadingMemberAddresses} colSpan={6}>
+                <TableBody loading={loadingMembers || loadingMemberAddresses} colSpan={6}>
                     {membersSelected.map((member) => {
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
                         return (
@@ -329,11 +333,6 @@ const UsersAndAddressesSection = () => {
                     );
                 })}
             </div>
-
-            {/* <Block className="opacity-50">
-                {organization.UsedMembers} / {organization.MaxMembers}{' '}
-                {c('Info').ngettext(msgid`user used`, `users used`, organization.UsedMembers)}
-            </Block> */}
         </SettingsSectionWide>
     );
 };
