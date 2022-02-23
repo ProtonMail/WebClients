@@ -665,6 +665,9 @@
       "Recover data": [
         "Gegevens herstellen"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "Refine it": [
         "Verfijnen"
       ],
@@ -1152,7 +1155,7 @@
         "Jaarlijks"
       ],
       "Annually SAVE 20%": [
-        "BESPAAR jaarlijks 20%"
+        "Jaarlijks (BESPAAR 20%)"
       ],
       "Monthly": [
         "Maandelijks"
@@ -1329,6 +1332,11 @@
       ],
       "Website access problem": [
         "Probleem met toegang tot website"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar attachment tooltip": {
@@ -1997,7 +2005,7 @@
         "Costa Rica"
       ],
       "Cote d'Ivoire\"": [
-        "Ivoorkust"
+        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Kroatië"
@@ -2480,7 +2488,7 @@
         "Spitsbergen en Jan Mayen"
       ],
       "Swaziland": [
-        "Swaziland"
+        "Eswatini"
       ],
       "Sweden": [
         "Zweden"
@@ -2890,7 +2898,7 @@
         "Primaire agendasleutel is niet gedecodeerd"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kan geen nieuwe kalenders maken voor alle geïmporteerde kalenders vanwege de limiet voor persoonlijke agenda's."
+        "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda's."
       ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
@@ -2932,7 +2940,7 @@
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Ten minste ${ calendarToFixCount } agenda deselecteren of",
-        "Ten minste ${ calendarToFixCount } kalenders deselecteren of"
+        "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
       ],
       "Draft could not be saved. Try again.": [
         "Concept kon niet worden opgeslagen. Probeer het opnieuw."
@@ -4012,11 +4020,20 @@
       "/month.": [
         "/maand."
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% korting toegepast op uw abonnement met coupon ${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 dagen geld-terug-garantie."
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "Iedereen moet kunnen beschikken over een vrij en ongecensureerd internet."
@@ -4219,6 +4236,12 @@
       "Create in": [
         "Maak in"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV bestanden van Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps, alsmede vCard 3.1 en 4.0 formaten (UTF-8 encoding) worden ondersteund."
       ],
@@ -4383,6 +4406,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Maak ruimte vrij of neem contact op met uw beheerder."
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "From": [
         "Afzender"
@@ -4609,6 +4635,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Breng alleen wijzingen aan in deze instellingen als u gebruik maakt van PGP met niet-ProtonMail-gebruikers."
       ],
+      "Other options": [
+        ""
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Ons systeem heeft dit bericht gemarkeerd als phishing poging. Controleer of het legitiem is."
       ],
@@ -4769,6 +4798,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Berichten versturen vanaf een @pm.me-adres is enkel beschikbaar voor betalende gebruikers. Uw bericht wordt verzonden vanaf ${ email }"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Verzonden met <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
       ],
@@ -4802,6 +4834,9 @@
       "Storage GB": [
         "Opslag GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Store and share files securely with Proton Drive.": [
         "Veilig bestanden opslaan en delen met Proton Drive."
       ],
@@ -4816,6 +4851,9 @@
       ],
       "Subject: ": [
         "Onderwerp: "
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "Support privacy by upgrading for": [
         "Ondersteuning van privacy door opwaardering voor"
@@ -4986,6 +5024,9 @@
       "Turn on to search the content of your messages": [
         "Zet aan om de inhoud van uw berichten te doorzoeken"
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
@@ -5022,6 +5063,9 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "Upgrade om ProtonMail te gebruiken met desktop clients van derden."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Upload picture": [
         "Afbeelding uploaden"
       ],
@@ -5036,6 +5080,9 @@
       ],
       "Use Proton Calendar to keep your agenda private.": [
         "Gebruik Proton Calendar om uw agenda privé te houden."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Gebruikers"
@@ -6091,6 +6138,9 @@
       "Manage your labels": [
         "Labels beheren"
       ],
+      "More about recovery": [
+        "Meer weten over herstel"
+      ],
       "Open in ${ calendarAppName }": [
         "Open in ${ calendarAppName }"
       ],
@@ -6334,6 +6384,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -7138,6 +7191,9 @@
     "Spotlight": {
       "Discover all Proton services": [
         "Ontdek alle Proton-diensten"
+      ],
+      "Invite friends and earn rewards!": [
+        ""
       ],
       "Message Content Search": [
         "Zoeken naar berichtinhoud"
@@ -8046,6 +8102,9 @@
       "What's new": [
         "Wat is er nieuw"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "Postcode"
       ]
@@ -8360,6 +8419,9 @@
       ],
       "You will lose any customization you made so far.": [
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

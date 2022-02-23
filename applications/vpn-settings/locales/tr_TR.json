@@ -256,6 +256,9 @@
       "Previous": [
         "Önceki"
       ],
+      "Refer a friend": [
+        "Arkadaşınıza önerin"
+      ],
       "refresh the page": [
         "sayfayı yenile"
       ],
@@ -685,6 +688,11 @@
         "Web sitesi erişim sorunu"
       ]
     },
+    "Button": {
+      "Continue using ProtonMail.": [
+        "ProtonMail kullanmayı sürdürün."
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "Takvim içe aktarma"
@@ -877,7 +885,7 @@
         "Burkina Faso"
       ],
       "Burma": [
-        "Burma"
+        "Myanmar"
       ],
       "Burundi": [
         "Burundi"
@@ -1698,9 +1706,6 @@
       "Please set a recovery phone number first": [
         "Lütfen önce bir kurtarma telefonu numarası ayarlayın"
       ],
-      "Please set a recovery/notification email first": [
-        "Lütfen önce bir kurtarma/bildirim e-postası adresi ayarlayın"
-      ],
       "Process aborted": [
         "İşlem iptal edildi"
       ],
@@ -1978,6 +1983,9 @@
         "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
+      "20 personal calendars": [
+        "20 kişisel takvim"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
       ],
@@ -1986,6 +1994,12 @@
       ],
       "30-days money back guarantee": [
         "30 günlük ücret iade garantisi"
+      ],
+      "5 email addresses/aliases": [
+        "5 e-posta adresi/takma adı"
+      ],
+      "5 GB storage": [
+        "5 GB depolama alanı"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Herkes intetneti özgürce ve sansürsüz olarak kullanabilmelidir."
@@ -2062,6 +2076,9 @@
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
       ],
+      "Cancel trial": [
+        "Denemeyi iptal et"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
@@ -2073,6 +2090,18 @@
       ],
       "Connections": [
         "Bağlantı sayısı"
+      ],
+      "Continue with plus": [
+        "Plus tarifesi ile devam et"
+      ],
+      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+        "Deneme sürenizin sonunda erişiminizin devre dışı bırakılmasını önlemek için Plus tarifesine geçin."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@proton.me, haber abonelikleri için AliHaber@proton.me gibi takma adlar oluşturabilirsiniz."
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "20 taneye kadar özel takvim ekleyebilirsiniz. Buna ek olarak arkadaşlarınızdan, ailenizden iş arkadaşlarınızdan ve kuruluşlardan 5 takvim ekleyebilirsiniz."
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
@@ -2145,6 +2174,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Biraz boş yer açın veya yöneticinizle görüşün."
+      ],
+      "Free VPN on a single device": [
+        "Tek bir aygıt için ücretsiz VPN"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "10 Gb/sn hıza ulaşan tam özellikli VPN."
@@ -2278,6 +2310,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "\"Düşür\" üzerine tıkladığınızda, hesabınızın Free tarifesine düşürülmesi birkaç dakika sürebilir. "
       ],
+      "Other options": [
+        "Diğer seçenekler"
+      ],
       "P2P": [
         "P2P"
       ],
@@ -2313,6 +2348,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus veya Visionary aboneliği gerekli"
+      ],
+      "Plus plan": [
+        "Plus tarifesi"
       ],
       "Preview": [
         "Ön izle"
@@ -2383,6 +2421,12 @@
       ],
       "Storage GB": [
         "GB olarak depolama"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
+      ],
+      "Support for 1 custom email domain": [
+        "1 özel e-posta etki alanı desteği"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek."
@@ -2462,11 +2506,20 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "İki parola kipinde, oturum açmak ve posta kutusunun şifresini çözemek için ayrı parolalar kullanır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kipini kullanmasını öneririz. İki parola kipine geçmek için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
       ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız klasör, etiket, süzgeç"
+      ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Hesabınızı bugün yükselterek günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren posta ve takvim çözümünü kullanın."
+      ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "ProtonVPN sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: MacOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
       ],
       "Users": [
         "Kullanıcı sayısı"
@@ -2503,9 +2556,6 @@
       ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "Kurtarma e-postanıza bir saat süreyle ya da yeni bir kod isteyene kadar geçerli olacak bir sıfırlama kodu gönderdik. Devam etmek için gönderilen kodu aşağıya yazın."
-      ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Bildirimler etkinleştirildiğinde, ProtonMail hesabınıza yeni ileti geldiğinde kurtarma/bildirim adresinize bildirim göndereceğiz."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm kredileri kullanacağız."
@@ -2590,6 +2640,9 @@
       ],
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Var olan Proton hesabınız tüm Proton hizmetlerine erişmek için kullanılabilir. Lütfen ${ email } ile oturum açın"
+      ],
+      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+        "Ücretsiz ProtonMail Plus denemeniz ${ formattedTrialExpirationDate } tarihinde sona erecek."
       ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre yasaları ile korunmaktadır"
@@ -2815,9 +2868,6 @@
       ],
       "CVV code": [
         "CVV kodu"
-      ],
-      "Daily email notifications": [
-        "E-psotalar günlük olarak bildirilsin"
       ],
       "Danger": [
         "Tehlike"
@@ -3247,6 +3297,9 @@
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
         "İki aşamalı kimlik doğrulamayı devre dışı bırakmak istediğinize emin misiniz?"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "Ücretsiz deneme süreniz doldu. Hesap erişiminiz yakında devre dışı bırakılacak. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -3731,6 +3784,11 @@
         "E-posta adresinizi doğrulamak hesabınızın güvenliğini artırır ve yeni bir kurtarma seçeneği ekler."
       ]
     },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        "Arkadaşlarınızı davet edin ve ödül kazanın!"
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Hesabınız düşürülüyor, lütfen bekleyin"
@@ -4113,6 +4171,9 @@
       "Processing...": [
         "İşleniyor..."
       ],
+      "ProtonMail Plus Trial": [
+        "ProtonMail Plus deneme"
+      ],
       "ProtonVPN clients": [
         "ProtonVPN istemcileri"
       ],
@@ -4215,8 +4276,14 @@
       "You already have a Proton account": [
         "Zaten bir Proton hesabınız var"
       ],
+      "Your account’s usage": [
+        "Hesap kullanımınız"
+      ],
       "Your current plan": [
         "Geçerli tarifeniz"
+      ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
       ],
       "Your plan": [
         "Tarifeniz"
@@ -4520,6 +4587,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrimiçi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrimiçi olduğumuzda inceleyip size geri döneceğiz."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"
       ]
     }
   }

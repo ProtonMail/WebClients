@@ -320,7 +320,7 @@
         "Déplacer vers la corbeille"
       ],
       "New upload": [
-        "Nouvelle importation"
+        "Nouveau dépôt"
       ],
       "Next": [
         "Suivant"
@@ -369,6 +369,9 @@
       ],
       "Recover data": [
         "Récupérer les données"
+      ],
+      "Refer a friend": [
+        ""
       ],
       "refresh the page": [
         "actualiser la page"
@@ -536,7 +539,7 @@
         "Importer un fichier"
       ],
       "Upload folder": [
-        "Importer un dossier"
+        "Déposer un dossier"
       ],
       "Upload picture": [
         "Télécharger une image"
@@ -824,6 +827,11 @@
       ],
       "Website access problem": [
         "Problème d'accès au site web"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -1179,7 +1187,7 @@
         "Dominique"
       ],
       "Dominican Republic": [
-        "République Dominicaine"
+        "République dominicaine"
       ],
       "Ecuador": [
         "Équateur"
@@ -1275,7 +1283,7 @@
         "Guinée-Bissau"
       ],
       "Guyana": [
-        "Guyane"
+        "Guyana"
       ],
       "Haiti": [
         "Haïti"
@@ -1608,7 +1616,7 @@
         "Afrique du Sud"
       ],
       "South Georgia and the South Sandwich Islands": [
-        "Géorgie du Sud et Îles Sandwich du Sud"
+        "Géorgie du Sud-et-les Îles Sandwich du Sud"
       ],
       "South Korea": [
         "Corée du Sud"
@@ -1698,7 +1706,7 @@
         "Ukraine"
       ],
       "United Arab Emirates": [
-        "Émirats Arabes Unis"
+        "Émirats arabes unis"
       ],
       "United Kingdom": [
         "Royaume-Uni"
@@ -1719,7 +1727,7 @@
         "Vanuatu"
       ],
       "Venezuela": [
-        "Vénézuela"
+        "Vénézuéla"
       ],
       "Vietnam": [
         "Vietnam"
@@ -1731,7 +1739,7 @@
         "Îles Vierges des États-Unis"
       ],
       "Wallis and Futuna": [
-        "Wallis et Futuna"
+        "Wallis-et-Futuna"
       ],
       "Western Sahara": [
         "Sahara Occidental"
@@ -2488,11 +2496,20 @@
         "+${ organization.BonusVPN } connexion pour ProtonVPN (vous permet de connecter plus d'appareils au VPN)",
         "+${ organization.BonusVPN } connexions pour ProtonVPN (vous permet de connecter plus d'appareils au VPN)"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Remise de 20 % appliquée à votre abonnement avec le code promotionnel ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Garantie satisfait ou remboursé pendant 30 jours."
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "Chacun devrait bénéficier d'un Internet libre et non censuré."
@@ -2636,6 +2653,12 @@
       "Create links and share your files with others.": [
         "Créez des liens et partagez vos fichiers avec d'autres personnes."
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "Create your first folder and start moving your files.": [
         "Créez votre premier dossier et commencez à importer vos fichiers."
       ],
@@ -2729,6 +2752,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Libérez de l'espace ou contactez votre administrateur."
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN complet avec une vitesse maximale de 10 Gbit/s."
@@ -2893,6 +2919,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce dossier."
       ],
+      "Other options": [
+        ""
+      ],
       "Paused": [
         "En pause"
       ],
@@ -3017,6 +3046,12 @@
       "Storage GB": [
         "Stockage (en Go)"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
+      ],
       "support team": [
         "équipe d'assistance"
       ],
@@ -3099,11 +3134,17 @@
       "Trash": [
         "Corbeille"
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unlock drive to recover files": [
         "Déverrouillez le disque pour récupérer des fichiers"
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
+      ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ],
       "Uploaded": [
         "Importé"
@@ -3113,6 +3154,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Le téléchargement de centaines de fichiers en même temps peut avoir un impact sur les performances."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Utilisateurs"
@@ -3874,6 +3918,11 @@
         "Cela supprimera définitivement tous les sous-utilisateurs, comptes et données associés à votre organisation."
       ]
     },
+    "Message": {
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Une nouvelle version de ${ appName } est disponible. ${ reloadButton }."
@@ -4420,6 +4469,11 @@
     "Select files": {
       "Upload": [
         "Télécharger"
+      ]
+    },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
       ]
     },
     "Storage": {
@@ -5056,6 +5110,9 @@
       "Your folder is ready to be downloaded": [
         "Votre dossier est prêt à être téléchargé"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "Code postal"
       ]
@@ -5361,6 +5418,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Vous perdrez toutes les personnalisations que vous avez faites jusqu'à présent."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     }
   }

@@ -432,7 +432,7 @@
         "Zwiększ"
       ],
       "Inline": [
-        "obraz osadzony"
+        "osadzony obraz"
       ],
       "Insert": [
         "Wstaw"
@@ -670,6 +670,9 @@
       ],
       "Recover data": [
         "Odzyskaj dane"
+      ],
+      "Refer a friend": [
+        "Poleć znajomego"
       ],
       "Refine it": [
         "Popraw je"
@@ -1349,6 +1352,11 @@
         "Problem z dostępem do strony"
       ]
     },
+    "Button": {
+      "Continue using ProtonMail.": [
+        "Kontynuuj używanie poczty ProtonMail."
+      ]
+    },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         "Posiada wydarzenie"
@@ -2019,7 +2027,7 @@
         "Kostaryka"
       ],
       "Cote d'Ivoire\"": [
-        "Wybrzeże Kości Słoniowej"
+        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Chorwacja"
@@ -3269,7 +3277,7 @@
         "Nazwa etykiety nie jest dostępna. Wpisz inną nazwę"
       ],
       "This message has already been sent": [
-        "Wiadomość została wysłana"
+        "Wiadomość została już wysłana"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Wiadomość została wysłana. Nowy szkic został zapisany."
@@ -4136,13 +4144,22 @@
         "+${ organization.BonusVPN } połączeń ProtonVPN (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)"
       ],
       "/month.": [
-        "/ miesiąc."
+        " / miesiąc."
+      ],
+      "20 personal calendars": [
+        "20 osobistych kalendarzy"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Zniżka 20% za kupon ${ code } została wliczona do Twojej subskrypcji"
       ],
       "30 days money-back guarantee.": [
         "30-dniowa gwarancja zwrotu pieniędzy."
+      ],
+      "5 email addresses/aliases": [
+        "5 adresów e-mail / aliasów"
+      ],
+      "5 GB storage": [
+        "5 GB przestrzeni dyskowej"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Wszyscy powinni mieć dostęp do wolnego i niecenzurowanego Internetu."
@@ -4316,7 +4333,7 @@
         "Wyczyszczenie pamięci podręczną przeglądarki spowoduje wyłączenie wyszukiwania zawartości wiadomości na tym urządzeniu. Aby włączyć tę opcję, będziesz musiał ponownie pobrać wszystkie wiadomości."
       ],
       "Clears browser data related to message content search including downloaded messages": [
-        "Wyczyszczenie pamięci podręczną przeglądarki wpływa na funkcję wyszukiwania zawartości wiadomości, w tym na na pobrane wiadomości"
+        "Wyczyszczenie pamięci podręcznej przeglądarki wpływa na funkcję wyszukiwania zawartości wiadomości, w tym na pobrane wiadomości"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na adres e-mail ${ strong }. Jeśli adres jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
@@ -4357,8 +4374,14 @@
       "Create in": [
         "Utwórz w"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        "Utwórz wiele adresów e-mail dla swojej tożsamości w sieci, np. JanZakupy@proton.me dla kont zakupowych i JanWiadomości@proton.me dla subskrypcji wiadomości."
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "Utwórz do 20 niestandardowych kalendarzy. Ponadto możesz dodać do 5 kalendarzy znajomych, rodziny, współpracowników i organizacji."
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Pliki vCard w wersji 3.1 i 4.0 (kodowanie UTF-8) oraz CSV z programów Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i kilku innych programów są obsługiwane."
+        "Obsługiwane są pliki vCard w wersji 3.1, 4.0 (kodowanie UTF-8) oraz CSV z programów Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i kilku innych."
       ],
       "Custom": [
         "Niestandardowe"
@@ -4533,6 +4556,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Zwolnij część miejsca lub skontaktuj się ze swoim administratorem."
+      ],
+      "Free VPN on a single device": [
+        "Darmowy VPN na 1 urządzenie"
       ],
       "From": [
         "Od"
@@ -4765,6 +4791,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Zmień te ustawienia tylko, gdy używasz PGP z odbiorcami spoza ProtonMaila."
       ],
+      "Other options": [
+        "Inne opcje"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nasz system oznaczył wiadomość jako próbę wyłudzenia informacji. Upewnij się, że jest ona wiarygodna."
       ],
@@ -4865,7 +4894,7 @@
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
-        "Zgłoszenie wiadomości jako próby wyłudzenia informacji, prześle ją do nas w celu dalszej analizy i ulepszania filtrów antyspamowych. Oznacza to, że będziemy mogli zobaczyć jej pełną treść."
+        "Zgłoszenie wiadomości jako próby wyłudzenia informacji spowoduje wysłanie jej do nas w celu analizy i ulepszania filtrów antyspamowych. Oznacza to, że będziemy mogli zobaczyć pełną treść wiadomości."
       ],
       "Request read receipt": [
         "Poproś o potwierdzenie odczytu"
@@ -4883,13 +4912,13 @@
         "Zaoszczędź dodatkowe 20%"
       ],
       "Saved ${ dateString }": [
-        "Zapisano o ${ dateString }"
+        "Zapisano ${ dateString }"
       ],
       "Saved at ${ dateString }": [
         "Zapisano o ${ dateString }"
       ],
       "Saved on ${ dateString }": [
-        "Zapisano o ${ dateString }"
+        ""
       ],
       "Saving draft…": [
         "Zapisywanie szkicu…"
@@ -4927,6 +4956,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Wysyłanie wiadomości z adresu @pm.me jest płatną funkcją. Wiadomości zostaną wysłane z Twojego domyślnego adresu ${ email }"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Wysłano z bezpiecznej poczty e-mail <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Wysłano z bezpiecznej poczty e-mail <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -4960,6 +4992,9 @@
       "Storage GB": [
         "Przestrzeń dyskowa (GB)"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy pocztą, kalendarzem i dyskiem."
+      ],
       "Store and share files securely with Proton Drive.": [
         "Przechowuj i udostępniaj bezpiecznie plik z dyskiem Proton Drive."
       ],
@@ -4974,6 +5009,9 @@
       ],
       "Subject: ": [
         "Temat: "
+      ],
+      "Support for 1 custom email domain": [
+        "Wsparcie dla 1 niestandardowej domeny"
       ],
       "Support privacy by upgrading for": [
         "Wspieraj prywatność i ulepsz konto za"
@@ -5129,10 +5167,10 @@
         "Aby odzyskać dane, musisz reaktywować klucz szyfrujący kontakty użyty podczas ich tworzenia. Wymaga to znajomości hasła użytego podczas generowania klucza."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "W celu anulowania subskrypcji tej listy mailingowej, z adresu ${ boldFrom } zostanie wysłana wiadomość wraz z następującymi szczegółami:"
+        "W celu anulowania subskrypcji tej listy mailingowej zostanie wysłana wiadomość z adresu ${ boldFrom } wraz z następującymi szczegółami:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "W celu anulowania subskrypcji tej listy mailingowej, zostaniesz przeniesiony na adres URL, pod którym otrzymasz dalsze instrukcje od nadawcy wiadomości:"
+        "W celu anulowania subskrypcji tej listy mailingowej zostaniesz przeniesiony na adres URL, pod którym otrzymasz dalsze instrukcje od nadawcy wiadomości:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Aby używać weryfikacji adresu, musisz dodać do zaufanych co najmniej jeden z dostępnych kluczy publicznych, w tym klucz, którego chcesz używać do wysyłania wiadomości. Zapobiega to podrabianiu kluczy szyfrowania."
@@ -5145,6 +5183,9 @@
       ],
       "Turn on to search the content of your messages": [
         "Włącz, aby wyszukiwać zawartość wiadomości"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
@@ -5182,6 +5223,9 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "Ulepsz konto, aby używać ProtonMaila w alternatywnych aplikacjach pocztowych."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Ulepsz plan i zachowaj dostęp do prywatnej poczty i kalendarza do codziennej komunikacji."
+      ],
       "Upload picture": [
         "Prześlij obraz"
       ],
@@ -5196,6 +5240,9 @@
       ],
       "Use Proton Calendar to keep your agenda private.": [
         "Użyj kalendarza Proton Calendar, aby utrzymać swój harmonogram prywatny."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Korzystaj z adresów w niestandardowej domenie, np. ty@twojanazwa.pl"
       ],
       "Users": [
         "Użytkownicy"
@@ -5270,7 +5317,7 @@
         "Jesteś obecnie zalogowany jako ${ user.Name } (${ user.Email }) i posiadasz ograniczony dostęp."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
-        "Możesz dodać plik jako załącznik lub obraz osadzony w treści wiadomości."
+        "Możesz dodać plik jako załącznik lub osadzony obraz w treści wiadomości."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Możesz również scalić importowane kalendarze z obecnymi kalendarzami Proton."
@@ -5378,7 +5425,7 @@
         "Wkrótce zostaniesz przekierowany na stronę swojego banku w celu zweryfikowania płatności."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "W celu zweryfikowania płatności, wkrótce zostaniesz przekierowany na stronę firmy PayPal."
+        "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Wiadomość zawiera wyrażenie \"${ attachmentsFoundKeyword }\", ale załącznik nie został dodany. Czy chcesz wysłać wiadomość mimo to?"
@@ -6254,7 +6301,7 @@
         "Foldery"
       ],
       "Go to subscription plans": [
-        "Przejdź do subskrypcji planów"
+        "Przejdź do planów subskrypcji"
       ],
       "Inbox": [
         "Odebrane"
@@ -6270,6 +6317,9 @@
       ],
       "Manage your labels": [
         "Zarządzaj etykietami"
+      ],
+      "More about recovery": [
+        "Więcej na temat odzyskiwania"
       ],
       "Open in ${ calendarAppName }": [
         "Otwórz w aplikacji ${ calendarAppName }"
@@ -6518,6 +6568,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "Darmowa wersja próbna zakończyła się. Dostęp do konta zostanie wkrótce wyłączony. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -6530,7 +6583,7 @@
         "Obraz nie został załadowany, ponieważ certyfikat zdalnego serwera jest nieprawidłowy."
       ],
       "Image has not been loaded in order to protect your privacy.": [
-        "W celu ochrony prywatności, obraz nie został załadowany."
+        "W celu ochrony prywatności obraz nie został załadowany."
       ]
     },
     "Message notification": {
@@ -6768,7 +6821,7 @@
         "Tę nazwę zobaczą odbiorcy Twoich wiadomości, zaproszeń do wydarzeń i udostępnionych plików."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Użyj menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do innych usług Proton, w tym VPN, kalendarza i dysku."
+        "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do innych usług Proton, w tym VPN, kalendarza i dysku."
       ],
       "Welcome to Proton": [
         "Witaj w Proton"
@@ -7345,11 +7398,14 @@
       "Discover all Proton services": [
         "Poznaj wszystkie usługi Proton"
       ],
+      "Invite friends and earn rewards!": [
+        "Zaproś znajomych i zarabiaj nagrody!"
+      ],
       "Message Content Search": [
         "Wyszukiwanie zawartości wiadomości"
       ],
       "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
-        "Zarządzaj bezpiecznie swoim harmonogramem, plikami i życiem online! Otwórz i poznaj wszystkie usługi Proton."
+        "Zarządzaj bezpiecznie swoim harmonogramem, plikami i życiem online! Otwórz panel aplikacji i poznaj wszystkie usługi Proton."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Aby chronić prywatność, Proton zablokował elementy śledzące w tej wiadomości"
@@ -7970,7 +8026,7 @@
         "Usuń ${ count } wiadomości"
       ],
       "Delete ${ Name }": [
-        "Usuń kontakt ${ Name }"
+        "Usuń ${ Name }"
       ],
       "Delete all messages": [
         "Usuń wszystkie wiadomości"
@@ -8326,6 +8382,9 @@
       "What's new": [
         "Co nowego"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "Darmowa wersja próbna zakończy się ${ formattedEndDate }"
+      ],
       "ZIP / postal code": [
         "Kod pocztowy"
       ]
@@ -8654,6 +8713,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Dotychczasowa personalizacja importu zostanie utracona."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "Darmowa wersja próbna zakończy się ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

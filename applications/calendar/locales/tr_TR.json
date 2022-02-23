@@ -349,6 +349,9 @@
       "Recover data": [
         "Verileri kurtar"
       ],
+      "Refer a friend": [
+        "Arkadaşınıza önerin"
+      ],
       "refresh the page": [
         "sayfayı yenile"
       ],
@@ -866,6 +869,11 @@
       ],
       "Website access problem": [
         "Web sitesine erişim sorunu"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        "ProtonMail kullanmayı sürdürün."
       ]
     },
     "Calendar feature": {
@@ -1859,13 +1867,13 @@
     },
     "Custom frequency option": {
       "After repeating…": [
-        "Yinelenmeden sonra…"
+        "Şu yinelenmeden sonra…"
       ],
       "Never": [
         "Asla"
       ],
       "On date…": [
-        "Tarihinde…"
+        "Şu tarihte…"
       ],
       "time": [
         "kez",
@@ -3031,11 +3039,20 @@
         "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
+      "20 personal calendars": [
+        "20 kişisel takvim"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
       ],
       "30 days money-back guarantee.": [
         "30 gün ücret iade garantisi."
+      ],
+      "5 email addresses/aliases": [
+        "5 e-posta adresi/takma adı"
+      ],
+      "5 GB storage": [
+        "5 GB depolama alanı"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Çıkarılan katılımcılara bir iptal bilgilendirmesi e-postası gönderilecek."
@@ -3163,6 +3180,12 @@
       "Create in": [
         "Şurada oluştur"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@proton.me, haber abonelikleri için AliHaber@proton.me gibi takma adlar oluşturabilirsiniz."
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "20 taneye kadar özel takvim ekleyebilirsiniz. Buna ek olarak arkadaşlarınızdan, ailenizden iş arkadaşlarınızdan ve kuruluşlardan 5 takvim ekleyebilirsiniz."
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
       ],
@@ -3241,8 +3264,11 @@
       "Free up some space or contact your administrator.": [
         "Biraz boş yer açın veya yöneticinizle görüşün."
       ],
+      "Free VPN on a single device": [
+        "Tek bir aygıt için ücretsiz VPN"
+      ],
       "Frequency modifications will be lost.": [
-        "Sıklık değişiklikleri kaybolacak."
+        "Yinelenme değişiklikleri kaybolacak."
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "10 Gb/sn hıza ulaşan tam özellikli VPN."
@@ -3371,6 +3397,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Bu ayarları yalnızca ProtonMail dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
       ],
+      "Other options": [
+        "Diğer seçenekler"
+      ],
       "Payment can take a few minutes to fully verify.": [
         "Ödeme işleminin tamamen doğrulanması birkaç dakika sürebilir."
       ],
@@ -3474,6 +3503,12 @@
       "Storage GB": [
         "GB olarak depolama"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
+      ],
+      "Support for 1 custom email domain": [
+        "1 özel e-posta etki alanı desteği"
+      ],
       "support team": [
         "destek ekibi"
       ],
@@ -3555,8 +3590,14 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Adres doğrulamasını kullanabilmek için, gönderirken kullanmak istediğinizle birlikte bir veya daha fazla kullanılabilecek herkese açık anahtara güvenmeniz gerekir. Güvenme işlemi, şifreleme anahtarlarının sahte olmasını önler."
       ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız klasör, etiket, süzgeç"
+      ],
       "Update recurring event": [
         "Yinelenen etkinliği güncelle"
+      ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Hesabınızı bugün yükselterek günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren posta ve takvim çözümünü kullanın."
       ],
       "Users": [
         "Kullanıcı sayısı"
@@ -3932,7 +3973,7 @@
         "Klasör konumu"
       ],
       "Frequency": [
-        "Sıklık"
+        "Yinelenme"
       ],
       "From: ${ importedEmail }": [
         "Nereden: ${ importedEmail }"
@@ -4218,8 +4259,8 @@
       "Contact groups": [
         "Kişi grupları"
       ],
-      "Custom email addresses": [
-        "Özel e-posta adresleri"
+      "Custom domains": [
+        "Özel etki alanları"
       ],
       "Custom filters": [
         "Özel süzgeçler"
@@ -4303,6 +4344,9 @@
       ],
       "Re:": [
         "Ynt:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "Ücretsiz deneme süreniz doldu. Hesap erişiminiz yakında devre dışı bırakılacak. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4498,7 +4542,7 @@
     },
     "Notification suffix": {
       "by email": [
-        "eposta ile"
+        "e-posta ile"
       ]
     },
     "Notification time input": {
@@ -4511,7 +4555,7 @@
         "e-posta"
       ],
       "notification": [
-        "bildirim"
+        "Bildirim"
       ]
     },
     "Notification when": {
@@ -4782,13 +4826,13 @@
         "Açıklama ekle"
       ],
       "Add location": [
-        "Konum ekle"
+        "Konum ekleyin"
       ],
       "Add participants": [
-        "Katılımcı ekle"
+        "Katılımcı ekleyin"
       ],
       "Add title": [
-        "Başlık ekle"
+        "Başlık ekleyin"
       ],
       "Browser name": [
         "Tarayıcı adı"
@@ -4800,7 +4844,7 @@
         "örneğin Ayşe Kaya"
       ],
       "E.g., ": [
-        "Örneğin, "
+        "Örnek: "
       ],
       "Feedback": [
         "Geri bildirim"
@@ -4910,8 +4954,8 @@
       "Built-in Adblocker (NetShield)": [
         "Reklam engelleyici (NetShield)"
       ],
-      "Custom email addresses": [
-        "Özel e-posta adresleri"
+      "Custom domains": [
+        "Özel etki alanları"
       ],
       "Early access to new products": [
         "Yeni ürünlere erken erişim"
@@ -5033,6 +5077,11 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Takvim yönetimi"
+      ]
+    },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        "Arkadaşlarınızı davet edin ve ödül kazanın!"
       ]
     },
     "Storage": {
@@ -5321,16 +5370,16 @@
         "Hesap askıya alındı"
       ],
       "Add another notification to remind you of this event": [
-        "Bu etkinliğin hatırlatılması için başka bir bildirim ekleyin"
+        "Bu etkinliği hatırlatacak başka bir bildirim ekleyin"
       ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
       ],
       "Add event location": [
-        "Etkinlik konumu ekle"
+        "Etkinlik konumunu ekleyin"
       ],
       "Add event title": [
-        "Etkinlik başlığı ekle"
+        "Etkinlik başlığını ekleyin"
       ],
       "Add more information related to this event": [
         "Bu etkinlikle ilgili daha fazla bilgi ekleyin"
@@ -5382,7 +5431,7 @@
         "Ödeme yap"
       ],
       "Choose how many times this event will repeat": [
-        "Bu etkinliğin kaç kez yineleneceğini seçin"
+        "Bu etkinliğin sona ermeden önce kaç kez yineleneceğini seçin"
       ],
       "Choose how often this event repeats": [
         "Bu etkinliğin yinelenme sıklığını seçin"
@@ -5501,10 +5550,10 @@
         "Hata"
       ],
       "Event is happening all day": [
-        "Etkinlik tüm gün sürüyor"
+        "Etkinlik tüm gün sürecekse işaretleyin"
       ],
       "Event is happening on defined time slot": [
-        "Etkinlik belirlenmiş zaman diliminde gerçekleşiyor"
+        "Etkinlik belirlenmiş zaman aralığında gerçekleşecekse işaretleyin"
       ],
       "Exporting contacts": [
         "Kişiler dışa aktarılıyor"
@@ -5664,7 +5713,7 @@
         "Etkinlik başlangıç saatini seçin"
       ],
       "Select event's last date": [
-        "Etkinliğin son gününü seçin"
+        "Etkinliğin yinelenmesinin sona ereceği günü seçin"
       ],
       "Select permissions": [
         "İzinleri seçin"
@@ -5679,7 +5728,7 @@
         "Etkinlik başlangıç zamanının saat dilimini seçin"
       ],
       "Select the way to send this notification": [
-        "Bu bildirimin gönderilme yöntemini seçin"
+        "Bu bildirimin iletilme yöntemini seçin"
       ],
       "Select what to import": [
         "Neyin içe aktarılacağını seçin"
@@ -5738,13 +5787,16 @@
       "You have invited participants with equivalent emails": [
         "Katılımcıları eşdeğer e-postalarla davet ettiniz"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
+      ],
       "ZIP / postal code": [
         "ZIP / posta kodu"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
-        "Bir numara seçin"
+        "Bir sayı seçin"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -5830,6 +5882,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "E-posta göndermek için kullanıcıadı@pm.me kişisel adresinizi kullanın"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
       ],
       "You do not have any contacts to export": [
         "Dışa aktarılacak bir kişi kaydınız yok"
@@ -6028,6 +6083,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Şu ana kadar yaptığınız tüm özelleştirmeler silinecek."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

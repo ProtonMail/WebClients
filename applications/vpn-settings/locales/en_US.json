@@ -256,6 +256,9 @@
       "Previous": [
         ""
       ],
+      "Refer a friend": [
+        ""
+      ],
       "refresh the page": [
         ""
       ],
@@ -685,6 +688,11 @@
         ""
       ]
     },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         ""
@@ -877,7 +885,7 @@
         ""
       ],
       "Burma": [
-        ""
+        "Myanmar"
       ],
       "Burundi": [
         ""
@@ -1698,9 +1706,6 @@
       "Please set a recovery phone number first": [
         ""
       ],
-      "Please set a recovery/notification email first": [
-        ""
-      ],
       "Process aborted": [
         ""
       ],
@@ -1978,6 +1983,9 @@
         "",
         ""
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         ""
       ],
@@ -1985,6 +1993,12 @@
         ""
       ],
       "30-days money back guarantee": [
+        ""
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
         ""
       ],
       "A free and uncensored Internet should be available to all.": [
@@ -2062,6 +2076,9 @@
       "By leaving now, changes may not be saved": [
         ""
       ],
+      "Cancel trial": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         ""
       ],
@@ -2072,6 +2089,18 @@
         ""
       ],
       "Connections": [
+        ""
+      ],
+      "Continue with plus": [
+        ""
+      ],
+      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+        ""
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         ""
       ],
       "Creating your account": [
@@ -2144,6 +2173,9 @@
         ""
       ],
       "Free up some space or contact your administrator.": [
+        ""
+      ],
+      "Free VPN on a single device": [
         ""
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
@@ -2278,6 +2310,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         ""
       ],
+      "Other options": [
+        ""
+      ],
       "P2P": [
         ""
       ],
@@ -2312,6 +2347,9 @@
         ""
       ],
       "Plus or Visionary subscription required": [
+        ""
+      ],
+      "Plus plan": [
         ""
       ],
       "Preview": [
@@ -2382,6 +2420,12 @@
         ""
       ],
       "Storage GB": [
+        ""
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
         ""
       ],
       "Support for file sharing protocols such as BitTorrent.": [
@@ -2462,10 +2506,19 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         ""
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         ""
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        ""
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
         ""
       ],
       "Users": [
@@ -2502,9 +2555,6 @@
         ""
       ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
-        ""
-      ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         ""
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
@@ -2589,6 +2639,9 @@
         ""
       ],
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
+        ""
+      ],
+      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
         ""
       ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
@@ -2814,9 +2867,6 @@
         ""
       ],
       "CVV code": [
-        ""
-      ],
-      "Daily email notifications": [
         ""
       ],
       "Danger": [
@@ -3246,6 +3296,9 @@
     },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
+        ""
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         ""
       ]
     },
@@ -3731,6 +3784,11 @@
         ""
       ]
     },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         ""
@@ -4113,6 +4171,9 @@
       "Processing...": [
         ""
       ],
+      "ProtonMail Plus Trial": [
+        ""
+      ],
       "ProtonVPN clients": [
         ""
       ],
@@ -4215,7 +4276,13 @@
       "You already have a Proton account": [
         ""
       ],
+      "Your account’s usage": [
+        ""
+      ],
       "Your current plan": [
+        ""
+      ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
         ""
       ],
       "Your plan": [
@@ -4519,6 +4586,9 @@
         ""
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
         ""
       ]
     }

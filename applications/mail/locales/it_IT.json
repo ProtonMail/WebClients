@@ -9,10 +9,10 @@
         "${ boldSave } passando alla fatturazione annuale"
       ],
       "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduzione"
+        "Introduzione a ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } negozio"
+        "Negozio di ${ BRAND_NAME }"
       ],
       "Activate": [
         "Attiva"
@@ -664,6 +664,9 @@
       ],
       "Recover data": [
         "Recupera dati"
+      ],
+      "Refer a friend": [
+        "Invita un amico"
       ],
       "Refine it": [
         "Affinalo"
@@ -1329,6 +1332,11 @@
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        "Continua a usare ProtonMail."
       ]
     },
     "Calendar attachment tooltip": {
@@ -1997,7 +2005,7 @@
         "Costa Rica"
       ],
       "Cote d'Ivoire\"": [
-        "Costa d'Avorio"
+        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Croazia"
@@ -2480,7 +2488,7 @@
         "Svalbard e Jan Mayen"
       ],
       "Swaziland": [
-        "Swaziland"
+        "Eswatini"
       ],
       "Sweden": [
         "Svezia"
@@ -4012,11 +4020,20 @@
       "/month.": [
         "/mese."
       ],
+      "20 personal calendars": [
+        "20 calendari personali"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% di sconto applicato al tuo abbonamento con coupon ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Garanzia soddisfatti o rimborsati per 30 giorni."
+      ],
+      "5 email addresses/aliases": [
+        "5 indirizzi email/alias"
+      ],
+      "5 GB storage": [
+        "5 GB d'archiviazione"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Un Internet gratuito e incensurato dovrebbe esser disponibile per tutti."
@@ -4219,6 +4236,12 @@
       "Create in": [
         "Crea in"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        "Crea più indirizzi email per le tue identità online, es. MarioSpese@proton.me per i profili di shopping, MarioNotizie@proton.me per gli abbonamenti alle notizie."
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "Crea fino a 20 calendari personalizzati. Inoltre, aggiungi fino a 5 calendari da amici, famiglia, colleghi e organizzazioni."
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "File CSV da Outlook, Outlook Express, Yahoo! Sono supportati Mail, Hotmail, Eudora e alcune altre app, nonché i formati vCard 3.1 e 4.0 (codifica UTF-8)."
       ],
@@ -4383,6 +4406,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Libera dello spazio o contatta il tuo amministratore."
+      ],
+      "Free VPN on a single device": [
+        "VPN gratuita su un solo dispositivo"
       ],
       "From": [
         "Da"
@@ -4609,6 +4635,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Cambia queste impostazioni solo se stai usando PGP con destinatari non-ProtonMail."
       ],
+      "Other options": [
+        "Altre opzioni"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Il nostro sistema ha contrassegnato questo messaggio come un tentativo di phishing. Sei pregato di verificare che sia legittimo."
       ],
@@ -4769,6 +4798,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'invio dei messaggi dall'indirizzo @pm.me è una funzionalità a pagamento. Il tuo messaggio sarà inviato dal tuo indirizzo predefinito ${ email }"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Inviato con l'email sicura di <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Inviato con <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> email sicura."
       ],
@@ -4802,6 +4834,9 @@
       "Storage GB": [
         "Archiviazione GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Lo spazio d'archiviazione è condiviso tra Mail, Calendario e Drive."
+      ],
       "Store and share files securely with Proton Drive.": [
         "Archivia e condividi file in sicurezza con Proton Drive."
       ],
@@ -4816,6 +4851,9 @@
       ],
       "Subject: ": [
         "Oggetto: "
+      ],
+      "Support for 1 custom email domain": [
+        "Supporto per 1 dominio email personalizzato"
       ],
       "Support privacy by upgrading for": [
         "Supporta la privacy aggiornando per"
@@ -4986,6 +5024,9 @@
       "Turn on to search the content of your messages": [
         "Attiva per cercare il contenuto dei tuoi messaggi"
       ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
       "Unsupported file": [
         "File non supportato"
       ],
@@ -5022,6 +5063,9 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "Aggiorna per usare ProtonMail con client desktop di terze parti."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Aggiorna oggi e mantieni accesso alla soluzione Mail e Calendario che mette al primo posto la privacy per le tue esigenze comunicative quotidiane."
+      ],
       "Upload picture": [
         "Carica immagine"
       ],
@@ -5036,6 +5080,9 @@
       ],
       "Use Proton Calendar to keep your agenda private.": [
         "Usa Proton Calendar per mantenere privata la tua agenda."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Usa gli indirizzi del tuo dominio email personalizzato, es., tu@tuonome.com"
       ],
       "Users": [
         "Utenti"
@@ -6091,6 +6138,9 @@
       "Manage your labels": [
         "Gestisci le tue etichette"
       ],
+      "More about recovery": [
+        "Maggiori informazioni sul recupero"
+      ],
       "Open in ${ calendarAppName }": [
         "Apri in ${ calendarAppName }"
       ],
@@ -6334,6 +6384,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "La tua prova gratuita è terminata. L'accesso al tuo profilo sarà presto disabilitato. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7138,6 +7191,9 @@
     "Spotlight": {
       "Discover all Proton services": [
         "Scopri tutti i servizi Proton"
+      ],
+      "Invite friends and earn rewards!": [
+        "Invita gli amici e ottieni ricompense!"
       ],
       "Message Content Search": [
         "Ricerca Contenuto Messaggio"
@@ -8046,6 +8102,9 @@
       "What's new": [
         "Cosa c'è di nuovo"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "La tua prova gratuita terminerà presto, il ${ formattedEndDate }"
+      ],
       "ZIP / postal code": [
         "Codice CAP / postale"
       ]
@@ -8360,6 +8419,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Perderai ogni personalizzazione che hai fatto finora."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "La tua prova gratuita termina il ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {
