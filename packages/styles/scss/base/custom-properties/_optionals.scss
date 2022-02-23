@@ -86,5 +86,8 @@
 
 	--border-radius: var(--optional-border-radius, 8);
 
+	--logo-text-proton-color: var(--optional-logo-text-proton-color, var(--text-norm));
+	--logo-text-product-color: var(--optional-logo-text-product-color, var(--primary));
+
 	--font-family: var(--optional-font-family, #{$font-family});
 }
