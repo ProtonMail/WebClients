@@ -10,7 +10,8 @@ interface ReferralApiResult {
 }
 
 type Action = { type: 'success'; payload: ReferralApiResult } | { type: 'error' };
-interface ReducerState {
+
+export interface UseReferralsReducerState {
     referrals: Referral[];
     loading: boolean;
     total: number;
@@ -18,7 +19,7 @@ interface ReducerState {
 
 const useReferrals = () => {
     const api = useApi();
-    const [referralState, dispatch] = useReducer<Reducer<ReducerState, Action>>(
+    const [referralState, dispatch] = useReducer<Reducer<UseReferralsReducerState, Action>>(
         (prevState, action) => {
             if (action.type === 'error') {
                 return { ...prevState, loading: false };
