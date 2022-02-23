@@ -29,10 +29,10 @@
         "${ boldSave } passando alla fatturazione annuale"
       ],
       "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduzione"
+        "Introduzione a ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } negozio"
+        "Negozio di ${ BRAND_NAME }"
       ],
       "Activate": [
         "Attiva"
@@ -255,6 +255,9 @@
       ],
       "Previous": [
         "Precedente"
+      ],
+      "Refer a friend": [
+        "Invita un amico"
       ],
       "refresh the page": [
         "aggiorna la pagina"
@@ -685,6 +688,11 @@
         "Problema di accesso al sito web"
       ]
     },
+    "Button": {
+      "Continue using ProtonMail.": [
+        "Continua a usare ProtonMail."
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "Importazione calendario"
@@ -877,7 +885,7 @@
         "Burkina Faso"
       ],
       "Burma": [
-        "Birmania"
+        "Myanmar"
       ],
       "Burundi": [
         "Burundi"
@@ -1698,9 +1706,6 @@
       "Please set a recovery phone number first": [
         "Si prega di impostare prima un numero di telefono di recupero"
       ],
-      "Please set a recovery/notification email first": [
-        "Per favore imposta prima un'email di recupero/notifica"
-      ],
       "Process aborted": [
         "Processo interrotto"
       ],
@@ -1978,6 +1983,9 @@
         "+${ organization.BonusVPN } connessione per ProtonVPN (consente di collegare più dispositivi al VPN)",
         "+${ organization.BonusVPN } connessioni per ProtonVPN (consente di collegare più dispositivi al VPN)"
       ],
+      "20 personal calendars": [
+        "20 calendari personali"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% di sconto applicato al tuo abbonamento con coupon ${ code }"
       ],
@@ -1986,6 +1994,12 @@
       ],
       "30-days money back guarantee": [
         "Rimborso garantito per 30 giorni"
+      ],
+      "5 email addresses/aliases": [
+        "5 indirizzi email/alias"
+      ],
+      "5 GB storage": [
+        "5 GB d'archiviazione"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Un Internet gratuito e non censurato dovrebbe essere disponibile per tutti."
@@ -2062,6 +2076,9 @@
       "By leaving now, changes may not be saved": [
         "Lasciando ora, le modifiche potrebbero non essere salvate"
       ],
+      "Cancel trial": [
+        "Annulla prova"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica su ${ strong }. Se questo indirizzo email non è corretto, clicca \"Modifica\" per correggerlo."
       ],
@@ -2073,6 +2090,18 @@
       ],
       "Connections": [
         "Connessioni"
+      ],
+      "Continue with plus": [
+        "Continua con plus"
+      ],
+      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+        "Continua con Plus oggi per evitare che l'accesso sia disabilitato al termine della tua prova."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        "Crea più indirizzi email per le tue identità online, es. MarioSpese@proton.me per i profili di shopping, MarioNotizie@proton.me per gli abbonamenti alle notizie."
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "Crea fino a 20 calendari personalizzati. Inoltre, aggiungi fino a 5 calendari da amici, famiglia, colleghi e organizzazioni."
       ],
       "Creating your account": [
         "Attivazione del conto"
@@ -2145,6 +2174,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Libera dello spazio o contatta il tuo amministratore."
+      ],
+      "Free VPN on a single device": [
+        "VPN gratuita su un solo dispositivo"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa con velocità fino a 10 Gbps."
@@ -2278,6 +2310,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Una volta che clicchi su \"Downgrade\", potrebbero volerci alcuni minuti per effettuare il downgrade del tuo account su un piano gratuito. "
       ],
+      "Other options": [
+        "Altre opzioni"
+      ],
       "P2P": [
         "P2P"
       ],
@@ -2313,6 +2348,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Abbonamento Plus o Visionary richiesto"
+      ],
+      "Plus plan": [
+        "Piano Plus"
       ],
       "Preview": [
         "Anteprima"
@@ -2383,6 +2421,12 @@
       ],
       "Storage GB": [
         "Archivio GB"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Lo spazio d'archiviazione è condiviso tra Mail, Calendario e Drive."
+      ],
+      "Support for 1 custom email domain": [
+        "Supporto per 1 dominio email personalizzato"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "Supporto per protocolli di condivisione dei file come Bittorrent."
@@ -2462,11 +2506,20 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "La modalità a doppia password utilizza due password separate per la decifratura del login e della casella di posta. Questo fornisce un vantaggio di protezione minimo in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, prima imposti una password di login e poi una per la casella di posta."
       ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
       "Unsupported file": [
         "File non supportato"
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Aggiorna oggi e mantieni accesso alla soluzione Mail e Calendario che mette al primo posto la privacy per le tue esigenze comunicative quotidiane."
+      ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Usa le seguenti credenziali quando ti connetti ai server ProtonVPN senza applicazione. Esempi di utilizzo includono: Tunnelblick su macOS, OpenVPN su GNU/Linux."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Usa gli indirizzi del tuo dominio email personalizzato, es., tu@tuonome.com"
       ],
       "Users": [
         "Utenti"
@@ -2503,9 +2556,6 @@
       ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "Abbiamo inviato un codice di reset alla tua email di recupero, il quale è valido per un'ora o fino a quando non richiederai un nuovo codice. Inseriscilo qua sotto per continuare."
-      ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Quando le notifiche sono attive, manderemo un avviso al tuo indirizzo di notifica/recupero se avrai nuovi messaggi sul tuo account."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando il tuo abbonamento si rinnova, applicheremo tutti i crediti disponibili prima di addebitare il metodo di pagamento sopra riportato."
@@ -2590,6 +2640,9 @@
       ],
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Il tuo account Proton esistente può essere utilizzato per accedere a tutti i servizi Proton. Per favore effettua il login con ${ email }"
+      ],
+      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+        "La tua prova gratuita di ProtonMail Plus terminerà il ${ formattedTrialExpirationDate }."
       ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "I tuoi dati di pagamento sono protetti dalla crittografia TLS e dalle leggi svizzere"
@@ -2815,9 +2868,6 @@
       ],
       "CVV code": [
         "Codice CVV"
-      ],
-      "Daily email notifications": [
-        "Notifiche email giornaliere"
       ],
       "Danger": [
         "Pericolo"
@@ -3247,6 +3297,9 @@
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
         "Sei sicuro di voler disattivare l'autenticazione a due fattori?"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "La tua prova gratuita è terminata. L'accesso al tuo profilo sarà presto disabilitato. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -3731,6 +3784,11 @@
         "Verificare il tuo indirizzo email migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
       ]
     },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        "Invita gli amici e ottieni ricompense!"
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Downgrade del tuo account, attendere"
@@ -4113,6 +4171,9 @@
       "Processing...": [
         "Elaborazione..."
       ],
+      "ProtonMail Plus Trial": [
+        "Prova ProtonMail Plus"
+      ],
       "ProtonVPN clients": [
         "Client ProtonVPN"
       ],
@@ -4215,8 +4276,14 @@
       "You already have a Proton account": [
         "Hai già un account Proton"
       ],
+      "Your account’s usage": [
+        "L'uso del tuo profilo"
+      ],
       "Your current plan": [
         "Il tuo piano attuale"
+      ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "La tua prova gratuita terminerà presto, il ${ formattedEndDate }"
       ],
       "Your plan": [
         "Il tuo piano"
@@ -4520,6 +4587,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sfortunatamente, al momento non sei online. Per favore completa il modulo sotto per descrivere il problema, lo esamineremo e ti contatteremo quando quando saremo di nuovo online."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "La tua prova gratuita termina il ${ textDate }. ${ action }"
       ]
     }
   }

@@ -662,6 +662,9 @@
       "Recover data": [
         "データを復元する"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "Refine it": [
         ""
       ],
@@ -1320,6 +1323,11 @@
       ],
       "Website access problem": [
         "ウェブサイトへのアクセスに関する問題"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar attachment tooltip": {
@@ -1986,7 +1994,7 @@
         ""
       ],
       "Cote d'Ivoire\"": [
-        ""
+        "Côte d'Ivoire"
       ],
       "Croatia": [
         ""
@@ -2469,7 +2477,7 @@
         ""
       ],
       "Swaziland": [
-        ""
+        "Eswatini"
       ],
       "Sweden": [
         ""
@@ -3200,7 +3208,7 @@
         "このメッセージは、現在お使いのブラウザーでは適切に開くことができないリンクの URL を含んでいる可能性があります"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        ""
+        "有効なフィルターが多すぎます。さらに有効なフィルターを使用するには有料プランにアップグレードしてください。"
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
@@ -3949,11 +3957,20 @@
       "/month.": [
         "/月."
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "クーポン ${ code } 付きのサブスクリプションに 20% の割引が適用されます"
       ],
       "30 days money-back guarantee.": [
         "30日間返金保証"
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "すべての人が検閲がなく無制限のインターネットを利用できるべきです。"
@@ -4150,6 +4167,12 @@
       "Create in": [
         "作成日時"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
@@ -4308,6 +4331,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "スペースを解放するか、管理者にお問い合わせしてください。"
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "From": [
         "差出人"
@@ -4531,6 +4557,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ProtonMail ユーザーがいる場合にのみ変更してください。"
       ],
+      "Other options": [
+        ""
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         ""
       ],
@@ -4556,7 +4585,7 @@
         ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "安全に保ってください。これはパスワードをリセットしたときに、アカウントにアクセスしたりデータを復元するのに使われます。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         ""
@@ -4690,6 +4719,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me から送信されたメッセージは有料プランの機能です。メッセージは ${ email } から送信されます"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         ""
       ],
@@ -4723,6 +4755,9 @@
       "Storage GB": [
         "ストレージ GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Store and share files securely with Proton Drive.": [
         "Proton Drive でファイルを安全に保管、シェアします。"
       ],
@@ -4737,6 +4772,9 @@
       ],
       "Subject: ": [
         "件名: "
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "Support privacy by upgrading for": [
         "こちらにアップグレードしてプライバシーを支援 "
@@ -4906,6 +4944,9 @@
       "Turn on to search the content of your messages": [
         ""
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "非対応のファイル"
       ],
@@ -4942,6 +4983,9 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "アップグレードしてサードパーティのデスクトップクライアントで ProtonMail を使用します。"
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Upload picture": [
         "写真をアップロード"
       ],
@@ -4956,6 +5000,9 @@
       ],
       "Use Proton Calendar to keep your agenda private.": [
         "Proton Calender を利用して予定をプライベートに管理します。"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "ユーザー"
@@ -6001,6 +6048,9 @@
       "Manage your labels": [
         "ラベルを管理"
       ],
+      "More about recovery": [
+        ""
+      ],
       "Open in ${ calendarAppName }": [
         "${ calendarAppName } で開く"
       ],
@@ -6242,6 +6292,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -7034,13 +7087,16 @@
     },
     "Spotlight": {
       "Discover all Proton services": [
+        "全ての Proton サービスがここに"
+      ],
+      "Invite friends and earn rewards!": [
         ""
       ],
       "Message Content Search": [
         ""
       ],
       "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
-        ""
+        "安全にスケジュール、ファイル、そしてオンライン生活を管理しましょう! すべての Proton サービスはここにあります。"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "あなたのプライバシーを保護するために、Proton はこのメッセージのメールトラッカーをブロックしました"
@@ -7906,6 +7962,9 @@
       "What's new": [
         "更新情報"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "郵便番号"
       ]
@@ -8212,6 +8271,9 @@
         ""
       ],
       "You will lose any customization you made so far.": [
+        ""
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
         ""
       ]
     },

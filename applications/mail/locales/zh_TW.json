@@ -270,7 +270,7 @@
         "詳細資訊"
       ],
       "Didn't receive the code?": [
-        ""
+        "沒有收到驗證碼嗎？"
       ],
       "Discard": [
         "捨棄"
@@ -306,7 +306,7 @@
         "編輯電話號碼"
       ],
       "Edit sign-in details": [
-        ""
+        "編輯登入詳細資訊"
       ],
       "Email settings": [
         "電子郵件設定"
@@ -662,6 +662,9 @@
       "Recover data": [
         "恢復資料"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "Refine it": [
         "重組"
       ],
@@ -939,10 +942,10 @@
         "驗證"
       ],
       "Verify account": [
-        ""
+        "驗證帳號"
       ],
       "Verify email": [
-        ""
+        "驗證電子郵件"
       ],
       "View": [
         "檢視"
@@ -1322,6 +1325,11 @@
         "網站存取問題"
       ]
     },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
+      ]
+    },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         "有行事曆事件"
@@ -1422,10 +1430,10 @@
         "${ participantName } 已拒絕您的邀請。"
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } 已接受您的邀請，並就此事件其中一次提議新的時間。回答與提議均已過時。"
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } 已接受您的邀請，並就此事件提議新的時間。回答與提議均已過時。"
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
         ""
@@ -1440,10 +1448,10 @@
         "${ participantName } 已接受您的邀請，並就此事件提議新的時間。回答與提議均已過時。"
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } 已謝絕您的邀請，並就此事件其中一次提議新的時間。回答與提議均已過時。"
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } 已謝絕您的邀請，並就此事件提議新的時間。回答與提議均已過時。"
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
         ""
@@ -1500,10 +1508,10 @@
         "${ participantName } 已暫時接受一則邀請，並就此事件提議新的時間。回答與提議均已過時。"
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "您邀請 ${ participantName } 出席事件，已獲暫訂接受出席其中一次。"
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } 已暫訂出席此活動。"
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } 已暫訂接受您的邀請，並就此事件其中一次提議新的時間。回答與提議均已過時。"
@@ -1986,7 +1994,7 @@
         ""
       ],
       "Cote d'Ivoire\"": [
-        ""
+        "Côte d'Ivoire"
       ],
       "Croatia": [
         ""
@@ -2139,7 +2147,7 @@
         ""
       ],
       "International": [
-        ""
+        "國際"
       ],
       "Iran": [
         ""
@@ -2469,7 +2477,7 @@
         ""
       ],
       "Swaziland": [
-        ""
+        "Eswatini"
       ],
       "Sweden": [
         ""
@@ -2966,10 +2974,10 @@
         "影像上載失敗"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "登入憑證不正確。請再試一次。"
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "信箱密碼不正確。請再試一次。"
       ],
       "Invalid ${ name } code": [
         "無效的 ${ name } 碼"
@@ -3101,7 +3109,7 @@
         "已移除重複的收件者：${ recipents }"
       ],
       "Request timed out": [
-        ""
+        "請求逾時"
       ],
       "Require at least one action": [
         "必須有至少一個動作"
@@ -3949,11 +3957,20 @@
       "/month.": [
         "/月。"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用 20% 折扣"
       ],
       "30 days money-back guarantee.": [
         "30 天退款保證。"
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "每一個人都應當享有網路自由，免受網際網路審查。"
@@ -4150,6 +4167,12 @@
       "Create in": [
         "建立在"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其他軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
       ],
@@ -4309,6 +4332,9 @@
       "Free up some space or contact your administrator.": [
         "請釋放部分空間或聯絡您的系統管理員。"
       ],
+      "Free VPN on a single device": [
+        ""
+      ],
       "From": [
         "寄件人"
       ],
@@ -4385,7 +4411,7 @@
         "插入連結"
       ],
       "Internet connection lost": [
-        ""
+        "網際網路連線中斷"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "網際網路連線中斷。請檢查裝置的連線狀態。"
@@ -4530,6 +4556,9 @@
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "只有當您使用 PGP 寄送給非 ProtonMail 收件人時，才需修改這些設定。"
+      ],
+      "Other options": [
+        ""
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
@@ -4690,14 +4719,17 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "從 @pm.me 電子郵件地址寄送郵件是付費功能。您的郵件將從您的預設電子郵件地址 ${ email } 傳送"
       ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         ""
+      ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "使用 <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 寄發安全電郵。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
       "Session timed out": [
-        ""
+        "工作階段已逾時"
       ],
       "Set a recovery phrase": [
         "設定還原短語"
@@ -4723,6 +4755,9 @@
       "Storage GB": [
         "儲存空間 GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Store and share files securely with Proton Drive.": [
         "使用 Proton Drive 安全的儲存及分享檔案。"
       ],
@@ -4737,6 +4772,9 @@
       ],
       "Subject: ": [
         "主旨："
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "Support privacy by upgrading for": [
         "透過升級支持隱私"
@@ -4906,6 +4944,9 @@
       "Turn on to search the content of your messages": [
         "啟用以搜尋您的郵件內容"
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "不支援的檔案"
       ],
@@ -4942,6 +4983,9 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "升級以將 ProtonMail 與第三方桌面客戶端一起使用。"
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Upload picture": [
         "上載圖片"
       ],
@@ -4956,6 +5000,9 @@
       ],
       "Use Proton Calendar to keep your agenda private.": [
         "使用 Proton 行事曆來保密您的行程。"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "使用者"
@@ -4997,7 +5044,7 @@
         "我們將會在匯入完成後通知你。"
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
       "Web URL": [
         "網頁 URL"
@@ -5018,7 +5065,7 @@
         "您想要接收新的驗證碼，還是更換驗證方式？"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "您想要收到新的驗證碼嗎？"
       ],
       "Yearly": [
         "每年"
@@ -5427,7 +5474,7 @@
         "${ firstAddress } 以及其他 ${ count } 個"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        ""
+        "(暫時無法使用。請稍後再試。)"
       ],
       "Actions": [
         "操作"
@@ -5517,7 +5564,7 @@
         "城市"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "驗證碼為六位數且無空格"
       ],
       "Conditions": [
         "條件"
@@ -6001,6 +6048,9 @@
       "Manage your labels": [
         "管理您的標籤"
       ],
+      "More about recovery": [
+        "更多有關於備援部份"
+      ],
       "Open in ${ calendarAppName }": [
         "開啟在${ calendarAppName }"
       ],
@@ -6242,6 +6292,9 @@
       ],
       "Re:": [
         "回覆:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -7036,11 +7089,14 @@
       "Discover all Proton services": [
         "探索所有 Proton 服務"
       ],
+      "Invite friends and earn rewards!": [
+        ""
+      ],
       "Message Content Search": [
         "郵件內文搜尋"
       ],
       "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
-        ""
+        "安全地管理您的行事曆、檔案和線上生活！開啟並探索所有的 Proton 服務。"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "為確保您的隱私，Proton以封鎖此郵件中的電子郵件追蹤器"
@@ -7906,6 +7962,9 @@
       "What's new": [
         "最新消息"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "郵編/郵遞區號"
       ]
@@ -8213,6 +8272,9 @@
       ],
       "You will lose any customization you made so far.": [
         "您到目前為止所自訂的所有設置將會遺失。"
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

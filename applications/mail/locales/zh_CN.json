@@ -662,6 +662,9 @@
       "Recover data": [
         "恢复数据"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "Refine it": [
         "缩小搜索范围"
       ],
@@ -1320,6 +1323,11 @@
       ],
       "Website access problem": [
         "网站连接问题"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar attachment tooltip": {
@@ -1986,7 +1994,7 @@
         ""
       ],
       "Cote d'Ivoire\"": [
-        ""
+        "Côte d'Ivoire"
       ],
       "Croatia": [
         ""
@@ -2469,7 +2477,7 @@
         ""
       ],
       "Swaziland": [
-        ""
+        "Eswatini"
       ],
       "Sweden": [
         ""
@@ -3949,11 +3957,20 @@
       "/month.": [
         "/月。"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "优惠券 ${ code } 已提供 20% 优惠"
       ],
       "30 days money-back guarantee.": [
         "30 天内可退款。"
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "每个人都应当享有自由的互联网，免受网络审查。"
@@ -4150,6 +4167,12 @@
       "Create in": [
         "创建于"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
       ],
@@ -4308,6 +4331,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "释放一些空间或联系您的管理员。"
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "From": [
         "发件人"
@@ -4531,6 +4557,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "只有在与非 ProtonMail 用户使用 PGP 通讯时才应更改下列选项。"
       ],
+      "Other options": [
+        ""
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "我们的系统已将此邮件认定为欺诈邮件，请确认其内容真实性。"
       ],
@@ -4690,6 +4719,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "从 @pm.me 地址发送邮件需要付费。您的邮件仍将从您的首选地址 ${ email } 发送。"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "通过 <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全邮箱发送。"
       ],
@@ -4723,6 +4755,9 @@
       "Storage GB": [
         "存储空间 GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Store and share files securely with Proton Drive.": [
         "使用 Proton Drive 安全地存储和共享文件。"
       ],
@@ -4737,6 +4772,9 @@
       ],
       "Subject: ": [
         "主题："
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "Support privacy by upgrading for": [
         "升级账户支持我们的隐私保护事业，仅需"
@@ -4906,6 +4944,9 @@
       "Turn on to search the content of your messages": [
         "开启以搜索您的邮件全文"
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "不支持文件"
       ],
@@ -4942,6 +4983,9 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "开通付费账户即可通过第三方客户端使用 ProtonMail。"
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -4956,6 +5000,9 @@
       ],
       "Use Proton Calendar to keep your agenda private.": [
         "使用 Proton Calendar 守护您的日程隐私。"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "用户"
@@ -6001,6 +6048,9 @@
       "Manage your labels": [
         "管理标签"
       ],
+      "More about recovery": [
+        ""
+      ],
       "Open in ${ calendarAppName }": [
         "在 ${ calendarAppName } 中打开"
       ],
@@ -6242,6 +6292,9 @@
       ],
       "Re:": [
         "回复："
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -7035,6 +7088,9 @@
     "Spotlight": {
       "Discover all Proton services": [
         "探索所有 Proton 服务"
+      ],
+      "Invite friends and earn rewards!": [
+        ""
       ],
       "Message Content Search": [
         "邮件全文搜索"
@@ -7906,6 +7962,9 @@
       "What's new": [
         "更新内容"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "邮政编码"
       ]
@@ -8213,6 +8272,9 @@
       ],
       "You will lose any customization you made so far.": [
         "当前的导入设置将无法恢复。"
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

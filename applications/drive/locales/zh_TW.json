@@ -368,6 +368,9 @@
       "Recover data": [
         "恢復資料"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "refresh the page": [
         "重新整理此頁面"
       ],
@@ -818,6 +821,11 @@
       ],
       "Website access problem": [
         "網站存取問題"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -1297,7 +1305,7 @@
         ""
       ],
       "International": [
-        ""
+        "國際"
       ],
       "Iran": [
         ""
@@ -1902,10 +1910,10 @@
         "圖片上載失敗"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "登入憑證不正確。請再試一次。"
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "信箱密碼不正確。請再試一次。"
       ],
       "Incorrect password. Please try again.": [
         "密碼不正確。請再試一次。"
@@ -2444,11 +2452,20 @@
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 個 ProtonVPN 連線（讓您可以將更多裝置連上 VPN）"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用 20% 折扣"
       ],
       "30 days money-back guarantee.": [
         "30 天退款保證。"
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "每一個人都應當享有網路自由，免受網際網路審查。"
@@ -2588,6 +2605,12 @@
       "Create links and share your files with others.": [
         "建立連結並與其他人分享您的檔案。"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "Create your first folder and start moving your files.": [
         "建立您的第一個資料夾，並開始移動您的檔案。"
       ],
@@ -2680,6 +2703,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "請釋放部分空間或聯絡您的系統管理員。"
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "全功能的 VPN，速度高達 10 Gbps。"
@@ -2843,6 +2869,9 @@
       "Only the people with the link and the password can access this folder.": [
         "僅同時擁有連結與密碼的人才能存取此檔案。"
       ],
+      "Other options": [
+        ""
+      ],
       "Paused": [
         "已暫停"
       ],
@@ -2966,6 +2995,12 @@
       "Storage GB": [
         "儲存空間 GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
+      ],
       "support team": [
         "支援團隊"
       ],
@@ -3047,11 +3082,17 @@
       "Trash": [
         "垃圾桶"
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unlock drive to recover files": [
         "解鎖雲端硬碟以恢復文件"
       ],
       "Unsupported file": [
         "不支援的檔案"
+      ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ],
       "Uploaded": [
         "已上載"
@@ -3061,6 +3102,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "同一時間上載數以百計的檔案或會有礙效能。"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "使用者"
@@ -3819,6 +3863,11 @@
         "這將會永久刪除所有與您組織相關的子使用者、帳戶與資料。"
       ]
     },
+    "Message": {
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } 的新版本可供使用。${ reloadButton }。"
@@ -4338,6 +4387,11 @@
     "Select files": {
       "Upload": [
         "上載"
+      ]
+    },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
       ]
     },
     "Storage": {
@@ -4966,6 +5020,9 @@
       "Your folder is ready to be downloaded": [
         "資料夾已準備就緒，可供下載"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "郵編 / 郵政代碼"
       ]
@@ -5265,6 +5322,9 @@
       ],
       "You will lose any customization you made so far.": [
         "您到目前為止所作的任何自訂都將會消失。"
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     }
   }

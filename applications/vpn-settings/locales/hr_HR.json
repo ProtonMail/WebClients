@@ -256,6 +256,9 @@
       "Previous": [
         "Prethodno"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "refresh the page": [
         "osvježi stranicu"
       ],
@@ -694,6 +697,11 @@
         "Problem s pristupom web stanici"
       ]
     },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "Uvoz kalendara"
@@ -888,7 +896,7 @@
         "Burkina Faso"
       ],
       "Burma": [
-        ""
+        "Myanmar"
       ],
       "Burundi": [
         "Burundi"
@@ -1709,9 +1717,6 @@
       "Please set a recovery phone number first": [
         "Prvo postavite broj telefona za oporavak"
       ],
-      "Please set a recovery/notification email first": [
-        "Prvo postavite adresu e-pošte za oporavak/obavijesti"
-      ],
       "Process aborted": [
         "Proces je prekinut"
       ],
@@ -1993,6 +1998,9 @@
         "+${ organization.BonusVPN } veze za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)",
         "+${ organization.BonusVPN } veza za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Popust od 20% je primjenjen na vašu pretplatu s kuponom ${ code }"
       ],
@@ -2001,6 +2009,12 @@
       ],
       "30-days money back guarantee": [
         "Povrat novca do 30 dana"
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "Besplatan i necenzurirani Internet trebao bi biti dostupan svima."
@@ -2077,6 +2091,9 @@
       "By leaving now, changes may not be saved": [
         "Ako sada napustite, promjene se možda neće spremiti"
       ],
+      "Cancel trial": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
       ],
@@ -2088,6 +2105,18 @@
       ],
       "Connections": [
         "Veze"
+      ],
+      "Continue with plus": [
+        ""
+      ],
+      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+        ""
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
       ],
       "Creating your account": [
         "Izrada vašeg računa"
@@ -2160,6 +2189,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Oslobodite malo prostora ili se obratite administratoru."
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN s puno značajki i brzinom do 10 Gbps."
@@ -2293,6 +2325,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Kada pritisnete \"Snizi status\", potrebno je par minuta da se snizi status vašeg računa na Free plan. "
       ],
+      "Other options": [
+        ""
+      ],
       "P2P": [
         "P2P"
       ],
@@ -2328,6 +2363,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus ili Visionary pretplata je potrebna"
+      ],
+      "Plus plan": [
+        ""
       ],
       "Preview": [
         "Pregled"
@@ -2399,6 +2437,12 @@
       ],
       "Storage GB": [
         "Prostor za pohranu GB"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "Podrška za protokole za dijeljenje datoteka poput BitTorrent."
@@ -2478,11 +2522,20 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Način rada s dvije lozinke koristi zasebne lozinke za prijavu i dešifriranje sandučića e-pošte. To pruža manju sigurnosnu prednost u nekim situacijama, no za većinu korisnika preporučujemo način rada s jednom lozinkom. Da biste se prebacili na način rada s dvije lozinke, prvo postavite lozinku za prijavu te zatim postavite lozinku za sandučić e-pošte."
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Koristite sljedeće vjerodajnice za spajanje na ProtonVPN poslužitelje bez aplikacije. Na primjer: Tunnelblick na MacOS-u, OpenVPN na GNU/Linuxu."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Korisnici"
@@ -2519,9 +2572,6 @@
       ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "Poslali smo kôd za poništavanje na e-poštu za oporavak, koji vrijedi jedan sat ili dok ne zatražite novi kôd. Da biste nastavili, unesite u nastavku."
-      ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Ako su obavijesti omogućene, poslat ćemo vam upozorenje na adresu e-pošte za oporavak/obavijesti ako imate nove poruke na ProtonMail računu."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kada se vaša pretplata obnovi, primijenit ćemo sve dostupne kredite prije nego što naplatimo gore navedeni način plaćanja."
@@ -2606,6 +2656,9 @@
       ],
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Vaš postojeći Proton račun se može koristiti za pristup svim Proton uslugama. Prijavite se pomoću ${ email }"
+      ],
+      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+        ""
       ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Vaši podaci o plaćanju zaštićeni su TLS enkripcijom i švicarskim zakonima"
@@ -2835,9 +2888,6 @@
       ],
       "CVV code": [
         "CVV kôd"
-      ],
-      "Daily email notifications": [
-        "Dnevne obavijesti e-pošte"
       ],
       "Danger": [
         "Opasnost"
@@ -3267,6 +3317,9 @@
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
         "Sigurno želite onemogućiti dvofaktorsku autentikaciju?"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -3752,6 +3805,11 @@
         ""
       ]
     },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Snižavanje statusa vašeg računa, molimo pričekajte"
@@ -4134,6 +4192,9 @@
       "Processing...": [
         "Obrada..."
       ],
+      "ProtonMail Plus Trial": [
+        ""
+      ],
       "ProtonVPN clients": [
         "ProtonVPN klijenti"
       ],
@@ -4236,8 +4297,14 @@
       "You already have a Proton account": [
         "Već imate Proton račun"
       ],
+      "Your account’s usage": [
+        ""
+      ],
       "Your current plan": [
         "Vaš trenutni plan"
+      ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
       ],
       "Your plan": [
         "Vaš plan"
@@ -4544,6 +4611,9 @@
         ""
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
         ""
       ]
     }
