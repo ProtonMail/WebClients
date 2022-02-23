@@ -1,9 +1,8 @@
 import { LocaleData } from 'ttag';
 import { Locale } from 'date-fns';
+import { SimpleMap } from './utils';
 
-export interface TtagLocaleMap {
-    [key: string]: () => Promise<LocaleData>;
-}
+export type TtagLocaleMap = SimpleMap<() => Promise<LocaleData>>;
 
 export interface DateFnsLocaleMap {
     [key: string]: () => Promise<Locale>;

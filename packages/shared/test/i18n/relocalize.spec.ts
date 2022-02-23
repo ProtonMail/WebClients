@@ -111,8 +111,32 @@ describe('relocalizeText', () => {
         expect(getLocalizedText()).toEqual("Ceci n'est pas une pipe");
     });
 
+    it('should not try to load the default locale', async () => {
+        const locales = {
+            fr_FR: async () => getTranslation("Ceci n'est pas une pipe"),
+            it_IT: async () => getTranslation('Questa non è una pipa'),
+        };
+        setLocales(locales);
+        await loadLocale('fr_FR', locales);
+        expect(
+            await relocalizeText({
+                getLocalizedText,
+                newLocaleCode: DEFAULT_LOCALE,
+                userSettings: dummyUserSettings,
+            })
+        ).toEqual('This is not a pipe');
+        // notice that if relocalizeText tried to load the default locale, it would fail
+        // and fall in the next test (fallback to current locale if the locale passed has no data)
+    });
+
     it('should fallback to the current locale if the locale passed has no data', async () => {
-        await loadLocale('fr_FR', { fr_FR: async () => getTranslation("Ceci n'est pas une pipe") });
+        const locales = {
+            fr_FR: async () => getTranslation("Ceci n'est pas une pipe"),
+            it_IT: async () => getTranslation('Questa non è una pipa'),
+            gl_ES: undefined,
+        };
+        setLocales(locales);
+        await loadLocale('fr_FR', locales);
         expect(
             await relocalizeText({
                 getLocalizedText,

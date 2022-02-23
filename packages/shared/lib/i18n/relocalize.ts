@@ -4,6 +4,7 @@ import { getBrowserLocale, getClosestLocaleCode } from './helper';
 import { browserDateLocale, dateLocale, dateLocaleCode, defaultDateLocale, localeCode, setDateLocales } from './index';
 import { loadDateLocale } from './loadLocale';
 import { locales } from './locales';
+import { DEFAULT_LOCALE } from '../constants';
 
 export const relocalizeText = async ({
     getLocalizedText,
@@ -28,15 +29,17 @@ export const relocalizeText = async ({
     }
     try {
         const newSafeLocaleCode = getClosestLocaleCode(newLocaleCode, locales);
-        const promises: any[] = [locales[newSafeLocaleCode]()];
-        if (relocalizeDateFormat) {
-            promises.push(loadDateLocale(newSafeLocaleCode, getBrowserLocale(), userSettings));
+        const useDefaultLocale = newSafeLocaleCode === DEFAULT_LOCALE;
+        const [newTtagLocale] = await Promise.all([
+            useDefaultLocale ? undefined : locales[newSafeLocaleCode]?.(),
+            relocalizeDateFormat ? loadDateLocale(newSafeLocaleCode, getBrowserLocale(), userSettings) : undefined,
+        ]);
+        if (!useDefaultLocale && !newTtagLocale) {
+            throw new Error('No locale data for requested localeCode');
         }
-        const [newTtagLocale] = await Promise.all(promises);
-        if (!newTtagLocale) {
-            return getLocalizedText();
+        if (newTtagLocale) {
+            ttagAddLocale(newSafeLocaleCode, newTtagLocale);
         }
-        ttagAddLocale(newSafeLocaleCode, newTtagLocale);
         ttagUseLocale(newSafeLocaleCode);
         return getLocalizedText();
     } catch (e) {
