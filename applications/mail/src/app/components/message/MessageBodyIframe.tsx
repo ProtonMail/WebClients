@@ -34,6 +34,7 @@ interface Props {
     onMailTo?: (src: string) => void;
     isOutside?: boolean;
     mailSettings?: MailSettings;
+    parentMessageRef?: RefObject<HTMLElement>;
 }
 
 const MessageBodyIframe = ({
@@ -53,6 +54,7 @@ const MessageBodyIframe = ({
     onMailTo,
     isOutside,
     mailSettings,
+    parentMessageRef,
 }: Props) => {
     const messageHead = locateHead(message.messageDocument?.document);
 
@@ -85,7 +87,7 @@ const MessageBodyIframe = ({
         isOutside,
     });
 
-    useIframeDispatchEvents(initStatus, iframeRef);
+    useIframeDispatchEvents(initStatus, iframeRef, parentMessageRef);
 
     useObserveIframeHeight(initStatus === 'done', iframeRef);
 
