@@ -3,75 +3,82 @@
  */
 :root,
 .ui-standard {
-	--primary: #657ee4;
+	--primary: #8a6eff;
 	--primary-contrast: white;
 
-	--signal-danger: #ed4c51;
-	--signal-danger-hover: #f7595e;
-	--signal-danger-active: #ff666b;
+	--signal-danger: #f5385a;
+	--signal-danger-hover: #ff5473;
+	--signal-danger-active: #dc3251;
 	--signal-danger-contrast: white;
 
-	--signal-warning: #f5930a;
-	--signal-warning-hover: #f5a716;
-	--signal-warning-active: #f5b922;
+	--signal-warning: #ff9900;
+	--signal-warning-hover: #ffb800;
+	--signal-warning-active: #ff8419;
 	--signal-warning-contrast: black;
 
-	--signal-success: #349172;
-	--signal-success-hover: #339c79;
-	--signal-success-active: #31a67f;
+	--signal-success: #1ea885;
+	--signal-success-hover: #23c299;
+	--signal-success-active: #198f71;
 	--signal-success-contrast: white;
 
-	--signal-info: #2c89db;
-	--signal-info-hover: #3491e3;
-	--signal-info-active: #3d99eb;
+	--signal-info: #239ece;
+	--signal-info-hover: #27b1e8;
+	--signal-info-active: #1f83b5;
 	--signal-info-contrast: white;
 
 	--text-norm: white;
-	--text-weak: #a4a9b5;
-	--text-hint: #696f7d;
-	--text-disabled: #575d6b;
-	--text-invert: #262a33;
+	--text-weak: #a7a4b5;
+	--text-hint: #6d697d;
+	--text-disabled: #5b576b;
+	--text-invert: #1c1b24;
 
-	--field-norm: #575d6b;
-	--field-hover: #696f7d;
-	--field-disabled: #464b58;
+	--field-norm: #5b576b;
+	--field-hover: #6d697d;
+	--field-disabled: #3f3b4c;
 
-	--border-norm: #464b58;
-	--border-weak: #363a46;
+	--border-norm: #4a4658;
+	--border-weak: #343140;
 
-	--background-norm: #262a33;
-	--background-weak: #2e323c;
-	--background-strong: #363a46;
+	--background-norm: #1c1b24;
+	--background-weak: #292733;
+	--background-strong: #3f3b4c;
 
-	--interaction-norm: #657ee4;
-	--interaction-norm-hover: #7d92e8;
-	--interaction-norm-active: #98a9ee;
+	--interaction-norm: #6d4aff;
+	--interaction-norm-hover: #7c5cff;
+	--interaction-norm-active: #8a6eff;
 	--interaction-norm-contrast: white;
 
-	--interaction-weak: #464b58;
-	--interaction-weak-hover: #575d6b;
-	--interaction-weak-active: #696f7d;
+	--interaction-weak: #4a4658;
+	--interaction-weak-hover: #5b576b;
+	--interaction-weak-active: #6d697d;
 
 	--interaction-default: transparent;
-	--interaction-default-hover: rgb(87 93 107 / 0.2);
-	--interaction-default-active: rgb(87 93 107 / 0.3);
+	--interaction-default-hover: rgb(91 87 107 / 0.2);
+	--interaction-default-active: rgb(91 87 107 / 0.4);
 
-	--shadow-norm-opacity: 0.32;
-	--shadow-lifted-opacity: 0.4;
+	--shadow-norm-opacity: 0.4;
+	--shadow-lifted-opacity: 0.48;
 
 	--backdrop-norm: rgb(0 0 0 / 0.32);
 
 	// Optional colors
 
-	--optional-scrollbar-thumb-color: #464b58;
-	--optional-scrollbar-thumb-hover-color: #575d6b;
+	--optional-scrollbar-thumb-color: #4a4658;
+	--optional-scrollbar-thumb-hover-color: #5b576b;
 
-	--optional-email-item-read-background-color: #1a1d24;
-	--optional-email-item-read-text-color: var(--text-weak);
-}
+	--optional-sidebar-background-color: #16141c;
+	--optional-header-background-color: #16141c;
 
-// Prominent UI specifics
+	--optional-email-item-selected-background-color: #573bcc;
+	--optional-email-item-selected-icon-background-color: #372580;
 
-.ui-prominent {
-	--background-norm: #1a1d24;
+	--optional-email-item-read-background-color: #16141c;
+	--optional-email-item-read-text-color: #a7a4b5;
+
+	--optional-logo-text-proton-color: white; /*new*/
+	--optional-logo-text-product-color: #8a6eff; /*new*/
+
+	--optional-interaction-norm-accent: #9880ff; /*new*/
+	--optional-interaction-norm-accent-hover: #a898ed; /*new*/
+	--optional-interaction-norm-accent-active: #bbabff; /*new*/
 }
