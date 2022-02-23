@@ -77,7 +77,7 @@ const config: ThemeConfig [] = [
       },
       {
         path: './themes/monokai-prominent-base.css',
-        type: 'light'
+        type: 'dark'
       }
     ]
   }
