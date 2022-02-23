@@ -1,5 +1,10 @@
 @import '~@proton/styles/scss/config';
 
+.print-modal {
+	// Special case otherwise print modal is not properly displayed
+	--size: #{rem(1000)};
+}
+
 .message-print-subject {
 	font-size: #{rem(20)};
 	border-block-end: 1px solid var(--border-norm);

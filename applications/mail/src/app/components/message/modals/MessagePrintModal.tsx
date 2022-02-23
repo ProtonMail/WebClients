@@ -1,5 +1,13 @@
 import { RefObject, useEffect, useRef } from 'react';
-import { FormModal } from '@proton/components';
+import {
+    Button,
+    Form,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '@proton/components';
 import { c } from 'ttag';
 import MessageBody from '../MessageBody';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
@@ -7,14 +15,14 @@ import { MailboxContainerContextProvider } from '../../../containers/mailbox/Mai
 
 import './MessagePrint.scss';
 
-interface Props {
+interface Props extends ModalProps {
     labelID: string;
     message: MessageStateWithData;
-    onClose?: () => void;
 }
 
-const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
+const MessagePrintModal = ({ labelID, message, ...rest }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement | null>();
+    const { onClose } = rest;
 
     const handlePrint = () => {
         iframeRef.current?.contentWindow?.print();
@@ -34,29 +42,28 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
     };
 
     return (
-        <FormModal
-            title={c('Info').t`Print email`}
-            submit={c('Action').t`Print`}
-            onEnter={handlePrint}
-            onSubmit={handlePrint}
-            onClose={handleClose}
-            className="modal--wider"
-            {...rest}
-        >
-            <MailboxContainerContextProvider containerRef={null} elementID={undefined} isResizing={false}>
-                <MessageBody
-                    messageLoaded
-                    bodyLoaded
-                    sourceMode={false}
-                    message={message}
-                    labelID={labelID}
-                    originalMessageMode={false}
-                    forceBlockquote
-                    isPrint
-                    onIframeReady={handleIframeReady}
-                />
-            </MailboxContainerContextProvider>
-        </FormModal>
+        <ModalTwo className="print-modal" as={Form} onSubmit={handlePrint} onClose={handleClose} {...rest}>
+            <ModalTwoHeader title={c('Info').t`Print email`} />
+            <ModalTwoContent>
+                <MailboxContainerContextProvider containerRef={null} elementID={undefined} isResizing={false}>
+                    <MessageBody
+                        messageLoaded
+                        bodyLoaded
+                        sourceMode={false}
+                        message={message}
+                        labelID={labelID}
+                        originalMessageMode={false}
+                        forceBlockquote
+                        isPrint
+                        onIframeReady={handleIframeReady}
+                    />
+                </MailboxContainerContextProvider>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" type="submit">{c('Action').t`Print`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
