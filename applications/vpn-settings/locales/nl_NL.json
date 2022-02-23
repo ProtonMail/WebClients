@@ -188,7 +188,7 @@
         "Aan de slag"
       ],
       "Get verification code": [
-        "Krijg verificatie code"
+        "Krijg verificatiecode"
       ],
       "Go to login": [
         "Ga naar login"
@@ -255,6 +255,9 @@
       ],
       "Previous": [
         "Vorige"
+      ],
+      "Refer a friend": [
+        ""
       ],
       "refresh the page": [
         "Ververs de pagina"
@@ -683,6 +686,11 @@
       ],
       "Website access problem": [
         "Probleem met toegang tot website"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -1698,9 +1706,6 @@
       "Please set a recovery phone number first": [
         "Stel eerst een hersteltelefoonnummer in"
       ],
-      "Please set a recovery/notification email first": [
-        "Geef alstublieft eerst een herstel/notificatie e-mailadres op"
-      ],
       "Process aborted": [
         "Proces afgebroken"
       ],
@@ -1711,7 +1716,7 @@
         "Controle van handtekening mislukt"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
+        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
       "Tab closed": [
         "Tab gesloten"
@@ -1819,7 +1824,7 @@
     },
     "Frequency of news": {
       "(1 email per month)": [
-        "(1 email per month)"
+        "(1 e-mail per maand)"
       ],
       "(1 email per quarter)": [
         "(1 e-mail per kwartaal)"
@@ -1978,6 +1983,9 @@
         "+${ organization.BonusVPN } verbinding voor ProtonVPN (stelt u in staat meer apparaten aan VPN te verbinden)",
         "+${ organization.BonusVPN } verbindingen voor ProtonVPN (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% korting toegepast op uw abonnement met coupon ${ code }"
       ],
@@ -1986,6 +1994,12 @@
       ],
       "30-days money back guarantee": [
         "30-dagen geld terug garantie"
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "Iedereen moet kunnen beschikken over een vrij en ongecensureerd internet."
@@ -2062,6 +2076,9 @@
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
+      "Cancel trial": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -2073,6 +2090,18 @@
       ],
       "Connections": [
         "Verbindingen"
+      ],
+      "Continue with plus": [
+        ""
+      ],
+      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+        ""
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
       ],
       "Creating your account": [
         "Account aan het aanmaken"
@@ -2145,6 +2174,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Maak ruimte vrij of neem contact op met uw beheerder."
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Volledige VPN met snelheid tot 10 Gbps."
@@ -2278,6 +2310,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Zodra u op \"Downgrade\" klikt, kan het enkele minuten duren om uw account te downgraden naar een gratis abonnement. "
       ],
+      "Other options": [
+        ""
+      ],
       "P2P": [
         "P2P"
       ],
@@ -2313,6 +2348,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus of Visionary abonnement vereist"
+      ],
+      "Plus plan": [
+        ""
       ],
       "Preview": [
         "Voorbeeld"
@@ -2383,6 +2421,12 @@
       ],
       "Storage GB": [
         "Opslag GB"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "Ondersteuning voor filesharing protocollen zoals BitTorrent."
@@ -2462,11 +2506,20 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Twee-wachtwoordsmodus maakt gebruik van verschillende wachtwoorden voor het inloggen en het decoderen van de mailbox. Dit biedt in sommige gevallen een klein veiligheidsvoordeel maar wij raden één-wachtwoordsmodus aan voor de meeste gebruikers. Om over te schakelen naar twee-wachtwoordsmodus, stel dan eerst een inlogwachtwoord in en daarna een mailbox-wachtwoord."
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gebruik de volgende inloggegevens bij het verbinden met ProtonVPN servers zonder toepassing. Voorbeelden gebruiken gevallen zoals: Tunnelblick on macOS, OpenVPN op GNU/Linux."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Gebruikers"
@@ -2503,9 +2556,6 @@
       ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "We hebben een herstelcode naar uw herstel-e-mailadres gestuurd, die een uur geldig is tot u een nieuwe code aanvraagt. Voer de code hieronder in om door te gaan."
-      ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Wanneer notificaties zijn ingeschakeld sturen wij een melding naar uw herstel/notificatie adres als u nieuwe berichten in uw ProtonMail account heeft."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
@@ -2591,6 +2641,9 @@
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Uw bestaande Proton account kan gebruikt worden voor alle Proton diensten. Log in met ${ email }"
       ],
+      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+        ""
+      ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Uw betalingsgegevens worden beschermd met TLS versleuteling en de Zwitserse wetgeving"
       ],
@@ -2630,7 +2683,7 @@
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
-        "U kunt een betalingsmethode toevoegen om uw abonnement automatisch te laten verlengen. Andere betaalmethoden zijn ook beschikbaar."
+        "U kunt een betaalmethode toevoegen om uw abonnement automatisch te laten verlengen. Andere betaalmethoden zijn ook beschikbaar."
       ]
     },
     "Info message for custom invoice modal": {
@@ -2703,11 +2756,11 @@
         "${ n } VPN-verbindingen beschikbaar"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } of ${ MaxAddresses } e-mailadressen",
+        "${ UsedAddresses } of ${ MaxAddresses } e-mailadres",
         "${ UsedAddresses } of ${ MaxAddresses } e-mailadressen"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } van de ${ MaxDomains } eigen domeinen",
+        "${ UsedDomains } van de ${ MaxDomains } eigen domein",
         "${ UsedDomains } van de ${ MaxDomains } eigen domeinen"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
@@ -2815,9 +2868,6 @@
       ],
       "CVV code": [
         "CVV code"
-      ],
-      "Daily email notifications": [
-        "Dagelijkse e-mailnotificaties"
       ],
       "Danger": [
         "Gevaar"
@@ -3040,7 +3090,7 @@
         "Proton bedrijfsaankondigingen"
       ],
       "Proton for Business newsletter": [
-        "Proton voor bedrijfsnieuwsbrief"
+        "Proton voor Bedrijven-nieuwsbrief"
       ],
       "Proton newsletter": [
         "Proton nieuwsbrief"
@@ -3049,7 +3099,7 @@
         "Proton aanbiedingen en promoties"
       ],
       "Proton product announcements": [
-        "Proton product aankondigingen"
+        "Proton productaankondigingen"
       ]
     },
     "Label on payment method": {
@@ -3094,7 +3144,7 @@
         "Gebruikersnaam vergeten?"
       ],
       "Go to subscription plans": [
-        "Ga naar abonnementsplannen"
+        "Ga naar abonnementen"
       ],
       "here": [
         "hier"
@@ -3247,6 +3297,9 @@
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
         "Weet u zeker dat u tweestapsverificatie wil uitschakelen?"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -3385,7 +3438,7 @@
         "Bitcoin"
       ],
       "New credit/debit card": [
-        "Nieuwe krediet-/bankkaart"
+        "Nieuwe krediet-/debetkaart"
       ],
       "PayPal": [
         "PayPal"
@@ -3635,7 +3688,7 @@
         "Filesharing/P2P support"
       ],
       "High speed": [
-        "Hoge Snelheid"
+        "Hoge snelheid"
       ],
       "Highest speed (10 Gbps)": [
         "Hoogste snelheid (10 Gbps)"
@@ -3729,6 +3782,11 @@
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Uw e-mailadres verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
+      ]
+    },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
       ]
     },
     "State": {
@@ -4113,6 +4171,9 @@
       "Processing...": [
         "Wordt verwerkt..."
       ],
+      "ProtonMail Plus Trial": [
+        ""
+      ],
       "ProtonVPN clients": [
         "ProtonVPN-clients"
       ],
@@ -4215,8 +4276,14 @@
       "You already have a Proton account": [
         "U heeft al een Proton account"
       ],
+      "Your account’s usage": [
+        ""
+      ],
       "Your current plan": [
         "Uw huidige abonnement"
+      ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
       ],
       "Your plan": [
         "Uw abonnement"
@@ -4520,6 +4587,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     }
   }

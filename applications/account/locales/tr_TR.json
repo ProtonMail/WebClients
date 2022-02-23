@@ -274,6 +274,9 @@
       "Discard": [
         "Vazgeç"
       ],
+      "Don't show again": [
+        "Bir daha gösterme"
+      ],
       "Done": [
         "Tamamlandı"
       ],
@@ -495,6 +498,9 @@
       ],
       "Recover data": [
         "Verileri kurtar"
+      ],
+      "Refer a friend": [
+        ""
       ],
       "Refresh status": [
         "Durumu yenile"
@@ -812,6 +818,14 @@
     "Action for user session": {
       "Revoke": [
         "Oturumu kapat"
+      ]
+    },
+    "Action in trial plan": {
+      "No, thanks": [
+        ""
+      ],
+      "Try free for 30 days": [
+        ""
       ]
     },
     "Action to select a title for the bug report modal": {
@@ -1171,6 +1185,23 @@
       ],
       "Website access problem": [
         "Web sitesine erişim sorunu"
+      ]
+    },
+    "Button": {
+      "Add link to your email footer": [
+        ""
+      ],
+      "Continue using ProtonMail.": [
+        ""
+      ],
+      "Copy ": [
+        ""
+      ],
+      "Invite": [
+        ""
+      ],
+      "Tweet": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -2280,12 +2311,21 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
+      "Get 3 months of Mail Plus for free for every friend who subscribes to ${ mailAppName }.": [
+        ""
+      ],
+      "Invite friends to start earning credits": [
+        ""
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
+      ],
+      "Track how many people click on your link, sign up to ${ mailAppName }, and become paid subscribers. Watch your free months add up.": [
+        ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
@@ -2548,11 +2588,11 @@
       "Folder name cannot be empty": [
         "Klasör adı boş olamaz"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin"
+      "Incorrect login credentials. Please try again.": [
+        "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Posta kutusu parolası yanlış. Lütfen yeniden deneyin"
+      "Incorrect mailbox password. Please try again.": [
+        "Posta kutusu parolası yanlış. Lütfen yeniden deneyin."
       ],
       "Incorrect password": [
         "Parola geçersiz"
@@ -3871,6 +3911,9 @@
         "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu",
         "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu"
       ],
+      "${ rewards } of ${ rewardsLimit } months": [
+        ""
+      ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ annualBilling } tarifesine geçerek aboneliğinizde ${ save20 } indirim alın"
       ],
@@ -3906,6 +3949,10 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Free"
       ],
+      "(${ memberCount } member)": [
+        "",
+        ""
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Aşağıdaki koşulların TÜMÜ karşılandığında süzülsün)"
       ],
@@ -3925,17 +3972,29 @@
         "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
+      "1 to 3 months of Mail Plus will appear as credits on your next bill": [
+        ""
+      ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
       ],
       "30 days money-back guarantee.": [
         "30 gün ücret iade garantisi."
       ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
+      ],
       "A free and uncensored Internet should be available to all.": [
         "Herkes interneti özgürce ve sansürsüz olarak kullanabilmelidir."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        "Bir kurtarma dosyası, bir hesabı sıfırladığınızda verilerinizin kilidini açmanızı ve görüntülemenizi sağlar. "
+        "A recovery file lets you unlock and view your data after an account reset."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Kurtarma ifadesi, parolanızı unutursanız hesabınıza erişmenizi sağlar ve şifrelenmiş iletilerinizi kurtarır."
@@ -4141,6 +4200,9 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Bu takvimin tüm etkinlik ayrıntılarını paylaşarak, bu takvimin şifrelenmiş bilgilerine Proton tarafından erişilmesine izin vermiş olursunuz."
       ],
+      "Cancel trial": [
+        ""
+      ],
       "Center": [
         "Ortaya hizala"
       ],
@@ -4165,6 +4227,12 @@
       "Continue anyway?": [
         "Yine de devam edilsin mi?"
       ],
+      "Continue with plus": [
+        ""
+      ],
+      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } yeni takvim ekle",
         "${ calendarsToBeCreated } yeni takvim ekle"
@@ -4182,10 +4250,16 @@
         "Alt hesaplar oluşturun ve yönetin. Özel etki alanınızda e-posta adresleri atayın."
       ],
       "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Diğer kişiler için e-posta adresleri oluşturun. Bir işletme, okul ya da grubu ProtonMail üzerinden yönetin. Kuruluşunuzun adını ve özel etki alanını ekleyerek başlayın (@sirketiniz.com gibi). "
+        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
       ],
       "Create in": [
         "Şurada oluştur"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
       ],
       "Creating your Proton account": [
         "Proton hesabınız oluşturuluyor"
@@ -4216,6 +4290,9 @@
       ],
       "Daily": [
         "Günlük"
+      ],
+      "Data locked": [
+        "Veriler kilitlendi"
       ],
       "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
         "Diğer tüm MX kayıtlarını silin veya ProtonMail kaydının Priority değerinin en küçüğü olduğundan emin olun."
@@ -4268,6 +4345,9 @@
       ],
       "Each additional connection can be assigned to users in your organization.": [
         "Her ek bağlantı, kuruluşunuzdaki kullanıcılara atanabilir."
+      ],
+      "Earned ${ rewards } of ${ rewardsLimit } Mail plus months.": [
+        ""
       ],
       "Edit label": [
         "Etiketi düzenle"
@@ -4365,11 +4445,17 @@
       "free up space by deleting older messages or other data": [
         "eski iletileri veya diğer verileri silerek boş yer açın"
       ],
+      "Free VPN on a single device": [
+        ""
+      ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "10 Gb/sn hıza ulaşan tam özellikli VPN."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Yeni bir kurtarma ifadesi oluşturmak önceki ifadeyi devre dışı bırakır."
+      ],
+      "Get rewarded": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Herkese açık anahtarınızı arkadaşlarınıza verin ya da çevrimiçi olarak yayınlayın. Böylece isteyen herkes size uçtan uca şifrelenmiş e-posta gönderebilir!"
@@ -4391,6 +4477,9 @@
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Bu etki alanı şu anda e-posta alıyorsa, ${ boldAddresses } sekmesini açın ve sorunsuz bir geçiş sağlamak için MX kaydını değiştirmeden önce tüm etkin e-posta adreslerini ekleyin."
+      ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Bu durum eski bir parola sıfırlamasından kaynaklanıyorsa iletinin yeniden görüntülenmesini engelleyebilirsiniz"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -4430,6 +4519,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ProtonVPN özelliklerini kullanamayacaksınız."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Parolanızı yakın zamanda sıfırladıysanız, bir veri kurtarma yöntemini kullanarak verilerinizin kilidini açabilirsiniz"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Var olan bir SPF kaydını korumak istiyorsanız, ${ spfValue } sonrasına yalnızca ${ spf } ekleyebilirsiniz. Birden çok SPF kaydı oluşturmayın."
@@ -4513,14 +4605,20 @@
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
       ],
-      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
-        "Bazı verileriniz şifrelenmiş ve kilitlenmiş görünüyor. Bu durum büyük olasılıkla yakın zamanda veya daha önce yapılmış bir parola sıfırlamasından kaynaklanıyor. Verilerinizin kilidini açmak için bir veri kurtarma yöntemi kullanmanızı öneririz."
+      "Invite friends": [
+        ""
+      ],
+      "It appears some of your data is encrypted and locked.": [
+        "Bazı verileriniz şifrelenmiş ve kilitlenmiş görünüyor."
       ],
       "it’s imperative": [
         "zorunlu olarak"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
+      ],
+      "Just send them your personal referral link": [
+        ""
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Bu DNS kayıtlarını DKIM kullanmak istediğiniz sürece koruyun."
@@ -4579,6 +4677,9 @@
       "lose access to all current encrypted data": [
         "tüm şifrelenmiş verilere erişimi kaybedeceksiniz"
       ],
+      "Mail Plus credits earned": [
+        ""
+      ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru, reklamcılara, Rus devlet kurumlarına ve diğer üçüncü taraflara bilgi sağlamak için kişisel verilerinizi okur. Daha iyi bir kişisel gizlilik elde etmek için güvenli bir e-posta adresi oluşturun."
       ],
@@ -4626,6 +4727,9 @@
       ],
       "No contact encryption keys exist": [
         "Herhangi bir kişi şifreleme anahtarı yok"
+      ],
+      "No credit card required": [
+        ""
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Herhangi bir veri kurtarma yöntemi ayarlanmamış. Verilerinize erişimi kaybetme riskiniz var"
@@ -4693,6 +4797,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Kuruluşunuzda başka yöneticiler de var. Yeni parolayı onlara bildirmek sizin sorumluluğunuzdur."
       ],
+      "Other options": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Kurtarma dosyası eski olabilir. Verilerinize erişebileceğinizden emin olmak için güncelleyin"
       ],
@@ -4704,6 +4811,12 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "Paid for a 12 months plan": [
+        ""
+      ],
+      "Paid for a month plan": [
+        ""
       ],
       "Payment can take a few minutes to fully verify.": [
         "Ödeme işleminin tamamen doğrulanması birkaç dakika sürebilir."
@@ -4774,6 +4887,9 @@
       "Plus or Visionary subscription required": [
         "Plus veya Visionary aboneliği gerekli"
       ],
+      "Plus plan": [
+        ""
+      ],
       "Prevents content from the sender's server from loading without your permission.": [
         "Göndericinin sunucusundaki içeriğin izniniz olmadan yüklenmesini engeller."
       ],
@@ -4814,6 +4930,9 @@
       "ProtonVPN Plus or Visionary required for Secure Core feature.": [
         "Secure Core özelliği için ProtonVPN Plus ya da Visionary tarifesi gereklidir."
       ],
+      "Public link invite": [
+        ""
+      ],
       "purchase additional storage": [
         "ek depolama alanı satın alın"
       ],
@@ -4843,6 +4962,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Kurtarma ifadesi süresi geçmiş herhangi bir anahtarla ilişkili değil."
+      ],
+      "Refer, receive, repeat. You can earn credits for up to 18 months of Mail Plus.": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
@@ -4877,6 +4999,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Bu ileti <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
       ],
@@ -4895,6 +5020,12 @@
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
       ],
+      "Signed up": [
+        ""
+      ],
+      "Signed up via your link": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
       ],
@@ -4909,6 +5040,15 @@
       ],
       "Storage GB": [
         "GB olarak depolama"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Sucessfully sent invites": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "support team": [
         "destek ekibi"
@@ -4934,6 +5074,12 @@
       "Thank you for supporting our mission.": [
         "Misyonumuza destek olduğunuz için teşekkür ederiz."
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "${ boldDataLocked } iletisi artık görüntülenmeyecek. Ancak yine de ${ encryptionAndKeysLink } altında verilerinizin kilidini açabilirsiniz."
+      ],
+      "The 30-day free trial is not available any other way": [
+        ""
+      ],
       "The calendar will be removed from your account.": [
         "Takvim hesabınızdan kaldırılacak."
       ],
@@ -4948,6 +5094,9 @@
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ProtonVPN sunucusunu seçmenizi sağlar."
+      ],
+      "They signup": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
@@ -5084,6 +5233,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Hesap oturumunuzu kapatmadığınız ya da parolanızı değiştirmediğiniz sürece oturumunuz etkin kalır. Oturumlar 60 günlük hareketsizlikten sonra kapanır."
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
       ],
@@ -5102,6 +5254,9 @@
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "ProtonMail Bridge üzerinden IMAP/SMTP desteği özelliğini kullanabilmek için ücretli bir tarifeye geçmelisiniz."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Upload picture": [
         "Fotoğraf yükle"
       ],
@@ -5116,6 +5271,9 @@
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "ProtonVPN sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: MacOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Kullanıcı sayısı"
@@ -5339,6 +5497,9 @@
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
+      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+        ""
+      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "${ delayedImport.Account } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı."
       ],
@@ -5388,6 +5549,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "${ fingerprint } anahtarı zaten yüklenmiş"
+      ],
+      "Track your referral link activities here": [
+        ""
       ]
     },
     "Info - folder colouring feature": {
@@ -5774,6 +5938,14 @@
       " and ${ l }": [
         " ve ${ l }"
       ],
+      "${ monthsRewarded } month credited": [
+        "",
+        ""
+      ],
+      "${ monthsRewarded } month pending": [
+        "",
+        ""
+      ],
       "${ n } VPN connection available": [
         "${ n } VPN bağlantısı kullanılabilir",
         "${ n } VPN bağlantısı kullanılabilir"
@@ -6129,6 +6301,9 @@
       "Interval": [
         "Aralık"
       ],
+      "Invite via email": [
+        ""
+      ],
       "Keep me signed in": [
         "Oturumum açık kalsın"
       ],
@@ -6343,7 +6518,10 @@
         "Otomatik yanıt gönder"
       ],
       "Send invites in": [
-        "Davetler şu dilde gönderilsin"
+        "Invitation language"
+      ],
+      "Share your invitation link": [
+        ""
       ],
       "Show secondary time zone": [
         "İkinci saat dilimi görüntülensin"
@@ -6513,6 +6691,9 @@
       "Your password (admin)": [
         "Parolanız (yönetici)"
       ],
+      "Your reward": [
+        ""
+      ],
       "ZIP": [
         "ZIP"
       ]
@@ -6670,6 +6851,9 @@
       "Create an account": [
         "Bir hesap açın"
       ],
+      "Encryption and keys": [
+        "Şifreleme ve anahtarlar"
+      ],
       "Forgot username?": [
         "Kullanıcı adınızı mı unuttunuz?"
       ],
@@ -6703,11 +6887,17 @@
       "Reset password": [
         "Parolayı sıfırla"
       ],
+      "Set email address": [
+        "E-posta adresini ayarla"
+      ],
       "Sign in": [
         "Oturum aç"
       ],
       "Terms": [
         "Şartlar"
+      ],
+      "Terms and conditions": [
+        ""
       ],
       "Upgrade": [
         "Yükselt"
@@ -6900,6 +7090,9 @@
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
         "Özel etki alanlarını ve ücretli özellikleri kullanmak için aboneliğinizi herhangi bir ücretli tarifeye yükseltin"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -7940,6 +8133,11 @@
         "${ email } güncellendi"
       ]
     },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Hesabınız düşürülüyor, lütfen bekleyin"
@@ -7997,6 +8195,11 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Adresini yazarak, herkese açık, dış ya da paylaşılmış takvimler ekleyin."
+      ]
+    },
+    "Subtitle for trial plan": {
+      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ]
     },
     "Success": {
@@ -8571,6 +8774,9 @@
       "Domain names": [
         "Etki alanı adları"
       ],
+      "Don't show again?": [
+        "Bir daha gösterilmesin mi?"
+      ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
       ],
@@ -8657,6 +8863,9 @@
       ],
       "Get ProtonVPN Plus to access all servers": [
         "Tüm sunuculara erişmek için ProtonVPN Plus tarifesine geçin"
+      ],
+      "Get up to 18 months of Mail Plus for free": [
+        ""
       ],
       "Gift code": [
         "Hediye kodu"
@@ -8821,6 +9030,9 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
+      "ProtonMail Plus Trial": [
+        ""
+      ],
       "ProtonVPN": [
         "ProtonVPN"
       ],
@@ -8835,6 +9047,12 @@
       ],
       "Recovery file": [
         "Kurtarma dosyası"
+      ],
+      "Refer a friend": [
+        ""
+      ],
+      "Referral tracker": [
+        ""
       ],
       "Remove calendar": [
         "Takvimi kaldır"
@@ -8856,6 +9074,9 @@
       ],
       "Restore administrator privileges": [
         "Yönetici yetkilerini geri yükle"
+      ],
+      "Secure email based in Switzerland": [
+        ""
       ],
       "Security": [
         "Güvenlik"
@@ -8974,6 +9195,9 @@
       "Total (monthly)": [
         "Toplam (aylık)"
       ],
+      "Try the best of ProtonMail for free": [
+        ""
+      ],
       "Two-factor authentication": [
         "İki aşamalı kimlik doğrulama"
       ],
@@ -9007,17 +9231,26 @@
       "What's new": [
         "Yenilikler"
       ],
+      "Your account’s usage": [
+        ""
+      ],
       "Your calendar link": [
         "Takvim bağlantınız"
       ],
       "Your current plan": [
         "Geçerli tarifeniz"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "Your plan": [
         "Tarifeniz"
       ],
       "Your recovery status": [
         "Kurtarma durumunuz"
+      ],
+      "You’ve been invited to try ${ mailAppName }": [
+        ""
       ],
       "ZIP / postal code": [
         "ZIP / posta kodu"
@@ -9144,6 +9377,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Gelişmiş günlük kaydı etkinleştirildiğinde, her etkinliğin IP adresi kaydedilir."
+      ],
+      "For easy sharing with all your contacts, the link text “Try ${ mailAppName } Plus Free for one month” is added to the bottom of your emails": [
+        ""
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Tek tarifeyle tüm ücretli ${ vpnAppName } ve ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
@@ -9520,6 +9756,9 @@
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
       ],
+      "Please provide at least one recipient": [
+        ""
+      ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
       ],
@@ -9552,6 +9791,9 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Bu içe aktarma kaydını artık listede görmeyeceksiniz."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Kurtarma dosyanızın kullanma süresi geçmiş. Hesabınızı yeniden sıfırlarsanız bu dosya yeni verileri kurtarmakta kullanılamaz."

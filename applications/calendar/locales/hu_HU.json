@@ -349,6 +349,9 @@
       "Recover data": [
         "Adatok helyreállítása"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "refresh the page": [
         "az oldal frissítése"
       ],
@@ -866,6 +869,11 @@
       ],
       "Website access problem": [
         "Probléma a weboldal elérésével"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -3031,11 +3039,20 @@
         "+${ organization.BonusVPN } ProtonVPN kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
         "+${ organization.BonusVPN } ProtonVPN kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% kedvezmény az előfizetéshez a kuponnal: ${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 napos pénz-visszafizetési garancia."
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A cancellation email will be sent to removed participants.": [
         "Egy lemondó értesítés kerül elküldésre az eltávolított résztvevőknek."
@@ -3163,6 +3180,12 @@
       "Create in": [
         "Létrehozás itt"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Támogatottak az Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és más alkalmazások CSV fájljai, illetve a vCard 3.1 és 4.0 formátum (UTF-8 kódolással)."
       ],
@@ -3240,6 +3263,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Szabadítson fel területet vagy írjon az adminisztrátornak."
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "Frequency modifications will be lost.": [
         "Az ismétlődés változtatásai el fognak veszni."
@@ -3371,6 +3397,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ezeket a beállításokat csak akkor változtassa meg, ha nem ProtonMail címzettekkel használ PGP titkosítást."
       ],
+      "Other options": [
+        ""
+      ],
       "Payment can take a few minutes to fully verify.": [
         "A kifizetés ellenőrzése néhány percet is igénybe vehet."
       ],
@@ -3474,6 +3503,12 @@
       "Storage GB": [
         "Tárhely GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
+      ],
       "support team": [
         "ügyfélszolgálati csoport"
       ],
@@ -3555,8 +3590,14 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Update recurring event": [
         "Ismétlődő esemény frissítése"
+      ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ],
       "Users": [
         "Felhasználók"
@@ -4218,8 +4259,8 @@
       "Contact groups": [
         "Névjegy csoportok"
       ],
-      "Custom email addresses": [
-        "Egyéni e-mail címek"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Saját szűrők"
@@ -4303,6 +4344,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -4910,8 +4954,8 @@
       "Built-in Adblocker (NetShield)": [
         "Beépített reklámblokkoló (NetShield)"
       ],
-      "Custom email addresses": [
-        "Egyéni e-mail címek"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Korai hozzáférés új termékekhez"
@@ -5033,6 +5077,11 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Naptár kezelése"
+      ]
+    },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
       ]
     },
     "Storage": {
@@ -5738,6 +5787,9 @@
       "You have invited participants with equivalent emails": [
         "A hasonló e-mail címmel rendelkező résztvevőket meghívta"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "Irányítószám"
       ]
@@ -5830,6 +5882,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Használja a személyes felhasználónév@pm.me címét levelek küldésére"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "You do not have any contacts to export": [
         "Önnek nincs exportálható névjegye"
@@ -6028,6 +6083,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Elveszíti az eddigi változtatásokat."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

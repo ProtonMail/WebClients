@@ -274,6 +274,9 @@
       "Discard": [
         "Renunțare"
       ],
+      "Don't show again": [
+        "Nu mai arăta"
+      ],
       "Done": [
         "Gata"
       ],
@@ -495,6 +498,9 @@
       ],
       "Recover data": [
         "Recuperare date"
+      ],
+      "Refer a friend": [
+        ""
       ],
       "Refresh status": [
         "Actualizare stare"
@@ -812,6 +818,14 @@
     "Action for user session": {
       "Revoke": [
         "Anulare"
+      ]
+    },
+    "Action in trial plan": {
+      "No, thanks": [
+        ""
+      ],
+      "Try free for 30 days": [
+        ""
       ]
     },
     "Action to select a title for the bug report modal": {
@@ -1180,6 +1194,23 @@
       ],
       "Website access problem": [
         "Problemă accesare site web"
+      ]
+    },
+    "Button": {
+      "Add link to your email footer": [
+        ""
+      ],
+      "Continue using ProtonMail.": [
+        ""
+      ],
+      "Copy ": [
+        ""
+      ],
+      "Invite": [
+        ""
+      ],
+      "Tweet": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -2296,6 +2327,12 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
+      "Get 3 months of Mail Plus for free for every friend who subscribes to ${ mailAppName }.": [
+        ""
+      ],
+      "Invite friends to start earning credits": [
+        ""
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
@@ -2303,6 +2340,9 @@
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
+      ],
+      "Track how many people click on your link, sign up to ${ mailAppName }, and become paid subscribers. Watch your free months add up.": [
+        ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
@@ -2567,10 +2607,10 @@
       "Folder name cannot be empty": [
         "Numele folderului nu poate fi gol"
       ],
-      "Incorrect login credentials. Please try again": [
+      "Incorrect login credentials. Please try again.": [
         "Date de conectare incorecte. Reîncercați."
       ],
-      "Incorrect mailbox password. Please try again": [
+      "Incorrect mailbox password. Please try again.": [
         "Parolă mesaje incorectă. Reîncercați."
       ],
       "Incorrect password": [
@@ -3917,6 +3957,9 @@
         "S-au găsit ${ providerFoldersNumLocalized } etichete în Gmail",
         "S-au găsit ${ providerFoldersNumLocalized } de etichete în Gmail"
       ],
+      "${ rewards } of ${ rewardsLimit } months": [
+        ""
+      ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } din abonament trecând la ${ annualBilling }"
       ],
@@ -3957,6 +4000,11 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } gratuit"
       ],
+      "(${ memberCount } member)": [
+        "",
+        "",
+        ""
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrare dacă TOATE condițiile următoare sunt îndeplinite)"
       ],
@@ -3977,17 +4025,29 @@
         "+ ${ organization.BonusVPN } conexiuni pentru ProtonVPN (permite conectarea mai multor dispozitive la VPN)",
         "+ ${ organization.BonusVPN } de conexiuni pentru ProtonVPN (permite conectarea mai multor dispozitive la VPN)"
       ],
+      "1 to 3 months of Mail Plus will appear as credits on your next bill": [
+        ""
+      ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Cuponul ${ code } a aplicat o reducere de 20%"
       ],
       "30 days money-back guarantee.": [
         "Banii înapoi în 30 de zile garantat."
       ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
+      ],
       "A free and uncensored Internet should be available to all.": [
         "Un internet gratuit și necenzurat ce ar trebui să fie disponibil tuturor."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        "Un fișier de recuperare vă permite să vă deblocați și să vă accesaţi datele după o resetare a contului. "
+        "A recovery file lets you unlock and view your data after an account reset."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "O frază de recuperare vă permite să vă accesați contul și să vă recuperați mesajele criptate dacă vă uitați parola."
@@ -4196,6 +4256,9 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Partajând toate detaliile evenimentului din acest calendar, sunteți de acord să permiteți accesul Proton la aceste informații criptate din calendar."
       ],
+      "Cancel trial": [
+        ""
+      ],
       "Center": [
         "Centrare"
       ],
@@ -4220,6 +4283,12 @@
       "Continue anyway?": [
         "Confirmați continuarea?"
       ],
+      "Continue with plus": [
+        ""
+      ],
+      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Creare un calendar",
         "Creare ${ calendarsToBeCreated } calendare",
@@ -4238,10 +4307,16 @@
         "Creați și gestionați conturi subordonate și atribuiți-le adrese de e-mail cu domeniului personal."
       ],
       "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Creați adrese de e-mail pentru alte persoane, gestionați ProtonMail pentru o afacere, o școală sau un grup. Începeți prin adăugarea numelui organizației și a domeniului personal (de ex. @numecompanie.com)."
+        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
       ],
       "Create in": [
         "Creare în"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
       ],
       "Creating your Proton account": [
         "Crearea contului tău Proton"
@@ -4272,6 +4347,9 @@
       ],
       "Daily": [
         "Zilnic"
+      ],
+      "Data locked": [
+        "Date blocate"
       ],
       "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
         "Ștergeți orice alte înregistrări MX sau asigurați-vă că prioritatea lui ProtonMail are cel mai mic număr."
@@ -4325,6 +4403,9 @@
       ],
       "Each additional connection can be assigned to users in your organization.": [
         "Fiecare conexiune suplimentară poate fi atribuită utilizatorilor din organizație."
+      ],
+      "Earned ${ rewards } of ${ rewardsLimit } Mail plus months.": [
+        ""
       ],
       "Edit label": [
         "Editare etichetă"
@@ -4422,11 +4503,17 @@
       "free up space by deleting older messages or other data": [
         "eliberați spațiu prin ștergerea mesajelor mai vechi sau a altor date"
       ],
+      "Free VPN on a single device": [
+        ""
+      ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN complet cu viteză de până la 10 Gbps."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generarea unei fraze de recuperare o va dezactiva pe cea veche."
+      ],
+      "Get rewarded": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Partajați cheia publică prietenilor sau publicați-o online, astfel încât oricine să vă poată trimite mesaje criptate la ambele capete!"
@@ -4448,6 +4535,9 @@
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Dacă acest domeniu primește în prezent e-mailuri, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție fără probleme."
+      ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Dacă aceasta se datorează unei resetări anterioare a parolei, puteți opri afișarea din nou a mesajului."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
@@ -4487,6 +4577,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ProtonMail."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Dacă v-ați resetat recent parola, puteți utiliza o metodă de recuperare a datelor pentru a vă debloca datele."
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Dacă doriți să păstrați o înregistrare SPF existentă, puteți adăuga ${ spf } la sfârșit după ${ spfValue }. Nu creați multiple înregistrări SPF."
@@ -4571,14 +4664,20 @@
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
       ],
-      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
-        "Se pare că unele dintre date sunt criptate și blocate. Acest lucru se datorează probabil unei resetări recente sau anterioare a parolei. Vă sugerăm să utilizați o metodă de recuperare a datelor pentru a vă debloca datele."
+      "Invite friends": [
+        ""
+      ],
+      "It appears some of your data is encrypted and locked.": [
+        "Se pare că unele date sunt criptate și blocate."
       ],
       "it’s imperative": [
         "este imperativ"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
+      ],
+      "Just send them your personal referral link": [
+        ""
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Păstrați aceste înregistrări în DNS atât timp cât doriți să utilizați DKIM."
@@ -4637,6 +4736,9 @@
       "lose access to all current encrypted data": [
         "pierde accesul la toate datele actuale criptate"
       ],
+      "Mail Plus credits earned": [
+        ""
+      ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru vă citeşte datele personale pentru a oferi acces agenţilor de publicitate, agenţiilor de informaţii rusești şi altor terţe părți. Pentru o confidențialitate mai bună, creați o adresă de e-mail securizată."
       ],
@@ -4684,6 +4786,9 @@
       ],
       "No contact encryption keys exist": [
         "Nu există chei de criptare contacte"
+      ],
+      "No credit card required": [
+        ""
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Nu este setată o metodă de recuperare adatelor; există riscul de a vă pierde accesul la date."
@@ -4751,6 +4856,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Mai există și alți administratori în cadrul organizației și va trebui să le comunicați noua parolă."
       ],
+      "Other options": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Fișier de recuperare învechit. Actualizați-l pentru a vă asigura accesul la date."
       ],
@@ -4762,6 +4870,12 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "Paid for a 12 months plan": [
+        ""
+      ],
+      "Paid for a month plan": [
+        ""
       ],
       "Payment can take a few minutes to fully verify.": [
         "Verificarea plății poate dura câteva minute."
@@ -4832,6 +4946,9 @@
       "Plus or Visionary subscription required": [
         "Este necesar abonamentul „Plus” sau „Visionary”"
       ],
+      "Plus plan": [
+        ""
+      ],
       "Prevents content from the sender's server from loading without your permission.": [
         "Împiedică încărcarea conținutului de pe serverul expeditorului dacă nu doriți asta."
       ],
@@ -4873,6 +4990,9 @@
       "ProtonVPN Plus or Visionary required for Secure Core feature.": [
         "Trebuie să aveți „ProtonVPN Plus” sau „Visionary” pentru funcția „Secure Core”."
       ],
+      "Public link invite": [
+        ""
+      ],
       "purchase additional storage": [
         "cumpărați spațiu suplimentar"
       ],
@@ -4902,6 +5022,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Fraza de recuperare nu este asociată cu nicio cheie învechită."
+      ],
+      "Refer, receive, repeat. You can earn credits for up to 18 months of Mail Plus.": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
@@ -4936,6 +5059,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selectați calendarul dorit pentru importare. Va fi creat un calendar nou pentru fiecare calendar importat până la limita de 20 de calendare."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Trimis cu <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> e-mail securizat."
       ],
@@ -4954,6 +5080,12 @@
       "Set recovery phrase": [
         "Setare frază de recuperare"
       ],
+      "Signed up": [
+        ""
+      ],
+      "Signed up via your link": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
@@ -4968,6 +5100,15 @@
       ],
       "Storage GB": [
         "GB stocare"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Sucessfully sent invites": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "support team": [
         "echipa de asistență"
@@ -4993,6 +5134,12 @@
       "Thank you for supporting our mission.": [
         "Vă mulţumim pentru că ne sprijiniți misiunea."
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele de la ${ encryptionAndKeysLink }."
+      ],
+      "The 30-day free trial is not available any other way": [
+        ""
+      ],
       "The calendar will be removed from your account.": [
         "Calendarul va fi eliminat din cont."
       ],
@@ -5007,6 +5154,9 @@
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Aceste fișiere de configurare vă permit să alegeți la care server ProtonVPN vă conectați atunci când utilizați o aplicație VPN terță sau când configurați o conexiune VPN pe un ruter."
+      ],
+      "They signup": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
@@ -5143,6 +5293,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Dacă nu vă deconectați din cont sau nu vă schimbați parola, sesiunea curentă va rămâne activă. Sesiunea expiră după 60 de zile de inactivitate."
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "Fişier nesuportat"
       ],
@@ -5161,6 +5314,9 @@
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Treceți la un plan cu plată pentru a debloca suportul IMAP/SMTP cu ajutorul „ProtonMail Bridge”."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Upload picture": [
         "Încărcare imagine"
       ],
@@ -5175,6 +5331,9 @@
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilizați următoarele acreditări atunci când vă conectați la serverele ProtonVPN fără aplicație. Exemplele de utilizare includ: Tunnelblick pe macOS, OpenVPN pe GNU/Linux."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Utilizatori"
@@ -5398,6 +5557,9 @@
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
+      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+        ""
+      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Importarea din ${ delayedImport.Account } este temporar întârziată."
       ],
@@ -5447,6 +5609,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Track your referral link activities here": [
+        ""
       ]
     },
     "Info - folder colouring feature": {
@@ -5833,6 +5998,16 @@
       " and ${ l }": [
         " și ${ l }"
       ],
+      "${ monthsRewarded } month credited": [
+        "",
+        "",
+        ""
+      ],
+      "${ monthsRewarded } month pending": [
+        "",
+        "",
+        ""
+      ],
       "${ n } VPN connection available": [
         "O conexiune VPN disponibilă",
         "${ n } conexiuni VPN disponibile",
@@ -6192,6 +6367,9 @@
       "Interval": [
         "Interval"
       ],
+      "Invite via email": [
+        ""
+      ],
       "Keep me signed in": [
         "Păstrați-mă conectat"
       ],
@@ -6406,7 +6584,10 @@
         "Trimitere autorăspuns"
       ],
       "Send invites in": [
-        "Trimitere invitații în"
+        "Invitation language"
+      ],
+      "Share your invitation link": [
+        ""
       ],
       "Show secondary time zone": [
         "Afișare fus orar secundar"
@@ -6576,6 +6757,9 @@
       "Your password (admin)": [
         "Parola dvs. (administrator)"
       ],
+      "Your reward": [
+        ""
+      ],
       "ZIP": [
         "ZIP"
       ]
@@ -6733,6 +6917,9 @@
       "Create an account": [
         "Creare cont"
       ],
+      "Encryption and keys": [
+        "Criptare și chei"
+      ],
       "Forgot username?": [
         "Ați uitat numele de utilizator?"
       ],
@@ -6766,11 +6953,17 @@
       "Reset password": [
         "Resetare parolă"
       ],
+      "Set email address": [
+        "Setare adresă de e-mail"
+      ],
       "Sign in": [
         "Autentificare"
       ],
       "Terms": [
         "Termeni"
+      ],
+      "Terms and conditions": [
+        ""
       ],
       "Upgrade": [
         "Migrare"
@@ -6966,6 +7159,9 @@
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
         "Treceți la orice plan cu plată pentru a utiliza domenii personale și a debloca funcții speciale."
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -8014,6 +8210,11 @@
         "${ email } actualizat"
       ]
     },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Se modifică contul, așteptați puțin."
@@ -8071,6 +8272,11 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Adăugare calendare publice, externe sau partajate folosing o adresă URL."
+      ]
+    },
+    "Subtitle for trial plan": {
+      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ]
     },
     "Success": {
@@ -8647,6 +8853,9 @@
       "Domain names": [
         "Nume domenii"
       ],
+      "Don't show again?": [
+        "Nu mai afișez asta?"
+      ],
       "Downgrade account": [
         "Retrogradare cont"
       ],
@@ -8733,6 +8942,9 @@
       ],
       "Get ProtonVPN Plus to access all servers": [
         "Luați „ProtonVPN Plus” pentru a accesa toate serverele"
+      ],
+      "Get up to 18 months of Mail Plus for free": [
+        ""
       ],
       "Gift code": [
         "Cod cadou"
@@ -8898,6 +9110,9 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
+      "ProtonMail Plus Trial": [
+        ""
+      ],
       "ProtonVPN": [
         "ProtonVPN"
       ],
@@ -8912,6 +9127,12 @@
       ],
       "Recovery file": [
         "Fișier de recuperare"
+      ],
+      "Refer a friend": [
+        ""
+      ],
+      "Referral tracker": [
+        ""
       ],
       "Remove calendar": [
         "Eliminare calendar"
@@ -8933,6 +9154,9 @@
       ],
       "Restore administrator privileges": [
         "Restaurare privilegii administrator"
+      ],
+      "Secure email based in Switzerland": [
+        ""
       ],
       "Security": [
         "Securitate"
@@ -9051,6 +9275,9 @@
       "Total (monthly)": [
         "Total (lunar)"
       ],
+      "Try the best of ProtonMail for free": [
+        ""
+      ],
       "Two-factor authentication": [
         "Autentificare cu doi factori"
       ],
@@ -9084,17 +9311,26 @@
       "What's new": [
         "Ce este nou"
       ],
+      "Your account’s usage": [
+        ""
+      ],
       "Your calendar link": [
         "Legătură calendar"
       ],
       "Your current plan": [
         "Planul curent"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "Your plan": [
         "Plan actual"
       ],
       "Your recovery status": [
         "Starea actuală de recuperare"
+      ],
+      "You’ve been invited to try ${ mailAppName }": [
+        ""
       ],
       "ZIP / postal code": [
         "ZIP/Cod poștal"
@@ -9221,6 +9457,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Activarea jurnalelor detaliate înregistrează adresa IP pentru fiecare eveniment în jurnalul de securitate."
+      ],
+      "For easy sharing with all your contacts, the link text “Try ${ mailAppName } Plus Free for one month” is added to the bottom of your emails": [
+        ""
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Acces la toate funcțiile plătite, pentru ${ vpnAppName } și ${ mailAppName } (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
@@ -9603,6 +9842,9 @@
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
       ],
+      "Please provide at least one recipient": [
+        ""
+      ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați-le numele înainte de importare."
       ],
@@ -9635,6 +9877,9 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Nu veți mai vedea această înregistrare importată în listă."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Fișierul de recuperare este vechi. Nu vă poate recupera datele dacă vă veți reseta contul."

@@ -349,6 +349,9 @@
       "Recover data": [
         "Recupera dati"
       ],
+      "Refer a friend": [
+        "Segnala un amico"
+      ],
       "refresh the page": [
         "aggiorna la pagina"
       ],
@@ -866,6 +869,11 @@
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        "Continua a usare ProtonMail."
       ]
     },
     "Calendar feature": {
@@ -3031,11 +3039,20 @@
         "+${ organization.BonusVPN } connessione per ProtonVPN (consente di collegare più dispositivi al VPN)",
         "+${ organization.BonusVPN } connessioni per ProtonVPN (consente di collegare più dispositivi al VPN)"
       ],
+      "20 personal calendars": [
+        "20 calendari personali"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% di sconto applicato al tuo abbonamento con coupon ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Garanzia soddisfatti o rimborsati per 30 giorni."
+      ],
+      "5 email addresses/aliases": [
+        "5 indirizzi email/alias"
+      ],
+      "5 GB storage": [
+        "5 GB di spazio"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Una email di cancellazione verrà inviata ai partecipanti rimossi."
@@ -3163,6 +3180,12 @@
       "Create in": [
         "Crea in"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        "Crea più indirizzi email per le tue identità online, ad es. JohnShopper@proton.me per gli account di acquisto, JohnNews@proton.me per gli abbonamenti alle notizie."
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "Crea fino a 20 calendari personalizzati. Inoltre, aggiungi fino a 5 calendari di amici, familiari, colleghi e organizzazioni."
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "File CSV da Outlook, Outlook Express, Yahoo! Sono supportati Mail, Hotmail, Eudora e alcune altre app, nonché i formati vCard 3.1 e 4.0 (codifica UTF-8)."
       ],
@@ -3240,6 +3263,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Libera dello spazio o contatta il tuo amministratore."
+      ],
+      "Free VPN on a single device": [
+        "VPN gratuita su un unico dispositivo"
       ],
       "Frequency modifications will be lost.": [
         "Le modifiche di frequenza andranno perse."
@@ -3371,6 +3397,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Cambia queste impostazioni solo se stai usando PGP con destinatari non-ProtonMail."
       ],
+      "Other options": [
+        "Altre opzioni"
+      ],
       "Payment can take a few minutes to fully verify.": [
         "Il pagamento può richiedere alcuni minuti per una verifica completa."
       ],
@@ -3474,6 +3503,12 @@
       "Storage GB": [
         "Archivio GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Lo spazio di archiviazione è condiviso tra Mail, Calendar e Drive."
+      ],
+      "Support for 1 custom email domain": [
+        "Supporto per 1 dominio di posta elettronica personalizzato"
+      ],
       "support team": [
         "team di supporto"
       ],
@@ -3555,8 +3590,14 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Per utilizzare la verifica dell'indirizzo, devi fidarti di una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di cifratura vengano falsificate."
       ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
       "Update recurring event": [
         "Aggiorna l'evento ricorrente"
+      ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Esegui l'upgrade oggi e mantieni l'accesso alla soluzione Mail e Calendar al primo posto per la privacy per le tue esigenze di comunicazione quotidiane."
       ],
       "Users": [
         "Utenti"
@@ -4218,8 +4259,8 @@
       "Contact groups": [
         "Gruppi di contatti"
       ],
-      "Custom email addresses": [
-        "Indirizzi email personalizzati"
+      "Custom domains": [
+        "Domini personalizzati"
       ],
       "Custom filters": [
         "Filtri personalizzati"
@@ -4303,6 +4344,9 @@
       ],
       "Re:": [
         "R:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "La tua prova gratuita è terminata. L'accesso al tuo account sarà presto disabilitato. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4910,8 +4954,8 @@
       "Built-in Adblocker (NetShield)": [
         "Adblocker Integrato (NetShield)"
       ],
-      "Custom email addresses": [
-        "Indirizzi email personalizzati"
+      "Custom domains": [
+        "Domini personalizzati"
       ],
       "Early access to new products": [
         "Accesso anticipato ai nuovi prodotti"
@@ -5033,6 +5077,11 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Gestisci calendario"
+      ]
+    },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        "Invita gli amici e guadagna ricompense!"
       ]
     },
     "Storage": {
@@ -5738,6 +5787,9 @@
       "You have invited participants with equivalent emails": [
         "Hai invitato i partecipanti con email equivalenti"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "La tua prova gratuita termina presto, il ${ formattedEndDate }"
+      ],
       "ZIP / postal code": [
         "CAP / codice postale"
       ]
@@ -5830,6 +5882,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Usa l'indirizzo utente personale @pm.me per inviare email"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Usa i tuoi indirizzi di dominio e-mail personalizzati, ad esempio you@yourname.com"
       ],
       "You do not have any contacts to export": [
         "Non hai alcun contatto da esportare"
@@ -6028,6 +6083,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Perderai ogni personalizzazione che hai fatto finora."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "La tua prova gratuita termina il ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

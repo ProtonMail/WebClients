@@ -274,6 +274,9 @@
       "Discard": [
         "Weggooien"
       ],
+      "Don't show again": [
+        "Niet meer weergeven"
+      ],
       "Done": [
         "Klaar"
       ],
@@ -495,6 +498,9 @@
       ],
       "Recover data": [
         "Gegevens herstellen"
+      ],
+      "Refer a friend": [
+        ""
       ],
       "Refresh status": [
         "Status vernieuwen"
@@ -731,7 +737,7 @@
         "Herstelbestand bijwerken"
       ],
       "Update recovery phrase": [
-        "Herstel zin bijwerken"
+        "Herstelzin bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -812,6 +818,14 @@
     "Action for user session": {
       "Revoke": [
         "Intrekken"
+      ]
+    },
+    "Action in trial plan": {
+      "No, thanks": [
+        ""
+      ],
+      "Try free for 30 days": [
+        ""
       ]
     },
     "Action to select a title for the bug report modal": {
@@ -989,13 +1003,13 @@
         "Jaarlijks"
       ],
       "Annually SAVE 20%": [
-        "BESPAAR jaarlijks 20%"
+        "Jaarlijks (BESPAAR 20%)"
       ],
       "Monthly": [
         "Maandelijks"
       ],
       "Two years SAVE 33%": [
-        "Twee jaar BESPAAR 33%"
+        "Twee jaar (BESPAAR 33%)"
       ],
       "Two-year": [
         "Tweejaarlijks"
@@ -1171,6 +1185,23 @@
       ],
       "Website access problem": [
         "Probleem met toegang tot website"
+      ]
+    },
+    "Button": {
+      "Add link to your email footer": [
+        ""
+      ],
+      "Continue using ProtonMail.": [
+        ""
+      ],
+      "Copy ": [
+        ""
+      ],
+      "Invite": [
+        ""
+      ],
+      "Tweet": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -2280,12 +2311,21 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
+      "Get 3 months of Mail Plus for free for every friend who subscribes to ${ mailAppName }.": [
+        ""
+      ],
+      "Invite friends to start earning credits": [
+        ""
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden.",
         "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden."
+      ],
+      "Track how many people click on your link, sign up to ${ mailAppName }, and become paid subscribers. Watch your free months add up.": [
+        ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
@@ -2490,7 +2530,7 @@
         "Kan gebruikersnaam niet controleren, probeer het later opnieuw"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kan geen nieuwe kalenders maken voor alle geïmporteerde kalenders vanwege de limiet voor persoonlijke kalenders."
+        "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda's."
       ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
@@ -2506,8 +2546,8 @@
         "Deselecteer tenminste ${ calendarToFixCount } agenda's"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Ten minste ${ calendarToFixCount } kalender deselecteren of",
-        "Ten minste ${ calendarToFixCount } kalenders deselecteren of"
+        "Ten minste ${ calendarToFixCount } agenda deselecteren of",
+        "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
@@ -2548,11 +2588,11 @@
       "Folder name cannot be empty": [
         "Naam van de map mag niet leeg zijn"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Onjuiste logingegevens. Probeer het opnieuw"
+      "Incorrect login credentials. Please try again.": [
+        "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
+      "Incorrect mailbox password. Please try again.": [
+        "Onjuist mailbox-wachtwoord. Probeer het opnieuw."
       ],
       "Incorrect password": [
         "Ongeldig wachtwoord"
@@ -3017,7 +3057,7 @@
         "Er is een probleem opgetreden bij het uitschrijven van u."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
-        "Te veel kindersessies, wis uw cookies en log opnieuw in."
+        "Te veel onderliggende sessies, wis uw cookies en log opnieuw in."
       ],
       "You may also ${ refresh } or try again later.": [
         "U kunt ook ${ refresh } of probeer het later opnieuw."
@@ -3096,7 +3136,7 @@
         "${ totalProcessed }/${ totalToProcess } gebeurtenissen geëxporteerd"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "Kalender succesvol geëxporteerd. U kunt nu het ICS-bestand opslaan."
+        "Agenda succesvol geëxporteerd. U kunt nu het ICS-bestand opslaan."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
         "Afspraken van uw agenda decoderen: ${ totalProcessed }/${ totalToProcess }"
@@ -3426,7 +3466,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Geïmporteerde uitnodigingen verschijnen in ${ CALENDAR_APP_NAME } als eenvoudige evenementen zonder details over de organisator en deelnemers. Om updates van evenementen te krijgen en deelnemers te zien, vraag je organisatoren om u uit te nodigen met uw Proton e-mailadres."
+        "Geïmporteerde uitnodigingen verschijnen in ${ CALENDAR_APP_NAME } als eenvoudige evenementen zonder details over de organisator en deelnemers. Om updates van evenementen te krijgen en deelnemers te zien, vraag uw organisatoren om u uit te nodigen met uw Proton e-mailadres."
       ],
       "This file contains an event invitation:": [
         "Dit bestand bevat een uitnodiging voor een evenement:",
@@ -3551,7 +3591,7 @@
         "U kunt ook proberen u uit te loggen uit ${ boldGoogleAccounts } in de browser, en daarna ${ linkCAPTCHA } ontgrendelen."
       ],
       "your app password is correct. Do ${ boldNot } use your regular password": [
-        "uw app-wachtwoord is juist. Gebruik${ boldNot } uw reguliere wachtwoord"
+        "uw app-wachtwoord is juist. Gebruik ${ boldNot } uw reguliere wachtwoord"
       ],
       "your email account requires an app password to export your data": [
         "uw e-mailaccount vereist een app-wachtwoord om uw gegevens te exporteren"
@@ -3560,7 +3600,7 @@
         "uw e-mailaccount vereist er één om uw gegevens te exporteren"
       ],
       "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "uw e-mailadres en app-wachtwoord zijn juist. Gebruik${ boldNot } uw reguliere wachtwoord"
+        "uw e-mailadres en app-wachtwoord zijn juist. Gebruik ${ boldNot } uw reguliere wachtwoord"
       ],
       "your email address and password are correct": [
         "uw e-mailadres en wachtwoord zijn juist"
@@ -3871,6 +3911,9 @@
         "${ providerFoldersNumLocalized } label gevonden in Gmail",
         "${ providerFoldersNumLocalized } labels gevonden in Gmail"
       ],
+      "${ rewards } of ${ rewardsLimit } months": [
+        ""
+      ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } op uw abonnement door over te schakelen naar ${ annualBilling }"
       ],
@@ -3906,6 +3949,10 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Gratis"
       ],
+      "(${ memberCount } member)": [
+        "",
+        ""
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filter als aan ALLE van de volgende voorwaarden is voldaan)"
       ],
@@ -3925,17 +3972,29 @@
         "+${ organization.BonusVPN } verbinding voor ProtonVPN (stelt u in staat meer apparaten aan VPN te verbinden)",
         "+${ organization.BonusVPN } verbindingen voor ProtonVPN (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
+      "1 to 3 months of Mail Plus will appear as credits on your next bill": [
+        ""
+      ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% korting toegepast op uw abonnement met coupon ${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 dagen geld-terug-garantie."
       ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
+      ],
       "A free and uncensored Internet should be available to all.": [
         "Iedereen moet kunnen beschikken over een vrij en ongecensureerd internet."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        "Met een herstelbestand kunt u uw gegevens ontgrendelen en bekijken na een accountreset. "
+        "A recovery file lets you unlock and view your data after an account reset."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Met een herstelzin kunt u toegang krijgen tot uw account en uw gecodeerde berichten herstellen als u uw wachtwoord bent vergeten."
@@ -4141,6 +4200,9 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Door de volledige agendadetails van deze kalender te delen, gaat u akkoord om Proton toegang te verlenen tot versleutelde informatie van deze agenda."
       ],
+      "Cancel trial": [
+        ""
+      ],
       "Center": [
         "Centreren"
       ],
@@ -4165,6 +4227,12 @@
       "Continue anyway?": [
         "Toch doorgaan?"
       ],
+      "Continue with plus": [
+        ""
+      ],
+      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Maak één nieuwe agenda",
         "Maak ${ calendarsToBeCreated } nieuwe agenda's"
@@ -4182,10 +4250,16 @@
         "Creëer en beheer sub-accounts en wijs aan deze sub-accounts e-mailadressen van uw eigen domein toe."
       ],
       "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Maak e-mailadressen aan voor andere mensen, beheer ProtonMail voor een bedrijf, school of groep. Ga aan de slag met het toevoegen van uw organisatienaam en aangepast domein (bijv. @yourcompany.com). "
+        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
       ],
       "Create in": [
         "Maak in"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
       ],
       "Creating your Proton account": [
         "Uw Proton account aanmaken"
@@ -4216,6 +4290,9 @@
       ],
       "Daily": [
         "Dagelijks"
+      ],
+      "Data locked": [
+        "Gegevens vergrendeld"
       ],
       "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
         "Verwijder alle andere MX records of zorg ervoor dat ProtonMails prioriteit het laagste getal is."
@@ -4268,6 +4345,9 @@
       ],
       "Each additional connection can be assigned to users in your organization.": [
         "Elke extra verbinding kan worden toegewezen aan gebruikers in uw organisatie."
+      ],
+      "Earned ${ rewards } of ${ rewardsLimit } Mail plus months.": [
+        ""
       ],
       "Edit label": [
         "Label bewerken"
@@ -4354,7 +4434,7 @@
         "Om veiligheidsredenen, bevestig dat u geen robot bent."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
+        "Voor Visa en MasterCard zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
@@ -4365,11 +4445,17 @@
       "free up space by deleting older messages or other data": [
         "ruimte vrijmaken door oudere berichten of andere gegevens te verwijderen"
       ],
+      "Free VPN on a single device": [
+        ""
+      ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Volledige VPN met snelheid tot 10 Gbps."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Als u een nieuwe herstelzin genereert, wordt uw oude zin gedeactiveerd."
+      ],
+      "Get rewarded": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Geef uw publieke sleutel aan uw vrienden, of publiceer deze online, zodat iedereen u end-to-end versleutelde e-mail kan sturen!"
@@ -4391,6 +4477,9 @@
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Als dit domein momenteel e-mails ontvangt, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om een soepele overgang te garanderen."
+      ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Als dit gebeurt wegens een oude wachtwoord reset, kan u voorkomen dat dit bericht opnieuw wordt weergegeven"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
@@ -4431,11 +4520,14 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot de betaalde functies van ProtonVPN."
       ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Als u recent uw wachtwoord gereset heeft, kan u de data herstelmethode gebruiken om uw data te ontgrendelen"
+      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Als u een bestaande SPF-record wilt behouden, kunt u gewoon ${ spf } eraan toevoegen na de ${ spfValue }. Maak niet meerdere SPF-records."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        "Als u deze rekening met een andere rekening wilt combineren, verwijder deze dan NIET."
+        "Als u dit account met een ander account wilt combineren, verwijder deze dan NIET."
       ],
       "Image URL": [
         "Afbeeldings-URL"
@@ -4513,14 +4605,20 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
-      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
-        "Het lijkt erop data een deel van uw data versleuteld en vergrendeld. Dit komt waarschijnlijk door een recentelijk of eerder wachtwoordherstel. We raden u aan om een gegevensherstelmethode te gebruiken om uw data te ontgrendelen."
+      "Invite friends": [
+        ""
+      ],
+      "It appears some of your data is encrypted and locked.": [
+        "Het ziet er naar uit dat een deel van uw data versleuteld en vergrendeld is."
       ],
       "it’s imperative": [
         "het is noodzakelijk"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
+      ],
+      "Just send them your personal referral link": [
+        ""
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Houd deze records in uw DNS voor zolang u DKIM wilt gebruiken."
@@ -4579,6 +4677,9 @@
       "lose access to all current encrypted data": [
         "toegang tot alle huidige versleutelde gegevens verliezen"
       ],
+      "Mail Plus credits earned": [
+        ""
+      ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru leest uw persoonlijke gegevens om toegang te bieden aan adverteerders, Russische overheidsinstanties en andere derde partijen. Maak een veilig e-mailadres aan voor betere privacy."
       ],
@@ -4616,7 +4717,7 @@
         "Vervolgens moet u zich aanmelden bij uw Google-account en ons toegang geven tot uw gegevens."
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "Geen account herstel methode ingesteld; loopt u het risico de toegang tot uw account te verliezen"
+        "Geen account herstelmethode ingesteld; loopt u het risico de toegang tot uw account te verliezen"
       ],
       "No action selected": [
         "Geen actie geselecteerd"
@@ -4626,6 +4727,9 @@
       ],
       "No contact encryption keys exist": [
         "Er bestaan geen contactcoderingssleutels"
+      ],
+      "No credit card required": [
+        ""
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Als er geen methode voor gegevensherstel is ingesteld; loopt u het risico de toegang tot uw gegevens te verliezen"
@@ -4693,6 +4797,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Er zijn andere beheerders in uw organisatie aanwezig, u bent verantwoordelijk om het nieuwe wachtwoord met hen te delen."
       ],
+      "Other options": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Verouderd herstelbestand; werk het bij om toegang tot uw gegevens te garanderen"
       ],
@@ -4704,6 +4811,12 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "Paid for a 12 months plan": [
+        ""
+      ],
+      "Paid for a month plan": [
+        ""
       ],
       "Payment can take a few minutes to fully verify.": [
         "De betaling bevestigen kan een paar minuten duren."
@@ -4774,6 +4887,9 @@
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
       ],
+      "Plus plan": [
+        ""
+      ],
       "Prevents content from the sender's server from loading without your permission.": [
         "Voorkomt dat inhoud van de server van de afzender wordt geladen zonder uw toestemming."
       ],
@@ -4814,6 +4930,9 @@
       "ProtonVPN Plus or Visionary required for Secure Core feature.": [
         "ProtonVPN Plus of Visionary vereist voor Secure Core-functionaliteit."
       ],
+      "Public link invite": [
+        ""
+      ],
       "purchase additional storage": [
         "extra opslagruimte aanschaffen"
       ],
@@ -4827,7 +4946,7 @@
         "Herstelbestand gedownload"
       ],
       "Recovery files have been voided": [
-        "Herstel bestanden zijn ongeldig gemaakt"
+        "Herstelbestanden zijn ongeldig gemaakt"
       ],
       "Recovery phrase copied to clipboard": [
         "Herstel zin gekopieerd naar klembord"
@@ -4839,10 +4958,13 @@
         "Herstelzin is uitgeschakeld"
       ],
       "Recovery phrase is not associated with any keys.": [
-        "Recovery phrase is niet gekoppeld aan sleutels."
+        "Herstelzin is niet gekoppeld aan sleutels."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Herstelzin is niet geassocieerd met een verouderde sleutel."
+      ],
+      "Refer, receive, repeat. You can earn credits for up to 18 months of Mail Plus.": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
@@ -4877,6 +4999,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Verzonden met <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
       ],
@@ -4895,6 +5020,12 @@
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
+      "Signed up": [
+        ""
+      ],
+      "Signed up via your link": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
@@ -4909,6 +5040,15 @@
       ],
       "Storage GB": [
         "Opslag GB"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Sucessfully sent invites": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "support team": [
         "ondersteuningsteam"
@@ -4934,6 +5074,12 @@
       "Thank you for supporting our mission.": [
         "Bedankt voor uw steun aan onze missie."
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "Het ${ boldDataLocked } bericht wordt niet meer weergegeven, maar u kan nog steeds uw gegevens ontgrendelen via ${ encryptionAndKeysLink }."
+      ],
+      "The 30-day free trial is not available any other way": [
+        ""
+      ],
       "The calendar will be removed from your account.": [
         "De agenda zal verwijderd worden van uw account."
       ],
@@ -4949,6 +5095,9 @@
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Deze configuratiebestanden laten u kiezen met welke ProtonVPN-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
       ],
+      "They signup": [
+        ""
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
       ],
@@ -4959,7 +5108,7 @@
         "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
       ],
       "This email address will only be used for recovery purposes.": [
-        "Dit e-mailadres zal alleen worden gebruikt voor terugvorderingsdoeleinden."
+        "Dit e-mailadres zal alleen worden gebruikt voor hersteldoeleinden."
       ],
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Deze functie is alleen bedoeld voor geavanceerde gebruikers. Na het verwijderen van deze sleutel, kunt u berichten die er versleuteld mee zijn niet decoderen. Dit kan tot dataverlies leiden."
@@ -4983,7 +5132,7 @@
         "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
       ],
       "This phone number will only be used for recovery purposes.": [
-        "Dit telefoonnummer zal alleen worden gebruikt voor terugvorderingsdoeleinden."
+        "Dit telefoonnummer zal alleen worden gebruikt voor hersteldoeleinden."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Deze gebruiker is momenteel verantwoordelijk voor de betalingen voor uw organisatie. Door degradatie van dit lid, word u verantwoordelijk voor de betalingen voor uw organisatie."
@@ -5084,6 +5233,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Tenzij u uitlogt of uw wachtwoord wijzigt, blijft uw sessie actief. Sessies verlopen na 60 dagen van inactiviteit."
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
@@ -5102,6 +5254,9 @@
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Upgrade naar een betaald abonnement om IMAP/SMTP ondersteuning te ontgrendelen via ProtonMail Bridge."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Upload picture": [
         "Afbeelding uploaden"
       ],
@@ -5116,6 +5271,9 @@
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gebruik de volgende inloggegevens bij het verbinden met ProtonVPN servers zonder toepassing. Voorbeelden gebruiken gevallen zoals: Tunnelblick on macOS, OpenVPN op GNU/Linux."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Gebruikers"
@@ -5298,7 +5456,7 @@
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "U zult niet in staat zijn om versleutelde gegevens te herstellen na een account reset met behulp van uw gedownloade herstelbestanden."
+        "U zult niet in staat zijn om versleutelde gegevens te herstellen na een accountreset met behulp van uw gedownloade herstelbestanden."
       ],
       "You'll stay signed in even after you close the browser.": [
         "U zult ingelogd blijven, zelfs als u de browser sluit."
@@ -5338,6 +5496,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+        ""
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Uw import van ${ delayedImport.Account } is tijdelijk vertraagd."
@@ -5388,6 +5549,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Track your referral link activities here": [
+        ""
       ]
     },
     "Info - folder colouring feature": {
@@ -5774,13 +5938,21 @@
       " and ${ l }": [
         " en ${ l }"
       ],
+      "${ monthsRewarded } month credited": [
+        "",
+        ""
+      ],
+      "${ monthsRewarded } month pending": [
+        "",
+        ""
+      ],
       "${ n } VPN connection available": [
         "${ n } VPN-verbinding beschikbaar",
         "${ n } VPN-verbindingen beschikbaar"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } of ${ MaxAddresses } e-mailadressen",
-        "${ UsedAddresses } of ${ MaxAddresses } e-mailadressen"
+        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen",
+        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } van de ${ MaxDomains } eigen domeinen",
@@ -6129,6 +6301,9 @@
       "Interval": [
         "Interval"
       ],
+      "Invite via email": [
+        ""
+      ],
       "Keep me signed in": [
         "Houd me ingelogd"
       ],
@@ -6343,7 +6518,10 @@
         "Automatisch antwoord versturen"
       ],
       "Send invites in": [
-        "Stuur uitnodigingen in het"
+        "Invitation language"
+      ],
+      "Share your invitation link": [
+        ""
       ],
       "Show secondary time zone": [
         "Toon secundaire tijdzone"
@@ -6513,6 +6691,9 @@
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
       ],
+      "Your reward": [
+        ""
+      ],
       "ZIP": [
         "Postcode"
       ]
@@ -6670,6 +6851,9 @@
       "Create an account": [
         "Een account aanmaken"
       ],
+      "Encryption and keys": [
+        "Versleuteling en sleutels"
+      ],
       "Forgot username?": [
         "Gebruikersnaam vergeten?"
       ],
@@ -6703,11 +6887,17 @@
       "Reset password": [
         "Wachtwoord resetten"
       ],
+      "Set email address": [
+        "E-mailadres instellen"
+      ],
       "Sign in": [
         "Inloggen"
       ],
       "Terms": [
         "Voorwaarden"
+      ],
+      "Terms and conditions": [
+        ""
       ],
       "Upgrade": [
         "Upgraden"
@@ -6736,7 +6926,7 @@
         "Verbinding maken met uw e-mailprovider"
       ],
       "Creating new calendars": [
-        "Nieuwe kalenders maken"
+        "Nieuwe agenda's maken"
       ],
       "Gathering your data": [
         "Verzamelen van uw gegevens"
@@ -6900,6 +7090,9 @@
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
         "Upgrade naar een betaald plan om aangepaste domeinen te gebruiken en premium functies te ontgrendelen"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -7940,6 +8133,11 @@
         "${ email } bijgewerkt"
       ]
     },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Account downgraden, even geduld"
@@ -7983,7 +8181,7 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "Leer hoe je een persoonlijkge agenda link krijgt."
+        "Leer hoe je een persoonlijkge agendalink krijgt."
       ]
     },
     "Subscribed calendar extension warning": {
@@ -7997,6 +8195,11 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Voeg openbare, externe of gedeelde agenda's toe met behulp van een URL."
+      ]
+    },
+    "Subtitle for trial plan": {
+      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ]
     },
     "Success": {
@@ -8571,6 +8774,9 @@
       "Domain names": [
         "Domeinnamen"
       ],
+      "Don't show again?": [
+        "Niet meer weergeven?"
+      ],
       "Downgrade account": [
         "Account downgraden"
       ],
@@ -8657,6 +8863,9 @@
       ],
       "Get ProtonVPN Plus to access all servers": [
         "Neem ProtonVPN Plus om toegang te krijgen tot alle servers"
+      ],
+      "Get up to 18 months of Mail Plus for free": [
+        ""
       ],
       "Gift code": [
         "Geschenkcode"
@@ -8821,6 +9030,9 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
+      "ProtonMail Plus Trial": [
+        ""
+      ],
       "ProtonVPN": [
         "ProtonVPN"
       ],
@@ -8835,6 +9047,12 @@
       ],
       "Recovery file": [
         "Herstelbestand"
+      ],
+      "Refer a friend": [
+        ""
+      ],
+      "Referral tracker": [
+        ""
       ],
       "Remove calendar": [
         "Agenda verwijderen"
@@ -8856,6 +9074,9 @@
       ],
       "Restore administrator privileges": [
         "Herstel beheerdersbevoegdheden"
+      ],
+      "Secure email based in Switzerland": [
+        ""
       ],
       "Security": [
         "Beveiliging"
@@ -8974,6 +9195,9 @@
       "Total (monthly)": [
         "Totaal (maandelijks)"
       ],
+      "Try the best of ProtonMail for free": [
+        ""
+      ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
       ],
@@ -9007,17 +9231,26 @@
       "What's new": [
         "Wat is er nieuw"
       ],
+      "Your account’s usage": [
+        ""
+      ],
       "Your calendar link": [
         "Uw agenda-link"
       ],
       "Your current plan": [
         "Uw huidige abonnement"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "Your plan": [
         "Uw abonnement"
       ],
       "Your recovery status": [
         "Uw herstelstatus"
+      ],
+      "You’ve been invited to try ${ mailAppName }": [
+        ""
       ],
       "ZIP / postal code": [
         "Postcode"
@@ -9144,6 +9377,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Inschakelen van geavanceerd logboek recordt het IP-adres van elke gebeurtenis in het beveiligingslogboek."
+      ],
+      "For easy sharing with all your contacts, the link text “Try ${ mailAppName } Plus Free for one month” is added to the bottom of your emails": [
+        ""
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Krijg toegang tot alle betaalde functies voor zowel ${ vpnAppName } als ${ mailAppName } (de versleutelde e-maildienst die miljoenen mensen gebruiken om hun gegevens te beschermen) met één abonnement."
@@ -9520,6 +9756,9 @@
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet onmiddellijk kan worden bijgewerkt. We zullen uw account bijwerken zodra de betaling is gewist."
       ],
+      "Please provide at least one recipient": [
+        ""
+      ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."
       ],
@@ -9552,6 +9791,9 @@
       ],
       "You will not see this import record in the list anymore.": [
         "U ziet dit importrecord niet meer in de lijst."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Uw herstelbestand is verouderd. Het kan geen nieuwe gegevens herstellen als u uw account opnieuw instelt."
