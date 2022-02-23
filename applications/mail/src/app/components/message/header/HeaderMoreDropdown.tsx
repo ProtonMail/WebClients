@@ -24,9 +24,7 @@ import {
 } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { noop } from '@proton/shared/lib/helpers/function';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { useDispatch } from 'react-redux';
@@ -53,6 +51,7 @@ import { useGetAttachment } from '../../../hooks/useAttachment';
 import { MessageState, MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import MessageDetailsModal from '../modals/MessageDetailsModal';
 import { MessageViewIcons } from '../../../helpers/message/icon';
+import MessagePhishingModal from '../modals/MessagePhishingModal';
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
@@ -103,6 +102,7 @@ const HeaderMoreDropdown = ({
     const [messageDetailsModalProps, setMessageDetailsModalOpen] = useModalState();
     const [messageHeaderModalProps, setMessageHeaderModalOpen] = useModalState();
     const [messagePrintModalProps, setMessagePrintModalOpen] = useModalState();
+    const [messagePhishingModalProps, setMessagePhishingModalOpen] = useModalState();
 
     const isStarred = IsMessageStarred(message.data || ({} as Element));
 
@@ -126,30 +126,6 @@ const HeaderMoreDropdown = ({
         await call();
     };
 
-    // Reference: Angular/src/app/bugReport/factories/bugReportModel.js
-    const handleConfirmPhishing = async () => {
-        await api(
-            reportPhishing({
-                MessageID: message.data?.ID,
-                MIMEType: message.data?.MIMEType === 'text/plain' ? 'text/plain' : 'text/html', // Accept only 'text/plain' / 'text/html'
-                Body: message.decryption?.decryptedBody,
-            })
-        );
-
-        await moveToFolder([message.data || ({} as Element)], SPAM, '', '', true);
-        createNotification({ text: c('Success').t`Phishing reported` });
-        onBack();
-    };
-
-    const handlePhishing = () => {
-        createModal(
-            <ConfirmModal title={c('Info').t`Confirm phishing report`} onConfirm={handleConfirmPhishing} onClose={noop}>
-                <Alert className="mb1" type="warning">{c('Info')
-                    .t`Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.`}</Alert>
-            </ConfirmModal>
-        );
-    };
-
     const handleDelete = async () => {
         await new Promise((resolve, reject) => {
             createModal(
@@ -170,10 +146,6 @@ const HeaderMoreDropdown = ({
         createNotification({ text: getNotificationText(false, false, 1) });
     };
 
-    const handleHeaders = () => {
-        setMessageHeaderModalOpen(true);
-    };
-
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
@@ -186,10 +158,6 @@ const HeaderMoreDropdown = ({
         const blob = await exportBlob(message, messageKeys, getAttachment, onUpdateAttachment, api);
         const filename = `${Subject} ${time}.eml`;
         downloadFile(blob, filename);
-    };
-
-    const handlePrint = () => {
-        setMessagePrintModalOpen(true);
     };
 
     const handleStar = async () => {
@@ -395,7 +363,10 @@ const HeaderMoreDropdown = ({
                                     <Icon name="arrow-up-from-screen" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Export`}</span>
                                 </DropdownMenuButton>
-                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handlePrint}>
+                                <DropdownMenuButton
+                                    className="text-left flex flex-nowrap"
+                                    onClick={() => setMessagePrintModalOpen(true)}
+                                >
                                     <Icon name="printer" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Print`}</span>
                                 </DropdownMenuButton>
@@ -410,7 +381,10 @@ const HeaderMoreDropdown = ({
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                         .t`View message details`}</span>
                                 </DropdownMenuButton>
-                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleHeaders}>
+                                <DropdownMenuButton
+                                    className="text-left flex flex-nowrap"
+                                    onClick={() => setMessageHeaderModalOpen(true)}
+                                >
                                     <Icon name="window-terminal" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View headers`}</span>
                                 </DropdownMenuButton>
@@ -439,7 +413,7 @@ const HeaderMoreDropdown = ({
 
                                 <DropdownMenuButton
                                     className="text-left flex flex-nowrap color-danger"
-                                    onClick={handlePhishing}
+                                    onClick={() => setMessagePhishingModalOpen(true)}
                                 >
                                     <Icon name="hook" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
@@ -464,6 +438,7 @@ const HeaderMoreDropdown = ({
                 labelID={labelID}
                 {...messagePrintModalProps}
             />
+            <MessagePhishingModal message={message} onBack={onBack} {...messagePhishingModalProps} />
         </>
     );
 };
