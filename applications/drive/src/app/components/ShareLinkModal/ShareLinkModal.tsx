@@ -130,7 +130,13 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
             return res;
         };
 
-        const updatedFields = await withSaving(update());
+        const updatedFields = await withSaving(update()).catch((error) => {
+            createNotification({
+                type: 'error',
+                text: c('Notification').t`Your settings failed to be saved`,
+            });
+            throw error;
+        });
         createNotification({
             text: c('Notification').t`Your settings have been changed successfully`,
         });
@@ -171,7 +177,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
             const { ShareID, ShareURLID } = shareUrlInfo.ShareURL;
             await deleteShareUrl(ShareID, ShareURLID);
             createNotification({
-                text: c('Notification').t`The link to your file was deleted`,
+                text: c('Notification').t`The link to your item was deleted`,
             });
             onClose?.();
         };
@@ -181,7 +187,13 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
             confirm: c('Action').t`Stop sharing`,
             message: getConfirmationMessage(isFile),
             canUndo: true,
-            onConfirm: () => withDeleting(deleteLink()),
+            onConfirm: () =>
+                withDeleting(deleteLink()).catch(() => {
+                    createNotification({
+                        type: 'error',
+                        text: c('Notification').t`The link to your item failed to be deleted`,
+                    });
+                }),
         });
     };
 

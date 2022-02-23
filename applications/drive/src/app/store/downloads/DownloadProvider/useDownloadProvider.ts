@@ -6,7 +6,7 @@ import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import { isTransferCancelError, isTransferProgress } from '../../../utils/transfer';
 import { bufferToStream } from '../../../utils/stream';
-import { logError } from '../../utils';
+import { logError, reportError } from '../../utils';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import FileSaver from '../fileSaver/fileSaver';
 import useDownload from '../useDownload';
@@ -108,6 +108,7 @@ export default function useDownloadProvider() {
                         queue.updateState(nextDownload.id, TransferState.Canceled);
                     } else {
                         queue.updateWithData(nextDownload.id, TransferState.Error, { error });
+                        reportError(error);
                     }
                 })
                 .finally(() => {

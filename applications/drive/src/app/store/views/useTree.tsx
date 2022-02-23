@@ -64,7 +64,6 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
             })
             .catch((err) => {
                 showErrorNotification(err, c('Notification').t`Root folder failed to be loaded`);
-                console.error(err);
             });
     }, [shareId, rootLinkId, rootExpanded]);
 
