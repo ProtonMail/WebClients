@@ -8,23 +8,30 @@ import config, { ThemeConfig, ThemeFileType } from './themes.config'
 
 function generateTheme ({ source, type }: { source: string, type: ThemeFileType }) {
     const buttonBases = [
-        'primary',
         'signal-danger',
         'signal-warning',
         'signal-info',
         'signal-success',
         'interaction-norm',
-        'interaction-weak',
-        'background-norm'
+        'interaction-weak'
     ];
 
-    const buttonShadeNames = [
-        '-l2',
-        '-l1',
+    const lightButtonShadeNames = [
+        '-tint-90',
+        '-tint-80',
         '',
-        '-d1',
-        '-d2',
-        '-d3',
+        '-shade-10',
+        '-shade-20',
+        '-shade-30',
+    ]
+
+    const darkButtonShadeNames = [
+        '-shade-80',
+        '-shade-70',
+        '',
+        '-tint-10',
+        '-tint-20',
+        '-tint-30',
     ]
 
     const ast = cssTree.parse(source);
@@ -44,7 +51,11 @@ function generateTheme ({ source, type }: { source: string, type: ThemeFileType 
         */
         buttonBases.splice(buttonBases.indexOf(baseName), 1)
 
-        const declarations = genButtonShades(tiny(node.value.value), type === 'light').map(
+        const isLight = type === 'light'
+
+        const buttonShadeNames = type === 'light' ? lightButtonShadeNames : darkButtonShadeNames
+
+        const declarations = genButtonShades(tiny(node.value.value), isLight).map(
             (color, i) =>
                 list.createItem({
                     type: 'Declaration',
