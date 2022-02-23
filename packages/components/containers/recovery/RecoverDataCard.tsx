@@ -27,14 +27,14 @@ const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
                 </li>
             </ul>
 
-            <p>
+            <p className="mb0-5">
                 <Href url="https://protonmail.com/support/knowledge-base/recover-encrypted-messages-files">
                     {c('Link').t`How to unlock data`}
                 </Href>
             </p>
 
-            <Button color="norm" onClick={onReactivate} className="mr1">{c('Action').t`Unlock data`}</Button>
-            <Button onClick={onDismiss}>{c('Action').t`Don't show again`}</Button>
+            <Button color="norm" onClick={onReactivate} className="mr1 mt1">{c('Action').t`Unlock data`}</Button>
+            <Button className="mt1" onClick={onDismiss}>{c('Action').t`Don't show again`}</Button>
         </Card>
     );
 };
