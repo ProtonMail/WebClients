@@ -1,6 +1,5 @@
 export { default as Hamburger } from './Hamburger';
 export { default as MobileAppsLinks } from './MobileAppsLinks';
-export { default as MobileNavLink } from './MobileNavLink';
 export { default as MobileNavServices } from './MobileNavServices';
 
 export { default as Sidebar } from './Sidebar';

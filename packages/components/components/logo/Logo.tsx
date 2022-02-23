@@ -1,64 +1,45 @@
-import { APP_NAMES, APPS, PLAN_SERVICES } from '@proton/shared/lib/constants';
-import { getPlanName, hasLifetime } from '@proton/shared/lib/helpers/subscription';
-import { Subscription } from '@proton/shared/lib/interfaces';
+import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
 
-import { useSubscription } from '../../hooks';
-import AccountLogo from './AccountLogo';
 import CalendarLogo from './CalendarLogo';
-import ContactsLogo from './ContactsLogo';
 import DriveLogo from './DriveLogo';
 import MailLogo from './MailLogo';
 import VpnLogo from './VpnLogo';
 import { classnames } from '../../helpers';
 import AppLink, { Props as AppLinkProps } from '../link/AppLink';
 
-const { MAIL, VPN } = PLAN_SERVICES;
-const { PROTONACCOUNT, PROTONCALENDAR, PROTONCONTACTS, PROTONDRIVE, PROTONMAIL, PROTONVPN_SETTINGS } = APPS;
+import './Logo.scss';
 
-const getLogoText = (subscription: Subscription, APP_NAME: APP_NAMES) => {
-    if (subscription) {
-        if (hasLifetime(subscription)) {
-            return 'Lifetime';
-        }
-        return getPlanName(subscription, APP_NAME === PROTONVPN_SETTINGS ? VPN : MAIL);
-    }
-};
+export type Version = 'with-wordmark' | 'standalone' | 'glyph-only';
 
+const { PROTONCALENDAR, PROTONDRIVE, PROTONMAIL, PROTONVPN_SETTINGS } = APPS;
 export interface LogoProps extends AppLinkProps {
     appName: APP_NAMES;
+    version?: Version;
+    current?: boolean;
 }
 
-const Logo = ({ appName, className, ...rest }: LogoProps) => {
-    const [subscription] = useSubscription();
+const Logo = ({ appName, version, current = false, className, ...rest }: LogoProps) => {
     const classNames = classnames(['logo-link flex text-no-decoration', className]);
-    const planName = getLogoText(subscription, appName);
 
     const logo = (() => {
         if (appName === PROTONMAIL) {
-            return <MailLogo />;
+            return <MailLogo version={version} />;
         }
         if (appName === PROTONCALENDAR) {
-            return <CalendarLogo />;
-        }
-        if (appName === PROTONCONTACTS) {
-            return <ContactsLogo />;
+            return <CalendarLogo version={version} />;
         }
         if (appName === PROTONVPN_SETTINGS) {
-            return <VpnLogo />;
+            return <VpnLogo version={version} />;
         }
         if (appName === PROTONDRIVE) {
-            return <DriveLogo />;
-        }
-        if (appName === PROTONACCOUNT) {
-            return <AccountLogo />;
+            return <DriveLogo version={version} />;
         }
         return null;
     })();
 
     return (
-        <AppLink {...rest} className={classnames([classNames, planName && `color-${planName}`, 'text-no-decoration'])}>
+        <AppLink aria-current={current} className={classNames} {...rest}>
             {logo}
-            {planName && <span className="plan text-uppercase text-bold">{planName}</span>}
         </AppLink>
     );
 };
