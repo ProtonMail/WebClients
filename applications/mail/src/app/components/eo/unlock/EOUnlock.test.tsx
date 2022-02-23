@@ -1,5 +1,4 @@
 import { act, fireEvent } from '@testing-library/react';
-
 import { wait } from '@proton/shared/lib/helpers/promise';
 import {
     EOClearAll,
@@ -8,6 +7,7 @@ import {
     EOPassword,
     getEOEncryptedMessage,
     validID,
+    mockConsole,
 } from '../../../helpers/test/eo/helpers';
 import { EOGetHistory, EORender, EOResetHistory } from '../../../helpers/test/eo/EORender';
 import EOUnlock from './EOUnlock';
@@ -36,6 +36,8 @@ describe('Encrypted Outside Unlock', () => {
     });
 
     it('should display an error if the EO id is invalid', async () => {
+        addApiMock('mail/v4/eo/token/invalidID', () => ({}));
+
         EOResetHistory(['/eo/invalidID']);
 
         const { getByText } = await EORender(<EOUnlock {...props} />, '/eo/:id');
@@ -45,6 +47,8 @@ describe('Encrypted Outside Unlock', () => {
     });
 
     it('should see the form if the EO id is valid and an error if password is invalid', async () => {
+        mockConsole();
+
         EOResetHistory([`/eo/${validID}`]);
 
         // Get token from id mock
@@ -65,6 +69,8 @@ describe('Encrypted Outside Unlock', () => {
     });
 
     it('should see the form if the EO id is valid and redirect if password is valid', async () => {
+        mockConsole('log');
+
         const token = await getEOEncryptedMessage(EODecryptedToken, EOPassword);
 
         EOResetHistory([`/eo/${validID}`]);
