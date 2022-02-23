@@ -23,6 +23,8 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
 
     // Reference: Angular/src/app/bugReport/factories/bugReportModel.js
     const handleConfirmPhishing = async () => {
+        onClose?.();
+
         await api(
             reportPhishing({
                 MessageID: message.data?.ID,
@@ -38,10 +40,9 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
 
     return (
         <AlertModal
-            onSubmit={handleConfirmPhishing}
             title={c('Info').t`Confirm phishing report`}
             buttons={[
-                <ErrorButton type="submit">{c('Action').t`Confirm`}</ErrorButton>,
+                <ErrorButton onClick={handleConfirmPhishing}>{c('Action').t`Confirm`}</ErrorButton>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
