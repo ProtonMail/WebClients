@@ -96,7 +96,7 @@
         "Aplicar"
       ],
       "Attachment": [
-        "Adjunto"
+        "Adjunta"
       ],
       "Back": [
         "Atrás"
@@ -428,7 +428,7 @@
         "Aumentar"
       ],
       "Inline": [
-        "Incrustado"
+        "Incrustada"
       ],
       "Insert": [
         "Insertar"
@@ -664,6 +664,9 @@
       ],
       "Recover data": [
         "Recuperar datos"
+      ],
+      "Refer a friend": [
+        "Referir un amigo"
       ],
       "Refine it": [
         "Refínela"
@@ -919,7 +922,7 @@
         "Actualizar ahora"
       ],
       "Upload picture": [
-        "Subir imagen"
+        "Cargar imagen"
       ],
       "Use ${ label } theme": [
         "Usar tema ${ label }"
@@ -1329,6 +1332,11 @@
       ],
       "Website access problem": [
         "Problema de acceso web"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        "Continuar usando ProtonMail."
       ]
     },
     "Calendar attachment tooltip": {
@@ -1997,7 +2005,7 @@
         "Costa Rica"
       ],
       "Cote d'Ivoire\"": [
-        "Costa de Marfil"
+        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Croacia"
@@ -2480,7 +2488,7 @@
         "Svalbard y Jan Mayen"
       ],
       "Swaziland": [
-        "Suazilandia"
+        "Eswatini"
       ],
       "Sweden": [
         "Suecia"
@@ -4012,11 +4020,20 @@
       "/month.": [
         "/mes."
       ],
+      "20 personal calendars": [
+        "20 calendarios personales"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% de descuento aplicado a su suscripción con el cupón ${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 días de garantía de devolución del dinero."
+      ],
+      "5 email addresses/aliases": [
+        "5 direcciones/alias"
+      ],
+      "5 GB storage": [
+        "5 GB de almacenamiento"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Una Internet libre y sin censura debería estar disponible para todos."
@@ -4219,6 +4236,12 @@
       "Create in": [
         "Crear en"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        "Cree varias direcciones de correo para sus identidades en línea, por ejemplo, JohnShopper@proton.me para cuentas de compras, JohnNews@proton.me para suscripciones de noticias."
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "Cree hasta 20 calendarios personalizados. Además de eso, agregue hasta 5 calendarios de amigos, familiares, colegas y organizaciones."
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
@@ -4383,6 +4406,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Libere algo de espacio o contacte con su administrador."
+      ],
+      "Free VPN on a single device": [
+        "VPN gratuita en un solo dispositivo"
       ],
       "From": [
         "De"
@@ -4609,6 +4635,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Solo cambie estos ajustes si está utilizando PGP con destinatarios fuera de ProtonMail."
       ],
+      "Other options": [
+        "Otras opciones"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nuestro sistema marcó este mensaje como un intento de suplantación. Compruebe que es legítimo."
       ],
@@ -4769,6 +4798,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "El envío de mensajes desde la dirección @pm.me es una función de pago. Su mensaje será enviado desde su dirección predeterminada ${ email }"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado con <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> correo electrónico seguro."
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado con <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> correo electrónico seguro."
       ],
@@ -4802,6 +4834,9 @@
       "Storage GB": [
         "Almacenamiento GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "El espacio de almacenamiento se comparte entre el Correo, Calendario y Drive."
+      ],
       "Store and share files securely with Proton Drive.": [
         "Almacene y comparta archivos de manera segura con Proton Drive."
       ],
@@ -4816,6 +4851,9 @@
       ],
       "Subject: ": [
         "Asunto: "
+      ],
+      "Support for 1 custom email domain": [
+        "Soporte para 1 dominio de correo personalizado"
       ],
       "Support privacy by upgrading for": [
         "Apoye la privacidad actualizando a"
@@ -4986,6 +5024,9 @@
       "Turn on to search the content of your messages": [
         "Actívelo para buscar el contenido de sus mensajes"
       ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
       "Unsupported file": [
         "Archivo no soportado"
       ],
@@ -5022,6 +5063,9 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "Actualice para usar ProtonMail con un cliente de escritorio de terceros."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Actualice hoy y mantenga el acceso a la solución Correo y Calendario que prioriza la privacidad para sus necesidades de comunicación diarias."
+      ],
       "Upload picture": [
         "Cargar imagen"
       ],
@@ -5036,6 +5080,9 @@
       ],
       "Use Proton Calendar to keep your agenda private.": [
         "Use Proton Calendar para mantener su agenda privada."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Use sus propias direcciones de dominio de correo personalizadas, por ejemplo, usted@sunombre.com"
       ],
       "Users": [
         "Usuarios"
@@ -5110,7 +5157,7 @@
         "Actualmente está conectado como ${ user.Name } (${ user.Email }) y tiene acceso restringido."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
-        "Puede añadirlo como archivo adjunto o mostrarlo incrustado en el cuerpo del correo."
+        "Puede añadirla como archivo adjunto o mostrarla incrustada en el cuerpo del correo."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "También puede fusionar calendarios importados con calendarios de Proton existentes."
@@ -5964,7 +6011,7 @@
     },
     "Label to change composer mode": {
       "Maximized": [
-        "Maximizada"
+        "Maximizado"
       ],
       "Normal": [
         "Normal"
@@ -6090,6 +6137,9 @@
       ],
       "Manage your labels": [
         "Administre sus etiquetas"
+      ],
+      "More about recovery": [
+        "Más acerca de la recuperación"
       ],
       "Open in ${ calendarAppName }": [
         "Abrir en ${ calendarAppName }"
@@ -6334,6 +6384,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "Su prueba gratuita ha terminado. El acceso a su cuenta pronto será deshabilitado. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7138,6 +7191,9 @@
     "Spotlight": {
       "Discover all Proton services": [
         "Descubra todos los servicios de Proton"
+      ],
+      "Invite friends and earn rewards!": [
+        "¡Invite a sus amigos y gane recompensas!"
       ],
       "Message Content Search": [
         "Búsqueda de contenido de mensajes"
@@ -8046,6 +8102,9 @@
       "What's new": [
         "Novedades"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "Su prueba gratuita termina pronto, en ${ formattedEndDate }"
+      ],
       "ZIP / postal code": [
         "ZIP/código postal"
       ]
@@ -8360,6 +8419,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Perderá cualquier personalización que haya hecho hasta ahora."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "Su prueba gratuita termina en ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

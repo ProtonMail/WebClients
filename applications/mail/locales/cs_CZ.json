@@ -671,6 +671,9 @@
       "Recover data": [
         "Obnovit data"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "Refine it": [
         "Vylepšit"
       ],
@@ -1349,6 +1352,11 @@
         "Problém s přístupem k webové stránce"
       ]
     },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
+      ]
+    },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         "Má událost v kalendáři"
@@ -2019,7 +2027,7 @@
         "Kostarika"
       ],
       "Cote d'Ivoire\"": [
-        "Pobřeží slonoviny"
+        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Chorvatsko"
@@ -2502,7 +2510,7 @@
         "Špicberky a Jan Mayen"
       ],
       "Swaziland": [
-        "Svazijsko"
+        "Eswatini"
       ],
       "Sweden": [
         "Švédsko"
@@ -3023,7 +3031,7 @@
         "Název složky nesmí být prázdný"
       ],
       "Image upload failed": [
-        "Nahrávání obrázků se nezdařilo"
+        "Nahrávání obrázku se nezdařilo"
       ],
       "Incorrect login credentials. Please try again.": [
         "Nesprávné přihlašovací údaje. Zkuste to prosím znovu."
@@ -3108,9 +3116,9 @@
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Jeden z kontaktů nemá e-mailovou adresu: ${ noEmailsContactNamesList }",
-        "Některé kontakty nemají žádnou e-mailovou adresu: ${ noEmailsContactNamesList } ",
-        "Některých kontaktů nemá žádné e-mailové adresy: ${ noEmailsContactNamesList } ",
-        "Některé kontakty nemají žádnou e-mailovou adresu: ${ noEmailsContactNamesList } "
+        "Některé kontakty nemají e-mailovou adresu: ${ noEmailsContactNamesList } ",
+        "Některé kontakty nemají e-mailovou adresu: ${ noEmailsContactNamesList } ",
+        "Některé kontakty nemají e-mailovou adresu: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Jeden ze skupiny, nemá kontakty: ${ noContactGroupList }",
@@ -4138,11 +4146,20 @@
       "/month.": [
         "/měsíc."
       ],
+      "20 personal calendars": [
+        "20 osobních kalendářů"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Použita 20% sleva na Vaše předplatné s kupónem ${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 denní záruka na vrácení peněz."
+      ],
+      "5 email addresses/aliases": [
+        "5 emailových adres / aliasů"
+      ],
+      "5 GB storage": [
+        "5 GB úložiště"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Svobodný a necenzurovaný internet by měl být přístupný všem."
@@ -4357,6 +4374,12 @@
       "Create in": [
         "Vytvořit v"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Podporovány jsou soubory CSV z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací a také formáty vCard 3.1 a 4.0 (kódování UTF-8)."
       ],
@@ -4534,6 +4557,9 @@
       "Free up some space or contact your administrator.": [
         "Uvolněte místo nebo kontaktujte správce Vašeho účtu."
       ],
+      "Free VPN on a single device": [
+        ""
+      ],
       "From": [
         "Od"
       ],
@@ -4604,7 +4630,7 @@
         "Zahrnuto"
       ],
       "Increase storage space starting at": [
-        "Navyšte úložný prostor počínaje od"
+        "Navyšte si úložný prostor již od"
       ],
       "Indexing paused": [
         "Indexování pozastaveno"
@@ -4764,6 +4790,9 @@
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
+      ],
+      "Other options": [
+        "Další volby"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil tuto zprávu jako pokus o phishing. Potvrďte prosím, že se jedná o legitimní zprávu."
@@ -4927,6 +4956,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Odesílání zpráv z @pm.me adresy je placená služba. Vaše zpráva bude odeslána z vaší standardní adresy ${ email }"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Odesláno pomocí zabezpečeného e-mailu <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -4960,6 +4992,9 @@
       "Storage GB": [
         "Úložiště"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Store and share files securely with Proton Drive.": [
         "Ukládejte a sdílejte soubory bezpečně s Proton Drive."
       ],
@@ -4974,6 +5009,9 @@
       ],
       "Subject: ": [
         "Předmět: "
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "Support privacy by upgrading for": [
         "Podpora soukromí aktualizací na"
@@ -5146,6 +5184,9 @@
       "Turn on to search the content of your messages": [
         "Zapnut vyhledávání v obsahu zpráv"
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "Nepodporovaný soubor"
       ],
@@ -5182,6 +5223,9 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "Vylepšete pro použití ProtonMailu s ostatními desktopovými klienty."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Upload picture": [
         "Nahrát obrázek"
       ],
@@ -5196,6 +5240,9 @@
       ],
       "Use Proton Calendar to keep your agenda private.": [
         "Používejte Proton Kalendář, aby jste udrželi svá data v soukromí."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Uživatelé"
@@ -6271,6 +6318,9 @@
       "Manage your labels": [
         "Spravovat štítky"
       ],
+      "More about recovery": [
+        "Více o obnově"
+      ],
       "Open in ${ calendarAppName }": [
         "Otevřít v ${ calendarAppName }"
       ],
@@ -6518,6 +6568,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -7344,6 +7397,9 @@
     "Spotlight": {
       "Discover all Proton services": [
         "Objevte všechny Proton služby"
+      ],
+      "Invite friends and earn rewards!": [
+        ""
       ],
       "Message Content Search": [
         "Vyhledávání obsahu zpráv"
@@ -8326,6 +8382,9 @@
       "What's new": [
         "Co je nového"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "ZIP / PSČ"
       ]
@@ -8605,7 +8664,7 @@
         "Kontakty nebylo možné sloučit"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Jestliže si nepamatujete helso, je možné znovu re-aktivovat Váš klíč. Můžeme Vám pomoci zavrhnout výstrahu vyskakovacího baneru ale v procesu permanentně ztratíte přístup na všechna šifrovaná data s tímto klíčem."
+        "Jestliže si nepamatujete heslo, není možné znovu aktivovat Váš klíč. Můžeme zrušit výstražnou zprávu, ale tím trvale ztratíte přístup ke všem šifrovaným datům tímto klíčem."
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
@@ -8654,6 +8713,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Stávající přizpůsobení importu bude ztraceno."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

@@ -665,6 +665,9 @@
       "Recover data": [
         "Verileri kurtar"
       ],
+      "Refer a friend": [
+        "Arkadaşınıza önerin"
+      ],
       "Refine it": [
         "daraltın"
       ],
@@ -1329,6 +1332,11 @@
       ],
       "Website access problem": [
         "Web sitesi erişim sorunu"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        "ProtonMail kullanmayı sürdürün."
       ]
     },
     "Calendar attachment tooltip": {
@@ -1997,7 +2005,7 @@
         "Kosta Rika"
       ],
       "Cote d'Ivoire\"": [
-        "Fildişi Sahili\""
+        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Hırvatistan"
@@ -2480,7 +2488,7 @@
         "Svalbard ve Jan Mayen"
       ],
       "Swaziland": [
-        "Svaziland"
+        "Eswatini"
       ],
       "Sweden": [
         "İsveç"
@@ -4012,11 +4020,20 @@
       "/month.": [
         "/ay."
       ],
+      "20 personal calendars": [
+        "20 kişisel takvim"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
       ],
       "30 days money-back guarantee.": [
         "30 gün ücret iade garantisi."
+      ],
+      "5 email addresses/aliases": [
+        "5 e-posta adresi/takma adı"
+      ],
+      "5 GB storage": [
+        "5 GB depolama alanı"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Herkes interneti özgürce ve sansürsüz olarak kullanabilmelidir."
@@ -4219,6 +4236,12 @@
       "Create in": [
         "Şurada oluştur"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@proton.me, haber abonelikleri için AliHaber@proton.me gibi takma adlar oluşturabilirsiniz."
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "20 taneye kadar özel takvim ekleyebilirsiniz. Buna ek olarak arkadaşlarınızdan, ailenizden iş arkadaşlarınızdan ve kuruluşlardan 5 takvim ekleyebilirsiniz."
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
       ],
@@ -4383,6 +4406,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Biraz boş yer açın veya yöneticinizle görüşün."
+      ],
+      "Free VPN on a single device": [
+        "Tek bir aygıt için ücretsiz VPN"
       ],
       "From": [
         "Kimden"
@@ -4609,6 +4635,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Bu ayarları yalnızca ProtonMail dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
       ],
+      "Other options": [
+        "Diğer seçenekler"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemimiz bu iletiyi bir kimlik avı girişimi olarak işaretledi. Lütfen göründüğü gibi olup olmadığını kontrol edin."
       ],
@@ -4769,6 +4798,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me adresinden ileti göndermek ücretli bir özelliktir. İletiniz varsayılan ${ email } adresinizden gönderilecek"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Bu ileti <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Bu ileti <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
       ],
@@ -4802,6 +4834,9 @@
       "Storage GB": [
         "GB olarak depolama"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
+      ],
       "Store and share files securely with Proton Drive.": [
         "Proton Drive ile dosyalarınızı güvenle depolayın ve paylaşın."
       ],
@@ -4816,6 +4851,9 @@
       ],
       "Subject: ": [
         "Konu: "
+      ],
+      "Support for 1 custom email domain": [
+        "1 özel e-posta etki alanı desteği"
       ],
       "Support privacy by upgrading for": [
         "Yükselterek kişisel güvenliği destekleyin"
@@ -4986,6 +5024,9 @@
       "Turn on to search the content of your messages": [
         "İletilerinizin içeriklerini arayabilmek için açın"
       ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız klasör, etiket, süzgeç"
+      ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
       ],
@@ -5022,6 +5063,9 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "Üçüncü taraf masaüstü uygulamaları ile ProtonMail kullanmak için yükseltin."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Hesabınızı bugün yükselterek günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren posta ve takvim çözümünü kullanın."
+      ],
       "Upload picture": [
         "Görsel yükle"
       ],
@@ -5036,6 +5080,9 @@
       ],
       "Use Proton Calendar to keep your agenda private.": [
         "Günlüğünüzü gizli tutmak için Proton Calendar kullanın."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
       ],
       "Users": [
         "Kullanıcı sayısı"
@@ -6091,6 +6138,9 @@
       "Manage your labels": [
         "Etiketlerinizi yönetin"
       ],
+      "More about recovery": [
+        "Kurtarma hakkında ayrıntılı bilgi"
+      ],
       "Open in ${ calendarAppName }": [
         "${ calendarAppName } ile aç"
       ],
@@ -6334,6 +6384,9 @@
       ],
       "Re:": [
         "Ynt:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "Ücretsiz deneme süreniz doldu. Hesap erişiminiz yakında devre dışı bırakılacak. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7138,6 +7191,9 @@
     "Spotlight": {
       "Discover all Proton services": [
         "Tüm Proton hizmetlerini keşfedin"
+      ],
+      "Invite friends and earn rewards!": [
+        "Arkadaşlarınızı davet edin ve ödül kazanın!"
       ],
       "Message Content Search": [
         "İleti içeriği arama"
@@ -8046,6 +8102,9 @@
       "What's new": [
         "Yenilikler"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
+      ],
       "ZIP / postal code": [
         "ZIP / posta kodu"
       ]
@@ -8360,6 +8419,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Şu ana kadar yaptığınız tüm özelleştirmeler silinecek."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {
