@@ -11,7 +11,7 @@ import {
     useErrorHandler,
     useGetAddresses,
     useGetUser,
-    useModals,
+    useModalState,
     useTheme,
 } from '@proton/components';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
@@ -32,19 +32,22 @@ import Footer from '../public/Footer';
 import SupportDropdown from '../public/SupportDropdown';
 
 const SetupSupportDropdown = () => {
-    const { createModal } = useModals();
+    const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
 
     const handleBugReportClick = () => {
-        createModal(<AuthenticatedBugModal />);
+        setAuthenticatedBugReportModal(true);
     };
 
     return (
-        <SupportDropdown>
-            <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
-                <Icon name="bug" className="mr0-5" />
-                {c('Action').t`Report a problem`}
-            </DropdownMenuButton>
-        </SupportDropdown>
+        <>
+            {render && <AuthenticatedBugModal {...authenticatedBugReportModal} />}
+            <SupportDropdown>
+                <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
+                    <Icon name="bug" className="mr0-5" />
+                    {c('Action').t`Report a problem`}
+                </DropdownMenuButton>
+            </SupportDropdown>
+        </>
     );
 };
 
