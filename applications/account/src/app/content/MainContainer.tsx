@@ -10,7 +10,9 @@ import {
     Logo,
     PrivateAppContainer,
     PrivateHeader,
+    ReferralModal,
     SectionConfig,
+    TopBanners,
     useActiveBreakpoint,
     useAddresses,
     useCalendarSubscribeFeature,
@@ -110,6 +112,13 @@ const MainContainer = () => {
 
     const logo = <Logo appName={app} to={to} toApp={toApp} target="_self" />;
 
+    const top = (
+        <>
+            <TopBanners />
+            <ReferralModal />
+        </>
+    );
+
     const header = (
         <PrivateHeader
             logo={logo}
@@ -157,7 +166,7 @@ const MainContainer = () => {
     }
 
     return (
-        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred}>
+        <PrivateAppContainer top={top} header={header} sidebar={sidebar} isBlurred={isBlurred}>
             <Switch>
                 <Route path={anyAccountAppRoute}>
                     <AccountSettingsRouter path={prefixPath} accountAppRoutes={routes.account} redirect={redirect} />
