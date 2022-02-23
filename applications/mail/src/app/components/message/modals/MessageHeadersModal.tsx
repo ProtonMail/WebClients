@@ -1,14 +1,22 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { FormModal } from '@proton/components';
+import {
+    Button,
+    Form,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '@proton/components';
 import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
-interface Props {
+interface Props extends ModalProps {
     message?: Message;
-    onClose?: () => void;
 }
 
-const MessageHeadersModal = ({ message, onClose, ...rest }: Props) => {
+const MessageHeadersModal = ({ message, ...rest }: Props) => {
+    const { onClose } = rest;
     const content = `${message?.Header}\n\r${message?.Body}`;
 
     const handleDownload = () => {
@@ -17,15 +25,16 @@ const MessageHeadersModal = ({ message, onClose, ...rest }: Props) => {
     };
 
     return (
-        <FormModal
-            title={c('Info').t`Message headers`}
-            submit={c('Action').t`Download`}
-            onSubmit={handleDownload}
-            onClose={onClose}
-            {...rest}
-        >
-            <pre className="text-break">{content}</pre>
-        </FormModal>
+        <ModalTwo size="large" as={Form} onSubmit={handleDownload} {...rest}>
+            <ModalTwoHeader title={c('Info').t`Message headers`} />
+            <ModalTwoContent>
+                <pre className="text-break">{content}</pre>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" type="submit">{c('Action').t`Download`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

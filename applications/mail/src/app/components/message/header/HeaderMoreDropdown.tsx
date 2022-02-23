@@ -101,6 +101,7 @@ const HeaderMoreDropdown = ({
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const [messageDetailsModalProps, setMessageDetailsModalOpen] = useModalState();
+    const [messageHeaderModalProps, setMessageHeaderModalOpen] = useModalState();
 
     const isStarred = IsMessageStarred(message.data || ({} as Element));
 
@@ -169,7 +170,7 @@ const HeaderMoreDropdown = ({
     };
 
     const handleHeaders = () => {
-        createModal(<MessageHeadersModal message={message.data} />);
+        setMessageHeaderModalOpen(true);
     };
 
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
@@ -456,6 +457,7 @@ const HeaderMoreDropdown = ({
                 messageLoaded={messageLoaded}
                 {...messageDetailsModalProps}
             />
+            <MessageHeadersModal message={message.data} {...messageHeaderModalProps} />
         </>
     );
 };
