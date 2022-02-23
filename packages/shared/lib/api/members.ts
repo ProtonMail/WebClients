@@ -51,6 +51,12 @@ export const createMember = (data: { Name: string; Private: number; MaxSpace: nu
     data,
 });
 
+export const checkMemberAddressAvailability = (data: { Local: string; Domain: string }) => ({
+    method: 'post',
+    url: `members/addresses/available`,
+    data,
+});
+
 export const createMemberAddress = (memberID: string, data: { Local: string; Domain: string }) => ({
     method: 'post',
     url: `members/${memberID}/addresses`,
