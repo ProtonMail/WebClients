@@ -26,7 +26,7 @@ export const getTargetEnvironment = (
     return earlyAccessScope.Value;
 };
 
-export const versionCookieAtLoad = getCookie('Version') as Environment | undefined;
+export const versionCookieAtLoad = getCookie('Tag') as Environment | undefined;
 
 export const updateVersionCookieHelper = (
     cookieName: string,
@@ -62,7 +62,6 @@ export const updateVersionCookie = (
     if (doesNotSupportEarlyAccessVersion()) {
         return;
     }
-    updateVersionCookieHelper('Version', environment, earlyAccessScopeFeature);
     updateVersionCookieHelper('Tag', environment, earlyAccessScopeFeature);
 };
 
