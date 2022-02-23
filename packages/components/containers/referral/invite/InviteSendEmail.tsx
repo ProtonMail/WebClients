@@ -24,7 +24,9 @@ interface SendEmailInvitationResult {
 
 const InviteSendEmail = () => {
     const api = useApi();
-    const [, setInvitedReferrals] = useReferralInvitesContext();
+    const {
+        invitedReferralsState: [, setInvitedReferrals],
+    } = useReferralInvitesContext();
     const anchorRef = useRef<HTMLInputElement>(null);
     const [recipients, setRecipients] = useState<Recipient[]>([]);
     const [hasInvalidRecipients, setHasInvalidRecipients] = useState<boolean>(false);
@@ -106,10 +108,10 @@ const InviteSendEmail = () => {
                                 }}
                             />
                         ))}
-                        <div className="flex-item-fluid">
+                        <div className="flex-item-fluid flex referral-program-invite-input">
                             <AddressesAutocomplete
                                 id="recipientsAutocomplete"
-                                className="border-none"
+                                className="border-none p0-25"
                                 ref={anchorRef}
                                 anchorRef={anchorRef}
                                 disabled={contactEmailIsLoading}

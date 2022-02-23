@@ -5,16 +5,16 @@ import { classnames, Loader, SettingsSectionWide } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
-import useReferralRewardStatus from '../hooks/useReferralRewardStatus';
-import useReferrals from '../hooks/useReferrals';
 import RewardsProgress from './RewardsProgress';
 import RewardsTable from './table/RewardsTable';
 import { getDeduplicatedReferrals } from './helpers';
 
 const RewardSection = () => {
-    const { rewards, rewardsLimit, loading: loadingRewards } = useReferralRewardStatus();
-    const { referrals, loading: loadingReferrals, total } = useReferrals();
-    const [invitedReferrals] = useReferralInvitesContext();
+    const {
+        invitedReferralsState: [invitedReferrals],
+        fetchedReferrals: { referrals, total, loading: loadingReferrals },
+        fetchedReferralStatus: { rewards, rewardsLimit, loading: loadingRewards },
+    } = useReferralInvitesContext();
 
     const mailAppName = getAppName(APPS.PROTONMAIL);
 
