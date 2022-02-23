@@ -108,11 +108,41 @@ swiip.test@protonmail.com`;
         `;
 
         const result = `-   content 1
-    
     content
 -   content 2
-    
     content`;
+
+        expect(toText(input)).toBe(result);
+    });
+
+    it('should keep empty lines in the beginning', () => {
+        const input = `
+            <div style="font-family: verdana; font-size: 20px;"><br></div>
+            <div style="font-family: verdana; font-size: 20px;"><br></div>
+            <div style="font-family: verdana; font-size: 20px;">test<br></div>
+            <div style="font-family: verdana; font-size: 20px;"><br></div>
+            <div style="font-family: verdana; font-size: 20px;"><br></div>
+            <div style="font-family: verdana; font-size: 20px;"><br></div>
+            <div style="font-family: verdana; font-size: 20px;"><br></div>
+            <div style="font-family: verdana; font-size: 20px;"><br></div>
+            <div class="protonmail_signature_block" style="font-family: verdana; font-size: 20px;">
+                <div class="protonmail_signature_block-user">
+                    <div style="font-family:arial;font-size:14px;color:rgb(34,34,34);">my signature</div>
+                </div>
+                <div class="protonmail_signature_block-proton protonmail_signature_block-empty">
+                </div>
+            </div>
+        `;
+
+        const result = `
+
+test
+
+
+
+
+
+my signature`;
 
         expect(toText(input)).toBe(result);
     });

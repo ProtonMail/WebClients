@@ -70,16 +70,15 @@ with a link -> https://protonmail.com/`;
 
         expect(textarea.value).toBe(`
 
+
+
 ${Signature}
-
 Sent with ProtonMail secure email.
-
 ------- Original Message -------
-
 On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
 
+
 > mail content
-> 
 > with a link -> https://protonmail.com/`);
 
         // Wait for Address focus action
