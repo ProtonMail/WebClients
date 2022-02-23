@@ -7,7 +7,12 @@ import {
     GIGA,
     MEMBER_ROLE,
 } from '@proton/shared/lib/constants';
-import { createMember, createMemberAddress, updateRole } from '@proton/shared/lib/api/members';
+import {
+    checkMemberAddressAvailability,
+    createMember,
+    createMemberAddress,
+    updateRole,
+} from '@proton/shared/lib/api/members';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
@@ -81,6 +86,13 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
         setModel({ ...model, [key]: value });
 
     const save = async () => {
+        await api(
+            checkMemberAddressAvailability({
+                Local: model.address,
+                Domain: model.domain,
+            })
+        );
+
         const { Member } = await srpVerify({
             api,
             credentials: { password: model.password },
