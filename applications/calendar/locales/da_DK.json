@@ -349,6 +349,9 @@
       "Recover data": [
         "Gendan data"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "refresh the page": [
         "genopfrisk siden"
       ],
@@ -866,6 +869,11 @@
       ],
       "Website access problem": [
         "Problemer med adgang til hjemmesiden"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -3031,11 +3039,20 @@
         "+${ organization.BonusVPN } forbindelse til ProtonVPN (tillader dig at forbinde flere enheder til VPN)",
         "+${ organization.BonusVPN } forbindelser til ProtonVPN (tillader dig at forbinde flere enheder til VPN)"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% rabat anvendes på dit abonnement med kupon ${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 dages pengene-tilbage-garanti."
+      ],
+      "5 email addresses/aliases": [
+        "5 e-mailadresser/aliaser"
+      ],
+      "5 GB storage": [
+        "5 GB lagerplads"
       ],
       "A cancellation email will be sent to removed participants.": [
         "En aflysningsmail vil blive sendt til fjernede deltagere."
@@ -3163,6 +3180,12 @@
       "Create in": [
         "Opret i"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
       ],
@@ -3240,6 +3263,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Frigør noget plads eller kontakt din administrator."
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "Frequency modifications will be lost.": [
         "Hyppighedsændringer vil gå tabt."
@@ -3371,6 +3397,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP med ikke-ProtonMail-modtagere."
       ],
+      "Other options": [
+        ""
+      ],
       "Payment can take a few minutes to fully verify.": [
         "Betalingen kan tage et par minutter at bekræfte helt."
       ],
@@ -3474,6 +3503,12 @@
       "Storage GB": [
         "Lager GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Lagerplads er delt på tværs af Mail, Calendar og Drive."
+      ],
+      "Support for 1 custom email domain": [
+        ""
+      ],
       "support team": [
         "supportteam"
       ],
@@ -3555,8 +3590,14 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "For at bruge adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Update recurring event": [
         "Opdater tilbagevendende begivenhed"
+      ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ],
       "Users": [
         "Brugere"
@@ -4181,7 +4222,7 @@
         "Næsten færdig"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Antal kalendere opretter: ${ createdCalendars } ud af ${ calendarsToBeCreated }"
+        "Antal kalendere oprettet: ${ createdCalendars } ud af ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Opretter nye kalendere"
@@ -4218,8 +4259,8 @@
       "Contact groups": [
         "Kontaktgrupper"
       ],
-      "Custom email addresses": [
-        "Brugerdefinerede e-mailadresser"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Tilpassede filtre"
@@ -4303,6 +4344,9 @@
       ],
       "Re:": [
         "Sv:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -4910,8 +4954,8 @@
       "Built-in Adblocker (NetShield)": [
         "Indbygget Adblocker (Netshield)"
       ],
-      "Custom email addresses": [
-        "Brugerdefinerede e-mailadresser"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Tidlig adgang til nye produkter"
@@ -5033,6 +5077,11 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Administrer kalender"
+      ]
+    },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
       ]
     },
     "Storage": {
@@ -5738,6 +5787,9 @@
       "You have invited participants with equivalent emails": [
         "Du har inviteret deltagere med tilsvarende e-mails"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "Postnummer"
       ]
@@ -5830,6 +5882,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Brug den personlige adresse brugernavn@pm.me til at sende e-mails"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "You do not have any contacts to export": [
         "Du har ingen kontakter at eksportere"
@@ -6028,6 +6083,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

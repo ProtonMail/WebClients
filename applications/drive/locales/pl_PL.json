@@ -374,6 +374,9 @@
       "Recover data": [
         "Odzyskaj dane"
       ],
+      "Refer a friend": [
+        "Poleć znajomego"
+      ],
       "refresh the page": [
         "Odśwież stronę"
       ],
@@ -836,6 +839,11 @@
       ],
       "Website access problem": [
         "Problem z dostępem do strony"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        "Kontynuuj używanie poczty ProtonMail."
       ]
     },
     "Calendar feature": {
@@ -2576,11 +2584,20 @@
         "+${ organization.BonusVPN } połączeń ProtonVPN (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)",
         "+${ organization.BonusVPN } połączeń ProtonVPN (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)"
       ],
+      "20 personal calendars": [
+        "20 osobistych kalendarzy"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Zniżka 20% za kupon ${ code } została wliczona do Twojej subskrypcji"
       ],
       "30 days money-back guarantee.": [
         "30-dniowa gwarancja zwrotu pieniędzy."
+      ],
+      "5 email addresses/aliases": [
+        "5 adresów e-mail / aliasów"
+      ],
+      "5 GB storage": [
+        "5 GB przestrzeni dyskowej"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Wszyscy powinni mieć dostęp do wolnego i niecenzurowanego Internetu."
@@ -2732,6 +2749,12 @@
       "Create links and share your files with others.": [
         "Utwórz linki i udostępnij pliki innym."
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        "Utwórz wiele adresów e-mail dla swojej tożsamości w sieci, np. JanZakupy@proton.me dla kont zakupowych i JanWiadomości@proton.me dla subskrypcji wiadomości."
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "Utwórz do 20 niestandardowych kalendarzy. Ponadto możesz dodać do 5 kalendarzy znajomych, rodziny, współpracowników i organizacji."
+      ],
       "Create your first folder and start moving your files.": [
         "Utwórz swój pierwszy folder i zarządzaj plikami."
       ],
@@ -2745,7 +2768,7 @@
         "Tworzenie linku udostępniania"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Pliki vCard w wersji 3.1 i 4.0 (kodowanie UTF-8) oraz CSV z programów Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i kilku innych programów są obsługiwane."
+        "Obsługiwane są pliki vCard w wersji 3.1, 4.0 (kodowanie UTF-8) oraz CSV z programów Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i kilku innych."
       ],
       "Delete drive": [
         "Usuń dysk",
@@ -2827,6 +2850,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Zwolnij część miejsca lub skontaktuj się ze swoim administratorem."
+      ],
+      "Free VPN on a single device": [
+        "Darmowy VPN na 1 urządzenie"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "W pełni funkcjonalna usługa VPN z serwerami do 10 Gb/s."
@@ -2993,6 +3019,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Tylko posiadacz linku i hasła ma dostęp do folderu."
       ],
+      "Other options": [
+        "Inne opcje"
+      ],
       "Paused": [
         "Wstrzymano"
       ],
@@ -3119,6 +3148,12 @@
       "Storage GB": [
         "Przestrzeń dyskowa (GB)"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy pocztą, kalendarzem i dyskiem."
+      ],
+      "Support for 1 custom email domain": [
+        "Wsparcie dla 1 niestandardowej domeny"
+      ],
       "support team": [
         "pomocą techniczną"
       ],
@@ -3203,11 +3238,17 @@
       "Trash": [
         "Kosz"
       ],
+      "Unlimited folders, labels, and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
       "Unlock drive to recover files": [
         "Odblokuj dysk, aby odzyskać pliki"
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
+      ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Ulepsz plan i zachowaj dostęp do prywatnej poczty i kalendarza do codziennej komunikacji."
       ],
       "Uploaded": [
         "Przesłano"
@@ -3217,6 +3258,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Przesyłanie dużej liczby plików na raz może wpłynąć na wydajność."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Korzystaj z adresów w niestandardowej domenie, np. ty@twojanazwa.pl"
       ],
       "Users": [
         "Użytkownicy"
@@ -3309,7 +3353,7 @@
         "Stracisz wszystkie niezapisane zmiany."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "W celu zweryfikowania płatności, wkrótce zostaniesz przekierowany na stronę firmy PayPal."
+        "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta został ograniczony. ${ payInvoiceLink }"
@@ -3835,7 +3879,7 @@
         "kliknij tutaj"
       ],
       "Go to subscription plans": [
-        "Przejdź do subskrypcji planów"
+        "Przejdź do planów subskrypcji"
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -3982,6 +4026,11 @@
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         "Spowoduje to trwałe usunięcie wszystkich użytkowników, kont i danych powiązanych z organizacją."
+      ]
+    },
+    "Message": {
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "Darmowa wersja próbna zakończyła się. Dostęp do konta zostanie wkrótce wyłączony. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4159,13 +4208,13 @@
         "Nie udało się przesłać plików: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Plik lub folder \"${ filename }\" i ${ count } inny jest przesyłany",
-        "Plik lub folder \"${ filename }\" i ${ count } inne są przesyłane",
-        "Plik lub folder \"${ filename }\" i ${ count } innych są przesyłane",
-        "Plik lub folder \"${ filename }\" i ${ count } innych są przesyłane"
+        "Plik lub folder \"${ filename }\" i ${ count } inny jest już przesyłany",
+        "Plik lub folder \"${ filename }\" i ${ count } inne są już przesyłane",
+        "Plik lub folder \"${ filename }\" i ${ count } innych są już przesyłane",
+        "Plik lub folder \"${ filename }\" i ${ count } innych są już przesyłane"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "Plik lub folder \"${ filename }\" jest przesyłany"
+        "Plik lub folder \"${ filename }\" jest już przesyłany"
       ],
       "File or folder is missing a name": [
         "Plik lub folder nie posiada nazwy"
@@ -4265,7 +4314,7 @@
         "Tę nazwę zobaczą odbiorcy Twoich wiadomości, zaproszeń do wydarzeń i udostępnionych plików."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Użyj menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do innych usług Proton, w tym VPN, kalendarza i dysku."
+        "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do innych usług Proton, w tym VPN, kalendarza i dysku."
       ],
       "Welcome to Proton": [
         "Witaj w Proton"
@@ -4584,6 +4633,11 @@
     "Select files": {
       "Upload": [
         "Prześlij"
+      ]
+    },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        "Zaproś znajomych i zarabiaj nagrody!"
       ]
     },
     "Storage": {
@@ -5236,6 +5290,9 @@
       "Your folder is ready to be downloaded": [
         "Folder jest gotowy do pobrania"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "Darmowa wersja próbna zakończy się ${ formattedEndDate }"
+      ],
       "ZIP / postal code": [
         "Kod pocztowy"
       ]
@@ -5553,6 +5610,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Dotychczasowa personalizacja importu zostanie utracona."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "Darmowa wersja próbna zakończy się ${ textDate }. ${ action }"
       ]
     }
   }

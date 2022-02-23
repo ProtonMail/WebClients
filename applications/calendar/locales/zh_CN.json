@@ -347,6 +347,9 @@
       "Recover data": [
         "恢复数据"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "refresh the page": [
         "刷新页面"
       ],
@@ -860,6 +863,11 @@
       ],
       "Website access problem": [
         "网站连接问题"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -2979,11 +2987,20 @@
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 台设备可接入 ProtonVPN"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "优惠券 ${ code } 已提供 20% 优惠"
       ],
       "30 days money-back guarantee.": [
         "30 天退款保证。"
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A cancellation email will be sent to removed participants.": [
         "活动取消邮件将发送至已移除的参与者"
@@ -3108,6 +3125,12 @@
       "Create in": [
         ""
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
       ],
@@ -3185,6 +3208,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "释放一些空间或与您的管理员联系。"
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "Frequency modifications will be lost.": [
         "频率修改将丢失"
@@ -3315,6 +3341,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "只有在与 ProtonMail 以外的邮箱使用 PGP 通讯时才应更改下列选项"
       ],
+      "Other options": [
+        ""
+      ],
       "Payment can take a few minutes to fully verify.": [
         "验证需要几分钟才能完成。"
       ],
@@ -3417,6 +3446,12 @@
       "Storage GB": [
         "存储空间 GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
+      ],
       "support team": [
         "客服团队"
       ],
@@ -3498,8 +3533,14 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造"
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Update recurring event": [
         "更新循环周期性日程"
+      ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ],
       "Users": [
         "用户"
@@ -4160,8 +4201,8 @@
       "Contact groups": [
         "联系人群组"
       ],
-      "Custom email addresses": [
-        "自定义电子邮件地址"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "定制筛选规则"
@@ -4243,6 +4284,9 @@
       ],
       "Re:": [
         "回复："
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -4823,8 +4867,8 @@
       "Built-in Adblocker (NetShield)": [
         "内置Adblocker (NetShield)"
       ],
-      "Custom email addresses": [
-        "自定义电子邮件地址"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "尽早试用新产品"
@@ -4944,6 +4988,11 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "管理日历"
+      ]
+    },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
       ]
     },
     "Storage": {
@@ -5640,6 +5689,9 @@
       "You have invited participants with equivalent emails": [
         "您已通过相同的邮件邀请了参与者"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "邮编"
       ]
@@ -5732,6 +5784,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "使用个人邮箱地址 username@pm.me 发送邮件"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "You do not have any contacts to export": [
         "没有任何联系人可供导出"
@@ -5923,6 +5978,9 @@
         "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"
       ],
       "You will lose any customization you made so far.": [
+        ""
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
         ""
       ]
     },

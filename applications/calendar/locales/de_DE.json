@@ -349,6 +349,9 @@
       "Recover data": [
         "Daten wiederherstellen"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "refresh the page": [
         "Seite aktualisieren"
       ],
@@ -866,6 +869,11 @@
       ],
       "Website access problem": [
         "Zugriffsproblem auf eine Website"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -3031,11 +3039,20 @@
         "${ organization.BonusVPN } zusätzliche Verbindung für ProtonVPN (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
         "${ organization.BonusVPN } zusätzliche Verbindungen für ProtonVPN (ermöglichen es dir, weitere Geräte mit VPN zu verbinden)"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20 % Rabatt auf dein Abonnement mit Gutschein ${ code } eingelöst"
       ],
       "30 days money-back guarantee.": [
         "30 Tage Geld-zurück-Garantie."
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A cancellation email will be sent to removed participants.": [
         "Eine Absage-E-Mail wird an die entfernten Teilnehmer gesendet."
@@ -3163,6 +3180,12 @@
       "Create in": [
         "Erstellen in"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
       ],
@@ -3240,6 +3263,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Gib etwas Platz frei oder wende dich an deinen Administrator."
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "Frequency modifications will be lost.": [
         "Änderungen der Häufigkeit gehen verloren."
@@ -3371,6 +3397,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ändere diese Einstellungen nur, wenn du PGP mit Nicht-ProtonMail-Empfängern verwendest."
       ],
+      "Other options": [
+        ""
+      ],
       "Payment can take a few minutes to fully verify.": [
         "Die vollständige Überprüfung der Zahlung kann einige Minuten dauern."
       ],
@@ -3474,6 +3503,12 @@
       "Storage GB": [
         "Speicherplatz (GB)"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
+      ],
       "support team": [
         "Support-Team"
       ],
@@ -3555,8 +3590,14 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Um die Adressprüfung verwenden zu können, musst du einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den du zum Senden verwenden möchtest. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden können."
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Update recurring event": [
         "Wiederkehrenden Termin aktualisieren"
+      ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ],
       "Users": [
         "Benutzer"
@@ -4218,8 +4259,8 @@
       "Contact groups": [
         "Kontaktgruppen"
       ],
-      "Custom email addresses": [
-        "Benutzerdefinierte E-Mail-Adressen"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Benutzerdefinierte Filter"
@@ -4303,6 +4344,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -4910,8 +4954,8 @@
       "Built-in Adblocker (NetShield)": [
         "Integrierter Werbeblocker (NetShield)"
       ],
-      "Custom email addresses": [
-        "Benutzerdefinierte E-Mail-Adressen"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Frühzeitiger Zugang zu neuen Produkten"
@@ -5033,6 +5077,11 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Kalender verwalten"
+      ]
+    },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
       ]
     },
     "Storage": {
@@ -5738,6 +5787,9 @@
       "You have invited participants with equivalent emails": [
         "Du hast Teilnehmer mit entsprechenden E-Mails eingeladen"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "PLZ/Postleitzahl"
       ]
@@ -5830,6 +5882,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Verwende eine persönliche Adresse, wie benutzername@pm.me, um E-Mails zu senden"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "You do not have any contacts to export": [
         "Es gibt noch keine zu exportierenden Kontakte"
@@ -6028,6 +6083,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Du verlierst damit alle bisher vorgenommenen Änderungen."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

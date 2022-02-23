@@ -274,6 +274,9 @@
       "Discard": [
         "Verwerfen"
       ],
+      "Don't show again": [
+        "Nicht erneut anzeigen"
+      ],
       "Done": [
         "Fertig"
       ],
@@ -495,6 +498,9 @@
       ],
       "Recover data": [
         "Daten wiederherstellen"
+      ],
+      "Refer a friend": [
+        ""
       ],
       "Refresh status": [
         "Status aktualisieren"
@@ -812,6 +818,14 @@
     "Action for user session": {
       "Revoke": [
         "Widerrufen"
+      ]
+    },
+    "Action in trial plan": {
+      "No, thanks": [
+        ""
+      ],
+      "Try free for 30 days": [
+        ""
       ]
     },
     "Action to select a title for the bug report modal": {
@@ -1171,6 +1185,23 @@
       ],
       "Website access problem": [
         "Zugriffsproblem auf eine Website"
+      ]
+    },
+    "Button": {
+      "Add link to your email footer": [
+        ""
+      ],
+      "Continue using ProtonMail.": [
+        ""
+      ],
+      "Copy ": [
+        ""
+      ],
+      "Invite": [
+        ""
+      ],
+      "Tweet": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -2280,12 +2311,21 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert … Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, können Sie dieses Fenster schließen."
       ],
+      "Get 3 months of Mail Plus for free for every friend who subscribes to ${ mailAppName }.": [
+        ""
+      ],
+      "Invite friends to start earning credits": [
+        ""
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Es scheint, dass die zu importierende Kontaktliste einige Gruppen enthält. Bitte überprüfen Sie, wie diese Gruppen importiert werden sollen."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf.",
         "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
+      ],
+      "Track how many people click on your link, sign up to ${ mailAppName }, and become paid subscribers. Watch your free months add up.": [
+        ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Sie können Ereignisse im iCal-Format (ICS-Datei) importieren. Die Datei darf maximal ${ MAX_IMPORT_FILE_SIZE_STRING } groß sein und bis zu ${ MAX_IMPORT_EVENTS_STRING } Ereignisse enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
@@ -2548,11 +2588,11 @@
       "Folder name cannot be empty": [
         "Bitte Namen des Ordners angeben"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Falsche Anmeldedaten. Bitte versuchen es erneut"
+      "Incorrect login credentials. Please try again.": [
+        "Ungültige Anmeldedaten. Bitte versuche es erneut."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Ungültiges Postfachpasswort. Bitte versuchen Sie es erneut."
+      "Incorrect mailbox password. Please try again.": [
+        "Ungültiges Postfach-Passwort. Bitte versuche es erneut."
       ],
       "Incorrect password": [
         "Ungültiges Passwort"
@@ -3871,6 +3911,9 @@
         "${ providerFoldersNumLocalized } Kategorie in Gmail gefunden",
         "${ providerFoldersNumLocalized } Kategorien in Gmail gefunden"
       ],
+      "${ rewards } of ${ rewardsLimit } months": [
+        ""
+      ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } bei Ihrem Abonnement, durch den Wechsel zu ${ annualBilling }"
       ],
@@ -3906,6 +3949,10 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Free"
       ],
+      "(${ memberCount } member)": [
+        "",
+        ""
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtern, wenn ALLE der folgenden Bedingungen erfüllt sind)"
       ],
@@ -3925,17 +3972,29 @@
         "${ organization.BonusVPN } zusätzliche Verbindung für ProtonVPN (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
         "${ organization.BonusVPN } zusätzliche Verbindungen für ProtonVPN (ermöglicht es Ihnen, weitere Geräte mit dem VPN zu verbinden)"
       ],
+      "1 to 3 months of Mail Plus will appear as credits on your next bill": [
+        ""
+      ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20 % Rabatt auf Ihr Abonnement mit Gutschein ${ code } eingelöst"
       ],
       "30 days money-back guarantee.": [
         "30 Tage Geld-zurück-Garantie."
       ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
+      ],
       "A free and uncensored Internet should be available to all.": [
         "Ein kostenloses und unzensiertes Internet sollte allen zur Verfügung stehen."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        "Mit einer Wiederherstellungsdatei können Sie Ihre Daten nach einem Zurücksetzen des Kontos wieder entsperren und einsehen. "
+        "A recovery file lets you unlock and view your data after an account reset."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Mit einer Wiederherstellungsphrase können Sie auf Ihr Konto zugreifen und Ihre verschlüsselten Nachrichten wiederherstellen, falls Sie Ihr Passwort vergessen haben."
@@ -4141,6 +4200,9 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Indem Sie die vollständigen Ereignisdetails dieses Kalenders freigeben, erklären Sie sich damit einverstanden, Proton Zugriff auf diese verschlüsselten Informationen des Kalenders zu gewähren."
       ],
+      "Cancel trial": [
+        ""
+      ],
       "Center": [
         "Zentrieren"
       ],
@@ -4165,6 +4227,12 @@
       "Continue anyway?": [
         "Trotzdem fortfahren?"
       ],
+      "Continue with plus": [
+        ""
+      ],
+      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } neuen Kalender erstellen",
         "${ calendarsToBeCreated } neue Kalender erstellen"
@@ -4182,10 +4250,16 @@
         "Erstelle und verwalte Unterkonten und weise ihnen E-Mail-Adressen in deiner eigenen Domain zu."
       ],
       "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Sie können E-Mail-Adressen für andere Personen erstellen und ProtonMail für ein Unternehmen, eine Schule oder eine Gruppe verwalten. Beginnen Sie, indem Sie Ihren Organisationsnamen und Ihre eigene Domain (z. B. @MeineFirma.de) hinzufügen. "
+        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
       ],
       "Create in": [
         "Erstellen in"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
       ],
       "Creating your Proton account": [
         "Ihr Proton-Konto wird erstellt"
@@ -4216,6 +4290,9 @@
       ],
       "Daily": [
         "Täglich"
+      ],
+      "Data locked": [
+        "Daten gesperrt"
       ],
       "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
         "Löschen Sie alle anderen MX-Einträge oder stellen Sie sicher, dass ProtonMail die geringste Priorität hat."
@@ -4268,6 +4345,9 @@
       ],
       "Each additional connection can be assigned to users in your organization.": [
         "Jede zusätzliche Verbindung kann Benutzern in Ihrer Organisation zugewiesen werden."
+      ],
+      "Earned ${ rewards } of ${ rewardsLimit } Mail plus months.": [
+        ""
       ],
       "Edit label": [
         "Kategorie bearbeiten"
@@ -4365,11 +4445,17 @@
       "free up space by deleting older messages or other data": [
         "durch Löschen älterer Nachrichten oder anderer Daten Speicherplatz freigeben"
       ],
+      "Free VPN on a single device": [
+        ""
+      ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Voll funktionales VPN mit einer Geschwindigkeit von bis zu 10 Gbit/s."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Wenn Sie eine neue Wiederherstellungsphrase erstellen, wird damit Ihre bisherige Phrase deaktiviert."
+      ],
+      "Get rewarded": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Gib deinen öffentlichen Schlüssel an deine Freunde weiter oder veröffentliche ihn online, so dass dir jeder Ende-zu-Ende verschlüsselte E-Mails senden kann!"
@@ -4391,6 +4477,9 @@
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Wenn diese Domain derzeit E-Mails empfängt, wählen Sie den Tab „${ boldAddresses }” und fügen Sie alle aktiven E-Mail-Adressen hinzu, bevor Sie den MX-Eintrag ändern, um einen reibungslosen Übergang zu gewährleisten."
+      ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Wenn dies auf eine alte Kennwortzurücksetzung zurückzuführen ist, kannst du verhindern, dass die Meldung erneut angezeigt wird."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, stelle bitte eine Anfrage, und wir werden dir innerhalb eines Werktages antworten."
@@ -4430,6 +4519,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Wenn Sie mit dem Zurückstufen fortfahren, verlieren Sie den Zugang zu kostenpflichtigen ProtonVPN-Funktionen."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Wenn du dein Kennwort kürzlich zurückgesetzt hast, kannst du deine Daten mit einer Datenwiederherstellungsmethode wiederherstellen."
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Wenn Sie einen bestehenden SPF-Eintrag behalten möchten, können Sie einfach ${ spf } nach dem ${ spfValue } hinzufügen. Erstellen Sie keinesfalls mehrere SPF-Einträge."
@@ -4513,14 +4605,20 @@
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
-      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
-        "Es scheint, dass einige deiner Daten verschlüsselt und gesperrt sind. Dies ist wahrscheinlich auf eine kürzliche oder frühere Zurücksetzung des Passworts zurückzuführen. Wir empfehlen dir, eine Datenwiederherstellungsmethode zu verwenden, um deine Daten zu entsperren."
+      "Invite friends": [
+        ""
+      ],
+      "It appears some of your data is encrypted and locked.": [
+        "Scheinbar sind einige deiner Daten verschlüsselt und gesperrt."
       ],
       "it’s imperative": [
         "zwingend erforderlich"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bestätigen Sie einfach Ihre Auswahl und ProtonMail übernimmt den Rest."
+      ],
+      "Just send them your personal referral link": [
+        ""
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Bewahren Sie diese Einträge in Ihrem DNS so lange auf, wie Sie DKIM verwenden möchten."
@@ -4579,6 +4677,9 @@
       "lose access to all current encrypted data": [
         "den Zugriff auf alle derzeit verschlüsselten Daten verlieren"
       ],
+      "Mail Plus credits earned": [
+        ""
+      ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru liest Ihre persönlichen Daten, um Werbetreibenden, russischen Regierungsbehörden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz sollten Sie eine sichere E-Mail-Adresse einrichten."
       ],
@@ -4626,6 +4727,9 @@
       ],
       "No contact encryption keys exist": [
         "Keine Kontaktverschlüsselungsschlüssel vorhanden"
+      ],
+      "No credit card required": [
+        ""
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Wenn keine Methode zur Datenwiederherstellung festgelegt ist, besteht die Gefahr, dass du den Zugriff auf deine Daten verlierst"
@@ -4693,6 +4797,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "In deiner Organisation gibt es weitere Administratoren. Du selbst bist verantwortlich dafür, Ihnen das neue Passwort mitzuteilen."
       ],
+      "Other options": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Veraltete Wiederherstellungsdatei. Aktualisiere diese, um den Zugriff auf deine Daten zu gewährleisten"
       ],
@@ -4704,6 +4811,12 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "Paid for a 12 months plan": [
+        ""
+      ],
+      "Paid for a month plan": [
+        ""
       ],
       "Payment can take a few minutes to fully verify.": [
         "Die vollständige Überprüfung der Zahlung kann einige Minuten dauern."
@@ -4774,6 +4887,9 @@
       "Plus or Visionary subscription required": [
         "Plus‐ oder Visionary‐Abonnement benötigt"
       ],
+      "Plus plan": [
+        ""
+      ],
       "Prevents content from the sender's server from loading without your permission.": [
         "Verhindert, dass Inhalte vom Server des Absenders ohne deine Zustimmung geladen werden."
       ],
@@ -4814,6 +4930,9 @@
       "ProtonVPN Plus or Visionary required for Secure Core feature.": [
         "ProtonVPN Plus oder Visionary ist für die Secure Core-Funktion erforderlich."
       ],
+      "Public link invite": [
+        ""
+      ],
       "purchase additional storage": [
         "zusätzlichen Speicher kaufen"
       ],
@@ -4843,6 +4962,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Wiederherstellungsphrase ist nicht an einen veralteten Schlüssel gebunden."
+      ],
+      "Refer, receive, repeat. You can earn credits for up to 18 months of Mail Plus.": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder des ${ link } werden die meisten Probleme automatisch gelöst."
@@ -4877,6 +4999,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Bitte wählen Sie die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Gesendet mittels einer sicheren E-Mail von <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -4895,6 +5020,12 @@
       "Set recovery phrase": [
         "Wiederherstellungsphrase einrichten"
       ],
+      "Signed up": [
+        ""
+      ],
+      "Signed up via your link": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da Sie ein treuer Benutzer sind, wurden Ihrem Konto zusätzliche Funktionen hinzugefügt."
       ],
@@ -4909,6 +5040,15 @@
       ],
       "Storage GB": [
         "Speicherplatz (GB)"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Sucessfully sent invites": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "support team": [
         "Support-Team"
@@ -4934,6 +5074,12 @@
       "Thank you for supporting our mission.": [
         "Vielen Dank für Ihre Unterstützung zu diesem Projekt."
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "Die Meldung ${ boldDataLocked } wird nicht mehr angezeigt, aber du kannst deine Daten weiterhin unter ${ encryptionAndKeysLink } entsperren."
+      ],
+      "The 30-day free trial is not available any other way": [
+        ""
+      ],
       "The calendar will be removed from your account.": [
         "Der Kalender wird aus Ihrem Konto entfernt."
       ],
@@ -4948,6 +5094,9 @@
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Mit diesen Konfigurationsdateien können Sie festlegen, mit welchem ProtonVPN-Server Sie sich verbinden möchten, wenn Sie eine VPN-App eines Drittanbieters verwenden oder eine VPN-Verbindung auf einem Router einrichten."
+      ],
+      "They signup": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Richtlinien gesperrt."
@@ -5084,6 +5233,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Solange Sie sich nicht von Ihrem Konto abmelden oder Ihr Passwort ändern, bleibt Ihre Sitzung aktiv. Sitzungen laufen nach 60 Tagen Inaktivität aus."
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
       ],
@@ -5102,6 +5254,9 @@
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Wechsle zu einem kostenpflichtigen Abonnement, um die IMAP/SMTP-Unterstützung durch ProtonMail Bridge freizuschalten."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Upload picture": [
         "Bild hochladen"
       ],
@@ -5116,6 +5271,9 @@
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Verwenden Sie die folgenden Anmeldedaten, wenn Sie sich ohne Anwendung mit ProtonVPN-Servern verbinden möchten. Beispiele für Anwendungsfälle sind: Tunnelblick unter macOS, OpenVPN unter GNU/Linux."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Benutzer"
@@ -5339,6 +5497,9 @@
       "Your email will only be used for this one-time verification.": [
         "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
+      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+        ""
+      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Ihr Import vom Konto ${ delayedImport.Account } verzögert sich vorübergehend."
       ],
@@ -5388,6 +5549,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Track your referral link activities here": [
+        ""
       ]
     },
     "Info - folder colouring feature": {
@@ -5774,6 +5938,14 @@
       " and ${ l }": [
         " und ${ l }"
       ],
+      "${ monthsRewarded } month credited": [
+        "",
+        ""
+      ],
+      "${ monthsRewarded } month pending": [
+        "",
+        ""
+      ],
       "${ n } VPN connection available": [
         "${ n } VPN-Verbindung verfügbar",
         "${ n } VPN-Verbindungen verfügbar"
@@ -6129,6 +6301,9 @@
       "Interval": [
         "Intervall"
       ],
+      "Invite via email": [
+        ""
+      ],
       "Keep me signed in": [
         "Angemeldet bleiben"
       ],
@@ -6343,7 +6518,10 @@
         "Automatische Antwort senden"
       ],
       "Send invites in": [
-        "Einladung senden in"
+        "Invitation language"
+      ],
+      "Share your invitation link": [
+        ""
       ],
       "Show secondary time zone": [
         "Zweite Zeitzone anzeigen"
@@ -6513,6 +6691,9 @@
       "Your password (admin)": [
         "Ihr Passwort (Admin)"
       ],
+      "Your reward": [
+        ""
+      ],
       "ZIP": [
         "PLZ"
       ]
@@ -6670,6 +6851,9 @@
       "Create an account": [
         "Konto erstellen"
       ],
+      "Encryption and keys": [
+        "Verschlüsselung und Schlüssel"
+      ],
       "Forgot username?": [
         "Benutzernamen vergessen?"
       ],
@@ -6703,11 +6887,17 @@
       "Reset password": [
         "Passwort zurücksetzen"
       ],
+      "Set email address": [
+        "E-Mail-Adresse festlegen"
+      ],
       "Sign in": [
         "Anmelden"
       ],
       "Terms": [
         "Geschäftsbedingungen"
+      ],
+      "Terms and conditions": [
+        ""
       ],
       "Upgrade": [
         "Umsteigen"
@@ -6900,6 +7090,9 @@
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
         "Wechsle zu einem beliebigen kostenpflichtigen Tarif, um eigene Domains verwenden und Premium-Funktionen freischalten zu können"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -7940,6 +8133,11 @@
         "${ email } aktualisiert"
       ]
     },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Ihr Konto wird zurückgestuft, bitte warten …"
@@ -7997,6 +8195,11 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Fügt öffentliche, externe oder gemeinsame Kalender über eine URL hinzu."
+      ]
+    },
+    "Subtitle for trial plan": {
+      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ]
     },
     "Success": {
@@ -8571,6 +8774,9 @@
       "Domain names": [
         "Domainnamen"
       ],
+      "Don't show again?": [
+        "Nicht erneut anzeigen?"
+      ],
       "Downgrade account": [
         "Konto herabstufen"
       ],
@@ -8657,6 +8863,9 @@
       ],
       "Get ProtonVPN Plus to access all servers": [
         "Holen Sie sich ProtonVPN Plus, um Zugriff auf alle Server zu erhalten"
+      ],
+      "Get up to 18 months of Mail Plus for free": [
+        ""
       ],
       "Gift code": [
         "Gutscheincode"
@@ -8821,6 +9030,9 @@
       "ProtonMail Bridge": [
         "ProtonMail-Bridge"
       ],
+      "ProtonMail Plus Trial": [
+        ""
+      ],
       "ProtonVPN": [
         "ProtonVPN"
       ],
@@ -8835,6 +9047,12 @@
       ],
       "Recovery file": [
         "Wiederherstellungsdatei"
+      ],
+      "Refer a friend": [
+        ""
+      ],
+      "Referral tracker": [
+        ""
       ],
       "Remove calendar": [
         "Kalender entfernen"
@@ -8856,6 +9074,9 @@
       ],
       "Restore administrator privileges": [
         "Administrationsprivilegien wiederherstellen"
+      ],
+      "Secure email based in Switzerland": [
+        ""
       ],
       "Security": [
         "Sicherheit"
@@ -8960,7 +9181,7 @@
         "Wechseln zum Zwei-Passwörter-Modus"
       ],
       "Take precautions to avoid data loss!": [
-        "Treffe Vorsichtsmaßnahmen, um Datenverluste zu vermeiden!"
+        "Triff Vorsichtsmaßnahmen, um Datenverluste zu vermeiden!"
       ],
       "Theme": [
         "Farbschema"
@@ -8973,6 +9194,9 @@
       ],
       "Total (monthly)": [
         "Gesamt (monatlich)"
+      ],
+      "Try the best of ProtonMail for free": [
+        ""
       ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
@@ -9007,17 +9231,26 @@
       "What's new": [
         "Was ist neu?"
       ],
+      "Your account’s usage": [
+        ""
+      ],
       "Your calendar link": [
         "Ihre Kalender-Verknüpfung"
       ],
       "Your current plan": [
         "Dein aktuelles Abonnement"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "Your plan": [
         "Mein Abonnement"
       ],
       "Your recovery status": [
         "Dein Wiederherstellungsstatus"
+      ],
+      "You’ve been invited to try ${ mailAppName }": [
+        ""
       ],
       "ZIP / postal code": [
         "PLZ/Postleitzahl"
@@ -9144,6 +9377,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Wenn du die erweiterten Protokolle aktivierst, wird die IP-Adresse für jedes Ereignis im Sicherheitsprotokoll aufgezeichnet."
+      ],
+      "For easy sharing with all your contacts, the link text “Try ${ mailAppName } Plus Free for one month” is added to the bottom of your emails": [
+        ""
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Sie erhalten Zugriff auf alle kostenpflichtigen Funktionen sowohl für ${ vpnAppName } als auch für ${ mailAppName } (der verschlüsselte E-Mail-Dienst, den Millionen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
@@ -9520,6 +9756,9 @@
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bitte beachten Sie, dass durch die Wahl dieser Zahlungsmethode Ihr ProtonMail-Konto nicht sofort erweitert werden kann. Wir werden Ihr Konto umstellen, sobald die Zahlung bei uns eingegangen ist."
       ],
+      "Please provide at least one recipient": [
+        ""
+      ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton wird alle Ordner mit dem gleichen Namen zusammenführen. Um dies zu vermeiden, ändern Sie die Namen vor dem Import."
       ],
@@ -9552,6 +9791,9 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Sie werden diesen Import-Eintrag in der Liste nicht mehr sehen."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Deine Wiederherstellungsdatei ist veraltet und kann daher keine neuen Daten wiederherstellen, wenn du dein Konto erneut zurücksetzt."

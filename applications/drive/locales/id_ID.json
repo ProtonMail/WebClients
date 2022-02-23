@@ -138,7 +138,7 @@
         "Lanjutkan dengan Google"
       ],
       "Copy email to clipboard": [
-        "Salin email ke papan klip"
+        "Salin email ke clipboard"
       ],
       "Copy link": [
         "Salin tautan"
@@ -367,6 +367,9 @@
       ],
       "Recover data": [
         "Pulihkan data"
+      ],
+      "Refer a friend": [
+        ""
       ],
       "refresh the page": [
         "muat ulang halaman"
@@ -818,6 +821,11 @@
       ],
       "Website access problem": [
         "Masalah akses situs"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -2444,11 +2452,20 @@
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } koneksi ProtonVPN (Anda bisa menyambungkan lebih banyak perangkat ke VPN)"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Diskon 20% berlaku untuk langganan dengan kupon ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Jaminan 30 hari uang kembali."
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "Internet gratis tanpa sensor harus tersedia untuk semua."
@@ -2588,6 +2605,12 @@
       "Create links and share your files with others.": [
         "Buat tautan dan bagikan berkas Anda dengan yang lain."
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "Create your first folder and start moving your files.": [
         "Buat folder pertama Anda dan pindahkan berkas Anda."
       ],
@@ -2680,6 +2703,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Hapus beberapa berkas atau hubungi administrator Anda."
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN berfitur lengkap dengan kecepatan hingga 10 Gbps."
@@ -2843,6 +2869,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Hanya orang-orang yang memiliki tautan dan kata sandi yang dapat mengakses folder ini."
       ],
+      "Other options": [
+        ""
+      ],
       "Paused": [
         "Dijeda"
       ],
@@ -2966,6 +2995,12 @@
       "Storage GB": [
         "Kapasitas GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
+      ],
       "support team": [
         "tim dukungan"
       ],
@@ -3047,11 +3082,17 @@
       "Trash": [
         "Sampah"
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unlock drive to recover files": [
         "Buka kunci drive untuk memulihkan berkas-berkas yang ada"
       ],
       "Unsupported file": [
         "File tidak didukung"
+      ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ],
       "Uploaded": [
         "Diunggah"
@@ -3061,6 +3102,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Pengguna"
@@ -3819,6 +3863,11 @@
         "Tindakan ini akan menghapus seluruh akun, sub-pengguna, dan data yang terhubung dengan organisasi Anda secara permanen."
       ]
     },
+    "Message": {
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Versi baru ${ appName } tersedia. ${ reloadButton }."
@@ -4340,6 +4389,11 @@
         "Unggah"
       ]
     },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
+      ]
+    },
     "Storage": {
       "Release notes": [
         "Catatan rilis"
@@ -4359,7 +4413,7 @@
         "${ nameElement } telah berganti nama"
       ],
       "Address copied to clipboard": [
-        "Alamat disalin ke papan klip"
+        "Alamat disalin ke clipboard"
       ],
       "Bug reported": [
         "Bug dilaporkan"
@@ -4380,13 +4434,13 @@
         "Kontak dihapus"
       ],
       "Email address copied to clipboard": [
-        "Alamat surel disalin ke papan klip"
+        "Alamat email disalin ke clipboard"
       ],
       "Fingerprint copied to clipboard": [
         "Sidik jari disalin ke clipboard"
       ],
       "Phone number copied to clipboard": [
-        "Nomor telepon disalin ke papan klip"
+        "Nomor telepon disalin ke clipboard"
       ],
       "Preference saved": [
         "Preferensi disimpan"
@@ -4966,6 +5020,9 @@
       "Your folder is ready to be downloaded": [
         "Berkas Anda telah siap untuk diunduh"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "Kode pos"
       ]
@@ -5265,6 +5322,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     }
   }

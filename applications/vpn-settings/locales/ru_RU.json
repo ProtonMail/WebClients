@@ -256,6 +256,9 @@
       "Previous": [
         "Пред."
       ],
+      "Refer a friend": [
+        ""
+      ],
       "refresh the page": [
         "обновить страницу"
       ],
@@ -703,6 +706,11 @@
         "Проблема с доступом к сайту"
       ]
     },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "Импорт календаря"
@@ -899,7 +907,7 @@
         "Буркина-Фасо"
       ],
       "Burma": [
-        "Бирма"
+        "Myanmar"
       ],
       "Burundi": [
         "Бурунди"
@@ -1720,9 +1728,6 @@
       "Please set a recovery phone number first": [
         "Пожалуйста, сначала укажите номер телефона для восстановления"
       ],
-      "Please set a recovery/notification email first": [
-        "Пожалуйста, сначала укажите адрес электронной почты для восстановления/уведомлений"
-      ],
       "Process aborted": [
         "Процесс прерван"
       ],
@@ -2008,6 +2013,9 @@
         "+${ organization.BonusVPN } ВПН-соединений для ProtonVPN (можно подключить больше устройств к ВПН)",
         "+${ organization.BonusVPN } ВПН-соединений для ProtonVPN (можно подключить больше устройств к ВПН)"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "К вашей подписке купоном ${ code } применена скидка 20%"
       ],
@@ -2016,6 +2024,12 @@
       ],
       "30-days money back guarantee": [
         "30-дневная гарантия возврата денег"
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "Всем должен быть доступен свободный интернет без цензуры."
@@ -2092,6 +2106,9 @@
       "By leaving now, changes may not be saved": [
         "Если выйти сейчас, изменения могут не сохраниться"
       ],
+      "Cancel trial": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, то выберите \"Изменить\" для обновления."
       ],
@@ -2103,6 +2120,18 @@
       ],
       "Connections": [
         "Подключения"
+      ],
+      "Continue with plus": [
+        ""
+      ],
+      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+        ""
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
       ],
       "Creating your account": [
         "Создание учетной записи"
@@ -2175,6 +2204,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Освободите место или свяжитесь с вашим администратором."
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Полнофункциональный VPN со скоростью до 10 Гбит/с."
@@ -2308,6 +2340,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "После нажатия на «Понизить» может потребоваться несколько минут, чтобы перевести вашу учетную запись на бесплатный план. "
       ],
+      "Other options": [
+        ""
+      ],
       "P2P": [
         "P2P"
       ],
@@ -2343,6 +2378,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
+      ],
+      "Plus plan": [
+        ""
       ],
       "Preview": [
         "Предпросмотр"
@@ -2415,6 +2453,12 @@
       ],
       "Storage GB": [
         "Хранилище Гбайт"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "Поддержка протоколов обмена файлами, таких как Bittorrent."
@@ -2494,11 +2538,20 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Режим двойного пароля позволяет использовать отдельные пароли для входа в систему и расшифровки почтового ящика. Это обеспечивает незначительные преимущества безопасности в некоторых ситуациях, однако для большинства пользователей мы рекомендуем использовать режим единого пароля. Чтобы переключиться на использование режима двух паролей, сначала установите пароль для входа, а затем пароль на почтовый ящик."
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "Неподдерживаемый файл"
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Используйте следующие учётные данные, когда подключаетесь к ProtonVPN через сторонние приложения, например, Tunnelblick на MacOS или OpenVPN на GNU/Linux."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Пользователи"
@@ -2535,9 +2588,6 @@
       ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "Мы отправили на вашу резервную эл. почту код сброса, действующий в течение часа или до запроса вами нового кода. Введите его ниже для продолжения."
-      ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Когда уведомления включены, мы отправляем оповещение на ваш адрес восстановления/уведомлений, если в вашей учётной записи ProtonMail есть новые сообщения."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении Вашей подписки, сначала мы используем любые доступные кредиты, а потом списываем недостающую сумму через вышеуказанный метод оплаты."
@@ -2622,6 +2672,9 @@
       ],
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Ваш аккаунт Proton может быть использован для доступа ко всем сервисам Proton. Пожалуйста, войдите с ${ email }"
+      ],
+      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+        ""
       ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Ваши платежные данные защищены шифрованием TLS и законами Швейцарии"
@@ -2855,9 +2908,6 @@
       ],
       "CVV code": [
         "CVV-код"
-      ],
-      "Daily email notifications": [
-        "Ежедневные уведомления по электронной почте"
       ],
       "Danger": [
         "Ненадежный"
@@ -3287,6 +3337,9 @@
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
         "Вы уверены, что хотите отключить двухфакторную аутентификацию?"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -3773,6 +3826,11 @@
         "Проверка адреса электронной почты повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
       ]
     },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Вы переходите на более дешевую версию аккаунта, пожалуйста, подождите"
@@ -4155,6 +4213,9 @@
       "Processing...": [
         "Обработка..."
       ],
+      "ProtonMail Plus Trial": [
+        ""
+      ],
       "ProtonVPN clients": [
         "Клиенты ProtonVPN"
       ],
@@ -4257,8 +4318,14 @@
       "You already have a Proton account": [
         "У вас уже есть аккаунт Proton"
       ],
+      "Your account’s usage": [
+        ""
+      ],
       "Your current plan": [
         "Текущий тарифный план"
+      ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
       ],
       "Your plan": [
         "Ваш тариф"
@@ -4570,6 +4637,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, мы рассмотрим ее и свяжемся с вами, когда снова будем в сети."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     }
   }
