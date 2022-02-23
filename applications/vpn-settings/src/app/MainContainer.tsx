@@ -3,6 +3,7 @@ import { Route } from 'react-router';
 import { useLocation, Redirect, Switch, useHistory } from 'react-router-dom';
 import { localeCode } from '@proton/shared/lib/i18n';
 import {
+    TopBanners,
     Sidebar,
     useToggle,
     useUser,
@@ -151,7 +152,7 @@ const MainContainer = () => {
                     <TVContainer />
                 </Route>
                 <Route path="*">
-                    <PrivateAppContainer header={header} sidebar={sidebar}>
+                    <PrivateAppContainer top={<TopBanners />} header={header} sidebar={sidebar}>
                         <Switch>
                             {getIsSectionAvailable(routes.dashboard) && (
                                 <Route path={routes.dashboard.to}>
@@ -220,24 +221,22 @@ const MainContainer = () => {
                             />
                         </Switch>
                         {showChat.render && canEnableChat ? (
-                            <>
-                                <LiveChatZendesk
-                                    tags={tagsArray}
-                                    zendeskRef={zendeskRef}
-                                    zendeskKey="52184d31-aa98-430f-a86c-b5a93235027a"
-                                    name={user.DisplayName || user.Name}
-                                    email={user.Email || userSettings?.Email?.Value || ''}
-                                    onLoaded={() => {
-                                        if (showChat.autoToggle) {
-                                            zendeskRef.current?.toggle();
-                                        }
-                                    }}
-                                    onUnavailable={() => {
-                                        openAuthenticatedBugReportModal('chat-no-agents');
-                                    }}
-                                    locale={localeCode.replace('_', '-')}
-                                />
-                            </>
+                            <LiveChatZendesk
+                                tags={tagsArray}
+                                zendeskRef={zendeskRef}
+                                zendeskKey="52184d31-aa98-430f-a86c-b5a93235027a"
+                                name={user.DisplayName || user.Name}
+                                email={user.Email || userSettings?.Email?.Value || ''}
+                                onLoaded={() => {
+                                    if (showChat.autoToggle) {
+                                        zendeskRef.current?.toggle();
+                                    }
+                                }}
+                                onUnavailable={() => {
+                                    openAuthenticatedBugReportModal('chat-no-agents');
+                                }}
+                                locale={localeCode.replace('_', '-')}
+                            />
                         ) : null}
                     </PrivateAppContainer>
                 </Route>
