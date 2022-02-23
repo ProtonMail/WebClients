@@ -8,12 +8,7 @@ import {
     DropdownMenuButton,
     useApi,
     useEventManager,
-    useNotifications,
-    useModals,
     useFolders,
-    ConfirmModal,
-    ErrorButton,
-    Alert,
     ButtonGroup,
     Button,
     Tooltip,
@@ -25,7 +20,6 @@ import {
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
@@ -44,7 +38,6 @@ import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import { getDeleteTitle, getModalText, getNotificationText } from '../../../hooks/usePermanentDelete';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../../../hooks/useAttachment';
@@ -52,6 +45,7 @@ import { MessageState, MessageStateWithData } from '../../../logic/messages/mess
 import MessageDetailsModal from '../modals/MessageDetailsModal';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import MessagePhishingModal from '../modals/MessagePhishingModal';
+import MessagePermanentDeleteModal from '../modals/MessagePermanentDeleteModal';
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
@@ -89,8 +83,6 @@ const HeaderMoreDropdown = ({
     const [loading, withLoading] = useLoading();
     const star = useStar();
     const { call } = useEventManager();
-    const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const closeDropdown = useRef<() => void>();
     const moveToFolder = useMoveToFolder();
     const [folders = []] = useFolders();
@@ -103,6 +95,7 @@ const HeaderMoreDropdown = ({
     const [messageHeaderModalProps, setMessageHeaderModalOpen] = useModalState();
     const [messagePrintModalProps, setMessagePrintModalOpen] = useModalState();
     const [messagePhishingModalProps, setMessagePhishingModalOpen] = useModalState();
+    const [messagePermanentDeleteModalProps, setMessagePermanentDeleteModalOpen] = useModalState();
 
     const isStarred = IsMessageStarred(message.data || ({} as Element));
 
@@ -124,26 +117,6 @@ const HeaderMoreDropdown = ({
         }
         markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
         await call();
-    };
-
-    const handleDelete = async () => {
-        await new Promise((resolve, reject) => {
-            createModal(
-                <ConfirmModal
-                    title={getDeleteTitle(false, false, 1)}
-                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
-                    onConfirm={() => resolve(undefined)}
-                    onClose={reject}
-                >
-                    <Alert className="mb1" type="error">
-                        {getModalText(false, false, 1)}
-                    </Alert>
-                </ConfirmModal>
-            );
-        });
-        await api(deleteMessages([message.data?.ID]));
-        await call();
-        createNotification({ text: getNotificationText(false, false, 1) });
     };
 
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
@@ -351,7 +324,10 @@ const HeaderMoreDropdown = ({
                                     </DropdownMenuButton>
                                 )}
                                 {isInTrash ? (
-                                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleDelete}>
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-nowrap"
+                                        onClick={() => setMessagePermanentDeleteModalOpen(true)}
+                                    >
                                         <Icon name="circle-xmark" className="mr0-5 mt0-25" />
                                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Delete`}</span>
                                     </DropdownMenuButton>
@@ -439,6 +415,7 @@ const HeaderMoreDropdown = ({
                 {...messagePrintModalProps}
             />
             <MessagePhishingModal message={message} onBack={onBack} {...messagePhishingModalProps} />
+            <MessagePermanentDeleteModal message={message} {...messagePermanentDeleteModalProps} />
         </>
     );
 };
