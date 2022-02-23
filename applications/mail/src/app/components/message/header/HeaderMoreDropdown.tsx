@@ -102,6 +102,7 @@ const HeaderMoreDropdown = ({
 
     const [messageDetailsModalProps, setMessageDetailsModalOpen] = useModalState();
     const [messageHeaderModalProps, setMessageHeaderModalOpen] = useModalState();
+    const [messagePrintModalProps, setMessagePrintModalOpen] = useModalState();
 
     const isStarred = IsMessageStarred(message.data || ({} as Element));
 
@@ -187,8 +188,8 @@ const HeaderMoreDropdown = ({
         downloadFile(blob, filename);
     };
 
-    const handlePrint = async () => {
-        createModal(<MessagePrintModal message={message as MessageStateWithData} labelID={labelID} />);
+    const handlePrint = () => {
+        setMessagePrintModalOpen(true);
     };
 
     const handleStar = async () => {
@@ -458,6 +459,11 @@ const HeaderMoreDropdown = ({
                 {...messageDetailsModalProps}
             />
             <MessageHeadersModal message={message.data} {...messageHeaderModalProps} />
+            <MessagePrintModal
+                message={message as MessageStateWithData}
+                labelID={labelID}
+                {...messagePrintModalProps}
+            />
         </>
     );
 };
