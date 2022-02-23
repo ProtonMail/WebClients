@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { PrivateAppContainer, useToggle, MainLogo, TopBanners } from '@proton/components';
+import { PrivateAppContainer, useToggle, MainLogo, TopBanners, ReferralModal } from '@proton/components';
 
 import UploadSidebarButton from '../sections/Drive/UploadButton';
 import ShareFileSidebarButton from '../sections/SharedLinks/ShareFileSidebarButton';
@@ -29,7 +29,13 @@ const DriveWindow = ({ children }: Props) => {
             }}
         />
     ) : null;
-    const topBanners = <TopBanners>{fileRecoveryBanner}</TopBanners>;
+
+    const top = (
+        <>
+            <TopBanners>{fileRecoveryBanner}</TopBanners>
+            <ReferralModal />
+        </>
+    );
 
     let PrimaryButton = UploadSidebarButton;
     if (location.pathname === '/trash') {
@@ -58,7 +64,7 @@ const DriveWindow = ({ children }: Props) => {
     );
 
     return (
-        <PrivateAppContainer topBanners={topBanners} header={header} sidebar={sidebar}>
+        <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
             <AppErrorBoundary>{children}</AppErrorBoundary>
         </PrivateAppContainer>
     );
