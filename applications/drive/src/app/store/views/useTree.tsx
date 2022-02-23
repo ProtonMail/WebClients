@@ -1,6 +1,7 @@
 import { c } from 'ttag';
-
 import { useCallback, useEffect, useMemo, useState } from 'react';
+
+import { useNotifications } from '@proton/components';
 
 import { DecryptedLink, LinkType, useLink, useLinksListing } from '../links';
 import { useShare } from '../shares';
@@ -34,6 +35,7 @@ export function useFolderTree(shareId: string, options?: FolderTreeOptions) {
  * useTree provides data for complete tree view of the provided share.
  */
 export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly }: TreeOptions) {
+    const { createNotification } = useNotifications();
     const { showErrorNotification } = useErrorHandler();
     const { getShare } = useShare();
     const { getLink } = useLink();
@@ -182,6 +184,15 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
     );
 
     const deepestOpenedLevel = useMemo(() => getDeepestOpenedLevel(rootFolder), [rootFolder]);
+
+    useEffect(() => {
+        if (deepestOpenedLevel === 42) {
+            createNotification({
+                type: 'info',
+                text: 'Achievement unlocked: folder tree master 1',
+            });
+        }
+    }, [deepestOpenedLevel]);
 
     return {
         deepestOpenedLevel,
