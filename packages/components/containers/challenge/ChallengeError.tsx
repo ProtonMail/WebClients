@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { Alert } from '../../components/alert';
 import { InlineLinkButton } from '../../components/button';
+import { useModalState } from '../../components/modalTwo';
 import { BugModal } from '../support';
-import { useModals } from '../../hooks';
 
 const ChallengeError = () => {
-    const { createModal } = useModals();
+    const [bugReportModal, setBugReportModal, render] = useModalState();
 
     const refresh = (
         <InlineLinkButton key="refresh" onClick={() => window.location.reload()}>{c('Action')
@@ -18,7 +18,7 @@ const ChallengeError = () => {
             key="support"
             title="Contact the support team."
             onClick={() => {
-                createModal(<BugModal />);
+                setBugReportModal(true);
             }}
         >
             {c('Info').t`support team`}
@@ -26,10 +26,13 @@ const ChallengeError = () => {
     );
 
     return (
-        <Alert className="mb1" type="error">
-            {c('Error')
-                .jt`Something went wrong, please ${refresh} in order to proceed. If you still see this error message please contact our ${supportTeam}.`}
-        </Alert>
+        <>
+            {render && <BugModal {...bugReportModal} />}
+            <Alert className="mb1" type="error">
+                {c('Error')
+                    .jt`Something went wrong, please ${refresh} in order to proceed. If you still see this error message please contact our ${supportTeam}.`}
+            </Alert>
+        </>
     );
 };
 
