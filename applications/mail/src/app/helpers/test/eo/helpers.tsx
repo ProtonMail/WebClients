@@ -32,6 +32,10 @@ export const EOClearAll = () => {
     console = { ...savedConsole };
 };
 
+export const mockConsole = (level: keyof Console = 'error') => {
+    console[level] = jest.fn();
+};
+
 export const getEOEncryptedMessage = async (decryptedToken: string, password: string) => {
     const { data } = await encryptMessage({
         data: decryptedToken,

@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/dom';
+import { act, fireEvent } from '@testing-library/react';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { EOClearAll, EOSubject } from '../../../../helpers/test/eo/helpers';
 import { setup } from './EOReply.test.helpers';
@@ -19,8 +19,10 @@ describe('EO Reply attachments', () => {
         getByText(EOSubject);
 
         const inputAttachment = getByTestId('composer-attachments-button') as HTMLInputElement;
-        fireEvent.change(inputAttachment, { target: { files: [file] } });
-        await wait(100);
+        await act(async () => {
+            fireEvent.change(inputAttachment, { target: { files: [file] } });
+            await wait(100);
+        });
 
         const toggleList = getByTestId('attachment-list-toggle');
         fireEvent.click(toggleList);
