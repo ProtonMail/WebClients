@@ -20,7 +20,6 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import { useDebouncedRequest } from '../api';
 import { useDriveCrypto } from '../crypto';
 import { useDriveEventManager } from '../events';
-import { LinkType } from './interface';
 import useLink from './useLink';
 import useLinks from './useLinks';
 import useLinksState from './useLinksState';
@@ -94,33 +93,29 @@ export default function useLinksActions() {
                 SignatureAddress: address.Email,
             })
         );
-        return {
-            parentLinkId: link.parentLinkId,
-            linkId: link.linkId,
-            type: link.type,
-            name: link.name,
-        };
+        const originalParentId = link.parentLinkId;
+        return originalParentId;
     };
 
     const moveLinks = async (abortSignal: AbortSignal, shareId: string, linkIds: string[], newParentLinkId: string) => {
         return withLinkLock(shareId, linkIds, async () => {
-            const moved: { parentLinkId: string; linkId: string; name: string; type: LinkType }[] = [];
-            const failed: string[] = [];
+            const originalParentIds: { [linkId: string]: string } = {};
+            const successes: string[] = [];
+            const failures: { [linkId: string]: any } = {};
 
-            const moveQueue = linkIds.map((linkId) => () => {
+            const moveQueue = linkIds.map((linkId) => async () => {
                 return moveLink(abortSignal, shareId, newParentLinkId, linkId)
-                    .then((result) => {
-                        moved.push(result);
+                    .then((originalParentId) => {
+                        successes.push(linkId);
+                        originalParentIds[linkId] = originalParentId;
                     })
                     .catch((error) => {
-                        if (error.name === 'Error') {
-                            failed.push(linkId);
-                        }
+                        failures[linkId] = error;
                     });
             });
 
             await preventLeave(runInQueue(moveQueue, MAX_THREADS_PER_REQUEST));
-            return { moved, failed };
+            return { successes, failures, originalParentIds };
         });
     };
 
@@ -136,24 +131,27 @@ export default function useLinksActions() {
         query: (batchLinkIds: string[]) => any
     ) => {
         return withLinkLock(shareId, linkIds, async () => {
-            const results: { batchLinkIds: string[]; response?: T; error?: any }[] = [];
+            const responses: { batchLinkIds: string[]; response: T }[] = [];
+            const successes: string[] = [];
+            const failures: { [linkId: string]: any } = {};
+
             const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
             const queue = batches.map(
                 (batchLinkIds) => () =>
                     debouncedRequest<T>(query(batchLinkIds), abortSignal)
                         .then((response) => {
-                            results.push({ batchLinkIds, response });
+                            responses.push({ batchLinkIds, response });
+                            batchLinkIds.forEach((linkId) => successes.push(linkId));
                         })
-                        .catch((error): string[] => {
-                            results.push({ batchLinkIds, error });
-                            return [];
+                        .catch((error) => {
+                            batchLinkIds.forEach((linkId) => (failures[linkId] = error));
                         })
             );
             await preventLeave(runInQueue(queue, MAX_THREADS_PER_REQUEST));
             return {
-                done: results.filter(({ response }) => !!response).flatMap(({ batchLinkIds }) => batchLinkIds),
-                failed: results.filter(({ error }) => !!error).flatMap(({ batchLinkIds }) => batchLinkIds),
-                results,
+                responses,
+                successes,
+                failures,
             };
         });
     };
@@ -176,28 +174,23 @@ export default function useLinksActions() {
 
         return batchHelper<RestoreFromTrashResult>(abortSignal, shareId, sortedLinkIds, (batchLinkIds) =>
             queryRestoreLinks(shareId, batchLinkIds)
-        ).then(({ results }) =>
-            results.reduce(
-                (acc, { batchLinkIds, response, error }, index) => {
-                    if (error) {
-                        acc.otherErrors.push(error);
+        ).then(({ responses, failures }) => {
+            const successes: string[] = [];
+            const alreadyExisting: string[] = [];
+            responses.forEach(({ batchLinkIds, response }) => {
+                response.Responses.forEach(({ Response }, index) => {
+                    const linkId = batchLinkIds[index];
+                    if (!Response.Error) {
+                        successes.push(linkId);
+                    } else if (Response.Code === RESPONSE_CODE.ALREADY_EXISTS) {
+                        alreadyExisting.push(linkId);
+                    } else {
+                        failures[linkId] = Response.Error;
                     }
-
-                    response?.Responses.forEach(({ Response }) => {
-                        if (!Response.Error) {
-                            acc.restored.push(batchLinkIds[index]);
-                        } else if (Response.Code === RESPONSE_CODE.ALREADY_EXISTS) {
-                            acc.alreadyExisting.push(linkIds[index]);
-                        } else {
-                            acc.otherErrors.push(Response.Error);
-                        }
-                    });
-
-                    return acc;
-                },
-                { restored: [] as string[], alreadyExisting: [] as string[], otherErrors: [] as string[] }
-            )
-        );
+                });
+            });
+            return { successes, failures, alreadyExisting };
+        });
     };
 
     const deleteChildrenLinks = async (

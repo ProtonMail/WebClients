@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { textToClipboard, isSafari } from '@proton/shared/lib/helpers/browser';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import useConfirm from '../../hooks/util/useConfirm';
 import { useLinkActions, useLinksActions } from '../links';
@@ -19,15 +20,27 @@ export default function useAction() {
     const { openConfirmModal } = useConfirm();
     const { createNotification } = useNotifications();
     const {
-        createDeleteLinksNotifications,
-        createRestoredLinksNotifications,
-        createMoveLinksNotifications,
-        createTrashLinksNotifications,
-        createDeleteSharedLinksNotifications,
+        createMovedItemsNotifications,
+        createTrashedItemsNotifications,
+        createRestoredItemsNotifications,
+        createDeletedItemsNotifications,
+        createDeletedSharedLinksNotifications,
     } = useListNotifications();
     const link = useLinkActions();
     const links = useLinksActions();
     const shareUrl = useShareUrl();
+
+    const aggregateResults = (results: { successes: string[]; failures: { [linkId: string]: any } }[]) => {
+        return results.reduce(
+            (acc, val) => {
+                return {
+                    successes: [...acc.successes, ...val.successes],
+                    failures: { ...acc.failures, ...val.failures },
+                };
+            },
+            { successes: [], failures: {} }
+        );
+    };
 
     const createFolder = async (
         abortSignal: AbortSignal,
@@ -38,18 +51,16 @@ export default function useAction() {
         return link
             .createFolder(abortSignal, shareId, parentLinkId, name)
             .then((id: string) => {
-                const notificationText = (
-                    <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
-                        {c('Success').t`"${name}" created successfully`}
-                    </span>
-                );
-                createNotification({ text: notificationText });
+                createNotification({
+                    text: <span className="text-pre-wrap">{c('Notification').t`${name} created successfully`}</span>,
+                });
                 return id;
             })
             .catch((e) => {
-                if (e.name === 'ValidationError') {
-                    createNotification({ text: e.message, type: 'error' });
-                }
+                showErrorNotification(
+                    e,
+                    <span className="text-pre-wrap">{c('Notification').t`"${name}" failed to be created`}</span>
+                );
                 throw e;
             });
     };
@@ -58,17 +69,17 @@ export default function useAction() {
         return link
             .renameLink(abortSignal, shareId, linkId, newName)
             .then(() => {
-                const nameElement = (
-                    <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
-                        &quot;{newName}&quot;
-                    </span>
-                );
-                createNotification({ text: c('Success').jt`${nameElement} renamed successfully` });
+                createNotification({
+                    text: (
+                        <span className="text-pre-wrap">{c('Notification').t`"${newName}" renamed successfully`}</span>
+                    ),
+                });
             })
             .catch((e) => {
-                if (e.name === 'ValidationError') {
-                    createNotification({ text: e.message, type: 'error' });
-                }
+                showErrorNotification(
+                    e,
+                    <span className="text-pre-wrap">{c('Notification').t`"${newName}" failed to be renamed`}</span>
+                );
                 throw e;
             });
     };
@@ -87,31 +98,25 @@ export default function useAction() {
         const result = await links.moveLinks(abortSignal, shareId, linkIds, newParentLinkId);
 
         const undoAction = async () => {
-            // One day this can be simplified to .groupBy((item) => item.parentLinkId)
-            const movedLinksPerParentId = result.moved.reduce((acc, item) => {
-                (acc[item.parentLinkId] ||= []).push(item);
-                return acc;
-            }, {} as { [parentLinkId: string]: LinkInfo[] });
-
-            const moveBackResults = await Promise.all(
-                Object.entries(movedLinksPerParentId).map(async ([parentLinkId, childsToMove]) => {
-                    const toMoveBackIds = childsToMove.map(({ linkId }) => linkId);
-                    const moveBackResult = await links.moveLinks(abortSignal, shareId, toMoveBackIds, parentLinkId);
-                    return moveBackResult;
-                })
-            );
-            const moveBackResult = moveBackResults.reduce(
-                (acc, moveBackResult) => {
-                    acc.moved = acc.moved.concat(moveBackResult.moved);
-                    acc.failed = acc.failed.concat(moveBackResult.failed);
+            const linkIdsPerParentId = Object.entries(result.originalParentIds).reduce(
+                (acc, [linkId, originalParentId]) => {
+                    (acc[originalParentId] ||= []).push(linkId);
                     return acc;
                 },
-                { moved: [], failed: [] }
+                {} as { [parentLinkId: string]: string[] }
             );
 
-            createMoveLinksNotifications(linksToMove, moveBackResult);
+            const undoResult = aggregateResults(
+                await Promise.all(
+                    Object.entries(linkIdsPerParentId).map(async ([parentLinkId, toMoveBackIds]) => {
+                        return links.moveLinks(abortSignal, shareId, toMoveBackIds, parentLinkId);
+                    })
+                )
+            );
+            createMovedItemsNotifications(linksToMove, undoResult.successes, undoResult.failures);
         };
-        createMoveLinksNotifications(linksToMove, result, undoAction);
+
+        createMovedItemsNotifications(linksToMove, result.successes, result.failures, undoAction);
     };
 
     const trashLinks = async (abortSignal: AbortSignal, shareId: string, linksToTrash: LinkInfo[]) => {
@@ -125,22 +130,26 @@ export default function useAction() {
             return acc;
         }, {} as { [parentLinkId: string]: LinkInfo[] });
 
-        const trashed = (
+        const result = aggregateResults(
             await Promise.all(
                 Object.entries(linksToTrashPerParentId).map(async ([parentLinkId, childsToTrash]) => {
                     const linkIds = childsToTrash.map(({ linkId }) => linkId);
-                    const { done: trashed } = await links.trashLinks(abortSignal, shareId, parentLinkId, linkIds);
-                    return trashed;
+                    return links.trashLinks(abortSignal, shareId, parentLinkId, linkIds);
                 })
             )
-        ).flat();
+        );
 
         const undoAction = async () => {
-            const linkIds = linksToTrash.map(({ linkId }) => linkId);
-            const result = await links.restoreLinks(abortSignal, shareId, linkIds);
-            createRestoredLinksNotifications(linksToTrash, result);
+            const undoResult = await links.restoreLinks(abortSignal, shareId, result.successes);
+            createRestoredItemsNotifications(
+                linksToTrash,
+                undoResult.successes,
+                undoResult.failures,
+                undoResult.alreadyExisting
+            );
         };
-        createTrashLinksNotifications(linksToTrash, trashed, undoAction);
+
+        createTrashedItemsNotifications(linksToTrash, result.successes, result.failures, undoAction);
     };
 
     const restoreLinks = async (abortSignal: AbortSignal, shareId: string, linksToRestore: LinkInfo[]) => {
@@ -153,7 +162,21 @@ export default function useAction() {
             shareId,
             linksToRestore.map(({ linkId }) => linkId)
         );
-        createRestoredLinksNotifications(linksToRestore, result);
+
+        const undoAction = async () => {
+            const linksToTrash = result.successes
+                .map((linkId) => linksToRestore.find((link) => link.linkId === linkId))
+                .filter(isTruthy);
+            await trashLinks(abortSignal, shareId, linksToTrash);
+        };
+
+        createRestoredItemsNotifications(
+            linksToRestore,
+            result.successes,
+            result.failures,
+            result.alreadyExisting,
+            undoAction
+        );
     };
 
     const deletePermanently = async (abortSignal: AbortSignal, shareId: string, linksToDelete: LinkInfo[]) => {
@@ -161,25 +184,25 @@ export default function useAction() {
             return;
         }
 
+        const itemName = linksToDelete[0].name;
         const title = c('Title').t`Delete permanently`;
         const confirm = c('Action').t`Delete permanently`;
-        const message = c('Info').ngettext(
-            msgid`Are you sure you want to permanently delete selected item from trash?`,
-            `Are you sure you want to permanently delete selected items from trash?`,
-            linksToDelete.length
-        );
+        const message =
+            linksToDelete.length === 1
+                ? c('Info').t`Are you sure you want to permanently delete "${itemName}" from trash?`
+                : c('Info').t`Are you sure you want to permanently delete selected items from trash?`;
 
         openConfirmModal({
             title,
             confirm,
             message,
             onConfirm: async () => {
-                const { done: deleted } = await links.deleteTrashedLinks(
+                const result = await links.deleteTrashedLinks(
                     abortSignal,
                     shareId,
                     linksToDelete.map(({ linkId }) => linkId)
                 );
-                createDeleteLinksNotifications(linksToDelete, deleted);
+                createDeletedItemsNotifications(linksToDelete, result.successes, result.failures);
             },
         });
     };
@@ -223,9 +246,8 @@ export default function useAction() {
             ),
             onConfirm: async () => {
                 const linkIds = linksToStopSharing.map(({ linkId }) => linkId);
-                const deletedCount = await shareUrl.deleteShareUrls(abortSignal, shareId, linkIds);
-                const failedCount = linksToStopSharing.length - deletedCount;
-                createDeleteSharedLinksNotifications(deletedCount, failedCount);
+                const result = await shareUrl.deleteShareUrls(abortSignal, shareId, linkIds);
+                createDeletedSharedLinksNotifications(linksToStopSharing, result.successes, result.failures);
             },
         });
     };
