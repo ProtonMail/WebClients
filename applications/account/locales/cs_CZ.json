@@ -274,6 +274,9 @@
       "Discard": [
         "Zahodit"
       ],
+      "Don't show again": [
+        "Příště nezobrazovat"
+      ],
       "Done": [
         "Hotovo"
       ],
@@ -495,6 +498,9 @@
       ],
       "Recover data": [
         "Obnovit data"
+      ],
+      "Refer a friend": [
+        ""
       ],
       "Refresh status": [
         "Obnovit stav"
@@ -812,6 +818,14 @@
     "Action for user session": {
       "Revoke": [
         "Zrušit"
+      ]
+    },
+    "Action in trial plan": {
+      "No, thanks": [
+        ""
+      ],
+      "Try free for 30 days": [
+        ""
       ]
     },
     "Action to select a title for the bug report modal": {
@@ -1189,6 +1203,23 @@
       ],
       "Website access problem": [
         "Problém s přístupem ke stránce"
+      ]
+    },
+    "Button": {
+      "Add link to your email footer": [
+        ""
+      ],
+      "Continue using ProtonMail.": [
+        ""
+      ],
+      "Copy ": [
+        ""
+      ],
+      "Invite": [
+        ""
+      ],
+      "Tweet": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -2312,6 +2343,12 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
+      "Get 3 months of Mail Plus for free for every friend who subscribes to ${ mailAppName }.": [
+        ""
+      ],
+      "Invite friends to start earning credits": [
+        ""
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
@@ -2320,6 +2357,9 @@
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
+      ],
+      "Track how many people click on your link, sign up to ${ mailAppName }, and become paid subscribers. Watch your free months add up.": [
+        ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Události můžete importovat ve formátu iCal (ICS soubor). Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, rozdělte jej do menších souborů."
@@ -2586,11 +2626,11 @@
       "Folder name cannot be empty": [
         "Název složky nemůže být prázdný"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Nesprávné přihlašovací údaje. Zkuste to znovu"
+      "Incorrect login credentials. Please try again.": [
+        "Nesprávné přihlašovací údaje. Zkuste to znovu."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Nesprávné heslo k e-mailové schránce. Zkuste to znovu"
+      "Incorrect mailbox password. Please try again.": [
+        "Nesprávné heslo k e-mailové schránce. Zkuste to znovu."
       ],
       "Incorrect password": [
         "Nesprávné heslo"
@@ -3963,6 +4003,9 @@
         "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu",
         "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu"
       ],
+      "${ rewards } of ${ rewardsLimit } months": [
+        ""
+      ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } na vašem předplatném přepnutím na ${ annualBilling }"
       ],
@@ -4008,6 +4051,12 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } zdarma"
       ],
+      "(${ memberCount } member)": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrování pokud jsou splněny všechny následující podmínky)"
       ],
@@ -4029,17 +4078,29 @@
         "+${ organization.BonusVPN } připojení ProtonVPN (umožňuje připojení dalších zařízení k síti VPN)",
         "+${ organization.BonusVPN } připojení ProtonVPN (umožňuje připojení dalších zařízení k síti VPN)"
       ],
+      "1 to 3 months of Mail Plus will appear as credits on your next bill": [
+        ""
+      ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% sleva na Vaše předplatné s kupónem${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 denní záruka na vrácení peněz"
       ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
+      ],
       "A free and uncensored Internet should be available to all.": [
         "Svobodný a necenzurovaný internet by měl být přístupný všem."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        "Soubor pro obnovení vám umožňuje odemknout a zobrazit data po resetování účtu. "
+        "A recovery file lets you unlock and view your data after an account reset."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "V případě, že zapomenete heslo, obnovovací fráze umožňuje přístup k účtu a obnovu zašifrovaných zpráv."
@@ -4251,6 +4312,9 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Sdílením úplných údajů o události tohoto kalendáře souhlasíte s udělením přístupu Protonu k šifrovaným informacím tohoto kalendáře."
       ],
+      "Cancel trial": [
+        ""
+      ],
       "Center": [
         "Zarovnat na střed"
       ],
@@ -4275,6 +4339,12 @@
       "Continue anyway?": [
         "Přesto pokračovat?"
       ],
+      "Continue with plus": [
+        ""
+      ],
+      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Vytvořit ${ calendarsToBeCreated } nový kalendář",
         "Vytvořit ${ calendarsToBeCreated } nové kalendáře",
@@ -4294,10 +4364,16 @@
         "Vytvořte a spravujte podúčty a přiřaďte jim e-mailové adresy na vlastní doméně."
       ],
       "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Vytvořte e-mailové adresy pro ostatní lidi, spravujte ProtonMail pro podnikání, školu nebo skupinu. Začněte přidáním názvu Vaší organizace a vlastní domény (např. @vasefirma.cz). "
+        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
       ],
       "Create in": [
         "Vytvořit v"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
       ],
       "Creating your Proton account": [
         "Vytváření Vašeho Proton účtu"
@@ -4328,6 +4404,9 @@
       ],
       "Daily": [
         "Denně"
+      ],
+      "Data locked": [
+        "Data uzamčena"
       ],
       "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
         "Odstraňte všechny ostatní MX záznamy, nebo se ujistěte, že ProtonMail záznam má nejnižší prioritu."
@@ -4382,6 +4461,9 @@
       ],
       "Each additional connection can be assigned to users in your organization.": [
         "Každé další připojení může být přiřazeno uživatelům ve Vaší organizaci."
+      ],
+      "Earned ${ rewards } of ${ rewardsLimit } Mail plus months.": [
+        ""
       ],
       "Edit label": [
         "Upravit štítek"
@@ -4479,11 +4561,17 @@
       "free up space by deleting older messages or other data": [
         "uvolněte úložiště smazáním starých zpráv nebo jiných dat"
       ],
+      "Free VPN on a single device": [
+        ""
+      ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Plně vybavená VPN s rychlostí až 10 Gbps."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Vygenerováním nové obnovovací fráze bude deaktivovaná stará."
+      ],
+      "Get rewarded": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dejte svůj veřejný klíč svým přátelům nebo jej publikujte online, aby vám každý mohl poslat end-to-end šifrovaný e-mail!"
@@ -4505,6 +4593,9 @@
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pokud tato doména aktuálně přijímá e-maily, vyberte kartu ${ boldAddresses } a přidejte všechny aktivní e-mailové adresy před změnou MX záznamu, aby byl zajištěn hladký přechod."
+      ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Pokud je to způsobeno resetováním starého hesla, můžete zastavit opětovné zobrazování zprávy"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
@@ -4544,6 +4635,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Pokud budete pokračovat s downgradem, ztratíte přístup k placeným funkcím účtu ProtonMail a ProtonVPN."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Pokud jste nedávno resetovali heslo, můžete svá data odemknout pomocí metody obnovy dat"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Chcete-li zachovat existující SPF záznam, jednoduše k němu přidejte ${ spf } a potom ${ spfValue }. Nevytvářejte více SPF záznamů."
@@ -4629,14 +4723,20 @@
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
       ],
-      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
-        "Zdá se, že některá vaše data jsou zašifrovaná a uzamčená. Důvodem je pravděpodobně nedávné nebo předchozí resetování hesla. K odblokování dat doporučujeme použít metodu obnovy dat."
+      "Invite friends": [
+        ""
+      ],
+      "It appears some of your data is encrypted and locked.": [
+        "Zdá se, že některá z vašich dat jsou zašifrována a uzamčena."
       ],
       "it’s imperative": [
         "je to nezbytně nutné"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
+      ],
+      "Just send them your personal referral link": [
+        ""
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Uchovávejte tyto záznamy ve Vaší DNS tak dlouho, jak dlouho chcete používat DKIM."
@@ -4695,6 +4795,9 @@
       "lose access to all current encrypted data": [
         "ztratíte přístup ke všem šifrovaným datům"
       ],
+      "Mail Plus credits earned": [
+        ""
+      ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru čte Vaše osobní údaje s cílem poskytnout přístup inzerentům, ruským vládním agenturám a dalším třetím stranám. Pro lepší soukromí vytvořte bezpečnou e-mailovou adresu."
       ],
@@ -4742,6 +4845,9 @@
       ],
       "No contact encryption keys exist": [
         "Neexistuje žádný klíč pro šifrování kontaktů"
+      ],
+      "No credit card required": [
+        ""
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Není nastavena žádná metoda obnovy dat; jste vystaveni riziku ztráty přístupu ke svým datům"
@@ -4809,6 +4915,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Ve vaší organizaci existují ostatní správci, vaší povinností je sdělit jim nové heslo."
       ],
+      "Other options": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Zastaralý obnovovací soubor; aktualizujte, abyste zajistili přístup k vašim údajům"
       ],
@@ -4820,6 +4929,12 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "Paid for a 12 months plan": [
+        ""
+      ],
+      "Paid for a month plan": [
+        ""
       ],
       "Payment can take a few minutes to fully verify.": [
         "Než bude platba zcela ověřena, může to trvat i několik minut."
@@ -4890,6 +5005,9 @@
       "Plus or Visionary subscription required": [
         "Je vyžadováno předplatné Plus nebo Visionary"
       ],
+      "Plus plan": [
+        ""
+      ],
       "Prevents content from the sender's server from loading without your permission.": [
         "Zabrání načtení obsahu ze serveru odesílatele bez vašeho svolení."
       ],
@@ -4932,6 +5050,9 @@
       "ProtonVPN Plus or Visionary required for Secure Core feature.": [
         "Funkce Secure Core vyžaduje ProtonVPN Plus nebo Visionary."
       ],
+      "Public link invite": [
+        ""
+      ],
       "purchase additional storage": [
         "nákup dalšího úložiště"
       ],
@@ -4961,6 +5082,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Fráze pro obnovení není spojena s žádnými zastaralými klíči."
+      ],
+      "Refer, receive, repeat. You can earn credits for up to 18 months of Mail Plus.": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
@@ -4995,6 +5119,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Odesláno pomocí <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> zabezpečeného e-mailu."
       ],
@@ -5013,6 +5140,12 @@
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
       ],
+      "Signed up": [
+        ""
+      ],
+      "Signed up via your link": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
@@ -5027,6 +5160,15 @@
       ],
       "Storage GB": [
         "Úložiště"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Sucessfully sent invites": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "support team": [
         "tým podpory"
@@ -5052,6 +5194,12 @@
       "Thank you for supporting our mission.": [
         "Děkujeme za podporu naší mise."
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "Zpráva ${ boldDataLocked } se již nebude zobrazovat, ale stále můžete svá data odemknout pomocí ${ encryptionAndKeysLink }."
+      ],
+      "The 30-day free trial is not available any other way": [
+        ""
+      ],
       "The calendar will be removed from your account.": [
         "Kalendář bude smazán."
       ],
@@ -5066,6 +5214,9 @@
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Tyto konfigurační soubory vám umožní vybrat, ke kterému ProtonVPN serveru se připojíte, pokud používáte alternativní VPN aplikace nebo nastavujete VPN na routeru."
+      ],
+      "They signup": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet byl pozastaven z důvodu možného porušení zásad."
@@ -5202,6 +5353,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Pokud se neodhlásíte z účtu nebo nezměníte heslo, Vaše relace zůstane aktivní. Relace vyprší po 60 dnech nečinnosti."
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "Nepodporovaný soubor"
       ],
@@ -5220,6 +5374,9 @@
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Přejděte na placené předplatné a odemkněte podporu IMAP/SMTP prostřednictvím ProtonMail Bridge."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Upload picture": [
         "Nahrát obrázek"
       ],
@@ -5234,6 +5391,9 @@
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Při připojování k serverům ProtonVPN bez aplikace použijte následující přihlašovací údaje. Příklady použití zahrnují: Tunnelblick na macOS, OpenVPN na GNU/Linux."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Uživatelé"
@@ -5457,6 +5617,9 @@
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
+      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+        ""
+      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Váš import z ${ delayedImport.Account } je dočasně opožděn."
       ],
@@ -5506,6 +5669,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Klíč ${ fingerprint } byl již nahrán"
+      ],
+      "Track your referral link activities here": [
+        ""
       ]
     },
     "Info - folder colouring feature": {
@@ -5892,6 +6058,18 @@
       " and ${ l }": [
         " a ${ l }"
       ],
+      "${ monthsRewarded } month credited": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ monthsRewarded } month pending": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "${ n } VPN connection available": [
         "${ n } VPN připojení dostupné",
         "${ n } VPN připojení dostupná",
@@ -6255,6 +6433,9 @@
       "Interval": [
         "Interval"
       ],
+      "Invite via email": [
+        ""
+      ],
       "Keep me signed in": [
         "Zůstat přihlášen"
       ],
@@ -6469,7 +6650,10 @@
         "Poslat automatickou odpověď"
       ],
       "Send invites in": [
-        "Poslat pozvánky v"
+        "Invitation language"
+      ],
+      "Share your invitation link": [
+        ""
       ],
       "Show secondary time zone": [
         "Zobrazit sekundární časové pásmo"
@@ -6639,6 +6823,9 @@
       "Your password (admin)": [
         "Vaše heslo (admin)"
       ],
+      "Your reward": [
+        ""
+      ],
       "ZIP": [
         "PSČ"
       ]
@@ -6796,6 +6983,9 @@
       "Create an account": [
         "Vytvořit účet"
       ],
+      "Encryption and keys": [
+        "Šifrování a klíče"
+      ],
       "Forgot username?": [
         "Zapomněli jste uživatelské jméno?"
       ],
@@ -6829,11 +7019,17 @@
       "Reset password": [
         "Obnovit heslo"
       ],
+      "Set email address": [
+        "Nastavit e-mailovou adresu"
+      ],
       "Sign in": [
         "Přihlásit se"
       ],
       "Terms": [
         "Podmínky"
+      ],
+      "Terms and conditions": [
+        ""
       ],
       "Upgrade": [
         "Rozšířit"
@@ -7032,6 +7228,9 @@
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
         "Předplaťte si na vyšší plán pro použití na vlastni doméně a odemkněte prémie hodnoty"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -8088,6 +8287,11 @@
         "${ email } aktualizován"
       ]
     },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Probíhá přechod na nižší plán předplatného, počkejte prosím"
@@ -8145,6 +8349,11 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Přidání veřejných, externích nebo sdílených kalendářů pomocí URL adresy."
+      ]
+    },
+    "Subtitle for trial plan": {
+      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ]
     },
     "Success": {
@@ -8723,6 +8932,9 @@
       "Domain names": [
         "Názvy domén"
       ],
+      "Don't show again?": [
+        "Příště nezobrazovat?"
+      ],
       "Downgrade account": [
         "Downgradovat účet"
       ],
@@ -8809,6 +9021,9 @@
       ],
       "Get ProtonVPN Plus to access all servers": [
         "Získejte ProtonVPN Plus pro přístup ke všem serverům"
+      ],
+      "Get up to 18 months of Mail Plus for free": [
+        ""
       ],
       "Gift code": [
         "Dárkový kód"
@@ -8975,6 +9190,9 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
+      "ProtonMail Plus Trial": [
+        ""
+      ],
       "ProtonVPN": [
         "ProtonVPN"
       ],
@@ -8989,6 +9207,12 @@
       ],
       "Recovery file": [
         "Soubor pro obnovení"
+      ],
+      "Refer a friend": [
+        ""
+      ],
+      "Referral tracker": [
+        ""
       ],
       "Remove calendar": [
         "Odstranit kalendář"
@@ -9010,6 +9234,9 @@
       ],
       "Restore administrator privileges": [
         "Obnovit oprávnění správce"
+      ],
+      "Secure email based in Switzerland": [
+        ""
       ],
       "Security": [
         "Zabezpečení"
@@ -9128,6 +9355,9 @@
       "Total (monthly)": [
         "Celkem (měsíčně)"
       ],
+      "Try the best of ProtonMail for free": [
+        ""
+      ],
       "Two-factor authentication": [
         "Dvoufaktorové ověření"
       ],
@@ -9161,17 +9391,26 @@
       "What's new": [
         "Co je nového"
       ],
+      "Your account’s usage": [
+        ""
+      ],
       "Your calendar link": [
         "Odkaz na Váš kalendář"
       ],
       "Your current plan": [
         "Váš aktuální plán"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "Your plan": [
         "Váš plán"
       ],
       "Your recovery status": [
         "Stav obnovy"
+      ],
+      "You’ve been invited to try ${ mailAppName }": [
+        ""
       ],
       "ZIP / postal code": [
         "ZIP / PSČ"
@@ -9298,6 +9537,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Umožňuje nahrávat pokročilé protokoly IP adres v bezpečnostním protokolu pro každou událost."
+      ],
+      "For easy sharing with all your contacts, the link text “Try ${ mailAppName } Plus Free for one month” is added to the bottom of your emails": [
+        ""
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Získejte přístup ke všem placeným funkcím pro ${ vpnAppName } a ${ mailAppName } (šifrovaná e-mailová služba, kterou miliony uživatelů používají k ochraně svých dat) v jednom předplatném."
@@ -9686,6 +9928,9 @@
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Berte prosím na vědomí, že výběrem této platební platby, nemůže Váš účet být navýšen na jiné předplatné okamžitě. Předplatné Vašeho účtu aktualizujeme v momentě, kdy bude proces platební transakce ukončen."
       ],
+      "Please provide at least one recipient": [
+        ""
+      ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Služba Proton sloučí všechny složky se stejnými názvy. Pokud si to nepřejete, změňte názvy před importem."
       ],
@@ -9718,6 +9963,9 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Tento záznam o importu již v seznamu neuvidíte."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Váš soubor pro obnovení je zastaralý. Pokud znovu resetujete svůj účet, nemůže obnovit nová data."

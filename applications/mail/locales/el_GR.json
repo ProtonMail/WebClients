@@ -665,6 +665,9 @@
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "Refine it": [
         ""
       ],
@@ -1329,6 +1332,11 @@
       ],
       "Website access problem": [
         "Πρόβλημα πρόσβασης ιστοσελίδας"
+      ]
+    },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
       ]
     },
     "Calendar attachment tooltip": {
@@ -1997,7 +2005,7 @@
         "Κόστα Ρίκα"
       ],
       "Cote d'Ivoire\"": [
-        "Ακτή Ελεφαντοστού"
+        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Κροατία"
@@ -2480,7 +2488,7 @@
         "Σβάλμπαρντ"
       ],
       "Swaziland": [
-        "Σουαζιλάνδη"
+        "Eswatini"
       ],
       "Sweden": [
         "Σουηδία"
@@ -2986,10 +2994,10 @@
         "Η μεταφόρτωση της εικόνας απέτυχε"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "Λανθασμένος κωδικός πρόσβασης θυρίδας. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Invalid ${ name } code": [
         "Μη έγκυρο ${ name } κωδικός"
@@ -3082,13 +3090,13 @@
         "Η διαδικασία πληρωμής ακυρώθηκε"
       ],
       "Payment process consumed": [
-        "Η διαδικασία πληρωμής έχει εξαντληθεί"
+        "Ήδη πραγματοποιημένη πληρωμή"
       ],
       "Payment process failed": [
-        "Η διαδικασία πληρωμής απέτυχε"
+        "Αποτυχία διαδικασίας πληρωμής"
       ],
       "Payment process not supported": [
-        "Η διαδικασία πληρωμής δεν υποστηρίζεται"
+        "Μη υποστηριζόμενη διαδικασία πληρωμής"
       ],
       "Please activate your content search again": [
         "Παρακαλούμε ενεργοποιήστε ξανά την αναζήτηση περιεχομένου"
@@ -3113,7 +3121,7 @@
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται."
       ],
       "Process aborted": [
-        "Η διαδικασία ακυρώθηκε"
+        "Η διαδικασία ματαιώθηκε"
       ],
       "Public key could not be trusted": [
         "Το δημόσιο κλειδί δεν μπορεί να γίνει έμπιστο"
@@ -4012,11 +4020,20 @@
       "/month.": [
         "/μήνα."
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Εφαρμόζεται 20% έκπτωση για τη συνδρομή σας, με το κουπόνι ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Εγγύηση Επιστροφής Χρημάτων εντός 30 ημερών."
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "Ένα δωρεάν και χωρίς λογοκρισία Internet θα πρέπει να είναι διαθέσιμο σε όλους."
@@ -4219,6 +4236,12 @@
       "Create in": [
         "Δημιουργία εντός"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
       ],
@@ -4383,6 +4406,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Ελευθερώστε χώρο ή επικοινωνήστε με το διαχειριστή σας."
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "From": [
         "Από"
@@ -4609,6 +4635,9 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες που δεν ανήκουν στο ProtonMail."
       ],
+      "Other options": [
+        ""
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Το σύστημά μας επισήμανε αυτό το μήνυμα ως απόπειρα ηλεκτρονικού ψαρέματος. Ελέγξτε ότι είναι νόμιμο."
       ],
@@ -4769,6 +4798,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Η αποστολή μηνυμάτων από τη διεύθυνση @ pm.me είναι μια λειτουργία για λογαριασμούς επι πληρωμή. Το μήνυμά σας θα σταλεί από την προεπιλεγμένη διεύθυνση ${ email }"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Στάλθηκε με διασφαλισμένο ταχυδρομείο <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -4802,6 +4834,9 @@
       "Storage GB": [
         "GB αποθηκευτικού χώρου"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Store and share files securely with Proton Drive.": [
         "Αποθηκεύστε και μοιραστείτε αρχεία με ασφάλεια με το Proton Drive."
       ],
@@ -4816,6 +4851,9 @@
       ],
       "Subject: ": [
         "Θέμα: "
+      ],
+      "Support for 1 custom email domain": [
+        ""
       ],
       "Support privacy by upgrading for": [
         "Υποστηρίξτε την ιδιωτικότητα, μέσω αναβάθμισης σε"
@@ -4986,6 +5024,9 @@
       "Turn on to search the content of your messages": [
         "Ενεργοποιήστε για αναζήτηση στο περιεχόμενο των μηνυμάτων σας"
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
       ],
@@ -5022,6 +5063,9 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "Αναβαθμίστε για να χρησιμοποιήσετε το ProtonMail με πελάτες τρίτου επιτραπέζιου υπολογιστή."
       ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
       "Upload picture": [
         "Μεταφόρτωση Εικόνας"
       ],
@@ -5036,6 +5080,9 @@
       ],
       "Use Proton Calendar to keep your agenda private.": [
         "Χρησιμοποιήστε το Proton Ημερολόγιο για να διατηρήσετε την ατζέντα σας ιδιωτική."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "Χρήστες"
@@ -6091,6 +6138,9 @@
       "Manage your labels": [
         "Διαχείρηση των ετικετών σας"
       ],
+      "More about recovery": [
+        "Περισσότερα περί ανάκτησης"
+      ],
       "Open in ${ calendarAppName }": [
         "Άνοιγμα σε ${ calendarAppName }"
       ],
@@ -6334,6 +6384,9 @@
       ],
       "Re:": [
         "Απ:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -7138,6 +7191,9 @@
     "Spotlight": {
       "Discover all Proton services": [
         "Ανακαλύψτε όλες τις υπηρεσίες Proton"
+      ],
+      "Invite friends and earn rewards!": [
+        ""
       ],
       "Message Content Search": [
         "Αναζήτηση εντός Περιεχομένου Μηνυμάτων"
@@ -8046,6 +8102,9 @@
       "What's new": [
         "Τι νέο υπάρχει"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "Τ.Κ / Ταχυδρομικός κώδικας"
       ]
@@ -8360,6 +8419,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Θα χάσετε οποιαδήποτε προσαρμογές που κάνατε μέχρι στιγμής."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

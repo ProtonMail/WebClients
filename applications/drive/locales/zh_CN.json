@@ -368,6 +368,9 @@
       "Recover data": [
         "恢复数据"
       ],
+      "Refer a friend": [
+        ""
+      ],
       "refresh the page": [
         "刷新页面"
       ],
@@ -820,6 +823,11 @@
         "网站访问问题"
       ]
     },
+    "Button": {
+      "Continue using ProtonMail.": [
+        ""
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "日历导入"
@@ -1117,7 +1125,7 @@
         ""
       ],
       "China": [
-        ""
+        "中国"
       ],
       "Christmas Island": [
         ""
@@ -2444,11 +2452,20 @@
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 台设备可接入 ProtonVPN"
       ],
+      "20 personal calendars": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "优惠券 ${ code } 已提供 20% 优惠"
       ],
       "30 days money-back guarantee.": [
         "30 天内可退款。"
+      ],
+      "5 email addresses/aliases": [
+        ""
+      ],
+      "5 GB storage": [
+        ""
       ],
       "A free and uncensored Internet should be available to all.": [
         "每个人都应当享有自由的互联网，免受网络审查。"
@@ -2588,6 +2605,12 @@
       "Create links and share your files with others.": [
         "创建链接然后与他人共享您的文件。"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
+        ""
+      ],
+      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
       "Create your first folder and start moving your files.": [
         "创建您的第一个文件夹并开始移动文件。"
       ],
@@ -2680,6 +2703,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "释放一些空间或与您的管理员联系。"
+      ],
+      "Free VPN on a single device": [
+        ""
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "速度高达 10 Gbps 的全功能 VPN。"
@@ -2843,6 +2869,9 @@
       "Only the people with the link and the password can access this folder.": [
         "只有同时知道链接和密码的人才能访问此文件夹。"
       ],
+      "Other options": [
+        ""
+      ],
       "Paused": [
         "已暂停"
       ],
@@ -2966,6 +2995,12 @@
       "Storage GB": [
         "存储空间 GB"
       ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
+      ],
       "support team": [
         "客服团队"
       ],
@@ -3047,11 +3082,17 @@
       "Trash": [
         "回收站"
       ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
       "Unlock drive to recover files": [
         "解锁网盘以恢复文件"
       ],
       "Unsupported file": [
         "不支持文件"
+      ],
+      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ],
       "Uploaded": [
         "已上传"
@@ -3061,6 +3102,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "一次上传数百个文件可能会影响性能。"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Users": [
         "用户"
@@ -3370,7 +3414,7 @@
         "删除网盘?"
       ],
       "Deleted": [
-        ""
+        "已删除"
       ],
       "Display name": [
         "对外名称"
@@ -3819,6 +3863,11 @@
         "这将永久删除与您的组织相关的所有子用户、账户和数据。"
       ]
     },
+    "Message": {
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        ""
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } 有新版本，请${ reloadButton }。"
@@ -3949,7 +3998,7 @@
         "文件或文件夹缺少名称"
       ],
       "Link failed to be loaded": [
-        ""
+        "链接加载失败"
       ],
       "Move ${ itemsToMoveCount } file": [
         "移动 ${ itemsToMoveCount } 个文件"
@@ -3976,10 +4025,10 @@
         "没有足够的空间来上传这 ${ formattedTotal }"
       ],
       "Root folder failed to be loaded": [
-        ""
+        "加载根目录失败"
       ],
       "Subfolder failed to be loaded": [
-        ""
+        "加载子文件夹失败"
       ],
       "The link to your file failed to be deleted": [
         "无法删除文件链接"
@@ -3988,7 +4037,7 @@
         "文件链接已删除"
       ],
       "Trash failed to be emptied": [
-        ""
+        "未能清空回收站"
       ],
       "Your old files will be deleted in 72 hours": [
         "您的旧文件将在 72 小时内删除"
@@ -4338,6 +4387,11 @@
     "Select files": {
       "Upload": [
         "上传"
+      ]
+    },
+    "Spotlight": {
+      "Invite friends and earn rewards!": [
+        ""
       ]
     },
     "Storage": {
@@ -4966,6 +5020,9 @@
       "Your folder is ready to be downloaded": [
         "您的文件夹已准备就绪"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        ""
+      ],
       "ZIP / postal code": [
         "邮政编码"
       ]
@@ -5265,6 +5322,9 @@
       ],
       "You will lose any customization you made so far.": [
         "当前的导入设置将无法恢复。"
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        ""
       ]
     }
   }
