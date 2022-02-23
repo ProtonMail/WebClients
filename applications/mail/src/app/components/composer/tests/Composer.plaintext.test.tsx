@@ -100,7 +100,7 @@ describe('Composer switch plaintext <-> html', () => {
 
         const textarea = (await findByTestId('editor-textarea')) as HTMLTextAreaElement;
 
-        expect(textarea.value).toBe('content line 1\n\ncontent line 2');
+        expect(textarea.value).toBe('content line 1\ncontent line 2');
 
         // Wait for auto save
         await waitForSpyCall(saveSpy);
