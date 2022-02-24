@@ -12,9 +12,6 @@ interface Props {
 const SearchField = ({ onSubmit, onChange, value, showEncryptedSearch }: Props) => (
     <div className={classnames([showEncryptedSearch ? 'mb0-5' : 'mb1-5', 'relative'])}>
         <Label className="advanced-search-label p0" htmlFor="search-keyword" title={c('Label').t`Keyword`}>
-            <Button className="searchbox-search-button" onClick={onSubmit} shape="ghost" color="weak" icon>
-                <Icon name="magnifying-glass" />
-            </Button>
             <InputTwo
                 id="search-keyword"
                 className="pl3"
@@ -23,6 +20,9 @@ const SearchField = ({ onSubmit, onChange, value, showEncryptedSearch }: Props) 
                 autoFocus
                 onChange={onChange}
             />
+            <Button className="searchbox-search-button" onClick={onSubmit} shape="ghost" color="weak" icon>
+                <Icon name="magnifying-glass" />
+            </Button>
         </Label>
     </div>
 );
