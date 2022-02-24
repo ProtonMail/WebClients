@@ -37,9 +37,11 @@ const EOReplyFooter = ({ id, onAddAttachments, message, publicKeys, outsideKey, 
     const handleSend = async () => {
         setIsSending(true);
 
-        await send();
-
-        setIsSending(false);
+        try {
+            await send();
+        } catch {
+            setIsSending(false);
+        }
     };
 
     const handleCancel = () => {

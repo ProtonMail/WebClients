@@ -1,3 +1,4 @@
+import { isJSDom } from '@proton/shared/lib/helpers/browser';
 import { RefObject } from 'react';
 import { IEditor, Direction } from 'roosterjs-editor-types';
 import { EditorActions } from '../../interface';
@@ -24,7 +25,10 @@ const getRoosterEditorActions = (
             editorInstance.setContent(value);
         },
         focus() {
-            iframeRef.current?.contentWindow?.focus();
+            // Didn't find more elegant
+            if (!isJSDom()) {
+                iframeRef.current?.contentWindow?.focus();
+            }
             editorInstance.focus();
         },
         insertImage(url: string, attrs: { [key: string]: string } = {}) {

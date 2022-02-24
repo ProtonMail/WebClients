@@ -218,13 +218,24 @@ describe('EmailReminderWidget', () => {
             });
 
             it('displays an error instead of the widget when the calendar needs a passphrase update', async () => {
+                const calendar = calendarBuilder({ traits: 'updatePassphrase' });
+
                 server.use(
                     rest.get(`/calendar/v1`, (req, res, ctx) => {
                         return res.once(
                             ctx.json({
-                                Calendars: [calendarBuilder({ traits: 'updatePassphrase' })],
+                                Calendars: [calendar],
                             })
                         );
+                    }),
+                    rest.get(`/calendar/v1/${calendar.ID}/keys/all`, (req, res, ctx) => {
+                        return res.once(ctx.json({}));
+                    }),
+                    rest.get(`/calendar/v1/${calendar.ID}/passphrases`, (req, res, ctx) => {
+                        return res.once(ctx.json({}));
+                    }),
+                    rest.get(`/calendar/v1/${calendar.ID}/members`, (req, res, ctx) => {
+                        return res.once(ctx.json({}));
                     })
                 );
 
