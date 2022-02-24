@@ -1,33 +1,35 @@
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
+import formatUTC from '@proton/shared/lib/date-fns-utc/format';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 interface Props {
     days: Date[];
     now: Date;
     date: Date;
     onClickDate?: (value: Date) => void;
-    weekdaysLong: string[];
+    weekdays: string[];
 }
-const DayButtons = ({ days, now, date, onClickDate, weekdaysLong }: Props) => {
+const DayButtons = ({ days, now, date, onClickDate, weekdays }: Props) => {
     const result = days.map((day) => {
         return (
             <button
-                className="flex-item-fluid text-center calendar-grid-heading p0-5"
+                className="flex-item-fluid flex-justify-center calendar-grid-heading flex flex-align-items-center p0-5 text-lg"
                 type="button"
                 key={day.getUTCDate()}
                 aria-current={isSameDay(day, now) ? 'date' : undefined}
                 aria-pressed={isSameDay(day, date) ? true : undefined}
                 onClick={() => onClickDate?.(day)}
+                title={formatUTC(day, 'PPPP', { locale: dateLocale })}
             >
-                <span className="calendar-grid-heading-day text-ellipsis block mt0 mb0 text-md">
-                    <span className="calendar-grid-heading-day-fullname">{weekdaysLong[day.getUTCDay()]}</span>
+                <span className="calendar-grid-heading-day color-weak">
+                    <span className="calendar-grid-heading-day-fullname">{weekdays[day.getUTCDay()]}</span>
 
                     <span className="calendar-grid-heading-day-shortname no-desktop no-tablet" aria-hidden="true">
-                        {weekdaysLong[day.getUTCDay()][0]}
+                        {weekdays[day.getUTCDay()][0]}
                     </span>
                 </span>
-
-                <span className="calendar-grid-heading-number">
-                    <span className="mauto">{day.getUTCDate()}</span>
+                <span className="calendar-grid-heading-number inline-flex flex-justify-center flex-align-items-center color-norm">
+                    {day.getUTCDate()}
                 </span>
             </button>
         );
