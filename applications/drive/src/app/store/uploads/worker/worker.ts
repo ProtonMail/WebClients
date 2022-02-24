@@ -54,7 +54,12 @@ async function start(
         const signature = await signMessage(fileHash, [addressPrivateKey]);
         uploadWorker.postDone(buffer.blockTokens, signature, addressEmail);
     };
-    startUploadJobs(pauser, uploadingBlocksGenerator, (progress: number) => uploadWorker.postProgress(progress))
+    startUploadJobs(
+        pauser,
+        uploadingBlocksGenerator,
+        (progress: number) => uploadWorker.postProgress(progress),
+        (error: string) => uploadWorker.postNetworkError(error)
+    )
         .then(finish)
         .catch((err) => uploadWorker.postError(getErrorString(err)));
 }

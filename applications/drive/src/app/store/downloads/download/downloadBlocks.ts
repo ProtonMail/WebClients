@@ -2,7 +2,7 @@ import { ReadableStream } from 'web-streams-polyfill';
 
 import { orderBy, areUint8Arrays } from '@proton/shared/lib/helpers/array';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { getIsUnreachableError, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 import { MAX_THREADS_PER_DOWNLOAD, STATUS_CODE, BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
@@ -258,10 +258,7 @@ export default function initDownloadBlocks(
                     // Sometimes the error can be thrown from untilStreamEnd,
                     // where its simple network error during reading the stream.
                     // Would be nice if this could be avoided after refactor.
-                    if (
-                        onNetworkError &&
-                        (getIsUnreachableError(e) || getIsOfflineError(e) || e.message === 'network error')
-                    ) {
+                    if (onNetworkError && getIsConnectionIssue(e)) {
                         revertProgress();
 
                         // onNetworkError sets the state of the transfer and
