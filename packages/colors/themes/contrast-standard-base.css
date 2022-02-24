@@ -1,19 +1,14 @@
 :root,
 .ui-standard {
   --primary: #3956cc;
-  --primary-contrast: white;
 
   --signal-danger: #d42f34;
-  --signal-danger-contrast: white;
 
   --signal-warning: #f5830a;
-  --signal-warning-contrast: black;
 
   --signal-success: #1b8561;
-  --signal-success-contrast: white;
 
   --signal-info: #1578cf;
-  --signal-info-contrast: white;
 
   --text-norm: #08080d;
   --text-weak: #4b4f65;
