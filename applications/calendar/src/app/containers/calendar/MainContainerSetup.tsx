@@ -2,6 +2,7 @@ import { getDefaultTzid } from '@proton/shared/lib/calendar/getSettings';
 import { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import {
+    ReferralModalContainer,
     useActiveBreakpoint,
     useCalendarsKeysSettingsListener,
     useCalendarUserSettings,
@@ -33,6 +34,7 @@ interface Props {
     addresses: Address[];
     user: UserModel;
 }
+
 const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [userSettings] = useUserSettings();
@@ -69,6 +71,7 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
 
     return (
         <>
+            <ReferralModalContainer />
             <Switch>
                 <Route path="/event">
                     <EventActionContainer

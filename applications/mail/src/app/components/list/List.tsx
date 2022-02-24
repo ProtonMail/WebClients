@@ -11,8 +11,9 @@ import {
     useModalState,
     useSettingsLink,
     useUser,
+    getCanReactiveMnemonic,
 } from '@proton/components';
-import { GetStartedChecklistKey, MailSettings, MNEMONIC_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
+import { GetStartedChecklistKey, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { DENSITY } from '@proton/shared/lib/constants';
 
 import Item from './Item';
@@ -121,10 +122,7 @@ const List = (
     const { page, total } = pagingHandlers;
 
     const [isMnemonicAvailable] = useIsMnemonicAvailable();
-    const canReactivateMnemonic =
-        user.MnemonicStatus === MNEMONIC_STATUS.PROMPT ||
-        user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
-        user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED;
+    const canReactivateMnemonic = getCanReactiveMnemonic(user);
     const displayMnemonicPrompt = isMnemonicAvailable && canReactivateMnemonic;
 
     // ES options: offer users the option to turn off ES if it's taking too long, and
