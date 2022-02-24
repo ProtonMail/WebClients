@@ -5,6 +5,7 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 
 import {
     addApiKeys,
+    addApiMock,
     addKeysToAddressKeysCache,
     clearAll,
     GeneratedKey,
@@ -12,9 +13,10 @@ import {
     getModal,
     render,
 } from '../../../helpers/test/helper';
-import { ID, prepareMessage, props, saveNow } from './Composer.test.helpers';
+import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import Composer from '../Composer';
+import { messageID } from '../../message/tests/Message.test.helpers';
 
 loudRejection();
 
@@ -75,12 +77,13 @@ describe('Composer verify sender', () => {
         addToCache('Addresses', addresses);
         addToCache('User', user);
 
-        addApiKeys(false, address1, []);
+        addApiKeys(false, toAddress, []);
+        addApiKeys(false, sender.Address, []);
 
         prepareMessage({
             localID: ID,
             data: {
-                ID: 'messageID',
+                ID: messageID,
                 MIMEType: MIME_TYPES.PLAINTEXT,
                 Sender: sender,
                 Flags: 12,
@@ -101,6 +104,8 @@ describe('Composer verify sender', () => {
     });
 
     it('should display a modal and switch to default address when address is disabled', async () => {
+        addApiMock(`mail/v4/messages/${messageID}`, () => ({}));
+
         const sender = { Name: name2, Address: address2 } as Recipient;
         setup(sender);
 
@@ -118,6 +123,8 @@ describe('Composer verify sender', () => {
     });
 
     it("should display a modal and switch to default address when address does not exist in user's addresses", async () => {
+        addApiMock(`mail/v4/messages/${messageID}`, () => ({}));
+
         const sender = { Name: 'Address 3', Address: 'address3@protonmail.com' } as Recipient;
         setup(sender);
 
