@@ -92,9 +92,10 @@ describe('MailHeader', () => {
 
             const dropdown = await getDropdown();
 
-            getByText(dropdown, 'Mail');
-            getByText(dropdown, 'Calendar');
-            getByText(dropdown, 'VPN');
+            getByText(dropdown, 'Proton Mail');
+            getByText(dropdown, 'Proton Calendar');
+            getByText(dropdown, 'Proton Drive');
+            getByText(dropdown, 'Proton VPN');
         });
 
         it('should open contacts widget', async () => {
