@@ -3594,11 +3594,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/colors@workspace:packages/colors"
   dependencies:
+    "@proton/eslint-config-proton": "workspace:^"
     "@proton/shared": "workspace:^"
     "@types/css-tree": ^1.0.7
     "@types/jest": ^27.4.1
+    "@types/node": ^16.11.27
     "@types/tinycolor2": ^1.4.3
     css-tree: ^2.0.4
+    eslint: ^8.13.0
     jest: ^27.5.1
     prettier: ^2.6.2
     tinycolor2: ^1.4.2
@@ -3717,7 +3720,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/eslint-config-proton@workspace:packages/eslint-config-proton":
+"@proton/eslint-config-proton@workspace:^, @proton/eslint-config-proton@workspace:packages/eslint-config-proton":
   version: 0.0.0-use.local
   resolution: "@proton/eslint-config-proton@workspace:packages/eslint-config-proton"
   dependencies:
