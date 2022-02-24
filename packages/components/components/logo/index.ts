@@ -1,5 +1,5 @@
-export { default as CalendarLog } from './CalendarLogo';
-export { default as DriveLog } from './DriveLogo';
+export { default as CalendarLogo } from './CalendarLogo';
+export { default as DriveLogo } from './DriveLogo';
 export { default as MailLogo } from './MailLogo';
 export { default as MainLogo } from './MainLogo';
 export { default as Logo } from './Logo';
