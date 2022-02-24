@@ -1,32 +1,75 @@
 .calendar-grid {
 	&-heading {
 		color: var(--text-norm);
+		font-weight: 600;
 
-		&-number {
-			display: inline-flex;
-			border-radius: var(--border-radius-md);
+		@include respond-to($breakpoint-small, 'min') {
+			flex-wrap: nowrap;
+		}
+
+		&-day {
+			@include respond-to($breakpoint-small, 'max') {
+				width: 100%;
+			}
 
 			@include respond-to($breakpoint-small, 'min') {
-				padding-inline: 0.5em;
-				padding-block: 0.25em;
-				font-size: rem(20);
-				line-height: 1;
-			}
-
-			@include respond-to($breakpoint-small) {
-				inline-size: 1.75em;
-				block-size: 1.75em;
+				margin-inline-end: rem(2);
 			}
 		}
 
-		&:hover &-number {
+		&-number {
+			border-radius: var(--border-radius-md);
+			border: 1px solid transparent;
+			line-height: 1;
+			inline-size: 1.75em;
+			block-size: 1.75em;
+			transition: 0.15s easing(easeOutQuint);
+
+			@include respond-to($breakpoint-small, 'min') {
+				block-size: rem(28);
+				inline-size: rem(28);
+			}
+		}
+
+		&:hover &-number,
+		&:focus &-number {
 			background-color: var(--interaction-default-hover);
-			color: var(--text-norm);
 		}
 
-		&[aria-current='date'] {
-			@media not print {
-				color: var(--primary);
+		&:active &-number {
+			background-color: var(--interaction-default-active);
+		}
+
+		@media not print {
+			&[aria-current='date'] {
+				.calendar-grid-heading-day {
+					@include respond-to($breakpoint-small, 'min') {
+						margin-inline-end: rem(6);
+					}
+				}
+
+				.calendar-grid-heading-number {
+					border-color: var(--primary);
+					color: var(--primary);
+					background-color: var(--interaction-default);
+				}
+
+				&:hover,
+				&:focus {
+					.calendar-grid-heading-number {
+						color: var(--interaction-norm-hover);
+						border-color: var(--interaction-norm-hover);
+						background-color: var(--interaction-default-hover);
+					}
+				}
+
+				&:active {
+					.calendar-grid-heading-number {
+						color: var(--interaction-norm-active);
+						border-color: var(--interaction-norm-active);
+						background-color: var(--interaction-default-active);
+					}
+				}
 			}
 		}
 
@@ -35,13 +78,8 @@
 				@media not print {
 					background-color: var(--primary);
 					color: var(--primary-contrast);
-					font-weight: bold;
 				}
 			}
-		}
-
-		&-day-fullname {
-			font-weight: 600;
 		}
 	}
 

@@ -318,21 +318,21 @@ describe('MainContainer', () => {
             expect(intervalButton.textContent).toBe('Week');
             expect(endsButton.textContent).toBe('Never');
 
-            expect(screen.getByTitle(/Monday/)).toBeInTheDocument();
-            expect(screen.getByTitle(/Tuesday/)).toBeInTheDocument();
-            expect(screen.getByTitle(/Wednesday/)).toBeInTheDocument();
-            expect(screen.getByTitle(/Thursday/)).toBeInTheDocument();
-            expect(screen.getByTitle(/Friday/)).toBeInTheDocument();
-            expect(screen.getByTitle(/Saturday/)).toBeInTheDocument();
+            expect(screen.getByTitle(/Monday$/)).toBeInTheDocument();
+            expect(screen.getByTitle(/Tuesday$/)).toBeInTheDocument();
+            expect(screen.getByTitle(/Wednesday$/)).toBeInTheDocument();
+            expect(screen.getByTitle(/Thursday$/)).toBeInTheDocument();
+            expect(screen.getByTitle(/Friday$/)).toBeInTheDocument();
+            expect(screen.getByTitle(/Saturday$/)).toBeInTheDocument();
 
             fireEvent.click(intervalButton);
             fireEvent.click(screen.getByTitle(/Day/));
-            expect(screen.queryByTitle(/Monday/)).not.toBeInTheDocument();
-            expect(screen.queryByTitle(/Tuesday/)).not.toBeInTheDocument();
-            expect(screen.queryByTitle(/Wednesday/)).not.toBeInTheDocument();
-            expect(screen.queryByTitle(/Thursday/)).not.toBeInTheDocument();
-            expect(screen.queryByTitle(/Friday/)).not.toBeInTheDocument();
-            expect(screen.queryByTitle(/Saturday/)).not.toBeInTheDocument();
+            expect(screen.queryByTitle(/Monday$/)).not.toBeInTheDocument();
+            expect(screen.queryByTitle(/Tuesday$/)).not.toBeInTheDocument();
+            expect(screen.queryByTitle(/Wednesday$/)).not.toBeInTheDocument();
+            expect(screen.queryByTitle(/Thursday$/)).not.toBeInTheDocument();
+            expect(screen.queryByTitle(/Friday$/)).not.toBeInTheDocument();
+            expect(screen.queryByTitle(/Saturday$/)).not.toBeInTheDocument();
 
             fireEvent.click(intervalButton);
             fireEvent.click(screen.getByTitle(/Year/));
