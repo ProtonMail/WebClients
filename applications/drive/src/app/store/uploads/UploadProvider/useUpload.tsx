@@ -192,6 +192,9 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
                     onProgress: (increment: number) => {
                         control.updateProgress(nextFileUpload.id, increment);
                     },
+                    onNetworkError: (error: any) => {
+                        queue.updateWithData(nextFileUpload.id, TransferState.NetworkError, { error });
+                    },
                     onFinalize: () => {
                         queue.updateState(nextFileUpload.id, TransferState.Finalizing);
                     },
