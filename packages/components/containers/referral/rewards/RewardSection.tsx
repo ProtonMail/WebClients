@@ -2,8 +2,6 @@ import { c } from 'ttag';
 
 import { classnames, Loader, SettingsSectionWide } from '@proton/components';
 
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
 import RewardsProgress from './RewardsProgress';
 import RewardsTable from './table/RewardsTable';
@@ -16,8 +14,6 @@ const RewardSection = () => {
         fetchedReferralStatus: { rewards, rewardsLimit, loading: loadingRewards },
     } = useReferralInvitesContext();
 
-    const mailAppName = getAppName(APPS.PROTONMAIL);
-
     const dedupReferrals = getDeduplicatedReferrals(referrals, invitedReferrals);
 
     const showRewardSection = rewards > 0 || total > 0;
@@ -25,7 +21,7 @@ const RewardSection = () => {
     return (
         <SettingsSectionWide>
             <p className="color-weak">{c('Description')
-                .t`Track how many people click on your link, sign up to ${mailAppName}, and become paid subscribers. Watch your free months add up.`}</p>
+                .t`Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.`}</p>
 
             {loadingRewards ? (
                 <Loader />
@@ -34,7 +30,7 @@ const RewardSection = () => {
                     {showRewardSection ? (
                         <RewardsProgress rewardsLimit={rewardsLimit} rewards={rewards} />
                     ) : (
-                        <p className="color-weak">{c('Description').t`Invite friends to start earning credits`}</p>
+                        <p className="color-weak">{c('Description').t`Track your referral link activities here.`}</p>
                     )}
                 </div>
             )}

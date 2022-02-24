@@ -9,5 +9,5 @@ import { Referral } from '@proton/shared/lib/interfaces';
  * @returns array of deduplicated referrals
  */
 export const getDeduplicatedReferrals = (apiReferrals: Referral[], optimisticReferrals: Referral[]) => {
-    return uniqueBy<Referral>([...apiReferrals, ...optimisticReferrals], ({ ReferralID }) => ReferralID).reverse();
+    return uniqueBy<Referral>([...optimisticReferrals, ...apiReferrals], ({ ReferralID }) => ReferralID);
 };
