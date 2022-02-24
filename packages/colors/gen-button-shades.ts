@@ -10,7 +10,7 @@ function genMutation(color: Color) {
     return function (mutation: number) {
         const clone = color.clone();
 
-        return (mutation > 0 ? tint(clone, mutation) : shade(clone, Math.abs(mutation)));
+        return mutation > 0 ? tint(clone, mutation) : shade(clone, Math.abs(mutation));
     };
 }
 
@@ -19,25 +19,25 @@ function genButtonShades(base: Color, light: boolean) {
 
     if (hsl.s <= 0.3) {
         if (light) {
-            return [70, 50, 0, -5, -10, -15].map(genMutation(base))
+            return [70, 50, 0, -5, -10, -15].map(genMutation(base));
         } else {
-            return [-70, -50, 0, 10, 20, 30].map(genMutation(base))
+            return [-70, -50, 0, 10, 20, 30].map(genMutation(base));
         }
     }
 
     if (isBetween(hsl.h, 30, 60)) {
         if (light) {
             const tinted = [90, 80, 0].map(genMutation(base));
-    
+
             const shaded = [-5, -10, -15].map(genMutation(base)).map(hue(-5));
-    
-            return [ ...tinted, ...shaded ];
+
+            return [...tinted, ...shaded];
         } else {
             const shaded = [-80, -70, 0].map(genMutation(base)).map(hue(-5));
-            
+
             const tinted = [10, 20, 30].map(genMutation(base));
-    
-            return [ ...shaded, ...tinted ];
+
+            return [...shaded, ...tinted];
         }
     }
 
