@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { format, fromUnixTime, subDays } from 'date-fns';
 import { c } from 'ttag';
-import { PLANS } from '@proton/shared/lib/constants';
+import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import emptyMailboxSvg from '@proton/styles/assets/img/placeholders/empty-mailbox.svg';
@@ -15,10 +15,13 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
 } from '@proton/components';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import useSubscriptionModal from '../../payments/subscription/useSubscriptionModal';
 import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 
 const ReferralModal = () => {
+    const appName = getAppName(APPS.PROTONMAIL);
+    const planName = PLAN_NAMES[PLANS.PLUS];
     const [showModal, setShowModal] = useState(false);
     const [formattedEndDate, setFormattedEndDate] = useState('');
     const [subscription, loadingSubscription] = useSubscription();
@@ -49,8 +52,10 @@ const ReferralModal = () => {
                     <Loader />
                 ) : (
                     <>
-                        <p>{c('Info')
-                            .t`Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.`}</p>
+                        <p>{
+                            // translator: complete sentence would be "Upgrade today to avoid losing the following Mail Plus benefits"
+                            c('Info').t`Upgrade today to avoid losing the following ${appName} ${planName} benefits.`
+                        }</p>
                         <div className="flex flex-justify-center">
                             <img src={emptyMailboxSvg} alt="Mailbox image" />
                         </div>

@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { useCallback, useEffect, useState } from 'react';
+import { Fragment, useCallback, useEffect, useState } from 'react';
 import { Toggle, useMailSettings, useApi, Info, useIsMounted, useLoading, useUserSettings } from '@proton/components';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { updatePMSignatureReferralLink } from '@proton/shared/lib/api/mailSettings';
@@ -30,8 +30,8 @@ const ReferralSignatureToggle = () => {
         return null;
     }
 
-    const Signature = () => (
-        <>
+    const signature = (
+        <Fragment key={'signature'}>
             <br />
             <br />
             <div
@@ -43,7 +43,7 @@ const ReferralSignatureToggle = () => {
                 }}
             />
             <br />
-        </>
+        </Fragment>
     );
 
     return (
@@ -68,7 +68,7 @@ const ReferralSignatureToggle = () => {
                      * the word "protonmail" is the "link" we are talking about.
                      */
                     c('Tooltip')
-                        .jt`Sets the following footer in the emails you send: ${Signature()} The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.`
+                        .jt`Sets the following footer in the emails you send: ${signature} The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.`
                 }
             />
         </div>
