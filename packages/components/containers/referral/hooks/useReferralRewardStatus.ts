@@ -7,8 +7,8 @@ import { useApi } from '../../../hooks';
 type Action = { type: 'success'; payload: ReferralStatus } | { type: 'error' };
 
 export interface UseReferralStatusReducerState {
-    rewards: ReferralStatus['Rewards'];
-    rewardsLimit: ReferralStatus['RewardsLimit'];
+    rewards: ReferralStatus['RewardMonths'];
+    rewardsLimit: ReferralStatus['RewardMonthsLimit'];
     emailsAvailable: ReferralStatus['EmailsAvailable'];
     loading: boolean;
 }
@@ -25,8 +25,8 @@ const useReferralRewardStatus = () => {
 
             return {
                 loading: false,
-                rewards: payload.Rewards || 0,
-                rewardsLimit: payload.RewardsLimit || 0,
+                rewards: payload.RewardMonths || 0,
+                rewardsLimit: payload.RewardMonthsLimit || 0,
                 emailsAvailable: payload.EmailsAvailable || 0,
             };
         },

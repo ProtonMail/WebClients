@@ -46,9 +46,9 @@ export interface Referral {
 
 export interface ReferralStatus {
     /** Number of free monthes of mail plus */
-    Rewards: number;
+    RewardMonths: number;
     /** Max number of free monthes user can have */
-    RewardsLimit: number;
+    RewardMonthsLimit: number;
     /** Number of emails user can send */
     EmailsAvailable: number;
 }
