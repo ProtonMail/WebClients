@@ -51,6 +51,7 @@ describe('MessageView encryption', () => {
     describe('Decrypt and render', () => {
         it('html', async () => {
             addKeysToAddressKeysCache(addressID, toKeys);
+            addApiKeys(false, fromAddress, []);
 
             const encryptedBody = await encryptMessage(body, fromKeys, toKeys);
 
@@ -76,6 +77,7 @@ describe('MessageView encryption', () => {
 
         it('plaintext', async () => {
             addKeysToAddressKeysCache(addressID, toKeys);
+            addApiKeys(false, fromAddress, []);
 
             const encryptedBody = await encryptMessage(body, fromKeys, toKeys);
 
@@ -110,6 +112,7 @@ describe('MessageView encryption', () => {
             } as Message;
 
             addKeysToAddressKeysCache(addressID, toKeys);
+            addApiKeys(false, fromAddress, []);
 
             const mimeBody = await constructMime(
                 { localID, data: message, messageDocument: { document: parseInDiv(body) } },
@@ -144,6 +147,7 @@ describe('MessageView encryption', () => {
             } as Message;
 
             addKeysToAddressKeysCache(addressID, toKeys);
+            addApiKeys(false, fromAddress, []);
 
             const mimeBody = await constructMime(
                 { localID, data: { ...message, MIMEType: MIME_TYPES.PLAINTEXT }, messageDocument: { plainText: body } },
