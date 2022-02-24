@@ -6,6 +6,7 @@ import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys';
 import { isSSOMode } from '@proton/shared/lib/constants';
 import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -13,7 +14,22 @@ import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { handleUnlock, handleChangeLoginPassword } from './changePasswordHelper';
-import { Alert, PasswordInput, TwoFactorInput, Row, Label, Field, FormModal, Loader } from '../../components';
+import {
+    Alert,
+    Button,
+    PasswordInput,
+    TwoFactorInput,
+    Row,
+    Label,
+    Field,
+    Form,
+    Loader,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+} from '../../components';
 
 import { GenericError } from '../error';
 import {
@@ -38,11 +54,6 @@ export enum MODES {
     SWITCH_TWO_PASSWORD = 5,
 }
 
-interface Props {
-    onClose?: () => void;
-    mode: MODES;
-}
-
 interface Inputs {
     oldPassword: string;
     newPassword: string;
@@ -56,12 +67,29 @@ interface Errors {
     persistError?: boolean;
 }
 
-const DEFAULT_ERRORS = {
+const DEFAULT_ERRORS: Errors = {
     loginError: '',
     fatalError: false,
 };
 
-const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
+interface ModalProperties {
+    title: string;
+    extraAlert?: JSX.Element | null;
+    labels: {
+        oldPassword?: string;
+        newPassword: string;
+        confirmPassword: string;
+    };
+    close?: string;
+    submit?: string;
+    onSubmit?: () => Promise<void>;
+}
+
+interface Props extends ModalProps {
+    mode: MODES;
+}
+
+const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
     const api = useApi();
     const { call, stop, start } = useEventManager();
     const authentication = useAuthentication();
@@ -156,7 +184,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         }
     };
 
-    const getModalProperties = (mode: MODES) => {
+    const getModalProperties = (mode: MODES): ModalProperties => {
         if ([MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE, MODES.CHANGE_ONE_PASSWORD_MODE].includes(mode)) {
             if (isSubUser) {
                 return {
@@ -203,8 +231,11 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const {
         labels,
         extraAlert = null,
-        ...modalProps
-    } = (() => {
+        title,
+        close = undefined,
+        submit = undefined,
+        onSubmit,
+    } = ((): ModalProperties => {
         if (mode === MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE) {
             return {
                 ...getModalProperties(mode),
@@ -351,10 +382,11 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                  * It's not handled better because it's a rare case.
                  */
                 if (userKeysList.length === 0) {
-                    return createNotification({
+                    createNotification({
                         type: 'error',
                         text: c('Error').t`Please generate keys before you try to change your password`,
                     });
+                    return;
                 }
                 setIsSubmitted(true);
                 validateNewPasswords();
@@ -550,32 +582,38 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
             }
             onClose?.();
         };
+
         return (
-            <FormModal
-                close={c('Action').t`Close`}
-                submit={c('Action').t`Ok`}
-                onClose={handleFatalErrorClose}
-                {...modalProps}
-                onSubmit={handleFatalErrorClose}
-                {...rest}
-            >
-                <GenericError />
-            </FormModal>
+            <Modal {...rest} onClose={handleFatalErrorClose}>
+                <ModalHeader title={title} />
+                <ModalContent>
+                    <GenericError />
+                </ModalContent>
+                <ModalFooter>
+                    <Button onClick={handleFatalErrorClose}>{close || c('Action').t`Cancel`}</Button>
+                    <Button color="norm" onClick={handleFatalErrorClose}>
+                        {submit || c('Action').t`Ok`}
+                    </Button>
+                </ModalFooter>
+            </Modal>
         );
     }
 
+    const handleClose = loading || isLoadingAuth ? noop : onClose;
+
     return (
-        <FormModal
-            close={c('Action').t`Close`}
-            submit={c('Action').t`Save`}
-            loading={loading || isLoadingAuth}
-            onClose={onClose}
-            hasClose={false}
-            {...modalProps}
-            {...rest}
-        >
-            {children}
-        </FormModal>
+        <Modal as={Form} onClose={handleClose} {...rest} onSubmit={onSubmit}>
+            <ModalHeader title={title} />
+            <ModalContent>{children}</ModalContent>
+            <ModalFooter>
+                <Button onClick={handleClose} disabled={loading}>
+                    {close || c('Action').t`Cancel`}
+                </Button>
+                <Button loading={loading} type="submit" color="norm">
+                    {submit || c('Action').t`Save`}
+                </Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 
