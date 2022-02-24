@@ -134,7 +134,7 @@ const DownloadSharedInfo = ({
                 <div className="text-bold mb mw100 flex text-center">
                     <FileNameDisplay text={name} className="center" />
                 </div>
-                {size && <SizeCell size={size} className="color-weak" />}
+                {size !== undefined && size !== null && <SizeCell size={size} className="color-weak" />}
                 <p className="m0 color-weak">{contents.info}</p>
                 <div className="flex flex-column flex-nowrap flex-align-items-center flex-justify-center mt2 w100">
                     {contents.content}
