@@ -22,7 +22,7 @@ const ValidateRecoveryEmailContainer = () => {
     }, []);
 
     const signIn = (
-        <a key="1" href="/login" target="_self">
+        <a key="1" href="/switch" target="_self">
             {c('Action').t`sign in`}
         </a>
     );
@@ -31,7 +31,8 @@ const ValidateRecoveryEmailContainer = () => {
         return (
             <GenericError>
                 <span>{c('Recovery Email').t`There was a problem verifying your email address.`}</span>
-                <span>{c('Recovery Email').jt`Please ${signIn} to resend a recovery email verification request.`}</span>
+                <span>{c('Recovery Email')
+                    .jt`Please ${signIn} to resend a recovery email verification request.`}</span>
             </GenericError>
         );
     }
