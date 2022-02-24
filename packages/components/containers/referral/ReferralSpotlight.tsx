@@ -30,7 +30,7 @@ const ReferralSpotlight = ({ children, show, onDisplayed, anchorRef }: Props) =>
                         <div>
                             <p className="mt0 mb0-5 text-bold">{c('Spotlight').t`Invite friends and earn rewards!`}</p>
                             <p className="m0">{c('Spotlight')
-                                .t`Earn up to 18month of ${appName} ${planName} by reffering a friend.`}</p>
+                                .t`Earn up to 18 months of ${appName} ${planName} by referring a friend.`}</p>
                             <SettingsLink path="/referral" app={APPS.PROTONMAIL}>{c('Link')
                                 .t`Learn more`}</SettingsLink>
                         </div>

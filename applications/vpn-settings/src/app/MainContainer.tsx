@@ -107,6 +107,9 @@ const MainContainer = () => {
     }, [location.pathname, location.hash]);
 
     const logo = <MainLogo to="/" />;
+
+    const top = <TopBanners />;
+
     const header = (
         <PrivateHeader
             logo={logo}
@@ -153,7 +156,7 @@ const MainContainer = () => {
                     <TVContainer />
                 </Route>
                 <Route path="*">
-                    <PrivateAppContainer top={<TopBanners />} header={header} sidebar={sidebar}>
+                    <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
                         <Switch>
                             {getIsSectionAvailable(routes.dashboard) && (
                                 <Route path={routes.dashboard.to}>

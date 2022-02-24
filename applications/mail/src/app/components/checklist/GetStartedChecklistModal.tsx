@@ -8,9 +8,10 @@ import {
     useIsMnemonicAvailable,
     useSettingsLink,
     useUser,
+    getCanReactiveMnemonic,
 } from '@proton/components';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
-import { GetStartedChecklistKey, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
 
 import GetStartedChecklist from './GetStartedChecklist';
 import ModalGetMobileApp from './ModalGetMobileApp';
@@ -27,10 +28,7 @@ const MailGetStartedChecklistModal = ({ onClose, onSendMessage, ...rest }: MailG
     const goToSettings = useSettingsLink();
 
     const [isMnemonicAvailable] = useIsMnemonicAvailable();
-    const canReactivateMnemonic =
-        user.MnemonicStatus === MNEMONIC_STATUS.PROMPT ||
-        user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
-        user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED;
+    const canReactivateMnemonic = getCanReactiveMnemonic(user);
     const displayMnemonicPrompt = isMnemonicAvailable && canReactivateMnemonic;
 
     return (

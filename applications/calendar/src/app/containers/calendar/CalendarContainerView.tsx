@@ -23,7 +23,6 @@ import {
     useFeature,
     FeatureCode,
     TopBanners,
-    ReferralModal,
 } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
@@ -322,12 +321,7 @@ const CalendarContainerView = ({
         setExpand(false);
     }, [window.location.pathname]);
 
-    const top = (
-        <>
-            <TopBanners />
-            <ReferralModal />
-        </>
-    );
+    const top = <TopBanners />;
 
     const logo = <MainLogo to="/" />;
 
