@@ -1,18 +1,16 @@
 import { c } from 'ttag';
 import { useCallback, useEffect, useState } from 'react';
-import { Toggle, useMailSettings, useApi, Info } from '@proton/components';
+import { Toggle, useMailSettings, useApi, Info, useIsMounted, useLoading, useUserSettings } from '@proton/components';
+import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { updatePMSignatureReferralLink } from '@proton/shared/lib/api/mailSettings';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
-import { useIsMounted, useLoading } from '../../../../hooks';
 
 const ReferralSignatureToggle = () => {
     const [showShareLinkFooter, setShowShareLinkFooter] = useState(0);
     const [mailSettings, loadingMailSettings] = useMailSettings();
+    const [userSettings, loadingUserSettings] = useUserSettings();
     const api = useApi();
     const [loading, loadingCallback] = useLoading();
     const isMounted = useIsMounted();
-    const mailAppName = getAppName(APPS.PROTONMAIL);
 
     const toggleReferralSignature = useCallback((nextValue: 0 | 1) => {
         void loadingCallback(api(updatePMSignatureReferralLink(nextValue ? 1 : 0))).then(() => {
@@ -28,9 +26,25 @@ const ReferralSignatureToggle = () => {
         }
     }, [loadingMailSettings]);
 
-    if (loadingMailSettings || !mailSettings?.PMSignature) {
+    if (loadingMailSettings || !mailSettings?.PMSignature || loadingUserSettings || !userSettings.Referral?.Link) {
         return null;
     }
+
+    const Signature = () => (
+        <>
+            <br />
+            <br />
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: getProtonMailSignature({
+                        isReferralProgramLinkEnabled: true,
+                        referralProgramUserLink: userSettings.Referral?.Link,
+                    }),
+                }}
+            />
+            <br />
+        </>
+    );
 
     return (
         <div className="flex flex-align-items-center">
@@ -48,8 +62,14 @@ const ReferralSignatureToggle = () => {
             </label>
 
             <Info
-                title={c('Tooltip')
-                    .t`For easy sharing with all your contacts, the link text “Try ${mailAppName} Plus Free for one month” is added to the bottom of your emails`}
+                title={
+                    /*
+                     * translators: Signature is the default mail siganture : Sent with protonmail secure email.
+                     * the word "protonmail" is the "link" we are talking about.
+                     */
+                    c('Tooltip')
+                        .jt`Sets the following footer in the emails you send: ${Signature()} The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.`
+                }
             />
         </div>
     );

@@ -144,7 +144,7 @@ export const getAccountAppRoutes = ({
             referral: <SectionConfig>{
                 text: c('Title').t`Refer a friend`,
                 description: c('Description')
-                    .t`Get 3 months of Mail Plus for free for every friend who subscribes to ${mailAppName}.`,
+                    .t`Get up to 3 months of ProtonMail Plus for free for every friend who subscribes to ${mailAppName}.`,
                 to: '/referral',
                 icon: 'gift-card',
                 available: !!isReferralProgramEnabled,

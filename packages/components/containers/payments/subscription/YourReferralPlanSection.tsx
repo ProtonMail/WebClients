@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { format } from 'date-fns';
-import { Button, Href } from '@proton/components';
+import { Button } from '@proton/components';
 import { PLANS } from '@proton/shared/lib/constants';
 import UnsubscribeButton from './UnsubscribeButton';
 import useSubscriptionModal from './useSubscriptionModal';
@@ -24,7 +24,6 @@ const YourReferralPlanSection = ({ expirationDate, mailAddons }: Props) => {
                 <p>{c('Info').t`Your free ProtonMail Plus trial will end on ${formattedTrialExpirationDate}.`}</p>
                 <p className="color-weak">
                     {c('Info').t`Continue with Plus today to avoid having access disabled at the end of your trial.`}{' '}
-                    <Href url="TODO">{c('Link').t`Learn more`}</Href>
                 </p>
 
                 <ReferralFeaturesList />

@@ -14,7 +14,7 @@ const InviteShareLink = () => {
 
     return (
         <div>
-            <h3 className="text-bold">{c('Label').t`Share your invitation link`}</h3>
+            <h3 className="text-bold">{c('Label').t`Your referral link`}</h3>
             <div className="invite-section-share-link flex flex-gap-1">
                 <div className="flex-item-fluid">
                     <InputTwo value={referrerLink} readOnly className="color-weak" />
@@ -26,12 +26,12 @@ const InviteShareLink = () => {
                             textToClipboard(referrerLink);
                         }}
                     >
-                        <Icon name="link" /> {c('Button').t`Copy `}
+                        <Icon name="link" /> {c('Button').t`Copy`}
                     </Button>
                     <TwitterButton
                         url={encodeURI(
                             'https://twitter.com/intent/tweet?text=' +
-                                c('Info').t`Join protonmail with this link : ${referrerLink}`
+                                c('Info').t`Join protonmail with this link: ${referrerLink}`
                         )}
                         target="_blank"
                     >

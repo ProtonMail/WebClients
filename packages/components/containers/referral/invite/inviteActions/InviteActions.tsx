@@ -14,6 +14,7 @@ const InviteActions = () => {
                 {!showHowItWorksSection && (
                     <div className="flex-item-fluid text-right">
                         <Button
+                            className="p0"
                             shape="underline"
                             color="norm"
                             onClick={() => {

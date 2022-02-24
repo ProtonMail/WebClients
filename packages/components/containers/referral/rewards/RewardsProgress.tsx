@@ -10,7 +10,7 @@ const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
     return (
         <div className="flex flex-justify-space-between flex-align-items-center flex-gap-1 on-tablet-flex-column">
             <div className="flex-item-fluid">
-                <b>{c('Info').t`Mail Plus credits earned`}</b>
+                <b>{c('Info').t`ProtonMail Plus credits earned`}</b>
             </div>
             <div className="flex-item-fluid">
                 {rewards > 0 && (
