@@ -1248,8 +1248,8 @@ const InteractiveCalendarView = ({
         [dateLocale]
     );
 
-    const weekdaysLong = useMemo(() => {
-        return getFormattedWeekdays('cccc', { locale: dateLocale });
+    const weekdays = useMemo(() => {
+        return getFormattedWeekdays('ccc', { locale: dateLocale });
     }, [dateLocale]);
 
     const targetMoreEvents = useMemo(() => {
@@ -1481,7 +1481,7 @@ const InteractiveCalendarView = ({
                 onClickDate={onClickDate}
                 formatTime={formatTime}
                 formatDate={formatDate}
-                weekdaysLong={weekdaysLong}
+                weekdays={weekdays}
                 timeGridViewRef={timeGridViewRef}
                 isScrollDisabled={isScrollDisabled}
                 isDropzoneHovered={isDropzoneHovered}

@@ -115,23 +115,26 @@
 			&:focus-within {
 				background: var(--interaction-weak-hover);
 			}
+
+			&:active {
+				background: var(--interaction-weak-active);
+			}
 		}
 	}
 
 	&-day {
 		position: relative;
 
-		// This is the 'selected' marker, placed below the number by z-index
+		// This is the 'selected' and 'current' marker, placed below the number by z-index
 		&::before {
 			content: '';
 			position: absolute;
 			inset: 0;
 			z-index: 0;
-			background: var(--interaction-norm);
 			border-radius: var(--border-radius-md);
-			opacity: 0;
+			border: 1px solid transparent;
 			pointer-events: none;
-			transition: opacity 0.15s easing(easeOutQuad);
+			transition: 0.15s easing(easeOutQuad);
 		}
 
 		&-number {
@@ -139,14 +142,22 @@
 			z-index: 1;
 		}
 
-		&--selected::before {
-			opacity: 1;
+		&--selected {
+			&::before {
+				background: var(--interaction-norm);
+			}
 		}
 
 		&--selected:hover,
 		&--selected:focus-visible {
 			&::before {
 				background: var(--interaction-norm-hover);
+			}
+		}
+
+		&--selected:active {
+			&::before {
+				background: var(--interaction-norm-active);
 			}
 		}
 
@@ -158,6 +169,27 @@
 		&[aria-current='date'] {
 			font-weight: bold;
 			color: var(--primary);
+
+			&::before {
+				border-color: var(--primary);
+			}
+
+			&:hover,
+			&:focus-visible {
+				color: var(--interaction-norm-hover);
+
+				&::before {
+					border-color: var(--interaction-norm-hover);
+				}
+			}
+
+			&:active {
+				color: var(--interaction-norm-active);
+
+				&::before {
+					border-color: var(--interaction-norm-active);
+				}
+			}
 		}
 
 		&--out-of-month {
