@@ -7,3 +7,4 @@ export { default as PlanSelection } from './PlanSelection';
 export { default as SubscriptionModalProvider } from './SubscriptionModalProvider';
 export * from './SubscriptionModalProvider';
 export { default as AutomaticSubscriptionModal } from './AutomaticSubscriptionModal';
+export { default as SubscriptionModalDisabled } from './SubscriptionModalDisabled';

@@ -74,6 +74,7 @@ const MainContainer = () => {
         FeatureCode.ReferralProgram,
         FeatureCode.CalendarEmailNotification,
         FeatureCode.CalendarSubscription,
+        FeatureCode.PaymentsDisabled,
     ]);
     const [spyTrackerFeature, calendarInviteLocaleFeature, referralProgramFeature] = features;
     const { enabled, unavailable } = useCalendarSubscribeFeature();

@@ -60,6 +60,7 @@ export enum FeatureCode {
     ReferralProgram = 'ReferralProgram',
     ReferralProgramSpotlight = 'ReferralProgramSpotlight',
     SpotlightEmailNotifications = 'SpotlightEmailNotifications',
+    PaymentsDisabled = 'PaymentsDisabled',
 }
 
 export interface FeaturesContextValue {

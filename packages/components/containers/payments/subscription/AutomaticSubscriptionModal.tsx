@@ -62,7 +62,7 @@ const AutomaticSubscriptionModal = () => {
     const location = useLocation();
 
     const [user] = useUser();
-    const [open] = useSubscriptionModal();
+    const [open, loadingModal] = useSubscriptionModal();
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
@@ -70,7 +70,7 @@ const AutomaticSubscriptionModal = () => {
     useLoad();
 
     useEffect(() => {
-        if (!plans || !subscription || loadingPlans || loadingSubscription || loadingOrganization) {
+        if (!plans || !subscription || loadingPlans || loadingSubscription || loadingOrganization || loadingModal) {
             return;
         }
 
@@ -120,7 +120,7 @@ const AutomaticSubscriptionModal = () => {
             step,
             disableBackButton,
         });
-    }, [loadingPlans, loadingSubscription, loadingOrganization, location.search]);
+    }, [loadingPlans, loadingSubscription, loadingOrganization, loadingModal, location.search]);
 
     return null;
 };
