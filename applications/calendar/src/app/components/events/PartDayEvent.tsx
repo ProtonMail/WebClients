@@ -1,4 +1,4 @@
-import { CSSProperties, Ref, useMemo, forwardRef, ComponentPropsWithoutRef } from 'react';
+import { CSSProperties, Ref, useMemo, forwardRef, ComponentPropsWithoutRef, ReactNode } from 'react';
 import { classnames, Icon } from '@proton/components';
 
 import { getEventStatusTraits } from '../../helpers/event';
@@ -15,30 +15,33 @@ interface PartDayEventViewProps extends ComponentPropsWithoutRef<'div'> {
     isCancelled?: boolean;
     isPast?: boolean;
     isLoaded?: boolean;
+    className?: string;
+    children?: ReactNode;
 }
-export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps>(
-    ({ isSelected, isUnanswered, isCancelled, isPast, isLoaded, className, children, ...rest }, ref) => {
-        return (
-            <div
-                role="button"
-                tabIndex={0}
-                className={classnames([
-                    'calendar-eventcell no-scroll',
-                    isLoaded && 'isLoaded',
-                    isPast && 'isPast',
-                    isSelected && 'isSelected',
-                    isUnanswered && 'isUnanswered',
-                    isCancelled && 'isCancelled',
-                    className,
-                ])}
-                ref={ref}
-                {...rest}
-            >
-                {children}
-            </div>
-        );
-    }
-);
+export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps>(function PartDayEventViewComponent(
+    { isSelected, isUnanswered, isCancelled, isPast, isLoaded, className, children, ...rest }: PartDayEventViewProps,
+    ref: Ref<HTMLDivElement>
+) {
+    return (
+        <div
+            role="button"
+            tabIndex={0}
+            className={classnames([
+                'calendar-eventcell no-scroll',
+                isLoaded && 'isLoaded',
+                isPast && 'isPast',
+                isSelected && 'isSelected',
+                isUnanswered && 'isUnanswered',
+                isCancelled && 'isCancelled',
+                className,
+            ])}
+            ref={ref}
+            {...rest}
+        >
+            {children}
+        </div>
+    );
+});
 
 interface Props {
     style: CSSProperties;
