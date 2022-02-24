@@ -16,9 +16,9 @@ function generateTheme({ source, type }: { source: string; type: ThemeFileType }
         'interaction-weak',
     ];
 
-    const lightButtonShadeNames = ['-tint-90', '-tint-80', '', '-shade-10', '-shade-20', '-shade-30'];
+    const lightButtonShadeNames = ['-tint-90', '-tint-80', '', '-shade-10', '-shade-20', '-shade-30', '-contrast'];
 
-    const darkButtonShadeNames = ['-shade-80', '-shade-70', '', '-tint-10', '-tint-20', '-tint-30'];
+    const darkButtonShadeNames = ['-shade-80', '-shade-70', '', '-tint-10', '-tint-20', '-tint-30', '-contrast'];
 
     const ast = cssTree.parse(source);
 
@@ -47,7 +47,13 @@ function generateTheme({ source, type }: { source: string; type: ThemeFileType }
 
         const buttonShadeNames = type === 'light' ? lightButtonShadeNames : darkButtonShadeNames;
 
-        const declarations = genButtonShades(tiny(node.value.value), isLight).map((color, i) =>
+        const base = tiny(node.value.value);
+
+        const buttonShades = genButtonShades(base, isLight);
+
+        const buttonContrast = tiny.mostReadable(base, ['white', 'black']);
+
+        const declarations = [...buttonShades, buttonContrast].map((color, i) =>
             list.createItem({
                 type: 'Declaration',
                 important: false,
