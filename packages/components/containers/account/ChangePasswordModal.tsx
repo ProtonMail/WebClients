@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
@@ -11,24 +11,26 @@ import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { Address } from '@proton/shared/lib/interfaces';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
-import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
+import {
+    confirmPasswordValidator,
+    passwordLengthValidator,
+    requiredValidator,
+} from '@proton/shared/lib/helpers/formValidators';
 
 import { handleUnlock, handleChangeLoginPassword } from './changePasswordHelper';
 import {
     Alert,
     Button,
-    PasswordInput,
-    TwoFactorInput,
-    Row,
-    Label,
-    Field,
     Form,
+    InputFieldTwo,
     Loader,
     ModalProps,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
+    PasswordInputTwo,
+    useFormErrors,
 } from '../../components';
 
 import { GenericError } from '../error';
@@ -98,6 +100,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
+    const { validator, onFormSubmit } = useFormErrors();
 
     const [User] = useUser();
 
@@ -112,7 +115,6 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
     const [loading, setLoading] = useState<boolean>(false);
     const [errors, setErrors] = useState<Errors>(DEFAULT_ERRORS);
     const [isSecondPhase, setSecondPhase] = useState<boolean>(false);
-    const [isSubmitted, setIsSubmitted] = useState(false);
 
     useBeforeUnload(loading ? c('Info').t`By leaving now, changes may not be saved` : '');
 
@@ -240,8 +242,10 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
             return {
                 ...getModalProperties(mode),
                 async onSubmit() {
+                    if (!onFormSubmit()) {
+                        return;
+                    }
                     try {
-                        setIsSubmitted(true);
                         validateNewPasswords();
                         resetErrors();
                         setLoading(true);
@@ -275,8 +279,11 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                     confirmPassword: c('Label').t`Confirm login password`,
                 },
                 async onSubmit() {
+                    if (!onFormSubmit()) {
+                        return;
+                    }
+
                     try {
-                        setIsSubmitted(true);
                         validateNewPasswords();
                         resetErrors();
                         setLoading(true);
@@ -285,7 +292,6 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                         await handleChangeLoginPassword({ api, newPassword: inputs.newPassword });
 
                         setSecondPhase(true);
-                        setIsSubmitted(false);
                         setInputs({
                             newPassword: '',
                             confirmPassword: '',
@@ -320,6 +326,10 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                     confirmPassword: c('Label').t`Confirm mailbox password`,
                 },
                 async onSubmit() {
+                    if (!onFormSubmit()) {
+                        return;
+                    }
+
                     try {
                         // Stop the event manager to prevent race conditions
                         stop();
@@ -330,7 +340,6 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                             isAdmin ? getOrganizationKeyRaw() : undefined,
                         ]);
 
-                        setIsSubmitted(true);
                         validateNewPasswords();
                         resetErrors();
                         setLoading(true);
@@ -366,6 +375,10 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
         }
 
         const onSubmit = async () => {
+            if (!onFormSubmit()) {
+                return;
+            }
+
             try {
                 stop();
 
@@ -388,7 +401,6 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                     });
                     return;
                 }
-                setIsSubmitted(true);
                 validateNewPasswords();
                 resetErrors();
                 setLoading(true);
@@ -498,79 +510,65 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
             {extraAlert}
             {alert}
             {!isSecondPhase && (
-                <Row>
-                    <Label htmlFor="oldPassword">{labels.oldPassword}</Label>
-                    <Field>
-                        <PasswordInput
-                            id="oldPassword"
-                            value={inputs.oldPassword}
-                            onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
-                                setPartialInput({ oldPassword: value });
-                                setPartialError({ loginError: '' });
-                            }}
-                            error={errors.loginError}
-                            placeholder={c('Placeholder').t`Password`}
-                            autoComplete="current-password"
-                            required
-                            autoFocus
-                        />
-                    </Field>
-                </Row>
+                <InputFieldTwo
+                    id="oldPassword"
+                    label={labels.oldPassword}
+                    placeholder={c('Placeholder').t`Password`}
+                    autoComplete="current-password"
+                    error={validator([requiredValidator(inputs.oldPassword), errors.loginError])}
+                    as={PasswordInputTwo}
+                    value={inputs.oldPassword}
+                    onValue={(value: string) => {
+                        setPartialInput({ oldPassword: value });
+                        setPartialError({ loginError: '' });
+                    }}
+                    disabled={loading}
+                    autoFocus
+                />
             )}
             {!isSecondPhase && hasTOTPEnabled && (
-                <Row>
-                    <Label htmlFor="totp">{c('Label').t`Two-factor authentication code`}</Label>
-                    <Field>
-                        <TwoFactorInput
-                            id="totp"
-                            value={inputs.totp}
-                            onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
-                                setPartialInput({ totp: value });
-                                setPartialError({ loginError: '' });
-                            }}
-                            error={errors.loginError}
-                            placeholder={c('Placeholder').t`Two-factor authentication code`}
-                            required
-                        />
-                    </Field>
-                </Row>
+                <InputFieldTwo
+                    id="totp"
+                    label={c('Label').t`Two-factor authentication code`}
+                    value={inputs.totp}
+                    placeholder={c('Placeholder').t`Two-factor authentication code`}
+                    onValue={(value: string) => {
+                        setPartialInput({ totp: value });
+                        setPartialError({ loginError: '' });
+                    }}
+                    error={validator([requiredValidator(inputs.totp) && errors.loginError])}
+                    disabled={loading}
+                />
             )}
-            <Row>
-                <Label htmlFor="newPassword">{labels.newPassword}</Label>
-                <Field>
-                    <PasswordInput
-                        id="newPassword"
-                        key={`${isSecondPhase}${labels.newPassword}`}
-                        value={inputs.newPassword}
-                        onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
-                            setPartialInput({ newPassword: value })
-                        }
-                        isSubmitted={isSubmitted}
-                        error={newPasswordError}
-                        placeholder={c('Placeholder').t`Password`}
-                        autoComplete="new-password"
-                        required
-                    />
-                </Field>
-            </Row>
-            <Row>
-                <Label htmlFor="confirmPassword">{labels.confirmPassword}</Label>
-                <Field>
-                    <PasswordInput
-                        id="confirmPassword"
-                        key={`${isSecondPhase}${labels.confirmPassword}`}
-                        value={inputs.confirmPassword}
-                        onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
-                            setPartialInput({ confirmPassword: value })
-                        }
-                        isSubmitted={isSubmitted}
-                        error={confirmPasswordError}
-                        placeholder={c('Placeholder').t`Confirm`}
-                        autoComplete="new-password"
-                        required
-                    />
-                </Field>
-            </Row>
+
+            <InputFieldTwo
+                id="newPassword"
+                label={labels.newPassword}
+                placeholder={c('Placeholder').t`Password`}
+                error={validator([requiredValidator(inputs.newPassword), passwordLengthValidator(inputs.newPassword)])}
+                as={PasswordInputTwo}
+                autoComplete="new-password"
+                value={inputs.newPassword}
+                onValue={(value: string) => setPartialInput({ newPassword: value })}
+                disabled={loading}
+            />
+
+            <InputFieldTwo
+                key={`${isSecondPhase}${labels.confirmPassword}`}
+                id="confirmPassword"
+                label={labels.confirmPassword}
+                placeholder={c('Placeholder').t`Confirm`}
+                error={validator([
+                    requiredValidator(inputs.confirmPassword),
+                    passwordLengthValidator(inputs.confirmPassword),
+                    confirmPasswordValidator(inputs.newPassword, inputs.confirmPassword),
+                ])}
+                as={PasswordInputTwo}
+                autoComplete="new-password"
+                value={inputs.confirmPassword}
+                onValue={(value: string) => setPartialInput({ confirmPassword: value })}
+                disabled={loading}
+            />
         </>
     );
 
