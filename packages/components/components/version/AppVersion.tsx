@@ -2,10 +2,11 @@ import { c } from 'ttag';
 
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
-import { useModals, useConfig, useEarlyAccess } from '../../hooks';
+import { useConfig, useEarlyAccess } from '../../hooks';
 import ChangelogModal from './ChangelogModal';
 import { getAppVersion } from '../../helpers';
 import { Tooltip } from '../tooltip';
+import { useModalState } from '../modalTwo';
 
 interface Props {
     appName?: string;
@@ -20,12 +21,8 @@ const envMap = {
 
 const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, changelog }: Props) => {
     const { APP_NAME, APP_VERSION, APP_VERSION_DISPLAY, DATE_VERSION } = useConfig();
-    const { createModal } = useModals();
     const { currentEnvironment } = useEarlyAccess();
-
-    const handleModal = () => {
-        createModal(<ChangelogModal changelog={changelog} />);
-    };
+    const [changelogModal, setChangelogModalOpen, render] = useModalState();
 
     const appName = maybeAppName || APPS_CONFIGURATION[APP_NAME]?.name;
     const appVersion = getAppVersion(maybeAppVersion || APP_VERSION_DISPLAY || APP_VERSION);
@@ -50,11 +47,14 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, change
     }
 
     return (
-        <Tooltip title={c('Storage').t`Release notes`}>
-            <button type="button" onClick={handleModal} title={title} className={className}>
-                {children}
-            </button>
-        </Tooltip>
+        <>
+            {render && <ChangelogModal {...changelogModal} changelog={changelog} />}
+            <Tooltip title={c('Storage').t`Release notes`}>
+                <button type="button" onClick={() => setChangelogModalOpen(true)} title={title} className={className}>
+                    {children}
+                </button>
+            </Tooltip>
+        </>
     );
 };
 
