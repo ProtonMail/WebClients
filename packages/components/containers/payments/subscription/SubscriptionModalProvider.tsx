@@ -3,14 +3,16 @@ import { Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import { PLAN_SERVICES, PLANS } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import { useModalState } from '../../../components';
-import { useOrganization, usePlans, useSubscription } from '../../../hooks';
+import { useFeature, useOrganization, usePlans, useSubscription } from '../../../hooks';
+import { FeatureCode } from '../../features';
 
-import SubscriptionModal from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
+import SubscriptionModal from './SubscriptionModal';
+import SubscriptionModalDisabled from './SubscriptionModalDisabled';
 
 interface OpenCallbackProps {
     step: SUBSCRIPTION_STEPS;
@@ -41,6 +43,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganisation] = useOrganization();
     const [plans = [], loadingPlans] = usePlans();
+    const paymentsDisabledFeature = useFeature(FeatureCode.PaymentsDisabled);
     const [modalState, setModalState, render] = useModalState();
     const subscriptionProps = useRef<{
         planIDs: PlanIDs;
@@ -51,16 +54,22 @@ const SubscriptionModalProvider = ({ children }: Props) => {
         disableBackButton?: boolean;
     } | null>(null);
 
-    const loading = loadingOrganisation || loadingSubscription || loadingPlans;
+    const loading = Boolean(
+        loadingOrganisation || loadingSubscription || loadingPlans || paymentsDisabledFeature.loading
+    );
 
     const plansMap = toMap(plans, 'Name');
     const subscriptionPlanIDs = getPlanIDs(subscription);
 
     return (
         <>
-            {render && subscriptionProps.current && (
-                <SubscriptionModal {...subscriptionProps.current} {...modalState} />
-            )}
+            {render &&
+                subscriptionProps.current &&
+                (paymentsDisabledFeature.feature?.Value === true ? (
+                    <SubscriptionModalDisabled {...modalState} />
+                ) : (
+                    <SubscriptionModal {...subscriptionProps.current} {...modalState} />
+                ))}
             <SubscriptionModalContext.Provider
                 value={[
                     ({
@@ -73,6 +82,9 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                         coupon,
                         disableBackButton,
                     }) => {
+                        if (loading || render) {
+                            return;
+                        }
                         subscriptionProps.current = {
                             planIDs: plan
                                 ? switchPlan({
