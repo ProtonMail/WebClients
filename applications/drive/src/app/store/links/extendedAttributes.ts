@@ -1,3 +1,4 @@
+import { enums } from 'openpgp';
 import { encryptMessage, OpenPGPKey } from 'pmcrypto';
 
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
@@ -64,6 +65,7 @@ async function encryptExtendedAttributes(
         data: xattrString,
         publicKeys: nodePrivateKey,
         privateKeys: addressPrivateKey,
+        compression: enums.compression.zlib,
     });
     return data;
 }
