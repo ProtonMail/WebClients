@@ -1,7 +1,13 @@
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import {
-    FormModal,
-    LearnMore,
+    Button,
+    Form,
+    Href,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
     PrimaryButton,
     useApi,
     useEventManager,
@@ -76,17 +82,17 @@ const createContactPinnedKeys = async ({ contact, api, privateKeys }: ParamsCrea
     );
 };
 
-interface Props {
+interface Props extends ModalProps {
     contact: ContactWithBePinnedPublicKey;
-    onSubmit?: () => void;
-    onClose?: () => void;
 }
-const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
+const TrustPublicKeyModal = ({ contact, ...rest }: Props) => {
     const api = useApi();
     const getUserKeys = useGetUserKeys();
     const [loading, withLoading] = useLoading(false);
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
+
+    const { onClose } = rest;
 
     const isCreateContact = !contact.contactID;
 
@@ -101,8 +107,8 @@ const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
         });
         createNotification({ text: c('Success').t`Public key trusted`, type: 'success' });
         void call(); // No await
-        onSubmit?.();
-        rest.onClose?.();
+        //onSubmit?.();
+        onClose?.();
     };
     const handleCreateContact = async () => {
         const { privateKeys: allPrivateKeys } = splitKeys(await getUserKeys());
@@ -116,21 +122,17 @@ const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
         } = await createContactPinnedKeys({ contact, api, privateKeys });
         if (Code !== API_CODES.SINGLE_SUCCESS) {
             createNotification({ text: c('Error').t`Public key could not be trusted`, type: 'error' });
-            rest.onClose?.();
+            onClose?.();
             return;
         }
         createNotification({ text: c('Success').t`Public key trusted`, type: 'success' });
         void call(); // No await
-        onSubmit?.();
-        rest.onClose?.();
+        //onSubmit?.();
+        onClose?.();
     };
+
     const handleSubmit = isCreateContact ? handleCreateContact : handleUpdateContact;
 
-    const submit = (
-        <PrimaryButton loading={loading} type="submit">
-            {c('Action').t`Trust key`}
-        </PrimaryButton>
-    );
     const alertMessage = isCreateContact
         ? c('Key pinning').t`Clicking "Trust Key" will create a new contact and associate this public key with
         this sender. Emails from this address will be automatically cryptographically verified.`
@@ -138,25 +140,33 @@ const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
         and emails from this address will be automatically cryptographically verified.`;
 
     return (
-        <FormModal
-            title={c('Title').t`Trust public key?`}
-            submit={submit}
-            onSubmit={() => withLoading(handleSubmit())}
-            loading={loading}
-            {...rest}
-        >
-            <div className="mb1">
-                {alertMessage}
-                <LearnMore url="https://protonmail.com/support/knowledge-base/address-verification" className="ml0-5" />
-            </div>
-            <div className="mb1">
-                {c('Info').t`This public key will be automatically used for encrypting email sent to this address.`}
-                <LearnMore url="https://protonmail.com/support/knowledge-base/how-to-use-pgp/" className="ml0-5" />
-            </div>
-            <div>
-                <SimplePublicKeyTable contact={contact} />
-            </div>
-        </FormModal>
+        <ModalTwo as={Form} onSubmit={() => withLoading(handleSubmit())} {...rest}>
+            <ModalTwoHeader title={c('Title').t`Trust public key?`} />
+            <ModalTwoContent>
+                <div className="mb1">
+                    {alertMessage}
+                    <Href
+                        href="https://protonmail.com/support/knowledge-base/address-verification"
+                        className="ml0-5"
+                    >{c('Link').t`Learn more`}</Href>
+                </div>
+                <div className="mb1">
+                    {c('Info').t`This public key will be automatically used for encrypting email sent to this address.`}
+                    <Href href="https://protonmail.com/support/knowledge-base/how-to-use-pgp/" className="ml0-5">{c(
+                        'Link'
+                    ).t`Learn more`}</Href>
+                </div>
+                <div>
+                    <SimplePublicKeyTable contact={contact} />
+                </div>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <PrimaryButton loading={loading} type="submit">
+                    {c('Action').t`Trust key`}
+                </PrimaryButton>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
