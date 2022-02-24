@@ -116,8 +116,8 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
                         .then(() => {
                             onClose?.();
                         })
-                        .catch((e) => {
-                            console.log(e);
+                        .catch((error) => {
+                            console.error(error);
                             setError(true);
                         });
                 },
@@ -134,8 +134,8 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
                         .then(() => {
                             onClose?.();
                         })
-                        .catch((e) => {
-                            console.log(e);
+                        .catch(() => {
+                            console.error(error);
                             setError(true);
                         });
                 },

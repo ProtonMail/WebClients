@@ -1,4 +1,6 @@
+import { HTMLAttributes } from 'react';
 import { c } from 'ttag';
+
 import {
     FREQUENCY,
     MAX_LENGTHS_API,
@@ -15,12 +17,17 @@ import { getIsProtonUID } from '@proton/shared/lib/calendar/helper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
-
 import { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
-import { HTMLAttributes } from 'react';
-import { Alert, classnames, Input, Notifications, TextArea, MemoizedIconRow as IconRow } from '@proton/components';
-
+import {
+    Alert,
+    classnames,
+    Notifications,
+    MemoizedIconRow as IconRow,
+    InputTwo,
+    TextAreaTwo,
+} from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+
 import createHandlers from './eventForm/createPropFactory';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
 import CustomFrequencySelector from './inputs/CustomFrequencySelector';
@@ -112,7 +119,7 @@ const EventForm = ({
 
     const titleRow = (
         <IconRow id={TITLE_INPUT_ID} title={c('Label').t`Event title`}>
-            <Input
+            <InputTwo
                 id={TITLE_INPUT_ID}
                 placeholder={c('Placeholder').t`Add title`}
                 title={c('Title').t`Add event title`}
@@ -155,7 +162,7 @@ const EventForm = ({
 
     const locationRow = (
         <IconRow icon="map-marker" title={c('Label').t`Location`} id={LOCATION_INPUT_ID}>
-            <Input
+            <InputTwo
                 id={LOCATION_INPUT_ID}
                 placeholder={c('Placeholder').t`Add location`}
                 maxLength={MAX_LENGTHS_API.LOCATION}
@@ -172,7 +179,7 @@ const EventForm = ({
             title={c('Label').t`Description`}
             id={DESCRIPTION_INPUT_ID}
         >
-            <TextArea
+            <TextAreaTwo
                 id={DESCRIPTION_INPUT_ID}
                 minRows={2}
                 autoGrow

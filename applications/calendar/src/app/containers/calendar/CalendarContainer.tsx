@@ -197,7 +197,17 @@ const CalendarContainer = ({
 
     const defaultView = getDefaultView(calendarUserSettings);
     const requestedView = customView || defaultView;
-    const view = isNarrow ? WEEK : SUPPORTED_VIEWS.includes(requestedView) ? requestedView : WEEK;
+    const view = (() => {
+        if (isNarrow) {
+            return WEEK;
+        }
+
+        if (SUPPORTED_VIEWS.includes(requestedView)) {
+            return requestedView;
+        }
+
+        return WEEK;
+    })();
 
     const range = isNarrow ? undefined : getRange(view, customRange);
     const weekStartsOn = getWeekStartsOn(userSettings);
