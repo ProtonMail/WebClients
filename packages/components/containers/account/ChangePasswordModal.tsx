@@ -30,6 +30,7 @@ import {
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     PasswordInputTwo,
+    SettingsLink,
     useFormErrors,
 } from '../../components';
 
@@ -493,12 +494,20 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
         throw new Error('Unknown mode');
     })();
 
-    const boldAlert = <b key="bold-alert">{c('Info').t`Proton can't help you recover any lost passwords`}</b>;
+    // translator: Make sure you remember the password to log in and decrypt emails. Proton can't help you recover any lost passwords. We recommend adding a recovery method first.
+    const boldAlert = <b key="bold-alert">{c('Info').t`Proton can't help you recover any lost passwords.`}</b>;
+    // translator: Make sure you remember the password to log in and decrypt emails. Proton can't help you recover any lost passwords. We recommend adding a recovery method first.
+    const recoveryLink = (
+        <SettingsLink key="recovery-link" path="/recovery">{c('Info').t`recovery method`}</SettingsLink>
+    );
     const alert = (
         <>
             <Alert className="mb1" type="warning">
-                {c('Info')
-                    .jt`Make sure you remember the password to log in and decrypt emails. ${boldAlert}. We recommend adding a recovery email first.`}
+                {
+                    // translator: Make sure you remember the password to log in and decrypt emails. Proton can't help you recover any lost passwords. We recommend adding a recovery method first.
+                    c('Info')
+                        .jt`Make sure you remember the password to log in and decrypt emails. ${boldAlert} We recommend adding a ${recoveryLink} first.`
+                }
             </Alert>
         </>
     );
