@@ -9,7 +9,6 @@ import {
     addKeysToAddressKeysCache,
     clearAll,
     generateKeys,
-    getModal,
     render,
     waitForEventManagerCall,
     waitForNotification,
@@ -64,9 +63,9 @@ describe('Unsubscribe banner', () => {
             fireEvent.click(button);
         }
 
-        const { submit } = getModal();
-        if (submit) {
-            fireEvent.click(submit);
+        const submitButton = getByTestId('unsubscribe-banner:submit');
+        if (submitButton) {
+            fireEvent.click(submitButton);
         }
 
         await waitForEventManagerCall();
@@ -107,9 +106,9 @@ describe('Unsubscribe banner', () => {
             fireEvent.click(button);
         }
 
-        const { submit } = getModal();
-        if (submit) {
-            fireEvent.click(submit);
+        const submitButton = getByTestId('unsubscribe-banner:submit');
+        if (submitButton) {
+            fireEvent.click(submitButton);
         }
 
         await waitForNotification('Mail list unsubscribed');
@@ -143,9 +142,9 @@ describe('Unsubscribe banner', () => {
             fireEvent.click(button);
         }
 
-        const { submit } = getModal();
-        if (submit) {
-            fireEvent.click(submit);
+        const submitButton = getByTestId('unsubscribe-banner:submit');
+        if (submitButton) {
+            fireEvent.click(submitButton);
         }
 
         await waitForEventManagerCall();

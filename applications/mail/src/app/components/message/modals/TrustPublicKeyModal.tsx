@@ -107,7 +107,6 @@ const TrustPublicKeyModal = ({ contact, ...rest }: Props) => {
         });
         createNotification({ text: c('Success').t`Public key trusted`, type: 'success' });
         void call(); // No await
-        //onSubmit?.();
         onClose?.();
     };
     const handleCreateContact = async () => {
@@ -127,7 +126,6 @@ const TrustPublicKeyModal = ({ contact, ...rest }: Props) => {
         }
         createNotification({ text: c('Success').t`Public key trusted`, type: 'success' });
         void call(); // No await
-        //onSubmit?.();
         onClose?.();
     };
 
