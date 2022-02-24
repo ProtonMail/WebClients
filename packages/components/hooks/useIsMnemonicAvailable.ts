@@ -1,20 +1,15 @@
-import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
-import { APPS } from '@proton/shared/lib/constants';
+import { getIsMnemonicAvailable } from '../containers/mnemonic/helper';
+
 import useConfig from './useConfig';
 import useAddresses from './useAddresses';
 import useUser from './useUser';
 
-const { PROTONVPN_SETTINGS } = APPS;
-
 const useIsMnemonicAvailable = () => {
     const { APP_NAME } = useConfig();
     const [user, loadingUser] = useUser();
-
     const [addresses = [], loadingAddresses] = useAddresses();
-    const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
 
-    const isNonPrivateUser = !user?.isPrivate;
-    const isMnemonicAvailable = hasMigratedKeys && !isNonPrivateUser && APP_NAME !== PROTONVPN_SETTINGS;
+    const isMnemonicAvailable = getIsMnemonicAvailable({ addresses, user, app: APP_NAME });
 
     return [isMnemonicAvailable, loadingAddresses || loadingUser] as const;
 };
