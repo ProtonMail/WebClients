@@ -17,14 +17,20 @@ export interface UseReferralsReducerState {
     total: number;
 }
 
+const getDefaultState = () => ({
+    loading: true,
+    referrals: [],
+    total: 0,
+});
+
 const useReferrals = () => {
     const api = useApi();
-    const [referralState, dispatch] = useReducer<Reducer<UseReferralsReducerState, Action>>(
-        (prevState, action) => {
-            if (action.type === 'error') {
-                return { ...prevState, loading: false };
-            }
+    const [referralState, dispatch] = useReducer<Reducer<UseReferralsReducerState, Action>>((prevState, action) => {
+        if (action.type === 'error') {
+            return { ...prevState, loading: false };
+        }
 
+        if (action.type === 'success') {
             const apiResult = action.payload;
 
             return {
@@ -32,13 +38,10 @@ const useReferrals = () => {
                 referrals: apiResult.Referrals || [],
                 total: apiResult.Total || 0,
             };
-        },
-        {
-            loading: true,
-            referrals: [],
-            total: 0,
         }
-    );
+
+        return getDefaultState();
+    }, getDefaultState());
 
     useEffect(() => {
         const fetchReferrals = async () => {
