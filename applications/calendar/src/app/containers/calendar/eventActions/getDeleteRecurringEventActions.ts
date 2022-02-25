@@ -1,9 +1,10 @@
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { omit } from '@proton/shared/lib/helpers/object';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import { getResetPartstatActions } from '@proton/shared/lib/calendar/integration/invite';
-import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
+import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import {
     INVITE_ACTION_TYPES,
     InviteActions,
@@ -82,7 +83,7 @@ export const getDeleteRecurringEventActions = async ({
         const singleDeleteOperation = isSingleEdit ? getDeleteSyncOperation(oldEvent) : undefined;
 
         const originalExdateOperation = getUpdateSyncOperation({
-            veventComponent: updatedVeventComponent,
+            veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
             calendarEvent: originalEvent,
         });
 
@@ -118,7 +119,7 @@ export const getDeleteRecurringEventActions = async ({
 
         const deleteOperations = singleEditRecurrencesAfter.map(getDeleteSyncOperation);
         const updateOperation = getUpdateSyncOperation({
-            veventComponent: updatedVeventComponent,
+            veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
             calendarEvent: originalEvent,
         });
 
