@@ -13,14 +13,7 @@ import {
 import { loadModels } from '@proton/shared/lib/models/helper';
 import { CalendarsModel } from '@proton/shared/lib/models';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
-import {
-    useApi,
-    useCache,
-    useEventManager,
-    useGetAddresses,
-    useGetAddressKeys,
-    useNotifications,
-} from '../../../hooks';
+import { useApi, useCache, useEventManager, useGetAddressKeys, useNotifications } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager';
 
 interface Props {
@@ -48,7 +41,6 @@ const useGetCalendarActions = ({
     const { call } = useEventManager();
     const { call: calendarCall } = useCalendarModelEventManager();
     const cache = useCache();
-    const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const { createNotification } = useNotifications();
 
@@ -57,7 +49,7 @@ const useGetCalendarActions = ({
         calendarPayload: CalendarCreateData,
         calendarSettingsPayload: Partial<CalendarSettings>
     ) => {
-        const [addresses, addressKeys] = await Promise.all([getAddresses(), getAddressKeys(addressID)]);
+        const addressKeys = await getAddressKeys(addressID);
 
         const { privateKey: primaryAddressKey } = getPrimaryKey(addressKeys) || {};
         if (!primaryAddressKey) {
@@ -79,7 +71,7 @@ const useGetCalendarActions = ({
         await setupCalendarKey({
             api,
             calendarID: newCalendarID,
-            addresses,
+            addressID,
             getAddressKeys,
         }).catch((e: Error) => {
             // Hard failure if the keys fail to setup. Force the user to reload.
