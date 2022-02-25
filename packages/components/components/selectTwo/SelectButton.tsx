@@ -5,13 +5,14 @@ import { CircleLoader } from '../loader';
 
 interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value'> {
     value?: ReactNode;
+    unstyled?: boolean;
     loading?: boolean;
     isOpen?: boolean;
     onOpen?: () => void;
 }
 
 const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
-    ({ className, value, loading, isOpen, onOpen, children, ...rest }, ref) => {
+    ({ className, unstyled, value, loading, isOpen, onOpen, children, ...rest }, ref) => {
         const handleAnchorKeydown = (e: KeyboardEvent<HTMLButtonElement>) => {
             switch (e.key) {
                 case ' ': {
@@ -33,7 +34,8 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 aria-live="assertive"
                 aria-atomic="true"
                 className={classnames([
-                    'outline-none select field w100 flex flex-justify-space-between flex-align-items-center flex-nowrap',
+                    !unstyled && 'select field',
+                    'outline-none w100 flex flex-justify-space-between flex-align-items-center flex-nowrap',
                     className,
                 ])}
                 {...rest}
