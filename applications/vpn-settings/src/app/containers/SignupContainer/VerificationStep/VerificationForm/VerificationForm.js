@@ -38,8 +38,20 @@ const VerificationForm = ({ defaultCountry, defaultEmail, allowedMethods, onRequ
         );
     }
 
+    // translator: "spam folder" is put in bold in the sentence "please check your spam folder"
+    const spamFolder = `<strong>${c('Info').t`spam folder`}</strong>`;
+
     return (
         <VerificationCodeForm
+            checkSpamFolder={true}
+            notices={
+                <p
+                    dangerouslySetInnerHTML={{
+                        // translator: spamFolder is just "spam folder" in bold
+                        __html: c('Info').t`Please make sure to check your ${spamFolder}.`,
+                    }}
+                />
+            }
             destination={params.Destination}
             onSubmit={handleSubmitCode}
             onBack={handleBack}
