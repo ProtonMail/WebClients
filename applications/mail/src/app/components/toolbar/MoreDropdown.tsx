@@ -11,15 +11,16 @@ import { labelIncludes } from '../../helpers/labels';
 import { isSearch } from '../../helpers/elements';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 
-const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, SCHEDULED } = MAILBOX_LABEL_IDS;
+const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, SCHEDULED, TRASH } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
     elementIDs: string[];
     selectedIDs: string[];
+    handleMoveAll: (source: string, destination: string) => void;
 }
 
-const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props) => {
+const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [], handleMoveAll }: Props) => {
     const [loading, withLoading] = useLoading();
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
     const location = useLocation();
@@ -38,7 +39,9 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props
         SCHEDULED
     );
 
-    if (cannotEmpty) {
+    const cannotMoveAll = labelIncludes(labelID, TRASH);
+
+    if (cannotEmpty && cannotMoveAll) {
         return null;
     }
 
@@ -54,15 +57,28 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props
             >
                 {() => (
                     <DropdownMenu>
-                        <DropdownMenuButton
-                            data-testid="toolbar:empty"
-                            loading={loading}
-                            disabled={!elementIDs.length || !!selectedIDs.length || isSearch(searchParameters)}
-                            className="text-left color-danger"
-                            onClick={handleEmptyLabel}
-                        >
-                            {c('Action').t`Delete all`}
-                        </DropdownMenuButton>
+                        {!cannotEmpty && (
+                            <DropdownMenuButton
+                                data-testid="toolbar:empty"
+                                loading={loading}
+                                disabled={!elementIDs.length || !!selectedIDs.length || isSearch(searchParameters)}
+                                className="text-left color-danger"
+                                onClick={handleEmptyLabel}
+                            >
+                                {c('Action').t`Delete all`}
+                            </DropdownMenuButton>
+                        )}
+                        {!cannotMoveAll && (
+                            <DropdownMenuButton
+                                data-testid="toolbar:moveAll"
+                                loading={loading}
+                                disabled={!elementIDs.length || !!selectedIDs.length || isSearch(searchParameters)}
+                                className="text-left"
+                                onClick={() => handleMoveAll(labelID, TRASH)}
+                            >
+                                {c('Action').t`Trash all`}
+                            </DropdownMenuButton>
+                        )}
                     </DropdownMenu>
                 )}
             </ToolbarDropdown>

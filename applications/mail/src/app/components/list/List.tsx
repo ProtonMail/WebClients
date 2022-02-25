@@ -37,6 +37,7 @@ import { useGetStartedChecklist, usePaidUserChecklist } from '../../containers/c
 import ModalImportEmails from '../checklist/ModalImportEmails';
 import ModalGetMobileApp from '../checklist/ModalGetMobileApp';
 import { ResizeHandle } from './ResizeHandle';
+import TaskRunningBanner from './TaskRunningBanner';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -73,6 +74,7 @@ interface Props {
     showContentPanel: boolean;
     scrollBarWidth: number;
     labels?: Label[];
+    showLabelTaskRunningBanner: boolean;
 }
 
 const List = (
@@ -108,6 +110,7 @@ const List = (
         showContentPanel,
         scrollBarWidth,
         labels,
+        showLabelTaskRunningBanner,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
@@ -183,6 +186,7 @@ const List = (
                         labelID={labelID}
                     />
                     {showESSlowToolbar && <ESSlowToolbar />}
+                    {showLabelTaskRunningBanner && <TaskRunningBanner />}
                     {elements.length === 0 ? (
                         <EmptyView labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />
                     ) : (
