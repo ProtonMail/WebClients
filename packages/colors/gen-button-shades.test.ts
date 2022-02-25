@@ -23,9 +23,9 @@ describe('genButtonShades', () => {
             '#fff5e6',
             '#ffebcc',
             '#ff9900',
-            '#f28a00',
-            '#e68300',
-            '#d97c00',
+            '#f27d00',
+            '#e66300',
+            '#d94c00',
         ]);
     });
 
