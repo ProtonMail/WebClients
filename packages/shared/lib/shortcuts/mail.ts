@@ -3,17 +3,17 @@ import { metaKey, altKey, shiftKey, isSafari as checkIsSafari } from '../helpers
 import isTruthy from '../helpers/isTruthy';
 import { KeyboardKeyType } from '../interfaces';
 
-export const editorShortcuts = {
-    addAttachment: ['Meta', 'Shift', 'A'] as KeyboardKeyType[],
-    addEncryption: ['Meta', 'Shift', 'E'] as KeyboardKeyType[],
-    addExpiration: ['Meta', 'Shift', 'X'] as KeyboardKeyType[],
-    addLink: ['Meta', 'K'] as KeyboardKeyType[],
-    save: ['Meta', 'S'] as KeyboardKeyType[],
-    minimize: ['Meta', 'M'] as KeyboardKeyType[],
-    maximize: ['Meta', 'Shift', 'M'] as KeyboardKeyType[],
-    deleteDraft: ['Meta', 'Alt', 'Backspace'] as KeyboardKeyType[],
-    send: ['Meta', 'Enter'] as KeyboardKeyType[],
-    close: ['Escape'] as KeyboardKeyType[],
+export const editorShortcuts: Record<string, KeyboardKeyType[]> = {
+    addAttachment: ['Meta', 'Shift', 'A'],
+    addEncryption: ['Meta', 'Shift', 'E'],
+    addExpiration: ['Meta', 'Shift', 'X'],
+    addLink: ['Meta', 'K'],
+    close: ['Escape'],
+    deleteDraft: ['Meta', 'Alt', 'Backspace'],
+    maximize: ['Meta', 'Shift', 'M'],
+    minimize: ['Meta', 'M'],
+    save: ['Meta', 'S'],
+    send: ['Meta', 'Enter'],
 };
 
 export const getShortcuts = () => {
