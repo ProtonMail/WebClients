@@ -1,4 +1,4 @@
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { message } from '@proton/shared/lib/sanitize';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -19,8 +19,13 @@ export const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
 /**
  * Preformat the protonMail signature
  */
-const getProtonSignature = (mailSettings: Partial<MailSettings> = {}) =>
-    mailSettings.PMSignature === 0 ? '' : getProtonMailSignature();
+const getProtonSignature = (mailSettings: Partial<MailSettings> = {}, userSettings: Partial<UserSettings> = {}) =>
+    mailSettings.PMSignature === 0
+        ? ''
+        : getProtonMailSignature({
+              isReferralProgramLinkEnabled: !!mailSettings.PMSignatureReferralLink,
+              referralProgramUserLink: userSettings.Referral?.Link,
+          });
 
 /**
  * Generate a space tag, it can be hidden from the UX via a className
@@ -72,11 +77,12 @@ const getClassNamesSignature = (signature: string, protonSignature: string) => {
 export const templateBuilder = (
     signature = '',
     mailSettings: Partial<MailSettings> | undefined = {},
+    userSettings: Partial<UserSettings> | undefined = {},
     fontStyle: string | undefined,
     isReply = false,
     noSpace = false
 ) => {
-    const protonSignature = getProtonSignature(mailSettings);
+    const protonSignature = getProtonSignature(mailSettings, userSettings);
     const { userClass, protonClass, containerClass } = getClassNamesSignature(signature, protonSignature);
     const space = getSpaces(signature, protonSignature, fontStyle, isReply);
 
@@ -110,11 +116,12 @@ export const insertSignature = (
     signature = '',
     action: MESSAGE_ACTIONS,
     mailSettings: MailSettings,
+    userSettings: Partial<UserSettings>,
     fontStyle: string | undefined,
     isAfter = false
 ) => {
     const position = isAfter ? 'beforeend' : 'afterbegin';
-    const template = templateBuilder(signature, mailSettings, fontStyle, action !== MESSAGE_ACTIONS.NEW);
+    const template = templateBuilder(signature, mailSettings, userSettings, fontStyle, action !== MESSAGE_ACTIONS.NEW);
 
     // Parse the current message and append before it the signature
     const element = parseInDiv(content);
@@ -129,13 +136,14 @@ export const insertSignature = (
 export const changeSignature = (
     message: MessageState,
     mailSettings: Partial<MailSettings> | undefined,
+    userSettings: Partial<UserSettings> | undefined,
     fontStyle: string | undefined,
     oldSignature: string,
     newSignature: string
 ) => {
     if (isPlainText(message.data)) {
-        const oldTemplate = templateBuilder(oldSignature, mailSettings, fontStyle, false, true);
-        const newTemplate = templateBuilder(newSignature, mailSettings, fontStyle, false, true);
+        const oldTemplate = templateBuilder(oldSignature, mailSettings, userSettings, fontStyle, false, true);
+        const newTemplate = templateBuilder(newSignature, mailSettings, userSettings, fontStyle, false, true);
         const content = getPlainTextContent(message);
         const oldSignatureText = exportPlainText(oldTemplate).trim();
         const newSignatureText = exportPlainText(newTemplate).trim();
@@ -159,7 +167,7 @@ export const changeSignature = (
     );
 
     if (userSignature) {
-        const protonSignature = getProtonSignature(mailSettings);
+        const protonSignature = getProtonSignature(mailSettings, userSettings);
         const { userClass, containerClass } = getClassNamesSignature(newSignature, protonSignature);
 
         userSignature.innerHTML = replaceLineBreaks(newSignature);

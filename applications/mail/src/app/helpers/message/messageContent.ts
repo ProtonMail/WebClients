@@ -1,4 +1,4 @@
-import { MailSettings, Address } from '@proton/shared/lib/interfaces';
+import { MailSettings, Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { isPlainText, isNewsLetter } from '@proton/shared/lib/mail/messages';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getMaxDepth } from '@proton/shared/lib/helpers/dom';
@@ -94,10 +94,11 @@ export const plainTextToHTML = (
     message: Message | undefined,
     plainTextContent: string | undefined,
     mailSettings: MailSettings | undefined,
+    userSettings: UserSettings | undefined,
     addresses: Address[]
 ) => {
     const sender = findSender(addresses, message);
-    return textToHtml(plainTextContent, sender?.Signature || '', mailSettings);
+    return textToHtml(plainTextContent, sender?.Signature || '', mailSettings, userSettings);
 };
 
 export const querySelectorAll = (message: Partial<MessageState> | undefined, selector: string) => [
