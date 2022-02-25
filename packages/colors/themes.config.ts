@@ -12,7 +12,7 @@ export interface ThemeConfig {
 
 const config: ThemeConfig[] = [
     {
-        output: './themes/contrast.css',
+        output: './themes/contrast.theme.css',
         files: [
             {
                 path: './themes/contrast-standard-base.css',
@@ -21,7 +21,7 @@ const config: ThemeConfig[] = [
         ],
     },
     {
-        output: './themes/dark.css',
+        output: './themes/dark.theme.css',
         files: [
             {
                 path: './themes/dark-standard-base.css',
@@ -34,7 +34,7 @@ const config: ThemeConfig[] = [
         ],
     },
     {
-        output: './themes/default.css',
+        output: './themes/default.theme.css',
         files: [
             {
                 path: './themes/default-standard-base.css',
@@ -47,7 +47,7 @@ const config: ThemeConfig[] = [
         ],
     },
     {
-        output: './themes/legacy.css',
+        output: './themes/legacy.theme.css',
         files: [
             {
                 path: './themes/legacy-standard-base.css',
@@ -60,7 +60,7 @@ const config: ThemeConfig[] = [
         ],
     },
     {
-        output: './themes/light.css',
+        output: './themes/light.theme.css',
         files: [
             {
                 path: './themes/light-standard-base.css',
@@ -69,7 +69,7 @@ const config: ThemeConfig[] = [
         ],
     },
     {
-        output: './themes/monokai.css',
+        output: './themes/monokai.theme.css',
         files: [
             {
                 path: './themes/monokai-standard-base.css',

@@ -3590,7 +3590,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@proton/colors@workspace:packages/colors":
+"@proton/colors@workspace:^, @proton/colors@workspace:packages/colors":
   version: 0.0.0-use.local
   resolution: "@proton/colors@workspace:packages/colors"
   dependencies:
@@ -3872,6 +3872,7 @@ __metadata:
   dependencies:
     "@babel/plugin-transform-runtime": ^7.17.0
     "@mattiasbuelens/web-streams-adapter": 0.1.0
+    "@proton/colors": "workspace:^"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/get-random-values": "workspace:packages/get-random-values"
     "@proton/i18n": "workspace:packages/i18n"
