@@ -1,8 +1,8 @@
-import AppLink, { Props as LinkProps } from '../link/AppLink';
+import AppLink, { AppLinkProps } from '../link/AppLink';
 import { ButtonLike } from '../button';
 import { Icon } from '../icon';
 
-const SidebarBackButton = ({ children, ...rest }: LinkProps) => {
+const SidebarBackButton = ({ children, ...rest }: AppLinkProps) => {
     return (
         <ButtonLike
             as={AppLink}

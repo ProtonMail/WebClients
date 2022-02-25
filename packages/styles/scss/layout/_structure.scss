@@ -92,31 +92,6 @@ html,
 	inline-size: var(--width-sidebar, #{rem($width-sidebar)});
 }
 
-.logo-link {
-	@extend .interactive;
-
-	position: relative;
-	padding-block: 0.875em 1.125em;
-	padding-inline: 0.5em;
-	box-sizing: initial;
-
-	.plan {
-		position: absolute;
-		inset-block-end: 0.5em;
-		inset-inline-start: rem(32);
-		font-size: rem(10);
-		line-height: 1;
-	}
-}
-
-.logo {
-	block-size: rem(22);
-}
-
-.logo g {
-	fill: currentColor;
-}
-
 .hamburger {
 	@include respond-to($breakpoint-small) {
 		flex-shrink: 0; // this has to stay

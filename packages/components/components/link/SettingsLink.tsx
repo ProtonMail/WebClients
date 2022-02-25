@@ -2,7 +2,7 @@ import { forwardRef, Ref } from 'react';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { useLocation } from 'react-router-dom';
-import AppLink, { Props as AppLinkProps } from './AppLink';
+import AppLink, { AppLinkProps } from './AppLink';
 import { useConfig } from '../../hooks';
 
 export interface Props extends Omit<AppLinkProps, 'to' | 'toApp'> {

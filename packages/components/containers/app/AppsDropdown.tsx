@@ -5,16 +5,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import { useApps } from '../../hooks';
-import {
-    AppLink,
-    MailLogo,
-    CalendarLogo,
-    DriveLogo,
-    Icon,
-    SimpleDropdown,
-    SettingsLink,
-    VpnLogo,
-} from '../../components';
+import { AppLink, Logo, Icon, SimpleDropdown, SettingsLink, VpnLogo } from '../../components';
 
 interface AppsDropdownProps {
     onDropdownClick?: () => void;
@@ -23,16 +14,9 @@ interface AppsDropdownProps {
 const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
     const applications = useApps();
 
-    const appToLogo = {
-        [APPS.PROTONMAIL]: <MailLogo version="glyph-only" className="flex-item-noshrink mr0-5" />,
-        [APPS.PROTONCALENDAR]: <CalendarLogo version="glyph-only" className="flex-item-noshrink mr0-5" />,
-        [APPS.PROTONDRIVE]: <DriveLogo version="glyph-only" className="flex-item-noshrink mr0-5" />,
-    };
-
     const apps = applications.map((app) => ({
         app: app,
         name: getAppName(app),
-        logo: appToLogo[app],
     }));
 
     const vpnName = getAppName(APPS.PROTONVPN_SETTINGS);
@@ -56,12 +40,13 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
             {...rest}
         >
             <ul className="unstyled mt0 mb0">
-                {apps.map(({ app, logo, name }, index) => {
+                {apps.map(({ app, name }, index) => {
                     return (
                         <Fragment key={app}>
                             <li className="dropdown-item">
                                 <AppLink key={index} to="/" toApp={app} className={itemClassName} title={name}>
-                                    {logo} {name}
+                                    <Logo appName={app} variant="glyph-only" className="flex-item-noshrink mr0-5" />
+                                    {name}
                                     {app === APPS.PROTONDRIVE && (
                                         <span className="inline-block flex-item-noshrink bg-primary rounded-full text-sm px0-75 ml1">
                                             Beta
@@ -76,7 +61,7 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
 
                 <li className="dropdown-item">
                     <SettingsLink path="/" app={APPS.PROTONVPN_SETTINGS} title={vpnName} className={itemClassName}>
-                        <VpnLogo version="glyph-only" className="mr0-5" />
+                        <VpnLogo variant="glyph-only" className="mr0-5" />
                         {vpnName}
                     </SettingsLink>
                 </li>
