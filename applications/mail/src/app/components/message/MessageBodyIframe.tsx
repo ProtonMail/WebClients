@@ -54,7 +54,6 @@ const MessageBodyIframe = ({
     isOutside,
     mailSettings,
 }: Props) => {
-    // const iframeRef = useRef<HTMLIFrameElement>(null);
     const messageHead = locateHead(message.messageDocument?.document);
 
     const { isResizing } = useMailboxContainerContext();
