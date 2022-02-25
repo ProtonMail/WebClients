@@ -1,10 +1,9 @@
-import { Instance as Color } from 'tinycolor2';
+import tinycolor, { Instance as Color } from 'tinycolor2';
 
 import isBetween from '@proton/shared/lib/helpers/isBetween';
 
 import shade from './shade';
 import tint from './tint';
-import hue from './hue';
 
 function genMutation(color: Color) {
     return function (mutation: number) {
@@ -15,9 +14,9 @@ function genMutation(color: Color) {
 }
 
 function genButtonShades(base: Color, light: boolean) {
-    const hsl = base.toHsl();
+    const hsv = base.toHsv();
 
-    if (hsl.s <= 0.3) {
+    if (hsv.s <= 0.3) {
         if (light) {
             return [70, 50, 0, -5, -10, -15].map(genMutation(base));
         } else {
@@ -25,17 +24,25 @@ function genButtonShades(base: Color, light: boolean) {
         }
     }
 
-    if (isBetween(hsl.h, 30, 60)) {
+    if (isBetween(hsv.h, 30, 60)) {
         if (light) {
             const tinted = [90, 80, 0].map(genMutation(base));
 
-            const shaded = [-5, -10, -15].map(genMutation(base)).map(hue(-5));
+            const shaded = [-5, -10, -15].map(genMutation(base)).map((c, i) => {
+                const hsl = c.toHsl();
+                hsl.h = hsl.h - 5 * (i + 1);
+                return tinycolor(hsl);
+            });
 
             return [...tinted, ...shaded];
         } else {
-            const shaded = [-80, -70, 0].map(genMutation(base)).map(hue(-5));
+            const shaded = [-80, -70].map(genMutation(base)).map((c) => {
+                const hsl = c.toHsl();
+                hsl.h = hsl.h - 15;
+                return tinycolor(hsl);
+            });
 
-            const tinted = [10, 20, 30].map(genMutation(base));
+            const tinted = [0, 10, 20, 30].map(genMutation(base));
 
             return [...shaded, ...tinted];
         }
