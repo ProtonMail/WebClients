@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton, Button } from '@proton/components';
 import { c } from 'ttag';
 
-const ResendCodeModal = ({ modalTitleID = 'modalTitle', onResend, onBack, destination, onClose, ...rest }) => {
+const ResendCodeModal = ({ modalTitleID = 'modalTitle', notices, onResend, onBack, destination, onClose, ...rest }) => {
     const editI18n = c('Action').t`Edit`;
     const destinationText = <strong key="destination">{destination.Address || destination.Phone}</strong>;
     const destinationType = destination.Address ? c('VerificationType').t`email` : c('VerificationType').t`phone`;
@@ -14,6 +14,7 @@ const ResendCodeModal = ({ modalTitleID = 'modalTitle', onResend, onBack, destin
             </HeaderModal>
             <div className="modal-content">
                 <InnerModal>
+                    {notices}
                     <p>
                         {c('Info')
                             .jt`Click below to resend the code to ${destinationText}. If ${destinationType} is incorrect, please click "${editI18n}".`}
@@ -47,6 +48,7 @@ const ResendCodeModal = ({ modalTitleID = 'modalTitle', onResend, onBack, destin
 };
 
 ResendCodeModal.propTypes = {
+    notices: PropTypes.element,
     modalTitleID: PropTypes.string,
     destination: PropTypes.shape({
         Phone: PropTypes.string,
