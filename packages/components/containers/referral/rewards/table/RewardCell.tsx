@@ -11,8 +11,14 @@ const RewardCell = ({ referral }: Props) => {
     const monthsRewarded = referral.RewardMonths || 0;
 
     switch (referral.State) {
+        case ReferralState.SIGNED_UP:
         case ReferralState.COMPLETED:
-            // translator : complete sentense example : "3 months pending"
+            /*
+             * translator : We are in a table cell.
+             * A user referee have signed up or completed a subscription
+             * We show the reward user would be allowed to get.
+             * Example : "3 months pending"
+             */
             reward = c('Label').ngettext(
                 msgid`${monthsRewarded} month pending`,
                 `${monthsRewarded} months pending`,
@@ -20,7 +26,12 @@ const RewardCell = ({ referral }: Props) => {
             );
             break;
         case ReferralState.REWARDED:
-            // translator : complete sentense example : "3 months credited"
+            /*
+             * translator : We are in a table cell.
+             * A user referee have signed up or completed a subscription
+             * We show the reward user has been credited.
+             * Example : "3 months credited"
+             */
             reward = c('Label').ngettext(
                 msgid`${monthsRewarded} month credited`,
                 `${monthsRewarded} months credited`,

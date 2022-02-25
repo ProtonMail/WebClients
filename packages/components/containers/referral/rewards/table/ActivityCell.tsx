@@ -10,18 +10,25 @@ const ActivityCell = ({ referral }: Props) => {
 
     switch (referral.State) {
         case ReferralState.INVITED:
-            message = referral.Email ? c('Info').t`Invited via email` : c('Info').t`Signed up via your link`;
+            message = referral.Email
+                ? // translator : We are in a table cell. A user referee has been invited via mail
+                  c('Info').t`Invited via email`
+                : // translator : We are in a table cell. A user referee has signed up via his referral link
+                  c('Info').t`Signed up via your link`;
             break;
         case ReferralState.SIGNED_UP:
         case ReferralState.TRIAL:
+            // translator : We are in a table cell. A user referee has signed up
             message = c('Info').t`Signed up`;
             break;
         case ReferralState.COMPLETED:
         case ReferralState.REWARDED:
             message =
-                (referral.RewardMonths || 0) > 1
-                    ? c('Info').t`Paid for a month plan`
-                    : c('Info').t`Paid for a 12 months plan`;
+                (referral.RewardMonths || 0) === 1
+                    ? // translator : We are in a table cell. We inform user that a referred user has paid for a monthly plan
+                      c('Info').t`Paid for a monthly plan`
+                    : // translator : We are in a table cell. We inform user that a referred user has paid for 12months plan
+                      c('Info').t`Paid for a 12 months plan`;
             break;
     }
 
