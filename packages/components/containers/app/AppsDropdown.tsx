@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
-import { useConfig, useApps } from '../../hooks';
+import { useApps } from '../../hooks';
 import {
     AppLink,
     MailLogo,
@@ -21,7 +21,6 @@ interface AppsDropdownProps {
 }
 
 const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
-    const { APP_NAME } = useConfig();
     const applications = useApps();
 
     const appToLogo = {
@@ -58,19 +57,10 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
         >
             <ul className="unstyled mt0 mb0">
                 {apps.map(({ app, logo, name }, index) => {
-                    const isCurrent = app === APP_NAME;
-
                     return (
                         <Fragment key={app}>
                             <li className="dropdown-item">
-                                <AppLink
-                                    key={index}
-                                    to="/"
-                                    toApp={app}
-                                    className={itemClassName}
-                                    title={name}
-                                    aria-current={isCurrent}
-                                >
+                                <AppLink key={index} to="/" toApp={app} className={itemClassName} title={name}>
                                     {logo} {name}
                                     {app === APPS.PROTONDRIVE && (
                                         <span className="inline-block flex-item-noshrink bg-primary rounded-full text-sm px0-75 ml1">
