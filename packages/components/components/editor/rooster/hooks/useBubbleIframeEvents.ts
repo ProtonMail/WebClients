@@ -54,10 +54,11 @@ const cloneEvent = (event: Event) => {
 };
 
 /**
+ * Calls event.preventDefault on matched events
  * Because events occuring inside an iframe can show prompts in browsers (ex : pressing crtl+s)
  * we need some specific event management here
  */
-const preventUnwantedEvents = (event: Event) => {
+const preventDefaultEvents = (event: Event) => {
     if (isKeyboardEvent(event)) {
         Object.values(editorShortcuts).forEach((shortcut) => {
             let isOk = shortcut.map(() => false);
@@ -88,15 +89,31 @@ const preventUnwantedEvents = (event: Event) => {
     }
 };
 
+const canDispatchEvent = (event: Event): boolean => {
+    if (isKeyboardEvent(event)) {
+        // Cancel tab keyboard event dispatch for
+        // keeping native focus management behavior
+        if (event.key.toLowerCase() === 'tab') {
+            return false;
+        }
+    }
+
+    return true;
+};
+
 /**
  * Trigger some events manually because of Iframe stopping bubbling.
  * @param iframeRef
  */
 const useBubbleIframeEvents = (iframeRef: RefObject<HTMLIFrameElement>) => {
     const handleBubble = useCallback((event: Event) => {
-        const clonedEvent = cloneEvent(event);
-        preventUnwantedEvents(event);
-        iframeRef.current?.dispatchEvent(clonedEvent);
+        const canDispatch = canDispatchEvent(event);
+        preventDefaultEvents(event);
+
+        if (canDispatch) {
+            const clonedEvent = cloneEvent(event);
+            iframeRef.current?.dispatchEvent(clonedEvent);
+        }
     }, []);
 
     useEffect(() => {
