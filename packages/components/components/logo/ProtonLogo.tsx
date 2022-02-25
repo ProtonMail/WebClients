@@ -5,14 +5,14 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 type Version = 'full' | 'glyph-only';
 
 interface Props extends ComponentPropsWithoutRef<'svg'> {
-    version?: Version;
+    variant?: Version;
 }
 
-const ProtonLogo = ({ version = 'full', className, ...rest }: Props) => {
+const ProtonLogo = ({ variant = 'full', className, ...rest }: Props) => {
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
 
-    return version === 'full' ? (
+    return variant === 'full' ? (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -20,7 +20,7 @@ const ProtonLogo = ({ version = 'full', className, ...rest }: Props) => {
             width="96"
             height="36"
             fill="none"
-            className={classnames(['logo', version, className])}
+            className={classnames(['logo', variant, className])}
             aria-labelledby={`{${uid}}-title`}
             {...rest}
         >
@@ -59,7 +59,7 @@ const ProtonLogo = ({ version = 'full', className, ...rest }: Props) => {
             width="36"
             height="36"
             fill="none"
-            className={classnames(['logo', version, className])}
+            className={classnames(['logo', variant, className])}
             aria-labelledby={`{${uid}}-title`}
             {...rest}
         >

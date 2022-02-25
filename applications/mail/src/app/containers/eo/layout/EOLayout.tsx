@@ -3,7 +3,15 @@ import { c } from 'ttag';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { getAppVersion, useConfig, PublicTopBanners, Href, ProminentContainer, Logo } from '@proton/components';
+import {
+    getAppVersion,
+    useConfig,
+    PublicTopBanners,
+    Href,
+    ProminentContainer,
+    Logo,
+    AppLink,
+} from '@proton/components';
 
 import LanguageSelect from './EOLanguageSelect';
 
@@ -36,9 +44,9 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
         <ProminentContainer className="flex-no-min-children flex-nowrap flex-column h100 eo-layout-bg scroll-if-needed">
             <PublicTopBanners />
             <header className="flex flex-nowrap flex-justify-space-between flex-align-items-center flex-item-noshrink p2">
-                <span>
-                    <Logo appName={toApp} to="/" toApp={toApp} target="_self" />
-                </span>
+                <AppLink to="/" toApp={toApp} target="_self">
+                    <Logo appName={toApp} />
+                </AppLink>
                 <div className="flex flex-nowrap flex-align-items-center on-mobile-flex-column">
                     {hasLanguageSelect && (
                         <span className="text-right flex flex-align-items-center on-mobile-flex-column on-mobile-text-right on-mobile-mr1 on-mobile-mb1">
