@@ -2,7 +2,7 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { unique } from '@proton/shared/lib/helpers/array';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { Address, MailSettings } from '@proton/shared/lib/interfaces';
+import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
@@ -156,6 +156,7 @@ export const handleActions = (
 const generateBlockquote = (
     referenceMessage: PartialMessageState,
     mailSettings: MailSettings,
+    userSettings: UserSettings,
     addresses: Address[]
 ) => {
     const date = formatFullDate(getDate(referenceMessage?.data as Message, ''));
@@ -169,6 +170,7 @@ const generateBlockquote = (
               referenceMessage.data as Message,
               referenceMessage.decryption?.decryptedBody,
               mailSettings,
+              userSettings,
               addresses
           )
         : getDocumentContent(restoreImages(referenceMessage.messageDocument?.document, referenceMessage.messageImages));
@@ -186,6 +188,7 @@ export const createNewDraft = (
     action: MESSAGE_ACTIONS,
     referenceMessage: PartialMessageState | undefined,
     mailSettings: MailSettings,
+    userSettings: UserSettings,
     addresses: Address[],
     getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
     isOutside = false
@@ -233,14 +236,14 @@ export const createNewDraft = (
             ? referenceMessage?.decryption?.decryptedBody
                 ? referenceMessage?.decryption?.decryptedBody
                 : ''
-            : generateBlockquote(referenceMessage || {}, mailSettings, addresses);
+            : generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses);
 
     const fontStyle = defaultFontStyle({ FontFace, FontSize });
 
     content =
         action === MESSAGE_ACTIONS.NEW && referenceMessage?.decryption?.decryptedBody
-            ? insertSignature(content, senderAddress?.Signature, action, mailSettings, fontStyle, true)
-            : insertSignature(content, senderAddress?.Signature, action, mailSettings, fontStyle);
+            ? insertSignature(content, senderAddress?.Signature, action, mailSettings, userSettings, fontStyle, true)
+            : insertSignature(content, senderAddress?.Signature, action, mailSettings, userSettings, fontStyle);
 
     const plain = isPlainText({ MIMEType });
     const document = plain ? undefined : parseInDiv(content);
