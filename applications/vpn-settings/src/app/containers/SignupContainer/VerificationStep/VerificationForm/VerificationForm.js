@@ -4,6 +4,7 @@ import { useNotifications } from '@proton/components';
 import { c } from 'ttag';
 import VerificationMethodForm from './VerificationMethodForm/VerificationMethodForm';
 import VerificationCodeForm from './VerificationCodeForm/VerificationCodeForm';
+import { onlyStrong } from './onlyStrong';
 
 const VerificationForm = ({ defaultCountry, defaultEmail, allowedMethods, onRequestCode, onSubmit, onCaptcha }) => {
     const { createNotification } = useNotifications();
@@ -47,8 +48,10 @@ const VerificationForm = ({ defaultCountry, defaultEmail, allowedMethods, onRequ
             notices={
                 <p
                     dangerouslySetInnerHTML={{
-                        // translator: spamFolder is just "spam folder" in bold
-                        __html: c('Info').t`Please make sure to check your ${spamFolder}.`,
+                        __html: onlyStrong(
+                            // translator: spamFolder is just "spam folder" in bold
+                            c('Info').t`Please make sure to check your ${spamFolder}.`
+                        ),
                     }}
                 />
             }
