@@ -1,5 +1,5 @@
 import markdownit from 'markdown-it';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { templateBuilder } from './message/messageSignature';
@@ -82,9 +82,14 @@ const escapeBackslash = (text = '') => text.replace(/\\/g, '\\\\');
  * Replace the signature by a temp hash, we replace it only
  * if the content is the same.
  */
-const replaceSignature = (input: string, signature: string, mailSettings: MailSettings | undefined) => {
+const replaceSignature = (
+    input: string,
+    signature: string,
+    mailSettings: MailSettings | undefined,
+    userSettings: UserSettings | undefined
+) => {
     const fontStyle = defaultFontStyle(mailSettings);
-    const signatureTemplate = templateBuilder(signature, mailSettings, fontStyle, false, true);
+    const signatureTemplate = templateBuilder(signature, mailSettings, userSettings, fontStyle, false, true);
     const signatureText = toText(signatureTemplate)
         .replace(/\u200B/g, '')
         .trim();
@@ -99,12 +104,14 @@ const attachSignature = (
     input: string,
     signature: string,
     plaintext: string,
-    mailSettings: MailSettings | undefined
+    mailSettings: MailSettings | undefined,
+    userSettings: UserSettings | undefined
 ) => {
     const fontStyle = defaultFontStyle(mailSettings);
     const signatureTemplate = templateBuilder(
         signature,
         mailSettings,
+        userSettings,
         fontStyle,
         false,
         !plaintext.startsWith(SIGNATURE_PLACEHOLDER)
@@ -112,8 +119,13 @@ const attachSignature = (
     return input.replace(SIGNATURE_PLACEHOLDER, signatureTemplate);
 };
 
-export const textToHtml = (input = '', signature: string, mailSettings: MailSettings | undefined) => {
-    const text = replaceSignature(input, signature, mailSettings);
+export const textToHtml = (
+    input = '',
+    signature: string,
+    mailSettings: MailSettings | undefined,
+    userSettings: UserSettings | undefined
+) => {
+    const text = replaceSignature(input, signature, mailSettings, userSettings);
 
     // We want empty new lines to behave as if they were not empty (this is non-standard markdown behaviour)
     // It's more logical though for users that don't know about markdown.
@@ -123,7 +135,7 @@ export const textToHtml = (input = '', signature: string, mailSettings: MailSett
     const rendered = md.render(withPlaceholder);
     const html = removeNewLinePlaceholder(rendered, placeholder);
 
-    const withSignature = attachSignature(html, signature, text, mailSettings).trim();
+    const withSignature = attachSignature(html, signature, text, mailSettings, userSettings).trim();
     /**
      * The capturing group includes negative lookup "(?!<p>)" in order to avoid nested problems.
      * Ex, this capture will be ignored : "<p>Hello</p><p>Hello again</p>""
