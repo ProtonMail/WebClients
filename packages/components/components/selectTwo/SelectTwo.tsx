@@ -11,6 +11,10 @@ export interface Props<V>
     extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
     value?: V;
     /**
+     * Optionally allows to remove the border around the select. Use for example in inputs
+     */
+    unstyled?: boolean;
+    /**
      * Optionally allows controlling the Select's open state
      */
     isOpen?: boolean;
@@ -42,6 +46,7 @@ export interface Props<V>
 }
 
 const SelectTwo = <V extends any>({
+    unstyled,
     children,
     value,
     placeholder,
@@ -169,6 +174,7 @@ const SelectTwo = <V extends any>({
     return (
         <SelectProvider {...select}>
             <SelectButton
+                unstyled={unstyled}
                 isOpen={isOpen}
                 onOpen={open}
                 onClick={handleAnchorClick}

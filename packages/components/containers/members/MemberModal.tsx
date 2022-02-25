@@ -201,7 +201,11 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
                                 @{domainOptions[0].value}
                             </span>
                         ) : (
-                            <SelectTwo value={model.domain} onChange={({ value }) => handleChange('domain')(value)}>
+                            <SelectTwo
+                                unstyled
+                                value={model.domain}
+                                onChange={({ value }) => handleChange('domain')(value)}
+                            >
                                 {domainOptions.map((option) => (
                                     <Option key={option.value} value={option.value} title={option.text}>
                                         @{option.text}
