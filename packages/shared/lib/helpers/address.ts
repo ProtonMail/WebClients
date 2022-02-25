@@ -42,3 +42,13 @@ export const findUserAddress = (userEmail?: string, addresses: Address[] = []) =
     const canonicalUserEmail = canonizeInternalEmail(userEmail);
     return addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonicalUserEmail);
 };
+
+export const getPrimaryAddress = (addresses: Address[]) => {
+    const [address] = getActiveAddresses(addresses);
+
+    if (!address) {
+        throw new Error('No primary address');
+    }
+
+    return address;
+};

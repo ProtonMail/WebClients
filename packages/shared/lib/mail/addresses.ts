@@ -36,7 +36,13 @@ export const getAddressFromPlusAlias = (addresses: Address[], email = ''): Addre
     return { ...(address as Address), Email: addPlusAlias(address?.Email, plusPart) };
 };
 
-export const getSupportedPlusAlias = ({ selfAttendeeEmail, selfAddressEmail }: { selfAttendeeEmail: string, selfAddressEmail: string }) => {
+export const getSupportedPlusAlias = ({
+    selfAttendeeEmail,
+    selfAddressEmail,
+}: {
+    selfAttendeeEmail: string;
+    selfAddressEmail: string;
+}) => {
     if (!selfAttendeeEmail) {
         return selfAddressEmail;
     }

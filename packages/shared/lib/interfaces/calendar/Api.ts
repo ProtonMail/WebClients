@@ -17,7 +17,7 @@ export interface CalendarSetupData {
     PrivateKey: string;
     Passphrase: {
         DataPacket: string;
-        KeyPackets: string;
+        KeyPacket: string;
     };
 }
 
