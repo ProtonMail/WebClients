@@ -165,6 +165,12 @@ export const emptyLabel = ({ LabelID, AddressID }) => ({
     params: { LabelID, AddressID },
 });
 
+export const moveAll = ({ SourceLabelID, DestinationLabelID }) => ({
+    method: 'put',
+    url: 'mail/v4/messages/move',
+    data: { SourceLabelID, DestinationLabelID },
+});
+
 export const cancelSend = (messageID) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}/cancel_send`,
