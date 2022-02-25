@@ -10,7 +10,11 @@ export const loadLocale = async (localeCode: string, locales: TtagLocaleMap) => 
     const languageCode = getLanguageCode(localeCode);
 
     if (localeCode !== DEFAULT_LOCALE) {
-        const data = await locales[localeCode]();
+        const getLocaleData = locales[localeCode];
+        if (!getLocaleData) {
+            throw new Error('No locale data for requested localeCode');
+        }
+        const data = await getLocaleData();
         ttagAddLocale(localeCode, data);
     }
     ttagUseLocale(localeCode);
