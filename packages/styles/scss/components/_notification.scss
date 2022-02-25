@@ -87,3 +87,7 @@
 		margin-block-end: 0;
 	}
 }
+
+.global-loader {
+    z-index: $layer-notifications;
+}
