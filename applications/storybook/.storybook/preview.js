@@ -1,11 +1,6 @@
-import {
-    Icons,
-    NotificationsProvider,
-    NotificationsChildren,
-    ModalsProvider,
-    ModalsChildren,
-    CacheProvider,
-} from '@proton/components';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import { Icons, NotificationsProvider, NotificationsChildren, ModalsProvider, ModalsChildren, CacheProvider } from '@proton/components';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import createCache from '@proton/shared/lib/helpers/cache';
@@ -24,20 +19,22 @@ const tempConfig = {
 
 export const decorators = [
     (Story) => (
-        <ConfigProvider config={tempConfig}>
-            <Icons />
-            <NotificationsProvider>
-                <ModalsProvider>
-                    <ApiProvider config={tempConfig}>
-                        <NotificationsChildren />
-                        <ModalsChildren />
-                        <CacheProvider cache={cacheRef}>
-                            <Story />
-                        </CacheProvider>
-                    </ApiProvider>
-                </ModalsProvider>
-            </NotificationsProvider>
-        </ConfigProvider>
+        <Router>
+            <ConfigProvider config={tempConfig}>
+                <Icons />
+                <NotificationsProvider>
+                    <ModalsProvider>
+                        <ApiProvider config={tempConfig}>
+                            <NotificationsChildren />
+                            <ModalsChildren />
+                            <CacheProvider cache={cacheRef}>
+                                <Story />
+                            </CacheProvider>
+                        </ApiProvider>
+                    </ModalsProvider>
+                </NotificationsProvider>
+            </ConfigProvider>
+        </Router>
     ),
 ];
 

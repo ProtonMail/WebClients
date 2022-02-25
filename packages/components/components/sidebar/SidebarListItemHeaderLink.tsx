@@ -1,8 +1,8 @@
 import { forwardRef, Ref } from 'react';
 import Icon, { IconName } from '../icon/Icon';
-import AppLink, { Props as LinkProps } from '../link/AppLink';
+import AppLink, { AppLinkProps } from '../link/AppLink';
 
-interface Props extends LinkProps {
+interface Props extends AppLinkProps {
     icon: IconName;
     info: string;
 }

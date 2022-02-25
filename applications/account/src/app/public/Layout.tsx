@@ -4,7 +4,16 @@ import { locales } from '@proton/shared/lib/i18n/locales';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
-import { getAppVersion, useConfig, PublicTopBanners, Href, Icon, ProminentContainer, Logo } from '@proton/components';
+import {
+    AppLink,
+    getAppVersion,
+    useConfig,
+    PublicTopBanners,
+    Href,
+    Icon,
+    ProminentContainer,
+    Logo,
+} from '@proton/components';
 
 import LanguageSelect from './LanguageSelect';
 
@@ -42,9 +51,10 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
         <ProminentContainer className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed">
             <PublicTopBanners />
             <header className="flex flex-justify-space-between flex-align-items-center flex-item-noshrink p2">
-                <span>
-                    <Logo appName={toApp} to="/" toApp={toApp} target="_self" />
-                </span>
+                <AppLink to="/" toApp={toApp} target="_self">
+                    <Logo appName={toApp} />
+                </AppLink>
+
                 {hasLanguageSelect && (
                     <span className="text-right">
                         <LanguageSelect className="support-dropdown-button" locales={locales} />

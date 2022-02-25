@@ -1,20 +1,20 @@
 import { ComponentPropsWithoutRef, useState } from 'react';
+
 import { classnames, generateUID } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { Version } from './Logo';
 
-interface Props extends ComponentPropsWithoutRef<'svg'> {
-    version?: Version;
-}
+import { LogoProps } from './Logo';
 
-const CalendarLogo = ({ version = 'with-wordmark', className, ...rest }: Props) => {
+type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant'>;
+
+const CalendarLogo = ({ variant = 'with-wordmark', className, ...rest }: Props) => {
     const appName = getAppName(APPS.PROTONCALENDAR);
 
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
 
-    const logoWidth = version === 'with-wordmark' ? 166 : 36;
+    const logoWidth = variant === 'with-wordmark' ? 166 : 36;
 
     return (
         <svg
@@ -24,11 +24,11 @@ const CalendarLogo = ({ version = 'with-wordmark', className, ...rest }: Props) 
             width={logoWidth}
             height="36"
             fill="none"
-            className={classnames(['logo', version, className])}
+            className={classnames(['logo', variant, className])}
             aria-labelledby={`{${uid}}-title`}
             {...rest}
         >
-            {version === 'with-wordmark' && (
+            {variant === 'with-wordmark' && (
                 <g>
                     <path
                         className="logo-text-product"
@@ -40,7 +40,7 @@ const CalendarLogo = ({ version = 'with-wordmark', className, ...rest }: Props) 
                     />
                 </g>
             )}
-            {(version === 'with-wordmark' || version === 'standalone') && (
+            {(variant === 'with-wordmark' || variant === 'standalone') && (
                 <g>
                     <path
                         className="logo-mark-background"

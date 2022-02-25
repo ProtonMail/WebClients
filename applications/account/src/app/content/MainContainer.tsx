@@ -6,6 +6,7 @@ import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS } from '@proton/shared/lib/consta
 import { UserType } from '@proton/shared/lib/interfaces';
 
 import {
+    AppLink,
     FeatureCode,
     Logo,
     PrivateAppContainer,
@@ -116,7 +117,11 @@ const MainContainer = () => {
     const to = isVpn ? getSlugFromApp(APPS.PROTONVPN_SETTINGS) : '/';
     const prefixPath = `/${appSlug}`;
 
-    const logo = <Logo appName={app} to={to} toApp={toApp} target="_self" />;
+    const logo = (
+        <AppLink to={to} toApp={toApp} target="_self">
+            <Logo appName={app} />
+        </AppLink>
+    );
 
     const top = <TopBanners />;
 
