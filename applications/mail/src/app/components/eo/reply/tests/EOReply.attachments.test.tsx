@@ -27,6 +27,8 @@ describe('EO Reply attachments', () => {
         const toggleList = getByTestId('attachment-list-toggle');
         fireEvent.click(toggleList);
 
+        await tick();
+
         const item = getByTestId('attachment-item').querySelectorAll('button')[1];
 
         fireEvent.click(item);
