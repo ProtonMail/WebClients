@@ -22,6 +22,7 @@ import { generateLookupHash, encryptPassphrase } from '@proton/shared/lib/keys/d
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import { queryRestoreDriveVolume, queryDeleteLockedVolumes } from '@proton/shared/lib/api/drive/volume';
 
+import { useDebouncedFunction } from '../utils';
 import { useDebouncedRequest } from '../api';
 import { useDriveCrypto } from '../crypto';
 import { useLink } from '../links';
@@ -37,6 +38,7 @@ import { ShareWithKey, LockedVolumeForRestore } from './interface';
 export default function useLockedVolume() {
     const { preventLeave } = usePreventLeave();
     const [addressesKeys] = useAddressesKeys();
+    const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
     const { getPrimaryAddressKey } = useDriveCrypto();
@@ -61,30 +63,43 @@ export default function useLockedVolume() {
         async (abortSignal: AbortSignal) => {
             return Promise.all(getLockedShares().map(({ shareId }) => getShareWithKey(abortSignal, shareId)));
         },
-        [getLockedShares, getShareWithKey]
+        [getLockedShares]
     );
 
     const prepareVolumesForRestore = useCallback(
         async (abortSignal: AbortSignal): Promise<LockedVolumeForRestore[]> => {
             const addressPrivateKeys = getPossibleAddressPrivateKeys();
-            const lockedShares = await getLoadedLockedShares(abortSignal);
-            return (
-                await Promise.all(lockedShares.map(async (share) => prepareVolumeForRestore(share, addressPrivateKeys)))
-            ).filter(isTruthy);
-        },
-        [getPossibleAddressPrivateKeys, getLockedShares]
-    );
-
-    const getVolumesForRestore = useCallback(
-        async (abortSignal: AbortSignal): Promise<LockedVolumeForRestore[]> => {
-            if (lockedVolumesForRestore) {
+            if (!addressPrivateKeys?.length) {
                 return lockedVolumesForRestore;
             }
-            const volumes = await prepareVolumesForRestore(abortSignal);
+            const lockedShares = await getLoadedLockedShares(abortSignal);
+            const lockedUnpreparedShares = lockedShares.filter(
+                ({ shareId }) =>
+                    !lockedVolumesForRestore.some(({ shareId: preparedShareId }) => shareId === preparedShareId)
+            );
+            if (!lockedUnpreparedShares.length) {
+                return lockedVolumesForRestore;
+            }
+
+            const newPreparedVolumes = (
+                await Promise.all(
+                    lockedUnpreparedShares.map(async (share) => {
+                        return debouncedFunction(
+                            async () => prepareVolumeForRestore(share, addressPrivateKeys),
+                            ['prepareVolumeForRestore', share.shareId]
+                        );
+                    })
+                )
+            ).filter(isTruthy);
+            if (!newPreparedVolumes.length) {
+                return lockedVolumesForRestore;
+            }
+
+            const volumes = [...lockedVolumesForRestore, ...newPreparedVolumes];
             setLockedVolumesForRestore(volumes);
             return volumes;
         },
-        [lockedVolumesForRestore, prepareVolumesForRestore]
+        [getPossibleAddressPrivateKeys, getLoadedLockedShares, lockedVolumesForRestore]
     );
 
     const restoreVolume = async (
@@ -128,9 +143,9 @@ export default function useLockedVolume() {
         );
     };
 
-    const restoreVolumes = async (abortSignal: AbortSignal, readyToRestoreList?: LockedVolumeForRestore[]) => {
+    const restoreVolumes = async (abortSignal: AbortSignal) => {
         const defaultShare = await getDefaultShare(abortSignal);
-        const lockedVolumesForRestore = readyToRestoreList || (await getVolumesForRestore(abortSignal));
+        const lockedVolumesForRestore = await prepareVolumesForRestore(abortSignal);
         if (!defaultShare || !lockedVolumesForRestore.length) {
             return;
         }
@@ -144,18 +159,23 @@ export default function useLockedVolume() {
         // Backend does not support restoring of multiple volumes at one time.
         // Resotring is async operation and user has to trigger it for the next
         // volume manualy later again.
-        const restorePromiseList = [lockedVolumesForRestore[0]].map(({ lockedVolumeId, decryptedPassphrase }) =>
-            restoreVolume(
-                defaultShare.volumeId,
-                privateKey,
-                hashKey,
-                addressKey,
-                address,
-                lockedVolumeId,
-                decryptedPassphrase
-            )
+        const restorePromiseList = [lockedVolumesForRestore[0]].map(
+            async ({ shareId, lockedVolumeId, decryptedPassphrase }) => {
+                await restoreVolume(
+                    defaultShare.volumeId,
+                    privateKey,
+                    hashKey,
+                    addressKey,
+                    address,
+                    lockedVolumeId,
+                    decryptedPassphrase
+                );
+                removeShares([shareId]);
+            }
         );
-        return preventLeave(Promise.all(restorePromiseList));
+        await preventLeave(Promise.all(restorePromiseList));
+
+        setLockedVolumesForRestore([]);
     };
 
     const deleteLockedVolumes = async () => {
@@ -171,11 +191,11 @@ export default function useLockedVolume() {
     };
 
     return {
+        isReadyForPreparation: !!getLockedShares().length && !!addressesKeys?.length,
         lockedVolumesCount: getLockedShares().length,
         hasLockedVolumes: !!getLockedShares().length,
         hasVolumesForRestore: !!lockedVolumesForRestore?.length,
         prepareVolumesForRestore,
-        getVolumesForRestore,
         restoreVolumes,
         deleteLockedVolumes,
     };
@@ -192,7 +212,7 @@ async function prepareVolumeForRestore(
         if (matchingPrivateKey) {
             const decryptedPassphrase = await decryptLockedSharePassphrase(matchingPrivateKey, share);
             if (decryptedPassphrase) {
-                return { lockedVolumeId: share.volumeId, decryptedPassphrase };
+                return { shareId: share.shareId, lockedVolumeId: share.volumeId, decryptedPassphrase };
             }
         }
     } catch {

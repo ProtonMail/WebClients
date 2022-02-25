@@ -11,7 +11,7 @@ type SharesState = {
  */
 function useSharesStateProvider() {
     const [state, setState] = useState<SharesState>({});
-    const [lockedVolumesForRestore, setLockedVolumesForRestore] = useState<LockedVolumeForRestore[]>();
+    const [lockedVolumesForRestore, setLockedVolumesForRestore] = useState<LockedVolumeForRestore[]>([]);
 
     const setShares = useCallback((shares: (Share | ShareWithKey)[]) => {
         setState((state) => {
@@ -36,7 +36,7 @@ function useSharesStateProvider() {
     );
 
     const getLockedShares = useCallback((): (Share | ShareWithKey)[] => {
-        return Object.values(state).filter((share) => share.isLocked && !share.isVolumeSoftDeleted);
+        return Object.values(state).filter((share) => share.isLocked && share.isDefault && !share.isVolumeSoftDeleted);
     }, [state]);
 
     const getDefaultShareId = useCallback((): string | undefined => {
