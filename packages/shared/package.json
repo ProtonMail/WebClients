@@ -15,6 +15,7 @@
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
+        "@proton/colors": "workspace:^",
         "@proton/get-random-values": "workspace:packages/get-random-values",
         "@proton/srp": "workspace:packages/srp",
         "@protontech/bip39": "^1.0.2",
