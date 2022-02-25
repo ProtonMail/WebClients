@@ -26,7 +26,13 @@ export const globalReset = (state: Draft<ElementsState>) => {
 };
 
 export const reset = (state: Draft<ElementsState>, action: PayloadAction<NewStateParams>) => {
-    Object.assign(state, newState(action.payload));
+    Object.assign(
+        state,
+        newState({
+            ...action.payload,
+            taskRunning: { labelIDs: state.taskRunning.labelIDs, timeoutID: state.taskRunning.timeoutID },
+        })
+    );
 };
 
 export const updatePage = (state: Draft<ElementsState>, action: PayloadAction<number>) => {
@@ -176,4 +182,20 @@ export const backendActionStarted = (state: Draft<ElementsState>) => {
 
 export const backendActionFinished = (state: Draft<ElementsState>) => {
     state.pendingActions--;
+};
+
+export const moveAllFulfilled = (
+    state: Draft<ElementsState>,
+    { payload: { LabelID, timeoutID } }: PayloadAction<{ LabelID: string; timeoutID: NodeJS.Timeout }>
+) => {
+    state.taskRunning.labelIDs.push(LabelID);
+    state.taskRunning.timeoutID = timeoutID;
+};
+
+export const pollTaskRunningFulfilled = (
+    state: Draft<ElementsState>,
+    { payload: { newLabels, timeoutID } }: PayloadAction<{ newLabels: string[]; timeoutID: NodeJS.Timeout | undefined }>
+) => {
+    state.taskRunning.labelIDs = newLabels;
+    state.taskRunning.timeoutID = timeoutID;
 };

@@ -1,5 +1,8 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import noop from '@proton/utils/noop';
+import { Api } from '@proton/shared/lib/interfaces';
+import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import diff from '@proton/utils/diff';
 import {
     ESResults,
     EventUpdates,
@@ -11,6 +14,9 @@ import {
 } from './elementsTypes';
 import { Element } from '../../models/element';
 import { getQueryElementsParameters, queryElement, queryElements } from './helpers/elementQuery';
+import { RootState } from '../store';
+
+const TASK_RUNNING_POLLING_INTERVAL = 2000;
 
 export const reset = createAction<NewStateParams>('elements/reset');
 
@@ -83,3 +89,59 @@ export const optimisticMarkAs = createAction<OptimisticUpdates>('elements/optimi
 export const backendActionStarted = createAction<void>('elements/action/started');
 
 export const backendActionFinished = createAction<void>('elements/action/finished');
+
+export const pollTaskRunning = createAsyncThunk<
+    { newLabels: string[]; timeoutID: NodeJS.Timeout | undefined },
+    { api: Api; call: () => Promise<void> }
+>('elements/pollTaskRunning', async ({ api, call }, { dispatch, getState }) => {
+    const currentLabels = (getState() as RootState).elements.taskRunning.labelIDs;
+    const finishedLabels = [];
+
+    await call();
+
+    for (let label of currentLabels) {
+        const result = await api<{ TasksRunning: any }>(queryMessageMetadata({ LabelID: label } as any));
+        if (!result.TasksRunning[label]) {
+            finishedLabels.push(label);
+        }
+    }
+
+    const newLabels = diff(currentLabels, finishedLabels);
+    let timeoutID: NodeJS.Timeout | undefined = undefined;
+
+    if (newLabels.length > 0) {
+        timeoutID = setTimeout(() => {
+            void dispatch(pollTaskRunning({ api, call }));
+        }, TASK_RUNNING_POLLING_INTERVAL);
+    }
+
+    console.log('pollTaskRunning', {
+        currentLabels,
+        finishedLabels,
+        newLabels,
+        timeoutID,
+    });
+
+    return { newLabels, timeoutID };
+});
+
+export const moveAll = createAsyncThunk<
+    { LabelID: string; timeoutID: NodeJS.Timeout },
+    { api: Api; call: () => Promise<void>; SourceLabelID: string; DestinationLabelID: string }
+>('elements/moveAll', async ({ api, call, SourceLabelID, DestinationLabelID }, { dispatch, getState }) => {
+    let timeoutID = (getState() as RootState).elements.taskRunning.timeoutID;
+
+    if (timeoutID !== undefined) {
+        clearTimeout(timeoutID);
+    }
+
+    await api(moveAllRequest({ SourceLabelID, DestinationLabelID }));
+
+    timeoutID = setTimeout(() => {
+        void dispatch(pollTaskRunning({ api, call }));
+    }, TASK_RUNNING_POLLING_INTERVAL);
+
+    console.log('moveAll', { LabelID: SourceLabelID, timeoutID });
+
+    return { LabelID: SourceLabelID, timeoutID };
+});

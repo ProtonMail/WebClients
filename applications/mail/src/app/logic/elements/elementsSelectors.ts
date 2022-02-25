@@ -27,6 +27,7 @@ export const pendingActions = (state: RootState) => state.elements.pendingAction
 const retry = (state: RootState) => state.elements.retry;
 const invalidated = (state: RootState) => state.elements.invalidated;
 const total = (state: RootState) => state.elements.total;
+const taskRunning = (state: RootState) => state.elements.taskRunning;
 
 const currentPage = (_: RootState, { page }: { page: number }) => page;
 const currentSearch = (_: RootState, { search }: { search: SearchParameters }) => search;
@@ -233,3 +234,8 @@ export const stateInconsistency = createSelector(
     (beforeFirstLoad, pendingRequest, retry, useES) =>
         !beforeFirstLoad && !pendingRequest && retry.error === undefined && retry.count === 3 && !useES
 );
+
+export const showLabelTaskRunningBanner = createSelector([taskRunning], (taskRunning) => {
+    console.log('showLabelTaskRunningBanner', taskRunning.labelIDs);
+    return taskRunning.labelIDs.length > 0;
+});
