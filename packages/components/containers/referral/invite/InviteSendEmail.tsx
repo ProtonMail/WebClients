@@ -25,7 +25,8 @@ interface SendEmailInvitationResult {
 const InviteSendEmail = () => {
     const api = useApi();
     const {
-        invitedReferralsState: [, setInvitedReferrals],
+        invitedReferralsState: [invitedReferrals, setInvitedReferrals],
+        fetchedReferralStatus: { emailsAvailable },
     } = useReferralInvitesContext();
     const anchorRef = useRef<HTMLInputElement>(null);
     const [recipients, setRecipients] = useState<Recipient[]>([]);
@@ -52,7 +53,18 @@ const InviteSendEmail = () => {
             .filter((recipient) => isValidEmailAdressToRefer(recipient.Address))
             .map((recipient) => recipient.Address);
 
-        void withLoading(api<SendEmailInvitationResult>(sendEmailInvitation({ emails }))).then((result) => {
+        const emailSendLimitNumber = emailsAvailable - invitedReferrals.length;
+        if (emails.length > emailSendLimitNumber) {
+            createNotification({
+                type: 'warning',
+                text: c('Info').t`You can't send more than ${emailSendLimitNumber} email invites for the next 24 hours`,
+            });
+            return;
+        }
+
+        const request = api<SendEmailInvitationResult>(sendEmailInvitation({ emails }));
+
+        void withLoading(request).then((result) => {
             if (result?.Referrals) {
                 setInvitedReferrals(result.Referrals);
             }
@@ -133,7 +145,7 @@ const InviteSendEmail = () => {
                         loading={apiLoading || contactEmailIsLoading}
                         disabled={hasInvalidRecipients}
                     >
-                        <Icon name="paper-plane" /> {c('Button').t`Invite`}
+                        <Icon name="paper-plane" /> {c('Button').t`Send`}
                     </Button>
                 </div>
             </div>
