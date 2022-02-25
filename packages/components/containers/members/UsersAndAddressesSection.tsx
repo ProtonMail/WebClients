@@ -9,7 +9,6 @@ import {
     TableCell,
     Info,
     Block,
-    Loader,
     SearchInput,
     TableBody,
     TableRow,
@@ -90,7 +89,7 @@ const UsersAndAddressesSection = () => {
 
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
-    const [memberModalProps, setMemberModalOpen] = useModalState();
+    const [memberModalProps, setMemberModalOpen, renderMemberModal] = useModalState();
     const verifiedDomains = useMemo(
         () => (domains || []).filter(({ State }) => State === DOMAIN_STATE_ACTIVE),
         [domains]
@@ -133,10 +132,6 @@ const UsersAndAddressesSection = () => {
     const handleAddAddress = () => {
         createModal(<AddressModal members={members} organizationKey={organizationKey} />);
     };
-
-    if (loadingOrganization) {
-        return <Loader />;
-    }
 
     const headerCells = [
         { node: c('Title header for members table').t`Name` },
@@ -188,7 +183,7 @@ const UsersAndAddressesSection = () => {
                     .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.`}
             </SettingsParagraph>
             <Block className="flex flex-align-items-start">
-                {organizationKey && domains?.length && (
+                {renderMemberModal && organizationKey && domains?.length && (
                     <MemberModal
                         organization={organization}
                         organizationKey={organizationKey}
