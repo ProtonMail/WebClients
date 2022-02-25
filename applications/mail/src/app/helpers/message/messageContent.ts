@@ -2,8 +2,6 @@ import { MailSettings, Address, UserSettings } from '@proton/shared/lib/interfac
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { checkContrast } from '@proton/shared/lib/helpers/dom';
-
-import { RefObject } from 'react';
 import { toText } from '../parserHtml';
 import { findSender } from '../addresses';
 import { textToHtml } from '../textToHtml';
@@ -107,9 +105,9 @@ export const querySelectorAll = (message: Partial<MessageState> | undefined, sel
     ...((message?.messageDocument?.document?.querySelectorAll(selector) || []) as HTMLElement[]),
 ];
 
-export const canSupportDarkStyle = (iframeRef: RefObject<HTMLIFrameElement>) => {
-    const container = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_ROOT_ID);
-    const window = iframeRef.current?.contentWindow;
+export const canSupportDarkStyle = (iframe: HTMLIFrameElement | null) => {
+    const container = iframe?.contentDocument?.getElementById(MESSAGE_IFRAME_ROOT_ID);
+    const window = iframe?.contentWindow;
 
     if (!container || !window) {
         return false;
@@ -137,5 +135,7 @@ export const canSupportDarkStyle = (iframeRef: RefObject<HTMLIFrameElement>) => 
         return true;
     }
 
-    return checkContrast(container, window);
+    const contrastResult = checkContrast(container, window);
+
+    return contrastResult;
 };
