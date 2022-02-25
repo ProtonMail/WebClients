@@ -1,18 +1,18 @@
 // @ts-nocheck Disable import errors from ds
 import themeDefaultSvg from '@proton/styles/assets/img/themes/theme-default.svg';
-import defaultTheme from '@proton/styles/scss/themes/default-theme.scss';
+import defaultTheme from '@proton/colors/themes/default.theme.css';
 
 import themeDarkSvg from '@proton/styles/assets/img/themes/theme-dark.svg';
-import darkTheme from '@proton/styles/scss/themes/dark-theme.scss';
+import darkTheme from '@proton/colors/themes/dark.theme.css';
 
 import themeMonokaiSvg from '@proton/styles/assets/img/themes/theme-monokai.svg';
-import monokaiTheme from '@proton/styles/scss/themes/monokai-theme.scss';
+import monokaiTheme from '@proton/colors/themes/monokai.theme.css';
 
 import themeContrastSvg from '@proton/styles/assets/img/themes/theme-contrast.svg';
-import contrastTheme from '@proton/styles/scss/themes/contrast-theme.scss';
+import contrastTheme from '@proton/colors/themes/contrast.theme.css';
 
 import themeLegacySvg from '@proton/styles/assets/img/themes/theme-legacy.svg';
-import legacyTheme from '@proton/styles/scss/themes/legacy-theme.scss';
+import legacyTheme from '@proton/colors/themes/legacy.theme.css';
 
 export enum HistoricThemeTypes {
     V1_Default = 0,
