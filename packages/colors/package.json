@@ -3,7 +3,7 @@
     "description": "Package containing the logic for Proton's design system color computations",
     "scripts": {
         "build": "webpack-cli",
-        "dev": "webpack-dev-server",
+        "check-types": "tsc",
         "generate": "ts-node --skipProject gen-themes",
         "lint": "eslint . --ext ts --quiet --cache",
         "test": "jest"
@@ -25,6 +25,7 @@
         "ts-jest": "^27.1.3",
         "ts-loader": "^9.2.8",
         "typescript": "^4.6.3",
+        "webpack": "^5.72.0",
         "webpack-cli": "^4.9.2"
     }
 }
