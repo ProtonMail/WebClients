@@ -16,9 +16,7 @@ function generateTheme({ source, type }: { source: string; type: ThemeFileType }
         'interaction-weak',
     ];
 
-    const lightButtonShadeNames = ['-tint-90', '-tint-80', '', '-shade-10', '-shade-20', '-shade-30', '-contrast'];
-
-    const darkButtonShadeNames = ['-shade-80', '-shade-70', '', '-tint-10', '-tint-20', '-tint-30', '-contrast'];
+    const buttonShadeNames = ['-minor-2', '-minor-1', '', '-major-1', '-major-2', '-major-3', '-contrast'];
 
     const ast = cssTree.parse(source);
 
@@ -44,8 +42,6 @@ function generateTheme({ source, type }: { source: string; type: ThemeFileType }
         buttonBases.splice(buttonBases.indexOf(baseName), 1);
 
         const isLight = type === 'light';
-
-        const buttonShadeNames = type === 'light' ? lightButtonShadeNames : darkButtonShadeNames;
 
         const base = tiny(node.value.value);
 
