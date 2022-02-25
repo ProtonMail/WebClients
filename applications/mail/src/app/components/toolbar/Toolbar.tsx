@@ -48,7 +48,6 @@ interface Props {
     onMarkAs: (status: MARK_AS_STATUS) => Promise<void>;
     onMove: (labelID: string) => Promise<void>;
     onDelete: () => Promise<void>;
-    handleMoveAll: (source: string, destination: string) => void;
 }
 
 const Toolbar = ({
@@ -77,7 +76,6 @@ const Toolbar = ({
     onMarkAs,
     onMove,
     onDelete,
-    handleMoveAll,
 }: Props) => {
     const listInView = columnMode || !elementID;
 
@@ -183,12 +181,7 @@ const Toolbar = ({
             </div>
             <div className="flex">
                 {breakpoints.isDesktop && (
-                    <MoreDropdown
-                        labelID={labelID}
-                        elementIDs={elementIDs}
-                        selectedIDs={selectedIDs}
-                        handleMoveAll={handleMoveAll}
-                    />
+                    <MoreDropdown labelID={labelID} elementIDs={elementIDs} selectedIDs={selectedIDs} />
                 )}
                 {listInView ? (
                     <PagingControls loading={loading} page={page} total={total} onPage={onPage} />

@@ -1,15 +1,15 @@
 import { c } from 'ttag';
 import { useLocation } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
 import { Vr } from '@proton/atoms';
-import { Icon, DropdownMenu, DropdownMenuButton, useLoading } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-
+import { Icon, DropdownMenu, DropdownMenuButton, useLoading, useApi, useEventManager } from '@proton/components';
 import ToolbarDropdown from './ToolbarDropdown';
 import { useEmptyLabel } from '../../hooks/useEmptyLabel';
 import { labelIncludes } from '../../helpers/labels';
 import { isSearch } from '../../helpers/elements';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
+import { moveAll } from '../../logic/elements/elementsActions';
 
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, SCHEDULED, TRASH } = MAILBOX_LABEL_IDS;
 
@@ -17,10 +17,13 @@ interface Props {
     labelID: string;
     elementIDs: string[];
     selectedIDs: string[];
-    handleMoveAll: (source: string, destination: string) => void;
 }
 
-const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [], handleMoveAll }: Props) => {
+const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props) => {
+    const dispatch = useDispatch();
+    const api = useApi();
+    const { call } = useEventManager();
+
     const [loading, withLoading] = useLoading();
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
     const location = useLocation();
@@ -46,6 +49,12 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [], handleM
     }
 
     const handleEmptyLabel = () => withLoading(emptyLabel(labelID));
+
+    const handleMoveAll = () => {
+        const result = dispatch(moveAll({ api, call, SourceLabelID: labelID, DestinationLabelID: TRASH }));
+        console.log('handleMoveAll', result);
+        void withLoading(result as any as Promise<void>);
+    };
 
     return (
         <>
@@ -74,7 +83,7 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [], handleM
                                 loading={loading}
                                 disabled={!elementIDs.length || !!selectedIDs.length || isSearch(searchParameters)}
                                 className="text-left"
-                                onClick={() => handleMoveAll(labelID, TRASH)}
+                                onClick={handleMoveAll}
                             >
                                 {c('Action').t`Trash all`}
                             </DropdownMenuButton>
