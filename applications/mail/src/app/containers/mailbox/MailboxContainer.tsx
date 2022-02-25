@@ -54,7 +54,6 @@ import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
 import { usePermanentDelete } from '../../hooks/usePermanentDelete';
 import { getFolderName } from '../../helpers/labels';
-import { useLabelTaskRunning } from '../../hooks/mailbox/useLabelTaskRunning';
 
 interface Props {
     labelID: string;
@@ -299,8 +298,6 @@ const MailboxContainer = ({
                 setFocusIndex,
             }
         );
-        
-    const { handleMoveAll, showLabelTaskRunningBanner } = useLabelTaskRunning();
 
     return (
         <MailboxContainerContextProvider
@@ -336,15 +333,11 @@ const MailboxContainer = ({
                             labelDropdownToggleRef={labelDropdownToggleRef}
                             moveDropdownToggleRef={moveDropdownToggleRef}
                             location={location}
-<<<<<<< HEAD
                             labels={labels}
                             folders={folders}
                             onMarkAs={handleMarkAs}
                             onMove={handleMove}
                             onDelete={handleDelete}
-=======
-                            handleMoveAll={handleMoveAll}
->>>>>>> 226f9bec8 (Create useLabelTaskRunning to handle move all and manage task running banner)
                         />
                     </ErrorBoundary>
                 )}
@@ -388,7 +381,6 @@ const MailboxContainer = ({
                             resetWidth={resetWidth}
                             showContentPanel={showContentPanel}
                             scrollBarWidth={scrollBarWidth}
-                            showLabelTaskRunningBanner={showLabelTaskRunningBanner}
                         />
                     </ErrorBoundary>
                     <ErrorBoundary>

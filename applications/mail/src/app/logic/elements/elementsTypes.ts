@@ -18,6 +18,11 @@ export interface RetryData {
     error: Error | undefined;
 }
 
+export interface TaskRunningInfo {
+    labelIDs: string[];
+    timeoutID: NodeJS.Timeout | undefined;
+}
+
 export interface ElementsState {
     /**
      * True when the first request has not been sent
@@ -78,6 +83,11 @@ export interface ElementsState {
      * Keeps track of the last request to count the number of attemps
      */
     retry: RetryData;
+
+    /**
+     * Labels on which on task is currently running
+     */
+    taskRunning: TaskRunningInfo;
 }
 
 export interface QueryParams {
