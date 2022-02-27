@@ -11,7 +11,19 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { Address, Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 
-import { FormModal, Alert, Table, TableHeader, TableBody, TableRow } from '../../../components';
+import {
+    Alert,
+    Table,
+    TableHeader,
+    TableBody,
+    TableRow,
+    ModalTwoHeader,
+    ModalTwoFooter,
+    Button,
+    ModalTwo,
+    ModalTwoContent,
+    ModalProps,
+} from '../../../components';
 import {
     useApi,
     useAuthentication,
@@ -33,8 +45,7 @@ enum STEPS {
     ERROR,
 }
 
-interface Props {
-    onClose?: () => void;
+interface Props extends ModalProps {
     member?: Member;
     addressesToGenerate: Address[];
     organizationKey?: CachedOrganizationKey;
@@ -52,7 +63,7 @@ const getStatus = (text: 'ok' | 'loading' | 'error') => {
     }
 };
 
-const CreateMissingKeysAddressModal = ({ onClose, member, addressesToGenerate, organizationKey, ...rest }: Props) => {
+const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizationKey, ...rest }: Props) => {
     const api = useApi();
     const authentication = useAuthentication();
     const { call } = useEventManager();
@@ -140,7 +151,7 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addressesToGenerate, o
                     .catch(() => setStep(STEPS.ERROR))
             );
         } else {
-            onClose?.();
+            rest.onClose?.();
         }
     };
 
@@ -155,40 +166,41 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addressesToGenerate, o
     })();
 
     return (
-        <FormModal
-            title={c('Title').t`Generate missing keys`}
-            close={c('Action').t`Close`}
-            submit={submitText}
-            onClose={onClose}
-            onSubmit={handleSubmit}
-            loading={loading}
-            {...rest}
-        >
-            <Alert className="mb1">{c('Info')
-                .t`Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.`}</Alert>
-            <SelectEncryption
-                encryptionType={encryptionType}
-                setEncryptionType={step === STEPS.INIT ? setEncryptionType : noop}
-            />
-            <Table>
-                <TableHeader
-                    cells={[c('Header for addresses table').t`Address`, c('Header for addresses table').t`Status`]}
+        <ModalTwo {...rest}>
+            <ModalTwoHeader title={c('Title').t`Generate missing keys`} />
+            <ModalTwoContent>
+                <Alert className="mb1">{c('Info')
+                    .t`Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.`}</Alert>
+                <SelectEncryption
+                    encryptionType={encryptionType}
+                    setEncryptionType={step === STEPS.INIT ? setEncryptionType : noop}
                 />
-                <TableBody colSpan={2}>
-                    {formattedAddresses.map((address) => (
-                        <TableRow
-                            key={address.ID}
-                            cells={[
-                                <span key={0} className="text-ellipsis block pr1" title={address.Email}>
-                                    {address.Email}
-                                </span>,
-                                <MissingKeysStatus key={1} {...address.status} />,
-                            ]}
-                        />
-                    ))}
-                </TableBody>
-            </Table>
-        </FormModal>
+                <Table>
+                    <TableHeader
+                        cells={[c('Header for addresses table').t`Address`, c('Header for addresses table').t`Status`]}
+                    />
+                    <TableBody colSpan={2}>
+                        {formattedAddresses.map((address) => (
+                            <TableRow
+                                key={address.ID}
+                                cells={[
+                                    <span key={0} className="text-ellipsis block pr1" title={address.Email}>
+                                        {address.Email}
+                                    </span>,
+                                    <MissingKeysStatus key={1} {...address.status} />,
+                                ]}
+                            />
+                        ))}
+                    </TableBody>
+                </Table>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={rest.onClose} disabled={loading}>{c('Action').t`Close`}</Button>
+                <Button color="norm" loading={loading} onClick={handleSubmit}>
+                    {submitText}
+                </Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
