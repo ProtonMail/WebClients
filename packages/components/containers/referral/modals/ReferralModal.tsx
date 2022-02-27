@@ -1,46 +1,54 @@
-import { useEffect, useState } from 'react';
-import { format, fromUnixTime, subDays } from 'date-fns';
+import { format } from 'date-fns';
 import { c } from 'ttag';
 import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import emptyMailboxSvg from '@proton/styles/assets/img/placeholders/empty-mailbox.svg';
 import {
     Button,
-    Loader,
-    ReferralFeaturesList,
-    useSubscription,
+    FeatureCode,
+    ModalProps,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
+    ModalTwoHeader,
+    ReferralFeaturesList,
+    useFeature,
+    useSettingsLink,
 } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import useSubscriptionModal from '../../payments/subscription/useSubscriptionModal';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
+import { useEffect } from 'react';
 
-const ReferralModal = () => {
+interface Props extends ModalProps<'div'> {
+    endDate: Date;
+}
+
+const ReferralModal = ({ endDate, ...rest }: Props) => {
     const appName = getAppName(APPS.PROTONMAIL);
     const planName = PLAN_NAMES[PLANS.PLUS];
-    const [showModal, setShowModal] = useState(false);
-    const [formattedEndDate, setFormattedEndDate] = useState('');
-    const [subscription, loadingSubscription] = useSubscription();
-    const [showSubscriptionModalCallback, loadingSubscriptionModal] = useSubscriptionModal();
+    const settingsLink = useSettingsLink();
+    const { feature, update } = useFeature(FeatureCode.SeenReferralModal);
 
     useEffect(() => {
-        if (subscription?.PeriodEnd && isTrial(subscription)) {
-            const endDate = fromUnixTime(subscription.PeriodEnd);
-            const willEndSoon = new Date() >= subDays(endDate, 3);
-
-            // Should be in trial and 3 days before end
-            // TODO : Check if has already saw this modal
-            setShowModal(willEndSoon);
-            setFormattedEndDate(format(endDate, 'P', { locale: dateLocale }));
+        if (!open) {
+            return;
         }
-    }, [subscription?.PeriodEnd]);
+        if (feature?.Value === false) {
+            void update(true);
+        }
+    }, [open]);
+
+    const handlePlan = (plan: PLANS, target: 'compare' | 'checkout') => {
+        const params = new URLSearchParams();
+        params.set('plan', plan);
+        params.set('type', 'referral');
+        params.set('target', target);
+        settingsLink(`/dashboard?${params.toString()}`);
+    };
+
+    const formattedEndDate = format(endDate, 'P', { locale: dateLocale });
 
     return (
-        <ModalTwo open={showModal}>
+        <ModalTwo {...rest}>
             <ModalTwoHeader
                 title={
                     // translator: complete sentence would be : Your free trial ends soon, on 01/01/2022
@@ -48,30 +56,30 @@ const ReferralModal = () => {
                 }
             />
             <ModalTwoContent>
-                {loadingSubscription || loadingSubscriptionModal ? (
-                    <Loader />
-                ) : (
-                    <>
-                        <p>{
-                            // translator: complete sentence would be "Upgrade today to avoid losing the following Mail Plus benefits"
-                            c('Info').t`Upgrade today to avoid losing the following ${appName} ${planName} benefits.`
-                        }</p>
-                        <div className="flex flex-justify-center">
-                            <img src={emptyMailboxSvg} alt="Mailbox image" />
-                        </div>
-                        <ReferralFeaturesList />
-                    </>
-                )}
+                <p>{
+                    // translator: complete sentence would be "Upgrade today to avoid losing the following Mail Plus benefits"
+                    c('Info').t`Upgrade today to avoid losing the following ${appName} ${planName} benefits.`
+                }</p>
+                <div className="flex flex-justify-center">
+                    <img src={emptyMailboxSvg} alt="Mailbox image" />
+                </div>
+                <ReferralFeaturesList />
             </ModalTwoContent>
             <ModalTwoFooter>
                 {/** TODO */}
-                <Button onClick={() => showSubscriptionModalCallback(PLANS.PLUS)} shape="outline">{c('Info')
-                    .t`Other options`}</Button>
+                <Button
+                    onClick={() => {
+                        rest.onClose?.();
+                        handlePlan(PLANS.PLUS, 'compare');
+                    }}
+                    shape="outline"
+                >{c('Info').t`Other options`}</Button>
                 <Button
                     color="norm"
-                    loading={loadingSubscriptionModal}
-                    disabled={loadingSubscriptionModal}
-                    onClick={() => showSubscriptionModalCallback(PLANS.PLUS, SUBSCRIPTION_STEPS.CHECKOUT)}
+                    onClick={() => {
+                        rest.onClose?.();
+                        handlePlan(PLANS.PLUS, 'checkout');
+                    }}
                 >{c('Info').t`Continue with plus`}</Button>
             </ModalTwoFooter>
         </ModalTwo>

@@ -50,6 +50,9 @@ export interface PaymentTokenResult {
 export interface EligibleOfferPlans {
     name: string;
     cycle: CYCLE;
+    /* Used for the redirect */
+    plan: string;
+    /* Used for the /check call */
     planIDs: PlanIDs;
     couponCode?: string;
     popular?: boolean;

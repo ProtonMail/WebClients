@@ -25,12 +25,13 @@ import {
     useFeature,
     UsernameSection,
     YourPlanSection,
+    SubscriptionModalProvider,
+    AutomaticSubscriptionModal,
 } from '@proton/components';
 import { InviteSection, ReferralInvitesContextProvider, RewardSection } from '@proton/components/containers/referral';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
 import { getAccountAppRoutes } from './routes';
-import AccountAutomaticDashboardModal from './AccountAutomaticDashboardModal';
 import { recoveryIds } from './recoveryIds';
 
 const RecoverySettingsPageVisited = () => {
@@ -66,18 +67,20 @@ const AccountSettingsRouter = ({
         <Switch>
             {getIsSectionAvailable(dashboard) && (
                 <Route path={getSectionPath(path, dashboard)}>
-                    <AccountAutomaticDashboardModal location={location} />
-                    <PrivateMainSettingsArea location={location} config={dashboard}>
-                        <PlansSection />
-                        <YourPlanSection />
-                        <BillingSection />
-                        <PaymentMethodsSection />
-                        <CreditsSection />
-                        <GiftCodeSection />
-                        <InvoicesSection />
-                        <EmailSubscriptionSection />
-                        <CancelSubscriptionSection />
-                    </PrivateMainSettingsArea>
+                    <SubscriptionModalProvider>
+                        <AutomaticSubscriptionModal />
+                        <PrivateMainSettingsArea location={location} config={dashboard}>
+                            <PlansSection />
+                            <YourPlanSection />
+                            <BillingSection />
+                            <PaymentMethodsSection />
+                            <CreditsSection />
+                            <GiftCodeSection />
+                            <InvoicesSection />
+                            <EmailSubscriptionSection />
+                            <CancelSubscriptionSection />
+                        </PrivateMainSettingsArea>
+                    </SubscriptionModalProvider>
                 </Route>
             )}
             {getIsSectionAvailable(recovery) && (

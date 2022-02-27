@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { c } from 'ttag';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -10,7 +10,9 @@ import {
     Logo,
     PrivateAppContainer,
     PrivateHeader,
+    ReferralModalContainer,
     SectionConfig,
+    TopBanners,
     useActiveBreakpoint,
     useAddresses,
     useCalendarSubscribeFeature,
@@ -64,7 +66,6 @@ const MainContainer = () => {
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
-    const [isBlurred] = useState(false);
 
     const features = useFeatures([
         FeatureCode.SpyTrackerProtection,
@@ -72,6 +73,7 @@ const MainContainer = () => {
         FeatureCode.ReferralProgram,
         FeatureCode.CalendarEmailNotification,
         FeatureCode.CalendarSubscription,
+        FeatureCode.PaymentsDisabled,
     ]);
     const [spyTrackerFeature, calendarInviteLocaleFeature, referralProgramFeature] = features;
     const { enabled, unavailable } = useCalendarSubscribeFeature();
@@ -109,6 +111,8 @@ const MainContainer = () => {
     const prefixPath = `/${appSlug}`;
 
     const logo = <Logo appName={app} to={to} toApp={toApp} target="_self" />;
+
+    const top = <TopBanners />;
 
     const header = (
         <PrivateHeader
@@ -157,7 +161,8 @@ const MainContainer = () => {
     }
 
     return (
-        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred}>
+        <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
+            <ReferralModalContainer />
             <Switch>
                 <Route path={anyAccountAppRoute}>
                     <AccountSettingsRouter path={prefixPath} accountAppRoutes={routes.account} redirect={redirect} />

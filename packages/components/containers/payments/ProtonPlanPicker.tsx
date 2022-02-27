@@ -8,7 +8,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { FREE_MAIL_PLAN, FREE_VPN_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
-import { Radio, Button, InlineLinkButton, Price } from '../../components';
+import { Radio, InlineLinkButton, Price } from '../../components';
 import { classnames } from '../../helpers';
 
 const NAMES = {
@@ -27,7 +27,6 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
     currency: Currency;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     onChangeCycle: (cycle: Cycle) => void;
-    onBack?: () => void;
     planIDs: PlanIDs;
     plans: Plan[];
     plansMap: { [key: string]: Plan };
@@ -43,7 +42,6 @@ const ProtonPlanPicker = ({
     currency,
     onChangePlanIDs,
     onChangeCycle,
-    onBack,
     planIDs,
     plansMap,
     plansNameMap,
@@ -149,7 +147,6 @@ const ProtonPlanPicker = ({
                     );
                 })}
             </ul>
-            {onBack && <Button color="weak" onClick={onBack}>{c('Action').t`Compare plans`}</Button>}
         </div>
     );
 };

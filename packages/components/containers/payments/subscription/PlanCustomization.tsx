@@ -8,7 +8,6 @@ import ProtonPlanPicker from '../ProtonPlanPicker';
 import ProtonPlanCustomizer from '../ProtonPlanCustomizer';
 
 interface Props {
-    onBack?: (service: PLAN_SERVICES) => void;
     loading: boolean;
     hasMailPlanPicker?: boolean;
     cycle: Cycle;
@@ -31,7 +30,6 @@ const PlanCustomization = ({
     hasMailPlanPicker = true,
     onChangePlanIDs,
     onChangeCycle,
-    onBack,
     loading,
     organization,
     subscription,
@@ -75,7 +73,6 @@ const PlanCustomization = ({
                             currency={currency}
                             onChangeCycle={onChangeCycle}
                             onChangePlanIDs={onChangePlanIDs}
-                            onBack={onBack ? () => onBack(service) : undefined}
                             className="pb2 mb2"
                         />
                     )}
