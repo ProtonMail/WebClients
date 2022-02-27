@@ -151,6 +151,22 @@ export const Adornments = () => {
             <div className="mt1">
                 <InputFieldTwo label="Input with suffix" placeholder="username" suffix="@protonmail.com" />
             </div>
+            <div className="mt1">
+                <InputFieldTwo
+                    label="Input with suffix (select)"
+                    placeholder="username"
+                    suffix={
+                        <SelectTwo unstyled value="pm.me">
+                            <Option key="pm.me" value="pm.me" title="pm.me">
+                                @pm.me
+                            </Option>
+                            <Option key="protonmail.com" value="protonmail.com" title="protonmail.com">
+                                @protonmail.com
+                            </Option>
+                        </SelectTwo>
+                    }
+                />
+            </div>
         </div>
     );
 };

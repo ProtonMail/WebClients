@@ -1,7 +1,6 @@
 import { c } from 'ttag';
-import { authMember, removeMember, updateRole } from '@proton/shared/lib/api/members';
-import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
-import { APPS, isSSOMode, isStandaloneMode, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { authMember } from '@proton/shared/lib/api/members';
+import { APPS, isSSOMode, isStandaloneMode, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import memberLogin from '@proton/shared/lib/authentication/memberLogin';
 import { Address, CachedOrganizationKey, Member, Organization, User as tsUser } from '@proton/shared/lib/interfaces';
 import { noop } from '@proton/shared/lib/helpers/function';
@@ -18,14 +17,15 @@ import { MemberAuthResponse } from '@proton/shared/lib/authentication/interface'
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 
 import { DropdownActions } from '../../components';
-import { useApi, useAuthentication, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
+import { useApi, useAuthentication, useLoading, useModals, useNotifications } from '../../hooks';
 
-import EditMemberModal from './EditMemberModal';
 import AuthModal from '../password/AuthModal';
-import DeleteMemberModal from './DeleteMemberModal';
 
 interface Props {
     member: Member;
+    onEdit: (member: Member) => void;
+    onDelete: (member: Member) => Promise<void>;
+    onRevoke: (member: Member) => Promise<void>;
     addresses: Address[];
     organization: Organization;
     organizationKey: CachedOrganizationKey | undefined;
@@ -47,22 +47,21 @@ const validateMemberLogin = (
     }
 };
 
-const MemberActions = ({ member, addresses = [], organization, organizationKey }: Props) => {
+const MemberActions = ({
+    member,
+    onEdit,
+    onDelete,
+    onRevoke,
+    addresses = [],
+    organization,
+    organizationKey,
+}: Props) => {
     const api = useApi();
     const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
-    const { call } = useEventManager();
     const authentication = useAuthentication();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
-
-    const handleConfirmDelete = async () => {
-        if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
-        }
-        await api(removeMember(member.ID));
-        await call();
-    };
 
     const login = async () => {
         const error = validateMemberLogin(organization, organizationKey);
@@ -117,12 +116,6 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
         await memberLogin({ UID, mailboxPassword: authentication.getPassword(), url } as any);
     };
 
-    const revokeMemberSessions = async () => {
-        await api(revokeSessions(member.ID));
-        await call();
-        createNotification({ text: c('Success message').t`Sessions revoked` });
-    };
-
     const canDelete = !member.Self;
     const canEdit = organization.HasKeys;
     const canRevokeSessions = !member.Self;
@@ -130,28 +123,20 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
     const canLogin =
         !member.Self && member.Private === MEMBER_PRIVATE.READABLE && member.Keys.length && addresses.length;
 
-    const openEdit = () => {
-        createModal(<EditMemberModal member={member} onClose={noop} />);
-    };
-
-    const openDelete = async () => {
-        await new Promise<void>((resolve, reject) => {
-            createModal(<DeleteMemberModal member={member} onConfirm={resolve} onClose={reject} />);
-        });
-        await withLoading(handleConfirmDelete());
-        createNotification({ text: c('Success message').t`User deleted` });
-    };
-
     const list = [
         canEdit && {
             text: c('Member action').t`Edit`,
-            onClick: openEdit,
+            onClick: () => {
+                onEdit(member);
+            },
         },
         canDelete &&
             ({
                 text: c('Member action').t`Delete`,
                 actionType: 'delete',
-                onClick: openDelete,
+                onClick: () => {
+                    withLoading(onDelete(member));
+                },
             } as const),
         canLogin && {
             text: c('Member action').t`Sign in`,
@@ -159,7 +144,9 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
         },
         canRevokeSessions && {
             text: c('Member action').t`Revoke sessions`,
-            onClick: () => withLoading(revokeMemberSessions()),
+            onClick: () => {
+                withLoading(onRevoke(member));
+            },
         },
     ].filter(isTruthy);
 

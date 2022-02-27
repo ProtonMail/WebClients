@@ -18,11 +18,10 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { noop } from '@proton/shared/lib/helpers/function';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { Domain, Organization, Address, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import { setupMemberKey } from '@proton/shared/lib/keys';
-import { useApi, useNotifications, useEventManager, useGetAddresses } from '../../hooks';
+import { useApi, useNotifications, useEventManager, useGetAddresses, useLoading } from '../../hooks';
 import {
     Button,
     InputFieldTwo,
@@ -44,17 +43,14 @@ import SelectEncryption from '../keys/addKey/SelectEncryption';
 
 const FIVE_GIGA = 5 * GIGA;
 
-interface Props {
+interface Props extends ModalProps {
     organization: Organization;
     organizationKey: CachedOrganizationKey;
     domains: Domain[];
     domainsAddressesMap: { [domainID: string]: Address[] };
-    open: ModalProps['open'];
-    onClose: ModalProps['onClose'];
-    onExit: ModalProps['onExit'];
 }
 
-const MemberModal = ({ organization, organizationKey, domains, domainsAddressesMap, open, onClose, onExit }: Props) => {
+const MemberModal = ({ organization, organizationKey, domains, domainsAddressesMap, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -74,7 +70,7 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
     });
 
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
-    const [submitting, setSubmitting] = useState(false);
+    const [submitting, withLoading] = useLoading();
 
     const { validator, onFormSubmit } = useFormErrors();
 
@@ -153,38 +149,37 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
         }
     };
 
-    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-
-        if (!onFormSubmit()) {
-            return;
-        }
-
-        const error = validate();
-        if (error) {
-            return createNotification({ type: 'error', text: error });
-        }
-
-        try {
-            setSubmitting(true);
-            await save();
-            await call();
-            onClose?.();
-            createNotification({ text: c('Success').t`User created` });
-        } catch (e: any) {
-            setSubmitting(false);
-        }
+    const handleSubmit = async () => {
+        await save();
+        await call();
+        rest.onClose?.();
+        createNotification({ text: c('Success').t`User created` });
     };
 
-    const handleClose = submitting ? noop : onClose;
+    const handleClose = submitting ? undefined : rest.onClose;
 
     return (
-        <Modal as="form" open={open} onClose={handleClose} onExit={onExit} onSubmit={handleSubmit}>
+        <Modal
+            as="form"
+            {...rest}
+            onClose={handleClose}
+            onSubmit={(event: FormEvent) => {
+                event.preventDefault();
+                event.stopPropagation();
+                if (!onFormSubmit()) {
+                    return;
+                }
+                const error = validate();
+                if (error) {
+                    return createNotification({ type: 'error', text: error });
+                }
+                withLoading(handleSubmit());
+            }}
+        >
             <ModalHeader title={c('Title').t`Add user`} />
             <ModalContent>
                 <InputFieldTwo
                     autoFocus
-                    required
                     id="name"
                     value={model.name}
                     error={validator([requiredValidator(model.name)])}
@@ -193,36 +188,35 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
                     placeholder="Thomas A. Anderson"
                 />
 
-                <div className="flex on-mobile-flex-column">
-                    <InputFieldTwo
-                        rootClassName="flex-item-fluid"
-                        required
-                        id="address"
-                        value={model.address}
-                        error={validator([requiredValidator(model.address)])}
-                        onValue={handleChange('address')}
-                        label={c('Label').t`Address`}
-                        placeholder={c('Placeholder').t`Address`}
-                    />
-                    <div className="ml1 on-mobile-ml0 on-mobile-mb1-25 flex flex-nowrap flex-align-items-center">
-                        {domainOptions.length === 1 ? (
+                <InputFieldTwo
+                    id="address"
+                    value={model.address}
+                    error={validator([requiredValidator(model.address)])}
+                    onValue={handleChange('address')}
+                    label={c('Label').t`Address`}
+                    placeholder={c('Placeholder').t`Address`}
+                    suffix={
+                        domainOptions.length === 1 ? (
                             <span className="text-ellipsis" title={`@${domainOptions[0].value}`}>
                                 @{domainOptions[0].value}
                             </span>
                         ) : (
-                            <SelectTwo value={model.domain} onChange={({ value }) => handleChange('domain')(value)}>
+                            <SelectTwo
+                                unstyled
+                                value={model.domain}
+                                onChange={({ value }) => handleChange('domain')(value)}
+                            >
                                 {domainOptions.map((option) => (
                                     <Option key={option.value} value={option.value} title={option.text}>
                                         @{option.text}
                                     </Option>
                                 ))}
                             </SelectTwo>
-                        )}
-                    </div>
-                </div>
+                        )
+                    }
+                />
 
                 <InputFieldTwo
-                    required
                     id="password"
                     as={PasswordInputTwo}
                     value={model.password}
@@ -233,7 +227,6 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
                 />
 
                 <InputFieldTwo
-                    required
                     id="confirm-password"
                     as={PasswordInputTwo}
                     value={model.confirm}
