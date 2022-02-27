@@ -1,15 +1,16 @@
 import { useState, useMemo } from 'react';
 import { c } from 'ttag';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
-import { DOMAIN_STATE } from '@proton/shared/lib/constants';
+import { DOMAIN_STATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
-import { Organization as tsOrganization, Domain, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import { Organization as tsOrganization, Domain, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
+import { removeMember, updateRole } from '@proton/shared/lib/api/members';
+import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import {
     Table,
     TableCell,
     Info,
     Block,
-    Loader,
     SearchInput,
     TableBody,
     TableRow,
@@ -23,8 +24,9 @@ import {
     useMemberAddresses,
     useDomains,
     useNotifications,
-    useModals,
     useOrganizationKey,
+    useApi,
+    useEventManager,
 } from '../../hooks';
 
 import MemberActions from './MemberActions';
@@ -39,6 +41,8 @@ import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 import './UsersAndAddressesSection.scss';
 import { AddressModal } from '../addresses';
+import EditMemberModal from './EditMemberModal';
+import DeleteMemberModal from './DeleteMemberModal';
 
 const validateAddUser = (
     organization: tsOrganization,
@@ -87,10 +91,16 @@ const UsersAndAddressesSection = () => {
     const [members, loadingMembers] = useMembers();
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [keywords, setKeywords] = useState('');
+    const [tmpMember, setTmpMember] = useState<Member | null>(null);
+    const api = useApi();
+    const { call } = useEventManager();
 
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
-    const [memberModalProps, setMemberModalOpen] = useModalState();
+    const [addressModalProps, setAddressModalOpen, renderAddressModal] = useModalState();
+    const [memberModalProps, setMemberModalOpen, renderMemberModal] = useModalState();
+    const [editMemberModal, setEditMemberModal, renderEditMemberModal] = useModalState();
+    const [deleteMemberModal, setDeleteMemberModal, renderDeleteMemberModal] = useModalState();
+
     const verifiedDomains = useMemo(
         () => (domains || []).filter(({ State }) => State === DOMAIN_STATE_ACTIVE),
         [domains]
@@ -118,6 +128,26 @@ const UsersAndAddressesSection = () => {
         });
     }, [keywords, members]);
 
+    const handleDeleteUserConfirm = async (member: Member) => {
+        if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
+            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+        }
+        await api(removeMember(member.ID));
+        await call();
+        createNotification({ text: c('Success message').t`User deleted` });
+    };
+
+    const handleDeleteUser = async (member: Member) => {
+        setTmpMember(member);
+        setDeleteMemberModal(true);
+    };
+
+    const handleRevokeUserSessions = async (member: Member) => {
+        await api(revokeSessions(member.ID));
+        await call();
+        createNotification({ text: c('Success message').t`Sessions revoked` });
+    };
+
     const handleAddUser = () => {
         const error = validateAddUser(organization, organizationKey, verifiedDomains);
         if (error) {
@@ -131,12 +161,13 @@ const UsersAndAddressesSection = () => {
     };
 
     const handleAddAddress = () => {
-        createModal(<AddressModal members={members} organizationKey={organizationKey} />);
+        setAddressModalOpen(true);
     };
 
-    if (loadingOrganization) {
-        return <Loader />;
-    }
+    const handleEditUser = (member: Member) => {
+        setTmpMember(member);
+        setEditMemberModal(true);
+    };
 
     const headerCells = [
         { node: c('Title header for members table').t`Name` },
@@ -188,7 +219,14 @@ const UsersAndAddressesSection = () => {
                     .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.`}
             </SettingsParagraph>
             <Block className="flex flex-align-items-start">
-                {organizationKey && domains?.length && (
+                {renderAddressModal && (
+                    <AddressModal members={members} organizationKey={organizationKey} {...addressModalProps} />
+                )}
+                {renderDeleteMemberModal && tmpMember && (
+                    <DeleteMemberModal member={tmpMember} onDelete={handleDeleteUserConfirm} {...deleteMemberModal} />
+                )}
+                {renderEditMemberModal && tmpMember && <EditMemberModal member={tmpMember} {...editMemberModal} />}
+                {renderMemberModal && organizationKey && domains?.length && (
                     <MemberModal
                         organization={organization}
                         organizationKey={organizationKey}
@@ -261,6 +299,9 @@ const UsersAndAddressesSection = () => {
                                     </span>,
                                     <span className="pt1 pb1 inline-block">
                                         <MemberActions
+                                            onEdit={handleEditUser}
+                                            onDelete={handleDeleteUser}
+                                            onRevoke={handleRevokeUserSessions}
                                             member={member}
                                             addresses={memberAddresses}
                                             organization={organization}
@@ -323,6 +364,9 @@ const UsersAndAddressesSection = () => {
                             <div className="flex mb1-5">
                                 <span style={{ '--min-width-custom': `100px` }} className="min-w-custom mr1" />
                                 <MemberActions
+                                    onEdit={handleEditUser}
+                                    onDelete={handleDeleteUser}
+                                    onRevoke={handleRevokeUserSessions}
                                     member={member}
                                     addresses={memberAddresses}
                                     organization={organization}
