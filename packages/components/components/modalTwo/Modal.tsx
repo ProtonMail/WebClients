@@ -1,4 +1,5 @@
 import { ElementType, createContext, useLayoutEffect, useState, useRef } from 'react';
+import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 
 import { usePrevious, useHotkeys, useInstance } from '../../hooks';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
@@ -125,7 +126,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
         <Portal>
             <div
                 className={classnames([
-                    'modal-two',
+                    modalTwoRootClassName,
                     exit === ExitState.exiting && 'modal-two--out',
                     fullscreenOnMobile && 'modal-two--fullscreen-on-mobile',
                     fullscreen && 'modal-two--fullscreen',
