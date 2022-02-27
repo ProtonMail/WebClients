@@ -24,7 +24,6 @@ import {
     useMemberAddresses,
     useDomains,
     useNotifications,
-    useModals,
     useOrganizationKey,
     useApi,
     useEventManager,
@@ -97,7 +96,7 @@ const UsersAndAddressesSection = () => {
     const { call } = useEventManager();
 
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
+    const [addressModalProps, setAddressModalOpen, renderAddressModal] = useModalState();
     const [memberModalProps, setMemberModalOpen, renderMemberModal] = useModalState();
     const [editMemberModal, setEditMemberModal, renderEditMemberModal] = useModalState();
     const [deleteMemberModal, setDeleteMemberModal, renderDeleteMemberModal] = useModalState();
@@ -162,7 +161,7 @@ const UsersAndAddressesSection = () => {
     };
 
     const handleAddAddress = () => {
-        createModal(<AddressModal members={members} organizationKey={organizationKey} />);
+        setAddressModalOpen(true);
     };
 
     const handleEditUser = (member: Member) => {
@@ -220,6 +219,9 @@ const UsersAndAddressesSection = () => {
                     .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.`}
             </SettingsParagraph>
             <Block className="flex flex-align-items-start">
+                {renderAddressModal && (
+                    <AddressModal members={members} organizationKey={organizationKey} {...addressModalProps} />
+                )}
                 {renderDeleteMemberModal && tmpMember && (
                     <DeleteMemberModal member={tmpMember} onDelete={handleDeleteUserConfirm} {...deleteMemberModal} />
                 )}

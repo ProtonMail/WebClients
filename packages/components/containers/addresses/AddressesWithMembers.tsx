@@ -1,17 +1,10 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { c, msgid } from 'ttag';
 import { UserModel, Organization, Member } from '@proton/shared/lib/interfaces';
 
-import { Alert, Loader, Button, SettingsLink } from '../../components';
-import {
-    useMembers,
-    useMemberAddresses,
-    useModals,
-    useOrganizationKey,
-    useNotifications,
-    useAddresses,
-} from '../../hooks';
+import { Alert, Loader, Button, SettingsLink, useModalState } from '../../components';
+import { useMembers, useMemberAddresses, useOrganizationKey, useNotifications, useAddresses } from '../../hooks';
 
 import { SettingsParagraph } from '../account';
 
@@ -38,12 +31,13 @@ interface Props {
 }
 
 const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Props) => {
-    const { createModal } = useModals();
     const [members, loadingMembers] = useMembers();
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [addresses, loadingAddresses] = useAddresses();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const [addressModalProps, setAddressModalOpen, renderAddressModal] = useModalState();
     const { createNotification } = useNotifications();
+    const [tmpMember, setTmpMember] = useState<Member | null>(null);
 
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
 
@@ -77,16 +71,13 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
         return memberIndex === members.findIndex(({ Self }) => Self);
     }, [memberIndex, members]);
 
-    if (loadingMembers || loadingAddresses || memberIndex === -1 || (loadingMemberAddresses && !memberAddressesMap)) {
-        return <Loader />;
-    }
-
     const handleAddAddress = (member: Member) => {
         if (member.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey) {
             createNotification({ type: 'error', text: c('Error').t`The organization key must be activated first` });
             throw new Error('Organization key is not decrypted');
         }
-        createModal(<AddressModal member={member} members={members} organizationKey={organizationKey} />);
+        setTmpMember(member);
+        setAddressModalOpen(true);
     };
 
     const currentMember = members?.[memberIndex];
@@ -96,7 +87,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
 
     const activateLink = <SettingsLink path="/organization-keys">{c('Action').t`activate`}</SettingsLink>;
 
-    return (
+    const children = (
         <>
             <SettingsParagraph className="mt0-5">
                 {c('Info')
@@ -143,6 +134,23 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
                     organizationKey={loadingOrganizationKey ? undefined : organizationKey}
                 />
             )}
+        </>
+    );
+
+    const loading =
+        loadingMembers || loadingAddresses || memberIndex === -1 || (loadingMemberAddresses && !memberAddressesMap);
+
+    return (
+        <>
+            {renderAddressModal && tmpMember && (
+                <AddressModal
+                    member={tmpMember}
+                    members={members}
+                    organizationKey={organizationKey}
+                    {...addressModalProps}
+                />
+            )}
+            {loading ? <Loader /> : children}
         </>
     );
 };
