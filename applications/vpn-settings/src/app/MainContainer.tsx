@@ -3,6 +3,7 @@ import { Route } from 'react-router';
 import { useLocation, Redirect, Switch, useHistory } from 'react-router-dom';
 import { localeCode } from '@proton/shared/lib/i18n';
 import {
+    TopBanners,
     Sidebar,
     useToggle,
     useUser,
@@ -36,6 +37,8 @@ import {
     AccountRecoverySection,
     EmailSubscriptionSection,
     DeleteSection,
+    AutomaticSubscriptionModal,
+    SubscriptionModalProvider,
     useModalState,
 } from '@proton/components';
 import LiveChatZendesk, {
@@ -50,7 +53,8 @@ import { BugModalMode } from '@proton/components/containers/support/BugModal';
 import { getRoutes } from './routes';
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 import TVContainer from './containers/TVContainer';
-import DashboardAutomaticModal from './containers/DashboardAutomaticModal';
+
+const vpnZendeskKey = '52184d31-aa98-430f-a86c-b5a93235027a';
 
 const MainContainer = () => {
     const [user] = useUser();
@@ -105,6 +109,9 @@ const MainContainer = () => {
     }, [location.pathname, location.hash]);
 
     const logo = <MainLogo to="/" />;
+
+    const top = <TopBanners />;
+
     const header = (
         <PrivateHeader
             logo={logo}
@@ -151,23 +158,25 @@ const MainContainer = () => {
                     <TVContainer />
                 </Route>
                 <Route path="*">
-                    <PrivateAppContainer header={header} sidebar={sidebar}>
+                    <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
                         <Switch>
                             {getIsSectionAvailable(routes.dashboard) && (
                                 <Route path={routes.dashboard.to}>
-                                    <DashboardAutomaticModal />
-                                    <PrivateMainSettingsArea
-                                        setActiveSection={setActiveSection}
-                                        location={location}
-                                        config={routes.dashboard}
-                                    >
-                                        <PlansSection />
-                                        <YourPlanSection />
-                                        <BillingSection />
-                                        <CreditsSection />
-                                        <GiftCodeSection />
-                                        <CancelSubscriptionSection />
-                                    </PrivateMainSettingsArea>
+                                    <SubscriptionModalProvider>
+                                        <AutomaticSubscriptionModal />
+                                        <PrivateMainSettingsArea
+                                            setActiveSection={setActiveSection}
+                                            location={location}
+                                            config={routes.dashboard}
+                                        >
+                                            <PlansSection />
+                                            <YourPlanSection />
+                                            <BillingSection />
+                                            <CreditsSection />
+                                            <GiftCodeSection />
+                                            <CancelSubscriptionSection />
+                                        </PrivateMainSettingsArea>
+                                    </SubscriptionModalProvider>
                                 </Route>
                             )}
                             <Route path={routes.general.to}>
@@ -220,24 +229,22 @@ const MainContainer = () => {
                             />
                         </Switch>
                         {showChat.render && canEnableChat ? (
-                            <>
-                                <LiveChatZendesk
-                                    tags={tagsArray}
-                                    zendeskRef={zendeskRef}
-                                    zendeskKey="52184d31-aa98-430f-a86c-b5a93235027a"
-                                    name={user.DisplayName || user.Name}
-                                    email={user.Email || userSettings?.Email?.Value || ''}
-                                    onLoaded={() => {
-                                        if (showChat.autoToggle) {
-                                            zendeskRef.current?.toggle();
-                                        }
-                                    }}
-                                    onUnavailable={() => {
-                                        openAuthenticatedBugReportModal('chat-no-agents');
-                                    }}
-                                    locale={localeCode.replace('_', '-')}
-                                />
-                            </>
+                            <LiveChatZendesk
+                                tags={tagsArray}
+                                zendeskRef={zendeskRef}
+                                zendeskKey={vpnZendeskKey}
+                                name={user.DisplayName || user.Name}
+                                email={user.Email || userSettings?.Email?.Value || ''}
+                                onLoaded={() => {
+                                    if (showChat.autoToggle) {
+                                        zendeskRef.current?.toggle();
+                                    }
+                                }}
+                                onUnavailable={() => {
+                                    openAuthenticatedBugReportModal('chat-no-agents');
+                                }}
+                                locale={localeCode.replace('_', '-')}
+                            />
                         ) : null}
                     </PrivateAppContainer>
                 </Route>

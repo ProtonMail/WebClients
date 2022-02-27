@@ -30,6 +30,8 @@ export default {
 
 export const dialogRootClassName = 'modal-container';
 
+export const modalTwoRootClassName = 'modal-two';
+
 export const dropdownRootClassName = 'dropdown';
 
 const textInputSelectors = ['email', 'number', 'password', 'search', 'tel', 'text', 'url'].map(
@@ -45,6 +47,10 @@ const domIsBusy = () => {
      * should any of the conditions fail before evaluationg all of them
      */
     if (document.querySelector(`.${dialogRootClassName}`) !== null) {
+        return true;
+    }
+
+    if (document.querySelector(`.${modalTwoRootClassName}`) !== null) {
         return true;
     }
 

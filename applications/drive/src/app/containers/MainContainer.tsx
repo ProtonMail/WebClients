@@ -8,6 +8,7 @@ import {
     useLoading,
     useWelcomeFlags,
     useEarlyAccess,
+    ReferralModalContainer,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
@@ -113,6 +114,7 @@ const InitContainer = () => {
 
     return (
         <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
+            <ReferralModalContainer />
             <ModalsChildren />
             <TransferManager />
             <DriveWindow>

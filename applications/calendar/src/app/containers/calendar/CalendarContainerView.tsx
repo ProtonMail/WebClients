@@ -22,6 +22,7 @@ import {
     useContactGroups,
     useFeature,
     FeatureCode,
+    TopBanners,
 } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
@@ -320,7 +321,10 @@ const CalendarContainerView = ({
         setExpand(false);
     }, [window.location.pathname]);
 
+    const top = <TopBanners />;
+
     const logo = <MainLogo to="/" />;
+
     const header = (
         <PrivateHeader
             logo={logo}
@@ -428,7 +432,13 @@ const CalendarContainerView = ({
     }, [view, range, localDate, localDateRange]);
 
     return (
-        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred} containerRef={containerRef}>
+        <PrivateAppContainer
+            top={top}
+            header={header}
+            sidebar={sidebar}
+            isBlurred={isBlurred}
+            containerRef={containerRef}
+        >
             {loader}
             <div className="only-print p1">
                 {tzid} <br />

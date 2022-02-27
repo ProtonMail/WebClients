@@ -24,7 +24,13 @@ export interface Bundle {
 }
 
 interface Props {
-    onSelect: (params: { planIDs: PlanIDs; cycle: Cycle; currency: Currency; couponCode?: string | null }) => void;
+    onSelect: (params: {
+        offer: EligibleOffer;
+        plan: string;
+        cycle: Cycle;
+        currency: Currency;
+        couponCode?: string | null;
+    }) => void;
     className?: string;
     onClose?: () => void;
     offer: EligibleOffer;
@@ -145,7 +151,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
     const getBundlePrices = async () => {
         try {
             const result = await Promise.all(
-                offer.plans.map(({ planIDs = [], cycle = DEFAULT_CYCLE, couponCode }) => {
+                offer.plans.map(({ planIDs, cycle = DEFAULT_CYCLE, couponCode }) => {
                     return Promise.all([
                         api<SubscriptionCheckResponse>(
                             checkSubscription({
@@ -213,7 +219,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                             isProductPayerOffer ? 'mt2' : 'mt4',
                         ])}
                     >
-                        {offer.plans.map(({ name, cycle, planIDs, popular, couponCode }, index) => {
+                        {offer.plans.map(({ name, plan, cycle, planIDs, popular, couponCode }, index) => {
                             const key = `${index}`;
                             const { withCoupon = 0, withoutCouponMonthly = 0 } = pricing[index] || {};
                             const withCouponMonthly = withCoupon / cycle;
@@ -300,7 +306,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                                             className={classnames(['mb1 text-uppercase'])}
                                             onClick={() => {
                                                 rest.onClose?.();
-                                                onSelect({ planIDs, cycle, currency, couponCode });
+                                                onSelect({ offer, plan, cycle, currency, couponCode });
                                             }}
                                         >
                                             {getCTA(popular)}

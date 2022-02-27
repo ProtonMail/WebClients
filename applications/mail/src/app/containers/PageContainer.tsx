@@ -1,23 +1,27 @@
-import { forwardRef, memo, Ref, useEffect, useRef, useState } from 'react';
-import { Redirect, useRouteMatch, useHistory, useLocation } from 'react-router-dom';
+import { forwardRef, memo, Ref, useEffect, useRef } from 'react';
+import { APPS } from '@proton/shared/lib/constants';
+import { Redirect, useRouteMatch } from 'react-router-dom';
 import {
-    FeatureCode,
     useMailSettings,
     useUserSettings,
     useLabels,
-    useFeature,
     useFolders,
     useWelcomeFlags,
     useModals,
     LocationErrorBoundary,
     MailShortcutsModal,
-    BetaOnboardingModal,
-    useIsMnemonicAvailable,
     useModalState,
+    ReferralModal,
+    useSubscription,
     useUser,
+    useFeature,
+    FeatureCode,
+    getShouldOpenReferralModal,
+    useAddresses,
+    getShouldOpenMnemonicModal,
 } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { MailSettings, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
 import PrivateLayout from '../components/layout/PrivateLayout';
 import MailboxContainer from './mailbox/MailboxContainer';
@@ -41,69 +45,52 @@ const PageContainer = (
     { params: { elementID, labelID, messageID }, breakpoints, isComposerOpened }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
-    const location = useLocation();
-    const history = useHistory();
+    const [user] = useUser();
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
+    const [subscription] = useSubscription();
+    const [addresses] = useAddresses();
+
     const { createModal } = useModals();
-    const [mnemonicPromptModal, setMnemonicPromptModalOpen] = useModalState();
-    const [shouldOpenMnemonicPrompt, setShouldOpenMnemonicPrompt] = useState(false);
+
+    const seenMnemonicFeature = useFeature<boolean>(FeatureCode.SeenMnemonicPrompt);
+    const [mnemonicPromptModal, setMnemonicPromptModalOpen, renderMnemonicModal] = useModalState();
+    const shouldOpenMnemonicModal = getShouldOpenMnemonicModal({
+        user,
+        addresses,
+        feature: seenMnemonicFeature.feature,
+        app: APPS.PROTONMAIL,
+    });
+
+    const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
+    const [referralModal, setReferralModal, renderReferralModal] = useModalState();
+    const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
+
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
-    const [isMnemonicAvailable] = useIsMnemonicAvailable();
-    const [user] = useUser();
     const onceRef = useRef(false);
-    const { feature: hasSeenMnemonicPrompt } = useFeature(FeatureCode.SeenMnemonicPrompt);
 
     useEffect(() => {
         if (onceRef.current) {
             return;
         }
-        const queryParams = new URLSearchParams(location.search);
-
-        const hasBetaParam = queryParams.has('beta');
-        if (hasBetaParam) {
-            queryParams.delete('beta');
-            history.replace({
-                search: queryParams.toString(),
-            });
-        }
-
-        // userSettings is used to avoid waiting to load features from useEarlyAccess
-        const shouldOpenBetaOnboardingModal = hasBetaParam && !userSettings.EarlyAccess;
-
-        const shouldOpenMnemonicPrompt =
-            isMnemonicAvailable &&
-            user.MnemonicStatus === MNEMONIC_STATUS.PROMPT &&
-            hasSeenMnemonicPrompt?.Value === false;
 
         if (welcomeFlags.isWelcomeFlow) {
             onceRef.current = true;
             createModal(
                 <MailOnboardingModal
                     onDone={() => {
-                        if (shouldOpenBetaOnboardingModal) {
-                            createModal(
-                                <BetaOnboardingModal
-                                    onClose={() => {
-                                        setWelcomeFlagsDone();
-                                    }}
-                                />
-                            );
-                        } else {
-                            setWelcomeFlagsDone();
-                        }
+                        setWelcomeFlagsDone();
                     }}
                 />
             );
-        } else if (shouldOpenBetaOnboardingModal) {
-            onceRef.current = true;
-            createModal(<BetaOnboardingModal />);
-        } else if (shouldOpenMnemonicPrompt) {
+        } else if (shouldOpenMnemonicModal) {
             onceRef.current = true;
             setMnemonicPromptModalOpen(true);
-            setShouldOpenMnemonicPrompt(true);
+        } else if (shouldOpenReferralModal.open) {
+            onceRef.current = true;
+            setReferralModal(true);
         }
-    }, [isMnemonicAvailable, hasSeenMnemonicPrompt]);
+    }, [shouldOpenMnemonicModal, shouldOpenReferralModal.open]);
 
     useContactsListener();
     useConversationsEvent();
@@ -127,7 +114,8 @@ const PageContainer = (
             elementID={elementID}
             breakpoints={breakpoints}
         >
-            {shouldOpenMnemonicPrompt && <MnemonicPromptModal {...mnemonicPromptModal} />}
+            {renderReferralModal && <ReferralModal endDate={shouldOpenReferralModal.endDate} {...referralModal} />}
+            {renderMnemonicModal && <MnemonicPromptModal {...mnemonicPromptModal} />}
             <LocationErrorBoundary>
                 <MailboxContainer
                     labelID={labelID}
