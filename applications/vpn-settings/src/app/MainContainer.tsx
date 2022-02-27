@@ -54,6 +54,8 @@ import { getRoutes } from './routes';
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 import TVContainer from './containers/TVContainer';
 
+const vpnZendeskKey = '52184d31-aa98-430f-a86c-b5a93235027a';
+
 const MainContainer = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
@@ -230,7 +232,7 @@ const MainContainer = () => {
                             <LiveChatZendesk
                                 tags={tagsArray}
                                 zendeskRef={zendeskRef}
-                                zendeskKey="52184d31-aa98-430f-a86c-b5a93235027a"
+                                zendeskKey={vpnZendeskKey}
                                 name={user.DisplayName || user.Name}
                                 email={user.Email || userSettings?.Email?.Value || ''}
                                 onLoaded={() => {
