@@ -29,7 +29,8 @@ const DriveWindow = ({ children }: Props) => {
             }}
         />
     ) : null;
-    const topBanners = <TopBanners>{fileRecoveryBanner}</TopBanners>;
+
+    const top = <TopBanners>{fileRecoveryBanner}</TopBanners>;
 
     let PrimaryButton = UploadSidebarButton;
     if (location.pathname === '/trash') {
@@ -58,7 +59,7 @@ const DriveWindow = ({ children }: Props) => {
     );
 
     return (
-        <PrivateAppContainer topBanners={topBanners} header={header} sidebar={sidebar}>
+        <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
             <AppErrorBoundary>{children}</AppErrorBoundary>
         </PrivateAppContainer>
     );

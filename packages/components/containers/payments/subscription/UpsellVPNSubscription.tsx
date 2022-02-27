@@ -1,45 +1,17 @@
-import { hasVpnBasic, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, PLANS } from '@proton/shared/lib/constants';
-import { toMap } from '@proton/shared/lib/helpers/object';
+import { hasVpnBasic } from '@proton/shared/lib/helpers/subscription';
 import { c } from 'ttag';
-import { Loader, Button, Card } from '../../../components';
-import { useUser, useSubscription, useModals, usePlans, useOrganization } from '../../../hooks';
-import SubscriptionModal from './SubscriptionModal';
-import { SUBSCRIPTION_STEPS } from './constants';
+import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { Button, Card } from '../../../components';
 import UpsellItem from './UpsellItem';
 
-const UpsellVPNSubscription = () => {
-    const [{ hasPaidVpn }, loadingUser] = useUser();
-    const [subscription, loadingSubscription] = useSubscription();
-    const [organization, loadingOrganization] = useOrganization();
-    const [plans = [], loadingPlans] = usePlans();
-    const { Currency = DEFAULT_CURRENCY, Cycle = DEFAULT_CYCLE } = subscription || {};
-    const isFreeVpn = !hasPaidVpn;
-    const { createModal } = useModals();
-    const plansMap = toMap(plans, 'Name');
-    const planIDs = getPlanIDs(subscription);
+interface Props {
+    subscription: Subscription;
+    user: UserModel;
+    onUpgrade: () => void;
+}
 
-    const handleUpgradeClick = () => {
-        createModal(
-            <SubscriptionModal
-                currency={Currency}
-                cycle={Cycle}
-                planIDs={switchPlan({
-                    planIDs,
-                    plans,
-                    planID: plansMap[PLANS.VPNPLUS].ID,
-                    service: PLAN_SERVICES.MAIL,
-                    organization,
-                })}
-                step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
-            />
-        );
-    };
-
-    if (loadingUser || loadingSubscription || loadingPlans || loadingOrganization) {
-        return <Loader />;
-    }
+const UpsellVPNSubscription = ({ subscription, user, onUpgrade }: Props) => {
+    const isFreeVpn = !user.hasPaidVpn;
 
     if (!isFreeVpn && !hasVpnBasic(subscription)) {
         return null;
@@ -52,7 +24,7 @@ const UpsellVPNSubscription = () => {
                 {c('VPN upsell feature').t`Access geo-blocked content (Netflix, YouTube, etc.)`}
             </UpsellItem>
             <UpsellItem icon="brand-proton-vpn">{c('VPN upsell feature').t`Unlock advanced VPN features`}</UpsellItem>
-            <Button color="norm" className="mt1" onClick={handleUpgradeClick}>
+            <Button color="norm" className="mt1" onClick={onUpgrade}>
                 {c('Action').t`Upgrade to Plus`}
             </Button>
         </Card>

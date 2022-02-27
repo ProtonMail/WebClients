@@ -49,7 +49,7 @@ const SubscriptionThanks = ({ method, onClose }: Props) => {
                     <img width="150" src={appStoreSvg} alt="App Store" />
                 </Href>
             </div>
-            <div className="text-center mb2">
+            <div className="text-center pb2">
                 <PrimaryButton fullWidth onClick={onClose}>{c('Action').t`Close`}</PrimaryButton>
             </div>
         </>
