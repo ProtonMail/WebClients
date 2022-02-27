@@ -36,8 +36,7 @@ const AddressActions = ({
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
 
-    const [createMissingKeysAddressProps, setCreateMissingKeysAddressModalOpen, renderMissingKeysModal] =
-        useModalState();
+    const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressProps, setDeleteAddressModalOpen, renderDeleteAddress] = useModalState();
     const [disableAddressProps, setDisableAddressModalOpen, renderDisableAddress] = useModalState();
 
@@ -81,7 +80,7 @@ const AddressActions = ({
                   },
                   permissions.canGenerate && {
                       text: c('Address action').t`Generate missing keys`,
-                      onClick: () => () => setCreateMissingKeysAddressModalOpen(true),
+                      onClick: () => setMissingKeysAddressModalOpen(true),
                   },
                   permissions.canDelete &&
                       ({
@@ -91,12 +90,11 @@ const AddressActions = ({
                       } as const),
               ].filter(isTruthy);
 
-    return list.length ? (
+    return (
         <>
-            <DropdownActions size="small" list={list} loading={loading || savingIndex !== undefined} />
             {renderMissingKeysModal && (
                 <CreateMissingKeysAddressModal
-                    {...createMissingKeysAddressProps}
+                    {...missingKeysProps}
                     member={member}
                     addressesToGenerate={[address]}
                     organizationKey={organizationKey}
@@ -108,12 +106,16 @@ const AddressActions = ({
             {renderDisableAddress && (
                 <DisableAddressModal email={address.Email} onDisable={handleDisable} {...disableAddressProps} />
             )}
+
+            {list.length ? (
+                <DropdownActions size="small" list={list} loading={loading || savingIndex !== undefined} />
+            ) : (
+                <div
+                    // This is a placeholder to avoid height loss when dropdownActions are not rendered
+                    style={{ height: '24px' }}
+                />
+            )}
         </>
-    ) : (
-        <div
-            // This is a placeholder to avoid height loss when dropdownActions are not rendered
-            style={{ height: '24px' }}
-        />
     );
 };
 
