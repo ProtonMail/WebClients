@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 import { createAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
-import { Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import { Member, CachedOrganizationKey, Address } from '@proton/shared/lib/interfaces';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import {
     SelectTwo,
@@ -21,24 +21,22 @@ import {
     useLoading,
     useNotifications,
     useEventManager,
-    useModals,
     useApi,
     useAddresses,
     usePremiumDomains,
     useUser,
 } from '../../hooks';
 
-import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 import useAddressDomains from './useAddressDomains';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
     members: Member[];
     organizationKey?: CachedOrganizationKey;
+    onCreated: (member: Member, address: Address) => void;
 }
 
-const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
-    const { createModal } = useModals();
+const AddressModal = ({ member, members, organizationKey, onCreated, ...rest }: Props) => {
     const { call } = useEventManager();
     const [user] = useUser();
     const [addresses] = useAddresses();
@@ -95,13 +93,7 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
         createNotification({ text: c('Success').t`Address added` });
 
         if (selectedMember.Self || selectedMember.Private === MEMBER_PRIVATE.READABLE) {
-            createModal(
-                <CreateMissingKeysAddressModal
-                    organizationKey={organizationKey}
-                    member={selectedMember}
-                    addressesToGenerate={[Address]}
-                />
-            );
+            onCreated(selectedMember, Address);
         }
     };
 

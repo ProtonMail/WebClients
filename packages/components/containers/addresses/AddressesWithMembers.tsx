@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { c, msgid } from 'ttag';
-import { UserModel, Organization, Member } from '@proton/shared/lib/interfaces';
+import { UserModel, Organization, Member, Address } from '@proton/shared/lib/interfaces';
 
 import { Alert, Loader, Button, SettingsLink, useModalState } from '../../components';
 import { useMembers, useMemberAddresses, useOrganizationKey, useNotifications, useAddresses } from '../../hooks';
@@ -11,6 +11,7 @@ import { SettingsParagraph } from '../account';
 import AddressModal from './AddressModal';
 import AddressesWithUser from './AddressesWithUser';
 import AddressesTable from './AddressesTable';
+import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 
 const getMemberIndex = (members: Member[] = [], memberID?: string, isOnlySelf?: boolean) => {
     const newMemberIndex =
@@ -35,9 +36,11 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [addresses, loadingAddresses] = useAddresses();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const [missingKeysProps, setMissingKeysProps, renderMissingKeysModal] = useModalState();
     const [addressModalProps, setAddressModalOpen, renderAddressModal] = useModalState();
     const { createNotification } = useNotifications();
     const [tmpMember, setTmpMember] = useState<Member | null>(null);
+    const [tmpMissingKeys, setTmpMissingKeys] = useState<{ address: Address; member: Member } | null>(null);
 
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
 
@@ -142,11 +145,23 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
 
     return (
         <>
+            {renderMissingKeysModal && tmpMissingKeys && (
+                <CreateMissingKeysAddressModal
+                    member={tmpMissingKeys.member}
+                    addressesToGenerate={[tmpMissingKeys.address]}
+                    organizationKey={organizationKey}
+                    {...missingKeysProps}
+                />
+            )}
             {renderAddressModal && tmpMember && (
                 <AddressModal
                     member={tmpMember}
                     members={members}
                     organizationKey={organizationKey}
+                    onCreated={(member, address) => {
+                        setTmpMissingKeys({ member, address });
+                        setMissingKeysProps(true);
+                    }}
                     {...addressModalProps}
                 />
             )}
