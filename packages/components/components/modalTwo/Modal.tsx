@@ -71,12 +71,12 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     className,
     ...rest
 }: PolymorphicComponentProps<E, ModalOwnProps>) => {
-    const last = useModalPosition(open || false);
     const [exit, setExit] = useState(() => (open ? ExitState.idle : ExitState.exited));
     const id = useInstance(() => generateUID('modal'));
     const dialogRef = useRef(null);
 
     const active = exit !== ExitState.exited;
+    const last = useModalPosition(active || false);
 
     const focusTrapProps = useFocusTrap({
         active,
@@ -122,18 +122,20 @@ const Modal = <E extends ElementType = typeof defaultElement>({
         return null;
     }
 
+    const exiting = exit === ExitState.exiting;
+
     return (
         <Portal>
             <div
                 className={classnames([
                     modalTwoRootClassName,
-                    exit === ExitState.exiting && 'modal-two--out',
+                    exiting && 'modal-two--out',
                     fullscreenOnMobile && 'modal-two--fullscreen-on-mobile',
                     fullscreen && 'modal-two--fullscreen',
                     !last && 'modal-two--is-behind-backdrop',
                 ])}
                 onAnimationEnd={({ animationName }) => {
-                    if (animationName === 'anime-modal-two-out') {
+                    if (exiting && animationName === 'anime-modal-two-out') {
                         setExit(ExitState.exited);
                         onExit?.();
                     }
