@@ -1,9 +1,17 @@
 import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 import { createAddress } from '@proton/shared/lib/api/addresses';
-import { ADDRESS_TYPE, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
-import { Member, CachedOrganizationKey, Address } from '@proton/shared/lib/interfaces';
+import {
+    ADDRESS_TYPE,
+    DEFAULT_ENCRYPTION_CONFIG,
+    ENCRYPTION_CONFIGS,
+    MEMBER_PRIVATE,
+} from '@proton/shared/lib/constants';
+import { Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { missingKeysMemberProcess, missingKeysSelfProcess } from '@proton/shared/lib/keys';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import {
     SelectTwo,
     Option,
@@ -25,18 +33,20 @@ import {
     useAddresses,
     usePremiumDomains,
     useUser,
+    useAuthentication,
+    useGetUserKeys,
 } from '../../hooks';
 
 import useAddressDomains from './useAddressDomains';
+import SelectEncryption from '../keys/addKey/SelectEncryption';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
     members: Member[];
     organizationKey?: CachedOrganizationKey;
-    onCreated: (member: Member, address: Address) => void;
 }
 
-const AddressModal = ({ member, members, organizationKey, onCreated, ...rest }: Props) => {
+const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
     const { call } = useEventManager();
     const [user] = useUser();
     const [addresses] = useAddresses();
@@ -44,6 +54,8 @@ const AddressModal = ({ member, members, organizationKey, onCreated, ...rest }: 
     const [premiumDomain = ''] = premiumDomains || [];
     const api = useApi();
     const initialMember = member || members[0];
+    const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
+    const authentication = useAuthentication();
     const [model, setModel] = useState(() => {
         return {
             id: initialMember.ID,
@@ -61,6 +73,10 @@ const AddressModal = ({ member, members, organizationKey, onCreated, ...rest }: 
     const [addressDomains, loadingDomains] = useAddressDomains(selectedMember || initialMember);
     const domainOptions = addressDomains.map((DomainName) => ({ text: DomainName, value: DomainName }));
     const selectedDomain = model.domain || domainOptions[0]?.text;
+    const getUserKeys = useGetUserKeys();
+
+    const shouldGenerateKeys =
+        !selectedMember || selectedMember.Self || selectedMember.Private === MEMBER_PRIVATE.READABLE;
 
     const handleSubmit = async () => {
         if (!selectedMember) {
@@ -78,6 +94,13 @@ const AddressModal = ({ member, members, organizationKey, onCreated, ...rest }: 
             });
         }
 
+        const shouldGenerateSelfKeys = selectedMember.Self && selectedMember.Private === MEMBER_PRIVATE.UNREADABLE;
+        const shouldGenerateMemberKeys = !shouldGenerateSelfKeys;
+        if (shouldGenerateKeys && shouldGenerateMemberKeys && !organizationKey?.privateKey) {
+            createNotification({ text: c('Error').t`Organization key is not decrypted`, type: 'error' });
+            return;
+        }
+
         const { Address } = await api(
             createAddress({
                 MemberID: selectedMember.ID,
@@ -87,14 +110,38 @@ const AddressModal = ({ member, members, organizationKey, onCreated, ...rest }: 
             })
         );
 
+        if (shouldGenerateKeys) {
+            if (shouldGenerateSelfKeys) {
+                await missingKeysSelfProcess({
+                    api,
+                    userKeys: await getUserKeys(),
+                    addresses,
+                    addressesToGenerate: [Address],
+                    password: authentication.getPassword(),
+                    encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
+                    onUpdate: noop,
+                });
+            } else {
+                if (!organizationKey?.privateKey) {
+                    throw new Error('Missing org key');
+                }
+                await missingKeysMemberProcess({
+                    api,
+                    encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
+                    ownerAddresses: addresses,
+                    memberAddressesToGenerate: [Address],
+                    member: selectedMember,
+                    memberAddresses: await getAllMemberAddresses(api, selectedMember.ID),
+                    onUpdate: noop,
+                    organizationKey: organizationKey.privateKey,
+                });
+            }
+        }
+
         await call();
 
         rest.onClose?.();
         createNotification({ text: c('Success').t`Address added` });
-
-        if (selectedMember.Self || selectedMember.Private === MEMBER_PRIVATE.READABLE) {
-            onCreated(selectedMember, Address);
-        }
     };
 
     const handleClose = submitting ? undefined : rest.onClose;
@@ -170,6 +217,12 @@ const AddressModal = ({ member, members, organizationKey, onCreated, ...rest }: 
                     placeholder={c('Placeholder').t`Choose display name`}
                     data-testid="settings:identity-section:add-address:display-name"
                 />
+                {shouldGenerateKeys && (
+                    <div className="mb1-5">
+                        <div className="text-semibold mb0-25">{c('Label').t`Key strength`}</div>
+                        <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
+                    </div>
+                )}
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose} disabled={submitting}>{c('Action').t`Cancel`}</Button>

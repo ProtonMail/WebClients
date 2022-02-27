@@ -45,7 +45,7 @@ enum STEPS {
     ERROR,
 }
 
-interface Props extends ModalProps {
+interface Props extends ModalProps<'form'> {
     member?: Member;
     addressesToGenerate: Address[];
     organizationKey?: CachedOrganizationKey;
