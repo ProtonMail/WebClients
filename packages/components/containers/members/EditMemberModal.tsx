@@ -1,0 +1,212 @@
+import { FormEvent, useMemo, useState } from 'react';
+import { c } from 'ttag';
+import { privatizeMember, updateName, updateQuota, updateRole, updateVPN } from '@proton/shared/lib/api/members';
+import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
+import { Member } from '@proton/shared/lib/interfaces';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+
+import {
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    InputFieldTwo,
+    Toggle,
+    ConfirmModal,
+    Alert,
+    useFormErrors,
+    Button,
+} from '../../components';
+import { useApi, useNotifications, useEventManager, useOrganization, useLoading, useModals } from '../../hooks';
+import Addresses from '../addresses/Addresses';
+
+import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
+import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';
+
+interface Props extends ModalProps<'form'> {
+    member: Member;
+}
+
+const EditMemberModal = ({ member, ...rest }: Props) => {
+    const [organization] = useOrganization();
+    const { call } = useEventManager();
+    const { createModal } = useModals();
+    const { validator, onFormSubmit } = useFormErrors();
+
+    const initialModel = useMemo(
+        () => ({
+            name: member.Name,
+            storage: member.MaxSpace,
+            vpn: member.MaxVPN,
+            private: !!member.Private,
+            admin: member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
+        }),
+        [member]
+    );
+
+    const [model, updateModel] = useState(initialModel);
+
+    const [submitting, withLoading] = useLoading();
+    const { createNotification } = useNotifications();
+    const api = useApi();
+
+    const hasVPN = Boolean(organization.MaxVPN);
+    const canMakePrivate = member.Private === MEMBER_PRIVATE.READABLE;
+    const canMakeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER;
+    const canRevokeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+
+    const updatePartialModel = (partial: Partial<typeof model>) => {
+        updateModel({ ...model, ...partial });
+    };
+
+    const handleSubmit = async () => {
+        if (initialModel.name !== model.name) {
+            await api(updateName(member.ID, model.name));
+        }
+
+        if (initialModel.storage !== model.storage) {
+            await api(updateQuota(member.ID, +model.storage));
+        }
+
+        if (hasVPN) {
+            await api(updateVPN(member.ID, +model.vpn));
+        }
+
+        if (canMakePrivate && model.private && model.private !== initialModel.private) {
+            await api(privatizeMember(member.ID));
+        }
+
+        if (canMakeAdmin && model.admin && model.admin !== initialModel.admin) {
+            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
+        }
+
+        if (canRevokeAdmin && !model.admin && model.admin !== initialModel.admin) {
+            try {
+                await new Promise((resolve, reject) => {
+                    createModal(
+                        <ConfirmModal
+                            onClose={reject}
+                            onConfirm={() => resolve(undefined)}
+                            title={c('Title').t`Change role`}
+                        >
+                            <Alert className="mb1">
+                                {member.Subscriber === MEMBER_SUBSCRIBER.PAYER
+                                    ? c('Info')
+                                          .t`This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.`
+                                    : c('Info')
+                                          .t`Are you sure you want to remove administrative privileges from this user?`}
+                            </Alert>
+                        </ConfirmModal>
+                    );
+                });
+
+                await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+            } catch (e) {
+                /* do nothing, user declined confirm-modal to revoke admin rights from member */
+            }
+        }
+
+        await call();
+        rest.onClose?.();
+        createNotification({ text: c('Success').t`User updated` });
+    };
+
+    const storageRange = getStorageRange(member, organization);
+    const vpnRange = getVPNRange(member, organization);
+
+    const handleClose = submitting ? undefined : rest.onClose;
+
+    return (
+        <Modal
+            as="form"
+            size="large"
+            {...rest}
+            onSubmit={(event: FormEvent) => {
+                event.preventDefault();
+                event.stopPropagation();
+                if (!onFormSubmit()) {
+                    return;
+                }
+                withLoading(handleSubmit());
+            }}
+            onClose={handleClose}
+        >
+            <ModalHeader title={c('Title').t`Edit user`} />
+            <ModalContent>
+                <InputFieldTwo
+                    autoFocus
+                    id="name"
+                    value={model.name}
+                    error={validator([requiredValidator(model.name)])}
+                    onValue={(value: string) => updatePartialModel({ name: value })}
+                    label={c('Label').t`Name`}
+                    placeholder="Thomas A. Anderson"
+                />
+
+                <div className="mb1-5">
+                    <div className="text-semibold mb0-25">{c('Label').t`Account storage`}</div>
+                    <MemberStorageSelector
+                        value={model.storage}
+                        step={GIGA}
+                        range={storageRange}
+                        onChange={(storage) => updatePartialModel({ storage })}
+                    />
+                </div>
+
+                {hasVPN ? (
+                    <div className="mb1-5">
+                        <div className="text-semibold mb0-25">{c('Label').t`VPN connections`}</div>
+                        <MemberVPNSelector
+                            value={model.vpn}
+                            step={1}
+                            range={vpnRange}
+                            onChange={(vpn) => updatePartialModel({ vpn })}
+                        />
+                    </div>
+                ) : null}
+
+                {canMakePrivate && (
+                    <div className="flex flex-align-center mb1-5">
+                        <label className="text-semibold mr1" htmlFor="private-toggle">
+                            {c('Label for new member').t`Private`}
+                        </label>
+                        <Toggle
+                            id="private-toggle"
+                            checked={model.private}
+                            onChange={({ target }) => updatePartialModel({ private: target.checked })}
+                        />
+                    </div>
+                )}
+                {(canMakeAdmin || canRevokeAdmin) && (
+                    <div className="flex flex-align-center mb1-5">
+                        <label className="text-semibold mr1" htmlFor="admin-toggle">
+                            {c('Label for new member').t`Admin`}
+                        </label>
+                        <Toggle
+                            id="admin-toggle"
+                            checked={model.admin}
+                            onChange={({ target }) => updatePartialModel({ admin: target.checked })}
+                        />
+                    </div>
+                )}
+                <div>
+                    <div className="pt0-5">{c('Label').t`Addresses`}</div>
+                    <div>
+                        <Addresses organization={organization} memberID={member.ID} />
+                    </div>
+                </div>
+            </ModalContent>
+            <ModalFooter>
+                <Button onClick={handleClose} disabled={submitting}>
+                    {c('Action').t`Cancel`}
+                </Button>
+                <Button loading={submitting} type="submit" color="norm">
+                    {c('Action').t`Save`}
+                </Button>
+            </ModalFooter>
+        </Modal>
+    );
+};
+
+export default EditMemberModal;

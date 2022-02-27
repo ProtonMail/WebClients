@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import { DOMAIN_STATE } from '@proton/shared/lib/constants';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
-import { Organization as tsOrganization, Domain, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import { Organization as tsOrganization, Domain, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
 import {
     Table,
     TableCell,
@@ -38,6 +38,7 @@ import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 import './UsersAndAddressesSection.scss';
 import { AddressModal } from '../addresses';
+import EditMemberModal from './EditMemberModal';
 
 const validateAddUser = (
     organization: tsOrganization,
@@ -86,6 +87,7 @@ const UsersAndAddressesSection = () => {
     const [members, loadingMembers] = useMembers();
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [keywords, setKeywords] = useState('');
+    const [memberToEdit, setMemberToEdit] = useState<Member | null>(null);
 
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -174,6 +176,7 @@ const UsersAndAddressesSection = () => {
             </TableCell>
         );
     });
+    const [editMemberModal, setEditMemberModal, renderEditMemberModal] = useModalState();
 
     return (
         <SettingsSectionWide>
@@ -183,6 +186,9 @@ const UsersAndAddressesSection = () => {
                     .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.`}
             </SettingsParagraph>
             <Block className="flex flex-align-items-start">
+                {renderEditMemberModal && memberToEdit && (
+                    <EditMemberModal member={memberToEdit} {...editMemberModal} />
+                )}
                 {renderMemberModal && organizationKey && domains?.length && (
                     <MemberModal
                         organization={organization}
@@ -256,6 +262,10 @@ const UsersAndAddressesSection = () => {
                                     </span>,
                                     <span className="pt1 pb1 inline-block">
                                         <MemberActions
+                                            onEdit={(member) => {
+                                                setMemberToEdit(member);
+                                                setEditMemberModal(true);
+                                            }}
                                             member={member}
                                             addresses={memberAddresses}
                                             organization={organization}
@@ -318,6 +328,10 @@ const UsersAndAddressesSection = () => {
                             <div className="flex mb1-5">
                                 <span style={{ '--min-width-custom': `100px` }} className="min-w-custom mr1" />
                                 <MemberActions
+                                    onEdit={() => {
+                                        setMemberToEdit(member);
+                                        setEditMemberModal(true);
+                                    }}
                                     member={member}
                                     addresses={memberAddresses}
                                     organization={organization}

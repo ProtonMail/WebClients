@@ -20,12 +20,12 @@ import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import { DropdownActions } from '../../components';
 import { useApi, useAuthentication, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
 
-import EditMemberModal from './EditMemberModal';
 import AuthModal from '../password/AuthModal';
 import DeleteMemberModal from './DeleteMemberModal';
 
 interface Props {
     member: Member;
+    onEdit: (member: Member) => void;
     addresses: Address[];
     organization: Organization;
     organizationKey: CachedOrganizationKey | undefined;
@@ -47,7 +47,7 @@ const validateMemberLogin = (
     }
 };
 
-const MemberActions = ({ member, addresses = [], organization, organizationKey }: Props) => {
+const MemberActions = ({ member, onEdit, addresses = [], organization, organizationKey }: Props) => {
     const api = useApi();
     const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
     const { call } = useEventManager();
@@ -130,10 +130,6 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
     const canLogin =
         !member.Self && member.Private === MEMBER_PRIVATE.READABLE && member.Keys.length && addresses.length;
 
-    const openEdit = () => {
-        createModal(<EditMemberModal member={member} onClose={noop} />);
-    };
-
     const openDelete = async () => {
         await new Promise<void>((resolve, reject) => {
             createModal(<DeleteMemberModal member={member} onConfirm={resolve} onClose={reject} />);
@@ -145,7 +141,9 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
     const list = [
         canEdit && {
             text: c('Member action').t`Edit`,
-            onClick: openEdit,
+            onClick: () => {
+                onEdit(member);
+            },
         },
         canDelete &&
             ({
