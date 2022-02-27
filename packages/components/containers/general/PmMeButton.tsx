@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { c } from 'ttag';
+import { Address } from '@proton/shared/lib/interfaces';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import {
     useApi,
@@ -12,7 +14,7 @@ import {
     usePremiumDomains,
     useUser,
 } from '../../hooks';
-import { Button } from '../../components';
+import { Button, useModalState } from '../../components';
 import UnlockModal from '../login/UnlockModal';
 import CreateMissingKeysAddressModal from '../addresses/missingKeys/CreateMissingKeysAddressModal';
 
@@ -31,6 +33,10 @@ const PmMeButton = () => {
         loadingAddresses || loadingPremiumDomains || loadingOrganization || loadingOrganizationKey;
     const [Domain = ''] = premiumDomains || [];
 
+    const [addressToGenerate, setAddressToGenerate] = useState<Address[]>([]);
+    const [createMissingKeysAddressProps, setCreateMissingKeysAddressModalOpen, renderMissingKeysModal] =
+        useModalState();
+
     const createPremiumAddress = async () => {
         const [{ DisplayName = '', Signature = '' } = {}] = addresses || [];
         await new Promise<void>((resolve, reject) => {
@@ -45,20 +51,28 @@ const PmMeButton = () => {
         );
         await call();
         createNotification({ text: c('Success').t`Premium address created` });
-        createModal(
-            <CreateMissingKeysAddressModal organizationKey={organizationKey} addressesToGenerate={[Address]} />
-        );
+        setAddressToGenerate(Address);
+        setCreateMissingKeysAddressModalOpen(true);
     };
 
     return (
-        <Button
-            color="norm"
-            disabled={isLoadingDependencies || !Domain}
-            loading={loading}
-            onClick={() => withLoading(createPremiumAddress())}
-        >
-            {c('Action').t`Activate ${Name}@pm.me`}
-        </Button>
+        <>
+            <Button
+                color="norm"
+                disabled={isLoadingDependencies || !Domain}
+                loading={loading}
+                onClick={() => withLoading(createPremiumAddress())}
+            >
+                {c('Action').t`Activate ${Name}@pm.me`}
+            </Button>
+            {renderMissingKeysModal && (
+                <CreateMissingKeysAddressModal
+                    {...createMissingKeysAddressProps}
+                    organizationKey={organizationKey}
+                    addressesToGenerate={addressToGenerate}
+                />
+            )}
+        </>
     );
 };
 

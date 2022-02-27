@@ -3,7 +3,13 @@ import { c } from 'ttag';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import { DOMAIN_STATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
-import { Organization as tsOrganization, Domain, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
+import {
+    Organization as tsOrganization,
+    Domain,
+    CachedOrganizationKey,
+    Member,
+    Address,
+} from '@proton/shared/lib/interfaces';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import {
@@ -43,6 +49,7 @@ import './UsersAndAddressesSection.scss';
 import { AddressModal } from '../addresses';
 import EditMemberModal from './EditMemberModal';
 import DeleteMemberModal from './DeleteMemberModal';
+import CreateMissingKeysAddressModal from '../addresses/missingKeys/CreateMissingKeysAddressModal';
 
 const validateAddUser = (
     organization: tsOrganization,
@@ -92,10 +99,12 @@ const UsersAndAddressesSection = () => {
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [keywords, setKeywords] = useState('');
     const [tmpMember, setTmpMember] = useState<Member | null>(null);
+    const [tmpMissingKeys, setTmpMissingKeys] = useState<{ address: Address; member: Member } | null>(null);
     const api = useApi();
     const { call } = useEventManager();
 
     const { createNotification } = useNotifications();
+    const [missingKeysProps, setMissingKeysProps, renderMissingKeysModal] = useModalState();
     const [addressModalProps, setAddressModalOpen, renderAddressModal] = useModalState();
     const [memberModalProps, setMemberModalOpen, renderMemberModal] = useModalState();
     const [editMemberModal, setEditMemberModal, renderEditMemberModal] = useModalState();
@@ -219,8 +228,24 @@ const UsersAndAddressesSection = () => {
                     .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.`}
             </SettingsParagraph>
             <Block className="flex flex-align-items-start">
+                {renderMissingKeysModal && tmpMissingKeys && (
+                    <CreateMissingKeysAddressModal
+                        member={tmpMissingKeys.member}
+                        addressesToGenerate={[tmpMissingKeys.address]}
+                        organizationKey={organizationKey}
+                        {...missingKeysProps}
+                    />
+                )}
                 {renderAddressModal && (
-                    <AddressModal members={members} organizationKey={organizationKey} {...addressModalProps} />
+                    <AddressModal
+                        members={members}
+                        organizationKey={organizationKey}
+                        onCreated={(member, address) => {
+                            setTmpMissingKeys({ member, address });
+                            setMissingKeysProps(true);
+                        }}
+                        {...addressModalProps}
+                    />
                 )}
                 {renderDeleteMemberModal && tmpMember && (
                     <DeleteMemberModal member={tmpMember} onDelete={handleDeleteUserConfirm} {...deleteMemberModal} />
