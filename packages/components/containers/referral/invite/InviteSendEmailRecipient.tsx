@@ -2,6 +2,8 @@ import { c } from 'ttag';
 import { MouseEventHandler } from 'react';
 import { Icon, classnames, Tooltip } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import { isProtonAddress } from './helpers';
 
 interface Props {
@@ -11,8 +13,9 @@ interface Props {
 }
 
 const getErrorMessage = (emailAddress: string) => {
+    const appName = getAppName(APPS.PROTONMAIL);
     if (isProtonAddress(emailAddress)) {
-        return c('Info').t`${emailAddress} is a protonmail address`;
+        return c('Info').t`${emailAddress} is a ${appName} address`;
     }
     return c('Info').t`${emailAddress} is invalid`;
 };

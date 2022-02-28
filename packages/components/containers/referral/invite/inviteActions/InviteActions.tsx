@@ -21,7 +21,7 @@ const InviteActions = () => {
                                 setShowHowItWorksSection(true);
                             }}
                         >
-                            {c('Title').t`How does it works`}
+                            {c('Title').t`How does it work?`}
                         </Button>
                     </div>
                 )}
