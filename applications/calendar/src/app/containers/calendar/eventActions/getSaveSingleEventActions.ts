@@ -9,6 +9,7 @@ import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { OpenPGPKey } from 'pmcrypto';
+import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import {
     CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
@@ -71,12 +72,15 @@ const getSaveSingleEventActions = async ({
     updatePartstatActions?: UpdatePartstatOperation[];
     updatePersonalPartActions?: UpdatePersonalPartOperation[];
     sendActions?: SendIcsActionData[];
+    hasStartChanged?: boolean;
 }> => {
     const oldEvent = oldEditEventData?.eventData;
     const oldCalendarID = oldEditEventData?.calendarID;
     const oldAddressID = oldEditEventData?.addressID;
     const oldMemberID = oldEditEventData?.memberID;
     const oldVeventComponent = oldEditEventData?.veventComponent;
+
+    const hasStartChanged = oldVeventComponent ? getHasStartChanged(newVeventComponent, oldVeventComponent) : true;
 
     const { type: inviteType } = inviteActions;
     const isUpdateEvent = !!oldEvent;
@@ -140,7 +144,7 @@ const getSaveSingleEventActions = async ({
                 operations: [deleteOperation],
             },
         ];
-        return { multiSyncActions, inviteActions: updatedInviteActions };
+        return { multiSyncActions, inviteActions: updatedInviteActions, hasStartChanged };
     }
 
     if (isUpdateEvent) {
@@ -220,7 +224,7 @@ const getSaveSingleEventActions = async ({
                 operations: [updateOperation],
             },
         ];
-        return { multiSyncActions, inviteActions: updatedInviteActions };
+        return { multiSyncActions, inviteActions: updatedInviteActions, hasStartChanged };
     }
 
     // it's a new event

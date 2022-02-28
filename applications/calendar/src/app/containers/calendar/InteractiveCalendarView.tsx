@@ -79,7 +79,9 @@ import eventImport from '@proton/styles/assets/img/calendar/event-import.svg';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 
+import { modelToDateProperty } from '../../components/eventModal/eventForm/modelToProperties';
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
 import {
     isCreateDownAction,
@@ -288,6 +290,18 @@ const InteractiveCalendarView = ({
         importModal: { isOpen: false },
     });
 
+    const {
+        importModal,
+        sendWithErrorsConfirmationModal,
+        deleteConfirmModal,
+        deleteRecurringConfirmModal,
+        duplicateAttendeeModal,
+        confirmModal,
+        editRecurringConfirmModal,
+        editSingleConfirmModal,
+        createEventModal,
+    } = modalsMap;
+
     const confirm = useRef<{ resolve: (param?: any) => any; reject: () => any }>();
 
     const contacts = (useContactEmails()[0] as ContactEmail[]) || [];
@@ -368,19 +382,32 @@ const InteractiveCalendarView = ({
         return sortWithTemporaryEvent(sortedEvents, temporaryEvent);
     }, [temporaryEvent, sortedEvents]);
 
+    const changeDate = (start: Date, hasStartChanged = true) => {
+        const isInRange = isNarrow ? isSameDay(date, start) : start >= dateRange[0] && dateRange[1] >= start;
+
+        if (!isInRange && hasStartChanged) {
+            onChangeDate(start);
+        }
+    };
+
     const handleSetTemporaryEventModel = (model: EventModel) => {
         if (!temporaryEvent || isSavingEvent.current) {
             return;
         }
+
         const newTemporaryEvent = getTemporaryEvent(temporaryEvent, model, tzid);
 
-        // If you select a date outside of the current range.
-        const newStartDay = newTemporaryEvent.start;
-        const isInRange = isNarrow
-            ? isSameDay(date, newStartDay)
-            : newStartDay >= dateRange[0] && dateRange[1] >= newStartDay;
-        if (!isInRange) {
-            onChangeDate(newTemporaryEvent.start);
+        // For the modal, we handle this on submit instead
+        if (!createEventModal.isOpen) {
+            const startDate = propertyToUTCDate(
+                modelToDateProperty(newTemporaryEvent.tmpData.start, newTemporaryEvent.tmpData.isAllDay)
+            );
+            const hasStartChanged =
+                +propertyToUTCDate(
+                    modelToDateProperty(temporaryEvent.tmpData.start, temporaryEvent.tmpData.isAllDay)
+                ) !== +startDate;
+
+            changeDate(startDate, hasStartChanged);
         }
 
         setInteractiveData({
@@ -1089,6 +1116,8 @@ const InteractiveCalendarView = ({
         inviteActions: InviteActions,
         isDuplicatingEvent = false
     ) => {
+        let hasStartChanged;
+
         try {
             isSavingEvent.current = true;
             const {
@@ -1097,6 +1126,7 @@ const InteractiveCalendarView = ({
                 updatePersonalPartActions = [],
                 sendActions = [],
                 texts,
+                hasStartChanged: hasStartChangedProp,
             } = await getSaveEventActions({
                 temporaryEvent,
                 weekStartsOn,
@@ -1114,6 +1144,7 @@ const InteractiveCalendarView = ({
                 handleSyncActions,
                 getCalendarKeys,
             });
+            hasStartChanged = hasStartChangedProp;
             const [syncResponses, updatePartstatResponses, updatePersonalPartResponses] = await Promise.all([
                 handleSyncActions(syncActions),
                 handleUpdatePartstatActions(updatePartstatActions),
@@ -1140,6 +1171,27 @@ const InteractiveCalendarView = ({
             if (sendActions.length) {
                 // if there is any send action, it's meant to be run after the sync actions above
                 await Promise.all(sendActions.map(handleSendIcs));
+            }
+
+            if (temporaryEvent.tmpOriginalTarget) {
+                changeDate(
+                    propertyToUTCDate(
+                        modelToDateProperty(temporaryEvent.tmpData.start, temporaryEvent.tmpData.isAllDay)
+                    ),
+                    hasStartChanged
+                );
+            } else {
+                const hasChanged =
+                    +propertyToUTCDate(
+                        modelToDateProperty(temporaryEvent.tmpData.start, temporaryEvent.tmpData.isAllDay)
+                    ) !== +(isDuplicatingEvent ? temporaryEvent.tmpData.initialDate : date);
+
+                changeDate(
+                    propertyToUTCDate(
+                        modelToDateProperty(temporaryEvent.tmpData.start, temporaryEvent.tmpData.isAllDay)
+                    ),
+                    hasChanged
+                );
             }
         } catch (e: any) {
             createNotification({ text: e.message, type: 'error' });
@@ -1325,18 +1377,6 @@ const InteractiveCalendarView = ({
 
         return getTemporaryEvent(getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid), newTemporaryModel, tzid);
     };
-
-    const {
-        importModal,
-        sendWithErrorsConfirmationModal,
-        deleteConfirmModal,
-        deleteRecurringConfirmModal,
-        duplicateAttendeeModal,
-        confirmModal,
-        editRecurringConfirmModal,
-        editSingleConfirmModal,
-        createEventModal,
-    } = modalsMap;
 
     return (
         <Dropzone
@@ -1594,6 +1634,10 @@ const InteractiveCalendarView = ({
                                               attendees: undefined,
                                               startModel: {
                                                   ...tmpData,
+                                                  // This is used to keep track of the original event start
+                                                  initialDate: propertyToUTCDate(
+                                                      modelToDateProperty(tmpData.start, tmpData.isAllDay)
+                                                  ),
                                                   organizer: undefined,
                                                   isOrganizer: true,
                                               },
