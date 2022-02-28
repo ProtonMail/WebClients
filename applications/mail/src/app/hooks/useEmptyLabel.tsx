@@ -1,16 +1,16 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 import {
-    ConfirmModal,
     ErrorButton,
-    Alert,
     useNotifications,
-    useModals,
     useEventManager,
     useApi,
     useLabels,
     useFolders,
+    AlertModal,
+    useModalState,
+    Button,
 } from '@proton/components';
 import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages';
 
@@ -20,7 +20,6 @@ import { backendActionFinished, backendActionStarted } from '../logic/elements/e
 
 export const useEmptyLabel = () => {
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const { call } = useEventManager();
     const api = useApi();
     const optimisticEmptyLabel = useOptimisticEmptyLabel();
@@ -28,52 +27,63 @@ export const useEmptyLabel = () => {
     const [folders = []] = useFolders();
     const dispatch = useDispatch();
 
+    const [labelID, setLabelID] = useState<string>('');
+    const [deleteModalProps, setDeleteModalOpen] = useModalState();
+
+    const isLabel = useMemo(() => {
+        return isCustomLabel(labelID, labels);
+    }, [labelID]);
+
+    const handleSubmit = async () => {
+        let rollback = () => {};
+
+        try {
+            dispatch(backendActionStarted());
+            rollback = optimisticEmptyLabel(labelID);
+            await api(emptyLabelRequest({ LabelID: labelID, AddressID: undefined }));
+        } catch (error: any) {
+            rollback();
+            throw error;
+        } finally {
+            dispatch(backendActionFinished());
+        }
+        await call();
+        createNotification({ text: isLabel ? c('Success').t`Label cleared` : c('Success').t`Folder cleared` });
+        deleteModalProps.onClose();
+    };
+
+    const modal = (
+        <AlertModal
+            title={c('Title').t`Delete all messages`}
+            buttons={[
+                <ErrorButton data-testid="confirm-empty-folder" onClick={handleSubmit}>
+                    {c('Action').t`Delete`}
+                </ErrorButton>,
+                <Button onClick={deleteModalProps.onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
+            {...deleteModalProps}
+        >
+            {isLabel ? (
+                <>
+                    {c('Info').t`All messages stored with this label will be permanently deleted.`}
+                    {c('Info').t`Are you sure you want to delete all messages with this label?`}
+                </>
+            ) : (
+                <>
+                    {c('Info').t`All messages stored in this folder will be permanently deleted.`}
+                    {c('Info').t`Are you sure you want to delete all messages in this folder?`}
+                </>
+            )}
+        </AlertModal>
+    );
+
     const emptyLabel = useCallback(
         async (labelID: string) => {
-            const isLabel = isCustomLabel(labelID, labels);
-            await new Promise((resolve, reject) => {
-                createModal(
-                    <ConfirmModal
-                        title={c('Title').t`Delete all messages`}
-                        confirm={
-                            <ErrorButton type="submit" data-testid="confirm-empty-folder">
-                                {c('Action').t`Delete`}
-                            </ErrorButton>
-                        }
-                        onConfirm={() => resolve(undefined)}
-                        onClose={reject}
-                    >
-                        <Alert className="mb1" type="info">
-                            {isLabel
-                                ? c('Info').t`All messages stored with this label will be permanently deleted.`
-                                : c('Info').t`All messages stored in this folder will be permanently deleted.`}
-                        </Alert>
-                        <Alert className="mb1" type="error">
-                            {isLabel
-                                ? c('Info').t`Are you sure you want to delete all messages with this label?`
-                                : c('Info').t`Are you sure you want to delete all messages in this folder?`}
-                        </Alert>
-                    </ConfirmModal>
-                );
-            });
-
-            let rollback = () => {};
-
-            try {
-                dispatch(backendActionStarted());
-                rollback = optimisticEmptyLabel(labelID);
-                await api(emptyLabelRequest({ LabelID: labelID, AddressID: undefined }));
-            } catch (error: any) {
-                rollback();
-                throw error;
-            } finally {
-                dispatch(backendActionFinished());
-            }
-            await call();
-            createNotification({ text: isLabel ? c('Success').t`Label cleared` : c('Success').t`Folder cleared` });
+            setLabelID(labelID);
+            setDeleteModalOpen(true);
         },
         [labels, folders]
     );
 
-    return emptyLabel;
+    return { emptyLabel, modal };
 };
