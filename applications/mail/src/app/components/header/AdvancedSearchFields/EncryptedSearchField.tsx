@@ -3,15 +3,15 @@ import { c, msgid } from 'ttag';
 import {
     Button,
     classnames,
-    ConfirmModal,
     Info,
     Label,
     UnderlineButton,
     Progress,
     Toggle,
     Tooltip,
-    useModals,
     useUser,
+    AlertModal,
+    useModalState,
 } from '@proton/components';
 import {
     getES,
@@ -34,24 +34,11 @@ interface Props {
 
 const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
     const [user] = useUser();
-    const { createModal } = useModals();
     const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch } = useEncryptedSearchContext();
     const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
     const { esProgress, oldestTime, totalIndexingMessages, estimatedMinutes, currentProgressValue } = esState;
 
-    const confirmationToIndex = () => {
-        createModal(
-            <ConfirmModal
-                onConfirm={() => resumeIndexing()}
-                title={c('Title').t`Enable message content search`}
-                confirm={c('Action').t`Enable`}
-                mode="alert"
-            >
-                {c('Info')
-                    .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`}
-            </ConfirmModal>
-        );
-    };
+    const [enableESModalProps, setEnableESModalOpen] = useModalState();
 
     // Switches
     const showProgress = indexKeyExists(user.ID) && esEnabled && (!isDBReadyAfterBuilding(user.ID) || isRefreshing);
@@ -91,7 +78,7 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
             </span>
         </Tooltip>
     ) : (
-        <Button onClick={confirmationToIndex} loading={esEnabled && !isBuilding}>
+        <Button onClick={() => setEnableESModalOpen(true)} loading={esEnabled && !isBuilding}>
             {c('Action').t`Activate`}
         </Button>
     );
@@ -182,6 +169,17 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
                 <div className="flex flex-nowrap mb0-5 flex-align-items-center">
                     {esHeader}
                     {esCTA}
+                    <AlertModal
+                        title={c('Title').t`Enable message content search`}
+                        buttons={[
+                            <Button color="norm" onClick={() => resumeIndexing()}>{c('Action').t`Enable`}</Button>,
+                            <Button onClick={enableESModalProps.onClose}>{c('Action').t`Cancel`}</Button>,
+                        ]}
+                        {...enableESModalProps}
+                    >
+                        {c('Info')
+                            .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`}
+                    </AlertModal>
                 </div>
                 {showSubTitleSection && subTitleSection}
             </div>
