@@ -164,6 +164,7 @@ export const usePermanentDelete = (labelID: string) => {
     const conversationMode = isConversation(elements[0]);
 
     const handleSubmit = async () => {
+        deleteModalProps.onClose();
         let rollback = () => {};
 
         try {
@@ -179,14 +180,14 @@ export const usePermanentDelete = (labelID: string) => {
             dispatch(backendActionFinished());
         }
         await call();
-        deleteModalProps.onClose();
     };
 
     const modal = (
         <AlertModal
             title={getDeleteTitle(draft, conversationMode, selectedItemsCount, totalMessages)}
             buttons={[
-                <ErrorButton onClick={handleSubmit}>{c('Action').t`Delete`}</ErrorButton>,
+                <ErrorButton onClick={handleSubmit} data-testid="permanent-delete-modal:submit">{c('Action')
+                    .t`Delete`}</ErrorButton>,
                 <Button onClick={deleteModalProps.onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...deleteModalProps}

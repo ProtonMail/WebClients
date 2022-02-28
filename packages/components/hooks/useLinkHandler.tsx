@@ -191,7 +191,7 @@ export const useLinkHandler: UseLinkHandler = (
             // eslint-disable-next-line @typescript-eslint/no-misused-promises
             wrapperRef.current?.removeEventListener('click', handleClick, false);
         };
-    }, [startListening]);
+    }, [startListening, wrapperRef.current]);
 
     const modal = <LinkConfirmationModal link={link} isOutside={isOutside} {...linkConfirmationModalProps} />;
 

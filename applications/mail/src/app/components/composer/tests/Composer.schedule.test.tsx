@@ -61,7 +61,7 @@ describe('Composer scheduled messages', () => {
         setupMessage('Subject', [user as Recipient]);
         setupTest(true, 100);
 
-        const { getByTestId } = await render(<Composer {...props} />, false);
+        const { getByTestId, getByText } = await render(<Composer {...props} />, false);
 
         const sendActions = getByTestId('composer:send-actions');
         const dropdownButton = getByTestIdDefault(sendActions, 'dropdown-button');
@@ -71,9 +71,7 @@ describe('Composer scheduled messages', () => {
         const scheduledSendButton = getByTestIdDefault(dropdown, 'composer:schedule-send-button');
         fireEvent.click(scheduledSendButton);
 
-        const { modal } = await getModal();
-        getByTextDefault(
-            modal,
+        getByText(
             'Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.'
         );
     });
