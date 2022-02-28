@@ -52,9 +52,9 @@ export function initUploadFileWorker(
                 onProgress: (increment: number) => {
                     onProgress?.(increment);
                 },
-                finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string) => {
+                finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string, xattr: string) => {
                     onFinalize?.();
-                    finalize(blockTokens, signature, signatureAddress).then(resolve).catch(reject);
+                    finalize(blockTokens, signature, signatureAddress, xattr).then(resolve).catch(reject);
                 },
                 onNetworkError: (error: string) => {
                     onNetworkError?.(error);

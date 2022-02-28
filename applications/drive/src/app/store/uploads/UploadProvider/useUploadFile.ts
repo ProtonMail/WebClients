@@ -28,15 +28,7 @@ import { logError } from '../../utils';
 import { useDebouncedRequest } from '../../api';
 import { useDriveCrypto } from '../../crypto';
 import { useDriveEventManager } from '../../events';
-import {
-    DecryptedLink,
-    LinkType,
-    useLink,
-    useLinksActions,
-    ecryptFileExtendedAttributes,
-    ValidationError,
-    validateLinkName,
-} from '../../links';
+import { DecryptedLink, LinkType, useLink, useLinksActions, ValidationError, validateLinkName } from '../../links';
 import { MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import {
     TransferConflictStrategy,
@@ -336,7 +328,7 @@ export default function useUploadFile() {
             },
             finalize: queuedFunction(
                 'upload_finalize',
-                async (blockTokens: BlockToken[], signature: string, signatureAddress: string) => {
+                async (blockTokens: BlockToken[], signature: string, signatureAddress: string, xattr: string) => {
                     const createdFileRevision = await createdFileRevisionPromise;
                     if (!createdFileRevision) {
                         throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
@@ -346,13 +338,6 @@ export default function useUploadFile() {
                         return;
                     }
                     finalizeCalled = true;
-
-                    const addressKeyInfo = await addressKeyInfoPromise;
-                    const xattr = await ecryptFileExtendedAttributes(
-                        file,
-                        createdFileRevision.privateKey,
-                        addressKeyInfo.privateKey
-                    );
 
                     await debouncedRequest(
                         queryUpdateFileRevision(shareId, createdFileRevision.fileID, createdFileRevision.revisionID, {

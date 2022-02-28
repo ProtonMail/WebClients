@@ -5,6 +5,7 @@ import { init as initPmcrypto } from 'pmcrypto/lib/pmcrypto';
 import { mergeUint8Arrays } from '@proton/shared/lib/helpers/array';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
+import { ecryptFileExtendedAttributes } from '../../links';
 import { EncryptedBlock, EncryptedThumbnailBlock, Link } from '../interface';
 import { UploadWorker } from '../workerController';
 import { getErrorString } from '../utils';
@@ -51,8 +52,11 @@ async function start(
     const uploadingBlocksGenerator = buffer.generateUploadingBlocks();
     const finish = async () => {
         const fileHash = mergeUint8Arrays(buffer.blockHashes);
-        const signature = await signMessage(fileHash, [addressPrivateKey]);
-        uploadWorker.postDone(buffer.blockTokens, signature, addressEmail);
+        const [signature, xattr] = await Promise.all([
+            signMessage(fileHash, [addressPrivateKey]),
+            ecryptFileExtendedAttributes(file, privateKey, addressPrivateKey),
+        ]);
+        uploadWorker.postDone(buffer.blockTokens, signature, addressEmail, xattr);
     };
     startUploadJobs(
         pauser,
