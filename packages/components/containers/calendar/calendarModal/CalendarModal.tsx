@@ -2,7 +2,7 @@ import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/h
 import { useState, useMemo, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
-import { Calendar, NotificationModel, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar, NotificationModel, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { MAX_DEFAULT_NOTIFICATIONS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 
@@ -38,8 +38,8 @@ import './CalendarModal.scss';
 const URL_MAX_DISPLAY_LENGTH = 100;
 
 export interface CalendarModalProps {
-    calendar?: Calendar | SubscribedCalendar;
-    activeCalendars?: Calendar[];
+    calendar?: VisualCalendar | SubscribedCalendar;
+    activeCalendars?: VisualCalendar[];
     defaultCalendarID?: Nullable<string>;
     onClose?: () => void;
     onExit?: () => void;
@@ -77,7 +77,6 @@ export const CalendarModal = ({
 
     const { error: setupError, loading: loadingSetup } = useGetCalendarSetup({ calendar: initialCalendar, setModel });
     const { handleCreateCalendar, handleUpdateCalendar } = useGetCalendarActions({
-        calendar: initialCalendar,
         setCalendar,
         setError,
         defaultCalendarID,

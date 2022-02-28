@@ -3,8 +3,10 @@ import { LoaderPage, useNotifications, useApi, useCache } from '@proton/componen
 import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import { getUnixTime } from 'date-fns';
-import { Calendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-import { updateCalendar, getEvent } from '@proton/shared/lib/api/calendars';
+import { Address } from '@proton/shared/lib/interfaces';
+import { VisualCalendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { getEvent, updateMember } from '@proton/shared/lib/api/calendars';
+import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { loadModels } from '@proton/shared/lib/models/helper';
 import { CalendarsModel } from '@proton/shared/lib/models';
@@ -22,11 +24,12 @@ import { getCalendarEventStoreRecord } from './eventStore/cache/upsertCalendarEv
 import getAllEventsByUID from './getAllEventsByUID';
 
 interface Props {
-    calendars: Calendar[];
+    addresses: Address[];
+    calendars: VisualCalendar[];
     tzid: string;
     eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
 }
-const EventActionContainer = ({ tzid, calendars, eventTargetActionRef }: Props) => {
+const EventActionContainer = ({ tzid, addresses, calendars, eventTargetActionRef }: Props) => {
     const { createNotification } = useNotifications();
     const history = useHistory();
     const api = useApi();
@@ -104,8 +107,9 @@ const EventActionContainer = ({ tzid, calendars, eventTargetActionRef }: Props) 
                     return handleLinkError();
                 }
                 if (!calendar.Display) {
+                    const [{ ID: memberID }] = getMemberAndAddress(addresses, calendar.Members);
                     await api({
-                        ...updateCalendar(calendarID, { Display: 1 }),
+                        ...updateMember(calendarID, memberID, { Display: 1 }),
                         silence: true,
                     }).catch(() => {});
                     await loadModels([CalendarsModel], { api, cache, useCache: false });

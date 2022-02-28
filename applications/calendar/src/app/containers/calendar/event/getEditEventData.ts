@@ -1,5 +1,5 @@
 import { Address } from '@proton/shared/lib/interfaces';
-import { CalendarEvent, Member } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarEvent, CalendarMember } from '@proton/shared/lib/interfaces/calendar';
 import parseMainEventData from './parseMainEventData';
 import { getRecurrenceIdDate } from './getEventHelper';
 import { getComponentWithPersonalPart } from '../../../helpers/event';
@@ -8,7 +8,7 @@ import { DecryptedEventTupleResult } from '../eventStore/interface';
 interface GetEditEventDataArguments {
     eventData: CalendarEvent;
     eventResult?: DecryptedEventTupleResult;
-    memberResult: [Member, Address];
+    memberResult: [CalendarMember, Address];
 }
 
 const getEditEventData = ({ eventData, eventResult, memberResult: [member, address] }: GetEditEventDataArguments) => {

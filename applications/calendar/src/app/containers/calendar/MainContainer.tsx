@@ -1,3 +1,4 @@
+import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import { useMemo, useState } from 'react';
 
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
@@ -24,7 +25,7 @@ const MainContainer = () => {
     const [calendars] = useCalendars();
     const [user] = useUser();
 
-    const memoedCalendars = useMemo(() => calendars || [], [calendars]);
+    const memoedCalendars = useMemo(() => getVisualCalendars(calendars || [], addresses || []), [calendars, addresses]);
     const memoedAddresses = useMemo(() => addresses || [], [addresses]);
 
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();

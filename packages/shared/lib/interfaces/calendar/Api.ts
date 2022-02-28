@@ -1,10 +1,11 @@
 import { PaginationParams } from '../../api/interface';
 import { Nullable, RequireSome } from '../utils';
-import { Calendar } from './Calendar';
+import { Calendar, CalendarDisplay, VisualCalendar } from './Calendar';
 import { Attendee, CalendarEventData } from './Event';
 import { ACCESS_LEVEL } from './Link';
 
-export type CalendarCreateData = Omit<Calendar, 'Flags' | 'ID' | 'Type'> & { URL?: string };
+export type CalendarCreateData = Omit<VisualCalendar, 'Flags' | 'ID' | 'Type' | 'Members'> & { URL?: string };
+export type CalendarUpdateData = Partial<Pick<Calendar, 'Name' | 'Description'>>;
 
 export interface CalendarCreateArguments extends CalendarCreateData {
     IsImport?: 0 | 1;
@@ -26,9 +27,10 @@ export interface CalendarKeysResetData {
 }
 
 export interface CalendarMemberData {
-    Email: string;
-    PassphraseKeyPacket: string;
     Permissions: number;
+    PassphraseKeyPacket: string;
+    Color: string;
+    Display: CalendarDisplay;
 }
 
 export enum CalendarEventsQueryType {

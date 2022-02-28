@@ -43,6 +43,7 @@ const CalendarContainerViewBlurred = () => {
             setTzid={noop}
             containerRef={containerRef}
             addresses={[]}
+            calendars={[]}
             calendarUserSettings={calendarUserSettings}
         >
             <TimeGrid

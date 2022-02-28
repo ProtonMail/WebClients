@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo, MutableRefObject } from 'react';
 import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from '@proton/shared/lib/date/timezone';
-import { Calendar as tsCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { getRecurringEvents } from './cache/getRecurringEvents';
 import { CalendarsEventsCache } from './interface';
@@ -12,7 +12,7 @@ import useCalendarsEventsReader from './useCalendarsEventsReader';
 const DAY_IN_MILLISECONDS = 86400000;
 
 const useCalendarsEvents = (
-    requestedCalendars: tsCalendar[],
+    requestedCalendars: VisualCalendar[],
     utcDateRange: [Date, Date],
     tzid: string,
     cacheRef: MutableRefObject<CalendarsEventsCache>,

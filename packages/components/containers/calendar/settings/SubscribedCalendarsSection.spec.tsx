@@ -6,7 +6,7 @@ import { render, screen } from '@testing-library/react';
 import createCache from '@proton/shared/lib/helpers/cache';
 
 import { MAX_SUBSCRIBED_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
@@ -18,7 +18,7 @@ jest.mock('../../../hooks/useFeatures', () => () => ({}));
 jest.mock('../hooks/useGetCalendarsEmails', () => jest.fn(() => ({})));
 jest.mock('../../../hooks/useSubscribedCalendars', () => jest.fn(() => ({ loading: true })));
 jest.mock('../../../hooks/useEventManager', () => jest.fn(() => ({ subscribe: jest.fn() })));
-jest.mock('../../eventManager/calendar/useCalendarsKeysSettingsListener', () => () => ({}));
+jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
 jest.mock('../../eventManager/calendar/ModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({ subscribe: jest.fn() })),
 }));
@@ -29,7 +29,7 @@ jest.mock('@proton/components/hooks/useCalendarSubscribeFeature', () =>
 
 function renderComponent(props?: Partial<SubscribedCalendarsSectionProps>) {
     const defaultProps: SubscribedCalendarsSectionProps = {
-        activeAddresses: [{}] as Address[],
+        addresses: [{ Status: 1, Receive: 1, Send: 1 }] as Address[],
         calendars: [],
         user: { isFree: true, hasNonDelinquentScope: true } as UserModel,
     };
@@ -53,7 +53,7 @@ describe('SubscribedCalendarsSection', () => {
                 ID: `${index}`,
                 Name: `calendar${index}`,
                 color: '#f00',
-            })) as unknown as Calendar[];
+            })) as unknown as VisualCalendar[];
 
         const { rerender } = render(
             renderComponent({
