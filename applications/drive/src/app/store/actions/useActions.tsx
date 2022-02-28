@@ -77,8 +77,7 @@ export default function useAction() {
         abortSignal: AbortSignal,
         shareId: string,
         linksToMove: LinkInfo[],
-        newParentLinkId: string,
-        originalParentLinkId: string
+        newParentLinkId: string
     ) => {
         if (!linksToMove.length) {
             return;
@@ -88,27 +87,56 @@ export default function useAction() {
         const result = await links.moveLinks(abortSignal, shareId, linkIds, newParentLinkId);
 
         const undoAction = async () => {
-            const toMoveBackIds = result.moved.map(({ linkId }) => linkId);
-            const moveBackResult = await links.moveLinks(abortSignal, shareId, toMoveBackIds, originalParentLinkId);
+            // One day this can be simplified to .groupBy((item) => item.parentLinkId)
+            const movedLinksPerParentId = result.moved.reduce((acc, item) => {
+                (acc[item.parentLinkId] ||= []).push(item);
+                return acc;
+            }, {} as { [parentLinkId: string]: LinkInfo[] });
+
+            const moveBackResults = await Promise.all(
+                Object.entries(movedLinksPerParentId).map(async ([parentLinkId, childsToMove]) => {
+                    const toMoveBackIds = childsToMove.map(({ linkId }) => linkId);
+                    const moveBackResult = await links.moveLinks(abortSignal, shareId, toMoveBackIds, parentLinkId);
+                    return moveBackResult;
+                })
+            );
+            const moveBackResult = moveBackResults.reduce(
+                (acc, moveBackResult) => {
+                    acc.moved = acc.moved.concat(moveBackResult.moved);
+                    acc.failed = acc.failed.concat(moveBackResult.failed);
+                    return acc;
+                },
+                { moved: [], failed: [] }
+            );
+
             createMoveLinksNotifications(linksToMove, moveBackResult);
         };
         createMoveLinksNotifications(linksToMove, result, undoAction);
     };
 
-    const trashLinks = async (
-        abortSignal: AbortSignal,
-        shareId: string,
-        parentLinkId: string,
-        linksToTrash: LinkInfo[]
-    ) => {
+    const trashLinks = async (abortSignal: AbortSignal, shareId: string, linksToTrash: LinkInfo[]) => {
         if (!linksToTrash.length) {
             return;
         }
 
-        const linkIds = linksToTrash.map(({ linkId }) => linkId);
-        const { done: trashed } = await links.trashLinks(abortSignal, shareId, parentLinkId, linkIds);
+        // One day this can be simplified to .groupBy((item) => item.parentLinkId)
+        const linksToTrashPerParentId = linksToTrash.reduce((acc, item) => {
+            (acc[item.parentLinkId] ||= []).push(item);
+            return acc;
+        }, {} as { [parentLinkId: string]: LinkInfo[] });
+
+        const trashed = (
+            await Promise.all(
+                Object.entries(linksToTrashPerParentId).map(async ([parentLinkId, childsToTrash]) => {
+                    const linkIds = childsToTrash.map(({ linkId }) => linkId);
+                    const { done: trashed } = await links.trashLinks(abortSignal, shareId, parentLinkId, linkIds);
+                    return trashed;
+                })
+            )
+        ).flat();
 
         const undoAction = async () => {
+            const linkIds = linksToTrash.map(({ linkId }) => linkId);
             const result = await links.restoreLinks(abortSignal, shareId, linkIds);
             createRestoredLinksNotifications(linksToTrash, result);
         };

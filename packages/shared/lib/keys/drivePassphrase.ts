@@ -18,7 +18,6 @@ export const getDecryptedSessionKey = async ({
 }) => {
     const message = await getMessage(data);
     const sessionKey = await decryptSessionKey({ message, privateKeys });
-
     if (!sessionKey) {
         throw new Error('Could not decrypt session key');
     }
@@ -31,11 +30,13 @@ export const decryptPassphrase = async ({
     armoredSignature,
     privateKeys,
     publicKeys,
+    validateSignature = true,
 }: {
     armoredPassphrase: string;
     armoredSignature: string;
     privateKeys: OpenPGPKey[];
     publicKeys: OpenPGPKey[];
+    validateSignature?: boolean;
 }) => {
     const [message, sessionKey] = await Promise.all([
         getMessage(armoredPassphrase),
@@ -49,7 +50,7 @@ export const decryptPassphrase = async ({
         publicKeys,
     });
 
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (validateSignature && verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;

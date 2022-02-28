@@ -15,7 +15,6 @@ import { MEMBER_SHARING_ENABLED } from '@proton/shared/lib/drive/constants';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { useActions } from '../../../../store';
-import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import useToolbarActions from '../../../useOpenModal';
 
 interface Props {
@@ -29,7 +28,6 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
     const { openDetails, openFilesDetails, openMoveToFolder, openRename, openSharing, openLinkSharing } =
         useToolbarActions();
     const { trashLinks } = useActions();
-    const { activeFolder } = useActiveShare();
 
     const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
     const isMultiSelect = selectedItems.length > 1;
@@ -56,7 +54,7 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
             name: c('Action').t`Move to folder`,
             icon: 'arrows-up-down-left-right',
             testId: 'actions-dropdown-move',
-            action: () => openMoveToFolder(activeFolder, selectedItems),
+            action: () => openMoveToFolder(shareId, selectedItems),
         },
         {
             hidden: isMultiSelect,
@@ -87,9 +85,13 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
             action: () =>
                 trashLinks(
                     new AbortController().signal,
-                    activeFolder.shareId,
-                    activeFolder.linkId,
-                    selectedItems.map((item) => ({ linkId: item.LinkID, name: item.Name, type: item.Type }))
+                    shareId,
+                    selectedItems.map((item) => ({
+                        parentLinkId: item.ParentLinkID,
+                        linkId: item.LinkID,
+                        name: item.Name,
+                        type: item.Type,
+                    }))
                 ),
         },
         {

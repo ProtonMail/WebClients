@@ -18,7 +18,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
-import DriveHeader from '../components/layout/DriveHeader';
+import { DriveHeader } from '../components/layout/DriveHeader';
 import ListView from '../components/FileBrowser/ListView/ListView';
 
 const DriveContainerBlurred = () => {

@@ -347,6 +347,7 @@ export interface ESStatus<ESItem, ESSearchParameters> {
     isBuilding: boolean;
     isDBLimited: boolean;
     esEnabled: boolean;
+    esSupported: boolean; // Whether browser supports our search engine. By default true until we get error from browser.
     isRefreshing: boolean;
     isSearchPartial: boolean;
     isSearching: boolean;
@@ -372,6 +373,7 @@ export interface ESDBStatus<ESItem, ESSearchParameters>
             | 'isBuilding'
             | 'isDBLimited'
             | 'esEnabled'
+            | 'esSupported'
             | 'isRefreshing'
             | 'isSearchPartial'
             | 'isSearching'
