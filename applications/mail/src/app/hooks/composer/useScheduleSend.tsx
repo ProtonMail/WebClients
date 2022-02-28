@@ -4,9 +4,9 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 import { c } from 'ttag';
 import { Dispatch, SetStateAction } from 'react';
-import { ConfirmModal } from '@proton/components/components/modal';
+import { AlertModal, useModalState } from '@proton/components';
 import { Button } from '@proton/components/components/button';
-import { useConversationCounts, useMessageCounts, useModals } from '@proton/components/hooks';
+import { useConversationCounts, useMessageCounts } from '@proton/components/hooks';
 import { useMailSettings } from '@proton/components/hooks/useMailSettings';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useSendVerifications } from './useSendVerifications';
@@ -35,7 +35,8 @@ export const useScheduleSend = ({
     handleNoAttachments,
 }: Props) => {
     const location = useLocation();
-    const { createModal } = useModals();
+
+    const [waitBeforeScheduleModalProps, setWaitBeforeScheduleModalOpen] = useModalState();
 
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [conversationCounts, loadingConversationCounts] = useConversationCounts();
@@ -55,18 +56,22 @@ export const useScheduleSend = ({
 
     const loadingScheduleCount = loadingMailSettings || loadingConversationCounts || loadingMessageCounts;
 
+    const modal = (
+        <AlertModal
+            title={c('Confirm modal title').t`Message saved to Drafts`}
+            buttons={[
+                <Button color="norm" onClick={waitBeforeScheduleModalProps.onClose}>{c('Action').t`Got it`}</Button>,
+            ]}
+            {...waitBeforeScheduleModalProps}
+        >
+            {c('Info')
+                .t`Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.`}
+        </AlertModal>
+    );
+
     const handleScheduleSendModal = async () => {
         if (scheduleCount.Total && scheduleCount.Total >= SCHEDULED_MESSAGES_LIMIT) {
-            createModal(
-                <ConfirmModal
-                    title={c('Confirm modal title').t`Message saved to Drafts`}
-                    confirm={<Button color="norm" type="submit">{c('Action').t`Got it`}</Button>}
-                    cancel={null}
-                >
-                    {c('Info')
-                        .t`Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.`}
-                </ConfirmModal>
-            );
+            setWaitBeforeScheduleModalOpen(true);
         } else {
             try {
                 await preliminaryVerifications(modelMessage);
@@ -91,5 +96,5 @@ export const useScheduleSend = ({
         setTimeout(handleSend);
     };
 
-    return { scheduleCount, loadingScheduleCount, handleScheduleSendModal, handleScheduleSend };
+    return { scheduleCount, loadingScheduleCount, handleScheduleSendModal, handleScheduleSend, modal };
 };
