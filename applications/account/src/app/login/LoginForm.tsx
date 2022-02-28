@@ -9,10 +9,10 @@ import {
     ChallengeRef,
     ChallengeResult,
     Checkbox,
+    Href,
     Info,
     InputFieldTwo,
     Label,
-    LearnMore,
     PasswordInputTwo,
     useFormErrors,
     useLoading,
@@ -63,11 +63,11 @@ const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`
 
     const signupLink = <Link key="signupLink" to="/signup">{c('Link').t`Create an account`}</Link>;
     const learnMore = (
-        <LearnMore
+        <Href
             className="color-inherit"
             key="learn-more"
             url="https://protonmail.com/support/knowledge-base/how-to-access-protonmail-in-private-incognito-mode/"
-        />
+        >{c('Info').t`Learn more`}</Href>
     );
 
     return (
