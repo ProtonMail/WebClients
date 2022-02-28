@@ -6,7 +6,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { CacheProvider } from '@proton/components/containers/cache';
 import { CALENDAR_FLAGS, SETTINGS_VIEW } from '@proton/shared/lib/calendar/constants';
-import { Calendar, CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
+import { CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import getHasUserReachedCalendarLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarLimit';
 
@@ -88,7 +88,7 @@ window.ResizeObserver =
         unobserve: jest.fn(),
     }));
 
-const mockCalendar: Calendar = {
+const mockCalendar: VisualCalendar = {
     ID: 'id3',
     Name: 'calendar3',
     Description: 'description3',
@@ -96,6 +96,7 @@ const mockCalendar: Calendar = {
     Color: '#f00',
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
+    Members: [],
 };
 
 function renderComponent(props?: Partial<CalendarSidebarProps>) {
@@ -103,6 +104,7 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
         // expanded: false,
         onToggleExpand: jest.fn(),
         logo: <span>mockedLogo</span>,
+        addresses: [],
         calendars: [mockCalendar],
         miniCalendar: <span>mockedMiniCalendar</span>,
         calendarUserSettings: {

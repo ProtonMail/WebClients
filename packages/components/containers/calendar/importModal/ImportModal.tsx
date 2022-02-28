@@ -1,5 +1,3 @@
-import { updateCalendar } from '@proton/shared/lib/api/calendars';
-
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';
 import {
     extractTotals,
@@ -12,14 +10,21 @@ import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatal
 
 import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileError';
 import { APPS } from '@proton/shared/lib/constants';
+import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
+import { updateMember } from '@proton/shared/lib/api/calendars';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { Calendar, IMPORT_STEPS, ImportCalendarModel, ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
+import {
+    VisualCalendar,
+    IMPORT_STEPS,
+    ImportCalendarModel,
+    ImportedEvent,
+} from '@proton/shared/lib/interfaces/calendar';
 import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { onlyDragFiles, Button, BasicModal } from '../../../components';
 
-import { useApi, useEventManager, useConfig } from '../../../hooks';
+import { useApi, useEventManager, useConfig, useAddresses } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager';
 
 import AttachingModalContent from './AttachingModalContent';
@@ -29,15 +34,15 @@ import ImportSummaryModalContent from './ImportSummaryModalContent';
 import PartialImportModalContent from './PartialImportModalContent';
 
 interface Props {
-    defaultCalendar: Calendar;
-    calendars: Calendar[];
+    defaultCalendar: VisualCalendar;
+    calendars: VisualCalendar[];
     onClose?: () => void;
     onExit?: () => void;
     files?: File[];
     isOpen?: boolean;
 }
 
-const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
+const getInitialState = (calendar: VisualCalendar): ImportCalendarModel => ({
     step: IMPORT_STEPS.ATTACHING,
     calendar,
     eventsParsed: [],
@@ -49,6 +54,7 @@ const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
 });
 
 const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClose, onExit }: Props) => {
+    const [addresses] = useAddresses();
     const api = useApi();
     const { APP_NAME } = useConfig();
     const isCalendar = APP_NAME === APPS.PROTONCALENDAR;
@@ -119,7 +125,7 @@ const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClos
                 }
             };
 
-            const handleSelectCalendar = (calendar: Calendar) => {
+            const handleSelectCalendar = (calendar: VisualCalendar) => {
                 setModel({ ...model, calendar });
             };
 
@@ -254,7 +260,8 @@ const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClos
                 const { Display, ID: calendarID } = model.calendar;
                 const calls: Promise<void | void[]>[] = [];
                 if (!Display) {
-                    await api(updateCalendar(calendarID, { Display: 1 }));
+                    const [{ ID: memberID }] = getMemberAndAddress(addresses, model.calendar.Members);
+                    await api(updateMember(calendarID, memberID, { Display: 1 }));
                     calls.push(coreCall());
                 }
                 if (isCalendar) {

@@ -1,10 +1,11 @@
-import { ComponentPropsWithoutRef, useState, useRef } from 'react';
+import { ComponentPropsWithoutRef, useState, useRef, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
+import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { MAX_SUBSCRIBED_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 
 import { AlertModal, Button, Href, useModalState } from '../../../components';
@@ -18,21 +19,21 @@ import { useModalsMap } from '../../../hooks/useModalsMap';
 
 type ModalsMap = {
     calendarModal: ModalWithProps<{
-        editCalendar?: Calendar;
+        editCalendar?: VisualCalendar;
     }>;
     subscribeCalendarModal: ModalWithProps;
     deleteCalendarModal: ModalWithProps;
 };
 
 export interface SubscribedCalendarsSectionProps extends ComponentPropsWithoutRef<'div'> {
-    activeAddresses: Address[];
-    calendars: Calendar[];
+    addresses: Address[];
+    calendars: VisualCalendar[];
     user: UserModel;
     unavailable?: boolean;
 }
 
 const SubscribedCalendarsSection = ({
-    activeAddresses,
+    addresses,
     calendars = [],
     user,
     unavailable,
@@ -42,8 +43,11 @@ const SubscribedCalendarsSection = ({
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loadingMap, setLoadingMap] = useState({});
-    const { subscribedCalendars, loading } = useSubscribedCalendars(calendars);
+    const { subscribedCalendars, loading } = useSubscribedCalendars(calendars, addresses);
 
+    const activeAddresses = useMemo(() => {
+        return getActiveAddresses(addresses);
+    }, [addresses]);
     const [{ open: isCalendarModalOpen, onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] =
         useModalState();
 
@@ -59,7 +63,7 @@ const SubscribedCalendarsSection = ({
         updateModal('subscribeCalendarModal', { isOpen: true });
     };
 
-    const handleEdit = (editCalendar: Calendar) => {
+    const handleEdit = (editCalendar: VisualCalendar) => {
         setIsCalendarModalOpen(true);
         updateModal('calendarModal', { isOpen: true, props: { editCalendar } });
     };

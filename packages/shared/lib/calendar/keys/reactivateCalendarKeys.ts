@@ -4,7 +4,7 @@ import { Address, Api } from '../../interfaces';
 import { getAllCalendarKeys, getPassphrases, queryMembers, reactivateCalendarKey } from '../../api/calendars';
 import { splitKeys } from '../../keys';
 import { decryptPassphrase } from '../../keys/calendarKeys';
-import { Calendar, CalendarKey, Member, Passphrase, ReenableKeyResponse } from '../../interfaces/calendar';
+import { Calendar, CalendarKey, CalendarMember, Passphrase, ReenableKeyResponse } from '../../interfaces/calendar';
 import { getMemberAddressWithAdminPermissions } from '../getMemberWithAdmin';
 
 interface ReactivateCalendarsKeysArgumentsShared {
@@ -30,7 +30,7 @@ const reactivateCalendarKeys = async ({
     const [{ Keys = [] }, { Passphrases = [] }, { Members = [] }] = await Promise.all([
         api<{ Keys: CalendarKey[] }>(getAllCalendarKeys(CalendarID)),
         api<{ Passphrases: Passphrase[] }>(getPassphrases(CalendarID)),
-        api<{ Members: Member[] }>(queryMembers(CalendarID)),
+        api<{ Members: CalendarMember[] }>(queryMembers(CalendarID)),
     ]);
 
     const { Member: selfMember, Address: selfAddress } = getMemberAddressWithAdminPermissions(Members, addresses);

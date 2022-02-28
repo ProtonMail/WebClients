@@ -19,7 +19,7 @@ import {
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
 import { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
-import { AttendeeModel, Calendar, CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { useAppTitle, useCalendarBootstrap } from '@proton/components';
@@ -79,10 +79,10 @@ interface Props {
     user: User;
     addresses: Address[];
     activeAddresses: Address[];
-    visibleCalendars: Calendar[];
-    activeCalendars: Calendar[];
-    calendars: Calendar[];
-    defaultCalendar?: Calendar;
+    visibleCalendars: VisualCalendar[];
+    activeCalendars: VisualCalendar[];
+    calendars: VisualCalendar[];
+    defaultCalendar?: VisualCalendar;
     userSettings: UserSettings;
     calendarUserSettings: CalendarUserSettings;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;

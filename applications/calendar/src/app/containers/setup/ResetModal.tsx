@@ -13,7 +13,7 @@ import {
 import { noop } from '@proton/shared/lib/helpers/function';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { process } from '@proton/shared/lib/calendar/keys/resetHelper';
 import CalendarResetSection from './CalendarResetSection';
 import CalendarReactivateSection from './CalendarReactivateSection';
@@ -25,12 +25,12 @@ enum STEPS {
 }
 
 interface FilteredCalendars {
-    calendarsToReset: Calendar[];
-    calendarsToReactivate: Calendar[];
+    calendarsToReset: VisualCalendar[];
+    calendarsToReactivate: VisualCalendar[];
 }
 
 interface Props {
-    calendars: Calendar[];
+    calendars: VisualCalendar[];
     onClose?: () => void;
     onExit?: () => void;
 }

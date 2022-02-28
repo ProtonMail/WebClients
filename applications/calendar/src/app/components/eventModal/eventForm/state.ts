@@ -22,13 +22,13 @@ import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { Address as tsAddress } from '@proton/shared/lib/interfaces';
 import {
     AttendeeModel,
-    Calendar as tsCalendar,
     CalendarSettings as tsCalendarSettings,
     DateTimeModel,
     EventModel,
     FrequencyModel,
-    Member as tsMember,
+    CalendarMember,
     SelfAddressData,
+    VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
@@ -102,8 +102,8 @@ export const getInitialFrequencyModel = (startDate: Date): FrequencyModel => {
 
 export const getInitialMemberModel = (
     Addresses: tsAddress[],
-    Members: tsMember[],
-    Member: tsMember,
+    Members: CalendarMember[],
+    Member: CalendarMember,
     Address: tsAddress
 ) => {
     const { ID: addressID } = Address;
@@ -116,7 +116,7 @@ export const getInitialMemberModel = (
     };
 };
 
-const getCalendarsModel = (Calendar: tsCalendar, Calendars: tsCalendar[] = []) => {
+const getCalendarsModel = (Calendar: VisualCalendar, Calendars: VisualCalendar[] = []) => {
     if (!Calendars.some(({ ID }) => ID === Calendar.ID)) {
         throw new Error('Calendar not found');
     }
@@ -138,10 +138,10 @@ const getCalendarsModel = (Calendar: tsCalendar, Calendars: tsCalendar[] = []) =
 interface GetInitialModelArguments {
     initialDate: Date;
     CalendarSettings: tsCalendarSettings;
-    Calendar: tsCalendar;
-    Calendars: tsCalendar[];
-    Members: tsMember[];
-    Member: tsMember;
+    Calendar: VisualCalendar;
+    Calendars: VisualCalendar[];
+    Members: CalendarMember[];
+    Member: CalendarMember;
     Addresses: tsAddress[];
     Address: tsAddress;
     isAllDay: boolean;

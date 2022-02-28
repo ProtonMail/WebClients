@@ -13,7 +13,7 @@ import { encodeBase64 } from '../../helpers/base64';
 import { generateRandomBytes, getSHA256Base64String, xorEncryptDecrypt } from '../../helpers/crypto';
 import { stringToUint8Array, uint8ArrayToPaddedBase64URLString, uint8ArrayToString } from '../../helpers/encoding';
 import { Nullable } from '../../interfaces';
-import { ACCESS_LEVEL, Calendar, CalendarLink, CalendarUrl } from '../../interfaces/calendar';
+import { ACCESS_LEVEL, CalendarLink, CalendarUrl } from '../../interfaces/calendar';
 import {
     CalendarUrlEventManager,
     CalendarUrlEventManagerCreate,
@@ -184,13 +184,11 @@ export const getCreatePublicLinkPayload = async ({
 
 export const transformLinkFromAPI = async ({
     calendarUrl,
-    calendar,
     privateKeys,
     calendarPassphrase,
     onError,
 }: {
     calendarUrl: CalendarUrl;
-    calendar: Calendar;
     privateKeys: OpenPGPKey[];
     calendarPassphrase: string;
     onError: (e: Error) => void;
@@ -234,8 +232,6 @@ export const transformLinkFromAPI = async ({
 
     return {
         ...calendarUrl,
-        calendarName: calendar.Name,
-        color: calendar.Color,
         purpose,
         link,
     };
@@ -243,13 +239,11 @@ export const transformLinkFromAPI = async ({
 
 export const transformLinksFromAPI = async ({
     calendarUrls,
-    calendar,
     privateKeys,
     calendarPassphrase,
     onError,
 }: {
     calendarUrls: CalendarUrl[];
-    calendar: Calendar;
     privateKeys: OpenPGPKey[];
     calendarPassphrase: string;
     onError: (e: Error) => void;
@@ -258,7 +252,6 @@ export const transformLinksFromAPI = async ({
         calendarUrls.map((calendarUrl) =>
             transformLinkFromAPI({
                 calendarUrl,
-                calendar,
                 privateKeys,
                 calendarPassphrase,
                 onError,
