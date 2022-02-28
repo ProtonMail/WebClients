@@ -35,12 +35,21 @@ import { useDebouncedRequest } from '../api';
 import { useDriveCrypto } from '../crypto';
 import { useDriveEventManager } from '../events';
 import { useLink } from '../links';
+import { reportError } from '../utils';
 import { getSharedLink } from './shareUrl';
 import useShare from './useShare';
 import useShareActions from './useShareActions';
 
 /**
  * useShareUrl provides actions to manipulate with share URLs.
+ *
+ * This file needs a bit of love. First, lets transform ShareURL to nicer
+ * interface and compute some flags so we don't need to use shareUrl helpers.
+ * Second, lets separate it into two layers similarly as links are: this
+ * module handles only communication with API for the needs of the web client
+ * and lets have another layer in actions folder to wrap it with error
+ * reporting and generating user messages. Third, lets remove notifications
+ * and other business logic from the ShareLinkModal. Fourth, cover with tests!
  */
 export default function useShareUrl() {
     const api = useApi();
@@ -355,7 +364,7 @@ export default function useShareUrl() {
         }
 
         const { ShareURL } = await preventLeave(
-            debouncedRequest(queryUpdateSharedLink(shareId, shareUrlId, fieldsToUpdate))
+            debouncedRequest<{ ShareURL: ShareURL }>(queryUpdateSharedLink(shareId, shareUrlId, fieldsToUpdate))
         );
 
         // Update password value to decrypted one.
@@ -373,50 +382,93 @@ export default function useShareUrl() {
 
     const deleteShareUrl = async (shareId: string, shareUrlId: string) => {
         const deletePromise = async () => {
-            await debouncedRequest(queryDeleteSharedLink(shareId, shareUrlId));
-            await deleteShare(shareId);
+            await debouncedRequest(queryDeleteSharedLink(shareId, shareUrlId)).catch((error) => {
+                reportError(error);
+                throw error;
+            });
+            // Lets only collect reports when share cannot be deleted but do
+            // not bother users about it - link was deleted fine.
+            await deleteShare(shareId).catch(reportError);
         };
         await preventLeave(deletePromise());
         await events.pollAllDriveEvents();
     };
 
-    const deleteShareUrls = async (abortSignal: AbortSignal, shareId: string, linkIds: string[]): Promise<number> => {
+    const deleteShareUrls = async (abortSignal: AbortSignal, shareId: string, linkIds: string[]) => {
         const links = await Promise.all(linkIds.map((linkId) => getLink(abortSignal, shareId, linkId)));
+
+        const successes: string[] = [];
+        const failures: { [linkId: string]: any } = {};
 
         // First delete urls in batches so the request is of reasonable size.
         // If we delete shares first, API automatically deletes also urls.
-        const sharedUrlIds = links.map(({ shareUrl }) => shareUrl?.id).filter(isTruthy);
-        const batches = chunk(sharedUrlIds, BATCH_REQUEST_SIZE);
+        const sharedLinks = links
+            .map(({ linkId, shareUrl }) => ({ linkId, shareUrlId: shareUrl?.id }))
+            .filter(({ shareUrlId }) => shareUrlId) as { linkId: string; shareUrlId: string }[];
+        const batches = chunk(sharedLinks, BATCH_REQUEST_SIZE);
         const deleteShareUrlQueue = batches.map(
-            (batch) => () =>
+            (batchLinks) => () =>
                 debouncedRequest<{ Responses: { ShareURLID: string; Response: { Code: number } }[] }>(
-                    queryDeleteMultipleSharedLinks(shareId, batch)
-                ).then(({ Responses }) =>
-                    Responses.filter((res) => res.Response.Code === RESPONSE_CODE.SUCCESS).map(
-                        ({ ShareURLID }) => ShareURLID
+                    queryDeleteMultipleSharedLinks(
+                        shareId,
+                        batchLinks.map(({ shareUrlId }) => shareUrlId)
                     )
                 )
+                    .then(({ Responses }) =>
+                        Responses.forEach(({ Response }, index) => {
+                            const linkId = batchLinks[index].linkId;
+                            if (Response.Code === RESPONSE_CODE.SUCCESS) {
+                                successes.push(linkId);
+                            } else {
+                                failures[linkId] = Response.Code;
+                            }
+                        })
+                    )
+                    .catch((error) => {
+                        batchLinks.forEach(({ linkId }) => (failures[linkId] = error));
+                    })
         );
-        const deletedIds = await preventLeave(runInQueue(deleteShareUrlQueue, MAX_THREADS_PER_REQUEST));
-        const deletedCount = ([] as string[]).concat(...deletedIds).length;
+        await preventLeave(runInQueue(deleteShareUrlQueue, MAX_THREADS_PER_REQUEST));
 
         // Once we know how many urls we deleted, we can delete shares itself.
         // Note this needs to be changed once we support sharing between members.
         const sharedIds = [...new Set(links.map(({ shareId }) => shareId).filter(isTruthy))];
         const deleteShareQueue = sharedIds.map((shareId) => async () => {
-            await deleteShare(shareId);
+            // Lets only collect reports when share cannot be deleted but do
+            // not bother users about it - link was deleted fine.
+            await deleteShare(shareId).catch(reportError);
         });
         await preventLeave(runInQueue(deleteShareQueue, MAX_THREADS_PER_REQUEST));
 
         await events.pollAllShareEvents(shareId);
-        return deletedCount;
+        return { successes, failures };
     };
 
     return {
-        loadOrCreateShareUrl,
+        // This is a bit of hack to nicely report all errors. It might collect
+        // a bit more errors than we need and it might not result in proper
+        // error message to user. See comment to useShareUrl on the top.
+        loadOrCreateShareUrl: (abortSignal: AbortSignal, shareId: string, linkId: string) =>
+            loadOrCreateShareUrl(abortSignal, shareId, linkId).catch((error) => {
+                reportError(error);
+                throw error;
+            }),
         loadShareUrlLink,
         loadShareUrlNumberOfAccesses,
-        updateShareUrl,
+        updateShareUrl: (
+            shareUrlInfo: {
+                shareId: string;
+                shareUrlId: string;
+                flags: number;
+                keyInfo: SharedURLSessionKeyPayload;
+            },
+            newDuration?: number | null,
+            newPassword?: string
+        ) =>
+            updateShareUrl(shareUrlInfo, newDuration, newPassword).catch((error) => {
+                reportError(error);
+                throw error;
+            }),
         deleteShareUrl,
         deleteShareUrls,
     };

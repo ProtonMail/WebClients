@@ -8,6 +8,7 @@ import { TransferCancel, TransferState } from '@proton/shared/lib/interfaces/dri
 
 import useConfirm from '../../../hooks/util/useConfirm';
 import { isTransferCancelError, isTransferProgress } from '../../../utils/transfer';
+import { reportError } from '../../utils';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import { UploadConflictModal, UploadFileList, UploadFileItem } from '../interface';
 import { UpdateFilter } from './interface';
@@ -152,6 +153,7 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
                         queue.updateState(nextFolderUpload.id, TransferState.Canceled);
                     } else {
                         queue.updateWithData(nextFolderUpload.id, TransferState.Error, { error });
+                        reportError(error);
                     }
                 })
                 .finally(() => {
@@ -207,6 +209,7 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
                         queue.updateState(nextFileUpload.id, TransferState.Canceled);
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
+                        reportError(error);
                     }
                 })
                 .finally(() => {

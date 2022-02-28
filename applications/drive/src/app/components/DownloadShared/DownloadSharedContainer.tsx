@@ -11,6 +11,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../../store';
+import { reportError } from '../../store/utils';
 import usePublicSharing, {
     ERROR_CODE_INVALID_SRP_PARAMS,
     SharedURLInfoDecrypted,
@@ -104,7 +105,7 @@ const DownloadSharedContainer = () => {
                 })
                 .catch((error) => {
                     setTransferState(TransferStatePublic.Error);
-                    console.warn(error);
+                    reportError(error);
                 })
         );
     };
@@ -183,7 +184,10 @@ const DownloadSharedContainer = () => {
 
                     if (apiError.code === 404 || apiError.code === ERROR_CODE_INVALID_TOKEN) {
                         setNotFoundError(error as Error);
+                        return;
                     }
+
+                    reportError(error);
                 })
         );
     }, []);

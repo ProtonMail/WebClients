@@ -2,6 +2,7 @@ import { useState, ChangeEvent, FocusEvent } from 'react';
 import { c } from 'ttag';
 
 import { FormModal, InputTwo, Row, Label, Field, useLoading } from '@proton/components';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 
 import { useActions, validateLinkNameField, formatLinkName } from '../store';
@@ -52,7 +53,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
         <FormModal
             onClose={onClose}
             loading={loading}
-            onSubmit={() => withLoading(handleSubmit())}
+            onSubmit={() => withLoading(handleSubmit()).catch(noop)}
             title={c('Title').t`Create a new folder`}
             submit={c('Action').t`Create`}
             autofocusclose="false"
