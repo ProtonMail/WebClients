@@ -39,19 +39,16 @@ const VerificationForm = ({ defaultCountry, defaultEmail, allowedMethods, onRequ
     }
 
     // translator: "spam folder" is put in bold in the sentence "please check your spam folder"
-    const spamFolder = `<strong>${c('Info').t`spam folder`}</strong>`;
+    const spamFolder = <strong key="resend-spam-folder">{c('Info').t`spam folder`}</strong>;
 
     return (
         <VerificationCodeForm
             checkSpamFolder={true}
             notices={
-                <p
-                    dangerouslySetInnerHTML={{
-                        __html:
-                            // translator: spamFolder is just "spam folder" in bold
-                            c('Info').t`Please make sure to check your ${spamFolder}.`,
-                    }}
-                />
+                <p>{
+                    // translator: spamFolder is just "spam folder" in bold
+                    c('Info').jt`Please make sure to check your ${spamFolder}.`
+                }</p>
             }
             destination={params.Destination}
             onSubmit={handleSubmitCode}

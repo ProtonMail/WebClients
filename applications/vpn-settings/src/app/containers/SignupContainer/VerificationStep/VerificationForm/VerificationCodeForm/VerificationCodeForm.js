@@ -33,7 +33,7 @@ const VerificationCodeForm = ({ notices, checkSpamFolder, onSubmit, onResend, on
 
     const handleChangeCode = ({ target }) => setCode(target.value);
     // translator: spam folder" is put in bold in the sentence "please check your spam folder"
-    const spamFolder = `<strong>${c('Info').t`spam folder`}</strong>`;
+    const spamFolder = <strong key="spam-folder">{c('Info').t`spam folder`}</strong>;
 
     return (
         <div>
@@ -41,14 +41,10 @@ const VerificationCodeForm = ({ notices, checkSpamFolder, onSubmit, onResend, on
             <Alert className="mb1">
                 <div>{c('Info').jt`Enter the verification code that was sent to ${destinationText}.`}</div>
                 {checkSpamFolder || destination.Address ? (
-                    <div
-                        dangerouslySetInnerHTML={{
-                            __html:
-                                // translator: spamFolder is just "spam folder" in bold
-                                c('Info')
-                                    .t`If you don't find the email in your inbox, please check your ${spamFolder}.`,
-                        }}
-                    />
+                    <div>{
+                        // translator: spamFolder is just "spam folder" in bold
+                        c('Info').jt`If you don't find the email in your inbox, please check your ${spamFolder}.`
+                    }</div>
                 ) : null}
             </Alert>
             <form onSubmit={handleSubmit}>
