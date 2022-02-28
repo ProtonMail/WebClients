@@ -236,6 +236,5 @@ export const stateInconsistency = createSelector(
 );
 
 export const showLabelTaskRunningBanner = createSelector([taskRunning], (taskRunning) => {
-    console.log('showLabelTaskRunningBanner', taskRunning.labelIDs);
     return taskRunning.labelIDs.length > 0;
 });

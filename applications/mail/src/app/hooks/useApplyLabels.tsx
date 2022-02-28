@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels } from '@proton/components';
+import { useApi, useNotifications, useEventManager, useLabels, classnames } from '@proton/components';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
@@ -9,6 +9,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
+import { PAGE_SIZE } from '../constants';
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
 import { isMessage as testIsMessage } from '../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../helpers/message/messages';
@@ -16,7 +17,9 @@ import { Element } from '../models/element';
 import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
 import { Conversation } from '../models/conversation';
-import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
+import { backendActionFinished, backendActionStarted, moveAll } from '../logic/elements/elementsActions';
+import MoveAllButton from '../components/notifications/MoveAllButton';
+import { isLabel } from '../helpers/labels';
 import MoveScheduledModal from '../components/message/modals/MoveScheduledModal';
 
 const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
@@ -420,9 +423,27 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     }
                 };
 
+                const suggestMoveAll = elements.length === PAGE_SIZE && folderID === TRASH;
+
+                const handleMoveAll = suggestMoveAll
+                    ? () => dispatch(moveAll({ api, call, SourceLabelID: fromLabelID, DestinationLabelID: TRASH }))
+                    : undefined;
+
+                const moveAllButton = handleMoveAll ? (
+                    <MoveAllButton
+                        className={classnames([canUndo && 'mr1'])}
+                        onMoveAll={handleMoveAll}
+                        isMessage={isMessage}
+                        isLabel={isLabel(fromLabelID, labels)}
+                    />
+                ) : null;
+
                 createNotification({
                     text: (
-                        <UndoActionNotification onUndo={canUndo ? handleUndo : undefined}>
+                        <UndoActionNotification
+                            additionalButton={moveAllButton}
+                            onUndo={canUndo ? handleUndo : undefined}
+                        >
                             {notificationText}
                         </UndoActionNotification>
                     ),
