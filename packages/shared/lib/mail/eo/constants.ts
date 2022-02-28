@@ -5,6 +5,8 @@ export const eoDefaultUserSettings = {
     Referral: undefined,
 } as UserSettings;
 
+export const EO_REPLY_NUM_ATTACHMENTS_LIMIT = 10;
+
 export const eoDefaultMailSettings = {
     DisplayName: '',
     Signature: '',

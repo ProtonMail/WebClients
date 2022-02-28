@@ -34,6 +34,7 @@ export const send = async () => {
     try {
         const renderResult = await setup();
 
+        // Write a test "T" in the message body
         fireEvent.keyDown(renderResult.container, { key: 'T' });
 
         return await clickSend(renderResult);

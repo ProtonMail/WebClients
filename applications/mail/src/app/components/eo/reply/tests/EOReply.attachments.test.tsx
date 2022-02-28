@@ -1,8 +1,11 @@
 import { act, fireEvent } from '@testing-library/react';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
+
 import { EOClearAll, EOSubject } from '../../../../helpers/test/eo/helpers';
 import { setup } from './EOReply.test.helpers';
 import { tick } from '../../../../helpers/test/render';
+import { waitForNotification } from '../../../../helpers/test/helper';
 
 describe('EO Reply attachments', () => {
     afterEach(EOClearAll);
@@ -39,5 +42,22 @@ describe('EO Reply attachments', () => {
         expect(preview).toBeDefined();
         expect(preview?.textContent).toMatch(new RegExp(fileName));
         getByText(fileContent);
+    });
+
+    it('should not be possible to add 10+ attachments', async () => {
+        const { getByText, getByTestId } = await setup();
+
+        getByText(EOSubject);
+
+        // Add 11 files
+        const inputAttachment = getByTestId('composer-attachments-button') as HTMLInputElement;
+        await act(async () => {
+            fireEvent.change(inputAttachment, {
+                target: { files: [file, file, file, file, file, file, file, file, file, file, file] },
+            });
+            await wait(100);
+        });
+
+        await waitForNotification(`Maximum number of attachments (${EO_REPLY_NUM_ATTACHMENTS_LIMIT}) exceeded.`);
     });
 });
