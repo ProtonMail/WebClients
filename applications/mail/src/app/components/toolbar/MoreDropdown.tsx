@@ -19,7 +19,7 @@ interface Props {
 
 const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props) => {
     const [loading, withLoading] = useLoading();
-    const emptyLabel = useEmptyLabel();
+    const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
     const location = useLocation();
     const searchParameters = extractSearchParameters(location);
 
@@ -65,6 +65,7 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props
                 )}
             </ToolbarDropdown>
             <ToolbarSeparator />
+            {deleteAllModal}
         </>
     );
 };
