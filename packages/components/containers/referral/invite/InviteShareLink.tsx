@@ -2,8 +2,11 @@ import { c } from 'ttag';
 import { TwitterButton, Button, InputTwo, Icon } from '@proton/components';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { useUserSettings } from '@proton/components/hooks';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 
 const InviteShareLink = () => {
+    const appName = getAppName(APPS.PROTONMAIL);
     const [userSettings, loadingUserSettings] = useUserSettings();
 
     const referrerLink = userSettings.Referral?.Link || '';
@@ -31,7 +34,8 @@ const InviteShareLink = () => {
                     <TwitterButton
                         url={encodeURI(
                             'https://twitter.com/intent/tweet?text=' +
-                                c('Info').t`Join protonmail with this link: ${referrerLink}`
+                                c('Info')
+                                    .t`I’ve been using ${appName} and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${referrerLink}`
                         )}
                         target="_blank"
                     >
