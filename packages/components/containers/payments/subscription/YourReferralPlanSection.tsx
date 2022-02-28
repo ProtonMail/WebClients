@@ -21,7 +21,7 @@ const YourReferralPlanSection = ({ expirationDate, mailAddons, onUpgrade }: Prop
     return (
         <div className="flex flex-gap-1 on-tablet-flex-column">
             <div className="border px2 py1 w60">
-                <h3>{c('Title').t`${appName} ${planName} Trial`}</h3>
+                <h3>{c('Title').t`${appName} ${planName} trial`}</h3>
                 <p>{c('Info')
                     .t`Your free ${appName} ${planName} trial will end on ${formattedTrialExpirationDate}.`}</p>
                 <p className="color-weak">
