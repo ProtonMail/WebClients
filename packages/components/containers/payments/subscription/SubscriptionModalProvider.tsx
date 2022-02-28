@@ -1,14 +1,13 @@
 import { createContext, ReactNode, useContext, useRef } from 'react';
 import { Audience, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
-import { getHasB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getHasB2BPlan, getHasLegacyPlans, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { PLANS } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import { useModalState } from '../../../components';
-import { useFeature, usePlans, useSubscription } from '../../../hooks';
-import { FeatureCode } from '../../features';
+import { usePlans, useSubscription } from '../../../hooks';
 
 import { SUBSCRIPTION_STEPS } from './constants';
 import SubscriptionModal from './SubscriptionModal';
@@ -42,7 +41,6 @@ interface Props {
 const SubscriptionModalProvider = ({ children }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [plans = [], loadingPlans] = usePlans();
-    const paymentsDisabledFeature = useFeature(FeatureCode.PaymentsDisabled);
     const [modalState, setModalState, render] = useModalState();
     const subscriptionProps = useRef<{
         planIDs: PlanIDs;
@@ -54,7 +52,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
         disableBackButton?: boolean;
     } | null>(null);
 
-    const loading = Boolean(loadingSubscription || loadingPlans || paymentsDisabledFeature.loading);
+    const loading = Boolean(loadingSubscription || loadingPlans);
 
     const plansMap = toMap(plans, 'Name');
     const subscriptionPlanIDs = getPlanIDs(subscription);
@@ -63,7 +61,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
         <>
             {render &&
                 subscriptionProps.current &&
-                (paymentsDisabledFeature.feature?.Value === true ? (
+                (getHasLegacyPlans(subscription) ? (
                     <SubscriptionModalDisabled {...modalState} />
                 ) : (
                     <SubscriptionModal {...subscriptionProps.current} {...modalState} />
