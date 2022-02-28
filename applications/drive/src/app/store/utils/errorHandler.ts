@@ -2,8 +2,13 @@ import { ReactNode } from 'react';
 
 import { useNotifications } from '@proton/components';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-const IGNORED_ERRORS = ['AbortError', 'TransferCancel', 'ValidationError'];
+const IGNORED_ERRORS = ['AbortError', 'TransferCancel'];
+
+function isIgnoredErrorForReporting(error: any) {
+    return isIgnoredError(error) || error.name === 'ValidationError' || getIsConnectionIssue(error);
+}
 
 export function isIgnoredError(error: any) {
     return !error || IGNORED_ERRORS.includes(error.name);
@@ -13,7 +18,7 @@ export function isIgnoredError(error: any) {
  * logErrors logs error to console if its not ignored error.
  */
 export function logError(error: any) {
-    if (isIgnoredError(error)) {
+    if (isIgnoredErrorForReporting(error)) {
         return;
     }
 
@@ -24,7 +29,7 @@ export function logError(error: any) {
  * reportError reports error to console and Sentry if its not ignored error.
  */
 export function reportError(error: any) {
-    if (isIgnoredError(error)) {
+    if (isIgnoredErrorForReporting(error)) {
         return;
     }
 
@@ -44,10 +49,24 @@ export function useErrorHandler() {
             return;
         }
 
+        // API errors are handled automatically by core.
+        if (!!error.data?.Error) {
+            return;
+        }
+
+        if (error.name === 'ValidationError') {
+            createNotification({
+                type: 'error',
+                text: error.message,
+            });
+            return;
+        }
+
         createNotification({
             type: 'error',
             text: message || error.message || error,
         });
+        reportError(error);
     };
 
     /**
@@ -55,17 +74,18 @@ export function useErrorHandler() {
      * with message provided by `getMessage` callback. Only non-ignored errors
      * are passed down to the callback.
      */
-    const showAggregatedErrorNotification = (errors: any[], getMessage: (errors: any[]) => ReactNode) => {
+    const showAggregatedErrorNotification = (errors: any[], getMessage: (errors: [any, ...any[]]) => ReactNode) => {
         const nonIgnoredErrors = errors.filter((error) => !isIgnoredError(error));
         if (!nonIgnoredErrors.length) {
             return;
         }
 
-        const text = getMessage(nonIgnoredErrors);
+        const text = getMessage(nonIgnoredErrors as [any, ...any[]]);
         createNotification({
             type: 'error',
             text,
         });
+        errors.forEach(reportError);
     };
 
     return {
