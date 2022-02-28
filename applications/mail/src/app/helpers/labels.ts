@@ -12,7 +12,8 @@ import { Conversation } from '../models/conversation';
 import { getLabelIDs } from './elements';
 import { Element } from '../models/element';
 
-const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS, SCHEDULED, OUTBOX } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS, SCHEDULED, OUTBOX, STARRED } =
+    MAILBOX_LABEL_IDS;
 const DEFAULT_FOLDERS = [INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, SCHEDULED, OUTBOX];
 
 export type LabelChanges = { [labelID: string]: boolean };
@@ -59,7 +60,13 @@ export const isCustomLabelOrFolder = (labelID: string) =>
 
 export const isAlwaysMessageLabels = (labelID: string) => alwaysMessageLabels.includes(labelID as MAILBOX_LABEL_IDS);
 
+export const labelIncludes = (labelID: string, ...labels: (MAILBOX_LABEL_IDS | string)[]) =>
+    labels.includes(labelID as MAILBOX_LABEL_IDS);
+
 export const isCustomLabel = (labelID: string, labels: Label[] = []) => labels.some((label) => label.ID === labelID);
+
+export const isLabel = (labelID: string, labels: Label[] = []) =>
+    labelIncludes(labelID, STARRED) || isCustomLabel(labelID, labels);
 
 export const isCustomFolder = (labelID: string, folders: Folder[] = []) =>
     folders.some((folder) => folder.ID === labelID);
@@ -167,9 +174,6 @@ export const getFolderName = (labelID: string, customFoldersList: Folder[] = [])
     const { Name = '' } = customFoldersList.find(({ ID }) => ID === labelID) || {};
     return Name;
 };
-
-export const labelIncludes = (labelID: string, ...labels: (MAILBOX_LABEL_IDS | string)[]) =>
-    labels.includes(labelID as MAILBOX_LABEL_IDS);
 
 export const isAutoRead = (labelID: MAILBOX_LABEL_IDS | string) =>
     LABELS_AUTO_READ.includes(labelID as MAILBOX_LABEL_IDS);
