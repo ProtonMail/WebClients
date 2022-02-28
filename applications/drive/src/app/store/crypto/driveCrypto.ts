@@ -4,6 +4,7 @@ import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Address } from '@proton/shared/lib/interfaces/Address';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
+import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
@@ -65,7 +66,8 @@ export const getOwnAddressKeysAsync = async (
     getAddressKeys: (id: string) => Promise<DecryptedKey[]>
 ) => {
     const addresses = await getAddresses();
-    const ownAddress = addresses.find(({ Email }) => Email === email);
+    // Some characters can be changed but still be the same email.
+    const ownAddress = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(email));
     if (!ownAddress) {
         // Should never happen
         throw new Error('Address was not found.');
