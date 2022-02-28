@@ -8,6 +8,7 @@ import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { OpenPGPKey } from 'pmcrypto';
+import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 
 import {
     INVITE_ACTION_TYPES,
@@ -84,6 +85,7 @@ const getSaveRecurringEventActions = async ({
     updatePartstatActions?: UpdatePartstatOperation[];
     updatePersonalPartActions?: UpdatePersonalPartOperation[];
     sendActions?: SendIcsActionData[];
+    hasStartChanged?: boolean;
 }> => {
     const { type: inviteType, partstat: invitePartstat } = inviteActions;
     const isSingleEdit = oldEvent.ID !== originalEvent.ID;
@@ -146,6 +148,7 @@ const getSaveRecurringEventActions = async ({
                 updateSingleRecurrence(newVeventComponent),
                 oldVeventWithSequence
             );
+            const hasStartChanged = getHasStartChanged(newVeventWithSequence, oldVeventWithSequence);
             const updateOperation = getUpdateSyncOperation({
                 veventComponent: newVeventWithSequence,
                 calendarEvent: oldEvent,
@@ -161,6 +164,7 @@ const getSaveRecurringEventActions = async ({
                     },
                 ],
                 inviteActions,
+                hasStartChanged,
             };
         }
 
@@ -170,6 +174,7 @@ const getSaveRecurringEventActions = async ({
             originalVeventComponent,
             recurrence.localStart
         );
+        const hasStartChanged = getHasStartChanged(newRecurrenceVeventComponent, oldRecurrenceVeventComponent);
         const createOperation = getCreateSyncOperation({
             veventComponent: withUpdatedDtstampAndSequence(newRecurrenceVeventComponent, oldRecurrenceVeventComponent),
         });
@@ -184,6 +189,7 @@ const getSaveRecurringEventActions = async ({
                 },
             ],
             inviteActions,
+            hasStartChanged,
         };
     }
 
@@ -221,6 +227,9 @@ const getSaveRecurringEventActions = async ({
             veventComponent: createFutureRecurrence(newVeventWithSequence, originalVeventWithSequence, recurrence),
         });
 
+        const oldRecurrenceVeventComponent = getCurrentEvent(originalVeventWithSequence, recurrence);
+        const hasStartChanged = getHasStartChanged(newVeventWithSequence, oldRecurrenceVeventComponent);
+
         return {
             multiSyncActions: [
                 {
@@ -231,6 +240,7 @@ const getSaveRecurringEventActions = async ({
                 },
             ],
             inviteActions,
+            hasStartChanged,
         };
     }
 
@@ -346,6 +356,8 @@ const getSaveRecurringEventActions = async ({
             addedAttendeesPublicKeysMap,
         });
 
+        const hasStartChanged = getHasStartChanged(updatedVeventComponent, originalVeventComponent);
+
         if (isSwitchCalendar) {
             const deleteOriginalOperation = getDeleteSyncOperation(originalEvent);
             return {
@@ -364,6 +376,7 @@ const getSaveRecurringEventActions = async ({
                     },
                 ],
                 inviteActions: updatedInviteActions,
+                hasStartChanged,
             };
         }
 
@@ -377,6 +390,7 @@ const getSaveRecurringEventActions = async ({
                 },
             ],
             inviteActions: updatedInviteActions,
+            hasStartChanged,
         };
     }
 

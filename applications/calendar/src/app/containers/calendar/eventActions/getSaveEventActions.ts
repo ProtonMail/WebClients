@@ -86,6 +86,7 @@ const getSaveSingleEventActionsHelper = async ({
         updatePersonalPartActions,
         inviteActions: saveInviteActions,
         sendActions,
+        hasStartChanged,
     } = await getSaveSingleEventActions({
         newEditEventData: { ...newEditEventData, veventComponent: newVeventWithSequence },
         oldEditEventData,
@@ -106,6 +107,7 @@ const getSaveSingleEventActionsHelper = async ({
             success: successText,
         },
         sendActions,
+        hasStartChanged,
     };
 };
 
@@ -154,6 +156,7 @@ const getSaveEventActions = async ({
     updatePersonalPartActions?: UpdatePersonalPartOperation[];
     sendActions?: SendIcsActionData[];
     texts?: { success: string };
+    hasStartChanged?: boolean;
 }> => {
     const {
         tmpOriginalTarget: { data: { eventData: oldEventData, eventRecurrence, eventReadResult } } = { data: {} },
@@ -369,6 +372,7 @@ const getSaveEventActions = async ({
         updatePersonalPartActions,
         inviteActions: saveInviteActions,
         sendActions,
+        hasStartChanged,
     } = await getSaveRecurringEventActions({
         type: saveType,
         recurrences,
@@ -390,6 +394,7 @@ const getSaveEventActions = async ({
         updatePersonalPartActions,
         texts: { success: successText },
         sendActions,
+        hasStartChanged,
     };
 };
 
