@@ -12,7 +12,7 @@ import {
 import { Prompt } from 'react-router';
 import { c } from 'ttag';
 
-import { updateAttendeePartstat, updateCalendar, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
+import { updateAttendeePartstat, updateMember, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { toApiPartstat } from '@proton/shared/lib/calendar/attendees';
 import { getIsCalendarDisabled, getIsCalendarProbablyActive } from '@proton/shared/lib/calendar/calendar';
@@ -24,7 +24,7 @@ import {
     RECURRING_TYPES,
     SAVE_CONFIRMATION_TYPES,
 } from '@proton/shared/lib/calendar/constants';
-import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
+import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import { getSharedSessionKey, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
@@ -40,7 +40,6 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
     AttendeeModel,
-    Calendar,
     CalendarBootstrap,
     CalendarEvent,
     DateTimeModel,
@@ -48,6 +47,7 @@ import {
     SyncMultipleApiResponse,
     UpdateEventPartApiResponse,
     VcalVeventComponent,
+    VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -210,7 +210,7 @@ type ModalsMap = {
     }>;
     importModal: ModalWithProps<{
         files: File[];
-        defaultCalendar: Calendar;
+        defaultCalendar: VisualCalendar;
     }>;
 };
 
@@ -221,10 +221,10 @@ interface Props extends SharedViewProps {
     inviteLocale?: string;
     onChangeDate: (date: Date) => void;
     onInteraction: (active: boolean) => void;
-    activeCalendars: Calendar[];
+    activeCalendars: VisualCalendar[];
     addresses: Address[];
     activeAddresses: Address[];
-    defaultCalendar?: Calendar;
+    defaultCalendar?: VisualCalendar;
     defaultCalendarBootstrap?: CalendarBootstrap;
     containerRef: HTMLDivElement | null;
     timeGridViewRef: RefObject<TimeGridRef>;
@@ -476,7 +476,7 @@ const InteractiveCalendarView = ({
         partstat,
     }: {
         viewEventData: CalendarViewEventData;
-        duplicateFromDisabledCalendarData?: { calendar: Calendar };
+        duplicateFromDisabledCalendarData?: { calendar: VisualCalendar };
         partstat?: ICAL_ATTENDEE_STATUS;
     }): EventModel | undefined => {
         if (
@@ -1009,8 +1009,11 @@ const InteractiveCalendarView = ({
         if (hiddenCalendars.length > 0) {
             await Promise.all(
                 hiddenCalendars.map((calendarID) => {
+                    const members = activeCalendars.find(({ ID }) => ID === calendarID)?.Members || [];
+                    const [{ ID: memberID }] = getMemberAndAddress(addresses, members);
+
                     return api({
-                        ...updateCalendar(calendarID, { Display: 1 }),
+                        ...updateMember(calendarID, memberID, { Display: 1 }),
                         silence: true,
                     });
                 })

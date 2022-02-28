@@ -7,25 +7,35 @@ import {
     getIsCalendarEventManagerCreate,
     getIsCalendarEventManagerDelete,
     getIsCalendarEventManagerUpdate,
+    getIsCalendarMemberEventManagerCreate,
+    getIsCalendarMemberEventManagerDelete,
+    getIsCalendarMemberEventManagerUpdate,
 } from '@proton/shared/lib/eventManager/helpers';
+import { findMemberIndices } from '@proton/shared/lib/models/calendarMembers';
 import { useEffect, useMemo, useState } from 'react';
+import { Address } from '@proton/shared/lib/interfaces';
 import {
     CalendarEventManager,
+    CalendarMemberEventManager,
     CalendarSubscriptionEventManager,
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
-import { removeItem, updateItem } from '@proton/shared/lib/helpers/array';
+import { addItem, removeItem, updateItem } from '@proton/shared/lib/helpers/array';
+import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import {
     Calendar,
+    VisualCalendar,
     CalendarSubscription,
     CalendarSubscriptionResponse,
     SubscribedCalendar,
+    CalendarWithMembers,
+    CalendarMember,
 } from '@proton/shared/lib/interfaces/calendar';
 import useApi from './useApi';
 import useLoading from './useLoading';
 import useEventManager from './useEventManager';
 import { useCalendarModelEventManager } from '../containers/eventManager/calendar/ModelEventManagerProvider';
 
-const useSubscribedCalendars = (calendars: Calendar[]) => {
+const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[]) => {
     const [subscribedCalendars, setSubscribedCalendars] = useState<SubscribedCalendar[]>([]);
     const [loading, withLoading] = useLoading(true);
     const api = useApi();
@@ -35,7 +45,7 @@ const useSubscribedCalendars = (calendars: Calendar[]) => {
     const { subscribe: standardSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
-    const handleAddCalendar = async (calendar: Calendar) => {
+    const handleAddCalendar = async (calendar: CalendarWithMembers) => {
         if (!getIsSubscribedCalendar(calendar)) {
             return;
         }
@@ -43,18 +53,24 @@ const useSubscribedCalendars = (calendars: Calendar[]) => {
             getSubscriptionParameters(calendar.ID)
         );
 
-        setSubscribedCalendars((prevState = []) => [
-            ...prevState,
-            {
-                ...calendar,
-                SubscriptionParameters: CalendarSubscription,
-            },
-        ]);
+        setSubscribedCalendars((prevState = []) =>
+            getVisualCalendars(
+                [
+                    ...prevState,
+                    {
+                        ...calendar,
+                        SubscriptionParameters: CalendarSubscription,
+                    },
+                ],
+                addresses
+            )
+        );
     };
 
     const handleDeleteCalendar = (calendarID: string) => {
         setSubscribedCalendars((subscribedCalendars) => {
             const index = subscribedCalendars?.findIndex((calendar) => calendar.ID === calendarID);
+
             return removeItem(subscribedCalendars, index);
         });
     };
@@ -63,10 +79,61 @@ const useSubscribedCalendars = (calendars: Calendar[]) => {
         setSubscribedCalendars((subscribedCalendars) => {
             const { ID } = calendar;
             const index = subscribedCalendars?.findIndex((calendar) => calendar.ID === ID);
+
             return updateItem(subscribedCalendars, index, {
                 ...subscribedCalendars[index],
                 ...calendar,
             });
+        });
+    };
+
+    const handleDeleteMember = (memberID: string) => {
+        setSubscribedCalendars((subscribedCalendars) => {
+            const [calendarIndex, memberIndex] = findMemberIndices(memberID, subscribedCalendars);
+            if (calendarIndex === -1 || memberIndex === -1) {
+                return subscribedCalendars;
+            }
+            const oldCalendar = subscribedCalendars[calendarIndex];
+
+            return updateItem(subscribedCalendars, calendarIndex, {
+                ...oldCalendar,
+                Members: removeItem(oldCalendar.Members, memberIndex),
+            });
+        });
+    };
+
+    const handleCreateMember = (member: CalendarMember) => {
+        setSubscribedCalendars((subscribedCalendars) => {
+            const { ID: memberID, CalendarID } = member;
+            const [calendarIndex, memberIndex] = findMemberIndices(memberID, subscribedCalendars, CalendarID);
+            if (calendarIndex === -1 || memberIndex !== -1) {
+                return subscribedCalendars;
+            }
+            const oldCalendar = subscribedCalendars[calendarIndex];
+
+            return updateItem(subscribedCalendars, calendarIndex, {
+                ...oldCalendar,
+                Members: addItem(oldCalendar.Members, member),
+            });
+        });
+    };
+
+    const handleUpdateMember = (member: CalendarMember) => {
+        setSubscribedCalendars((subscribedCalendars) => {
+            const { ID: memberID, CalendarID } = member;
+            const [calendarIndex, memberIndex] = findMemberIndices(memberID, subscribedCalendars, CalendarID);
+            if (calendarIndex === -1 || memberIndex === -1) {
+                return subscribedCalendars;
+            }
+            const oldCalendar = subscribedCalendars[calendarIndex];
+
+            return getVisualCalendars(
+                updateItem(subscribedCalendars, calendarIndex, {
+                    ...oldCalendar,
+                    Members: updateItem(oldCalendar.Members, memberIndex, member),
+                }),
+                addresses
+            );
         });
     };
 
@@ -85,21 +152,43 @@ const useSubscribedCalendars = (calendars: Calendar[]) => {
     };
 
     useEffect(() => {
-        return standardSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
-            Calendars.forEach((calendarChange) => {
-                if (getIsCalendarEventManagerDelete(calendarChange)) {
-                    handleDeleteCalendar(calendarChange.ID);
-                }
+        return standardSubscribe(
+            ({
+                Calendars: CalendarEvents = [],
+                CalendarMembers: CalendarMembersEvents = [],
+            }: {
+                Calendars?: CalendarEventManager[];
+                CalendarMembers?: CalendarMemberEventManager[];
+            }) => {
+                CalendarEvents.forEach((event) => {
+                    if (getIsCalendarEventManagerDelete(event)) {
+                        handleDeleteCalendar(event.ID);
+                    }
 
-                if (getIsCalendarEventManagerCreate(calendarChange)) {
-                    void handleAddCalendar(calendarChange.Calendar);
-                }
+                    if (getIsCalendarEventManagerCreate(event)) {
+                        // TODO: The code below is prone to race conditions. Namely if a new event manager update
+                        //  comes before this promise is resolved.
+                        void handleAddCalendar(event.Calendar);
+                    }
 
-                if (getIsCalendarEventManagerUpdate(calendarChange)) {
-                    void handleUpdateCalendar(calendarChange.Calendar);
-                }
-            });
-        });
+                    if (getIsCalendarEventManagerUpdate(event)) {
+                        // TODO: The code below is prone to race conditions. Namely if a new event manager update
+                        //  comes before this promise is resolved.
+                        void handleUpdateCalendar(event.Calendar);
+                    }
+                });
+
+                CalendarMembersEvents.forEach((event) => {
+                    if (getIsCalendarMemberEventManagerDelete(event)) {
+                        handleDeleteMember(event.ID);
+                    } else if (getIsCalendarMemberEventManagerCreate(event)) {
+                        handleCreateMember(event.Member);
+                    } else if (getIsCalendarMemberEventManagerUpdate(event)) {
+                        handleUpdateMember(event.Member);
+                    }
+                });
+            }
+        );
     }, []);
 
     useEffect(() => {
@@ -138,7 +227,7 @@ const useSubscribedCalendars = (calendars: Calendar[]) => {
             void setSubscribedCalendars(newSubscribedCalendars);
         };
 
-        withLoading(run());
+        void withLoading(run());
     }, []);
 
     return { subscribedCalendars, loading };

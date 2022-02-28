@@ -3,7 +3,7 @@ import { useGetAddressKeys } from '@proton/components';
 import { setupCalendarKey } from './setupCalendarKeys';
 import { Address, Api } from '../../interfaces';
 import { createCalendar, updateCalendarUserSettings } from '../../api/calendars';
-import { Calendar as tsCalendar } from '../../interfaces/calendar';
+import { CalendarWithMembers } from '../../interfaces/calendar';
 import { getTimezone } from '../../date/timezone';
 import { getPrimaryKey } from '../../keys';
 
@@ -30,7 +30,7 @@ const setupCalendarHelper = async ({ addresses, api, getAddressKeys }: Args) => 
         throw new Error(c('Error').t`Primary address key is not decrypted.`);
     }
 
-    const { Calendar } = await api<{ Calendar: tsCalendar }>(
+    const { Calendar } = await api<{ Calendar: CalendarWithMembers }>(
         createCalendar({
             Name: DEFAULT_CALENDAR.name,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],

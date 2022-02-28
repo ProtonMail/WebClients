@@ -1,7 +1,7 @@
-import { Address as AddressInterface } from '../../interfaces';
-import { Member as MemberInterface } from '../../interfaces/calendar';
+import { Address as AddressInterface } from '../interfaces';
+import { CalendarMember as MemberInterface } from '../interfaces/calendar';
 
-const getMemberAndAddress = (
+export const getMemberAndAddress = (
     Addresses: AddressInterface[] = [],
     Members: MemberInterface[] = [],
     Author = ''
@@ -30,10 +30,3 @@ const getMemberAndAddress = (
     }
     return [defaultMember, Address];
 };
-
-export const getMemberAndAddressID = ([{ ID: memberID }, { ID: addressID }]: [MemberInterface, AddressInterface]) => [
-    memberID,
-    addressID,
-];
-
-export default getMemberAndAddress;

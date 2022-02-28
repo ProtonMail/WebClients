@@ -1,5 +1,5 @@
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
+import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
 import { noop } from '@proton/shared/lib/helpers/function';

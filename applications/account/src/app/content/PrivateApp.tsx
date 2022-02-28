@@ -14,8 +14,6 @@ import {
     PaymentMethodsModel,
     ImportersModel,
     ImportReportsModel,
-    CalendarsModel,
-    CalendarUserSettingsModel,
     ContactsModel,
     ContactEmailsModel,
 } from '@proton/shared/lib/models';
@@ -34,8 +32,6 @@ const EVENT_MODELS = [
     PaymentMethodsModel,
     ImportReportsModel,
     ImportersModel,
-    CalendarsModel,
-    CalendarUserSettingsModel,
     ContactsModel,
     ContactEmailsModel,
 ];

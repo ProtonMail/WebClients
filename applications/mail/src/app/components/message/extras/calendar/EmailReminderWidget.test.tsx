@@ -1,3 +1,4 @@
+import { useAddresses } from '@proton/components';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { mocked } from 'jest-mock';
@@ -16,6 +17,7 @@ import {
     server,
     calendarBuilder,
     rest,
+    addressBuilder,
 } from '@proton/testing';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
@@ -29,6 +31,7 @@ jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/components/hooks/useModals');
 jest.mock('@proton/components/hooks/useApi');
 jest.mock('@proton/components/hooks/useGetCalendarEventRaw');
+jest.mock('@proton/components/hooks/useAddresses');
 
 jest.mock('./EventReminderText', () => ({
     __esModule: true,
@@ -43,6 +46,7 @@ jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton
 const mockedUseApi = mocked(useApi);
 const mockedUseNotifications = mocked(useNotifications);
 const mockedUseGetCalendarEventRaw = mocked(useGetCalendarEventRaw);
+const mockedUseAddresses = mocked(useAddresses);
 
 function renderComponent(overrides?: any) {
     window.history.pushState({}, 'Calendar', '/');
@@ -88,6 +92,7 @@ describe('EmailReminderWidget', () => {
                     },
                 })
         );
+        mockedUseAddresses.mockImplementation(() => [[addressBuilder({})], false, null]);
     });
 
     it('does not render anything when necessary headers are not present', () => {

@@ -6,7 +6,7 @@ import {
 } from '@proton/shared/lib/date/timezone';
 import { differenceInHours } from 'date-fns';
 import { max } from '@proton/shared/lib/date-fns-utc';
-import { Calendar as tsCalendar, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { EventModel, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { getTimeInUtc, getDateTimeState } from '../../components/eventModal/eventForm/time';
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
@@ -48,7 +48,7 @@ const modelToEventProperties = (
 };
 
 export const getCreateTemporaryEvent = (
-    Calendar: tsCalendar,
+    Calendar: VisualCalendar,
     model: EventModel,
     tzid: string
 ): CalendarViewEventTemporaryEvent => {

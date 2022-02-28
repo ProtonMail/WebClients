@@ -16,11 +16,11 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 import {
-    Calendar,
     CALENDAR_TYPE,
     CalendarDisplay,
     CalendarKeyFlags,
     CalendarUserSettings,
+    CalendarWithMembers,
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
@@ -95,7 +95,7 @@ const getSetup = async ({
     emailSubject?: string;
     userAddressKey?: GeneratedKey;
     userPrimaryAddressID?: string;
-    userCalendars: Calendar[];
+    userCalendars: CalendarWithMembers[];
     userCalendarSettings?: CalendarUserSettings;
     defaultCalendarID?: string | null;
     eventCalendarID?: string;
@@ -265,10 +265,19 @@ END:VCALENDAR`;
             ID: dummyCalendarID,
             Name: dummyCalendarName,
             Description: '',
-            Display: CalendarDisplay.HIDDEN,
-            Color: LABEL_COLORS[1],
             Flags: CALENDAR_FLAGS.ACTIVE,
             Type: CALENDAR_TYPE.PERSONAL,
+            Members: [
+                {
+                    ID: dummyMemberID,
+                    Email: dummyUserEmailAddress,
+                    Permissions: 127,
+                    AddressID: dummyUserPrimaryAddressID,
+                    Color: LABEL_COLORS[1],
+                    Display: CalendarDisplay.HIDDEN,
+                    CalendarID: dummyCalendarID,
+                },
+            ],
         };
 
         const message = await getSetup({
@@ -385,10 +394,19 @@ END:VCALENDAR`;
             ID: dummyCalendarID,
             Name: dummyCalendarName,
             Description: '',
-            Display: CalendarDisplay.HIDDEN,
-            Color: LABEL_COLORS[1],
             Flags: CALENDAR_FLAGS.ACTIVE,
             Type: CALENDAR_TYPE.PERSONAL,
+            Members: [
+                {
+                    ID: dummyMemberID,
+                    Email: dummyUserEmailAddress,
+                    Permissions: 127,
+                    AddressID: dummyUserPrimaryAddressID,
+                    Color: LABEL_COLORS[1],
+                    Display: CalendarDisplay.HIDDEN,
+                    CalendarID: dummyCalendarID,
+                },
+            ],
         };
 
         const message = await getSetup({
@@ -441,10 +459,19 @@ END:VCALENDAR`;
             ID: dummyCalendarID,
             Name: dummyCalendarName,
             Description: '',
-            Display: CalendarDisplay.HIDDEN,
-            Color: LABEL_COLORS[1],
             Flags: CALENDAR_FLAGS.ACTIVE,
             Type: CALENDAR_TYPE.PERSONAL,
+            Members: [
+                {
+                    ID: dummyMemberID,
+                    Email: dummyUserEmailAddress,
+                    Permissions: 127,
+                    AddressID: dummyUserPrimaryAddressID,
+                    Color: LABEL_COLORS[1],
+                    Display: CalendarDisplay.HIDDEN,
+                    CalendarID: dummyCalendarID,
+                },
+            ],
         };
 
         const message = await getSetup({
@@ -486,10 +513,19 @@ END:VCALENDAR`;
             ID: dummyCalendarID,
             Name: dummyCalendarName,
             Description: '',
-            Display: CalendarDisplay.HIDDEN,
-            Color: LABEL_COLORS[1],
             Flags: CALENDAR_FLAGS.ACTIVE,
             Type: CALENDAR_TYPE.PERSONAL,
+            Members: [
+                {
+                    ID: dummyMemberID,
+                    Email: dummyUserEmailAddress,
+                    Permissions: 127,
+                    AddressID: dummyUserPrimaryAddressID,
+                    Color: LABEL_COLORS[1],
+                    Display: CalendarDisplay.HIDDEN,
+                    CalendarID: dummyCalendarID,
+                },
+            ],
         };
 
         const message = await getSetup({

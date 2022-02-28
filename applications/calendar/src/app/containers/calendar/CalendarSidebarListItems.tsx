@@ -17,7 +17,7 @@ import {
     useModalState,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { getIsCalendarDisabled, getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
@@ -34,7 +34,7 @@ import { Nullable } from '@proton/shared/lib/interfaces';
 import { getMostReadableColor } from '../../helpers/color';
 
 export interface CalendarSidebarListItemsProps {
-    calendars?: Calendar[] | SubscribedCalendar[];
+    calendars?: VisualCalendar[] | SubscribedCalendar[];
     loading?: boolean;
     onChangeVisibility: (id: string, checked: boolean) => void;
     actionsDisabled?: boolean;
@@ -47,8 +47,8 @@ const CalendarSidebarListItems = ({
     actionsDisabled = false,
 }: CalendarSidebarListItemsProps) => {
     const [user] = useUser();
-    const [importModalCalendar, setImportModalCalendar] = useState<Nullable<Calendar>>(null);
-    const [calendarModalCalendar, setCalendarModalCalendar] = useState<Nullable<Calendar>>(null);
+    const [importModalCalendar, setImportModalCalendar] = useState<Nullable<VisualCalendar>>(null);
+    const [calendarModalCalendar, setCalendarModalCalendar] = useState<Nullable<VisualCalendar>>(null);
 
     const [
         {

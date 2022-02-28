@@ -7,7 +7,7 @@ import {
 } from '@proton/shared/lib/calendar/shareUrl/helpers';
 import { updateItem } from '@proton/shared/lib/helpers/array';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { Calendar, CalendarLink, CalendarUrl } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar, CalendarLink, CalendarUrl } from '@proton/shared/lib/interfaces/calendar';
 import {
     CalendarEventManager,
     CalendarUrlEventManager,
@@ -15,15 +15,12 @@ import {
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
 import { splitKeys } from '@proton/shared/lib/keys';
 import { useEffect, useMemo, useState } from 'react';
-import {
-    getIsCalendarEventManagerDelete,
-    getIsCalendarEventManagerUpdate,
-} from '@proton/shared/lib/eventManager/helpers';
+import { getIsCalendarEventManagerDelete } from '@proton/shared/lib/eventManager/helpers';
 import { useEventManager, useGetCalendarInfo, useLoading, useNotifications } from '../../../hooks';
 import { useGetCalendarPublicLinks } from '../../../hooks/useGetCalendarPublicLinks';
 import { useCalendarModelEventManager } from '../../eventManager';
 
-const useCalendarShareUrls = (calendars: Calendar[]) => {
+const useCalendarShareUrls = (calendars: VisualCalendar[]) => {
     const { createNotification } = useNotifications();
     const getCalendarInfo = useGetCalendarInfo();
     const getPublicLinks = useGetCalendarPublicLinks();
@@ -42,17 +39,6 @@ const useCalendarShareUrls = (calendars: Calendar[]) => {
             delete newMap[calendarID];
             return newMap;
         });
-    };
-
-    const handleUpdateCalendar = (calendar: Calendar) => {
-        setLinksMap((linksMap) => ({
-            ...linksMap,
-            [calendar.ID]: linksMap?.[calendar.ID]?.map((calendarLink) => ({
-                ...calendarLink,
-                color: calendar.Color,
-                calendarName: calendar.Name,
-            })),
-        }));
     };
 
     const handleDeleteLink = ({ ID }: CalendarUrlEventManagerDelete) => {
@@ -76,7 +62,6 @@ const useCalendarShareUrls = (calendars: Calendar[]) => {
         const { privateKeys } = splitKeys(calendarKeys);
         const link = await transformLinkFromAPI({
             calendarUrl,
-            calendar,
             privateKeys,
             calendarPassphrase: passphrase,
             onError: handleError,
@@ -107,7 +92,6 @@ const useCalendarShareUrls = (calendars: Calendar[]) => {
                         const { CalendarUrls } = await getPublicLinks(calendarID);
                         map[calendarID] = await transformLinksFromAPI({
                             calendarUrls: CalendarUrls,
-                            calendar,
                             privateKeys,
                             calendarPassphrase: passphrase,
                             onError: handleError,
@@ -119,7 +103,7 @@ const useCalendarShareUrls = (calendars: Calendar[]) => {
             );
             setLinksMap(map);
         };
-        withLoading(getAllLinks());
+        void withLoading(getAllLinks());
     }, []);
 
     // subscribe to general event loop
@@ -129,29 +113,27 @@ const useCalendarShareUrls = (calendars: Calendar[]) => {
                 if (getIsCalendarEventManagerDelete(event)) {
                     handleDeleteCalendar(event.ID);
                 }
-
-                if (getIsCalendarEventManagerUpdate(event)) {
-                    handleUpdateCalendar(event.Calendar);
-                }
             });
         });
     }, []);
 
     // subscribe to calendar event loop
     useEffect(() => {
-        return calendarSubscribe(calendarIDs, ({ CalendarURL = [] }: { CalendarURL?: CalendarUrlEventManager[] }) => {
-            CalendarURL.forEach((CalendarUrlChange) => {
-                if (getIsCalendarUrlEventManagerDelete(CalendarUrlChange)) {
-                    handleDeleteLink(CalendarUrlChange);
-                }
-                if (
-                    getIsCalendarUrlEventManagerCreate(CalendarUrlChange) ||
-                    getIsCalendarUrlEventManagerUpdate(CalendarUrlChange)
-                ) {
-                    handleAddOrUpdateLink(CalendarUrlChange.CalendarUrl);
-                }
-            });
-        });
+        return calendarSubscribe(
+            calendarIDs,
+            ({ CalendarURL: CalendarURLEvents = [] }: { CalendarURL?: CalendarUrlEventManager[] }) => {
+                CalendarURLEvents.forEach((event) => {
+                    if (getIsCalendarUrlEventManagerDelete(event)) {
+                        handleDeleteLink(event);
+                    }
+                    if (getIsCalendarUrlEventManagerCreate(event) || getIsCalendarUrlEventManagerUpdate(event)) {
+                        // TODO: The code below is prone to race conditions. Namely if a new event manager update
+                        //  comes before this promise is resolved.
+                        void handleAddOrUpdateLink(event.CalendarUrl);
+                    }
+                });
+            }
+        );
     }, [calendarIDs]);
 
     return {

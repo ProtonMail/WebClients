@@ -68,6 +68,7 @@ jest.mock('@proton/components/hooks/useGetCalendarBootstrap', () => ({
             Members: [
                 {
                     ID: 'memberId',
+                    AddressID: 'addressId',
                     Permissions: 127,
                     Email: 'test@pm.gg',
                     CalendarID: 'id3',
@@ -128,6 +129,7 @@ jest.mock('@proton/components/hooks/useGetCalendarBootstrap', () => ({
             Members: [
                 {
                     ID: 'memberId',
+                    AddressID: 'addressId',
                     Permissions: 127,
                     Email: 'test@pm.gg',
                     CalendarID: 'id3',
@@ -188,7 +190,7 @@ jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 jest.mock('@proton/components/hooks/useWelcomeFlags', () => () => [{}]);
 jest.mock('@proton/components/hooks/useCachedModelResult', () => () => [{}]);
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
-jest.mock('@proton/components/containers/eventManager/calendar/useCalendarsKeysSettingsListener', () => () => ({}));
+jest.mock('@proton/components/containers/eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/ModelEventManagerProvider', () => ({
     useCalendarModelEventManager: () => () => {
         call: jest.fn();
@@ -213,10 +215,19 @@ jest.mock('@proton/components/hooks/useCalendars', () =>
                 ID: 'id1',
                 Name: 'calendar1',
                 Description: 'description1',
-                Display: 1,
-                Color: '#f00',
                 Flags: 1, // CALENDAR_FLAGS.ACTIVE
                 Type: 0, // CALENDAR_TYPE.PERSONAL
+                Members: [
+                    {
+                        ID: 'memberId1',
+                        AddressID: 'addressId1',
+                        Permissions: 127,
+                        Email: 'test@pm.gg',
+                        CalendarID: 'id1',
+                        Color: '#f00',
+                        Display: 1,
+                    },
+                ],
             },
         ],
     ])
@@ -245,6 +256,17 @@ const mockedCreatableCalendar = {
     Color: '#f00',
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
+    Members: [
+        {
+            ID: 'memberId',
+            Email: 'test@pm.gg',
+            Permissions: 127,
+            AddressID: 'addressId',
+            Color: '#f00',
+            Display: CalendarDisplay.VISIBLE,
+            CalendarID: 'id3',
+        },
+    ],
 };
 
 describe('MainContainer', () => {
@@ -260,10 +282,19 @@ describe('MainContainer', () => {
                 ID: 'id1',
                 Name: 'calendar1',
                 Description: 'description1',
-                Display: CalendarDisplay.HIDDEN,
-                Color: '#f00',
                 Flags: CALENDAR_FLAGS.INACTIVE,
                 Type: CALENDAR_TYPE.PERSONAL,
+                Members: [
+                    {
+                        ID: 'memberId1',
+                        Email: 'test@pm.gg',
+                        Permissions: 127,
+                        AddressID: 'addressId1',
+                        Color: '#f00',
+                        Display: CalendarDisplay.HIDDEN,
+                        CalendarID: 'id1',
+                    },
+                ],
             },
             {
                 ID: 'id2',
@@ -273,6 +304,17 @@ describe('MainContainer', () => {
                 Color: '#f00',
                 Flags: CALENDAR_FLAGS.ACTIVE,
                 Type: CALENDAR_TYPE.SUBSCRIPTION,
+                Members: [
+                    {
+                        ID: 'memberId2',
+                        Email: 'test@pm.gg',
+                        Permissions: 127,
+                        AddressID: 'addressId2',
+                        Color: '#f00',
+                        Display: CalendarDisplay.VISIBLE,
+                        CalendarID: 'id2',
+                    },
+                ],
             },
         ];
         mockedUseCalendars.mockImplementation(() => [mockedNoCreateCalendars, false, undefined]);
@@ -526,9 +568,10 @@ describe('MainContainer', () => {
                             {
                                 CalendarID: 'id3',
                                 Color: '#f00',
-                                Display: 1,
+                                Display: CalendarDisplay.VISIBLE,
                                 Email: 'test@pm.gg',
                                 ID: 'memberId',
+                                AddressID: 'addressId',
                                 Permissions: 127,
                             },
                         ],
@@ -567,6 +610,17 @@ describe('MainContainer', () => {
                             ID: 'id3',
                             Name: 'calendar3',
                             Type: 0,
+                            Members: [
+                                {
+                                    CalendarID: 'id3',
+                                    Color: '#f00',
+                                    Display: 1,
+                                    Email: 'test@pm.gg',
+                                    ID: 'memberId',
+                                    AddressID: 'addressId',
+                                    Permissions: 127,
+                                },
+                            ],
                         },
                     },
                     end: new Date(Date.UTC(2021, 0, 1, 1, 0, 0)),

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
-import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
@@ -11,7 +11,7 @@ import { SettingsSection } from '../../account';
 import CalendarsTable from './CalendarsTable';
 
 export interface CalendarsSectionProps {
-    calendars: (Calendar | SubscribedCalendar)[];
+    calendars: (VisualCalendar | SubscribedCalendar)[];
     defaultCalendarID?: string;
     user: UserModel;
     loading?: boolean;
@@ -22,9 +22,9 @@ export interface CalendarsSectionProps {
     description?: ReactNode;
     onAdd: () => void;
     onSetDefault?: (id: string) => Promise<void>;
-    onEdit: (calendar: Calendar) => void;
+    onEdit: (calendar: VisualCalendar) => void;
     onDelete: (id: string) => void;
-    onExport?: (calendar: Calendar) => void;
+    onExport?: (calendar: VisualCalendar) => void;
     canUpgradeLimit?: boolean;
     calendarLimitReachedText: string;
 }

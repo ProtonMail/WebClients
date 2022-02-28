@@ -15,6 +15,7 @@ import {
     getCalendarWithReactivatedKeys,
     getDoesCalendarNeedUserAction,
     getIsCalendarDisabled,
+    getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
@@ -58,12 +59,13 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 import {
-    Calendar,
+    VisualCalendar,
     CalendarEvent,
     CalendarEventEncryptionData,
     CalendarEventWithMetadata,
     CalendarUserSettings,
     CalendarWidgetData,
+    CalendarWithMembers,
     DecryptedPersonalVeventMapResult,
     Participant,
     PmInviteData,
@@ -105,20 +107,25 @@ const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT, UPDATE_PARTSTAT, CANCEL } = UPDATE_
  */
 export const getOrCreatePersonalCalendarsAndSettings = async ({
     api,
+    callEventManager,
     addresses,
     getAddressKeys,
     getCalendars,
     getCalendarUserSettings,
 }: {
     api: Api;
+    callEventManager: () => Promise<void>;
     addresses: Address[];
     getAddressKeys: GetAddressKeys;
-    getCalendars: () => Promise<Calendar[] | undefined>;
+    getCalendars: () => Promise<CalendarWithMembers[] | undefined>;
     getCalendarUserSettings: () => Promise<CalendarUserSettings>;
 }) => {
     const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
-    let [calendars = [], calendarUserSettings] = await Promise.all([getCalendars(), getCalendarUserSettings()]);
-    calendars = calendars.filter(unary(getIsPersonalCalendar));
+    let [calendarsWithMembers = [], calendarUserSettings] = await Promise.all([
+        getCalendars(),
+        getCalendarUserSettings(),
+    ]);
+    let calendars = getVisualCalendars(calendarsWithMembers, addresses).filter(unary(getIsPersonalCalendar));
     if (!calendars.length) {
         // create a calendar automatically
         try {
@@ -127,8 +134,11 @@ export const getOrCreatePersonalCalendarsAndSettings = async ({
                 addresses,
                 getAddressKeys,
             });
+            // refresh list of calendars without awaiting
+            // (the refresh is just in case another widget gets opened quickly after, so that it knows there's a new calendar)
+            void callEventManager();
             calendarUserSettings = { ...calendarUserSettings, ...updatedCalendarUserSettings };
-            calendars = [calendar];
+            calendars = getVisualCalendars([calendar], addresses);
         } catch {
             // fail silently
             noop();
@@ -230,8 +240,8 @@ type FetchEventInvitation = (args: {
     getCalendarInfo: GetCalendarInfo;
     getCalendarEventRaw: GetCalendarEventRaw;
     getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
-    calendars: Calendar[];
-    defaultCalendar?: Calendar;
+    calendars: VisualCalendar[];
+    defaultCalendar?: VisualCalendar;
     message: MessageStateWithData;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];

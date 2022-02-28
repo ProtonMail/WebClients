@@ -6,7 +6,7 @@ import { render, screen } from '@testing-library/react';
 import createCache from '@proton/shared/lib/helpers/cache';
 
 import { MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
@@ -19,7 +19,7 @@ jest.mock('../../../hooks/useApi', () => ({
 
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
 jest.mock('../hooks/useGetCalendarsEmails', () => jest.fn(() => ({})));
-jest.mock('../../eventManager/calendar/useCalendarsKeysSettingsListener', () => () => ({}));
+jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
 jest.mock('../../eventManager/calendar/ModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({ call: jest.fn() })),
 }));
@@ -30,7 +30,7 @@ jest.mock('@proton/components/hooks/useEarlyAccess', () => () => ({}));
 
 function renderComponent(props?: Partial<PersonalCalendarsSectionProps>) {
     const defaultProps: PersonalCalendarsSectionProps = {
-        activeAddresses: [{}] as Address[],
+        addresses: [{ Status: 1, Receive: 1, Send: 1 }] as Address[],
         calendars: [],
         activeCalendars: [],
         // defaultCalendar?: Calendar;
@@ -56,14 +56,14 @@ describe('PersonalCalendarsSection', () => {
                 ID: `${index}`,
                 Name: `calendar${index}`,
                 color: '#f00',
-            })) as unknown as Calendar[];
+            })) as unknown as VisualCalendar[];
         const calendarsPaid = Array(MAX_CALENDARS_PER_USER)
             .fill(1)
             .map((_, index) => ({
                 ID: `${index}`,
                 Name: `calendar${index}`,
                 color: '#f00',
-            })) as unknown as Calendar[];
+            })) as unknown as VisualCalendar[];
 
         const { rerender } = render(
             renderComponent({

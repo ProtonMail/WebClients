@@ -1,3 +1,4 @@
+import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
 import { useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
@@ -58,6 +59,8 @@ const MainContainer = () => {
             void action();
         }
     }, [featureSw, loadingSw]);
+
+    useCalendarsInfoCoreListener();
 
     return (
         <ReduxProvider store={store}>

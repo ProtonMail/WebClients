@@ -1,3 +1,4 @@
+import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 import React, { ReactNode, useMemo, useState } from 'react';
@@ -22,8 +23,8 @@ import {
     useModalState,
 } from '@proton/components';
 import { c } from 'ttag';
-import { updateCalendar } from '@proton/shared/lib/api/calendars';
-import { Calendar, CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import { updateMember } from '@proton/shared/lib/api/calendars';
+import { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { partition } from '@proton/shared/lib/helpers/array';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
@@ -31,37 +32,39 @@ import SubscribeCalendarModal from '@proton/components/containers/calendar/subsc
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import { getIsCalendarActive } from '@proton/shared/lib/calendar/calendar';
 import getHasUserReachedCalendarLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarLimit';
-import { Nullable } from '@proton/shared/lib/interfaces';
+import { Address, Nullable } from '@proton/shared/lib/interfaces';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 import CalendarSidebarVersion from './CalendarSidebarVersion';
 
 export interface CalendarSidebarProps {
+    addresses: Address[];
+    calendars: VisualCalendar[];
+    calendarUserSettings: CalendarUserSettings;
     expanded?: boolean;
-    onToggleExpand: () => void;
     logo?: ReactNode;
-    calendars: Calendar[];
     miniCalendar: ReactNode;
+    onToggleExpand: () => void;
     onCreateEvent?: () => void;
     onCreateCalendar?: (id: string) => void;
-    calendarUserSettings: CalendarUserSettings;
 }
 
 const CalendarSidebar = ({
+    addresses,
+    calendars,
+    calendarUserSettings,
     logo,
     expanded = false,
     onToggleExpand,
-    calendars = [],
     miniCalendar,
     onCreateEvent,
     onCreateCalendar,
-    calendarUserSettings,
 }: CalendarSidebarProps) => {
     const { call } = useEventManager();
     const api = useApi();
     const [user] = useUser();
-    const [loadingAction, withLoadingAction] = useLoading();
     const { enabled, unavailable } = useCalendarSubscribeFeature();
 
+    const [loadingAction, withLoadingAction] = useLoading();
     const { createNotification } = useNotifications();
 
     const [{ onClose, open, ...modalProps }, setOpen] = useModalState();
@@ -70,11 +73,14 @@ const CalendarSidebar = ({
     const [isLimitReachedModalCopy, setIsLimitReachedModalCopy] = useState<Nullable<string>>(null);
 
     const [personalCalendars, otherCalendars] = useMemo(
-        () => partition<Calendar>(calendars, getIsPersonalCalendar),
+        () => partition<VisualCalendar>(calendars, getIsPersonalCalendar),
         [calendars]
     );
 
-    const { subscribedCalendars, loading: loadingSubscribedCalendars } = useSubscribedCalendars(otherCalendars);
+    const { subscribedCalendars, loading: loadingSubscribedCalendars } = useSubscribedCalendars(
+        otherCalendars,
+        addresses
+    );
 
     const canAddPersonalCalendars = !getHasUserReachedCalendarLimit({
         calendarsLength: personalCalendars.length,
@@ -87,10 +93,12 @@ const CalendarSidebar = ({
         isSubscribedCalendar: true,
     });
 
-    const addCalendarText = c('Dropwdown action icon tooltip').t`Add calendar`;
+    const addCalendarText = c('Dropdown action icon tooltip').t`Add calendar`;
 
     const handleChangeVisibility = async (calendarID: string, checked: boolean) => {
-        await api(updateCalendar(calendarID, { Display: checked ? 1 : 0 }));
+        const members = calendars.find(({ ID }) => ID === calendarID)?.Members || [];
+        const [{ ID: memberID }] = getMemberAndAddress(addresses, members);
+        await api(updateMember(calendarID, memberID, { Display: checked ? 1 : 0 }));
         await call();
     };
 

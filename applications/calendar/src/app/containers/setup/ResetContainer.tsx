@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useModals } from '@proton/components';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import ResetModal from './ResetModal';
 
 import CalendarContainerViewBlurred from '../calendar/CalendarContainerViewBlurred';
 
 interface Props {
-    calendars: Calendar[];
+    calendars: VisualCalendar[];
     onDone: () => void;
 }
 const ResetContainer = ({ calendars, onDone }: Props) => {

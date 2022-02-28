@@ -4,11 +4,11 @@ import { Redirect, Route, Switch } from 'react-router';
 import {
     ReferralModalContainer,
     useActiveBreakpoint,
-    useCalendarsKeysSettingsListener,
+    useCalendarsInfoListener,
     useCalendarUserSettings,
     useUserSettings,
 } from '@proton/components';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
@@ -30,7 +30,7 @@ import EventActionContainer from './EventActionContainer';
 import { EventTargetAction } from './interface';
 
 interface Props {
-    calendars: Calendar[];
+    calendars: VisualCalendar[];
     addresses: Address[];
     user: UserModel;
 }
@@ -49,7 +49,7 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
         };
     }, [calendars]);
 
-    useCalendarsKeysSettingsListener(allCalendarIDs);
+    useCalendarsInfoListener(allCalendarIDs);
 
     const calendarsEventsCacheRef = useRef<CalendarsEventsCache>(getCalendarsEventCache());
     useCalendarsEventsEventListener(calendarsEventsCacheRef, allCalendarIDs);
@@ -76,6 +76,7 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
                 <Route path="/event">
                     <EventActionContainer
                         tzid={tzid}
+                        addresses={addresses}
                         calendars={calendars}
                         eventTargetActionRef={eventTargetActionRef}
                     />

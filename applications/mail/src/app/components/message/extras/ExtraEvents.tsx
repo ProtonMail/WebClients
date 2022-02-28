@@ -11,7 +11,7 @@ import {
 import { ICAL_MIME_TYPE } from '@proton/shared/lib/calendar/constants';
 import { unary } from '@proton/shared/lib/helpers/function';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
 import {
@@ -32,6 +32,7 @@ import {
     useUserSettings,
     useGetCalendarInfo,
     useGetCalendarEventRaw,
+    useEventManager,
 } from '@proton/components';
 import { useDispatch } from 'react-redux';
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
@@ -56,6 +57,7 @@ interface Props {
 }
 const ExtraEvents = ({ message }: Props) => {
     const api = useApi();
+    const { call } = useEventManager();
     const isMounted = useIsMounted();
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
@@ -77,8 +79,8 @@ const ExtraEvents = ({ message }: Props) => {
     const [loadedWidget, setLoadedWidget] = useState('');
     const [invitations, setInvitations] = useState<(EventInvitation | EventInvitationError)[]>([]);
     const [calData, setCalData] = useState<{
-        calendars: Calendar[];
-        defaultCalendar?: Calendar;
+        calendars: VisualCalendar[];
+        defaultCalendar?: VisualCalendar;
         canCreateCalendar: boolean;
         maxUserCalendarsDisabled: boolean;
     }>({ calendars: [], canCreateCalendar: true, maxUserCalendarsDisabled: false });
@@ -112,6 +114,7 @@ const ExtraEvents = ({ message }: Props) => {
                 const getCalData = async () => {
                     const { calendars, calendarUserSettings } = await getOrCreatePersonalCalendarsAndSettings({
                         api,
+                        callEventManager: call,
                         addresses,
                         getAddressKeys,
                         getCalendars,

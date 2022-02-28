@@ -1,7 +1,7 @@
 import { SETTINGS_NOTIFICATION_TYPE } from '../../calendar/constants';
 import { Nullable } from '../utils';
 import { CalendarKey } from './CalendarKey';
-import { Member } from './Member';
+import { CalendarMember } from './CalendarMember';
 import { NotificationModel } from './Notification';
 import { Passphrase } from './Passphrase';
 
@@ -19,10 +19,17 @@ export interface Calendar {
     ID: string;
     Name: string;
     Description: string;
-    Display: CalendarDisplay;
-    Color: string;
     Flags: number;
     Type: CALENDAR_TYPE;
+}
+
+export interface CalendarWithMembers extends Calendar {
+    Members: CalendarMember[];
+}
+
+export interface VisualCalendar extends CalendarWithMembers {
+    Color: string;
+    Display: CalendarDisplay;
 }
 
 export enum SETTINGS_VIEW {
@@ -62,7 +69,7 @@ export interface CalendarSettings {
 export interface CalendarBootstrap {
     Keys: CalendarKey[];
     Passphrase: Passphrase;
-    Members: Member[];
+    Members: CalendarMember[];
     CalendarSettings: CalendarSettings;
 }
 
@@ -80,6 +87,7 @@ export interface CalendarSelectOptions {
 export interface CalendarViewModelFull {
     calendarID: string;
     name: string;
+    members: CalendarMember[];
     display: boolean;
     description: string;
     color: string;

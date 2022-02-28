@@ -1,7 +1,7 @@
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import { canonizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { GetCalendarEventPersonal } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventPersonal';
@@ -56,8 +56,8 @@ interface Props {
     invitationOrError: EventInvitation | EventInvitationError;
     canCreateCalendar: boolean;
     maxUserCalendarsDisabled: boolean;
-    calendars: Calendar[];
-    defaultCalendar?: Calendar;
+    calendars: VisualCalendar[];
+    defaultCalendar?: VisualCalendar;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
     userSettings: UserSettings;

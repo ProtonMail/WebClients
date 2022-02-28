@@ -8,7 +8,7 @@ import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/h
 import urlify from '@proton/shared/lib/calendar/urlify';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { Calendar as tsCalendar, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
+import { EventModelReadView, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { Collapsible, IconRow, Info, useMailSettings } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
@@ -36,7 +36,7 @@ type GroupedAttendees = {
 const { ACCEPTED, DECLINED, TENTATIVE, NEEDS_ACTION } = ICAL_ATTENDEE_STATUS;
 
 interface Props {
-    calendar: tsCalendar;
+    calendar: VisualCalendar;
     model: EventModelReadView;
     formatTime: (date: Date) => string;
     displayNameEmailMap: SimpleMap<DisplayNameEmail>;

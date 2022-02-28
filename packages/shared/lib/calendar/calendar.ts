@@ -1,7 +1,8 @@
 import { hasBit, toggleBit } from '../helpers/bitset';
 import { unary } from '../helpers/function';
+import isTruthy from '../helpers/isTruthy';
 import { CALENDAR_FLAGS, MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER, SETTINGS_VIEW } from './constants';
-import { Calendar, CalendarUserSettings } from '../interfaces/calendar';
+import { Calendar, CalendarUserSettings, CalendarWithMembers, VisualCalendar } from '../interfaces/calendar';
 import { getIsPersonalCalendar } from './subscribe/helpers';
 import { Address, Api } from '../interfaces';
 import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
@@ -33,21 +34,46 @@ export const getIsCalendarProbablyActive = (calendar = { Flags: 0 }) => {
     return calendar.Flags === undefined || (!getIsCalendarDisabled(calendar) && getIsCalendarActive(calendar));
 };
 
-export const getProbablyActiveCalendars = (calendars: Calendar[] = []) => {
+export const getProbablyActiveCalendars = <T extends Calendar>(calendars: T[] = []): T[] => {
     return calendars.filter(unary(getIsCalendarProbablyActive));
 };
 
-export const getPersonalCalendars = (calendars: Calendar[] = []) => {
+export const getPersonalCalendars = <T extends Calendar>(calendars: T[] = []): T[] => {
     return calendars.filter(unary(getIsPersonalCalendar));
 };
 
-export const getDefaultCalendar = (calendars: Calendar[] = [], defaultCalendarID: string | null = '') => {
+export const getDefaultCalendar = <T extends Calendar>(
+    calendars: T[] = [],
+    defaultCalendarID: string | null = ''
+): T | undefined => {
     // only personal calendars can be default
     const personalCalendars = getPersonalCalendars(calendars);
     if (!personalCalendars.length) {
         return;
     }
     return personalCalendars.find(({ ID }) => ID === defaultCalendarID) || personalCalendars[0];
+};
+
+export const getVisualCalendars = <T>(
+    calendars: (CalendarWithMembers & T)[],
+    addresses: Address[]
+): (VisualCalendar & T)[] => {
+    return calendars
+        .map((calendar) => {
+            const member = calendar.Members.find(
+                ({ Email: memberEmail }) => !!addresses.find(({ Email: addressEmail }) => memberEmail === addressEmail)
+            );
+            if (!member) {
+                // such calendar becomes invisible
+                return;
+            }
+            return {
+                ...calendar,
+                Color: member.Color,
+                Display: member.Display,
+            };
+        })
+        .filter(isTruthy);
 };
 
 export const getCanCreateCalendar = (
@@ -71,7 +97,7 @@ export const getMaxUserCalendarsDisabled = (disabledCalendars: Calendar[], isFre
     return disabledCalendars.length === calendarLimit;
 };
 
-export const getCalendarWithReactivatedKeys = async ({
+export const getCalendarWithReactivatedKeys = async <T extends Calendar>({
     calendar,
     api,
     silenceApi = true,
@@ -80,7 +106,7 @@ export const getCalendarWithReactivatedKeys = async ({
     successCallback,
     handleError,
 }: {
-    calendar: Calendar;
+    calendar: T;
     api: Api;
     silenceApi?: boolean;
     addresses: Address[];
