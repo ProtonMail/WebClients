@@ -85,7 +85,7 @@ const MessageBodyIframe = ({
     const iframePrintHeaderDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_HEADER_ID);
     const iframePrintFooterDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_FOOTER_ID);
 
-    useLinkHandler(iframeRootDivRef, mailSettings, {
+    const { modal: linkModal } = useLinkHandler(iframeRootDivRef, mailSettings, {
         onMailTo,
         startListening: initStatus === 'done' && iframeRootDivRef.current !== undefined,
         isOutside,
@@ -155,6 +155,7 @@ const MessageBodyIframe = ({
                 isPrint &&
                 iframePrintFooterDiv &&
                 createPortal(<MessagePrintFooter message={message} />, iframePrintFooterDiv)}
+            {linkModal}
         </>
     );
 };
