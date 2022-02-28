@@ -41,6 +41,7 @@ const getRoosterEditorActions = (
             imageNode.src = url;
             imageNode.classList.add('proton-embedded');
             editorInstance.insertNode(imageNode);
+            editorInstance.triggerContentChangedEvent();
         },
         clearUndoHistory,
         setTextDirection,
