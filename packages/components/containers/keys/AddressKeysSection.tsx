@@ -6,16 +6,18 @@ import {
     setPrimaryAddressKey,
     addAddressKeysProcess,
     setAddressKeyFlags,
+    OnKeyImportCallback,
+    reactivateKeysProcess,
 } from '@proton/shared/lib/keys';
+import { EncryptionConfig } from '@proton/shared/lib/interfaces';
 
 import { algorithmInfo } from 'pmcrypto';
-import { Loader } from '../../components';
+import { Button, Loader, useModalState } from '../../components';
 import {
     useAddresses,
     useAddressesKeys,
     useApi,
     useAuthentication,
-    useCanReactivateKeys,
     useEventManager,
     useModals,
     useUser,
@@ -35,7 +37,9 @@ import ImportKeyModal from './importKeys/ImportKeyModal';
 import { getNewKeyFlags } from './shared/flags';
 import { FlagAction } from './shared/interface';
 import { getKeyByID } from './shared/helper';
-import ReactivateKeysButton from './reactivateKeys/ReactivateKeysButton';
+import { ImportKey } from './importKeys/interface';
+import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
+import { getAllKeysReactivationRequests } from './reactivateKeys/getAllKeysToReactive';
 
 const AddressKeysSection = () => {
     const { createModal } = useModals();
@@ -48,7 +52,6 @@ const AddressKeysSection = () => {
     const [addressesKeys, loadingAddressesKeys] = useAddressesKeys();
     const [loadingKeyID, setLoadingKeyID] = useState<string>('');
     const [addressIndex, setAddressIndex] = useState(() => (Array.isArray(Addresses) ? 0 : -1));
-    const canReactivateKeys = useCanReactivateKeys();
 
     const Address = Addresses ? Addresses[addressIndex] : undefined;
     const { ID: addressID = '', Email: addressEmail = '' } = Address || {};
@@ -61,31 +64,20 @@ const AddressKeysSection = () => {
         loadingKeyID,
     });
 
+    const existingAlgorithms = addressKeysDisplay.reduce<algorithmInfo[]>(
+        (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
+        []
+    );
+
+    const [addKeyProps, setAddKeyModalOpen, renderAddKey] = useModalState();
+    const [importKeyProps, setImportKeyModalOpen, renderImportKey] = useModalState();
+    const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKey] = useModalState();
+
     useEffect(() => {
         if (addressIndex === -1 && Array.isArray(Addresses)) {
             setAddressIndex(0);
         }
     }, [addressIndex, Addresses]);
-
-    if (addressIndex === -1 || loadingAddresses) {
-        return (
-            <SettingsSectionWide>
-                <Loader />
-            </SettingsSectionWide>
-        );
-    }
-
-    if (!Array.isArray(Addresses) || !Addresses.length) {
-        return <SettingsParagraph>{c('Info').t`No addresses exist`}</SettingsParagraph>;
-    }
-
-    if (loadingAddressesKeys && !Array.isArray(addressKeys)) {
-        return (
-            <SettingsSectionWide>
-                <Loader />
-            </SettingsSectionWide>
-        );
-    }
 
     const isLoadingKey = loadingKeyID !== '';
 
@@ -186,30 +178,25 @@ const AddressKeysSection = () => {
         if (!Address) {
             throw new Error('Keys not found');
         }
+        setAddKeyModalOpen(true);
+    };
 
-        const existingAlgorithms = addressKeysDisplay.reduce<algorithmInfo[]>(
-            (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
-            []
-        );
-        createModal(
-            <AddKeyModal
-                type="address"
-                existingAlgorithms={existingAlgorithms}
-                onAdd={async (encryptionConfig) => {
-                    const [newKey] = await addAddressKeysProcess({
-                        api,
-                        userKeys,
-                        encryptionConfig,
-                        addresses: Addresses,
-                        address: Address,
-                        addressKeys,
-                        keyPassword: authentication.getPassword(),
-                    });
-                    await call();
-                    return newKey.fingerprint;
-                }}
-            />
-        );
+    const onAdd = async (encryptionConfig: EncryptionConfig) => {
+        if (!Address || !addressKeys) {
+            throw new Error('Missing address or address keys');
+        }
+        const [newKey] = await addAddressKeysProcess({
+            api,
+            userKeys,
+            encryptionConfig,
+            addresses: Addresses,
+            address: Address,
+            addressKeys: addressKeys,
+            keyPassword: authentication.getPassword(),
+        });
+
+        await call();
+        return newKey.fingerprint;
     };
 
     const handleImportKey = () => {
@@ -219,23 +206,25 @@ const AddressKeysSection = () => {
         if (!Address) {
             throw new Error('Keys not found');
         }
-        createModal(
-            <ImportKeyModal
-                onProcess={async (keyImportRecords, cb) => {
-                    await importKeysProcess({
-                        api,
-                        address: Address,
-                        addressKeys,
-                        addresses: Addresses,
-                        userKeys,
-                        keyImportRecords,
-                        keyPassword: authentication.getPassword(),
-                        onImport: cb,
-                    });
-                    return call();
-                }}
-            />
-        );
+
+        setImportKeyModalOpen(true);
+    };
+
+    const onProcessImport = async (keyImportRecords: ImportKey[], cb: OnKeyImportCallback) => {
+        if (!Address || !addressKeys) {
+            throw new Error('Missing address or address keys');
+        }
+        await importKeysProcess({
+            api,
+            address: Address,
+            addressKeys: addressKeys,
+            addresses: Addresses,
+            userKeys,
+            keyImportRecords,
+            keyPassword: authentication.getPassword(),
+            onImport: cb,
+        });
+        return call();
     };
 
     const handleExportPrivate = (ID: string) => {
@@ -273,41 +262,100 @@ const AddressKeysSection = () => {
     const canAdd = !isSubUser && isPrivate && hasDecryptedUserKeys;
     const canImport = canAdd;
 
-    return (
-        <SettingsSectionWide>
-            <SettingsParagraph>
-                {c('Info').t`Download your PGP keys for use with other PGP-compatible services.`}
-            </SettingsParagraph>
-            {canReactivateKeys && (
-                <div className="mb1">
-                    <ReactivateKeysButton disabled={isLoadingKey} />
-                </div>
-            )}
-            <AddressKeysHeaderActions
-                addresses={Addresses}
-                addressIndex={addressIndex}
-                onAddKey={canAdd ? handleAddKey : undefined}
-                onImportKey={canImport ? handleImportKey : undefined}
-                onChangeAddress={({ target: { value } }: ChangeEvent<HTMLSelectElement>) => {
-                    if (isLoadingKey) {
-                        return;
-                    }
+    const allKeysToReactivate = getAllKeysReactivationRequests(addressesKeys, User, userKeys);
 
-                    setAddressIndex(+value);
-                }}
-            />
-            <KeysTable
-                keys={addressKeysDisplay}
-                onExportPrivateKey={handleExportPrivate}
-                onExportPublicKey={handleExportPublic}
-                onDeleteKey={handleDeleteKey}
-                onSetPrimary={handleSetPrimaryKey}
-                onSetCompromised={handleSetCompromised}
-                onSetNotCompromised={handleSetNotCompromised}
-                onSetObsolete={handleSetObsolete}
-                onSetNotObsolete={handleSetNotObsolete}
-            />
-        </SettingsSectionWide>
+    const children = (() => {
+        if (addressIndex === -1 || loadingAddresses) {
+            return (
+                <SettingsSectionWide>
+                    <Loader />
+                </SettingsSectionWide>
+            );
+        }
+
+        if (!Array.isArray(Addresses) || !Addresses.length) {
+            return (
+                <SettingsSectionWide>
+                    <SettingsParagraph>{c('Info').t`No addresses exist`}</SettingsParagraph>
+                </SettingsSectionWide>
+            );
+        }
+
+        if (loadingAddressesKeys && !Array.isArray(addressKeys)) {
+            return (
+                <SettingsSectionWide>
+                    <Loader />
+                </SettingsSectionWide>
+            );
+        }
+
+        return (
+            <SettingsSectionWide>
+                <SettingsParagraph>
+                    {c('Info').t`Download your PGP keys for use with other PGP-compatible services.`}
+                </SettingsParagraph>
+                {!!allKeysToReactivate.length && (
+                    <div className="mb1">
+                        <Button disabled={isLoadingKey} color="norm" onClick={() => setReactivateKeyModalOpen(true)}>
+                            {c('Action').t`Reactivate keys`}
+                        </Button>
+                    </div>
+                )}
+                <AddressKeysHeaderActions
+                    addresses={Addresses}
+                    addressIndex={addressIndex}
+                    onAddKey={canAdd ? handleAddKey : undefined}
+                    onImportKey={canImport ? handleImportKey : undefined}
+                    onChangeAddress={({ target: { value } }: ChangeEvent<HTMLSelectElement>) => {
+                        if (isLoadingKey) {
+                            return;
+                        }
+
+                        setAddressIndex(+value);
+                    }}
+                />
+                <KeysTable
+                    keys={addressKeysDisplay}
+                    onExportPrivateKey={handleExportPrivate}
+                    onExportPublicKey={handleExportPublic}
+                    onDeleteKey={handleDeleteKey}
+                    onSetPrimary={handleSetPrimaryKey}
+                    onSetCompromised={handleSetCompromised}
+                    onSetNotCompromised={handleSetNotCompromised}
+                    onSetObsolete={handleSetObsolete}
+                    onSetNotObsolete={handleSetNotObsolete}
+                />
+            </SettingsSectionWide>
+        );
+    })();
+
+    return (
+        <>
+            {renderAddKey && (
+                <AddKeyModal type="address" existingAlgorithms={existingAlgorithms} onAdd={onAdd} {...addKeyProps} />
+            )}
+            {renderImportKey && <ImportKeyModal onProcess={onProcessImport} {...importKeyProps} />}
+            {renderReactivateKey && (
+                <ReactivateKeysModal
+                    userKeys={userKeys}
+                    keyReactivationRequests={allKeysToReactivate}
+                    onProcess={async (keyReactivationRecords, onReactivation) => {
+                        await reactivateKeysProcess({
+                            api,
+                            user: User,
+                            userKeys,
+                            addresses: Addresses,
+                            keyReactivationRecords,
+                            keyPassword: authentication.getPassword(),
+                            onReactivation,
+                        });
+                        return call();
+                    }}
+                    {...reactivateKeyProps}
+                />
+            )}
+            {children}
+        </>
     );
 };
 

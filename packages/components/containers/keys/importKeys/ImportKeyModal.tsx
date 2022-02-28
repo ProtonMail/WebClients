@@ -4,7 +4,15 @@ import { OpenPGPKey } from 'pmcrypto';
 import { getRandomString } from '@proton/shared/lib/helpers/string';
 import { OnKeyImportCallback } from '@proton/shared/lib/keys';
 
-import { Alert, FormModal } from '../../../components';
+import {
+    Alert,
+    Button,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '../../../components';
 import { useModals, useNotifications } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 
@@ -32,12 +40,11 @@ enum STEPS {
     FAILURE = 5,
 }
 
-interface Props {
-    onClose?: () => void;
+interface Props extends ModalProps {
     onProcess: (keys: ImportKey[], cb: OnKeyImportCallback) => Promise<void>;
 }
 
-const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
+const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const selectRef = useRef<HTMLInputElement>(null);
@@ -120,11 +127,12 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
         handleUpload(list, []);
     };
 
-    const { children, ...stepProps } = (() => {
+    const { children, submit, onNext, loading } = (() => {
         if (step === STEPS.WARNING) {
             return {
                 submit: c('Action').t`Import`,
-                onSubmit: () => {
+                loading: false,
+                onNext: () => {
                     setStep(STEPS.SELECT_FILES);
                 },
                 children: (
@@ -141,7 +149,8 @@ Please also note that the public key corresponding to this private key will be p
         if (step === STEPS.SELECT_FILES) {
             return {
                 submit: c('Action').t`Select files`,
-                onSubmit: () => selectRef.current?.click(),
+                loading: false,
+                onNext: () => selectRef.current?.click(),
                 children: (
                     <>
                         <Alert className="mb1">{c('Label').t`Please select files to upload`}</Alert>
@@ -160,6 +169,7 @@ Please also note that the public key corresponding to this private key will be p
         if (step === STEPS.PROCESS) {
             return {
                 submit: c('Action').t`Select files`,
+                onNext: undefined,
                 loading: true,
                 children: <ImportKeysList keys={state} />,
             };
@@ -168,6 +178,8 @@ Please also note that the public key corresponding to this private key will be p
         if (step === STEPS.DONE) {
             return {
                 submit: null,
+                onNext: undefined,
+                loading: false,
                 children: <ImportKeysList keys={state} />,
             };
         }
@@ -175,6 +187,8 @@ Please also note that the public key corresponding to this private key will be p
         if (step === STEPS.FAILURE) {
             return {
                 submit: null,
+                onNext: undefined,
+                loading: false,
                 children: <GenericError />,
             };
         }
@@ -183,16 +197,20 @@ Please also note that the public key corresponding to this private key will be p
     })();
 
     return (
-        <FormModal
-            title={c('Title').t`Import key`}
-            close={c('Action').t`Close`}
-            onClose={onClose}
-            onSubmit={onClose}
-            {...stepProps}
-            {...rest}
-        >
-            {children}
-        </FormModal>
+        <ModalTwo size="large" {...rest}>
+            <ModalTwoHeader title={c('Title').t`Import key`} />
+            <ModalTwoContent>{children}</ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={rest.onClose} className={submit === null ? 'mlauto' : undefined}>
+                    {submit === null ? c('Action').t`Close` : c('Action').t`Cancel`}
+                </Button>
+                {submit !== null && (
+                    <Button color="norm" onClick={onNext} loading={loading}>
+                        {submit || c('Action').t`Save`}
+                    </Button>
+                )}
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

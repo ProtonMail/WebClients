@@ -1,8 +1,9 @@
 import { c } from 'ttag';
-import { addUserKeysProcess } from '@proton/shared/lib/keys';
 import { algorithmInfo } from 'pmcrypto';
+import { addUserKeysProcess } from '@proton/shared/lib/keys';
+import { EncryptionConfig } from '@proton/shared/lib/interfaces';
 
-import { Button, Loader } from '../../components';
+import { Button, Loader, useModalState } from '../../components';
 import { useUser, useModals, useUserKeys, useApi, useEventManager, useAuthentication } from '../../hooks';
 
 import { SettingsParagraph, SettingsSectionWide } from '../account';
@@ -23,18 +24,12 @@ const UserKeysSections = () => {
     const [userKeys, loadingUserKeys] = useUserKeys();
     const userKeysDisplay = useDisplayKeys({ keys: userKeys, User });
 
-    if (loadingUserKeys && !Array.isArray(userKeys)) {
-        return (
-            <SettingsSectionWide>
-                <Loader />
-            </SettingsSectionWide>
-        );
-    }
+    const existingAlgorithms = userKeysDisplay.reduce<algorithmInfo[]>(
+        (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
+        []
+    );
 
-    // E.g. vpn user
-    if (!userKeysDisplay.length) {
-        return <SettingsParagraph>{c('Info').t`No contact encryption keys exist`}</SettingsParagraph>;
-    }
+    const [addKeyProps, setAddKeyModalOpen, renderAddKey] = useModalState();
 
     const { Name: userName } = User;
 
@@ -61,45 +56,64 @@ const UserKeysSections = () => {
         if (!userKeys) {
             return;
         }
+        setAddKeyModalOpen(true);
+    };
 
-        const existingAlgorithms = userKeysDisplay.reduce<algorithmInfo[]>(
-            (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
-            []
-        );
-        createModal(
-            <AddKeyModal
-                type="user"
-                existingAlgorithms={existingAlgorithms}
-                onAdd={async (encryptionConfig) => {
-                    const newKey = await addUserKeysProcess({
-                        api,
-                        encryptionConfig,
-                        passphrase: authentication.getPassword(),
-                    });
-                    await call();
-                    return newKey.getFingerprint();
-                }}
-            />
-        );
+    const onAdd = async (encryptionConfig: EncryptionConfig) => {
+        const newKey = await addUserKeysProcess({
+            api,
+            encryptionConfig,
+            passphrase: authentication.getPassword(),
+        });
+        await call();
+        return newKey.getFingerprint();
     };
 
     const canGenerateUserKey = userKeysDisplay.length < 20;
 
+    const children = (() => {
+        if (loadingUserKeys && !Array.isArray(userKeys)) {
+            return (
+                <SettingsSectionWide>
+                    <Loader />
+                </SettingsSectionWide>
+            );
+        }
+
+        // E.g. vpn user
+        if (!userKeysDisplay.length) {
+            return (
+                <SettingsSectionWide>
+                    <SettingsParagraph>{c('Info').t`No contact encryption keys exist`}</SettingsParagraph>
+                </SettingsSectionWide>
+            );
+        }
+
+        return (
+            <SettingsSectionWide>
+                {canGenerateUserKey && (
+                    <div className="mb1">
+                        <Button shape="outline" onClick={handleAddKey}>
+                            {c('Action').t`Generate key`}
+                        </Button>
+                    </div>
+                )}
+                <KeysTable
+                    keys={userKeysDisplay}
+                    onExportPrivateKey={handleExportPrivate}
+                    onExportPublicKey={handleExportPublic}
+                />
+            </SettingsSectionWide>
+        );
+    })();
+
     return (
-        <SettingsSectionWide>
-            {canGenerateUserKey && (
-                <div className="mb1">
-                    <Button shape="outline" onClick={handleAddKey}>
-                        {c('Action').t`Generate key`}
-                    </Button>
-                </div>
+        <>
+            {renderAddKey && (
+                <AddKeyModal type="user" existingAlgorithms={existingAlgorithms} onAdd={onAdd} {...addKeyProps} />
             )}
-            <KeysTable
-                keys={userKeysDisplay}
-                onExportPrivateKey={handleExportPrivate}
-                onExportPublicKey={handleExportPublic}
-            />
-        </SettingsSectionWide>
+            {children}
+        </>
     );
 };
 
