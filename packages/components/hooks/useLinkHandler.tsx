@@ -1,4 +1,4 @@
-import { useEffect, useState, RefObject } from 'react';
+import { useEffect, RefObject, useState, ReactNode } from 'react';
 import { c } from 'ttag';
 import punycode from 'punycode.js';
 
@@ -9,8 +9,9 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 
 import { isExternal, isSubDomain, getHostname } from '../helpers/url';
-import { useModals, useNotifications, useHandler } from './index';
+import { useNotifications, useHandler } from './index';
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
+import { useModalState } from '../components';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
 
@@ -28,7 +29,7 @@ type UseLinkHandler = (
     wrapperRef: RefObject<HTMLDivElement | undefined>,
     mailSettings?: MailSettings,
     options?: UseLinkHandlerOptions
-) => void;
+) => { modal: ReactNode };
 
 const defaultOptions: UseLinkHandlerOptions = {
     startListening: true,
@@ -38,10 +39,10 @@ export const useLinkHandler: UseLinkHandler = (
     mailSettings,
     { onMailTo, startListening, isOutside } = defaultOptions
 ) => {
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
+    const [link, setLink] = useState<string>();
 
-    const [confirmationModalID, setConfirmationModalID] = useState<string>();
+    const [linkConfirmationModalProps, setLinkConfirmationModalOpen] = useModalState();
 
     const getSrc = (target: Element): LinkSource => {
         const extract = () => {
@@ -140,9 +141,9 @@ export const useLinkHandler: UseLinkHandler = (
 
         /*
          * If the modal is already active --- do nothing
-         * ex: click on a link, open the modal, inside the contnue button is an anchor with the same link.
+         * ex: click on a link, open the modal, inside the continue button is an anchor with the same link.
          */
-        if (confirmationModalID !== undefined) {
+        if (linkConfirmationModalProps.open) {
             return;
         }
 
@@ -173,16 +174,9 @@ export const useLinkHandler: UseLinkHandler = (
             event.stopPropagation(); // Required for Safari
 
             const link = await encoder(src);
+            setLink(link);
 
-            const modalId = createModal(
-                <LinkConfirmationModal
-                    link={link}
-                    onClose={() => setConfirmationModalID(undefined)}
-                    isOutside={isOutside}
-                />
-            );
-
-            setConfirmationModalID(modalId);
+            setLinkConfirmationModalOpen(true);
         }
     });
 
@@ -198,4 +192,8 @@ export const useLinkHandler: UseLinkHandler = (
             wrapperRef.current?.removeEventListener('click', handleClick, false);
         };
     }, [startListening]);
+
+    const modal = <LinkConfirmationModal link={link} isOutside={isOutside} {...linkConfirmationModalProps} />;
+
+    return { modal };
 };

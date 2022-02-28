@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { RefObject, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
@@ -40,8 +40,9 @@ interface Props {
     model: EventModelReadView;
     formatTime: (date: Date) => string;
     displayNameEmailMap: SimpleMap<DisplayNameEmail>;
+    popoverEventContentRef: RefObject<HTMLDivElement>;
 }
-const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap }: Props) => {
+const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap, popoverEventContentRef }: Props) => {
     const [mailSettings] = useMailSettings();
     const { Name: calendarName, Color } = calendar;
 
@@ -89,11 +90,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
         );
     }, [calendarName, isCalendarDisabled]);
 
-    const locationWrapRef = useRef<HTMLDivElement>(null);
-    const descriptionWrapRef = useRef<HTMLDivElement>(null);
-
-    useLinkHandler(locationWrapRef, mailSettings);
-    useLinkHandler(descriptionWrapRef, mailSettings);
+    const { modal: linkModal } = useLinkHandler(popoverEventContentRef, mailSettings);
 
     const canonizedOrganizerEmail = canonizeEmailByGuess(organizer?.email || '');
 
@@ -195,14 +192,12 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
     const eventDetailsContent = (
         <>
             {sanitizedLocation ? (
-                <div ref={locationWrapRef}>
-                    <IconRow labelClassName={labelClassName} title={c('Label').t`Location`} icon="map-marker">
-                        <span
-                            className="text-hyphens scroll-if-needed"
-                            dangerouslySetInnerHTML={{ __html: sanitizedLocation }}
-                        />
-                    </IconRow>
-                </div>
+                <IconRow labelClassName={labelClassName} title={c('Label').t`Location`} icon="map-marker">
+                    <span
+                        className="text-hyphens scroll-if-needed"
+                        dangerouslySetInnerHTML={{ __html: sanitizedLocation }}
+                    />
+                </IconRow>
             ) : null}
             {!!numberOfParticipants && (
                 <IconRow labelClassName={labelClassName} icon="user" title={c('Label').t`Participants`}>
@@ -268,6 +263,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
                     />
                 </IconRow>
             ) : null}
+            {linkModal}
         </>
     );
 
