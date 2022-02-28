@@ -26,7 +26,12 @@ const StopSharingButton = ({ shareId, selectedItems }: Props) => {
                 stopSharingLinks(
                     new AbortController().signal,
                     shareId,
-                    selectedItems.map((item) => ({ linkId: item.LinkID, name: item.Name, type: item.Type }))
+                    selectedItems.map((item) => ({
+                        parentLinkId: item.ParentLinkID,
+                        linkId: item.LinkID,
+                        name: item.Name,
+                        type: item.Type,
+                    }))
                 )
             }
             data-testid="toolbar-button-stop-sharing"

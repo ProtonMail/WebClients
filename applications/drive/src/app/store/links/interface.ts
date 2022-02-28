@@ -14,6 +14,7 @@ interface Link {
     name: string;
     mimeType: string;
     size: number;
+    createTime: number;
     // metaDataModifyTime represents time when the meta data of the link were
     // modified on the server, such as renaming the link, moving to different
     // folder and so on. Note that renaming is not cousing the change of modify

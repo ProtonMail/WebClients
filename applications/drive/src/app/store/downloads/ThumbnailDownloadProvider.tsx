@@ -1,8 +1,8 @@
-import { createContext, useContext, useEffect, useRef } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 
 import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
 
-import useAsyncQueue from '../../hooks/util/useAsyncQueue';
+import { createAsyncQueue } from '../../utils/parallelRunners';
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useLink } from '../links';
 import { logError } from '../utils';
@@ -42,7 +42,7 @@ export const ThumbnailsDownloadProvider = ({ children }: any) => {
     const { downloadThumbnail } = useDownload();
     const navigation = useNavigate();
 
-    const asyncQueue = useAsyncQueue(MAX_THREADS_PER_DOWNLOAD);
+    const asyncQueue = useMemo(() => createAsyncQueue(MAX_THREADS_PER_DOWNLOAD), []);
     const queueLinkCache = useRef<Set<string>>(new Set());
     const controls = useRef<Record<string, AbortController>>({});
 

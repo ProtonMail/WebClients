@@ -36,6 +36,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL): EncryptedLi
                       : undefined,
               }
             : undefined,
+        createTime: link.CreateTime,
         metaDataModifyTime: link.ModifyTime,
         trashed: link.Trashed,
         hasThumbnail: link.FileProperties?.ActiveRevision?.Thumbnail === 1,
@@ -86,8 +87,9 @@ export function shareMetaToShareWithKey(share: ShareMeta): ShareWithKey {
     };
 }
 
-export function driveEventsResultToDriveEvents({ Events, Refresh }: DriveEventsResult): DriveEvents {
+export function driveEventsResultToDriveEvents({ EventID, Events, Refresh }: DriveEventsResult): DriveEvents {
     return {
+        eventId: EventID,
         events: Events.map((event) => ({
             eventType: event.EventType,
             encryptedLink: linkMetaToEncryptedLink(event.Link),

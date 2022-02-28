@@ -15,9 +15,9 @@ import {
     ShareLinkButton,
 } from '../ContextMenu';
 import { MoveToFolderButton, MoveToTrashButton } from './ContextMenuButtons';
-import useActiveShare from '../../../hooks/drive/useActiveShare';
 
 const DriveItemContextMenu = ({
+    children,
     item,
     selectedItems,
     shareId,
@@ -27,8 +27,6 @@ const DriveItemContextMenu = ({
     open,
     close,
 }: ItemContextMenuProps) => {
-    const { activeFolder: sourceFolder } = useActiveShare();
-
     const isOnlyOneItem = selectedItems.length === 1;
     const isOnlyOneFileItem = isOnlyOneItem && item.Type === LinkType.FILE;
     const hasPreviewAvailable = isOnlyOneFileItem && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
@@ -49,11 +47,12 @@ const DriveItemContextMenu = ({
             {hasLink && <CopyLinkButton shareId={shareId} linkId={item.LinkID} close={close} />}
             {isOnlyOneItem && <ShareLinkButton shareId={shareId} item={item} close={close} />}
             <ContextSeparator />
-            {sourceFolder && <MoveToFolderButton sourceFolder={sourceFolder} items={selectedItems} close={close} />}
+            <MoveToFolderButton shareId={shareId} items={selectedItems} close={close} />
             {isOnlyOneItem && <RenameButton shareId={shareId} item={item} close={close} />}
             <DetailsButton shareId={shareId} items={selectedItems} close={close} />
             <ContextSeparator />
-            {sourceFolder && <MoveToTrashButton sourceFolder={sourceFolder} items={selectedItems} close={close} />}
+            <MoveToTrashButton shareId={shareId} items={selectedItems} close={close} />
+            {children}
         </ContextMenu>
     );
 };

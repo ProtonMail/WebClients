@@ -13,7 +13,7 @@ import {
 import { noop } from '@proton/shared/lib/helpers/function';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
-import { DriveProvider, useDriveEventManager, useDefaultShare } from '../store';
+import { DriveProvider, useDriveEventManager, useDefaultShare, useSearchControl } from '../store';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import TransferManager from '../components/TransferManager/TransferManager';
 import ConflictModal from '../components/uploads/ConflictModal';
@@ -23,6 +23,7 @@ import NoAccessContainer from './NoAccessContainer';
 import OnboardingContainer from './OnboardingContainer';
 import SharedURLsContainer from './SharedLinksContainer';
 import TrashContainer from './TrashContainer';
+import { SearchContainer } from './SearchContainer';
 
 enum ERROR_TYPES {
     STANDARD,
@@ -44,6 +45,7 @@ const InitContainer = () => {
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const earlyAccess = useEarlyAccess();
     const driveEventManager = useDriveEventManager();
+    const { searchEnabled } = useSearchControl();
 
     useEffect(() => {
         const initPromise = getDefaultShare()
@@ -121,6 +123,7 @@ const InitContainer = () => {
                 <Switch>
                     <Route path="/trash" component={TrashContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
+                    {searchEnabled && <Route path="/search" component={SearchContainer} />}
                     <Route path="/:shareId?/:type/:linkId?" component={FolderContainer} />
                     <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
                 </Switch>

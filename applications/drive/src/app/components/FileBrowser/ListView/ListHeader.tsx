@@ -76,7 +76,7 @@ const ListHeader = <T extends SortField>({
                 >
                     {c('TableHeader').t`Name`}
                 </TableHeaderCell>
-                {columns.includes('location') && (
+                {(columns.includes('location') || columns.includes('original_location')) && (
                     <TableHeaderCell className={isDesktop ? 'w20' : 'w25'}>{c('TableHeader')
                         .t`Location`}</TableHeaderCell>
                 )}

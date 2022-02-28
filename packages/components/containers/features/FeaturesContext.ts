@@ -62,6 +62,7 @@ export enum FeatureCode {
     SeenReferralModal = 'SeenReferralModal',
     SpotlightEmailNotifications = 'SpotlightEmailNotifications',
     PaymentsDisabled = 'PaymentsDisabled',
+    DriveSearchEnabled = 'DriveSearchEnabled',
 }
 
 export interface FeaturesContextValue {

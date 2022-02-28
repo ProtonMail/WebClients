@@ -128,3 +128,34 @@ export type SortParams<T extends AllSortKeys = AllSortKeys> = {
     sortField: T;
     sortOrder: SORT_DIRECTION;
 };
+
+export interface ShareMapLink {
+    CreateTime: number;
+    Hash: string;
+    Index: number;
+    LinkID: string;
+    MIMEType: string;
+    ModifyTime: number;
+    Name: string;
+    ParentLinkID: string | null;
+    Size: number;
+    State: number;
+    Type: LinkType;
+    // These will be missing for Link.Type !== LinkType.FOLDER
+    NodeKey?: string;
+    NodePassphrase?: string;
+    NodePassphraseSignature?: string;
+    NodePassphraseSignatureEmail?: string;
+}
+
+export interface ShareMapPayload {
+    Links: ShareMapLink[];
+    SessionName: string;
+    More: 0 | 1;
+    Total: number;
+}
+
+export interface LinkMetaBatchPayload {
+    Links: LinkMeta[];
+    Parents: LinkMeta[];
+}
