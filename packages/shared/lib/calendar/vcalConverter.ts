@@ -205,10 +205,11 @@ export const getHasModifiedDtstamp = (newVevent: VcalVeventComponent, oldVevent:
     return +propertyToUTCDate(newDtstamp) !== +propertyToUTCDate(oldDtstamp);
 };
 
+export const getHasStartChanged = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) =>
+    +propertyToUTCDate(oldVevent.dtstart) !== +propertyToUTCDate(newVevent.dtstart);
+
 export const getHasModifiedDateTimes = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
-    const { dtstart: newDtstart } = newVevent;
-    const { dtstart: oldDtstart } = oldVevent;
-    const isStartPreserved = +propertyToUTCDate(newDtstart) === +propertyToUTCDate(oldDtstart);
+    const isStartPreserved = !getHasStartChanged(newVevent, oldVevent);
     const isEndPreserved =
         +propertyToUTCDate(getDtendProperty(newVevent)) === +propertyToUTCDate(getDtendProperty(oldVevent));
     return !isStartPreserved || !isEndPreserved;

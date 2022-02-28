@@ -16,7 +16,7 @@ import { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calenda
 import modelToFrequencyProperties from './modelToFrequencyProperties';
 import { modelToValarmComponent } from './modelToValarm';
 
-const modelToDateProperty = ({ date, time, tzid }: DateTimeModel, isAllDay: boolean) => {
+export const modelToDateProperty = ({ date, time, tzid }: DateTimeModel, isAllDay: boolean) => {
     const dateObject = {
         year: date.getFullYear(),
         month: date.getMonth() + 1,
