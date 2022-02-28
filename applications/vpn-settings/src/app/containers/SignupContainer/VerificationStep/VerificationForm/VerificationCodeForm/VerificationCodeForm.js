@@ -12,7 +12,6 @@ import {
     useModals,
 } from '@proton/components';
 import { c } from 'ttag';
-import { onlyStrong } from '../onlyStrong';
 import ResendCodeModal from './ResendCodeModal';
 
 const VerificationCodeForm = ({ notices, checkSpamFolder, onSubmit, onResend, onBack, destination }) => {
@@ -44,10 +43,10 @@ const VerificationCodeForm = ({ notices, checkSpamFolder, onSubmit, onResend, on
                 {checkSpamFolder || destination.Address ? (
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: onlyStrong(
+                            __html:
                                 // translator: spamFolder is just "spam folder" in bold
-                                c('Info').t`If you don't find the email in your inbox, please check your ${spamFolder}.`
-                            ),
+                                c('Info')
+                                    .t`If you don't find the email in your inbox, please check your ${spamFolder}.`,
                         }}
                     />
                 ) : null}
