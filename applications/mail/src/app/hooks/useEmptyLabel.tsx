@@ -35,6 +35,7 @@ export const useEmptyLabel = () => {
     }, [labelID]);
 
     const handleSubmit = async () => {
+        deleteModalProps.onClose();
         let rollback = () => {};
 
         try {
@@ -49,7 +50,6 @@ export const useEmptyLabel = () => {
         }
         await call();
         createNotification({ text: isLabel ? c('Success').t`Label cleared` : c('Success').t`Folder cleared` });
-        deleteModalProps.onClose();
     };
 
     const modal = (
@@ -66,11 +66,13 @@ export const useEmptyLabel = () => {
             {isLabel ? (
                 <>
                     {c('Info').t`All messages stored with this label will be permanently deleted.`}
+                    <br />
                     {c('Info').t`Are you sure you want to delete all messages with this label?`}
                 </>
             ) : (
                 <>
                     {c('Info').t`All messages stored in this folder will be permanently deleted.`}
+                    <br />
                     {c('Info').t`Are you sure you want to delete all messages in this folder?`}
                 </>
             )}

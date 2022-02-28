@@ -163,6 +163,11 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
         </div>
     );
 
+    const handleEnableES = async () => {
+        enableESModalProps.onClose();
+        await resumeIndexing();
+    };
+
     return (
         <div className="pt1-5">
             <div className="flex flex-column">
@@ -172,7 +177,7 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
                     <AlertModal
                         title={c('Title').t`Enable message content search`}
                         buttons={[
-                            <Button color="norm" onClick={() => resumeIndexing()}>{c('Action').t`Enable`}</Button>,
+                            <Button color="norm" onClick={handleEnableES}>{c('Action').t`Enable`}</Button>,
                             <Button onClick={enableESModalProps.onClose}>{c('Action').t`Cancel`}</Button>,
                         ]}
                         {...enableESModalProps}

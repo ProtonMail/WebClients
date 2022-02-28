@@ -52,7 +52,7 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, ...rest }: Props)
             <ModalTwoHeader title={c('Title').t`Link confirmation`} />
             <ModalTwoContent>
                 {`${c('Info').t`You are about to open another browser tab and visit:`} `}
-                <span className="text-bold">{linkToShow}</span>
+                <span className="text-bold text-break">{linkToShow}</span>
 
                 {punyCodeLink && (
                     <>
