@@ -1,7 +1,6 @@
 import { useModals } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { DriveFolder } from '../hooks/drive/useActiveShare';
 import useNavigate from '../hooks/drive/useNavigate';
 import CreateFolderModal from './CreateFolderModal';
 import DetailsModal from './DetailsModal';
@@ -32,12 +31,12 @@ export default function useOpenModal() {
         createModal(<FilesDetailsModal selectedItems={selectedItems} />);
     };
 
-    const openMoveToFolder = (sourceFolder: DriveFolder, itemsToMove: FileBrowserItem[]) => {
-        if (!sourceFolder || !itemsToMove.length) {
+    const openMoveToFolder = (shareId: string, itemsToMove: FileBrowserItem[]) => {
+        if (!shareId || !itemsToMove.length) {
             return;
         }
 
-        createModal(<MoveToFolderModal activeFolder={sourceFolder} selectedItems={itemsToMove} />);
+        createModal(<MoveToFolderModal shareId={shareId} selectedItems={itemsToMove} />);
     };
 
     const openRename = (shareId: string, item: FileBrowserItem) => {

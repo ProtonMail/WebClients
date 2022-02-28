@@ -42,6 +42,16 @@ function useNavigate() {
         pushToHistory(`/trash`);
     }, [history]);
 
+    const navigateToSearch = useCallback(
+        (searchTerm) => {
+            history.push({
+                pathname: '/search',
+                hash: `q=${searchTerm}`,
+            });
+        },
+        [history]
+    );
+
     const addListener = (listener: () => void) => {
         const listenerId = generateUID('drive-navigation-event');
         listeners.push({ id: listenerId, run: listener });
@@ -58,6 +68,7 @@ function useNavigate() {
         navigateToRoot,
         navigateToSharedURLs,
         navigateToTrash,
+        navigateToSearch,
         addListener,
         removeListener,
     };

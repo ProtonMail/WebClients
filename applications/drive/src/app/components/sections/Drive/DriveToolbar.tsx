@@ -2,7 +2,6 @@ import { getDevice } from '@proton/shared/lib/helpers/browser';
 import { ToolbarSeparator, Toolbar, useActiveBreakpoint } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import {
     DetailsButton,
     DownloadButton,
@@ -21,20 +20,21 @@ import {
     UploadFileButton,
     UploadFolderButton,
 } from './ToolbarButtons';
-
 interface Props {
-    activeFolder: DriveFolder;
+    shareId: string;
     selectedItems: FileBrowserItem[];
+    showOptionsForNoSelection?: boolean;
 }
 
-const DriveToolbar = ({ activeFolder, selectedItems }: Props) => {
+const DriveToolbar = ({ shareId, selectedItems, showOptionsForNoSelection = true }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { isNarrow } = useActiveBreakpoint();
 
-    const { shareId } = activeFolder;
-
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
+            if (!showOptionsForNoSelection) {
+                return null;
+            }
             return (
                 <>
                     <CreateNewFolderButton />
@@ -63,11 +63,11 @@ const DriveToolbar = ({ activeFolder, selectedItems }: Props) => {
                         <ShareButton shareId={shareId} selectedItems={selectedItems} />
                         <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
                         <ToolbarSeparator />
-                        <MoveToFolderButton sourceFolder={activeFolder} selectedItems={selectedItems} />
+                        <MoveToFolderButton shareId={shareId} selectedItems={selectedItems} />
                         <RenameButton shareId={shareId} selectedItems={selectedItems} />
                         <DetailsButton shareId={shareId} selectedItems={selectedItems} />
                         <ToolbarSeparator />
-                        <MoveToTrashButton sourceFolder={activeFolder} selectedItems={selectedItems} />
+                        <MoveToTrashButton shareId={shareId} selectedItems={selectedItems} />
                     </>
                 )}
             </>

@@ -1,27 +1,33 @@
-import { APPS } from '@proton/shared/lib/constants';
 import * as React from 'react';
+import { c } from 'ttag';
+
 import {
     PrivateHeader,
     useActiveBreakpoint,
     TopNavbarListItemContactsDropdown,
     TopNavbarListItemSettingsDropdown,
 } from '@proton/components';
-import { c } from 'ttag';
+import { APPS } from '@proton/shared/lib/constants';
+
+import { SearchField } from './search/SearchField';
+import ClearSearchDataButton from './search/ClearSearchDataButton';
 
 interface Props {
     isHeaderExpanded: boolean;
     toggleHeaderExpanded: () => void;
     floatingPrimary: React.ReactNode;
     logo: React.ReactNode;
+    searchBox?: React.ReactNode;
     title?: string;
 }
 
-const DriveHeader = ({
+export const DriveHeader = ({
     logo,
     isHeaderExpanded,
     toggleHeaderExpanded,
     floatingPrimary,
     title = c('Title').t`Drive`,
+    searchBox,
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
@@ -30,13 +36,20 @@ const DriveHeader = ({
             logo={logo}
             title={title}
             contactsButton={<TopNavbarListItemContactsDropdown />}
-            settingsButton={<TopNavbarListItemSettingsDropdown to="/drive" toApp={APPS.PROTONACCOUNT} />}
+            settingsButton={
+                <TopNavbarListItemSettingsDropdown to="/drive" toApp={APPS.PROTONACCOUNT}>
+                    <ClearSearchDataButton />
+                </TopNavbarListItemSettingsDropdown>
+            }
             expanded={isHeaderExpanded}
             onToggleExpand={toggleHeaderExpanded}
             isNarrow={isNarrow}
             floatingButton={floatingPrimary}
+            searchBox={searchBox}
         />
     );
 };
 
-export default DriveHeader;
+export const DriveHeaderPrivate = (props: Props) => {
+    return <DriveHeader {...props} searchBox={<SearchField />} />;
+};
