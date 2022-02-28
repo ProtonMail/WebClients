@@ -37,7 +37,7 @@ const EditorLinkModal = ({
     const [type, setType] = useState(linkToType(linkUrl) || LINK_TYPES.WEB);
     const modalContentRef = useRef<HTMLDivElement>(null);
 
-    useLinkHandler(modalContentRef, mailSettings, { onMailTo });
+    const { modal: linkModal } = useLinkHandler(modalContentRef, mailSettings, { onMailTo });
 
     const typesOptions = [
         { value: LINK_TYPES.WEB, text: c('Info').t`Web URL` },
@@ -147,6 +147,7 @@ const EditorLinkModal = ({
                     )}
                 </Field>
             </Row>
+            {linkModal}
         </FormModal>
     );
 };

@@ -1,14 +1,15 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import urlify from '@proton/shared/lib/calendar/urlify';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import { IconRow } from '@proton/components';
+import { IconRow, useMailSettings } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 
 import { c } from 'ttag';
 import { getParticipantsList, InvitationModel } from '../../../../helpers/calendar/invite';
@@ -21,6 +22,9 @@ interface Props {
     weekStartsOn: WeekStartsOn;
 }
 const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
+    const [mailSettings] = useMailSettings();
+    const eventDetailsRef = useRef<HTMLDivElement>(null);
+
     const {
         isImport,
         hasMultipleVevents,
@@ -32,6 +36,8 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     const displayApiDetails = [REFRESH, REPLY].includes(method);
     const { vevent, organizer, participants } = invitationApi && displayApiDetails ? invitationApi : invitationIcs;
     const { rrule, dtstart } = vevent;
+
+    const { modal: linkModal } = useLinkHandler(eventDetailsRef, mailSettings);
 
     const trimmedLocation = vevent.location?.value?.trim();
     const sanitizedAndUrlifiedLocation = useMemo(
@@ -52,7 +58,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     }
 
     return (
-        <div className="p1-5">
+        <div className="p1-5" ref={eventDetailsRef}>
             {!!frequencyString && (
                 <IconRow title={c('Label').t`Frequency`} icon="arrows-rotate" labelClassName="inline-flex pt0-25">
                     {frequencyString}
@@ -77,6 +83,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                     <ExtraEventParticipants list={participantsList} />
                 </IconRow>
             )}
+            {linkModal}
         </div>
     );
 };
