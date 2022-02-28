@@ -2,14 +2,14 @@ import { c } from 'ttag';
 import { classnames } from '../../helpers/component';
 import { Button, Card, Href, Icon } from '../../components';
 import { SettingsSectionTitle } from '../account';
-import ReactivateKeysButton from '../keys/reactivateKeys/ReactivateKeysButton';
 
 interface Props {
     onDismiss: () => void;
+    onReactivate: () => void;
     className?: string;
 }
 
-const RecoverDataCard = ({ onDismiss, className }: Props) => {
+const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
     return (
         <Card rounded background={false} className={classnames(['max-w52e p2', className])}>
             <SettingsSectionTitle className="h3 flex flex-align-items-center flex-nowrap">
@@ -33,8 +33,7 @@ const RecoverDataCard = ({ onDismiss, className }: Props) => {
                 </Href>
             </p>
 
-            <ReactivateKeysButton className="mr1">{c('Action').t`Unlock data`}</ReactivateKeysButton>
-
+            <Button color="norm" onClick={onReactivate} className="mr1">{c('Action').t`Unlock data`}</Button>
             <Button onClick={onDismiss}>{c('Action').t`Don't show again`}</Button>
         </Card>
     );
