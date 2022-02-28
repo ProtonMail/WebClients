@@ -80,7 +80,10 @@ const ReferralModal = ({ endDate, ...rest }: Props) => {
                         rest.onClose?.();
                         handlePlan(PLANS.PLUS, 'checkout');
                     }}
-                >{c('Info').t`Continue with plus`}</Button>
+                >{
+                    // translator: full sentence could be "Continue with Plus"
+                    c('Info').t`Continue with ${planName}`
+                }</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
