@@ -1,8 +1,9 @@
-# [4.0.0-beta.25] - 2022-02-23
+# [4.0.0-beta.25] - 2022-03-09
 
 ## Added
 
 -   Ability to sort files within trash section
+-   Pausing uploads upon network issue
 
 ## Improved
 
@@ -13,6 +14,7 @@
 -   Canceling all uploads caused error message to appear at times
 -   Ability to upload files/folders from within the context menu
 -   Added missing translations
+-   Uploading huge files
 
 # [4.0.0-beta.24] - 2022-01-25
 
