@@ -3,7 +3,7 @@ import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import { init as initPmcrypto } from 'pmcrypto/lib/pmcrypto';
 
 import { mergeUint8Arrays } from '@proton/shared/lib/helpers/array';
-import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
+import { sign as signMessage, generateNodeKeys, generateContentKeys } from '@proton/shared/lib/keys/driveKeys';
 
 import { ecryptFileExtendedAttributes } from '../../links';
 import { EncryptedBlock, EncryptedThumbnailBlock, Link } from '../interface';
@@ -18,10 +18,43 @@ import startUploadJobs from './upload';
 initPmcrypto(openpgp);
 
 // eslint-disable-next-line no-restricted-globals
-const uploadWorker = new UploadWorker(self as any, { start, createdBlocks, pause, resume });
+const uploadWorker = new UploadWorker(self as any, { generateKeys, start, createdBlocks, pause, resume });
 
 const pauser = new Pauser();
 const buffer = new UploadWorkerBuffer();
+
+async function generateKeys(addressPrivateKey: OpenPGPKey, parentPrivateKey: OpenPGPKey) {
+    try {
+        const {
+            NodeKey: nodeKey,
+            privateKey,
+            NodePassphrase: nodePassphrase,
+            NodePassphraseSignature: nodePassphraseSignature,
+        } = await generateNodeKeys(parentPrivateKey, addressPrivateKey);
+        const {
+            sessionKey,
+            ContentKeyPacket: contentKeyPacket,
+            ContentKeyPacketSignature: contentKeyPacketSignature,
+        } = await generateContentKeys(privateKey, addressPrivateKey);
+
+        if (!contentKeyPacket) {
+            uploadWorker.postError('Could not generate file keys');
+            return;
+        }
+
+        uploadWorker.postKeysGenerated({
+            nodeKey,
+            nodePassphrase,
+            nodePassphraseSignature,
+            contentKeyPacket,
+            contentKeyPacketSignature,
+            sessionKey,
+            privateKey,
+        });
+    } catch (err: any) {
+        uploadWorker.postError(getErrorString(err));
+    }
+}
 
 /**
  * start is the main functionality of the worker. When keys are generated

@@ -1,12 +1,7 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import { c } from 'ttag';
 
-import {
-    generateNodeKeys,
-    generateContentKeys,
-    generateLookupHash,
-    encryptName,
-} from '@proton/shared/lib/keys/driveKeys';
+import { generateLookupHash, encryptName } from '@proton/shared/lib/keys/driveKeys';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import {
     queryCreateFile,
@@ -32,6 +27,7 @@ import { DecryptedLink, LinkType, useLink, useLinksActions, ValidationError, val
 import { MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import {
     TransferConflictStrategy,
+    FileKeys,
     FileRequestBlock,
     ThumbnailRequestBlock,
     BlockToken,
@@ -68,59 +64,22 @@ export default function useUploadFile() {
     ): UploadFileControls => {
         const addressKeyInfoPromise = getPrimaryAddressKey();
 
-        const generateFileKeys = async (abortSignal: AbortSignal) => {
+        const createFile = async (
+            abortSignal: AbortSignal,
+            filename: string,
+            mimeType: string,
+            hash: string,
+            keys: FileKeys
+        ): Promise<FileRevision> => {
             const error = validateLinkName(file.name);
             if (error) {
                 throw new ValidationError(error);
             }
 
-            const [parentPrivateKey, addressKeyInfo] = await Promise.all([
-                getLinkPrivateKey(abortSignal, shareId, parentId),
+            const [addressKeyInfo, parentPrivateKey] = await Promise.all([
                 addressKeyInfoPromise,
+                getLinkPrivateKey(abortSignal, shareId, parentId),
             ]);
-            const { NodeKey, privateKey, NodePassphrase, NodePassphraseSignature } = await generateNodeKeys(
-                parentPrivateKey,
-                addressKeyInfo.privateKey
-            );
-            const { sessionKey, ContentKeyPacket, ContentKeyPacketSignature } = await generateContentKeys(
-                privateKey,
-                addressKeyInfo.privateKey
-            );
-
-            if (!ContentKeyPacket) {
-                throw new Error(c('Error').t`Could not generate file keys`);
-            }
-
-            return {
-                NodeKey,
-                NodePassphrase,
-                NodePassphraseSignature,
-                ContentKeyPacket,
-                ContentKeyPacketSignature,
-                sessionKey,
-                privateKey,
-                parentPrivateKey,
-                addressKeyInfo,
-            };
-        };
-
-        const createFile = async (
-            abortSignal: AbortSignal,
-            filename: string,
-            mimeType: string,
-            hash: string
-        ): Promise<FileRevision> => {
-            const {
-                addressKeyInfo,
-                ContentKeyPacket,
-                ContentKeyPacketSignature,
-                NodeKey,
-                NodePassphrase,
-                NodePassphraseSignature,
-                parentPrivateKey,
-                privateKey,
-                sessionKey,
-            } = await generateFileKeys(abortSignal);
 
             const Name = await encryptName(filename, parentPrivateKey.toPublic(), addressKeyInfo.privateKey);
 
@@ -130,14 +89,14 @@ export default function useUploadFile() {
             // wouldn't know ID to do proper cleanup.
             const { File: createdFile } = await debouncedRequest<CreateFileResult>(
                 queryCreateFile(shareId, {
-                    ContentKeyPacket,
-                    ContentKeyPacketSignature,
+                    ContentKeyPacket: keys.contentKeyPacket,
+                    ContentKeyPacketSignature: keys.contentKeyPacketSignature,
                     Hash: hash,
                     MIMEType: mimeType,
                     Name,
-                    NodeKey,
-                    NodePassphrase,
-                    NodePassphraseSignature,
+                    NodeKey: keys.nodeKey,
+                    NodePassphrase: keys.nodePassphrase,
+                    NodePassphraseSignature: keys.nodePassphraseSignature,
                     ParentLinkID: parentId,
                     SignatureAddress: addressKeyInfo.address.Email,
                 })
@@ -147,9 +106,9 @@ export default function useUploadFile() {
                 fileID: createdFile.ID,
                 filename,
                 isNewFile: true,
-                privateKey,
+                privateKey: keys.privateKey,
                 revisionID: createdFile.RevisionID,
-                sessionKey,
+                sessionKey: keys.sessionKey,
             };
         };
 
@@ -199,7 +158,11 @@ export default function useUploadFile() {
          * a folder, the the whole folder is moved to trash and new file is
          * created. If the original link is file, new revision is created.
          */
-        const replaceFile = async (abortSignal: AbortSignal, mimeType: string): Promise<FileRevision> => {
+        const replaceFile = async (
+            abortSignal: AbortSignal,
+            mimeType: string,
+            keys: FileKeys
+        ): Promise<FileRevision> => {
             const link = await getLinkByName(abortSignal, shareId, parentId, file.name);
             // If collision happened but the link is not present, that means
             // the file is just being uploaded.
@@ -216,28 +179,28 @@ export default function useUploadFile() {
                 const hash = await generateLookupHash(file.name, parentHashKey);
 
                 await trashLinks(abortSignal, shareId, parentId, [link.linkId]);
-                return createFile(abortSignal, file.name, mimeType, hash);
+                return createFile(abortSignal, file.name, mimeType, hash, keys);
             }
             return createRevision(abortSignal, link);
         };
 
         const createFileRevision = queuedFunction(
             'create_file_revision',
-            async (abortSignal: AbortSignal, mimeType: string): Promise<FileRevision> => {
+            async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
                 const { filename: newName, hash } = await findAvailableName(abortSignal, shareId, parentId, file.name);
                 checkSignal(abortSignal, file.name);
                 if (file.name === newName) {
-                    return createFile(abortSignal, file.name, mimeType, hash);
+                    return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
                 const conflictStrategy = await getFileConflictStrategy(abortSignal);
                 if (conflictStrategy === TransferConflictStrategy.Rename) {
-                    return createFile(abortSignal, newName, mimeType, hash);
+                    return createFile(abortSignal, newName, mimeType, hash, keys);
                 }
                 if (
                     conflictStrategy === TransferConflictStrategy.Replace ||
                     conflictStrategy === TransferConflictStrategy.Merge
                 ) {
-                    return replaceFile(abortSignal, mimeType);
+                    return replaceFile(abortSignal, mimeType, keys);
                 }
                 if (conflictStrategy === TransferConflictStrategy.Skip) {
                     throw new TransferCancel({ message: c('Info').t`Transfer skipped for file "${file.name}"` });
@@ -262,8 +225,18 @@ export default function useUploadFile() {
         let createdFileRevisionPromise: Promise<FileRevision>;
 
         return initUploadFileWorker(file, {
-            initialize: async (abortSignal: AbortSignal, mimeType: string) => {
-                createdFileRevisionPromise = createFileRevision(abortSignal, mimeType);
+            initialize: async (abortSignal: AbortSignal) => {
+                const [addressKeyInfo, parentPrivateKey] = await Promise.all([
+                    addressKeyInfoPromise,
+                    getLinkPrivateKey(abortSignal, shareId, parentId),
+                ]);
+                return {
+                    addressPrivateKey: addressKeyInfo.privateKey,
+                    parentPrivateKey,
+                };
+            },
+            createFileRevision: async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
+                createdFileRevisionPromise = createFileRevision(abortSignal, mimeType, keys);
                 const createdFileRevision = await createdFileRevisionPromise;
                 const addressKeyInfo = await addressKeyInfoPromise;
                 checkSignal(abortSignal, createdFileRevision.filename);
