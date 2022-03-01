@@ -149,8 +149,8 @@ const ParticipantsInput = ({
                 onAddInvalidEmail={() => {
                     setParticipantError?.(true);
                 }}
-                onChange={(value) => {
-                    if (!value.trimStart()) {
+                onChange={(event) => {
+                    if (!event.currentTarget.value.trimStart()) {
                         setParticipantError?.(false);
                     }
                 }}
