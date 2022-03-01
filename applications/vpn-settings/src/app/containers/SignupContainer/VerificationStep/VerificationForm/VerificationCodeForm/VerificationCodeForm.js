@@ -14,7 +14,7 @@ import {
 import { c } from 'ttag';
 import ResendCodeModal from './ResendCodeModal';
 
-const VerificationCodeForm = ({ notices, checkSpamFolder, onSubmit, onResend, onBack, destination }) => {
+const VerificationCodeForm = ({ notices, onSubmit, onResend, onBack, destination }) => {
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
     const [code, setCode] = useState('');
@@ -40,7 +40,7 @@ const VerificationCodeForm = ({ notices, checkSpamFolder, onSubmit, onResend, on
             <h3>{c('Title').t`Enter verification code`}</h3>
             <Alert className="mb1">
                 <div>{c('Info').jt`Enter the verification code that was sent to ${destinationText}.`}</div>
-                {checkSpamFolder || destination.Address ? (
+                {destination.Address ? (
                     <div>{
                         // translator: spamFolder is just "spam folder" in bold
                         c('Info').jt`If you don't find the email in your inbox, please check your ${spamFolder}.`
@@ -84,7 +84,6 @@ VerificationCodeForm.propTypes = {
     onResend: PropTypes.func.isRequired,
     onBack: PropTypes.func.isRequired,
     notices: PropTypes.element,
-    checkSpamFolder: PropTypes.bool,
     destination: PropTypes.shape({
         Phone: PropTypes.string,
         Address: PropTypes.string,
