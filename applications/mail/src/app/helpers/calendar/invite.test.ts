@@ -211,6 +211,42 @@ END:VCALENDAR`;
         );
     });
 
+    test('should refuse invitations with non-yearly recurrence rules that contain a byyearday', async () => {
+        const invitation = `BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+VERSION:2.0
+METHOD:REQUEST
+BEGIN:VEVENT
+ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
+ S-ACTION;RSVP=TRUE:mailto:testme@pm.me
+ATTENDEE;CN="testKrt";CUTYPE=INDIVIDUAL;EMAIL="aGmailOne@gmail.co
+ m";PARTSTAT=ACCEPTED;ROLE=CHAIR:mailto:aGmailOne@gmail.com
+DTEND;TZID=Europe/Vilnius:20200915T100000
+ORGANIZER;CN="testKrt":mailto:aGmailOne@gmail.com
+UID:BA3017ED-889A-4BCB-B9CB-11CE30586021
+DTSTAMP:20200121T081914Z
+SEQUENCE:1
+SUMMARY:Non-yearly with byyearday
+DTSTART;TZID=Europe/Vilnius:20200915T090000
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+CREATED:20200821T081842Z
+RRULE:FREQ=MONTHLY;INTERVAL=1;BYYEARDAY=21
+END:VEVENT
+END:VCALENDAR`;
+        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+        const message = { Time: Math.round(Date.now() / 1000) } as Message;
+        await expect(
+            getSupportedEventInvitation({
+                vcalComponent: parsedInvitation,
+                message,
+                icsBinaryString: invitation,
+                icsFileName: 'test.ics',
+            })
+        ).rejects.toMatchObject(
+            new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: ICAL_METHOD.REQUEST })
+        );
+    });
+
     test('should generate a hash UID for invitations with no method and drop alarms and recurrence id', async () => {
         const invitation = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
