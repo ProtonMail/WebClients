@@ -23,6 +23,9 @@ import { useDriveEventManager } from '../events';
 import useLink from './useLink';
 import useLinks from './useLinks';
 import useLinksState from './useLinksState';
+import { ValidationError } from '.';
+
+const INVALID_REQUEST_ERROR_CODES = [RESPONSE_CODE.ALREADY_EXISTS, RESPONSE_CODE.INVALID_REQUIREMENT];
 
 /**
  * useLinksActions provides actions for manipulating with links in batches.
@@ -176,20 +179,20 @@ export default function useLinksActions() {
             queryRestoreLinks(shareId, batchLinkIds)
         ).then(({ responses, failures }) => {
             const successes: string[] = [];
-            const alreadyExisting: string[] = [];
             responses.forEach(({ batchLinkIds, response }) => {
                 response.Responses.forEach(({ Response }, index) => {
                     const linkId = batchLinkIds[index];
                     if (!Response.Error) {
                         successes.push(linkId);
-                    } else if (Response.Code === RESPONSE_CODE.ALREADY_EXISTS) {
-                        alreadyExisting.push(linkId);
+                    } else if (INVALID_REQUEST_ERROR_CODES.includes(Response.Code)) {
+                        failures[linkId] = new ValidationError(Response.Error);
                     } else {
                         failures[linkId] = Response.Error;
                     }
                 });
             });
-            return { successes, failures, alreadyExisting };
+
+            return { successes, failures };
         });
     };
 
