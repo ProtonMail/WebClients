@@ -26,17 +26,7 @@ import { useConfig, useSubscription, useUser, useVPNCountriesCount, useVPNServer
 
 import { formatPlans } from './helpers';
 import SubscriptionCancelPlan from './SubscriptionCancelPlan';
-import { getPlanFeatures } from './PlanCardFeatures';
-import { getPlansInfo } from './PlanSelection';
-
-const NAMES = {
-    [PLANS.FREE]: 'Free',
-    [PLANS.VPNBASIC]: 'Basic',
-    [PLANS.VPNPLUS]: 'Plus',
-    [PLANS.PLUS]: 'Plus',
-    [PLANS.PROFESSIONAL]: 'Professional',
-    [PLANS.VISIONARY]: 'Visionary',
-} as const;
+import { getShortPlan } from '../features/plan';
 
 interface ReasonOption {
     title: string;
@@ -104,9 +94,12 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
     const [vpnCountries] = useVPNCountriesCount();
     const [vpnServers] = useVPNServersCount();
 
-    const planFeatures = getPlanFeatures(currentPlan.Name as PLANS, vpnCountries, vpnServers);
+    const downgradedPlanNameKey = PLANS.FREE;
+    const downgradedPlanName = PLAN_NAMES[downgradedPlanNameKey];
+    const downgradedPlanFeatures = getShortPlan(downgradedPlanNameKey, vpnCountries, vpnServers);
+    const planFeatures = getShortPlan(currentPlan.Name as PLANS, vpnCountries, vpnServers);
 
-    const [step, setStep] = useState<STEPS>(STEPS.CONFIRM);
+    const [step, setStep] = useState<STEPS>(() => (planFeatures ? STEPS.CONFIRM : STEPS.REASON));
     const [model, setModel] = useState<SubscriptionCancelModel>({
         Reason: '',
         Feedback: '',
@@ -168,12 +161,7 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
         size?: ModalProps['size'];
     } = (() => {
         if (step === STEPS.CONFIRM) {
-            const planInfo = getPlansInfo();
-
             const daysRemaining = getDifferenceInDays(new Date(), new Date(PeriodEnd * 1000));
-
-            const downgradedPlanNameKey = PLANS.FREE;
-            const downgradedPlanName = NAMES[downgradedPlanNameKey];
 
             const currentPlanName = PLAN_NAMES[currentPlan.Name as PLANS];
 
@@ -208,14 +196,14 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
                         <div className="flex flex-row flex-nowrap on-mobile-flex-column">
                             <SubscriptionCancelPlan
                                 name={downgradedPlanName}
-                                info={planInfo[downgradedPlanNameKey]}
-                                features={planFeatures}
+                                info={downgradedPlanFeatures?.description || ''}
+                                features={planFeatures?.features || []}
                                 downgrade
                             />
                             <SubscriptionCancelPlan
                                 name={PLAN_NAMES[currentPlan.Name as PLANS]}
-                                info={planInfo[currentPlan.Name as PLANS]}
-                                features={planFeatures}
+                                info={planFeatures?.description || ''}
+                                features={planFeatures?.features || []}
                             />
                         </div>
                     </>
