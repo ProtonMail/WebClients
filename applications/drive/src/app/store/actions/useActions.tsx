@@ -52,7 +52,7 @@ export default function useAction() {
             .createFolder(abortSignal, shareId, parentLinkId, name)
             .then((id: string) => {
                 createNotification({
-                    text: <span className="text-pre-wrap">{c('Notification').t`${name} created successfully`}</span>,
+                    text: <span className="text-pre-wrap">{c('Notification').t`"${name}" created successfully`}</span>,
                 });
                 return id;
             })
