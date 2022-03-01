@@ -149,7 +149,6 @@ const ComposerContent = ({
                         primaryAction={AttachmentAction.Preview}
                         secondaryAction={AttachmentAction.Remove}
                         collapsable
-                        showDownloadAll={false}
                         onRemoveAttachment={onRemoveAttachment}
                         onRemoveUpload={onRemoveUpload}
                         className={classnames([

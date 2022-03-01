@@ -5,31 +5,20 @@ import { MessageState, MessageStateWithData, OutsideKey } from '../../logic/mess
 
 interface Props {
     message: MessageState;
-
-    /**
-     * Needed for print message
-     * true: (default) show download all button, clickable attachment
-     * false: no buttons, only static content
-     */
-    showActions?: boolean;
     outsideKey?: OutsideKey;
 }
 
-const MessageFooter = ({ message, showActions = true, outsideKey }: Props) => {
+const MessageFooter = ({ message, outsideKey }: Props) => {
     const attachments = getAttachments(message.data);
 
     return (
-        <div
-            className={classnames(['message-attachments m1 mb0-5', !showActions && 'no-pointer-events'])}
-            data-testid="message-attachments"
-        >
+        <div className={classnames(['message-attachments m1 m0-5'])} data-testid="message-attachments">
             <AttachmentList
                 attachments={attachments}
                 message={message as MessageStateWithData}
                 primaryAction={AttachmentAction.Preview}
-                secondaryAction={showActions ? AttachmentAction.Download : AttachmentAction.None}
+                secondaryAction={AttachmentAction.Download}
                 collapsable={false}
-                showDownloadAll={showActions}
                 className="message-attachments-list"
                 outsideKey={outsideKey}
             />
