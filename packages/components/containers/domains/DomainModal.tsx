@@ -1,9 +1,21 @@
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
+import { Address, Domain } from '@proton/shared/lib/interfaces';
 import { VERIFY_STATE, DOMAIN_STATE, SPF_STATE, MX_STATE, DMARC_STATE, DKIM_STATE } from '@proton/shared/lib/constants';
-import { FormModal, ButtonGroup, RoundedIcon, Tooltip, Icon, Button } from '../../components';
+import {
+    ButtonGroup,
+    RoundedIcon,
+    Tooltip,
+    Icon,
+    Button,
+    ModalTwo,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    Form,
+    ModalProps,
+} from '../../components';
 import { useLoading, useApi, useStep, useNotifications, useDomains, useEventManager } from '../../hooks';
 import { classnames } from '../../helpers';
 
@@ -25,21 +37,25 @@ const STEPS = {
     ADDRESSES: 6,
 };
 
-const verifyDomain = ({ VerifyState }) => {
-    if (VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT) {
+const verifyDomain = (domain?: Domain) => {
+    if (domain?.VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT) {
         return c('Error').t`Verification did not succeed, please try again in an hour.`;
     }
 
-    if (VerifyState === VERIFY_STATE.VERIFY_STATE_EXIST) {
+    if (domain?.VerifyState === VERIFY_STATE.VERIFY_STATE_EXIST) {
         return c('Error')
             .t`Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.`;
     }
 };
 
-/** @type any */
-const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) => {
+interface Props extends ModalProps {
+    domain?: Domain;
+    domainAddresses?: Address[];
+}
+
+const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const [domains, loadingDomains] = useDomains();
-    const [domainModel, setDomain] = useState(() => ({ ...domain }));
+    const [domainModel, setDomain] = useState<Partial<Domain>>(() => ({ ...domain }));
 
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -50,21 +66,18 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
 
     const handleClose = async () => {
         void call(); // Refresh domains model present in background page
-        onClose();
+        rest.onClose?.();
     };
 
     const renderDKIMIcon = () => {
-        const {
-            DKIM: { State },
-        } = domainModel;
         const { DKIM_STATE_ERROR, DKIM_STATE_GOOD, DKIM_STATE_WARNING } = DKIM_STATE;
 
         let title;
-        let type;
+        let type: 'error' | 'success' | 'warning' | undefined;
         let name;
         let icon;
 
-        switch (State) {
+        switch (domainModel.DKIM?.State) {
             case DKIM_STATE_ERROR:
                 title = c('Tooltip')
                     .t`We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.`;
@@ -87,7 +100,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
         }
         return (
             <Tooltip title={title}>
-                {icon || <RoundedIcon className="mr0-5" key="dkim-icon" type={type} name={name} />}
+                {icon || <RoundedIcon className="mr0-5" key="dkim-icon" type={type} name={name || ''} />}
             </Tooltip>
         );
     };
@@ -136,7 +149,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
             />
         ),
         [DKIM_STATE.DKIM_STATE_ERROR, DKIM_STATE.DKIM_STATE_GOOD, DKIM_STATE.DKIM_STATE_WARNING].includes(
-            domainModel.DKIM?.State
+            domainModel.DKIM?.State as DKIM_STATE
         )
             ? renderDKIMIcon()
             : null,
@@ -158,13 +171,13 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
         ) : null,
     ];
 
-    const { section, ...modalProps } = (() => {
+    const { section, onSubmit, submit } = (() => {
         if (step === STEPS.DOMAIN) {
             const handleSubmit = async () => {
                 if (domainModel.ID) {
                     return next();
                 }
-                const { Domain } = await api(addDomain(domainName));
+                const { Domain } = await api<{ Domain: Domain }>(addDomain(domainName));
                 setDomain(Domain);
                 await call();
                 next();
@@ -172,6 +185,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
 
             return {
                 section: <DomainSection domain={domainModel} onChange={updateDomainName} />,
+                submit: undefined,
                 onSubmit: () => withLoading(handleSubmit()),
             };
         }
@@ -182,7 +196,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
                     return next();
                 }
 
-                const { Domain = {} } = await api(getDomain(domainModel.ID));
+                const { Domain } = await api<{ Domain: Domain }>(getDomain(domainModel.ID));
 
                 const error = verifyDomain(Domain);
                 if (error) {
@@ -197,6 +211,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
 
             return {
                 section: <VerifySection domain={domainModel} />,
+                submit: undefined,
                 onSubmit: () => withLoading(handleSubmit()),
             };
         }
@@ -204,6 +219,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
         if (step === STEPS.MX) {
             return {
                 section: <MXSection />,
+                submit: undefined,
                 onSubmit: next,
             };
         }
@@ -211,6 +227,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
         if (step === STEPS.SPF) {
             return {
                 section: <SPFSection />,
+                submit: undefined,
                 onSubmit: next,
             };
         }
@@ -218,6 +235,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
         if (step === STEPS.DKIM) {
             return {
                 section: <DKIMSection domain={domainModel} />,
+                submit: undefined,
                 onSubmit: next,
             };
         }
@@ -225,6 +243,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
         if (step === STEPS.DMARC) {
             return {
                 section: <DMARCSection />,
+                submit: undefined,
                 onSubmit: next,
             };
         }
@@ -233,9 +252,11 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
             return {
                 section: <AddressesSection onClose={handleClose} />,
                 submit: c('Action').t`Done`,
-                onSubmit: onClose,
+                onSubmit: rest.onClose,
             };
         }
+
+        throw new Error('Missing step');
     })();
 
     useEffect(() => {
@@ -248,45 +269,40 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
     }, [domains]);
 
     return (
-        <FormModal
-            onClose={handleClose}
-            close={c('Action').t`Close`}
-            submit={c('Action').t`Next`}
-            title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`}
-            loading={loading}
-            className="modal--full"
-            {...rest}
-            {...modalProps}
-        >
-            <ButtonGroup className="mb1">
-                {breadcrumbLabels.map((label, index) => (
-                    <Button
-                        icon
-                        key={index}
-                        className={classnames([
-                            'flex flex-nowrap flex-align-items-center on-mobile-pl0-25 on-mobile-pr0-25',
-                            index === step && 'is-selected',
-                        ])}
-                        disabled={
-                            (index > STEPS.DOMAIN && !domainModel.ID) ||
-                            (index > STEPS.VERIFY && domainModel.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD)
-                        }
-                        onClick={() => goTo(index)}
-                        title={label}
-                    >
-                        {breadcrumbIcons[index]}
-                        <span className="text-ellipsis max-w100">{label}</span>
-                    </Button>
-                ))}
-            </ButtonGroup>
-            {section}
-        </FormModal>
+        <ModalTwo className="modal--full" as={Form} onSubmit={onSubmit} {...rest}>
+            <ModalTwoHeader title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`} />
+            <ModalTwoContent>
+                <ButtonGroup className="mb1">
+                    {breadcrumbLabels.map((label, index) => (
+                        <Button
+                            icon
+                            key={label}
+                            className={classnames([
+                                'flex flex-nowrap flex-align-items-center on-mobile-pl0-25 on-mobile-pr0-25',
+                                index === step && 'is-selected',
+                            ])}
+                            disabled={
+                                (index > STEPS.DOMAIN && !domainModel.ID) ||
+                                (index > STEPS.VERIFY && domainModel.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD)
+                            }
+                            onClick={() => goTo(index)}
+                            title={label}
+                        >
+                            {breadcrumbIcons[index]}
+                            <span className="text-ellipsis max-w100">{label}</span>
+                        </Button>
+                    ))}
+                </ButtonGroup>
+                {section}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={rest.onClose}>{c('Action').t`Close`}</Button>
+                <Button color="norm" type="submit" loading={loading}>
+                    {submit || c('Action').t`Next`}
+                </Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
-};
-
-DomainModal.propTypes = {
-    onClose: PropTypes.func,
-    domain: PropTypes.object,
 };
 
 export default DomainModal;
