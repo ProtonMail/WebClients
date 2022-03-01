@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 $toggle-width: em(40) !default;
 $toggle-width-button: em(24) !default;
 
@@ -116,18 +116,19 @@ $toggle-width-button: em(24) !default;
 	// disabled
 	&--disabled {
 		cursor: default;
+		opacity: 0.5;
 		// disabled but not loading
 		&:not(.toggle-label--loading) {
 			box-shadow: none;
 			background-color: var(--background-strong);
 
 			&::before {
-				background-color: var(--field-disabled);
+				background-color: var(--field-norm);
 			}
 
 			&.toggle-label--checked {
 				&::before {
-					background-color: var(--field-norm);
+					background-color: var(--interaction-norm);
 				}
 			}
 		}
