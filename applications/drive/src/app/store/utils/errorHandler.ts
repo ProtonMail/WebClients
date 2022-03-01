@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { ValidationError } from 'webpack';
 
 import { useNotifications } from '@proton/components';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
@@ -80,11 +81,35 @@ export function useErrorHandler() {
             return;
         }
 
-        const text = getMessage(nonIgnoredErrors as [any, ...any[]]);
-        createNotification({
-            type: 'error',
-            text,
+        const validationErrors: ValidationError[] = Object.values(
+            nonIgnoredErrors
+                .filter((error) => error.name === 'ValidationError')
+                .reduce((acc, error) => {
+                    if (!acc[error.message]) {
+                        acc[error.message] = error;
+                    }
+                    return acc;
+                }, {} as Record<string, ValidationError>)
+        );
+
+        validationErrors.forEach((error) => {
+            createNotification({
+                type: 'error',
+                text: error.message,
+            });
         });
+
+        const unknownErrors = nonIgnoredErrors.filter((error) => error.name !== 'ValidationError');
+
+        if (unknownErrors.length !== 0) {
+            const text = getMessage(unknownErrors as [any, ...any[]]);
+
+            createNotification({
+                type: 'error',
+                text,
+            });
+        }
+
         errors.forEach(reportError);
     };
 
