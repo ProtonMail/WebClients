@@ -1,9 +1,29 @@
 import { c } from 'ttag';
 import { AlertModal, AlertModalProps, Button } from '../../../components';
 
-type Props = Omit<AlertModalProps, 'title' | 'buttons' | 'children'>;
+interface Props extends Omit<AlertModalProps, 'title' | 'buttons' | 'children'> {
+    mode: 'pre-version' | 'pre-migration';
+}
 
 const SubscriptionModalDisabled = (props: Props) => {
+    if (props.mode === 'pre-version') {
+        return (
+            <AlertModal
+                {...props}
+                title={c('new_plans').t`Refresh your browser`}
+                buttons={
+                    <Button color="norm" onClick={() => window.location.reload()}>{c('new_plans')
+                        .t`Refresh browser`}</Button>
+                }
+            >
+                <div className="text-pre-wrap">
+                    {c('new_plans')
+                        .t`Get the latest version of Proton and all relevant updates, such as more free storage, by refreshing your browser.`}
+                </div>
+            </AlertModal>
+        );
+    }
+
     return (
         <AlertModal
             {...props}
