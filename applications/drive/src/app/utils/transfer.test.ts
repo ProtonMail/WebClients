@@ -218,6 +218,7 @@ describe('trasfer utils', () => {
         const fileBrowserItem: FileBrowserItem = {
             LinkID: 'g5DPgsgSOQhwxfAmy4A-vVIxHd40lH8xRVg_4ulz69pz71x73bSa2QXEbKg151clLRB-CQQTCRNteaIBHL_iUz==',
             MIMEType: trasferMeta.mimeType,
+            CreateTime: 1313241432,
             ModifyTime: 1313241432,
             RealModifyTime: 1313241432,
             Name: trasferMeta.filename,
