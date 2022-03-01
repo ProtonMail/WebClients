@@ -1,9 +1,7 @@
 export { default as DKIMSection } from './DKIMSection';
 export { default as DomainStatus } from './DomainStatus';
-export { default as DomainsTable } from './DomainsTable';
 export { default as SPFSection } from './SPFSection';
 export { default as VerifySection } from './VerifySection';
-export { default as DomainActions } from './DomainActions';
 export { default as AddressCatchAll } from './AddressCatchAll';
 export { default as MXSection } from './MXSection';
 export { default as DMARCSection } from './DMARCSection';
