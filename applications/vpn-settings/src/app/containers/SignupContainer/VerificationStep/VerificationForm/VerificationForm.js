@@ -43,12 +43,13 @@ const VerificationForm = ({ defaultCountry, defaultEmail, allowedMethods, onRequ
 
     return (
         <VerificationCodeForm
-            checkSpamFolder={true}
             notices={
-                <p>{
-                    // translator: spamFolder is just "spam folder" in bold
-                    c('Info').jt`Please make sure to check your ${spamFolder}.`
-                }</p>
+                params.Destination.Address ? (
+                    <p>{
+                        // translator: spamFolder is just "spam folder" in bold
+                        c('Info').jt`Please make sure to check your ${spamFolder}.`
+                    }</p>
+                ) : null
             }
             destination={params.Destination}
             onSubmit={handleSubmitCode}
