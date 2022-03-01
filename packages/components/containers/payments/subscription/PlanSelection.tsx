@@ -8,48 +8,18 @@ import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Tabs } from '../../../components';
+import { useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
+import { getShortPlan } from '../features/plan';
+import { getAllFeatures } from '../features';
 import CurrencySelector from '../CurrencySelector';
 import PlanCard from './PlanCard';
-import PlanCardFeatures from './PlanCardFeatures';
-import PlanCardLogos from './PlanCardLogos';
-
+import PlanCardFeatures, { PlanCardFeaturesShort } from './PlanCardFeatures';
 import './PlanSelection.scss';
-import PlanSelectionComparison from './PlanSelectionComparison';
-import { useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 
 export interface SelectedProductPlans {
     [Audience.B2C]: PLANS;
     [Audience.B2B]: PLANS;
 }
-
-export const getPlansInfo = () => {
-    return {
-        [PLANS.FREE]: c('Plan description')
-            .t`The no-cost starter account, designed to empower everyone with privacy by default.`,
-        [PLANS.VPNBASIC]: '',
-        [PLANS.VPNPLUS]: '',
-        [PLANS.PLUS]: '',
-        [PLANS.PROFESSIONAL]: '',
-        [PLANS.VISIONARY]: '',
-        [PLANS.MAIL]: c('Plan description')
-            .t`The privacy-first mail and calendar solution for your everyday communication needs.`,
-        [PLANS.DRIVE]: c('Plan description')
-            .t`The safe and secure storage option for all your files with end-to-end encrypted protection.`,
-        [PLANS.VPN]: c('Plan description')
-            .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`,
-        [PLANS.BUNDLE]: c('Plan description').t`The ultimate privacy pack with access to all premium Proton services.`,
-        [PLANS.FAMILY]: c('Plan description').t`The Proton privacy suite specially designed for families.`,
-        [PLANS.NEW_VISIONARY]: c('Plan description')
-            .t`The Proton privacy suite that thanks our early adopters for their continued support.`,
-        [PLANS.MAIL_PRO]: c('Plan description')
-            .t`For small and medium businesses that want to secure their email communications and meeting schedules.`,
-        [PLANS.DRIVE_PRO]: '',
-        [PLANS.BUNDLE_PRO]: c('Plan description')
-            .t`For businesses that want an all-in-one offering to securely communicate via email, organize their day via calendar, share large files, and encrypt their internet connection.`,
-        [PLANS.ENTERPRISE]: c('Plan description')
-            .t`For data-heaver businesses that want an all-in-one offering including email, calendar, drive, and VPN to all of their historical documents and emails accross all teams.`,
-    } as const;
-};
 
 interface Props {
     planIDs: PlanIDs;
@@ -71,7 +41,6 @@ interface Props {
 
 const PlanSelection = ({
     mode,
-    hasPlanSelectionComparison = true,
     hasFreePlan = true,
     planIDs,
     plans,
@@ -108,8 +77,59 @@ const PlanSelection = ({
         // plansMap[PLANS.ENTERPRISE],
     ].filter(isTruthy);
 
-    const planInfos = getPlansInfo();
     const isSignupMode = mode === 'signup';
+    const features = getAllFeatures(vpnCountries, vpnServers);
+
+    const renderPlanCard = (plan: Plan, audience: Audience) => {
+        const isFree = plan.ID === PLANS.FREE;
+        const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
+        const isRecommended = [PLANS.BUNDLE, PLANS.BUNDLE_PRO].includes(plan.Name as PLANS);
+        const canSelect = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].includes(plan.Name as PLANS);
+        const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
+        const actionLabel = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select`;
+        const shortPlan = getShortPlan(plan.Name as PLANS, vpnCountries, vpnServers);
+
+        if (!shortPlan) {
+            return null;
+        }
+
+        return (
+            <PlanCard
+                target={audience}
+                isCurrentPlan={!isSignupMode && isCurrentPlan}
+                action={actionLabel}
+                planTitle={PLAN_NAMES[plan.Name as PLANS]}
+                info={shortPlan.description}
+                planName={plan.Name as PLANS}
+                canSelect={canSelect}
+                recommended={isRecommended}
+                currency={currency}
+                disabled={loading || (isFree && !isSignupMode && isCurrentPlan)}
+                cycle={cycle}
+                key={plan.ID}
+                price={plan.Pricing[cycle]}
+                features={
+                    mode === 'settings' ? (
+                        <PlanCardFeaturesShort plan={shortPlan} />
+                    ) : (
+                        <PlanCardFeatures audience={audience} features={features} planName={plan.Name as PLANS} />
+                    )
+                }
+                selectedPlan={selectedProductPlans[audience]}
+                onSelectPlan={(plan) => {
+                    onChangeSelectedProductPlans({ ...selectedProductPlans, [audience]: plan });
+                }}
+                onSelect={(planName) => {
+                    onChangePlanIDs(
+                        switchPlan({
+                            planIDs,
+                            planID: isFree ? undefined : planName,
+                        })
+                    );
+                }}
+            />
+        );
+    };
 
     const tabs = [
         {
@@ -119,56 +139,7 @@ const PlanSelection = ({
                     className="plan-selection plan-selection--b2c mt1"
                     style={{ '--plan-selection-number': B2CPlans.length }}
                 >
-                    {B2CPlans.map((plan: Plan) => {
-                        const isFree = plan.ID === PLANS.FREE;
-                        const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
-                        const isRecommended = [PLANS.BUNDLE].includes(plan.Name as PLANS);
-                        const canSelect = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].includes(plan.Name as PLANS);
-                        const selectedPlanLabel = isFree
-                            ? c('Action').t`Current plan`
-                            : c('Action').t`Edit subscription`;
-                        const actionLabel = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select`;
-
-                        return (
-                            <PlanCard
-                                target={Audience.B2C}
-                                isCurrentPlan={!isSignupMode && isCurrentPlan}
-                                action={actionLabel}
-                                planTitle={PLAN_NAMES[plan.Name as PLANS]}
-                                planName={plan.Name as PLANS}
-                                canSelect={canSelect}
-                                recommended={isRecommended}
-                                currency={currency}
-                                disabled={loading || (isFree && !isSignupMode && isCurrentPlan)}
-                                cycle={cycle}
-                                key={plan.ID}
-                                price={plan.Pricing[cycle]}
-                                info={planInfos[plan.Name as PLANS]}
-                                features={
-                                    ['signup', 'settings'].includes(mode) ? (
-                                        <PlanCardFeatures
-                                            planName={plan.Name as PLANS}
-                                            vpnCountries={vpnCountries}
-                                            vpnServers={vpnServers}
-                                        />
-                                    ) : null
-                                }
-                                logos={<PlanCardLogos planName={plan.Name as PLANS} />}
-                                selectedPlan={selectedProductPlans[audience]}
-                                onSelectPlan={(plan) => {
-                                    onChangeSelectedProductPlans({ ...selectedProductPlans, [audience]: plan });
-                                }}
-                                onSelect={(planName) => {
-                                    onChangePlanIDs(
-                                        switchPlan({
-                                            planIDs,
-                                            planID: isFree ? undefined : planName,
-                                        })
-                                    );
-                                }}
-                            />
-                        );
-                    })}
+                    {B2CPlans.map((plan) => renderPlanCard(plan, Audience.B2C))}
                 </div>
             ),
         },
@@ -179,56 +150,7 @@ const PlanSelection = ({
                     className="plan-selection plan-selection--b2b mt1"
                     style={{ '--plan-selection-number': B2BPlans.length }}
                 >
-                    {B2BPlans.map((plan: Plan) => {
-                        const isFree = plan.ID === PLANS.FREE;
-                        const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
-                        const isRecommended = [PLANS.BUNDLE_PRO].includes(plan.Name as PLANS);
-                        const canSelect = false; // [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].includes(plan.Name as PLANS);
-                        const selectedPlanLabel = isFree
-                            ? c('Action').t`Current plan`
-                            : c('Action').t`Edit subscription`;
-                        const actionLabel = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select`;
-
-                        return (
-                            <PlanCard
-                                target={Audience.B2B}
-                                isCurrentPlan={!isSignupMode && isCurrentPlan}
-                                action={actionLabel}
-                                planTitle={PLAN_NAMES[plan.Name as PLANS]}
-                                planName={plan.Name as PLANS}
-                                canSelect={canSelect}
-                                recommended={isRecommended}
-                                currency={currency}
-                                disabled={loading || (isFree && !isSignupMode && isCurrentPlan)}
-                                cycle={cycle}
-                                key={plan.ID}
-                                price={plan.Pricing[cycle]}
-                                info={planInfos[plan.Name as PLANS]}
-                                features={
-                                    ['signup', 'settings'].includes(mode) ? (
-                                        <PlanCardFeatures
-                                            planName={plan.Name as PLANS}
-                                            vpnCountries={vpnCountries}
-                                            vpnServers={vpnServers}
-                                        />
-                                    ) : null
-                                }
-                                logos={<PlanCardLogos planName={plan.Name as PLANS} />}
-                                selectedPlan={selectedProductPlans[audience]}
-                                onSelectPlan={(plan) => {
-                                    onChangeSelectedProductPlans({ ...selectedProductPlans, [audience]: plan });
-                                }}
-                                onSelect={(planName) => {
-                                    onChangePlanIDs(
-                                        switchPlan({
-                                            planIDs,
-                                            planID: isFree ? undefined : planName,
-                                        })
-                                    );
-                                }}
-                            />
-                        );
-                    })}
+                    {B2BPlans.map((plan) => renderPlanCard(plan, Audience.B2B))},
                 </div>
             ),
         },
@@ -254,18 +176,7 @@ const PlanSelection = ({
                     containerClassName="inline-block"
                 />
             </div>
-            {hasPlanSelectionComparison && (
-                <PlanSelectionComparison
-                    hasFreePlan={hasFreePlan}
-                    selectedPlan={selectedProductPlans[audience]}
-                    onChangePlanIDs={onChangePlanIDs}
-                    plans={plans}
-                    planIDs={planIDs}
-                    audience={audience}
-                />
-            )}
         </>
     );
 };
-
 export default PlanSelection;

@@ -33,7 +33,6 @@ interface Props {
     disabled?: boolean;
     recommended?: boolean;
     canSelect?: boolean;
-    logos?: React.ReactNode;
 }
 
 const getCycleUnit = (planName: PLANS) => {
@@ -67,7 +66,6 @@ const PlanCard = ({
     disabled,
     isCurrentPlan,
     recommended,
-    logos,
 }: Props) => {
     const badgeMultiUser = planName === PLANS.FAMILY ? <Badge type="success">{c('Badge').t`5 users`}</Badge> : null;
 
@@ -119,7 +117,6 @@ const PlanCard = ({
                     <span className="ml0-5 mb0-5">{badgeMultiUser}</span>
                 </div>
                 <p className="text-lg plan-selection-info color-weak mb1">{info}</p>
-                <div className="mb2 plan-selection-logos on-mobile-mb1">{logos}</div>
                 <div className="plan-selection-main-price mb1">
                     {planName === PLANS.FREE ? (
                         // translator: this one should be translated
