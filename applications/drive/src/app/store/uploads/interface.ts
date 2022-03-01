@@ -31,11 +31,11 @@ export interface UploadFolderControls {
 }
 
 export interface UploadCallbacks {
-    initialize: (
-        abortSignal: AbortSignal,
-        mimeType: string,
-        conflictStrategy?: TransferConflictStrategy
-    ) => Promise<InitializedFileMeta>;
+    initialize: (abortSignal: AbortSignal) => Promise<{
+        addressPrivateKey: OpenPGPKey;
+        parentPrivateKey: OpenPGPKey;
+    }>;
+    createFileRevision: (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => Promise<InitializedFileMeta>;
     createBlockLinks: (
         abortSignal: AbortSignal,
         fileBlocks: FileRequestBlock[],
@@ -48,6 +48,16 @@ export interface UploadCallbacks {
 export type UploadFileList = (UploadFileItem | UploadFolderItem)[];
 export type UploadFileItem = { path: string[]; file: File };
 export type UploadFolderItem = { path: string[]; folder: string; modificationTime?: Date };
+
+export type FileKeys = {
+    nodeKey: string;
+    nodePassphrase: string;
+    nodePassphraseSignature: string;
+    contentKeyPacket: string;
+    contentKeyPacketSignature: string;
+    privateKey: OpenPGPKey;
+    sessionKey: SessionKey;
+};
 
 export type InitializedFileMeta = {
     fileName: string;
