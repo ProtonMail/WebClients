@@ -92,7 +92,7 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, ...
             setStates(initialStates);
         };
         void withLoading(run());
-    }, [keyReactivationRequests]);
+    }, []);
 
     const proxiedOnProcess = async (
         keysToReactivate: KeyReactivationRecord[],
