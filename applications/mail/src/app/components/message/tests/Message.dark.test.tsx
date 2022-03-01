@@ -1,6 +1,7 @@
+import { FeatureCode } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { waitFor } from '@testing-library/dom';
-import { clearAll, createDocument, minimalCache, addApiMock } from '../../../helpers/test/helper';
+import { clearAll, createDocument, minimalCache, addApiMock, setFeatureFlags } from '../../../helpers/test/helper';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { getIframeRootDiv, initMessage, setup as messageSetup } from './Message.test.helpers';
 
@@ -16,6 +17,8 @@ describe('Message dark styles', () => {
 
     const setup = async (content: string) => {
         addApiMock('metrics', () => ({}));
+
+        setFeatureFlags(FeatureCode.DarkStylesInBody, true);
 
         const document = createDocument(content);
 
