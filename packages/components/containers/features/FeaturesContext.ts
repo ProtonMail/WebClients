@@ -63,6 +63,7 @@ export enum FeatureCode {
     SpotlightEmailNotifications = 'SpotlightEmailNotifications',
     PaymentsDisabled = 'PaymentsDisabled',
     DriveSearchEnabled = 'DriveSearchEnabled',
+    MailServiceWorker = 'MailServiceWorker',
 }
 
 export interface FeaturesContextValue {

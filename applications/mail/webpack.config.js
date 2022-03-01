@@ -3,6 +3,7 @@ const { produce, setAutoFreeze } = require('immer');
 const getConfig = require('@proton/pack/webpack.config');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = (...env) => {
     setAutoFreeze(false);
@@ -16,6 +17,17 @@ module.exports = (...env) => {
                 Buffer: [require.resolve('buffer'), 'Buffer'],
             })
         );
+
+        // if (config.mode !== 'development') {
+        config.plugins.push(
+            new InjectManifest({
+                swSrc: './src/service-worker.js',
+                swDest: 'service-worker.js',
+                // Any other config if needed.
+                maximumFileSizeToCacheInBytes: 10000000,
+            })
+        );
+        // }
 
         // The order is important so that the unsupported file is loaded after
         config.entry = {
