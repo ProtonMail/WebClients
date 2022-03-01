@@ -31,8 +31,7 @@ const SubscriptionModalDisabled = (props: Props) => {
             buttons={<Button color="norm" onClick={props.onClose}>{c('new_plans').t`Got it`}</Button>}
         >
             <div className="text-pre-wrap">
-                {c('new_plans')
-                    .t`We're upgrading your current plan to a new plan that offers more storage and features for the same price.
+                {c('new_plans').t`We're upgrading your current plan to a new plan that offers more for the same price.
 
 Once our system is updated, you'll see the plan changes in your account dashboard.`}
             </div>
