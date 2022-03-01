@@ -1,3 +1,18 @@
+export interface DKIMKey {
+    ID: string;
+    Selector: string;
+    PublicKey: string;
+    Algorithm: number;
+    DNSState: number;
+    CreateTime: number;
+}
+
+export interface DKIMConfig {
+    Hostname: string;
+    CNAME: string;
+    Key: DKIMKey | null;
+}
+
 export interface Domain {
     ID: string;
     DomainName: string;
@@ -10,6 +25,9 @@ export interface Domain {
     VerifyState: number; // 0 is default, 1 is has code but wrong, 2 is good
     MxState: number; // 0 is default, 1 is set but no us, 2 has us but priority is wrong, 3 is good
     SpfState: number; // 0 is default, 1 and 2 means detected a record but wrong, 3 is good
-    DkimState: number; // 0 is default, 1 and 2 means detected record but wrong, 3 means key is wrong, 4 is good, 5 is turned off by user through DNS
+    DKIM: {
+        State: number; // 0 is default, 1 and 2 means detected record but wrong, 3 means key is wrong, 4 is good, 5 is turned off by user through DNS
+        Config: DKIMConfig[];
+    };
     DmarcState: number; // 0 is default, 1 and 2 means detected record but wrong, 3 is good
 }
