@@ -148,7 +148,6 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
             })
         );
 
-        console.log('submit close');
         onClose();
     };
 

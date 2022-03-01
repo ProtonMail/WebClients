@@ -19,6 +19,7 @@ const SearchField = ({ onSubmit, onChange, value, showEncryptedSearch }: Props) 
                 value={value}
                 autoFocus
                 onChange={onChange}
+                data-shorcut-target="searchbox-field"
             />
             <Button className="searchbox-search-button" onClick={onSubmit} shape="ghost" color="weak" icon>
                 <Icon name="magnifying-glass" />

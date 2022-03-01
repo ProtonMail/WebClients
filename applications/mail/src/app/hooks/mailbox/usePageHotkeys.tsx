@@ -47,8 +47,14 @@ export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) =>
             (e) => {
                 if (Shortcuts && !isTargetEditable(e)) {
                     e.preventDefault();
-                    const searchbox = document.querySelector('[data-shorcut-target="searchbox-field"]') as HTMLElement;
-                    searchbox?.focus();
+                    const button = document.querySelector('[data-shorcut-target="searchbox-button"]') as HTMLElement;
+                    button?.dispatchEvent(
+                        new MouseEvent('click', {
+                            view: window,
+                            bubbles: true,
+                            cancelable: false,
+                        })
+                    );
                 }
             },
         ],

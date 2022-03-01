@@ -31,11 +31,12 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
                 className="flex"
                 title={c('Action').t`Search`}
                 onClick={onOpen}
+                data-shorcut-target="searchbox-button"
             >
                 <Icon name="magnifying-glass" size={22} className="mauto" />
                 <span className="sr-only">{c('Action').t`Search`}</span>
             </Button>
-            <div className="flex flex-align-items-center flex-item-fluid" onClick={onOpen}>
+            <div className="flex flex-align-items-center flex-item-fluid" data-testid="search-keyword" onClick={onOpen}>
                 {searchParams.keyword ? searchParams.keyword : <span className="placeholder">{placeholder}</span>}
             </div>
             {isSearch ? (

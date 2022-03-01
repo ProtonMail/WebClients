@@ -1,6 +1,6 @@
 import loudRejection from 'loud-rejection';
-import { fireEvent, getByTestId, getByText } from '@testing-library/dom';
-import { act, screen } from '@testing-library/react';
+import { fireEvent, getByText } from '@testing-library/dom';
+import { screen } from '@testing-library/react';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import {
     addApiMock,
@@ -10,6 +10,7 @@ import {
     render,
     minimalCache,
     addToCache,
+    tick,
 } from '../../helpers/test/helper';
 import { Breakpoints } from '../../models/utils';
 import MailHeader from './MailHeader';
@@ -49,18 +50,18 @@ describe('MailHeader', () => {
         props = getProps();
 
         const result = await render(<MailHeader {...props} />, false);
-        const searchForm = result.getByRole('search');
+        const search = result.getByTitle('Search');
 
-        const openAdvanced = async () => {
-            const advancedDropdownButton = getByTestId(searchForm, 'dropdown-button');
-            fireEvent.click(advancedDropdownButton);
-            const dropdown = await getDropdown();
-            const submitButton = dropdown.querySelector('button[type="submit"]') as HTMLButtonElement;
+        const openSearch = async () => {
+            fireEvent.click(search);
+            await tick();
+            const overlay = document.querySelector('div[role="dialog"].overlay') as HTMLDivElement;
+            const submitButton = overlay.querySelector('button[type="submit"]') as HTMLButtonElement;
             const submit = () => fireEvent.click(submitButton);
-            return { dropdown, submitButton, submit };
+            return { overlay, submitButton, submit };
         };
 
-        return { ...result, searchForm, openAdvanced };
+        return { ...result, openSearch };
     };
 
     // Not found better to test
@@ -153,29 +154,15 @@ describe('MailHeader', () => {
     });
 
     describe('Search features', () => {
-        it('should search with search bar', async () => {
+        it('should search with keyword', async () => {
             const searchTerm = 'test';
 
-            const { searchForm } = await setup();
-            const searchInput = searchForm.querySelector('input') as HTMLInputElement;
-
-            fireEvent.change(searchInput, { target: { value: searchTerm } });
-
-            act(() => {
-                fireEvent.submit(searchForm);
-            });
-
-            expect(props.onSearch).toHaveBeenCalledWith(searchTerm, undefined);
-        });
-
-        it('should search with keyword in advanced search', async () => {
-            const searchTerm = 'test';
-
-            const { searchForm, openAdvanced, rerender } = await setup();
-            const { submit } = await openAdvanced();
+            const { getByTestId, openSearch, rerender } = await setup();
+            const { submit } = await openSearch();
 
             const keywordInput = document.getElementById('search-keyword') as HTMLInputElement;
             fireEvent.change(keywordInput, { target: { value: searchTerm } });
+
             submit();
 
             const history = getHistory();
@@ -185,15 +172,15 @@ describe('MailHeader', () => {
 
             await rerender(<MailHeader {...props} />);
 
-            const searchInput = searchForm.querySelector('input') as HTMLInputElement;
-            expect(searchInput.value).toBe(searchTerm);
+            const searchKeyword = getByTestId('search-keyword');
+            expect(searchKeyword.textContent).toBe(searchTerm);
         });
 
         it('should search with keyword and location', async () => {
             const searchTerm = 'test';
 
-            const { openAdvanced } = await setup();
-            const { submit } = await openAdvanced();
+            const { openSearch } = await setup();
+            const { submit } = await openSearch();
 
             const keywordInput = document.getElementById('search-keyword') as HTMLInputElement;
             fireEvent.change(keywordInput, { target: { value: searchTerm } });
