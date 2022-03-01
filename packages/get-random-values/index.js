@@ -6,6 +6,10 @@ const getRandomValues = (buf) => {
     return buf;
   }
 
+  if (typeof crypto !== 'undefined') {
+    return crypto.getRandomValues(buf);
+  }
+
   if (window.crypto && window.crypto.getRandomValues) {
     return window.crypto.getRandomValues(buf);
   }
