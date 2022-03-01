@@ -307,12 +307,6 @@ describe('getHasOccurrences', () => {
                     tzid: 'Europe/Paris',
                 },
             },
-            dtend: {
-                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 35, seconds: 0, isUTC: false },
-                parameters: {
-                    tzid: 'Europe/Paris',
-                },
-            },
             rrule: {
                 value: {
                     freq: 'DAILY',
@@ -411,33 +405,19 @@ describe('getSupportedRrule', () => {
         value: { year: 2020, month: 5, day: 11 },
         parameters: { type: 'date' },
     };
-    const dtendPartDayUTC = {
-        value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 30, seconds: 0, isUTC: true },
-    };
-    const dtendPartDayZoned = {
-        value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 30, seconds: 0, isUTC: false },
-        parameters: { tzid: 'Antarctica/Troll' },
-    };
-    const dtendAllDay = {
-        value: { year: 2020, month: 5, day: 12 },
-        parameters: { type: 'date' },
-    };
 
     it('should reformat rrules with a badly formatted UNTIL', () => {
         const vevents = [
             {
                 dtstart: dtstartPartDayUTC,
-                dtend: dtendPartDayUTC,
                 rrule: { value: { freq: 'WEEKLY', until: { year: 2020, month: 5, day: 15 } } },
             },
             {
                 dtstart: dtstartPartDayZoned,
-                dtend: dtendPartDayZoned,
                 rrule: { value: { freq: 'WEEKLY', until: { year: 2020, month: 5, day: 15 } } },
             },
             {
                 dtstart: dtstartAllDay,
-                dtend: dtendAllDay,
                 rrule: {
                     value: {
                         freq: 'WEEKLY',
@@ -468,7 +448,6 @@ describe('getSupportedRrule', () => {
         const vevents = [
             {
                 dtstart: dtstartPartDayUTC,
-                dtend: dtendPartDayUTC,
                 rrule: {
                     value: {
                         freq: 'WEEKLY',
@@ -478,7 +457,6 @@ describe('getSupportedRrule', () => {
             },
             {
                 dtstart: dtstartPartDayZoned,
-                dtend: dtendPartDayZoned,
                 rrule: {
                     value: {
                         freq: 'WEEKLY',
@@ -509,19 +487,10 @@ describe('getHasConsistentRrule', () => {
     const dtstartPartDayUTC = {
         value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 0, seconds: 0, isUTC: true },
     };
-    const dtendPartDayUTC = {
-        value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 30, seconds: 0, isUTC: true },
-    };
 
     it('should not allow count and until together', () => {
         const dtstart = {
             value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
-            parameters: {
-                tzid: 'Europe/Paris',
-            },
-        };
-        const dtend = {
-            value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 35, seconds: 0, isUTC: false },
             parameters: {
                 tzid: 'Europe/Paris',
             },
@@ -531,7 +500,6 @@ describe('getHasConsistentRrule', () => {
         expect(
             getHasConsistentRrule({
                 dtstart,
-                dtend,
                 rrule: {
                     value: {
                         freq: 'DAILY',
@@ -543,7 +511,6 @@ describe('getHasConsistentRrule', () => {
         expect(
             getHasConsistentRrule({
                 dtstart,
-                dtend,
                 rrule: {
                     value: {
                         freq: 'DAILY',
@@ -555,7 +522,6 @@ describe('getHasConsistentRrule', () => {
         expect(
             getHasConsistentRrule({
                 dtstart,
-                dtend,
                 rrule: {
                     value: {
                         freq: 'DAILY',
@@ -565,6 +531,63 @@ describe('getHasConsistentRrule', () => {
                 },
             })
         ).toEqual(false);
+    });
+
+    it('should not allow byyearday for frequencies other than yearly', () => {
+        const dtstart = {
+            value: { year: 2022, month: 1, day: 27, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+            parameters: {
+                tzid: 'Europe/Paris',
+            },
+        };
+
+        expect(
+            getHasConsistentRrule({
+                dtstart,
+                rrule: {
+                    value: {
+                        freq: 'DAILY',
+                        byyearday: 27,
+                    },
+                },
+            })
+        ).toEqual(false);
+        expect(
+            getHasConsistentRrule({
+                dtstart,
+                rrule: {
+                    value: {
+                        freq: 'WEEKLY',
+                        byyearday: 27,
+                        count: 3,
+                        interval: 2,
+                    },
+                },
+            })
+        ).toEqual(false);
+        expect(
+            getHasConsistentRrule({
+                dtstart,
+                rrule: {
+                    value: {
+                        freq: 'MONTHLY',
+                        bymonthday: 27,
+                        byyearday: 27,
+                    },
+                },
+            })
+        ).toEqual(false);
+        expect(
+            getHasConsistentRrule({
+                dtstart,
+                rrule: {
+                    value: {
+                        freq: 'YEARLY',
+                        byyearday: 27,
+                    },
+                },
+            })
+        ).toEqual(true);
     });
 
     it('should filter out inconsistent rrules', () => {
@@ -589,7 +612,6 @@ describe('getHasConsistentRrule', () => {
         ];
         const vevents = rrules.map((rrule) => ({
             dtstart: dtstartPartDayUTC,
-            dtend: dtendPartDayUTC,
             rrule: { value: rrule },
         }));
         const expected = vevents.map(() => false);
@@ -600,12 +622,6 @@ describe('getHasConsistentRrule', () => {
         const vevent = {
             dtstart: {
                 value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
-                parameters: {
-                    tzid: 'Europe/Paris',
-                },
-            },
-            dtend: {
-                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 35, seconds: 0, isUTC: false },
                 parameters: {
                     tzid: 'Europe/Paris',
                 },
@@ -636,12 +652,6 @@ describe('getHasConsistentRrule', () => {
                     tzid: 'Europe/Paris',
                 },
             },
-            dtend: {
-                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 35, seconds: 0, isUTC: false },
-                parameters: {
-                    tzid: 'Europe/Paris',
-                },
-            },
             rrule: {
                 value: {
                     freq: 'DAILY',
@@ -656,12 +666,6 @@ describe('getHasConsistentRrule', () => {
         const vevent = {
             dtstart: {
                 value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
-                parameters: {
-                    tzid: 'Europe/Paris',
-                },
-            },
-            dtend: {
-                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 35, seconds: 0, isUTC: false },
                 parameters: {
                     tzid: 'Europe/Paris',
                 },
