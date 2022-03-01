@@ -296,6 +296,7 @@ a:active {
 
 .proton-print {
 	@import '~@proton/styles/scss/helpers/flex';
+	@import '~@proton/styles/scss/helpers/outline';
 
 	font-family: var(--font-family);
 	font-size: 14px;
@@ -340,7 +341,7 @@ a:active {
 		color: var(--text-norm);
 	}
 
-	.maxw-100  {
+	.maxw-100 {
 		max-inline-size: 100%;
 	}
 
@@ -352,6 +353,42 @@ a:active {
 
 	.inline-block {
 		display: inline-block;
+	}
+
+	.text-pre {
+		white-space: pre;
+	}
+
+	.proton-print-footer {
+		margin-block-start: 1em;
+		border-top: 1px solid var(--border-weak);
+		padding-block-start: 1em;
+
+		&-sizes {
+			margin-block-end: 1em;
+			&-label {
+				margin-inline-end: 1em;
+			}
+			&-label,
+			&-count,
+			&-embedded-count {
+				align-items: baseline;
+			}
+		}
+
+		&-item {
+			max-inline-size: 100%;
+			border: 1px solid var(--border-weak);
+			padding-block: 0.5em;
+			padding-inline: 0.25em;
+			border-radius: 3px;
+		}
+
+		&-item-size {
+			margin-inline-start: 0.25rem;
+			font-size: 0.75em;
+			color: var(--text-weak);
+		}
 	}
 }
 
