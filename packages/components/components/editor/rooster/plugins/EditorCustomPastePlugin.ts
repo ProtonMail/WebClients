@@ -37,6 +37,8 @@ class EditorCustomPastePlugin implements EditorPlugin {
             FORM: null,
         };
 
+        event.sanitizingOption.additionalAllowedAttributes = ['bgcolor'];
+
         const isPlainTextContent =
             event.clipboardData.types.length === 1 && event.clipboardData.types[0] === 'text/plain';
         if (isPlainTextContent) {
