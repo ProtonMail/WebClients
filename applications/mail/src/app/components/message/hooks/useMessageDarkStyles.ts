@@ -17,11 +17,6 @@ const useMessageDarkStyles = (
     const dispatch = useDispatch();
     const isDarkTheme = DARK_THEMES.includes(theme);
 
-    // HACK
-    if (!darkStylesFeature.loading && darkStylesFeature.feature) {
-        darkStylesFeature.feature.Value = true;
-    }
-
     const needCompute =
         darkStylesFeature.feature?.Value &&
         !message.messageDocument?.noDarkStyle &&
