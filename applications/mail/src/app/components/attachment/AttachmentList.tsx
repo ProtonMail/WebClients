@@ -29,7 +29,6 @@ interface Props {
     primaryAction: AttachmentAction;
     secondaryAction: AttachmentAction;
     collapsable: boolean;
-    showDownloadAll: boolean;
     onRemoveAttachment?: (attachment: Attachment) => Promise<void>;
     onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
     className?: string;
@@ -43,7 +42,6 @@ const AttachmentList = ({
     primaryAction,
     secondaryAction,
     collapsable,
-    showDownloadAll,
     onRemoveAttachment,
     onRemoveUpload,
     className,
@@ -152,9 +150,7 @@ const AttachmentList = ({
         : undefined;
     const TagButton = collapsable ? 'button' : 'div';
 
-    const canShowDownloadAll = isNumAttachmentsWithoutEmbedded
-        ? showDownloadAll && pureAttachmentsCount > 0
-        : showDownloadAll && attachmentsCount > 0;
+    const canShowDownloadAll = isNumAttachmentsWithoutEmbedded ? pureAttachmentsCount > 0 : attachmentsCount > 0;
 
     const attachmentsToShow = isNumAttachmentsWithoutEmbedded ? pureAttachments : attachments;
 
