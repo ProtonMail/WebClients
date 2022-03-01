@@ -141,12 +141,7 @@ export default function useAction() {
 
         const undoAction = async () => {
             const undoResult = await links.restoreLinks(abortSignal, shareId, result.successes);
-            createRestoredItemsNotifications(
-                linksToTrash,
-                undoResult.successes,
-                undoResult.failures,
-                undoResult.alreadyExisting
-            );
+            createRestoredItemsNotifications(linksToTrash, undoResult.successes, undoResult.failures);
         };
 
         createTrashedItemsNotifications(linksToTrash, result.successes, result.failures, undoAction);
@@ -170,13 +165,7 @@ export default function useAction() {
             await trashLinks(abortSignal, shareId, linksToTrash);
         };
 
-        createRestoredItemsNotifications(
-            linksToRestore,
-            result.successes,
-            result.failures,
-            result.alreadyExisting,
-            undoAction
-        );
+        createRestoredItemsNotifications(linksToRestore, result.successes, result.failures, undoAction);
     };
 
     const deletePermanently = async (abortSignal: AbortSignal, shareId: string, linksToDelete: LinkInfo[]) => {

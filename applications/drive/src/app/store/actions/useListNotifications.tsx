@@ -48,6 +48,7 @@ export default function useListNotifications() {
     ) => {
         showAggregatedErrorNotification(Object.values(failures), (errors) => {
             const firstItemId = Object.keys(failures)[0];
+
             const firstItemName = linkInfos.find((link) => link.linkId === firstItemId)?.name;
             return firstItemName && errors.length === 1
                 ? oneItemMessage(firstItemName)
@@ -121,7 +122,6 @@ export default function useListNotifications() {
         linkInfos: LinkInfo[],
         ok: string[],
         failures: { [linkId: string]: any },
-        alreadyExisting: string[],
         undoAction?: () => Promise<void>
     ) => {
         createSuccessMessage(
@@ -136,6 +136,7 @@ export default function useListNotifications() {
                 ),
             undoAction
         );
+
         createFailureMessage(
             linkInfos,
             failures,
@@ -147,18 +148,6 @@ export default function useListNotifications() {
                     numberOfItems
                 )
         );
-
-        alreadyExisting.forEach((existingLinkId) => {
-            const name = linkInfos.find(({ linkId }) => linkId === existingLinkId)?.name;
-            if (!name) {
-                return;
-            }
-            const message = c('Notification').t`An item with the name "${name}" already exists in the current folder`;
-            createNotification({
-                type: 'error',
-                text: message,
-            });
-        });
     };
 
     const createDeletedItemsNotifications = (
