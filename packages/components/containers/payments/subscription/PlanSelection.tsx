@@ -7,7 +7,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
-import { Tabs } from '../../../components';
+import { CalendarLogo, DriveLogo, MailLogo, Tabs, VpnLogo } from '../../../components';
 import { useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 import { getShortPlan } from '../features/plan';
 import { getAllFeatures } from '../features';
@@ -156,17 +156,27 @@ const PlanSelection = ({
         },
     ];
 
+    const currencySelectorRow = (
+        <div className="text-right">
+            <CurrencySelector mode="buttons" currency={currency} onSelect={onChangeCurrency} disabled={loading} />
+        </div>
+    );
+
+    const logosRow = (
+        <div className="mt1 flex flex-justify-center flex-nowrap flex-align-items-center color-weak">
+            <MailLogo />
+            +
+            <CalendarLogo />
+            +
+            <DriveLogo />
+            +
+            <VpnLogo />
+        </div>
+    );
+
     return (
         <>
             <div className="mb2">
-                <div className="text-right plan-selection-currency-selector">
-                    <CurrencySelector
-                        mode="buttons"
-                        currency={currency}
-                        onSelect={onChangeCurrency}
-                        disabled={loading}
-                    />
-                </div>
                 <Tabs
                     value={audience === Audience.B2C ? 0 : 1}
                     onChange={(newValue) => {
@@ -174,6 +184,17 @@ const PlanSelection = ({
                     }}
                     tabs={tabs}
                     containerClassName="inline-block"
+                    navContainerClassName="text-center"
+                    gap={
+                        mode === 'settings' ? (
+                            <>
+                                {logosRow}
+                                {currencySelectorRow}
+                            </>
+                        ) : (
+                            <>{currencySelectorRow}</>
+                        )
+                    }
                 />
             </div>
         </>
