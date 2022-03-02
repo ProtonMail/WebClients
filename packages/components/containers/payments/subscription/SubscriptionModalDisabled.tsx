@@ -30,10 +30,11 @@ const SubscriptionModalDisabled = (props: Props) => {
             title={c('new_plans').t`New plans coming soon!`}
             buttons={<Button color="norm" onClick={props.onClose}>{c('new_plans').t`Got it`}</Button>}
         >
-            <div className="text-pre-wrap">
-                {c('new_plans').t`We're upgrading your current plan to a new plan that offers more for the same price.
-
-Once our system is updated, you'll see the plan changes in your account dashboard.`}
+            <div className="mb1">
+                {c('new_plans').t`We're upgrading your current plan to a new plan that offers more for the same price.`}
+            </div>
+            <div>
+                {c('new_plans').t`Once our system is updated, you'll see the plan changes in your account dashboard.`}
             </div>
         </AlertModal>
     );
