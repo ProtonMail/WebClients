@@ -169,6 +169,9 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
     const handleSubmitStartError = (error: any & { data: { Code: number; Error: string } }) => {
         const { data: { Code, Error } = { Code: 0, Error: '' } } = error;
 
+        // eslint-disable-next-line no-console
+        console.error('Import Connection Error', error.data);
+
         if (
             [
                 IMPORT_ERROR.AUTHENTICATION_ERROR,
