@@ -7,7 +7,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
-import { CalendarLogo, DriveLogo, MailLogo, Tabs, VpnLogo } from '../../../components';
+import { CalendarLogo, DriveLogo, MailLogo, Tabs, VpnLogo, Icon } from '../../../components';
 import { useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 import { getShortPlan } from '../features/plan';
 import { getAllFeatures } from '../features';
@@ -165,11 +165,11 @@ const PlanSelection = ({
     const logosRow = (
         <div className="mt1 flex flex-justify-center flex-nowrap flex-align-items-center color-weak">
             <MailLogo />
-            +
+            <Icon name="plus" alt="+" className="mx0-5" />
             <CalendarLogo />
-            +
+            <Icon name="plus" alt="+" className="mx0-5" />
             <DriveLogo />
-            +
+            <Icon name="plus" alt="+" className="mx0-5" />
             <VpnLogo />
         </div>
     );
