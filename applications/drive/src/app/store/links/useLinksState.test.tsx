@@ -233,8 +233,11 @@ describe('useLinksState', () => {
         expect(result1.shareId.tree.linkId0).toMatchObject(['linkId1', 'linkId4']);
         // Trashed parent trashes automatically also children.
         expect(result1.shareId.links.linkId7.encrypted.trashed).toBe(12345678);
+        expect(result1.shareId.links.linkId7.encrypted.trashedByParent).toBeFalsy();
         expect(result1.shareId.links.linkId8.encrypted.trashed).toBe(123456789);
+        expect(result1.shareId.links.linkId8.encrypted.trashedByParent).toBeFalsy();
         expect(result1.shareId.links.linkId9.encrypted.trashed).toBe(12345678);
+        expect(result1.shareId.links.linkId9.encrypted.trashedByParent).toBeTruthy();
 
         // Restoring from trash re-adds link back to its parent.
         const result2 = addOrUpdate(result1, 'shareId', [
@@ -250,8 +253,11 @@ describe('useLinksState', () => {
         expect(result2.shareId.tree.linkId0).toMatchObject(['linkId1', 'linkId4', 'linkId7']);
         // Restoring from trash removes also trashed flag to its children which were trashed with it.
         expect(result1.shareId.links.linkId7.encrypted.trashed).toBe(null);
+        expect(result1.shareId.links.linkId7.encrypted.trashedByParent).toBeFalsy();
         expect(result1.shareId.links.linkId8.encrypted.trashed).toBe(123456789);
+        expect(result1.shareId.links.linkId8.encrypted.trashedByParent).toBeFalsy();
         expect(result1.shareId.links.linkId9.encrypted.trashed).toBe(null);
+        expect(result1.shareId.links.linkId9.encrypted.trashedByParent).toBeFalsy();
     });
 
     it('locks and unlocks links', () => {
@@ -482,7 +488,6 @@ describe('useLinksState', () => {
             hook = result;
 
             act(() => {
-                state.shareId.links.linkId5.encrypted.trashed = 12345;
                 state.shareId.links.linkId6.encrypted.shareUrl = {
                     id: 'shareUrlId',
                     token: 'token',
@@ -490,6 +495,11 @@ describe('useLinksState', () => {
                     createTime: 12345,
                     expireTime: null,
                 };
+                state.shareId.links.linkId7.encrypted.trashed = 12345;
+                state.shareId.links.linkId8.encrypted.trashed = 12345;
+                state.shareId.links.linkId8.encrypted.trashedByParent = true;
+                state.shareId.links.linkId9.encrypted.trashed = 12345;
+                state.shareId.links.linkId9.encrypted.trashedByParent = true;
                 hook.current.setLinks('shareId', Object.values(state.shareId.links));
             });
         });
@@ -501,7 +511,7 @@ describe('useLinksState', () => {
 
         it('returns trashed links', () => {
             const links = hook.current.getTrashed('shareId');
-            expect(links.map((link) => link.encrypted.linkId)).toMatchObject(['linkId5']);
+            expect(links.map((link) => link.encrypted.linkId)).toMatchObject(['linkId7']);
         });
 
         it('returns shared links', () => {
