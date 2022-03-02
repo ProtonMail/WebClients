@@ -16,29 +16,43 @@ export default {
 };
 
 export const Basic = () => {
-    const [state, setState] = useState(true);
-    return <Toggle checked={state} onChange={() => setState(!state)} />;
+    const [isChecked, setIsChecked] = useState(true);
+    return (
+        <Toggle
+            id="toggle-basic"
+            checked={isChecked}
+            onChange={() => {
+                setIsChecked(!isChecked);
+            }}
+        />
+    );
 };
 
 export const Loading = () => {
-    const [state, setState] = useState(false);
-    const [loading, withLoading] = useLoading(true);
+    const [isChecked, setIsChecked] = useState(false);
+    const [loading, withLoading] = useLoading(false);
 
     return (
         <Toggle
-            checked={state}
+            id="toggle-loading"
+            checked={isChecked}
             loading={loading}
             onChange={() => {
                 const run = async () => {
                     await wait(500);
-                    setState((old) => !old);
+                    setIsChecked((old) => !old);
                 };
-                withLoading(run());
+                void withLoading(run());
             }}
         />
     );
 };
 
 export const Disabled = () => {
-    return <Toggle checked disabled />;
+    return (
+        <>
+            <Toggle id="toggle-disabled-unchecked" disabled className="mr1" />
+            <Toggle id="toggle-disabled-checked" checked disabled />
+        </>
+    );
 };
