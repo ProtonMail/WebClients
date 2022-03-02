@@ -361,7 +361,7 @@ a:active {
 
 	.proton-print-footer {
 		margin-block-start: 1em;
-		border-top: 1px solid var(--border-weak);
+		border-block-start: 1px solid var(--border-weak);
 		padding-block-start: 1em;
 
 		&-sizes {
