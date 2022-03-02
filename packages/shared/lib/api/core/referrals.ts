@@ -1,15 +1,12 @@
-// get a list of your own referrals with pagination and filters (state) query parameters
-
-import { ReferralState } from '../../interfaces/Referrals';
-
 interface GetReferralsProps {
-    page: number;
-    state?: ReferralState;
+    Offset?: number;
+    Limit?: number;
 }
-export const getReferrals = ({ page }: GetReferralsProps) => ({
+
+export const getReferrals = (params?: GetReferralsProps) => ({
     method: 'get',
     url: 'core/v4/referrals',
-    params: { Page: page },
+    params: params,
 });
 
 /**
