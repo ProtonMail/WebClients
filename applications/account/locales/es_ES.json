@@ -505,11 +505,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "actualizar la página"
-      ],
       "Refresh the page": [
         "Actualizar la página"
+      ],
+      "refresh the page": [
+        "actualizar la página"
       ],
       "Reload": [
         "Recargar"
@@ -1194,10 +1194,13 @@
       "Continue using ProtonMail.": [
         ""
       ],
-      "Copy ": [
+      "Copy": [
         ""
       ],
       "Invite": [
+        ""
+      ],
+      "Send": [
         ""
       ],
       "Tweet": [
@@ -2311,10 +2314,7 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se haya completado, puedes cerrar esta ventana."
       ],
-      "Get 3 months of Mail Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        ""
-      ],
-      "Invite friends to start earning credits": [
+      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
         ""
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
@@ -2324,7 +2324,10 @@
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
       ],
-      "Track how many people click on your link, sign up to ${ mailAppName }, and become paid subscribers. Watch your free months add up.": [
+      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
+        ""
+      ],
+      "Track your referral link activities here.": [
         ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
@@ -2600,9 +2603,6 @@
       "Invalid ${ name } code": [
         "Código de ${ name } no válido"
       ],
-      "Invalid address": [
-        "Dirección no válida"
-      ],
       "Invalid card number": [
         "Número de tarjeta no válido"
       ],
@@ -2620,9 +2620,6 @@
       ],
       "Invalid name": [
         "Nombre no válido"
-      ],
-      "Invalid password": [
-        "Contraseña no válida"
       ],
       "Invalid postal code": [
         "Código postal no válido"
@@ -2642,6 +2639,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton",
         "Fusionar al menos ${ calendarToFixCount } calendarios con los calendarios existentes de Proton"
+      ],
+      "Name does not match": [
+        ""
       ],
       "Name on card required": [
         "El titular de la tarjeta es obligatorio"
@@ -3849,6 +3849,9 @@
       ]
     },
     "Info": {
+      "${ appName } ${ planName } credits earned": [
+        ""
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
       ],
@@ -3869,6 +3872,12 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendario combinado",
         "${ calendarsToBeMergedCount } calendarios combinados"
+      ],
+      "${ emailAddress } is a ${ appName } address": [
+        ""
+      ],
+      "${ emailAddress } is invalid": [
+        ""
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Gratuito"
@@ -3902,6 +3911,9 @@
       "${ numContacts } contact": [
         "${ numContacts } contacto",
         "${ numContacts } contactos"
+      ],
+      "${ planName } plan": [
+        ""
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta encontrada",
@@ -3972,19 +3984,22 @@
         "+${ organization.BonusVPN } conexión para ProtonVPN (te permite conectar más dispositivos a la VPN)",
         "+${ organization.BonusVPN } conexiones para ProtonVPN (te permite conectar más dispositivos a la VPN)"
       ],
-      "1 to 3 months of Mail Plus will appear as credits on your next bill": [
+      "1. Invite friends to Proton": [
         ""
       ],
-      "20 personal calendars": [
+      "2. They try ${ appName } ${ planName }": [
         ""
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% de descuento aplicado a tu suscripción con el cupón ${ code }"
       ],
+      "3. You earn credits": [
+        ""
+      ],
       "30 days money-back guarantee.": [
         "Garantía de reembolso de 30 días."
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -4076,9 +4091,6 @@
       ],
       "Allow recovery by phone": [
         "Permitir recuperación por teléfono"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Te permite alojar correos electrónicos para tu(s) propio(s) dominio(s) en ${ mailAppName }, p. ej., john.smith@example.com"
       ],
       "Already have an account? ${ loginLink }": [
         "¿Ya tienes una cuenta? ${ loginLink }"
@@ -4227,10 +4239,10 @@
       "Continue anyway?": [
         "¿Continuar de todos modos?"
       ],
-      "Continue with plus": [
+      "Continue with ${ planName }": [
         ""
       ],
-      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
         ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
@@ -4254,12 +4266,6 @@
       ],
       "Create in": [
         "Crear en"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
       ],
       "Creating your Proton account": [
         "Creando tu cuenta Proton"
@@ -4346,7 +4352,7 @@
       "Each additional connection can be assigned to users in your organization.": [
         "Cada conexión adicional puede ser asignada a los usuarios en tu organización."
       ],
-      "Earned ${ rewards } of ${ rewardsLimit } Mail plus months.": [
+      "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
         ""
       ],
       "Edit label": [
@@ -4445,17 +4451,11 @@
       "free up space by deleting older messages or other data": [
         "liberar espacio eliminando mensajes antiguos u otros datos"
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa con velocidad de hasta 10 Gbps."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generación de una nueva frase de recuperación desactivará la anterior."
-      ],
-      "Get rewarded": [
-        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "¡Dale tu clave pública a tus amigos o publícala en línea para que todos puedan enviarte correos electrónicos cifrados de extremo a extremo!"
@@ -4605,7 +4605,7 @@
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
       ],
-      "Invite friends": [
+      "Invited via email": [
         ""
       ],
       "It appears some of your data is encrypted and locked.": [
@@ -4614,10 +4614,13 @@
       "it’s imperative": [
         "es obligatorio"
       ],
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
+        ""
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Simplemente confirme su selección y nosotros haremos el resto."
       ],
-      "Just send them your personal referral link": [
+      "Just send them your personal referral link.": [
         ""
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
@@ -4676,9 +4679,6 @@
       ],
       "lose access to all current encrypted data": [
         "Perderás acceso a todos los datos cifrados actuales"
-      ],
-      "Mail Plus credits earned": [
-        ""
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru lee tus datos personales con el fin de facilitar el acceso a anunciantes, agencias gubernamentales rusas y terceros. Para una mejor privacidad, crea una dirección de correo electrónico segura."
@@ -4815,7 +4815,7 @@
       "Paid for a 12 months plan": [
         ""
       ],
-      "Paid for a month plan": [
+      "Paid for a monthly plan": [
         ""
       ],
       "Payment can take a few minutes to fully verify.": [
@@ -4887,14 +4887,17 @@
       "Plus or Visionary subscription required": [
         "Se requiere suscripción Plus o Visionary"
       ],
-      "Plus plan": [
-        ""
-      ],
       "Prevents content from the sender's server from loading without your permission.": [
         "Evita que el contenido del servidor del remitente se cargue sin su permiso."
       ],
       "Preview": [
         "Previsualizar"
+      ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
       ],
       "Proton can't help you recover any lost passwords": [
         "Proton no puede ayudarte a recuperar ninguna contraseña perdida"
@@ -4963,9 +4966,6 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase de recuperación no debe estar asociada a contraseñas anteriores."
       ],
-      "Refer, receive, repeat. You can earn credits for up to 18 months of Mail Plus.": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
@@ -5002,9 +5002,6 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         ""
       ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
-      ],
       "Server is currently down": [
         "El servidor está actualmente caído"
       ],
@@ -5035,14 +5032,14 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF es utilizado para especificar quién está autorizado para enviar correos para el dominio, así que te recomendamos incluir a ProtonMail en tu registro de SPF. Agrega el siguiente registro TXT en tu registro DNS. Esto se puede hacer normalmente en el panel de control de tu registrador de nombres de dominio."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Servicio inicial de VPN con soporte P2P."
       ],
       "Storage GB": [
         "GB de almacenamiento"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
       ],
       "Sucessfully sent invites": [
         ""
@@ -5077,9 +5074,6 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         ""
       ],
-      "The 30-day free trial is not available any other way": [
-        ""
-      ],
       "The calendar will be removed from your account.": [
         "El calendario será removido de su cuenta."
       ],
@@ -5095,7 +5089,7 @@
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estos archivos de configuración te permiten elegir a qué servidor de ProtonVPN te conectas cuando utilizas una aplicación VPN de terceros o al configurar una conexión VPN en un enrutador."
       ],
-      "They signup": [
+      "This 30-day free trial is not available any other way.": [
         ""
       ],
       "This account has been suspended due to a potential policy violation.": [
@@ -5236,6 +5230,9 @@
       "Unlimited folders, labels, and filters": [
         ""
       ],
+      "Unlimited messages": [
+        ""
+      ],
       "Unsupported file": [
         "Archivo no soportado"
       ],
@@ -5254,7 +5251,7 @@
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Actualiza a un plan de pago para desbloquear el soporte IMAP/SMTP mediante ProtonMail Bridge."
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -5347,6 +5344,9 @@
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Cuando las notificaciones están habilitadas, enviaremos una alerta a tu dirección de recuperación/notificación cuando tengas nuevos mensajes en tu cuenta de ProtonMail."
       ],
+      "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
+        ""
+      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Cuando tu suscripción se renueve, aplicaremos cualquier crédito disponible antes de cobrar el método de pago anterior."
       ],
@@ -5406,6 +5406,9 @@
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puede utilizar las siguientes credenciales para conectarte a un servidor ProtonVPN mediante una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "No puedes utilizar las credenciales OpenVPN / IKEv2 para iniciar sesión en las aplicaciones ProtonVPN o en el panel de control de ProtonVPN. ${ learnMore }"
@@ -5497,7 +5500,7 @@
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico sólo se utilizará para esta verificación única."
       ],
-      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
         ""
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
@@ -5971,14 +5974,14 @@
       "Actions": [
         "Acciones"
       ],
+      "Activity": [
+        ""
+      ],
       "Address": [
         "Dirección"
       ],
       "Addresses": [
         "Direcciones"
-      ],
-      "Admin rights": [
-        "Derechos de administrador"
       ],
       "ALL": [
         "TODO"
@@ -6138,6 +6141,9 @@
       ],
       "Daily email notifications": [
         "Notificaciones diarias por correo electrónico"
+      ],
+      "Date": [
+        ""
       ],
       "Date format": [
         "Formato de fecha"
@@ -6463,9 +6469,6 @@
       "Previous password": [
         "Contraseña anterior"
       ],
-      "Private User": [
-        "Usuario privado"
-      ],
       "Prompt to trust keys": [
         "Solicitar confianza de claves"
       ],
@@ -6519,9 +6522,6 @@
       ],
       "Send invites in": [
         "Invitation language"
-      ],
-      "Share your invitation link": [
-        ""
       ],
       "Show secondary time zone": [
         "Mostrar zona horaria secundaria"
@@ -6690,6 +6690,9 @@
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
+      ],
+      "Your referral link": [
+        ""
       ],
       "Your reward": [
         ""
@@ -6968,8 +6971,8 @@
       "Contact groups": [
         "Grupos de contactos"
       ],
-      "Custom email addresses": [
-        "Direcciones de correo electrónico personalizadas"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Filtros personalizados"
@@ -7693,9 +7696,6 @@
       "Choose a name": [
         "Elige un nombre"
       ],
-      "Choose address": [
-        "Elige una dirección"
-      ],
       "Choose display name": [
         "Elige un nombre para mostrar"
       ],
@@ -7777,9 +7777,6 @@
       "Type text or keyword": [
         "Escribe el texto o palabra clave"
       ],
-      "Username": [
-        "Nombre de usuario"
-      ],
       "yourdomain.com": [
         "tudominio.com"
       ],
@@ -7852,8 +7849,8 @@
       "Built-in Adblocker (NetShield)": [
         "Bloqueador de anuncios integrado (NetShield)"
       ],
-      "Custom email addresses": [
-        "Direcciones de correo electrónico personalizadas"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Acceso anticipado a nuevos productos"
@@ -8134,7 +8131,16 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
+        ""
+      ],
+      "No more missed appointments": [
+        ""
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
         ""
       ]
     },
@@ -8465,6 +8471,9 @@
       ]
     },
     "Title": {
+      "${ appName } ${ planName } trial": [
+        ""
+      ],
       "${ appName } customization": [
         "Personalización de ${ appName }"
       ],
@@ -8732,11 +8741,11 @@
       "Decrypt key": [
         "Descifrar clave"
       ],
-      "Delete ${ address.Email }": [
-        "Eliminar ${ address.Email }"
-      ],
       "Delete ${ domain.DomainName }": [
         "Eliminar ${ domain.DomainName }"
+      ],
+      "Delete ${ email }": [
+        ""
       ],
       "Delete ${ filter.Name }": [
         "Eliminar ${ filter.Name }"
@@ -8764,6 +8773,9 @@
       ],
       "Delete user": [
         "Eliminar usuario"
+      ],
+      "Disable ${ email }": [
+        ""
       ],
       "Disable two-factor authentication": [
         "Desactivar la autenticación de doble factor"
@@ -8864,11 +8876,14 @@
       "Get ProtonVPN Plus to access all servers": [
         "Obtén ProtonVPN Plus para acceder a todos los servidores"
       ],
-      "Get up to 18 months of Mail Plus for free": [
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
       ],
       "Gift code": [
         "Código promocional"
+      ],
+      "How does it work?": [
+        ""
       ],
       "Human verification": [
         "Verificación humana"
@@ -9029,9 +9044,6 @@
       ],
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
-      ],
-      "ProtonMail Plus Trial": [
-        ""
       ],
       "ProtonVPN": [
         "ProtonVPN"
@@ -9378,9 +9390,6 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Habilitar registros avanzados registra la dirección IP para cada evento en el registro de seguridad."
       ],
-      "For easy sharing with all your contacts, the link text “Try ${ mailAppName } Plus Free for one month” is added to the bottom of your emails": [
-        ""
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Obtén acceso a todas las funciones de pago de ${ vpnAppName } y ${ mailAppName } (el servicio de correo electrónico cifrado que millones utilizan para proteger sus datos) con un plan."
       ],
@@ -9389,12 +9398,6 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupa correos electrónicos en la misma conversación juntos en tu bandeja de entrada o muéstralos por separado."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Aloja correos electrónicos para tus propios dominios en ${ mailAppName }, p. ej. usuario@sudominio.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Aloja correos electrónicos para tus propios dominios en ProtonMail, p. ej. usuario@sudominio.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compraste un código de regalo o recibiste uno de nuestro equipo de soporte, puedes agregarlo aquí."
@@ -9422,6 +9425,9 @@
       ],
       "Set the default layout for your Inbox.": [
         "Establece el diseño predeterminado para tu bandeja de entrada."
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
+        ""
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Las firmas creadas con esta clave son tratadas como inválidas y esta clave no puede usarse para cifrar"
@@ -9458,6 +9464,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Utiliza la dirección personal usuario@pm.me para enviar correos electrónicos"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detectamos un problema con tu configuración DNS. Asegúrate de que tus registros coinciden con las instrucciones de abajo. Si el problema persiste, tendremos que cerrar la sesión de DKIM."

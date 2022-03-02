@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } canviant a la facturació anual"
-      ],
       "${ BRAND_NAME } introduction": [
         "Introducció ${ BRAND_NAME }"
       ],
@@ -49,9 +46,6 @@
       ],
       "Add to group": [
         "Afegir al grup"
-      ],
-      "annual billing": [
-        "facturació anual"
       ],
       "Apply": [
         "Aplicar"
@@ -101,12 +95,6 @@
       "Close this banner": [
         "Tancar aquest bàner"
       ],
-      "Compare all features": [
-        "Comparar totes les funcionalitats"
-      ],
-      "Compare plans": [
-        "Comparar plans"
-      ],
       "Compose": [
         "Redactar"
       ],
@@ -139,9 +127,6 @@
       ],
       "Customize": [
         "Personalitzar"
-      ],
-      "Decrease": [
-        "Reduir"
       ],
       "Delete": [
         "Eliminar"
@@ -250,14 +235,8 @@
       "Import from .csv or vCard": [
         "Importar des de .csv o vCard"
       ],
-      "Increase": [
-        "Incrementar"
-      ],
       "Load image": [
         "Carregar imatge"
-      ],
-      "Loading verification": [
-        "Carregant verificació"
       ],
       "Log in": [
         "Inicia la sessió"
@@ -316,14 +295,8 @@
       "OK": [
         "D'acord"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Obrir la configuració de ${ CALENDAR_APP_NAME }"
-      ],
       "Open navigation": [
         "Obrir navegació"
-      ],
-      "Pay": [
-        "Pagar"
       ],
       "Preview contact": [
         "Previsualitzar contacte"
@@ -361,12 +334,6 @@
       "Remove": [
         "Suprimir"
       ],
-      "Remove bonuses": [
-        "Suprimeix beneficis"
-      ],
-      "Remove gift code": [
-        "Esborrar el codi regal"
-      ],
       "Remove this notification": [
         "Elimina aquesta notificació"
       ],
@@ -385,17 +352,11 @@
       "Request new code": [
         "Demana un nou codi"
       ],
-      "Retry": [
-        "Tornar a provar"
-      ],
       "Save": [
         "Desa"
       ],
       "Select all": [
         "Seleccionar-ho tot"
-      ],
-      "Select plan": [
-        "Seleccionar el pla"
       ],
       "Select timezone": [
         "Seleccionar fus horari"
@@ -463,9 +424,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Try again": [
-        "Tornar-ho a provar"
-      ],
       "Try another method": [
         "Proveu amb un altre mètode"
       ],
@@ -495,12 +453,6 @@
       ],
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
-      ],
-      "Use a different card": [
-        "Utilitzar una targeta diferent"
-      ],
-      "Use a different payment method": [
-        "Utilitzar un mètode de pagament diferent"
       ],
       "Use for sending": [
         "Utilitzar per enviar"
@@ -547,27 +499,6 @@
       ],
       "You don't have any groups.": [
         "No teniu cap grup."
-      ]
-    },
-    "Addon": {
-      "+ ${ addresses } email address": [
-        "+ ${ addresses } adreça de correu electrònic",
-        "+ ${ addresses } adreces de correu electrònic"
-      ],
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } domini personalitzat",
-        "+ ${ domains } dominis personalitzats"
-      ],
-      "+ ${ members } user": [
-        "+ ${ members } usuari",
-        "+ ${ members } usuaris"
-      ],
-      "+ ${ storage } storage": [
-        "+ ${ storage } emmagatzematge"
-      ],
-      "+ ${ vpn } connection": [
-        "+ ${ vpn } connexió",
-        "+ ${ vpn } connexions"
       ]
     },
     "Alarm notification": {
@@ -685,23 +616,6 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
-      ]
-    },
-    "Billing cycle option": {
-      "Annually": [
-        "Anualment"
-      ],
-      "Annually SAVE 20%": [
-        "ESTALVIEU UN 20% anualment"
-      ],
-      "Monthly": [
-        "Mensual"
-      ],
-      "Two years SAVE 33%": [
-        "2 anys ESTALVIEU EL 33%"
-      ],
-      "Two-year": [
-        "Bianual"
       ]
     },
     "blackfriday Action": {
@@ -874,31 +788,6 @@
     "Button": {
       "Continue using ProtonMail.": [
         ""
-      ]
-    },
-    "Calendar feature": {
-      "Calendar import": [
-        "Importació de calendari"
-      ],
-      "Invitations": [
-        "Invitacions"
-      ],
-      "Multiple calendars": [
-        "Diversos calendaris"
-      ],
-      "Recurring events": [
-        "Esdeveniments recurrents"
-      ],
-      "Share Calendar via link": [
-        "Compartir un calendari mitjançant un enllaç"
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        "20 / usuari"
-      ],
-      "20 / user *": [
-        "20 / usuari *"
       ]
     },
     "Calendar invite buttons label": {
@@ -1086,16 +975,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } dia",
-        "${ days } dies"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } mes",
-        "${ monthsWithYears } mesos"
       ]
     },
     "Country name": {
@@ -1978,22 +1857,6 @@
         "L'esdeveniment pertany a un calendari deshabilitat."
       ]
     },
-    "Disney": {
-      "Disney+": [
-        "Disney+"
-      ]
-    },
-    "Drive feature": {
-      "Access via Web": [
-        "Accés per Web"
-      ],
-      "Share files via link": [
-        "Compartir arxius amb un enllaç"
-      ],
-      "Upload / download files": [
-        "Carregar / descarregar arxius"
-      ]
-    },
     "Dropwdown action icon tooltip": {
       "Add calendar": [
         ""
@@ -2112,12 +1975,6 @@
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
-      "Amount above the maximum.": [
-        "Quantitat per sobre del màxim."
-      ],
-      "Amount below minimum.": [
-        "Quantitat per sota del mínim."
-      ],
       "Answer failed to be sent": [
         "No s'ha pogut enviar la resposta"
       ],
@@ -2138,9 +1995,6 @@
       ],
       "Cancellation failed to be sent": [
         "No s'ha pogut enviar la cancel·lació"
-      ],
-      "Checkout expired, please try again": [
-        "El pagament ha expirat. Torneu-ho a provar"
       ],
       "Contact could not be saved": [
         "El contacte no s'ha pogut desar"
@@ -2186,9 +2040,6 @@
       "Error": [
         "Error"
       ],
-      "Error connecting to the Bitcoin API.": [
-        "Error en connectar-se a l'API de Bitcoin."
-      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
@@ -2210,29 +2061,14 @@
       "Interval cannot be empty": [
         "L'interval no pot estar buit"
       ],
-      "Invalid ${ name } code": [
-        "Codi ${ name } no vàlid"
-      ],
-      "Invalid card number": [
-        "Número de targeta no vàlid"
-      ],
-      "Invalid code": [
-        "Codi no vàlid"
-      ],
       "Invalid email address": [
         "Adreça de correu electrònic invàlida"
-      ],
-      "Invalid expiration date": [
-        "Data de caducitat no vàlida"
       ],
       "Invalid link to the event": [
         "Enllaç invàlid a esdeveniment"
       ],
       "Invalid name": [
         "Nom no vàlid"
-      ],
-      "Invalid postal code": [
-        "Codi postal no vàlid"
       ],
       "Invalid public key file": [
         "Arxiu de clau pública invàlid"
@@ -2258,9 +2094,6 @@
       ],
       "Missing signature": [
         "Signatura no trobada"
-      ],
-      "Name on card required": [
-        "Es requereix el nom a la targeta"
       ],
       "Name required": [
         "Nom requerit"
@@ -2297,23 +2130,8 @@
         "Un dels grups no té contactes: ${ noContactGroupList }",
         "Alguns grups no tenen contactes: ${ noContactGroupList } "
       ],
-      "Organization not recognized. Try again.": [
-        "Organització no reconeguda. Torneu-ho a provar."
-      ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
-      ],
-      "Payment process cancelled": [
-        "Procés de pagament cancel·lat"
-      ],
-      "Payment process consumed": [
-        "Procés de pagament esgotat"
-      ],
-      "Payment process failed": [
-        "Ha fallat el procés de pagament"
-      ],
-      "Payment process not supported": [
-        "Procés de pagament no suportat"
       ],
       "Please create an address first.": [
         "Si us plau, creeu la vostra adreça primer."
@@ -2330,9 +2148,6 @@
       ],
       "Primary address key is not decrypted.": [
         "La clau de la adreça primària no està desxifrada."
-      ],
-      "Process aborted": [
-        "Procés anul·lat"
       ],
       "Request timed out": [
         ""
@@ -2364,26 +2179,11 @@
       "Start time must be before end time": [
         "L’hora d’inici ha de ser abans de l’hora de finalització"
       ],
-      "Tab closed": [
-        "Pestanya tancada"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "El navegador que utilitzeu no permet l'autorització total del pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
-      ],
       "The folder name is too long. Please choose a different name.": [
         "El nom de la carpeta és massa llarg. Escolliu-ne un de diferent."
       ],
       "The label name is too long. Please choose a different name.": [
         "El nom de l'etiqueta és massa llarg. Escolliu-ne un de diferent."
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "La quantitat mínima de crèdit que es pot afegir és ${ _price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "L'import mínim que es pot donar és ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "El pagament mínim que acceptem és ${ _price2 }"
       ],
       "The sending key is not valid": [
         "La clau enviada no es vàlida"
@@ -2414,9 +2214,6 @@
       ],
       "Unknown error": [
         "Error desconegut"
-      ],
-      "Unknown payment token status": [
-        "Estat del testimoni de pagament desconegut"
       ],
       "You can't send a mail to more than 100 recipients": [
         "No podeu enviar un correu a més de 100 destinataris"
@@ -2751,11 +2548,6 @@
         "${ Label.Name } actualitzada"
       ]
     },
-    "Free price": {
-      "Free": [
-        "Gratuït"
-      ]
-    },
     "Group": {
       "Account": [
         "Compte"
@@ -2977,12 +2769,6 @@
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
       ],
-      "${ mailAppName } Free": [
-        "${ mailAppName } Gratuït"
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional comença amb un usuari, i cada usuari afegeix 5 GB i 5 adreces de correu electrònic al grup de l'organització."
-      ],
       "${ namesWithoutLast } and ${ nameOfLast }": [
         "${ namesWithoutLast } i ${ nameOfLast }"
       ],
@@ -2993,15 +2779,6 @@
       "${ numContacts } contact": [
         "${ numContacts } contacte",
         "${ numContacts } contactes"
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } en la vostra subscripció canviant a ${ annualBilling }"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } en Correu i VPN afegint una subscripció de Correu."
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } en VPN i Correu afegint una subscripció de VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
@@ -3019,36 +2796,11 @@
         "${ updated } contacte actualitzat satisfactòriament.",
         "${ updated } contactes actualitzats satisfactòriament."
       ],
-      "${ vpnAppName } Free": [
-        "${ vpnAppName } Gratuït"
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
-      "(Mail + VPN)": [
-        "(Correu + VPN)"
-      ],
-      "* Customizable features": [
-        "* Característiques personalitzables"
-      ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } emmagatzematge addicional"
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } connexió per a ProtonVPN (permet connectar més dispositius a VPN)",
-        "+${ organization.BonusVPN } connexions per a ProtonVPN (permet connectar més dispositius a VPN)"
-      ],
-      "20 personal calendars": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% de descompte aplicat a la vostra subscripció amb el cupó ${ code }"
-      ],
-      "30 days money-back guarantee.": [
-        "Garantia de reemborsament de 30 dies."
-      ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -3063,23 +2815,8 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Un correu electrònic serà enviat als participants de l'esdeveniment. Voleu esborrar aquest esdeveniment?"
       ],
-      "A free and uncensored Internet should be available to all.": [
-        "Una Internet gratuïta i sense censura hauria d'estar disponible per a tothom."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Accediu a contingut bloquejat com xarxes socials, notícies, Wikipedia, YouTube i molts d'altres, sense importar on us trobeu."
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Accediu als vostres serveis de reproducció en línia com ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, sense importar on us trobeu."
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Accés al compte restringit degut a factures impagades. Si us plau, contacti amb el teu administrador."
-      ],
-      "Account successfully updated": [
-        "El compte s'ha actualitzat correctament"
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "Afegiu adreces addicionals al vostre compte com ara usuari2@protonmail.com"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Els participants afegits o eliminats serán notificats de tots els esdeveniments d'aquesta sèrie."
@@ -3090,12 +2827,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació de adreça amb claus de confiança està habilitada per a aquesta adreça. Per poder enviar a aquesta adreça, confieu primer en les claus públiques que poden ser utilitzades per enviar."
       ],
-      "Addresses": [
-        "Adreces"
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Després de fer el pagament amb Bitcoin, seguiu les següents instruccions per actualitzar."
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Tot (${ totalFoldersCount } carpeta)",
         "Tot (${ totalFoldersCount } carpetes)"
@@ -3103,12 +2834,6 @@
       "All (${ totalFoldersCount } label)": [
         "Tot (${ totalFoldersCount } etiqueta)",
         "Tot (${ totalFoldersCount } etiquetes)"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Us permet allotjar correus electrònics pel(s) vostre(s) propi(s) domini(s) a ${ mailAppName }, p. ex. jordi.catala@exemple.cat"
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Import inferior al mínim (${ amount })."
       ],
       "An invitation will be sent to added participants.": [
         "Tots els participants afegits rebran una invitació."
@@ -3121,30 +2846,6 @@
       ],
       "At most 100 participants are allowed per invitation": [
         "Es permet un màxim de 100 participants per invitació"
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "Facturat com ${ billedPrice } cada 2 anys"
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "Facturat com ${ billedPrice } anualment"
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Facturat al final del vostre cicle de facturació actual (es renova el ${ renewalDate })"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Les transaccions en Bitcoins poden trigar una estona en ser confirmades (fins a 24 hores). Un cop confirmada, afegirem els crèdits al seu compte. Després de la confirmació de la transacció podreu efectuar el pagament de la factura amb els crèdits."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 aplicat a la vostra subscripció"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 aplicat a la vostra subscripció"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "S'ha aplicat el descompte per a nouvinguts del Black Friday 2020"
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Si baixeu a un Pla gratuït, perdreu aquests avantatges permanentment, fins i tot si torneu a actualitzar en un futur."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
@@ -3161,8 +2862,8 @@
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
       ],
-      "Connections": [
-        "Connexions"
+      "Continue with ${ planName }": [
+        ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } nou calendari",
@@ -3179,12 +2880,6 @@
       ],
       "Create in": [
         "Crear a"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "S'admeten fitxers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions així com els formats vCard 3.1 i 4.0 (codificació UTF-8)."
@@ -3210,23 +2905,11 @@
       "Discard changes?": [
         "Voleu descartar els canvis?"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Descompte aplicat a la vostra subscripció amb el cupó ${ code }"
-      ],
-      "Domains": [
-        "Dominis"
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Baixeu la vostra aplicació favorita avui i porteu la privadesa amb vós a tot arreu."
-      ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
       ],
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "Cada connexió addicional pot ser assignada a usuaris dins la vostra organització."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
@@ -3240,38 +2923,14 @@
       "Existent, added and removed participants will be notified.": [
         "Els participants existents, afegits i eliminats sera notificats."
       ],
-      "Expired": [
-        "Caducada"
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "Per a famílies i equips petits; inclou correu electrònic i connexions VPN."
-      ],
-      "For getting started with private and secure emailing.": [
-        "Per començar amb correspondència electrònica privada i segura."
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Per qui necessita una bústia de correu amb funcions completes i protecció avançada."
-      ],
-      "For professionals that need secure business communications.": [
-        "Per professionals que necessiten comunicacions comercials segures."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Per a Visa i MasterCard, els 3 dígits a la part posterior de la targeta. Per American Express, els 4 dígits de la part frontal de la targeta."
-      ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
       ],
       "Free up some space or contact your administrator.": [
         "Allibereu espai o poseu-vos en contacte amb el vostre administrador."
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "Frequency modifications will be lost.": [
         "Es perdran les modificacions de freqüència."
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "VPN completa amb velocitat de fins a 10 Gbps."
       ],
       "Group assignment applied": [
         "Assignació de grup aplicada"
@@ -3303,9 +2962,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
-      ],
-      "Included": [
-        "Inclòs"
       ],
       "Inherited from parent folder": [
         "Heretada d'una carpeta principal"
@@ -3370,9 +3026,6 @@
       "No group found": [
         "No s'ha trobat cap grup"
       ],
-      "No payment is required at this time.": [
-        "No cal fer cap pagament ara mateix."
-      ],
       "No results found": [
         "No s'han trobat resultats"
       ],
@@ -3381,12 +3034,6 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
-      ],
-      "Not customizable": [
-        "No personalitzable"
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "Nombre de connexions VPN que poden ser assignades a usuaris. Cada dispositiu connectat consumeix una connexió VPN."
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Les ocurrències prèviament actualitzades per l'organitzador es mantindran, però es perdran algunes de les vostres respostes."
@@ -3400,12 +3047,6 @@
       "Other options": [
         ""
       ],
-      "Payment can take a few minutes to fully verify.": [
-        "El pagament pot trigar uns minuts en verificar-se completament."
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
-      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline només és compatible amb el format de text net. Tingueu en compte que ProtonMail sempre signa els missatges xifrats."
       ],
@@ -3418,29 +3059,11 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Tingueu en compte que quan feu clic al botó \"Confirmar\", al vostre compte hi restaran ${ creditsRemaining } crèdits."
-      ],
       "Please remove the duplicates and try again.": [
         "Si us plau, suprimiu els duplicats i torneu-ho a provar."
       ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Torneu-ho a provar, utilitzeu un mètode de pagament diferent, o bé truqueu al vostre banc per assistència."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Torneu-ho a provar, utilitzeu un mètode de pagament diferent, o bé contacteu amb PayPal per rebre assistència."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verifiqueu el pagament a la pestanya nova que s'ha obert."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Verifiqueu la targeta a la pestanya nova que s'ha obert."
-      ],
-      "Please verify the payment in the new tab.": [
-        "Verifiqueu el pagament a la pestanya nova."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Espereu mentre busquem contactes que es poden tornar a signar amb la clau de xifratge primària."
@@ -3454,24 +3077,17 @@
       "Primary": [
         "Primari"
       ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus està limitat a un usuari i comença amb 5 GB d'emmagatzematge."
+      "Priority support": [
+        ""
       ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } inclou ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } connexió VPN.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } inclou ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } connexions VPN."
+      "Proton Calendar": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Removed participants will be notified.": [
         "Els participants eliminats sera notificats."
-      ],
-      "Save 20%": [
-        "Estalvieu un 20%"
-      ],
-      "Save extra 20%": [
-        "Estalvieu un 20% addicional"
       ],
       "Screenshot(s) attached": [
         "Captures de pantalla(s) adjuntes"
@@ -3491,19 +3107,10 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ProtonMail i que utilitza un servei compatible amb PGP."
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
-      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algunes de les vostres respostes a ocurrències prèviament actualitzades per l'organitzador es perdran."
       ],
-      "Starter VPN service with P2P support.": [
-        "Servei VPN de base amb suport P2P."
-      ],
-      "Storage GB": [
-        "Emmagatzematge GB"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3511,15 +3118,6 @@
       ],
       "support team": [
         "equip de suport"
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "Canvieu a ${ professionalPlan } per afegir més connexions."
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "Canvieu a ${ professionalPlan } per afegir més usuaris."
-      ],
-      "Thank you for supporting our mission.": [
-        "Gràcies per donar suport a la nostra missió."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
@@ -3575,9 +3173,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac homògraf. Verifiqueu que aquest és l'enllaç que voleu visitar o declineu obrir-lo."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Això permetrà que PayPal s'utilitzi per pagar la vostra subscripció a Proton. Els redirigirem a PayPal en una pestanya nova del navegador. Si utilitzeu bloquejadors de finestres emergents, desactiveu-los per continuar."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
       ],
@@ -3593,32 +3188,14 @@
       "Unlimited folders, labels, and filters": [
         ""
       ],
+      "Unlimited messages": [
+        ""
+      ],
       "Update recurring event": [
         "Actualitza l'esdeveniment recurrent"
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
-      ],
-      "Users": [
-        "Usuaris"
-      ],
-      "Verification can take a few minutes.": [
-        "La verificació pot trigar uns minuts."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "La verificació obrirà una nova pestanya, desactiveu els bloquejadors de finestres emergents."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "La verificació obrirà una nova pestanya, desactiveu els bloquejadors de finestres emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta us serà retornada immediatament."
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "Pla combinat de VPN + ${ mailAppName } per famílies i petites empreses."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "Utilitzem 3-D Secure per protegir els vostres pagaments."
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Us redirigirem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors de finestres emergents, desactiveu-los per continuar."
       ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
@@ -3692,29 +3269,14 @@
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Heu restablert la vostra contrasenya i els esdeveniments vinculats als calendaris següents no s'han pogut desxifrar. Qualsevol enllaç de calendari compartit que hàgiu creat prèviament no tornarà a funcionar.\nTots els calendaris subscrits actius es sincronitzaran altra vegada després d'uns minuts."
       ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Per afegir-lo com a mètode de pagament, heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal. Si el vostre compte de PayPal no en té cap, cliqueu el botó de sota."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Heu d'eliminar qualsevol calendari personal addicional i qualsevol enllaç de calendaris compartits abans de poder cancel·lar la vostra subscripció. ${ linkButton }"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. No podeu enviar ni rebre correus electrònics nous. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Ben aviat sereu redirigits al vostre banc per verificar el pagament."
-      ],
       "You will lose all unsaved changes.": [
         "Perdràs tots els canvis sense desar."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
         "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants afegits i eliminats seran notificats."
@@ -3740,20 +3302,11 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "El vostre compte s'està actualitzant. Pot arribar a trigar fins a 30 segons."
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "El vostre compte s’actualitzarà un cop s'hagi completat el pagament."
-      ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "La vostra adreça està desactivada. Els participants a l'esdeveniment no rebran cap correu electrònic de cancel·lació. Voleu esborrar tots els esdeveniments de la sèrie?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "La vostra adreça està desactivada. Els participants a l'esdeveniment no rebran cap correu electrònic de cancel·lació. Voleu esborrar l'esdeveniment?"
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "El vostre banc requereix una verificació segura en 3-D amb finalitats de seguretat."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de Proton."
@@ -3774,24 +3327,6 @@
         "Sembla que la vostra zona horària del sistema ha canviat a ${ timezone }. Voleu actualitzar la vostra preferència de fus horari?"
       ]
     },
-    "info": {
-      "(beta)": [
-        "(beta)"
-      ]
-    },
-    "Info concerning plan features": {
-      "Customizable features": [
-        "Funcions personalitzables"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "No es pot utilitzar ProtonMail per enviar missatges massius o spam. Els correus electrònics legítims són il·limitats."
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contacteu amb nosaltres al ${ email } per rebre instruccions de com fer un pagament en efectiu."
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "Cliqueu per veure'n detalls"
@@ -3800,11 +3335,6 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Diversos contactes semblen idèntics. ${ mergeAction }"
-      ]
-    },
-    "information": {
-      "Included": [
-        "Inclòs"
       ]
     },
     "Key badge": {
@@ -3858,12 +3388,6 @@
       "Browser version": [
         "Versió del navegador"
       ],
-      "BTC address:": [
-        "Adreça BTC:"
-      ],
-      "BTC amount:": [
-        "Import de BTC:"
-      ],
       "Calendar": [
         "Calendari"
       ],
@@ -3872,15 +3396,6 @@
       ],
       "Cancel": [
         "Cancel·la"
-      ],
-      "Card holder": [
-        "Titular de la targeta"
-      ],
-      "Card number": [
-        "Número de la targeta"
-      ],
-      "Cash": [
-        "Efectiu"
       ],
       "Category": [
         "Categoria"
@@ -3902,9 +3417,6 @@
       ],
       "Country": [
         "País"
-      ],
-      "CVV code": [
-        "Codi CVV"
       ],
       "Date and time": [
         "Data i hora"
@@ -3951,17 +3463,8 @@
       "Ends": [
         "Finalitza"
       ],
-      "Enter organization name to confirm": [
-        "Introdueixi el nom de l'organització per confirmar"
-      ],
       "Event title": [
         "Títol de l'esdeveniment"
-      ],
-      "Expires": [
-        "Venç"
-      ],
-      "Expiry date": [
-        "Data de venciment"
       ],
       "Export contacts": [
         "Exportar contactes"
@@ -4026,9 +3529,6 @@
       "Name": [
         "Nom"
       ],
-      "Name on card": [
-        "Titular de la targeta"
-      ],
       "Notification": [
         "Notificació"
       ],
@@ -4057,9 +3557,6 @@
       "Password": [
         "Contrasenya"
       ],
-      "Payer": [
-        "Pagador"
-      ],
       "PGP scheme": [
         "Esquema PGP"
       ],
@@ -4071,9 +3568,6 @@
       ],
       "Postal code": [
         "Codi postal"
-      ],
-      "Proration": [
-        "Prorrateig"
       ],
       "Proton username": [
         "Nom d'usuari de Proton"
@@ -4093,12 +3587,6 @@
       "Reveal password": [
         "Mostra la contrasenya"
       ],
-      "Select a method": [
-        "Seleccioneu un mètode"
-      ],
-      "Select your country": [
-        "Seleccioneu el vostre país"
-      ],
       "Sign emails": [
         "Signar correus electrònics"
       ],
@@ -4113,12 +3601,6 @@
       ],
       "To: ${ emailAddress }": [
         "Per a: ${ emailAddress }"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
       ],
       "Two-factor authentication code": [
         "Codi d'autenticació de dos factors"
@@ -4140,9 +3622,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Quina és la raó principal per aquesta valoració?"
-      ],
-      "ZIP": [
-        "ZIP"
       ]
     },
     "Label for contact group color": {
@@ -4180,17 +3659,11 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "Afegiu un codi regal"
-      ],
       "Calendars": [
         "Calendaris"
       ],
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
-      ],
-      "click here": [
-        "feu clic aquí"
       ],
       "Go to subscription plans": [
         "Anar als plans de subscripció"
@@ -4237,87 +3710,6 @@
         ""
       ]
     },
-    "Mail feature": {
-      "0.5 GB": [
-        "0.5 GB"
-      ],
-      "20 GB": [
-        "20 GB"
-      ],
-      "Address verification": [
-        "Verificació d'adreça"
-      ],
-      "Addresses": [
-        "Adreces"
-      ],
-      "Autoresponder": [
-        "Respostes automàtiques"
-      ],
-      "Catch-All email": [
-        "Correu electrònic Catch-All"
-      ],
-      "Contact groups": [
-        "Grups de contactes"
-      ],
-      "Custom domains": [
-        ""
-      ],
-      "Custom filters": [
-        "Filtres personalitzats"
-      ],
-      "Encrypted contacts": [
-        "Contactes xifrats"
-      ],
-      "Folders / labels": [
-        "Carpetes / etiquetes"
-      ],
-      "IMAP / SMTP": [
-        "IMAP / SMTP"
-      ],
-      "Limited": [
-        "Limitat"
-      ],
-      "Messages per day": [
-        "Missatges per dia"
-      ],
-      "Multi-user support": [
-        "Suport multiusuari"
-      ],
-      "Priority": [
-        "Prioritat"
-      ],
-      "Storage": [
-        "Emmagatzematge"
-      ],
-      "Support": [
-        "Assistència"
-      ],
-      "Use @pm.me address": [
-        "Utilitzeu l'adreça @pm.me"
-      ],
-      "Users": [
-        "Usuaris"
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        "5 GB *"
-      ],
-      "5 GB / user *": [
-        "5 GB / usuari *"
-      ],
-      "Unlimited": [
-        "Il·limitat"
-      ],
-      "Unlimited **": [
-        "Il·limitat **"
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        "5 / usuari *"
-      ]
-    },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
@@ -4325,16 +3717,6 @@
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
-        ""
-      ]
-    },
-    "Many Others": {
-      "and many others": [
-        "i molts d'altres"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         ""
       ]
     },
@@ -4514,11 +3896,6 @@
       ],
       "on the third Wednesday": [
         "en el tercer Dimecres"
-      ]
-    },
-    "Netflix": {
-      "Netflix": [
-        "Netflix"
       ]
     },
     "New Label form": {
@@ -4786,17 +4163,6 @@
         "Expandir la llista de participants"
       ]
     },
-    "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
-      "New credit/debit card": [
-        "Nova targeta de crèdit/dèbit"
-      ],
-      "PayPal": [
-        "PayPal"
-      ]
-    },
     "Personal calendar limit reached modal body": {
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
         ""
@@ -4852,9 +4218,6 @@
       "Filter groups": [
         "Filtrar grups"
       ],
-      "Gift code": [
-        "Codi de regal"
-      ],
       "Image URL": [
         "URL de la imatge"
       ],
@@ -4873,9 +4236,6 @@
       "Please describe the problem and include any error messages": [
         "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
       ],
-      "Postal code": [
-        "Codi postal"
-      ],
       "Proton username": [
         "Nom d'usuari de Proton"
       ],
@@ -4887,9 +4247,6 @@
       ],
       "Start typing an email address": [
         "Comenceu a escriure una adreça de correu electrònic"
-      ],
-      "ZIP": [
-        "ZIP"
       ]
     },
     "Placeholder for contact group name": {
@@ -4900,104 +4257,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Sense nom)"
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        "0.5 GB d'emmagatzematge"
-      ],
-      "1 - 5000 users *": [
-        "1 - 5000 usuaris *"
-      ],
-      "1 address": [
-        "1 adreça"
-      ],
-      "1 user": [
-        "1 usuari"
-      ],
-      "20 GB storage": [
-        "20 GB d'emmagatzematge"
-      ],
-      "200 folders / labels": [
-        "200 carpetes / etiquetes"
-      ],
-      "3 folders / labels": [
-        "3 carpetes / etiquetes"
-      ],
-      "5 addresses": [
-        "5 adreces"
-      ],
-      "5 addresses / user": [
-        "5 adreces per usuari"
-      ],
-      "5 GB storage *": [
-        "5 GB d'emmagatzematge *"
-      ],
-      "5 GB storage / user": [
-        "5 GB d'emmagatzematge per usuari"
-      ],
-      "50 addresses": [
-        "50 adreces"
-      ],
-      "6 users": [
-        "6 usuaris"
-      ],
-      "Access blocked content": [
-        "Accés a contingut bloquejat"
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        "Accés a ${ driveAppName } (beta)"
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Totes les característiques del pla ${ PLAN_NAMES[PLANS.VPNPLUS] }"
-      ],
-      "Built-in Adblocker (NetShield)": [
-        "Bloquejador d'anuncis integrat (NetShield)"
-      ],
-      "Custom domains": [
-        ""
-      ],
-      "Early access to new products": [
-        "Accés anticipat a nous productes"
-      ],
-      "High speed": [
-        "Alta velocitat"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Velocitat màxima (fins a 10 Gbps)"
-      ],
-      "Includes 6 user accounts": [
-        "Inclou 6 comptes d'usuari"
-      ],
-      "Includes Proton Visionary": [
-        "Inclou Proton Visionary"
-      ],
-      "Medium speed": [
-        "Velocitat mitjana"
-      ],
-      "Secure Core servers": [
-        "Servidors Secure Core"
-      ],
-      "Streaming service support": [
-        "Suport de serveis de reproducció en línia"
-      ],
-      "Unlimited folders / labels": [
-        "Carpetes / etiquetes il·limitades"
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        "(pla actual)"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuït"
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
-        "Prime Video"
       ]
     },
     "Progress bar description": {
@@ -5080,7 +4339,16 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
+        ""
+      ],
+      "No more missed appointments": [
+        ""
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
         ""
       ]
     },
@@ -5254,9 +4522,6 @@
       ],
       "Verification successful": [
         "Èxit de verificació"
-      ],
-      "You have successfully unsubscribed": [
-        "Heu anul·lat la subscripció amb èxit"
       ]
     },
     "Success notification when user send feedback": {
@@ -5356,15 +4621,9 @@
       ]
     },
     "Title": {
-      "${ appName } customization": [
-        "Personalització de ${ appName }"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } membre",
         "${ emailsCount } membres"
-      ],
-      "3-D Secure verification failed": [
-        "Ha fallat la verificació de 3-D Segur"
       ],
       "Account suspended": [
         "Compte suspès"
@@ -5397,20 +4656,11 @@
       "Addresses": [
         "Adreces"
       ],
-      "Amount due": [
-        "Import a deure"
-      ],
-      "Apply gift code": [
-        "Introduïu el codi regal"
-      ],
       "Back": [
         "Torna"
       ],
       "Beta Access": [
         "Accés Beta"
-      ],
-      "Billing cycle": [
-        "Cicle de facturació"
       ],
       "Calendar": [
         "Calendari"
@@ -5418,17 +4668,8 @@
       "Calendar alarm": [
         "Alarma de calendari"
       ],
-      "Card verification": [
-        "Verificació de la targeta"
-      ],
-      "Card verification in progress": [
-        "Verificació de la targeta en curs"
-      ],
       "Change my answer": [
         "Canviar la meva resposta"
-      ],
-      "Checkout": [
-        "Pagament final"
       ],
       "Choose how many times this event will repeat": [
         "Trieu quantes vegades es repetirà aquest esdeveniment"
@@ -5438,9 +4679,6 @@
       ],
       "Clearing data": [
         "Netejant dades"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Confirmeu la pèrdua dels beneficis de Proton"
       ],
       "Contact details": [
         "Detalls del contacte"
@@ -5457,9 +4695,6 @@
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
       ],
-      "Coupon discount": [
-        "Cupó de descompte"
-      ],
       "Create calendar": [
         "Crear calendari"
       ],
@@ -5469,14 +4704,8 @@
       "Create new group": [
         "Crear nou grup"
       ],
-      "Credits": [
-        "Crèdits"
-      ],
       "Currency": [
         "Moneda"
-      ],
-      "Current plan": [
-        "Pla actual"
       ],
       "Customize and confirm": [
         "Personalitzeu i confirmeu"
@@ -5486,9 +4715,6 @@
       ],
       "Customize your mail import": [
         "Personalitzeu la importació del vostre correu"
-      ],
-      "Customize your plan": [
-        "Personalitzeu el vostre pla"
       ],
       "Delete ${ count } contact": [
         "Suprimir ${ count } contacte",
@@ -5504,17 +4730,11 @@
       "Delete event": [
         "Suprimeix l'esdeveniment"
       ],
-      "Delete organization?": [
-        "Eliminar l'organització?"
-      ],
       "Delete recurring event": [
         "Suprimeix l'esdeveniment recurrent"
       ],
       "Deleting contacts": [
         "Eliminant contactes"
-      ],
-      "Downgrade account": [
-        "Degradar compte"
       ],
       "Drop to upload": [
         "Arrossegar per carregar"
@@ -5561,9 +4781,6 @@
       "Feedback": [
         "Opinió"
       ],
-      "Gift code": [
-        "Codi regal"
-      ],
       "Give feedback": [
         "Doneu la vostra opinió"
       ],
@@ -5604,9 +4821,6 @@
       "Merging contacts": [
         "Combinant contactes"
       ],
-      "Network error": [
-        "Error de xarxa"
-      ],
       "Open actions dropdown": [
         "Obrir desplegable d'accions"
       ],
@@ -5628,29 +4842,8 @@
       "Participants cannot be notified": [
         "No es pot notificar als participants"
       ],
-      "Payment details": [
-        "Detalls de pagament"
-      ],
-      "Payment verification": [
-        "Verificació del pagament"
-      ],
-      "Payment verification in progress": [
-        "Verificació del pagament en curs"
-      ],
-      "PayPal verification failed": [
-        "Ha fallat la verificació de PayPal"
-      ],
       "Phone numbers": [
         "Números de telèfon"
-      ],
-      "Plan summary": [
-        "Resum del pla"
-      ],
-      "Processing": [
-        "Processant"
-      ],
-      "Processing...": [
-        "Processant..."
       ],
       "Re-sign all contacts": [
         "Tornar a signar tots els contactes"
@@ -5681,9 +4874,6 @@
       ],
       "Select a day in the month": [
         "Selecciona un dia del mes"
-      ],
-      "Select a plan": [
-        "Seleccioneu un pla"
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -5757,15 +4947,6 @@
       "Sign in again to continue": [
         "Torneu a iniciar per continuar"
       ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Total (monthly)": [
-        "Total (mensual)"
-      ],
-      "Unsupported browser": [
-        "Navegador no suportat"
-      ],
       "Update event": [
         "Actualitza l'esdeveniment"
       ],
@@ -5789,9 +4970,6 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         ""
-      ],
-      "ZIP / postal code": [
-        "ZIP / codi postal"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5805,26 +4983,11 @@
       ]
     },
     "Tooltip": {
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Accediu al contingut bloquejat geogràficament (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc.) sense importar on sigueu."
-      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "\"Automàtic\" indica que s'està utilitzant el format de l'editor per enviar a aquest usuari. \"Text net\" indica que el missatge es convertirà sempre a text net a l'enviar."
       ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Creeu múltiples adreces de correu electrònic enllaçades al vostre compte, p. ex. usuari2@protonmail.com"
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'Internet a través de múltiples servidors."
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Signar correus electrònics digitalment ajuda a autenticar que vós heu enviat els missatges"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Descompte aplicat per al cicle de facturació anual"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Descompte aplicat per al cicle de facturació bianual"
       ],
       "Each imported email will have this label": [
         ""
@@ -5838,35 +5001,8 @@
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
       ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obteniu accés a totes les funcions de pagament de ${ vpnAppName } i ${ mailAppName } (el servei de correu electrònic xifrat que utilitzen milions de persones per protegir les seves dades) amb un pla."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obteniu accés a totes les funcions de pagament de ProtonVPN i ProtonMail (el servei de correu electrònic xifrat que utilitzen milions de persones per protegir les seves dades) amb un pla."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Allotgeu correus electrònics pel(s) vostre(s) propi(s) domini(s) a ${ mailAppName }, p. ex. jordi.catala@exemple.cat"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Allotgeu correus electrònics pel(s) vostre(s) propi(s) domini(s) a ProtonMail, p. ex. jordi.catala@exemple.cat"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "El suport multiusuari només s'aplica a plans amb 2 o més usuaris"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield protegeix el vostre dispositiu i accelera la vostra navegació bloquejant anuncis, rastrejadors i programari maliciós."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Dirigiu el vostre trànsit d'Internet a través de la xarxa Tor amb un sol clic."
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/Inline força missatges de text net"
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Suport per a protocols d'intercanvi de fitxers com ara BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
         ""
@@ -5876,15 +5012,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carregueu una clau pública per habilitar l'enviament de correus electrònics xifrats d'extrem a extrem a aquest correu"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Utilitzeu múltiples adreces / àlies vinculats al vostre compte, p. ex. usuari2@protonmail.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Utilitzeu l'adreça personal usuari@pm.me per enviar correus electrònics"
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
       ],
       "You do not have any contacts to export": [
         "No teniu cap contacte per exportar"
@@ -5902,123 +5029,6 @@
       ],
       "Replay video": [
         "Reproduir el vídeo"
-      ]
-    },
-    "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
-      "30-days money-back guarantee": [
-        "Garantia de reemborsament de 30 dies"
-      ],
-      "Access blocked content": [
-        "Accediu a contingut bloquejat"
-      ],
-      "Adblocker (NetShield)": [
-        "Bloquejador d'anuncis (NetShield)"
-      ],
-      "Custom connection profiles": [
-        "Perfils de connexió personalitzats"
-      ],
-      "DNS leak prevention": [
-        "Protecció contra DNS leak"
-      ],
-      "Full Disk Encryption on Servers": [
-        "Xifratge total de disc als Servidors"
-      ],
-      "Jurisdiction": [
-        "Jurisdicció"
-      ],
-      "Kill Switch / Always-on VPN": [
-        "Kill Switch / VPN sempre activa"
-      ],
-      "Languages supported": [
-        "Idiomes suportats"
-      ],
-      "Locations/Countries": [
-        "Ubicacions/Països"
-      ],
-      "Open Source & audited apps": [
-        "Aplicacions de codi font obert i auditades"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        "Perfect Forward Secrecy (PFS)"
-      ],
-      "Platforms supported": [
-        "Plataformes suportades"
-      ],
-      "Router support": [
-        "Suport per a router"
-      ],
-      "Secure Core servers": [
-        "Servidors Secure Core"
-      ],
-      "Speed": [
-        "Velocitat"
-      ],
-      "Split tunneling": [
-        "Split tunneling"
-      ],
-      "Streaming service support": [
-        "Suport de serveis de reproducció en línia"
-      ],
-      "Strict no-logs policy": [
-        "Política estricta de no conservar registres"
-      ],
-      "Tor over VPN": [
-        "Tor sobre VPN"
-      ],
-      "User data monetization": [
-        "Monetització de dades d'usuari"
-      ],
-      "Volume/bandwidth cap": [
-        "Límit de volum/ample de banda"
-      ],
-      "VPN Connections": [
-        "Connexions VPN"
-      ],
-      "VPN servers": [
-        "Servidors VPN"
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        "(Només Android i Windows)"
-      ],
-      "High": [
-        "Alta"
-      ],
-      "Highest (up to 10 Gbps)": [
-        "Màxima (fins a 10 Gbps)"
-      ],
-      "Medium": [
-        "Mitjana"
-      ],
-      "None": [
-        "Cap"
-      ],
-      "Switzerland": [
-        "Suïssa"
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection": [
-        "",
-        ""
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
       ]
     },
     "Warning": {
@@ -6044,9 +5054,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ProtonVPN. En comptes d'això, obriu una incidència."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop efectuat el pagament."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton combinarà totes les carpetes amb el mateix nom. Per evitar-ho, canvieu els noms abans d’importar-les."

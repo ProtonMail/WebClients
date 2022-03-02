@@ -86,6 +86,9 @@
       "Clear": [
         "Очистити"
       ],
+      "Clear browser data": [
+        ""
+      ],
       "Clear data": [
         "Очистити дані"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         "Налаштувати"
-      ],
-      "Decrease": [
-        "Зменшити"
       ],
       "Delete": [
         "Видалити"
@@ -251,8 +251,14 @@
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
       ],
+      "Go to parent": [
+        ""
+      ],
       "Go to settings": [
         "Перейти до налаштувань"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Сховати розширені налаштування PGP"
@@ -277,9 +283,6 @@
       ],
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
-      ],
-      "Increase": [
-        "Збільшити"
       ],
       "Load image": [
         "Завантажити зображення"
@@ -375,7 +378,7 @@
         "Відновити дані"
       ],
       "Refer a friend": [
-        ""
+        "Запросити друга"
       ],
       "refresh the page": [
         "оновити сторінку"
@@ -431,17 +434,17 @@
       "Resume upload": [
         "Відновити вивантаження"
       ],
-      "Retry": [
-        "Повторити спробу"
-      ],
       "Save": [
         "Зберегти"
       ],
+      "Search": [
+        ""
+      ],
+      "Search drive": [
+        ""
+      ],
       "Select all": [
         "Вибрати все"
-      ],
-      "Select plan": [
-        "Обрати тарифний план"
       ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
@@ -843,7 +846,7 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "Продовжити користуватися ProtonMail."
       ]
     },
     "Calendar feature": {
@@ -1855,6 +1858,9 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
+      "A problem occurred, please try again": [
+        ""
+      ],
       "Amount above the maximum.": [
         "Сума перевищує обмеження."
       ],
@@ -1873,14 +1879,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Не вдалося створити нові календарі для всіх імпортованих календарів через обмеження особистого календаря."
       ],
-      "Checkout expired, please try again": [
-        "Час оформлення минув, повторіть спробу"
-      ],
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
       ],
       "Contact signature not verified": [
         "Підпис контакту не перевірено"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "Не вдалося знайти адресу ${ email }."
@@ -2029,6 +2035,9 @@
       "Payment process not supported": [
         "Обробка платежу не підтримується"
       ],
+      "Please activate your content search again": [
+        ""
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
@@ -2050,6 +2059,9 @@
       "Request timed out": [
         "Час очікування запиту завершився"
       ],
+      "Search failed": [
+        ""
+      ],
       "Signature not verified": [
         "Підпис не перевірено"
       ],
@@ -2070,9 +2082,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
-      ],
-      "Tab closed": [
-        "Вкладку закрито"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Браузер, який ви використовуєте, не дозволяє повністю авторизувати платіж. Будь ласка, скористайтеся іншим браузером або увійдіть за допомогою комп'ютера."
@@ -2584,20 +2593,17 @@
         "+${ organization.BonusVPN } з'єднань для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "До вашої передплати застосовано знижку 20% з купоном ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Гарантія повернення коштів протягом 30 днів."
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
-        ""
+        "5 ГБ сховища"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Вільний Інтернет без цензури має бути доступним для всіх."
@@ -2625,9 +2631,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Перевірка адреси з довіреними ключами увімкнена для цієї адреси. Щоб мати змогу надсилати на цю адресу, спочатку зробіть довіреними відкриті ключі, які можна використовувати для надсилання."
-      ],
-      "Addresses": [
-        "Адреси"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Після здійснення платежу в Bitcoin, дотримуйтесь наведених далі настанов для оновлення."
@@ -2665,11 +2668,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Ви впевнені, що хочете спорожнити смітник та остаточно видалити всі елементи?"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "Ви дійсно бажаєте остаточно видалити вибраний елемент зі смітника?",
-        "Ви дійсно бажаєте остаточно видалити вибрані елементи зі смітника?",
-        "Ви дійсно бажаєте остаточно видалити вибрані елементи зі смітника?",
-        "Ви дійсно бажаєте остаточно видалити вибрані елементи зі смітника?"
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        ""
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        ""
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Оскільки ${ appName } наскрізно зашифрований, ми не можемо отримати доступ\nчи розшифрувати ваші файли. Щоб розблокувати сховище після скидання пароля,\nви повинні мати будь-що з вказаного:"
@@ -2707,6 +2710,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Перевірка контактів ${ progress } з ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
+      "Clear encrypted search data": [
+        ""
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        ""
+      ],
+      "Clears browser data related to the encrypted search.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо ця адреса е-пошти неправильна, натисніть \"Змінити\" для її виправлення."
       ],
@@ -2722,11 +2737,11 @@
       "Conflict": [
         "Конфлікт"
       ],
-      "Connections": [
-        "З'єднання"
-      ],
       "Continue using ${ appName } and unlock drive later": [
         "Продовжити користуватися ${ appName } та розблокувати сховище згодом"
+      ],
+      "Continue with ${ planName }": [
+        ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Створити ${ calendarsToBeCreated } новий календар",
@@ -2749,11 +2764,8 @@
       "Create links and share your files with others.": [
         "Створіть посилання та діліться файлами з іншими."
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
+        "Створюйте до 20 власних календарів. Крім того, додавайте до 5 календарів від друзів, сім'ї, колег та організацій."
       ],
       "Create your first folder and start moving your files.": [
         "Створіть свою першу теку та почніть переміщувати свої файли."
@@ -2806,9 +2818,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
       ],
-      "Expired": [
-        "Протерміновано"
-      ],
       "Failed": [
         "Не вдалося"
       ],
@@ -2852,7 +2861,7 @@
         "Звільніть місце або зверніться до свого адміністратора."
       ],
       "Free VPN on a single device": [
-        ""
+        "Безплатна VPN для одного пристрою"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Повнофункціональний VPN зі швидкістю до 10 Гбіт/с."
@@ -2898,6 +2907,9 @@
       ],
       "Included": [
         "Включено"
+      ],
+      "Indexing search results…": [
+        ""
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -3020,7 +3032,7 @@
         "Лише люди з посиланням та паролем можуть отримати доступ до цієї теки."
       ],
       "Other options": [
-        ""
+        "Інші варіанти"
       ],
       "Paused": [
         "Зупинено"
@@ -3085,6 +3097,12 @@
       "Primary": [
         "Основний"
       ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus призначений для одного користувача з обсягом сховища від 5 ГБ."
       ],
@@ -3111,6 +3129,9 @@
       ],
       "Screenshot(s) attached": [
         "Знімки екрана додано"
+      ],
+      "Search cannot be enabled in this browser": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Виберіть вивантажений файл або теку та створіть посилання на них."
@@ -3142,6 +3163,9 @@
       "Something went wrong, please try again later.": [
         "Сталася помилка, повторіть спробу пізніше."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Початковий рівень VPN з підтримкою P2P."
       ],
@@ -3149,7 +3173,7 @@
         "ГБ сховища"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Простір сховища спільний для пошти, календаря та диска."
       ],
       "Support for 1 custom email domain": [
         ""
@@ -3211,6 +3235,12 @@
       "This will overwrite the existing folder": [
         "Це перезапише наявну теку"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
@@ -3238,7 +3268,13 @@
       "Trash": [
         "Смітник"
       ],
+      "Try different keywords": [
+        ""
+      ],
       "Unlimited folders, labels, and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Unlock drive to recover files": [
@@ -3248,6 +3284,9 @@
         "Непідтримуваний файл"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Передплатіть сьогодні та збережіть доступ до пошти та календаря з акцентом на приватність для повсякденного спілкування."
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Uploaded": [
@@ -3260,7 +3299,7 @@
         "Завантаження сотень файлів одразу може вплинути на швидкодію."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
       ],
       "Users": [
         "Користувачі"
@@ -3945,8 +3984,8 @@
       "Contact groups": [
         "Групи контактів"
       ],
-      "Custom email addresses": [
-        "Власні адреси електронної пошти"
+      "Custom domains": [
+        "Власні домени"
       ],
       "Custom filters": [
         "Власні фільтри"
@@ -4030,7 +4069,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Час безплатної пробної версії вичерпано. Доступ до вашого облікового запису незабаром буде вимкнено. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4063,32 +4102,44 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" успішно переміщено"
+      "\"${ name }\" deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" видалено зі смітника остаточно"
+      "\"${ name }\" failed to be created": [
+        ""
       ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" не вдалося перемістити"
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" переміщено до смітника"
+      "\"${ name }\" failed to be moved": [
+        ""
       ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" відновлено зі смітника"
+      "\"${ name }\" failed to be moved to trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        ""
+      ],
+      "\"${ name }\" moved to trash": [
+        ""
+      ],
+      "\"${ name }\" restored from trash": [
+        ""
+      ],
+      "\"${ name }\" successfully moved": [
+        ""
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        ""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        ""
       ],
       "${ count } item failed to be decrypted": [
         "Не вдалося розшифрувати ${ count } елемент",
         "Не вдалося розшифрувати ${ count } елементи",
         "Не вдалося розшифрувати ${ count } елементів",
         "Не вдалося розшифрувати ${ count } елемента"
-      ],
-      "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } посилання на ваш файл було видалено",
-        "${ deletedCount } посилання на ваш файл було видалено",
-        "${ deletedCount } посилань на ваш файл було видалено",
-        "${ deletedCount } посилань на ваш файл було видалено"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } файл видалено зі смітника остаточно",
@@ -4101,12 +4152,6 @@
         "${ deletedItemsCount } теки видалено зі смітника остаточно",
         "${ deletedItemsCount } тек видалено зі смітника остаточно",
         "${ deletedItemsCount } тек видалено зі смітника остаточно"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } елемент видалено зі смітника остаточно",
-        "${ deletedItemsCount } елементи видалено зі смітника остаточно",
-        "${ deletedItemsCount } елементів видалено зі смітника остаточно",
-        "${ deletedItemsCount } елементів видалено зі смітника остаточно"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "Не вдалося видалити ${ failedCount } посилання на ваш файл",
@@ -4126,29 +4171,74 @@
         "${ failedMovesCount } тек не вдалося перемістити",
         "${ failedMovesCount } тек не вдалося перемістити"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } елемент не вдалося перемістити",
-        "${ failedMovesCount } елементи не вдалося перемістити",
-        "${ failedMovesCount } елементів не вдалося перемістити",
-        "${ failedMovesCount } елементів не вдалося перемістити"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } файл успішно переміщено",
-        "${ movedLinksCount } файли успішно переміщено",
-        "${ movedLinksCount } файлів успішно переміщено",
-        "${ movedLinksCount } файлів успішно переміщено"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } теку успішно переміщено",
         "${ movedLinksCount } теки успішно переміщено",
         "${ movedLinksCount } тек успішно переміщено",
         "${ movedLinksCount } тек успішно переміщено"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } елемент успішно переміщено",
-        "${ movedLinksCount } елементи успішно переміщено",
-        "${ movedLinksCount } елементів успішно переміщено",
-        "${ movedLinksCount } елементів успішно переміщено"
+      "${ name } created successfully": [
+        ""
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } файл відновлено зі смітника",
@@ -4162,12 +4252,6 @@
         "${ restoredItemsCount } тек відновлено зі смітника",
         "${ restoredItemsCount } тек відновлено зі смітника"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } елемент відновлено зі смітника",
-        "${ restoredItemsCount } елементи відновлено зі смітника",
-        "${ restoredItemsCount } елементів відновлено зі смітника",
-        "${ restoredItemsCount } елементів відновлено зі смітника"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } файл переміщено до смітника",
         "${ trashedLinksCount } файли переміщено до смітника",
@@ -4180,12 +4264,6 @@
         "${ trashedLinksCount } тек переміщено до смітника",
         "${ trashedLinksCount } тек переміщено до смітника"
       ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } елемент переміщено до смітника",
-        "${ trashedLinksCount } елементи переміщено до смітника",
-        "${ trashedLinksCount } елементів переміщено до смітника",
-        "${ trashedLinksCount } елементів переміщено до смітника"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Усі елементи скоро буде остаточно видалено з смітника"
       ],
@@ -4197,6 +4275,9 @@
       ],
       "Contact group updated": [
         "Групу контактів оновлено"
+      ],
+      "Encrypted search activated": [
+        ""
       ],
       "Failed to download files: ${ err }": [
         "Не вдалося завантажити файли: ${ err }"
@@ -4270,17 +4351,26 @@
       "Subfolder failed to be loaded": [
         "Не вдалося завантажити підтеку"
       ],
-      "The link to your file failed to be deleted": [
-        "Не вдалося видалити посилання на ваш файл"
+      "The link to \"${ name }\" failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted": [
-        "Посилання на ваш файл було видалено"
+      "The link to \"${ name }\" was deleted": [
+        ""
+      ],
+      "The link to your item failed to be deleted": [
+        ""
+      ],
+      "The link to your item was deleted": [
+        ""
       ],
       "Trash failed to be emptied": [
         "Не вдалося спорожнити смітник"
       ],
       "Your old files will be deleted in 72 hours": [
         "Ваші старі файли будуть видалені протягом 72 годин"
+      ],
+      "Your settings failed to be saved": [
+        ""
       ],
       "Your settings have been changed successfully": [
         "Ваші налаштування успішно змінено"
@@ -4521,8 +4611,8 @@
       "Built-in Adblocker (NetShield)": [
         "Вбудований блокувальник реклами (NetShield)"
       ],
-      "Custom email addresses": [
-        "Власні адреси електронної пошти"
+      "Custom domains": [
+        "Власні домени"
       ],
       "Early access to new products": [
         "Ранній доступ до нових продуктів"
@@ -4636,8 +4726,11 @@
       ]
     },
     "Spotlight": {
-      "Invite friends and earn rewards!": [
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
+      ],
+      "Invite friends and earn rewards!": [
+        "Запрошуйте друзів та отримуйте винагороди!"
       ]
     },
     "Storage": {
@@ -4912,9 +5005,6 @@
       "Contacts": [
         "Контакти"
       ],
-      "Coupon discount": [
-        "Знижка за купоном"
-      ],
       "Create a new folder": [
         "Створити нову теку"
       ],
@@ -4923,9 +5013,6 @@
       ],
       "Create new group": [
         "Створити нову групу"
-      ],
-      "Credits": [
-        "Кредити"
       ],
       "Currency": [
         "Валюта"
@@ -5113,6 +5200,9 @@
       "Network error": [
         "Помилка мережі"
       ],
+      "No results found": [
+        ""
+      ],
       "Number of files": [
         "Кількість файлів"
       ],
@@ -5185,8 +5275,11 @@
       "Restore your files": [
         "Відновити файли"
       ],
-      "Select a plan": [
-        "Оберіть тарифний план"
+      "Search results": [
+        ""
+      ],
+      "Searching…": [
+        ""
       ],
       "Select a theme": [
         "Вибрати тему"
@@ -5291,7 +5384,7 @@
         "Ваша тека готова до завантаження"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"
       ],
       "ZIP / postal code": [
         "Поштовий індекс"
@@ -5380,6 +5473,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Використовуйте особисту адресу username@pm.me для надсилання листів"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
       ],
       "You do not have any contacts to export": [
         "У вас немає контактів для експорту"
@@ -5612,7 +5708,7 @@
         "Ви втратите будь-які попередні налаштування."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Час безплатної пробної версії завершиться ${ textDate }. ${ action }"
       ]
     }
   }

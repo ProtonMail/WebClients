@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } door over te schakelen naar jaarlijkse betaling"
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } inleiding"
       ],
@@ -89,9 +86,6 @@
       "All Unstarred": [
         "Berichten zonder ster"
       ],
-      "annual billing": [
-        "jaarlijkse betaling"
-      ],
       "Apply": [
         "Toepassen"
       ],
@@ -167,12 +161,6 @@
       "Color": [
         "Kleur"
       ],
-      "Compare all features": [
-        "Alle functies vergelijken"
-      ],
-      "Compare plans": [
-        "Vergelijk abonnementen"
-      ],
       "Compose": [
         "Opstellen"
       ],
@@ -223,9 +211,6 @@
       ],
       "Customize": [
         "Personaliseer"
-      ],
-      "Decrease": [
-        "Verlagen"
       ],
       "Decrypt": [
         "Decoderen"
@@ -424,9 +409,6 @@
       "Import messages": [
         "Berichten importeren"
       ],
-      "Increase": [
-        "Verhogen"
-      ],
       "Inline": [
         "Inline"
       ],
@@ -478,9 +460,6 @@
       ],
       "Load unprotected": [
         "Onbeveligd inladen"
-      ],
-      "Loading verification": [
-        "Verificatie laden"
       ],
       "Loading${ ellipsis }": [
         "Laden${ ellipsis }"
@@ -599,9 +578,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Open ${ CALENDAR_APP_NAME }"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Open ${ CALENDAR_APP_NAME }-instellingen"
-      ],
       "Open calendar": [
         "Agenda openen"
       ],
@@ -622,9 +598,6 @@
       ],
       "Pause": [
         "Pauzeer"
-      ],
-      "Pay": [
-        "Betalen"
       ],
       "Preview": [
         "Voorbeeld"
@@ -666,7 +639,7 @@
         "Gegevens herstellen"
       ],
       "Refer a friend": [
-        ""
+        "Verwijs een vriend door"
       ],
       "Refine it": [
         "Verfijnen"
@@ -682,12 +655,6 @@
       ],
       "Remove ${ attachmentName }": [
         "Verwijder ${ attachmentName }"
-      ],
-      "Remove bonuses": [
-        "Verwijder bonussen"
-      ],
-      "Remove gift code": [
-        "Geschenkcode verwijderen"
       ],
       "Remove this label": [
         "Label verwijderen"
@@ -715,9 +682,6 @@
       ],
       "Resume": [
         "Hervatten"
-      ],
-      "Retry": [
-        "Opnieuw proberen"
       ],
       "Revert to original display": [
         "Terugkeren naar originele weergave"
@@ -751,9 +715,6 @@
       ],
       "Select all messages": [
         "Alle berichten selecteren"
-      ],
-      "Select plan": [
-        "Selecteer abonnement"
       ],
       "Send": [
         "Verstuur"
@@ -927,12 +888,6 @@
       "Use ${ label } theme": [
         "Gebruik ${ label } thema"
       ],
-      "Use a different card": [
-        "Gebruik een andere kaart"
-      ],
-      "Use a different payment method": [
-        "Gebruik een andere betaalmethode"
-      ],
       "Use for sending": [
         "Gebruiken om te versturen"
       ],
@@ -1025,27 +980,6 @@
       ],
       "Participant added": [
         "Deelnemer toegevoegd"
-      ]
-    },
-    "Addon": {
-      "+ ${ addresses } email address": [
-        "+ ${ addresses } e-mailadres",
-        "+ ${ addresses } e-mailadressen"
-      ],
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } eigen domein",
-        "+ ${ domains } eigen domeinen"
-      ],
-      "+ ${ members } user": [
-        "+ ${ members } gebruiker",
-        "+ ${ members } gebruikers"
-      ],
-      "+ ${ storage } storage": [
-        "+ ${ storage } opslag"
-      ],
-      "+ ${ vpn } connection": [
-        "+ ${ vpn } verbinding",
-        "+ ${ vpn } verbindingen"
       ]
     },
     "Alert": {
@@ -1148,23 +1082,6 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
-      ]
-    },
-    "Billing cycle option": {
-      "Annually": [
-        "Jaarlijks"
-      ],
-      "Annually SAVE 20%": [
-        "Jaarlijks (BESPAAR 20%)"
-      ],
-      "Monthly": [
-        "Maandelijks"
-      ],
-      "Two years SAVE 33%": [
-        "Twee jaar (BESPAAR 33%)"
-      ],
-      "Two-year": [
-        "Tweejaarlijks"
       ]
     },
     "blackfriday Action": {
@@ -1336,37 +1253,12 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "Blijf ProtonMail gebruiken."
       ]
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         "Heeft een agendagebeurtenis"
-      ]
-    },
-    "Calendar feature": {
-      "Calendar import": [
-        "Agenda importeren"
-      ],
-      "Invitations": [
-        "Uitnodigingen"
-      ],
-      "Multiple calendars": [
-        "Meerdere agenda's"
-      ],
-      "Recurring events": [
-        "Terugkerende gebeurtenissen"
-      ],
-      "Share Calendar via link": [
-        "Agenda delen via link"
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        "20 / gebruiker"
-      ],
-      "20 / user *": [
-        "20 / gebruiker *"
       ]
     },
     "Calendar invite buttons label": {
@@ -1823,16 +1715,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } maand",
-        "${ monthsWithYears } maanden"
       ]
     },
     "Country name": {
@@ -2728,25 +2610,9 @@
         "U hebt een nieuwe email ontvangen"
       ]
     },
-    "Disney": {
-      "Disney+": [
-        "Disney+"
-      ]
-    },
     "Download attachments": {
       "Download all": [
         "Alles downloaden"
-      ]
-    },
-    "Drive feature": {
-      "Access via Web": [
-        "Toegang via web"
-      ],
-      "Share files via link": [
-        "Bestanden delen via link"
-      ],
-      "Upload / download files": [
-        "Upload / download bestanden"
       ]
     },
     "Early Access Disabled": {
@@ -2876,12 +2742,6 @@
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
-      "Amount above the maximum.": [
-        "Bedrag boven het maximum."
-      ],
-      "Amount below minimum.": [
-        "Bedrag onder het minimum."
-      ],
       "Attachments are limited to 25 MB": [
         "Het limiet voor de grootte van bijlagen is 25 MB"
       ],
@@ -2899,9 +2759,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda's."
-      ],
-      "Checkout expired, please try again": [
-        "Checkout is verlopen, probeer het opnieuw"
       ],
       "Choose a date in the future.": [
         "Kies een datum in de toekomst."
@@ -2963,9 +2820,6 @@
       "Enter a password": [
         "Voer een wachtwoord in"
       ],
-      "Error connecting to the Bitcoin API.": [
-        "Fout bij het verbinden met de Bitcoin-API."
-      ],
       "Error in one of the conditions": [
         "Fout in de volgende voorwaarden"
       ],
@@ -2999,26 +2853,11 @@
       "Incorrect mailbox password. Please try again.": [
         "Onjuist mailbox-wachtwoord. Probeer het opnieuw."
       ],
-      "Invalid ${ name } code": [
-        "Ongeldige ${ name } code"
-      ],
-      "Invalid card number": [
-        "Ongeldig kaartnummer"
-      ],
-      "Invalid code": [
-        "Ongeldige code"
-      ],
-      "Invalid expiration date": [
-        "Ongeldige vervaldatum"
-      ],
       "Invalid expiration time": [
         "Ongeldige verlooptijd"
       ],
       "Invalid name": [
         "Ongeldige naam"
-      ],
-      "Invalid postal code": [
-        "Ongeldige postcode"
       ],
       "Invalid public key file": [
         "Ongeldige openbare sleutel"
@@ -3028,6 +2867,9 @@
       ],
       "Label name cannot be empty": [
         "Label naam mag niet leeg zijn"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "Maximum aantal bijlagen (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) overschreden."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
@@ -3041,9 +2883,6 @@
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
-      ],
-      "Name on card required": [
-        "Naam op kaart vereist"
       ],
       "Network error: Please check your connection and try again.": [
         "Netwerkfout. Controleer uw verbinding en probeer het opnieuw."
@@ -3080,23 +2919,8 @@
         "Eén van de groepen heeft geen contacten: ${ noContactGroupList }",
         "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
       ],
-      "Organization not recognized. Try again.": [
-        "Organisatie niet herkend. Probeer opnieuw."
-      ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
-      ],
-      "Payment process cancelled": [
-        "Betalingsverzoek geannuleerd"
-      ],
-      "Payment process consumed": [
-        "Betalingsverzoek verwerkt"
-      ],
-      "Payment process failed": [
-        "Betalingsproces mislukt"
-      ],
-      "Payment process not supported": [
-        "Betalingsproces niet ondersteund"
       ],
       "Please activate your content search again": [
         "Activeer alstublieft het zoeken naar inhoud opnieuw"
@@ -3119,9 +2943,6 @@
       ],
       "Primary address key is not decrypted.": [
         "Primaire adressleutel is niet gedecodeerd."
-      ],
-      "Process aborted": [
-        "Proces afgebroken"
       ],
       "Public key could not be trusted": [
         "De openbare sleutel is niet vertrouwd"
@@ -3169,15 +2990,9 @@
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Sorry, Proton kan uw bericht niet decoderen. Controleer of al uw sleutels actief zijn."
       ],
-      "Tab closed": [
-        "Tabblad gesloten"
-      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "De bijlage kon niet worden ontsleuteld.\nAls u de bijbehorende private sleutel heeft, kunt u nog steeds\nhet bestand decoderen met een programma zoals GnuPG.",
         "Sommige bijlagen konden niet worden gedecodeerd.\nAls u de bijbehorende privé sleutel heeft, kunt u nog steeds\nde bestanden decoderen met een programma zoals GnuPG."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
       ],
       "The folder name is too long. Please choose a different name.": [
         "De mapnaam is te lang. Kies een andere naam."
@@ -3190,15 +3005,6 @@
       ],
       "The maximum expiration is 4 weeks": [
         "De maximale verlooptijd is 4 weken"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Het minimumbedrag dat kan worden toegevoegd is ${ _price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Het minimumbedrag dat kan worden gedoneerd is ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "De minimumbetaling die we accepteren is ${ _price2 }"
       ],
       "The sending key is not valid": [
         "De verzend-sleutel is ongeldig"
@@ -3244,9 +3050,6 @@
       ],
       "Unknown error.": [
         "Onbekende fout."
-      ],
-      "Unknown payment token status": [
-        "Onbekende status van betalingstoken"
       ],
       "Wrong mailbox password": [
         "Verkeerd mailbox-wachtwoord"
@@ -3622,11 +3425,6 @@
         "Standaard"
       ]
     },
-    "Free price": {
-      "Free": [
-        "Gratis"
-      ]
-    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
         "We hebben de totale opslagruimte van uw account verhoogd naar ${ totalGBStorageAfterCompletion } GB. Krijg vandaag nog extra opslagruimte en ontgrendel premium functies."
@@ -3898,12 +3696,6 @@
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
       ],
-      "${ mailAppName } Free": [
-        "${ mailAppName } Free"
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional begint met één gebruiker en elke gebruiker voegt 5 GB en 5 e-mailadressen toe aan de pool van de organisatie."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
         "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
@@ -3934,15 +3726,6 @@
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } bestand bijgevoegd",
         "${ pureAttachmentsCount } bestanden bijgevoegd"
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } op uw abonnement door over te schakelen naar ${ annualBilling }"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } op zowel e-mail als VPN door een e-mailabonnement toe te voegen."
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } op zowel VPN als Mail door een VPN-abonnement toe te voegen."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
@@ -3988,9 +3771,6 @@
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
       ],
-      "${ vpnAppName } Free": [
-        "${ vpnAppName } Free"
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
@@ -4001,42 +3781,17 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filter als aan een van de volgende voorwaarden is voldaan)"
       ],
-      "(Mail + VPN)": [
-        "(Mail + VPN)"
-      ],
       "(No Recipient)": [
         "(Geen ontvanger)"
-      ],
-      "* Customizable features": [
-        "* Aanpasbare functies"
-      ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonus opslag"
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } verbinding voor ProtonVPN (stelt u in staat meer apparaten aan VPN te verbinden)",
-        "+${ organization.BonusVPN } verbindingen voor ProtonVPN (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
       "/month.": [
         "/maand."
       ],
-      "20 personal calendars": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% korting toegepast op uw abonnement met coupon ${ code }"
-      ],
-      "30 days money-back guarantee.": [
-        "30 dagen geld-terug-garantie."
-      ],
-      "5 email addresses/aliases": [
-        ""
+      "5 email addresses": [
+        "5 e-mailadressen"
       ],
       "5 GB storage": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        "Iedereen moet kunnen beschikken over een vrij en ongecensureerd internet."
+        "5 GB opslag"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Een herstelzin is een van de veiligste manieren om de toegang tot uw account te beveiligen. U kunt het gebruiken om toegang te krijgen tot uw account en uw gecodeerde gegevens te herstellen als u ooit uw wachtwoord vergeet."
@@ -4044,35 +3799,17 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Een verzoek om u uit te schrijven voor deze mailinglijst wordt verzonden naar de afzender van de nieuwsbrief en wordt automatisch verwerkt."
       ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Toegang tot geblokkeerde inhoud, zoals sociale media, nieuws, Wikipedia, YouTube, en vele anderen, ongeacht waar u bent."
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Toegang tot uw streamingdiensten, zoals ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, ongeacht waar u bent."
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
-      "Account successfully updated": [
-        "Account succesvol bijgewerkt"
-      ],
       "Activation in progress": [
         "Activatie in voortgang"
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "Extra adressen toevoegen aan uw account, zoals gebruiker2@protonmail.com"
       ],
       "Add image URL": [
         "Voeg URL van afbeelding toe"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels sleutels om berichten te kunnen versturen naar deze ontvanger."
-      ],
-      "Addresses": [
-        "Adressen"
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Na het betalen van uw Bitcoin betaling, volg de onderstaande instructies om te upgraden."
       ],
       "Align left": [
         "Links uitlijnen"
@@ -4099,12 +3836,6 @@
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Biedt u de mogelijkheid om e-mails te hosten voor uw eigen domein(en) op ${ mailAppName }, bijvoorbeeld john.smith@voorbeeld.com"
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Bedrag onder minimum (${ amount })."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Er is een onbekende openbare sleutel gevonden voor deze ontvanger."
@@ -4154,32 +3885,8 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
       ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "Gefactureerd als ${ billedPrice } elke 2 jaar"
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "Gefactureerd als ${ billedPrice } per jaar"
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Gefactureerd aan het einde van uw huidige factureringscyclus (vernieuwing op ${ renewalDate })"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Het kan even duren voordat Bitcoin-transacties worden bevestigd (tot 24 uur), waarna wij de credits aan uw account zullen toevoegen. Na de transactiebevestiging kunt u uw factuur met de credits betalen."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 toegepast op uw abonnement"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 toegepast op uw abonnement"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Black Friday 2020 korting is toegepast"
-      ],
       "Body: ": [
         "Tekst: "
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -4214,8 +3921,8 @@
       "Confirm phishing report": [
         "Phishingrapport bevestigen"
       ],
-      "Connections": [
-        "Verbindingen"
+      "Continue with ${ planName }": [
+        "Ga door met ${ planName }"
       ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
@@ -4235,12 +3942,6 @@
       ],
       "Create in": [
         "Maak in"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV bestanden van Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps, alsmede vCard 3.1 en 4.0 formaten (UTF-8 encoding) worden ondersteund."
@@ -4276,9 +3977,6 @@
       "Disable message content search": [
         "Uitschakelen van zoeken naar berichtinhoud"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Korting toegepast op uw abonnement met coupon ${ code }"
-      ],
       "Do you want to download this attachment anyway?": [
         "Wilt u deze bijlage toch downloaden?",
         "Wilt u deze bijlagen toch downloaden?"
@@ -4289,14 +3987,8 @@
       "Do you want to re-sign the contact details?": [
         "Wilt u de contactgegevens opnieuw ondertekenen?"
       ],
-      "Domains": [
-        "Domeinen"
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Download onze mobiele applicatie van uw favoriete app store om veilig onderweg te communiceren."
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar je gaat."
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
         "Bericht ${ esProgress } van ${ totalProgressToShow } aan het downloaden"
@@ -4318,9 +4010,6 @@
       ],
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "Elke extra verbinding kan worden toegewezen aan gebruikers in uw organisatie."
       ],
       "Email address": [
         "E-mailadres"
@@ -4367,9 +4056,6 @@
       "Expiration Time": [
         "Verlooptijd"
       ],
-      "Expired": [
-        "Verlopen"
-      ],
       "file attached": [
         "bestandsbijlage",
         "bestandsbijlagen"
@@ -4380,26 +4066,11 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als uitgaande. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
       ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "Voor families en kleine teams; omvat zowel Mail en VPN."
-      ],
-      "For getting started with private and secure emailing.": [
-        "Om te beginnen met privé en veilige e-mails."
-      ],
       "For increased security, activate 2FA.": [
         "Activeer 2FA voor meer veiligheid."
       ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Voor individuen die een volledige mailbox met geavanceerde bescherming nodig hebben."
-      ],
       "For messages newer than ${ oldestDate }": [
         "Voor berichten nieuwer dan ${ oldestDate }"
-      ],
-      "For professionals that need secure business communications.": [
-        "Voor professionals die behoefte hebben aan veilige zakelijke communicatie."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
@@ -4407,14 +4078,8 @@
       "Free up some space or contact your administrator.": [
         "Maak ruimte vrij of neem contact op met uw beheerder."
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "From": [
         "Afzender"
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "Volledige VPN met snelheid tot 10 Gbps."
       ],
       "Get more storage and premium features.": [
         "Krijg meer opslagruimte en premium functies."
@@ -4469,9 +4134,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
-      ],
-      "Included": [
-        "Inbegrepen"
       ],
       "Increase storage space starting at": [
         "Vergroot opslagruimte vanaf"
@@ -4532,6 +4194,9 @@
       ],
       "Manage your labels": [
         "Labels beheren"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "Maximum aantal bijlagen (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) overschreden."
       ],
       "members": [
         "leden"
@@ -4605,9 +4270,6 @@
       "No more results found": [
         "Geen resultaten meer gevonden"
       ],
-      "No payment is required at this time.": [
-        "Er is op dit moment geen betaling vereist."
-      ],
       "No preview available": [
         "Geen voorbeeld beschikbaar"
       ],
@@ -4623,12 +4285,6 @@
       "Not a valid URL": [
         "Ongeldige link"
       ],
-      "Not customizable": [
-        "Niet aanpasbaar"
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "Aantal VPN-verbindingen die aan gebruikers kunnen worden toegewezen. Elk verbonden apparaat verbruikt één VPN-verbinding."
-      ],
       "of": [
         "van"
       ],
@@ -4636,16 +4292,10 @@
         "Breng alleen wijzingen aan in deze instellingen als u gebruik maakt van PGP met niet-ProtonMail-gebruikers."
       ],
       "Other options": [
-        ""
+        "Andere opties"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Ons systeem heeft dit bericht gemarkeerd als phishing poging. Controleer of het legitiem is."
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "De betaling bevestigen kan een paar minuten duren."
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Betalingen worden beschermd met TLS-versleuteling en Zwitserse privacywetten."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "U kunt PGP/Inline enkel gebruiken met platte tekst. Denk eraan dat ProtonMail versleutelde berichten ook altijd ondertekent."
@@ -4671,29 +4321,11 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
-      ],
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selecteer het soort link dat u wil invoeren en vul alle velden in."
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Probeer het opnieuw, gebruik een andere betaalmethode of bel uw bank voor hulp."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Controleer de betaling op het nieuwe tabblad dat is geopend."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Controleer de kaart in het nieuwe tabblad dat is geopend."
-      ],
-      "Please verify the payment in the new tab.": [
-        "Controleer de betaling in het nieuwe tabblad."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Een moment geduld, we zijn op zoek naar contacten die opnieuw ondertekend kunnen worden met de primaire versleutelingssleutel."
@@ -4710,18 +4342,17 @@
       "Print email": [
         "E-mail afdrukken"
       ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton verdient geen geld door privacy te misbruiken."
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail kan ook uw bedrijf beschermen."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus is beperkt tot één gebruiker en begint met 5 GB aan opslag."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } omvat ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-verbinding.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } omvat ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-verbindingen."
       ],
       "Recipient: ": [
         "Ontvanger: "
@@ -4746,12 +4377,6 @@
       ],
       "Right-click for options": [
         "Rechtsklik voor opties"
-      ],
-      "Save 20%": [
-        "Bespaar 20%"
-      ],
-      "Save extra 20%": [
-        "Bespaar 20% extra"
       ],
       "Saved ${ dateString }": [
         "Opgeslagen ${ dateString }"
@@ -4799,10 +4424,7 @@
         "Berichten versturen vanaf een @pm.me-adres is enkel beschikbaar voor betalende gebruikers. Uw bericht wordt verzonden vanaf ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
-      ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Verzonden met <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
+        "Verzonden met <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
@@ -4822,20 +4444,11 @@
       "Show original message": [
         "Toon origineel bericht"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
-      ],
       "Sorry, this message does not exist or has already expired": [
         "Sorry, dit bericht bestaat niet of is al verlopen"
       ],
-      "Starter VPN service with P2P support.": [
-        "Starter VPN-service met P2P-ondersteuning."
-      ],
-      "Storage GB": [
-        "Opslag GB"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        "Start met 500 MB en ontgrendel meer opslag na verloop van tijd. Opslagruimte is gedeeld tussen Mail, Calendar en Drive."
       ],
       "Store and share files securely with Proton Drive.": [
         "Veilig bestanden opslaan en delen met Proton Drive."
@@ -4853,19 +4466,13 @@
         "Onderwerp: "
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Ondersteuning voor 1 aangepast e-mail domein"
       ],
       "Support privacy by upgrading for": [
         "Ondersteuning van privacy door opwaardering voor"
       ],
       "support team": [
         "ondersteuningsteam"
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "Schakel over naar ${ professionalPlan } om meer verbindingen toe te voegen."
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "Schakel over naar ${ professionalPlan } om meer gebruikers toe te voegen."
       ],
       "Test link": [
         "Link testen"
@@ -4875,9 +4482,6 @@
       ],
       "Text to display": [
         "Tekst om weer te geven"
-      ],
-      "Thank you for supporting our mission.": [
-        "Bedankt voor uw steun aan onze missie."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
@@ -4994,9 +4598,6 @@
       "This sender's public key has not been trusted yet.": [
         "De openbare sleutel van de afzender is nog niet vertrouwd."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browsertabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
@@ -5025,7 +4626,10 @@
         "Zet aan om de inhoud van uw berichten te doorzoeken"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Ongelimiteerde mappen, labels en filters"
+      ],
+      "Unlimited messages": [
+        "Onbeperkt aantal berichten"
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
@@ -5063,8 +4667,8 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "Upgrade om ProtonMail te gebruiken met desktop clients van derden."
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+        "Upgrade vandaag om geen van volgende ${ appName } ${ planName } voordelen te verliezen."
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -5081,23 +4685,8 @@
       "Use Proton Calendar to keep your agenda private.": [
         "Gebruik Proton Calendar om uw agenda privé te houden."
       ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
-      ],
-      "Users": [
-        "Gebruikers"
-      ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Met uw mobiele apparaat, scan deze QR-Code of bezoek ${ link }."
-      ],
-      "Verification can take a few minutes.": [
-        "Verificatie kan een paar minuten duren."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Verificatie zal een nieuw tabblad openen, schakel eventuele popup blockers uit."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
       ],
       "Version ${ appVersion }": [
         "Versie ${ appVersion }"
@@ -5105,20 +4694,11 @@
       "Visit our shop to get Proton merchandise.": [
         "Bezoek onze winkel voor Proton merchandise."
       ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "VPN + ${ mailAppName } bundel voor families en kleine bedrijven."
-      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Onze excuses. Dit zou een vergissing van onze kant kunnen zijn. Kunt u bevestigen dat u deze e-mail als een legitiem e-mailadres wilt markeren?"
       ],
       "We could not verify the sender's trusted keys.": [
         "We kunnen de vertrouwde sleutels van de afzender niet controleren."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "We gebruiken 3-D Secure om je betalingen te beschermen."
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
@@ -5214,15 +4794,6 @@
       "You have reached the maximum number of 5 replies.": [
         "U heeft het maximale aantal van 5 reacties bereikt."
       ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "U moet een kredietkaart of een bankrekening gekoppeld hebben aan uw PayPal-account om deze toe te voegen als betaalmethode."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw abonnement kunt opzeggen. ${ linkButton }"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft ${ spaceDisplayed }% van uw opslagcapaciteit bereikt. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5245,12 +4816,6 @@
         "U heeft **${ count } bericht** geselecteerd met dit label",
         "U heeft **${ count } berichten** geselecteerd met dit label"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "U zult binnenkort worden doorgestuurd naar uw bank om uw betaling te verifiëren."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
-      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "U schreef \"${ attachmentsFoundKeyword }\", maar er is geen bijlage toegevoegd. Wilt u uw bericht toch verzenden?"
       ],
@@ -5259,15 +4824,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Uw account wordt geüpgraded, dit kan tot 30 seconden duren."
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Uw account zal worden bijgewerkt zodra de betaling is gewist."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Uw bank vereist 3-D Secure verificatie voor beveiligingsdoeleinden."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw Proton account."
@@ -5289,24 +4845,8 @@
       ]
     },
     "info": {
-      "(beta)": [
-        "(bèta)"
-      ],
       "Optional": [
         "Optioneel"
-      ]
-    },
-    "Info concerning plan features": {
-      "Customizable features": [
-        "Aanpasbare functies"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail kan niet voor massa e-mails of spam worden gebruikt. Legitieme e-mails zijn onbeperkt."
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Neem contact met ons op via ${ email } voor instructies over hoe we ons met contant geld kunnen betalen."
       ]
     },
     "Info on errors": {
@@ -5317,11 +4857,6 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Meerdere contactpersonen zien er identiek uit. ${ mergeAction }"
-      ]
-    },
-    "information": {
-      "Included": [
-        "Inbegrepen"
       ]
     },
     "Key badge": {
@@ -5617,12 +5152,6 @@
       "Browser version": [
         "Browserversie"
       ],
-      "BTC address:": [
-        "BTC-adres:"
-      ],
-      "BTC amount:": [
-        "BTC-bedrag:"
-      ],
       "Calendar": [
         "Agenda"
       ],
@@ -5634,15 +5163,6 @@
       ],
       "Carbon Copy": [
         "CC"
-      ],
-      "Card holder": [
-        "Kaarthouder"
-      ],
-      "Card number": [
-        "Creditcardnummer"
-      ],
-      "Cash": [
-        "Cash"
       ],
       "Category": [
         "Categorie"
@@ -5670,9 +5190,6 @@
       ],
       "Country": [
         "Land"
-      ],
-      "CVV code": [
-        "CVV code"
       ],
       "Date": [
         "Date"
@@ -5703,15 +5220,6 @@
       ],
       "Encrypt emails": [
         "E-mails versleutelen"
-      ],
-      "Enter organization name to confirm": [
-        "Voer de naam van de organisatie in om te bevestigen"
-      ],
-      "Expires": [
-        "Verloopt"
-      ],
-      "Expiry date": [
-        "Vervaldatum"
       ],
       "Export contacts": [
         "Contacten exporteren"
@@ -5812,9 +5320,6 @@
       "Name": [
         "Naam"
       ],
-      "Name on card": [
-        "Naam op de kaart"
-      ],
       "No label found": [
         "Geen label gevonden"
       ],
@@ -5845,9 +5350,6 @@
       "Password hint": [
         "Wachtwoord hint"
       ],
-      "Payer": [
-        "Betaler"
-      ],
       "PGP scheme": [
         "PGP-schema"
       ],
@@ -5859,9 +5361,6 @@
       ],
       "Postal code": [
         "Postcode"
-      ],
-      "Proration": [
-        "Aftrek"
       ],
       "Proton username": [
         "Proton gebruikersnaam"
@@ -5887,9 +5386,6 @@
       "Search in": [
         "Zoeken in"
       ],
-      "Select a method": [
-        "Een methode selecteren"
-      ],
       "Select how your composer opens by default.": [
         "Selecteer hoe uw opstelvenster standaard opent."
       ],
@@ -5898,9 +5394,6 @@
       ],
       "Select how your mailbox looks like by default.": [
         "Selecteer hoe uw mailbox er standaard uitziet."
-      ],
-      "Select your country": [
-        "Selecteer uw land"
       ],
       "Send auto-reply": [
         "Automatisch antwoord versturen"
@@ -5956,12 +5449,6 @@
       "To: ${ emailAddress }": [
         "Naar: ${ emailAddress }"
       ],
-      "Total": [
-        "Totaal"
-      ],
-      "Total (${ countdown })": [
-        "Totaal (${ countdown })"
-      ],
       "Two-factor authentication code": [
         "Tweestapsverificatiecode"
       ],
@@ -5994,9 +5481,6 @@
       ],
       "without attachments": [
         "zonder bijlagen"
-      ],
-      "ZIP": [
-        "Postcode"
       ]
     },
     "Label for contact group color": {
@@ -6066,9 +5550,6 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "Voeg een geschenkcode toe"
-      ],
       "Add folder": [
         "Map toevoegen"
       ],
@@ -6083,9 +5564,6 @@
       ],
       "clearing your browser cache": [
         "browsercache legen"
-      ],
-      "click here": [
-        "klik hier"
       ],
       "Create a calendar linked to an active email address.": [
         "Maak en koppel een agenda aan een actief e-mailadres."
@@ -6251,87 +5729,6 @@
         "Uw import begint"
       ]
     },
-    "Mail feature": {
-      "0.5 GB": [
-        "0,5 GB"
-      ],
-      "20 GB": [
-        "20 GB"
-      ],
-      "Address verification": [
-        "Verificatie van adres"
-      ],
-      "Addresses": [
-        "Adressen"
-      ],
-      "Autoresponder": [
-        "Automatisch antwoorden"
-      ],
-      "Catch-All email": [
-        "Catch-all e-mail"
-      ],
-      "Contact groups": [
-        "Contactgroepen"
-      ],
-      "Custom email addresses": [
-        "Aangepaste e-mailadressen"
-      ],
-      "Custom filters": [
-        "Aangepaste filters"
-      ],
-      "Encrypted contacts": [
-        "Versleutelde contactpersonen"
-      ],
-      "Folders / labels": [
-        "Mappen / labels"
-      ],
-      "IMAP / SMTP": [
-        "IMAP / SMTP"
-      ],
-      "Limited": [
-        "Beperkt"
-      ],
-      "Messages per day": [
-        "Berichten per dag"
-      ],
-      "Multi-user support": [
-        "Ondersteuning voor meerdere gebruikers"
-      ],
-      "Priority": [
-        "Prioriteit"
-      ],
-      "Storage": [
-        "Opslagcapaciteit"
-      ],
-      "Support": [
-        "Ondersteuning"
-      ],
-      "Use @pm.me address": [
-        "Gebruik @pm.me adres"
-      ],
-      "Users": [
-        "Gebruikers"
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        "5 GB *"
-      ],
-      "5 GB / user *": [
-        "5 GB / gebruiker *"
-      ],
-      "Unlimited": [
-        "Onbeperkt"
-      ],
-      "Unlimited **": [
-        "Onbeperkt **"
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        "5 / gebruiker *"
-      ]
-    },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importeer alle berichten van ${ selectedLabelsCount } uit ${ totalLabelsCount } label sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -6365,16 +5762,6 @@
         "Prullenbak"
       ]
     },
-    "Many Others": {
-      "and many others": [
-        "en vele andere"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Hiermee worden alle subgebruikers, accounts en gegevens die aan uw organisatie zijn gekoppeld definitief verwijderd."
-      ]
-    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -6386,7 +5773,7 @@
         "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -6557,11 +5944,6 @@
         "op de derde woensdag"
       ]
     },
-    "Netflix": {
-      "Netflix": [
-        "Netflix"
-      ]
-    },
     "New Label form": {
       "Color": [
         "Kleur"
@@ -6595,17 +5977,6 @@
     "Onboarding": {
       "Next": [
         "Volgende"
-      ]
-    },
-    "Onboarding Beta": {
-      "Beta enabled": [
-        "Bèta ingeschakeld"
-      ],
-      "Got it": [
-        "Begrepen"
-      ],
-      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        "Om de bèta uit te schakelen, open het dropdown menu en klik op de \"Bèta Access\" optie."
       ]
     },
     "Onboarding Proton": {
@@ -6701,17 +6072,6 @@
         "U"
       ]
     },
-    "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
-      "New credit/debit card": [
-        "Nieuwe creditcard"
-      ],
-      "PayPal": [
-        "PayPal"
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Sleutel kan niet worden gebruikt voor versleuteling"
@@ -6765,9 +6125,6 @@
       "Filter labels": [
         "Filter op labels"
       ],
-      "Gift code": [
-        "Geschenkcode"
-      ],
       "Hint": [
         "Hint"
       ],
@@ -6800,9 +6157,6 @@
       ],
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
-      ],
-      "Postal code": [
-        "Postcode"
       ],
       "Proton username": [
         "Proton gebruikersnaam"
@@ -6839,112 +6193,11 @@
       ],
       "Write your message": [
         "Schrijf uw bericht"
-      ],
-      "ZIP": [
-        "Postcode"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "Naam"
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        "0,5 GB opslagruimte"
-      ],
-      "1 - 5000 users *": [
-        "1 - 5000 gebruikers *"
-      ],
-      "1 address": [
-        "1 adres"
-      ],
-      "1 user": [
-        "1 gebruiker"
-      ],
-      "20 GB storage": [
-        "20 GB opslagruimte"
-      ],
-      "200 folders / labels": [
-        "200 mappen / labels"
-      ],
-      "3 folders / labels": [
-        "3 mappen / labels"
-      ],
-      "5 addresses": [
-        "5 adressen"
-      ],
-      "5 addresses / user": [
-        "5 adressen / gebruiker"
-      ],
-      "5 GB storage *": [
-        "5 GB opslagruimte *"
-      ],
-      "5 GB storage / user": [
-        "5 GB opslagruimte / gebruiker"
-      ],
-      "50 addresses": [
-        "50 adressen"
-      ],
-      "6 users": [
-        "6 gebruikers"
-      ],
-      "Access blocked content": [
-        "Toegang tot geblokkeerde inhoud"
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        "Toegang tot ${ driveAppName } (bèta)"
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Alle ${ PLAN_NAMES[PLANS.VPNPLUS] } plan functies"
-      ],
-      "Built-in Adblocker (NetShield)": [
-        "Ingebouwde Adblocker (NetShield)"
-      ],
-      "Custom email addresses": [
-        "Aangepaste e-mailadressen"
-      ],
-      "Early access to new products": [
-        "Vroegtijdige toegang tot de nieuwste producten"
-      ],
-      "High speed": [
-        "Hoge Snelheid"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Hoogste snelheid (tot 10 Gbps)"
-      ],
-      "Includes 6 user accounts": [
-        "Bevat 6 gebruikersaccounts"
-      ],
-      "Includes Proton Visionary": [
-        "Bevat Proton Visionary"
-      ],
-      "Medium speed": [
-        "Gemiddelde snelheid"
-      ],
-      "Secure Core servers": [
-        "Secure Core servers"
-      ],
-      "Streaming service support": [
-        "Streaming service ondersteuning"
-      ],
-      "Unlimited folders / labels": [
-        "Onbeperkte mappen / labels"
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        "(huidig abonnement)"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
-        "Prime Video"
       ]
     },
     "Progress bar description": {
@@ -7192,8 +6445,11 @@
       "Discover all Proton services": [
         "Ontdek alle Proton-diensten"
       ],
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        "Krijg tot 18 maanden ${ appName } ${ planName } gratis"
+      ],
       "Invite friends and earn rewards!": [
-        ""
+        "Nodig vrienden uit en verdien bonussen!"
       ],
       "Message Content Search": [
         "Zoeken naar berichtinhoud"
@@ -7462,9 +6718,6 @@
       ],
       "Verification successful": [
         "Verificatie gelukt"
-      ],
-      "You have successfully unsubscribed": [
-        "U bent succesvol afgemeld"
       ]
     },
     "Suffix for price": {
@@ -7575,18 +6828,12 @@
       ]
     },
     "Title": {
-      "${ appName } customization": [
-        "${ appName } aanpassingen"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Sneltoetsen"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } lid",
         "${ emailsCount } leden"
-      ],
-      "3-D Secure verification failed": [
-        "3-D Secure verificatie mislukt"
       ],
       "Account suspended": [
         "Account opgeschort"
@@ -7610,12 +6857,6 @@
       "All recipients were added to the BCC field and cannot be disclosed": [
         "Alle ontvangers zijn toegevoegd aan het BCC-veld en kunnen niet worden vrijgegeven"
       ],
-      "Amount due": [
-        "Verschuldigd bedrag"
-      ],
-      "Apply gift code": [
-        "Geschenkcode toepassen"
-      ],
       "Are you sure you want to close?": [
         "Weet u zeker dat u wil afsluiten?"
       ],
@@ -7631,20 +6872,11 @@
       "Beta Access": [
         "Bèta toegang"
       ],
-      "Billing cycle": [
-        "Factuurperiode"
-      ],
       "Blind Carbon Copy": [
         "BCC"
       ],
       "Carbon Copy": [
         "CC"
-      ],
-      "Card verification": [
-        "Kaartverificatie"
-      ],
-      "Card verification in progress": [
-        "Kaartverificatie in uitvoering"
       ],
       "CC": [
         "CC"
@@ -7652,17 +6884,11 @@
       "Change my answer": [
         "Mijn antwoord wijzigen"
       ],
-      "Checkout": [
-        "Naar de kassa"
-      ],
       "Clearing data": [
         "Data aan het wissen"
       ],
       "Composer mode": [
         "Opstelmodus"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Bevestig verlies van Proton bonussen"
       ],
       "Confirm recipient address?": [
         "Adres van ontvanger bevestigen?"
@@ -7682,9 +6908,6 @@
       "Conversation list": [
         "Gesprekslijst"
       ],
-      "Coupon discount": [
-        "Couponkorting"
-      ],
       "Create a new folder": [
         "Nieuwe map aanmaken"
       ],
@@ -7703,14 +6926,8 @@
       "Create new group": [
         "Nieuwe groep aanmaken"
       ],
-      "Credits": [
-        "Credits"
-      ],
       "Currency": [
         "Valuta"
-      ],
-      "Current plan": [
-        "Huidig abonnement"
       ],
       "Customize and confirm": [
         "Aanpassen en bevestigen"
@@ -7720,9 +6937,6 @@
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
-      ],
-      "Customize your plan": [
-        "Abonnement aanpassen"
       ],
       "Decryption error": [
         "Ontsleutelingsfout"
@@ -7762,14 +6976,8 @@
       "Delete message": [
         "Bericht verwijderen"
       ],
-      "Delete organization?": [
-        "Organisatie verwijderen?"
-      ],
       "Deleting contacts": [
         "Contacten aan het verwijderen"
-      ],
-      "Downgrade account": [
-        "Account downgraden"
       ],
       "Edit contact": [
         "Contactpersoon bewerken"
@@ -7821,9 +7029,6 @@
       ],
       "Forward": [
         "Doorsturen"
-      ],
-      "Gift code": [
-        "Geschenkcode"
       ],
       "Groups": [
         "Groepen"
@@ -7906,9 +7111,6 @@
       "Moving a scheduled message": [
         "Een gepland bericht verplaatsen"
       ],
-      "Network error": [
-        "Netwerkfout"
-      ],
       "New message": [
         "Nieuw bericht"
       ],
@@ -7936,35 +7138,14 @@
       "Other names": [
         "Andere namen"
       ],
-      "Payment details": [
-        "Betalingsgegevens"
-      ],
-      "Payment verification": [
-        "Betalingsverificatie"
-      ],
-      "Payment verification in progress": [
-        "Betalingsverzoek bezig"
-      ],
-      "PayPal verification failed": [
-        "PayPal verificatie mislukt"
-      ],
       "Phone numbers": [
         "Telefoonnummers"
-      ],
-      "Plan summary": [
-        "Samenvatting abonnement"
       ],
       "Previous conversation": [
         "Vorig gesprek"
       ],
       "Previous message": [
         "Vorig bericht"
-      ],
-      "Processing": [
-        "Verwerken"
-      ],
-      "Processing...": [
-        "Wordt verwerkt..."
       ],
       "ProtonMail": [
         "ProtonMail"
@@ -7998,9 +7179,6 @@
       ],
       "Schedule send": [
         "Ingepland versturen"
-      ],
-      "Select a plan": [
-        "Selecteer een abonnement"
       ],
       "Select a theme": [
         "Selecteer een thema"
@@ -8056,14 +7234,8 @@
       "Subject missing": [
         "Onderwerp ontbreekt"
       ],
-      "Subtotal": [
-        "Subtotaal"
-      ],
       "To": [
         "Aan"
-      ],
-      "Total (monthly)": [
-        "Totaal (maandelijks)"
       ],
       "Trust new key?": [
         "Nieuwe sleutel vertrouwen?",
@@ -8077,9 +7249,6 @@
       ],
       "Unsubscribe": [
         "Afmelden"
-      ],
-      "Unsupported browser": [
-        "Niet-ondersteunde browser"
       ],
       "Upgrade required": [
         "Upgrade vereist"
@@ -8103,10 +7272,7 @@
         "Wat is er nieuw"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
-      ],
-      "ZIP / postal code": [
-        "Postcode"
+        "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8115,26 +7281,11 @@
       ]
     },
     "Tooltip": {
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Toegang tot geografisch beperkte inhoud (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) waar u ook bent."
-      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisch betekent dat tekst met rijke opmaak gebruikt wordt, zoals in het opstelvenster. Platte tekst geeft aan dat het bericht altijd wordt omgezet naar tekst zonder opmaak voordat het wordt verzonden."
       ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Maak meerdere e-mailadressen gekoppeld aan uw account, bijvoorbeeld username2@protonmail.com"
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te passeren."
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitaal ondertekenen van e-mails helpt bij het verifiëren van berichten die door u zijn verzonden"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Korting toegepast op jaarlijkse factureringscyclus"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Korting toegepast voor tweejaarlijkse factureringscyclus"
       ],
       "Each imported email will have this label": [
         "Elke geïmporteerde e-mail heeft dit label"
@@ -8148,35 +7299,8 @@
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
       ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Krijg toegang tot alle betaalde functies voor zowel ${ vpnAppName } als ${ mailAppName } (de versleutelde e-maildienst die miljoenen mensen gebruiken om hun gegevens te beschermen) met één abonnement."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Krijg toegang tot alle betaalde functies voor zowel ProtonVPN als ProtonMail (de versleutelde e-maildienst die miljoenen gebruiken om hun gegevens te beschermen) met één abonnement."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Host e-mails voor uw eigen domein(en) op ${ mailAppName }, bijvoorbeeld john.smith@voorbeeld.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Host e-mails voor uw eigen domein(en) op ProtonMail, bijvoorbeeld john.smith@voorbeeld.com"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Ondersteuning voor meerdere gebruikers is alleen van toepassing op abonnementen met 2 of meer gebruikers"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield beschermt uw apparaat en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Stuur uw internetverkeer met één klik door via het Tor-netwerk."
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Ondersteuning voor filesharing protocollen zoals BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ProtonMail"
@@ -8192,12 +7316,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Gebruik meerdere adressen / aliassen gekoppeld aan uw account, bijvoorbeeld gebruikersnaam2@protonmail.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Gebruik het persoonlijke adres username@pm.me om e-mails te verzenden"
       ],
       "You do not have any contacts to export": [
         "U heeft geen contactpersonen om te exporteren"
@@ -8236,123 +7354,6 @@
         "Video opnieuw afspelen"
       ]
     },
-    "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
-      "30-days money-back guarantee": [
-        "30 dagen geld-terug-garantie"
-      ],
-      "Access blocked content": [
-        "Toegang tot geblokkeerde inhoud"
-      ],
-      "Adblocker (NetShield)": [
-        "Adblocker (NetShield)"
-      ],
-      "Custom connection profiles": [
-        "Aangepaste verbindingsprofielen"
-      ],
-      "DNS leak prevention": [
-        "DNS-lekbescherming"
-      ],
-      "Full Disk Encryption on Servers": [
-        "Volledige schijfversleuteling op servers"
-      ],
-      "Jurisdiction": [
-        "Rechtsgebied"
-      ],
-      "Kill Switch / Always-on VPN": [
-        "Kill Switch / Altijd-aan VPN"
-      ],
-      "Languages supported": [
-        "Ondersteunde talen"
-      ],
-      "Locations/Countries": [
-        "Locaties/landen"
-      ],
-      "Open Source & audited apps": [
-        "Open Source & op veiligheid gecontroleerde apps"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        "Perfect Forward Secrecy (PFS)"
-      ],
-      "Platforms supported": [
-        "Ondersteunde platformen"
-      ],
-      "Router support": [
-        "Router ondersteuning"
-      ],
-      "Secure Core servers": [
-        "Secure Core servers"
-      ],
-      "Speed": [
-        "Snelheid"
-      ],
-      "Split tunneling": [
-        "Split tunneling"
-      ],
-      "Streaming service support": [
-        "Streaming service ondersteuning"
-      ],
-      "Strict no-logs policy": [
-        "Strikt geen-logboekbeleid"
-      ],
-      "Tor over VPN": [
-        "Tor via VPN"
-      ],
-      "User data monetization": [
-        "Verdienen aan gebruikers"
-      ],
-      "Volume/bandwidth cap": [
-        "Volume/bandbreedte-beperking"
-      ],
-      "VPN Connections": [
-        "VPN-verbindingen"
-      ],
-      "VPN servers": [
-        "VPN-servers"
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        "(Alleen Android & Windows)"
-      ],
-      "High": [
-        "Hoog"
-      ],
-      "Highest (up to 10 Gbps)": [
-        "Hoogste (tot 10 Gbps)"
-      ],
-      "Medium": [
-        "Gemiddeld"
-      ],
-      "None": [
-        "Geen"
-      ],
-      "Switzerland": [
-        "Zwitserland"
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows, macOS, Linux, Android, Android TV, Chromebook, Chromecast"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        "${ n } server",
-        "${ n }+ servers"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-verbinding",
-        "${ n } VPN-verbindingen"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } in ${ numberOfCountries } land",
-        "${ numberOfServers } in ${ numberOfCountries } landen"
-      ]
-    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Weet u zeker dat u ${ count } contactgroep permanent wilt verwijderen?",
@@ -8376,9 +7377,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ProtonVPN abonnementen. Gelieve in plaats daarvan een ticket te openen."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Houd er rekening mee dat door deze betaalmethode te kiezen je account niet onmiddellijk kan worden bijgewerkt. We zullen je account bijwerken zodra de betaling is gewist."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."
@@ -8421,7 +7419,7 @@
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

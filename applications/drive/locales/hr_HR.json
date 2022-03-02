@@ -86,6 +86,9 @@
       "Clear": [
         "Očisti"
       ],
+      "Clear browser data": [
+        ""
+      ],
       "Clear data": [
         "Izbriši podatke"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         ""
-      ],
-      "Decrease": [
-        "Smanji"
       ],
       "Delete": [
         "Izbriši"
@@ -249,8 +249,14 @@
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
+      "Go to parent": [
+        ""
+      ],
       "Go to settings": [
         "Idi na postavke"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Sakrij napredne PGP postavke"
@@ -275,9 +281,6 @@
       ],
       "Import from .csv or vCard": [
         ""
-      ],
-      "Increase": [
-        "Povećaj"
       ],
       "Load image": [
         "Učitaj sliku"
@@ -429,17 +432,17 @@
       "Resume upload": [
         "Nastavi učitavanje"
       ],
-      "Retry": [
-        "Pokušaj ponovno"
-      ],
       "Save": [
         "Spremi"
       ],
+      "Search": [
+        ""
+      ],
+      "Search drive": [
+        ""
+      ],
       "Select all": [
         "Odaberi sve"
-      ],
-      "Select plan": [
-        "Odaberi plan"
       ],
       "Set recovery phrase": [
         ""
@@ -1846,6 +1849,9 @@
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
       ],
+      "A problem occurred, please try again": [
+        ""
+      ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
       ],
@@ -1864,14 +1870,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Checkout expired, please try again": [
-        ""
-      ],
       "Contact could not be saved": [
         "Nije moguće spremanje kontakata"
       ],
       "Contact signature not verified": [
         "Potpis kontakta nije potvrđen"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "Ne mogu pronaći adresu ${ email }."
@@ -2015,6 +2021,9 @@
       "Payment process not supported": [
         "Proces plaćanja nije podržan"
       ],
+      "Please activate your content search again": [
+        ""
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "",
         "",
@@ -2033,6 +2042,9 @@
         "Proces je prekinut"
       ],
       "Request timed out": [
+        ""
+      ],
+      "Search failed": [
         ""
       ],
       "Signature not verified": [
@@ -2055,9 +2067,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
-      ],
-      "Tab closed": [
-        "Kartica zatvorena"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
@@ -2540,16 +2549,13 @@
         "+${ organization.BonusVPN } veze za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)",
         "+${ organization.BonusVPN } veza za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Popust od 20% je primjenjen na vašu pretplatu s kuponom ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Povrat novca do 30 dana."
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -2581,9 +2587,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Za ovu adresu je omogućena potvrda adrese s pouzdanim ključevima. Da biste mogli slati na ovu adresu, prvo povjerite javne ključeve koji se mogu koristiti za slanje."
-      ],
-      "Addresses": [
-        "Adrese"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Nakon što ste izvršili Bitcoin uplatu, molimo slijedite ove upute ispod za nadogradnju."
@@ -2619,9 +2622,10 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Jeste li sigurni da želite isprazniti otpad i trajno izbrisati sve stavke?"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "",
-        "",
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        ""
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
         ""
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
@@ -2660,6 +2664,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Provjera kontakta ${ progress } od ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
+      "Clear encrypted search data": [
+        ""
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        ""
+      ],
+      "Clears browser data related to the encrypted search.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
       ],
@@ -2675,10 +2691,10 @@
       "Conflict": [
         "Sukob"
       ],
-      "Connections": [
-        "Veze"
-      ],
       "Continue using ${ appName } and unlock drive later": [
+        ""
+      ],
+      "Continue with ${ planName }": [
         ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
@@ -2700,9 +2716,6 @@
       ],
       "Create links and share your files with others.": [
         "Stvorite poveznice i dijelite svoje datoteke s drugima."
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
       ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         ""
@@ -2756,9 +2769,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
-      ],
-      "Expired": [
-        "Isteklo"
       ],
       "Failed": [
         "Neuspješno"
@@ -2848,6 +2858,9 @@
       ],
       "Included": [
         "Uključeno"
+      ],
+      "Indexing search results…": [
+        ""
       ],
       "Inherited from parent folder": [
         ""
@@ -3035,6 +3048,12 @@
       "Primary": [
         "Glavno"
       ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus je ograničen na jednog korisnika i započinje s 5 GB prostora za pohranu."
       ],
@@ -3060,6 +3079,9 @@
       ],
       "Screenshot(s) attached": [
         "Snimka(e) zaslona su pridodane"
+      ],
+      "Search cannot be enabled in this browser": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         ""
@@ -3090,6 +3112,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Nešto je pošlo po zlu. Pokušajte ponovno."
+      ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "Početna VPN usluga s P2P podrškom."
@@ -3159,6 +3184,12 @@
       "This will overwrite the existing folder": [
         ""
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
       ],
@@ -3186,7 +3217,13 @@
       "Trash": [
         "Otpad"
       ],
+      "Try different keywords": [
+        ""
+      ],
       "Unlimited folders, labels, and filters": [
+        ""
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Unlock drive to recover files": [
@@ -3196,6 +3233,9 @@
         "Nepodržana datoteka"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Uploaded": [
@@ -3892,8 +3932,8 @@
       "Contact groups": [
         "Grupe kontakata"
       ],
-      "Custom email addresses": [
-        "Prilagođene adrese e-pošte"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Prilagođeni filtri"
@@ -4008,27 +4048,40 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" uspješno premješteno"
-      ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" je trajno izbrisano iz otpada"
-      ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" nije uspješno premješten"
-      ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" premješten u Otpad"
-      ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" vraćeno iz Otpada"
-      ],
-      "${ count } item failed to be decrypted": [
-        "",
-        "",
+      "\"${ name }\" deleted permanently from trash": [
         ""
       ],
-      "${ deletedCount } link to your file was deleted": [
+      "\"${ name }\" failed to be created": [
+        ""
+      ],
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be moved": [
+        ""
+      ],
+      "\"${ name }\" failed to be moved to trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        ""
+      ],
+      "\"${ name }\" moved to trash": [
+        ""
+      ],
+      "\"${ name }\" restored from trash": [
+        ""
+      ],
+      "\"${ name }\" successfully moved": [
+        ""
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        ""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        ""
+      ],
+      "${ count } item failed to be decrypted": [
         "",
         "",
         ""
@@ -4042,11 +4095,6 @@
         "${ deletedItemsCount } mapa je trajno izbrisana iz otpada",
         "${ deletedItemsCount } mape su trajno izbrisane iz otpada",
         "${ deletedItemsCount } mapa je trajno izbrisano iz otpada"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } stavka je trajno izbrisana iz otpada",
-        "${ deletedItemsCount } stavke su trajno izbrisane iz otpada",
-        "${ deletedItemsCount } stavki je trajno izbrisano iz otpada"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "",
@@ -4063,25 +4111,63 @@
         "${ failedMovesCount } mape nisu uspješno premještene",
         "${ failedMovesCount } mapa nije uspješno premješteno"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } stavka nije uspješno premještena",
-        "${ failedMovesCount } stavke nisu uspješno premještene",
-        "${ failedMovesCount } stavki nije uspješno premješteno"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } datoteka je uspješno premještena",
-        "${ movedLinksCount } datoteke su uspješno premještene",
-        "${ movedLinksCount } datoteka je uspješno premješteno"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } mapa je uspješno premještena",
         "${ movedLinksCount } mape su uspješno premještene",
         "${ movedLinksCount } mapa je uspješno premješteno"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } stavka je uspješno premještena",
-        "${ movedLinksCount } stavke su uspješno premještene",
-        "${ movedLinksCount } stavki je uspješno premješteno"
+      "${ name } created successfully": [
+        ""
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "",
+        "",
+        ""
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } datoteka vraćena iz otpada",
@@ -4093,11 +4179,6 @@
         "${ restoredItemsCount } mape vraćene iz otpada",
         "${ restoredItemsCount } mapa vraćeno iz otpada"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } stavka vraćena iz otpada",
-        "${ restoredItemsCount } stavke vraćene iz otpada",
-        "${ restoredItemsCount } stavki vraćeno iz otpada"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } datoteka premještena u otpad",
         "${ trashedLinksCount } datoteke premještene u otpad",
@@ -4107,11 +4188,6 @@
         "${ trashedLinksCount } mapa je premještena u otpad",
         "${ trashedLinksCount } mape su premještene u otpad",
         "${ trashedLinksCount } mapa je premješteno u otpad"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } stavka premještena u otpad",
-        "${ trashedLinksCount } stavke premještene u otpad",
-        "${ trashedLinksCount } svaki premještenih u otpad"
       ],
       "All items will soon be permanently deleted from trash": [
         "Sve stavke će uskoro biti trajno izbrisane iz otpada"
@@ -4124,6 +4200,9 @@
       ],
       "Contact group updated": [
         "Kontaktna grupa je ažurirana"
+      ],
+      "Encrypted search activated": [
+        ""
       ],
       "Failed to download files: ${ err }": [
         ""
@@ -4190,16 +4269,25 @@
       "Subfolder failed to be loaded": [
         ""
       ],
-      "The link to your file failed to be deleted": [
+      "The link to \"${ name }\" failed to be deleted": [
         ""
       ],
-      "The link to your file was deleted": [
+      "The link to \"${ name }\" was deleted": [
+        ""
+      ],
+      "The link to your item failed to be deleted": [
+        ""
+      ],
+      "The link to your item was deleted": [
         ""
       ],
       "Trash failed to be emptied": [
         ""
       ],
       "Your old files will be deleted in 72 hours": [
+        ""
+      ],
+      "Your settings failed to be saved": [
         ""
       ],
       "Your settings have been changed successfully": [
@@ -4441,8 +4529,8 @@
       "Built-in Adblocker (NetShield)": [
         "Ugrađeni bloker oglasa (NetShield)"
       ],
-      "Custom email addresses": [
-        "Prilagođene adrese e-pošte"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Rani pristup novim proizvodima"
@@ -4554,6 +4642,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
         ""
       ]
@@ -4824,9 +4915,6 @@
       "Contacts": [
         "Kontakti"
       ],
-      "Coupon discount": [
-        "Kupon s popustom"
-      ],
       "Create a new folder": [
         "Stvori novu mapu"
       ],
@@ -4835,9 +4923,6 @@
       ],
       "Create new group": [
         "Stvori novu grupu"
-      ],
-      "Credits": [
-        "Zasluge"
       ],
       "Currency": [
         "Valuta"
@@ -5023,6 +5108,9 @@
       "Network error": [
         "Pogreška mreže"
       ],
+      "No results found": [
+        ""
+      ],
       "Number of files": [
         "Broj datoteka"
       ],
@@ -5095,8 +5183,11 @@
       "Restore your files": [
         "Vratite vaše datoteke"
       ],
-      "Select a plan": [
-        "Odaberite plan"
+      "Search results": [
+        ""
+      ],
+      "Searching…": [
+        ""
       ],
       "Select a theme": [
         "Odaberi temu"
@@ -5290,6 +5381,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Koristite osobnu adresu e-pošte korisnickoime@pm.me za slanje e-pošte"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "You do not have any contacts to export": [
         "Nemate kontakata za izvoz"

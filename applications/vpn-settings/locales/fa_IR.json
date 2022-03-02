@@ -259,10 +259,10 @@
       "Refer a friend": [
         ""
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "نوسازی صفحه"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "نوسازی صفحه"
       ],
       "Remove bonuses": [
@@ -1958,6 +1958,9 @@
         "${ number } سرور",
         "${ number } سرور"
       ],
+      "${ planName } plan": [
+        ""
+      ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "با تغییر به ${ annualBilling }، در اشتراک خود ${ save20 } صرفه‌جویی کنید"
       ],
@@ -1983,9 +1986,6 @@
         "+${ organization.BonusVPN } اتصال برای ProtonVPN (به شما اجازه اتصال دستگاههای بیشتری به VPN می‌دهد)",
         "+${ organization.BonusVPN } اتصال برای ProtonVPN (به شما اجازه اتصال دستگاههای بیشتری به VPN می‌دهد)"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "۲۰٪ تخفیف به اشتراک شما با کوپن ${ code } اعمال شد"
       ],
@@ -1995,7 +1995,7 @@
       "30-days money back guarantee": [
         "۳۰ روز ضمانت بازگشت پول"
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -2030,9 +2030,6 @@
       ],
       "ALL YOUR DATA WILL BE LOST!": [
         "تمام اطلاعات شما از بین خواهد رفت!"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "به شما اجازهٔ میزبانی ایمیل برای دامنه‌(ها)ی خود را در ${ mailAppName } می‌دهد، برای مثال: john.smith@example.com"
       ],
       "Amount below minimum (${ amount }).": [
         "مقدار کمتر از حداقل (${ amount })."
@@ -2091,16 +2088,10 @@
       "Connections": [
         "اتصال‌ها"
       ],
-      "Continue with plus": [
+      "Continue with ${ planName }": [
         ""
       ],
-      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
-        ""
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
         ""
       ],
       "Creating your account": [
@@ -2174,9 +2165,6 @@
       ],
       "Free up some space or contact your administrator.": [
         "مقداری فضای آزاد ایجاد کنید یا با مدیر خود تماس بگیرید."
-      ],
-      "Free VPN on a single device": [
-        ""
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN کامل با حداکثر سرعت ۱۰ گیگابیت بر ثانیه."
@@ -2310,9 +2298,6 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "به محض فشردن \"تنزیل درجه\"، ممکن است چندین دقیقه طول بکشد تا حساب شما به یک طرح Free تنزیل یابد. "
       ],
-      "Other options": [
-        ""
-      ],
       "P2P": [
         "P2P"
       ],
@@ -2349,11 +2334,14 @@
       "Plus or Visionary subscription required": [
         "اشتراک Plus یا Visionary مورد نیاز است"
       ],
-      "Plus plan": [
-        ""
-      ],
       "Preview": [
         "پیش‌نمایش"
+      ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
       ],
       "Proton can't help you recover any lost passwords": [
         "پروتن نمی‌تواند به شما در بازیابی رمز عبور فراموش شده کمکی کند"
@@ -2416,14 +2404,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "از آنجایی که شما یک کاربر وفادار هستید، حساب کاربری شما امکانات فعال شدهٔ اضافی است."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "سرویس VPN آغازین با پشتیبانی از P2P و مسدود کننده تبلیغات."
       ],
       "Storage GB": [
         "گیگابایت فضای ذخیره‌سازی"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
       ],
       "Support for 1 custom email domain": [
         ""
@@ -2509,11 +2497,11 @@
       "Unlimited folders, labels, and filters": [
         ""
       ],
+      "Unlimited messages": [
+        ""
+      ],
       "Unsupported file": [
         "فایل پشتیبانی نشده"
-      ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "از اعتبارنامه‌های زیر هنگام اتصال به سرورهای ProtonVPN بدون برنامه استفاده کنید. نمونه‌های مورد استفاده شامل: Tunnelblick در macOS و OpenVPN در GNU/Linux."
@@ -2641,7 +2629,7 @@
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "برای دسترسی به کلیه خدمات پروتون می توانید از حساب پروتون موجود خود استفاده کنید. لطفا با ${ email } وارید شوید"
       ],
-      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
         ""
       ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
@@ -3214,8 +3202,8 @@
       "Contact groups": [
         "گروه‌های مخاطب"
       ],
-      "Custom email addresses": [
-        "نشانی‌های ایمیل سفارشی"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "پالایه‌های سفارشی"
@@ -3637,8 +3625,8 @@
       "Built-in Adblocker (NetShield)": [
         "مسدودکننده آگهی داخل برنامه (NetShield)"
       ],
-      "Custom email addresses": [
-        "نشانی‌های ایمیل سفارشی"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "دسترسی زودهنگام به محصولات جدید"
@@ -3785,6 +3773,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
         ""
       ]
@@ -3901,6 +3892,9 @@
       ]
     },
     "Title": {
+      "${ appName } ${ planName } trial": [
+        ""
+      ],
       "${ appName } customization": [
         "سفارشی‌سازی ${ appName }"
       ],
@@ -4171,9 +4165,6 @@
       "Processing...": [
         "در حال پردازش..."
       ],
-      "ProtonMail Plus Trial": [
-        ""
-      ],
       "ProtonVPN clients": [
         "نرم‌افزارهای ProtonVPN"
       ],
@@ -4282,9 +4273,6 @@
       "Your current plan": [
         "طرح جاری شما"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
-      ],
       "Your plan": [
         "طرح شما"
       ],
@@ -4330,12 +4318,6 @@
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
         "با یک طرح به تمام امکانات پرداختی هر دوی ProtonVPN و ProtonMail (سرویس ایمیل رمز نگاری شده ای که میلیونها برای حفاظت اطلاعاتشان استفاده میکنند) دست یابید."
       ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "رایانامه‌هایی برای دامنه‌(های) خود در ${ mailAppName } میزبانی کنید، برای مثال john.smith@example.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "رایانامه‌هایی برای دامنه‌(های) خود در پروتون‌میل میزبانی کنید، برای مثال john.smith@example.com"
-      ],
       "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
         "اگر رمز را فرمواش کنید، دیگر دسترسی به اطلاعات یا حساب کاربری خود ندارید. لطفا رمز را در محل امن نگه‌دارید."
       ],
@@ -4368,6 +4350,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "برای ارسال رایانامه‌ها از نشانی شخصی username@pm.me استفاده کنید"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
         "نام کاربری برای کلیه خدمات پروتون استفاده می شود. همچنین می توانید بعداً برای ایجاد یک حساب ایمن ProtonMail استفاده کنید."

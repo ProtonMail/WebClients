@@ -86,6 +86,9 @@
       "Clear": [
         "Bersihkan"
       ],
+      "Clear browser data": [
+        "Hapus data browser"
+      ],
       "Clear data": [
         "Bersihkan data"
       ],
@@ -155,9 +158,6 @@
       "Customize": [
         "Sesuaikan"
       ],
-      "Decrease": [
-        "Kurangi"
-      ],
       "Delete": [
         "Hapus"
       ],
@@ -213,7 +213,7 @@
         "Pengaturan surel"
       ],
       "Empty trash": [
-        "Sampah kosong"
+        "Kosongkan sampah"
       ],
       "enable desktop notifications": [
         "aktifkan notifikasi desktop"
@@ -245,8 +245,14 @@
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
       ],
+      "Go to parent": [
+        "Tuju induk"
+      ],
       "Go to settings": [
         "Ke pengaturan"
+      ],
+      "Got it": [
+        "Mengerti"
       ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
@@ -271,9 +277,6 @@
       ],
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
-      ],
-      "Increase": [
-        "Tingkatkan"
       ],
       "Load image": [
         "Muat gambar"
@@ -315,7 +318,7 @@
         "Pindah ke folder"
       ],
       "Move to trash": [
-        "Pindah ke sampah"
+        "Pindahkan ke sampah"
       ],
       "New upload": [
         "Unggah baru"
@@ -369,7 +372,7 @@
         "Pulihkan data"
       ],
       "Refer a friend": [
-        ""
+        "Rujuk teman"
       ],
       "refresh the page": [
         "muat ulang halaman"
@@ -414,7 +417,7 @@
         "Mulai ulang unggahan"
       ],
       "Restore from trash": [
-        "Kembalikan dari kotak sampah"
+        "Kembalikan dari sampah"
       ],
       "Resume download": [
         "Lanjutkan pengunduhan"
@@ -425,17 +428,17 @@
       "Resume upload": [
         "Lanjutkan pengunggahan"
       ],
-      "Retry": [
-        "Coba lagi"
-      ],
       "Save": [
         "Simpan"
       ],
+      "Search": [
+        "Cari"
+      ],
+      "Search drive": [
+        "Cari di drive"
+      ],
       "Select all": [
         "Pilih semua"
-      ],
-      "Select plan": [
-        "Pilih paket"
       ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
@@ -825,7 +828,7 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "Lanjut menggunakan ProtonMail."
       ]
     },
     "Calendar feature": {
@@ -1828,6 +1831,9 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
+      "A problem occurred, please try again": [
+        "Terdapat suatu masalah, silakan coba lagi"
+      ],
       "Amount above the maximum.": [
         "Jumlah di atas maksimum."
       ],
@@ -1846,14 +1852,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Tidak dapat membuat kalendar baru dari kalender-kalender yang diimpor karena batas jumlah kalender maksimal telah tercapai."
       ],
-      "Checkout expired, please try again": [
-        "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
-      ],
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
       ],
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "Pencarian konten tidak dapat diaktifkan pada browser ini. Mohon keluar dari mode private browsing atau gunakan browser lain."
       ],
       "Could not find address ${ email }.": [
         "Tidak dapat menemukan alamat ${ email }."
@@ -1987,6 +1993,9 @@
       "Payment process not supported": [
         "Proses pembayaran tidak didukung"
       ],
+      "Please activate your content search again": [
+        "Mohon aktifkan kembali pencarian konten Anda"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
       ],
@@ -2004,6 +2013,9 @@
       ],
       "Request timed out": [
         "Waktu permintaan habis"
+      ],
+      "Search failed": [
+        "Pencarian gagal"
       ],
       "Signature not verified": [
         "Tanda tangan tidak terverifikasi"
@@ -2025,9 +2037,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
-      ],
-      "Tab closed": [
-        "Tab ditutup"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
@@ -2452,20 +2461,17 @@
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } koneksi ProtonVPN (Anda bisa menyambungkan lebih banyak perangkat ke VPN)"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Diskon 20% berlaku untuk langganan dengan kupon ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Jaminan 30 hari uang kembali."
       ],
-      "5 email addresses/aliases": [
-        ""
+      "5 email addresses": [
+        "5 alamat email"
       ],
       "5 GB storage": [
-        ""
+        "Kuota penyimpanan 5 GB"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Internet gratis tanpa sensor harus tersedia untuk semua."
@@ -2493,9 +2499,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verifikasi Alamat dengan Kunci Terpercaya sudah diaktifkan untuk alamat ini. Untuk mengirim ke alamat ini, percayai dulu kunci publik yang akan dipakai untuk mengirim pesan."
-      ],
-      "Addresses": [
-        "Alamat"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Usai melakukan pembayaran dengan Bitcoin, harap ikuti instruksi di bawah untuk meningkatkan."
@@ -2525,10 +2528,13 @@
         "Siapapun yang memiliki tautan ini akan dapat mengakses folder Anda."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Anda yakin ingin mengosongkan kotak sampah dan menghapus semua berkas secara permanen?"
+        "Apakah Anda yakin untuk mengosongkan sampah dan menghapus seluruh berkas yang ada di dalamnya secara permanen?"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "Anda yakin ingin menghapus permanen?"
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        "Apakah Anda yakin untuk menghapus \"${ itemName }\" dari sampah secara permanen?"
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        "Apakah Anda yakin untuk menghapus item-item yang terpilih dari sampah secara permanen?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Karena ${ appName } terenkripsi secara end-to-end, kami tidak dapat mengakses atau mendekripsi data-data Anda. Untuk dapat kembali masuk ke dalam drive milik Anda yang kata sandinya telah diatur ulang, Anda harus memiliki setidaknya salah satu hal berikut:"
@@ -2566,6 +2572,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Memeriksa kontak ${ progress } dari ${ max }..."
       ],
+      "Clear data": [
+        "Hapus data"
+      ],
+      "Clear encrypted search data": [
+        "Hapus data pencarian terenkripsi"
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        "Menghapus data browser akan turut mengosongkan indeks pencarian yang ada pada perangkat ini. Seluruh berkas yang ada akan kembali diindeks ulang pada saat Anda menggunakan fitur pencarian."
+      ],
+      "Clears browser data related to the encrypted search.": [
+        "Menghapus data browser yang berhubungan dengan pencarian terenkripsi."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat email ini salah, klik \"Edit\" untuk memperbaikinya."
       ],
@@ -2581,11 +2599,11 @@
       "Conflict": [
         "Konflik"
       ],
-      "Connections": [
-        "Sambungan"
-      ],
       "Continue using ${ appName } and unlock drive later": [
         "Lanjut gunakan ${ appName } tanpa membuka kunci berkas"
+      ],
+      "Continue with ${ planName }": [
+        ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Buat ${ calendarsToBeCreated } kalender baru"
@@ -2605,11 +2623,8 @@
       "Create links and share your files with others.": [
         "Buat tautan dan bagikan berkas Anda dengan yang lain."
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
+        "Anda akan dapat membuat hingga 20 kalender khusus. Di samping itu, Anda juga akan dapat menambahkan hingga 5 kalender dari teman, keluarga, rekan kerja, dan organisasi Anda."
       ],
       "Create your first folder and start moving your files.": [
         "Buat folder pertama Anda dan pindahkan berkas Anda."
@@ -2659,9 +2674,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
       ],
-      "Expired": [
-        "Kedaluwarsa"
-      ],
       "Failed": [
         "Gagal"
       ],
@@ -2705,7 +2717,7 @@
         "Hapus beberapa berkas atau hubungi administrator Anda."
       ],
       "Free VPN on a single device": [
-        ""
+        "VPN gratis untuk satu perangkat"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN berfitur lengkap dengan kecepatan hingga 10 Gbps."
@@ -2748,6 +2760,9 @@
       ],
       "Included": [
         "Termasuk"
+      ],
+      "Indexing search results…": [
+        "Mengindeks hasil pencarian…"
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
@@ -2870,7 +2885,7 @@
         "Hanya orang-orang yang memiliki tautan dan kata sandi yang dapat mengakses folder ini."
       ],
       "Other options": [
-        ""
+        "Pilihan lainnya"
       ],
       "Paused": [
         "Dijeda"
@@ -2935,6 +2950,12 @@
       "Primary": [
         "Utama"
       ],
+      "Priority support": [
+        "Dukungan prioritas"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus terbatas untuk satu pengguna dengan kuota penyimpanan awal 5 GB."
       ],
@@ -2958,6 +2979,9 @@
       ],
       "Screenshot(s) attached": [
         "Tangkapan layar terlampir"
+      ],
+      "Search cannot be enabled in this browser": [
+        "Pencarian tidak dapat diaktifkan pada browser ini"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Pilih berkas atau folder yang telah diunggah dan buat tautan untuk berkas atau folder tersebut."
@@ -2989,6 +3013,9 @@
       "Something went wrong, please try again later.": [
         "Ada sesuatu yang salah, silakan coba lagi nanti."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        "Mulai dari 500 MB dan dapatkan kuota penyimpanan tambahan seiring waktu. Kuota penyimpanan ini akan diperuntukkan bagi Mail, Calendar, dan Drive secara bersamaan."
+      ],
       "Starter VPN service with P2P support.": [
         "Layanan VPN pengantar dengan dukungan P2P."
       ],
@@ -2996,10 +3023,10 @@
         "Kapasitas GB"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Kuota penyimpanan diperuntukkan bagi Mail, Calendar, dan Drive secara bersamaan."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Dukungan 1 alamat email dengan domain khusus"
       ],
       "support team": [
         "tim dukungan"
@@ -3055,6 +3082,12 @@
       "This will overwrite the existing folder": [
         "Tindakan ini akan menimpa folder yang sudah ada"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
       ],
@@ -3082,8 +3115,14 @@
       "Trash": [
         "Sampah"
       ],
+      "Try different keywords": [
+        "Coba kata kunci pencarian lainnya"
+      ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Tanpa batasan jumlah folder, label, dan filter"
+      ],
+      "Unlimited messages": [
+        "Tanpa batasan jumlah pesan"
       ],
       "Unlock drive to recover files": [
         "Buka kunci drive untuk memulihkan berkas-berkas yang ada"
@@ -3092,7 +3131,10 @@
         "File tidak didukung"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "Tingkatkan jenis akun Anda sekarang juga agar Anda tetap dapat mengakses berbagai solusi Mail dan Calendar yang mengedepankan privasi untuk berbagai keperluan komunikasi Anda."
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+        "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ appName } ${ planName } berikut."
       ],
       "Uploaded": [
         "Diunggah"
@@ -3104,7 +3146,7 @@
         "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
       ],
       "Users": [
         "Pengguna"
@@ -3735,7 +3777,7 @@
         "Dibagikan"
       ],
       "Trash": [
-        "Trash"
+        "Sampah"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -3786,8 +3828,8 @@
       "Contact groups": [
         "Grup kontak"
       ],
-      "Custom email addresses": [
-        "Alamat email khusus"
+      "Custom domains": [
+        "Domain khusus"
       ],
       "Custom filters": [
         "Sesuaikan filter"
@@ -3865,7 +3907,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -3898,35 +3940,47 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" telah dipindahkan"
+      "\"${ name }\" deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" dihapus permanen dari kotak sampah"
+      "\"${ name }\" failed to be created": [
+        "\"${ name }\" gagal dibuat"
       ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" gagal dipindahkan"
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" dipindahkan ke kotak sampah"
+      "\"${ name }\" failed to be moved": [
+        "\"${ name }\" gagal dipindahkan"
       ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" dikembalikan dari kotak sampah"
+      "\"${ name }\" failed to be moved to trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        ""
+      ],
+      "\"${ name }\" moved to trash": [
+        "\"${ name }\" dipindahkan ke sampah"
+      ],
+      "\"${ name }\" restored from trash": [
+        ""
+      ],
+      "\"${ name }\" successfully moved": [
+        "\"${ name }\" berhasil dipindahkan"
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        "Nama \"${ newName }\" gagal diubah"
+      ],
+      "\"${ newName }\" renamed successfully": [
+        "Nama \"${ newName }\" berhasil diubah"
       ],
       "${ count } item failed to be decrypted": [
         "${ count } item gagal didekripsi"
       ],
-      "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } tautan ke berkas Anda telah dihapus"
-      ],
       "${ deletedItemsCount } file deleted permanently from trash": [
-        "${ deletedItemsCount } berkas dihapus permanen dari kotak sampah"
+        "${ deletedItemsCount } berkas dihapus secara permanen dari sampah"
       ],
       "${ deletedItemsCount } folder deleted permanently from trash": [
         "${ deletedItemsCount } folder dihapus permanen dari kotak sampah"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } item dihapus permanen dari kotak sampah"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "${ failedCount } tautan ke berkas Anda gagal dihapus"
@@ -3937,17 +3991,41 @@
       "${ failedMovesCount } folder failed to be moved": [
         "${ failedMovesCount } folder gagal dipindahkan"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } item gagal dipindahkan"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } berkas telah dipindahkan"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } folder telah dipindahkan"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } item telah dipindahkan"
+      "${ name } created successfully": [
+        "${ name } berhasil dibuat"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        ""
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "${ numberOfItems } item gagal dipindahkan"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        ""
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        ""
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } item dipindahkan ke sampah"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        ""
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } item berhasil dipindahkan"
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        ""
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        ""
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } berkas dikembalikan dari kotak sampah"
@@ -3955,20 +4033,14 @@
       "${ restoredItemsCount } folder restored from trash": [
         "${ restoredItemsCount } folder dikembalikan dari kotak sampah"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } item dikembalikan dari kotak sampah"
-      ],
       "${ trashedLinksCount } file moved to trash": [
-        "${ trashedLinksCount } berkas dipindahkan ke kotak sampah"
+        "${ trashedLinksCount } berkas dipindahkan ke sampah"
       ],
       "${ trashedLinksCount } folder moved to trash": [
-        "${ trashedLinksCount } folder dipindahkan ke kotak sampah"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } item dipindahkan ke kotak sampah"
+        "${ trashedLinksCount } folder dipindahkan ke sampah"
       ],
       "All items will soon be permanently deleted from trash": [
-        "Semua item akan dihapus permanen dari kotak sampah"
+        "Seluruh item akan dihapus secara permanen dari sampah"
       ],
       "An item with the name \"${ name }\" already exists in the current folder": [
         "Item bernama \"${ name }\" sudah ada di folder ini"
@@ -3978,6 +4050,9 @@
       ],
       "Contact group updated": [
         "Grup kontak telah diperbarui"
+      ],
+      "Encrypted search activated": [
+        "Pencarian terenkripsi diaktifkan"
       ],
       "Failed to download files: ${ err }": [
         "Gagal mengunduh berkas-berkas berikut: ${ err }"
@@ -4030,17 +4105,26 @@
       "Subfolder failed to be loaded": [
         "Subfolder gagal dimuat"
       ],
-      "The link to your file failed to be deleted": [
-        "Tautan ke berkas Anda gagal dihapus"
+      "The link to \"${ name }\" failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted": [
-        "Tautan ke berkas Anda telah dihapus"
+      "The link to \"${ name }\" was deleted": [
+        ""
+      ],
+      "The link to your item failed to be deleted": [
+        "Tautan ke item Anda gagal dihapus"
+      ],
+      "The link to your item was deleted": [
+        "Tautan ke item Anda telah dihapus"
       ],
       "Trash failed to be emptied": [
         "Gagal mengosongkan sampah"
       ],
       "Your old files will be deleted in 72 hours": [
         "Berkas-berkas lama Anda akan terhapus dalam 72 jam"
+      ],
+      "Your settings failed to be saved": [
+        "Pengaturan Anda gagal disimpan"
       ],
       "Your settings have been changed successfully": [
         "Pengaturan Anda telah disimpan"
@@ -4281,8 +4365,8 @@
       "Built-in Adblocker (NetShield)": [
         "Pemblokir iklan bawaan (NetShield)"
       ],
-      "Custom email addresses": [
-        "Alamat email khusus"
+      "Custom domains": [
+        "Domain khusus"
       ],
       "Early access to new products": [
         "Akses awal ke produk baru"
@@ -4390,8 +4474,11 @@
       ]
     },
     "Spotlight": {
-      "Invite friends and earn rewards!": [
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
+      ],
+      "Invite friends and earn rewards!": [
+        "Undang teman-teman Anda dan dapatkan berbagai keuntungan!"
       ]
     },
     "Storage": {
@@ -4648,9 +4735,6 @@
       "Contacts": [
         "Kontak"
       ],
-      "Coupon discount": [
-        "Kupon diskon"
-      ],
       "Create a new folder": [
         "Buat folder baru"
       ],
@@ -4659,9 +4743,6 @@
       ],
       "Create new group": [
         "Buat grup baru"
-      ],
-      "Credits": [
-        "Saldo"
       ],
       "Currency": [
         "Mata uang"
@@ -4754,7 +4835,7 @@
         "Pengaturan surel (${ emailAddress })"
       ],
       "Empty trash": [
-        "Sampah kosong"
+        "Kosongkan sampah"
       ],
       "Enter password to download": [
         "Masukkan kata sandi untuk mengunduh"
@@ -4843,6 +4924,9 @@
       "Network error": [
         "Kesalahan jaringan"
       ],
+      "No results found": [
+        "Tidak ada hasil yang ditemukan"
+      ],
       "Number of files": [
         "Jumlah berkas"
       ],
@@ -4915,8 +4999,11 @@
       "Restore your files": [
         "Pulihkan berkas Anda"
       ],
-      "Select a plan": [
-        "Pilih paket"
+      "Search results": [
+        "Hasil pencarian"
+      ],
+      "Searching…": [
+        "Mencari…"
       ],
       "Select a theme": [
         "Pilih tema"
@@ -5021,7 +5108,7 @@
         "Berkas Anda telah siap untuk diunduh"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Masa uji coba gratis Anda akan segera berakhir pada ${ formattedEndDate }"
       ],
       "ZIP / postal code": [
         "Kode pos"
@@ -5110,6 +5197,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Gunakan alamat pribadi namapengguna@pm.me untuk mengirim surel"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
       ],
       "You do not have any contacts to export": [
         "Anda tidak memiliki kontak untuk diekspor"
@@ -5324,7 +5414,7 @@
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"
       ]
     }
   }
