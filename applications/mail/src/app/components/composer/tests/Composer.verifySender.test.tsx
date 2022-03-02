@@ -10,7 +10,6 @@ import {
     clearAll,
     GeneratedKey,
     generateKeys,
-    getModal,
     render,
 } from '../../../helpers/test/helper';
 import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
@@ -109,13 +108,12 @@ describe('Composer verify sender', () => {
         const sender = { Name: name2, Address: address2 } as Recipient;
         setup(sender);
 
-        const { findByTestId, container } = await render(<Composer {...props} />, false);
+        const { findByTestId, getByText, container } = await render(<Composer {...props} />, false);
 
         await saveNow(container);
 
         // Sender is invalid, so we should see a modal
-        const { modal } = await getModal();
-        getByTextDefault(modal, 'Sender changed');
+        getByText('Sender changed');
 
         // Then, the from field must have been replaced by the default address
         const fromField = await findByTestId('composer:from');
@@ -128,13 +126,12 @@ describe('Composer verify sender', () => {
         const sender = { Name: 'Address 3', Address: 'address3@protonmail.com' } as Recipient;
         setup(sender);
 
-        const { findByTestId, container } = await render(<Composer {...props} />, false);
+        const { findByTestId, container, getByText } = await render(<Composer {...props} />, false);
 
         await saveNow(container);
 
         // Sender is invalid, so we should see a modal
-        const { modal } = await getModal();
-        getByTextDefault(modal, 'Sender changed');
+        getByText('Sender changed');
 
         // Then, the from field must have been replaced by the default address
         const fromField = await findByTestId('composer:from');

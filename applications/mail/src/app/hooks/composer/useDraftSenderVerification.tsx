@@ -1,4 +1,5 @@
-import { Alert, ConfirmModal, useAddresses, useModals } from '@proton/components';
+import { useState } from 'react';
+import { AlertModal, Button, useAddresses, useModalState } from '@proton/components';
 import { Address } from '@proton/shared/lib/interfaces';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { c } from 'ttag';
@@ -12,7 +13,20 @@ interface Props {
 
 export const useDraftSenderVerification = ({ onChange }: Props) => {
     const [addresses] = useAddresses();
-    const { createModal } = useModals();
+    const [defaultEmail, setDefaultEmail] = useState<string>('');
+
+    const [senderChangedModalProps, setSenderChangedModalOpen] = useModalState();
+
+    const modal = (
+        <AlertModal
+            title={c('Title').t`Sender changed`}
+            buttons={[<Button color="norm" onClick={senderChangedModalProps.onClose}>{c('Action').t`OK`}</Button>]}
+            {...senderChangedModalProps}
+        >
+            {c('Info')
+                .t`The original sender of this message is no longer valid. Your message will be sent from your default address ${defaultEmail}.`}
+        </AlertModal>
+    );
 
     const verifyDraftSender = async (message: MessageState) => {
         const currentSender = message.data?.Sender;
@@ -22,6 +36,8 @@ export const useDraftSenderVerification = ({ onChange }: Props) => {
         if (!actualAddress || !getIsAddressActive(actualAddress)) {
             const defaultAddress = getFromAddress(addresses, '', undefined);
 
+            setDefaultEmail(defaultAddress?.Email);
+
             if (defaultAddress) {
                 onChange({
                     data: {
@@ -29,24 +45,10 @@ export const useDraftSenderVerification = ({ onChange }: Props) => {
                         AddressID: defaultAddress.ID,
                     },
                 });
-
-                await new Promise((resolve) => {
-                    createModal(
-                        <ConfirmModal
-                            onConfirm={() => resolve(undefined)}
-                            cancel={null}
-                            onClose={() => resolve(undefined)}
-                            title={c('Title').t`Sender changed`}
-                            confirm={c('Action').t`OK`}
-                        >
-                            <Alert className="mb1">{c('Info')
-                                .t`The original sender of this message is no longer valid. Your message will be sent from your default address ${defaultAddress.Email}.`}</Alert>
-                        </ConfirmModal>
-                    );
-                });
+                setSenderChangedModalOpen(true);
             }
         }
     };
 
-    return { verifyDraftSender };
+    return { verifyDraftSender, modal };
 };

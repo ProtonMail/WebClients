@@ -59,15 +59,9 @@ export const useUpdateRecipientSendInfo = (
     const contactsMap = useContactsMap();
     const emailAddress = recipient.Address;
 
-    const { modal: askForKeyPinningModal, handleShowModal: handleShowAskForKeyPinningModal } =
-        useModalTwo(AskForKeyPinningModal);
+    const [askForKeyPinningModal, handleShowAskForKeyPinningModal] = useModalTwo(AskForKeyPinningModal);
 
-    const [contactResignText, setContactResignText] = useState<string>('');
-
-    const { modal: contactResignModal, handleShowModal: handleContactResignModal } = useModalTwo(
-        ContactResignModal,
-        contactResignText
-    );
+    const [contactResignModal, handleContactResignModal] = useModalTwo(ContactResignModal);
 
     const handleRemove = () => {
         if (messageSendInfo) {
@@ -130,13 +124,12 @@ export const useUpdateRecipientSendInfo = (
                                 This may be the result of a password reset.
                                 You must re-sign the contact in order to send a message to ${contactAddress} or edit the contact.`;
 
-                setContactResignText(text);
-
                 await handleContactResignModal({
                     title: c('Title').t`Re-sign contact`,
                     contacts: [contact],
                     onNotResign: onRemove,
                     onError: handleRemove,
+                    children: text,
                 });
 
                 return updateRecipientIcon();
@@ -204,15 +197,9 @@ export const useUpdateGroupSendInfo = (
     const contactsMap = useContactsMap();
     const emailsInGroup = contacts.map(({ Email }) => Email);
 
-    const { modal: askForKeyPinningModal, handleShowModal: handleShowAskForKeyPinningModal } =
-        useModalTwo(AskForKeyPinningModal);
+    const [askForKeyPinningModal, handleShowAskForKeyPinningModal] = useModalTwo(AskForKeyPinningModal);
 
-    const [contactResignText, setContactResignText] = useState<string>('');
-
-    const { modal: contactResignModal, handleShowModal: handleContactResignModal } = useModalTwo(
-        ContactResignModal,
-        contactResignText
-    );
+    const [contactResignModal, handleContactResignModal] = useModalTwo(ContactResignModal);
 
     const handleRemove = () => {
         if (messageSendInfo) {
@@ -328,13 +315,12 @@ export const useUpdateGroupSendInfo = (
                     totalContactsResign
                 );
 
-                setContactResignText(text);
-
                 await handleContactResignModal({
                     title: title,
                     contacts: contactsResign,
                     onNotResign: noop,
                     onError: noop,
+                    children: text,
                 });
 
                 return loadSendIcons({ abortController, checkForError: false });

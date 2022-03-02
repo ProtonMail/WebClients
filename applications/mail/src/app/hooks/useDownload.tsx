@@ -41,7 +41,7 @@ export const useDownload = () => {
     const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
     const getMessageKeys = useSyncedMessageKeys();
-    const { modal: confirmDownloadModal, handleShowModal } = useModalTwo(ConfirmDownloadAttachments);
+    const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
         dispatch(updateAttachment({ ID, attachment }));
@@ -90,7 +90,7 @@ export const useDownloadAll = () => {
     const dispatch = useDispatch();
     const getMessageKeys = useSyncedMessageKeys();
     const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
-    const { modal: confirmDownloadModal, handleShowModal } = useModalTwo(ConfirmDownloadAttachments);
+    const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
         dispatch(updateAttachment({ ID, attachment }));
@@ -144,7 +144,7 @@ export const usePreview = () => {
     const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
     const getMessageKeys = useSyncedMessageKeys();
-    const { modal: confirmDownloadModal, handleShowModal } = useModalTwo(ConfirmDownloadAttachments);
+    const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
         dispatch(updateAttachment({ ID, attachment }));
