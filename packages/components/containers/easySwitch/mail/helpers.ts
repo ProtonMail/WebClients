@@ -88,7 +88,8 @@ export const getFolderRelationshipsMap = (folders: ImportedMailFolder[]) =>
                 const level = getLevel(f.Source, f.Separator, folders);
                 return (
                     currentLevel + 1 === level &&
-                    f.Source.split(f.Separator).slice(0, -1).join(f.Separator) === folder.Source
+                    f.Source.startsWith(folder.Source) &&
+                    f.Source[folder.Source.length] === f.Separator
                 );
             })
             .map((f) => f.Source);
