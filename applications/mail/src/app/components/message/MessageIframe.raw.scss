@@ -1,7 +1,7 @@
 @import '~@proton/styles/scss/config';
 @import '@proton/styles/scss/base/reset';
 @import '@proton/styles/scss/base/scrollbar';
-@import '@proton/styles/scss/base/custom-properties/optionals';
+@import '@proton/styles/scss/base/custom-properties';
 
 /*----------------------
        EMAIL RESET
@@ -187,7 +187,7 @@ a:active {
 	margin-inline-start: 0;
 	box-shadow: inset 0 0 0 1px silver;
 	border: none;
-	border-radius: 3px;
+	border-radius: var(--border-radius-md);
 	outline: none;
 	background-color: transparent;
 	text-align: center;
@@ -219,7 +219,7 @@ a:active {
 	box-sizing: border-box;
 	display: inline-flex;
 	border: 1px solid var(--border-norm);
-	border-radius: 3px;
+	border-radius: var(--border-radius-md);
 	justify-content: center;
 	align-items: center;
 	color: black;
@@ -381,7 +381,7 @@ a:active {
 			border: 1px solid var(--border-weak);
 			padding-block: 0.5em;
 			padding-inline: 0.25em;
-			border-radius: 3px;
+			border-radius: var(--border-radius-md);
 		}
 
 		&-item-size {
