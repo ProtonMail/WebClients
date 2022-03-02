@@ -49,19 +49,18 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
                 }}
                 open={confirmModal}
             />
-            {method === 'sms' ||
-                (method === 'email' && (
-                    <RequestNewCodeModal
-                        verificationModel={{
-                            method,
-                            value,
-                        }}
-                        onClose={() => setNewCodeModal(false)}
-                        open={newCodeModal}
-                        onEdit={onBack}
-                        onResend={onRequest}
-                    />
-                ))}
+            {(method === 'sms' || method === 'email') && (
+                <RequestNewCodeModal
+                    verificationModel={{
+                        method,
+                        value,
+                    }}
+                    onClose={() => setNewCodeModal(false)}
+                    open={newCodeModal}
+                    onEdit={onBack}
+                    onResend={onRequest}
+                />
+            )}
             <div className="mb1-75">{subTitle}</div>
             <InputFieldTwo
                 id="reset-token"
@@ -75,7 +74,7 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">{c('Action')
                 .t`Reset password`}</Button>
-            {method === 'sms' || method === 'email' ? (
+            {(method === 'sms' || method === 'email') && (
                 <Button
                     size="large"
                     color="norm"
@@ -86,7 +85,7 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
                     onClick={() => setNewCodeModal(true)}
                     className="mt0-5"
                 >{c('Action').t`Didn't receive a code?`}</Button>
-            ) : null}
+            )}
         </form>
     );
 };
