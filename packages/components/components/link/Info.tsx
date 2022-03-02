@@ -15,6 +15,7 @@ interface Props {
     buttonTabIndex?: number;
     className?: string;
     questionMark?: boolean;
+    colorPrimary?: boolean;
 }
 const Info = ({
     originalPlacement = 'top',
@@ -24,6 +25,7 @@ const Info = ({
     buttonTabIndex,
     className = '',
     questionMark = false,
+    colorPrimary = true,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
@@ -65,7 +67,7 @@ const Info = ({
                 role={url ? 'link' : undefined}
             >
                 <Icon
-                    className={classnames(['icon-16p color-primary', className])}
+                    className={classnames(['icon-16p', colorPrimary && 'color-primary', className])}
                     name={questionMark ? 'question-circle' : 'info-circle'}
                     alt={c('Action').t`More info: ${safeTitle}`}
                     {...rest}

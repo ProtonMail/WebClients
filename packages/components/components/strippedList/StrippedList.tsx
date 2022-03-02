@@ -9,7 +9,7 @@ const StrippedList = ({ children }: StrippedListProps) => (
         {Children.map(children, (child) => {
             if (React.isValidElement(child)) {
                 return (
-                    <li className="px1 py0-5">
+                    <li className="px1 py0-5 rounded">
                         <child.type {...child.props} />
                     </li>
                 );

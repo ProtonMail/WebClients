@@ -13,22 +13,33 @@ interface FeatureListProps {
 
 const PlanCardFeatureList = ({ features }: FeatureListProps) => {
     return (
-        <ul className="bg-weak-even unstyled">
+        <ul className="bg-weak-odd unstyled mt1 mb2">
             {features.map((feature) => {
                 return (
-                    <li key={feature.featureName} className="px1 py0-5 flex flex-align-items-center">
-                        <div className={classnames([!feature.included && 'color-weak'])}>
-                            {feature.fire ? (
-                                <>🔥</>
-                            ) : feature.included ? (
-                                <span className="color-success">
-                                    <Icon size={24} name="check" />
-                                </span>
-                            ) : (
-                                <Icon size={24} name="xmark" />
-                            )}
-                            {feature.featureName}
-                            {feature.tooltip ? <Info className="ml0-5" title={feature.tooltip} /> : null}
+                    <li key={feature.featureName} className="px0-5 py0-5 flex rounded">
+                        <div
+                            className={classnames([
+                                'flex-no-min-children flex-nowrap',
+                                !feature.included && 'color-weak',
+                            ])}
+                        >
+                            <span className="w2e pl0-25 mx0-1 flex flex-item-noshrink min-h23r">
+                                {feature.fire ? (
+                                    <>🔥</>
+                                ) : feature.included ? (
+                                    <span className="color-success">
+                                        <Icon size={20} name="check" />
+                                    </span>
+                                ) : (
+                                    <Icon size={16} name="xmark" className="mt0-25" />
+                                )}
+                            </span>
+                            <span className="flex-item-fluid inline-flex flex-align-items-center">
+                                <span className="mr0-5">{feature.featureName}</span>
+                                {feature.tooltip ? (
+                                    <Info title={feature.tooltip} colorPrimary={feature.included} />
+                                ) : null}
+                            </span>
                         </div>
                     </li>
                 );
