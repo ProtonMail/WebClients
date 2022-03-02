@@ -86,6 +86,9 @@
       "Clear": [
         "Netejar"
       ],
+      "Clear browser data": [
+        ""
+      ],
       "Clear data": [
         "Netejar dades"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         "Personalitza"
-      ],
-      "Decrease": [
-        "Redueix"
       ],
       "Delete": [
         "Eliminar"
@@ -247,8 +247,14 @@
       "Go to panel ${ index }": [
         "Anar al panell ${ index }"
       ],
+      "Go to parent": [
+        ""
+      ],
       "Go to settings": [
         "Anar a la configuració"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Amagar configuració PGP avançada"
@@ -273,9 +279,6 @@
       ],
       "Import from .csv or vCard": [
         "Importa des de .csv o vCard"
-      ],
-      "Increase": [
-        "Incrementa"
       ],
       "Load image": [
         "Carregar imatge"
@@ -427,17 +430,17 @@
       "Resume upload": [
         "Reprèn la càrrega"
       ],
-      "Retry": [
-        "Torneu a provar"
-      ],
       "Save": [
         "Desar"
       ],
+      "Search": [
+        ""
+      ],
+      "Search drive": [
+        ""
+      ],
       "Select all": [
         "Seleccionar-ho tot"
-      ],
-      "Select plan": [
-        "Seleccionar pla"
       ],
       "Set recovery phrase": [
         ""
@@ -1837,6 +1840,9 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
+      "A problem occurred, please try again": [
+        ""
+      ],
       "Amount above the maximum.": [
         "Quantitat per sobre del màxim."
       ],
@@ -1855,14 +1861,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Checkout expired, please try again": [
-        "El pagament ha expirat. Torneu-ho a provar"
-      ],
       "Contact could not be saved": [
         "El contacte no s'ha pogut desar"
       ],
       "Contact signature not verified": [
         "Signatura del contacte no verificada"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "No s'ha pogut trobar l'adreça ${ email }."
@@ -2001,6 +2007,9 @@
       "Payment process not supported": [
         "Procés de pagament no soportat"
       ],
+      "Please activate your content search again": [
+        ""
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "",
         ""
@@ -2018,6 +2027,9 @@
         "Procés anul·lat"
       ],
       "Request timed out": [
+        ""
+      ],
+      "Search failed": [
         ""
       ],
       "Signature not verified": [
@@ -2040,9 +2052,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
-      ],
-      "Tab closed": [
-        "Pestanya tancada"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que utilitzeu no permet l'autorització total del pagament. Si us plau, utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
@@ -2496,16 +2505,13 @@
         "+${ organization.BonusVPN } connexió per a ProtonVPN (permet connectar més dispositius a VPN)",
         "+${ organization.BonusVPN } connexions per a ProtonVPN (permet connectar més dispositius a VPN)"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% de descompte aplicat a la vostra subscripció amb un cupó ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Garantia de reemborsament de 30 dies."
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -2537,9 +2543,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està habilitada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
-      ],
-      "Addresses": [
-        "Adreçes"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Després de fer el pagament amb Bitcoin, seguiu les següents instruccions per actualitzar."
@@ -2573,9 +2576,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Esteu segur que voleu buidar la paperera i suprimir permanentment tots els elements?"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "Esteu segur que voleu suprimir permanentment l'element seleccionat de la paperera?",
-        "Esteu segur que voleu suprimir permanentment els elements seleccionats de la paperera?"
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        ""
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        ""
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
@@ -2613,6 +2618,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Comprovant contacte ${ progress } de ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
+      "Clear encrypted search data": [
+        ""
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        ""
+      ],
+      "Clears browser data related to the encrypted search.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquesta adreça de correu electrònic és incorrecta, feu clic a \"Editar\" per corregir-la."
       ],
@@ -2628,10 +2645,10 @@
       "Conflict": [
         "Conflicte"
       ],
-      "Connections": [
-        "Connexions"
-      ],
       "Continue using ${ appName } and unlock drive later": [
+        ""
+      ],
+      "Continue with ${ planName }": [
         ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
@@ -2652,9 +2669,6 @@
       ],
       "Create links and share your files with others.": [
         "Creeu enllaços i compartiu els vostres fitxers amb altres persones."
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
       ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         ""
@@ -2707,9 +2721,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
-      ],
-      "Expired": [
-        "Expirat"
       ],
       "Failed": [
         "Fallat"
@@ -2798,6 +2809,9 @@
       ],
       "Included": [
         "Inclòs"
+      ],
+      "Indexing search results…": [
+        ""
       ],
       "Inherited from parent folder": [
         ""
@@ -2985,6 +2999,12 @@
       "Primary": [
         "Primari"
       ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus està limitat a un usuari i comença amb 5 GB d'emmagatzematge."
       ],
@@ -3009,6 +3029,9 @@
       ],
       "Screenshot(s) attached": [
         "Captures de pantalla(s) adjuntes"
+      ],
+      "Search cannot be enabled in this browser": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         ""
@@ -3039,6 +3062,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Alguna cosa ha anat malament, siusplau, intenta-ho més tard."
+      ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "Servei VPN de base amb suport P2P."
@@ -3107,6 +3133,12 @@
       "This will overwrite the existing folder": [
         "Se sobreescriurà la carpeta existent"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
       ],
@@ -3134,7 +3166,13 @@
       "Trash": [
         "Paperera"
       ],
+      "Try different keywords": [
+        ""
+      ],
       "Unlimited folders, labels, and filters": [
+        ""
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Unlock drive to recover files": [
@@ -3144,6 +3182,9 @@
         "Fitxer no compatible"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Uploaded": [
@@ -3839,8 +3880,8 @@
       "Contact groups": [
         "Grups de contactes"
       ],
-      "Custom email addresses": [
-        "Adreces de correu electrònic personalitzades"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Filtres personalitzats"
@@ -3953,26 +3994,40 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" mogut amb èxit"
-      ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" esborrat permanentment de la Paperera"
-      ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" ha fallat al moure"
-      ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" mogut a la Paperera"
-      ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" restaurat de la Paperera"
-      ],
-      "${ count } item failed to be decrypted": [
-        "",
+      "\"${ name }\" deleted permanently from trash": [
         ""
       ],
-      "${ deletedCount } link to your file was deleted": [
+      "\"${ name }\" failed to be created": [
+        ""
+      ],
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be moved": [
+        ""
+      ],
+      "\"${ name }\" failed to be moved to trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        ""
+      ],
+      "\"${ name }\" moved to trash": [
+        ""
+      ],
+      "\"${ name }\" restored from trash": [
+        ""
+      ],
+      "\"${ name }\" successfully moved": [
+        ""
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        ""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        ""
+      ],
+      "${ count } item failed to be decrypted": [
         "",
         ""
       ],
@@ -3983,10 +4038,6 @@
       "${ deletedItemsCount } folder deleted permanently from trash": [
         "${ deletedItemsCount } carpeta esborrada permanentment de la Paperera",
         "${ deletedItemsCount } carpetes esborrades permanentment de la Paperera"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } element esborrat permanentment de la Paperera",
-        "${ deletedItemsCount } elements esborrats permanentment de la Paperera"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "",
@@ -4000,21 +4051,52 @@
         "${ failedMovesCount } carpeta ha fallat al moure",
         "${ failedMovesCount } carpetes han fallat al moure"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } element ha fallat al moure",
-        "${ failedMovesCount } elements han fallat al moure"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } arxiu mogut amb èxit",
-        "${ movedLinksCount } arxius moguts amb èxit"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } carpeta moguda amb èxit",
         "${ movedLinksCount } carpetes mogudes amb èxit"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } element mogut amb èxit",
-        "${ movedLinksCount } elements moguts amb èxit"
+      "${ name } created successfully": [
+        ""
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "",
+        ""
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } arxiu restaurat de la Paperera",
@@ -4024,10 +4106,6 @@
         "${ restoredItemsCount } carpeta restaurada de la Paperera",
         "${ restoredItemsCount } carpetes restaurades de la Paperera"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } element restaurat de la Paperera",
-        "${ restoredItemsCount } elements restaurats de la Paperera"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } arxiu mogut a la Paperera",
         "${ trashedLinksCount } arxius moguts a la Paperera"
@@ -4035,10 +4113,6 @@
       "${ trashedLinksCount } folder moved to trash": [
         "${ trashedLinksCount } carpeta moguda a la Paperera",
         "${ trashedLinksCount } carpetes mogudes a la Paperera"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } element mogut a la Paperera",
-        "${ trashedLinksCount } elements moguts a la Paperera"
       ],
       "All items will soon be permanently deleted from trash": [
         "Aviat se suprimiran permanentment tots els elements de la paperera"
@@ -4051,6 +4125,9 @@
       ],
       "Contact group updated": [
         "Grup de contactes actualitzat"
+      ],
+      "Encrypted search activated": [
+        ""
       ],
       "Failed to download files: ${ err }": [
         ""
@@ -4110,16 +4187,25 @@
       "Subfolder failed to be loaded": [
         ""
       ],
-      "The link to your file failed to be deleted": [
+      "The link to \"${ name }\" failed to be deleted": [
         ""
       ],
-      "The link to your file was deleted": [
+      "The link to \"${ name }\" was deleted": [
+        ""
+      ],
+      "The link to your item failed to be deleted": [
+        ""
+      ],
+      "The link to your item was deleted": [
         ""
       ],
       "Trash failed to be emptied": [
         ""
       ],
       "Your old files will be deleted in 72 hours": [
+        ""
+      ],
+      "Your settings failed to be saved": [
         ""
       ],
       "Your settings have been changed successfully": [
@@ -4361,8 +4447,8 @@
       "Built-in Adblocker (NetShield)": [
         "Bloquejador d'anuncis integrat (NetShield)"
       ],
-      "Custom email addresses": [
-        "Adreces de correu electrònic personalitzades"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Accés anticipat a nous productes"
@@ -4472,6 +4558,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
         ""
       ]
@@ -4736,9 +4825,6 @@
       "Contacts": [
         "Contactes"
       ],
-      "Coupon discount": [
-        "Cupó de descompte"
-      ],
       "Create a new folder": [
         "Crear una nova carpeta"
       ],
@@ -4747,9 +4833,6 @@
       ],
       "Create new group": [
         "Crear nou grup"
-      ],
-      "Credits": [
-        "Crèdits"
       ],
       "Currency": [
         "Moneda"
@@ -4933,6 +5016,9 @@
       "Network error": [
         "Error de xarxa"
       ],
+      "No results found": [
+        ""
+      ],
       "Number of files": [
         "Nombre de fitxers"
       ],
@@ -5005,8 +5091,11 @@
       "Restore your files": [
         "Restaureu els vostres fitxers"
       ],
-      "Select a plan": [
-        "Seleccioneu un pla"
+      "Search results": [
+        ""
+      ],
+      "Searching…": [
+        ""
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -5200,6 +5289,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Utilitzeu l'adreça personal usuari@pm.me per enviar correus electrònics"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "You do not have any contacts to export": [
         "No teniu cap contacte per exportar"

@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ boldSave } by switching to annual billing": [
-        "1 年プランに変更すると、${ boldSave } の割引が適用されます"
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } のご紹介"
       ],
@@ -49,9 +46,6 @@
       ],
       "Add to group": [
         "グループに追加"
-      ],
-      "annual billing": [
-        "1年プラン"
       ],
       "Apply": [
         "適用"
@@ -101,12 +95,6 @@
       "Close this banner": [
         "このバナーを閉じる"
       ],
-      "Compare all features": [
-        "すべての機能を比較"
-      ],
-      "Compare plans": [
-        "プランを比較"
-      ],
       "Compose": [
         "新規作成"
       ],
@@ -139,9 +127,6 @@
       ],
       "Customize": [
         "カスタマイズ"
-      ],
-      "Decrease": [
-        "減少"
       ],
       "Delete": [
         "削除"
@@ -248,14 +233,8 @@
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
       ],
-      "Increase": [
-        "増加"
-      ],
       "Load image": [
         "画像を読み込む"
-      ],
-      "Loading verification": [
-        "認証を読み込み中"
       ],
       "Log in": [
         "ログイン"
@@ -314,14 +293,8 @@
       "OK": [
         "OK"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "${ CALENDAR_APP_NAME } の設定を開く"
-      ],
       "Open navigation": [
         "ナビゲーションを開く"
-      ],
-      "Pay": [
-        "支払う"
       ],
       "Preview contact": [
         "連絡先をプレビュー"
@@ -359,12 +332,6 @@
       "Remove": [
         "削除"
       ],
-      "Remove bonuses": [
-        "ボーナスの削除"
-      ],
-      "Remove gift code": [
-        "ギフトコードを削除"
-      ],
       "Remove this notification": [
         "この通知を削除"
       ],
@@ -383,17 +350,11 @@
       "Request new code": [
         "新しいコードの発行"
       ],
-      "Retry": [
-        "再試行"
-      ],
       "Save": [
         "保存"
       ],
       "Select all": [
         "すべて選択"
-      ],
-      "Select plan": [
-        "プランを選択"
       ],
       "Select timezone": [
         "タイムゾーンの選択"
@@ -461,9 +422,6 @@
       "Trust": [
         "信頼する"
       ],
-      "Try again": [
-        "再試行"
-      ],
       "Try another method": [
         "別の方法を試してください"
       ],
@@ -493,12 +451,6 @@
       ],
       "Use ${ label } theme": [
         "${ label } テーマを使用"
-      ],
-      "Use a different card": [
-        "別のカードを使用"
-      ],
-      "Use a different payment method": [
-        "他の支払い方法を使用する"
       ],
       "Use for sending": [
         "送信に使用"
@@ -547,23 +499,6 @@
         ""
       ]
     },
-    "Addon": {
-      "+ ${ addresses } email address": [
-        "+ ${ addresses } 件のメールアドレス"
-      ],
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } 件の独自ドメイン"
-      ],
-      "+ ${ members } user": [
-        "+ ${ members } ユーザー"
-      ],
-      "+ ${ storage } storage": [
-        "+ ${ storage } ストレージ"
-      ],
-      "+ ${ vpn } connection": [
-        "+ ${ vpn } 接続"
-      ]
-    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } は ${ formattedHour } に開始しました"
@@ -593,37 +528,37 @@
         "${ title } は昨日の ${ formattedHour } に開始しました"
       ],
       "${ title } starts at ${ formattedHour }": [
-        ""
+        "${ title } は ${ formattedHour } に開始します"
       ],
       "${ title } starts now": [
-        ""
+        "${ title } は今から始まります"
       ],
       "${ title } starts on ${ _formattedDate2 }": [
-        ""
+        "${ title } は ${ _formattedDate2 } に開始します"
       ],
       "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        ""
+        "${ title } は ${ _formattedDate2 } の ${ formattedHour } に開始します"
       ],
       "${ title } starts on ${ _formattedDate3 }": [
-        ""
+        "${ title } は ${ _formattedDate3 } に開始します"
       ],
       "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        ""
+        "${ title } は ${ _formattedDate3 } の ${ formattedHour } に開始します"
       ],
       "${ title } starts on ${ _formattedDateWithoutTime }": [
-        ""
+        "${ title } は ${ _formattedDateWithoutTime } に開始します"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
-        ""
+        "${ title } は ${ formattedDateWithTime } に開始します"
       ],
       "${ title } starts today": [
-        ""
+        "${ title } は今日開始します"
       ],
       "${ title } starts tomorrow": [
-        ""
+        "${ title } は明日開始します"
       ],
       "${ title } starts tomorrow at ${ formattedHour }": [
-        ""
+        "${ title } は明日の ${ formattedHour } 開始します"
       ]
     },
     "Alert": {
@@ -679,23 +614,6 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
-      ]
-    },
-    "Billing cycle option": {
-      "Annually": [
-        "年間"
-      ],
-      "Annually SAVE 20%": [
-        "1年プラン (20%割引)"
-      ],
-      "Monthly": [
-        "毎月"
-      ],
-      "Two years SAVE 33%": [
-        "2年プラン (33%割引)"
-      ],
-      "Two-year": [
-        "2年"
       ]
     },
     "blackfriday Action": {
@@ -870,31 +788,6 @@
         ""
       ]
     },
-    "Calendar feature": {
-      "Calendar import": [
-        "カレンダーをインポート"
-      ],
-      "Invitations": [
-        "招待"
-      ],
-      "Multiple calendars": [
-        "複数のカレンダー"
-      ],
-      "Recurring events": [
-        "定期的な予定"
-      ],
-      "Share Calendar via link": [
-        "リンクでカレンダーを共有"
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        "20 / ユーザー"
-      ],
-      "20 / user *": [
-        "20 / ユーザー *"
-      ]
-    },
     "Calendar invite buttons label": {
       "Attending?": [
         ""
@@ -947,7 +840,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "カレンダーを復号できませんでした"
       ],
       "Calendar is syncing": [
         "カレンダーは同期中です"
@@ -956,19 +849,19 @@
         "カレンダーが大きすぎます"
       ],
       "Calendar link is not accessible": [
-        ""
+        "カレンダーのリンクにアクセスできません"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "カレンダーのリンクが一時的にアクセスできません"
       ],
       "Failed to sync calendar": [
-        ""
+        "カレンダーの同期に失敗しました"
       ],
       "More than 12 hours passed since last update": [
         "最後のアップデートから 12 時間以上経過しています"
       ],
       "Unsupported calendar format": [
-        ""
+        "非対応のカレンダー形式"
       ]
     },
     "Calendar view": {
@@ -1080,14 +973,6 @@
       ],
       "Yomi": [
         "ふりがな"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } 日"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } か月"
       ]
     },
     "Country name": {
@@ -1964,22 +1849,6 @@
         "無効なカレンダーに関連付けられたイベントです。"
       ]
     },
-    "Disney": {
-      "Disney+": [
-        "Disney+"
-      ]
-    },
-    "Drive feature": {
-      "Access via Web": [
-        "ウェブ経由でアクセス"
-      ],
-      "Share files via link": [
-        "リンクでファイルを共有"
-      ],
-      "Upload / download files": [
-        "ファイルをアップロード・ダウンロード"
-      ]
-    },
     "Dropwdown action icon tooltip": {
       "Add calendar": [
         ""
@@ -2074,13 +1943,13 @@
     },
     "Error": {
       "${ _list } doesn't have an email address": [
-        ""
+        "一部の連絡先にメールアドレスがありません: ${ _list }"
       ],
       "${ _list2 } has no contacts": [
-        ""
+        "次のグループには連絡先が追加されていません: ${ _list2 }"
       ],
       "${ list } doesn't have a valid email address": [
-        ""
+        "一部の連絡先に有効なメールアドレスがありません: ${ list }"
       ],
       "${ list } has invalid emails": [
         ""
@@ -2094,14 +1963,8 @@
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
       ],
-      "Amount above the maximum.": [
-        "上限金額を超えています。"
-      ],
-      "Amount below minimum.": [
-        "最少金額を下回っています。"
-      ],
       "Answer failed to be sent": [
-        ""
+        "回答の送信に失敗しました"
       ],
       "Authentication canceled.": [
         "認証がキャンセルされました。"
@@ -2110,7 +1973,7 @@
         "認証エラー"
       ],
       "Calendar limit reached": [
-        ""
+        "カレンダーの制限に達しました"
       ],
       "Calendar primary private key is not decrypted": [
         "カレンダーのプライマリー秘密鍵が復号されていません"
@@ -2119,9 +1982,6 @@
         ""
       ],
       "Cancellation failed to be sent": [
-        ""
-      ],
-      "Checkout expired, please try again": [
         ""
       ],
       "Contact could not be saved": [
@@ -2166,9 +2026,6 @@
       "Error": [
         "エラーが発生しました"
       ],
-      "Error connecting to the Bitcoin API.": [
-        "ビットコインAPIへの接続中にエラーが発生しました。"
-      ],
       "Error: ${ errorMessage }": [
         "エラー： ${ errorMessage }"
       ],
@@ -2176,7 +2033,7 @@
         ""
       ],
       "Folder name cannot be empty": [
-        ""
+        "フォルダー名は空欄にできません"
       ],
       "Image upload failed": [
         "画像のアップロードに失敗しました。"
@@ -2190,29 +2047,14 @@
       "Interval cannot be empty": [
         ""
       ],
-      "Invalid ${ name } code": [
-        "無効な ${ name } コードです"
-      ],
-      "Invalid card number": [
-        "無効なカード番号です。"
-      ],
-      "Invalid code": [
-        "無効なコードです"
-      ],
       "Invalid email address": [
         "無効なメールアドレスです"
-      ],
-      "Invalid expiration date": [
-        "無効な有効期限です"
       ],
       "Invalid link to the event": [
         "イベントへの無効なリンク"
       ],
       "Invalid name": [
         "無効な名前です。"
-      ],
-      "Invalid postal code": [
-        "無効な郵便番号です"
       ],
       "Invalid public key file": [
         "無効な公開鍵ファイル"
@@ -2230,7 +2072,7 @@
         ""
       ],
       "Label name cannot be empty": [
-        ""
+        "ラベル名は空欄にできません"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         ""
@@ -2238,14 +2080,11 @@
       "Missing signature": [
         "署名がありません"
       ],
-      "Name on card required": [
-        "カードの名義人を入力してください。"
-      ],
       "Name required": [
         "名前が必要です"
       ],
       "No data to import": [
-        ""
+        "インポートするデータがありません"
       ],
       "No key retrieved for internal user is valid for sending": [
         "内部ユーザーのために取得された鍵は送信には有効ではありません"
@@ -2269,31 +2108,16 @@
         ""
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        ""
+        "一部の連絡先にメールアドレスがありません: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
-        ""
-      ],
-      "Organization not recognized. Try again.": [
-        ""
+        "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
-      "Payment process cancelled": [
-        "支払い処理はキャンセルされました"
-      ],
-      "Payment process consumed": [
-        "支払い処理は消費されました"
-      ],
-      "Payment process failed": [
-        "支払い処理は失敗しました"
-      ],
-      "Payment process not supported": [
-        "支払い処理はサポートされていません"
-      ],
       "Please create an address first.": [
-        ""
+        "アドレスを最初に作成してください。"
       ],
       "Please fix the highlighted conflict to proceed.": [
         ""
@@ -2307,11 +2131,8 @@
       "Primary address key is not decrypted.": [
         "プライマリーアドレス鍵が復号されていません。"
       ],
-      "Process aborted": [
-        "処理が中断されました"
-      ],
       "Request timed out": [
-        ""
+        "リクエストがタイムアウトしました"
       ],
       "Self invitation not allowed": [
         "自分自身を招待することはできません"
@@ -2329,10 +2150,10 @@
         "一部のグループは削除できませんでした"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "ラベル名の中に ProtonMail の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
@@ -2340,26 +2161,11 @@
       "Start time must be before end time": [
         "開始日時は終了日時の前に設定してください。"
       ],
-      "Tab closed": [
-        "タブが閉じられました。"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "お使いのブラウザでは、支払いを完全に承認できません。別のブラウザを使用するか、コンピューターからログインしてください。"
-      ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "このフォルダー名は長すぎます。別の名前を選択してください。"
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "追加クレジット金額は ${ _price } 以上から承っております。"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "寄付金額は ${ price } から承っております。"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "${ _price2 } 以上の額より承っております。"
+        "このラベル名は長すぎます。別の名前を選択してください"
       ],
       "The sending key is not valid": [
         "送信鍵が有効ではありません"
@@ -2377,10 +2183,10 @@
         "このフィールドには最低${ minimumLength } 文字が必要です。"
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "このフォルダー名は利用できません。別の名前を選択してください"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "このラベル名は利用できません。別の名前を選択してください"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
@@ -2390,9 +2196,6 @@
       ],
       "Unknown error": [
         "不明なエラー"
-      ],
-      "Unknown payment token status": [
-        "支払いトークンの状態が不明です。"
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
@@ -2511,7 +2314,7 @@
         ""
       ],
       "Invalid event": [
-        ""
+        "無効なイベントです"
       ],
       "Journal entry": [
         ""
@@ -2526,16 +2329,16 @@
         ""
       ],
       "Malformed start time": [
-        ""
+        "正しくない開始時間です"
       ],
       "Missing start time": [
-        ""
+        "開始日時が存在しません"
       ],
       "No UID, title or start time": [
         ""
       ],
       "Non-Gregorian": [
-        ""
+        "グレゴリオ暦ではありません"
       ],
       "Notification out of bounds": [
         ""
@@ -2550,7 +2353,7 @@
         ""
       ],
       "Start time out of bounds": [
-        ""
+        "開始日時が指定可能な範囲を超えています"
       ],
       "Timezone": [
         ""
@@ -2565,7 +2368,7 @@
         ""
       ],
       "Unsupported event": [
-        ""
+        "サポートされていないイベントです"
       ]
     },
     "Error message": {
@@ -2641,16 +2444,16 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        ""
+        "添付された ICS ファイルを復号できません"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "添付された ICS ファイルを読み込めません"
       ],
       "Invalid invitation": [
-        ""
+        "無効な招待状です"
       ],
       "Invalid response": [
-        ""
+        "無効なレスポンスです"
       ],
       "The event could not be added to your calendar. No answer was sent": [
         ""
@@ -2724,11 +2527,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
-      ]
-    },
-    "Free price": {
-      "Free": [
-        "FREE"
       ]
     },
     "Group": {
@@ -2904,13 +2702,13 @@
         ""
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        ""
+        "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        ""
+        "${ calendarsToBeMerged } 個の結合されたカレンダー"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        ""
+        "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } メンバー"
@@ -2933,12 +2731,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
-      "${ mailAppName } Free": [
-        "${ mailAppName } Free"
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional は 1 人のユーザーから使うことができます。1 人のユーザーを追加するごとに組織プールに 5 GB のストレージと 5 つのメールアドレスが追加されます。"
-      ],
       "${ namesWithoutLast } and ${ nameOfLast }": [
         "${ namesWithoutLast } と ${ nameOfLast }"
       ],
@@ -2948,17 +2740,8 @@
       "${ numContacts } contact": [
         ""
       ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ annualBilling } に切り替えることで ${ save20 } になります"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "メールサブスクリプションを追加することによってメールと VPN の両方が ${ saveExtra20 } になります。"
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "VPN サブスクリプションを追加することによって VPN とメールの両方が ${ saveExtra20 } になります。"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        ""
+        "${ providerCalendars.length } 件のうち ${ selectedCalendarsTotal } 件のカレンダー"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
@@ -2969,38 +2752,14 @@
       "${ updated } contact updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
-      "${ vpnAppName } Free": [
-        "${ vpnAppName } Free"
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } メンバー)"
       ],
-      "(Mail + VPN)": [
-        "(メール + VPN)"
-      ],
-      "* Customizable features": [
-        "* カスタマイズ可能な項目"
-      ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } ボーナスストレージ"
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } 件の ProtonVPN 接続 (より多くのデバイスを VPN に接続可能)"
-      ],
-      "20 personal calendars": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "クーポン ${ code } 付きのサブスクリプションに 20% の割引が適用されます"
-      ],
-      "30 days money-back guarantee.": [
-        "30 日間返金保証"
-      ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
-        ""
+        "5 GB のストレージ"
       ],
       "A cancellation email will be sent to removed participants.": [
         ""
@@ -3009,25 +2768,10 @@
         ""
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        "すべての人が検閲がなく無制限のインターネットを利用できるべきです。"
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "場所を問わず、ソーシャルメディア、ニュース、Wikipedia、YouTubeなどのブロックされたコンテンツにアクセスできます。"
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "場所を問わず、${ netflix }, ${ disney }, ${ primeVideo }, ${ many } などのストリーミングサービスにアクセスできます。"
+        "取り消しメールがイベント参加者に送信されます。このイベントを削除しますか?"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
-      ],
-      "Account successfully updated": [
-        "アカウントが正常に更新されました。"
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "アカウントに user2@protonmail.com のようなさらなるアドレスを追加できます"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         ""
@@ -3038,23 +2782,11 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に送信に使用する公開鍵を信頼する必要があります。"
       ],
-      "Addresses": [
-        "メールアドレス"
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "ビットコイン でのお支払い後は、以下の指示に従ってアップグレードしてください。"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "すべて (${ totalFoldersCount } フォルダー)"
       ],
       "All (${ totalFoldersCount } label)": [
         "すべて (${ totalFoldersCount } 件のラベル)"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "John.smith@example.com のような自分のドメインを ${ mailAppName } でホストできます。"
-      ],
-      "Amount below minimum (${ amount }).": [
-        "最少金額 (${ amount }) を下回っています。"
       ],
       "An invitation will be sent to added participants.": [
         ""
@@ -3067,30 +2799,6 @@
       ],
       "At most 100 participants are allowed per invitation": [
         ""
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "2年ごとに ${ billedPrice } のお支払い"
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "毎年 ${ billedPrice } のお支払い"
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "現在の支払いサイクル終了後に請求されます (${ renewalDate } に更新)"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "ビットコイン取引は確認に最大で24時間かかります。確認完了後、お客様のアカウントにクレジットを追加しますので、そのクレジットでお支払いください。"
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "ブラックフライデー 2018 があなたのサブスクリプションに適用されました"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "ブラックフライデー 2019 があなたのサブスクリプションに適用されました"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "ブラックフライデー 2020 の新規登録者向け割引が適用されました"
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "無料プランにダウングレードすると、将来再びアップグレードした場合には、これらの特典が永久に失われます。"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワードを覚えていませんか？ この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
@@ -3107,11 +2815,11 @@
       "Close this screen to exit.": [
         ""
       ],
-      "Connections": [
-        "接続"
+      "Continue with ${ planName }": [
+        ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        ""
+        "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         ""
@@ -3123,13 +2831,7 @@
         "新しい連絡先グループを作成"
       ],
       "Create in": [
-        ""
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
+        "作成日時"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
@@ -3155,23 +2857,11 @@
       "Discard changes?": [
         "変更を破棄してよろしいですか？"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "クーポン ${ code } 付きのサブスクリプションに割引が適用されます"
-      ],
-      "Domains": [
-        "ドメイン"
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
-      ],
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
       ],
       "Duplicate key updated": [
         ""
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "組織内のユーザーに追加の接続を割り当てることができます。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
@@ -3185,38 +2875,14 @@
       "Existent, added and removed participants will be notified.": [
         ""
       ],
-      "Expired": [
-        "有効期限切れ"
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "家族や小規模なチームには、メールとVPNの両方が含まれています。"
-      ],
-      "For getting started with private and secure emailing.": [
-        "プライベートで安全なEメールを始めるために。"
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "高度な保護機能を備えたフル機能のメールボックスを必要とする個人のために。"
-      ],
-      "For professionals that need secure business communications.": [
-        "安全なビジネスコミュニケーションが必要な専門家のために。"
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa、MasterCardの場合は、カード裏面に表示された3桁の数字です。American Expressは表面の4桁の数字です。"
-      ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
       ],
       "Free up some space or contact your administrator.": [
         "スペースを解放するか、管理者にお問い合わせしてください。"
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "Frequency modifications will be lost.": [
         ""
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "最大 10 Gbps を備えたフル機能の VPN。"
       ],
       "Group assignment applied": [
         ""
@@ -3237,10 +2903,10 @@
         ""
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        ""
+        "${ totalCalendarsCount } 個のうち ${ selectedCalendarsCount } 個のカレンダーをインポート"
       ],
       "Import from": [
-        ""
+        "インポート元"
       ],
       "Import in progress": [
         ""
@@ -3248,14 +2914,11 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
       ],
-      "Included": [
-        "プランに含む"
-      ],
       "Inherited from parent folder": [
         ""
       ],
       "Internet connection lost": [
-        ""
+        "インターネット接続が切断されました"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "インターネット接続が失われました。デバイスの接続を確認してください。"
@@ -3264,7 +2927,7 @@
         "インターネット接続が回復ました。"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "あとは、選択を確認するだけです。"
       ],
       "Key fingerprint": [
         "鍵のフィンガープリント"
@@ -3291,7 +2954,7 @@
         "カレンダーを管理"
       ],
       "Merged": [
-        ""
+        "結合"
       ],
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
@@ -3300,7 +2963,7 @@
         ""
       ],
       "New": [
-        ""
+        "新規"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -3314,9 +2977,6 @@
       "No group found": [
         "グループがありません。"
       ],
-      "No payment is required at this time.": [
-        "現時点での支払いは必要ありません。"
-      ],
       "No results found": [
         "結果が見つかりませんでした"
       ],
@@ -3325,12 +2985,6 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         ""
-      ],
-      "Not customizable": [
-        "カスタマイズ不可"
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "ユーザーに与えられる VPN の接続数。デバイスが接続されると1つのVPN接続が消費されます。"
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         ""
@@ -3344,12 +2998,6 @@
       "Other options": [
         ""
       ],
-      "Payment can take a few minutes to fully verify.": [
-        "お支払いの検証完了に数分かかる場合があります。"
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "支払い情報は TLS で暗号化され、スイスのプライバシー法によっても保護されます。"
-      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline はプレーンテキスト形式としか互換性がありません。 ProtonMail は暗号化されたメッセージに常に署名することに注意してください。"
       ],
@@ -3362,29 +3010,11 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "確認ボタンをクリックすると、アカウントに ${ creditsRemaining } クレジットが残ります。"
-      ],
       "Please remove the duplicates and try again.": [
         "重複を削除して再度お試しください。"
       ],
       "Please select the folders you would like to import:": [
         ""
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "再度試すか、別の支払い方法を用いてください。あるいはあなたの銀行にお尋ねください。"
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "再度試すか、別の支払い方法をお試しください。あるいは PayPal にお尋ねください。"
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "新たに開かれたタブで支払いの検証を行ってください。"
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "新たに開かれたタブでカードの検証を行ってください。"
-      ],
-      "Please verify the payment in the new tab.": [
-        "新しいタブで支払いを確認してください。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "プライマリ暗号化鍵で再署名できる連絡先を探すまでお待ちください。"
@@ -3398,23 +3028,17 @@
       "Primary": [
         "プライマリー"
       ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus は 1 人用で 5 GB のストレージから利用できます。"
+      "Priority support": [
+        ""
       ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } には ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } の VPN 接続が含まれています。"
+      "Proton Calendar": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
       ],
       "Removed participants will be notified.": [
         ""
-      ],
-      "Save 20%": [
-        "20% 割引"
-      ],
-      "Save extra 20%": [
-        "さらに 20% 割引"
       ],
       "Screenshot(s) attached": [
         "スクリーンショットが添付されました"
@@ -3434,19 +3058,10 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ProtonMail 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
-      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         ""
       ],
-      "Starter VPN service with P2P support.": [
-        "P2P 対応の初心者向け VPN サービス。"
-      ],
-      "Storage GB": [
-        "ストレージ GB"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3454,15 +3069,6 @@
       ],
       "support team": [
         "サポートチーム"
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "${ professionalPlan } に切り替えるとさらに接続を追加できます。"
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "${ professionalPlan } に切り替えるとさらにユーザーを追加できます。"
-      ],
-      "Thank you for supporting our mission.": [
-        "援助ありがとう!"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "アプリケーションは、エクスポートする前に連絡先をローカルで復号化する必要があります。 プロセスの終了時に、VCFファイルが生成され、ダウンロードすることができます。"
@@ -3518,9 +3124,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "これにより、PayPalを使用してプロトンの有料契約の支払いが可能になります。 新しいブラウザタブでPayPalにリダイレクトします。 ポップアップブロッカーを使用している場合は、これを無効にして続けてください。"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
       ],
@@ -3536,44 +3139,26 @@
       "Unlimited folders, labels, and filters": [
         ""
       ],
+      "Unlimited messages": [
+        ""
+      ],
       "Update recurring event": [
         "定期的な予定の更新"
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
-      ],
-      "Users": [
-        "ユーザー"
-      ],
-      "Verification can take a few minutes.": [
-        "検証に数分かかることがあります。"
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "検証のために新しいタブを開きます、ポップアップブロッカーはオフにしてください。"
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "検証のために新しいタブを開きます、ポップアップブロッカーはオフにしてください。この検証作業では課金されません。カードの確認に使用した金額は直ちに返金されます。"
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "家族や中小企業向け VPN + ${ mailAppName } バンドル。"
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "お支払いを保護するために3Dセキュアを用いています。"
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "このトランザクションを完了するために、新しいブラウザタブでPayPalにリダイレクトします。 ポップアップブロッカーを使用している場合は、これを無効にして続けてください。"
       ],
       "We'll notify you when the import is done.": [
         ""
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "新しい認証コードを ${ strong } に送信しました"
       ],
       "Week": [
         "週"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Google アカウントから何をインポートしますか?"
       ],
       "Which event would you like to delete?": [
         "どの予定を削除しますか？"
@@ -3600,7 +3185,7 @@
         "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "新しい認証コードを受け取りますか?"
       ],
       "Would you like to update all events in this series?": [
         ""
@@ -3618,7 +3203,7 @@
         "現在 ${ user.Name } (${ user.Email }) としてサインインしていてアクセスが制限されています。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "存在する Proton カレンダーにインポートしたカレンダーを結合することもできます。"
       ],
       "You can check the progress ${ importProgressLink }.": [
         ""
@@ -3635,29 +3220,14 @@
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         ""
       ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "支払い方法にPayPalを追加する場合は、クレジットカードまたは銀行口座が登録されている必要があります。"
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal アカウントにクレジットカードまたは銀行口座を登録しておく必要があります。PayPal アカウントをお持ちではない場合はこちらのボタンをクリックしてください。"
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "サブスクリプションをキャンセルするには、追加のカレンダーと共有中のカレンダーのリンクを削除する必要があります。${ linkButton }"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量の${ spaceDisplayed }%に達しました。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量が最大に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "支払い確定のため、まもなく銀行のサイトへリダイレクトされます。"
-      ],
       "You will lose all unsaved changes.": [
         "保存されていない変更は全て失なわれます。"
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
         ""
@@ -3683,23 +3253,14 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "アカウントをアップグレード中です。30 秒程お待ち下さい。"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "支払いが決済されれば、アカウントは更新されます。"
-      ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         ""
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         ""
       ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "セキュリティ上の観点から、3Dセキュア認証に対応した銀行口座が必要です。"
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "データは ${ importedEmailAddressStrong } から Proton アカウントにインポートできる状態です。"
       ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
@@ -3717,24 +3278,6 @@
         "あなたのシステムのタイムゾーンが ${ timezone } に変更されたようです。タイムゾーンの設定を更新しますか？"
       ]
     },
-    "info": {
-      "(beta)": [
-        "(ベータ)"
-      ]
-    },
-    "Info concerning plan features": {
-      "Customizable features": [
-        "カスタマイズ可能な項目"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMailは、迷惑メールや大量メール送信には使用できません。正当なメールに制限はありません。"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "現金での支払い方法については、${ email } 宛までお問い合わせください。"
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "クリックして詳細を確認"
@@ -3743,11 +3286,6 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "重複した連絡先が存在しているようです。${ mergeAction }"
-      ]
-    },
-    "information": {
-      "Included": [
-        "プランに含む"
       ]
     },
     "Key badge": {
@@ -3801,12 +3339,6 @@
       "Browser version": [
         "ブラウザのバージョン"
       ],
-      "BTC address:": [
-        "BTCアドレス:"
-      ],
-      "BTC amount:": [
-        "BTC 金額:"
-      ],
       "Calendar": [
         "カレンダー"
       ],
@@ -3815,15 +3347,6 @@
       ],
       "Cancel": [
         "キャンセル"
-      ],
-      "Card holder": [
-        "カード名義人"
-      ],
-      "Card number": [
-        "クレジットカード番号"
-      ],
-      "Cash": [
-        "現金"
       ],
       "Category": [
         "カテゴリー"
@@ -3845,9 +3368,6 @@
       ],
       "Country": [
         "国名"
-      ],
-      "CVV code": [
-        "CVV コード"
       ],
       "Date and time": [
         "日付と時刻"
@@ -3894,17 +3414,8 @@
       "Ends": [
         "繰り返しの終了条件"
       ],
-      "Enter organization name to confirm": [
-        ""
-      ],
       "Event title": [
         "予定のタイトル"
-      ],
-      "Expires": [
-        "有効期限"
-      ],
-      "Expiry date": [
-        "有効期限"
       ],
       "Export contacts": [
         "連絡先をエクスポート"
@@ -3969,9 +3480,6 @@
       "Name": [
         "名前"
       ],
-      "Name on card": [
-        "カード名義人"
-      ],
       "Notification": [
         ""
       ],
@@ -3999,9 +3507,6 @@
       "Password": [
         "パスワード"
       ],
-      "Payer": [
-        "支払人"
-      ],
       "PGP scheme": [
         "PGP方式"
       ],
@@ -4013,9 +3518,6 @@
       ],
       "Postal code": [
         "郵便番号"
-      ],
-      "Proration": [
-        "日割り計算"
       ],
       "Proton username": [
         "Proton ユーザー名"
@@ -4035,12 +3537,6 @@
       "Reveal password": [
         "パスワードを表示"
       ],
-      "Select a method": [
-        "支払い方法の選択"
-      ],
-      "Select your country": [
-        "国を選択してください"
-      ],
       "Sign emails": [
         "メールに署名"
       ],
@@ -4055,12 +3551,6 @@
       ],
       "To: ${ emailAddress }": [
         ""
-      ],
-      "Total": [
-        "合計"
-      ],
-      "Total (${ countdown })": [
-        "合計 (${ countdown })"
       ],
       "Two-factor authentication code": [
         "2 要素認証コード"
@@ -4082,9 +3572,6 @@
       ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "ZIP": [
-        "郵便番号"
       ]
     },
     "Label for contact group color": {
@@ -4122,17 +3609,11 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "ギフトコードを追加"
-      ],
       "Calendars": [
         "カレンダー"
       ],
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
-      ],
-      "click here": [
-        "ここをクリック"
       ],
       "Go to subscription plans": [
         "サブスクリプション プランへ移動"
@@ -4179,102 +3660,11 @@
         ""
       ]
     },
-    "Mail feature": {
-      "0.5 GB": [
-        "0.5 GB"
-      ],
-      "20 GB": [
-        "20 GB"
-      ],
-      "Address verification": [
-        "アドレスの検証"
-      ],
-      "Addresses": [
-        "メールアドレス"
-      ],
-      "Autoresponder": [
-        "自動返信機能"
-      ],
-      "Catch-All email": [
-        "Catch-All メール"
-      ],
-      "Contact groups": [
-        "連絡先グループ"
-      ],
-      "Custom domains": [
-        ""
-      ],
-      "Custom filters": [
-        "仕分けフィルター"
-      ],
-      "Encrypted contacts": [
-        "暗号化された連絡先"
-      ],
-      "Folders / labels": [
-        "フォルダー / ラベル"
-      ],
-      "IMAP / SMTP": [
-        "IMAP / SMTP"
-      ],
-      "Limited": [
-        "限定的"
-      ],
-      "Messages per day": [
-        "1日あたりの送信可能数"
-      ],
-      "Multi-user support": [
-        "複数ユーザー対応"
-      ],
-      "Priority": [
-        "優先度"
-      ],
-      "Storage": [
-        "ストレージ容量"
-      ],
-      "Support": [
-        "サポート"
-      ],
-      "Use @pm.me address": [
-        "@pm.me アドレスを使用"
-      ],
-      "Users": [
-        "ユーザー"
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        "5 GB *"
-      ],
-      "5 GB / user *": [
-        "5 GB / ユーザー *"
-      ],
-      "Unlimited": [
-        "無制限"
-      ],
-      "Unlimited **": [
-        "無制限 **"
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        "5 / ユーザー *"
-      ]
-    },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
-      ]
-    },
-    "Many Others": {
-      "and many others": [
-        "など"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         ""
       ]
     },
@@ -4451,11 +3841,6 @@
       ],
       "on the third Wednesday": [
         "第3水曜日"
-      ]
-    },
-    "Netflix": {
-      "Netflix": [
-        "Netflix"
       ]
     },
     "New Label form": {
@@ -4699,17 +4084,6 @@
         ""
       ]
     },
-    "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
-      "New credit/debit card": [
-        "新しいクレジットカード/デビットカード"
-      ],
-      "PayPal": [
-        "PayPal"
-      ]
-    },
     "Personal calendar limit reached modal body": {
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
         ""
@@ -4765,9 +4139,6 @@
       "Filter groups": [
         "グループの検索"
       ],
-      "Gift code": [
-        "ギフトコード"
-      ],
       "Image URL": [
         "画像の URL"
       ],
@@ -4786,9 +4157,6 @@
       "Please describe the problem and include any error messages": [
         "問題について、エラーメッセージ等も含めてご記入下さい"
       ],
-      "Postal code": [
-        "郵便番号"
-      ],
       "Proton username": [
         "Proton ユーザー名"
       ],
@@ -4800,9 +4168,6 @@
       ],
       "Start typing an email address": [
         "電子メールアドレスを入力"
-      ],
-      "ZIP": [
-        "郵便番号"
       ]
     },
     "Placeholder for contact group name": {
@@ -4813,104 +4178,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(名前なし)"
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        "0.5 GB のストレージ"
-      ],
-      "1 - 5000 users *": [
-        "1 - 5000 ユーザー *"
-      ],
-      "1 address": [
-        "1 アドレス"
-      ],
-      "1 user": [
-        "1 ユーザー"
-      ],
-      "20 GB storage": [
-        "20 GB のストレージ"
-      ],
-      "200 folders / labels": [
-        "200 件のフォルダー / ラベル"
-      ],
-      "3 folders / labels": [
-        "3 件のフォルダー / ラベル"
-      ],
-      "5 addresses": [
-        "5 アドレス"
-      ],
-      "5 addresses / user": [
-        "5 アドレス / ユーザー"
-      ],
-      "5 GB storage *": [
-        "5 GB のストレージ *"
-      ],
-      "5 GB storage / user": [
-        "5 GB のストレージ / ユーザー *"
-      ],
-      "50 addresses": [
-        "50 アドレス"
-      ],
-      "6 users": [
-        "6 ユーザー"
-      ],
-      "Access blocked content": [
-        "ブロックされたコンテンツへアクセス"
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        "${ driveAppName } (ベータ) へのアクセス"
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "すべての ${ PLAN_NAMES[PLANS.VPNPLUS] } プランの機能"
-      ],
-      "Built-in Adblocker (NetShield)": [
-        "広告ブロッカー内蔵 (NetShield)"
-      ],
-      "Custom domains": [
-        ""
-      ],
-      "Early access to new products": [
-        "新製品への早期アクセス"
-      ],
-      "High speed": [
-        "高速"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "最高速 (最大10Gbps)"
-      ],
-      "Includes 6 user accounts": [
-        "6 つのユーザーアカウントが含まれています"
-      ],
-      "Includes Proton Visionary": [
-        "Proton Visionary を含む"
-      ],
-      "Medium speed": [
-        "中速"
-      ],
-      "Secure Core servers": [
-        "Secure Core サーバー"
-      ],
-      "Streaming service support": [
-        "ストリーミングサービス対応"
-      ],
-      "Unlimited folders / labels": [
-        "無制限のフォルダー / ラベル"
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        "(現在のプラン)"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "無料"
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
-        "Prime Video"
       ]
     },
     "Progress bar description": {
@@ -4991,7 +4258,16 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
+        ""
+      ],
+      "No more missed appointments": [
+        ""
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
         ""
       ]
     },
@@ -5163,9 +4439,6 @@
       ],
       "Verification successful": [
         "検証に成功しました"
-      ],
-      "You have successfully unsubscribed": [
-        "退会手続きが正常に行なわれました。"
       ]
     },
     "Success notification when user send feedback": {
@@ -5263,14 +4536,8 @@
       ]
     },
     "Title": {
-      "${ appName } customization": [
-        "${ appName } のカスタマイズ"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } メンバー"
-      ],
-      "3-D Secure verification failed": [
-        "3D セキュアの検証に失敗しました"
       ],
       "Account suspended": [
         "アカウントが停止されました"
@@ -5302,20 +4569,11 @@
       "Addresses": [
         "メールアドレス"
       ],
-      "Amount due": [
-        "支払い総額"
-      ],
-      "Apply gift code": [
-        "ギフトコードを使用"
-      ],
       "Back": [
         "戻る"
       ],
       "Beta Access": [
         "ベータ版アクセス"
-      ],
-      "Billing cycle": [
-        "支払い間隔"
       ],
       "Calendar": [
         "カレンダー"
@@ -5323,17 +4581,8 @@
       "Calendar alarm": [
         "カレンダーアラーム"
       ],
-      "Card verification": [
-        "カードの検証"
-      ],
-      "Card verification in progress": [
-        "カード検証中"
-      ],
       "Change my answer": [
         "回答を変更"
-      ],
-      "Checkout": [
-        "注文"
       ],
       "Choose how many times this event will repeat": [
         ""
@@ -5343,9 +4592,6 @@
       ],
       "Clearing data": [
         "データをクリアしています"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Protonボーナスの損失を確認"
       ],
       "Contact details": [
         "連絡先の詳細"
@@ -5362,9 +4608,6 @@
       "Continue with partial import?": [
         ""
       ],
-      "Coupon discount": [
-        "クーポン割引"
-      ],
       "Create calendar": [
         "カレンダーの作成"
       ],
@@ -5374,14 +4617,8 @@
       "Create new group": [
         "新しいグループの作成"
       ],
-      "Credits": [
-        "クレジット"
-      ],
       "Currency": [
         "通貨"
-      ],
-      "Current plan": [
-        "現在のプラン"
       ],
       "Customize and confirm": [
         ""
@@ -5391,9 +4628,6 @@
       ],
       "Customize your mail import": [
         ""
-      ],
-      "Customize your plan": [
-        "プランをカスタマイズ"
       ],
       "Delete ${ count } contact": [
         "${ count } 件の連絡先を削除"
@@ -5407,17 +4641,11 @@
       "Delete event": [
         "予定の削除"
       ],
-      "Delete organization?": [
-        "組織を削除しますか?"
-      ],
       "Delete recurring event": [
         "定期的な予定の削除"
       ],
       "Deleting contacts": [
         ""
-      ],
-      "Downgrade account": [
-        "アカウントのダウングレード"
       ],
       "Drop to upload": [
         ""
@@ -5464,9 +4692,6 @@
       "Feedback": [
         "ご意見"
       ],
-      "Gift code": [
-        "ギフトコード"
-      ],
       "Give feedback": [
         "ご意見"
       ],
@@ -5506,9 +4731,6 @@
       "Merging contacts": [
         "連絡先の統合中"
       ],
-      "Network error": [
-        "ネットワークエラー"
-      ],
       "Open actions dropdown": [
         "アクションドロップダウンを開く"
       ],
@@ -5530,29 +4752,8 @@
       "Participants cannot be notified": [
         ""
       ],
-      "Payment details": [
-        "支払い方法の詳細"
-      ],
-      "Payment verification": [
-        "支払いの検証"
-      ],
-      "Payment verification in progress": [
-        "支払いを検証中"
-      ],
-      "PayPal verification failed": [
-        "PayPal 認証に失敗しました。"
-      ],
       "Phone numbers": [
         "電話番号"
-      ],
-      "Plan summary": [
-        "プランの概要"
-      ],
-      "Processing": [
-        "処理中"
-      ],
-      "Processing...": [
-        "処理しています..."
       ],
       "Re-sign all contacts": [
         "すべての連絡先を再署名する"
@@ -5583,9 +4784,6 @@
       ],
       "Select a day in the month": [
         ""
-      ],
-      "Select a plan": [
-        "プランを選択"
       ],
       "Select a theme": [
         "テーマを選択"
@@ -5659,15 +4857,6 @@
       "Sign in again to continue": [
         "続行するには再度ログインしてください"
       ],
-      "Subtotal": [
-        "小計"
-      ],
-      "Total (monthly)": [
-        "合計 (月額換算)"
-      ],
-      "Unsupported browser": [
-        "非対応のブラウザ"
-      ],
       "Update event": [
         "予定の更新"
       ],
@@ -5691,9 +4880,6 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         ""
-      ],
-      "ZIP / postal code": [
-        "郵便番号"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5707,26 +4893,11 @@
       ]
     },
     "Tooltip": {
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "あなたの現在いる地域でブロックされているコンテンツ (Netflix 、Amazon Prime Video 、BBC iPlayer 、Wikipedia 、Facebook 、YouTube など) にアクセスできます。"
-      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         ""
       ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "username2@protonmail.com のようなアカウントにリンクされたメールアドレスを作成してください。"
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します。"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         ""
-      ],
-      "Discount applied for annual billing cycle": [
-        "年間契約に適用される割引"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "2年プランに適用される割引"
       ],
       "Each imported email will have this label": [
         ""
@@ -5740,35 +4911,8 @@
       "Encrypted data with verified digital signature": [
         "検証済みデジタル署名付きの暗号化データ"
       ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "1つのプランで ${ vpnAppName } と ${ mailAppName } (数百万人が自分たちのデータを保護するために使用してる暗号化電子メールサービス) 両サービスの全有料機能を利用できます。"
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "1つのプランで ProtonVPN と ProtonMail (数百万人が自分たちのデータを保護するために使用してる暗号化電子メールサービス) 両サービスの全有料機能を利用できます。"
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "john.smith@example.com のような自分のドメインを ${ mailAppName } でホストします"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "john.smith@example.com のような自分のドメインを ProtonMail でホストします"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "ギフトコードを購入もしくはサポートチームから受け取った場合、こちらに入力してください。"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "マルチユーザーサポートは2人以上のユーザーがいる場合のみ適用されます"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield は広告、トラッカー、マルウェアをブロックすることでデバイスを保護、ブラウジングを高速化します。"
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "あなたのインターネットトラフィックを簡単に Tor ネットワーク経由でルーティングします。"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用されるPGPの方式を選択してください。PGP/Inlineはプレーンテキストのメッセージでしか使用できない事に注意してください。"
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "BitTorrent 等のファイル共有プロトコルに対応。"
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
         ""
@@ -5778,15 +4922,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "username2@protonmail.com のようなアカウントにリンクされたアドレス / エイリアスを利用してください。"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "メールを送信するために個人のアドレス username@pm.meを使用してください"
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
       ],
       "You do not have any contacts to export": [
         "エクスポートする連絡先がありません"
@@ -5802,120 +4937,6 @@
         ""
       ],
       "Replay video": [
-        ""
-      ]
-    },
-    "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
-      "30-days money-back guarantee": [
-        "30 日返金保証"
-      ],
-      "Access blocked content": [
-        "ブロックされたコンテンツへアクセス"
-      ],
-      "Adblocker (NetShield)": [
-        "広告ブロッカー (NetShield)"
-      ],
-      "Custom connection profiles": [
-        "接続プロファイルを編集"
-      ],
-      "DNS leak prevention": [
-        "DNS 漏洩防止"
-      ],
-      "Full Disk Encryption on Servers": [
-        "サーバーのフルディスク暗号化"
-      ],
-      "Jurisdiction": [
-        "法的管轄区域"
-      ],
-      "Kill Switch / Always-on VPN": [
-        "キルスイッチ / 常時接続 VPN"
-      ],
-      "Languages supported": [
-        "対応言語"
-      ],
-      "Locations/Countries": [
-        "国・地域"
-      ],
-      "Open Source & audited apps": [
-        "オープンソースで監査済みのアプリ"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        "完全な前方秘匿性 (PFS)"
-      ],
-      "Platforms supported": [
-        "対応プラットフォーム"
-      ],
-      "Router support": [
-        "ルーターサポート"
-      ],
-      "Secure Core servers": [
-        "Secure Core サーバー"
-      ],
-      "Speed": [
-        "速度"
-      ],
-      "Split tunneling": [
-        "スプリットトンネル"
-      ],
-      "Streaming service support": [
-        "ストリーミングサービス対応"
-      ],
-      "Strict no-logs policy": [
-        "厳格なノーログポリシー"
-      ],
-      "Tor over VPN": [
-        "Tor over VPN"
-      ],
-      "User data monetization": [
-        "ユーザーのデータを利用した収益化"
-      ],
-      "Volume/bandwidth cap": [
-        "帯域幅制限"
-      ],
-      "VPN Connections": [
-        "VPN 接続"
-      ],
-      "VPN servers": [
-        "VPN サーバー"
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        "(Android & Windows のみ)"
-      ],
-      "High": [
-        "高速"
-      ],
-      "Highest (up to 10 Gbps)": [
-        "最高速 (最大 10 Gbps)"
-      ],
-      "Medium": [
-        "中速"
-      ],
-      "None": [
-        "なし"
-      ],
-      "Switzerland": [
-        "スイス"
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows、macOS、iOS、Linux、Android、Android TV、Chromebook、Chromecast"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        ""
-      ],
-      "${ n } VPN connection": [
-        ""
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
         ""
       ]
     },
@@ -5940,9 +4961,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "ライブチャットは、ProtonVPNの有料プラン専用のプレミアム機能です。利用するにはチケットをオープンしてください。"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         ""

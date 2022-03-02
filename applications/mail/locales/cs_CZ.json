@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } přechodem na roční fakturaci"
-      ],
       "${ BRAND_NAME } introduction": [
         "Úvod ${ BRAND_NAME }"
       ],
@@ -89,9 +86,6 @@
       "All Unstarred": [
         "Všechny bez hvězdičky"
       ],
-      "annual billing": [
-        "roční fakturace"
-      ],
       "Apply": [
         "Použít"
       ],
@@ -167,12 +161,6 @@
       "Color": [
         "Barva"
       ],
-      "Compare all features": [
-        "Porovnejte všechny funkce"
-      ],
-      "Compare plans": [
-        "Porovnání předplatného"
-      ],
       "Compose": [
         "Nová zpráva"
       ],
@@ -223,9 +211,6 @@
       ],
       "Customize": [
         "Přizpůsobit"
-      ],
-      "Decrease": [
-        "Snížit"
       ],
       "Decrypt": [
         "Dešifrovat"
@@ -428,9 +413,6 @@
       "Import messages": [
         "Importovat zprávy"
       ],
-      "Increase": [
-        "Zvýšit"
-      ],
       "Inline": [
         "Vložený"
       ],
@@ -484,9 +466,6 @@
       ],
       "Load unprotected": [
         "Načíst nechráněné"
-      ],
-      "Loading verification": [
-        "Načítání ověření"
       ],
       "Loading${ ellipsis }": [
         "Načítání${ ellipsis }"
@@ -605,9 +584,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Otevřít ${ CALENDAR_APP_NAME }"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Otevřít nastavení ${ CALENDAR_APP_NAME }"
-      ],
       "Open calendar": [
         "Otevřít kalendář"
       ],
@@ -628,9 +604,6 @@
       ],
       "Pause": [
         "Pauza"
-      ],
-      "Pay": [
-        "Zaplatit"
       ],
       "Preview": [
         "Nahled"
@@ -672,7 +645,7 @@
         "Obnovit data"
       ],
       "Refer a friend": [
-        ""
+        "Doporučit přítelovi"
       ],
       "Refine it": [
         "Vylepšit"
@@ -688,12 +661,6 @@
       ],
       "Remove ${ attachmentName }": [
         "Odstranit ${ attachmentName }"
-      ],
-      "Remove bonuses": [
-        "Odebrat bonusy"
-      ],
-      "Remove gift code": [
-        "Odstranit dárkový kód"
       ],
       "Remove this label": [
         "Odebrat štítek"
@@ -721,9 +688,6 @@
       ],
       "Resume": [
         "Pokračovat"
-      ],
-      "Retry": [
-        "Obnovit"
       ],
       "Revert to original display": [
         "Návrat k původnímu zobrazení"
@@ -757,9 +721,6 @@
       ],
       "Select all messages": [
         "Označit všechny zprávy"
-      ],
-      "Select plan": [
-        "Vyberte předplatné"
       ],
       "Send": [
         "Odeslat"
@@ -935,12 +896,6 @@
       "Use ${ label } theme": [
         "Použít ${ label } motiv"
       ],
-      "Use a different card": [
-        "Použít jinou platební kartu"
-      ],
-      "Use a different payment method": [
-        "Použít jinou platební metodu"
-      ],
       "Use for sending": [
         "Použít pro odesílání"
       ],
@@ -1033,35 +988,6 @@
       ],
       "Participant added": [
         "Účastník přidán"
-      ]
-    },
-    "Addon": {
-      "+ ${ addresses } email address": [
-        "+ ${ addresses } e-mailová adresa",
-        "+ ${ addresses } e-mailové adresy",
-        "+ ${ addresses } emailových adres",
-        "+ ${ addresses } e-mailových adres"
-      ],
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } vlastní doména",
-        "+ ${ domains } vlastní domény",
-        "+ ${ domains } vlastních domén",
-        "+ ${ domains } vlastních domén"
-      ],
-      "+ ${ members } user": [
-        "+ ${ members } uživatel",
-        "+ ${ members } uživatelé",
-        "+ ${ members } uživatelů",
-        "+ ${ members } uživatelů"
-      ],
-      "+ ${ storage } storage": [
-        "+ ${ storage } úložiště"
-      ],
-      "+ ${ vpn } connection": [
-        "+ ${ vpn } připojení",
-        "+ ${ vpn } připojení",
-        "+ ${ vpn } připojení",
-        "+ ${ vpn } připojení"
       ]
     },
     "Alert": {
@@ -1166,23 +1092,6 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Jestliže zaznamenáte problémy, vždy můžete deaktivovat Beta Přístup."
-      ]
-    },
-    "Billing cycle option": {
-      "Annually": [
-        "Ročně"
-      ],
-      "Annually SAVE 20%": [
-        "Ročně UŠETŘÍTE 20%"
-      ],
-      "Monthly": [
-        "Měsíčně"
-      ],
-      "Two years SAVE 33%": [
-        "Za dva roky UŠETŘÍTE 33%"
-      ],
-      "Two-year": [
-        "Dva roky"
       ]
     },
     "blackfriday Action": {
@@ -1354,37 +1263,12 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "Pokračovat v používání ProtonMail."
       ]
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         "Má událost v kalendáři"
-      ]
-    },
-    "Calendar feature": {
-      "Calendar import": [
-        "Import kalendáře"
-      ],
-      "Invitations": [
-        "Pozvánky"
-      ],
-      "Multiple calendars": [
-        "Více kalendářů"
-      ],
-      "Recurring events": [
-        "Opakující se události"
-      ],
-      "Share Calendar via link": [
-        "Sdílet kalendář přes odkaz"
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        "20 / uživatel"
-      ],
-      "20 / user *": [
-        "20 / uživatel *"
       ]
     },
     "Calendar invite buttons label": {
@@ -1841,20 +1725,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } den",
-        "${ days } dny",
-        "${ days } dnů",
-        "${ days } dnů"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } měsíc",
-        "${ monthsWithYears } měsíce",
-        "${ monthsWithYears } měsíců",
-        "${ monthsWithYears } měsíců"
       ]
     },
     "Country name": {
@@ -2760,25 +2630,9 @@
         "Nový e-mail byl přijat"
       ]
     },
-    "Disney": {
-      "Disney+": [
-        "Disney+"
-      ]
-    },
     "Download attachments": {
       "Download all": [
         "Stáhnout vše"
-      ]
-    },
-    "Drive feature": {
-      "Access via Web": [
-        "Přístup přes prohlížeč"
-      ],
-      "Share files via link": [
-        "Sdílet soubory přes odkaz"
-      ],
-      "Upload / download files": [
-        "Nahrát / stáhnout soubory"
       ]
     },
     "Early Access Disabled": {
@@ -2910,12 +2764,6 @@
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nenalezen"
       ],
-      "Amount above the maximum.": [
-        "Hodnota je vyšší, než maximální částka."
-      ],
-      "Amount below minimum.": [
-        "Hodnota je nižší, než minimální částka."
-      ],
       "Attachments are limited to 25 MB": [
         "Přílohy jsou omezeny na 25 MB"
       ],
@@ -2933,9 +2781,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
-      ],
-      "Checkout expired, please try again": [
-        "Platnost objednávky vypršela, zkuste to prosím znovu"
       ],
       "Choose a date in the future.": [
         "Vyberte budoucí datum."
@@ -3003,9 +2848,6 @@
       "Enter a password": [
         "Zadejte heslo"
       ],
-      "Error connecting to the Bitcoin API.": [
-        "Chyba při připojování API Bitcoin."
-      ],
       "Error in one of the conditions": [
         "Chyba v jedné z podmínek"
       ],
@@ -3039,26 +2881,11 @@
       "Incorrect mailbox password. Please try again.": [
         "Nesprávné heslo k e-mailové schránce. Zkuste to znovu."
       ],
-      "Invalid ${ name } code": [
-        "Neplatný kód ${ name }"
-      ],
-      "Invalid card number": [
-        "Neplatné číslo karty"
-      ],
-      "Invalid code": [
-        "Neplatný kód"
-      ],
-      "Invalid expiration date": [
-        "Neplatné datum expirace"
-      ],
       "Invalid expiration time": [
         "Neplatný čas pro vypršení platnosti"
       ],
       "Invalid name": [
         "Neplatný název"
-      ],
-      "Invalid postal code": [
-        "Neplatné směrovací číslo"
       ],
       "Invalid public key file": [
         "Špatný veřejný klíč"
@@ -3068,6 +2895,9 @@
       ],
       "Label name cannot be empty": [
         "Název štítku nesmí být prázdný"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "Maximální počet příloh (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) překročen."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Sloučit nejméně ${ calendarToFixCount } kalendář s existujícím Proton kalendářem",
@@ -3083,9 +2913,6 @@
       ],
       "Missing signature": [
         "Chybící podpis"
-      ],
-      "Name on card required": [
-        "Je vyžadováno jméno držitele karty"
       ],
       "Network error: Please check your connection and try again.": [
         "Chyba sítě, zkontrolujte přípojení a zkuste to znovu."
@@ -3126,23 +2953,8 @@
         "Některé skupiny nemají kontakty: ${ noContactGroupList } ",
         "Některé skupiny neobsahují žádné kontakty: ${ noContactGroupList } "
       ],
-      "Organization not recognized. Try again.": [
-        "Organizace nebyla rozpoznána. Zkuste to znovu."
-      ],
       "Passwords do not match": [
         "Hesla se neshodují"
-      ],
-      "Payment process cancelled": [
-        "Platba byla zrušena"
-      ],
-      "Payment process consumed": [
-        "Platební transakce byla dokončena"
-      ],
-      "Payment process failed": [
-        "Platební transakce selhala"
-      ],
-      "Payment process not supported": [
-        "Platební transakce není podporována"
       ],
       "Please activate your content search again": [
         "Prosím, aktivujte znovu vyhledávací obsah"
@@ -3167,9 +2979,6 @@
       ],
       "Primary address key is not decrypted.": [
         "Klíč primární adresy není dešifrován."
-      ],
-      "Process aborted": [
-        "Transakce zrušena"
       ],
       "Public key could not be trusted": [
         "Nelze věřit veřejnému klíči"
@@ -3219,17 +3028,11 @@
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Omlouváme se, Proton nemůže dešifrovat Vaši zprávu. Zkontrolujte, zda jsou aktivní všechny Vaše klíče."
       ],
-      "Tab closed": [
-        "Záložka uzavřena"
-      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Přílohu nebylo možné dešifrovat.\nPokud máte příslušný privátní klíč, budete moci soubor nadále dešifrovat \nprogramem, jako je např. GnuPG.",
         "Přílohy nebylo možné dešifrovat.\nPokud máte příslušný privátní klíč, budete moci soubory nadále dešifrovat \nprogramem, jako je např. GnuPG.",
         "Přílohy nebylo možné dešifrovat.\nPokud máte příslušný privátní klíč, budete moci soubory nadále dešifrovat \nprogramem, jako je např. GnuPG.",
         "Některé přílohy nebylo možné dešifrovat.\nPokud máte příslušný privátní klíč, budete moci soubory nadále dešifrovat \nprogramem, jako je např. GnuPG."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Prohlížeč, který používáte, neumožňuje plnou autorizaci platby. Prosím použijte pro autorizaci platby jiný prohlížeč nebo se přihlašte přes počítač."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Název složky je příliš dlouhý. Zvolte jiný název."
@@ -3242,15 +3045,6 @@
       ],
       "The maximum expiration is 4 weeks": [
         "Maximální doba platnosti je 4 týdny"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Minimální objem kreditu, který lze přidat, je ${ _price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Minimální částka, kterou lze darovat, je${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Minimální platba, kterou lze zadat je${ _price2 }"
       ],
       "The sending key is not valid": [
         "Klíč pro odesílání je neplatný"
@@ -3296,9 +3090,6 @@
       ],
       "Unknown error.": [
         "Neznámá chyba."
-      ],
-      "Unknown payment token status": [
-        "Neznámý stav platebního tokenu"
       ],
       "Wrong mailbox password": [
         "Chybné heslo e-mailové schránky"
@@ -3676,11 +3467,6 @@
         "Výchozí"
       ]
     },
-    "Free price": {
-      "Free": [
-        "Zdarma"
-      ]
-    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
         "Zvýšili jsme celkové úložiště vašeho účtu na ${ totalGBStorageAfterCompletion }. GB. Získejte další úložiště a odemkněte prémiové funkce ještě dnes."
@@ -3984,12 +3770,6 @@
         "${ groupCounts } skupin nalezeno",
         "${ groupCounts } skupin nalezeno"
       ],
-      "${ mailAppName } Free": [
-        "${ mailAppName } zdarma"
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional začíná s jedním uživatelem, a každý uživatel přidá 5 GB a 5 účtů adres do fondu organizace."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } zpráva nemohla být přesunuta.",
         "${ messagesNotAuthorizedToMove } zprávy nemohly být přesunuty.",
@@ -4034,15 +3814,6 @@
         "${ pureAttachmentsCount } soubory připojeny",
         "${ pureAttachmentsCount } souborů připojeno",
         "${ pureAttachmentsCount } souborů připojeno"
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } na Vašem předplatném přepnutím na ${ annualBilling }"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } za předplatné e-mailu a VPN."
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } za předplatné VPN a e-mailu."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
@@ -4110,9 +3881,6 @@
         "${ updated } kontakt úspěšně aktualizován.",
         "${ updated } kontaktů úspěšně aktualizováno."
       ],
-      "${ vpnAppName } Free": [
-        "${ vpnAppName } zdarma"
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } člen)",
         "(${ memberCount } členové)",
@@ -4120,49 +3888,22 @@
         "(${ memberCount } členů)"
       ],
       "(Filter if ALL of the following conditions are met)": [
-        "(Filtrování pokud jsou splněny všechny následující podmínky)"
+        "(Filtrovat pokud jsou splněny VŠECHNY následující podmínky)"
       ],
       "(Filter if ANY of the following conditions are met)": [
-        "(Filtrování pokud je splněna jakákoliv z následujících podmínek)"
-      ],
-      "(Mail + VPN)": [
-        "(E-mail + VPN)"
+        "(Filtrovat pokud je splněna JAKÁKOLIV z následujících podmínek)"
       ],
       "(No Recipient)": [
         "(Žádný příjemce)"
       ],
-      "* Customizable features": [
-        "* Přizpůsobitelné funkce"
-      ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonus místa na disku"
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } připojení k ProtonVPN (povoluje připojení více zařízení k VPN)",
-        "+${ organization.BonusVPN } připojení k ProtonVPN (umožňuje připojení dalších zařízení k síti VPN)",
-        "+${ organization.BonusVPN } připojení k ProtonVPN (umožňuje připojení dalších zařízení k síti VPN)",
-        "+${ organization.BonusVPN } připojení k ProtonVPN (umožňuje připojení dalších zařízení k síti VPN)"
-      ],
       "/month.": [
         "/měsíc."
       ],
-      "20 personal calendars": [
-        "20 osobních kalendářů"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "Použita 20% sleva na Vaše předplatné s kupónem ${ code }"
-      ],
-      "30 days money-back guarantee.": [
-        "30 denní záruka na vrácení peněz."
-      ],
-      "5 email addresses/aliases": [
-        "5 emailových adres / aliasů"
+      "5 email addresses": [
+        "5 e-mailových adres"
       ],
       "5 GB storage": [
         "5 GB úložiště"
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        "Svobodný a necenzurovaný internet by měl být přístupný všem."
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Fráze pro obnovení účtu je jedním z nejbezpečnějších způsobů ochrany samotného účtu. Můžete ji použít pro přístup k účtu a obnovení zašifrovaných dat, pokud někdy zapomenete heslo."
@@ -4170,35 +3911,17 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Žádost o odhlášení z tohoto seznamu bude odesláno odesilateli a automaticky zpracováno."
       ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Získejte přístup k blokovanému obsahu, jako jsou sociální média, zprávy, Wikipedia, YouTube a mnoho dalšího, bez ohledu na to, kde se nacházíte."
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Přístup ke stream službě jako je ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, bez ohledu na to, kde jste."
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce Vašeho účtu."
       ],
-      "Account successfully updated": [
-        "Účet byl úspěšně aktualizován"
-      ],
       "Activation in progress": [
         "Aktivace probíhá"
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "Přidejte ke svému účtu další adresy, například user2@protonmail.com"
       ],
       "Add image URL": [
         "Přidat URL obrázku"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ověření adresy pomocí důvěryhodného klíče je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejnému klíči, který může být použit pro odesílání."
-      ],
-      "Addresses": [
-        "Adresy"
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Po provedení transakce platby nominálu Bitcoin, postupujte podle níže uvedených vylepšených pokynů."
       ],
       "Align left": [
         "Zarovnat doleva"
@@ -4229,12 +3952,6 @@
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Umožňuje hosting e-mailů pro Vaši vlastní doménu(y) na ${ mailAppName }, např. jan.smith@example.com"
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Částka je nižší než povolené minimum (${ amount })."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Pro tohoto příjemce byl zjištěn neznámý veřejný klíč."
@@ -4290,32 +4007,8 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
       ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "Vyúčtováno jako ${ billedPrice } každé 2 roky"
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "Vyúčtováno jako ${ billedPrice } za rok"
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Vyúčtováno na konci aktuálního účtovacího období (obnovuje se ${ renewalDate })"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Potvrzení transakce v nominále Bitcoin může nějakou dobu trvat (až 24 hodin). Jakmile bude finanční transakce potvrzena, kredity připíšeme na Váš účet. Po potvrzené finanční transakce můžete fakturu uhradit kredity."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Na Vaše předplatné byl použit Black Friday 2018"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Na Vaše předplatné byl použit Black Friday 2019"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Byla použita sleva Black Friday 2020 pro nového uživatele"
-      ],
       "Body: ": [
         "Tělo: "
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Pokud své aktuální předplatné snížíte na nižší úroveň bezplatné verze, navždy přijdete o výhody a to i kdyby jste svůj účet v budoucnu znovu předplatili o jinou úroveň a to placené verze."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme Vám pomoci vyčistit šifrovaná data od všech šifrovaných kontaktů s tímto klíčem a v tomto procesu zavřete upozornění."
@@ -4350,8 +4043,8 @@
       "Confirm phishing report": [
         "Potvrďte nahlášení phishingu"
       ],
-      "Connections": [
-        "Připojení"
+      "Continue with ${ planName }": [
+        "Pokračovat s ${ planName }"
       ],
       "Copied to clipboard": [
         "Zkopírováno do schránky"
@@ -4373,12 +4066,6 @@
       ],
       "Create in": [
         "Vytvořit v"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Podporovány jsou soubory CSV z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací a také formáty vCard 3.1 a 4.0 (kódování UTF-8)."
@@ -4416,9 +4103,6 @@
       "Disable message content search": [
         "Zakázat vyhledávání v obsahu zprávy"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Sleva na Vaše předplatné s kupónem${ code }"
-      ],
       "Do you want to download this attachment anyway?": [
         "Chcete přesto přílohu stáhnout?",
         "Chcete přesto přílohy stáhnout?",
@@ -4431,14 +4115,8 @@
       "Do you want to re-sign the contact details?": [
         "Chcete znovu podepsat tento detail kontaktu?"
       ],
-      "Domains": [
-        "Domény"
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Stáhněte si naši mobilní aplikaci z Vašeho oblíbeného obchodu s aplikacemi pro bezpečnou komunikaci na cestách."
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Stáhněte si svou oblíbenou aplikaci ještě dnes a vezměte soukromí do svých rukou, ať jste kdekoli."
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
         "Stahování zprávy ${ esProgress } z ${ totalProgressToShow }"
@@ -4460,9 +4138,6 @@
       ],
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "Každé další připojení může být přiřazeno uživatelům ve Vaší organizaci."
       ],
       "Email address": [
         "E-mailová adresa"
@@ -4515,9 +4190,6 @@
       "Expiration Time": [
         "Čas expirace"
       ],
-      "Expired": [
-        "Propadlé"
-      ],
       "file attached": [
         "soubor připojen",
         "soubory připojeny",
@@ -4530,26 +4202,11 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
       ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "Pro rodiny a malé týmy; zahrnuje jak poštu tak i VPN."
-      ],
-      "For getting started with private and secure emailing.": [
-        "Začínáme se soukromým a zabezpečeným účtem e-mailu."
-      ],
       "For increased security, activate 2FA.": [
         "Pro zvýšení zabezpečení, aktivujte 2FA."
       ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Pro jednotlivce, kteří potřebují plnohodnotnou poštovní schránku s pokročilou ochranou."
-      ],
       "For messages newer than ${ oldestDate }": [
         "Pro zprávy novější než ${ oldestDate }"
-      ],
-      "For professionals that need secure business communications.": [
-        "Pro profesionály, kteří potřebují bezpečnou obchodní komunikaci."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Pro Visa a MasterCard, 3 číslice na zadní straně Vaší karty. Pro American Express 4 číslice na přední straně Vaší karty."
       ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
@@ -4557,14 +4214,8 @@
       "Free up some space or contact your administrator.": [
         "Uvolněte místo nebo kontaktujte správce Vašeho účtu."
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "From": [
         "Od"
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "Plně vybavená VPN s rychlostí až 10 Gbps."
       ],
       "Get more storage and premium features.": [
         "Získat větší úložiště a prémiové funkce."
@@ -4626,9 +4277,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
-      "Included": [
-        "Zahrnuto"
-      ],
       "Increase storage space starting at": [
         "Navyšte si úložný prostor již od"
       ],
@@ -4688,6 +4336,9 @@
       ],
       "Manage your labels": [
         "Spravovat štítky"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "Maximální počet příloh (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) překročen."
       ],
       "members": [
         "členové"
@@ -4761,9 +4412,6 @@
       "No more results found": [
         "Nebylo nalezeno více výsledků"
       ],
-      "No payment is required at this time.": [
-        "V tuto chvíli není nutná žádná platba."
-      ],
       "No preview available": [
         "Náhled není k dispozici"
       ],
@@ -4779,12 +4427,6 @@
       "Not a valid URL": [
         "Neplatný odkaz"
       ],
-      "Not customizable": [
-        "Nelze změnit"
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "Zobrazení počtu připojení VPN, která mohou být přiřazena uživatelům. Každé připojené zařízení použije jedno připojení VPN."
-      ],
       "of": [
         "z"
       ],
@@ -4796,12 +4438,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil tuto zprávu jako pokus o phishing. Potvrďte prosím, že se jedná o legitimní zprávu."
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Než bude platební transakce zcela ověřena, může to trvat i několik minut."
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Platební transakce jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy."
@@ -4827,29 +4463,11 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbudou kredity ve výši ${ creditsRemaining }."
-      ],
       "Please select the folders you would like to import:": [
         "Vyberte složky, které chcete importovat:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Prosím vyberte druh odkazu, který chcete vložit a vyplňte všechna pole."
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Zkuste to znovu prosím, použijte jinou platební metodu nebo kontaktujte svoji banku."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Zkuste to prosím znovu, použijte jinou platební metodu, nebo požádejte o pomoc finanční službu PayPal."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Ověřte prosím platební transakci v nové záložce, která je již otevřena."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Ověřte prosím kartu v nové záložce, která je již otevřena."
-      ],
-      "Please verify the payment in the new tab.": [
-        "Ověřte platební transakci v nové záložce."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Prosím vyčkejte jakmile vyhledáme kontakty, které mohou být znovu přihlášeny se základním šifrovacím klíčem."
@@ -4866,20 +4484,17 @@
       "Print email": [
         "Vytisknout e-mail"
       ],
+      "Priority support": [
+        "Prioritní podpora"
+      ],
+      "Proton Calendar": [
+        "Proton Kalendář"
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nevydělává peníze zneužitím soukromí."
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail může chránit i Váš podnikání."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus je omezen na jednoho uživatele a začíná s 5 GB úložištěm."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } zahrnuje ${ předplatnéJménoMapy[PLANS.VPNPLUS].MaxVPN } VPN připojení.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } zahrnuje ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN připojení.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } zahrnuje ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN připojení.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } zahrnuje ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN připojení."
       ],
       "Recipient: ": [
         "Příjemce: "
@@ -4904,12 +4519,6 @@
       ],
       "Right-click for options": [
         "Klikněte pravým tlačítkem myši pro možnosti"
-      ],
-      "Save 20%": [
-        "Ušetřete 20%"
-      ],
-      "Save extra 20%": [
-        "Ušetřete dalších 20%"
       ],
       "Saved ${ dateString }": [
         "Uloženo ${ dateString }"
@@ -4957,10 +4566,7 @@
         "Odesílání zpráv z @pm.me adresy je placená služba. Vaše zpráva bude odeslána z vaší standardní adresy ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
-      ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Odesláno pomocí zabezpečeného e-mailu <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+        "Odesláno pomocí zabezpečeného e-mailu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
@@ -4980,20 +4586,11 @@
       "Show original message": [
         "Zobrazit původní zprávu"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Vzhledem k tomu, že jste stálý klient, k Vašemu účtu jste dostal další povolené funkce."
-      ],
       "Sorry, this message does not exist or has already expired": [
         "Je nám líto, tato zpráva neexistuje, nebo jí vypršela platnost"
       ],
-      "Starter VPN service with P2P support.": [
-        "Základní služba VPN s podporou P2P."
-      ],
-      "Storage GB": [
-        "Úložiště"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        "Začněte s 500 MB a postupně odemykejte další úložiště. Úložný prostor je sdílený v aplikaci Pošta, Kalendář a Disk."
       ],
       "Store and share files securely with Proton Drive.": [
         "Ukládejte a sdílejte soubory bezpečně s Proton Drive."
@@ -5011,19 +4608,13 @@
         "Předmět: "
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Podpora 1 vlastní e-mailové domény"
       ],
       "Support privacy by upgrading for": [
         "Podpora soukromí aktualizací na"
       ],
       "support team": [
         "tým podpory"
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "Chcete-li přidat více připojení, přepněte na ${ professionalPlan }."
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "Chcete-li přidat více uživatelů, přepněte na ${ professionalPlan }."
       ],
       "Test link": [
         "Testovací odkaz"
@@ -5033,9 +4624,6 @@
       ],
       "Text to display": [
         "Text k zobrazení"
-      ],
-      "Thank you for supporting our mission.": [
-        "Děkujeme za podporu našeho poslání."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
@@ -5154,9 +4742,6 @@
       "This sender's public key has not been trusted yet.": [
         "Veřejný klíč tohoto odesílatele nebyl dosud ověřen."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Toto umožní použít Paypal pro platby Proton předplatného. Přesměrujeme Vás na Váš PayPal účet v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím, než budete pokračovat."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
@@ -5185,7 +4770,10 @@
         "Zapnut vyhledávání v obsahu zpráv"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Unlimited messages": [
+        "Neomezené zprávy"
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
@@ -5223,8 +4811,8 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "Vylepšete pro použití ProtonMailu s ostatními desktopovými klienty."
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+        "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ appName } ${ planName }."
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -5241,23 +4829,8 @@
       "Use Proton Calendar to keep your agenda private.": [
         "Používejte Proton Kalendář, aby jste udrželi svá data v soukromí."
       ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
-      ],
-      "Users": [
-        "Uživatelé"
-      ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Svým mobilním zařízením naskenujte QR kód nebo navštivte odkaz ${ link }."
-      ],
-      "Verification can take a few minutes.": [
-        "Ověřování může trvat několik minut."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken. Účtován nebude žádný poplatek. Jakákoli finanční částka, která bude stažená pro ověření karty bude obratem připsána zpět na účet majitele."
       ],
       "Version ${ appVersion }": [
         "Verze ${ appVersion }"
@@ -5265,20 +4838,11 @@
       "Visit our shop to get Proton merchandise.": [
         "Navštivte náš obchod a získejte nabídky Proton."
       ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "VPN + ${ mailAppName } pro rodiny a malé podniky."
-      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Omlouváme se. Toto mohla být chyba na Naší straně. Jste si jistí, že chcete tento e-mail označit jako legitimní?"
       ],
       "We could not verify the sender's trusted keys.": [
         "Nemohli jsme ověřit důvěrné klíče odesílatele."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "K zabezpečení Vašich plateb používáme 3-D Secure."
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Pro dokončení platební transakce Vás přesměrujeme na váš PayPal účet v nové záložce prohlížeče. Pokud používáte blokování vyskakovacích oken, pro vykonání procesu je prosím vypněte."
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
@@ -5382,15 +4946,6 @@
       "You have reached the maximum number of 5 replies.": [
         "Bylo dosaženo maximálního počtu 5 odpovědí."
       ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Abyste mohli přidat PayPal jako platební metodu, musíte jej mít propojený s kreditní kartou nebo bankovním účtem."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Váš PayPal účet musíte mít propojený s kreditní kartou nebo bankovním účtem. Pokud nemáte, klikněte na tlačítko níže."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Před zrušením předplatného musíte odebrat všechny své osobní kalendáře a jejich sdílené odkazy. ${ linkButton }"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosáhli jste ${ spaceDisplayed }% své kapacity úložiště. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5421,12 +4976,6 @@
         "Vybrali jste **${ count } zpráv** s tímto štítkem",
         "Vybrali jste **${ count } zpráv** s tímto štítkem"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Pro ověření platební transakce budete brzy přesměrováni na stránky Vaší banky."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Za účelem ověření platební transakce budete přesměrováni na stránky PayPal."
-      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Napsali jste \"${ attachmentsFoundKeyword }\", ale nebyla přidána příloha. Chcete přesto zprávu poslat?"
       ],
@@ -5435,15 +4984,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Váš účet se aktualizuje, může to trvat až 30 sekund."
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Jakmile bude platební transakce zrušena, Váš účet bude aktualizován."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Z důvodu bezpečnosti Vase banka vyžaduje ověření 3-D Secure pro bezpečnostní účely."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
@@ -5465,24 +5005,8 @@
       ]
     },
     "info": {
-      "(beta)": [
-        "(beta)"
-      ],
       "Optional": [
         "Volitelné"
-      ]
-    },
-    "Info concerning plan features": {
-      "Customizable features": [
-        "Přizpůsobitelné funkce"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail nesmí být použit pro hromadné odesílání e-mailů nebo nevyžádané pošty. Legitimní e-maily jsou neomezené."
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontaktujte nás na adrese ${ email }, zašleme Vám informace, jak uhradit platební transakci v hotovosti."
       ]
     },
     "Info on errors": {
@@ -5493,11 +5017,6 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Několik kontaktů vypadá stejně. ${ mergeAction }"
-      ]
-    },
-    "information": {
-      "Included": [
-        "Zahrnuto"
       ]
     },
     "Key badge": {
@@ -5797,12 +5316,6 @@
       "Browser version": [
         "Verze prohlížeče"
       ],
-      "BTC address:": [
-        "Adresa BTC:"
-      ],
-      "BTC amount:": [
-        "Částka BTC:"
-      ],
       "Calendar": [
         "Kalendář"
       ],
@@ -5814,15 +5327,6 @@
       ],
       "Carbon Copy": [
         "Kopie"
-      ],
-      "Card holder": [
-        "Držitel karty"
-      ],
-      "Card number": [
-        "Číslo karty"
-      ],
-      "Cash": [
-        "Hotovost"
       ],
       "Category": [
         "Kategorie"
@@ -5850,9 +5354,6 @@
       ],
       "Country": [
         "Země"
-      ],
-      "CVV code": [
-        "Kód CVV"
       ],
       "Date": [
         "Datum"
@@ -5883,15 +5384,6 @@
       ],
       "Encrypt emails": [
         "Šifrovat e-maily"
-      ],
-      "Enter organization name to confirm": [
-        "Zadejte název organizace pro potvrzení"
-      ],
-      "Expires": [
-        "Expirace"
-      ],
-      "Expiry date": [
-        "Datum expirace"
       ],
       "Export contacts": [
         "Exportovat kontakty"
@@ -5992,9 +5484,6 @@
       "Name": [
         "Název"
       ],
-      "Name on card": [
-        "Jméno na kartě"
-      ],
       "No label found": [
         "Nebyl nalezen žádný štítek"
       ],
@@ -6025,9 +5514,6 @@
       "Password hint": [
         "Nápověda pro heslo"
       ],
-      "Payer": [
-        "Plátce"
-      ],
       "PGP scheme": [
         "PGP Schéma"
       ],
@@ -6039,9 +5525,6 @@
       ],
       "Postal code": [
         "PSČ"
-      ],
-      "Proration": [
-        "Rozdělení do samostatných kmenů"
       ],
       "Proton username": [
         "Proton uživatelské jméno"
@@ -6067,9 +5550,6 @@
       "Search in": [
         "Hledat v"
       ],
-      "Select a method": [
-        "Vyberte metodu"
-      ],
       "Select how your composer opens by default.": [
         "Vyberte, jak se má otevírat psaní nové zprávy."
       ],
@@ -6078,9 +5558,6 @@
       ],
       "Select how your mailbox looks like by default.": [
         "Vyberte vzhled vaší schránky."
-      ],
-      "Select your country": [
-        "Vyberte svou zemi"
       ],
       "Send auto-reply": [
         "Poslat automatickou odpověď"
@@ -6136,12 +5613,6 @@
       "To: ${ emailAddress }": [
         "Pro: ${ emailAddress }"
       ],
-      "Total": [
-        "Celkem"
-      ],
-      "Total (${ countdown })": [
-        "Celkem (${ countdown })"
-      ],
       "Two-factor authentication code": [
         "Kód dvoufaktorového ověření"
       ],
@@ -6174,9 +5645,6 @@
       ],
       "without attachments": [
         "bez příloh"
-      ],
-      "ZIP": [
-        "PSČ"
       ]
     },
     "Label for contact group color": {
@@ -6246,9 +5714,6 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "Přidat dárkový kód"
-      ],
       "Add folder": [
         "Přidat složku"
       ],
@@ -6263,9 +5728,6 @@
       ],
       "clearing your browser cache": [
         "vyprazdňuji cache ve vašem prohlížeči"
-      ],
-      "click here": [
-        "klikněte zde"
       ],
       "Create a calendar linked to an active email address.": [
         "Vytvořte kalendář propojený k aktivní e-mailové adrese."
@@ -6431,87 +5893,6 @@
         "Váš import byl zahájen"
       ]
     },
-    "Mail feature": {
-      "0.5 GB": [
-        "0.5 GB"
-      ],
-      "20 GB": [
-        "20 GB"
-      ],
-      "Address verification": [
-        "Ověření adresy"
-      ],
-      "Addresses": [
-        "Adresy"
-      ],
-      "Autoresponder": [
-        "Automatické odpovědi"
-      ],
-      "Catch-All email": [
-        "E-mail pro doménový koš"
-      ],
-      "Contact groups": [
-        "Skupiny kontaktů"
-      ],
-      "Custom email addresses": [
-        "Vlastní e-mailová adresa"
-      ],
-      "Custom filters": [
-        "Vlastní filtry"
-      ],
-      "Encrypted contacts": [
-        "Šifrované kontakty"
-      ],
-      "Folders / labels": [
-        "Složky / štítky"
-      ],
-      "IMAP / SMTP": [
-        "IMAP / SMTP"
-      ],
-      "Limited": [
-        "Omezená"
-      ],
-      "Messages per day": [
-        "Zprávy za den"
-      ],
-      "Multi-user support": [
-        "Podpora pro více uživatelů"
-      ],
-      "Priority": [
-        "Priority"
-      ],
-      "Storage": [
-        "Úložiště"
-      ],
-      "Support": [
-        "Podpora"
-      ],
-      "Use @pm.me address": [
-        "Použít adresu @pm.me"
-      ],
-      "Users": [
-        "Uživatelé"
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        "5 GB *"
-      ],
-      "5 GB / user *": [
-        "5 GB / uživatel *"
-      ],
-      "Unlimited": [
-        "Bez omezení"
-      ],
-      "Unlimited **": [
-        "Bez omezení **"
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        "5 / uživatel *"
-      ]
-    },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importovat všechny zprávy z ${ selectedLabelsCount } z ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -6549,16 +5930,6 @@
         "Koš"
       ]
     },
-    "Many Others": {
-      "and many others": [
-        "a mnoho dalších"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Tím se trvale odstraní všichni dílčí uživatelé, účty a data spojená s Vaší organizací."
-      ]
-    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -6570,7 +5941,7 @@
         "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Vaše bezplatná zkušební verze skončila. Přístup k vašemu účtu bude brzy deaktivován. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -6747,11 +6118,6 @@
         "třetí středu"
       ]
     },
-    "Netflix": {
-      "Netflix": [
-        "Netflix"
-      ]
-    },
     "New Label form": {
       "Color": [
         "Barva"
@@ -6785,17 +6151,6 @@
     "Onboarding": {
       "Next": [
         "Další"
-      ]
-    },
-    "Onboarding Beta": {
-      "Beta enabled": [
-        "Beta verze zapnutá"
-      ],
-      "Got it": [
-        "Rozumím"
-      ],
-      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        "Pro deaktivaci verze beta, otevřete nastavení a sjeďte dolů v navigaci menu, kde zaklikněte na \"Beta Přístup\" volbu."
       ]
     },
     "Onboarding Proton": {
@@ -6891,17 +6246,6 @@
         "Vy"
       ]
     },
-    "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
-      "New credit/debit card": [
-        "Nová kreditní/debetní karta"
-      ],
-      "PayPal": [
-        "PayPal"
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Klíč není možné použít k šifrování"
@@ -6955,9 +6299,6 @@
       "Filter labels": [
         "Filtrovat štítky"
       ],
-      "Gift code": [
-        "Dárkový kód"
-      ],
       "Hint": [
         "Nápověda"
       ],
@@ -6990,9 +6331,6 @@
       ],
       "Please describe the problem and include any error messages": [
         "Popište prosím problém a uveďte jakékoli chybové zprávy"
-      ],
-      "Postal code": [
-        "Poštovní směrovací číslo"
       ],
       "Proton username": [
         "Proton uživatelské jméno"
@@ -7029,112 +6367,11 @@
       ],
       "Write your message": [
         "Napište zprávu"
-      ],
-      "ZIP": [
-        "PSČ"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "Jméno"
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        "0,5 GB úložiště"
-      ],
-      "1 - 5000 users *": [
-        "1 - 5000 uživatelů *"
-      ],
-      "1 address": [
-        "1 adresa"
-      ],
-      "1 user": [
-        "1 uživatel"
-      ],
-      "20 GB storage": [
-        "20 GB úložiště"
-      ],
-      "200 folders / labels": [
-        "200 složek / štítků"
-      ],
-      "3 folders / labels": [
-        "3 složky / štítky"
-      ],
-      "5 addresses": [
-        "5 adres"
-      ],
-      "5 addresses / user": [
-        "5 adres / uživatel"
-      ],
-      "5 GB storage *": [
-        "5 GB úložiště *"
-      ],
-      "5 GB storage / user": [
-        "5 GB úložiště / uživatel"
-      ],
-      "50 addresses": [
-        "50 adres"
-      ],
-      "6 users": [
-        "6 uživatelů"
-      ],
-      "Access blocked content": [
-        "Přístup k blokovanému obsahu"
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        "Přístup k ${ driveAppName } (beta)"
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Všechny ${ PLAN_NAMES[PLANS.VPNPLUS] } vlastnosti předplatného"
-      ],
-      "Built-in Adblocker (NetShield)": [
-        "Vestavěný blokátor reklam (NetShield)"
-      ],
-      "Custom email addresses": [
-        "Vlastní e-mailové adresy"
-      ],
-      "Early access to new products": [
-        "Dřívější přístup k novým funkcím"
-      ],
-      "High speed": [
-        "Vysoká rychlost"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Nejvyšší rychlost (až 10 Gbps)"
-      ],
-      "Includes 6 user accounts": [
-        "Obsahuje 6 uživatelských účtů"
-      ],
-      "Includes Proton Visionary": [
-        "Obsahuje Proton Visionary"
-      ],
-      "Medium speed": [
-        "Střední rychlost"
-      ],
-      "Secure Core servers": [
-        "Servery Secure Core"
-      ],
-      "Streaming service support": [
-        "Podpora stream služby"
-      ],
-      "Unlimited folders / labels": [
-        "Neomezený počet složek / štítků"
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        "(aktuální předplatné)"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Zdarma"
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
-        "Prime Video"
       ]
     },
     "Progress bar description": {
@@ -7398,8 +6635,11 @@
       "Discover all Proton services": [
         "Objevte všechny Proton služby"
       ],
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        "Získejte ${ appName } ${ planName } až na 18 měsíců zdarma"
+      ],
       "Invite friends and earn rewards!": [
-        ""
+        "Pozvěte přátele a získejte odměny!"
       ],
       "Message Content Search": [
         "Vyhledávání obsahu zpráv"
@@ -7714,9 +6954,6 @@
       ],
       "Verification successful": [
         "Ověření proběhlo úspěšně"
-      ],
-      "You have successfully unsubscribed": [
-        "Předplatné bylo úspěšně zrušeno"
       ]
     },
     "Suffix for price": {
@@ -7839,9 +7076,6 @@
       ]
     },
     "Title": {
-      "${ appName } customization": [
-        "${ appName } přizpůsobení"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Klávesové zkratky"
       ],
@@ -7850,9 +7084,6 @@
         "${ emailsCount } členové",
         "${ emailsCount } členů",
         "${ emailsCount } členů"
-      ],
-      "3-D Secure verification failed": [
-        "Ověření 3D Secure selhalo"
       ],
       "Account suspended": [
         "Účet pozastaven"
@@ -7878,12 +7109,6 @@
       "All recipients were added to the BCC field and cannot be disclosed": [
         "Všichni příjemci byli přidáni do pole BCC a nelze je zveřejnit"
       ],
-      "Amount due": [
-        "Částka k zaplacení"
-      ],
-      "Apply gift code": [
-        "Použít dárkový kód"
-      ],
       "Are you sure you want to close?": [
         "Opravdu chcete zavřít editor filtrů?"
       ],
@@ -7899,20 +7124,11 @@
       "Beta Access": [
         "Beta přístup"
       ],
-      "Billing cycle": [
-        "Fakturační období"
-      ],
       "Blind Carbon Copy": [
         "Skrytá kopie"
       ],
       "Carbon Copy": [
         "Kopie"
-      ],
-      "Card verification": [
-        "Ověření karty"
-      ],
-      "Card verification in progress": [
-        "Probíhá ověření karty"
       ],
       "CC": [
         "Kopie"
@@ -7920,17 +7136,11 @@
       "Change my answer": [
         "Změnit mou odpověď"
       ],
-      "Checkout": [
-        "Objednat"
-      ],
       "Clearing data": [
         "Vymazání dat"
       ],
       "Composer mode": [
         "Správcovský režim"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Potvrdit odebrání Proton bonusů"
       ],
       "Confirm recipient address?": [
         "Potvrdit adresu příjemce?"
@@ -7950,9 +7160,6 @@
       "Conversation list": [
         "Seznam konverzací"
       ],
-      "Coupon discount": [
-        "Slevový kupón"
-      ],
       "Create a new folder": [
         "Vytvořit novou složku"
       ],
@@ -7971,14 +7178,8 @@
       "Create new group": [
         "Vytvořit novou skupinu"
       ],
-      "Credits": [
-        "Kredity"
-      ],
       "Currency": [
         "Měna"
-      ],
-      "Current plan": [
-        "Současné předplatné"
       ],
       "Customize and confirm": [
         "Přizpůsobit a potvrdit"
@@ -7988,9 +7189,6 @@
       ],
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
-      ],
-      "Customize your plan": [
-        "Přizpůsobte si svůj plán předplatného"
       ],
       "Decryption error": [
         "Chyba dešifrování"
@@ -8040,14 +7238,8 @@
       "Delete message": [
         "Smazat zprávu"
       ],
-      "Delete organization?": [
-        "Smazat organizaci?"
-      ],
       "Deleting contacts": [
         "Mazání kontaktů"
-      ],
-      "Downgrade account": [
-        "Downgradovat účet"
       ],
       "Edit contact": [
         "Upravit kontakt"
@@ -8099,9 +7291,6 @@
       ],
       "Forward": [
         "Přeposlat"
-      ],
-      "Gift code": [
-        "Dárkový kód"
       ],
       "Groups": [
         "Skupiny"
@@ -8184,9 +7373,6 @@
       "Moving a scheduled message": [
         "Přesunutí naplánované zprávy"
       ],
-      "Network error": [
-        "Chyba sítě"
-      ],
       "New message": [
         "Nová zpráva"
       ],
@@ -8214,35 +7400,14 @@
       "Other names": [
         "Ostatní jména"
       ],
-      "Payment details": [
-        "Platební údaje"
-      ],
-      "Payment verification": [
-        "Ověření platební transakce"
-      ],
-      "Payment verification in progress": [
-        "Probíhá ověření platební transakce"
-      ],
-      "PayPal verification failed": [
-        "Ověření platební transakce službou PayPal se nezdařilo"
-      ],
       "Phone numbers": [
         "Telefonní číslo"
-      ],
-      "Plan summary": [
-        "Shrnutí předplatného"
       ],
       "Previous conversation": [
         "Předchozí konverzace"
       ],
       "Previous message": [
         "Předchozí zpráva"
-      ],
-      "Processing": [
-        "Zpracovává se"
-      ],
-      "Processing...": [
-        "Zpracovávání..."
       ],
       "ProtonMail": [
         "ProtonMail"
@@ -8276,9 +7441,6 @@
       ],
       "Schedule send": [
         "Naplánovat odeslání"
-      ],
-      "Select a plan": [
-        "Vyberte předplatné"
       ],
       "Select a theme": [
         "Vyberte motiv"
@@ -8334,14 +7496,8 @@
       "Subject missing": [
         "Chybí předmět"
       ],
-      "Subtotal": [
-        "Mezisoučet"
-      ],
       "To": [
         "Komu"
-      ],
-      "Total (monthly)": [
-        "Celkem (měsíčně)"
       ],
       "Trust new key?": [
         "Důvěřovat novému klíči?",
@@ -8357,9 +7513,6 @@
       ],
       "Unsubscribe": [
         "Odhlásit odběr"
-      ],
-      "Unsupported browser": [
-        "Nepodporovaný prohlížeč"
       ],
       "Upgrade required": [
         "Vyžadována inovace"
@@ -8383,10 +7536,7 @@
         "Co je nového"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
-      ],
-      "ZIP / postal code": [
-        "ZIP / PSČ"
+        "Vaše bezplatná zkušební verze brzy skončí dne ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8395,26 +7545,11 @@
       ]
     },
     "Tooltip": {
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Přístup ke geograficky blokovanému obsahu (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, atd.) Nezáleží na tom, kde se nacházíte."
-      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editoru bude použit pro odeslání uživateli. Prostý text znamená, že zpráva bude při odeslání vždy převedena na prostý text."
       ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Vytvořte si více adres, propojených s Vaším účtem, např. username2@protonmail.com"
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Chrání před hrozbami soukromí VPN obcházení Vašeho internetového provozu přes více serverů."
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitální podpis e-mailů pomáhá ověřit, že jsou zprávy zaslány od Vás"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Byla uplatněna sleva pro roční vyúčtování"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Byla uplatněna sleva pro dvouleté vyúčtování"
       ],
       "Each imported email will have this label": [
         "Každý importovaný e-mail bude mít tento štítek"
@@ -8428,35 +7563,8 @@
       "Encrypted data with verified digital signature": [
         "Zašifrovaná data s ověřeným digitálním podpisem"
       ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Získejte přístup ke všem placeným funkcím pro ${ vpnAppName } a ${ mailAppName } (šifrovaná e-mailová služba, kterou miliony uživatelů používají k ochraně svých dat) v jednom předplatném."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Získejte přístup ke všem placeným funkcím pro ProtonVPN i ProtonMail (šifrovaná e-mailová služba, kterou miliony uživatelů používají k ochraně svých dat) v jednom předplatném."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Umožňuje hosting e-mailů pro Vaši vlastní doménu(y) na ${ mailAppName }, např. jan.smith@example.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Můžete zařizovat Hosting pro e-maily na Vaší vlastní doméně(y) ve službě ProtonMail, např. john.smith@example.com"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Pokud jste zakoupil dárkový kód nebo jste je obdržel od naší podpory, můžete ho vložit sem."
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Podpora více uživatelů je použitelná pouze pro předplatné se 2 nebo více uživateli"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield chrání Vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, slídiče a malware."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Jediným kliknutím směrujte svůj internetový provoz sítí Tor."
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Podpora protokolů pro sdílení souborů, jako je BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
         "Systémové podsložky se v ProtonMailu zobrazí jako samostatné složky"
@@ -8472,12 +7580,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Nahrajte veřejný klíč, pro umožnění zasílání end-to-end šifrování e-mailů k tomuto e-mailu"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Použijte více adres / aliasy propojené s vaším účtem, např. username2@protonmail.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Použijte osobní adresu username@pm.me k odesílání e-mailů"
       ],
       "You do not have any contacts to export": [
         "Nemáte žádné kontakty k exportu"
@@ -8518,129 +7620,6 @@
         "Přehrát video"
       ]
     },
-    "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
-      "30-days money-back guarantee": [
-        "Záruka vrácení peněz do 30 dní"
-      ],
-      "Access blocked content": [
-        "Přístup k blokovanému obsahu"
-      ],
-      "Adblocker (NetShield)": [
-        "Blokátor reklam (NetShield)"
-      ],
-      "Custom connection profiles": [
-        "Vlastní profily připojení"
-      ],
-      "DNS leak prevention": [
-        "Ochrana proti úniku DNS"
-      ],
-      "Full Disk Encryption on Servers": [
-        "Plné šifrování disků na serverech"
-      ],
-      "Jurisdiction": [
-        "Jurisdikce"
-      ],
-      "Kill Switch / Always-on VPN": [
-        "Kill Switch / vždy-na VPN"
-      ],
-      "Languages supported": [
-        "Podporované jazyky"
-      ],
-      "Locations/Countries": [
-        "Místa/země"
-      ],
-      "Open Source & audited apps": [
-        "Open Source & auditované aplikace"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        "Perfect Forward Secrecy (PFS)"
-      ],
-      "Platforms supported": [
-        "Podporované platformy"
-      ],
-      "Router support": [
-        "Podpora routeru"
-      ],
-      "Secure Core servers": [
-        "Servery Secure Core"
-      ],
-      "Speed": [
-        "Rychlost"
-      ],
-      "Split tunneling": [
-        "Dělený tunel"
-      ],
-      "Streaming service support": [
-        "Podpora streamovací služby"
-      ],
-      "Strict no-logs policy": [
-        "Přísné zásady neukládání záznamů"
-      ],
-      "Tor over VPN": [
-        "TOR skrze VPN"
-      ],
-      "User data monetization": [
-        "Proces převodu uživatelských dat"
-      ],
-      "Volume/bandwidth cap": [
-        "Objem/šířka pásma"
-      ],
-      "VPN Connections": [
-        "VPN Připojení"
-      ],
-      "VPN servers": [
-        "VPN servery"
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        "(pouze Android & Windows)"
-      ],
-      "High": [
-        "Vysoký"
-      ],
-      "Highest (up to 10 Gbps)": [
-        "Nejvyšší (až 10 Gbps)"
-      ],
-      "Medium": [
-        "Střední"
-      ],
-      "None": [
-        "Žádné"
-      ],
-      "Switzerland": [
-        "Švýcarsko"
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        "${ n } server",
-        "${ n } servery",
-        "${ n } serverů",
-        "${ n } serverů"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN připojení",
-        "${ n } VPN připojení",
-        "${ n } VPN připojení",
-        "${ n } VPN připojení"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } v ${ numberOfCountries } zemi",
-        "${ numberOfServers } v ${ numberOfCountries } zemích",
-        "${ numberOfServers } v ${ numberOfCountries } zemích",
-        "${ numberOfServers } v ${ numberOfCountries } zemích"
-      ]
-    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Opravdu chcete nevratně smazat ${ count } skupinu kontaktů?",
@@ -8668,9 +7647,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Berte prosím na vědomí, že výběrem tohoto způsobu platební transakce, nemůže být Váš účet okamžitě navýšen na jiné předplatné. Předplatné Vašeho účtu aktualizujeme v okamžiku, jakmile bude proces platební transakce ukončen."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proto sloučí všechny složky se stejnými názvy. Pokud si to nepřejete, změňte názvy před importem."
@@ -8715,7 +7691,7 @@
         "Stávající přizpůsobení importu bude ztraceno."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Bezplatná zkušební verze končí ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

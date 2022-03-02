@@ -500,16 +500,16 @@
         "Відновити дані"
       ],
       "Refer a friend": [
-        ""
+        "Запросити друга"
       ],
       "Refresh status": [
         "Оновити стан"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Refresh the page": [
         "Оновити сторінку"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Reload": [
         "Перезавантажити"
@@ -822,7 +822,7 @@
     },
     "Action in trial plan": {
       "No, thanks": [
-        ""
+        "Ні, дякую"
       ],
       "Try free for 30 days": [
         ""
@@ -1210,12 +1210,15 @@
         ""
       ],
       "Continue using ProtonMail.": [
-        ""
+        "Продовжити користуватися ProtonMail."
       ],
-      "Copy ": [
+      "Copy": [
         ""
       ],
       "Invite": [
+        "Запросити"
+      ],
+      "Send": [
         ""
       ],
       "Tweet": [
@@ -2343,10 +2346,7 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
-      "Get 3 months of Mail Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        ""
-      ],
-      "Invite friends to start earning credits": [
+      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
         ""
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
@@ -2358,7 +2358,10 @@
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
       ],
-      "Track how many people click on your link, sign up to ${ mailAppName }, and become paid subscribers. Watch your free months add up.": [
+      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
+        ""
+      ],
+      "Track your referral link activities here.": [
         ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
@@ -2638,9 +2641,6 @@
       "Invalid ${ name } code": [
         "Недійсний код ${ name }"
       ],
-      "Invalid address": [
-        "Неправильна адреса"
-      ],
       "Invalid card number": [
         "Недійсний номер картки"
       ],
@@ -2658,9 +2658,6 @@
       ],
       "Invalid name": [
         "Неприпустима назва"
-      ],
-      "Invalid password": [
-        "Неправильний пароль"
       ],
       "Invalid postal code": [
         "Недійсний поштовий індекс"
@@ -2682,6 +2679,9 @@
         "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями Proton",
         "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями Proton",
         "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями Proton"
+      ],
+      "Name does not match": [
+        ""
       ],
       "Name on card required": [
         "Необхідно ввести ім'я, вказане на картці"
@@ -3919,6 +3919,9 @@
       ]
     },
     "Info": {
+      "${ appName } ${ planName } credits earned": [
+        ""
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
@@ -3945,6 +3948,12 @@
         "${ calendarsToBeMergedCount } об'єднані календарі",
         "${ calendarsToBeMergedCount } об'єднаних календарів",
         "${ calendarsToBeMergedCount } об'єднаних календарів"
+      ],
+      "${ emailAddress } is a ${ appName } address": [
+        ""
+      ],
+      "${ emailAddress } is invalid": [
+        ""
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Безплатно"
@@ -3990,6 +3999,9 @@
         "${ numContacts } контакти",
         "${ numContacts } контактів",
         "${ numContacts } контакти"
+      ],
+      "${ planName } plan": [
+        ""
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знайдено ${ providerFoldersNumLocalized } теку",
@@ -4078,23 +4090,26 @@
         "+${ organization.BonusVPN } з'єднань для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)"
       ],
-      "1 to 3 months of Mail Plus will appear as credits on your next bill": [
+      "1. Invite friends to Proton": [
         ""
       ],
-      "20 personal calendars": [
+      "2. They try ${ appName } ${ planName }": [
         ""
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "До вашої передплати застосовано знижку 20% з купоном ${ code }"
       ],
+      "3. You earn credits": [
+        ""
+      ],
       "30 days money-back guarantee.": [
         "Гарантія повернення коштів протягом 30 днів."
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
-        ""
+        "5 ГБ сховища"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Вільний Інтернет без цензури має бути доступним для всіх."
@@ -4188,9 +4203,6 @@
       ],
       "Allow recovery by phone": [
         "Дозволити відновлення за телефоном"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Дозволяє вам розмістити електронну пошту для власних доменів на ${ mailAppName }, наприклад, john.smith@example.com"
       ],
       "Already have an account? ${ loginLink }": [
         "Вже маєте обліковий запис? ${ loginLink }"
@@ -4339,10 +4351,10 @@
       "Continue anyway?": [
         "Все одно продовжити?"
       ],
-      "Continue with plus": [
+      "Continue with ${ planName }": [
         ""
       ],
-      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
         ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
@@ -4368,12 +4380,6 @@
       ],
       "Create in": [
         "Створити у"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
       ],
       "Creating your Proton account": [
         "Створення вашого облікового запису Proton"
@@ -4462,7 +4468,7 @@
       "Each additional connection can be assigned to users in your organization.": [
         "Кожне додаткове з'єднання може бути призначене користувачам вашої організації."
       ],
-      "Earned ${ rewards } of ${ rewardsLimit } Mail plus months.": [
+      "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
         ""
       ],
       "Edit label": [
@@ -4561,17 +4567,11 @@
       "free up space by deleting older messages or other data": [
         "звільнити простір, видаливши давніші повідомлення чи інші дані"
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Повнофункціональний VPN зі швидкістю до 10 Гбіт/с."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Генерування нової фрази відновлення деактивує попередню."
-      ],
-      "Get rewarded": [
-        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Надайте свій відкритий ключ друзям, або оприлюдніть його в інтернеті, щоб кожен зміг надіслати вам наскрізно зашифроване повідомлення!"
@@ -4723,7 +4723,7 @@
       "Internet connection restored.": [
         "З'єднання з Інтернетом відновлено."
       ],
-      "Invite friends": [
+      "Invited via email": [
         ""
       ],
       "It appears some of your data is encrypted and locked.": [
@@ -4732,10 +4732,13 @@
       "it’s imperative": [
         "це обов'язково"
       ],
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
+        ""
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
       ],
-      "Just send them your personal referral link": [
+      "Just send them your personal referral link.": [
         ""
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
@@ -4794,9 +4797,6 @@
       ],
       "lose access to all current encrypted data": [
         "втратите доступ до всіх наявних зашифрованих даних"
-      ],
-      "Mail Plus credits earned": [
-        ""
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru читає ваші особисті дані, щоб забезпечити доступ для рекламодавців, російських державних агенцій та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
@@ -4916,7 +4916,7 @@
         "У вашій організації є інші адміністратори. Ви відповідальні за передачу їм нового пароля."
       ],
       "Other options": [
-        ""
+        "Інші варіанти"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Застарілий файл відновлення; оновіть для гарантії доступу до своїх даних"
@@ -4933,7 +4933,7 @@
       "Paid for a 12 months plan": [
         ""
       ],
-      "Paid for a month plan": [
+      "Paid for a monthly plan": [
         ""
       ],
       "Payment can take a few minutes to fully verify.": [
@@ -5005,14 +5005,17 @@
       "Plus or Visionary subscription required": [
         "Необхідна передплата Plus або Visionary"
       ],
-      "Plus plan": [
-        ""
-      ],
       "Prevents content from the sender's server from loading without your permission.": [
         "Не дозволяє вмісту з сервера відправника завантажуватись без вашого схвалення."
       ],
       "Preview": [
         "Попередній перегляд"
+      ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
       ],
       "Proton can't help you recover any lost passwords": [
         "Proton не може допомогти вам відновити будь-які втрачені паролі"
@@ -5083,9 +5086,6 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Фраза відновлення не пов'язана з жодним застарілим ключем."
       ],
-      "Refer, receive, repeat. You can earn credits for up to 18 months of Mail Plus.": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
@@ -5120,10 +5120,7 @@
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
-      ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Надіслано за допомогою безпечної пошти <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+        "Надіслано за допомогою безпечної пошти <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Наразі сервер не працює"
@@ -5155,14 +5152,14 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF використовується для зазначення, кому дозволено надсилати пошту для домену, тому ми наполегливо рекомендуємо включити ProtonMail у ваш запис SPF. Додайте такий TXT запис у ваш DNS. Зазвичай це можна зробити на панелі керування вашого реєстратора доменних імен."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Початковий рівень VPN з підтримкою P2P."
       ],
       "Storage GB": [
         "ГБ сховища"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
       ],
       "Sucessfully sent invites": [
         ""
@@ -5197,9 +5194,6 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Повідомлення ${ boldDataLocked } більше не буде показано, але ви все ще можете розблокувати свої дані в ${ encryptionAndKeysLink }."
       ],
-      "The 30-day free trial is not available any other way": [
-        ""
-      ],
       "The calendar will be removed from your account.": [
         "Календар буде вилучено з вашого облікового запису."
       ],
@@ -5215,7 +5209,7 @@
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ці файли конфігурації дають змогу обрати сервер ProtonVPN, з яким ви з'єднуєтесь при використанні сторонньої програми VPN чи налаштованому VPN-з'єднанні маршрутизатора."
       ],
-      "They signup": [
+      "This 30-day free trial is not available any other way.": [
         ""
       ],
       "This account has been suspended due to a potential policy violation.": [
@@ -5354,6 +5348,9 @@
         "Доки ви не вийдете зі свого облікового запису чи не зміните пароль, ваш сеанс залишатиметься активним. Термін дії сеансів завершується через 60 днів неактивності."
       ],
       "Unlimited folders, labels, and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Unsupported file": [
@@ -5374,7 +5371,7 @@
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Передплатіть тарифний план, щоб розблокувати підтримку IMAP/SMTP через ProtonMail Bridge."
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -5393,7 +5390,7 @@
         "Використовуйте такі облікові дані при з'єднанні з серверами ProtonVPN без програми. Приклади використання таких з'єднань включають: Tunnelblick на macOS, OpenVPN на GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
       ],
       "Users": [
         "Користувачів"
@@ -5467,6 +5464,9 @@
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Коли сповіщення увімкнено, ми надішлемо сповіщення на вашу пов'язану адресу електронної пошти, якщо у вашій поштовій скриньці ProtonMail з'являться нові повідомлення."
       ],
+      "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
+        ""
+      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продовженні вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
       ],
@@ -5526,6 +5526,9 @@
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Ви можете використовувати такі облікові дані для з'єднання з сервером ProtonVPN через сторонні програми з відкритим кодом, наприклад, Tunnelblick для macOS чи OpenVPN для GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Ви не можете використати облікові дані OpenVPN / IKEv2 для входу в програми ProtonVPN чи контрольну панель ProtonVPN. ${ learnMore }"
@@ -5617,7 +5620,7 @@
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
       ],
-      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
         ""
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
@@ -5710,7 +5713,7 @@
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
-        "Ви можете додати спосіб оплати, щоб продовжувати автоматично передплату. Також доступні інші способи оплати."
+        "Ви можете додати спосіб оплати, щоб автоматично продовжувати передплату. Також доступні інші способи оплати."
       ]
     },
     "Info message for custom invoice modal": {
@@ -6103,14 +6106,14 @@
       "Actions": [
         "Дії"
       ],
+      "Activity": [
+        ""
+      ],
       "Address": [
         "Адреса"
       ],
       "Addresses": [
         "Адреси"
-      ],
-      "Admin rights": [
-        "Права адміністратора"
       ],
       "ALL": [
         "ВСЕ"
@@ -6270,6 +6273,9 @@
       ],
       "Daily email notifications": [
         "Щоденні повідомлення електронною поштою"
+      ],
+      "Date": [
+        ""
       ],
       "Date format": [
         "Формат дати"
@@ -6595,9 +6601,6 @@
       "Previous password": [
         "Попередній пароль"
       ],
-      "Private User": [
-        "Приватний користувач"
-      ],
       "Prompt to trust keys": [
         "Запитувати довірені ключі"
       ],
@@ -6651,9 +6654,6 @@
       ],
       "Send invites in": [
         "Invitation language"
-      ],
-      "Share your invitation link": [
-        ""
       ],
       "Show secondary time zone": [
         "Показати додатковий часовий пояс"
@@ -6822,6 +6822,9 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
+      ],
+      "Your referral link": [
+        ""
       ],
       "Your reward": [
         ""
@@ -7100,8 +7103,8 @@
       "Contact groups": [
         "Групи контактів"
       ],
-      "Custom email addresses": [
-        "Власні адреси е-пошти"
+      "Custom domains": [
+        "Власні домени"
       ],
       "Custom filters": [
         "Власні фільтри"
@@ -7230,7 +7233,7 @@
         "Передплатіть будь-який тарифний план, щоб використовувати власні домени та розблокувати розширені функції"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Час безплатної пробної версії вичерпано. Доступ до вашого облікового запису незабаром буде вимкнено. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7845,9 +7848,6 @@
       "Choose a name": [
         "Виберіть назву"
       ],
-      "Choose address": [
-        "Оберіть адресу"
-      ],
       "Choose display name": [
         "Оберіть ім'я для показу"
       ],
@@ -7929,9 +7929,6 @@
       "Type text or keyword": [
         "Введіть текст чи ключове слово"
       ],
-      "Username": [
-        "Ім'я користувача"
-      ],
       "yourdomain.com": [
         "yourdomain.com"
       ],
@@ -8004,8 +8001,8 @@
       "Built-in Adblocker (NetShield)": [
         "Вбудований блокувальник реклами (NetShield)"
       ],
-      "Custom email addresses": [
-        "Власні адреси електронної пошти"
+      "Custom domains": [
+        "Власні домени"
       ],
       "Early access to new products": [
         "Ранній доступ до нових продуктів"
@@ -8288,7 +8285,16 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
+        "Запрошуйте друзів та отримуйте винагороди!"
+      ],
+      "No more missed appointments": [
+        ""
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
         ""
       ]
     },
@@ -8623,6 +8629,9 @@
       ]
     },
     "Title": {
+      "${ appName } ${ planName } trial": [
+        ""
+      ],
       "${ appName } customization": [
         "Налаштування ${ appName }"
       ],
@@ -8890,11 +8899,11 @@
       "Decrypt key": [
         "Розшифрувати ключ"
       ],
-      "Delete ${ address.Email }": [
-        "Видалити ${ address.Email }"
-      ],
       "Delete ${ domain.DomainName }": [
         "Видалити ${ domain.DomainName }"
+      ],
+      "Delete ${ email }": [
+        ""
       ],
       "Delete ${ filter.Name }": [
         "Видалити ${ filter.Name }"
@@ -8922,6 +8931,9 @@
       ],
       "Delete user": [
         "Видалити користувача"
+      ],
+      "Disable ${ email }": [
+        ""
       ],
       "Disable two-factor authentication": [
         "Вимкнути двоетапну перевірку"
@@ -9022,11 +9034,14 @@
       "Get ProtonVPN Plus to access all servers": [
         "Отримайте ProtonVPN Plus для доступу до всіх серверів"
       ],
-      "Get up to 18 months of Mail Plus for free": [
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
       ],
       "Gift code": [
         "Подарунковий код"
+      ],
+      "How does it work?": [
+        ""
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -9190,9 +9205,6 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
-      "ProtonMail Plus Trial": [
-        ""
-      ],
       "ProtonVPN": [
         "ProtonVPN"
       ],
@@ -9209,7 +9221,7 @@
         "Файл відновлення"
       ],
       "Refer a friend": [
-        ""
+        "Запросити друга"
       ],
       "Referral tracker": [
         ""
@@ -9401,7 +9413,7 @@
         "Поточний тарифний план"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"
       ],
       "Your plan": [
         "Ваш тарифний план"
@@ -9538,9 +9550,6 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Увімкнення розширеного журналу записує IP-адресу для кожної події в журналі безпеки."
       ],
-      "For easy sharing with all your contacts, the link text “Try ${ mailAppName } Plus Free for one month” is added to the bottom of your emails": [
-        ""
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Отримайте доступ до всіх платних функцій для ${ vpnAppName } та ${ mailAppName } (зашифрований сервіс електронної пошти, яким користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
       ],
@@ -9549,12 +9558,6 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Групуйте повідомлення в одній розмові або переглядайте їх окремо."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Розмістіть електронну пошту для власних доменів на ${ mailAppName }, наприклад, john.smith@example.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Розмістіть електронну пошту для власних доменів на ProtonMail, наприклад, john.smith@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
@@ -9582,6 +9585,9 @@
       ],
       "Set the default layout for your Inbox.": [
         "Встановіть типовий макет вигляду поштової скриньки."
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
+        ""
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Підписи, створені з цим ключем вважаються недійсними, а цей ключ не можна використовувати для шифрування"
@@ -9618,6 +9624,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Використовуйте особисту адресу username@pm.me для надсилання листів"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Ми виявили проблему з вашою конфігурацією DNS. Переконайтеся, що ваші записи відповідають інструкціям нижче. Якщо проблема не зникне, нам доведеться вимкнути підписання DKIM."
@@ -9929,7 +9938,7 @@
         "Зверніть увагу, що вибравши цей спосіб оплати, ваш обліковий запис не можна оновити негайно. Ми оновимо ваш обліковий запис одразу після підтвердження платежу."
       ],
       "Please provide at least one recipient": [
-        ""
+        "Укажіть принаймні одного отримувача"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton об'єднає усі теки з однаковими назвами. Щоб уникнути цього, змініть їх назви перед імпортуванням."
@@ -9965,7 +9974,7 @@
         "Ви більше не побачите цей запис імпорту в списку."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Час безплатної пробної версії завершиться ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Ваш файл відновлення застарів. З його допомогою неможливо відновити нові дані за повторного скидання облікового запису."

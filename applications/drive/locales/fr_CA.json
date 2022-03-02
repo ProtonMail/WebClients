@@ -86,6 +86,9 @@
       "Clear": [
         "Effacer"
       ],
+      "Clear browser data": [
+        ""
+      ],
       "Clear data": [
         "Effacer les données"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         "Personnaliser"
-      ],
-      "Decrease": [
-        "Diminuer"
       ],
       "Delete": [
         "Supprimer"
@@ -247,8 +247,14 @@
       "Go to panel ${ index }": [
         "Aller au panneau ${ index }"
       ],
+      "Go to parent": [
+        ""
+      ],
       "Go to settings": [
         "Aller aux paramètres"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
@@ -273,9 +279,6 @@
       ],
       "Import from .csv or vCard": [
         "Importer depuis un .csv ou une vCard"
-      ],
-      "Increase": [
-        "Augmenter"
       ],
       "Load image": [
         "Charger l'image"
@@ -371,7 +374,7 @@
         "Récupérer les données"
       ],
       "Refer a friend": [
-        ""
+        "Parrainer un ami"
       ],
       "refresh the page": [
         "actualiser la page"
@@ -427,17 +430,17 @@
       "Resume upload": [
         "Reprendre le téléversement"
       ],
-      "Retry": [
-        "Réessayer"
-      ],
       "Save": [
         "Enregistrer"
       ],
+      "Search": [
+        ""
+      ],
+      "Search drive": [
+        ""
+      ],
       "Select all": [
         "Tout sélectionner"
-      ],
-      "Select plan": [
-        "Choisissez une offre"
       ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
@@ -449,7 +452,7 @@
         "Partager un fichier"
       ],
       "Share item": [
-        ""
+        "Partager l'élément"
       ],
       "Share options": [
         "Options de partage"
@@ -1837,6 +1840,9 @@
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
       ],
+      "A problem occurred, please try again": [
+        ""
+      ],
       "Amount above the maximum.": [
         "Montant supérieur au maximum autorisé."
       ],
@@ -1855,14 +1861,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Impossible de créer de nouveaux calendriers pour tous les calendriers importés en raison de la limite de calendriers personnels."
       ],
-      "Checkout expired, please try again": [
-        "La commande a expiré, veuillez réessayer"
-      ],
       "Contact could not be saved": [
         "Le contact n'a pas pu être enregistré"
       ],
       "Contact signature not verified": [
         "Signature du contact non vérifiée"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "Impossible de trouver l'adresse ${ email }."
@@ -1921,10 +1927,10 @@
         "Échec de l'importation de l'image"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "Identifiants de connexion incorrects. Veuillez réessayer."
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "Mot de passe de la messagerie incorrect. Veuillez réessayer."
       ],
       "Incorrect password. Please try again.": [
         "Mot de passe incorrect. Veuillez réessayer."
@@ -2001,6 +2007,9 @@
       "Payment process not supported": [
         "Processus de paiement non pris en charge"
       ],
+      "Please activate your content search again": [
+        ""
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
         "Veuillez corriger les conflits en surbrillance pour continuer."
@@ -2019,6 +2028,9 @@
       ],
       "Request timed out": [
         "La requête a expiré"
+      ],
+      "Search failed": [
+        ""
       ],
       "Signature not verified": [
         "Signature non vérifiée"
@@ -2040,9 +2052,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur est survenue, veuillez ${ refresh } pour continuer. Si vous voyez toujours ce message d'erreur, veuillez contacter notre ${ supportTeam }."
-      ],
-      "Tab closed": [
-        "Onglet fermé"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Le navigateur que vous utilisez ne permet pas de finaliser l’autorisation de paiement. Veuillez utiliser un autre navigateur ou vous connecter via un ordinateur."
@@ -2496,20 +2505,17 @@
         "+${ organization.BonusVPN } connexion pour ProtonVPN (vous permet de connecter plus d'appareils au RPV)",
         "+${ organization.BonusVPN } connexions pour ProtonVPN (vous permet de connecter plus d'appareils au RPV)"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Remise de 20 % appliquée à votre abonnement avec le code promotionnel ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Garantie satisfait ou remboursé pendant 30 jours."
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
-        ""
+        "5 Go de stockage"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Un Internet libre et non censuré devrait être disponible pour tous."
@@ -2537,9 +2543,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La vérification d'adresse avec clés approuvées est activée pour cette adresse. Pour être en mesure d'envoyer à cette adresse, commencez par approuver des clés publiques pouvant être utilisées pour l'envoi."
-      ],
-      "Addresses": [
-        "Adresses"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Après avoir effectué votre paiement Bitcoin, veuillez suivre les instructions ci-après pour procéder au changement d'offre."
@@ -2573,9 +2576,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Êtes-vous sûr·e de vouloir vider la corbeille et supprimer définitivement tous les éléments?"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "Êtes-vous sûr·e de vouloir supprimer définitivement cet élément de la corbeille?",
-        "Êtes-vous sûr·e de vouloir supprimer définitivement ces éléments de la corbeille?"
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        ""
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        ""
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Étant donné que ${ appName } est chiffré de bout en bout, nous ne pouvons pas accéder\nou déchiffrer vos fichiers pour vous. Pour déverrouiller votre disque après une réinitialisation de mot de passe,\nvous devez avoir l'un des éléments suivants:"
@@ -2613,6 +2618,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Vérification des contacts: ${ progress } de ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
+      "Clear encrypted search data": [
+        ""
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        ""
+      ],
+      "Clears browser data related to the encrypted search.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur « Demander un nouveau code » pour qu'un nouveau code de vérification soit envoyé à ${ strong }. Si cette adresse électronique est incorrecte, cliquez sur « Modifier » pour la corriger."
       ],
@@ -2628,11 +2645,11 @@
       "Conflict": [
         "Conflit"
       ],
-      "Connections": [
-        "Connexions"
-      ],
       "Continue using ${ appName } and unlock drive later": [
         "Continuez à utiliser ${ appName } et déverrouillez le disque plus tard"
+      ],
+      "Continue with ${ planName }": [
+        ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",
@@ -2653,11 +2670,8 @@
       "Create links and share your files with others.": [
         "Créez des liens et partagez vos fichiers avec d'autres personnes."
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
+        "Créez jusqu'à 20 calendriers personnalisés. En plus de cela, ajoutez jusqu'à 5 calendriers d'amis, de famille, de collègues et d'organisations."
       ],
       "Create your first folder and start moving your files.": [
         "Créez votre premier dossier et commencez à importer vos fichiers."
@@ -2708,9 +2722,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
-      "Expired": [
-        "Expirée"
-      ],
       "Failed": [
         "Échec"
       ],
@@ -2754,7 +2765,7 @@
         "Libérez de l'espace ou contactez votre administrateur·rice."
       ],
       "Free VPN on a single device": [
-        ""
+        "RPV gratuit sur un seul appareil"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "RPV complet avec une vitesse maximale de 10 Gbit/s."
@@ -2798,6 +2809,9 @@
       ],
       "Included": [
         "Inclus"
+      ],
+      "Indexing search results…": [
+        ""
       ],
       "Inherited from parent folder": [
         "Hérité du dossier parent"
@@ -2920,7 +2934,7 @@
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce dossier."
       ],
       "Other options": [
-        ""
+        "Autres options"
       ],
       "Paused": [
         "En pause"
@@ -2985,6 +2999,12 @@
       "Primary": [
         "Principale"
       ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus est limité à un utilisateur et commence avec 5 Go de stockage."
       ],
@@ -3010,8 +3030,11 @@
       "Screenshot(s) attached": [
         "Capture(s) d’écran jointe(s)"
       ],
-      "Select an uploaded file or folder and create a link to it.": [
+      "Search cannot be enabled in this browser": [
         ""
+      ],
+      "Select an uploaded file or folder and create a link to it.": [
+        "Sélectionnez un fichier ou un dossier téléversé et créez un lien vers celui-ci."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
@@ -3040,6 +3063,9 @@
       "Something went wrong, please try again later.": [
         "Un problème est survenu, veuillez réessayer plus tard."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Service de RPV pour débuter avec prise en charge du pair-à-pair."
       ],
@@ -3047,7 +3073,7 @@
         "Stockage (en Go)"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "L'espace de stockage est partagé entre Mail, Calendar et Drive."
       ],
       "Support for 1 custom email domain": [
         ""
@@ -3107,6 +3133,12 @@
       "This will overwrite the existing folder": [
         "Ceci va écraser le dossier existant"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les pourriels et les abus, veuillez prouver que vous êtes humain."
       ],
@@ -3134,7 +3166,13 @@
       "Trash": [
         "Corbeille"
       ],
+      "Try different keywords": [
+        ""
+      ],
       "Unlimited folders, labels, and filters": [
+        "Dossiers, labels et filtres illimités"
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Unlock drive to recover files": [
@@ -3144,6 +3182,9 @@
         "Fichier non pris en charge"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Passez à la version supérieure dès aujourd'hui et conservez l'accès à la solution de messagerie et d'agenda la plus respectueuse de la vie privée pour vos besoins de communication quotidiens."
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Uploaded": [
@@ -3156,7 +3197,7 @@
         "Le téléversement de centaines de fichiers en même temps peut avoir un impact sur les performances."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Utilisez votre propre adresse de domaine personnalisée, par exemple vous@votrenom.com"
       ],
       "Users": [
         "Utilisateur·rice·s"
@@ -3839,8 +3880,8 @@
       "Contact groups": [
         "Groupes de contacts"
       ],
-      "Custom email addresses": [
-        "Adresses courriel personnalisées"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Filtres personnalisés"
@@ -3953,28 +3994,42 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "« ${ _firstItemName } » déplacé"
+      "\"${ name }\" deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "« ${ firstItemName } » supprimé définitivement de la corbeille"
+      "\"${ name }\" failed to be created": [
+        ""
       ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "« ${ firstItemName } » n'a pas pu être déplacé"
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" moved to trash": [
-        "« ${ firstItemName } » déplacé dans la corbeille"
+      "\"${ name }\" failed to be moved": [
+        ""
       ],
-      "\"${ firstItemName }\" restored from trash": [
-        "« ${ firstItemName } » restauré depuis la corbeille"
+      "\"${ name }\" failed to be moved to trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        ""
+      ],
+      "\"${ name }\" moved to trash": [
+        ""
+      ],
+      "\"${ name }\" restored from trash": [
+        ""
+      ],
+      "\"${ name }\" successfully moved": [
+        ""
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        ""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        ""
       ],
       "${ count } item failed to be decrypted": [
         "",
         ""
-      ],
-      "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } lien vers votre fichier a été supprimé",
-        "${ deletedCount } liens vers vos fichiers ont été supprimés"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } fichier supprimé définitivement de la corbeille",
@@ -3983,10 +4038,6 @@
       "${ deletedItemsCount } folder deleted permanently from trash": [
         "${ deletedItemsCount } dossier supprimé définitivement de la corbeille",
         "${ deletedItemsCount } dossiers supprimés définitivement de la corbeille"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } élément supprimé définitivement de la corbeille",
-        "${ deletedItemsCount } éléments supprimés définitivement de la corbeille"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "${ failedCount } lien vers votre fichier n’a pas pu être supprimé",
@@ -4000,21 +4051,52 @@
         "${ failedMovesCount } dossier n'a pas pu être déplacé",
         "${ failedMovesCount } dossiers n'ont pas pu être déplacés"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } élément n'a pas pu être déplacé",
-        "${ failedMovesCount } éléments n'ont pas pu être déplacés"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } fichier déplacé",
-        "${ movedLinksCount } fichiers déplacés"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } dossier déplacé",
         "${ movedLinksCount } dossiers déplacés"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } élément déplacé",
-        "${ movedLinksCount } éléments déplacés"
+      "${ name } created successfully": [
+        ""
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "",
+        ""
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } fichier restauré depuis la corbeille",
@@ -4024,10 +4106,6 @@
         "${ restoredItemsCount } dossier restauré depuis la corbeille",
         "${ restoredItemsCount } dossiers restaurés depuis la corbeille"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } élément restauré depuis la corbeille",
-        "${ restoredItemsCount } éléments restaurés depuis la corbeille"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } fichier déplacé vers la corbeille",
         "${ trashedLinksCount } fichiers déplacés vers la corbeille"
@@ -4035,10 +4113,6 @@
       "${ trashedLinksCount } folder moved to trash": [
         "${ trashedLinksCount } dossier déplacé vers la corbeille",
         "${ trashedLinksCount } dossiers déplacés vers la corbeille"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } élément déplacé vers la corbeille",
-        "${ trashedLinksCount } éléments déplacés vers la corbeille"
       ],
       "All items will soon be permanently deleted from trash": [
         "Tous les éléments seront bientôt supprimés définitivement de la corbeille"
@@ -4051,6 +4125,9 @@
       ],
       "Contact group updated": [
         "Groupe de contacts mis à jour"
+      ],
+      "Encrypted search activated": [
+        ""
       ],
       "Failed to download files: ${ err }": [
         "Échec du téléchargement des fichiers: ${ err }"
@@ -4110,17 +4187,26 @@
       "Subfolder failed to be loaded": [
         ""
       ],
-      "The link to your file failed to be deleted": [
-        "Le lien vers votre fichier n'a pas pu être supprimé"
+      "The link to \"${ name }\" failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted": [
-        "Le lien vers votre fichier a été supprimé"
+      "The link to \"${ name }\" was deleted": [
+        ""
+      ],
+      "The link to your item failed to be deleted": [
+        ""
+      ],
+      "The link to your item was deleted": [
+        ""
       ],
       "Trash failed to be emptied": [
         ""
       ],
       "Your old files will be deleted in 72 hours": [
         "Vos anciens fichiers seront supprimés dans 72 heures"
+      ],
+      "Your settings failed to be saved": [
+        ""
       ],
       "Your settings have been changed successfully": [
         "Vos réglages ont été correctement modifiés"
@@ -4361,8 +4447,8 @@
       "Built-in Adblocker (NetShield)": [
         "Bloqueur de publicités intégré (NetShield)"
       ],
-      "Custom email addresses": [
-        "Adresses courriel personnalisées"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Accès anticipé aux nouveaux produits"
@@ -4472,6 +4558,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
         ""
       ]
@@ -4736,9 +4825,6 @@
       "Contacts": [
         "Contacts"
       ],
-      "Coupon discount": [
-        "Coupon de rabais"
-      ],
       "Create a new folder": [
         "Créer un nouveau dossier"
       ],
@@ -4747,9 +4833,6 @@
       ],
       "Create new group": [
         "Créer un nouveau groupe"
-      ],
-      "Credits": [
-        "Crédits"
       ],
       "Currency": [
         "Devise"
@@ -4874,7 +4957,7 @@
         "Détails du dossier"
       ],
       "Folders details": [
-        ""
+        "Détails des dossiers"
       ],
       "Gift code": [
         "Code cadeau"
@@ -4895,7 +4978,7 @@
         "Code de vérification invalide"
       ],
       "Items details": [
-        ""
+        "Détails des éléments"
       ],
       "Link confirmation": [
         "Confirmation du lien"
@@ -4933,14 +5016,17 @@
       "Network error": [
         "Erreur réseau"
       ],
+      "No results found": [
+        ""
+      ],
       "Number of files": [
         "Nombre de fichiers"
       ],
       "Number of folders": [
-        ""
+        "Nombre de dossiers"
       ],
       "Number of items": [
-        ""
+        "Nombre d'éléments"
       ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
@@ -5005,8 +5091,11 @@
       "Restore your files": [
         "Restaurer vos fichiers"
       ],
-      "Select a plan": [
-        "Choisir une offre"
+      "Search results": [
+        ""
+      ],
+      "Searching…": [
+        ""
       ],
       "Select a theme": [
         "Choisissez un thème"
@@ -5111,7 +5200,7 @@
         "Votre dossier est prêt à être téléchargé"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }"
       ],
       "ZIP / postal code": [
         "Code postal"
@@ -5200,6 +5289,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Utilisez l'adresse personnelle nomdutilisateur@pm.me pour envoyer des courriels"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "You do not have any contacts to export": [
         "Vous n'avez aucun contact à exporter"
