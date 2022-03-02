@@ -1,0 +1,68 @@
+/*
+ * Theme: Monokai
+ */
+:root,
+.ui-standard {
+	--primary: #E53265;
+	--primary-contrast: white;
+
+	--signal-danger: #F5680A;
+
+	--signal-warning: #F5D922;
+
+	--signal-success: #2FD6B5;
+
+	--signal-info: #28ACF6;
+
+	--interaction-norm: #E53265;
+
+	--interaction-weak: #34384e;
+
+	--text-norm: white;
+	--text-weak: #979BB0;
+	--text-hint: #575C75;
+	--text-disabled: #454A61;
+	--text-invert: #171926;
+
+	--field-norm: #454A61;
+	--field-hover: #575C75;
+	--field-disabled: #34384E;
+	--field-focus: #E53265;
+	--field-highlight: rgb(343 78 90 / 0.3);
+
+	--border-norm: #34384E;
+	--border-weak: #25283A;
+
+	--background-norm: #171926;
+	--background-weak: #1E2130;
+	--background-strong: #25283A;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(52 56 78 / 0.5);
+	--interaction-default-active: rgb(52 56 78 / 0.7);
+
+	--shadow-norm-opacity: 0.4;
+	--shadow-lifted-opacity: 0.48;
+
+	--backdrop-norm: rgb(0 0 0 / 0.32);
+
+	/* Optional colors */
+
+	--optional-scrollbar-thumb-color: #34384E;
+	--optional-scrollbar-thumb-hover-color: #454A61;
+
+	--optional-link-norm: var(--interaction-norm-major-1);
+	--optional-link-hover: var(--interaction-norm-major-2);
+	--optional-link-active: var(--interaction-norm-major-3);
+
+	--optional-navigation-current-item-text-color: var(--signal-success);
+	--optional-navigation-item-count-background-color: #8838ff;
+
+	--optional-email-item-selected-icon-background-color: var(--interaction-norm-minor-1);
+
+	--optional-email-item-read-background-color: #11121d;
+	--optional-email-item-read-text-color: var(--text-weak);
+
+	--optional-logo-text-proton-color: white;
+	--optional-logo-text-product-color: #8A6EFF;
+}

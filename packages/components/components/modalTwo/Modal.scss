@@ -99,8 +99,8 @@
 		transform-origin: center top;
 		border-radius: var(--border-radius-lg);
 		box-shadow: var(--shadow-lifted);
-		background: var(--background-norm);
-		color: var(--text-norm);
+		background: var(--modal-background-color);
+		color: var(--modal-text-color);
 		animation: 0.25s easing(easeOutCubic) both;
 		animation-name: anime-modal-two-dialog-in;
 

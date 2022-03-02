@@ -1,0 +1,59 @@
+:root,
+.ui-standard {
+	--primary: #2563EB;
+	--primary-contrast: white;
+
+	--signal-danger: #DC3251;
+
+	--signal-warning: #FF9900;
+
+	--signal-success: #168368;
+
+	--signal-info: #1D4ED8;
+
+	--interaction-norm: #2563EB;
+
+	--interaction-weak: #D1D1D1;
+
+	--text-norm: #0C0C14;
+	--text-weak: #707070;
+	--text-hint: #8F8F8F;
+	--text-disabled: #9E9E9E;
+	--text-invert: #1C1B24;
+
+	--field-norm: #707070;
+	--field-hover: #5C5C5C;
+	--field-disabled: #D1D1D1;
+	--field-focus: #2563EB;
+	--field-highlight: rgb(37 99 235 / 0.2);
+
+	--border-norm: #D1D1D1;
+	--border-weak: #EAEAEA;
+
+	--background-norm: #FFFFFF;
+	--background-weak: #F5F5F5;
+	--background-strong: #E6E6E6;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(194 194 194 / 0.2);
+	--interaction-default-active: rgb(194 194 194 / 0.4);
+
+	--shadow-norm-opacity: 0.1;
+	--shadow-lifted-opacity: 0.16;
+
+	--backdrop-norm: rgb(38 42 51 / 0.48);
+
+	/* Optional colors */
+
+	--optional-scrollbar-thumb-color: #D1D1D1;
+	--optional-scrollbar-thumb-hover-color: #C2C2C2;
+
+	--optional-email-item-selected-background-color: #573BCC;
+	--optional-email-item-selected-icon-background-color: #412C99;
+
+	--optional-email-item-read-background-color: var(--background-weak);
+	--optional-email-item-read-text-color: #525252;
+
+	--optional-logo-text-proton-color: #1B1340;
+	--optional-logo-text-product-color: #6D4AFF;
+}

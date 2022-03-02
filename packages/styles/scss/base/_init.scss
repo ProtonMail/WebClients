@@ -60,18 +60,18 @@ body {
 }
 
 a {
-	color: var(--interaction-norm);
+	color: var(--link-norm);
 	text-decoration: underline;
 	cursor: pointer;
 
 	&:hover,
 	&:focus {
-		color: var(--interaction-norm-hover);
+		color: var(--link-hover);
 		text-decoration: none;
 	}
 
 	&:active {
-		color: var(--interaction-norm-active);
+		color: var(--link-active);
 		text-decoration: none;
 	}
 }
