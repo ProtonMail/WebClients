@@ -86,6 +86,9 @@
       "Clear": [
         "Εκκαθάριση"
       ],
+      "Clear browser data": [
+        ""
+      ],
       "Clear data": [
         "Εκκαθάριση δεδομένων"
       ],
@@ -155,9 +158,6 @@
       "Customize": [
         "Προσαρμογή"
       ],
-      "Decrease": [
-        "Μείωση"
-      ],
       "Delete": [
         "Διαγραφή"
       ],
@@ -215,7 +215,7 @@
         "Ρυθμίσεις Email"
       ],
       "Empty trash": [
-        "Άδειασμα κάδου απορριμμάτων"
+        "Εκκαθάριση Διαγραμμένων"
       ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
@@ -247,8 +247,14 @@
       "Go to panel ${ index }": [
         "Μεταβείτε στο πίνακα ελέγχου ${ index }"
       ],
+      "Go to parent": [
+        ""
+      ],
       "Go to settings": [
         "Μετάβαση στις ρυθμίσεις"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
@@ -273,9 +279,6 @@
       ],
       "Import from .csv or vCard": [
         "Εισαγωγή από αρχείο .csv ή vCard"
-      ],
-      "Increase": [
-        "Αύξηση"
       ],
       "Load image": [
         "Φόρτωση εικόνας"
@@ -317,7 +320,7 @@
         "Μετακίνηση σε φάκελο"
       ],
       "Move to trash": [
-        "Μετακίνηση στον κάδο απορριμμάτων"
+        "Μετακίνηση στα Διαγραμμένα"
       ],
       "New upload": [
         "Νέο ανέβασμα"
@@ -416,7 +419,7 @@
         "Επανεκκίνηση ανεβάσματος"
       ],
       "Restore from trash": [
-        "Επαναφορά από διεγραμμένα"
+        "Επαναφορά από Διαγραμμένα"
       ],
       "Resume download": [
         "Συνέχιση λήψης"
@@ -427,17 +430,17 @@
       "Resume upload": [
         "Συνέχιση ανεβάσματος"
       ],
-      "Retry": [
-        "Επανάληψη"
-      ],
       "Save": [
         "Αποθήκευση"
       ],
+      "Search": [
+        ""
+      ],
+      "Search drive": [
+        ""
+      ],
       "Select all": [
         "Επιλογή όλων"
-      ],
-      "Select plan": [
-        "Επιλέξτε πακέτο"
       ],
       "Set recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
@@ -1837,6 +1840,9 @@
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
+      "A problem occurred, please try again": [
+        ""
+      ],
       "Amount above the maximum.": [
         "Ποσό άνω του μέγιστου."
       ],
@@ -1855,14 +1861,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Δεν είναι δυνατή η δημιουργία νέων ημερολογίων για όλα τα εισαγόμενα ημερολόγια λόγω του προσωπικού ορίου συνολικών ημερολογίων."
       ],
-      "Checkout expired, please try again": [
-        "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
-      ],
       "Contact could not be saved": [
         "Αδυναμία αποθήκευσης επαφής"
       ],
       "Contact signature not verified": [
         "Μη επαληθευμένη υπογραφή επαφής"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
@@ -2001,6 +2007,9 @@
       "Payment process not supported": [
         "Μη υποστηριζόμενη διαδικασία πληρωμής"
       ],
+      "Please activate your content search again": [
+        ""
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
@@ -2019,6 +2028,9 @@
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
+      ],
+      "Search failed": [
+        ""
       ],
       "Signature not verified": [
         "Μη επαληθευμένη επαφή"
@@ -2040,9 +2052,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
-      ],
-      "Tab closed": [
-        "Κλειστή καρτέλα"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
@@ -2496,20 +2505,17 @@
         "+${ organization.BonusVPN } σύνδεση για το ProtonVPN (σας επιτρέπει να συνδέσετε περισσότερες συσκευές στο VPN)",
         "+${ organization.BonusVPN } συνδέσεις για το ProtonVPN (σας επιτρέπει να συνδέσετε περισσότερες συσκευές στο VPN)"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Εφαρμόζεται 20% έκπτωση για τη συνδρομή σας, με το κουπόνι ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Εγγύηση Επιστροφής Χρημάτων εντός 30 ημερών."
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
-        ""
+        "5 GB αποθηκευτικός χώρος"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Ένα δωρεάν και χωρίς λογοκρισία Internet θα πρέπει να είναι διαθέσιμο σε όλους."
@@ -2537,9 +2543,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με Αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να μπορέσετε να στείλετε σε αυτή τη διεύθυνση, χαρακτηρίστε πρώτα ώς \"Αξιόπιστα\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
-      ],
-      "Addresses": [
-        "Διευθύνσεις"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Αφού κάνετε την πληρωμή Bitcoin, ακολουθήστε τις παρακάτω οδηγίες για αναβάθμιση."
@@ -2571,11 +2574,13 @@
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στο φάκελο."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Είστε βέβαιοι ότι θέλετε να αδειάσετε τον κάδο απορριμμάτων και να διαγράψετε οριστικά όλα τα στοιχεία;"
+        "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά όλα τα διαγραμμένα στοιχεία;"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά το επιλεγμένο στοιχείο από τον κάδο απορριμμάτων;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τα επιλεγμένα στοιχεία από τον κάδο απορριμμάτων;"
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά το διαγραμμένο \"${ itemName }\";"
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά τα επιλεγμένα διαγραμμένα στοιχεία;"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Επειδή το ${ appName } είναι κρυπτογραφημένο από άκρο σε άκρο, δεν μπορούμε να έχουμε πρόσβαση\nή να αποκρυπτογραφήσουμε τα αρχεία για εσάς. Για να ξεκλειδώσετε τη μονάδα δίσκου μετά από επαναφορά κωδικού πρόσβασης,\nπρέπει να έχετε ένα από τα παρακάτω:"
@@ -2613,6 +2618,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Έλεγχος επαφής ${ progress } από ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
+      "Clear encrypted search data": [
+        ""
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        ""
+      ],
+      "Clears browser data related to the encrypted search.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης σε ${ strong }. Εάν αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι λανθασμένη, κάντε κλικ στο \"Επεξεργασία\" για να τη διορθώσετε."
       ],
@@ -2628,11 +2645,11 @@
       "Conflict": [
         "Διένεξη"
       ],
-      "Connections": [
-        "Συνδέσεις"
-      ],
       "Continue using ${ appName } and unlock drive later": [
         "Συνέχιση χρήσης ${ appName } και ξεκλείδωμα αρχειοθήκης αργότερα"
+      ],
+      "Continue with ${ planName }": [
+        ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Δημιουργήστε ${ calendarsToBeCreated } νέο ημερολόγιο",
@@ -2652,9 +2669,6 @@
       ],
       "Create links and share your files with others.": [
         "Δημιουργήστε συνδέσμους και κοινοποιήστε τα αρχεία σας με άλλους."
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
       ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         ""
@@ -2691,7 +2705,7 @@
         "Ελήφθησαν"
       ],
       "Downloading": [
-        "Γίνεται Λήψη"
+        "Λήψη"
       ],
       "Drag and drop a file here or choose to upload.": [
         "Σύρετε και αποθέστε ένα αρχείο εδώ ή επιλέξτε να το ανεβάσετε."
@@ -2707,9 +2721,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
-      ],
-      "Expired": [
-        "Έχει λήξει"
       ],
       "Failed": [
         "Απέτυχε"
@@ -2799,6 +2810,9 @@
       "Included": [
         "Περιλαμβάνεται"
       ],
+      "Indexing search results…": [
+        ""
+      ],
       "Inherited from parent folder": [
         "Μεταβίβαση από γονικό φάκελο"
       ],
@@ -2878,7 +2892,7 @@
         "Δεν υπάρχει διεύθυνση E-mail"
       ],
       "No files or folders in trash": [
-        "Δεν υπάρχουν αρχεία ή φάκελοι στον κάδο απορριμμάτων"
+        "Κανένα διαγραμμένο αρχείο ή φάκελος"
       ],
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
@@ -2920,7 +2934,7 @@
         "Μόνο άτομα που κατέχουν τον σύνδεσμο και το συνθηματικό έχουν πρόσβαση σε αυτό το φάκελο."
       ],
       "Other options": [
-        ""
+        "Άλλες επιλογές"
       ],
       "Paused": [
         "Σε παύση"
@@ -2932,7 +2946,7 @@
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και από τους ελβετικούς νόμους περί ιδιωτικότητας."
       ],
       "Permanently delete all files in your drive": [
-        "Μόνιμη διαγραφή όλων των αρχείων στην αρχειοθήκη σας"
+        "Οριστική διαγραφή όλων των αρχείων στην αρχειοθήκη σας"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "Το PGP / Inline είναι συμβατό μόνο με τη μορφή απλού κειμένου. Παρακαλούμε σημειώστε ότι το ProtonMail πάντα υπογράφει κρυπτογραφημένα μηνύματα."
@@ -2985,6 +2999,12 @@
       "Primary": [
         "Κύριο"
       ],
+      "Priority support": [
+        "Υποστήριξη κατά προτεραιότητα"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "Το ProtonMail Plus περιορίζεται σε έναν χρήστη και ξεκινά με 5 GB αποθηκευτικού χώρου."
       ],
@@ -3009,6 +3029,9 @@
       ],
       "Screenshot(s) attached": [
         "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
+      ],
+      "Search cannot be enabled in this browser": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Επιλέξτε ένα ανεβασμένο αρχείο ή φάκελο και δημιουργήστε έναν σύνδεσμο προς αυτό."
@@ -3039,6 +3062,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "Εκκίνηση υπηρεσίας VPN με υποστήριξη P2P."
@@ -3107,6 +3133,12 @@
       "This will overwrite the existing folder": [
         "Αυτή η εγγραφή θα διαγράψει τον φάκελο που ήδη υπάρχει"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
       ],
@@ -3132,10 +3164,16 @@
         "Παράλειψη μεταφοράς για τον φάκελο \"${ folderName }\""
       ],
       "Trash": [
-        "Κάδος Απορριμμάτων"
+        "Διαγραμμένα"
+      ],
+      "Try different keywords": [
+        ""
       ],
       "Unlimited folders, labels, and filters": [
         ""
+      ],
+      "Unlimited messages": [
+        "Aπεριόριστα μηνύματα"
       ],
       "Unlock drive to recover files": [
         "Ξεκλείδωμα αρχειοθήκης προς ανάκτηση αρχείων"
@@ -3144,6 +3182,9 @@
         "Μη υποστηριζόμενο αρχείο"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Uploaded": [
@@ -3674,7 +3715,7 @@
         "Κείμενο"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "Αυτό θα διαγράψει μόνιμα όλα τα αρχεία στην κλειδωμένη αρχειοθήκη σας."
+        "Αυτό θα διαγράψει οριστικά όλα τα αρχεία στην κλειδωμένη αρχειοθήκη σας."
       ],
       "To: ${ emailAddress }": [
         "Προς: ${ emailAddress }"
@@ -3722,7 +3763,7 @@
         "Τι συνέβη;"
       ],
       "Yes, I want to permanently delete\nmy old files": [
-        "Ναι, επιθυμώ τη μόνιμη διαγραφή των παλιών αρχείων μου"
+        "Ναι, επιθυμώ την οριστική διαγραφή των παλιών αρχείων μου"
       ],
       "ZIP": [
         "T.K"
@@ -3788,7 +3829,7 @@
         "Κοινοποιημένα"
       ],
       "Trash": [
-        "Κάδος απορριμμάτων"
+        "Διαγραμμένα"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -3799,7 +3840,7 @@
     },
     "Loading info": {
       "Almost there": [
-        "Σχεδόν εκεί"
+        "Ακόμα λίγο"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendars } από ${ calendarsToBeCreated }"
@@ -3814,7 +3855,7 @@
         "Συγκεντρώνουμε τα δεδομένα σας από τον πάροχό σας"
       ],
       "Your import is starting": [
-        "Γίνεται εκκίνηση της εισαγωγής σας"
+        "Η εισαγωγή σας εκκινεί"
       ]
     },
     "Mail feature": {
@@ -3839,8 +3880,8 @@
       "Contact groups": [
         "Ομάδες επαφών"
       ],
-      "Custom email addresses": [
-        "Προσαρμοσμένες διευθύνσεις email"
+      "Custom domains": [
+        "Προσαρμοσμένοι τομείς"
       ],
       "Custom filters": [
         "Προσαρμοσμένα φίλτρα"
@@ -3953,40 +3994,50 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" μετακινήθηκε επιτυχώς"
+      "\"${ name }\" deleted permanently from trash": [
+        "Το \"${ name }\" εξαλείφθηκε οριστικά από τα Διαγραμμένα"
       ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" διαγράφηκε οριστικά από τον κάδο απορριμμάτων"
+      "\"${ name }\" failed to be created": [
+        ""
       ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" απέτυχε να μετακινηθεί"
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        "Το \"${ name }\" απέτυχε να εξαλειφθεί οριστικά από τα Διαγραμμένα"
       ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" μετακινήθηκε στον κάδο απορριμμάτων"
+      "\"${ name }\" failed to be moved": [
+        ""
       ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" επαναφέρθηκε από τον κάδο απορριμμάτων"
+      "\"${ name }\" failed to be moved to trash": [
+        "Το \"${ name }\" απέτυχε να μετακινηθεί στα Διαγραμμένα"
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        "Το \"${ name }\" απέτυχε να επαναφερθεί από τα Διαγραμμένα"
+      ],
+      "\"${ name }\" moved to trash": [
+        "Το \"${ name }\" μετακινήθηκε στα Διαγραμμένα"
+      ],
+      "\"${ name }\" restored from trash": [
+        "Το \"${ name }\" επαναφέρθηκε από τα Διαγραμμένα"
+      ],
+      "\"${ name }\" successfully moved": [
+        ""
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        ""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        ""
       ],
       "${ count } item failed to be decrypted": [
         "${ count } αντικείμενο απέτυχε να αποκρυπτογραφηθεί",
         "${ count } αντικείμενα απέτυχαν να αποκρυπτογραφηθούν"
       ],
-      "${ deletedCount } link to your file was deleted": [
-        "διαγράφηκε ${ deletedCount } σύνδεσμος προς το αρχείο σας",
-        "διαγράφηκαν ${ deletedCount } σύνδεσμοι προς τα αρχεία σας"
-      ],
       "${ deletedItemsCount } file deleted permanently from trash": [
-        "${ deletedItemsCount } αρχείο διαγράφηκε οριστικά από τον Κάδο απορριμμάτων",
-        "${ deletedItemsCount } αρχεία διαγράφηκαν οριστικά από τον Κάδο απορριμμάτων"
+        "${ deletedItemsCount } διαγραμμένο αρχείο εξαλείφθηκε οριστικά",
+        "${ deletedItemsCount } διαγραμμένα αρχεία εξαλείφθηκαν οριστικά"
       ],
       "${ deletedItemsCount } folder deleted permanently from trash": [
-        "${ deletedItemsCount } φάκελος διαγράφηκε οριστικά από τον Κάδο απορριμμάτων",
-        "${ deletedItemsCount } φάκελοι διαγράφηκαν οριστικά από τον Κάδο απορριμμάτων"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } στοιχείο διαγράφηκε οριστικά από τον κάδο απορριμμάτων",
-        "${ deletedItemsCount } στοιχεία διαγράφηκαν οριστικά από τον Κάδο απορριμμάτων"
+        "${ deletedItemsCount } διαγραμμένος φάκελος εξαλείφθηκε οριστικά",
+        "${ deletedItemsCount } διαγραμμένοι φάκελοι εξαλείφθηκαν οριστικά"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "${ failedCount } σύνδεσμος προς το αρχείο σας απέτυχε να διαγραφεί",
@@ -4000,48 +4051,71 @@
         "${ failedMovesCount } φάκελος απέτυχε να μετακινηθεί",
         "${ failedMovesCount } φάκελοι απέτυχαν να μετακινηθούν"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } στοιχείο απέτυχε να μετακινηθεί",
-        "${ failedMovesCount } στοιχεία απέτυχαν να μετακινηθούν"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "μετακινήθηκε επιτυχώς ${ movedLinksCount } αρχείο",
-        "μετακινήθηκαν επιτυχώς ${ movedLinksCount } αρχεία"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "μετακινήθηκε επιτυχώς ${ movedLinksCount } φάκελος",
         "μετακινήθηκαν επιτυχώς ${ movedLinksCount } φάκελοι"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "μετακινήθηκε επιτυχώς ${ movedLinksCount } στοιχείο",
-        "μετακινήθηκαν επιτυχώς ${ movedLinksCount } στοιχεία"
+      "${ name } created successfully": [
+        ""
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } στοιχείο εξαλείφθηκε οριστικά από τα Διαγραμμένα",
+        "${ numberOfItems } στοιχεία εξαλείφθηκαν οριστικά από τα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "${ numberOfItems } στοιχείο απέτυχε να εξαλειφθεί οριστικά από τα Διαγραμμένα",
+        "${ numberOfItems } στοιχεία απέτυχαν να εξαλειφθούν οριστικά από τα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "${ numberOfItems } στοιχείο απέτυχε να μετακινηθεί στα Διαγραμμένα",
+        "${ numberOfItems } στοιχεία απέτυχαν να μετακινηθούν στα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "${ numberOfItems } στοιχείο απέτυχε να επαναφερθεί από τα Διαγραμμένα",
+        "${ numberOfItems } στοιχεία απέτυχαν να επαναφερθούν από τα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } στοιχείο μετακινήθηκε στα Διαγραμμένα",
+        "${ numberOfItems } στοιχεία μετακινήθηκαν στα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems } στοιχείο επαναφέρθηκε από τα Διαγραμμένα",
+        "${ numberOfItems } στοιχεία επαναφέρθηκαν από τα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "",
+        ""
       ],
       "${ restoredItemsCount } file restored from trash": [
-        "${ restoredItemsCount } αρχείο επαναφέρθηκε από τον κάδο απορριμμάτων",
-        "${ restoredItemsCount } αρχεία επαναφέρθηκαν από τον κάδο απορριμμάτων"
+        "${ restoredItemsCount } αρχείο επαναφέρθηκε από τα Διαγραμμένα",
+        "${ restoredItemsCount } αρχεία επαναφέρθηκαν από τα Διαγραμμένα"
       ],
       "${ restoredItemsCount } folder restored from trash": [
-        "${ restoredItemsCount } φάκελος επαναφέρθηκε από τον κάδο απορριμμάτων",
-        "${ restoredItemsCount } φάκελοι επαναφέρθηκαν από τον κάδο απορριμμάτων"
-      ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } στοιχείο επαναφέρθηκε από τον κάδο απορριμμάτων",
-        "${ restoredItemsCount } στοιχεία επαναφέρθηκαν από τον κάδο απορριμμάτων"
+        "${ restoredItemsCount } φάκελος επαναφέρθηκε από τα Διαγραμμένα",
+        "${ restoredItemsCount } φάκελοι επαναφέρθηκαν από τα Διαγραμμένα"
       ],
       "${ trashedLinksCount } file moved to trash": [
-        "${ trashedLinksCount } αρχείο μετακινήθηκε στον κάδο απορριμμάτων",
-        "${ trashedLinksCount } αρχεία μετακινήθηκαν στον κάδο απορριμμάτων"
+        "${ trashedLinksCount } αρχείο μετακινήθηκε στα Διαγραμμένα",
+        "${ trashedLinksCount } αρχεία μετακινήθηκαν στα Διαγραμμένα"
       ],
       "${ trashedLinksCount } folder moved to trash": [
-        "${ trashedLinksCount } φάκελος μετακινήθηκε στον κάδο απορριμμάτων",
-        "${ trashedLinksCount } φάκελοι μετακινήθηκαν στον κάδο απορριμμάτων"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } στοιχείο μετακινήθηκε στον κάδο απορριμμάτων",
-        "${ trashedLinksCount } στοιχείων μετακινήθηκαν στον κάδο απορριμμάτων"
+        "${ trashedLinksCount } φάκελος μετακινήθηκε στα Διαγραμμένα",
+        "${ trashedLinksCount } φάκελοι μετακινήθηκαν στα Διαγραμμένα"
       ],
       "All items will soon be permanently deleted from trash": [
-        "Όλα τα στοιχεία σύντομα θα διαγραφούν οριστικά από τον κάδο ανακύκλωσης"
+        "Όλα τα διαγραμμένα στοιχεία σύντομα θα εξαλειφθούν οριστικά"
       ],
       "An item with the name \"${ name }\" already exists in the current folder": [
         "Ένα στοιχείο με το όνομα \"${ name }\" υπάρχει ήδη στο φάκελο"
@@ -4051,6 +4125,9 @@
       ],
       "Contact group updated": [
         "Η ομάδα επαφών ενημερώθηκε"
+      ],
+      "Encrypted search activated": [
+        ""
       ],
       "Failed to download files: ${ err }": [
         "Αποτυχία λήψης αρχείων: ${ err }"
@@ -4110,17 +4187,26 @@
       "Subfolder failed to be loaded": [
         "Ο υποφάκελος απέτυχε να φορτώσει"
       ],
-      "The link to your file failed to be deleted": [
-        "Ο σύνδεσμος προς το αρχείο σας απέτυχε να διαγραφεί"
+      "The link to \"${ name }\" failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted": [
-        "Ο σύνδεσμος προς το αρχείο σας διαγράφηκε"
+      "The link to \"${ name }\" was deleted": [
+        ""
+      ],
+      "The link to your item failed to be deleted": [
+        ""
+      ],
+      "The link to your item was deleted": [
+        ""
       ],
       "Trash failed to be emptied": [
-        "Αποτυχία αδειάσματος διαγραμμένων"
+        "Αποτυχία εκκαθάρισης Διαγραμμένων"
       ],
       "Your old files will be deleted in 72 hours": [
         "Τα παλιά αρχεία σας θα διαγραφούν εντός 72 ωρών"
+      ],
+      "Your settings failed to be saved": [
+        ""
       ],
       "Your settings have been changed successfully": [
         "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
@@ -4361,8 +4447,8 @@
       "Built-in Adblocker (NetShield)": [
         "Ενσωματωμένο Adblocker (NetShield)"
       ],
-      "Custom email addresses": [
-        "Προσαρμοσμένες διευθύνσεις email"
+      "Custom domains": [
+        "Προσαρμοσμένοι τομείς"
       ],
       "Early access to new products": [
         "Πρώιμη πρόσβαση σε νέα προϊόντα"
@@ -4472,6 +4558,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
         ""
       ]
@@ -4736,9 +4825,6 @@
       "Contacts": [
         "Επαφές"
       ],
-      "Coupon discount": [
-        "Έκπτωση κουπονιού"
-      ],
       "Create a new folder": [
         "Δημιουργία νέου φακέλου"
       ],
@@ -4747,9 +4833,6 @@
       ],
       "Create new group": [
         "Δημιουργία νέας ομάδας"
-      ],
-      "Credits": [
-        "Πιστώσεις"
       ],
       "Currency": [
         "Νόμισμα"
@@ -4811,7 +4894,7 @@
         "Η λήψη απέτυχε"
       ],
       "Downloading": [
-        "Γίνεται Λήψη"
+        "Λήψη"
       ],
       "Drive": [
         "Αρχειοθήκη"
@@ -4844,7 +4927,7 @@
         "Ρυθμίσεις Email (${ emailAddress })"
       ],
       "Empty trash": [
-        "Άδειασμα κάδου απορριμμάτων"
+        "Εκκαθάριση Διαγραμμένων"
       ],
       "Enter password to download": [
         "Εισάγετε τον κωδικό για λήψη"
@@ -4933,6 +5016,9 @@
       "Network error": [
         "Σφάλμα δικτύου"
       ],
+      "No results found": [
+        ""
+      ],
       "Number of files": [
         "Αριθμός αρχείων"
       ],
@@ -5005,8 +5091,11 @@
       "Restore your files": [
         "Ανακτήστε τα αρχεία σας"
       ],
-      "Select a plan": [
-        "Επιλογή πακέτου"
+      "Search results": [
+        ""
+      ],
+      "Searching…": [
+        ""
       ],
       "Select a theme": [
         "Επιλέξτε ένα θέμα"
@@ -5069,7 +5158,7 @@
         "Συνολικό μέγεθος"
       ],
       "Trash": [
-        "Κάδος Απορριμμάτων"
+        "Διαγραμμένα"
       ],
       "Type": [
         "Τύπος"
@@ -5200,6 +5289,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Χρησιμοποιήστε την προσωπική διεύθυνση username@pm.me για να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "You do not have any contacts to export": [
         "Δεν έχετε επαφές προς εξαγωγή"
@@ -5359,11 +5451,11 @@
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } ομάδα επαφής;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } ομάδα επαφών;"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } ομάδες επαφών;"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφές;"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την ομάδα επαφών;"

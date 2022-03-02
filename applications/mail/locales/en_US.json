@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ boldSave } by switching to annual billing": [
-        ""
-      ],
       "${ BRAND_NAME } introduction": [
         ""
       ],
@@ -89,9 +86,6 @@
       "All Unstarred": [
         ""
       ],
-      "annual billing": [
-        ""
-      ],
       "Apply": [
         ""
       ],
@@ -167,12 +161,6 @@
       "Color": [
         ""
       ],
-      "Compare all features": [
-        ""
-      ],
-      "Compare plans": [
-        ""
-      ],
       "Compose": [
         ""
       ],
@@ -222,9 +210,6 @@
         ""
       ],
       "Customize": [
-        ""
-      ],
-      "Decrease": [
         ""
       ],
       "Decrypt": [
@@ -424,9 +409,6 @@
       "Import messages": [
         ""
       ],
-      "Increase": [
-        ""
-      ],
       "Inline": [
         ""
       ],
@@ -477,9 +459,6 @@
         ""
       ],
       "Load unprotected": [
-        ""
-      ],
-      "Loading verification": [
         ""
       ],
       "Loading${ ellipsis }": [
@@ -599,9 +578,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         ""
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        ""
-      ],
       "Open calendar": [
         ""
       ],
@@ -621,9 +597,6 @@
         ""
       ],
       "Pause": [
-        ""
-      ],
-      "Pay": [
         ""
       ],
       "Preview": [
@@ -683,12 +656,6 @@
       "Remove ${ attachmentName }": [
         ""
       ],
-      "Remove bonuses": [
-        ""
-      ],
-      "Remove gift code": [
-        ""
-      ],
       "Remove this label": [
         ""
       ],
@@ -714,9 +681,6 @@
         ""
       ],
       "Resume": [
-        ""
-      ],
-      "Retry": [
         ""
       ],
       "Revert to original display": [
@@ -750,9 +714,6 @@
         ""
       ],
       "Select all messages": [
-        ""
-      ],
-      "Select plan": [
         ""
       ],
       "Send": [
@@ -927,12 +888,6 @@
       "Use ${ label } theme": [
         ""
       ],
-      "Use a different card": [
-        ""
-      ],
-      "Use a different payment method": [
-        ""
-      ],
       "Use for sending": [
         ""
       ],
@@ -1024,27 +979,6 @@
         ""
       ],
       "Participant added": [
-        ""
-      ]
-    },
-    "Addon": {
-      "+ ${ addresses } email address": [
-        "",
-        ""
-      ],
-      "+ ${ domains } custom domain": [
-        "",
-        ""
-      ],
-      "+ ${ members } user": [
-        "",
-        ""
-      ],
-      "+ ${ storage } storage": [
-        ""
-      ],
-      "+ ${ vpn } connection": [
-        "",
         ""
       ]
     },
@@ -1147,23 +1081,6 @@
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
-        ""
-      ]
-    },
-    "Billing cycle option": {
-      "Annually": [
-        ""
-      ],
-      "Annually SAVE 20%": [
-        ""
-      ],
-      "Monthly": [
-        ""
-      ],
-      "Two years SAVE 33%": [
-        ""
-      ],
-      "Two-year": [
         ""
       ]
     },
@@ -1341,31 +1258,6 @@
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
-        ""
-      ]
-    },
-    "Calendar feature": {
-      "Calendar import": [
-        ""
-      ],
-      "Invitations": [
-        ""
-      ],
-      "Multiple calendars": [
-        ""
-      ],
-      "Recurring events": [
-        ""
-      ],
-      "Share Calendar via link": [
-        ""
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        ""
-      ],
-      "20 / user *": [
         ""
       ]
     },
@@ -1822,16 +1714,6 @@
         ""
       ],
       "Yomi": [
-        ""
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "",
-        ""
-      ],
-      "${ monthsWithYears } month": [
-        "",
         ""
       ]
     },
@@ -2728,24 +2610,8 @@
         ""
       ]
     },
-    "Disney": {
-      "Disney+": [
-        ""
-      ]
-    },
     "Download attachments": {
       "Download all": [
-        ""
-      ]
-    },
-    "Drive feature": {
-      "Access via Web": [
-        ""
-      ],
-      "Share files via link": [
-        ""
-      ],
-      "Upload / download files": [
         ""
       ]
     },
@@ -2876,12 +2742,6 @@
       "Address primary private key not found": [
         ""
       ],
-      "Amount above the maximum.": [
-        ""
-      ],
-      "Amount below minimum.": [
-        ""
-      ],
       "Attachments are limited to 25 MB": [
         ""
       ],
@@ -2898,9 +2758,6 @@
         ""
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
-      ],
-      "Checkout expired, please try again": [
         ""
       ],
       "Choose a date in the future.": [
@@ -2963,9 +2820,6 @@
       "Enter a password": [
         ""
       ],
-      "Error connecting to the Bitcoin API.": [
-        ""
-      ],
       "Error in one of the conditions": [
         ""
       ],
@@ -2999,25 +2853,10 @@
       "Incorrect mailbox password. Please try again.": [
         ""
       ],
-      "Invalid ${ name } code": [
-        ""
-      ],
-      "Invalid card number": [
-        ""
-      ],
-      "Invalid code": [
-        ""
-      ],
-      "Invalid expiration date": [
-        ""
-      ],
       "Invalid expiration time": [
         ""
       ],
       "Invalid name": [
-        ""
-      ],
-      "Invalid postal code": [
         ""
       ],
       "Invalid public key file": [
@@ -3027,6 +2866,9 @@
         ""
       ],
       "Label name cannot be empty": [
+        ""
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
@@ -3040,9 +2882,6 @@
         ""
       ],
       "Missing signature": [
-        ""
-      ],
-      "Name on card required": [
         ""
       ],
       "Network error: Please check your connection and try again.": [
@@ -3080,22 +2919,7 @@
         "",
         ""
       ],
-      "Organization not recognized. Try again.": [
-        ""
-      ],
       "Passwords do not match": [
-        ""
-      ],
-      "Payment process cancelled": [
-        ""
-      ],
-      "Payment process consumed": [
-        ""
-      ],
-      "Payment process failed": [
-        ""
-      ],
-      "Payment process not supported": [
         ""
       ],
       "Please activate your content search again": [
@@ -3118,9 +2942,6 @@
         ""
       ],
       "Primary address key is not decrypted.": [
-        ""
-      ],
-      "Process aborted": [
         ""
       ],
       "Public key could not be trusted": [
@@ -3169,14 +2990,8 @@
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         ""
       ],
-      "Tab closed": [
-        ""
-      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "",
-        ""
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         ""
       ],
       "The folder name is too long. Please choose a different name.": [
@@ -3189,15 +3004,6 @@
         ""
       ],
       "The maximum expiration is 4 weeks": [
-        ""
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        ""
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        ""
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
         ""
       ],
       "The sending key is not valid": [
@@ -3243,9 +3049,6 @@
         ""
       ],
       "Unknown error.": [
-        ""
-      ],
-      "Unknown payment token status": [
         ""
       ],
       "Wrong mailbox password": [
@@ -3622,11 +3425,6 @@
         ""
       ]
     },
-    "Free price": {
-      "Free": [
-        ""
-      ]
-    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
         ""
@@ -3898,12 +3696,6 @@
         "",
         ""
       ],
-      "${ mailAppName } Free": [
-        ""
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "",
         ""
@@ -3933,15 +3725,6 @@
       ],
       "${ pureAttachmentsCount } file attached": [
         "",
-        ""
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        ""
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        ""
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
         ""
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
@@ -3988,9 +3771,6 @@
         "",
         ""
       ],
-      "${ vpnAppName } Free": [
-        ""
-      ],
       "(${ memberCount } member)": [
         "",
         ""
@@ -4001,41 +3781,16 @@
       "(Filter if ANY of the following conditions are met)": [
         ""
       ],
-      "(Mail + VPN)": [
-        ""
-      ],
       "(No Recipient)": [
-        ""
-      ],
-      "* Customizable features": [
-        ""
-      ],
-      "+${ bonusSpace } bonus storage": [
-        ""
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "",
         ""
       ],
       "/month.": [
         ""
       ],
-      "20 personal calendars": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
-      "30 days money-back guarantee.": [
-        ""
-      ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
         ""
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
@@ -4044,34 +3799,16 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         ""
       ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        ""
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        ""
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         ""
       ],
-      "Account successfully updated": [
-        ""
-      ],
       "Activation in progress": [
-        ""
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
         ""
       ],
       "Add image URL": [
         ""
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        ""
-      ],
-      "Addresses": [
-        ""
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         ""
       ],
       "Align left": [
@@ -4098,12 +3835,6 @@
         ""
       ],
       "All your changes will be lost.": [
-        ""
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
-      ],
-      "Amount below minimum (${ amount }).": [
         ""
       ],
       "An unknown public key has been detected for this recipient.": [
@@ -4154,31 +3885,7 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         ""
       ],
-      "Billed as ${ billedPrice } every 2 years": [
-        ""
-      ],
-      "Billed as ${ billedPrice } per year": [
-        ""
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        ""
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        ""
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        ""
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        ""
-      ],
       "Body: ": [
-        ""
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         ""
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
@@ -4214,7 +3921,7 @@
       "Confirm phishing report": [
         ""
       ],
-      "Connections": [
+      "Continue with ${ planName }": [
         ""
       ],
       "Copied to clipboard": [
@@ -4234,12 +3941,6 @@
         ""
       ],
       "Create in": [
-        ""
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         ""
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
@@ -4276,9 +3977,6 @@
       "Disable message content search": [
         ""
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        ""
-      ],
       "Do you want to download this attachment anyway?": [
         "",
         ""
@@ -4289,13 +3987,7 @@
       "Do you want to re-sign the contact details?": [
         ""
       ],
-      "Domains": [
-        ""
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        ""
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
         ""
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
@@ -4317,9 +4009,6 @@
         ""
       ],
       "Duplicate key updated": [
-        ""
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
         ""
       ],
       "Email address": [
@@ -4367,9 +4056,6 @@
       "Expiration Time": [
         ""
       ],
-      "Expired": [
-        ""
-      ],
       "file attached": [
         "",
         ""
@@ -4380,25 +4066,10 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         ""
       ],
-      "For families and small teams; includes both Mail and VPN.": [
-        ""
-      ],
-      "For getting started with private and secure emailing.": [
-        ""
-      ],
       "For increased security, activate 2FA.": [
         ""
       ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        ""
-      ],
       "For messages newer than ${ oldestDate }": [
-        ""
-      ],
-      "For professionals that need secure business communications.": [
-        ""
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         ""
       ],
       "Free up some space or add more storage space.": [
@@ -4407,13 +4078,7 @@
       "Free up some space or contact your administrator.": [
         ""
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "From": [
-        ""
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
         ""
       ],
       "Get more storage and premium features.": [
@@ -4468,9 +4133,6 @@
         ""
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
-      ],
-      "Included": [
         ""
       ],
       "Increase storage space starting at": [
@@ -4531,6 +4193,9 @@
         ""
       ],
       "Manage your labels": [
+        ""
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         ""
       ],
       "members": [
@@ -4605,9 +4270,6 @@
       "No more results found": [
         ""
       ],
-      "No payment is required at this time.": [
-        ""
-      ],
       "No preview available": [
         ""
       ],
@@ -4623,12 +4285,6 @@
       "Not a valid URL": [
         ""
       ],
-      "Not customizable": [
-        ""
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        ""
-      ],
       "of": [
         ""
       ],
@@ -4639,12 +4295,6 @@
         ""
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        ""
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        ""
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
         ""
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
@@ -4671,28 +4321,10 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         ""
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        ""
-      ],
       "Please select the folders you would like to import:": [
         ""
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        ""
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        ""
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        ""
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        ""
-      ],
-      "Please verify the payment in the new tab.": [
         ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
@@ -4710,17 +4342,16 @@
       "Print email": [
         ""
       ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
+      ],
       "Proton doesn't make money by abusing privacy.": [
         ""
       ],
       "ProtonMail can protect your business as well.": [
-        ""
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        ""
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "",
         ""
       ],
       "Recipient: ": [
@@ -4745,12 +4376,6 @@
         ""
       ],
       "Right-click for options": [
-        ""
-      ],
-      "Save 20%": [
-        ""
-      ],
-      "Save extra 20%": [
         ""
       ],
       "Saved ${ dateString }": [
@@ -4801,9 +4426,6 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         ""
       ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
@@ -4822,19 +4444,10 @@
       "Show original message": [
         ""
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        ""
-      ],
       "Sorry, this message does not exist or has already expired": [
         ""
       ],
-      "Starter VPN service with P2P support.": [
-        ""
-      ],
-      "Storage GB": [
-        ""
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Store and share files securely with Proton Drive.": [
@@ -4861,12 +4474,6 @@
       "support team": [
         ""
       ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        ""
-      ],
       "Test link": [
         ""
       ],
@@ -4874,9 +4481,6 @@
         ""
       ],
       "Text to display": [
-        ""
-      ],
-      "Thank you for supporting our mission.": [
         ""
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
@@ -4994,9 +4598,6 @@
       "This sender's public key has not been trusted yet.": [
         ""
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        ""
-      ],
       "To fight spam and abuse, please verify you are human.": [
         ""
       ],
@@ -5025,6 +4626,9 @@
         ""
       ],
       "Unlimited folders, labels, and filters": [
+        ""
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Unsupported file": [
@@ -5063,7 +4667,7 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         ""
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -5081,22 +4685,7 @@
       "Use Proton Calendar to keep your agenda private.": [
         ""
       ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
-      ],
-      "Users": [
-        ""
-      ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        ""
-      ],
-      "Verification can take a few minutes.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        ""
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         ""
       ],
       "Version ${ appVersion }": [
@@ -5105,19 +4694,10 @@
       "Visit our shop to get Proton merchandise.": [
         ""
       ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        ""
-      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         ""
       ],
       "We could not verify the sender's trusted keys.": [
-        ""
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        ""
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         ""
       ],
       "We'll notify you when the import is done.": [
@@ -5214,15 +4794,6 @@
       "You have reached the maximum number of 5 replies.": [
         ""
       ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        ""
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        ""
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         ""
       ],
@@ -5245,12 +4816,6 @@
         "",
         ""
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        ""
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        ""
-      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         ""
       ],
@@ -5258,15 +4823,6 @@
         ""
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        ""
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        ""
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        ""
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
         ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
@@ -5289,23 +4845,7 @@
       ]
     },
     "info": {
-      "(beta)": [
-        ""
-      ],
       "Optional": [
-        ""
-      ]
-    },
-    "Info concerning plan features": {
-      "Customizable features": [
-        ""
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        ""
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
         ""
       ]
     },
@@ -5316,11 +4856,6 @@
     },
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
-        ""
-      ]
-    },
-    "information": {
-      "Included": [
         ""
       ]
     },
@@ -5617,12 +5152,6 @@
       "Browser version": [
         ""
       ],
-      "BTC address:": [
-        ""
-      ],
-      "BTC amount:": [
-        ""
-      ],
       "Calendar": [
         ""
       ],
@@ -5633,15 +5162,6 @@
         ""
       ],
       "Carbon Copy": [
-        ""
-      ],
-      "Card holder": [
-        ""
-      ],
-      "Card number": [
-        ""
-      ],
-      "Cash": [
         ""
       ],
       "Category": [
@@ -5669,9 +5189,6 @@
         ""
       ],
       "Country": [
-        ""
-      ],
-      "CVV code": [
         ""
       ],
       "Date": [
@@ -5702,15 +5219,6 @@
         ""
       ],
       "Encrypt emails": [
-        ""
-      ],
-      "Enter organization name to confirm": [
-        ""
-      ],
-      "Expires": [
-        ""
-      ],
-      "Expiry date": [
         ""
       ],
       "Export contacts": [
@@ -5812,9 +5320,6 @@
       "Name": [
         ""
       ],
-      "Name on card": [
-        ""
-      ],
       "No label found": [
         ""
       ],
@@ -5845,9 +5350,6 @@
       "Password hint": [
         ""
       ],
-      "Payer": [
-        ""
-      ],
       "PGP scheme": [
         ""
       ],
@@ -5858,9 +5360,6 @@
         ""
       ],
       "Postal code": [
-        ""
-      ],
-      "Proration": [
         ""
       ],
       "Proton username": [
@@ -5887,9 +5386,6 @@
       "Search in": [
         ""
       ],
-      "Select a method": [
-        ""
-      ],
       "Select how your composer opens by default.": [
         ""
       ],
@@ -5897,9 +5393,6 @@
         ""
       ],
       "Select how your mailbox looks like by default.": [
-        ""
-      ],
-      "Select your country": [
         ""
       ],
       "Send auto-reply": [
@@ -5956,12 +5449,6 @@
       "To: ${ emailAddress }": [
         ""
       ],
-      "Total": [
-        ""
-      ],
-      "Total (${ countdown })": [
-        ""
-      ],
       "Two-factor authentication code": [
         ""
       ],
@@ -5993,9 +5480,6 @@
         ""
       ],
       "without attachments": [
-        ""
-      ],
-      "ZIP": [
         ""
       ]
     },
@@ -6066,9 +5550,6 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        ""
-      ],
       "Add folder": [
         ""
       ],
@@ -6082,9 +5563,6 @@
         ""
       ],
       "clearing your browser cache": [
-        ""
-      ],
-      "click here": [
         ""
       ],
       "Create a calendar linked to an active email address.": [
@@ -6251,87 +5729,6 @@
         ""
       ]
     },
-    "Mail feature": {
-      "0.5 GB": [
-        ""
-      ],
-      "20 GB": [
-        ""
-      ],
-      "Address verification": [
-        ""
-      ],
-      "Addresses": [
-        ""
-      ],
-      "Autoresponder": [
-        ""
-      ],
-      "Catch-All email": [
-        ""
-      ],
-      "Contact groups": [
-        ""
-      ],
-      "Custom email addresses": [
-        ""
-      ],
-      "Custom filters": [
-        ""
-      ],
-      "Encrypted contacts": [
-        ""
-      ],
-      "Folders / labels": [
-        ""
-      ],
-      "IMAP / SMTP": [
-        ""
-      ],
-      "Limited": [
-        ""
-      ],
-      "Messages per day": [
-        ""
-      ],
-      "Multi-user support": [
-        ""
-      ],
-      "Priority": [
-        ""
-      ],
-      "Storage": [
-        ""
-      ],
-      "Support": [
-        ""
-      ],
-      "Use @pm.me address": [
-        ""
-      ],
-      "Users": [
-        ""
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        ""
-      ],
-      "5 GB / user *": [
-        ""
-      ],
-      "Unlimited": [
-        ""
-      ],
-      "Unlimited **": [
-        ""
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        ""
-      ]
-    },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
@@ -6362,16 +5759,6 @@
         ""
       ],
       "Trash": [
-        ""
-      ]
-    },
-    "Many Others": {
-      "and many others": [
-        ""
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         ""
       ]
     },
@@ -6557,11 +5944,6 @@
         ""
       ]
     },
-    "Netflix": {
-      "Netflix": [
-        ""
-      ]
-    },
     "New Label form": {
       "Color": [
         ""
@@ -6594,17 +5976,6 @@
     },
     "Onboarding": {
       "Next": [
-        ""
-      ]
-    },
-    "Onboarding Beta": {
-      "Beta enabled": [
-        ""
-      ],
-      "Got it": [
-        ""
-      ],
-      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
         ""
       ]
     },
@@ -6701,17 +6072,6 @@
         ""
       ]
     },
-    "Payment method option": {
-      "Bitcoin": [
-        ""
-      ],
-      "New credit/debit card": [
-        ""
-      ],
-      "PayPal": [
-        ""
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         ""
@@ -6765,9 +6125,6 @@
       "Filter labels": [
         ""
       ],
-      "Gift code": [
-        ""
-      ],
       "Hint": [
         ""
       ],
@@ -6799,9 +6156,6 @@
         ""
       ],
       "Please describe the problem and include any error messages": [
-        ""
-      ],
-      "Postal code": [
         ""
       ],
       "Proton username": [
@@ -6839,111 +6193,10 @@
       ],
       "Write your message": [
         ""
-      ],
-      "ZIP": [
-        ""
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
-        ""
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        ""
-      ],
-      "1 - 5000 users *": [
-        ""
-      ],
-      "1 address": [
-        ""
-      ],
-      "1 user": [
-        ""
-      ],
-      "20 GB storage": [
-        ""
-      ],
-      "200 folders / labels": [
-        ""
-      ],
-      "3 folders / labels": [
-        ""
-      ],
-      "5 addresses": [
-        ""
-      ],
-      "5 addresses / user": [
-        ""
-      ],
-      "5 GB storage *": [
-        ""
-      ],
-      "5 GB storage / user": [
-        ""
-      ],
-      "50 addresses": [
-        ""
-      ],
-      "6 users": [
-        ""
-      ],
-      "Access blocked content": [
-        ""
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        ""
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        ""
-      ],
-      "Built-in Adblocker (NetShield)": [
-        ""
-      ],
-      "Custom email addresses": [
-        ""
-      ],
-      "Early access to new products": [
-        ""
-      ],
-      "High speed": [
-        ""
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        ""
-      ],
-      "Includes 6 user accounts": [
-        ""
-      ],
-      "Includes Proton Visionary": [
-        ""
-      ],
-      "Medium speed": [
-        ""
-      ],
-      "Secure Core servers": [
-        ""
-      ],
-      "Streaming service support": [
-        ""
-      ],
-      "Unlimited folders / labels": [
-        ""
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        ""
-      ]
-    },
-    "Price": {
-      "Free": [
-        ""
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
         ""
       ]
     },
@@ -7190,6 +6443,9 @@
     },
     "Spotlight": {
       "Discover all Proton services": [
+        ""
+      ],
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -7462,9 +6718,6 @@
       ],
       "Verification successful": [
         ""
-      ],
-      "You have successfully unsubscribed": [
-        ""
       ]
     },
     "Suffix for price": {
@@ -7575,17 +6828,11 @@
       ]
     },
     "Title": {
-      "${ appName } customization": [
-        ""
-      ],
       "${ appName } Keyboard Shortcuts": [
         ""
       ],
       "${ emailsCount } member": [
         "",
-        ""
-      ],
-      "3-D Secure verification failed": [
         ""
       ],
       "Account suspended": [
@@ -7610,12 +6857,6 @@
       "All recipients were added to the BCC field and cannot be disclosed": [
         ""
       ],
-      "Amount due": [
-        ""
-      ],
-      "Apply gift code": [
-        ""
-      ],
       "Are you sure you want to close?": [
         ""
       ],
@@ -7631,19 +6872,10 @@
       "Beta Access": [
         ""
       ],
-      "Billing cycle": [
-        ""
-      ],
       "Blind Carbon Copy": [
         ""
       ],
       "Carbon Copy": [
-        ""
-      ],
-      "Card verification": [
-        ""
-      ],
-      "Card verification in progress": [
         ""
       ],
       "CC": [
@@ -7652,16 +6884,10 @@
       "Change my answer": [
         ""
       ],
-      "Checkout": [
-        ""
-      ],
       "Clearing data": [
         ""
       ],
       "Composer mode": [
-        ""
-      ],
-      "Confirm loss of Proton bonuses": [
         ""
       ],
       "Confirm recipient address?": [
@@ -7682,9 +6908,6 @@
       "Conversation list": [
         ""
       ],
-      "Coupon discount": [
-        ""
-      ],
       "Create a new folder": [
         ""
       ],
@@ -7703,13 +6926,7 @@
       "Create new group": [
         ""
       ],
-      "Credits": [
-        ""
-      ],
       "Currency": [
-        ""
-      ],
-      "Current plan": [
         ""
       ],
       "Customize and confirm": [
@@ -7719,9 +6936,6 @@
         ""
       ],
       "Customize your mail import": [
-        ""
-      ],
-      "Customize your plan": [
         ""
       ],
       "Decryption error": [
@@ -7762,13 +6976,7 @@
       "Delete message": [
         ""
       ],
-      "Delete organization?": [
-        ""
-      ],
       "Deleting contacts": [
-        ""
-      ],
-      "Downgrade account": [
         ""
       ],
       "Edit contact": [
@@ -7820,9 +7028,6 @@
         ""
       ],
       "Forward": [
-        ""
-      ],
-      "Gift code": [
         ""
       ],
       "Groups": [
@@ -7906,9 +7111,6 @@
       "Moving a scheduled message": [
         ""
       ],
-      "Network error": [
-        ""
-      ],
       "New message": [
         ""
       ],
@@ -7936,34 +7138,13 @@
       "Other names": [
         ""
       ],
-      "Payment details": [
-        ""
-      ],
-      "Payment verification": [
-        ""
-      ],
-      "Payment verification in progress": [
-        ""
-      ],
-      "PayPal verification failed": [
-        ""
-      ],
       "Phone numbers": [
-        ""
-      ],
-      "Plan summary": [
         ""
       ],
       "Previous conversation": [
         ""
       ],
       "Previous message": [
-        ""
-      ],
-      "Processing": [
-        ""
-      ],
-      "Processing...": [
         ""
       ],
       "ProtonMail": [
@@ -7997,9 +7178,6 @@
         ""
       ],
       "Schedule send": [
-        ""
-      ],
-      "Select a plan": [
         ""
       ],
       "Select a theme": [
@@ -8056,13 +7234,7 @@
       "Subject missing": [
         ""
       ],
-      "Subtotal": [
-        ""
-      ],
       "To": [
-        ""
-      ],
-      "Total (monthly)": [
         ""
       ],
       "Trust new key?": [
@@ -8076,9 +7248,6 @@
         ""
       ],
       "Unsubscribe": [
-        ""
-      ],
-      "Unsupported browser": [
         ""
       ],
       "Upgrade required": [
@@ -8104,9 +7273,6 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         ""
-      ],
-      "ZIP / postal code": [
-        ""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8115,25 +7281,10 @@
       ]
     },
     "Tooltip": {
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        ""
-      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         ""
       ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        ""
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        ""
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        ""
-      ],
-      "Discount applied for annual billing cycle": [
-        ""
-      ],
-      "Discount applied for two-year billing cycle": [
         ""
       ],
       "Each imported email will have this label": [
@@ -8148,34 +7299,7 @@
       "Encrypted data with verified digital signature": [
         ""
       ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        ""
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        ""
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        ""
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        ""
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        ""
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        ""
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        ""
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
         ""
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
@@ -8191,12 +7315,6 @@
         ""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        ""
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        ""
-      ],
-      "Use the personal address username@pm.me to send emails": [
         ""
       ],
       "You do not have any contacts to export": [
@@ -8236,123 +7354,6 @@
         ""
       ]
     },
-    "VPN feature": {
-      "${ mailAppName } Visionary": [
-        ""
-      ],
-      "30-days money-back guarantee": [
-        ""
-      ],
-      "Access blocked content": [
-        ""
-      ],
-      "Adblocker (NetShield)": [
-        ""
-      ],
-      "Custom connection profiles": [
-        ""
-      ],
-      "DNS leak prevention": [
-        ""
-      ],
-      "Full Disk Encryption on Servers": [
-        ""
-      ],
-      "Jurisdiction": [
-        ""
-      ],
-      "Kill Switch / Always-on VPN": [
-        ""
-      ],
-      "Languages supported": [
-        ""
-      ],
-      "Locations/Countries": [
-        ""
-      ],
-      "Open Source & audited apps": [
-        ""
-      ],
-      "P2P/BitTorrent": [
-        ""
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        ""
-      ],
-      "Platforms supported": [
-        ""
-      ],
-      "Router support": [
-        ""
-      ],
-      "Secure Core servers": [
-        ""
-      ],
-      "Speed": [
-        ""
-      ],
-      "Split tunneling": [
-        ""
-      ],
-      "Streaming service support": [
-        ""
-      ],
-      "Strict no-logs policy": [
-        ""
-      ],
-      "Tor over VPN": [
-        ""
-      ],
-      "User data monetization": [
-        ""
-      ],
-      "Volume/bandwidth cap": [
-        ""
-      ],
-      "VPN Connections": [
-        ""
-      ],
-      "VPN servers": [
-        ""
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        ""
-      ],
-      "High": [
-        ""
-      ],
-      "Highest (up to 10 Gbps)": [
-        ""
-      ],
-      "Medium": [
-        ""
-      ],
-      "None": [
-        ""
-      ],
-      "Switzerland": [
-        ""
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        ""
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection": [
-        "",
-        ""
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
-      ]
-    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "",
@@ -8375,9 +7376,6 @@
         ""
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [

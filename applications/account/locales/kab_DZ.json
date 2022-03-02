@@ -505,11 +505,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "refresh the page": [
-        "smiren asebter"
-      ],
       "Refresh the page": [
         "Smiren asebter"
+      ],
+      "refresh the page": [
+        "smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -1194,10 +1194,13 @@
       "Continue using ProtonMail.": [
         ""
       ],
-      "Copy ": [
+      "Copy": [
         ""
       ],
       "Invite": [
+        ""
+      ],
+      "Send": [
         ""
       ],
       "Tweet": [
@@ -2311,10 +2314,7 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Awgelhen akked tektert n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, tzemreḍ ad tmedleḍ tankult-agi n udiwenni."
       ],
-      "Get 3 months of Mail Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        ""
-      ],
-      "Invite friends to start earning credits": [
+      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
         ""
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
@@ -2324,7 +2324,10 @@
         "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } n unermis. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen.",
         "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } n yinermisen. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen."
       ],
-      "Track how many people click on your link, sign up to ${ mailAppName }, and become paid subscribers. Watch your free months add up.": [
+      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
+        ""
+      ],
+      "Track your referral link activities here.": [
         ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
@@ -2600,9 +2603,6 @@
       "Invalid ${ name } code": [
         "Tangalt n ${ name } ur d tameɣtut"
       ],
-      "Invalid address": [
-        "Yir tansa"
-      ],
       "Invalid card number": [
         "Yir uṭṭun n tkarḍa"
       ],
@@ -2621,9 +2621,6 @@
       "Invalid name": [
         "Isem arameɣtu"
       ],
-      "Invalid password": [
-        "Yir awal uffir"
-      ],
       "Invalid postal code": [
         "Yir tangalt n lpusṭa"
       ],
@@ -2641,6 +2638,9 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
+        ""
+      ],
+      "Name does not match": [
         ""
       ],
       "Name on card required": [
@@ -3849,6 +3849,9 @@
       ]
     },
     "Info": {
+      "${ appName } ${ planName } credits earned": [
+        ""
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
       ],
@@ -3868,6 +3871,12 @@
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "",
+        ""
+      ],
+      "${ emailAddress } is a ${ appName } address": [
+        ""
+      ],
+      "${ emailAddress } is invalid": [
         ""
       ],
       "${ mailAppName } Free": [
@@ -3902,6 +3911,9 @@
       "${ numContacts } contact": [
         "${ numContacts } n unermis",
         "${ numContacts } n yinermisen"
+      ],
+      "${ planName } plan": [
+        ""
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } d ukaram yettwafen",
@@ -3972,19 +3984,22 @@
         "+${ organization.BonusVPN } tuqqna i ProtonVPN (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)",
         "+${ organization.BonusVPN } tuqqniwin i ProtonVPN (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)"
       ],
-      "1 to 3 months of Mail Plus will appear as credits on your next bill": [
+      "1. Invite friends to Proton": [
         ""
       ],
-      "20 personal calendars": [
+      "2. They try ${ appName } ${ planName }": [
         ""
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% n usenqes i yettwagen ɣef umulteɣ-inek·inem s ukupun ${ code } "
       ],
+      "3. You earn credits": [
+        ""
+      ],
       "30 days money-back guarantee.": [
         "Aɣram ɣef 30 n wussan yettwaḍmen."
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -4076,9 +4091,6 @@
       ],
       "Allow recovery by phone": [
         "Sireg tiririt s usawal"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Ad ak·akem-yeǧǧ ad tmuddeḍ tanezduɣt deg ${ mailAppName } i yimaylen s yismawen-ik·im n taɣult(tiqula), m.d. muhend.belqasem@amedya.com"
       ],
       "Already have an account? ${ loginLink }": [
         "Tesɛiḍ yakan amiḍan? ${ loginLink }"
@@ -4227,10 +4239,10 @@
       "Continue anyway?": [
         "Ad tkemmeleḍ akken yebɣu yili?"
       ],
-      "Continue with plus": [
+      "Continue with ${ planName }": [
         ""
       ],
-      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
         ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
@@ -4254,12 +4266,6 @@
       ],
       "Create in": [
         "Snulfu-d di"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
       ],
       "Creating your Proton account": [
         "Timerna n umiḍan-ik·im n Proton"
@@ -4346,7 +4352,7 @@
       "Each additional connection can be assigned to users in your organization.": [
         "Yal tuqqna-nniḍen tezmer ad tettwamudd i yiseqdacen deg tkebbanit-ik·im."
       ],
-      "Earned ${ rewards } of ${ rewardsLimit } Mail plus months.": [
+      "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
         ""
       ],
       "Edit label": [
@@ -4445,16 +4451,10 @@
       "free up space by deleting older messages or other data": [
         "slelli tallunt s tukksa n yiznan iqburen neɣ isefka-nniḍen"
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN ummid s urured alamma 10 Gbps."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        ""
-      ],
-      "Get rewarded": [
         ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
@@ -4605,7 +4605,7 @@
       "Internet connection restored.": [
         "Tuqqna internet tuɣal-d."
       ],
-      "Invite friends": [
+      "Invited via email": [
         ""
       ],
       "It appears some of your data is encrypted and locked.": [
@@ -4614,10 +4614,13 @@
       "it’s imperative": [
         ""
       ],
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
+        ""
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Sentem kan tafrayt-inek•inem nekni ad neg ayen iqqimen."
       ],
-      "Just send them your personal referral link": [
+      "Just send them your personal referral link.": [
         ""
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
@@ -4676,9 +4679,6 @@
       ],
       "lose access to all current encrypted data": [
         "ad tesruḥeḍ anekcum ɣer meṛṛa isefka imiranen iwgelhanen"
-      ],
-      "Mail Plus credits earned": [
-        ""
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru yeɣɣar isefka-inek·inem udmawanen akken ad yefk tasiregt n unekcum i wid iqeddcen deg udellel, tisnurayin tinabḍanin n Rrus akked yiḥricen-niḍen n wis kraḍ. I tbaḍnit igerrzen, rnu tansa n yimayl taɣellsant."
@@ -4815,7 +4815,7 @@
       "Paid for a 12 months plan": [
         ""
       ],
-      "Paid for a month plan": [
+      "Paid for a monthly plan": [
         ""
       ],
       "Payment can take a few minutes to fully verify.": [
@@ -4887,14 +4887,17 @@
       "Plus or Visionary subscription required": [
         "Ajerred ɣer Plus neɣ Visionary yettusra"
       ],
-      "Plus plan": [
-        ""
-      ],
       "Prevents content from the sender's server from loading without your permission.": [
         ""
       ],
       "Preview": [
         "Taskant"
+      ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
       ],
       "Proton can't help you recover any lost passwords": [
         "Proton ur yezmir ara ad ak·akem-iεawen ad d-terreḍ akk awalen uffiren iṛuḥen"
@@ -4963,9 +4966,6 @@
       "Recovery phrase is not associated with any outdated keys.": [
         ""
       ],
-      "Refer, receive, repeat. You can earn credits for up to 18 months of Mail Plus.": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter n ${ link } ad yefru s wudem awurman aṭas n wuguren."
       ],
@@ -5002,9 +5002,6 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         ""
       ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
-      ],
       "Server is currently down": [
         "Aqeddac akka tura yerreẓ"
       ],
@@ -5035,14 +5032,14 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF ittuseqdac i tumla n wid izemren ad yazen imayl i taɣult, ihi, ad k-nwelleh ad tsedduḍ ProtonMail deg ukalas SPF. Akken ad teggeḍ aya, rnu akalas TXT di twila-ik DNS. Abeddel-agi yezmer ad yettwag deg ugalis n usenqed n taɣulut-ik n umsefrak n yismawen n taɣult."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Aqeddac VPN n uskar s tallalt n P2P akked umsewḥel n udellel."
       ],
       "Storage GB": [
         "Asekles GAṬ"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
       ],
       "Sucessfully sent invites": [
         ""
@@ -5077,9 +5074,6 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         ""
       ],
-      "The 30-day free trial is not available any other way": [
-        ""
-      ],
       "The calendar will be removed from your account.": [
         "Awitay ad yettwakkes seg umiḍan-ik·im."
       ],
@@ -5095,7 +5089,7 @@
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ifuyla-agi n twila ad k•m ǧǧen ad tferneḍ anwa aqeddac n ProtonVPN iɣer ara teqqneḍ mi ara tesqedceḍ asnas VPN n wis kraḍ neɣ ad tesbaduḍ tuqqna VPN ɣef umeglay."
       ],
-      "They signup": [
+      "This 30-day free trial is not available any other way.": [
         ""
       ],
       "This account has been suspended due to a potential policy violation.": [
@@ -5236,6 +5230,9 @@
       "Unlimited folders, labels, and filters": [
         ""
       ],
+      "Unlimited messages": [
+        ""
+      ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
       ],
@@ -5254,7 +5251,7 @@
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Sali aswir ɣer lqem n lexlaṣ akken ad tekkseḍ asekkeṛ i tedhelt n IMAP/SMTP s ttawil n ProtonMail Bridge."
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -5347,6 +5344,9 @@
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Ticki remden ilɣa, ad k-nazen tangedwit ɣer tansa-inek n ilɣa/tangedwit ticki teṭṭfeḍ-d iznan imaynutn deg umiḍan-inek ProtonMail."
       ],
+      "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
+        ""
+      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Mi ara talseḍ tikkelt-nniḍen i umulteɣ-inek·inem, ad nseqdec qbel ayen akk yellan n yisemdan send ad nebdu tarrayin n lexlaṣ ddaw."
       ],
@@ -5406,6 +5406,9 @@
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Tzemreḍ ad tesqedceḍ inekcam-agi n tuqqna akken ad teqqneḍ ɣer uqeddac n ProtonVPN, s useqdec n usnas VPN n wis kraḍ, n uɣbalu yeldin, akka am Tunnelblick i macOS neɣ OpenVPN i GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Ur tezmireḍ ara ad tesqedceḍ inekcam n tuqqna n OpenVPN / IKEv2 akken adteqqneḍ ɣer yisnasen n ProtonVPN neɣ ɣer tfelwit n tedbelt n ProtonVPN. ${ learnMore }"
@@ -5497,7 +5500,7 @@
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
       ],
-      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
         ""
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
@@ -5971,14 +5974,14 @@
       "Actions": [
         "Tigawin"
       ],
+      "Activity": [
+        ""
+      ],
       "Address": [
         "Tansa"
       ],
       "Addresses": [
         "Tansiwin"
-      ],
-      "Admin rights": [
-        "Izerfan n unedbal"
       ],
       "ALL": [
         "AKK"
@@ -6138,6 +6141,9 @@
       ],
       "Daily email notifications": [
         "Ilɣa imayl imezwar"
+      ],
+      "Date": [
+        ""
       ],
       "Date format": [
         "Amasal n wazemz"
@@ -6463,9 +6469,6 @@
       "Previous password": [
         "Awal uffir uzwir"
       ],
-      "Private User": [
-        "Aqeddac uslig"
-      ],
       "Prompt to trust keys": [
         "Uɣal ɣer tsura yettwamanen"
       ],
@@ -6519,9 +6522,6 @@
       ],
       "Send invites in": [
         "Invitation language"
-      ],
-      "Share your invitation link": [
-        ""
       ],
       "Show secondary time zone": [
         "Sken izḍi usrid wis sin"
@@ -6690,6 +6690,9 @@
       ],
       "Your password (admin)": [
         "Awal-ik uffir (anedbal)"
+      ],
+      "Your referral link": [
+        ""
       ],
       "Your reward": [
         ""
@@ -6968,8 +6971,8 @@
       "Contact groups": [
         "Igrawen n unermes"
       ],
-      "Custom email addresses": [
-        "Tansiwin n yimayl tudmawanin"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Imzizdigen udmawanen"
@@ -7693,9 +7696,6 @@
       "Choose a name": [
         "Fren isem"
       ],
-      "Choose address": [
-        "Fren tansa"
-      ],
       "Choose display name": [
         "Fren isem ara d-yettwaseknen"
       ],
@@ -7777,9 +7777,6 @@
       "Type text or keyword": [
         "Aru aḍris neɣ awal ufrin"
       ],
-      "Username": [
-        "Isem n useqdac"
-      ],
       "yourdomain.com": [
         "taɣult-inek.com"
       ],
@@ -7852,8 +7849,8 @@
       "Built-in Adblocker (NetShield)": [
         "Amsewḥel n udellel usliɣ (NetShield)"
       ],
-      "Custom email addresses": [
-        "Tansiwin n yimayl tudmawanin"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Anekcum uzwir ɣer yifarisen imaynuten"
@@ -8134,7 +8131,16 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
+        ""
+      ],
+      "No more missed appointments": [
+        ""
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
         ""
       ]
     },
@@ -8465,6 +8471,9 @@
       ]
     },
     "Title": {
+      "${ appName } ${ planName } trial": [
+        ""
+      ],
       "${ appName } customization": [
         "${ appName } udmawan"
       ],
@@ -8732,11 +8741,11 @@
       "Decrypt key": [
         "Tasarut n tukksa n uwgelhen"
       ],
-      "Delete ${ address.Email }": [
-        "Kkes ${ address.Email }"
-      ],
       "Delete ${ domain.DomainName }": [
         "Kkes ${ domain.DomainName }"
+      ],
+      "Delete ${ email }": [
+        ""
       ],
       "Delete ${ filter.Name }": [
         "Kkes ${ filter.Name }"
@@ -8764,6 +8773,9 @@
       ],
       "Delete user": [
         "Kkes aseqdac"
+      ],
+      "Disable ${ email }": [
+        ""
       ],
       "Disable two-factor authentication": [
         "Sens asesteb s snat n tarrayin"
@@ -8864,11 +8876,14 @@
       "Get ProtonVPN Plus to access all servers": [
         "Awi-d ProtonVPN Plus akken ad tkecmeḍ akk iqeddacen"
       ],
-      "Get up to 18 months of Mail Plus for free": [
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
       ],
       "Gift code": [
         "Tangalt n usefk"
+      ],
+      "How does it work?": [
+        ""
       ],
       "Human verification": [
         "Asenqed b-umdan"
@@ -9029,9 +9044,6 @@
       ],
       "ProtonMail Bridge": [
         "Tiqenṭert ProtonMail"
-      ],
-      "ProtonMail Plus Trial": [
-        ""
       ],
       "ProtonVPN": [
         "ProtonVPN"
@@ -9378,9 +9390,6 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Armad n yiɣmisen leqqayen isseklas tansa n IP i yal tadyant deg uɣmis n tɣellist."
       ],
-      "For easy sharing with all your contacts, the link text “Try ${ mailAppName } Plus Free for one month” is added to the bottom of your emails": [
-        ""
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Kcem ɣer tmahilin akk s lexlaṣ n ${ vpnAppName } d ${ mailAppName } i sin (ameẓlu n yimayl awgelhan i seqdacen yimelyan n yiseqdacen akken ad ḥerzen isefka-nsen) s yiwen n uɣawas."
       ],
@@ -9389,12 +9398,6 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Imaylen n ugraw deg udiwenni-nni kan akken akk deg tbewwaḍt-ik·im n yimaylen neɣ sken-iten-id yal yiwen weḥds."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Sezdeɣ imaylen s yismawen-ik·im n taɣult(tiɣula) deg ${ mailAppName }, m.d. muhend.belqasem@amedya.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Sezdeɣ imaylen s yismawen-ik·im n taɣult(tiɣula) deg ProtonMail, m.d. muhend.belqasem@amedya.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ma yella tuɣeḍ-d tangalt n warraz neɣ tremseḍ-d yiwet seg terbaɛt-nneɣ n tallalt, tzemreḍ ad tt-taruḍ dagi."
@@ -9422,6 +9425,9 @@
       ],
       "Set the default layout for your Inbox.": [
         "Sbadu taneɣruft tamezwert i tbewwaḍt-ik·im n yimayl."
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
+        ""
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Izmulen yettwagan s tsarut-agi ad ttuneḥsaben d irameɣta yerna ulamek ara ttwasqedcen i uwgelhen"
@@ -9458,6 +9464,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Seqdec tansa tudmawant isemnuseqdac@pm.me akken ad tazneḍ imaylen"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Nufa-d ugur d twila-inek·inem DNS. Ttxil-k·m wali ma yella iseklas-inek·inem mṣadan d yiwellihen ddaw. Ma yella mazal yezga wugur, ilaq ad nsen azmul DKIM."

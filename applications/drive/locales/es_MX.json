@@ -86,6 +86,9 @@
       "Clear": [
         "Borrar"
       ],
+      "Clear browser data": [
+        "Borrar datos del navegador"
+      ],
       "Clear data": [
         "Limpiar datos"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         "Personalizar"
-      ],
-      "Decrease": [
-        "Reducir"
       ],
       "Delete": [
         "Eliminar"
@@ -247,8 +247,14 @@
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
       ],
+      "Go to parent": [
+        "Ir a la principal"
+      ],
       "Go to settings": [
         "Ir a ajustes"
+      ],
+      "Got it": [
+        "Entendido"
       ],
       "Hide advanced PGP settings": [
         "Ocultar ajustes PGP avanzados"
@@ -273,9 +279,6 @@
       ],
       "Import from .csv or vCard": [
         "Importar desde .csv o vCard"
-      ],
-      "Increase": [
-        "Aumentar"
       ],
       "Load image": [
         "Cargar imagen"
@@ -427,17 +430,17 @@
       "Resume upload": [
         "Reanudar carga"
       ],
-      "Retry": [
-        "Reintentar"
-      ],
       "Save": [
         "Guardar"
       ],
+      "Search": [
+        "Buscar"
+      ],
+      "Search drive": [
+        "Buscar en unidad"
+      ],
       "Select all": [
         "Seleccionar todo"
-      ],
-      "Select plan": [
-        "Seleccionar plan"
       ],
       "Set recovery phrase": [
         "Establecer frase de recuperación"
@@ -1837,6 +1840,9 @@
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
+      "A problem occurred, please try again": [
+        "Ocurrió un problema, intente de nuevo"
+      ],
       "Amount above the maximum.": [
         "Cantidad superior al máximo."
       ],
@@ -1855,14 +1861,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "No se pueden crear calendarios nuevos para todos los calendarios importados debido al límite de calendarios personales."
       ],
-      "Checkout expired, please try again": [
-        "La compra ha expirado, intente de nuevo"
-      ],
       "Contact could not be saved": [
         "El contacto no se pudo guardar"
       ],
       "Contact signature not verified": [
         "Firma del contacto no verificada"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "La búsqueda de contenido no se puede habilitar en este navegador. Salga del modo de navegación privada o use otro navegador."
       ],
       "Could not find address ${ email }.": [
         "No se pudo encontrar la dirección ${ email }."
@@ -2001,6 +2007,9 @@
       "Payment process not supported": [
         "Proceso de pago no soportado"
       ],
+      "Please activate your content search again": [
+        "Habilite de nuevo la búsqueda de contenido"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Solucione el conflicto resaltado para continuar.",
         "Solucione los conflictos resaltados para continuar."
@@ -2019,6 +2028,9 @@
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
+      ],
+      "Search failed": [
+        "Falló la búsqueda"
       ],
       "Signature not verified": [
         "Firma no verificada"
@@ -2040,9 +2052,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, por favor contacte a nuestro ${ supportTeam }."
-      ],
-      "Tab closed": [
-        "Pestaña cerrada"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que está usando no permite que el pago sea autorizado. Use un navegador diferente o inicie sesión a través de una computadora."
@@ -2496,17 +2505,14 @@
         "+${ organization.BonusVPN } conexión para ProtonVPN (le permite conectar más dispositivos a la VPN)",
         "+${ organization.BonusVPN } conexiones para ProtonVPN (le permite conectar más dispositivos a la VPN)"
       ],
-      "20 personal calendars": [
-        "20 calendarios personales"
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% de descuento aplicado a su suscripción con el cupón ${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 días de garantía de devolución del dinero."
       ],
-      "5 email addresses/aliases": [
-        "5 direcciones/alias"
+      "5 email addresses": [
+        "5 direcciones de correo"
       ],
       "5 GB storage": [
         "5 GB de almacenamiento"
@@ -2537,9 +2543,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está habilitada para esta dirección. Para poder enviar a esta dirección, primero confíe en las claves públicas que se pueden usar para enviar."
-      ],
-      "Addresses": [
-        "Direcciones"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Después de realizar el pago con Bitcoin, siga estas instrucciones para actualizar."
@@ -2573,8 +2576,10 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "¿Está seguro que desea vaciar la papelera y eliminar permanentemente todos los elementos?"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "¿Está seguro que desea eliminar permanentemente el elemento seleccionado de la papelera?",
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        "¿Está seguro que desea eliminar permanentemente \"${ itemName }\" de la papelera?"
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
         "¿Está seguro que desea eliminar permanentemente los elementos seleccionados de la papelera?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
@@ -2613,6 +2618,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contacto ${ progress } de ${ max }..."
       ],
+      "Clear data": [
+        "Borrar datos"
+      ],
+      "Clear encrypted search data": [
+        "Borrar datos de búsqueda cifrados"
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        "Borrar los datos del navegador borrará el índice de búsqueda en este dispositivo. Todos los archivos deberán volver a indexarse mientras se usa la función de búsqueda."
+      ],
+      "Clears browser data related to the encrypted search.": [
+        "Borra los datos de navegación relacionados con la búsqueda cifrada."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si esta dirección es incorrecta, haga clic en \"Editar\" para corregirla."
       ],
@@ -2628,11 +2645,11 @@
       "Conflict": [
         "Conflicto"
       ],
-      "Connections": [
-        "Conexiones"
-      ],
       "Continue using ${ appName } and unlock drive later": [
         "Continuar usando ${ appName } y desbloquear la unidad después"
+      ],
+      "Continue with ${ planName }": [
+        "Continuar con ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } calendario nuevo",
@@ -2652,9 +2669,6 @@
       ],
       "Create links and share your files with others.": [
         "Cree enlaces y comparta sus archivos con otros."
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        "Cree varias direcciones de correo para sus identidades en línea, por ejemplo, JohnShopper@proton.me para cuentas de compras, JohnNews@proton.me para suscripciones de noticias."
       ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Cree hasta 20 calendarios personalizados. Además de eso, agregue hasta 5 calendarios de amigos, familiares, colegas y organizaciones."
@@ -2707,9 +2721,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
-      ],
-      "Expired": [
-        "Expirado"
       ],
       "Failed": [
         "Fallido"
@@ -2798,6 +2809,9 @@
       ],
       "Included": [
         "Incluido"
+      ],
+      "Indexing search results…": [
+        "Indexando resultados de búsqueda…"
       ],
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
@@ -2985,6 +2999,12 @@
       "Primary": [
         "Principal"
       ],
+      "Priority support": [
+        "Soporte prioritario"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus está limitado a un usuario y empieza con 5 GB de almacenamiento."
       ],
@@ -3009,6 +3029,9 @@
       ],
       "Screenshot(s) attached": [
         "Captura(s) añadida(s)"
+      ],
+      "Search cannot be enabled in this browser": [
+        "No se puede habilitar la búsqueda en este navegador"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Seleccione un archivo cargado o carpeta y cree un enlace."
@@ -3039,6 +3062,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Algo salió mal, intente de nuevo más tarde."
+      ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        "Comience con 500 MB y desbloquee más almacenamiento. El espacio de almacenamiento es compartido a través de Correo, Calendario y Drive."
       ],
       "Starter VPN service with P2P support.": [
         "Servicio inicial de VPN con soporte P2P."
@@ -3107,6 +3133,12 @@
       "This will overwrite the existing folder": [
         "Esto sobrescribirá la carpeta existente"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
@@ -3134,8 +3166,14 @@
       "Trash": [
         "Papelera"
       ],
+      "Try different keywords": [
+        "Intente palabras clave diferentes"
+      ],
       "Unlimited folders, labels, and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Unlimited messages": [
+        "Mensajes ilimitados"
       ],
       "Unlock drive to recover files": [
         "Desbloquear unidad para recuperar los archivos"
@@ -3145,6 +3183,9 @@
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Actualice hoy y mantenga el acceso a la solución Correo y Calendario que prioriza la privacidad para sus necesidades de comunicación diarias."
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+        "Actualice hoy y evite perder los beneficios de ${ appName } ${ planName }."
       ],
       "Uploaded": [
         "Cargado"
@@ -3839,8 +3880,8 @@
       "Contact groups": [
         "Grupos de contactos"
       ],
-      "Custom email addresses": [
-        "Direcciones de correo personalizadas"
+      "Custom domains": [
+        "Dominios personalizados"
       ],
       "Custom filters": [
         "Filtros personalizados"
@@ -3953,28 +3994,42 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" movido con éxito"
+      "\"${ name }\" deleted permanently from trash": [
+        "\"${ name }\" eliminado permanentemente de la papelera"
       ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" eliminado permanentemente de la papelera"
+      "\"${ name }\" failed to be created": [
+        "Error al crear \"${ name }\""
       ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" no se pudo mover"
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        "Error al eliminar \"${ name }\" permanentemente de la papelera"
       ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" movido a la papelera"
+      "\"${ name }\" failed to be moved": [
+        "No se pudo mover \"${ name }\""
       ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" restaurado de la papelera"
+      "\"${ name }\" failed to be moved to trash": [
+        "Error al mover \"${ name }\" a la papelera"
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        "Error al restaurar \"${ name }\" de la papelera"
+      ],
+      "\"${ name }\" moved to trash": [
+        "\"${ name }\" movido a la papelera"
+      ],
+      "\"${ name }\" restored from trash": [
+        "\"${ name }\" restaurado de la papelera"
+      ],
+      "\"${ name }\" successfully moved": [
+        "\"${ name }\" movido con éxito"
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        "Error al renombrar \"${ newName }\""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        "\"${ newName }\" renombrado con éxito"
       ],
       "${ count } item failed to be decrypted": [
         "Error al descifrar ${ count } elemento",
         "Error al descifrar ${ count } elementos"
-      ],
-      "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } enlace a su archivo fue eliminado",
-        "${ deletedCount } enlaces a sus archivos fueron eliminados"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } archivo eliminado permanentemente de la papelera",
@@ -3983,10 +4038,6 @@
       "${ deletedItemsCount } folder deleted permanently from trash": [
         "${ deletedItemsCount } carpeta eliminada permanentemente de la papelera",
         "${ deletedItemsCount } carpetas eliminadas permanentemente de la papelera"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } elemento eliminado permanentemente de la papelera",
-        "${ deletedItemsCount } elementos eliminados permanentemente de la papelera"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "No se pudo eliminar ${ failedCount } enlace a su archivo",
@@ -4000,21 +4051,52 @@
         "${ failedMovesCount } carpeta no se pudo mover",
         "${ failedMovesCount } carpetas no se pudieron mover"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } elemento no se pudo mover",
-        "${ failedMovesCount } elementos no se pudieron mover"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } archivo movido con éxito",
-        "${ movedLinksCount } archivos movidos con éxito"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } carpeta movida con éxito",
         "${ movedLinksCount } carpetas movidas con éxito"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } elemento movido con éxito",
-        "${ movedLinksCount } elementos movidos con éxito"
+      "${ name } created successfully": [
+        "${ name } creado con éxito"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } elemento eliminado permanentemente de la papelera",
+        "${ numberOfItems } elementos eliminados permanentemente de la papelera"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "Error al eliminar ${ numberOfItems } elemento permanentemente de la papelera",
+        "Error al eliminar ${ numberOfItems } elementos permanentemente de la papelera"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "${ numberOfItems } elemento no se pudo mover",
+        "${ numberOfItems } elementos no se pudieron mover"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "Error al mover ${ numberOfItems } elemento a la papelera",
+        "Error al mover ${ numberOfItems } elementos a la papelera"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "Error al restaurar ${ numberOfItems } elemento de la papelera",
+        "Error al restaurar ${ numberOfItems } elementos de la papelera"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } elemento movido a la papelera",
+        "${ numberOfItems } elementos movidos a la papelera"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems } elemento restaurado de la papelera",
+        "${ numberOfItems } elementos restaurados de la papelera"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } elemento movido con éxito",
+        "${ numberOfItems } elementos movidos con éxito"
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "Error al eliminar ${ numberOfItems } enlace a su archivo",
+        "Error al eliminar ${ numberOfItems } enlaces a sus archivos"
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "${ numberOfItems } enlace a su elemento fue eliminado",
+        "${ numberOfItems } enlaces a su elementos fueron eliminados"
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } archivo restaurado de la papelera",
@@ -4024,10 +4106,6 @@
         "${ restoredItemsCount } carpeta restaurada de la papelera",
         "${ restoredItemsCount } carpetas restauradas de la papelera"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } elemento restaurado de la papelera",
-        "${ restoredItemsCount } elementos restaurados de la papelera"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } archivo movido a la papelera",
         "${ trashedLinksCount } archivos movidos a la papelera"
@@ -4035,10 +4113,6 @@
       "${ trashedLinksCount } folder moved to trash": [
         "${ trashedLinksCount } carpeta movida a la papelera",
         "${ trashedLinksCount } carpetas movidas a la papelera"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } elemento movido a la papelera",
-        "${ trashedLinksCount } elementos movidos a la papelera"
       ],
       "All items will soon be permanently deleted from trash": [
         "Todos los elementos serán eliminados permanentemente de la papelera"
@@ -4051,6 +4125,9 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
+      ],
+      "Encrypted search activated": [
+        "Búsqueda cifrada activada"
       ],
       "Failed to download files: ${ err }": [
         "Error al descargar los archivos: ${ err }"
@@ -4110,17 +4187,26 @@
       "Subfolder failed to be loaded": [
         "Error al cargar la subcarpeta"
       ],
-      "The link to your file failed to be deleted": [
-        "No se pudo eliminar el enlace al archivo"
+      "The link to \"${ name }\" failed to be deleted": [
+        "Error al eliminar el enlace a \"${ name }\""
       ],
-      "The link to your file was deleted": [
-        "El enlace a su archivo fue eliminado"
+      "The link to \"${ name }\" was deleted": [
+        "El enlace a \"${ name }\" fue eliminado"
+      ],
+      "The link to your item failed to be deleted": [
+        "Error al eliminar el enlace a su elemento"
+      ],
+      "The link to your item was deleted": [
+        "El enlace a su elemento fue eliminado"
       ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
       ],
       "Your old files will be deleted in 72 hours": [
         "Sus archivos antiguos serán eliminados en 72 horas"
+      ],
+      "Your settings failed to be saved": [
+        "Error al guardar sus ajustes"
       ],
       "Your settings have been changed successfully": [
         "Los ajustes se han cambiado con éxito"
@@ -4361,8 +4447,8 @@
       "Built-in Adblocker (NetShield)": [
         "Bloqueador de anuncios integrado (NetShield)"
       ],
-      "Custom email addresses": [
-        "Direcciones de correo personalizadas"
+      "Custom domains": [
+        "Dominios personalizados"
       ],
       "Early access to new products": [
         "Acceso anticipado a productos nuevos"
@@ -4472,6 +4558,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        "Obtenga hasta 18 meses de ${ appName } ${ planName } gratis"
+      ],
       "Invite friends and earn rewards!": [
         "¡Invite a sus amigos y gane recompensas!"
       ]
@@ -4736,9 +4825,6 @@
       "Contacts": [
         "Contactos"
       ],
-      "Coupon discount": [
-        "Cupón de descuento"
-      ],
       "Create a new folder": [
         "Crear una carpeta nueva"
       ],
@@ -4747,9 +4833,6 @@
       ],
       "Create new group": [
         "Crear grupo nuevo"
-      ],
-      "Credits": [
-        "Créditos"
       ],
       "Currency": [
         "Moneda"
@@ -4933,6 +5016,9 @@
       "Network error": [
         "Error de red"
       ],
+      "No results found": [
+        "No se encontraron resultados"
+      ],
       "Number of files": [
         "Número de archivos"
       ],
@@ -5005,8 +5091,11 @@
       "Restore your files": [
         "Restaure sus archivos"
       ],
-      "Select a plan": [
-        "Seleccione un plan"
+      "Search results": [
+        "Buscar resultados"
+      ],
+      "Searching…": [
+        "Buscando…"
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -5200,6 +5289,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Use la dirección personal usuario@pm.me para enviar correos electrónicos"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Use sus propias direcciones de dominio de correo personalizadas, por ejemplo, usted@sunombre.com"
       ],
       "You do not have any contacts to export": [
         "No tiene ningún contacto para exportar"
