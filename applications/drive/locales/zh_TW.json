@@ -86,6 +86,9 @@
       "Clear": [
         "清除"
       ],
+      "Clear browser data": [
+        ""
+      ],
       "Clear data": [
         "清除資料"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         "自訂"
-      ],
-      "Decrease": [
-        "減少"
       ],
       "Delete": [
         "刪除"
@@ -245,8 +245,14 @@
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
       ],
+      "Go to parent": [
+        ""
+      ],
       "Go to settings": [
         "前往設定"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
@@ -272,11 +278,8 @@
       "Import from .csv or vCard": [
         "從 .csv 或 vCard 匯入"
       ],
-      "Increase": [
-        "增加"
-      ],
       "Load image": [
-        "載入相片"
+        "載入圖片"
       ],
       "Loading verification": [
         "載入驗證中"
@@ -425,17 +428,17 @@
       "Resume upload": [
         "恢復上載"
       ],
-      "Retry": [
-        "重試"
-      ],
       "Save": [
         "儲存"
       ],
+      "Search": [
+        ""
+      ],
+      "Search drive": [
+        ""
+      ],
       "Select all": [
         "全選"
-      ],
-      "Select plan": [
-        "選擇方案"
       ],
       "Set recovery phrase": [
         "設定恢復短語"
@@ -1828,6 +1831,9 @@
       "A group with this name already exists": [
         "此名稱的群組已存在。"
       ],
+      "A problem occurred, please try again": [
+        ""
+      ],
       "Amount above the maximum.": [
         "金額高於上限。"
       ],
@@ -1846,14 +1852,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
       ],
-      "Checkout expired, please try again": [
-        "結帳已逾時，請重試"
-      ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
       ],
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "找不到電子郵件地址 ${ email }。"
@@ -1987,6 +1993,9 @@
       "Payment process not supported": [
         "不支援此付款方式"
       ],
+      "Please activate your content search again": [
+        ""
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
       ],
@@ -2004,6 +2013,9 @@
       ],
       "Request timed out": [
         "請求逾時"
+      ],
+      "Search failed": [
+        ""
       ],
       "Signature not verified": [
         "簽章尚未驗證"
@@ -2025,9 +2037,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
-      ],
-      "Tab closed": [
-        "分頁已關閉"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您目前使用的瀏覽器無法完成支付認證，請使用其他瀏覽器或透過電腦登入。"
@@ -2452,16 +2461,13 @@
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 個 ProtonVPN 連線（讓您可以將更多裝置連上 VPN）"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用 20% 折扣"
       ],
       "30 days money-back guarantee.": [
         "30 天退款保證。"
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -2494,9 +2500,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電子郵件地址已啟用以受信任的金鑰驗證地址。若要傳送到此電子郵件地址，請首先信任可用於傳送的公開金鑰。"
       ],
-      "Addresses": [
-        "電子郵件地址"
-      ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "進行比特幣付款後，請依照下列指示來升級。"
       ],
@@ -2527,8 +2530,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您確定要清空垃圾桶並永久刪除當中所有項目嗎？"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "您確定要從垃圾桶中永久刪除選取的項目嗎？"
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        ""
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        ""
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "由於${ appName } 是端到端加密的，因此我們無法為您解密或存取您的資料。為了確保密碼重設後您仍能解鎖雲端硬碟，您必須具備以下條件之一："
@@ -2566,6 +2572,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "正在檢查聯絡人 ${ progress } / ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
+      "Clear encrypted search data": [
+        ""
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        ""
+      ],
+      "Clears browser data related to the encrypted search.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此電子郵件地址不正確，請按一下「編輯」作出修正。"
       ],
@@ -2581,11 +2599,11 @@
       "Conflict": [
         "衝突"
       ],
-      "Connections": [
-        "連線"
-      ],
       "Continue using ${ appName } and unlock drive later": [
         "繼續使用 ${ appName } 並在稍後解鎖雲端硬碟"
+      ],
+      "Continue with ${ planName }": [
+        ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "建立 ${ calendarsToBeCreated } 個新行事曆"
@@ -2604,9 +2622,6 @@
       ],
       "Create links and share your files with others.": [
         "建立連結並與其他人分享您的檔案。"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
       ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         ""
@@ -2658,9 +2673,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送 ${ destinationText }，請在下方輸入。"
-      ],
-      "Expired": [
-        "已失效"
       ],
       "Failed": [
         "失敗"
@@ -2748,6 +2760,9 @@
       ],
       "Included": [
         "已包含"
+      ],
+      "Indexing search results…": [
+        ""
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
@@ -2935,6 +2950,12 @@
       "Primary": [
         "主要"
       ],
+      "Priority support": [
+        "優先支援"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus 限於一位使用者，儲存空間以 5 GB 起計。"
       ],
@@ -2958,6 +2979,9 @@
       ],
       "Screenshot(s) attached": [
         "已附加的螢幕截圖"
+      ],
+      "Search cannot be enabled in this browser": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "選取已上傳的檔案或資料夾並為其建立連結。"
@@ -2988,6 +3012,9 @@
       ],
       "Something went wrong, please try again later.": [
         "發生錯誤，請稍後再試。"
+      ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "支援 P2P 的入門級VPN服務。"
@@ -3055,6 +3082,12 @@
       "This will overwrite the existing folder": [
         "這將會覆寫現有的資料夾"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
       ],
@@ -3082,7 +3115,13 @@
       "Trash": [
         "垃圾桶"
       ],
+      "Try different keywords": [
+        ""
+      ],
       "Unlimited folders, labels, and filters": [
+        ""
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Unlock drive to recover files": [
@@ -3093,6 +3132,9 @@
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         ""
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+        "現在就升級，以免錯失 ${ appName } ${ planName } 福利。"
       ],
       "Uploaded": [
         "已上載"
@@ -3786,8 +3828,8 @@
       "Contact groups": [
         "聯絡人群組"
       ],
-      "Custom email addresses": [
-        "自訂電子郵件地址"
+      "Custom domains": [
+        "自訂網域"
       ],
       "Custom filters": [
         "自訂篩選器"
@@ -3898,35 +3940,47 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" 已成功移動"
+      "\"${ name }\" deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" 已從垃圾桶中永久刪除"
+      "\"${ name }\" failed to be created": [
+        ""
       ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" 移動失敗"
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" 已移至垃圾桶"
+      "\"${ name }\" failed to be moved": [
+        ""
       ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" 已從垃圾桶中還原"
+      "\"${ name }\" failed to be moved to trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        ""
+      ],
+      "\"${ name }\" moved to trash": [
+        ""
+      ],
+      "\"${ name }\" restored from trash": [
+        ""
+      ],
+      "\"${ name }\" successfully moved": [
+        ""
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        ""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        ""
       ],
       "${ count } item failed to be decrypted": [
         "${ count } 個項目解密失敗"
-      ],
-      "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } 個檔案連結已刪除"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } 個檔案已從垃圾桶中永久刪除"
       ],
       "${ deletedItemsCount } folder deleted permanently from trash": [
         "${ deletedItemsCount } 個資料夾已從垃圾桶中永久刪除"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } 個項目已從垃圾桶中永久刪除"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "未能刪除${ failedCount } 個檔案連結"
@@ -3937,17 +3991,41 @@
       "${ failedMovesCount } folder failed to be moved": [
         "${ failedMovesCount } 個資料夾移動失敗"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } 個項目移動失敗"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } 個檔案已成功移動"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } 個資料夾已成功移動"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } 個項目已成功移動"
+      "${ name } created successfully": [
+        ""
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        ""
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        ""
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        ""
+      ],
+      "${ numberOfItems } item moved to trash": [
+        ""
+      ],
+      "${ numberOfItems } item restored from trash": [
+        ""
+      ],
+      "${ numberOfItems } item successfully moved": [
+        ""
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        ""
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        ""
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } 個檔案已從垃圾桶中還原"
@@ -3955,17 +4033,11 @@
       "${ restoredItemsCount } folder restored from trash": [
         "${ restoredItemsCount } 個資料夾已從垃圾桶中還原"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } 個項目已從垃圾桶中還原"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } 個檔案已移至垃圾桶"
       ],
       "${ trashedLinksCount } folder moved to trash": [
         "${ trashedLinksCount } 個資料夾已移至垃圾桶"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } 個項目已移至垃圾桶"
       ],
       "All items will soon be permanently deleted from trash": [
         "所有項目將從「垃圾桶」中永久刪除"
@@ -3978,6 +4050,9 @@
       ],
       "Contact group updated": [
         "聯絡人群組已更新"
+      ],
+      "Encrypted search activated": [
+        ""
       ],
       "Failed to download files: ${ err }": [
         "無法下載檔案： ${ err }"
@@ -4030,17 +4105,26 @@
       "Subfolder failed to be loaded": [
         "子資料夾載入失敗"
       ],
-      "The link to your file failed to be deleted": [
-        "未能刪除您的檔案連結"
+      "The link to \"${ name }\" failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted": [
-        "已刪除此檔案的連結"
+      "The link to \"${ name }\" was deleted": [
+        ""
+      ],
+      "The link to your item failed to be deleted": [
+        ""
+      ],
+      "The link to your item was deleted": [
+        ""
       ],
       "Trash failed to be emptied": [
         "無法清空垃圾桶"
       ],
       "Your old files will be deleted in 72 hours": [
         "您的舊資料夾將於72小時後刪除"
+      ],
+      "Your settings failed to be saved": [
+        ""
       ],
       "Your settings have been changed successfully": [
         "您的設定已成功變更。"
@@ -4281,8 +4365,8 @@
       "Built-in Adblocker (NetShield)": [
         "內置廣告攔截程式 (NetShield)"
       ],
-      "Custom email addresses": [
-        "自訂電子郵件地址"
+      "Custom domains": [
+        "自訂網域"
       ],
       "Early access to new products": [
         "搶先體驗新產品"
@@ -4390,6 +4474,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
         ""
       ]
@@ -4648,9 +4735,6 @@
       "Contacts": [
         "聯絡人"
       ],
-      "Coupon discount": [
-        "優惠券折扣"
-      ],
       "Create a new folder": [
         "建立新資料夾"
       ],
@@ -4659,9 +4743,6 @@
       ],
       "Create new group": [
         "建立新群組"
-      ],
-      "Credits": [
-        "餘額"
       ],
       "Currency": [
         "貨幣"
@@ -4843,6 +4924,9 @@
       "Network error": [
         "網路錯誤"
       ],
+      "No results found": [
+        ""
+      ],
       "Number of files": [
         "檔案數量"
       ],
@@ -4915,8 +4999,11 @@
       "Restore your files": [
         "還原您的檔案"
       ],
-      "Select a plan": [
-        "請選擇一個方案"
+      "Search results": [
+        ""
+      ],
+      "Searching…": [
+        ""
       ],
       "Select a theme": [
         "選擇佈景主題"
@@ -5110,6 +5197,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "使用個人地址 username@pm.me 來傳送電子郵件"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "使用自訂的電子郵件地址，像是：you@yourname.com"
       ],
       "You do not have any contacts to export": [
         "您沒有任何可匯出的聯絡人"

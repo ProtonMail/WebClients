@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ boldSave } by switching to annual billing": [
-        "Yıllık faturaya geçerek ${ boldSave }"
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } tanıtımı"
       ],
@@ -89,9 +86,6 @@
       "All Unstarred": [
         "Tüm yıldızsızlar"
       ],
-      "annual billing": [
-        "yıllık fatura"
-      ],
       "Apply": [
         "Uygula"
       ],
@@ -167,12 +161,6 @@
       "Color": [
         "Renk"
       ],
-      "Compare all features": [
-        "Tüm özellikleri karşılaştırın"
-      ],
-      "Compare plans": [
-        "Tarifeleri karşılaştır"
-      ],
       "Compose": [
         "Oluştur"
       ],
@@ -223,9 +211,6 @@
       ],
       "Customize": [
         "Özelleştir"
-      ],
-      "Decrease": [
-        "Azalt"
       ],
       "Decrypt": [
         "Şifreyi çöz"
@@ -424,9 +409,6 @@
       "Import messages": [
         "İletileri içe aktar"
       ],
-      "Increase": [
-        "Artır"
-      ],
       "Inline": [
         "Satır arası"
       ],
@@ -478,9 +460,6 @@
       ],
       "Load unprotected": [
         "Korumayı kaldırıp yükle"
-      ],
-      "Loading verification": [
-        "Doğrulama yükleniyor"
       ],
       "Loading${ ellipsis }": [
         "Yükleniyor${ ellipsis }"
@@ -599,9 +578,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } uygulamasını aç"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "${ CALENDAR_APP_NAME } ayarlarını açın"
-      ],
       "Open calendar": [
         "Takvimi aç"
       ],
@@ -622,9 +598,6 @@
       ],
       "Pause": [
         "Duraklat"
-      ],
-      "Pay": [
-        "Öde"
       ],
       "Preview": [
         "Ön izleme"
@@ -683,12 +656,6 @@
       "Remove ${ attachmentName }": [
         "${ attachmentName } dosyasını kaldır"
       ],
-      "Remove bonuses": [
-        "Ödülleri kaldır"
-      ],
-      "Remove gift code": [
-        "Hediye kodunu kaldır"
-      ],
       "Remove this label": [
         "Bu etiketi kaldır"
       ],
@@ -715,9 +682,6 @@
       ],
       "Resume": [
         "Sürdür"
-      ],
-      "Retry": [
-        "Yeniden dene"
       ],
       "Revert to original display": [
         "Özgün görünüme geri dön"
@@ -751,9 +715,6 @@
       ],
       "Select all messages": [
         "Tüm iletileri seç"
-      ],
-      "Select plan": [
-        "Tarifeyi seçin"
       ],
       "Send": [
         "Gönder"
@@ -927,12 +888,6 @@
       "Use ${ label } theme": [
         "${ label } teması kullanılsın"
       ],
-      "Use a different card": [
-        "Başka bir kart kullanın"
-      ],
-      "Use a different payment method": [
-        "Başka bir ödeme yöntemi kullanın"
-      ],
       "Use for sending": [
         "Gönderim için kullan"
       ],
@@ -1025,27 +980,6 @@
       ],
       "Participant added": [
         "Katılımcı eklendi"
-      ]
-    },
-    "Addon": {
-      "+ ${ addresses } email address": [
-        "+ ${ addresses } e-posta adresi",
-        "+ ${ addresses } e-posta adresi"
-      ],
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } özel etki alanı",
-        "+ ${ domains } özel etki alanı"
-      ],
-      "+ ${ members } user": [
-        "+ ${ members } kullanıcı",
-        "+ ${ members } kullanıcı"
-      ],
-      "+ ${ storage } storage": [
-        "+ ${ storage } depolama alanı"
-      ],
-      "+ ${ vpn } connection": [
-        "+ ${ vpn } bağlantısı",
-        "+ ${ vpn } bağlantısı"
       ]
     },
     "Alert": {
@@ -1148,23 +1082,6 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
-      ]
-    },
-    "Billing cycle option": {
-      "Annually": [
-        "Yıllık"
-      ],
-      "Annually SAVE 20%": [
-        "Yıllık %20 İNDİRİM"
-      ],
-      "Monthly": [
-        "Aylık"
-      ],
-      "Two years SAVE 33%": [
-        "İki yıllık %33 İNDİRİM"
-      ],
-      "Two-year": [
-        "İki yıllık"
       ]
     },
     "blackfriday Action": {
@@ -1342,31 +1259,6 @@
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         "Bir takvim etkinliği var"
-      ]
-    },
-    "Calendar feature": {
-      "Calendar import": [
-        "Takvim içe aktarma"
-      ],
-      "Invitations": [
-        "Davetler"
-      ],
-      "Multiple calendars": [
-        "Birden çok takvim"
-      ],
-      "Recurring events": [
-        "Yinelenen etkinlikler"
-      ],
-      "Share Calendar via link": [
-        "Bağlantı ile takvim paylaşma"
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        "20 / kullanıcı"
-      ],
-      "20 / user *": [
-        "20 / kullanıcı *"
       ]
     },
     "Calendar invite buttons label": {
@@ -1823,16 +1715,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } gün",
-        "${ days } gün"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } ay",
-        "${ monthsWithYears } ay"
       ]
     },
     "Country name": {
@@ -2728,25 +2610,9 @@
         "Yeni e-posta alındı"
       ]
     },
-    "Disney": {
-      "Disney+": [
-        "Disney+"
-      ]
-    },
     "Download attachments": {
       "Download all": [
         "Tümünü indir"
-      ]
-    },
-    "Drive feature": {
-      "Access via Web": [
-        "Web üzerinden erişim"
-      ],
-      "Share files via link": [
-        "Bağlantı ile dosya paylaşma"
-      ],
-      "Upload / download files": [
-        "Dosya yükleme / indirme"
       ]
     },
     "Early Access Disabled": {
@@ -2876,12 +2742,6 @@
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
       ],
-      "Amount above the maximum.": [
-        "Tutar en fazla miktarın üstünde."
-      ],
-      "Amount below minimum.": [
-        "Tutar en az miktarın altında."
-      ],
       "Attachments are limited to 25 MB": [
         "Ek dosyaların boyutu 25 MB ile sınırlıdır"
       ],
@@ -2899,9 +2759,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kişisel takvim sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler oluşturulamıyor."
-      ],
-      "Checkout expired, please try again": [
-        "Ödeme süresi dolmuş. Lütfen yeniden deneyin"
       ],
       "Choose a date in the future.": [
         "Gelecekte bir zaman seçin."
@@ -2963,9 +2820,6 @@
       "Enter a password": [
         "Bir parola yazın"
       ],
-      "Error connecting to the Bitcoin API.": [
-        "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
-      ],
       "Error in one of the conditions": [
         "Koşullardan biri hatalı"
       ],
@@ -2999,26 +2853,11 @@
       "Incorrect mailbox password. Please try again.": [
         "Posta kutusu parolası yanlış. Lütfen yeniden deneyin."
       ],
-      "Invalid ${ name } code": [
-        "${ name } kodu geçersiz"
-      ],
-      "Invalid card number": [
-        "Kart numarası geçersiz"
-      ],
-      "Invalid code": [
-        "Kod geçersiz"
-      ],
-      "Invalid expiration date": [
-        "Son kullanma tarihi geçersiz"
-      ],
       "Invalid expiration time": [
         "Geçerlilik süresi geçersiz"
       ],
       "Invalid name": [
         "Ad geçersiz"
-      ],
-      "Invalid postal code": [
-        "Posta kodu geçersiz"
       ],
       "Invalid public key file": [
         "Herkese açık anahtar dosyası geçersiz"
@@ -3028,6 +2867,9 @@
       ],
       "Label name cannot be empty": [
         "Etiket adı boş olamaz"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "Eklenebilecek en fazla dosya sayısı (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) sınırı aşıldı."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
@@ -3041,9 +2883,6 @@
       ],
       "Missing signature": [
         "İmza eksik"
-      ],
-      "Name on card required": [
-        "Kartın üzerindeki ad yazılmalı"
       ],
       "Network error: Please check your connection and try again.": [
         "Ağ hatası: Lütfen bağlantınızı denetleyip yeniden deneyin."
@@ -3080,23 +2919,8 @@
         "Gruplardan birinde kişi yok: ${ noContactGroupList }",
         "Gruplardan bazılarında kişi yok: ${ noContactGroupList }"
       ],
-      "Organization not recognized. Try again.": [
-        "Kuruluş belirlenemedi. Yeniden deneyin."
-      ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
-      ],
-      "Payment process cancelled": [
-        "Ödeme işlemi iptal edildi"
-      ],
-      "Payment process consumed": [
-        "Ödeme işleminin süresi geçmiş"
-      ],
-      "Payment process failed": [
-        "Ödeme işlemi tamamlanamadı"
-      ],
-      "Payment process not supported": [
-        "Ödeme işlemi desteklenmiyor"
       ],
       "Please activate your content search again": [
         "Lütfen içerik aramayı yeniden etkinleştirin"
@@ -3119,9 +2943,6 @@
       ],
       "Primary address key is not decrypted.": [
         "Birincil adres anahtarının şifresi çözülemedi."
-      ],
-      "Process aborted": [
-        "İşlem iptal edildi"
       ],
       "Public key could not be trusted": [
         "Herkese açık anahtara güvenilemedi"
@@ -3169,15 +2990,9 @@
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Ne yazık ki, Proton iletinizin şifresini çözemiyor. Lütfen tüm anahtarlarınızın etkin olduğundan emin olun."
       ],
-      "Tab closed": [
-        "Sekme kapatıldı"
-      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Ek dosyanın şifresi çözülemedi.\nİlgili kişisel anahtara sahipseniz, GnuPG gibi programlarla dosyanın şifresini çözebilirsiniz.",
         "Bazı ek dosyaların şifresi çözülemedi.\nİlgili kişisel anahtara sahipseniz, GnuPG gibi programlarla dosyaların şifresini çözebilirsiniz."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Kullanmakta olduğunuz web tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir web tarayıcı kullanın ya da bilgisayar ile oturum açın."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Klasör adı çok uzun. Lütfen farklı bir ad seçin."
@@ -3190,15 +3005,6 @@
       ],
       "The maximum expiration is 4 weeks": [
         "En uzun geçerlilik süresi 4 haftadır"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Eklenebilecek en az kredi tutarı: ${ _price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Bağışlanabilecek en az tutar: ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Kabul ettiğimiz en az ödeme: ${ _price2 }"
       ],
       "The sending key is not valid": [
         "Gönderim anahtarı geçersiz"
@@ -3244,9 +3050,6 @@
       ],
       "Unknown error.": [
         "Bilinmeyen hata."
-      ],
-      "Unknown payment token status": [
-        "Ödeme kodu durumu bilinmiyor"
       ],
       "Wrong mailbox password": [
         "Posta kutusu parolası yanlış"
@@ -3622,11 +3425,6 @@
         "Varsayılan"
       ]
     },
-    "Free price": {
-      "Free": [
-        "Ücretsiz"
-      ]
-    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
         "Hesabınızın toplam depolama alanını ${ totalGBStorageAfterCompletion } GB yaptık. Bugün ek depolama alanı alın ve ücretli özelliklerin kilidini açın."
@@ -3898,12 +3696,6 @@
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
       ],
-      "${ mailAppName } Free": [
-        "${ mailAppName } Free"
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional bir kullanıcıyla başlar ve her kullanıcı kuruluşun havuzuna 5 GB ve 5 e-posta adresi ekler."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } ileti taşınamadı.",
         "${ messagesNotAuthorizedToMove } ileti taşınamadı."
@@ -3934,15 +3726,6 @@
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } dosya eklendi",
         "${ pureAttachmentsCount } dosya eklendi"
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ annualBilling } tarifesine geçerek aboneliğinizde ${ save20 } indirim alın"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "E-posta aboneliği ekleyerek, hem e-posta hem de VPN için ${ saveExtra20 }."
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "VPN aboneliği ekleyerek, hem VPN hem de e-posta için ${ saveExtra20 }."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
@@ -3988,9 +3771,6 @@
         "${ updated } kişi güncellendi.",
         "${ updated } kişi güncellendi."
       ],
-      "${ vpnAppName } Free": [
-        "${ vpnAppName } Free"
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
@@ -4001,42 +3781,17 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Aşağıdaki koşullardan HERHANGİ BİRİ karşılandığında süzülsün)"
       ],
-      "(Mail + VPN)": [
-        "(Mail + VPN)"
-      ],
       "(No Recipient)": [
         "(Alıcı yok)"
-      ],
-      "* Customizable features": [
-        "* Değiştirilebilecek özellikler"
-      ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } ek depolama alanı"
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
-        "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
       "/month.": [
         "/ay."
       ],
-      "20 personal calendars": [
-        "20 kişisel takvim"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
-      ],
-      "30 days money-back guarantee.": [
-        "30 gün ücret iade garantisi."
-      ],
-      "5 email addresses/aliases": [
-        "5 e-posta adresi/takma adı"
+      "5 email addresses": [
+        "5 e-posta adresi"
       ],
       "5 GB storage": [
         "5 GB depolama alanı"
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        "Herkes interneti özgürce ve sansürsüz olarak kullanabilmelidir."
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Bir kurtarma ifadesi, hesabınıza erişimi korumanın en güvenli yollarından biridir. Hesabınıza erişmek ve parolanızı unutursanız şifrelenmiş verilerinizi kurtarmak için bu ifadeyi kullanabilirsiniz."
@@ -4044,35 +3799,17 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Bültenin göndericisine, bu e-posta listesinden ayrılma isteği gönderilecek ve bu işlem otomatik olarak işlenecek."
       ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Nerede olursanız olun, sosyal ağlar, haberler, Wikipedia, YouTube ve diğerleri gibi engellenen içeriğe erişin."
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Nerede olursanız olun ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } gibi yayın akışı hizmetlerine erişin."
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
-      "Account successfully updated": [
-        "Hesap güncellendi"
-      ],
       "Activation in progress": [
         "Etkinleştirme sürüyor"
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "Hesabınıza kullanıcı2@protonmail.com gibi ek adresler ekleyin"
       ],
       "Add image URL": [
         "Görsel adresi ekle"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilir anahtarlar ile adres doğrulaması etkinleştirildi. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
-      ],
-      "Addresses": [
-        "Adres sayısı"
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Bitcoin ödemenizi yaptıktan sonra, tarifenizi yükseltmek için aşağıdaki yönergeleri izleyin."
       ],
       "Align left": [
         "Sola hizala"
@@ -4099,12 +3836,6 @@
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "${ mailAppName } üzerinde kendi etki alanınızı kullanarak e-posta barındırmanızı sağlar, Örnek ali.kaya@ornek.com"
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Tutar en az miktarın altında (${ amount })."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Bu alıcı için bilinmeyen bir herkese açık anahtar algılandı."
@@ -4154,32 +3885,8 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve işlemler, ayarlardaki tuş takımı kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
       ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "2 yılda bir ${ billedPrice } tutarında faturalanır"
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "Yılda bir ${ billedPrice } tutarında faturalanır"
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Güncel fatura döneminin sonunda faturalanır (${ renewalDate } tarihinde yenilenir)"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin işlemlerinin onaylanması biraz zaman alabilir (24 saate kadar). Onaylandıktan sonra hesabınıza kredi ekleyeceğiz. İşlem onayından sonra, faturanızı kredilerle ödeyebilirsiniz."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "2018 Kara Cuma indirimi aboneliğinize uygulandı"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "2019 Kara Cuma indirimi aboneliğinize uygulandı"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "2020 Kara Cuma yeni gelen indirimi uygulandı"
-      ],
       "Body: ": [
         "İçerik: "
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu avantajları kalıcı olarak kaybedersiniz."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
@@ -4214,8 +3921,8 @@
       "Confirm phishing report": [
         "Kimlik avı bildirimini onayla"
       ],
-      "Connections": [
-        "Bağlantı sayısı"
+      "Continue with ${ planName }": [
+        "${ planName } aboneliği ile devam edin"
       ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
@@ -4235,12 +3942,6 @@
       ],
       "Create in": [
         "Şurada oluştur"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@proton.me, haber abonelikleri için AliHaber@proton.me gibi takma adlar oluşturabilirsiniz."
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "20 taneye kadar özel takvim ekleyebilirsiniz. Buna ek olarak arkadaşlarınızdan, ailenizden iş arkadaşlarınızdan ve kuruluşlardan 5 takvim ekleyebilirsiniz."
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
@@ -4276,9 +3977,6 @@
       "Disable message content search": [
         "İleti içeriği aramasını devre dışı bırak"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "${ code } kuponu ile aboneliğinize indirim uygulandı"
-      ],
       "Do you want to download this attachment anyway?": [
         "Bu ek dosyayı yine de indirmek istiyor musunuz?",
         "Bu ek dosyayı yine de indirmek istiyor musunuz?"
@@ -4289,14 +3987,8 @@
       "Do you want to re-sign the contact details?": [
         "Kişi bilgilerini yeniden imzalamak istiyor musunuz?"
       ],
-      "Domains": [
-        "Etki alanı sayısı"
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Hareket halindeyken güvenli bir şekilde iletişim kurmak için uygulama mağazanızdan mobil uygulamamızı indirin."
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Kullanmak istediğiniz uygulamayı indirin ve kişisel gizliliğinizi gittiğiniz her yere götürün."
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
         "İletiler indiriliyor ${ esProgress } / ${ totalProgressToShow }"
@@ -4318,9 +4010,6 @@
       ],
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "Her ek bağlantı, kuruluşunuzdaki kullanıcılara atanabilir."
       ],
       "Email address": [
         "E-posta adresi"
@@ -4367,9 +4056,6 @@
       "Expiration Time": [
         "Geçerlilik süresi"
       ],
-      "Expired": [
-        "Süresi geçmiş"
-      ],
       "file attached": [
         "dosya eklendi",
         "dosya eklendi"
@@ -4380,26 +4066,11 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Süzgeçler, alınan ve gönderilen tüm e-postalarda çalışır. Her süzgeçte en az bir ad ve bir koşul ve işlem bulunmalıdır."
       ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "Aileler ve küçük ekipler için; Posta ve VPN hizmetleri sağlar."
-      ],
-      "For getting started with private and secure emailing.": [
-        "Gizli ve güvenli e-posta kullanmaya başlamak için."
-      ],
       "For increased security, activate 2FA.": [
         "Güvenliği arttırmak için 2 aşamalı kimlik doğrulamayı açın."
       ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Gelişmiş koruma ile tam özellikli bir posta kutusuna gerek duyan kişiler için."
-      ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } tarihinden daha yeni iletiler için"
-      ],
-      "For professionals that need secure business communications.": [
-        "İş ortamında güvenli iletişime gerek duyan profesyoneller için."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa ve MasterCard için kartınızın arkasındaki 3 haneli kod. American Express için ise kartınızın önündeki 4 haneli kod."
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
@@ -4407,14 +4078,8 @@
       "Free up some space or contact your administrator.": [
         "Biraz boş yer açın veya yöneticinizle görüşün."
       ],
-      "Free VPN on a single device": [
-        "Tek bir aygıt için ücretsiz VPN"
-      ],
       "From": [
         "Kimden"
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "10 Gb/sn hıza ulaşan tam özellikli VPN."
       ],
       "Get more storage and premium features.": [
         "Daha fazla depolama alanı ve ücretli özellikler alın."
@@ -4469,9 +4134,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
-      ],
-      "Included": [
-        "İçerdikleri"
       ],
       "Increase storage space starting at": [
         "Depolama alanını artırırken şuradan başlayın,"
@@ -4532,6 +4194,9 @@
       ],
       "Manage your labels": [
         "Etiketlerinizi yönetin"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "Eklenebilecek en fazla dosya sayısı (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) sınırı aşıldı."
       ],
       "members": [
         "üye"
@@ -4605,9 +4270,6 @@
       "No more results found": [
         "Başka bir sonuç bulunamadı"
       ],
-      "No payment is required at this time.": [
-        "Şu anda yapılacak herhangi bir ödeme yok."
-      ],
       "No preview available": [
         "Ön izleme yok"
       ],
@@ -4623,12 +4285,6 @@
       "Not a valid URL": [
         "Adres geçersiz"
       ],
-      "Not customizable": [
-        "Özelleştirilemez"
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "Kullanıcılara atanabilecek VPN bağlantılarının sayısı. Bağlı her aygıt ayrı bir VPN bağlantısı kullanır."
-      ],
       "of": [
         "/"
       ],
@@ -4640,12 +4296,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemimiz bu iletiyi bir kimlik avı girişimi olarak işaretledi. Lütfen göründüğü gibi olup olmadığını kontrol edin."
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Ödeme işleminin tamamen doğrulanması birkaç dakika sürebilir."
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Ödemeler TLS şifrelemesi ve İsviçre kişisel gizlilik yasaları ile korunmaktadır."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ProtonMail uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
@@ -4671,29 +4321,11 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
-      ],
       "Please select the folders you would like to import:": [
         "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Lütfen eklemek istediğiniz bağlantı türünü seçin ve tüm alanları doldurun."
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için bankanızla görüşün."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Lütfen açılan yeni sekmede ödemeyi doğrulayın."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Lütfen açılan yeni sekmede kartı doğrulayın."
-      ],
-      "Please verify the payment in the new tab.": [
-        "Lütfen ödemeyi yeni sekmeden doğrulayın."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Lütfen birincil şifreleme anahtarıyla yeniden imzalanabilecek kişiler aranırken bekleyin."
@@ -4710,18 +4342,17 @@
       "Print email": [
         "E-postayı yazdır"
       ],
+      "Priority support": [
+        "Öncelikli destek"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton kişisel güvenliğinizi ihlal ederek para kazanmaz."
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail, işinizi de koruyabilir."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus, bir kullanıcıyla sınırlıdır ve 5 GB depolama alanından başlar."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] }, ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN bağlantısı sunar.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] }, ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN bağlantısı sunar."
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -4746,12 +4377,6 @@
       ],
       "Right-click for options": [
         "Seçenekler için sağ tıklayın"
-      ],
-      "Save 20%": [
-        "%20 indirim"
-      ],
-      "Save extra 20%": [
-        "Ek %20 indirim alın"
       ],
       "Saved ${ dateString }": [
         "${ dateString } zamanında kaydedildi"
@@ -4801,9 +4426,6 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Bu ileti <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
       ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Bu ileti <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
@@ -4822,20 +4444,11 @@
       "Show original message": [
         "Özgün iletiyi göster"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
-      ],
       "Sorry, this message does not exist or has already expired": [
         "Ne yazık ki, bu ileti bulunamadı ya da süresi geçmiş"
       ],
-      "Starter VPN service with P2P support.": [
-        "P2P destekleyen ​​başlangıç VPN hizmeti."
-      ],
-      "Storage GB": [
-        "GB olarak depolama"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        "500 MB ile başlayın ve zamanla daha fazla depolama alanı jazanın. Depolama alanı Mail, Calendar ve Drive tarafından ortaklaşa kullanılır."
       ],
       "Store and share files securely with Proton Drive.": [
         "Proton Drive ile dosyalarınızı güvenle depolayın ve paylaşın."
@@ -4861,12 +4474,6 @@
       "support team": [
         "destek ekibi"
       ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "Daha fazla bağlantı eklemek için ${ professionalPlan } geçişi yapın."
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "Daha fazla kullanıcı eklemek için ${ professionalPlan } geçişi yapın."
-      ],
       "Test link": [
         "Bağlantıyı sına"
       ],
@@ -4875,9 +4482,6 @@
       ],
       "Text to display": [
         "Görüntülenecek metin"
-      ],
-      "Thank you for supporting our mission.": [
-        "Misyonumuza destek olduğunuz için teşekkür ederiz."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
@@ -4994,9 +4598,6 @@
       "This sender's public key has not been trusted yet.": [
         "Henüz bu göndericinin herkese açık anahtarına güvenilmemiş."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Böylece, PayPal ile Proton aboneliğiniz için ödeme yapabileceksiniz. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İlerlemek için, varsa açılır pencere engelleyicilerinizi kapatın."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
@@ -5026,6 +4627,9 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Sınırsız klasör, etiket, süzgeç"
+      ],
+      "Unlimited messages": [
+        "Sınırsız ileti"
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
@@ -5063,8 +4667,8 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "Üçüncü taraf masaüstü uygulamaları ile ProtonMail kullanmak için yükseltin."
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Hesabınızı bugün yükselterek günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren posta ve takvim çözümünü kullanın."
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+        "${ appName } ${ planName } fırsatlarını kaçırmamak için hesabınızı bugün yükseltin."
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -5081,23 +4685,8 @@
       "Use Proton Calendar to keep your agenda private.": [
         "Günlüğünüzü gizli tutmak için Proton Calendar kullanın."
       ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
-      ],
-      "Users": [
-        "Kullanıcı sayısı"
-      ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Mobil aygıtınızı kullanarak, bu karekodu tarayın veya ${ link } adresine gidin."
-      ],
-      "Verification can take a few minutes.": [
-        "Doğrulama işlemi birkaç dakika sürebilir."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Doğrulama için yeni bir sekme açılacak. Lütfen tüm açılır pencere engelleyicileri kapatın."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Doğrulama için yeni bir sekme açılacak. Lütfen açılır pencere engelleyicileri kapatın. Ödeme alınmayacak. Kartı doğrulamak için kullanılan herhangi bir miktar derhal iade edilir."
       ],
       "Version ${ appVersion }": [
         "Sürüm ${ appVersion }"
@@ -5105,20 +4694,11 @@
       "Visit our shop to get Proton merchandise.": [
         "Proton imzalı ürünleri almak için mağazamıza bakabilirsiniz."
       ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "Aileler ve küçük işletmeler için VPN + ${ mailAppName } paketi."
-      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Özür dileriz. Bu durum bizim hatamızdan kaynaklanıyor olabilir. Bu e-postanın göründüğü gibi olduğunu doğrulayabilir misiniz misiniz?"
       ],
       "We could not verify the sender's trusted keys.": [
         "Göndericinin güvenilen anahtarlarını doğrulayamadık."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "Ödemelerinizi korumak için 3-D Secure kullanıyoruz."
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
       "We'll notify you when the import is done.": [
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
@@ -5214,15 +4794,6 @@
       "You have reached the maximum number of 5 replies.": [
         "Olabilecek en fazla 5 yanıt sayısına ulaştınız."
       ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Ödeme yöntemi olarak eklemek için, PayPal hesabınızla bağlantılı bir kredi kartı ya da banka hesabı olmalıdır."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal hesabınızda bağlantılı bir kredi kartı ya da banka hesabı olmalıdır. PayPal hesabınızda bunlar yoksa, aşağıdaki düğmeye tıklayın."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Aboneliğinizi iptal etmeden önce tüm ek kişisel takvimleri ve paylaşılan takvim bağlantılarını kaldırmanız gerekir. ${ linkButton }"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Depolama kapasitenizi %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5245,12 +4816,6 @@
         "Bu etiketi taşıyan **${ count } ileti** seçtiniz",
         "Bu etiketi taşıyan **${ count } ileti** seçtiniz"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Birazdan ödemenizi doğrulamak için bankanıza yönlendirileceksiniz."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
-      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” yazdınız ama bir dosya eklemediniz. İletinizi yine de göndermek istiyor musunuz?"
       ],
@@ -5259,15 +4824,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Hesabınız yüksek tarifeye geçiriliyor. Bu işlem 30 saniye kadar sürebilir."
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Bankanız güvenlik için 3-D Secure ile doğrulama istiyor."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden Proton hesabınız içine aktarılmaya hazır."
@@ -5289,24 +4845,8 @@
       ]
     },
     "info": {
-      "(beta)": [
-        "(beta)"
-      ],
       "Optional": [
         "İsteğe bağlı"
-      ]
-    },
-    "Info concerning plan features": {
-      "Customizable features": [
-        "Değiştirilebilecek özellikler"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail, toplu veya istenmeyen e-postalar göndermek için kullanılamaz. Normal e-posta gönderimi sınırsızdır."
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Nakit ödemenin nasıl yapılacağı hakkında bilgi almak için bizimle ${ email } adresinden görüşün."
       ]
     },
     "Info on errors": {
@@ -5317,11 +4857,6 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Birden fazla kişi aynı görünüyor. ${ mergeAction }"
-      ]
-    },
-    "information": {
-      "Included": [
-        "İçerdikleri"
       ]
     },
     "Key badge": {
@@ -5617,12 +5152,6 @@
       "Browser version": [
         "Tarayıcı Sürümü"
       ],
-      "BTC address:": [
-        "BTC adresi:"
-      ],
-      "BTC amount:": [
-        "BTC tutarı:"
-      ],
       "Calendar": [
         "Takvim"
       ],
@@ -5634,15 +5163,6 @@
       ],
       "Carbon Copy": [
         "Kopya"
-      ],
-      "Card holder": [
-        "Kart sahibi"
-      ],
-      "Card number": [
-        "Kart numarası"
-      ],
-      "Cash": [
-        "Nakit"
       ],
       "Category": [
         "Kategori"
@@ -5670,9 +5190,6 @@
       ],
       "Country": [
         "Ülke"
-      ],
-      "CVV code": [
-        "CVV kodu"
       ],
       "Date": [
         "Tarih"
@@ -5703,15 +5220,6 @@
       ],
       "Encrypt emails": [
         "E-postaları şifrele"
-      ],
-      "Enter organization name to confirm": [
-        "Onaylamak için kuruluş adını yazın"
-      ],
-      "Expires": [
-        "Geçerlilik sonu"
-      ],
-      "Expiry date": [
-        "Son kullanma tarihi"
       ],
       "Export contacts": [
         "Kişileri dışa aktar"
@@ -5812,9 +5320,6 @@
       "Name": [
         "Ad"
       ],
-      "Name on card": [
-        "Kart üzerindeki isim"
-      ],
       "No label found": [
         "Herhangi bir etiket bulunamadı"
       ],
@@ -5845,9 +5350,6 @@
       "Password hint": [
         "Parola ipucu"
       ],
-      "Payer": [
-        "Ödeyen"
-      ],
       "PGP scheme": [
         "PGP şeması"
       ],
@@ -5859,9 +5361,6 @@
       ],
       "Postal code": [
         "Posta kodu"
-      ],
-      "Proration": [
-        "Eşit dağıtım"
       ],
       "Proton username": [
         "Proton kullanıcı adı"
@@ -5887,9 +5386,6 @@
       "Search in": [
         "Şurada ara"
       ],
-      "Select a method": [
-        "Bir yöntem seçin"
-      ],
       "Select how your composer opens by default.": [
         "Oluşturucunuzun varsayılan olarak nasıl açılacağını seçin."
       ],
@@ -5898,9 +5394,6 @@
       ],
       "Select how your mailbox looks like by default.": [
         "Posta kutunuzun varsayılan olarak nasıl görüneceğini seçin."
-      ],
-      "Select your country": [
-        "Ülkenizi seçin"
       ],
       "Send auto-reply": [
         "Otomatik yanıt gönder"
@@ -5956,12 +5449,6 @@
       "To: ${ emailAddress }": [
         "Nereye: ${ emailAddress }"
       ],
-      "Total": [
-        "Toplam"
-      ],
-      "Total (${ countdown })": [
-        "Toplam (${ countdown })"
-      ],
       "Two-factor authentication code": [
         "İki aşamalı kimlik doğrulama kodu"
       ],
@@ -5994,9 +5481,6 @@
       ],
       "without attachments": [
         "ek dosyaları olmayan"
-      ],
-      "ZIP": [
-        "Posta Kodu"
       ]
     },
     "Label for contact group color": {
@@ -6066,9 +5550,6 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "Hediye kodu ekle"
-      ],
       "Add folder": [
         "Klasör ekle"
       ],
@@ -6083,9 +5564,6 @@
       ],
       "clearing your browser cache": [
         "web tarayıcınızın ön belleğini temizlemek"
-      ],
-      "click here": [
-        "buraya tıklayın"
       ],
       "Create a calendar linked to an active email address.": [
         "Etkin bir e-posta adresine bağlı bir takvim oluşturun."
@@ -6251,87 +5729,6 @@
         "İçeri aktarma işleminize başlanıyor"
       ]
     },
-    "Mail feature": {
-      "0.5 GB": [
-        "0.5 GB"
-      ],
-      "20 GB": [
-        "20 GB"
-      ],
-      "Address verification": [
-        "Adres doğrulaması"
-      ],
-      "Addresses": [
-        "Adresler"
-      ],
-      "Autoresponder": [
-        "Otomatik yanıtlayıcı"
-      ],
-      "Catch-All email": [
-        "Tümümü toplayan e-posta"
-      ],
-      "Contact groups": [
-        "Kişi grupları"
-      ],
-      "Custom email addresses": [
-        "Özel e-posta adresleri"
-      ],
-      "Custom filters": [
-        "Özel süzgeçler"
-      ],
-      "Encrypted contacts": [
-        "Şifrelenmiş kişiler"
-      ],
-      "Folders / labels": [
-        "Klasör / etiket sayısı"
-      ],
-      "IMAP / SMTP": [
-        "IMAP / SMTP"
-      ],
-      "Limited": [
-        "Sınırlı"
-      ],
-      "Messages per day": [
-        "Günlük ileti sayısı"
-      ],
-      "Multi-user support": [
-        "Çoklu kullanıcı desteği"
-      ],
-      "Priority": [
-        "Öncelik"
-      ],
-      "Storage": [
-        "Depolama alanı"
-      ],
-      "Support": [
-        "Destek"
-      ],
-      "Use @pm.me address": [
-        "@pm.me adresi kullanımı"
-      ],
-      "Users": [
-        "Kullanıcılar"
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        "5 GB *"
-      ],
-      "5 GB / user *": [
-        "5 GB / kullanıcı *"
-      ],
-      "Unlimited": [
-        "Sınırsız"
-      ],
-      "Unlimited **": [
-        "Sınırsız **"
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        "5 / kullanıcı *"
-      ]
-    },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ periodFragment } öncesinden başlayarak ${ selectedLabelsCount }/${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
@@ -6363,16 +5760,6 @@
       ],
       "Trash": [
         "Çöp kutusu"
-      ]
-    },
-    "Many Others": {
-      "and many others": [
-        "ve pek çok benzeri"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Bu işlem, kuruluşunuzla ilgili tüm alt kullanıcıları, hesapları ve verileri kalıcı olarak silecek."
       ]
     },
     "Message": {
@@ -6557,11 +5944,6 @@
         "üçüncü Çarşamba günü"
       ]
     },
-    "Netflix": {
-      "Netflix": [
-        "Netflix"
-      ]
-    },
     "New Label form": {
       "Color": [
         "Renk"
@@ -6595,17 +5977,6 @@
     "Onboarding": {
       "Next": [
         "Sonraki"
-      ]
-    },
-    "Onboarding Beta": {
-      "Beta enabled": [
-        "Beta etkinleştirildi"
-      ],
-      "Got it": [
-        "Anladım"
-      ],
-      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        "Beta sürümünü devre dışı bırakmak için ayarlar menüsünü açın ve \"Beta erişimi\" seçeneğine tıklayın."
       ]
     },
     "Onboarding Proton": {
@@ -6701,17 +6072,6 @@
         "Siz"
       ]
     },
-    "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
-      "New credit/debit card": [
-        "Yeni kredi/banka kartı"
-      ],
-      "PayPal": [
-        "PayPal"
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Anahtar şifreleme için kullanılamaz"
@@ -6765,9 +6125,6 @@
       "Filter labels": [
         "Etiketleri süz"
       ],
-      "Gift code": [
-        "Hediye kodu"
-      ],
       "Hint": [
         "İpucu"
       ],
@@ -6800,9 +6157,6 @@
       ],
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
-      ],
-      "Postal code": [
-        "Posta kodu"
       ],
       "Proton username": [
         "Proton kullanıcı adı"
@@ -6839,112 +6193,11 @@
       ],
       "Write your message": [
         "İletinizi yazın"
-      ],
-      "ZIP": [
-        "ZIP"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "Ad"
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        "0.5 GB depolama alanı"
-      ],
-      "1 - 5000 users *": [
-        "1 - 5000 kullanıcı *"
-      ],
-      "1 address": [
-        "1 adres"
-      ],
-      "1 user": [
-        "1 kullanıcı"
-      ],
-      "20 GB storage": [
-        "20 GB depolama alanı"
-      ],
-      "200 folders / labels": [
-        "200 klasör / etiket"
-      ],
-      "3 folders / labels": [
-        "3 klasör / etiket"
-      ],
-      "5 addresses": [
-        "5 adres"
-      ],
-      "5 addresses / user": [
-        "5 adres / kullanıcı"
-      ],
-      "5 GB storage *": [
-        "5 GB depolama alanı *"
-      ],
-      "5 GB storage / user": [
-        "5 GB depolama alanı / kullanıcı"
-      ],
-      "50 addresses": [
-        "50 adres"
-      ],
-      "6 users": [
-        "6 kullanıcı"
-      ],
-      "Access blocked content": [
-        "Engellenmiş içeriğe erişin"
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        "${ driveAppName } (beta) erişimi"
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Tüm ${ PLAN_NAMES[PLANS.VPNPLUS] } tarifesi özellikleri"
-      ],
-      "Built-in Adblocker (NetShield)": [
-        "Yerleşik reklam engelleyici (NetShield)"
-      ],
-      "Custom email addresses": [
-        "Özel e-posta adresleri"
-      ],
-      "Early access to new products": [
-        "Yeni ürünlere erken erişim"
-      ],
-      "High speed": [
-        "Yüksek hız"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "En yüksek hız (10 Gb/sn hıza kadar)"
-      ],
-      "Includes 6 user accounts": [
-        "6 kullanıcı hesabı bulunur"
-      ],
-      "Includes Proton Visionary": [
-        "Proton Visionary bulunur"
-      ],
-      "Medium speed": [
-        "Orta hız"
-      ],
-      "Secure Core servers": [
-        "Secure Core sunucuları"
-      ],
-      "Streaming service support": [
-        "Yayın akışı hizmeti desteği"
-      ],
-      "Unlimited folders / labels": [
-        "Sınırsız klasör / etiket"
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        "(geçerli tarife)"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Ücretsiz"
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
-        "Prime Video"
       ]
     },
     "Progress bar description": {
@@ -7191,6 +6444,9 @@
     "Spotlight": {
       "Discover all Proton services": [
         "Tüm Proton hizmetlerini keşfedin"
+      ],
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        "18 aya kadar ücretsiz ${ appName } ${ planName } edinin"
       ],
       "Invite friends and earn rewards!": [
         "Arkadaşlarınızı davet edin ve ödül kazanın!"
@@ -7462,9 +6718,6 @@
       ],
       "Verification successful": [
         "Doğrulandı"
-      ],
-      "You have successfully unsubscribed": [
-        "Abonelikten ayrıldınız"
       ]
     },
     "Suffix for price": {
@@ -7575,18 +6828,12 @@
       ]
     },
     "Title": {
-      "${ appName } customization": [
-        "${ appName } özelleştirme"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } tuş takımı kısayolları"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } üye",
         "${ emailsCount } üye"
-      ],
-      "3-D Secure verification failed": [
-        "3-D Secure doğrulaması başarısız oldu"
       ],
       "Account suspended": [
         "Hesap askıya alınmış"
@@ -7610,12 +6857,6 @@
       "All recipients were added to the BCC field and cannot be disclosed": [
         "Tüm alıcılar Gizli kopya alanına eklendi ve biribirini göremez"
       ],
-      "Amount due": [
-        "Ödenecek tutar"
-      ],
-      "Apply gift code": [
-        "Hediye kodunu uygula"
-      ],
       "Are you sure you want to close?": [
         "Oturumu kapatmak istediğinize emin misiniz?"
       ],
@@ -7631,20 +6872,11 @@
       "Beta Access": [
         "Beta erişimi"
       ],
-      "Billing cycle": [
-        "Fatura dönemi"
-      ],
       "Blind Carbon Copy": [
         "Gizli kopya"
       ],
       "Carbon Copy": [
         "Kopya"
-      ],
-      "Card verification": [
-        "Kart doğrulama"
-      ],
-      "Card verification in progress": [
-        "Kart doğrulama işlemi sürüyor"
       ],
       "CC": [
         "Kopya"
@@ -7652,17 +6884,11 @@
       "Change my answer": [
         "Yanıtımı değiştir"
       ],
-      "Checkout": [
-        "Ödeme yap"
-      ],
       "Clearing data": [
         "Veriler temizleniyor"
       ],
       "Composer mode": [
         "Oluşturucu kipi"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Proton ödüllerini kaybedeceğinizi onaylayın"
       ],
       "Confirm recipient address?": [
         "Alıcı adresi onaylansın mı?"
@@ -7682,9 +6908,6 @@
       "Conversation list": [
         "Yazışma listesi"
       ],
-      "Coupon discount": [
-        "Kupon indirimi"
-      ],
       "Create a new folder": [
         "Yeni bir klasör oluştur"
       ],
@@ -7703,14 +6926,8 @@
       "Create new group": [
         "Yeni grup oluştur"
       ],
-      "Credits": [
-        "Krediler"
-      ],
       "Currency": [
         "Para birimi"
-      ],
-      "Current plan": [
-        "Geçerli tarife"
       ],
       "Customize and confirm": [
         "Özelleştir ve onayla"
@@ -7720,9 +6937,6 @@
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
-      ],
-      "Customize your plan": [
-        "Tarifenizi özelleştirin"
       ],
       "Decryption error": [
         "Şifre çözme hatası"
@@ -7762,14 +6976,8 @@
       "Delete message": [
         "İletiyi sil"
       ],
-      "Delete organization?": [
-        "Kuruluş silinsin mi?"
-      ],
       "Deleting contacts": [
         "Kişiler siliniyor"
-      ],
-      "Downgrade account": [
-        "Hesap tarifesini düşür"
       ],
       "Edit contact": [
         "Kişiyi düzenle"
@@ -7821,9 +7029,6 @@
       ],
       "Forward": [
         "İlet"
-      ],
-      "Gift code": [
-        "Hediye kodu"
       ],
       "Groups": [
         "Gruplar"
@@ -7906,9 +7111,6 @@
       "Moving a scheduled message": [
         "Zamanlanmış bir ileti taşınıyor"
       ],
-      "Network error": [
-        "Ağ sorunu"
-      ],
       "New message": [
         "Yeni ileti"
       ],
@@ -7936,35 +7138,14 @@
       "Other names": [
         "Diğer adlar"
       ],
-      "Payment details": [
-        "Ödeme ayrıntıları"
-      ],
-      "Payment verification": [
-        "Ödeme doğrulama"
-      ],
-      "Payment verification in progress": [
-        "Ödeme doğrulama işlemi sürüyor"
-      ],
-      "PayPal verification failed": [
-        "PayPal doğrulaması başarısız oldu"
-      ],
       "Phone numbers": [
         "Telefon numaraları"
-      ],
-      "Plan summary": [
-        "Tarife özeti"
       ],
       "Previous conversation": [
         "Önceki yazışma"
       ],
       "Previous message": [
         "Önceki ileti"
-      ],
-      "Processing": [
-        "İşleniyor"
-      ],
-      "Processing...": [
-        "İşleniyor..."
       ],
       "ProtonMail": [
         "ProtonMail"
@@ -7998,9 +7179,6 @@
       ],
       "Schedule send": [
         "Gönderimi zamanla"
-      ],
-      "Select a plan": [
-        "Bir tarife seçin"
       ],
       "Select a theme": [
         "Bir tema seçin"
@@ -8056,14 +7234,8 @@
       "Subject missing": [
         "Konu eksik"
       ],
-      "Subtotal": [
-        "Ara toplam"
-      ],
       "To": [
         "Kime"
-      ],
-      "Total (monthly)": [
-        "Toplam (aylık)"
       ],
       "Trust new key?": [
         "Yeni anahtara güvenilsin mi?",
@@ -8077,9 +7249,6 @@
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
-      ],
-      "Unsupported browser": [
-        "Tarayıcı desteklenmiyor"
       ],
       "Upgrade required": [
         "Yükseltme gerekli"
@@ -8104,9 +7273,6 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
-      ],
-      "ZIP / postal code": [
-        "ZIP / posta kodu"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8115,26 +7281,11 @@
       ]
     },
     "Tooltip": {
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Nerede olursanız olun coğrafi olarak engellenen içeriğe (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube vb.) erişin."
-      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
       ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Hesabınıza bağlı birden fazla e-posta adresi oluşturun. Örnek: kullaniciadi2@protonmail.com"
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "İnternet trafiğinizi birden çok sunucu üzerinden geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar."
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "E-postaları dijital olarak imzalamak, iletilerin sizin tarafınızdan gönderildiğinin doğrulanmasını sağlar"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Yıllık fatura dönemine uygulanan indirim"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "İki yıllık fatura dönemine uygulanan indirim"
       ],
       "Each imported email will have this label": [
         "İçe aktarılan her e-postaya bu etiket atanacak"
@@ -8148,35 +7299,8 @@
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tek tarifeyle tüm ücretli ${ vpnAppName } ve ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tek tarifeyle tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Kendi etki alanınızın e-postalarını ${ mailAppName } üzerinde barındırın. Örnek: ali.kaya@ornek.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Kendi etki alanınızın e-postalarını ProtonMail üzerinde barındırın. Örnek: ali.kaya@ornek.com"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Çok kullanıcı desteği yalnızca 2 veya daha fazla kullanıcılı tarifeler için geçerlidir"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek internette gezinme hızınızı artırır."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Tek tıklama ile internet trafiğinizi Tor ağı üzerinden yöneltin."
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
         "Sistem alt klasörleri ProtonMail üzerinde ayrı klasörler olarak görünecek"
@@ -8192,12 +7316,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Hesabınıza bağlı birden fazla adres / takma ad kullanın. Örnek: kullaniciadi2@protonmail.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "E-posta göndermek için kullanıcıadı@pm.me kişisel adresinizi kullanın"
       ],
       "You do not have any contacts to export": [
         "Dışa aktarılacak bir kişi kaydınız yok"
@@ -8236,123 +7354,6 @@
         "Görüntüyü yeniden oynat"
       ]
     },
-    "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
-      "30-days money-back guarantee": [
-        "30 gün ücret iade garantisi"
-      ],
-      "Access blocked content": [
-        "Engellenmiş içeriğe erişin"
-      ],
-      "Adblocker (NetShield)": [
-        "Reklam engelleyici (NetShield)"
-      ],
-      "Custom connection profiles": [
-        "Özel bağlantı profilleri"
-      ],
-      "DNS leak prevention": [
-        "DNS sızıntısı önleme"
-      ],
-      "Full Disk Encryption on Servers": [
-        "Sunucularda tam disk şifrelemesi"
-      ],
-      "Jurisdiction": [
-        "Yetkili mahkemeler"
-      ],
-      "Kill Switch / Always-on VPN": [
-        "Bağlantı kesici / Her zaman açık VPN"
-      ],
-      "Languages supported": [
-        "Desteklenen diller"
-      ],
-      "Locations/Countries": [
-        "Konumlar/Ülkeler"
-      ],
-      "Open Source & audited apps": [
-        "Açık kaynaklı ve denetlenmiş uygulamalar"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        "Mükemmel ileriye dönük gizlilik (PFS)"
-      ],
-      "Platforms supported": [
-        "Desteklenen platformlar"
-      ],
-      "Router support": [
-        "Yöneltici desteği"
-      ],
-      "Secure Core servers": [
-        "Secure Core sunucuları"
-      ],
-      "Speed": [
-        "Hız"
-      ],
-      "Split tunneling": [
-        "Bölünmüş tünelleme"
-      ],
-      "Streaming service support": [
-        "Yayın akışı hizmeti desteği"
-      ],
-      "Strict no-logs policy": [
-        "Sıkı kayıt tutmama ilkesi"
-      ],
-      "Tor over VPN": [
-        "VPN üzerinden Tor"
-      ],
-      "User data monetization": [
-        "Kullanıcı verilerini pazarlama"
-      ],
-      "Volume/bandwidth cap": [
-        "Boyut/bant genişliği sınırı"
-      ],
-      "VPN Connections": [
-        "VPN bağlantısı sayısı"
-      ],
-      "VPN servers": [
-        "VPN sunucu sayısı"
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        "(yalnızca Android ve Windows)"
-      ],
-      "High": [
-        "Yüksek"
-      ],
-      "Highest (up to 10 Gbps)": [
-        "En yüksek (10 Gb/sn hıza kadar)"
-      ],
-      "Medium": [
-        "Orta"
-      ],
-      "None": [
-        "Yok"
-      ],
-      "Switzerland": [
-        "İsviçre"
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        "${ n } sunucu",
-        "${ n } sunucu"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN bağlantısı",
-        "${ n } VPN bağlantısı"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfCountries } ülkede ${ numberOfServers }",
-        "${ numberOfCountries } ülkede ${ numberOfServers }"
-      ]
-    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "${ count } kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?",
@@ -8376,9 +7377,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "Canlı sohbet yalnızca ücretli ProtonVPN tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."

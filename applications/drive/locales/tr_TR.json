@@ -86,6 +86,9 @@
       "Clear": [
         "Temizle"
       ],
+      "Clear browser data": [
+        "Web tarayıcı verilerini temizle"
+      ],
       "Clear data": [
         "Verileri temizle"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         "Özelleştir"
-      ],
-      "Decrease": [
-        "Azalt"
       ],
       "Delete": [
         "Sil"
@@ -247,8 +247,14 @@
       "Go to panel ${ index }": [
         "${ index } panosuna git"
       ],
+      "Go to parent": [
+        "Üst klasöre git"
+      ],
       "Go to settings": [
         "Ayarlara git"
+      ],
+      "Got it": [
+        "Anladım"
       ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
@@ -273,9 +279,6 @@
       ],
       "Import from .csv or vCard": [
         ".csv ya da vCard dosyasından içe aktar"
-      ],
-      "Increase": [
-        "Artır"
       ],
       "Load image": [
         "Görsel yükle"
@@ -427,17 +430,17 @@
       "Resume upload": [
         "Yüklemeyi sürdür"
       ],
-      "Retry": [
-        "Yeniden dene"
-      ],
       "Save": [
         "Kaydet"
       ],
+      "Search": [
+        "Arama"
+      ],
+      "Search drive": [
+        "Drive içinde ara"
+      ],
       "Select all": [
         "Tümünü seç"
-      ],
-      "Select plan": [
-        "Tarifeyi seçin"
       ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
@@ -1837,6 +1840,9 @@
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
+      "A problem occurred, please try again": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin"
+      ],
       "Amount above the maximum.": [
         "Tutar en fazla miktarın üstünde."
       ],
@@ -1855,14 +1861,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kişisel takvim sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler oluşturulamıyor."
       ],
-      "Checkout expired, please try again": [
-        "Ödeme süresi dolmuş. Lütfen yeniden deneyin"
-      ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
       ],
       "Contact signature not verified": [
         "Kişi imzası doğrulanamadı"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "Bu tarayıcıda içerik araması etkinleştirilemiyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
       ],
       "Could not find address ${ email }.": [
         "${ email } adresi bulunamadı."
@@ -2001,6 +2007,9 @@
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
       ],
+      "Please activate your content search again": [
+        "Lütfen içerik aramayı yeniden etkinleştirin"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
@@ -2019,6 +2028,9 @@
       ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
+      ],
+      "Search failed": [
+        "Arama yapılamadı"
       ],
       "Signature not verified": [
         "İmza doğrulanmadı"
@@ -2040,9 +2052,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
-      ],
-      "Tab closed": [
-        "Sekme kapatıldı"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Kullanmakta olduğunuz web tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir web tarayıcı kullanın ya da bilgisayar ile oturum açın."
@@ -2496,17 +2505,14 @@
         "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
-      "20 personal calendars": [
-        "20 kişisel takvim"
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
       ],
       "30 days money-back guarantee.": [
         "30 gün ücret iade garantisi."
       ],
-      "5 email addresses/aliases": [
-        "5 e-posta adresi/takma adı"
+      "5 email addresses": [
+        "5 e-posta adresi"
       ],
       "5 GB storage": [
         "5 GB depolama alanı"
@@ -2537,9 +2543,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilir anahtarlar ile adres doğrulaması etkinleştirildi. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
-      ],
-      "Addresses": [
-        "Adres sayısı"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Bitcoin ödemenizi yaptıktan sonra, tarifenizi yükseltmek için aşağıdaki yönergeleri izleyin."
@@ -2573,9 +2576,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Çöp kutusunu boşaltmak ve tüm öğeleri kalıcı olarak silmek istediğinizden emin misiniz?"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "Çöp kutusundaki seçilmiş ögeyi kalıcı olarak silmek istediğinize emin misiniz?",
-        "Çöp kutusundaki seçilmiş ögeleri kalıcı olarak silmek istediğinize emin misiniz?"
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        "Çöp kutusundaki ${ itemName } ögesini kalıcı olarak silmek istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        "Seçilmiş ögeleri çöp kutusundan kalıcı olarak silmek istediğinizden emin misiniz?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "${ appName } uçtan uca şifrelenmiş olduğundan, dosyalarınıza erişemeyiz ve şifrelerini çözemeyiz. Şifreyi yeniledikten sonra Drive kilidini açmak için şunlardan birine sahip olmanız gerekir:"
@@ -2613,6 +2618,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Kişi denetleniyor ${ progress }/${ max }..."
       ],
+      "Clear data": [
+        "Verileri temizle"
+      ],
+      "Clear encrypted search data": [
+        "Şifrelenmiş arama verilerini temizle"
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        "Bu aygıtta çerezlerin temizlenmesi arama dizinini de siler. Silme sonrası arama özelliğini kullanabilmek tüm dosyalar yeniden dizine eklenmelidir."
+      ],
+      "Clears browser data related to the encrypted search.": [
+        "Şifrelenmiş arama ile ilişkili tarayıcı verilerini temizler."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
@@ -2628,11 +2645,11 @@
       "Conflict": [
         "Çakışma"
       ],
-      "Connections": [
-        "Bağlantı sayısı"
-      ],
       "Continue using ${ appName } and unlock drive later": [
         "${ appName } kullanmayı sürdür ve sürücünün kilidini daha sonra aç"
+      ],
+      "Continue with ${ planName }": [
+        "${ planName } aboneliği ile devam edin"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } yeni takvim ekle",
@@ -2652,9 +2669,6 @@
       ],
       "Create links and share your files with others.": [
         "Bağlantı oluşturun ve dosyalarınızı başkalarıyla paylaşın."
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@proton.me, haber abonelikleri için AliHaber@proton.me gibi takma adlar oluşturabilirsiniz."
       ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "20 taneye kadar özel takvim ekleyebilirsiniz. Bunun yanından arkadaşlarınızdan, ailenizden iş arkadaşlarınızdan ve kuruluşlardan 5 takvim ekleyebilirsiniz."
@@ -2707,9 +2721,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
-      ],
-      "Expired": [
-        "Süresi geçmiş"
       ],
       "Failed": [
         "Başarısız oldu"
@@ -2798,6 +2809,9 @@
       ],
       "Included": [
         "İçerdikleri"
+      ],
+      "Indexing search results…": [
+        "Arama sonuçları dizini oluşturuluyor…"
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
@@ -2985,6 +2999,12 @@
       "Primary": [
         "Birincil"
       ],
+      "Priority support": [
+        "Öncelikli destek"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus, bir kullanıcıyla sınırlıdır ve 5 GB depolama alanından başlar."
       ],
@@ -3009,6 +3029,9 @@
       ],
       "Screenshot(s) attached": [
         "Ekran görüntüsü eklendi"
+      ],
+      "Search cannot be enabled in this browser": [
+        "Bu tarayıcıda arama etkinleştirilemez"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Yüklenmiş bir dosyayı ya da klasörü seçin ve bir bağlantı oluşturun."
@@ -3039,6 +3062,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Bir şeyler ters gitti. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        "500 MB ile başlayın ve zamanla daha fazla depolama alanı jazanın. Depolama alanı Mail, Calendar ve Drive tarafından ortaklaşa kullanılır."
       ],
       "Starter VPN service with P2P support.": [
         "P2P destekli başlangıç ​​VPN hizmeti."
@@ -3107,6 +3133,12 @@
       "This will overwrite the existing folder": [
         "Bu işlem var olan klasörün üzerine yazacak"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
@@ -3134,8 +3166,14 @@
       "Trash": [
         "Çöp kutusu"
       ],
+      "Try different keywords": [
+        "Farklı anahtar sözcükleri deneyin"
+      ],
       "Unlimited folders, labels, and filters": [
         "Sınırsız klasör, etiket, süzgeç"
+      ],
+      "Unlimited messages": [
+        "Sınırsız ileti"
       ],
       "Unlock drive to recover files": [
         "Dosyaları kurtarmak için sürücünün kilidini açın"
@@ -3145,6 +3183,9 @@
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Bugün yükselterek günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren posta ve takvim çözümünü kullanın."
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+        "${ appName } ${ planName } fırsatlarını kaçırmamak için hesabınızı bugün yükseltin."
       ],
       "Uploaded": [
         "Yüklendi"
@@ -3839,8 +3880,8 @@
       "Contact groups": [
         "Kişi grupları"
       ],
-      "Custom email addresses": [
-        "Özel e-posta adresleri"
+      "Custom domains": [
+        "Özel etki alanları"
       ],
       "Custom filters": [
         "Özel süzgeçler"
@@ -3953,28 +3994,42 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" taşındı"
+      "\"${ name }\" deleted permanently from trash": [
+        "\"${ name }\" çöp kutusundan kalıcı olarak silindi"
       ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" çöp kutusundan kalıcı olarak silindi"
+      "\"${ name }\" failed to be created": [
+        "\"${ name }\" oluşturulamadı"
       ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" taşınamadı"
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        "\"${ name } çöp kutusundan kalıcı olarak silinemedi"
       ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" çöp kutusuna taşındı"
+      "\"${ name }\" failed to be moved": [
+        "\"${ name }\" taşınamadı"
       ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" çöp kutusundan geri yüklendi"
+      "\"${ name }\" failed to be moved to trash": [
+        "\"${ name }\" çöp kutusuna atılamadı"
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        "\"${ name }\" çöp kutusundan geri yüklenemedi"
+      ],
+      "\"${ name }\" moved to trash": [
+        "\"${ name }\" çöp kutusuna atıldı"
+      ],
+      "\"${ name }\" restored from trash": [
+        "\"${ name }\" çöp kutusundan geri yüklendi"
+      ],
+      "\"${ name }\" successfully moved": [
+        "\"${ name }\" taşındı"
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        "\"${ newName }\" yeniden adlandırılamadı"
+      ],
+      "\"${ newName }\" renamed successfully": [
+        "\"${ newName }\" yeniden adlandırıldı"
       ],
       "${ count } item failed to be decrypted": [
         "${ count } ögenin şifresi çözülemedi",
         "${ count } ögenin şifresi çözülemedi"
-      ],
-      "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } dosya bağlantınız silindi",
-        "${ deletedCount } dosya bağlantınız silindi"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } dosya çöp kutusundan kalıcı olarak silindi",
@@ -3983,10 +4038,6 @@
       "${ deletedItemsCount } folder deleted permanently from trash": [
         "${ deletedItemsCount } klasör çöp kutusundan kalıcı olarak silindi",
         "${ deletedItemsCount } klasör çöp kutusundan kalıcı olarak silindi"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } öge çöp kutusundan kalıcı olarak silindi",
-        "${ deletedItemsCount } öge çöp kutusundan kalıcı olarak silindi"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "${ failedCount } dosya bağlantınız silinemedi",
@@ -4000,21 +4051,52 @@
         "${ failedMovesCount } klasör taşınamadı",
         "${ failedMovesCount } klasör taşınamadı"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } öge taşınamadı",
-        "${ failedMovesCount } öge taşınamadı"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } dosya taşındı",
-        "${ movedLinksCount } dosya taşındı"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } klasör taşındı",
         "${ movedLinksCount } klasör taşındı"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } öge taşındı",
-        "${ movedLinksCount } öge taşındı"
+      "${ name } created successfully": [
+        "${ name } oluşturuldu"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi",
+        "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "${ numberOfItems } öge çöp kutusundan kalıcı olarak silinemedi",
+        "${ numberOfItems } öge çöp kutusundan kalıcı olarak silinemedi"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "${ numberOfItems } öge taşınamadı",
+        "${ numberOfItems } öge taşınamadı"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "${ numberOfItems } öge çöp kutusuna atılamadı",
+        "${ numberOfItems } öge çöp kutusuna atılamadı"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "${ numberOfItems } öge çöp kutusundan geri yüklenemedi",
+        "${ numberOfItems } öge çöp kutusundan geri yüklenemedi"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } öge çöp kutusuna taşındı",
+        "${ numberOfItems } öge çöp kutusuna taşındı"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems } öge çöp kutusundan geri yüklendi",
+        "${ numberOfItems } öge çöp kutusundan geri yüklendi"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } öge taşındı",
+        "${ numberOfItems } öge taşındı"
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "${ numberOfItems } öge bağlantınız silinemedi",
+        "${ numberOfItems } öge bağlantınız silinemedi"
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "${ numberOfItems } bağlantı silindi",
+        "${ numberOfItems } bağlantı silindi"
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } dosya çöp kutusundan geri yüklendi",
@@ -4024,10 +4106,6 @@
         "${ restoredItemsCount } klasör çöp kutusundan geri yüklendi",
         "${ restoredItemsCount } klasör çöp kutusundan geri yüklendi"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } öge çöp kutusundan geri yüklendi",
-        "${ restoredItemsCount } öge çöp kutusundan geri yüklendi"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } dosya çöp kutusuna taşındı",
         "${ trashedLinksCount } dosya çöp kutusuna taşındı"
@@ -4035,10 +4113,6 @@
       "${ trashedLinksCount } folder moved to trash": [
         "${ trashedLinksCount } klasör çöp kutusuna taşındı",
         "${ trashedLinksCount } klasör çöp kutusuna taşındı"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } öge çöp kutusuna taşındı",
-        "${ trashedLinksCount } öge çöp kutusuna taşındı"
       ],
       "All items will soon be permanently deleted from trash": [
         "Tüm ögeler yakında çöp kutusundan kalıcı olarak silinecek"
@@ -4051,6 +4125,9 @@
       ],
       "Contact group updated": [
         "Kişi grubu güncellendi"
+      ],
+      "Encrypted search activated": [
+        "Şifrelenmiş arama etkinleştirildi"
       ],
       "Failed to download files: ${ err }": [
         "Dosyalar indirilemedi: ${ err }"
@@ -4110,17 +4187,26 @@
       "Subfolder failed to be loaded": [
         "Alt klasör yüklenemedi"
       ],
-      "The link to your file failed to be deleted": [
-        "Dosya bağlantınız silinemedi"
+      "The link to \"${ name }\" failed to be deleted": [
+        "${ name }\" bağlantısı silinemedi"
       ],
-      "The link to your file was deleted": [
-        "Dosya bağlantınız silindi"
+      "The link to \"${ name }\" was deleted": [
+        "\"${ name }\" bağlantısı silindi"
+      ],
+      "The link to your item failed to be deleted": [
+        "Öge bağlantınız silinemedi"
+      ],
+      "The link to your item was deleted": [
+        "Öge bağlantınız silindi"
       ],
       "Trash failed to be emptied": [
         "Çöp kutusu boşaltılamadı"
       ],
       "Your old files will be deleted in 72 hours": [
         "Eski dosyalarınız 72 saat içinde silinecek"
+      ],
+      "Your settings failed to be saved": [
+        "Ayarlarınız kaydedilemedi"
       ],
       "Your settings have been changed successfully": [
         "Ayarlarınız değiştirildi"
@@ -4361,8 +4447,8 @@
       "Built-in Adblocker (NetShield)": [
         "Yerleşik reklam engelleyici (NetShield)"
       ],
-      "Custom email addresses": [
-        "Özel e-posta adresleri"
+      "Custom domains": [
+        "Özel etki alanları"
       ],
       "Early access to new products": [
         "Yeni ürünlere erken erişim"
@@ -4472,6 +4558,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        "18 aya kadar ücretsiz ${ appName } ${ planName } edinin"
+      ],
       "Invite friends and earn rewards!": [
         "Arkadaşlarınızı çağırarak ödül kazanın!"
       ]
@@ -4736,9 +4825,6 @@
       "Contacts": [
         "Kişiler"
       ],
-      "Coupon discount": [
-        "Kupon indirimi"
-      ],
       "Create a new folder": [
         "Yeni bir klasör oluştur"
       ],
@@ -4747,9 +4833,6 @@
       ],
       "Create new group": [
         "Yeni grup oluştur"
-      ],
-      "Credits": [
-        "Krediler"
       ],
       "Currency": [
         "Para birimi"
@@ -4933,6 +5016,9 @@
       "Network error": [
         "Ağ sorunu"
       ],
+      "No results found": [
+        "Herhangi bir sonuç bulunamadı"
+      ],
       "Number of files": [
         "Dosya sayısı"
       ],
@@ -5005,8 +5091,11 @@
       "Restore your files": [
         "Dosyalarınızı geri yükleyin"
       ],
-      "Select a plan": [
-        "Bir tarife seçin"
+      "Search results": [
+        "Arama sonuçları"
+      ],
+      "Searching…": [
+        "Aranıyor…"
       ],
       "Select a theme": [
         "Bir tema seçin"
@@ -5200,6 +5289,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "E-posta göndermek için kullaniciadi@pm.me kişisel adresinizi kullanın"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
       ],
       "You do not have any contacts to export": [
         "Dışa aktarılacak bir kişi kaydınız yok"
