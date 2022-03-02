@@ -500,16 +500,16 @@
         "Pulihkan data"
       ],
       "Refer a friend": [
-        ""
+        "Rujuk teman"
       ],
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reload": [
         "Muat ulang"
@@ -822,10 +822,10 @@
     },
     "Action in trial plan": {
       "No, thanks": [
-        ""
+        "Tidak, terima kasih"
       ],
       "Try free for 30 days": [
-        ""
+        "Coba gratis selama 30 hari"
       ]
     },
     "Action to select a title for the bug report modal": {
@@ -1180,19 +1180,22 @@
     },
     "Button": {
       "Add link to your email footer": [
-        ""
+        "Tambahkan tautan pada footer email Anda"
       ],
       "Continue using ProtonMail.": [
-        ""
+        "Lanjut menggunakan ProtonMail."
       ],
-      "Copy ": [
-        ""
+      "Copy": [
+        "Salin"
       ],
       "Invite": [
-        ""
+        "Undang"
+      ],
+      "Send": [
+        "Kirim"
       ],
       "Tweet": [
-        ""
+        "Tweet"
       ]
     },
     "Calendar feature": {
@@ -2295,11 +2298,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mengenkripsi dan mengimpor kontak... Ini perlu beberapa menit. Jika proses sudah selesai, Anda dapat menutup jendela ini."
       ],
-      "Get 3 months of Mail Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        ""
-      ],
-      "Invite friends to start earning credits": [
-        ""
+      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
+        "Dapatkan hingga 3 bulan ${ mailAppName } Plus secara cuma-cuma untuk setiap teman Anda yang berlangganan ke ${ mailAppName }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor berisi beberapa grup. Mohon tinjau ulang bagaimana grup ini harus diimpor."
@@ -2307,8 +2307,11 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Berkas harus memiliki ukuran maksimum ${ MAX_IMPORT_FILE_SIZE_STRING } dan memiliki sampai ${ MAX_IMPORT_CONTACTS_STRING } kontak. Jika berkas Anda lebih besar, silahkan bagi dan pisahkan ke dalam berkas-berkas yang lebih kecil."
       ],
-      "Track how many people click on your link, sign up to ${ mailAppName }, and become paid subscribers. Watch your free months add up.": [
-        ""
+      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
+        "Lacak berapa jumlah orang yang telah mengklik tautan Anda, mendaftar, dan menjadi pengguna berbayar. Saksikan jumlah bulan gratis yang Anda miliki bertambah seiring waktu."
+      ],
+      "Track your referral link activities here.": [
+        "Lacak aktivitas tautan rujukan Anda di sini."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan memiliki sampai ${ MAX_IMPORT_EVENTS_STRING } acara. Jika berkas Anda lebih besar, mohon pisahkan menjadi berkas yang lebih kecil."
@@ -2581,9 +2584,6 @@
       "Invalid ${ name } code": [
         "Kode ${ name } tidak valid"
       ],
-      "Invalid address": [
-        "Alamat tidak valid"
-      ],
       "Invalid card number": [
         "Nomor kartu tidak valid"
       ],
@@ -2602,9 +2602,6 @@
       "Invalid name": [
         "Nama tidak valid"
       ],
-      "Invalid password": [
-        "Kata sandi tidak valid"
-      ],
       "Invalid postal code": [
         "Kode pos tidak valid"
       ],
@@ -2622,6 +2619,9 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender-kalender Proton yang telah ada sebelumnya"
+      ],
+      "Name does not match": [
+        "Nama tidak cocok"
       ],
       "Name on card required": [
         "Wajib isi nama di kartu"
@@ -2813,7 +2813,7 @@
         "Kami tidak dapat terhubung dengan penyedia layanan email Anda."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Kalimat pemulihan salah. Coba lagi atau pakai cara pemulihan lain."
+        "Frasa pemulihan salah. Mohon coba lagi atau gunakan metode pemulihan lain."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Kode verifikasi salah. Pastikan Anda menyalin kode verifikasi dengan benar dan coba lagi. Perubahan memerlukan waktu hingga 24 jam."
@@ -3207,7 +3207,7 @@
         "Spam"
       ],
       "Trash": [
-        "Tempat sampah"
+        "Sampah"
       ]
     },
     "Filter modal operators": {
@@ -3814,6 +3814,9 @@
       ]
     },
     "Info": {
+      "${ appName } ${ planName } credits earned": [
+        "Saldo ${ appName } ${ planName } yang diperoleh"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
@@ -3831,6 +3834,12 @@
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } kalender yang tergabung"
+      ],
+      "${ emailAddress } is a ${ appName } address": [
+        ""
+      ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } tidak valid"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Gratis"
@@ -3859,6 +3868,9 @@
       "${ numContacts } contact": [
         "${ numContacts } kontak"
       ],
+      "${ planName } plan": [
+        "Paket ${ planName }"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
       ],
@@ -3866,7 +3878,7 @@
         "${ providerFoldersNumLocalized } label ditemukan di Gmail"
       ],
       "${ rewards } of ${ rewardsLimit } months": [
-        ""
+        "${ rewards } dari ${ rewardsLimit } bulan"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } pada langganan Anda dengan beralih ke ${ annualBilling }"
@@ -3899,7 +3911,7 @@
         "${ vpnAppName } Gratis"
       ],
       "(${ memberCount } member)": [
-        ""
+        "(${ memberCount } anggota)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Saring jika SEMUA kondisi terpenuhi)"
@@ -3919,23 +3931,26 @@
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } koneksi ProtonVPN (Anda bisa menyambungkan lebih banyak perangkat ke VPN)"
       ],
-      "1 to 3 months of Mail Plus will appear as credits on your next bill": [
-        ""
+      "1. Invite friends to Proton": [
+        "1. Undang teman ke Proton"
       ],
-      "20 personal calendars": [
-        ""
+      "2. They try ${ appName } ${ planName }": [
+        "2. Mereka mencoba ${ appName } ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Diskon 20% berlaku untuk langganan dengan kupon ${ code }"
       ],
+      "3. You earn credits": [
+        "3. Anda memperoleh saldo"
+      ],
       "30 days money-back guarantee.": [
         "Jaminan 30 hari uang kembali."
       ],
-      "5 email addresses/aliases": [
-        ""
+      "5 email addresses": [
+        "5 alamat email"
       ],
       "5 GB storage": [
-        ""
+        "Kuota penyimpanan 5 GB"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Internet yang bebas dan tanpa sensor harus tersedia untuk semua."
@@ -3944,7 +3959,7 @@
         "A recovery file lets you unlock and view your data after an account reset."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Kalimat pemulihan memungkinkan Anda mengakses akun dan memulihkan pesan terenkripsi seandainya Anda lupa kata sandi."
+        "Frasa pemulihan memungkinkan Anda untuk dapat mengakses akun dan memulihkan pesan terenkripsi seandainya Anda lupa kata sandi."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Konten yang diblokir aksesnya, seperti sosial media, berita, Wikipedia, YouTube, dan masih banyak lagi, di mana pun Anda berada."
@@ -4020,9 +4035,6 @@
       ],
       "Allow recovery by phone": [
         "Izinkan pemulihan akun melalui nomor ponsel"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Memungkinkan Anda menghosting email untuk domain Anda sendiri di ${ mailAppName }, misalnya john.smith@example.com"
       ],
       "Already have an account? ${ loginLink }": [
         "Sudah memiliki akun? ${ loginLink }"
@@ -4145,7 +4157,7 @@
         "Dengan berbagi detail acara keseluruhan dari kalender ini, Anda menerima untuk mengizinkan Proton untuk mengakses informasi terenkripsi kalender ini."
       ],
       "Cancel trial": [
-        ""
+        "Batalkan uji coba"
       ],
       "Center": [
         "Tengah"
@@ -4171,11 +4183,11 @@
       "Continue anyway?": [
         "Tetap lanjut?"
       ],
-      "Continue with plus": [
-        ""
+      "Continue with ${ planName }": [
+        "Lanjut dengan ${ planName }"
       ],
-      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
-        ""
+      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
+        "Lanjutkan dengan ${ planName } sekarang juga agar akses menuju akun Anda tidak dinonaktifkan setelah masa uji coba Anda berakhir."
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Buat ${ calendarsToBeCreated } kalender baru"
@@ -4197,12 +4209,6 @@
       ],
       "Create in": [
         "Buat di"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
       ],
       "Creating your Proton account": [
         "Membuat akun Proton Anda"
@@ -4288,8 +4294,8 @@
       "Each additional connection can be assigned to users in your organization.": [
         "Setiap koneksi tambahan dapat diberikan kepada pengguna di organisasi Anda."
       ],
-      "Earned ${ rewards } of ${ rewardsLimit } Mail plus months.": [
-        ""
+      "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
+        "Anda telah memperoleh ${ rewards } dari ${ rewardsLimit } bulan ${ appName } ${ planName }."
       ],
       "Edit label": [
         "Sunting label"
@@ -4387,17 +4393,11 @@
       "free up space by deleting older messages or other data": [
         "menghapus pesan-pesan lama atau data-data lainnya yang sudah tidak diperlukan"
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN berfitur lengkap dengan kecepatan koneksi hingga 10 Gbps."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Frasa pemulihan yang baru akan menggantikan frasa pemulihan yang terdahulu."
-      ],
-      "Get rewarded": [
-        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Berikan kunci publik Anda kepada teman, atau sebarkan secara daring, sehingga setiap orang dapat mengirimi Anda dengan pesan terenkripsi end-to-end!"
@@ -4546,8 +4546,8 @@
       "Internet connection restored.": [
         "Koneksi internet telah pulih."
       ],
-      "Invite friends": [
-        ""
+      "Invited via email": [
+        "Diundang via email"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Sepertinya sebagian data Anda terenkripsi dan terkunci."
@@ -4555,11 +4555,14 @@
       "it’s imperative": [
         "sangat penting"
       ],
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
+        ""
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
       ],
-      "Just send them your personal referral link": [
-        ""
+      "Just send them your personal referral link.": [
+        "Kirimkan saja tautan rujukan Anda kepada mereka."
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Pertahankan data ini di DNS selama Anda ingin menggunakan DKIM."
@@ -4618,9 +4621,6 @@
       "lose access to all current encrypted data": [
         "kehilangan akses ke semua data yang terenkripsi"
       ],
-      "Mail Plus credits earned": [
-        ""
-      ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru membaca data pribadi Anda untuk memberikan akses bagi pengiklan, lembaga pemerintah Rusia, dan pihak ketiga lainnya. Untuk privasi yang lebih baik, buat alamat email yang aman."
       ],
@@ -4670,7 +4670,7 @@
         "Kunci enkripsi kontak tidak ada"
       ],
       "No credit card required": [
-        ""
+        "Tanpa perlu kartu kredit"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Tidak ada metode pemulihan data yang ditentukan; Anda beresiko kehilangan akses menuju data-data Anda"
@@ -4739,7 +4739,7 @@
         "Berhubung terdapat admin-admin lain pada organisasi Anda, Anda bertanggung jawab untuk memberitahu kata sandi baru ini kepada mereka."
       ],
       "Other options": [
-        ""
+        "Pilihan lainnya"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Berkas pemulihan telah kedaluwarsa; harap perbarui agar data-data Anda selalu dapat diakses"
@@ -4754,10 +4754,10 @@
         "P2P"
       ],
       "Paid for a 12 months plan": [
-        ""
+        "Terbayar dalam bentuk paket berlangganan 12 bulan"
       ],
-      "Paid for a month plan": [
-        ""
+      "Paid for a monthly plan": [
+        "Terbayar dalam bentuk paket berlangganan bulanan"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Pembayaran perlu beberapa menit untuk diverifikasi secara penuh."
@@ -4828,14 +4828,17 @@
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
       ],
-      "Plus plan": [
-        ""
-      ],
       "Prevents content from the sender's server from loading without your permission.": [
         "Mencegah konten-konten yang berasal dari server milik pengirim pesan untuk dapat termuat tanpa seizin Anda."
       ],
       "Preview": [
         "Pratinjau"
+      ],
+      "Priority support": [
+        "Dukungan prioritas"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
       ],
       "Proton can't help you recover any lost passwords": [
         "Proton tidak dapat membantu Anda memulihkan kata sandi yang hilang"
@@ -4871,7 +4874,7 @@
         "Diperlukan paket ProtonVPN Plus atau Visionary untuk fitur Secure Core."
       ],
       "Public link invite": [
-        ""
+        "Tautan undangan publik"
       ],
       "purchase additional storage": [
         "membeli kuota penyimpanan tambahan"
@@ -4895,16 +4898,13 @@
         "Frasa pemulihan diunduh"
       ],
       "Recovery phrase has been disabled": [
-        "Kalimat pemulihan telah dinonaktifkan"
+        "Frasa pemulihan telah dinonaktifkan"
       ],
       "Recovery phrase is not associated with any keys.": [
         "Frasa pemulihan tidak terhubung dengan kunci manapun."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Frasa pemulihan tidak terhubung dengan kunci yang telah kedaluwarsa."
-      ],
-      "Refer, receive, repeat. You can earn credits for up to 18 months of Mail Plus.": [
-        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
@@ -4940,10 +4940,7 @@
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
-      ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Dikirim melalui layanan email aman <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+        "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Server sedang tidak aktif"
@@ -4961,10 +4958,10 @@
         "Tentukan frasa pemulihan"
       ],
       "Signed up": [
-        ""
+        "Terdaftar"
       ],
       "Signed up via your link": [
-        ""
+        "Mendaftar melalui tautan Anda"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Karena Anda adalah pengguna yang loyal, akun Anda memiliki fitur-fitur tambahan yang diaktifkan."
@@ -4975,20 +4972,20 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF digunakan untuk menentukan siapa yang diizinkan mengirim email untuk domain tersebut, jadi kami sangat menyarankan untuk menyertakan ProtonMail dalam data SPF Anda. Harap tambahkan record TXT berikut ke DNS Anda. Ini biasanya dapat dilakukan di panel kontrol pendaftar nama domain Anda."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        "Mulai dari 500 MB dan dapatkan kuota penyimpanan tambahan seiring waktu. Kuota penyimpanan ini akan diperuntukkan bagi Mail, Calendar, dan Drive secara bersamaan."
+      ],
       "Starter VPN service with P2P support.": [
         "Layanan VPN pengantar dengan dukungan P2P."
       ],
       "Storage GB": [
         "Penyimpanan GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
-      ],
       "Sucessfully sent invites": [
-        ""
+        "Undangan berhasil terkirim"
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Dukungan 1 alamat email dengan domain khusus"
       ],
       "support team": [
         "tim layanan dukungan"
@@ -5017,9 +5014,6 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Pesan ${ boldDataLocked } tidak akan lagi muncul, namun Anda akan tetap dapat membuka kunci data Anda melalui ${ encryptionAndKeysLink }."
       ],
-      "The 30-day free trial is not available any other way": [
-        ""
-      ],
       "The calendar will be removed from your account.": [
         "Kalender ini akan dihapus dari akun Anda."
       ],
@@ -5035,8 +5029,8 @@
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Berkas konfigurasi ini memungkinkan Anda memilih server ProtonVPN mana yang ingin Anda sambungkan saat menggunakan aplikasi VPN pihak ketiga atau menyiapkan koneksi VPN di router."
       ],
-      "They signup": [
-        ""
+      "This 30-day free trial is not available any other way.": [
+        "Masa uji coba gratis 30 hari ini tidak dapat diperoleh dengan cara lainnya."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena potensi pelanggaran kebijakan."
@@ -5174,7 +5168,10 @@
         "Kecuali Anda keluar dari akun Anda atau mengubah sandi Anda, sesi Anda akan tetap aktif. Sesi berakhir setelah 60 hari tidak aktif."
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Tanpa batasan jumlah folder, label, dan filter"
+      ],
+      "Unlimited messages": [
+        "Tanpa batasan jumlah pesan"
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
@@ -5194,8 +5191,8 @@
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Tingkatkan jenis akun Anda ke akun berbayar untuk dapat memanfaatkan dukungan IMAP/SMTP melalui ProtonMail Bridge."
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+        "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ appName } ${ planName } berikut."
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -5213,7 +5210,7 @@
         "Gunakan kredensial berikut saat menghubungkan ke server ProtonVPN tanpa aplikasi. Contoh kasus penggunaan termasuk: Tunnelblick di macOS, OpenVPN di GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
       ],
       "Users": [
         "Pengguna"
@@ -5287,6 +5284,9 @@
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Saat pemberitahuan diaktifkan, kami akan mengirimkan peringatan ke alamat pemulihan/pemberitahuan Anda jika Anda memiliki pesan baru di akun ProtonMail Anda."
       ],
+      "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
+        "Pada saat mereka berlangganan ke paket berbayar, Anda akan memperoleh saldo ${ appName } ${ planName } selama 1 hingga 3 bulan."
+      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Pada saat paket yang Anda langgan telah jatuh tempo, kami akan terlebih dahulu memperbarui langganan Anda dengan saldo yang tersedia sebelum kami menagih Anda melalui metode-metode pembayaran di atas."
       ],
@@ -5346,6 +5346,9 @@
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Anda dapat menggunakan kredensial-kredensial berikut untuk dapat tersambung ke server ProtonVPN melalui aplikasi-aplikasi VPN open source milik pihak ketiga, semisal Tunnerblick untuk macOS atau OpenVPN untuk GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        "Anda tidak dapat mengirim lebih dari ${ emailSendLimitNumber } email undangan untuk 24 jam ke depan"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Anda tidak dapat menggunakan kredensial OpenVPN / IKEv2 untuk masuk ke aplikasi ProtonVPN atau dasbor ProtonVPN. ${ learnMore }"
@@ -5437,8 +5440,8 @@
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan digunakan untuk verifikasi satu kali ini."
       ],
-      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
+      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
+        "Masa uji coba ${ appName } ${ planName } Anda akan berakhir pada ${ formattedTrialExpirationDate }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Proses impor Anda dari ${ delayedImport.Account } ditunda sementara."
@@ -5471,7 +5474,7 @@
         "Alamat email pemulihan Anda:"
       ],
       "Your recovery phrase": [
-        "Kalimat pemulihan Anda"
+        "Frasa pemulihan Anda"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         "Frasa pemulihan Anda tersusun atas 12 kata yang terangkai dalam urutan yang spesifik."
@@ -5491,7 +5494,7 @@
         "Kunci ${ fingerprint } sudah diunggah"
       ],
       "Track your referral link activities here": [
-        ""
+        "Lacak aktivitas tautan rujukan Anda di sini"
       ]
     },
     "Info - folder colouring feature": {
@@ -5709,7 +5712,7 @@
         "Ke Bintang"
       ],
       "Go to Trash": [
-        "Ke Tempat Sampah"
+        "Ke Sampah"
       ],
       "Jump to first": [
         "Lompat ke pertama"
@@ -5879,10 +5882,10 @@
         " dan ${ l }"
       ],
       "${ monthsRewarded } month credited": [
-        ""
+        "${ monthsRewarded } bulan tersedia dalam bentuk saldo"
       ],
       "${ monthsRewarded } month pending": [
-        ""
+        "${ monthsRewarded } bulan sedang menunggu untuk dicairkan"
       ],
       "${ n } VPN connection available": [
         "${ n } koneksi VPN tersedia"
@@ -5905,14 +5908,14 @@
       "Actions": [
         "Tindakan"
       ],
+      "Activity": [
+        ""
+      ],
       "Address": [
         "Alamat"
       ],
       "Addresses": [
         "Alamat"
-      ],
-      "Admin rights": [
-        "Hak admin"
       ],
       "ALL": [
         "SEMUA"
@@ -5924,7 +5927,7 @@
         "Izinkan pemulihan akun melalui nomor ponsel"
       ],
       "Allow recovery by recovery phrase": [
-        "Izinkan pemulihan menggunakan kalimat"
+        "Izinkan pemulihan akun melalui frasa pemulihan"
       ],
       "Amount": [
         "Jumlah"
@@ -6072,6 +6075,9 @@
       ],
       "Daily email notifications": [
         "Pemberitahuan email harian"
+      ],
+      "Date": [
+        ""
       ],
       "Date format": [
         "Format tanggal"
@@ -6236,7 +6242,7 @@
         "Interval"
       ],
       "Invite via email": [
-        ""
+        "Undang via email"
       ],
       "Keep me signed in": [
         "Biarkan saya tetap masuk"
@@ -6397,9 +6403,6 @@
       "Previous password": [
         "Kata sandi sebelumnya"
       ],
-      "Private User": [
-        "Pengguna Pribadi"
-      ],
       "Prompt to trust keys": [
         "Konfirmasi kunci kepercayaan"
       ],
@@ -6453,9 +6456,6 @@
       ],
       "Send invites in": [
         "Invitation language"
-      ],
-      "Share your invitation link": [
-        ""
       ],
       "Show secondary time zone": [
         "Tampilkan zona waktu sekunder"
@@ -6625,8 +6625,11 @@
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
       ],
+      "Your referral link": [
+        "Tautan rujukan Anda"
+      ],
       "Your reward": [
-        ""
+        "Hadiah Anda"
       ],
       "ZIP": [
         "ZIP"
@@ -6637,7 +6640,7 @@
         "Nomor telepon pemulihan"
       ],
       "Recovery phrase": [
-        "Kalimat pemulihan"
+        "Frasa pemulihan"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6831,7 +6834,7 @@
         "Ketentuan"
       ],
       "Terms and conditions": [
-        ""
+        "Syarat dan ketentuan"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -6846,7 +6849,7 @@
         "Apa bedanya protokol UDP dan TCP?"
       ],
       "Why set recovery methods?": [
-        "Mengapa mengatur metode pemulihan?"
+        "Mengapa saya harus mengatur metode pemulihan?"
       ]
     },
     "Loading info": {
@@ -6902,8 +6905,8 @@
       "Contact groups": [
         "Grup kontak"
       ],
-      "Custom email addresses": [
-        "Alamat email khusus"
+      "Custom domains": [
+        "Domain khusus"
       ],
       "Custom filters": [
         "Filter kustom"
@@ -7023,7 +7026,7 @@
         "Aktifkan paket berbayar agar bisa menikmati domain khusus dan fitur-fitur premium"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7617,9 +7620,6 @@
       "Choose a name": [
         "Tentukan nama"
       ],
-      "Choose address": [
-        "Pilih alamat"
-      ],
       "Choose display name": [
         "Pilih nama tampilan"
       ],
@@ -7701,9 +7701,6 @@
       "Type text or keyword": [
         "Ketik teks atau kata kunci"
       ],
-      "Username": [
-        "Nama pengguna"
-      ],
       "yourdomain.com": [
         "domainanda.com"
       ],
@@ -7776,8 +7773,8 @@
       "Built-in Adblocker (NetShield)": [
         "Pemblokir iklan bawaan (NetShield)"
       ],
-      "Custom email addresses": [
-        "Alamat email khusus"
+      "Custom domains": [
+        "Domain khusus"
       ],
       "Early access to new products": [
         "Akses awal ke produk baru"
@@ -8057,8 +8054,17 @@
       ]
     },
     "Spotlight": {
-      "Invite friends and earn rewards!": [
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
+      ],
+      "Invite friends and earn rewards!": [
+        "Undang teman-teman Anda dan dapatkan berbagai keuntungan!"
+      ],
+      "No more missed appointments": [
+        "Tidak ada lagi janji yang luput"
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
+        "Dengan notifikasi email, Anda dapat menentukan notifikasi seputar acara-acara mana saja yang akan Anda terima beserta waktunya."
       ]
     },
     "State": {
@@ -8122,7 +8128,7 @@
     },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "Solusi Mail dan Calendar yang mengedepankan privasi untuk berbagai keperluan komunikasi Anda sehari-hari."
       ]
     },
     "Success": {
@@ -8386,6 +8392,9 @@
       ]
     },
     "Title": {
+      "${ appName } ${ planName } trial": [
+        ""
+      ],
       "${ appName } customization": [
         "Penyesuaian ${ appName }"
       ],
@@ -8653,11 +8662,11 @@
       "Decrypt key": [
         "Dekripsi kunci"
       ],
-      "Delete ${ address.Email }": [
-        "Hapus ${ address.Email }"
-      ],
       "Delete ${ domain.DomainName }": [
         "Hapus ${ domain.DomainName }"
+      ],
+      "Delete ${ email }": [
+        "Hapus ${ email }"
       ],
       "Delete ${ filter.Name }": [
         "Hapus ${ filter.Name }"
@@ -8685,6 +8694,9 @@
       ],
       "Delete user": [
         "Hapus pengguna"
+      ],
+      "Disable ${ email }": [
+        "Nonaktifkan ${ email }"
       ],
       "Disable two-factor authentication": [
         "Nonaktifkan otentikasi dua-faktor"
@@ -8785,11 +8797,14 @@
       "Get ProtonVPN Plus to access all servers": [
         "Dapatkan ProtonVPN Plus untuk mengakses semua server"
       ],
-      "Get up to 18 months of Mail Plus for free": [
-        ""
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        "Dapatkan langganan ${ appName } ${ planName } hingga 18 bulan secara cuma-cuma"
       ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "How does it work?": [
+        ""
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -8950,9 +8965,6 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
-      "ProtonMail Plus Trial": [
-        ""
-      ],
       "ProtonVPN": [
         "ProtonVPN"
       ],
@@ -8969,10 +8981,10 @@
         "Berkas pemulihan"
       ],
       "Refer a friend": [
-        ""
+        "Rujuk teman"
       ],
       "Referral tracker": [
-        ""
+        "Pelacak rujukan"
       ],
       "Remove calendar": [
         "Hapus kalender"
@@ -8996,7 +9008,7 @@
         "Pulihkan hak administrator"
       ],
       "Secure email based in Switzerland": [
-        ""
+        "Email aman berbasis di Swiss"
       ],
       "Security": [
         "Keamanan"
@@ -9116,7 +9128,7 @@
         "Total (perbulan)"
       ],
       "Try the best of ProtonMail for free": [
-        ""
+        "Jajaki berbagai fitur unggulan ProtonMail secara cuma-cuma"
       ],
       "Two-factor authentication": [
         "Otentikasi dua faktor"
@@ -9152,7 +9164,7 @@
         "Apa yang baru"
       ],
       "Your account’s usage": [
-        ""
+        "Penggunaan akun Anda"
       ],
       "Your calendar link": [
         "Tautan kalender Anda"
@@ -9161,7 +9173,7 @@
         "Paket Anda saat ini"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Masa uji coba gratis Anda akan segera berakhir pada ${ formattedEndDate }"
       ],
       "Your plan": [
         "Paket anda"
@@ -9170,7 +9182,7 @@
         "Status pemulihan Anda"
       ],
       "You’ve been invited to try ${ mailAppName }": [
-        ""
+        "Anda telah diundang untuk dapat mencoba ${ mailAppName }"
       ],
       "ZIP / postal code": [
         "Kode pos"
@@ -9298,9 +9310,6 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Mengaktifkan catatan lanjut merekam alamat IP untuk setiap kejadian di catatan keamanan."
       ],
-      "For easy sharing with all your contacts, the link text “Try ${ mailAppName } Plus Free for one month” is added to the bottom of your emails": [
-        ""
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Dapatkan akses ke semua fitur berbayar untuk ${ vpnAppName } dan ${ mailAppName } (layanan email terenkripsi yang digunakan jutaan orang untuk melindungi data mereka) dengan satu paket."
       ],
@@ -9309,12 +9318,6 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Tentukan apakah email-email yang terhubung pada suatu rantai percakapan akan dikelompokkan sebagai satu atau ditampilkan secara terpisah pada Kotak Masuk Anda."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Pakai email dengan domain Anda sendiri di ${ mailAppName }, contoh john.smith@contoh.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Hosting email untuk domain Anda sendiri di ProtonMail, misal. john.smith@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami sebelumnya, silakan masukkan di sini."
@@ -9342,6 +9345,9 @@
       ],
       "Set the default layout for your Inbox.": [
         "Tentukan tata letak default Kotak Masuk Anda."
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
+        ""
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Tanda tangan yang diproduksi dengan kunci ini dianggap tidak valid dan kunci ini tidak dapat dipakai untuk mengenkripsi"
@@ -9378,6 +9384,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Gunakan alamat pribadi seperti namapengguna@pm.me untuk mengirim email"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."
@@ -9671,7 +9680,7 @@
         "Harap diperhatikan dengan memilih metode pembayaran ini, akun anda tidak dapat segera ditingkatkan. Kami akan memperbarui akun anda setelah pembayaran sah."
       ],
       "Please provide at least one recipient": [
-        ""
+        "Harap tulis setidaknya satu nama penerima"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton akan menggabungkan semua folder dengan nama sama. Untuk menghindari ini, silakan ubah nama sebelum impor."
@@ -9707,7 +9716,7 @@
         "Anda tidak akan lagi melihat rekaman impor ini di daftar."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Berkas pemulihan Anda telah kedaluwarsa. Berkas ini sudah tidak lagi dapat digunakan untuk memulihkan data-data baru apabila akun Anda kembali diatur ulang ke depannya."

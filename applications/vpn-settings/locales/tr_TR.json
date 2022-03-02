@@ -259,11 +259,11 @@
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Remove bonuses": [
         "Ödülleri kaldır"
@@ -1958,6 +1958,9 @@
         "${ number } sunucu",
         "${ number } sunucu"
       ],
+      "${ planName } plan": [
+        "${ planName } tarifesi"
+      ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ annualBilling } tarifesine geçerek aboneliğinizde ${ save20 } indirim alın"
       ],
@@ -1983,9 +1986,6 @@
         "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
-      "20 personal calendars": [
-        "20 kişisel takvim"
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
       ],
@@ -1995,8 +1995,8 @@
       "30-days money back guarantee": [
         "30 günlük ücret iade garantisi"
       ],
-      "5 email addresses/aliases": [
-        "5 e-posta adresi/takma adı"
+      "5 email addresses": [
+        "5 e-posta adresi"
       ],
       "5 GB storage": [
         "5 GB depolama alanı"
@@ -2030,9 +2030,6 @@
       ],
       "ALL YOUR DATA WILL BE LOST!": [
         "TÜM VERİLERİNİZ KAYBOLACAK!"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "${ mailAppName } üzerinde kendi etki alanınızı kullanarak e-posta barındırmanızı sağlar, Örnek ali.kaya@ornek.com"
       ],
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
@@ -2091,17 +2088,11 @@
       "Connections": [
         "Bağlantı sayısı"
       ],
-      "Continue with plus": [
-        "Plus tarifesi ile devam et"
+      "Continue with ${ planName }": [
+        "${ planName } aboneliği ile devam edin"
       ],
-      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
-        "Deneme sürenizin sonunda erişiminizin devre dışı bırakılmasını önlemek için Plus tarifesine geçin."
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@proton.me, haber abonelikleri için AliHaber@proton.me gibi takma adlar oluşturabilirsiniz."
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "20 taneye kadar özel takvim ekleyebilirsiniz. Buna ek olarak arkadaşlarınızdan, ailenizden iş arkadaşlarınızdan ve kuruluşlardan 5 takvim ekleyebilirsiniz."
+      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
+        "Deneme süresi sonunda erişiminizin kapatılmasını önlemek için ${ planName } aboneliği ile devam edin."
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
@@ -2174,9 +2165,6 @@
       ],
       "Free up some space or contact your administrator.": [
         "Biraz boş yer açın veya yöneticinizle görüşün."
-      ],
-      "Free VPN on a single device": [
-        "Tek bir aygıt için ücretsiz VPN"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "10 Gb/sn hıza ulaşan tam özellikli VPN."
@@ -2310,9 +2298,6 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "\"Düşür\" üzerine tıkladığınızda, hesabınızın Free tarifesine düşürülmesi birkaç dakika sürebilir. "
       ],
-      "Other options": [
-        "Diğer seçenekler"
-      ],
       "P2P": [
         "P2P"
       ],
@@ -2349,11 +2334,14 @@
       "Plus or Visionary subscription required": [
         "Plus veya Visionary aboneliği gerekli"
       ],
-      "Plus plan": [
-        "Plus tarifesi"
-      ],
       "Preview": [
         "Ön izle"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
       ],
       "Proton can't help you recover any lost passwords": [
         "Proton kaybolan parolaları kurtarmanıza yardımcı olamaz"
@@ -2416,14 +2404,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        "500 MB ile başlayın ve zamanla daha fazla depolama alanı jazanın. Depolama alanı Mail, Calendar ve Drive tarafından ortaklaşa kullanılır."
+      ],
       "Starter VPN service with P2P support.": [
         "P2P destekleyen ​​başlangıç VPN hizmeti."
       ],
       "Storage GB": [
         "GB olarak depolama"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
       ],
       "Support for 1 custom email domain": [
         "1 özel e-posta etki alanı desteği"
@@ -2509,11 +2497,11 @@
       "Unlimited folders, labels, and filters": [
         "Sınırsız klasör, etiket, süzgeç"
       ],
+      "Unlimited messages": [
+        "Sınırsız ileti"
+      ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
-      ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Hesabınızı bugün yükselterek günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren posta ve takvim çözümünü kullanın."
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "ProtonVPN sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: MacOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
@@ -2641,8 +2629,8 @@
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Var olan Proton hesabınız tüm Proton hizmetlerine erişmek için kullanılabilir. Lütfen ${ email } ile oturum açın"
       ],
-      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
-        "Ücretsiz ProtonMail Plus denemeniz ${ formattedTrialExpirationDate } tarihinde sona erecek."
+      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
+        "Ücretsiz ${ appName } ${ planName } deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona erecek."
       ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre yasaları ile korunmaktadır"
@@ -3214,8 +3202,8 @@
       "Contact groups": [
         "Kişi grupları"
       ],
-      "Custom email addresses": [
-        "Özel e-posta adresleri"
+      "Custom domains": [
+        "Özel etki alanları"
       ],
       "Custom filters": [
         "Özel süzgeçler"
@@ -3637,8 +3625,8 @@
       "Built-in Adblocker (NetShield)": [
         "Yerleşik reklam engelleyici (NetShield)"
       ],
-      "Custom email addresses": [
-        "Özel e-posta adresleri"
+      "Custom domains": [
+        "Özel etki alanları"
       ],
       "Early access to new products": [
         "Yeni ürünlere erken erişim"
@@ -3785,6 +3773,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        "18 aya kadar ücretsiz ${ appName } ${ planName } edinin"
+      ],
       "Invite friends and earn rewards!": [
         "Arkadaşlarınızı davet edin ve ödül kazanın!"
       ]
@@ -3901,6 +3892,9 @@
       ]
     },
     "Title": {
+      "${ appName } ${ planName } trial": [
+        "${ appName } ${ planName } deneme"
+      ],
       "${ appName } customization": [
         "${ appName } özelleştirme"
       ],
@@ -4171,9 +4165,6 @@
       "Processing...": [
         "İşleniyor..."
       ],
-      "ProtonMail Plus Trial": [
-        "ProtonMail Plus deneme"
-      ],
       "ProtonVPN clients": [
         "ProtonVPN istemcileri"
       ],
@@ -4282,9 +4273,6 @@
       "Your current plan": [
         "Geçerli tarifeniz"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
-      ],
       "Your plan": [
         "Tarifeniz"
       ],
@@ -4330,12 +4318,6 @@
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
         "Tek tarifeyle tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
       ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Kendi etki alanınızın e-postalarını ${ mailAppName } üzerinde barındırın. Örnek: ali.kaya@ornek.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Kendi etki alanınızın e-postalarını ProtonMail üzerinde barındırın. Örnek: ali.kaya@ornek.com"
-      ],
       "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
         "Parolanızı unutursanız, hesabınıza veya verilerinize erişemezsiniz. Lütfen güvenli bir yerde tutun."
       ],
@@ -4368,6 +4350,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "E-posta göndermek için kullanıcıadı@pm.me kişisel adresinizi kullanın"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
       ],
       "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
         "Tüm Proton hizmetleri için kullanılan kullanıcı adı. Bu ad, daha sonra güvenli bir ProtonMail hesabı açmak için de kullanılabilir."

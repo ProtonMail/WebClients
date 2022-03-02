@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } με αλλαγή σε ετήσια τιμολόγηση"
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } εισαγωγή"
       ],
@@ -89,9 +86,6 @@
       "All Unstarred": [
         "Όλα μη επισημασμένα"
       ],
-      "annual billing": [
-        "ετήσια χρέωση"
-      ],
       "Apply": [
         "Εφαρμογή"
       ],
@@ -167,12 +161,6 @@
       "Color": [
         "Χρώμα"
       ],
-      "Compare all features": [
-        "Συγκρίνετε όλες τις λειτουργίες"
-      ],
-      "Compare plans": [
-        "Σύγκριση πακέτων"
-      ],
       "Compose": [
         "Σύνταξη"
       ],
@@ -223,9 +211,6 @@
       ],
       "Customize": [
         "Προσαρμογή"
-      ],
-      "Decrease": [
-        "Μείωση"
       ],
       "Decrypt": [
         "Αποκρυπτογράφηση"
@@ -424,9 +409,6 @@
       "Import messages": [
         "Εισαγωγή μηνυμάτων"
       ],
-      "Increase": [
-        "Αύξηση"
-      ],
       "Inline": [
         "Ενσωματωμένη"
       ],
@@ -478,9 +460,6 @@
       ],
       "Load unprotected": [
         "Φόρτωση μη προστατευμένων"
-      ],
-      "Loading verification": [
-        "Αναμονή για επαλήθευση"
       ],
       "Loading${ ellipsis }": [
         "Γίνεται φόρτωση${ ellipsis }"
@@ -555,7 +534,7 @@
         "Μετακίνηση στα ενοχλητικά"
       ],
       "Move to trash": [
-        "Μετακίνηση στον κάδο απορριμμάτων"
+        "Μετακίνηση στα Διαγραμμένα"
       ],
       "Move to...": [
         "Μετακίνηση σε..."
@@ -599,9 +578,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Άνοιγμα ${ CALENDAR_APP_NAME }"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
-      ],
       "Open calendar": [
         "Άνοιγμα ημερολόγιου"
       ],
@@ -622,9 +598,6 @@
       ],
       "Pause": [
         "Παύση"
-      ],
-      "Pay": [
-        "Πληρωμή"
       ],
       "Preview": [
         "Προεπισκόπηση"
@@ -683,12 +656,6 @@
       "Remove ${ attachmentName }": [
         "Αφαίρεση ${ attachmentName }"
       ],
-      "Remove bonuses": [
-        "Αφαιρέστε τα μπόνους"
-      ],
-      "Remove gift code": [
-        "Αφαιρέστε τον κωδικό δώρου"
-      ],
       "Remove this label": [
         "Αφαίρεση αυτής της ετικέτας"
       ],
@@ -715,9 +682,6 @@
       ],
       "Resume": [
         "Συνέχεια"
-      ],
-      "Retry": [
-        "Επανάληψη"
       ],
       "Revert to original display": [
         "Επαναφορά αρχικής εμφάνισης"
@@ -751,9 +715,6 @@
       ],
       "Select all messages": [
         "Επιλογή όλων των μηνυμάτων"
-      ],
-      "Select plan": [
-        "Επιλέξτε πακέτο"
       ],
       "Send": [
         "Αποστολή"
@@ -927,12 +888,6 @@
       "Use ${ label } theme": [
         "Χρήση ${ label } θέματος"
       ],
-      "Use a different card": [
-        "Χρησιμοποιήστε μία άλλη κάρτα"
-      ],
-      "Use a different payment method": [
-        "Χρησιμοποιήστε διαφορετικό τρόπο πληρωμής"
-      ],
       "Use for sending": [
         "Χρήση για αποστολή"
       ],
@@ -1025,27 +980,6 @@
       ],
       "Participant added": [
         ""
-      ]
-    },
-    "Addon": {
-      "+ ${ addresses } email address": [
-        "+ ${ addresses } διεύθυνση email",
-        "+ ${ addresses } διευθύνσεις email"
-      ],
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } προσαρμοσμένο domain",
-        "+ ${ domains } προσαρμοσμένα domains"
-      ],
-      "+ ${ members } user": [
-        "+ ${ members } χρήστης",
-        "+ ${ members } χρήστες"
-      ],
-      "+ ${ storage } storage": [
-        "+ ${ storage } αποθηκευτικός χώρος"
-      ],
-      "+ ${ vpn } connection": [
-        "+ ${ vpn } σύνδεση",
-        "+ ${ vpn } συνδέσεις"
       ]
     },
     "Alert": {
@@ -1148,23 +1082,6 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Εάν αντιμετωπίσετε προβλήματα, μπορείτε πάντα να απενεργοποιήσετε την Πρόσβαση Beta."
-      ]
-    },
-    "Billing cycle option": {
-      "Annually": [
-        "Ετήσια"
-      ],
-      "Annually SAVE 20%": [
-        "Ετήσιο ΟΦΕΛΟΣ 20%"
-      ],
-      "Monthly": [
-        "Μηνιαία"
-      ],
-      "Two years SAVE 33%": [
-        "Διετές ΟΦΕΛΟΣ 33%"
-      ],
-      "Two-year": [
-        "Δύο έτη"
       ]
     },
     "blackfriday Action": {
@@ -1342,31 +1259,6 @@
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         ""
-      ]
-    },
-    "Calendar feature": {
-      "Calendar import": [
-        "Εισαγωγή ημερολόγιου"
-      ],
-      "Invitations": [
-        "Προσκλήσεις"
-      ],
-      "Multiple calendars": [
-        "Πολλαπλά ημερολόγια"
-      ],
-      "Recurring events": [
-        "Επαναλαμβανόμενες εκδηλώσεις"
-      ],
-      "Share Calendar via link": [
-        "Κοινοποίηση Ημερολόγιου μέσω συνδέσμου"
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        "20 / χρήστη"
-      ],
-      "20 / user *": [
-        "20 / χρήστη *"
       ]
     },
     "Calendar invite buttons label": {
@@ -1823,16 +1715,6 @@
       ],
       "Yomi": [
         "Ανάγνωση"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } ημέρα",
-        "${ days } ημέρες"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } μήνας",
-        "${ monthsWithYears } μήνες"
       ]
     },
     "Country name": {
@@ -2728,25 +2610,9 @@
         "Ελήφθη νέο email"
       ]
     },
-    "Disney": {
-      "Disney+": [
-        "Disney+"
-      ]
-    },
     "Download attachments": {
       "Download all": [
         "Λήψη όλων"
-      ]
-    },
-    "Drive feature": {
-      "Access via Web": [
-        "Πρόσβαση μέσω Web"
-      ],
-      "Share files via link": [
-        "Κοινή χρήση αρχείων με συνδέσμους"
-      ],
-      "Upload / download files": [
-        "Ανέβασμα / λήψη αρχείων"
       ]
     },
     "Early Access Disabled": {
@@ -2876,12 +2742,6 @@
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
       ],
-      "Amount above the maximum.": [
-        "Ποσό μεγαλύτερο από το μέγιστο επιτρεπόμενο."
-      ],
-      "Amount below minimum.": [
-        "Ποσό χαμηλότερο από το κατώτερο επιτρεπόμενο."
-      ],
       "Attachments are limited to 25 MB": [
         "Τα συνημμένα περιορίζονται στα 25 MB"
       ],
@@ -2899,9 +2759,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Δεν είναι δυνατή η δημιουργία νέων ημερολογίων για όλα τα εισαγόμενα ημερολόγια λόγω του προσωπικού ορίου συνολικών ημερολογίων."
-      ],
-      "Checkout expired, please try again": [
-        "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
       "Choose a date in the future.": [
         "Επιλογή μελλοντικής ημερομηνίας."
@@ -2963,9 +2820,6 @@
       "Enter a password": [
         "Εισάγετε κωδικό πρόσβασης"
       ],
-      "Error connecting to the Bitcoin API.": [
-        "Πρόβλημα σύνδεσης με το Bitcoin API."
-      ],
       "Error in one of the conditions": [
         "Σφάλμα σε μια από τις συνθήκες"
       ],
@@ -2999,26 +2853,11 @@
       "Incorrect mailbox password. Please try again.": [
         "Λανθασμένος κωδικός πρόσβασης θυρίδας. Παρακαλούμε δοκιμάστε ξανά."
       ],
-      "Invalid ${ name } code": [
-        "Μη έγκυρο ${ name } κωδικός"
-      ],
-      "Invalid card number": [
-        "Μη έγκυρος αριθμός κάρτας"
-      ],
-      "Invalid code": [
-        "Μη έγκυρος κωδικός"
-      ],
-      "Invalid expiration date": [
-        "Μη έγκυρη ημερομηνία λήξης"
-      ],
       "Invalid expiration time": [
         "Μη έγκυρος χρόνος λήξης"
       ],
       "Invalid name": [
         "Μη έγκυρο όνομα"
-      ],
-      "Invalid postal code": [
-        "Μη έγκυρος ταχυδρομικός κώδικας"
       ],
       "Invalid public key file": [
         "Μη έγκυρο δημόσιο κλειδί (public key)"
@@ -3028,6 +2867,9 @@
       ],
       "Label name cannot be empty": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
@@ -3041,9 +2883,6 @@
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
-      ],
-      "Name on card required": [
-        "Απαιτείται το όνομα κατόχου της κάρτας"
       ],
       "Network error: Please check your connection and try again.": [
         "Σφάλμα δικτύου. Παρακαλούμε ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
@@ -3080,23 +2919,8 @@
         "Μία από τις ομάδες δεν έχει επαφές: : ${ noContactGroupList }",
         "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList }"
       ],
-      "Organization not recognized. Try again.": [
-        "Ο οργανισμός δεν αναγνωρίστηκε. Δοκιμάστε ξανά."
-      ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
-      ],
-      "Payment process cancelled": [
-        "Η διαδικασία πληρωμής ακυρώθηκε"
-      ],
-      "Payment process consumed": [
-        "Ήδη πραγματοποιημένη πληρωμή"
-      ],
-      "Payment process failed": [
-        "Αποτυχία διαδικασίας πληρωμής"
-      ],
-      "Payment process not supported": [
-        "Μη υποστηριζόμενη διαδικασία πληρωμής"
       ],
       "Please activate your content search again": [
         "Παρακαλούμε ενεργοποιήστε ξανά την αναζήτηση περιεχομένου"
@@ -3119,9 +2943,6 @@
       ],
       "Primary address key is not decrypted.": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται."
-      ],
-      "Process aborted": [
-        "Η διαδικασία ματαιώθηκε"
       ],
       "Public key could not be trusted": [
         "Το δημόσιο κλειδί δεν μπορεί να γίνει έμπιστο"
@@ -3169,15 +2990,9 @@
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Λυπούμαστε, το Proton δεν μπορεί να αποκρυπτογραφήσει το μήνυμά σας. Παρακαλούμε ελέγξτε αν είναι ενεργά όλα τα κλειδιά σας."
       ],
-      "Tab closed": [
-        "Κλειστή καρτέλα"
-      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Δεν ήταν δυνατή η αποκρυπτογράφηση του συνημμένου.\nΑν έχετε το αντίστοιχο ιδιωτικό κλειδί, θα μπορείτε να αποκρυπτογραφήσετε\nτο αρχείο με ένα πρόγραμμα όπως το GnuPG.",
         "Ορισμένα από τα συνημμένα δεν μπόρεσαν να αποκρυπτογραφηθούν.\nΑν έχετε το αντίστοιχο ιδιωτικό κλειδί, θα μπορείτε να αποκρυπτογραφήσετε\nτα αρχεία με ένα πρόγραμμα όπως το GnuPG."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Υπερβολικό μήκος ονόματος φακέλου. Παρακαλούμε δοκιμάστε ένα συντομότερο."
@@ -3190,15 +3005,6 @@
       ],
       "The maximum expiration is 4 weeks": [
         "Η μέγιστη λήξη είναι 4 εβδομάδες"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Το ελάχιστο ποσό χρημάτων που μπορεί να προστεθεί είναι ${ _price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Το ελάχιστο ποσό που μπορεί να δοθεί για δωρεά είναι ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Η ελάχιστη πληρωμή που γίνεται αποδεκτή είναι ${ _price2 }"
       ],
       "The sending key is not valid": [
         "Το κλειδί αποστολής δεν είναι έγκυρο"
@@ -3244,9 +3050,6 @@
       ],
       "Unknown error.": [
         "Άγνωστο σφάλμα."
-      ],
-      "Unknown payment token status": [
-        "Άγνωστη κατάσταση πληρωμής"
       ],
       "Wrong mailbox password": [
         "Λανθασμένος κωδικός πρόσβασης θυρίδας"
@@ -3539,7 +3342,7 @@
         "Ανεπιθύμητα"
       ],
       "Trash": [
-        "Κάδος απορριμμάτων"
+        "Διαγραμμένα"
       ]
     },
     "Filter modal operators": {
@@ -3620,11 +3423,6 @@
     "Font Size Default": {
       "Default": [
         "Προεπιλεγμένο"
-      ]
-    },
-    "Free price": {
-      "Free": [
-        "Δωρεάν"
       ]
     },
     "Get started checklist completion": {
@@ -3898,12 +3696,6 @@
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
       ],
-      "${ mailAppName } Free": [
-        "${ mailAppName } Δωρεάν"
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "Το ${ mailAppName } Professional ξεκινά με έναν χρήστη, και κάθε χρήστης προσθέτει 5 GB και 5 διευθύνσεις ηλεκτρονικού ταχυδρομείου στο απόθεμα του οργανισμού."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } μήνυμα δεν μπόρεσε να μετακινηθεί.",
         "${ messagesNotAuthorizedToMove } μηνύματα δεν μπόρεσαν να μετακινηθούν."
@@ -3934,15 +3726,6 @@
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } συνημμένο αρχείο",
         "${ pureAttachmentsCount } συνημμένα αρχεία"
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } στη συνδρομή σας με αλλαγή σε ${ annualBilling }"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } τόσο στο Mail όσο και στο VPN προσθέτοντας μια συνδρομή Mail."
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } τόσο στο VPN όσο και στο Mail προσθέτοντας μια συνδρομή VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
@@ -3988,9 +3771,6 @@
         "${ updated } επαφή ενημερώθηκε επιτυχώς.",
         "${ updated } επαφές ενημερώθηκαν επιτυχώς."
       ],
-      "${ vpnAppName } Free": [
-        "${ vpnAppName } Δωρεάν"
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
@@ -4001,42 +3781,17 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Φιλτράρετε εάν πληρούνται ΟΠΟΙΕΣΔΗΠΟΤΕ από τις ακόλουθες συνθήκες)"
       ],
-      "(Mail + VPN)": [
-        "(Mail + VPN)"
-      ],
       "(No Recipient)": [
         "(Κανένας παραλήπτης)"
-      ],
-      "* Customizable features": [
-        "* Προσαρμόσιμες λειτουργίες"
-      ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonus αποθήκευση"
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } σύνδεση για το ProtonVPN (σας επιτρέπει να συνδέσετε περισσότερες συσκευές στο VPN)",
-        "+${ organization.BonusVPN } συνδέσεις για το ProtonVPN (σας επιτρέπει να συνδέσετε περισσότερες συσκευές στο VPN)"
       ],
       "/month.": [
         "/μήνα."
       ],
-      "20 personal calendars": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "Εφαρμόζεται 20% έκπτωση για τη συνδρομή σας, με το κουπόνι ${ code }"
-      ],
-      "30 days money-back guarantee.": [
-        "Εγγύηση Επιστροφής Χρημάτων εντός 30 ημερών."
-      ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        "Ένα δωρεάν και χωρίς λογοκρισία Internet θα πρέπει να είναι διαθέσιμο σε όλους."
+        "5 GB αποθηκευτικός χώρος"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Μια φράση ανάκτησης είναι ένας από τους ασφαλέστερους τρόπους για να προστατεύσετε την πρόσβαση στον λογαριασμό σας. Μπορείτε να τη χρησιμοποιήσετε για να αποκτήσετε πρόσβαση στο λογαριασμό σας και να ανακτήσετε τα κρυπτογραφημένα δεδομένα σας εάν ξεχάσετε ποτέ τον κωδικό πρόσβασής σας."
@@ -4044,35 +3799,17 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Μια αίτηση διαγραφής από αυτή τη λίστα θα σταλεί στον αποστολέα του ενημερωτικού δελτίου και θα επεξεργαστεί αυτόματα."
       ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Πρόσβαση σε μπλοκαρισμένο περιεχόμενο, όπως μέσα κοινωνικής δικτύωσης, ειδήσεις, Wikipedia, YouTube, και πολλά άλλα, ανεξάρτητα από το πού βρίσκεστε."
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Πρόσβαση στις υπηρεσίες σας μετάδοσης, όπως ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, ασχέτως πού βρίσκεστε."
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Η πρόσβαση σε λογαριασμό περιορίζεται λόγω απλήρωτων τιμολογίων. Επικοινωνήστε με το διαχειριστή σας."
       ],
-      "Account successfully updated": [
-        "Ο λογαριασμός ενημερώθηκε επιτυχώς"
-      ],
       "Activation in progress": [
         "Ενεργοποίηση σε εξέλιξη"
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "Προσθέστε επιπλέον διευθύνσεις στο λογαριασμό σας, όπως user2@protonmail.com"
       ],
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
-      ],
-      "Addresses": [
-        "Διευθύνσεις"
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Αφού κάνετε την πληρωμή Bitcoin, ακολουθήστε τις παρακάτω οδηγίες για αναβάθμιση."
       ],
       "Align left": [
         "Στοίχιση αριστερά"
@@ -4100,12 +3837,6 @@
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
       ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Σας επιτρέπει να φιλοξενήσετε μηνύματα ηλεκτρονικού ταχυδρομείου για τον δικό σας τομέα (domain) στο ${ mailAppName }, π.χ. john.smith@example.com"
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Ποσό χαμηλότερο από το ελάχιστο. (${ amount })."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Έχει εντοπιστεί ένα άγνωστο δημόσιο κλειδί για αυτόν τον παραλήπτη."
       ],
@@ -4122,25 +3853,25 @@
         "Είστε βέβαιοι ότι θέλετε να απορρίψετε τις αλλαγές σας;"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τη ${ count } συζήτηση;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } σηζητήσεις;"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } συζήτηση;",
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } σηζητήσεις;"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε μόνιμα ${ count } πρόχειρο;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε μόνιμα ${ count } πρόχειρα;"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } πρόχειρο;",
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } πρόχειρα;"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } μήνυμα;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τα ${ count } μηνύματα;"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } μηνύματα;"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Είστε σίγουροι πως θέλετε να διαγράψετε οριστικά αυτή τη συζήτηση;"
       ],
       "Are you sure you want to permanently delete this draft?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε μόνιμα αυτό το σχέδιο;"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτό το πρόχειρο;"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "Είστε σίγουροι πως θέλετε να διαγράψετε αυτό το μήνυμα για πάντα;"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτό το μήνυμα;"
       ],
       "Attach public key": [
         "Επισύναψη δημοσίου κλειδιού"
@@ -4154,32 +3885,8 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
       ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "Χρεώνεται ως ${ billedPrice } κάθε 2 χρόνια"
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "Χρεώνεται ${ billedPrice } ανά έτος"
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Χρέωση στο τέλος του τρέχοντος κύκλου χρέωσης (ανανεώνεται την ${ renewalDate })"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Οι συναλλαγές Bitcoin ενδέχεται να χρειαστούν κάποιο χρόνο για επιβεβαίωση (έως και 24 ώρες). Μόλις επιβεβαιωθεί, θα προσθέσουμε μονάδες στο λογαριασμό σας. Μετά την επιβεβαίωση της συναλλαγής, μπορείτε να πληρώσετε το λογαριασμό σας με τις μονάδες."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Η Black Friday 2018 εφαρμόστηκε στη συνδρομή σας"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Η Black Friday 2019 εφαρμόστηκε στη συνδρομή σας"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Η έκπτωση Black Friday 2020 για νέο συνδρομητή έχει εφαρμοστεί"
-      ],
       "Body: ": [
         "Σώμα: "
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας? Μπορούμε να σας βοηθήσουμε να καθαρίσετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και στη διαδικασία να απορρίψετε την ειδοποίηση."
@@ -4214,8 +3921,8 @@
       "Confirm phishing report": [
         "Επιβεβαίωση αναφοράς ηλεκτρονικού \"ψαρέματος\" (Phishing)"
       ],
-      "Connections": [
-        "Συνδέσεις"
+      "Continue with ${ planName }": [
+        ""
       ],
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
@@ -4235,12 +3942,6 @@
       ],
       "Create in": [
         "Δημιουργία εντός"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
@@ -4276,9 +3977,6 @@
       "Disable message content search": [
         "Απενεργοποίηση αναζήτησης εντός περιεχομένου μηνυμάτων"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Εφαρμόστηκε έκπτωση στη συνδρομή σας, με το κουπόνι ${ code }"
-      ],
       "Do you want to download this attachment anyway?": [
         "Θέλετε να κατεβάσετε αυτό το συνημμένο ούτως ή άλλως;",
         "Θέλετε να κατεβάσετε αυτά τα συνημμένα ούτως ή άλλως;"
@@ -4289,14 +3987,8 @@
       "Do you want to re-sign the contact details?": [
         "Θέλετε να υπογράψετε ξανά τα στοιχεία της επαφής;"
       ],
-      "Domains": [
-        "Domains"
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Κατεβάστε την εφαρμογή μας για κινητά από το αγαπημένο σας app store για να επικοινωνείτε με ασφάλεια εν κινήσει."
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
         "Λήψη μηνύματος ${ esProgress } από ${ totalProgressToShow }"
@@ -4318,9 +4010,6 @@
       ],
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "Κάθε πρόσθετη σύνδεση μπορεί να ανατεθεί σε χρήστες στον οργανισμό σας."
       ],
       "Email address": [
         "Διεύθυνση E-mail"
@@ -4367,9 +4056,6 @@
       "Expiration Time": [
         "Χρόνος Λήξης"
       ],
-      "Expired": [
-        "Έχει λήξει"
-      ],
       "file attached": [
         "συνημμένο αρχείο",
         "συνημμένα αρχεία"
@@ -4380,26 +4066,11 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Τα φίλτρα λειτουργούν σε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου, συμπεριλαμβανομένων των εισερχόμενων καθώς και των απεσταλμένων μηνυμάτων ηλεκτρονικού ταχυδρομείου. Κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα, μια συνθήκη και μια ενέργεια."
       ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "Για οικογένειες και μικρές ομάδες· περιλαμβάνει Ηλεκτρονικό Ταχυδρομείο και VPN."
-      ],
-      "For getting started with private and secure emailing.": [
-        "Για ξεκίνημα με ιδιωτική και ασφαλή επικοινωνία με email."
-      ],
       "For increased security, activate 2FA.": [
         "Για αυξημένη ασφάλεια, ενεργοποιήστε το 2FA."
       ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Για άτομα που χρειάζονται μια πλήρως εξοπλισμένη email θυρίδα με προχωρημένη προστασία."
-      ],
       "For messages newer than ${ oldestDate }": [
         "Για μηνύματα νεώτερα από ${ oldestDate }"
-      ],
-      "For professionals that need secure business communications.": [
-        "Για επαγγελματίες που χρειάζονται ασφαλείς επιχειρησιακές επικοινωνίες."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Για Visa και MasterCard, τα 3 ψηφία στο πίσω μέρος της κάρτας σας. Για την American Express, τα 4 ψηφία στο μπροστινό μέρος της κάρτας σας."
       ],
       "Free up some space or add more storage space.": [
         "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
@@ -4407,14 +4078,8 @@
       "Free up some space or contact your administrator.": [
         "Ελευθερώστε χώρο ή επικοινωνήστε με το διαχειριστή σας."
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "From": [
         "Από"
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "Πλήρως εξοπλισμένο VPN με ταχύτητα έως και 10 Gbps."
       ],
       "Get more storage and premium features.": [
         "Αποκτήστε περισσότερο χώρο αποθήκευσης και premium δυνατότητες."
@@ -4470,9 +4135,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
       ],
-      "Included": [
-        "Περιλαμβάνεται"
-      ],
       "Increase storage space starting at": [
         "Αύξηση αποθηκευτικού χώρου που αρχίζει από"
       ],
@@ -4522,7 +4184,7 @@
         "Φόρτωση ${ appName }"
       ],
       "Loading message": [
-        "Γίνεται φόρτωση μηνύματος"
+        "Φόρτωση μηνύματος"
       ],
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
@@ -4532,6 +4194,9 @@
       ],
       "Manage your labels": [
         "Διαχείρηση των ετικετών σας"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        ""
       ],
       "members": [
         "μέλη"
@@ -4605,9 +4270,6 @@
       "No more results found": [
         "Δεν βρέθηκαν άλλα αποτελέσματα"
       ],
-      "No payment is required at this time.": [
-        "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
-      ],
       "No preview available": [
         "Δεν υπάρχει διαθέσιμη προεπισκόπηση"
       ],
@@ -4623,12 +4285,6 @@
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
-      "Not customizable": [
-        "Μη παραμετροποιήσιμο"
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "Αριθμός συνδέσεων VPN που μπορούν να αντιστοιχιστούν στους χρήστες. Κάθε συνδεδεμένη συσκευή καταναλώνει μία σύνδεση VPN."
-      ],
       "of": [
         "από"
       ],
@@ -4636,16 +4292,10 @@
         "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες που δεν ανήκουν στο ProtonMail."
       ],
       "Other options": [
-        ""
+        "Άλλες επιλογές"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Το σύστημά μας επισήμανε αυτό το μήνυμα ως απόπειρα ηλεκτρονικού ψαρέματος. Ελέγξτε ότι είναι νόμιμο."
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Η πληρωμή μπορεί να πάρει μερικά λεπτά μέχρι να επαληθευτεί πλήρως."
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και από τους ελβετικούς νόμους περί ιδιωτικότητας."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "Το PGP / Inline είναι συμβατό μόνο με τη μορφή απλού κειμένου. Παρακαλούμε σημειώστε ότι το ProtonMail πάντα υπογράφει κρυπτογραφημένα μηνύματα."
@@ -4671,29 +4321,11 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }."
-      ],
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Επιλέξτε τον τύπο σύνδεσμου που θέλετε να εισαγάγετε και συμπληρώστε όλα τα πεδία."
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Παρακαλούμε δοκιμάστε ξανά ή επιλέξτε διαφορετικό τρόπο πληρωμής ή καλέστε την τράπεζά σας για βοήθεια."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Παρακαλούμε δοκιμάστε ξανά ή επιλέξτε διαφορετικό τρόπο πληρωμής ή απευθυνθείτε στο Paypal για βοήθεια."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Παρακαλούμε επαληθεύστε την πληρωμή στη νέα καρτέλα που ανοίχτηκε."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Παρακαλούμε επαληθεύστε την κάρτα στη νέα καρτέλα που ανοίχτηκε."
-      ],
-      "Please verify the payment in the new tab.": [
-        "Παρακαλούμε επαληθεύστε την πληρωμή στη νέα καρτέλα."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που μπορούν να επανυπογραφούν με το πρωτεύον κλειδί κρυπτογράφησης."
@@ -4710,18 +4342,17 @@
       "Print email": [
         "Εκτύπωση email"
       ],
+      "Priority support": [
+        "Υποστήριξη κατά προτεραιότητα"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Το Proton δε βγάζει λεφτά κάνοντας κατάχρηση απόρρητου."
       ],
       "ProtonMail can protect your business as well.": [
         "Το ProtonMail μπορεί επίσης να προστατεύσει την επιχείρησή σας."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "Το ProtonMail Plus περιορίζεται σε έναν χρήστη και ξεκινά με 5 GB αποθηκευτικού χώρου."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "Το ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } περιλαμβάνει ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN σύνδεση.",
-        "Το ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } περιλαμβάνει ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN συνδέσεις."
       ],
       "Recipient: ": [
         "Παραλήπτης: "
@@ -4746,12 +4377,6 @@
       ],
       "Right-click for options": [
         "Δεξί κλικ για επιλογές"
-      ],
-      "Save 20%": [
-        "Όφελος 20%"
-      ],
-      "Save extra 20%": [
-        "Όφελος 20% επιπλέον"
       ],
       "Saved ${ dateString }": [
         "Αποθηκεύτηκε ${ dateString }"
@@ -4801,9 +4426,6 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         ""
       ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Στάλθηκε με διασφαλισμένο ταχυδρομείο <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
@@ -4822,19 +4444,10 @@
       "Show original message": [
         "Εμφάνιση αρχικού μηνύματος"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Καθώς είστε αφοσιωμένος χρήστης, ο λογαριασμός σας έχει ενεργοποιημένα πρόσθετα χαρακτηριστικά."
-      ],
       "Sorry, this message does not exist or has already expired": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει"
       ],
-      "Starter VPN service with P2P support.": [
-        "Εκκίνηση υπηρεσίας VPN με υποστήριξη P2P."
-      ],
-      "Storage GB": [
-        "GB αποθηκευτικού χώρου"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Store and share files securely with Proton Drive.": [
@@ -4861,12 +4474,6 @@
       "support team": [
         "ομάδα υποστήριξης"
       ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "Μεταβείτε σε ${ professionalPlan } για να προσθέσετε περισσότερες συνδέσεις."
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "Μετάβαση σε ${ professionalPlan } για να προσθέσετε περισσότερους χρήστες."
-      ],
       "Test link": [
         "Δοκ. σύνδεσμος"
       ],
@@ -4875,9 +4482,6 @@
       ],
       "Text to display": [
         "Κείμενο για εμφάνιση"
-      ],
-      "Thank you for supporting our mission.": [
-        "Σας ευχαριστούμε που υποστηρίζετε την αποστολή μας."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
@@ -4994,9 +4598,6 @@
       "This sender's public key has not been trusted yet.": [
         "Το δημόσιο κλειδί αυτού του αποστολέα δεν έχει γίνει εμπιστεύσιμο ακόμα."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο Proton. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
       ],
@@ -5026,6 +4627,9 @@
       ],
       "Unlimited folders, labels, and filters": [
         ""
+      ],
+      "Unlimited messages": [
+        "Aπεριόριστα μηνύματα"
       ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
@@ -5063,7 +4667,7 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "Αναβαθμίστε για να χρησιμοποιήσετε το ProtonMail με πελάτες τρίτου επιτραπέζιου υπολογιστή."
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -5081,23 +4685,8 @@
       "Use Proton Calendar to keep your agenda private.": [
         "Χρησιμοποιήστε το Proton Ημερολόγιο για να διατηρήσετε την ατζέντα σας ιδιωτική."
       ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
-      ],
-      "Users": [
-        "Χρήστες"
-      ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Χρησιμοποιώντας την κινητή συσκευή σας, σαρώστε αυτόν τον κωδικό QR ή επισκεφθείτε το σύνδεσμο ${ link }."
-      ],
-      "Verification can take a few minutes.": [
-        "Η επαλήθευση μπορεί να πάρει μερικά λεπτά."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Η επαλήθευση θα ανοίξει μια νέα καρτέλα, παρακαλούμε απενεργοποιήστε τυχόν φραγή αναδυόμενων."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Η επαλήθευση θα ανοίξει μια νέα καρτέλα, παρακαλούμε απενεργοποιήστε τυχόν φραγή αναδυόμενων. Δεν θα χρεωθείτε. Όποιο ποσό χρησιμοποιηθεί για την επαλήθευση της κάρτας, θα επιστραφεί αμέσως."
       ],
       "Version ${ appVersion }": [
         "'Εκδοση ${ appVersion }"
@@ -5105,20 +4694,11 @@
       "Visit our shop to get Proton merchandise.": [
         "Επισκεφθείτε το κατάστημά μας για να αγοράσετε εμπορεύματα Proton."
       ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "Πακέτο VPN + ${ mailAppName } για οικογένειες και μικρές επιχειρήσεις."
-      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ζητάμε συγγνώμη. Αυτό μπορεί να ήταν λάθος από την πλευρά μας. Μπορείτε να επιβεβαιώσετε ότι θέλετε να επισημάνετε αυτό το email ως νόμιμο;"
       ],
       "We could not verify the sender's trusted keys.": [
         "Δεν μπορούμε να επαληθεύσουμε τα έμπιστα κλειδιά του αποστολέα."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας."
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Θα σας ανακατευθύνουμε στο PayPal, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
@@ -5214,15 +4794,6 @@
       "You have reached the maximum number of 5 replies.": [
         "Έχετε φτάσει τον μέγιστο αριθμό των 5 απαντήσεων."
       ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal, έτσι ώστε να την προσθέσετε ως μέθοδο πληρωμής."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal. Εάν αυτό δεν υπάρχει στον λογαριασμό σας PayPal, παρακαλούμε πιέστε το παρακάτω κουμπί."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Πρέπει να αφαιρέσετε τυχόν πρόσθετα προσωπικά συνδέσεις ημερολόγια και συνδέσεις κοινόχρηστου ημερολογίου για να μπορέσετε να ακυρώσετε τη συνδρομή σας. ${ linkButton }"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Φτάσατε ${ spaceDisplayed }% της χωρητικότητας αποθήκευσης. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5245,12 +4816,6 @@
         "Επιλέξατε **${ count } μήνυμα** με αυτή την ετικέτα",
         "Επιλέξατε **${ count } μηνύματα** με αυτή την ετικέτα"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Θα ανακατευθυνθείτε σύντομα στην τράπεζα σας, για να επαληθεύσετε την πληρωμή σας."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
-      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Γράψατε “${ attachmentsFoundKeyword }”, αλλά δεν έχει προστεθεί συνημμένο. Θέλετε να στείλετε το μήνυμά σας ούτως ή άλλως;"
       ],
@@ -5259,15 +4824,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Γίνεται αναβάθμιση του λογαριασμού σας, η οποία ίσως διαρκέσει έως 30 δευτερόλεπτα."
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Η τράπεζα σας, απαιτεί ασφαλή επαλήθευση 3-D για λόγους ασφαλείας."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο Proton."
@@ -5289,24 +4845,8 @@
       ]
     },
     "info": {
-      "(beta)": [
-        "(beta)"
-      ],
       "Optional": [
         "Προαιρετικό"
-      ]
-    },
-    "Info concerning plan features": {
-      "Customizable features": [
-        "Προσαρμοσμένες λειτουργίες"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "Το ProtonMail δεν μπορεί να χρησιμοποιηθεί για μαζική αποστολή μηνυμάτων email ή spamming. Τα αυθεντικά μηνύματα ηλεκτρονικού ταχυδρομείου είναι απεριόριστα."
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Παρακαλώ επικοινωνήστε μαζί μας στο ${ email } για οδηγίες πληρωμής με μετρητά."
       ]
     },
     "Info on errors": {
@@ -5317,11 +4857,6 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Πολλαπλές επαφές φαίνονται ίδιες. ${ mergeAction }"
-      ]
-    },
-    "information": {
-      "Included": [
-        "Περιλαμβάνεται"
       ]
     },
     "Key badge": {
@@ -5424,7 +4959,7 @@
         "Μετάβαση στα Αγαπημένα"
       ],
       "Go to Trash": [
-        "Μετάβαση στον Κάδο Απορριμμάτων"
+        "Μετάβαση στα Διαγραμμένα"
       ],
       "Jump to first": [
         "Μετάβαση στην πρώτη"
@@ -5466,7 +5001,7 @@
         "Μετακίνηση στα Ανεπιθύμητα"
       ],
       "Move to Trash": [
-        "Μετακίνηση στον Κάδο Απορριμμάτων"
+        "Μετακίνηση στα Διαγραμμένα"
       ],
       "Move to...": [
         "Μετακίνηση σε..."
@@ -5617,12 +5152,6 @@
       "Browser version": [
         "Έκδοση προγράμματος περιήγησης"
       ],
-      "BTC address:": [
-        "Διεύθυνση BTC:"
-      ],
-      "BTC amount:": [
-        "Ποσό BTC:"
-      ],
       "Calendar": [
         "Ημερολόγιο"
       ],
@@ -5634,15 +5163,6 @@
       ],
       "Carbon Copy": [
         "Κοινοποίηση"
-      ],
-      "Card holder": [
-        "Κάτοχος κάρτας"
-      ],
-      "Card number": [
-        "Αριθμός κάρτας"
-      ],
-      "Cash": [
-        "Μετρητά"
       ],
       "Category": [
         "Κατηγορία"
@@ -5670,9 +5190,6 @@
       ],
       "Country": [
         "Χώρα"
-      ],
-      "CVV code": [
-        "Κωδικός CVV"
       ],
       "Date": [
         "Ημερομηνία"
@@ -5703,15 +5220,6 @@
       ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
-      ],
-      "Enter organization name to confirm": [
-        "Για επιβεβαίωση, εισάγετε το όνομα του οργανισμού"
-      ],
-      "Expires": [
-        "Λήγει"
-      ],
-      "Expiry date": [
-        "Ημερομηνία λήξης"
       ],
       "Export contacts": [
         "Εξαγωγή Επαφών"
@@ -5812,9 +5320,6 @@
       "Name": [
         "Όνομα"
       ],
-      "Name on card": [
-        "Όνομα πάνω στην κάρτα"
-      ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
       ],
@@ -5845,9 +5350,6 @@
       "Password hint": [
         "Υπόδειξη κωδικού πρόσβασης"
       ],
-      "Payer": [
-        "Πληρωτής"
-      ],
       "PGP scheme": [
         "Σύστημα PGP"
       ],
@@ -5859,9 +5361,6 @@
       ],
       "Postal code": [
         "Ταχυδρομικός κώδικας"
-      ],
-      "Proration": [
-        "Προμήθεια"
       ],
       "Proton username": [
         "Όνομα χρήστη Proton"
@@ -5887,9 +5386,6 @@
       "Search in": [
         "Αναζήτηση εντός"
       ],
-      "Select a method": [
-        "Επιλέξτε μέθοδο"
-      ],
       "Select how your composer opens by default.": [
         "Επιλέξτε πώς να ανοίγει ο συντάκτης σας από προεπιλογή."
       ],
@@ -5898,9 +5394,6 @@
       ],
       "Select how your mailbox looks like by default.": [
         "Επιλογή προεπιλεγμένης όψης της θυρίδας σας."
-      ],
-      "Select your country": [
-        "Επιλέξτε τη χώρα σας"
       ],
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
@@ -5956,12 +5449,6 @@
       "To: ${ emailAddress }": [
         "Προς: ${ emailAddress }"
       ],
-      "Total": [
-        "Σύνολο"
-      ],
-      "Total (${ countdown })": [
-        "Σύνολο (${ countdown })"
-      ],
       "Two-factor authentication code": [
         "Κωδικός ελέγχου ταυτότητας δύο παραγόντων"
       ],
@@ -5994,9 +5481,6 @@
       ],
       "without attachments": [
         "χωρίς συνημμένα"
-      ],
-      "ZIP": [
-        "T.K"
       ]
     },
     "Label for contact group color": {
@@ -6066,9 +5550,6 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "Προσθήκη κωδικού δώρου"
-      ],
       "Add folder": [
         "Προσθήκη φακέλου"
       ],
@@ -6083,9 +5564,6 @@
       ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
-      ],
-      "click here": [
-        "κάντε κλικ εδώ"
       ],
       "Create a calendar linked to an active email address.": [
         "Δημιουργήστε ένα ημερολόγιο συνδεδεμένο με μια ενεργή διεύθυνση ηλεκτρονικού ταχυδρομείου."
@@ -6193,7 +5671,7 @@
         "Αυτό το αρχείο ICS περιέχει περισσότερα από ένα συμβάντα. Κατεβάστε το και εισαγάγετε τα συμβάντα στο ${ calendarAppName }"
       ],
       "Trash": [
-        "Κάδος Απορριμμάτων"
+        "Διαγραμμένα"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -6233,7 +5711,7 @@
     },
     "Loading info": {
       "Almost there": [
-        "Σχεδόν εκεί"
+        "Ακόμα λίγο"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendars } από ${ calendarsToBeCreated }"
@@ -6248,88 +5726,7 @@
         "Συγκεντρώνουμε τα δεδομένα σας από τον πάροχό σας"
       ],
       "Your import is starting": [
-        "Γίνεται εκκίνηση της εισαγωγής σας"
-      ]
-    },
-    "Mail feature": {
-      "0.5 GB": [
-        "0.5 GB"
-      ],
-      "20 GB": [
-        "20 GB"
-      ],
-      "Address verification": [
-        "Επαλήθευση διεύθυνσης"
-      ],
-      "Addresses": [
-        "Διευθύνσεις"
-      ],
-      "Autoresponder": [
-        "Αυτόματη Απάντηση"
-      ],
-      "Catch-All email": [
-        "Catch-All email"
-      ],
-      "Contact groups": [
-        "Ομάδες επαφών"
-      ],
-      "Custom email addresses": [
-        "Προσαρμοσμένες διευθύνσεις email"
-      ],
-      "Custom filters": [
-        "Προσαρμοσμένα φίλτρα"
-      ],
-      "Encrypted contacts": [
-        "Κρυπτογραφημένες επαφές"
-      ],
-      "Folders / labels": [
-        "Φάκελοι / ετικέτες"
-      ],
-      "IMAP / SMTP": [
-        "IMAP / SMTP"
-      ],
-      "Limited": [
-        "Περιορισμένη"
-      ],
-      "Messages per day": [
-        "Μηνύματα ανά ημέρα"
-      ],
-      "Multi-user support": [
-        "Υποστήριξη Πολλαπλών Χρηστών"
-      ],
-      "Priority": [
-        "Προτεραιότητα"
-      ],
-      "Storage": [
-        "Αποθηκευτικός χώρος"
-      ],
-      "Support": [
-        "Υποστήριξη"
-      ],
-      "Use @pm.me address": [
-        "Χρήση διεύθυνσης @pm.me"
-      ],
-      "Users": [
-        "Χρήστες"
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        "5 GB *"
-      ],
-      "5 GB / user *": [
-        "5 GB / χρήστη *"
-      ],
-      "Unlimited": [
-        "Απεριόριστο"
-      ],
-      "Unlimited **": [
-        "Απεριόριστο **"
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        "5 / χρήστη *"
+        "Η εισαγωγή σας εκκινεί"
       ]
     },
     "Mail import summary": {
@@ -6362,17 +5759,7 @@
         "Ενοχλητικά"
       ],
       "Trash": [
-        "Κάδος Απορριμμάτων"
-      ]
-    },
-    "Many Others": {
-      "and many others": [
-        "και πολλά άλλα"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Αυτό θα διαγράψει οριστικά όλους τους υπο-χρήστες, τους λογαριασμούς και τα δεδομένα που σχετίζονται με τον οργανισμό σας."
+        "Διαγραμμένα"
       ]
     },
     "Message": {
@@ -6557,11 +5944,6 @@
         "κάθε τρίτη Τετάρτη"
       ]
     },
-    "Netflix": {
-      "Netflix": [
-        "Netflix"
-      ]
-    },
     "New Label form": {
       "Color": [
         "Χρώμα"
@@ -6595,17 +5977,6 @@
     "Onboarding": {
       "Next": [
         "Επόμενο"
-      ]
-    },
-    "Onboarding Beta": {
-      "Beta enabled": [
-        "Η Beta είναι ενεργοποιημένη"
-      ],
-      "Got it": [
-        "Το κατάλαβα"
-      ],
-      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        "Για να απενεργοποιήσετε την Beta, ανοίξτε το αναπτυσσόμενο μενού ρυθμίσεις και κάντε κλικ στην επιλογή \"Beta Access\"."
       ]
     },
     "Onboarding Proton": {
@@ -6701,17 +6072,6 @@
         "Εσείς"
       ]
     },
-    "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
-      "New credit/debit card": [
-        "Νέα πιστωτική/χρεωστική κάρτα"
-      ],
-      "PayPal": [
-        "PayPal"
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
@@ -6765,9 +6125,6 @@
       "Filter labels": [
         "Φιλτράρισμα ετικετών"
       ],
-      "Gift code": [
-        "Κωδικός δώρου"
-      ],
       "Hint": [
         "Υπόδειξη"
       ],
@@ -6800,9 +6157,6 @@
       ],
       "Please describe the problem and include any error messages": [
         "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
-      ],
-      "Postal code": [
-        "Ταχυδρομικός κώδικας"
       ],
       "Proton username": [
         "Όνομα χρήστη Proton"
@@ -6839,112 +6193,11 @@
       ],
       "Write your message": [
         "Γράψτε το μήνυμά σας"
-      ],
-      "ZIP": [
-        "T.K"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "Όνομα"
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        "0.5 GB αποθηκευτικός χώρος"
-      ],
-      "1 - 5000 users *": [
-        "1 - 5000 χρήστες *"
-      ],
-      "1 address": [
-        "1 Διεύθυνση"
-      ],
-      "1 user": [
-        "1 χρήστης"
-      ],
-      "20 GB storage": [
-        "20 GB αποθηκευτικός χώρος"
-      ],
-      "200 folders / labels": [
-        "200 φάκελοι / ετικέτες"
-      ],
-      "3 folders / labels": [
-        "3 φάκελοι / ετικέτες"
-      ],
-      "5 addresses": [
-        "5 διευθύνσεις"
-      ],
-      "5 addresses / user": [
-        "5 διευθύνσεις / χρήστη"
-      ],
-      "5 GB storage *": [
-        "5 GB αποθηκευτικός χώρος *"
-      ],
-      "5 GB storage / user": [
-        "5 GB αποθηκευτικός χώρος / χρήστη"
-      ],
-      "50 addresses": [
-        "50 διευθύνσεις"
-      ],
-      "6 users": [
-        "6 χρήστες"
-      ],
-      "Access blocked content": [
-        "Πρόσβαση σε μπλοκαρισμένο περιεχόμενο"
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        "Πρόσβαση στο ${ driveAppName } (beta)"
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Όλα ${ PLAN_NAMES[PLANS.VPNPLUS] } χαρακτηριστικά πλάνου"
-      ],
-      "Built-in Adblocker (NetShield)": [
-        "Ενσωματωμένο Adblocker (NetShield)"
-      ],
-      "Custom email addresses": [
-        "Προσαρμοσμένες διευθύνσεις email"
-      ],
-      "Early access to new products": [
-        "Πρώιμη πρόσβαση σε νέα προϊόντα"
-      ],
-      "High speed": [
-        "Υψηλή ταχύτητα"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Ύψιστη ταχύτητα (έως 10 Gbps)"
-      ],
-      "Includes 6 user accounts": [
-        "Περιλαμβάνει 6 λογαριασμούς χρηστών"
-      ],
-      "Includes Proton Visionary": [
-        "Περιλαμβάνει το Proton Visionary"
-      ],
-      "Medium speed": [
-        "Μέτρια ταχύτητα"
-      ],
-      "Secure Core servers": [
-        "Διακομιστές Secure Core"
-      ],
-      "Streaming service support": [
-        "Υποστήριξη υπηρεσίας μετάδοσης"
-      ],
-      "Unlimited folders / labels": [
-        "Απεριόριστοι φάκελοι / ετικέτες"
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        "(τρέχον πακέτο)"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Δωρεάν"
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
-        "Prime Video"
       ]
     },
     "Progress bar description": {
@@ -7192,6 +6445,9 @@
       "Discover all Proton services": [
         "Ανακαλύψτε όλες τις υπηρεσίες Proton"
       ],
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
         ""
       ],
@@ -7253,7 +6509,7 @@
         "${ count } συνομιλίες διαγράφηκαν"
       ],
       "${ count } draft deleted": [
-        "${ count } σχέδιο διαγράφηκε",
+        "${ count } πρόχειρο διαγράφηκε",
         "${ count } πρόχειρα διαγράφηκαν"
       ],
       "${ count } message deleted": [
@@ -7462,9 +6718,6 @@
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
-      ],
-      "You have successfully unsubscribed": [
-        "Έχετε απεγγραφεί με επιτυχία"
       ]
     },
     "Suffix for price": {
@@ -7575,18 +6828,12 @@
       ]
     },
     "Title": {
-      "${ appName } customization": [
-        "Προσαρμογή ${ appName }"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Συντομεύσεις πληκτρολογίου"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } μέλος",
         "${ emailsCount } μέλη"
-      ],
-      "3-D Secure verification failed": [
-        "Αποτυχία επαλήθευσης 3-διάστατης διασφάλισης"
       ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
@@ -7610,12 +6857,6 @@
       "All recipients were added to the BCC field and cannot be disclosed": [
         "Όλοι οι παραλήπτες προστέθηκαν στο πεδίο BCC και δεν μπορούν να αποκαλυφθούν"
       ],
-      "Amount due": [
-        "Οφειλόμενο ποσό"
-      ],
-      "Apply gift code": [
-        "Εφαρμογή κωδικού δώρου"
-      ],
       "Are you sure you want to close?": [
         "Είστε βέβαιοι ότι θέλετε να κλείσετε το παράθυρο;"
       ],
@@ -7631,20 +6872,11 @@
       "Beta Access": [
         "Beta Πρόσβαση"
       ],
-      "Billing cycle": [
-        "Κύκλος χρέωσης"
-      ],
       "Blind Carbon Copy": [
         "Κρυφή Κοινοποίηση"
       ],
       "Carbon Copy": [
         "Κοινοποίηση"
-      ],
-      "Card verification": [
-        "Επαλήθευση Κάρτας"
-      ],
-      "Card verification in progress": [
-        "Επαλήθευση κάρτας σε εξέλιξη"
       ],
       "CC": [
         "Κοιν."
@@ -7652,17 +6884,11 @@
       "Change my answer": [
         "Αλλάξτε την απάντησή μου"
       ],
-      "Checkout": [
-        "Ολοκλήρωση αγοράς"
-      ],
       "Clearing data": [
         "Εκκαθάριση δεδομένων"
       ],
       "Composer mode": [
         "Λειτουργία συντάκτη"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Επιβεβαιώστε την απώλεια μπόνους Proton"
       ],
       "Confirm recipient address?": [
         "Επιβεβαίωση διεύθυνσης παραλήπτη;"
@@ -7682,9 +6908,6 @@
       "Conversation list": [
         "Λίστα συζητήσεων"
       ],
-      "Coupon discount": [
-        "Έκπτωση κουπονιού"
-      ],
       "Create a new folder": [
         "Δημιουργία νέου φακέλου"
       ],
@@ -7703,14 +6926,8 @@
       "Create new group": [
         "Δημιουργία νέας ομάδας"
       ],
-      "Credits": [
-        "Πιστώσεις"
-      ],
       "Currency": [
         "Νόμισμα"
-      ],
-      "Current plan": [
-        "Τρέχον πλάνο"
       ],
       "Customize and confirm": [
         "Προσαρμογή και επιβεβαίωση"
@@ -7720,9 +6937,6 @@
       ],
       "Customize your mail import": [
         "Προσαρμογή εισαγωγής μηνυμάτων"
-      ],
-      "Customize your plan": [
-        "Προσαρμόστε το πλάνο σας"
       ],
       "Decryption error": [
         "Σφάλμα κατά την αποκρυπτογράφηση"
@@ -7740,8 +6954,8 @@
         "Διαγραφή ${ count } συνομιλιών"
       ],
       "Delete ${ count } draft": [
-        "Διαγραφή πρόχειρου ${ count }",
-        "Διαγραφή ${ count } προσχεδίων"
+        "Διαγραφή ${ count } πρόχειρου",
+        "Διαγραφή ${ count } πρόχειρων"
       ],
       "Delete ${ count } message": [
         "Διαγραφή ${ count } μηνύματος",
@@ -7762,14 +6976,8 @@
       "Delete message": [
         "Διαγραφή μηνύματος"
       ],
-      "Delete organization?": [
-        "Διαγραφή οργανισμού;"
-      ],
       "Deleting contacts": [
         "Διαγραφή επαφών"
-      ],
-      "Downgrade account": [
-        "Υποβάθμιση λογαριασμού"
       ],
       "Edit contact": [
         "Επεξεργασία επαφής"
@@ -7821,9 +7029,6 @@
       ],
       "Forward": [
         "Προώθηση"
-      ],
-      "Gift code": [
-        "Κωδικός δώρου"
       ],
       "Groups": [
         "Ομάδες"
@@ -7901,13 +7106,10 @@
         "Μετακίνηση στα εισερχόμενα (μη ενοχλητικό)"
       ],
       "Move to trash": [
-        "Μετακίνηση στον κάδο απορριμμάτων"
+        "Μετακίνηση στα Διαγραμμένα"
       ],
       "Moving a scheduled message": [
         "Γίνεται μετακίνηση ενός προγραμματισμένου μηνύματος"
-      ],
-      "Network error": [
-        "Σφάλμα δικτύου"
       ],
       "New message": [
         "Νέο μήνυμα"
@@ -7936,35 +7138,14 @@
       "Other names": [
         "Άλλα ονόματα"
       ],
-      "Payment details": [
-        "Στοιχεία Πληρωμής"
-      ],
-      "Payment verification": [
-        "Επαλήθευση Πληρωμής"
-      ],
-      "Payment verification in progress": [
-        "Επαλήθευση πληρωμής σε εξέλιξη"
-      ],
-      "PayPal verification failed": [
-        "Η επαλήθευση PayPal απέτυχε"
-      ],
       "Phone numbers": [
         "Αριθμοί Τηλεφώνου"
-      ],
-      "Plan summary": [
-        "Σύνοψη πακέτου"
       ],
       "Previous conversation": [
         "Προηγούμενη συνομιλία"
       ],
       "Previous message": [
         "Προηγούμενο Μήνυμα"
-      ],
-      "Processing": [
-        "Επεξεργασία"
-      ],
-      "Processing...": [
-        "Γίνεται επεξεργασία..."
       ],
       "ProtonMail": [
         "ProtonMail"
@@ -7998,9 +7179,6 @@
       ],
       "Schedule send": [
         "Προγραμματισμός αποστολής"
-      ],
-      "Select a plan": [
-        "Επιλέξτε ένα πλάνο"
       ],
       "Select a theme": [
         "Επιλέξτε ένα θέμα"
@@ -8056,14 +7234,8 @@
       "Subject missing": [
         "Λείπει το θέμα"
       ],
-      "Subtotal": [
-        "Υποσύνολο"
-      ],
       "To": [
         "Προς"
-      ],
-      "Total (monthly)": [
-        "Συνολικά (μηνιαίως)"
       ],
       "Trust new key?": [
         "Εμπιστοσύνη στο νέο κλειδί;",
@@ -8077,9 +7249,6 @@
       ],
       "Unsubscribe": [
         "Απεγγραφή"
-      ],
-      "Unsupported browser": [
-        "Μη υποστηριζόμενος περιηγητής"
       ],
       "Upgrade required": [
         "Απαιτείται Αναβάθμιση"
@@ -8104,9 +7273,6 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         ""
-      ],
-      "ZIP / postal code": [
-        "Τ.Κ / Ταχυδρομικός κώδικας"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8115,26 +7281,11 @@
       ]
     },
     "Tooltip": {
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Αποκτήστε πρόσβαση σε γεωγραφικά αποκλεισμένο περιεχόμενο (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube κ.λπ.) όπου κι αν βρίσκεστε."
-      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
       ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου που συνδέονται με το λογαριασμό σας, π.χ. username2@protonmail.com"
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Προστατεύει από απειλές εναντίον του απορρήτου του VPN, δρομολογώντας την κυκλοφορία σας στο Διαδίκτυο μέσω πολλαπλών διακομιστών."
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Η ψηφιακή υπογραφή μηνυμάτων e-mail βοηθά στην εξακρίβωση ταυτότητας, ότι τα μηνύματα αποστέλλονται από εσάς"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Η έκπτωση ισχύει για τον ετήσιο κύκλο χρέωσης"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Η έκπτωση ισχύει για τον κύκλο χρέωσης δύο ετών"
       ],
       "Each imported email will have this label": [
         "Κάθε εισαγόμενο μήνυμα ηλεκτρονικού ταχυδρομείου θα έχει αυτήν την ετικέτα"
@@ -8148,35 +7299,8 @@
       "Encrypted data with verified digital signature": [
         "Κρυπτογραφημένα δεδομένα με επαληθευμένη ψηφιακή υπογραφή"
       ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Αποκτήστε πρόσβαση σε όλες τις επί πληρωμή δυνατότητες, τόσο για το ${ vpnAppName } όσο και για το ${ mailAppName } (την κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πακέτο."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Αποκτήστε πρόσβαση σε όλες τις επί πληρωμή δυνατότητες, τόσο για το ProtonVPN όσο και για το ProtonMail (την κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πακέτο."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Φιλοξενήστε μηνύματα ηλεκτρονικού ταχυδρομείου για τον δικό σας τομέα (domain) στο ${ mailAppName }, π.χ. john.smith@example.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Φιλοξενήστε μηνύματα ηλεκτρονικού ταχυδρομείου για τον δικό σας τομέα (domain) στο ProtonMail, π.χ. john.smith@example.com"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Η υποστήριξη πολλαπλών χρηστών ισχύει μόνο για πρόγραμμα με 2 ή περισσότερους χρήστες"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Το NetShield προστατεύει τη συσκευή σας και επιταχύνει την περιήγησή σας αποκλείοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Δρομολογήστε την κυκλοφορία σας στο Διαδίκτυο μέσω του δικτύου Tor με ένα μόνο κλικ."
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Υποστήριξη για πρωτόκολλα κοινής χρήσης αρχείων όπως το BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν ως ξεχωριστοί φάκελοι στο ProtonMail"
@@ -8192,12 +7316,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Μεταφορτώστε ένα δημόσιο κλειδί (public key), για να ενεργοποιήσετε την αποστολή από άκρο σε άκρο κρυπτογραφημένων ηλεκτρονικών μηνυμάτων, από το ένα email σε άλλο email, στο παρόν μήνυμα ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Χρήση πολλαπλών διευθύνσεων / ψευδωνύμων που συνδέονται με το λογαριασμό σας, π.χ. username2@protonmail.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Χρησιμοποιήστε την προσωπική διεύθυνση username@pm.me για να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου"
       ],
       "You do not have any contacts to export": [
         "Δεν έχετε επαφές προς εξαγωγή"
@@ -8236,123 +7354,6 @@
         "Ξαναπαίξιμο βίντεο"
       ]
     },
-    "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
-      "30-days money-back guarantee": [
-        "Εγγύηση Επιστροφής Χρημάτων εντός 30 ημερών"
-      ],
-      "Access blocked content": [
-        "Πρόσβαση σε μπλοκαρισμένο περιεχόμενο"
-      ],
-      "Adblocker (NetShield)": [
-        "Adblocker (NetShield)"
-      ],
-      "Custom connection profiles": [
-        "Προσαρμοσμένα προφίλ σύνδεσης"
-      ],
-      "DNS leak prevention": [
-        "Αποτροπή διαρροής DNS"
-      ],
-      "Full Disk Encryption on Servers": [
-        "Πλήρης Κρυπτογράφηση Δίσκου σε Διακομιστές"
-      ],
-      "Jurisdiction": [
-        "Δικαιοδοσία"
-      ],
-      "Kill Switch / Always-on VPN": [
-        "Ασφάλεια Αποσύνδεσης / VPN Πάντα σε λειτουργία"
-      ],
-      "Languages supported": [
-        "Υποστηριζόμενες γλώσσες"
-      ],
-      "Locations/Countries": [
-        "Τοποθεσίες/Χώρες"
-      ],
-      "Open Source & audited apps": [
-        "Ανοικτού Κώδικα & ελεγμένες εφαρμογές"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        "Perfect Forward Secrecy (PFS)"
-      ],
-      "Platforms supported": [
-        "Υποστηριζόμενες πλατφόρμες"
-      ],
-      "Router support": [
-        "Υποστήριξη δρομολογητή"
-      ],
-      "Secure Core servers": [
-        "Διακομιστές Secure Core"
-      ],
-      "Speed": [
-        "Ταχύτητα"
-      ],
-      "Split tunneling": [
-        "Split tunneling"
-      ],
-      "Streaming service support": [
-        "Υποστήριξη υπηρεσίας μετάδοσης"
-      ],
-      "Strict no-logs policy": [
-        "Αυστηρή πολιτική χωρίς αρχεία καταγραφής"
-      ],
-      "Tor over VPN": [
-        "Tor μέσω VPN"
-      ],
-      "User data monetization": [
-        "Εκμετάλλευση δεδομένων χρήστη"
-      ],
-      "Volume/bandwidth cap": [
-        "Όριο όγκου/bandwidth"
-      ],
-      "VPN Connections": [
-        "Συνδέσεις VPN"
-      ],
-      "VPN servers": [
-        "Διακομιστές VPN"
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        "(Μόνο για Android & Windows)"
-      ],
-      "High": [
-        "Υψηλή"
-      ],
-      "Highest (up to 10 Gbps)": [
-        "Ύψιστη (έως 10 Gbps)"
-      ],
-      "Medium": [
-        "Μεσαία"
-      ],
-      "None": [
-        "Κανένα"
-      ],
-      "Switzerland": [
-        "Ελβετία"
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        "${ n } διακομιστής",
-        "${ n }+ διακομιστές"
-      ],
-      "${ n } VPN connection": [
-        "${ n } σύνδεση VPN",
-        "${ n } συνδέσεις VPN"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } σε ${ numberOfCountries } χώρα",
-        "${ numberOfServers } σε ${ numberOfCountries } χώρες"
-      ]
-    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } ομάδα επαφής;",
@@ -8376,9 +7377,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Το Proton θα συγχωνεύσει όλους τους φακέλους ίδιου ονόματος. Για αποφυγή της συγχώνευσης, αλλάξτε τα ονόματα πριν την εισαγωγή."

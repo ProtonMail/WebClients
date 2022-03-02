@@ -86,6 +86,9 @@
       "Clear": [
         "Teṣfa"
       ],
+      "Clear browser data": [
+        ""
+      ],
       "Clear data": [
         "Sfeḍ isefka"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         ""
-      ],
-      "Decrease": [
-        "Senqes"
       ],
       "Delete": [
         "Kkes"
@@ -247,8 +247,14 @@
       "Go to panel ${ index }": [
         "Ddu ɣer ufeggag ${ index }"
       ],
+      "Go to parent": [
+        ""
+      ],
       "Go to settings": [
         "Ddu s iɣewwaren"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Ffer iɣewwaren n PGP leqqayen"
@@ -273,9 +279,6 @@
       ],
       "Import from .csv or vCard": [
         ""
-      ],
-      "Increase": [
-        "Snerni"
       ],
       "Load image": [
         "Sali-d tugna"
@@ -427,17 +430,17 @@
       "Resume upload": [
         "Kemmel asali"
       ],
-      "Retry": [
-        "Ɛreḍ tikkelt-nniḍen"
-      ],
       "Save": [
         "Sekles"
       ],
+      "Search": [
+        ""
+      ],
+      "Search drive": [
+        ""
+      ],
       "Select all": [
         "Fren akk"
-      ],
-      "Select plan": [
-        "Fren aɣawas"
       ],
       "Set recovery phrase": [
         ""
@@ -1837,6 +1840,9 @@
       "A group with this name already exists": [
         "Yella yakan ugraw s yisem-agui"
       ],
+      "A problem occurred, please try again": [
+        ""
+      ],
       "Amount above the maximum.": [
         "Tallayt nnig tafellayt yettwasirgen."
       ],
@@ -1855,14 +1861,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Checkout expired, please try again": [
-        "Asenqed iɛedda wakud-is, ttxil-k·m ɛreḍ tikkelt-nniḍen"
-      ],
       "Contact could not be saved": [
         "Ur nezmir ara ad nsekles anermis"
       ],
       "Contact signature not verified": [
         "Azmul n unermis ur yettwasenqed ara"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "Ur nezmir ara ad d-naf tansa ${ email }."
@@ -2001,6 +2007,9 @@
       "Payment process not supported": [
         "Akala n uxelleṣ ur yettwasefrak ara"
       ],
+      "Please activate your content search again": [
+        ""
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "",
         ""
@@ -2018,6 +2027,9 @@
         "Yettwanef ukala"
       ],
       "Request timed out": [
+        ""
+      ],
+      "Search failed": [
         ""
       ],
       "Signature not verified": [
@@ -2040,9 +2052,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
-      ],
-      "Tab closed": [
-        "Iccer yettwamdel"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
@@ -2496,16 +2505,13 @@
         "+${ organization.BonusVPN } tuqqna i ProtonVPN (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)",
         "+${ organization.BonusVPN } tuqqniwin i ProtonVPN (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% n usenqes i yettwagen ɣef umulteɣ-inek·inem s ukupun ${ code }"
       ],
       "30 days money-back guarantee.": [
         "Aɣram ɣef 30 n wussan yettwaḍmen."
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -2537,9 +2543,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Asenqed n tansa s tsura yettwamanen yermed i tansa-agi. Iwakken ad tizmireḍ ad tazneḍ ɣer tansa-agi, di tazwara isefk ad tgeḍ laman i tsura tizayazin i yezemren ad ttwasqedcent i tuzzna."
-      ],
-      "Addresses": [
-        "Tansiwin"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Mi ara txellṣeḍ s Bitcoin, ttxil ḍfer tanaḍin i yellan seddaw i uleqqem."
@@ -2573,8 +2576,10 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Tebɣiḍ s tidet ad tsefḍeḍ taqecwalt daɣen ad tekkseḍ s wudem imezgi akk iferdisen?"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "",
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        ""
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
         ""
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
@@ -2613,6 +2618,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Anadi ɣef yinermisen ${ progress } seg ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
+      "Clear encrypted search data": [
+        ""
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        ""
+      ],
+      "Clears browser data related to the encrypted search.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma tansa n imayl-agi ur teɣti ara, tekki ɣef \"Ẓreg\" akken ad tt-tseɣtiḍ."
       ],
@@ -2628,10 +2645,10 @@
       "Conflict": [
         "Amgirred"
       ],
-      "Connections": [
-        "Tuqqniwin"
-      ],
       "Continue using ${ appName } and unlock drive later": [
+        ""
+      ],
+      "Continue with ${ planName }": [
         ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
@@ -2652,9 +2669,6 @@
       ],
       "Create links and share your files with others.": [
         "Snulfu-d isɣewnen akken ad tebḍuḍ ifuyla-inek m akked wiyiḍ."
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
       ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         ""
@@ -2707,9 +2721,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
-      ],
-      "Expired": [
-        "Yemmut"
       ],
       "Failed": [
         "Yecceḍ"
@@ -2798,6 +2809,9 @@
       ],
       "Included": [
         "Yedda"
+      ],
+      "Indexing search results…": [
+        ""
       ],
       "Inherited from parent folder": [
         ""
@@ -2985,6 +2999,12 @@
       "Primary": [
         "Agejdan"
       ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus yesεa talast ɣer yiwen useqdac, ibeddu s 5 GAṬ n uklas."
       ],
@@ -3009,6 +3029,9 @@
       ],
       "Screenshot(s) attached": [
         "Tuṭṭfa n ugdil tedda (ddant)"
+      ],
+      "Search cannot be enabled in this browser": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         ""
@@ -3039,6 +3062,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Yella wayen ur nteddu ara akken iwata, ttxil-k·m ɛreḍ tikkelt-nniḍen."
+      ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "Aqeddac VPN n uskar s tallalt n P2P akked umsewḥel n udellel."
@@ -3107,6 +3133,12 @@
       "This will overwrite the existing folder": [
         "Aya ad d-yeglu s tira ɣef ukaram yellan"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
       ],
@@ -3134,7 +3166,13 @@
       "Trash": [
         "Taqecwalt"
       ],
+      "Try different keywords": [
+        ""
+      ],
       "Unlimited folders, labels, and filters": [
+        ""
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Unlock drive to recover files": [
@@ -3144,6 +3182,9 @@
         "Afaylu ur yettwasefrak ara"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Uploaded": [
@@ -3839,8 +3880,8 @@
       "Contact groups": [
         "Igrawen n unermes"
       ],
-      "Custom email addresses": [
-        "Tansiwin n yimayl tudmawanin"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Imsizdgen udmawanen"
@@ -3953,26 +3994,40 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" imutti akken iwata"
-      ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" yettwakkes seg tqecwalt i lebda"
-      ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "Asmutti n \"${ firstItemName }\" ur yeddi ara"
-      ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" imutti ɣer tqecwalt"
-      ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" yettwarra-d seg tqecwalt"
-      ],
-      "${ count } item failed to be decrypted": [
-        "",
+      "\"${ name }\" deleted permanently from trash": [
         ""
       ],
-      "${ deletedCount } link to your file was deleted": [
+      "\"${ name }\" failed to be created": [
+        ""
+      ],
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be moved": [
+        ""
+      ],
+      "\"${ name }\" failed to be moved to trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        ""
+      ],
+      "\"${ name }\" moved to trash": [
+        ""
+      ],
+      "\"${ name }\" restored from trash": [
+        ""
+      ],
+      "\"${ name }\" successfully moved": [
+        ""
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        ""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        ""
+      ],
+      "${ count } item failed to be decrypted": [
         "",
         ""
       ],
@@ -3983,10 +4038,6 @@
       "${ deletedItemsCount } folder deleted permanently from trash": [
         "Iakaram ${ deletedItemsCount } ttwakksen seg tqecwalt i lebda",
         "Ikaramen ${ deletedItemsCount } ttwakksen seg tqecwalt i lebda"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } n uferdis yettwakkes seg tqecwalt s wudem imezgi",
-        "${ deletedItemsCount } n yiferdisen ttwakksen seg tqecwalt s wudem imezgi"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "",
@@ -4000,21 +4051,52 @@
         "Asmutti n ${ failedMovesCount } n ukaram ur yeddi ara",
         "Asmutti n ${ failedMovesCount } n yikaramen ur yeddi ara"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "Asmutti n ${ failedMovesCount } n uferdis ur yeddi ara",
-        "Asmutti n ${ failedMovesCount } n yiferdisen ur yeddi ara"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } n ufaylu imutti akken iwata",
-        "${ movedLinksCount } n yifuyla muttin akken iwata"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } n ukaram imutti akken iwata",
         "${ movedLinksCount } n yikaramen muttin akken iwata"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } n uferdis imutti akken iwata",
-        "${ movedLinksCount } n yiferdisen muttin akken iwata"
+      "${ name } created successfully": [
+        ""
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "",
+        ""
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } n ufaylu ittwarra-d seg tqecwalt",
@@ -4024,10 +4106,6 @@
         "${ restoredItemsCount } n ukaram ittwarra-d seg tqecwalt",
         "${ restoredItemsCount } n yikaramen ttwarran-d seg tqecwalt"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } n uferdis ittwarra-d seg tqecwalt",
-        "${ restoredItemsCount } n yiferdisen ttwarran-d seg tqecwalt"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } n ufaylu imutti ɣer tqecwal",
         "${ trashedLinksCount } n yifuyla muttin ɣer tqecwalt"
@@ -4035,10 +4113,6 @@
       "${ trashedLinksCount } folder moved to trash": [
         "${ trashedLinksCount } n ukaram imutti ɣer tqecwal",
         "${ trashedLinksCount } n yikaramen muttin ɣer tqecwalt"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } n uferdis imutti ɣer tqecwal",
-        "${ trashedLinksCount } n yiferdisen muttin ɣer tqecwalt"
       ],
       "All items will soon be permanently deleted from trash": [
         "Akk iferdisen ad ttwakksen seg tqecwalt i lebda"
@@ -4051,6 +4125,9 @@
       ],
       "Contact group updated": [
         "Agraw n unermes yettwasnifel"
+      ],
+      "Encrypted search activated": [
+        ""
       ],
       "Failed to download files: ${ err }": [
         ""
@@ -4110,16 +4187,25 @@
       "Subfolder failed to be loaded": [
         ""
       ],
-      "The link to your file failed to be deleted": [
+      "The link to \"${ name }\" failed to be deleted": [
         ""
       ],
-      "The link to your file was deleted": [
+      "The link to \"${ name }\" was deleted": [
+        ""
+      ],
+      "The link to your item failed to be deleted": [
+        ""
+      ],
+      "The link to your item was deleted": [
         ""
       ],
       "Trash failed to be emptied": [
         ""
       ],
       "Your old files will be deleted in 72 hours": [
+        ""
+      ],
+      "Your settings failed to be saved": [
         ""
       ],
       "Your settings have been changed successfully": [
@@ -4361,8 +4447,8 @@
       "Built-in Adblocker (NetShield)": [
         "Amsewḥel n udellel usliɣ (NetShield)"
       ],
-      "Custom email addresses": [
-        "Tansiwin n yimayl tudmawanin"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Anekcum uzwir ɣer yifarisen imaynuten"
@@ -4472,6 +4558,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
         ""
       ]
@@ -4736,9 +4825,6 @@
       "Contacts": [
         "Inermisen"
       ],
-      "Coupon discount": [
-        "Akupun n usenɣes"
-      ],
       "Create a new folder": [
         "Rnu tabzimt tamaynut"
       ],
@@ -4747,9 +4833,6 @@
       ],
       "Create new group": [
         "Snulfu-d agraw amaynut"
-      ],
-      "Credits": [
-        "Ismaden"
       ],
       "Currency": [
         "Azamul n tedrimt"
@@ -4933,6 +5016,9 @@
       "Network error": [
         "Tuccḍa deg uzeṭṭa"
       ],
+      "No results found": [
+        ""
+      ],
       "Number of files": [
         "Amḍan n ifuyla"
       ],
@@ -5005,8 +5091,11 @@
       "Restore your files": [
         "Err-d ifuyla-inek·inem"
       ],
-      "Select a plan": [
-        "Fren aɣawas"
+      "Search results": [
+        ""
+      ],
+      "Searching…": [
+        ""
       ],
       "Select a theme": [
         "Fren asentel"
@@ -5200,6 +5289,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Seqdec tansa tudmawant isemnuseqdac@pm.me akken ad tazneḍ imaylen"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "You do not have any contacts to export": [
         "Ur tesɛiḍ ara kra n yinermisen ara tsifḍeḍ"

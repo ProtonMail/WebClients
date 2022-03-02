@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } trecând la facturarea anuală"
-      ],
       "${ BRAND_NAME } introduction": [
         "Prezentare ${ BRAND_NAME }"
       ],
@@ -49,9 +46,6 @@
       ],
       "Add to group": [
         "Adăugare la grup"
-      ],
-      "annual billing": [
-        "plată anuală"
       ],
       "Apply": [
         "Aplicare"
@@ -101,12 +95,6 @@
       "Close this banner": [
         "Închidere norificare"
       ],
-      "Compare all features": [
-        "Comparare caracteristici"
-      ],
-      "Compare plans": [
-        "Comparare planuri"
-      ],
       "Compose": [
         "Compunere"
       ],
@@ -139,9 +127,6 @@
       ],
       "Customize": [
         "Personalizare"
-      ],
-      "Decrease": [
-        "Reducere"
       ],
       "Delete": [
         "Ștergere"
@@ -252,14 +237,8 @@
       "Import from .csv or vCard": [
         "Importare din .csv sau vCard"
       ],
-      "Increase": [
-        "Mărire"
-      ],
       "Load image": [
         "Încărcare imagine"
-      ],
-      "Loading verification": [
-        "În curs de verificare"
       ],
       "Log in": [
         "Conectare"
@@ -318,14 +297,8 @@
       "OK": [
         "OK"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Deschidere setări ${ CALENDAR_APP_NAME }"
-      ],
       "Open navigation": [
         "Deschidere navigare"
-      ],
-      "Pay": [
-        "Plătire"
       ],
       "Preview contact": [
         "Examinare contact"
@@ -352,7 +325,7 @@
         "Recuperare date"
       ],
       "Refer a friend": [
-        ""
+        "Recomandați pe cineva"
       ],
       "refresh the page": [
         "împrospătați pagina"
@@ -362,12 +335,6 @@
       ],
       "Remove": [
         "Eliminare"
-      ],
-      "Remove bonuses": [
-        "Eliminare bonusuri"
-      ],
-      "Remove gift code": [
-        "Eliminare cod cadou"
       ],
       "Remove this notification": [
         "Eliminare această notificare"
@@ -387,17 +354,11 @@
       "Request new code": [
         "Solicitare cod nou"
       ],
-      "Retry": [
-        "Reîncercare"
-      ],
       "Save": [
         "Salvare"
       ],
       "Select all": [
         "Selectare toate"
-      ],
-      "Select plan": [
-        "Selectare plan"
       ],
       "Select timezone": [
         "Selectare fus orar"
@@ -465,9 +426,6 @@
       "Trust": [
         "Aprobare"
       ],
-      "Try again": [
-        "Reîncercați"
-      ],
       "Try another method": [
         "Încercaţi o altă metodă"
       ],
@@ -497,12 +455,6 @@
       ],
       "Use ${ label } theme": [
         "Folosire tema ${ label }"
-      ],
-      "Use a different card": [
-        "Folosire alt card"
-      ],
-      "Use a different payment method": [
-        "Folosire metodă de plată diferită"
       ],
       "Use for sending": [
         "Folosire pentru trimitere"
@@ -549,31 +501,6 @@
       ],
       "You don't have any groups.": [
         "Nu aveți grupuri."
-      ]
-    },
-    "Addon": {
-      "+ ${ addresses } email address": [
-        "+ o adresă de e-mail",
-        "+ ${ addresses } adrese de e-mail",
-        "+ ${ addresses } de adrese de e-mail"
-      ],
-      "+ ${ domains } custom domain": [
-        "+ un domeniu personal",
-        "+ ${ domains } domenii personale",
-        "+ ${ domains } de domenii personale"
-      ],
-      "+ ${ members } user": [
-        "+ un utilizator",
-        "+ ${ members } utilizatori",
-        "+ ${ members } de utilizatori"
-      ],
-      "+ ${ storage } storage": [
-        "+ ${ storage } spațiu"
-      ],
-      "+ ${ vpn } connection": [
-        "+ o conexiune",
-        "+ ${ vpn } conexiuni",
-        "+ ${ vpn } de conexiuni"
       ]
     },
     "Alarm notification": {
@@ -691,23 +618,6 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
-      ]
-    },
-    "Billing cycle option": {
-      "Annually": [
-        "Anual"
-      ],
-      "Annually SAVE 20%": [
-        "Anual ECONOMISIȚI 20%"
-      ],
-      "Monthly": [
-        "Lunar"
-      ],
-      "Two years SAVE 33%": [
-        "Doi ani ECONOMISIȚI 33%"
-      ],
-      "Two-year": [
-        "Doi ani"
       ]
     },
     "blackfriday Action": {
@@ -879,32 +789,7 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
-      ]
-    },
-    "Calendar feature": {
-      "Calendar import": [
-        "Importare calendar"
-      ],
-      "Invitations": [
-        "Invitații"
-      ],
-      "Multiple calendars": [
-        "Calendare multiple"
-      ],
-      "Recurring events": [
-        "Evenimente recurente"
-      ],
-      "Share Calendar via link": [
-        "Partajare calendar prin legături"
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        "20 / utilizator"
-      ],
-      "20 / user *": [
-        "20 / utilizator *"
+        "Continuare utilizare ProtonMail."
       ]
     },
     "Calendar invite buttons label": {
@@ -1092,18 +977,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "O zi",
-        "${ days } zile",
-        "${ days } de zile"
-      ],
-      "${ monthsWithYears } month": [
-        "O lună",
-        "${ monthsWithYears } luni",
-        "${ monthsWithYears } de luni"
       ]
     },
     "Country name": {
@@ -1992,22 +1865,6 @@
         "Evenimentul aparține unui calendar dezactivat."
       ]
     },
-    "Disney": {
-      "Disney+": [
-        "Disney+"
-      ]
-    },
-    "Drive feature": {
-      "Access via Web": [
-        "Accesare prin Web"
-      ],
-      "Share files via link": [
-        "Partajare fișiere prin legături"
-      ],
-      "Upload / download files": [
-        "Încărcare / descărcare fișiere"
-      ]
-    },
     "Dropwdown action icon tooltip": {
       "Add calendar": [
         "Adăugare calendar"
@@ -2130,12 +1987,6 @@
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare."
       ],
-      "Amount above the maximum.": [
-        "Sumă mai mare decât maximul acceptat."
-      ],
-      "Amount below minimum.": [
-        "Sumă mai mică decât minimul acceptat."
-      ],
       "Answer failed to be sent": [
         "Răspunsul nu a putut fi trimis."
       ],
@@ -2156,9 +2007,6 @@
       ],
       "Cancellation failed to be sent": [
         "Anularea nu a putut fi trimisă."
-      ],
-      "Checkout expired, please try again": [
-        "Finalizarea comenzii a expirat, mai încercați."
       ],
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
@@ -2206,9 +2054,6 @@
       "Error": [
         "Eroare"
       ],
-      "Error connecting to the Bitcoin API.": [
-        "Eroare de conectare la Bitcoin API."
-      ],
       "Error: ${ errorMessage }": [
         "Eroare: ${ errorMessage }"
       ],
@@ -2230,29 +2075,14 @@
       "Interval cannot be empty": [
         "Intervalul nu poate fi gol."
       ],
-      "Invalid ${ name } code": [
-        "Cod ${ name } nevalid."
-      ],
-      "Invalid card number": [
-        "Număr de card nevalid."
-      ],
-      "Invalid code": [
-        "Cod nevalid."
-      ],
       "Invalid email address": [
         "Adresă de e-mail nevalidă."
-      ],
-      "Invalid expiration date": [
-        "Data expirării nu este validă."
       ],
       "Invalid link to the event": [
         "Legătură nevalidă la eveniment."
       ],
       "Invalid name": [
         "Nume nevalid."
-      ],
-      "Invalid postal code": [
-        "Cod poștal incorect."
       ],
       "Invalid public key file": [
         "Cheie publică nevalidă."
@@ -2279,9 +2109,6 @@
       ],
       "Missing signature": [
         "Semnătură lipsă."
-      ],
-      "Name on card required": [
-        "Numele de pe card este obligatoriu."
       ],
       "Name required": [
         "Numele este obligatoriu"
@@ -2320,23 +2147,8 @@
         "Câteva grupuri nu au contacte: ${ noContactGroupList }",
         "Câteva grupuri nu au contacte: ${ noContactGroupList }"
       ],
-      "Organization not recognized. Try again.": [
-        "Organizația nu e recunoscută. Mai încercaţi."
-      ],
       "Passwords do not match": [
         "Parolele nu coincid"
-      ],
-      "Payment process cancelled": [
-        "Operația de plată a fost anulată."
-      ],
-      "Payment process consumed": [
-        "Operația de plată a fost executată."
-      ],
-      "Payment process failed": [
-        "Operația de plată a eșuat."
-      ],
-      "Payment process not supported": [
-        "Metoda de plată nu este acceptată."
       ],
       "Please create an address first.": [
         "Mai întâi creați o adresă."
@@ -2354,9 +2166,6 @@
       ],
       "Primary address key is not decrypted.": [
         "Cheia primară a adresei nu este decriptată."
-      ],
-      "Process aborted": [
-        "Proces abandonat."
       ],
       "Request timed out": [
         "Solicitarea a expirat"
@@ -2388,26 +2197,11 @@
       "Start time must be before end time": [
         "Timpul de începere trebuie să fie înainte de cel de sfârșit."
       ],
-      "Tab closed": [
-        "Filă închisă."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Navigatorul folosit nu permite autorizarea completă a plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
-      ],
       "The folder name is too long. Please choose a different name.": [
         "Numele folderului este prea lung. Alegeți alt nume."
       ],
       "The label name is too long. Please choose a different name.": [
         "Numele etichetei este prea lung. Alegeți alt nume."
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Creditul minim care poate fi adăugat este de ${ _price }."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Suma minimă care poate fi donată este de ${ price }."
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Plata minimă acceptată este de ${ _price2 }."
       ],
       "The sending key is not valid": [
         "Cheia de trimitere nu este validă."
@@ -2438,9 +2232,6 @@
       ],
       "Unknown error": [
         "Eroare necunoscută."
-      ],
-      "Unknown payment token status": [
-        "Stare necunoscută cod plată generat."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari."
@@ -2776,11 +2567,6 @@
         "${ Label.Name } a fost actualizată"
       ]
     },
-    "Free price": {
-      "Free": [
-        "Gratuit"
-      ]
-    },
     "Group": {
       "Account": [
         "Cont"
@@ -3021,12 +2807,6 @@
         "S-au găsit ${ groupCounts } grupuri",
         "S-au găsit ${ groupCounts } de grupuri"
       ],
-      "${ mailAppName } Free": [
-        "${ mailAppName } gratuit"
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Profesional începe cu un utilizator și fiecare utilizator adaugă 5 GB și 5 adrese de e-mail la totalul organizației."
-      ],
       "${ namesWithoutLast } and ${ nameOfLast }": [
         "${ namesWithoutLast } și ${ nameOfLast }"
       ],
@@ -3039,15 +2819,6 @@
         "Un contact",
         "${ numContacts } contacte",
         "${ numContacts } de contacte"
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } din abonament trecând la ${ annualBilling }"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } pentru e-mail și VPN prin adăugarea unui abonament de e-mail."
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } pentru e-mail și VPN prin adăugarea unui abonament de VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
@@ -3069,42 +2840,16 @@
         "S-au actualizat ${ updated } contacte.",
         "S-au actualizat ${ updated } de contacte."
       ],
-      "${ vpnAppName } Free": [
-        "${ vpnAppName } gratuit"
-      ],
       "(${ memberCount } member)": [
         "(Un membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
-      "(Mail + VPN)": [
-        "(e-mail + VPN)"
-      ],
-      "* Customizable features": [
-        "* Funcții personalizabile"
-      ],
-      "+${ bonusSpace } bonus storage": [
-        "+ ${ bonusSpace } spațiu bonus"
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+ o conexiune pentru ProtonVPN (permite conectarea mai multor dispozitive la VPN)",
-        "+${ organization.BonusVPN } conexiuni pentru ProtonVPN (vă permite să conectați mai multe dispozitive la VPN)",
-        "+${ organization.BonusVPN } de conexiuni pentru ProtonVPN (vă permite să conectați mai multe dispozitive la VPN)"
-      ],
-      "20 personal calendars": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "Cuponul ${ code } a aplicat o reducere de 20%."
-      ],
-      "30 days money-back guarantee.": [
-        "Banii înapoi în 30 de zile garantat."
-      ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
-        ""
+        "5 GB de spațiu"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Un e-mail de anulare va fi trimis participanților eliminați."
@@ -3115,23 +2860,8 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Un e-mail de anulare va fi trimis participanților la eveniment. Doriți să ștergeți acest eveniment?"
       ],
-      "A free and uncensored Internet should be available to all.": [
-        "Un internet gratuit și necenzurat ce ar trebui să fie disponibil tuturor."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Accesați conținutul blocat, cum ar fi platformele de comunicare socială, știri, Wikipedia, YouTube și multe altele, indiferent unde vă aflați."
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Accesați serviciile de trasmisie în flux, cum ar fi ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } oriunde v-ați afla."
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Accesul la cont a fost restricționat din cauza facturilor neplătite. Contactați-vă administratorul."
-      ],
-      "Account successfully updated": [
-        "Contul a fost actualizat."
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "Adăugați adrese suplimentare în cont precum utilizator2@protonmail.com."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Participanţii adăugaţi şi eliminaţi vor fi notificaţi cu privire la toate evenimentele din această serie."
@@ -3142,12 +2872,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
       ],
-      "Addresses": [
-        "Adrese"
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "După efectuarea plății cu Bitcoin, urmați instrucțiunile de mai jos pentru migrare."
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Toate (Un folder)",
         "Toate (${ totalFoldersCount } foldere)",
@@ -3157,12 +2881,6 @@
         "Toate (o etichetă)",
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Vă permite să găzduiți e-mailuri pe domeniu(ii) personal(e) la ${ mailAppName }, ex. ion.vasile@exemplu.com."
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Suma este sub minimul acceptat (${ amount })."
       ],
       "An invitation will be sent to added participants.": [
         "O invitație va fi trimisă participanților adăugați."
@@ -3175,30 +2893,6 @@
       ],
       "At most 100 participants are allowed per invitation": [
         "Cel mult 100 de participanți sunt autorizați per invitație."
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "Facturat cu ${ billedPrice } la doi ani"
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "Facturat cu ${ billedPrice } anual"
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Facturat la sfârșitul ciclului curent de facturare (reînnoire la ${ renewalDate })"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Tranzacțiile cu Bitcoin pot dura mai mult până la confirmare (până la 24 de ore). După confirmarea tranzacției, vă vom adăuga creditul în cont și veți putea plăti factura cu acesta."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "S-a aplicat reducerea de „Vinerea neagră” 2018 la abonament."
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "S-a aplicat reducerea de „Vinerea neagră” 2019 la abonament."
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Reducerea de „Vinerea Neagră” 2020 pentru utilizatorii noi a fost aplicată."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
@@ -3215,8 +2909,8 @@
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
       ],
-      "Connections": [
-        "Conexiuni"
+      "Continue with ${ planName }": [
+        ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Creare un calendar",
@@ -3234,12 +2928,6 @@
       ],
       "Create in": [
         "Creare în"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
@@ -3265,23 +2953,11 @@
       "Discard changes?": [
         "Anulare modificări?"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Cuponul ${ code } a aplicat o reducere de 20% la abonament."
-      ],
-      "Domains": [
-        "Domenii"
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
-      ],
       "Drop the file here to upload": [
         "Plasați fișierul aici pentru a fi încărcat"
       ],
       "Duplicate key updated": [
         "Cheie duplicat actualizată"
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "Fiecare conexiune suplimentară poate fi atribuită utilizatorilor din organizație."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -3295,38 +2971,14 @@
       "Existent, added and removed participants will be notified.": [
         "Participanții existenți, adăugați şi eliminați vor fi notificați."
       ],
-      "Expired": [
-        "Expirat"
-      ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "Pentru familii şi echipe mici; include atât e-mail cât şi VPN."
-      ],
-      "For getting started with private and secure emailing.": [
-        "Pentru a folosi mesaje private și securizate."
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Pentru persoanele care au nevoie de o căsuță poștală cu funcții complete și protecție avansată."
-      ],
-      "For professionals that need secure business communications.": [
-        "Pentru profesioniștii care au nevoie de comunicații de afaceri securizate."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Pentru Visa și MasterCard, cele 3 cifre de pe spatele cardului. Pentru American Express, cele 4 cifre de pe faţa cardului."
-      ],
       "Free up some space or add more storage space.": [
         "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
       ],
       "Free up some space or contact your administrator.": [
         "Eliberați ceva spațiu sau contactați administratorul."
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "Frequency modifications will be lost.": [
         "Modificările de frecvență vor fi pierdute."
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "VPN complet cu viteză de până la 10 Gbps."
       ],
       "Group assignment applied": [
         "Atribuire grup aplicată"
@@ -3359,9 +3011,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
-      ],
-      "Included": [
-        "Inclus"
       ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte."
@@ -3426,9 +3075,6 @@
       "No group found": [
         "Nu există grupuri"
       ],
-      "No payment is required at this time.": [
-        "Momentan nu este necesară nici o plată."
-      ],
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
@@ -3437,12 +3083,6 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
-      ],
-      "Not customizable": [
-        "Nu poate fi personalizat"
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "Numărul de conexiuni VPN care poate fi atribuit utilizatorilor. Fiecare dispozitiv conectat consumă o conexiune VPN."
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Evenimentele actualizate anterior de organizator vor fi păstrate, dar unele din răspunsurile dvs. vor fi pierdute."
@@ -3454,13 +3094,7 @@
         "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
       ],
       "Other options": [
-        ""
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Verificarea plății poate dura câteva minute."
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
+        "Alte opțiuni"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/integrat este compatibil doar cu formatul de text simplu. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
@@ -3474,29 +3108,11 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "După apăsarea pe butonul de confirmare, contul va mai avea ${ creditsRemaining } credite rămase."
-      ],
       "Please remove the duplicates and try again.": [
         "Eliminați duplicatele și reîncercați."
       ],
       "Please select the folders you would like to import:": [
         "Selectați folderele pe care doriți să le importați:"
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Mai încercați. Folosiți o metodă de plată diferită sau contactați-vă banca pentru asistență."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Mai încercați. Folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verificați efectuarea plății în noua fereastră deschisă."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Verificați cardul în noua pagină deschisă."
-      ],
-      "Please verify the payment in the new tab.": [
-        "Verificați plata în noua filă."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Așteptați până se caută contactele care pot fi resemnate cu cheia de criptare primară."
@@ -3510,25 +3126,17 @@
       "Primary": [
         "Primară"
       ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus este limitat la un utilizator și începe cu 5 GB de stocare."
+      "Priority support": [
+        ""
       ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include o conexiune VPN.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } conexiuni VPN.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } include ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } de conexiuni VPN."
+      "Proton Calendar": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
       "Removed participants will be notified.": [
         "Participanţii eliminaţi vor fi notificaţi."
-      ],
-      "Save 20%": [
-        "Economisiți 20%"
-      ],
-      "Save extra 20%": [
-        "Mai economisiți 20%"
       ],
       "Screenshot(s) attached": [
         "Capturi de ecran adăugate"
@@ -3548,19 +3156,10 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ProtonMail care folosește un serviciu PGP compatibil."
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
-      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Unele dintre răspunsurile dvs. la evenimentele actualizate anterior de către organizator vor fi pierdute."
       ],
-      "Starter VPN service with P2P support.": [
-        "Serviciu VPN de bază cu suport P2P."
-      ],
-      "Storage GB": [
-        "GB stocare"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3568,15 +3167,6 @@
       ],
       "support team": [
         "echipa de asistență"
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "Treceți la ${ professionalPlan } pentru a adăuga mai multe conexiuni."
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "Treceți la ${ professionalPlan } pentru a adăuga mai mulți utilizatori."
-      ],
-      "Thank you for supporting our mission.": [
-        "Vă mulțumim pentru că ne sprijiniți misiunea."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
@@ -3632,9 +3222,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Aceasta va activa PayPal ca metodă de plată pentru abonamentul la Proton. Se va deschide o fereastră nouă spre PayPal. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
@@ -3648,34 +3235,16 @@
         "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
       ],
       "Unlimited folders, labels, and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Update recurring event": [
         "Actualizare eveniment recurent"
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
-      ],
-      "Users": [
-        "Utilizatori"
-      ],
-      "Verification can take a few minutes.": [
-        "Verificarea poate dura câteva minute."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Pentru verificare se va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Verificarea va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante. Nu se va aplica nici o taxă. Orice sumă retrasă pentru verificarea cardului vă va fi rambursată imediat."
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "VPN + ${ mailAppName } pachet pentru familii și afaceri mici."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "Folosim 3-D Secure pentru a vă proteja plățile."
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
@@ -3749,29 +3318,14 @@
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "V-ați resetat parola și evenimentele legate la următoarele calendare nu s-au putut decripta.\nOrice legătură de calendar partajată creată anterior nu va mai funcționa.\nOrice calendar activ abonat se va resincroniza după câteva minute."
       ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Trebuie să aveți un card de credit sau un cont bancar asociat cu contul de PayPal pentru a-l adăuga ca metodă de plată."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Trebuie să aveți un card de credit sau cont bancar asociat la contul de PayPal. Dacă contul de PayPal nu are așa ceva, atunci faceți clic pe butonul de mai jos."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Trebuie să eliminați toate calendarele personale suplimentare și toate legăturile din calendar partajate înainte de a putea anula abonamentul. ${ linkButton }"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "S-a atins ${ spaceDisplayed }% din capacitatea de stocare. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "S-a atins capacitatea maximă de stocare. Nu se mai pot trimite sau primi mesaje. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Pentru verificarea efectuării plății se va deschide o filă către bancă."
-      ],
       "You will lose all unsaved changes.": [
         "Veți pierde toate modificările nesalvate."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
         "Veţi actualiza toate evenimentele din această serie. Participanţii adăugați şi eliminaţi vor fi notificați."
@@ -3797,20 +3351,11 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Contul se convertește, ar putea dura până la 30 de secunde."
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Contul va fi modificat după verificarea plății."
-      ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Adresa vă este dezactivată. Un e-mail de anulare nu poate fi trimis participanților la eveniment. Doriți totuși să ștergeți toate evenimentele din această serie?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Adresa vă este dezactivată. Un e-mail de anulare nu poate fi trimis participanților la eveniment. Doriți totuși să ștergeți acest eveniment?"
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Banca solicită verificarea cu sistemul 3-D Secure din motive de securitate."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul Proton."
@@ -3831,24 +3376,6 @@
         "Fusul orar al sistemului pare să se fi schimbat la ${ timezone }. Actualizați fusul orar preferat?"
       ]
     },
-    "info": {
-      "(beta)": [
-        "(beta)"
-      ]
-    },
-    "Info concerning plan features": {
-      "Customizable features": [
-        "Caracteristici personalizabile"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail nu poate fi utilizat pentru a trimite mesaje în masă sau nesolicitate. Mesajele legitime sunt nelimitate."
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Pentru plata cu numerar contactați-ne la ${ email } pentru instrucțiuni."
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "Apăsați pentru detalii"
@@ -3857,11 +3384,6 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Mai multe contacte arată identic. ${ mergeAction }"
-      ]
-    },
-    "information": {
-      "Included": [
-        "Inclus"
       ]
     },
     "Key badge": {
@@ -3915,12 +3437,6 @@
       "Browser version": [
         "Versiune navigator"
       ],
-      "BTC address:": [
-        "Adresa BTC:"
-      ],
-      "BTC amount:": [
-        "Suma BTC:"
-      ],
       "Calendar": [
         "Calendar"
       ],
@@ -3929,15 +3445,6 @@
       ],
       "Cancel": [
         "Anulare"
-      ],
-      "Card holder": [
-        "Titular card"
-      ],
-      "Card number": [
-        "Număr card"
-      ],
-      "Cash": [
-        "Numerar"
       ],
       "Category": [
         "Categoria"
@@ -3959,9 +3466,6 @@
       ],
       "Country": [
         "Țara"
-      ],
-      "CVV code": [
-        "Cod CVV"
       ],
       "Date and time": [
         "Data și ora"
@@ -4008,17 +3512,8 @@
       "Ends": [
         "Sfârșit"
       ],
-      "Enter organization name to confirm": [
-        "Introduceți numele organizației pentru confirmare"
-      ],
       "Event title": [
         "Titlu eveniment"
-      ],
-      "Expires": [
-        "Expirare"
-      ],
-      "Expiry date": [
-        "Data expirării"
       ],
       "Export contacts": [
         "Exportare contacte"
@@ -4083,9 +3578,6 @@
       "Name": [
         "Nume"
       ],
-      "Name on card": [
-        "Titular card"
-      ],
       "Notification": [
         "Notificare"
       ],
@@ -4115,9 +3607,6 @@
       "Password": [
         "Parola"
       ],
-      "Payer": [
-        "Plătitor"
-      ],
       "PGP scheme": [
         "Schema PGP"
       ],
@@ -4129,9 +3618,6 @@
       ],
       "Postal code": [
         "Cod poștal"
-      ],
-      "Proration": [
-        "Credit rămas"
       ],
       "Proton username": [
         "Utilizator Proton"
@@ -4151,12 +3637,6 @@
       "Reveal password": [
         "Afișare parolă"
       ],
-      "Select a method": [
-        "Selectați metoda"
-      ],
-      "Select your country": [
-        "Selectați țara"
-      ],
       "Sign emails": [
         "Semnare mesaje"
       ],
@@ -4171,12 +3651,6 @@
       ],
       "To: ${ emailAddress }": [
         "Către: ${ emailAddress }"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
       ],
       "Two-factor authentication code": [
         "Cod autentificare cu doi factori"
@@ -4198,9 +3672,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Care este motivul principal pentru această evaluare?"
-      ],
-      "ZIP": [
-        "ZIP"
       ]
     },
     "Label for contact group color": {
@@ -4238,17 +3709,11 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "Adăugare cod cadou"
-      ],
       "Calendars": [
         "Calendare"
       ],
       "clearing your browser cache": [
         "golind bufferul navigatorului"
-      ],
-      "click here": [
-        "apăsați aici"
       ],
       "Go to subscription plans": [
         "Accesare planuri abonamente"
@@ -4295,87 +3760,6 @@
         "Începe importarea"
       ]
     },
-    "Mail feature": {
-      "0.5 GB": [
-        "0,5 GB"
-      ],
-      "20 GB": [
-        "20 GB"
-      ],
-      "Address verification": [
-        "Verificare adresă"
-      ],
-      "Addresses": [
-        "Adrese"
-      ],
-      "Autoresponder": [
-        "Răspunsuri automate"
-      ],
-      "Catch-All email": [
-        "Adresă colectoare mesaje"
-      ],
-      "Contact groups": [
-        "Grupuri de contacte"
-      ],
-      "Custom domains": [
-        ""
-      ],
-      "Custom filters": [
-        "Filtre proprii"
-      ],
-      "Encrypted contacts": [
-        "Contacte criptate"
-      ],
-      "Folders / labels": [
-        "Foldere / Etichete"
-      ],
-      "IMAP / SMTP": [
-        "IMAP / SMTP"
-      ],
-      "Limited": [
-        "Limitată"
-      ],
-      "Messages per day": [
-        "Mesaje pe zi"
-      ],
-      "Multi-user support": [
-        "Suport utilizatori multipli"
-      ],
-      "Priority": [
-        "Prioritară"
-      ],
-      "Storage": [
-        "Spațiu de stocare"
-      ],
-      "Support": [
-        "Asistență"
-      ],
-      "Use @pm.me address": [
-        "Folosire adresă @pm.me"
-      ],
-      "Users": [
-        "Utilizatori"
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        "5 GB *"
-      ],
-      "5 GB / user *": [
-        "5 GB / utilizator *"
-      ],
-      "Unlimited": [
-        "Nelimitat"
-      ],
-      "Unlimited **": [
-        "Nelimitat **"
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        "5 / utilizator *"
-      ]
-    },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
@@ -4388,16 +3772,6 @@
         "Importare toate mesajele de la ${ totalLabelsCount } de etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
       ]
     },
-    "Many Others": {
-      "and many others": [
-        "și multe altele"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Aceasta va șterge definitiv toți subutilizatorii, conturile și datele asociate cu organizația personală."
-      ]
-    },
     "Message": {
       "Fw:": [
         "Redir:"
@@ -4406,7 +3780,7 @@
         "Răsp:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Perioada de încercare gratuită a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4577,11 +3951,6 @@
       ],
       "on the third Wednesday": [
         "în a treia miercuri"
-      ]
-    },
-    "Netflix": {
-      "Netflix": [
-        "Netflix"
       ]
     },
     "New Label form": {
@@ -4873,17 +4242,6 @@
         "Extindere listă participanți"
       ]
     },
-    "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
-      "New credit/debit card": [
-        "Card nou de credit / debit"
-      ],
-      "PayPal": [
-        "PayPal"
-      ]
-    },
     "Personal calendar limit reached modal body": {
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
         "Nu se pot crea mai multe calendare. Ați atins numărul maxim de calendare personale din plan."
@@ -4939,9 +4297,6 @@
       "Filter groups": [
         "Filtrare grupuri"
       ],
-      "Gift code": [
-        "Cod cadou"
-      ],
       "Image URL": [
         "URL imagine"
       ],
@@ -4960,9 +4315,6 @@
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare care apar"
       ],
-      "Postal code": [
-        "Cod poștal"
-      ],
       "Proton username": [
         "Utilizator Proton"
       ],
@@ -4974,9 +4326,6 @@
       ],
       "Start typing an email address": [
         "Introduceți o adresă de e-mail"
-      ],
-      "ZIP": [
-        "ZIP"
       ]
     },
     "Placeholder for contact group name": {
@@ -4987,104 +4336,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Fără nume)"
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        "0,5 GB spațiu"
-      ],
-      "1 - 5000 users *": [
-        "1 - 5000 utilizatori *"
-      ],
-      "1 address": [
-        "O adresă"
-      ],
-      "1 user": [
-        "Un utilizator"
-      ],
-      "20 GB storage": [
-        "20 GB spațiu"
-      ],
-      "200 folders / labels": [
-        "200 de foldere / etichete"
-      ],
-      "3 folders / labels": [
-        "3 foldere / etichete"
-      ],
-      "5 addresses": [
-        "5 adrese"
-      ],
-      "5 addresses / user": [
-        "5 adrese / utilizator"
-      ],
-      "5 GB storage *": [
-        "5 GB spațiu *"
-      ],
-      "5 GB storage / user": [
-        "5 GB spațiu / utilizator"
-      ],
-      "50 addresses": [
-        "50 de adrese"
-      ],
-      "6 users": [
-        "6 utilizatori"
-      ],
-      "Access blocked content": [
-        "Accesare conținut blocat"
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        "Acces la ${ driveAppName } (beta)"
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Toate caracteristicile planului ${ PLAN_NAMES[PLANS.VPNPLUS]}"
-      ],
-      "Built-in Adblocker (NetShield)": [
-        "Blocare reclame încorporată (NetShield)"
-      ],
-      "Custom domains": [
-        ""
-      ],
-      "Early access to new products": [
-        "Acces timpuriu la produse noi"
-      ],
-      "High speed": [
-        "Viteză mare"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Viteză maximă (până la 10 Gbps)"
-      ],
-      "Includes 6 user accounts": [
-        "Include 6 conturi de utilizatori"
-      ],
-      "Includes Proton Visionary": [
-        "Include „Proton Visionary”"
-      ],
-      "Medium speed": [
-        "Viteză medie"
-      ],
-      "Secure Core servers": [
-        "Server „Secure Core”"
-      ],
-      "Streaming service support": [
-        "Suport servicii de transmisie în flux"
-      ],
-      "Unlimited folders / labels": [
-        "Foldere / Etichete nelimitate"
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        "(plan actual)"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuit"
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
-        "Prime Video"
       ]
     },
     "Progress bar description": {
@@ -5169,7 +4420,16 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
+        "Invitați pe alții și câștigați recompense!"
+      ],
+      "No more missed appointments": [
+        ""
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
         ""
       ]
     },
@@ -5345,9 +4605,6 @@
       ],
       "Verification successful": [
         "Verificare reușită"
-      ],
-      "You have successfully unsubscribed": [
-        "Operația de dezabonare a fost finalizată."
       ]
     },
     "Success notification when user send feedback": {
@@ -5449,16 +4706,10 @@
       ]
     },
     "Title": {
-      "${ appName } customization": [
-        "Personalizare ${ appName }"
-      ],
       "${ emailsCount } member": [
         "Un membru",
         "${ emailsCount } membri",
         "${ emailsCount } de membri"
-      ],
-      "3-D Secure verification failed": [
-        "Verificarea cu 3-D Secure a eșuat"
       ],
       "Account suspended": [
         "Cont suspendat"
@@ -5492,20 +4743,11 @@
       "Addresses": [
         "Adrese"
       ],
-      "Amount due": [
-        "Suma datorată"
-      ],
-      "Apply gift code": [
-        "Aplicare cod cadou"
-      ],
       "Back": [
         "Înapoi"
       ],
       "Beta Access": [
         "Acces la Beta"
-      ],
-      "Billing cycle": [
-        "Ciclu de facturare"
       ],
       "Calendar": [
         "Calendar"
@@ -5513,17 +4755,8 @@
       "Calendar alarm": [
         "Alarmă calendar"
       ],
-      "Card verification": [
-        "Verificare card"
-      ],
-      "Card verification in progress": [
-        "Verificare card în desfășurare"
-      ],
       "Change my answer": [
         "Schimbare răspuns"
-      ],
-      "Checkout": [
-        "Finalizare"
       ],
       "Choose how many times this event will repeat": [
         "Alegeți de câte ori se va repeta acest eveniment"
@@ -5533,9 +4766,6 @@
       ],
       "Clearing data": [
         "Ştergere date"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Confirmare pierdere bonusuri Proton"
       ],
       "Contact details": [
         "Detalii contact"
@@ -5552,9 +4782,6 @@
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
       ],
-      "Coupon discount": [
-        "Cupon reducere"
-      ],
       "Create calendar": [
         "Creare calendar"
       ],
@@ -5564,14 +4791,8 @@
       "Create new group": [
         "Creare grup"
       ],
-      "Credits": [
-        "Credite"
-      ],
       "Currency": [
         "Moneda"
-      ],
-      "Current plan": [
-        "Plan actual"
       ],
       "Customize and confirm": [
         "Personalizare și confirmare"
@@ -5581,9 +4802,6 @@
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
-      ],
-      "Customize your plan": [
-        "Personalizare plan"
       ],
       "Delete ${ count } contact": [
         "Ștergere un contact",
@@ -5601,17 +4819,11 @@
       "Delete event": [
         "Ștergere eveniment"
       ],
-      "Delete organization?": [
-        "Ștergeți organizația?"
-      ],
       "Delete recurring event": [
         "Ștergere eveniment recurent"
       ],
       "Deleting contacts": [
         "Ștergere contacte"
-      ],
-      "Downgrade account": [
-        "Retrogradare cont"
       ],
       "Drop to upload": [
         "Plasați aici pentru încărcare"
@@ -5658,9 +4870,6 @@
       "Feedback": [
         "Feedback"
       ],
-      "Gift code": [
-        "Cod cadou"
-      ],
       "Give feedback": [
         "Oferiți feedback"
       ],
@@ -5702,9 +4911,6 @@
       "Merging contacts": [
         "Se îmbină contactele"
       ],
-      "Network error": [
-        "Eroare de rețea"
-      ],
       "Open actions dropdown": [
         "Meniu acțiuni deschidere"
       ],
@@ -5726,29 +4932,8 @@
       "Participants cannot be notified": [
         "Participanții nu pot fi notificați"
       ],
-      "Payment details": [
-        "Detalii plată"
-      ],
-      "Payment verification": [
-        "Verificare plată"
-      ],
-      "Payment verification in progress": [
-        "Verificare plată în desfășurare"
-      ],
-      "PayPal verification failed": [
-        "Verificarea PayPal a eșuat"
-      ],
       "Phone numbers": [
         "Numere de telefon"
-      ],
-      "Plan summary": [
-        "Rezumat plan"
-      ],
-      "Processing": [
-        "Se procesează"
-      ],
-      "Processing...": [
-        "Se procesează..."
       ],
       "Re-sign all contacts": [
         "Resemnare toate contactele"
@@ -5779,9 +4964,6 @@
       ],
       "Select a day in the month": [
         "Selectați o zi din lună"
-      ],
-      "Select a plan": [
-        "Selectare plan"
       ],
       "Select a theme": [
         "Selectaţi o temă"
@@ -5855,15 +5037,6 @@
       "Sign in again to continue": [
         "Reconectați-vă pentru a continua"
       ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Total (monthly)": [
-        "Total (lunar)"
-      ],
-      "Unsupported browser": [
-        "Navigator nesuportat"
-      ],
       "Update event": [
         "Actualizare eveniment"
       ],
@@ -5886,10 +5059,7 @@
         "Ați invitat participanți cu adrese de e-mail asemănătoare"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
-      ],
-      "ZIP / postal code": [
-        "ZIP / Cod Poștal"
+        "Perioada de încercare gratuită se încheie în curând, la ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5903,26 +5073,11 @@
       ]
     },
     "Tooltip": {
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Accesați conținutul blocat geografic (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc.) indiferent unde vă aflați."
-      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "„Automat” înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. „Text simplu” înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
       ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Creați mai multe adrese de e-mail legate la cont, ex. utilzator2@protonmail.com."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Vă apără împotriva pierderii confidențialității VPN prin transmiterea traficului pe internet prin mai multe servere."
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Semnarea digitală a mesajelor ajută la confirmarea că mesajele sunt trimise de către dvs."
-      ],
-      "Discount applied for annual billing cycle": [
-        "S-a aplicat reducerea pentru plata anuală."
-      ],
-      "Discount applied for two-year billing cycle": [
-        "S-a aplicat reducerea pentru plata la doi ani."
       ],
       "Each imported email will have this label": [
         "Fiecare e-mail importat va avea această etichetă."
@@ -5936,35 +5091,8 @@
       "Encrypted data with verified digital signature": [
         "Date criptate cu semnătură digitală verificată"
       ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obțineți acces la toate funcțiile cu plată, pentru ProtonVPN și ProtonMail (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obțineți acces la toate funcțiile cu plată, pentru ProtonVPN și ProtonMail (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Găzduiți e-mailuri pentru domeniu(ii) personal(e) la ${ mailAppName }, ex. ion.vasile@exemplu.com."
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Găzduiți e-mailuri pentru domeniu(ii) personal(e) la ProtonmMail, ex.: ion.vasile@exemplu.com."
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de suport, îl puteți folosi aici."
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Suportul pentru utilizatori multipli se aplică doar planurilor cu doi sau mai mulți utilizatori."
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield vă protejează dispozitivul și accelerează navigarea prin blocarea reclamelor, urmăritorilor și a programelor malițioase."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Redirecționați traficul de internet prin rețeaua Tor cu un singur clic."
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ProtonMail."
@@ -5974,15 +5102,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate la ambele capete la această adresă"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Folosiți mai multe adrese / aliasuri legate la cont, ex.: numeutilizator2@protonmail.com."
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Utilizați adresa personală utilizator@pm.me pentru a trimite mesaje."
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
       ],
       "You do not have any contacts to export": [
         "Nu aveți persoane de contact pentru exportare"
@@ -6001,126 +5120,6 @@
       ],
       "Replay video": [
         "Redare video"
-      ]
-    },
-    "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
-      "30-days money-back guarantee": [
-        "Garanția returnări banilor în 30 de zile"
-      ],
-      "Access blocked content": [
-        "Accesare conținut blocat"
-      ],
-      "Adblocker (NetShield)": [
-        "Blocare reclame (NetShield)"
-      ],
-      "Custom connection profiles": [
-        "Profiluri de conexiune personalizate"
-      ],
-      "DNS leak prevention": [
-        "Prevenire breșe DNS"
-      ],
-      "Full Disk Encryption on Servers": [
-        "Criptare completă discuri servere"
-      ],
-      "Jurisdiction": [
-        "Jurisdicţie"
-      ],
-      "Kill Switch / Always-on VPN": [
-        "Întrerupător de urgență / VPN permanent"
-      ],
-      "Languages supported": [
-        "Limbi acceptate"
-      ],
-      "Locations/Countries": [
-        "Locuri / Țări"
-      ],
-      "Open Source & audited apps": [
-        "Aplicații cu sursă publică și verificată"
-      ],
-      "P2P/BitTorrent": [
-        "P2P / BitTorrent"
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        "Perfect Forward Secrecy (PFS)"
-      ],
-      "Platforms supported": [
-        "Platforme suportate"
-      ],
-      "Router support": [
-        "Suport Router"
-      ],
-      "Secure Core servers": [
-        "Server „Secure Core”"
-      ],
-      "Speed": [
-        "Viteza"
-      ],
-      "Split tunneling": [
-        "Tuneluri divizate"
-      ],
-      "Streaming service support": [
-        "Suport servicii de transmisie în flux"
-      ],
-      "Strict no-logs policy": [
-        "Politică strictă fără înregistrări"
-      ],
-      "Tor over VPN": [
-        "Tor peste VPN"
-      ],
-      "User data monetization": [
-        "Monetizare date utilizator"
-      ],
-      "Volume/bandwidth cap": [
-        "Limitare volum / lățime de bandă"
-      ],
-      "VPN Connections": [
-        "Conexiuni VPN"
-      ],
-      "VPN servers": [
-        "Servere VPN"
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        "(Numai pentru Android și Windows)"
-      ],
-      "High": [
-        "Mare"
-      ],
-      "Highest (up to 10 Gbps)": [
-        "Maximă (până la 10 Gbps)"
-      ],
-      "Medium": [
-        "Medie"
-      ],
-      "None": [
-        "Niciunul"
-      ],
-      "Switzerland": [
-        "Elveția"
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        "Un server",
-        "Peste ${ n } servere",
-        "Peste ${ n } de servere"
-      ],
-      "${ n } VPN connection": [
-        "O conexiune VPN",
-        "${ n } conexiuni VPN",
-        "${ n } de conexiuni VPN"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } într-o țară",
-        "${ numberOfServers } în ${ numberOfCountries } țări",
-        "${ numberOfServers } în ${ numberOfCountries } de țări"
       ]
     },
     "Warning": {
@@ -6148,9 +5147,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "Discuția live este o funcție premium disponibilă doar pentru cei care au planuri ProtonVPN cu plată. În schimb, vă rugăm să deschideți un tichet."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."
@@ -6189,7 +5185,7 @@
         "Veți pierde orice modificare făcută până acum."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Perioada de încercare gratuită se încheie în curând la ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

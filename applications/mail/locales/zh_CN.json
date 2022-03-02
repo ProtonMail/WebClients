@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ boldSave } by switching to annual billing": [
-        "年付可享 ${ boldSave } 优惠"
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 简介"
       ],
@@ -89,9 +86,6 @@
       "All Unstarred": [
         "所有非星标邮件"
       ],
-      "annual billing": [
-        "年费"
-      ],
       "Apply": [
         "应用"
       ],
@@ -167,12 +161,6 @@
       "Color": [
         "颜色"
       ],
-      "Compare all features": [
-        "功能对比"
-      ],
-      "Compare plans": [
-        "套餐对比"
-      ],
       "Compose": [
         "写邮件"
       ],
@@ -223,9 +211,6 @@
       ],
       "Customize": [
         "定制"
-      ],
-      "Decrease": [
-        "减少"
       ],
       "Decrypt": [
         "解密"
@@ -422,9 +407,6 @@
       "Import messages": [
         "导入邮件"
       ],
-      "Increase": [
-        "增加"
-      ],
       "Inline": [
         "内嵌图片"
       ],
@@ -475,9 +457,6 @@
       ],
       "Load unprotected": [
         "无保护加载"
-      ],
-      "Loading verification": [
-        "正在准备验证"
       ],
       "Loading${ ellipsis }": [
         "正在加载${ ellipsis }"
@@ -596,9 +575,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "打开 ${ CALENDAR_APP_NAME }"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "打开 ${ CALENDAR_APP_NAME } 设置"
-      ],
       "Open calendar": [
         "打开日历"
       ],
@@ -619,9 +595,6 @@
       ],
       "Pause": [
         "暂停"
-      ],
-      "Pay": [
-        "支付"
       ],
       "Preview": [
         "预览"
@@ -680,12 +653,6 @@
       "Remove ${ attachmentName }": [
         "移除 ${ attachmentName }"
       ],
-      "Remove bonuses": [
-        "放弃特权"
-      ],
-      "Remove gift code": [
-        "移除礼品码"
-      ],
       "Remove this label": [
         "移除此标签"
       ],
@@ -712,9 +679,6 @@
       ],
       "Resume": [
         "继续"
-      ],
-      "Retry": [
-        "重试"
       ],
       "Revert to original display": [
         "恢复到原显示样式"
@@ -748,9 +712,6 @@
       ],
       "Select all messages": [
         "选择所有邮件"
-      ],
-      "Select plan": [
-        "开通"
       ],
       "Send": [
         "发送​​"
@@ -923,12 +884,6 @@
       "Use ${ label } theme": [
         "使用 ${ label } 配色"
       ],
-      "Use a different card": [
-        "使用其他银行卡"
-      ],
-      "Use a different payment method": [
-        "改用其他支付方式"
-      ],
       "Use for sending": [
         "用于发送邮件"
       ],
@@ -1021,23 +976,6 @@
       ],
       "Participant added": [
         "参与者已添加"
-      ]
-    },
-    "Addon": {
-      "+ ${ addresses } email address": [
-        "+ ${ addresses } 个邮箱地址"
-      ],
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } 个自有域名"
-      ],
-      "+ ${ members } user": [
-        "+ ${ members } 位用户"
-      ],
-      "+ ${ storage } storage": [
-        "+ ${ storage } 存储空间"
-      ],
-      "+ ${ vpn } connection": [
-        "+ ${ vpn } 台设备可同时接入 VPN"
       ]
     },
     "Alert": {
@@ -1139,23 +1077,6 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "如果使用过程中遇到问题，您可以随时关闭该选项。"
-      ]
-    },
-    "Billing cycle option": {
-      "Annually": [
-        "每年"
-      ],
-      "Annually SAVE 20%": [
-        "年费（省 20%）"
-      ],
-      "Monthly": [
-        "按月付费"
-      ],
-      "Two years SAVE 33%": [
-        "两年（省 33%）"
-      ],
-      "Two-year": [
-        "两年付费"
       ]
     },
     "blackfriday Action": {
@@ -1333,31 +1254,6 @@
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         "您有一个预约事件"
-      ]
-    },
-    "Calendar feature": {
-      "Calendar import": [
-        "日历导入"
-      ],
-      "Invitations": [
-        "邀请"
-      ],
-      "Multiple calendars": [
-        "多日历"
-      ],
-      "Recurring events": [
-        "重复事件"
-      ],
-      "Share Calendar via link": [
-        "通过链接共享日历"
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        "20 个 / 用户"
-      ],
-      "20 / user *": [
-        "20 个 / 用户 *"
       ]
     },
     "Calendar invite buttons label": {
@@ -1816,419 +1712,411 @@
         "读音"
       ]
     },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } 天"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } 月"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
-        ""
+        "阿布哈兹"
       ],
       "Afghanistan": [
-        ""
+        "阿富汗"
       ],
       "Albania": [
-        ""
+        "阿尔巴尼亚"
       ],
       "Algeria": [
-        ""
+        "阿尔及利亚"
       ],
       "American Samoa": [
-        ""
+        "美属萨摩亚"
       ],
       "Andorra": [
-        ""
+        "安道尔"
       ],
       "Angola": [
-        ""
+        "安哥拉"
       ],
       "Anguilla": [
-        ""
+        "安圭拉"
       ],
       "Antarctica": [
-        ""
+        "南极洲"
       ],
       "Antigua and Barbuda": [
-        ""
+        "安提瓜和巴布达"
       ],
       "Argentina": [
-        ""
+        "阿根廷"
       ],
       "Armenia": [
-        ""
+        "亚美尼亚"
       ],
       "Aruba": [
-        ""
+        "阿鲁巴"
       ],
       "Ascension Island": [
-        ""
+        "阿森松岛"
       ],
       "Australia": [
-        ""
+        "澳大利亚"
       ],
       "Austria": [
-        ""
+        "奥地利"
       ],
       "Azerbaijan": [
-        ""
+        "阿塞拜疆"
       ],
       "Bahamas": [
-        ""
+        "巴哈马"
       ],
       "Bahrain": [
-        ""
+        "巴林"
       ],
       "Bangladesh": [
-        ""
+        "孟加拉国"
       ],
       "Barbados": [
-        ""
+        "巴巴多斯"
       ],
       "Belarus": [
-        ""
+        "白俄罗斯"
       ],
       "Belgium": [
-        ""
+        "比利时"
       ],
       "Belize": [
-        ""
+        "伯利兹"
       ],
       "Benin": [
-        ""
+        "贝宁"
       ],
       "Bermuda": [
-        ""
+        "百慕大"
       ],
       "Bhutan": [
-        ""
+        "不丹"
       ],
       "Bolivia": [
-        ""
+        "玻利维亚"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        ""
+        "荷兰加勒比区"
       ],
       "Bosnia and Herzegovina": [
-        ""
+        "波斯尼亚和黑塞哥维那"
       ],
       "Botswana": [
-        ""
+        "博茨瓦纳"
       ],
       "Bouvet Island": [
-        ""
+        "布韦岛"
       ],
       "Brazil": [
-        ""
+        "巴西"
       ],
       "British Indian Ocean Territory": [
-        ""
+        "英属印度洋领地"
       ],
       "Brunei Darussalam": [
-        ""
+        "文莱达鲁萨兰"
       ],
       "Bulgaria": [
-        ""
+        "保加利亚"
       ],
       "Burkina Faso": [
-        ""
+        "布基纳法索"
       ],
       "Burma": [
         ""
       ],
       "Burundi": [
-        ""
+        "布隆迪"
       ],
       "Cambodia": [
-        ""
+        "柬埔寨"
       ],
       "Cameroon": [
-        ""
+        "喀麦隆"
       ],
       "Canada": [
-        ""
+        "加拿大"
       ],
       "Cape Verde": [
-        ""
+        "佛得角"
       ],
       "Cayman Islands": [
-        ""
+        "开曼群岛"
       ],
       "Central African Republic": [
-        ""
+        "中非共和国"
       ],
       "Chad": [
-        ""
+        "乍得"
       ],
       "Chile": [
-        ""
+        "智利"
       ],
       "China": [
-        ""
+        "中国"
       ],
       "Christmas Island": [
-        ""
+        "圣诞岛"
       ],
       "Cocos (Keeling) Islands": [
-        ""
+        "科科斯（基林）群岛"
       ],
       "Colombia": [
-        ""
+        "哥伦比亚"
       ],
       "Comoros": [
-        ""
+        "科摩罗"
       ],
       "Congo": [
-        ""
+        "刚果（布）"
       ],
       "Congo, Democratic Republic of the": [
-        ""
+        "刚果（金）"
       ],
       "Cook Islands": [
-        ""
+        "库克群岛"
       ],
       "Costa Rica": [
-        ""
+        "哥斯达黎加"
       ],
       "Cote d'Ivoire\"": [
         "Côte d'Ivoire"
       ],
       "Croatia": [
-        ""
+        "克罗地亚"
       ],
       "Cuba": [
-        ""
+        "古巴"
       ],
       "Curaçao": [
-        ""
+        "库拉索"
       ],
       "Cyprus": [
-        ""
+        "塞浦路斯"
       ],
       "Czech Republic": [
-        ""
+        "捷克"
       ],
       "Denmark": [
-        ""
+        "丹麦"
       ],
       "Djibouti": [
-        ""
+        "吉布提"
       ],
       "Dominica": [
-        ""
+        "多米尼克"
       ],
       "Dominican Republic": [
-        ""
+        "多米尼加共和国"
       ],
       "Ecuador": [
-        ""
+        "厄瓜多尔"
       ],
       "Egypt": [
-        ""
+        "埃及"
       ],
       "El Salvador": [
-        ""
+        "萨尔瓦多"
       ],
       "Equatorial Guinea": [
-        ""
+        "赤道几内亚"
       ],
       "Eritrea": [
-        ""
+        "厄立特里亚"
       ],
       "Estonia": [
-        ""
+        "爱沙尼亚"
       ],
       "Ethiopia": [
-        ""
+        "埃塞俄比亚"
       ],
       "Falkland Islands": [
-        ""
+        "奥兰群岛"
       ],
       "Faroe Islands": [
-        ""
+        "法罗群岛"
       ],
       "Federated States of Micronesia": [
         ""
       ],
       "Fiji": [
-        ""
+        "斐济"
       ],
       "Finland": [
-        ""
+        "芬兰"
       ],
       "France": [
-        ""
+        "法国"
       ],
       "French Guiana": [
-        ""
+        "法属圭亚那"
       ],
       "French Polynesia": [
         ""
       ],
       "French Southern Territories": [
-        ""
+        "法属南部领地"
       ],
       "Gabon": [
-        ""
+        "加蓬"
       ],
       "Gambia": [
-        ""
+        "冈比亚"
       ],
       "Georgia": [
-        ""
+        "格鲁吉亚"
       ],
       "Germany": [
-        ""
+        "德国"
       ],
       "Ghana": [
-        ""
+        "加纳"
       ],
       "Gibraltar": [
-        ""
+        "直布罗陀"
       ],
       "Greece": [
-        ""
+        "希腊"
       ],
       "Greenland": [
-        ""
+        "格陵兰"
       ],
       "Grenada": [
-        ""
+        "格林纳达"
       ],
       "Guadeloupe": [
-        ""
+        "瓜德罗普"
       ],
       "Guam": [
-        ""
+        "关岛"
       ],
       "Guatemala": [
-        ""
+        "危地马拉"
       ],
       "Guernsey": [
-        ""
+        "根西"
       ],
       "Guinea": [
-        ""
+        "几内亚"
       ],
       "Guinea-Bissau": [
-        ""
+        "几内亚比绍"
       ],
       "Guyana": [
-        ""
+        "圭亚那"
       ],
       "Haiti": [
-        ""
+        "海地"
       ],
       "Heard Island and McDonald Islands": [
-        ""
+        "赫德岛和麦克唐纳群岛"
       ],
       "Holy See (Vatican City State)": [
         ""
       ],
       "Honduras": [
-        ""
+        "洪都拉斯"
       ],
       "Hong Kong": [
-        ""
+        "中国香港特别行政区"
       ],
       "Hungary": [
-        ""
+        "匈牙利"
       ],
       "Iceland": [
-        ""
+        "冰岛"
       ],
       "India": [
-        ""
+        "印度"
       ],
       "Indonesia": [
-        ""
+        "印度尼西亚"
       ],
       "International": [
-        ""
+        "全球"
       ],
       "Iran": [
-        ""
+        "伊朗"
       ],
       "Iraq": [
-        ""
+        "伊拉克"
       ],
       "Ireland": [
-        ""
+        "爱尔兰"
       ],
       "Isle of Man": [
-        ""
+        "马恩岛"
       ],
       "Israel": [
-        ""
+        "以色列"
       ],
       "Italy": [
-        ""
+        "意大利"
       ],
       "Jamaica": [
-        ""
+        "牙买加"
       ],
       "Japan": [
-        ""
+        "日本"
       ],
       "Jersey": [
-        ""
+        "泽西"
       ],
       "Jordan": [
-        ""
+        "约旦"
       ],
       "Kazakhstan": [
-        ""
+        "哈萨克斯坦"
       ],
       "Kenya": [
-        ""
+        "肯尼亚"
       ],
       "Kiribati": [
-        ""
+        "基里巴斯"
       ],
       "Kosovo": [
         ""
       ],
       "Kuwait": [
-        ""
+        "科威特"
       ],
       "Kyrgyzstan": [
-        ""
+        "吉尔吉斯斯坦"
       ],
       "Laos": [
-        ""
+        "老挝"
       ],
       "Latvia": [
-        ""
+        "拉脱维亚"
       ],
       "Lebanon": [
-        ""
+        "黎巴嫩"
       ],
       "Lesotho": [
-        ""
+        "莱索托"
       ],
       "Liberia": [
-        ""
+        "利比里亚"
       ],
       "Libya": [
-        ""
+        "利比亚"
       ],
       "Liechtenstein": [
-        ""
+        "列支敦士登"
       ],
       "Lithuania": [
-        ""
+        "立陶宛"
       ],
       "Luxembourg": [
-        ""
+        "卢森堡"
       ],
       "Macao": [
         ""
       ],
       "Madagascar": [
-        ""
+        "马达加斯加"
       ],
       "Malawi": [
         ""
@@ -2246,7 +2134,7 @@
         ""
       ],
       "Marshall Islands": [
-        ""
+        "马绍尔群岛"
       ],
       "Martinique": [
         ""
@@ -2258,28 +2146,28 @@
         ""
       ],
       "Mayotte": [
-        ""
+        "马约特"
       ],
       "Mexico": [
         ""
       ],
       "Moldova": [
-        ""
+        "摩尔多瓦"
       ],
       "Monaco": [
-        ""
+        "摩纳哥"
       ],
       "Mongolia": [
         ""
       ],
       "Montenegro": [
-        ""
+        "黑山"
       ],
       "Montserrat": [
         ""
       ],
       "Morocco": [
-        ""
+        "摩洛哥"
       ],
       "Mozambique": [
         ""
@@ -2318,7 +2206,7 @@
         ""
       ],
       "North Korea": [
-        ""
+        "朝鲜"
       ],
       "North Macedonia": [
         ""
@@ -2378,217 +2266,217 @@
         ""
       ],
       "Russia": [
-        ""
+        "俄罗斯"
       ],
       "Rwanda": [
-        ""
+        "卢旺达"
       ],
       "Saint Barthélemy": [
-        ""
+        "圣巴泰勒米"
       ],
       "Saint Helena": [
-        ""
+        "圣赫勒拿岛"
       ],
       "Saint Kitts and Nevis": [
-        ""
+        "圣基茨和尼维斯"
       ],
       "Saint Lucia": [
-        ""
+        "圣卢西亚"
       ],
       "Saint Martin (French Part)": [
-        ""
+        "法属圣马丁"
       ],
       "Saint Pierre and Miquelon": [
         ""
       ],
       "Saint Vincent and the Grenadines": [
-        ""
+        "圣文森特和格林纳丁斯"
       ],
       "Samoa": [
-        ""
+        "萨摩亚"
       ],
       "San Marino": [
-        ""
+        "圣马力诺"
       ],
       "Sao Tome and Principe": [
-        ""
+        "圣多美与普林西比"
       ],
       "Saudi Arabia": [
-        ""
+        "沙特阿拉伯"
       ],
       "Senegal": [
-        ""
+        "塞内加尔"
       ],
       "Serbia": [
         ""
       ],
       "Seychelles": [
-        ""
+        "塞舌尔"
       ],
       "Sierra Leone": [
-        ""
+        "塞拉利昂"
       ],
       "Singapore": [
-        ""
+        "新加坡"
       ],
       "Sint Maarten": [
-        ""
+        "圣马丁岛"
       ],
       "Slovakia": [
-        ""
+        "斯洛伐克"
       ],
       "Slovenia": [
-        ""
+        "斯洛文尼亚"
       ],
       "Solomon Islands": [
-        ""
+        "所罗门群岛"
       ],
       "Somalia": [
-        ""
+        "索马里"
       ],
       "South Africa": [
-        ""
+        "南非"
       ],
       "South Georgia and the South Sandwich Islands": [
-        ""
+        "南乔治亚岛和南桑威奇群岛"
       ],
       "South Korea": [
-        ""
+        "韩国"
       ],
       "South Ossetia": [
         ""
       ],
       "South Sudan": [
-        ""
+        "南苏丹"
       ],
       "Spain": [
-        ""
+        "西班牙"
       ],
       "Sri Lanka": [
-        ""
+        "斯里兰卡"
       ],
       "Sudan": [
-        ""
+        "苏丹"
       ],
       "Suriname": [
-        ""
+        "苏里南"
       ],
       "Svalbard and Jan Mayen": [
-        ""
+        "斯瓦尔巴和扬马延"
       ],
       "Swaziland": [
         "Eswatini"
       ],
       "Sweden": [
-        ""
+        "瑞典"
       ],
       "Switzerland": [
-        ""
+        "瑞士"
       ],
       "Syria": [
-        ""
+        "叙利亚"
       ],
       "Taiwan": [
-        ""
+        "台湾地区"
       ],
       "Tajikistan": [
-        ""
+        "塔吉克斯坦"
       ],
       "Tanzania": [
-        ""
+        "坦桑尼亚"
       ],
       "Thailand": [
-        ""
+        "泰国"
       ],
       "Timor-Leste": [
-        ""
+        "东帝汶"
       ],
       "Togo": [
-        ""
+        "多哥"
       ],
       "Tokelau": [
-        ""
+        "托克劳"
       ],
       "Tonga": [
-        ""
+        "汤加"
       ],
       "Trinidad and Tobago": [
-        ""
+        "特立尼达和多巴哥"
       ],
       "Tristan da Cunha": [
         ""
       ],
       "Tunisia": [
-        ""
+        "突尼斯"
       ],
       "Turkey": [
-        ""
+        "土耳其"
       ],
       "Turkmenistan": [
-        ""
+        "土库曼斯坦"
       ],
       "Turks and Caicos Islands": [
-        ""
+        "特克斯和凯科斯群岛"
       ],
       "Tuvalu": [
-        ""
+        "图瓦卢"
       ],
       "Uganda": [
-        ""
+        "乌干达"
       ],
       "Ukraine": [
-        ""
+        "乌克兰"
       ],
       "United Arab Emirates": [
-        ""
+        "阿联酋"
       ],
       "United Kingdom": [
-        ""
+        "英国"
       ],
       "United States": [
-        ""
+        "美国"
       ],
       "United States Minor Outlying Islands": [
-        ""
+        "美国本土外小岛屿"
       ],
       "Uruguay": [
-        ""
+        "乌拉圭"
       ],
       "Uzbekistan": [
-        ""
+        "乌兹别克斯坦"
       ],
       "Vanuatu": [
-        ""
+        "瓦努阿图"
       ],
       "Venezuela": [
-        ""
+        "委内瑞拉"
       ],
       "Vietnam": [
-        ""
+        "越南"
       ],
       "Virgin Islands, British": [
-        ""
+        "英属维尔京群岛"
       ],
       "Virgin Islands, U.S.": [
-        ""
+        "美属维尔京群岛"
       ],
       "Wallis and Futuna": [
-        ""
+        "瓦利斯和富图纳"
       ],
       "Western Sahara": [
-        ""
+        "西撒哈拉"
       ],
       "Yemen": [
-        ""
+        "也门"
       ],
       "Zambia": [
-        ""
+        "赞比亚"
       ],
       "Zimbabwe": [
-        ""
+        "津巴布韦"
       ],
       "Åland Islands": [
-        ""
+        "奥兰群岛"
       ]
     },
     "CustomFilter": {
@@ -2712,25 +2600,9 @@
         "收到新邮件"
       ]
     },
-    "Disney": {
-      "Disney+": [
-        "Disney+"
-      ]
-    },
     "Download attachments": {
       "Download all": [
         "全部下载"
-      ]
-    },
-    "Drive feature": {
-      "Access via Web": [
-        "通过网页访问"
-      ],
-      "Share files via link": [
-        "通过链接共享文件"
-      ],
-      "Upload / download files": [
-        "上传/下载文件"
       ]
     },
     "Early Access Disabled": {
@@ -2859,12 +2731,6 @@
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
-      "Amount above the maximum.": [
-        "金额太大。"
-      ],
-      "Amount below minimum.": [
-        "金额太小。"
-      ],
       "Attachments are limited to 25 MB": [
         "附件大小不能超过 25 MB"
       ],
@@ -2882,9 +2748,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "由于个人日历限制，无法为所有导入的日历创建新日历。"
-      ],
-      "Checkout expired, please try again": [
-        "支付超时，请重试"
       ],
       "Choose a date in the future.": [
         "选择未来的日期。"
@@ -2943,9 +2806,6 @@
       "Enter a password": [
         "输入密码"
       ],
-      "Error connecting to the Bitcoin API.": [
-        "连接比特币 API 失败。"
-      ],
       "Error in one of the conditions": [
         "条件存在错误"
       ],
@@ -2974,31 +2834,16 @@
         "图像上传失败"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "登录凭据不正确，请重试。"
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
-      ],
-      "Invalid ${ name } code": [
-        "无效的 ${ name } 码"
-      ],
-      "Invalid card number": [
-        "卡号无效"
-      ],
-      "Invalid code": [
-        "无效代码"
-      ],
-      "Invalid expiration date": [
-        "有效期不正确"
+        "邮箱密码错误，请重试。"
       ],
       "Invalid expiration time": [
         "有效期不正确"
       ],
       "Invalid name": [
         "名称无效"
-      ],
-      "Invalid postal code": [
-        "无效的邮政编码"
       ],
       "Invalid public key file": [
         "公钥文件无效"
@@ -3008,6 +2853,9 @@
       ],
       "Label name cannot be empty": [
         "标签名称不能为空"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
@@ -3020,9 +2868,6 @@
       ],
       "Missing signature": [
         "缺少签名"
-      ],
-      "Name on card required": [
-        "必须填写持卡人姓名"
       ],
       "Network error: Please check your connection and try again.": [
         "网络错误：请检查网络后重试。"
@@ -3057,23 +2902,8 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "某个/些群组没有联系人：${ noContactGroupList } "
       ],
-      "Organization not recognized. Try again.": [
-        "无法识别机构，请重试。"
-      ],
       "Passwords do not match": [
         "密码不匹配"
-      ],
-      "Payment process cancelled": [
-        "付款已取消"
-      ],
-      "Payment process consumed": [
-        "已经支付过了"
-      ],
-      "Payment process failed": [
-        "支付失败"
-      ],
-      "Payment process not supported": [
-        "不支持此支付流程"
       ],
       "Please activate your content search again": [
         "请重新开启全文搜索"
@@ -3095,9 +2925,6 @@
       ],
       "Primary address key is not decrypted.": [
         "主密钥尚未解密。"
-      ],
-      "Process aborted": [
-        "操作已中止"
       ],
       "Public key could not be trusted": [
         "无法信任公钥"
@@ -3144,14 +2971,8 @@
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "对不起，Proton 无法解密您的邮件。请确认您的密钥是否已全部启用。"
       ],
-      "Tab closed": [
-        "标签页已关闭"
-      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "该附件无法解密。\n如果你有相应的私钥，你仍然能够解密\n用GnuPG等程序来处理该文件。"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
       ],
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请重新填写。"
@@ -3164,15 +2985,6 @@
       ],
       "The maximum expiration is 4 weeks": [
         "有效期不能超过 4 周"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "充值金额不能低于 ${ _price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "捐款金额不应低于 ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "支付金额不能低于 ${ _price2 }"
       ],
       "The sending key is not valid": [
         "发送密钥无效"
@@ -3218,9 +3030,6 @@
       ],
       "Unknown error.": [
         "未知错误。"
-      ],
-      "Unknown payment token status": [
-        "支付状态不明"
       ],
       "Wrong mailbox password": [
         "邮箱密码错误"
@@ -3595,11 +3404,6 @@
         "默认"
       ]
     },
-    "Free price": {
-      "Free": [
-        "免费"
-      ]
-    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
         "我们已将您的存储空间升至 ${ totalGBStorageAfterCompletion } GB。您还可以升级账户，从而获得更大的存储空间和更高级的功能。"
@@ -3855,12 +3659,6 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
       ],
-      "${ mailAppName } Free": [
-        "${ mailAppName } 免费版"
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional 最低一个用户，每添加一个用户，会为组织添加 5GB 空间和 5 个电子邮箱别名。"
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封邮件无法移动。"
       ],
@@ -3884,15 +3682,6 @@
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 个文件已添加到附件。"
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } 订阅，切换到${ annualBilling }"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "添加邮件订阅，可整体享 ${ saveExtra20 } 优惠。"
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "添加 VPN 订阅，可整体享 ${ saveExtra20 } 优惠。"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
@@ -3927,9 +3716,6 @@
       "${ updated } contact updated successfully.": [
         "${ updated } 联系人更新成功。"
       ],
-      "${ vpnAppName } Free": [
-        "${ vpnAppName } 免费版"
-      ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
@@ -3939,41 +3725,17 @@
       "(Filter if ANY of the following conditions are met)": [
         "（满足下列任一条件）"
       ],
-      "(Mail + VPN)": [
-        "(邮箱 + VPN)"
-      ],
       "(No Recipient)": [
         "(无收件人)"
-      ],
-      "* Customizable features": [
-        "* 可以根据需求自行调整"
-      ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } 特权存储空间"
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } 台设备可接入 ProtonVPN"
       ],
       "/month.": [
         "/月。"
       ],
-      "20 personal calendars": [
-        ""
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "优惠券 ${ code } 已提供 20% 优惠"
-      ],
-      "30 days money-back guarantee.": [
-        "30 天内可退款。"
-      ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
         ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        "每个人都应当享有自由的互联网，免受网络审查。"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "“恢复密语”是保护账户访问权限的最安全方法之一。如果您忘记了密码，您可以用它来访问账户并恢复加密数据。"
@@ -3981,35 +3743,17 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "此操作将向邮件发送方请求退订，并由其自动处理退订请求。"
       ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "突破网络封锁，打开自由世界。随时随地访问被屏蔽的内容，例如社交媒体、新闻、维基百科、YouTube等等。"
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "无论您身于何处，您都可以访问您最喜爱的流媒体服务，如 ${ netflix }、${ disney }、${ primeVideo } 及${ many }。"
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "账户因欠费已被限制使用，请联系机构管理员。"
       ],
-      "Account successfully updated": [
-        "账户已成功更新"
-      ],
       "Activation in progress": [
         "正在进行激活"
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "添加其他邮箱地址，如 username2@protonmail.com"
       ],
       "Add image URL": [
         "添加图片地址"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向其发送邮件前需要先信任其公钥。"
-      ],
-      "Addresses": [
-        "邮箱地址"
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "使用比特币支付后，请按以下步骤升级账户。"
       ],
       "Align left": [
         "左对齐"
@@ -4034,12 +3778,6 @@
       ],
       "All your changes will be lost.": [
         "您的所有改动都将丢失。"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "允许您在自己的域名下使用${ mailAppName }，例如john.smith@example.com"
-      ],
-      "Amount below minimum (${ amount }).": [
-        "金额 ${ amount } 太小。"
       ],
       "An unknown public key has been detected for this recipient.": [
         "检测到此收件人的一枚未知公钥。"
@@ -4086,32 +3824,8 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "基本的导航和操作快捷键始终可以使用，不受该选项控制。"
       ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "每两年支付 ${ billedPrice }"
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "每年支付 ${ billedPrice }"
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "当前订购期结束后收费（续费日为 ${ renewalDate }）"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "比特币付款需要一段时间（最长 24 小时）来确认交易，确认后金额将充入您的账户余额中，然后您就可以用余额支付了。"
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "2018 年黑色星期五优惠已计入"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "2019 年黑色星期五优惠已计入"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "2020 年黑色星期五新用户优惠已计入"
-      ],
       "Body: ": [
         "正文： "
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告。"
@@ -4146,8 +3860,8 @@
       "Confirm phishing report": [
         "确认钓鱼报告"
       ],
-      "Connections": [
-        "连接"
+      "Continue with ${ planName }": [
+        ""
       ],
       "Copied to clipboard": [
         "已复制到剪贴板"
@@ -4166,12 +3880,6 @@
       ],
       "Create in": [
         "创建于"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
@@ -4206,9 +3914,6 @@
       "Disable message content search": [
         "禁用邮件全文搜索"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "优惠券 ${ code } 折扣已计入"
-      ],
       "Do you want to download this attachment anyway?": [
         "您仍然想要下载这些附件吗？"
       ],
@@ -4218,14 +3923,8 @@
       "Do you want to re-sign the contact details?": [
         "确定要重新对联系人详细信息签名吗？"
       ],
-      "Domains": [
-        "域名"
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "从应用商店下载我们的移动应用即可随时随地安全通信。"
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "即刻下载您所需的应用，随时随地保护隐私。"
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
         "正在下载邮件 ${ esProgress } / ${ totalProgressToShow }"
@@ -4247,9 +3946,6 @@
       ],
       "Duplicate key updated": [
         "重复的密钥已更新"
-      ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "每个额外购买的最大连接数量都可以分配给您组织中的用户。"
       ],
       "Email address": [
         "邮箱地址"
@@ -4293,9 +3989,6 @@
       "Expiration Time": [
         "邮件有效期"
       ],
-      "Expired": [
-        "已过期"
-      ],
       "file attached": [
         "个附件"
       ],
@@ -4305,26 +3998,11 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
       ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "适合家庭和小团队；包括邮件和 VPN。"
-      ],
-      "For getting started with private and secure emailing.": [
-        "适合初次体验安全隐私邮件服务的新手。"
-      ],
       "For increased security, activate 2FA.": [
         "开启双重验证可进一步提升账户安全性。"
       ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "适合需要具有高级保护功能的全能邮箱的个人。"
-      ],
       "For messages newer than ${ oldestDate }": [
         "搜索 ${ oldestDate } 之后的邮件"
-      ],
-      "For professionals that need secure business communications.": [
-        "适合需要安全业务通信的专业人士。"
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa、万事达卡：卡片背面的三位数字。美国运通卡：卡片正面的四位数字。"
       ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
@@ -4332,14 +4010,8 @@
       "Free up some space or contact your administrator.": [
         "释放一些空间或联系您的管理员。"
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "From": [
         "发件人"
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "速度高达 10 Gbps 的全功能 VPN。"
       ],
       "Get more storage and premium features.": [
         "获取更多存储空间和高级功能。"
@@ -4391,9 +4063,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
-      ],
-      "Included": [
-        "已包含在内"
       ],
       "Increase storage space starting at": [
         "邮箱扩容低至"
@@ -4454,6 +4123,9 @@
       ],
       "Manage your labels": [
         "管理您的标签"
+      ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        ""
       ],
       "members": [
         "成员"
@@ -4527,9 +4199,6 @@
       "No more results found": [
         "到底了"
       ],
-      "No payment is required at this time.": [
-        "目前不需要支付。"
-      ],
       "No preview available": [
         "没有可用的预览"
       ],
@@ -4545,12 +4214,6 @@
       "Not a valid URL": [
         "URL 无效"
       ],
-      "Not customizable": [
-        "无法自定义"
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "可分配给用户的 VPN 连接数，每台连接设备占用一个名额。"
-      ],
       "of": [
         "，共"
       ],
@@ -4562,12 +4225,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "我们的系统已将此邮件认定为欺诈邮件，请确认其内容真实性。"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "验证可能需要几分钟才能完成。"
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "支付安全由 TLS 加密和瑞士隐私法律保障。"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline 只能用于纯文本邮件。请注意 ProtonMail 会对所有加密邮件予以数字签名。"
@@ -4593,29 +4250,11 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "请注意，这个过程可能需要一些时间，取决于您的地址簿的大小。"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "请注意，点击确认按钮后，您的账户余额将剩余 ${ creditsRemaining }。"
-      ],
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "选择链接类型并填写相关信息。"
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "请用其他方式支付，或联系银行寻求帮助。"
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "请用其他方式支付，或联系 PayPal 寻求帮助。"
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "请在新打开的标签页中完成验证。"
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "请在新打开的标签页中验证银行卡。"
-      ],
-      "Please verify the payment in the new tab.": [
-        "请在新标签页中确认支付。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "请稍候，我们正在寻找可用主密钥重新签名的联系人。"
@@ -4632,17 +4271,17 @@
       "Print email": [
         "打印邮件"
       ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 不会通过滥用用户隐私来赚钱。"
       ],
       "ProtonMail can protect your business as well.": [
         "您的商务邮件也可以交由 ProtonMail 保护。"
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus 仅限一名用户使用，5 GB 存储空间起步。"
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } 最多允许 ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } 台设备同时连接。"
       ],
       "Recipient: ": [
         "收件人："
@@ -4667,12 +4306,6 @@
       ],
       "Right-click for options": [
         "右击查看选项"
-      ],
-      "Save 20%": [
-        "八折"
-      ],
-      "Save extra 20%": [
-        "额外节省20%"
       ],
       "Saved ${ dateString }": [
         "保存于 ${ dateString }"
@@ -4722,9 +4355,6 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         ""
       ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "通过 <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全邮箱发送。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
       ],
@@ -4743,19 +4373,10 @@
       "Show original message": [
         "显示原始邮件"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "作为 Proton 忠实用户，您拥有以下特权。"
-      ],
       "Sorry, this message does not exist or has already expired": [
         "对不起，此邮件不存在或已过期"
       ],
-      "Starter VPN service with P2P support.": [
-        "支持 P2P 的入门级 VPN 服务。"
-      ],
-      "Storage GB": [
-        "存储空间 GB"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Store and share files securely with Proton Drive.": [
@@ -4782,12 +4403,6 @@
       "support team": [
         "客服团队"
       ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "开通 ${ professionalPlan } 可连接更多设备。"
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "开通 ${ professionalPlan } 可添加更多用户。"
-      ],
       "Test link": [
         "测试链接"
       ],
@@ -4796,9 +4411,6 @@
       ],
       "Text to display": [
         "要显示的文字"
-      ],
-      "Thank you for supporting our mission.": [
-        "感谢您支持我们的使命。"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "导出联系人之前应用程序需在本地将其解密。在该过程结束时，将生成一个可供下载的 VCF 文件。"
@@ -4914,9 +4526,6 @@
       "This sender's public key has not been trusted yet.": [
         "尚未信任此发件人的公钥。"
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "完成此操作后您就可以使用 PayPal 支付了。我们将在新标签页中为您打开 PayPal，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "为防止滥发邮件，请验证您是真人操作。"
       ],
@@ -4945,6 +4554,9 @@
         "开启以搜索您的邮件全文"
       ],
       "Unlimited folders, labels, and filters": [
+        ""
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Unsupported file": [
@@ -4983,7 +4595,7 @@
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "开通付费账户即可通过第三方客户端使用 ProtonMail。"
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -5001,23 +4613,8 @@
       "Use Proton Calendar to keep your agenda private.": [
         "使用 Proton Calendar 守护您的日程隐私。"
       ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
-      ],
-      "Users": [
-        "用户"
-      ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "使用移动设备扫描此二维码或打开 ${ link }。"
-      ],
-      "Verification can take a few minutes.": [
-        "验证可能需要数分钟。"
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "验证将在新标签页中进行，请停止拦截弹窗。"
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "验证将在新标签页中进行，请停止拦截弹窗。您不必为此付费，验证结束后所用金额将立即退还。"
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
@@ -5025,20 +4622,11 @@
       "Visit our shop to get Proton merchandise.": [
         "前往我们的商店即可选购 Proton 特色纪念品。"
       ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "VPN + ${ mailAppName } 套装，适合家庭和小企业。"
-      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "很抱歉，这可能是我们的失误。确定要将此邮件标为非垃圾邮件吗？"
       ],
       "We could not verify the sender's trusted keys.": [
         "我们无法验证发件人的可信密钥。"
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "我们使用 3-D Secure 保护您的支付安全。"
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
       "We'll notify you when the import is done.": [
         "当导入完成时我们将通知您"
@@ -5130,15 +4718,6 @@
       "You have reached the maximum number of 5 replies.": [
         "您已经达到5回复的最大限制。"
       ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "您的 PayPal 账户需要绑定信用卡或银行账户才能作为支付方式。"
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "您需要在 PayPal 账户中绑定信用卡或银行账户，如果您没有绑定，请点击下方按钮。"
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "退订前您必须先删除所有个人的附加日历以及所有共享日历链接。${ linkButton }"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已经使用了 ${ spaceDisplayed }% 的存储空间。${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5157,12 +4736,6 @@
       "You selected **${ count } message** with this label": [
         "您选择了带有此标签的 **${ count } 封邮件**"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "即将为您转向银行网站完成验证。"
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "即将为您转至 PayPal 确认支付。"
-      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您提到了“${ attachmentsFoundKeyword }”，但没有添加附件。是否仍要发送邮件？"
       ],
@@ -5171,15 +4744,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "正在为您升级账户，请稍等半分钟。"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "支付成功后账户将立即完成升级。"
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "您的发卡银行要求您进行 3-D Secure 验证以确保安全。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
@@ -5201,24 +4765,8 @@
       ]
     },
     "info": {
-      "(beta)": [
-        "（测试版）"
-      ],
       "Optional": [
         "可选"
-      ]
-    },
-    "Info concerning plan features": {
-      "Customizable features": [
-        "可定制的功能"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail 不允许发送垃圾邮件或大规模群发邮件，合理的邮件没有数量限制。"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "请联系 ${ email } 了解如何使用现金支付。"
       ]
     },
     "Info on errors": {
@@ -5229,11 +4777,6 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "多名联系人重复。${ mergeAction }"
-      ]
-    },
-    "information": {
-      "Included": [
-        "已包含在内"
       ]
     },
     "Key badge": {
@@ -5527,12 +5070,6 @@
       "Browser version": [
         "浏览器版本"
       ],
-      "BTC address:": [
-        "比特币地址："
-      ],
-      "BTC amount:": [
-        "比特币金额："
-      ],
       "Calendar": [
         "日历"
       ],
@@ -5544,15 +5081,6 @@
       ],
       "Carbon Copy": [
         "抄送"
-      ],
-      "Card holder": [
-        "持卡人"
-      ],
-      "Card number": [
-        "信用卡号"
-      ],
-      "Cash": [
-        "现金"
       ],
       "Category": [
         "类别"
@@ -5580,9 +5108,6 @@
       ],
       "Country": [
         "国家"
-      ],
-      "CVV code": [
-        "CVV 码"
       ],
       "Date": [
         "日期"
@@ -5613,15 +5138,6 @@
       ],
       "Encrypt emails": [
         "加密电子邮件"
-      ],
-      "Enter organization name to confirm": [
-        "请输入机构名称进行确认"
-      ],
-      "Expires": [
-        "有效期至"
-      ],
-      "Expiry date": [
-        "有效期至"
       ],
       "Export contacts": [
         "导出联系人"
@@ -5722,9 +5238,6 @@
       "Name": [
         "姓名"
       ],
-      "Name on card": [
-        "持卡人姓名"
-      ],
       "No label found": [
         "无标签"
       ],
@@ -5755,9 +5268,6 @@
       "Password hint": [
         "密码提示"
       ],
-      "Payer": [
-        "付款人"
-      ],
       "PGP scheme": [
         "PGP 方案"
       ],
@@ -5769,9 +5279,6 @@
       ],
       "Postal code": [
         "邮编"
-      ],
-      "Proration": [
-        "当前等级结余"
       ],
       "Proton username": [
         "Proton 用户名"
@@ -5797,9 +5304,6 @@
       "Search in": [
         "搜索范围"
       ],
-      "Select a method": [
-        "选择支付方式"
-      ],
       "Select how your composer opens by default.": [
         "请选择编辑窗的默认外观"
       ],
@@ -5808,9 +5312,6 @@
       ],
       "Select how your mailbox looks like by default.": [
         "请选择邮箱的默认外观"
-      ],
-      "Select your country": [
-        "选择国家"
       ],
       "Send auto-reply": [
         "自动回复"
@@ -5866,12 +5367,6 @@
       "To: ${ emailAddress }": [
         "导入到：${ emailAddress }"
       ],
-      "Total": [
-        "合计"
-      ],
-      "Total (${ countdown })": [
-        "合计（${ countdown }）"
-      ],
       "Two-factor authentication code": [
         "双重验证码"
       ],
@@ -5904,9 +5399,6 @@
       ],
       "without attachments": [
         "不含附件"
-      ],
-      "ZIP": [
-        "邮编"
       ]
     },
     "Label for contact group color": {
@@ -5976,9 +5468,6 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "使用礼品码"
-      ],
       "Add folder": [
         "添加文件夹"
       ],
@@ -5993,9 +5482,6 @@
       ],
       "clearing your browser cache": [
         "清除浏览器缓存"
-      ],
-      "click here": [
-        "请单击此处"
       ],
       "Create a calendar linked to an active email address.": [
         "创建一个与在用邮箱地址关联的日历。"
@@ -6161,87 +5647,6 @@
         "正在启动导入"
       ]
     },
-    "Mail feature": {
-      "0.5 GB": [
-        "0.5 GB"
-      ],
-      "20 GB": [
-        "20 GB"
-      ],
-      "Address verification": [
-        "地址验证"
-      ],
-      "Addresses": [
-        "邮箱地址数量"
-      ],
-      "Autoresponder": [
-        "自动回复"
-      ],
-      "Catch-All email": [
-        "收取发至自有域名未分配地址的邮件"
-      ],
-      "Contact groups": [
-        "联系人群组"
-      ],
-      "Custom email addresses": [
-        "自有域名地址"
-      ],
-      "Custom filters": [
-        "定制筛选规则"
-      ],
-      "Encrypted contacts": [
-        "通讯录加密"
-      ],
-      "Folders / labels": [
-        "文件夹和标签个数"
-      ],
-      "IMAP / SMTP": [
-        "IMAP / SMTP"
-      ],
-      "Limited": [
-        "有限"
-      ],
-      "Messages per day": [
-        "每天可发邮件数量"
-      ],
-      "Multi-user support": [
-        "多用户功能"
-      ],
-      "Priority": [
-        "优先享受"
-      ],
-      "Storage": [
-        "存储空间"
-      ],
-      "Support": [
-        "客户服务"
-      ],
-      "Use @pm.me address": [
-        "可使用 @pm.me 地址"
-      ],
-      "Users": [
-        "用户数量"
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        "5 GB *"
-      ],
-      "5 GB / user *": [
-        "5 GB / 用户 *"
-      ],
-      "Unlimited": [
-        "无限制"
-      ],
-      "Unlimited **": [
-        "无限制 **"
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        "5 个 / 用户 *"
-      ]
-    },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "导入自${ periodFragment }以来 ${ totalLabelsCount } 个标签中 ${ selectedLabelsCount } 个的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
@@ -6271,16 +5676,6 @@
       ],
       "Trash": [
         "废件箱"
-      ]
-    },
-    "Many Others": {
-      "and many others": [
-        "- 等等"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "这将永久删除与您的组织相关的所有子用户、账户和数据。"
       ]
     },
     "Message": {
@@ -6462,11 +5857,6 @@
         "第三个星期三"
       ]
     },
-    "Netflix": {
-      "Netflix": [
-        "Netflix"
-      ]
-    },
     "New Label form": {
       "Color": [
         "颜色"
@@ -6500,17 +5890,6 @@
     "Onboarding": {
       "Next": [
         "下一步"
-      ]
-    },
-    "Onboarding Beta": {
-      "Beta enabled": [
-        "已启用测试版"
-      ],
-      "Got it": [
-        "知道了"
-      ],
-      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        "要禁用测试功能，请打开设置下拉菜单并单击“测试版功能”选项。"
       ]
     },
     "Onboarding Proton": {
@@ -6606,17 +5985,6 @@
         "你"
       ]
     },
-    "Payment method option": {
-      "Bitcoin": [
-        "比特币"
-      ],
-      "New credit/debit card": [
-        "添加信用卡/借记卡"
-      ],
-      "PayPal": [
-        "PayPal"
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此密钥不能用于加密"
@@ -6670,9 +6038,6 @@
       "Filter labels": [
         "搜索标签"
       ],
-      "Gift code": [
-        "礼品码"
-      ],
       "Hint": [
         "提示"
       ],
@@ -6705,9 +6070,6 @@
       ],
       "Please describe the problem and include any error messages": [
         "请说明您的问题，并附上看到的所有错误提示"
-      ],
-      "Postal code": [
-        "邮政编码"
       ],
       "Proton username": [
         "Proton 用户名"
@@ -6744,112 +6106,11 @@
       ],
       "Write your message": [
         "在此撰写邮件内容"
-      ],
-      "ZIP": [
-        "邮编"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "名称"
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        "0.5 GB 存储空间"
-      ],
-      "1 - 5000 users *": [
-        "1 - 5000 位用户 *"
-      ],
-      "1 address": [
-        "一个邮箱地址"
-      ],
-      "1 user": [
-        "1 名用户"
-      ],
-      "20 GB storage": [
-        "20 GB 存储空间"
-      ],
-      "200 folders / labels": [
-        "200 个文件夹/标签"
-      ],
-      "3 folders / labels": [
-        "3 个文件夹/标签"
-      ],
-      "5 addresses": [
-        "5 个地址 *"
-      ],
-      "5 addresses / user": [
-        "5 个地址 / 用户"
-      ],
-      "5 GB storage *": [
-        "5 GB 存储空间 *"
-      ],
-      "5 GB storage / user": [
-        "5 GB 存储空间 / 用户"
-      ],
-      "50 addresses": [
-        "50 个邮箱地址"
-      ],
-      "6 users": [
-        "6 名用户"
-      ],
-      "Access blocked content": [
-        "冲破网络封锁"
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        "抢先体验 ${ driveAppName }（公测版）"
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "所有 ${ PLAN_NAMES[PLANS.VPNPLUS] } 套餐功能"
-      ],
-      "Built-in Adblocker (NetShield)": [
-        "内置Adblocker (NetShield)"
-      ],
-      "Custom email addresses": [
-        "自定义电子邮件地址"
-      ],
-      "Early access to new products": [
-        "尽早试用新产品"
-      ],
-      "High speed": [
-        "速度较快"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "速度最快（可达 10 Gbps）"
-      ],
-      "Includes 6 user accounts": [
-        "包括6个用户帐户"
-      ],
-      "Includes Proton Visionary": [
-        "包含 Proton Visionary"
-      ],
-      "Medium speed": [
-        "速度一般"
-      ],
-      "Secure Core servers": [
-        "安全核心服务器"
-      ],
-      "Streaming service support": [
-        "串流服务支持"
-      ],
-      "Unlimited folders / labels": [
-        "文件夹/标签不限量"
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        "（当前套餐）"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "免费版"
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
-        "Prime Video"
       ]
     },
     "Progress bar description": {
@@ -7088,6 +6349,9 @@
     "Spotlight": {
       "Discover all Proton services": [
         "探索所有 Proton 服务"
+      ],
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
       ],
       "Invite friends and earn rewards!": [
         ""
@@ -7336,9 +6600,6 @@
       ],
       "Verification successful": [
         "验证成功"
-      ],
-      "You have successfully unsubscribed": [
-        "退订成功"
       ]
     },
     "Suffix for price": {
@@ -7443,17 +6704,11 @@
       ]
     },
     "Title": {
-      "${ appName } customization": [
-        "自定义 ${ appName }"
-      ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 快捷键"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } 位成員"
-      ],
-      "3-D Secure verification failed": [
-        "3-D Secure 验证失败"
       ],
       "Account suspended": [
         "账号已被停用"
@@ -7476,12 +6731,6 @@
       "All recipients were added to the BCC field and cannot be disclosed": [
         "所有收件人都已加入密送列表，不会公开"
       ],
-      "Amount due": [
-        "应付金额"
-      ],
-      "Apply gift code": [
-        "使用礼品码"
-      ],
       "Are you sure you want to close?": [
         "确定要关闭吗？"
       ],
@@ -7497,20 +6746,11 @@
       "Beta Access": [
         "测试版功能"
       ],
-      "Billing cycle": [
-        "计费周期"
-      ],
       "Blind Carbon Copy": [
         "盲抄本"
       ],
       "Carbon Copy": [
         "副本"
-      ],
-      "Card verification": [
-        "银行卡验证"
-      ],
-      "Card verification in progress": [
-        "正在进行银行卡验证"
       ],
       "CC": [
         "抄送"
@@ -7518,17 +6758,11 @@
       "Change my answer": [
         "更改我的回复"
       ],
-      "Checkout": [
-        "结算"
-      ],
       "Clearing data": [
         "数据清除中"
       ],
       "Composer mode": [
         "邮件格式"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "确定放弃 Proton 特权"
       ],
       "Confirm recipient address?": [
         "确认收件人地址？"
@@ -7548,9 +6782,6 @@
       "Conversation list": [
         "会话列表"
       ],
-      "Coupon discount": [
-        "优惠券折扣"
-      ],
       "Create a new folder": [
         "创建文件夹"
       ],
@@ -7569,14 +6800,8 @@
       "Create new group": [
         "创建群组"
       ],
-      "Credits": [
-        "余额"
-      ],
       "Currency": [
         "货币"
-      ],
-      "Current plan": [
-        "当前套餐"
       ],
       "Customize and confirm": [
         "自定义并确认"
@@ -7586,9 +6811,6 @@
       ],
       "Customize your mail import": [
         "自定义您的邮件导入"
-      ],
-      "Customize your plan": [
-        "自定义您的套餐"
       ],
       "Decryption error": [
         "解密失败"
@@ -7623,14 +6845,8 @@
       "Delete message": [
         "删除邮件"
       ],
-      "Delete organization?": [
-        "删除机构?"
-      ],
       "Deleting contacts": [
         "删除联系人中"
-      ],
-      "Downgrade account": [
-        "降级账户"
       ],
       "Edit contact": [
         "编辑联系人"
@@ -7682,9 +6898,6 @@
       ],
       "Forward": [
         "转发"
-      ],
-      "Gift code": [
-        "礼品码"
       ],
       "Groups": [
         "群组"
@@ -7767,9 +6980,6 @@
       "Moving a scheduled message": [
         "正在移动定时发送邮件"
       ],
-      "Network error": [
-        "网络错误"
-      ],
       "New message": [
         "撰写邮件"
       ],
@@ -7797,35 +7007,14 @@
       "Other names": [
         "其他名称"
       ],
-      "Payment details": [
-        "支付明细"
-      ],
-      "Payment verification": [
-        "确认支付"
-      ],
-      "Payment verification in progress": [
-        "正在确认支付"
-      ],
-      "PayPal verification failed": [
-        "PayPal 验证失败"
-      ],
       "Phone numbers": [
         "电话号码"
-      ],
-      "Plan summary": [
-        "订单概览"
       ],
       "Previous conversation": [
         "上一条会话"
       ],
       "Previous message": [
         "上一封邮件"
-      ],
-      "Processing": [
-        "处理中"
-      ],
-      "Processing...": [
-        "正在处理..."
       ],
       "ProtonMail": [
         "ProtonMail"
@@ -7859,9 +7048,6 @@
       ],
       "Schedule send": [
         "定时发送"
-      ],
-      "Select a plan": [
-        "选择套餐"
       ],
       "Select a theme": [
         "选择配色"
@@ -7917,14 +7103,8 @@
       "Subject missing": [
         "未填写主题"
       ],
-      "Subtotal": [
-        "小计"
-      ],
       "To": [
         "收件人"
-      ],
-      "Total (monthly)": [
-        "合计（每月）"
       ],
       "Trust new key?": [
         "信任新密钥？"
@@ -7937,9 +7117,6 @@
       ],
       "Unsubscribe": [
         "退订"
-      ],
-      "Unsupported browser": [
-        "不支持此浏览器"
       ],
       "Upgrade required": [
         "需要升级"
@@ -7963,10 +7140,7 @@
         "更新内容"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
-      ],
-      "ZIP / postal code": [
-        "邮政编码"
+        "您的免费试用将在 ${ formattedEndDate } 后过期。"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7975,26 +7149,11 @@
       ]
     },
     "Tooltip": {
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "无论身在何方，Netflix、Amazon Prime、BBC iPlayer、Wikipedia、Facebook、YouTube 均触手可及。"
-      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“自动”表示使用编辑区中指定的格式，“纯文本”则表示向此人发送的邮件一律使用纯文本。"
       ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "创建多个电子邮件地址连接到您的账户，例如 username2@protonmail.com"
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "由多个服务器中转流量，增强 VPN 安全性。"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "数字签名电子邮件有助于验证您发送的消息"
-      ],
-      "Discount applied for annual billing cycle": [
-        "年费折扣已计入"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "两年折扣已计入"
       ],
       "Each imported email will have this label": [
         "每一封导入的邮件都会有这个标签"
@@ -8008,35 +7167,8 @@
       "Encrypted data with verified digital signature": [
         "已加密并验证数字签名"
       ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "同时享用 ${ vpnAppName } 和 ${ mailAppName }（拥有数百万用户的加密邮箱服务）的所有收费功能。"
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "同时享用 ProtonVPN 和 ProtonMail（拥有数百万用户的加密邮箱服务）的所有收费功能。"
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "使用 ${ mailAppName } 托管您自己的域名，如 zhangsan@example.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "使用 ProtonMail 为您自己的域名收取邮件，如 zhangsan@example.com"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "仅对两名以上用户的账户等级适用"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield通过屏蔽广告、跟踪和恶意软件来保护您的设备并加快您的浏览速度。"
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "可一键通过 Tor 网络通信。"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "支持诸如 BitTorrent 的文件共享协议。"
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
         "系统子文件夹将在 ProtonMail 中显示为单独的文件夹"
@@ -8052,12 +7184,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向其发送端到端加密的邮件"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "在同一个账户中使用多个邮箱地址，如 username2@protonmail.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "使用个性化的邮箱地址 username@pm.me 发送邮件"
       ],
       "You do not have any contacts to export": [
         "您没有任何联系人可导出"
@@ -8095,120 +7221,6 @@
         "回放视频"
       ]
     },
-    "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } 尊享版"
-      ],
-      "30-days money-back guarantee": [
-        "30 天内可退款"
-      ],
-      "Access blocked content": [
-        "突破网络封锁"
-      ],
-      "Adblocker (NetShield)": [
-        "广告拦截 (NetShield)"
-      ],
-      "Custom connection profiles": [
-        "自定义连接配置"
-      ],
-      "DNS leak prevention": [
-        "DNS 泄露防护"
-      ],
-      "Full Disk Encryption on Servers": [
-        "服务器端全盘加密"
-      ],
-      "Jurisdiction": [
-        "管辖权"
-      ],
-      "Kill Switch / Always-on VPN": [
-        "安全闸/始终开启 VPN"
-      ],
-      "Languages supported": [
-        "支持语言"
-      ],
-      "Locations/Countries": [
-        "位置/国家"
-      ],
-      "Open Source & audited apps": [
-        "开源并经审核的应用"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        "完美前向加密（PFS）"
-      ],
-      "Platforms supported": [
-        "支持平台"
-      ],
-      "Router support": [
-        "路由器支持"
-      ],
-      "Secure Core servers": [
-        "安全核心服务器"
-      ],
-      "Speed": [
-        "速度"
-      ],
-      "Split tunneling": [
-        "VPN 分流"
-      ],
-      "Streaming service support": [
-        "串流服务支持"
-      ],
-      "Strict no-logs policy": [
-        "严格的零日志原则"
-      ],
-      "Tor over VPN": [
-        "Tor+VPN"
-      ],
-      "User data monetization": [
-        "用户数据盈利"
-      ],
-      "Volume/bandwidth cap": [
-        "容量/带宽上限"
-      ],
-      "VPN Connections": [
-        "VPN 连接数"
-      ],
-      "VPN servers": [
-        "VPN 服务器"
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        "(仅限 Android 及 Windows)"
-      ],
-      "High": [
-        "高"
-      ],
-      "Highest (up to 10 Gbps)": [
-        "最快（可达 10 Gbps）"
-      ],
-      "Medium": [
-        "一般"
-      ],
-      "None": [
-        "无"
-      ],
-      "Switzerland": [
-        "瑞士"
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows、macOS、iOS、Linux、Android、Android TV、Chromebook、Chromecast"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        "${ n } 台服务器"
-      ],
-      "${ n } VPN connection": [
-        "${ n } 个VPN连接"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfCountries } 个国家的 ${ numberOfServers }"
-      ]
-    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "您确定要永久删除 ${ count } 联系人群组吗？"
@@ -8230,9 +7242,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "请注意，使用此方式支付不能立即完成账户升级，支付确认过后我们会马上为您升级账户。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 将会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"

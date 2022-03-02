@@ -259,11 +259,11 @@
       "Refer a friend": [
         ""
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Refresh the page": [
         "Osvježi stranicu"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Remove bonuses": [
         "Ukloni bonuse"
@@ -1972,6 +1972,9 @@
         "${ number } poslužitelja",
         "${ number } poslužitelja"
       ],
+      "${ planName } plan": [
+        ""
+      ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } na vašu pretplatu prebacivanjem na ${ annualBilling }"
       ],
@@ -1998,9 +2001,6 @@
         "+${ organization.BonusVPN } veze za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)",
         "+${ organization.BonusVPN } veza za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Popust od 20% je primjenjen na vašu pretplatu s kuponom ${ code }"
       ],
@@ -2010,7 +2010,7 @@
       "30-days money back guarantee": [
         "Povrat novca do 30 dana"
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -2045,9 +2045,6 @@
       ],
       "ALL YOUR DATA WILL BE LOST!": [
         "SVI VAŠI PODACI ĆE BITI IZBRISANI!"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Omogućuje vam da pružate usluge e-pošte za vaše domene na ${ mailAppName }, npr. ivan.horvat@primjer.hr"
       ],
       "Amount below minimum (${ amount }).": [
         "Iznos ispod minimuma (${ amount })."
@@ -2106,16 +2103,10 @@
       "Connections": [
         "Veze"
       ],
-      "Continue with plus": [
+      "Continue with ${ planName }": [
         ""
       ],
-      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
-        ""
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
         ""
       ],
       "Creating your account": [
@@ -2189,9 +2180,6 @@
       ],
       "Free up some space or contact your administrator.": [
         "Oslobodite malo prostora ili se obratite administratoru."
-      ],
-      "Free VPN on a single device": [
-        ""
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN s puno značajki i brzinom do 10 Gbps."
@@ -2325,9 +2313,6 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Kada pritisnete \"Snizi status\", potrebno je par minuta da se snizi status vašeg računa na Free plan. "
       ],
-      "Other options": [
-        ""
-      ],
       "P2P": [
         "P2P"
       ],
@@ -2364,11 +2349,14 @@
       "Plus or Visionary subscription required": [
         "Plus ili Visionary pretplata je potrebna"
       ],
-      "Plus plan": [
-        ""
-      ],
       "Preview": [
         "Pregled"
+      ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
       ],
       "Proton can't help you recover any lost passwords": [
         "Proton vam ne može pomoći da vratite izgubljene lozinke"
@@ -2432,14 +2420,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Početna VPN usluga s P2P podrškom."
       ],
       "Storage GB": [
         "Prostor za pohranu GB"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
       ],
       "Support for 1 custom email domain": [
         ""
@@ -2525,11 +2513,11 @@
       "Unlimited folders, labels, and filters": [
         ""
       ],
+      "Unlimited messages": [
+        ""
+      ],
       "Unsupported file": [
         "Nepodržana datoteka"
-      ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Koristite sljedeće vjerodajnice za spajanje na ProtonVPN poslužitelje bez aplikacije. Na primjer: Tunnelblick na MacOS-u, OpenVPN na GNU/Linuxu."
@@ -2657,7 +2645,7 @@
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Vaš postojeći Proton račun se može koristiti za pristup svim Proton uslugama. Prijavite se pomoću ${ email }"
       ],
-      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
         ""
       ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
@@ -3234,8 +3222,8 @@
       "Contact groups": [
         "Grupe kontakata"
       ],
-      "Custom email addresses": [
-        "Prilagođene adrese e-pošte"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Prilagođeni filtri"
@@ -3657,8 +3645,8 @@
       "Built-in Adblocker (NetShield)": [
         "Ugrađeni bloker oglasa (NetShield)"
       ],
-      "Custom email addresses": [
-        "Prilagođene adrese e-pošte"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Rani pristup novim proizvodima"
@@ -3806,6 +3794,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
         ""
       ]
@@ -3922,6 +3913,9 @@
       ]
     },
     "Title": {
+      "${ appName } ${ planName } trial": [
+        ""
+      ],
       "${ appName } customization": [
         "${ appName } prilagođavanje"
       ],
@@ -4192,9 +4186,6 @@
       "Processing...": [
         "Obrada..."
       ],
-      "ProtonMail Plus Trial": [
-        ""
-      ],
       "ProtonVPN clients": [
         "ProtonVPN klijenti"
       ],
@@ -4303,9 +4294,6 @@
       "Your current plan": [
         "Vaš trenutni plan"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
-      ],
       "Your plan": [
         "Vaš plan"
       ],
@@ -4351,12 +4339,6 @@
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
         "Pristup svim plaćenim značajkama za ProtonVPN i ProtonMail (šifriranu uslugu e-pošte koji milijuni koriste za zaštitu svojih podataka) s jednim planom."
       ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Pružajte usluge e-pošte za vaše domene na ${ mailAppName }, npr. ivan.horvat@primjer.hr"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Pružajte usluge e-pošte za vaše domene na ProtonMailu, npr. ivan.horvat@primjer.hr"
-      ],
       "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
         "Ako zaboravite lozinku, više nećete imati pristup svom računu ili svojim podacima. Spremite je negdje na sigurno."
       ],
@@ -4389,6 +4371,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Koristite osobnu adresu e-pošte korisnickoime@pm.me za slanje e-pošte"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
         "Korisničko ime koje se koristi za sve Proton usluge. Ono se kasnije može koristiti i za stvaranje sigurnog ProtonMail računa."

@@ -86,6 +86,9 @@
       "Clear": [
         "清除"
       ],
+      "Clear browser data": [
+        ""
+      ],
       "Clear data": [
         "清除数据"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         "定制"
-      ],
-      "Decrease": [
-        "减少"
       ],
       "Delete": [
         "删除"
@@ -245,8 +245,14 @@
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
       ],
+      "Go to parent": [
+        ""
+      ],
       "Go to settings": [
         "前往设置"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
@@ -271,9 +277,6 @@
       ],
       "Import from .csv or vCard": [
         "从 .csv 或 vCard 导入"
-      ],
-      "Increase": [
-        "增加"
       ],
       "Load image": [
         "加载图片"
@@ -425,17 +428,17 @@
       "Resume upload": [
         "恢复上传"
       ],
-      "Retry": [
-        "重试"
-      ],
       "Save": [
         "保存"
       ],
+      "Search": [
+        ""
+      ],
+      "Search drive": [
+        ""
+      ],
       "Select all": [
         "全选"
-      ],
-      "Select plan": [
-        "开通"
       ],
       "Set recovery phrase": [
         "设置恢复密语"
@@ -1828,6 +1831,9 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
+      "A problem occurred, please try again": [
+        ""
+      ],
       "Amount above the maximum.": [
         "金额太大。"
       ],
@@ -1846,14 +1852,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "由于个人日历限制，无法为所有导入的日历创建新日历。"
       ],
-      "Checkout expired, please try again": [
-        "支付超时，请重试"
-      ],
       "Contact could not be saved": [
         "无法保存联系人"
       ],
       "Contact signature not verified": [
         "未验证联系人签名"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "找不到邮箱 ${ email }。"
@@ -1987,6 +1993,9 @@
       "Payment process not supported": [
         "不支持此支付流程"
       ],
+      "Please activate your content search again": [
+        ""
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
@@ -2004,6 +2013,9 @@
       ],
       "Request timed out": [
         "请求超时"
+      ],
+      "Search failed": [
+        ""
       ],
       "Signature not verified": [
         "签名未验证"
@@ -2025,9 +2037,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
-      ],
-      "Tab closed": [
-        "标签页已关闭"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
@@ -2452,16 +2461,13 @@
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 台设备可接入 ProtonVPN"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "优惠券 ${ code } 已提供 20% 优惠"
       ],
       "30 days money-back guarantee.": [
         "30 天内可退款。"
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -2494,9 +2500,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向其发送邮件前需要先信任其公钥。"
       ],
-      "Addresses": [
-        "邮箱地址"
-      ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "使用比特币支付后，请按以下步骤升级账户。"
       ],
@@ -2527,8 +2530,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您确定要清空回收站并永久删除所有项目吗？"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "您确定要从回收站永久删除所选项目吗？"
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        ""
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        ""
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "因为 ${ appName } 是端到端加密的，我们无法为您\n访问或解密您的文件。要在密码重置后解锁您的网盘，\n您必须具备以下条件之一："
@@ -2566,6 +2572,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "正在检查联系人 ${ progress } / ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
+      "Clear encrypted search data": [
+        ""
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        ""
+      ],
+      "Clears browser data related to the encrypted search.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电子邮件地址不正确，请点击 \"编辑\""
       ],
@@ -2581,11 +2599,11 @@
       "Conflict": [
         "冲突"
       ],
-      "Connections": [
-        "连接"
-      ],
       "Continue using ${ appName } and unlock drive later": [
         "继续使用 ${ appName } 并稍后解锁网盘"
+      ],
+      "Continue with ${ planName }": [
+        ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "新建 ${ calendarsToBeCreated } 个日历"
@@ -2604,9 +2622,6 @@
       ],
       "Create links and share your files with others.": [
         "创建链接然后与他人共享您的文件。"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
       ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         ""
@@ -2658,9 +2673,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
-      ],
-      "Expired": [
-        "已失效"
       ],
       "Failed": [
         "失败"
@@ -2748,6 +2760,9 @@
       ],
       "Included": [
         "已包含在内"
+      ],
+      "Indexing search results…": [
+        ""
       ],
       "Inherited from parent folder": [
         "继承自父文件夹"
@@ -2935,6 +2950,12 @@
       "Primary": [
         "主要"
       ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus 仅限一名用户使用，5 GB 存储空间起步。"
       ],
@@ -2958,6 +2979,9 @@
       ],
       "Screenshot(s) attached": [
         "已附加的屏幕截图"
+      ],
+      "Search cannot be enabled in this browser": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "选择一个已上传的文件（夹）并为其创建链接。"
@@ -2988,6 +3012,9 @@
       ],
       "Something went wrong, please try again later.": [
         "出错了，请稍后再试。"
+      ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "支持 P2P 的入门级 VPN 服务。"
@@ -3055,6 +3082,12 @@
       "This will overwrite the existing folder": [
         "这将覆盖现有文件夹"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用，请验证您是人类。"
       ],
@@ -3082,7 +3115,13 @@
       "Trash": [
         "回收站"
       ],
+      "Try different keywords": [
+        ""
+      ],
       "Unlimited folders, labels, and filters": [
+        ""
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Unlock drive to recover files": [
@@ -3092,6 +3131,9 @@
         "不支持文件"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Uploaded": [
@@ -3786,8 +3828,8 @@
       "Contact groups": [
         "联系人群组"
       ],
-      "Custom email addresses": [
-        "自有域名地址"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "定制筛选规则"
@@ -3898,35 +3940,47 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" 移动成功"
+      "\"${ name }\" deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" 已从回收站永久删除"
+      "\"${ name }\" failed to be created": [
+        ""
       ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" 移动失败"
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" 已移动到回收站"
+      "\"${ name }\" failed to be moved": [
+        ""
       ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" 已从回收站恢复"
+      "\"${ name }\" failed to be moved to trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        ""
+      ],
+      "\"${ name }\" moved to trash": [
+        ""
+      ],
+      "\"${ name }\" restored from trash": [
+        ""
+      ],
+      "\"${ name }\" successfully moved": [
+        ""
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        ""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        ""
       ],
       "${ count } item failed to be decrypted": [
         ""
-      ],
-      "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } 个文件链接已删除"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } 个文件已从回收站永久删除"
       ],
       "${ deletedItemsCount } folder deleted permanently from trash": [
         "${ deletedItemsCount } 个文件夹已从回收站永久删除"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } 个项目已从回收站永久删除"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "${ failedCount } 个文件链接无法删除"
@@ -3937,17 +3991,41 @@
       "${ failedMovesCount } folder failed to be moved": [
         "${ failedMovesCount } 个文件夹移动失败"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } 项移动失败"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } 个文件移动成功"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } 个文件夹移动成功"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } 个项目移动成功"
+      "${ name } created successfully": [
+        ""
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        ""
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        ""
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        ""
+      ],
+      "${ numberOfItems } item moved to trash": [
+        ""
+      ],
+      "${ numberOfItems } item restored from trash": [
+        ""
+      ],
+      "${ numberOfItems } item successfully moved": [
+        ""
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        ""
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        ""
       ],
       "${ restoredItemsCount } file restored from trash": [
         "已从回收站还原 ${ restoredItemsCount } 个文件"
@@ -3955,17 +4033,11 @@
       "${ restoredItemsCount } folder restored from trash": [
         "已从回收站还原 ${ restoredItemsCount } 个文件夹"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "已从回收站还原 ${ restoredItemsCount } 项"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } 文件已移动到回收站"
       ],
       "${ trashedLinksCount } folder moved to trash": [
         "${ trashedLinksCount } 文件夹已移动到回收站"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } 个项目已移动到回收站"
       ],
       "All items will soon be permanently deleted from trash": [
         "所有项目将很快从回收站永久删除"
@@ -3978,6 +4050,9 @@
       ],
       "Contact group updated": [
         "群组已更改"
+      ],
+      "Encrypted search activated": [
+        ""
       ],
       "Failed to download files: ${ err }": [
         "下载文件失败：${ err }"
@@ -4030,17 +4105,26 @@
       "Subfolder failed to be loaded": [
         "加载子文件夹失败"
       ],
-      "The link to your file failed to be deleted": [
-        "无法删除文件链接"
+      "The link to \"${ name }\" failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted": [
-        "文件链接已删除"
+      "The link to \"${ name }\" was deleted": [
+        ""
+      ],
+      "The link to your item failed to be deleted": [
+        ""
+      ],
+      "The link to your item was deleted": [
+        ""
       ],
       "Trash failed to be emptied": [
         "未能清空回收站"
       ],
       "Your old files will be deleted in 72 hours": [
         "您的旧文件将在 72 小时内删除"
+      ],
+      "Your settings failed to be saved": [
+        ""
       ],
       "Your settings have been changed successfully": [
         "已成功更改您的设置"
@@ -4281,8 +4365,8 @@
       "Built-in Adblocker (NetShield)": [
         "内置Adblocker (NetShield)"
       ],
-      "Custom email addresses": [
-        "自定义电子邮件地址"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "抢先体验新产品"
@@ -4390,6 +4474,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
         ""
       ]
@@ -4648,9 +4735,6 @@
       "Contacts": [
         "通讯录"
       ],
-      "Coupon discount": [
-        "优惠券折扣"
-      ],
       "Create a new folder": [
         "新建文件夹"
       ],
@@ -4659,9 +4743,6 @@
       ],
       "Create new group": [
         "创建新群组"
-      ],
-      "Credits": [
-        "余额"
       ],
       "Currency": [
         "货币"
@@ -4843,6 +4924,9 @@
       "Network error": [
         "网络错误"
       ],
+      "No results found": [
+        ""
+      ],
       "Number of files": [
         "文件数"
       ],
@@ -4915,8 +4999,11 @@
       "Restore your files": [
         "恢复您的文件"
       ],
-      "Select a plan": [
-        "选择套餐"
+      "Search results": [
+        ""
+      ],
+      "Searching…": [
+        ""
       ],
       "Select a theme": [
         "选择配色"
@@ -5110,6 +5197,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "使用个性化的邮箱地址 username@pm.me 发送邮件"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "You do not have any contacts to export": [
         "您没有任何联系人可导出"

@@ -86,6 +86,9 @@
       "Clear": [
         "Ryd"
       ],
+      "Clear browser data": [
+        ""
+      ],
       "Clear data": [
         "Ryd data"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         "Tilpas"
-      ],
-      "Decrease": [
-        "Formindsk"
       ],
       "Delete": [
         "Slet"
@@ -247,8 +247,14 @@
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
       ],
+      "Go to parent": [
+        ""
+      ],
       "Go to settings": [
         "Gå til indstillinger"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
@@ -273,9 +279,6 @@
       ],
       "Import from .csv or vCard": [
         "Importer fra .csv eller vCard"
-      ],
-      "Increase": [
-        "Forøg"
       ],
       "Load image": [
         "Indlæs billede"
@@ -427,17 +430,17 @@
       "Resume upload": [
         "Genoptag overførsel"
       ],
-      "Retry": [
-        "Prøv igen"
-      ],
       "Save": [
         "Gem"
       ],
+      "Search": [
+        ""
+      ],
+      "Search drive": [
+        ""
+      ],
       "Select all": [
         "Vælg alle"
-      ],
-      "Select plan": [
-        "Vælg abonnement"
       ],
       "Set recovery phrase": [
         "Opsæt gendannelsessætning"
@@ -1837,6 +1840,9 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
+      "A problem occurred, please try again": [
+        ""
+      ],
       "Amount above the maximum.": [
         "Beløb overstiger maksimum."
       ],
@@ -1855,14 +1861,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan ikke oprette nye kalendere for alle importerede kalendere på grund af begrænsningen for personlige kalendere."
       ],
-      "Checkout expired, please try again": [
-        "Betalingen er udløbet, prøv venligst igen"
-      ],
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
       ],
       "Contact signature not verified": [
         "Kontaktsignatur ikke bekræftet"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "Kunne ikke finde adresse ${ email }."
@@ -2001,6 +2007,9 @@
       "Payment process not supported": [
         "Betalingsproces understøttes ikke"
       ],
+      "Please activate your content search again": [
+        ""
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
@@ -2019,6 +2028,9 @@
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
+      ],
+      "Search failed": [
+        ""
       ],
       "Signature not verified": [
         "Signatur ikke bekræftet"
@@ -2040,9 +2052,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du stadig denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
-      ],
-      "Tab closed": [
-        "Fane lukket"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
@@ -2496,16 +2505,13 @@
         "+${ organization.BonusVPN } forbindelse til ProtonVPN (tillader dig at forbinde flere enheder til VPN)",
         "+${ organization.BonusVPN } forbindelser til ProtonVPN (tillader dig at forbinde flere enheder til VPN)"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% rabat anvendes på dit abonnement med kupon ${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 dages pengene-tilbage-garanti."
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -2537,9 +2543,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
-      ],
-      "Addresses": [
-        "Adresser"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Når du har foretaget din Bitcoin-betaling, skal du følge anvisningerne nedenfor for at opgradere."
@@ -2573,9 +2576,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Er du sikker på, at du vil tømme papirkurven og slette alt indholdet permanent?"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "Er du sikker på, at du ønsker at slette det valgte emne permanent fra papirkurven?",
-        "Er du sikker på, at du ønsker at slette de valgte emner permanent fra papirkurven?"
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        ""
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        ""
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Fordi ${ appName } er end-to-end krypteret, kan vi ikke få adgang til eller dekryptere dine filer for dig. For at låse dit drev op efter en nulstilling af adgangskode, skal du have en af følgende:"
@@ -2613,6 +2618,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
+      "Clear encrypted search data": [
+        ""
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        ""
+      ],
+      "Clears browser data related to the encrypted search.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis denne e-mailadresse er forkert, skal du klikke på \"Redigér\" for at rette den."
       ],
@@ -2628,11 +2645,11 @@
       "Conflict": [
         "Konflikt"
       ],
-      "Connections": [
-        "Forbindelser"
-      ],
       "Continue using ${ appName } and unlock drive later": [
         "Fortsæt med at bruge ${ appName } og lås op for drev senere"
+      ],
+      "Continue with ${ planName }": [
+        ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Opret ${ calendarsToBeCreated } ny kalender",
@@ -2652,9 +2669,6 @@
       ],
       "Create links and share your files with others.": [
         "Opret links og del dine filer med andre."
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
       ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         ""
@@ -2707,9 +2721,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
-      ],
-      "Expired": [
-        "Udløbet"
       ],
       "Failed": [
         "Mislykkedes"
@@ -2798,6 +2809,9 @@
       ],
       "Included": [
         "Inkluderet"
+      ],
+      "Indexing search results…": [
+        ""
       ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
@@ -2985,6 +2999,12 @@
       "Primary": [
         "Primær"
       ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus er begrænset til én bruger og starter med 5 GB lagerplads."
       ],
@@ -3009,6 +3029,9 @@
       ],
       "Screenshot(s) attached": [
         "Screenshot(s) vedhæftet"
+      ],
+      "Search cannot be enabled in this browser": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vælg en uploadet fil eller mappe og opret et link til den."
@@ -3039,6 +3062,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Noget gik galt. Prøv igen senere."
+      ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "Grundlæggende VPN-tjeneste med P2P-understøttelse."
@@ -3107,6 +3133,12 @@
       "This will overwrite the existing folder": [
         "Dette vil overskrive den eksisterende mappe"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
@@ -3134,7 +3166,13 @@
       "Trash": [
         "Papirkurv"
       ],
+      "Try different keywords": [
+        ""
+      ],
       "Unlimited folders, labels, and filters": [
+        ""
+      ],
+      "Unlimited messages": [
         ""
       ],
       "Unlock drive to recover files": [
@@ -3144,6 +3182,9 @@
         "Ikke-understøttet fil"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Uploaded": [
@@ -3839,8 +3880,8 @@
       "Contact groups": [
         "Kontaktgrupper"
       ],
-      "Custom email addresses": [
-        "Brugerdefinerede e-mailadresser"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Tilpassede filtre"
@@ -3953,28 +3994,42 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" blev flyttet"
+      "\"${ name }\" deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" slettet permanent fra papirkurven"
+      "\"${ name }\" failed to be created": [
+        ""
       ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" kunne ikke flyttes"
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" flyttet til papirkurv"
+      "\"${ name }\" failed to be moved": [
+        ""
       ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" gendannet fra papirkurv"
+      "\"${ name }\" failed to be moved to trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        ""
+      ],
+      "\"${ name }\" moved to trash": [
+        ""
+      ],
+      "\"${ name }\" restored from trash": [
+        ""
+      ],
+      "\"${ name }\" successfully moved": [
+        ""
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        ""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        ""
       ],
       "${ count } item failed to be decrypted": [
         "${ count } emne kunne ikke dekrypteres",
         "${ count } emner kunne ikke dekrypteres"
-      ],
-      "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } link til din fil blev slettet",
-        "${ deletedCount } links til dine filer blev slettet"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } fil slettet permanent fra papirkurven",
@@ -3983,10 +4038,6 @@
       "${ deletedItemsCount } folder deleted permanently from trash": [
         "${ deletedItemsCount } mappe slettet permanent fra papirkurven",
         "${ deletedItemsCount } mapper slettet permanent fra papirkurven"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } element slettet permanent fra papirkurven",
-        "${ deletedItemsCount } elementer slettet permanent fra papirkurven"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "${ failedCount } link til din fil kunne ikke slettes",
@@ -4000,21 +4051,52 @@
         "${ failedMovesCount } mappe kunne ikke flyttes",
         "${ failedMovesCount } mapper kunne ikke flyttes"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } element kunne ikke flyttes",
-        "${ failedMovesCount } elementer kunne ikke flyttes"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } fil flyttet",
-        "${ movedLinksCount } filer flyttet"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } mappe flyttet",
         "${ movedLinksCount } mapper flyttet"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } mappe flyttet",
-        "${ movedLinksCount } mapper flyttet"
+      "${ name } created successfully": [
+        ""
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "",
+        ""
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } fil gendannet fra papirkurv",
@@ -4024,10 +4106,6 @@
         "${ restoredItemsCount } mappe gendannet fra papirkurv",
         "${ restoredItemsCount } mapper gendannet fra papirkurv"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } element gendannet fra papirkurv",
-        "${ restoredItemsCount } elementer gendannet fra papirkurv"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } fil flyttet til papirkurv",
         "${ trashedLinksCount } filer flyttet til papirkurv"
@@ -4035,10 +4113,6 @@
       "${ trashedLinksCount } folder moved to trash": [
         "${ trashedLinksCount } mappe flyttet til papirkurv",
         "${ trashedLinksCount } mapper flyttet til papirkurv"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } element flyttet til papirkurv",
-        "${ trashedLinksCount } elementer flyttet til papirkurv"
       ],
       "All items will soon be permanently deleted from trash": [
         "Alle elementer slettes snart permanent fra papirkurven"
@@ -4051,6 +4125,9 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe opdateret"
+      ],
+      "Encrypted search activated": [
+        ""
       ],
       "Failed to download files: ${ err }": [
         "Kunne ikke uploade filer: ${ err }"
@@ -4110,17 +4187,26 @@
       "Subfolder failed to be loaded": [
         "Undermappe kunne ikke indlæses"
       ],
-      "The link to your file failed to be deleted": [
-        "Linket til din fil kunne ikke slettes"
+      "The link to \"${ name }\" failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted": [
-        "Linket til din fil blev slettet"
+      "The link to \"${ name }\" was deleted": [
+        ""
+      ],
+      "The link to your item failed to be deleted": [
+        ""
+      ],
+      "The link to your item was deleted": [
+        ""
       ],
       "Trash failed to be emptied": [
         "Papirkurv kunne ikke tømmes"
       ],
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer vil blive slettet om 72 timer"
+      ],
+      "Your settings failed to be saved": [
+        ""
       ],
       "Your settings have been changed successfully": [
         "Dine indstillinger er blevet ændret"
@@ -4361,8 +4447,8 @@
       "Built-in Adblocker (NetShield)": [
         "Indbygget Adblocker (Netshield)"
       ],
-      "Custom email addresses": [
-        "Brugerdefinerede e-mailadresser"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Tidlig adgang til nye produkter"
@@ -4472,6 +4558,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
         ""
       ]
@@ -4736,9 +4825,6 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Coupon discount": [
-        "Rabatkupon"
-      ],
       "Create a new folder": [
         "Opret ny mappe"
       ],
@@ -4747,9 +4833,6 @@
       ],
       "Create new group": [
         "Opret ny gruppe"
-      ],
-      "Credits": [
-        "Kreditter"
       ],
       "Currency": [
         "Valuta"
@@ -4933,6 +5016,9 @@
       "Network error": [
         "Netværksfejl"
       ],
+      "No results found": [
+        ""
+      ],
       "Number of files": [
         "Antal filer"
       ],
@@ -5005,8 +5091,11 @@
       "Restore your files": [
         "Gendan dine filer"
       ],
-      "Select a plan": [
-        "Vælg et abonnement"
+      "Search results": [
+        ""
+      ],
+      "Searching…": [
+        ""
       ],
       "Select a theme": [
         "Vælg et tema"
@@ -5200,6 +5289,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Brug den personlige adresse brugernavn@pm.me til at sende e-mails"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "You do not have any contacts to export": [
         "Du har ingen kontakter at eksportere"

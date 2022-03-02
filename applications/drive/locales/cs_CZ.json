@@ -86,6 +86,9 @@
       "Clear": [
         "Vymazat"
       ],
+      "Clear browser data": [
+        "Vymazat data prohlížeče"
+      ],
       "Clear data": [
         "Smazat data"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         "Přizpůsobit"
-      ],
-      "Decrease": [
-        "Snížit"
       ],
       "Delete": [
         "Odstranit"
@@ -251,8 +251,14 @@
       "Go to panel ${ index }": [
         "Přejít na panel ${ index }"
       ],
+      "Go to parent": [
+        ""
+      ],
       "Go to settings": [
         "Přejít do nastavení"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Skrýt pokročilé nastavení PGP"
@@ -277,9 +283,6 @@
       ],
       "Import from .csv or vCard": [
         "Importovat z .csv nebo vCard"
-      ],
-      "Increase": [
-        "Zvýšit"
       ],
       "Load image": [
         "Načíst obrázek"
@@ -375,7 +378,7 @@
         "Obnovit data"
       ],
       "Refer a friend": [
-        ""
+        "Doporučit přítele"
       ],
       "refresh the page": [
         "aktualizovat stránku"
@@ -431,17 +434,17 @@
       "Resume upload": [
         "Souhrn nahrávání"
       ],
-      "Retry": [
-        "Obnovit"
-      ],
       "Save": [
         "Uložit"
       ],
+      "Search": [
+        ""
+      ],
+      "Search drive": [
+        ""
+      ],
       "Select all": [
         "Vybrat vše"
-      ],
-      "Select plan": [
-        "Vybrat plán"
       ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
@@ -843,7 +846,7 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "Pokračovat v používání ProtonMail."
       ]
     },
     "Calendar feature": {
@@ -1855,6 +1858,9 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
+      "A problem occurred, please try again": [
+        "Objevil se problém, prosím zkuste to později"
+      ],
       "Amount above the maximum.": [
         "Hodnota je vyšší než maximální částka."
       ],
@@ -1873,14 +1879,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
       ],
-      "Checkout expired, please try again": [
-        "Objednávka vypršela, zkuste to prosím znovu"
-      ],
       "Contact could not be saved": [
         "Kontakt nebylo možné uložit"
       ],
       "Contact signature not verified": [
         "Podpis kontaktu nebyl ověřen"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "V tomto prohlížeči nelze povolit vyhledávání obsahu. Ukončete prosím režim soukromého režim prohlížeče, nebo vyzkoušejte jiný prohlížeč."
       ],
       "Could not find address ${ email }.": [
         "Nelze najít adresu ${ email }."
@@ -2029,6 +2035,9 @@
       "Payment process not supported": [
         "Platební proces transakce není podporován"
       ],
+      "Please activate your content search again": [
+        "Prosím, aktivujte znovu vyhledávací obsah"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
@@ -2050,6 +2059,9 @@
       "Request timed out": [
         "Vypršel časový limit žádosti"
       ],
+      "Search failed": [
+        "Vyhledávání se nezdařilo"
+      ],
       "Signature not verified": [
         "Podpis nebyl ověřen"
       ],
@@ -2070,9 +2082,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Něco se pokazilo, pro pokračování prosím ${ refresh }. Pokud se tato chybová zpráva stále zobrazuje, kontaktujte prosím náš ${ supportTeam }."
-      ],
-      "Tab closed": [
-        "Záložka uzavřena"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Prohlížeč, který využíváte, nepodporuje úplnou autorizaci platby. Použijte jiný prohlížeč nebo se přihlaste pomocí počítače."
@@ -2584,17 +2593,14 @@
         "+${ organization.BonusVPN } připojení ProtonVPN (umožňuje připojení dalších zařízení k síti VPN)",
         "+${ organization.BonusVPN } připojení ProtonVPN (umožňuje připojení dalších zařízení k síti VPN)"
       ],
-      "20 personal calendars": [
-        "20 osobních kalendářů"
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% sleva na Vaše předplatné s kupónem ${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 denní záruka na vrácení peněz."
       ],
-      "5 email addresses/aliases": [
-        "5 emailových adres / aliasů"
+      "5 email addresses": [
+        "5 e-mailových adres"
       ],
       "5 GB storage": [
         "5 GB úložiště"
@@ -2625,9 +2631,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ověření adresy pomocí důvěryhodného klíče je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejnému klíči, který může být použit pro odesílání."
-      ],
-      "Addresses": [
-        "Adresy"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Po provedení platby pomocí Bitcoinu, postupujte podle níže uvedených pokynů pro upgrade."
@@ -2665,11 +2668,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Opravdu chcete vyprázdnit koš a trvale smazat všechny položky?"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "Jste si jisti, že chcete vybranou položku z koše trvale odstranit?",
-        "Jste si jisti, že chcete vybrané položky z koše trvale odstranit?",
-        "Jste si jisti, že chcete vybrané položky z koše trvale odstranit?",
-        "Jste si jisti, že chcete vybrané položky z koše trvale odstranit?"
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        ""
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        ""
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Vzhledem k tomu že ${ appName } je end-to-end zašifrovaná, tak nemáme přístup\na nemůžeme za Vás dekryptovat Vaše soubory. K odemknutí Vašeho disku po resetování hesla\nmusíte mít jedno z následujících:"
@@ -2707,6 +2710,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Vyhledávání kontaktu ${ progress } o ${ max }..."
       ],
+      "Clear data": [
+        "Vymazat data"
+      ],
+      "Clear encrypted search data": [
+        "Vymazat zašifrovaná vyhledávací data"
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        "Vymazání dat prohlížeče vymaže index vyhledávání v tomto zařízení. Při použití funkce vyhledávání by bylo nutné všechny soubory znovu indexovat."
+      ],
+      "Clears browser data related to the encrypted search.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je tato e-mailová adresa nesprávná, klikněte na tlačítko \"Upravit\" pro její opravu."
       ],
@@ -2722,11 +2737,11 @@
       "Conflict": [
         "Konflikt"
       ],
-      "Connections": [
-        "Připojení"
-      ],
       "Continue using ${ appName } and unlock drive later": [
         "Pokračujte v používání ${ appName } a odemkněte disk později"
+      ],
+      "Continue with ${ planName }": [
+        "Pokračovat s ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Vytvořit ${ calendarsToBeCreated } nový kalendář",
@@ -2749,11 +2764,8 @@
       "Create links and share your files with others.": [
         "Vytvořte odkazové řádky a sdílejte své soubory s ostatními."
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
+        "Vytvořte až 20 vlastních kalendářů. Kromě toho přidejte až 5 kalendářů od přátel, rodiny, kolegů a organizací."
       ],
       "Create your first folder and start moving your files.": [
         "Vytvořte si Váš první soubor a začněte stěhovat své složky."
@@ -2806,9 +2818,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
       ],
-      "Expired": [
-        "Expirováno"
-      ],
       "Failed": [
         "Selhalo"
       ],
@@ -2852,7 +2861,7 @@
         "Uvolněte místo nebo kontaktujte správce Vašeho účtu."
       ],
       "Free VPN on a single device": [
-        ""
+        "Bezplatná VPN na jednom zařízení"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Plně vybavená VPN s rychlostí až 10 Gbps."
@@ -2898,6 +2907,9 @@
       ],
       "Included": [
         "Zahrnuto"
+      ],
+      "Indexing search results…": [
+        "Indexování výsledků vyhledávání…"
       ],
       "Inherited from parent folder": [
         "Přebráno z nadřazené složky"
@@ -3085,6 +3097,12 @@
       "Primary": [
         "Hlavní"
       ],
+      "Priority support": [
+        "Prioritní podpora"
+      ],
+      "Proton Calendar": [
+        "Proton Kalendář"
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus je omezen na jednoho uživatele a začíná s 5 GB úložištěm."
       ],
@@ -3111,6 +3129,9 @@
       ],
       "Screenshot(s) attached": [
         "Snímek/snímky byly připojeny"
+      ],
+      "Search cannot be enabled in this browser": [
+        "V tomto prohlížeči nelze povolit vyhledávání"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vyberte nahraný soubor nebo složku a vytvořte na ně odkaz."
@@ -3142,6 +3163,9 @@
       "Something went wrong, please try again later.": [
         "Něco se pokazilo, prosím zkuste to později."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        "Začněte s 500 MB a postupně odemykejte další úložiště. Úložný prostor je sdílený v aplikaci Pošta, Kalendář a Disk."
+      ],
       "Starter VPN service with P2P support.": [
         "Základní služba VPN s podporou P2P."
       ],
@@ -3149,10 +3173,10 @@
         "Úložiště"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Úložný prostor je sdílen mezi aplikacemi Pošta, Kalendář a Disk."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Podpora 1 vlastní e-mailové domény"
       ],
       "support team": [
         "tým podpory"
@@ -3211,6 +3235,12 @@
       "This will overwrite the existing folder": [
         "Tím se přepíše existující složka"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
       ],
@@ -3238,8 +3268,14 @@
       "Trash": [
         "Koš"
       ],
+      "Try different keywords": [
+        "Vyzkoušejte různá klíčová slova"
+      ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Unlimited messages": [
+        "Neomezené zprávy"
       ],
       "Unlock drive to recover files": [
         "Odemknutí disku pro obnovení souborů"
@@ -3248,7 +3284,10 @@
         "Nepodporovaný soubor"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "Upgradujte ještě dnes a zachovejte si přístup k řešení Pošta a Kalendář zaměřenému na ochranu soukromí pro vaše každodenní komunikační potřeby."
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+        "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ appName } ${ planName }."
       ],
       "Uploaded": [
         "Nahrané"
@@ -3260,7 +3299,7 @@
         "Nahrávání stovky souboru najednou může zapříčinit dopad na výkon."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Mějte e-maily na vlastní doméně, např. franta@omacka.cz"
       ],
       "Users": [
         "Uživatelé"
@@ -3945,8 +3984,8 @@
       "Contact groups": [
         "Skupiny kontaktů"
       ],
-      "Custom email addresses": [
-        "Vlastní e-mailová adresa"
+      "Custom domains": [
+        "Vlastní domény"
       ],
       "Custom filters": [
         "Vlastní filtry"
@@ -4030,7 +4069,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Vaše bezplatná zkušební verze skončila. Přístup k vašemu účtu bude brzy deaktivován. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4063,32 +4102,44 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" úspěšně přesunuto"
+      "\"${ name }\" deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" trvale odstraněn z koše"
+      "\"${ name }\" failed to be created": [
+        ""
       ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" neúspěšné přestěhováno"
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        ""
       ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" přesunuto do koše"
+      "\"${ name }\" failed to be moved": [
+        ""
       ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" obnoveno z koše"
+      "\"${ name }\" failed to be moved to trash": [
+        ""
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        ""
+      ],
+      "\"${ name }\" moved to trash": [
+        ""
+      ],
+      "\"${ name }\" restored from trash": [
+        ""
+      ],
+      "\"${ name }\" successfully moved": [
+        ""
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        ""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        ""
       ],
       "${ count } item failed to be decrypted": [
         "${ count } položku se nepodařilo dešifrovat",
         "${ count } položky se nepodařilo dešifrovat",
         "${ count } položek se nepodařilo dešifrovat",
         "${ count } položek se nepodařilo dešifrovat"
-      ],
-      "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } odkaz na Váš soubor byl odstraněn",
-        "${ deletedCount } odkazy na Vaše soubory byl odstraněny",
-        "${ deletedCount } odkazů na Vaše soubory byl odstraněny",
-        "${ deletedCount } odkazů na Vaše soubory byl odstraněny"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } soubor trvale odstraněn z koše",
@@ -4101,12 +4152,6 @@
         "${ deletedItemsCount } složky trvale odstraněny z koše",
         "${ deletedItemsCount } složky trvale odstraněny z koše",
         "${ deletedItemsCount } složky trvale odstraněny z koše"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } položka trvale odstraněna z koše",
-        "${ deletedItemsCount } položky trvale odstraněné z koše",
-        "${ deletedItemsCount } položky trvale odstraněné z koše",
-        "${ deletedItemsCount } položky trvale odstraněné z koše"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "${ failedCount } odkaz na Váš soubor se nepodařilo odstranit",
@@ -4126,29 +4171,74 @@
         "${ failedMovesCount } složky se nepodařilo přestěhovat",
         "${ failedMovesCount } složky se nepodařilo přestěhovat"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } položka se nepodařila přestěhovat",
-        "${ failedMovesCount } položek se nepodařilo přestěhovat",
-        "${ failedMovesCount } položky se nepodařilo přestěhovat",
-        "${ failedMovesCount } položky se nepodařilo přestěhovat"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } soubor úspěšně přesunutý",
-        "${ movedLinksCount } souborů úspěšně přesunuto",
-        "${ movedLinksCount } soubory úspěšně přesunuty",
-        "${ movedLinksCount } soubory úspěšně přesunuty"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } složka úspěšně přesunutá",
         "${ movedLinksCount } složek úspěšně přesunuto",
         "${ movedLinksCount } složky úspěšně přesunuty",
         "${ movedLinksCount } složky úspěšně přesunuty"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } položka úspěšně přesunuta",
-        "${ movedLinksCount } položky úspěšně přesunuty",
-        "${ movedLinksCount } položek úspěšně přesunuto",
-        "${ movedLinksCount } položek úspěšně přesunuto"
+      "${ name } created successfully": [
+        ""
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } soubor obnoven z koše",
@@ -4162,12 +4252,6 @@
         "${ restoredItemsCount } složky obnoveny z koše",
         "${ restoredItemsCount } složky obnoveny z koše"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } položka obnovena z koše",
-        "${ restoredItemsCount } položky obnoveny z koše",
-        "${ restoredItemsCount } položek obnoveno z koše",
-        "${ restoredItemsCount } položek obnoveno z koše"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } soubor přesunut do koše",
         "${ trashedLinksCount } soubory přesunuty do koše",
@@ -4180,12 +4264,6 @@
         "${ trashedLinksCount } složky přesunuty do koše",
         "${ trashedLinksCount } složky přesunuty do koše"
       ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } položka přesunuta do koše",
-        "${ trashedLinksCount } položky přesunuty do koše",
-        "${ trashedLinksCount } položky přesunuty do koše",
-        "${ trashedLinksCount } položky přesunuty do koše"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Všechny položky budou brzy nevratně smazány z koše"
       ],
@@ -4197,6 +4275,9 @@
       ],
       "Contact group updated": [
         "Skupina kontaktů byla aktualizována"
+      ],
+      "Encrypted search activated": [
+        ""
       ],
       "Failed to download files: ${ err }": [
         "Nepodařilo se stáhnout soubory: ${ err }"
@@ -4270,17 +4351,26 @@
       "Subfolder failed to be loaded": [
         "Podsložku se nepodařilo načíst"
       ],
-      "The link to your file failed to be deleted": [
-        "Odkaz na váš soubor se nepodařilo odstranit"
+      "The link to \"${ name }\" failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted": [
-        "Odkaz na váš soubor byl odstraněn"
+      "The link to \"${ name }\" was deleted": [
+        ""
+      ],
+      "The link to your item failed to be deleted": [
+        ""
+      ],
+      "The link to your item was deleted": [
+        ""
       ],
       "Trash failed to be emptied": [
         "Odpadkový koš se nepodařilo vysypat"
       ],
       "Your old files will be deleted in 72 hours": [
         "Vaše staré soubory budou smazány do 72 hodin"
+      ],
+      "Your settings failed to be saved": [
+        ""
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavení bylo úspěšně změněno"
@@ -4521,8 +4611,8 @@
       "Built-in Adblocker (NetShield)": [
         "Vestavěný Adblocker (NetShield)"
       ],
-      "Custom email addresses": [
-        "Vlastní e-mailové adresy"
+      "Custom domains": [
+        "Vlastní domény"
       ],
       "Early access to new products": [
         "Dřívější přístup k novým funkcím"
@@ -4636,8 +4726,11 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        "Získejte ${ appName } ${ planName } až na 18 měsíců zdarma"
+      ],
       "Invite friends and earn rewards!": [
-        ""
+        "Pozvěte přátele a získejte odměny!"
       ]
     },
     "Storage": {
@@ -4912,9 +5005,6 @@
       "Contacts": [
         "Kontakty"
       ],
-      "Coupon discount": [
-        "Slevový kupón"
-      ],
       "Create a new folder": [
         "Vytvořit novou složku"
       ],
@@ -4923,9 +5013,6 @@
       ],
       "Create new group": [
         "Vytvořit novou skupinu"
-      ],
-      "Credits": [
-        "Kredity"
       ],
       "Currency": [
         "Měna"
@@ -5113,6 +5200,9 @@
       "Network error": [
         "Chyba sítě"
       ],
+      "No results found": [
+        "Nebyly nalezeny žádné výsledky"
+      ],
       "Number of files": [
         "Počet souborů"
       ],
@@ -5185,8 +5275,11 @@
       "Restore your files": [
         "Obnovit soubory"
       ],
-      "Select a plan": [
-        "Vyberte plán"
+      "Search results": [
+        "Výsledky vyhledávání"
+      ],
+      "Searching…": [
+        ""
       ],
       "Select a theme": [
         "Vyberte motiv"
@@ -5291,7 +5384,7 @@
         "Vaše složka je připravena ke stažení"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Vaše bezplatná zkušební verze brzy skončí dne ${ formattedEndDate }"
       ],
       "ZIP / postal code": [
         "ZIP / PSČ"
@@ -5380,6 +5473,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Použít osobní adresu username@pm.me k odesílání e-mailů"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Mějte e-maily na vlastní doméně, např. franta@omacka.cz"
       ],
       "You do not have any contacts to export": [
         "Nemáte žádné kontakty k exportu"
@@ -5612,7 +5708,7 @@
         "Ztratíte všechna dosud provedená přizpůsobení."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Bezplatná zkušební verze končí ${ textDate }. ${ action }"
       ]
     }
   }
