@@ -86,6 +86,9 @@
       "Clear": [
         "Wissen"
       ],
+      "Clear browser data": [
+        "Wis browsergegevens"
+      ],
       "Clear data": [
         "Gegevens wissen"
       ],
@@ -154,9 +157,6 @@
       ],
       "Customize": [
         "Personaliseer"
-      ],
-      "Decrease": [
-        "Verlaag"
       ],
       "Delete": [
         "Verwijderen"
@@ -247,8 +247,14 @@
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
       ],
+      "Go to parent": [
+        "Ga naar bovenliggende"
+      ],
       "Go to settings": [
         "Ga naar instellingen"
+      ],
+      "Got it": [
+        "Begrepen"
       ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
@@ -273,9 +279,6 @@
       ],
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
-      ],
-      "Increase": [
-        "Verhoog"
       ],
       "Load image": [
         "Afbeelding laden"
@@ -371,7 +374,7 @@
         "Gegevens herstellen"
       ],
       "Refer a friend": [
-        ""
+        "Verwijs een vriend door"
       ],
       "refresh the page": [
         "vernieuw de pagina"
@@ -427,17 +430,17 @@
       "Resume upload": [
         "Upload hervatten"
       ],
-      "Retry": [
-        "Opnieuw proberen"
-      ],
       "Save": [
         "Opslaan"
       ],
+      "Search": [
+        "Zoeken"
+      ],
+      "Search drive": [
+        "Drive doorzoeken"
+      ],
       "Select all": [
         "Alles selecteren"
-      ],
-      "Select plan": [
-        "Selecteer abonnement"
       ],
       "Set recovery phrase": [
         "Herstelzin instellen"
@@ -831,7 +834,7 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "Blijf ProtonMail gebruiken."
       ]
     },
     "Calendar feature": {
@@ -1292,7 +1295,7 @@
         "Heard- en MacDonaldeilanden"
       ],
       "Holy See (Vatican City State)": [
-        ""
+        "Heilige Stoel (Vaticaanstad)"
       ],
       "Honduras": [
         "Honduras"
@@ -1568,7 +1571,7 @@
         "Saint-Pierre en Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        ""
+        "Saint Vincent en de Grenadines"
       ],
       "Samoa": [
         "Samoa"
@@ -1712,31 +1715,31 @@
         "Verenigd Koninkrijk"
       ],
       "United States": [
-        ""
+        "Verenigde Staten"
       ],
       "United States Minor Outlying Islands": [
-        ""
+        "Amerikaanse ondergeschikte afgelegen eilanden"
       ],
       "Uruguay": [
-        ""
+        "Uruguay"
       ],
       "Uzbekistan": [
-        ""
+        "Oezbekistan"
       ],
       "Vanuatu": [
         "Vanuatu"
       ],
       "Venezuela": [
-        ""
+        "Venezuela"
       ],
       "Vietnam": [
-        ""
+        "Vietnam"
       ],
       "Virgin Islands, British": [
-        ""
+        "Maagdeneilanden, Verenigd Koninkrijk"
       ],
       "Virgin Islands, U.S.": [
-        ""
+        "Maagdeneilanden, Verenigde Staten."
       ],
       "Wallis and Futuna": [
         "Wallis en Futuna"
@@ -1837,6 +1840,9 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
+      "A problem occurred, please try again": [
+        "Er is een probleem opgetreden, probeer het opnieuw"
+      ],
       "Amount above the maximum.": [
         "Bedrag boven het maximum."
       ],
@@ -1855,14 +1861,14 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan geen nieuwe kalenders maken voor alle geïmporteerde kalenders vanwege de limiet voor persoonlijke kalenders."
       ],
-      "Checkout expired, please try again": [
-        "Checkout is verlopen, probeer het opnieuw"
-      ],
       "Contact could not be saved": [
         "Contact kon niet worden opgeslagen"
       ],
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken."
       ],
       "Could not find address ${ email }.": [
         "Kon adres ${ email } niet vinden."
@@ -2001,6 +2007,9 @@
       "Payment process not supported": [
         "Betalingsproces niet ondersteund"
       ],
+      "Please activate your content search again": [
+        "Activeer het zoeken naar inhoud opnieuw"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
@@ -2019,6 +2028,9 @@
       ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
+      ],
+      "Search failed": [
+        "Zoeken mislukt"
       ],
       "Signature not verified": [
         "Handtekening niet geverifieerd"
@@ -2040,9 +2052,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
-      ],
-      "Tab closed": [
-        "Tab gesloten"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
@@ -2496,20 +2505,17 @@
         "+${ organization.BonusVPN } verbinding voor ProtonVPN (stelt u in staat meer apparaten aan VPN te verbinden)",
         "+${ organization.BonusVPN } verbindingen voor ProtonVPN (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
-      "20 personal calendars": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% korting toegepast op uw abonnement met coupon ${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 dagen geld-terug-garantie."
       ],
-      "5 email addresses/aliases": [
-        ""
+      "5 email addresses": [
+        "5 e-mailadressen"
       ],
       "5 GB storage": [
-        ""
+        "5 GB opslag"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Iedereen moet kunnen beschikken over een vrij en ongecensureerd internet."
@@ -2537,9 +2543,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels om berichten te kunnen versturen naar deze ontvanger."
-      ],
-      "Addresses": [
-        "Adressen"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Na het betalen van uw Bitcoin betaling, volg de onderstaande instructies om te upgraden."
@@ -2573,9 +2576,11 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Weet u zeker dat u de prullenbak wilt leegmaken en alle items permanent wilt verwijderen?"
       ],
-      "Are you sure you want to permanently delete selected item from trash?": [
-        "Weet u zeker dat u het geselecteerde item permanent uit de prullenbak wilt verwijderen?",
-        "Weet u zeker dat u geselecteerde items permanent wilt verwijderen uit de prullenbak?"
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        "Weet u zeker dat u \"${ itemName }\" permanent wilt verwijderen uit prullenbak?"
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        "Weet u zeker dat u de geselecteerde items permanent wilt verwijderen uit de prullenbak?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Omdat ${ appName } end-to-end versleuteld is, kunnen we geen toegang krijgen\nof uw bestanden voor u decoderen. Om uw schijf te ontgrendelen na een wachtwoord reset,\nmoet u een van de volgende dingen hebben:"
@@ -2613,6 +2618,18 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Controle van contact ${ progress } van ${ max }..."
       ],
+      "Clear data": [
+        "Gegevens wissen"
+      ],
+      "Clear encrypted search data": [
+        "Versleutelde zoekgegevens wissen"
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        "Browsergegevens wissen, zal de zoekindex op dit apparaat wissen. Alle bestanden zullen opnieuw geïndexeerd moeten worden terwijl u de zoekfunctie gebruikt."
+      ],
+      "Clears browser data related to the encrypted search.": [
+        "Wist browsergegevens gerelateerd aan het versleuteld zoeken."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -2628,11 +2645,11 @@
       "Conflict": [
         "Probleem"
       ],
-      "Connections": [
-        "Verbindingen"
-      ],
       "Continue using ${ appName } and unlock drive later": [
         "Blijf ${ appName } gebruiken en ontgrendel de schijf later"
+      ],
+      "Continue with ${ planName }": [
+        "Ga door met ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Maak één nieuwe agenda",
@@ -2653,11 +2670,8 @@
       "Create links and share your files with others.": [
         "Maak links en deel uw bestanden met anderen."
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
+        "Maak tot 20 aangepaste agenda's aan. Voeg daar bovenop tot 5 agenda's toe van vrienden, familie, collega's en organisaties."
       ],
       "Create your first folder and start moving your files.": [
         "Maak uw eerste map aan en begin uw bestanden te verplaatsen."
@@ -2708,9 +2722,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
       ],
-      "Expired": [
-        "Verlopen"
-      ],
       "Failed": [
         "Mislukt"
       ],
@@ -2754,7 +2765,7 @@
         "Maak ruimte vrij of neem contact op met uw beheerder."
       ],
       "Free VPN on a single device": [
-        ""
+        "Gratis VPN op één toestel"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Volledige VPN met snelheid tot 10 Gbps."
@@ -2798,6 +2809,9 @@
       ],
       "Included": [
         "Inbegrepen"
+      ],
+      "Indexing search results…": [
+        "Zoekresultaten indexeren…"
       ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
@@ -2920,7 +2934,7 @@
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot deze map."
       ],
       "Other options": [
-        ""
+        "Andere opties"
       ],
       "Paused": [
         "Gepauzeerd"
@@ -2985,6 +2999,12 @@
       "Primary": [
         "Primair"
       ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
+      ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus is beperkt tot één gebruiker en begint met 5 GB aan opslag."
       ],
@@ -3009,6 +3029,9 @@
       ],
       "Screenshot(s) attached": [
         "Toegevoegde screenshot(s)"
+      ],
+      "Search cannot be enabled in this browser": [
+        "Zoeken kan niet ingeschakeld worden in deze browser"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecteer een geüpload bestand of map en maak er een link naartoe."
@@ -3040,6 +3063,9 @@
       "Something went wrong, please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        "Start met 500 MB en ontgrendel meer opslag na verloop van tijd. Opslagruimte is gedeeld tussen Mail, Calendar en Drive."
+      ],
       "Starter VPN service with P2P support.": [
         "Starter VPN-service met P2P-ondersteuning."
       ],
@@ -3047,10 +3073,10 @@
         "Opslag GB"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Opslagruimte is gedeeld voor Mail, Calendar en Drive."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Ondersteuning voor 1 aangepast e-mail domein"
       ],
       "support team": [
         "ondersteuningsteam"
@@ -3107,6 +3133,12 @@
       "This will overwrite the existing folder": [
         "Dit zal de bestaande map overschrijven"
       ],
+      "To enable trully private search Proton Drive needs to index your files locally.": [
+        "To enable truly private search Proton Drive needs to index your files locally."
+      ],
+      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
+        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
@@ -3134,8 +3166,14 @@
       "Trash": [
         "Prullenbak"
       ],
+      "Try different keywords": [
+        "Probeer verschillende trefwoorden"
+      ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Ongelimiteerde mappen, labels en filters"
+      ],
+      "Unlimited messages": [
+        "Onbeperkt aantal berichten"
       ],
       "Unlock drive to recover files": [
         "Ontgrendel schijf om bestanden te herstellen"
@@ -3144,7 +3182,10 @@
         "Niet-ondersteund bestand"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "Upgrade vandaag en houd toegang tot de privacy-eerst Mail- en Agendaoplossing voor uw alledaagse communicatienoden."
+      ],
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+        "Upgrade vandaag om geen van volgende ${ appName } ${ planName } voordelen te verliezen."
       ],
       "Uploaded": [
         "Geüpload"
@@ -3156,7 +3197,7 @@
         "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Gebruik uw eigen aangepast domein e-mailadressen, zoals jij@jouwnaam.com"
       ],
       "Users": [
         "Gebruikers"
@@ -3839,8 +3880,8 @@
       "Contact groups": [
         "Contactgroepen"
       ],
-      "Custom email addresses": [
-        "Aangepaste e-mailadressen"
+      "Custom domains": [
+        "Aangepaste domeinen"
       ],
       "Custom filters": [
         "Aangepaste filters"
@@ -3920,7 +3961,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -3953,28 +3994,42 @@
       ]
     },
     "Notification": {
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" succesvol verplaatst"
+      "\"${ name }\" deleted permanently from trash": [
+        "\"${ name }\" permanent verwijderd uit de prullenbak"
       ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" permanent verwijderd uit de prullenbak"
+      "\"${ name }\" failed to be created": [
+        "\"${ name }\" kon niet aangemaakt worden"
       ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" kon niet verplaatst worden"
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        "\"${ name }\" konden niet permanent verwijderd worden uit prullenbak"
       ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" verplaatst naar de prullenbak"
+      "\"${ name }\" failed to be moved": [
+        "\"${ name }\" kon niet verplaatst worden"
       ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" uit de prullenbak hersteld"
+      "\"${ name }\" failed to be moved to trash": [
+        "\"${ name }\" kon niet verplaatst worden naar prullenbak"
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        "\"${ name }\" kon niet hersteld worden uit prullenbak"
+      ],
+      "\"${ name }\" moved to trash": [
+        "\"${ name }\" verplaatst naar de prullenbak"
+      ],
+      "\"${ name }\" restored from trash": [
+        "\"${ name }\" uit de prullenbak hersteld"
+      ],
+      "\"${ name }\" successfully moved": [
+        "\"${ name }\" succesvol verplaatst"
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        "\"${ newName }\" kon niet worden hernoemd"
+      ],
+      "\"${ newName }\" renamed successfully": [
+        "\"${ newName }\" succesvol hernoemd"
       ],
       "${ count } item failed to be decrypted": [
         "${ count } item kon niet worden ontsleuteld",
         "${ count } items konden niet worden ontsleuteld"
-      ],
-      "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } link naar uw bestand is verwijderd",
-        "${ deletedCount } linken naar uw bestanden zijn verwijderd"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } bestand uit de prullenbak permanent verwijderd",
@@ -3983,10 +4038,6 @@
       "${ deletedItemsCount } folder deleted permanently from trash": [
         "${ deletedItemsCount } map definitief verwijderd uit de prullenbak",
         "${ deletedItemsCount } mappen permanent verwijderd uit de prullenbak"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } item permanent verwijderd uit de prullenbak",
-        "${ deletedItemsCount } items permanent verwijderd uit de prullenbak"
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "${ failedCount } link naar uw bestand kon niet worden verwijderd",
@@ -4000,21 +4051,52 @@
         "${ failedMovesCount } map kon niet worden verplaatst",
         "${ failedMovesCount } mappen konden niet worden verplaatst"
       ],
-      "${ failedMovesCount } item failed to be moved": [
-        "${ failedMovesCount } item kon niet worden verplaatst",
-        "${ failedMovesCount } items konden niet worden verplaatst"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } bestand succesvol verplaatst",
-        "${ movedLinksCount } bestanden succesvol verplaatst"
-      ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } map met succes verplaatst",
         "${ movedLinksCount } mappen succesvol verplaatst"
       ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } item met succes verplaatst",
-        "${ movedLinksCount } items succesvol verplaatst"
+      "${ name } created successfully": [
+        "${ name } succesvol aangemaakt"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } item permanent verwijderd uit de prullenbak",
+        "${ numberOfItems } items permanent verwijderd uit de prullenbak"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "${ numberOfItems }\" item kon niet permanent verwijderd worden uit prullenbak",
+        "${ numberOfItems }\" items konden niet permanent verwijderd worden uit prullenbak"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "${ numberOfItems } item kon niet verplaatst worden",
+        "${ numberOfItems } items konden niet verplaatst worden"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "${ numberOfItems } item kon niet verplaatst worden naar prullenbak",
+        "${ numberOfItems } items konden niet verplaatst worden naar prullenbak"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "${ numberOfItems } item kon niet hersteld worden uit prullenbak",
+        "${ numberOfItems } items konden niet hersteld worden uit prullenbak"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } item verplaatst naar de prullenbak",
+        "${ numberOfItems } items verplaatst naar de prullenbak"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems } item hersteld uit prullenbak",
+        "${ numberOfItems } items hersteld uit prullenbak"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } item succesvol verplaatst",
+        "${ numberOfItems } items succesvol verplaatst"
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "${ numberOfItems } link naar uw item kon niet worden verwijderd",
+        "${ numberOfItems } links naar uw items konden niet worden verwijderd"
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "",
+        "${ numberOfItems } links naar uw items werden verwijderd"
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } bestand hersteld uit de prullenbak",
@@ -4024,10 +4106,6 @@
         "${ restoredItemsCount } map hersteld uit de prullenbak",
         "${ restoredItemsCount } mappen hersteld uit de prullenbak"
       ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } item hersteld uit de prullenbak",
-        "${ restoredItemsCount } items hersteld uit de prullenbak"
-      ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } bestand verplaatst naar de prullenbak",
         "${ trashedLinksCount } bestanden verplaatst naar de prullenbak"
@@ -4035,10 +4113,6 @@
       "${ trashedLinksCount } folder moved to trash": [
         "${ trashedLinksCount } map verplaatst naar de prullenbak",
         "${ trashedLinksCount } mappen verplaatst naar de prullenbak"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } item verplaatst naar de prullenbak",
-        "${ trashedLinksCount } items verplaatst naar de prullenbak"
       ],
       "All items will soon be permanently deleted from trash": [
         "Alle items zullen binnenkort permanent uit de prullenbak worden verwijderd"
@@ -4051,6 +4125,9 @@
       ],
       "Contact group updated": [
         "Contactgroep bijgewerkt"
+      ],
+      "Encrypted search activated": [
+        "Versleuteld zoeken geactiveerd"
       ],
       "Failed to download files: ${ err }": [
         "Bestanden downloaden mislukt: ${ err }"
@@ -4110,17 +4187,26 @@
       "Subfolder failed to be loaded": [
         "Submap kon niet geladen worden"
       ],
-      "The link to your file failed to be deleted": [
-        "De link naar uw bestand kon niet worden verwijderd"
+      "The link to \"${ name }\" failed to be deleted": [
+        "De link naar \"${ name }\" kon niet worden verwijderd"
       ],
-      "The link to your file was deleted": [
-        "De link naar uw bestand is verwijderd"
+      "The link to \"${ name }\" was deleted": [
+        "De link naar \"${ name }\" werd verwijderd"
+      ],
+      "The link to your item failed to be deleted": [
+        "De link naar uw item kon niet worden verwijderd"
+      ],
+      "The link to your item was deleted": [
+        "De link naar uw item werd verwijderd"
       ],
       "Trash failed to be emptied": [
         "Prullenbak legen mislukt"
       ],
       "Your old files will be deleted in 72 hours": [
         "Uw oude bestanden worden binnen 72 uur verwijderd"
+      ],
+      "Your settings failed to be saved": [
+        "Uw instellingen konden niet worden bewaard"
       ],
       "Your settings have been changed successfully": [
         "Uw instellingen zijn succesvol gewijzigd"
@@ -4361,8 +4447,8 @@
       "Built-in Adblocker (NetShield)": [
         "Ingebouwde Adblocker (NetShield)"
       ],
-      "Custom email addresses": [
-        "Aangepaste e-mailadressen"
+      "Custom domains": [
+        "Aangepaste domeinen"
       ],
       "Early access to new products": [
         "Vroegtijdige toegang tot de nieuwste producten"
@@ -4472,8 +4558,11 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        "Krijg tot 18 maanden ${ appName } ${ planName } gratis"
+      ],
       "Invite friends and earn rewards!": [
-        ""
+        "Nodig vrienden uit en verdien bonussen!"
       ]
     },
     "Storage": {
@@ -4736,9 +4825,6 @@
       "Contacts": [
         "Contacten"
       ],
-      "Coupon discount": [
-        "Couponkorting"
-      ],
       "Create a new folder": [
         "Nieuwe map aanmaken"
       ],
@@ -4747,9 +4833,6 @@
       ],
       "Create new group": [
         "Nieuwe groep maken"
-      ],
-      "Credits": [
-        "Credits"
       ],
       "Currency": [
         "Valuta"
@@ -4933,6 +5016,9 @@
       "Network error": [
         "Netwerkfout"
       ],
+      "No results found": [
+        "Geen resultaten gevonden"
+      ],
       "Number of files": [
         "Aantal bestanden"
       ],
@@ -5005,8 +5091,11 @@
       "Restore your files": [
         "Herstel uw bestanden"
       ],
-      "Select a plan": [
-        "Selecteer een abonnement"
+      "Search results": [
+        "Zoekresultaten"
+      ],
+      "Searching…": [
+        "Zoeken…"
       ],
       "Select a theme": [
         "Kies een thema"
@@ -5111,7 +5200,7 @@
         "Uw map is klaar om te worden gedownload"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"
       ],
       "ZIP / postal code": [
         "Postcode"
@@ -5200,6 +5289,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Gebruik het persoonlijke adres username@pm.me om e-mails te verzenden"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Gebruik uw eigen aangepast domein e-mailadressen, zoals jij@jouwnaam.com"
       ],
       "You do not have any contacts to export": [
         "U heeft geen contactpersonen om te exporteren"
@@ -5420,7 +5512,7 @@
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"
       ]
     }
   }

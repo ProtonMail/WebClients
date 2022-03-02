@@ -500,16 +500,16 @@
         "Gendan data"
       ],
       "Refer a friend": [
-        ""
+        "Henvis en ven"
       ],
       "Refresh status": [
         "Opdater status"
       ],
-      "refresh the page": [
-        "genopfrisk siden"
-      ],
       "Refresh the page": [
         "Genopfrisk siden"
+      ],
+      "refresh the page": [
+        "genopfrisk siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -1194,10 +1194,13 @@
       "Continue using ProtonMail.": [
         ""
       ],
-      "Copy ": [
+      "Copy": [
         ""
       ],
       "Invite": [
+        ""
+      ],
+      "Send": [
         ""
       ],
       "Tweet": [
@@ -2311,10 +2314,7 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
-      "Get 3 months of Mail Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        ""
-      ],
-      "Invite friends to start earning credits": [
+      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
         ""
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
@@ -2324,7 +2324,10 @@
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
       ],
-      "Track how many people click on your link, sign up to ${ mailAppName }, and become paid subscribers. Watch your free months add up.": [
+      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
+        ""
+      ],
+      "Track your referral link activities here.": [
         ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
@@ -2600,9 +2603,6 @@
       "Invalid ${ name } code": [
         "Ugyldig ${ name }-kode"
       ],
-      "Invalid address": [
-        "Ugyldig adresse"
-      ],
       "Invalid card number": [
         "Ugyldigt kortnummer"
       ],
@@ -2620,9 +2620,6 @@
       ],
       "Invalid name": [
         "Ugyldigt navn"
-      ],
-      "Invalid password": [
-        "Ugyldig adgangskode"
       ],
       "Invalid postal code": [
         "Ugyldigt postnummer"
@@ -2642,6 +2639,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Flet mindst ${ calendarToFixCount } kalender med en eksisterende Proton-kalender",
         "Flet mindst ${ calendarToFixCount } kalendere med eksisterende Proton-kalendere"
+      ],
+      "Name does not match": [
+        ""
       ],
       "Name on card required": [
         "Navn på kort kræves"
@@ -3849,6 +3849,9 @@
       ]
     },
     "Info": {
+      "${ appName } ${ planName } credits earned": [
+        ""
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
@@ -3869,6 +3872,12 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } flettet kalender",
         "${ calendarsToBeMergedCount } flettede kalendere"
+      ],
+      "${ emailAddress } is a ${ appName } address": [
+        ""
+      ],
+      "${ emailAddress } is invalid": [
+        ""
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Free"
@@ -3902,6 +3911,9 @@
       "${ numContacts } contact": [
         "${ numContacts } kontakt",
         "${ numContacts } kontakter"
+      ],
+      "${ planName } plan": [
+        ""
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappe fundet",
@@ -3972,19 +3984,22 @@
         "+${ organization.BonusVPN } forbindelse til ProtonVPN (tillader dig at forbinde flere enheder til VPN)",
         "+${ organization.BonusVPN } forbindelser til ProtonVPN (tillader dig at forbinde flere enheder til VPN)"
       ],
-      "1 to 3 months of Mail Plus will appear as credits on your next bill": [
+      "1. Invite friends to Proton": [
         ""
       ],
-      "20 personal calendars": [
+      "2. They try ${ appName } ${ planName }": [
         ""
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% rabat anvendt på dit abonnement med kupon ${ code }"
       ],
+      "3. You earn credits": [
+        ""
+      ],
       "30 days money-back guarantee.": [
         "30 dages pengene-tilbage-garanti."
       ],
-      "5 email addresses/aliases": [
+      "5 email addresses": [
         ""
       ],
       "5 GB storage": [
@@ -4076,9 +4091,6 @@
       ],
       "Allow recovery by phone": [
         "Tillad gendannelse via telefon"
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Lader dig hoste e-mails til dine egne domæner på ${ mailAppName }, f.eks. jens.hansen@eksempel.dk"
       ],
       "Already have an account? ${ loginLink }": [
         "Har du allerede en konto? ${ loginLink }"
@@ -4227,10 +4239,10 @@
       "Continue anyway?": [
         "Vil du fortsætte alligevel?"
       ],
-      "Continue with plus": [
+      "Continue with ${ planName }": [
         ""
       ],
-      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
+      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
         ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
@@ -4254,12 +4266,6 @@
       ],
       "Create in": [
         "Opret i"
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        ""
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
       ],
       "Creating your Proton account": [
         "Opretter din Proton-konto"
@@ -4346,7 +4352,7 @@
       "Each additional connection can be assigned to users in your organization.": [
         "Hver ekstra forbindelse kan tildeles brugere i din organisation."
       ],
-      "Earned ${ rewards } of ${ rewardsLimit } Mail plus months.": [
+      "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
         ""
       ],
       "Edit label": [
@@ -4445,17 +4451,11 @@
       "free up space by deleting older messages or other data": [
         "frigør plads ved at slette ældre beskeder eller andre data"
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Fuldt udstyret VPN med hastighed på op til 10 Gbps."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
-      ],
-      "Get rewarded": [
-        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Giv din offentlige nøgle til dine venner, eller offentliggør den online, så alle kan sende dig end-to-end krypterede e-mails!"
@@ -4605,7 +4605,7 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
-      "Invite friends": [
+      "Invited via email": [
         ""
       ],
       "It appears some of your data is encrypted and locked.": [
@@ -4614,10 +4614,13 @@
       "it’s imperative": [
         "er det afgørende"
       ],
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
+        ""
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Du skal blot bekræfte dit valg, så klarer vi resten."
       ],
-      "Just send them your personal referral link": [
+      "Just send them your personal referral link.": [
         ""
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
@@ -4676,9 +4679,6 @@
       ],
       "lose access to all current encrypted data": [
         "miste adgang til alle aktuelt krypterede data"
-      ],
-      "Mail Plus credits earned": [
-        ""
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru læser dine personlige oplysninger for at give adgang til annoncører, den russiske regering og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
@@ -4815,7 +4815,7 @@
       "Paid for a 12 months plan": [
         ""
       ],
-      "Paid for a month plan": [
+      "Paid for a monthly plan": [
         ""
       ],
       "Payment can take a few minutes to fully verify.": [
@@ -4887,14 +4887,17 @@
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
       ],
-      "Plus plan": [
-        ""
-      ],
       "Prevents content from the sender's server from loading without your permission.": [
         "Forhindrer at indhold fra afsenderens server indlæses uden din tilladelse."
       ],
       "Preview": [
         "Forhåndsvisning"
+      ],
+      "Priority support": [
+        ""
+      ],
+      "Proton Calendar": [
+        ""
       ],
       "Proton can't help you recover any lost passwords": [
         "Proton kan ikke hjælpe dig med at gendanne mistede adgangskoder"
@@ -4963,9 +4966,6 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Gendannelsessætning er ikke tilknyttet nogen forældede nøgler."
       ],
-      "Refer, receive, repeat. You can earn credits for up to 18 months of Mail Plus.": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
@@ -5002,9 +5002,6 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         ""
       ],
-      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Sendt med <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-mail."
-      ],
       "Server is currently down": [
         "Serveren er i øjeblikket nede"
       ],
@@ -5035,14 +5032,14 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF benyttes til at specificere, hvem der må sende e-mail fra domænet, så det anbefales kraftigt at inkludere ProtonMail i din SPF-record. Tilføj følgende TXT-post i din DNS. Dette kan typisk gøres i kontrolpanelet hos din domæneleverandør."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Grundlæggende VPN-tjeneste med P2P-understøttelse."
       ],
       "Storage GB": [
         "Lager GB"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
       ],
       "Sucessfully sent invites": [
         ""
@@ -5077,9 +5074,6 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Den ${ boldDataLocked } besked vil ikke længere blive vist, men du kan stadig låse dine data op under ${ encryptionAndKeysLink }."
       ],
-      "The 30-day free trial is not available any other way": [
-        ""
-      ],
       "The calendar will be removed from your account.": [
         "Kalenderen vil blive fjernet fra din konto."
       ],
@@ -5095,7 +5089,7 @@
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Disse konfigurationsfiler lader dig vælge, hvilken ProtonVPN-server du opretter forbindelse til, når du bruger en tredjeparts-VPN-app eller opsætter en VPN-forbindelse på en router."
       ],
-      "They signup": [
+      "This 30-day free trial is not available any other way.": [
         ""
       ],
       "This account has been suspended due to a potential policy violation.": [
@@ -5236,6 +5230,9 @@
       "Unlimited folders, labels, and filters": [
         ""
       ],
+      "Unlimited messages": [
+        ""
+      ],
       "Unsupported file": [
         "Ikke-understøttet fil"
       ],
@@ -5254,7 +5251,7 @@
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Opgrader til et betalt abonnement for at låse op for IMAP/SMTP-understøttelse via ProtonMail Bridge."
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -5347,6 +5344,9 @@
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Når notifikationer er aktiveret, sender vi en advisering til din gendannelses-/notifikations-adresse, hvis du har nye beskeder på din ProtonMail-konto."
       ],
+      "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
+        ""
+      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Når dit abonnement fornyes, vil alle tilgængelige kreditter blive brugt først, før vi laver en opkrævning på dine betalingsmetoder ovenfor."
       ],
@@ -5406,6 +5406,9 @@
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruge følgende legitimationsoplysninger til at oprette forbindelse til en ProtonVPN-server ved hjælp af en tredjeparts, open source VPN-app, såsom Tunnelblick til macOS eller OpenVPN til GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Du kan ikke bruge OpenVPN / IKEv2 legitimationsoplysninger i ProtonVPN-applikationer eller i ProtonVPN-kontrolpanelet. ${ learnMore }"
@@ -5497,7 +5500,7 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
-      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
+      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
         ""
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
@@ -5971,14 +5974,14 @@
       "Actions": [
         "Handlinger"
       ],
+      "Activity": [
+        ""
+      ],
       "Address": [
         "Adresse"
       ],
       "Addresses": [
         "Adresser"
-      ],
-      "Admin rights": [
-        "Administrator rettigheder"
       ],
       "ALL": [
         "ALL"
@@ -6138,6 +6141,9 @@
       ],
       "Daily email notifications": [
         "Daglige e-mailnotifikationer"
+      ],
+      "Date": [
+        ""
       ],
       "Date format": [
         "Datoformat"
@@ -6463,9 +6469,6 @@
       "Previous password": [
         "Tidligere adgangskode"
       ],
-      "Private User": [
-        "Privatbruger"
-      ],
       "Prompt to trust keys": [
         "Spørg om at stole på nøgler"
       ],
@@ -6519,9 +6522,6 @@
       ],
       "Send invites in": [
         "Invitation language"
-      ],
-      "Share your invitation link": [
-        ""
       ],
       "Show secondary time zone": [
         "Vis sekundær tidszone"
@@ -6690,6 +6690,9 @@
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
+      ],
+      "Your referral link": [
+        ""
       ],
       "Your reward": [
         ""
@@ -6968,8 +6971,8 @@
       "Contact groups": [
         "Kontaktgrupper"
       ],
-      "Custom email addresses": [
-        "Brugerdefinerede e-mailadresser"
+      "Custom domains": [
+        ""
       ],
       "Custom filters": [
         "Tilpassede filtre"
@@ -7693,9 +7696,6 @@
       "Choose a name": [
         "Vælg et navn"
       ],
-      "Choose address": [
-        "Vælg adresse"
-      ],
       "Choose display name": [
         "Vælg visningsnavn"
       ],
@@ -7777,9 +7777,6 @@
       "Type text or keyword": [
         "Indtast tekst eller nøgleord"
       ],
-      "Username": [
-        "Brugernavn"
-      ],
       "yourdomain.com": [
         "ditdomæne.com"
       ],
@@ -7852,8 +7849,8 @@
       "Built-in Adblocker (NetShield)": [
         "Indbygget Adblocker (Netshield)"
       ],
-      "Custom email addresses": [
-        "Brugerdefinerede e-mailadresser"
+      "Custom domains": [
+        ""
       ],
       "Early access to new products": [
         "Tidlig adgang til nye produkter"
@@ -8134,7 +8131,16 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        ""
+      ],
       "Invite friends and earn rewards!": [
+        ""
+      ],
+      "No more missed appointments": [
+        ""
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
         ""
       ]
     },
@@ -8465,6 +8471,9 @@
       ]
     },
     "Title": {
+      "${ appName } ${ planName } trial": [
+        ""
+      ],
       "${ appName } customization": [
         "${ appName } tilpasning"
       ],
@@ -8732,11 +8741,11 @@
       "Decrypt key": [
         "Dekryptér nøgle"
       ],
-      "Delete ${ address.Email }": [
-        "Slet ${ address.Email }"
-      ],
       "Delete ${ domain.DomainName }": [
         "Slet ${ domain.DomainName }"
+      ],
+      "Delete ${ email }": [
+        ""
       ],
       "Delete ${ filter.Name }": [
         "Slet ${ filter.Name }"
@@ -8764,6 +8773,9 @@
       ],
       "Delete user": [
         "Slet bruger"
+      ],
+      "Disable ${ email }": [
+        ""
       ],
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
@@ -8864,11 +8876,14 @@
       "Get ProtonVPN Plus to access all servers": [
         "Få ProtonVPN Plus for at få adgang til alle servere"
       ],
-      "Get up to 18 months of Mail Plus for free": [
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "How does it work?": [
+        ""
       ],
       "Human verification": [
         "Menneskelig bekræftelse"
@@ -9029,9 +9044,6 @@
       ],
       "ProtonMail Bridge": [
         "ProtonMail-bridge"
-      ],
-      "ProtonMail Plus Trial": [
-        ""
       ],
       "ProtonVPN": [
         "ProtonVPN"
@@ -9378,9 +9390,6 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Aktivering af avancerede logoptegnelser registrerer IP-adressen for hver begivenhed i sikkerhedsloggen."
       ],
-      "For easy sharing with all your contacts, the link text “Try ${ mailAppName } Plus Free for one month” is added to the bottom of your emails": [
-        ""
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Få adgang til alle de betalte funktioner i ${ vpnAppName } og ${ mailAppName } (den krypterede e-mail-tjeneste, som millioner bruger til at beskytte deres data) med ét abonnement."
       ],
@@ -9389,12 +9398,6 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppér e-mails i den samme samtale sammen i din indbakke, eller vis dem separat."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Host e-mails til dine egne domæner på ${ mailAppName }, f.eks. jens.hansen@eksempel.dk"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Host e-mails til dine egne domæner på ProtonMail, f.eks. jens.hansen@eksempel.dk"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
@@ -9422,6 +9425,9 @@
       ],
       "Set the default layout for your Inbox.": [
         "Indstil standardlayout for din indbakke."
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
+        ""
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Signaturer genereret af denne nøgle behandles som ugyldige, og denne nøgle kan ikke benyttes til kryptering"
@@ -9458,6 +9464,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Brug den personlige adresse brugernavn@pm.me til at sende e-mails"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi fandt et problem med din DNS-konfiguration. Sørg for, at dine poster matcher instruktionerne nedenfor. Hvis problemet fortsætter, er vi nødt til at slå DKIM-signering fra."

@@ -257,13 +257,13 @@
         "Anterior"
       ],
       "Refer a friend": [
-        ""
-      ],
-      "refresh the page": [
-        "atualizar a página"
+        "Indicar um amigo"
       ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Remove bonuses": [
         "Remover bônus"
@@ -1958,6 +1958,9 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
+      "${ planName } plan": [
+        "Plano ${ planName }"
+      ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } na sua assinatura trocando para ${ annualBilling }"
       ],
@@ -1983,9 +1986,6 @@
         "+${ organization.BonusVPN } conexão para ProtonVPN (permite que você conecte mais dispositivos à VPN)",
         "+${ organization.BonusVPN } conexões para ProtonVPN (permite que você conecte mais dispositivos à VPN)"
       ],
-      "20 personal calendars": [
-        "20 calendários pessoais"
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto de 20% na sua assinatura com o cupom ${ code }"
       ],
@@ -1995,8 +1995,8 @@
       "30-days money back guarantee": [
         "Garantia de devolução do seu dinheiro por até 30 dias"
       ],
-      "5 email addresses/aliases": [
-        "5 endereços de e-mail/alias"
+      "5 email addresses": [
+        "5 endereços de e-mail"
       ],
       "5 GB storage": [
         "5GB de armazenamento"
@@ -2031,9 +2031,6 @@
       "ALL YOUR DATA WILL BE LOST!": [
         "TODOS OS SEUS DADOS SERÃO PERDIDOS!"
       ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Permite que você hospede seus próprios domínios de e-mail em ${ mailAppName }, ex. fulado.tal@exemplo.com"
-      ],
       "Amount below minimum (${ amount }).": [
         "Valor abaixo do mínimo (${ amount })."
       ],
@@ -2050,7 +2047,7 @@
         "Faturado como ${ billedPrice } por ano"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Cobrado no final do seu ciclo de faturamento atua (renova em ${ renewalDate })"
+        "Faturado no final do seu ciclo de faturamento atual (renova em ${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "As transações em Bitcoin podem levar algum tempo para serem confirmadas (até 24 horas). Uma vez confirmada, adicionaremos os créditos na sua conta. Após a confirmação da transação, você pode pagar sua fatura com os créditos."
@@ -2091,17 +2088,11 @@
       "Connections": [
         "Conexões"
       ],
-      "Continue with plus": [
-        "Continuar com plus"
+      "Continue with ${ planName }": [
+        "Continuar com ${ planName }"
       ],
-      "Continue with Plus today to avoid having access disabled at the end of your trial.": [
-        ""
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscriptions.": [
-        "Crie múltiplos endereços de e-mail para a sua identidade on-line, por exemplo JohnShopper@proton.me para contas de lojas e JohnNews@proton.me para assinaturas de notícias."
-      ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
+      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
+        "Continuar com ${ planName } hoje para evitar de ter o acesso desativar no final de sua avaliação."
       ],
       "Creating your account": [
         "Criando sua conta"
@@ -2174,9 +2165,6 @@
       ],
       "Free up some space or contact your administrator.": [
         "Libere espaço ou contate seu administrador."
-      ],
-      "Free VPN on a single device": [
-        "VPN gratuita para um único dispositivo"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa com velocidade de até 10 Gbps."
@@ -2310,9 +2298,6 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Uma vez que você clicar em \"Downgrade\", pode demorar alguns minutos para fazer o rebaixamento da sua conta para um plano gratuito. "
       ],
-      "Other options": [
-        "Outras opções"
-      ],
       "P2P": [
         "P2P"
       ],
@@ -2349,11 +2334,14 @@
       "Plus or Visionary subscription required": [
         "É necessária a assinatura Plus ou Visionária"
       ],
-      "Plus plan": [
-        ""
-      ],
       "Preview": [
         "Visualizar"
+      ],
+      "Priority support": [
+        "Suporte prioritário"
+      ],
+      "Proton Calendar": [
+        "Proton Calendar"
       ],
       "Proton can't help you recover any lost passwords": [
         "Proton não pode ajudá-lo a recuperar nenhuma senha perdida"
@@ -2416,14 +2404,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
       ],
+      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+        "Inicie com 500 MB e desbloqueie mais armazenamento pelo caminho. Espaço de armazenamento é compartilhando em conjunto com Mail, Calendar e Drive."
+      ],
       "Starter VPN service with P2P support.": [
         "Serviço Starter VPN com suporte a P2P."
       ],
       "Storage GB": [
         "Armazenamento GB"
-      ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Espaço de armazenamento é compartilhado em conjunto com o E-mail, Calendário e Drive."
       ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
@@ -2509,17 +2497,17 @@
       "Unlimited folders, labels, and filters": [
         "Pastas ilimitadas, marcadores e filtros"
       ],
+      "Unlimited messages": [
+        "Mensagens ilimitadas"
+      ],
       "Unsupported file": [
         "Arquivo não suportado"
-      ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use as credenciais a seguir ao se conectar aos servidores ProtonVPN sem o aplicativo. Exemplos: Tunnelblick no macOS, OpenVPN no GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Use seu próprio domínio personalizado de e-mail, por exemplo você@seunome.com"
       ],
       "Users": [
         "Usuários"
@@ -2641,8 +2629,8 @@
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Sua conta Proton existente pode ser usada para acessar todos os serviços da Proton. Por favor, inicie a sessão com ${ email }"
       ],
-      "Your free ProtonMail Plus trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
+      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
+        "Sua avaliação gratuita do ${ appName } ${ planName } terminará em ${ formattedTrialExpirationDate }."
       ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças"
@@ -3214,8 +3202,8 @@
       "Contact groups": [
         "Grupos de contato"
       ],
-      "Custom email addresses": [
-        "Endereços de e-mail personalizados"
+      "Custom domains": [
+        "Domínios personalizados"
       ],
       "Custom filters": [
         "Filtros personalizados"
@@ -3299,7 +3287,7 @@
         "Você tem certeza de que deseja desativar a autenticação de dois fatores?"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Sua avaliação gratuita terminou. O acesso a sua será desativada em breve. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -3626,7 +3614,7 @@
         "Acesso a ${ driveAppName } (beta)"
       ],
       "Adblocker (NetShield)": [
-        "Adblocker (NetShield)"
+        "Bloqueador de anúncios (NetShield)"
       ],
       "All ${ PLAN_NAMES[PLAN.PLUS] } plan features": [
         "Todos os recursos do plano ${ PLAN_NAMES[PLAN.PLUS] }"
@@ -3637,8 +3625,8 @@
       "Built-in Adblocker (NetShield)": [
         "Bloqueador de anúncios integrado (NetShield)"
       ],
-      "Custom email addresses": [
-        "Endereços de e-mail personalizados"
+      "Custom domains": [
+        "Domínios personalizados"
       ],
       "Early access to new products": [
         "Acesso antecipado a novos produtos"
@@ -3785,6 +3773,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to 18 months of ${ appName } ${ planName } for free": [
+        "Obtenha até 18 meses de ${ appName } ${ planName } gratuitamente"
+      ],
       "Invite friends and earn rewards!": [
         "Convide amigos e ganhe recompensas!"
       ]
@@ -3901,6 +3892,9 @@
       ]
     },
     "Title": {
+      "${ appName } ${ planName } trial": [
+        "Avaliação de ${ appName } ${ planName }"
+      ],
       "${ appName } customization": [
         "Personalização do ${ appName }"
       ],
@@ -4171,9 +4165,6 @@
       "Processing...": [
         "Processando..."
       ],
-      "ProtonMail Plus Trial": [
-        ""
-      ],
       "ProtonVPN clients": [
         "Clientes ProtonVPN"
       ],
@@ -4277,13 +4268,10 @@
         "Você já tem uma conta Proton"
       ],
       "Your account’s usage": [
-        ""
+        "Uso da sua conta"
       ],
       "Your current plan": [
         "O seu plano atual"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
       ],
       "Your plan": [
         "O seu plano"
@@ -4330,12 +4318,6 @@
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
         "Tenha acesso a todos os recursos pagos tanto do ProtonVPN quanto do ProtonMail (o serviço de e-mail criptografado que milhões de pessoas usam para proteger seus dados) com um único plano."
       ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Hospedar e-mails para os seus próprio(s) domínio(s) em ${ mailAppName }, ex. fulano.tal@exemplo.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Hospedar e-mails para os seus próprios domínios em ProtonMail, ex. fulano.tal@exemplo.com"
-      ],
       "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
         "Se você esquecer sua senha, você não terá mais acesso à sua conta ou aos seus dados. Por favor, salve a senha em um lugar seguro."
       ],
@@ -4368,6 +4350,9 @@
       ],
       "Use the personal address username@pm.me to send emails": [
         "Use o endereço pessoal nomedeusuário@pm.eu para enviar e-mails"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Use seu próprio domínio personalizado de e-mail, por exemplo você@seunome.com"
       ],
       "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
         "Nome de usuário que é usado para todos os serviços da Proton. Isto também pode ser usado mais tarde para criar uma conta segura do ProtonMail."
