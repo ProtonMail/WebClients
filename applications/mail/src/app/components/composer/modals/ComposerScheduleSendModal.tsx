@@ -139,7 +139,7 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
     }, [time, date]);
 
     const disabled = useMemo(() => {
-        const min = addSeconds(new Date(), 120);
+        const min = addSeconds(Date.now(), 120);
         return !date || !time || scheduleDateTime < min || scheduleDateTime > endOfDay(maxDate);
     }, [date, time, scheduleDateTime, minDate, maxDate]);
 

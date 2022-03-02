@@ -4,8 +4,8 @@ import { fireEvent } from '@testing-library/dom';
 import { getByText as getByTextDefault, getByTestId as getByTestIdDefault, act } from '@testing-library/react';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
-import { dateLocale } from '@proton/shared/lib/i18n';
 import { format } from 'date-fns';
+import { enUS } from 'date-fns/locale';
 import loudRejection from 'loud-rejection';
 import { render } from '../../../helpers/test/render';
 import { setFeatureFlags } from '../../../helpers/test/api';
@@ -118,6 +118,8 @@ describe('Composer scheduled messages', () => {
         setupMessage('Subject', [user as Recipient]);
         setupTest(true);
 
+        const dateSpy = jest.spyOn(Date, 'now').mockImplementation(() => new Date().setHours(12).valueOf());
+
         const { getByTestId, getByText } = await render(<Composer {...props} />, false);
 
         const sendActions = getByTestId('composer:send-actions');
@@ -139,7 +141,7 @@ describe('Composer scheduled messages', () => {
         expect(timeInput.value).toEqual('9:00 AM');
 
         // format today date to change the input
-        const todayDate = format(new Date(), 'PP', { locale: dateLocale });
+        const todayDate = format(new Date(Date.now()), 'PP', { locale: enUS });
 
         // set date input to today
         fireEvent.change(dateInput, { target: { value: todayDate } });
@@ -148,7 +150,7 @@ describe('Composer scheduled messages', () => {
         expect(dateInput.value).toEqual('Today');
         expect(timeInput.value).toEqual('9:00 AM');
 
-        const laterDate = format(addDays(new Date(), 5), 'PP', { locale: dateLocale });
+        const laterDate = format(addDays(new Date(Date.now()), 5), 'PP', { locale: enUS });
 
         // set date input to 5 days later
         fireEvent.change(dateInput, { target: { value: laterDate } });
@@ -156,11 +158,15 @@ describe('Composer scheduled messages', () => {
 
         expect(dateInput.value).toEqual(laterDate);
         expect(timeInput.value).toEqual('9:00 AM');
+
+        dateSpy.mockRestore();
     });
 
     it('should disabled schedule send button if date is not valid', async () => {
         setupMessage('Subject', [user as Recipient]);
         setupTest(true);
+
+        const dateSpy = jest.spyOn(Date, 'now').mockImplementation(() => new Date().setHours(12).valueOf());
 
         const { getByTestId } = await render(<Composer {...props} />, false);
 
@@ -179,7 +185,7 @@ describe('Composer scheduled messages', () => {
         const button = getByTestId('modal-footer:set-button') as HTMLButtonElement;
 
         // set date input to the past
-        const previousDate = format(addDays(new Date(), -5), 'PP', { locale: dateLocale });
+        const previousDate = format(addDays(new Date(), -5), 'PP', { locale: enUS });
 
         fireEvent.change(dateInput, { target: { value: previousDate } });
         fireEvent.keyDown(dateInput, { key: 'Enter' });
@@ -189,7 +195,7 @@ describe('Composer scheduled messages', () => {
         expect(button.disabled).toBeTruthy();
 
         // set date input too far in the future
-        const laterDate = format(addDays(new Date(), 50), 'PP', { locale: dateLocale });
+        const laterDate = format(addDays(new Date(), 50), 'PP', { locale: enUS });
 
         fireEvent.change(dateInput, { target: { value: laterDate } });
         fireEvent.keyDown(dateInput, { key: 'Enter' });
@@ -199,8 +205,8 @@ describe('Composer scheduled messages', () => {
         expect(button.disabled).toBeTruthy();
 
         // set date input to today, and time in the past
-        const todayDate = format(new Date(), 'PP', { locale: dateLocale });
-        const todayTime = format(addMinutes(new Date(), -5), 'p', { locale: dateLocale });
+        const todayDate = format(Date.now(), 'PP', { locale: enUS });
+        const todayTime = format(addMinutes(new Date(Date.now()), -5), 'p', { locale: enUS });
 
         fireEvent.change(dateInput, { target: { value: todayDate } });
         fireEvent.keyDown(dateInput, { key: 'Enter' });
@@ -211,5 +217,7 @@ describe('Composer scheduled messages', () => {
         expect(dateInput.value).toEqual('Today');
         expect(timeInput.value).toEqual(todayTime);
         expect(button.disabled).toBeTruthy();
+
+        dateSpy.mockRestore();
     });
 });
