@@ -1,0 +1,42 @@
+.ui-prominent {
+	--signal-danger: #cb7c7c;
+
+	--signal-warning: #debc0b;
+
+	--signal-success: #8eb67a;
+
+	--signal-info: #80a1d2;
+
+	--interaction-norm: #9397cd;
+
+	--interaction-weak: #9393ae;
+
+	--text-norm: white;
+	--text-weak: #c9c9de;
+	--text-hint: #b5b5c9;
+	--text-disabled: #a4a4bc;
+	--text-invert: black;
+
+	--field-norm: #b5b5c9;
+	--field-hover: #c9c9de;
+	--field-disabled: #9393ae;
+
+	--border-norm: #9393ae;
+	--border-weak: #83839f;
+
+	--background-norm: #505061;
+	--background-weak: #71718a;
+	--background-strong: #83839f;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(164 164 188 / 0.4);
+	--interaction-default-active: rgb(164 164 188 / 0.6);
+
+	/* Optional colors */
+
+	--optional-scrollbar-thumb-color: #9393ae;
+	--optional-scrollbar-thumb-hover-color: #a4a4bc;
+
+	--optional-logo-text-proton-color: white;
+	--optional-logo-text-product-color: #8a6eff;
+}

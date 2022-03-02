@@ -1,0 +1,55 @@
+:root,
+.ui-standard {
+	--primary: #9397cd;
+	--primary-contrast: white;
+
+	--signal-danger: #cb7c7c;
+
+	--signal-warning: #debc0b;
+
+	--signal-success: #8eb67a;
+
+	--signal-info: #80a1d2;
+
+	--interaction-norm: #9397cd;
+
+	--interaction-weak: #ced2df;
+
+	--text-norm: black;
+	--text-weak: #737386;
+	--text-hint: #aaaabd;
+	--text-disabled: #bcbcd0;
+	--text-invert: white;
+
+	--field-norm: #bcbcd0;
+	--field-hover: #aaaabd;
+	--field-disabled: #ced2df;
+
+	--border-norm: #ced2df;
+	--border-weak: #d9dfe8;
+
+	--background-norm: white;
+	--background-weak: #e6eaf0;
+	--background-strong: #d9dfe8;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(188 188 208 / 0.2);
+	--interaction-default-active: rgb(188 188 208 / 0.3);
+
+	--shadow-norm-opacity: 0.1;
+	--shadow-lifted-opacity: 0.16;
+
+	--backdrop-norm: rgb(80 80 97 / 0.48);
+
+	/* Optional colors */
+
+	--optional-scrollbar-thumb-color: #ced2df;
+	--optional-scrollbar-thumb-hover-color: #bcbcd0;
+
+	--optional-main-border-color: transparent;
+
+	--optional-email-item-read-background-color: var(--background-weak);
+
+	--optional-logo-text-proton-color: #0c0c14;
+	--optional-logo-text-product-color: #6d4aff;
+}
