@@ -44,6 +44,7 @@ const ContactResignModal = ({
     onError,
     onResolve,
     onReject,
+    onClose,
     ...rest
 }: Props) => {
     const getUserKeys = useGetUserKeys();
@@ -62,8 +63,6 @@ const ContactResignModal = ({
 
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const api = useApi();
-
-    const { onClose } = rest;
 
     useEffect(() => {
         const getContactFingerprintsByEmailMap = async (contactID: string) => {

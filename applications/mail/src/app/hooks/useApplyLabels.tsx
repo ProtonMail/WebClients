@@ -286,7 +286,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const dispatch = useDispatch();
     let canUndo = true; // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
-    const { modal: moveScheduledModal, handleShowModal } = useModalTwo(MoveScheduledModal);
+    const [moveScheduledModal, handleShowModal] = useModalTwo(MoveScheduledModal);
 
     /*
      * Opens a modal when finding scheduled messages that are moved to trash.
