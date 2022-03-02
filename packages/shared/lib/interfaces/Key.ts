@@ -1,5 +1,6 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { KEY_FLAG } from '../constants';
+import { RequireSome } from './utils';
 
 export interface KeyWithRecoverySecret extends Key {
     RecoverySecret: string;
@@ -23,6 +24,8 @@ export interface Key {
     RecoverySecretSignature: string | null;
 }
 
+export type AddressKey = RequireSome<Key, 'Flags'>;
+
 export interface KeyPair {
     privateKey: OpenPGPKey;
     publicKey: OpenPGPKey;
@@ -37,6 +40,8 @@ export interface DecryptedKey extends KeyPair {
     ID: string;
     Flags?: KEY_FLAG;
 }
+
+export type DecryptedAddressKey = RequireSome<DecryptedKey, 'Flags'>;
 
 export interface InactiveKey {
     Key: Key;
