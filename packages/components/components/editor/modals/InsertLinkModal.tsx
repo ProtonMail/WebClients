@@ -49,17 +49,14 @@ const EditorLinkModal = ({
         [LINK_TYPES.WEB]: {
             label: c('Info').t`URL link`,
             placeholder: c('Placeholder').t`Link`,
-            'test-placeholder': c('Placeholder').t`Fill in the URL link and text to test your link`,
         },
         [LINK_TYPES.EMAIL]: {
             label: c('Info').t`Email address`,
             placeholder: c('Placeholder').t`Email address`,
-            'test-placeholder': c('Placeholder').t`Fill in the email address and text to test your link`,
         },
         [LINK_TYPES.PHONE]: {
             label: c('Info').t`Phone number`,
             placeholder: c('Placeholder').t`Phone number`,
-            'test-placeholder': c('Placeholder').t`Fill in the phone number and text to test your link`,
         },
     };
 
@@ -146,7 +143,7 @@ const EditorLinkModal = ({
                             {label}
                         </Href>
                     ) : (
-                        <span className="placeholder">{i18n[type]['test-placeholder']}</span>
+                        <span className="placeholder">{c('Placeholder').t`Please insert link first`}</span>
                     )}
                 </Field>
             </Row>
