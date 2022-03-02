@@ -101,7 +101,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
-    const { validator, onFormSubmit } = useFormErrors();
+    const { validator, onFormSubmit, reset } = useFormErrors();
 
     const [User] = useUser();
 
@@ -299,6 +299,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                             totp: '',
                             oldPassword: '',
                         });
+                        reset();
                         setLoading(false);
                     } catch (e: any) {
                         setLoading(false);
