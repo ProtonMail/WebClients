@@ -12,36 +12,45 @@ export interface ThemeConfig {
 
 const config: ThemeConfig[] = [
     {
-        output: './themes/contrast.theme.css',
+        output: './themes/proton.theme.css',
         files: [
             {
-                path: './themes/contrast-standard-base.css',
+                path: './themes/proton/standard-base.css',
                 type: 'light',
             },
         ],
     },
     {
-        output: './themes/dark.theme.css',
+        output: './themes/carbon.theme.css',
         files: [
             {
-                path: './themes/dark-standard-base.css',
+                path: './themes/carbon/standard-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/dark-prominent-base.css',
+                path: './themes/carbon/prominent-base.css',
+                type: 'dark',
+            },
+        ],
+    },
+    {
+        output: './themes/contrast.theme.css',
+        files: [
+            {
+                path: './themes/contrast/standard-base.css',
                 type: 'light',
             },
         ],
     },
     {
-        output: './themes/default.theme.css',
+        output: './themes/duotone.theme.css',
         files: [
             {
-                path: './themes/default-standard-base.css',
+                path: './themes/duotone/standard-base.css',
                 type: 'light',
             },
             {
-                path: './themes/default-prominent-base.css',
+                path: './themes/duotone/prominent-base.css',
                 type: 'dark',
             },
         ],
@@ -50,21 +59,12 @@ const config: ThemeConfig[] = [
         output: './themes/legacy.theme.css',
         files: [
             {
-                path: './themes/legacy-standard-base.css',
+                path: './themes/legacy/standard-base.css',
                 type: 'light',
             },
             {
-                path: './themes/legacy-prominent-base.css',
+                path: './themes/legacy/prominent-base.css',
                 type: 'dark',
-            },
-        ],
-    },
-    {
-        output: './themes/light.theme.css',
-        files: [
-            {
-                path: './themes/light-standard-base.css',
-                type: 'light',
             },
         ],
     },
@@ -72,11 +72,11 @@ const config: ThemeConfig[] = [
         output: './themes/monokai.theme.css',
         files: [
             {
-                path: './themes/monokai-standard-base.css',
+                path: './themes/monokai/standard-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/monokai-prominent-base.css',
+                path: './themes/monokai/prominent-base.css',
                 type: 'dark',
             },
         ],

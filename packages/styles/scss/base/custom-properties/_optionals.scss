@@ -7,6 +7,10 @@
 :root,
 .ui-standard,
 .ui-prominent {
+	--link-norm: var(--optional-link-norm, var(--interaction-norm));
+	--link-hover: var(--optional-link-hover, var(--interaction-norm-hover));
+	--link-active: var(--optional-link-active, var(--interaction-norm-active));
+
 	--selection-background-color: var(--optional-selection-background-color, var(--primary));
 	--selection-text-color: var(--optional-selection-text-color, var(--primary-contrast));
 
@@ -39,8 +43,8 @@
 	--email-item-unread-icon-background-color: var(--optional-email-item-unread-icon-background-color, var(--background-strong));
 	--email-item-unread-icon-text-color: var(--optional-email-item-unread-icon-text-color, inherit);
 
-	--email-item-read-background-color: var(--optional-email-item-read-background-color, var(--background-weak));
-	--email-item-read-text-color: var(--optional-email-item-read-text-color, var(--text-norm));
+	--email-item-read-background-color: var(--optional-email-item-read-background-color, var(--background-norm));
+	--email-item-read-text-color: var(--optional-email-item-read-text-color, var(--text-weak));
 	--email-item-read-icon-background-color: var(--optional-email-item-read-icon-background-color, var(--background-strong));
 	--email-item-read-icon-text-color: var(--optional-email-item-read-icon-text-color, inherit);
 
@@ -78,8 +82,8 @@
 	--mark-text-color: var(--optional-mark-text-color, black);
 	--mark-font-weight: var(--optional-mark-font-weight, normal);
 
-	--modal-background-color: var(--optional-modal-background-color);
-	--modal-text-color: var(--optional-modal-text-color);
+	--modal-background-color: var(--optional-modal-background-color, var(--background-norm));
+	--modal-text-color: var(--optional-modal-text-color, var(--text-norm));
 
 	--file-preview-text-color: var(--optional-file-preview-text-color, var(--text-norm));
 	--file-preview-background-color: var(--optional-file-preview-background-color, var(--background-norm));

@@ -47,7 +47,8 @@ function generateTheme({ source, type }: { source: string; type: ThemeFileType }
 
         const buttonShades = genButtonShades(base, isLight);
 
-        const buttonContrast = tiny.mostReadable(base, ['white', 'black']);
+        /* here we don't use tiny.mostReadable to prioritize white against black color. */
+        const buttonContrast = tiny(tiny.isReadable(base, 'white', { level: 'AA', size: 'large' }) ? 'white' : 'black');
 
         const declarations = [...buttonShades, buttonContrast].map((color, i) =>
             list.createItem({
