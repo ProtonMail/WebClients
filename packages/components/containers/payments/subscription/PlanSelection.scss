@@ -95,10 +95,9 @@
 		}
 
 		&-main-price {
-			font-weight: bold;
 			.amount,
 			.currency {
-				font-size: 2em;
+				font-size: em(48);
 				@include respond-to(1000) {
 					font-size: 1.8em;
 				}

@@ -34,7 +34,7 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
     const plan = subscription ? getPlan(subscription, service) : FREE_PLAN;
     const title = subscription && plan ? PLAN_NAMES[plan.Name as PLANS] : PLAN_NAMES[PLANS.FREE];
     const cycle = subscription ? subscription.Cycle : CYCLE.MONTHLY;
-    const amount = subscription ? subscription.Amount / cycle : 0;
+    const amount = subscription && plan !== undefined ? subscription.Amount / cycle : 0;
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
     const {
         UsedDomains = 0,
@@ -112,11 +112,10 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
                 {user.isFree && isVpnApp ? null : (
                     <>
                         <StrippedItem icon="check">
-                            <label id="usedSpaceLabel" className="block">{c('Label')
-                                .t`${humanUsedSpace} of ${humanMaxSpace}`}</label>
+                            <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                             <Meter
-                                className="mt1"
-                                aria-labelledby="usedSpaceLabel"
+                                className="mt1 mb1"
+                                aria-hidden="true"
                                 value={Math.ceil(percentage(MaxSpace, UsedSpace))}
                             />
                         </StrippedItem>

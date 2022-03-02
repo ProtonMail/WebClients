@@ -43,9 +43,9 @@ const getCycleUnit = (planName: PLANS) => {
         case PLANS.DRIVE_PRO:
         case PLANS.BUNDLE_PRO:
         case PLANS.ENTERPRISE:
-            return c('Cycle').t`per user per month`;
+            return c('Cycle').t`/ user per month`;
         default:
-            return c('Cycle').t`per month`;
+            return c('Cycle').t`/ month`;
     }
 };
 
@@ -124,7 +124,7 @@ const PlanCard = ({
                     ) : (
                         <Price currency={currency}>{price / cycle}</Price>
                     )}
-                    <div className="color-weak">{getCycleUnit(planName)} *</div>
+                    <span className="color-weak ml1">{getCycleUnit(planName)} *</span>
                 </div>
 
                 <PrimaryButton
@@ -135,7 +135,7 @@ const PlanCard = ({
                 >
                     {action}
                 </PrimaryButton>
-                <div className="flex flex-column flex-nowrap flex-item-fluid-auto">
+                <div className="flex flex-column flex-nowrap flex-item-fluid-auto mt0-5">
                     {features}
                     <div className="pt1 mtauto pb1">
                         {planName === PLANS.FREE ? (
