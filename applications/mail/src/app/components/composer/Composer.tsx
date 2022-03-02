@@ -350,7 +350,9 @@ const Composer = (
      * If a message is imported through EasySwitch or the sender address has been deleted in the mean time,
      * we want to replace the Sender by the account default address
      */
-    const { verifyDraftSender } = useDraftSenderVerification({ onChange: handleChange });
+    const { verifyDraftSender, modal: senderVerificationModal } = useDraftSenderVerification({
+        onChange: handleChange,
+    });
 
     useEffect(() => {
         const handleVerify = async () => {
@@ -623,6 +625,7 @@ const Composer = (
                 />
             </div>
             {waitBeforeScheduleModal}
+            {senderVerificationModal}
         </div>
     );
 };

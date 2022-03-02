@@ -25,7 +25,7 @@ const CACHE_KEY = 'Draft';
 export const useDraftVerifications = () => {
     const getAddresses = useGetAddresses();
     const getUser = useGetUser();
-    const { modal: sendingFromDefaultAddressModal, handleShowModal } = useModalTwo(SendingFromDefaultAddressModal);
+    const [sendingFromDefaultAddressModal, handleShowModal] = useModalTwo(SendingFromDefaultAddressModal);
 
     const handleDraftVerifications = useCallback(
         async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageState) => {
@@ -33,7 +33,7 @@ export const useDraftVerifications = () => {
 
             if (!isPaid(user) && findSender(addresses, referenceMessage?.data)?.Email.endsWith('@pm.me')) {
                 const email = findSender(addresses, referenceMessage?.data, true)?.Email;
-                await handleShowModal({ email: email });
+                await handleShowModal({ email });
             }
         },
         [getUser, getAddresses]
