@@ -120,21 +120,44 @@ const mockEncryptionPreferences: { [email: string]: EncryptionPreferences } = {
     },
 };
 
-jest.mock('@proton/components/hooks/useGetEncryptionPreferences.ts', () => {
+const mockCreateModalSpy = jest.fn(({ ...props }) => {
+    props.props.onSubmit();
+});
+
+jest.mock('@proton/components', () => {
+    const componentsMock = jest.requireActual('@proton/components');
+
     const useGetEncryptionPreferences = () => {
         const getEncryptionPreferences: (emailAddress: string) => EncryptionPreferences = (emailAddress) =>
             mockEncryptionPreferences[emailAddress];
         return getEncryptionPreferences;
     };
-    return useGetEncryptionPreferences;
+
+    return {
+        __esModule: true,
+        ...componentsMock,
+        useModals: function () {
+            return {
+                createModal: mockCreateModalSpy,
+            };
+        },
+        useGetEncryptionPreferences,
+    };
 });
 
-const mockCreateModalSpy = jest.fn(({ props }) => props.onSubmit());
-jest.mock('@proton/components/hooks/useModals.ts', () => {
-    const useModals = () => ({
-        createModal: mockCreateModalSpy,
-    });
-    return useModals;
+const originalResizeObserver = window.ResizeObserver;
+const ResizeObserverMock = jest.fn(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+}));
+
+beforeAll(() => {
+    window.ResizeObserver = ResizeObserverMock;
+});
+
+afterAll(() => {
+    window.ResizeObserver = originalResizeObserver;
 });
 
 describe('useSendVerifications', () => {
@@ -146,6 +169,7 @@ describe('useSendVerifications', () => {
     afterEach(clearAll);
 
     describe('extended verifications of last-minute preferences', () => {
+        // eslint-disable-next-line no-only-tests/no-only-tests
         it('should warn user on deletion of contact with pinned keys (internal)', async () => {
             const recipient = 'internal.deleted@test.email';
             const cachedPreferences: SendInfo = {
