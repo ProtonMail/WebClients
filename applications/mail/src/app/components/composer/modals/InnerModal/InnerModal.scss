@@ -1,0 +1,213 @@
+@import '~@proton/styles/scss/config';
+
+$field-container: rem(260) !default;
+$modal-max-width: rem(700) !default;
+
+$modal-breakpoint-width: 52em !default;
+$breakpoint-low-height-modal: em(500, 16) !default;
+
+$modal-max-height: 80% !default;
+
+$modal-full-dimension: 98% !default;
+
+.inner-modal {
+	position: relative;
+	inline-size: $modal-max-width;
+	max-block-size: $modal-max-height;
+	max-inline-size: $modal-max-width;
+	background: var(--background-norm);
+	color: var(--text-norm);
+	padding: 0;
+	overflow: hidden;
+	border-radius: var(--border-radius-lg);
+	box-shadow: var(--shadow-lifted);
+	animation: anime-inner-modal-in ease 0.15s 1 normal;
+	animation-fill-mode: both;
+	animation-delay: 0.1s; // stupid fix for Safari crazy display bug
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	cursor: default;
+
+	&-header {
+		padding-block: rem(30) rem(15);
+		padding-inline: rem(30);
+		flex: 0;
+		flex-shrink: 0;
+	}
+
+	&-title {
+		font-size: rem(22);
+		line-height: 1.5;
+		margin-block-end: 0;
+	}
+
+	&-content {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		overflow: hidden;
+		position: relative;
+	}
+
+	&-content-inner {
+		position: relative;
+		overflow-x: hidden;
+		overflow-y: auto;
+		flex: 1 1 auto;
+		padding-block: 0;
+		padding-inline: rem(30);
+
+		background: var(--background-norm) no-repeat;
+
+		& > p:first-child {
+			margin-block-start: 0;
+		}
+
+		& > p:last-child {
+			margin-block-end: 0;
+		}
+	}
+
+	&-footer {
+		padding-block: rem(15) rem(30);
+		padding-inline: rem(30);
+		flex: 0;
+		flex-shrink: 0;
+
+		[class*='button'] {
+			// only for Safari the ugly
+			min-block-size: rem(34);
+		}
+
+		// single button on right
+		[class*='button']:only-child {
+			margin-inline-start: auto;
+		}
+
+		// for vertically displayed buttons
+		&.flex-column {
+			[class*='button'] + [class*='button'] {
+				margin-block-start: 0.5em;
+			}
+		}
+	}
+
+	&-close {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-end: 0;
+		display: flex;
+		flex-wrap: wrap;
+		overflow: hidden;
+		font-size: 1.25em;
+		z-index: 1;
+	}
+
+	/* overlay covers everything */
+	&-overlay {
+		position: fixed;
+		inset: 0;
+		background: var(--backdrop-norm);
+		z-index: $layer-modals;
+		animation: anime-inner-modal-overlay-in ease 0.5s 1 normal;
+	}
+
+	&-overlay--out {
+		animation: anime-inner-modal-overlay-out ease 0.5s 1 normal;
+		animation-fill-mode: forwards;
+	}
+
+	&-container {
+		position: fixed;
+		inset: 0;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		z-index: $layer-modals;
+
+		&.is-behind-backdrop {
+			z-index: $layer-modals - 1;
+		}
+
+		/* for very large inputs in modals, like rich text editor */
+		.field-container--full {
+			inline-size: calc(100% - var(--label-width, #{$label-width}));
+
+			@include respond-to(1360) {
+				inline-size: $field-container;
+			}
+
+			@include respond-to(830) {
+				inline-size: calc(100% - var(--label-width, #{$label-width}));
+			}
+
+			@include respond-to($breakpoint-small) {
+				inline-size: 100%;
+			}
+		}
+	}
+
+	.inner-modal--auto {
+		inline-size: auto;
+	}
+}
+
+@keyframes anime-inner-modal-overlay-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes anime-inner-modal-overlay-out {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes anime-inner-modal-in {
+	0% {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@media (max-height: $breakpoint-low-height-modal) {
+	.inner-modal {
+		max-block-size: $modal-full-dimension;
+	}
+
+	.inner-modal-footer {
+		padding-block-end: rem(10);
+	}
+
+	.inner-modal-header {
+		padding-block-start: rem(10);
+		padding-block-end: rem(5);
+	}
+}
+
+// small viewports
+@media (max-width: $modal-breakpoint-width) {
+	.inner-modal {
+		margin: 1%;
+		min-inline-size: 0;
+		inline-size: 98%;
+		max-inline-size: 98%;
+		max-block-size: 98%;
+		align-self: center;
+	}
+}

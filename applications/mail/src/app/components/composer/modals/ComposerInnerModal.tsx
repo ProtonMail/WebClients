@@ -1,15 +1,12 @@
 import { ReactNode, useRef } from 'react';
 import { c } from 'ttag';
-import {
-    HeaderModal,
-    FooterModal,
-    ContentModal,
-    InnerModal,
-    Button,
-    PrimaryButton,
-    useFocusTrap,
-    useHotkeys,
-} from '@proton/components';
+import { Button, PrimaryButton, useFocusTrap, useHotkeys } from '@proton/components';
+import InnerModalHeader from './InnerModal/InnerModalHeader';
+import InnerModalContent from './InnerModal/InnerModalContent';
+import InnerModalFooter from './InnerModal/InnerModalFooter';
+import InnerModalScroll from './InnerModal/InnerModalScroll';
+
+import './InnerModal/InnerModal.scss';
 
 interface Props {
     title: ReactNode;
@@ -31,6 +28,7 @@ const ComposerInnerModal = ({
     submit,
     submitActions,
     displayCancel = true,
+    ...rest
 }: Props) => {
     const rootRef = useRef<HTMLDivElement>(null);
     const focusTrapProps = useFocusTrap({
@@ -52,14 +50,15 @@ const ComposerInnerModal = ({
             className="composer-inner-modal absolute upper-layer w100 h100 flex flex-justify-center flex-align-items-center"
             ref={rootRef}
             {...focusTrapProps}
+            {...rest}
         >
-            <div className="modal">
-                <HeaderModal modalTitleID="" noEllipsis hasClose={false} onClose={onCancel}>
+            <div className="inner-modal">
+                <InnerModalHeader modalTitleID="" noEllipsis hasClose={false} onClose={onCancel}>
                     {title}
-                </HeaderModal>
-                <ContentModal onSubmit={onSubmit as () => undefined} onReset={onCancel as () => undefined}>
-                    <InnerModal>{children}</InnerModal>
-                    <FooterModal className="flex flex-nowrap flex-column">
+                </InnerModalHeader>
+                <InnerModalContent onSubmit={onSubmit} onReset={onCancel}>
+                    <InnerModalScroll>{children}</InnerModalScroll>
+                    <InnerModalFooter className="flex flex-nowrap flex-column">
                         {submitActions}
                         {!submitActions && (
                             <PrimaryButton
@@ -76,8 +75,8 @@ const ComposerInnerModal = ({
                                 {c('Action').t`Cancel`}
                             </Button>
                         )}
-                    </FooterModal>
-                </ContentModal>
+                    </InnerModalFooter>
+                </InnerModalContent>
             </div>
         </div>
     );

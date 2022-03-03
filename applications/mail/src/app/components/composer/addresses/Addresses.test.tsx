@@ -4,7 +4,7 @@ import { fireEvent, getAllByRole } from '@testing-library/dom';
 import { act, getByText } from '@testing-library/react';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { addApiMock, addToCache, clearAll, getModal, minimalCache, render } from '../../../helpers/test/helper';
+import { addApiMock, addToCache, clearAll, minimalCache, render } from '../../../helpers/test/helper';
 import Addresses from './Addresses';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { mergeMessages } from '../../../helpers/message/messages';
@@ -134,7 +134,7 @@ describe('Addresses', () => {
         // Open the modal
         fireEvent.click(toButton);
 
-        const { modal } = getModal();
+        const modal = getByTestId('modal:contactlist');
 
         // Check if the modal is displayed with all contacts
         getByText(modal, 'Insert contacts');
@@ -143,11 +143,11 @@ describe('Addresses', () => {
         getByText(modal, contactEmails[2].Name);
 
         // Expect contacts "email1" and "email2" to be checked by default
-        const checkedCheckboxes = getAllByRole(modal, 'checkbox', { checked: true });
+        const checkedCheckboxes = getAllByRole(modal, 'checkbox', { checked: true, hidden: true });
         expect(checkedCheckboxes.length).toEqual(2);
 
         // Expect contact "email3" and "select all" checkboxes not to be checked
-        const notCheckedCheckboxes = getAllByRole(modal, 'checkbox', { checked: false });
+        const notCheckedCheckboxes = getAllByRole(modal, 'checkbox', { checked: false, hidden: true });
         expect(notCheckedCheckboxes.length).toEqual(2);
 
         await act(async () => {
@@ -156,7 +156,7 @@ describe('Addresses', () => {
         });
 
         // Check if all checkboxes are now checked
-        const checkedCheckboxesAfterClick = getAllByRole(modal, 'checkbox', { checked: true });
+        const checkedCheckboxesAfterClick = getAllByRole(modal, 'checkbox', { checked: true, hidden: true });
         expect(checkedCheckboxesAfterClick.length).toEqual(4);
 
         await act(async () => {

@@ -328,7 +328,7 @@
 	&-inner-modal {
 		background: var(--backdrop-norm);
 
-		.modal {
+		.inner-modal {
 			inline-size: rem(340);
 			max-block-size: 90%;
 			@include respond-to($breakpoint-small) {
