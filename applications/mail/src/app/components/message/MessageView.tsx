@@ -314,9 +314,8 @@ const MessageView = (
         <article
             ref={elementRef}
             className={classnames([
-                'message-container m0-5 mb1 outline-none',
+                'message-container m0-5 mb1 outline-none relative',
                 expanded && 'is-opened',
-                hasAttachments(message.data) && 'message-container--hasAttachment',
                 hasFocus && 'is-focused',
             ])}
             style={{ '--index': conversationIndex * 2 }}

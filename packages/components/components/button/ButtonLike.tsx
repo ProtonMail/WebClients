@@ -49,6 +49,10 @@ interface ButtonLikeOwnProps {
      */
     icon?: boolean;
     /**
+     * If true, same padding-inline as padding-block.
+     */
+    square?: boolean;
+    /**
      * If true, this button is part of a button group.
      */
     group?: boolean;
@@ -73,6 +77,7 @@ const ButtonLike: <E extends ElementType = typeof defaultElement>(props: ButtonL
                 fullWidth,
                 pill,
                 icon,
+                square = false,
                 group,
                 ...restProps
             }: ButtonLikeProps<E>,
@@ -91,6 +96,7 @@ const ButtonLike: <E extends ElementType = typeof defaultElement>(props: ButtonL
                 !isUnderlineShape && pill && 'button-pill',
                 !isUnderlineShape && icon && 'button-for-icon',
                 group && 'button-group-item',
+                square && 'button-square',
                 size !== 'medium' && `button-${size}`,
                 `button-${actualShape}-${actualColor}`,
                 restProps.as !== 'button' ? 'inline-block text-center' : '',

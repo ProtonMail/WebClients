@@ -2,10 +2,10 @@ import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getOriginalTo, isUnsubscribed } from '@proton/shared/lib/mail/messages';
 import {
     Icon,
-    Href,
     Alert,
     ConfirmModal,
-    InlineLinkButton,
+    Tooltip,
+    Button,
     generateUID,
     useNotifications,
     useAddresses,
@@ -202,29 +202,25 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     };
 
     return (
-        <div className="bg-norm rounded border p0-5 mb0-5 flex flex-nowrap" data-testid="unsubscribe-banner">
-            <Icon name="envelope" className="flex-item-noshrink mtauto mbauto" />
-            <span className="pl0-5 pr0-5 flex-item-fluid">
-                <span className="mr0-25">{c('Info').t`This message is from a mailing list.`}</span>
-                <Href
-                    className="inline-block mr1"
-                    href="https://protonmail.com/support/knowledge-base/auto-unsubscribe"
-                >
-                    {c('Info').t`Learn more`}
-                </Href>
-            </span>
-            <span className="flex-item-noshrink flex">
-                {isUnsubscribed(message.data) ? (
-                    c('Status').t`Unsubscribed`
-                ) : loading ? (
-                    c('Status').t`Unsubscribing...`
-                ) : (
-                    <InlineLinkButton className="text-underline" onClick={() => withLoading(handleClick())}>
-                        {loading ? c('Action').t`Unsubscribing` : c('Action').t`Unsubscribe`}
-                    </InlineLinkButton>
-                )}
-            </span>
-        </div>
+        <Tooltip title={c('Info').t`This message is from a mailing list.`}>
+            <Button
+                onClick={() => withLoading(handleClick())}
+                size="small"
+                className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 mb0-5 py0-25"
+                data-testid="unsubscribe-banner"
+            >
+                <Icon name="envelope" className="flex-item-noshrink" />
+                <span className="ml0-5">
+                    {isUnsubscribed(message.data)
+                        ? c('Status').t`Unsubscribed from mailing list`
+                        : loading
+                        ? c('Status').t`Unsubscribing from mailing list...`
+                        : loading
+                        ? c('Action').t`Unsubscribing`
+                        : c('Action').t`Unsubscribe from mailing list`}
+                </span>
+            </Button>
+        </Tooltip>
     );
 };
 

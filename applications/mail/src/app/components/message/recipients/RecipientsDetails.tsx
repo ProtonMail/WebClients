@@ -1,16 +1,20 @@
 import { c } from 'ttag';
+import { HighlightMetadata } from '@proton/encrypted-search';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientType from './RecipientType';
 import RecipientItem from './RecipientItem';
-import MailRecipientsList from './MailRecipientsList';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import EORecipientsList from '../../eo/message/recipients/EORecipientsList';
+import MailRecipientList from './MailRecipientList';
 
 interface Props {
     message: MessageState;
     mapStatusIcons?: MapStatusIcons;
     isLoading: boolean;
     highlightKeywords?: boolean;
+    highlightMetadata?: HighlightMetadata;
+    isDetailsModal?: boolean;
+    showDropdown?: boolean;
     isOutside?: boolean;
 }
 
@@ -19,60 +23,122 @@ const RecipientsDetails = ({
     mapStatusIcons,
     isLoading,
     highlightKeywords = false,
-    isOutside = false,
+    highlightMetadata,
+    isDetailsModal = false,
+    showDropdown,
+    isOutside,
 }: Props) => {
     const { ToList = [], CCList = [], BCCList = [] } = message?.data || {};
 
     const undisclosedRecipients = ToList.length + CCList.length + BCCList.length === 0;
 
+    const toRecipientsList = (
+        <>
+            {!isOutside ? (
+                <MailRecipientList
+                    list={ToList}
+                    mapStatusIcons={mapStatusIcons}
+                    isLoading={isLoading}
+                    highlightKeywords={highlightKeywords}
+                    highlightMetadata={highlightMetadata}
+                    showDropdown={showDropdown}
+                />
+            ) : (
+                <EORecipientsList list={ToList} isLoading={isLoading} showDropdown={showDropdown} />
+            )}
+        </>
+    );
+
+    const ccRecipientsList = (
+        <>
+            {!isOutside ? (
+                <MailRecipientList
+                    list={CCList}
+                    mapStatusIcons={mapStatusIcons}
+                    isLoading={isLoading}
+                    highlightKeywords={highlightKeywords}
+                    highlightMetadata={highlightMetadata}
+                    showDropdown={showDropdown}
+                />
+            ) : (
+                <EORecipientsList list={CCList} isLoading={isLoading} showDropdown={showDropdown} />
+            )}
+        </>
+    );
+
+    const bccRecipientsList = (
+        <>
+            {!isOutside ? (
+                <MailRecipientList
+                    list={BCCList}
+                    mapStatusIcons={mapStatusIcons}
+                    isLoading={isLoading}
+                    highlightKeywords={highlightKeywords}
+                    highlightMetadata={highlightMetadata}
+                    showDropdown={showDropdown}
+                />
+            ) : (
+                <EORecipientsList list={BCCList} isLoading={isLoading} showDropdown={showDropdown} />
+            )}
+        </>
+    );
+
+    const undisclosedRecipientsItem = (
+        <RecipientItem
+            recipientOrGroup={{}}
+            isLoading={isLoading}
+            showDropdown={showDropdown}
+            highlightMetadata={highlightMetadata}
+            isOutside={isOutside}
+        />
+    );
+
     return (
-        <div className="flex flex-column">
-            {ToList.length > 0 && (
-                <RecipientType label={c('Label').t`To:`}>
-                    {!isOutside ? (
-                        <MailRecipientsList
-                            list={ToList}
-                            mapStatusIcons={mapStatusIcons}
-                            isLoading={isLoading}
-                            highlightKeywords={highlightKeywords}
-                        />
-                    ) : (
-                        <EORecipientsList list={ToList} isLoading={isLoading} />
+        <div className="flex flex-column flex-align-items-start flex-item-fluid">
+            {!isDetailsModal ? (
+                <>
+                    {ToList.length > 0 && <RecipientType label={c('Label').t`To`}>{toRecipientsList}</RecipientType>}
+                    {CCList.length > 0 && <RecipientType label={c('Label').t`CC`}>{ccRecipientsList}</RecipientType>}
+                    {BCCList.length > 0 && <RecipientType label={c('Label').t`BCC`}>{bccRecipientsList}</RecipientType>}
+                    {undisclosedRecipients && (
+                        <RecipientType label={c('Label').t`To`}>{undisclosedRecipientsItem}</RecipientType>
                     )}
-                </RecipientType>
-            )}
-            {CCList.length > 0 && (
-                <RecipientType label={c('Label').t`CC:`}>
-                    {!isOutside ? (
-                        <MailRecipientsList
-                            list={CCList}
-                            mapStatusIcons={mapStatusIcons}
-                            isLoading={isLoading}
-                            highlightKeywords={highlightKeywords}
-                        />
-                    ) : (
-                        <EORecipientsList list={CCList} isLoading={isLoading} />
+                </>
+            ) : (
+                <>
+                    {ToList.length > 0 && (
+                        <div className="mb1">
+                            <div className="mb0-5">
+                                <strong className="mb0-5">{c('Title').t`Recipients`}</strong>
+                            </div>
+                            {toRecipientsList}
+                        </div>
                     )}
-                </RecipientType>
-            )}
-            {BCCList.length > 0 && (
-                <RecipientType label={c('Label').t`BCC:`}>
-                    {!isOutside ? (
-                        <MailRecipientsList
-                            list={BCCList}
-                            mapStatusIcons={mapStatusIcons}
-                            isLoading={isLoading}
-                            highlightKeywords={highlightKeywords}
-                        />
-                    ) : (
-                        <EORecipientsList list={BCCList} isLoading={isLoading} />
+                    {CCList.length > 0 && (
+                        <div className="mb1">
+                            <div className="mb0-5">
+                                <strong className="mb0-5">{c('Title').t`CC`}</strong>
+                            </div>
+                            {ccRecipientsList}
+                        </div>
                     )}
-                </RecipientType>
-            )}
-            {undisclosedRecipients && (
-                <RecipientType label={c('Label').t`To:`}>
-                    <RecipientItem recipientOrGroup={{}} isLoading={isLoading} isOutside={isOutside} />
-                </RecipientType>
+                    {BCCList.length > 0 && (
+                        <div className="mb1">
+                            <div className="mb0-5">
+                                <strong className="mb0-5">{c('Title').t`BCC`}</strong>
+                            </div>
+                            {bccRecipientsList}
+                        </div>
+                    )}
+                    {undisclosedRecipients && (
+                        <div className="mb1">
+                            <div className="mb0-5">
+                                <strong className="mb0-5">{c('Title').t`BCC`}</strong>
+                            </div>
+                            {undisclosedRecipientsItem}
+                        </div>
+                    )}
+                </>
             )}
         </div>
     );

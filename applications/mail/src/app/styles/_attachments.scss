@@ -8,6 +8,34 @@
 	svg[aria-busy='true'] {
 		background-size: 16px;
 	}
+	transition: 0.15s easing(easeOutQuint), background-position 0s;
+
+	&-size {
+		visibility: visible;
+	}
+	&-download {
+		position: absolute;
+		inset-block: 0;
+		inset-inline-end: 0;
+		inline-size: rem(36);
+		visibility: hidden;
+		// transition to work
+	}
+
+	&:hover,
+	&:focus,
+	&:focus-within,
+	&[aria-busy='true'] {
+		background-color: transparent;
+
+		.message-attachmentSecondaryAction-size {
+			visibility: hidden;
+		}
+		.message-attachmentSecondaryAction-download {
+			visibility: visible;
+			background-color: var(--interaction-default-hover);
+		}
+	}
 }
 
 .message-attachment {
@@ -17,38 +45,8 @@
 
 .message-attachmentList-item-container {
 	margin-block-start: 0.5em;
-	inline-size: 50%;
-
-	&:first-child,
-	&:nth-child(2) {
-		margin-block-start: 0;
-	}
-
-	&:nth-child(even) {
-		padding-inline-start: 0.5em;
-	}
-
-	&:nth-child(odd) {
-		padding-inline-end: 0.5em;
-	}
-
-	// fix on last only if there are more than 4
-	&:nth-child(n + 5):last-child {
-		padding-block-end: 0.5em;
-	}
-
-	@include respond-to($breakpoint-tiny) {
-		inline-size: 100%;
-
-		&:nth-child(even),
-		&:nth-child(odd) {
-			padding-inline: 0;
-		}
-
-		&:nth-child(2) {
-			margin-block-start: 0.5em;
-		}
-	}
+	margin-inline-end: 0.5em;
+	max-inline-size: calc(50% - 0.5em); // max 2 per line in case of very long filenames
 }
 
 .message-attachmentList-item {
@@ -76,9 +74,4 @@ $message-attachment-icon-width: 2.6em !default;
 	padding-block: 0.3em;
 	padding-inline: 0.7em;
 	max-inline-size: calc(100% - #{$message-attachment-icon-width});
-}
-
-.message-attachmentSize {
-	font-size: rem(12);
-	color: var(--text-weak);
 }

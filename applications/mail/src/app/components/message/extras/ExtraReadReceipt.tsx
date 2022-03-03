@@ -1,6 +1,6 @@
-import { requireReadReceipt } from '@proton/shared/lib/mail/messages';
+import { isReadReceiptSent, requireReadReceipt } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
-import { Icon, InlineLinkButton, useApi, useEventManager, useNotifications, useLoading } from '@proton/components';
+import { Icon, Tooltip, Button, useApi, useEventManager, useNotifications, useLoading } from '@proton/components';
 import { readReceipt } from '@proton/shared/lib/api/messages';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
@@ -14,6 +14,7 @@ const ExtraReadReceipt = ({ message }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { ID } = message.data || {};
+    const receiptSent = isReadReceiptSent(message.data);
 
     if (!requireReadReceipt(message.data)) {
         return null;
@@ -25,19 +26,28 @@ const ExtraReadReceipt = ({ message }: Props) => {
         createNotification({ text: c('Success').t`Read receipt sent` });
     };
 
-    return (
-        <div className="bg-warning rounded border p0-5 mb0-5 flex flex-nowrap">
-            <Icon name="bell" className="flex-item-noshrink mtauto mbauto" />
-            <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info').t`The sender has requested a read receipt.`}</span>
-            <span className="flex-item-noshrink flex">
-                <InlineLinkButton
-                    onClick={() => withLoading(handleClick())}
-                    disabled={loading}
-                    className="color-inherit text-underline"
-                    data-testid="message-view:send-receipt"
-                >{c('Action').t`Send receipt`}</InlineLinkButton>
+    if (receiptSent) {
+        return (
+            <span className="mr0-5 color-success inline-flex on-mobile-w100 on-mobile-flex-justify-center flex-items-align-center">
+                <Icon name="check" className="flex-item-noshrink mtauto mbauto" />
+                <span className="ml0-5">{c('Action').t`Read receipt sent`}</span>
             </span>
-        </div>
+        );
+    }
+
+    return (
+        <Tooltip title={c('Info').t`The sender has requested a read receipt.`}>
+            <Button
+                onClick={() => withLoading(handleClick())}
+                disabled={loading}
+                data-testid="message-view:send-receipt"
+                size="small"
+                className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 mb0-85 py0-25"
+            >
+                <Icon name="bell" className="flex-item-noshrink" />
+                <span className="ml0-5">{c('Action').t`Send read receipt`}</span>
+            </Button>
+        </Tooltip>
     );
 };
 

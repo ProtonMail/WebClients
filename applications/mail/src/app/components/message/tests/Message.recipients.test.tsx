@@ -45,7 +45,7 @@ describe('Message recipients rendering', () => {
         getByText(Address, { exact: false });
     });
 
-    it('show recipients in a contact group', async () => {
+    it('show recipients in a contact group partial', async () => {
         const Name = 'test-name';
         const Address = 'address@test.com';
         const ContactGroup = {
@@ -68,15 +68,41 @@ describe('Message recipients rendering', () => {
 
         initMessage({ data: { ToList } });
 
-        const { getByText, details } = await setup();
+        const { getByText } = await setup();
 
-        const expectation = `${ContactGroup.Name} (${ToList.length}/${contacts.length} members)`;
-
-        getByText(expectation);
-
-        await details();
+        const expectation = `${ContactGroup.Name} (${ToList.length}/${contacts.length})`;
 
         getByText(expectation);
-        getByText(`${Address}, ${Address}`);
+    });
+
+    it('show recipients in a contact group full', async () => {
+        const Name = 'test-name';
+        const Address = 'address@test.com';
+        const ContactGroup = {
+            ID: 'test-group-id',
+            Name: 'test-group-name',
+            Path: 'test-group-path',
+        } as ContactGroup;
+        const Group = ContactGroup.Path;
+        const contacts = [
+            { Email: '', LabelIDs: [ContactGroup.ID] },
+            { Email: '', LabelIDs: [ContactGroup.ID] },
+            { Email: '', LabelIDs: [ContactGroup.ID] },
+        ] as ContactEmail[];
+        const ToList = [
+            { Name, Address, Group },
+            { Name, Address, Group },
+            { Name, Address, Group },
+        ];
+
+        store.dispatch(refresh({ contacts, contactGroups: [ContactGroup] }));
+
+        initMessage({ data: { ToList } });
+
+        const { getByText } = await setup();
+
+        const expectation = `${ContactGroup.Name} (${contacts.length})`;
+
+        getByText(expectation);
     });
 });

@@ -1,8 +1,9 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { attachmentsSize } from '@proton/shared/lib/mail/messages';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { uniqueBy } from '@proton/shared/lib/helpers/array';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
 import {
@@ -27,6 +28,9 @@ export const getAttachmentCounts = (attachments: Attachment[], messageImages: Me
         (attachment) => !embeddedAttachments.find((embeddedAttachment) => attachment.ID === embeddedAttachment.ID)
     );
 
+    const embeddedAttachmentSize = attachmentsSize({ Attachments: embeddedAttachments } as Message);
+    const pureAttachmentSize = attachmentsSize({ Attachments: pureAttachments } as Message);
+
     const pureAttachmentsCount = pureAttachments.length;
     const embeddedAttachmentsCount = embeddedAttachments.length;
     const attachmentsCount = pureAttachmentsCount + embeddedAttachmentsCount;
@@ -38,6 +42,8 @@ export const getAttachmentCounts = (attachments: Attachment[], messageImages: Me
         pureAttachmentsCount,
         embeddedAttachmentsCount,
         attachmentsCount,
+        embeddedAttachmentSize,
+        pureAttachmentSize,
     };
 };
 

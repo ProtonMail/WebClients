@@ -20,6 +20,7 @@ interface Props {
     children: DropdownRender;
     autoClose?: boolean;
     noMaxSize?: boolean;
+    noMaxHeight?: boolean;
     loading?: boolean;
     /**
      * Used on mobile to open an additional dropdown from the dropdown
@@ -36,6 +37,7 @@ const HeaderDropdown = ({
     children,
     autoClose,
     noMaxSize,
+    noMaxHeight,
     loading,
     className,
     dropDownClassName,
@@ -68,7 +70,6 @@ const HeaderDropdown = ({
                     ref={anchorRef}
                     isOpen={isOpen}
                     onClick={toggle}
-                    hasCaret
                     disabled={loading}
                     {...rest}
                 >
@@ -83,6 +84,7 @@ const HeaderDropdown = ({
                 autoCloseOutside={!lock}
                 isOpen={isOpen}
                 noMaxSize={noMaxSize}
+                noMaxHeight={noMaxHeight}
                 anchorRef={anchorRef}
                 onClose={close}
             >

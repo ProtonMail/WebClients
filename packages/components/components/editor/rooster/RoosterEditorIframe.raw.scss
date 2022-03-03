@@ -1,3 +1,4 @@
+@import '~@proton/styles/scss/config';
 $editor-font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 
 // custom scroll
@@ -80,24 +81,6 @@ body a {
 	flex-shrink: 0;
 }
 
-#ellipsis {
-	color: inherit;
-	border: 1px solid silver;
-	background-color: white;
-	border-radius: 3px;
-	text-decoration: none;
-	cursor: pointer;
-	font-size: 1.2em;
-	padding: 0 0.5em;
-	margin: 0 0.5rem 0.5rem;
-}
-
-#ellipsis:hover,
-#ellipsis:focus {
-	border-color: darkgrey;
-	background-color: whitesmoke;
-}
-
 blockquote {
 	padding: 0 0 0 1rem;
 	margin: 0;
@@ -108,6 +91,58 @@ blockquote blockquote blockquote {
 	padding-inline-start: 0;
 	margin-inline-start: 0;
 	border: none;
+}
+
+.proton-hidden {
+	display: none;
+}
+
+.proton-sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	block-size: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	inline-size: 1px;
+	inset-block-start: 0; // needed for Safari dumb and 💩 behaviour
+}
+
+.icon-14p {
+	width: 14px;
+	height: 14px;
+}
+
+.proton-toggle-button {
+	display: inline-block;
+	padding-block: rem(4);
+	padding-inline: rem(8);
+	margin: 1em;
+	margin-inline-start: 0.5em;
+	box-shadow: inset 0 0 0 1px silver;
+	border: none;
+	border-radius: 3px;
+	outline: none;
+	background-color: transparent;
+	text-align: center;
+	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1), background-position 0s;
+
+	&:hover,
+	&:focus,
+	&:focus-within &.is-hover &:active,
+	&.is-active,
+	&[aria-expanded='true']:not([aria-controls]) {
+		text-decoration: none;
+		box-shadow: inset 0 0 0 2px silver;
+		background-color: transparent;
+	}
+}
+
+@supports selector(:focus-visible) {
+	.proton-toggle-button {
+		outline: unset;
+	}
 }
 
 .proton-embedded:not([src]) {
