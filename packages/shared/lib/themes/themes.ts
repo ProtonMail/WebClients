@@ -47,43 +47,55 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.Default]: {
         label: 'Proton',
         identifier: ThemeTypes.Default,
-        src: themeDefaultSvg,
-        thumb: themeDefaultSvgSmall,
+        src: {
+            medium: themeDefaultSvg,
+            small: themeDefaultSvgSmall,
+        },
         theme: defaultTheme.toString(),
     },
     [ThemeTypes.Carbon]: {
         label: 'Carbon',
         identifier: ThemeTypes.Carbon,
-        src: themeCarbonSvg,
-        thumb: themeCarbonSvgSmall,
+        src: {
+            medium: themeCarbonSvg,
+            small: themeCarbonSvgSmall,
+        },
         theme: carbonTheme.toString(),
     },
     [ThemeTypes.Monokai]: {
         label: 'Monokai',
         identifier: ThemeTypes.Monokai,
-        src: themeMonokaiSvg,
-        thumb: themeMonokaiSvgSmall,
+        src: {
+            medium: themeMonokaiSvg,
+            small: themeMonokaiSvgSmall,
+        },
         theme: monokaiTheme.toString(),
     },
     [ThemeTypes.Duotone]: {
         label: 'Duotone',
         identifier: ThemeTypes.Duotone,
-        src: themeDuotoneSvg,
-        thumb: themeDuotoneSvgSmall,
+        src: {
+            medium: themeDuotoneSvg,
+            small: themeDuotoneSvgSmall,
+        },
         theme: duotoneTheme.toString(),
     },
     [ThemeTypes.Contrast]: {
         label: 'Contrast',
         identifier: ThemeTypes.Contrast,
-        src: themeContrastSvg,
-        thumb: themeContrastSvgSmall,
+        src: {
+            medium: themeContrastSvg,
+            small: themeContrastSvgSmall,
+        },
         theme: contrastTheme.toString(),
     },
     [ThemeTypes.Legacy]: {
         label: 'Legacy',
         identifier: ThemeTypes.Legacy,
-        src: themeLegacySvg,
-        thumb: themeLegacySvgSmall,
+        src: {
+            medium: themeLegacySvg,
+            small: themeLegacySvgSmall,
+        },
         theme: legacyTheme.toString(),
     },
 } as const;

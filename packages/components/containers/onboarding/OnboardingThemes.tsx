@@ -21,6 +21,7 @@ const OnboardingThemes = ({ themes, themeIdentifier, onChange, ...rest }: Props)
                 <ThemeCards
                     className="theme-modal-list"
                     list={themes}
+                    size="small"
                     themeIdentifier={themeIdentifier}
                     onChange={onChange}
                 />
