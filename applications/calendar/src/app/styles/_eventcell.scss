@@ -163,7 +163,7 @@
 	}
 
 	&-title {
-		font-weight: 500;
+		font-weight: var(--font-weight-semibold);
 	}
 }
 
@@ -182,7 +182,7 @@
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 		-webkit-line-clamp: max(calc(var(--line-number) - 1), 1);
-		font-weight: 500;
+		font-weight: var(--font-weight-semibold);
 		word-break: break-word;
 	}
 
