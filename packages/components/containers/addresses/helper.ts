@@ -25,7 +25,7 @@ export const getPermissions = ({
     member,
     address: { ID, Status, HasKeys, Type, Priority },
     addresses,
-    user: { isAdmin },
+    user: { isAdmin, canPay },
     organizationKey,
     addressIndex,
 }: {
@@ -72,8 +72,8 @@ export const getPermissions = ({
         canGenerate: !HasKeys && (canGenerateMember || isSelf),
         canDisable,
         canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
-        // Takes into account disabling permissions since it does that automatically
-        canDelete: ((isEnabled && canDisable) || !isEnabled) && Type === TYPE_CUSTOM_DOMAIN && isAdmin,
+        // Takes into account disabling permissions since it does that automatically. canPay to simulate the "payments" scope for delete route.
+        canDelete: ((isEnabled && canDisable) || !isEnabled) && Type === TYPE_CUSTOM_DOMAIN && canPay,
         canEdit: isSelf,
     };
 };
