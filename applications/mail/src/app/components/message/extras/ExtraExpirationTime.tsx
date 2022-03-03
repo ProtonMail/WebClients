@@ -8,9 +8,10 @@ interface Props {
     message: MessageState;
     displayAsButton?: boolean;
     marginBottom?: boolean;
+    onEditExpiration?: () => void;
 }
 
-const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = true }: Props) => {
+const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = true, onEditExpiration }: Props) => {
     const [expirationModalProps, setExpirationModalOpen] = useModalState();
     const { onClose } = expirationModalProps;
 
@@ -59,7 +60,15 @@ const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = 
             data-testid="expiration-banner"
         >
             <Icon name="hourglass-empty" className="flex-item-noshrink mtauto mbauto" />
-            <span className="pl0-5 pr0-5 flex-item-fluid">{expireOnMessage}</span>
+            <span className="pl0-5 pr0-5 flex-item-fluid mt0-25">{expireOnMessage}</span>
+            <span className="flex-item-noshrink flex-align-items-start flex">
+                <Button
+                    size="small"
+                    className="on-mobile-w100 py0-25"
+                    onClick={onEditExpiration}
+                    data-testid="message:expiration-banner-edit-button"
+                >{c('Action').t`Edit`}</Button>
+            </span>
         </div>
     );
 };

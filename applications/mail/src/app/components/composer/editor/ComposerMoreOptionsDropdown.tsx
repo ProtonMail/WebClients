@@ -59,6 +59,7 @@ const ComposerMoreOptionsDropdown = ({
                         className,
                     ])}
                     title={title}
+                    data-testid='composer:more-options-button'
                     {...rest}
                 >
                     {content}
