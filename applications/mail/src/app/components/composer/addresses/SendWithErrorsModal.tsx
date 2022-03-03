@@ -1,4 +1,12 @@
-import { Alert, Button, classnames, FormModal } from '@proton/components';
+import {
+    Button,
+    classnames,
+    Form,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '@proton/components';
 import { c, msgid } from 'ttag';
 import {
     ENCRYPTION_PREFERENCES_ERROR_TYPES,
@@ -32,20 +40,48 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
 
     if (cannotSend) {
         return (
-            <FormModal
-                title={c('Title').t`Sending error`}
-                hasSubmit={false}
-                close={<Button color="norm" onClick={onClose}>{c('Action').t`Close`}</Button>}
-                onClose={onClose}
-                {...rest}
-            >
-                <Alert className="mb1" type="error">
-                    {c('Send email with errors').ngettext(
-                        msgid`We have detected errors. Your email cannot be sent to the email address entered due to the following reason:`,
-                        `We have detected errors. Your email cannot be sent to any of the email addresses entered due to the following reasons:`,
-                        emails.length
-                    )}
-                </Alert>
+            <ModalTwo size="large" onClose={onClose} {...rest}>
+                <ModalTwoHeader title={c('Title').t`Sending error`} />
+                <ModalTwoContent>
+                    <span>
+                        {c('Send email with errors').ngettext(
+                            msgid`We have detected errors. Your email cannot be sent to the email address entered due to the following reason:`,
+                            `We have detected errors. Your email cannot be sent to any of the email addresses entered due to the following reasons:`,
+                            emails.length
+                        )}
+                    </span>
+                    <ul>
+                        {emails.map((email, index) => (
+                            <li
+                                key={index} // eslint-disable-line react/no-array-index-key
+                                className={classnames([index !== emails.length && 'mb0-5'])}
+                            >
+                                <span className="block max-w100">{getErrorMessage(mapErrors[email], email)}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </ModalTwoContent>
+                <ModalTwoFooter>
+                    <Button color="norm" onClick={onClose}>{c('Action').t`Close`}</Button>
+                </ModalTwoFooter>
+            </ModalTwo>
+        );
+    }
+    return (
+        <ModalTwo
+            size="large"
+            title={c('Title').t`Sending error`}
+            as={Form}
+            onSubmit={handleSubmit}
+            onClose={onClose}
+            {...rest}
+        >
+            <ModalTwoHeader />
+            <ModalTwoContent>
+                <span>
+                    {c('Send email with errors')
+                        .t`We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:`}
+                </span>
                 <ul>
                     {emails.map((email, index) => (
                         <li
@@ -56,33 +92,13 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                         </li>
                     ))}
                 </ul>
-            </FormModal>
-        );
-    }
-    return (
-        <FormModal
-            title={c('Title').t`Sending error`}
-            submit={c('Action').t`Send`}
-            onSubmit={handleSubmit}
-            onClose={onClose}
-            {...rest}
-        >
-            <Alert className="mb1" type="error">
-                {c('Send email with errors')
-                    .t`We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:`}
-            </Alert>
-            <ul>
-                {emails.map((email, index) => (
-                    <li
-                        key={index} // eslint-disable-line react/no-array-index-key
-                        className={classnames([index !== emails.length && 'mb0-5'])}
-                    >
-                        <span className="block max-w100">{getErrorMessage(mapErrors[email], email)}</span>
-                    </li>
-                ))}
-            </ul>
-            <Alert className="mb1">{c('Send email with errors').t`Do you want to send the email anyway?`}</Alert>
-        </FormModal>
+                <span>{c('Send email with errors').t`Do you want to send the email anyway?`}</span>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button type="submit" color="norm">{c('Action').t`Send`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
