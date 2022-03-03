@@ -34,7 +34,7 @@ select {
 	}
 
 	&-label-text {
-		font-weight: 600;
+		font-weight: var(--font-weight-semibold);
 	}
 
 	&-suffix,
@@ -116,7 +116,7 @@ select {
 			&-label-text,
 			&-assist {
 				color: var(--signal-danger);
-				font-weight: 600;
+				font-weight: var(--font-weight-semibold);
 			}
 
 			&-field {
@@ -134,7 +134,7 @@ select {
 			&-label-text,
 			&-assist {
 				color: var(--signal-warning);
-				font-weight: 600;
+				font-weight: var(--font-weight-semibold);
 			}
 		}
 	}

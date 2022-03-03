@@ -9,7 +9,7 @@
 		color: inherit;
 
 		&[disabled][aria-current='step'] {
-			font-weight: bold;
+			font-weight: var(--font-weight-bold);
 			opacity: 1;
 			color: inherit;
 		}

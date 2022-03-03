@@ -1,7 +1,7 @@
 .calendar-grid {
 	&-heading {
 		color: var(--text-norm);
-		font-weight: 600;
+		font-weight: var(--font-weight-semibold);
 
 		@include respond-to($breakpoint-small, 'min') {
 			flex-wrap: nowrap;

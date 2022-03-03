@@ -74,7 +74,7 @@
 	&.is-unread {
 		background-color: var(--email-item-unread-background-color);
 		color: var(--email-item-unread-text-color);
-		font-weight: bold;
+		font-weight: var(--font-weight-bold);
 	}
 
 	&.is-loading {
