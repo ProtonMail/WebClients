@@ -586,6 +586,7 @@ const Composer = (
                         onChangeContent={handleChangeContent}
                         addressesBlurRef={addressesBlurRef}
                         addressesFocusRef={addressesFocusRef}
+                        onEditExpiration={handleExpiration}
                     />
                     <ComposerContent
                         message={modelMessage}
