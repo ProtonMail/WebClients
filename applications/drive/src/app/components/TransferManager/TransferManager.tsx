@@ -8,6 +8,7 @@ import {
     useActiveBreakpoint,
     useWindowSize,
     useRightToLeft,
+    Tabs,
 } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
@@ -25,7 +26,7 @@ import useConfirm from '../../hooks/util/useConfirm';
 import { useTransfersView } from '../../store';
 import Header from './Header';
 import Transfer from './Transfer';
-import Toolbar from './Toolbar';
+import HeaderButtons from './HeaderButtons';
 
 interface TransferListEntry<T extends TransferType> {
     transfer: T extends TransferType.Download ? Download : Upload;
@@ -60,6 +61,15 @@ const ListItemRow = ({ style, index, data }: ListItemRowProps) => {
     );
 };
 
+const tabIndexToTransferGroup = {
+    0: undefined,
+    1: TransferGroup.ACTIVE,
+    2: TransferGroup.DONE,
+    3: TransferGroup.FAILURE,
+};
+
+type TabIndices = keyof typeof tabIndexToTransferGroup;
+
 const TransferManager = ({
     downloads,
     uploads,
@@ -76,7 +86,7 @@ const TransferManager = ({
     const containerRef = useRef<HTMLDivElement>(null);
     const headerRef = useRef<HTMLDivElement>(null);
 
-    const [transferGroupFilter, setTransferGroupFilter] = useState<TransferGroup | undefined>(undefined);
+    const [activeTabIndex, setActiveTabIndex] = useState<TabIndices>(0);
     const windowHeight = useWindowSize()[1];
     /*
         FixedSizedList (used for virtual scrolling) requires `width` prop to work
@@ -95,7 +105,6 @@ const TransferManager = ({
     const rect = useElementRect(containerRef, buffer);
     const rectHeader = useElementRect(headerRef, buffer);
     const { state: minimized, toggle: toggleMinimized } = useToggle();
-    const { state: isToolbarExpanded, toggle: setToolbarExpanded } = useToggle();
     const { openConfirmModal } = useConfirm();
     const { isNarrow } = useActiveBreakpoint();
     const [isRTL] = useRightToLeft();
@@ -126,12 +135,13 @@ const TransferManager = ({
         return [...downloadEntries, ...uploadEntries]
             .sort((a, b) => b.transfer.startDate.getTime() - a.transfer.startDate.getTime())
             .filter((entry) => {
+                const transferGroupFilter = tabIndexToTransferGroup[activeTabIndex];
                 if (transferGroupFilter === undefined) {
                     return true;
                 }
                 return STATE_TO_GROUP_MAP[entry.transfer.state] === transferGroupFilter;
             });
-    }, [downloadEntries, uploadEntries, transferGroupFilter]);
+    }, [downloadEntries, uploadEntries, activeTabIndex]);
 
     const handleCloseClick = () => {
         if (hasActiveTransfer) {
@@ -152,7 +162,7 @@ const TransferManager = ({
         (itemCount: number) => {
             return ROW_HEIGHT_PX * Math.min(maxVisibleTransfers, itemCount);
         },
-        [entries]
+        [entries, minimized]
     );
 
     const calculateListHeight = useCallback(
@@ -165,44 +175,20 @@ const TransferManager = ({
 
             return itemsHeight;
         },
-        [windowHeight, isToolbarExpanded]
+        [windowHeight, minimized]
     );
 
-    const shouldDisplayToolbar = !isNarrow && !minimized;
-
-    return (
-        <div
-            id="transfer-manager"
-            className={classnames(['transfers-manager', minimized && 'transfers-manager--minimized'])}
-        >
-            <div ref={headerRef}>
-                <Header
-                    downloads={downloads}
-                    uploads={uploads}
-                    stats={stats}
-                    minimized={minimized}
-                    onToggleMinimize={toggleMinimized}
-                    onClose={handleCloseClick}
-                />
-                {shouldDisplayToolbar && (
-                    <Toolbar
-                        onTransferGroupFilterChange={setTransferGroupFilter}
-                        currentTransferGroup={transferGroupFilter}
-                        entries={entries}
-                        isExpanded={isToolbarExpanded}
-                        onExpand={setToolbarExpanded}
-                    />
-                )}
-            </div>
+    const Content = (
+        <>
             {entries.length === 0 && (
                 <div
                     className="transfers-manager-list-placeholder flex flex-justify-center flex-align-items-center"
                     style={{ height: calcultateItemsHeight(1) }}
                 >
-                    <span>{c('Info').t`No results found`} </span>
+                    <span className="mb1">{c('Info').t`No results found`} </span>
                 </div>
             )}
-            <div className="transfers-manager-list" ref={containerRef}>
+            <div className="transfers-manager-list">
                 {rect && (
                     <FixedSizeList
                         direction={isRTL ? 'rtl' : 'ltr'}
@@ -219,6 +205,57 @@ const TransferManager = ({
                     >
                         {ListItemRow}
                     </FixedSizeList>
+                )}
+            </div>
+        </>
+    );
+
+    return (
+        <div
+            id="transfer-manager"
+            className={classnames(['transfers-manager', minimized && 'transfers-manager--minimized'])}
+        >
+            <div ref={headerRef}>
+                <Header
+                    downloads={downloads}
+                    uploads={uploads}
+                    stats={stats}
+                    minimized={minimized}
+                    onToggleMinimize={toggleMinimized}
+                    onClose={handleCloseClick}
+                />
+            </div>
+            <div ref={containerRef} className="flex">
+                {!minimized && (
+                    <>
+                        <Tabs
+                            tabs={[
+                                {
+                                    title: c('Title').t`All`,
+                                    content: Content,
+                                },
+                                {
+                                    title: c('Title').t`Active`,
+                                    content: Content,
+                                },
+                                {
+                                    title: c('Title').t`Completed`,
+                                    content: Content,
+                                },
+                                {
+                                    title: c('Title').t`Failed`,
+                                    content: Content,
+                                },
+                            ]}
+                            value={activeTabIndex}
+                            onChange={(groupValue) => {
+                                setActiveTabIndex(groupValue as TabIndices);
+                            }}
+                        />
+                        {!isNarrow && (
+                            <HeaderButtons className="transfers-manager-header-buttons p0-5 pr1" entries={entries} />
+                        )}
+                    </>
                 )}
             </div>
         </div>
