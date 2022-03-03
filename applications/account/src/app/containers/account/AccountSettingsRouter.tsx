@@ -91,7 +91,7 @@ const AccountSettingsRouter = ({
                         <PrivateMainArea>
                             <div className="container-section-sticky">
                                 <div className="text-center">
-                                    <SettingsPageTitle className="mt1-5 mb1-5">{c('new_plans')
+                                    <SettingsPageTitle className="mt1-5 mb1-5">{c('new_plans: title')
                                         .t`Unlock premium features by upgrading`}</SettingsPageTitle>
                                 </div>
                                 <PlansSection />

@@ -56,7 +56,7 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
     const MaxVPN = user.hasPaidVpn ? OrganizationMaxVPN : 1;
     const currentPlanIDs = getPlanIDs(subscription);
     const isUpselled =
-        !subscription ||
+        user.isFree ||
         isTrial(subscription) ||
         hasMail(subscription) ||
         hasDrive(subscription) ||
@@ -97,9 +97,11 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
     }
 
     return (
-        <div className="border px2 py1 w60">
-            <div className="flex flex-nowrap flex-align-items-center flex-justify-space-between">
-                <h3 className="m0">{title}</h3>
+        <div className="border rounded px2 py1-5 flex-item-fluid">
+            <div className="flex flex-nowrap flex-align-items-center flex-justify-space-between pt0-5">
+                <h3 className="m0">
+                    <strong>{title}</strong>
+                </h3>
                 <Price
                     className="h3 m0 color-weak"
                     currency={subscription?.Currency}
@@ -182,7 +184,7 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
                     fullWidth
                 >{c('Action').t`Edit payment details`}</Button>
             ) : null}
-            {user.isPaid && user.canPay && isUpselled ? (
+            {(user.isFree || user.isPaid) && user.canPay && isUpselled ? (
                 <Button onClick={handleExplorePlans} size="large" color="norm" shape="ghost" fullWidth>{c('Action')
                     .t`Explore all Proton plans`}</Button>
             ) : null}

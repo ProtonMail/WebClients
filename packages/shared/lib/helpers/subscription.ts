@@ -62,7 +62,7 @@ export const getHasB2BPlan = (subscription: Subscription) => {
     );
 };
 
-export const getHasLegacyPlans = (subscription: Subscription) => {
+export const getHasLegacyPlans = (subscription: Subscription | undefined) => {
     return subscription?.Plans?.some(
         ({ Name }) =>
             Name === VPNBASIC || Name === VPNPLUS || Name === PLUS || Name === PROFESSIONAL || Name === VISIONARY
