@@ -1,10 +1,14 @@
-import { encryptSessionKey, splitMessage, decryptSessionKey, getMessage, SessionKey } from 'pmcrypto';
+import { encryptSessionKey, splitMessage, decryptSessionKey, getMessage, SessionKey, encodeUtf8 } from 'pmcrypto';
 
 import { useApi, usePreventLeave } from '@proton/components';
 import { computeKeyPassword } from '@proton/srp';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 import { chunk } from '@proton/shared/lib/helpers/array';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import {
+    base64StringToUint8Array,
+    uint8ArrayToBase64String,
+    stringToUint8Array,
+} from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getRandomString } from '@proton/shared/lib/helpers/string';
@@ -122,7 +126,7 @@ export default function useShareUrl() {
             publicKey,
         } = await driveCrypto.getPrimaryAddressKey();
         const password = await encryptUnsigned({
-            message: decryptedPassword,
+            message: stringToUint8Array(encodeUtf8(decryptedPassword)),
             publicKey,
         });
         return {
