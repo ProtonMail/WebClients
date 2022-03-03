@@ -44,7 +44,7 @@ $padding-inline-start-link: rem(20) !default;
 [aria-current='page'].navigation-link {
 	background-color: var(--navigation-current-item-background-color);
 	color: var(--navigation-current-item-text-color);
-	font-weight: bold;
+	font-weight: var(--font-weight-bold);
 
 	&:hover .navigation-icon:not(.navigation-icon--expand),
 	.navigation-icon {
@@ -174,6 +174,6 @@ $padding-inline-start-link: rem(20) !default;
 		background-color: var(--navigation-current-item-background-color);
 		color: var(--navigation-current-item-text-color);
 		border-inline-start: 2px solid var(--navigation-current-item-marker-color);
-		font-weight: bold;
+		font-weight: var(--font-weight-bold);
 	}
 }

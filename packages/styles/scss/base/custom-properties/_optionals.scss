@@ -97,7 +97,7 @@
 
 		--mark-background-color: yellow,
 		--mark-text-color      : black,
-		--mark-font-weight     : normal,
+		--mark-font-weight     : var(--font-weight-normal, normal),
 
 		--modal-background-color: var(--background-norm),
 		--modal-text-color      : var(--text-norm),

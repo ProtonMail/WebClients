@@ -116,15 +116,15 @@ $price-size: 21;
 	}
 	.amount {
 		font-size: em($amount-size);
-		font-weight: bold;
+		font-weight: var(--font-weight-bold);
 	}
 	.currency {
 		font-size: em($price-size);
-		font-weight: bold;
+		font-weight: var(--font-weight-bold);
 	}
 	.decimal {
 		font-size: em($price-size, $amount-size);
-		font-weight: bold;
+		font-weight: var(--font-weight-bold);
 	}
 }
 

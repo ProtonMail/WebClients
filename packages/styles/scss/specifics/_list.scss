@@ -97,7 +97,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		.item-senddate-row,
 		.item-weight,
 		.item-subject {
-			font-weight: bold;
+			font-weight: var(--font-weight-bold);
 		}
 
 		.item-icon {

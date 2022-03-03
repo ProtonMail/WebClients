@@ -36,6 +36,11 @@ a {
 	}
 }
 
+b,
+strong {
+	font-weight: var(--font-weight-bold);
+}
+
 @supports selector(:focus-visible) {
 	// had to do this because of Safari
 	a,
@@ -152,7 +157,7 @@ mark {
 	&.is-light {
 		background-color: unset;
 		color: inherit;
-		font-weight: bold;
+		font-weight: var(--font-weight-bold);
 	}
 }
 

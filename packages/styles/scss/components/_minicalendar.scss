@@ -162,12 +162,12 @@
 		}
 
 		&--selected &-number {
-			font-weight: bold;
+			font-weight: var(--font-weight-bold);
 			color: var(--interaction-norm-contrast);
 		}
 
 		&[aria-current='date'] {
-			font-weight: bold;
+			font-weight: var(--font-weight-bold);
 			color: var(--primary);
 
 			&::before {

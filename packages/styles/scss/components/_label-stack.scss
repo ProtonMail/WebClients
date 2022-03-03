@@ -3,7 +3,7 @@
 	--item-narrow: 1.25em;
 	--item-scale: 0.7;
 
-	font-weight: normal; // Overrides when unread email context
+	font-weight: var(--font-weight-normal); // Overrides when unread email context
 
 	&.max-w100 {
 		--item-wide: 100%;
