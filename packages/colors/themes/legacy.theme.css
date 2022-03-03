@@ -9,6 +9,7 @@
   --signal-danger-major-2: #a26363;
   --signal-danger-major-3: #8e5757;
   --signal-danger-contrast: #ffffff;
+  --signal-danger-contrast: white;
   --signal-warning-minor-2: #fcf8e7;
   --signal-warning-minor-1: #f8f2ce;
   --signal-warning: #debc0b;
@@ -16,6 +17,7 @@
   --signal-warning-major-2: #c88a0a;
   --signal-warning-major-3: #bd7309;
   --signal-warning-contrast: #000000;
+  --signal-warning-contrast: black;
   --signal-success-minor-2: #f4f8f2;
   --signal-success-minor-1: #e8f0e4;
   --signal-success: #8eb67a;
@@ -23,6 +25,7 @@
   --signal-success-major-2: #729262;
   --signal-success-major-3: #637f55;
   --signal-success-contrast: #000000;
+  --signal-success-contrast: white;
   --signal-info-minor-2: #f2f6fb;
   --signal-info-minor-1: #e6ecf6;
   --signal-info: #80a1d2;
@@ -30,6 +33,7 @@
   --signal-info-major-2: #6681a8;
   --signal-info-major-3: #5a7193;
   --signal-info-contrast: #000000;
+  --signal-info-contrast: white;
   --interaction-norm-minor-2: #dfe0f0;
   --interaction-norm-minor-1: #c9cbe6;
   --interaction-norm: #9397cd;
@@ -37,6 +41,7 @@
   --interaction-norm-major-2: #8488b9;
   --interaction-norm-major-3: #7d80ae;
   --interaction-norm-contrast: #000000;
+  --interaction-norm-contrast: white;
   --interaction-weak-minor-2: #f0f2f5;
   --interaction-weak-minor-1: #e7e9ef;
   --interaction-weak: #ced2df;
@@ -72,41 +77,6 @@
 }
 
 .ui-prominent {
-  --signal-danger-minor-2: #291919;
-  --signal-danger-minor-1: #3d2525;
-  --signal-danger: #cb7c7c;
-  --signal-danger-major-1: #d08989;
-  --signal-danger-major-2: #d59696;
-  --signal-danger-major-3: #dba3a3;
-  --signal-danger-contrast: #ffffff;
-  --signal-warning-minor-2: #2c1b02;
-  --signal-warning-minor-1: #432903;
-  --signal-warning: #debc0b;
-  --signal-warning-major-1: #e1c323;
-  --signal-warning-major-2: #e5c93c;
-  --signal-warning-major-3: #e8d054;
-  --signal-warning-contrast: #000000;
-  --signal-success-minor-2: #1c2418;
-  --signal-success-minor-1: #2b3725;
-  --signal-success: #8eb67a;
-  --signal-success-major-1: #99bd87;
-  --signal-success-major-2: #a5c595;
-  --signal-success-major-3: #b0cca2;
-  --signal-success-contrast: #000000;
-  --signal-info-minor-2: #1a202a;
-  --signal-info-minor-1: #26303f;
-  --signal-info: #80a1d2;
-  --signal-info-major-1: #8daad7;
-  --signal-info-major-2: #99b4db;
-  --signal-info-major-3: #a6bde0;
-  --signal-info-contrast: #000000;
-  --interaction-norm-minor-2: #2c2d3e;
-  --interaction-norm-minor-1: #4a4c67;
-  --interaction-norm: #9397cd;
-  --interaction-norm-major-1: #9ea1d2;
-  --interaction-norm-major-2: #a9acd7;
-  --interaction-norm-major-3: #b3b6dc;
-  --interaction-norm-contrast: #000000;
   --interaction-weak-minor-2: #2c2c34;
   --interaction-weak-minor-1: #4a4a57;
   --interaction-weak: #9393ae;
