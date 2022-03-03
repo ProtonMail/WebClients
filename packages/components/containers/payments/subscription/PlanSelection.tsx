@@ -86,7 +86,8 @@ const PlanSelection = ({
         const isRecommended = [PLANS.BUNDLE, PLANS.BUNDLE_PRO].includes(plan.Name as PLANS);
         const canSelect = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].includes(plan.Name as PLANS);
         const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
-        const actionLabel = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${PLAN_NAMES[plan.Name as PLANS]}`;
+        const planTitle = PLAN_NAMES[plan.Name as PLANS];
+        const actionLabel = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
         const shortPlan = getShortPlan(plan.Name as PLANS, vpnCountries, vpnServers);
 
         if (!shortPlan) {
@@ -98,7 +99,7 @@ const PlanSelection = ({
                 target={audience}
                 isCurrentPlan={!isSignupMode && isCurrentPlan}
                 action={actionLabel}
-                planTitle={PLAN_NAMES[plan.Name as PLANS]}
+                planTitle={planTitle}
                 info={shortPlan.description}
                 planName={plan.Name as PLANS}
                 canSelect={canSelect}
