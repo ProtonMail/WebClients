@@ -385,35 +385,34 @@ const SubscriptionModal = ({
                     <div className="flex-no-min-children on-mobile-flex-column">
                         <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
                             <div className="mlauto mrauto max-w37e on-mobile-max-w100  ">
+                                <h2 className="text-2xl text-bold">{c('Label').t`Billing cycle`}</h2>
+                                <div className="mb2">
+                                    <SubscriptionCycleSelector
+                                        plans={plans}
+                                        planIDs={model.planIDs}
+                                        cycle={model.cycle}
+                                        currency={model.currency}
+                                        onChangeCycle={(cycle) => setModel({ ...model, cycle })}
+                                        disabled={loadingCheck}
+                                    />
+                                </div>
                                 {checkResult?.AmountDue ? (
-                                    <>
-                                        <h2 className="text-2xl text-bold">{c('Label').t`Billing cycle`}</h2>
-                                        <div className="mb2">
-                                            <SubscriptionCycleSelector
-                                                plans={plans}
-                                                planIDs={model.planIDs}
-                                                cycle={model.cycle}
-                                                currency={model.currency}
-                                                onChangeCycle={(cycle) => setModel({ ...model, cycle })}
-                                                disabled={loadingCheck}
-                                            />
-                                        </div>
-                                        <Payment
-                                            type="subscription"
-                                            paypal={paypal}
-                                            paypalCredit={paypalCredit}
-                                            method={method}
-                                            amount={checkResult.AmountDue}
-                                            currency={checkResult.Currency}
-                                            coupon={couponCode}
-                                            card={card}
-                                            onMethod={setMethod}
-                                            onCard={setCard}
-                                            cardErrors={cardErrors}
-                                        />
-                                    </>
+                                    <Payment
+                                        type="subscription"
+                                        paypal={paypal}
+                                        paypalCredit={paypalCredit}
+                                        method={method}
+                                        amount={checkResult.AmountDue}
+                                        currency={checkResult.Currency}
+                                        coupon={couponCode}
+                                        card={card}
+                                        onMethod={setMethod}
+                                        onCard={setCard}
+                                        cardErrors={cardErrors}
+                                    />
                                 ) : (
                                     <>
+                                        <h2 className="text-2xl text-bold">{c('Label').t`Payment details`}</h2>
                                         <div className="mb1">{c('Info').t`No payment is required at this time.`}</div>
                                         {checkResult?.Credit && creditsRemaining ? (
                                             <div className="mb1">{c('Info')
