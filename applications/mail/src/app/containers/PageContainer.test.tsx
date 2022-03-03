@@ -1,14 +1,5 @@
-import { fireEvent, getByText } from '@testing-library/dom';
-import {
-    clearAll,
-    render,
-    addApiMock,
-    getModal,
-    assertFocus,
-    minimalCache,
-    addToCache,
-    onCompose,
-} from '../helpers/test/helper';
+import { fireEvent } from '@testing-library/dom';
+import { clearAll, render, addApiMock, assertFocus, minimalCache, addToCache, onCompose } from '../helpers/test/helper';
 import { Breakpoints } from '../models/utils';
 import PageContainer from './PageContainer';
 
@@ -45,13 +36,11 @@ describe('PageContainer', () => {
 
     describe('hotkeys', () => {
         it('should open hotkeys modal on ?', async () => {
-            const { questionMark } = await setup();
+            const { questionMark, getByText } = await setup();
 
             questionMark();
 
-            const { modal } = getModal();
-
-            getByText(modal, 'ProtonMail Keyboard Shortcuts');
+            getByText('ProtonMail Keyboard Shortcuts');
         });
 
         it('should focus element list on Tab', async () => {
