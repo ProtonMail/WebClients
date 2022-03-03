@@ -33,7 +33,7 @@ const PasswordTotpInputs = ({ password, setPassword, passwordError, totp, setTot
             {showTotp && (
                 <InputFieldTwo
                     required
-                    autoFocus
+                    autoFocus={!setPassword}
                     id="totp"
                     value={totp}
                     error={totpError}
