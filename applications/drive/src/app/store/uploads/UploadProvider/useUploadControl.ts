@@ -98,7 +98,12 @@ export default function useUploadControl(
         (idOrFilter: UpdateFilter) => {
             updateWithCallback(
                 idOrFilter,
-                ({ resumeState }) => {
+                ({ resumeState, parentId }) => {
+                    // If the parent folder was created during the pause,
+                    // go back to pending, not initializing state.
+                    if (parentId && resumeState === TransferState.Initializing) {
+                        return TransferState.Pending;
+                    }
                     return resumeState || TransferState.Progress;
                 },
                 ({ id }) => {

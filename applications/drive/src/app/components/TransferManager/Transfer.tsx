@@ -39,6 +39,8 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
     const progress = isDone ? progressLimit : stats.progress;
     const speed = humanSize(stats.speed);
 
+    const isUploadingFolder = type === TransferType.Upload && transfer.meta.mimeType === 'Folder';
+
     return (
         <div
             className={classnames([
@@ -57,12 +59,14 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
                 </span>
             </div>
 
-            <div className="transfers-manager-list-item-size text-right text-ellipsis" title={`${percentageDone}%`}>
-                {(isProgress || isPaused) && <span className="no-tablet no-mobile">{humanSize(progress)} / </span>}
-                {fileSize !== undefined
-                    ? humanSize(fileSize)
-                    : isProgress && <Loader className="inline" size="small" />}
-            </div>
+            {!isUploadingFolder && (
+                <div className="transfers-manager-list-item-size text-right text-ellipsis" title={`${percentageDone}%`}>
+                    {(isProgress || isPaused) && <span className="no-tablet no-mobile">{humanSize(progress)} / </span>}
+                    {fileSize !== undefined
+                        ? humanSize(fileSize)
+                        : isProgress && <Loader className="inline" size="small" />}
+                </div>
+            )}
 
             <div className="transfers-manager-list-item-status flex flex-nowrap flex-align-items-center flex-justify-end text-ellipsis">
                 <TransferStateIndicator transfer={transfer} type={type} speed={speed} />
