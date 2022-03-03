@@ -17,6 +17,7 @@ import { StrippedList, StrippedItem, Button, Price } from '../../../components';
 import { useConfig } from '../../../hooks';
 import { OpenSubscriptionModalCallback } from '.';
 import { SUBSCRIPTION_STEPS } from './constants';
+
 interface Props {
     subscription?: Subscription;
     plans: Plan[];
@@ -29,16 +30,15 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
     const { APP_NAME } = useConfig();
     const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
-    if (!user.canPay) {
+    if (!user.canPay || !subscription) {
         return null;
     }
 
-    if (subscription && getHasLegacyPlans(subscription)) {
+    if (getHasLegacyPlans(subscription)) {
         return null;
     }
-
     // Trial upsell
-    if (subscription && isTrial(subscription)) {
+    if (isTrial(subscription)) {
         const mailPlanName = PLAN_NAMES[PLANS.MAIL];
         const formattedTrialExpirationDate = format(subscription.PeriodEnd, 'MMMM d, y');
         const calendarAppName = getAppName(APPS.PROTONCALENDAR);
@@ -57,7 +57,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             });
         return (
-            <div className="border px2 py1 w60">
+            <div className="border round px2 py1 w60">
                 <h3>{c('Title').t`${mailPlanName} Trial`}</h3>
                 <h4>{c('Info').t`Your trial ends ${formattedTrialExpirationDate}`}</h4>
                 <p className="color-weak">{c('Info')
@@ -83,7 +83,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
     }
 
     // VPN app only upsell
-    if (!subscription && isVpnApp) {
+    if (user.isFree && isVpnApp) {
         const numberOfPlusCountries = vpnCountries[PLANS.VPNPLUS].count;
         const vpn = PLAN_NAMES[PLANS.VPN];
         const plan = plans.find(({ Name }) => Name === PLANS.VPN) as Plan;
@@ -100,7 +100,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 disableBackButton: true,
             });
         return (
-            <div className="border px2 py1 w60">
+            <div className="border rounded px2 py1 w60">
                 <h3>{c('Title').t`Upgrade to ${vpn}`}</h3>
                 <p>{c('Info')
                     .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`}</p>
@@ -117,8 +117,8 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
         );
     }
 
-    // Mail upsell
-    if (!subscription || hasMail(subscription) || hasDrive(subscription) || hasVPN(subscription)) {
+    // Bundle upsell
+    if (user.isFree || hasMail(subscription) || hasDrive(subscription) || hasVPN(subscription)) {
         const bundle = PLAN_NAMES[PLANS.BUNDLE];
         const plan = plans.find(({ Name }) => Name === PLANS.BUNDLE) as Plan;
         const price = (
@@ -139,7 +139,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 disableBackButton: true,
             });
         return (
-            <div className="border px2 py1 w60">
+            <div className="border rounded px2 py1 w60">
                 <h3>{c('Title').t`Upgrade to ${bundle}`}</h3>
                 <p className="color-weak">{c('Info')
                     .t`Upgrade to the ultimate privacy pack and access all premium Proton services.`}</p>
@@ -182,7 +182,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 disableBackButton: true,
             });
         return (
-            <div className="border px2 py1 w60">
+            <div className="border rounded px2 py1 w60">
                 <h3>{c('Title').t`Upgrade to ${business}`}</h3>
                 <p className="color-weak">{c('Info')
                     .t`The ultimate privacy pack with access to all premium Proton services.`}</p>

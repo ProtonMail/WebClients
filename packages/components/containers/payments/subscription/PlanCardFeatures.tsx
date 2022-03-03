@@ -86,13 +86,13 @@ const PlanCardFeatures = ({ planName, features, audience }: Props) => {
     );
     const teamFeatures = audience === Audience.B2B && planName !== PLANS.FREE && (
         <div>
-            <h2>{c('new_plans').t`Team management`}</h2>
+            <h2>{c('new_plans: heading').t`Team management`}</h2>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.team, audience)} />
         </div>
     );
     const supportFeatures = audience === Audience.B2B && planName !== PLANS.FREE && (
         <div>
-            <h2>{c('new_plans').t`Support`}</h2>
+            <h2>{c('new_plans: heading').t`Support`}</h2>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.support, audience)} />
         </div>
     );

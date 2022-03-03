@@ -90,7 +90,7 @@ const PlanCard = ({
                 className={classnames([
                     'border relative h100 plan-selection-plan p2 pb0 flex flex-column flex-nowrap',
                     isCurrentPlan && 'plan-selection-plan-current-card',
-                    recommended && 'plan-selection-plan-recommended',
+                    recommended && 'plan-selection-plan-recommended border-primary',
                 ])}
             >
                 {recommended ? (

@@ -35,22 +35,26 @@ const YourPlanSection = () => {
     }
 
     return (
-        <div className="flex flex-gap-1 on-tablet-flex-column">
-            <SubscriptionPanel
-                subscription={subscription}
-                organization={organization}
-                user={user}
-                addresses={addresses}
-                openSubscriptionModal={openSubscriptionModal}
-            />
-            <UpsellPanel
-                subscription={subscription}
-                plans={plans}
-                user={user}
-                vpnCountries={vpnCountries}
-                openSubscriptionModal={openSubscriptionModal}
-            />
-            <MemberPanel organization={organization} user={user} />
+        <div className="flex flex-gap-2 on-tablet-flex-column">
+            <div className="flex-item-fluid flex">
+                <SubscriptionPanel
+                    subscription={subscription}
+                    organization={organization}
+                    user={user}
+                    addresses={addresses}
+                    openSubscriptionModal={openSubscriptionModal}
+                />
+            </div>
+            <div className="flex-item-fluid flex">
+                <UpsellPanel
+                    subscription={subscription}
+                    plans={plans}
+                    user={user}
+                    vpnCountries={vpnCountries}
+                    openSubscriptionModal={openSubscriptionModal}
+                />
+                <MemberPanel organization={organization} user={user} />
+            </div>
         </div>
     );
 };

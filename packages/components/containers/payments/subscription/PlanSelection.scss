@@ -18,7 +18,7 @@
 
 .plan-selection {
 	display: grid;
-	grid-gap: 1em;
+	grid-gap: 2em;
 	grid-template-columns: repeat(var(--plan-selection-number, 4), 1fr);
 	& &-plan {
 		// specificity ^^
@@ -31,7 +31,7 @@
 
 	.plan-selection {
 		&-plan-recommended {
-			border-color: var(--primary);
+			border-width: 2px;
 			&-pill {
 				&-container {
 					position: absolute;
@@ -58,28 +58,28 @@
 			}
 		}
 
-		&-logos {
-			min-block-size: rem(60);
-			display: inline-grid;
-			gap: 0.25em;
-			grid-template-columns: repeat(4, 52px);
-			@include respond-to(1230) {
-				grid-template-columns: repeat(2, 52px);
-				min-block-size: rem(120);
-			}
-			@include respond-to($breakpoint-small) {
-				min-block-size: 0;
-				&:empty {
-					margin: 0;
-				}
-			}
-		}
-		&-product-logo {
-			border-radius: var(--border-radius-lg);
-		}
+		// &-logos {
+		// 	min-block-size: rem(60);
+		// 	display: inline-grid;
+		// 	gap: 0.25em;
+		// 	grid-template-columns: repeat(4, 52px);
+		// 	@include respond-to(1230) {
+		// 		grid-template-columns: repeat(2, 52px);
+		// 		min-block-size: rem(120);
+		// 	}
+		// 	@include respond-to($breakpoint-small) {
+		// 		min-block-size: 0;
+		// 		&:empty {
+		// 			margin: 0;
+		// 		}
+		// 	}
+		// }
+		// &-product-logo {
+		// 	border-radius: var(--border-radius-lg);
+		// }
 
 		&-info {
-			min-block-size: 4em;
+			min-block-size: 5em;
 			@include respond-to(1290) {
 				min-block-size: 6em;
 			}
@@ -123,21 +123,21 @@
 	}
 
 	// special case for b2b
-	&--b2b &-info {
-		min-block-size: 6em;
-		@include respond-to(1250) {
-			min-block-size: 7.5em;
-		}
-		@include respond-to(1110) {
-			min-block-size: 8em;
-		}
-		@include respond-to(960) {
-			min-block-size: 10em;
-		}
-		@include respond-to($breakpoint-small) {
-			min-block-size: 0;
-		}
-	}
+	// &--b2b &-info {
+	// 	min-block-size: 6em;
+	// 	@include respond-to(1250) {
+	// 		min-block-size: 7.5em;
+	// 	}
+	// 	@include respond-to(1110) {
+	// 		min-block-size: 8em;
+	// 	}
+	// 	@include respond-to(960) {
+	// 		min-block-size: 10em;
+	// 	}
+	// 	@include respond-to($breakpoint-small) {
+	// 		min-block-size: 0;
+	// 	}
+	// }
 }
 
 .subscriptionCheckout {
