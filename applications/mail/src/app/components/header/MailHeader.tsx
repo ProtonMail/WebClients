@@ -12,8 +12,6 @@ import {
     TopNavbarListItemSettingsDropdown,
     TopNavbarListItemContactsDropdown,
     Icon,
-    useModals,
-    ConfirmModal,
     DropdownMenuButton,
     useUserSettings,
     useMailSettings,
@@ -22,6 +20,7 @@ import {
     MailViewLayoutModal,
     MailComposerModeModal,
     AppsDropdownWithDiscoverySpotlight,
+    useModalState,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS, APPS, VIEW_LAYOUT, DENSITY, COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -34,6 +33,7 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
 import MailDefaultHandlerModal from './MailDefaultHandlerModal';
+import ClearBrowserDataModal from './ClearBrowserDataModal';
 
 interface Props {
     labelID: string;
@@ -56,10 +56,16 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
     const [folders = []] = useFolders();
     const { cacheIndexedDB, getESDBStatus, esDelete } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
-    const { createModal } = useModals();
 
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
+
+    const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
+    const [mailViewLayoutProps, setMailViewLayoutModalOpen] = useModalState();
+    const [mailDensityProps, setMailDensityModalOpen] = useModalState();
+    const [mailComposerModeProps, setMailComposerModeModalOpen] = useModalState();
+    const [mailDefaultHandlerProps, setDefaultHandlerModalOpen] = useModalState();
+    const [clearBrowserDataProps, setClearBrowserDataModalOpen] = useModalState();
 
     // Update the search input field when the keyword in the URL is changed
     useEffect(() => updateValue(keyword), [keyword]);
@@ -95,19 +101,6 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
     const labelName = getLabelName(labelID, labels, folders);
     const logo = <MainLogo to="/inbox" />;
 
-    const handleDeleteESIndex = () => {
-        createModal(
-            <ConfirmModal
-                onConfirm={esDelete}
-                title={c('Info').t`Disable message content search`}
-                confirm={c('Info').t`Clear data`}
-                mode="alert"
-            >
-                {c('Info')
-                    .t`Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.`}
-            </ConfirmModal>
-        );
-    };
     const clearDataButton =
         dbExists || esEnabled ? (
             <>
@@ -116,108 +109,103 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
                     title={c('Info')
                         .t`Clears browser data related to message content search including downloaded messages`}
                 >
-                    <DropdownMenuButton onClick={handleDeleteESIndex} className="flex flex-nowrap flex-justify-center">
+                    <DropdownMenuButton
+                        onClick={() => setClearBrowserDataModalOpen(true)}
+                        className="flex flex-nowrap flex-justify-center"
+                    >
                         <span className="color-weak">{c('Action').t`Clear browser data`}</span>
                     </DropdownMenuButton>
                 </Tooltip>
             </>
         ) : null;
 
-    const handleDefaultMailHandlerClick = () => {
-        createModal(<MailDefaultHandlerModal />);
-    };
-
-    const handleKeyboardShortcutsClick = () => {
-        createModal(<MailShortcutsModal />, 'shortcuts-modal');
-    };
-
-    const handleDensityClick = () => {
-        createModal(<MailDensityModal />);
-    };
-
-    const handleViewLayoutClick = () => {
-        createModal(<MailViewLayoutModal />);
-    };
-
-    const handleComposerModeClick = () => {
-        createModal(<MailComposerModeModal />);
-    };
-
     return (
-        <PrivateHeader
-            logo={logo}
-            backUrl={showBackButton && backUrl ? backUrl : undefined}
-            title={labelName}
-            settingsButton={
-                <TopNavbarListItemSettingsDropdown to="/mail" toApp={APPS.PROTONACCOUNT}>
-                    <hr className="mt0-5 mb0-5" />
-                    <DropdownMenuButton
-                        onClick={handleKeyboardShortcutsClick}
-                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                    >
-                        <span className="flex-item-fluid text-left">{c('Action').t`Keyboard shortcuts`}</span>
-                        <span className="color-primary ml0-5">
-                            {Shortcuts
-                                ? c('Keyboard Shortcuts Enabled').t`On`
-                                : c('Keyboard Shortcuts Disabled').t`Off`}
-                        </span>
-                    </DropdownMenuButton>
-                    <DropdownMenuButton
-                        onClick={handleViewLayoutClick}
-                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
-                    >
-                        <span className="flex-item-fluid text-left">{c('Action').t`Mailbox layout`}</span>
-                        <span className="color-primary ml0-5">
-                            {ViewLayout === VIEW_LAYOUT.COLUMN ? c('Layout mode').t`Column` : c('Layout mode').t`Row`}
-                        </span>
-                    </DropdownMenuButton>
-                    <DropdownMenuButton
-                        onClick={handleDensityClick}
-                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                    >
-                        <span className="flex-item-fluid text-left">{c('Action').t`Mailbox density`}</span>
-                        <span className="color-primary flex-item-noshrink ml0-5">
-                            {Density === DENSITY.COMFORTABLE
-                                ? c('Density mode').t`Comfortable`
-                                : c('Density mode').t`Compact`}
-                        </span>
-                    </DropdownMenuButton>
-                    <DropdownMenuButton
-                        onClick={handleComposerModeClick}
-                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
-                    >
-                        <span className="flex-item-fluid text-left">{c('Action').t`Composer size`}</span>
-                        <span className="color-primary ml0-5">
-                            {ComposerMode === COMPOSER_MODE.MAXIMIZED
-                                ? c('Composer size').t`Maximized`
-                                : c('Composer size').t`Normal`}
-                        </span>
-                    </DropdownMenuButton>
-                    {isFirefox() && (
+        <>
+            <PrivateHeader
+                logo={logo}
+                backUrl={showBackButton && backUrl ? backUrl : undefined}
+                title={labelName}
+                settingsButton={
+                    <TopNavbarListItemSettingsDropdown to="/mail" toApp={APPS.PROTONACCOUNT}>
+                        <hr className="mt0-5 mb0-5" />
                         <DropdownMenuButton
-                            onClick={handleDefaultMailHandlerClick}
+                            onClick={() => setMailShortcutsModalOpen(true)}
+                            className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                        >
+                            <span className="flex-item-fluid text-left">{c('Action').t`Keyboard shortcuts`}</span>
+                            <span className="color-primary ml0-5">
+                                {Shortcuts
+                                    ? c('Keyboard Shortcuts Enabled').t`On`
+                                    : c('Keyboard Shortcuts Disabled').t`Off`}
+                            </span>
+                        </DropdownMenuButton>
+                        <DropdownMenuButton
+                            onClick={() => setMailViewLayoutModalOpen(true)}
                             className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
                         >
-                            <span className="flex-item-fluid text-left">{c('Action')
-                                .t`Default email application`}</span>
+                            <span className="flex-item-fluid text-left">{c('Action').t`Mailbox layout`}</span>
+                            <span className="color-primary ml0-5">
+                                {ViewLayout === VIEW_LAYOUT.COLUMN
+                                    ? c('Layout mode').t`Column`
+                                    : c('Layout mode').t`Row`}
+                            </span>
                         </DropdownMenuButton>
-                    )}
-                    {clearDataButton}
-                </TopNavbarListItemSettingsDropdown>
-            }
-            contactsButton={<TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />}
-            searchBox={searchBox}
-            searchDropdown={searchDropdown}
-            expanded={!!expanded}
-            onToggleExpand={onToggleExpand}
-            isNarrow={breakpoints.isNarrow}
-            appsDropdown={<AppsDropdownWithDiscoverySpotlight />}
-            floatingButton={
-                <FloatingButton onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}>
-                    <Icon size={24} name="pen" className="mauto" />
-                </FloatingButton>
-            }
-        />
+                        <DropdownMenuButton
+                            onClick={() => setMailDensityModalOpen(true)}
+                            className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                        >
+                            <span className="flex-item-fluid text-left">{c('Action').t`Mailbox density`}</span>
+                            <span className="color-primary flex-item-noshrink ml0-5">
+                                {Density === DENSITY.COMFORTABLE
+                                    ? c('Density mode').t`Comfortable`
+                                    : c('Density mode').t`Compact`}
+                            </span>
+                        </DropdownMenuButton>
+                        <DropdownMenuButton
+                            onClick={() => setMailComposerModeModalOpen(true)}
+                            className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
+                        >
+                            <span className="flex-item-fluid text-left">{c('Action').t`Composer size`}</span>
+                            <span className="color-primary ml0-5">
+                                {ComposerMode === COMPOSER_MODE.MAXIMIZED
+                                    ? c('Composer size').t`Maximized`
+                                    : c('Composer size').t`Normal`}
+                            </span>
+                        </DropdownMenuButton>
+                        {isFirefox() && (
+                            <DropdownMenuButton
+                                onClick={() => setDefaultHandlerModalOpen(true)}
+                                className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
+                            >
+                                <span className="flex-item-fluid text-left">{c('Action')
+                                    .t`Default email application`}</span>
+                            </DropdownMenuButton>
+                        )}
+                        {clearDataButton}
+                    </TopNavbarListItemSettingsDropdown>
+                }
+                contactsButton={
+                    <TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />
+                }
+                searchBox={searchBox}
+                searchDropdown={searchDropdown}
+                expanded={!!expanded}
+                onToggleExpand={onToggleExpand}
+                isNarrow={breakpoints.isNarrow}
+                appsDropdown={<AppsDropdownWithDiscoverySpotlight />}
+                floatingButton={
+                    <FloatingButton onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}>
+                        <Icon size={24} name="pen" className="mauto" />
+                    </FloatingButton>
+                }
+            />
+            <MailShortcutsModal {...mailShortcutsProps} />
+            <MailViewLayoutModal {...mailViewLayoutProps} />
+            <MailDensityModal {...mailDensityProps} />
+            <MailComposerModeModal {...mailComposerModeProps} />
+            <MailDefaultHandlerModal {...mailDefaultHandlerProps} />
+            <ClearBrowserDataModal {...clearBrowserDataProps} esDelete={esDelete} />
+        </>
     );
 };
 
