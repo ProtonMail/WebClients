@@ -3,8 +3,8 @@ import { c } from 'ttag';
 
 import { APPS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 
-import { Info, Button, SettingsLink } from '../../components';
-import { useFeature, useMailSettings, useModals, useUser } from '../../hooks';
+import { Info, Button, useModalState, SettingsLink } from '../../components';
+import { useFeature, useMailSettings, useUser } from '../../hooks';
 import EmbeddedToggle from './EmbeddedToggle';
 import ShowMovedToggle from './ShowMovedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
@@ -14,8 +14,8 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import { FeatureCode } from '../features';
 import { RemoteToggle } from '../emailPrivacy';
-import MailShortCutsModal from '../mail/MailShortcutsModal';
 import ShortcutsToggle from '../general/ShortcutsToggle';
+import { MailShortcutsModal } from '../mail';
 import {
     DailyEmailNotificationToggleInput,
     DailyEmailNotificationToggleLabel,
@@ -24,7 +24,6 @@ import {
 const { EMBEDDED } = SHOW_IMAGES;
 
 const MessagesSection = () => {
-    const { createModal } = useModals();
     const [{ ShowImages = EMBEDDED, ConfirmLink = 1, DelaySendSeconds = 10, Shortcuts = 0 } = {}] = useMailSettings();
     const [, setShortcuts] = useState(Shortcuts);
     const [user, userLoading] = useUser();
@@ -32,11 +31,9 @@ const MessagesSection = () => {
     const handleChange = (newValue: number) => setShowImages(newValue);
     const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
 
-    const handleChangeShowImage = (newValue: number) => setShowImages(newValue);
+    const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
 
-    const openShortcutsModal = () => {
-        createModal(<MailShortCutsModal />, 'shortcuts-modal');
-    };
+    const handleChangeShowImage = (newValue: number) => setShowImages(newValue);
 
     // Handle updates from the Event Manager.
     useEffect(() => {
@@ -131,7 +128,7 @@ const MessagesSection = () => {
                     <ShortcutsToggle className="mr1" id="shortcutsToggle" />
                     <Button
                         shape="outline"
-                        onClick={openShortcutsModal}
+                        onClick={() => setMailShortcutsModalOpen(true)}
                         className="flex-item-noshrink flex-item-nogrow"
                     >
                         {c('Action').t`Show shortcuts`}
@@ -150,6 +147,7 @@ const MessagesSection = () => {
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
+            <MailShortcutsModal {...mailShortcutsProps} />
         </>
     );
 };

@@ -1,29 +1,25 @@
 import { c } from 'ttag';
-import { ConfirmModal } from '@proton/components/components/modal';
+import { AlertModal, Button, ModalProps } from '@proton/components';
 import { Href } from '@proton/components/components/link';
 import { registerMailToProtocolHandler } from '../../helpers/url';
 
-interface Props {
-    onClose?: () => void;
-}
+const MailDefaultHandlerModal = (props: ModalProps) => {
+    const { onClose } = props;
 
-const MailDefaultHandlerModal = ({ ...rest }: Props) => {
     const handleAskForPermission = () => {
         registerMailToProtocolHandler();
 
-        if (rest.onClose) {
-            rest.onClose();
-        }
+        onClose?.();
     };
 
     return (
-        <ConfirmModal
+        <AlertModal
             title={c('Info').t`Default email application`}
-            confirm={c('Action').t`Set as default`}
-            onConfirm={handleAskForPermission}
-            onClose={rest.onClose}
-            mode="alert"
-            {...rest}
+            buttons={[
+                <Button color="norm" onClick={handleAskForPermission}>{c('Action').t`Set as default`}</Button>,
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
+            {...props}
         >
             <span>{c('Info')
                 .t`Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.`}</span>
@@ -34,7 +30,7 @@ const MailDefaultHandlerModal = ({ ...rest }: Props) => {
             >
                 {c('Info').t`Learn more`}
             </Href>
-        </ConfirmModal>
+        </AlertModal>
     );
 };
 
