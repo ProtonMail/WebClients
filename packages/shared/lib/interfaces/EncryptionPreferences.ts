@@ -61,7 +61,11 @@ export interface PublicKeyConfigs {
 
 export interface ContactPublicKeyModel {
     emailAddress: string;
-    publicKeys: { apiKeys: OpenPGPKey[]; pinnedKeys: OpenPGPKey[]; verifyingPinnedKeys: OpenPGPKey[] };
+    publicKeys: {
+        apiKeys: OpenPGPKey[];
+        pinnedKeys: OpenPGPKey[];
+        verifyingPinnedKeys: OpenPGPKey[]; // Subset of pinned keys not marked as compromised
+    };
     encrypt?: boolean;
     sign?: boolean;
     mimeType: CONTACT_MIME_TYPES;
@@ -69,7 +73,7 @@ export interface ContactPublicKeyModel {
     trustedFingerprints: Set<string>;
     obsoleteFingerprints: Set<string>; // Keys that are not allowed to encrypt, because they are marked as obsolete.
     encryptionCapableFingerprints: Set<string>; // Keys that are capable of encryption (regardless of whether they are allowed to encrypt).
-    compromisedFingerprints: Set<string>;
+    compromisedFingerprints: Set<string>; // Keys that are not allowed to encrypt nor sign, because they are marked as compromised
     isPGPExternal: boolean;
     isPGPInternal: boolean;
     isPGPExternalWithWKDKeys: boolean;
