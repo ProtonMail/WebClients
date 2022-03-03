@@ -38,10 +38,10 @@
 	--interaction-default-hover: rgb(91 87 107 / 0.2);
 	--interaction-default-active: rgb(91 87 107 / 0.4);
 
-	--shadow-norm-opacity: 0.4;
-	--shadow-lifted-opacity: 0.48;
+	--shadow-norm-opacity: 0.5;
+	--shadow-lifted-opacity: 0.75;
 
-	--backdrop-norm: rgb(0 0 0 / 0.32);
+	--backdrop-norm: rgb(0 0 0 / 0.75);
 
 	/* Optional colors */
 
@@ -51,9 +51,6 @@
 	--optional-link-norm: var(--interaction-norm-major-1);
 	--optional-link-hover: var(--interaction-norm-major-2);
 	--optional-link-active: var(--interaction-norm-major-3);
-
-	--optional-email-item-selected-background-color: #573BCC;
-	--optional-email-item-selected-icon-background-color: #412C99;
 
 	--optional-email-item-read-background-color: #16141C;
 }

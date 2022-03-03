@@ -53,7 +53,7 @@
   --field-hover: #575c75;
   --field-disabled: #34384e;
   --field-focus: #e53265;
-  --field-highlight: rgb(343 78 90 / 0.3);
+  --field-highlight: rgb(229 50 101 / 0.3);
   --border-norm: #34384e;
   --border-weak: #25283a;
   --background-norm: #171926;
@@ -62,9 +62,9 @@
   --interaction-default: transparent;
   --interaction-default-hover: rgb(52 56 78 / 0.5);
   --interaction-default-active: rgb(52 56 78 / 0.7);
-  --shadow-norm-opacity: 0.4;
-  --shadow-lifted-opacity: 0.48;
-  --backdrop-norm: rgb(0 0 0 / 0.32);
+  --shadow-norm-opacity: 0.5;
+  --shadow-lifted-opacity: 0.75;
+  --backdrop-norm: rgb(0 0 0 / 0.75);
   --optional-scrollbar-thumb-color: #34384e;
   --optional-scrollbar-thumb-hover-color: #454a61;
   --optional-link-norm: var(--interaction-norm-major-1);
@@ -72,9 +72,6 @@
   --optional-link-active: var(--interaction-norm-major-3);
   --optional-navigation-current-item-text-color: var(--signal-success);
   --optional-navigation-item-count-background-color: #8838ff;
-  --optional-email-item-selected-icon-background-color: var(
-    --interaction-norm-minor-1
-  );
   --optional-email-item-read-background-color: #11121d;
   --optional-email-item-read-text-color: var(--text-weak);
   --optional-logo-text-proton-color: white;
