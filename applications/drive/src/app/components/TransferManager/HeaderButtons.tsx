@@ -1,8 +1,7 @@
 import { c } from 'ttag';
+import { classnames } from '@proton/components';
 
-import { classnames, Details, Radio, Summary } from '@proton/components';
-
-import { Download, TransferGroup, TransferType, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
+import { Download, TransferType, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
 import useTransferControls from './useTransferControls';
 import Buttons from './Buttons';
 import {
@@ -17,12 +16,9 @@ import { TransferManagerButtonProps } from './interfaces';
 
 type TransferManagerEntry = { transfer: Upload | Download; type: TransferType };
 
-interface ToolbarProps {
-    currentTransferGroup?: TransferGroup;
-    onTransferGroupFilterChange: (transferGroup: TransferGroup | undefined) => void;
+interface HeaderButtonProps {
     entries: TransferManagerEntry[];
-    isExpanded: boolean;
-    onExpand: (isExpanded: boolean) => void;
+    className: string;
 }
 
 const extractTransferFromEntry = ({ transfer }: TransferManagerEntry) => transfer;
@@ -33,13 +29,7 @@ const isInvalidForCancellation = (transfer: Upload | Download) =>
     isTransferFinalizing(transfer) ||
     isTransferDone(transfer);
 
-const Toolbar = ({
-    onTransferGroupFilterChange,
-    currentTransferGroup,
-    entries,
-    isExpanded,
-    onExpand,
-}: ToolbarProps) => {
+const HeaderButton = ({ entries, className }: HeaderButtonProps) => {
     const transferManagerControls = useTransferControls();
 
     const areAllActiveTransfersPaused = entries
@@ -51,7 +41,7 @@ const Toolbar = ({
         .every((transfer) => !isTransferOngoing(transfer));
 
     /*
-     * Pause icon get priority over resume. Here are the rules:
+     * Pause icon gets priority over resume icon. Here are the rules:
      *
      * - mixed transfer –> pause
      * - only in progress –> pause
@@ -71,7 +61,7 @@ const Toolbar = ({
                 return transferManagerControls.pauseTransfers(ongoingEntries);
             },
             disabled: hasOnlyInactiveTransfers,
-            title: shouldDisplayResume ? c('Action').t`Resume transfers` : c('Action').t`Pause transfers`,
+            title: shouldDisplayResume ? c('Action').t`Resume all` : c('Action').t`Pause all`,
             iconName: shouldDisplayResume ? 'play' : 'pause',
             actionType: shouldDisplayResume ? 'play' : 'pause',
         },
@@ -83,7 +73,7 @@ const Toolbar = ({
             },
             // Only cancelled/failed/finalizing/done transfers -> cancel button disabled
             disabled: entries.map(extractTransferFromEntry).every(isInvalidForCancellation),
-            title: c('Action').t`Cancel transfers`,
+            title: c('Action').t`Cancel all`,
             iconName: 'xmark',
             actionType: 'cancel',
         },
@@ -100,71 +90,26 @@ const Toolbar = ({
              * the case when theres only transfers in progress
              */
             disabled: !entries.map(extractTransferFromEntry).some(isTransferFailed),
-            title: c('Action').t`Restart transfers`,
+            title: c('Action').t`Restart all`,
             iconName: 'arrow-rotate-right',
             actionType: 'restart',
         },
     ];
 
-    const filterOptions = [
-        {
-            value: undefined,
-            // translator: the label is for a button resetting current filter and displaying all the transfers."
-            label: c('Label').t`All`,
-        },
-        {
-            value: TransferGroup.ACTIVE,
-            // translator: the label is for a button showing only active transfers"
-            label: c('Label').t`Active`,
-        },
-        {
-            value: TransferGroup.DONE,
-            // translator: the label is for a button showing only completed transfers"
-            label: c('Label').t`Completed`,
-        },
-        {
-            value: TransferGroup.FAILURE,
-            // translator: the label is for a button showing only failed transfers"
-            label: c('Label').t`Failed`,
-        },
-    ].map((group) => (
-        <Radio
-            name="transfers-manager-controls-radio"
-            className="mr1"
-            value={group.value}
-            key={group.label}
-            id={`transfer-filter-${group.value}`}
-            checked={group.value === currentTransferGroup}
-            onChange={() => onTransferGroupFilterChange(group.value)}
-        >
-            {group.label}
-        </Radio>
-    ));
-
     return (
-        <div className="transfers-manager-toolbar" data-testid="drive-transfers-manager:toolbar-details">
-            <Details
-                open={isExpanded}
-                onToggle={() => {
-                    onExpand(!isExpanded);
-                }}
-                className="border-none"
-            >
-                <Summary tabIndex={0} className="pl1 pr1">
-                    <span>{c('Title').t`Additional settings`}</span>
-                </Summary>
-                <div className={classnames(['transfers-manager-controls pb1 pt0-5 pl1 pr1'])}>
-                    <div className="transfers-manager-status-filter flex flex-nowrap flex-align-items-center text-ellipsis">
-                        {filterOptions}
-                    </div>
-                    <div className="flex flex-nowrap flex-justify-end no-scroll flex-item-noshrink">
-                        <span className="mr1 text-ellipsis">{c('Label').t`Apply to selection`}</span>
-                        <Buttons buttons={buttons} className="flex-item-noshrink" />
-                    </div>
-                </div>
-            </Details>
+        <div
+            className={classnames([
+                'flex',
+                'flex-nowrap',
+                'flex-justify-end',
+                'no-scroll',
+                'flex-item-noshrink',
+                className,
+            ])}
+        >
+            <Buttons buttons={buttons} className="flex-item-noshrink" />
         </div>
     );
 };
 
-export default Toolbar;
+export default HeaderButton;
