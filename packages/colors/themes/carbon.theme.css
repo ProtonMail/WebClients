@@ -62,16 +62,14 @@
   --interaction-default: transparent;
   --interaction-default-hover: rgb(91 87 107 / 0.2);
   --interaction-default-active: rgb(91 87 107 / 0.4);
-  --shadow-norm-opacity: 0.4;
-  --shadow-lifted-opacity: 0.48;
-  --backdrop-norm: rgb(0 0 0 / 0.32);
+  --shadow-norm-opacity: 0.5;
+  --shadow-lifted-opacity: 0.75;
+  --backdrop-norm: rgb(0 0 0 / 0.75);
   --optional-scrollbar-thumb-color: #4a4658;
   --optional-scrollbar-thumb-hover-color: #5b576b;
   --optional-link-norm: var(--interaction-norm-major-1);
   --optional-link-hover: var(--interaction-norm-major-2);
   --optional-link-active: var(--interaction-norm-major-3);
-  --optional-email-item-selected-background-color: #573bcc;
-  --optional-email-item-selected-icon-background-color: #412c99;
   --optional-email-item-read-background-color: #16141c;
 }
 
