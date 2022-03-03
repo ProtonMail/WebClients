@@ -71,7 +71,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                                 className="increase-click-surface color-inherit"
                                 color="weak"
                                 shape="outline"
-                                path="/dashboard"
+                                path="/upgrade"
                             >
                                 {c('Action').t`Upgrade`}
                             </ButtonLike>
@@ -90,7 +90,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                                 className="increase-click-surface color-inherit"
                                 color="weak"
                                 shape="outline"
-                                path="/dashboard"
+                                path="/upgrade"
                             >
                                 {c('Action').t`Upgrade`}
                             </ButtonLike>
