@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 import { PLAN_NAMES, CYCLE, APPS, PLANS } from '@proton/shared/lib/constants';
 import { unique } from '@proton/shared/lib/helpers/array';
-import { getMonthlyBaseAmount, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { getHasLegacyPlans, getMonthlyBaseAmount, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { Cycle } from '@proton/shared/lib/interfaces';
@@ -71,7 +71,8 @@ const BillingSection = () => {
                     {mailPlan ? (
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>
-                                {mailAppName} {PLAN_NAMES[mailPlan.Name as keyof typeof PLAN_NAMES]}
+                                {getHasLegacyPlans(subscription) ? mailAppName : null}{' '}
+                                {PLAN_NAMES[mailPlan.Name as keyof typeof PLAN_NAMES]}
                             </div>
                             <div className="text-right">
                                 <PlanPrice
@@ -170,7 +171,8 @@ const BillingSection = () => {
                     {vpnPlan ? (
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>
-                                {vpnAppName} {PLAN_NAMES[vpnPlan.Name as keyof typeof PLAN_NAMES]}
+                                {getHasLegacyPlans(subscription) ? vpnAppName : null}{' '}
+                                {PLAN_NAMES[vpnPlan.Name as keyof typeof PLAN_NAMES]}
                             </div>
                             <div className="text-right">
                                 <PlanPrice
