@@ -81,7 +81,7 @@ export const useCompose = (
         <AlertModal
             title={c('Title').t`Storage capacity warning`}
             buttons={[
-                <ErrorButton onClick={() => goToSettings('/dashboard')}>{c('Action').t`Upgrade`}</ErrorButton>,
+                <ErrorButton onClick={() => goToSettings('/upgrade')}>{c('Action').t`Upgrade`}</ErrorButton>,
                 <Button onClick={storageCapacityModalProps.onClose}>{c('Action').t`Close`}</Button>,
             ]}
             {...storageCapacityModalProps}

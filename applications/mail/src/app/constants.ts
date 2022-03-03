@@ -165,7 +165,7 @@ export const defaultESContextMail: EncryptedSearchFunctionsMail = {
 };
 
 export const WELCOME_PANE_OPTIONS_URLS = {
-    plansSelection: '/dashboard',
+    plansSelection: '/upgrade',
     protonShop: 'https://shop.protonmail.com',
     proton2FA: 'https://protonmail.com/support/knowledge-base/two-factor-authentication/',
     protonBusiness: 'https://protonmail.com/business/',

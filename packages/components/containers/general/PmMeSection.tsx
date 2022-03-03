@@ -31,7 +31,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
                             .t`You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.`}
                     </SettingsParagraph>
 
-                    <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
+                    <ButtonLike color="norm" as={SettingsLink} path="/upgrade">
                         {c('Action').t`Upgrade`}
                     </ButtonLike>
                 </>
