@@ -56,11 +56,10 @@ describe('Unsubscribe banner', () => {
 
         const { getByTestId } = await render(<ExtraUnsubscribe message={message} />, false);
 
-        const banner = getByTestId('unsubscribe-banner');
+        const button = getByTestId('unsubscribe-banner');
 
-        expect(banner.textContent).toMatch(/Unsubscribe/);
+        expect(button.textContent).toMatch(/Unsubscribe/);
 
-        const button = banner.querySelector('button');
         if (button) {
             fireEvent.click(button);
         }
@@ -100,11 +99,10 @@ describe('Unsubscribe banner', () => {
 
         const { getByTestId } = await render(<ExtraUnsubscribe message={message} />, false);
 
-        const banner = getByTestId('unsubscribe-banner');
+        const button = getByTestId('unsubscribe-banner');
 
-        expect(banner.textContent).toMatch(/Unsubscribe/);
+        expect(button.textContent).toMatch(/Unsubscribe/);
 
-        const button = banner.querySelector('button');
         if (button) {
             fireEvent.click(button);
         }
@@ -137,11 +135,10 @@ describe('Unsubscribe banner', () => {
 
         const { getByTestId } = await render(<ExtraUnsubscribe message={message} />, false);
 
-        const banner = getByTestId('unsubscribe-banner');
+        const button = getByTestId('unsubscribe-banner');
 
-        expect(banner.textContent).toMatch(/Unsubscribe/);
+        expect(button.textContent).toMatch(/Unsubscribe/);
 
-        const button = banner.querySelector('button');
         if (button) {
             fireEvent.click(button);
         }

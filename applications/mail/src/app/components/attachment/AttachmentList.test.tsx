@@ -46,7 +46,7 @@ describe('AttachmentsList', () => {
     it('should show attachments count and embedded count', async () => {
         const attachments = [normalAttachment, embeddedAttachment];
         const { getByText } = await render(<AttachmentList {...props} attachments={attachments} />);
-        getByText('file attached');
+        getByText('file attached,');
         getByText('embedded image');
     });
 });

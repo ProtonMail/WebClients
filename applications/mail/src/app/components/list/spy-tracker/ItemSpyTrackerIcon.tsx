@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { c } from 'ttag';
 import {
     FeatureCode,
@@ -8,10 +8,12 @@ import {
     Href,
     Tooltip,
     useSpotlightShow,
+    useModalState,
 } from '@proton/components';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import SpyTrackerIcon from './SpyTrackerIcon';
+import SpyTrackerModal from './SpyTrackerModal';
 
 interface Props {
     message: MessageState;
@@ -19,12 +21,13 @@ interface Props {
 }
 
 const ItemSpyTrackerIcon = ({ message, className }: Props) => {
+    const [spyTrackerModalProps, setSpyTrackerModalOpen] = useModalState();
+
     const anchorRef = useRef(null);
 
-    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title, openSpyTrackerModal } =
-        useMessageTrackers({
-            message,
-        });
+    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
+        message,
+    });
 
     // Display the spotlight only once, if trackers have been found inside the email
     const { show: showSpotlight, onDisplayed } = useSpotlightOnFeature(
@@ -67,10 +70,11 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
                             numberOfTrackers={numberOfTrackers}
                             needsMoreProtection={needsMoreProtection}
                             title={title}
-                            openSpyTrackerModal={openSpyTrackerModal}
+                            openSpyTrackerModal={() => setSpyTrackerModalOpen(true)}
                         />
                     </div>
                 </Tooltip>
+                <SpyTrackerModal message={message} {...spyTrackerModalProps} />
             </div>
         </Spotlight>
     );

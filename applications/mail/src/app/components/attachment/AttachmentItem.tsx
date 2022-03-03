@@ -95,7 +95,7 @@ const AttachmentItem = ({
     const name = rtlSanitize(nameRaw);
     const value = Math.round(progression * 100);
     const progressionHappening = progression !== 0 || !!pendingUpload;
-    const humanAttachmentSize = progressionHappening ? `` : `(${humanSize(attachment?.Size)})`;
+    const humanAttachmentSize = progressionHappening ? `` : humanSize(attachment?.Size);
 
     const primaryTitle = `${name} ${humanAttachmentSize}${getSenderVerificationString(attachmentVerified)}`;
     const primaryActionTitle = getActionTitle(primaryAction, primaryTitle);
@@ -134,6 +134,7 @@ const AttachmentItem = ({
                         type="button"
                         onClick={handleAction(true)}
                         tabIndex={-1}
+                        aria-hidden="true"
                     >
                         {progressionHappening ? (
                             <CircularProgress progress={value} size={20} className="mr0-5" />
@@ -142,14 +143,17 @@ const AttachmentItem = ({
                         )}
                     </button>
                     <button
-                        className="flex-item-fluid flex flex-nowrap pr0-5"
+                        className="flex-item-fluid flex flex-nowrap"
                         title={primaryActionTitle}
                         type="button"
                         onClick={handleAction(true)}
                     >
-                        <span className="mtauto mbauto flex flex-align-items-baseline flex-nowrap">
+                        <span className="mtauto mbauto flex flex-align-items-baseline flex-nowrap pr0-5">
                             <FileNameDisplay text={name} />
-                            <span className="message-attachmentSize align-baseline inline-block flex-item-noshrink ml0-25">
+                            <span
+                                className="message-attachmentSize sr-only align-baseline inline-block flex-item-noshrink ml0-25"
+                                data-testid="attachment-item:size"
+                            >
                                 {humanAttachmentSize}
                             </span>
                         </span>
@@ -158,20 +162,25 @@ const AttachmentItem = ({
                 {showSecondaryAction && (
                     <button
                         type="button"
-                        className="inline-flex p0-5 no-pointer-events-children flex-item-noshrink message-attachmentSecondaryAction interactive"
+                        className="inline-flex p0-5 pl0-25 no-pointer-events-children relative flex-item-noshrink message-attachmentSecondaryAction interactive"
                         onClick={handleAction(false)}
                         title={secondaryActionTitle}
                         disabled={loading}
                         aria-busy={loading}
                     >
-                        {loading ? (
-                            <CircleLoader className="icon-16p mauto" />
-                        ) : (
-                            <>
-                                <Icon name={secondaryActionIcon} className="mauto" />
-                                <span className="sr-only">{secondaryActionTitle}</span>
-                            </>
-                        )}
+                        <span className="message-attachmentSecondaryAction-size color-weak" aria-hidden="true">
+                            {humanAttachmentSize}
+                        </span>
+                        <span className="message-attachmentSecondaryAction-download flex">
+                            {loading ? (
+                                <CircleLoader className="icon-16p mauto" />
+                            ) : (
+                                <>
+                                    <Icon name={secondaryActionIcon} className="mauto" />
+                                    <span className="sr-only">{secondaryActionTitle}</span>
+                                </>
+                            )}
+                        </span>
                     </button>
                 )}
             </div>

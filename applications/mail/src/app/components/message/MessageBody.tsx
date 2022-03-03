@@ -108,6 +108,7 @@ const MessageBody = ({
             className={classnames([
                 'message-content relative bg-norm color-norm',
                 plain && 'plain',
+                isPrint || !isIframeContentSet ? '' : 'pt1 pb1 px1-25',
                 !placeholderMode && !hasDarkStyles && isDarkTheme && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
             ])}
             data-testid="message-content:body"
@@ -116,12 +117,12 @@ const MessageBody = ({
             {sourceMode && <pre className="m0 p1">{message.decryption?.decryptedBody}</pre>}
             {placeholderMode && (
                 <div className="bg-norm color-norm p1">
-                    <div className="message-content-loading-placeholder mb0-25 max-w8e" />
-                    <div className="message-content-loading-placeholder mb0-25 max-w50e" />
-                    <div className="message-content-loading-placeholder mb0-25 max-w40e" />
-                    <div className="message-content-loading-placeholder mb0-25 max-w50e" />
-                    <div className="message-content-loading-placeholder mb0-25 max-w15e" />
-                    <div className="message-content-loading-placeholder max-w8e" />
+                    <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w8e" />
+                    <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w50e" />
+                    <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w40e" />
+                    <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w50e" />
+                    <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w15e" />
+                    <div className="message-content-loading-placeholder mx1-25 mb1 max-w8e" />
                 </div>
             )}
             {contentMode && (

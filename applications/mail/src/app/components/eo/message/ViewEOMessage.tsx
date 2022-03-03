@@ -13,6 +13,8 @@ import { useLoadEOEmbeddedImages, useLoadEORemoteImages } from '../../../hooks/e
 import MessageFooter from '../../message/MessageFooter';
 import EORedirect from '../EORedirect';
 
+import './EOMessage.scss';
+
 interface Props {
     setSessionStorage: (key: string, data: any) => void;
 }

@@ -29,3 +29,4 @@ export const Basic = () => <LabelStack labels={labelList} />;
 export const WithDelete = () => <LabelStack labels={labelList} showDelete />;
 export const Stacked = () => <LabelStack labels={labelList} isStacked />;
 export const Max = () => <LabelStack labels={labelList} maxNumber={5} />;
+export const Dropdown = () => <LabelStack labels={labelList} showDropDown />;

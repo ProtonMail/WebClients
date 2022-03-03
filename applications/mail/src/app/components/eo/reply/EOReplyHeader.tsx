@@ -18,10 +18,10 @@ const EOReplyHeader = ({ message }: Props) => {
                     {subject}
                 </h1>
             </div>
-            <div className="message-header eo-message-header message-header-expanded is-outbound border-top border-bottom pl1 pr1 pb0-5">
+            <div className="message-header eo-message-header message-header-expanded is-outbound border-top border-bottom pl1 pr1 pb1">
                 <RecipientType
                     label={c('Label').t`From:`}
-                    className={classnames(['flex flex-align-items-start flex-nowrap mb0-5'])}
+                    className={classnames(['flex flex-align-items-start flex-nowrap mb0-85'])}
                 >
                     <RecipientItem
                         recipientOrGroup={{ recipient: message.data?.EORecipient }}
@@ -31,7 +31,7 @@ const EOReplyHeader = ({ message }: Props) => {
                 </RecipientType>
                 <RecipientType
                     label={c('Label').t`To:`}
-                    className={classnames(['flex flex-align-items-start flex-nowrap'])}
+                    className={classnames(['flex flex-align-items-start flex-nowrap message-recipient-expanded'])}
                 >
                     <RecipientItem recipientOrGroup={{ recipient: message.data?.Sender }} isLoading={false} isOutside />
                 </RecipientType>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { Icon, classnames, CircleLoader, useFeature, FeatureCode } from '@proton/components';
+import { Icon, classnames, CircleLoader, useFeature, FeatureCode, Button, Tooltip } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import AttachmentItem from './AttachmentItem';
@@ -53,7 +53,6 @@ const AttachmentList = ({
     const downloadAll = useDownloadAll();
 
     const [showLoader, setShowLoader] = useState(false);
-    const [showInstant, setShowInstant] = useState(false);
 
     const [expanded, setExpanded] = useState(!collapsable);
     const [manuallyExpanded, setManuallyExpanded] = useState(false);
@@ -134,7 +133,6 @@ const AttachmentList = ({
             console.log('error', error);
         } finally {
             setShowLoader(false);
-            setShowInstant(true);
         }
     };
 
@@ -162,7 +160,11 @@ const AttachmentList = ({
 
     return (
         <div
-            className={classnames(['flex flex-column relative w100 flex-nowrap', className, expanded && 'border-top'])}
+            className={classnames([
+                'flex flex-column relative w100 flex-nowrap',
+                className,
+                expanded && 'border-top border-weak',
+            ])}
         >
             <AttachmentPreview
                 ref={previewRef}
@@ -172,7 +174,7 @@ const AttachmentList = ({
                 outsideKey={outsideKey}
             />
             <div
-                className="flex flex-row w100 p0-5 flex-justify-space-between composer-attachment-list-wrapper"
+                className="flex flex-row w100 pt0-5 flex-justify-space-between composer-attachment-list-wrapper"
                 data-testid="attachments-header"
             >
                 <TagButton
@@ -184,19 +186,18 @@ const AttachmentList = ({
                 >
                     {size !== 0 && <strong className="mr0-5">{sizeLabel}</strong>}
                     {pureAttachmentsCount > 0 && (
-                        <span className="mr0-5">
-                            <Icon name="paperclip" className="mr0-25" />
+                        <span className="mr0-5 color-weak">
                             <span>{pureAttachmentsCount}</span>&nbsp;
-                            <span className="no-mobile">
+                            <span>
                                 {c('Info').ngettext(msgid`file attached`, `files attached`, pureAttachmentsCount)}
+                                {embeddedAttachmentsCount > 0 && ','}
                             </span>
                         </span>
                     )}
                     {embeddedAttachmentsCount > 0 && (
-                        <span className="mr0-5 inline-flex flex-align-items-center">
-                            <Icon name="file-image" className="mr0-25" />
+                        <span className="mr0-5 color-weak">
                             <span>{embeddedAttachmentsCount}</span>&nbsp;
-                            <span className="no-mobile">
+                            <span>
                                 {c('Info').ngettext(msgid`embedded image`, `embedded images`, embeddedAttachmentsCount)}
                             </span>
                         </span>
@@ -209,21 +210,31 @@ const AttachmentList = ({
                 </TagButton>
                 {canShowDownloadAll && (
                     <div>
-                        <button
-                            type="button"
-                            onClick={handleDownloadAll}
-                            className="link text-strong"
-                            disabled={!message.messageDocument?.initialized}
-                        >
-                            {c('Download attachments').t`Download all`}
-                        </button>
-                        {showInstant && <Icon className="ml0-5" name="arrow-down-to-rectangle" />}
-                        {showLoader && <CircleLoader className="icon-16p ml0-5" />}
+                        <Tooltip title={c('Download attachments').t`Download all`} originalPlacement="top">
+                            <Button
+                                icon
+                                color="weak"
+                                shape="ghost"
+                                onClick={handleDownloadAll}
+                                disabled={!message.messageDocument?.initialized}
+                                square
+                                className="ml0-5"
+                            >
+                                {showLoader ? (
+                                    <CircleLoader className="icon-16p ml0-5" />
+                                ) : (
+                                    <Icon
+                                        name="arrow-down-to-rectangle"
+                                        alt={c('Download attachments').t`Download all`}
+                                    />
+                                )}
+                            </Button>
+                        </Tooltip>
                     </div>
                 )}
             </div>
             {expanded && ( // composer-attachments-expand pt1 pb0-5
-                <div tabIndex={-1} className="flex flex-row flex-wrap message-attachmentList pl0-5 pr0-5 pb0-5">
+                <div tabIndex={-1} className="flex flex-row flex-wrap message-attachmentList pb0-5">
                     {attachmentsToShow.map((attachment) => (
                         <AttachmentItem
                             key={attachment.ID}
