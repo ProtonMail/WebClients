@@ -65,8 +65,15 @@ export const getRecipientLabel = (recipient: Recipient, contactsMap: ContactsMap
     return '';
 };
 
-export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contactsInGroup = 0) => {
+export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contactsInGroup = 0, isShortName = false) => {
     const count = recipientGroup?.recipients.length;
+
+    if (isShortName) {
+        if (count === contactsInGroup) {
+            return `${recipientGroup?.group?.Name} (${contactsInGroup})`;
+        }
+        return `${recipientGroup?.group?.Name} (${count}/${contactsInGroup})`;
+    }
 
     /* translator: "members" is a part of a longer string used to display the number of contacts selected from a contact group
      * The final string looks like "${contactGroupName} (${numberOfSelectedContacts}/${numberOfContactsInGroup} members)"

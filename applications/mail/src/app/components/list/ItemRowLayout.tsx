@@ -126,6 +126,7 @@ const ItemRowLayout = ({
                 labelID={labelID}
                 maxNumber={5}
                 className="flex-item-noshrink mlauto"
+                showDropdown={false}
             />
 
             <span className="item-weight mtauto mbauto ml1 text-right" data-testid="message-row:item-size">
@@ -142,7 +143,7 @@ const ItemRowLayout = ({
 
             <span className="item-senddate-row w13e ml1 flex flex-nowrap flex-align-items-center flex-justify-end">
                 {!!element.ExpirationTime && <ItemExpiration element={element} className="mr0-5" />}
-                <ItemDate element={element} labelID={labelID} className={unread ? 'text-bold' : undefined} />
+                <ItemDate element={element} labelID={labelID} className={unread ? 'text-bold' : undefined} useTooltip />
             </span>
         </div>
     );

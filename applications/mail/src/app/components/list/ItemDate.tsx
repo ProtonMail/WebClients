@@ -1,5 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 
+import { Tooltip } from '@proton/components';
+
 import { getDate } from '../../helpers/elements';
 import { formatSimpleDate, formatFullDate, formatDistanceToNow } from '../../helpers/date';
 import { Element } from '../../models/element';
@@ -19,9 +21,10 @@ interface Props {
     labelID: string;
     className?: string;
     mode?: FormaterType;
+    useTooltip?: boolean;
 }
 
-const ItemDate = ({ element, labelID, className, mode = 'simple' }: Props) => {
+const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = false }: Props) => {
     const formater = FORMATERS[mode] || FORMATERS.distance;
 
     const [formattedDate, setFormattedDate] = useState(() => {
@@ -51,11 +54,17 @@ const ItemDate = ({ element, labelID, className, mode = 'simple' }: Props) => {
         }
     }, [element, mode, labelID]);
 
-    return (
-        <span className={className} title={fullDate} data-testid="item-date">
+    const itemDate = (
+        <span className={className} title={useTooltip ? undefined : fullDate} data-testid="item-date">
             {formattedDate}
         </span>
     );
+
+    if (useTooltip) {
+        return <Tooltip title={fullDate}>{itemDate}</Tooltip>;
+    }
+
+    return <>{itemDate}</>;
 };
 
 export default ItemDate;

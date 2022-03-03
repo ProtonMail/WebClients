@@ -1,4 +1,4 @@
-import { Icon, InlineLinkButton, useApi } from '@proton/components';
+import { Icon, Button, useApi, Tooltip } from '@proton/components';
 import { sendMetricsReport } from '@proton/shared/lib/api/metrics';
 import { c } from 'ttag';
 import { useEffect } from 'react';
@@ -37,18 +37,17 @@ const ExtraDarkStyle = ({ message }: Props) => {
     };
 
     return (
-        <div className="bg-norm rounded border p0-5 mb0-5 flex flex-nowrap">
-            <Icon name="color" className="flex-item-noshrink mtauto mbauto" />
-            <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info')
-                .t`This message has been adjusted to comply with a dark background.`}</span>
-            <span className="flex-item-noshrink flex">
-                <InlineLinkButton
-                    onClick={handleClick}
-                    className="text-underline"
-                    data-testid="message-view:remove-dark-style"
-                >{c('Action').t`Revert to original display`}</InlineLinkButton>
-            </span>
-        </div>
+        <Tooltip title={c('Info').t`This message has been adjusted to comply with a dark background.`}>
+            <Button
+                onClick={handleClick}
+                data-testid="message-view:remove-dark-style"
+                size="small"
+                className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 mb0-85 py0-25"
+            >
+                <Icon name="color" className="flex-item-noshrink" />
+                <span className="ml0-5">{c('Action').t`Revert to original display`}</span>
+            </Button>
+        </Tooltip>
     );
 };
 

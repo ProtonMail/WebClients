@@ -7,6 +7,7 @@ interface Props extends Partial<StatusIcon> {
     disabled?: boolean;
     useTooltip?: boolean;
     className?: string;
+    isDetailsModal?: boolean;
 }
 
 const EncryptionStatusIcon = ({
@@ -21,6 +22,7 @@ const EncryptionStatusIcon = ({
     disabled,
     useTooltip = true,
     className,
+    isDetailsModal = false,
 }: Props) => {
     if (loading) {
         return <Loader className="icon-16p mauto flex" />;
@@ -32,6 +34,20 @@ const EncryptionStatusIcon = ({
     const href = getSendIconHref({ isEncrypted, fill });
     const iconName = getStatusIconName({ isEncrypted, fill });
     const tooltip = useTooltip ? text : undefined;
+
+    if (isDetailsModal) {
+        return (
+            <span className={classnames(['inline-flex flex-item-noshrink align-middle', className])}>
+                <Icon
+                    size={16}
+                    name={iconName}
+                    className={colorClassName}
+                    alt={text || ''}
+                    data-testid="encryption-icon"
+                />
+            </span>
+        );
+    }
 
     return (
         <Tooltip title={tooltip}>

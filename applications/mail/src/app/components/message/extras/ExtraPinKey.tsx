@@ -183,14 +183,14 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     return (
         <div
             className={classnames([
-                'rounded border p0-5 mb0-5 flex flex-nowrap flex-align-items-center flex-justify-space-between',
+                'rounded border p0-5 mb0-85 flex flex-nowrap flex-justify-space-between on-mobile-flex-column',
                 bannerColorClassName,
             ])}
         >
-            <div className="flex flex-nowrap mr1">
-                <Icon name="key" className="mtauto mbauto mr0-5 flex-item-noshrink" />
+            <div className="flex flex-nowrap pr1 on-mobile-mb0-5">
+                <Icon name="circle-exclamation-filled" className="mt0-5 mr0-5 flex-item-noshrink color-danger" />
                 <div>
-                    <span className="mr0-5">{getBannerMessage(promptKeyPinningType)}</span>
+                    <span className="pr0-5 flex flex-item-fluid mt0-25">{getBannerMessage(promptKeyPinningType)}</span>
                     {promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
                         <InlineLinkButton
                             className="color-inherit text-underline"
@@ -207,8 +207,8 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                     )}
                 </div>
             </div>
-            <span className="flex-align-items-center flex-item-noshrink">
-                <Button onClick={handleTrustKey} disabled={loading}>
+            <span className="flex-align-items-start flex-item-noshrink on-mobile-w100 pt0-1">
+                <Button size="small" className="on-mobile-w100 py0-25" onClick={handleTrustKey} disabled={loading}>
                     {c('Action').t`Trust key`}
                 </Button>
             </span>

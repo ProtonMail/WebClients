@@ -1,6 +1,6 @@
-import { useEffect, memo, useRef } from 'react';
+import { useEffect, memo, useRef, useState } from 'react';
 import * as React from 'react';
-import { useLabels, useToggle, classnames } from '@proton/components';
+import { useLabels, useToggle, classnames, Scroll } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -85,6 +85,8 @@ const ConversationView = ({
     const showConversationError = !loading && conversationState?.Conversation?.Subject === undefined;
     const showMessagesError = !loading && !showConversationError && !conversationState?.Messages;
 
+    const [hasScrollShadow, setHasScrollShadow] = useState(false);
+
     const { focusIndex, handleFocus, getFocusedId } = useConversationFocus(messagesToShow);
 
     const expandMessage = (messageID: string | undefined, scrollTo = false) => {
@@ -143,49 +145,56 @@ const ConversationView = ({
                 className={classnames([hidden && 'hidden'])}
                 loading={loadingConversation}
                 element={conversation}
-                labelID={labelID}
                 highlightKeywords={highlightKeywords}
+                hasScrollShadow={hasScrollShadow}
             />
-            <div ref={wrapperRef} className="flex-item-fluid pt0-5 pr1 pl1">
-                <div className={classnames(['outline-none', hidden && 'hidden'])} ref={elementRef} tabIndex={-1}>
-                    {showMessagesError ? (
-                        <ConversationErrorBanner errors={conversationState?.errors} onRetry={handleRetry} />
-                    ) : null}
-                    {showTrashWarning && (
-                        <TrashWarning ref={trashWarningRef} inTrash={inTrash} filter={filter} onToggle={toggleFilter} />
-                    )}
-                    {messagesToShow.map((message, index) => (
-                        <MessageView
-                            key={message.ID}
-                            ref={(ref) => {
-                                messageViewsRefs.current[message.ID] = ref || undefined;
-                            }}
-                            labelID={labelID}
-                            conversationMode
-                            loading={loadingMessages}
-                            message={message}
-                            labels={labels}
-                            mailSettings={mailSettings}
-                            conversationIndex={index}
-                            conversationID={conversationID}
-                            onBack={onBack}
-                            breakpoints={breakpoints}
-                            onFocus={handleFocus}
-                            onMessageReady={onMessageReady}
-                            columnLayout={columnLayout}
-                            isComposerOpened={isComposerOpened}
-                            containerRef={containerRef}
-                            wrapperRef={wrapperRef}
-                            highlightKeywords={highlightKeywords}
-                        />
-                    ))}
+            <Scroll setHasScrollShadow={setHasScrollShadow}>
+                <div ref={wrapperRef} className="flex-item-fluid pt1 pr1 pl1 w100">
+                    <div className={classnames(['outline-none', hidden && 'hidden'])} ref={elementRef} tabIndex={-1}>
+                        {showMessagesError ? (
+                            <ConversationErrorBanner errors={conversationState?.errors} onRetry={handleRetry} />
+                        ) : null}
+                        {showTrashWarning && (
+                            <TrashWarning
+                                ref={trashWarningRef}
+                                inTrash={inTrash}
+                                filter={filter}
+                                onToggle={toggleFilter}
+                            />
+                        )}
+                        {messagesToShow.map((message, index) => (
+                            <MessageView
+                                key={message.ID}
+                                ref={(ref) => {
+                                    messageViewsRefs.current[message.ID] = ref || undefined;
+                                }}
+                                labelID={labelID}
+                                conversationMode
+                                loading={loadingMessages}
+                                message={message}
+                                labels={labels}
+                                mailSettings={mailSettings}
+                                conversationIndex={index}
+                                conversationID={conversationID}
+                                onBack={onBack}
+                                breakpoints={breakpoints}
+                                onFocus={handleFocus}
+                                onMessageReady={onMessageReady}
+                                columnLayout={columnLayout}
+                                isComposerOpened={isComposerOpened}
+                                containerRef={containerRef}
+                                wrapperRef={wrapperRef}
+                                highlightKeywords={highlightKeywords}
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
-            <UnreadMessages
-                conversationID={conversationID}
-                messages={conversationState?.Messages}
-                onClick={handleClickUnread}
-            />
+                <UnreadMessages
+                    conversationID={conversationID}
+                    messages={conversationState?.Messages}
+                    onClick={handleClickUnread}
+                />
+            </Scroll>
         </>
     );
 };

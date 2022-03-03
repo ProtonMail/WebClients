@@ -11,6 +11,6 @@ describe('Encrypted Outside message banners', () => {
 
         const banner = getByTestId('expiration-banner');
 
-        expect(banner.textContent).toMatch(/This message will expire/);
+        expect(banner.textContent).toMatch(/Expires in less than/);
     });
 });

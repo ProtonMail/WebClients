@@ -1,10 +1,10 @@
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { fireEvent, within } from '@testing-library/dom';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { setup } from './ViewEOMessage.test.helpers';
 import { EOClearAll } from '../../../../helpers/test/eo/helpers';
 import { assertIcon } from '../../../../helpers/test/assertion';
 import { tick } from '../../../../helpers/test/render';
-
 describe('Encrypted Outside message attachments', () => {
     const cid = 'cid';
     const attachment1 = {
@@ -52,10 +52,13 @@ describe('Encrypted Outside message attachments', () => {
         const items = getAllByTestId('attachment-item');
         expect(items.length).toBe(NumAttachments);
         for (let i = 0; i < NumAttachments; i++) {
-            const { getByText } = within(items[i]);
+            const { getByText, getByTestId } = within(items[i]);
             getByText(Attachments[i].nameSplitStart);
             getByText(Attachments[i].nameSplitEnd);
-            getByText(Attachments[i].Size, { exact: false });
+
+            const attachmentSizeText = getByTestId('attachment-item:size').textContent;
+            expect(attachmentSizeText).toEqual(humanSize(Attachments[i].Size));
+
             assertIcon(items[i].querySelector('svg'), icons[i], undefined, 'mime');
         }
     });

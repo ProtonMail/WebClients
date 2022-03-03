@@ -221,14 +221,24 @@
 	padding-block: em(9.5); // To have same height as fields
 	padding-inline: em(10);
 
+	&.button-square {
+		padding-inline: em(9.5);
+	}
+
 	&.button-small {
 		padding-block: em(4);
 		padding-inline: em(6);
+		&.button-square {
+			padding-inline: em(4);
+		}
 	}
 
 	&.button-large {
 		padding-block: em(12);
 		padding-inline: em(14);
+		&.button-square {
+			padding-inline: em(12);
+		}
 	}
 
 	& > svg {

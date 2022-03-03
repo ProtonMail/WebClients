@@ -2,6 +2,13 @@
 @import '../../composer/composer';
 
 .eo {
+	&-message-header {
+		border-radius: 0;
+		.message-recipient-expanded .message-recipient-item-expanded-content {
+			padding-block-start: 0.2em;
+		}
+	}
+
 	&-composer {
 		// need to size it, because EO does not have dimensions like the composer container
 		block-size: em(300);
@@ -18,15 +25,12 @@
 
 		&-attachments-list {
 			padding-inline: 1em;
-			border-top: 0;
+			padding-block-end: 0.5em;
+			border-block-start: 0;
 			.composer-attachment-list-wrapper,
 			.message-attachmentList {
 				padding-inline: 0;
 			}
 		}
-	}
-
-	&-message-header {
-		border-radius: 0;
 	}
 }

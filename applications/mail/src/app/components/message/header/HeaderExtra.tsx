@@ -1,5 +1,5 @@
 import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
-import { FeatureCode, useFeature, useMailSettings } from '@proton/components';
+import { FeatureCode, useEventManager, useFeature, useMailSettings } from '@proton/components';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import ExtraSpamScore from '../extras/ExtraSpamScore';
@@ -36,21 +36,18 @@ const HeaderExtra = ({
     onLoadEmbeddedImages,
 }: Props) => {
     const [mailSettings] = useMailSettings();
+    const { call } = useEventManager();
     const received = isReceived(message.data);
 
     const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
     const isScheduledMessage = isScheduled(message.data);
 
     return (
-        <section className="message-header-extra border-top pt0-5">
-            <ExtraExpirationTime message={message} />
+        <section className="message-header-extra pt0-5">
             <ExtraDecryptedSubject message={message} />
             <ExtraSpamScore message={message} />
             {bodyLoaded && <ExtraErrors message={message} />}
-            <ExtraUnsubscribe message={message} />
-            <ExtraReadReceipt message={message} />
             <ExtraAutoReply message={message} />
-            <ExtraDarkStyle message={message} />
             {messageLoaded && <ExtraPinKey message={message.data} messageVerification={message.verification} />}
             <ExtraAskResign
                 message={message.data}
@@ -63,19 +60,29 @@ const HeaderExtra = ({
                     type="remote"
                     onLoadImages={onLoadRemoteImages}
                     mailSettings={mailSettings}
+                    call={call}
                 />
             )}
-            {!sourceMode && (
-                <ExtraImages
-                    message={message}
-                    type="embedded"
-                    onLoadImages={onLoadEmbeddedImages}
-                    mailSettings={mailSettings}
-                />
-            )}
+
             {messageLoaded && received && <EmailReminderWidget message={message.data} errors={message.errors} />}
             {messageLoaded && received ? <ExtraEvents message={message as MessageStateWithData} /> : null}
             {isScheduledMessage && scheduledFeature?.Value ? <ExtraScheduledMessage message={message} /> : null}
+
+            <span className="inline-flex flex-row">
+                <ExtraExpirationTime displayAsButton message={message} />
+                <ExtraReadReceipt message={message} />
+                <ExtraUnsubscribe message={message} />
+                {!sourceMode && (
+                    <ExtraImages
+                        message={message}
+                        type="embedded"
+                        onLoadImages={onLoadEmbeddedImages}
+                        mailSettings={mailSettings}
+                    />
+                )}
+
+                <ExtraDarkStyle message={message} />
+            </span>
         </section>
     );
 };

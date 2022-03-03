@@ -23,7 +23,7 @@ const Copy = ({ value, onCopy, tooltipText, ...rest }: Props, ref: Ref<HTMLButto
     return (
         <Tooltip title={tooltipText || c('Label').t`Copy`}>
             <Button icon color="weak" shape="outline" ref={ref} onClick={handleClick} {...rest}>
-                <Icon name="copy" alt={c('Label').t`Copy`} />
+                <Icon name="copy" className="my0-15" alt={c('Label').t`Copy`} />
             </Button>
         </Tooltip>
     );

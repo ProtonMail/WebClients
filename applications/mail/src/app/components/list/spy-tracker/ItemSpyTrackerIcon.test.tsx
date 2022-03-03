@@ -10,7 +10,6 @@ import { render } from '../../../helpers/test/render';
 import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import { setFeatureFlags } from '../../../helpers/test/api';
-import { getModal } from '../../../helpers/test/helper';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
 const messageWithTrackers: MessageState = {
@@ -123,7 +122,7 @@ describe('ItemSpyTrackerIcon', () => {
         const icon = await findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
 
-        const { modal } = await getModal();
+        const modal = await findByTestId('spyTrackerModal:noTrackers');
         getByTextDefault(modal, 'No email trackers found');
     });
 
@@ -137,7 +136,7 @@ describe('ItemSpyTrackerIcon', () => {
         const icon = await findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
 
-        const { modal } = await getModal();
+        const modal = await findByTestId('spyTrackerModal:needsMoreProtection');
         getByTextDefault(modal, 'Email tracker protection is disabled');
 
         const settingToggle = queryByTestIdDefault(modal, 'privacy:prevent-tracking-toggle');
@@ -154,7 +153,7 @@ describe('ItemSpyTrackerIcon', () => {
         const icon = await findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
 
-        const { modal } = await getModal();
+        const modal = await findByTestId('spyTrackerModal:trackers');
         getByTextDefault(modal, '2 email trackers blocked');
 
         await findByTextDefault(modal, 'Tracker 1');

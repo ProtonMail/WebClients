@@ -1,52 +1,52 @@
 import { c } from 'ttag';
 import { HighlightMetadata } from '@proton/encrypted-search';
+
+import RecipientType from './RecipientType';
+import RecipientItem from './RecipientItem';
 import { RecipientOrGroup } from '../../../models/address';
 
 interface Props {
     recipientsOrGroup: RecipientOrGroup[];
-    isLoading?: boolean;
+    isLoading: boolean;
     highlightKeywords?: boolean;
     highlightMetadata?: HighlightMetadata;
-    getRecipientOrGroupLabel?: ({ recipient, group }: RecipientOrGroup, detailed?: boolean) => string;
+    showAddress?: boolean;
+    isOutside?: boolean;
 }
 
 const RecipientSimple = ({
-    recipientsOrGroup,
     isLoading,
-    highlightKeywords,
+    recipientsOrGroup,
+    highlightKeywords = false,
     highlightMetadata,
-    getRecipientOrGroupLabel,
+    showAddress,
+    isOutside,
 }: Props) => {
     return (
-        <div className="flex flex-nowrap" data-testid="message-header:to">
-            <span className="message-header-to container-to pl0-5">{!isLoading && c('Label').t`To:`}</span>
-            <span className="message-header-contact text-ellipsis">
-                {!isLoading && (
-                    <>
-                        {recipientsOrGroup.length
-                            ? recipientsOrGroup.map((recipientOrGroup, index) => {
-                                  const label = getRecipientOrGroupLabel
-                                      ? getRecipientOrGroupLabel(recipientOrGroup)
-                                      : recipientOrGroup.recipient?.Address;
-                                  const highlightedLabel =
-                                      !!label && highlightKeywords && highlightMetadata
-                                          ? highlightMetadata(label).resultJSX
-                                          : label;
-
-                                  return (
-                                      <span
-                                          key={index} // eslint-disable-line react/no-array-index-key
-                                          title={label}
-                                      >
-                                          <span>{highlightedLabel}</span>
-                                          {index < recipientsOrGroup.length - 1 && ', '}
-                                      </span>
-                                  );
-                              })
-                            : c('Label').t`Undisclosed Recipients`}
-                    </>
-                )}
-            </span>
+        <div className="flex flex-nowrap flex-align-items-center" data-testid="message-header:to">
+            <RecipientType label={c('Label').t`To`}>
+                <span className="flex">
+                    {recipientsOrGroup.length
+                        ? recipientsOrGroup.map((recipientOrGroup, index) => {
+                              return (
+                                  <span className="mr0-5 flex" key={index}>
+                                      <RecipientItem
+                                          recipientOrGroup={recipientOrGroup}
+                                          isLoading={isLoading}
+                                          highlightKeywords={highlightKeywords}
+                                          highlightMetadata={highlightMetadata}
+                                          showAddress={showAddress}
+                                          isOutside={isOutside}
+                                      />
+                                      {index < recipientsOrGroup.length - 1 && (
+                                          <span className="message-recipient-item-separator">,</span>
+                                      )}
+                                  </span>
+                              );
+                          })
+                        : c('Label').t`Undisclosed Recipients`}
+                </span>
+            </RecipientType>
         </div>
     );
 };
