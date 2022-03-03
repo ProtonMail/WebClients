@@ -258,7 +258,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                             <SettingsParagraph>
                                 <span className="block">{c('Info')
                                     .t`${vpnPlus} or ${visionary} required for Secure Core feature.`}</span>
-                                <SettingsLink path="/dashboard">{c('Link').t`Learn more`}</SettingsLink>
+                                <SettingsLink path="/upgrade">{c('Link').t`Learn more`}</SettingsLink>
                             </SettingsParagraph>
                         )}
                         <ConfigsTable
@@ -387,11 +387,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     </li>
                                 </ul>
                                 <div>
-                                    <ButtonLike
-                                        as={SettingsLink}
-                                        color="norm"
-                                        path={`/dashboard?plan=${PLANS.VPNPLUS}`}
-                                    >
+                                    <ButtonLike as={SettingsLink} color="norm" path={`/dashboard?plan=${PLANS.VPN}`}>
                                         {c('Action').t`Get ${vpnPlus}`}
                                     </ButtonLike>
                                 </div>

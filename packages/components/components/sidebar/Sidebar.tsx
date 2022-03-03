@@ -105,7 +105,7 @@ const Sidebar = ({
                             {canAddStorage ? (
                                 <Tooltip title={c('Storage').t`Upgrade storage`}>
                                     <SettingsLink
-                                        path="/dashboard"
+                                        path="/upgrade"
                                         className="app-infos-storage text-no-decoration text-xs m0"
                                     >
                                         {storageText}

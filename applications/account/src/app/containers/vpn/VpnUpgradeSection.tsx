@@ -31,7 +31,7 @@ const VpnUpgradeSection = () => {
                     )}
                 </p>
 
-                <ButtonLike color="norm" as={SettingsLink} path="/dashboard?plan=vpnplus">
+                <ButtonLike color="norm" as={SettingsLink} path={`/dashboard?plan=${PLANS.VPN}`}>
                     {c('Action').t`Upgrade`}
                 </ButtonLike>
             </Card>
