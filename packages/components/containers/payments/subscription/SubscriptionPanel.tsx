@@ -66,23 +66,17 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
     const handleCustomizeSubscription = () =>
         openSubscriptionModal({
             planIDs: currentPlanIDs,
-            cycle: subscription?.Cycle,
-            currency: subscription?.Currency,
             step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
             disableBackButton: true,
         });
     const handleExplorePlans = () =>
         openSubscriptionModal({
             planIDs: currentPlanIDs,
-            cycle: subscription?.Cycle,
-            currency: subscription?.Currency,
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
         });
     const handleEditPayment = () =>
         openSubscriptionModal({
             planIDs: currentPlanIDs,
-            cycle: subscription?.Cycle,
-            currency: subscription?.Currency,
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disableBackButton: true,
         });
