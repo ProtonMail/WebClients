@@ -7,46 +7,11 @@
 html {
 	box-sizing: border-box;
 	overscroll-behavior: none;
-
-	/* base font size at 10px */
-	@if $root-equiv-10-px==true {
-		font-size: 62.5%;
-
-		@if ($use-ie-calc-font-fallback==true) {
-			font-size: calc(1em * 0.625);
-		}
-	}
 }
 
 body {
-	@if $apply-body-styles==true {
-		background: var(--background-norm);
-		color: var(--text-norm);
-		font-family: var(--font-family);
-		text-rendering: geometricPrecision;
-		-webkit-font-smoothing: antialiased;
-
-		@if $typo-unit== 'use_em' {
-			@if $root-equiv-10-px==true {
-				font-size: em($base-font-size, 10);
-			} @else {
-				font-size: em($base-font-size, $root-default-font-size);
-			}
-		} @else if $typo-unit== 'use_rem' {
-			font-size: var(--body-fontsize, rem($base-font-size));
-		} @else if $typo-unit== 'use_rem_with_em_fallback' {
-			@if $root-equiv-10-px==true {
-				font-size: em($base-font-size, 10);
-			} @else {
-				font-size: em($base-font-size, $root-default-font-size);
-			}
-
-			font-size: rem($base-font-size);
-		}
-
-		line-height: $base-line-height;
-		min-block-size: 100%;
-	}
+	background: var(--background-norm);
+	min-block-size: 100%;
 }
 
 ::selection {
