@@ -5,17 +5,12 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 interface Props {
-    show: boolean;
     handleClose: () => void;
 }
 
-const InviteHowItWorks = ({ show = false, handleClose }: Props) => {
+const InviteHowItWorks = ({ handleClose }: Props) => {
     const appName = getAppName(APPS.PROTONMAIL);
     const planName = PLAN_NAMES[PLANS.PLUS];
-
-    if (!show) {
-        return null;
-    }
 
     return (
         <div className="relative border rounded-lg p2 bg-primary">
