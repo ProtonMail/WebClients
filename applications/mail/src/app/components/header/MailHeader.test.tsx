@@ -1,7 +1,8 @@
 import loudRejection from 'loud-rejection';
-import { fireEvent, getByText } from '@testing-library/dom';
+import { fireEvent, getAllByText, getByText } from '@testing-library/dom';
 import { screen } from '@testing-library/react';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import {
     addApiMock,
     clearAll,
@@ -75,8 +76,9 @@ describe('MailHeader', () => {
 
     describe('Core features', () => {
         it('should redirect on inbox when click on logo', async () => {
+            const protonmailAppName = getAppName(APPS.PROTONMAIL);
             const { getByText } = await setup();
-            const logo = getByText('ProtonMail');
+            const logo = getByText(protonmailAppName);
             fireEvent.click(logo);
 
             const history = getHistory();
@@ -92,10 +94,10 @@ describe('MailHeader', () => {
 
             const dropdown = await getDropdown();
 
-            getByText(dropdown, 'Proton Mail');
-            getByText(dropdown, 'Proton Calendar');
-            getByText(dropdown, 'Proton Drive');
-            getByText(dropdown, 'Proton VPN');
+            getAllByText(dropdown, 'Proton Mail');
+            getAllByText(dropdown, 'Proton Calendar');
+            getAllByText(dropdown, 'Proton Drive');
+            getAllByText(dropdown, 'Proton VPN');
         });
 
         it('should open contacts widget', async () => {
