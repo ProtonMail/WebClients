@@ -348,7 +348,7 @@ const SubscriptionModal = ({
                                 />
                             </div>
                         </div>
-                        <div className="subscriptionCheckout-column bg-weak on-mobile-w100">
+                        <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
                             <div className="subscriptionCheckout-container">
                                 <SubscriptionCheckoutLocal
                                     submit={
@@ -412,7 +412,7 @@ const SubscriptionModal = ({
                                     />
                                 ) : (
                                     <>
-                                        <h2 className="text-2xl text-bold">{c('Label').t`Payment details`}</h2>
+                                        <h2 className="text-2xl text-bold mb1">{c('Label').t`Payment details`}</h2>
                                         <div className="mb1">{c('Info').t`No payment is required at this time.`}</div>
                                         {checkResult?.Credit && creditsRemaining ? (
                                             <div className="mb1">{c('Info')
@@ -422,7 +422,7 @@ const SubscriptionModal = ({
                                 )}
                             </div>
                         </div>
-                        <div className="subscriptionCheckout-column bg-weak on-mobile-w100">
+                        <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
                             <div className="subscriptionCheckout-container">
                                 <SubscriptionCheckout
                                     submit={

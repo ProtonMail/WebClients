@@ -164,7 +164,7 @@ const AccountSizeCustomiser = ({
     const contactMailToLink = <a key={1} href="mailto:ProtonForBusiness@proton.me">{c('Action').t`contact`}</a>;
     return (
         <div className="mb2">
-            <h2 className="text-2xl text-bold">{c('Info').t`Account size`}</h2>
+            <h2 className="text-2xl text-bold mb1">{c('Info').t`Account size`}</h2>
             <div className="mb1">
                 {c('Info')
                     .jt`Select the number of users to include in your plan. Each additional user costs ${price}. Should you need more than ${maxUsers} user accounts, please ${contactMailToLink} our Customer Success team.`}
@@ -196,7 +196,7 @@ const AdditionalOptionsCustomiser = ({
 }) => {
     return (
         <>
-            <h2 className="text-2xl text-bold">{c('Info').t`Additional options`}</h2>
+            <h2 className="text-2xl text-bold mb1">{c('Info').t`Additional options`}</h2>
             <div className="mb1">
                 {c('Info')
                     .jt`Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${price}.`}
