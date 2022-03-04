@@ -1,8 +1,15 @@
 @font-face {
+	// Introducing Arizona font. https://abcdinamo.com/typefaces/arizona
 	font-family: 'Arizona';
+
 	/* stylelint-disable-next-line */
 	font-weight: 200 700;
 	font-style: oblique -14deg 0deg;
+
+	// Specific features for Arizona font
+	// This line has to be here inside the font-face declaration to not be applied on any other fallback font
+	font-feature-settings: 'ss02', 'ss03', 'ss04';
+
 	font-display: swap;
 	src: url(../../assets/fonts/ABCArizonaSansVariable.woff2) format('woff2-variations'),
 		url(../../assets/fonts/ABCArizonaSansVariable.woff) format('woff-variations');
@@ -27,8 +34,4 @@ html {
 	// Specific italic management for Arizona font
 	font-style: normal;
 	font-variation-settings: 'slnt' var(--font-style-normal);
-
-	// Available features for Arizona font:
-	// https://abcdinamo.com/typefaces/arizona#type-features
-	font-feature-settings: 'ss02', 'ss03', 'ss04';
 }
