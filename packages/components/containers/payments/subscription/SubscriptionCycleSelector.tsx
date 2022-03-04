@@ -1,14 +1,12 @@
 import React from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { Plan, PlanIDs, Currency, PlansMap } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import { Price, Badge } from '../../../components';
+import { Price, Radio } from '../../../components';
 
 import { classnames } from '../../../helpers';
-
-import './SubscriptionCycleSelector.scss';
 
 interface Props {
     cycle: CYCLE;
@@ -18,37 +16,6 @@ interface Props {
     planIDs: PlanIDs;
     disabled?: boolean;
 }
-
-const getTitle = (cycle: CYCLE) => {
-    switch (cycle) {
-        case CYCLE.MONTHLY:
-            return c('Title').t`1 month`;
-        case CYCLE.YEARLY:
-            return c('Title').t`1 year`;
-        case CYCLE.TWO_YEARS:
-            return c('Title').t`2 years`;
-        default:
-            return '';
-    }
-};
-
-const getDescription = (cycle: CYCLE, amount: number, currency: Currency) => {
-    const amountNode = (
-        <Price key="amount" currency={currency}>
-            {amount}
-        </Price>
-    );
-    switch (cycle) {
-        case CYCLE.MONTHLY:
-            return c('Title').jt`Renews every month at ${amountNode}`;
-        case CYCLE.YEARLY:
-            return c('Title').jt`Renews every year at ${amountNode}`;
-        case CYCLE.TWO_YEARS:
-            return c('Title').jt`Renews every 2 years at ${amountNode}`;
-        default:
-            return '';
-    }
-};
 
 const SubscriptionCycleSelector = ({
     cycle: cycleSelected,
@@ -78,45 +45,61 @@ const SubscriptionCycleSelector = ({
         <ul className="unstyled m0 plan-cycle-selector">
             {cycles.map((cycle) => {
                 const isSelected = cycle === cycleSelected;
-                const title = getTitle(cycle);
                 const total = pricing[cycle];
                 const totalPerMonth = total / cycle;
-                const description = getDescription(cycle, total, currency);
-                const discount = cycle === CYCLE.MONTHLY ? 0 : (totalPerMonth * 100) / pricing[CYCLE.MONTHLY] - 100;
+                const discount = cycle === CYCLE.MONTHLY ? 0 : pricing[CYCLE.MONTHLY] * cycle - total;
                 return (
                     <li key={`${cycle}`} className="rounded bg-norm flex flex-align-items-stretch">
                         <button
                             className={classnames([
-                                'w100 text-center pt0-5 pb1 pl0-5 pr0-5 plan-cycle-button flex flex-nowrap flex-column border rounded',
-                                isSelected && 'plan-cycle-button-selected bg-weak',
+                                'w100 p1 plan-cycle-button flex flex-nowrap border rounded text-left mb1',
+                                isSelected && 'border-primary',
                             ])}
                             disabled={disabled}
                             onClick={() => onChangeCycle(cycle)}
                             type="button"
+                            aria-pressed={isSelected}
                         >
-                            <div className="border-bottom mb0-5 ml0-5 mr0-5 text-center">
-                                <Price
-                                    className="mb0-5 mt0-5 text-xl text-semibold plan-cycle-price"
-                                    currency={currency}
-                                    suffix={c('Suffix').t`per month`}
-                                >
-                                    {totalPerMonth}
-                                </Price>
+                            <div className="flex-item-noshrink" aria-hidden="true">
+                                <Radio id={`${cycle}`} name="cycleFakeField" tabIndex={-1} checked={isSelected} />
                             </div>
-                            <div className="flex-item-fluid-auto flex flex-items-align-center flex-column flex-nowrap">
-                                <div className="inline-flex center on-tiny-mobile-flex-column-no-stretch flex-align-items-center plan-cycle-duration">
-                                    <span className="m0">{title}</span>
-                                    {discount ? (
-                                        <Badge
-                                            className="ml1 on-tablet-ml0-5 on-tiny-mobile-ml0 align-middle"
-                                            type="success"
+                            <div className="flex-item-fluid pl0-5">
+                                <div className="flex flex-align-items-center">
+                                    <strong className="text-lg flex-item-fluid mr1">
+                                        {c('Subscription cycle').ngettext(
+                                            msgid`${cycle} month`,
+                                            `${cycle} months`,
+                                            cycle
+                                        )}
+                                    </strong>
+                                    <span className="color-weak flex flex-item-noshrink">
+                                        <Price
+                                            className="text-semibold"
+                                            currency={currency}
+                                            suffix={c('Suffix').t`/month`}
                                         >
-                                            {Math.round(discount)}%
-                                        </Badge>
-                                    ) : null}
+                                            {totalPerMonth}
+                                        </Price>
+                                    </span>
                                 </div>
-
-                                <div className="plan-cycle-description text-sm m0 color-weak">{description}</div>
+                                <div className="flex flex-align-items-center">
+                                    <strong className="text-lg flex-item-fluid mr1 color-primary">
+                                        {c('Subscription price').t`For`}
+                                        <Price className="ml0-25" currency={currency}>
+                                            {total}
+                                        </Price>
+                                    </strong>
+                                    <span className="color-success flex flex-item-noshrink text-semibold">
+                                        {discount ? (
+                                            <>
+                                                {c('Subscription saving').t`Save`}
+                                                <Price className="ml0-25" currency={currency}>
+                                                    {discount}
+                                                </Price>
+                                            </>
+                                        ) : null}
+                                    </span>
+                                </div>
                             </div>
                         </button>
                     </li>
