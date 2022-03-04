@@ -90,6 +90,10 @@ html,
 	padding-block: 0;
 	padding-inline: 1em;
 	inline-size: var(--width-sidebar, #{rem($width-sidebar)});
+
+	& > a {
+		display: flex;
+	}
 }
 
 .hamburger {
