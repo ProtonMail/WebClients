@@ -7,6 +7,7 @@ import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContactPublicKeyModel, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 import extractEncryptionPreferences from '@proton/shared/lib/mail/encryptionPreferences';
 import { useCallback } from 'react';
+import { getActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { useGetAddresses } from './useAddresses';
 import useApi from './useApi';
 import useCache from './useCache';
@@ -46,10 +47,13 @@ const useGetEncryptionPreferences = () => {
             let pinnedKeysConfig;
             if (selfAddress) {
                 // we do not trust the public keys in ownAddress (they will be deprecated in the API response soon anyway)
-                const selfAddressKey = (await getAddressKeys(selfAddress.ID))[0];
-                const selfPublicKey = selfAddressKey?.publicKey;
+                const selfAddressKeys = await getAddressKeys(selfAddress.ID);
+                const primaryAddressKey = (
+                    await getActiveKeys(selfAddress.SignedKeyList, selfAddress.Keys, selfAddressKeys)
+                )[0];
+                const selfPublicKey = primaryAddressKey?.publicKey;
                 const canEncrypt = selfPublicKey ? await getKeyEncryptionCapableStatus(selfPublicKey) : undefined;
-                const canSend = canEncrypt && getKeyHasFlagsToEncrypt(selfAddressKey.Flags);
+                const canSend = canEncrypt && getKeyHasFlagsToEncrypt(primaryAddressKey.flags);
                 selfSend = { address: selfAddress, publicKey: selfPublicKey, canSend };
                 // For own addresses, we use the decrypted keys in selfSend and do not fetch any data from the API
                 apiKeysConfig = { Keys: [], publicKeys: [], RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL };

@@ -1,4 +1,3 @@
-import { DecryptedKey } from '../Key';
-import { RequireSome } from '../utils';
+import { getDecryptedAddressKeys } from '../../keys';
 
-export type GetAddressKeys = (id: string) => Promise<RequireSome<DecryptedKey, 'Flags'>[]>;
+export type GetAddressKeys = (id: string) => ReturnType<typeof getDecryptedAddressKeys>;
