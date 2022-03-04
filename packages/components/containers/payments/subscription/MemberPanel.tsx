@@ -24,7 +24,7 @@ const MemberPanel = ({ organization, user }: Props) => {
     const MaxCalendars = hasPaidMail ? MAX_CALENDARS_PAID : MAX_CALENDARS_FREE;
 
     return (
-        <div className="border px2 py1">
+        <div className="border rounded px2 py1">
             <h3>{c('Title').t`Your account's usage`}</h3>
             <StrippedList>
                 <StrippedItem icon="check">
