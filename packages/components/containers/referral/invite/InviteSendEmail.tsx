@@ -65,10 +65,13 @@ const InviteSendEmail = () => {
         const request = api<SendEmailInvitationResult>(sendEmailInvitation({ emails }));
 
         void withLoading(request).then((result) => {
-            if (result?.Referrals) {
+            if (result?.Referrals && result?.Referrals.length) {
+                const isSingular = result.Referrals.length > 1;
+                createNotification({
+                    text: isSingular ? c('Info').t`Invite successfully sent` : c('Info').t`Invites successfully sent`,
+                });
                 setInvitedReferrals(result.Referrals);
             }
-            createNotification({ text: c('Info').t`Sucessfully sent invites` });
             setRecipients([]);
         });
     };
