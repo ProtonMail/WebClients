@@ -125,7 +125,7 @@ const Payment = ({
                 ])}
             >
                 <div className="mr1 on-mobile-mr0 border-bottom pb2">
-                    <h2 className="text-2xl text-bold">{c('Label').t`Select a method`}</h2>
+                    <h2 className="text-2xl text-bold mb1">{c('Label').t`Select a method`}</h2>
                     <PaymentMethodSelector
                         options={options}
                         method={method}
@@ -134,7 +134,7 @@ const Payment = ({
                     />
                 </div>
                 <div className="mt2">
-                    <h2 className="text-2xl text-bold">{c('Title').t`Payment details`}</h2>
+                    <h2 className="text-2xl text-bold mb1">{c('Title').t`Payment details`}</h2>
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <CreditCard card={card} errors={cardErrors} onChange={onCard} />
