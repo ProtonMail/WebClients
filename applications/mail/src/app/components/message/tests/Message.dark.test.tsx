@@ -6,9 +6,9 @@ import { MessageState } from '../../../logic/messages/messagesTypes';
 import { getIframeRootDiv, initMessage, setup as messageSetup } from './Message.test.helpers';
 
 jest.mock('@proton/components/containers/themes/ThemeProvider', () => {
-    const { ThemeTypes } = require('@proton/shared/lib/themes/themes');
+    const { DARK_THEMES } = require('@proton/shared/lib/themes/themes');
     return {
-        useTheme: () => [ThemeTypes.Dark],
+        useTheme: () => [DARK_THEMES[0]],
     };
 });
 
