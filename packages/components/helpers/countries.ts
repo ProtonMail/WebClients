@@ -178,6 +178,7 @@ const COUNTRIES = [
     { value: 'PN', label: 'Pitcairn' },
     { value: 'PL', label: 'Poland' },
     { value: 'PT', label: 'Portugal' },
+    { value: 'PR', label: 'Puerto Rico' },
     { value: 'QA', label: 'Qatar' },
     { value: 'RE', label: 'Reunion' },
     { value: 'RO', label: 'Romania' },
