@@ -1,7 +1,7 @@
 import { decryptPrivateKey } from 'pmcrypto';
 
 import isTruthy from '../helpers/isTruthy';
-import { AddressKey, DecryptedAddressKey, Key as tsKey, KeyPair, KeysPair, User } from '../interfaces';
+import { DecryptedKey, Key as tsKey, KeyPair, KeysPair, User } from '../interfaces';
 import { decryptMemberToken } from './memberToken';
 import { splitKeys } from './keys';
 import { getAddressKeyToken } from './addressKeys';
@@ -34,22 +34,21 @@ const getAddressKeyPassword = (
     return Promise.resolve(keyPassword);
 };
 
-const getDecryptedAddressKey = async ({ ID, PrivateKey, Flags }: AddressKey, addressKeyPassword: string) => {
+const getDecryptedAddressKey = async ({ ID, PrivateKey }: tsKey, addressKeyPassword: string) => {
     const privateKey = await decryptPrivateKey(PrivateKey, addressKeyPassword);
     return {
         ID,
-        Flags,
         privateKey,
         publicKey: privateKey.toPublic(),
     };
 };
 
 export const getDecryptedAddressKeys = async (
-    addressKeys: AddressKey[] = [],
+    addressKeys: tsKey[] = [],
     userKeys: KeyPair[] = [],
     keyPassword: string,
     organizationKey?: KeyPair
-): Promise<DecryptedAddressKey[]> => {
+): Promise<DecryptedKey[]> => {
     if (!addressKeys.length || !userKeys.length) {
         return [];
     }
@@ -78,11 +77,11 @@ export const getDecryptedAddressKeys = async (
     return [primaryKeyResult, ...restKeyResults].filter(isTruthy);
 };
 export const getDecryptedAddressKeysHelper = async (
-    addressKeys: AddressKey[] = [],
+    addressKeys: tsKey[] = [],
     user: User,
     userKeys: KeyPair[] = [],
     keyPassword: string
-): Promise<DecryptedAddressKey[]> => {
+): Promise<DecryptedKey[]> => {
     if (!user.OrganizationPrivateKey) {
         return getDecryptedAddressKeys(addressKeys, userKeys, keyPassword);
     }
