@@ -1,14 +1,6 @@
 import { c, msgid } from 'ttag';
 import { PLANS, PLAN_NAMES, APPS, PLAN_SERVICES, CYCLE } from '@proton/shared/lib/constants';
-import {
-    getPlan,
-    getPlanIDs,
-    hasDrive,
-    hasMail,
-    hasMailPro,
-    hasVPN,
-    isTrial,
-} from '@proton/shared/lib/helpers/subscription';
+import { getPlan, getPlanIDs, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { Subscription, Organization, Address, UserModel } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import percentage from '@proton/shared/lib/helpers/percentage';
@@ -55,13 +47,6 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
     const MaxAddresses = OrganizationMaxAddresses || 1;
     const MaxVPN = user.hasPaidVpn ? OrganizationMaxVPN : 1;
     const currentPlanIDs = getPlanIDs(subscription);
-    const isUpselled =
-        user.isFree ||
-        isTrial(subscription) ||
-        hasMail(subscription) ||
-        hasDrive(subscription) ||
-        hasVPN(subscription) ||
-        hasMailPro(subscription);
 
     const handleCustomizeSubscription = () =>
         openSubscriptionModal({
@@ -178,7 +163,7 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
                     fullWidth
                 >{c('Action').t`Edit payment details`}</Button>
             ) : null}
-            {(user.isFree || user.isPaid) && user.canPay && isUpselled ? (
+            {user.canPay ? (
                 <Button onClick={handleExplorePlans} size="large" color="norm" shape="ghost" fullWidth>{c('Action')
                     .t`Explore all Proton plans`}</Button>
             ) : null}
