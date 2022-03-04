@@ -77,8 +77,8 @@ const ContactGroupModal = ({
         setValue('');
     };
 
-    const handleSelect = (newContactEmail: AddressesAutocompleteItem) => {
-        if (newContactEmail.type === 'major') {
+    const handleSelect = (newContactEmail: AddressesAutocompleteItem | string) => {
+        if (typeof newContactEmail === 'string' || newContactEmail.type === 'major') {
             handleAdd();
         } else {
             const newContact = contactEmails.find((contact: ContactEmail) => contact.ID === newContactEmail.value.ID);
