@@ -40,7 +40,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Billing details`,
                         id: 'billing',
-                        available: canPay,
+                        available: isPaid && canPay,
                     },
                     {
                         text: c('Title').t`Payment methods`,
