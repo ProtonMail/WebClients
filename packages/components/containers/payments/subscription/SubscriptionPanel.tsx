@@ -76,7 +76,7 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
     }
 
     return (
-        <div className="border rounded px2 py1-5 flex-item-fluid">
+        <div className="border rounded px2 py1-5 subscription-panel-container">
             <div className="flex flex-nowrap flex-align-items-center flex-justify-space-between pt0-5">
                 <h3 className="m0">
                     <strong>{title}</strong>
