@@ -57,7 +57,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             });
         return (
-            <div className="border round px2 py1 w60">
+            <div className="border round px2 py1">
                 <h3>{c('Title').t`${mailPlanName} Trial`}</h3>
                 <h4>{c('Info').t`Your trial ends ${formattedTrialExpirationDate}`}</h4>
                 <p className="color-weak">{c('Info')
@@ -100,7 +100,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 disableBackButton: true,
             });
         return (
-            <div className="border rounded px2 py1 w60">
+            <div className="border rounded px2 py1">
                 <h3>{c('Title').t`Upgrade to ${vpn}`}</h3>
                 <p>{c('Info')
                     .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`}</p>
@@ -139,7 +139,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 disableBackButton: true,
             });
         return (
-            <div className="border rounded px2 py1 w60">
+            <div className="border rounded px2 py1">
                 <h3>{c('Title').t`Upgrade to ${bundle}`}</h3>
                 <p className="color-weak">{c('Info')
                     .t`Upgrade to the ultimate privacy pack and access all premium Proton services.`}</p>
@@ -182,7 +182,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 disableBackButton: true,
             });
         return (
-            <div className="border rounded px2 py1 w60">
+            <div className="border rounded px2 py1">
                 <h3>{c('Title').t`Upgrade to ${business}`}</h3>
                 <p className="color-weak">{c('Info')
                     .t`The ultimate privacy pack with access to all premium Proton services.`}</p>
