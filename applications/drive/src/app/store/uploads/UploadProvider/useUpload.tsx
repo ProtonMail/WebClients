@@ -1,12 +1,11 @@
 import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { useGetUser, useEventManager, useNotifications, usePreventLeave } from '@proton/components';
+import { useGetUser, useEventManager, useNotifications, usePreventLeave, useModals } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MAX_SAFE_UPLOADING_FILE_COUNT } from '@proton/shared/lib/drive/constants';
 import { TransferCancel, TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import useConfirm from '../../../hooks/util/useConfirm';
 import { isTransferCancelError, isTransferProgress } from '../../../utils/transfer';
 import { reportError } from '../../utils';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
@@ -17,11 +16,12 @@ import useUploadFolder from './useUploadFolder';
 import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
 import useUploadConflict from './useUploadConflict';
 import useUploadControl from './useUploadControl';
+import { FileThresholdModal } from '../../../components/uploads/FileThresholdModal';
 
 export default function useUpload(UploadConflictModal: UploadConflictModal) {
     const getUser = useGetUser();
     const { call } = useEventManager();
-    const { openConfirmModal } = useConfirm();
+    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
 
@@ -71,15 +71,16 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
         const fileCount = list.length;
         if (fileCount >= MAX_SAFE_UPLOADING_FILE_COUNT) {
             await new Promise<void>((resolve, reject) => {
-                openConfirmModal({
-                    canUndo: true,
-                    title: c('Title').t`Warning`,
-                    confirm: c('Action').t`Continue`,
-                    message: c('Info').t`Uploading hundreds of files at once may have a performance impact.`,
-                    onConfirm: resolve,
-                    onCancel: () =>
-                        reject(new TransferCancel({ message: `Upload of ${fileCount} files was canceled` })),
-                });
+                createModal(
+                    <FileThresholdModal
+                        onSubmit={() => {
+                            resolve();
+                        }}
+                        onCancel={() =>
+                            reject(new TransferCancel({ message: `Upload of ${fileCount} files was canceled` }))
+                        }
+                    />
+                );
             });
         }
 
