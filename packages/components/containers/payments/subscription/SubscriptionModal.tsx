@@ -205,6 +205,10 @@ const SubscriptionModal = ({
     const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<void> => {
         const copyNewModel = { ...newModel };
 
+        if (copyNewModel.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && !supportAddons(copyNewModel.planIDs)) {
+            copyNewModel.step = SUBSCRIPTION_STEPS.CHECKOUT;
+        }
+
         if (!hasPlanIDs(newModel.planIDs)) {
             setCheckResult(getFreeCheckResult(model.currency, model.cycle));
             setModel(copyNewModel);
@@ -234,12 +238,8 @@ const SubscriptionModal = ({
                 delete copyNewModel.gift;
             }
 
-            if (copyNewModel.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && !supportAddons(copyNewModel.planIDs)) {
-                copyNewModel.step = SUBSCRIPTION_STEPS.CHECKOUT;
-            }
-
-            setModel(copyNewModel);
             setCheckResult(result);
+            setModel(copyNewModel);
         } catch (error: any) {
             if (error.name === 'OfflineError') {
                 setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
@@ -278,7 +278,8 @@ const SubscriptionModal = ({
         model.step === SUBSCRIPTION_STEPS.CHECKOUT && !supportAddons(model.planIDs)
             ? SUBSCRIPTION_STEPS.PLAN_SELECTION
             : BACK[model.step];
-    const isFreeUserWithFreePlanSelected = user.isFree && !Object.keys(model.planIDs).length;
+    const isFreePlanSelected = !hasPlanIDs(model.planIDs);
+    const isFreeUserWithFreePlanSelected = user.isFree && isFreePlanSelected;
 
     useEffect(() => {
         // Each time the user switch between steps, it takes the user to the top of the modal
@@ -385,17 +386,21 @@ const SubscriptionModal = ({
                     <div className="flex-no-min-children on-mobile-flex-column">
                         <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
                             <div className="mlauto mrauto max-w37e on-mobile-max-w100  ">
-                                <h2 className="text-2xl text-bold mb1">{c('Label').t`Billing cycle`}</h2>
-                                <div className="mb2">
-                                    <SubscriptionCycleSelector
-                                        plans={plans}
-                                        planIDs={model.planIDs}
-                                        cycle={model.cycle}
-                                        currency={model.currency}
-                                        onChangeCycle={(cycle) => setModel({ ...model, cycle })}
-                                        disabled={loadingCheck}
-                                    />
-                                </div>
+                                {!isFreePlanSelected && (
+                                    <>
+                                        <h2 className="text-2xl text-bold mb1">{c('Label').t`Billing cycle`}</h2>
+                                        <div className="mb2">
+                                            <SubscriptionCycleSelector
+                                                plans={plans}
+                                                planIDs={model.planIDs}
+                                                cycle={model.cycle}
+                                                currency={model.currency}
+                                                onChangeCycle={(cycle) => setModel({ ...model, cycle })}
+                                                disabled={loadingCheck}
+                                            />
+                                        </div>
+                                    </>
+                                )}
                                 {checkResult?.AmountDue ? (
                                     <Payment
                                         type="subscription"
