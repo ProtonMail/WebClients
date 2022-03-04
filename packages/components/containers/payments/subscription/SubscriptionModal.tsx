@@ -385,7 +385,7 @@ const SubscriptionModal = ({
                     <div className="flex-no-min-children on-mobile-flex-column">
                         <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
                             <div className="mlauto mrauto max-w37e on-mobile-max-w100  ">
-                                <h2 className="text-2xl text-bold">{c('Label').t`Billing cycle`}</h2>
+                                <h2 className="text-2xl text-bold mb1">{c('Label').t`Billing cycle`}</h2>
                                 <div className="mb2">
                                     <SubscriptionCycleSelector
                                         plans={plans}
