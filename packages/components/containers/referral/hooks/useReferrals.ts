@@ -1,8 +1,8 @@
 import { useEffect, useReducer, Reducer } from 'react';
-import { getReferrals } from '@proton/shared/lib/api/core/referrals';
 import { Referral } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../../hooks';
+import fetchAllReferralsByOffset from '../helpers/fetchAllReferralsByOffset';
 
 interface ReferralApiResult {
     Referrals?: Referral[];
@@ -46,7 +46,7 @@ const useReferrals = () => {
     useEffect(() => {
         const fetchReferrals = async () => {
             try {
-                const apiResults = await api<ReferralApiResult>(getReferrals({ page: 0 }));
+                const apiResults = await fetchAllReferralsByOffset(api);
                 dispatch({ type: 'success', payload: apiResults });
             } catch (error: any) {
                 dispatch({ type: 'error' });
