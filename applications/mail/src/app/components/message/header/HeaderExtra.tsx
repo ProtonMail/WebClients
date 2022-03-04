@@ -43,7 +43,7 @@ const HeaderExtra = ({
     const isScheduledMessage = isScheduled(message.data);
 
     return (
-        <section className="message-header-extra pt0-5">
+        <section className="message-header-extra pt0-5 hidden-empty">
             <ExtraDecryptedSubject message={message} />
             <ExtraSpamScore message={message} />
             {bodyLoaded && <ExtraErrors message={message} />}
@@ -68,7 +68,7 @@ const HeaderExtra = ({
             {messageLoaded && received ? <ExtraEvents message={message as MessageStateWithData} /> : null}
             {isScheduledMessage && scheduledFeature?.Value ? <ExtraScheduledMessage message={message} /> : null}
 
-            <span className="inline-flex flex-row">
+            <span className="inline-flex flex-row hidden-empty">
                 <ExtraExpirationTime displayAsButton message={message} />
                 <ExtraReadReceipt message={message} />
                 <ExtraUnsubscribe message={message} />
