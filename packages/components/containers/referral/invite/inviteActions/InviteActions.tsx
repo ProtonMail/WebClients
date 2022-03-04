@@ -1,12 +1,30 @@
-import { useState } from 'react';
 import { c } from 'ttag';
-import { classnames, Button } from '@proton/components';
+import { useEffect, useState } from 'react';
+import { classnames, Button, useFeature, FeatureCode } from '@proton/components';
 
 import InviteHowItWorks from './InviteHowItWorks';
 import ReferralSignatureToggle from './ReferralSignatureToggle';
 
 const InviteActions = () => {
-    const [showHowItWorksSection, setShowHowItWorksSection] = useState(false);
+    const isOpen = useFeature<boolean>(FeatureCode.ReferralExplanationOpened);
+    const [showHowItWorksSection, setShowHowItWorksSection] = useState<boolean | null>(false);
+
+    const handleCloseSection = () => {
+        setShowHowItWorksSection(false);
+
+        if (isOpen.feature?.Value === true) {
+            void isOpen.update(false);
+        }
+    };
+
+    useEffect(() => {
+        const featureValue = isOpen.feature?.Value;
+
+        if (isOpen.loading === false && featureValue !== undefined && featureValue !== null) {
+            setShowHowItWorksSection(!!featureValue);
+        }
+    }, [isOpen]);
+
     return (
         <>
             <div className={classnames(['flex flex-justify-space-between', showHowItWorksSection && 'mb2'])}>
@@ -26,7 +44,7 @@ const InviteActions = () => {
                     </div>
                 )}
             </div>
-            <InviteHowItWorks show={showHowItWorksSection} handleClose={() => setShowHowItWorksSection(false)} />
+            {showHowItWorksSection && <InviteHowItWorks handleClose={handleCloseSection} />}
         </>
     );
 };
