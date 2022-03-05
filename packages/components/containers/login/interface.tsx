@@ -1,5 +1,6 @@
 import { AuthResponse, AuthVersion } from '@proton/shared/lib/authentication/interface';
 import { Api, KeySalt as tsKeySalt, User as tsUser, Address as tsAddress } from '@proton/shared/lib/interfaces';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 
 export enum AuthStep {
     LOGIN,
@@ -38,6 +39,7 @@ export interface AuthSession {
     LocalID?: number;
     path?: string;
     flow?: AuthFlows;
+    toApp?: APP_NAMES;
     persistent: boolean;
 }
 
@@ -48,5 +50,5 @@ export type AuthActionResponse =
       }
     | {
           cache: AuthCacheResult;
-          to: AuthStep.LOGIN | AuthStep.TOTP | AuthStep.NEW_PASSWORD | AuthStep.U2F | AuthStep.UNLOCK;
+          to: Exclude<AuthStep, AuthStep.DONE>;
       };

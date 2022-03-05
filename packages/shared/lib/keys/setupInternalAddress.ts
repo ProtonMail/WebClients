@@ -37,11 +37,11 @@ export const handleCreateInternalAddressAndKey = async ({ username, keyPassword,
     const actualUsername = hasSetUsername ? user.Name : username;
 
     if (!hasSetUsername) {
-        await api(queryCheckUsernameAvailability(actualUsername));
+        await api(queryCheckUsernameAvailability(`${actualUsername}@${domain}`, true));
         await api(updateUsername({ Username: actualUsername }));
     }
 
-    const [Address] = await handleSetupAddress({ api, domains: [domain], username: actualUsername });
+    const [Address] = await handleSetupAddress({ api, domain, username: actualUsername });
 
     if (getHasMigratedAddressKeys(addresses)) {
         const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);

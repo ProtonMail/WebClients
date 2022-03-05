@@ -3,6 +3,8 @@ import { Currency } from '@proton/shared/lib/interfaces';
 
 import { classnames } from '../../helpers';
 
+import './Price.scss';
+
 const CURRENCIES = {
     USD: '$',
     EUR: '€',
@@ -17,6 +19,7 @@ export interface Props {
     suffix?: string;
     prefix?: string;
     isDisplayedInSentence?: boolean;
+    large?: boolean;
 }
 
 const Price = ({
@@ -27,12 +30,13 @@ const Price = ({
     suffix = '',
     prefix = '',
     isDisplayedInSentence = false,
+    large,
 }: Props) => {
     const value = humanPrice(amount, divisor);
     const [integer, decimal] = `${value}`.split('.');
     const p = amount < 0 ? <span className="prefix">-</span> : null;
     const v = (
-        <span className="amount">
+        <span className={classnames(['amount', 'amount--large'])}>
             <span className="integer">{integer}</span>
             {decimal ? <span className="decimal">.{decimal}</span> : null}
         </span>
@@ -46,7 +50,14 @@ const Price = ({
 
     if (currency === 'CHF') {
         return (
-            <span className={classnames(['price flex-item-noshrink inline-flex', className])} data-currency={currency}>
+            <span
+                className={classnames([
+                    'price flex-item-noshrink inline-flex flex-align-items-baseline',
+                    large && 'price--large',
+                    className,
+                ])}
+                data-currency={currency}
+            >
                 {pr}
                 {p}
                 <span className="currency">CHF&nbsp;</span>
@@ -58,7 +69,14 @@ const Price = ({
 
     if (currency === 'EUR') {
         return (
-            <span className={classnames(['price flex-item-noshrink inline-flex', className])} data-currency={currency}>
+            <span
+                className={classnames([
+                    'price flex-item-noshrink inline-flex flex-align-items-baseline',
+                    large && 'price--large',
+                    className,
+                ])}
+                data-currency={currency}
+            >
                 {pr}
                 {p}
                 {v}
@@ -68,7 +86,14 @@ const Price = ({
         ); // -2 €/month
     }
     return (
-        <span className={classnames(['price flex-item-noshrink inline-flex', className])} data-currency={currency}>
+        <span
+            className={classnames([
+                'price flex-item-noshrink inline-flex flex-align-items-baseline',
+                large && 'price--large',
+                className,
+            ])}
+            data-currency={currency}
+        >
             {pr}
             {p}
             {!!currency && <span className="currency">{CURRENCIES[currency as Currency] || currency}</span>}

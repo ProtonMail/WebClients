@@ -162,9 +162,9 @@ const PlanSelection = ({
         <CurrencySelector mode="select-two" currency={currency} onSelect={onChangeCurrency} disabled={loading} />
     );
     const currencySelectorRow = (
-        <div className="flex flex-justify-space-between">
-            <div className="inline-block visibility-hidden">{currencyItem}</div>
-            <div className="inline-block">
+        <div className="flex flex-justify-space-between on-mobile-flex-column-nostretch">
+            <div className="inline-block no-mobile visibility-hidden">{currencyItem}</div>
+            <div className="flex on-mobile-flex on-mobile-flex-justify-center on-mobile-w100">
                 <CycleSelector
                     mode="buttons"
                     cycle={cycle}
@@ -177,7 +177,7 @@ const PlanSelection = ({
                     ]}
                 />
             </div>
-            <div className="inline-block">{currencyItem}</div>
+            <div className="flex on-mobile-center on-mobile-mt1">{currencyItem}</div>
         </div>
     );
 

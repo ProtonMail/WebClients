@@ -1,0 +1,7 @@
+@import '~@proton/styles/scss/config';
+
+.onboarding-modal {
+	&#{&} {
+		--size: #{rem(394)};
+	}
+}

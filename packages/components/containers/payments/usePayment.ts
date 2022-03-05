@@ -12,6 +12,7 @@ interface Props {
     amount: number;
     currency: string;
     onPay: (data: PaymentParameters) => void;
+    defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
 }
 
 const hasToken = (parameters: PaymentParameters): boolean => {
@@ -21,9 +22,9 @@ const hasToken = (parameters: PaymentParameters): boolean => {
     return !!Token;
 };
 
-const usePayment = ({ amount, currency, onPay }: Props) => {
+const usePayment = ({ amount, currency, onPay, defaultMethod }: Props) => {
     const { card, setCard, errors: cardErrors, isValid } = useCard();
-    const [method, setMethod] = useState<PAYMENT_METHOD_TYPE | undefined>();
+    const [method, setMethod] = useState<PAYMENT_METHOD_TYPE | undefined>(defaultMethod);
     const [cardSubmitted, setCardSubmitted] = useState(false);
     const isPayPalActive = method === PAYPAL;
 

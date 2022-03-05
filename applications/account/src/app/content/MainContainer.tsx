@@ -21,6 +21,7 @@ import {
     useIsDataRecoveryAvailable,
     useNewDomainOptIn,
     useOrganization,
+    UserDropdown,
     useRecoveryNotification,
     useToggle,
     useUser,
@@ -126,6 +127,7 @@ const MainContainer = () => {
 
     const header = (
         <PrivateHeader
+            userDropdown={<UserDropdown />}
             logo={logo}
             title={c('Title').t`Settings`}
             expanded={expanded}

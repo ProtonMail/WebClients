@@ -41,6 +41,7 @@ import {
     SubscriptionModalProvider,
     WireGuardConfigurationSection,
     useModalState,
+    UserDropdown,
 } from '@proton/components';
 import LiveChatZendesk, {
     ZendeskRef,
@@ -115,20 +116,24 @@ const MainContainer = () => {
 
     const header = (
         <PrivateHeader
+            userDropdown={
+                <UserDropdown
+                    onOpenChat={
+                        canEnableChat
+                            ? () => {
+                                  setShowChat({ autoToggle: true, render: true });
+                                  zendeskRef.current?.toggle();
+                              }
+                            : undefined
+                    }
+                />
+            }
             logo={logo}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
             appsDropdown={null}
-            onOpenChat={
-                canEnableChat
-                    ? () => {
-                          setShowChat({ autoToggle: true, render: true });
-                          zendeskRef.current?.toggle();
-                      }
-                    : undefined
-            }
         />
     );
 
