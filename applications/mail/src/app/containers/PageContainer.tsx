@@ -7,7 +7,6 @@ import {
     useLabels,
     useFolders,
     useWelcomeFlags,
-    useModals,
     LocationErrorBoundary,
     MailShortcutsModal,
     useModalState,
@@ -51,8 +50,6 @@ const PageContainer = (
     const [subscription] = useSubscription();
     const [addresses] = useAddresses();
 
-    const { createModal } = useModals();
-
     const seenMnemonicFeature = useFeature<boolean>(FeatureCode.SeenMnemonicPrompt);
     const [mnemonicPromptModal, setMnemonicPromptModalOpen, renderMnemonicModal] = useModalState();
     const shouldOpenMnemonicModal = getShouldOpenMnemonicModal({
@@ -62,6 +59,7 @@ const PageContainer = (
         app: APPS.PROTONMAIL,
     });
 
+    const [onboardingModalProps, setOnboardingModal, renderOnboardingModal] = useModalState();
     const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
     const [referralModal, setReferralModal, renderReferralModal] = useModalState();
     const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
@@ -78,13 +76,7 @@ const PageContainer = (
 
         if (welcomeFlags.isWelcomeFlow) {
             onceRef.current = true;
-            createModal(
-                <MailOnboardingModal
-                    onDone={() => {
-                        setWelcomeFlagsDone();
-                    }}
-                />
-            );
+            setOnboardingModal(true);
         } else if (shouldOpenMnemonicModal) {
             onceRef.current = true;
             setMnemonicPromptModalOpen(true);
@@ -112,6 +104,14 @@ const PageContainer = (
             elementID={elementID}
             breakpoints={breakpoints}
         >
+            {renderOnboardingModal && (
+                <MailOnboardingModal
+                    onDone={() => {
+                        setWelcomeFlagsDone();
+                    }}
+                    {...onboardingModalProps}
+                />
+            )}
             {renderReferralModal && <ReferralModal endDate={shouldOpenReferralModal.endDate} {...referralModal} />}
             {renderMnemonicModal && <MnemonicPromptModal {...mnemonicPromptModal} />}
             <LocationErrorBoundary>

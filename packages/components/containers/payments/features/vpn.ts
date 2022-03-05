@@ -57,6 +57,7 @@ export const getCountries = (featureName: string, fire?: boolean): PlanCardFeatu
         tooltip: '',
         included: true,
         fire,
+        icon: 'earth',
     };
 };
 
@@ -66,6 +67,7 @@ export const getVPNSpeed = (type: 'medium' | 'highest', fire?: boolean): PlanCar
         tooltip: '',
         included: true,
         fire,
+        icon: 'checkmark-circle',
     };
 };
 
@@ -76,6 +78,7 @@ export const getStreaming = (included: boolean, fire?: boolean): PlanCardFeature
             .t`Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere`,
         included,
         fire,
+        icon: 'play',
     };
 };
 
@@ -85,6 +88,7 @@ export const getP2P = (included: boolean, fire?: boolean): PlanCardFeatureDefini
         tooltip: c('new_plans: tooltip').t`Support for file-sharing protocols like BitTorrent`,
         included,
         fire,
+        icon: 'users',
     };
 };
 
@@ -114,6 +118,7 @@ export const getTor = (included: boolean, fire?: boolean): PlanCardFeatureDefini
         tooltip: c('new_plans: tooltip').t`Route your internet traffic through the Tor network with a single click`,
         included,
         fire,
+        icon: 'brand-tor',
     };
 };
 const getVPNConnectionsPerUser = (n = 0, fire?: boolean): PlanCardFeatureDefinition => {
@@ -136,14 +141,16 @@ export const getVPNConnections = (n = 0, fire?: boolean): PlanCardFeatureDefinit
         tooltip: '',
         included: true,
         fire,
+        icon: 'checkmark-circle',
     };
 };
-export const getNoLogs = (): PlanCardFeatureDefinition => {
+export const getNoLogs = (fire?: boolean): PlanCardFeatureDefinition => {
     return {
         featureName: c('new_plans: feature').t`Strict no-logs policy`,
         tooltip: c('new_plans: tooltip')
             .t`We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy`,
         included: true,
+        fire,
     };
 };
 const getBandwidth = (): PlanCardFeatureDefinition => {

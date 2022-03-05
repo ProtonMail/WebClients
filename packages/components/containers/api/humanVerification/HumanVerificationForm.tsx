@@ -13,8 +13,8 @@ import './HumanVerificationModal.scss';
 import OwnershipMethod from './OwnershipMethod';
 import CodeMethod from './CodeMethod';
 
-interface Props {
-    onSubmit: (token: string, tokenType: HumanVerificationMethodType) => void;
+export interface HumanVerificationFormProps {
+    onSubmit: (token: string, tokenType: HumanVerificationMethodType, verificationModel?: VerificationModel) => void;
     onClose: () => void;
     onLoaded?: () => void;
     onError?: (error: unknown) => void;
@@ -45,7 +45,7 @@ const HumanVerificationForm = ({
     step,
     isEmbedded,
     onChangeStep,
-}: Props) => {
+}: HumanVerificationFormProps) => {
     const api = useApi();
 
     const availableMethods = getAvailableMethods(methods);

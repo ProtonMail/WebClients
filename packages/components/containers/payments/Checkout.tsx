@@ -33,7 +33,7 @@ const Checkout = ({ currency, onChangeCurrency, loading, children, hasGuarantee,
             <div className={loading ? 'opacity-50' : ''}>{children}</div>
             <div className="text-sm lh-standard">
                 {hasPayments ? (
-                    <div className="flex flex-nowrap color-weak mb0-5">
+                    <div className="flex flex-nowrap color-weak mb0-5 mt0-5">
                         <span className="flex-item-noshrink mr0-5">
                             <Icon name="shield" />
                         </span>

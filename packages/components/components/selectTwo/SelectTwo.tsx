@@ -1,4 +1,13 @@
-import { useState, useRef, useEffect, useMemo, KeyboardEvent, ReactElement, ComponentPropsWithoutRef } from 'react';
+import {
+    useState,
+    useRef,
+    useEffect,
+    useMemo,
+    KeyboardEvent,
+    ReactElement,
+    ComponentPropsWithoutRef,
+    MutableRefObject,
+} from 'react';
 
 import { Dropdown } from '../dropdown';
 import Option, { Props as OptionProps } from '../option/Option';
@@ -43,6 +52,7 @@ export interface Props<V>
     onValue?: (value: V) => void;
     onClose?: () => void;
     onOpen?: () => void;
+    anchorRef?: MutableRefObject<HTMLButtonElement | null>;
 }
 
 const SelectTwo = <V extends any>({
@@ -60,6 +70,7 @@ const SelectTwo = <V extends any>({
     noMaxWidth = true,
     originalPlacement,
     loading,
+    anchorRef: maybeAnchorRef,
     ...rest
 }: Props<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
@@ -195,7 +206,7 @@ const SelectTwo = <V extends any>({
 
             <Dropdown
                 isOpen={isOpen}
-                anchorRef={anchorRef}
+                anchorRef={maybeAnchorRef || anchorRef}
                 onClose={close}
                 offset={4}
                 noCaret

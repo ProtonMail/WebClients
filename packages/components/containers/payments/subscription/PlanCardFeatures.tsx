@@ -12,7 +12,7 @@ interface FeatureListProps {
     icon?: boolean;
 }
 
-const PlanCardFeatureList = ({ features, icon }: FeatureListProps) => {
+export const PlanCardFeatureList = ({ features, icon }: FeatureListProps) => {
     return (
         <ul className="bg-weak-odd unstyled mt1 mb2">
             {features.map((feature) => {
@@ -21,7 +21,7 @@ const PlanCardFeatureList = ({ features, icon }: FeatureListProps) => {
                         <div
                             className={classnames([
                                 'flex-no-min-children flex-nowrap',
-                                !feature.included && 'color-weak',
+                                !feature.included && 'color-hint',
                             ])}
                         >
                             <span className="w2e pl0-25 mx0-1 flex flex-item-noshrink min-h23r">
@@ -36,7 +36,7 @@ const PlanCardFeatureList = ({ features, icon }: FeatureListProps) => {
                                         )}
                                     </span>
                                 ) : (
-                                    <Icon size={16} name="cross-circle" className="mt0-25" />
+                                    <Icon size={20} name="cross" className="mt0-1" />
                                 )}
                             </span>
                             <span className="flex-item-fluid inline-flex flex-align-items-center">
@@ -91,13 +91,13 @@ const PlanCardFeatures = ({ planName, features, audience }: Props) => {
     );
     const teamFeatures = audience === Audience.B2B && planName !== PLANS.FREE && (
         <div>
-            <h2>{c('new_plans: heading').t`Team management`}</h2>
+            <h3 className="h4 text-bold">{c('new_plans: heading').t`Team management`}</h3>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.team, audience)} />
         </div>
     );
     const supportFeatures = audience === Audience.B2B && planName !== PLANS.FREE && (
         <div>
-            <h2>{c('new_plans: heading').t`Support`}</h2>
+            <h3 className="h4 text-bold">{c('new_plans: heading').t`Support`}</h3>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.support, audience)} />
         </div>
     );

@@ -16,7 +16,7 @@ const ThemesModal = (props: ModalProps) => {
     };
 
     return (
-        <ModalTwo size="large" {...props}>
+        <ModalTwo size="small" {...props}>
             <ModalTwoHeader title={c('Title').t`Select a theme`} />
             <ModalTwoContent>
                 <ThemeCards

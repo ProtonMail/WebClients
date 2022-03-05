@@ -20,6 +20,7 @@ import {
     MailComposerModeModal,
     AppsDropdownWithDiscoverySpotlight,
     useModalState,
+    UserDropdown,
 } from '@proton/components';
 import { APPS, VIEW_LAYOUT, DENSITY, COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -33,6 +34,7 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import MailDefaultHandlerModal from './MailDefaultHandlerModal';
 import ClearBrowserDataModal from './ClearBrowserDataModal';
 import MailSearch from './search/MailSearch';
+import MailOnboardingModal from '../onboarding/MailOnboardingModal';
 
 interface Props {
     labelID: string;
@@ -55,6 +57,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
 
+    const [onboardingModalProps, setOnboardingModalOpen, renderOnboardingModal] = useModalState();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
     const [mailViewLayoutProps, setMailViewLayoutModalOpen] = useModalState();
     const [mailDensityProps, setMailDensityModalOpen] = useModalState();
@@ -95,6 +98,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     return (
         <>
             <PrivateHeader
+                userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModalOpen(true)} />}
                 logo={logo}
                 backUrl={showBackButton && backUrl ? backUrl : undefined}
                 title={labelName}
@@ -172,6 +176,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                     </FloatingButton>
                 }
             />
+            {renderOnboardingModal && <MailOnboardingModal showGenericSteps {...onboardingModalProps} />}
             <MailShortcutsModal {...mailShortcutsProps} />
             <MailViewLayoutModal {...mailViewLayoutProps} />
             <MailDensityModal {...mailDensityProps} />

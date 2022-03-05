@@ -1,5 +1,6 @@
+// Introducing Arizona font. https://abcdinamo.com/typefaces/arizona
+
 @font-face {
-	// Introducing Arizona font. https://abcdinamo.com/typefaces/arizona
 	font-family: 'Arizona';
 
 	/* stylelint-disable-next-line */
@@ -9,13 +10,27 @@
 	/*
 	 * Specific features for Arizona font
 	 * This line has to be here inside the font-face declaration to not be applied on any other fallback font
-	 * Edit: we remove this line as Dinamo studio has define those settings by default for us.
+	 * Be careful: these values are specific to this font face, it will give strange results with different fonts (i.e Arial)
+	 * Edit: we disabled this line as Dinamo studio has define those settings by default for us.
 	 */
 	// font-feature-settings: 'ss02', 'ss03', 'ss04';
 
 	font-display: swap;
 	src: url(../../assets/fonts/ABCArizonaSansVariable.woff2) format('woff2-variations'),
 		url(../../assets/fonts/ABCArizonaSansVariable.woff) format('woff-variations');
+}
+
+// actually only used on lobby pages (signup, login, etc.)
+@font-face {
+	font-family: 'Arizona Flare';
+
+	/* stylelint-disable-next-line */
+	font-weight: 200 700;
+	font-style: oblique -14deg 0deg;
+
+	font-display: swap;
+	src: url(../../assets/fonts/ABCArizonaFlareVariable.woff2) format('woff2-variations'),
+		url(../../assets/fonts/ABCArizonaFlareVariable.woff) format('woff-variations');
 }
 
 :root {

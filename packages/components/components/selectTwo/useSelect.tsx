@@ -45,14 +45,14 @@ const useSelect = <V,>({
     }, [options, value]);
 
     const open = () => {
-        onOpen?.();
         setIsOpen(true);
+        onOpen?.();
         setFocusedIndex(selectedIndex || 0);
     };
 
     const close = () => {
-        onClose?.();
         setIsOpen(false);
+        onClose?.();
     };
 
     const focusPreviousIndex = () => {

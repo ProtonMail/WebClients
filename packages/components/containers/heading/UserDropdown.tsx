@@ -22,7 +22,6 @@ import {
     Copy,
     useAuthentication,
     useConfig,
-    useModals,
     useNotifications,
     useOrganization,
     useRecoveryNotification,
@@ -38,14 +37,14 @@ import {
 
 import { classnames, generateUID } from '../../helpers';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
-import { OnboardingModal } from '../onboarding';
 import { AuthenticatedBugModal } from '../support';
 
 interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onClick'> {
     onOpenChat?: () => void;
+    onOpenIntroduction?: () => void;
 }
 
-const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
+const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
     const { APP_NAME } = useConfig();
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
@@ -59,7 +58,6 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const { logout } = useAuthentication();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { createModal } = useModals();
     const [bugReportModal, setBugReportModal, render] = useModalState();
 
     const recoveryNotification = useRecoveryNotification(true);
@@ -110,10 +108,6 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
             planName = getPlan(subscription)?.Title;
         }
     }
-
-    const handleTourClick = () => {
-        createModal(<OnboardingModal showGenericSteps allowClose hideDisplayName />);
-    };
 
     const handleBugReportClick = () => {
         setBugReportModal(true);
@@ -252,10 +246,13 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
 
                     <hr className="mt0-5 mb0-5" />
 
-                    {APP_NAME !== APPS.PROTONVPN_SETTINGS && (
+                    {onOpenIntroduction && (
                         <DropdownMenuButton
                             className="text-left"
-                            onClick={handleTourClick}
+                            onClick={() => {
+                                close();
+                                onOpenIntroduction();
+                            }}
                             data-testid="userdropdown:button:introduction"
                         >
                             {c('Action').t`${BRAND_NAME} introduction`}

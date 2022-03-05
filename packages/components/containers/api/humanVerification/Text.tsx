@@ -1,7 +1,13 @@
 import { ReactNode } from 'react';
+import { classnames } from '../../../helpers';
 
-const Text = ({ children }: { children: ReactNode }) => {
-    return <div className="mb2 mt0-5">{children}</div>;
+interface Props {
+    className?: string;
+    children: ReactNode;
+}
+
+const Text = ({ children, className }: Props) => {
+    return <div className={classnames(['mb1-75 color-weak text-break', className])}>{children}</div>;
 };
 
 export default Text;

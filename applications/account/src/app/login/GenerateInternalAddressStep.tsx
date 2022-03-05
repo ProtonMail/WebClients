@@ -4,8 +4,8 @@ import { c } from 'ttag';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 
 import Header from '../public/Header';
-import BackButton from '../public/BackButton';
 import Content from '../public/Content';
+import Text from '../public/Text';
 import GenerateInternalAddressForm from './GenerateInternalAddressForm';
 import GenerateInternalAddressConfirmForm from './GenerateInternalAddressConfirmForm';
 
@@ -27,7 +27,7 @@ export interface InternalAddressGeneration {
 
 interface Props {
     externalEmailAddress?: string;
-    onBack: () => void;
+    onBack?: () => void;
     onSubmit: (payload: InternalAddressGenerationPayload) => Promise<void>;
     mailAppName: string;
     toAppName: string;
@@ -51,17 +51,14 @@ const GenerateInternalAddressStep = ({
         <>
             {step === 0 && (
                 <>
-                    <Header
-                        title={c('Title').t`Create a ${mailAppName} address`}
-                        left={<BackButton onClick={onBack} />}
-                    />
+                    <Header title={c('Title').t`Create a ${mailAppName} address`} onBack={onBack} />
                     <Content>
-                        <div className="mb1-75 text-break">
+                        <Text>
                             {externalEmailAddress
                                 ? c('Info')
                                       .t`Your ${BRAND_NAME} Account is associated with ${externalEmailAddress}. To use ${toAppName}, please create an address.`
                                 : c('Info').t`To use ${toAppName}, please create an address.`}
-                        </div>
+                        </Text>
                         <GenerateInternalAddressForm
                             api={api}
                             defaultUsername={payload?.username}
@@ -82,7 +79,9 @@ const GenerateInternalAddressStep = ({
                 <>
                     <Header
                         title={c('Title').t`Address is available`}
-                        left={<BackButton onClick={() => setStep(0)} />}
+                        onBack={() => {
+                            setStep(0);
+                        }}
                     />
                     <Content>
                         <GenerateInternalAddressConfirmForm
