@@ -13,7 +13,7 @@ export const getSupport = (type: 'limited' | 'priority'): PlanCardFeatureDefinit
                 : c('new_plans: feature').t`Priority support`,
         tooltip: '',
         included: true,
-        icon: 'checkmark-circle',
+        icon: 'life-ring',
     };
 };
 

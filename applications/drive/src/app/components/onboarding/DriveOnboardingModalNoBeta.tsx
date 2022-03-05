@@ -1,33 +1,31 @@
 import { c } from 'ttag';
 
-import { OnboardingContent, OnboardingModal, OnboardingStep, EarlyAccessModal, useModals } from '@proton/components';
+import { OnboardingContent, EarlyAccessModal, ModalTwo, ModalProps, Button, useModalState } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-upgrade.svg';
 
-const DriveOnboardingModalNoBeta = (props: any) => {
+const DriveOnboardingModalNoBeta = (props: ModalProps) => {
     const appName = getAppName(APPS.PROTONDRIVE);
-    const { createModal } = useModals();
+    const [modalProps, setModal, renderModal] = useModalState();
 
     return (
-        <OnboardingModal setWelcomeFlags={false} showGenericSteps={false} hideDisplayName {...props}>
-            {() => (
-                <OnboardingStep
-                    close={null}
-                    submit={c('Onboarding Action').t`Enable Beta Access`}
-                    onSubmit={() => {
-                        createModal(<EarlyAccessModal />);
-                    }}
-                >
+        <>
+            {renderModal && <EarlyAccessModal {...modalProps} />}
+            <ModalTwo size="small" {...props}>
+                <div className="p2">
                     <OnboardingContent
                         title={c('Onboarding Title').t`${appName} is in Beta`}
                         description={c('Onboarding Info')
                             .t`${appName} is currently only available if you enable Beta Access.`}
                         img={<img src={onboardingWelcome} alt={appName} />}
                     />
-                </OnboardingStep>
-            )}
-        </OnboardingModal>
+                    <Button size="large" color="norm" fullWidth onClick={() => setModal(true)}>
+                        {c('Onboarding Action').t`Enable Beta Access`}
+                    </Button>
+                </div>
+            </ModalTwo>
+        </>
     );
 };
 

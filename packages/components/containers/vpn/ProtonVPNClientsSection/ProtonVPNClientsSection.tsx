@@ -1,10 +1,49 @@
 import { c } from 'ttag';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { useHistory, useLocation } from 'react-router-dom';
+import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import VPNClientCard from './VPNClientCard';
-import { DropdownMenuLink, Copy } from '../../../components';
+import { DropdownMenuLink, Copy, ModalTwo, ModalProps, Button, Href, ButtonLike } from '../../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
+import { OnboardingContent } from '../../onboarding';
+
+interface DownloadModalProps extends ModalProps {
+    downloadUrl: string;
+}
+
+const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
+    return (
+        <ModalTwo {...rest} size="small">
+            <div className="p2 text-center">
+                <OnboardingContent
+                    img={<img src={onboardingVPNWelcome} alt={c('Onboarding').t`Welcome to ${VPN_APP_NAME}`} />}
+                    title={c('Title').t`Download ${VPN_APP_NAME}`}
+                    description={c('Info').t`The securest way to browse, stream, and be online.`}
+                />
+                <ButtonLike
+                    as={Href}
+                    color="norm"
+                    size="large"
+                    target="_blank"
+                    href={downloadUrl}
+                    fullWidth
+                    onClick={() => {
+                        rest.onClose?.();
+                    }}
+                    className="mb0-5"
+                >{c('Action').t`Download`}</ButtonLike>
+                <Button color="norm" size="large" fullWidth shape="ghost" onClick={rest.onClose}>
+                    {c('Action').t`Download on another platform`}
+                </Button>
+            </div>
+        </ModalTwo>
+    );
+};
 
 const ProtonVPNClientsSection = () => {
+    const history = useHistory();
+    const location = useLocation();
+
     const androidLinks = [
         {
             href: 'https://protonvpn.com/download/ProtonVPN.apk',
@@ -31,6 +70,13 @@ const ProtonVPNClientsSection = () => {
 
     return (
         <SettingsSectionWide>
+            <DownloadModal
+                downloadUrl="https://protonvpn.com/download"
+                open={location.search.includes('prompt')}
+                onClose={() => {
+                    history.replace({ ...location, search: '' });
+                }}
+            />
             <SettingsParagraph>
                 {c('Info')
                     .t`To secure your internet connection, download and install the ${VPN_APP_NAME} application for your device and connect to a ${VPN_APP_NAME} server.`}

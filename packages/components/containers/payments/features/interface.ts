@@ -39,6 +39,7 @@ export enum PlanCardFeatureType {
 export interface ShortPlan {
     label: string;
     description: string;
+    title: string;
     plan: PLANS.FREE | PLANS.BUNDLE | PLANS.MAIL | PLANS.BUNDLE_PRO | PLANS.MAIL_PRO | PLANS.VPN;
     cta: string;
     features: PlanCardFeatureDefinition[];

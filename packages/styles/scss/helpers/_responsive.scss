@@ -314,11 +314,18 @@
 		&-w100 {
 			inline-size: 100%;
 		}
+		&-w25 {
+			inline-size: 25%;
+		}
 		&-max-w50 {
 			max-inline-size: 50%;
 		}
 		&-text-left {
 			text-align: start;
+		}
+
+		&-no-box-shadow {
+			box-shadow: none;
 		}
 
 		&-flex-align-self-start {

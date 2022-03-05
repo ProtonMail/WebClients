@@ -1,5 +1,6 @@
-import { c } from 'ttag';
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import {
     Button,
@@ -18,9 +19,7 @@ import {
     useLoading,
     useLocalState,
 } from '@proton/components';
-import { Link } from 'react-router-dom';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import Loader from '../signup/Loader';
 import { defaultPersistentKey } from '../public/helper';
 
@@ -33,13 +32,14 @@ interface Props {
         payload: ChallengeResult;
     }) => Promise<void>;
     defaultUsername?: string;
+    hasRemember?: boolean;
 }
 
-const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`Sign in` }: Props) => {
+const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`Sign in`, hasRemember }: Props) => {
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
-    const [persistent, setPersistent] = useLocalState(true, defaultPersistentKey);
+    const [persistent, setPersistent] = useLocalState(!!hasRemember, defaultPersistentKey);
 
     const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
@@ -52,7 +52,9 @@ const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`
         }
         // Special focus management for challenge
         // challengeRefLogin.current?.focus('#username');
-        usernameRef.current?.focus();
+        setTimeout(() => {
+            usernameRef.current?.focus();
+        }, 0);
     }, [challengeLoading]);
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -61,7 +63,15 @@ const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`
         return <ChallengeError />;
     }
 
-    const signupLink = <Link key="signupLink" to="/signup">{c('Link').t`Create an account`}</Link>;
+    const forgotPasswordLink = (
+        <Link key="forgotPasswordLink" to="/reset-password">{c('new_plans: forgot links').t`Forgot password`}</Link>
+    );
+    const forgotUsernameLink = (
+        <Link key="forgotUsernameLink" to="/forgot-username">{
+            // translator: Part of a sentence "Forgot password or username?"
+            c('new_plans: forgot links').t`username`
+        }</Link>
+    );
     const learnMore = (
         <Href
             className="color-inherit"
@@ -73,13 +83,13 @@ const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`
     return (
         <>
             {challengeLoading && (
-                <div className="text-center">
+                <div className="text-center absolute absolute-center">
                     <Loader />
                 </div>
             )}
             <form
                 name="loginForm"
-                className={challengeLoading ? 'hidden' : undefined}
+                className={challengeLoading ? 'visibility-hidden' : undefined}
                 onSubmit={(event) => {
                     event.preventDefault();
                     if (loading || !onFormSubmit()) {
@@ -94,7 +104,8 @@ const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`
                 method="post"
             >
                 <Challenge
-                    className="h0"
+                    className="h0 absolute"
+                    noLoader
                     tabIndex={-1}
                     challengeRef={challengeRefLogin}
                     type={0}
@@ -114,7 +125,6 @@ const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`
                     bigger
                     label={c('Label').t`Email or username`}
                     error={validator([requiredValidator(username)])}
-                    autoFocus
                     disableChange={loading}
                     autoComplete="username"
                     value={username}
@@ -134,26 +144,30 @@ const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`
                     rootClassName="mt0-5"
                 />
 
-                <div className="flex flex-row flex-align-items-start">
-                    <Checkbox
-                        id="staySignedIn"
-                        className="mt0-5"
-                        checked={persistent}
-                        onChange={loading ? noop : () => setPersistent(!persistent)}
-                    />
-                    <div className="flex-item-fluid">
-                        <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
-                            <span className="pr0-5">{c('Label').t`Keep me signed in`}</span>
-                            <span className="flex">
-                                <Info title={c('Info').t`You'll stay signed in even after you close the browser.`} />
-                            </span>
-                        </Label>
-                        <div className="color-weak">
-                            {c('Info')
-                                .jt`Not your device? Use a private browsing window to sign in and close it when done. ${learnMore}`}
+                {hasRemember && (
+                    <div className="flex flex-row flex-align-items-start">
+                        <Checkbox
+                            id="staySignedIn"
+                            className="mt0-5"
+                            checked={persistent}
+                            onChange={loading ? noop : () => setPersistent(!persistent)}
+                        />
+                        <div className="flex-item-fluid">
+                            <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
+                                <span className="pr0-5">{c('Label').t`Keep me signed in`}</span>
+                                <span className="flex">
+                                    <Info
+                                        title={c('Info').t`You'll stay signed in even after you close the browser.`}
+                                    />
+                                </span>
+                            </Label>
+                            <div className="color-weak">
+                                {c('Info')
+                                    .jt`Not your device? Use a private browsing window to sign in and close it when done. ${learnMore}`}
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
 
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                     {
@@ -161,7 +175,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`
                         loading ? c('Action').t`Signing in` : signInText
                     }
                 </Button>
-                <div className="text-center mt2">{c('Info').jt`New to ${BRAND_NAME}? ${signupLink}`}</div>
+                <div className="text-center mt2">{c('Info').jt`${forgotPasswordLink} or ${forgotUsernameLink}?`}</div>
             </form>
         </>
     );

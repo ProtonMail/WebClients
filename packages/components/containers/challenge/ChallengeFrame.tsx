@@ -137,8 +137,6 @@ const ChallengeFrame = ({
                 clearTimeout(errorTimeoutHandle);
                 setStage('initialized');
                 addLog('Initialized', undefined, 'step');
-                iframe.classList.add('h-custom');
-                iframe.style.setProperty('--height-custom', `0px`);
 
                 stylesPromise
                     .then((styles) => {
@@ -267,12 +265,14 @@ const ChallengeFrame = ({
     useLayoutEffect(() => {
         const contentWindow = iframeRef.current?.contentWindow;
         const renderDivEl = renderDivRef.current;
+        const iframe = iframeRef.current;
+        if (iframe && renderDivEl && (!hasSizeObserver || !isLoaded)) {
+            const rect = renderDivEl.getBoundingClientRect();
+            iframe.classList.add('h-custom');
+            iframe.style.setProperty('--height-custom', `${rect.height}px`);
+        }
         if (!renderDivEl || !contentWindow || !isLoaded) {
             return;
-        }
-        if (iframeRef.current && !hasSizeObserver) {
-            iframeRef.current.classList.add('h-custom');
-            iframeRef.current.style.setProperty('--height-custom', `${renderDivEl.getBoundingClientRect().height}px`);
         }
         contentWindow.postMessage(
             {

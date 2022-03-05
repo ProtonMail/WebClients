@@ -3,7 +3,7 @@ import { UserSettingsModel } from '@proton/shared/lib/models';
 import useCache from './useCache';
 
 export interface WelcomeFlagsState {
-    hasDisplayNameStep?: boolean;
+    hasGenericWelcomeStep?: boolean;
     isWelcomeFlow?: boolean;
 }
 
@@ -15,7 +15,7 @@ const useWelcomeFlags = (): [WelcomeFlagsState, () => void] => {
         const hasProductWelcomeStep = userSettings.WelcomeFlag === 0; // Operated directly on API side
         const hasGenericWelcomeStep = userSettings.Flags.Welcomed === 0;
         return {
-            hasDisplayNameStep: hasGenericWelcomeStep,
+            hasGenericWelcomeStep,
             isWelcomeFlow: hasGenericWelcomeStep || hasProductWelcomeStep,
         };
     });

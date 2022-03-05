@@ -1,7 +1,7 @@
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { PLANS } from '@proton/shared/lib/constants';
-import { SIGNUP_STEPS, SignupModel } from './interfaces';
+import { SignupModel } from './interfaces';
 
 export const YANDEX_DOMAINS = ['yandex.ru', 'yandex.ua'];
 export const YAHOO_DOMAINS = [
@@ -93,27 +93,28 @@ export const INSECURE_DOMAINS = [
 ];
 
 export const DEFAULT_SIGNUP_MODEL: SignupModel = {
-    step: SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME,
-    stepHistory: [],
-    username: '',
-    password: '',
-    confirmPassword: '',
-    email: '',
-    signupType: 'username',
     domains: [],
-    recoveryEmail: '',
-    recoveryPhone: '',
-    currency: 'EUR',
-    cycle: 12,
-    planIDs: {},
+    subscriptionData: {
+        skipUpsell: false,
+        currency: 'EUR',
+        cycle: 12,
+        planIDs: {},
+        checkResult: getFreeCheckResult(),
+    },
+    paymentMethodStatus: {
+        Card: false,
+        Paypal: false,
+        Apple: false,
+        Cash: false,
+        Bitcoin: false,
+    },
     humanVerificationMethods: [],
     humanVerificationToken: '',
-    checkResult: getFreeCheckResult(),
-    audience: Audience.B2C,
     selectedProductPlans: {
         [Audience.B2C]: PLANS.MAIL,
         [Audience.B2B]: PLANS.MAIL_PRO,
     },
-    isReferred: false,
-    referrerID: '',
+    inviteData: undefined,
+    plans: [],
+    referralData: undefined,
 };

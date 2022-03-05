@@ -6,7 +6,6 @@ import { AppLink, Hamburger, Icon, SettingsLink } from '../../components';
 import { useConfig, useUser } from '../../hooks';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 
-import UserDropdown from './UserDropdown';
 import { AppsDropdown } from '../app';
 import TopNavbarListItemBlackFridayButton from './TopNavbarListItemBlackFridayButton';
 import usePromotionOffer from './usePromotionOffer';
@@ -18,6 +17,7 @@ import { Vr } from '../../components/vr';
 interface Props extends HeaderProps {
     logo?: ReactNode;
     settingsButton?: ReactNode;
+    userDropdown?: ReactNode;
     contactsButton?: ReactNode;
     feedbackButton?: ReactNode;
     backUrl?: string;
@@ -28,13 +28,13 @@ interface Props extends HeaderProps {
     title: string;
     expanded: boolean;
     onToggleExpand?: () => void;
-    onOpenChat?: () => void;
     isNarrow?: boolean;
 }
 
 const PrivateHeader = ({
     isNarrow,
     appsDropdown: AppsDropdownComponent = <AppsDropdown />,
+    userDropdown,
     logo,
     settingsButton,
     contactsButton,
@@ -45,7 +45,6 @@ const PrivateHeader = ({
     floatingButton,
     expanded,
     onToggleExpand,
-    onOpenChat,
     title,
 }: Props) => {
     const [{ hasPaidMail, hasPaidVpn }] = useUser();
@@ -64,9 +63,7 @@ const PrivateHeader = ({
                 />
                 <TopNavbar>
                     <TopNavbarList>
-                        <TopNavbarListItem>
-                            <UserDropdown />
-                        </TopNavbarListItem>
+                        <TopNavbarListItem>{userDropdown}</TopNavbarListItem>
                     </TopNavbarList>
                 </TopNavbar>
             </Header>
@@ -124,9 +121,7 @@ const PrivateHeader = ({
                             <Vr className="h100 mr1 ml1" />
                         </TopNavbarListItem>
                     )}
-                    <TopNavbarListItem className="relative">
-                        <UserDropdown onOpenChat={onOpenChat} />
-                    </TopNavbarListItem>
+                    {userDropdown && <TopNavbarListItem className="relative">{userDropdown}</TopNavbarListItem>}
                 </TopNavbarList>
             </TopNavbar>
             {isNarrow && floatingButton ? floatingButton : null}

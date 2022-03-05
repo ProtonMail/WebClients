@@ -1,42 +1,46 @@
 import { c } from 'ttag';
 
 import {
+    Button,
     OnboardingContent,
     OnboardingModal,
     OnboardingStep,
     OnboardingStepRenderCallback,
-    useSettingsLink,
 } from '@proton/components';
-import { APPS } from '@proton/shared/lib/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/calendar-welcome.svg';
 
-const CalendarOnboardingModal = (props: any) => {
-    const goToSettings = useSettingsLink();
+interface Props {
+    showGenericSteps?: boolean;
+    onDone?: () => void;
+    open?: boolean;
+}
+
+const CalendarOnboardingModal = (props: Props) => {
     const appName = CALENDAR_APP_NAME;
 
     return (
         <OnboardingModal {...props}>
-            {({ onNext }: OnboardingStepRenderCallback) => {
-                return (
-                    <OnboardingStep
-                        submit={c('Onboarding').t`Import events`}
-                        onSubmit={() => {
-                            goToSettings('/calendars#import', APPS.PROTONCALENDAR, true);
-                            onNext?.();
-                        }}
-                        close={c('Onboarding').t`Start using ${appName}`}
-                        onClose={onNext}
-                    >
-                        <OnboardingContent
-                            title={c('Onboarding').t`Meet your new encrypted calendar`}
-                            description={c('Onboarding')
-                                .t`A calendar is a record of your life. Keep your life secure and private with ${appName}.`}
-                            img={<img src={onboardingWelcome} alt={appName} />}
-                        />
-                    </OnboardingStep>
-                );
-            }}
+            {[
+                ({ onNext, displayGenericSteps }: OnboardingStepRenderCallback) => {
+                    return (
+                        <OnboardingStep>
+                            <OnboardingContent
+                                title={c('Onboarding').t`Welcome to ${appName}`}
+                                description={c('Onboarding').t`Where you can take control of your time and your data.`}
+                                img={<img src={onboardingWelcome} alt={appName} />}
+                            />
+                            <footer className="flex flex-nowrap">
+                                <Button size="large" color="norm" fullWidth onClick={onNext}>
+                                    {displayGenericSteps
+                                        ? c('Onboarding Action').t`Next`
+                                        : c('Onboarding Action').t`Start using ${appName}`}
+                                </Button>
+                            </footer>
+                        </OnboardingStep>
+                    );
+                },
+            ]}
         </OnboardingModal>
     );
 };

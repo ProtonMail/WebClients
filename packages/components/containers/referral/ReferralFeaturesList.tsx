@@ -19,7 +19,7 @@ const ReferralFeaturesList = () => {
             <StrippedItem icon="folders">{c('Info').t`Unlimited folders, labels, and filters`}</StrippedItem>
             <StrippedItem icon="envelopes">{c('Info').t`Unlimited messages`}</StrippedItem>
             <StrippedItem icon="speech-bubble">{c('Info').t`Support for 1 custom email domain`}</StrippedItem>
-            <StrippedItem icon="envelope-arrow-up-and-right">{c('Info').t`Priority support`}</StrippedItem>
+            <StrippedItem icon="life-ring">{c('Info').t`Priority support`}</StrippedItem>
             <StrippedItem icon="brand-proton-calendar">{CALENDAR_APP_NAME}</StrippedItem>
         </StrippedList>
     );

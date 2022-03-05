@@ -5,9 +5,9 @@ import { classnames, generateUID } from '@proton/components';
 
 import { LogoProps } from './Logo';
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant'>;
+type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size'>;
 
-const MailLogo = ({ variant = 'with-wordmark', className, ...rest }: Props) => {
+const MailLogo = ({ variant = 'with-wordmark', className, size, ...rest }: Props) => {
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
 
@@ -21,8 +21,8 @@ const MailLogo = ({ variant = 'with-wordmark', className, ...rest }: Props) => {
             width={logoWidth}
             height="36"
             fill="none"
-            className={classnames(['logo', variant, className])}
-            aria-labelledby={`{${uid}}-title`}
+            className={classnames(['logo', size && `icon-${size}p`, variant, className])}
+            aria-labelledby={`${uid}-title`}
             {...rest}
         >
             {variant === 'with-wordmark' && (
@@ -91,7 +91,7 @@ const MailLogo = ({ variant = 'with-wordmark', className, ...rest }: Props) => {
                     <stop offset="1" stopColor="#6D4AFF" />
                 </linearGradient>
             </defs>
-            <title id={`{${uid}}-title`}>{MAIL_APP_NAME}</title>
+            <title id={`${uid}-title`}>{MAIL_APP_NAME}</title>
         </svg>
     );
 };

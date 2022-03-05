@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { Address as tsAddress, UserType } from '@proton/shared/lib/interfaces';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { queryAddresses } from '@proton/shared/lib/api/addresses';
@@ -13,7 +14,14 @@ import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-import { AbuseModal, OnLoginCallback, OnLoginCallbackArguments, useApi, useErrorHandler } from '@proton/components';
+import {
+    AbuseModal,
+    ButtonLike,
+    OnLoginCallback,
+    OnLoginCallbackArguments,
+    useApi,
+    useErrorHandler,
+} from '@proton/components';
 import {
     handleLogin,
     handleSetupPassword,
@@ -22,11 +30,11 @@ import {
 } from '@proton/components/containers/login/loginActions';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
 
-import BackButton from '../public/BackButton';
 import LoginForm from './LoginForm';
 import Header from '../public/Header';
 import Content from '../public/Content';
-import Footer from '../public/Footer';
+import Text from '../public/Text';
+import Layout from '../public/Layout';
 import LoginSupportDropdown from './LoginSupportDropdown';
 import TOTPForm from './TOTPForm';
 import Main from '../public/Main';
@@ -37,12 +45,20 @@ import GenerateInternalAddressStep, { InternalAddressGeneration } from './Genera
 interface Props {
     onLogin: OnLoginCallback;
     shouldSetupInternalAddress?: boolean;
-    toAppName: string;
+    toAppName?: string;
     showContinueTo?: boolean;
     onBack?: () => void;
+    hasRemember?: boolean;
 }
 
-const LoginContainer = ({ onLogin, onBack, toAppName, showContinueTo, shouldSetupInternalAddress }: Props) => {
+const LoginContainer = ({
+    onLogin,
+    onBack,
+    toAppName,
+    showContinueTo,
+    shouldSetupInternalAddress,
+    hasRemember = true,
+}: Props) => {
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
 
@@ -128,7 +144,20 @@ const LoginContainer = ({ onLogin, onBack, toAppName, showContinueTo, shouldSetu
     const generateInternalAddress = generateInternalAddressRef.current;
     const externalEmailAddress = generateInternalAddress?.externalEmailAddress?.Email;
 
-    return (
+    const handleBackStep = (() => {
+        if (step === AuthStep.LOGIN) {
+            return onBack;
+        }
+        if (step === AuthStep.GENERATE_INTERNAL) {
+            return () => {
+                generateInternalAddress?.revoke?.();
+                handleCancel();
+            };
+        }
+        return handleCancel;
+    })();
+
+    const children = (
         <Main>
             <AbuseModal
                 message={abuseModal?.apiErrorMessage}
@@ -138,14 +167,19 @@ const LoginContainer = ({ onLogin, onBack, toAppName, showContinueTo, shouldSetu
             {step === AuthStep.LOGIN && (
                 <>
                     <Header
+                        onBack={handleBackStep}
                         title={c('Title').t`Sign in`}
-                        subTitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
-                        left={onBack && <BackButton onClick={onBack} />}
+                        subTitle={
+                            toAppName
+                                ? c('Info').t`to continue to ${toAppName}`
+                                : c('Info').t`Enter your ${BRAND_NAME} Account details.`
+                        }
                     />
                     <Content>
                         <LoginForm
                             signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                             defaultUsername={previousUsernameRef.current}
+                            hasRemember={hasRemember}
                             onSubmit={async ({ username, password, payload, persistent }) => {
                                 return handleLogin({
                                     username,
@@ -168,10 +202,7 @@ const LoginContainer = ({ onLogin, onBack, toAppName, showContinueTo, shouldSetu
             )}
             {step === AuthStep.TOTP && cache && (
                 <>
-                    <Header
-                        title={c('Title').t`Two-factor authentication`}
-                        left={<BackButton onClick={handleCancel} />}
-                    />
+                    <Header title={c('Title').t`Two-factor authentication`} onBack={handleBackStep} />
                     <Content>
                         <TOTPForm
                             onSubmit={(totp) =>
@@ -194,7 +225,7 @@ const LoginContainer = ({ onLogin, onBack, toAppName, showContinueTo, shouldSetu
             )}
             {step === AuthStep.UNLOCK && cache && (
                 <>
-                    <Header title={c('Title').t`Unlock your mailbox`} left={<BackButton onClick={handleCancel} />} />
+                    <Header title={c('Title').t`Unlock your mailbox`} onBack={handleBackStep} />
                     <Content>
                         <UnlockForm
                             onSubmit={(clearKeyPassword) => {
@@ -218,12 +249,12 @@ const LoginContainer = ({ onLogin, onBack, toAppName, showContinueTo, shouldSetu
             )}
             {step === AuthStep.NEW_PASSWORD && cache && (
                 <>
-                    <Header title={c('Title').t`Set new password`} left={<BackButton onClick={handleCancel} />} />
+                    <Header title={c('Title').t`Set new password`} onBack={handleBackStep} />
                     <Content>
-                        <div className="mb1-75">
+                        <Text>
                             {c('Info')
                                 .t`This will replace your temporary password. You will use it to access your ${BRAND_NAME} Account in the future.`}
-                        </div>
+                        </Text>
                         <SetPasswordForm
                             onSubmit={(newPassword) => {
                                 return handleSetupPassword({
@@ -242,15 +273,12 @@ const LoginContainer = ({ onLogin, onBack, toAppName, showContinueTo, shouldSetu
             )}
             {step === AuthStep.GENERATE_INTERNAL && generateInternalAddress && (
                 <GenerateInternalAddressStep
+                    onBack={handleBackStep}
                     api={silentApi}
                     mailAppName={mailAppName}
-                    toAppName={toAppName}
+                    toAppName={toAppName || MAIL_APP_NAME}
                     availableDomains={generateInternalAddress.availableDomains}
                     externalEmailAddress={externalEmailAddress}
-                    onBack={() => {
-                        generateInternalAddress.revoke?.();
-                        handleCancel();
-                    }}
                     onSubmit={async (payload) => {
                         try {
                             await handleCreateInternalAddressAndKey({
@@ -267,10 +295,22 @@ const LoginContainer = ({ onLogin, onBack, toAppName, showContinueTo, shouldSetu
                     }}
                 />
             )}
-            <Footer>
-                <LoginSupportDropdown />
-            </Footer>
         </Main>
+    );
+
+    return (
+        <Layout
+            hasBackButton={!!handleBackStep}
+            topRight={
+                <ButtonLike className="text-semibold" shape="outline" color="norm" pill as={Link} to="/signup">{c(
+                    'Action'
+                ).t`Create free account`}</ButtonLike>
+            }
+            hasDecoration={step === AuthStep.LOGIN}
+            bottomRight={<LoginSupportDropdown />}
+        >
+            {children}
+        </Layout>
     );
 };
 export default LoginContainer;

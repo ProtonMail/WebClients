@@ -73,7 +73,7 @@ const HumanVerificationModal = <T,>({
                 <HumanVerificationForm
                     step={step}
                     onChangeStep={setStep}
-                    onSubmit={(...args) => withLoading(handleSubmit(...args))}
+                    onSubmit={(token, tokenType) => withLoading(handleSubmit(token, tokenType))}
                     onClose={onClose}
                     methods={methods}
                     token={token}

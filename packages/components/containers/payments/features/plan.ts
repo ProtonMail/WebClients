@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { BRAND_NAME, PLAN_NAMES, PLANS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { Plan, PlansMap, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
-import { getPlusServers } from '@proton/shared/lib/vpn/features';
+import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { ShortPlan } from './interface';
 import { getDriveAppFeature, getStorageFeature, getStorageFeatureB2B } from './drive';
@@ -18,6 +18,7 @@ import {
     getB2BHighSpeedVPNConnections,
     getCountries,
     getNetShield,
+    getNoLogs,
     getP2P,
     getSecureCore,
     getStreaming,
@@ -35,6 +36,7 @@ const getCTA = (planName: string) => {
 export const getFreePlan = (): ShortPlan => {
     return {
         plan: PLANS.FREE,
+        title: PLAN_NAMES[PLANS.FREE],
         label: '',
         description: c('new_plans: info')
             .t`The no-cost starter account designed to empower everyone with privacy by default.`,
@@ -51,6 +53,7 @@ export const getFreePlan = (): ShortPlan => {
 export const getBundlePlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.BUNDLE,
+        title: PLAN_NAMES[PLANS.BUNDLE],
         label: c('new_plans: info').t`Popular`,
         description: c('new_plans: info').t`Comprehensive privacy and security with all Proton services combined.`,
         cta: getCTA(PLAN_NAMES[PLANS.BUNDLE]),
@@ -71,6 +74,7 @@ export const getBundlePlan = (plan: Plan): ShortPlan => {
 export const getMailPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.MAIL,
+        title: PLAN_NAMES[PLANS.MAIL],
         label: '',
         description: c('new_plans: info').t`Secure email with advanced features for your everyday communications.`,
         cta: getCTA(PLAN_NAMES[PLANS.MAIL]),
@@ -85,21 +89,36 @@ export const getMailPlan = (plan: Plan): ShortPlan => {
         ],
     };
 };
+
+export const getFreeVPNPlan = (vpnCountries: VPNCountries, serversCount: VPNServers): ShortPlan => {
+    const freeServers = getFreeServers(serversCount.free_vpn, vpnCountries.free_vpn.count);
+    return {
+        plan: PLANS.FREE,
+        title: PLAN_NAMES[PLANS.FREE],
+        label: '',
+        description: c('new_plans: info')
+            .t`The no-cost starter account designed to empower everyone with privacy by default.`,
+        cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
+        features: [getVPNConnections(1), getCountries(freeServers), getVPNSpeed('medium'), getNoLogs()],
+    };
+};
 export const getVPNPlan = (vpnCountries: VPNCountries, serversCount: VPNServers): ShortPlan => {
     const plusServers = getPlusServers(serversCount[PLANS.VPN], vpnCountries[PLANS.VPN].count);
     return {
         plan: PLANS.VPN,
+        title: PLAN_NAMES[PLANS.VPN],
         label: '',
         description: c('new_plans: info')
             .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`,
         cta: getCTA(PLAN_NAMES[PLANS.VPN]),
         features: [
+            getVPNConnections(VPN_CONNECTIONS, true),
             getCountries(plusServers, true),
             getVPNSpeed('highest', true),
-            getVPNConnections(VPN_CONNECTIONS, true),
+            getNoLogs(true),
+            getNetShield(true, true),
             getStreaming(true, true),
             getP2P(true, true),
-            getNetShield(true, true),
             getSecureCore(true, true),
             getTor(true, true),
         ],
@@ -108,6 +127,7 @@ export const getVPNPlan = (vpnCountries: VPNCountries, serversCount: VPNServers)
 export const getMailProPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.MAIL_PRO,
+        title: PLAN_NAMES[PLANS.MAIL_PRO],
         label: '',
         description: c('new_plans: info').t`Secure email and calendar for professionals and businesses.`,
         cta: getCTA(PLAN_NAMES[PLANS.MAIL_PRO]),
@@ -125,6 +145,7 @@ export const getMailProPlan = (plan: Plan): ShortPlan => {
 export const getBundleProPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.BUNDLE_PRO,
+        title: PLAN_NAMES[PLANS.BUNDLE_PRO],
         label: '',
         description: c('new_plans: info')
             .t`Privacy and security suite for businesses, including all premium Proton services.`,

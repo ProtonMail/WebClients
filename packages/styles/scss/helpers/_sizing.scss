@@ -90,7 +90,7 @@
 }
 
 // .min-w50e { min-inline-size: 50em; }
-@each $min-width in (1.4, 3, 5, 7, 14, 35) {
+@each $min-width in (1.4, 2, 3, 5, 7, 14, 35) {
 	// inspect to convert to string
 	$fragment-class: str-replace(inspect($min-width), '.', '-');
 

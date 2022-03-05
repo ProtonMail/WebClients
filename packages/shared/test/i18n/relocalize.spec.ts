@@ -7,53 +7,10 @@ import { setLocales } from '../../lib/i18n/locales';
 import { relocalizeText } from '../../lib/i18n/relocalize';
 import { UserSettings } from '../../lib/interfaces';
 
-const dummyUserSettings: UserSettings = {
-    AppWelcome: {},
-    Email: {
-        Value: 'test',
-        Status: 0,
-        Notify: 0,
-        Reset: 0,
-    },
-    Phone: {
-        Value: 'test',
-        Status: 0,
-        Notify: 0,
-        Reset: 0,
-    },
-    Password: {
-        Mode: 2,
-        ExpirationTime: 0,
-    },
-    '2FA': {
-        Enabled: 1,
-        Allowed: 1,
-        ExpirationTime: 0,
-        U2FKeys: [
-            {
-                Label: 'test',
-                KeyHandle: 'test',
-                Compromised: 0,
-            },
-        ],
-    },
-    News: 0,
-    Locale: 'en_US',
-    LogAuth: 1,
-    InvoiceText: 0,
-    Density: 0,
-    Theme: 'test',
-    ThemeType: 1,
+const dummyUserSettings: Pick<UserSettings, 'TimeFormat' | 'DateFormat' | 'WeekStart'> = {
     WeekStart: 1,
     DateFormat: 1,
     TimeFormat: 1,
-    Welcome: 0,
-    EarlyAccess: 1,
-    Flags: { Welcomed: 0 },
-    Referral: {
-        Eligible: false,
-        Link: '',
-    },
 };
 
 const getTranslation = (data: string) => {

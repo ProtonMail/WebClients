@@ -51,6 +51,11 @@ export const handleEarlyAccessDesynchronization = ({
         return;
     }
 
+    // TEMP: Exempt 'relaunch' from desynchronisation reload while it's under wraps
+    if ((versionCookieAtLoad as any) === 'relaunch') {
+        return;
+    }
+
     const normalizedVersionCookieAtLoad = getVersionCookieIsValid(versionCookieAtLoad, earlyAccessScope)
         ? versionCookieAtLoad
         : undefined;

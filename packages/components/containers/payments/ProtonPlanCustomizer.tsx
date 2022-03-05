@@ -31,6 +31,8 @@ const AddonKey = {
     [ADDON_NAMES.MEMBER_ENTERPRISE]: 'MaxMembers',
 } as const;
 
+export type CustomiserMode = 'signup' | undefined;
+
 interface Props extends ComponentPropsWithoutRef<'div'> {
     cycle: Cycle;
     currency: Currency;
@@ -41,6 +43,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     plansMap: { [key: string]: Plan };
     organization?: Organization;
     loading?: boolean;
+    mode?: CustomiserMode;
 }
 
 const ButtonNumberInput = ({
@@ -155,20 +158,26 @@ const AccountSizeCustomiser = ({
     maxUsers,
     price,
     input,
+    mode,
 }: {
     addon: Plan;
     maxUsers: number;
     price: ReactElement;
     input: ReactElement;
+    mode?: CustomiserMode;
 }) => {
     const contactMailToLink = <a key={1} href="mailto:ProtonForBusiness@proton.me">{c('Action').t`contact`}</a>;
     return (
         <div className="mb2">
-            <h2 className="text-2xl text-bold mb1">{c('Info').t`Account size`}</h2>
-            <div className="mb1">
-                {c('Info')
-                    .jt`Select the number of users to include in your plan. Each additional user costs ${price}. Should you need more than ${maxUsers} user accounts, please ${contactMailToLink} our Customer Success team.`}
-            </div>
+            {mode !== 'signup' && (
+                <>
+                    <h2 className="text-2xl text-bold mb1">{c('Info').t`Account size`}</h2>
+                    <div className="mb1">
+                        {c('Info')
+                            .jt`Select the number of users to include in your plan. Each additional user costs ${price}. Should you need more than ${maxUsers} user accounts, please ${contactMailToLink} our Customer Success team.`}
+                    </div>
+                </>
+            )}
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb1 on-mobile-flex-wrap">
                 <label
                     htmlFor={addon.Name}
@@ -189,18 +198,24 @@ const AdditionalOptionsCustomiser = ({
     addon,
     price,
     input,
+    mode,
 }: {
     addon: Plan;
     price: ReactElement;
     input: ReactElement;
+    mode: CustomiserMode;
 }) => {
     return (
         <>
-            <h2 className="text-2xl text-bold mb1">{c('Info').t`Additional options`}</h2>
-            <div className="mb1">
-                {c('Info')
-                    .jt`Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${price}.`}
-            </div>
+            {mode !== 'signup' && (
+                <>
+                    <h2 className="text-2xl text-bold mb1">{c('Info').t`Additional options`}</h2>
+                    <div className="mb1">
+                        {c('Info')
+                            .jt`Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${price}.`}
+                    </div>
+                </>
+            )}
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb1 on-mobile-flex-wrap">
                 <label
                     htmlFor={addon.Name}
@@ -221,6 +236,7 @@ const AdditionalOptionsCustomiser = ({
 
 const ProtonPlanCustomizer = ({
     cycle,
+    mode,
     currency,
     onChangePlanIDs,
     planIDs,
@@ -299,11 +315,13 @@ const ProtonPlanCustomizer = ({
                             price={addonPriceInline}
                             input={input}
                             maxUsers={maxTotal}
+                            mode={mode}
                         />
                     );
                 }
 
                 if (
+                    mode !== 'signup' &&
                     [ADDON_NAMES.DOMAIN, ADDON_NAMES.DOMAIN_BUNDLE_PRO, ADDON_NAMES.DOMAIN_ENTERPRISE].includes(
                         addonNameKey
                     )
@@ -314,6 +332,7 @@ const ProtonPlanCustomizer = ({
                             addon={addon}
                             price={addonPriceInline}
                             input={input}
+                            mode={mode}
                         />
                     );
                 }

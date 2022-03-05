@@ -726,15 +726,10 @@ export enum PAYMENT_METHOD_TYPES {
 
 export type PAYMENT_METHOD_TYPE = PAYMENT_METHOD_TYPES | string;
 
-export enum INVITE_TYPES {
+export enum CLIENT_TYPES {
     MAIL = 1,
     VPN = 2,
 }
-
-export const CLIENT_TYPES = {
-    MAIL: 1,
-    VPN: 2,
-} as const;
 
 export enum TOKEN_TYPES {
     EMAIL = 'email',

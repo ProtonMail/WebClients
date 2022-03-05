@@ -29,7 +29,7 @@ interface Props {
 const getCycleUnit = (planName: PLANS) => {
     switch (planName) {
         case PLANS.FREE:
-            return c('Free forever').t`forever`;
+            return '';
         case PLANS.MAIL_PRO:
         case PLANS.DRIVE_PRO:
         case PLANS.BUNDLE_PRO:
@@ -79,28 +79,27 @@ const PlanCard = ({
                 ) : null}
                 <div className="flex flex-row flex-align-items-center">
                     {canSelect ? (
-                        <h3 className="plan-selection-title flex text-bold text-capitalize mb0-5">
+                        <h2 className="h3 plan-selection-title flex text-bold text-capitalize mb0-5">
                             <SelectPlan planName={selectedPlan} target={target} onChange={onSelectPlan} />
-                        </h3>
+                        </h2>
                     ) : (
-                        <h3
-                            className="plan-selection-title flex text-bold text-capitalize mb0-5"
+                        <h2
+                            className="h3 plan-selection-title flex text-bold text-capitalize mb0-5"
                             id={`desc_${planTitle}`}
                         >
                             {planTitle}
-                        </h3>
+                        </h2>
                     )}
                     <span className="ml0-5 mb0-5">{badgeMultiUser}</span>
                 </div>
                 <p className="text-lg plan-selection-info color-weak mb1">{info}</p>
-                <div className="plan-selection-main-price mb1">
-                    {planName === PLANS.FREE ? (
-                        // translator: this one should be translated
-                        <span className="amount">{c('Price for free plan').t`Free`}</span>
-                    ) : (
-                        <Price currency={currency}>{price / cycle}</Price>
-                    )}
-                    <span className="color-weak ml1">{getCycleUnit(planName)}</span>
+                <div className="mb1 flex flex-wrap flex-align-items-baseline plan-selection-price">
+                    <span className="mr0-5">
+                        <Price large currency={currency}>
+                            {price / cycle}
+                        </Price>
+                    </span>
+                    <span className="color-weak plan-selection-suffix">{getCycleUnit(planName)}</span>
                 </div>
 
                 <PrimaryButton

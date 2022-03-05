@@ -97,6 +97,7 @@ export interface UserSettings {
     DateFormat: SETTINGS_DATE_FORMAT;
     TimeFormat: SETTINGS_TIME_FORMAT;
     Welcome: number;
+    WelcomeFlag: number;
     EarlyAccess: number;
     Flags: Flags;
     Checklists?: ChecklistId[];

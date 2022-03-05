@@ -26,7 +26,7 @@ interface Props {
     defaultPhone?: string;
     defaultEmail?: string;
     isEmbedded?: boolean;
-    onSubmit: (token: string, tokenType: HumanVerificationMethodType) => void;
+    onSubmit: (token: string, tokenType: HumanVerificationMethodType, verificationModel: VerificationModel) => void;
     verificationModelCacheRef: MutableRefObject<VerificationModel | undefined>;
 }
 
@@ -62,12 +62,13 @@ const CodeMethod = ({
         onChangeStep(HumanVerificationSteps.ENTER_DESTINATION);
     };
 
-    const handleCode = async (code: string, tokenType: 'sms' | 'email' | 'ownership-email' | 'ownership-sms') => {
+    const handleCode = async (code: string, verificationModel: VerificationModel) => {
+        const tokenType = verificationModel.method;
         if (tokenType !== 'email' && tokenType !== 'sms') {
             throw new Error('Invalid verification model');
         }
         try {
-            await onSubmit(code, tokenType);
+            await onSubmit(code, tokenType, verificationModel);
         } catch (error: any) {
             const { code } = getApiError(error);
 
