@@ -1,7 +1,9 @@
 /* eslint-disable class-methods-use-this */
 import { BeforePasteEvent, EditorPlugin, IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
 import { wrap } from 'roosterjs-editor-dom';
+
 import { linkify } from '../helpers/linkify';
+import { EMBEDDABLE_TYPES } from '../../constants';
 
 /**
  * Handles custom behavior when pasting content on top of the current rooster paste plugin
@@ -9,8 +11,11 @@ import { linkify } from '../helpers/linkify';
 class EditorCustomPastePlugin implements EditorPlugin {
     private editor: IEditor | undefined;
 
-    constructor() {
+    private onPasteImage: ((image: File) => void) | undefined;
+
+    constructor(onPasteImage: (image: File) => void) {
         this.editor = undefined;
+        this.onPasteImage = onPasteImage;
     }
 
     getName() {
@@ -28,6 +33,13 @@ class EditorCustomPastePlugin implements EditorPlugin {
             return;
         }
 
+        this.updateSanitizingOptions(event);
+        this.linkifyPlainTextContent(event);
+        this.handlePasteImage(event);
+    }
+
+    private updateSanitizingOptions(event: BeforePasteEvent) {
+        event.sanitizingOption.additionalAllowedAttributes = ['bgcolor'];
         event.sanitizingOption.additionalTagReplacements = {
             // @ts-expect-error
             INPUT: null,
@@ -36,21 +48,34 @@ class EditorCustomPastePlugin implements EditorPlugin {
             // @ts-expect-error
             FORM: null,
         };
+    }
 
-        event.sanitizingOption.additionalAllowedAttributes = ['bgcolor'];
+    private handlePasteImage(event: BeforePasteEvent) {
+        const { image, types } = event.clipboardData;
 
-        const isPlainTextContent =
-            event.clipboardData.types.length === 1 && event.clipboardData.types[0] === 'text/plain';
-        if (isPlainTextContent) {
-            this.linkifyPlainTextContent(event);
+        // Image should have 1 type only in order to be sure it's only an image
+        if (image && types.length === 1) {
+            // we replace pasted content by empty string
+            event.fragment.textContent = '';
+            // Check if image type is supported
+            const isSupportedFileType = EMBEDDABLE_TYPES.includes(image.type);
+            if (isSupportedFileType && this.onPasteImage) {
+                this.onPasteImage(event.clipboardData.image);
+            }
         }
     }
 
     private linkifyPlainTextContent(event: BeforePasteEvent) {
-        const text = event.clipboardData.text;
-        if (!text) {
+        const isPlainTextContent =
+            event.clipboardData.text &&
+            event.clipboardData.types.length === 1 &&
+            event.clipboardData.types[0] === 'text/plain';
+
+        if (!isPlainTextContent) {
             return;
         }
+
+        const text = event.clipboardData.text;
 
         // Clear textContent
         event.fragment.textContent = '';
