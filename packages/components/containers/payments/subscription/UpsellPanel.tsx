@@ -57,7 +57,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             });
         return (
-            <div className="border round px2 py1-5 pt0-5">
+            <div className="border rounded px2 py1-5 pt0-5">
                 <h3>
                     <strong>{c('new_plans: Title').t`${mailPlanName} Trial`}</strong>
                 </h3>
