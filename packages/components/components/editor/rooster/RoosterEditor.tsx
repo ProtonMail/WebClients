@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { c } from 'ttag';
 import { createPortal } from 'react-dom';
-import { BeforePasteEvent } from 'roosterjs-editor-types';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { EditorActions, SetEditorToolbarConfig } from '../interface';
 import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID } from '../constants';
@@ -19,7 +18,7 @@ interface Props {
     onBlockquoteToggleClick?: () => void;
     onReady: (editorActions: EditorActions) => void;
     setToolbarConfig: SetEditorToolbarConfig;
-    onBeforePaste?: (event: BeforePasteEvent) => void;
+    onPasteImage: (image: File) => void;
     mailSettings?: MailSettings;
     showModalLink: (props: ModalLinkProps) => void;
     onFocus?: () => void;
@@ -32,7 +31,7 @@ const RoosterEditor = ({
     showBlockquoteToggle,
     onBlockquoteToggleClick,
     setToolbarConfig,
-    onBeforePaste,
+    onPasteImage,
     showModalLink,
     onFocus,
     mailSettings,
@@ -43,7 +42,6 @@ const RoosterEditor = ({
         placeholder,
         setToolbarConfig,
         onChange,
-        onBeforePaste,
     });
 
     useInitRooster({
@@ -54,6 +52,7 @@ const RoosterEditor = ({
         showModalLink,
         onFocus,
         mailSettings,
+        onPasteImage,
     });
 
     useBubbleIframeEvents(iframeRef);

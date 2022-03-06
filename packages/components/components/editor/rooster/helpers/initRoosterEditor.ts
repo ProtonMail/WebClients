@@ -16,6 +16,7 @@ interface Options {
     showModalLink: (props: ModalLinkProps) => void;
     iframeRef: RefObject<HTMLIFrameElement>;
     mailSettings?: MailSettings;
+    onPasteImage: (image: File) => void;
 }
 
 interface InitRoosterReturns {
@@ -44,7 +45,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         new Paste(),
         new HyperLink(),
         new EditorEventListener(options.onEditorEvent),
-        new EditorCustomPastePlugin(),
+        new EditorCustomPastePlugin(options.onPasteImage),
     ];
 
     const fontSize = options.mailSettings?.FontSize ? `${options.mailSettings.FontSize}px` : `${DEFAULT_FONT_SIZE}px`;
