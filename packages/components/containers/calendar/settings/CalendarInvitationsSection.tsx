@@ -51,11 +51,11 @@ const CalendarInvitationsSection = ({
                         <label className="text-semibold" htmlFor="invite-locale">
                             {
                                 // translator: the full sentence will be "Send invites in [LANGUAGE]", where [LANGUAGE] is a dropdown with language options. E.g. "Send invites in [ENGLISH]"
-                                c('Label').t`Send invites in`
+                                c('Label').t`Send invitations in`
                             }{' '}
                             <Info
                                 buttonClass="ml0-5 inline-flex"
-                                title={c('Info').t`Event invites and RSVPs will be sent in this language.`}
+                                title={c('Info').t`Event invitations and RSVPs will be sent in this language.`}
                             />
                         </label>
                     </SettingsLayoutLeft>
