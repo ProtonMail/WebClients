@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { SettingsSectionWide, SettingsParagraph, UpgradeBanner } from '../account';
 import { useUser } from '../../hooks';
 
@@ -15,9 +15,7 @@ const CatchAllSection = () => {
             </SettingsParagraph>
             {!hasPermission && (
                 <UpgradeBanner>
-                    {c('Message').t`Upgrade to a ${PLAN_NAMES[PLANS.VISIONARY]} or ${
-                        PLAN_NAMES[PLANS.PROFESSIONAL]
-                    } plan to use a catch-all address and unlock premium features`}
+                    {c('Message').t`Upgrade to a paid plan to use a catch-all address and unlock premium features`}
                 </UpgradeBanner>
             )}
         </SettingsSectionWide>
