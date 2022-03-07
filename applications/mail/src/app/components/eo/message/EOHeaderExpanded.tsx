@@ -1,5 +1,5 @@
 import { classnames, Icon, useToggle } from '@proton/components';
-import * as React from 'react';
+import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
@@ -42,7 +42,8 @@ const EOHeaderExpanded = ({
     const recipients = getRecipients(message.data);
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients);
 
-    const handleAttachmentIconClick = () => {
+    const handleAttachmentIconClick = (e: MouseEvent) => {
+        e.stopPropagation();
         scrollIntoView(parentMessageRef.current, { block: 'end' });
     };
 
