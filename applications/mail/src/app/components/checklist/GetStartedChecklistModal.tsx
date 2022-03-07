@@ -11,7 +11,7 @@ import {
     getCanReactiveMnemonic,
 } from '@proton/components';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
-import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
+import { ChecklistKey } from '@proton/shared/lib/interfaces';
 
 import GetStartedChecklist from './GetStartedChecklist';
 import ModalGetMobileApp from './ModalGetMobileApp';
@@ -40,23 +40,22 @@ const MailGetStartedChecklistModal = ({ onClose, onSendMessage, ...rest }: MailG
                 <ModalCloseButton onClose={onClose} />
                 <InnerModal className="modal-content pb2 pt2">
                     <GetStartedChecklist
-                        hideDismissButton
-                        onItemSelection={(key: GetStartedChecklistKey) => () => {
+                        onItemSelection={(key: ChecklistKey) => () => {
                             onClose?.();
 
                             /* eslint-disable default-case */
                             switch (key) {
-                                case GetStartedChecklistKey.SendMessage: {
+                                case ChecklistKey.SendMessage: {
                                     onSendMessage();
                                     break;
                                 }
 
-                                case GetStartedChecklistKey.MobileApp: {
+                                case ChecklistKey.MobileApp: {
                                     createModal(<ModalGetMobileApp />);
                                     break;
                                 }
 
-                                case GetStartedChecklistKey.RecoveryMethod: {
+                                case ChecklistKey.RecoveryMethod: {
                                     if (displayMnemonicPrompt) {
                                         setMnemonicPromptModalOpen(true);
                                     } else {
@@ -65,7 +64,7 @@ const MailGetStartedChecklistModal = ({ onClose, onSendMessage, ...rest }: MailG
                                     break;
                                 }
 
-                                case GetStartedChecklistKey.Import: {
+                                case ChecklistKey.Import: {
                                     createModal(<ModalImportEmails />);
                                     break;
                                 }

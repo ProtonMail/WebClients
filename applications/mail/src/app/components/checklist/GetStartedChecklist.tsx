@@ -1,24 +1,15 @@
-import { useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import { c, msgid } from 'ttag';
-import {
-    Button,
-    ButtonLike,
-    ChecklistItem,
-    Countdown,
-    Icon,
-    Progress,
-    SettingsLink,
-    useApi,
-    Loader,
-    classnames,
-} from '@proton/components';
+import { ButtonLike, ChecklistItem, Countdown, SettingsLink, useApi, Loader, classnames } from '@proton/components';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import gift from '@proton/styles/assets/img/get-started/gift.svg';
-import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
+import { ChecklistKey } from '@proton/shared/lib/interfaces';
 
-import { GetStartedChecklistContext } from '../../containers/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from '../../containers/checklists';
+import GetStartedChecklistHeader from './GetStartedChecklistHeader';
+
 import './GetStartedChecklist.scss';
 
 const totalGBStorageAfterCompletion = 1;
@@ -60,38 +51,32 @@ const GetStartedChecklistComplete = () => {
 };
 
 interface GetStartedChecklistProps {
-    hideDismissButton?: boolean;
     limitedMaxWidth?: boolean;
-    onItemSelection: (key: GetStartedChecklistKey) => () => void;
+    onItemSelection: (key: ChecklistKey) => () => void;
     onDismiss?: () => void;
 }
 
-const GetStartedChecklist = ({
-    hideDismissButton,
-    limitedMaxWidth,
-    onDismiss,
-    onItemSelection,
-}: GetStartedChecklistProps) => {
-    const { expires, checklist, loading } = useContext(GetStartedChecklistContext);
+const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: GetStartedChecklistProps) => {
+    const { expires, checklist, loading } = useGetStartedChecklist();
 
     const checklistItems = [
         {
-            key: GetStartedChecklistKey.Import,
+            key: ChecklistKey.Import,
             text: c('Get started checklist item').t`Import contacts or emails`,
             icon: 'arrow-down-to-screen',
         },
         {
-            key: GetStartedChecklistKey.SendMessage,
+            key: ChecklistKey.SendMessage,
             text: c('Get started checklist item').t`Send a message`,
             icon: 'paper-plane',
         },
         {
-            key: GetStartedChecklistKey.RecoveryMethod,
+            key: ChecklistKey.RecoveryMethod,
             text: c('Get started checklist item').t`Set up a recovery method`,
             icon: 'lock',
         },
         {
-            key: GetStartedChecklistKey.MobileApp,
+            key: ChecklistKey.MobileApp,
             text: c('Get started checklist item').t`Get mobile app`,
             icon: 'mobile',
         },
@@ -118,49 +103,15 @@ const GetStartedChecklist = ({
         return <GetStartedChecklistComplete />;
     }
 
-    const { length: totalNumberOfChecklistItems } = checklistItems;
+    const { length: totalNumberOfItems } = checklistItems;
 
     return (
         <div className={classnames(['p1', limitedMaxWidth && 'get-started_root--limited-width mauto'])}>
-            <div className="flex flex-align-items-center flex-justify-space-between">
-                <span className={classnames(['flex flex-align-items-center', hideDismissButton ? 'w100' : 'w80'])}>
-                    <span className="get-started_gift mr1">
-                        {/*
-                         * if we don't put an empty alt attribute here, some vocalizers
-                         * will vocalize the src attribute
-                         */}
-                        <img src={gift} alt="" />
-                    </span>
-                    <span className="flex-item-fluid text-bold text-ellipsis">
-                        <span className="no-mobile">{c('Get started checklist title').t`Get started`}</span>
-                        <span className="no-tablet no-desktop">{c('Get started checklist title').t`Get started`}</span>
-                    </span>
-                    <span className="flex-justify-end">
-                        {
-                            // Translator: 1/4 complete
-                            c('Amount of completed get started checklist items').ngettext(
-                                msgid`${numberOfCompletedItems}/${totalNumberOfChecklistItems} complete`,
-                                `${numberOfCompletedItems}/${totalNumberOfChecklistItems} complete`,
-                                numberOfCompletedItems
-                            )
-                        }
-                    </span>
-                </span>
-                {!hideDismissButton && (
-                    <div className="pl1">
-                        <Button icon shape="ghost" onClick={onDismiss}>
-                            <Icon name="xmark" size={12} alt={c('Action').t`Dismiss get started checklist`} />
-                        </Button>
-                    </div>
-                )}
-            </div>
-            <div className={classnames(['ml0-5', hideDismissButton ? 'w100' : 'w80'])}>
-                <Progress
-                    className="progress-bar--success"
-                    value={numberOfCompletedItems}
-                    max={totalNumberOfChecklistItems}
-                />
-            </div>
+            <GetStartedChecklistHeader
+                numberOfCompletedItems={numberOfCompletedItems}
+                totalNumberOfItems={totalNumberOfItems}
+                onDismiss={onDismiss}
+            />
 
             <ul className="unstyled ml0-5">
                 {checklistItems
