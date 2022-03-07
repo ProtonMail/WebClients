@@ -69,7 +69,7 @@ const UserKeysSections = () => {
         return newKey.getFingerprint();
     };
 
-    const canGenerateUserKey = userKeysDisplay.length < 20;
+    const canGenerateUserKey = !User.isSubUser && User.isPrivate && userKeysDisplay.length < 20;
 
     const children = (() => {
         if (loadingUserKeys && !Array.isArray(userKeys)) {
