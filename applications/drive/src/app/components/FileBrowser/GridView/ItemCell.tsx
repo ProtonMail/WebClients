@@ -25,7 +25,6 @@ function ItemCell({
     onShiftClick,
     selectItem,
     dragMoveControls,
-    secondaryActionActive,
     ItemContextMenu,
 }: Props) {
     const {
@@ -82,8 +81,7 @@ function ItemCell({
                 draggable={draggable}
                 aria-disabled={item.Disabled}
                 className={classnames([
-                    'file-browser-grid-item m0-5 flex flex-column w100 rounded border cursor-pointer text-align-left outline-none',
-                    (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
+                    'file-browser-grid-item m0-5 flex flex-column w100 rounded border text-align-left outline-none',
                     isSelected && 'border-primary',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) &&
                         'file-browser-grid-item--highlight',
