@@ -69,7 +69,7 @@ export const useCompose = (
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const dispatch = useDispatch();
-    const createDraft = useDraft();
+    const { createDraft, sendingFromDefaultAddressModal } = useDraft();
     const goToSettings = useSettingsLink();
     const api = useApi();
     const { call } = useEventManager();
@@ -193,5 +193,5 @@ export const useCompose = (
         }
     });
 
-    return { handleCompose, storageCapacityModal };
+    return { handleCompose, storageCapacityModal, sendingFromDefaultAddressModal };
 };
