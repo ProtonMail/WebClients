@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent, createElement } from 'react';
 import { c, msgid } from 'ttag';
 import { classnames, Icon, Tooltip } from '@proton/components';
 
@@ -8,7 +8,7 @@ import { Element } from '../../models/element';
 interface Props {
     element?: Element;
     className?: string;
-    onClick?: () => void;
+    onClick?: (e: MouseEvent) => void;
     icon?: string;
 }
 
@@ -39,7 +39,7 @@ const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paperclip' }:
 
     return (
         <Tooltip title={title}>
-            {React.createElement(
+            {createElement(
                 isButton ? 'button' : 'div',
                 { ...commonProps, ...(isButton ? buttonProps : {}) },
                 <Icon name={icon} size={16} alt={title} />
