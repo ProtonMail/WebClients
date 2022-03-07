@@ -26,8 +26,8 @@ const AttachmentPreview = (
     { attachments, message, onDownload, outsideKey }: Props,
     ref: Ref<AttachmentPreviewControls | undefined>
 ) => {
-    const preview = usePreview();
-    const download = useDownload();
+    const { handlePreview: preview, confirmDownloadModal: confirmPreviewModal } = usePreview();
+    const { handleDownload: download, confirmDownloadModal } = useDownload();
 
     const [previewing, setPreviewing] = useState<Preview>();
 
@@ -102,6 +102,8 @@ const AttachmentPreview = (
                     />
                 }
             />
+            {confirmPreviewModal}
+            {confirmDownloadModal}
         </Portal>
     );
 };
