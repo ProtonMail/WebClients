@@ -56,17 +56,19 @@ export const hasMailProfessional = (subscription: Subscription | undefined) => h
 export const hasVpnBasic = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNBASIC);
 export const hasVpnPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNPLUS);
 
+export const getIsB2BPlan = (planName: PLANS | ADDON_NAMES) => {
+    return [MAIL_PRO, DRIVE_PRO, BUNDLE_PRO, ENTERPRISE].includes(planName as any);
+};
+export const getIsLegacyPlan = (planName: PLANS | ADDON_NAMES) => {
+    return [VPNBASIC, VPNPLUS, PLUS, PROFESSIONAL, VISIONARY].includes(planName as any);
+};
+
 export const getHasB2BPlan = (subscription: Subscription) => {
-    return subscription?.Plans?.some(
-        ({ Name }) => Name === PLANS.MAIL_PRO || Name === PLANS.DRIVE_PRO || Name === PLANS.BUNDLE_PRO
-    );
+    return subscription?.Plans?.some(({ Name }) => getIsB2BPlan(Name));
 };
 
 export const getHasLegacyPlans = (subscription: Subscription | undefined) => {
-    return subscription?.Plans?.some(
-        ({ Name }) =>
-            Name === VPNBASIC || Name === VPNPLUS || Name === PLUS || Name === PROFESSIONAL || Name === VISIONARY
-    );
+    return subscription?.Plans?.some(({ Name }) => getIsLegacyPlan(Name));
 };
 
 export const getMonthlyBaseAmount = (

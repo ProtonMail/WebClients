@@ -1,10 +1,10 @@
 import { c } from 'ttag';
-import { Organization } from '@proton/shared/lib/interfaces';
+import { Audience, Organization } from '@proton/shared/lib/interfaces';
 import { APPS, MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { hasMailProfessional, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { getHasB2BPlan, hasMailProfessional, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 
-import { Row, Field, Label, Loader, Button, ButtonLike, SettingsLink, PrimaryButton } from '../../components';
+import { Button, ButtonLike, Field, Label, Loader, PrimaryButton, Row, SettingsLink } from '../../components';
 import { useModals, useNotifications, useSubscription } from '../../hooks';
 import OrganizationNameModal from './OrganizationNameModal';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
@@ -26,7 +26,7 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
         return <Loader />;
     }
 
-    if (!hasMailProfessional(subscription) && !hasVisionary(subscription)) {
+    if (!hasMailProfessional(subscription) && !hasVisionary(subscription) && !getHasB2BPlan(subscription)) {
         return (
             <SettingsSectionWide>
                 <SettingsParagraph>
@@ -34,11 +34,8 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
                         .t`${MAIL_APP_NAME} lets you create email addresses for other people. This is perfect for businesses, families, or groups.`}
                 </SettingsParagraph>
 
-                <UpgradeBanner>
-                    {c('Info').t`Upgrade to a ${PLAN_NAMES[PLANS.VISIONARY]} or ${
-                        PLAN_NAMES[PLANS.PROFESSIONAL]
-                    } plan to get started.`}
-                </UpgradeBanner>
+                <UpgradeBanner audience={Audience.B2B}>{c('new_plans: upgrade')
+                    .t`Upgrade to a business plan to get started`}</UpgradeBanner>
             </SettingsSectionWide>
         );
     }
@@ -69,7 +66,7 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
                             return createNotification({
                                 type: 'error',
                                 text: c('Error')
-                                    .t`Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support`,
+                                    .t`Please upgrade to a business plan with more than 1 user to get multi-user support`,
                             });
                         }
 
