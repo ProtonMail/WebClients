@@ -3,7 +3,7 @@ import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactProperties, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
 import ContactViewProperty from './ContactViewProperty';
-import { classnames } from '../../helpers';
+import { classnames } from '../../../helpers';
 
 interface Props {
     properties: ContactProperties;

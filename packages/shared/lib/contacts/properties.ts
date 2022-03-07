@@ -2,6 +2,7 @@
 import isTruthy from '@proton/utils/isTruthy';
 import { PublicKeyWithPref } from '../interfaces';
 import { ContactProperties, ContactProperty, ContactValue } from '../interfaces/contacts/Contact';
+import { VCardProperty } from '../interfaces/contacts/VCard';
 
 const FIELDS_WITH_PREF = ['fn', 'email', 'tel', 'adr', 'key'];
 
@@ -204,6 +205,18 @@ export const getPreferredValue = (properties: ContactProperties, field: string) 
         return;
     }
     return filteredProperties.sort(sortByPref)[0].value;
+};
+
+export const getSortedProperties = <T>(properties: VCardProperty<T>[]): VCardProperty<T>[] => {
+    const compare = (a: VCardProperty<T>, b: VCardProperty<T>) => {
+        return (Number(a.params?.pref) || 0) - (Number(b.params?.pref) || 0);
+    };
+
+    return properties.sort(compare);
+};
+
+export const getPreferredPropertyValue = <T>(properties: VCardProperty<T>[]): VCardProperty<T> | undefined => {
+    return getSortedProperties(properties)[0];
 };
 
 /**

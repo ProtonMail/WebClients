@@ -2,13 +2,13 @@ import { c } from 'ttag';
 import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import Icon from '../../components/icon/Icon';
-import Href from '../../components/link/Href';
-import { Button } from '../../components';
-import { classnames } from '../../helpers';
-import { useModals } from '../../hooks';
-import ContactDecryptionErrorModal from './modals/ContactDecryptionErrorModal';
-import ContactSignatureErrorModal from './modals/ContactSignatureErrorModal';
+import Icon from '../../../components/icon/Icon';
+import Href from '../../../components/link/Href';
+import { Button } from '../../../components';
+import { classnames } from '../../../helpers';
+import { useModals } from '../../../hooks';
+import ContactDecryptionErrorModal from '../modals/ContactDecryptionErrorModal';
+import ContactSignatureErrorModal from '../modals/ContactSignatureErrorModal';
 
 const { SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
 

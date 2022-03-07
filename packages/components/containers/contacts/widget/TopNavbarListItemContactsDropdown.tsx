@@ -6,12 +6,15 @@ import { generateUID } from '@proton/components/helpers';
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '@proton/components/components/topnavbar/TopNavbarListItemButton';
-
 import ContactsWidgetContainer from './ContactsWidgetContainer';
 import ContactsWidgetGroupsContainer from './ContactsWidgetGroupsContainer';
 import ContactsWidgetSettingsContainer from './ContactsWidgetSettingsContainer';
-import './ContactsWidget.scss';
 import { CONTACT_WIDGET_TABS, CustomAction } from './types';
+import ContactDetailsModal from '../view/ContactDetailsModal';
+import { ContactDetailsProps } from '../view/ContactDetailsModal';
+import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
+
+import './ContactsWidget.scss';
 
 const TopNavbarListItemContactsButton = forwardRef(
     (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
@@ -42,12 +45,22 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo, cus
     const [tabIndex, setTabIndex] = useState(0);
     const [lock, setLock] = useState(false);
 
+    const [contactDetailsModal, handleShowContactDetailsModal] = useModalTwo<ContactDetailsProps, void>(
+        ContactDetailsModal,
+        false
+    );
+
     const actionIncludes = (tab: CONTACT_WIDGET_TABS) => (customAction: CustomAction) =>
         customAction.tabs.includes(tab);
 
     const handleClose = () => {
         setTabIndex(0);
         close();
+    };
+
+    const handleShowDetails = (contactID: string) => {
+        void handleShowContactDetailsModal({ contactID, onMailTo });
+        handleClose();
     };
 
     const handleClickDropdownButton = () => {
@@ -101,9 +114,9 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo, cus
                                 <ContactsWidgetContainer
                                     onClose={handleClose}
                                     onCompose={onCompose}
-                                    onMailTo={onMailTo}
                                     onLock={setLock}
                                     customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.CONTACTS))}
+                                    onShowDetails={handleShowDetails}
                                 />
                             ),
                         },
@@ -126,6 +139,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo, cus
                     onChange={setTabIndex}
                 />
             </Dropdown>
+            {contactDetailsModal}
         </>
     );
 };

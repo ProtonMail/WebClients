@@ -1,0 +1,150 @@
+import { c } from 'ttag';
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { ContactEmail, ContactGroup, ContactProperties, ContactProperty } from '@proton/shared/lib/interfaces/contacts';
+import ContactViewProperty from './ContactViewProperty';
+import { ContactViewProperties } from './ContactViewProperties';
+import ContactEmailSettingsModal from '../../modals/ContactEmailSettingsModal';
+import { Button, Icon, Tooltip, Copy } from '../../../../components';
+import { useUser, useModals, useNotifications } from '../../../../hooks';
+import ContactGroupDropdown from '../../ContactGroupDropdown';
+import ContactGroupLabels from '../../ContactGroupLabels';
+import ContactUpgradeModal from '../../ContactUpgradeModal';
+
+interface Props {
+    vCardContact: VCardContact;
+    isSignatureVerified?: boolean;
+    isPreview?: boolean;
+    contactEmails: ContactEmail[];
+    contactGroupsMap?: { [contactGroupID: string]: ContactGroup };
+    ownAddresses: string[];
+    userKeysList: DecryptedKey[];
+    contactID: string;
+    properties: ContactProperties;
+}
+
+const ContactViewEmails = ({
+    vCardContact,
+    isSignatureVerified = false,
+    isPreview = false,
+    contactEmails,
+    contactGroupsMap,
+    ownAddresses,
+    userKeysList,
+    contactID,
+    properties,
+}: Props) => {
+    const [{ hasPaidMail }] = useUser();
+    const { createModal } = useModals();
+    const { createNotification } = useNotifications();
+
+    const emails = getSortedProperties(vCardContact.email || []);
+
+    if (emails.length === 0) {
+        return null;
+    }
+
+    return (
+        <ContactViewProperties>
+            {emails.map((email, i) => {
+                const contactEmail = contactEmails && contactEmails[i];
+                const contactGroups =
+                    (contactEmail &&
+                        contactGroupsMap &&
+                        contactEmail.LabelIDs.map((ID) => contactGroupsMap[ID]).filter(Boolean)) ||
+                    [];
+                const isOwnAddress = [...ownAddresses].includes(email.value);
+                const emailProperty = properties.find((property) => {
+                    return property.field === 'email' && property.value === email.value;
+                }) as ContactProperty;
+                const handleSettings = () => {
+                    createModal(
+                        <ContactEmailSettingsModal
+                            userKeysList={userKeysList}
+                            contactID={contactID}
+                            emailProperty={emailProperty}
+                            properties={properties}
+                        />
+                    );
+                };
+
+                return (
+                    <ContactViewProperty
+                        // I have nothing better for the key there
+                        // eslint-disable-next-line react/no-array-index-key
+                        key={i}
+                        field="email"
+                        type={email.params?.type}
+                        isSignatureVerified={isSignatureVerified}
+                    >
+                        <span className="w100 flex">
+                            <a
+                                className="mr0-5 flex-item-fluid text-ellipsis"
+                                href={`mailto:${email.value}`}
+                                title={email.value}
+                            >
+                                {email.value}
+                            </a>
+                            <span className="flex-item-noshrink flex contact-view-actions">
+                                {!isPreview && (
+                                    <>
+                                        {!isOwnAddress && (
+                                            <Tooltip title={c('Title').t`Email settings`}>
+                                                <Button icon color="weak" shape="outline" onClick={handleSettings}>
+                                                    <Icon name="cog-wheel" alt={c('Action').t`Email settings`} />
+                                                </Button>
+                                            </Tooltip>
+                                        )}
+                                        {hasPaidMail ? (
+                                            <ContactGroupDropdown
+                                                icon
+                                                color="weak"
+                                                shape="outline"
+                                                className="ml0-5"
+                                                contactEmails={[contactEmail]}
+                                                tooltip={c('Title').t`Contact group`}
+                                            >
+                                                <Icon name="users" alt={c('Action').t`Contact group`} />
+                                            </ContactGroupDropdown>
+                                        ) : (
+                                            <Tooltip title={c('Title').t`Contact group`}>
+                                                <Button
+                                                    icon
+                                                    onClick={() => createModal(<ContactUpgradeModal />)}
+                                                    className="ml0-5"
+                                                >
+                                                    <Icon name="users" alt={c('Action').t`Contact group`} />
+                                                </Button>
+                                            </Tooltip>
+                                        )}
+                                        <Copy
+                                            className="ml0-5"
+                                            value={email.value}
+                                            onCopy={() => {
+                                                createNotification({
+                                                    text: c('Success').t`Email address copied to clipboard`,
+                                                });
+                                            }}
+                                        />
+                                    </>
+                                )}
+                            </span>
+                        </span>
+                        {!!contactGroups.length && (
+                            <div className="mt1">
+                                <ContactGroupLabels
+                                    className="max-w100"
+                                    contactGroups={contactGroups}
+                                    isStacked={false}
+                                />
+                            </div>
+                        )}
+                    </ContactViewProperty>
+                );
+            })}
+        </ContactViewProperties>
+    );
+};
+
+export default ContactViewEmails;

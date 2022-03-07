@@ -12,15 +12,15 @@ import {
     ContactGroup,
 } from '@proton/shared/lib/interfaces/contacts/Contact';
 
-import { Copy, Button, Icon, Tooltip, RemoteImage } from '../../components';
-import { useModals, useUser, useNotifications } from '../../hooks';
-import { classnames } from '../../helpers';
-import ContactEmailSettingsModal from './modals/ContactEmailSettingsModal';
-import ContactLabelProperty from './ContactLabelProperty';
-import ContactUpgradeModal from './ContactUpgradeModal';
-import ContactGroupDropdown from './ContactGroupDropdown';
-import ContactGroupLabels from './ContactGroupLabels';
-import EncryptedIcon from './EncryptedIcon';
+import { Copy, Button, Icon, Tooltip, RemoteImage } from '../../../components';
+import { useModals, useUser, useNotifications } from '../../../hooks';
+import { classnames } from '../../../helpers';
+import ContactEmailSettingsModal from '../modals/ContactEmailSettingsModal';
+import ContactLabelProperty from '../ContactLabelProperty';
+import ContactUpgradeModal from '../ContactUpgradeModal';
+import ContactGroupDropdown from '../ContactGroupDropdown';
+import ContactGroupLabels from '../ContactGroupLabels';
+import EncryptedIcon from '../EncryptedIcon';
 
 interface Props {
     property: ContactProperty;

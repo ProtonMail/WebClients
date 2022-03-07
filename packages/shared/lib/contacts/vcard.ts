@@ -1,11 +1,13 @@
 import ICAL from 'ical.js';
 import { parseISO } from 'date-fns';
 import isTruthy from '@proton/utils/isTruthy';
+import range from '@proton/utils/range';
 import { isValidDate } from '../date/date';
 import { readFileAsString } from '../helpers/file';
 import { ContactProperties, ContactProperty } from '../interfaces/contacts';
-import { addPref, hasPref, sortByPref } from './properties';
+import { addPref, getStringContactValue, hasPref, sortByPref } from './properties';
 import { getValue } from './property';
+import { VCardAddress, VCardContact } from '../interfaces/contacts/VCard';
 
 export const ONE_OR_MORE_MUST_BE_PRESENT = '1*';
 export const EXACTLY_ONE_MUST_BE_PRESENT = '1';
@@ -46,6 +48,21 @@ export const PROPERTIES: { [key: string]: { cardinality: string } } = {
     fburl: { cardinality: ONE_OR_MORE_MAY_BE_PRESENT },
     caladruri: { cardinality: ONE_OR_MORE_MAY_BE_PRESENT },
     caluri: { cardinality: ONE_OR_MORE_MAY_BE_PRESENT },
+};
+
+export const isMultiValue = (field = '') => {
+    const { cardinality = ONE_OR_MORE_MAY_BE_PRESENT } = PROPERTIES[field] || {};
+    return [ONE_OR_MORE_MUST_BE_PRESENT, ONE_OR_MORE_MAY_BE_PRESENT].includes(cardinality);
+};
+
+export const isDateType = (type = '') => {
+    return (
+        type === 'date' ||
+        type === 'time' ||
+        type === 'date-time' ||
+        type === 'date-and-or-time' ||
+        type === 'timestamp'
+    );
 };
 
 export const isCustomField = (field = '') => field.startsWith('x-');
@@ -104,6 +121,120 @@ export const parse = (vcard = ''): ContactProperties => {
     return addPref(sortedProperties);
 };
 
+export const icalValueToInternalAddress = (adr: string | string[]): VCardAddress => {
+    // Input sanitization
+    const value = (Array.isArray(adr) ? adr : [adr]).map((entry) => getStringContactValue(entry));
+    if (value.length < 7) {
+        value.push(...range(0, 7 - value.length).map(() => ''));
+    }
+
+    // According to vCard RFC https://datatracker.ietf.org/doc/html/rfc6350#section-6.3.1
+    // Address is split into 7 strings with different meaning at each position
+    const [postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country] = value;
+    return {
+        postOfficeBox,
+        extendedAddress,
+        streetAddress,
+        locality,
+        region,
+        postalCode,
+        country,
+    };
+};
+
+/**
+ * Convert from ical.js format to an internal format
+ */
+export const icalValueToInternalValue = (name: string, type: string, property: any) => {
+    const value = getValue(property, name) as string | string[];
+
+    if (name === 'adr') {
+        return icalValueToInternalAddress(value);
+    }
+    if (name === 'bday' || name === 'anniversary') {
+        if (isDateType(type)) {
+            return { date: parseISO(value.toString()) };
+        } else {
+            return { text: value.toString() };
+        }
+    }
+    if (name === 'gender') {
+        return { text: value.toString() };
+    }
+    if (Array.isArray(value)) {
+        return value;
+    }
+    if (typeof value === 'string' || type === 'integer') {
+        return value;
+    }
+    if (isDateType(type)) {
+        return parseISO(value);
+    }
+    return value;
+};
+
+const getParameters = (type: string, property: any) => {
+    const allParameters = property.toJSON() || [];
+    const parameters = allParameters[1];
+    const isDefaultType = type === property.getDefaultType();
+
+    const result = {
+        ...parameters,
+    };
+
+    if (!isDefaultType) {
+        result.type = type;
+    }
+
+    return result;
+};
+
+const parseIcalProperty = (property: any, vCardContact: VCardContact) => {
+    const { name: nameWithGroup } = property;
+
+    if (!nameWithGroup) {
+        return;
+    }
+
+    const [group, name]: [string | undefined, keyof VCardContact] = nameWithGroup.includes('.')
+        ? nameWithGroup.split('.')
+        : [undefined, nameWithGroup];
+
+    const { type } = property;
+    const value = icalValueToInternalValue(name, type, property);
+
+    const params = getParameters(type, property);
+    const propertyAsObject = {
+        group,
+        value,
+        ...(Object.keys(params).length && { params }),
+    };
+
+    if (!isMultiValue(name)) {
+        vCardContact[name] = propertyAsObject as any;
+        return;
+    }
+
+    if (!vCardContact[name]) {
+        vCardContact[name] = [] as any;
+    }
+
+    (vCardContact[name] as any[]).push(propertyAsObject);
+};
+
+export const parseToVCard = (vcard: string): VCardContact => {
+    const icalComponent = new ICAL.Component(ICAL.parse(vcard));
+    const properties = icalComponent.getAllProperties() as any[];
+
+    const vCardContact: VCardContact = {} as VCardContact;
+
+    properties.forEach((property) => {
+        parseIcalProperty(property, vCardContact);
+    });
+
+    return vCardContact;
+};
+
 /**
  * Parse contact properties to create a ICAL vcard component
  */
@@ -154,6 +285,26 @@ export const merge = (contacts: ContactProperties[] = []): ContactProperties => 
         });
         return acc;
     }, []);
+};
+
+export const mergeVCard = (contacts: VCardContact[]): VCardContact => {
+    const result: VCardContact = { fn: [] };
+
+    contacts.forEach((contact) => {
+        Object.entries(contact).forEach(([fieldString, property]) => {
+            const field = fieldString as keyof VCardContact;
+            if (isMultiValue(field)) {
+                if (!result[field]) {
+                    result[field] = [] as any;
+                }
+                (result[field] as any).push(...property);
+            } else {
+                result[field] = property;
+            }
+        });
+    });
+
+    return result;
 };
 
 /**
