@@ -17,7 +17,7 @@ import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels'
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
 import { Conversation } from '../models/conversation';
 import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
-import MoveScheduledModal from '../components/composer/modals/MoveScheduledModal';
+import MoveScheduledModal from '../components/message/modals/MoveScheduledModal';
 
 const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
 
