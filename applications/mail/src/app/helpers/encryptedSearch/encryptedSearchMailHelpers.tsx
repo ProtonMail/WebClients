@@ -10,7 +10,6 @@ import {
     esSentryReport,
     indexKeyExists,
     testKeywords,
-    openESDB,
 } from '@proton/encrypted-search';
 import { Api, LabelCount, Recipient, UserModel } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -86,25 +85,7 @@ export const getESHelpers = ({
             userID
         );
 
-        if (!result) {
-            return;
-        }
-
-        const { Messages } = result;
-
-        // Temporary fix for mailboxes with messages whose Time
-        // is corrupted on DB. Upon DB intervention this can be
-        // removed.
-        if (storedItem && Messages.length === 1 && Messages[0].ID === storedItem.ID) {
-            const esDB = await openESDB(userID);
-            const storedCiphertext = await esDB.get('messages', storedItem.ID);
-            esDB.close();
-            if (storedCiphertext) {
-                return [];
-            }
-        }
-
-        return Messages;
+        return result?.Messages;
     };
 
     const preFilter = (storedCiphertext: StoredCiphertext, esSearchParams: NormalisedSearchParams) =>

@@ -9,16 +9,15 @@ interface Props {
     className: string;
     loading: boolean;
     element?: Element;
-    highlightKeywords?: boolean;
     hasScrollShadow?: boolean;
 }
 
-const ConversationHeader = ({ className, loading, element, highlightKeywords = false, hasScrollShadow }: Props) => {
-    const { highlightMetadata } = useEncryptedSearchContext();
+const ConversationHeader = ({ className, loading, element, hasScrollShadow }: Props) => {
+    const { highlightMetadata, shouldHighlight } = useEncryptedSearchContext();
 
     const isConversation = testIsConversation(element);
     const subjectElement =
-        !!element?.Subject && highlightKeywords ? (
+        !!element?.Subject && shouldHighlight() ? (
             highlightMetadata(element.Subject, true).resultJSX
         ) : (
             <span>{element?.Subject}</span>

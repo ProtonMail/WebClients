@@ -11,7 +11,6 @@ import {
 import { OpenPGPKey } from 'pmcrypto';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { HighlightMetadata } from '@proton/encrypted-search';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
@@ -32,8 +31,6 @@ interface Props {
     signingPublicKey?: OpenPGPKey;
     attachedPublicKey?: OpenPGPKey;
     isNarrow?: boolean;
-    highlightKeywords?: boolean;
-    highlightMetadata?: HighlightMetadata;
     showDropdown?: boolean;
     isOutside?: boolean;
 }
@@ -48,8 +45,6 @@ const MailRecipientItemSingle = ({
     signingPublicKey,
     attachedPublicKey,
     isNarrow,
-    highlightKeywords = false,
-    highlightMetadata,
     showDropdown,
     isOutside,
 }: Props) => {
@@ -145,8 +140,6 @@ const MailRecipientItemSingle = ({
             showAddress={showAddress}
             showLockIcon={showLockIcon}
             isNarrow={isNarrow}
-            highlightKeywords={highlightKeywords}
-            highlightMetadata={highlightMetadata}
             showDropdown={showDropdown}
             actualLabel={label}
             customDropdownActions={customDropdownActions}

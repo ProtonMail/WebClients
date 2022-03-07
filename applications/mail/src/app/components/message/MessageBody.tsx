@@ -26,7 +26,6 @@ interface Props {
      */
     forceBlockquote?: boolean;
     onMessageReady?: () => void;
-    highlightKeywords?: boolean;
     isPrint?: boolean;
     onIframeReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
     parentMessageRef?: RefObject<HTMLElement>;
@@ -41,7 +40,6 @@ const MessageBody = ({
     originalMessageMode,
     toggleOriginalMessage,
     onMessageReady,
-    highlightKeywords = false,
     isPrint = false,
     labelID,
     onIframeReady,
@@ -52,11 +50,11 @@ const MessageBody = ({
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const [theme] = useTheme();
     const isDarkTheme = DARK_THEMES.includes(theme);
-    const { highlightString, getESDBStatus } = useEncryptedSearchContext();
+    const { highlightString, getESDBStatus, shouldHighlight } = useEncryptedSearchContext();
     const onMailTo = useOnMailTo();
     const [mailSettings] = useMailSettings();
     const { dbExists, esEnabled } = getESDBStatus();
-    const highlightBody = highlightKeywords && dbExists && esEnabled;
+    const highlightBody = shouldHighlight() && dbExists && esEnabled;
     const plain = isPlainText(message.data);
     const { support: hasDarkStyles, loading: hasDarkStylesLoading } = useMessageDarkStyles(
         message,
