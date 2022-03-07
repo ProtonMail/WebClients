@@ -1,33 +1,21 @@
 import { useEffect, useState } from 'react';
-import { isProductPayer } from '@proton/shared/lib/helpers/blackfriday';
 import { LatestSubscription } from '@proton/shared/lib/interfaces';
-import { APPS, BLACK_FRIDAY, CYCLE, MAIL_APP_NAME, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { BLACK_FRIDAY, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import {
-    useApi,
-    useBlackFridayPeriod,
-    useConfig,
-    useLoading,
-    usePlans,
-    useProductPayerPeriod,
-    useSubscription,
-    useUser,
-} from '../../hooks';
+import { useApi, useBlackFridayPeriod, useLoading, usePlans, useSubscription, useUser } from '../../hooks';
 import { EligibleOffer } from '../payments/interface';
 import { getBlackFridayEligibility } from '../payments/subscription/helpers';
 import useIsMounted from '../../hooks/useIsMounted';
 
 const usePromotionOffer = (): EligibleOffer | undefined => {
     const api = useApi();
-    const { APP_NAME } = useConfig();
     const [{ isFree, isDelinquent, canPay }] = useUser();
     const [plans = [], loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [latestSubscription, setLatestSubscription] = useState<LatestSubscription | undefined>(undefined);
     const isBlackFridayPeriod = useBlackFridayPeriod();
-    const isProductPayerPeriod = useProductPayerPeriod();
     const [loading, withLoading] = useLoading();
 
     const plansMap = toMap(plans, 'Name');
@@ -43,16 +31,6 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
         !isDelinquent &&
         isBlackFridayPeriod &&
         getBlackFridayEligibility(subscription, latestSubscription);
-
-    const hasProductPayerOffer =
-        !loadingDependencies &&
-        !!plans.length &&
-        !!subscription &&
-        !isDelinquent &&
-        canPay &&
-        !hasBlackFridayOffer &&
-        isProductPayerPeriod &&
-        isProductPayer(subscription);
 
     const blackFridayOffer: EligibleOffer | undefined = hasBlackFridayOffer
         ? {
@@ -85,26 +63,6 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
           }
         : undefined;
 
-    const productPayerOffer: EligibleOffer | undefined = hasProductPayerOffer
-        ? {
-              name: 'product-payer' as const,
-              plans: [
-                  {
-                      name:
-                          APP_NAME === APPS.PROTONVPN_SETTINGS
-                              ? `${VPN_APP_NAME} Plus + ${MAIL_APP_NAME} Plus`
-                              : `${MAIL_APP_NAME} Plus + ${VPN_APP_NAME} Plus`,
-                      cycle: CYCLE.TWO_YEARS,
-                      plan: [PLANS.PLUS, PLANS.VPNPLUS].join('_'),
-                      planIDs: {
-                          [plansMap.plus.ID]: 1,
-                          [plansMap.vpnplus.ID]: 1,
-                      },
-                  },
-              ],
-          }
-        : undefined;
-
     const isMounted = useIsMounted();
 
     useEffect(() => {
@@ -125,7 +83,7 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
         withLoading(run());
     }, [isBlackFridayPeriod, isFree]);
 
-    return blackFridayOffer || productPayerOffer;
+    return blackFridayOffer;
 };
 
 export default usePromotionOffer;
