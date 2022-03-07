@@ -1,37 +1,16 @@
 @use 'sass:math';
 @import '~@proton/styles/scss/config';
 
-.advanced-search {
-	&-dropdown {
-		--min-width: 35em;
-		--max-width: 35em;
-
-		@include respond-to(1200, 'min') {
-			--max-width: calc(100vw * #{math.div($conversations-column-width, 100%)} - 1em);
-		}
-	}
-
-	&-label.label {
-		inline-size: 11em;
-	}
-
-	.composer-addresses-container.composer-addresses-container-closed {
-		padding-inline-end: 0;
-	}
-
-	&-progress-status {
-		inset-block-start: 0.5em;
-	}
-	&-time-remaining {
-		inset-block-start: -0.5em;
-	}
-}
-
 .overlay {
 	position: fixed;
 	z-index: $layer-modals;
 	color: var(--text-norm);
-	animation: 0.15s ease-out both;
+	//animation: 0.15s ease-out both;
+	// transform-origin: top center; // TO CHECK IF TRANSITIION IS NEEDED
+	// opacity: .8 !important; // TO FACILITATE PLACEMENT
+	margin-inline: -1em -0.5em;
+	margin-block-start: -0.5em;
+
 
 	@include respond-to($breakpoint-small, 'max') {
 		inset: 0;
@@ -77,10 +56,10 @@
 		inset-block-start: calc(var(--top) * 1px);
 		/* stylelint-disable */
 		left: calc(var(--left) * 1px);
-		width: calc(var(--width) * 1px + 10px);
+		width: calc(var(--width) * 1px + 10px + 0.5em);
 		/* stylelint-enable */
 		transform: scale(1);
-		border-radius: var(--border-radius-large);
+		border-radius: calc(var(--border-radius) * 1px);
 		box-shadow: var(--shadow-lifted);
 		border: 1px solid var(--border-norm);
 		background: var(--background-norm);
@@ -144,7 +123,7 @@
 		min-inline-size: min(var(--min-width, 1.5em), var(--max-width-bounds));
 		min-block-size: min(var(--min-height, 1em), var(--max-height-bounds));
 		overflow: auto;
-		border-radius: var(--border-radius-large);
+		border-radius: var(--border-radius);
 		background-color: var(--background-norm);
 		background-image: radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
 			radial-gradient(farthest-side at 50% 100%, var(--backdrop-norm), transparent);
@@ -161,7 +140,7 @@
 		}
 
 		@include respond-to($breakpoint-small, 'min') {
-			inline-size: calc(var(--width) * 1px);
+			inline-size: calc(var(--width) * 1px + 1em);
 			max-inline-size: var(--max-width, unset);
 			max-block-size: var(--max-height, unset);
 		}
@@ -176,139 +155,151 @@
 			flex: 0 0 rem(3);
 			background: var(--background-norm);
 		}
+		// &--no-bottom-shadow::after {
+		// 	content: none;
+		// }
 	}
 
-	@include respond-to($breakpoint-small, 'max') {
-		&-content {
-			animation: anime-dropdown-content-scale-in 0.15s ease-out both;
 
-			@keyframes anime-dropdown-content-scale-in {
-				from {
-					transform: scale(0.8);
-				}
-				to {
-					transform: scale(1);
-				}
-			}
-		}
 
-		&.is-dropdown-out &-content {
-			animation-name: anime-dropdown-content-scale-out;
+	// @include respond-to($breakpoint-small, 'max') {
+	// 	// &-content {
+	// 	// 	animation: anime-dropdown-content-scale-in 0.15s ease-out both;
 
-			@keyframes anime-dropdown-content-scale-out {
-				from {
-					transform: scale(1);
-				}
-				to {
-					transform: scale(0.8);
-				}
-			}
-		}
+	// 	// 	@keyframes anime-dropdown-content-scale-in {
+	// 	// 		from {
+	// 	// 			transform: scale(0.8);
+	// 	// 		}
+	// 	// 		to {
+	// 	// 			transform: scale(1);
+	// 	// 		}
+	// 	// 	}
+	// 	// }
+
+	// 	&.is-dropdown-out &-content {
+	// 		animation-name: anime-dropdown-content-scale-out;
+
+	// 		@keyframes anime-dropdown-content-scale-out {
+	// 			from {
+	// 				transform: scale(1);
+	// 			}
+	// 			to {
+	// 				transform: scale(0.8);
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	// &-item {
+	// 	&-button,
+	// 	&-link {
+	// 		// @extend .interactive;
+
+	// 		&,
+	// 		&:hover,
+	// 		&:focus,
+	// 		&:active {
+	// 			color: var(--text-norm);
+	// 			text-decoration: none;
+	// 		}
+
+	// 		&.active {
+	// 			background-color: var(--interaction-default-hover);
+	// 		}
+	// 	}
+
+	// 	&--delete {
+	// 		&,
+	// 		&:hover,
+	// 		&:focus {
+	// 			.dropdown-item-button {
+	// 				color: var(--signal-danger);
+	// 			}
+	// 		}
+	// 	}
+
+	// 	& [aria-current='true'],
+	// 	& &--is-selected {
+	// 		// Specificity -_-v
+	// 		&,
+	// 		&:hover,
+	// 		&:focus,
+	// 		&:active {
+	// 			background-color: var(--interaction-norm);
+	// 			color: var(--interaction-norm-contrast);
+	// 			pointer-events: none;
+	// 		}
+	// 	}
+
+	// 	// Dropdown item container which contains several elements
+	// 	// Created for specific use case in the mail composer
+	// 	&-container {
+	// 		// @extend .interactive;
+
+	// 		&,
+	// 		&:hover,
+	// 		&:focus,
+	// 		&:active {
+	// 			color: var(--text-norm);
+	// 			text-decoration: none;
+	// 		}
+
+	// 		&.active {
+	// 			background-color: var(--interaction-default-hover);
+	// 		}
+
+	// 		&.dropdown-item--is-selected {
+	// 			&,
+	// 			&:hover,
+	// 			&:focus,
+	// 			&:active {
+	// 				pointer-events: all;
+	// 			}
+	// 		}
+
+	// 		.dropdown-item-button {
+	// 			background-color: transparent;
+
+	// 			&:hover,
+	// 			&:focus,
+	// 			&:active {
+	// 				background-color: transparent;
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	.advanced-search-field {
+		border-color: transparent;
+		padding-inline-start: 2.75em;
 	}
 
-	&-item {
-		&-button,
-		&-link {
-			// @extend .interactive;
 
-			&,
-			&:hover,
-			&:focus,
-			&:active {
-				color: var(--text-norm);
-				text-decoration: none;
-			}
+	// &-item-hr {
+	// 	block-size: 0;
+	// 	box-sizing: content-box;
+	// 	border-block-start: 1px solid var(--border-norm);
+	// }
 
-			&.active {
-				background-color: var(--interaction-default-hover);
-			}
-		}
+	// &-search {
+	// 	position: sticky;
+	// 	inset-block-start: 0;
+	// 	padding: 1rem;
+	// 	background-color: var(--background-norm);
+	// 	box-shadow: var(--shadow-norm);
 
-		&--delete {
-			&,
-			&:hover,
-			&:focus {
-				.dropdown-item-button {
-					color: var(--signal-danger);
-				}
-			}
-		}
+	// 	&-no-result {
+	// 		color: var(--text-weak);
+	// 		padding-block: rem(40);
+	// 		padding-inline: rem(10);
+	// 		letter-spacing: rem(0.25);
+	// 	}
+	// }
 
-		& [aria-current='true'],
-		& &--is-selected {
-			// Specificity -_-v
-			&,
-			&:hover,
-			&:focus,
-			&:active {
-				background-color: var(--interaction-norm);
-				color: var(--interaction-norm-contrast);
-				pointer-events: none;
-			}
-		}
-
-		// Dropdown item container which contains several elements
-		// Created for specific use case in the mail composer
-		&-container {
-			// @extend .interactive;
-
-			&,
-			&:hover,
-			&:focus,
-			&:active {
-				color: var(--text-norm);
-				text-decoration: none;
-			}
-
-			&.active {
-				background-color: var(--interaction-default-hover);
-			}
-
-			&.dropdown-item--is-selected {
-				&,
-				&:hover,
-				&:focus,
-				&:active {
-					pointer-events: all;
-				}
-			}
-
-			.dropdown-item-button {
-				background-color: transparent;
-
-				&:hover,
-				&:focus,
-				&:active {
-					background-color: transparent;
-				}
-			}
-		}
-	}
-
-	&-item-hr {
-		block-size: 0;
-		box-sizing: content-box;
-		border-block-start: 1px solid var(--border-norm);
-	}
-
-	&-search {
-		position: sticky;
-		inset-block-start: 0;
-		padding: 1rem;
-		background-color: var(--background-norm);
-		box-shadow: var(--shadow-norm);
-
-		&-no-result {
-			color: var(--text-weak);
-			padding-block: rem(40);
-			padding-inline: rem(10);
-			letter-spacing: rem(0.25);
-		}
-	}
-
-	&--is-searchable {
-		.dropdown-content::before {
-			content: none;
-		}
-	}
+	// &--is-searchable {
+	// 	.dropdown-content::before {
+	// 		content: none;
+	// 	}
+	// }
 }
+

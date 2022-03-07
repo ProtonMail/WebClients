@@ -22,36 +22,49 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
     };
 
     return (
-        <div ref={ref} className="searchbox-container flex flex-row bordered rounded">
+        <div ref={ref} className="searchbox-container flex-item-centered-vert p0 inputform-field flex flex-row">
             <Button
                 type="submit"
                 icon
                 shape="ghost"
                 color="weak"
-                className="flex"
+                className="flex flex-item-noshrink"
                 title={c('Action').t`Search`}
                 onClick={onOpen}
                 data-shorcut-target="searchbox-button"
             >
-                <Icon name="magnifying-glass" size={22} className="mauto" />
+                <Icon name="magnifying-glass" size={16} className="mauto" />
                 <span className="sr-only">{c('Action').t`Search`}</span>
             </Button>
-            <div className="flex flex-align-items-center flex-item-fluid" data-testid="search-keyword" onClick={onOpen}>
+            <div className="flex flex-align-items-center flex-item-fluid pl0-25" data-testid="search-keyword" onClick={onOpen}>
                 {searchParams.keyword ? searchParams.keyword : <span className="placeholder">{placeholder}</span>}
             </div>
             {isSearch ? (
-                <Button
-                    type="button"
-                    icon
-                    shape="ghost"
-                    color="weak"
-                    className="flex"
-                    title={c('Action').t`Clear`}
-                    onClick={handleClear}
-                >
-                    {c('Action').t`Clear`}
-                </Button>
+                <>
+                    <Button
+                        type="button"
+                        shape="ghost"
+                        color="weak"
+                        className="flex"
+                        title={c('Action').t`Clear`}
+                        onClick={handleClear}
+                    >
+                        {c('Action').t`Clear`}
+                    </Button>
+                    <Button
+                        type="button"
+                        icon
+                        shape="ghost"
+                        color="weak"
+                        className="flex flex-align-items-center"
+                        title={c('Action').t`Close ??????????`}
+                        onClick={handleClear}
+                    >
+                        <Icon name="xmark" alt={c('Action').t`Close ??????????????`} />
+                    </Button>
+                </>
             ) : null}
+
         </div>
     );
 };
