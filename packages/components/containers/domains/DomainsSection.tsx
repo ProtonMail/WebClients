@@ -166,7 +166,7 @@ const DomainsSectionUpgrade = () => {
         <SettingsSectionWide>
             <DomainsSectionText />
             <UpgradeBanner>
-                {c('Message').t`Upgrade to any paid plan to use custom domains and unlock premium features`}
+                {c('Message').t`Upgrade to a paid plan to use custom domains and unlock premium features`}
             </UpgradeBanner>
         </SettingsSectionWide>
     );

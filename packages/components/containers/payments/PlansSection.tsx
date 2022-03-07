@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { checkSubscription } from '@proton/shared/lib/api/payments';
@@ -7,8 +8,8 @@ import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { Audience, Currency, PlanIDs, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 
-import { Loader, Button, Icon } from '../../components';
-import { useSubscription, usePlans, useApi, useConfig, useLoading } from '../../hooks';
+import { Button, Icon, Loader } from '../../components';
+import { useApi, useConfig, useLoading, usePlans, useSubscription } from '../../hooks';
 
 import { getDefaultSelectedProductPlans } from './subscription/SubscriptionModal';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
@@ -18,14 +19,23 @@ import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 
 const FREE_SUBSCRIPTION = {} as Subscription;
 
+const getSearchParams = (search: string) => {
+    const params = new URLSearchParams(search);
+    return {
+        audience: params.has('business') ? Audience.B2B : undefined,
+    };
+};
+
 const PlansSection = () => {
     const [loading, withLoading] = useLoading();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [plans = [], loadingPlans] = usePlans();
     const { APP_NAME } = useConfig();
     const api = useApi();
+    const location = useLocation();
     const currentPlanIDs = getPlanIDs(subscription);
-    const [audience, setAudience] = useState(Audience.B2C);
+    const searchParams = getSearchParams(location.search);
+    const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
     const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
         return getDefaultSelectedProductPlans(APP_NAME, getPlanIDs(subscription));
     });
