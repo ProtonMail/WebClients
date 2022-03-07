@@ -46,6 +46,7 @@ export enum FeatureCode {
     ExternalSignup = 'ExternalSignup',
     CalendarEmailNotification = 'CalendarEmailNotification',
     CalendarInviteLocale = 'CalendarInviteLocale',
+    CalendarAutoImportInvite = 'CalendarAutoImportInvite',
     SeenMnemonicPrompt = 'SeenMnemonicPrompt',
     VisitedRecoveryPage = 'VisitedRecoveryPage',
     SpyTrackerProtection = 'SpyTrackerProtection',

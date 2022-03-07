@@ -70,12 +70,16 @@ const MainContainer = () => {
     const features = useFeatures([
         FeatureCode.SpyTrackerProtection,
         FeatureCode.CalendarInviteLocale,
+        FeatureCode.CalendarAutoImportInvite,
         FeatureCode.ReferralProgram,
         FeatureCode.CalendarEmailNotification,
         FeatureCode.CalendarSubscription,
         FeatureCode.PaymentsDisabled,
     ]);
-    const [spyTrackerFeature, calendarInviteLocaleFeature, referralProgramFeature] = features;
+    const [spyTrackerFeature, calendarInviteLocaleFeature, calendarAutoImportInviteFeature, referralProgramFeature] =
+        features;
+    const isInviteLocaleFeatureEnabled = calendarInviteLocaleFeature.feature?.Value === true;
+    const isAutoImportInviteFeatureEnabled = calendarAutoImportInviteFeature.feature?.Value === true;
     const { enabled, unavailable } = useCalendarSubscribeFeature();
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = features.some(({ loading }) => loading) || loadingDataRecovery;
@@ -87,7 +91,7 @@ const MainContainer = () => {
         organization,
         isUnsubscribeCalendarEnabled: enabled,
         isSpyTrackerEnabled: spyTrackerFeature.feature?.Value === true,
-        isInviteSettingEnabled: calendarInviteLocaleFeature.feature?.Value === true,
+        isInviteSettingEnabled: isInviteLocaleFeatureEnabled || isAutoImportInviteFeatureEnabled,
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
         isDataRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
@@ -186,6 +190,8 @@ const MainContainer = () => {
                             loadingFeatures={loadingFeatures}
                             calendarAppRoutes={routes.calendar}
                             calendarSubscribeUnavailable={unavailable}
+                            hasInviteLocaleFeature={isInviteLocaleFeatureEnabled}
+                            hasAutoImportInviteFeature={isAutoImportInviteFeatureEnabled}
                             redirect={redirect}
                         />
                     </Suspense>

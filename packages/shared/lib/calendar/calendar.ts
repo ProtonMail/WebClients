@@ -122,7 +122,8 @@ export const DEFAULT_CALENDAR_USER_SETTINGS: CalendarUserSettings = {
     AutoDetectPrimaryTimezone: 1,
     PrimaryTimezone: 'UTC',
     DisplaySecondaryTimezone: 0,
-    SecondaryTimezone: undefined,
+    SecondaryTimezone: null,
     ViewPreference: SETTINGS_VIEW.WEEK,
     InviteLocale: null,
+    AutoImportInvite: 0,
 };
