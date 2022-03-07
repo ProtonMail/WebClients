@@ -190,21 +190,23 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
             <div className="flex flex-nowrap pr1 on-mobile-mb0-5">
                 <Icon name="circle-exclamation-filled" className="mt0-5 mr0-5 flex-item-noshrink color-danger" />
                 <div>
-                    <span className="pr0-5 flex flex-item-fluid mt0-25">{getBannerMessage(promptKeyPinningType)}</span>
-                    {promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
-                        <InlineLinkButton
-                            className="color-inherit text-underline"
-                            disabled={loadingDisablePromptPin}
-                            onClick={() => withLoadingDisablePromptPin(handleDisablePromptPin())}
-                        >
-                            {c('Action').t`Never show`}
-                        </InlineLinkButton>
-                    ) : (
-                        <LearnMore
-                            className="color-inherit"
-                            url="https://protonmail.com/support/knowledge-base/address-verification/"
-                        />
-                    )}
+                    <span className="pr0-5 flex flex-item-fluid mt0-25">
+                        <span className="mr0-25">{getBannerMessage(promptKeyPinningType)}</span>
+                        {promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
+                            <InlineLinkButton
+                                className="color-inherit text-underline"
+                                disabled={loadingDisablePromptPin}
+                                onClick={() => withLoadingDisablePromptPin(handleDisablePromptPin())}
+                            >
+                                {c('Action').t`Never show`}
+                            </InlineLinkButton>
+                        ) : (
+                            <LearnMore
+                                className="color-inherit"
+                                url="https://protonmail.com/support/knowledge-base/address-verification/"
+                            />
+                        )}
+                    </span>
                 </div>
             </div>
             <span className="flex-align-items-start flex-item-noshrink on-mobile-w100 pt0-1">
