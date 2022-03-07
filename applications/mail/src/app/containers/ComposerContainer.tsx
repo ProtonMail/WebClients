@@ -77,7 +77,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
         }
     };
 
-    const { handleCompose, storageCapacityModal } = useCompose(
+    const { handleCompose, storageCapacityModal, sendingFromDefaultAddressModal } = useCompose(
         messageIDs,
         openComposer,
         setFocusedMessageID,
@@ -106,6 +106,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
                     />
                 ))}
             </div>
+            {sendingFromDefaultAddressModal}
             {storageCapacityModal}
         </ComposeProvider>
     );

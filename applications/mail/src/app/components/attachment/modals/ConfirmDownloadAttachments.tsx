@@ -1,4 +1,4 @@
-import { AlertModal, Button, Href, ModalProps } from '@proton/components';
+import { AlertModal, Button, Href, ModalProps, PrimaryButton } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { c, msgid } from 'ttag';
 import { Download } from '../../../helpers/attachment/attachmentDownloader';
@@ -43,7 +43,7 @@ const ConfirmDownloadAttachments = ({ downloads, onResolve, onReject, ...rest }:
         <AlertModal
             title={title}
             buttons={[
-                <Button onClick={onResolve}>{c('Action').t`Download`}</Button>,
+                <PrimaryButton onClick={onResolve}>{c('Action').t`Download`}</PrimaryButton>,
                 <Button onClick={onReject}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
