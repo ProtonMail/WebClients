@@ -33,7 +33,7 @@ const useMessageDarkStyles = (
             return { support: true, loading: true };
         }
         return { support: canSupportDarkStyle(iframeRef.current), loading: false };
-    }, [needCompute, isIframeContentSet]);
+    }, [message.localID, needCompute, isIframeContentSet]);
 
     useEffect(() => {
         if (!loading && support) {
