@@ -1,9 +1,9 @@
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Contact, ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
-import useContact from './useContact';
-import ContactView from './ContactView';
+import useContact from '../useContact';
+import ContactView from '../view/ContactView';
 import useContactProperties from './useContactProperties';
-import Loader from '../../components/loader/Loader';
+import Loader from '../../../components/loader/Loader';
 
 interface Props {
     contactID: string;
@@ -21,7 +21,7 @@ const ContactContainer = ({
     contactGroupsMap,
     ownAddresses,
     userKeysList = [],
-    isModal = false,
+    // isModal = false,
     onDelete,
 }: Props) => {
     const [contact, contactLoading] = useContact(contactID) as [Contact, boolean, Error];
@@ -33,6 +33,7 @@ const ContactContainer = ({
 
     return (
         <ContactView
+            vCardContact={{ fn: [] }}
             properties={properties}
             contactID={contactID}
             contactEmails={contactEmails}
@@ -41,7 +42,7 @@ const ContactContainer = ({
             userKeysList={userKeysList}
             errors={errors}
             isSignatureVerified={isVerified}
-            isModal={isModal}
+            // isModal={isModal}
             onDelete={onDelete}
             onReload={onReload}
         />

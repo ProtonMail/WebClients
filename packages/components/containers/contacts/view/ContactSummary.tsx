@@ -1,17 +1,16 @@
 import { c } from 'ttag';
 import { formatImage } from '@proton/shared/lib/helpers/image';
-import { getPreferredValue } from '@proton/shared/lib/contacts/properties';
-import { ContactProperties } from '@proton/shared/lib/interfaces/contacts';
-
-import { Button, Icon, Tooltip } from '../../components';
-import { classnames } from '../../helpers';
-import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import ContactImageSummary from './ContactImageSummary';
+import { getPreferredPropertyValue } from '@proton/shared/lib/contacts/properties';
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { Button, Icon, Tooltip } from '../../../components';
+import { classnames } from '../../../helpers';
+import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
+import ContactImageSummary from '../ContactImageSummary';
 
 import './ContactSummary.scss';
 
 interface Props {
-    properties: ContactProperties;
+    vCardContact: VCardContact;
     onExport: () => void;
     onDelete: () => void;
     onEdit: (field?: string) => void;
@@ -21,7 +20,7 @@ interface Props {
 }
 
 const ContactSummary = ({
-    properties,
+    vCardContact,
     onEdit,
     onDelete,
     onExport,
@@ -30,8 +29,9 @@ const ContactSummary = ({
     hasError = false,
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
-    const photo = formatImage(getPreferredValue(properties, 'photo') as string);
-    const name = getPreferredValue(properties, 'fn') as string;
+
+    const photo = formatImage(getPreferredPropertyValue(vCardContact.photo || [])?.value || '');
+    const name = getPreferredPropertyValue(vCardContact.fn || [])?.value || '';
 
     return (
         <div

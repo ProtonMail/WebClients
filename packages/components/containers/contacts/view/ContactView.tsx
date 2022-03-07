@@ -3,20 +3,25 @@ import { ContactProperties, ContactEmail, ContactGroup } from '@proton/shared/li
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
-
 import { c } from 'ttag';
-import { useModals } from '../../hooks';
-import { classnames } from '../../helpers';
-import ContactModal from './modals/ContactModal';
-import ContactDeleteModal from './modals/ContactDeleteModal';
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { useModals } from '../../../hooks';
+import { classnames } from '../../../helpers';
+import ContactModal from '../modals/ContactModal';
+import ContactDeleteModal from '../modals/ContactDeleteModal';
 import ContactViewErrors from './ContactViewErrors';
 import ContactSummary from './ContactSummary';
-import ContactViewProperties from './ContactViewProperties';
-import { Button } from '../../components';
+import { Button } from '../../../components';
+import ContactViewFns from './properties/ContactViewFns';
+import ContactViewEmails from './properties/ContactViewEmails';
+import ContactViewTels from './properties/ContactViewTels';
+import ContactViewAdrs from './properties/ContactViewAdrs';
+import ContactViewOthers from './properties/ContactViewOthers';
 
 import './ContactView.scss';
 
 interface Props {
+    vCardContact: VCardContact;
     contactID: string;
     contactEmails: ContactEmail[];
     contactGroupsMap: { [contactGroupID: string]: ContactGroup };
@@ -25,13 +30,13 @@ interface Props {
     userKeysList: DecryptedKey[];
     errors?: (CryptoProcessingError | Error)[];
     isSignatureVerified?: boolean;
-    isModal: boolean;
     onDelete: () => void;
     onReload: () => void;
     isPreview?: boolean;
 }
 
 const ContactView = ({
+    vCardContact,
     properties = [],
     contactID,
     contactEmails,
@@ -40,7 +45,6 @@ const ContactView = ({
     userKeysList,
     errors,
     isSignatureVerified = false,
-    isModal,
     onDelete,
     onReload,
     isPreview = false,
@@ -61,18 +65,6 @@ const ContactView = ({
         (error) => error instanceof Error || error.type !== CRYPTO_PROCESSING_TYPES.SIGNATURE_NOT_VERIFIED
     );
 
-    const contactViewPropertiesProps = {
-        contactID,
-        userKeysList,
-        contactEmails,
-        ownAddresses,
-        properties,
-        isSignatureVerified,
-        contactGroupsMap,
-        leftBlockWidth: 'label max-w100p',
-        rightBlockWidth: 'w100',
-    };
-
     const { hasEmail, hasTel, hasAdr } = properties.reduce<{ hasEmail: boolean; hasTel: boolean; hasAdr: boolean }>(
         (acc, { field }) => {
             acc.hasEmail = acc.hasEmail || field === 'email';
@@ -87,53 +79,38 @@ const ContactView = ({
         }
     );
 
-    const firstFn = properties.find((property) => property.field === 'fn');
-    const propertiesWithoutFirstFn = properties.filter((property) => property !== firstFn);
-
     return (
-        <div
-            className={classnames([
-                !isModal && 'contact-view view-column-detail flex-item-fluid scroll-if-needed p2 on-mobile-p1',
-            ])}
-        >
-            <div
-                className={classnames([
-                    'contact-summary-wrapper border-bottom  pb1 mb1',
-                    !isModal && ' ml1 mr1 on-mobile-ml0-5 on-mobile-mr0-5 on-tiny-mobile-ml0',
-                ])}
-            >
+        <div>
+            <div className={classnames(['contact-summary-wrapper border-bottom pb1 mb1'])}>
                 <ContactSummary
+                    vCardContact={vCardContact}
                     onExport={handleExport}
                     onEdit={handleEdit}
                     onDelete={handleDelete}
-                    properties={properties}
                     leftBlockWidth="w100 max-w100p on-mobile-wauto"
                     isPreview={isPreview}
                     hasError={hasError}
                 />
                 <ContactViewErrors errors={errors} onReload={onReload} contactID={contactID} />
             </div>
-            <div
-                className={classnames([
-                    !isModal && 'contact-view-contents pl1 pr1 on-mobile-pl0-5 on-mobile-pr0-5 on-tiny-mobile-pl0',
-                ])}
-            >
-                <ContactViewProperties
-                    field="fn"
-                    {...contactViewPropertiesProps}
-                    properties={propertiesWithoutFirstFn}
+            <div>
+                <ContactViewFns vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
+                <ContactViewEmails
+                    vCardContact={vCardContact}
+                    isSignatureVerified={isSignatureVerified}
+                    isPreview={isPreview}
+                    contactEmails={contactEmails}
+                    contactGroupsMap={contactGroupsMap}
+                    ownAddresses={ownAddresses}
+                    userKeysList={userKeysList}
+                    contactID={contactID}
+                    properties={properties}
                 />
-                <ContactViewProperties field="email" {...contactViewPropertiesProps} isPreview={isPreview} />
-                <ContactViewProperties field="tel" {...contactViewPropertiesProps} isPreview={isPreview} />
-                <ContactViewProperties field="adr" {...contactViewPropertiesProps} isPreview={isPreview} />
-                <ContactViewProperties {...contactViewPropertiesProps} />
+                <ContactViewTels vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
+                <ContactViewAdrs vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
+                <ContactViewOthers vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
             </div>
-            <div
-                className={classnames([
-                    'mt1-5 ',
-                    !isModal && 'contact-view-cta pl1 pr1 on-mobile-pl0-5 on-mobile-pr0-5 on-tiny-mobile-pl0',
-                ])}
-            >
+            <div className={classnames(['mt1-5 '])}>
                 {hasEmail ? null : (
                     <div className="mb0-5">
                         <Button shape="outline" color="norm" onClick={() => handleEdit('email')}>

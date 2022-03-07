@@ -6,15 +6,12 @@ import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { CircleLoader, SearchInput } from '@proton/components';
 import { useApi, useModals, useNotifications, useUser, useUserKeys, useUserSettings } from '@proton/components/hooks';
-
 import MergeModal from '../merge/MergeModal';
 import ContactsList from '../ContactsList';
-import ContactDetailsModal from '../modals/ContactDetailsModal';
 import useContactList from '../useContactList';
 import ContactsWidgetToolbar from './ContactsWidgetToolbar';
 import ContactDeleteModal from '../modals/ContactDeleteModal';
 import ContactModal from '../modals/ContactModal';
-
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
 import MergeContactBanner from './MergeContactBanner';
 import { CustomAction } from './types';
@@ -22,12 +19,12 @@ import { CustomAction } from './types';
 interface Props {
     onClose: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
-    onMailTo?: (src: string) => void;
     onLock: (lock: boolean) => void;
     customActions: CustomAction[];
+    onShowDetails: (contactID: string) => void;
 }
 
-const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, onLock, customActions }: Props) => {
+const ContactsWidgetContainer = ({ onClose, onCompose, onLock, customActions, onShowDetails }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [userKeysList, loadingUserKeys] = useUserKeys();
@@ -138,8 +135,9 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, onLock, customA
     };
 
     const handleDetails = (contactID: string) => {
-        createModal(<ContactDetailsModal contactID={contactID} onMailTo={onMailTo} />);
-        onClose();
+        // createModal(<ContactDetailsModal contactID={contactID} onMailTo={onMailTo} />);
+        onShowDetails(contactID);
+        // onClose();
     };
 
     const handleDelete = () => {
