@@ -19,6 +19,7 @@ import { uint8ArrayToBase64String } from '../helpers/encoding';
 import { Address, EncryptionConfig } from '../interfaces';
 import { DecryptedCalendarKey, CalendarKey as tsKey, Member } from '../interfaces/calendar';
 import isTruthy from '../helpers/isTruthy';
+import { CalendarSetupData } from '../interfaces/calendar/Api';
 
 export const generatePassphrase = () => {
     const value = getRandomValues(new Uint8Array(32));
@@ -49,16 +50,26 @@ export const generateCalendarKey = async ({
 export const encryptPassphrase = async ({
     passphrase,
     privateKey,
+    publicKey,
     memberPublicKeys,
 }: {
     passphrase: string;
     privateKey: OpenPGPKey;
-    memberPublicKeys: { [key: string]: OpenPGPKey };
+    /**
+     * Used after calendar creation
+     * Pass either this or memberPublicKeys
+     */
+    publicKey?: OpenPGPKey;
+    /**
+     * Used for calendar reset
+     * Pass either this or publicKey
+     */
+    memberPublicKeys?: { [key: string]: OpenPGPKey };
 }) => {
-    const memberPublicKeysList = Object.entries(memberPublicKeys);
+    const memberPublicKeysList = memberPublicKeys ? Object.entries(memberPublicKeys) : null;
     const { data, signature } = await encryptMessage({
         message: await createMessage(passphrase),
-        publicKeys: memberPublicKeysList.map(([, publicKey]) => publicKey),
+        publicKeys: memberPublicKeysList?.map(([, publicKey]) => publicKey) || [publicKey],
         privateKeys: [privateKey],
         detached: true,
     });
@@ -66,10 +77,13 @@ export const encryptPassphrase = async ({
     const { asymmetric, encrypted } = await splitMessage(message);
 
     return {
-        keyPackets: memberPublicKeysList.reduce((acc, [memberID], index) => {
-            acc[memberID] = uint8ArrayToBase64String(asymmetric[index]);
-            return acc;
-        }, Object.create(null)),
+        keyPackets: !publicKey
+            ? memberPublicKeysList?.reduce((acc, [memberID], index) => {
+                  acc[memberID] = uint8ArrayToBase64String(asymmetric[index]);
+                  return acc;
+              }, Object.create(null))
+            : null,
+        keyPacket: publicKey ? uint8ArrayToBase64String(asymmetric[0]) : null,
         dataPacket: uint8ArrayToBase64String(encrypted[0]),
         signature,
     };
@@ -158,32 +172,64 @@ export const getKeysMemberMap = <T>(Members: Member[] = [], emailMap: { [key: st
     }, {});
 };
 
+export const isCalendarSetupData = (
+    payload: GenerateCalendarPayload | CalendarSetupData
+): payload is CalendarSetupData => isTruthy(payload.Passphrase.KeyPacket);
+
+interface GenerateCalendarPayload {
+    AddressID: string;
+    Signature: string;
+    PrivateKey: string;
+    Passphrase: {
+        DataPacket: string;
+        KeyPacket?: string;
+        KeyPackets?: string;
+    };
+}
+
 export const generateCalendarKeyPayload = async ({
     addressID,
     privateKey,
+    publicKey,
     memberPublicKeys,
 }: {
     addressID: string;
     privateKey: OpenPGPKey;
-    memberPublicKeys: { [key: string]: OpenPGPKey };
-}) => {
+    /**
+     * Used after calendar creation
+     * Pass either this or memberPublicKeys
+     */
+    publicKey?: OpenPGPKey;
+    /**
+     * Used for calendar reset
+     * Pass either this or publicKey
+     */
+    memberPublicKeys?: { [key: string]: OpenPGPKey };
+}): Promise<GenerateCalendarPayload | CalendarSetupData> => {
     const passphrase = generatePassphrase();
     const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
-    const [
-        { privateKeyArmored: PrivateKey },
-        { dataPacket: DataPacket, keyPackets: KeyPackets, signature: Signature },
-    ] = await Promise.all([
-        generateCalendarKey({ passphrase, encryptionConfig }),
-        encryptPassphrase({ passphrase, privateKey, memberPublicKeys }),
-    ]);
+    const [{ privateKeyArmored: PrivateKey }, { dataPacket: DataPacket, keyPackets, keyPacket, signature: Signature }] =
+        await Promise.all([
+            generateCalendarKey({ passphrase, encryptionConfig }),
+            encryptPassphrase({ passphrase, privateKey, publicKey, memberPublicKeys }),
+        ]);
 
-    return {
+    const payload: GenerateCalendarPayload = {
         AddressID: addressID,
         Signature,
         PrivateKey,
         Passphrase: {
             DataPacket,
-            KeyPackets,
         },
     };
+
+    if (keyPackets) {
+        payload.Passphrase.KeyPackets = keyPackets;
+    } else if (keyPacket) {
+        payload.Passphrase.KeyPacket = keyPacket;
+    } else {
+        throw new Error('Missing key packet');
+    }
+
+    return payload;
 };
