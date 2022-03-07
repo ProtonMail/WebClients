@@ -1,6 +1,4 @@
 import { useEffect, useMemo, useRef, useState, memo, forwardRef, Ref, useImperativeHandle } from 'react';
-
-import * as React from 'react';
 import { hasAttachments, isDraft, isSent, isOutbox } from '@proton/shared/lib/mail/messages';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { classnames } from '@proton/components';
