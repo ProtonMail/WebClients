@@ -86,7 +86,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
     const [alsoArchive, updateAlsoArchive] = useState(false);
     const getElementsFromIDs = useGetElementsFromIDs();
     const applyLabels = useApplyLabels();
-    const moveToFolder = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal } = useMoveToFolder();
 
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
@@ -301,6 +301,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                     {c('Action').t`Apply`}
                 </PrimaryButton>
             </div>
+            {moveScheduledModal}
         </form>
     );
 };

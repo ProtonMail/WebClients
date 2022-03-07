@@ -1,11 +1,12 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels, useModals, ConfirmModal } from '@proton/components';
+import { useApi, useNotifications, useEventManager, useLabels } from '@proton/components';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
@@ -16,6 +17,7 @@ import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels'
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
 import { Conversation } from '../models/conversation';
 import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
+import MoveScheduledModal from '../components/composer/modals/MoveScheduledModal';
 
 const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -282,8 +284,9 @@ export const useMoveToFolder = () => {
     const [labels = []] = useLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const dispatch = useDispatch();
-    const { createModal } = useModals();
     let canUndo = true; // Used to not display the Undo button if moving only scheduled messages/conversations to trash
+
+    const { modal: moveScheduledModal, handleShowModal } = useModalTwo(MoveScheduledModal);
 
     /*
      * Opens a modal when finding scheduled messages that are moved to trash.
@@ -309,24 +312,7 @@ export const useMoveToFolder = () => {
             }
 
             if (!canUndo) {
-                const text = isMessage
-                    ? c('Info').t`Scheduled send of this message will be cancelled.`
-                    : c('Info')
-                          .t`This conversation contains a scheduled message. Sending of this message will be cancelled.`;
-
-                await new Promise<void>((resolve, reject) => {
-                    createModal(
-                        <ConfirmModal
-                            onConfirm={resolve}
-                            onClose={reject}
-                            title={c('Title').t`Moving a scheduled message`}
-                            confirm={c('Action').t`OK`}
-                            cancel={c('Action').t`Cancel`}
-                        >
-                            {text}
-                        </ConfirmModal>
-                    );
-                });
+                await handleShowModal({ isMessage });
             }
         }
     };
@@ -446,7 +432,7 @@ export const useMoveToFolder = () => {
         [labels]
     );
 
-    return moveToFolder;
+    return { moveToFolder, moveScheduledModal };
 };
 
 export const useStar = () => {

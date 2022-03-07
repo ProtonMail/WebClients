@@ -207,7 +207,7 @@ const MailboxContainer = ({
 
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
-    const { elementRef, labelDropdownToggleRef, moveDropdownToggleRef, permanentDeleteModal } = useMailboxHotkeys(
+    const { elementRef, labelDropdownToggleRef, moveDropdownToggleRef, moveScheduledModal, permanentDeleteModal } = useMailboxHotkeys(
         {
             labelID,
             elementID,
@@ -360,6 +360,7 @@ const MailboxContainer = ({
                 </PrivateMainArea>
             </div>
             {permanentDeleteModal}
+            {moveScheduledModal}
         </MailboxContainerContextProvider>
     );
 };

@@ -34,7 +34,7 @@ const MoveButtons = ({
     onBack,
 }: Props) => {
     const [loading, withLoading] = useLoading();
-    const moveToFolder = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal } = useMoveToFolder();
     const labelIDs = labels.map(({ ID }) => ID);
     const getElementsFromIDs = useGetElementsFromIDs();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
@@ -189,7 +189,12 @@ const MoveButtons = ({
         buttons = [trashButton, archiveButton, spamButton];
     }
 
-    return <>{buttons}</>; // TS limitation
+    return (
+        <>
+            {buttons}
+            {moveScheduledModal}
+        </>
+    ); // TS limitation
 };
 
 export default MoveButtons;
