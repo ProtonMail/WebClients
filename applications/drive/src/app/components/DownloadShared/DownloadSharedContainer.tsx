@@ -18,12 +18,10 @@ import usePublicSharing, {
 } from '../../hooks/drive/usePublicSharing';
 import DownloadSharedInfo from './DownloadSharedInfo';
 import EnterPasswordInfo from './EnterPasswordInfo';
-import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
+import LinkError from './LinkError';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
-const ERROR_CODE_COULD_NOT_IDENTIFY_TARGET = 2000;
 const ERROR_CODE_INVALID_TOKEN = 2501;
-const ERROR_CODE_INVALID_SRP_PARAMETER = 2026;
 
 const calcTransferProgressPercentage = (progressInBytes?: number, transferSize?: number) => {
     if (progressInBytes === undefined || transferSize === undefined) {
@@ -34,7 +32,7 @@ const calcTransferProgressPercentage = (progressInBytes?: number, transferSize?:
 };
 
 const DownloadSharedContainer = () => {
-    const [notFoundError, setNotFoundError] = useState<Error | undefined>();
+    const [error, setError] = useState<string | undefined>();
     const [loading, withLoading] = useLoading(false);
     const [handshakeInfo, setHandshakeInfo] = useState<SRPHandshakeInfo | null>();
     const [linkInfo, setLinkInfo] = useState<(SharedURLInfoDecrypted & { password: string }) | null>();
@@ -86,6 +84,7 @@ const DownloadSharedContainer = () => {
                 onNetworkError: () => {
                     controls.cancel();
                     setTransferState(TransferStatePublic.Error);
+                    setError(c('Title').t`The file or folder failed to be downloaded`);
                 },
                 onProgress: (bytes) => {
                     setProgress((currentProgress) => {
@@ -105,9 +104,36 @@ const DownloadSharedContainer = () => {
                 })
                 .catch((error) => {
                     setTransferState(TransferStatePublic.Error);
+                    setError(c('Title').t`The file or folder failed to be downloaded`);
                     reportError(error);
                 })
         );
+    };
+
+    /**
+     * handleInitialLoadError processes error from initializing handshake
+     * or session. It provides custom message in case of not existing link,
+     * otherwise it uses the message from API. Any non-structured error is
+     * converted to general message about failure and is reported to Sentry.
+     */
+    const handleInitialLoadError = (error: any) => {
+        const apiError = getApiError(error);
+
+        setLinkInfo(null);
+
+        if (apiError.status === STATUS_CODE.NOT_FOUND || apiError.code === ERROR_CODE_INVALID_TOKEN) {
+            setError(c('Title').t`The link either does not exist or has expired`);
+            return;
+        }
+
+        // Any other message from API, for example "Volume is not available".
+        if (apiError.message) {
+            setError(apiError.message);
+            return;
+        }
+
+        setError(c('Title').t`The link failed to be loaded`);
+        reportError(error);
     };
 
     const submitPassword = async (customPassword: string) => {
@@ -115,38 +141,38 @@ const DownloadSharedContainer = () => {
         if (handshakeInfo && hasGeneratedPasswordIncluded(handshakeInfo)) {
             password = urlPassword + customPassword;
         }
-        const handshakeInfoNew = await publicSharing.initHandshake(token);
 
-        try {
-            await publicSharing.initSession(token, password, handshakeInfoNew);
-            setHandshakeInfo(handshakeInfoNew);
-            getShareURLInfo(token, password).catch(console.warn);
-        } catch (error) {
-            console.error(error);
-            const { code, status, message } = getApiError(error);
-            let errorText = message;
+        await publicSharing
+            .initHandshake(token)
+            .then(async (handshakeInfoNew) => {
+                return publicSharing
+                    .initSession(token, password, handshakeInfoNew)
+                    .then(() => {
+                        setHandshakeInfo(handshakeInfoNew);
+                        return getShareURLInfo(token, password);
+                    })
+                    .catch((error) => {
+                        const apiError = getApiError(error);
+                        if (apiError.code === ERROR_CODE_INVALID_SRP_PARAMS) {
+                            setPassword('');
+                            createNotification({
+                                type: 'error',
+                                text: c('Error').t`Incorrect password. Please try again.`,
+                            });
+                            return;
+                        }
 
-            if (code === ERROR_CODE_INVALID_SRP_PARAMS) {
-                setPassword('');
-                errorText = c('Error').t`Incorrect password. Please try again.`;
-            } else if (code === ERROR_CODE_COULD_NOT_IDENTIFY_TARGET || status === STATUS_CODE.NOT_FOUND) {
-                setNotFoundError(error as Error);
-                errorText = null;
-            }
-
-            if (errorText) {
-                createNotification({
-                    type: 'error',
-                    text: errorText,
-                });
-            }
-            setLinkInfo(null);
-        }
+                        throw error;
+                    });
+            })
+            .catch((error) => {
+                handleInitialLoadError(error);
+            });
     };
 
     useEffect(() => {
         if (token && !handshakeInfo) {
-            setNotFoundError(undefined);
+            setError(undefined);
         }
     }, [token, password, handshakeInfo]);
 
@@ -176,18 +202,7 @@ const DownloadSharedContainer = () => {
                     });
                 })
                 .catch((error) => {
-                    const apiError = getApiError(error);
-                    if (apiError.code === ERROR_CODE_INVALID_SRP_PARAMETER) {
-                        setWithCustomPassword(true);
-                        return;
-                    }
-
-                    if (apiError.code === 404 || apiError.code === ERROR_CODE_INVALID_TOKEN) {
-                        setNotFoundError(error as Error);
-                        return;
-                    }
-
-                    reportError(error);
+                    handleInitialLoadError(error);
                 })
         );
     }, []);
@@ -197,8 +212,8 @@ const DownloadSharedContainer = () => {
     }
 
     let content: ReactNode = null;
-    if (notFoundError || (!token && !password)) {
-        content = <LinkDoesNotExistInfo />;
+    if (error || (!token && !password)) {
+        content = <LinkError error={error || c('Title').t`The link does not exist`} />;
     } else if (linkInfo) {
         const transferProgressPercentage = calcTransferProgressPercentage(progress, transferSize);
 
