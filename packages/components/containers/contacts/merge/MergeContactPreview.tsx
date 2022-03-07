@@ -3,16 +3,18 @@ import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRe
 import { c } from 'ttag';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContact } from '@proton/shared/lib/api/contacts';
-import { prepareContact } from '@proton/shared/lib/contacts/decrypt';
+import { prepareContact, prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import noop from '@proton/utils/noop';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { ContactProperties, ContactMergeModel, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { merge } from '@proton/shared/lib/contacts/helpers/merge';
 
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { mergeVCard } from '@proton/shared/lib/contacts/vcard';
 import { useApi, useLoading, useEventManager, useAddresses, useContactGroups } from '../../../hooks';
 import { Loader, FormModal, PrimaryButton, Button } from '../../../components';
-import ContactView from '../ContactView';
+import ContactView from '../view/ContactView';
 import MergeErrorContent from './MergeErrorContent';
 import MergingModalContent from './MergingModalContent';
 import useContactList from '../useContactList';
@@ -40,6 +42,7 @@ const MergeContactPreview = ({ userKeysList, beMergedModel, beDeletedModel, upda
     const [mergeFinished, setMergeFinished] = useState(false);
     const [model, setModel] = useState<{
         mergedContact?: ContactProperties;
+        mergedVCardContact?: VCardContact;
         errorOnMerge?: boolean;
         errorOnLoad?: boolean;
     }>({});
@@ -65,15 +68,18 @@ const MergeContactPreview = ({ userKeysList, beMergedModel, beDeletedModel, upda
             try {
                 const requests = beMergedIDs.map((ID: string) => async () => {
                     const { Contact } = await api(getContact(ID));
-                    const { properties, errors } = await prepareContact(Contact, { privateKeys, publicKeys });
+                    const { properties } = await prepareContact(Contact, { privateKeys, publicKeys });
+                    const { vCardContact, errors } = await prepareVCardContact(Contact, { privateKeys, publicKeys });
                     if (errors.length) {
                         setModel({ ...model, errorOnLoad: true });
                         throw new Error('Error decrypting contact');
                     }
-                    return properties;
+                    return { properties, vCardContact };
                 });
                 const beMergedContacts = await processApiRequestsSafe(requests);
-                setModel({ ...model, mergedContact: merge(beMergedContacts) });
+                const mergedContact = merge(beMergedContacts.map(({ properties }) => properties));
+                const mergedVCardContact = mergeVCard(beMergedContacts.map(({ vCardContact }) => vCardContact));
+                setModel({ ...model, mergedContact, mergedVCardContact });
             } catch (e: any) {
                 setModel({ ...model, errorOnMerge: true });
             }
@@ -105,6 +111,7 @@ const MergeContactPreview = ({ userKeysList, beMergedModel, beDeletedModel, upda
 
                 return (
                     <ContactView
+                        vCardContact={model.mergedVCardContact as VCardContact}
                         contactID=""
                         properties={model.mergedContact as ContactProperties}
                         contactEmails={contactEmails}
@@ -113,7 +120,6 @@ const MergeContactPreview = ({ userKeysList, beMergedModel, beDeletedModel, upda
                         userKeysList={userKeysList}
                         onDelete={noop}
                         onReload={noop}
-                        isModal
                         isPreview
                     />
                 );
