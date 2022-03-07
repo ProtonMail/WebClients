@@ -8,6 +8,7 @@ export interface ModalPropsInjection {
     key: string;
     onClose: () => void;
     onExit: () => void;
+    open: boolean;
     isClosing: Modal['isClosing'];
 }
 
@@ -38,6 +39,7 @@ const ModalsContainer = ({ modals, removeModal, hideModal }: Props) => (
             const props: ModalPropsInjection = {
                 onClose: handleModalClose,
                 onExit: handleModalExit,
+                open: !isClosing,
                 isClosing,
                 key: id,
             };
