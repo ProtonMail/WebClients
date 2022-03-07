@@ -14,6 +14,7 @@ import { loadModels } from '@proton/shared/lib/models/helper';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { setupCalendarKeys } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
 import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
+import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 
 interface Props {
     onDone: () => void;
@@ -33,13 +34,14 @@ const CalendarSetupContainer = ({ onDone, calendars }: Props) => {
     useEffect(() => {
         const run = async () => {
             const addresses = await getAddresses();
+            const { ID: addressID } = getPrimaryAddress(addresses);
 
             if (calendars) {
                 await setupCalendarKeys({
                     api: silentApi,
                     calendars,
                     getAddressKeys,
-                    addresses,
+                    addressID,
                 });
             } else {
                 await setupCalendarHelper({

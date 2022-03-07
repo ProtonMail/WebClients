@@ -49,7 +49,7 @@ const setupCalendarHelper = async ({ addresses, api, getAddressKeys }: Args) => 
         setupCalendarKey({
             api,
             calendarID: Calendar.ID,
-            addresses: activeAddresses,
+            addressID,
             getAddressKeys,
         }),
     ]);
