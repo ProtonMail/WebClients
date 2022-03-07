@@ -38,6 +38,7 @@ const Dialog = ({
     children,
     className: extraClassNames = '',
     disableCloseOnOnEscape,
+    open, // To prevent it being passed in rest
     ...rest
 }) => {
     const rootRef = useRef(null);
@@ -113,6 +114,7 @@ const Dialog = ({
 
 Dialog.propTypes = {
     onEnter: PropTypes.func,
+    open: PropTypes.bool,
     onExit: PropTypes.func.isRequired,
     onClose: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
