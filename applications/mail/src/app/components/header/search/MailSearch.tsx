@@ -125,7 +125,6 @@ const MailSearch = ({ breakpoints }: Props) => {
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={close}
-                className="advanced-search-dropdown"
             >
                 <AdvancedSearch
                     isNarrow={breakpoints.isNarrow}
