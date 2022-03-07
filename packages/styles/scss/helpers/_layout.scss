@@ -118,7 +118,8 @@
 }
 
 .hidden,
-[hidden] {
+[hidden],
+.hidden-empty:empty {
 	display: none;
 }
 

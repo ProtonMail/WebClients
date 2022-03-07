@@ -27,6 +27,25 @@ import { getTitle } from '../../helpers/title';
 
 <div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
   <div class="w49 flex-align-self-center">
+    Applies a <code>display: none</code> to an element only when it triggers <code>:empty</code>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span hidden>Lorem ipsum dolor</span>
+<span className="hidden-empty">Lorem ipsum dolor</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
     Applies a <code>visibility: hidden</code> to element (keeps space used but hides it).
   </div>
   <div class="w49">
