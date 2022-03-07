@@ -36,7 +36,6 @@ interface Props {
     columnLayout: boolean;
     isComposerOpened: boolean;
     containerRef: React.RefObject<HTMLElement>;
-    highlightKeywords?: boolean;
 }
 
 const DEFAULT_FILTER_VALUE = true;
@@ -53,7 +52,6 @@ const ConversationView = ({
     columnLayout,
     isComposerOpened,
     containerRef,
-    highlightKeywords = false,
 }: Props) => {
     const { isSearchResult } = useEncryptedSearchContext();
     const [labels = []] = useLabels();
@@ -145,7 +143,6 @@ const ConversationView = ({
                 className={classnames([hidden && 'hidden'])}
                 loading={loadingConversation}
                 element={conversation}
-                highlightKeywords={highlightKeywords}
                 hasScrollShadow={hasScrollShadow}
             />
             <Scroll setHasScrollShadow={setHasScrollShadow} customContainerRef={containerRef}>
@@ -184,7 +181,6 @@ const ConversationView = ({
                                 isComposerOpened={isComposerOpened}
                                 containerRef={containerRef}
                                 wrapperRef={wrapperRef}
-                                highlightKeywords={highlightKeywords}
                             />
                         ))}
                     </div>

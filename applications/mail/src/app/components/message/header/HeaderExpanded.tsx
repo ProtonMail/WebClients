@@ -49,7 +49,6 @@ import ItemSpyTrackerIcon from '../../list/spy-tracker/ItemSpyTrackerIcon';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import MailRecipients from '../recipients/MailRecipients';
 import RecipientType from '../recipients/RecipientType';
-import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 
 interface Props {
@@ -73,7 +72,6 @@ interface Props {
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
     filterDropdownToggleRef: React.MutableRefObject<() => void>;
-    highlightKeywords?: boolean;
     parentMessageRef: React.RefObject<HTMLElement>;
 }
 
@@ -98,10 +96,8 @@ const HeaderExpanded = ({
     labelDropdownToggleRef,
     moveDropdownToggleRef,
     filterDropdownToggleRef,
-    highlightKeywords = false,
     parentMessageRef,
 }: Props) => {
-    const { highlightMetadata } = useEncryptedSearchContext();
     const [addresses = []] = useAddresses();
     const [folders = []] = useFolders();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
@@ -169,8 +165,6 @@ const HeaderExpanded = ({
             signingPublicKey={showPinPublicKey ? message.verification?.signingPublicKey : undefined}
             attachedPublicKey={showPinPublicKey ? message.verification?.attachedPublicKeys?.[0] : undefined}
             isNarrow={isNarrow}
-            highlightKeywords={highlightKeywords}
-            highlightMetadata={highlightMetadata}
         />
     );
 
@@ -311,8 +305,6 @@ const HeaderExpanded = ({
                     recipientsOrGroup={recipientsOrGroup}
                     mapStatusIcons={messageViewIcons.mapStatusIcon}
                     isLoading={!messageLoaded}
-                    highlightKeywords={highlightKeywords}
-                    highlightMetadata={highlightMetadata}
                     expanded={showDetails}
                     toggleDetails={toggleDetails}
                 />

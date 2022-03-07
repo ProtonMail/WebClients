@@ -1,7 +1,6 @@
 import { ReactNode, RefObject, useState } from 'react';
 import { generateUID, Dropdown, DropdownMenu } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { HighlightMetadata } from '@proton/encrypted-search';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import RecipientItemLayout from './RecipientItemLayout';
@@ -17,8 +16,6 @@ interface Props {
     showAddress?: boolean;
     showLockIcon?: boolean;
     isNarrow?: boolean;
-    highlightKeywords?: boolean;
-    highlightMetadata?: HighlightMetadata;
     showDropdown?: boolean;
     actualLabel?: string;
     customDropdownActions?: ReactNode;
@@ -37,8 +34,6 @@ const RecipientItemSingle = ({
     showAddress = true,
     showLockIcon = true,
     isNarrow,
-    highlightKeywords = false,
-    highlightMetadata,
     showDropdown,
     actualLabel,
     customDropdownActions,
@@ -81,8 +76,6 @@ const RecipientItemSingle = ({
             }
             canDisplayName={canDisplayName}
             isNarrow={isNarrow}
-            highlightKeywords={highlightKeywords}
-            highlightMetadata={highlightMetadata}
             showDropdown={showDropdown}
             dropdrownAnchorRef={anchorRef}
             dropdownToggle={toggle}
