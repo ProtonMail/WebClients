@@ -181,7 +181,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
                     groupedAttendees[TENTATIVE].length +
                     groupedAttendees[DECLINED].length +
                     groupedAttendees.other.length),
-            text: c('Event reply').t`unanswered`,
+            text: c('Event reply').t`pending`,
         },
     };
 

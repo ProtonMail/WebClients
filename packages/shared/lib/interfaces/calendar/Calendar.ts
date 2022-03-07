@@ -40,9 +40,10 @@ export interface CalendarUserSettings {
     AutoDetectPrimaryTimezone: number;
     PrimaryTimezone: string;
     DisplaySecondaryTimezone: number;
-    SecondaryTimezone?: string;
+    SecondaryTimezone: Nullable<string>;
     ViewPreference: SETTINGS_VIEW;
     InviteLocale: Nullable<string>;
+    AutoImportInvite: number;
 }
 
 export interface CalendarNotificationSettings {
