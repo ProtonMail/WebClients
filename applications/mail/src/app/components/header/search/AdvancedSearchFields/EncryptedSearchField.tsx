@@ -168,7 +168,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
     };
 
     return (
-        <div className="pt1-5">
+        <div className="pt0">
             <div className="flex flex-column">
                 <div className="flex flex-nowrap mb0-5 flex-align-items-center">
                     {esHeader}

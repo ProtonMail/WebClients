@@ -14,6 +14,8 @@ import {
     SelectTwo,
     Option,
     useAddresses,
+    Icon,
+    classnames
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -185,8 +187,8 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
     const showAdvancedSearch = !showEncryptedSearch || showMore;
 
     return (
-        <form name="advanced-search" className="pl1-5 pr1-5 pt1 pb1" onSubmit={handleSubmit} onReset={handleReset}>
-            <div className="flex">
+        <form name="advanced-search" onSubmit={handleSubmit} onReset={handleReset}>
+            <div className="flex border-bottom pl1 pr1 pt0-25 pb0-5">
                 <SearchField
                     value={model.keyword}
                     onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
@@ -194,137 +196,155 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
                     showEncryptedSearch={showEncryptedSearch}
                 />
                 {isSearch ? (
-                    <Button disabled={!Object.keys(model).length} type="reset">
-                        {c('Action').t`Clear`}
-                    </Button>
+                    <>
+                        <Button
+                            shape="ghost"
+                            color="weak"
+                            className="flex"
+                            disabled={!Object.keys(model).length}
+                            type="reset">
+                                {c('Action').t`Clear`}
+                        </Button>
+                        <Button
+                            type="button"
+                            icon
+                            shape="ghost"
+                            color="weak"
+                            className="flex flex-align-items-center"
+                            title={c('Action').t`Close ??????????`}
+                        >
+                            <Icon name="xmark" alt={c('Action').t`Close ??????????????`} />
+                        </Button>
+                    </>
                 ) : null}
             </div>
-            {showEncryptedSearch && (
-                <EncryptedSearchField esState={esState} showMore={showMore} toggleShowMore={toggleShowMore} />
-            )}
-            <div className="mb0-5">
-                <LocationField
-                    value={model.labelID}
-                    onChange={(nextLabelId) => updateModel({ ...model, labelID: nextLabelId })}
-                />
+            <div className={classnames(['pt1 px1-5', showAdvancedSearch ? 'pb0' : 'pb1'])}>
+                {showEncryptedSearch && false && (
+                    <EncryptedSearchField esState={esState} showMore={showMore} toggleShowMore={toggleShowMore} />
+                )}
+                <div className="mb0-5">
+                    <LocationField
+                        value={model.labelID}
+                        onChange={(nextLabelId) => updateModel({ ...model, labelID: nextLabelId })}
+                    />
+                </div>
+                {showAdvancedSearch && (
+                    <>
+                        <div className="mb0-5 flex flex-justify-space-between on-mobile-flex-column">
+                            <div className="pr1 on-mobile-pr0 flex-item-fluid">
+                                <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
+                                    .t`From`}</Label>
+                                <DateInput
+                                    placeholder={c('Placeholder').t`Start date`}
+                                    id="begin-date"
+                                    value={model.begin}
+                                    onChange={async (begin) => {
+                                        if (begin) {
+                                            let oldestTime = -1;
+                                            if (wasIndexingDone(user.ID) && isDBLimited) {
+                                                oldestTime = await getOldestTimeMail(user.ID, 1000);
+                                            }
+                                            if (oldestTime !== -1 && isBefore(begin, oldestTime)) {
+                                                return;
+                                            }
+                                        }
+                                        if (!model.end || isBefore(begin || -Infinity, model.end)) {
+                                            updateModel({ ...model, begin });
+                                        }
+                                    }}
+                                />
+                            </div>
+                            <div className="flex-item-fluid">
+                                <Label className="advanced-search-label text-semibold" htmlFor="end-date">{c('Label')
+                                    .t`To`}</Label>
+                                <DateInput
+                                    placeholder={c('Placeholder').t`End date`}
+                                    id="end-date"
+                                    value={model.end}
+                                    onChange={(end) =>
+                                        (!model.begin || isAfter(end || Infinity, model.begin)) &&
+                                        updateModel({ ...model, end })
+                                    }
+                                />
+                            </div>
+                        </div>
+                        <div className="mb0-5">
+                            <Label
+                                title={c('Label').t`Sender`}
+                                className="advanced-search-label text-semibold"
+                                htmlFor="from"
+                            >{c('Label').t`Sender`}</Label>
+                            <AddressesInput
+                                id="from"
+                                recipients={model.from}
+                                onChange={(from) => updateModel({ ...model, from })}
+                                placeholder={c('Placeholder').t`Name or email address`}
+                            />
+                        </div>
+                        <div className="mb0-5">
+                            <Label
+                                title={c('Label').t`Recipient`}
+                                className="advanced-search-label text-semibold"
+                                htmlFor="to"
+                            >{c('Label').t`Recipient`}</Label>
+                            <AddressesInput
+                                id="to"
+                                recipients={model.to}
+                                onChange={(to) => updateModel({ ...model, to })}
+                                placeholder={c('Placeholder').t`Name or email address`}
+                            />
+                        </div>
+                        <div className="mb0-5">
+                            <Label
+                                title={c('Label').t`Address`}
+                                className="advanced-search-label text-semibold"
+                                htmlFor="address"
+                            >{c('Label').t`Address`}</Label>
+                            <SelectTwo
+                                id="address"
+                                value={model.address}
+                                onChange={({ value }) => updateModel({ ...model, address: value })}
+                            >
+                                {[{ ID: ALL_ADDRESSES, Email: c('Option').t`All` }, ...addresses].map(({ ID, Email }) => (
+                                    <Option key={ID} value={ID} title={Email} />
+                                ))}
+                            </SelectTwo>
+                        </div>
+                        <div className="mb1-5">
+                            <Label
+                                className="advanced-search-label text-semibold"
+                                id="advanced-search-attachments-label"
+                            >{c('Label').t`Attachments`}</Label>
+                            <div className="pt0-5">
+                                <Radio
+                                    id="advanced-search-attachments-all"
+                                    onChange={() => updateModel({ ...model, attachments: UNDEFINED })}
+                                    checked={model.attachments === UNDEFINED}
+                                    name="advanced-search-attachments"
+                                    aria-describedby="advanced-search-attachments-label"
+                                    className="inline-flex mr1"
+                                >{c('Attachment radio advanced search').t`All`}</Radio>
+                                <Radio
+                                    id="advanced-search-attachments-yes"
+                                    onChange={() => updateModel({ ...model, attachments: WITH_ATTACHMENTS })}
+                                    checked={model.attachments === WITH_ATTACHMENTS}
+                                    name="advanced-search-attachments"
+                                    aria-describedby="advanced-search-attachments-label"
+                                    className="inline-flex mr1"
+                                >{c('Attachment radio advanced search').t`With`}</Radio>
+                                <Radio
+                                    id="advanced-search-attachments-no"
+                                    onChange={() => updateModel({ ...model, attachments: NO_ATTACHMENTS })}
+                                    checked={model.attachments === NO_ATTACHMENTS}
+                                    name="advanced-search-attachments"
+                                    aria-describedby="advanced-search-attachments-label"
+                                >{c('Attachment radio advanced search').t`Without`}</Radio>
+                            </div>
+                        </div>
+                    </>
+                )}
             </div>
-            {showAdvancedSearch && (
-                <>
-                    <div className="mb0-5 flex flex-justify-space-between on-mobile-flex-column">
-                        <div className="pr1 on-mobile-pr0 flex-item-fluid">
-                            <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
-                                .t`From`}</Label>
-                            <DateInput
-                                placeholder={c('Placeholder').t`Start date`}
-                                id="begin-date"
-                                value={model.begin}
-                                onChange={async (begin) => {
-                                    if (begin) {
-                                        let oldestTime = -1;
-                                        if (wasIndexingDone(user.ID) && isDBLimited) {
-                                            oldestTime = await getOldestTimeMail(user.ID, 1000);
-                                        }
-                                        if (oldestTime !== -1 && isBefore(begin, oldestTime)) {
-                                            return;
-                                        }
-                                    }
-                                    if (!model.end || isBefore(begin || -Infinity, model.end)) {
-                                        updateModel({ ...model, begin });
-                                    }
-                                }}
-                            />
-                        </div>
-                        <div className="flex-item-fluid">
-                            <Label className="advanced-search-label text-semibold" htmlFor="end-date">{c('Label')
-                                .t`To`}</Label>
-                            <DateInput
-                                placeholder={c('Placeholder').t`End date`}
-                                id="end-date"
-                                value={model.end}
-                                onChange={(end) =>
-                                    (!model.begin || isAfter(end || Infinity, model.begin)) &&
-                                    updateModel({ ...model, end })
-                                }
-                            />
-                        </div>
-                    </div>
-                    <div className="mb0-5">
-                        <Label
-                            title={c('Label').t`Sender`}
-                            className="advanced-search-label text-semibold"
-                            htmlFor="from"
-                        >{c('Label').t`Sender`}</Label>
-                        <AddressesInput
-                            id="from"
-                            recipients={model.from}
-                            onChange={(from) => updateModel({ ...model, from })}
-                            placeholder={c('Placeholder').t`Name or email address`}
-                        />
-                    </div>
-                    <div className="mb0-5">
-                        <Label
-                            title={c('Label').t`Recipient`}
-                            className="advanced-search-label text-semibold"
-                            htmlFor="to"
-                        >{c('Label').t`Recipient`}</Label>
-                        <AddressesInput
-                            id="to"
-                            recipients={model.to}
-                            onChange={(to) => updateModel({ ...model, to })}
-                            placeholder={c('Placeholder').t`Name or email address`}
-                        />
-                    </div>
-                    <div className="mb0-5">
-                        <Label
-                            title={c('Label').t`Address`}
-                            className="advanced-search-label text-semibold"
-                            htmlFor="address"
-                        >{c('Label').t`Address`}</Label>
-                        <SelectTwo
-                            id="address"
-                            value={model.address}
-                            onChange={({ value }) => updateModel({ ...model, address: value })}
-                        >
-                            {[{ ID: ALL_ADDRESSES, Email: c('Option').t`All` }, ...addresses].map(({ ID, Email }) => (
-                                <Option key={ID} value={ID} title={Email} />
-                            ))}
-                        </SelectTwo>
-                    </div>
-                    <div className="mb1-5">
-                        <Label
-                            className="advanced-search-label text-semibold"
-                            id="advanced-search-attachments-label"
-                        >{c('Label').t`Attachments`}</Label>
-                        <div className="pt0-5">
-                            <Radio
-                                id="advanced-search-attachments-all"
-                                onChange={() => updateModel({ ...model, attachments: UNDEFINED })}
-                                checked={model.attachments === UNDEFINED}
-                                name="advanced-search-attachments"
-                                aria-describedby="advanced-search-attachments-label"
-                                className="inline-flex mr1"
-                            >{c('Attachment radio advanced search').t`All`}</Radio>
-                            <Radio
-                                id="advanced-search-attachments-yes"
-                                onChange={() => updateModel({ ...model, attachments: WITH_ATTACHMENTS })}
-                                checked={model.attachments === WITH_ATTACHMENTS}
-                                name="advanced-search-attachments"
-                                aria-describedby="advanced-search-attachments-label"
-                                className="inline-flex mr1"
-                            >{c('Attachment radio advanced search').t`With`}</Radio>
-                            <Radio
-                                id="advanced-search-attachments-no"
-                                onChange={() => updateModel({ ...model, attachments: NO_ATTACHMENTS })}
-                                checked={model.attachments === NO_ATTACHMENTS}
-                                name="advanced-search-attachments"
-                                aria-describedby="advanced-search-attachments-label"
-                            >{c('Attachment radio advanced search').t`Without`}</Radio>
-                        </div>
-                    </div>
-                </>
-            )}
-            <hr className="mt1" />
-            <div className="flex flex-justify-space-between">
+            <div className={classnames(['py1 px1-5 flex flex-justify-space-between', showAdvancedSearch ? '' : 'border-top bg-weak'])}>
                 {showAdvancedSearch ? null : (
                     <Button onClick={toggleShowMore} title={c('Action').t`Show more search options`}>
                         {c('Action').t`More search options`}
@@ -332,6 +352,7 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
                 )}
                 <PrimaryButton type="submit">{c('Action').t`Search`}</PrimaryButton>
             </div>
+
         </form>
     );
 };
