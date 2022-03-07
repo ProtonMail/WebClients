@@ -25,10 +25,17 @@ import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import { getESHelpers } from '../helpers/encryptedSearch/encryptedSearchMailHelpers';
 import { Event } from '../models/event';
 import { convertEventType } from '../helpers/encryptedSearch/esSync';
-import { defaultESMailStatus, indexKeyNames, primaryKeyName, storeName, indexName } from '../constants';
+import {
+    defaultESMailStatus,
+    indexKeyNames,
+    primaryKeyName,
+    storeName,
+    indexName,
+    defaultESContextMail,
+} from '../constants';
 import { parseSearchParams } from '../helpers/encryptedSearch/esUtils';
 
-const EncryptedSearchContext = createContext<EncryptedSearchFunctionsMail>(null as any);
+const EncryptedSearchContext = createContext<EncryptedSearchFunctionsMail>(defaultESContextMail);
 export const useEncryptedSearchContext = () => useContext(EncryptedSearchContext);
 
 interface Props {
