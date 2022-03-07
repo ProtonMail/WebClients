@@ -1,12 +1,11 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useCallback } from 'react';
-import { Alert, ConfirmModal, FeatureCode, useApi, useFeature, useModals } from '@proton/components';
-import { c, msgid } from 'ttag';
+import { FeatureCode, useApi, useFeature } from '@proton/components';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
     Download,
     formatDownload,
@@ -20,61 +19,7 @@ import { useGetAttachment } from './useAttachment';
 import { MessageKeys, MessageStateWithData, OutsideKey } from '../logic/messages/messagesTypes';
 import { useGetMessage } from './message/useMessage';
 import { getAttachmentCounts } from '../helpers/message/messages';
-
-const useShowConfirmModal = () => {
-    const { createModal } = useModals();
-
-    return useCallback(
-        (downloads: Download[]) =>
-            new Promise((resolve, reject) => {
-                const total = downloads.length;
-                const senderVerificationFailed = downloads.some(
-                    ({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_INVALID
-                );
-                const title = senderVerificationFailed
-                    ? c('Title').t`Verification error`
-                    : c('Title').t`Decryption error`;
-                const learnMore = senderVerificationFailed ? getKnowledgeBaseUrl('/digital-signature/') : undefined;
-                const warningContent = senderVerificationFailed
-                    ? c('Warning').ngettext(
-                          msgid`The attachment's signature failed verification.
-                        You can still download this attachment but it might have been tampered with.`,
-                          `Some of the attachments' signatures failed verification.
-                        You can still download these attachments but they might have been tampered with.`,
-                          total
-                      )
-                    : c('Error').ngettext(
-                          msgid`The attachment could not be decrypted.
-                        If you have the corresponding private key, you will still be able to decrypt
-                        the file with a program such as GnuPG.`,
-                          `Some of the attachments could not be decrypted.
-                        If you have the corresponding private key, you will still be able to decrypt
-                        the files with a program such as GnuPG.`,
-                          total
-                      );
-                createModal(
-                    <ConfirmModal
-                        onConfirm={() => resolve(undefined)}
-                        onClose={reject}
-                        title={title}
-                        confirm={c('Action').t`Download`}
-                    >
-                        <Alert className="mb1" type="warning" learnMore={learnMore}>
-                            {warningContent}
-                        </Alert>
-                        <Alert className="mb1">
-                            {c('Info').ngettext(
-                                msgid`Do you want to download this attachment anyway?`,
-                                `Do you want to download these attachments anyway?`,
-                                total
-                            )}
-                        </Alert>
-                    </ConfirmModal>
-                );
-            }),
-        []
-    );
-};
+import ConfirmDownloadAttachments from '../components/attachment/modals/ConfirmDownloadAttachments';
 
 /**
  * Returns the keys from the sender of the message version in cache
@@ -95,14 +40,14 @@ export const useDownload = () => {
     const api = useApi();
     const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
-    const showConfirmModal = useShowConfirmModal();
     const getMessageKeys = useSyncedMessageKeys();
+    const { modal: confirmDownloadModal, handleShowModal } = useModalTwo(ConfirmDownloadAttachments);
 
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
-    return useCallback(
+    const handleDownload = useCallback(
         async (message: MessageStateWithData, attachment: Attachment, outsideKey?: MessageKeys) => {
             let download;
             if (!outsideKey) {
@@ -127,7 +72,7 @@ export const useDownload = () => {
             }
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
-                await showConfirmModal([download]);
+                await handleShowModal({ downloads: [download] });
             }
 
             await generateDownload(download);
@@ -135,21 +80,23 @@ export const useDownload = () => {
         },
         [api]
     );
+
+    return { handleDownload, confirmDownloadModal };
 };
 
 export const useDownloadAll = () => {
     const api = useApi();
     const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
-    const showConfirmModal = useShowConfirmModal();
     const getMessageKeys = useSyncedMessageKeys();
     const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
+    const { modal: confirmDownloadModal, handleShowModal } = useModalTwo(ConfirmDownloadAttachments);
 
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
-    return useCallback(
+    const handleDownloadAll = useCallback(
         async (message: MessageStateWithData, outsideKey?: MessageKeys) => {
             const attachments = getAttachments(message.data);
             const { pureAttachments } = getAttachmentCounts(attachments, message.messageImages);
@@ -181,13 +128,15 @@ export const useDownloadAll = () => {
             );
 
             if (isError || senderVerificationFailed) {
-                await showConfirmModal(list);
+                await handleShowModal({ downloads: list });
             }
 
             await generateDownloadAll(message.data, list);
         },
         [api]
     );
+
+    return { handleDownloadAll, confirmDownloadModal };
 };
 
 export const usePreview = () => {
@@ -195,13 +144,13 @@ export const usePreview = () => {
     const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
     const getMessageKeys = useSyncedMessageKeys();
-    const showConfirmModal = useShowConfirmModal();
+    const { modal: confirmDownloadModal, handleShowModal } = useModalTwo(ConfirmDownloadAttachments);
 
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
-    return useCallback(
+    const handlePreview = useCallback(
         async (message: MessageStateWithData, attachment: Attachment, outsideKey?: OutsideKey) => {
             let download: Download;
 
@@ -221,7 +170,7 @@ export const usePreview = () => {
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 const handleError = async () => {
-                    await showConfirmModal([download]);
+                    await handleShowModal({ downloads: [download] });
                     await generateDownload(download);
                 };
 
@@ -232,4 +181,6 @@ export const usePreview = () => {
         },
         [api]
     );
+
+    return { handlePreview, confirmDownloadModal };
 };
