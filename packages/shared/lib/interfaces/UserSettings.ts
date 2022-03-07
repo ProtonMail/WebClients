@@ -1,3 +1,4 @@
+import { ChecklistId } from './Checklist';
 import { DENSITY } from '../constants';
 
 export enum SETTINGS_STATUS {
@@ -98,7 +99,7 @@ export interface UserSettings {
     Welcome: number;
     EarlyAccess: number;
     Flags: Flags;
-    Checklists?: string[];
+    Checklists?: ChecklistId[];
     Referral?: {
         /**
          * The referral link

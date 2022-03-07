@@ -1,4 +1,4 @@
-import { useCallback, memo, useContext } from 'react';
+import { useCallback, memo } from 'react';
 import { c } from 'ttag';
 import {
     Sidebar,
@@ -21,7 +21,7 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import MailGetStartedChecklistModal from '../checklist/GetStartedChecklistModal';
 import MailSidebarList from './MailSidebarList';
 import SidebarVersion from './SidebarVersion';
-import { GetStartedChecklistContext } from '../../containers/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from '../../containers/checklists';
 
 interface Props {
     labelID: string;
@@ -35,7 +35,7 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
     const [userSettings] = useUserSettings();
     const { createModal } = useModals();
     const { show, onDisplayed } = useSpotlightOnFeature(FeatureCode.SpotlightGetStartedChecklist);
-    const { dismissed: getStartedChecklistDismissed } = useContext(GetStartedChecklistContext);
+    const { dismissed: getStartedChecklistDismissed } = useGetStartedChecklist();
     const handleCompose = useCallback(() => {
         onCompose({ action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);

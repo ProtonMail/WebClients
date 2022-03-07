@@ -1,4 +1,4 @@
-import { ChangeEvent, Ref, memo, forwardRef, useContext } from 'react';
+import { ChangeEvent, Ref, memo, forwardRef } from 'react';
 import { c, msgid } from 'ttag';
 import {
     useLabels,
@@ -13,7 +13,7 @@ import {
     useUser,
     getCanReactiveMnemonic,
 } from '@proton/components';
-import { GetStartedChecklistKey, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { ChecklistKey, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { DENSITY } from '@proton/shared/lib/constants';
 
 import Item from './Item';
@@ -29,10 +29,11 @@ import ESSlowToolbar from './ESSlowToolbar';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import GetStartedChecklist from '../checklist/GetStartedChecklist';
+import PaidUserGetStartedChecklist from '../checklist/PaidUserGetStartedChecklist';
 import { isColumnMode } from '../../helpers/mailSettings';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { GetStartedChecklistContext } from '../../containers/GetStartedChecklistProvider';
+import { useGetStartedChecklist, usePaidUserChecklist } from '../../containers/checklists';
 import ModalImportEmails from '../checklist/ModalImportEmails';
 import ModalGetMobileApp from '../checklist/ModalGetMobileApp';
 import { ResizeHandle } from './ResizeHandle';
@@ -114,10 +115,12 @@ const List = (
     const [user] = useUser();
     const onCompose = useOnCompose();
     const { createModal } = useModals();
-    const [mnemonicPromptModal, setMnemonicPromptModalOpen] = useModalState();
+    const [mnemonicPromptModal, setMnemonicPromptModalOpen, render] = useModalState();
     const goToSettings = useSettingsLink();
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
-    const { dismissed: getStartedDismissed, handleDismiss } = useContext(GetStartedChecklistContext);
+    const { dismissed: isGetStartedChecklistDismissed, handleDismiss: dismissGetStartedChecklist } =
+        useGetStartedChecklist();
+    const { dismissed: isPaidUserChecklistDismissed, handleDismiss: dismissPaidUserChecklist } = usePaidUserChecklist();
     const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
     const { page, total } = pagingHandlers;
 
@@ -203,29 +206,58 @@ const List = (
                                 />
                             ))}
 
-                            {userSettings.Checklists?.includes('get-started') &&
-                                !loading &&
-                                !(total > 1) &&
-                                !getStartedDismissed && (
-                                    <>
-                                        <MnemonicPromptModal {...mnemonicPromptModal} />
-                                        <GetStartedChecklist
+                            {!loading && !(total > 1) && (
+                                <>
+                                    {render && <MnemonicPromptModal {...mnemonicPromptModal} />}
+                                    {userSettings.Checklists?.includes('get-started') &&
+                                        !isGetStartedChecklistDismissed && (
+                                            <GetStartedChecklist
+                                                limitedMaxWidth={!isColumnMode(mailSettings)}
+                                                onDismiss={dismissGetStartedChecklist}
+                                                onItemSelection={(key: ChecklistKey) => () => {
+                                                    switch (key) {
+                                                        case ChecklistKey.SendMessage: {
+                                                            onCompose({ action: MESSAGE_ACTIONS.NEW });
+                                                            break;
+                                                        }
+
+                                                        case ChecklistKey.MobileApp: {
+                                                            createModal(<ModalGetMobileApp />);
+                                                            break;
+                                                        }
+
+                                                        case ChecklistKey.RecoveryMethod: {
+                                                            if (displayMnemonicPrompt) {
+                                                                setMnemonicPromptModalOpen(true);
+                                                            } else {
+                                                                goToSettings('/recovery', undefined, true);
+                                                            }
+                                                            break;
+                                                        }
+
+                                                        case ChecklistKey.Import: {
+                                                            createModal(<ModalImportEmails />);
+                                                            break;
+                                                        }
+                                                    }
+                                                }}
+                                            />
+                                        )}
+                                    {userSettings.Checklists?.includes('paying-user') && !isPaidUserChecklistDismissed && (
+                                        <PaidUserGetStartedChecklist
                                             limitedMaxWidth={!isColumnMode(mailSettings)}
-                                            onDismiss={handleDismiss}
-                                            onItemSelection={(key: GetStartedChecklistKey) => () => {
-                                                /* eslint-disable default-case */
+                                            onDismiss={dismissPaidUserChecklist}
+                                            onItemSelection={(key: ChecklistKey) => () => {
                                                 switch (key) {
-                                                    case GetStartedChecklistKey.SendMessage: {
+                                                    case ChecklistKey.SendMessage: {
                                                         onCompose({ action: MESSAGE_ACTIONS.NEW });
                                                         break;
                                                     }
-
-                                                    case GetStartedChecklistKey.MobileApp: {
+                                                    case ChecklistKey.MobileApp: {
                                                         createModal(<ModalGetMobileApp />);
                                                         break;
                                                     }
-
-                                                    case GetStartedChecklistKey.RecoveryMethod: {
+                                                    case ChecklistKey.RecoveryMethod: {
                                                         if (displayMnemonicPrompt) {
                                                             setMnemonicPromptModalOpen(true);
                                                         } else {
@@ -233,16 +265,16 @@ const List = (
                                                         }
                                                         break;
                                                     }
-
-                                                    case GetStartedChecklistKey.Import: {
+                                                    case ChecklistKey.Import: {
                                                         createModal(<ModalImportEmails />);
                                                         break;
                                                     }
                                                 }
                                             }}
                                         />
-                                    </>
-                                )}
+                                    )}
+                                </>
+                            )}
 
                             {useLoadingElement && loadingElement}
 
