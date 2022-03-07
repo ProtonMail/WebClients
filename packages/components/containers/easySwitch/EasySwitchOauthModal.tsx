@@ -218,7 +218,7 @@ const EasySwitchOauthModal = ({
                 await setupCalendarKey({
                     api,
                     calendarID: Calendar.ID,
-                    addresses: activeAddresses,
+                    addressID,
                     getAddressKeys,
                 });
 

@@ -1,16 +1,15 @@
 import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/components/hooks';
-import { Address, Api } from '../../interfaces';
-import { Calendar, Member } from '../../interfaces/calendar';
-import { queryMembers, setupCalendar } from '../../api/calendars';
+import { Api } from '../../interfaces';
+import { Calendar } from '../../interfaces/calendar';
+import { setupCalendar } from '../../api/calendars';
 import { getPrimaryKey } from '../../keys';
-import { generateCalendarKeyPayload, getKeysMemberMap } from '../../keys/calendarKeys';
-import { getMemberAddressWithAdminPermissions } from '../getMemberWithAdmin';
+import { generateCalendarKeyPayload, isCalendarSetupData } from '../../keys/calendarKeys';
 
 interface SetupCalendarKeysArgumentsShared {
     api: Api;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
-    addresses: Address[];
+    addressID: string;
 }
 
 interface SetupCalendarKeyArguments extends SetupCalendarKeysArgumentsShared {
@@ -21,32 +20,30 @@ interface SetupCalendarKeysArguments extends SetupCalendarKeysArgumentsShared {
     calendars: Calendar[];
 }
 
-export const setupCalendarKey = async ({ calendarID, api, addresses, getAddressKeys }: SetupCalendarKeyArguments) => {
-    const { Members = [] } = await api<{ Members: Member[] }>(queryMembers(calendarID));
+export const setupCalendarKey = async ({ calendarID, api, addressID, getAddressKeys }: SetupCalendarKeyArguments) => {
+    const { privateKey, publicKey } = getPrimaryKey(await getAddressKeys(addressID)) || {};
 
-    const { Member: selfMember, Address: selfAddress } = getMemberAddressWithAdminPermissions(Members, addresses);
-    const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
-        getPrimaryKey(await getAddressKeys(selfAddress.ID)) || {};
-
-    if (!primaryAddressKey || !primaryAddressPublicKey) {
+    if (!privateKey || !publicKey) {
         throw new Error(c('Error').t`Primary address key is not decrypted`);
     }
 
     const calendarKeyPayload = await generateCalendarKeyPayload({
-        addressID: selfAddress.ID,
-        privateKey: primaryAddressKey,
-        memberPublicKeys: getKeysMemberMap(Members, {
-            [selfMember.Email]: primaryAddressPublicKey,
-        }),
+        addressID,
+        privateKey,
+        publicKey,
     });
+
+    if (!isCalendarSetupData(calendarKeyPayload)) {
+        throw new Error(c('Error').t`Missing key packet`);
+    }
 
     return api(setupCalendar(calendarID, calendarKeyPayload));
 };
 
-export const setupCalendarKeys = async ({ api, calendars, getAddressKeys, addresses }: SetupCalendarKeysArguments) => {
+export const setupCalendarKeys = async ({ api, calendars, getAddressKeys, addressID }: SetupCalendarKeysArguments) => {
     return Promise.all(
         calendars.map(async ({ ID: calendarID }) => {
-            return setupCalendarKey({ calendarID, api, getAddressKeys, addresses });
+            return setupCalendarKey({ calendarID, api, getAddressKeys, addressID });
         })
     );
 };
