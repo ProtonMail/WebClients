@@ -74,7 +74,7 @@ const SidebarItem = ({
     const [refreshing, withRefreshing] = useLoading(false);
 
     const applyLabel = useApplyLabels();
-    const moveToFolder = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal } = useMoveToFolder();
 
     const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
         ? LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
@@ -157,6 +157,7 @@ const SidebarItem = ({
                     {totalMessagesCounter}
                 </SidebarListItemContent>
             </SidebarListItemLink>
+            {moveScheduledModal}
         </SidebarListItem>
     );
 };

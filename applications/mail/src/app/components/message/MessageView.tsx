@@ -275,6 +275,7 @@ const MessageView = (
         labelDropdownToggleRef,
         moveDropdownToggleRef,
         filterDropdownToggleRef,
+        moveScheduledModal
     } = useMessageHotkeys(
         elementRef,
         {
@@ -365,6 +366,7 @@ const MessageView = (
                     breakpoints={breakpoints}
                 />
             )}
+            {moveScheduledModal}
         </article>
     );
 };
