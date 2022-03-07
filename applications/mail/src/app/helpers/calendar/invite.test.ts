@@ -323,14 +323,86 @@ END:VCALENDAR`;
         const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
         const message = { Time: Math.round(Date.now() / 1000) } as Message;
 
-        void expect(() =>
+        await expect(
             getSupportedEventInvitation({
                 vcalComponent: parsedInvitation,
                 message,
                 icsBinaryString: invitation,
                 icsFileName: 'test.ics',
             })
-        ).not.toThrow();
+        ).resolves.not.toThrow();
+    });
+
+    test('should not throw when receiving a VTIMEZONE without TZID', async () => {
+        const invitation = `BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+X-WR-TIMEZONE:Pacific/Niue
+BEGIN:VTIMEZONE
+X-LIC-LOCATION:Pacific/Niue
+BEGIN:STANDARD
+TZOFFSETFROM:-1100
+TZOFFSETTO:-1100
+TZNAME:-11
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART:20220403T153000Z
+DTEND:20220403T163000Z
+DTSTAMP:20220307T132207Z
+ORGANIZER;CN=calendarregression@gmail.com:mailto:calendarregression@gmail.c
+ om
+UID:0928j897bqah35i424dnvjdu3v12346465465@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=calendar-user-pentest1@protonmail.com;X-NUM-GUESTS=0:mailto:calenda
+ r-user-pentest1@protonmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=android@protonqa.xyz;X-NUM-GUESTS=0:mailto:android@protonqa.xyz
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE
+ ;CN=calendarregression@gmail.com;X-NUM-GUESTS=0:mailto:calendarregression@g
+ mail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=visionary@lysenko.proton.black;X-NUM-GUESTS=0:mailto:visionary@lyse
+ nko.proton.black
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=pro@lysenko.proton.black;X-NUM-GUESTS=0:mailto:pro@lysenko.proton.b
+ lack
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=plus@lysenko.proton.black;X-NUM-GUESTS=0:mailto:plus@lysenko.proton
+ .black
+X-GOOGLE-CONFERENCE:https://meet.google.com/aey-yjac-rfe
+X-MICROSOFT-CDO-OWNERAPPTID:-1984897430
+CREATED:20220307T132206Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\\nDo not edit this section of the description.\\n\\nT
+ his event has a video call.\\nJoin: https://meet.google.com/aey-yjac-rfe\\n\\n
+ View your event at https://calendar.google.com/calendar/event?action=VIEW&e
+ id=MDkyOGo4OTdicWFoMzVpNDI0ZG52amR1M3YgcHJvQGx5c2Vua28ucHJvdG9uLmJsYWNr&tok
+ =MjgjY2FsZW5kYXJyZWdyZXNzaW9uQGdtYWlsLmNvbWM0MmE4NGNmZDY5NTBlYzliNzdlY2Q1N2
+ ZiNDcwYWFmNjc1YWY5NDE&ctz=Europe%2FVilnius&hl=en_GB&es=1.\\n-::~:~::~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20220307T132206Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Pacific / Niue (3)
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR`;
+        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+        const message = { Time: Math.round(Date.now() / 1000) } as Message;
+
+        await expect(
+            getSupportedEventInvitation({
+                vcalComponent: parsedInvitation,
+                message,
+                icsBinaryString: invitation,
+                icsFileName: 'test.ics',
+            })
+        ).resolves.not.toThrow();
     });
 });
 

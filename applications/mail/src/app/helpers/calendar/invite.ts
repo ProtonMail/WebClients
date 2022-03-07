@@ -626,7 +626,8 @@ export const getSupportedEventInvitation = async ({
     }
     const hasXWrTimezone = !!xWrTimezone?.value;
     const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone.value) : undefined;
-    const invitationTzid = vtimezone?.tzid.value;
+    // At this stage, vtimezone did not undergo any surgery and might lack the RFC-mandatory TZID
+    const invitationTzid = vtimezone?.tzid?.value;
     const guessTzid = invitationTzid ? getSupportedTimezone(invitationTzid) : undefined;
     try {
         const supportedEvent = getSupportedEvent({
