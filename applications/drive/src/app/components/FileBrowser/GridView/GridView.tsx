@@ -105,16 +105,10 @@ function GridView<T extends SortField>({
     const containerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(containerRef, buffer);
     const totalItems = contents.length + (loading ? 1 : 0);
-    const {
-        secondaryActionActive,
-        isContextMenuOpen,
-        closeContextMenu,
-        contextMenuPosition,
-        handleContextMenu,
-        openContextMenu,
-    } = useFileBrowserView({
-        clearSelections,
-    });
+    const { isContextMenuOpen, closeContextMenu, contextMenuPosition, handleContextMenu, openContextMenu } =
+        useFileBrowserView({
+            clearSelections,
+        });
 
     const width = rect?.width ?? 0;
 
@@ -136,7 +130,6 @@ function GridView<T extends SortField>({
             onShiftClick,
             onClick: onItemClick,
             selectItem,
-            secondaryActionActive,
             dragMoveControls: getDragMoveControls?.(item),
             ItemContextMenu,
         }),
