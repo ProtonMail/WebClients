@@ -1,97 +1,116 @@
 /*
- * List of optional variables in the theme, that is
- * variables that always have a fallback defined
+ * List of optional variables
+ * An optional variable has always a defined fallback value
  */
 
 /* prettier-ignore */
 :root,
 .ui-standard,
 .ui-prominent {
-	--link-norm: var(--optional-link-norm, var(--interaction-norm));
-	--link-hover: var(--optional-link-hover, var(--interaction-norm-hover));
-	--link-active: var(--optional-link-active, var(--interaction-norm-active));
 
-	--selection-background-color: var(--optional-selection-background-color, var(--primary));
-	--selection-text-color: var(--optional-selection-text-color, var(--primary-contrast));
+	/*
+	 * Generate 'optional' css variables from
+	 * --variable-name: default-value
+	 *
+	 * Output
+	 * --variable-name: var(--optional-variable-name, default-value);
+	 *
+	 * Example
+	 * --link-norm: var(--optional-link-norm, var(--interaction-norm));
+	 */
 
-	--header-background-color: var(--optional-header-background-color, var(--background-norm));
-	--sidebar-background-color: var(--optional-sidebar-background-color, var(--background-norm));
+	@each $variable, $default in (
 
-	--navigation-current-item-marker-color: var(--optional-navigation-current-item-marker-color, var(--interaction-norm));
-	--navigation-current-item-background-color: var(--optional-navigation-current-item-background-color, var(--interaction-default-hover));
-	--navigation-current-item-text-color: var(--optional-navigation-current-item-text-color, var(--text-norm));
+		--link-norm  : var(--interaction-norm),
+		--link-hover : var(--interaction-norm-hover),
+		--link-active: var(--interaction-norm-active),
 
-	--main-box-shadow: var(--optional-main-box-shadow, none);
-	--main-border-color: var(--optional-main-border-color, var(--border-norm));
+		--selection-background-color: var(--primary),
+		--selection-text-color      : var(--primary-contrast),
 
-	--navigation-item-count-background-color: var(--optional-navigation-item-count-background-color, var(--primary));
-	--navigation-item-count-text-color: var(--optional-navigation-item-count-text-color, var(--primary-contrast));
+		--header-background-color : var(--background-norm),
+		--sidebar-background-color: var(--background-norm),
 
-	--toolbar-background-color: var(--optional-toolbar-background-color, var(--background-weak));
-	--toolbar-border-bottom-color: var(--optional-toolbar-border-bottom-color, var(--border-norm));
-	--toolbar-text-color: var(--optional-toolbar-text-color, var(--text-norm));
-	--toolbar-separator-color: var(--optional-toolbar-separator-color, var(--border-norm));
+		--navigation-current-item-marker-color    : var(--interaction-norm),
+		--navigation-current-item-background-color: var(--interaction-default-hover),
+		--navigation-current-item-text-color      : var(--text-norm),
 
-	--scrollbar-thumb-color: var(--optional-scrollbar-thumb-color, #{rgba(grey, 0.25)});
-	--scrollbar-thumb-hover-color: var(--optional-scrollbar-thumb-hover-color, #{rgba(grey, 0.5)});
+		--main-box-shadow  : none,
+		--main-border-color: var(--border-norm),
 
-	--tooltip-background-color: var(--optional-tooltip-background-color, black);
-	--tooltip-text-color: var(--optional-tooltip-text-color, white);
+		--navigation-item-count-background-color: var(--primary),
+		--navigation-item-count-text-color      : var(--primary-contrast),
 
-	--email-item-unread-background-color: var(--optional-email-item-unread-background-color, var(--background-norm));
-	--email-item-unread-text-color: var(--optional-email-item-unread-text-color, var(--text-norm));
-	--email-item-unread-icon-background-color: var(--optional-email-item-unread-icon-background-color, var(--background-strong));
-	--email-item-unread-icon-text-color: var(--optional-email-item-unread-icon-text-color, inherit);
+		--toolbar-background-color   : var(--background-weak),
+		--toolbar-border-bottom-color: var(--border-norm),
+		--toolbar-text-color         : var(--text-norm),
+		--toolbar-separator-color    : var(--border-norm),
 
-	--email-item-read-background-color: var(--optional-email-item-read-background-color, var(--background-norm));
-	--email-item-read-text-color: var(--optional-email-item-read-text-color, var(--text-weak));
-	--email-item-read-icon-background-color: var(--optional-email-item-read-icon-background-color, var(--background-strong));
-	--email-item-read-icon-text-color: var(--optional-email-item-read-icon-text-color, inherit);
+		--scrollbar-thumb-color      : rgba(grey, 0.25),
+		--scrollbar-thumb-hover-color: rgba(grey, 0.5),
 
-	--email-item-selected-background-color: var(--optional-email-item-selected-background-color, var(--interaction-norm));
-	--email-item-selected-text-color: var(--optional-email-item-selected-text-color, var(--interaction-norm-contrast));
-	--email-item-selected-icon-background-color: var(--optional-email-item-selected-icon-background-color, var(--interaction-norm-major-2));
-	--email-item-selected-icon-text-color: var(--optional-email-item-selected-icon-text-color, inherit);
+		--tooltip-background-color: black,
+		--tooltip-text-color      : white,
 
-	--email-item-focus-marker-color: var(--optional-email-item-focus-marker-color, var(--interaction-norm));
-	--email-item-selected-focus-marker-color: var(--optional-email-item-selected-focus-marker-color, var(--interaction-norm-major-2));
+		--email-item-unread-background-color     : var(--background-norm),
+		--email-item-unread-text-color           : var(--text-norm),
+		--email-item-unread-icon-background-color: var(--background-strong),
+		--email-item-unread-icon-text-color      : inherit,
 
-	--email-message-view-background-color: var(--optional-email-message-view-background-color, var(--background-norm));
+		--email-item-read-background-color     : var(--background-norm),
+		--email-item-read-text-color           : var(--text-weak),
+		--email-item-read-icon-background-color: var(--background-strong),
+		--email-item-read-icon-text-color      : inherit,
 
-	--email-message-view-opened-item-background-color: var(--optional-email-message-view-opened-item-background-color, var(--optional-email-message-view-background-color));
-	--email-message-view-opened-item-text-color: var(--optional-email-message-view-opened-item-text-color, var(--text-norm));
+		--email-message-view-opened-item-background-color: var(--optional-email-message-view-background-color),
+		--email-message-view-opened-item-text-color			 : var(--text-norm),
 
-	--field-background-color: var(--optional-field-background-color, var(--background-norm));
-	--field-text-color: var(--optional-field-text-color, var(--text-norm));
-	--field-placeholder-color: var(--optional-field-placeholder-color, var(--text-hint));
+		--email-item-selected-background-color     : var(--interaction-norm),
+		--email-item-selected-text-color           : var(--interaction-norm-contrast),
+		--email-item-selected-icon-background-color: var(--interaction-norm-major-2),
+		--email-item-selected-icon-text-color      : inherit,
 
-	--field-hover-background-color: var(--optional-field-hover-background-color, var(--background-norm));
-	--field-hover-text-color: var(--optional-field-hover-text-color, var(--text-norm));
+		--email-item-focus-marker-color         : var(--interaction-norm),
+		--email-item-selected-focus-marker-color: var(--interaction-norm-major-2),
 
-	--field-focus-background-color: var(--optional-field-focus-background-color, var(--background-norm));
-	--field-focus-text-color: var(--optional-field-focus-text-color, var(--text-norm));
+		--email-message-view-background-color: var(--background-norm),
 
-	--field-disabled-background-color: var(--optional-field-disabled-background-color, var(--background-norm));
-	--field-disabled-text-color: var(--optional-field-disabled-text-color, var(--text-disabled));
+		--field-background-color : var(--background-norm),
+		--field-text-color       : var(--text-norm),
+		--field-placeholder-color: var(--text-hint),
 
-	--select-background-color: var(--optional-select-background-color, var(--field-background-color));
+		--field-hover-background-color: var(--background-norm),
+		--field-hover-text-color      : var(--text-norm),
 
-	--favorite-icon-color: var(--optional-favorite-icon-color, orange);
+		--field-focus-background-color: var(--background-norm),
+		--field-focus-text-color      : var(--text-norm),
 
-	--mark-background-color: var(--optional-mark-background-color, yellow);
-	--mark-text-color: var(--optional-mark-text-color, black);
-	--mark-font-weight: var(--optional-mark-font-weight, normal);
+		--field-disabled-background-color: var(--background-norm),
+		--field-disabled-text-color      : var(--text-disabled),
 
-	--modal-background-color: var(--optional-modal-background-color, var(--background-norm));
-	--modal-text-color: var(--optional-modal-text-color, var(--text-norm));
+		--select-background-color: var(--field-background-color),
 
-	--file-preview-text-color: var(--optional-file-preview-text-color, var(--text-norm));
-	--file-preview-background-color: var(--optional-file-preview-background-color, var(--background-norm));
+		--favorite-icon-color: orange,
 
-	--border-radius: var(--optional-border-radius, 8);
+		--mark-background-color: yellow,
+		--mark-text-color      : black,
+		--mark-font-weight     : normal,
 
-	--logo-text-proton-color: var(--optional-logo-text-proton-color, var(--text-norm));
-	--logo-text-product-color: var(--optional-logo-text-product-color, var(--primary));
+		--modal-background-color: var(--background-norm),
+		--modal-text-color      : var(--text-norm),
 
-	--font-family: var(--optional-font-family, #{$font-family});
+		--file-preview-text-color      : var(--text-norm),
+		--file-preview-background-color: var(--background-norm),
+
+		--border-radius: 8,
+
+		--logo-text-proton-color : var(--text-norm),
+		--logo-text-product-color: var(--primary),
+
+		--font-family: $font-family,
+
+	) {
+		// --link-norm: var(--optional-link-norm, var(--interaction-norm));
+		#{$variable}: var(--optional-#{str-slice($variable, 3)}, #{$default});
+	}
 }
