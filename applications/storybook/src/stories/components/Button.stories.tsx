@@ -37,7 +37,7 @@ const colors: Required<ButtonProps>['color'][] = ['norm', 'weak', 'danger', 'war
 
 const sizes: Required<ButtonProps>['size'][] = ['small', 'medium', 'large'];
 
-const toggles = ['loading', 'pill', 'fullWidth', 'icon'] as const;
+const toggles = ['loading', 'pill', 'fullWidth', 'icon', 'disabled'] as const;
 
 const buttonContainerClassName = 'flex flex-item-fluid flex-align-items-center flex-justify-center border';
 
@@ -144,15 +144,17 @@ export const Variants = () => {
                     <TableRow key={shape}>
                         <TableCell>{shape}</TableCell>
                         {colors.map((color) => (
-                            <TableCell key={color} className="text-center">
-                                <Button shape={shape} color={color} className="mr0-5 mb0-5">
-                                    Lorem
-                                </Button>
-                                {shape !== 'underline' && (
-                                    <Button icon shape={shape} color={color} className="mb0-5">
-                                        <Icon name="brand-proton-mail" />
+                            <TableCell key={color}>
+                                <div className="flex flex-gap-0-5 flex-justify-center">
+                                    <Button shape={shape} color={color}>
+                                        Lorem
                                     </Button>
-                                )}
+                                    {shape !== 'underline' && (
+                                        <Button icon shape={shape} color={color}>
+                                            <Icon name="brand-proton-mail" />
+                                        </Button>
+                                    )}
+                                </div>
                             </TableCell>
                         ))}
                     </TableRow>
