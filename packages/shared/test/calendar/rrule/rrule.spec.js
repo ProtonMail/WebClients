@@ -349,6 +349,21 @@ describe('getIsRruleSupported', () => {
         expect(rrules.map((rrule) => getIsRruleSupported(rrule))).toEqual(vevents.map(() => true));
     });
 
+    it('should accept events with custom recurring rules for invitations that are not supported via import', () => {
+        const vevents = [
+            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;BYHOUR=9,11;BYMINUTE=30\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=WEEKLY;BYMONTH=1,2,3;BYHOUR=9\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=MONTHLY;BYMONTHDAY=8,9,10,-1\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;BYWEEKNO=50;BYMONTH=12\r\nEND:VEVENT`,
+        ];
+        const rrules = vevents.map((vevent) => {
+            const { rrule } = parse(vevent);
+            return rrule.value;
+        });
+        expect(rrules.map((rrule) => getIsRruleSupported(rrule))).toEqual(vevents.map(() => false));
+        expect(rrules.map((rrule) => getIsRruleSupported(rrule, true))).toEqual(vevents.map(() => true));
+    });
+
     it('should accept events with valid yearly recurring rules', () => {
         const vevents = [
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;UNTIL=20200330T150000Z;INTERVAL=1;BYMONTHDAY=30;BYMONTH=3\r\nEND:VEVENT`,
