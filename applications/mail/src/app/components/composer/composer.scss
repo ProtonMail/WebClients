@@ -1,5 +1,4 @@
 @import '~@proton/styles/scss/config';
-@import '~@proton/styles/scss/helpers/spacing';
 
 .composer {
 	position: absolute;
@@ -318,8 +317,7 @@
 	// overrides only in composer case
 	&-attachments-list {
 		background-color: var(--background-norm);
-		@extend .pl1-25;
-		@extend .pr1-5;
+		padding-inline: 1.25em 1.5em;
 
 		.message-attachmentList {
 			overflow: auto;
