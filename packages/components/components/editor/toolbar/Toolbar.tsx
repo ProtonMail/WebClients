@@ -16,14 +16,6 @@ import ToolbarColorsDropdown from './ToolbarColorsDropdown';
 import ToolbarAlignmentDropdown from './ToolbarAlignmentDropdown';
 import ToolbarMoreDropdown from './ToolbarMoreDropdown';
 
-interface ShowProps {
-    when: boolean;
-    children: React.ReactNode;
-}
-
-const ToolbarSeparator = () => <Vr />;
-const Show = ({ children, when }: ShowProps) => <>{when ? children : null}</>;
-
 interface ToolbarProps {
     config: ToolbarConfig | undefined;
     metadata: EditorMetadata;
@@ -51,31 +43,28 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
     }
 
     return (
-        <ButtonGroup className="rounded-xl editor-toolbar">
+        <ButtonGroup className="editor-toolbar overflow-hidden">
+            <ToolbarFontFaceDropdown
+                value={config.fontFace.value}
+                setValue={config.fontFace.setValue}
+                onClickDefault={config.defaultFont.showModal}
+                defaultValue={mailSettings?.FontFace || DEFAULT_FONT_FACE}
+                showDefaultFontSelector={metadata.supportDefaultFontSelector}
+            />
+            <ToolbarFontSizeDropdown
+                value={config.fontSize.value}
+                setValue={config.fontSize.setValue}
+                onClickDefault={config.defaultFont.showModal}
+                defaultValue={`${mailSettings?.FontSize || DEFAULT_FONT_SIZE}px`}
+                showDefaultFontSelector={metadata.supportDefaultFontSelector}
+            />
+            <ToolbarColorsDropdown
+                fontColor={config.fontColor.value}
+                setFontColor={config.fontColor.setValue}
+                bgColor={config.backgroundColor.value}
+                setBgColor={config.backgroundColor.setValue}
+            />
             <>
-                <ToolbarFontFaceDropdown
-                    value={config.fontFace.value}
-                    setValue={config.fontFace.setValue}
-                    onClickDefault={config.defaultFont.showModal}
-                    defaultValue={mailSettings?.FontFace || DEFAULT_FONT_FACE}
-                    showDefaultFontSelector={metadata.supportDefaultFontSelector}
-                />
-                <ToolbarSeparator />
-                <ToolbarFontSizeDropdown
-                    value={config.fontSize.value}
-                    setValue={config.fontSize.setValue}
-                    onClickDefault={config.defaultFont.showModal}
-                    defaultValue={`${mailSettings?.FontSize || DEFAULT_FONT_SIZE}px`}
-                    showDefaultFontSelector={metadata.supportDefaultFontSelector}
-                />
-                <ToolbarSeparator />
-                <ToolbarColorsDropdown
-                    fontColor={config.fontColor.value}
-                    setFontColor={config.fontColor.setValue}
-                    bgColor={config.backgroundColor.value}
-                    setBgColor={config.backgroundColor.setValue}
-                />
-                <ToolbarSeparator />
                 <ToolbarButton
                     onClick={config.bold.toggle}
                     aria-pressed={config.bold.isActive}
@@ -103,8 +92,9 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
                 >
                     <Icon name="underline" className="mauto" alt={c('Action').t`Underline`} />
                 </ToolbarButton>
-                <Show when={!isNarrow}>
-                    <ToolbarSeparator />
+            </>
+            {!isNarrow ? (
+                <>
                     <ToolbarButton
                         onClick={config.unorderedList.toggle}
                         aria-pressed={config.unorderedList.isActive}
@@ -123,9 +113,9 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
                     >
                         <Icon name="list-numbers" className="mauto on-rtl-mirror" alt={c('Action').t`Ordered list`} />
                     </ToolbarButton>
-                    <ToolbarSeparator />
+                    <Vr aria-hidden="true" />
                     <ToolbarAlignmentDropdown setAlignment={config.alignment.setValue} />
-                    <ToolbarSeparator />
+                    <Vr aria-hidden="true" />
                     <ToolbarButton
                         onClick={config.blockquote.toggle}
                         aria-pressed={config.blockquote.isActive}
@@ -153,7 +143,7 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
                     </ToolbarButton>
                     {metadata.supportImages && (
                         <>
-                            <ToolbarSeparator />
+                            <Vr aria-hidden="true" />
                             <ToolbarButton
                                 onClick={config.image.showModal}
                                 className="flex-item-noshrink"
@@ -164,16 +154,16 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
                             </ToolbarButton>
                         </>
                     )}
-                </Show>
-                {showMoreDropdown && (
-                    <ToolbarMoreDropdown
-                        config={config}
-                        metadata={metadata}
-                        onChangeMetadata={onChangeMetadata}
-                        isNarrow={isNarrow}
-                    />
-                )}
-            </>
+                </>
+            ) : null}
+            {showMoreDropdown && (
+                <ToolbarMoreDropdown
+                    config={config}
+                    metadata={metadata}
+                    onChangeMetadata={onChangeMetadata}
+                    isNarrow={isNarrow}
+                />
+            )}
         </ButtonGroup>
     );
 };
