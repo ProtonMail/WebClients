@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { Referral, ReferralState } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -23,13 +23,18 @@ const ActivityCell = ({ referral }: Props) => {
             break;
         case ReferralState.COMPLETED:
         case ReferralState.REWARDED:
-            const monthsSubscribed = referral.ReferredUserSubscriptionCycle || 0;
-            message =
-                monthsSubscribed === 1
-                    ? // translator : We are in a table cell. We inform user that a referred user has paid for a monthly plan
-                      c('Info').t`Paid for a monthly plan`
-                    : // translator : We are in a table cell. We inform user that a referred user has paid for 12months plan
-                      c('Info').t`Paid for a ${monthsSubscribed} months plan`;
+            const rewardMonths = referral.ReferredUserSubscriptionCycle || 0;
+
+            if (rewardMonths === 1) {
+                message = c('Info').t`Paid for a monthly plan`;
+            }
+
+            // translator : We are in a table cell. We inform user that a referred user has paid for a plan
+            message = c('Info').ngettext(
+                msgid`Paid for a ${rewardMonths} month plan`,
+                `Paid for a ${rewardMonths} months plan`,
+                rewardMonths
+            );
             break;
     }
 
