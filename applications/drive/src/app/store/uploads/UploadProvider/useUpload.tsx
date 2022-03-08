@@ -225,7 +225,7 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
     ]);
 
     return {
-        fileUploads: queue.fileUploads,
+        uploads: queue.allUploads,
         hasUploads: queue.hasUploads,
         uploadFiles,
         getProgresses: control.getProgresses,
