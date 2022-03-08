@@ -306,6 +306,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         const [vevent, parentVevent] = vevents;
         const result: Unwrap<ReturnType<FetchEventInvitation>> = {
             calendarData,
+            calendarEvent,
             singleEditData,
             supportedRecurrenceId,
         };
