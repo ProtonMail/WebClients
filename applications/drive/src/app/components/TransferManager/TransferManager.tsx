@@ -149,7 +149,7 @@ const TransferManager = ({
                 title: c('Title').t`Cancel all active transfers`,
                 confirm: c('Action').t`Confirm`,
                 message: c('Info').t`Closing transfer manager will cancel all active transfers, are you sure?`,
-                onConfirm: onClear,
+                onConfirm: async () => onClear(),
             });
         } else {
             onClear();
