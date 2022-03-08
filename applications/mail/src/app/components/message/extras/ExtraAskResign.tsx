@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
-import { Icon, Href, useModals, Alert, Button } from '@proton/components';
+import { useMemo, useState } from 'react';
+import { Icon, Href, Button, useModalState } from '@proton/components';
 import { c } from 'ttag';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -17,10 +17,15 @@ interface Props {
 const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props) => {
     const { senderVerified, senderPinnedKeys } = messageVerification || {};
     const { Address = '' } = message?.Sender || {};
-    const { createModal } = useModals();
     const contactsMap = useContactsMap();
 
+    const [contactID, setContactID] = useState<string>('');
+
+    const [contactResignModalProps, setContactResignModalOpen] = useModalState();
+
     const contactEmail = useMemo(() => getContactEmail(contactsMap, Address), [contactsMap, Address]);
+
+    const senderName = message?.Sender?.Name || ''; // No optional in translations
 
     if (senderVerified || !senderPinnedKeys?.length) {
         return null;
@@ -30,26 +35,10 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
         if (!contactEmail) {
             return;
         }
-        const contact = { contactID: contactEmail.ContactID };
-        const senderName = message?.Sender?.Name || ''; // No optional in translations
 
-        createModal(
-            <ContactResignModal
-                title={c('Title').t`Trust pinned keys?`}
-                submit={c('Action').t`Trust`}
-                onResign={onResignContact}
-                contacts={[contact]}
-            >
-                <Alert className="mb1" type="info">
-                    {c('Info')
-                        .t`When you enabled trusted keys for ${senderName}, the public keys were added to the contact details.`}
-                </Alert>
-                <Alert className="mb1" type="error">
-                    {c('Info')
-                        .t`There has been an error with the signature used to verify the contact details, which may be the result of a password reset.`}
-                </Alert>
-            </ContactResignModal>
-        );
+        setContactID(contactEmail.ContactID);
+
+        setContactResignModalOpen(true);
     };
 
     return (
@@ -73,6 +62,20 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
                     onClick={handleClick}
                 >{c('Action').t`Verify`}</Button>
             </span>
+
+            <ContactResignModal
+                title={c('Title').t`Trust pinned keys?`}
+                submit={c('Action').t`Trust`}
+                onResign={onResignContact}
+                contacts={[{ contactID }]}
+                {...contactResignModalProps}
+            >
+                {c('Info')
+                    .t`When you enabled trusted keys for ${senderName}, the public keys were added to the contact details.`}
+                <br />
+                {c('Info')
+                    .t`There has been an error with the signature used to verify the contact details, which may be the result of a password reset.`}
+            </ContactResignModal>
         </div>
     );
 };
