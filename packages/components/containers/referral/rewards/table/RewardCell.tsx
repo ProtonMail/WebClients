@@ -11,7 +11,6 @@ const RewardCell = ({ referral }: Props) => {
     const monthsRewarded = referral.RewardMonths || 0;
 
     switch (referral.State) {
-        case ReferralState.SIGNED_UP:
         case ReferralState.COMPLETED:
             /*
              * translator : We are in a table cell.
