@@ -22,6 +22,17 @@ interface Link {
     // which is then available in fileModifyTime of DecryptedLink.
     metaDataModifyTime: number;
     trashed: number | null;
+    // trashedByParent is set only by internal state in case when parent is
+    // trashed which needs to trash also all children as well.
+    // Child items need to be trashed so they do not pop up anywhere, for
+    // example on shared links page, but at the same time childs of trashed
+    // folders should not be listed in trash section to match API behaviour.
+    // Note there is also other solution: simply delete childs of trashed
+    // folder from the cache, as they should not be needed at all. That is
+    // correct, but restoring it quickly back (in case of a mistake) would
+    // lead to re-download the whole cache again, and there would be need
+    // to re-fetch shared links. So better to keep it around.
+    trashedByParent?: boolean;
     hasThumbnail: boolean;
     isShared: boolean;
     // Note that shareId is ID of the share, that is pointer of what is shared
