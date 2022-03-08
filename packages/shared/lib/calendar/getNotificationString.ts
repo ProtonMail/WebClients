@@ -1,7 +1,8 @@
-import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { c, msgid } from 'ttag';
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '@proton/shared/lib/calendar/constants';
-import { NotificationModel } from '@proton/shared/lib/interfaces/calendar';
+
+import { fromLocalDate, toUTCDate } from '../date/timezone';
+import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from './constants';
+import { NotificationModel } from '../interfaces/calendar';
 
 const getNotificationString = (notification: NotificationModel, formatTime: (date: Date) => string) => {
     const { value = 0, unit, when, at, isAllDay } = notification;
