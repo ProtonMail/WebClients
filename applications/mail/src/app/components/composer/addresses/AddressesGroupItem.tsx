@@ -58,7 +58,11 @@ const AddressesGroupItem = ({
     const contactsInGroup = groupsWithContactsMap[recipientGroup?.group?.ID || '']?.contacts || [];
     const label = getGroupLabel(recipientGroup);
 
-    const { handleRemove, askForKeyPinningModal } = useUpdateGroupSendInfo(messageSendInfo, contactsInGroup, onRemove);
+    const { handleRemove, askForKeyPinningModal, contactResignModal } = useUpdateGroupSendInfo(
+        messageSendInfo,
+        contactsInGroup,
+        onRemove
+    );
 
     const handleContextMenu = (event: MouseEvent) => {
         event.stopPropagation();
@@ -160,6 +164,7 @@ const AddressesGroupItem = ({
                 </DropdownMenu>
             </ContextMenu>
             {askForKeyPinningModal}
+            {contactResignModal}
         </>
     );
 };
