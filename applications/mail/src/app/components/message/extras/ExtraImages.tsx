@@ -102,7 +102,7 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings, call, isOutsid
                 <Icon name="image" className="mt0-5 flex-item-noshrink" />
                 <span className="pl0-5 pr0-5 flex flex-item-fluid mt0-25 flex-align-items-center">
                     <span className="mr0-5">{text}</span>
-                    {!isOutside && (
+                    {!isOutside && !couldLoadDirect && (
                         <InlineLinkButton className="text-left" color="norm" onClick={handleTurnAutoLoad}>
                             {c('Action').t`Turn on auto-load`}
                         </InlineLinkButton>
