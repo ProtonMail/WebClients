@@ -90,7 +90,9 @@ export function useLinksStateProvider() {
 
     const getTrashed = useCallback(
         (shareId: string): Link[] => {
-            return getAllShareLinks(shareId).filter((link) => !!link.encrypted.trashed);
+            return getAllShareLinks(shareId).filter(
+                (link) => !!link.encrypted.trashed && !link.encrypted.trashedByParent
+            );
         },
         [state]
     );
@@ -239,8 +241,10 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): 
 function recursivelyTrashChildren(state: LinksState, shareId: string, linkId: string, trashed: number) {
     recursivelyUpdateLinks(state, shareId, linkId, (link) => {
         link.encrypted.trashed ||= trashed;
+        link.encrypted.trashedByParent = true;
         if (link.decrypted) {
             link.decrypted.trashed ||= trashed;
+            link.decrypted.trashedByParent = true;
         }
     });
 }
@@ -257,8 +261,10 @@ function recursivelyRestoreChildren(state: LinksState, shareId: string, linkId: 
     recursivelyUpdateLinks(state, shareId, linkId, (link) => {
         if (link.encrypted.trashed === originalTrashed) {
             link.encrypted.trashed = null;
+            link.encrypted.trashedByParent = false;
             if (link.decrypted) {
                 link.decrypted.trashed = null;
+                link.decrypted.trashedByParent = false;
             }
         }
     });
