@@ -14,6 +14,7 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import { getSendStatusIcon } from '../helpers/message/icon';
@@ -58,6 +59,9 @@ export const useUpdateRecipientSendInfo = (
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const contactsMap = useContactsMap();
     const emailAddress = recipient.Address;
+
+    const { modal: askForKeyPinningModal, handleShowModal: handleShowAskForKeyPinningModal } =
+        useModalTwo(AskForKeyPinningModal);
 
     const handleRemove = () => {
         if (messageSendInfo) {
@@ -136,28 +140,24 @@ export const useUpdateRecipientSendInfo = (
             }
 
             if (sendPreferences.error?.type === PRIMARY_NOT_PINNED) {
-                await new Promise((resolve, reject) => {
-                    if (!recipient.ContactID) {
-                        return reject(new Error('Invalid contact id'));
-                    }
-                    const contacts = [
-                        {
-                            contactID: recipient.ContactID,
-                            emailAddress,
-                            isInternal: encryptionPreferences.isInternal,
-                            bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey,
-                        },
-                    ];
-                    createModal(
-                        <AskForKeyPinningModal
-                            contacts={contacts}
-                            onTrust={() => resolve(undefined)}
-                            onClose={reject}
-                            onNotTrust={handleRemove}
-                            onError={handleRemove}
-                        />
-                    );
+                if (!recipient.ContactID) {
+                    return;
+                }
+                const contacts = [
+                    {
+                        contactID: recipient.ContactID,
+                        emailAddress,
+                        isInternal: encryptionPreferences.isInternal,
+                        bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey,
+                    },
+                ];
+
+                await handleShowAskForKeyPinningModal({
+                    contacts,
+                    onNotTrust: handleRemove,
+                    onError: handleRemove,
                 });
+
                 return updateRecipientIcon();
             }
             const sendIcon = getSendStatusIcon(sendPreferences);
@@ -181,7 +181,7 @@ export const useUpdateRecipientSendInfo = (
         void updateRecipientIcon();
     }, [emailAddress, contactsMap]);
 
-    return { handleRemove };
+    return { handleRemove, askForKeyPinningModal };
 };
 
 interface LoadParams {
@@ -201,6 +201,9 @@ export const useUpdateGroupSendInfo = (
     const contactsMap = useContactsMap();
     const { createModal } = useModals();
     const emailsInGroup = contacts.map(({ Email }) => Email);
+
+    const { modal: askForKeyPinningModal, handleShowModal: handleShowAskForKeyPinningModal } =
+        useModalTwo(AskForKeyPinningModal);
 
     const handleRemove = () => {
         if (messageSendInfo) {
@@ -336,17 +339,12 @@ export const useUpdateGroupSendInfo = (
                 .filter(({ error: { type } }) => type === PRIMARY_NOT_PINNED)
                 .map(({ contact }) => contact);
             if (contactsKeyPinning.length) {
-                await new Promise((resolve) => {
-                    createModal(
-                        <AskForKeyPinningModal
-                            contacts={contactsKeyPinning}
-                            onTrust={() => resolve(undefined)}
-                            onClose={() => resolve(undefined)}
-                            onNotTrust={noop}
-                            onError={noop}
-                        />
-                    );
+                await handleShowAskForKeyPinningModal({
+                    contacts: contactsKeyPinning,
+                    onNotTrust: noop,
+                    onError: noop,
                 });
+
                 return loadSendIcons({ abortController, checkForError: false });
             }
         };
@@ -358,7 +356,7 @@ export const useUpdateGroupSendInfo = (
         };
     }, []);
 
-    return { handleRemove };
+    return { handleRemove, askForKeyPinningModal };
 };
 
 const getUpdatedSendInfo = async (
