@@ -1,5 +1,7 @@
+@use 'sass:math';
+
 $base-font-size: 14 !default; // if "14" then 1em = 14px
-$base-line-height: 1.5 !default;
+$base-line-height: math.div(20, $base-font-size) !default; // Design specs says 20px
 
 $title-sizes: (
 	h1: 36,

@@ -56,7 +56,7 @@ menu,
 td,
 th {
 	font-size: 1em;
-	line-height: $base-line-height;
+	line-height: inherit;
 	margin: $base-line-height * 1em 0;
 }
 
