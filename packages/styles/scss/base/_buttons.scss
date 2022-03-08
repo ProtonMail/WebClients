@@ -1,15 +1,13 @@
+@use 'sass:math';
+
 /*
  * Button shape
  */
 .button {
 	display: inline-block;
-	padding-block: em(7);
-	padding-inline: em(16);
-
-	// usage of box-shadow instead of border to enable increasing size of _visual_ border without shifting button size
-	box-shadow: inset 0 0 0 var(--button-default-border-width, 0) var(--button-default-border-color, transparent);
-
-	border: none;
+	padding-block: em(7); // 36 height
+	padding-inline: em(15);
+	border: 1px solid var(--button-default-border-color, transparent);
 	border-radius: var(--border-radius-md);
 	outline: none; // be careful of a11y
 	background-color: var(--button-default-background-color, transparent);
@@ -34,7 +32,7 @@
 	&:focus,
 	&:focus-within,
 	&.is-hover {
-		box-shadow: inset 0 0 0 var(--button-hover-border-width, 0) var(--button-hover-border-color, transparent);
+		border-color: var(--button-hover-border-color, transparent);
 		background-color: var(--button-hover-background-color, transparent);
 		color: var(--button-hover-text-color, inherit);
 		opacity: 1; // In case the button is invisible as default
@@ -47,7 +45,7 @@
 	// but in some cases that expanded container isn't so obviously visually connected to that button, so we use
 	// `aria-controls` to specify it, and avoid the `aria-expanded` style in the same time.
 	&[aria-expanded='true']:not([aria-controls]) {
-		box-shadow: inset 0 0 0 var(--button-active-border-width, 0) var(--button-active-border-color, transparent);
+		border-color: var(--button-active-border-color, transparent);
 		background-color: var(--button-active-background-color, transparent);
 		color: var(--button-active-text-color, inherit);
 		opacity: 1; // In case the button is invisible as default
@@ -56,9 +54,17 @@
 	&[disabled],
 	&.is-disabled {
 		pointer-events: none;
+		background-color: var(--button-hover-background-color, transparent);
 
 		&:not([aria-busy='true']) {
+			border-color: transparent;
+			background-color: var(--interaction-weak, transparent);
+			color: var(--text-weak, inherit);
 			opacity: 0.5;
+
+			&[class*='button-ghost'] {
+				background-color: var(--button-default-background-color, transparent);
+			}
 		}
 	}
 
@@ -109,6 +115,7 @@
 		pointer-events: none;
 
 		&:not([aria-busy='true']) {
+			color: var(--text-weak, inherit);
 			opacity: 0.5;
 		}
 	}
@@ -119,69 +126,31 @@
  */
 @each $color in (norm, weak, danger, warning, success, info) {
 	// Initialize namespace
-	$group: 'signal-';
-	@if $color == 'norm' or $color == 'weak' {
-		$group: 'interaction-';
-	}
+	$group: if($color == 'norm' or $color == 'weak', 'interaction', 'signal');
 
-	// Default colors definition
-	$textColor: var(--#{$group + $color});
-	$hoverTextColor: var(--#{$group + $color}-hover);
-	$activeTextColor: var(--#{$group + $color}-active);
-
-	@if $color == 'norm' {
-		$textColor: var(--interaction-norm-accent, var(--interaction-norm));
-		$hoverTextColor: var(--interaction-norm-accent-hover, var(--interaction-norm-hover));
-		$activeTextColor: var(--interaction-norm-accent-active, var(--interaction-norm-active));
-	}
-
-	@if $color == 'weak' {
-		$textColor: var(--text-norm);
-		$hoverTextColor: var(--text-norm);
-		$activeTextColor: var(--text-norm);
-	}
-
-	// Default shape
+	// Solid shape
 	.button-solid-#{$color} {
-		$solidDefaultTextColor: #{$textColor};
-		$solidHoverTextColor: #{$hoverTextColor};
-		$solidActiveTextColor: #{$activeTextColor};
+		$solidTextColor: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'contrast'))});
 
-		@if $color != 'weak' {
-			$solidDefaultTextColor: var(--#{$group + $color}-contrast);
-			$solidHoverTextColor: var(--#{$group + $color}-contrast);
-			$solidActiveTextColor: var(--#{$group + $color}-contrast);
-		}
-
-		--button-default-background-color: var(--#{$group + $color});
-		--button-hover-background-color: var(--#{$group + $color}-hover);
-		--button-active-background-color: var(--#{$group + $color}-active);
-		--button-default-text-color: #{$solidDefaultTextColor};
-		--button-hover-text-color: #{$solidHoverTextColor};
-		--button-active-text-color: #{$solidActiveTextColor};
+		--button-default-background-color: var(--#{dash-join($group, $color)});
+		--button-hover-background-color: var(--#{dash-join($group, $color, 'major-1')});
+		--button-active-background-color: var(--#{dash-join($group, $color, 'major-2')});
+		--button-default-text-color: #{$solidTextColor};
+		--button-hover-text-color: #{$solidTextColor};
+		--button-active-text-color: #{$solidTextColor};
 	}
 
 	// Outline shape
 	.button-outline-#{$color} {
-		$defaultBorderColor: var(--#{$group + $color});
-		$hoverBorderColor: var(--#{$group + $color}-hover);
-		$activeBorderColor: var(--#{$group + $color}-active);
-
-		@if $color == 'norm' {
-			$defaultBorderColor: var(--interaction-norm-accent, var(--interaction-norm));
-			$hoverBorderColor: var(--interaction-norm-accent-hover, var(--interaction-norm-hover));
-			$activeBorderColor: var(--interaction-norm-accent-active, var(--interaction-norm-active));
-		}
-
-		--button-default-border-width: 1px;
-		--button-hover-border-width: 2px;
-		--button-active-border-width: 2px;
-		--button-default-border-color: #{$defaultBorderColor};
-		--button-hover-border-color: #{$hoverBorderColor};
-		--button-active-border-color: #{$activeBorderColor};
-		--button-default-text-color: #{$textColor};
-		--button-hover-text-color: #{$hoverTextColor};
-		--button-active-text-color: #{$activeTextColor};
+		--button-default-background-color: var(--background-norm);
+		--button-hover-background-color: var(--#{dash-join($group, $color, 'minor-2')});
+		--button-active-background-color: var(--#{dash-join($group, $color, 'minor-1')});
+		--button-default-border-color: var(--#{dash-join($group, $color, 'major-1')});
+		--button-hover-border-color: var(--#{dash-join($group, $color, 'major-2')});
+		--button-active-border-color: var(--#{dash-join($group, $color, 'major-3')});
+		--button-default-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-1'))});
+		--button-hover-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-2'))});
+		--button-active-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-3'))});
 	}
 
 	// Ghost shape
@@ -189,16 +158,16 @@
 		--button-default-background-color: var(--interaction-default);
 		--button-hover-background-color: var(--interaction-default-hover);
 		--button-active-background-color: var(--interaction-default-active);
-		--button-default-text-color: #{$textColor};
-		--button-hover-text-color: #{$hoverTextColor};
-		--button-active-text-color: #{$activeTextColor};
+		--button-default-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-1'))});
+		--button-hover-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-2'))});
+		--button-active-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-3'))});
 	}
 
 	// Underline shape
 	.button-underline-#{$color} {
-		--button-default-text-color: #{$textColor};
-		--button-hover-text-color: #{$hoverTextColor};
-		--button-active-text-color: #{$activeTextColor};
+		--button-default-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-1'))});
+		--button-hover-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-2'))});
+		--button-active-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-3'))});
 	}
 }
 
@@ -207,38 +176,26 @@
  */
 
 .button-small {
-	padding-block: em(1) em(2); // 24px height
-	padding-inline: em(12);
-	border-radius: var(--border-radius-sm);
+	padding-block: em(3); // 28px height
+	padding-inline: em(11);
 }
 
 .button-large {
-	padding-block: em(9) em(10); // 40px height
-	padding-inline: em(20);
+	padding-block: em(9, 16); // 44px height
+	padding-inline: em(19, 16);
+	font-size: em(16);
+	line-height: #{math.div(24, 16)};
 }
 
 .button-for-icon {
-	padding-block: em(9.5); // To have same height as fields
-	padding-inline: em(10);
-
-	&.button-square {
-		padding-inline: em(9.5);
-	}
+	padding: em(9); // To have same height as fields
 
 	&.button-small {
-		padding-block: em(4);
-		padding-inline: em(6);
-		&.button-square {
-			padding-inline: em(4);
-		}
+		padding: em(5);
 	}
 
 	&.button-large {
-		padding-block: em(12);
-		padding-inline: em(14);
-		&.button-square {
-			padding-inline: em(12);
-		}
+		padding: em(13, 16);
 	}
 
 	& > svg {
@@ -253,12 +210,10 @@
 
 	&:not(.button-for-icon) {
 		&:not(.w100) {
-			&:not(.button-small, .button-large) {
-				padding-inline-end: em(40);
-			}
+			padding-inline-end: em(40);
 
 			&.button-small {
-				padding-inline-end: em(36);
+				padding-inline-end: em(32);
 			}
 
 			&.button-large {
@@ -266,12 +221,12 @@
 			}
 		}
 
-		&:not(.button-small, .button-large) .button-loader-container {
+		.button-loader-container {
 			inset-inline-end: em(16);
 		}
 
 		&.button-small .button-loader-container {
-			inset-inline-end: em(12);
+			inset-inline-end: em(10);
 		}
 
 		&.button-large .button-loader-container {
