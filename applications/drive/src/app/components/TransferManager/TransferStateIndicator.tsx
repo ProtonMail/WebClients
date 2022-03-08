@@ -41,7 +41,10 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             icon: 'clock',
         },
         [TransferState.Progress]: {
-            text: c('Info').t`${speed}/s`,
+            text:
+                type === TransferType.Upload && transfer.meta.mimeType === 'Folder'
+                    ? c('Info').t`Creating`
+                    : c('Info').t`${speed}/s`,
             icon: type === TransferType.Download ? 'arrow-down-to-rectangle' : 'arrow-up-from-rectangle',
         },
         [TransferState.Paused]: {

@@ -4,11 +4,11 @@ import * as React from 'react';
 import { TransferProgresses } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import { UploadConflictModal, UploadFileList } from '../interface';
-import { FileUpload, UpdateFilter } from './interface';
+import { FileUpload, FolderUpload, UpdateFilter } from './interface';
 import useUpload from './useUpload';
 
 interface UploadProviderState {
-    uploads: FileUpload[];
+    uploads: (FileUpload | FolderUpload)[];
     hasUploads: boolean;
     uploadFiles: (shareId: string, parentId: string, list: UploadFileList) => Promise<void>;
     pauseUploads: (idOrFilter: UpdateFilter) => void;
@@ -30,7 +30,7 @@ export const UploadProvider = ({
     children: React.ReactNode;
 }) => {
     const {
-        fileUploads,
+        uploads,
         hasUploads,
         uploadFiles,
         getProgresses,
@@ -45,7 +45,7 @@ export const UploadProvider = ({
     return (
         <UploadContext.Provider
             value={{
-                uploads: fileUploads,
+                uploads,
                 hasUploads,
                 uploadFiles,
                 pauseUploads,
