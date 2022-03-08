@@ -1,6 +1,6 @@
 :root,
 .ui-standard {
-	--primary: #2563EB;
+	--primary: #4630A6;
 	--primary-contrast: white;
 
 	--signal-danger: #DC3251;
@@ -11,45 +11,45 @@
 
 	--signal-info: #1D4ED8;
 
-	--interaction-norm: #2563EB;
+	--interaction-norm: #4630A6;
 
 	--interaction-weak: #D1D1D1;
 
-	--text-norm: #0C0C14;
-	--text-weak: #707070;
-	--text-hint: #8F8F8F;
-	--text-disabled: #9E9E9E;
+	--text-norm: #000000;
+	--text-weak: #4D4D4D;
+	--text-hint: #666666;
+	--text-disabled: #767676;
 	--text-invert: #1C1B24;
 
-	--field-norm: #707070;
-	--field-hover: #5C5C5C;
-	--field-disabled: #D1D1D1;
-	--field-focus: #2563EB;
-	--field-highlight: rgb(37 99 235 / 0.2);
+	--field-norm: #4D4D4D;
+	--field-hover: #333333;
+	--field-disabled: #B8B8B8;
+	--field-focus: #4630A6;
+	--field-highlight: rgb(70 48 166 / 0.2);
 
-	--border-norm: #D1D1D1;
-	--border-weak: #EAEAEA;
+	--border-norm: #A8A8A8;
+	--border-weak: #C2C2C2;
 
 	--background-norm: #FFFFFF;
 	--background-weak: #F5F5F5;
 	--background-strong: #E6E6E6;
 
 	--interaction-default: transparent;
-	--interaction-default-hover: rgb(194 194 194 / 0.2);
-	--interaction-default-active: rgb(194 194 194 / 0.4);
+	--interaction-default-hover: rgb(194 194 194 / 0.3);
+	--interaction-default-active: rgb(194 194 194 / 0.6);
 
 	--shadow-norm-opacity: 0.1;
 	--shadow-lifted-opacity: 0.16;
 
-	--backdrop-norm: rgb(38 42 51 / 0.48);
+	--backdrop-norm: rgb(0 0 0 / 0.32);
 
 	/* Optional colors */
 
-	--optional-scrollbar-thumb-color: #D1D1D1;
-	--optional-scrollbar-thumb-hover-color: #C2C2C2;
+	--optional-scrollbar-thumb-color: #C2C2C2;
+	--optional-scrollbar-thumb-hover-color: #A8A8A8;
 
 	--optional-email-item-read-background-color: var(--background-weak);
-	--optional-email-item-read-text-color: #525252;
+	--optional-email-item-read-text-color: var(--text-norm);
 
 	--optional-logo-text-proton-color: #1B1340;
 	--optional-logo-text-product-color: #6D4AFF;
