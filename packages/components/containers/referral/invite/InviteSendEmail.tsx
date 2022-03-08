@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import {
     AddressesAutocomplete,
@@ -66,12 +66,17 @@ const InviteSendEmail = () => {
 
         void withLoading(request).then((result) => {
             if (result?.Referrals && result?.Referrals.length) {
-                const isSingular = result.Referrals.length > 1;
                 createNotification({
-                    text: isSingular ? c('Info').t`Invite successfully sent` : c('Info').t`Invites successfully sent`,
+                    text: c('Info').ngettext(
+                        msgid`Invite successfully sent`,
+                        `Invites successfully sent`,
+                        result.Referrals.length
+                    ),
                 });
+
                 setInvitedReferrals(result.Referrals);
             }
+
             setRecipients([]);
         });
     };
