@@ -9,7 +9,6 @@ import {
     Button,
     PrimaryButton,
     Label,
-    useToggle,
     useUser,
     SelectTwo,
     Option,
@@ -92,28 +91,23 @@ interface Props {
     onClose: () => void;
     esState: ESIndexingState;
     isDBLimited: boolean;
+    showMore: boolean;
+    toggleShowMore: () => void;
 }
 
-const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBLimited }: Props) => {
+const AdvancedSearch = ({
+    isNarrow,
+    showEncryptedSearch,
+    onClose,
+    esState,
+    isDBLimited,
+    showMore,
+    toggleShowMore,
+}: Props) => {
     const history = useHistory();
-    // const [uid] = useState(generateUID('advanced-search-dropdown'));
-
-    // const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    // useClickMailContent((event) => {
-    //     if (anchorRef.current?.contains(event.target as Node)) {
-    //         // Click on the anchor will already close the dropdown, doing it twice will reopen it
-    //         return;
-    //     }
-    //     close();
-    // });
-
     const [addresses] = useAddresses();
     const [model, updateModel] = useState<SearchModel>(initializeModel(history));
-    const { state: showMore, toggle: toggleShowMore } = useToggle(false);
     const [user] = useUser();
-    // const { getESDBStatus, closeDropdown } = useEncryptedSearchContext();
-    // const { isDBLimited, dropdownOpened } = getESDBStatus();
-    // const esState = useEncryptedSearchToggleState(true);
 
     // Get right keyword value depending on the current situation
     const getKeyword = (keyword: string, reset?: boolean) => {
@@ -158,31 +152,6 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
         return !isDeepEqual(model, DEFAULT_MODEL);
     }, [model]);
 
-    // useEffect(() => {
-    //     updateModel(() => {
-    //         const { keyword, address, attachments, wildcard, from, to, begin, end } = extractSearchParameters(
-    //             history.location
-    //         );
-
-    //         console.log('extractSearchParameters', { keyword, address, attachments, wildcard, from, to, begin, end });
-
-    //         const { filter } = getSearchParams(history.location.search);
-
-    //         return {
-    //             ...DEFAULT_MODEL, // labelID re-initialized to ALL_MAIL
-    //             keyword: keyword || '',
-    //             address: address || ALL_ADDRESSES,
-    //             attachments,
-    //             wildcard,
-    //             from: getRecipients(from),
-    //             to: getRecipients(to),
-    //             begin: begin ? fromUnixTime(begin) : UNDEFINED,
-    //             end: end ? sub(fromUnixTime(end), { days: 1 }) : UNDEFINED,
-    //             filter,
-    //         };
-    //     });
-    // }, []);
-
     const showAdvancedSearch = !showEncryptedSearch || showMore;
 
     return (
@@ -206,11 +175,11 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
                     </Button>
                 ) : null}
             </div>
-            <div className={classnames(['pt1 px1-5', showAdvancedSearch ? 'pb0' : 'pb1'])}>
+            <div className={classnames(['pt1 px1-5 pb0'])}>
                 {showEncryptedSearch && (
                     <EncryptedSearchField esState={esState} showMore={showMore} toggleShowMore={toggleShowMore} />
                 )}
-                <div className="mb0-5">
+                <div className="pb0-5 border-bottom">
                     <LocationField
                         value={model.labelID}
                         onChange={(nextLabelId) => updateModel({ ...model, labelID: nextLabelId })}
@@ -218,6 +187,15 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
                 </div>
                 {showAdvancedSearch && (
                     <>
+                        <div className="mt1">
+                            <Button
+                                className="mb0-5 on-mobile-w100"
+                                onClick={toggleShowMore}
+                                title={c('Action').t`Show less search options`}
+                            >
+                                {c('Action').t`Less search options`}
+                            </Button>
+                        </div>
                         <div className="mb0-5 flex flex-justify-space-between on-mobile-flex-column">
                             <div className={classnames(['flex-item-fluid', isNarrow ? 'on-mobile-pr0' : 'pr1'])}>
                                 <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
@@ -300,7 +278,7 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
                                 )}
                             </SelectTwo>
                         </div>
-                        <div className="mb1-5">
+                        <div className="mb0-5">
                             <Label
                                 className="advanced-search-label text-semibold"
                                 id="advanced-search-attachments-label"
@@ -334,12 +312,7 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
                     </>
                 )}
             </div>
-            <div
-                className={classnames([
-                    'py1 mx1-5 flex flex-align-items-center flex-justify-space-between',
-                    showAdvancedSearch ? '' : 'border-top',
-                ])}
-            >
+            <div className={classnames(['py1 mx1-5 flex flex-align-items-center flex-justify-space-between'])}>
                 {showAdvancedSearch ? null : (
                     <Button
                         className="mb0-5 on-mobile-w100"
