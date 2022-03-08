@@ -4,13 +4,12 @@ import { c } from 'ttag';
 import {
     useLoading,
     PrimaryButton,
-    DialogModal,
-    HeaderModal,
-    ContentModal,
-    InnerModal,
-    FooterModal,
     Button,
     Alert,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwo,
 } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
@@ -20,6 +19,7 @@ import FolderTree from '../FolderTree/FolderTree';
 import { mapDecryptedLinksToChildren } from '../sections/helpers';
 import HasNoFilesToShare from './HasNoFilesToShare';
 import ModalContentLoader from '../ModalContentLoader';
+import { useModal } from '../../hooks/util/useModal';
 
 interface Props {
     shareId: string;
@@ -32,6 +32,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const [selectedFile, setSelectedFile] = useState<FileBrowserItem>();
     const { openLinkSharing } = useOpenModal();
+    const { isOpen, onClose: handleClose } = useModal(onClose);
 
     const onSelect = async (link: DecryptedLink) => {
         if (!loading) {
@@ -46,7 +47,6 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
         }
     };
 
-    const modalTitleID = 'SelectFileToShareId';
     const shareIsDisabled = !selectedFile || !selectedFile.ParentLinkID;
 
     let modalContents = {
@@ -63,16 +63,14 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
             </>
         ),
         footer: (
-            <FooterModal>
-                <div className="flex flex-justify-space-between w100 flex-nowrap">
-                    <Button type="reset" className="w8e" disabled={loading} autoFocus>
-                        {c('Action').t`Cancel`}
-                    </Button>
-                    <PrimaryButton className="ml1 w8e" loading={loading} type="submit" disabled={shareIsDisabled}>
-                        {selectedFile?.SharedUrl ? c('Action').t`Manage link` : c('Action').t`Create link`}
-                    </PrimaryButton>
-                </div>
-            </FooterModal>
+            <ModalTwoFooter>
+                <Button type="reset" className="w8e" disabled={loading}>
+                    {c('Action').t`Cancel`}
+                </Button>
+                <PrimaryButton className="ml1 w8e" loading={loading} type="submit" disabled={shareIsDisabled}>
+                    {selectedFile?.SharedUrl ? c('Action').t`Manage link` : c('Action').t`Create link`}
+                </PrimaryButton>
+            </ModalTwoFooter>
         ) as ReactNode,
     };
 
@@ -85,26 +83,28 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
     }
 
     return (
-        <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
-            <HeaderModal modalTitleID={modalTitleID} hasClose={!loading} onClose={onClose}>
-                {modalContents.title}
-            </HeaderModal>
+        <ModalTwo
+            open={isOpen}
+            onReset={handleClose}
+            onClose={handleClose}
+            onSubmit={(e: any) => {
+                e.preventDefault();
+                withLoading(handleSubmit()).catch(console.error);
+            }}
+            {...rest}
+            size="large"
+            as="form"
+        >
+            <ModalTwoHeader title={modalContents.title} disabled={loading} />
             {!rootFolder || !rootFolder.isLoaded ? (
                 <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
             ) : (
-                <ContentModal
-                    onSubmit={() => {
-                        withLoading(handleSubmit()).catch(console.error);
-                    }}
-                    onReset={() => {
-                        onClose?.();
-                    }}
-                >
-                    <InnerModal>{modalContents.content}</InnerModal>
+                <>
+                    <ModalTwoContent>{modalContents.content}</ModalTwoContent>
                     {modalContents.footer}
-                </ContentModal>
+                </>
             )}
-        </DialogModal>
+        </ModalTwo>
     );
 };
 

@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
-import { ConfirmModal, DropdownMenuButton, useModals, Tooltip } from '@proton/components';
+import { DropdownMenuButton, Tooltip } from '@proton/components';
 
 import { useSearchControl } from '../../../store';
+import useConfirm from '../../../hooks/util/useConfirm';
 
 export default function ClearSearchDataButton() {
-    const { createModal } = useModals();
+    const { openConfirmModal } = useConfirm();
     const { searchEnabled, hasData, deleteData } = useSearchControl();
 
     if (!hasData || !searchEnabled) {
@@ -13,17 +14,13 @@ export default function ClearSearchDataButton() {
     }
 
     const handleDeleteESIndex = () => {
-        createModal(
-            <ConfirmModal
-                onConfirm={deleteData}
-                title={c('Info').t`Clear encrypted search data`}
-                confirm={c('Info').t`Clear data`}
-                mode="alert"
-            >
-                {c('Info')
-                    .t`Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.`}
-            </ConfirmModal>
-        );
+        openConfirmModal({
+            onConfirm: deleteData,
+            title: c('Info').t`Clear encrypted search data`,
+            confirm: c('Info').t`Clear data`,
+            message: c('Info')
+                .t`Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.`,
+        });
     };
 
     return (

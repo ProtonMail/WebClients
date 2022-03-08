@@ -25,9 +25,13 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
      *
      */
     actions?: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element];
+    /**
+     * The `disabled` prop makes close button inactive
+     */
+    disabled?: boolean;
 }
 
-const ModalHeader = ({ title, subline, actions, ...rest }: ModalHeaderProps) => {
+const ModalHeader = ({ title, subline, actions, disabled = false, ...rest }: ModalHeaderProps) => {
     const { id, onClose, size } = useContext(ModalContext);
 
     const [firstAction, secondAction] = Array.isArray(actions) ? actions : [actions];
@@ -65,7 +69,7 @@ const ModalHeader = ({ title, subline, actions, ...rest }: ModalHeaderProps) => 
                 )}
 
                 <Tooltip title={c('Action').t`Close modal`}>
-                    <Button className="flex-item-noshrink" icon shape="ghost" onClick={onClose}>
+                    <Button className="flex-item-noshrink" icon shape="ghost" onClick={onClose} disabled={disabled}>
                         <Icon className="modal-close-icon" name="xmark" />
                     </Button>
                 </Tooltip>

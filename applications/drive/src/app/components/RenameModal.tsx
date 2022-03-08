@@ -1,13 +1,26 @@
-import { useState, ChangeEvent, FocusEvent } from 'react';
+import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { c } from 'ttag';
 
-import { FormModal, InputTwo, Row, Label, Field, useLoading } from '@proton/components';
+import {
+    InputTwo,
+    Row,
+    Label,
+    Field,
+    useLoading,
+    ModalTwo,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    Button,
+    PrimaryButton,
+} from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 
 import { useActions, validateLinkNameField, formatLinkName, splitLinkName } from '../store';
+import { useModal } from '../hooks/util/useModal';
 
 interface Props {
     shareId: string;
@@ -20,6 +33,7 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
     const [name, setName] = useState(item.Name);
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);
+    const { isOpen, onClose: handleClose } = useModal(onClose);
 
     const selectNamePart = (e: FocusEvent<HTMLInputElement>) => {
         if (autofocusDone) {
@@ -41,45 +55,61 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
         setName(target.value);
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
         const formattedName = formatLinkName(name);
         setName(formattedName);
 
         await renameLink(new AbortController().signal, shareId, item.LinkID, formattedName);
-        onClose?.();
+        handleClose?.();
     };
 
     const isFolder = item.Type === LinkType.FOLDER;
     const validationError = validateLinkNameField(name);
 
     return (
-        <FormModal
-            onClose={onClose}
-            loading={loading}
-            onSubmit={() => withLoading(handleSubmit()).catch(noop)}
-            title={isFolder ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
-            submit={c('Action').t`Rename`}
-            autofocusclose="false"
+        <ModalTwo
+            as="form"
+            disableCloseOnEscape={loading}
+            onClose={handleClose}
+            onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e)).catch(noop)}
+            open={isOpen}
+            size="large"
             {...rest}
         >
-            <Row className="mt1 mb1">
-                <Label>{isFolder ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
-                <Field>
-                    <InputTwo
-                        id="link-name"
-                        value={name}
-                        autoFocus
-                        maxLength={MAX_NAME_LENGTH}
-                        placeholder={c('Placeholder').t`New name`}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        onFocus={selectNamePart}
-                        error={validationError}
-                        required
-                    />
-                </Field>
-            </Row>
-        </FormModal>
+            <ModalTwoHeader
+                disabled={loading}
+                title={isFolder ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
+            />
+            <ModalTwoContent>
+                <Row className="mt1 mb1">
+                    <Label>{isFolder ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
+                    <Field>
+                        <InputTwo
+                            id="link-name"
+                            value={name}
+                            autoFocus
+                            maxLength={MAX_NAME_LENGTH}
+                            placeholder={c('Placeholder').t`New name`}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            onFocus={selectNamePart}
+                            error={validationError}
+                            required
+                        />
+                    </Field>
+                </Row>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button type="button" onClick={handleClose}>
+                    {c('Action').t`Cancel`}
+                </Button>
+                <PrimaryButton type="submit" disabled={loading}>
+                    {c('Action').t`Delete`}
+                </PrimaryButton>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
