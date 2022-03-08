@@ -4,6 +4,7 @@ import { ICAL_EXTENSIONS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/sha
 import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
 import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
 import {
+    cloneEventInvitationErrorWithConfig,
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
@@ -53,8 +54,8 @@ import {
     VcalDateOrDateTimeProperty,
     VcalNumberProperty,
     VcalStringProperty,
-    VcalVeventComponent,
     VcalVcalendar,
+    VcalVeventComponent,
     VcalVtimezoneComponent,
     VcalXOrIanaComponent,
 } from '@proton/shared/lib/interfaces/calendar';
@@ -650,11 +651,15 @@ export const getSupportedEventInvitation = async ({
         };
     } catch (error: any) {
         if (error instanceof EventInvitationError) {
-            throw error;
+            throw cloneEventInvitationErrorWithConfig(error, {
+                method: supportedMethod,
+                originalUniqueIdentifier,
+            });
         }
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
             externalError: error,
             method: supportedMethod,
+            originalUniqueIdentifier: originalUniqueIdentifier,
         });
     }
 };

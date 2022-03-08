@@ -115,6 +115,7 @@ interface EventInvitationErrorConfig {
     timestamp?: number;
     isProtonInvite?: boolean;
     method?: ICAL_METHOD;
+    originalUniqueIdentifier?: string;
 }
 
 export class EventInvitationError extends Error {
@@ -130,6 +131,8 @@ export class EventInvitationError extends Error {
 
     method?: ICAL_METHOD;
 
+    originalUniqueIdentifier?: string;
+
     constructor(errorType: EVENT_INVITATION_ERROR_TYPE, config?: EventInvitationErrorConfig) {
         super(getErrorMessage(errorType, config));
         this.type = errorType;
@@ -137,6 +140,31 @@ export class EventInvitationError extends Error {
         this.timestamp = config?.timestamp;
         this.isProtonInvite = config?.isProtonInvite;
         this.externalError = config?.externalError;
+        this.method = config?.method;
+        this.originalUniqueIdentifier = config?.originalUniqueIdentifier;
         Object.setPrototypeOf(this, EventInvitationError.prototype);
     }
+
+    getConfig() {
+        return {
+            type: this.type,
+            partstat: this.partstat,
+            timestamp: this.timestamp,
+            isProtonInvite: this.isProtonInvite,
+            externalError: this.externalError,
+            method: this.method,
+            originalUniqueIdentifier: this.originalUniqueIdentifier,
+        };
+    }
 }
+
+export const cloneEventInvitationErrorWithConfig = (
+    error: EventInvitationError,
+    config: EventInvitationErrorConfig
+) => {
+    const newConfig = {
+        ...error.getConfig(),
+        ...config,
+    };
+    return new EventInvitationError(error.type, newConfig);
+};
