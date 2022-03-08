@@ -63,7 +63,7 @@ export const getIsLegacyPlan = (planName: PLANS | ADDON_NAMES) => {
     return [VPNBASIC, VPNPLUS, PLUS, PROFESSIONAL, VISIONARY].includes(planName as any);
 };
 
-export const getHasB2BPlan = (subscription: Subscription) => {
+export const getHasB2BPlan = (subscription: Subscription | undefined) => {
     return subscription?.Plans?.some(({ Name }) => getIsB2BPlan(Name));
 };
 

@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 import { PLANS, PLAN_NAMES, APPS, PLAN_SERVICES, CYCLE } from '@proton/shared/lib/constants';
-import { getPlan, getPlanIDs, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { getHasB2BPlan, getPlan, getPlanIDs, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { Subscription, Organization, Address, UserModel } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import percentage from '@proton/shared/lib/helpers/percentage';
@@ -143,7 +143,7 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
                     <StrippedItem icon="check">{c('Subscription attribute').t`Advanced VPN features`}</StrippedItem>
                 ) : null}
             </StrippedList>
-            {user.isPaid && user.canPay ? (
+            {user.isPaid && user.canPay && getHasB2BPlan(subscription) ? (
                 <Button
                     onClick={handleCustomizeSubscription}
                     className="mb0-5"
