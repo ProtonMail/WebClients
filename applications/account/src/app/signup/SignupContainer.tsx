@@ -16,6 +16,7 @@ import {
     ADDON_NAMES,
     COUPON_CODES,
     APPS,
+    PLAN_NAMES,
 } from '@proton/shared/lib/constants';
 import { checkSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { c } from 'ttag';
@@ -819,7 +820,9 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                         left={<BackButton onClick={handleBack} />}
                     />
                     <Content>
-                        <h1>Mail Plus</h1>
+                        <h1>
+                            {getAppName(APPS.PROTONMAIL)} {PLAN_NAMES[PLANS.PLUS]}
+                        </h1>
                         <p>{c('Subtitle for trial plan')
                             .t`The privacy-first Mail and Calendar solution for your everyday communications needs.`}</p>
                         <ReferralFeaturesList />
