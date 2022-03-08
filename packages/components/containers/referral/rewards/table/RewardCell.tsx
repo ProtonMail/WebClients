@@ -16,13 +16,8 @@ const RewardCell = ({ referral }: Props) => {
              * translator : We are in a table cell.
              * A user referee have signed up or completed a subscription
              * We show the reward user would be allowed to get.
-             * Example : "3 months pending"
              */
-            reward = c('Label').ngettext(
-                msgid`${monthsRewarded} month pending`,
-                `${monthsRewarded} months pending`,
-                monthsRewarded
-            );
+            reward = c('Label').t`Credits pending`;
             break;
         case ReferralState.REWARDED:
             /*
