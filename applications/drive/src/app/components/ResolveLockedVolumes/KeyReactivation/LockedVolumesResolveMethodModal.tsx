@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
-import {
-    Button,
-    ContentModal,
-    DialogModal,
-    FooterModal,
-    HeaderModal,
-    InnerModal,
-    RadioGroup,
-} from '@proton/components';
+import { Button, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, RadioGroup } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { c, msgid } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LockedVolumeResolveMethod } from './interfaces';
+import { useModal } from '../../../hooks/util/useModal';
 
 const appName = getAppName(APPS.PROTONDRIVE);
 
@@ -44,12 +37,11 @@ const KeyReactivationModal = ({
     const [radioGroupValue, setRadioGroupValue] = useState<number>(
         defaultResolveMethod || LockedVolumeResolveMethod.ReactivateKeys
     );
+    const { isOpen, onClose: handleClose } = useModal(onClose);
 
     const handleChange = (payload: LockedVolumeResolveMethod) => {
         setRadioGroupValue(payload);
     };
-
-    const modalTitleID = 'KeyReactivationModal';
 
     const questionText = <strong>{c('Info').t`What would you like to do?`}</strong>;
     const infoText = c('Info')
@@ -90,28 +82,36 @@ const KeyReactivationModal = ({
     ];
 
     return (
-        <DialogModal modalTitleID={modalTitleID} onClose={onClose} small {...rest}>
-            <HeaderModal hasClose displayTitle noEllipsis modalTitleID={modalTitleID} onClose={onClose}>
-                {c('Action').t`Drive Locked`}
-            </HeaderModal>
-            <ContentModal onReset={noop} onSubmit={() => onSubmit(radioGroupValue)}>
-                <InnerModal className="mb1">
-                    <p className="mt0">{infoText}</p>
-                    <RadioGroup
-                        options={radioOptions}
-                        value={radioGroupValue}
-                        onChange={handleChange}
-                        name="action-type"
-                        className="flex-nowrap mb1"
-                    />
-                </InnerModal>
-                <FooterModal>
-                    <Button color="norm" type="submit" data-testid="drive-key-reactivations-options:continue">
-                        {c('Action').t`Continue`}
-                    </Button>
-                </FooterModal>
-            </ContentModal>
-        </DialogModal>
+        <ModalTwo
+            onClose={handleClose}
+            onReset={handleClose}
+            onSubmit={(e: any) => {
+                e.preventDefault();
+                onSubmit(radioGroupValue);
+            }}
+            size="small"
+            open={isOpen}
+            {...rest}
+            as="form"
+        >
+            <ModalTwoHeader title={c('Action').t`Drive Locked`} />
+            <ModalTwoContent onReset={noop} onSubmit={() => onSubmit(radioGroupValue)}>
+                <p className="mt0">{infoText}</p>
+                <RadioGroup
+                    options={radioOptions}
+                    value={radioGroupValue}
+                    onChange={handleChange}
+                    name="action-type"
+                    className="flex-nowrap mb1"
+                />
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button type="reset">{c('Action').t`Cancel`}</Button>
+                <Button color="norm" type="submit" data-testid="drive-key-reactivations-options:continue">
+                    {c('Action').t`Continue`}
+                </Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 export default KeyReactivationModal;

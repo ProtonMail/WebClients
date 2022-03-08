@@ -6,10 +6,6 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import {
     Alert,
     Button,
-    ContentModal,
-    FooterModal,
-    HeaderModal,
-    InnerModal,
     InputTwo,
     InputFieldTwo,
     PasswordInputTwo,
@@ -22,6 +18,9 @@ import {
     Summary,
     Tooltip,
     FileNameDisplay,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
 } from '@proton/components';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
@@ -62,8 +61,6 @@ const getPasswordProtectedSharingInfoMessage = (isFile: boolean) => {
 };
 
 function GeneratedLinkState({
-    modalTitleID,
-    onClose,
     itemName,
     itemType,
     initialExpiration,
@@ -167,141 +164,138 @@ function GeneratedLinkState({
 
     return (
         <>
-            <HeaderModal modalTitleID={modalTitleID} hasClose={!saving && !deleting} onClose={onClose}>
-                {c('Title').t`Share via link`}
-            </HeaderModal>
-            <ContentModal
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    void handleSubmit();
-                }}
-                onReset={(e) => {
-                    e.preventDefault();
-                    onClose?.();
-                }}
-            >
-                <InnerModal>
-                    <div ref={contentRef}>
-                        <p>{c('Info').jt`Your secure, shareable link for ${boldNameText}:`}</p>
-                        <Row className="on-mobile-mb0-5">
-                            <div className="flex flex-item-fluid on-mobile-mb0-5">
-                                <InputTwo
-                                    readOnly
-                                    value={url}
-                                    className="no-scroll text-ellipsis"
-                                    data-testid="sharing-modal-url"
-                                />
-                            </div>
-                            <div className="flex-no-min-children flex-justify-end ml0-5 on-mobile-ml0">
-                                <PrimaryButton id="copy-url-button" onClick={handleCopyURLClick} className="min-w7e">{c(
-                                    'Action'
-                                ).t`Copy link`}</PrimaryButton>
-                            </div>
-                        </Row>
-                        <Alert className="mb1">
-                            {password ? getPasswordProtectedSharingInfoMessage(isFile) : getSharingInfoMessage(isFile)}
-                        </Alert>
-                        <Details
-                            open={additionalSettingsExpanded}
-                            onToggle={() => {
-                                setAdditionalSettingsExpanded(!additionalSettingsExpanded);
-                            }}
-                            className="border-none"
-                        >
-                            <Summary tabIndex={0}>
-                                <h3>{c('Title').t`Additional settings`}</h3>
-                            </Summary>
-                            <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
-                                <Label htmlFor="passwordModeToggle">
-                                    <span className="mr0-5">{c('Label').t`Protect with password`}</span>
-                                </Label>
-                                <Tooltip title={passwordTooltipText}>
-                                    <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
-                                        <Toggle
-                                            id="passwordModeToggle"
-                                            className="on-mobile-mb0-5"
-                                            disabled={isValidForPasswordRemoval || saving}
-                                            checked={passwordToggledOn}
-                                            onChange={() => {
-                                                onIncludePasswordToggle();
-                                                if (!passwordToggledOn) {
-                                                    setPassword(customPassword);
-                                                }
-                                            }}
-                                            data-testid="sharing-modal-passwordModeToggle"
-                                        />
-                                    </div>
-                                </Tooltip>
-                                <div className="flex-no-min-children flex-item-fluid on-mobile-mb0-5 inputform-icon-container-empty on-mobile-min-h0">
-                                    {passwordToggledOn && (
-                                        <>
-                                            <InputFieldTwo
-                                                id="sharing-modal-password"
-                                                as={PasswordInputTwo}
-                                                data-testid="sharing-modal-password"
-                                                labelContainerClassName="sr-only"
-                                                label={c('Label').t`Password`}
-                                                disabled={saving}
-                                                value={password}
-                                                error={
-                                                    isPasswordInvalid &&
-                                                    c('Info')
-                                                        .t`Only ${MAX_CUSTOM_PASSWORD_LENGTH} characters is allowed`
-                                                }
-                                                assistiveText={`${password.length}/${MAX_CUSTOM_PASSWORD_LENGTH}`}
-                                                onInput={handleChangePassword}
-                                            />
-                                        </>
-                                    )}
-                                </div>
-                            </div>
-                            <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
-                                <Label htmlFor="expirationTimeModeToggle">
-                                    <span className="mr0-5">{c('Label').t`Set expiration date`}</span>
-                                </Label>
+            <ModalTwoHeader title={c('Title').t`Share via link`} disabled={saving || deleting} />
+            <ModalTwoContent>
+                <div ref={contentRef}>
+                    <p>{c('Info').jt`Your secure, shareable link for ${boldNameText}:`}</p>
+                    <Row className="on-mobile-mb0-5">
+                        <div className="flex flex-item-fluid on-mobile-mb0-5">
+                            <InputTwo
+                                readOnly
+                                value={url}
+                                className="no-scroll text-ellipsis"
+                                data-testid="sharing-modal-url"
+                            />
+                        </div>
+                        <div className="flex-no-min-children flex-justify-end ml0-5 on-mobile-ml0">
+                            <PrimaryButton id="copy-url-button" onClick={handleCopyURLClick} className="min-w7e">{c(
+                                'Action'
+                            ).t`Copy link`}</PrimaryButton>
+                        </div>
+                    </Row>
+                    <Alert className="mb1">
+                        {password ? getPasswordProtectedSharingInfoMessage(isFile) : getSharingInfoMessage(isFile)}
+                    </Alert>
+                    <Details
+                        open={additionalSettingsExpanded}
+                        onToggle={() => {
+                            setAdditionalSettingsExpanded(!additionalSettingsExpanded);
+                        }}
+                        className="border-none"
+                    >
+                        <Summary tabIndex={0}>
+                            <h3>{c('Title').t`Additional settings`}</h3>
+                        </Summary>
+                        <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
+                            <Label htmlFor="passwordModeToggle">
+                                <span className="mr0-5">{c('Label').t`Protect with password`}</span>
+                            </Label>
+                            <Tooltip title={passwordTooltipText}>
                                 <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
                                     <Toggle
-                                        id="expirationTimeModeToggle"
+                                        id="passwordModeToggle"
                                         className="on-mobile-mb0-5"
-                                        disabled={saving}
-                                        checked={expirationToggledOn}
-                                        onChange={onIncludeExpirationTimeToogle}
-                                        data-testid="sharing-modal-expirationTimeModeToggle"
+                                        disabled={isValidForPasswordRemoval || saving}
+                                        checked={passwordToggledOn}
+                                        onChange={() => {
+                                            onIncludePasswordToggle();
+                                            if (!passwordToggledOn) {
+                                                setPassword(customPassword);
+                                            }
+                                        }}
+                                        data-testid="sharing-modal-passwordModeToggle"
                                     />
                                 </div>
-                                <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 inputform-icon-container-empty on-mobile-min-h0">
-                                    {expirationToggledOn && (
-                                        <ExpirationTimeDatePicker
-                                            disabled={saving}
-                                            allowTime={false}
-                                            expiration={expiration}
-                                            handleExpirationChange={(exp: number) => setExpiration(exp)}
-                                        />
-                                    )}
-                                </div>
-                            </div>
-                        </Details>
-                    </div>
-                </InnerModal>
-                {additionalSettingsExpanded && (
-                    <FooterModal>
-                        <div className="flex flex-justify-space-between w100">
-                            <Button
-                                loading={deleting}
-                                disabled={saving}
-                                onClick={onDeleteLinkClick}
-                                className="on-mobile-mb0-5"
-                            >{c('Action').t`Stop sharing`}</Button>
-                            <div className="mlauto">
-                                <Button type="reset" disabled={saving || deleting}>{c('Action').t`Close`}</Button>
-                                <PrimaryButton loading={saving} disabled={isSaveDisabled} className="ml1" type="submit">
-                                    {c('Action').t`Save`}
-                                </PrimaryButton>
+                            </Tooltip>
+                            <div className="flex-no-min-children flex-item-fluid on-mobile-mb0-5 inputform-icon-container-empty on-mobile-min-h0">
+                                {passwordToggledOn && (
+                                    <>
+                                    <InputFieldTwo
+                                        id="sharing-modal-password"
+                                        as={PasswordInputTwo}
+                                        data-testid="sharing-modal-password"
+                                        labelContainerClassName="sr-only"
+                                        label={c('Label').t`Password`}
+                                        disabled={saving}
+                                        value={password}
+                                        error={
+                                            isPasswordInvalid &&
+                                            c('Info')
+                                                .t`Only ${MAX_CUSTOM_PASSWORD_LENGTH} characters is allowed`
+                                        }
+                                        assistiveText={`${password.length}/${MAX_CUSTOM_PASSWORD_LENGTH}`}
+                                        onInput={handleChangePassword}
+                                    />
+                                </>
+
+                                )}
                             </div>
                         </div>
-                    </FooterModal>
-                )}
-            </ContentModal>
+                        <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
+                            <Label htmlFor="expirationTimeModeToggle">
+                                <span className="mr0-5">{c('Label').t`Set expiration date`}</span>
+                            </Label>
+                            <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
+                                <Toggle
+                                    id="expirationTimeModeToggle"
+                                    className="on-mobile-mb0-5"
+                                    disabled={saving}
+                                    checked={expirationToggledOn}
+                                    onChange={onIncludeExpirationTimeToogle}
+                                    data-testid="sharing-modal-expirationTimeModeToggle"
+                                />
+                            </div>
+                            <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 inputform-icon-container-empty on-mobile-min-h0">
+                                {expirationToggledOn && (
+                                    <ExpirationTimeDatePicker
+                                        disabled={saving}
+                                        allowTime={false}
+                                        expiration={expiration}
+                                        handleExpirationChange={(exp: number) => setExpiration(exp)}
+                                    />
+                                )}
+                            </div>
+                        </div>
+                    </Details>
+                </div>
+            </ModalTwoContent>
+            {additionalSettingsExpanded && (
+                <ModalTwoFooter>
+                    <div className="flex flex-justify-space-between w100">
+                        <Button
+                            loading={deleting}
+                            disabled={saving}
+                            onClick={onDeleteLinkClick}
+                            className="on-mobile-mb0-5"
+                        >{c('Action').t`Stop sharing`}</Button>
+                        <div className="mlauto">
+                            <Button type="reset" disabled={saving || deleting}>{c('Action').t`Close`}</Button>
+                            <PrimaryButton
+                                loading={saving}
+                                disabled={isSaveDisabled}
+                                className="ml1"
+                                type="submit"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    void handleSubmit();
+                                }}
+                            >
+                                {c('Action').t`Save`}
+                            </PrimaryButton>
+                        </div>
+                    </div>
+                </ModalTwoFooter>
+            )}
         </>
     );
 }

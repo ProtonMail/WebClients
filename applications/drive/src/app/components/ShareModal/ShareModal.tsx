@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
-import { DialogModal, HeaderModal, InnerModal } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import ModalContentLoader from '../ModalContentLoader';
@@ -13,7 +13,7 @@ interface Props {
     onClose?: () => void;
 }
 
-function ShareModal({ modalTitleID = 'share-modal', shareId, item, onClose, ...rest }: Props) {
+function ShareModal({ shareId, item, onClose, ...rest }: Props) {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
     const [shareInfo, setShareInfo] = useState<string>();
@@ -51,14 +51,10 @@ function ShareModal({ modalTitleID = 'share-modal', shareId, item, onClose, ...r
     };
 
     return (
-        <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
-            <HeaderModal modalTitleID={modalTitleID} onClose={onClose}>
-                {c('Title').t`Manage share`}
-            </HeaderModal>
-            <div className="modal-content">
-                <InnerModal>{renderModalState()}</InnerModal>
-            </div>
-        </DialogModal>
+        <ModalTwo onClose={onClose} {...rest}>
+            <ModalTwoHeader title={c('Title').t`Manage share`} />
+            <ModalTwoContent>{renderModalState()}</ModalTwoContent>
+        </ModalTwo>
     );
 }
 
