@@ -161,7 +161,7 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
                     color="norm"
                     shape="ghost"
                     fullWidth
-                >{c('Action').t`Edit payment details`}</Button>
+                >{c('Action').t`Edit billing details`}</Button>
             ) : null}
             {user.canPay ? (
                 <Button onClick={handleExplorePlans} size="large" color="norm" shape="ghost" fullWidth>{c('Action')
