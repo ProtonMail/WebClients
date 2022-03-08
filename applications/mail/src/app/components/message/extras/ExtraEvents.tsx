@@ -199,11 +199,11 @@ const ExtraEvents = ({ message }: Props) => {
                     }>(
                         (acc, invitation) => {
                             const { uniqueInvitations, uniqueUids } = acc;
-                            if (invitation instanceof EventInvitationError) {
+                            const uid = invitation.originalUniqueIdentifier;
+                            if (!uid) {
                                 uniqueInvitations.push(invitation);
                                 return acc;
                             }
-                            const uid = invitation.originalUniqueIdentifier || invitation.vevent.uid.value;
                             if (uniqueUids.includes(uid)) {
                                 return acc;
                             }
