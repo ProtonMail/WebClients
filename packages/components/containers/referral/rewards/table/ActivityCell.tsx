@@ -28,7 +28,7 @@ const ActivityCell = ({ referral }: Props) => {
                     ? // translator : We are in a table cell. We inform user that a referred user has paid for a monthly plan
                       c('Info').t`Paid for a monthly plan`
                     : // translator : We are in a table cell. We inform user that a referred user has paid for 12months plan
-                      c('Info').t`Paid for a 12 months plan`;
+                      c('Info').t`Paid for a ${referral.RewardMonths} months plan`;
             break;
     }
 

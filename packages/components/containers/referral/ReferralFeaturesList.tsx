@@ -5,11 +5,7 @@ const ReferralFeaturesList = () => (
     <StrippedList>
         <StrippedItem icon="lock">
             {c('Info').t`5 GB storage`}
-            <Info
-                className="ml0-5"
-                title={c('Info')
-                    .t`Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.`}
-            />
+            <Info className="ml0-5" title={c('Info').t`Storage space is shared across Mail, Calendar, and Drive.`} />
         </StrippedItem>
         <StrippedItem icon="mailbox">{c('Info').t`5 email addresses`}</StrippedItem>
         <StrippedItem icon="folders">{c('Info').t`Unlimited folders, labels, and filters`}</StrippedItem>
