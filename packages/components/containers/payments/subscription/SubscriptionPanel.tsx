@@ -143,6 +143,10 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
                     <StrippedItem icon="check">{c('Subscription attribute').t`Advanced VPN features`}</StrippedItem>
                 ) : null}
             </StrippedList>
+            {user.isPaid && user.canPay ? (
+                <Button onClick={handleEditPayment} className="mb0-5" size="large" color="norm" fullWidth>{c('Action')
+                    .t`Edit billing details`}</Button>
+            ) : null}
             {user.isPaid && user.canPay && getHasB2BPlan(subscription) ? (
                 <Button
                     onClick={handleCustomizeSubscription}
@@ -151,17 +155,7 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
                     color="weak"
                     shape="outline"
                     fullWidth
-                >{c('Action').t`Customize subscription`}</Button>
-            ) : null}
-            {user.isPaid && user.canPay ? (
-                <Button
-                    onClick={handleEditPayment}
-                    className="mb0-5"
-                    size="large"
-                    color="norm"
-                    shape="ghost"
-                    fullWidth
-                >{c('Action').t`Edit billing details`}</Button>
+                >{c('Action').t`Customize plan`}</Button>
             ) : null}
             {user.canPay ? (
                 <Button onClick={handleExplorePlans} size="large" color="norm" shape="ghost" fullWidth>{c('Action')
