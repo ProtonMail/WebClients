@@ -246,8 +246,8 @@
 	&-to-editor.composer-editor-collapsed,
 	&-to-editor.composer-editor-expanded .field:empty,
 	&-to-editor.composer-editor-collapsed .field:empty,
-	&-addresses-container.field, // specificity :-]
-	&-addresses-container.field &-addresses-input-container {
+	& &-addresses-container.field, // specificity :-] (only for composer)
+	& &-addresses-container.field &-addresses-input-container {
 		@include respond-to($breakpoint-small) {
 			padding-inline-start: 0;
 			margin-inline-start: 0;

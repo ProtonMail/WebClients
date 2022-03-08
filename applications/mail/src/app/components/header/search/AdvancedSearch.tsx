@@ -14,8 +14,7 @@ import {
     SelectTwo,
     Option,
     useAddresses,
-    Icon,
-    classnames
+    classnames,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -196,30 +195,19 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
                     showEncryptedSearch={showEncryptedSearch}
                 />
                 {isSearch ? (
-                    <>
-                        <Button
-                            shape="ghost"
-                            color="weak"
-                            className="flex"
-                            disabled={!Object.keys(model).length}
-                            type="reset">
-                                {c('Action').t`Clear`}
-                        </Button>
-                        <Button
-                            type="button"
-                            icon
-                            shape="ghost"
-                            color="weak"
-                            className="flex flex-align-items-center"
-                            title={c('Action').t`Close ??????????`}
-                        >
-                            <Icon name="xmark" alt={c('Action').t`Close ??????????????`} />
-                        </Button>
-                    </>
+                    <Button
+                        shape="ghost"
+                        color="weak"
+                        className="flex"
+                        disabled={!Object.keys(model).length}
+                        type="reset"
+                    >
+                        {c('Action').t`Clear`}
+                    </Button>
                 ) : null}
             </div>
             <div className={classnames(['pt1 px1-5', showAdvancedSearch ? 'pb0' : 'pb1'])}>
-                {showEncryptedSearch && false && (
+                {showEncryptedSearch && (
                     <EncryptedSearchField esState={esState} showMore={showMore} toggleShowMore={toggleShowMore} />
                 )}
                 <div className="mb0-5">
@@ -231,7 +219,7 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
                 {showAdvancedSearch && (
                     <>
                         <div className="mb0-5 flex flex-justify-space-between on-mobile-flex-column">
-                            <div className="pr1 on-mobile-pr0 flex-item-fluid">
+                            <div className={classnames(['flex-item-fluid', isNarrow ? 'on-mobile-pr0' : 'pr1'])}>
                                 <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
                                     .t`From`}</Label>
                                 <DateInput
@@ -305,9 +293,11 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
                                 value={model.address}
                                 onChange={({ value }) => updateModel({ ...model, address: value })}
                             >
-                                {[{ ID: ALL_ADDRESSES, Email: c('Option').t`All` }, ...addresses].map(({ ID, Email }) => (
-                                    <Option key={ID} value={ID} title={Email} />
-                                ))}
+                                {[{ ID: ALL_ADDRESSES, Email: c('Option').t`All` }, ...addresses].map(
+                                    ({ ID, Email }) => (
+                                        <Option key={ID} value={ID} title={Email} />
+                                    )
+                                )}
                             </SelectTwo>
                         </div>
                         <div className="mb1-5">
@@ -344,15 +334,24 @@ const AdvancedSearch = ({ isNarrow, showEncryptedSearch, onClose, esState, isDBL
                     </>
                 )}
             </div>
-            <div className={classnames(['py1 px1-5 flex flex-justify-space-between', showAdvancedSearch ? '' : 'border-top bg-weak'])}>
+            <div
+                className={classnames([
+                    'py1 mx1-5 flex flex-align-items-center flex-justify-space-between',
+                    showAdvancedSearch ? '' : 'border-top',
+                ])}
+            >
                 {showAdvancedSearch ? null : (
-                    <Button onClick={toggleShowMore} title={c('Action').t`Show more search options`}>
+                    <Button
+                        className="mb0-5 on-mobile-w100"
+                        onClick={toggleShowMore}
+                        title={c('Action').t`Show more search options`}
+                    >
                         {c('Action').t`More search options`}
                     </Button>
                 )}
-                <PrimaryButton type="submit">{c('Action').t`Search`}</PrimaryButton>
+                <PrimaryButton type="submit" className="mlauto mb0-5 on-mobile-w100">{c('Action')
+                    .t`Search`}</PrimaryButton>
             </div>
-
         </form>
     );
 };
