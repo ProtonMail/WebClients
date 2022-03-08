@@ -79,7 +79,6 @@ const SearchOverlay = ({
         'Escape',
         (e) => {
             e.stopPropagation();
-            console.log('escape close');
             onClose?.();
         },
     ];
@@ -102,16 +101,7 @@ const SearchOverlay = ({
     }, [isOpen]);
 
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
-    const popperClassName = classnames([
-        'overlay',
-        // dropdownRootClassName,
-        // noMaxSize && 'dropdown--no-max-size',
-        // `dropdown--${placement}`,
-        isClosing && `is-dropdown-out`,
-        // noCaret && 'dropdown--no-caret',
-        className,
-        'no-outline',
-    ]);
+    const popperClassName = classnames(['overlay', isClosing && `is-dropdown-out`, className, 'no-outline']);
 
     if (isClosed && !isOpen) {
         return null;
@@ -171,10 +161,7 @@ const SearchOverlay = ({
                     data-ignore-close="true"
                     className="overlay-backdrop"
                     title={c('Action').t`Close`}
-                    onClick={() => {
-                        console.log('backdrop close');
-                        onClose();
-                    }}
+                    onClick={() => onClose()}
                 >
                     <span className="sr-only">{c('Action').t`Close`}</span>
                 </div>

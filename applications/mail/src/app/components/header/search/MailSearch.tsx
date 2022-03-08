@@ -14,6 +14,7 @@ import {
     useMailSettings,
     usePopperAnchor,
     useSpotlightOnFeature,
+    useToggle,
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
@@ -54,6 +55,9 @@ const MailSearch = ({ breakpoints }: Props) => {
     const esState = useEncryptedSearchToggleState(isOpen);
 
     const showEncryptedSearch = !isMobile() && !!esFeature && !!esFeature.Value && !!isPaid(user);
+
+    // Show more from inside AdvancedSearch to persist the state when the overlay is closed
+    const { state: showMore, toggle: toggleShowMore } = useToggle(false);
 
     const searchParams = extractSearchParameters(location);
 
@@ -120,18 +124,15 @@ const MailSearch = ({ breakpoints }: Props) => {
                     <SearchInput ref={anchorRef} searchParams={searchParams} onOpen={handleOpen} />
                 )}
             </Spotlight>
-            <SearchOverlay
-                id={uid}
-                isOpen={isOpen}
-                anchorRef={anchorRef}
-                onClose={close}
-            >
+            <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <AdvancedSearch
                     isNarrow={breakpoints.isNarrow}
                     showEncryptedSearch={showEncryptedSearch}
                     onClose={close}
                     esState={esState}
                     isDBLimited={isDBLimited}
+                    showMore={showMore}
+                    toggleShowMore={toggleShowMore}
                 />
             </SearchOverlay>
         </>
