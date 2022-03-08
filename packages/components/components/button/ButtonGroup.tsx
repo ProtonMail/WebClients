@@ -11,7 +11,7 @@ import {
 import { classnames } from '../../helpers';
 import { Vr } from '../vr';
 
-export type Color = 'norm' | 'weak' | 'danger' | 'warning' | 'success' | 'info';
+export type Color = 'norm' | 'weak';
 
 export type Shape = 'solid' | 'outline' | 'ghost';
 
@@ -29,7 +29,7 @@ const ButtonGroup = forwardRef<HTMLDivElement, Props>(
         const childrenWithSeparators = Children.toArray(children)
             .filter((x): x is ReactElement => x !== null && isValidElement(x))
             .map((child, index, array) => {
-                const clonedChild = cloneElement(child, { group: true, size });
+                const clonedChild = cloneElement(child, { group: true, size, color, shape });
                 if (index === array.length - 1) {
                     return clonedChild;
                 }
