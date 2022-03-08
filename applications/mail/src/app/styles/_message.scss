@@ -159,7 +159,7 @@
 	padding-block-start: 0.65em; // value to avoid shifts on right icons
 
 	.message-header-expand-button {
-		margin-inline-end: -0.35em;
+		margin-inline-end: #{em(5) * -1};
 		// aligned with tracker protection icon
 	}
 
