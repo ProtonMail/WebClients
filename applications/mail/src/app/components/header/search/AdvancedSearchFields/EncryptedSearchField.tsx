@@ -89,7 +89,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
         />
     );
     const esHeader = indexKeyExists(user.ID) ? (
-        <Label htmlFor="es-toggle" className="text-bold p0 pr1 flex flex-item-fluid flex-align-items-center">
+        <Label htmlFor="es-toggle" className="text-bold p0 pr1 flex flex-item-fluid flex-align-items-center w100">
             {esTitle}
             {info}
         </Label>
