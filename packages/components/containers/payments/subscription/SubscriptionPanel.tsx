@@ -165,7 +165,7 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
             ) : null}
             {user.canPay ? (
                 <Button onClick={handleExplorePlans} size="large" color="norm" shape="ghost" fullWidth>{c('Action')
-                    .t`Explore all Proton plans`}</Button>
+                    .t`Explore other Proton plans`}</Button>
             ) : null}
         </div>
     );
