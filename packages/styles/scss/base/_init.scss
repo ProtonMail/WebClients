@@ -1,12 +1,7 @@
-@use 'sass:math';
 *,
 *::before,
 *::after {
 	box-sizing: inherit; // From html
-}
-
-:root {
-	--px: #{math.div(1em, $base-font-size)}; // For pixel-based calculation on css variables
 }
 
 html {
