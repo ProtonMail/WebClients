@@ -11,7 +11,6 @@
 	margin-inline: -1em -0.5em;
 	margin-block-start: -0.5em;
 
-
 	@include respond-to($breakpoint-small, 'max') {
 		inset: 0;
 		display: flex;
@@ -49,7 +48,7 @@
 	}
 
 	@include respond-to($breakpoint-tiny, 'max') {
-		padding: 15%;
+		padding: 5%;
 	}
 
 	@include respond-to($breakpoint-small, 'min') {
@@ -155,151 +154,10 @@
 			flex: 0 0 rem(3);
 			background: var(--background-norm);
 		}
-		// &--no-bottom-shadow::after {
-		// 	content: none;
-		// }
 	}
-
-
-
-	// @include respond-to($breakpoint-small, 'max') {
-	// 	// &-content {
-	// 	// 	animation: anime-dropdown-content-scale-in 0.15s ease-out both;
-
-	// 	// 	@keyframes anime-dropdown-content-scale-in {
-	// 	// 		from {
-	// 	// 			transform: scale(0.8);
-	// 	// 		}
-	// 	// 		to {
-	// 	// 			transform: scale(1);
-	// 	// 		}
-	// 	// 	}
-	// 	// }
-
-	// 	&.is-dropdown-out &-content {
-	// 		animation-name: anime-dropdown-content-scale-out;
-
-	// 		@keyframes anime-dropdown-content-scale-out {
-	// 			from {
-	// 				transform: scale(1);
-	// 			}
-	// 			to {
-	// 				transform: scale(0.8);
-	// 			}
-	// 		}
-	// 	}
-	// }
-
-	// &-item {
-	// 	&-button,
-	// 	&-link {
-	// 		// @extend .interactive;
-
-	// 		&,
-	// 		&:hover,
-	// 		&:focus,
-	// 		&:active {
-	// 			color: var(--text-norm);
-	// 			text-decoration: none;
-	// 		}
-
-	// 		&.active {
-	// 			background-color: var(--interaction-default-hover);
-	// 		}
-	// 	}
-
-	// 	&--delete {
-	// 		&,
-	// 		&:hover,
-	// 		&:focus {
-	// 			.dropdown-item-button {
-	// 				color: var(--signal-danger);
-	// 			}
-	// 		}
-	// 	}
-
-	// 	& [aria-current='true'],
-	// 	& &--is-selected {
-	// 		// Specificity -_-v
-	// 		&,
-	// 		&:hover,
-	// 		&:focus,
-	// 		&:active {
-	// 			background-color: var(--interaction-norm);
-	// 			color: var(--interaction-norm-contrast);
-	// 			pointer-events: none;
-	// 		}
-	// 	}
-
-	// 	// Dropdown item container which contains several elements
-	// 	// Created for specific use case in the mail composer
-	// 	&-container {
-	// 		// @extend .interactive;
-
-	// 		&,
-	// 		&:hover,
-	// 		&:focus,
-	// 		&:active {
-	// 			color: var(--text-norm);
-	// 			text-decoration: none;
-	// 		}
-
-	// 		&.active {
-	// 			background-color: var(--interaction-default-hover);
-	// 		}
-
-	// 		&.dropdown-item--is-selected {
-	// 			&,
-	// 			&:hover,
-	// 			&:focus,
-	// 			&:active {
-	// 				pointer-events: all;
-	// 			}
-	// 		}
-
-	// 		.dropdown-item-button {
-	// 			background-color: transparent;
-
-	// 			&:hover,
-	// 			&:focus,
-	// 			&:active {
-	// 				background-color: transparent;
-	// 			}
-	// 		}
-	// 	}
-	// }
 
 	.advanced-search-field {
 		border-color: transparent;
 		padding-inline-start: 2.75em;
 	}
-
-
-	// &-item-hr {
-	// 	block-size: 0;
-	// 	box-sizing: content-box;
-	// 	border-block-start: 1px solid var(--border-norm);
-	// }
-
-	// &-search {
-	// 	position: sticky;
-	// 	inset-block-start: 0;
-	// 	padding: 1rem;
-	// 	background-color: var(--background-norm);
-	// 	box-shadow: var(--shadow-norm);
-
-	// 	&-no-result {
-	// 		color: var(--text-weak);
-	// 		padding-block: rem(40);
-	// 		padding-inline: rem(10);
-	// 		letter-spacing: rem(0.25);
-	// 	}
-	// }
-
-	// &--is-searchable {
-	// 	.dropdown-content::before {
-	// 		content: none;
-	// 	}
-	// }
 }
-

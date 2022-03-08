@@ -36,35 +36,25 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
                 <Icon name="magnifying-glass" size={16} className="mauto" />
                 <span className="sr-only">{c('Action').t`Search`}</span>
             </Button>
-            <div className="flex flex-align-items-center flex-item-fluid pl0-25" data-testid="search-keyword" onClick={onOpen}>
+            <div
+                className="flex flex-align-items-center flex-item-fluid pl0-25"
+                data-testid="search-keyword"
+                onClick={onOpen}
+            >
                 {searchParams.keyword ? searchParams.keyword : <span className="placeholder">{placeholder}</span>}
             </div>
             {isSearch ? (
-                <>
-                    <Button
-                        type="button"
-                        shape="ghost"
-                        color="weak"
-                        className="flex"
-                        title={c('Action').t`Clear`}
-                        onClick={handleClear}
-                    >
-                        {c('Action').t`Clear`}
-                    </Button>
-                    <Button
-                        type="button"
-                        icon
-                        shape="ghost"
-                        color="weak"
-                        className="flex flex-align-items-center"
-                        title={c('Action').t`Close ??????????`}
-                        onClick={handleClear}
-                    >
-                        <Icon name="xmark" alt={c('Action').t`Close ??????????????`} />
-                    </Button>
-                </>
+                <Button
+                    type="button"
+                    shape="ghost"
+                    color="weak"
+                    className="flex"
+                    title={c('Action').t`Clear`}
+                    onClick={handleClear}
+                >
+                    {c('Action').t`Clear`}
+                </Button>
             ) : null}
-
         </div>
     );
 };
