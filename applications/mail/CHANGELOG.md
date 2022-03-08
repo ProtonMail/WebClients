@@ -1,3 +1,19 @@
+## Release 4.0.18 - Mar 23, 2022
+
+# Improvements
+
+-   Updated the UI of the main message view
+-   Updated the UI of specific modals
+-   Improved app loading times by caching specific assets offline
+
+# Bug fixes
+
+-   Fixed an issue where a wrong font would be displayed for a draft if it is created from the mobile app
+-   Fixed an issue where embedded images were received non-embedded in replies sent through the Encryption for non-ProtonMail users tool
+-   Fixed an issue where sending of a message using the Encryption for non-ProtonMail users tool was not possible if adding a high number of attachments
+-   Fixed an issue where the focus was not initially in the "To" field when forwarding or replying to a message
+-   Various accessibility fixes
+
 ## Release 4.0.17 - Mar 9, 2022
 
 # Improvements
