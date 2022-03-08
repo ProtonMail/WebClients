@@ -1,6 +1,6 @@
 import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react';
-import { Alert, useGetEncryptionPreferences, useModals } from '@proton/components';
+import { useGetEncryptionPreferences } from '@proton/components';
 import useIsMounted from '@proton/components/hooks/useIsMounted';
 import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
@@ -55,13 +55,19 @@ export const useUpdateRecipientSendInfo = (
     recipient: Recipient,
     onRemove: () => void
 ) => {
-    const { createModal } = useModals();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const contactsMap = useContactsMap();
     const emailAddress = recipient.Address;
 
     const { modal: askForKeyPinningModal, handleShowModal: handleShowAskForKeyPinningModal } =
         useModalTwo(AskForKeyPinningModal);
+
+    const [contactResignText, setContactResignText] = useState<string>('');
+
+    const { modal: contactResignModal, handleShowModal: handleContactResignModal } = useModalTwo(
+        ContactResignModal,
+        contactResignText
+    );
 
     const handleRemove = () => {
         if (messageSendInfo) {
@@ -111,31 +117,28 @@ export const useUpdateRecipientSendInfo = (
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
 
             if (sendPreferences.error?.type === CONTACT_SIGNATURE_NOT_VERIFIED) {
-                await new Promise((resolve, reject) => {
-                    if (!recipient.ContactID) {
-                        return reject(new Error('Invalid contact id'));
-                    }
-                    const contact = { contactID: recipient.ContactID };
-                    const contactAddress = recipient.Address;
-                    const contactName = recipient.Name || contactAddress;
-                    createModal(
-                        <ContactResignModal
-                            title={c('Title').t`Re-sign contact`}
-                            contacts={[contact]}
-                            onResign={() => resolve(undefined)}
-                            onClose={reject}
-                            onNotResign={handleRemove}
-                            onError={handleRemove}
-                        >
-                            <Alert className="mb1" type="error">
-                                {c('Info')
-                                    .t`The verification of ${contactName} has failed: the contact is not signed correctly.
-                                    This may be the result of a password reset.
-                                    You must re-sign the contact in order to send a message to ${contactAddress} or edit the contact.`}
-                            </Alert>
-                        </ContactResignModal>
-                    );
+                if (!recipient.ContactID) {
+                    return;
+                }
+                const contact = { contactID: recipient.ContactID };
+
+                const contactAddress = recipient.Address;
+                const contactName = recipient.Name || contactAddress;
+
+                const text = c('Info')
+                    .t`The verification of ${contactName} has failed: the contact is not signed correctly.
+                                This may be the result of a password reset.
+                                You must re-sign the contact in order to send a message to ${contactAddress} or edit the contact.`;
+
+                setContactResignText(text);
+
+                await handleContactResignModal({
+                    title: c('Title').t`Re-sign contact`,
+                    contacts: [contact],
+                    onNotResign: onRemove,
+                    onError: handleRemove,
                 });
+
                 return updateRecipientIcon();
             }
 
@@ -181,7 +184,7 @@ export const useUpdateRecipientSendInfo = (
         void updateRecipientIcon();
     }, [emailAddress, contactsMap]);
 
-    return { handleRemove, askForKeyPinningModal };
+    return { handleRemove, askForKeyPinningModal, contactResignModal };
 };
 
 interface LoadParams {
@@ -199,11 +202,17 @@ export const useUpdateGroupSendInfo = (
 ) => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const contactsMap = useContactsMap();
-    const { createModal } = useModals();
     const emailsInGroup = contacts.map(({ Email }) => Email);
 
     const { modal: askForKeyPinningModal, handleShowModal: handleShowAskForKeyPinningModal } =
         useModalTwo(AskForKeyPinningModal);
+
+    const [contactResignText, setContactResignText] = useState<string>('');
+
+    const { modal: contactResignModal, handleShowModal: handleContactResignModal } = useModalTwo(
+        ContactResignModal,
+        contactResignText
+    );
 
     const handleRemove = () => {
         if (messageSendInfo) {
@@ -305,33 +314,29 @@ export const useUpdateGroupSendInfo = (
                 .map(({ contact }) => contact);
             const totalContactsResign = contactsResign.length;
             if (totalContactsResign) {
-                await new Promise((resolve) => {
-                    const title = c('Title').ngettext(msgid`Re-sign contact`, `Re-sign contacts`, totalContactsResign);
-                    const contactNames = contactsResign.map(({ contactName }) => contactName).join(', ');
-                    const contactAddresses = contactsResign.map(({ emailAddress }) => emailAddress).join(', ');
-                    createModal(
-                        <ContactResignModal
-                            title={title}
-                            contacts={contactsResign}
-                            onResign={() => resolve(undefined)}
-                            onClose={() => resolve(undefined)}
-                            onNotResign={noop}
-                            onError={noop}
-                        >
-                            <Alert className="mb1" type="error">
-                                {c('Info').ngettext(
-                                    msgid`The verification of ${contactNames} has failed: the contact is not signed correctly.
+                const title = c('Title').ngettext(msgid`Re-sign contact`, `Re-sign contacts`, totalContactsResign);
+                const contactNames = contactsResign.map(({ contactName }) => contactName).join(', ');
+                const contactAddresses = contactsResign.map(({ emailAddress }) => emailAddress).join(', ');
+
+                const text = c('Info').ngettext(
+                    msgid`The verification of ${contactNames} has failed: the contact is not signed correctly.
                                     This may be the result of a password reset.
                                     You must re-sign the contact in order to send a message to ${contactAddresses} or edit the contact.`,
-                                    `The verification of ${contactNames} has failed: the contacts are not signed correctly.
+                    `The verification of ${contactNames} has failed: the contacts are not signed correctly.
                                     This may be the result of a password reset.
                                     You must re-sign the contacts in order to send a message to ${contactAddresses} or edit the contacts.`,
-                                    totalContactsResign
-                                )}
-                            </Alert>
-                        </ContactResignModal>
-                    );
+                    totalContactsResign
+                );
+
+                setContactResignText(text);
+
+                await handleContactResignModal({
+                    title: title,
+                    contacts: contactsResign,
+                    onNotResign: noop,
+                    onError: noop,
                 });
+
                 return loadSendIcons({ abortController, checkForError: false });
             }
             const contactsKeyPinning = results
@@ -356,7 +361,7 @@ export const useUpdateGroupSendInfo = (
         };
     }, []);
 
-    return { handleRemove, askForKeyPinningModal };
+    return { handleRemove, askForKeyPinningModal, contactResignModal };
 };
 
 const getUpdatedSendInfo = async (

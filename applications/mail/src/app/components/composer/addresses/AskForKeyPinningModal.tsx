@@ -89,7 +89,7 @@ const AskForKeyPinningModal = ({ contacts, onNotTrust, onError, onResolve, onRej
     };
 
     return (
-        <ModalTwo {...rest} onClose={handleClose} onSubmit={() => withLoading(handleSubmit())}>
+        <ModalTwo size="large" {...rest} onClose={handleClose} onSubmit={() => withLoading(handleSubmit())}>
             <ModalTwoHeader title={c('Title').ngettext(msgid`Trust new key?`, `Trust new keys?`, contacts.length)} />
             <ModalTwoContent>
                 {c('Key pinning').ngettext(

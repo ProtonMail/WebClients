@@ -1,9 +1,9 @@
 import { noop } from '@proton/shared/lib/helpers/function';
 import { ReactComponentLike } from 'prop-types';
-import { useRef, useState } from 'react';
+import { ReactNode, useRef, useState } from 'react';
 import useModalState from './useModalState';
 
-export const useModalTwo = function <OwnProps, Value>(Modal: ReactComponentLike) {
+export const useModalTwo = function <OwnProps, Value>(Modal: ReactComponentLike, children?: ReactNode) {
     const [props, setOpen, render] = useModalState();
     const [ownProps, setOwnProps] = useState<OwnProps>();
     const promiseRef = useRef<{
@@ -39,7 +39,11 @@ export const useModalTwo = function <OwnProps, Value>(Modal: ReactComponentLike)
         props.onClose();
     };
 
-    const modal = render ? <Modal {...props} {...ownProps} onResolve={handleResolve} onReject={handleReject} /> : null;
+    const modal = render ? (
+        <Modal {...props} {...ownProps} onResolve={handleResolve} onReject={handleReject}>
+            {children}
+        </Modal>
+    ) : null;
 
     return { modal, handleShowModal };
 };

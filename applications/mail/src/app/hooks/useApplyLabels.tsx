@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { Dispatch, SetStateAction, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
 import { useApi, useNotifications, useEventManager, useLabels } from '@proton/components';
@@ -277,7 +277,7 @@ export const useApplyLabels = () => {
     return applyLabels;
 };
 
-export const useMoveToFolder = () => {
+export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
@@ -312,7 +312,8 @@ export const useMoveToFolder = () => {
             }
 
             if (!canUndo) {
-                await handleShowModal({ isMessage });
+                setContainFocus?.(false);
+                await handleShowModal({ isMessage, onCloseCustomAction: () => setContainFocus?.(true) });
             }
         }
     };

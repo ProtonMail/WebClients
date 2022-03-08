@@ -65,7 +65,11 @@ const AddressesRecipientItem = ({
         close: closeContextMenu,
     } = usePopperAnchor<HTMLDivElement>();
 
-    const { handleRemove, askForKeyPinningModal } = useUpdateRecipientSendInfo(messageSendInfo, recipient, onRemove);
+    const { handleRemove, askForKeyPinningModal, contactResignModal } = useUpdateRecipientSendInfo(
+        messageSendInfo,
+        recipient,
+        onRemove
+    );
 
     const onMailTo = useOnMailTo();
 
@@ -260,6 +264,7 @@ const AddressesRecipientItem = ({
                 </DropdownMenu>
             </ContextMenu>
             {askForKeyPinningModal}
+            {contactResignModal}
         </>
     );
 };
