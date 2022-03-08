@@ -59,7 +59,6 @@ const MailRecipients = ({
                         className="mlauto mbauto message-header-expand-button"
                         title={titleAction}
                         size="small"
-                        square
                         aria-controls="message-recipients" // hack to get proper styles AND proper vocalization
                     >
                         <Icon
