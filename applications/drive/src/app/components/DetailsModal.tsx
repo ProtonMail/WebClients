@@ -81,7 +81,7 @@ const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
                         <LocationCell shareId={shareId} parentLinkId={item.ParentLinkID} />
                     </DetailsRow>
                     <DetailsRow label={c('Title').t`Uploaded`}>
-                        <TimeCell time={item.ModifyTime} />
+                        <TimeCell time={item.CreateTime} />
                     </DetailsRow>
                     <DetailsRow label={c('Title').t`Modified`}>
                         <TimeCell time={item.RealModifyTime} />
