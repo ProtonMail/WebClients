@@ -14,6 +14,7 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import { useDebouncedRequest } from '../api';
 import { useDriveCrypto } from '../crypto';
 import { useDriveEventManager } from '../events';
+import { LinkType } from './interface';
 import useLink from './useLink';
 import { ecryptFolderExtendedAttributes } from './extendedAttributes';
 import { validateLinkName, ValidationError } from './validation';
@@ -54,6 +55,9 @@ export default function useLinkActions() {
                 encryptName(name, parentPrivateKey.toPublic(), addressKey),
             ]);
 
+        // We use private key instead of address key to sign the hash key
+        // because its internal property of the folder. We use address key for
+        // name or content to have option to trust some users more or less.
         const { NodeHashKey } = await generateNodeHashKey(privateKey.toPublic(), privateKey);
 
         const xattr = !modificationTime
@@ -121,8 +125,28 @@ export default function useLinkActions() {
         await events.pollShare(shareId);
     };
 
+    /**
+     * checkLinkMetaSignatures checks for all signatures of various attributes:
+     * passphrase, hash key, name or xattributes. It does not check content,
+     * that is file blocks including thumbnail block.
+     */
+    const checkLinkMetaSignatures = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
+        const [link] = await Promise.all([
+            // Decrypts name and xattributes.
+            getLink(abortSignal, shareId, linkId),
+            // Decrypts passphrase.
+            getLinkPrivateKey(abortSignal, shareId, linkId),
+        ]);
+        if (link.type === LinkType.FOLDER) {
+            await getLinkHashKey(abortSignal, shareId, linkId);
+        }
+        // Get latest link with signature updates.
+        return (await getLink(abortSignal, shareId, linkId)).signatureIssues;
+    };
+
     return {
         createFolder,
         renameLink,
+        checkLinkMetaSignatures,
     };
 }

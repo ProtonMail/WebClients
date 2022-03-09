@@ -4,8 +4,8 @@ import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { useDriveEventManager, DriveEvents } from '../events';
-import { isDecryptedLinkSame } from './link';
-import { EncryptedLink, DecryptedLink, LinkShareUrl, LinkType } from './interface';
+import { isEncryptedLinkSame, isDecryptedLinkSame } from './link';
+import { EncryptedLink, DecryptedLink, LinkShareUrl, LinkType, SignatureIssues } from './interface';
 
 export type LinksState = {
     [shareId: string]: {
@@ -197,8 +197,15 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): 
                 }
             }
 
+            const newSignatureIssues = getNewSignatureIssues(original.encrypted, link);
+
             original.decrypted = getNewDecryptedLink(original, link);
             original.encrypted = link.encrypted;
+
+            original.encrypted.signatureIssues = newSignatureIssues;
+            if (original.decrypted) {
+                original.decrypted.signatureIssues = newSignatureIssues;
+            }
         } else {
             state[shareId].links[linkId] = link;
         }
@@ -291,6 +298,21 @@ function recursivelyUpdateLinks(
         updateCallback(child);
         recursivelyUpdateLinks(state, shareId, child.encrypted.linkId, updateCallback);
     });
+}
+
+function getNewSignatureIssues(original: EncryptedLink, newLink: Link): SignatureIssues | undefined {
+    const newSignatureIssues = newLink.decrypted?.signatureIssues || newLink.encrypted.signatureIssues;
+    const isSame = isEncryptedLinkSame(original, newLink.encrypted);
+    // If the link is different (different keys or new version of encrypted
+    // values), we need to forget all previous signature issues and try decrypt
+    // them again, or accept new issues if it was already tried.
+    if (!isSame) {
+        return newSignatureIssues;
+    }
+    if (original.signatureIssues || newSignatureIssues) {
+        return { ...original.signatureIssues, ...newSignatureIssues };
+    }
+    return undefined;
 }
 
 /**

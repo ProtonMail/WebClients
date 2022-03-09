@@ -59,6 +59,9 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             text: c('Info').t`Failed`,
             icon: 'triangle-exclamation',
         },
+        [TransferState.SignatureIssue]: {
+            text: c('Info').t`Signature issue`,
+        },
         [TransferState.NetworkError]: {
             text: c('Info').t`Network issue`,
             icon: 'triangle-exclamation',

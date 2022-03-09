@@ -17,6 +17,7 @@ export const isTransferActive = ({ state }: { state: TransferState }) =>
         TransferState.Pending,
         TransferState.Initializing,
         TransferState.Conflict,
+        TransferState.SignatureIssue,
         TransferState.Progress,
         TransferState.Finalizing,
     ].includes(state);
@@ -32,6 +33,8 @@ export const isTransferError = ({ state }: { state: TransferState }) =>
 export const isTransferCanceled = ({ state }: { state: TransferState }) => state === TransferState.Canceled;
 
 export const isTransferConflict = ({ state }: { state: TransferState }) => state === TransferState.Conflict;
+
+export const isTransferSignatureIssue = ({ state }: { state: TransferState }) => state === TransferState.SignatureIssue;
 
 export const isTransferProgress = ({ state }: { state: TransferState }) => state === TransferState.Progress;
 
