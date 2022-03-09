@@ -3,13 +3,24 @@ import { c } from 'ttag';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { FormModal, Row, Label, Field, PasswordInput } from '../../components';
+import {
+    ModalTwo as Modal,
+    Form,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    Button,
+    InputFieldTwo,
+    PasswordInputTwo,
+    ModalProps,
+} from '../../components';
 import { useApi } from '../../hooks';
 
-interface Props {
+interface Props extends Omit<ModalProps<typeof Form>, 'as' | 'onSubmit' | 'size' | 'onSuccess'> {
     onSuccess?: () => void;
     onClose?: () => void;
 }
+
 const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
     const api = useApi();
     const [password, setPassword] = useState('');
@@ -26,37 +37,36 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
             onSuccess?.();
             onClose?.();
         } catch (e: any) {
-            setPassword('');
             setLoading(false);
         }
     };
 
+    // Don't allow to close this modal if it's loading as it could leave other consumers in an undefined state
+    const handleClose = loading ? noop : onClose;
+
     return (
-        <FormModal
-            onClose={loading ? noop : onClose}
-            onSubmit={handleSubmit}
-            hasClose={!loading}
-            title={c('Title').t`Sign in again to continue`}
-            close={c('Label').t`Cancel`}
-            submit={c('Label').t`Submit`}
-            loading={loading}
-            small
-            noTitleEllipsis
-            {...rest}
-        >
-            <Row>
-                <Label htmlFor="password">{c('Label').t`Password`}</Label>
-                <Field>
-                    <PasswordInput
-                        id="password"
-                        value={password}
-                        onChange={({ target }) => setPassword(target.value)}
-                        autoFocus
-                        required
-                    />
-                </Field>
-            </Row>
-        </FormModal>
+        <Modal {...rest} size="small" as={Form} onSubmit={() => handleSubmit()} onClose={handleClose}>
+            <ModalHeader title={c('Title').t`Sign in again to continue`} />
+            <ModalContent>
+                <InputFieldTwo
+                    required
+                    autoFocus
+                    autoComplete="current-password"
+                    id="password"
+                    as={PasswordInputTwo}
+                    value={password}
+                    onValue={setPassword}
+                    label={c('Label').t`Password`}
+                    placeholder={c('Placeholder').t`Password`}
+                />
+            </ModalContent>
+            <ModalFooter>
+                <Button onClick={handleClose} disabled={loading}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" type="submit" loading={loading}>
+                    {c('Action').t`Submit`}
+                </Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 
