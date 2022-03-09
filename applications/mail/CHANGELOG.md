@@ -1,12 +1,12 @@
 ## Release 4.0.18 - Mar 23, 2022
 
-# Improvements
+### Improvements
 
 -   Updated the UI of the main message view
 -   Updated the UI of specific modals
 -   Improved app loading times by caching specific assets offline
 
-# Bug fixes
+### Bug fixes
 
 -   Fixed an issue where a wrong font would be displayed for a draft if it is created from the mobile app
 -   Fixed an issue where embedded images were received non-embedded in replies sent through the Encryption for non-ProtonMail users tool
@@ -16,7 +16,7 @@
 
 ## Release 4.0.17 - Mar 9, 2022
 
-# Improvements
+### Improvements
 
 -   Adjusted the email tracker count to only count tracker within the present message, excluding previous messages within a conversation. Tracker protection still applies to the entire conversation.
 -   Moved the "Daily email notifications" setting to the "General" section in Settings
