@@ -55,6 +55,7 @@ export const hasMailPlus = (subscription: Subscription | undefined) => hasSomePl
 export const hasMailProfessional = (subscription: Subscription | undefined) => hasSomePlan(subscription, PROFESSIONAL);
 export const hasVpnBasic = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNBASIC);
 export const hasVpnPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNPLUS);
+export const hasFree = (subscription: Subscription | undefined) => (subscription?.Plans || []).length === 0;
 
 export const getIsB2BPlan = (planName: PLANS | ADDON_NAMES) => {
     return [MAIL_PRO, DRIVE_PRO, BUNDLE_PRO, ENTERPRISE].includes(planName as any);
