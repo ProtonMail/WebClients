@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { Audience, Currency, Cycle, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { PLAN_NAMES, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
+import { CYCLE, PLAN_NAMES, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
@@ -15,6 +15,7 @@ import CurrencySelector from '../CurrencySelector';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeaturesShort } from './PlanCardFeatures';
 import './PlanSelection.scss';
+import CycleSelector from '../CycleSelector';
 
 export interface SelectedProductPlans {
     [Audience.B2C]: PLANS;
@@ -32,6 +33,7 @@ interface Props {
     mode: 'signup' | 'settings' | 'modal';
     onChangePlanIDs: (newPlanIDs: PlanIDs) => void;
     onChangeCurrency: (newCurrency: Currency) => void;
+    onChangeCycle: (newCyle: Cycle) => void;
     audience: Audience;
     onChangeAudience: (newAudience: Audience) => void;
     selectedProductPlans: SelectedProductPlans;
@@ -50,6 +52,7 @@ const PlanSelection = ({
     subscription,
     onChangePlanIDs,
     onChangeCurrency,
+    onChangeCycle,
     audience,
     onChangeAudience,
     selectedProductPlans,
@@ -157,14 +160,31 @@ const PlanSelection = ({
         },
     ];
 
+    const currencyItem = (
+        <CurrencySelector mode="select-two" currency={currency} onSelect={onChangeCurrency} disabled={loading} />
+    );
     const currencySelectorRow = (
-        <div className="text-right">
-            <CurrencySelector mode="buttons" currency={currency} onSelect={onChangeCurrency} disabled={loading} />
+        <div className="flex flex-justify-space-between">
+            <div className="inline-block visibility-hidden">{currencyItem}</div>
+            <div className="inline-block">
+                <CycleSelector
+                    mode="buttons"
+                    cycle={cycle}
+                    onSelect={onChangeCycle}
+                    disabled={loading}
+                    options={[
+                        { text: c('Billing cycle option').t`1 month`, value: CYCLE.MONTHLY },
+                        { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY },
+                        { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS },
+                    ]}
+                />
+            </div>
+            <div className="inline-block">{currencyItem}</div>
         </div>
     );
 
     const logosRow = (
-        <div className="mt1 flex flex-justify-center flex-nowrap flex-align-items-center color-weak">
+        <div className="mt2 mb2 flex flex-justify-center flex-nowrap flex-align-items-center color-weak">
             <MailLogo />
             <Icon name="plus" alt="+" className="mx0-5" />
             <CalendarLogo />
@@ -193,7 +213,7 @@ const PlanSelection = ({
                                 {currencySelectorRow}
                             </>
                         ) : (
-                            <>{currencySelectorRow}</>
+                            <div className="mt1">{currencySelectorRow}</div>
                         )
                     }
                 />

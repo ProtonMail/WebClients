@@ -93,6 +93,7 @@ const PlansSection = () => {
                 plans={plans}
                 currency={currency}
                 cycle={cycle}
+                onChangeCycle={setCycle}
                 planIDs={currentPlanIDs}
                 hasFreePlan={false}
                 hasPlanSelectionComparison={false}

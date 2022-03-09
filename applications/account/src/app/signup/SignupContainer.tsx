@@ -782,6 +782,10 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
                             cycle={model.cycle}
                             planIDs={model.planIDs}
                             audience={model.audience}
+                            onChangeCycle={(cycle) => {
+                                setModelDiff({ cycle });
+                                void withLoading(updateCheckResultTogether(model.planIDs, model.currency, cycle));
+                            }}
                             onChangeAudience={(audience) => {
                                 setModelDiff({ audience });
                             }}
