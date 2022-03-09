@@ -12,6 +12,7 @@ import {
     useSettingsLink,
     useUser,
     getCanReactiveMnemonic,
+    useEventManager,
 } from '@proton/components';
 import { ChecklistKey, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { DENSITY } from '@proton/shared/lib/constants';
@@ -115,7 +116,6 @@ const List = (
     const [user] = useUser();
     const onCompose = useOnCompose();
     const { createModal } = useModals();
-    const [mnemonicPromptModal, setMnemonicPromptModalOpen, render] = useModalState();
     const goToSettings = useSettingsLink();
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
     const { dismissed: isGetStartedChecklistDismissed, handleDismiss: dismissGetStartedChecklist } =
@@ -124,6 +124,8 @@ const List = (
     const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
     const { page, total } = pagingHandlers;
 
+    const { call } = useEventManager();
+    const [mnemonicPromptModal, setMnemonicPromptModalOpen, render] = useModalState({ onExit: call });
     const [isMnemonicAvailable] = useIsMnemonicAvailable();
     const canReactivateMnemonic = getCanReactiveMnemonic(user);
     const displayMnemonicPrompt = isMnemonicAvailable && canReactivateMnemonic;
