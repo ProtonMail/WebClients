@@ -357,7 +357,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const labelClassName = 'inline-flex pt0-25';
 
     return (
-        <div className="calendar-widget" ref={eventReminderRef}>
+        <div className="calendar-widget mb0-75" ref={eventReminderRef}>
             <EventReminderBanner
                 startDate={startDate}
                 endDate={endDate}
@@ -366,7 +366,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                 isOutdated={isOutdated}
             />
             {!isOutdated && (
-                <div className="rounded border bg-norm mb0-5 scroll-if-needed">
+                <div className="rounded border bg-norm scroll-if-needed">
                     <div className="p1-5">
                         <h2 className="h3 mb0-25 text-bold">{getDisplayTitle(summary?.value)}</h2>
                         <CalendarEventDateHeader

@@ -9,10 +9,9 @@ interface Props {
     className?: string;
     loading: boolean;
     element?: Element;
-    hasScrollShadow?: boolean;
 }
 
-const ConversationHeader = ({ className, loading, element, hasScrollShadow }: Props) => {
+const ConversationHeader = ({ className, loading, element }: Props) => {
     const { highlightMetadata, shouldHighlight } = useEncryptedSearchContext();
 
     const isConversation = testIsConversation(element);
@@ -26,7 +25,7 @@ const ConversationHeader = ({ className, loading, element, hasScrollShadow }: Pr
     return (
         <header
             className={classnames([
-                'max-w100 message-conversation-summary upper-layer pt1 pb0-5 pr0-5 pl0-5 ml1 mr1 flex-item-noshrink',
+                'max-w100 message-conversation-summary upper-layer py1 px0-5 mx1 flex-item-noshrink',
                 loading && 'message-conversation-summary-is-loading',
                 className,
             ])}
@@ -36,8 +35,7 @@ const ConversationHeader = ({ className, loading, element, hasScrollShadow }: Pr
             <div className="flex flex-nowrap">
                 <h1
                     className={classnames([
-                        'message-conversation-summary-header mt0-25 mb0 h3 text-bold text-ellipsis-two-lines lh-rg flex-item-fluid pr1',
-                        hasScrollShadow ? 'pb0-5' : 'pb0',
+                        'message-conversation-summary-header my0 h3 text-bold text-ellipsis-two-lines lh-rg flex-item-fluid',
                     ])}
                     title={element?.Subject}
                     data-testid="conversation-header:subject"
