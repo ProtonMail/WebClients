@@ -34,9 +34,9 @@
 		block-size: rem(35);
 		padding-inline-start: calc(2em + #{rem(20)});
 		padding-inline-end: rem(40);
-		background-color: var(--searchbox-background-color, transparent);
+		background-color: var(--searchbox-background-color);
 		background-image: none;
-		color: var(--searchbox-text-color, var(--text-norm));
+		color: var(--searchbox-text-color);
 	}
 
 	&-search-button {
