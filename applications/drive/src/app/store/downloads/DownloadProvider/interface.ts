@@ -1,3 +1,5 @@
+import { VERIFICATION_STATUS } from 'pmcrypto';
+
 import { TransferState, TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import { LinkDownload } from '../interface';
@@ -13,6 +15,12 @@ export interface Download {
     state: TransferState;
     resumeState?: TransferState; // resumeState is set only when state is paused.
     error?: Error;
+    // Signature link and status is set only when state is set to SignatureIssue.
+    // Note that download can be of several links (for example the whole folder)
+    // and only one of them can have signature issue. We need to know which one
+    // exactly has the issue.
+    signatureIssueLink?: LinkDownload;
+    signatureStatus?: VERIFICATION_STATUS;
 }
 
 export type UpdateFilter = string | ((params: UpdateCallbackParams) => boolean);
@@ -21,6 +29,8 @@ export type UpdateCallback = (params: UpdateCallbackParams) => void;
 export type UpdateData = {
     size?: number;
     error?: Error;
+    signatureIssueLink?: LinkDownload;
+    signatureStatus?: VERIFICATION_STATUS;
 };
 export type UpdateCallbackParams = {
     id: string;

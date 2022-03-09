@@ -24,6 +24,8 @@ const DownloadButton = ({ shareId, selectedItems, disabledFolders }: Props) => {
                 name: item.Name,
                 mimeType: item.MIMEType,
                 size: item.Size,
+                signatureAddress: item.SignatureAddress,
+                signatureIssues: item.SignatureIssues,
             }))
         );
     };

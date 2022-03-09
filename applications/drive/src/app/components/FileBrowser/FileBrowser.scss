@@ -63,6 +63,12 @@
 	padding-inline: rem(40);
 }
 
+.file-browser-grid-view--signature-icon {
+	position: absolute;
+	inset-inline-start: rem(4);
+	height: 100%;
+}
+
 .file-browser-grid-view--options {
 	position: absolute;
 	inset-inline-end: rem(4);

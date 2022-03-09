@@ -26,7 +26,6 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
 
     const preloadFile = async (abortSignal: AbortSignal) => {
         const link = await getLink(abortSignal, shareId, linkId);
-        setLink(link);
 
         if (isPreviewAvailable(link.mimeType, link.size)) {
             const { stream, controls } = downloadStream([
@@ -40,8 +39,11 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
             });
 
             setContents(await streamToBuffer(stream));
+            // Get latest link with signature updates.
+            setLink(await getLink(abortSignal, shareId, linkId));
         } else {
             setContents(undefined);
+            setLink(link);
         }
     };
 
@@ -71,7 +73,7 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
                 buffer: contents,
             },
         ]);
-    }, [shareId, linkId, link, contents]);
+    }, [shareId, link, contents]);
 
     return {
         isLoading,

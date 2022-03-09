@@ -56,5 +56,5 @@ export const decryptPassphrase = async ({
         throw error;
     }
 
-    return { decryptedPassphrase: decryptedPassphrase as string, sessionKey };
+    return { decryptedPassphrase: decryptedPassphrase as string, sessionKey, verified };
 };

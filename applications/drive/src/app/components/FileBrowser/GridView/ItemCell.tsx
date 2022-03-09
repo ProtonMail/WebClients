@@ -6,8 +6,9 @@ import { Button, Icon, FileIcon, Checkbox, classnames, DragMoveContainer, FileNa
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useFileBrowserItem from '../useFileBrowserItem';
 import { useThumbnailsDownload } from '../../../store';
+import SignatureIcon from '../../SignatureIcon';
+import useFileBrowserItem from '../useFileBrowserItem';
 
 export interface Props extends Omit<ItemProps, 'isPreview' | 'showLocation' | 'columns'> {
     style: React.CSSProperties;
@@ -119,6 +120,7 @@ function ItemCell({
                     />
                 </div>
                 <div className="file-browser-grid-item--file-name flex border-top" title={item.Name}>
+                    <SignatureIcon item={item} className="file-browser-grid-view--signature-icon" />
                     <FileNameDisplay text={item.Name} className="center" />
                     <Button
                         shape="ghost"

@@ -19,12 +19,13 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useThumbnailsDownload } from '../../../store';
 import { formatAccessCount } from '../../../utils/formatters';
+import SignatureIcon from '../../SignatureIcon';
 import useFileBrowserItem from '../useFileBrowserItem';
+import CopyLinkIcon from '../CopyLinkIcon';
 import LocationCell from './Cells/LocationCell';
 import TimeCell from './Cells/TimeCell';
 import SizeCell from './Cells/SizeCell';
 import NameCell from './Cells/NameCell';
-import CopyLinkIcon from '../CopyLinkIcon';
 
 const ItemRow = ({
     item,
@@ -150,6 +151,7 @@ const ItemRow = ({
                             className="mr0-5"
                         />
                     )}
+                    <SignatureIcon item={item} className="mr0-5 flex-item-noshrink" />
                     <NameCell name={item.Name} />
                 </TableCell>
 

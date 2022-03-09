@@ -260,6 +260,76 @@ describe('useLinksState', () => {
         expect(result1.shareId.links.linkId9.encrypted.trashedByParent).toBeFalsy();
     });
 
+    it('updates encrypted link with signature issue', () => {
+        // First, it sets signature issue.
+        const result1 = addOrUpdate(state, 'shareId', [
+            {
+                encrypted: {
+                    linkId: 'linkId7',
+                    name: 'linkId7',
+                    parentLinkId: 'linkId0',
+                    signatureIssues: { name: 2 },
+                } as unknown as EncryptedLink,
+            },
+        ]);
+        expect(result1.shareId.links.linkId7).toMatchObject({
+            decrypted: { linkId: 'linkId7', signatureIssues: { name: 2 } },
+            encrypted: { linkId: 'linkId7', signatureIssues: { name: 2 } },
+        });
+        // Second, it keeps it even if we do another update which doesnt change
+        // how the link is encrypted (keys and encrypted data are the same).
+        const result2 = addOrUpdate(result1, 'shareId', [
+            {
+                encrypted: {
+                    linkId: 'linkId7',
+                    name: 'linkId7',
+                    parentLinkId: 'linkId0',
+                } as unknown as EncryptedLink,
+            },
+        ]);
+        expect(result2.shareId.links.linkId7).toMatchObject({
+            decrypted: { linkId: 'linkId7', signatureIssues: { name: 2 } },
+            encrypted: { linkId: 'linkId7', signatureIssues: { name: 2 } },
+        });
+        // Third, signature issue is cleared if keys or encrypted data is changed.
+        const result3 = addOrUpdate(result2, 'shareId', [
+            {
+                encrypted: {
+                    linkId: 'linkId7',
+                    name: 'linkId7',
+                    parentLinkId: 'linkId0',
+                    nodeKey: 'anotherKey',
+                } as unknown as EncryptedLink,
+            },
+        ]);
+        expect(result3.shareId.links.linkId7).toMatchObject({
+            decrypted: { linkId: 'linkId7', signatureIssues: undefined },
+            encrypted: { linkId: 'linkId7', signatureIssues: undefined },
+        });
+    });
+
+    it('updates decrypted link with signature issue', () => {
+        const result = addOrUpdate(state, 'shareId', [
+            {
+                encrypted: {
+                    linkId: 'linkId7',
+                    name: 'linkId7',
+                    parentLinkId: 'linkId0',
+                } as unknown as EncryptedLink,
+                decrypted: {
+                    linkId: 'linkId7',
+                    name: 'linkId7',
+                    parentLinkId: 'linkId0',
+                    signatureIssues: { name: 2 },
+                } as unknown as DecryptedLink,
+            },
+        ]);
+        expect(result.shareId.links.linkId7).toMatchObject({
+            decrypted: { linkId: 'linkId7', signatureIssues: { name: 2 } },
+            encrypted: { linkId: 'linkId7', signatureIssues: { name: 2 } },
+        });
+    });
+
     it('locks and unlocks links', () => {
         const result1 = setLock(state, 'shareId', ['linkId7', 'linkId8'], true);
         expect(getLockedIds(result1)).toMatchObject(['linkId7', 'linkId8']);
