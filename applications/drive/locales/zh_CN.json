@@ -119,9 +119,6 @@
       "Compare all features": [
         "功能对比"
       ],
-      "Compare plans": [
-        "套餐对比"
-      ],
       "Compose": [
         "写邮件"
       ],
@@ -242,6 +239,9 @@
       "Get verification code": [
         "获取验证码"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
       ],
@@ -347,9 +347,6 @@
       "Pause upload": [
         "暂停上传"
       ],
-      "Pay": [
-        "支付"
-      ],
       "Preview": [
         "预览"
       ],
@@ -432,7 +429,7 @@
         "保存"
       ],
       "Search": [
-        ""
+        "搜索"
       ],
       "Search drive": [
         ""
@@ -535,6 +532,9 @@
       ],
       "Upgrade": [
         "升级"
+      ],
+      "Upload anyway": [
+        ""
       ],
       "Upload file": [
         "上传文件"
@@ -1832,7 +1832,7 @@
         "已存在同名群组"
       ],
       "A problem occurred, please try again": [
-        ""
+        "出错了，请重试"
       ],
       "Amount above the maximum.": [
         "金额太大。"
@@ -1859,7 +1859,7 @@
         "未验证联系人签名"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "此浏览器无法开启全文搜索，请退出隐私浏览模式或使用其他浏览器。"
       ],
       "Could not find address ${ email }.": [
         "找不到邮箱 ${ email }。"
@@ -1930,9 +1930,6 @@
       "Invalid card number": [
         "卡号不正确"
       ],
-      "Invalid code": [
-        "无效的代码"
-      ],
       "Invalid expiration date": [
         "有效期不正确"
       ],
@@ -1953,6 +1950,9 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Missing signature": [
         "缺少签名"
@@ -1994,7 +1994,7 @@
         "不支持此支付流程"
       ],
       "Please activate your content search again": [
-        ""
+        "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -2015,7 +2015,7 @@
         "请求超时"
       ],
       "Search failed": [
-        ""
+        "搜索失败"
       ],
       "Signature not verified": [
         "签名未验证"
@@ -2471,7 +2471,7 @@
         ""
       ],
       "5 GB storage": [
-        ""
+        "5 GB 存储空间"
       ],
       "A free and uncensored Internet should be available to all.": [
         "每个人都应当享有自由的互联网，免受网络审查。"
@@ -2498,7 +2498,7 @@
         "添加其他邮箱地址，如 username2@protonmail.com"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "已对此地址开启密钥验证，向其发送邮件前需要先信任其公钥。"
+        "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "使用比特币支付后，请按以下步骤升级账户。"
@@ -2629,6 +2629,9 @@
       "Create your first folder and start moving your files.": [
         "创建您的第一个文件夹并开始移动文件。"
       ],
+      "Creating": [
+        ""
+      ],
       "Creating link to file": [
         "正在创建文件链接"
       ],
@@ -2646,9 +2649,6 @@
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "优惠券 ${ code } 折扣已计入"
-      ],
-      "Domains": [
-        "域名"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "即刻下载您所需的应用，随时随地保护隐私。"
@@ -2885,7 +2885,7 @@
         "只有同时知道链接和密码的人才能访问此文件夹。"
       ],
       "Other options": [
-        ""
+        "其他选项"
       ],
       "Paused": [
         "已暂停"
@@ -3023,7 +3023,7 @@
         "存储空间 GB"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "存储空间由 Proton 邮箱、日历、和网盘共享"
       ],
       "Support for 1 custom email domain": [
         ""
@@ -3050,7 +3050,7 @@
         "此帐户因可能违反用户协议而被封禁"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "此地址已被停用。待其所有者启用此地址后才能向其发送邮件。"
+        "此地址已被停用，待其所有者予以启用后才能向该地址发送邮件。"
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "您目前使用的浏览器不支持查看 PDF 文件，请下载后打开。"
@@ -3940,6 +3940,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        ""
+      ],
       "\"${ name }\" deleted permanently from trash": [
         ""
       ],
@@ -3993,9 +3996,6 @@
       ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } 个文件夹移动成功"
-      ],
-      "${ name } created successfully": [
-        ""
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         ""
@@ -4963,6 +4963,9 @@
       "PayPal verification failed": [
         "PayPal 验证失败"
       ],
+      "Performance might be affected": [
+        ""
+      ],
       "Phone numbers": [
         "电话号码"
       ],
@@ -5190,7 +5193,7 @@
         "导入将从最近的信息开始。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "上传公钥后方可向其发送端到端加密的邮件"
+        "上传公钥后方可向此地址发送端到端加密邮件"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
         "在同一个账户中使用多个邮箱地址，如 username2@protonmail.com"

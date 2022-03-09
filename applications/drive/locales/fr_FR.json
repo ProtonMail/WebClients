@@ -119,9 +119,6 @@
       "Compare all features": [
         "Comparer toutes les fonctionnalités"
       ],
-      "Compare plans": [
-        "Comparer les offres"
-      ],
       "Compose": [
         "Rédiger"
       ],
@@ -244,11 +241,14 @@
       "Get verification code": [
         "Demander un code de vérification"
       ],
+      "Go to label": [
+        "Afficher le label"
+      ],
       "Go to panel ${ index }": [
         "Aller au panneau ${ index }"
       ],
       "Go to parent": [
-        ""
+        "Revenir en arrière"
       ],
       "Go to settings": [
         "Accéder aux paramètres"
@@ -348,9 +348,6 @@
       ],
       "Pause upload": [
         "Suspendre l’importation"
-      ],
-      "Pay": [
-        "Payer"
       ],
       "Preview": [
         "Aperçu"
@@ -537,6 +534,9 @@
       ],
       "Upgrade": [
         "Changer d'offre"
+      ],
+      "Upload anyway": [
+        "Envoyer quand même"
       ],
       "Upload file": [
         "Importer un fichier"
@@ -1941,9 +1941,6 @@
       "Invalid card number": [
         "Numéro de carte non valide"
       ],
-      "Invalid code": [
-        "Code non valide"
-      ],
       "Invalid expiration date": [
         "Date d’expiration invalide"
       ],
@@ -1965,6 +1962,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant",
         "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers Proton existants"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Missing signature": [
         "Signature manquante"
@@ -2625,10 +2625,10 @@
         "Effacer les données de recherche chiffrée"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        ""
+        "Vider les données du navigateur effacera l'index de recherche sur cet appareil. Tous les fichiers devront être à nouveau indexés pendant l'utilisation de la fonctionnalité de recherche."
       ],
       "Clears browser data related to the encrypted search.": [
-        ""
+        "Efface les données du navigateur liées à la recherche chiffrée."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur « Demander un nouveau code » pour qu'un nouveau code de vérification soit envoyé à ${ strong }. Si cette adresse électronique est incorrecte, cliquez sur « Modifier » pour la corriger."
@@ -2676,6 +2676,9 @@
       "Create your first folder and start moving your files.": [
         "Créez votre premier dossier et commencez à importer vos fichiers."
       ],
+      "Creating": [
+        ""
+      ],
       "Creating link to file": [
         "Création du lien vers le fichier"
       ],
@@ -2694,9 +2697,6 @@
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Remise appliquée à votre abonnement avec le code promo ${ code }"
-      ],
-      "Domains": [
-        "Domaines"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Téléchargez votre application préférée dès aujourd'hui et préservez votre vie privée avec vous, partout où vous allez."
@@ -3994,6 +3994,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        "« ${ name } » correctement créé"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "« ${ name } » est définitivement supprimé"
       ],
@@ -4001,7 +4004,7 @@
         "« ${ name } » n'a pas pu être créé"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        ""
+        "« ${ name } » n'a pu être supprimé définitivement de la corbeille"
       ],
       "\"${ name }\" failed to be moved": [
         "« ${ name } » n'a pas pu être déplacé"
@@ -4055,16 +4058,13 @@
         "${ movedLinksCount } dossier déplacé",
         "${ movedLinksCount } dossiers déplacés"
       ],
-      "${ name } created successfully": [
-        "${ name } correctement créé"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
-        "",
-        ""
+        "${ numberOfItems } élément supprimé définitivement de la corbeille",
+        "${ numberOfItems } éléments supprimés définitivement de la corbeille"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "",
-        ""
+        "${ numberOfItems } élément n'a pu être supprimé définitivement de la corbeille",
+        "${ numberOfItems } éléments n'ont pu être supprimés définitivement de la corbeille"
       ],
       "${ numberOfItems } item failed to be moved": [
         "${ numberOfItems } élément n'a pas pu être déplacé",
@@ -4091,12 +4091,12 @@
         "${ numberOfItems } éléments correctement déplacés"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "",
-        ""
+        "${ numberOfItems } lien vers votre élément n’a pas pu être supprimé",
+        "${ numberOfItems } liens vers vos élements n'ont pas pu être supprimés"
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "",
-        ""
+        "${ numberOfItems } lien vers votre élément a été supprimé",
+        "${ numberOfItems } liens vers vos éléments ont été supprimés"
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } fichier restauré depuis la corbeille",
@@ -4559,7 +4559,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Obtenez jusqu'à 18 mois de ${ appName } ${ planName } gratuitement"
       ],
       "Invite friends and earn rewards!": [
         "Invitez des amis et gagnez des récompenses !"
@@ -5054,6 +5054,9 @@
       ],
       "PayPal verification failed": [
         "La vérification PayPal a échoué"
+      ],
+      "Performance might be affected": [
+        "Cela peut affecter les performances"
       ],
       "Phone numbers": [
         "Numéros de téléphone"

@@ -2295,8 +2295,8 @@
       "Log in to ProtonMail to activate your address": [
         "Aby aktywować swój adres, zaloguj się do ProtonMaila"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Upewnij się, że pamiętasz hasło, aby zalogować się i odszyfrować wiadomości. ${ boldAlert }. Zalecamy w pierwszej kolejności dodanie adresu pomocniczego."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Upewnij się, że pamiętasz hasło, aby zalogować się i odszyfrować wiadomości. ${ boldAlert } Zalecamy w pierwszej kolejności dodanie ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Wpisz ręcznie te informacje do urządzenia uwierzytelniania dwustopniowego. ${ _switchButton }."
@@ -2373,8 +2373,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton nie może odzyskać utraconych haseł"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton nie może odzyskać utraconych haseł."
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "ProtonMail może być również używany z wykorzystaniem pojedynczego hasła, które zastępuje Twoje hasło logowania oraz skrzynki pocztowej. Aby przejść w tryb pojedynczego hasła, wpisz hasło, z którego chcesz korzystać i kliknij przycisk Zapisz."
@@ -2396,6 +2396,9 @@
       ],
       "read our two-factor authentication Guide first": [
         "wcześniejsze zapoznanie się z naszym przewodnikiem"
+      ],
+      "recovery method": [
+        "metody odzyskiwania"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."

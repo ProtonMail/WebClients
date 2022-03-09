@@ -56,9 +56,6 @@
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
-      "Address options": [
-        "Επιλογές διεύθυνσης"
-      ],
       "Advanced search": [
         "Σύνθετη αναζήτηση"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Εφαρμογή"
+      ],
+      "Archive": [
+        ""
       ],
       "Attachment": [
         "Συνημμένο"
@@ -349,6 +349,9 @@
       "Go to first page": [
         "Μετάβαση στην πρώτη σελίδα"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to last page": [
         "Μετάβαση στην τελευταία σελίδα"
       ],
@@ -452,6 +455,9 @@
       "Load": [
         "Φόρτωση"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load image": [
         "Φόρτωση εικόνας"
       ],
@@ -508,6 +514,9 @@
       ],
       "More": [
         "Περισσότερα"
+      ],
+      "More details about ${ title }": [
+        ""
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
@@ -635,6 +644,9 @@
       "Re-sign": [
         "Επανασυνδεθείτε"
       ],
+      "Read receipt sent": [
+        ""
+      ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
@@ -725,8 +737,8 @@
       "send auto-reply email": [
         "αποστολή μηνύματος αυτόματης απάντησης"
       ],
-      "Send receipt": [
-        "Αποστολή αποδεικτικού"
+      "Send read receipt": [
+        ""
       ],
       "Set": [
         "Ορισμός"
@@ -794,6 +806,9 @@
       "Some images could not be loaded with tracking protection": [
         ""
       ],
+      "Star": [
+        ""
+      ],
       "Start import": [
         "Έναρξη εισαγωγής"
       ],
@@ -840,6 +855,9 @@
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
       ],
+      "Turn on auto-load": [
+        ""
+      ],
       "Turn on tracker protection": [
         "Ενεργοποίηση προστασίας από ιχνηλάτες"
       ],
@@ -858,8 +876,14 @@
       "Unordered list": [
         "Μη ταξινομημένη λίστα"
       ],
+      "Unstar": [
+        ""
+      ],
       "Unsubscribe": [
         "Απεγγραφή"
+      ],
+      "Unsubscribe from mailing list": [
+        ""
       ],
       "Unsubscribing": [
         "Διαγραφή"
@@ -915,6 +939,9 @@
       "View headers": [
         "Προβολή Headers"
       ],
+      "View HTML": [
+        ""
+      ],
       "View invoice": [
         "Προβολή τιμολογίου"
       ],
@@ -924,14 +951,14 @@
       "View message": [
         "Προβολή μηνύματος"
       ],
+      "View message details": [
+        ""
+      ],
       "View recipients": [
         "Προβολή παραληπτών"
       ],
       "View rendered HTML": [
         "Προβολή επεξεργασμένου κώδικα HTML"
-      ],
-      "View source code": [
-        "Προβολή πηγαίου κώδικα"
       ],
       "Why not?": [
         "Γιατί όχι;"
@@ -2881,6 +2908,9 @@
       "Message processing error.": [
         "Σφάλμα επεξεργασίας μηνύματος."
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
@@ -4056,6 +4086,21 @@
       "Expiration Time": [
         "Χρόνος Λήξης"
       ],
+      "Expires": [
+        ""
+      ],
+      "Expires in ${ formattedDelay }": [
+        ""
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires soon": [
+        ""
+      ],
       "file attached": [
         "συνημμένο αρχείο",
         "συνημμένα αρχεία"
@@ -4390,9 +4435,6 @@
       "Saving draft…": [
         "Αποθήκευση προχείρου…"
       ],
-      "Scheduled": [
-        "Προγραμματισμένο"
-      ],
       "Scheduled send of this message will be cancelled.": [
         "Η προγραμματισμένη αποστολή αυτού του μηνύματος θα ακυρωθεί."
       ],
@@ -4447,7 +4489,7 @@
       "Sorry, this message does not exist or has already expired": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Store and share files securely with Proton Drive.": [
@@ -4579,9 +4621,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Αυτό το μήνυμα θα λήξει ${ formattedDate }"
-      ],
-      "This message will expire in ${ formattedDelay }": [
-        "Αυτό το μήνυμα θα λήξει σε"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         ""
@@ -4886,9 +4925,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "Κάνοντας κλικ στο \"Κλειδί Εμπιστοσύνης\" θα δημιουργήσετε μια νέα επαφή και θα συσχετίσετε αυτό το δημόσιο κλειδί με\nαυτόν τον αποστολέα. Τα email από αυτή τη διεύθυνση θα επαληθευτούν αυτόματα κρυπτογραφικά."
       ],
-      "Do you want to trust the following public key?": [
-        "Θέλετε να εμπιστευθείτε το ακόλουθο δημόσιο κλειδί;"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Θέλετε να εμπιστευθείτε το κύριο δημόσιο κλειδί με το ακόλουθο αποτύπωμα;",
         "Θέλετε να εμπιστευθείτε τα κύρια δημόσια κλειδιά με τα ακόλουθα δακτυλικά αποτυπώματα;"
@@ -4960,6 +4996,9 @@
       ],
       "Go to Trash": [
         "Μετάβαση στα Διαγραμμένα"
+      ],
+      "Insert link": [
+        ""
       ],
       "Jump to first": [
         "Μετάβαση στην πρώτη"
@@ -5095,9 +5134,6 @@
       " and ${ l }": [
         " και ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } και ${ count } άλλα"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
@@ -5140,8 +5176,8 @@
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
       ],
-      "BCC:": [
-        "Κρυφή κοινοποίηση (BCC):"
+      "BCC": [
+        ""
       ],
       "Blind Carbon Copy": [
         "Κρυφή Κοινοποίηση"
@@ -5167,8 +5203,8 @@
       "Category": [
         "Κατηγορία"
       ],
-      "CC:": [
-        "Κοινοποίηση:"
+      "CC": [
+        ""
       ],
       "City": [
         "Πόλη"
@@ -5280,9 +5316,6 @@
       ],
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
-      ],
-      "Labels:": [
-        "Ετικέτες:"
       ],
       "Last 12 months only": [
         "Τελευταίοι 12 μήνες μόνο"
@@ -6107,15 +6140,6 @@
       "End date": [
         "Ημερομηνία λήξης"
       ],
-      "Fill in the email address and text to test your link": [
-        "Συμπληρώστε το email και το κείμενο για να ελέγξετε τη σύνδεσή σας"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Συμπληρώστε το τηλέφωνο και το κείμενο για να ελέγξετε τη σύνδεσή σας"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Συμπληρώστε τη σύνδεση URL και το κείμενο για να ελέγξετε τη σύνδεση σας"
-      ],
       "Filter folders": [
         "Φιλτράρισμα φακέλων"
       ],
@@ -6157,6 +6181,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Proton username": [
         "Όνομα χρήστη Proton"
@@ -6468,11 +6495,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Κατάργηθηκε η Εγγραφή"
+      "Unsubscribed from mailing list": [
+        ""
       ],
-      "Unsubscribing...": [
-        "Κατάργηση Εγγραφής..."
+      "Unsubscribing from mailing list...": [
+        ""
       ]
     },
     "Step in filter modal": {
@@ -6854,9 +6881,6 @@
       "Addresses": [
         "Διευθύνσεις"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Όλοι οι παραλήπτες προστέθηκαν στο πεδίο BCC και δεν μπορούν να αποκαλυφθούν"
-      ],
       "Are you sure you want to close?": [
         "Είστε βέβαιοι ότι θέλετε να κλείσετε το παράθυρο;"
       ],
@@ -7051,9 +7075,6 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
-      "Keyboard Shortcuts": [
-        "Συντομεύσεις Πληκτρολογίου"
-      ],
       "Label as": [
         "Απόδοση ετικετών"
       ],
@@ -7084,8 +7105,14 @@
       "Merging contacts": [
         "Συγχώνευση Επαφών"
       ],
+      "Message details": [
+        ""
+      ],
       "Message list": [
         "Λίστα μηνυμάτων"
+      ],
+      "Message will expire": [
+        ""
       ],
       "More": [
         "Περισσότερα"
@@ -7162,6 +7189,9 @@
       "Recipient missing": [
         "Λείπει ο παραλήπτης"
       ],
+      "Recipients": [
+        ""
+      ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
@@ -7203,6 +7233,9 @@
       ],
       "Send without expiration?": [
         "Αποστολή χωρίς λήξη;"
+      ],
+      "Sender": [
+        ""
       ],
       "Sender changed": [
         "Ο αποστολέας άλλαξε"

@@ -2250,8 +2250,8 @@
       "Log in to ProtonMail to activate your address": [
         "Masuk ke ProtonMail untuk mengaktifkan alamat Anda"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Pastikan Anda ingat kata sandi untuk masuk dan mendekripsi surel. ${ boldAlert }. Kami sarankan untuk menambahkan surel pemulihan terlebih dahulu."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Pastikan Anda mengingat kata sandi yang Anda gunakan untuk masuk dan mendekripsi email. ${ boldAlert } Kami menyarankan Anda untuk terlebih dahulu menambahkan ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Masukkan informasi ini secara manual ke perangkat otentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ _switchButton }."
@@ -2328,8 +2328,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton tidak dapat membantu Anda memulihkan kata sandi yang hilang"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton tidak dapat membantu Anda memulihkan kata sandi yang hilang."
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "ProtonMail juga bisa digunakan dengan kata sandi tunggal yang menggantikan kata sandi untuk masuk dan kotak pesan. Untuk beralih ke mode kata sandi tunggal, masukkan satu kata sandi yang ingin Anda gunakan dan klik Simpan."
@@ -2348,6 +2348,9 @@
       ],
       "read our two-factor authentication Guide first": [
         "terlebih dahulu membaca panduan seputar otentikasi dua faktor berikut"
+      ],
+      "recovery method": [
+        "metode pemulihan"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Menyegarkan halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
@@ -2398,7 +2401,7 @@
         "Penyimpanan GB"
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Dukungan 1 alamat email dengan domain khusus"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "Mendukung protokol berbagi berkas seperti BitTorrent."
@@ -3753,7 +3756,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Dapatkan langganan ${ appName } ${ planName } hingga 18 bulan secara cuma-cuma"
       ],
       "Invite friends and earn rewards!": [
         "Undang teman-teman Anda dan dapatkan berbagai keuntungan!"
@@ -3872,7 +3875,7 @@
     },
     "Title": {
       "${ appName } ${ planName } trial": [
-        ""
+        "Uji coba ${ appName } ${ planName }"
       ],
       "${ appName } customization": [
         "Penyesuaian ${ appName }"

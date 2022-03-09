@@ -2265,8 +2265,8 @@
       "Log in to ProtonMail to activate your address": [
         "Inicia sesión en ProtonMail para activar tu dirección"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Asegúrate de recordar la contraseña para iniciar sesión y descifrar correos electrónicos. ${ boldAlert }. Recomendamos agregar un correo electrónico de recuperación primero."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Ingrese manualmente esta información en el dispositivo de autenticación de dos factores para configurar su cuenta. ${ _switchButton }."
@@ -2343,8 +2343,8 @@
       "Proton Calendar": [
         ""
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton no puede ayudarte a recuperar ninguna contraseña perdida"
+      "Proton can't help you recover any lost passwords.": [
+        ""
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "ProtonMail tambien puede utilizarse con una sola contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la del buzón. Para cambiar al modo de una sola contraseña, ingrese la única contraseña que desea utilizar y haga clic en guardar."
@@ -2363,6 +2363,9 @@
         "Se requiere ProtonVPN Plus o Visionary para la función Secure Core."
       ],
       "read our two-factor authentication Guide first": [
+        ""
+      ],
+      "recovery method": [
         ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
