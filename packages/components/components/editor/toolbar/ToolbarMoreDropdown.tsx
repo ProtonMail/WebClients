@@ -109,7 +109,9 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Insert image`}</span>
                         <Icon name="file-image" className="mt0-25 mr0-5" />
                     </DropdownMenuButton>,
-                    <div className="dropdown-item-hr" key="hr-4" />,
+                    (metadata.supportRightToLeft || metadata.supportPlainText) && (
+                        <div className="dropdown-item-hr" key="hr-4" />
+                    ),
                 ],
             ]}
             {metadata.supportRightToLeft &&
@@ -142,7 +144,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                         />
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Right to Left`}</span>
                     </DropdownMenuButton>,
-                    <div className="dropdown-item-hr" key="hr-5" />,
+                    metadata.supportPlainText && <div className="dropdown-item-hr" key="hr-5" />,
                 ]}
             {metadata.supportPlainText && [
                 <DropdownMenuButton
