@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { srpAuth, SrpConfig } from '@proton/shared/lib/srp';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import { useApi } from '../../hooks';
@@ -49,7 +49,7 @@ const AuthModal = <T,>({ config, onSuccess, onError, onClose, ...rest }: Props<T
             onClose?.();
         } catch (error: any) {
             setSubmitting(false);
-            const { code, message } = getApiErrorMessage(error);
+            const { code, message } = getApiError(error);
             if (code === PASSWORD_WRONG_ERROR) {
                 setError(message);
             }
