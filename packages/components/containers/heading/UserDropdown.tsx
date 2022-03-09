@@ -6,7 +6,7 @@ import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, PLAN_SERVICES, SSO_PATHS } from
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
-import { getPlanName, hasLifetime } from '@proton/shared/lib/helpers/subscription';
+import { getPlan, hasLifetime } from '@proton/shared/lib/helpers/subscription';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import {
     usePopperAnchor,
@@ -108,11 +108,11 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
         if (hasLifetime(subscription)) {
             planName = 'Lifetime';
         } else {
-            planName = getPlanName(subscription, MAIL) || getPlanName(subscription, VPN);
+            planName = getPlan(subscription, MAIL)?.Title || getPlan(subscription, VPN)?.Title;
         }
 
         if (APP_NAME === PROTONVPN_SETTINGS) {
-            planName = getPlanName(subscription, VPN);
+            planName = getPlan(subscription, VPN)?.Title;
         }
     }
 
