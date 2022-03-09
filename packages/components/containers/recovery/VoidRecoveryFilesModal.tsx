@@ -1,14 +1,13 @@
 import { c } from 'ttag';
 import { deleteRecoverySecrets } from '@proton/shared/lib/api/settingsRecovery';
-import { useApi, useLoading, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 import Button from '../../components/button/Button';
 import { AlertModal, ModalProps } from '../../components';
 
-interface Props extends Omit<ModalProps, 'children' | 'size'> {
-    onSuccess: () => void;
-}
+type Props = Omit<ModalProps, 'children' | 'size'>;
 
-const VoidRecoveryFilesModal = ({ onClose, onSuccess, ...rest }: Props) => {
+const VoidRecoveryFilesModal = ({ onClose, ...rest }: Props) => {
+    const { call } = useEventManager();
     const api = useApi();
     const { createNotification } = useNotifications();
 
@@ -16,7 +15,7 @@ const VoidRecoveryFilesModal = ({ onClose, onSuccess, ...rest }: Props) => {
 
     const handleVoidClick = async () => {
         await api(deleteRecoverySecrets());
-        onSuccess();
+        await call();
         onClose?.();
         createNotification({ type: 'info', text: c('Info').t`Recovery files have been voided` });
     };
