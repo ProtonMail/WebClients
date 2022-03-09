@@ -270,9 +270,24 @@ const SubscriptionModal = ({
         void withLoadingCheck(check({ ...model, gift }, true));
     };
 
+    const handleChangeCurrency = (currency: Currency) => {
+        if (loadingCheck || currency === model.currency) {
+            return;
+        }
+        withLoadingCheck(check({ ...model, currency }));
+    };
+
+    const handleChangeCycle = (cycle: Cycle) => {
+        if (loadingCheck || cycle === model.cycle) {
+            return;
+        }
+        withLoadingCheck(check({ ...model, cycle }));
+    };
+
     useEffect(() => {
+        // Trigger once to initialise the check values
         void withLoadingCheck(check());
-    }, [model.cycle, model.currency]);
+    }, []);
 
     const backStep =
         model.step === SUBSCRIPTION_STEPS.CHECKOUT && !supportAddons(model.planIDs)
@@ -327,7 +342,7 @@ const SubscriptionModal = ({
                         onChangePlanIDs={(planIDs) =>
                             withLoadingCheck(check({ ...model, planIDs, step: SUBSCRIPTION_STEPS.CUSTOMIZATION }))
                         }
-                        onChangeCurrency={(currency) => setModel({ ...model, currency })}
+                        onChangeCurrency={handleChangeCurrency}
                         onChangeAudience={setAudience}
                         audience={audience}
                         selectedProductPlans={selectedProductPlans}
@@ -376,7 +391,7 @@ const SubscriptionModal = ({
                                     currency={model.currency}
                                     cycle={model.cycle}
                                     planIDs={model.planIDs}
-                                    onChangeCurrency={(currency) => setModel({ ...model, currency })}
+                                    onChangeCurrency={handleChangeCurrency}
                                 />
                             </div>
                         </div>
@@ -395,7 +410,7 @@ const SubscriptionModal = ({
                                                 planIDs={model.planIDs}
                                                 cycle={model.cycle}
                                                 currency={model.currency}
-                                                onChangeCycle={(cycle) => setModel({ ...model, cycle })}
+                                                onChangeCycle={handleChangeCycle}
                                                 disabled={loadingCheck}
                                             />
                                         </div>
@@ -451,7 +466,7 @@ const SubscriptionModal = ({
                                     planIDs={model.planIDs}
                                     gift={model.gift}
                                     coupon={model.coupon}
-                                    onChangeCurrency={(currency) => setModel({ ...model, currency })}
+                                    onChangeCurrency={handleChangeCurrency}
                                     onChangeGift={handleGift}
                                 />
                             </div>
