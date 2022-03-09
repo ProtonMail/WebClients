@@ -54,6 +54,9 @@
 
 	--email-message-view-background-color: var(--optional-email-message-view-background-color, var(--background-norm));
 
+	--email-message-view-opened-item-background-color: var(--optional-email-message-view-opened-item-background-color, var(--optional-email-message-view-background-color));
+	--email-message-view-opened-item-text-color: var(--optional-email-message-view-opened-item-text-color, var(--text-norm));
+
 	--field-background-color: var(--optional-field-background-color, var(--background-norm));
 	--field-text-color: var(--optional-field-text-color, var(--text-norm));
 	--field-placeholder-color: var(--optional-field-placeholder-color, var(--text-hint));
