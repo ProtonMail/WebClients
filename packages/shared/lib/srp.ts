@@ -17,7 +17,7 @@ interface SrpAuthData {
     SRPSession: string;
 }
 
-interface Config {
+export interface SrpConfig {
     [key: string]: any;
 }
 
@@ -26,7 +26,7 @@ interface Config {
  */
 interface CallAndValidateArguments {
     api: Api;
-    config: Config;
+    config: SrpConfig;
     authData: SrpAuthData;
     expectedServerProof: string;
 }
@@ -58,7 +58,7 @@ const callAndValidate = async <T>({
 interface SrpAuthArguments {
     api: Api;
     credentials: Credentials;
-    config: Config;
+    config: SrpConfig;
     info?: InfoResponse;
     version?: number;
 }
@@ -106,7 +106,7 @@ export const srpVerify = async <T>({
 }: {
     api: Api;
     credentials: Credentials;
-    config: Config;
+    config: SrpConfig;
 }) => {
     const authData = await srpGetVerify({ api, credentials });
     return api<T>({
