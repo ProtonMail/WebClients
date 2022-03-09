@@ -86,6 +86,8 @@ $context-bar-max-width: 400 !default;
 $default-height-fields: 35 !default;
 $default-height-fields-inputforms: 36 !default;
 $bigger-height-fields-inputforms: 44 !default;
+/* stylelint-disable-next-line */
+$fields-focus-ring-size: 0.1875rem; // 3px
 
 $conversations-column-width: 35% !default; // used also to align search bar on top
 
