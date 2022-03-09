@@ -315,7 +315,6 @@ const MailboxContainer = ({
                     </ErrorBoundary>
                     <ErrorBoundary>
                         <section
-                            ref={messageContainerRef}
                             className={classnames([
                                 'view-column-detail flex flex-column flex-item-fluid flex-nowrap relative',
                                 !showContentPanel && 'hidden',
