@@ -65,7 +65,7 @@ const HeaderCollapsed = ({
     return (
         <div
             className={classnames([
-                'message-header message-header-collapsed mx1-25 flex flex-nowrap flex-align-items-center cursor-pointer',
+                'message-header message-header-collapsed px1-25 flex flex-nowrap flex-align-items-center cursor-pointer',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 isUnreadMessage && 'is-unread',
                 !messageLoaded && 'is-loading',
