@@ -50,6 +50,8 @@ export const mapDecryptedLinksToChildren = (decryptedLinks: DecryptedLink[]): Fi
         UrlsExpired: link.shareUrl?.isExpired || false,
         HasThumbnail: link.hasThumbnail,
         CachedThumbnailURL: link.cachedThumbnailUrl,
+        SignatureAddress: link.signatureAddress,
+        SignatureIssues: link.signatureIssues,
     }));
 };
 

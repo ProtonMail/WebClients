@@ -15,6 +15,7 @@ function makeDownloadLink(name: string, type = LinkType.FILE): LinkDownload {
         name,
         mimeType: type === LinkType.FILE ? 'text/plain' : 'Folder',
         size: 1234,
+        signatureAddress: 'address',
     };
 }
 
@@ -126,6 +127,8 @@ describe('useDownloadQueue', () => {
             hook.current.updateWithData(fileTransferId, TransferState.Error, {
                 size: 42,
                 error: new Error('nope'),
+                signatureIssueLink: makeDownloadLink('name'),
+                signatureStatus: 2,
             });
         });
         expect(hook.current.downloads[0]).toMatchObject({
@@ -136,6 +139,8 @@ describe('useDownloadQueue', () => {
                 mimeType: 'text/plain',
                 size: 42,
             },
+            signatureIssueLink: makeDownloadLink('name'),
+            signatureStatus: 2,
         });
     });
 

@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
+import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 import { useLinkInner } from './useLink';
 
@@ -58,12 +58,15 @@ describe('useLink', () => {
         global.URL.createObjectURL = jest.fn(() => 'blob:objecturl');
 
         // @ts-ignore
-        decryptUnsigned.mockImplementation(({ armoredMessage }) => Promise.resolve(`dec:${armoredMessage}`));
+        decryptSigned.mockImplementation(({ armoredMessage }) =>
+            Promise.resolve({ data: `dec:${armoredMessage}`, verified: 1 })
+        );
         // @ts-ignore
         decryptPassphrase.mockImplementation(({ armoredPassphrase }) =>
             Promise.resolve({
                 decryptedPassphrase: `decPass:${armoredPassphrase}`,
                 sessionKey: `sessionKey:${armoredPassphrase}`,
+                verified: 1,
             })
         );
         mockGetSharePrivateKey.mockImplementation((_, shareId) => `privateKey:${shareId}`);
@@ -155,7 +158,7 @@ describe('useLink', () => {
         // With the parent key is decrypted the name of the requested link.
         expect(
             // @ts-ignore
-            decryptUnsigned.mock.calls.map(([{ privateKey, armoredMessage }]) => [privateKey, armoredMessage])
+            decryptSigned.mock.calls.map(([{ privateKey, armoredMessage }]) => [privateKey, armoredMessage])
         ).toMatchObject([['privateKey:nodeKey parent', 'name link']]);
     });
 
@@ -189,7 +192,12 @@ describe('useLink', () => {
     });
 
     it('loads link thumbnail using cached link thumbnail info', async () => {
-        const downloadCallbackMock = jest.fn();
+        const downloadCallbackMock = jest.fn().mockReturnValue(
+            Promise.resolve({
+                contents: Promise.resolve(undefined),
+                verifiedPromise: Promise.resolve(1),
+            })
+        );
         mockLinksState.getLink.mockReturnValue({
             decrypted: {
                 name: 'name',
@@ -215,11 +223,14 @@ describe('useLink', () => {
             ThumbnailBareURL: 'bareUrl',
             ThumbnailToken: 'token2', // Requested new non-expired token.
         });
-        const downloadCallbackMock = jest
-            .fn()
-            .mockImplementation((url: string, token: string) =>
-                token === 'token' ? Promise.reject('token expired') : Promise.resolve(undefined)
-            );
+        const downloadCallbackMock = jest.fn().mockImplementation((url: string, token: string) =>
+            token === 'token'
+                ? Promise.reject('token expired')
+                : Promise.resolve({
+                      contents: Promise.resolve(undefined),
+                      verifiedPromise: Promise.resolve(1),
+                  })
+        );
         mockLinksState.getLink.mockReturnValue({
             decrypted: {
                 name: 'name',
@@ -246,7 +257,12 @@ describe('useLink', () => {
             ThumbnailBareURL: 'bareUrl',
             ThumbnailToken: 'token',
         });
-        const downloadCallbackMock = jest.fn();
+        const downloadCallbackMock = jest.fn().mockReturnValue(
+            Promise.resolve({
+                contents: Promise.resolve(undefined),
+                verifiedPromise: Promise.resolve(1),
+            })
+        );
         mockLinksState.getLink.mockReturnValue({
             decrypted: {
                 name: 'name',
@@ -262,5 +278,135 @@ describe('useLink', () => {
         expect(mockRequst).toBeCalledTimes(1);
         expect(downloadCallbackMock).toBeCalledWith('bareUrl', 'token');
         expect(mockLinksState.setCachedThumbnail).toBeCalledWith('shareId', 'linkId', expect.any(String));
+    });
+
+    it('decrypts badly signed thumbnail block', async () => {
+        mockLinksState.getLink.mockReturnValue({
+            encrypted: {
+                linkId: 'link',
+            },
+            decrypted: {
+                linkId: 'link',
+                name: 'name',
+                hasThumbnail: true,
+                activeRevision: {
+                    id: 'revisionId',
+                },
+            },
+        });
+        mockRequst.mockReturnValue({
+            ThumbnailBareURL: 'bareUrl',
+            ThumbnailToken: 'token',
+        });
+        const downloadCallbackMock = jest.fn().mockReturnValue(
+            Promise.resolve({
+                contents: Promise.resolve(undefined),
+                verifiedPromise: Promise.resolve(2),
+            })
+        );
+
+        await act(async () => {
+            await hook.current.loadLinkThumbnail(abortSignal, 'shareId', 'link', downloadCallbackMock);
+        });
+        expect(mockLinksState.setLinks).toBeCalledWith('shareId', [
+            expect.objectContaining({
+                encrypted: expect.objectContaining({
+                    linkId: 'link',
+                    signatureIssues: { thumbnail: 2 },
+                }),
+            }),
+        ]);
+    });
+
+    describe('decrypts link meta data with signature issues', () => {
+        beforeEach(() => {
+            const generateLink = (id: string, parentId?: string) => {
+                return {
+                    linkId: `${id}`,
+                    parentLinkId: parentId,
+                    name: `name ${id}`,
+                    nodeKey: `nodeKey ${id}`,
+                    nodeHashKey: `nodeHashKey ${id}`,
+                    nodePassphrase: `nodePassphrase ${id}`,
+                };
+            };
+            const links = {
+                root: generateLink('root'),
+                parent: generateLink('parent', 'root'),
+                link: generateLink('link', 'parent'),
+            };
+            // @ts-ignore
+            mockLinksState.getLink.mockImplementation((_, linkId) => ({ encrypted: links[linkId] }));
+        });
+
+        it('decrypts badly signed passphrase', async () => {
+            // @ts-ignore
+            decryptPassphrase.mockReset();
+            // @ts-ignore
+            decryptPassphrase.mockImplementation(({ armoredPassphrase }) =>
+                Promise.resolve({
+                    decryptedPassphrase: `decPass:${armoredPassphrase}`,
+                    sessionKey: `sessionKey:${armoredPassphrase}`,
+                    verified: 2,
+                })
+            );
+
+            await act(async () => {
+                await hook.current.getLink(abortSignal, 'shareId', 'link');
+            });
+            ['root', 'parent'].forEach((linkId) => {
+                expect(mockLinksState.setLinks).toBeCalledWith('shareId', [
+                    expect.objectContaining({
+                        encrypted: expect.objectContaining({
+                            linkId,
+                            signatureIssues: { passphrase: 2 },
+                        }),
+                    }),
+                ]);
+            });
+        });
+
+        it('decrypts badly signed hash', async () => {
+            // @ts-ignore
+            decryptSigned.mockReset();
+            // @ts-ignore
+            decryptSigned.mockImplementation(({ armoredMessage }) =>
+                Promise.resolve({ data: `dec:${armoredMessage}`, verified: 2 })
+            );
+            mockGetVerificationKey.mockReturnValue([]);
+
+            await act(async () => {
+                await hook.current.getLinkHashKey(abortSignal, 'shareId', 'parent');
+            });
+            expect(mockLinksState.setLinks).toBeCalledWith('shareId', [
+                expect.objectContaining({
+                    encrypted: expect.objectContaining({
+                        linkId: 'parent',
+                        signatureIssues: { hash: 2 },
+                    }),
+                }),
+            ]);
+        });
+
+        it('decrypts badly signed name', async () => {
+            // @ts-ignore
+            decryptSigned.mockReset();
+            // @ts-ignore
+            decryptSigned.mockImplementation(({ armoredMessage }) =>
+                Promise.resolve({ data: `dec:${armoredMessage}`, verified: 2 })
+            );
+
+            await act(async () => {
+                await hook.current.getLink(abortSignal, 'shareId', 'link');
+            });
+            expect(mockLinksState.setLinks).toBeCalledWith('shareId', [
+                expect.objectContaining({
+                    decrypted: expect.objectContaining({
+                        linkId: 'link',
+                        signatureIssues: { name: 2 },
+                    }),
+                }),
+            ]);
+        });
     });
 });

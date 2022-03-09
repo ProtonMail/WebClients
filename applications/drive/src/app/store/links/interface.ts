@@ -1,3 +1,5 @@
+import { VERIFICATION_STATUS } from 'pmcrypto';
+
 export enum LinkType {
     FOLDER = 1,
     FILE = 2,
@@ -46,6 +48,8 @@ interface Link {
     activeRevision?: {
         id: string;
         size: number;
+        // Address used for signature checks of blocks and xattributes.
+        signatureAddress: string;
         // Thumbnail URL is not part of all requests, because that would be
         // too heavy for API. For example, events do not include it.
         thumbnail?: {
@@ -53,6 +57,10 @@ interface Link {
             token: string;
         };
     };
+    // Address used for signature checks of names and keys.
+    signatureAddress: string;
+    // If there is no issue, the value should be undefined.
+    signatureIssues?: SignatureIssues;
 }
 
 export interface LinkShareUrl {
@@ -67,13 +75,20 @@ export interface LinkShareUrl {
     numAccesses?: number;
 }
 
+export type SignatureIssues = {
+    // Key represents where the issue originated, e.g., passphrase, hash, name
+    // xattributes, block, and so on.
+    [day in SignatureIssueLocation]?: VERIFICATION_STATUS;
+};
+
+export type SignatureIssueLocation = 'passphrase' | 'hash' | 'name' | 'xattrs' | 'blocks' | 'thumbnail';
+
 export interface EncryptedLink extends Link {
     nodeKey: string;
     nodePassphrase: string;
     nodePassphraseSignature: string;
     nodeHashKey?: string;
     contentKeyPacket?: string;
-    signatureAddress: string;
     xAttr: string;
 }
 

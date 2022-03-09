@@ -7,20 +7,29 @@ import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 import { isTransferCancelError, isTransferProgress } from '../../../utils/transfer';
 import { bufferToStream } from '../../../utils/stream';
 import { logError, reportError } from '../../utils';
+import { SignatureIssues } from '../../links';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import FileSaver from '../fileSaver/fileSaver';
 import useDownload from '../useDownload';
-import { LinkDownload } from '../interface';
+import { LinkDownload, DownloadSignatureIssueModal } from '../interface';
 import { UpdateFilter } from './interface';
 import useDownloadQueue from './useDownloadQueue';
 import useDownloadControl from './useDownloadControl';
+import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 
-export default function useDownloadProvider() {
+export default function useDownloadProvider(DownloadSignatureIssueModal: DownloadSignatureIssueModal) {
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
 
     const queue = useDownloadQueue();
     const control = useDownloadControl(queue.downloads, queue.updateWithCallback, queue.remove, queue.clear);
+    const { handleSignatureIssue } = useDownloadSignatureIssue(
+        DownloadSignatureIssueModal,
+        queue.downloads,
+        queue.updateState,
+        queue.updateWithData,
+        control.cancelDownloads
+    );
     const { initDownload } = useDownload();
 
     /**
@@ -94,6 +103,13 @@ export default function useDownloadProvider() {
             },
             onNetworkError: (error: any) => {
                 queue.updateWithData(nextDownload.id, TransferState.NetworkError, { error });
+            },
+            onSignatureIssue: async (
+                abortSignal: AbortSignal,
+                link: LinkDownload,
+                signatureIssues: SignatureIssues
+            ) => {
+                await handleSignatureIssue(abortSignal, nextDownload, link, signatureIssues);
             },
         });
         control.add(nextDownload.id, controls);

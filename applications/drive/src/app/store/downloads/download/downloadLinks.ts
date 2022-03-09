@@ -6,6 +6,7 @@ import {
     DownloadStreamControls,
     GetChildrenCallback,
     OnInitCallback,
+    OnSignatureIssueCallback,
 } from '../interface';
 import { NestedLinkDownload } from './interface';
 import { FolderTreeLoader } from './downloadLinkFolder';
@@ -22,7 +23,7 @@ export default function initDownloadLinks(links: LinkDownload[], callbacks: Down
     const archiveGenerator = new ArchiveGenerator();
 
     const start = () => {
-        loadTotalSize(links, folderLoaders, callbacks.getChildren, callbacks.onInit);
+        loadTotalSize(links, folderLoaders, callbacks.getChildren, callbacks.onInit, callbacks.onSignatureIssue);
         const linksIterator = iterateAllLinks(links, folderLoaders);
         const linksWithStreamsIterator = concurrentIterator.iterate(linksIterator, callbacks);
         archiveGenerator
@@ -50,7 +51,8 @@ function loadTotalSize(
     links: LinkDownload[],
     folderLoaders: Map<String, FolderTreeLoader>,
     getChildren: GetChildrenCallback,
-    onInit?: OnInitCallback
+    onInit?: OnInitCallback,
+    onSignatureIssue?: OnSignatureIssueCallback
 ) {
     const sizePromises = links.map(async (link) => {
         if (link.type === LinkType.FILE) {
@@ -58,7 +60,7 @@ function loadTotalSize(
         }
         const folderLoader = new FolderTreeLoader();
         folderLoaders.set(link.shareId + link.linkId, folderLoader);
-        return folderLoader.load(link.shareId, link.linkId, getChildren);
+        return folderLoader.load(link, getChildren, onSignatureIssue);
     });
 
     Promise.all(sizePromises)

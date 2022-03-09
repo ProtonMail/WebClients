@@ -3,10 +3,12 @@ import { ReadableStream } from 'web-streams-polyfill';
 import { DriveFileRevisionResult, DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { queryFileRevision } from '@proton/shared/lib/api/drive/files';
 
+import { streamToBuffer } from '../../utils/stream';
 import { useDebouncedRequest } from '../api';
 import { useDriveCrypto } from '../crypto';
-import { DecryptedLink, LinkType, useLink, useLinksListing } from '../links';
+import { DecryptedLink, LinkType, SignatureIssues, useLink, useLinksListing } from '../links';
 import initDownloadPure, { initDownloadStream } from './download/download';
+import initDownloadLinkFile from './download/downloadLinkFile';
 import downloadThumbnailPure from './download/downloadThumbnail';
 import {
     LinkDownload,
@@ -23,8 +25,8 @@ import {
  */
 export default function useDownload() {
     const debouncedRequest = useDebouncedRequest();
-    const { getPrimaryAddressKeys } = useDriveCrypto();
-    const { getLink, getLinkPrivateKey, getLinkSessionKey } = useLink();
+    const { getVerificationKey } = useDriveCrypto();
+    const { getLink, getLinkPrivateKey, getLinkSessionKey, setSignatureIssues } = useLink();
     const { loadChildren, getCachedChildren } = useLinksListing();
 
     const getChildren = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<DecryptedLink[]> => {
@@ -53,7 +55,8 @@ export default function useDownload() {
     };
 
     const getKeys = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
-        const [privateKey, sessionKey] = await Promise.all([
+        const [link, privateKey, sessionKey] = await Promise.all([
+            getLink(abortSignal, shareId, linkId),
             getLinkPrivateKey(abortSignal, shareId, linkId),
             getLinkSessionKey(abortSignal, shareId, linkId),
         ]);
@@ -61,8 +64,11 @@ export default function useDownload() {
         if (!sessionKey) {
             throw new Error('Session key missing on file link');
         }
+        if (!link.activeRevision?.signatureAddress) {
+            throw new Error('Signature address missing on file link');
+        }
 
-        const addressPublicKeys = (await getPrimaryAddressKeys()).map(({ publicKey }) => publicKey);
+        const addressPublicKeys = await getVerificationKey(link.activeRevision?.signatureAddress);
         return {
             privateKey: privateKey,
             sessionKeys: sessionKey,
@@ -80,6 +86,10 @@ export default function useDownload() {
             getBlocks,
             getKeys,
             ...eventCallbacks,
+            onSignatureIssue: async (abortSignal, link, signatureIssues) => {
+                await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
+                return eventCallbacks.onSignatureIssue?.(abortSignal, link, signatureIssues);
+            },
         });
     };
 
@@ -92,6 +102,10 @@ export default function useDownload() {
             getBlocks,
             getKeys,
             ...eventCallbacks,
+            onSignatureIssue: async (abortSignal, link, signatureIssues) => {
+                await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
+                return eventCallbacks?.onSignatureIssue?.(abortSignal, link, signatureIssues);
+            },
         });
         const stream = controls.start();
         return { controls, stream };
@@ -107,9 +121,43 @@ export default function useDownload() {
         return downloadThumbnailPure(url, token, () => getKeys(abortSignal, shareId, linkId));
     };
 
+    const checkFirstBlockSignature = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
+        const link = await getLink(abortSignal, shareId, linkId);
+        if (link.type === LinkType.FOLDER) {
+            return;
+        }
+        return new Promise<SignatureIssues | undefined>((resolve, reject) => {
+            const controls = initDownloadLinkFile(
+                {
+                    ...link,
+                    shareId,
+                },
+                {
+                    getChildren,
+                    getBlocks: (abortSignal) =>
+                        getBlocks(abortSignal, shareId, linkId, { FromBlockIndex: 1, PageSize: 1 }),
+                    getKeys,
+                    onError: reject,
+                    onNetworkError: reject,
+                    onSignatureIssue: async (abortSignal, link, signatureIssues) => {
+                        await setSignatureIssues(abortSignal, shareId, linkId, signatureIssues);
+                        resolve(signatureIssues);
+                    },
+                }
+            );
+            abortSignal.addEventListener('abort', () => {
+                controls.cancel();
+            });
+            streamToBuffer(controls.start())
+                .then(() => resolve(undefined))
+                .catch(reject);
+        });
+    };
+
     return {
         initDownload,
         downloadStream,
         downloadThumbnail,
+        checkFirstBlockSignature,
     };
 }

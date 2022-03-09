@@ -14,6 +14,12 @@ import initDownloadBlocks from './downloadBlocks';
 export default function initDownloadLinkFile(link: LinkDownload, callbacks: DownloadCallbacks): DownloadStreamControls {
     let keysPromise: Promise<DecryptFileKeys> | undefined;
 
+    const checkFileSignatures = async (abortSignal: AbortSignal) => {
+        if (link.signatureIssues) {
+            await callbacks.onSignatureIssue?.(abortSignal, link, link.signatureIssues);
+        }
+    };
+
     const transformBlockStream = async (
         abortSignal: AbortSignal,
         stream: ReadableStream<Uint8Array>,
@@ -33,7 +39,8 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
             getStreamMessage(stream),
             getSignature(decryptedSignature.data),
         ]);
-        const { data, verified } = await decryptMessage({
+        // When streaming is used, verified is actually Promise.
+        const { data, verified: verifiedPromise } = await decryptMessage({
             message,
             signature,
             sessionKeys: keys.sessionKeys,
@@ -41,16 +48,28 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
             streaming: 'web',
             format: 'binary',
         });
+        return {
+            data,
+            verifiedPromise,
+        } as unknown as {
+            data: ReadableStream<Uint8Array>;
+            verifiedPromise: Promise<VERIFICATION_STATUS>;
+        };
+    };
+
+    const checkBlockSignature = async (abortSignal: AbortSignal, verifiedPromise: Promise<VERIFICATION_STATUS>) => {
+        const verified = await verifiedPromise;
         if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-            await callbacks.onSignatureIssue?.(verified);
+            await callbacks.onSignatureIssue?.(abortSignal, link, { blocks: verified });
         }
-        return data as ReadableStream<Uint8Array>;
     };
 
     const controls = initDownloadBlocks({
         ...callbacks,
+        checkFileSignatures,
         getBlocks: (abortSignal, pagination) => callbacks.getBlocks(abortSignal, link.shareId, link.linkId, pagination),
         transformBlockStream,
+        checkBlockSignature,
     });
     return {
         ...controls,

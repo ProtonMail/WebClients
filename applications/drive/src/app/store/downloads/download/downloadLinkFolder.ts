@@ -9,6 +9,7 @@ import {
     DownloadCallbacks,
     DownloadStreamControls,
     GetChildrenCallback,
+    OnSignatureIssueCallback,
     ChildrenLinkMeta,
 } from '../interface';
 import { NestedLinkDownload } from './interface';
@@ -30,7 +31,7 @@ export default function initDownloadLinkFolder(
 
     const start = () => {
         folderLoader
-            .load(link.shareId, link.linkId, callbacks.getChildren)
+            .load(link, callbacks.getChildren, callbacks.onSignatureIssue)
             .then((size) => {
                 callbacks.onInit?.(size);
             })
@@ -75,23 +76,32 @@ export class FolderTreeLoader {
         this.abortController = new AbortController();
     }
 
-    async load(shareId: string, linkId: string, getChildren: GetChildrenCallback): Promise<number> {
-        const size = await this.loadHelper(shareId, linkId, getChildren);
+    async load(
+        link: LinkDownload,
+        getChildren: GetChildrenCallback,
+        onSignatureIssue?: OnSignatureIssueCallback
+    ): Promise<number> {
+        const size = await this.loadHelper(link, getChildren, onSignatureIssue);
         this.done = true;
         return size;
     }
 
     private async loadHelper(
-        shareId: string,
-        linkId: string,
+        link: LinkDownload,
         getChildren: GetChildrenCallback,
+        onSignatureIssue?: OnSignatureIssueCallback,
         parent: string[] = []
     ): Promise<number> {
         if (this.abortController.signal.aborted) {
             throw new TransferCancel({ message: `Transfer canceled` });
         }
 
-        const children = await getChildren(this.abortController.signal, shareId, linkId);
+        if (link.signatureIssues) {
+            await onSignatureIssue?.(this.abortController.signal, link, link.signatureIssues);
+        }
+
+        const shareId = link.shareId;
+        const children = await getChildren(this.abortController.signal, link.shareId, link.linkId);
         this.links = [
             ...this.links,
             ...children.map((link) => ({
@@ -102,12 +112,14 @@ export class FolderTreeLoader {
                 name: link.name,
                 mimeType: link.mimeType,
                 size: link.size,
+                signatureAddress: link.signatureAddress,
+                signatureIssues: link.signatureIssues,
             })),
         ];
         return Promise.all(
             children.map(async (item: ChildrenLinkMeta) => {
                 if (item.type === LinkType.FOLDER) {
-                    return this.loadHelper(shareId, item.linkId, getChildren, [...parent, item.name]);
+                    return this.loadHelper({ ...item, shareId }, getChildren, onSignatureIssue, [...parent, item.name]);
                 }
                 return item.size;
             })

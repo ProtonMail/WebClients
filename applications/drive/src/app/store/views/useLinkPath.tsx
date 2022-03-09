@@ -1,13 +1,14 @@
 import { useCallback } from 'react';
 import { c } from 'ttag';
 
-import { useLink } from '../links';
+import { DecryptedLink, useLink } from '../links';
 import useLinksState from '../links/useLinksState';
 
 type PathItem = {
     linkId: string;
     name: string;
     isRoot: boolean;
+    link: DecryptedLink;
 };
 
 /**
@@ -47,6 +48,7 @@ export default function useLinkPath() {
                 linkId: link.linkId,
                 name: link.parentLinkId ? link.name : rootDefaultName,
                 isRoot: !!link.parentLinkId,
+                link,
             }));
         },
         [getCachedLink]
