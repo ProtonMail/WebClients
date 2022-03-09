@@ -13,7 +13,7 @@ import {
     useUserSettings,
 } from '../../hooks';
 import RecoveryEmail from './email/RecoveryEmail';
-import RecoveryPhone from './RecoveryPhone';
+import RecoveryPhone from './phone/RecoveryPhone';
 import AuthModal from '../password/AuthModal';
 import SettingsParagraph from '../account/SettingsParagraph';
 import { SettingsSection } from '../account';
