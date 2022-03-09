@@ -316,7 +316,8 @@
 
 .trashed-messages:focus,
 .message-container.is-focused {
-	border-color: var(--interaction-norm);
+	border-color: var(--field-focus);
+	box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 }
 
 .message-content {
