@@ -21,6 +21,7 @@ import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { ESIndexingState, wasIndexingDone } from '@proton/encrypted-search';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { omit } from '@proton/shared/lib/helpers/object';
 import { getHumanLabelID } from '../../../helpers/labels';
 import AddressesInput from '../../composer/addresses/AddressesInput';
 import { extractSearchParameters, keywordToString } from '../../../helpers/mailboxUrl';
@@ -57,6 +58,8 @@ const DEFAULT_MODEL: SearchModel = {
     attachments: UNDEFINED,
     wildcard: AUTO_WILDCARD,
     filter: UNDEFINED,
+    begin: undefined,
+    end: undefined,
 };
 
 const getRecipients = (value = '') =>
@@ -149,7 +152,7 @@ const AdvancedSearch = ({
     const handleReset = () => updateModel(DEFAULT_MODEL);
 
     const isSearch = useMemo(() => {
-        return !isDeepEqual(model, DEFAULT_MODEL);
+        return !isDeepEqual(omit(model, ['labelID']), omit(DEFAULT_MODEL, ['labelID']));
     }, [model]);
 
     const showAdvancedSearch = !showEncryptedSearch || showMore;
@@ -162,12 +165,14 @@ const AdvancedSearch = ({
                     onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
                     onSubmit={handleSubmit}
                     showEncryptedSearch={showEncryptedSearch}
+                    showSearchIcon={false}
                 />
                 {isSearch ? (
                     <Button
                         shape="ghost"
                         color="weak"
-                        className="flex"
+                        className="flex mtauto mbauto"
+                        size="small"
                         disabled={!Object.keys(model).length}
                         type="reset"
                     >
