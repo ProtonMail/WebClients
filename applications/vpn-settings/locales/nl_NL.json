@@ -2265,8 +2265,8 @@
       "Log in to ProtonMail to activate your address": [
         "Log in op ProtonMail om uw e-mailadres te activeren"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Vergeet niet het wachtwoord voor het inloggen en decoderen van e-mails. ${ boldAlert }. We raden u aan eerst een herstel-e-mailadres toe te voegen."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Vergeet niet het wachtwoord voor het inloggen en ontsleutelen van e-mails. ${ boldAlert }. We raden u het toevoegen van ${ recoveryLink } eerst aan."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Vul deze informatie handmatig in op uw tweestapsverificatie-apparaat om uw account te configureren. ${ _switchButton }."
@@ -2343,8 +2343,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton kan u niet helpen bij het herstellen van uw wachtwoord"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton kan u niet helpen bij het herstellen van verloren wachtwoorden."
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "U kunt ook ProtonMail met een enkel wachtwoord gebruiken dat zowel het inlog als mailbox wachtwoord vervangt. Om te schakelen naar een enkel wachtwoord, vul het enkel wachtwoord naar keuze in en klik op opslaan."
@@ -2364,6 +2364,9 @@
       ],
       "read our two-factor authentication Guide first": [
         "eerst de instructies over tweestapsverificatie (2FA) te lezen"
+      ],
+      "recovery method": [
+        "herstelmethode"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."

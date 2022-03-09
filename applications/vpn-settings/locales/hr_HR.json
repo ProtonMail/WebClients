@@ -2280,8 +2280,8 @@
       "Log in to ProtonMail to activate your address": [
         "Prijavite se u ProtonMail da biste aktivirali vašu adresu"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Obavezno zapamtite lozinku za prijavu i dešifriranje e-pošte. ${ boldAlert }. Preporučujemo da prvo dodate e-adresu za oporavak."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ _switchButton }."
@@ -2358,8 +2358,8 @@
       "Proton Calendar": [
         ""
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton vam ne može pomoći da vratite izgubljene lozinke"
+      "Proton can't help you recover any lost passwords.": [
+        ""
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "ProtonMail se također može koristiti s jednom lozinkom koja zamjenjuje lozinku za prijavu i za sandučić e-pošte. Da biste se prebacili na način rada s jednom lozinkom, unesite jednu lozinku koju želite koristiti i pritisnite Spremi."
@@ -2379,6 +2379,9 @@
         "ProtonVPN Plus ili Visionary potrebni su za Secure Core značajku."
       ],
       "read our two-factor authentication Guide first": [
+        ""
+      ],
+      "recovery method": [
         ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [

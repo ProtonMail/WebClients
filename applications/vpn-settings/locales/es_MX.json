@@ -2265,8 +2265,8 @@
       "Log in to ProtonMail to activate your address": [
         "Inicie sesión en ProtonMail para activar su dirección"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Asegúrese de recordar la contraseña para iniciar sesión y descifrar correos electrónicos. ${ boldAlert }. Recomendamos añadir un correo electrónico de recuperación primero."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Asegúrese de recordar la contraseña para iniciar sesión y descifrar correos electrónicos. ${ boldAlert } Recomendamos añadir un ${ recoveryLink } primero."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Ingrese manualmente esta información en el dispositivo de autenticación de dos factores para configurar su cuenta. ${ _switchButton }."
@@ -2343,8 +2343,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton no puede ayudarle a recuperar ninguna contraseña perdida"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton no puede ayudarle a recuperar ninguna contraseña perdida."
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "ProtonMail puede también utilizarse con una sola contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la del buzón. Para cambiar al modo de una sola contraseña, ingrese la única contraseña que desea utilizar y haga clic en guardar."
@@ -2364,6 +2364,9 @@
       ],
       "read our two-factor authentication Guide first": [
         "leer primero nuestra Guía de autenticación de dos factores"
+      ],
+      "recovery method": [
+        "método de recuperación"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."

@@ -355,6 +355,9 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
+      "Go to label": [
+        "Ga naar label"
+      ],
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
       ],
@@ -961,6 +964,11 @@
       ],
       "Unsupported event": [
         "Niet-ondersteunde gebeurtenis"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2639,6 +2647,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
         "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton agenda's"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Name does not match": [
         "Naam komt niet overeen"
@@ -4409,8 +4420,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Voer uw herstel-telefoonnummer in en wij sturen u uw gebruikersnaam of e-mailadres."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "Gebeurtenisuitnodigingen en RSVPs zullen worden verstuurd in deze taal."
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "Verlopen"
@@ -4683,8 +4694,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru leest uw persoonlijke gegevens om toegang te bieden aan adverteerders, Russische overheidsinstanties en andere derde partijen. Maak een veilig e-mailadres aan voor betere privacy."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Vergeet niet het wachtwoord voor het inloggen en decoderen van e-mails. ${ boldAlert }. We raden u aan eerst een herstel-e-mailadres toe te voegen."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Vergeet niet het wachtwoord voor het inloggen en decoderen van e-mails. ${ boldAlert }. We raden u het toevoegen van ${ recoveryLink } eerst aan."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Vul deze informatie handmatig in op uw tweestapsverificatieapparaat om uw account te configureren. ${ _switchButton }."
@@ -4899,8 +4910,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton kan u niet helpen bij het herstellen van uw wachtwoord"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton kan u niet helpen bij het herstellen van verloren wachtwoorden."
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton heeft een import onderbroken omdat de verbinding met uw andere e-mailprovider verbroken is. Gelieve opnieuw verbinding te maken."
@@ -4950,6 +4961,9 @@
       ],
       "Recovery files have been voided": [
         "Herstelbestanden zijn ongeldig gemaakt"
+      ],
+      "recovery method": [
+        "herstelmethode"
       ],
       "Recovery phrase copied to clipboard": [
         "Herstel zin gekopieerd naar klembord"
@@ -5016,6 +5030,9 @@
       ],
       "Set recovery phrase": [
         "Herstelzin instellen"
+      ],
+      "Show original message": [
+        "Toon het originele bericht"
       ],
       "Signed up": [
         "Geregistreerd"
@@ -5449,6 +5466,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "U zult ${ loseAllData } m.b.t. uw ${ BRAND_NAME } account. Om dit te herstellen moet u uw oude wachtwoord invoeren."
       ],
@@ -5773,6 +5793,9 @@
       ],
       "Go to Trash": [
         "Ga naar Prullenbak"
+      ],
+      "Insert link": [
+        "Koppeling invoegen"
       ],
       "Jump to first": [
         "Spring naar eerste"
@@ -6520,8 +6543,8 @@
       "Send auto-reply": [
         "Automatisch antwoord versturen"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "Toon secundaire tijdzone"
@@ -7717,15 +7740,6 @@
       "Feedback": [
         "Feedback"
       ],
-      "Fill in the email address and text to test your link": [
-        "Vul het e-mailadres en de tekst in om uw link te testen"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Vul het telefoonnummer en de tekst in om uw link te testen"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Vul de URL-link en -tekst in om uw link te testen"
-      ],
       "Gift code": [
         "Geschenkcode"
       ],
@@ -7752,6 +7766,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem en voeg alle foutmeldingen toe"
+      ],
+      "Please insert link first": [
+        "Voeg eerst koppeling in"
       ],
       "Postal code": [
         "Postcode"
@@ -8930,9 +8947,6 @@
       ],
       "Invoices": [
         "Facturen"
-      ],
-      "Keyboard Shortcuts": [
-        "Sneltoetsen"
       ],
       "Labels": [
         "Labels"

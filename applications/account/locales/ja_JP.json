@@ -185,7 +185,7 @@
         "確認"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "リンク ${ linkToShow } を確認"
       ],
       "Contact support": [
         "サポートへ連絡"
@@ -212,7 +212,7 @@
         "リンクをコピー"
       ],
       "Create a secure ProtonMail address instead": [
-        ""
+        "代わりに安全な ProtonMail アドレスを作成"
       ],
       "Create address": [
         "アドレスの作成"
@@ -354,6 +354,9 @@
       ],
       "Get verification code": [
         "認証コードを取得"
+      ],
+      "Go to label": [
+        "ラベルへ移動"
       ],
       "Go to panel ${ index }": [
         "パネル ${ index } へ移動"
@@ -500,7 +503,7 @@
         "データを回復"
       ],
       "Refer a friend": [
-        ""
+        "友達を招待"
       ],
       "Refresh status": [
         "ステータスを更新"
@@ -767,7 +770,7 @@
         "2 要素認証コードを使用"
       ],
       "Use your current email address instead": [
-        ""
+        "代わりに現在のメールアドレスを使用"
       ],
       "Use “${ label }” setting": [
         "「${ label }」設定を使用する"
@@ -822,10 +825,10 @@
     },
     "Action in trial plan": {
       "No, thanks": [
-        ""
+        "いいえ"
       ],
       "Try free for 30 days": [
-        ""
+        "無料で 30 日間試す"
       ]
     },
     "Action to select a title for the bug report modal": {
@@ -936,7 +939,7 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "空の ICS ファイルです"
       ],
       "Invalid event": [
         "無効なイベントです"
@@ -945,13 +948,18 @@
         "無効な ICS ファイルです"
       ],
       "Invalid method": [
-        ""
+        "無効なメソッドです"
       ],
       "Unsupported calendar component": [
-        ""
+        "非対応のカレンダーコンポーネントです"
       ],
       "Unsupported event": [
         "サポートされていないイベントです"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -1180,22 +1188,22 @@
     },
     "Button": {
       "Add link to your email footer": [
-        ""
+        "リンクをメールフッターに追加"
       ],
       "Continue using ProtonMail.": [
-        ""
+        "ProtonMail を使って続行。"
       ],
       "Copy": [
-        ""
+        "コピー"
       ],
       "Invite": [
-        ""
+        "招待"
       ],
       "Send": [
-        ""
+        "送信"
       ],
       "Tweet": [
-        ""
+        "Tweet"
       ]
     },
     "Calendar feature": {
@@ -1460,769 +1468,769 @@
     },
     "Country name": {
       "Abkhazia": [
-        ""
+        "アブハジア"
       ],
       "Afghanistan": [
-        ""
+        "アフガニスタン"
       ],
       "Albania": [
-        ""
+        "アルバニア"
       ],
       "Algeria": [
-        ""
+        "アルジェリア"
       ],
       "American Samoa": [
-        ""
+        "アメリカ領サモア"
       ],
       "Andorra": [
-        ""
+        "アンドラ"
       ],
       "Angola": [
-        ""
+        "アンゴラ"
       ],
       "Anguilla": [
-        ""
+        "アンギラ"
       ],
       "Antarctica": [
-        ""
+        "南極大陸"
       ],
       "Antigua and Barbuda": [
-        ""
+        "アンティグア・バーブーダ"
       ],
       "Argentina": [
-        ""
+        "アルゼンチン"
       ],
       "Armenia": [
-        ""
+        "アルメニア"
       ],
       "Aruba": [
-        ""
+        "アルバ"
       ],
       "Ascension Island": [
-        ""
+        "アセンション島"
       ],
       "Australia": [
-        ""
+        "オーストラリア"
       ],
       "Austria": [
-        ""
+        "オーストリア"
       ],
       "Azerbaijan": [
-        ""
+        "アゼルバイジャン"
       ],
       "Bahamas": [
-        ""
+        "バハマ"
       ],
       "Bahrain": [
-        ""
+        "バーレーン"
       ],
       "Bangladesh": [
-        ""
+        "バングラデシュ"
       ],
       "Barbados": [
-        ""
+        "バルバドス"
       ],
       "Belarus": [
-        ""
+        "ベラルーシ"
       ],
       "Belgium": [
-        ""
+        "ベルギー"
       ],
       "Belize": [
-        ""
+        "ベリーズ"
       ],
       "Benin": [
-        ""
+        "ベナン"
       ],
       "Bermuda": [
-        ""
+        "バミューダ"
       ],
       "Bhutan": [
-        ""
+        "ブータン"
       ],
       "Bolivia": [
-        ""
+        "ボリビア"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        ""
+        "ボネール、シント・ユースタティウスおよびサバ"
       ],
       "Bosnia and Herzegovina": [
-        ""
+        "ボスニア・ヘルツェゴビナ"
       ],
       "Botswana": [
-        ""
+        "ボツワナ"
       ],
       "Bouvet Island": [
-        ""
+        "ブーベ島"
       ],
       "Brazil": [
-        ""
+        "ブラジル"
       ],
       "British Indian Ocean Territory": [
-        ""
+        "イギリス領インド洋地域"
       ],
       "Brunei Darussalam": [
-        ""
+        "ブルネイ・ダルサラーム"
       ],
       "Bulgaria": [
-        ""
+        "ブルガリア"
       ],
       "Burkina Faso": [
-        ""
+        "ブルキナファソ"
       ],
       "Burma": [
-        ""
+        "ビルマ"
       ],
       "Burundi": [
-        ""
+        "ブルンジ"
       ],
       "Cambodia": [
-        ""
+        "カンボジア"
       ],
       "Cameroon": [
-        ""
+        "カメルーン"
       ],
       "Canada": [
-        ""
+        "カナダ"
       ],
       "Cape Verde": [
-        ""
+        "カーボベルデ"
       ],
       "Cayman Islands": [
-        ""
+        "ケイマン諸島"
       ],
       "Central African Republic": [
-        ""
+        "中央アフリカ共和国"
       ],
       "Chad": [
-        ""
+        "チャド"
       ],
       "Chile": [
-        ""
+        "チリ"
       ],
       "China": [
-        ""
+        "中国"
       ],
       "Christmas Island": [
-        ""
+        "クリスマス島"
       ],
       "Cocos (Keeling) Islands": [
-        ""
+        "ココス (キーリング) 諸島"
       ],
       "Colombia": [
-        ""
+        "コロンビア"
       ],
       "Comoros": [
-        ""
+        "コモロ"
       ],
       "Congo": [
-        ""
+        "コンゴ"
       ],
       "Congo, Democratic Republic of the": [
-        ""
+        "コンゴ民主共和国"
       ],
       "Cook Islands": [
-        ""
+        "クック諸島"
       ],
       "Costa Rica": [
-        ""
+        "コスタリカ"
       ],
       "Cote d'Ivoire\"": [
-        ""
+        "コートジボワール"
       ],
       "Croatia": [
-        ""
+        "クロアチア"
       ],
       "Cuba": [
-        ""
+        "キューバ"
       ],
       "Curaçao": [
-        ""
+        "キュラソー島"
       ],
       "Cyprus": [
-        ""
+        "キプロス"
       ],
       "Czech Republic": [
-        ""
+        "チェコ共和国"
       ],
       "Denmark": [
-        ""
+        "デンマーク"
       ],
       "Djibouti": [
-        ""
+        "ジブチ"
       ],
       "Dominica": [
-        ""
+        "ドミニカ"
       ],
       "Dominican Republic": [
-        ""
+        "ドミニカ共和国"
       ],
       "Ecuador": [
-        ""
+        "エクアドル"
       ],
       "Egypt": [
-        ""
+        "エジプト"
       ],
       "El Salvador": [
-        ""
+        "エルサルバドル"
       ],
       "Equatorial Guinea": [
-        ""
+        "赤道ギニア"
       ],
       "Eritrea": [
-        ""
+        "エリトリア"
       ],
       "Estonia": [
-        ""
+        "エストニア"
       ],
       "Ethiopia": [
-        ""
+        "エチオピア"
       ],
       "Falkland Islands": [
-        ""
+        "フォークランド諸島"
       ],
       "Faroe Islands": [
-        ""
+        "フェロー諸島"
       ],
       "Federated States of Micronesia": [
-        ""
+        "ミクロネシア連邦"
       ],
       "Fiji": [
-        ""
+        "フィジー"
       ],
       "Finland": [
-        ""
+        "フィンランド"
       ],
       "France": [
-        ""
+        "フランス"
       ],
       "French Guiana": [
-        ""
+        "フランス領ギアナ"
       ],
       "French Polynesia": [
-        ""
+        "フランス領ポリネシア"
       ],
       "French Southern Territories": [
-        ""
+        "フランス領南方・南極地域"
       ],
       "Gabon": [
-        ""
+        "ガボン"
       ],
       "Gambia": [
-        ""
+        "ガンビア"
       ],
       "Georgia": [
-        ""
+        "ジョージア"
       ],
       "Germany": [
-        ""
+        "ドイツ"
       ],
       "Ghana": [
-        ""
+        "ガーナ"
       ],
       "Gibraltar": [
-        ""
+        "ジブラルタル"
       ],
       "Greece": [
-        ""
+        "ギリシャ"
       ],
       "Greenland": [
-        ""
+        "グリーンランド"
       ],
       "Grenada": [
-        ""
+        "グレナダ"
       ],
       "Guadeloupe": [
-        ""
+        "グアドループ"
       ],
       "Guam": [
-        ""
+        "グアム"
       ],
       "Guatemala": [
-        ""
+        "グアテマラ"
       ],
       "Guernsey": [
-        ""
+        "ガーンジー"
       ],
       "Guinea": [
-        ""
+        "ギニア"
       ],
       "Guinea-Bissau": [
-        ""
+        "ギニアビサウ"
       ],
       "Guyana": [
-        ""
+        "ガイアナ"
       ],
       "Haiti": [
-        ""
+        "ハイチ"
       ],
       "Heard Island and McDonald Islands": [
-        ""
+        "ハード島とマクドナルド諸島"
       ],
       "Holy See (Vatican City State)": [
-        ""
+        "聖座 (バチカン市国)"
       ],
       "Honduras": [
-        ""
+        "ホンジュラス"
       ],
       "Hong Kong": [
-        ""
+        "香港"
       ],
       "Hungary": [
-        ""
+        "ハンガリー"
       ],
       "Iceland": [
-        ""
+        "アイスランド"
       ],
       "India": [
-        ""
+        "インド"
       ],
       "Indonesia": [
-        ""
+        "インドネシア"
       ],
       "International": [
-        ""
+        "国際"
       ],
       "Iran": [
-        ""
+        "イラン"
       ],
       "Iraq": [
-        ""
+        "イラク"
       ],
       "Ireland": [
-        ""
+        "アイルランド"
       ],
       "Isle of Man": [
-        ""
+        "マン島"
       ],
       "Israel": [
-        ""
+        "イスラエル"
       ],
       "Italy": [
-        ""
+        "イタリア"
       ],
       "Jamaica": [
-        ""
+        "ジャマイカ"
       ],
       "Japan": [
-        ""
+        "日本"
       ],
       "Jersey": [
-        ""
+        "ジャージー"
       ],
       "Jordan": [
-        ""
+        "ヨルダン"
       ],
       "Kazakhstan": [
-        ""
+        "カザフスタン"
       ],
       "Kenya": [
-        ""
+        "ケニア"
       ],
       "Kiribati": [
-        ""
+        "キリバス"
       ],
       "Kosovo": [
-        ""
+        "コソボ"
       ],
       "Kuwait": [
-        ""
+        "クウェート"
       ],
       "Kyrgyzstan": [
-        ""
+        "キルギス"
       ],
       "Laos": [
-        ""
+        "ラオス"
       ],
       "Latvia": [
-        ""
+        "ラトビア"
       ],
       "Lebanon": [
-        ""
+        "レバノン"
       ],
       "Lesotho": [
-        ""
+        "レソト"
       ],
       "Liberia": [
-        ""
+        "リベリア"
       ],
       "Libya": [
-        ""
+        "リビア"
       ],
       "Liechtenstein": [
-        ""
+        "リヒテンシュタイン"
       ],
       "Lithuania": [
-        ""
+        "リトアニア"
       ],
       "Luxembourg": [
-        ""
+        "ルクセンブルク"
       ],
       "Macao": [
-        ""
+        "マカオ"
       ],
       "Madagascar": [
-        ""
+        "マダカスカル"
       ],
       "Malawi": [
-        ""
+        "マラウイ"
       ],
       "Malaysia": [
-        ""
+        "マレーシア"
       ],
       "Maldives": [
-        ""
+        "モルディブ"
       ],
       "Mali": [
-        ""
+        "マリ"
       ],
       "Malta": [
-        ""
+        "マルタ"
       ],
       "Marshall Islands": [
-        ""
+        "マーシャル諸島"
       ],
       "Martinique": [
-        ""
+        "マルティニーク"
       ],
       "Mauritania": [
-        ""
+        "モーリタニア"
       ],
       "Mauritius": [
-        ""
+        "モーリシャス"
       ],
       "Mayotte": [
-        ""
+        "マヨット"
       ],
       "Mexico": [
-        ""
+        "メキシコ"
       ],
       "Moldova": [
-        ""
+        "モルドバ"
       ],
       "Monaco": [
-        ""
+        "モナコ"
       ],
       "Mongolia": [
-        ""
+        "モンゴル"
       ],
       "Montenegro": [
-        ""
+        "モンテネグロ"
       ],
       "Montserrat": [
-        ""
+        "モントセラト"
       ],
       "Morocco": [
-        ""
+        "モロッコ"
       ],
       "Mozambique": [
-        ""
+        "モザンビーク"
       ],
       "Namibia": [
-        ""
+        "ナミビア"
       ],
       "Nauru": [
-        ""
+        "ナウル"
       ],
       "Nepal": [
-        ""
+        "ネパール"
       ],
       "Netherlands": [
-        ""
+        "オランダ"
       ],
       "New Caledonia": [
-        ""
+        "ニューカレドニア"
       ],
       "New Zealand": [
-        ""
+        "ニュージーランド"
       ],
       "Nicaragua": [
-        ""
+        "ニカラグア"
       ],
       "Niger": [
-        ""
+        "ニジェール"
       ],
       "Nigeria": [
-        ""
+        "ナイジェリア"
       ],
       "Niue": [
-        ""
+        "ニウエ"
       ],
       "Norfolk Island": [
-        ""
+        "ノーフォーク島"
       ],
       "North Korea": [
-        ""
+        "北朝鮮"
       ],
       "North Macedonia": [
-        ""
+        "北マケドニア"
       ],
       "Northern Mariana Islands": [
-        ""
+        "北マリアナ諸島"
       ],
       "Norway": [
-        ""
+        "ノルウェー"
       ],
       "Oman": [
-        ""
+        "オマーン"
       ],
       "Pakistan": [
-        ""
+        "パキスタン"
       ],
       "Palau": [
-        ""
+        "パラオ"
       ],
       "Palestine": [
-        ""
+        "パレスチナ"
       ],
       "Panama": [
-        ""
+        "パナマ"
       ],
       "Papua New Guinea": [
-        ""
+        "パプアニューギニア"
       ],
       "Paraguay": [
-        ""
+        "パラグアイ"
       ],
       "Peru": [
-        ""
+        "ペルー"
       ],
       "Philippines": [
-        ""
+        "フィリピン"
       ],
       "Pitcairn": [
-        ""
+        "ピトケアン諸島"
       ],
       "Poland": [
-        ""
+        "ポーランド"
       ],
       "Portugal": [
-        ""
+        "ポルトガル"
       ],
       "Puerto Rico": [
-        ""
+        "プエルトリコ"
       ],
       "Qatar": [
-        ""
+        "カタール"
       ],
       "Reunion": [
-        ""
+        "レユニオン"
       ],
       "Romania": [
-        ""
+        "ルーマニア"
       ],
       "Russia": [
-        ""
+        "ロシア"
       ],
       "Rwanda": [
-        ""
+        "ルワンダ"
       ],
       "Saint Barthélemy": [
-        ""
+        "サン・バルテルミー島"
       ],
       "Saint Helena": [
-        ""
+        "セントヘレナ島"
       ],
       "Saint Kitts and Nevis": [
-        ""
+        "セントクリストファー・ネービス"
       ],
       "Saint Lucia": [
-        ""
+        "セントルシア"
       ],
       "Saint Martin (French Part)": [
-        ""
+        "サン・マルタン (フランス領)"
       ],
       "Saint Pierre and Miquelon": [
-        ""
+        "サンピエール島・ミクロン島"
       ],
       "Saint Vincent and the Grenadines": [
-        ""
+        "セントビンセントおよびグレナディーン諸島"
       ],
       "Samoa": [
-        ""
+        "サモア"
       ],
       "San Marino": [
-        ""
+        "サンマリノ"
       ],
       "Sao Tome and Principe": [
-        ""
+        "サントメ・プリンシペ"
       ],
       "Saudi Arabia": [
-        ""
+        "サウジアラビア"
       ],
       "Senegal": [
-        ""
+        "セネガル"
       ],
       "Serbia": [
-        ""
+        "セルビア"
       ],
       "Seychelles": [
-        ""
+        "セーシェル"
       ],
       "Sierra Leone": [
-        ""
+        "シエラレオネ"
       ],
       "Singapore": [
-        ""
+        "シンガポール"
       ],
       "Sint Maarten": [
-        ""
+        "セント・マーチン島"
       ],
       "Slovakia": [
-        ""
+        "スロバキア"
       ],
       "Slovenia": [
-        ""
+        "スロベニア"
       ],
       "Solomon Islands": [
-        ""
+        "ソロモン諸島"
       ],
       "Somalia": [
-        ""
+        "ソマリア"
       ],
       "South Africa": [
-        ""
+        "南アフリカ"
       ],
       "South Georgia and the South Sandwich Islands": [
-        ""
+        "サウスジョージア島と南サンドイッチ諸島"
       ],
       "South Korea": [
-        ""
+        "韓国"
       ],
       "South Ossetia": [
-        ""
+        "南オセチア"
       ],
       "South Sudan": [
-        ""
+        "南スーダン"
       ],
       "Spain": [
-        ""
+        "スペイン"
       ],
       "Sri Lanka": [
-        ""
+        "スリランカ"
       ],
       "Sudan": [
-        ""
+        "スーダン"
       ],
       "Suriname": [
-        ""
+        "スリナム"
       ],
       "Svalbard and Jan Mayen": [
-        ""
+        "スヴァールバル諸島およびヤンマイエン島"
       ],
       "Swaziland": [
-        ""
+        "スワジランド"
       ],
       "Sweden": [
-        ""
+        "スウェーデン"
       ],
       "Switzerland": [
-        ""
+        "スイス"
       ],
       "Syria": [
-        ""
+        "シリア"
       ],
       "Taiwan": [
-        ""
+        "台湾"
       ],
       "Tajikistan": [
-        ""
+        "タジキスタン"
       ],
       "Tanzania": [
-        ""
+        "タンザニア"
       ],
       "Thailand": [
-        ""
+        "タイ"
       ],
       "Timor-Leste": [
-        ""
+        "東ティモール"
       ],
       "Togo": [
-        ""
+        "トーゴ"
       ],
       "Tokelau": [
-        ""
+        "トケラウ"
       ],
       "Tonga": [
-        ""
+        "トンガ"
       ],
       "Trinidad and Tobago": [
-        ""
+        "トリニダード・ドバゴ"
       ],
       "Tristan da Cunha": [
-        ""
+        "トリスタンダクーニャ"
       ],
       "Tunisia": [
-        ""
+        "チュニジア"
       ],
       "Turkey": [
-        ""
+        "トルコ"
       ],
       "Turkmenistan": [
-        ""
+        "トルクメニスタン"
       ],
       "Turks and Caicos Islands": [
-        ""
+        "タークス・カイコス諸島"
       ],
       "Tuvalu": [
-        ""
+        "ツバル"
       ],
       "Uganda": [
-        ""
+        "ウガンダ"
       ],
       "Ukraine": [
-        ""
+        "ウクライナ"
       ],
       "United Arab Emirates": [
-        ""
+        "アラブ首長国連邦"
       ],
       "United Kingdom": [
-        ""
+        "イギリス"
       ],
       "United States": [
-        ""
+        "アメリカ"
       ],
       "United States Minor Outlying Islands": [
-        ""
+        "合衆国領有小離島"
       ],
       "Uruguay": [
-        ""
+        "ウルグアイ"
       ],
       "Uzbekistan": [
-        ""
+        "ウズベキスタン"
       ],
       "Vanuatu": [
-        ""
+        "バヌアツ"
       ],
       "Venezuela": [
-        ""
+        "ベネズエラ"
       ],
       "Vietnam": [
-        ""
+        "ベトナム"
       ],
       "Virgin Islands, British": [
-        ""
+        "イギリス領ヴァージン諸島"
       ],
       "Virgin Islands, U.S.": [
-        ""
+        "アメリカ領ヴァージン諸島"
       ],
       "Wallis and Futuna": [
-        ""
+        "ウォリス・フツナ"
       ],
       "Western Sahara": [
-        ""
+        "西サハラ"
       ],
       "Yemen": [
-        ""
+        "イエメン"
       ],
       "Zambia": [
-        ""
+        "ザンビア"
       ],
       "Zimbabwe": [
-        ""
+        "ジンバブエ"
       ],
       "Åland Islands": [
-        ""
+        "オーランド諸島"
       ]
     },
     "CountryInfo": {
@@ -2507,7 +2515,7 @@
         "自動返信は有料機能です。この機能を使用するには有料アカウントにアップグレードしてください。"
       ],
       "Calendar limit reached": [
-        ""
+        "カレンダーの制限に達しました"
       ],
       "Calendar primary private key is not decrypted": [
         "カレンダーのプライマリー秘密鍵が復号されていません"
@@ -2519,7 +2527,7 @@
         ""
       ],
       "Checkout expired, please try again": [
-        ""
+        "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
       "Condition incomplete": [
         "条件が不完全です"
@@ -2558,7 +2566,7 @@
         "いずれかの条件にエラーがあります"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        ""
+        "アクティブなセッションを取得できませんでした。${ refresh } するか、後でもう一度お試しください。"
       ],
       "File has no contents to preview": [
         "ファイルにプレビューするコンテンツがありません"
@@ -2620,8 +2628,11 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         ""
       ],
-      "Name does not match": [
+      "Missing key packet": [
         ""
+      ],
+      "Name does not match": [
+        "名前が一致しません"
       ],
       "Name on card required": [
         "カード名義が必要です"
@@ -2684,7 +2695,7 @@
         "パスワードを変更する前に鍵を生成してください"
       ],
       "Please set a recovery email first": [
-        ""
+        "まず回復用メールアドレスを設定してください"
       ],
       "Please set a recovery phone number first": [
         "まず回復用の電話番号を設定してください"
@@ -2711,7 +2722,7 @@
         "処理が中断されました"
       ],
       "Request timed out": [
-        ""
+        "リクエストがタイムアウトしました"
       ],
       "Require at least one action": [
         "少なくとも 1 つのアクションが必要です"
@@ -2765,7 +2776,7 @@
         "最低 ${ _price2 } より受け付けています。"
       ],
       "The organization key must be activated first": [
-        ""
+        "組織の鍵を最初に有効にする必要があります"
       ],
       "The organization key must be activated first.": [
         "組織の鍵を最初に有効にする必要があります。"
@@ -2944,7 +2955,7 @@
         "予定"
       ],
       "Event validation failed": [
-        ""
+        "イベントの検証に失敗しました"
       ],
       "Floating times not supported": [
         ""
@@ -2974,7 +2985,7 @@
         "開始日時が存在しません"
       ],
       "No UID, title or start time": [
-        ""
+        "UID、タイトルまたは開始日時が存在しません"
       ],
       "Non-Gregorian": [
         "グレゴリオ暦ではありません"
@@ -3062,7 +3073,7 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        ""
+        "添付された ICS ファイルを復号できません"
       ],
       "Attached ICS file could not be read": [
         ""
@@ -3071,7 +3082,7 @@
         "無効な招待状"
       ],
       "Invalid response": [
-        ""
+        "無効なレスポンスです"
       ],
       "The event could not be added to your calendar. No answer was sent": [
         ""
@@ -3083,10 +3094,10 @@
         "予期しないエラー"
       ],
       "Unsupported invitation": [
-        ""
+        "サポートされていない招待です"
       ],
       "Unsupported response": [
-        ""
+        "未対応のレスポンスです"
       ],
       "We could not cancel the event in your calendar": [
         ""
@@ -3147,7 +3158,7 @@
         "出力が完了するまでタブを閉じないでください。"
       ],
       "Some of your events could not be exported.": [
-        ""
+        "いつくかのイベントはエクスポートされませんでした。"
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         ""
@@ -3374,7 +3385,7 @@
         "種類"
       ],
       "Value / Data": [
-        ""
+        "値 / データ"
       ],
       "Value / Data / Points to": [
         "値"
@@ -3620,7 +3631,7 @@
         "${ boldAccountSecurity } に移動"
       ],
       "Go to Outlook.com ${ securitySettingsLink }": [
-        ""
+        "Outlook.com へ移動 ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
         "2 段階認証がオフの場合、オンにします"
@@ -3635,7 +3646,7 @@
         ""
       ],
       "Select ${ boldExportCSV }": [
-        ""
+        "${ boldExportCSV } を選択"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         ""
@@ -3734,7 +3745,7 @@
         ""
       ],
       "Go to ${ calendarViewLink } in Yahoo Mail": [
-        ""
+        "Yahoo Mail の ${ calendarViewLink } へ移動"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         ""
@@ -3782,7 +3793,7 @@
         "一時停止"
       ],
       "Started": [
-        ""
+        "開始済み"
       ]
     },
     "Import type": {
@@ -3807,7 +3818,7 @@
         "連絡先をインポートすることはできません。詳細はクリックしてください"
       ],
       "No event can be imported. Expand for details.": [
-        ""
+        "予定をインポートできませんでした。クリックして詳細を展開します。"
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         ""
@@ -3836,10 +3847,10 @@
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
       "${ emailAddress } is a ${ appName } address": [
-        ""
+        "${ emailAddress } は ${ appName } のアドレスです"
       ],
       "${ emailAddress } is invalid": [
-        ""
+        "${ emailAddress } は無効です"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Free"
@@ -3905,7 +3916,7 @@
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        ""
+        "${ strongAddressAvailable } このメールアドレスを使ってすべての ${ BRAND_NAME } サービスにサインインできます。"
       ],
       "${ vpnAppName } Free": [
         "${ vpnAppName } Free"
@@ -4163,7 +4174,7 @@
         "中央揃え"
       ],
       "Check the status of current and previous imports.": [
-        ""
+        "現在の状態と以前のインポートを確認"
       ],
       "Choose the look and feel of the application.": [
         "アプリケーションの外観を変更できます。"
@@ -4184,7 +4195,7 @@
         "続けますか?"
       ],
       "Continue with ${ planName }": [
-        ""
+        "${ planName } で続行"
       ],
       "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
         ""
@@ -4286,7 +4297,7 @@
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
-        ""
+        "ほかの PGP 互換サービスで使用するために PGP キーをダウンロードします。"
       ],
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
@@ -4313,7 +4324,7 @@
         ""
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        ""
+        "再度回復を有効にすると新しい回復フレーズが生成されます。"
       ],
       "Encryption setting updated": [
         "暗号化の設定が更新されました。"
@@ -4322,10 +4333,10 @@
         "代わりに手動で鍵を入力"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
-        ""
+        "電話番号 ${ phone } に送信したコードを入力してください。"
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        ""
+        "${ email } に送信したコードを入力してください。受信箱にメールがない場合、迷惑メールフォルダーを確認してください。"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
@@ -4351,7 +4362,7 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         ""
       ],
-      "Event invites and RSVPs will be sent in this language.": [
+      "Event invitations and RSVPs will be sent in this language.": [
         ""
       ],
       "Expired": [
@@ -4448,7 +4459,7 @@
         ""
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        ""
+        "ログイン情報を失いアカウントをリセットすることになった場合、${ boldAccountAndRecovery }を両方用意することが${ boldImperative }。そうしないと、メール、連絡先、ファイルにアクセスできなくなる可能性があります。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "2 要素認証機器を紛失した場合、6 桁の2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
@@ -4463,7 +4474,7 @@
         "ダウングレードすると、ProtonVPN の有料機能が使えなくなります。"
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        ""
+        "最近パスワードをリセットのであれば、回復手段を使ってデータのロックを解除することができます"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         ""
@@ -4547,13 +4558,13 @@
         "インターネット接続が回復しました。"
       ],
       "Invited via email": [
-        ""
+        "メール経由の招待"
       ],
       "It appears some of your data is encrypted and locked.": [
-        ""
+        "いくつかのデータの暗号化と復号を可能にします。"
       ],
       "it’s imperative": [
-        ""
+        "必須です"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
         ""
@@ -4619,13 +4630,13 @@
         "ログには、あなたの Proton 認証情報を使用して行われた、全ての Proton サービスへの認証の試行が含まれます。"
       ],
       "lose access to all current encrypted data": [
-        ""
+        "すべての暗号化されたデータにアクセスできなくなります"
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         ""
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "ログイン、メールの復号するためのパスワードを忘れないでください。${ boldAlert }。初めに回復用メールアドレスを登録することをお勧めします。"
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "アカウント設定のために、２要素認証デバイスに手動でこの情報を入力してください。 ${ _switchButton }"
@@ -4742,13 +4753,13 @@
         "その他のオプション"
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        ""
+        "古い回復ファイルです。アップデートして確実にデータにアクセスできるようにします"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        ""
+        "古い回復手段です。アップデートして確実にデータにアクセスできるようにします"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        ""
+        "古い回復フレーズです。アップデートして確実にデータにアクセスできるようにします"
       ],
       "P2P": [
         "P2P"
@@ -4757,7 +4768,7 @@
         "12 か月プランに課金"
       ],
       "Paid for a monthly plan": [
-        ""
+        "月額プランに課金"
       ],
       "Payment can take a few minutes to fully verify.": [
         "お支払いの検証完了まで数分を要する場合があります。"
@@ -4781,7 +4792,7 @@
         "エクスポートする前に、秘密鍵を暗号化するためのパスワードを入力してください。"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        ""
+        "アカウントに関連付けられた 12 単語の回復フレーズ入力してください。"
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "安全に保ってください。これはパスワードをリセットしたときに、アカウントにアクセスしたりデータを復元するのに使われます。"
@@ -4829,7 +4840,7 @@
         "PLUS または VISIONARY プランが必要です"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        ""
+        "権限なしに送信者のサーバーからコンテンツを読み込むことを防ぎます。"
       ],
       "Preview": [
         "プレビュー"
@@ -4840,8 +4851,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "パスワードを紛失した場合、Protonはアカウントへのアクセスを回復することができません。"
+      "Proton can't help you recover any lost passwords.": [
+        "パスワードを紛失した場合、Proton はアカウントへのアクセスを回復することができません。"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Protonは他のメールプロバイダーとの接続が失われたためインポートを一時停止しました。再接続してください。"
@@ -4891,6 +4902,9 @@
       "Recovery files have been voided": [
         "回復ファイルは無効化されました"
       ],
+      "recovery method": [
+        "回復手段"
+      ],
       "Recovery phrase copied to clipboard": [
         "回復フレーズはクリップボードへコピーされました"
       ],
@@ -4919,10 +4933,10 @@
         "追加で 20% 割引"
       ],
       "Save your password somewhere safe.": [
-        ""
+        "パスワードを安全な場所に保管してください。"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
-        ""
+        "パスワードは安全な場所に保管してください。 パスワードが正しく入力されたか確認するには、アイコンをクリックしてください。"
       ],
       "Scan QR code instead": [
         "代わりに QR コードをスキャン"
@@ -4957,11 +4971,14 @@
       "Set recovery phrase": [
         "回復フレーズを設定"
       ],
+      "Show original message": [
+        "元のメッセージを表示"
+      ],
       "Signed up": [
-        ""
+        "サインアップ済み"
       ],
       "Signed up via your link": [
-        ""
+        "リンク経由でサインアップ済み"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
@@ -4982,7 +4999,7 @@
         "ストレージ GB"
       ],
       "Sucessfully sent invites": [
-        ""
+        "招待は正常に送信されました"
       ],
       "Support for 1 custom email domain": [
         "1 つの独自メールドメインをサポート"
@@ -4997,7 +5014,7 @@
         "${ professionalPlan } に切り替えることでさらにユーザーを追加できます。"
       ],
       "Temporarily unavailable. Please check back later.": [
-        ""
+        "一時的に利用できません。あとでお試しください。"
       ],
       "Test link": [
         "リンクのテスト"
@@ -5030,7 +5047,7 @@
         "これらの設定ファイルは、サードパーティ製のVPNアプリを使用する際や、ルーターでVPN接続を設定する際に、どのProtonVPNサーバーに接続するかを選択するためのものです。"
       ],
       "This 30-day free trial is not available any other way.": [
-        ""
+        "何らかの原因で 30 日のトライアルは利用できません。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -5081,7 +5098,7 @@
         "組織用の暗号鍵を作成します。4096ビット鍵は高性能コンピューターでのみ動作します。ほとんどのユーザーには2048ビット鍵の使用をお勧めします。"
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "これにより現在の回復フレーズは無効になります。この回復フレーズでアカウントにアクセスしたりデータを復元することはできなくなります。"
+        "現在の回復フレーズは無効になります。この回復フレーズでアカウントにアクセスしたりデータを復元することはできなくなります。"
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "これにより、PayPal を使用して Proton のサブスクリプションの支払いが可能になります。 新しいブラウザタブで PayPal にリダイレクトします。 使用している場合は ポップアップブロッカーを一旦無効にしてから続行してください。"
@@ -5108,13 +5125,13 @@
         "サインイン後 ${ toAppName } を開きます"
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
-        ""
+        "メールなどのデータを復号するには、回復ファイルが必要です。"
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
         "メールなどのデータを復号するには、回復フレーズや回復ファイルが必要です。"
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        ""
+        "メールなどのデータを復号するには、回復フレーズが必要です。"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         ""
@@ -5192,7 +5209,7 @@
         "有料プランにアップグレードすることで ProtonMail Bridge を使った IMAP/SMTP サポートを利用することができます。"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "次の ${ appName } ${ planName } 特典を失わないために今すぐアップグレードしてください。"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -5210,7 +5227,7 @@
         "公式アプリケーション以外で ProtonVPN サーバーに接続する場合、次の認証情報を使用してください。例: macOS 向け Tunnelblick、GNU/Linux 向け OpenVPN"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "独自ドメインのメールアドレス (例: you@yourname.com) を使用する"
       ],
       "Users": [
         "ユーザー"
@@ -5240,7 +5257,7 @@
         "公式 ProtonVPN アプリケーションの使用をおすすめします。"
       ],
       "We recommend using your recovery phrase instead.": [
-        ""
+        "代わりに回復フレーズを使うことをおすすめします。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "お支払いを保護するために3Dセキュアを用いています。"
@@ -5279,7 +5296,7 @@
         "Google アカウントから何をインポートしますか？"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        ""
+        "無効にすると、知らないうちに画像が読み込まれることを防ぎます。"
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "通知を有効にすると、新着メッセージがある場合に回復/通知アドレスにアラートを送信します。"
@@ -5354,7 +5371,7 @@
         "OpenVPN / IKEv2 認証情報で、ProtonVPN アプリケーションや ProtonVPN ダッシュボードにログインすることはできません。 ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        ""
+        "回復手段を設定していないため、パスワードを忘れた場合にはアカウントの復旧はできません。回復手段を設定しないまま続行しますか?"
       ],
       "You have no saved payment methods.": [
         "支払い方法が登録されていません。"
@@ -5378,7 +5395,7 @@
         "リンクを作成するには個人用カレンダーが必要です。"
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        ""
+        "イベントを .ics からインポートするには、アクティブなパーソナルカレンダーが必要です。"
       ],
       "You need to have an active personal calendar to import your events.": [
         ""
@@ -5389,8 +5406,11 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量が最大に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
+      "You still need to reply to invitations for the host to see your response.": [
         ""
+      ],
+      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
+        "${ BRAND_NAME } アカウントに ${ loseAllData }。復元するには、古いパスワードが必要です。"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "支払いの検証のため、まもなく銀行のサイトへリダイレクトされます。"
@@ -5399,13 +5419,13 @@
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        ""
+        "ダウンロードした回復ファイルを使ってアカウントをリセットしたあとに暗号化されたデータを復元することはできません。"
       ],
       "You'll stay signed in even after you close the browser.": [
         "ブラウザーを閉じてもサインインしたままでいられます。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        ""
+        "あなたの ${ BRAND_NAME } アカウントは ${ externalEmailAddress } に関連付けされています。${ toAppName } を使うには、アドレスを作成してください。"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されています。${ payInvoiceLink }"
@@ -5441,7 +5461,7 @@
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
       "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
+        "無料の ${ appName } ${ planName } トライアルは ${ formattedTrialExpirationDate } に終了します。"
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "${ delayedImport.Account } からのインポートが一時的に遅延しています。"
@@ -5714,6 +5734,9 @@
       "Go to Trash": [
         "ゴミ箱を開く"
       ],
+      "Insert link": [
+        "リンクを挿入"
+      ],
       "Jump to first": [
         "最初にジャンプ"
       ],
@@ -5900,7 +5923,7 @@
         "${ MaxMembers } ユーザーのうち ${ UsedMembers } ユーザー"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        ""
+        "(一時的に利用できません。あとでお試しください。)"
       ],
       "Account storage": [
         "アカウントの容量"
@@ -6005,7 +6028,7 @@
         "コード"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "コードは空白なしの 6 桁の数字です"
       ],
       "Color": [
         "色"
@@ -6050,7 +6073,7 @@
         "コピー"
       ],
       "Could you please let us know which provider?": [
-        ""
+        "プロバイダーについて教えていただけますか?"
       ],
       "Could you please specify which streaming service?": [
         "そのストリーミングサービスについて教えていただけますか?"
@@ -6077,7 +6100,7 @@
         "毎日のメール通知"
       ],
       "Date": [
-        ""
+        "日付"
       ],
       "Date format": [
         "日付のフォーマット"
@@ -6089,10 +6112,10 @@
         "既定のメールアドレス"
       ],
       "Default event duration": [
-        ""
+        "既定の予定の長さ"
       ],
       "Default full day notifications": [
-        ""
+        "終日の予定の既定の通知"
       ],
       "Default language": [
         "デフォルトの言語"
@@ -6134,7 +6157,7 @@
         "今後表示しない"
       ],
       "Do you have any suggestions for our team?": [
-        ""
+        "私たちのチームに対する提案はありますか?"
       ],
       "Domain": [
         "ドメイン"
@@ -6170,13 +6193,13 @@
         "週の終わり"
       ],
       "Enter organization name to confirm": [
-        ""
+        "続行するために組織名を入力してください"
       ],
       "Enter password": [
         "パスワードを入力"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
-        ""
+        "フィンガープリント ${ fingerprintCode } を持つキーのパスワードを入力してください"
       ],
       "Expires": [
         "有効期限"
@@ -6242,7 +6265,7 @@
         "間隔"
       ],
       "Invite via email": [
-        ""
+        "メール経由で招待"
       ],
       "Keep me signed in": [
         "サインインしたままにする"
@@ -6454,8 +6477,8 @@
       "Send auto-reply": [
         "自動返信を送信"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "2つ目のタイムゾーンを表示する"
@@ -6497,13 +6520,13 @@
         "システム情報"
       ],
       "The email was sent ${ attachment }": [
-        ""
+        "${ attachment } でメールを送信"
       ],
       "the email was sent ${ attachment }": [
-        ""
+        "メールを ${ attachment } で送信"
       ],
       "The email was sent ${ attachmentStrong }": [
-        ""
+        "${ attachmentStrong } でメールを送信"
       ],
       "the email was sent ${ label }": [
         ""
@@ -6629,7 +6652,7 @@
         ""
       ],
       "Your reward": [
-        ""
+        "報酬"
       ],
       "ZIP": [
         "郵便番号"
@@ -6869,10 +6892,10 @@
         "データを集めています"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "プロバイダーからファイルを集めています"
       ],
       "Your import is starting": [
-        ""
+        "インポートが開始しました"
       ]
     },
     "Log preference": {
@@ -6906,7 +6929,7 @@
         "連絡先グループ"
       ],
       "Custom domains": [
-        ""
+        "独自ドメイン"
       ],
       "Custom filters": [
         "カスタムフィルター"
@@ -7641,15 +7664,6 @@
       "Feedback": [
         "ご意見"
       ],
-      "Fill in the email address and text to test your link": [
-        "メールアドレスとテキストを入力してリンクをテストします"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "電話番号とテキストを入力してリンクをテストします"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "URL とテキストを入力してリンクをテストします"
-      ],
       "Gift code": [
         "ギフトコード"
       ],
@@ -7676,6 +7690,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "問題について、エラーメッセージ等も含めてご記入下さい"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Postal code": [
         "郵便番号"
@@ -7774,7 +7791,7 @@
         "広告ブロッカー内蔵 (NetShield)"
       ],
       "Custom domains": [
-        ""
+        "独自ドメイン"
       ],
       "Early access to new products": [
         "新製品への早期アクセス"
@@ -7892,7 +7909,7 @@
         ""
       ],
       "Verification email sent to ${ email.Value }": [
-        ""
+        "${ email.Value } あてに確認メールが送信されました"
       ],
       "Verify now": [
         "今すぐ検証"
@@ -7926,7 +7943,7 @@
         "互換性"
       ],
       "State of the art": [
-        ""
+        "最新の暗号形式"
       ]
     },
     "Restore administrator panel": {
@@ -8058,7 +8075,7 @@
         ""
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "友だちを招待して報酬を手に入れよう!"
       ],
       "No more missed appointments": [
         ""
@@ -8133,7 +8150,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        ""
+        "${ server.Domain } がクリップボードにコピーされました"
       ],
       "Account deleted. Logging out...": [
         "アカウントは削除されました。ログアウト中..."
@@ -8393,7 +8410,7 @@
     },
     "Title": {
       "${ appName } ${ planName } trial": [
-        ""
+        "${ appName } ${ planName } トライアル"
       ],
       "${ appName } customization": [
         "${ appName } のカスタマイズ"
@@ -8444,7 +8461,7 @@
         ""
       ],
       "Add contact group name": [
-        ""
+        "連絡先グループの名前を追加"
       ],
       "Add credit/debit card": [
         "クレジット・デビットカードの追加"
@@ -8519,7 +8536,7 @@
         "自動返信"
       ],
       "Automatically sign outgoing messages?": [
-        ""
+        "送信メッセージに自動で署名しますか?"
       ],
       "Back": [
         "戻る"
@@ -8708,7 +8725,7 @@
         "ドメイン名"
       ],
       "Don't show again?": [
-        ""
+        "次回から表示しませんか?"
       ],
       "Downgrade account": [
         "アカウントのダウングレード"
@@ -8804,7 +8821,7 @@
         "ギフトコード"
       ],
       "How does it work?": [
-        ""
+        "どのように動作しますか?"
       ],
       "Human verification": [
         "人間であることの検証"
@@ -8828,7 +8845,7 @@
         "予定のインポート"
       ],
       "Import failed": [
-        ""
+        "インポート失敗"
       ],
       "Import groups": [
         "グループのインポート"
@@ -8850,9 +8867,6 @@
       ],
       "Invoices": [
         "請求書"
-      ],
-      "Keyboard Shortcuts": [
-        "キーボードショートカット"
       ],
       "Labels": [
         "ラベル"
@@ -8981,7 +8995,7 @@
         "リカバリーファイル"
       ],
       "Refer a friend": [
-        ""
+        "友達を招待"
       ],
       "Referral tracker": [
         ""
@@ -9008,7 +9022,7 @@
         "管理者権限を修復"
       ],
       "Secure email based in Switzerland": [
-        ""
+        "スイスに拠点を置くセキュアな電子メール"
       ],
       "Security": [
         "セキュリティ"
@@ -9173,7 +9187,7 @@
         "現在のプラン"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "無料トライアルは ${ formattedEndDate } に終了します。"
       ],
       "Your plan": [
         "現在のプラン"
@@ -9182,7 +9196,7 @@
         "回復状態"
       ],
       "You’ve been invited to try ${ mailAppName }": [
-        ""
+        "${ mailAppName } の試用に招待されました"
       ],
       "ZIP / postal code": [
         "郵便番号"
@@ -9275,7 +9289,7 @@
         "どこにいてもアクセス制限があるコンテンツ (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube など) にアクセスできます。"
       ],
       "Account is disconnected": [
-        ""
+        "アカウントは切断されました"
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
         "username2@protonmail.com のようなアカウントにリンクされたメールアドレスを作成してください。"
@@ -9296,7 +9310,7 @@
         "2年プランに適用される割引"
       ],
       "Each imported email will have this label": [
-        ""
+        "インポートされたメールすべてにこのラベルがついています"
       ],
       "Edit folder names": [
         "フォルダ名を編集"
@@ -9344,7 +9358,7 @@
         "デフォルトの作成画面ポップアップサイズを小さくするか最大にするか設定します。"
       ],
       "Set the default layout for your Inbox.": [
-        ""
+        "受信箱の既定のレイアウトを設定します。"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         ""
@@ -9368,7 +9382,7 @@
         ""
       ],
       "This feature is only available for paid users": [
-        ""
+        "この機能は課金ユーザーのみが利用できます"
       ],
       "This feature is unavailable for the moment": [
         "この機能は現在利用できません"
@@ -9435,7 +9449,7 @@
     },
     "Tor out of date": {
       "stable release": [
-        ""
+        "安定版"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "このバージョンの Tor Brower はサポートしていません、最新のバージョン ${ stableRelease } にアップグレードしてください"
@@ -9454,7 +9468,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
-        ""
+        "${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } にアップグレードすると一度に ${ plusVpnConnections } 台のデバイスを VPN に接続することができます"
       ]
     },
     "Upgrade notice": {
@@ -9680,7 +9694,7 @@
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
       ],
       "Please provide at least one recipient": [
-        ""
+        "少なくとも 1 件の宛先を提供してください"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"

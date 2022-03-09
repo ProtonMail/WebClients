@@ -56,9 +56,6 @@
       "Add to group": [
         "Gruba ekle"
       ],
-      "Address options": [
-        "Adres seçenekleri"
-      ],
       "Advanced search": [
         "Gelişmiş arama"
       ],
@@ -75,7 +72,7 @@
         "Hizalama"
       ],
       "All Read": [
-        "Tümü okunmuşlar"
+        "Tüm okunmuşlar"
       ],
       "All Starred": [
         "Tüm yıldızlılar"
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Uygula"
+      ],
+      "Archive": [
+        "Arşivle"
       ],
       "Attachment": [
         "Ek dosya"
@@ -305,7 +305,7 @@
         "masaüstü bildirimlerini etkinleştir"
       ],
       "Encryption": [
-        "Şifreleme"
+        "Şifrele"
       ],
       "exclude message content": [
         "ileti içeriğini ayıklayın"
@@ -348,6 +348,9 @@
       ],
       "Go to first page": [
         "İlk sayfaya git"
+      ],
+      "Go to label": [
+        "Etikete git"
       ],
       "Go to last page": [
         "Son sayfaya git"
@@ -438,19 +441,22 @@
         "Tuş takımı kısayolları"
       ],
       "Label as": [
-        "Şöyle etiketle"
+        "Etiketle"
       ],
       "Label as...": [
-        "Şöyle etiketle..."
+        "Etiketle..."
       ],
       "label emails as": [
-        "e-postaları şöyle etiketle"
+        "e-postaları etiketle"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
       "Load": [
         "Yükle"
+      ],
+      "Load embedded images": [
+        "Gömülü görseller yüklensin"
       ],
       "Load image": [
         "Görsel yükle"
@@ -509,6 +515,9 @@
       "More": [
         "Diğer"
       ],
+      "More details about ${ title }": [
+        "${ title } hakkında ayrıntılı bilgi"
+      ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
       ],
@@ -531,10 +540,10 @@
         "Gelen kutusuna taşı (istenmeyen değil)"
       ],
       "Move to spam": [
-        "İstenmeyenlere taşı"
+        "İstenmeyen kutusuna taşı"
       ],
       "Move to trash": [
-        "Çöp kutusuna taşı"
+        "Çöpe at"
       ],
       "Move to...": [
         "Şuraya taşı..."
@@ -635,6 +644,9 @@
       "Re-sign": [
         "Yeniden imzala"
       ],
+      "Read receipt sent": [
+        "Okundu bilgisi gönderildi"
+      ],
       "Recover data": [
         "Verileri kurtar"
       ],
@@ -725,7 +737,7 @@
       "send auto-reply email": [
         "otomatik yanıt e-postası gönder"
       ],
-      "Send receipt": [
+      "Send read receipt": [
         "Okundu bilgisi gönderilsin"
       ],
       "Set": [
@@ -794,6 +806,9 @@
       "Some images could not be loaded with tracking protection": [
         "İzleme koruması nedeniyle bazı görseller yüklenemedi"
       ],
+      "Star": [
+        "Yıldız koy"
+      ],
       "Start import": [
         "İçe aktarmayı başlat"
       ],
@@ -840,6 +855,9 @@
       "Try another method": [
         "Başka bir yöntem deneyin"
       ],
+      "Turn on auto-load": [
+        "Otomatik yüklemeyi aç"
+      ],
       "Turn on tracker protection": [
         "İzleme korumasını aç"
       ],
@@ -858,8 +876,14 @@
       "Unordered list": [
         "Sıralanmamış liste"
       ],
+      "Unstar": [
+        "Yıldızı kaldır"
+      ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
+      ],
+      "Unsubscribe from mailing list": [
+        "E-posta listesinin aboneliğinden ayrıl"
       ],
       "Unsubscribing": [
         "Abonelikten çıkılıyor"
@@ -915,6 +939,9 @@
       "View headers": [
         "Üst bilgileri görüntüle"
       ],
+      "View HTML": [
+        "HTML olarak görüntüle"
+      ],
       "View invoice": [
         "Faturayı görüntüle"
       ],
@@ -924,14 +951,14 @@
       "View message": [
         "İletiyi göster"
       ],
+      "View message details": [
+        "İleti ayrıntılarını görüntüle"
+      ],
       "View recipients": [
         "Alıcıları göster"
       ],
       "View rendered HTML": [
         "HTML olarak görüntüle"
-      ],
-      "View source code": [
-        "Kaynak kodunu görüntüle"
       ],
       "Why not?": [
         "Neden olmasın?"
@@ -965,10 +992,10 @@
         "Lütfen başka bir ifade aramayı deneyin."
       ],
       "You don't have any contacts.": [
-        "Herhangi bir kişiniz yok."
+        "Henüz bir kişiniz yok."
       ],
       "You don't have any groups.": [
-        "Herhangi bir grubunuz yok."
+        "Henüz bir grubunuz yok."
       ]
     },
     "Add participant to calendar event": {
@@ -1586,7 +1613,7 @@
     },
     "Composer size": {
       "Maximized": [
-        "Genişletilmiş"
+        "Büyütülmüş"
       ],
       "Normal": [
         "Normal"
@@ -1629,7 +1656,7 @@
         "Düzenle ve yeniden zamanla"
       ],
       "Message saved to Drafts": [
-        "İleti Taslaklara kaydedildi"
+        "İleti taslaklar kutusuna kaydedildi"
       ],
       "Quit import customization?": [
         "İçe aktarma özelleştirmesinden çıkılsın mı?"
@@ -2881,6 +2908,9 @@
       "Message processing error.": [
         "İleti işleme hatası."
       ],
+      "Missing key packet": [
+        "Anahtar paketi eksik"
+      ],
       "Missing signature": [
         "İmza eksik"
       ],
@@ -3090,16 +3120,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Taslaklar Gelen kutusuna taşınamaz"
+        "Taslaklar gelen kutusuna taşınamaz"
       ],
       "Drafts cannot be moved to Spam": [
-        "Taslaklar İstenmeyenler klasörüne taşınamaz"
+        "Taslaklar istenmeyen kutusuna taşınamaz"
       ],
       "Sent messages cannot be moved to Inbox": [
-        "Gönderilmiş iletiler Gelen kutusuna taşınamaz"
+        "Gönderilmiş iletiler gelen kutusuna taşınamaz"
       ],
       "Sent messages cannot be moved to Spam": [
-        "Gönderilmiş iletiler İstenmeyenler klasörüne taşınamaz"
+        "Gönderilmiş iletiler istenmeyen kutusuna taşınamaz"
       ],
       "This action cannot be performed": [
         "Bu işlem yapılamaz"
@@ -3387,7 +3417,7 @@
         "${ Label.Name } güncellendi"
       ],
       "Filter ${ Filter.Name } updated": [
-        "Filtre ${ Filter.Name } güncellendi"
+        "${ Filter.Name } süzgeci güncellendi"
       ]
     },
     "Filter option": {
@@ -3806,7 +3836,7 @@
         "Etkinleştirme sürüyor"
       ],
       "Add image URL": [
-        "Görsel adresi ekle"
+        "Adresten görsel ekle"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilir anahtarlar ile adres doğrulaması etkinleştirildi. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
@@ -4032,7 +4062,7 @@
         "gömülmüş görsel"
       ],
       "Encrypt for non-ProtonMail users": [
-        "ProtonMail kullanmayanlar için şifreleme"
+        "ProtonMail kullanıcısı olmayanlar için şifreleme"
       ],
       "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
         "ProtonMail kullanmayan alıcılara gönderilen şifrelenmiş iletiler, daha kısa bir süre belirtilmedikçe 28 gün sonra geçersiz olur."
@@ -4055,6 +4085,21 @@
       ],
       "Expiration Time": [
         "Geçerlilik süresi"
+      ],
+      "Expires": [
+        "Geçerlilik sonu"
+      ],
+      "Expires in ${ formattedDelay }": [
+        "${ formattedDelay } sonra geçersiz olacak"
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        "${ formattedDelayShort } sonra geçersiz olacak"
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        "${ formattedDelayShort } sonra geçersiz olacak"
+      ],
+      "Expires soon": [
+        "Yakında geçersiz olacak"
       ],
       "file attached": [
         "dosya eklendi",
@@ -4111,7 +4156,7 @@
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, istenmeyenler kutusuna bakmayı unutmayın."
+        "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
       ],
       "Image URL": [
         "Görsel adresi"
@@ -4262,7 +4307,7 @@
         "Grup bulunamadı"
       ],
       "No label found": [
-        "Herhangi. bir etiket bulunamadı"
+        "Herhangi bir etiket bulunamadı"
       ],
       "No label selected": [
         "Herhangi bir etiket seçilmemiş"
@@ -4390,9 +4435,6 @@
       "Saving draft…": [
         "Taslak kaydediliyor…"
       ],
-      "Scheduled": [
-        "Zamanlanmış"
-      ],
       "Scheduled send of this message will be cancelled.": [
         "Bu iletinin zamanlanmış gönderimi iptal edildi."
       ],
@@ -4447,8 +4489,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Ne yazık ki, bu ileti bulunamadı ya da süresi geçmiş"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "500 MB ile başlayın ve zamanla daha fazla depolama alanı jazanın. Depolama alanı Mail, Calendar ve Drive tarafından ortaklaşa kullanılır."
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
       ],
       "Store and share files securely with Proton Drive.": [
         "Proton Drive ile dosyalarınızı güvenle depolayın ve paylaşın."
@@ -4563,7 +4605,7 @@
         "Bu ileti, ekteki henüz güvenilmemiş anahtar ile imzalanmış."
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        "Bu ileti, Taslaklara taşınacak. Böylece onu düzenlebilirsiniz. Ne zaman gönderileceğini yeniden zamanlamanız gerekecek."
+        "Bu ileti, Taslaklar kutusuna taşınacak. Böylece onu düzenlebilirsiniz. Ne zaman gönderileceğini yeniden zamanlamanız gerekecek."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Bu ileti ${ dateString } tarihinde, ${ formattedTime } saatinde gönderilecek"
@@ -4579,9 +4621,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Bu ileti ${ formattedDate } tarihinde geçersiz olacak"
-      ],
-      "This message will expire in ${ formattedDelay }": [
-        "Bu ileti ${ formattedDelay } içinde geçersiz olacak"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "Bu ileti ${ dateString } tarihinde, ${ formattedTime } saatinde geçersiz olacak"
@@ -4599,7 +4638,7 @@
         "Henüz bu göndericinin herkese açık anahtarına güvenilmemiş."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+        "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle kontrol etmemiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
@@ -4886,9 +4925,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "\"Anahtara güven\" üzerine tıklamak yeni bir kişi oluşturur ve bu herkese açık anahtarı bu göndericiyle ilişkilendirir. Bu adresten gelen e-postalar otomatik olarak şifreyle doğrulanır."
       ],
-      "Do you want to trust the following public key?": [
-        "Aşağıdaki herkese açık anahtara güvenmek ister misiniz?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Aşağıdaki parmak izine sahip birincil ortak anahtara güvenmek istiyor musunuz?",
         "Aşağıdaki parmak izlerine sahip birincil ortak anahtarlara güvenmek istiyor musunuz?"
@@ -4938,13 +4974,13 @@
         "İlet"
       ],
       "Go to All Mail": [
-        "Tüm postalara git"
+        "Tüm e-postalar kutusuna git"
       ],
       "Go to Archive": [
         "Arşive git"
       ],
       "Go to Drafts": [
-        "Taslaklara git"
+        "Taslaklar kutusuna git"
       ],
       "Go to Inbox": [
         "Gelen kutusuna git"
@@ -4953,13 +4989,16 @@
         "Gönderilmişlere git"
       ],
       "Go to Spam": [
-        "İstenmeyenlere git"
+        "İstenmeyen kutusuna git"
       ],
       "Go to Starred": [
         "Yıldızlılara git"
       ],
       "Go to Trash": [
         "Çöp kutusuna git"
+      ],
+      "Insert link": [
+        "Bağlantı ekle"
       ],
       "Jump to first": [
         "Birinciye git"
@@ -4968,7 +5007,7 @@
         "Sonuncuya git"
       ],
       "Label as...": [
-        "Şöyle etiketle..."
+        "Etiketle..."
       ],
       "Load embedded images": [
         "Gömülü görselleri yükle"
@@ -4998,10 +5037,10 @@
         "Gelen kutusuna taşı"
       ],
       "Move to Spam": [
-        "İstenmeyenlere taşı"
+        "İstenmeyen kutusuna taşı"
       ],
       "Move to Trash": [
-        "Çöp kutusuna taşı"
+        "Çöpe at"
       ],
       "Move to...": [
         "Şuraya taşı..."
@@ -5095,9 +5134,6 @@
       " and ${ l }": [
         " ve ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } ve ${ count } diğer kişi"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
@@ -5108,7 +5144,7 @@
         "E-posta adresi ekle"
       ],
       "Add image URL": [
-        "Görsel adresi ekle"
+        "Adresten görsel ekle"
       ],
       "Add to group": [
         "Gruba ekle"
@@ -5140,8 +5176,8 @@
       "Automatically save contacts": [
         "Kişileri otomatik olarak kaydet"
       ],
-      "BCC:": [
-        "Gizli kopya:"
+      "BCC": [
+        "Gizli kopya"
       ],
       "Blind Carbon Copy": [
         "Gizli kopya"
@@ -5167,8 +5203,8 @@
       "Category": [
         "Kategori"
       ],
-      "CC:": [
-        "Kopya:"
+      "CC": [
+        "Kopya"
       ],
       "City": [
         "İl"
@@ -5276,13 +5312,10 @@
         "Anahtar sözcük"
       ],
       "Label as": [
-        "Şöyle etiketle"
+        "Etiketle"
       ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
-      ],
-      "Labels:": [
-        "Etiketler:"
       ],
       "Last 12 months only": [
         "Yalnızca son 12 ay"
@@ -5297,7 +5330,7 @@
         "Konum"
       ],
       "Mailbox password": [
-        "Posta kutusu şifresi"
+        "Posta kutusu parolası"
       ],
       "Manage folders": [
         "Klasör yönetimi"
@@ -5357,7 +5390,7 @@
         "Telefon numarası"
       ],
       "Post office box": [
-        "Posta kutusu"
+        "Fiziksel posta kutusu"
       ],
       "Postal code": [
         "Posta kodu"
@@ -5495,7 +5528,7 @@
     },
     "Label to change composer mode": {
       "Maximized": [
-        "Genişletilmiş"
+        "Büyütülmüş"
       ],
       "Normal": [
         "Normal"
@@ -5514,7 +5547,7 @@
         "Sütun"
       ],
       "Row": [
-        "Liste"
+        "Satır"
       ]
     },
     "Label, make it short please": {
@@ -5557,7 +5590,7 @@
         "Etiket ekle"
       ],
       "All mail": [
-        "Tüm postalar"
+        "Tüm e-postalar"
       ],
       "Archive": [
         "Arşiv"
@@ -5726,7 +5759,7 @@
         "Hizmet sağlayıcınızdaki verilerinizi topluyoruz"
       ],
       "Your import is starting": [
-        "İçeri aktarma işleminize başlanıyor"
+        "İçe aktarma işleminize başlanıyor"
       ]
     },
     "Mail import summary": {
@@ -5794,7 +5827,7 @@
         "Zamanlanmış gönderim geri alındı"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Zamanlama iptal edildi. İleti Taslaklara taşındı."
+        "Zamanlama iptal edildi. İleti taslaklar kutusuna taşındı."
       ],
       "Sending undone": [
         "Gönderim geri alındı"
@@ -6107,15 +6140,6 @@
       "End date": [
         "Bitiş tarihi"
       ],
-      "Fill in the email address and text to test your link": [
-        "Bağlantınızı sınamak için e-posta adresini ve metni yazın"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Bağlantınızı sınamak için telefon numarasını ve metni yazın"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Bağlantınızı sınamak için adres bağlantısını ve metni yazın"
-      ],
       "Filter folders": [
         "Klasörleri süz"
       ],
@@ -6157,6 +6181,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
+      ],
+      "Please insert link first": [
+        "Lütfen önce bağlantıyı ekleyin"
       ],
       "Proton username": [
         "Proton kullanıcı adı"
@@ -6468,11 +6495,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Abonelikten ayrıldınız"
+      "Unsubscribed from mailing list": [
+        "E-posta listesinin aboneliğinden ayrıldınız"
       ],
-      "Unsubscribing...": [
-        "Abonelikten çıkılıyor..."
+      "Unsubscribing from mailing list...": [
+        "E-posta listesi aboneliğinden çıkıyorsunuz..."
       ]
     },
     "Step in filter modal": {
@@ -6541,8 +6568,8 @@
         "${ elementsCount } yazışma ${ folderName } klasörüne taşındı."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } ileti İstenmeyenler klasörüne taşındı ve gönderici engellenler listesine eklendi.",
-        "${ elementsCount } ileti İstenmeyenler klasörüne taşındı ve gönderici engellenler listesine eklendi."
+        "${ elementsCount } ileti İstenmeyen kutusuna taşındı ve gönderici engellenler listesine eklendi.",
+        "${ elementsCount } ileti İstenmeyen kutusuna taşındı ve gönderici engellenler listesine eklendi."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } yazışmadan kaldırıldı.",
@@ -6573,8 +6600,8 @@
         "${ elementsCount } ileti ${ folderName } klasörüne taşındı."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } ileti İstenmeyenler klasörüne taşındı ve gönderici engellenenler listesine eklendi.",
-        "${ elementsCount } ileti İstenmeyenler klasörüne taşındı ve gönderici engellenenler listesine eklendi."
+        "${ elementsCount } ileti istenmeyen kutusuna taşındı ve gönderici engellenenler listesine eklendi.",
+        "${ elementsCount } ileti istenmeyen kutusuna taşındı ve gönderici engellenenler listesine eklendi."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } iletiden kaldırıldı.",
@@ -6628,7 +6655,7 @@
         "Yazışma ${ folderName } klasörüne taşındı."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Yazışma İstenmeyenler klasörüne taşındı ve gönderici engellenenler listesine eklendi."
+        "Yazışma istenmeyen kutusuna taşındı ve gönderici engellenenler listesine eklendi."
       ],
       "Conversation removed from ${ labelName }.": [
         "Yazışmadan ${ labelName } etiketi kaldırıldı."
@@ -6685,7 +6712,7 @@
         "İleti ${ folderName } klasörüne taşındı."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "İleti İstenmeyenler klasörüne taşındı ve gönderici engellenenler listesine eklendi."
+        "Ileti istenmeyen kutusuna taşındı ve gönderici engellenenler listesine eklendi."
       ],
       "Message removed from ${ labelName }.": [
         "İletiden ${ labelName } etiketi kaldırıldı."
@@ -6854,9 +6881,6 @@
       "Addresses": [
         "Adresler"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Tüm alıcılar Gizli kopya alanına eklendi ve biribirini göremez"
-      ],
       "Are you sure you want to close?": [
         "Oturumu kapatmak istediğinize emin misiniz?"
       ],
@@ -6977,7 +7001,7 @@
         "İletiyi sil"
       ],
       "Deleting contacts": [
-        "Kişiler siliniyor"
+        "Kişileri silme"
       ],
       "Edit contact": [
         "Kişiyi düzenle"
@@ -7010,7 +7034,7 @@
         "İleti içeriği aramasını etkinleştir"
       ],
       "Encryption": [
-        "Şifreleme"
+        "Şifrele"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -7022,7 +7046,7 @@
         "Hata"
       ],
       "Exporting contacts": [
-        "Kişiler dışa aktarılıyor"
+        "Kişileri dışa aktarma"
       ],
       "Filter on": [
         "Şuna göre süz"
@@ -7051,11 +7075,8 @@
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
-      "Keyboard Shortcuts": [
-        "Tuş takımı kısayolları"
-      ],
       "Label as": [
-        "Şöyle etiketle"
+        "Etiketle"
       ],
       "Link confirmation": [
         "Bağlantı onayı"
@@ -7082,10 +7103,16 @@
         "Kişileri birleştir"
       ],
       "Merging contacts": [
-        "Kişiler birleştiriliyor"
+        "Kişileri birleştirme"
+      ],
+      "Message details": [
+        "İleti ayrıntıları"
       ],
       "Message list": [
         "İleti listesi"
+      ],
+      "Message will expire": [
+        "İleti geçerlilik süresi"
       ],
       "More": [
         "Diğer"
@@ -7106,7 +7133,7 @@
         "Gelen kutusuna taşı (istenmeyen değil)"
       ],
       "Move to trash": [
-        "Çöp kutusuna taşı"
+        "Çöpe at"
       ],
       "Moving a scheduled message": [
         "Zamanlanmış bir ileti taşınıyor"
@@ -7162,6 +7189,9 @@
       "Recipient missing": [
         "Alıcı eksik"
       ],
+      "Recipients": [
+        "Alıcılar"
+      ],
       "Recover data": [
         "Verileri kurtar"
       ],
@@ -7203,6 +7233,9 @@
       ],
       "Send without expiration?": [
         "Geçerlilik süresi olmadan gönderilsin mi?"
+      ],
+      "Sender": [
+        "Gönderici"
       ],
       "Sender changed": [
         "Gönderici değiştirildi"

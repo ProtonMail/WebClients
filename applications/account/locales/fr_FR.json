@@ -355,6 +355,9 @@
       "Get verification code": [
         "Demander un code de vérification"
       ],
+      "Go to label": [
+        "Afficher le label"
+      ],
       "Go to panel ${ index }": [
         "Aller au panneau ${ index }"
       ],
@@ -961,6 +964,11 @@
       ],
       "Unsupported event": [
         "Événement non pris en charge"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2639,6 +2647,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant",
         "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers Proton existants"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Name does not match": [
         "Les noms ne correspondent pas"
@@ -4409,8 +4420,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Saisissez votre numéro de téléphone de récupération et nous vous enverrons votre nom d'utilisateur ou votre adresse électronique."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "Les invitations à l'événement et les RSVP seront envoyées dans cette langue."
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "Expiré"
@@ -4615,7 +4626,7 @@
         "il est impératif"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        ""
+        "J'utilise ${ appName } et je pense que tu pourrais l'aimer. C'est une messagerie sécurisée qui protège ta vie privée. Inscris-toi avec ce lien pour obtenir 1 mois gratuit : ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
@@ -4683,8 +4694,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru lit vos données personnelles afin de permettre aux annonceurs, aux agences de renseignements russes et à d'autres tiers d’y accéder. Pour une meilleure protection de la vie privée, créez une adresse électronique sécurisée."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Assurez-vous que vous vous souvenez du mot de passe pour vous connecter et déchiffrer les e-mails. ${ boldAlert }. Nous vous recommandons d'ajouter d'abord une adresse électronique de récupération."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Assurez-vous que vous vous souvenez du mot de passe pour vous connecter et déchiffrer les e-mails. ${ boldAlert } Nous vous recommandons d'ajouter d'abord une ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Saisissez manuellement ces informations dans votre périphérique d'authentification à deux facteurs pour configurer votre compte. ${ _switchButton }."
@@ -4899,8 +4910,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton ne peut pas vous aider à récupérer les mots de passe perdus"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton ne peut vous aider à récupérer aucun des mots de passe perdus."
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton a interrompu une importation parce que la connexion avec votre autre fournisseur de messagerie a été perdue. Veuillez vous reconnecter."
@@ -4950,6 +4961,9 @@
       ],
       "Recovery files have been voided": [
         "Les fichiers de récupération ont été annulés"
+      ],
+      "recovery method": [
+        "méthode de récupération"
       ],
       "Recovery phrase copied to clipboard": [
         "Phrase de récupération copiée dans le presse-papiers"
@@ -5016,6 +5030,9 @@
       ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
+      ],
+      "Show original message": [
+        "Afficher le message original"
       ],
       "Signed up": [
         "Inscrit"
@@ -5449,6 +5466,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Vous allez ${ loseAllData } dans votre compte ${ BRAND_NAME }. Pour le restaurer, vous devrez saisir votre ancien mot de passe."
       ],
@@ -5774,6 +5794,9 @@
       "Go to Trash": [
         "Accéder à la corbeille"
       ],
+      "Insert link": [
+        "Insérer un lien"
+      ],
       "Jump to first": [
         "Aller au premier"
       ],
@@ -5993,7 +6016,7 @@
         "Autoriser la récupération par téléphone"
       ],
       "Allow recovery by recovery phrase": [
-        "Permet la récupération avec une phrase de récupération"
+        "Autoriser la récupération avec une phrase de récupération"
       ],
       "Amount": [
         "Montant"
@@ -6520,8 +6543,8 @@
       "Send auto-reply": [
         "Envoyer une réponse automatique"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        "Envoyer les invitations en"
       ],
       "Show secondary time zone": [
         "Afficher le fuseau horaire secondaire"
@@ -7717,15 +7740,6 @@
       "Feedback": [
         "Vos commentaires"
       ],
-      "Fill in the email address and text to test your link": [
-        "Renseignez l'adresse électronique et le texte pour tester votre lien"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Renseignez le numéro de téléphone et le texte pour tester votre lien"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Renseignez l'URL et le texte pour tester votre lien"
-      ],
       "Gift code": [
         "Code cadeau"
       ],
@@ -7752,6 +7766,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Veuillez décrire le problème et inclure tous les messages d'erreur"
+      ],
+      "Please insert link first": [
+        "Veuillez d'abord insérer un lien"
       ],
       "Postal code": [
         "Code postal"
@@ -8931,9 +8948,6 @@
       "Invoices": [
         "Factures"
       ],
-      "Keyboard Shortcuts": [
-        "Raccourcis clavier"
-      ],
       "Labels": [
         "Labels"
       ],
@@ -9427,7 +9441,7 @@
         "Définissez la disposition par défaut de votre boîte de réception."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        ""
+        "Ajoutez la signature suivante en bas des e-mails que vous envoyez : ${ signature } C'est votre lien de parrainage. Ce message apparaîtra sous votre signature. Vous pouvez personnaliser votre signature à tout moment depuis les paramètres."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Les signatures produites par cette clé sont considérées comme non valides et cette clé ne peut pas être utilisée pour le chiffrement"

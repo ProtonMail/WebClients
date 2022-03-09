@@ -56,9 +56,6 @@
       "Add to group": [
         "Добавить в группу"
       ],
-      "Address options": [
-        "Настройки адреса"
-      ],
       "Advanced search": [
         "Расширенный поиск"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Применить"
+      ],
+      "Archive": [
+        "Архив"
       ],
       "Attachment": [
         "Вложение"
@@ -353,6 +353,9 @@
       "Go to first page": [
         "Перейти на первую страницу"
       ],
+      "Go to label": [
+        "Перейти к ярлыку"
+      ],
       "Go to last page": [
         "Перейти на последнюю страницу"
       ],
@@ -458,6 +461,9 @@
       "Load": [
         "Загрузить"
       ],
+      "Load embedded images": [
+        "Скачать встроенные изображения"
+      ],
       "Load image": [
         "Загрузить изображение"
       ],
@@ -514,6 +520,9 @@
       ],
       "More": [
         "Ещё"
+      ],
+      "More details about ${ title }": [
+        "Больше информации о ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
@@ -641,11 +650,14 @@
       "Re-sign": [
         "Подписать повторно"
       ],
+      "Read receipt sent": [
+        "Уведомление о прочтении отправлено"
+      ],
       "Recover data": [
         "Восстановить данные"
       ],
       "Refer a friend": [
-        ""
+        "Порекомендуйте другу"
       ],
       "Refine it": [
         "Усовершенствовать его"
@@ -731,8 +743,8 @@
       "send auto-reply email": [
         "отправить автоответ"
       ],
-      "Send receipt": [
-        "Отправить уведомление"
+      "Send read receipt": [
+        "Отправить уведомление о прочтении"
       ],
       "Set": [
         "Задать"
@@ -800,6 +812,9 @@
       "Some images could not be loaded with tracking protection": [
         "Некоторые изображения не могут быть загружены с защитой от отслеживания"
       ],
+      "Star": [
+        "Пометить звездочкой"
+      ],
       "Start import": [
         "Начать импорт"
       ],
@@ -848,6 +863,9 @@
       "Try another method": [
         "Попробуйте другой способ"
       ],
+      "Turn on auto-load": [
+        "Включить автозагрузку"
+      ],
       "Turn on tracker protection": [
         "Включите защиту от трекеров"
       ],
@@ -866,8 +884,14 @@
       "Unordered list": [
         "Ненумерованный список"
       ],
+      "Unstar": [
+        "Убрать звездочку"
+      ],
       "Unsubscribe": [
         "Отписаться"
+      ],
+      "Unsubscribe from mailing list": [
+        "Отписаться от списка рассылки"
       ],
       "Unsubscribing": [
         "Подписка отменяется"
@@ -923,6 +947,9 @@
       "View headers": [
         "Просмотр заголовков"
       ],
+      "View HTML": [
+        "Просмотр HTML"
+      ],
       "View invoice": [
         "Посмотреть счёт"
       ],
@@ -932,14 +959,14 @@
       "View message": [
         "Посмотреть сообщение"
       ],
+      "View message details": [
+        "Просмотреть информацию о сообщении"
+      ],
       "View recipients": [
         "Посмотреть получателей"
       ],
       "View rendered HTML": [
         "Просмотр обработанного HTML"
-      ],
-      "View source code": [
-        "Показать исходный код"
       ],
       "Why not?": [
         "Why not?"
@@ -1263,7 +1290,7 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "Продолжить использование ProtonMail."
       ]
     },
     "Calendar attachment tooltip": {
@@ -2897,7 +2924,7 @@
         "Название ярлыка не может быть пустым"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Превышено максимальное количество вложений (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем Proton",
@@ -2910,6 +2937,9 @@
       ],
       "Message processing error.": [
         "Ошибка обработки сообщения."
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Missing signature": [
         "Подпись отсутствует"
@@ -3900,10 +3930,10 @@
         "в месяц."
       ],
       "5 email addresses": [
-        ""
+        "5 адресов электронной почты"
       ],
       "5 GB storage": [
-        ""
+        "5 ГБ хранилища"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Фраза восстановления - это один из самых надежных способов защиты доступа к вашему аккаунту. С ее помощью можно получить доступ к аккаунту и восстановить зашифрованные данные, если вы вдруг забудете пароль."
@@ -4044,7 +4074,7 @@
         "Подтвердить жалобу на фишинг"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Продолжить с ${ planName }"
       ],
       "Copied to clipboard": [
         "Скопирован в буфер обмена"
@@ -4189,6 +4219,21 @@
       ],
       "Expiration Time": [
         "Срок действия"
+      ],
+      "Expires": [
+        "Истекает"
+      ],
+      "Expires in ${ formattedDelay }": [
+        "Истекает через ${ formattedDelay }"
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        "Истекает через ${ formattedDelayShort }"
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        "Истекает через меньше, чем ${ formattedDelayShort }"
+      ],
+      "Expires soon": [
+        "Скоро истекает"
       ],
       "file attached": [
         "файл прикреплён",
@@ -4338,7 +4383,7 @@
         "Управлять Вашими ярлыками"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Превышено максимальное количество вложений (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
       ],
       "members": [
         "участники"
@@ -4434,7 +4479,7 @@
         "Изменяйте эти настройки только в том случае, если применяете PGP для переписки с получателями вне ProtonMail."
       ],
       "Other options": [
-        ""
+        "Другие возможности"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система отметила это сообщение как попытку фишинга. Пожалуйста, проверьте, что оно является законным."
@@ -4485,10 +4530,10 @@
         "Распечатать письмо"
       ],
       "Priority support": [
-        ""
+        "Приоритетная поддержка"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Протон не делает деньги на нарушении конфиденциальности."
@@ -4532,9 +4577,6 @@
       "Saving draft…": [
         "Сохранение черновика…"
       ],
-      "Scheduled": [
-        "Запланировано"
-      ],
       "Scheduled send of this message will be cancelled.": [
         "Запланированная отправка этого сообщения будет отменена."
       ],
@@ -4566,7 +4608,7 @@
         "Отправка сообщений с @pm.me является платной функцией. Ваше сообщение будет отправлено с вашего обычного адреса ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
+        "Отправлено с помощью <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> защищенной почты."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -4589,14 +4631,14 @@
       "Sorry, this message does not exist or has already expired": [
         "Извините, это сообщение не существует или срок его действия уже истек"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Store and share files securely with Proton Drive.": [
         "Безопасное хранение и обмен файлами с помощью Proton Drive."
       ],
       "Subject": [
-        "Теме"
+        "Тема"
       ],
       "Subject is end-to-end encrypted": [
         "Поле \"Тема\" зашифровано сквозным методом"
@@ -4608,7 +4650,7 @@
         "Тема: "
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Поддержка 1 пользовательского домена электронной почты"
       ],
       "Support privacy by upgrading for": [
         "Поддержите конфиденциальность, обновившись до"
@@ -4724,9 +4766,6 @@
       "This message will expire ${ formattedDate }": [
         "Это сообщение истекает ${ formattedDate }"
       ],
-      "This message will expire in ${ formattedDelay }": [
-        "Срок действия этого письма истекает ${ formattedDelay }"
-      ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "Срок действия этого сообщения истечет ${ dateString } в ${ formattedTime }"
       ],
@@ -4770,10 +4809,10 @@
         "Включите поиск по содержимому ваших сообщений"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Неограниченное количество папок, меток и фильтров"
       ],
       "Unlimited messages": [
-        ""
+        "Неограниченное количество сообщений"
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
@@ -4812,7 +4851,7 @@
         "Обновите аккаунт чтобы пользоваться ProtonMail с помощью сторонних почтовых программ для компьютера."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Улучшите сегодня, чтобы не потерять следующие преимущества: ${ appName } ${ planName }."
       ],
       "Upload picture": [
         "Загрузить картинку"
@@ -5046,9 +5085,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "Если вы нажмете \"Доверять ключу\", то мы создадим новый контакт и свяжем этот ключ с этим отправителем.\nВсе сообщения от этого отправителя будут автоматически проверяться."
       ],
-      "Do you want to trust the following public key?": [
-        "Вы хотите доверять следующему открытому ключам?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Вы хотите доверять основному открытому ключу с этим отпечатком?",
         "Вы хотите доверять основным открытым ключам с этими отпечатками?",
@@ -5124,6 +5160,9 @@
       ],
       "Go to Trash": [
         "Перейти в Корзину"
+      ],
+      "Insert link": [
+        "Вставить ссылку"
       ],
       "Jump to first": [
         "Перейти к первому"
@@ -5259,9 +5298,6 @@
       " and ${ l }": [
         " и ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } и ${ count } другие"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Пожалуйста, проверьте позже.)"
       ],
@@ -5304,8 +5340,8 @@
       "Automatically save contacts": [
         "Автоматическое сохранение контактов"
       ],
-      "BCC:": [
-        "Cкр:"
+      "BCC": [
+        "Cкрытая копия"
       ],
       "Blind Carbon Copy": [
         "Скрытая копия"
@@ -5331,8 +5367,8 @@
       "Category": [
         "Категория"
       ],
-      "CC:": [
-        "Копия:"
+      "CC": [
+        "Копия"
       ],
       "City": [
         "Город"
@@ -5444,9 +5480,6 @@
       ],
       "Label messages as": [
         "Отметить сообщения как"
-      ],
-      "Labels:": [
-        "Метки:"
       ],
       "Last 12 months only": [
         "Только последние 12 месяцев"
@@ -5941,7 +5974,7 @@
         "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Ваша бесплатный пробный период закончился. Доступ к вашему аккаунту скоро будет отключен. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -6281,15 +6314,6 @@
       "End date": [
         "Дата окончания"
       ],
-      "Fill in the email address and text to test your link": [
-        "Введите адрес электронной почты и текст для проверки вашей ссылки"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Введите номер телефона и текст для проверки вашей ссылки"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Введите URL-адрес и текст для проверки вашей ссылки"
-      ],
       "Filter folders": [
         "Фильтр папок"
       ],
@@ -6331,6 +6355,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
+      ],
+      "Please insert link first": [
+        "Пожалуйста, сначала вставьте ссылку"
       ],
       "Proton username": [
         "Имя пользователя в Proton"
@@ -6636,10 +6663,10 @@
         "Откройте для себя все службы Proton"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Получите до 18 месяцев ${ appName } ${ planName } бесплатно"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "Приглашайте друзей и получайте вознаграждения!"
       ],
       "Message Content Search": [
         "Поиск содержимого сообщения"
@@ -6658,11 +6685,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Подписка отменена"
+      "Unsubscribed from mailing list": [
+        "Вы отменили подписку на список рассылки"
       ],
-      "Unsubscribing...": [
-        "Подписка отменяется..."
+      "Unsubscribing from mailing list...": [
+        "Отменяется подписка на список рассылки..."
       ]
     },
     "Step in filter modal": {
@@ -7106,9 +7133,6 @@
       "Addresses": [
         "Адреса"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Все получатели были добавлены в поле \"Скрытая копия\" и не будут видны"
-      ],
       "Are you sure you want to close?": [
         "Вы уверены, что хотите закрыть?"
       ],
@@ -7313,9 +7337,6 @@
       "Invalid verification code": [
         "Неверный проверочный код"
       ],
-      "Keyboard Shortcuts": [
-        "Сочетания клавиш"
-      ],
       "Label as": [
         "Отметить как"
       ],
@@ -7346,8 +7367,14 @@
       "Merging contacts": [
         "Идет объединение контактов"
       ],
+      "Message details": [
+        "Информация о сообщении"
+      ],
       "Message list": [
         "Список сообщений"
+      ],
+      "Message will expire": [
+        "Срок действия сообщения истечет"
       ],
       "More": [
         "Еще"
@@ -7424,6 +7451,9 @@
       "Recipient missing": [
         "Получатель отсутствует"
       ],
+      "Recipients": [
+        "Получатели"
+      ],
       "Recover data": [
         "Восстановление данных"
       ],
@@ -7465,6 +7495,9 @@
       ],
       "Send without expiration?": [
         "Отправить без истечения срока действия?"
+      ],
+      "Sender": [
+        "Отправитель"
       ],
       "Sender changed": [
         "Отправитель изменен"
@@ -7536,7 +7569,7 @@
         "Что нового"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7691,7 +7724,7 @@
         "Вы потеряете все сделанные вами до этого настройки."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Ваша бесплатная пробная версия заканчивается ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

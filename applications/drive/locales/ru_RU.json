@@ -87,7 +87,7 @@
         "Очистить"
       ],
       "Clear browser data": [
-        ""
+        "Очистить данные браузера"
       ],
       "Clear data": [
         "Стереть данные"
@@ -118,9 +118,6 @@
       ],
       "Compare all features": [
         "Сравнить все функции"
-      ],
-      "Compare plans": [
-        "Сравнить тарифные планы"
       ],
       "Compose": [
         "Написать"
@@ -248,6 +245,9 @@
       "Get verification code": [
         "Получить проверочный код"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Перейти к панели ${ index }"
       ],
@@ -258,7 +258,7 @@
         "Открыть настройки"
       ],
       "Got it": [
-        ""
+        "Понятно"
       ],
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
@@ -353,9 +353,6 @@
       "Pause upload": [
         "Приостановить загрузку"
       ],
-      "Pay": [
-        "Оплатить"
-      ],
       "Preview": [
         "Предпросмотр"
       ],
@@ -378,7 +375,7 @@
         "Восстановить данные"
       ],
       "Refer a friend": [
-        ""
+        "Порекомендуйте другу"
       ],
       "refresh the page": [
         "обновить страницу"
@@ -438,7 +435,7 @@
         "Сохранить"
       ],
       "Search": [
-        ""
+        "Поиск"
       ],
       "Search drive": [
         ""
@@ -541,6 +538,9 @@
       ],
       "Upgrade": [
         "Улучшить"
+      ],
+      "Upload anyway": [
+        ""
       ],
       "Upload file": [
         "Загрузить файл"
@@ -846,7 +846,7 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "Продолжить использование ProtonMail."
       ]
     },
     "Calendar feature": {
@@ -1859,7 +1859,7 @@
         "Группа с таким именем уже существует"
       ],
       "A problem occurred, please try again": [
-        ""
+        "Возникла проблема. Попробуйте еще раз"
       ],
       "Amount above the maximum.": [
         "Сумма больше максимума."
@@ -1886,7 +1886,7 @@
         "Подпись контакта не проверена"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер."
       ],
       "Could not find address ${ email }.": [
         "Не могу найти адрес ${ email }."
@@ -1963,9 +1963,6 @@
       "Invalid card number": [
         "Неверный номер карты"
       ],
-      "Invalid code": [
-        "Недействительный код"
-      ],
       "Invalid expiration date": [
         "Неверная дата окончания срока действия карты"
       ],
@@ -1989,6 +1986,9 @@
         "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
         "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
         "Объединить по крайней мере ${ calendarToFixCount } календарь(ей) с существующим календарем Proton"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Missing signature": [
         "Подпись отсутствует"
@@ -2036,7 +2036,7 @@
         "Процесс оплаты не поддерживается"
       ],
       "Please activate your content search again": [
-        ""
+        "Активируйте поиск по содержимому еще раз"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
@@ -2600,10 +2600,10 @@
         "Гарантия возврата денег в течение 30 дней."
       ],
       "5 email addresses": [
-        ""
+        "5 адресов электронной почты"
       ],
       "5 GB storage": [
-        ""
+        "5 ГБ хранилища"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Свободный интернет без цензуры должен быть доступен всем."
@@ -2672,7 +2672,7 @@
         ""
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        ""
+        "Вы уверены, что хотите безвозвратно удалить выбранные элементы из корзины?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Поскольку ${ appName } зашифрован из конца в конец, мы не можем получить доступ\nили расшифровать ваши файлы. Чтобы разблокировать диск после сброса пароля,\nвы должны иметь одно из следующих устройств:"
@@ -2711,7 +2711,7 @@
         "Проверка контакта ${ progress } из ${ max }…"
       ],
       "Clear data": [
-        ""
+        "Очистить данные"
       ],
       "Clear encrypted search data": [
         ""
@@ -2741,7 +2741,7 @@
         "Продолжить использование ${ appName } и разблокировать хранилище позже"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Продолжить с ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Создать ${ calendarsToBeCreated } новый календарь",
@@ -2770,6 +2770,9 @@
       "Create your first folder and start moving your files.": [
         "Создайте свою первую папку и начните загружать ваши файлы."
       ],
+      "Creating": [
+        ""
+      ],
       "Creating link to file": [
         "Создание ссылки на файл"
       ],
@@ -2790,9 +2793,6 @@
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Скидка применена к вашей подписке с купоном ${ code }"
-      ],
-      "Domains": [
-        "Доменов"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и берите конфиденциальность с собой, куда бы вы ни пошли."
@@ -3032,7 +3032,7 @@
         "Только люди со ссылкой и паролем могут получить доступ к этой папке."
       ],
       "Other options": [
-        ""
+        "Другие возможности"
       ],
       "Paused": [
         "Приостановлено"
@@ -3098,10 +3098,10 @@
         "Основной"
       ],
       "Priority support": [
-        ""
+        "Приоритетная поддержка"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "Тариф ProtonMail Plus распространяется только на одного пользователя и включает хранилище размером 5 ГБ."
@@ -3164,7 +3164,7 @@
         "Что-то пошло не так. Пожалуйста, повторите попытку позже."
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Начните с 500 МБ и постепенно увеличивайте объем хранилища. Место для хранения данных распределяется между Почтой, Календарем и Хранилищем."
       ],
       "Starter VPN service with P2P support.": [
         "Сервис VPN начального уровня с поддержкой P2P."
@@ -3176,7 +3176,7 @@
         ""
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Поддержка 1 пользовательского домена электронной почты"
       ],
       "support team": [
         "служба поддержки"
@@ -3272,10 +3272,10 @@
         ""
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Неограниченное количество папок, меток и фильтров"
       ],
       "Unlimited messages": [
-        ""
+        "Неограниченное количество сообщений"
       ],
       "Unlock drive to recover files": [
         "Разблокировать хранилище чтобы восстановить файлы"
@@ -3287,7 +3287,7 @@
         ""
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Улучшите сегодня, чтобы не потерять следующие преимущества: ${ appName } ${ planName }."
       ],
       "Uploaded": [
         "Загружено"
@@ -3299,7 +3299,7 @@
         "Загрузка сотен файлов сразу может повлиять на производительность."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Используйте собственные пользовательские доменные адреса электронной почты, например, you@yourname.com"
       ],
       "Users": [
         "Пользователей"
@@ -3985,7 +3985,7 @@
         "Группы контактов"
       ],
       "Custom domains": [
-        ""
+        "Пользовательские домены"
       ],
       "Custom filters": [
         "Пользовательские фильтры"
@@ -4069,7 +4069,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Ваша бесплатный пробный период закончился. Доступ к вашему аккаунту скоро будет отключен. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4102,6 +4102,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        "\"${ name }\" успешно создано"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         ""
       ],
@@ -4176,9 +4179,6 @@
         "${ movedLinksCount } папки успешно перемещены",
         "${ movedLinksCount } папок успешно перемещено",
         "${ movedLinksCount } папок успешно перемещено"
-      ],
-      "${ name } created successfully": [
-        ""
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "",
@@ -4612,7 +4612,7 @@
         "Встроенная блокировка рекламы (NetShield)"
       ],
       "Custom domains": [
-        ""
+        "Пользовательские домены"
       ],
       "Early access to new products": [
         "Ранний доступ к новым продуктам"
@@ -4727,10 +4727,10 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Получите до 18 месяцев ${ appName } ${ planName } бесплатно"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "Приглашайте друзей и получайте вознаграждения!"
       ]
     },
     "Storage": {
@@ -5201,7 +5201,7 @@
         "Ошибка сети"
       ],
       "No results found": [
-        ""
+        "Ничего не найдено"
       ],
       "Number of files": [
         "Количество файлов"
@@ -5238,6 +5238,9 @@
       ],
       "PayPal verification failed": [
         "Сбой проверки PayPal"
+      ],
+      "Performance might be affected": [
+        ""
       ],
       "Phone numbers": [
         "Телефонные номера"
@@ -5384,7 +5387,7 @@
         "Ваша папка готова к скачиванию"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"
       ],
       "ZIP / postal code": [
         "ZIP-код / почтовый индекс"
@@ -5475,7 +5478,7 @@
         "Используйте личный адрес username@pm.me для отправки электронных писем"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Используйте собственные пользовательские доменные адреса электронной почты, например, you@yourname.com"
       ],
       "You do not have any contacts to export": [
         "У вас нет контактов для экспорта"
@@ -5708,7 +5711,7 @@
         "Вы потеряете все сделанные вами до этого настройки."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Ваша бесплатная пробная версия заканчивается ${ textDate }. ${ action }"
       ]
     }
   }

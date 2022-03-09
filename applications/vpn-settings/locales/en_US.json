@@ -2265,7 +2265,7 @@
       "Log in to ProtonMail to activate your address": [
         ""
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
         ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
@@ -2343,7 +2343,7 @@
       "Proton Calendar": [
         ""
       ],
-      "Proton can't help you recover any lost passwords": [
+      "Proton can't help you recover any lost passwords.": [
         ""
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
@@ -2363,6 +2363,9 @@
         ""
       ],
       "read our two-factor authentication Guide first": [
+        ""
+      ],
+      "recovery method": [
         ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [

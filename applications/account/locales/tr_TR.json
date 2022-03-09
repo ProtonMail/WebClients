@@ -323,7 +323,7 @@
         "masaüstü bildirimlerini etkinleştir"
       ],
       "Enable multi-user support": [
-        "Çoklu kullanıcı desteğini etkinleştir"
+        "Çok kullanıcı desteğini etkinleştir"
       ],
       "Export": [
         "Dışa aktar"
@@ -354,6 +354,9 @@
       ],
       "Get verification code": [
         "Doğrulama kodu al"
+      ],
+      "Go to label": [
+        "Etikete git"
       ],
       "Go to panel ${ index }": [
         "${ index } panosuna git"
@@ -413,7 +416,7 @@
         "${ BRAND_NAME } ${ currentPlanName } tarifemi koru"
       ],
       "label emails as": [
-        "e-postaları şöyle etiketle"
+        "e-postaları etiketle"
       ],
       "Loading verification": [
         "Doğrulama yükleniyor"
@@ -961,6 +964,11 @@
       ],
       "Unsupported event": [
         "Etkinlik desteklenmiyor"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        "Davetleri takvime ekle ve bekliyor olarak işaretle"
       ]
     },
     "Autoresponse": {
@@ -2640,6 +2648,9 @@
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin"
       ],
+      "Missing key packet": [
+        "Anahtar paketi eksik"
+      ],
       "Name does not match": [
         "Ad eşleşmiyor"
       ],
@@ -2695,7 +2706,7 @@
         "Lütfen kuruluşunuza kullanıcılar eklemeden önce bir özel etki alanı ayarlayın."
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "Lütfen kuruluşunuza kullanıcılar eklemeden önce çoklu kullanıcı desteğini etkinleştirin."
+        "Lütfen kuruluşunuza kullanıcılar eklemeden önce çok kullanıcı desteğini etkinleştirin."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
@@ -2717,7 +2728,7 @@
         "Lütfen yeniden kimlik doğrulaması yapmayı deneyin ve izinlerin doğru ayarlanmış olduğundan emin olun."
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
-        "Lütfen birden fazla kullanıcıya sahip Professional tarifesine ya da çoklu kullanıcı desteği olan Visionary tarifesine yükseltin"
+        "Lütfen birden fazla kullanıcıya sahip Professional tarifesine ya da çok kullanıcı desteği olan Visionary tarifesine yükseltin"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Birden fazla kullanıcı için Professional tarifesine ya da çok sayıda kullanıcıyı yönetmek için Visionary tarifesine yükseltin."
@@ -3279,7 +3290,7 @@
         "İletileri etiketleme veya arşivleme gibi belirli işlemlerin otomatik olarak yapılması için özel bir süzgeç ekleyin."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Göndericiye özel istenmeyen e-posta kuralları uygulayın. İzin verilenler listesindeki adreslerden veya etki alanlarından gelen iletiler her zaman gelen kutunuza giderken, engellenenler listesindeki adreslerden veya etki alanlarından gelen iletiler her zaman istenmeyenler klasörüne gider. Bir ileti istenmeyen olarak işaretlendiğinde, adresi de engellenenler listesine eklenir. Bir ileti istenmeyen değil olarak işaretlendiğinde, adresi izin verilenler listesine eklenir."
+        "Göndericiye özel istenmeyen e-posta kuralları uygulayın. İzin verilenler listesindeki adreslerden veya etki alanlarından gelen iletiler her zaman gelen kutunuza giderken, engellenenler listesindeki adreslerden veya etki alanlarından gelen iletiler her zaman istenmeyen kutusuna gider. Bir ileti istenmeyen olarak işaretlendiğinde, adresi de engellenenler listesine eklenir. Bir ileti istenmeyen değil olarak işaretlendiğinde, adresi izin verilenler listesine eklenir."
       ],
       "Search in Allow List and Block List": [
         "İzin verilenler ve engellenenler listesinde arama"
@@ -4045,7 +4056,7 @@
         "Hesabınıza kullanıcı2@protonmail.com gibi ek adresler ekleyin"
       ],
       "Add image URL": [
-        "Görsel adresi ekle"
+        "Adresten görsel ekle"
       ],
       "Add label": [
         "Etiket ekle"
@@ -4365,7 +4376,7 @@
         "E-posta tercihi kaydedildi"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Bu klasörde depolanmış e-postalar silinmeyecek ve hala Tüm E-postalar klasöründe bulunabilecek."
+        "Bu klasörde depolanmış e-postalar silinmeyecek ve hala Tüm e-postalar kutusunda bulunabilecek."
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Bu etiket ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
@@ -4383,10 +4394,10 @@
         "${ phone } numaranıza gönderdiğimiz kodu yazın."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı gelen kutunuzda bulamazsanız, istenmeyenler klasörüne bakmayı unutmayın."
+        "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı gelen kutunuzda bulamazsanız, istenmeyen kutusuna bakmayı unutmayın."
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "İçeri aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
+        "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Yönetici yetkilerini geri yüklemek için kuruluş parolasını yazın. ${ learnMore }"
@@ -4409,7 +4420,7 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Kurtarma telefon numaranızı yazın. Size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
+      "Event invitations and RSVPs will be sent in this language.": [
         "Etkinlik davetleri ve davet yanıtlama istekleri bu dilde gönderilir."
       ],
       "Expired": [
@@ -4488,7 +4499,7 @@
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, spam kutusuna da bakmayı unutmayın."
+        "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
       ],
       "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
         "ProtonMail üzerinde kullandığınız özel bir etki alanınız varsa, etki alanınıza geçersiz bir e-posta adresiyle (yazım hataları gibi) gönderilen iletileri alacak bir tümünü toplayan e-posta adresi ayarlayabilirsiniz."
@@ -4561,7 +4572,7 @@
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki aşamalı kimlik doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "ÖNEMLİ: Bazı kayıt kuruluşları, sonunda nokta bulunan CNAME değerlerini kabul etmez (bazıları ise bulunmasını ister). Kayıt şirketiniz CNAME kayıtlarınızı kabul etmiyorsa, her CNAME değerinin sonundaki noktayı silerek yeniden deneyin."
+        "ÖNEMLİ: Bazı kayıt kuruluşları, sonunda nokta bulunan CNAME değerlerini kabul etmez (bazıları ise bulunmasını ister). Kayıt kuruluşunuz CNAME kayıtlarınızı kabul etmiyorsa, her CNAME değerinin sonundaki noktayı silerek yeniden deneyin."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
@@ -4683,8 +4694,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru, reklamcılara, Rus devlet kurumlarına ve diğer üçüncü taraflara bilgi sağlamak için kişisel verilerinizi okur. Daha iyi bir kişisel gizlilik elde etmek için güvenli bir e-posta adresi oluşturun."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Gerektiğinde oturum açmak ve e-posta şifresini çözmek için kullandığınız parolayı bulabileceğinizden emin olun. ${ boldAlert }. Öncelikle bir kurtarma e-postası eklemenizi öneririz."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Oturum açmak ve e-posta şifresini çözmek için kullandığınız parolayı hatırlayacağınızdan emin olun. ${ boldAlert }. Öncelikle bir ${ recoveryLink } eklemenizi öneririz."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Hesabınızı kurmak için bu bilgileri iki aşamalı kimlik doğrulama aygıtınıza el ile yazın. ${ _switchButton }."
@@ -4702,7 +4713,7 @@
         "Daha fazla bilgi"
       ],
       "Multi-user support not enabled.": [
-        "Çoklu kullanıcı desteği etkin değil."
+        "Çok kullanıcı desteği etkin değil."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
@@ -4899,8 +4910,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton kaybolan parolaları kurtarmanıza yardımcı olamaz"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton kaybolan parolaları kurtarmanıza yardımcı olamaz."
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton, diğer e-posta hizmeti sağlayıcınızla bağlantıyı kaybettiğinden içe aktarma işlemini duraklattı. Lüften yeniden bağlanın."
@@ -4950,6 +4961,9 @@
       ],
       "Recovery files have been voided": [
         "Kurtarma dosyaları geçersiz kılındı"
+      ],
+      "recovery method": [
+        "kurtarma yöntemi"
       ],
       "Recovery phrase copied to clipboard": [
         "Kurtarma ifadesi panoya kopyalandı"
@@ -5016,6 +5030,9 @@
       ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
+      ],
+      "Show original message": [
+        "Özgün iletiyi görüntüle"
       ],
       "Signed up": [
         "Hesap açtı"
@@ -5216,7 +5233,7 @@
         "İki parola kipinde iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "İki parola kipinde, oturum açmak ve posta kutusunun şifresini çözemek için ayrı parolalar kullanır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kipini kullanmasını öneririz. İki parola kipine geçmek için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
+        "İki parola kipinde, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kipini kullanmasını öneririz. İki parola kipine geçmek için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kurtarma dosyası imzası doğrulanamadı. Lütfen destek ekibi ile görüşün."
@@ -5267,7 +5284,7 @@
         "Kişilere ofis dışında olduğunuzu veya başka bir şekilde yanıt veremeyeceğinizi bildirmek için otomatik yanıtları kullanın."
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "ProtonVPN sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: MacOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
+        "ProtonVPN sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: macOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
@@ -5448,6 +5465,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Depolama kapasitenizi %100 oranında kullanıyorsunuz. Yeni e-postalar gönderemez veya alamazsınız. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You still need to reply to invitations for the host to see your response.": [
+        "Düzenleyicinin yanıtınızı görebilmesi için yine de davetleri yanıtlamanız gerekir."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "${ BRAND_NAME } hesabınızdaki ${ loseAllData }. Geri yüklemek için, eski parolanızı yeniden yazmanız gerekecek."
@@ -5751,13 +5771,13 @@
         "İlet"
       ],
       "Go to All Mail": [
-        "Tüm postalara git"
+        "Tüm e-postalar kutusuna git"
       ],
       "Go to Archive": [
         "Arşive git"
       ],
       "Go to Drafts": [
-        "Taslaklara git"
+        "Taslaklar kutusuna git"
       ],
       "Go to Inbox": [
         "Gelen kutusuna git"
@@ -5766,13 +5786,16 @@
         "Gönderilmişlere git"
       ],
       "Go to Spam": [
-        "İstenmeyenlere git"
+        "İstenmeyen kutusuna git"
       ],
       "Go to Starred": [
         "Yıldızlanmışlara git"
       ],
       "Go to Trash": [
         "Çöp kutusuna git"
+      ],
+      "Insert link": [
+        "Bağlantı ekle"
       ],
       "Jump to first": [
         "Birinciye git"
@@ -5781,7 +5804,7 @@
         "Sonuncuya git"
       ],
       "Label as...": [
-        "Şöyle etiketle..."
+        "Etiketle..."
       ],
       "Load embedded images": [
         "Gömülü görselleri yükle"
@@ -5811,10 +5834,10 @@
         "Gelen kutusuna taşı"
       ],
       "Move to Spam": [
-        "İstenmeyenlere taşı"
+        "İstenmeyen kutusuna taşı"
       ],
       "Move to Trash": [
-        "Çöp kutusuna taşı"
+        "Çöpe at"
       ],
       "Move to...": [
         "Şuraya taşı..."
@@ -6275,7 +6298,7 @@
         "Hediye kodu"
       ],
       "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Raporlarınızı e-postayla göndermekten başka bir şey yapmayan temel bir DMARC kaydını burada görebilirsiniz."
+        "Bildirimlerinizi e-postayla göndermekten başka bir şey yapmayan temel bir DMARC kaydını burada görebilirsiniz."
       ],
       "Hide password": [
         "Parolayı gizle"
@@ -6314,7 +6337,7 @@
         "Oturumum açık kalsın"
       ],
       "Keep messages in Sent/Drafts": [
-        "İletiler Gönderilenler/Taslaklar klasöründe tutulsun"
+        "İletiler Gönderilmiş/Taslaklar kutusunda tutulsun"
       ],
       "Key": [
         "Anahtar"
@@ -6326,7 +6349,7 @@
         "Tuş takımı kısayolları"
       ],
       "Label as": [
-        "Şöyle etiketle"
+        "Etiketle"
       ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
@@ -6520,8 +6543,8 @@
       "Send auto-reply": [
         "Otomatik yanıt gönder"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        "Davet dili"
       ],
       "Show secondary time zone": [
         "İkinci saat dilimi görüntülensin"
@@ -6938,7 +6961,7 @@
         "Hizmet sağlayıcınızdaki verilerinizi topluyoruz"
       ],
       "Your import is starting": [
-        "İçeri aktarma işleminize başlanıyor"
+        "İçe aktarma işleminize başlanıyor"
       ]
     },
     "Log preference": {
@@ -6966,7 +6989,7 @@
         "Otomatik yanıtlayıcı"
       ],
       "Catch-All email": [
-        "Tümümü toplayan e-posta"
+        "Tümünü toplayan e-posta"
       ],
       "Contact groups": [
         "Kişi grupları"
@@ -6993,7 +7016,7 @@
         "Günlük ileti sayısı"
       ],
       "Multi-user support": [
-        "Çoklu kullanıcı desteği"
+        "Çok kullanıcı desteği"
       ],
       "Priority": [
         "Öncelikli"
@@ -7045,7 +7068,7 @@
         "Kullanıcılara ayrı hesaplar açın"
       ],
       "Get Multi-user support": [
-        "Çoklu kullanıcı desteği alın"
+        "Çok kullanıcı desteği alın"
       ],
       "Host emails for your organization": [
         "Kuruluşunuzun e-postalarını barındırın"
@@ -7717,15 +7740,6 @@
       "Feedback": [
         "Geri bildirim"
       ],
-      "Fill in the email address and text to test your link": [
-        "Bağlantınızı sınamak için e-posta adresini ve metni yazın"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Bağlantınızı sınamak için telefon numarasını ve metni yazın"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Bağlantınızı sınamak için telefon numarasını ve metni yazın"
-      ],
       "Gift code": [
         "Hediye kodu"
       ],
@@ -7752,6 +7766,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
+      ],
+      "Please insert link first": [
+        "Lütfen önce bağlantıyı ekleyin"
       ],
       "Postal code": [
         "Posta kodu"
@@ -8321,7 +8338,7 @@
         "Öncelikli hesap oluşturuldu"
       ],
       "Resuming import": [
-        "İçeri aktarmaya devam ediliyor"
+        "İçe aktarma sürdürülüyor"
       ],
       "Session revoked": [
         "Oturum kapatıldı"
@@ -8610,7 +8627,7 @@
         "Fatura dönemi"
       ],
       "Billing details": [
-        "Fatura ayrıntıları"
+        "Fatura bilgileri"
       ],
       "Block List": [
         "Engellenenler listesi"
@@ -8931,9 +8948,6 @@
       "Invoices": [
         "Faturalar"
       ],
-      "Keyboard Shortcuts": [
-        "Tuş takımı kısayolları"
-      ],
       "Labels": [
         "Etiketler"
       ],
@@ -8941,7 +8955,7 @@
         "Dil ve zaman"
       ],
       "Layout": [
-        "Düzen"
+        "Görünüm"
       ],
       "Link confirmation": [
         "Bağlantı onayı"
@@ -8953,7 +8967,7 @@
         "İletiler"
       ],
       "Multi-user support": [
-        "Çoklu kullanıcı desteği"
+        "Çok kullanıcı desteği"
       ],
       "My addresses": [
         "Adreslerim"
@@ -9403,7 +9417,7 @@
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Gönderilmiş veya Taslaklar klasöründeki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeye devam eder."
+        "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeye devam eder."
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Çok kullanıcı desteği yalnızca 2 veya daha fazla kullanıcılı tarifeler için geçerlidir"
@@ -9430,7 +9444,7 @@
         "Gönderdiğiniz e-postalara şu alt bilgi eklenir: ${ signature } Bağlantı, öneri bağlantınıza yönlenir. Alt bilgi, imzanızın altında görüntülenir. İmzanızı istediğiniz zaman ayarlar bölümünden kişiselleştirebilirsiniz."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "Bu anahtar tarafından üretilen imzalar geçersiz olarak kabul edilir ve bu anahtar şifreleme için kullanılamaz"
+        "Bu anahtar tarafından oluşturulan imzalar geçersiz olarak kabul edilir ve bu anahtar şifreleme için kullanılamaz"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek."

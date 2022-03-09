@@ -119,9 +119,6 @@
       "Compare all features": [
         "Tüm özellikleri karşılaştırın"
       ],
-      "Compare plans": [
-        "Tarifeleri karşılaştır"
-      ],
       "Compose": [
         "Oluştur"
       ],
@@ -244,6 +241,9 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
+      "Go to label": [
+        "Etikete git"
+      ],
       "Go to panel ${ index }": [
         "${ index } panosuna git"
       ],
@@ -320,7 +320,7 @@
         "Klasöre taşı"
       ],
       "Move to trash": [
-        "Çöp kutusuna taşı"
+        "Çöpe at"
       ],
       "New upload": [
         "Yeni yükle"
@@ -348,9 +348,6 @@
       ],
       "Pause upload": [
         "Yüklemeyi duraklat"
-      ],
-      "Pay": [
-        "Öde"
       ],
       "Preview": [
         "Ön izleme"
@@ -538,6 +535,9 @@
       "Upgrade": [
         "Yükselt"
       ],
+      "Upload anyway": [
+        "Yine de yükle"
+      ],
       "Upload file": [
         "Dosya yükle"
       ],
@@ -597,10 +597,10 @@
         "Lütfen başka bir ifade aramayı deneyin."
       ],
       "You don't have any contacts.": [
-        "Herhangi bir kişiniz yok."
+        "Henüz bir kişiniz yok."
       ],
       "You don't have any groups.": [
-        "Herhangi bir grubunuz yok."
+        "Henüz bir grubunuz yok."
       ]
     },
     "Addon": {
@@ -1941,9 +1941,6 @@
       "Invalid card number": [
         "Kart numarası geçersiz"
       ],
-      "Invalid code": [
-        "Kod geçersiz"
-      ],
       "Invalid expiration date": [
         "Son kullanma tarihi geçersiz"
       ],
@@ -1965,6 +1962,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin"
+      ],
+      "Missing key packet": [
+        "Anahtar paketi eksik"
       ],
       "Missing signature": [
         "İmza eksik"
@@ -2676,6 +2676,9 @@
       "Create your first folder and start moving your files.": [
         "İlk klasörünüzü oluşturun ve dosyalarınızı taşımaya başlayın."
       ],
+      "Creating": [
+        "Oluşturuluyor"
+      ],
       "Creating link to file": [
         "Dosya bağlantısı oluşturuluyor"
       ],
@@ -2694,9 +2697,6 @@
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize indirim uygulandı"
-      ],
-      "Domains": [
-        "Etki alanı sayısı"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Kullanmak istediğiniz uygulamayı indirin ve kişisel gizliliğinizi gittiğiniz her yere götürün."
@@ -2786,7 +2786,7 @@
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, istenmeyenler kutusuna bakmayı unutmayın."
+        "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Bunlardan birine sahipseniz, engellemeyi kaldırmak için Proton hesabı ayarıyla ilerleyin."
@@ -3140,7 +3140,7 @@
         "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+        "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle kontrol etmemiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
@@ -3426,7 +3426,7 @@
         "E-posta adresi ekle"
       ],
       "Add image URL": [
-        "Görsel adresi ekle"
+        "Adresten görsel ekle"
       ],
       "Add to group": [
         "Gruba ekle"
@@ -3649,7 +3649,7 @@
         "Telefon numarası"
       ],
       "Post office box": [
-        "Posta kutusu"
+        "Fiziksel posta kutusu"
       ],
       "Postal code": [
         "Posta kodu"
@@ -3855,7 +3855,7 @@
         "Hizmet sağlayıcınızdaki verilerinizi topluyoruz"
       ],
       "Your import is starting": [
-        "İçeri aktarma işleminize başlanıyor"
+        "İçe aktarma işleminize başlanıyor"
       ]
     },
     "Mail feature": {
@@ -3875,7 +3875,7 @@
         "Otomatik yanıtlayıcı"
       ],
       "Catch-All email": [
-        "Tümümü toplayan e-posta"
+        "Tümünü toplayan e-posta"
       ],
       "Contact groups": [
         "Kişi grupları"
@@ -3902,7 +3902,7 @@
         "Günlük ileti sayısı"
       ],
       "Multi-user support": [
-        "Çoklu kullanıcı desteği"
+        "Çok kullanıcı desteği"
       ],
       "Priority": [
         "Öncelik"
@@ -3994,6 +3994,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        "\"${ name }\" oluşturuldu"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" çöp kutusundan kalıcı olarak silindi"
       ],
@@ -4007,16 +4010,16 @@
         "\"${ name }\" taşınamadı"
       ],
       "\"${ name }\" failed to be moved to trash": [
-        "\"${ name }\" çöp kutusuna atılamadı"
+        "\"${ name }\" çöpe atılamadı"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" çöp kutusundan geri yüklenemedi"
+        "\"${ name }\" çöpten çıkarılamadı"
       ],
       "\"${ name }\" moved to trash": [
-        "\"${ name }\" çöp kutusuna atıldı"
+        "\"${ name }\" çöpe atıldı"
       ],
       "\"${ name }\" restored from trash": [
-        "\"${ name }\" çöp kutusundan geri yüklendi"
+        "\"${ name }\" çöpten çıkarıldı"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" taşındı"
@@ -4055,9 +4058,6 @@
         "${ movedLinksCount } klasör taşındı",
         "${ movedLinksCount } klasör taşındı"
       ],
-      "${ name } created successfully": [
-        "${ name } oluşturuldu"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi",
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi"
@@ -4071,20 +4071,20 @@
         "${ numberOfItems } öge taşınamadı"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "${ numberOfItems } öge çöp kutusuna atılamadı",
-        "${ numberOfItems } öge çöp kutusuna atılamadı"
+        "${ numberOfItems } öge çöpe atılamadı",
+        "${ numberOfItems } öge çöpe atılamadı"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } öge çöp kutusundan geri yüklenemedi",
-        "${ numberOfItems } öge çöp kutusundan geri yüklenemedi"
+        "${ numberOfItems } öge çöpten çıkarılamadı",
+        "${ numberOfItems } öge çöpten çıkarılamadı"
       ],
       "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } öge çöp kutusuna taşındı",
-        "${ numberOfItems } öge çöp kutusuna taşındı"
+        "${ numberOfItems } öge çöpe atıldı",
+        "${ numberOfItems } öge çöpe atıldı"
       ],
       "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } öge çöp kutusundan geri yüklendi",
-        "${ numberOfItems } öge çöp kutusundan geri yüklendi"
+        "${ numberOfItems } öge çöpten çıkarıldı",
+        "${ numberOfItems } öge çöpten çıkarıldı"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } öge taşındı",
@@ -4099,20 +4099,20 @@
         "${ numberOfItems } bağlantı silindi"
       ],
       "${ restoredItemsCount } file restored from trash": [
-        "${ restoredItemsCount } dosya çöp kutusundan geri yüklendi",
-        "${ restoredItemsCount } dosya çöp kutusundan geri yüklendi"
+        "${ restoredItemsCount } dosya çöpten çıkarıldı",
+        "${ restoredItemsCount } dosya çöpten çıkarıldı"
       ],
       "${ restoredItemsCount } folder restored from trash": [
-        "${ restoredItemsCount } klasör çöp kutusundan geri yüklendi",
-        "${ restoredItemsCount } klasör çöp kutusundan geri yüklendi"
+        "${ restoredItemsCount } klasör çöpten çıkarıldı",
+        "${ restoredItemsCount } klasör çöpten çıkarıldı"
       ],
       "${ trashedLinksCount } file moved to trash": [
         "${ trashedLinksCount } dosya çöp kutusuna taşındı",
-        "${ trashedLinksCount } dosya çöp kutusuna taşındı"
+        "${ trashedLinksCount } dosya çöpe atıldı"
       ],
       "${ trashedLinksCount } folder moved to trash": [
-        "${ trashedLinksCount } klasör çöp kutusuna taşındı",
-        "${ trashedLinksCount } klasör çöp kutusuna taşındı"
+        "${ trashedLinksCount } klasör çöpe atıldı",
+        "${ trashedLinksCount } klasör çöpe atıldı"
       ],
       "All items will soon be permanently deleted from trash": [
         "Tüm ögeler yakında çöp kutusundan kalıcı olarak silinecek"
@@ -4873,7 +4873,7 @@
         "Kalıcı olarak sil"
       ],
       "Deleting contacts": [
-        "Kişiler siliniyor"
+        "Kişileri silme"
       ],
       "Discard": [
         "Yok say"
@@ -4942,7 +4942,7 @@
         "Hata"
       ],
       "Exporting contacts": [
-        "Kişiler dışa aktarılıyor"
+        "Kişileri dışa aktarma"
       ],
       "File details": [
         "Dosya bilgileri"
@@ -4996,7 +4996,7 @@
         "Kişileri birleştir"
       ],
       "Merging contacts": [
-        "Kişiler birleştiriliyor"
+        "Kişileri birleştirme"
       ],
       "MIME type": [
         "MIME türü"
@@ -5054,6 +5054,9 @@
       ],
       "PayPal verification failed": [
         "PayPal doğrulaması başarısız oldu"
+      ],
+      "Performance might be affected": [
+        "Başarım etkilenebilir"
       ],
       "Phone numbers": [
         "Telefon numaraları"
