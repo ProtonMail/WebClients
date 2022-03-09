@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 import { PLANS, PLAN_NAMES, APPS, PLAN_SERVICES, CYCLE } from '@proton/shared/lib/constants';
-import { getHasB2BPlan, getPlan, getPlanIDs, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { getHasB2BPlan, getPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { Subscription, Organization, Address, UserModel } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import percentage from '@proton/shared/lib/helpers/percentage';
@@ -46,22 +46,18 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
     const UsedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
     const MaxAddresses = OrganizationMaxAddresses || 1;
     const MaxVPN = user.hasPaidVpn ? OrganizationMaxVPN : 1;
-    const currentPlanIDs = getPlanIDs(subscription);
 
     const handleCustomizeSubscription = () =>
         openSubscriptionModal({
-            planIDs: currentPlanIDs,
             step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
             disableBackButton: true,
         });
     const handleExplorePlans = () =>
         openSubscriptionModal({
-            planIDs: currentPlanIDs,
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
         });
     const handleEditPayment = () =>
         openSubscriptionModal({
-            planIDs: currentPlanIDs,
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disableBackButton: true,
         });
