@@ -201,7 +201,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                         ) : (
                             <Href
                                 className="color-inherit"
-                                href="https://protonmail.com/support/knowledge-base/address-verification/"
+                                url="https://protonmail.com/support/knowledge-base/address-verification/"
                             >
                                 {c('Link').t`Learn more`}
                             </Href>
