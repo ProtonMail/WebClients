@@ -321,6 +321,9 @@
 	border-start-end-radius: 0;
 	border-end-start-radius: var(--border-radius-md);
 	border-end-end-radius: var(--border-radius-md);
+	.message-container.has-attachments & {
+		border-radius: 0;
+	}
 	// force color until real dark mode
 	// as mail content is forced on white bg, button has to be forced as well
 	.toggle-original-message-button {
