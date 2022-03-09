@@ -1,73 +1,102 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { useState, ChangeEvent, useEffect } from 'react';
-import { c } from 'ttag';
-import {
-    Href,
-    generateUID,
-    useNotifications,
-    InputFieldTwo,
-    PasswordInputTwo,
-    useFormErrors,
-} from '@proton/components';
-import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { useDispatch } from 'react-redux';
+import { c, msgid } from 'ttag';
+import { Href, useNotifications, useFeatures, FeatureCode } from '@proton/components';
+import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import ComposerInnerModal from './ComposerInnerModal';
 import { MessageChange } from '../Composer';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
+import PasswordInnerModalForm from './PasswordInnerModalForm';
+import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
+import { DEFAULT_EO_EXPIRATION_DAYS } from '../../../constants';
+
+const getNumberOfExpirationDays = (message?: MessageState) => {
+    const expirationInSeconds = message?.draftFlags?.expiresIn || 0;
+    const numberOfDaysAlreadySet = Math.floor(expirationInSeconds / 86400);
+
+    return message?.draftFlags?.expiresIn ? numberOfDaysAlreadySet : 28;
+};
+
+const getExpirationText = (message?: MessageState) => {
+    const numberOfDays = getNumberOfExpirationDays(message);
+
+    if (numberOfDays === 0) {
+        return c('Info').t`Your message will expire today.`;
+    }
+    if (numberOfDays === 1) {
+        return c('Info').t`Your message will expire tomorrow.`;
+    }
+    return c('Info').ngettext(
+        msgid`Your message will expire in ${numberOfDays} day.`,
+        `Your message will expire in ${numberOfDays} days.`,
+        numberOfDays
+    );
+};
 
 interface Props {
-    message?: Message;
+    message?: MessageState;
     onClose: () => void;
     onChange: MessageChange;
 }
 
 const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
-    const [uid] = useState(generateUID('password-modal'));
-    const [password, setPassword] = useState(message?.Password || '');
-    const [passwordVerif, setPasswordVerif] = useState(message?.Password || '');
-    const [passwordHint, setPasswordHint] = useState(message?.PasswordHint || '');
-    const [isPasswordSet, setIsPasswordSet] = useState<boolean>(false);
-    const [isMatching, setIsMatching] = useState<boolean>(false);
+    const {
+        password,
+        setPassword,
+        passwordHint,
+        setPasswordHint,
+        isPasswordSet,
+        setIsPasswordSet,
+        isMatching,
+        setIsMatching,
+        validator,
+        onFormSubmit,
+    } = useExternalExpiration(message);
     const { createNotification } = useNotifications();
+    const dispatch = useDispatch();
+    const [{ feature: EORedesignFeature, loading }] = useFeatures([FeatureCode.EORedesign]);
 
-    const { validator, onFormSubmit } = useFormErrors();
+    const isEORedesign = EORedesignFeature?.Value;
 
-    useEffect(() => {
-        if (password !== '') {
-            setIsPasswordSet(true);
-        } else if (password === '') {
-            setIsPasswordSet(false);
-        }
-        if (isPasswordSet && password !== passwordVerif) {
-            setIsMatching(false);
-        } else if (isPasswordSet && password === passwordVerif) {
-            setIsMatching(true);
-        }
-    }, [password, passwordVerif]);
-
-    const handleChange = (setter: (value: string) => void) => (event: ChangeEvent<HTMLInputElement>) => {
-        setter(event.target.value);
-    };
+    const isEdition = message?.draftFlags?.expiresIn;
 
     const handleSubmit = () => {
         onFormSubmit();
 
-        if (!isPasswordSet || !isMatching) {
+        if (!isPasswordSet || (!isEORedesign && !isMatching)) {
             return;
         }
 
-        onChange(
-            (message) => ({
-                data: {
-                    Flags: setBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
-                    Password: password,
-                    PasswordHint: passwordHint,
-                },
-            }),
-            true
-        );
+        if (!isEdition) {
+            const valueInHours = DEFAULT_EO_EXPIRATION_DAYS * 24;
+
+            onChange(
+                (message) => ({
+                    data: {
+                        Flags: setBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
+                        Password: password,
+                        PasswordHint: passwordHint,
+                    },
+                    draftFlags: { expiresIn: valueInHours * 3600 },
+                }),
+                true
+            );
+            dispatch(updateExpires({ ID: message?.localID || '', expiresIn: valueInHours * 3600 }));
+        } else {
+            onChange(
+                (message) => ({
+                    data: {
+                        Flags: setBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
+                        Password: password,
+                        PasswordHint: passwordHint,
+                    },
+                }),
+                true
+            );
+        }
 
         createNotification({ text: c('Notification').t`Password has been set successfully` });
 
@@ -75,75 +104,46 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
     };
 
     const handleCancel = () => {
-        onChange(
-            (message) => ({
-                data: {
-                    Flags: clearBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
-                    Password: undefined,
-                    PasswordHint: undefined,
-                },
-            }),
-            true
-        );
         onClose();
     };
 
-    const getErrorText = (isConfirmInput = false) => {
-        if (isPasswordSet !== undefined && !isPasswordSet) {
-            if (isConfirmInput) {
-                return c('Error').t`Please repeat the password`;
-            }
-            return c('Error').t`Please set a password`;
-        }
-        if (isMatching !== undefined && !isMatching) {
-            return c('Error').t`Passwords do not match`;
-        }
-        return '';
-    };
+    // translator : This string is the bold part of the larger string "Send an encrypted, password protected message to a ${boldText} email address."
+    const boldText = <strong key="strong-text">{c('Info').t`non-Proton Mail`}</strong>;
+
+    // translator : The variable "boldText" is the text "non-Proton Mail" written in bold
+    const encryptionText = c('Info').jt`Send an encrypted, password protected message to a ${boldText} email address.`;
+
+    const expirationText = getExpirationText(message);
+
+    if (loading) {
+        return null;
+    }
 
     return (
         <ComposerInnerModal
-            title={c('Info').t`Encrypt for non-${BRAND_NAME} users`}
+            title={isEdition ? c('Info').t`Edit encryption` : c('Info').t`Encrypt message`}
+            submit={c('Action').t`Set encryption`}
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
             <p className="mt0 mb1 color-weak">
-                {c('Info')
-                    .t`Encrypted messages to non-${BRAND_NAME} recipients will expire in 28 days unless a shorter expiration time is set.`}
+                <div className="mb0-5">{encryptionText}</div>
+                {expirationText}
                 <br />
                 <Href url={getKnowledgeBaseUrl('/password-protected-emails')}>{c('Info').t`Learn more`}</Href>
             </p>
 
-            <InputFieldTwo
-                id={`composer-password-${uid}`}
-                label={c('Label').t`Message password`}
-                data-testid="encryption-modal:password-input"
-                value={password}
-                as={PasswordInputTwo}
-                placeholder={c('Placeholder').t`Password`}
-                onChange={handleChange(setPassword)}
-                error={validator([getErrorText()])}
-            />
-            <InputFieldTwo
-                id={`composer-password-verif-${uid}`}
-                label={c('Label').t`Confirm password`}
-                data-testid="encryption-modal:confirm-password-input"
-                value={passwordVerif}
-                as={PasswordInputTwo}
-                placeholder={c('Placeholder').t`Confirm password`}
-                onChange={handleChange(setPasswordVerif)}
-                autoComplete="off"
-                error={validator([getErrorText(true)])}
-            />
-            <InputFieldTwo
-                id={`composer-password-hint-${uid}`}
-                label={c('Label').t`Password hint`}
-                hint={c('info').t`Optional`}
-                data-testid="encryption-modal:password-hint"
-                value={passwordHint}
-                placeholder={c('Placeholder').t`Hint`}
-                onChange={handleChange(setPasswordHint)}
-                autoComplete="off"
+            <PasswordInnerModalForm
+                message={message}
+                password={password}
+                setPassword={setPassword}
+                passwordHint={passwordHint}
+                setPasswordHint={setPasswordHint}
+                isPasswordSet={isPasswordSet}
+                setIsPasswordSet={setIsPasswordSet}
+                isMatching={isMatching}
+                setIsMatching={setIsMatching}
+                validator={validator}
             />
         </ComposerInnerModal>
     );

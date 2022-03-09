@@ -71,6 +71,7 @@ export enum FeatureCode {
     MailContextMenu = 'MailContextMenu',
     NudgeProton = 'NudgeProton',
     WelcomeV5TopBanner = 'WelcomeV5TopBanner',
+    EORedesign = 'EORedesign',
 }
 
 export interface FeaturesContextValue {
