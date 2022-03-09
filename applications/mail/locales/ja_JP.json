@@ -56,9 +56,6 @@
       "Add to group": [
         "グループに追加"
       ],
-      "Address options": [
-        "アドレスのオプション"
-      ],
       "Advanced search": [
         "詳細検索"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "適用"
+      ],
+      "Archive": [
+        "アーカイブ"
       ],
       "Attachment": [
         "添付ファイル"
@@ -213,7 +213,7 @@
         "カスタマイズ"
       ],
       "Decrypt": [
-        ""
+        "復号"
       ],
       "Default email application": [
         "既定のメールアプリ"
@@ -255,7 +255,7 @@
         "詳細"
       ],
       "Didn't receive the code?": [
-        ""
+        "コードを受け取っていませんか?"
       ],
       "Discard": [
         "破棄"
@@ -291,7 +291,7 @@
         "電話番号を編集"
       ],
       "Edit sign-in details": [
-        ""
+        "サインイン詳細を編集"
       ],
       "Email settings": [
         "メールの設定"
@@ -318,7 +318,7 @@
         "エクスポート"
       ],
       "Export contact group": [
-        ""
+        "連絡先グループをエクスポート"
       ],
       "Export contacts": [
         "連絡先のエクスポート"
@@ -346,6 +346,9 @@
       ],
       "Go to first page": [
         "最初のページに移動"
+      ],
+      "Go to label": [
+        "ラベルへ移動"
       ],
       "Go to last page": [
         "最後のページに移動"
@@ -449,6 +452,9 @@
       "Load": [
         "読み込む"
       ],
+      "Load embedded images": [
+        "埋め込み画像を読み込む"
+      ],
       "Load image": [
         "画像を読み込む"
       ],
@@ -456,7 +462,7 @@
         "さらに読み込む"
       ],
       "Load unprotected": [
-        ""
+        "保護されていない状態で読み込む"
       ],
       "Loading${ ellipsis }": [
         "読み込み中${ ellipsis }"
@@ -506,6 +512,9 @@
       "More": [
         "その他"
       ],
+      "More details about ${ title }": [
+        ""
+      ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
       ],
@@ -537,7 +546,7 @@
         "...に移動"
       ],
       "Need help?": [
-        ""
+        "お困りですか?"
       ],
       "Never show": [
         "常に非表示"
@@ -632,14 +641,17 @@
       "Re-sign": [
         "再署名"
       ],
+      "Read receipt sent": [
+        "開封確認が送信されました"
+      ],
       "Recover data": [
         "データを復元する"
       ],
       "Refer a friend": [
-        ""
+        "友達を招待"
       ],
       "Refine it": [
-        ""
+        "絞り込む"
       ],
       "refresh the page": [
         "ページを更新"
@@ -660,7 +672,7 @@
         "名前を変更"
       ],
       "Reply securely": [
-        ""
+        "安全に返信"
       ],
       "Report a problem": [
         "問題を報告"
@@ -693,7 +705,7 @@
         ""
       ],
       "Schedule send": [
-        ""
+        "スケジュールを送信"
       ],
       "Search": [
         "検索"
@@ -722,8 +734,8 @@
       "send auto-reply email": [
         "自動返信メールを送信"
       ],
-      "Send receipt": [
-        "開封確認を送信"
+      "Send read receipt": [
+        "開封確認を送信する"
       ],
       "Set": [
         "設定"
@@ -791,6 +803,9 @@
       "Some images could not be loaded with tracking protection": [
         "いくつかの画像はトラッカー保護により読み込まれませんでした"
       ],
+      "Star": [
+        "星印をつける"
+      ],
       "Start import": [
         "インポート開始"
       ],
@@ -836,6 +851,9 @@
       "Try another method": [
         "別の方法を試してください"
       ],
+      "Turn on auto-load": [
+        ""
+      ],
       "Turn on tracker protection": [
         "トラッカー防止を有効にする"
       ],
@@ -846,7 +864,7 @@
         "取り消し"
       ],
       "Unlock data": [
-        ""
+        "データのロックを解除"
       ],
       "Unmark for deletion": [
         "削除マークを解除"
@@ -854,8 +872,14 @@
       "Unordered list": [
         "箇条書き"
       ],
+      "Unstar": [
+        "星印をはずす"
+      ],
       "Unsubscribe": [
         "登録解除"
+      ],
+      "Unsubscribe from mailing list": [
+        ""
       ],
       "Unsubscribing": [
         "登録を解除しています"
@@ -897,10 +921,10 @@
         "検証"
       ],
       "Verify account": [
-        ""
+        "アカウントを認証"
       ],
       "Verify email": [
-        ""
+        "メールを認証"
       ],
       "View": [
         "表示"
@@ -911,6 +935,9 @@
       "View headers": [
         "ヘッダーを表示"
       ],
+      "View HTML": [
+        "HTML を表示"
+      ],
       "View invoice": [
         "請求書を参照する"
       ],
@@ -920,14 +947,14 @@
       "View message": [
         "メッセージを表示"
       ],
+      "View message details": [
+        "メッセージの詳細を表示"
+      ],
       "View recipients": [
         "宛先を表示"
       ],
       "View rendered HTML": [
         "HTML描画で表示する"
-      ],
-      "View source code": [
-        "ソースコードを表示する"
       ],
       "Why not?": [
         "なぜですか?"
@@ -975,7 +1002,7 @@
         ""
       ],
       "Participant added": [
-        ""
+        "参加者が追加されました"
       ]
     },
     "Alert": {
@@ -985,10 +1012,10 @@
     },
     "Alt": {
       "Forwarded": [
-        ""
+        "転送済み"
       ],
       "Replied to": [
-        ""
+        "返信先"
       ],
       "Replied to all": [
         ""
@@ -1034,7 +1061,7 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "空の ICS ファイルです"
       ],
       "Invalid event": [
         "無効なイベントです"
@@ -1046,7 +1073,7 @@
         "無効なメソッドです"
       ],
       "Unsupported calendar component": [
-        ""
+        "非対応のカレンダーコンポーネントです"
       ],
       "Unsupported event": [
         "サポートされていないイベントです"
@@ -1057,10 +1084,10 @@
         "指定しない"
       ],
       "With": [
-        ""
+        "あり"
       ],
       "Without": [
-        ""
+        "なし"
       ]
     },
     "Attachment signature verification": {
@@ -1248,7 +1275,7 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "ProtonMail を使って続行。"
       ]
     },
     "Calendar attachment tooltip": {
@@ -1449,7 +1476,7 @@
         "${ participantName } はとりあえず招待を受け入れました。"
       ],
       "(Attendance optional)": [
-        ""
+        "(出席は任意です)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
         ""
@@ -1500,7 +1527,7 @@
         "すでにこの招待をとりあえず受け入れています。"
       ],
       "Your email address is not in the participants list": [
-        ""
+        "あなたのメールアドレスは参加者リストにありません"
       ]
     },
     "Calendar status": {
@@ -1513,7 +1540,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "カレンダーを復号できませんでした"
       ],
       "Calendar is syncing": [
         "カレンダーの同期中"
@@ -1621,7 +1648,7 @@
     },
     "Confirm modal title": {
       "Edit and reschedule": [
-        ""
+        "編集して再スケジュール"
       ],
       "Message saved to Drafts": [
         "メッセージを下書きに保存しました"
@@ -1714,774 +1741,774 @@
     },
     "Country name": {
       "Abkhazia": [
-        ""
+        "アブハジア"
       ],
       "Afghanistan": [
-        ""
+        "アフガニスタン"
       ],
       "Albania": [
-        ""
+        "アルバニア"
       ],
       "Algeria": [
-        ""
+        "アルジェリア"
       ],
       "American Samoa": [
-        ""
+        "アメリカ領サモア"
       ],
       "Andorra": [
-        ""
+        "アンドラ"
       ],
       "Angola": [
-        ""
+        "アンゴラ"
       ],
       "Anguilla": [
-        ""
+        "アンギラ"
       ],
       "Antarctica": [
-        ""
+        "南極大陸"
       ],
       "Antigua and Barbuda": [
-        ""
+        "アンティグア・バーブーダ"
       ],
       "Argentina": [
-        ""
+        "アルゼンチン"
       ],
       "Armenia": [
-        ""
+        "アルメニア"
       ],
       "Aruba": [
-        ""
+        "アルバ"
       ],
       "Ascension Island": [
-        ""
+        "アセンション島"
       ],
       "Australia": [
-        ""
+        "オーストラリア"
       ],
       "Austria": [
-        ""
+        "オーストリア"
       ],
       "Azerbaijan": [
-        ""
+        "アゼルバイジャン"
       ],
       "Bahamas": [
-        ""
+        "バハマ"
       ],
       "Bahrain": [
-        ""
+        "バーレーン"
       ],
       "Bangladesh": [
-        ""
+        "バングラデシュ"
       ],
       "Barbados": [
-        ""
+        "バルバドス"
       ],
       "Belarus": [
-        ""
+        "ベラルーシ"
       ],
       "Belgium": [
-        ""
+        "ベルギー"
       ],
       "Belize": [
-        ""
+        "ベリーズ"
       ],
       "Benin": [
-        ""
+        "ベナン"
       ],
       "Bermuda": [
-        ""
+        "バミューダ"
       ],
       "Bhutan": [
-        ""
+        "ブータン"
       ],
       "Bolivia": [
-        ""
+        "ボリビア"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        ""
+        "ボネール、シント・ユースタティウスおよびサバ"
       ],
       "Bosnia and Herzegovina": [
-        ""
+        "ボスニア・ヘルツェゴビナ"
       ],
       "Botswana": [
-        ""
+        "ボツワナ"
       ],
       "Bouvet Island": [
-        ""
+        "ブーベ島"
       ],
       "Brazil": [
-        ""
+        "ブラジル"
       ],
       "British Indian Ocean Territory": [
-        ""
+        "イギリス領インド洋地域"
       ],
       "Brunei Darussalam": [
-        ""
+        "ブルネイ・ダルサラーム"
       ],
       "Bulgaria": [
-        ""
+        "ブルガリア"
       ],
       "Burkina Faso": [
-        ""
+        "ブルキナファソ"
       ],
       "Burma": [
-        ""
+        "ビルマ"
       ],
       "Burundi": [
-        ""
+        "ブルンジ"
       ],
       "Cambodia": [
-        ""
+        "カンボジア"
       ],
       "Cameroon": [
-        ""
+        "カメルーン"
       ],
       "Canada": [
-        ""
+        "カナダ"
       ],
       "Cape Verde": [
-        ""
+        "カーボベルデ"
       ],
       "Cayman Islands": [
-        ""
+        "ケイマン諸島"
       ],
       "Central African Republic": [
-        ""
+        "中央アフリカ共和国"
       ],
       "Chad": [
-        ""
+        "チャド"
       ],
       "Chile": [
-        ""
+        "チリ"
       ],
       "China": [
-        ""
+        "中国"
       ],
       "Christmas Island": [
-        ""
+        "クリスマス島"
       ],
       "Cocos (Keeling) Islands": [
-        ""
+        "ココス (キーリング) 諸島"
       ],
       "Colombia": [
-        ""
+        "コロンビア"
       ],
       "Comoros": [
-        ""
+        "コモロ"
       ],
       "Congo": [
-        ""
+        "コンゴ"
       ],
       "Congo, Democratic Republic of the": [
-        ""
+        "コンゴ民主共和国"
       ],
       "Cook Islands": [
-        ""
+        "クック諸島"
       ],
       "Costa Rica": [
-        ""
+        "コスタリカ"
       ],
       "Cote d'Ivoire\"": [
         "Côte d'Ivoire"
       ],
       "Croatia": [
-        ""
+        "クロアチア"
       ],
       "Cuba": [
-        ""
+        "キューバ"
       ],
       "Curaçao": [
-        ""
+        "キュラソー島"
       ],
       "Cyprus": [
-        ""
+        "キプロス"
       ],
       "Czech Republic": [
-        ""
+        "チェコ共和国"
       ],
       "Denmark": [
-        ""
+        "デンマーク"
       ],
       "Djibouti": [
-        ""
+        "ジブチ"
       ],
       "Dominica": [
-        ""
+        "ドミニカ"
       ],
       "Dominican Republic": [
-        ""
+        "ドミニカ共和国"
       ],
       "Ecuador": [
-        ""
+        "エクアドル"
       ],
       "Egypt": [
-        ""
+        "エジプト"
       ],
       "El Salvador": [
-        ""
+        "エルサルバドル"
       ],
       "Equatorial Guinea": [
-        ""
+        "赤道ギニア"
       ],
       "Eritrea": [
-        ""
+        "エリトリア"
       ],
       "Estonia": [
-        ""
+        "エストニア"
       ],
       "Ethiopia": [
-        ""
+        "エチオピア"
       ],
       "Falkland Islands": [
-        ""
+        "フォークランド諸島"
       ],
       "Faroe Islands": [
-        ""
+        "フェロー諸島"
       ],
       "Federated States of Micronesia": [
-        ""
+        "ミクロネシア連邦"
       ],
       "Fiji": [
-        ""
+        "フィジー"
       ],
       "Finland": [
-        ""
+        "フィンランド"
       ],
       "France": [
-        ""
+        "フランス"
       ],
       "French Guiana": [
-        ""
+        "フランス領ギアナ"
       ],
       "French Polynesia": [
-        ""
+        "フランス領ポリネシア"
       ],
       "French Southern Territories": [
-        ""
+        "フランス領南方・南極地域"
       ],
       "Gabon": [
-        ""
+        "ガボン"
       ],
       "Gambia": [
-        ""
+        "ガンビア"
       ],
       "Georgia": [
-        ""
+        "ジョージア"
       ],
       "Germany": [
-        ""
+        "ドイツ"
       ],
       "Ghana": [
-        ""
+        "ガーナ"
       ],
       "Gibraltar": [
-        ""
+        "ジブラルタル"
       ],
       "Greece": [
-        ""
+        "ギリシャ"
       ],
       "Greenland": [
-        ""
+        "グリーンランド"
       ],
       "Grenada": [
-        ""
+        "グレナダ"
       ],
       "Guadeloupe": [
-        ""
+        "グアドループ"
       ],
       "Guam": [
-        ""
+        "グアム"
       ],
       "Guatemala": [
-        ""
+        "グアテマラ"
       ],
       "Guernsey": [
-        ""
+        "ガーンジー"
       ],
       "Guinea": [
-        ""
+        "ギニア"
       ],
       "Guinea-Bissau": [
-        ""
+        "ギニアビサウ"
       ],
       "Guyana": [
-        ""
+        "ガイアナ"
       ],
       "Haiti": [
-        ""
+        "ハイチ"
       ],
       "Heard Island and McDonald Islands": [
-        ""
+        "ハード島とマクドナルド諸島"
       ],
       "Holy See (Vatican City State)": [
-        ""
+        "聖座 (バチカン市国)"
       ],
       "Honduras": [
-        ""
+        "ホンジュラス"
       ],
       "Hong Kong": [
-        ""
+        "香港"
       ],
       "Hungary": [
-        ""
+        "ハンガリー"
       ],
       "Iceland": [
-        ""
+        "アイスランド"
       ],
       "India": [
-        ""
+        "インド"
       ],
       "Indonesia": [
-        ""
+        "インドネシア"
       ],
       "International": [
-        ""
+        "国際"
       ],
       "Iran": [
-        ""
+        "イラン"
       ],
       "Iraq": [
-        ""
+        "イラク"
       ],
       "Ireland": [
-        ""
+        "アイルランド"
       ],
       "Isle of Man": [
-        ""
+        "マン島"
       ],
       "Israel": [
-        ""
+        "イスラエル"
       ],
       "Italy": [
-        ""
+        "イタリア"
       ],
       "Jamaica": [
-        ""
+        "ジャマイカ"
       ],
       "Japan": [
-        ""
+        "日本"
       ],
       "Jersey": [
-        ""
+        "ジャージー"
       ],
       "Jordan": [
-        ""
+        "ヨルダン"
       ],
       "Kazakhstan": [
-        ""
+        "カザフスタン"
       ],
       "Kenya": [
-        ""
+        "ケニア"
       ],
       "Kiribati": [
-        ""
+        "キリバス"
       ],
       "Kosovo": [
-        ""
+        "コソボ"
       ],
       "Kuwait": [
-        ""
+        "クウェート"
       ],
       "Kyrgyzstan": [
-        ""
+        "キルギス"
       ],
       "Laos": [
-        ""
+        "ラオス"
       ],
       "Latvia": [
-        ""
+        "ラトビア"
       ],
       "Lebanon": [
-        ""
+        "レバノン"
       ],
       "Lesotho": [
-        ""
+        "レソト"
       ],
       "Liberia": [
-        ""
+        "リベリア"
       ],
       "Libya": [
-        ""
+        "リビア"
       ],
       "Liechtenstein": [
-        ""
+        "リヒテンシュタイン"
       ],
       "Lithuania": [
-        ""
+        "リトアニア"
       ],
       "Luxembourg": [
-        ""
+        "ルクセンブルク"
       ],
       "Macao": [
-        ""
+        "マカオ"
       ],
       "Madagascar": [
-        ""
+        "マダカスカル"
       ],
       "Malawi": [
-        ""
+        "マラウイ"
       ],
       "Malaysia": [
-        ""
+        "マレーシア"
       ],
       "Maldives": [
-        ""
+        "モルディブ"
       ],
       "Mali": [
-        ""
+        "マリ"
       ],
       "Malta": [
-        ""
+        "マルタ"
       ],
       "Marshall Islands": [
-        ""
+        "マーシャル諸島"
       ],
       "Martinique": [
-        ""
+        "マルティニーク"
       ],
       "Mauritania": [
-        ""
+        "モーリタニア"
       ],
       "Mauritius": [
-        ""
+        "モーリシャス"
       ],
       "Mayotte": [
-        ""
+        "マヨット"
       ],
       "Mexico": [
-        ""
+        "メキシコ"
       ],
       "Moldova": [
-        ""
+        "モルドバ"
       ],
       "Monaco": [
-        ""
+        "モナコ"
       ],
       "Mongolia": [
-        ""
+        "モンゴル"
       ],
       "Montenegro": [
-        ""
+        "モンテネグロ"
       ],
       "Montserrat": [
-        ""
+        "モントセラト"
       ],
       "Morocco": [
-        ""
+        "モロッコ"
       ],
       "Mozambique": [
-        ""
+        "モザンビーク"
       ],
       "Namibia": [
-        ""
+        "ナミビア"
       ],
       "Nauru": [
-        ""
+        "ナウル"
       ],
       "Nepal": [
-        ""
+        "ネパール"
       ],
       "Netherlands": [
-        ""
+        "オランダ"
       ],
       "New Caledonia": [
-        ""
+        "ニューカレドニア"
       ],
       "New Zealand": [
-        ""
+        "ニュージーランド"
       ],
       "Nicaragua": [
-        ""
+        "ニカラグア"
       ],
       "Niger": [
-        ""
+        "ニジェール"
       ],
       "Nigeria": [
-        ""
+        "ナイジェリア"
       ],
       "Niue": [
-        ""
+        "ニウエ"
       ],
       "Norfolk Island": [
-        ""
+        "ノーフォーク島"
       ],
       "North Korea": [
-        ""
+        "北朝鮮"
       ],
       "North Macedonia": [
-        ""
+        "北マケドニア"
       ],
       "Northern Mariana Islands": [
-        ""
+        "北マリアナ諸島"
       ],
       "Norway": [
-        ""
+        "ノルウェー"
       ],
       "Oman": [
-        ""
+        "オマーン"
       ],
       "Pakistan": [
-        ""
+        "パキスタン"
       ],
       "Palau": [
-        ""
+        "パラオ"
       ],
       "Palestine": [
-        ""
+        "パレスチナ"
       ],
       "Panama": [
-        ""
+        "パナマ"
       ],
       "Papua New Guinea": [
-        ""
+        "パプアニューギニア"
       ],
       "Paraguay": [
-        ""
+        "パラグアイ"
       ],
       "Peru": [
-        ""
+        "ペルー"
       ],
       "Philippines": [
-        ""
+        "フィリピン"
       ],
       "Pitcairn": [
-        ""
+        "ピトケアン諸島"
       ],
       "Poland": [
-        ""
+        "ポーランド"
       ],
       "Portugal": [
-        ""
+        "ポルトガル"
       ],
       "Puerto Rico": [
-        ""
+        "プエルトリコ"
       ],
       "Qatar": [
-        ""
+        "カタール"
       ],
       "Reunion": [
-        ""
+        "レユニオン"
       ],
       "Romania": [
-        ""
+        "ルーマニア"
       ],
       "Russia": [
-        ""
+        "ロシア"
       ],
       "Rwanda": [
-        ""
+        "ルワンダ"
       ],
       "Saint Barthélemy": [
-        ""
+        "サン・バルテルミー島"
       ],
       "Saint Helena": [
-        ""
+        "セントヘレナ島"
       ],
       "Saint Kitts and Nevis": [
-        ""
+        "セントクリストファー・ネービス"
       ],
       "Saint Lucia": [
-        ""
+        "セントルシア"
       ],
       "Saint Martin (French Part)": [
-        ""
+        "サン・マルタン (フランス領)"
       ],
       "Saint Pierre and Miquelon": [
-        ""
+        "サンピエール島・ミクロン島"
       ],
       "Saint Vincent and the Grenadines": [
-        ""
+        "セントビンセントおよびグレナディーン諸島"
       ],
       "Samoa": [
-        ""
+        "サモア"
       ],
       "San Marino": [
-        ""
+        "サンマリノ"
       ],
       "Sao Tome and Principe": [
-        ""
+        "サントメ・プリンシペ"
       ],
       "Saudi Arabia": [
-        ""
+        "サウジアラビア"
       ],
       "Senegal": [
-        ""
+        "セネガル"
       ],
       "Serbia": [
-        ""
+        "セルビア"
       ],
       "Seychelles": [
-        ""
+        "セーシェル"
       ],
       "Sierra Leone": [
-        ""
+        "シエラレオネ"
       ],
       "Singapore": [
-        ""
+        "シンガポール"
       ],
       "Sint Maarten": [
-        ""
+        "セント・マーチン島"
       ],
       "Slovakia": [
-        ""
+        "スロバキア"
       ],
       "Slovenia": [
-        ""
+        "スロベニア"
       ],
       "Solomon Islands": [
-        ""
+        "ソロモン諸島"
       ],
       "Somalia": [
-        ""
+        "ソマリア"
       ],
       "South Africa": [
-        ""
+        "南アフリカ"
       ],
       "South Georgia and the South Sandwich Islands": [
-        ""
+        "サウスジョージア島と南サンドイッチ諸島"
       ],
       "South Korea": [
-        ""
+        "韓国"
       ],
       "South Ossetia": [
-        ""
+        "南オセチア"
       ],
       "South Sudan": [
-        ""
+        "南スーダン"
       ],
       "Spain": [
-        ""
+        "スペイン"
       ],
       "Sri Lanka": [
-        ""
+        "スリランカ"
       ],
       "Sudan": [
-        ""
+        "スーダン"
       ],
       "Suriname": [
-        ""
+        "スリナム"
       ],
       "Svalbard and Jan Mayen": [
-        ""
+        "スヴァールバル諸島およびヤンマイエン島"
       ],
       "Swaziland": [
         "Eswatini"
       ],
       "Sweden": [
-        ""
+        "スウェーデン"
       ],
       "Switzerland": [
-        ""
+        "スイス"
       ],
       "Syria": [
-        ""
+        "シリア"
       ],
       "Taiwan": [
-        ""
+        "台湾"
       ],
       "Tajikistan": [
-        ""
+        "タジキスタン"
       ],
       "Tanzania": [
-        ""
+        "タンザニア"
       ],
       "Thailand": [
-        ""
+        "タイ"
       ],
       "Timor-Leste": [
-        ""
+        "東ティモール"
       ],
       "Togo": [
-        ""
+        "トーゴ"
       ],
       "Tokelau": [
-        ""
+        "トケラウ"
       ],
       "Tonga": [
-        ""
+        "トンガ"
       ],
       "Trinidad and Tobago": [
-        ""
+        "トリニダード・ドバゴ"
       ],
       "Tristan da Cunha": [
-        ""
+        "トリスタンダクーニャ"
       ],
       "Tunisia": [
-        ""
+        "チュニジア"
       ],
       "Turkey": [
-        ""
+        "トルコ"
       ],
       "Turkmenistan": [
-        ""
+        "トルクメニスタン"
       ],
       "Turks and Caicos Islands": [
-        ""
+        "タークス・カイコス諸島"
       ],
       "Tuvalu": [
-        ""
+        "ツバル"
       ],
       "Uganda": [
-        ""
+        "ウガンダ"
       ],
       "Ukraine": [
-        ""
+        "ウクライナ"
       ],
       "United Arab Emirates": [
-        ""
+        "アラブ首長国連邦"
       ],
       "United Kingdom": [
-        ""
+        "イギリス"
       ],
       "United States": [
-        ""
+        "アメリカ"
       ],
       "United States Minor Outlying Islands": [
-        ""
+        "合衆国領有小離島"
       ],
       "Uruguay": [
-        ""
+        "ウルグアイ"
       ],
       "Uzbekistan": [
-        ""
+        "ウズベキスタン"
       ],
       "Vanuatu": [
-        ""
+        "バヌアツ"
       ],
       "Venezuela": [
-        ""
+        "ベネズエラ"
       ],
       "Vietnam": [
-        ""
+        "ベトナム"
       ],
       "Virgin Islands, British": [
-        ""
+        "イギリス領ヴァージン諸島"
       ],
       "Virgin Islands, U.S.": [
-        ""
+        "アメリカ領ヴァージン諸島"
       ],
       "Wallis and Futuna": [
-        ""
+        "ウォリス・フツナ"
       ],
       "Western Sahara": [
-        ""
+        "西サハラ"
       ],
       "Yemen": [
-        ""
+        "イエメン"
       ],
       "Zambia": [
-        ""
+        "ザンビア"
       ],
       "Zimbabwe": [
-        ""
+        "ジンバブエ"
       ],
       "Åland Islands": [
-        ""
+        "オーランド諸島"
       ]
     },
     "CustomFilter": {
       "Attachment": [
-        ""
+        "添付ファイル"
       ],
       "Filter on": [
         "フィルター対象"
@@ -2690,7 +2717,7 @@
         "イベントは中止されました"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        ""
+        "イベントが更新されました。リマインダーは古くなっています。"
       ]
     },
     "Email subject": {
@@ -2715,7 +2742,7 @@
     },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
-        ""
+        "暗号化されたヘッダーファイル名"
       ]
     },
     "Error": {
@@ -2804,7 +2831,7 @@
         "6 桁の数字を入力してください"
       ],
       "Enter a password": [
-        ""
+        "パスワードを入力してください"
       ],
       "Error in one of the conditions": [
         "いずれかの条件にエラーがあります"
@@ -2834,10 +2861,10 @@
         "画像のアップロードに失敗しました"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "無効なログイン情報です。再度お試しください。"
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "無効な受信箱のパスワードです。再度お試しください。"
       ],
       "Invalid expiration time": [
         "無効な有効期限です"
@@ -2866,6 +2893,9 @@
       "Message processing error.": [
         "メッセージの処理にエラーが発生しました。"
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Missing signature": [
         "署名がありません"
       ],
@@ -2876,7 +2906,7 @@
         "メールアドレスに有効な暗号鍵が設定さていないため、メッセージが作成できません"
       ],
       "No data to import": [
-        ""
+        "インポートするデータがありません"
       ],
       "No key retrieved for internal user is valid for sending": [
         "送信に使用できる内部ユーザーの鍵がありません"
@@ -2909,10 +2939,10 @@
         "内容の検索を再度有効にしてください"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        ""
+        "続行するためにハイライトされた競合を修正してください。"
       ],
       "Please repeat the password": [
-        ""
+        "パスワードを再度入力してください"
       ],
       "Please set a password": [
         "パスワードを設定してください"
@@ -2930,13 +2960,13 @@
         "公開鍵を信頼できません"
       ],
       "re-activate the previous key": [
-        ""
+        "以前のキーを再アクティブ化"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        ""
+        "競合した宛先を削除しました: ${ recipents }"
       ],
       "Request timed out": [
-        ""
+        "リクエストがタイムアウトしました"
       ],
       "Require at least one action": [
         "少なくとも 1 つのアクションが必要です"
@@ -2969,7 +2999,7 @@
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        ""
+        "Proton はメッセージを復号できません。すべてのキーがアクティブか確認してください。"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         ""
@@ -3032,7 +3062,7 @@
         "不明なエラーが発生しました。"
       ],
       "Wrong mailbox password": [
-        ""
+        "メールボックスのパスワードが間違っています"
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
@@ -3050,10 +3080,10 @@
         "名前を設定してください"
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        ""
+        "最近パスワードをリセットしたためメールを復号できません。以前のパスワードが思い出せるなら、メッセージにアクセスするために ${ reActivateKeyLink } することができます。${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        ""
+        "パスワードをリセットしたためメールを復号できません。${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
@@ -3140,7 +3170,7 @@
         "終了日時が指定可能な範囲を超えています"
       ],
       "Event validation failed": [
-        ""
+        "イベントの検証に失敗しました"
       ],
       "Floating times not supported": [
         ""
@@ -3170,7 +3200,7 @@
         "開始日時が存在しません"
       ],
       "No UID, title or start time": [
-        ""
+        "UID、タイトルまたは開始日時が存在しません"
       ],
       "Non-Gregorian": [
         "グレゴリオ暦ではありません"
@@ -3197,7 +3227,7 @@
         "To-do のエントリー"
       ],
       "Unsupported event": [
-        ""
+        "サポートされていないイベントです"
       ]
     },
     "Error message": {
@@ -3211,7 +3241,7 @@
         "該当する項目がありません"
       ],
       "No results found for \"${ query }\"": [
-        ""
+        "「${ query }」の見つかった結果はありません"
       ],
       "Oops, something went wrong": [
         "エラーが発生しました。"
@@ -3241,15 +3271,15 @@
     },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
+        "${ email } にメールを送信できません。${ errorMessage }"
       ]
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        ""
+        "添付された ICS ファイルを復号できません"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "添付された ICS ファイルを読み込めません"
       ],
       "Invalid invitation": [
         "無効な招待状"
@@ -3264,10 +3294,10 @@
         ""
       ],
       "Unexpected error": [
-        ""
+        "予期しないエラー"
       ],
       "Unsupported invitation": [
-        ""
+        "サポートされていない招待です"
       ],
       "Unsupported response": [
         ""
@@ -3374,13 +3404,13 @@
         "全て"
       ],
       "Hide moved message": [
-        ""
+        "移動されたメッセージを隠す"
       ],
       "Read": [
         "既読"
       ],
       "Show moved message": [
-        ""
+        "移動されたメッセージを表示"
       ],
       "Unread": [
         "未読"
@@ -3440,7 +3470,7 @@
         "連絡先またはメッセージをインポート"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
+        "Easy Switch インポートアシスタントを使用すると簡単に連絡先やメールを転送することができます。"
       ],
       "Sign into the mobile app to complete the action": [
         "モバイルアプリでサインインすることでアクションが完了します"
@@ -3732,10 +3762,10 @@
         "/月."
       ],
       "5 email addresses": [
-        ""
+        "5 件のメールアドレス"
       ],
       "5 GB storage": [
-        ""
+        "5 GB のストレージ"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         ""
@@ -3819,7 +3849,7 @@
         "背景色"
       ],
       "Based in Switzerland, available globally": [
-        ""
+        "スイス拠点で、世界中で利用可能です"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         ""
@@ -3861,7 +3891,7 @@
         "フィッシング報告の確認"
       ],
       "Continue with ${ planName }": [
-        ""
+        "${ planName } で続行"
       ],
       "Copied to clipboard": [
         "クリップボードにコピーされました。"
@@ -3870,10 +3900,10 @@
         "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "インポートされたメッセージのラベル、インポートする期間、およびインポート先のフォルダーを設定します。"
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "インポートされたメッセージのラベル、インポートする期間、およびインポート先のラベルを設定します。"
       ],
       "Create a new contact group": [
         "新しい連絡先グループを作成"
@@ -3882,7 +3912,7 @@
         "作成日時"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora などからエスクポートした CSV ファイルや vCard 3.1 および 4.0 形式 (UTF-8エンコーディング) をサポートしています。"
       ],
       "Custom": [
         "カスタム設定"
@@ -3906,7 +3936,7 @@
         "日"
       ],
       "Decrypt message": [
-        ""
+        "メッセージの復号"
       ],
       "Default email application": [
         "既定のメールアプリ"
@@ -3921,7 +3951,7 @@
         ""
       ],
       "Do you want to re-sign the contact details?": [
-        ""
+        "連絡先の詳細に再署名しますか?"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "お好みのアプリストアからモバイルアプリをダウンロードして、外出先でも安全に会話しましょう。"
@@ -3989,6 +4019,21 @@
       "Expiration Time": [
         "有効期限"
       ],
+      "Expires": [
+        "期限"
+      ],
+      "Expires in ${ formattedDelay }": [
+        "${ formattedDelay } に期限が切れます"
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        "${ formattedDelayShort } に期限が切れます"
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires soon": [
+        "もうすぐ期限切れになります"
+      ],
       "file attached": [
         "個のファイル添付"
       ],
@@ -4017,7 +4062,7 @@
         "さらなるストレージとプレミアム機能を入手"
       ],
       "Group assignment applied": [
-        ""
+        "グループの割り当てが適用されました"
       ],
       "Has ${ numAttachments } attachment": [
         "${ numAttachments } の添付ファイル"
@@ -4068,7 +4113,7 @@
         ""
       ],
       "Indexing paused": [
-        ""
+        "インデックスが一時停止されました"
       ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
@@ -4080,7 +4125,7 @@
         "リンクを挿入"
       ],
       "Internet connection lost": [
-        ""
+        "インターネット接続が切断されました"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "インターネット接続が失われました。デバイスの接続を確認してください。"
@@ -4089,13 +4134,13 @@
         "インターネット接続が回復しました。"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "あとは、選択を確認するだけです。"
       ],
       "Key fingerprint": [
         "鍵のフィンガープリント"
       ],
       "Large imports can take several days.": [
-        ""
+        "巨大なインポートは数日かかる場合があります。"
       ],
       "Learn more": [
         "より詳しく"
@@ -4206,7 +4251,7 @@
         "該当する項目がありません"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
+        "メモ: アップロードされたキーは暗号化に利用できます。暗号化は自動的に無効化されます。"
       ],
       "Normal": [
         "標準"
@@ -4221,7 +4266,7 @@
         "この設定は、メールの宛先に PGP を使用している非 ProtonMail ユーザーがいる場合にのみ変更してください。"
       ],
       "Other options": [
-        ""
+        "その他のオプション"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         ""
@@ -4239,7 +4284,7 @@
         "プレーンテキスト"
       ],
       "Please add at least one recipient.": [
-        ""
+        "少なくとも 1 件の宛先を追加してください。"
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "安全に保ってください。これはパスワードをリセットしたときに、アカウントにアクセスしたりデータを復元するのに使われます。"
@@ -4251,7 +4296,7 @@
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "インポートしたいフォルダを選択してください:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "挿入するリンクの種類を選択し、全ての項目に入力してください。"
@@ -4272,10 +4317,10 @@
         "メールを印刷"
       ],
       "Priority support": [
-        ""
+        "優先的なサポート"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton がプライバシーを悪用して資金を入手することはありません。"
@@ -4290,7 +4335,7 @@
         "リカバリーフレーズはクリップボードへコピーされました"
       ],
       "Recovery phrase downloaded": [
-        ""
+        "回復フレーズをダウンロードしました"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
@@ -4318,9 +4363,6 @@
       ],
       "Saving draft…": [
         "下書きを保存しています…"
-      ],
-      "Scheduled": [
-        "計画休止の利用"
       ],
       "Scheduled send of this message will be cancelled.": [
         ""
@@ -4353,13 +4395,13 @@
         "@pm.me から送信されたメッセージは有料プランの機能です。メッセージは ${ email } から送信されます"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
+        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> から送信されました。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
       "Session timed out": [
-        ""
+        "セッションがタイムアウトしました"
       ],
       "Set a recovery phrase": [
         "リカバリーフレーズを設定"
@@ -4374,9 +4416,9 @@
         "元のメッセージを表示"
       ],
       "Sorry, this message does not exist or has already expired": [
-        ""
+        "このメッセージは存在しないか有効期限切れです。"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Store and share files securely with Proton Drive.": [
@@ -4395,7 +4437,7 @@
         "件名: "
       ],
       "Support for 1 custom email domain": [
-        ""
+        "1 つの独自メールドメインをサポート"
       ],
       "Support privacy by upgrading for": [
         "こちらにアップグレードしてプライバシーを支援 "
@@ -4508,9 +4550,6 @@
       "This message will expire ${ formattedDate }": [
         "このメッセージの期限は ${ formattedDate } までです"
       ],
-      "This message will expire in ${ formattedDelay }": [
-        "このメッセージの期限は ${ formattedDelay } までです"
-      ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "このメッセージの有効期限は ${ dateString } の ${ formattedTime } までです"
       ],
@@ -4554,10 +4593,10 @@
         ""
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "制限なしのフォルダー、ラベル、フィルター"
       ],
       "Unlimited messages": [
-        ""
+        "送信数制限なし"
       ],
       "Unsupported file": [
         "非対応のファイル"
@@ -4581,16 +4620,16 @@
         "アップグレードして @pm.me アドレスからメールを送信します。"
       ],
       "Upgrade to send emails to contact groups easily.": [
-        ""
+        "簡単に連絡先グループにメールを送信するためにアップグレードしてください。"
       ],
       "Upgrade to support a privacy-first internet.": [
         "アップグレードしてプライバシー第一のインターネットをサポートします。"
       ],
       "Upgrade to support our mission of privacy for all.": [
-        ""
+        "すべての人にプライバシーをという目標を支えるためにアップグレードしてください。"
       ],
       "Upgrade to support privacy and get more features.": [
-        ""
+        "さらなる機能を入手しプライバシーをサポートするためにアップグレードしてください。"
       ],
       "Upgrade to use ProtonMail with third-party desktop clients.": [
         "アップグレードしてサードパーティのデスクトップクライアントで ProtonMail を使用します。"
@@ -4617,22 +4656,22 @@
         ""
       ],
       "Version ${ appVersion }": [
-        ""
+        "バージョン ${ appVersion }"
       ],
       "Visit our shop to get Proton merchandise.": [
-        ""
+        "ショップで Proton の商品を手に入れましょう。"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         ""
       ],
       "We could not verify the sender's trusted keys.": [
-        ""
+        "送信者の信頼されたキーの検証ができませんでした。"
       ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "新しい認証コードを ${ strong } に送信しました"
       ],
       "Web URL": [
         "Web URL"
@@ -4653,7 +4692,7 @@
         "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "新しい認証コードを受け取りますか?"
       ],
       "Yearly": [
         "毎年"
@@ -4665,7 +4704,7 @@
         "現在 ${ user.Name } (${ user.Email }) としてサインインしていてアクセスが制限されています。"
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
-        ""
+        "添付ファイルを追加するか、メール内に直接インラインで表示させることができます。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "存在する Proton カレンダーにインポートしたカレンダーを結合することもできます。"
@@ -4728,13 +4767,13 @@
         "このフォルダー内の **${ count } 件の会話** を選択中"
       ],
       "You selected **${ count } conversation** with this label": [
-        ""
+        "このラベルの **${ count } 件の会話** を選択しています"
       ],
       "You selected **${ count } message** from this folder": [
         "このフォルダー内の **${ count } 件のメッセージ** を選択中"
       ],
       "You selected **${ count } message** with this label": [
-        ""
+        "このラベルの **${ count } 件のメッセージ** を選択しています"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” とありますが、添付ファイルは追加されていません。そのままメッセージを送信してもいいですか?"
@@ -4806,9 +4845,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         ""
       ],
-      "Do you want to trust the following public key?": [
-        "以下の公開鍵を信頼していいですか?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         ""
       ],
@@ -4818,7 +4854,7 @@
     },
     "Key validation warning": {
       "Recipient's key validation failed: ${ validationErrorsMessage }": [
-        ""
+        "宛先のキー検証に失敗しました: ${ validationErrorsMessage }"
       ]
     },
     "Keyboard shortcut name": {
@@ -4878,6 +4914,9 @@
       ],
       "Go to Trash": [
         "ゴミ箱を開く"
+      ],
+      "Insert link": [
+        "リンクを挿入"
       ],
       "Jump to first": [
         "最初にジャンプ"
@@ -5013,11 +5052,8 @@
       " and ${ l }": [
         " と ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        ""
-      ],
       "(Temporarily unavailable. Please check back later.)": [
-        ""
+        "(一時的に利用できません。あとでお試しください。)"
       ],
       "Actions": [
         "動作"
@@ -5032,7 +5068,7 @@
         "グループに追加"
       ],
       "Address": [
-        "住所"
+        "メールアドレス"
       ],
       "ALL": [
         "すべて"
@@ -5058,8 +5094,8 @@
       "Automatically save contacts": [
         "宛先を連絡先に自動追加"
       ],
-      "BCC:": [
-        "BCC:"
+      "BCC": [
+        "BCC"
       ],
       "Blind Carbon Copy": [
         "ブラインド カーボン コピー (Blind Carbon Copy)"
@@ -5085,14 +5121,14 @@
       "Category": [
         "カテゴリー"
       ],
-      "CC:": [
-        "CC:"
+      "CC": [
+        "CC"
       ],
       "City": [
         "市区町村"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "コードは空白なしの 6 桁の数字です"
       ],
       "Conditions": [
         "条件"
@@ -5155,7 +5191,7 @@
         "頻度"
       ],
       "From": [
-        "差出人"
+        "開始日"
       ],
       "From:": [
         "差出人："
@@ -5199,9 +5235,6 @@
       "Label messages as": [
         "メッセージにつけるラベル"
       ],
-      "Labels:": [
-        "ラベル:"
-      ],
       "Last 12 months only": [
         "過去 12 か月のみ"
       ],
@@ -5224,7 +5257,7 @@
         "ラベルを管理"
       ],
       "Manage my addresses": [
-        ""
+        "アドレスの管理"
       ],
       "Mark as": [
         "印をつける"
@@ -5302,7 +5335,7 @@
         "パスワードを表示する"
       ],
       "Search in": [
-        ""
+        "検索対象"
       ],
       "Select how your composer opens by default.": [
         "新規メッセージ作成時の既定のモードを選択してください。"
@@ -5341,16 +5374,16 @@
         "システム情報"
       ],
       "The email was sent ${ attachment }": [
-        ""
+        "${ attachment } でメールを送信"
       ],
       "the email was sent ${ attachment }": [
-        ""
+        "${ attachment } でメールを送信しました"
       ],
       "The email was sent ${ attachmentStrong }": [
-        ""
+        "${ attachmentStrong } でメールを送信"
       ],
       "the email was sent ${ label }": [
-        ""
+        "${ label } でメールを送信"
       ],
       "Then": [
         "その後"
@@ -5359,7 +5392,7 @@
         "時刻"
       ],
       "To": [
-        "宛先"
+        "終了日"
       ],
       "To:": [
         "宛先:"
@@ -5398,7 +5431,7 @@
         "添付ファイルなし"
       ],
       "without attachments": [
-        ""
+        "添付ファイルなし"
       ]
     },
     "Label for contact group color": {
@@ -5535,7 +5568,7 @@
         "ラベルを管理"
       ],
       "More about recovery": [
-        ""
+        "回復について"
       ],
       "Open in ${ calendarAppName }": [
         "${ calendarAppName } で開く"
@@ -5553,10 +5586,10 @@
         "請求の支払い"
       ],
       "Previous version": [
-        ""
+        "以前のバージョン"
       ],
       "Privacy policy": [
-        ""
+        "プライバシーポリシー"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         ""
@@ -5574,7 +5607,7 @@
         "送信済み"
       ],
       "Sign up for free": [
-        ""
+        "無料でサインアップ"
       ],
       "Spam": [
         "迷惑メール"
@@ -5583,7 +5616,7 @@
         "星印付き"
       ],
       "Terms": [
-        ""
+        "利用規約"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         ""
@@ -5632,19 +5665,19 @@
         "もう少しです"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        ""
+        "作成済みカレンダー数: ${ createdCalendars } / ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
-        ""
+        "新しいカレンダーを作成しています"
       ],
       "Gathering your data": [
-        ""
+        "データを集めています"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "プロバイダーからファイルを集めています"
       ],
       "Your import is starting": [
-        ""
+        "インポートが開始しました"
       ]
     },
     "Mail import summary": {
@@ -5689,7 +5722,7 @@
         "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "試用は終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -5707,7 +5740,7 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        ""
+        "スケジュールされた送信を取り消しました"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         ""
@@ -5716,7 +5749,7 @@
         "送信が取り消されました"
       ],
       "Undoing send...": [
-        ""
+        "送信を取り消しています..."
       ]
     },
     "MIME type": {
@@ -5926,7 +5959,7 @@
     },
     "Onboarding ProtonMail": {
       "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        ""
+        "${ appName } はさらにモダンになり高度なデータ保護を備えながらもカスタマイズすることができます。"
       ],
       "Available on iOS and Android.": [
         "iOS と Android でご利用いただけます。"
@@ -5941,7 +5974,7 @@
         "あなたのための暗号化されたメールボックス"
       ],
       "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        ""
+        "Import Assistant は簡単にメールを新しい暗号化された受信箱に転送することができます。"
       ]
     },
     "Option": {
@@ -6020,15 +6053,6 @@
       "End date": [
         "終了日"
       ],
-      "Fill in the email address and text to test your link": [
-        "メールアドレスとテキストを入力してリンクをテストします"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "電話番号とテキストを入力してリンクをテストします"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "URL とテキストを入力してリンクをテストします"
-      ],
       "Filter folders": [
         "絞り込むフォルダー名"
       ],
@@ -6070,6 +6094,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "問題について、エラーメッセージ等も含めてご記入下さい。（英語）"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Proton username": [
         "Proton ユーザー名"
@@ -6127,7 +6154,7 @@
         "連絡先はエクスポートされていません。"
       ],
       "No contacts merged.": [
-        ""
+        "連絡先は結合されません。"
       ],
       "Progress: ${ combinedProgress }%": [
         "進捗: ${ combinedProgress }%"
@@ -6191,7 +6218,7 @@
         "検証済みの送信者からの、PGP 署名付きメッセージ"
       ],
       "PGP-signed message. Sender verification failed": [
-        ""
+        "PGP 署名されたメッセージです。送信者の検証に失敗しました"
       ],
       "Sent by ProtonMail with zero-access encryption": [
         "ProtonMail によって送信された、ゼロアクセス暗号化されたメッセージ"
@@ -6262,10 +6289,10 @@
         ""
       ],
       "The following address is not valid: ${ invalidAddresses }": [
-        ""
+        "次のアドレスは有効ではありません: ${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        ""
+        "いくつかの警告を検出しました。次のアドレスはメールを受け取ることができません:"
       ]
     },
     "Sent email icon": {
@@ -6314,22 +6341,22 @@
     },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ _verificationErrorsMessage }": [
-        ""
+        "PGP 暗号化されたメッセージです。送信者の検証に失敗しました: ${ _verificationErrorsMessage }"
       ],
       "PGP-signed message. Sender verification failed: ${ _verificationErrorsMessage2 }": [
-        ""
+        "PGP 署名されたメッセージです。送信者の検証に失敗しました: ${ _verificationErrorsMessage2 }"
       ],
       "Sender could not be verified: Message not signed": [
-        ""
+        "送信者を検証できませんでした: メッセージが署名されていません"
       ],
       "Sender verification failed": [
         "送信者検証に失敗しました"
       ],
       "Sender verification failed: ${ verificationErrorsMessage }": [
-        ""
+        "送信者の検証に失敗しました: ${ verificationErrorsMessage }"
       ],
       "Sender's trusted keys verification failed": [
-        ""
+        "送信者の信頼されたキーの検証に失敗しました"
       ]
     },
     "Sort option": {
@@ -6354,7 +6381,7 @@
         ""
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "友だちを招待して報酬を手に入れよう!"
       ],
       "Message Content Search": [
         ""
@@ -6369,15 +6396,15 @@
         ""
       ],
       "You can now search the content of your encrypted emails.": [
-        ""
+        "暗号化されたメールの内容の検索ができるようになりました。"
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "購読解除されました"
+      "Unsubscribed from mailing list": [
+        ""
       ],
-      "Unsubscribing...": [
-        "登録を解除しています..."
+      "Unsubscribing from mailing list...": [
+        ""
       ]
     },
     "Step in filter modal": {
@@ -6527,7 +6554,7 @@
         "フィンガープリントをクリップボードにコピーしました"
       ],
       "Folder cleared": [
-        ""
+        "フォルダーをクリアしました"
       ],
       "Keyboard shortcuts preferences updated": [
         "キーボードショートカットの設定が更新されました"
@@ -6671,16 +6698,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "アカウントを作成した日"
       ],
       "the last 12 months": [
-        ""
+        "過去 12 か月以内"
       ],
       "the last 3 months": [
-        ""
+        "過去 3 か月以内"
       ],
       "the last month": [
-        ""
+        "過去 1 か月以内"
       ]
     },
     "Time unit": {
@@ -6728,9 +6755,6 @@
       "Addresses": [
         "メールアドレス"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "全ての宛先が BCC に入力された上で送信されたため、表示できる宛先がありません"
-      ],
       "Are you sure you want to close?": [
         "本当に画面を閉じてよろしいですか？"
       ],
@@ -6765,7 +6789,7 @@
         "新規作成時のモード"
       ],
       "Confirm recipient address?": [
-        ""
+        "宛先のアドレスを確認しますか?"
       ],
       "Contact details": [
         "連絡先の詳細"
@@ -6804,7 +6828,7 @@
         "通貨"
       ],
       "Customize and confirm": [
-        ""
+        "カスタマイズと確認"
       ],
       "Customize calendar import": [
         "カレンダーのインポートをカスタマイズ"
@@ -6876,7 +6900,7 @@
         "メールの設定 (${ emailAddress })"
       ],
       "Enable message content search": [
-        ""
+        "メッセージ内容の検索を有効化"
       ],
       "Encryption": [
         "暗号化"
@@ -6920,9 +6944,6 @@
       "Invalid verification code": [
         "無効な検証コードです"
       ],
-      "Keyboard Shortcuts": [
-        "キーボードショートカット"
-      ],
       "Label as": [
         "ラベル付け"
       ],
@@ -6953,8 +6974,14 @@
       "Merging contacts": [
         "連絡先の統合中"
       ],
+      "Message details": [
+        "メッセージの詳細"
+      ],
       "Message list": [
         "メッセージリスト"
+      ],
+      "Message will expire": [
+        ""
       ],
       "More": [
         "その他"
@@ -6990,7 +7017,7 @@
         "次のメッセージ"
       ],
       "No attachment found": [
-        ""
+        "添付ファイルがありません"
       ],
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
@@ -7017,19 +7044,22 @@
         "前のメッセージ"
       ],
       "ProtonMail": [
-        ""
+        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "すべての連絡先を再署名する"
       ],
       "Re-sign contact": [
-        ""
+        "連絡先を再署名"
       ],
       "Re-signing contacts": [
         "連絡先を再署名する"
       ],
       "Recipient missing": [
         "宛先が正しくありません"
+      ],
+      "Recipients": [
+        "宛先"
       ],
       "Recover data": [
         "データを復元する"
@@ -7071,10 +7101,13 @@
         ""
       ],
       "Send without expiration?": [
-        ""
+        "期限なしで送信しますか?"
+      ],
+      "Sender": [
+        "差出人"
       ],
       "Sender changed": [
-        ""
+        "差出人が変更されました"
       ],
       "Sending error": [
         "送信エラー"
@@ -7140,7 +7173,7 @@
         "更新情報"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "無料トライアルは ${ formattedEndDate } に終了します。"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7156,7 +7189,7 @@
         ""
       ],
       "Each imported email will have this label": [
-        ""
+        "インポートされたメールすべてにこのラベルがついています"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         ""
@@ -7191,10 +7224,10 @@
     },
     "Tor out of date": {
       "stable release": [
-        ""
+        "安定版"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
+        "このバージョンの Tor Brower はサポートしていません、最新のバージョン ${ stableRelease } にアップグレードしてください"
       ]
     },
     "Update font modal": {
@@ -7244,7 +7277,7 @@
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "レポートはエンドツーエンドで暗号化されていません。機密情報を送信しないでください。"
@@ -7256,7 +7289,7 @@
         ""
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "連絡先データが壊れているため表示できません。"
       ],
       "The contact failed to load.": [
         "連絡先の読み込みに失敗しました。"
@@ -7277,13 +7310,13 @@
         "この機能は有料の Proton アカウントが必要です"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "今までに行ったカスタマイズはすべて失われます。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "無料トライアルは ${ textDate } に終了します。${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

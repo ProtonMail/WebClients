@@ -2265,8 +2265,8 @@
       "Log in to ProtonMail to activate your address": [
         "برای فعال کردن آدرس خود به ProtonMail وارد شوید"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "مطمئن شوید که رمزعبور خود را برای ورود و رمزگشایی ایمیل‌ها به یاد دارید. ${ boldAlert }. ما پیشنهاد می‌کنیم ابتدا یک ایمیل بازیابی اضافه کنید."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "برای تنظیم حساب خود ، این اطلاعات را به صورت دستی در دستگاه تأیید اعتبار 2 عامل وارد کنید. ${ _switchButton }."
@@ -2343,8 +2343,8 @@
       "Proton Calendar": [
         ""
       ],
-      "Proton can't help you recover any lost passwords": [
-        "پروتن نمی‌تواند به شما در بازیابی رمز عبور فراموش شده کمکی کند"
+      "Proton can't help you recover any lost passwords.": [
+        ""
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "ProtonMail همچنین میتواند با یک رمز عبور واحد استفاده شود که هر دو رمز عبور ورودی و صندوق پستی را جایگزین میکند. برای تغییر به حالت رمزعبور واحد، ابتدا رمز عبور واحد را که میخواهید وارد کرده و سپس Save را بزنید."
@@ -2363,6 +2363,9 @@
         "برای استفاده از ویژگی Core Secure به طرح ProtonVPN پلاس یا رویایی نیاز دارید."
       ],
       "read our two-factor authentication Guide first": [
+        ""
+      ],
+      "recovery method": [
         ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [

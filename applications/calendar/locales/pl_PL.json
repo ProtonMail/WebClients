@@ -203,6 +203,9 @@
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
       ],
+      "Go to label": [
+        "Przejdź do etykiety"
+      ],
       "Go to panel ${ index }": [
         "Przejdź do panelu ${ index }"
       ],
@@ -2122,6 +2125,9 @@
         "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami Proton",
         "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami Proton"
       ],
+      "Missing key packet": [
+        "Brak pakietu klucza"
+      ],
       "Missing signature": [
         "Brak podpisu"
       ],
@@ -2555,7 +2561,7 @@
       "no": [
         "nie"
       ],
-      "unanswered": [
+      "pending": [
         "brak odpowiedzi"
       ],
       "yes": [
@@ -2583,7 +2589,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "Etykieta ${ Label.Name } została zaktualizowana"
+        "Zaktualizowano \"${ Label.Name }\""
       ]
     },
     "Group": {
@@ -3113,7 +3119,7 @@
         "Nowy"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Następnie będziesz musiał zalogować się na konto Google i zezwolić nam na dostęp do Twoich danych."
+        "Następnie musisz zalogować się na konto Google i zezwolić nam na dostęp do Twoich danych."
       ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
@@ -3755,7 +3761,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "Etykieta ${ Label.Name } została utworzona"
+        "Utworzono \"${ Label.Name }\""
       ]
     },
     "Link": {

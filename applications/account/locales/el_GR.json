@@ -355,6 +355,9 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Μεταβείτε στο πίνακα ελέγχου ${ index }"
       ],
@@ -961,6 +964,11 @@
       ],
       "Unsupported event": [
         "Μη υποστηριζόμενη εκδήλωση"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2543,6 +2551,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του Proton"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Name does not match": [
         ""
@@ -4313,8 +4324,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Εισάγετε τον αριθμό τηλεφώνου ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "Οι προσκλήσεις συμβάντων και τα RSVP θα αποσταλλούν σε αυτή τη γλώσσα."
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "Ληγμένο"
@@ -4587,8 +4598,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Το Mail.ru διαβάζει τα προσωπικά σας δεδομένα προκειμένου να παρέχει πρόσβαση σε διαφημιστές, ρωσικές κυβερνητικές υπηρεσίες και άλλα τρίτα μέρη. Για καλύτερο απόρρητο, δημιουργήστε μια ασφαλή διεύθυνση email."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Βεβαιωθείτε ότι θυμάστε τον κωδικό πρόσβασης για να συνδεθείτε και να αποκρυπτογραφήσετε τα emails. ${ boldAlert }. Σας συνιστούμε να προσθέσετε ένα email ανάκτησης πρώτα."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στη συσκευή επαλήθευσης ταυτότητας δύο παραγόντων ώστε να ρυθμίσετε το λογαριασμό σας. ${ _switchButton }."
@@ -4803,8 +4814,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Το Proton δεν μπορεί να σας βοηθήσει να ανακτήσετε τυχόν χαμένους κωδικούς"
+      "Proton can't help you recover any lost passwords.": [
+        ""
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Η Proton διέκοψε μια εισαγωγή επειδή έχασε τη σύνδεση με την άλλη υπηρεσία παροχής ηλεκτρονικού ταχυδρομείου. Παρακαλώ επανασύνδεσε."
@@ -4854,6 +4865,9 @@
       ],
       "Recovery files have been voided": [
         "Τα αρχεία ανάκτησης ακυρώθηκαν"
+      ],
+      "recovery method": [
+        ""
       ],
       "Recovery phrase copied to clipboard": [
         "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
@@ -4920,6 +4934,9 @@
       ],
       "Set recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
+      ],
+      "Show original message": [
+        ""
       ],
       "Signed up": [
         ""
@@ -5353,6 +5370,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Φτάσατε στο 100% της χωρητικότητας αποθήκευσης. Δεν μπορείτε να στείλετε ή να λάβετε νέα μηνύματα ηλεκτρονικού ταχυδρομείου. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Θα ${ loseAllData } στον ${ BRAND_NAME } λογαριασμό σας. Για να το επαναφέρετε, θα πρέπει να εισάγετε τον παλιό κωδικό πρόσβασης σας."
       ],
@@ -5677,6 +5697,9 @@
       ],
       "Go to Trash": [
         "Μετάβαση στα Διαγραμμένα"
+      ],
+      "Insert link": [
+        ""
       ],
       "Jump to first": [
         "Μετάβαση στην πρώτη"
@@ -6424,8 +6447,8 @@
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "Εμφάνιση δευτερεύουσας ζώνης ώρας"
@@ -7621,15 +7644,6 @@
       "Feedback": [
         "Αξιολόγηση"
       ],
-      "Fill in the email address and text to test your link": [
-        "Συμπληρώστε το email και το κείμενο για να ελέγξετε τη σύνδεση σας"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Συμπληρώστε το τηλέφωνο και το κείμενο για να ελέγξετε τη σύνδεση σας"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Συμπληρώστε τη σύνδεση URL και το κείμενο για να ελέγξετε τη σύνδεση σας"
-      ],
       "Gift code": [
         "Κωδικός δώρου"
       ],
@@ -7656,6 +7670,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Postal code": [
         "Ταχυδρομικός κώδικας"
@@ -8834,9 +8851,6 @@
       ],
       "Invoices": [
         "Τιμολόγια"
-      ],
-      "Keyboard Shortcuts": [
-        "Συντομεύσεις Πληκτρολογίου"
       ],
       "Labels": [
         "Ετικέτες"

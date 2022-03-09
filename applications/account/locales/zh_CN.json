@@ -185,7 +185,7 @@
         "确认"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        "确认打开链接？ ${ linkToShow }"
+        "确认打开链接 ${ linkToShow }"
       ],
       "Contact support": [
         "联系客服"
@@ -275,7 +275,7 @@
         "放弃"
       ],
       "Don't show again": [
-        "不再显示此内容"
+        "不再显示"
       ],
       "Done": [
         "完成"
@@ -354,6 +354,9 @@
       ],
       "Get verification code": [
         "获取验证码"
+      ],
+      "Go to label": [
+        ""
       ],
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
@@ -500,7 +503,7 @@
         "恢复数据"
       ],
       "Refer a friend": [
-        ""
+        "邀请好友"
       ],
       "Refresh status": [
         "刷新状态"
@@ -822,10 +825,10 @@
     },
     "Action in trial plan": {
       "No, thanks": [
-        ""
+        "不，谢谢"
       ],
       "Try free for 30 days": [
-        ""
+        "免费试用 30 天"
       ]
     },
     "Action to select a title for the bug report modal": {
@@ -952,6 +955,11 @@
       ],
       "Unsupported event": [
         "不支持的日程"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -1180,22 +1188,22 @@
     },
     "Button": {
       "Add link to your email footer": [
-        ""
+        "将链接加入邮件来源标识中"
       ],
       "Continue using ProtonMail.": [
-        ""
+        "继续使用 ProtonMail。"
       ],
       "Copy": [
-        ""
+        "复制"
       ],
       "Invite": [
-        ""
+        "发送邀请"
       ],
       "Send": [
-        ""
+        "发送"
       ],
       "Tweet": [
-        ""
+        "发推文"
       ]
     },
     "Calendar feature": {
@@ -2299,7 +2307,7 @@
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
       "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        ""
+        "每邀请一位好友开通 ${ mailAppName } 最高可得 3 个月 ${ mailAppName } 增强版免费体验期。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
@@ -2308,10 +2316,10 @@
         "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出此限，请将其拆分成较小的文件。"
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        ""
+        "在这里可以查询点击了您的邀请链接、注册以及开通付费账户的人数，亲眼目睹您的免费体验期逐步延长。"
       ],
       "Track your referral link activities here.": [
-        ""
+        "您的邀请链接动态将显示在这里。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（.ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出此限，请将其拆分成较小的文件。"
@@ -2573,10 +2581,10 @@
         "文件夹名称不能为空"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "账号或密码有误，请重试。"
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "邮箱密码错误，请重试。"
       ],
       "Incorrect password": [
         "密码错误"
@@ -2620,8 +2628,11 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
       ],
-      "Name does not match": [
+      "Missing key packet": [
         ""
+      ],
+      "Name does not match": [
+        "名称不正确"
       ],
       "Name on card required": [
         "必须填写持卡人姓名"
@@ -3382,10 +3393,10 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        ""
+        "有 ${ items.length } 项自动补全建议，请使用键盘选择。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        ""
+        "输入文本后使用上下键选择候选的补全内容，然后按 Enter 键确认补全，或按 Esc 键关闭候选框。"
       ]
     },
     "Human verification method": {
@@ -3815,7 +3826,7 @@
     },
     "Info": {
       "${ appName } ${ planName } credits earned": [
-        ""
+        "${ appName } ${ planName } 奖励体验期"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的权限来${ enableDesktopNotifications }."
@@ -3836,10 +3847,10 @@
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
       "${ emailAddress } is a ${ appName } address": [
-        ""
+        "${ emailAddress } 已经是 ${ appName } 地址了"
       ],
       "${ emailAddress } is invalid": [
-        ""
+        "${ emailAddress } 无效"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } 免费版"
@@ -3869,7 +3880,7 @@
         "${ numContacts } 名联系人"
       ],
       "${ planName } plan": [
-        ""
+        "等级：${ planName }"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "已找到 ${ providerFoldersNumLocalized } 个文件夹"
@@ -3878,7 +3889,7 @@
         "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
       ],
       "${ rewards } of ${ rewardsLimit } months": [
-        ""
+        "最长 ${ rewardsLimit } 个月，已获 ${ rewards } 个月"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } 订阅，切换到 ${ annualBilling }"
@@ -3911,7 +3922,7 @@
         "${ vpnAppName } 免费版"
       ],
       "(${ memberCount } member)": [
-        ""
+        "（${ memberCount } 位成员）"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "（满足下列所有条件）"
@@ -3932,25 +3943,25 @@
         "+${ organization.BonusVPN } 台设备可接入 ProtonVPN"
       ],
       "1. Invite friends to Proton": [
-        ""
+        "1. 邀请好友注册 Proton"
       ],
       "2. They try ${ appName } ${ planName }": [
-        ""
+        "2. 试用 ${ appName } ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "使用优惠码 ${ code } 即可享受 20% 的优惠。"
       ],
       "3. You earn credits": [
-        ""
+        "3. 赢取奖励"
       ],
       "30 days money-back guarantee.": [
         "30 天内可退款。"
       ],
       "5 email addresses": [
-        ""
+        "5 个邮箱地址"
       ],
       "5 GB storage": [
-        ""
+        "5 GB 存储空间"
       ],
       "A free and uncensored Internet should be available to all.": [
         "每个人都应当享有自由的互联网，免受网络审查。"
@@ -4157,7 +4168,7 @@
         "分享此日历的完整活动详情，即表示您同意授权 Proton 访问此日历的加密信息。"
       ],
       "Cancel trial": [
-        ""
+        "退出体验期"
       ],
       "Center": [
         "中央"
@@ -4184,10 +4195,10 @@
         "仍然继续？"
       ],
       "Continue with ${ planName }": [
-        ""
+        "升级至 ${ planName } 并继续"
       ],
       "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        ""
+        "请从速开通 ${ planName }，以免体验期结束后账户被停用。"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "新建 ${ calendarsToBeCreated } 个日历"
@@ -4295,7 +4306,7 @@
         "每个额外购买的最大连接数量都可以分配给您组织中的用户。"
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
-        ""
+        "最长 ${ rewardsLimit } 个月 ${ appName } ${ planName } 体验期，已获 ${ rewards } 个月"
       ],
       "Edit label": [
         "编辑标签"
@@ -4351,8 +4362,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "请输入您的恢复电话号码，我们将发送您的用户名或电子邮件地址信息。"
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "会通过这个语言发送活动邀请或回复信息"
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "已过期"
@@ -4547,7 +4558,7 @@
         "互联网连接已恢复。"
       ],
       "Invited via email": [
-        ""
+        "已发送邀请邮件"
       ],
       "It appears some of your data is encrypted and locked.": [
         "您的部分数据被加密并锁定。"
@@ -4556,13 +4567,13 @@
         "唯一途径"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        ""
+        "我正在用 ${ appName }，你们可能也会感兴趣。这是一款安全的邮箱服务，能够保护你的隐私。通过这个链接注册还能免费获得一个月的付费功能试用期：${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交由我们！"
       ],
       "Just send them your personal referral link.": [
-        ""
+        "只需将您的专属邀请链接发给他们即可。"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "只要你想使用DKIM，就在DNS中保留这些记录。"
@@ -4624,8 +4635,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru 读取您的个人数据，以便为广告商、俄罗斯政府机构和其他第三方提供访问。为了更好地保护您的隐私，请创建一个安全的电子邮件地址。"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "请确保您记住密码以登录和解密电子邮箱。${ boldAlert }。我们推荐先添加一个恢复电子邮箱。"
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "请务必牢记密码，以便正常登录并解密邮件。${ boldAlert }我们建议您先完善${ recoveryLink }。"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "在验证设备上手动输入下列信息完成账户设置，或${ _switchButton }。"
@@ -4670,7 +4681,7 @@
         "没有联系人加密密钥"
       ],
       "No credit card required": [
-        ""
+        "无需信用卡"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "未设置数据恢复方法，您存在失去数据访问权限的风险"
@@ -4754,10 +4765,10 @@
         "P2P"
       ],
       "Paid for a 12 months plan": [
-        ""
+        "已开通年费账户"
       ],
       "Paid for a monthly plan": [
-        ""
+        "已开通月费账户"
       ],
       "Payment can take a few minutes to fully verify.": [
         "验证需要几分钟才能完成。"
@@ -4829,19 +4840,19 @@
         "需要订阅 Plus 或 Visionary 套餐"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        "阻止未经您的许可便加载来自发件人服务器的内容。"
+        "防止在未经您同意的情况下加载发件方服务器上的内容。"
       ],
       "Preview": [
         "预览"
       ],
       "Priority support": [
-        ""
+        "优先享受客服"
       ],
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton无法帮助您恢复任何丢失的密码"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton 没有能力帮助您找回密码。"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "与邮件服务商的连接中断，导入操作已暂停。请重新连接。"
@@ -4890,6 +4901,9 @@
       ],
       "Recovery files have been voided": [
         "恢复文件已作废"
+      ],
+      "recovery method": [
+        ""
       ],
       "Recovery phrase copied to clipboard": [
         "恢复短语已复制到剪贴板"
@@ -4940,7 +4954,7 @@
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
+        "通过 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全邮箱发送。"
       ],
       "Server is currently down": [
         "服务器目前不可用"
@@ -4957,11 +4971,14 @@
       "Set recovery phrase": [
         "设置恢复密语"
       ],
+      "Show original message": [
+        "显示原始邮件"
+      ],
       "Signed up": [
-        ""
+        "已注册"
       ],
       "Signed up via your link": [
-        ""
+        "已通过您的邀请链接注册"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
@@ -4973,7 +4990,7 @@
         "SPF 用于指定谁有权为该域名发送邮件，因此我们强烈建议将 ProtonMail 加入 SPF 信息中。请在 DNS 中添加下面的 TXT 记录，通常可以在您的域名注册商网站上设置。"
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "存储空间从 500 MB 开始逐步扩大。邮箱、日历、网盘均共用同一存储空间。"
       ],
       "Starter VPN service with P2P support.": [
         "支持 P2P 的入门级 VPN 服务。"
@@ -4985,7 +5002,7 @@
         "已成功发送邀请"
       ],
       "Support for 1 custom email domain": [
-        ""
+        "支持 1 个自有域名"
       ],
       "support team": [
         "客服团队"
@@ -5012,7 +5029,7 @@
         "感谢您的支持。"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
-        "${ boldDataLocked } 将不会再显示, 但您仍可通过 ${ encryptionAndKeysLink } 来解锁您的信息。"
+        "${ boldDataLocked }的提示将不会再出现，但您仍然可以在${ encryptionAndKeysLink }设置中解密数据。"
       ],
       "The calendar will be removed from your account.": [
         "日历将会从您的帐户中移除。"
@@ -5030,7 +5047,7 @@
         "使用第三方 VPN 客户端或在路由器上设置 VPN 连接时，可通过这些配置文件选择连接到哪个 ProtonVPN 服务器。"
       ],
       "This 30-day free trial is not available any other way.": [
-        ""
+        "免费试用 30 天，机会绝无仅有。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
@@ -5060,7 +5077,7 @@
         "这是您在密码重置之前使用的密码。"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此链接可能使用了欺骗性域名，IE 和 Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开。"
+        "此链接可能使用了欺骗性域名，Internet Explorer 和 Edge 浏览器无法打开。若您确认链接可靠，可使用其他浏览器打开。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认其可靠性后再打开。"
@@ -5087,7 +5104,7 @@
         "完成此操作后您就可以使用 PayPal 支付了。我们将在新标签页中为您打开 PayPal，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
-        "这将永久删除与此用户相关的数据和所有电子邮件地址。"
+        "此操作将永久删除该用户的相关数据和所有邮箱地址。"
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "这将永久删除您的账户及其所有数据，您将无法重新激活这个账户。"
@@ -5102,7 +5119,7 @@
         "接下来您将为 Proton 账户开启双重验证（2FA），这将提高账户安全性，我们建议您立即开启。"
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
-        "要确认，请输入您想要删除的用户之名称。"
+        "如果确定要执行此操作，请再次输入您要删除的用户名称。"
       ],
       "to continue to ${ toAppName }": [
         "即可使用 ${ toAppName }"
@@ -5168,10 +5185,10 @@
         "除非您手动退出账户或更改密码，账户将保持登录状态，直到 60 天无操作后自动退出。"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "文件夹、标签、筛选规则不限量"
       ],
       "Unlimited messages": [
-        ""
+        "每日发送邮件不限量"
       ],
       "Unsupported file": [
         "不支持文件"
@@ -5192,7 +5209,7 @@
         "开通付费账户即可借助 ProtonMail Bridge 使用 IMAP/SMTP 邮件客户端。"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "立即升级账户即可继续享有下列 ${ appName } ${ planName } 权益。"
       ],
       "Upload picture": [
         "上传图片"
@@ -5210,7 +5227,7 @@
         "在没有客户端时，请使用以下凭证连接到 ProtonVPN 服务器。示例包括：macOS 下的 Tunnelblick, GNU/Linux 下的 OpenVPN。"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "在邮箱地址中使用您自己的域名（如 you@yourname.com）"
       ],
       "Users": [
         "用户"
@@ -5279,13 +5296,13 @@
         "您想从您的 Google 账户中导入哪些内容？"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "禁用后可防止图像文件在您不知情的情况下加载到您的设备上。"
+        "关闭后可防止在您不知情的情况下显示图像。"
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "开启通知后，您可在密保/通知邮箱中得知 ProtonMail 收到的新邮件。"
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
-        ""
+        "好友开通付费账户后，您的 ${ appName } ${ planName } 账户等级也将延长 1 至 3 个月。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
@@ -5348,7 +5365,7 @@
         "您可以使用以下凭证通过第三方开源 VPN 客户端连接到 ProtonVPN 服务器，例如 macOS 下的 Tunnelblick 或 GNU/Linux 下的 OpenVPN。"
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        ""
+        "未来 24 小时内您最多只能发送 ${ emailSendLimitNumber } 封邀请邮件"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "您不能使用 OpenVPN / IKEv2 凭证登录 ProtonVPN 客户端或 ProtonVPN 总览。${ learnMore }"
@@ -5388,6 +5405,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "您已达到您的存储容量的100%。您不能收发新的电子邮件。${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "你将会丢失${ BRAND_NAME } 账户下的${ loseAllData }。要想恢复，请输入原来的密码。"
@@ -5441,7 +5461,7 @@
         "您的电子邮件将仅用于此一次性验证。"
       ],
       "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
+        "您的 ${ appName } ${ planName } 免费体验期将于 ${ formattedTrialExpirationDate } 结束。"
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "您的 ${ delayedImport.Account } 导入被暂时推迟。"
@@ -5494,7 +5514,7 @@
         "密钥 ${ fingerprint } 已上传"
       ],
       "Track your referral link activities here": [
-        ""
+        "您的邀请链接动态将显示在这里"
       ]
     },
     "Info - folder colouring feature": {
@@ -5714,6 +5734,9 @@
       "Go to Trash": [
         "转至废件箱"
       ],
+      "Insert link": [
+        ""
+      ],
       "Jump to first": [
         "选择第一项"
       ],
@@ -5882,10 +5905,10 @@
         "、${ l }"
       ],
       "${ monthsRewarded } month credited": [
-        ""
+        "已奖励 ${ monthsRewarded } 个月"
       ],
       "${ monthsRewarded } month pending": [
-        ""
+        "将奖励 ${ monthsRewarded } 个月"
       ],
       "${ n } VPN connection available": [
         "可同时连接 ${ n } 台设备"
@@ -5909,7 +5932,7 @@
         "操作"
       ],
       "Activity": [
-        ""
+        "进展"
       ],
       "Address": [
         "地址"
@@ -5951,7 +5974,7 @@
         "应用密码"
       ],
       "Ask before loading remote content": [
-        "加载外链内容前需要确认"
+        "加载外链内容前提示"
       ],
       "Attach public key": [
         "附上公钥"
@@ -6077,7 +6100,7 @@
         "每日邮件提醒"
       ],
       "Date": [
-        ""
+        "日期"
       ],
       "Date format": [
         "日期格式"
@@ -6248,7 +6271,7 @@
         "保持登录状态"
       ],
       "Keep messages in Sent/Drafts": [
-        "保留消息在发件箱/草稿箱中"
+        "已发送和草稿包括移至别处的邮件"
       ],
       "Key": [
         "密钥"
@@ -6275,7 +6298,7 @@
         "仅上个月"
       ],
       "Link confirmation": [
-        "确认链接"
+        "打开链接前提示"
       ],
       "Login password": [
         "登录密码"
@@ -6454,8 +6477,8 @@
       "Send auto-reply": [
         "自动回复"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "显示次要时区"
@@ -6626,10 +6649,10 @@
         "您的密码(管理员)"
       ],
       "Your referral link": [
-        ""
+        "您的邀请链接"
       ],
       "Your reward": [
-        ""
+        "您的奖励"
       ],
       "ZIP": [
         "邮编"
@@ -6789,7 +6812,7 @@
         "创建账户"
       ],
       "Encryption and keys": [
-        ""
+        "加密与密钥"
       ],
       "Forgot username?": [
         "忘记用户名？"
@@ -6825,7 +6848,7 @@
         "重置密码"
       ],
       "Set email address": [
-        ""
+        "设置邮箱地址"
       ],
       "Sign in": [
         "登录"
@@ -6834,7 +6857,7 @@
         "服务条款"
       ],
       "Terms and conditions": [
-        ""
+        "活动规则"
       ],
       "Upgrade": [
         "升级"
@@ -6906,7 +6929,7 @@
         "联系人群组"
       ],
       "Custom domains": [
-        ""
+        "自有域名"
       ],
       "Custom filters": [
         "定制筛选规则"
@@ -7026,7 +7049,7 @@
         "开通付费账户方可使用自有域名等高级功能"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "您的免费试用期已结束，账户即将停用。${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7641,15 +7664,6 @@
       "Feedback": [
         "用户反馈"
       ],
-      "Fill in the email address and text to test your link": [
-        "填写邮箱地址和文本来测试链接"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "填写电话号码和文本来测试链接"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "填写网址和文本来测试链接"
-      ],
       "Gift code": [
         "礼品码"
       ],
@@ -7676,6 +7690,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "请描述问题并包含任何错误信息"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Postal code": [
         "邮政编码"
@@ -7774,7 +7791,7 @@
         "内置Adblocker (NetShield)"
       ],
       "Custom domains": [
-        ""
+        "自有域名"
       ],
       "Early access to new products": [
         "尽早试用新产品"
@@ -8055,16 +8072,16 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "免费获得最长 18 个月的 ${ appName } ${ planName } 使用权"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "邀请好友注册赢取奖励！"
       ],
       "No more missed appointments": [
-        ""
+        "不再错过任何日程"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "使用邮件提醒功能，您可以自由决定何时收到哪些日程的通知。"
       ]
     },
     "State": {
@@ -8128,7 +8145,7 @@
     },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "使用隐私至上的邮箱和日历服务满足您的日常通讯需求。"
       ]
     },
     "Success": {
@@ -8393,7 +8410,7 @@
     },
     "Title": {
       "${ appName } ${ planName } trial": [
-        ""
+        "${ appName } ${ planName } 免费体验"
       ],
       "${ appName } customization": [
         "自定义 ${ appName }"
@@ -8612,7 +8629,7 @@
         "创建日历"
       ],
       "Create your Proton Account": [
-        "创建您的帐户"
+        "创建 Proton 账户"
       ],
       "Creating account": [
         "创建账户"
@@ -8666,7 +8683,7 @@
         "删除 ${ domain.DomainName }"
       ],
       "Delete ${ email }": [
-        ""
+        "删除 ${ email }"
       ],
       "Delete ${ filter.Name }": [
         "删除 ${ filter.Name }"
@@ -8696,7 +8713,7 @@
         "删除用户"
       ],
       "Disable ${ email }": [
-        ""
+        "停用 ${ email }"
       ],
       "Disable two-factor authentication": [
         "关闭双重验证"
@@ -8708,7 +8725,7 @@
         "域名"
       ],
       "Don't show again?": [
-        ""
+        "不再显示？"
       ],
       "Downgrade account": [
         "降级账户"
@@ -8798,13 +8815,13 @@
         "获取 ProtonVPN Plus 以访问所有服务器"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "免费获得最长 18 个月的 ${ appName } ${ planName } 使用权"
       ],
       "Gift code": [
         "礼品码"
       ],
       "How does it work?": [
-        ""
+        "如何操作？"
       ],
       "Human verification": [
         "真人验证"
@@ -8851,9 +8868,6 @@
       "Invoices": [
         "账单"
       ],
-      "Keyboard Shortcuts": [
-        "快捷键"
-      ],
       "Labels": [
         "标签"
       ],
@@ -8864,7 +8878,7 @@
         "布局"
       ],
       "Link confirmation": [
-        "确认链接"
+        "确认打开链接"
       ],
       "Login password": [
         "登录密码"
@@ -8981,10 +8995,10 @@
         "恢复文件"
       ],
       "Refer a friend": [
-        ""
+        "邀请好友"
       ],
       "Referral tracker": [
-        ""
+        "邀请记录"
       ],
       "Remove calendar": [
         "删除日历"
@@ -9008,7 +9022,7 @@
         "恢复管理员权限"
       ],
       "Secure email based in Switzerland": [
-        ""
+        "来自瑞士的加密邮箱"
       ],
       "Security": [
         "安全"
@@ -9128,7 +9142,7 @@
         "合计（每月）"
       ],
       "Try the best of ProtonMail for free": [
-        ""
+        "免费体验 ProtonMail 的最佳功能"
       ],
       "Two-factor authentication": [
         "双重验证"
@@ -9164,7 +9178,7 @@
         "更新内容"
       ],
       "Your account’s usage": [
-        ""
+        "您的账户使用情况"
       ],
       "Your calendar link": [
         "您的日历链接"
@@ -9173,7 +9187,7 @@
         "您的当前套餐"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "您的免费试用期即将于 ${ formattedEndDate } 结束"
       ],
       "Your plan": [
         "您的套餐"
@@ -9182,7 +9196,7 @@
         "您的恢复状态"
       ],
       "You’ve been invited to try ${ mailAppName }": [
-        ""
+        "诚邀您体验 ${ mailAppName }"
       ],
       "ZIP / postal code": [
         "邮编"
@@ -9323,7 +9337,7 @@
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "“已发送”或“草稿”文件夹中的邮件始终会显示在对应的文件夹中，不受移动邮件的影响。"
+        "“已发送”和“草稿”文件夹中的邮件始终显示在相应文件夹中，无论移动与否。"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "仅对两名以上用户的账户等级适用"
@@ -9347,7 +9361,7 @@
         "设置您收件箱的默认布局。"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        ""
+        "在您发出的邮件中通过来源标识分享您的邀请链接，如：${ signature }这段标识文字将置于您的落款下方。您可以随时在设置中修改落款。"
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "此密钥不能再用于加密，并且其生成的数字签名都将被视为无效"
@@ -9386,7 +9400,7 @@
         "使用个性化的邮箱地址 username@pm.me 发送邮件"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "在邮箱地址中使用您自己的域名（如 you@yourname.com）"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
@@ -9398,7 +9412,7 @@
         "当您在对话中为信息添加标签时，此标签将自动应用于您在本对话中发送或接收的所有信息。"
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "当您点击链接时，反钓鱼功能将询问您是否打开网页链接。"
+        "点击链接后向您确认要打开的网址，谨防欺诈网站。"
       ],
       "You have locally decrypted this key": [
         "您已在本机解密此密钥"
@@ -9680,7 +9694,7 @@
         "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
       ],
       "Please provide at least one recipient": [
-        ""
+        "请至少添加一位收件人"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"
@@ -9716,7 +9730,7 @@
         "此处将不会再出现这条导入记录。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "您的免费试用期将于 ${ textDate } 结束。${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "您的恢复文件已过时。如果您再次重置账户，该恢复文件将无法恢复新的数据。"

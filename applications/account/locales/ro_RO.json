@@ -355,6 +355,9 @@
       "Get verification code": [
         "Obținere cod de verificare"
       ],
+      "Go to label": [
+        "Accesare etichetă"
+      ],
       "Go to panel ${ index }": [
         "Salt la panoul ${ index }"
       ],
@@ -970,6 +973,11 @@
       ],
       "Unsupported event": [
         "Eveniment nesuportat"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        "Adăugare invitații în calendar și marcare ca fiind în așteptare"
       ]
     },
     "Autoresponse": {
@@ -2660,8 +2668,11 @@
         "Îmbinați cel puțin ${ calendarToFixCount } calendare cu calendarele Proton existente",
         "Îmbinați cel puțin ${ calendarToFixCount } de calendare cu calendarele Proton existente"
       ],
+      "Missing key packet": [
+        "Lipsește pachetul de chei."
+      ],
       "Name does not match": [
-        ""
+        "Numele nu se potrivește."
       ],
       "Name on card required": [
         "Numele de pe card este obligatoriu."
@@ -3912,7 +3923,7 @@
         "${ calendarsToBeMergedCount } de calendare îmbinate"
       ],
       "${ emailAddress } is a ${ appName } address": [
-        ""
+        "${ emailAddress } este o adresă ${ appName }"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } nu este validă"
@@ -4467,7 +4478,7 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Introduceți num[rul de telefon de recuperare și veți primi numele de utilizator sau adresa de e-mail."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
+      "Event invitations and RSVPs will be sent in this language.": [
         "Invitațiile la evenimente și RSVP vor fi trimise în această limbă."
       ],
       "Expired": [
@@ -4674,7 +4685,7 @@
         "este imperativ"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        ""
+        "Am folosit ${ appName } și mi s-a părut practic și sigur. Este un serviciu de e-mail securizat care protejează confidențialitatea. Înscrierea cu această legătură oferă o lună gratuită pentru planul cu plată: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
@@ -4742,8 +4753,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru vă citeşte datele personale pentru a oferi acces agenţilor de publicitate, agenţiilor de informaţii rusești şi altor terţe părți. Pentru o confidențialitate mai bună, creați o adresă de e-mail securizată."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Asiguraţi-vă că rețineți parola pentru de autentificare şi decriptare mesaje. ${ boldAlert }. Vă recomandăm mai întâi să adăugaţi o adresă de e-mail de recuperare."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Asigurați-vă că vă amintiți parola pentru a vă conecta și a decripta mesajele. ${ boldAlert } Vă recomandăm să adăugați mai întâi o ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Introduceți manual această informație în dispozitivul pentru autentificarea cu doi factori pentru a configura contul. ${ _switchButton }."
@@ -4958,8 +4969,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton nu vă poate ajuta să recuperați parolele pierdute"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton nu vă poate ajuta să recuperați parolele pierdute."
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton a întrerupt importarea deoarece a pierdut conexiunea cu celălalt furnizor de e-mail. Reconectați-vă."
@@ -5010,6 +5021,9 @@
       ],
       "Recovery files have been voided": [
         "Fișierele de recuperare au fost anulate."
+      ],
+      "recovery method": [
+        "metodă de recuperare"
       ],
       "Recovery phrase copied to clipboard": [
         "Fraza de recuperare a fost copiată în memorie."
@@ -5077,6 +5091,9 @@
       "Set recovery phrase": [
         "Setare frază de recuperare"
       ],
+      "Show original message": [
+        "Afișare mesaj original"
+      ],
       "Signed up": [
         "Înscris"
       ],
@@ -5105,7 +5122,7 @@
         "Invitații trimise cu succes."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Suport pentru un domeniu de e-mail personal"
       ],
       "support team": [
         "echipa de asistență"
@@ -5509,6 +5526,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "S-a atins capacitatea maximă de stocare. Nu se mai pot trimite sau primi mesaje. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        "Trebuie să răspundeți la invitații pentru ca gazda să vă vadă răspunsul."
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Veți ${ loseAllData } din contul ${ BRAND_NAME }. Pentru a-l restaura, va trebui să introduceți vechea parolă."
       ],
@@ -5834,6 +5854,9 @@
       "Go to Trash": [
         "Accesare «Gunoi»"
       ],
+      "Insert link": [
+        "Inserare legătură"
+      ],
       "Jump to first": [
         "Salt la primul"
       ],
@@ -6041,7 +6064,7 @@
         "Acțiuni"
       ],
       "Activity": [
-        ""
+        "Activitate"
       ],
       "Address": [
         "Adresa"
@@ -6209,7 +6232,7 @@
         "Notificări zilnice pe e-mail"
       ],
       "Date": [
-        ""
+        "Data"
       ],
       "Date format": [
         "Format dată"
@@ -6586,8 +6609,8 @@
       "Send auto-reply": [
         "Trimitere autorăspuns"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        "Trimitere invitații în"
       ],
       "Show secondary time zone": [
         "Afișare fus orar secundar"
@@ -6761,7 +6784,7 @@
         "Legătură de recomandare"
       ],
       "Your reward": [
-        ""
+        "Recompensa"
       ],
       "ZIP": [
         "ZIP"
@@ -7793,15 +7816,6 @@
       "Feedback": [
         "Feedback"
       ],
-      "Fill in the email address and text to test your link": [
-        "Completaţi adresa de e-mail şi textul pentru a testa legătura"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Completați numărul de telefon și textul pentru a testa legătura"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Completaţi adresa URL şi textul pentru a testa legătura"
-      ],
       "Gift code": [
         "Cod cadou"
       ],
@@ -7828,6 +7842,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare ce apar"
+      ],
+      "Please insert link first": [
+        "Introduceți mai întâi legătura"
       ],
       "Postal code": [
         "Cod poştal"
@@ -8209,16 +8226,16 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Obțineți gratuit până la 18 luni de ${ appName } ${ planName }"
       ],
       "Invite friends and earn rewards!": [
         "Invitați pe alții și câștigați recompense!"
       ],
       "No more missed appointments": [
-        ""
+        "Gata cu programările ratate"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "În cazul notificărilor prin e-mail, puteți decide despre care evenimente să primiți notificare și când."
       ]
     },
     "State": {
@@ -8551,7 +8568,7 @@
     },
     "Title": {
       "${ appName } ${ planName } trial": [
-        ""
+        "Încercare ${ appName } ${ planName }"
       ],
       "${ appName } customization": [
         "Personalizare ${ appName }"
@@ -8824,7 +8841,7 @@
         "Ștergere ${ domain.DomainName }"
       ],
       "Delete ${ email }": [
-        ""
+        "Ștergere ${ email }"
       ],
       "Delete ${ filter.Name }": [
         "Ștergere ${ filter.Name }"
@@ -8854,7 +8871,7 @@
         "Ștergere utilizator"
       ],
       "Disable ${ email }": [
-        ""
+        "Dezactivare ${ email }"
       ],
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
@@ -8962,7 +8979,7 @@
         "Cod cadou"
       ],
       "How does it work?": [
-        ""
+        "Cum funcționează?"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -9010,9 +9027,6 @@
       ],
       "Invoices": [
         "Facturi"
-      ],
-      "Keyboard Shortcuts": [
-        "Combinații de taste"
       ],
       "Labels": [
         "Etichete"

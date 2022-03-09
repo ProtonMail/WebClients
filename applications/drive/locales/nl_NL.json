@@ -119,9 +119,6 @@
       "Compare all features": [
         "Alle functies vergelijken"
       ],
-      "Compare plans": [
-        "Vergelijk abonnementen"
-      ],
       "Compose": [
         "Opstellen"
       ],
@@ -244,6 +241,9 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
       ],
@@ -348,9 +348,6 @@
       ],
       "Pause upload": [
         "Uploaden pauzeren"
-      ],
-      "Pay": [
-        "Betaal"
       ],
       "Preview": [
         "Voorbeeld"
@@ -537,6 +534,9 @@
       ],
       "Upgrade": [
         "Upgraden"
+      ],
+      "Upload anyway": [
+        ""
       ],
       "Upload file": [
         "Bestand uploaden"
@@ -1941,9 +1941,6 @@
       "Invalid card number": [
         "Ongeldige kaartnummer"
       ],
-      "Invalid code": [
-        "Ongeldige code"
-      ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
       ],
@@ -1965,6 +1962,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
         "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton agenda's"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
@@ -2676,6 +2676,9 @@
       "Create your first folder and start moving your files.": [
         "Maak uw eerste map aan en begin uw bestanden te verplaatsen."
       ],
+      "Creating": [
+        ""
+      ],
       "Creating link to file": [
         "Link naar bestand maken"
       ],
@@ -2694,9 +2697,6 @@
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Korting toegepast op uw abonnement met coupon ${ code }"
-      ],
-      "Domains": [
-        "Domeinen"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
@@ -3994,6 +3994,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        "\"${ name }\" succesvol aangemaakt"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent verwijderd uit de prullenbak"
       ],
@@ -4054,9 +4057,6 @@
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } map met succes verplaatst",
         "${ movedLinksCount } mappen succesvol verplaatst"
-      ],
-      "${ name } created successfully": [
-        "${ name } succesvol aangemaakt"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item permanent verwijderd uit de prullenbak",
@@ -5054,6 +5054,9 @@
       ],
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
+      ],
+      "Performance might be affected": [
+        ""
       ],
       "Phone numbers": [
         "Telefoonnummers"

@@ -355,6 +355,9 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
       ],
@@ -961,6 +964,11 @@
       ],
       "Unsupported event": [
         "Evento no soportado"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2639,6 +2647,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton",
         "Fusionar al menos ${ calendarToFixCount } calendarios con los calendarios existentes de Proton"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Name does not match": [
         ""
@@ -4409,8 +4420,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Introduce tu número de teléfono de recuperación y te enviaremos tu nombre de usuario o dirección de correo electrónico."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "Las invitaciones al evento y las confirmaciones de asistencia se enviarán en este idioma."
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "Expirado"
@@ -4683,8 +4694,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru lee tus datos personales con el fin de facilitar el acceso a anunciantes, agencias gubernamentales rusas y terceros. Para una mejor privacidad, crea una dirección de correo electrónico segura."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Asegúrate de recordar la contraseña para iniciar sesión y descifrar los correos electrónicos. ${ boldAlert }. Recomendamos añadir primero un correo electrónico de recuperación."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Introduce manualmente esta información en el dispositivo de autenticación de doble factores para configurar tu cuenta. ${ _switchButton }."
@@ -4899,8 +4910,8 @@
       "Proton Calendar": [
         ""
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton no puede ayudarte a recuperar ninguna contraseña perdida"
+      "Proton can't help you recover any lost passwords.": [
+        ""
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton ha pausado una importación porque ha perdido la conexión con tu otro proveedor de correo electrónico. Por favor, vuelve a conectar."
@@ -4950,6 +4961,9 @@
       ],
       "Recovery files have been voided": [
         "Los archivos de recuperación han sido anulados"
+      ],
+      "recovery method": [
+        ""
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperación copiada en el portapapeles"
@@ -5016,6 +5030,9 @@
       ],
       "Set recovery phrase": [
         "Configura una frase de recuperación"
+      ],
+      "Show original message": [
+        ""
       ],
       "Signed up": [
         ""
@@ -5449,6 +5466,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Has alcanzado el 100% de tu capacidad de almacenamiento. No podrás enviar o recibir nuevos correos electrónicos. Libera algo de espacio o añade más espacio de almacenamiento. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Perderás ${ loseAllData } en tu cuenta ${ BRAND_NAME }. Para restaurarlos, deberás introducir la contraseña anterior."
       ],
@@ -5773,6 +5793,9 @@
       ],
       "Go to Trash": [
         "Ir a la Papelera"
+      ],
+      "Insert link": [
+        ""
       ],
       "Jump to first": [
         "Ir al primero"
@@ -6520,8 +6543,8 @@
       "Send auto-reply": [
         "Enviar respuesta automática"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "Mostrar zona horaria secundaria"
@@ -7717,15 +7740,6 @@
       "Feedback": [
         "Comentarios"
       ],
-      "Fill in the email address and text to test your link": [
-        "Rellena la dirección de correo electrónico y el texto para probar tu enlace"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Rellena el número de teléfono y el texto para probar tu enlace"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Rellena el enlace de URL y el texto para probar tu enlace"
-      ],
       "Gift code": [
         "Código promocional"
       ],
@@ -7752,6 +7766,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Describe el problema e incluye cualquier mensaje de error"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Postal code": [
         "Código postal"
@@ -8930,9 +8947,6 @@
       ],
       "Invoices": [
         "Facturas"
-      ],
-      "Keyboard Shortcuts": [
-        "Atajos de teclado"
       ],
       "Labels": [
         "Etiquetas"

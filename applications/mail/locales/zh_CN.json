@@ -56,9 +56,6 @@
       "Add to group": [
         "添加至群组"
       ],
-      "Address options": [
-        "地址选项"
-      ],
       "Advanced search": [
         "高级搜索"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "应用"
+      ],
+      "Archive": [
+        ""
       ],
       "Attachment": [
         "上传为附件"
@@ -347,6 +347,9 @@
       "Go to first page": [
         "转到首页"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to last page": [
         "转到末页"
       ],
@@ -449,6 +452,9 @@
       "Load": [
         "加载"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load image": [
         "加载图片"
       ],
@@ -505,6 +511,9 @@
       ],
       "More": [
         "更多"
+      ],
+      "More details about ${ title }": [
+        ""
       ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
@@ -632,6 +641,9 @@
       "Re-sign": [
         "重新签名"
       ],
+      "Read receipt sent": [
+        ""
+      ],
       "Recover data": [
         "恢复数据"
       ],
@@ -722,8 +734,8 @@
       "send auto-reply email": [
         "自动回复"
       ],
-      "Send receipt": [
-        "发送回执"
+      "Send read receipt": [
+        ""
       ],
       "Set": [
         "设置"
@@ -791,6 +803,9 @@
       "Some images could not be loaded with tracking protection": [
         "跟踪保护下某些图像无法加载"
       ],
+      "Star": [
+        ""
+      ],
       "Start import": [
         "开始导入"
       ],
@@ -836,6 +851,9 @@
       "Try another method": [
         "更换验证方式"
       ],
+      "Turn on auto-load": [
+        ""
+      ],
       "Turn on tracker protection": [
         "开启追踪保护"
       ],
@@ -854,8 +872,14 @@
       "Unordered list": [
         "无标号列表"
       ],
+      "Unstar": [
+        ""
+      ],
       "Unsubscribe": [
         "取消订阅"
+      ],
+      "Unsubscribe from mailing list": [
+        ""
       ],
       "Unsubscribing": [
         "正在退订"
@@ -911,6 +935,9 @@
       "View headers": [
         "查看邮件头信息"
       ],
+      "View HTML": [
+        ""
+      ],
       "View invoice": [
         "查看账单"
       ],
@@ -920,14 +947,14 @@
       "View message": [
         "查看邮件"
       ],
+      "View message details": [
+        ""
+      ],
       "View recipients": [
         "查看收件人"
       ],
       "View rendered HTML": [
         "查看渲染后的HTML"
-      ],
-      "View source code": [
-        "查看源代码"
       ],
       "Why not?": [
         "为什么不呢？"
@@ -2866,6 +2893,9 @@
       "Message processing error.": [
         "邮件处理错误。"
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Missing signature": [
         "缺少签名"
       ],
@@ -3753,7 +3783,7 @@
         "添加图片地址"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "已对此地址开启密钥验证，向其发送邮件前需要先信任其公钥。"
+        "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
       ],
       "Align left": [
         "左对齐"
@@ -3988,6 +4018,21 @@
       ],
       "Expiration Time": [
         "邮件有效期"
+      ],
+      "Expires": [
+        ""
+      ],
+      "Expires in ${ formattedDelay }": [
+        ""
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires soon": [
+        ""
       ],
       "file attached": [
         "个附件"
@@ -4319,9 +4364,6 @@
       "Saving draft…": [
         "正在保存草稿…"
       ],
-      "Scheduled": [
-        "已加入日程"
-      ],
       "Scheduled send of this message will be cancelled.": [
         "此邮件的定时发送将被取消。"
       ],
@@ -4376,7 +4418,7 @@
       "Sorry, this message does not exist or has already expired": [
         "对不起，此邮件不存在或已过期"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Store and share files securely with Proton Drive.": [
@@ -4446,7 +4488,7 @@
         "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "此地址已被停用。待其所有者启用此地址后才能向其发送邮件。"
+        "此地址已被停用，待其所有者予以启用后才能向该地址发送邮件。"
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "您目前使用的浏览器不支持查看 PDF 文件，请下载后打开。"
@@ -4507,9 +4549,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "此邮件将于 ${ formattedDate } 过期"
-      ],
-      "This message will expire in ${ formattedDelay }": [
-        "此消息将于 ${ formattedDelay } 过期"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "此邮件将于${ dateString } ${ formattedTime } 过期"
@@ -4806,9 +4845,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "点击 \"信任密钥 \"将创建一个新的联系人，并将此公钥与\n这个发件人。从这个地址发出的电子邮件将自动进行加密验证。"
       ],
-      "Do you want to trust the following public key?": [
-        "您想要信任以下公钥吗？"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "你想用以下指纹信任主公钥吗？"
       ],
@@ -4878,6 +4914,9 @@
       ],
       "Go to Trash": [
         "转至废件箱"
+      ],
+      "Insert link": [
+        ""
       ],
       "Jump to first": [
         "选择第一项"
@@ -5013,9 +5052,6 @@
       " and ${ l }": [
         "、${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } 及其他 ${ count } 位"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
       ],
@@ -5058,8 +5094,8 @@
       "Automatically save contacts": [
         "自动保存联系人"
       ],
-      "BCC:": [
-        "密送："
+      "BCC": [
+        ""
       ],
       "Blind Carbon Copy": [
         "密送"
@@ -5085,8 +5121,8 @@
       "Category": [
         "类别"
       ],
-      "CC:": [
-        "抄送："
+      "CC": [
+        ""
       ],
       "City": [
         "城市"
@@ -5198,9 +5234,6 @@
       ],
       "Label messages as": [
         "给导入的邮件加标签"
-      ],
-      "Labels:": [
-        "标记："
       ],
       "Last 12 months only": [
         "仅过去 12 个月"
@@ -6020,15 +6053,6 @@
       "End date": [
         "结束日期"
       ],
-      "Fill in the email address and text to test your link": [
-        "填写邮箱地址和文本来测试链接"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "填写电话号码和文本来测试链接"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "填写网址和要显示的文本来测试链接"
-      ],
       "Filter folders": [
         "搜索文件夹"
       ],
@@ -6070,6 +6094,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "请说明您的问题，并附上看到的所有错误提示"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Proton username": [
         "Proton 用户名"
@@ -6373,11 +6400,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "邮件已退订"
+      "Unsubscribed from mailing list": [
+        ""
       ],
-      "Unsubscribing...": [
-        "正在退订..."
+      "Unsubscribing from mailing list...": [
+        ""
       ]
     },
     "Step in filter modal": {
@@ -6728,9 +6755,6 @@
       "Addresses": [
         "地址"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "所有收件人都已加入密送列表，不会公开"
-      ],
       "Are you sure you want to close?": [
         "确定要关闭吗？"
       ],
@@ -6920,11 +6944,8 @@
       "Invalid verification code": [
         "验证码无效"
       ],
-      "Keyboard Shortcuts": [
-        "键盘快捷键"
-      ],
       "Label as": [
-        "标记为"
+        "加标签"
       ],
       "Link confirmation": [
         "确认打开链接"
@@ -6953,8 +6974,14 @@
       "Merging contacts": [
         "合并联系人"
       ],
+      "Message details": [
+        ""
+      ],
       "Message list": [
         "邮件列表"
+      ],
+      "Message will expire": [
+        ""
       ],
       "More": [
         "更多"
@@ -7031,6 +7058,9 @@
       "Recipient missing": [
         "未填写收件人"
       ],
+      "Recipients": [
+        ""
+      ],
       "Recover data": [
         "恢复数据"
       ],
@@ -7072,6 +7102,9 @@
       ],
       "Send without expiration?": [
         "发送永久有效的邮件？"
+      ],
+      "Sender": [
+        ""
       ],
       "Sender changed": [
         "发件地址已更改"
@@ -7183,7 +7216,7 @@
         "此功能仅供付费用户使用"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "上传公钥后方可向其发送端到端加密的邮件"
+        "上传公钥后方可向此地址发送端到端加密邮件"
       ],
       "You do not have any contacts to export": [
         "您没有任何联系人可导出"

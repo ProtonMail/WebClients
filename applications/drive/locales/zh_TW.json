@@ -119,9 +119,6 @@
       "Compare all features": [
         "比較所有功能"
       ],
-      "Compare plans": [
-        "比較方案"
-      ],
       "Compose": [
         "撰寫"
       ],
@@ -242,6 +239,9 @@
       "Get verification code": [
         "取得驗證碼"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
       ],
@@ -346,9 +346,6 @@
       ],
       "Pause upload": [
         "暫停上載"
-      ],
-      "Pay": [
-        "付款"
       ],
       "Preview": [
         "預覽"
@@ -535,6 +532,9 @@
       ],
       "Upgrade": [
         "升級"
+      ],
+      "Upload anyway": [
+        ""
       ],
       "Upload file": [
         "上載檔案"
@@ -1930,9 +1930,6 @@
       "Invalid card number": [
         "卡號無效"
       ],
-      "Invalid code": [
-        "代碼無效"
-      ],
       "Invalid expiration date": [
         "到期日無效"
       ],
@@ -1953,6 +1950,9 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "請將至少 ${ calendarToFixCount } 個行事曆與現有的 Proton 行事曆合併"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Missing signature": [
         "簽章遺失"
@@ -2629,6 +2629,9 @@
       "Create your first folder and start moving your files.": [
         "建立您的第一個資料夾，並開始移動您的檔案。"
       ],
+      "Creating": [
+        ""
+      ],
       "Creating link to file": [
         "正在建立檔案連結"
       ],
@@ -2646,9 +2649,6 @@
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用折扣"
-      ],
-      "Domains": [
-        "網域"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "立即下載您最喜愛的應用程序，隨時隨地保護隱私。"
@@ -3940,6 +3940,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        ""
+      ],
       "\"${ name }\" deleted permanently from trash": [
         ""
       ],
@@ -3993,9 +3996,6 @@
       ],
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } 個資料夾已成功移動"
-      ],
-      "${ name } created successfully": [
-        ""
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         ""
@@ -4962,6 +4962,9 @@
       ],
       "PayPal verification failed": [
         "PayPal 驗證失敗"
+      ],
+      "Performance might be affected": [
+        ""
       ],
       "Phone numbers": [
         "電話號碼"

@@ -2265,8 +2265,8 @@
       "Log in to ProtonMail to activate your address": [
         "Inicie a sessão no ProtonMail para ativar seu endereço"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Lembre-se da senha para fazer login e descriptografar e-mails. ${ boldAlert }. Recomendamos adicionar um e-mail de recuperação primeiro."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ _switchButton }."
@@ -2343,8 +2343,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton não pode ajudá-lo a recuperar nenhuma senha perdida"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton não pode ajudá-lo a recuperar nenhuma senha perdida."
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "O ProtonMail também pode ser usado com uma única senha que substitui as senhas de acesso e da caixa de correio. Para mudar para o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
@@ -2364,6 +2364,9 @@
       ],
       "read our two-factor authentication Guide first": [
         "leia nosso guia de autenticação de dois fatores primeiro"
+      ],
+      "recovery method": [
+        "método de recuperação"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."

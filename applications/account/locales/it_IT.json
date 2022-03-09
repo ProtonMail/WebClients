@@ -355,6 +355,9 @@
       "Get verification code": [
         "Ottieni il codice di verifica"
       ],
+      "Go to label": [
+        "Vai all'etichetta"
+      ],
       "Go to panel ${ index }": [
         "Vai al pannello ${ index }"
       ],
@@ -961,6 +964,11 @@
       ],
       "Unsupported event": [
         "Evento non supportato"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2639,6 +2647,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Unisci almeno ${ calendarToFixCount } calendario con un calendario Proton esistente",
         "Unisci almeno ${ calendarToFixCount } calendari con calendari Proton esistenti"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Name does not match": [
         "Il nome non corrisponde"
@@ -4409,7 +4420,7 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Inserisci il tuo numero di telefono di recupero e ti invieremo il tuo nome utente o indirizzo email."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
+      "Event invitations and RSVPs will be sent in this language.": [
         "Gli inviti agli eventi e gli RSVP verranno inviati in questa lingua."
       ],
       "Expired": [
@@ -4683,8 +4694,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru legge i tuoi dati personali al fine di fornire accesso a inserzionisti, agenzie governative russe e altri software di terze parti. Per una migliore privacy, crea un indirizzo email sicuro."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Assicurati di ricordare la password per accedere e decifrare le email. ${ boldAlert }. Si consiglia di aggiungere prima una email di recupero."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Assicurati di ricordare la password per accedere e decifrare le email. ${ boldAlert } Si consiglia di aggiungere prima un ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Inserisci manualmente queste informazioni nel tuo dispositivo di autenticazione a due fattori per impostare il tuo account. ${ _switchButton }."
@@ -4899,8 +4910,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton non può aiutarti a recuperare le password perse"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton non può aiutarti a recuperare le password perse."
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton ha messo in pausa un'importazione perché ha perso la connessione con l'altro provider di posta elettronica. Si prega di ricollegarsi."
@@ -4950,6 +4961,9 @@
       ],
       "Recovery files have been voided": [
         "I file di ripristino sono stati annullati"
+      ],
+      "recovery method": [
+        "metodo di recupero"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase di recupero copiata negli appunti"
@@ -5016,6 +5030,9 @@
       ],
       "Set recovery phrase": [
         "Imposta frase di recupero"
+      ],
+      "Show original message": [
+        "Mostra il messaggio originale"
       ],
       "Signed up": [
         "Iscritto"
@@ -5449,6 +5466,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Hai raggiunto il 100% della tua capacità di archiviazione. Non puoi inviare o ricevere nuove email. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "${ loseAllData } nel tuo account ${ BRAND_NAME } . Per ripristinarlo, dovrai inserire la tua vecchia password."
       ],
@@ -5773,6 +5793,9 @@
       ],
       "Go to Trash": [
         "Vai al Cestino"
+      ],
+      "Insert link": [
+        "Inserisci link"
       ],
       "Jump to first": [
         "Vai al primo"
@@ -6520,8 +6543,8 @@
       "Send auto-reply": [
         "Invia risposta automatica"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "Mostra fuso orario secondario"
@@ -7717,15 +7740,6 @@
       "Feedback": [
         "Suggerimento"
       ],
-      "Fill in the email address and text to test your link": [
-        "Inserisci l'indirizzo email e il testo per testare il tuo link"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Inserisci il numero di telefono e il testo per testare il tuo link"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Inserisci il link URL e il testo per testare il tuo link"
-      ],
       "Gift code": [
         "Codice regalo"
       ],
@@ -7752,6 +7766,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Per favore descrivi il problema e includi eventuali messaggi di errore"
+      ],
+      "Please insert link first": [
+        "Inserisci prima il collegamento"
       ],
       "Postal code": [
         "Codice postale"
@@ -8930,9 +8947,6 @@
       ],
       "Invoices": [
         "Fatture"
-      ],
-      "Keyboard Shortcuts": [
-        "Scorciatoie da tastiera"
       ],
       "Labels": [
         "Etichette"

@@ -774,7 +774,7 @@
     },
     "Country name": {
       "Abkhazia": [
-        ""
+        "Abchasien"
       ],
       "Afghanistan": [
         "Afghanistan"
@@ -813,7 +813,7 @@
         "Aruba"
       ],
       "Ascension Island": [
-        ""
+        "Ascension-Insel"
       ],
       "Australia": [
         "Australien"
@@ -933,7 +933,7 @@
         "Kongo"
       ],
       "Congo, Democratic Republic of the": [
-        ""
+        "Demokratische Republik Kongo"
       ],
       "Cook Islands": [
         "Cookinseln"
@@ -1074,7 +1074,7 @@
         "Heard und McDonaldinseln"
       ],
       "Holy See (Vatican City State)": [
-        ""
+        "Vatikanstaat"
       ],
       "Honduras": [
         "Honduras"
@@ -1095,7 +1095,7 @@
         "Indonesien"
       ],
       "International": [
-        ""
+        "International"
       ],
       "Iran": [
         "Iran"
@@ -1137,7 +1137,7 @@
         "Kiribati"
       ],
       "Kosovo": [
-        ""
+        "Kosovo"
       ],
       "Kuwait": [
         "Kuwait"
@@ -1320,7 +1320,7 @@
         "Katar"
       ],
       "Reunion": [
-        ""
+        "Reunion"
       ],
       "Romania": [
         "Rumänien"
@@ -1335,7 +1335,7 @@
         "Saint‐Barthélemy"
       ],
       "Saint Helena": [
-        ""
+        "St. Helena (Insel)"
       ],
       "Saint Kitts and Nevis": [
         "St. Kitts und Nevis"
@@ -1380,7 +1380,7 @@
         "Singapur"
       ],
       "Sint Maarten": [
-        ""
+        "Sint Maarten"
       ],
       "Slovakia": [
         "Slowakei"
@@ -1425,7 +1425,7 @@
         "Spitzbergen und Jan Mayen"
       ],
       "Swaziland": [
-        ""
+        "Königreich Eswatini (vormals Swasiland)"
       ],
       "Sweden": [
         "Schweden"
@@ -1434,7 +1434,7 @@
         "Schweiz"
       ],
       "Syria": [
-        ""
+        "Syrien"
       ],
       "Taiwan": [
         "Taiwan"
@@ -1464,7 +1464,7 @@
         "Trinidad und Tobago"
       ],
       "Tristan da Cunha": [
-        ""
+        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunesien"
@@ -1536,7 +1536,7 @@
         "Simbabwe"
       ],
       "Åland Islands": [
-        ""
+        "Åland‐Inseln"
       ]
     },
     "CountryInfo": {
@@ -2265,8 +2265,8 @@
       "Log in to ProtonMail to activate your address": [
         "Bei ProtonMail anmelden, um Ihre Adresse zu aktivieren"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Achten Sie darauf, dass Sie sich das Passwort zum Anmelden und Entschlüsseln von E-Mails merken. ${ boldAlert }. Wir empfehlen, zuerst eine Wiederherstellungs-E-Mail-Adresse hinzuzufügen."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Achte darauf, dass du dir das Passwort zum Anmelden und Entschlüsseln von E-Mails merkst. ${ boldAlert } Wir empfehlen, zuerst eine ${ recoveryLink } hinzuzufügen."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Geben Sie diese Informationen manuell in Ihr Zwei‐Faktor‐Authentifizierungsgerät ein, um Ihr Konto einzurichten. ${ _switchButton }."
@@ -2343,8 +2343,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton kann Ihnen nicht helfen, verlorene Passwörter wiederherzustellen"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton kann dir nicht helfen, verlorene Passwörter wiederherzustellen."
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "ProtonMail kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Postfachpasswort ersetzt. Um in den Einzelpasswort-Modus zu wechseln, geben Sie das gewünschte Einzelpasswort ein und klicken Sie auf „Speichern”."
@@ -2364,6 +2364,9 @@
       ],
       "read our two-factor authentication Guide first": [
         "zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung zu lesen"
+      ],
+      "recovery method": [
+        "Wiederherstellungsmethode"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder des ${ link } werden die meisten Probleme automatisch gelöst."
@@ -2414,7 +2417,7 @@
         "Speicherplatz (GB)"
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Unterstützung für 1 individuelle E-Mail-Domain"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "Unterstützung für File-Sharing-Protokolle wie BitTorrent."
@@ -3774,7 +3777,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Erhalte bis zu 18 Monate ${ appName } ${ planName } kostenlos"
       ],
       "Invite friends and earn rewards!": [
         "Lade Freunde ein und verdiene Belohnungen!"
@@ -3893,7 +3896,7 @@
     },
     "Title": {
       "${ appName } ${ planName } trial": [
-        ""
+        "${ appName } ${ planName } Testversion"
       ],
       "${ appName } customization": [
         "${ appName } anpassen"
