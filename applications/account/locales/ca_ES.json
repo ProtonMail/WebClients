@@ -355,6 +355,9 @@
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Ir al panell ${ index }"
       ],
@@ -961,6 +964,11 @@
       ],
       "Unsupported event": [
         "Esdeveniment no suportat"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2638,6 +2646,9 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
+        ""
+      ],
+      "Missing key packet": [
         ""
       ],
       "Name does not match": [
@@ -4409,8 +4420,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Introduïu el vostre número de telèfon de recuperació i us enviarem el vostre usuari o adreça de correu electrònic."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "Les invitacions d'esdeveniments i confirmacions d'assistència s'enviaran en aquesta llengua."
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "Vençuda"
@@ -4683,8 +4694,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru llegeix les teves dades personals per donar-les a publicitants, agències d’intel·ligència russos i altres terceres parts. Per una millor privadesa crea un compte de correu segur."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Assegureu-vos de recordar la contrasenya per iniciar la sessió i desxifrar els correus electrònics. ${ boldAlert }. Primer us recomanem que afegiu un correu electrònic de recuperació."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Introduïu manualment aquesta informació al vostre dispositiu d'autenticació de dos factors per configurar el vostre compte. ${ _switchButton }."
@@ -4899,8 +4910,8 @@
       "Proton Calendar": [
         ""
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton no us pot ajudar a recuperar cap contrasenya perduda"
+      "Proton can't help you recover any lost passwords.": [
+        ""
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton ha aturat una importació perquè ha perdut la connexió amb el vostre altre proveïdor de correu electrònic. Torneu a connectar."
@@ -4949,6 +4960,9 @@
         ""
       ],
       "Recovery files have been voided": [
+        ""
+      ],
+      "recovery method": [
         ""
       ],
       "Recovery phrase copied to clipboard": [
@@ -5016,6 +5030,9 @@
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
+      ],
+      "Show original message": [
+        ""
       ],
       "Signed up": [
         ""
@@ -5449,6 +5466,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. No podeu enviar ni rebre correus electrònics nous. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Perdrà ${ loseAllData } al ses compte ${ BRAND_NAME }. Per restaurar-lo, haureu d'introduir la contrasenya anterior."
       ],
@@ -5773,6 +5793,9 @@
       ],
       "Go to Trash": [
         "Vés a la Paperera"
+      ],
+      "Insert link": [
+        ""
       ],
       "Jump to first": [
         "Moure a primera posició"
@@ -6520,8 +6543,8 @@
       "Send auto-reply": [
         "Enviar resposta automàtica"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "Mostrar fus horari secundari"
@@ -7717,15 +7740,6 @@
       "Feedback": [
         "Opinió"
       ],
-      "Fill in the email address and text to test your link": [
-        "Omple l'adreça de correu electrònic i el text per provar l'enllaç"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Omple el número de telèfon i el text per provar l'enllaç"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Omple l'enllaç URL i el text per provar l'enllaç"
-      ],
       "Gift code": [
         "Codi regal"
       ],
@@ -7752,6 +7766,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Postal code": [
         "Codi postal"
@@ -8930,9 +8947,6 @@
       ],
       "Invoices": [
         "Factures"
-      ],
-      "Keyboard Shortcuts": [
-        "Dreceres de teclat"
       ],
       "Labels": [
         "Etiquetes"

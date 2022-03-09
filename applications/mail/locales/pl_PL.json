@@ -56,9 +56,6 @@
       "Add to group": [
         "Dodaj do grupy"
       ],
-      "Address options": [
-        "Opcje adresu"
-      ],
       "Advanced search": [
         "Wyszukiwanie zaawansowane"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Zastosuj"
+      ],
+      "Archive": [
+        "Archiwum"
       ],
       "Attachment": [
         "załącznik"
@@ -353,6 +353,9 @@
       "Go to first page": [
         "Przejdź do pierwszej strony"
       ],
+      "Go to label": [
+        "Przejdź do etykiety"
+      ],
       "Go to last page": [
         "Przejdź do ostatniej strony"
       ],
@@ -458,6 +461,9 @@
       "Load": [
         "Załaduj"
       ],
+      "Load embedded images": [
+        "Załaduj osadzone obrazy"
+      ],
       "Load image": [
         "Załaduj obraz"
       ],
@@ -514,6 +520,9 @@
       ],
       "More": [
         "Więcej"
+      ],
+      "More details about ${ title }": [
+        "Więcej szczegółów o adresie ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
@@ -641,6 +650,9 @@
       "Re-sign": [
         "Podpisz ponownie"
       ],
+      "Read receipt sent": [
+        "Potwierdzenie odczytu zostało wysłane"
+      ],
       "Recover data": [
         "Odzyskaj dane"
       ],
@@ -731,8 +743,8 @@
       "send auto-reply email": [
         "wyślij automatyczną odpowiedź"
       ],
-      "Send receipt": [
-        "Wyślij potwierdzenie"
+      "Send read receipt": [
+        "Wyślij potwierdzenie odczytu"
       ],
       "Set": [
         "Ustaw"
@@ -800,6 +812,9 @@
       "Some images could not be loaded with tracking protection": [
         "Niektóre obrazy nie mogły zostać załadowane z ochroną przed śledzeniem"
       ],
+      "Star": [
+        "Oznacz gwiazdką"
+      ],
       "Start import": [
         "Rozpocznij importowanie"
       ],
@@ -848,6 +863,9 @@
       "Try another method": [
         "Użyj innej metody"
       ],
+      "Turn on auto-load": [
+        "Włącz automatyczne ładowanie"
+      ],
       "Turn on tracker protection": [
         "Włącz ochronę przed śledzeniem"
       ],
@@ -866,8 +884,14 @@
       "Unordered list": [
         "Lista punktowana"
       ],
+      "Unstar": [
+        "Usuń gwiazdkę"
+      ],
       "Unsubscribe": [
         "Anuluj subskrypcję"
+      ],
+      "Unsubscribe from mailing list": [
+        "Anuluj subskrypcję z listy mailingowej"
       ],
       "Unsubscribing": [
         "Anulowanie subskrypcji"
@@ -923,6 +947,9 @@
       "View headers": [
         "Pokaż nagłówki"
       ],
+      "View HTML": [
+        "Widok HTML"
+      ],
       "View invoice": [
         "Pokaż fakturę"
       ],
@@ -932,14 +959,14 @@
       "View message": [
         "Pokaż wiadomość"
       ],
+      "View message details": [
+        "Pokaż szczegóły wiadomości"
+      ],
       "View recipients": [
         "Pokaż odbiorców"
       ],
       "View rendered HTML": [
         "Widok HTML"
-      ],
-      "View source code": [
-        "Pokaż kod źródłowy"
       ],
       "Why not?": [
         "Dlaczego?"
@@ -2911,6 +2938,9 @@
       "Message processing error.": [
         "Błąd przetwarzania wiadomości."
       ],
+      "Missing key packet": [
+        "Brak pakietu klucza"
+      ],
       "Missing signature": [
         "Brak podpisu"
       ],
@@ -4023,7 +4053,7 @@
         "Usuń dane"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "Wyczyszczenie pamięci podręcznej przeglądarki spowoduje wyłączenie wyszukiwania zawartości wiadomości na tym urządzeniu. Aby włączyć tę opcję, będziesz musiał ponownie pobrać wszystkie wiadomości."
+        "Wyczyszczenie pamięci podręcznej przeglądarki spowoduje wyłączenie wyszukiwania zawartości wiadomości na tym urządzeniu. Aby włączyć tę opcję, musisz ponownie pobrać wszystkie wiadomości."
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Wyczyszczenie pamięci podręcznej przeglądarki wpływa na funkcję wyszukiwania zawartości wiadomości, w tym na pobrane wiadomości"
@@ -4189,6 +4219,21 @@
       ],
       "Expiration Time": [
         "Czas wygaśnięcia"
+      ],
+      "Expires": [
+        "Wygasa"
+      ],
+      "Expires in ${ formattedDelay }": [
+        ""
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires soon": [
+        "Wygasa wkrótce"
       ],
       "file attached": [
         "załącznik",
@@ -4380,7 +4425,7 @@
         "Nowy"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Następnie będziesz musiał zalogować się na konto Google i zezwolić nam na dostęp do Twoich danych."
+        "Następnie musisz zalogować się na konto Google i zezwolić nam na dostęp do Twoich danych."
       ],
       "No action selected": [
         "Nie wybrano akcji"
@@ -4532,9 +4577,6 @@
       "Saving draft…": [
         "Zapisywanie szkicu…"
       ],
-      "Scheduled": [
-        "Zaplanowane"
-      ],
       "Scheduled send of this message will be cancelled.": [
         "Zaplanowane wysyłanie tej wiadomości zostanie anulowane."
       ],
@@ -4589,8 +4631,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Wiadomość nie istnieje, bądź już wygasła"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Rozpocznij od 500 MB i odblokuj więcej miejsca. Przestrzeń dyskowa jest dzielona pomiędzy pocztą, kalendarzem i dyskiem."
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy pocztą, kalendarzem i dyskiem."
       ],
       "Store and share files securely with Proton Drive.": [
         "Przechowuj i udostępniaj bezpiecznie plik z dyskiem Proton Drive."
@@ -4722,10 +4764,7 @@
         "Wiadomość zostanie wysłana jutro o godzinie ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
-        "Wiadomość wygaśnie za ${ formattedDate }"
-      ],
-      "This message will expire in ${ formattedDelay }": [
-        "Wiadomość wygaśnie za ${ formattedDelay }"
+        "Wiadomość wygaśnie w dniu: ${ formattedDate }"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "Wiadomość wygaśnie w dniu: ${ dateString } o godzinie ${ formattedTime }"
@@ -4947,10 +4986,10 @@
         "Osiągnięto maksymalną liczbę 5 odpowiedzi."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystano ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano ${ spaceDisplayed }% dostępnej przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystano 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano 100% dostępnej przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Zaznaczono **${ count } wątek** z tego folderu",
@@ -5046,9 +5085,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "Kliknięcie \"Zaufaj kluczowi\" utworzy nowy kontakt i skojarzy klucz publiczny z tym nadawcą. Wiadomości z tego adresu będą automatycznie weryfikowane kryptograficznie."
       ],
-      "Do you want to trust the following public key?": [
-        "Czy chcesz zaufać temu kluczowi głównemu?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Czy chcesz zaufać temu kluczowi głównemu z tym odciskiem?",
         "Czy chcesz zaufać tym kluczom głównym z tymi odciskami?",
@@ -5124,6 +5160,9 @@
       ],
       "Go to Trash": [
         "Przejdź do Kosza"
+      ],
+      "Insert link": [
+        "Wstaw link"
       ],
       "Jump to first": [
         "Przejdź do góry"
@@ -5259,9 +5298,6 @@
       " and ${ l }": [
         " oraz ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } i ${ count } innych odbiorców"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
       ],
@@ -5304,8 +5340,8 @@
       "Automatically save contacts": [
         "Automatyczne zapisywanie kontaktów"
       ],
-      "BCC:": [
-        "UDW:"
+      "BCC": [
+        "UDW"
       ],
       "Blind Carbon Copy": [
         "UDW"
@@ -5331,8 +5367,8 @@
       "Category": [
         "Kategoria"
       ],
-      "CC:": [
-        "DW:"
+      "CC": [
+        "DW"
       ],
       "City": [
         "Miasto"
@@ -5444,9 +5480,6 @@
       ],
       "Label messages as": [
         "Oznacz wiadomości etykietą"
-      ],
-      "Labels:": [
-        "Etykiety:"
       ],
       "Last 12 months only": [
         "Tylko ostatnie 12 miesięcy"
@@ -5702,7 +5735,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "Etykieta ${ Label.Name } została utworzona"
+        "Utworzono \"${ Label.Name }\""
       ]
     },
     "Layout mode": {
@@ -6281,15 +6314,6 @@
       "End date": [
         "Zakres dat do"
       ],
-      "Fill in the email address and text to test your link": [
-        "Wpisz adres e-mail i tekst, aby przetestować link"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Wpisz numer telefonu i tekst, aby przetestować link"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Wpisz adres URL i tekst, aby przetestować link"
-      ],
       "Filter folders": [
         "Filtruj foldery"
       ],
@@ -6331,6 +6355,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Opisz problem i dołącz wszelkie informacje o błędach"
+      ],
+      "Please insert link first": [
+        "Najpierw wstaw link"
       ],
       "Proton username": [
         "Nazwa użytkownika Proton"
@@ -6658,11 +6685,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Subskrypcja została anulowana"
+      "Unsubscribed from mailing list": [
+        "Subskrypcja listy mailingowej została anulowana"
       ],
-      "Unsubscribing...": [
-        "Anulowanie subskrypcji..."
+      "Unsubscribing from mailing list...": [
+        "Anulowanie subskrypcji z listy mailingowej..."
       ]
     },
     "Step in filter modal": {
@@ -7106,9 +7133,6 @@
       "Addresses": [
         "Adresy"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Wszyscy odbiorcy zostali dodani do pola UDW i pozostaną nieznani"
-      ],
       "Are you sure you want to close?": [
         "Czy na pewno chcesz zamknąć edytor filtra?"
       ],
@@ -7313,9 +7337,6 @@
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
-      "Keyboard Shortcuts": [
-        "Skróty klawiszowe"
-      ],
       "Label as": [
         "Oznacz jako"
       ],
@@ -7346,8 +7367,14 @@
       "Merging contacts": [
         "Scalanie kontaktów"
       ],
+      "Message details": [
+        "Szczegóły wiadomości"
+      ],
       "Message list": [
         "Lista wiadomości"
+      ],
+      "Message will expire": [
+        "Wiadomość wygaśnie"
       ],
       "More": [
         "Więcej"
@@ -7424,6 +7451,9 @@
       "Recipient missing": [
         "Brak odbiorcy"
       ],
+      "Recipients": [
+        "Odbiorcy"
+      ],
       "Recover data": [
         "Odzyskaj dane"
       ],
@@ -7465,6 +7495,9 @@
       ],
       "Send without expiration?": [
         "Wysłać wiadomość bez daty wygaśnięcia?"
+      ],
+      "Sender": [
+        "Nadawca"
       ],
       "Sender changed": [
         "Nadawca został zmieniony"

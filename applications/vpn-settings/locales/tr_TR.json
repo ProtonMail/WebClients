@@ -2265,8 +2265,8 @@
       "Log in to ProtonMail to activate your address": [
         "Adresinizi etkinleştirmek için ProtonMail oturumu açın"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Oturum açmak ve e-posta şifresini çözmek için kullandığınız parolayı hatırlayacağınızdan emin olun. ${ boldAlert }. Öncelikle bir kurtarma e-postası eklemenizi öneririz."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Oturum açmak ve e-posta şifresini çözmek için kullandığınız parolayı hatırlayacağınızdan emin olun. ${ boldAlert }. Öncelikle bir ${ recoveryLink } eklemenizi öneririz."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Hesabınızı kurmak için bu bilgileri iki aşamalı kimlik doğrulama aygıtınıza el ile yazın. ${ _switchButton }."
@@ -2343,8 +2343,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton kaybolan parolaları kurtarmanıza yardımcı olamaz"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton kaybolan parolaları kurtarmanıza yardımcı olamaz."
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "ProtonMail, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
@@ -2364,6 +2364,9 @@
       ],
       "read our two-factor authentication Guide first": [
         "önce iki aşamalı kimlik doğrulama rehberimizi okuyun"
+      ],
+      "recovery method": [
+        "kurtarma yöntemi"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
@@ -3197,7 +3200,7 @@
         "Otomatik yanıtlayıcı"
       ],
       "Catch-All email": [
-        "Tümümü toplayan e-posta"
+        "Tümünü toplayan e-posta"
       ],
       "Contact groups": [
         "Kişi grupları"
@@ -3224,7 +3227,7 @@
         "Günlük ileti sayısı"
       ],
       "Multi-user support": [
-        "Çoklu kullanıcı desteği"
+        "Çok kullanıcı desteği"
       ],
       "Priority": [
         "Öncelikli"
@@ -3266,7 +3269,7 @@
         "Her kullanıcıya ayrı oturum açma bilgileri verin"
       ],
       "Get Multi-user support": [
-        "Çoklu kullanıcı desteği alın"
+        "Çok kullanıcı desteği alın"
       ],
       "Host emails for your organization": [
         "Kuruluşunuzun e-postalarını barındırın"

@@ -355,6 +355,9 @@
       "Get verification code": [
         "Demander un code de vérification"
       ],
+      "Go to label": [
+        "Afficher le label"
+      ],
       "Go to panel ${ index }": [
         "Aller au panneau ${ index }"
       ],
@@ -961,6 +964,11 @@
       ],
       "Unsupported event": [
         "Événement non pris en charge"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2315,7 +2323,7 @@
         "Chiffrement et importation des contacts... Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pouvez fermer cette boîte de dialogue."
       ],
       "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        ""
+        "Obtenez gratuitement jusqu'à 3 mois de ${ mailAppName } Plus pour chaque ami souscrivant à ${ mailAppName }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne certains groupes. Veuillez vérifier comment ces groupes doivent être importés."
@@ -2325,10 +2333,10 @@
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        ""
+        "Suivez le nombre de personnes qui cliquent sur votre lien, s'inscrivent et deviennent des abonnés payants. Regardez s'accumuler vos mois gratuits."
       ],
       "Track your referral link activities here.": [
-        ""
+        "Suivez l'activité de vos liens de parrainage ici."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier .ics). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus grand, veuillez le diviser en plus petits fichiers."
@@ -2640,8 +2648,11 @@
         "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant",
         "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers Proton existants"
       ],
-      "Name does not match": [
+      "Missing key packet": [
         ""
+      ],
+      "Name does not match": [
+        "Les noms ne correspondent pas"
       ],
       "Name on card required": [
         "Nom sur la carte obligatoire"
@@ -3850,7 +3861,7 @@
     },
     "Info": {
       "${ appName } ${ planName } credits earned": [
-        ""
+        "Crédits ${ appName } ${ planName } gagnés"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre permission pour ${ enableDesktopNotifications }."
@@ -3874,7 +3885,7 @@
         "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
       "${ emailAddress } is a ${ appName } address": [
-        ""
+        "${ emailAddress } est une adresse ${ appName }"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } n'est pas valide"
@@ -3985,16 +3996,16 @@
         "+${ organization.BonusVPN } connexions pour ProtonVPN (vous permet de connecter plus d'appareils au RPV)"
       ],
       "1. Invite friends to Proton": [
-        ""
+        "1. Invitez vos amis sur Proton"
       ],
       "2. They try ${ appName } ${ planName }": [
-        ""
+        "2. Ils essayent ${ appName } ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20 % de remise sur votre abonnement avec le code promo ${ code }"
       ],
       "3. You earn credits": [
-        ""
+        "3. Vous gagnez des crédits"
       ],
       "30 days money-back guarantee.": [
         "Garantie satisfait ou remboursé pendant 30 jours."
@@ -4243,7 +4254,7 @@
         "Continuer avec ${ planName }"
       ],
       "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        ""
+        "Continuez avec ${ planName } aujourd'hui pour éviter que votre accès soit désactivé à la fin de votre essai."
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",
@@ -4353,7 +4364,7 @@
         "Chaque connexion supplémentaire peut être attribuée aux utilisateurs·rices de votre organisation."
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
-        ""
+        "${ rewards } sur ${ rewardsLimit } mois de ${ appName } ${ planName } gagnés."
       ],
       "Edit label": [
         "Modifier le label"
@@ -4409,8 +4420,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Entrez votre numéro de téléphone de récupération et nous vous enverrons votre nom d’utilisateur·rice ou votre adresse courriel."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "Les invitations à l'événement et les RSVP seront envoyées dans cette langue."
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "Expiré"
@@ -4615,13 +4626,13 @@
         "il est impératif"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        ""
+        "J'utilise ${ appName } et je pense que tu pourrais l'aimer. C'est une messagerie sécurisée qui protège ta vie privée. Inscris-toi avec ce lien pour obtenir 1 mois gratuit: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
       ],
       "Just send them your personal referral link.": [
-        ""
+        "Envoyez-leur simplement votre lien personnel de parrainage."
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Conservez cet enregistrement dans votre DNS aussi longtemps que vous souhaiterez utiliser DKIM."
@@ -4683,8 +4694,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru lit vos données personnelles afin de permettre aux annonceurs, aux agences de renseignements russes et à d'autres tiers d’y accéder. Pour une meilleure protection de la vie privée, créez une adresse électronique sécurisée."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Assurez-vous de vous souvenir du mot de passe pour vous connecter et déchiffrer les courriels. ${ boldAlert }. Nous vous recommandons d'ajouter d'abord une adresse électronique de récupération."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Assurez-vous que vous vous souvenez du mot de passe pour vous connecter et déchiffrer les courriels. ${ boldAlert } Nous vous recommandons d'ajouter d'abord une ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Entrez manuellement ces informations dans votre périphérique d'authentification à deux facteurs pour configurer votre compte. ${ _switchButton }."
@@ -4899,8 +4910,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton ne peut vous aider à récupérer aucun des mots de passe perdus"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton ne peut vous aider à récupérer aucun des mots de passe perdus."
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton a interrompu une importation parce que la connexion avec votre autre fournisseur de messagerie a été perdue. Veuillez vous reconnecter."
@@ -4950,6 +4961,9 @@
       ],
       "Recovery files have been voided": [
         "Les fichiers de récupération ont été annulés"
+      ],
+      "recovery method": [
+        "méthode de récupération"
       ],
       "Recovery phrase copied to clipboard": [
         "Phrase de récupération copiée dans le presse-papiers"
@@ -5017,6 +5031,9 @@
       "Set recovery phrase": [
         "Créer une phrase de récupération"
       ],
+      "Show original message": [
+        "Afficher le message original"
+      ],
       "Signed up": [
         "Inscrit·e"
       ],
@@ -5045,7 +5062,7 @@
         "Invitations correctement envoyées"
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Prise en charge d'un nom de domaine personnalisé"
       ],
       "support team": [
         "équipe d'assistance"
@@ -5090,7 +5107,7 @@
         "Ces fichiers de configuration vous permettent de choisir le serveur ProtonVPN auquel vous vous connectez lorsque vous utilisez une application VPN tierce ou que vous configurez une connexion VPN sur un routeur."
       ],
       "This 30-day free trial is not available any other way.": [
-        ""
+        "L'essai gratuit de 30 jours n'est disponible nulle part ailleurs."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d'une violation potentielle des règles d'utilisation."
@@ -5345,7 +5362,7 @@
         "Lorsque les notifications sont activées, nous envoyons une alerte sur votre adresse de récupération/notification si vous recevez de nouveaux messages sur votre compte ProtonMail."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
-        ""
+        "Lorsqu'ils souscrivent à un abonnement payant, 1 à 3 mois de ${ appName } ${ planName } sera crédité sur votre compte."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Lors du renouvellement de votre abonnement, tous les crédits disponibles seront d'abord utilisés avant que nous débitions vos modes de paiement ci-dessus."
@@ -5408,7 +5425,7 @@
         "Vous pouvez utiliser les identifiants suivants pour vous connecter à un serveur ProtonVPN en utilisant une application RPV tierce à code source ouvert, comme Tunnelblick pour macOS ou OpenVPN pour GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        ""
+        "Vous ne pouvez pas envoyer plus de ${ emailSendLimitNumber } courriels d'invitation pendant les 24 prochaines heures"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "N'utilisez pas les identifiants OpenVPN/IKEv2 dans les applications ProtonVPN ou sur le tableau de bord ProtonVPN. ${ learnMore }"
@@ -5448,6 +5465,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux courriels. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Vous allez ${ loseAllData } dans votre compte ${ BRAND_NAME }. Pour le restaurer, vous devrez saisir votre ancien mot de passe."
@@ -5501,7 +5521,7 @@
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
       ],
       "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
+        "Votre essai gratuit de ${ appName } ${ planName } expirera le ${ formattedTrialExpirationDate }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Votre importation à partir de ${ delayedImport.Account } est temporairement retardée."
@@ -5774,6 +5794,9 @@
       "Go to Trash": [
         "Accéder à la corbeille"
       ],
+      "Insert link": [
+        "Insérer un lien"
+      ],
       "Jump to first": [
         "Passer au premier"
       ],
@@ -5975,7 +5998,7 @@
         "Actions"
       ],
       "Activity": [
-        ""
+        "Activité"
       ],
       "Address": [
         "Adresse"
@@ -6143,7 +6166,7 @@
         "Notifications quotidiennes par courriel"
       ],
       "Date": [
-        ""
+        "Date"
       ],
       "Date format": [
         "Format de date"
@@ -6520,8 +6543,8 @@
       "Send auto-reply": [
         "Envoyer une réponse automatique"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "Afficher le fuseau horaire secondaire"
@@ -6695,7 +6718,7 @@
         "Votre lien de parrainage"
       ],
       "Your reward": [
-        ""
+        "Votre récompense"
       ],
       "ZIP": [
         "Code postal"
@@ -7717,15 +7740,6 @@
       "Feedback": [
         "Vos commentaires"
       ],
-      "Fill in the email address and text to test your link": [
-        "Renseignez l'adresse courriel et le texte pour tester votre lien"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Renseignez le numéro de téléphone et le texte pour tester votre lien"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Renseignez l'URL et le texte pour tester votre lien"
-      ],
       "Gift code": [
         "Code cadeau"
       ],
@@ -7752,6 +7766,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Veuillez décrire le problème et inclure tous les messages d'erreur"
+      ],
+      "Please insert link first": [
+        "Veuillez d'abord insérer un lien"
       ],
       "Postal code": [
         "Code postal"
@@ -8132,16 +8149,16 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Obtenez jusqu'à 18 mois de ${ appName } ${ planName } gratuitement"
       ],
       "Invite friends and earn rewards!": [
         "Invitez des amis et gagnez des récompenses!"
       ],
       "No more missed appointments": [
-        ""
+        "Plus de rendez-vous manqués"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "Avec les notifications par courriel, vous décidez pour quels événements vous serez notifié·e et quand."
       ]
     },
     "State": {
@@ -8472,7 +8489,7 @@
     },
     "Title": {
       "${ appName } ${ planName } trial": [
-        ""
+        "Essai de ${ appName } ${ planName }"
       ],
       "${ appName } customization": [
         "Personnalisation de ${ appName }"
@@ -8745,7 +8762,7 @@
         "Supprimer ${ domain.DomainName }"
       ],
       "Delete ${ email }": [
-        ""
+        "Supprimer ${ email }"
       ],
       "Delete ${ filter.Name }": [
         "Supprimer ${ filter.Name }"
@@ -8775,7 +8792,7 @@
         "Supprimer l'utilisateur·rice"
       ],
       "Disable ${ email }": [
-        ""
+        "Désactiver ${ email }"
       ],
       "Disable two-factor authentication": [
         "Désactiver l'authentification à deux facteurs"
@@ -8877,13 +8894,13 @@
         "Obtenez ProtonVPN Plus pour accéder à tous les serveurs"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Obtenez jusqu'à 18 mois de ${ appName } ${ planName } gratuitement"
       ],
       "Gift code": [
         "Code cadeau"
       ],
       "How does it work?": [
-        ""
+        "Comment ça fonctionne?"
       ],
       "Human verification": [
         "Vérification de l'existence de l'utilisateur"
@@ -8930,9 +8947,6 @@
       ],
       "Invoices": [
         "Factures"
-      ],
-      "Keyboard Shortcuts": [
-        "Raccourcis clavier"
       ],
       "Labels": [
         "Labels"
@@ -9427,7 +9441,7 @@
         "Définissez la disposition par défaut de votre boîte de réception."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        ""
+        "Ajoutez la signature suivante en bas des courriels que vous envoyez: ${ signature } C'est votre lien de parrainage. Ce message apparaîtra sous votre signature. Vous pouvez personnaliser votre signature à tout moment depuis les paramètres."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Les signatures produites par cette clé sont considérées comme non valides et cette clé ne peut pas être utilisée pour le chiffrement"

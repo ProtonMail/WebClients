@@ -201,6 +201,9 @@
       "Get verification code": [
         "Obținere cod de verificare"
       ],
+      "Go to label": [
+        "Accesare etichetă"
+      ],
       "Go to panel ${ index }": [
         "Salt la panoul ${ index }"
       ],
@@ -2107,6 +2110,9 @@
         "Îmbinați cel puțin ${ calendarToFixCount } calendare cu calendarele Proton existente",
         "Îmbinați cel puțin ${ calendarToFixCount } de calendare cu calendarele Proton existente"
       ],
+      "Missing key packet": [
+        "Lipsește pachetul de chei."
+      ],
       "Missing signature": [
         "Semnătură lipsă."
       ],
@@ -2536,8 +2542,8 @@
       "no": [
         "nu"
       ],
-      "unanswered": [
-        "fără răspuns"
+      "pending": [
+        "în așteptare"
       ],
       "yes": [
         "da"
@@ -2846,7 +2852,7 @@
         "(${ memberCount } de membri)"
       ],
       "5 email addresses": [
-        ""
+        "5 adrese de e-mail"
       ],
       "5 GB storage": [
         "5 GB de spațiu"
@@ -2910,7 +2916,7 @@
         "Închideți această fereastră pentru a ieși."
       ],
       "Continue with ${ planName }": [
-        ""
+        "Continuare cu ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Creare un calendar",
@@ -3127,10 +3133,10 @@
         "Primară"
       ],
       "Priority support": [
-        ""
+        "Asistență prioritară"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
@@ -3160,10 +3166,10 @@
         "Unele dintre răspunsurile dvs. la evenimentele actualizate anterior de către organizator vor fi pierdute."
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Începeți cu 500 de MB și deblocați mai mult spațiu pe parcurs. Spațiul de stocare este partajat cu Mail, Calendar și Drive."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Suport pentru un domeniu de e-mail personal"
       ],
       "support team": [
         "echipa de asistență"
@@ -3238,13 +3244,13 @@
         "Foldere, etichete și filtre nelimitate"
       ],
       "Unlimited messages": [
-        ""
+        "Mesaje nelimitate"
       ],
       "Update recurring event": [
         "Actualizare eveniment recurent"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Faceți upgrade astăzi pentru a evita pierderea beneficiilor din ${ appName } ${ planName }."
       ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
@@ -4421,16 +4427,16 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Obțineți gratuit până la 18 luni de ${ appName } ${ planName }"
       ],
       "Invite friends and earn rewards!": [
         "Invitați pe alții și câștigați recompense!"
       ],
       "No more missed appointments": [
-        ""
+        "Gata cu programările ratate"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "În cazul notificărilor prin e-mail, puteți decide despre care evenimente să primiți notificare și când."
       ]
     },
     "Storage": {

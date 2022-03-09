@@ -56,9 +56,6 @@
       "Add to group": [
         "新增至群組"
       ],
-      "Address options": [
-        "地址選項"
-      ],
       "Advanced search": [
         "進階搜尋"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "套用"
+      ],
+      "Archive": [
+        ""
       ],
       "Attachment": [
         "附件"
@@ -347,6 +347,9 @@
       "Go to first page": [
         "前往第一頁"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to last page": [
         "前往最後一頁"
       ],
@@ -449,6 +452,9 @@
       "Load": [
         "載入"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load image": [
         "載入影像"
       ],
@@ -505,6 +511,9 @@
       ],
       "More": [
         "更多"
+      ],
+      "More details about ${ title }": [
+        ""
       ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
@@ -632,6 +641,9 @@
       "Re-sign": [
         "重新簽署"
       ],
+      "Read receipt sent": [
+        ""
+      ],
       "Recover data": [
         "恢復資料"
       ],
@@ -722,8 +734,8 @@
       "send auto-reply email": [
         "傳送自動回覆電子郵件"
       ],
-      "Send receipt": [
-        "傳送讀取回條"
+      "Send read receipt": [
+        ""
       ],
       "Set": [
         "設定"
@@ -791,6 +803,9 @@
       "Some images could not be loaded with tracking protection": [
         "跟踪保護下某些圖像無法加載"
       ],
+      "Star": [
+        ""
+      ],
       "Start import": [
         "開始匯入"
       ],
@@ -836,6 +851,9 @@
       "Try another method": [
         "嘗試其他驗證方式"
       ],
+      "Turn on auto-load": [
+        ""
+      ],
       "Turn on tracker protection": [
         "開啟追蹤保護"
       ],
@@ -854,8 +872,14 @@
       "Unordered list": [
         "項目符號清單"
       ],
+      "Unstar": [
+        ""
+      ],
       "Unsubscribe": [
         "取消訂閱"
+      ],
+      "Unsubscribe from mailing list": [
+        ""
       ],
       "Unsubscribing": [
         "正在取消訂閱"
@@ -911,6 +935,9 @@
       "View headers": [
         "檢視標頭"
       ],
+      "View HTML": [
+        ""
+      ],
       "View invoice": [
         "查看帳單"
       ],
@@ -920,14 +947,14 @@
       "View message": [
         "檢視訊息"
       ],
+      "View message details": [
+        ""
+      ],
       "View recipients": [
         "檢視收件者"
       ],
       "View rendered HTML": [
         "檢視呈現的 HTML"
-      ],
-      "View source code": [
-        "檢視原始碼"
       ],
       "Why not?": [
         "何不呢？"
@@ -2866,6 +2893,9 @@
       "Message processing error.": [
         "郵件處理錯誤。"
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Missing signature": [
         "遺漏簽章"
       ],
@@ -3989,6 +4019,21 @@
       "Expiration Time": [
         "過期時間"
       ],
+      "Expires": [
+        ""
+      ],
+      "Expires in ${ formattedDelay }": [
+        ""
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires soon": [
+        ""
+      ],
       "file attached": [
         "已附加檔案"
       ],
@@ -4319,9 +4364,6 @@
       "Saving draft…": [
         "正在儲存草稿…"
       ],
-      "Scheduled": [
-        "已排程"
-      ],
       "Scheduled send of this message will be cancelled.": [
         "此郵件的寄送預定將被取消。"
       ],
@@ -4376,8 +4418,8 @@
       "Sorry, this message does not exist or has already expired": [
         "抱歉，此訊息不存在或已過期"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "最少500 MB，並持續解鎖更多儲存空間。電子郵件、行事曆、雲端硬碟共用這些空間。"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
       ],
       "Store and share files securely with Proton Drive.": [
         "使用 Proton Drive 安全的儲存及分享檔案。"
@@ -4507,9 +4549,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "此郵件將在 ${ formattedDate } 到期"
-      ],
-      "This message will expire in ${ formattedDelay }": [
-        "此郵件的有效期限尚餘 ${ formattedDelay }"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "此郵件將在 ${ dateString } ${ formattedTime } 過期"
@@ -4806,9 +4845,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "按一下「信任金鑰」將建立一個新的連絡人，並將此公開金鑰與此寄件人關聯。來自此電子郵件地址的郵件將自動以密碼學進行驗證。"
       ],
-      "Do you want to trust the following public key?": [
-        "您要信任以下公開金鑰嗎？"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "您要信任下列指紋的主要公開金鑰嗎？"
       ],
@@ -4878,6 +4914,9 @@
       ],
       "Go to Trash": [
         "前往垃圾桶"
+      ],
+      "Insert link": [
+        "插入連結"
       ],
       "Jump to first": [
         "跳到第一個"
@@ -5013,9 +5052,6 @@
       " and ${ l }": [
         " 且 ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } 以及其他 ${ count } 個"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
@@ -5058,8 +5094,8 @@
       "Automatically save contacts": [
         "自動儲存聯絡人"
       ],
-      "BCC:": [
-        "密件副本："
+      "BCC": [
+        ""
       ],
       "Blind Carbon Copy": [
         "密件副本"
@@ -5085,8 +5121,8 @@
       "Category": [
         "類別"
       ],
-      "CC:": [
-        "副本："
+      "CC": [
+        ""
       ],
       "City": [
         "城市"
@@ -5198,9 +5234,6 @@
       ],
       "Label messages as": [
         "為郵件加上標籤："
-      ],
-      "Labels:": [
-        "標籤："
       ],
       "Last 12 months only": [
         "僅過去 12 個月"
@@ -6020,15 +6053,6 @@
       "End date": [
         "結束日期"
       ],
-      "Fill in the email address and text to test your link": [
-        "填寫電子郵件地址及文字以測試您的連結"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "填寫電話號碼及文字以測試您的連結"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "填寫網址連結及文字以測試您的連結"
-      ],
       "Filter folders": [
         "篩選資料夾"
       ],
@@ -6070,6 +6094,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有)"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Proton username": [
         "Proton 使用者名稱"
@@ -6373,11 +6400,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "已取消訂閱"
+      "Unsubscribed from mailing list": [
+        ""
       ],
-      "Unsubscribing...": [
-        "正在取消訂閱..."
+      "Unsubscribing from mailing list...": [
+        ""
       ]
     },
     "Step in filter modal": {
@@ -6728,9 +6755,6 @@
       "Addresses": [
         "地址"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "所有收件者放置於密件副本欄位且無法公開"
-      ],
       "Are you sure you want to close?": [
         "您確定要關閉嗎？"
       ],
@@ -6920,9 +6944,6 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
-      "Keyboard Shortcuts": [
-        "鍵盤快捷鍵"
-      ],
       "Label as": [
         "標籤為"
       ],
@@ -6953,8 +6974,14 @@
       "Merging contacts": [
         "正在合併聯絡人"
       ],
+      "Message details": [
+        ""
+      ],
       "Message list": [
         "郵件清單"
+      ],
+      "Message will expire": [
+        ""
       ],
       "More": [
         "更多"
@@ -7031,6 +7058,9 @@
       "Recipient missing": [
         "收件人遺失"
       ],
+      "Recipients": [
+        ""
+      ],
       "Recover data": [
         "恢復資料"
       ],
@@ -7072,6 +7102,9 @@
       ],
       "Send without expiration?": [
         "不設到期日發送嗎？"
+      ],
+      "Sender": [
+        ""
       ],
       "Sender changed": [
         "寄件者已變更"

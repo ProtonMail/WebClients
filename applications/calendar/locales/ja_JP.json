@@ -63,7 +63,7 @@
         "チャットする"
       ],
       "Check import progress": [
-        ""
+        "インポートの進行を確認"
       ],
       "Choose a file or drag it here": [
         "ファイルを選択するか、ここにドラッグしてください"
@@ -111,7 +111,7 @@
         "続行"
       ],
       "Continue import": [
-        ""
+        "インポートを続行"
       ],
       "Continue with Google": [
         "Googleで続行"
@@ -171,7 +171,7 @@
         "電話番号を編集"
       ],
       "Edit sign-in details": [
-        ""
+        "サインイン詳細を編集"
       ],
       "Email settings": [
         "メールの設定"
@@ -183,7 +183,7 @@
         "エクスポート"
       ],
       "Export contact group": [
-        ""
+        "連絡先グループをエクスポート"
       ],
       "Export contacts": [
         "連絡先をエクスポート"
@@ -197,6 +197,9 @@
       "Get verification code": [
         "認証コードを取得"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "パネル ${ index } へ移動"
       ],
@@ -207,13 +210,13 @@
         "拡張 PGP 設定を非表示"
       ],
       "Hide folders": [
-        ""
+        "フォルダーを隠す"
       ],
       "Hide info": [
         "情報を非表示"
       ],
       "Hide labels": [
-        ""
+        "ラベルを隠す"
       ],
       "Hide time zones": [
         "タイムゾーンを非表示"
@@ -321,7 +324,7 @@
         "データを復元"
       ],
       "Refer a friend": [
-        ""
+        "友達を招待"
       ],
       "refresh the page": [
         "ページを更新"
@@ -426,7 +429,7 @@
         "別の方法を試してください"
       ],
       "Unlock data": [
-        ""
+        "データのロックを解除"
       ],
       "Unmark for deletion": [
         "削除マークを解除"
@@ -459,10 +462,10 @@
         "検証"
       ],
       "Verify account": [
-        ""
+        "アカウントを認証"
       ],
       "Verify email": [
-        ""
+        "メールを認証"
       ],
       "View": [
         "表示"
@@ -585,19 +588,19 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "空の ICS ファイルです"
       ],
       "Invalid event": [
-        ""
+        "無効なイベントです"
       ],
       "Invalid ICS file": [
-        ""
+        "無効な ICS ファイルです"
       ],
       "Invalid method": [
-        ""
+        "無効なメソッドです"
       ],
       "Unsupported calendar component": [
-        ""
+        "非対応のカレンダーコンポーネントです"
       ],
       "Unsupported event": [
         ""
@@ -1802,7 +1805,7 @@
         "連絡先を復号化しています。この処理には数分かかる場合があります。処理が完了すると、すべての連絡先をエクスポートしてファイルとしてダウンロードできます。"
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "連絡先を削除しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
@@ -1811,7 +1814,7 @@
         ""
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
@@ -1952,13 +1955,13 @@
         "一部の連絡先に有効なメールアドレスがありません: ${ list }"
       ],
       "${ list } has invalid emails": [
-        ""
+        "無効なメールアドレスを持ったグループがあります: ${ list }"
       ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
       "A maximum of 10 notifications is allowed": [
-        ""
+        "最大 10 件の通知が許可されています"
       ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
@@ -1979,7 +1982,7 @@
         "カレンダーのプライマリー秘密鍵が復号されていません"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
       ],
       "Cancellation failed to be sent": [
         ""
@@ -2066,7 +2069,7 @@
         ""
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
-        ""
+        "イベントは ${ minDateString } から ${ maxDateString } まで作成可能です"
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         ""
@@ -2075,6 +2078,9 @@
         "ラベル名は空欄にできません"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
+        ""
+      ],
+      "Missing key packet": [
         ""
       ],
       "Missing signature": [
@@ -2171,7 +2177,7 @@
         "送信鍵が有効ではありません"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "外部アカウントのフォルダーが多すぎます。いくつかのフォルダーを削除するにはインポートをカスタマイズしてください。"
       ],
       "There was an error when exporting the contacts vCards": [
         "連絡先のvCardのエクスポート中にエラーが発生しました"
@@ -2230,7 +2236,7 @@
         ""
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        ""
+        "ファイル ${ formattedFilename } は無効なメソッドでインポートできません。"
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         ""
@@ -2275,7 +2281,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        ""
+        "不正なフォーマットです。コンポーネントを読み込めません。"
       ],
       "Calendar": [
         "カレンダー"
@@ -2287,7 +2293,7 @@
         ""
       ],
       "Custom timezone": [
-        ""
+        "独自のタイムゾーン"
       ],
       "Edited event not supported": [
         ""
@@ -2296,13 +2302,13 @@
         ""
       ],
       "Encryption failed": [
-        ""
+        "暗号化に失敗しました"
       ],
       "End time out of bounds": [
         ""
       ],
       "Event": [
-        ""
+        "イベント"
       ],
       "Event validation failed": [
         ""
@@ -2356,16 +2362,16 @@
         "開始日時が指定可能な範囲を超えています"
       ],
       "Timezone": [
-        ""
+        "タイムゾーン"
       ],
       "Timezone not supported": [
-        ""
+        "タイムゾーンはサポートされていません"
       ],
       "To-do entry": [
         ""
       ],
       "Unknown": [
-        ""
+        "不明"
       ],
       "Unsupported event": [
         "サポートされていないイベントです"
@@ -2465,13 +2471,13 @@
         "予期せぬエラー"
       ],
       "Unsupported invitation": [
-        ""
+        "サポートされていない招待です"
       ],
       "Unsupported response": [
-        ""
+        "未対応のレスポンスです"
       ],
       "We could not cancel the event in your calendar": [
-        ""
+        "カレンダーのイベントをキャンセルすることができませんでした"
       ],
       "We could not retrieve the event from your calendar": [
         ""
@@ -2498,8 +2504,8 @@
       "no": [
         "いいえ"
       ],
-      "unanswered": [
-        "未回答"
+      "pending": [
+        ""
       ],
       "yes": [
         "はい"
@@ -2756,7 +2762,7 @@
         "(${ memberCount } メンバー)"
       ],
       "5 email addresses": [
-        ""
+        "5 件のメールアドレス"
       ],
       "5 GB storage": [
         "5 GB のストレージ"
@@ -2816,7 +2822,7 @@
         ""
       ],
       "Continue with ${ planName }": [
-        ""
+        "${ planName } で続行"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
@@ -2996,7 +3002,7 @@
         "PGPを利用しているProtonMail以外の受信者がいる場合にのみ、これらの設定を変更してください。"
       ],
       "Other options": [
-        ""
+        "その他のオプション"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline はプレーンテキスト形式としか互換性がありません。 ProtonMail は暗号化されたメッセージに常に署名することに注意してください。"
@@ -3137,10 +3143,10 @@
         ""
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "制限なしのフォルダー、ラベル、フィルター"
       ],
       "Unlimited messages": [
-        ""
+        "送信数制限なし"
       ],
       "Update recurring event": [
         "定期的な予定の更新"
@@ -3206,13 +3212,13 @@
         "存在する Proton カレンダーにインポートしたカレンダーを結合することもできます。"
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "進捗を確認するには ${ importProgressLink } を確認してください。"
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "主催者のアドレスからメールを送信できないため、個人のイベントプロパティのみ変更できます。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         ""

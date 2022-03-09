@@ -119,9 +119,6 @@
       "Compare all features": [
         "Usporedi sve značajke"
       ],
-      "Compare plans": [
-        "Usporedi planove"
-      ],
       "Compose": [
         "Nova poruka"
       ],
@@ -246,6 +243,9 @@
       "Get verification code": [
         "Nabavi kôd za provjeru"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
@@ -350,9 +350,6 @@
       ],
       "Pause upload": [
         "Pauziraj učitavanje"
-      ],
-      "Pay": [
-        "Plati"
       ],
       "Preview": [
         "Pregled"
@@ -539,6 +536,9 @@
       ],
       "Upgrade": [
         "Nadogradnja"
+      ],
+      "Upload anyway": [
+        ""
       ],
       "Upload file": [
         "Učitaj datoteku"
@@ -1952,9 +1952,6 @@
       "Invalid card number": [
         "Netočan broj kartice"
       ],
-      "Invalid code": [
-        "Nevažeći kôd"
-      ],
       "Invalid expiration date": [
         "Nevažeći datum isteka"
       ],
@@ -1976,6 +1973,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
         "",
+        ""
+      ],
+      "Missing key packet": [
         ""
       ],
       "Missing signature": [
@@ -2723,6 +2723,9 @@
       "Create your first folder and start moving your files.": [
         "Stvorite svoju prvu mapu i počnite premještati datoteke."
       ],
+      "Creating": [
+        ""
+      ],
       "Creating link to file": [
         "Stvaranje poveznice za datoteku"
       ],
@@ -2742,9 +2745,6 @@
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Popust je primjenjen na vašu pretplatu s kuponom ${ code }"
-      ],
-      "Domains": [
-        "Domene"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Preuzmite svoju omiljenu aplikaciju danas i ponesite privatnost sa sobom gdje god idete."
@@ -4048,6 +4048,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        ""
+      ],
       "\"${ name }\" deleted permanently from trash": [
         ""
       ],
@@ -4115,9 +4118,6 @@
         "${ movedLinksCount } mapa je uspješno premještena",
         "${ movedLinksCount } mape su uspješno premještene",
         "${ movedLinksCount } mapa je uspješno premješteno"
-      ],
-      "${ name } created successfully": [
-        ""
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "",
@@ -5146,6 +5146,9 @@
       ],
       "PayPal verification failed": [
         "Neuspjela PayPal potvrda"
+      ],
+      "Performance might be affected": [
+        ""
       ],
       "Phone numbers": [
         "Telefonski brojevi"

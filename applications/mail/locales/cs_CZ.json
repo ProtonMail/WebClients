@@ -56,9 +56,6 @@
       "Add to group": [
         "Přidat do skupiny"
       ],
-      "Address options": [
-        "Možnosti adresy"
-      ],
       "Advanced search": [
         "Rozšířené vyhledávání"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Použít"
+      ],
+      "Archive": [
+        "Archiv"
       ],
       "Attachment": [
         "Příloha"
@@ -353,6 +353,9 @@
       "Go to first page": [
         "Jít na první stránku"
       ],
+      "Go to label": [
+        "Přejít na štítek"
+      ],
       "Go to last page": [
         "Jít na poslední stránku"
       ],
@@ -458,6 +461,9 @@
       "Load": [
         "Nahrát"
       ],
+      "Load embedded images": [
+        "Načíst vložené obrázky"
+      ],
       "Load image": [
         "Načíst obrázek"
       ],
@@ -514,6 +520,9 @@
       ],
       "More": [
         "Více"
+      ],
+      "More details about ${ title }": [
+        "Více informací o ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
@@ -641,6 +650,9 @@
       "Re-sign": [
         "Znovu podepsat"
       ],
+      "Read receipt sent": [
+        "Potvrzení o přečtení odesláno"
+      ],
       "Recover data": [
         "Obnovit data"
       ],
@@ -731,8 +743,8 @@
       "send auto-reply email": [
         "odeslat automatickou odpověď"
       ],
-      "Send receipt": [
-        "Odeslat potvrzení"
+      "Send read receipt": [
+        "Odeslat potvrzení o přečtení"
       ],
       "Set": [
         "Nastavit"
@@ -800,6 +812,9 @@
       "Some images could not be loaded with tracking protection": [
         "Některé obrázky nebylo možné načíst s ochranou sledování"
       ],
+      "Star": [
+        "Označit"
+      ],
       "Start import": [
         "Spustit import"
       ],
@@ -848,6 +863,9 @@
       "Try another method": [
         "Zkuste jinou metodu"
       ],
+      "Turn on auto-load": [
+        "Zapnutí automatického načítání"
+      ],
       "Turn on tracker protection": [
         "Zapnout ochranu proti sledování"
       ],
@@ -866,8 +884,14 @@
       "Unordered list": [
         "Neseřazený seznam"
       ],
+      "Unstar": [
+        "Odznačit"
+      ],
       "Unsubscribe": [
         "Odhlásit odběr"
+      ],
+      "Unsubscribe from mailing list": [
+        "Odhlásit se ze seznamu adresátů"
       ],
       "Unsubscribing": [
         "Odhlašování odběru"
@@ -923,6 +947,9 @@
       "View headers": [
         "Zobrazit hlavičku e-mailu"
       ],
+      "View HTML": [
+        "Zobrazit HTML"
+      ],
       "View invoice": [
         "Zobrazit fakturu"
       ],
@@ -932,14 +959,14 @@
       "View message": [
         "Zobrazit zprávu"
       ],
+      "View message details": [
+        "Zobrazit podrobnosti zprávy"
+      ],
       "View recipients": [
         "Zobrazit příjemce"
       ],
       "View rendered HTML": [
         "Zobrazit ve formátu HTML"
-      ],
-      "View source code": [
-        "Zobrazit zdrojový kód"
       ],
       "Why not?": [
         "Proč ne?"
@@ -2911,6 +2938,9 @@
       "Message processing error.": [
         "Chyba při zpracování zprávy."
       ],
+      "Missing key packet": [
+        "Chybějící balíček klíčů"
+      ],
       "Missing signature": [
         "Chybící podpis"
       ],
@@ -4190,6 +4220,21 @@
       "Expiration Time": [
         "Čas expirace"
       ],
+      "Expires": [
+        "Platnost do"
+      ],
+      "Expires in ${ formattedDelay }": [
+        "Vyprší za ${ formattedDelay }"
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        "Vyprší za ${ formattedDelayShort }"
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        "Vyprší za méně než ${ formattedDelayShort }"
+      ],
+      "Expires soon": [
+        "Brzy vyprší"
+      ],
       "file attached": [
         "soubor připojen",
         "soubory připojeny",
@@ -4532,9 +4577,6 @@
       "Saving draft…": [
         "Ukládám koncept…"
       ],
-      "Scheduled": [
-        "Naplánováno"
-      ],
       "Scheduled send of this message will be cancelled.": [
         "Naplánované odeslání této zprávy bude zrušeno."
       ],
@@ -4589,8 +4631,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Je nám líto, tato zpráva neexistuje, nebo jí vypršela platnost"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Začněte s 500 MB a postupně odemykejte další úložiště. Úložný prostor je sdílený v aplikaci Pošta, Kalendář a Disk."
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Úložný prostor je sdílen mezi aplikacemi Mail, Calendar a Drive."
       ],
       "Store and share files securely with Proton Drive.": [
         "Ukládejte a sdílejte soubory bezpečně s Proton Drive."
@@ -4723,9 +4765,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Tato zpráva vyprší ${ formattedDate }"
-      ],
-      "This message will expire in ${ formattedDelay }": [
-        "Tato zpráva vyprší za ${ formattedDelay }"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "Platnost této zprávy vyprší ${ dateString } v ${ formattedTime }"
@@ -5046,9 +5085,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "Kliknutím na \"Důvěřovat klíči\" přiřadíte tento veřejný klíč k tomuto odesílateli, E-maily z této adresy budou automaticky kryptograficky ověřovány."
       ],
-      "Do you want to trust the following public key?": [
-        "Chcete důvěřovat následujícímu veřejnému klíči?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Chcete důvěřovat hlavnímu veřejnému klíči s následujícím otiskem prstu?",
         "Chcete důvěřovat hlavním veřejném klíčům s následujícím otiskem prstu?",
@@ -5124,6 +5160,9 @@
       ],
       "Go to Trash": [
         "Přejít do koše"
+      ],
+      "Insert link": [
+        "Vložit odkaz"
       ],
       "Jump to first": [
         "Přejít na první"
@@ -5259,9 +5298,6 @@
       " and ${ l }": [
         " a ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } a ${ count } dalších"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
@@ -5304,8 +5340,8 @@
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
       ],
-      "BCC:": [
-        "Skrytá kopie:"
+      "BCC": [
+        "Skrytá kopie"
       ],
       "Blind Carbon Copy": [
         "Skrytá kopie"
@@ -5331,8 +5367,8 @@
       "Category": [
         "Kategorie"
       ],
-      "CC:": [
-        "Kopie:"
+      "CC": [
+        "Kopie"
       ],
       "City": [
         "Město"
@@ -5444,9 +5480,6 @@
       ],
       "Label messages as": [
         "Označte zprávu jako"
-      ],
-      "Labels:": [
-        "Štítky:"
       ],
       "Last 12 months only": [
         "Pouze posledních 12 měsíců"
@@ -6281,15 +6314,6 @@
       "End date": [
         "Koncové datum"
       ],
-      "Fill in the email address and text to test your link": [
-        "Chcete-li odkaz otestovat, zadejte e-mailovou adresu a text"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Vyplňte telefonní číslo a text pro otestování odkazu"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Chcete-li odkaz otestovat, zadejte URL adresu a text"
-      ],
       "Filter folders": [
         "Filtrovat složky"
       ],
@@ -6331,6 +6355,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Popište prosím problém a uveďte jakékoli chybové zprávy"
+      ],
+      "Please insert link first": [
+        "Nejdříve prosím vložte odkaz"
       ],
       "Proton username": [
         "Proton uživatelské jméno"
@@ -6658,11 +6685,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Odběr byl odhlášen"
+      "Unsubscribed from mailing list": [
+        "Odhlášení z mailing listu"
       ],
-      "Unsubscribing...": [
-        "Odhlašování..."
+      "Unsubscribing from mailing list...": [
+        "Odhlášení z mailing listu..."
       ]
     },
     "Step in filter modal": {
@@ -7106,9 +7133,6 @@
       "Addresses": [
         "Adresy"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Všichni příjemci byli přidáni do pole BCC a nelze je zveřejnit"
-      ],
       "Are you sure you want to close?": [
         "Opravdu chcete zavřít editor filtrů?"
       ],
@@ -7313,9 +7337,6 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
-      "Keyboard Shortcuts": [
-        "Klávesové zkratky"
-      ],
       "Label as": [
         "Označit jako"
       ],
@@ -7346,8 +7367,14 @@
       "Merging contacts": [
         "Slučování kontaktů"
       ],
+      "Message details": [
+        "Podrobnosti zprávy"
+      ],
       "Message list": [
         "Seznam zpráv"
+      ],
+      "Message will expire": [
+        "Platnost zprávy vyprší"
       ],
       "More": [
         "Více"
@@ -7424,6 +7451,9 @@
       "Recipient missing": [
         "Chybí příjemce"
       ],
+      "Recipients": [
+        "Příjemci"
+      ],
       "Recover data": [
         "Obnovit data"
       ],
@@ -7465,6 +7495,9 @@
       ],
       "Send without expiration?": [
         "Odeslat zprávu bez data vypršení platnosti?"
+      ],
+      "Sender": [
+        "Odesílatel"
       ],
       "Sender changed": [
         "Odesílatel byl změněn"

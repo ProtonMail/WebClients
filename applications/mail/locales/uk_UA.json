@@ -56,9 +56,6 @@
       "Add to group": [
         "Додати до групи"
       ],
-      "Address options": [
-        "Параметри адреси"
-      ],
       "Advanced search": [
         "Розширений пошук"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Застосувати"
+      ],
+      "Archive": [
+        "Архівувати"
       ],
       "Attachment": [
         "Вкладення"
@@ -353,6 +353,9 @@
       "Go to first page": [
         "Перейти на першу сторінку"
       ],
+      "Go to label": [
+        "Перейти до мітки"
+      ],
       "Go to last page": [
         "Перейти на останню сторінку"
       ],
@@ -458,6 +461,9 @@
       "Load": [
         "Завантажити"
       ],
+      "Load embedded images": [
+        "Завантажити вбудовані зображення"
+      ],
       "Load image": [
         "Завантажити зображення"
       ],
@@ -514,6 +520,9 @@
       ],
       "More": [
         "Більше"
+      ],
+      "More details about ${ title }": [
+        ""
       ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
@@ -641,6 +650,9 @@
       "Re-sign": [
         "Перепідписати"
       ],
+      "Read receipt sent": [
+        "Підтвердження прочитання надіслано"
+      ],
       "Recover data": [
         "Відновити дані"
       ],
@@ -731,8 +743,8 @@
       "send auto-reply email": [
         "надіслати лист з автоматичною відповіддю"
       ],
-      "Send receipt": [
-        "Надіслати квитанцію"
+      "Send read receipt": [
+        "Надіслати підтвердження прочитання"
       ],
       "Set": [
         "Встановити"
@@ -800,6 +812,9 @@
       "Some images could not be loaded with tracking protection": [
         "Деякі зображення неможливо завантажити з активним захистом від стеження"
       ],
+      "Star": [
+        "Позначити зірочкою"
+      ],
       "Start import": [
         "Розпочати імпорт"
       ],
@@ -848,6 +863,9 @@
       "Try another method": [
         "Спробувати інший спосіб"
       ],
+      "Turn on auto-load": [
+        ""
+      ],
       "Turn on tracker protection": [
         "Увімкнути захист від стеження"
       ],
@@ -866,8 +884,14 @@
       "Unordered list": [
         "Невпорядкований список"
       ],
+      "Unstar": [
+        "Прибрати зірочку"
+      ],
       "Unsubscribe": [
         "Відписатися"
+      ],
+      "Unsubscribe from mailing list": [
+        "Відписатися від розсилки"
       ],
       "Unsubscribing": [
         "Скасувати підписку"
@@ -923,6 +947,9 @@
       "View headers": [
         "Перегляд заголовків"
       ],
+      "View HTML": [
+        "Перегляд HTML"
+      ],
       "View invoice": [
         "Переглянути рахунок"
       ],
@@ -932,14 +959,14 @@
       "View message": [
         "Переглянути повідомлення"
       ],
+      "View message details": [
+        "Переглянути подробиці повідомлення"
+      ],
       "View recipients": [
         "Переглянути отримувачів"
       ],
       "View rendered HTML": [
         "Переглянути оброблений HTML"
-      ],
-      "View source code": [
-        "Переглянути програмний код"
       ],
       "Why not?": [
         "Чому б ні?"
@@ -2911,6 +2938,9 @@
       "Message processing error.": [
         "Помилка обробки повідомлення."
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Missing signature": [
         "Відсутній підпис"
       ],
@@ -4044,7 +4074,7 @@
         "Підтвердити звіт про шахрайство"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Продовжити з ${ planName }"
       ],
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
@@ -4189,6 +4219,21 @@
       ],
       "Expiration Time": [
         "Час завершення"
+      ],
+      "Expires": [
+        "Завершується"
+      ],
+      "Expires in ${ formattedDelay }": [
+        ""
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires soon": [
+        "Скоро завершується"
       ],
       "file attached": [
         "вкладений файл",
@@ -4532,9 +4577,6 @@
       "Saving draft…": [
         "Збереження чернетки…"
       ],
-      "Scheduled": [
-        "Заплановано"
-      ],
       "Scheduled send of this message will be cancelled.": [
         "Заплановане надсилання цього повідомлення буде скасовано."
       ],
@@ -4589,7 +4631,7 @@
       "Sorry, this message does not exist or has already expired": [
         "Перепрошуємо, цього повідомлення не існує, або термін його дії завершився"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Store and share files securely with Proton Drive.": [
@@ -4724,9 +4766,6 @@
       "This message will expire ${ formattedDate }": [
         "Термін дії цього повідомлення завершиться ${ formattedDate }"
       ],
-      "This message will expire in ${ formattedDelay }": [
-        "Термін дії цього повідомлення завершиться через ${ formattedDelay }"
-      ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "Термін дії цього повідомлення завершиться ${ dateString }, ${ formattedTime }"
       ],
@@ -4812,7 +4851,7 @@
         "Передплатіть тарифний план, щоб використовувати ProtonMail зі сторонніми комп'ютерними клієнтами."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Оновіть тарифний план сьогодні, щоб уникнути втрати цих переваг ${ appName } ${ planName }."
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -5046,9 +5085,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "Натискаючи \"Довіряти ключу\", створиться новий контакт і цей відкритий ключ буде пов'язано з цим відправником. Листи з цієї адреси автоматично вважатимуться криптографічно перевіреними."
       ],
-      "Do you want to trust the following public key?": [
-        "Ви хочете довіряти такому відкритому ключу?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Ви хочете довіряти основному відкритому ключу з таким цифровим відбитком?",
         "Ви хочете довіряти основним відкритим ключам з такими цифровими відбитками?",
@@ -5124,6 +5160,9 @@
       ],
       "Go to Trash": [
         "Перейти до Смітника"
+      ],
+      "Insert link": [
+        "Вставити посилання"
       ],
       "Jump to first": [
         "До першого"
@@ -5259,9 +5298,6 @@
       " and ${ l }": [
         " та ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } і ${ count } інших"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
       ],
@@ -5304,8 +5340,8 @@
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
       ],
-      "BCC:": [
-        "Прихована копія:"
+      "BCC": [
+        "Прихована копія"
       ],
       "Blind Carbon Copy": [
         "Прихована копія"
@@ -5331,8 +5367,8 @@
       "Category": [
         "Категорія"
       ],
-      "CC:": [
-        "Копія:"
+      "CC": [
+        "Копія"
       ],
       "City": [
         "Місто"
@@ -5444,9 +5480,6 @@
       ],
       "Label messages as": [
         "Позначити повідомлення"
-      ],
-      "Labels:": [
-        "Мітки:"
       ],
       "Last 12 months only": [
         "Лише останні 12 місяців"
@@ -6281,15 +6314,6 @@
       "End date": [
         "Дата завершення"
       ],
-      "Fill in the email address and text to test your link": [
-        "Введіть адресу е-пошти і текст, щоб перевірити ваше посилання"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Введіть номер телефону і текст, щоб перевірити ваше посилання"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Введіть посилання URL і текст, щоб перевірити ваше посилання"
-      ],
       "Filter folders": [
         "Фільтр тек"
       ],
@@ -6331,6 +6355,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Опишіть проблему та додайте повідомлення про помилку"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Proton username": [
         "Ім'я користувача Proton"
@@ -6636,7 +6663,7 @@
         "Ознайомтеся з усіма службами Proton"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Отримайте до 18 місяців ${ appName } ${ planName } безплатно"
       ],
       "Invite friends and earn rewards!": [
         "Запрошуйте друзів та отримуйте винагороди!"
@@ -6658,11 +6685,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Підписку скасовано"
+      "Unsubscribed from mailing list": [
+        "Відписатися від розсилки електронною поштою"
       ],
-      "Unsubscribing...": [
-        "Скасування підписки..."
+      "Unsubscribing from mailing list...": [
+        "Скасування підписки на розсилку електронною поштою..."
       ]
     },
     "Step in filter modal": {
@@ -7106,9 +7133,6 @@
       "Addresses": [
         "Адреси"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Всі одержувачі були додані в поле прихованої копії та їх не буде видно"
-      ],
       "Are you sure you want to close?": [
         "Ви дійсно хочете закрити?"
       ],
@@ -7313,9 +7337,6 @@
       "Invalid verification code": [
         "Недійсний код підтвердження"
       ],
-      "Keyboard Shortcuts": [
-        "Комбінації клавіш"
-      ],
       "Label as": [
         "Позначити міткою"
       ],
@@ -7346,8 +7367,14 @@
       "Merging contacts": [
         "Об'єднання контактів"
       ],
+      "Message details": [
+        ""
+      ],
       "Message list": [
         "Список повідомлень"
+      ],
+      "Message will expire": [
+        ""
       ],
       "More": [
         "Більше"
@@ -7424,6 +7451,9 @@
       "Recipient missing": [
         "Немає отримувача"
       ],
+      "Recipients": [
+        "Отримувачі"
+      ],
       "Recover data": [
         "Відновити дані"
       ],
@@ -7465,6 +7495,9 @@
       ],
       "Send without expiration?": [
         "Надіслати без терміну дії?"
+      ],
+      "Sender": [
+        "Відправник"
       ],
       "Sender changed": [
         "Відправника змінено"

@@ -56,9 +56,6 @@
       "Add to group": [
         "Dodaj u grupu"
       ],
-      "Address options": [
-        "Opcije adrese"
-      ],
       "Advanced search": [
         "Napredno pretraživanje"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Primijeni"
+      ],
+      "Archive": [
+        ""
       ],
       "Attachment": [
         "Prilog"
@@ -351,6 +351,9 @@
       "Go to first page": [
         "Idi na prvu stranicu"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to last page": [
         "Idi na posljednju stranicu"
       ],
@@ -455,6 +458,9 @@
       "Load": [
         "Učitaj"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load image": [
         "Učitaj sliku"
       ],
@@ -511,6 +517,9 @@
       ],
       "More": [
         "Više"
+      ],
+      "More details about ${ title }": [
+        ""
       ],
       "More info: ${ safeTitle }": [
         "Više informacija: ${ safeTitle }"
@@ -638,6 +647,9 @@
       "Re-sign": [
         "Ponovna prijava"
       ],
+      "Read receipt sent": [
+        ""
+      ],
       "Recover data": [
         "Oporavi podatke"
       ],
@@ -728,8 +740,8 @@
       "send auto-reply email": [
         "pošalji automatski odgovor"
       ],
-      "Send receipt": [
-        "Pošalji potvrdu"
+      "Send read receipt": [
+        ""
       ],
       "Set": [
         "Postavi"
@@ -797,6 +809,9 @@
       "Some images could not be loaded with tracking protection": [
         ""
       ],
+      "Star": [
+        ""
+      ],
       "Start import": [
         "Započni uvoz"
       ],
@@ -844,6 +859,9 @@
       "Try another method": [
         "Isprobajte drugu metodu"
       ],
+      "Turn on auto-load": [
+        ""
+      ],
       "Turn on tracker protection": [
         ""
       ],
@@ -862,8 +880,14 @@
       "Unordered list": [
         "Lista s grafičkim oznakama"
       ],
+      "Unstar": [
+        ""
+      ],
       "Unsubscribe": [
         "Otkaži pretplatu"
+      ],
+      "Unsubscribe from mailing list": [
+        ""
       ],
       "Unsubscribing": [
         "Otkazivanje pretplate"
@@ -919,6 +943,9 @@
       "View headers": [
         "Pregled zaglavlja"
       ],
+      "View HTML": [
+        ""
+      ],
       "View invoice": [
         "Prikaži fakturu"
       ],
@@ -928,14 +955,14 @@
       "View message": [
         "Prikaži poruku"
       ],
+      "View message details": [
+        ""
+      ],
       "View recipients": [
         "Prikaži primatelje"
       ],
       "View rendered HTML": [
         "Prikaz učitanog HTML-a"
-      ],
-      "View source code": [
-        "Prikaz izvornog koda"
       ],
       "Why not?": [
         ""
@@ -2896,6 +2923,9 @@
       "Message processing error.": [
         "Pogreška pri obradi poruke."
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Missing signature": [
         "Nedostaje potpis"
       ],
@@ -4123,6 +4153,21 @@
       "Expiration Time": [
         "Vrijeme isteka"
       ],
+      "Expires": [
+        ""
+      ],
+      "Expires in ${ formattedDelay }": [
+        ""
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        ""
+      ],
+      "Expires soon": [
+        ""
+      ],
       "file attached": [
         "privitak dodan",
         "privitka dodana",
@@ -4461,9 +4506,6 @@
       "Saving draft…": [
         "Spremanje skice…"
       ],
-      "Scheduled": [
-        "Zakazano"
-      ],
       "Scheduled send of this message will be cancelled.": [
         ""
       ],
@@ -4518,7 +4560,7 @@
       "Sorry, this message does not exist or has already expired": [
         ""
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Store and share files securely with Proton Drive.": [
@@ -4651,9 +4693,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Poruka istječe ${ formattedDate }"
-      ],
-      "This message will expire in ${ formattedDelay }": [
-        "Poruka istječe za ${ formattedDelay }"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         ""
@@ -4966,9 +5005,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "Pritiskom na \"Ključ povjerenja\" stvoriti će se novi kontakt i javni ključ će se pridružiti \novom pošiljatelju. E-poruke s te adrese automatski će biti kriptografski potvrđene."
       ],
-      "Do you want to trust the following public key?": [
-        "Želite li vjerovati sljedećem javnom ključu?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Želite li vjerovati primarnom javnom ključu s sljedećim otiskom prsta?",
         "Želite li vjerovati primarnim javnim ključevima s sljedećim otiscima prsta?",
@@ -5042,6 +5078,9 @@
       ],
       "Go to Trash": [
         "Idi u Otpad"
+      ],
+      "Insert link": [
+        ""
       ],
       "Jump to first": [
         "Preskoči na prvo"
@@ -5177,9 +5216,6 @@
       " and ${ l }": [
         " i ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } i ${ count } drugih"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
@@ -5222,8 +5258,8 @@
       "Automatically save contacts": [
         "Automatsko spremanje kontakata"
       ],
-      "BCC:": [
-        "BCC:"
+      "BCC": [
+        ""
       ],
       "Blind Carbon Copy": [
         "Slijepa indigo kopija"
@@ -5249,8 +5285,8 @@
       "Category": [
         "Kategorija"
       ],
-      "CC:": [
-        "CC:"
+      "CC": [
+        ""
       ],
       "City": [
         "Grad"
@@ -5362,9 +5398,6 @@
       ],
       "Label messages as": [
         ""
-      ],
-      "Labels:": [
-        "Oznake:"
       ],
       "Last 12 months only": [
         ""
@@ -6194,15 +6227,6 @@
       "End date": [
         "Krajnji datum"
       ],
-      "Fill in the email address and text to test your link": [
-        "Unesite adresu e-pošte i tekst kako biste testirali vezu"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Unesite broj telefona i tekst kako biste testirali vezu"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Unesite URL poveznicu i tekst kako biste testirali vezu"
-      ],
       "Filter folders": [
         "Filtriraj mape"
       ],
@@ -6244,6 +6268,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Proton username": [
         "Proton korisničko ime"
@@ -6563,11 +6590,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Otkazana pretplata"
+      "Unsubscribed from mailing list": [
+        ""
       ],
-      "Unsubscribing...": [
-        "Otkazivanje pretplate..."
+      "Unsubscribing from mailing list...": [
+        ""
       ]
     },
     "Step in filter modal": {
@@ -6980,9 +7007,6 @@
       "Addresses": [
         "Adrese"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Svi primatelji su dodani u BCC polje i ne može ih se otkriti"
-      ],
       "Are you sure you want to close?": [
         "Jeste li sigurni da želite zatvoriti?"
       ],
@@ -7182,9 +7206,6 @@
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
       ],
-      "Keyboard Shortcuts": [
-        "Tipkovni prečaci"
-      ],
       "Label as": [
         "Označi kao"
       ],
@@ -7215,8 +7236,14 @@
       "Merging contacts": [
         "Spajanje kontakta"
       ],
+      "Message details": [
+        ""
+      ],
       "Message list": [
         "Popis poruka"
+      ],
+      "Message will expire": [
+        ""
       ],
       "More": [
         "Više"
@@ -7293,6 +7320,9 @@
       "Recipient missing": [
         ""
       ],
+      "Recipients": [
+        ""
+      ],
       "Recover data": [
         "Oporavi podatke"
       ],
@@ -7334,6 +7364,9 @@
       ],
       "Send without expiration?": [
         "Pošalji bez isteka?"
+      ],
+      "Sender": [
+        ""
       ],
       "Sender changed": [
         ""

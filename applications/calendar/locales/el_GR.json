@@ -199,6 +199,9 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Μεταβείτε στο πίνακα ελέγχου ${ index }"
       ],
@@ -2092,6 +2095,9 @@
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του Proton"
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
@@ -2517,8 +2523,8 @@
       "no": [
         "όχι"
       ],
-      "unanswered": [
-        "αναπάντητος"
+      "pending": [
+        ""
       ],
       "yes": [
         "ναι"
@@ -2863,7 +2869,7 @@
         "Κλείστε αυτήν την οθόνη για έξοδο."
       ],
       "Continue with ${ planName }": [
-        ""
+        "Συνέχεια με ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Δημιουργήστε ${ calendarsToBeCreated } νέο ημερολόγιο",
@@ -3078,10 +3084,10 @@
         "Κύριο"
       ],
       "Priority support": [
-        ""
+        "Υποστήριξη κατά προτεραιότητα"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
@@ -3111,7 +3117,7 @@
         "Μερικές από τις απαντήσεις σας σε περιστατικά που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα χαθούν."
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Ξεκινήστε με 500 MB και ξεκλειδώστε περισσότερο αποθηκευτικό χώρο στην πορεία. Ο χώρος μοιράζεται μεταξύ Θυρίδας, Ημερολογίου, και Αρχειοθήκης."
       ],
       "Support for 1 custom email domain": [
         ""
@@ -3189,7 +3195,7 @@
         "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
       ],
       "Unlimited messages": [
-        ""
+        "Aπεριόριστα μηνύματα"
       ],
       "Update recurring event": [
         "Ενημέρωση επαναλαμβανόμενου συμβάντος"
@@ -4346,7 +4352,7 @@
         ""
       ],
       "No more missed appointments": [
-        ""
+        "Όχι άλλα χαμένα ραντεβού"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         ""

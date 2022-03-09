@@ -56,9 +56,6 @@
       "Add to group": [
         "Aggiungi ad un gruppo"
       ],
-      "Address options": [
-        "Opzioni dell'indirizzo"
-      ],
       "Advanced search": [
         "Ricerca avanzata"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Applica"
+      ],
+      "Archive": [
+        "Archivio"
       ],
       "Attachment": [
         "Allegato"
@@ -349,6 +349,9 @@
       "Go to first page": [
         "Vai alla prima pagina"
       ],
+      "Go to label": [
+        "Vai all'etichetta"
+      ],
       "Go to last page": [
         "Vai all'ultima pagina"
       ],
@@ -452,6 +455,9 @@
       "Load": [
         "Carica"
       ],
+      "Load embedded images": [
+        "Carica immagini incorporate"
+      ],
       "Load image": [
         "Carica Immagine"
       ],
@@ -508,6 +514,9 @@
       ],
       "More": [
         "Altro"
+      ],
+      "More details about ${ title }": [
+        "Maggiori dettagli su ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
@@ -635,6 +644,9 @@
       "Re-sign": [
         "Ri-firma"
       ],
+      "Read receipt sent": [
+        "Conferma di lettura inviata"
+      ],
       "Recover data": [
         "Recupera dati"
       ],
@@ -725,8 +737,8 @@
       "send auto-reply email": [
         "invia email di risposta automatica"
       ],
-      "Send receipt": [
-        "Invia ricevuta"
+      "Send read receipt": [
+        "Invia ricevuta di lettura"
       ],
       "Set": [
         "Imposta"
@@ -794,6 +806,9 @@
       "Some images could not be loaded with tracking protection": [
         "Non è stato possibile caricare alcune immagini con la protezione da tracciamento"
       ],
+      "Star": [
+        "Preferito"
+      ],
       "Start import": [
         "Avvia importazione"
       ],
@@ -840,6 +855,9 @@
       "Try another method": [
         "Prova un altro metodo"
       ],
+      "Turn on auto-load": [
+        "Attiva il caricamento automatico"
+      ],
       "Turn on tracker protection": [
         "Attiva la protezione del tracker"
       ],
@@ -858,8 +876,14 @@
       "Unordered list": [
         "Lista non ordinata"
       ],
+      "Unstar": [
+        "Rimuovi dai Preferiti"
+      ],
       "Unsubscribe": [
         "Disiscriviti"
+      ],
+      "Unsubscribe from mailing list": [
+        "Annulla iscrizione alla mailing list"
       ],
       "Unsubscribing": [
         "Disiscrizione"
@@ -915,6 +939,9 @@
       "View headers": [
         "Visualizza intestazioni"
       ],
+      "View HTML": [
+        "Mostra HTML"
+      ],
       "View invoice": [
         "Visualizza fattura"
       ],
@@ -924,14 +951,14 @@
       "View message": [
         "Visualizza il messaggio"
       ],
+      "View message details": [
+        "Visualizza i dettagli del messaggio"
+      ],
       "View recipients": [
         "Visualizza destinatari"
       ],
       "View rendered HTML": [
         "Visualizza HTML renderizzato"
-      ],
-      "View source code": [
-        "Visualizza codice sorgente"
       ],
       "Why not?": [
         "Perché no?"
@@ -2881,6 +2908,9 @@
       "Message processing error.": [
         "Errore elaborazione messaggio."
       ],
+      "Missing key packet": [
+        "Pacchetto chiavi mancante"
+      ],
       "Missing signature": [
         "Firma mancante"
       ],
@@ -4056,6 +4086,21 @@
       "Expiration Time": [
         "Orario di scadenza"
       ],
+      "Expires": [
+        "Scade"
+      ],
+      "Expires in ${ formattedDelay }": [
+        "Scade tra ${ formattedDelay }"
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        "Scade tra ${ formattedDelayShort }"
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        "Scade tra meno di ${ formattedDelayShort }"
+      ],
+      "Expires soon": [
+        "Scade a breve"
+      ],
       "file attached": [
         "file allegato",
         "file allegati"
@@ -4390,9 +4435,6 @@
       "Saving draft…": [
         "Salvando la bozza…"
       ],
-      "Scheduled": [
-        "Pianificato"
-      ],
       "Scheduled send of this message will be cancelled.": [
         "L'invio programmato di questo messaggio verrà annullato."
       ],
@@ -4447,8 +4489,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Siamo spiacenti, questo messaggio non esiste o è già scaduto"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Inizia con 500 MB e sblocca più spazio di archiviazione lungo il percorso. Lo spazio di archiviazione è condiviso tra Mail, Calendar e Drive."
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Lo spazio di archiviazione è condiviso tra Mail, Calendar e Drive."
       ],
       "Store and share files securely with Proton Drive.": [
         "Archivia e condividi file in sicurezza con Proton Drive."
@@ -4579,9 +4621,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Questo messaggio scadrà ${ formattedDate }"
-      ],
-      "This message will expire in ${ formattedDelay }": [
-        "Questo messaggio scadrà in ${ formattedDelay }"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "Questo messaggio scadrà il ${ dateString } alle ${ formattedTime }"
@@ -4886,9 +4925,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "Cliccando su \"Considera affidabile la chiave\" verrà creato un nuovo contatto e verrà associata questa chiave pubblica a questo mittente. Le email da questo indirizzo saranno verificate crittograficamente in automatico."
       ],
-      "Do you want to trust the following public key?": [
-        "Ti vuoi fidare della seguente chiave pubblica?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Vuoi fidarti della chiave pubblica primaria con la seguente impronta digitale?",
         "Vuoi fidarti delle chiavi pubbliche primarie con le seguenti impronte digitali?"
@@ -4960,6 +4996,9 @@
       ],
       "Go to Trash": [
         "Vai al Cestino"
+      ],
+      "Insert link": [
+        "Inserisci link"
       ],
       "Jump to first": [
         "Vai al primo"
@@ -5095,9 +5134,6 @@
       " and ${ l }": [
         " e ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } e ${ count } altri"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
       ],
@@ -5140,8 +5176,8 @@
       "Automatically save contacts": [
         "Salvataggio automatico dei contatti"
       ],
-      "BCC:": [
-        "CCN:"
+      "BCC": [
+        "CCN"
       ],
       "Blind Carbon Copy": [
         "Copia conoscenza nascosta"
@@ -5167,8 +5203,8 @@
       "Category": [
         "Categoria"
       ],
-      "CC:": [
-        "CC:"
+      "CC": [
+        "CC"
       ],
       "City": [
         "Città"
@@ -5280,9 +5316,6 @@
       ],
       "Label messages as": [
         "Etichetta messaggi come"
-      ],
-      "Labels:": [
-        "Etichette:"
       ],
       "Last 12 months only": [
         "Solo gli ultimi 12 mesi"
@@ -6107,15 +6140,6 @@
       "End date": [
         "Data di fine"
       ],
-      "Fill in the email address and text to test your link": [
-        "Inserisci l'indirizzo email e il testo per testare il tuo link"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Inserisci il numero di telefono e il testo per testare il tuo link"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Inserisci il link URL e il testo per testare il tuo link"
-      ],
       "Filter folders": [
         "Filtra cartelle"
       ],
@@ -6157,6 +6181,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Per favore descrivi il problema e includi eventuali messaggi di errore"
+      ],
+      "Please insert link first": [
+        "Inserisci prima il collegamento"
       ],
       "Proton username": [
         "Nome utente di Proton"
@@ -6468,11 +6495,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Abbonamento annullato"
+      "Unsubscribed from mailing list": [
+        "Cancellato dalla mailing list"
       ],
-      "Unsubscribing...": [
-        "Annullamento Iscrizione..."
+      "Unsubscribing from mailing list...": [
+        "Cancellazione dalla mailing list..."
       ]
     },
     "Step in filter modal": {
@@ -6854,9 +6881,6 @@
       "Addresses": [
         "Indirizzi"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Tutti i destinatari sono stati aggiunti al campo CNN e non sono divulgabili"
-      ],
       "Are you sure you want to close?": [
         "Confermi di voler chiudere?"
       ],
@@ -7051,9 +7075,6 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
-      "Keyboard Shortcuts": [
-        "Scorciatoie da tastiera"
-      ],
       "Label as": [
         "Etichetta come"
       ],
@@ -7084,8 +7105,14 @@
       "Merging contacts": [
         "Unendo i contatti"
       ],
+      "Message details": [
+        "Dettagli del messaggio"
+      ],
       "Message list": [
         "Elenco messaggi"
+      ],
+      "Message will expire": [
+        "Il messaggio scadrà"
       ],
       "More": [
         "Altro"
@@ -7162,6 +7189,9 @@
       "Recipient missing": [
         "Destinatario mancante"
       ],
+      "Recipients": [
+        "Destinatari"
+      ],
       "Recover data": [
         "Recupera dati"
       ],
@@ -7203,6 +7233,9 @@
       ],
       "Send without expiration?": [
         "Inviare senza scadenza?"
+      ],
+      "Sender": [
+        "Mittente"
       ],
       "Sender changed": [
         "Mittente modificato"

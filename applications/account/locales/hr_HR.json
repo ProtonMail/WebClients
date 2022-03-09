@@ -355,6 +355,9 @@
       "Get verification code": [
         "Nabavi kôd za provjeru"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
@@ -970,6 +973,11 @@
       ],
       "Unsupported event": [
         "Događaj nije podržan"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2658,6 +2666,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
         "",
+        ""
+      ],
+      "Missing key packet": [
         ""
       ],
       "Name does not match": [
@@ -4467,7 +4478,7 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Unesite svoj telefonski broj za oporavak i poslat ćemo vam vaše korisničko ime ili adresu e-pošte."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
+      "Event invitations and RSVPs will be sent in this language.": [
         ""
       ],
       "Expired": [
@@ -4742,8 +4753,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru čita vaše osobne podatke kako bi omogućio pristup oglašivačima, ruskim obavještajnim agencijama i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Obavezno zapamtite lozinku za prijavu i dešifriranje e-pošte. ${ boldAlert }. Preporučujemo da prvo dodate adresu e-pošte za oporavak."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ _switchButton }."
@@ -4958,8 +4969,8 @@
       "Proton Calendar": [
         ""
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton vam ne može pomoći da vratite izgubljene lozinke"
+      "Proton can't help you recover any lost passwords.": [
+        ""
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton je pauzirao uvoz jer je izgubio vezu s vašim drugim davateljem usluga e-pošte. Ponovo se povežite."
@@ -5009,6 +5020,9 @@
         ""
       ],
       "Recovery files have been voided": [
+        ""
+      ],
+      "recovery method": [
         ""
       ],
       "Recovery phrase copied to clipboard": [
@@ -5075,6 +5089,9 @@
         ""
       ],
       "Set recovery phrase": [
+        ""
+      ],
+      "Show original message": [
         ""
       ],
       "Signed up": [
@@ -5509,6 +5526,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosegli ste 100% svog prostora za pohranu. Ne možete slati ni primati nove e-poruke. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Na vašem ${ BRAND_NAME } računu ćete ${ loseAllData }. Da biste vratili, morati ćete unijeti staru lozinku."
       ],
@@ -5833,6 +5853,9 @@
       ],
       "Go to Trash": [
         "Idi u Otpad"
+      ],
+      "Insert link": [
+        ""
       ],
       "Jump to first": [
         "Preskoči na prvo"
@@ -6586,8 +6609,8 @@
       "Send auto-reply": [
         "Pošalji automatski odgovor"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "Prikaži sekundarnu vremensku zonu"
@@ -7793,15 +7816,6 @@
       "Feedback": [
         "Povratne informacije"
       ],
-      "Fill in the email address and text to test your link": [
-        "Unesite adresu e-pošte i tekst kako biste testirali vezu"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Unesite broj telefona i tekst kako biste testirali vezu"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Unesite URL poveznicu i tekst kako biste testirali vezu"
-      ],
       "Gift code": [
         "Darovni kôd"
       ],
@@ -7828,6 +7842,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Postal code": [
         "Poštanski broj"
@@ -9010,9 +9027,6 @@
       ],
       "Invoices": [
         "Fakture"
-      ],
-      "Keyboard Shortcuts": [
-        "Tipkovni prečaci"
       ],
       "Labels": [
         "Oznake"

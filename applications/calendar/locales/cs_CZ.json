@@ -84,7 +84,7 @@
         "Zavřít"
       ],
       "Close event popover": [
-        ""
+        "Zavřít okno události"
       ],
       "Close modal": [
         "Zavřít okno"
@@ -202,6 +202,9 @@
       ],
       "Get verification code": [
         "Odeslat ověřovací kód"
+      ],
+      "Go to label": [
+        "Přejít na štítek"
       ],
       "Go to panel ${ index }": [
         "Přejít na panel ${ index }"
@@ -411,7 +414,7 @@
         "Spustit nastavení"
       ],
       "Stay": [
-        ""
+        "Zůstat"
       ],
       "Submit": [
         "Odeslat"
@@ -561,7 +564,7 @@
         "${ title } začíná dnes"
       ],
       "${ title } starts tomorrow": [
-        ""
+        "${ title } začne zítra"
       ],
       "${ title } starts tomorrow at ${ formattedHour }": [
         ""
@@ -591,27 +594,27 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Prázdný soubor ICS"
       ],
       "Invalid event": [
-        ""
+        "Neplatná událost"
       ],
       "Invalid ICS file": [
-        ""
+        "Neplatný ICS soubor"
       ],
       "Invalid method": [
-        ""
+        "Neplatná metoda"
       ],
       "Unsupported calendar component": [
-        ""
+        "Nepodporovaný komponent kalendáře"
       ],
       "Unsupported event": [
-        ""
+        "Událost není podporována"
       ]
     },
     "Attendee role": {
       "Optional": [
-        ""
+        "Volitelné"
       ]
     },
     "Beta access description": {
@@ -796,15 +799,15 @@
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        ""
+        "Zúčastníte se?"
       ]
     },
     "Calendar invite info": {
       "${ name } accepted the invitation": [
-        ""
+        "${ name } přijal(a) vaši pozvánku"
       ],
       "${ name } declined the invitation": [
-        ""
+        "${ name } odmítnul(a) vaši pozvánku"
       ],
       "${ name } hasn't answered the invitation yet": [
         ""
@@ -813,13 +816,13 @@
         ""
       ],
       "This event has been canceled": [
-        ""
+        "Tato událost byla zrušena"
       ],
       "You accepted the invitation": [
         "Přijal(a) jste pozvání"
       ],
       "You declined the invitation": [
-        ""
+        "Odmítnul(a) jste pozvánku"
       ],
       "You haven't answered the invitation yet": [
         "Dosud jste neodpověděl(a) na pozvánku"
@@ -830,10 +833,10 @@
     },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
-        ""
+        "Přidat kalendář z URL"
       ],
       "More options": [
-        ""
+        "Více možností"
       ]
     },
     "Calendar status": {
@@ -846,7 +849,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "Kalendář se nepodařilo dešifrovat"
       ],
       "Calendar is syncing": [
         "Kalendář se synchronizuje"
@@ -883,20 +886,20 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Zavřít"
       ],
       "Open": [
-        ""
+        "Otevřít"
       ]
     },
     "colon": {
       ": ": [
-        ""
+        ": "
       ]
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Ukončit přizpůsobení importu?"
       ]
     },
     "Contact field label": {
@@ -983,774 +986,774 @@
     },
     "Country name": {
       "Abkhazia": [
-        ""
+        "Abcházie"
       ],
       "Afghanistan": [
-        ""
+        "Afghánistán"
       ],
       "Albania": [
-        ""
+        "Albánie"
       ],
       "Algeria": [
-        ""
+        "Alžírsko"
       ],
       "American Samoa": [
-        ""
+        "Americká Samoa"
       ],
       "Andorra": [
-        ""
+        "Andora"
       ],
       "Angola": [
-        ""
+        "Angola"
       ],
       "Anguilla": [
-        ""
+        "Anguilla"
       ],
       "Antarctica": [
-        ""
+        "Antarktida"
       ],
       "Antigua and Barbuda": [
-        ""
+        "Antigua a Barbuda"
       ],
       "Argentina": [
-        ""
+        "Argentina"
       ],
       "Armenia": [
-        ""
+        "Arménie"
       ],
       "Aruba": [
-        ""
+        "Aruba"
       ],
       "Ascension Island": [
-        ""
+        "Ostrov Ascension"
       ],
       "Australia": [
-        ""
+        "Austrálie"
       ],
       "Austria": [
-        ""
+        "Rakousko"
       ],
       "Azerbaijan": [
-        ""
+        "Ázerbájdžán"
       ],
       "Bahamas": [
-        ""
+        "Bahamy"
       ],
       "Bahrain": [
-        ""
+        "Bahrajn"
       ],
       "Bangladesh": [
-        ""
+        "Bangladéš"
       ],
       "Barbados": [
-        ""
+        "Barbados"
       ],
       "Belarus": [
-        ""
+        "Bělorusko"
       ],
       "Belgium": [
-        ""
+        "Belgie"
       ],
       "Belize": [
-        ""
+        "Belize"
       ],
       "Benin": [
-        ""
+        "Benin"
       ],
       "Bermuda": [
-        ""
+        "Bermudy"
       ],
       "Bhutan": [
-        ""
+        "Bhútán"
       ],
       "Bolivia": [
-        ""
+        "Bolívie"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        ""
+        "Bonaire, Svatý Eustach a Saba"
       ],
       "Bosnia and Herzegovina": [
-        ""
+        "Bosna a Hercegovina"
       ],
       "Botswana": [
-        ""
+        "Botswana"
       ],
       "Bouvet Island": [
-        ""
+        "Bouvetův ostrov"
       ],
       "Brazil": [
-        ""
+        "Brazílie"
       ],
       "British Indian Ocean Territory": [
-        ""
+        "Britské indickooceánské území"
       ],
       "Brunei Darussalam": [
-        ""
+        "Brunej Darussalam"
       ],
       "Bulgaria": [
-        ""
+        "Bulharsko"
       ],
       "Burkina Faso": [
-        ""
+        "Burkina Faso"
       ],
       "Burma": [
-        ""
+        "Barma"
       ],
       "Burundi": [
-        ""
+        "Burundi"
       ],
       "Cambodia": [
-        ""
+        "Kambodža"
       ],
       "Cameroon": [
-        ""
+        "Kamerun"
       ],
       "Canada": [
-        ""
+        "Kanada"
       ],
       "Cape Verde": [
-        ""
+        "Kapverdské ostrovy"
       ],
       "Cayman Islands": [
-        ""
+        "Kajmanské ostrovy"
       ],
       "Central African Republic": [
-        ""
+        "Středoafrická republika"
       ],
       "Chad": [
-        ""
+        "Čad"
       ],
       "Chile": [
-        ""
+        "Chile"
       ],
       "China": [
-        ""
+        "Čína"
       ],
       "Christmas Island": [
-        ""
+        "Vánoční ostrov"
       ],
       "Cocos (Keeling) Islands": [
-        ""
+        "Kokosové (Keelingovy) ostrovy"
       ],
       "Colombia": [
-        ""
+        "Kolumbie"
       ],
       "Comoros": [
-        ""
+        "Komory"
       ],
       "Congo": [
-        ""
+        "Kongo"
       ],
       "Congo, Democratic Republic of the": [
-        ""
+        "Demokratická republika Kongo"
       ],
       "Cook Islands": [
-        ""
+        "Cookovy ostrovy"
       ],
       "Costa Rica": [
-        ""
+        "Kostarika"
       ],
       "Cote d'Ivoire\"": [
-        ""
+        "Pobřeží slonoviny"
       ],
       "Croatia": [
-        ""
+        "Chorvatsko"
       ],
       "Cuba": [
-        ""
+        "Kuba"
       ],
       "Curaçao": [
-        ""
+        "Curaçao"
       ],
       "Cyprus": [
-        ""
+        "Kypr"
       ],
       "Czech Republic": [
-        ""
+        "Česká republika"
       ],
       "Denmark": [
-        ""
+        "Dánsko"
       ],
       "Djibouti": [
-        ""
+        "Džibutsko"
       ],
       "Dominica": [
-        ""
+        "Dominika"
       ],
       "Dominican Republic": [
-        ""
+        "Dominikánská republika"
       ],
       "Ecuador": [
-        ""
+        "Ekvádor"
       ],
       "Egypt": [
-        ""
+        "Egypt"
       ],
       "El Salvador": [
-        ""
+        "Salvador"
       ],
       "Equatorial Guinea": [
-        ""
+        "Rovníková Guinea"
       ],
       "Eritrea": [
-        ""
+        "Eritrea"
       ],
       "Estonia": [
-        ""
+        "Estonsko"
       ],
       "Ethiopia": [
-        ""
+        "Etiopie"
       ],
       "Falkland Islands": [
-        ""
+        "Falklandské ostrovy"
       ],
       "Faroe Islands": [
-        ""
+        "Faerské ostrovy"
       ],
       "Federated States of Micronesia": [
-        ""
+        "Federativní státy Mikronésie"
       ],
       "Fiji": [
-        ""
+        "Fidži"
       ],
       "Finland": [
-        ""
+        "Finsko"
       ],
       "France": [
-        ""
+        "Francie"
       ],
       "French Guiana": [
-        ""
+        "Francouzská Guyana"
       ],
       "French Polynesia": [
-        ""
+        "Francouzská Polynésie"
       ],
       "French Southern Territories": [
-        ""
+        "Francouzská jižní území"
       ],
       "Gabon": [
-        ""
+        "Gabon"
       ],
       "Gambia": [
-        ""
+        "Gambie"
       ],
       "Georgia": [
-        ""
+        "Gruzie"
       ],
       "Germany": [
-        ""
+        "Německo"
       ],
       "Ghana": [
-        ""
+        "Ghana"
       ],
       "Gibraltar": [
-        ""
+        "Gibraltar"
       ],
       "Greece": [
-        ""
+        "Řecko"
       ],
       "Greenland": [
-        ""
+        "Grónsko"
       ],
       "Grenada": [
-        ""
+        "Grenada"
       ],
       "Guadeloupe": [
-        ""
+        "Guadeloupe"
       ],
       "Guam": [
-        ""
+        "Guam"
       ],
       "Guatemala": [
-        ""
+        "Guatemala"
       ],
       "Guernsey": [
-        ""
+        "Guernsey"
       ],
       "Guinea": [
-        ""
+        "Guinea"
       ],
       "Guinea-Bissau": [
-        ""
+        "Guinea-Bissau"
       ],
       "Guyana": [
-        ""
+        "Guyana"
       ],
       "Haiti": [
-        ""
+        "Haiti"
       ],
       "Heard Island and McDonald Islands": [
-        ""
+        "Heardův ostrov a McDonaldovy ostrovy"
       ],
       "Holy See (Vatican City State)": [
-        ""
+        "Svatý stolec (Vatikánský městský stát)"
       ],
       "Honduras": [
-        ""
+        "Honduras"
       ],
       "Hong Kong": [
-        ""
+        "Hong Kong"
       ],
       "Hungary": [
-        ""
+        "Maďarsko"
       ],
       "Iceland": [
-        ""
+        "Island"
       ],
       "India": [
-        ""
+        "Indie"
       ],
       "Indonesia": [
-        ""
+        "Indonésie"
       ],
       "International": [
-        ""
+        "Mezinárodní"
       ],
       "Iran": [
-        ""
+        "Írán"
       ],
       "Iraq": [
-        ""
+        "Irák"
       ],
       "Ireland": [
-        ""
+        "Irsko"
       ],
       "Isle of Man": [
-        ""
+        "Ostrov Man"
       ],
       "Israel": [
-        ""
+        "Izrael"
       ],
       "Italy": [
-        ""
+        "Itálie"
       ],
       "Jamaica": [
-        ""
+        "Jamajka"
       ],
       "Japan": [
-        ""
+        "Japonsko"
       ],
       "Jersey": [
-        ""
+        "Jersey"
       ],
       "Jordan": [
-        ""
+        "Jordánsko"
       ],
       "Kazakhstan": [
-        ""
+        "Kazachstán"
       ],
       "Kenya": [
-        ""
+        "Keňa"
       ],
       "Kiribati": [
-        ""
+        "Kiribati"
       ],
       "Kosovo": [
-        ""
+        "Kosovo"
       ],
       "Kuwait": [
-        ""
+        "Kuvajt"
       ],
       "Kyrgyzstan": [
-        ""
+        "Kyrgyzstán"
       ],
       "Laos": [
-        ""
+        "Laos"
       ],
       "Latvia": [
-        ""
+        "Lotyšsko"
       ],
       "Lebanon": [
-        ""
+        "Libanon"
       ],
       "Lesotho": [
-        ""
+        "Lesotho"
       ],
       "Liberia": [
-        ""
+        "Libérie"
       ],
       "Libya": [
-        ""
+        "Libye"
       ],
       "Liechtenstein": [
-        ""
+        "Lichtenštejnsko"
       ],
       "Lithuania": [
-        ""
+        "Litva"
       ],
       "Luxembourg": [
-        ""
+        "Lucembursko"
       ],
       "Macao": [
-        ""
+        "Macao"
       ],
       "Madagascar": [
-        ""
+        "Madagaskar"
       ],
       "Malawi": [
-        ""
+        "Malawi"
       ],
       "Malaysia": [
-        ""
+        "Malajsie"
       ],
       "Maldives": [
-        ""
+        "Maledivy"
       ],
       "Mali": [
-        ""
+        "Mali"
       ],
       "Malta": [
-        ""
+        "Malta"
       ],
       "Marshall Islands": [
-        ""
+        "Marshallovy ostrovy"
       ],
       "Martinique": [
-        ""
+        "Martinik"
       ],
       "Mauritania": [
-        ""
+        "Mauretánie"
       ],
       "Mauritius": [
-        ""
+        "Mauricius"
       ],
       "Mayotte": [
-        ""
+        "Mayotte"
       ],
       "Mexico": [
-        ""
+        "Mexiko"
       ],
       "Moldova": [
-        ""
+        "Moldavsko"
       ],
       "Monaco": [
-        ""
+        "Monako"
       ],
       "Mongolia": [
-        ""
+        "Mongolsko"
       ],
       "Montenegro": [
-        ""
+        "Černá Hora"
       ],
       "Montserrat": [
-        ""
+        "Montserrat"
       ],
       "Morocco": [
-        ""
+        "Maroko"
       ],
       "Mozambique": [
-        ""
+        "Mosambik"
       ],
       "Namibia": [
-        ""
+        "Namibie"
       ],
       "Nauru": [
-        ""
+        "Nauru"
       ],
       "Nepal": [
-        ""
+        "Nepál"
       ],
       "Netherlands": [
-        ""
+        "Nizozemsko"
       ],
       "New Caledonia": [
-        ""
+        "Nová Kaledonie"
       ],
       "New Zealand": [
-        ""
+        "Nový Zéland"
       ],
       "Nicaragua": [
-        ""
+        "Nikaragua"
       ],
       "Niger": [
-        ""
+        "Niger"
       ],
       "Nigeria": [
-        ""
+        "Nigérie"
       ],
       "Niue": [
-        ""
+        "Niue"
       ],
       "Norfolk Island": [
-        ""
+        "Norfolk"
       ],
       "North Korea": [
-        ""
+        "Severní Korea"
       ],
       "North Macedonia": [
-        ""
+        "Severní Makedonie"
       ],
       "Northern Mariana Islands": [
-        ""
+        "Severní Mariany"
       ],
       "Norway": [
-        ""
+        "Norsko"
       ],
       "Oman": [
-        ""
+        "Omán"
       ],
       "Pakistan": [
-        ""
+        "Pákistán"
       ],
       "Palau": [
-        ""
+        "Palau"
       ],
       "Palestine": [
-        ""
+        "Palestina"
       ],
       "Panama": [
-        ""
+        "Panama"
       ],
       "Papua New Guinea": [
-        ""
+        "Papua-Nová Guinea"
       ],
       "Paraguay": [
-        ""
+        "Paraguay"
       ],
       "Peru": [
-        ""
+        "Peru"
       ],
       "Philippines": [
-        ""
+        "Filipíny"
       ],
       "Pitcairn": [
-        ""
+        "Pitcairn"
       ],
       "Poland": [
-        ""
+        "Polsko"
       ],
       "Portugal": [
-        ""
+        "Portugalsko"
       ],
       "Puerto Rico": [
-        ""
+        "Portoriko"
       ],
       "Qatar": [
-        ""
+        "Katar"
       ],
       "Reunion": [
-        ""
+        "Réunion"
       ],
       "Romania": [
-        ""
+        "Rumunsko"
       ],
       "Russia": [
-        ""
+        "Rusko"
       ],
       "Rwanda": [
-        ""
+        "Rwanda"
       ],
       "Saint Barthélemy": [
-        ""
+        "Svatý Bartoloměj"
       ],
       "Saint Helena": [
-        ""
+        "Svatá Helena"
       ],
       "Saint Kitts and Nevis": [
-        ""
+        "Svatý Kryštof a Nevis"
       ],
       "Saint Lucia": [
-        ""
+        "Svatá Lucie"
       ],
       "Saint Martin (French Part)": [
-        ""
+        "Svatý Martin (francouzská část)"
       ],
       "Saint Pierre and Miquelon": [
-        ""
+        "Saint-Pierre a Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        ""
+        "Svatý Vincenc a Grenadiny"
       ],
       "Samoa": [
-        ""
+        "Samoa"
       ],
       "San Marino": [
-        ""
+        "San Marino"
       ],
       "Sao Tome and Principe": [
-        ""
+        "Svatý Tomáš a Princův ostrov"
       ],
       "Saudi Arabia": [
-        ""
+        "Saúdská Arábie"
       ],
       "Senegal": [
-        ""
+        "Senegal"
       ],
       "Serbia": [
-        ""
+        "Srbsko"
       ],
       "Seychelles": [
-        ""
+        "Seychely"
       ],
       "Sierra Leone": [
-        ""
+        "Sierra Leone"
       ],
       "Singapore": [
-        ""
+        "Singapur"
       ],
       "Sint Maarten": [
-        ""
+        "Svatý Martin"
       ],
       "Slovakia": [
-        ""
+        "Slovensko"
       ],
       "Slovenia": [
-        ""
+        "Slovinsko"
       ],
       "Solomon Islands": [
-        ""
+        "Šalamounovy ostrovy"
       ],
       "Somalia": [
-        ""
+        "Somálsko"
       ],
       "South Africa": [
-        ""
+        "Jihoafrická republika"
       ],
       "South Georgia and the South Sandwich Islands": [
         ""
       ],
       "South Korea": [
-        ""
+        "Jižní Korea"
       ],
       "South Ossetia": [
-        ""
+        "Jižní Osetie"
       ],
       "South Sudan": [
-        ""
+        "Jižní Súdán"
       ],
       "Spain": [
-        ""
+        "Španělsko"
       ],
       "Sri Lanka": [
-        ""
+        "Srí Lanka"
       ],
       "Sudan": [
-        ""
+        "Súdán"
       ],
       "Suriname": [
-        ""
+        "Surinam"
       ],
       "Svalbard and Jan Mayen": [
-        ""
+        "Špicberky a Jan Mayen"
       ],
       "Swaziland": [
-        ""
+        "Svazijsko"
       ],
       "Sweden": [
-        ""
+        "Švédsko"
       ],
       "Switzerland": [
-        ""
+        "Švýcarsko"
       ],
       "Syria": [
-        ""
+        "Sýrie"
       ],
       "Taiwan": [
-        ""
+        "Tchaj-wan"
       ],
       "Tajikistan": [
-        ""
+        "Tádžikistán"
       ],
       "Tanzania": [
-        ""
+        "Tanzanie"
       ],
       "Thailand": [
-        ""
+        "Thajsko"
       ],
       "Timor-Leste": [
-        ""
+        "Východní Timor"
       ],
       "Togo": [
-        ""
+        "Togo"
       ],
       "Tokelau": [
-        ""
+        "Tokelau"
       ],
       "Tonga": [
-        ""
+        "Tonga"
       ],
       "Trinidad and Tobago": [
-        ""
+        "Trinidad a Tobago"
       ],
       "Tristan da Cunha": [
-        ""
+        "Tristan da Cunha"
       ],
       "Tunisia": [
-        ""
+        "Tunisko"
       ],
       "Turkey": [
-        ""
+        "Turecko"
       ],
       "Turkmenistan": [
-        ""
+        "Turkmenistán"
       ],
       "Turks and Caicos Islands": [
-        ""
+        "Ostrovy Turks a Caicos"
       ],
       "Tuvalu": [
-        ""
+        "Tuvalu"
       ],
       "Uganda": [
-        ""
+        "Uganda"
       ],
       "Ukraine": [
-        ""
+        "Ukrajina"
       ],
       "United Arab Emirates": [
-        ""
+        "Spojené arabské emiráty"
       ],
       "United Kingdom": [
-        ""
+        "Velká Británie"
       ],
       "United States": [
-        ""
+        "Spojené státy"
       ],
       "United States Minor Outlying Islands": [
-        ""
+        "Menší odlehlé ostrovy Spojených států amerických"
       ],
       "Uruguay": [
-        ""
+        "Uruguay"
       ],
       "Uzbekistan": [
-        ""
+        "Uzbekistán"
       ],
       "Vanuatu": [
-        ""
+        "Vanuatu"
       ],
       "Venezuela": [
-        ""
+        "Venezuela"
       ],
       "Vietnam": [
-        ""
+        "Vietnam"
       ],
       "Virgin Islands, British": [
-        ""
+        "Britské Panenské ostrovy"
       ],
       "Virgin Islands, U.S.": [
-        ""
+        "Americké Panenské ostrovy"
       ],
       "Wallis and Futuna": [
-        ""
+        "Wallis a Futuna"
       ],
       "Western Sahara": [
-        ""
+        "Západní Sahara"
       ],
       "Yemen": [
-        ""
+        "Jemen"
       ],
       "Zambia": [
-        ""
+        "Zambie"
       ],
       "Zimbabwe": [
-        ""
+        "Zimbabwe"
       ],
       "Åland Islands": [
-        ""
+        "Ålandské ostrovy"
       ]
     },
     "Custom frequency option": {
       "After repeating…": [
-        ""
+        "Po opalování…"
       ],
       "Never": [
         "Nikdy"
@@ -1760,9 +1763,9 @@
       ],
       "time": [
         "čas",
-        "",
-        "",
-        ""
+        "časy",
+        "časů",
+        "časů"
       ]
     },
     "Daily recurring event, frequency": {
@@ -1844,7 +1847,7 @@
         "Použijte tlačítko táhnout a tlačítko odložit pro sloučení priority mezi kontakty. Odškrtněte kontakty, které nechcete sloučit."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        ""
+        "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, které nechcete slučovat ani uchovávat, můžete označit k odstranění. K vymazání dojde až po kliknutí na tlačítko sloučit"
@@ -1865,7 +1868,7 @@
     },
     "Disabled calendar name suffix": {
       "Disabled": [
-        ""
+        "Vypnuto"
       ]
     },
     "Disabled calendar tooltip": {
@@ -1875,7 +1878,7 @@
     },
     "Dropwdown action icon tooltip": {
       "Add calendar": [
-        ""
+        "Přidat kalendář"
       ]
     },
     "Duration": {
@@ -1894,12 +1897,12 @@
     },
     "Early Access Disabled": {
       "Off": [
-        ""
+        "Vypnuto"
       ]
     },
     "Early Access Enabled": {
       "On": [
-        ""
+        "Zaptnuto"
       ]
     },
     "Email body for description (description part)": {
@@ -1909,7 +1912,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "Akce ${ eventTitle } byla zrušena."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } bylo doplněno.\n${ eventDetailsText }"
@@ -1973,10 +1976,10 @@
         ""
       ],
       "${ _list2 } has no contacts": [
-        "",
-        "Jeden ze skupiny, nemá kontakty: ${ _list2 }",
-        "Některé skupiny nemají kontakty: ${ _list2 }",
-        "Některé skupiny neobsahují kontakty: ${ _list2 }"
+        "${ _list2 } neobsahuje žádné kontakty",
+        "Některé skupiny neobsahují žádné kontakty: ${ _list2 }",
+        "Některé skupiny neobsahují žádné kontakty: ${ _list2 }",
+        "Některé skupiny neobsahují žádné kontakty: ${ _list2 }"
       ],
       "${ list } doesn't have a valid email address": [
         "",
@@ -1985,10 +1988,10 @@
         ""
       ],
       "${ list } has invalid emails": [
-        "",
-        "",
-        "",
-        ""
+        "${ list } má neplatné emaily",
+        "${ list } mají neplatné emaily",
+        "${ list } mají neplatné emaily",
+        "${ list } mají neplatné emaily"
       ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
@@ -2000,7 +2003,7 @@
         "Primární soukromý klíč adresy nebyl nalezen"
       ],
       "Answer failed to be sent": [
-        ""
+        "Odpověď se nepodařilo odeslat"
       ],
       "Authentication canceled.": [
         "Ověřování zrušeno."
@@ -2018,7 +2021,7 @@
         "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
       ],
       "Cancellation failed to be sent": [
-        ""
+        "Zrušení se nepodařilo odeslat"
       ],
       "Contact could not be saved": [
         "Kontakt nelze uložit"
@@ -2121,6 +2124,9 @@
         "Sloučit nejméně ${ calendarToFixCount } kalendáře s existujícími Proton kalendáři",
         "Sloučit nejméně ${ calendarToFixCount } kalendářů s existujícími Proton kalendáři",
         "Sloučit nejméně ${ calendarToFixCount } kalendářů s existujícími Proton kalendáři"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Missing signature": [
         "Podpis není nastaven"
@@ -2329,37 +2335,37 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        ""
+        "Špatný formát. Komponent nešlo přečíst."
       ],
       "Calendar": [
-        ""
+        "Kalendář"
       ],
       "Calendar timezone not supported": [
-        ""
+        "Časové pásmo kalendáře není podporováno"
       ],
       "Component with wrong format": [
-        ""
+        "Komponent se špatným formátem"
       ],
       "Custom timezone": [
-        ""
+        "Vlastní časové pásmo"
       ],
       "Edited event not supported": [
-        ""
+        "Upravená událost není podporována"
       ],
       "Element": [
-        ""
+        "Prvek"
       ],
       "Encryption failed": [
-        ""
+        "Šifrování selhalo"
       ],
       "End time out of bounds": [
         ""
       ],
       "Event": [
-        ""
+        "Událost"
       ],
       "Event validation failed": [
-        ""
+        "Ověření události se nezdařilo"
       ],
       "Floating times not supported": [
         ""
@@ -2368,31 +2374,31 @@
         ""
       ],
       "Invalid event": [
-        ""
+        "Neplatná událost"
       ],
       "Journal entry": [
-        ""
+        "Položka v deníku"
       ],
       "Malformed all-day event": [
-        ""
+        "Špatně formátovaná celodenní událost"
       ],
       "Malformed end time": [
-        ""
+        "Špatný formát času ukončení"
       ],
       "Malformed recurring event": [
-        ""
+        "Špatný formát opakující se události"
       ],
       "Malformed start time": [
-        ""
+        "Špatný formát času zahájení"
       ],
       "Missing start time": [
-        ""
+        "Chybí počáteční čas"
       ],
       "No UID, title or start time": [
-        ""
+        "Žádný UID, název nebo čas zahájení"
       ],
       "Non-Gregorian": [
-        ""
+        "Ne-Gregoriánský"
       ],
       "Notification out of bounds": [
         ""
@@ -2401,28 +2407,28 @@
         ""
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Opakující se událost nemá žádné výskyty"
       ],
       "Recurring rule not supported": [
-        ""
+        "Pravidlo opakování není podporováno"
       ],
       "Start time out of bounds": [
         ""
       ],
       "Timezone": [
-        ""
+        "Časové pásmo"
       ],
       "Timezone not supported": [
-        ""
+        "Časové pásmo není podporováno"
       ],
       "To-do entry": [
         ""
       ],
       "Unknown": [
-        ""
+        "Neznámé"
       ],
       "Unsupported event": [
-        ""
+        "Událost není podporována"
       ]
     },
     "Error message": {
@@ -2433,7 +2439,7 @@
         "Chyba: ${ errorMessage }"
       ],
       "Invalid URL": [
-        ""
+        "Neplatné URL"
       ],
       "Oops, something went wrong": [
         "Jejda, něco se pokazilo"
@@ -2468,30 +2474,30 @@
     },
     "Event canceled status badge": {
       "canceled": [
-        ""
+        "zrušeno"
       ]
     },
     "Event delete button tooltip": {
       "Delete event": [
-        ""
+        "Smazat událost"
       ]
     },
     "Event duplicate button tooltip": {
       "Duplicate event": [
-        ""
+        "Duplikátní událost"
       ]
     },
     "Event edit button tooltip": {
       "Edit event": [
-        ""
+        "Upravit událost"
       ]
     },
     "Event form": {
       "${ numberOfParticipants } participant": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfParticipants } účastník",
+        "${ numberOfParticipants } účastníci",
+        "${ numberOfParticipants } účastníků",
+        "${ numberOfParticipants } účastníků"
       ]
     },
     "Event info. Organizer name": {
@@ -2504,13 +2510,13 @@
         ""
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Přiložený soubor ICS se nepodařilo přečíst"
       ],
       "Invalid invitation": [
-        ""
+        "Neplatná pozvánka"
       ],
       "Invalid response": [
-        ""
+        "Neplatná odpověď"
       ],
       "The event could not be added to your calendar. No answer was sent": [
         ""
@@ -2519,13 +2525,13 @@
         ""
       ],
       "Unexpected error": [
-        ""
+        "Neočekávaná chyba"
       ],
       "Unsupported invitation": [
-        ""
+        "Nepodporovaná pozvánka"
       ],
       "Unsupported response": [
-        ""
+        "Nepodporovaná odpověď"
       ],
       "We could not cancel the event in your calendar": [
         ""
@@ -2545,21 +2551,21 @@
     },
     "Event popover close button": {
       "Close popover": [
-        ""
+        "Zavřít okno"
       ]
     },
     "Event reply": {
       "maybe": [
-        ""
+        "možná"
       ],
       "no": [
-        ""
+        "ne"
       ],
-      "unanswered": [
+      "pending": [
         ""
       ],
       "yes": [
-        ""
+        "ano"
       ]
     },
     "Event title": {
@@ -2690,7 +2696,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        ""
+        "Importované pozvánky naleznete v ${ CALENDAR_APP_NAME } jako prosté události bez podrobností o organizátorech a účastnících. Pro získání účastníků a aktualizace o události požádejte organizátory o pozvání přes vaší Proton e-mailovou adresu."
       ],
       "This file contains an event invitation:": [
         "",
@@ -2918,16 +2924,16 @@
         "Ověření adresy pomocí důvěryhodného klíče je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejnému klíči, který může být použit pro odesílání."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        "",
-        "",
-        ""
+        "Vše (${ totalFoldersCount } složka)",
+        "Vše (${ totalFoldersCount } složky)",
+        "Vše (${ totalFoldersCount } složek)",
+        "Vše (${ totalFoldersCount } složek)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        "",
-        "",
-        ""
+        "Vše (${ totalFoldersCount } štítek)",
+        "Vše (${ totalFoldersCount } štítky)",
+        "Vše (${ totalFoldersCount } štítků)",
+        "Vše (${ totalFoldersCount } štítků)"
       ],
       "An invitation will be sent to added participants.": [
         "Pozvánka bude zaslána k přidaným účastníkům."
@@ -3098,10 +3104,10 @@
         "Načítání událostí"
       ],
       "Manage your calendars": [
-        ""
+        "Spravovat vaše kalendáře"
       ],
       "Merged": [
-        ""
+        "Sloučený"
       ],
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
@@ -3110,7 +3116,7 @@
         "Pojmenujte svoji novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude tato nová složka vytvořena v kořenové složce."
       ],
       "New": [
-        ""
+        "Nové"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "Dále se musíte přihlásit ke svému účtu Google a povolit nám přístup k Vašim datům."
@@ -3185,7 +3191,7 @@
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
       "Removed participants will be notified.": [
-        ""
+        "Odebraní účastníci budou upozorněni."
       ],
       "Screenshot(s) attached": [
         "Snímek/snímky byly připojeny"
@@ -3317,7 +3323,7 @@
         "Chcete změnit odpověď na všechny události v této sérii?"
       ],
       "Would you like to continue anyway?": [
-        ""
+        "Chtěli byste přesto pokračovat?"
       ],
       "Would you like to delete all the events in this series?": [
         ""
@@ -3460,7 +3466,7 @@
         ""
       ],
       "0 - Not likely": [
-        ""
+        "0 - Nepravděpodobně"
       ],
       "10 - Extremely likely": [
         "10 - Velmi pravděpodobné"
@@ -3487,10 +3493,10 @@
         "Verze prohlížeče"
       ],
       "Calendar": [
-        ""
+        "Kalendář"
       ],
       "Calendars": [
-        ""
+        "Kalendáře"
       ],
       "Cancel": [
         "Zrušit"
@@ -3502,13 +3508,13 @@
         "Město"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "Kód je 6 číslic bez mezer"
       ],
       "Color": [
-        ""
+        "Barva"
       ],
       "Contacts": [
-        ""
+        "Kontakty"
       ],
       "Copy": [
         "Kopírovat"
@@ -3517,19 +3523,19 @@
         "Země"
       ],
       "Date and time": [
-        ""
+        "Datum a čas"
       ],
       "Default email address": [
-        ""
+        "Výchozí e-mailová adresa"
       ],
       "Default event duration": [
-        ""
+        "Výchozí doba trvání události"
       ],
       "Default full day notifications": [
-        ""
+        "Výchozí celodenní oznámení"
       ],
       "Default notifications": [
-        ""
+        "Výchozí upozornění"
       ],
       "Description": [
         "Popis"
@@ -3550,7 +3556,7 @@
         "Formát e-mailu"
       ],
       "Emails": [
-        ""
+        "E-maily"
       ],
       "Enable Beta Access": [
         "Povolit Beta přístup"
@@ -3571,13 +3577,13 @@
         "Rozšířená adresa"
       ],
       "Folder location": [
-        ""
+        "Umístění složky"
       ],
       "Frequency": [
-        ""
+        "Frekvence"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Od: ${ importedEmail }"
       ],
       "Hide password": [
         "Skrýt heslo"
@@ -3586,52 +3592,52 @@
         ""
       ],
       "Import all messages": [
-        ""
+        "Importovat všechny zprávy"
       ],
       "Import contacts": [
         "Importovat kontakty"
       ],
       "Import interval": [
-        ""
+        "Interval pro import"
       ],
       "Import to email address": [
         ""
       ],
       "Import to:": [
-        ""
+        "Importovat do:"
       ],
       "Label messages as": [
-        ""
+        "Označit zprávu jako"
       ],
       "Last 12 months only": [
-        ""
+        "Pouze posledních 12 měsíců"
       ],
       "Last 3 months only": [
-        ""
+        "Pouze poslední 3 měsíce"
       ],
       "Last month only": [
-        ""
+        "Pouze minulý měsíc"
       ],
       "Location": [
-        ""
+        "Lokace"
       ],
       "Mailbox password": [
         "Heslo k e-mailové schránce"
       ],
       "Manage folders": [
-        ""
+        "Spravovat složky"
       ],
       "Manage labels": [
-        ""
+        "Spravovat štítky"
       ],
       "Name": [
         "Jméno"
       ],
       "Notification": [
-        ""
+        "Oznámení"
       ],
       "Notifications": [
-        ""
+        "Oznámení"
       ],
       "Operating system": [
         "Operační systém"
@@ -3646,10 +3652,10 @@
         "Organizátor"
       ],
       "participant": [
-        "",
-        "",
-        "",
-        ""
+        "účastník",
+        "účastníci",
+        "účastníků",
+        "účastníků"
       ],
       "Participants": [
         "Účastníci"
@@ -3658,7 +3664,7 @@
         "Heslo"
       ],
       "PGP scheme": [
-        ""
+        "PGP schéma"
       ],
       "Phone number": [
         "Telefonní číslo"
@@ -3700,7 +3706,7 @@
         "Systémové informace"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "Pro: ${ emailAddress }"
       ],
       "Two-factor authentication code": [
         "Kód dvoufaktorového ověření"
@@ -3741,16 +3747,16 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Vytvořit složku"
       ],
       "Create label": [
-        ""
+        "Vytvořit štítek"
       ],
       "Edit folder": [
-        ""
+        "Upravit složku"
       ],
       "Edit label": [
-        ""
+        "Upravit štítek"
       ]
     },
     "label/folder notification": {
@@ -3792,22 +3798,22 @@
     },
     "Loading info": {
       "Almost there": [
-        ""
+        "Téměř hotovo"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         ""
       ],
       "Creating new calendars": [
-        ""
+        "Vytváření nových kalendářů"
       ],
       "Gathering your data": [
-        ""
+        "Shromažďují vaše data"
       ],
       "We're gathering your data from your provider": [
         ""
       ],
       "Your import is starting": [
-        ""
+        "Váš import byl zahájen"
       ]
     },
     "Mail import summary": {
@@ -3850,10 +3856,10 @@
     },
     "Modal action": {
       "Close": [
-        ""
+        "Zavřít"
       ],
       "Manage calendars": [
-        ""
+        "Spravovat kalendáře"
       ]
     },
     "Modal title": {
@@ -3861,12 +3867,12 @@
         "Časové pásmo se změnilo"
       ],
       "Unable to add more calendars": [
-        ""
+        "Nebylo možné přidat více kalendářů"
       ]
     },
     "Modal title and action": {
       "Add calendar": [
-        ""
+        "Přidat kalendář"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4010,13 +4016,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Barva"
       ],
       "Folder name": [
-        ""
+        "Název složky"
       ],
       "Label name": [
-        ""
+        "Název štítku"
       ]
     },
     "Notification": {
@@ -4079,10 +4085,10 @@
     },
     "Notifications": {
       "${ value } day after": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } den po",
+        "${ value } dny po",
+        "${ value } dní po",
+        "${ value } dní po"
       ],
       "${ value } day after at ${ time }": [
         "",
@@ -4091,10 +4097,10 @@
         ""
       ],
       "${ value } day before": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } den před",
+        "${ value } dny před",
+        "${ value } dní před",
+        "${ value } dní před"
       ],
       "${ value } day before at ${ time }": [
         "",
@@ -4103,10 +4109,10 @@
         ""
       ],
       "${ value } hour after": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } hodina po",
+        "${ value } hodiny po",
+        "${ value } hodin po",
+        "${ value } hodin po"
       ],
       "${ value } hour after at ${ time }": [
         "",
@@ -4115,10 +4121,10 @@
         ""
       ],
       "${ value } hour before": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } hodina před",
+        "${ value } hodiny před",
+        "${ value } hodin před",
+        "${ value } hodin před"
       ],
       "${ value } hour before at ${ time }": [
         "",
@@ -4127,10 +4133,10 @@
         ""
       ],
       "${ value } minute after": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } minuta po",
+        "${ value } minuty po",
+        "${ value } minut po",
+        "${ value } minut po"
       ],
       "${ value } minute after at ${ time }": [
         "",
@@ -4139,10 +4145,10 @@
         ""
       ],
       "${ value } minute before": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } minuta před",
+        "${ value } minuty před",
+        "${ value } minut před",
+        "${ value } minut před"
       ],
       "${ value } minute before at ${ time }": [
         "",
@@ -4151,10 +4157,10 @@
         ""
       ],
       "${ value } week after": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } týden po",
+        "${ value } týdny po",
+        "${ value } týdnů po",
+        "${ value } týdnů po"
       ],
       "${ value } week after at ${ time }": [
         "",
@@ -4163,10 +4169,10 @@
         ""
       ],
       "${ value } week before": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } týden před",
+        "${ value } týdny před",
+        "${ value } týdnů před",
+        "${ value } týdnů před"
       ],
       "${ value } week before at ${ time }": [
         "",
@@ -4178,7 +4184,7 @@
         "V době události"
       ],
       "On the same day at ${ time }": [
-        ""
+        "Ten samý den v ${ time }"
       ],
       "Unknown": [
         "Není známo"
@@ -4226,13 +4232,13 @@
         ""
       ],
       "Import events": [
-        ""
+        "Import události"
       ],
       "Meet your new encrypted calendar": [
-        ""
+        "Seznamte se se svým novým šifrovaným kalendářem"
       ],
       "Start using ${ appName }": [
-        ""
+        "Začněte používat ${ appName }"
       ]
     },
     "Option": {
@@ -4279,7 +4285,7 @@
         "Měsíců"
       ],
       "No parent folder": [
-        ""
+        "Žádná nadřazená složka"
       ],
       "This and future events": [
         "Tato a budoucí události"
@@ -4302,10 +4308,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Vytvořit nový kalendář"
       ],
       "Merge with calendar": [
-        ""
+        "Sloučit s kalendářem"
       ]
     },
     "Participant name": {
@@ -4315,10 +4321,10 @@
     },
     "Participants expand button label": {
       "Collapse participants list": [
-        ""
+        "Sbalit seznam účastníků"
       ],
       "Expand participants list": [
-        ""
+        "Rozbalit seznam účastníků"
       ]
     },
     "Personal calendar limit reached modal body": {
@@ -4492,12 +4498,12 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        ""
+        "Aktualizace nastavení se nezdařila"
       ]
     },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
-        ""
+        "Spravovat kalendář"
       ]
     },
     "Spotlight": {
@@ -4527,7 +4533,7 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        ""
+        "URL kalendáře"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
         ""
@@ -4543,7 +4549,7 @@
         ""
       ],
       "This link might be wrong": [
-        ""
+        "Tento odkaz může být chybný"
       ]
     },
     "Subscribed calendar feature unavailable error": {
@@ -4573,10 +4579,10 @@
         "Pozvánka bude zaslána přidaným účastníkům na všechny události v této sérii."
       ],
       "Answer sent and all events deleted": [
-        ""
+        "Odpověď byla odeslána a všechny události smazány"
       ],
       "Answer sent and event deleted": [
-        ""
+        "Odpověď byla odeslána a událost smazána"
       ],
       "Bug reported": [
         "Chyba nahlášena"
@@ -4594,7 +4600,7 @@
         ""
       ],
       "Cancellation sent and event deleted": [
-        ""
+        "Oznámení o zrušení bylo odesláno a událost smazána"
       ],
       "Cancellation sent and participants removed": [
         ""
@@ -4648,16 +4654,16 @@
         "Budoucí události byly aktualizovány"
       ],
       "Invitation sent and all events updated": [
-        ""
+        "Pozvánka byla odeslána a všechny události aktualizovány"
       ],
       "Invitation sent and event created": [
-        ""
+        "Pozvánka byla odeslána a událost vytvořena"
       ],
       "Invitation sent and events created": [
-        ""
+        "Pozvánka byla odeslána a události vytvořeny"
       ],
       "Invitation sent and participants added": [
-        ""
+        "Pozvánka byla odeslána a účastníci přidáni"
       ],
       "Invitation sent and participants added to all events": [
         ""
@@ -4672,7 +4678,7 @@
         ""
       ],
       "Participation status updated": [
-        ""
+        "Status účasti byl aktualizován"
       ],
       "Participation status updated for all events": [
         ""
@@ -4759,16 +4765,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "datum vytvoření účtu"
       ],
       "the last 12 months": [
-        ""
+        "posledních 12 měsíců"
       ],
       "the last 3 months": [
-        ""
+        "poslední 3 měsíce"
       ],
       "the last month": [
-        ""
+        "poslední měsíc"
       ]
     },
     "Time unit": {
@@ -4807,10 +4813,10 @@
         "Přidat název skupiny kontaktů"
       ],
       "Add event location": [
-        ""
+        "Přidat místo události"
       ],
       "Add event title": [
-        ""
+        "Přidat název události"
       ],
       "Add more information related to this event": [
         ""
@@ -4849,13 +4855,13 @@
         ""
       ],
       "Choose how often this event repeats": [
-        ""
+        "Vyberte jak často se tato událost opakuje"
       ],
       "Clearing data": [
         "Vymazání dat"
       ],
       "Contact details": [
-        ""
+        "Kontaktní údaje"
       ],
       "Contact Details": [
         "Detaily kontaktu"
@@ -4867,7 +4873,7 @@
         "Kontakty"
       ],
       "Continue with partial import?": [
-        ""
+        "Pokračovat s částečným importem?"
       ],
       "Create calendar": [
         "Vytvořit kalendář"
@@ -4882,13 +4888,13 @@
         "Měna"
       ],
       "Customize and confirm": [
-        ""
+        "Přizpůsobit a potvrdit"
       ],
       "Customize calendar import": [
-        ""
+        "Přizpůsobit proces importování kalendáře"
       ],
       "Customize your mail import": [
-        ""
+        "Přizpůsobte proces importování e-mailů"
       ],
       "Delete ${ count } contact": [
         "Smazat ${ count } kontakt",
@@ -4915,10 +4921,10 @@
         "Mazání kontaktů"
       ],
       "Drop to upload": [
-        ""
+        "Přetáhnout k nahrání"
       ],
       "Edit calendar": [
-        ""
+        "Upravit kalendář"
       ],
       "Edit contact": [
         "Upravit kontakt"
@@ -4948,10 +4954,10 @@
         "Chyba"
       ],
       "Event is happening all day": [
-        ""
+        "Událost se koná celý den"
       ],
       "Event is happening on defined time slot": [
-        ""
+        "Událost se koná v určeném čase"
       ],
       "Exporting contacts": [
         "Exportování kontaktů"
@@ -4981,10 +4987,10 @@
         "Importovat kontakty"
       ],
       "Import events": [
-        ""
+        "Import událostí"
       ],
       "Import failed": [
-        ""
+        "Import selhal"
       ],
       "Import groups": [
         "Importovat skupiny"
@@ -5044,7 +5050,7 @@
         "Nahlásit problém"
       ],
       "Request new code": [
-        ""
+        "Požádat o nový kód"
       ],
       "Reset calendar keys": [
         "Resetovat klíče kalendáře"
@@ -5053,7 +5059,7 @@
         "Uložit změny"
       ],
       "Select a day in the month": [
-        ""
+        "Vyberte den v měsíci"
       ],
       "Select a theme": [
         "Vyberte motiv"
@@ -5065,28 +5071,28 @@
         "Vybrat skupinu kontaktů"
       ],
       "Select event end date": [
-        ""
+        "Vyberte datum konce události"
       ],
       "Select event end time": [
-        ""
+        "Vyberte čas konce události"
       ],
       "Select event frequency": [
-        ""
+        "Zvolte frekvenci události"
       ],
       "Select event frequency interval": [
-        ""
+        "Zvolte interval frekvence události"
       ],
       "Select event start date": [
-        ""
+        "Vyberte datum začátku události"
       ],
       "Select event start time": [
-        ""
+        "Vyberte čas začátku události"
       ],
       "Select event's last date": [
-        ""
+        "Vyberte poslední datum události"
       ],
       "Select permissions": [
-        ""
+        "Vyberte oprávnění"
       ],
       "Select the time to send this notification": [
         "Vyberte čas pro odeslání tohoto oznámení"
@@ -5101,7 +5107,7 @@
         "Vyberte způsob, jak odeslat toto oznámení"
       ],
       "Select what to import": [
-        ""
+        "Vyberte, co chcete importovat"
       ],
       "Select when this event will stop happening": [
         ""
@@ -5159,7 +5165,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Dnes"
       ]
     },
     "Tooltip": {
