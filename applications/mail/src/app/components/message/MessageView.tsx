@@ -167,14 +167,10 @@ const MessageView = (
 
         const { offsetHeight: containerHeight } = containerRef.current;
 
-        const header = containerRef.current.firstChild as HTMLElement;
-        const { offsetHeight: headerHeight } = header;
-
-        const offset = (containerHeight - headerHeight) * OFFSET_PERCENTAGE;
-        const totalOffset = headerHeight + offset;
+        const offset = containerHeight * OFFSET_PERCENTAGE;
 
         // if the message is already in the offset area of the container, abort the scroll
-        if (elementRef.current.offsetTop - totalOffset < containerRef.current.scrollTop) {
+        if (elementRef.current.offsetTop - offset < containerRef.current.scrollTop) {
             return;
         }
 
@@ -184,15 +180,11 @@ const MessageView = (
 
         setParentBottomPadding(
             Math.max(
-                containerHeight -
-                    totalOffset -
-                    elementRef.current.offsetHeight +
-                    wrapperPaddingBottom +
-                    wrapperPaddingTop,
+                containerHeight - offset - elementRef.current.offsetHeight + wrapperPaddingBottom + wrapperPaddingTop,
                 0
             )
         );
-        createScrollIntoView(elementRef.current, containerRef.current, false, totalOffset);
+        createScrollIntoView(elementRef.current, containerRef.current, false, offset);
     };
 
     // Setup ref to allow opening the message from outside, typically the ConversationView
