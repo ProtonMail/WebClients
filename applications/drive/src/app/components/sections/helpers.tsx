@@ -28,6 +28,7 @@ export const mapDecryptedLinksToChildren = (decryptedLinks: DecryptedLink[]): Fi
         Name: link.name,
         LinkID: link.linkId,
         Type: link.type,
+        CreateTime: link.createTime,
         ModifyTime: link.metaDataModifyTime,
         RealModifyTime: link.fileModifyTime,
         Size: link.size,
