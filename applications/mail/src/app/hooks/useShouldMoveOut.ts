@@ -59,6 +59,11 @@ export const useShouldMoveOut = (
         const currentFolderID = getCurrentFolderIDs(currentElement, folders);
 
         if (hadLabels && previousFolderID.length > 0 && !isDeepEqual(previousFolderID, currentFolderID)) {
+            console.log('moveout', {
+                hadLabels,
+                prevFoldIDLength: previousFolderID.length,
+                deepEq: isDeepEqual(previousFolderID, currentFolderID),
+            });
             onBack();
             return;
         }

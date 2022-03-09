@@ -270,6 +270,7 @@ const MessageView = (
     // Re-initialize context if message is changed without disposing the component
     useEffect(() => {
         if (message.data?.ID) {
+            console.log('set expanded', { message, initialExpand: getInitialExpand() });
             setExpanded(getInitialExpand);
             setSourceMode(false);
             setOriginalMessageMode(defaultOriginalMessageMode);
