@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useRef } from 'react';
 import { Audience, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
-import { getHasB2BPlan, getHasLegacyPlans, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getHasB2BPlan, getHasLegacyPlans, getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { PLANS } from '@proton/shared/lib/constants';
@@ -93,7 +93,9 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                             cycle: cycle || subscription.Cycle,
                             coupon: coupon || subscription.CouponCode || undefined,
                             defaultAudience:
-                                defaultAudience || getHasB2BPlan(subscription) ? Audience.B2B : Audience.B2C,
+                                defaultAudience || (plan && getIsB2BPlan(plan)) || getHasB2BPlan(subscription)
+                                    ? Audience.B2B
+                                    : Audience.B2C,
                             disableBackButton,
                         };
                         setModalState(true);
