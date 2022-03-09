@@ -26,7 +26,10 @@ const getConfig = (env) => {
             date: env.date,
             mode: env.appMode,
         },
-        silent: env.silent || false,
+        warningLogs: env.warningLogs || false,
+        errorLogs: env.errorLogs || false,
+        overlayWarnings: env.overlayWarnings || false,
+        overlayErrors: env.overlayErrors || false,
     };
 
     return {
@@ -89,8 +92,8 @@ const getConfig = (env) => {
             client: {
                 webSocketURL: 'auto://0.0.0.0:0/ws',
                 overlay: {
-                    errors: true,
-                    warnings: false,
+                    warnings: options.overlayWarnings,
+                    errors: options.overlayErrors,
                 },
             },
             webSocketServer: 'ws',
