@@ -1,7 +1,7 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { c } from 'ttag';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { srpAuth } from '@proton/shared/lib/srp';
@@ -105,7 +105,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
 
             setStep(STEPS.MNEMONIC_PHRASE);
         } catch (error: any) {
-            const { code, message } = getApiErrorMessage(error);
+            const { code, message } = getApiError(error);
             setSubmittingAuth(false);
             if (code === PASSWORD_WRONG_ERROR) {
                 setAuthError(message);
