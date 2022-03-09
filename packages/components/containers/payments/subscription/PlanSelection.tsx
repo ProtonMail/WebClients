@@ -154,7 +154,7 @@ const PlanSelection = ({
                     className="plan-selection plan-selection--b2b mt1"
                     style={{ '--plan-selection-number': B2BPlans.length }}
                 >
-                    {B2BPlans.map((plan) => renderPlanCard(plan, Audience.B2B))},
+                    {B2BPlans.map((plan) => renderPlanCard(plan, Audience.B2B))}
                 </div>
             ),
         },
