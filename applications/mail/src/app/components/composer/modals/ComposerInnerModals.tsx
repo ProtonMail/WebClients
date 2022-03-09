@@ -44,7 +44,7 @@ const ComposerInnerModals = ({
     return (
         <>
             {innerModal === ComposerInnerModalStates.Password && (
-                <ComposerPasswordModal message={message.data} onClose={handleCloseInnerModal} onChange={handleChange} />
+                <ComposerPasswordModal message={message} onClose={handleCloseInnerModal} onChange={handleChange} />
             )}
             {innerModal === ComposerInnerModalStates.Expiration && (
                 <ComposerExpirationModal message={message} onClose={handleCloseInnerModal} onChange={handleChange} />
