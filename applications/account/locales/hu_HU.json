@@ -355,6 +355,9 @@
       "Get verification code": [
         "Ellenőrző kód küldése"
       ],
+      "Go to label": [
+        "Címkéhez ugrás"
+      ],
       "Go to panel ${ index }": [
         "Váltás: ${ index }"
       ],
@@ -963,6 +966,11 @@
         "Nem támogatott esemény"
       ]
     },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Nem vagyok az irodában, ezért korlátozott a hozzáférésem az e-mailjeimhez."
@@ -1195,13 +1203,13 @@
         ""
       ],
       "Copy": [
-        ""
+        "Másolás"
       ],
       "Invite": [
         ""
       ],
       "Send": [
-        ""
+        "Küldés"
       ],
       "Tweet": [
         ""
@@ -2315,7 +2323,7 @@
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
       "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        ""
+        "Szerezzen 3 hónapnyi ${ mailAppName } Plus-t ingyen minden barátért, aki feliratkozik a(z) ${ mailAppName }-ra."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Az importálás alatt álló fájl csoportokat is tartalmaz. Határozza meg, hogyan kerüljenek importálásra a csoportok."
@@ -2325,10 +2333,10 @@
         "A fájl maximum ${ MAX_IMPORT_FILE_SIZE_STRING } méretű lehet és maximum ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha a fájl nagyobb, bontsa szét több kisebbre."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        ""
+        "Kövesse hány ember kattint a linkjére, iratkozik fel és lesz fizető felhasználó. Kövesse, ahogy gyűlnek ingyenes hónapjai."
       ],
       "Track your referral link activities here.": [
-        ""
+        "Kövesse ajánló linkjei tevékenységét itt."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Eseményeket iCal formátumból (ICS fájl) tud importálni.\nA fájl maximális mérete ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és maximum ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmazhat. Nagyobb fájl importálásához, kisebb darabokra kell vágnia."
@@ -2640,8 +2648,11 @@
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal",
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal"
       ],
-      "Name does not match": [
+      "Missing key packet": [
         ""
+      ],
+      "Name does not match": [
+        "Név nem egyezik"
       ],
       "Name on card required": [
         "Kártyára írt név megadása kötelező"
@@ -3850,7 +3861,7 @@
     },
     "Info": {
       "${ appName } ${ planName } credits earned": [
-        ""
+        "${ appName } ${ planName } krediteket szerzett"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Az ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
@@ -3874,7 +3885,7 @@
         "${ calendarsToBeMergedCount } egyesített naptár"
       ],
       "${ emailAddress } is a ${ appName } address": [
-        ""
+        "${ emailAddress } egy ${ appName } cím"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } érvénytelen"
@@ -3913,7 +3924,7 @@
         "${ numContacts } névjegy"
       ],
       "${ planName } plan": [
-        ""
+        "${ planName } csomag"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappa található",
@@ -3985,22 +3996,22 @@
         "+${ organization.BonusVPN } ProtonVPN kapcsolat (lehetővé teszi több készülék csatlakoztatását a VPN-hez)"
       ],
       "1. Invite friends to Proton": [
-        ""
+        "1. Barátok meghívása a Protonba"
       ],
       "2. They try ${ appName } ${ planName }": [
-        ""
+        "2. Kipróbálják az alábbit: ${ appName } ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% kedvezmény érvényesítve a kuponnal: ${ code }"
       ],
       "3. You earn credits": [
-        ""
+        "3. Krediteket kap"
       ],
       "30 days money-back guarantee.": [
         "30 napos pénz-visszafizetési garancia."
       ],
       "5 email addresses": [
-        ""
+        "5 e-mail cím"
       ],
       "5 GB storage": [
         "5 GB tárhely"
@@ -4240,10 +4251,10 @@
         "Mindenképp folytatja?"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Folytatás ezzel: ${ planName }"
       ],
       "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        ""
+        "Folytassa ezzel: ${ planName } még ma, hogy elkerülje hozzáférésének letiltását próbaidejének végén."
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Létrehozandó ${ calendarsToBeCreated } új naptár",
@@ -4353,7 +4364,7 @@
         "Minden további kapcsolat hozzárendelhető a szervezetben lévő felhasználókhoz."
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
-        ""
+        "Ennyit szerzett: ${ rewards } ebből: ${ rewardsLimit } ${ appName } ${ planName } hónap."
       ],
       "Edit label": [
         "Címke szerkesztése"
@@ -4409,8 +4420,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Írja be a helyreállítási telefonszámát és elküldjük a felhasználónevét vagy e-mail címét."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "Esemény meghívók és jelentkezések ezen a nyelven kerülnek elküldésre."
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "Lejárt"
@@ -4606,7 +4617,7 @@
         "Internet kapcsolat helyreállt."
       ],
       "Invited via email": [
-        ""
+        "Meghívva e-mail által"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Úgy tűnik az adatai egy része titkosítva és zárolva vannak."
@@ -4615,13 +4626,13 @@
         "feltétlenül szükséges"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        ""
+        "Én ezt használtam: ${ appName } és szerintem neked is tetszeni fog. Ez egy biztonságos e-mail szolgáltatás, ami védi a magánéleted. Jelentkezz rá ezen a linken, hogy kapj egy hónapnyi ingyen használatot: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
       ],
       "Just send them your personal referral link.": [
-        ""
+        "Csak küldje el nekik az ön ajánló linkjét."
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Tartsa meg ezt a DNS beállítást mindaddig amíg a DKIM-et használni szeretné."
@@ -4683,8 +4694,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "A Mail.ru olvassa az ön személyes adatait, hogy hirdetőknek, orosz kormányzati intézményeknek és más külső feleknek adja át. A személyes adatai védelme érdekében, hozza létre titkosított e-mail címét."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Mindenképpen emlékezzen a bejelentkezési és az e-mail titkosítási jelszavaira. ${ boldAlert }. Javasoljuk, hogy előbb adjon meg egy helyreállítási e-mail címet."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Mindenképpen emlékezzen a bejelentkezési és az e-mail titkosítási jelszavaira. ${ boldAlert }. Javasoljuk, hogy előbb adjon meg az alábbit: ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Fiókjának beállításához kézileg írja be ezt a kódot a kétlépcsős hitelesítéshez használt eszközén. ${ _switchButton }."
@@ -4816,7 +4827,7 @@
         "Előfizetett egy 12 hónapos csomagra"
       ],
       "Paid for a monthly plan": [
-        ""
+        "Előfizetett egy hónapos csomagra"
       ],
       "Payment can take a few minutes to fully verify.": [
         "A kifizetés ellenőrzése néhány percet is igénybe vehet."
@@ -4894,13 +4905,13 @@
         "Előnézet"
       ],
       "Priority support": [
-        ""
+        "Elsőbbségi támogatás"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "A Proton nem tud segíteni semmilyen elveszített jelszó helyreállításában"
+      "Proton can't help you recover any lost passwords.": [
+        "A Proton nem tud segíteni semmilyen elveszített jelszó helyreállításában."
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "A Proton felfüggesztette az importálást, mert megszakadt a kapcsolat a külső e-mail szolgáltatóval. Próbáljon újra csatlakozni."
@@ -4950,6 +4961,9 @@
       ],
       "Recovery files have been voided": [
         "A helyreállítási fájlok érvénytelenítésre kerültek"
+      ],
+      "recovery method": [
+        "helyreállítási mód"
       ],
       "Recovery phrase copied to clipboard": [
         "A helyreállító jelmondat a vágólapra másolva"
@@ -5017,6 +5031,9 @@
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
       ],
+      "Show original message": [
+        "Eredeti üzenet megjelenítése"
+      ],
       "Signed up": [
         "Feliratkozott"
       ],
@@ -5033,7 +5050,7 @@
         "Az SPF feladata, hogy meghatározza, kik küldhetnek levelet az adott domain névvel. Emiatt erősen javasolt a ProtonMail felvétele az SPF rekordba. Kérjük vegye fel a következő TXT rekordot a DNS beállításaiban. Ezt általában a domain név regisztrátor adminisztrálási felületén állathatja be."
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Kezdjen 500 MB-tal és oldjon fel nagyobb tárhelyet útközben. A tárhely meg van osztva a Levelezés, a Naptár és a Felhőtárhely között."
       ],
       "Starter VPN service with P2P support.": [
         "Alap VPN csomag, P2P támogatással."
@@ -5045,7 +5062,7 @@
         "Sikeres meghívás"
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Támogasson egy 1 egyedi email domain névért"
       ],
       "support team": [
         "ügyfélszolgálat"
@@ -5090,7 +5107,7 @@
         "Ezekkel a beállítási fájlokkal egy külső VPN alkalmazással csatlakozhat a ProtonVPN-hez, vagy a routerén állíthatja be a kapcsolatot."
       ],
       "This 30-day free trial is not available any other way.": [
-        ""
+        "Ez a 30 napos ingyenes próbaverzió más módon nem érhető el."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
@@ -5231,7 +5248,7 @@
         "Korlátlan számú mappák, címkék és filterek"
       ],
       "Unlimited messages": [
-        ""
+        "Korlátlan számú üzenet"
       ],
       "Unsupported file": [
         "Ismeretlen file"
@@ -5252,7 +5269,7 @@
         "Váltson előfizetéses csomagra, hogy használhassa az IMAP/SMTP elérést a ProtonMail Bridge segítségével."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Frissítsen ma, hogy elkerülje az alábbi ${ appName } ${ planName } előnyök elvesztését."
       ],
       "Upload picture": [
         "Kép feltöltése"
@@ -5345,7 +5362,7 @@
         "Amennyiben engedélyezi az értesítéseket, a ProtonMail fiókjába érkező új üzenetekről a helyreállítási/értesítési címén tájékoztatjuk."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
-        ""
+        "Amikor feliratkoznak egy fizetős csomagra, 1-től 3 hónapig terjedő ${ appName } ${ planName }-t írunk jóva a fiókjára."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Az előfizetés megújításakor a meglévő krediktjeiből egyenlítjük ki a számlát, mielőtt a megadott fizetési módokat terhelnénk."
@@ -5408,7 +5425,7 @@
         "Az alábbi bejelentkezéssel csatlakozhat a ProtonVPN szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        ""
+        "Nem küldhet több, mint ${ emailSendLimitNumber } e-mail meghívót a következő 24 óráig"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Nem használhatja az OpenVPN / IKEv2 bejelentkezési adatokat a ProtonVPN alkalmazásokban való bejelentkezéshez vagy a ProtonVPN vezérlőpulthoz. ${ learnMore }"
@@ -5448,6 +5465,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Teljesen megtelt a tárhelye. Nem küldhet vagy fogadhat új e-maileket. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "A ${ BRAND_NAME } fiókban ${ loseAllData }. A helyreállításhoz meg kell adnia a régi jelszavát."
@@ -5501,7 +5521,7 @@
         "Az e-mail cím csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
       "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
+        "Az ingyenes ${ appName } ${ planName } próbaideje le fog járni ekkor: ${ formattedTrialExpirationDate } ."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Az importálás a(z) ${ delayedImport.Account } címről átmenetileg késik."
@@ -5774,6 +5794,9 @@
       "Go to Trash": [
         "Ugrás a lomtárhoz"
       ],
+      "Insert link": [
+        "Link beillesztése"
+      ],
       "Jump to first": [
         "Ugrás az elsőre"
       ],
@@ -5975,7 +5998,7 @@
         "Műveletek"
       ],
       "Activity": [
-        ""
+        "Tevékenység"
       ],
       "Address": [
         "Cím"
@@ -6143,7 +6166,7 @@
         "Napi e-mail értesítések"
       ],
       "Date": [
-        ""
+        "Dátum"
       ],
       "Date format": [
         "Dátumformátum"
@@ -6520,8 +6543,8 @@
       "Send auto-reply": [
         "Automatikus válasz küldése"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "Másodlagos időzóna megjelenítése"
@@ -6692,10 +6715,10 @@
         "Jelszó (adminisztrátor)"
       ],
       "Your referral link": [
-        ""
+        "Ajánló linkje"
       ],
       "Your reward": [
-        ""
+        "Jutalma"
       ],
       "ZIP": [
         "Irányítószám"
@@ -7717,15 +7740,6 @@
       "Feedback": [
         "Visszajelzés"
       ],
-      "Fill in the email address and text to test your link": [
-        "Adja meg az e-mail címet és link szövegét a kipróbáláshoz"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Adja meg az telefonszámot és link szövegét a kipróbáláshoz"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Adja meg az link címét és szövegét a kipróbáláshoz"
-      ],
       "Gift code": [
         "Ajándék kód"
       ],
@@ -7752,6 +7766,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
+      ],
+      "Please insert link first": [
+        "Kérjük, előbb illessze be a linket"
       ],
       "Postal code": [
         "Irányítószám"
@@ -8132,16 +8149,16 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Szerezzen akár 18 hónapnyit ebből: ${ appName } ${ planName } ingyen"
       ],
       "Invite friends and earn rewards!": [
         ""
       ],
       "No more missed appointments": [
-        ""
+        "Nincs több lekésett találkozó"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "Az email értesítésekkel ön dönti el, mely eseményekről kapjon értesítést és mikor."
       ]
     },
     "State": {
@@ -8472,7 +8489,7 @@
     },
     "Title": {
       "${ appName } ${ planName } trial": [
-        ""
+        "${ appName } ${ planName } próba"
       ],
       "${ appName } customization": [
         "${ appName } testreszabása"
@@ -8745,7 +8762,7 @@
         "${ domain.DomainName } törlése"
       ],
       "Delete ${ email }": [
-        ""
+        "${ email } törlése"
       ],
       "Delete ${ filter.Name }": [
         "${ filter.Name } törlése"
@@ -8775,7 +8792,7 @@
         "Felhasználó törlése"
       ],
       "Disable ${ email }": [
-        ""
+        "${ email } letiltása"
       ],
       "Disable two-factor authentication": [
         "Kétlépcsős hitelesítés kikapcsolása"
@@ -8877,13 +8894,13 @@
         "Fizessen elő ProtonVPN Plus csomagra az összes szerver használatához"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Szerezzen akár 18 hónapnyit ebből: ${ appName } ${ planName } ingyen"
       ],
       "Gift code": [
         "Ajándék kód"
       ],
       "How does it work?": [
-        ""
+        "Hogyan működik?"
       ],
       "Human verification": [
         "Robot ellenőrzés"
@@ -8930,9 +8947,6 @@
       ],
       "Invoices": [
         "Számlák"
-      ],
-      "Keyboard Shortcuts": [
-        "Gyorsbillentyűk"
       ],
       "Labels": [
         "Címkék"
@@ -9427,7 +9441,7 @@
         "A levelező alapértelmezett elrendezésének beállítása."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        ""
+        "Beállítja az alábbi láblécet az elküldött e-mailjeiben: ${ signature } A link az ajánló linkjére mutat. A lábléc az aláírása alatt fog megjelenni. Bármikor személyre szabhatja aláírását a beállítások között."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Az ezzel a kulccsal készült aláírások érvénytelenként lesznek kezelve és a kulcs nem használható titkosításra"

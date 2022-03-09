@@ -355,6 +355,9 @@
       "Get verification code": [
         "Awi tangalt n usentem"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Ddu ɣer ufeggag ${ index }"
       ],
@@ -961,6 +964,11 @@
       ],
       "Unsupported event": [
         "Tadyant ur nettusefrak ara"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2638,6 +2646,9 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
+        ""
+      ],
+      "Missing key packet": [
         ""
       ],
       "Name does not match": [
@@ -4409,7 +4420,7 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Sekcem uṭṭun-ik·im n tiliɣri n tririt, nekkni ad ak·am-d-nazen isem-inek·inem n useqdac neɣ tansa-inek·inem n yimayl."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
+      "Event invitations and RSVPs will be sent in this language.": [
         ""
       ],
       "Expired": [
@@ -4683,8 +4694,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru yeɣɣar isefka-inek·inem udmawanen akken ad yefk tasiregt n unekcum i wid iqeddcen deg udellel, tisnurayin tinabḍanin n Rrus akked yiḥricen-niḍen n wis kraḍ. I tbaḍnit igerrzen, rnu tansa n yimayl taɣellsant."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Ḍmen belli tecfiḍ ɣef wawal uffir i wakken ad tkecmeḍ, ad tekkseḍ awgelhen i yimaylen. ${ boldAlert }. Ad ak·akem-nweṣṣi ad ternuḍ imayl n tririt d amezwaru."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Sekcem s ufus talqut ar yibenk-ik n usesteb s snat n tarrayin akked ad yeswel umiḍan-ik.${ _switchButton }."
@@ -4899,8 +4910,8 @@
       "Proton Calendar": [
         ""
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton ur yezmir ara ad ak·akem-iεawen ad d-terreḍ akk awalen uffiren iṛuḥen"
+      "Proton can't help you recover any lost passwords.": [
+        ""
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton iseḥbes akatar i kra n wakud acku truḥ-as tuqqna d usaǧǧaw-nniḍen n yimayl-ik·im. Ttxil-k·m ales tuqqna."
@@ -4949,6 +4960,9 @@
         ""
       ],
       "Recovery files have been voided": [
+        ""
+      ],
+      "recovery method": [
         ""
       ],
       "Recovery phrase copied to clipboard": [
@@ -5016,6 +5030,9 @@
       ],
       "Set recovery phrase": [
         "Sbadu tafyirt n tririt"
+      ],
+      "Show original message": [
+        ""
       ],
       "Signed up": [
         ""
@@ -5449,6 +5466,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Tewwḍeḍ ɣer 100% n tallunt-inek .m n weḥraz. Ur tezmireḍ ara ad tazneḍ neɣ ad teṭṭefeḍ imaylen. ${ freeUpMessage } ${ upgradeLink } "
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Ad ${ loseAllData } deg umiḍan-ik·im ${ BRAND_NAME }. Akken ad t-id-terreḍ, issefk ad tsekcmeḍ awal uffir aqbur."
       ],
@@ -5773,6 +5793,9 @@
       ],
       "Go to Trash": [
         "Ddu ɣer Tqecawlt n yiḍumman"
+      ],
+      "Insert link": [
+        ""
       ],
       "Jump to first": [
         "Ɛeddi ɣer umezwaru"
@@ -6520,8 +6543,8 @@
       "Send auto-reply": [
         "Azen tiririt tawurmant"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "Sken izḍi usrid wis sin"
@@ -7717,15 +7740,6 @@
       "Feedback": [
         "Awennit"
       ],
-      "Fill in the email address and text to test your link": [
-        "Ččar tansa n yimayl akked uḍris i usekyed n useɣwen-inek·inem"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Ččar uṭṭun n tilifun akked uḍris i usekyed n useɣwen-inek·inem"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Ččar aseɣwen n URL akked uḍris i usekyed n useɣwen-inek·inem"
-      ],
       "Gift code": [
         "Tangalt n usefk"
       ],
@@ -7752,6 +7766,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Mudd ma ulac aɣilif aglam n wugur sakin seddu-d akk iznan n tuccḍa"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Postal code": [
         "Tangalt n lpusṭa"
@@ -8930,9 +8947,6 @@
       ],
       "Invoices": [
         "Tifaṭurin"
-      ],
-      "Keyboard Shortcuts": [
-        "Inegzumen n unasiw"
       ],
       "Labels": [
         "Tibzimin"

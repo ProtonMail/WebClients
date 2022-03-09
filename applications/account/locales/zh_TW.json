@@ -355,6 +355,9 @@
       "Get verification code": [
         "取得驗證碼"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
       ],
@@ -952,6 +955,11 @@
       ],
       "Unsupported event": [
         "不支援的事件"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2619,6 +2627,9 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "請至少將 ${ calendarToFixCount } 個行事曆與現存的 Proton calendar 合併"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Name does not match": [
         "名稱不相符"
@@ -4351,8 +4362,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "請輸入您的備援電話號碼，我們將向您發送您的使用者名稱或電子郵件地址。"
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "活動邀請與回覆函將會以此設定語言寄送。"
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "已過期"
@@ -4624,8 +4635,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru 讀取您的個人資料以供給廣告商、俄國政府機構及其他第三方。為更好保障隱私，請建立一個安全的電子郵件地址。"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "確定您記住密碼以登入與解密電子郵件。${ boldAlert }。我們建議您先新增備援電子郵件。"
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。又或者，${ _switchButton }。"
@@ -4840,8 +4851,8 @@
       "Proton Calendar": [
         ""
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton 無法協助您復原任何遺失的密碼"
+      "Proton can't help you recover any lost passwords.": [
+        ""
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton 暫停了一項匯入，因為與您另一個電子郵件提供者的連線已中斷。請重新連線。"
@@ -4890,6 +4901,9 @@
       ],
       "Recovery files have been voided": [
         "帳戶救援金鑰已被作廢"
+      ],
+      "recovery method": [
+        ""
       ],
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
@@ -4956,6 +4970,9 @@
       ],
       "Set recovery phrase": [
         "設定還原短語"
+      ],
+      "Show original message": [
+        "顯示原始郵件"
       ],
       "Signed up": [
         ""
@@ -5389,6 +5406,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "您的儲存空間容量已達到 100%。您不能傳送或接收新的電子郵件。${ freeUpMessage }${ upgradeLink }"
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "您將會 ${ loseAllData } 在您的 ${ BRAND_NAME } 帳號。要復原，您將需要輸入您的舊密碼。"
       ],
@@ -5713,6 +5733,9 @@
       ],
       "Go to Trash": [
         "前往垃圾桶"
+      ],
+      "Insert link": [
+        ""
       ],
       "Jump to first": [
         "跳到第一個"
@@ -6454,8 +6477,8 @@
       "Send auto-reply": [
         "發送自動回覆"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "顯示次要時區"
@@ -7641,15 +7664,6 @@
       "Feedback": [
         "意見回饋"
       ],
-      "Fill in the email address and text to test your link": [
-        "填寫電子郵件地址及文字以測試您的連結"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "填寫電話號碼及文字以測試您的連結"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "填寫 URL 連結及文字以測試您的連結"
-      ],
       "Gift code": [
         "禮品代碼"
       ],
@@ -7676,6 +7690,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有的話)"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Postal code": [
         "郵遞區號"
@@ -8850,9 +8867,6 @@
       ],
       "Invoices": [
         "帳單"
-      ],
-      "Keyboard Shortcuts": [
-        "鍵盤快捷鍵"
       ],
       "Labels": [
         "標籤"

@@ -56,9 +56,6 @@
       "Add to group": [
         "Zu Gruppe hinzufügen"
       ],
-      "Address options": [
-        "Adresseinstellungen"
-      ],
       "Advanced search": [
         "Erweiterte Suche"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Übernehmen"
+      ],
+      "Archive": [
+        "Archivieren"
       ],
       "Attachment": [
         "Anhang"
@@ -349,6 +349,9 @@
       "Go to first page": [
         "Zur ersten Seite"
       ],
+      "Go to label": [
+        "Zu Kategorie wechseln"
+      ],
       "Go to last page": [
         "Zur letzten Seite"
       ],
@@ -452,6 +455,9 @@
       "Load": [
         "Laden"
       ],
+      "Load embedded images": [
+        "Eingebettete Grafiken laden"
+      ],
       "Load image": [
         "Bild laden"
       ],
@@ -508,6 +514,9 @@
       ],
       "More": [
         "Mehr"
+      ],
+      "More details about ${ title }": [
+        "Mehr Details zu ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
@@ -635,11 +644,14 @@
       "Re-sign": [
         "Neu signieren"
       ],
+      "Read receipt sent": [
+        "Lesebestätigung gesendet"
+      ],
       "Recover data": [
         "Daten wiederherstellen"
       ],
       "Refer a friend": [
-        ""
+        "Einem Freund empfehlen"
       ],
       "Refine it": [
         "Verfeinere sie"
@@ -725,11 +737,11 @@
       "send auto-reply email": [
         "automatische E-Mail-Antwort senden"
       ],
-      "Send receipt": [
-        "Empfangsbestätigung senden"
+      "Send read receipt": [
+        "Lesebestätigung senden"
       ],
       "Set": [
-        "Festgelegen"
+        "Festlegen"
       ],
       "Set as default": [
         "Als Standard festlegen"
@@ -794,6 +806,9 @@
       "Some images could not be loaded with tracking protection": [
         "Einige Grafiken konnten nicht mit Tracking-Schutz geladen werden"
       ],
+      "Star": [
+        "Kennzeichnen"
+      ],
       "Start import": [
         "Importvorgang starten"
       ],
@@ -840,6 +855,9 @@
       "Try another method": [
         "Eine andere Methode ausprobieren"
       ],
+      "Turn on auto-load": [
+        "Automatisches laden einschalten"
+      ],
       "Turn on tracker protection": [
         "Tracker-Schutz aktivieren"
       ],
@@ -858,8 +876,14 @@
       "Unordered list": [
         "Unsortierte Liste"
       ],
+      "Unstar": [
+        "Kennzeichnung entfernen"
+      ],
       "Unsubscribe": [
         "Abbestellen"
+      ],
+      "Unsubscribe from mailing list": [
+        "Aus der Verteilerliste austragen"
       ],
       "Unsubscribing": [
         "Abonnement wird gekündigt"
@@ -915,6 +939,9 @@
       "View headers": [
         "Kopfzeilen anzeigen"
       ],
+      "View HTML": [
+        "Als HTML anzeigen"
+      ],
       "View invoice": [
         "Rechnung anzeigen"
       ],
@@ -924,14 +951,14 @@
       "View message": [
         "Nachricht anzeigen"
       ],
+      "View message details": [
+        "Nachrichtendetails ansehen"
+      ],
       "View recipients": [
         "Empfänger anzeigen"
       ],
       "View rendered HTML": [
         "Gerendertes HTML anzeigen"
-      ],
-      "View source code": [
-        "Quelltext anzeigen"
       ],
       "Why not?": [
         "Warum nicht?"
@@ -1253,7 +1280,7 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "ProtonMail weiterhin benutzen."
       ]
     },
     "Calendar attachment tooltip": {
@@ -1719,7 +1746,7 @@
     },
     "Country name": {
       "Abkhazia": [
-        ""
+        "Abkhazia"
       ],
       "Afghanistan": [
         "Afghanistan"
@@ -1731,22 +1758,22 @@
         "Algerien"
       ],
       "American Samoa": [
-        ""
+        "Amerikanisch‐Samoa"
       ],
       "Andorra": [
-        ""
+        "Andorra"
       ],
       "Angola": [
-        ""
+        "Angola"
       ],
       "Anguilla": [
-        ""
+        "Anguilla"
       ],
       "Antarctica": [
         "Antarktis"
       ],
       "Antigua and Barbuda": [
-        ""
+        "Antigua und Barbuda"
       ],
       "Argentina": [
         "Argentinien"
@@ -1755,10 +1782,10 @@
         "Armenien"
       ],
       "Aruba": [
-        ""
+        "Aruba"
       ],
       "Ascension Island": [
-        ""
+        "Ascension‐Inseln"
       ],
       "Australia": [
         "Australien"
@@ -1773,13 +1800,13 @@
         "Bahamas"
       ],
       "Bahrain": [
-        ""
+        "Bahrain"
       ],
       "Bangladesh": [
         "Bangladesch"
       ],
       "Barbados": [
-        ""
+        "Barbados"
       ],
       "Belarus": [
         "Belarus"
@@ -1788,40 +1815,40 @@
         "Belgien"
       ],
       "Belize": [
-        ""
+        "Belize"
       ],
       "Benin": [
-        ""
+        "Benin"
       ],
       "Bermuda": [
         "Bermuda"
       ],
       "Bhutan": [
-        ""
+        "Bhutan"
       ],
       "Bolivia": [
         "Bolivien"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        ""
+        "Bonaire, Sint Eustatius und Saba"
       ],
       "Bosnia and Herzegovina": [
         "Bosnien und Herzegowina"
       ],
       "Botswana": [
-        ""
+        "Botswana"
       ],
       "Bouvet Island": [
-        ""
+        "Bouvetinsel"
       ],
       "Brazil": [
         "Brasilien"
       ],
       "British Indian Ocean Territory": [
-        ""
+        "Britisches Territorium im Indischen Ozean"
       ],
       "Brunei Darussalam": [
-        ""
+        "Brunei Darussalam"
       ],
       "Bulgaria": [
         "Bulgarien"
@@ -1830,61 +1857,61 @@
         "Burkina Faso"
       ],
       "Burma": [
-        ""
+        "Myanmar"
       ],
       "Burundi": [
-        ""
+        "Burundi"
       ],
       "Cambodia": [
-        ""
+        "Kambodscha"
       ],
       "Cameroon": [
-        ""
+        "Kamerun"
       ],
       "Canada": [
         "Kanada"
       ],
       "Cape Verde": [
-        ""
+        "Kap Verde"
       ],
       "Cayman Islands": [
-        ""
+        "Cayman-Inseln"
       ],
       "Central African Republic": [
         "Zentralafrikanische Republik"
       ],
       "Chad": [
-        ""
+        "Tschad"
       ],
       "Chile": [
-        ""
+        "Chile"
       ],
       "China": [
-        ""
+        "China"
       ],
       "Christmas Island": [
-        ""
+        "Weihnachtsinsel"
       ],
       "Cocos (Keeling) Islands": [
-        ""
+        "Kokos‐/Keelingsinseln"
       ],
       "Colombia": [
-        ""
+        "Kolumbien"
       ],
       "Comoros": [
-        ""
+        "Komoren"
       ],
       "Congo": [
-        ""
+        "Kongo"
       ],
       "Congo, Democratic Republic of the": [
-        ""
+        "Demokratische Republik Kongo"
       ],
       "Cook Islands": [
-        ""
+        "Cookinseln"
       ],
       "Costa Rica": [
-        ""
+        "Costa Rica"
       ],
       "Cote d'Ivoire\"": [
         "Côte d'Ivoire"
@@ -1893,61 +1920,61 @@
         "Kroatien"
       ],
       "Cuba": [
-        ""
+        "Kuba"
       ],
       "Curaçao": [
-        ""
+        "Curaçao"
       ],
       "Cyprus": [
-        ""
+        "Zypern"
       ],
       "Czech Republic": [
-        ""
+        "Tschechische Republik"
       ],
       "Denmark": [
-        ""
+        "Dänemark"
       ],
       "Djibouti": [
-        ""
+        "Dschibuti"
       ],
       "Dominica": [
-        ""
+        "Dominica"
       ],
       "Dominican Republic": [
-        ""
+        "Dominikanische Republik"
       ],
       "Ecuador": [
-        ""
+        "Ekuador"
       ],
       "Egypt": [
         "Ägypten"
       ],
       "El Salvador": [
-        ""
+        "El Salvador"
       ],
       "Equatorial Guinea": [
-        ""
+        "Äquatorialguinea"
       ],
       "Eritrea": [
         "Eritrea"
       ],
       "Estonia": [
-        ""
+        "Estland"
       ],
       "Ethiopia": [
         "Äthiopien"
       ],
       "Falkland Islands": [
-        ""
+        "Falklandinseln"
       ],
       "Faroe Islands": [
-        ""
+        "Färöer-Inseln"
       ],
       "Federated States of Micronesia": [
-        ""
+        "Föderierte Staaten von Mikronesien"
       ],
       "Fiji": [
-        ""
+        "Fidschi"
       ],
       "Finland": [
         "Finnland"
@@ -1956,31 +1983,31 @@
         "Frankreich"
       ],
       "French Guiana": [
-        ""
+        "Französisch‐Guayana"
       ],
       "French Polynesia": [
-        ""
+        "Französisch‐Polynesien"
       ],
       "French Southern Territories": [
-        ""
+        "Französische Südgebiete"
       ],
       "Gabon": [
-        ""
+        "Gabun"
       ],
       "Gambia": [
-        ""
+        "Gambia"
       ],
       "Georgia": [
         "Georgien"
       ],
       "Germany": [
-        ""
+        "Deutschland"
       ],
       "Ghana": [
         "Ghana"
       ],
       "Gibraltar": [
-        ""
+        "Gibraltar"
       ],
       "Greece": [
         "Griechenland"
@@ -1989,43 +2016,43 @@
         "Grönland"
       ],
       "Grenada": [
-        ""
+        "Grenada"
       ],
       "Guadeloupe": [
-        ""
+        "Guadeloupe"
       ],
       "Guam": [
-        ""
+        "Guam"
       ],
       "Guatemala": [
-        ""
+        "Guatemala"
       ],
       "Guernsey": [
-        ""
+        "Guernsey"
       ],
       "Guinea": [
-        ""
+        "Guinea"
       ],
       "Guinea-Bissau": [
-        ""
+        "Guinea‐Bissau"
       ],
       "Guyana": [
-        ""
+        "Guyana"
       ],
       "Haiti": [
-        ""
+        "Haiti"
       ],
       "Heard Island and McDonald Islands": [
-        ""
+        "Heard und McDonaldinseln"
       ],
       "Holy See (Vatican City State)": [
-        ""
+        "Vatikanstaat"
       ],
       "Honduras": [
         "Honduras"
       ],
       "Hong Kong": [
-        ""
+        "Hongkong"
       ],
       "Hungary": [
         "Ungarn"
@@ -2040,7 +2067,7 @@
         "Indonesien"
       ],
       "International": [
-        ""
+        "International"
       ],
       "Iran": [
         "Iran"
@@ -2052,7 +2079,7 @@
         "Irland"
       ],
       "Isle of Man": [
-        ""
+        "Isle of Man"
       ],
       "Israel": [
         "Israel"
@@ -2061,427 +2088,427 @@
         "Italien"
       ],
       "Jamaica": [
-        ""
+        "Jamaika"
       ],
       "Japan": [
-        ""
+        "Japan"
       ],
       "Jersey": [
-        ""
+        "Jersey"
       ],
       "Jordan": [
-        ""
+        "Jordanien"
       ],
       "Kazakhstan": [
-        ""
+        "Kasachstan"
       ],
       "Kenya": [
-        ""
+        "Kenia"
       ],
       "Kiribati": [
-        ""
+        "Kiribati"
       ],
       "Kosovo": [
-        ""
+        "Kosovo"
       ],
       "Kuwait": [
-        ""
+        "Kuwait"
       ],
       "Kyrgyzstan": [
-        ""
+        "Kirgisistan"
       ],
       "Laos": [
-        ""
+        "Laos"
       ],
       "Latvia": [
-        ""
+        "Lettland"
       ],
       "Lebanon": [
-        ""
+        "Libanon"
       ],
       "Lesotho": [
-        ""
+        "Lesotho"
       ],
       "Liberia": [
-        ""
+        "Liberia"
       ],
       "Libya": [
-        ""
+        "Libyen"
       ],
       "Liechtenstein": [
-        ""
+        "Liechtenstein"
       ],
       "Lithuania": [
-        ""
+        "Litauen"
       ],
       "Luxembourg": [
-        ""
+        "Luxemburg"
       ],
       "Macao": [
-        ""
+        "Macau"
       ],
       "Madagascar": [
-        ""
+        "Madagaskar"
       ],
       "Malawi": [
-        ""
+        "Malawi"
       ],
       "Malaysia": [
-        ""
+        "Malaysia"
       ],
       "Maldives": [
-        ""
+        "Malediven"
       ],
       "Mali": [
-        ""
+        "Mali"
       ],
       "Malta": [
-        ""
+        "Malta"
       ],
       "Marshall Islands": [
-        ""
+        "Marshallinseln"
       ],
       "Martinique": [
-        ""
+        "Martinique"
       ],
       "Mauritania": [
-        ""
+        "Mauretanien"
       ],
       "Mauritius": [
-        ""
+        "Mauritius"
       ],
       "Mayotte": [
-        ""
+        "Mayotte"
       ],
       "Mexico": [
-        ""
+        "Mexiko"
       ],
       "Moldova": [
-        ""
+        "Republik Moldau"
       ],
       "Monaco": [
-        ""
+        "Monaco"
       ],
       "Mongolia": [
-        ""
+        "Mongolei"
       ],
       "Montenegro": [
-        ""
+        "Montenegro"
       ],
       "Montserrat": [
-        ""
+        "Montserrat"
       ],
       "Morocco": [
-        ""
+        "Marokko"
       ],
       "Mozambique": [
-        ""
+        "Mosambik"
       ],
       "Namibia": [
-        ""
+        "Namibia"
       ],
       "Nauru": [
-        ""
+        "Nauru"
       ],
       "Nepal": [
-        ""
+        "Nepal"
       ],
       "Netherlands": [
-        ""
+        "Niederlande"
       ],
       "New Caledonia": [
-        ""
+        "Neukaledonien"
       ],
       "New Zealand": [
-        ""
+        "Neuseeland"
       ],
       "Nicaragua": [
-        ""
+        "Nicaragua"
       ],
       "Niger": [
-        ""
+        "Niger"
       ],
       "Nigeria": [
-        ""
+        "Nigeria"
       ],
       "Niue": [
-        ""
+        "Niue"
       ],
       "Norfolk Island": [
-        ""
+        "Norfolkinsel"
       ],
       "North Korea": [
-        ""
+        "Nordkorea"
       ],
       "North Macedonia": [
-        ""
+        "Nordmazedonien"
       ],
       "Northern Mariana Islands": [
-        ""
+        "Nördliche Marianen"
       ],
       "Norway": [
-        ""
+        "Norwegen"
       ],
       "Oman": [
-        ""
+        "Oman"
       ],
       "Pakistan": [
-        ""
+        "Pakistan"
       ],
       "Palau": [
-        ""
+        "Palau"
       ],
       "Palestine": [
-        ""
+        "Palästina"
       ],
       "Panama": [
-        ""
+        "Panama"
       ],
       "Papua New Guinea": [
-        ""
+        "Papua‐Neuguinea"
       ],
       "Paraguay": [
-        ""
+        "Paraguay"
       ],
       "Peru": [
-        ""
+        "Peru"
       ],
       "Philippines": [
-        ""
+        "Philippinen"
       ],
       "Pitcairn": [
-        ""
+        "Pitcairn"
       ],
       "Poland": [
-        ""
+        "Polen"
       ],
       "Portugal": [
-        ""
+        "Portugal"
       ],
       "Puerto Rico": [
-        ""
+        "Puerto Rico"
       ],
       "Qatar": [
-        ""
+        "Katar"
       ],
       "Reunion": [
-        ""
+        "Reunion"
       ],
       "Romania": [
-        ""
+        "Rumänien"
       ],
       "Russia": [
-        ""
+        "Russland"
       ],
       "Rwanda": [
-        ""
+        "Ruanda"
       ],
       "Saint Barthélemy": [
-        ""
+        "Saint‐Barthélemy"
       ],
       "Saint Helena": [
-        ""
+        "St. Helena (Insel)"
       ],
       "Saint Kitts and Nevis": [
-        ""
+        "St. Kitts und Nevis"
       ],
       "Saint Lucia": [
-        ""
+        "St. Lucia"
       ],
       "Saint Martin (French Part)": [
-        ""
+        "St. Martin (französischer Teil)"
       ],
       "Saint Pierre and Miquelon": [
-        ""
+        "Saint-Pierre und Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        ""
+        "St. Vincent und die Grenadinen"
       ],
       "Samoa": [
-        ""
+        "Samoa"
       ],
       "San Marino": [
-        ""
+        "San Marino"
       ],
       "Sao Tome and Principe": [
-        ""
+        "São Tomé und Príncipe"
       ],
       "Saudi Arabia": [
-        ""
+        "Saudi‐Arabien"
       ],
       "Senegal": [
-        ""
+        "Senegal"
       ],
       "Serbia": [
-        ""
+        "Serbien"
       ],
       "Seychelles": [
-        ""
+        "Seychellen"
       ],
       "Sierra Leone": [
-        ""
+        "Sierra Leone"
       ],
       "Singapore": [
-        ""
+        "Singapur"
       ],
       "Sint Maarten": [
-        ""
+        "Sint Maarten"
       ],
       "Slovakia": [
-        ""
+        "Slowakei"
       ],
       "Slovenia": [
-        ""
+        "Slowenien"
       ],
       "Solomon Islands": [
-        ""
+        "Salomon‐Inseln"
       ],
       "Somalia": [
-        ""
+        "Somalia"
       ],
       "South Africa": [
-        ""
+        "Südafrika"
       ],
       "South Georgia and the South Sandwich Islands": [
-        ""
+        "Südgeorgien und die Südlichen Sandwichinseln"
       ],
       "South Korea": [
-        ""
+        "Südkorea"
       ],
       "South Ossetia": [
-        ""
+        "Süd-Ossetien"
       ],
       "South Sudan": [
-        ""
+        "Südsudan"
       ],
       "Spain": [
         "Spanien"
       ],
       "Sri Lanka": [
-        ""
+        "Sri Lanka"
       ],
       "Sudan": [
-        ""
+        "Sudan"
       ],
       "Suriname": [
-        ""
+        "Suriname"
       ],
       "Svalbard and Jan Mayen": [
-        ""
+        "Spitzbergen und Jan Mayen"
       ],
       "Swaziland": [
         "Eswatini"
       ],
       "Sweden": [
-        ""
+        "Schweden"
       ],
       "Switzerland": [
-        ""
+        "Schweiz"
       ],
       "Syria": [
-        ""
+        "Syrien"
       ],
       "Taiwan": [
-        ""
+        "Taiwan"
       ],
       "Tajikistan": [
-        ""
+        "Tadschikistan"
       ],
       "Tanzania": [
-        ""
+        "Tansania"
       ],
       "Thailand": [
-        ""
+        "Thailand"
       ],
       "Timor-Leste": [
-        ""
+        "Osttimor"
       ],
       "Togo": [
-        ""
+        "Togo"
       ],
       "Tokelau": [
-        ""
+        "Tokelau"
       ],
       "Tonga": [
-        ""
+        "Tonga"
       ],
       "Trinidad and Tobago": [
-        ""
+        "Trinidad und Tobago"
       ],
       "Tristan da Cunha": [
-        ""
+        "Tristan da Cunha"
       ],
       "Tunisia": [
-        ""
+        "Tunesien"
       ],
       "Turkey": [
-        ""
+        "Türkei"
       ],
       "Turkmenistan": [
-        ""
+        "Turkmenistan"
       ],
       "Turks and Caicos Islands": [
-        ""
+        "Turks‐ und Caicosinseln"
       ],
       "Tuvalu": [
-        ""
+        "Tuvalu"
       ],
       "Uganda": [
-        ""
+        "Uganda"
       ],
       "Ukraine": [
-        ""
+        "Ukraine"
       ],
       "United Arab Emirates": [
         "Vereinigte Arabische Emirate"
       ],
       "United Kingdom": [
-        ""
+        "Vereinigtes Königreich"
       ],
       "United States": [
-        ""
+        "USA"
       ],
       "United States Minor Outlying Islands": [
-        ""
+        "Kleinere Amerikanische Überseeinseln"
       ],
       "Uruguay": [
-        ""
+        "Uruguay"
       ],
       "Uzbekistan": [
-        ""
+        "Usbekistan"
       ],
       "Vanuatu": [
-        ""
+        "Vanuatu"
       ],
       "Venezuela": [
-        ""
+        "Venezuela"
       ],
       "Vietnam": [
-        ""
+        "Vietnam"
       ],
       "Virgin Islands, British": [
-        ""
+        "Britische Jungferninseln"
       ],
       "Virgin Islands, U.S.": [
-        ""
+        "Amerikanische Jungferninseln"
       ],
       "Wallis and Futuna": [
-        ""
+        "Wallis und Futuna"
       ],
       "Western Sahara": [
-        ""
+        "Westsahara"
       ],
       "Yemen": [
-        ""
+        "Jemen"
       ],
       "Zambia": [
-        ""
+        "Sambia"
       ],
       "Zimbabwe": [
-        ""
+        "Simbabwe"
       ],
       "Åland Islands": [
-        ""
+        "Åland‐Inseln"
       ]
     },
     "CustomFilter": {
@@ -2869,7 +2896,7 @@
         "Name der Kategorie muss angegeben werden"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Maximale Anzahl von Anhängen (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) überschritten."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen",
@@ -2880,6 +2907,9 @@
       ],
       "Message processing error.": [
         "Fehler beim Verarbeiten der Nachricht."
+      ],
+      "Missing key packet": [
+        "Fehlendes Schlüsselpaket"
       ],
       "Missing signature": [
         "Fehlende Signatur"
@@ -3791,7 +3821,7 @@
         "5 E-Mail-Adressen"
       ],
       "5 GB storage": [
-        ""
+        "5 GB Speicherplatz"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Eine Wiederherstellungsphrase ist eine der sichersten Möglichkeiten, den Zugang zu deinem Konto zu schützen. Mit dieser kannst du auf dein Konto zugreifen und deine verschlüsselten Daten wiederherstellen, falls du dein Passwort einmal vergessen solltest."
@@ -3922,7 +3952,7 @@
         "Phishing-Bericht bestätigen"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Fahre mit ${ planName } fort"
       ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
@@ -4055,6 +4085,21 @@
       ],
       "Expiration Time": [
         "Verfallszeit"
+      ],
+      "Expires": [
+        "Verfällt"
+      ],
+      "Expires in ${ formattedDelay }": [
+        "Läuft in ${ formattedDelay } ab"
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        "Läuft in ${ formattedDelayShort } ab"
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        "Läuft in weniger als ${ formattedDelayShort } ab"
+      ],
+      "Expires soon": [
+        "Verfällt demnächst"
       ],
       "file attached": [
         "Datei angehängt",
@@ -4196,7 +4241,7 @@
         "Kategorien verwalten"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Maximale Anzahl von Anhängen (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) überschritten."
       ],
       "members": [
         "Mitglieder"
@@ -4292,7 +4337,7 @@
         "Ändere diese Einstellungen nur, wenn du PGP mit Nicht-ProtonMail-Empfängern verwendest."
       ],
       "Other options": [
-        ""
+        "Weitere Optionen"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Unser System hat diese Nachricht als Phishing-Versuch gekennzeichnet. Bitte überprüfe, ob sie seriös ist."
@@ -4382,16 +4427,13 @@
         "Gespeichert ${ dateString }"
       ],
       "Saved at ${ dateString }": [
-        "Gespeichert am ${ dateString }"
+        "Gespeichert um ${ dateString }"
       ],
       "Saved on ${ dateString }": [
         "Gespeichert am ${ dateString }"
       ],
       "Saving draft…": [
         "Entwurf wird gespeichert …"
-      ],
-      "Scheduled": [
-        "Geplant"
       ],
       "Scheduled send of this message will be cancelled.": [
         "Der geplante Versand dieser Nachricht wird widerrufen."
@@ -4424,7 +4466,7 @@
         "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Deine Nachricht wird von deiner Standardadresse „${ email }” gesendet."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
+        "Gesendet mittels einer sicheren E-Mail von <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuchen Sie es in ein paar Minuten erneut"
@@ -4447,8 +4489,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Entschuldige, diese Nachricht existiert nicht oder ist bereits abgelaufen"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Beginne mit 500 MB und entsperre nach und nach mehr Speicherplatz. Der Speicherplatz wird von Mail, Calendar und Drive gemeinsam genutzt."
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
       ],
       "Store and share files securely with Proton Drive.": [
         "Speichern und teilen Sie Dateien sicher mit Proton Drive."
@@ -4580,9 +4622,6 @@
       "This message will expire ${ formattedDate }": [
         "Diese Nachricht verfällt am ${ formattedDate }"
       ],
-      "This message will expire in ${ formattedDelay }": [
-        "Diese Nachricht verfällt in ${ formattedDelay }"
-      ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "Diese Nachricht verfällt am ${ dateString } um ${ formattedTime }"
       ],
@@ -4626,7 +4665,7 @@
         "Aktivieren, um den Inhalt deiner Nachrichten durchsuchen zu können"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filterlisten"
       ],
       "Unlimited messages": [
         "Unbegrenzte Anzahl von Nachrichten"
@@ -4886,9 +4925,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "Wenn Sie auf „Schlüssel vertrauen” klicken, wird ein neuer Kontakt erstellt und dieser öffentliche Schlüssel mit diesem Absender verknüpft. E-Mails von dieser Adresse werden automatisch kryptografisch verifiziert."
       ],
-      "Do you want to trust the following public key?": [
-        "Möchten Sie dem folgenden öffentlichen Schlüssel vertrauen?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Möchten Sie dem primären öffentlichen Schlüssel mit dem folgenden Fingerabdruck vertrauen?",
         "Möchten Sie den primären öffentlichen Schlüsseln mit den folgenden Fingerabdrücken vertrauen?"
@@ -4960,6 +4996,9 @@
       ],
       "Go to Trash": [
         "Zum Papierkorb"
+      ],
+      "Insert link": [
+        "Link einfügen"
       ],
       "Jump to first": [
         "Zum ersten springen"
@@ -5095,9 +5134,6 @@
       " and ${ l }": [
         " und ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } und ${ count } weitere"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
       ],
@@ -5140,8 +5176,8 @@
       "Automatically save contacts": [
         "Kontakte automatisch speichern"
       ],
-      "BCC:": [
-        "BCC:"
+      "BCC": [
+        "BCC"
       ],
       "Blind Carbon Copy": [
         "Blindkopie"
@@ -5167,8 +5203,8 @@
       "Category": [
         "Kategorie"
       ],
-      "CC:": [
-        "CC:"
+      "CC": [
+        "CC"
       ],
       "City": [
         "Stadt"
@@ -5280,9 +5316,6 @@
       ],
       "Label messages as": [
         "Nachrichten kennzeichnen als"
-      ],
-      "Labels:": [
-        "Kategorien:"
       ],
       "Last 12 months only": [
         "Nur die letzten 12 Monate"
@@ -5773,7 +5806,7 @@
         "AW:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Deine kostenlose Testversion ist beendet. Der Zugriff auf dein Konto wird in Kürze deaktiviert. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -6107,15 +6140,6 @@
       "End date": [
         "Enddatum"
       ],
-      "Fill in the email address and text to test your link": [
-        "E-Mail-Adresse und Text eingeben, um den Link zu testen"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Telefonnummer und Text eingeben, um den Link zu testen"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Webadresse und Text eingeben, um den Link zu testen"
-      ],
       "Filter folders": [
         "Ordner filtern"
       ],
@@ -6157,6 +6181,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Bitte beschreibe das Problem und füge alle Fehlermeldungen hinzu"
+      ],
+      "Please insert link first": [
+        "Füge bitte zuerst den Link ein"
       ],
       "Proton username": [
         "Proton‐Benutzername"
@@ -6446,10 +6473,10 @@
         "Alle Proton Dienste kennenlernen"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Erhalte bis zu 18 Monate ${ appName } ${ planName } kostenlos"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "Lade Freunde ein und verdiene Belohnungen!"
       ],
       "Message Content Search": [
         "Nachrichteninhalte durchsuchen"
@@ -6468,11 +6495,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Abonnement gekündigt"
+      "Unsubscribed from mailing list": [
+        "Aus der Verteilerliste ausgetragen"
       ],
-      "Unsubscribing...": [
-        "Abonnement wird gekündigt …"
+      "Unsubscribing from mailing list...": [
+        "Abmeldung aus Verteilerliste im Gange..."
       ]
     },
     "Step in filter modal": {
@@ -6854,9 +6881,6 @@
       "Addresses": [
         "Adressen"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Alle Empfänger wurden dem BCC-Feld hinzugefügt und können nicht offengelegt werden"
-      ],
       "Are you sure you want to close?": [
         "Wirklich schließen?"
       ],
@@ -7051,9 +7075,6 @@
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
       ],
-      "Keyboard Shortcuts": [
-        "Tastaturkürzel"
-      ],
       "Label as": [
         "Folgender Kategorie zuordnen"
       ],
@@ -7084,8 +7105,14 @@
       "Merging contacts": [
         "Kontakte werden zusammengeführt"
       ],
+      "Message details": [
+        "Nachrichtendetails"
+      ],
       "Message list": [
         "Nachrichtenliste"
+      ],
+      "Message will expire": [
+        "Nachricht wird verfallen"
       ],
       "More": [
         "Mehr"
@@ -7162,6 +7189,9 @@
       "Recipient missing": [
         "Empfänger fehlt"
       ],
+      "Recipients": [
+        "Empfänger"
+      ],
       "Recover data": [
         "Daten wiederherstellen"
       ],
@@ -7203,6 +7233,9 @@
       ],
       "Send without expiration?": [
         "Ohne Ablaufdatum versenden?"
+      ],
+      "Sender": [
+        "Absender"
       ],
       "Sender changed": [
         "Absender geändert"
@@ -7272,7 +7305,7 @@
         "Neuigkeiten"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Deine kostenlose Testversion endet demnächst, am ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7419,7 +7452,7 @@
         "Dabei gehen alle bisher vorgenommenen Anpassungen verloren."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Deine kostenlose Testversion endet am ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

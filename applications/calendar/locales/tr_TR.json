@@ -199,6 +199,9 @@
       "Get verification code": [
         "Doğrulama kodu al"
       ],
+      "Go to label": [
+        "Etikete git"
+      ],
       "Go to panel ${ index }": [
         "${ index } panosuna git"
       ],
@@ -452,7 +455,7 @@
         "Görsel yükle"
       ],
       "Use ${ label } theme": [
-        "${ label } temasını kullan"
+        "${ label } teması kullanılsın"
       ],
       "Use for sending": [
         "Gönderim için kullan"
@@ -936,7 +939,7 @@
         "Telefon"
       ],
       "Photo": [
-        "Fotoğraf"
+        "Görsel"
       ],
       "Role": [
         "Rol"
@@ -2092,6 +2095,9 @@
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin"
       ],
+      "Missing key packet": [
+        "Anahtar paketi eksik"
+      ],
       "Missing signature": [
         "İmza eksik"
       ],
@@ -2517,8 +2523,8 @@
       "no": [
         "hayır"
       ],
-      "unanswered": [
-        "yanıtlanmamış"
+      "pending": [
+        "bekliyor"
       ],
       "yes": [
         "evet"
@@ -2945,7 +2951,7 @@
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, spam kutusuna da bakmayı unutmayın."
+        "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } ve ${ contactsGroupsFragment } kayıtlarını içe aktar"
@@ -3051,7 +3057,7 @@
         "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ProtonMail uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME, gerçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen ProtonMail uygulamasının şifrelenmiş mesajları her zaman imzaladığını unutmayın"
+        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ProtonMail tarafından imzalandığını unutmayın"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Lütfen bu gruba atanan adreslerin SİLİNEMEYECEĞİNİ unutmayın."
@@ -3371,7 +3377,7 @@
         "E-posta adresi ekle"
       ],
       "Add image URL": [
-        "Görsel adresi ekle"
+        "Adresten görsel ekle"
       ],
       "Add to group": [
         "Gruba ekle"
@@ -3707,7 +3713,7 @@
         "Hizmet sağlayıcınızdan verilerinizi topluyoruz"
       ],
       "Your import is starting": [
-        "İçeri aktarma işleminize başlanıyor"
+        "İçe aktarma işleminize başlanıyor"
       ]
     },
     "Mail import summary": {
@@ -4734,7 +4740,7 @@
         "Yinelenen etkinliği sil"
       ],
       "Deleting contacts": [
-        "Kişiler siliniyor"
+        "Kişileri silme"
       ],
       "Drop to upload": [
         "Yüklemek için bırakın"
@@ -4776,7 +4782,7 @@
         "Etkinlik belirlenmiş zaman aralığında gerçekleşecekse işaretleyin"
       ],
       "Exporting contacts": [
-        "Kişiler dışa aktarılıyor"
+        "Kişileri dışa aktarma"
       ],
       "Feedback": [
         "Geri bildirim"
@@ -4798,7 +4804,7 @@
         "İçe basit etkinlik olarak aktarılsın mı?"
       ],
       "Import contacts": [
-        "Kişileri içe aktar"
+        "Kişileri içe aktarma"
       ],
       "Import events": [
         "Etkinlikleri içe aktar"
@@ -4807,7 +4813,7 @@
         "İçe aktarılamadı"
       ],
       "Import groups": [
-        "Grupları içe aktar"
+        "Grupları içe aktarma"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
@@ -4819,7 +4825,7 @@
         "Kişileri birleştir"
       ],
       "Merging contacts": [
-        "Kişiler birleştiriliyor"
+        "Kişileri birleştirme"
       ],
       "Open actions dropdown": [
         "İşlemler menüsünü aç"

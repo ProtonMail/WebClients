@@ -199,6 +199,9 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
+      "Go to label": [
+        "Afficher le label"
+      ],
       "Go to panel ${ index }": [
         "Aller au panneau ${ index }"
       ],
@@ -2092,6 +2095,9 @@
         "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant",
         "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers Proton existants"
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Missing signature": [
         "Signature manquante"
       ],
@@ -2517,8 +2523,8 @@
       "no": [
         "non"
       ],
-      "unanswered": [
-        "non répondu"
+      "pending": [
+        "en attente"
       ],
       "yes": [
         "oui"

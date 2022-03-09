@@ -119,9 +119,6 @@
       "Compare all features": [
         "Συγκρίνετε όλες τις λειτουργίες"
       ],
-      "Compare plans": [
-        "Σύγκριση πακέτων"
-      ],
       "Compose": [
         "Σύνταξη"
       ],
@@ -244,6 +241,9 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Μεταβείτε στο πίνακα ελέγχου ${ index }"
       ],
@@ -348,9 +348,6 @@
       ],
       "Pause upload": [
         "Παύση ανεβάσματος"
-      ],
-      "Pay": [
-        "Πληρωμή"
       ],
       "Preview": [
         "Προεπισκόπηση"
@@ -537,6 +534,9 @@
       ],
       "Upgrade": [
         "Αναβάθμιση"
+      ],
+      "Upload anyway": [
+        ""
       ],
       "Upload file": [
         "Ανέβασμα αρχείου"
@@ -1941,9 +1941,6 @@
       "Invalid card number": [
         "Μη έγκυρος αριθμός κάρτας"
       ],
-      "Invalid code": [
-        "Μη έγκυρος κωδικός"
-      ],
       "Invalid expiration date": [
         "Μη έγκυρη ημερομηνία λήξης"
       ],
@@ -1965,6 +1962,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του Proton"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
@@ -2676,6 +2676,9 @@
       "Create your first folder and start moving your files.": [
         "Δημιουργήστε τον πρώτο σας φάκελο και ξεκινήστε να μετακινείτε τα αρχεία σας."
       ],
+      "Creating": [
+        ""
+      ],
       "Creating link to file": [
         "Δημιουργία συνδέσμου προς το αρχείο"
       ],
@@ -2694,9 +2697,6 @@
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Εφαρμόστηκε έκπτωση στη συνδρομή σας, με το κουπόνι ${ code }"
-      ],
-      "Domains": [
-        "Domains"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
@@ -3994,6 +3994,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        ""
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "Το \"${ name }\" εξαλείφθηκε οριστικά από τα Διαγραμμένα"
       ],
@@ -4054,9 +4057,6 @@
       "${ movedLinksCount } folder successfully moved": [
         "μετακινήθηκε επιτυχώς ${ movedLinksCount } φάκελος",
         "μετακινήθηκαν επιτυχώς ${ movedLinksCount } φάκελοι"
-      ],
-      "${ name } created successfully": [
-        ""
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } στοιχείο εξαλείφθηκε οριστικά από τα Διαγραμμένα",
@@ -5054,6 +5054,9 @@
       ],
       "PayPal verification failed": [
         "Η επαλήθευση PayPal απέτυχε"
+      ],
+      "Performance might be affected": [
+        ""
       ],
       "Phone numbers": [
         "Αριθμοί Τηλεφώνου"

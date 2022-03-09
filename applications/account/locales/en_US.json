@@ -355,6 +355,9 @@
       "Get verification code": [
         ""
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         ""
       ],
@@ -960,6 +963,11 @@
         ""
       ],
       "Unsupported event": [
+        ""
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
         ""
       ]
     },
@@ -2638,6 +2646,9 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
+        ""
+      ],
+      "Missing key packet": [
         ""
       ],
       "Name does not match": [
@@ -4409,7 +4420,7 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         ""
       ],
-      "Event invites and RSVPs will be sent in this language.": [
+      "Event invitations and RSVPs will be sent in this language.": [
         ""
       ],
       "Expired": [
@@ -4683,7 +4694,7 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         ""
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
         ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
@@ -4899,7 +4910,7 @@
       "Proton Calendar": [
         ""
       ],
-      "Proton can't help you recover any lost passwords": [
+      "Proton can't help you recover any lost passwords.": [
         ""
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
@@ -4949,6 +4960,9 @@
         ""
       ],
       "Recovery files have been voided": [
+        ""
+      ],
+      "recovery method": [
         ""
       ],
       "Recovery phrase copied to clipboard": [
@@ -5015,6 +5029,9 @@
         ""
       ],
       "Set recovery phrase": [
+        ""
+      ],
+      "Show original message": [
         ""
       ],
       "Signed up": [
@@ -5449,6 +5466,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         ""
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         ""
       ],
@@ -5772,6 +5792,9 @@
         ""
       ],
       "Go to Trash": [
+        ""
+      ],
+      "Insert link": [
         ""
       ],
       "Jump to first": [
@@ -6520,8 +6543,8 @@
       "Send auto-reply": [
         ""
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         ""
@@ -7717,15 +7740,6 @@
       "Feedback": [
         ""
       ],
-      "Fill in the email address and text to test your link": [
-        ""
-      ],
-      "Fill in the phone number and text to test your link": [
-        ""
-      ],
-      "Fill in the URL link and text to test your link": [
-        ""
-      ],
       "Gift code": [
         ""
       ],
@@ -7751,6 +7765,9 @@
         ""
       ],
       "Please describe the problem and include any error messages": [
+        ""
+      ],
+      "Please insert link first": [
         ""
       ],
       "Postal code": [
@@ -8929,9 +8946,6 @@
         ""
       ],
       "Invoices": [
-        ""
-      ],
-      "Keyboard Shortcuts": [
         ""
       ],
       "Labels": [
