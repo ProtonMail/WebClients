@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { format } from 'date-fns';
-import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES, APPS, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES, APPS } from '@proton/shared/lib/constants';
 import {
     hasMailPro,
     hasMail,
@@ -44,16 +44,12 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
         const calendarAppName = getAppName(APPS.PROTONCALENDAR);
         const handleUpgrade = () =>
             openSubscriptionModal({
-                planIDs: { [PLANS.MAIL]: 1 },
-                cycle: DEFAULT_CYCLE,
-                currency: subscription?.Currency,
+                plan: PLANS.MAIL,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disableBackButton: true,
             });
         const handleExplorePlans = () =>
             openSubscriptionModal({
-                cycle: DEFAULT_CYCLE,
-                currency: subscription?.Currency,
                 step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             });
         return (
@@ -100,8 +96,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
         );
         const handleUpgrade = () =>
             openSubscriptionModal({
-                planIDs: { [PLANS.VPN]: 1 },
-                cycle: DEFAULT_CYCLE,
+                plan: PLANS.VPN,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disableBackButton: true,
             });
@@ -143,10 +138,8 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
         );
         const handleUpgrade = () =>
             openSubscriptionModal({
-                planIDs: { [PLANS.BUNDLE]: 1 },
-                cycle: DEFAULT_CYCLE,
-                currency: subscription?.Currency || DEFAULT_CURRENCY,
-                step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                plan: PLANS.BUNDLE,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disableBackButton: true,
             });
         return (
@@ -190,10 +183,8 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
         );
         const handleUpgrade = () =>
             openSubscriptionModal({
-                planIDs: { [PLANS.BUNDLE_PRO]: 1 },
-                cycle: DEFAULT_CYCLE,
-                currency: subscription.Currency,
-                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                plan: PLANS.BUNDLE_PRO,
+                step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
                 disableBackButton: true,
             });
         return (
