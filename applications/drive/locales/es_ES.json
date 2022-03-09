@@ -119,9 +119,6 @@
       "Compare all features": [
         "Comparar todas las funcionalidades"
       ],
-      "Compare plans": [
-        "Comparar planes"
-      ],
       "Compose": [
         "Redactar"
       ],
@@ -244,6 +241,9 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
       ],
@@ -348,9 +348,6 @@
       ],
       "Pause upload": [
         "Pausar subida"
-      ],
-      "Pay": [
-        "Pagar"
       ],
       "Preview": [
         "Previsualizar"
@@ -537,6 +534,9 @@
       ],
       "Upgrade": [
         "Actualizar"
+      ],
+      "Upload anyway": [
+        ""
       ],
       "Upload file": [
         "Subir archivo"
@@ -1941,9 +1941,6 @@
       "Invalid card number": [
         "Número de tarjeta no válido"
       ],
-      "Invalid code": [
-        "Código no válido"
-      ],
       "Invalid expiration date": [
         "Fecha de expiración no válida"
       ],
@@ -1965,6 +1962,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
         "Fusionar al menos ${ calendarToFixCount } calendarios con los calendarios existentes de Proton"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Missing signature": [
         "No se ha encontrado la firma"
@@ -2676,6 +2676,9 @@
       "Create your first folder and start moving your files.": [
         "Crea tu primera carpeta y comienza a mover tus archivos."
       ],
+      "Creating": [
+        ""
+      ],
       "Creating link to file": [
         "Creando enlace al archivo"
       ],
@@ -2694,9 +2697,6 @@
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descuento aplicado a tu suscripción con el cupón ${ code }"
-      ],
-      "Domains": [
-        "Dominios"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarga hoy tu aplicación favorita y lleva la privacidad contigo a donde quiera que vayas."
@@ -3994,6 +3994,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        ""
+      ],
       "\"${ name }\" deleted permanently from trash": [
         ""
       ],
@@ -4054,9 +4057,6 @@
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } carpeta movida con éxito",
         "${ movedLinksCount } carpetas movidas con éxito"
-      ],
-      "${ name } created successfully": [
-        ""
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "",
@@ -5054,6 +5054,9 @@
       ],
       "PayPal verification failed": [
         "Error en la verificiación de PayPal"
+      ],
+      "Performance might be affected": [
+        ""
       ],
       "Phone numbers": [
         "Números de teléfono"

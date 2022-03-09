@@ -199,6 +199,9 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
+      "Go to label": [
+        "Ir para marcador"
+      ],
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
       ],
@@ -2092,6 +2095,9 @@
         "Mescle ao menos ${ calendarToFixCount } calendário com calendários Proton existentes",
         "Mescle ao menos ${ calendarToFixCount } calendários com um calendário Proton existente"
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Missing signature": [
         "Assinatura ausente"
       ],
@@ -2517,8 +2523,8 @@
       "no": [
         "não"
       ],
-      "unanswered": [
-        "sem resposta"
+      "pending": [
+        "pendente"
       ],
       "yes": [
         "sim"
@@ -4346,10 +4352,10 @@
         "Convide amigos e ganhe recompensas!"
       ],
       "No more missed appointments": [
-        ""
+        "Não há mais compromissos perdidos"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "Com as notificações por e-mail, você decide sobre quais eventos será notificado e quando."
       ]
     },
     "Storage": {

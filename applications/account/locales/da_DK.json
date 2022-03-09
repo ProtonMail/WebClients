@@ -355,6 +355,9 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
       ],
@@ -961,6 +964,11 @@
       ],
       "Unsupported event": [
         "Ikke-understøttet begivenhed"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2639,6 +2647,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Flet mindst ${ calendarToFixCount } kalender med en eksisterende Proton-kalender",
         "Flet mindst ${ calendarToFixCount } kalendere med eksisterende Proton-kalendere"
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Name does not match": [
         ""
@@ -4409,8 +4420,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Indtast dit telefonnummer til gendannelse, og vi vil så sende dig dit brugernavn eller din e-mailadresse."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "Invitationer til begivenheder og anmodninger om svar vil blive sendt på dette sprog."
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "Udløbet"
@@ -4683,8 +4694,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru læser dine personlige oplysninger for at give adgang til annoncører, den russiske regering og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Sørg for at huske adgangskoden til at logge ind og dekryptere e-mails. ${ boldAlert }. Vi anbefaler at tilføje en e-mail til gendannelse først."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Angiv disse oplysninger manuelt i din to-faktor-godkendelsesenhed for at oprette din konto. ${ _switchButton }."
@@ -4899,8 +4910,8 @@
       "Proton Calendar": [
         ""
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton kan ikke hjælpe dig med at gendanne mistede adgangskoder"
+      "Proton can't help you recover any lost passwords.": [
+        ""
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton satte en import på pause, da vi mistede forbindelsen med din anden e-mail-udbyder. Genopret venligst forbindelsen."
@@ -4950,6 +4961,9 @@
       ],
       "Recovery files have been voided": [
         "Genoprettelsesfiler er blevet ugyldiggjort"
+      ],
+      "recovery method": [
+        ""
       ],
       "Recovery phrase copied to clipboard": [
         "Gendannelsessætning kopieret til udklipsholderen"
@@ -5016,6 +5030,9 @@
       ],
       "Set recovery phrase": [
         "Opsæt gendannelsessætning"
+      ],
+      "Show original message": [
+        ""
       ],
       "Signed up": [
         ""
@@ -5449,6 +5466,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt 100% af din lagerkapacitet. Du kan ikke sende eller modtage nye e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Du vil ${ loseAllData } i din ${ BRAND_NAME } konto. For at gendanne det, skal du indtaste din gamle adgangskode."
       ],
@@ -5773,6 +5793,9 @@
       ],
       "Go to Trash": [
         "Gå til Papirkurv"
+      ],
+      "Insert link": [
+        ""
       ],
       "Jump to first": [
         "Gå til første"
@@ -6520,8 +6543,8 @@
       "Send auto-reply": [
         "Send auto-svar"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "Vis sekundær tidszone"
@@ -7717,15 +7740,6 @@
       "Feedback": [
         "Feedback"
       ],
-      "Fill in the email address and text to test your link": [
-        "Udfyld e-mailadressen og tekst for at teste dit link"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Udfyld telefonnummer og tekst for at teste dit link"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Udfyld URL-linket og tekst for at teste dit link"
-      ],
       "Gift code": [
         "Gavekode"
       ],
@@ -7752,6 +7766,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og inkludér evt. fejlmeddelelser"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Postal code": [
         "Postnummer"
@@ -8930,9 +8947,6 @@
       ],
       "Invoices": [
         "Fakturaer"
-      ],
-      "Keyboard Shortcuts": [
-        "Tastaturgenveje"
       ],
       "Labels": [
         "Etiketter"

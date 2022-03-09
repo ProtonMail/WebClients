@@ -203,6 +203,9 @@
       "Get verification code": [
         "Отримати код підтвердження"
       ],
+      "Go to label": [
+        "Перейти до мітки"
+      ],
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
       ],
@@ -2122,6 +2125,9 @@
         "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями Proton",
         "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями Proton"
       ],
+      "Missing key packet": [
+        "Відсутній пакунок ключів"
+      ],
       "Missing signature": [
         "Відсутній підпис"
       ],
@@ -2555,8 +2561,8 @@
       "no": [
         "ні"
       ],
-      "unanswered": [
-        "без відповіді"
+      "pending": [
+        "у черзі"
       ],
       "yes": [
         "так"
@@ -2891,7 +2897,7 @@
         "(${ memberCount } учасників)"
       ],
       "5 email addresses": [
-        ""
+        "5 адрес е-пошти"
       ],
       "5 GB storage": [
         "5 ГБ сховища"
@@ -2957,7 +2963,7 @@
         "Закрийте це вікно, щоб вийти."
       ],
       "Continue with ${ planName }": [
-        ""
+        "Продовжити з ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Створити ${ calendarsToBeCreated } новий календар",
@@ -3176,10 +3182,10 @@
         "Головний"
       ],
       "Priority support": [
-        ""
+        "Пріоритетна підтримка"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
@@ -3209,10 +3215,10 @@
         "Деякі з ваших відповідей на повторювані події, раніше оновлені організатором, будуть втрачені."
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Почніть з 500 МБ, а потім додайте більше пам’яті. Обсяг пам’яті використовується поштою, календарем та диском."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Підтримка 1 власного домену е-пошти"
       ],
       "support team": [
         "командою підтримки"
@@ -3287,13 +3293,13 @@
         "Необмежена кількість тек, міток і фільтрів"
       ],
       "Unlimited messages": [
-        ""
+        "Необмежена кількість повідомлень"
       ],
       "Update recurring event": [
         "Оновити повторювану подію"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Оновіть тарифний план сьогодні, щоб уникнути втрати цих переваг ${ appName } ${ planName }."
       ],
       "We'll notify you when the import is done.": [
         "Ми сповістимо вас, коли імпорт буде завершено."
@@ -4502,16 +4508,16 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Отримайте до 18 місяців ${ appName } ${ planName } безплатно"
       ],
       "Invite friends and earn rewards!": [
         "Запрошуйте друзів та отримуйте винагороди!"
       ],
       "No more missed appointments": [
-        ""
+        "Більше жодних пропущених зустрічей"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "Зі сповіщеннями електронної пошти, ви вирішуєте, про які події буде надіслано сповіщення й коли."
       ]
     },
     "Storage": {

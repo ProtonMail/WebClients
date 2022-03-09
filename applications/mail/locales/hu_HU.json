@@ -56,9 +56,6 @@
       "Add to group": [
         "Hozzáadás csoporthoz"
       ],
-      "Address options": [
-        "Cím lehetőségek"
-      ],
       "Advanced search": [
         "Részletes keresés"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Alkalmazás"
+      ],
+      "Archive": [
+        "Archívum"
       ],
       "Attachment": [
         "Melléklet"
@@ -349,6 +349,9 @@
       "Go to first page": [
         "Az első oldalra"
       ],
+      "Go to label": [
+        "Címkéhez ugrás"
+      ],
       "Go to last page": [
         "Az utolsó oldalra"
       ],
@@ -452,6 +455,9 @@
       "Load": [
         "Betöltés"
       ],
+      "Load embedded images": [
+        "Beágyazott képek betöltése"
+      ],
       "Load image": [
         "Kép betöltése"
       ],
@@ -508,6 +514,9 @@
       ],
       "More": [
         "Továbbiak"
+      ],
+      "More details about ${ title }": [
+        "Több részlet erről: ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "További információk: ${ safeTitle }"
@@ -635,6 +644,9 @@
       "Re-sign": [
         "Újra aláírás"
       ],
+      "Read receipt sent": [
+        "Olvasási visszaigazolás elküldve"
+      ],
       "Recover data": [
         "Adatok helyreállítása"
       ],
@@ -725,7 +737,7 @@
       "send auto-reply email": [
         "automatikus válasz küldése"
       ],
-      "Send receipt": [
+      "Send read receipt": [
         "Olvasási visszaigazolás küldése"
       ],
       "Set": [
@@ -794,6 +806,9 @@
       "Some images could not be loaded with tracking protection": [
         ""
       ],
+      "Star": [
+        "Csillagozás"
+      ],
       "Start import": [
         "Importálás indítása"
       ],
@@ -840,6 +855,9 @@
       "Try another method": [
         "Másik módszer"
       ],
+      "Turn on auto-load": [
+        "Automatikus töltés bekapcsolása"
+      ],
       "Turn on tracker protection": [
         ""
       ],
@@ -858,8 +876,14 @@
       "Unordered list": [
         "Rendezetlen lista"
       ],
+      "Unstar": [
+        "Csillagozás törlése"
+      ],
       "Unsubscribe": [
         "Leiratkozás"
+      ],
+      "Unsubscribe from mailing list": [
+        "Leiratkozás levelezési listáról"
       ],
       "Unsubscribing": [
         "Leiratkozás"
@@ -915,6 +939,9 @@
       "View headers": [
         "Fejlécek megtekintése"
       ],
+      "View HTML": [
+        "HTML megjelenítése"
+      ],
       "View invoice": [
         "Számla megtekintése"
       ],
@@ -924,14 +951,14 @@
       "View message": [
         "Üzenet megjelenítése"
       ],
+      "View message details": [
+        "Üzenet részleteinek megtekintése"
+      ],
       "View recipients": [
         "Címzettek megjelenítése"
       ],
       "View rendered HTML": [
         "HTML nézet"
-      ],
-      "View source code": [
-        "Forráskód megtekintése"
       ],
       "Why not?": [
         ""
@@ -2869,7 +2896,7 @@
         "A címke nevének megadása szükséges"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Mellékletek maximális száma (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) túllépve."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal",
@@ -2880,6 +2907,9 @@
       ],
       "Message processing error.": [
         "Üzenet feldolgozási hiba."
+      ],
+      "Missing key packet": [
+        ""
       ],
       "Missing signature": [
         "Hiányzó aláírás"
@@ -3788,7 +3818,7 @@
         "/hó."
       ],
       "5 email addresses": [
-        ""
+        "5 e-mail cím"
       ],
       "5 GB storage": [
         "5 GB tárhely"
@@ -3922,7 +3952,7 @@
         "Erősítse meg az adathalász bejelentést"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Folytatás ezzel: ${ planName }"
       ],
       "Copied to clipboard": [
         "Vágólapra másolva"
@@ -4055,6 +4085,21 @@
       ],
       "Expiration Time": [
         "Időkorlát"
+      ],
+      "Expires": [
+        "Lejár"
+      ],
+      "Expires in ${ formattedDelay }": [
+        "Lejár ennyi idő múlva: ${ formattedDelay }"
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        "Lejár ennyi idő múlva: ${ formattedDelayShort }"
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        "Lejár ennél kevesebb idő múlva: ${ formattedDelayShort }"
+      ],
+      "Expires soon": [
+        "Hamarosan lejár"
       ],
       "file attached": [
         "fájl csatolva",
@@ -4196,7 +4241,7 @@
         "Címkék kezelése"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Mellékletek maximális száma (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) túllépve."
       ],
       "members": [
         "tagok"
@@ -4343,10 +4388,10 @@
         "E-mail nyomtatása"
       ],
       "Priority support": [
-        ""
+        "Elsőbbségi támogatás"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Proton doesn't make money by abusing privacy.": [
         ""
@@ -4389,9 +4434,6 @@
       ],
       "Saving draft…": [
         "Piszkozat mentése…"
-      ],
-      "Scheduled": [
-        "Ütemezés"
       ],
       "Scheduled send of this message will be cancelled.": [
         ""
@@ -4447,7 +4489,7 @@
       "Sorry, this message does not exist or has already expired": [
         ""
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Store and share files securely with Proton Drive.": [
@@ -4466,7 +4508,7 @@
         "Tárgy: "
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Támogasson egy 1 egyedi email domain névért"
       ],
       "Support privacy by upgrading for": [
         ""
@@ -4580,9 +4622,6 @@
       "This message will expire ${ formattedDate }": [
         "Ez az üzenet időkorlátos, lejár: ${ formattedDate }"
       ],
-      "This message will expire in ${ formattedDelay }": [
-        "Ez az üzenet időkorlátos, lejár: ${ formattedDelay }"
-      ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "Ez az üzenet időkorlátos, és ${ dateString } fog lejárni ekkor: ${ formattedTime }"
       ],
@@ -4629,7 +4668,7 @@
         "Korlátlan számú mappák, címkék és filterek"
       ],
       "Unlimited messages": [
-        ""
+        "Korlátlan számú üzenet"
       ],
       "Unsupported file": [
         "Ismeretlen file"
@@ -4668,7 +4707,7 @@
         ""
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Frissítsen ma, hogy elkerülje az alábbi ${ appName } ${ planName } előnyöket."
       ],
       "Upload picture": [
         "Kép feltöltése"
@@ -4886,9 +4925,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "A \"Megbízható Kulcsra\" kattintás létre fog hozni egy új névjegyet és hozzá fogja társítani ezt a nyilvános kulcsot ehhez a küldőhöz. Az erről a címről küldött levelek automatikusan ellenőrizve lesznek kriptográfiailag."
       ],
-      "Do you want to trust the following public key?": [
-        "Megjelöli megbízhatóként a következő nyilvános kulcsot?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Megjelöli megbízhatóként a következő ujjlenyomatú elsődleges nyilvános kulcsot?",
         "Megjelöli megbízhatóként a következő ujjlenyomatú elsődleges nyilvános kulcsokat?"
@@ -4960,6 +4996,9 @@
       ],
       "Go to Trash": [
         "Ugrás a lomtárhoz"
+      ],
+      "Insert link": [
+        "Link beillesztése"
       ],
       "Jump to first": [
         "Ugrás az elsőre"
@@ -5095,9 +5134,6 @@
       " and ${ l }": [
         " és ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } és ${ count } további"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
@@ -5140,8 +5176,8 @@
       "Automatically save contacts": [
         "Névjegyek automatikus mentése"
       ],
-      "BCC:": [
-        "Titkos másolat:"
+      "BCC": [
+        "Titkos másolat"
       ],
       "Blind Carbon Copy": [
         "Titkos másolat"
@@ -5167,8 +5203,8 @@
       "Category": [
         "Kategória"
       ],
-      "CC:": [
-        "Másolat:"
+      "CC": [
+        "Másolat"
       ],
       "City": [
         "Település"
@@ -5280,9 +5316,6 @@
       ],
       "Label messages as": [
         ""
-      ],
-      "Labels:": [
-        "Címkék:"
       ],
       "Last 12 months only": [
         ""
@@ -6107,15 +6140,6 @@
       "End date": [
         "Befejező dátum"
       ],
-      "Fill in the email address and text to test your link": [
-        "Adja meg az e-mail címet és link szövegét a kipróbáláshoz"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Adja meg az telefonszámot és link szövegét a kipróbáláshoz"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Adja meg az link címét és szövegét a kipróbáláshoz"
-      ],
       "Filter folders": [
         "Mappák szűrése"
       ],
@@ -6157,6 +6181,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
+      ],
+      "Please insert link first": [
+        "Kérjük, előbb illessze be a linket"
       ],
       "Proton username": [
         "Proton felhasználónév"
@@ -6446,7 +6473,7 @@
         ""
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Szerezzen akár 18 hónapnyit ebből: ${ appName } ${ planName } ingyen"
       ],
       "Invite friends and earn rewards!": [
         "Hívja meg barátait és szerezzen nyereményeket!"
@@ -6468,11 +6495,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Leiratkozás kész"
+      "Unsubscribed from mailing list": [
+        "Leiratkozott a levelezési listáról"
       ],
-      "Unsubscribing...": [
-        "Leiratkozás..."
+      "Unsubscribing from mailing list...": [
+        "Leiratkozás levelezési listáról..."
       ]
     },
     "Step in filter modal": {
@@ -6854,9 +6881,6 @@
       "Addresses": [
         "Címek"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Minden címzett titkos másolatot kap és nem fedezhető fel"
-      ],
       "Are you sure you want to close?": [
         "Biztosan bezárja?"
       ],
@@ -7051,9 +7075,6 @@
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
-      "Keyboard Shortcuts": [
-        "Gyorsbillentyűk"
-      ],
       "Label as": [
         "Címkézés"
       ],
@@ -7084,8 +7105,14 @@
       "Merging contacts": [
         "Névjegyek egyesítése"
       ],
+      "Message details": [
+        "Üzenet részletei"
+      ],
       "Message list": [
         "Levelek listája"
+      ],
+      "Message will expire": [
+        "Az üzenet lejár"
       ],
       "More": [
         "Továbbiak"
@@ -7162,6 +7189,9 @@
       "Recipient missing": [
         ""
       ],
+      "Recipients": [
+        "Címzettek"
+      ],
       "Recover data": [
         "Adatok helyreállítása"
       ],
@@ -7203,6 +7233,9 @@
       ],
       "Send without expiration?": [
         "Küldés időkorlát nélkül?"
+      ],
+      "Sender": [
+        "Feladó"
       ],
       "Sender changed": [
         ""

@@ -203,6 +203,9 @@
       "Get verification code": [
         "Получить проверочный код"
       ],
+      "Go to label": [
+        "Перейти к ярлыку"
+      ],
       "Go to panel ${ index }": [
         "Перейти к панели ${ index }"
       ],
@@ -327,7 +330,7 @@
         "Восстановить данные"
       ],
       "Refer a friend": [
-        ""
+        "Порекомендуйте другу"
       ],
       "refresh the page": [
         "обновить страницу"
@@ -791,7 +794,7 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "Продолжить использование ProtonMail."
       ]
     },
     "Calendar invite buttons label": {
@@ -2122,6 +2125,9 @@
         "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
         "Объединить по крайней мере ${ calendarToFixCount } календарь(ей) с существующим календарем Proton"
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Missing signature": [
         "Подпись отсутствует"
       ],
@@ -2555,8 +2561,8 @@
       "no": [
         "нет"
       ],
-      "unanswered": [
-        "не отвечено"
+      "pending": [
+        ""
       ],
       "yes": [
         "да"
@@ -2891,10 +2897,10 @@
         "(${ memberCount } участников)"
       ],
       "5 email addresses": [
-        ""
+        "5 адресов электронной почты"
       ],
       "5 GB storage": [
-        ""
+        "5 ГБ хранилища"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Сообщение об отмене будет отправлено удаленным участникам."
@@ -2957,7 +2963,7 @@
         "Закройте этот экран, чтобы выйти."
       ],
       "Continue with ${ planName }": [
-        ""
+        "Продолжить с ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Создать ${ calendarsToBeCreated } новый календарь",
@@ -3143,7 +3149,7 @@
         "Изменяйте эти настройки только в том случае, если применяете PGP для переписки с получателями вне ProtonMail."
       ],
       "Other options": [
-        ""
+        "Другие возможности"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline совместим только с неформатированным текстом. Пожалуйста, учтите, что ProtonMail всегда подписывает зашифрованные сообщения."
@@ -3176,10 +3182,10 @@
         "Основной"
       ],
       "Priority support": [
-        ""
+        "Приоритетная поддержка"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
@@ -3209,10 +3215,10 @@
         "Некоторые ваши ответы на события, ранее обновленные организатором, будут потеряны."
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Начните с 500 МБ и постепенно увеличивайте объем хранилища. Место для хранения данных распределяется между Почтой, Календарем и Хранилищем."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Поддержка 1 пользовательского домена электронной почты"
       ],
       "support team": [
         "команда поддержки"
@@ -3284,16 +3290,16 @@
         "Чтобы использовать проверку адреса, вы должны доверять одному или более из доступных публичных ключей, включая тот, который вы хотите применить для отправки. Это предотвращает подделку ключей шифрования."
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Неограниченное количество папок, меток и фильтров"
       ],
       "Unlimited messages": [
-        ""
+        "Неограниченное количество сообщений"
       ],
       "Update recurring event": [
         "Обновление повторяющегося события"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Уличшите сегодня, чтобы не потерять следующие преимущества ${ appName } ${ planName }."
       ],
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
@@ -3832,7 +3838,7 @@
         "Ответить:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Ваша бесплатный пробный период закончился. Доступ к вашему аккаунту скоро будет отключен. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4502,16 +4508,16 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Получите до 18 месяцев ${ appName } ${ planName } бесплатно"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "Приглашайте друзей и получайте вознаграждения!"
       ],
       "No more missed appointments": [
-        ""
+        "Больше никаких пропущенных встреч"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "При использовании уведомлений по электронной почте вы сами решаете, о каких событиях и когда получать уведомления."
       ]
     },
     "Storage": {
@@ -5149,7 +5155,7 @@
         "Вы пригласили участников с такой эл. почтой"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5278,7 +5284,7 @@
         "Вы потеряете все сделанные вами до этого настройки."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Ваша бесплатная пробная версия заканчивается ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

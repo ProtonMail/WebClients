@@ -87,7 +87,7 @@
         "Törlés"
       ],
       "Clear browser data": [
-        ""
+        "Böngészőadatok törlése"
       ],
       "Clear data": [
         "Adatok törlése"
@@ -118,9 +118,6 @@
       ],
       "Compare all features": [
         "Összes jellemző összehasonlítása"
-      ],
-      "Compare plans": [
-        "Csomagok összehasonlítása"
       ],
       "Compose": [
         "Levélírás"
@@ -244,17 +241,20 @@
       "Get verification code": [
         "Ellenőrző kód küldése"
       ],
+      "Go to label": [
+        ""
+      ],
       "Go to panel ${ index }": [
         "Váltás: ${ index }"
       ],
       "Go to parent": [
-        ""
+        "Ugrás a forráshoz"
       ],
       "Go to settings": [
         "Beállítások megnyitása"
       ],
       "Got it": [
-        ""
+        "Rendben"
       ],
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
@@ -349,9 +349,6 @@
       "Pause upload": [
         "Feltöltés szüneteltetése"
       ],
-      "Pay": [
-        "Fizetés"
-      ],
       "Preview": [
         "Előnézet"
       ],
@@ -434,10 +431,10 @@
         "Mentés"
       ],
       "Search": [
-        ""
+        "Keresés"
       ],
       "Search drive": [
-        ""
+        "Keresés a tárhelyen"
       ],
       "Select all": [
         "Összes kijelölése"
@@ -537,6 +534,9 @@
       ],
       "Upgrade": [
         "Csomagváltás"
+      ],
+      "Upload anyway": [
+        ""
       ],
       "Upload file": [
         "Fájl feltöltése"
@@ -1841,7 +1841,7 @@
         "Már létezik csoport ezzel a névvel"
       ],
       "A problem occurred, please try again": [
-        ""
+        "Hiba történt, próbálja meg újra"
       ],
       "Amount above the maximum.": [
         "Túl magas összeg."
@@ -1868,7 +1868,7 @@
         "Névjegy aláírása nincs ellenőrizve"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "Ebben a böngészőben nem lehetséges az üzenetek tartalmában való keresés. Lépjen ki a privát módból vagy próbáljon másik böngészőt."
       ],
       "Could not find address ${ email }.": [
         "A(z) ${ email } e-mail cím nem található."
@@ -1941,9 +1941,6 @@
       "Invalid card number": [
         "Érvénytelen kártyaszám"
       ],
-      "Invalid code": [
-        "Érvénytelen kód"
-      ],
       "Invalid expiration date": [
         "Érvénytelen lejárati dátum"
       ],
@@ -1964,6 +1961,9 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
+        ""
+      ],
+      "Missing key packet": [
         ""
       ],
       "Missing signature": [
@@ -2008,7 +2008,7 @@
         "Fizetési folyamat nem támogatott"
       ],
       "Please activate your content search again": [
-        ""
+        "Aktiválja újra az üzenetek tartalmában való keresést"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "",
@@ -2030,7 +2030,7 @@
         ""
       ],
       "Search failed": [
-        ""
+        "A keresés nem sikerült"
       ],
       "Signature not verified": [
         "Aláírás nincs ellenőrizve"
@@ -2512,7 +2512,7 @@
         "30 napos pénz-visszafizetési garancia."
       ],
       "5 email addresses": [
-        ""
+        "5 e-mail cím"
       ],
       "5 GB storage": [
         "5 GB tárhely"
@@ -2577,10 +2577,10 @@
         "Biztos benne, hogy kiüríti a lomtárat és véglegesen törli az összes benne lévő elemet?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        ""
+        "Biztos, hogy véglegesen törli az alábbit: ${ itemName } a lomtárból?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        ""
+        "Biztos, hogy véglegesen törli a kijelölt elemeket a lomtárból?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
@@ -2619,16 +2619,16 @@
         "Névjegy ellenőrzése ${ progress }/${ max }..."
       ],
       "Clear data": [
-        ""
+        "Adatok törlése"
       ],
       "Clear encrypted search data": [
-        ""
+        "Titkosított keresési adatok törlése"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        ""
+        "A böngésző adatainak törlése a keresési indexet is törölni fogja ezen az eszközön. Az összes fájlt újra kell indexelni, amíg a keresés funkciót használja."
       ],
       "Clears browser data related to the encrypted search.": [
-        ""
+        "Törli a böngésző adatait a titkosított keresésre vonatkozólag."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } címre új ellenőrzési kódot küldjünk. Ha hibás ez a cím, kattintson a Szerkesztés gombra."
@@ -2649,7 +2649,7 @@
         ""
       ],
       "Continue with ${ planName }": [
-        ""
+        "Folytatás ezzel: ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
@@ -2676,6 +2676,9 @@
       "Create your first folder and start moving your files.": [
         "Hozza létre első mappáját és helyezze el benne a fájljait."
       ],
+      "Creating": [
+        ""
+      ],
       "Creating link to file": [
         "A fájl linkjének létrehozása"
       ],
@@ -2694,9 +2697,6 @@
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Az előfizetésre érvényes árengedmény a kuponnal ${ code }"
-      ],
-      "Domains": [
-        "Domain nevek"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Töltse le a kedvenc alkalmazását, így a biztonságot bárhova magával viheti."
@@ -2811,7 +2811,7 @@
         "Tartalmazza"
       ],
       "Indexing search results…": [
-        ""
+        "Keresési eredmények indexelése…"
       ],
       "Inherited from parent folder": [
         ""
@@ -3000,10 +3000,10 @@
         "Elsődleges"
       ],
       "Priority support": [
-        ""
+        "Elsőbbségi támogatás"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "A ProtonMail Plus egy felhasználóra van korlátozva és 5GB tárhellyel indul."
@@ -3031,7 +3031,7 @@
         "Képernyőkép(ek) csatolva"
       ],
       "Search cannot be enabled in this browser": [
-        ""
+        "A keresés nem engedélyezhető ebben a böngészőben"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         ""
@@ -3064,7 +3064,7 @@
         "Hiba történt. Kérjük, próbálkozzon később."
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Kezdjen 500 MB-tal és oldjon fel nagyobb tárhelyet útközben. A tárhely meg van osztva a Levelezés, a Naptár és a Felhőtárhely között."
       ],
       "Starter VPN service with P2P support.": [
         "Alap VPN csomag, P2P támogatással."
@@ -3076,7 +3076,7 @@
         "A tárhely megosztott az Email, a Naptár és a Felhőtárhely közt."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Támogasson egy 1 egyedi email domain névért"
       ],
       "support team": [
         "ügyfélszolgálat"
@@ -3167,13 +3167,13 @@
         "Lomtár"
       ],
       "Try different keywords": [
-        ""
+        "Próbálkozzon más kulcsszavakkal"
       ],
       "Unlimited folders, labels, and filters": [
         "Korlátlan számú mappák, címkék és filterek"
       ],
       "Unlimited messages": [
-        ""
+        "Korlátlan számú üzenet"
       ],
       "Unlock drive to recover files": [
         ""
@@ -3185,7 +3185,7 @@
         "Frissítsen még ma, hogy továbbra is hozzáférést kaphasson a magánéletét előtérben tartó Email és Naptár megoldásokhoz a mindennapi kommunikációjához."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Frissítsen ma, hogy elkerülje az alábbi ${ appName } ${ planName } előnyök elvesztését."
       ],
       "Uploaded": [
         "Feltöltve"
@@ -3994,38 +3994,41 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        "\"${ name }\" sikeresen létrehozva"
+      ],
       "\"${ name }\" deleted permanently from trash": [
-        ""
+        "\"${ name }\" véglegesen törölve a lomtárból"
       ],
       "\"${ name }\" failed to be created": [
-        ""
+        "\"${ name }\" létrehozása nem sikerült"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        ""
+        "\"${ name } fájl végleges törlése a lomtárból nem sikerült"
       ],
       "\"${ name }\" failed to be moved": [
-        ""
+        "\"${ name }\" áthelyezése nem sikerült"
       ],
       "\"${ name }\" failed to be moved to trash": [
-        ""
+        "\"${ name }\" áthelyezése a lomtárba nem sikerült"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        ""
+        "\"${ name } fájl visszaállítása a lomtárból nem sikerült"
       ],
       "\"${ name }\" moved to trash": [
-        ""
+        "\"${ name }\" áthelyezve a lomtárba"
       ],
       "\"${ name }\" restored from trash": [
-        ""
+        "\"${ name }\" visszaállítva a lomtárból"
       ],
       "\"${ name }\" successfully moved": [
-        ""
+        "\"${ name }\" sikeresen áthelyezve"
       ],
       "\"${ newName }\" failed to be renamed": [
-        ""
+        "\"${ newName }\" átnevezése nem sikerült"
       ],
       "\"${ newName }\" renamed successfully": [
-        ""
+        "\"${ newName } sikeresen átnevezve"
       ],
       "${ count } item failed to be decrypted": [
         "",
@@ -4055,48 +4058,45 @@
         "${ movedLinksCount } mappa sikeresen áthelyezve",
         "${ movedLinksCount } mappa sikeresen áthelyezve"
       ],
-      "${ name } created successfully": [
-        ""
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
-        "",
-        ""
+        "${ numberOfItems } elem véglegesen törölve a lomtárból",
+        "${ numberOfItems } elem véglegesen törölve a lomtárból"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "",
-        ""
+        "${ numberOfItems } fájl végleges törlése a lomtárból nem sikerült",
+        "${ numberOfItems } fájl végleges törlése a lomtárból nem sikerült"
       ],
       "${ numberOfItems } item failed to be moved": [
-        "",
-        ""
+        "${ numberOfItems } elem áthelyezése nem sikerült",
+        "${ numberOfItems } elem áthelyezése nem sikerült"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "",
-        ""
+        "${ numberOfItems }\" áthelyezése a lomtárba nem sikerült",
+        "${ numberOfItems }\" áthelyezése a lomtárba nem sikerült"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "",
-        ""
+        "${ numberOfItems } fájl visszaállítása a lomtárból nem sikerült",
+        "${ numberOfItems } fájl visszaállítása a lomtárból nem sikerült"
       ],
       "${ numberOfItems } item moved to trash": [
-        "",
-        ""
+        "${ numberOfItems } elem áthelyezve a lomtárba",
+        "${ numberOfItems } elem áthelyezve a lomtárba"
       ],
       "${ numberOfItems } item restored from trash": [
-        "",
-        ""
+        "${ numberOfItems } elem visszaállítva a lomtárból",
+        "${ numberOfItems } elem visszaállítva a lomtárból"
       ],
       "${ numberOfItems } item successfully moved": [
-        "",
-        ""
+        "${ numberOfItems } elem sikeresen áthelyezve",
+        "${ numberOfItems } elem sikeresen áthelyezve"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "",
-        ""
+        "${ numberOfItems }, a fájlra vonatkozó hivatkozás törlése nem sikerült",
+        "${ numberOfItems }, a fájlra vonatkozó hivatkozás törlése nem sikerült"
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "",
-        ""
+        "${ numberOfItems } hivatkozás a fájlra törlésre került",
+        "${ numberOfItems } hivatkozás a fájlra törlésre került"
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } fájl visszaállítva a lomtárból",
@@ -4127,7 +4127,7 @@
         "Névjegy csoport frissítve"
       ],
       "Encrypted search activated": [
-        ""
+        "Titkosított keresés aktiválva"
       ],
       "Failed to download files: ${ err }": [
         ""
@@ -4188,16 +4188,16 @@
         ""
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        ""
+        "Az alábbira: \"${ name }\" vonatkozó hivatkozás törlése nem sikerült"
       ],
       "The link to \"${ name }\" was deleted": [
-        ""
+        "Az alábbira: \"${ name }\" vonatkozó hivatkozás törölve"
       ],
       "The link to your item failed to be deleted": [
-        ""
+        "A fájlra vonatkozó hivatkozás törlése nem sikerült"
       ],
       "The link to your item was deleted": [
-        ""
+        "A fájlra vonatkozó hivatkozás törölve"
       ],
       "Trash failed to be emptied": [
         ""
@@ -4206,7 +4206,7 @@
         ""
       ],
       "Your settings failed to be saved": [
-        ""
+        "Beállításainak mentése nem sikerült"
       ],
       "Your settings have been changed successfully": [
         ""
@@ -4559,7 +4559,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Szerezzen akár 18 hónapnyit ebből: ${ appName } ${ planName } ingyen"
       ],
       "Invite friends and earn rewards!": [
         ""
@@ -5017,7 +5017,7 @@
         "Hálózati hiba"
       ],
       "No results found": [
-        ""
+        "Nincs találat"
       ],
       "Number of files": [
         "Fájlok száma"
@@ -5054,6 +5054,9 @@
       ],
       "PayPal verification failed": [
         "A PayPal ellenőrzés sikertelen"
+      ],
+      "Performance might be affected": [
+        ""
       ],
       "Phone numbers": [
         "Telefonszámok"
@@ -5092,10 +5095,10 @@
         "Fájlok helyreállítása"
       ],
       "Search results": [
-        ""
+        "Keresés találatai"
       ],
       "Searching…": [
-        ""
+        "Keresés…"
       ],
       "Select a theme": [
         "Téma kiválasztása"

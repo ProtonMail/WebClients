@@ -56,9 +56,6 @@
       "Add to group": [
         "Adăugare la grup"
       ],
-      "Address options": [
-        "Opțiuni adresă"
-      ],
       "Advanced search": [
         "Căutare avansată"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Aplicare"
+      ],
+      "Archive": [
+        "Arhivare"
       ],
       "Attachment": [
         "Atașament"
@@ -351,6 +351,9 @@
       "Go to first page": [
         "Prima pagină"
       ],
+      "Go to label": [
+        "Accesare etichetă"
+      ],
       "Go to last page": [
         "Ultima pagină"
       ],
@@ -455,6 +458,9 @@
       "Load": [
         "Încărcare"
       ],
+      "Load embedded images": [
+        "Încărcare imagini integrate"
+      ],
       "Load image": [
         "Încărcare imagine"
       ],
@@ -511,6 +517,9 @@
       ],
       "More": [
         "Mai multe"
+      ],
+      "More details about ${ title }": [
+        "Mai multe detalii despre ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
@@ -638,6 +647,9 @@
       "Re-sign": [
         "Reînregistrare"
       ],
+      "Read receipt sent": [
+        "Confirmare de citire trimisă"
+      ],
       "Recover data": [
         "Recuperare date"
       ],
@@ -728,8 +740,8 @@
       "send auto-reply email": [
         "trimitere răspuns automat"
       ],
-      "Send receipt": [
-        "Trimitere confirmare"
+      "Send read receipt": [
+        "Trimitere confirmare de citire"
       ],
       "Set": [
         "Setare"
@@ -797,6 +809,9 @@
       "Some images could not be loaded with tracking protection": [
         "Unele imagini nu au putut fi încărcate cu protecția de urmărire"
       ],
+      "Star": [
+        "Marcare cu stea"
+      ],
       "Start import": [
         "Pornire importare"
       ],
@@ -844,6 +859,9 @@
       "Try another method": [
         "Încercaţi o altă metodă"
       ],
+      "Turn on auto-load": [
+        "Activare încărcarea automată"
+      ],
       "Turn on tracker protection": [
         "Activare protecție împotriva urmăririi"
       ],
@@ -862,8 +880,14 @@
       "Unordered list": [
         "Listă neordonată"
       ],
+      "Unstar": [
+        "Fără stea"
+      ],
       "Unsubscribe": [
         "Dezabonare"
+      ],
+      "Unsubscribe from mailing list": [
+        "Dezabonare de la lista de discuții"
       ],
       "Unsubscribing": [
         "Unsubscribing"
@@ -919,6 +943,9 @@
       "View headers": [
         "Afișare antete"
       ],
+      "View HTML": [
+        "Afișare HTML"
+      ],
       "View invoice": [
         "Afișare factură"
       ],
@@ -928,14 +955,14 @@
       "View message": [
         "Afișare mesaj"
       ],
+      "View message details": [
+        "Afișare detalii mesaj"
+      ],
       "View recipients": [
         "Afișare destinatari"
       ],
       "View rendered HTML": [
         "Afișare HTML generat"
-      ],
-      "View source code": [
-        "Afișare cod sursă"
       ],
       "Why not?": [
         "De ce nu?"
@@ -2883,7 +2910,7 @@
         "Numele etichetei nu poate fi gol."
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Numărul maxim de atașamente (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) a fost depășit."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Îmbinați cel puțin un calendar cu un calendar Proton existent",
@@ -2895,6 +2922,9 @@
       ],
       "Message processing error.": [
         "Eroare procesare mesaj."
+      ],
+      "Missing key packet": [
+        "Lipsește pachetul de chei."
       ],
       "Missing signature": [
         "Semnătură lipsă"
@@ -4123,6 +4153,21 @@
       "Expiration Time": [
         "Dată expirare"
       ],
+      "Expires": [
+        "Expiră"
+      ],
+      "Expires in ${ formattedDelay }": [
+        "Expiră peste ${ formattedDelay }"
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        "Expiră peste ${ formattedDelayShort }"
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        "Expiră în mai puțin de ${ formattedDelayShort }"
+      ],
+      "Expires soon": [
+        "Expiră în curând"
+      ],
       "file attached": [
         "fişier ataşat",
         "fișiere atașate",
@@ -4267,7 +4312,7 @@
         "Gestionare etichete"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Numărul maxim de atașamente (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) a fost depășit."
       ],
       "members": [
         "membri"
@@ -4461,9 +4506,6 @@
       "Saving draft…": [
         "Se salvează ciorna…"
       ],
-      "Scheduled": [
-        "Programate"
-      ],
       "Scheduled send of this message will be cancelled.": [
         "Trimiterea programată a acestui mesaj va fi anulată."
       ],
@@ -4518,8 +4560,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Ne pare rău, acest mesaj nu există sau a expirat deja."
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Începeți cu 500 de MB și deblocați mai mult spațiu pe parcurs. Spațiul de stocare este partajat cu Mail, Calendar și Drive."
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Spațiul de stocare este partajat între Mail, Calendar și Drive."
       ],
       "Store and share files securely with Proton Drive.": [
         "Stocați și partajați fișiere în siguranță cu Proton Drive."
@@ -4537,7 +4579,7 @@
         "Subiect: "
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Suport pentru un domeniu de e-mail personal"
       ],
       "Support privacy by upgrading for": [
         "Susțineți confidențialitatea migrând la"
@@ -4651,9 +4693,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Acest mesaj va expira ${ formattedDate }"
-      ],
-      "This message will expire in ${ formattedDelay }": [
-        "Acest mesaj va expira peste ${ formattedDelay }"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "Acest mesaj va expira ${ dateString } la ora ${ formattedTime }"
@@ -4966,9 +5005,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "Apăsând pe «Cheie de încredere» se va crea un contact nou și se va asocia această cheie publică acestui expeditor. Mesajele de la această adresă vor fi verificate criptografic automat."
       ],
-      "Do you want to trust the following public key?": [
-        "Doriți să aprobați următoarea cheie publică?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Doriți să aprobați cheia publică primară cu următoarea amprentă digitală?",
         "Doriți să aprobați cheile publice primare cu următoarele amprente digitale?",
@@ -5042,6 +5078,9 @@
       ],
       "Go to Trash": [
         "Accesare folder «Gunoi»"
+      ],
+      "Insert link": [
+        "Inserare legătură"
       ],
       "Jump to first": [
         "Salt la primul"
@@ -5177,9 +5216,6 @@
       " and ${ l }": [
         " și ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } și alte ${ count }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
       ],
@@ -5222,8 +5258,8 @@
       "Automatically save contacts": [
         "Salvare automată contacte"
       ],
-      "BCC:": [
-        "CA:"
+      "BCC": [
+        "CA"
       ],
       "Blind Carbon Copy": [
         "Copie ascunsă"
@@ -5249,8 +5285,8 @@
       "Category": [
         "Categoria"
       ],
-      "CC:": [
-        "CI:"
+      "CC": [
+        "C"
       ],
       "City": [
         "Oraş"
@@ -5362,9 +5398,6 @@
       ],
       "Label messages as": [
         "Etichetare mesaje cu"
-      ],
-      "Labels:": [
-        "Etichete:"
       ],
       "Last 12 months only": [
         "Doar ultimele 12 luni"
@@ -6194,15 +6227,6 @@
       "End date": [
         "Data sfârșit"
       ],
-      "Fill in the email address and text to test your link": [
-        "Completaţi adresa de e-mail şi textul pentru a testa legătura"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Completați numărul de telefon și textul pentru a testa legătura"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Completaţi adresa URL şi textul pentru a testa legătura"
-      ],
       "Filter folders": [
         "Filtrare foldere"
       ],
@@ -6244,6 +6268,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare ce apar"
+      ],
+      "Please insert link first": [
+        "Introduceți mai întâi legătura"
       ],
       "Proton username": [
         "Utilizator Proton"
@@ -6563,11 +6590,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Dezabonat"
+      "Unsubscribed from mailing list": [
+        "Dezabonat din lista de corespondență"
       ],
-      "Unsubscribing...": [
-        "Anulare abonare..."
+      "Unsubscribing from mailing list...": [
+        "Vă dezabonăm de la lista de corespondență..."
       ]
     },
     "Step in filter modal": {
@@ -6980,9 +7007,6 @@
       "Addresses": [
         "Adrese"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Toți destinatarii au fost adăugați în câmpul CA și nu pot fi dezvăluiți"
-      ],
       "Are you sure you want to close?": [
         "Sigur doriți să închideți?"
       ],
@@ -7182,9 +7206,6 @@
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
-      "Keyboard Shortcuts": [
-        "Combinații de taste"
-      ],
       "Label as": [
         "Etichetare ca"
       ],
@@ -7215,8 +7236,14 @@
       "Merging contacts": [
         "Îmbinare contacte"
       ],
+      "Message details": [
+        "Detalii mesaj"
+      ],
       "Message list": [
         "Listă mesaje"
+      ],
+      "Message will expire": [
+        "Mesajul va expira"
       ],
       "More": [
         "Mai multe"
@@ -7293,6 +7320,9 @@
       "Recipient missing": [
         "Destinatarul lipsește"
       ],
+      "Recipients": [
+        "Destinatari"
+      ],
       "Recover data": [
         "Recuperare date"
       ],
@@ -7334,6 +7364,9 @@
       ],
       "Send without expiration?": [
         "Trimitere fără expirare?"
+      ],
+      "Sender": [
+        "Expeditor"
       ],
       "Sender changed": [
         "Expeditor schimbat"

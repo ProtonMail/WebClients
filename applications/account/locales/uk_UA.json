@@ -355,6 +355,9 @@
       "Get verification code": [
         "Отримати код підтвердження"
       ],
+      "Go to label": [
+        "Перейти до мітки"
+      ],
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
       ],
@@ -981,6 +984,11 @@
         "Непідтримувана подія"
       ]
     },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Я не на робочому місці з обмеженим доступом до електронної пошти."
@@ -1213,13 +1221,13 @@
         "Продовжити користуватися ProtonMail."
       ],
       "Copy": [
-        ""
+        "Копіювати"
       ],
       "Invite": [
         "Запросити"
       ],
       "Send": [
-        ""
+        "Надіслати"
       ],
       "Tweet": [
         ""
@@ -2680,6 +2688,9 @@
         "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями Proton",
         "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями Proton"
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Name does not match": [
         ""
       ],
@@ -4106,7 +4117,7 @@
         "Гарантія повернення коштів протягом 30 днів."
       ],
       "5 email addresses": [
-        ""
+        "5 адрес е-пошти"
       ],
       "5 GB storage": [
         "5 ГБ сховища"
@@ -4352,7 +4363,7 @@
         "Все одно продовжити?"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Продовжити з ${ planName }"
       ],
       "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
         ""
@@ -4525,8 +4536,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Введіть свій резервний номер телефону і ми надішлемо вам ваше ім'я користувача або адресу електронної пошти."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "Запрошення на подію та RSVP надсилатимуться цією мовою."
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "Протерміновано"
@@ -4801,8 +4812,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru читає ваші особисті дані, щоб забезпечити доступ для рекламодавців, російських державних агенцій та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Переконайтеся, що ви запам'ятали пароль для входу та розшифрування пошти. ${ boldAlert }. Ми рекомендуємо спершу додати електронну адресу для відновлення доступу."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        ""
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ _switchButton }."
@@ -5012,13 +5023,13 @@
         "Попередній перегляд"
       ],
       "Priority support": [
-        ""
+        "Пріоритетна підтримка"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton не може допомогти вам відновити будь-які втрачені паролі"
+      "Proton can't help you recover any lost passwords.": [
+        ""
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton зупинив імпортування, тому що втрачено з'єднання з вашим іншим провайдером е-пошти. Будь ласка, повторіть з'єднання."
@@ -5070,6 +5081,9 @@
       ],
       "Recovery files have been voided": [
         "Фали відновлення були видалені"
+      ],
+      "recovery method": [
+        ""
       ],
       "Recovery phrase copied to clipboard": [
         "Фразу відновлення скопійовано до буфера обміну"
@@ -5137,6 +5151,9 @@
       "Set recovery phrase": [
         "Встановити фразу відновлення"
       ],
+      "Show original message": [
+        ""
+      ],
       "Signed up": [
         ""
       ],
@@ -5153,7 +5170,7 @@
         "SPF використовується для зазначення, кому дозволено надсилати пошту для домену, тому ми наполегливо рекомендуємо включити ProtonMail у ваш запис SPF. Додайте такий TXT запис у ваш DNS. Зазвичай це можна зробити на панелі керування вашого реєстратора доменних імен."
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Почніть з 500 МБ, а потім додайте більше пам’яті. Обсяг пам’яті використовується поштою, календарем та диском."
       ],
       "Starter VPN service with P2P support.": [
         "Початковий рівень VPN з підтримкою P2P."
@@ -5165,7 +5182,7 @@
         ""
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Підтримка 1 власного домену е-пошти"
       ],
       "support team": [
         "командою підтримки"
@@ -5351,7 +5368,7 @@
         "Необмежена кількість тек, міток і фільтрів"
       ],
       "Unlimited messages": [
-        ""
+        "Необмежена кількість повідомлень"
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
@@ -5372,7 +5389,7 @@
         "Передплатіть тарифний план, щоб розблокувати підтримку IMAP/SMTP через ProtonMail Bridge."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Оновіть тарифний план сьогодні, щоб уникнути втрати цих переваг ${ appName } ${ planName }."
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -5568,6 +5585,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Ви досягли 100% свого обсягу сховища. Ви не можете надсилати чи отримувати нові повідомлення. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Ви ${ loseAllData } у вашому обліковому записі ${ BRAND_NAME }. Щоб відновити його, вам потрібно буде ввести свій старий пароль."
@@ -5894,6 +5914,9 @@
       "Go to Trash": [
         "Перейти до смітника"
       ],
+      "Insert link": [
+        "Вставити посилання"
+      ],
       "Jump to first": [
         "До першого"
       ],
@@ -6107,7 +6130,7 @@
         "Дії"
       ],
       "Activity": [
-        ""
+        "Діяльність"
       ],
       "Address": [
         "Адреса"
@@ -6275,7 +6298,7 @@
         "Щоденні повідомлення електронною поштою"
       ],
       "Date": [
-        ""
+        "Дата"
       ],
       "Date format": [
         "Формат дати"
@@ -6440,7 +6463,7 @@
         "Інтервал"
       ],
       "Invite via email": [
-        ""
+        "Запросити електронною поштою"
       ],
       "Keep me signed in": [
         "Не виходити"
@@ -6652,8 +6675,8 @@
       "Send auto-reply": [
         "Надіслати автовідповідь"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        ""
       ],
       "Show secondary time zone": [
         "Показати додатковий часовий пояс"
@@ -7869,15 +7892,6 @@
       "Feedback": [
         "Зворотній зв’язок"
       ],
-      "Fill in the email address and text to test your link": [
-        "Введіть адресу е-пошти і текст, щоб перевірити ваше посилання"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Введіть номер телефону і текст, щоб перевірити ваше посилання"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Введіть посилання URL і текст, щоб перевірити ваше посилання"
-      ],
       "Gift code": [
         "Подарунковий код"
       ],
@@ -7904,6 +7918,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Опишіть проблему та додайте повідомлення про помилки"
+      ],
+      "Please insert link first": [
+        ""
       ],
       "Postal code": [
         "Поштовий індекс"
@@ -9090,9 +9107,6 @@
       ],
       "Invoices": [
         "Рахунки"
-      ],
-      "Keyboard Shortcuts": [
-        "Комбінації клавіш"
       ],
       "Labels": [
         "Мітки"

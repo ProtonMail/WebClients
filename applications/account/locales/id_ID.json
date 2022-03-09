@@ -355,6 +355,9 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
+      "Go to label": [
+        "Ke label"
+      ],
       "Go to panel ${ index }": [
         "Tuju panel ${ index }"
       ],
@@ -952,6 +955,11 @@
       ],
       "Unsupported event": [
         "Acara tidak didukung"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add invitations to calendar and mark as pending": [
+        ""
       ]
     },
     "Autoresponse": {
@@ -2620,6 +2628,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender-kalender Proton yang telah ada sebelumnya"
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Name does not match": [
         "Nama tidak cocok"
       ],
@@ -3836,7 +3847,7 @@
         "${ calendarsToBeMergedCount } kalender yang tergabung"
       ],
       "${ emailAddress } is a ${ appName } address": [
-        ""
+        "${ emailAddress } merupakan alamat ${ appName }"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } tidak valid"
@@ -4351,8 +4362,8 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Masukkan nomor telepon pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
       ],
-      "Event invites and RSVPs will be sent in this language.": [
-        "Undangan acara dan permintaan konfirmasi kehadiran acara (RSVP) akan terkirim dalam bahasa ini."
+      "Event invitations and RSVPs will be sent in this language.": [
+        ""
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -4463,7 +4474,7 @@
         "Jika Anda menyetujui penurunan akun, Anda akan kehilangan akses ke fitur ProtonVPN berbayar."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Apabila Anda baru saja mengatur ulang kata sandi Anda, Anda dapat menggunakan metode pemulihan yang aktif untuk membuka kunci data Anda"
+        "Apabila Anda baru saja mengatur ulang kata sandi Anda, Anda dapat menggunakan metode pemulihan untuk membuka kunci data Anda"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Jika Anda ingin mempertahankan data SPF yang sudah ada, Anda dapat menambahkan ${ spf } setelah ${ spfValue }. Jangan buat banyak data SPF."
@@ -4556,7 +4567,7 @@
         "sangat penting"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        ""
+        "Saya telah menggunakan ${ appName } dan saya pikir Anda juga akan menyukainya. Layanan ini merupakan layanan email aman yang melindungi privasi Anda. Daftar sekarang juga melalui tautan berikut dan dapatkan 1 bulan gratis: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
@@ -4577,7 +4588,7 @@
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
       ],
       "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Pelajari cara masuk ke ProtonVPN dengan aplikasi VPN pihak ketiga."
+        "Pelajari cara untuk masuk ke ProtonVPN dengan aplikasi VPN pihak ketiga."
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -4624,8 +4635,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru membaca data pribadi Anda untuk memberikan akses bagi pengiklan, lembaga pemerintah Rusia, dan pihak ketiga lainnya. Untuk privasi yang lebih baik, buat alamat email yang aman."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Pastikan Anda mengingat kata sandi untuk masuk dan mendekripsi email. ${ boldAlert }. Sebaiknya tambahkan email pemulihan terlebih dahulu."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Pastikan Anda mengingat kata sandi yang Anda gunakan untuk masuk dan mendekripsi email. ${ boldAlert } Kami menyarankan Anda untuk terlebih dahulu menambahkan ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Masukkan informasi ini secara manual ke perangkat autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ _switchButton }."
@@ -4840,8 +4851,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton tidak dapat membantu Anda memulihkan kata sandi yang hilang"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton tidak dapat membantu Anda memulihkan kata sandi yang hilang."
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton menjeda proses impor karena sambungan dengan layanan email Anda terputus. Mohon sambungkan ulang."
@@ -4890,6 +4901,9 @@
       ],
       "Recovery files have been voided": [
         "Berkas-berkas pemulihan telah dianulir"
+      ],
+      "recovery method": [
+        "metode pemulihan"
       ],
       "Recovery phrase copied to clipboard": [
         "Frasa pemulihan disalin ke clipboard"
@@ -4956,6 +4970,9 @@
       ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
+      ],
+      "Show original message": [
+        "Tampilkan pesan orisinal"
       ],
       "Signed up": [
         "Terdaftar"
@@ -5237,7 +5254,7 @@
         "Peringatan: penghapusan bersifat permanen. Hal ini juga menghapus akses ke semua layanan yang terhubung dan menghapus semua kontak Anda."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
-        "Kami menyarankan Anda untuk menggunakan aplikasi resmi ProtonVPN jika memungkinkan."
+        "Kami menyarankan Anda untuk menggunakan aplikasi ProtonVPN resmi apabila memungkinkan."
       ],
       "We recommend using your recovery phrase instead.": [
         "Kami menyarankan Anda untuk menggunakan frasa pemulihan."
@@ -5388,6 +5405,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Kapasitas penyimpanan Anda mencapai 100%. Anda tidak dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You still need to reply to invitations for the host to see your response.": [
+        ""
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Anda akan ${ loseAllData } di akun ${ BRAND_NAME } Anda. Untuk memulihkannya, masukkan kata sandi lama Anda."
@@ -5714,6 +5734,9 @@
       "Go to Trash": [
         "Ke Sampah"
       ],
+      "Insert link": [
+        "Sisipkan tautan"
+      ],
       "Jump to first": [
         "Lompat ke pertama"
       ],
@@ -5909,7 +5932,7 @@
         "Tindakan"
       ],
       "Activity": [
-        ""
+        "Aktivitas"
       ],
       "Address": [
         "Alamat"
@@ -6077,7 +6100,7 @@
         "Pemberitahuan email harian"
       ],
       "Date": [
-        ""
+        "Tanggal"
       ],
       "Date format": [
         "Format tanggal"
@@ -6454,8 +6477,8 @@
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
       ],
-      "Send invites in": [
-        "Invitation language"
+      "Send invitations in": [
+        "Kirim undangan pada"
       ],
       "Show secondary time zone": [
         "Tampilkan zona waktu sekunder"
@@ -7641,15 +7664,6 @@
       "Feedback": [
         "Kritik dan Saran"
       ],
-      "Fill in the email address and text to test your link": [
-        "Isi alamat email dan teks untuk menguji tautan Anda"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Isi nomor telepon dan teks untuk menguji tautan Anda"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Isikan tautan URL dan teks untuk menguji tautan Anda"
-      ],
       "Gift code": [
         "Kode hadiah"
       ],
@@ -7676,6 +7690,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Mohon uraikan masalah Anda dan sertakan pesan kesalahan apapun yang Anda jumpai"
+      ],
+      "Please insert link first": [
+        "Silakan sisipkan tautan terlebih dulu"
       ],
       "Postal code": [
         "Kode pos"
@@ -8055,7 +8072,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Dapatkan langganan ${ appName } ${ planName } hingga 18 bulan secara cuma-cuma"
       ],
       "Invite friends and earn rewards!": [
         "Undang teman-teman Anda dan dapatkan berbagai keuntungan!"
@@ -8393,7 +8410,7 @@
     },
     "Title": {
       "${ appName } ${ planName } trial": [
-        ""
+        "Uji coba ${ appName } ${ planName }"
       ],
       "${ appName } customization": [
         "Penyesuaian ${ appName }"
@@ -8804,7 +8821,7 @@
         "Kode hadiah"
       ],
       "How does it work?": [
-        ""
+        "Bagaimana caranya ini bekerja?"
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -8850,9 +8867,6 @@
       ],
       "Invoices": [
         "Tagihan"
-      ],
-      "Keyboard Shortcuts": [
-        "Pintasan Papan Ketik"
       ],
       "Labels": [
         "Label"
@@ -9347,7 +9361,7 @@
         "Tentukan tata letak default Kotak Masuk Anda."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        ""
+        "Menampilkan catatan kaki berikut pada email yang Anda kirim: ${ signature } Tautan tersebut merupakan tautan rujukan Anda. Catatan kaki ini akan muncul di bawah tanda tangan Anda dan dapat Anda sesuaikan kapan saja pada menu pengaturan."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Tanda tangan yang diproduksi dengan kunci ini dianggap tidak valid dan kunci ini tidak dapat dipakai untuk mengenkripsi"

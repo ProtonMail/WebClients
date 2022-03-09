@@ -119,9 +119,6 @@
       "Compare all features": [
         "Comparar todas las funciones"
       ],
-      "Compare plans": [
-        "Comparar planes"
-      ],
       "Compose": [
         "Redactar"
       ],
@@ -244,6 +241,9 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "Go to label": [
+        "Ir a la etiqueta"
+      ],
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
       ],
@@ -348,9 +348,6 @@
       ],
       "Pause upload": [
         "Pausar carga"
-      ],
-      "Pay": [
-        "Pagar"
       ],
       "Preview": [
         "Vista previa"
@@ -537,6 +534,9 @@
       ],
       "Upgrade": [
         "Actualizar"
+      ],
+      "Upload anyway": [
+        "Cargar de todos modos"
       ],
       "Upload file": [
         "Cargar archivo"
@@ -1941,9 +1941,6 @@
       "Invalid card number": [
         "Número de tarjeta inválido"
       ],
-      "Invalid code": [
-        "Código inválido"
-      ],
       "Invalid expiration date": [
         "Fecha de expiración inválida"
       ],
@@ -1965,6 +1962,9 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton",
         "Fusionar al menos ${ calendarToFixCount } calendarios con los calendarios existentes de Proton"
+      ],
+      "Missing key packet": [
+        "Falta el paquete de claves"
       ],
       "Missing signature": [
         "Falta la firma"
@@ -2676,6 +2676,9 @@
       "Create your first folder and start moving your files.": [
         "Cree su primera carpeta y comience a mover sus archivos."
       ],
+      "Creating": [
+        "Creando"
+      ],
       "Creating link to file": [
         "Creando enlace al archivo"
       ],
@@ -2694,9 +2697,6 @@
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descuento aplicado a su suscripción con el cupón ${ code }"
-      ],
-      "Domains": [
-        "Dominios"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descargue hoy su aplicación favorita y lleve la privacidad con usted dondequiera que vaya."
@@ -3994,6 +3994,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        "\"${ name }\" creado con éxito"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" eliminado permanentemente de la papelera"
       ],
@@ -4054,9 +4057,6 @@
       "${ movedLinksCount } folder successfully moved": [
         "${ movedLinksCount } carpeta movida con éxito",
         "${ movedLinksCount } carpetas movidas con éxito"
-      ],
-      "${ name } created successfully": [
-        "${ name } creado con éxito"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elemento eliminado permanentemente de la papelera",
@@ -5054,6 +5054,9 @@
       ],
       "PayPal verification failed": [
         "Falló la verificación de PayPal"
+      ],
+      "Performance might be affected": [
+        "El rendimiento puede verse afectado"
       ],
       "Phone numbers": [
         "Números de teléfono"

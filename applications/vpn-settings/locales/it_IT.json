@@ -2265,8 +2265,8 @@
       "Log in to ProtonMail to activate your address": [
         "Accedi a ProtonMail per attivare il tuo indirizzo"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Assicurati di ricordare la password per accedere e decifrare le email. ${ boldAlert }. Si consiglia di aggiungere prima una email di recupero."
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
+        "Assicurati di ricordare la password per accedere e decifrare le email. ${ boldAlert } Si consiglia di aggiungere prima un ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Inserisci manualmente queste informazioni nel tuo dispositivo di autenticazione a due fattori per impostare il tuo account. ${ _switchButton }."
@@ -2343,8 +2343,8 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton non può aiutarti a recuperare le password perse"
+      "Proton can't help you recover any lost passwords.": [
+        "Proton non può aiutarti a recuperare le password perse."
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "ProtonMail può anche essere usato con una sola password, la quale sostituisce sia la password d'accesso che quella della casella di posta. Per passare alla modalità ad una password, inserisca la password desiderata e faccia clic su Salva."
@@ -2364,6 +2364,9 @@
       ],
       "read our two-factor authentication Guide first": [
         "leggi prima la nostra Guida all'autenticazione a due fattori"
+      ],
+      "recovery method": [
+        "metodo di recupero"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."

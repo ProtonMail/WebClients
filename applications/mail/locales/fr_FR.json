@@ -56,9 +56,6 @@
       "Add to group": [
         "Ajouter au groupe"
       ],
-      "Address options": [
-        "Options d'adresse"
-      ],
       "Advanced search": [
         "Recherche avancée"
       ],
@@ -88,6 +85,9 @@
       ],
       "Apply": [
         "Appliquer"
+      ],
+      "Archive": [
+        "Archiver"
       ],
       "Attachment": [
         "Pièce jointe"
@@ -349,6 +349,9 @@
       "Go to first page": [
         "Aller à la première page"
       ],
+      "Go to label": [
+        "Afficher le label"
+      ],
       "Go to last page": [
         "Aller à la dernière page"
       ],
@@ -452,6 +455,9 @@
       "Load": [
         "Charger"
       ],
+      "Load embedded images": [
+        "Charger les images intégrées"
+      ],
       "Load image": [
         "Charger l'image"
       ],
@@ -508,6 +514,9 @@
       ],
       "More": [
         "Plus"
+      ],
+      "More details about ${ title }": [
+        "Plus d'informations à propos de ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "Plus d'infos : ${ safeTitle }"
@@ -635,6 +644,9 @@
       "Re-sign": [
         "Signer à nouveau"
       ],
+      "Read receipt sent": [
+        "Confirmation de lecture envoyée"
+      ],
       "Recover data": [
         "Récupérer les données"
       ],
@@ -725,7 +737,7 @@
       "send auto-reply email": [
         "envoyer un e-mail de réponse automatique"
       ],
-      "Send receipt": [
+      "Send read receipt": [
         "Envoyer une confirmation de lecture"
       ],
       "Set": [
@@ -794,6 +806,9 @@
       "Some images could not be loaded with tracking protection": [
         "Certaines images n'ont pas pu être chargées à cause de la protection antipistage"
       ],
+      "Star": [
+        "Ajouter aux favoris"
+      ],
       "Start import": [
         "Démarrer l'importation"
       ],
@@ -840,6 +855,9 @@
       "Try another method": [
         "Essayer une autre méthode"
       ],
+      "Turn on auto-load": [
+        "Activer le chargement automatique"
+      ],
       "Turn on tracker protection": [
         "Activer la protection contre les traqueurs"
       ],
@@ -858,8 +876,14 @@
       "Unordered list": [
         "Liste non ordonnée"
       ],
+      "Unstar": [
+        "Retirer des favoris"
+      ],
       "Unsubscribe": [
         "Se désabonner"
+      ],
+      "Unsubscribe from mailing list": [
+        "Se désabonner de la liste de diffusion"
       ],
       "Unsubscribing": [
         "Désabonnement"
@@ -915,6 +939,9 @@
       "View headers": [
         "Voir les en-têtes"
       ],
+      "View HTML": [
+        "Voir le HTML"
+      ],
       "View invoice": [
         "Voir la facture"
       ],
@@ -924,14 +951,14 @@
       "View message": [
         "Voir le message"
       ],
+      "View message details": [
+        "Voir les détails du message"
+      ],
       "View recipients": [
         "Afficher les destinataires"
       ],
       "View rendered HTML": [
         "Voir le rendu HTML"
-      ],
-      "View source code": [
-        "Voir le code source"
       ],
       "Why not?": [
         "Pourquoi donc ?"
@@ -2881,6 +2908,9 @@
       "Message processing error.": [
         "Erreur de traitement du message."
       ],
+      "Missing key packet": [
+        ""
+      ],
       "Missing signature": [
         "Signature manquante"
       ],
@@ -4056,6 +4086,21 @@
       "Expiration Time": [
         "Délai d'expiration"
       ],
+      "Expires": [
+        "Expire"
+      ],
+      "Expires in ${ formattedDelay }": [
+        "Expire dans ${ formattedDelay }"
+      ],
+      "Expires in ${ formattedDelayShort }": [
+        "Expire dans ${ formattedDelayShort }"
+      ],
+      "Expires in less than ${ formattedDelayShort }": [
+        "Expire dans moins de ${ formattedDelayShort }"
+      ],
+      "Expires soon": [
+        "Expire bientôt"
+      ],
       "file attached": [
         "fichier joint",
         "fichiers joints"
@@ -4390,9 +4435,6 @@
       "Saving draft…": [
         "Enregistrement du brouillon…"
       ],
-      "Scheduled": [
-        "Programmé"
-      ],
       "Scheduled send of this message will be cancelled.": [
         "L'envoi programmé de ce message sera annulé."
       ],
@@ -4447,8 +4489,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Désolé, ce message n'existe pas ou a déjà expiré"
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Commencez avec 500 Mo et débloquez plus d'espace de stockage au fur et à mesure. L'espace de stockage est partagé entre Mail, Calendar et Drive."
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "L'espace de stockage est partagé entre Mail, Calendar et Drive."
       ],
       "Store and share files securely with Proton Drive.": [
         "Stockez et partagez des fichiers en toute sécurité avec Proton Drive."
@@ -4579,9 +4621,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Ce message expirera le ${ formattedDate }"
-      ],
-      "This message will expire in ${ formattedDelay }": [
-        "Ce message expirera dans ${ formattedDelay }"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
         "Ce message expirera ${ dateString } à ${ formattedTime }"
@@ -4886,9 +4925,6 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "Cliquer sur \"Approuver la clé\" créera un nouveau contact et associera cette clé publique à\ncet expéditeur. Les e-mails de cette adresse seront alors automatiquement vérifiés cryptographiquement."
       ],
-      "Do you want to trust the following public key?": [
-        "Souhaitez-vous approuver la clé publique suivante ?"
-      ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Souhaitez-vous faire confiance à la clé publique principale avec l'empreinte suivante ?",
         "Souhaitez-vous faire confiance aux clés publiques principales avec les empreintes suivantes ?"
@@ -4960,6 +4996,9 @@
       ],
       "Go to Trash": [
         "Accéder à la corbeille"
+      ],
+      "Insert link": [
+        "Insérer un lien"
       ],
       "Jump to first": [
         "Aller au premier"
@@ -5095,9 +5134,6 @@
       " and ${ l }": [
         " et ${ l }"
       ],
-      "${ firstAddress } and ${ count } others": [
-        "${ firstAddress } et ${ count } autres"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible. Veuillez vérifier plus tard)"
       ],
@@ -5140,8 +5176,8 @@
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
       ],
-      "BCC:": [
-        "CCI :"
+      "BCC": [
+        "Cci"
       ],
       "Blind Carbon Copy": [
         "Copie carbone invisible"
@@ -5167,8 +5203,8 @@
       "Category": [
         "Catégorie"
       ],
-      "CC:": [
-        "CC :"
+      "CC": [
+        "Cc"
       ],
       "City": [
         "Ville"
@@ -5280,9 +5316,6 @@
       ],
       "Label messages as": [
         "Labelliser les messages comme"
-      ],
-      "Labels:": [
-        "Labels :"
       ],
       "Last 12 months only": [
         "Seulement les 12 derniers mois"
@@ -6107,15 +6140,6 @@
       "End date": [
         "Date de fin"
       ],
-      "Fill in the email address and text to test your link": [
-        "Renseignez l'adresse électronique et le texte pour tester votre lien"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Renseignez le numéro de téléphone et le texte pour tester votre lien"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Renseignez l'URL et le texte pour tester votre lien"
-      ],
       "Filter folders": [
         "Filtrer les dossiers"
       ],
@@ -6157,6 +6181,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Veuillez décrire le problème et inclure les messages d'erreur"
+      ],
+      "Please insert link first": [
+        "Veuillez d'abord insérer un lien"
       ],
       "Proton username": [
         "Nom d'utilisateur Proton"
@@ -6468,11 +6495,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed": [
-        "Désabonné"
+      "Unsubscribed from mailing list": [
+        "Désabonné de la liste de diffusion"
       ],
-      "Unsubscribing...": [
-        "Désabonnement..."
+      "Unsubscribing from mailing list...": [
+        "Désinscription de la liste de diffusion..."
       ]
     },
     "Step in filter modal": {
@@ -6854,9 +6881,6 @@
       "Addresses": [
         "Adresses"
       ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Tous les destinataires ont été ajoutés au champ Cci et ne peuvent pas être divulgués"
-      ],
       "Are you sure you want to close?": [
         "Êtes-vous sûr de vouloir fermer ?"
       ],
@@ -7051,9 +7075,6 @@
       "Invalid verification code": [
         "Code de vérification invalide"
       ],
-      "Keyboard Shortcuts": [
-        "Raccourcis clavier"
-      ],
       "Label as": [
         "Labelliser comme"
       ],
@@ -7084,8 +7105,14 @@
       "Merging contacts": [
         "Fusion des contacts"
       ],
+      "Message details": [
+        "Détails du message"
+      ],
       "Message list": [
         "Liste des messages"
+      ],
+      "Message will expire": [
+        "Le message va expirer"
       ],
       "More": [
         "Plus"
@@ -7162,6 +7189,9 @@
       "Recipient missing": [
         "Destinataire manquant"
       ],
+      "Recipients": [
+        "Destinaires"
+      ],
       "Recover data": [
         "Récupérer les données"
       ],
@@ -7203,6 +7233,9 @@
       ],
       "Send without expiration?": [
         "Envoyer sans expiration ?"
+      ],
+      "Sender": [
+        "Expéditeur"
       ],
       "Sender changed": [
         "Expéditeur modifié"
