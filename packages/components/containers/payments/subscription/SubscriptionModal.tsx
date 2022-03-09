@@ -342,6 +342,7 @@ const SubscriptionModal = ({
                         onChangePlanIDs={(planIDs) =>
                             withLoadingCheck(check({ ...model, planIDs, step: SUBSCRIPTION_STEPS.CUSTOMIZATION }))
                         }
+                        onChangeCycle={handleChangeCycle}
                         onChangeCurrency={handleChangeCurrency}
                         onChangeAudience={setAudience}
                         audience={audience}
