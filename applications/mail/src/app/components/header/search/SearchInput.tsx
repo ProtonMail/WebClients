@@ -22,13 +22,16 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
     };
 
     return (
-        <div ref={ref} className="searchbox-container flex-item-centered-vert p0 inputform-field flex flex-row">
+        <div
+            ref={ref}
+            className="searchbox-container flex-item-centered-vert p0 inputform-field flex flex-row cursor-pointer"
+        >
             <Button
                 type="submit"
                 icon
                 shape="ghost"
                 color="weak"
-                className="flex flex-item-noshrink"
+                className="flex flex-item-noshrink no-pointer-events"
                 title={c('Action').t`Search`}
                 onClick={onOpen}
                 data-shorcut-target="searchbox-button"
