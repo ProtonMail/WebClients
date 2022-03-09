@@ -115,7 +115,7 @@ const MessageBody = ({
         >
             {encryptedMode && <pre className="m0 p1">{message.data?.Body}</pre>}
             {sourceMode && <pre className="m0 p1">{message.decryption?.decryptedBody}</pre>}
-            {placeholderMode && (
+            {placeholderMode && !encryptedMode && (
                 <div className="bg-norm color-norm p1">
                     <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w8e" />
                     <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w50e" />
