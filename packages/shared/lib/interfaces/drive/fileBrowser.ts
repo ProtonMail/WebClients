@@ -17,6 +17,7 @@ export interface FileBrowserItem {
     Name: string;
     LinkID: string;
     Type: LinkType;
+    CreateTime: number;
     ModifyTime: number;
     RealModifyTime: number;
     Trashed: number | null;
