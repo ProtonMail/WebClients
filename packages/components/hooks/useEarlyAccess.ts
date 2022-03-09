@@ -63,6 +63,9 @@ export const updateVersionCookie = (
         return;
     }
     updateVersionCookieHelper('Tag', environment, earlyAccessScopeFeature);
+    // If the `Tag` cookie will get deleted, a possibly existing `Version` cookie will get priority over it.
+    // Also delete that cookie (It's not used anymore).
+    deleteCookie('Version');
 };
 
 const useEarlyAccess = () => {
