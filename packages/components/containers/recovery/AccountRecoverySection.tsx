@@ -3,7 +3,6 @@ import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/setti
 import { APPS } from '@proton/shared/lib/constants';
 
 import { Loader, Toggle } from '../../components';
-
 import {
     useConfig,
     useEventManager,
@@ -13,10 +12,9 @@ import {
     useNotifications,
     useUserSettings,
 } from '../../hooks';
-
+import RecoveryEmail from './email/RecoveryEmail';
+import RecoveryPhone from './phone/RecoveryPhone';
 import AuthModal from '../password/AuthModal';
-import RecoveryEmail from './RecoveryEmail';
-import RecoveryPhone from './RecoveryPhone';
 import SettingsParagraph from '../account/SettingsParagraph';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';

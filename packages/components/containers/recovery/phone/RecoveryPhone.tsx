@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 import { updatePhone } from '@proton/shared/lib/api/settings';
 
-import AuthModal from '../password/AuthModal';
-import { ConfirmModal, Alert, Button, InputFieldTwo, PhoneInput, useFormErrors } from '../../components';
-import { useLoading, useModals, useNotifications, useEventManager } from '../../hooks';
-import { classnames } from '../../helpers';
+import { Button, InputFieldTwo, PhoneInput, useFormErrors } from '../../../components';
+import { useNotifications, useEventManager, useModals, useLoading } from '../../../hooks';
+import { classnames } from '../../../helpers';
+import ConfirmRemovePhoneModal from './ConfirmRemovePhoneModal';
+import AuthModal from '../../password/AuthModal';
 
 interface Props {
     phone: string | null;
@@ -16,26 +17,17 @@ interface Props {
 
 const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) => {
     const [input, setInput] = useState(phone || '');
-    const [loading, withLoading] = useLoading();
+    const [submitting, withSubmitting] = useLoading();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
     const { onFormSubmit } = useFormErrors();
 
     const handleSubmit = async () => {
-        if (!input && hasReset) {
+        const confirmStep = !input && hasReset;
+        if (confirmStep) {
             await new Promise<void>((resolve, reject) => {
-                createModal(
-                    <ConfirmModal title={c('Title').t`Confirm phone number`} onConfirm={resolve} onClose={reject}>
-                        <Alert type="warning">
-                            {c('Warning')
-                                .t`By deleting this phone number, you will no longer be able to recover your account.`}
-                            <br />
-                            <br />
-                            {c('Warning').t`Are you sure you want to delete the phone number?`}
-                        </Alert>
-                    </ConfirmModal>
-                );
+                createModal(<ConfirmRemovePhoneModal onClose={reject} onConfirm={resolve} />);
             });
         }
 
@@ -44,6 +36,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
         });
 
         await call();
+
         createNotification({ text: c('Success').t`Phone number updated` });
     };
 
@@ -53,7 +46,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
             onSubmit={(e) => {
                 e.preventDefault();
                 if (onFormSubmit()) {
-                    void withLoading(handleSubmit());
+                    void withSubmitting(handleSubmit());
                 }
             }}
         >
@@ -61,7 +54,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                 <InputFieldTwo
                     as={PhoneInput}
                     id="phoneInput"
-                    disableChange={loading}
+                    disableChange={submitting}
                     defaultCountry={defaultCountry}
                     value={input}
                     onChange={setInput}
@@ -73,7 +66,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                     shape="outline"
                     type="submit"
                     disabled={(phone || '') === input}
-                    loading={loading}
+                    loading={submitting}
                     data-testid="account:recovery:phoneSubmit"
                 >
                     {c('Action').t`Save`}
