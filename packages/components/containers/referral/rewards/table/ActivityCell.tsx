@@ -23,12 +23,13 @@ const ActivityCell = ({ referral }: Props) => {
             break;
         case ReferralState.COMPLETED:
         case ReferralState.REWARDED:
+            const monthsSubscribed = referral.ReferredUserSubscriptionCycle || 0;
             message =
-                (referral.RewardMonths || 0) === 1
+                monthsSubscribed === 1
                     ? // translator : We are in a table cell. We inform user that a referred user has paid for a monthly plan
                       c('Info').t`Paid for a monthly plan`
                     : // translator : We are in a table cell. We inform user that a referred user has paid for 12months plan
-                      c('Info').t`Paid for a ${referral.RewardMonths} months plan`;
+                      c('Info').t`Paid for a ${monthsSubscribed} months plan`;
             break;
     }
 
