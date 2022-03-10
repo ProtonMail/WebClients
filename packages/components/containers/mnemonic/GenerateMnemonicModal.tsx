@@ -48,7 +48,6 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
     const api = useApi();
     const { call } = useEventManager();
     const [submittingAuth, setSubmittingAuth] = useState(false);
-    const [authError, setAuthError] = useState('');
     const getUserKeys = useGetUserKeys();
 
     const [password, setPassword] = useState('');
@@ -105,11 +104,9 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
 
             setStep(STEPS.MNEMONIC_PHRASE);
         } catch (error: any) {
-            const { code, message } = getApiError(error);
+            const { code } = getApiError(error);
             setSubmittingAuth(false);
-            if (code === PASSWORD_WRONG_ERROR) {
-                setAuthError(message);
-            } else {
+            if (code !== PASSWORD_WRONG_ERROR) {
                 onClose?.();
             }
         }
@@ -178,10 +175,8 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
                         <PasswordTotpInputs
                             password={password}
                             setPassword={setPassword}
-                            passwordError={authError}
                             totp={totp}
                             setTotp={setTotp}
-                            totpError={authError}
                             showTotp={hasTOTPEnabled}
                         />
                     )}
