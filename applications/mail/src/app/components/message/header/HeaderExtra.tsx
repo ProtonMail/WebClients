@@ -1,5 +1,5 @@
 import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
-import { FeatureCode, useEventManager, useFeature, useMailSettings } from '@proton/components';
+import { FeatureCode, useFeature, useMailSettings } from '@proton/components';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import ExtraSpamScore from '../extras/ExtraSpamScore';
@@ -36,7 +36,6 @@ const HeaderExtra = ({
     onLoadEmbeddedImages,
 }: Props) => {
     const [mailSettings] = useMailSettings();
-    const { call } = useEventManager();
     const received = isReceived(message.data);
 
     const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
@@ -60,7 +59,6 @@ const HeaderExtra = ({
                     type="remote"
                     onLoadImages={onLoadRemoteImages}
                     mailSettings={mailSettings}
-                    call={call}
                 />
             )}
 
