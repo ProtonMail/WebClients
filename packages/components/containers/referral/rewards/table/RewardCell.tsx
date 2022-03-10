@@ -1,4 +1,5 @@
 import { c, msgid } from 'ttag';
+import { Color } from '@proton/components';
 import { Referral, ReferralState } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -8,6 +9,7 @@ interface Props {
 
 const RewardCell = ({ referral, hasReachedRewardLimit }: Props) => {
     let reward: string | React.ReactNode = '-';
+    let textColor: Color | undefined;
 
     const monthsRewarded = referral.RewardMonths || 0;
 
@@ -16,6 +18,7 @@ const RewardCell = ({ referral, hasReachedRewardLimit }: Props) => {
         case ReferralState.TRIAL:
             if (!hasReachedRewardLimit) {
                 reward = c('Label').t`Waiting for subscription`;
+                textColor = 'warning';
             }
             break;
         case ReferralState.COMPLETED:
@@ -26,6 +29,7 @@ const RewardCell = ({ referral, hasReachedRewardLimit }: Props) => {
                  * We show the reward user would be allowed to get.
                  */
                 reward = c('Label').t`Credits pending`;
+                textColor = 'warning';
             }
             break;
         case ReferralState.REWARDED:
@@ -40,10 +44,11 @@ const RewardCell = ({ referral, hasReachedRewardLimit }: Props) => {
                 `${monthsRewarded} months credited`,
                 monthsRewarded
             );
+            textColor = 'success';
             break;
     }
 
-    return <>{reward}</>;
+    return <div className={textColor ? `color-${textColor}` : undefined}>{reward}</div>;
 };
 
 export default RewardCell;
