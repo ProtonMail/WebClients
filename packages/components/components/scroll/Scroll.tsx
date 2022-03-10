@@ -1,20 +1,27 @@
-import { useEffect, useRef, useState } from 'react';
+import { Ref, useEffect, useRef, useState } from 'react';
 
 import { classnames } from '../../helpers';
 import './Scroll.scss';
+import { useCombinedRefs } from '../../hooks';
 
 const TOLERANCE = 4;
 
 interface ScrollProps extends React.ComponentPropsWithoutRef<'div'> {
     horizontal?: boolean;
     setHasScrollShadow?: (hasScrollShadow: boolean) => void;
+    customContainerRef?: Ref<HTMLElement>;
 }
 
-const Scroll = ({ children, horizontal, setHasScrollShadow, className, ...rest }: ScrollProps) => {
+const Scroll = ({ children, horizontal, setHasScrollShadow, className, customContainerRef, ...rest }: ScrollProps) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const scrollChildRef = useRef<HTMLDivElement>(null);
     const [showStartShadow, setShowStartShadow] = useState(false);
     const [showEndShadow, setShowEndShadow] = useState(false);
+
+    const containersRefs = customContainerRef
+        ? [scrollContainerRef, customContainerRef as Ref<HTMLDivElement>]
+        : [scrollContainerRef];
+    const containerRefs = useCombinedRefs(...containersRefs);
 
     useEffect(() => {
         setHasScrollShadow?.(showStartShadow);
@@ -110,7 +117,7 @@ const Scroll = ({ children, horizontal, setHasScrollShadow, className, ...rest }
         <div {...rest} className={outerClassName}>
             <div className={startShadowClassName} aria-hidden="true" />
             <div className={endShadowClassName} aria-hidden="true" />
-            <div className="scroll-inner" ref={scrollContainerRef} onScroll={handleScroll}>
+            <div className="scroll-inner" ref={containerRefs} onScroll={handleScroll}>
                 <div className="scroll-child" ref={scrollChildRef}>
                     {children}
                 </div>
