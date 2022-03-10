@@ -10,7 +10,7 @@ interface Props {
 }
 
 /**
- * It's a duplicate of the origina NotificationProvider for testing purpose
+ * It's a duplicate of the original NotificationProvider for testing purpose
  * The main (only?) difference is that it uses a "long living state" for notification
  * In order to simplify tests no making Jest scream at any notification happening too late
  * YET it's still relevant to try to prevent any async leak from your tests
