@@ -1,22 +1,38 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { c } from 'ttag';
 import { disableTotp } from '@proton/shared/lib/api/settings';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { noop } from '@proton/shared/lib/helpers/function';
 
-import { Alert, FormModal, Loader } from '../../components';
+import {
+    Loader,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    Form,
+    Button,
+} from '../../components';
 import { useLoading, useApi, useEventManager, useNotifications } from '../../hooks';
 
 import PasswordTotpInputs from '../password/PasswordTotpInputs';
 import useAskAuth from '../password/useAskAuth';
+
+interface ModalProperties {
+    section: ReactNode;
+    submitButtonText: string;
+    onSubmit: () => void;
+}
 
 const STEPS = {
     CONFIRM: 1,
     PASSWORD: 2,
 };
 
-const DisableTOTPModal = (props: any) => {
+const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -28,17 +44,17 @@ const DisableTOTPModal = (props: any) => {
     // Special case for admins signed into public users, TOTP is requested if it's enabled on the admin
     const [hasTOTPEnabled, isLoadingAuth] = useAskAuth();
 
-    const { section, ...modalProps } = (() => {
+    const { section, submitButtonText, onSubmit } = ((): ModalProperties => {
         if (step === STEPS.CONFIRM) {
             return {
                 section: (
-                    <Alert className="mb1">{c('Message')
-                        .t`Are you sure you want to disable two-factor authentication?`}</Alert>
+                    <div className="mb1">{c('Message')
+                        .t`Are you sure you want to disable two-factor authentication?`}</div>
                 ),
+                submitButtonText: c('Action').t`Yes`,
                 onSubmit() {
                     setStep(STEPS.PASSWORD);
                 },
-                submit: c('Action').t`Yes`,
             };
         }
 
@@ -57,6 +73,7 @@ const DisableTOTPModal = (props: any) => {
                         showTotp={hasTOTPEnabled}
                     />
                 ),
+                submitButtonText: c('Action').t`Submit`,
                 onSubmit() {
                     const handleSubmit = async () => {
                         try {
@@ -67,7 +84,7 @@ const DisableTOTPModal = (props: any) => {
                             });
                             await call();
                             createNotification({ text: c('Info').t`Two-factor authentication disabled` });
-                            props.onClose();
+                            onClose?.();
                         } catch (error: any) {
                             const { code, message } = getApiError(error);
                             if (code === PASSWORD_WRONG_ERROR) {
@@ -75,19 +92,29 @@ const DisableTOTPModal = (props: any) => {
                             }
                         }
                     };
-                    withLoading(handleSubmit());
+                    void withLoading(handleSubmit());
                 },
-                submit: c('Action').t`Submit`,
             };
         }
 
         throw new Error('Invalid step');
     })();
 
+    const handleClose = loading ? noop : onClose;
+
     return (
-        <FormModal title={c('Title').t`Disable two-factor authentication`} loading={loading} {...modalProps} {...props}>
-            {section}
-        </FormModal>
+        <Modal as={Form} onSubmit={onSubmit} onClose={handleClose} size="large" {...rest}>
+            <ModalHeader title={c('Title').t`Disable two-factor authentication`} />
+            <ModalContent>{section}</ModalContent>
+            <ModalFooter>
+                <Button onClick={handleClose} disabled={loading}>
+                    {c('Action').t`Cancel`}
+                </Button>
+                <Button loading={loading} type="submit" color="norm">
+                    {submitButtonText || c('Action').t`Next`}
+                </Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 
