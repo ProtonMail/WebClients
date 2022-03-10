@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import {
     ModalTwo as Modal,
     Form,
@@ -36,8 +38,12 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
             });
             onSuccess?.();
             onClose?.();
-        } catch (e: any) {
+        } catch (error: any) {
             setLoading(false);
+            const { code } = getApiError(error);
+            if (code !== PASSWORD_WRONG_ERROR) {
+                onClose?.();
+            }
         }
     };
 
