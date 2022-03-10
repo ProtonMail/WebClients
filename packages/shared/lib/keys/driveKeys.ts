@@ -23,7 +23,7 @@ import { uint8ArrayToBase64String } from '../helpers/encoding';
 const toPolyfillReadable = createReadableStreamWrapper(PolyfillReadableStream);
 
 interface UnsignedEncryptionPayload {
-    message: string;
+    message: string | Uint8Array;
     publicKey: OpenPGPKey;
 }
 
