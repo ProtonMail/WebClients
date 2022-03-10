@@ -97,6 +97,9 @@ const MessageOnlyView = ({
                     tabIndex={-1}
                 >
                     <MessageView
+                        // Break the reuse of the MessageView accross multiple message
+                        // Solve a lot of reuse issues, reproduce the same as in conversation mode with a map on conversation messages
+                        key={message.localID}
                         ref={messageRef}
                         labelID={labelID}
                         conversationMode={false}
