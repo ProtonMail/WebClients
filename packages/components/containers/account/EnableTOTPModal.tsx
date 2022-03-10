@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { c } from 'ttag';
 import { setupTotp, TOTP_WRONG_ERROR } from '@proton/shared/lib/api/settings';
 import { srpAuth } from '@proton/shared/lib/srp';
@@ -7,12 +7,34 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { APPS } from '@proton/shared/lib/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
+import { noop } from '@proton/shared/lib/helpers/function';
 
-import { QRCode, Alert, Href, InlineLinkButton, Loader, Block, FormModal, Button } from '../../components';
+import {
+    Alert,
+    Button,
+    Href,
+    InlineLinkButton,
+    Loader,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    QRCode,
+    Form,
+} from '../../components';
 import { useConfig, useNotifications, useLoading, useApi, useEventManager, useUser, useModals } from '../../hooks';
 
 import PasswordTotpInputs from '../password/PasswordTotpInputs';
 import AuthModal from '../password/AuthModal';
+
+interface ModalProperties {
+    section: ReactNode;
+    cancelButtonText?: string | null;
+    onCancel?: () => void;
+    submitButtonText?: string;
+    onSubmit?: () => void;
+}
 
 interface SetupTOTPResponse {
     TwoFactorRecoveryCodes: string[];
@@ -25,7 +47,7 @@ const STEPS = {
     RECOVERY_CODES: 4,
 };
 
-const EnableTOTPModal = (props: any) => {
+const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
     const { APP_NAME } = useConfig();
     const [user] = useUser();
     const api = useApi();
@@ -44,7 +66,15 @@ const EnableTOTPModal = (props: any) => {
     const [totpError, setTotpError] = useState('');
     const [loading, withLoading] = useLoading();
 
-    const { section, ...modalProps } = (() => {
+    const handleClose = loading ? noop : onClose;
+
+    const {
+        section,
+        cancelButtonText,
+        onCancel = handleClose,
+        submitButtonText,
+        onSubmit,
+    } = ((): ModalProperties => {
         if (!sharedSecret) {
             return {
                 section: <Loader />,
@@ -66,17 +96,17 @@ const EnableTOTPModal = (props: any) => {
             return {
                 section: (
                     <>
-                        <Block>
+                        <div className="mb1">
                             {c('Info')
                                 .t`This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.`}
-                        </Block>
-                        <Alert className="mb1">
+                        </div>
+                        <div className="mb1">
                             {
                                 // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication Guide first</link>.
                                 c('Info')
                                     .jt`If you have never used two-factor authentication before, we strongly recommend you ${guideButton}.`
                             }
-                        </Alert>
+                        </div>
                     </>
                 ),
                 onSubmit() {
@@ -91,7 +121,7 @@ const EnableTOTPModal = (props: any) => {
 
         if (step === STEPS.SCAN_CODE && !manualCode) {
             const switchButton = (
-                <InlineLinkButton key="0" onClick={() => setManualCode(true)}>
+                <InlineLinkButton data-testid="totp:manual-button" key="0" onClick={() => setManualCode(true)}>
                     {c('Info').t`Enter key manually instead`}
                 </InlineLinkButton>
             );
@@ -99,10 +129,10 @@ const EnableTOTPModal = (props: any) => {
             return {
                 section: (
                     <>
-                        <Alert className="mb1">
+                        <div className="mb1">
                             {c('Info')
                                 .jt`Scan this code with your two-factor authentication device to set up your account. ${switchButton}.`}
-                        </Alert>
+                        </div>
                         <div className="text-center">
                             <QRCode value={uri} size={200} />
                         </div>
@@ -122,15 +152,15 @@ const EnableTOTPModal = (props: any) => {
             return {
                 section: (
                     <>
-                        <Alert className="mb1">
+                        <div className="mb1">
                             {c('Info')
                                 .jt`Manually enter this information into your two-factor authentication device to set up your account. ${switchButton}.`}
-                        </Alert>
+                        </div>
                         <div>
                             <div className="flex flex-justify-space-between mb0-5">
                                 <div className="w20">{c('Label').t`Key`}</div>
                                 <div className="w80 flex-align-self-center text-bold">
-                                    <code>{sharedSecret}</code>
+                                    <code data-testid="totp:secret-key">{sharedSecret}</code>
                                 </div>
                             </div>
                             <div className="flex flex-justify-space-between mb0-5">
@@ -211,14 +241,14 @@ const EnableTOTPModal = (props: any) => {
                         showTotp
                     />
                 ),
-                close: c('Action').t`Back`,
-                onClose: () => {
+                cancelButtonText: c('Action').t`Back`,
+                onCancel: () => {
                     setStep(STEPS.SCAN_CODE);
                 },
+                submitButtonText: c('Action').t`Submit`,
                 onSubmit() {
-                    withLoading(handleSubmit());
+                    void withLoading(handleSubmit());
                 },
-                submit: c('Action').t`Submit`,
             };
         }
 
@@ -237,7 +267,7 @@ const EnableTOTPModal = (props: any) => {
                         <div className="flex text-center">
                             {recoveryCodes.map((code) => {
                                 return (
-                                    <code key={code} className="w49 p0-5">
+                                    <code data-testid="totp:recovery-code" key={code} className="w49 p0-5">
                                         {code}
                                     </code>
                                 );
@@ -258,11 +288,11 @@ const EnableTOTPModal = (props: any) => {
                         </div>
                     </>
                 ),
+                submitButtonText: c('Action').t`Ok`,
                 onSubmit() {
-                    props.onClose();
+                    onClose?.();
                 },
-                submit: c('Action').t`Ok`,
-                close: null,
+                cancelButtonText: null,
             };
         }
 
@@ -270,15 +300,23 @@ const EnableTOTPModal = (props: any) => {
     })();
 
     return (
-        <FormModal
-            title={c('Title').t`Set up two-factor authentication`}
-            submit={c('Action').t`Next`}
-            loading={loading}
-            {...props}
-            {...modalProps}
-        >
-            {section}
-        </FormModal>
+        <Modal as={Form} onSubmit={onSubmit} onClose={handleClose} size="large" {...rest}>
+            <ModalHeader title={c('Title').t`Set up two-factor authentication`} />
+            <ModalContent>{section}</ModalContent>
+            <ModalFooter>
+                {cancelButtonText !== null ? (
+                    <Button onClick={onCancel} disabled={loading}>
+                        {cancelButtonText || c('Action').t`Cancel`}
+                    </Button>
+                ) : (
+                    // Maintain submit button positioning
+                    <div />
+                )}
+                <Button loading={loading} type="submit" color="norm">
+                    {submitButtonText || c('Action').t`Next`}
+                </Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 
