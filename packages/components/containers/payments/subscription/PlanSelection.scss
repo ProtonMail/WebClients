@@ -142,34 +142,13 @@
 
 .subscriptionCheckout {
 	&-column {
-		inline-size: 22em;
+		inline-size: rem(360); // as design request
 
 		@include respond-to($breakpoint-medium) {
-			inline-size: 18em;
+			inline-size: rem(300); // to avoid left content shrinking too much
 		}
-		@include respond-to($breakpoint-small) {
-			inline-size: 100%;
-		}
-
-		.subscriptionCheckout-currencySelect {
-			.select {
-				border: 0;
-				padding: 0;
-				display: inline-block;
-				text-align: end;
-				block-size: auto;
-				background: transparent;
-				color: var(--interaction-norm);
-
-				&:hover,
-				&:focus {
-					color: var(--interaction-norm-hover);
-				}
-
-				&:active {
-					color: var(--interaction-norm-active);
-				}
-			}
+		@include respond-to(800) {
+			inline-size: 100%; // a bit earlier than mobile breakpoint, same reason as above
 		}
 	}
 }

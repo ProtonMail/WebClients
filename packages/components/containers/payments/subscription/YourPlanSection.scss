@@ -1,6 +1,12 @@
+@import '~@proton/styles/scss/config';
+
 .your-plan-section-container {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+
+	@include respond-to($breakpoint-medium) {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 
 // .your-account-usage-container { grid-area: 2 / 2 / 3 / 3; } // if we want to go right
