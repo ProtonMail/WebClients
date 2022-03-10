@@ -23,13 +23,11 @@ import useAskAuth from './useAskAuth';
 interface Props<T> extends Omit<ModalProps<typeof Form>, 'as' | 'onSubmit' | 'size' | 'onSuccess' | 'onError'> {
     config: SrpConfig;
     onSuccess: (data: { password: string; totp: string; result: T }) => void;
-    onError?: (error: Error) => void;
 }
 
-const AuthModal = <T,>({ config, onSuccess, onError, onClose, ...rest }: Props<T>) => {
+const AuthModal = <T,>({ config, onSuccess, onClose, ...rest }: Props<T>) => {
     const api = useApi();
     const [submitting, setSubmitting] = useState(false);
-    const [error, setError] = useState('');
 
     const [password, setPassword] = useState('');
     const [totp, setTotp] = useState('');
@@ -49,11 +47,10 @@ const AuthModal = <T,>({ config, onSuccess, onError, onClose, ...rest }: Props<T
             onClose?.();
         } catch (error: any) {
             setSubmitting(false);
-            const { code, message } = getApiError(error);
-            if (code === PASSWORD_WRONG_ERROR) {
-                setError(message);
+            const { code } = getApiError(error);
+            if (code !== PASSWORD_WRONG_ERROR) {
+                onClose?.();
             }
-            onError?.(error);
         }
     };
 
@@ -72,10 +69,8 @@ const AuthModal = <T,>({ config, onSuccess, onError, onClose, ...rest }: Props<T
                     <PasswordTotpInputs
                         password={password}
                         setPassword={setPassword}
-                        passwordError={error}
                         totp={totp}
                         setTotp={setTotp}
-                        totpError={error}
                         showTotp={hasTOTPEnabled}
                     />
                 )}
