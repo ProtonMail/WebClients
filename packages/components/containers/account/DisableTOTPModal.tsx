@@ -7,7 +7,6 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import {
-    Alert,
     Loader,
     ModalProps,
     ModalTwo as Modal,
@@ -49,8 +48,8 @@ const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
         if (step === STEPS.CONFIRM) {
             return {
                 section: (
-                    <Alert className="mb1">{c('Message')
-                        .t`Are you sure you want to disable two-factor authentication?`}</Alert>
+                    <div className="mb1">{c('Message')
+                        .t`Are you sure you want to disable two-factor authentication?`}</div>
                 ),
                 submitButtonText: c('Action').t`Yes`,
                 onSubmit() {
