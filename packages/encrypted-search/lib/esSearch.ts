@@ -27,8 +27,7 @@ export const decryptFromDB = async <ESItem, ESCiphertext>(
 };
 
 /**
- * Set the initial time range to fetch data from IDB for uncached search in chronological order. This
- * is the equivalent of initializeTimeBounds for uncached search)
+ * Set the initial time range to fetch data from IDB for uncached search in reverse chronological order
  */
 export const initializeTimeBounds = async <ESCiphertext>(
     userID: string,
@@ -52,7 +51,9 @@ export const initializeTimeBounds = async <ESCiphertext>(
     return {
         batchTimeBound: IDBKeyRange.bound(
             [Math.max(startTime, oldestTime), 0],
-            [mostRecentTime, Number.MAX_SAFE_INTEGER]
+            inputTimePoint || [mostRecentTime, Number.MAX_SAFE_INTEGER],
+            false,
+            true
         ),
         searchTimeBound: IDBKeyRange.bound([oldestTime, 0], [mostRecentTime, Number.MAX_SAFE_INTEGER]),
     };
@@ -77,8 +78,7 @@ export const updateBatchTimeBound = (batchTimeBound: IDBKeyRange, searchTimeBoun
 };
 
 /**
- * Set the initial time range to fetch data from IDB for uncached search in chronological order. This
- * is the equivalent of initializeTimeBounds for uncached search)
+ * Set the initial time range to fetch data from IDB for uncached search in chronological order
  */
 const initializeLowerBound = async <ESCiphertext>(
     userID: string,
@@ -103,8 +103,7 @@ const initializeLowerBound = async <ESCiphertext>(
 
 /**
  * Update the time range to fetch data from IDB after each batch, such that the subsequent batch spans
- * different times, for uncached search in chronological order. This is the equivalent of updateBatchTimeBound
- * for uncached search
+ * different times, for uncached search in chronological order
  */
 const updateBatchLowerBound = (lastTimePoint: [number, number]) => IDBKeyRange.lowerBound(lastTimePoint, true);
 
@@ -428,7 +427,8 @@ export const hybridSearch = async <ESItem, ESCiphertext, ESSearchParameters>(
     abortSearchingRef: React.MutableRefObject<AbortController>,
     storeName: string,
     indexName: string,
-    esSearchingHelpers: Required<ESSearchingHelpers<ESItem, ESCiphertext, ESSearchParameters>>
+    esSearchingHelpers: Required<ESSearchingHelpers<ESItem, ESCiphertext, ESSearchParameters>>,
+    minimumItems: number | undefined
 ) => {
     const { checkIsReverse, applySearch, getTimePoint, getSearchInterval } = esSearchingHelpers;
 
@@ -539,7 +539,7 @@ export const hybridSearch = async <ESItem, ESCiphertext, ESSearchParameters>(
     }
 
     if (shouldKeepSearching) {
-        const remainingMessages = 2 * ES_EXTRA_RESULTS_LIMIT - searchResults.length;
+        const remainingMessages = Math.max(2 * ES_EXTRA_RESULTS_LIMIT - searchResults.length, minimumItems || 0);
 
         const setIncrementalResults = (newResults: ESItem[]) => {
             setResultsList(searchResults.concat(newResults));

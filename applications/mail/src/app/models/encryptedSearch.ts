@@ -1,6 +1,5 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { EncryptedSearchFunctions, ESDBStatus, ESStoredItem } from '@proton/encrypted-search';
-import { Element } from './element';
 import { Filter, SearchParameters, Sort } from './tools';
 import { LabelIDsChanges } from './event';
 
@@ -35,7 +34,7 @@ export interface ESDBStatusMail {
 
 export interface EncryptedSearchFunctionsMail
     extends Pick<
-        EncryptedSearchFunctions<ESMessage, ESItemChangesMail, NormalizedSearchParams>,
+        EncryptedSearchFunctions<ESMessage, NormalizedSearchParams, ESItemChangesMail>,
         | 'encryptedSearch'
         | 'highlightString'
         | 'highlightMetadata'
@@ -72,5 +71,3 @@ export interface NormalizedSearchParams extends Omit<SearchParameters, 'wildcard
 }
 
 export type ESItemChangesMail = Message & LabelIDsChanges;
-
-export type ESSetsElementsCache = (Elements: Element[]) => void;

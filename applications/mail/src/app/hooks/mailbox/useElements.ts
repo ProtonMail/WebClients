@@ -17,7 +17,7 @@ import {
     elementsMap as elementsMapSelector,
     elements as elementsSelector,
     elementIDs as elementIDsSelector,
-    shouldLoadMoreES as shouldLoadMoreESSelector,
+    messagesToLoadMoreES as messagesToLoadMoreESSelector,
     shouldResetCache as shouldResetCacheSelector,
     shouldSendRequest as shouldSendRequestSelector,
     shouldUpdatePage as shouldUpdatePageSelector,
@@ -90,8 +90,8 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const pendingActions = useSelector(pendingActionsSelector);
     const elements = useSelector(elementsSelector);
     const elementIDs = useSelector(elementIDsSelector);
-    const shouldLoadMoreES = useSelector((state: RootState) =>
-        shouldLoadMoreESSelector(state, { page, search, esDBStatus })
+    const messagesToLoadMoreES = useSelector((state: RootState) =>
+        messagesToLoadMoreESSelector(state, { page, search, esDBStatus })
     );
     const shouldResetCache = useSelector((state: RootState) => shouldResetCacheSelector(state, { page, params }));
     const shouldSendRequest = useSelector((state: RootState) => shouldSendRequestSelector(state, { page, params }));
@@ -125,10 +125,10 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 loadAction({ api, abortController: abortControllerRef.current, conversationMode, page, params })
             );
         }
-        if (shouldUpdatePage && !shouldLoadMoreES) {
+        if (shouldUpdatePage && messagesToLoadMoreES === 0) {
             dispatch(updatePage(page));
         }
-    }, [shouldResetCache, shouldSendRequest, shouldUpdatePage, shouldLoadMoreES, pendingActions, search]);
+    }, [shouldResetCache, shouldSendRequest, shouldUpdatePage, messagesToLoadMoreES, pendingActions, search]);
 
     // Move to the last page if the current one becomes empty
     useEffect(() => {
