@@ -23,7 +23,7 @@ const InviteActions = () => {
         if (isOpen.loading === false && featureValue !== undefined && featureValue !== null) {
             setShowHowItWorksSection(!!featureValue);
         }
-    }, [isOpen]);
+    }, [isOpen.loading, isOpen.feature?.Value]);
 
     return (
         <>
