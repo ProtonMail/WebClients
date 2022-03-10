@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { ESDBStatus } from '@proton/encrypted-search';
+import { ESDBStatus, ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
 import {
     PAGE_SIZE,
     MAX_ELEMENT_LIST_LOAD_RETRIES,
@@ -140,10 +140,32 @@ export const isES = createSelector(
         dbExists && esEnabled && isSearch(search) && (!!search.keyword || !isCacheLimited)
 );
 
-export const shouldLoadMoreES = createSelector(
-    [currentESDBStatus, isES, pageChanged, pageCached],
-    ({ isCacheLimited, isSearchPartial }, useES, pageChanged, pageCached) =>
-        useES && isCacheLimited && isSearchPartial && pageChanged && !pageCached
+/**
+ * Loading more search results using ES should be done only under the
+ * following circumstances:
+ *  - ES is being used for the search;
+ *  - the cache is limited, i.e. the local index is too large to safely fit
+ *    in memory and there are messages which are only stored on disk;
+ *  - the search is partial, meaning that the whole index on disk hasn't been
+ *    fully searched yet;
+ *  - a new page of results has been queried by the user's navigation;
+ *  - the total number of messages in the results list is not enough to fill
+ *    at least the current and the subsequent pages
+ */
+export const messagesToLoadMoreES = createSelector(
+    [currentESDBStatus, isES, pageChanged, total, currentPage],
+    ({ isCacheLimited, isSearchPartial }, useES, pageChanged, total, currentPage) => {
+        if (
+            useES &&
+            isCacheLimited &&
+            isSearchPartial &&
+            pageChanged &&
+            (total || 0) < (currentPage + 2) * ES_EXTRA_RESULTS_LIMIT
+        ) {
+            return (currentPage + 2) * ES_EXTRA_RESULTS_LIMIT - (total || 0);
+        }
+        return 0;
+    }
 );
 
 /**
