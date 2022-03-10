@@ -148,7 +148,7 @@ const ConversationView = ({
                 highlightKeywords={highlightKeywords}
                 hasScrollShadow={hasScrollShadow}
             />
-            <Scroll setHasScrollShadow={setHasScrollShadow}>
+            <Scroll setHasScrollShadow={setHasScrollShadow} customContainerRef={containerRef}>
                 <div ref={wrapperRef} className="flex-item-fluid pt1 pr1 pl1 w100">
                     <div className={classnames(['outline-none', hidden && 'hidden'])} ref={elementRef} tabIndex={-1}>
                         {showMessagesError ? (
