@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { PLANS, PLAN_NAMES, APPS, PLAN_SERVICES, CYCLE } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES, APPS, PLAN_SERVICES, DEFAULT_CURRENCY, CYCLE } from '@proton/shared/lib/constants';
 import { getHasB2BPlan, getPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { Subscription, Organization, Address, UserModel } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -79,8 +79,8 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
                 </h3>
                 <Price
                     className="h3 m0 color-weak"
-                    currency={subscription?.Currency}
-                    suffix={subscription ? c('Suffix').t`/month` : ''}
+                    currency={subscription?.Currency || DEFAULT_CURRENCY}
+                    suffix={subscription && amount ? c('Suffix').t`/month` : ''}
                 >
                     {amount}
                 </Price>
