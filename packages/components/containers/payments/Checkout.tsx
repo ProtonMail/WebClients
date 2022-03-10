@@ -17,9 +17,9 @@ interface Props {
 const Checkout = ({ currency, onChangeCurrency, loading, children, hasGuarantee, hasPayments = true }: Props) => {
     return (
         <div className="p2">
-            <div className="flex flex-nowrap flex row">
-                <h2 className="h4 text-bold text-cut flex-item-fluid">{c('Title').t`Plan summary`}</h2>
-                <span className="subscriptionCheckout-currencySelect">
+            <div className="flex flex-nowrap flex row mb1">
+                <h2 className="h4 text-bold mt0-25 mb0 text-cut flex-item-fluid">{c('Title').t`Plan summary`}</h2>
+                <span className="flex-item-noshrink">
                     <CurrencySelector
                         currency={currency}
                         onSelect={onChangeCurrency}
