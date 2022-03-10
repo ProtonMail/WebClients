@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
+import { c } from 'ttag';
 import { classnames } from '../../helpers';
-import LearnMore from '../link/LearnMore';
+import { Href } from '../link';
 
 const CLASSES = {
     info: 'alert-block',
@@ -21,7 +22,7 @@ const Alert = ({ type = 'info', children, learnMore, className }: Props) => {
             <div>{children}</div>
             {learnMore ? (
                 <div>
-                    <LearnMore url={learnMore} />
+                    <Href url={learnMore} className={className}>{c('Link').t`Learn more`}</Href>
                 </div>
             ) : null}
         </div>

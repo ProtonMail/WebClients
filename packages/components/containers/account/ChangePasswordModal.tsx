@@ -77,7 +77,7 @@ const DEFAULT_ERRORS: Errors = {
 
 interface ModalProperties {
     title: string;
-    extraAlert?: JSX.Element | null;
+    description?: JSX.Element | null;
     labels: {
         oldPassword?: string;
         newPassword: string;
@@ -192,10 +192,10 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
             if (isSubUser) {
                 return {
                     title: c('Title').t`Change password for ${Name} (${Email})`,
-                    extraAlert: (
-                        <Alert className="mb1">
+                    description: (
+                        <div className="mb1">
                             {c('Info').t`Enter your own password (as organization admin) and this user's new password.`}
-                        </Alert>
+                        </div>
                     ),
                     labels: {
                         oldPassword: c('Label').t`Your password (admin)`,
@@ -233,7 +233,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
 
     const {
         labels,
-        extraAlert = null,
+        description = null,
         title,
         close = undefined,
         submit = undefined,
@@ -268,11 +268,11 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
         if (mode === MODES.SWITCH_TWO_PASSWORD && !isSecondPhase) {
             return {
                 title: c('Title').t`Switch to two-password mode`,
-                extraAlert: (
-                    <Alert className="mb1">
+                description: (
+                    <div className="mb1">
                         {c('Info')
                             .t`Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.`}
-                    </Alert>
+                    </div>
                 ),
                 labels: {
                     oldPassword: isSubUser ? c('Label').t`Your password (admin)` : c('Label').t`Old password`,
@@ -463,11 +463,11 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                     newPassword: c('Label').t`New password`,
                     confirmPassword: c('Label').t`Confirm password`,
                 },
-                extraAlert: (
-                    <Alert className="mb1">
+                description: (
+                    <div className="mb1">
                         {c('Info')
                             .t`ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.`}
-                    </Alert>
+                    </div>
                 ),
                 onSubmit,
             };
@@ -517,7 +517,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
         <Loader />
     ) : (
         <>
-            {extraAlert}
+            {description}
             {alert}
             {!isSecondPhase && (
                 <InputFieldTwo
