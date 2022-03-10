@@ -1,30 +1,21 @@
 import { c } from 'ttag';
-import { Icon, Tooltip, Button, useApi, useNotifications, InlineLinkButton } from '@proton/components';
+import { Icon, Tooltip, Button } from '@proton/components';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
-import { SHOW_IMAGES } from '@proton/shared/lib/constants';
-import { setBit } from '@proton/shared/lib/helpers/bitset';
-import { updateShowImages } from '@proton/shared/lib/api/mailSettings';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { hasShowEmbedded, hasShowRemote } from '../../../helpers/mailSettings';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { hasToSkipProxy } from '../../../helpers/message/messageRemotes';
 
-const { REMOTE } = SHOW_IMAGES;
-
 interface Props {
     message: MessageState;
     type: string;
     onLoadImages: () => void;
     mailSettings?: MailSettings;
-    call?: () => Promise<void>;
-    isOutside?: boolean;
 }
 
-const ExtraImages = ({ message, type, onLoadImages, mailSettings, call, isOutside = false }: Props) => {
+const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
     const { Shortcuts = 0 } = mailSettings || {};
-    const { createNotification } = useNotifications();
-    const api = useApi();
 
     const { showRemoteImages = true, showEmbeddedImages = true } = message.messageImages || {};
 
@@ -46,15 +37,6 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings, call, isOutsid
     if (type === 'remote' && showRemoteImages !== false && !couldLoadDirect) {
         return null;
     }
-
-    const handleTurnAutoLoad = async () => {
-        onLoadImages();
-        const bit = setBit(mailSettings?.ShowImages, REMOTE);
-
-        await api(updateShowImages(bit));
-        await call?.();
-        createNotification({ text: c('Success').t`Preference saved` });
-    };
 
     const remoteText = couldLoadDirect
         ? c('Action').t`Some images could not be loaded with tracking protection`
@@ -100,14 +82,7 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings, call, isOutsid
         <div className="bg-norm rounded border p0-5 mb0-85 flex flex-nowrap on-mobile-flex-column">
             <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
                 <Icon name="image" className="mt0-5 flex-item-noshrink" />
-                <span className="pl0-5 pr0-5 flex flex-item-fluid mt0-25 flex-align-items-center">
-                    <span className="mr0-5">{text}</span>
-                    {!isOutside && !couldLoadDirect && (
-                        <InlineLinkButton className="text-left" color="norm" onClick={handleTurnAutoLoad}>
-                            {c('Action').t`Turn on auto-load`}
-                        </InlineLinkButton>
-                    )}
-                </span>
+                <span className="pl0-5 pr0-5 mt0-25">{text}</span>
             </div>
             <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt0-1">
                 <Tooltip title={tooltip}>
