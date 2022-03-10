@@ -73,7 +73,7 @@ export const getIsConnectionIssue = (e: any) => {
     return getIsOfflineError(e) || getIsUnreachableError(e) || getIsNetworkError(e) || getIsTimeoutError(e);
 };
 
-export const getApiErrorMessage = (e: Error) => {
+export const getApiErrorMessage = (e: Error): string | undefined => {
     const { message } = getApiError(e);
     if (getIs401Error(e)) {
         return message || c('Info').t`Session timed out`;

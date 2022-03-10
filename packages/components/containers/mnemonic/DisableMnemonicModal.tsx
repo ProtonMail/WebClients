@@ -1,7 +1,7 @@
 import { useState, FormEvent } from 'react';
 import { c } from 'ttag';
 import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { srpAuth } from '@proton/shared/lib/srp';
@@ -33,7 +33,6 @@ interface DisableMnemonicModalProps {
 const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalProps) => {
     const [step, setStep] = useState(STEPS.CONFIRM);
     const [submittingAuth, setSubmittingAuth] = useState(false);
-    const [authError, setAuthError] = useState('');
     const [password, setPassword] = useState('');
     const [totp, setTotp] = useState('');
 
@@ -58,11 +57,9 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
             onClose?.();
             createNotification({ text: c('Info').t`Recovery phrase has been disabled` });
         } catch (error: any) {
-            const { code, message } = getApiErrorMessage(error);
+            const { code } = getApiError(error);
             setSubmittingAuth(false);
-            if (code === PASSWORD_WRONG_ERROR) {
-                setAuthError(message);
-            } else {
+            if (code !== PASSWORD_WRONG_ERROR) {
                 onClose?.();
             }
         }
@@ -105,10 +102,8 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
                         <PasswordTotpInputs
                             password={password}
                             setPassword={setPassword}
-                            passwordError={authError}
                             totp={totp}
                             setTotp={setTotp}
-                            totpError={authError}
                             showTotp={hasTOTPEnabled}
                         />
                     )}

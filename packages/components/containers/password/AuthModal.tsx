@@ -1,27 +1,41 @@
 import { useState } from 'react';
+import { c } from 'ttag';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
-import { srpAuth } from '@proton/shared/lib/srp';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { srpAuth, SrpConfig } from '@proton/shared/lib/srp';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import { useApi } from '../../hooks';
-import AskAuthModal from './AskAuthModal';
 
-interface Props<T> {
-    onClose?: () => void;
-    onError?: (error: Error) => void;
+import {
+    Button,
+    Form,
+    Loader,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+} from '../../components';
+import PasswordTotpInputs from './PasswordTotpInputs';
+import useAskAuth from './useAskAuth';
+
+interface Props<T> extends Omit<ModalProps<typeof Form>, 'as' | 'onSubmit' | 'size' | 'onSuccess' | 'onError'> {
+    config: SrpConfig;
     onSuccess: (data: { password: string; totp: string; result: T }) => void;
-    config: any;
 }
 
-const AuthModal = <T,>({ onClose, onError, onSuccess, config, ...rest }: Props<T>) => {
+const AuthModal = <T,>({ config, onSuccess, onClose, ...rest }: Props<T>) => {
     const api = useApi();
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
+    const [submitting, setSubmitting] = useState(false);
+
+    const [password, setPassword] = useState('');
+    const [totp, setTotp] = useState('');
+    const [hasTOTPEnabled, isLoadingAuth] = useAskAuth();
 
     const handleSubmit = async ({ password, totp }: { password: string; totp: string }) => {
         try {
-            setLoading(true);
+            setSubmitting(true);
 
             const result = await srpAuth<T>({
                 api,
@@ -32,25 +46,42 @@ const AuthModal = <T,>({ onClose, onError, onSuccess, config, ...rest }: Props<T
             onSuccess({ password, totp, result });
             onClose?.();
         } catch (error: any) {
-            const { code, message } = getApiErrorMessage(error);
-            if (code === PASSWORD_WRONG_ERROR) {
-                setError(message);
+            setSubmitting(false);
+            const { code } = getApiError(error);
+            if (code !== PASSWORD_WRONG_ERROR) {
+                onClose?.();
             }
-            onError?.(error);
-            onClose?.();
         }
     };
 
+    const loading = submitting || isLoadingAuth;
+
     // Don't allow to close this modal if it's loading as it could leave other consumers in an undefined state
+    const handleClose = loading ? noop : onClose;
+
     return (
-        <AskAuthModal
-            onSubmit={handleSubmit}
-            hasClose={!loading}
-            onClose={loading ? noop : onClose}
-            loading={loading}
-            error={error}
-            {...rest}
-        />
+        <Modal {...rest} size="small" as={Form} onSubmit={() => handleSubmit({ password, totp })} onClose={handleClose}>
+            <ModalHeader title={c('Title').t`Sign in again to continue`} />
+            <ModalContent>
+                {isLoadingAuth ? (
+                    <Loader />
+                ) : (
+                    <PasswordTotpInputs
+                        password={password}
+                        setPassword={setPassword}
+                        totp={totp}
+                        setTotp={setTotp}
+                        showTotp={hasTOTPEnabled}
+                    />
+                )}
+            </ModalContent>
+            <ModalFooter>
+                <Button onClick={handleClose} disabled={loading}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" type="submit" disabled={isLoadingAuth} loading={submitting}>
+                    {c('Action').t`Submit`}
+                </Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 
