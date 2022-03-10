@@ -149,7 +149,11 @@ const ApiProvider = ({ config, onLogout, children, UID, noErrorState }) => {
                         if (errorMessage) {
                             const isSilenced = getSilenced(e.config, code);
                             if (!isSilenced) {
-                                createNotification({ type: 'error', text: errorMessage });
+                                createNotification({
+                                    type: 'error',
+                                    expiration: config?.notificationExpiration,
+                                    text: errorMessage,
+                                });
                             }
                         }
                     };
