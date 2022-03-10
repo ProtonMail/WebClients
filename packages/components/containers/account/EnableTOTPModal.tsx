@@ -121,7 +121,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
 
         if (step === STEPS.SCAN_CODE && !manualCode) {
             const switchButton = (
-                <InlineLinkButton key="0" onClick={() => setManualCode(true)}>
+                <InlineLinkButton data-testid="totp:manual-button" key="0" onClick={() => setManualCode(true)}>
                     {c('Info').t`Enter key manually instead`}
                 </InlineLinkButton>
             );
@@ -160,7 +160,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                             <div className="flex flex-justify-space-between mb0-5">
                                 <div className="w20">{c('Label').t`Key`}</div>
                                 <div className="w80 flex-align-self-center text-bold">
-                                    <code>{sharedSecret}</code>
+                                    <code data-testid="totp:secret-key">{sharedSecret}</code>
                                 </div>
                             </div>
                             <div className="flex flex-justify-space-between mb0-5">
@@ -267,7 +267,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                         <div className="flex text-center">
                             {recoveryCodes.map((code) => {
                                 return (
-                                    <code key={code} className="w49 p0-5">
+                                    <code data-testid="totp:recovery-code" key={code} className="w49 p0-5">
                                         {code}
                                     </code>
                                 );
