@@ -21,7 +21,6 @@ interface Props {
     sourceMode: boolean;
     onResignContact: () => void;
     messageLoaded: boolean;
-    bodyLoaded: boolean;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
 }
@@ -30,7 +29,6 @@ const HeaderExtra = ({
     message,
     sourceMode,
     messageLoaded,
-    bodyLoaded,
     onResignContact,
     onLoadRemoteImages,
     onLoadEmbeddedImages,
@@ -45,7 +43,7 @@ const HeaderExtra = ({
         <section className="message-header-extra pt0-5 hidden-empty">
             <ExtraDecryptedSubject message={message} />
             <ExtraSpamScore message={message} />
-            {bodyLoaded && <ExtraErrors message={message} />}
+            <ExtraErrors message={message} />
             <ExtraAutoReply message={message} />
             {messageLoaded && <ExtraPinKey message={message.data} messageVerification={message.verification} />}
             <ExtraAskResign
