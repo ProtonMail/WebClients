@@ -165,14 +165,15 @@ export const handlePaymentToken = async ({
         return params;
     }
 
-    const { Token, Status, ApprovalURL, ReturnHost } = await api<PaymentTokenResult>(
-        createToken({
+    const { Token, Status, ApprovalURL, ReturnHost } = await api<PaymentTokenResult>({
+        ...createToken({
             Payment,
             Amount,
             Currency,
             PaymentMethodID,
-        })
-    );
+        }),
+        notificationExpiration: 10000,
+    });
 
     if (Status === STATUS_CHARGEABLE) {
         return toParams(params, Token, Type);

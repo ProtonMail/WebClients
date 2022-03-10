@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { Key, ReactNode } from 'react';
 
 export type NotificationType = 'error' | 'warning' | 'info' | 'success';
 
@@ -13,6 +13,7 @@ export interface NotificationOptions {
 
 export interface CreateNotificationOptions extends Omit<NotificationOptions, 'id' | 'type' | 'isClosing' | 'key'> {
     id?: number;
+    key?: Key;
     type?: NotificationType;
     isClosing?: boolean;
     expiration?: number;
