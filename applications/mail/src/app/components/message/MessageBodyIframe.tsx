@@ -59,6 +59,7 @@ const MessageBodyIframe = ({
     const { isResizing } = useMailboxContainerContext();
 
     const { initStatus, iframeRootDivRef } = useInitIframeContent({
+        messageID: message.data?.ID,
         content,
         messageHead,
         iframeRef,

@@ -8,6 +8,7 @@ import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_TO
 import getIframeHtml from '../helpers/getIframeHtml';
 
 interface Props {
+    messageID: string | undefined;
     content: string;
     messageHead: string | undefined;
     iframeRef: RefObject<HTMLIFrameElement>;
@@ -16,7 +17,15 @@ interface Props {
     onReady?: (iframe: RefObject<HTMLIFrameElement>) => void;
 }
 
-const useInitIframeContent = ({ iframeRef, messageHead, content, onContentLoaded, isPlainText, onReady }: Props) => {
+const useInitIframeContent = ({
+    messageID,
+    iframeRef,
+    messageHead,
+    content,
+    onContentLoaded,
+    isPlainText,
+    onReady,
+}: Props) => {
     const [initStatus, setInitStatus] = useState<'start' | 'done'>('start');
     const hasBeenDone = useRef<boolean>(false);
     const iframeRootDivRef = useRef<HTMLDivElement>();
@@ -63,8 +72,7 @@ const useInitIframeContent = ({ iframeRef, messageHead, content, onContentLoaded
     }, [initStatus]);
 
     /**
-     * On content change, rerun the process to set content
-     * inside the iframe
+     * On content change, rerun the process to set content inside the iframe
      */
     useEffect(() => {
         if (initStatus === 'done' && prevContentRef.current !== content) {
@@ -72,6 +80,15 @@ const useInitIframeContent = ({ iframeRef, messageHead, content, onContentLoaded
             prevContentRef.current = content;
         }
     }, [content, initStatus]);
+
+    /**
+     * On message change, rerun the process to set content too
+     */
+    useEffect(() => {
+        if (initStatus === 'done') {
+            setInitStatus('start');
+        }
+    }, [messageID]);
 
     return { initStatus, iframeRootDivRef };
 };
