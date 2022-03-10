@@ -78,7 +78,7 @@ const MessageBody = ({
     const placeholderMode = loadingMode || decryptingMode || !contentModeShow;
     const isBlockquote = blockquote !== '';
     const showButton = !forceBlockquote && isBlockquote;
-    const showBlockquote = forceBlockquote || originalMessageMode;
+    const showBlockquote = forceBlockquote || originalMessageMode || hasDarkStylesLoading;
     const highlightedContent = !!content && highlightBody ? highlightString(content, true) : content;
     const highlightedBlockquote =
         !!blockquote && highlightBody
