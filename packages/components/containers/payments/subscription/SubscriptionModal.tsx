@@ -352,8 +352,8 @@ const SubscriptionModal = ({
                 )}
                 {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
                     <div className="flex-no-min-children on-mobile-flex-column">
-                        <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
-                            <div className="ax-w50e">
+                        <div className="flex-item-fluid on-mobile-w100 pr2 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
+                            <div className="max-w50e">
                                 <PlanCustomization
                                     plans={plans}
                                     loading={loadingCheck}
@@ -400,7 +400,7 @@ const SubscriptionModal = ({
                 )}
                 {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
                     <div className="flex-no-min-children on-mobile-flex-column">
-                        <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
+                        <div className="flex-item-fluid on-mobile-w100 pr2 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
                             <div className="mlauto mrauto max-w37e on-mobile-max-w100  ">
                                 {!isFreePlanSelected && (
                                     <>
