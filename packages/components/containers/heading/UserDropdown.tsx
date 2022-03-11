@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { useLocation } from 'react-router';
 import { c } from 'ttag';
-import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, PLAN_SERVICES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
@@ -99,7 +99,6 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
         close();
     };
 
-    const { MAIL, VPN } = PLAN_SERVICES;
     const { PROTONVPN_SETTINGS } = APPS;
 
     let planName;
@@ -108,11 +107,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
         if (hasLifetime(subscription)) {
             planName = 'Lifetime';
         } else {
-            planName = getPlan(subscription, MAIL)?.Title || getPlan(subscription, VPN)?.Title;
-        }
-
-        if (APP_NAME === PROTONVPN_SETTINGS) {
-            planName = getPlan(subscription, VPN)?.Title;
+            planName = getPlan(subscription)?.Title;
         }
     }
 

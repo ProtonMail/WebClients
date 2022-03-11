@@ -1,6 +1,7 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES, COUPON_CODES } from '../constants';
 import { Subscription, Plan, PlanIDs } from '../interfaces';
+import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const {
@@ -20,8 +21,10 @@ const {
     BUNDLE_PRO,
 } = PLANS;
 
-export const getPlan = (subscription: Subscription | undefined, service: PLAN_SERVICES) => {
-    return (subscription?.Plans || []).find(({ Services, Type }) => Type === PLAN && Services & service);
+export const getPlan = (subscription: Subscription | undefined, service?: PLAN_SERVICES) => {
+    return (subscription?.Plans || []).find(
+        ({ Services, Type }) => Type === PLAN && (service === undefined ? true : hasBit(Services, service))
+    );
 };
 
 export const getAddons = (subscription: Subscription | undefined) =>
