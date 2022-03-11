@@ -1,3 +1,6 @@
+import { PGP_SCHEMES } from '../../constants';
+import { MimeTypeVcard } from '../EncryptionPreferences';
+
 export type VCardKey =
     | 'fn'
     | 'n'
@@ -20,8 +23,10 @@ export type VCardKey =
     | 'note'
     | 'url';
 
-export type VCardProperty<T> = {
+export type VCardProperty<T = any> = {
+    field: string;
     value: T;
+    uid: string;
     params?: { [key: string]: string };
     group?: string;
 };
@@ -77,4 +82,10 @@ export interface VCardContact {
     related?: VCardProperty<string>[];
     note?: VCardProperty<string>[];
     url?: VCardProperty<string>[];
+    categories?: VCardProperty<string>[];
+    key?: VCardProperty<string>[];
+    'x-pm-encrypt'?: VCardProperty<boolean>[];
+    'x-pm-sign'?: VCardProperty<boolean>[];
+    'x-pm-scheme'?: VCardProperty<PGP_SCHEMES>[];
+    'x-pm-mimetype'?: VCardProperty<MimeTypeVcard>[];
 }

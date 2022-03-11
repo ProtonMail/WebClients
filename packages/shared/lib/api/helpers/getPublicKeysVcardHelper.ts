@@ -3,7 +3,7 @@ import { CONTACT_CARD_TYPE } from '../../constants';
 import { CRYPTO_PROCESSING_TYPES } from '../../contacts/constants';
 import { readSigned } from '../../contacts/decrypt';
 import { getKeyInfoFromProperties } from '../../contacts/keyProperties';
-import { parse } from '../../contacts/vcard';
+import { parseToVCard } from '../../contacts/vcard';
 import { CANONIZE_SCHEME, canonizeEmail } from '../../helpers/email';
 
 import { Api, PinnedKeysConfig } from '../../interfaces';
@@ -61,8 +61,8 @@ const getPublicKeysVcardHelper = async (
         const { type, data: signedVcard, signatureTimestamp } = await readSigned(signedCard, { publicKeys });
         isContactSignatureVerified = type === CRYPTO_PROCESSING_TYPES.SUCCESS;
         contactSignatureTimestamp = signatureTimestamp;
-        const properties = parse(signedVcard);
-        const emailProperty = properties.find(({ field, value }) => {
+        const vCardContact = parseToVCard(signedVcard);
+        const emailProperty = (vCardContact.email || []).find(({ field, value }) => {
             const scheme = isInternal ? CANONIZE_SCHEME.PROTON : CANONIZE_SCHEME.DEFAULT;
             return field === 'email' && canonizeEmail(value as string, scheme) === canonizeEmail(emailAddress, scheme);
         });
@@ -70,7 +70,7 @@ const getPublicKeysVcardHelper = async (
             throw new Error('Invalid vcard');
         }
         return {
-            ...(await getKeyInfoFromProperties(properties, emailProperty.group)),
+            ...(await getKeyInfoFromProperties(vCardContact, emailProperty.group)),
             isContact,
             isContactSignatureVerified,
             contactSignatureTimestamp,

@@ -1,35 +1,32 @@
 import { c, msgid } from 'ttag';
-
 import { clearContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
-import noop from '@proton/utils/noop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { useContacts, useApi, useNotifications, useLoading, useEventManager } from '../../../hooks';
-import { ErrorButton, Alert, FormModal } from '../../../components';
+import { ErrorButton, Alert, ModalProps, AlertModal, Button } from '../../../components';
 
-interface Props {
+export interface ContactDeleteProps {
     contactIDs: string[];
     deleteAll?: boolean;
     onDelete?: () => void;
-    onClose?: () => void;
 }
 
-const DeleteModal = ({ contactIDs = [], deleteAll, onDelete, onClose = noop, ...rest }: Props) => {
+type Props = ContactDeleteProps & ModalProps;
+
+const ContactDeleteModal = ({ contactIDs = [], deleteAll, onDelete, ...rest }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [contacts = []] = useContacts();
 
-    const submit = <ErrorButton type="submit" loading={loadingDelete}>{c('Action').t`Delete`}</ErrorButton>;
-
     const handleDelete = async () => {
         // Call the callback and close the modal and wait a bit to trigger the event manager
         // In order eventual contact view can be closed and will not try to request the contact
         const delayedClosing = async () => {
             onDelete?.();
-            onClose();
+            rest.onClose?.();
             await wait(1000);
             await call();
         };
@@ -67,20 +64,20 @@ const DeleteModal = ({ contactIDs = [], deleteAll, onDelete, onClose = noop, ...
               );
 
     return (
-        <FormModal
+        <AlertModal
             title={title}
             onSubmit={() => withLoadingDelete(handleDelete())}
-            onClose={onClose}
-            submit={submit}
-            loading={loadingDelete}
-            className="modal--smaller"
+            buttons={[
+                <ErrorButton type="submit" loading={loadingDelete}>{c('Action').t`Delete`}</ErrorButton>,
+                <Button onClick={rest.onClose} autoFocus>{c('Action').t`Cancel`}</Button>,
+            ]}
             {...rest}
         >
             <Alert className="mb1" type="error">
                 {text}
             </Alert>
-        </FormModal>
+        </AlertModal>
     );
 };
 
-export default DeleteModal;
+export default ContactDeleteModal;

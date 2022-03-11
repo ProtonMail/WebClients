@@ -14,7 +14,7 @@ interface Props {
 const ContactViewTels = ({ vCardContact, isSignatureVerified = false }: Props) => {
     const { createNotification } = useNotifications();
 
-    const tels = getSortedProperties(vCardContact.tel || []);
+    const tels = getSortedProperties(vCardContact, 'tel');
 
     if (tels.length === 0) {
         return null;

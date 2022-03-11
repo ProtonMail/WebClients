@@ -4,7 +4,7 @@ import noop from '@proton/utils/noop';
 
 import { Button } from '../../components';
 import { useModals } from '../../hooks';
-import ContactModal from './modals/ContactModal';
+import ContactEditModal from './edit/ContactEditModal';
 
 interface Props {
     onClose?: () => void;
@@ -15,7 +15,7 @@ const EmptyContacts = ({ onClose = noop }: Props) => {
     const title = c('Error message').t`No results found`;
 
     const handleClick = () => {
-        createModal(<ContactModal properties={[]} />);
+        createModal(<ContactEditModal />);
         onClose();
     };
 

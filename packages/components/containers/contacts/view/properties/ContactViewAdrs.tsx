@@ -16,7 +16,7 @@ interface Props {
 const ContactViewAdrs = ({ vCardContact, isSignatureVerified = false }: Props) => {
     const { createNotification } = useNotifications();
 
-    const adrs: VCardProperty<VCardAddress>[] = getSortedProperties(vCardContact.adr || []);
+    const adrs: VCardProperty<VCardAddress>[] = getSortedProperties(vCardContact, 'adr');
 
     if (adrs.length === 0) {
         return null;

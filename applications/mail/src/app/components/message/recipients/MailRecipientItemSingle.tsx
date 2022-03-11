@@ -1,27 +1,19 @@
 import { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
-import {
-    ContactModal,
-    ContactDetailsModal,
-    DropdownMenuButton,
-    Icon,
-    useModals,
-    usePopperAnchor,
-    useModalState,
-    useMailSettings,
-} from '@proton/components';
+import { DropdownMenuButton, Icon, usePopperAnchor, useModalState, useMailSettings } from '@proton/components';
 import { useHistory } from 'react-router-dom';
 import { OpenPGPKey } from 'pmcrypto';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
-
+import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { getContactEmail } from '../../../helpers/addresses';
-import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
+import { useOnCompose } from '../../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import RecipientItemSingle from './RecipientItemSingle';
@@ -41,6 +33,8 @@ interface Props {
     hideAddress?: boolean;
     isRecipient?: boolean;
     isExpanded?: boolean;
+    onContactDetails: (contactID: string) => void;
+    onContactEdit: (props: ContactEditProps) => void;
 }
 
 const MailRecipientItemSingle = ({
@@ -56,15 +50,16 @@ const MailRecipientItemSingle = ({
     hideAddress,
     isRecipient,
     isExpanded,
+    onContactDetails,
+    onContactEdit,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const history = useHistory();
-    const { createModal } = useModals();
+
     const contactsMap = useContactsMap();
     const { getRecipientLabel } = useRecipientLabel();
     const [mailSettings] = useMailSettings();
     const onCompose = useOnCompose();
-    const onMailTo = useOnMailTo();
 
     const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen, renderTrustPublicKeyModal] = useModalState();
 
@@ -95,19 +90,40 @@ const MailRecipientItemSingle = ({
     const handleClickContact = (event: MouseEvent) => {
         event.stopPropagation();
 
+        close();
+
         if (ContactID) {
-            createModal(<ContactDetailsModal contactID={ContactID} onMailTo={onMailTo} />);
+            // createModal(<ContactDetailsModal contactID={ContactID} onMailTo={onMailTo} />);
+            onContactDetails(ContactID);
             return;
         }
 
-        createModal(
-            <ContactModal
-                properties={[
-                    { field: 'email', value: recipient.Address || '' },
-                    { field: 'fn', value: recipient.Name || recipient.Address || '' },
-                ]}
-            />
-        );
+        // createModal(
+        //     <ContactEditModal
+        //         vCardContact={{
+        //             fn: [
+        //                 {
+        //                     field: 'fn',
+        //                     value: recipient.Name || recipient.Address || '',
+        //                     uid: createContactPropertyUid(),
+        //                 },
+        //             ],
+        //             email: [{ field: 'email', value: recipient.Address || '', uid: createContactPropertyUid() }],
+        //         }}
+        //     />
+        // );
+        onContactEdit({
+            vCardContact: {
+                fn: [
+                    {
+                        field: 'fn',
+                        value: recipient.Name || recipient.Address || '',
+                        uid: createContactPropertyUid(),
+                    },
+                ],
+                email: [{ field: 'email', value: recipient.Address || '', uid: createContactPropertyUid() }],
+            },
+        });
     };
 
     const handleClickTrust = (event: MouseEvent) => {

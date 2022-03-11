@@ -1,26 +1,20 @@
-import { forwardRef, Ref, useEffect, useRef } from 'react';
+import { forwardRef, Ref } from 'react';
 import { c } from 'ttag';
-import { clearType, getType } from '@proton/shared/lib/contacts/property';
-import {
-    ContactEmail,
-    ContactEmailModel,
-    ContactProperty,
-    ContactPropertyChange,
-} from '@proton/shared/lib/interfaces/contacts';
-
-import { Button, DropdownActions, Icon, Tooltip, OrderableHandle } from '../../components';
-import { classnames } from '../../helpers';
-import { useModals, useUser } from '../../hooks';
-import ContactModalLabel from './ContactModalLabel';
-import ContactFieldProperty from './ContactFieldProperty';
-import ContactGroupDropdown from './ContactGroupDropdown';
-import ContactUpgradeModal from './ContactUpgradeModal';
+import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
+import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { Button, DropdownActions, Icon, Tooltip, OrderableHandle } from '../../../components';
+import { classnames } from '../../../helpers';
+import { useModals, useUser } from '../../../hooks';
+import ContactEditLabel from './ContactEditLabel';
+import ContactFieldProperty from './fields/ContactFieldProperty';
+import ContactGroupDropdown from '../ContactGroupDropdown';
+import ContactUpgradeModal from '../ContactUpgradeModal';
 
 interface Props {
-    property: ContactProperty;
-    onChange: (payload: ContactPropertyChange) => void;
+    vCardProperty: VCardProperty;
+    onChangeVCard: (vCardProperty: VCardProperty) => void;
     onRemove: (value: string) => void;
-    isOrderable?: boolean;
+    sortable?: boolean;
     isSubmitted?: boolean;
     actionRow?: boolean;
     mainItem?: boolean;
@@ -31,12 +25,12 @@ interface Props {
     onContactEmailChange?: (contactEmail: ContactEmailModel) => void;
 }
 
-const ContactModalRow = (
+const ContactEditProperty = (
     {
-        property,
-        onChange,
+        vCardProperty,
+        onChangeVCard,
         onRemove,
-        isOrderable = false,
+        sortable = false,
         isSubmitted = false,
         actionRow = true,
         mainItem = false,
@@ -48,13 +42,10 @@ const ContactModalRow = (
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
-    const { field, value } = property;
-    const type = clearType(getType(property.type));
+    const { field, value } = vCardProperty;
     const canDelete = !(field === 'photo' && !value);
     const [{ hasPaidMail }] = useUser();
     const { createModal } = useModals();
-    const prevField = useRef<string>();
-    const fieldsToReset = ['bday', 'anniversary', 'photo', 'logo'];
 
     const list = [];
 
@@ -65,8 +56,8 @@ const ContactModalRow = (
             shape: 'outline',
             text: <Icon name="trash" className="mauto" alt={c('Action').t`Delete`} />,
             onClick: () => {
-                if (property.uid) {
-                    onRemove(property.uid);
+                if (vCardProperty.uid) {
+                    onRemove(vCardProperty.uid);
                 }
             },
         });
@@ -86,26 +77,9 @@ const ContactModalRow = (
         }
     };
 
-    useEffect(() => {
-        // Skip if it's initialization
-        if (prevField.current) {
-            // Reset the value if coming from Birthday/Anniversary/Photo/Logo input
-            if (field !== prevField.current && fieldsToReset.includes(prevField.current)) {
-                onChange({ ...property, value: '' });
-            }
-
-            // Reset the value if going to Birthday/Anniversary/Photo/Logo input
-            if (fieldsToReset.includes(field)) {
-                onChange({ ...property, value: '' });
-            }
-        }
-
-        prevField.current = field;
-    }, [field]);
-
     return (
-        <div className="flex flex-nowrap flex-item-noshrink" data-contact-property-id={property.uid}>
-            {isOrderable ? (
+        <div className="flex flex-nowrap flex-item-noshrink" data-contact-property-id={vCardProperty.uid}>
+            {sortable ? (
                 <OrderableHandle key="icon">
                     <div className="cursor-row-resize mr0-5 flex flex-item-noshrink mb1">
                         <Icon name="text-align-justify" className="mt0-75 " />
@@ -124,11 +98,9 @@ const ContactModalRow = (
                         labelWidthClassName || 'w30',
                     ])}
                 >
-                    <ContactModalLabel
-                        field={field}
-                        type={type}
-                        uid={property.uid}
-                        onChange={onChange}
+                    <ContactEditLabel
+                        vCardProperty={vCardProperty}
+                        onChangeVCard={onChangeVCard}
                         fixedType={fixedType}
                         filteredTypes={filteredTypes}
                     />
@@ -138,10 +110,8 @@ const ContactModalRow = (
                     <span className="flex-item-fluid mb1">
                         <ContactFieldProperty
                             ref={ref}
-                            field={field}
-                            value={property.value}
-                            uid={property.uid}
-                            onChange={onChange}
+                            vCardProperty={vCardProperty}
+                            onChangeVCard={onChangeVCard}
                             isSubmitted={isSubmitted}
                         />
                     </span>
@@ -152,7 +122,6 @@ const ContactModalRow = (
                                     className={classnames([
                                         'flex flex-item-noshrink',
                                         field,
-                                        Array.isArray(property.value) ? property.value.join(' ') : property.value,
                                         (field === 'photo' ||
                                             field === 'note' ||
                                             field === 'logo' ||
@@ -197,4 +166,4 @@ const ContactModalRow = (
     );
 };
 
-export default forwardRef(ContactModalRow);
+export default forwardRef(ContactEditProperty);

@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
-
-import { prepareContacts } from '@proton/shared/lib/contacts/encrypt';
-import { hasCategories, reOrderByPref } from '@proton/shared/lib/contacts/properties';
-import { addContacts } from '@proton/shared/lib/api/contacts';
+import {
+    getVCardProperties,
+    fromVCardProperties,
+    createContactPropertyUid,
+} from '@proton/shared/lib/contacts/properties';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
 import {
@@ -14,22 +15,11 @@ import {
     getVerifyingKeys,
 } from '@proton/shared/lib/keys/publicKeys';
 import uniqueBy from '@proton/utils/uniqueBy';
-import { getKeyInfoFromProperties, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
 import { DecryptedKey, ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
-import { ContactProperties, ContactProperty } from '@proton/shared/lib/interfaces/contacts/Contact';
-import { AddContactsApiResponses } from '@proton/shared/lib/interfaces/contacts/Import';
-
-import { VCARD_KEY_FIELDS, CATEGORIES } from '@proton/shared/lib/contacts/constants';
-import {
-    API_CODES,
-    CONTACT_MIME_TYPES,
-    MAIL_APP_NAME,
-    MIME_TYPES,
-    MIME_TYPES_MORE,
-    PGP_SCHEMES,
-} from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
-
+import { VCARD_KEY_FIELDS } from '@proton/shared/lib/contacts/constants';
+import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
+import { getKeyInfoFromProperties, getMimeTypeVcard, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
+import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import ContactMIMETypeSelect from '../ContactMIMETypeSelect';
 import ContactPgpSettings from '../ContactPgpSettings';
 import { useApi, useEventManager, useNotifications, useLoading, useMailSettings } from '../../../hooks';
@@ -39,35 +29,29 @@ import {
     Field,
     Row,
     Info,
-    DialogModal,
-    ContentModal,
-    InnerModal,
-    FooterModal,
     Button,
-    PrimaryButton,
     UnderlineButton,
-    Icon,
+    ModalProps,
+    ModalTwo,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
 } from '../../../components';
+import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
 
 const { PGP_INLINE } = PGP_SCHEMES;
-const { INCLUDE, IGNORE } = CATEGORIES;
 
-interface Props {
+export interface ContactEmailSettingsProps {
     userKeysList: DecryptedKey[];
     contactID: string;
-    properties: ContactProperties;
-    emailProperty: ContactProperty;
+    vCardContact: VCardContact;
+    emailProperty: VCardProperty<string>;
     onClose?: () => void;
 }
 
-const ContactEmailSettingsModal = ({
-    userKeysList,
-    contactID,
-    properties,
-    emailProperty,
-    onClose = noop,
-    ...rest
-}: Props) => {
+type Props = ContactEmailSettingsProps & ModalProps;
+
+const ContactEmailSettingsModal = ({ userKeysList, contactID, vCardContact, emailProperty, ...rest }: Props) => {
     const { value: emailAddressValue, group: emailGroup } = emailProperty;
     const emailAddress = emailAddressValue as string;
 
@@ -79,16 +63,26 @@ const ContactEmailSettingsModal = ({
     const { createNotification } = useNotifications();
     const [mailSettings] = useMailSettings();
 
-    const isMimeTypeFixed = model?.isPGPInternal ? false : model?.isPGPExternalWithWKDKeys ? true : !!model?.sign;
+    const saveVCardContact = useSaveVCardContact();
+
+    // Avoid nested ternary
+    let isMimeTypeFixed: boolean;
+    if (model?.isPGPInternal) {
+        isMimeTypeFixed = false;
+    } else if (model?.isPGPExternalWithWKDKeys) {
+        isMimeTypeFixed = true;
+    } else {
+        isMimeTypeFixed = !!model?.sign;
+    }
+
     const hasPGPInline = model && mailSettings ? extractScheme(model, mailSettings) === PGP_INLINE : false;
 
     /**
      * Initialize the key model for the modal
-     * @returns {Promise}
      */
     const prepare = async () => {
         const apiKeysConfig = await getPublicKeysEmailHelper(api, emailAddress, true);
-        const pinnedKeysConfig = await getKeyInfoFromProperties(properties, emailGroup || '');
+        const pinnedKeysConfig = await getKeyInfoFromProperties(vCardContact, emailGroup || '');
         const publicKeyModel = await getContactPublicKeyModel({
             emailAddress,
             apiKeysConfig,
@@ -99,8 +93,8 @@ const ContactEmailSettingsModal = ({
 
     /**
      * Collect keys from the model to save
-     * @param {String} group attached to the current email address
-     * @returns {Array} key properties to save in the vCard
+     * @param group attached to the current email address
+     * @returns key properties to save in the vCard
      */
     const getKeysProperties = (group: string, model: ContactPublicKeyModel) => {
         const allKeys = model?.isPGPInternal
@@ -113,49 +107,63 @@ const ContactEmailSettingsModal = ({
 
     /**
      * Save relevant key properties in the vCard
-     * @returns {Promise}
      */
     const handleSubmit = async (model?: ContactPublicKeyModel) => {
         if (!model) {
             return;
         }
-        const otherProperties = properties.filter(({ field, group }) => {
-            return !['email', ...VCARD_KEY_FIELDS].includes(field) || (group && group !== emailGroup);
+        const properties = getVCardProperties(vCardContact);
+        const newProperties = properties.filter(({ field, group }) => {
+            return !VCARD_KEY_FIELDS.includes(field) || (group && group !== emailGroup);
         });
+        newProperties.push(...getKeysProperties(emailGroup || '', model));
 
-        const emailProperties = [emailProperty, ...getKeysProperties(emailGroup || '', model)];
-
-        if (model.mimeType) {
-            emailProperties.push({ field: 'x-pm-mimetype', value: model.mimeType, group: emailGroup });
+        const mimeType = getMimeTypeVcard(model.mimeType);
+        if (mimeType) {
+            newProperties.push({
+                field: 'x-pm-mimetype',
+                value: mimeType,
+                group: emailGroup,
+                uid: createContactPropertyUid(),
+            });
         }
+
         if (model.isPGPExternalWithoutWKDKeys && model.encrypt !== undefined) {
-            emailProperties.push({ field: 'x-pm-encrypt', value: `${model.encrypt}`, group: emailGroup });
+            newProperties.push({
+                field: 'x-pm-encrypt',
+                value: `${model.encrypt}`,
+                group: emailGroup,
+                uid: createContactPropertyUid(),
+            });
         }
-        if (model.isPGPExternalWithoutWKDKeys && model?.sign !== undefined) {
-            emailProperties.push({ field: 'x-pm-sign', value: `${model.sign}`, group: emailGroup });
+        if (model.isPGPExternalWithoutWKDKeys && model.sign !== undefined) {
+            newProperties.push({
+                field: 'x-pm-sign',
+                value: `${model.sign}`,
+                group: emailGroup,
+                uid: createContactPropertyUid(),
+            });
         }
         if (model.isPGPExternal && model.scheme) {
-            emailProperties.push({ field: 'x-pm-scheme', value: model.scheme, group: emailGroup });
+            newProperties.push({
+                field: 'x-pm-scheme',
+                value: model.scheme,
+                group: emailGroup,
+                uid: createContactPropertyUid(),
+            });
         }
 
-        const allProperties = reOrderByPref(otherProperties.concat(emailProperties));
-        const Contacts = await prepareContacts([allProperties], userKeysList[0]);
-        const labels = hasCategories(allProperties) ? INCLUDE : IGNORE;
-        const {
-            Responses: [
-                {
-                    Response: { Code },
-                },
-            ],
-        } = await api<AddContactsApiResponses>(addContacts({ Contacts, Overwrite: contactID ? 1 : 0, Labels: labels }));
-        if (Code !== API_CODES.SINGLE_SUCCESS) {
-            onClose();
-            createNotification({ text: c('Error').t`Preferences could not be saved`, type: 'error' });
-            return;
+        const newVCardContact = fromVCardProperties(newProperties);
+
+        try {
+            await saveVCardContact(contactID, newVCardContact);
+
+            await call();
+
+            createNotification({ text: c('Success').t`Preferences saved` });
+        } finally {
+            rest.onClose?.();
         }
-        await call();
-        onClose();
-        createNotification({ text: c('Success').t`Preferences saved` });
     };
 
     useEffect(() => {
@@ -163,7 +171,7 @@ const ContactEmailSettingsModal = ({
          * On the first render, initialize the model
          */
         if (!model) {
-            withLoading(prepare());
+            void withLoading(prepare());
             return;
         }
         /**
@@ -240,83 +248,69 @@ const ContactEmailSettingsModal = ({
 
     return (
         // we cannot use the FormModal component because we need to introduce the class text-ellipsis inside the header
-        <DialogModal modalTitleID="modalTitle" onClose={onClose} {...rest}>
-            <header className="modal-header">
-                <Button
-                    icon
-                    shape="ghost"
-                    size="small"
-                    className="modal-close"
-                    title={c('Action').t`Close modal`}
-                    onClick={onClose}
-                >
-                    <Icon name="cross" alt={c('Action').t`Close modal`} />
+        <ModalTwo size="large" {...rest}>
+            <ModalTwoHeader title={c('Title').t`Email settings (${emailAddress})`} titleClassName="text-ellipsis" />
+            <ModalTwoContent>
+                {!isMimeTypeFixed ? (
+                    <Alert className="mb1">
+                        {c('Info')
+                            .t`Select the email format you want to be used by default when sending an email to this email address.`}
+                    </Alert>
+                ) : null}
+                {isMimeTypeFixed && hasPGPInline ? (
+                    <Alert className="mb1">
+                        {c('Info')
+                            .t`PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.`}
+                    </Alert>
+                ) : null}
+                {isMimeTypeFixed && !hasPGPInline ? (
+                    <Alert className="mb1">
+                        {c('Info')
+                            .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages`}
+                    </Alert>
+                ) : null}
+                <Row>
+                    <Label>
+                        {c('Label').t`Email format`}
+                        <Info
+                            className="ml0-5"
+                            title={c('Tooltip')
+                                .t`Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.`}
+                        />
+                    </Label>
+                    <Field>
+                        <ContactMIMETypeSelect
+                            disabled={loading || isMimeTypeFixed}
+                            value={model?.mimeType || ''}
+                            onChange={(mimeType: CONTACT_MIME_TYPES) =>
+                                setModel((model?: ContactPublicKeyModel) => {
+                                    if (!model) {
+                                        return;
+                                    }
+                                    return { ...model, mimeType };
+                                })
+                            }
+                        />
+                    </Field>
+                </Row>
+                <div className="mb1">
+                    <UnderlineButton onClick={() => setShowPgpSettings(!showPgpSettings)} disabled={loading}>
+                        {showPgpSettings
+                            ? c('Action').t`Hide advanced PGP settings`
+                            : c('Action').t`Show advanced PGP settings`}
+                    </UnderlineButton>
+                </div>
+                {showPgpSettings && model ? (
+                    <ContactPgpSettings model={model} setModel={setModel} mailSettings={mailSettings} />
+                ) : null}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button type="reset" onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" loading={loading} type="submit" onClick={() => withLoading(handleSubmit(model))}>
+                    {c('Action').t`Save`}
                 </Button>
-                <h1 id="modalTitle" className="modal-title text-ellipsis">
-                    {c('Title').t`Email settings (${emailAddress})`}
-                </h1>
-            </header>
-            <ContentModal onSubmit={() => withLoading(handleSubmit(model))} onReset={onClose}>
-                <InnerModal>
-                    {!isMimeTypeFixed ? (
-                        <Alert className="mb1">
-                            {c('Info')
-                                .t`Select the email format you want to be used by default when sending an email to this email address.`}
-                        </Alert>
-                    ) : hasPGPInline ? (
-                        <Alert className="mb1">
-                            {c('Info')
-                                .t`PGP/Inline is only compatible with Plain Text format. Please note that ${MAIL_APP_NAME} always signs encrypted messages.`}
-                        </Alert>
-                    ) : (
-                        <Alert className="mb1">
-                            {c('Info')
-                                .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ${MAIL_APP_NAME} always signs encrypted messages`}
-                        </Alert>
-                    )}
-                    <Row>
-                        <Label>
-                            {c('Label').t`Email format`}
-                            <Info
-                                className="ml0-5"
-                                title={c('Tooltip')
-                                    .t`Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.`}
-                            />
-                        </Label>
-                        <Field>
-                            <ContactMIMETypeSelect
-                                disabled={loading || isMimeTypeFixed}
-                                value={model?.mimeType || ''}
-                                onChange={(mimeType: CONTACT_MIME_TYPES) =>
-                                    setModel((model?: ContactPublicKeyModel) => {
-                                        if (!model) {
-                                            return;
-                                        }
-                                        return { ...model, mimeType };
-                                    })
-                                }
-                            />
-                        </Field>
-                    </Row>
-                    <div className="mb1">
-                        <UnderlineButton onClick={() => setShowPgpSettings(!showPgpSettings)} disabled={loading}>
-                            {showPgpSettings
-                                ? c('Action').t`Hide advanced PGP settings`
-                                : c('Action').t`Show advanced PGP settings`}
-                        </UnderlineButton>
-                    </div>
-                    {showPgpSettings && model ? (
-                        <ContactPgpSettings model={model} setModel={setModel} mailSettings={mailSettings} />
-                    ) : null}
-                </InnerModal>
-                <FooterModal>
-                    <Button type="reset">{c('Action').t`Cancel`}</Button>
-                    <PrimaryButton loading={loading} type="submit">
-                        {c('Action').t`Save`}
-                    </PrimaryButton>
-                </FooterModal>
-            </ContentModal>
-        </DialogModal>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
