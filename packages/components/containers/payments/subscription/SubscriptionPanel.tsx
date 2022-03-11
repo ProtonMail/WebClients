@@ -1,33 +1,57 @@
 import { c, msgid } from 'ttag';
-import { PLANS, PLAN_NAMES, APPS, PLAN_SERVICES, DEFAULT_CURRENCY, CYCLE } from '@proton/shared/lib/constants';
-import { getHasB2BPlan, getPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
-import { Subscription, Organization, Address, UserModel } from '@proton/shared/lib/interfaces';
+import { PLANS, PLAN_NAMES, APPS, DEFAULT_CURRENCY, CYCLE } from '@proton/shared/lib/constants';
+import { getHasB2BPlan, getPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
+import {
+    Subscription,
+    Organization,
+    Address,
+    UserModel,
+    VPNServers,
+    VPNCountries,
+} from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import percentage from '@proton/shared/lib/helpers/percentage';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
+import { getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { useConfig } from '../../../hooks';
 import { Price, StrippedList, StrippedItem, Meter, Button } from '../../../components';
-import { OpenSubscriptionModalCallback } from '.';
+import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 interface Props {
     user: UserModel;
     subscription?: Subscription;
     organization?: Organization;
-    addresses: Address[];
+    vpnServers?: VPNServers;
+    vpnCountries?: VPNCountries;
+    addresses?: Address[];
     openSubscriptionModal: OpenSubscriptionModalCallback;
 }
 
-const SubscriptionPanel = ({ subscription, organization, user, addresses, openSubscriptionModal }: Props) => {
+const SubscriptionPanel = ({
+    vpnServers,
+    vpnCountries,
+    subscription,
+    organization,
+    user,
+    addresses,
+    openSubscriptionModal,
+}: Props) => {
     const { APP_NAME } = useConfig();
+
     const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
-    const service = isVpnApp ? PLAN_SERVICES.VPN : PLAN_SERVICES.MAIL;
-    const plan = subscription ? getPlan(subscription, service) : FREE_PLAN;
-    const title = subscription && plan ? PLAN_NAMES[plan.Name as PLANS] : PLAN_NAMES[PLANS.FREE];
-    const cycle = subscription ? subscription.Cycle : CYCLE.MONTHLY;
-    const amount = subscription && plan !== undefined ? subscription.Amount / cycle : 0;
+
+    const plan = getPlan(subscription) || FREE_PLAN;
+    const planTitle = PLAN_NAMES[plan.Name as PLANS];
+
+    const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
+    const amount = (subscription?.Amount ?? 0) / cycle;
+
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
+
     const {
         UsedDomains = 0,
         MaxDomains = 0,
@@ -39,13 +63,12 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
         MaxAddresses: OrganizationMaxAddresses,
         UsedMembers = 1,
         MaxMembers = 1,
-        MaxVPN: OrganizationMaxVPN = 1,
     } = organization || {};
+
     const humanUsedSpace = humanSize(UsedSpace);
     const humanMaxSpace = humanSize(MaxSpace);
     const UsedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
     const MaxAddresses = OrganizationMaxAddresses || 1;
-    const MaxVPN = user.hasPaidVpn ? OrganizationMaxVPN : 1;
 
     const handleCustomizeSubscription = () =>
         openSubscriptionModal({
@@ -71,11 +94,153 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
         return null;
     }
 
+    const getVpnAppFree = () => {
+        return (
+            <StrippedList>
+                {[
+                    {
+                        icon: 'check',
+                        text: c('Subscription attribute').t`1 VPN connection`,
+                    },
+                ].map((item) => {
+                    return (
+                        <StrippedItem key={item.text} icon={item.icon}>
+                            {item.text}
+                        </StrippedItem>
+                    );
+                })}
+            </StrippedList>
+        );
+    };
+
+    const getVpnPlus = () => {
+        const maxVpn = 10;
+        return (
+            <StrippedList>
+                {[
+                    {
+                        icon: 'check',
+                        text: c('Subscription attribute').ngettext(
+                            msgid`High-speed VPN on ${maxVpn} device`,
+                            `High-speed VPN on ${maxVpn} devices`,
+                            maxVpn
+                        ),
+                    },
+                    {
+                        icon: 'check',
+                        text: c('Subscription attribute').t`Built-in ad blocker (NetShield)`,
+                    },
+                    {
+                        icon: 'check',
+                        text: c('Subscription attribute').t`Access to streaming services globally`,
+                    },
+                    {
+                        icon: 'check',
+                        text: getPlusServers(vpnServers?.[PLANS.VPNPLUS], vpnCountries?.[PLANS.VPNPLUS].count),
+                    },
+                ].map((item) => {
+                    return (
+                        <StrippedItem key={item.text} icon={item.icon}>
+                            {item.text}
+                        </StrippedItem>
+                    );
+                })}
+            </StrippedList>
+        );
+    };
+
+    const getDefault = () => {
+        const maxVpn = 10; // The 10 is hard coded because it cannot be "allocated" per user.
+        return (
+            <StrippedList>
+                <StrippedItem icon="check">
+                    <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
+                    <Meter className="mt1 mb1" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
+                </StrippedItem>
+                {[
+                    (MaxMembers > 1 || getHasB2BPlan(subscription)) && {
+                        icon: 'check',
+                        text: c('Subscription attribute').ngettext(
+                            msgid`${UsedMembers} of ${MaxMembers} user`,
+                            `${UsedMembers} of ${MaxMembers} users`,
+                            MaxMembers
+                        ),
+                    },
+                    {
+                        icon: 'check',
+                        text:
+                            MaxAddresses === 1 && UsedAddresses === 1
+                                ? c('Subscription attribute').t`1 email address`
+                                : c('Subscription attribute').ngettext(
+                                      msgid`${UsedAddresses} of ${MaxAddresses} email address`,
+                                      `${UsedAddresses} of ${MaxAddresses} email addresses`,
+                                      MaxAddresses
+                                  ),
+                    },
+                    MaxDomains && {
+                        icon: 'check',
+                        text: c('Subscription attribute').ngettext(
+                            msgid`${UsedDomains} of ${MaxDomains} custom domain`,
+                            `${UsedDomains} of ${MaxDomains} custom domains`,
+                            MaxDomains
+                        ),
+                    },
+                    {
+                        icon: 'check',
+                        text:
+                            MaxCalendars === 1
+                                ? c('Subscription attribute').ngettext(
+                                      msgid`${UsedCalendars} calendar`,
+                                      `${UsedCalendars} calendars`,
+                                      UsedCalendars
+                                  )
+                                : MaxMembers > 1
+                                ? c('Subscription attribute').ngettext(
+                                      msgid`${MAX_CALENDARS_PER_USER} calendar per user`,
+                                      `${MAX_CALENDARS_PER_USER} calendars per user`,
+                                      MAX_CALENDARS_PER_USER
+                                  )
+                                : c('Subscription attribute').ngettext(
+                                      msgid`${UsedCalendars} of ${MaxCalendars} calendar`,
+                                      `${UsedCalendars} of ${MaxCalendars} calendars`,
+                                      MaxCalendars
+                                  ),
+                    },
+                    {
+                        icon: 'check',
+                        text:
+                            user.hasPaidVpn && MaxMembers > 1
+                                ? c('Subscription attribute').ngettext(
+                                      msgid`${maxVpn} high-speed VPN connection per user`,
+                                      `${maxVpn} high-speed VPN connections per user`,
+                                      maxVpn
+                                  )
+                                : user.hasPaidVpn
+                                ? c('Subscription attribute').ngettext(
+                                      msgid`${maxVpn} high-speed VPN connection`,
+                                      `${maxVpn} high-speed VPN connections`,
+                                      maxVpn
+                                  )
+                                : c('Subscription attribute').t`1 VPN connection`,
+                    },
+                ]
+                    .filter(isTruthy)
+                    .map((item) => {
+                        return (
+                            <StrippedItem key={item.text} icon={item.icon}>
+                                {item.text}
+                            </StrippedItem>
+                        );
+                    })}
+            </StrippedList>
+        );
+    };
+
     return (
         <div className="border rounded px2 py1-5 subscription-panel-container">
             <div className="flex flex-nowrap flex-align-items-center flex-justify-space-between pt0-5">
                 <h3 className="m0">
-                    <strong>{title}</strong>
+                    <strong>{planTitle}</strong>
                 </h3>
                 <Price
                     className="h3 m0 color-weak"
@@ -85,60 +250,15 @@ const SubscriptionPanel = ({ subscription, organization, user, addresses, openSu
                     {amount}
                 </Price>
             </div>
-            <StrippedList>
-                {user.isFree && isVpnApp ? null : (
-                    <>
-                        <StrippedItem icon="check">
-                            <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
-                            <Meter
-                                className="mt1 mb1"
-                                aria-hidden="true"
-                                value={Math.ceil(percentage(MaxSpace, UsedSpace))}
-                            />
-                        </StrippedItem>
-                        <StrippedItem icon="check">
-                            {c('Subscription attribute').ngettext(
-                                msgid`${UsedMembers} of ${MaxMembers} user`,
-                                `${UsedMembers} of ${MaxMembers} users`,
-                                MaxMembers
-                            )}
-                        </StrippedItem>
-                        <StrippedItem icon="check">
-                            {c('Subscription attribute').ngettext(
-                                msgid`${UsedAddresses} of ${MaxAddresses} email address`,
-                                `${UsedAddresses} of ${MaxAddresses} email addresses`,
-                                MaxAddresses
-                            )}
-                        </StrippedItem>
-                        <StrippedItem icon="check">
-                            {c('Subscription attribute').ngettext(
-                                msgid`${UsedCalendars} of ${MaxCalendars} personal calendar`,
-                                `${UsedCalendars} of ${MaxCalendars} calendars`,
-                                MaxCalendars
-                            )}
-                        </StrippedItem>
-                        {MaxDomains ? (
-                            <StrippedItem icon="check">
-                                {c('Subscription attribute').ngettext(
-                                    msgid`${UsedDomains} of ${MaxDomains} custom domain`,
-                                    `${UsedDomains} of ${MaxDomains} custom domains`,
-                                    MaxDomains
-                                )}
-                            </StrippedItem>
-                        ) : null}
-                    </>
-                )}
-                <StrippedItem icon="check">
-                    {c('Subscription attribute').ngettext(
-                        msgid`${MaxVPN} VPN connection`,
-                        `${MaxVPN} VPN connections`,
-                        MaxVPN
-                    )}
-                </StrippedItem>
-                {user.hasPaidVpn && !user.hasPaidMail && isVpnApp ? (
-                    <StrippedItem icon="check">{c('Subscription attribute').t`Advanced VPN features`}</StrippedItem>
-                ) : null}
-            </StrippedList>
+            {(() => {
+                if (user.isFree && isVpnApp) {
+                    return getVpnAppFree();
+                }
+                if (hasVPN(subscription)) {
+                    return getVpnPlus();
+                }
+                return getDefault();
+            })()}
             {user.isPaid && user.canPay ? (
                 <Button onClick={handleEditPayment} className="mb0-5" size="large" color="norm" fullWidth>{c('Action')
                     .t`Edit billing details`}</Button>

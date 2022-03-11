@@ -1,14 +1,16 @@
 import { Loader } from '../../../components';
 import {
     useAddresses,
+    useCalendars,
     useOrganization,
     useSubscription,
     useUser,
     usePlans,
     useVPNCountriesCount,
+    useVPNServersCount,
 } from '../../../hooks';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
-import MemberPanel from './MemberPanel';
+import UsagePanel from './UsagePanel';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import SubscriptionPanel from './SubscriptionPanel';
 import UpsellPanel from './UpsellPanel';
@@ -18,13 +20,15 @@ import './YourPlanSection.scss';
 const YourPlanSection = () => {
     const [user] = useUser();
     const [plans = [], loadingPlans] = usePlans();
-    const [addresses, loadingAddresses] = useAddresses();
+    const [addresses] = useAddresses();
+    const [calendars] = useCalendars();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
-    const [vpnCountries, loadingVpnCountries] = useVPNCountriesCount();
+    const [vpnCountries] = useVPNCountriesCount();
+    const [vpnServers] = useVPNServersCount();
     const [openSubscriptionModal] = useSubscriptionModal();
-    const loading =
-        loadingSubscription || loadingOrganization || loadingAddresses || loadingPlans || loadingVpnCountries;
+
+    const loading = loadingSubscription || loadingOrganization || loadingPlans;
 
     if (loading) {
         return <Loader />;
@@ -43,6 +47,8 @@ const YourPlanSection = () => {
                 organization={organization}
                 user={user}
                 addresses={addresses}
+                vpnCountries={vpnCountries}
+                vpnServers={vpnServers}
                 openSubscriptionModal={openSubscriptionModal}
             />
             <UpsellPanel
@@ -50,9 +56,10 @@ const YourPlanSection = () => {
                 plans={plans}
                 user={user}
                 vpnCountries={vpnCountries}
+                vpnServers={vpnServers}
                 openSubscriptionModal={openSubscriptionModal}
             />
-            <MemberPanel organization={organization} user={user} />
+            <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />
         </div>
     );
 };

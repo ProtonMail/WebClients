@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { format } from 'date-fns';
 import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES, APPS } from '@proton/shared/lib/constants';
 import {
@@ -9,24 +9,25 @@ import {
     isTrial,
     getHasLegacyPlans,
 } from '@proton/shared/lib/helpers/subscription';
-import { Plan, Subscription, UserModel, VPNCountries } from '@proton/shared/lib/interfaces';
+import { Plan, Subscription, UserModel, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import { getPlusServers } from '@proton/shared/lib/vpn/features';
 import { StrippedList, StrippedItem, Button, Price } from '../../../components';
 import { useConfig } from '../../../hooks';
-import { OpenSubscriptionModalCallback } from '.';
+import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 interface Props {
     subscription?: Subscription;
     plans: Plan[];
-    vpnCountries: VPNCountries;
+    vpnCountries?: VPNCountries;
+    vpnServers?: VPNServers;
     user: UserModel;
     openSubscriptionModal: OpenSubscriptionModalCallback;
 }
 
-const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscriptionModal }: Props) => {
+const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, openSubscriptionModal }: Props) => {
     const { APP_NAME } = useConfig();
     const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
@@ -63,16 +64,42 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 <p className="color-weak">{c('new_plans: Info')
                     .t`Otherwise access to your account will be limited, and your account will eventually be disabled.`}</p>
                 <StrippedList>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute').t`15 GB total storage`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`10 email addresses/aliases`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Unlimited folders, labels, and filters`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute').t`Unlimited messages`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Support for 1 custom email`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute').t`Priority support`}</StrippedItem>
-                    <StrippedItem icon="check">{calendarAppName}</StrippedItem>
+                    {[
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`15 GB total storage`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`10 email addresses/aliases`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Unlimited folders, labels, and filters`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Unlimited messages`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Support for 1 custom email`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Priority support`,
+                        },
+                        {
+                            icon: 'check',
+                            text: calendarAppName,
+                        },
+                    ].map((item) => {
+                        return (
+                            <StrippedItem key={item.text} icon={item.icon}>
+                                {item.text}
+                            </StrippedItem>
+                        );
+                    })}
                 </StrippedList>
                 <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c(
                     'new_plans: Action'
@@ -86,12 +113,11 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
 
     // VPN app only upsell
     if (user.isFree && isVpnApp) {
-        const numberOfPlusCountries = vpnCountries[PLANS.VPNPLUS].count;
         const vpn = PLAN_NAMES[PLANS.VPN];
-        const plan = plans.find(({ Name }) => Name === PLANS.VPN) as Plan;
+        const plan = plans.find(({ Name }) => Name === PLANS.VPN);
         const price = (
             <Price key="plan-price" currency={DEFAULT_CURRENCY} suffix={c('new_plans: Plan frequency').t`/month`}>
-                {plan.Pricing[CYCLE.TWO_YEARS] / CYCLE.TWO_YEARS}
+                {(plan?.Pricing[CYCLE.TWO_YEARS] || 0) / CYCLE.TWO_YEARS}
             </Price>
         );
         const handleUpgrade = () =>
@@ -100,6 +126,7 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disableBackButton: true,
             });
+        const maxVpn = 10;
         return (
             <div className="border rounded px2 py1-5 pt0-5">
                 <h3>
@@ -108,13 +135,30 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 <p>{c('new_plans: Info')
                     .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`}</p>
                 <StrippedList>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`High speed VPN on 10 devices`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Built-in ad blocker (NetShield)`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Access to streaming services globally`}</StrippedItem>
-                    <StrippedItem icon="check">{getPlusServers(numberOfPlusCountries)}</StrippedItem>
+                    {[
+                        {
+                            icon: 'check',
+                            text: c('new_plans: attribute').ngettext(
+                                msgid`High-speed VPN on ${maxVpn} device`,
+                                `High-speed VPN on ${maxVpn} devices`,
+                                maxVpn
+                            ),
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: attribute').t`Built-in ad blocker (NetShield)`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: attribute').t`Access to streaming services globally`,
+                        },
+                        {
+                            icon: 'check',
+                            text: getPlusServers(vpnServers?.[PLANS.VPNPLUS], vpnCountries?.[PLANS.VPNPLUS].count),
+                        },
+                    ].map((item) => {
+                        return <StrippedItem icon={item.icon}>{item.text}</StrippedItem>;
+                    })}
                 </StrippedList>
                 <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c(
                     'new_plans: Action'
@@ -126,14 +170,14 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
     // Bundle upsell
     if (user.isFree || hasMail(subscription) || hasDrive(subscription) || hasVPN(subscription)) {
         const bundle = PLAN_NAMES[PLANS.BUNDLE];
-        const plan = plans.find(({ Name }) => Name === PLANS.BUNDLE) as Plan;
+        const plan = plans.find(({ Name }) => Name === PLANS.BUNDLE);
         const price = (
             <Price
                 key="plan-price"
                 currency={subscription?.Currency || DEFAULT_CURRENCY}
                 suffix={c('new_plans: Plan frequency').t`/month`}
             >
-                {plan.Pricing[CYCLE.TWO_YEARS] / CYCLE.TWO_YEARS}
+                {(plan?.Pricing[CYCLE.TWO_YEARS] || 0) / CYCLE.TWO_YEARS}
             </Price>
         );
         const handleUpgrade = () =>
@@ -150,16 +194,35 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 <p className="color-weak">{c('new_plans: Info')
                     .t`Upgrade to the ultimate privacy pack and access all premium Proton services.`}</p>
                 <StrippedList>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Boost your storage space to 500 GB total`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Get 10 high-speed VPN connections`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Access advanced VPN features`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Create up to 20 personal calendars`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Add more personalization with 15 email addresses and support for 3 custom email domains`}</StrippedItem>
+                    {[
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Boost your storage space to 500 GB total`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Get 10 high-speed VPN connections`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute')
+                                .t`Add more personalization with 15 email addresses and support for 3 custom email domains`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Create up to 20 personal calendars`,
+                        },
+                    ].map((item) => {
+                        return (
+                            <StrippedItem key={item.text} icon={item.icon}>
+                                {item.text}
+                            </StrippedItem>
+                        );
+                    })}
                 </StrippedList>
                 <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c(
                     'new_plans: Action'
@@ -171,14 +234,14 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
     // Mail pro upsell
     if (hasMailPro(subscription)) {
         const business = PLAN_NAMES[PLANS.BUNDLE_PRO];
-        const plan = plans.find(({ Name }) => Name === PLANS.BUNDLE_PRO) as Plan;
+        const plan = plans.find(({ Name }) => Name === PLANS.BUNDLE_PRO);
         const price = (
             <Price
                 key="plan-price"
                 currency={subscription?.Currency || DEFAULT_CURRENCY}
                 suffix={c('new_plans: Plan frequency').t`/month`}
             >
-                {plan.Pricing[CYCLE.TWO_YEARS] / CYCLE.TWO_YEARS}
+                {(plan?.Pricing[CYCLE.TWO_YEARS] || 0) / CYCLE.TWO_YEARS}
             </Price>
         );
         const handleUpgrade = () =>
@@ -195,19 +258,42 @@ const UpsellPanel = ({ subscription, plans, vpnCountries, user, openSubscription
                 <p className="color-weak">{c('new_plans: Info')
                     .t`The ultimate privacy pack with access to all premium Proton services.`}</p>
                 <StrippedList>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute').t`10 VPN connections`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Advanced VPN features`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`500 GB storage for email and file storage `}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`15 Proton email addresses`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Support for 3 custom email domains`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Up to 20 personal calendars`}</StrippedItem>
-                    <StrippedItem icon="check">{c('new_plans: Upsell attribute')
-                        .t`Links to share calendars, files, and folders`}</StrippedItem>
+                    {[
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`10 VPN connections`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Advanced VPN features`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`500 GB storage for email and file storage`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`15 Proton email addresses`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Support for 3 custom email domains`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Up to 20 personal calendars`,
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Links to share calendars, files, and folders`,
+                        },
+                    ].map((item) => {
+                        return (
+                            <StrippedItem key={item.text} icon={item.icon}>
+                                {item.text}
+                            </StrippedItem>
+                        );
+                    })}
                 </StrippedList>
                 <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c(
                     'new_plans: Action'
