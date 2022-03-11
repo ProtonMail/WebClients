@@ -10,6 +10,7 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import { noop } from '@proton/shared/lib/helpers/function';
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
@@ -76,6 +77,8 @@ const HeaderCollapsed = ({
                     isLoading={!messageLoaded}
                     showDropdown={false}
                     hideAddress={true}
+                    onContactDetails={noop}
+                    onContactEdit={noop}
                 />
 
                 {messageLoaded && isDraftMessage && (

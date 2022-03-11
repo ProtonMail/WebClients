@@ -1,33 +1,37 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { ContactEmail, ContactProperties } from '@proton/shared/lib/interfaces/contacts';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { useModals, useContactGroups, useAddresses, useUserKeys, useMailSettings } from '../../../hooks';
+import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
+import { useContactGroups, useAddresses, useUserKeys, useMailSettings } from '../../../hooks';
 import useContactList from '../useContactList';
 import useContact from '../useContact';
 import useContactProperties from '../deprecated/useContactProperties';
 import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';
-import ContactModal from '../modals/ContactModal';
 import { Button } from '../../../components/button';
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
 import useVCardContact from '../hooks/useVCardContact';
 import { ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter, ModalProps } from '../../../components/modalTwo';
 import ContactView from './ContactView';
-import { Loader } from '../../..';
-
+import { Loader } from '../../../components';
+import { ContactEditProps } from '../edit/ContactEditModal';
+import { ContactDeleteProps } from '../modals/ContactDeleteModal';
+import { ContactEmailSettingsProps } from '../modals/ContactEmailSettingsModal';
 export interface ContactDetailsProps {
     contactID: string;
     onMailTo?: (src: string) => void;
+    onEdit: (props: ContactEditProps) => void;
+    onDelete: (props: ContactDeleteProps) => void;
+    onEmailSettings: (props: ContactEmailSettingsProps) => void;
 }
 
 type Props = ContactDetailsProps & ModalProps;
 
-const ContactDetailsModal = ({ contactID, onMailTo, ...rest }: Props) => {
+const ContactDetailsModal = ({ contactID, onMailTo, onEdit, onDelete, onEmailSettings, ...rest }: Props) => {
     const { onClose } = rest;
 
-    const { createModal } = useModals();
     const [mailSettings] = useMailSettings();
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
     const [userKeysList, loadingUserKeys] = useUserKeys();
@@ -56,10 +60,16 @@ const ContactDetailsModal = ({ contactID, onMailTo, ...rest }: Props) => {
         return () => modalRef.current?.removeEventListener('click', handleClick);
     }, []);
 
-    const openContactModal = () => {
-        createModal(<ContactModal properties={properties} contactID={contactID} />);
+    const handleEdit = (newField?: string) => {
+        onEdit({ contactID, vCardContact, newField });
+    };
+
+    const handleDelete = () => {
+        onDelete({ contactIDs: [contactID] });
         onClose?.();
     };
+
+    const handleExport = () => singleExport(properties || []);
 
     const ownAddresses = useMemo(() => addresses.map(({ Email }) => Email), [addresses]);
     const contactGroupsMap = useMemo(() => toMap(contactGroups), [contactGroups]);
@@ -86,7 +96,6 @@ const ContactDetailsModal = ({ contactID, onMailTo, ...rest }: Props) => {
                         ) : (
                             <ContactView
                                 vCardContact={vCardContact as VCardContact}
-                                properties={properties as ContactProperties}
                                 contactID={contactID}
                                 contactEmails={contactEmailsMap[contactID] as ContactEmail[]}
                                 contactGroupsMap={contactGroupsMap}
@@ -94,8 +103,11 @@ const ContactDetailsModal = ({ contactID, onMailTo, ...rest }: Props) => {
                                 userKeysList={userKeysList}
                                 errors={errors}
                                 isSignatureVerified={isVerified}
-                                onDelete={() => onClose?.()}
+                                onDelete={handleDelete}
                                 onReload={onReload}
+                                onEdit={handleEdit}
+                                onEmailSettings={onEmailSettings}
+                                onExport={handleExport}
                             />
                         )}
                     </div>
@@ -104,7 +116,7 @@ const ContactDetailsModal = ({ contactID, onMailTo, ...rest }: Props) => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Close`}</Button>
-                <Button color="norm" onClick={openContactModal} disabled={isLoading}>
+                <Button color="norm" onClick={() => handleEdit()} disabled={isLoading}>
                     {c('Action').t`Edit`}
                 </Button>
             </ModalTwoFooter>

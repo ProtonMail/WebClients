@@ -18,12 +18,8 @@ import {
     ImportedContact,
 } from '@proton/shared/lib/interfaces/contacts';
 import { getContactId, splitErrors, extractContactImportCategories } from '@proton/shared/lib/contacts/helpers/import';
-import {
-    AddContactsApiResponse,
-    AddContactsApiResponses,
-    EncryptedContact,
-    ImportContactsModel,
-} from '@proton/shared/lib/interfaces/contacts/Import';
+import { EncryptedContact, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import { AddContactsApiResponse, AddContactsApiResponses } from '@proton/shared/lib/interfaces/contacts/ContactApi';
 import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 
 const { SINGLE_SUCCESS } = API_CODES;

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { formatImage } from '@proton/shared/lib/helpers/image';
-import { getPreferredPropertyValue } from '@proton/shared/lib/contacts/properties';
+import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { Button, Icon, Tooltip } from '../../../components';
 import { classnames } from '../../../helpers';
@@ -13,7 +13,7 @@ interface Props {
     vCardContact: VCardContact;
     onExport: () => void;
     onDelete: () => void;
-    onEdit: (field?: string) => void;
+    onEdit: (newField?: string) => void;
     leftBlockWidth?: string;
     isPreview?: boolean;
     hasError?: boolean;
@@ -30,8 +30,8 @@ const ContactSummary = ({
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
-    const photo = formatImage(getPreferredPropertyValue(vCardContact.photo || [])?.value || '');
-    const name = getPreferredPropertyValue(vCardContact.fn || [])?.value || '';
+    const photo = formatImage(getSortedProperties(vCardContact, 'photo')[0]?.value || '');
+    const name = getSortedProperties(vCardContact, 'fn')[0]?.value || '';
 
     return (
         <div

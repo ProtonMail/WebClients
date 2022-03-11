@@ -1,54 +1,42 @@
-import { ContactValue } from '@proton/shared/lib/interfaces/contacts';
 import { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { ADDRESS_COMPONENTS } from '@proton/shared/lib/contacts/constants';
-
-import { InputTwo } from '../../components';
-import { generateUID } from '../../helpers';
-
-const { POST_BOX, EXTENDED, STREET, LOCALITY, REGION, POSTAL_CODE, COUNTRY } = ADDRESS_COMPONENTS;
-
-const initialAddress = (address: ContactValue) => {
-    const addressArray = Array.isArray(address) ? address : address.split(',');
-    return Array.from({ length: 7 }).map((_, i) => addressArray[i] || '');
-};
+import { VCardAddress, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { InputTwo } from '../../../../components';
+import { generateUID } from '../../../../helpers';
 
 interface Props {
-    value: ContactValue;
-    onChange: (address: (string | string[])[]) => void;
+    vCardProperty: VCardProperty<VCardAddress[]>;
+    onChange: (vCardProperty: VCardProperty) => void;
 }
-const ContactAdrField = ({ value, onChange }: Props) => {
+const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
     const [uid] = useState(generateUID('contact-adr'));
-    const [address, setAddress] = useState(initialAddress(value));
 
     const handleChange =
-        (index: number) =>
+        (part: keyof VCardAddress) =>
         ({ target }: ChangeEvent<HTMLInputElement>) => {
-            const newValue = target.value.includes(',') ? target.value.split(',') : target.value;
-            const newAddress = [...address];
-            newAddress[index] = newValue;
-            setAddress(newAddress);
-            onChange(newAddress);
+            onChange({ ...vCardProperty, value: [{ ...vCardProperty.value[0], [part]: target.value }] });
         };
+
+    const address = vCardProperty.value[0];
 
     return (
         <>
             <div className="mb1">
                 <InputTwo
                     id={`${uid}-street`}
-                    value={address[STREET]}
+                    value={address.streetAddress}
                     placeholder={c('Label').t`Street address`}
-                    onChange={handleChange(STREET)}
+                    onChange={handleChange('streetAddress')}
                     data-testid="street"
                 />
             </div>
-            {address[EXTENDED] ? (
+            {address.extendedAddress ? (
                 <div className="mb1">
                     <InputTwo
                         id={`${uid}-extended`}
-                        value={address[EXTENDED]}
+                        value={address.extendedAddress}
                         placeholder={c('Label').t`Extended address`}
-                        onChange={handleChange(EXTENDED)}
+                        onChange={handleChange('extendedAddress')}
                         data-testid="extended"
                     />
                 </div>
@@ -56,28 +44,28 @@ const ContactAdrField = ({ value, onChange }: Props) => {
             <div className="mb1">
                 <InputTwo
                     id={`${uid}-postalCode`}
-                    value={address[POSTAL_CODE]}
+                    value={address.postalCode}
                     placeholder={c('Label').t`Postal code`}
-                    onChange={handleChange(POSTAL_CODE)}
+                    onChange={handleChange('postalCode')}
                     data-testid="postalCode"
                 />
             </div>
             <div className="mb1">
                 <InputTwo
                     id={`${uid}-locality`}
-                    value={address[LOCALITY]}
+                    value={address.locality}
                     placeholder={c('Label').t`City`}
-                    onChange={handleChange(LOCALITY)}
+                    onChange={handleChange('locality')}
                     data-testid="city"
                 />
             </div>
-            {address[POST_BOX] ? (
+            {address.postOfficeBox ? (
                 <div className="mb1">
                     <InputTwo
                         id={`${uid}-postBox`}
-                        value={address[POST_BOX]}
+                        value={address.postOfficeBox}
                         placeholder={c('Label').t`Post office box`}
-                        onChange={handleChange(POST_BOX)}
+                        onChange={handleChange('postOfficeBox')}
                         data-testid="postBox"
                     />
                 </div>
@@ -86,18 +74,18 @@ const ContactAdrField = ({ value, onChange }: Props) => {
                 <label className="text-sm color-weak" htmlFor={`${uid}-region`} />
                 <InputTwo
                     id={`${uid}-region`}
-                    value={address[REGION]}
+                    value={address.region}
                     placeholder={c('Label').t`Region`}
-                    onChange={handleChange(REGION)}
+                    onChange={handleChange('region')}
                     data-testid="region"
                 />
             </div>
             <div>
                 <InputTwo
                     id={`${uid}-country`}
-                    value={address[COUNTRY]}
+                    value={address.country}
                     placeholder={c('Label').t`Country`}
-                    onChange={handleChange(COUNTRY)}
+                    onChange={handleChange('country')}
                     data-testid="country"
                 />
             </div>
@@ -105,4 +93,4 @@ const ContactAdrField = ({ value, onChange }: Props) => {
     );
 };
 
-export default ContactAdrField;
+export default ContactFieldAdr;

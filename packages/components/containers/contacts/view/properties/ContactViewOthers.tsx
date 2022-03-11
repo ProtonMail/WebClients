@@ -1,10 +1,5 @@
 import { format } from 'date-fns';
-import {
-    VCardContact,
-    VCardDateOrText,
-    VCardGenderValue,
-    VCardProperty,
-} from '@proton/shared/lib/interfaces/contacts/VCard';
+import { VCardContact, VCardDateOrText, VCardGenderValue } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -23,25 +18,18 @@ const ContactViewOthers = ({ vCardContact, isSignatureVerified = false }: Props)
     return (
         <ContactViewProperties>
             {fields.map((field) => {
-                const vCardField = vCardContact[field as keyof VCardContact];
-
-                if (vCardField === undefined) {
-                    return null;
-                }
-
-                let poperties: VCardProperty<any>[] = Array.isArray(vCardField) ? vCardField : [vCardField];
-                poperties = getSortedProperties(poperties);
+                let properties = getSortedProperties(vCardContact, field);
 
                 // First photo is used in the summary
                 if (field === 'photo') {
-                    poperties = poperties.slice(1);
+                    properties = properties.slice(1);
                 }
 
-                if (poperties.length === 0) {
+                if (properties.length === 0) {
                     return null;
                 }
 
-                return poperties.map(({ value }, i) => {
+                return properties.map(({ value }, i) => {
                     const getView = () => {
                         if (field === 'url') {
                             // use new root address when the url does not include the protocol (HTTP or HTTPS)

@@ -1,11 +1,9 @@
 import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64, getKeys, OpenPGPKey } from 'pmcrypto';
 import isTruthy from '@proton/utils/isTruthy';
-import noop from '@proton/utils/noop';
 import { PGP_SCHEMES, MIME_TYPES } from '../constants';
-import { MimeTypeVcard, PinnedKeysConfig, PublicKeyWithPref } from '../interfaces';
-import { ContactProperties, ContactProperty } from '../interfaces/contacts';
-import { VCARD_KEY_FIELDS } from './constants';
-import { sortByPref } from './properties';
+import { MimeTypeVcard, PinnedKeysConfig } from '../interfaces';
+import { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
+import { compareVCardPropertyByPref, createContactPropertyUid } from './properties';
 
 /**
  * The only values allowed for a PGP scheme stored in a vCard are
@@ -13,7 +11,7 @@ import { sortByPref } from './properties';
  * 'pgp-mime' for PGP-Inline scheme
  * 'pgp-mime' for PGP-MIME scheme
  */
-const getPGPSchemeVcard = (scheme: string): PGP_SCHEMES | undefined => {
+export const getPGPSchemeVcard = (scheme: string): PGP_SCHEMES | undefined => {
     // ugly code; typescript to be blamed
     if (Object.values(PGP_SCHEMES).includes(scheme as PGP_SCHEMES)) {
         return scheme as PGP_SCHEMES;
@@ -25,68 +23,39 @@ const getPGPSchemeVcard = (scheme: string): PGP_SCHEMES | undefined => {
  * '' for automatic format (meaning we should use DraftMIMEType from mailSettings when composing email)
  * 'text/plain' for plain text format
  */
-const getMimeTypeVcard = (mimeType: string): MimeTypeVcard | undefined => {
+export const getMimeTypeVcard = (mimeType: string): MimeTypeVcard | undefined => {
     return mimeType === MIME_TYPES.PLAINTEXT ? mimeType : undefined;
 };
+
+export const getKeyVCard = async (keyValue: string): Promise<OpenPGPKey | undefined> => {
+    const [, base64 = ''] = keyValue.split(',');
+    const key = binaryStringToArray(decodeBase64(base64));
+
+    if (key.length) {
+        const [publicKey] = await getKeys(key);
+        return publicKey;
+    }
+};
+
 /**
  * Given an array of vCard properties, extract the keys and key-related fields relevant for an email address
  */
 export const getKeyInfoFromProperties = async (
-    properties: ContactProperties,
+    vCardContact: VCardContact,
     emailGroup: string
 ): Promise<Omit<PinnedKeysConfig, 'isContactSignatureVerified' | 'isContact'>> => {
-    const { pinnedKeyPromises, mimeType, encrypt, scheme, sign } = properties
-        .filter(({ field, group }) => VCARD_KEY_FIELDS.includes(field) && group === emailGroup)
-        .reduce<{
-            pinnedKeyPromises: Promise<PublicKeyWithPref | undefined>[];
-            encrypt?: boolean;
-            sign?: boolean;
-            scheme?: PGP_SCHEMES;
-            mimeType?: MimeTypeVcard;
-        }>(
-            (acc, { field, value, pref }) => {
-                if (field === 'key' && value) {
-                    const [, base64 = ''] = (value as string).split(',');
-                    const key = binaryStringToArray(decodeBase64(base64));
+    const getByGroup = <T>(properties: VCardProperty<T>[] = []): VCardProperty<T> | undefined =>
+        properties.find(({ group }) => group === emailGroup);
 
-                    if (key.length) {
-                        const promise = getKeys(key)
-                            .then(([publicKey]) => ({ publicKey, pref }))
-                            .catch(noop);
-                        acc.pinnedKeyPromises.push(promise);
-                    }
-
-                    return acc;
-                }
-                if (field === 'x-pm-encrypt' && value) {
-                    acc.encrypt = value === 'true';
-                    return acc;
-                }
-                if (field === 'x-pm-sign' && value) {
-                    acc.sign = value === 'true';
-                    return acc;
-                }
-                if (field === 'x-pm-scheme' && value) {
-                    acc.scheme = getPGPSchemeVcard(value as string);
-                    return acc;
-                }
-                if (field === 'x-pm-mimetype' && value) {
-                    acc.mimeType = getMimeTypeVcard(value as string);
-                    return acc;
-                }
-                return acc;
-            },
-            {
-                // Default values
-                pinnedKeyPromises: [],
-                encrypt: undefined,
-                sign: undefined,
-                scheme: undefined,
-                mimeType: undefined,
-            }
-        );
-    const rawPinnedKeys = (await Promise.all(pinnedKeyPromises)).filter(isTruthy);
-    const pinnedKeys = rawPinnedKeys.sort(sortByPref).map(({ publicKey }) => publicKey);
+    const pinnedKeyPromises = (vCardContact.key || [])
+        .filter(({ group }) => group === emailGroup)
+        .sort(compareVCardPropertyByPref)
+        .map(async ({ value }) => getKeyVCard(value));
+    const pinnedKeys = (await Promise.all(pinnedKeyPromises)).filter(isTruthy);
+    const encrypt = getByGroup(vCardContact['x-pm-encrypt'])?.value;
+    const scheme = getByGroup(vCardContact['x-pm-scheme'])?.value;
+    const mimeType = getByGroup(vCardContact['x-pm-mimetype'])?.value;
+    const sign = getByGroup(vCardContact['x-pm-sign'])?.value;
 
     return { pinnedKeys, encrypt, scheme, mimeType, sign };
 };
@@ -100,11 +69,12 @@ interface VcardPublicKey {
 /**
  * Transform a key into a vCard property
  */
-export const toKeyProperty = ({ publicKey, group, index }: VcardPublicKey): ContactProperty => ({
+export const toKeyProperty = ({ publicKey, group, index }: VcardPublicKey): VCardProperty<string> => ({
     field: 'key',
     value: `data:application/pgp-keys;base64,${encodeBase64(
         arrayToBinaryString(publicKey.toPacketlist().write() as Uint8Array)
     )}`,
     group,
-    pref: index + 1, // order is important
+    params: { pref: String(index + 1) }, // order is important
+    uid: createContactPropertyUid(),
 });

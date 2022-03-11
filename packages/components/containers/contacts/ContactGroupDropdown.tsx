@@ -14,8 +14,8 @@ import { Button } from '../../components/button';
 import Mark from '../../components/text/Mark';
 import Checkbox from '../../components/input/Checkbox';
 import ContactGroupModal from './modals/ContactGroupModal';
-import useApplyGroups from './useApplyGroups';
 import ContactUpgradeModal from './ContactUpgradeModal';
+import useApplyGroups from './hooks/useApplyGroups';
 import { DropdownButton } from '../../components';
 import './ContactGroupDropdown.scss';
 

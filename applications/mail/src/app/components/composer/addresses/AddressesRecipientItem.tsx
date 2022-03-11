@@ -3,14 +3,11 @@ import {
     classnames,
     Icon,
     Tooltip,
-    ContactDetailsModal,
-    useModals,
     usePopperAnchor,
     ContextMenu,
     DropdownMenuButton,
     DropdownMenu,
     useNotifications,
-    ContactModal,
     useDragOver,
 } from '@proton/components';
 import { c } from 'ttag';
@@ -18,6 +15,8 @@ import noop from '@proton/utils/noop';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { inputToRecipient, recipientToInput } from '@proton/shared/lib/mail/recipient';
+import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
+import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
 import { getContactEmail } from '../../../helpers/addresses';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
@@ -49,7 +48,6 @@ const AddressesRecipientItem = ({
     ...rest
 }: Props) => {
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
 
     const contactsMap = useContactsMap();
 
@@ -72,6 +70,7 @@ const AddressesRecipientItem = ({
     );
 
     const onMailTo = useOnMailTo();
+    const { modals, onDetails, onEdit } = useContactModals({ onMailTo });
 
     const emailAddress = recipient.Address || '';
     const sendInfo = messageSendInfo?.mapSendInfo[emailAddress];
@@ -131,16 +130,20 @@ const AddressesRecipientItem = ({
         event.stopPropagation();
 
         if (ContactID) {
-            createModal(<ContactDetailsModal contactID={ContactID} onMailTo={onMailTo} />);
+            onDetails(ContactID);
         } else {
-            createModal(
-                <ContactModal
-                    properties={[
-                        { field: 'email', value: recipient.Address || '' },
-                        { field: 'fn', value: recipient.Name || recipient.Address || '' },
-                    ]}
-                />
-            );
+            onEdit({
+                vCardContact: {
+                    fn: [
+                        {
+                            field: 'fn',
+                            value: recipient.Name || recipient.Address || '',
+                            uid: createContactPropertyUid(),
+                        },
+                    ],
+                    email: [{ field: 'email', value: recipient.Address || '', uid: createContactPropertyUid() }],
+                },
+            });
         }
 
         closeContextMenu();
@@ -265,6 +268,7 @@ const AddressesRecipientItem = ({
             </ContextMenu>
             {askForKeyPinningModal}
             {contactResignModal}
+            {modals}
         </>
     );
 };

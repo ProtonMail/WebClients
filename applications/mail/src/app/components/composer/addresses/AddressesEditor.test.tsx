@@ -1,9 +1,9 @@
 import { MutableRefObject } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { act, getByText } from '@testing-library/react';
+import { getByText } from '@testing-library/react';
 import { fireEvent } from '@testing-library/dom';
-import { addApiMock, clearAll, getDropdown, getModal, render } from '../../../helpers/test/helper';
+import { addApiMock, clearAll, getDropdown, render, tick } from '../../../helpers/test/helper';
 import AddressesEditor from './AddressesEditor';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { mergeMessages } from '../../../helpers/message/messages';
@@ -211,11 +211,9 @@ describe('AddressesEditor', () => {
 
         fireEvent.click(createContactButton);
 
-        await act(async () => {
-            const { modal } = getModal();
+        await tick();
 
-            getByText(modal, 'Create contact');
-        });
+        getByText(document.body, 'Create contact');
     });
 
     it('should delete an address in option modal', async () => {

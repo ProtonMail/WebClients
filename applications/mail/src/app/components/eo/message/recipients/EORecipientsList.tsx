@@ -1,3 +1,4 @@
+import { noop } from '@proton/shared/lib/helpers/function';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { recipientsToRecipientOrGroup } from '../../../../helpers/addresses';
 import RecipientsList from '../../../message/recipients/RecipientsList';
@@ -17,6 +18,8 @@ const EORecipientsList = ({ list, isLoading, showDropdown }: Props) => {
             recipientsOrGroup={recipientsOrGroup}
             showDropdown={showDropdown}
             isOutside
+            onContactDetails={noop}
+            onContactEdit={noop}
         />
     );
 };

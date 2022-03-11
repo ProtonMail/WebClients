@@ -15,7 +15,6 @@ import {
 import { Copy, Button, Icon, Tooltip, RemoteImage } from '../../../components';
 import { useModals, useUser, useNotifications } from '../../../hooks';
 import { classnames } from '../../../helpers';
-import ContactEmailSettingsModal from '../modals/ContactEmailSettingsModal';
 import ContactLabelProperty from '../ContactLabelProperty';
 import ContactUpgradeModal from '../ContactUpgradeModal';
 import ContactGroupDropdown from '../ContactGroupDropdown';
@@ -38,12 +37,12 @@ interface Props {
 
 const ContactViewProperty = ({
     property,
-    properties,
-    contactID,
+    // properties,
+    // contactID,
     contactEmail,
     contactGroups = [],
     ownAddresses,
-    userKeysList,
+    // userKeysList,
     leftBlockWidth = 'w30',
     rightBlockWidth = 'w70',
     isSignatureVerified,
@@ -70,14 +69,14 @@ const ContactViewProperty = ({
                 }
                 const isOwnAddress = [...ownAddresses].includes(value);
                 const handleSettings = () => {
-                    createModal(
-                        <ContactEmailSettingsModal
-                            userKeysList={userKeysList}
-                            contactID={contactID}
-                            emailProperty={property}
-                            properties={properties}
-                        />
-                    );
+                    // createModal(
+                    //     <ContactEmailSettingsModal
+                    //         userKeysList={userKeysList}
+                    //         contactID={contactID}
+                    //         emailProperty={property}
+                    //         properties={properties}
+                    //     />
+                    // );
                 };
 
                 return (

@@ -26,6 +26,7 @@ import {
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
+import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
@@ -42,7 +43,7 @@ import HeaderMoreDropdown from './HeaderMoreDropdown';
 import RecipientItem from '../recipients/RecipientItem';
 import { Breakpoints } from '../../../models/utils';
 import { isSelfAddress } from '../../../helpers/addresses';
-import { useOnCompose } from '../../../containers/ComposeProvider';
+import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import ItemSpyTrackerIcon from '../../list/spy-tracker/ItemSpyTrackerIcon';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -113,6 +114,10 @@ const HeaderExpanded = ({
 
     const onCompose = useOnCompose();
 
+    const onMailTo = useOnMailTo();
+
+    const { modals, onDetails: onContactDetails, onEdit: onContactEdit } = useContactModals({ onMailTo });
+
     const { getRecipientsOrGroups } = useRecipientLabel();
     const recipients = getRecipients(message.data);
     const recipientsOrGroup = getRecipientsOrGroups(recipients);
@@ -165,6 +170,8 @@ const HeaderExpanded = ({
             attachedPublicKey={showPinPublicKey ? message.verification?.attachedPublicKeys?.[0] : undefined}
             isNarrow={isNarrow}
             globalIcon={messageViewIcons.globalIcon}
+            onContactDetails={onContactDetails}
+            onContactEdit={onContactEdit}
         />
     );
 
@@ -306,6 +313,8 @@ const HeaderExpanded = ({
                     isLoading={!messageLoaded}
                     expanded={showDetails}
                     toggleDetails={toggleDetails}
+                    onContactDetails={onContactDetails}
+                    onContactEdit={onContactEdit}
                 />
             </div>
             {showDetails && (
@@ -354,6 +363,8 @@ const HeaderExpanded = ({
                         parentMessageRef={parentMessageRef}
                         mailSettings={mailSettings}
                         messageViewIcons={messageViewIcons}
+                        onContactDetails={onContactDetails}
+                        onContactEdit={onContactEdit}
                     />
 
                     {!isNarrow && (
@@ -467,6 +478,7 @@ const HeaderExpanded = ({
                 )}
             </div>
             {/* {messageLoaded ? <HeaderAttachmentEvent message={message} /> : null} */}
+            {modals}
         </div>
     );
 };

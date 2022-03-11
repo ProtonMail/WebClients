@@ -1,13 +1,20 @@
 import ICAL from 'ical.js';
-import { parseISO } from 'date-fns';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
+import { formatISO, parseISO } from 'date-fns';
 import { isValidDate } from '../date/date';
 import { readFileAsString } from '../helpers/file';
 import { ContactProperties, ContactProperty } from '../interfaces/contacts';
-import { addPref, getStringContactValue, hasPref, sortByPref } from './properties';
+import { addPref, createContactPropertyUid, getStringContactValue, hasPref, sortByPref } from './properties';
 import { getValue } from './property';
-import { VCardAddress, VCardContact } from '../interfaces/contacts/VCard';
+import {
+    VCardAddress,
+    VCardContact,
+    VCardDateOrText,
+    VCardGenderValue,
+    VCardProperty,
+} from '../interfaces/contacts/VCard';
+import { getMimeTypeVcard, getPGPSchemeVcard } from './keyProperties';
 
 export const ONE_OR_MORE_MUST_BE_PRESENT = '1*';
 export const EXACTLY_ONE_MUST_BE_PRESENT = '1';
@@ -161,6 +168,15 @@ export const icalValueToInternalValue = (name: string, type: string, property: a
     if (name === 'gender') {
         return { text: value.toString() };
     }
+    if (name === 'x-pm-encrypt' || name === 'x-pm-sign') {
+        return value === 'true';
+    }
+    if (name === 'x-pm-scheme') {
+        return getPGPSchemeVcard(value as string);
+    }
+    if (name === 'x-pm-mimetype') {
+        return getMimeTypeVcard(value as string);
+    }
     if (Array.isArray(value)) {
         return value;
     }
@@ -205,9 +221,11 @@ const parseIcalProperty = (property: any, vCardContact: VCardContact) => {
 
     const params = getParameters(type, property);
     const propertyAsObject = {
-        group,
+        field: name,
         value,
+        uid: createContactPropertyUid(),
         ...(Object.keys(params).length && { params }),
+        group,
     };
 
     if (!isMultiValue(name)) {
@@ -226,13 +244,60 @@ export const parseToVCard = (vcard: string): VCardContact => {
     const icalComponent = new ICAL.Component(ICAL.parse(vcard));
     const properties = icalComponent.getAllProperties() as any[];
 
-    const vCardContact: VCardContact = {} as VCardContact;
+    const vCardContact: VCardContact = { fn: [] };
 
     properties.forEach((property) => {
         parseIcalProperty(property, vCardContact);
     });
 
     return vCardContact;
+};
+
+export const internalValueToIcalValue = (name: string, type: string | undefined, value: any) => {
+    if (name === 'adr') {
+        const [{ postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country }] =
+            value as VCardAddress[];
+        return [[postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country]];
+    }
+    if (name === 'bday' || name === 'anniversary') {
+        const dateValue = value as VCardDateOrText;
+        if (dateValue?.date && isValidDate(dateValue.date)) {
+            return formatISO(dateValue.date, { representation: 'date' });
+        } else {
+            return dateValue.text;
+        }
+    }
+    if (name === 'gender') {
+        const genderValue = value as VCardGenderValue;
+        return genderValue.text;
+    }
+    return value;
+};
+
+export const vCardPropertiesToICAL = (properties: VCardProperty[]) => {
+    // make sure version (we enforce 4.0) is the first property; otherwise invalid vcards can be generated
+    const versionLessProperties = properties.filter(({ field }) => field !== 'version');
+
+    const component = new ICAL.Component('vcard');
+    const versionProperty = new ICAL.Property('version');
+    versionProperty.setValue('4.0');
+    component.addProperty(versionProperty);
+
+    versionLessProperties.forEach(({ field, params, value, group }) => {
+        const fieldWithGroup = [group, field].filter(isTruthy).join('.');
+        const property = new ICAL.Property(fieldWithGroup);
+
+        const iCalValue = internalValueToIcalValue(field, params?.type, value);
+        property.setValue(iCalValue);
+
+        Object.entries(params || {}).forEach(([key, value]) => {
+            property.setParameter(key, value.toString());
+        });
+
+        component.addProperty(property);
+    });
+
+    return component;
 };
 
 /**
@@ -285,26 +350,6 @@ export const merge = (contacts: ContactProperties[] = []): ContactProperties => 
         });
         return acc;
     }, []);
-};
-
-export const mergeVCard = (contacts: VCardContact[]): VCardContact => {
-    const result: VCardContact = { fn: [] };
-
-    contacts.forEach((contact) => {
-        Object.entries(contact).forEach(([fieldString, property]) => {
-            const field = fieldString as keyof VCardContact;
-            if (isMultiValue(field)) {
-                if (!result[field]) {
-                    result[field] = [] as any;
-                }
-                (result[field] as any).push(...property);
-            } else {
-                result[field] = property;
-            }
-        });
-    });
-
-    return result;
 };
 
 /**
