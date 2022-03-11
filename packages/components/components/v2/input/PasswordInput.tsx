@@ -4,8 +4,14 @@ import { c } from 'ttag';
 import Icon from '../../icon/Icon';
 import InputTwo, { InputTwoProps } from './Input';
 
-const PasswordInputTwo = ({ disabled, ...rest }: Omit<InputTwoProps, 'type'>) => {
-    const [type, setType] = useState('password');
+type PasswordType = 'password' | 'text';
+
+interface Props extends Omit<InputTwoProps, 'type'> {
+    defaultType?: PasswordType;
+}
+
+const PasswordInputTwo = ({ disabled, defaultType = 'password', ...rest }: Props) => {
+    const [type, setType] = useState<PasswordType>(defaultType);
     const toggle = () => {
         setType(type === 'password' ? 'text' : 'password');
     };
