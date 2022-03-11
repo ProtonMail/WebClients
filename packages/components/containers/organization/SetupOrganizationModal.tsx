@@ -9,9 +9,24 @@ import {
     updateOrganizationKeysV2,
 } from '@proton/shared/lib/api/organization';
 import { updateVPN, updateQuota } from '@proton/shared/lib/api/members';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import { generateOrganizationKeys, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
-import { FormModal, Button, Row, Label, Input, PasswordInput, Alert, Select } from '../../components';
+import {
+    Alert,
+    Button,
+    Input,
+    Label,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    PasswordInput,
+    Row,
+    Select,
+    Form,
+} from '../../components';
 import {
     useUser,
     useOrganization,
@@ -34,11 +49,7 @@ enum STEPS {
     VPN,
 }
 
-interface Props {
-    onClose?: () => void;
-}
-
-const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) => {
+const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const api = useApi();
     const authentication = useAuthentication();
     const { call } = useEventManager();
@@ -217,7 +228,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
 
                     await call();
                     createNotification({ text: c('Success').t`Organization activated` });
-                    onClose();
+                    onClose?.();
                 },
             };
         }
@@ -249,7 +260,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                     await call();
 
                     createNotification({ text: c('Success').t`Organization activated` });
-                    onClose();
+                    onClose?.();
                 },
             };
         }
@@ -257,20 +268,27 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
         throw new Error('Unknown step');
     })();
 
+    const handleClose = loading ? noop : onClose;
+
     return (
-        <FormModal
-            title={title}
-            submit={c('Action').t`Submit`}
-            onClose={onClose}
-            onSubmit={() => withLoading(onSubmit())}
-            loading={loading}
-            close={
-                step ? <Button onClick={() => setStep(step - 1)}>{c('Action').t`Back`}</Button> : c('Action').t`Close`
-            }
-            {...rest}
-        >
-            {section}
-        </FormModal>
+        <Modal as={Form} onSubmit={() => withLoading(onSubmit())} onClose={handleClose} size="large" {...rest}>
+            <ModalHeader title={title} />
+            <ModalContent>{section}</ModalContent>
+            <ModalFooter>
+                {step ? (
+                    <Button onClick={() => setStep(step - 1)} disabled={loading}>
+                        {c('Action').t`Back`}
+                    </Button>
+                ) : (
+                    <Button onClick={handleClose} disabled={loading}>
+                        {c('Action').t`Close`}
+                    </Button>
+                )}
+                <Button loading={loading} type="submit" color="norm">
+                    {c('Action').t`Submit`}
+                </Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 
