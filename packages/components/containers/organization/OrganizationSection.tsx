@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { Audience, Organization } from '@proton/shared/lib/interfaces';
-import { APPS, MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getHasB2BPlan, hasFree, hasMailProfessional, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 
@@ -30,12 +30,12 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
         return (
             <SettingsSectionWide>
                 <SettingsParagraph>
-                    {c('Info')
-                        .t`${MAIL_APP_NAME} lets you create email addresses for other people. This is perfect for businesses, families, or groups.`}
+                    {c('new_plans: info')
+                        .t`${BRAND_NAME} lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.`}
                 </SettingsParagraph>
 
                 <UpgradeBanner free={hasFree(subscription)} audience={Audience.B2B}>{c('new_plans: upgrade')
-                    .t`Upgrade to a business plan to get started`}</UpgradeBanner>
+                    .t`Included with all Proton for Business plans.`}</UpgradeBanner>
             </SettingsSectionWide>
         );
     }
