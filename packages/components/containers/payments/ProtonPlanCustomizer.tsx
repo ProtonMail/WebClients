@@ -172,7 +172,7 @@ const AccountSizeCustomiser = ({
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb1 on-mobile-flex-wrap">
                 <label
                     htmlFor={addon.Name}
-                    className="min-w14e plan-customiser-addon-label text-bold pr0-5 on-mobile-w100"
+                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr0-5 on-mobile-w100"
                 >
                     {c('Info').t`Number of users`}
                     <Info
@@ -204,7 +204,7 @@ const AdditionalOptionsCustomiser = ({
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb1 on-mobile-flex-wrap">
                 <label
                     htmlFor={addon.Name}
-                    className="min-w14e plan-customiser-addon-label text-bold pr0-5 on-mobile-w100"
+                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr0-5 on-mobile-w100"
                 >
                     {c('Info').t`Custom email domains`}
                     <Info
