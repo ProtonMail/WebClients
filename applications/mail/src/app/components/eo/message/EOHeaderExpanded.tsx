@@ -136,14 +136,12 @@ const EOHeaderExpanded = ({
                         type="remote"
                         onLoadImages={onLoadRemoteImages}
                         mailSettings={eoDefaultMailSettings}
-                        isOutside
                     />
                     <ExtraImages
                         message={message}
                         type="embedded"
                         onLoadImages={onLoadEmbeddedImages}
                         mailSettings={eoDefaultMailSettings}
-                        isOutside
                     />
                 </div>
             </section>
