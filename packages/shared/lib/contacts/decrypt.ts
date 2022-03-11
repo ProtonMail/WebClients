@@ -13,8 +13,8 @@ import { KeysPair } from '../interfaces';
 import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts';
 import { VCardContact } from '../interfaces/contacts/VCard';
 import { CRYPTO_PROCESSING_TYPES } from './constants';
-import { sanitizeProperties } from './properties';
-import { merge, mergeVCard, parse, parseToVCard } from './vcard';
+import { mergeVCard, sanitizeProperties } from './properties';
+import { merge, parse, parseToVCard } from './vcard';
 
 const { SUCCESS, SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
 

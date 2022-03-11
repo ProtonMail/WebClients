@@ -34,7 +34,7 @@ const ContactContainer = ({
     return (
         <ContactView
             vCardContact={{ fn: [] }}
-            properties={properties}
+            // properties={properties}
             contactID={contactID}
             contactEmails={contactEmails}
             contactGroupsMap={contactGroupsMap}
@@ -45,6 +45,9 @@ const ContactContainer = ({
             // isModal={isModal}
             onDelete={onDelete}
             onReload={onReload}
+            onEdit={() => {}}
+            onExport={() => {}}
+            onEmailSettings={() => {}}
         />
     );
 };

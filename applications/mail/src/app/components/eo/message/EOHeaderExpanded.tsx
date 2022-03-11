@@ -6,6 +6,7 @@ import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 
+import { noop } from '@proton/shared/lib/helpers/function';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { Breakpoints } from '../../../models/utils';
 import { recipientsToRecipientOrGroup } from '../../../helpers/addresses';
@@ -70,6 +71,8 @@ const EOHeaderExpanded = ({
                                 recipientOrGroup={{ recipient: message.data?.Sender }}
                                 isLoading={!messageLoaded}
                                 isOutside
+                                onContactDetails={noop}
+                                onContactEdit={noop}
                             />
                         </RecipientType>
                     </div>
@@ -103,6 +106,8 @@ const EOHeaderExpanded = ({
                     isOutside
                     expanded={showDetails}
                     toggleDetails={toggleDetails}
+                    onContactDetails={noop}
+                    onContactEdit={noop}
                 />
             </div>
             {showDetails && (

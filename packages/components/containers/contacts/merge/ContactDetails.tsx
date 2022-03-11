@@ -67,7 +67,7 @@ const ContactDetails = ({ contactID, userKeysList, ...rest }: Props) => {
             ) : (
                 <ContactView
                     vCardContact={model.vCardContact}
-                    properties={model.properties}
+                    // properties={model.properties}
                     errors={model.errors}
                     contactID={contactID}
                     userKeysList={userKeysList}
@@ -77,6 +77,9 @@ const ContactDetails = ({ contactID, userKeysList, ...rest }: Props) => {
                     contactGroupsMap={contactGroupsMap}
                     ownAddresses={ownAddresses}
                     onReload={noop}
+                    onEdit={noop}
+                    onExport={noop}
+                    onEmailSettings={noop}
                 />
             )}
         </FormModal>

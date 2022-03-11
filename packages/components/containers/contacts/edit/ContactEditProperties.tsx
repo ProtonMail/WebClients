@@ -2,13 +2,19 @@ import { useCallback, useMemo, forwardRef, Ref } from 'react';
 import { c } from 'ttag';
 import move from '@proton/utils/move';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
-import { ContactPropertyChange, ContactProperties, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
+import { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import { EXACTLY_ONE_MAY_BE_PRESENT, PROPERTIES } from '@proton/shared/lib/contacts/vcard';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
-
-import { Button, Icon, IconName, OrderableContainer, OrderableElement } from '../../components';
-import ContactModalRow from './ContactModalRow';
-import EncryptedIcon from './EncryptedIcon';
+import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import {
+    compareVCardPropertyByPref,
+    compareVCardPropertyByUid,
+    getSortedProperties,
+    getVCardProperties,
+} from '@proton/shared/lib/contacts/properties';
+import { Button, Icon, IconName, OrderableContainer, OrderableElement } from '../../../components';
+import ContactEditProperty from './ContactEditProperty';
+import EncryptedIcon from '../EncryptedIcon';
 
 const ICONS: { [key: string]: IconName } = {
     fn: 'user',
@@ -20,29 +26,29 @@ const ICONS: { [key: string]: IconName } = {
 
 interface Props {
     field?: string;
-    properties: ContactProperties;
     isSignatureVerified: boolean;
-    onChange: (payload: ContactPropertyChange) => void;
-    onOrderChange?: (field: string, orderedProperties: ContactProperties) => void;
+    sortable?: boolean;
     onAdd?: () => void;
     onRemove: (value: string) => void;
     isSubmitted?: boolean;
     contactEmails?: SimpleMap<ContactEmailModel>;
     onContactEmailChange?: (contactEmail: ContactEmailModel) => void;
+    vCardContact: VCardContact;
+    onChangeVCard: (vCardProperty: VCardProperty) => void;
 }
 
-const ContactModalProperties = (
+const ContactEditProperties = (
     {
-        properties: allProperties,
         isSignatureVerified,
         field,
-        onChange,
-        onOrderChange,
+        sortable = false,
         onAdd,
         onRemove,
         isSubmitted = false,
         contactEmails,
         onContactEmailChange,
+        vCardContact,
+        onChangeVCard,
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
@@ -57,41 +63,54 @@ const ContactModalProperties = (
     const title = field ? TITLES[field] : TITLES.other;
     const iconName = field ? ICONS[field] : ICONS.other;
     const fields = field ? [field] : OTHER_INFORMATION_FIELDS;
-    const properties = allProperties.filter(({ field }) => fields.includes(field));
+    const excluded = [
+        getSortedProperties(vCardContact, 'fn')[0]?.uid,
+        getSortedProperties(vCardContact, 'photo')[0]?.uid,
+    ];
+    const properties: VCardProperty[] = getVCardProperties(vCardContact)
+        .filter(({ field }) => fields.includes(field))
+        .filter(({ uid }) => !excluded.includes(uid))
+        .sort((a, b) => {
+            if (fields.length === 1) {
+                return compareVCardPropertyByPref(a, b);
+            }
+            return compareVCardPropertyByUid(a, b);
+        });
+
     const canAdd = !fields.includes('fn');
     const rows = useMemo(() => {
         const isOtherFields = fields === OTHER_INFORMATION_FIELDS;
         const filteredTypes = isOtherFields
             ? properties
-                  .filter((property) => PROPERTIES[property.field].cardinality === EXACTLY_ONE_MAY_BE_PRESENT)
-                  .map((property) => property.field)
+                  .filter(({ field }) => PROPERTIES[field].cardinality === EXACTLY_ONE_MAY_BE_PRESENT)
+                  .map(({ field }) => field)
             : [];
 
         return properties.map((property) => (
-            <ContactModalRow
+            <ContactEditProperty
                 key={property.uid}
                 ref={ref}
                 isSubmitted={isSubmitted}
-                property={property}
-                onChange={onChange}
                 onRemove={onRemove}
-                isOrderable={!!onOrderChange}
+                sortable={sortable}
                 filteredTypes={
                     // Accept the currently set type
                     filteredTypes.filter((type) => property.field !== type)
                 }
                 contactEmail={contactEmails?.[property.value as string]}
                 onContactEmailChange={onContactEmailChange}
+                vCardProperty={property}
+                onChangeVCard={onChangeVCard}
             />
         ));
-    }, [properties, onChange, onRemove, onAdd, !!onOrderChange]);
+    }, [properties, vCardContact, onChangeVCard, onRemove, onAdd, sortable]);
 
     const handleSortEnd = useCallback(
         ({ newIndex, oldIndex }) => {
             const orderedProperties = move(properties, oldIndex, newIndex);
-            if (onOrderChange && field) {
-                onOrderChange(field, orderedProperties);
-            }
+            orderedProperties.forEach((property, index) => {
+                onChangeVCard({ ...property, params: { ...property.params, pref: String(index + 1) } });
+            });
         },
         [properties, field]
     );
@@ -118,7 +137,7 @@ const ContactModalProperties = (
             {field && ['email'].includes(field) && (
                 <span className="text-semibold ml1-5 pl0-25 mb0-5">{c('Info').t`Primary`}</span>
             )}
-            {onOrderChange ? (
+            {sortable ? (
                 <OrderableContainer helperClass="row--orderable" onSortEnd={handleSortEnd} useDragHandle>
                     <div className="mt0-5">
                         {rows.map((row, index) => (
@@ -153,4 +172,4 @@ const ContactModalProperties = (
     );
 };
 
-export default forwardRef(ContactModalProperties);
+export default forwardRef(ContactEditProperties);

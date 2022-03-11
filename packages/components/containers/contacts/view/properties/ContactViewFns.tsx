@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ContactViewFns = ({ vCardContact, isSignatureVerified = false }: Props) => {
-    const fns = getSortedProperties(vCardContact.fn)
+    const fns = getSortedProperties(vCardContact, 'fn')
         // First FN is in the summary
         .slice(1);
 

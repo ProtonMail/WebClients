@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientType from './RecipientType';
 import RecipientItem from './RecipientItem';
@@ -14,6 +15,8 @@ interface Props {
     isPrintModal?: boolean;
     showDropdown?: boolean;
     isOutside?: boolean;
+    onContactDetails: (contactID: string) => void;
+    onContactEdit: (props: ContactEditProps) => void;
 }
 
 const RecipientsDetails = ({
@@ -24,6 +27,8 @@ const RecipientsDetails = ({
     isPrintModal = false,
     showDropdown,
     isOutside,
+    onContactDetails,
+    onContactEdit,
 }: Props) => {
     const { ToList = [], CCList = [], BCCList = [] } = message?.data || {};
 
@@ -38,6 +43,8 @@ const RecipientsDetails = ({
                     isLoading={isLoading}
                     showDropdown={showDropdown}
                     isPrintModal={isPrintModal}
+                    onContactDetails={onContactDetails}
+                    onContactEdit={onContactEdit}
                 />
             ) : (
                 <EORecipientsList list={ToList} isLoading={isLoading} showDropdown={showDropdown} />
@@ -54,6 +61,8 @@ const RecipientsDetails = ({
                     isLoading={isLoading}
                     showDropdown={showDropdown}
                     isPrintModal={isPrintModal}
+                    onContactDetails={onContactDetails}
+                    onContactEdit={onContactEdit}
                 />
             ) : (
                 <EORecipientsList list={CCList} isLoading={isLoading} showDropdown={showDropdown} />
@@ -70,6 +79,8 @@ const RecipientsDetails = ({
                     isLoading={isLoading}
                     showDropdown={showDropdown}
                     isPrintModal={isPrintModal}
+                    onContactDetails={onContactDetails}
+                    onContactEdit={onContactEdit}
                 />
             ) : (
                 <EORecipientsList list={BCCList} isLoading={isLoading} showDropdown={showDropdown} />
@@ -78,7 +89,14 @@ const RecipientsDetails = ({
     );
 
     const undisclosedRecipientsItem = (
-        <RecipientItem recipientOrGroup={{}} isLoading={isLoading} showDropdown={showDropdown} isOutside={isOutside} />
+        <RecipientItem
+            recipientOrGroup={{}}
+            isLoading={isLoading}
+            showDropdown={showDropdown}
+            isOutside={isOutside}
+            onContactDetails={onContactDetails}
+            onContactEdit={onContactEdit}
+        />
     );
 
     return (

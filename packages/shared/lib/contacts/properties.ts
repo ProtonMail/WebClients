@@ -1,10 +1,12 @@
-// Vcard fields for which we keep track of PREF parameter
 import isTruthy from '@proton/utils/isTruthy';
+import generateUID from '../helpers/generateUID';
 import { PublicKeyWithPref } from '../interfaces';
 import { ContactProperties, ContactProperty, ContactValue } from '../interfaces/contacts/Contact';
-import { VCardProperty } from '../interfaces/contacts/VCard';
+import { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
+import { UID_PREFIX } from './constants';
+import { isMultiValue } from './vcard';
 
-const FIELDS_WITH_PREF = ['fn', 'email', 'tel', 'adr', 'key'];
+export const FIELDS_WITH_PREF = ['fn', 'email', 'tel', 'adr', 'key'];
 
 // Clean values starting by "=" to prevent any arbitrary execution if that value ends up in an Excel file
 // https://jira.protontech.ch/browse/SEC-451
@@ -207,18 +209,6 @@ export const getPreferredValue = (properties: ContactProperties, field: string) 
     return filteredProperties.sort(sortByPref)[0].value;
 };
 
-export const getSortedProperties = <T>(properties: VCardProperty<T>[]): VCardProperty<T>[] => {
-    const compare = (a: VCardProperty<T>, b: VCardProperty<T>) => {
-        return (Number(a.params?.pref) || 0) - (Number(b.params?.pref) || 0);
-    };
-
-    return properties.sort(compare);
-};
-
-export const getPreferredPropertyValue = <T>(properties: VCardProperty<T>[]): VCardProperty<T> | undefined => {
-    return getSortedProperties(properties)[0];
-};
-
 /**
  * Extract emails from a vCard contact
  */
@@ -234,4 +224,103 @@ export const getContactEmails = (properties: ContactProperties) => {
                 group,
             };
         });
+};
+
+export const createContactPropertyUid = () => generateUID(UID_PREFIX);
+
+export const getContactPropertyUid = (uid: string) => Number(uid.replace(`${UID_PREFIX}-`, ''));
+
+export const getVCardProperties = (vCardContact: VCardContact): VCardProperty[] => {
+    return Object.values(vCardContact).flatMap((property) => {
+        if (Array.isArray(property)) {
+            return property;
+        } else {
+            return [property];
+        }
+    });
+};
+
+export const fromVCardProperties = (vCardProperties: VCardProperty[]): VCardContact => {
+    const vCardContact: VCardContact = { fn: [] };
+
+    vCardProperties.forEach((property) => {
+        const field = property.field as keyof VCardContact;
+
+        if (isMultiValue(field)) {
+            if (!vCardContact[field]) {
+                vCardContact[field] = [] as any;
+            }
+            (vCardContact[field] as VCardProperty[]).push(property);
+        } else {
+            vCardContact[field] = property as any;
+        }
+    });
+
+    return vCardContact;
+};
+
+export const mergeVCard = (vCardContacts: VCardContact[]): VCardContact => {
+    return fromVCardProperties(vCardContacts.flatMap(getVCardProperties));
+};
+
+export const updateVCardContact = (vCardContact: VCardContact, vCardProperty: VCardProperty) => {
+    const properties = getVCardProperties(vCardContact);
+    const newProperties = properties.map((property) => (property.uid === vCardProperty.uid ? vCardProperty : property));
+    return fromVCardProperties(newProperties);
+};
+
+export const addVCardProperty = (vCardContact: VCardContact, vCardProperty: VCardProperty) => {
+    const properties = getVCardProperties(vCardContact);
+    const newVCardProperty = { ...vCardProperty, uid: createContactPropertyUid() };
+    properties.push(newVCardProperty);
+    const newVCardContact = fromVCardProperties(properties);
+    return { newVCardProperty, newVCardContact };
+};
+
+export const removeVCardProperty = (vCardContact: VCardContact, uid: string) => {
+    let properties = getVCardProperties(vCardContact);
+
+    const match = properties.find((property) => property.uid === uid);
+
+    if (!match) {
+        return vCardContact;
+    }
+
+    properties = properties.filter((property) => property.uid !== uid);
+
+    // If we remove an email with groups attached to it, remove all groups properties too
+    if (match.field === 'email' && match.group !== undefined) {
+        properties = properties.filter((property) => property.group !== match.group);
+    }
+
+    // Never remove the last photo property
+    if (match.field === 'photo') {
+        const photoCount = properties.filter((property) => property.field === 'photo').length;
+        if (photoCount === 0) {
+            properties.push({ field: 'photo', value: '', uid: generateUID(UID_PREFIX) });
+        }
+    }
+
+    return fromVCardProperties(properties);
+};
+
+export const compareVCardPropertyByUid = (a: VCardProperty, b: VCardProperty) => {
+    const aUid = getContactPropertyUid(a.uid);
+    const bUid = getContactPropertyUid(b.uid);
+    return aUid > bUid ? 1 : -1;
+};
+
+export const compareVCardPropertyByPref = (a: VCardProperty, b: VCardProperty) => {
+    const aPref = Number(a.params?.pref);
+    const bPref = Number(b.params?.pref);
+    if (!isNaN(aPref) && !isNaN(bPref) && aPref !== bPref) {
+        return aPref > bPref ? 1 : -1;
+    }
+    return compareVCardPropertyByUid(a, b);
+};
+
+export const getSortedProperties = (vCardContact: VCardContact, field: string) => {
+    return getVCardProperties(vCardContact)
+        .filter((property) => property.field === field)
+        .sort(compareVCardPropertyByPref);
 };

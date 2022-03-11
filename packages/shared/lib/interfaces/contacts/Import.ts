@@ -1,11 +1,4 @@
-import {
-    ContactCard,
-    ContactGroup,
-    ContactMetadata,
-    ContactProperties,
-    ContactProperty,
-    ContactValue,
-} from './Contact';
+import { ContactCard, ContactGroup, ContactProperties, ContactProperty, ContactValue } from './Contact';
 import { VCardKey } from './VCard';
 import { ImportContactError } from '../../contacts/errors/ImportContactError';
 import { ImportFatalError } from '../../contacts/errors/ImportFatalError';
@@ -85,20 +78,6 @@ export interface ImportedContact {
     contactID: string;
     contactEmailIDs: string[];
     categories: { name: string; contactEmailIDs?: string[] }[];
-}
-
-export interface AddContactsApiResponse {
-    Index: number;
-    Response: {
-        Code: number;
-        Contact?: ContactMetadata;
-        Error?: string;
-    };
-}
-
-export interface AddContactsApiResponses {
-    Code: number;
-    Responses: AddContactsApiResponse[];
 }
 
 export interface Combine {

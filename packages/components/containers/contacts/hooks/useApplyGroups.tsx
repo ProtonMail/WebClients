@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
-import { useApi, useContactGroups, useContacts, useEventManager, useModals, useNotifications } from '../../hooks';
-import SelectEmailsModal from './modals/SelectEmailsModal';
+import { useApi, useContactGroups, useContacts, useEventManager, useModals, useNotifications } from '../../../hooks';
+import SelectEmailsModal from '../modals/SelectEmailsModal';
 
 /**
  * Collect contacts having multiple emails

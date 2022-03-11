@@ -9,9 +9,8 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { ContactProperties, ContactMergeModel, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { merge } from '@proton/shared/lib/contacts/helpers/merge';
-
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { mergeVCard } from '@proton/shared/lib/contacts/vcard';
+import { mergeVCard } from '@proton/shared/lib/contacts/properties';
 import { useApi, useLoading, useEventManager, useAddresses, useContactGroups } from '../../../hooks';
 import { Loader, FormModal, PrimaryButton, Button } from '../../../components';
 import ContactView from '../view/ContactView';
@@ -113,13 +112,16 @@ const MergeContactPreview = ({ userKeysList, beMergedModel, beDeletedModel, upda
                     <ContactView
                         vCardContact={model.mergedVCardContact as VCardContact}
                         contactID=""
-                        properties={model.mergedContact as ContactProperties}
+                        // properties={model.mergedContact as ContactProperties}
                         contactEmails={contactEmails}
                         contactGroupsMap={contactGroupsMap}
                         ownAddresses={ownAddresses}
                         userKeysList={userKeysList}
                         onDelete={noop}
                         onReload={noop}
+                        onEdit={noop}
+                        onExport={noop}
+                        onEmailSettings={noop}
                         isPreview
                     />
                 );

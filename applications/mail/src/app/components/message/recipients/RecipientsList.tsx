@@ -1,3 +1,4 @@
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientItem from './RecipientItem';
 import { RecipientOrGroup } from '../../../models/address';
@@ -9,6 +10,8 @@ interface Props {
     showDropdown?: boolean;
     isOutside?: boolean;
     isPrintModal?: boolean;
+    onContactDetails: (contactID: string) => void;
+    onContactEdit: (props: ContactEditProps) => void;
 }
 
 const RecipientsList = ({
@@ -18,6 +21,8 @@ const RecipientsList = ({
     showDropdown,
     isOutside,
     isPrintModal,
+    onContactDetails,
+    onContactEdit,
 }: Props) => {
     return (
         <>
@@ -32,6 +37,8 @@ const RecipientsList = ({
                         isOutside={isOutside}
                         isRecipient={true}
                         isExpanded={true}
+                        onContactDetails={onContactDetails}
+                        onContactEdit={onContactEdit}
                     />
                     {isPrintModal && index < recipientsOrGroup.length - 1 && <span>, </span>}
                 </>

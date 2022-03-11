@@ -10,10 +10,10 @@ import MergeModal from '../merge/MergeModal';
 import ContactsList from '../ContactsList';
 import useContactList from '../useContactList';
 import ContactsWidgetToolbar from './ContactsWidgetToolbar';
-import ContactDeleteModal from '../modals/ContactDeleteModal';
-import ContactModal from '../modals/ContactModal';
+import { ContactDeleteProps } from '../modals/ContactDeleteModal';
+import { ContactEditProps } from '../edit/ContactEditModal';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
-import MergeContactBanner from './MergeContactBanner';
+import MergeContactBanner from '../widget/MergeContactBanner';
 import { CustomAction } from './types';
 
 interface Props {
@@ -21,10 +21,12 @@ interface Props {
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
     onLock: (lock: boolean) => void;
     customActions: CustomAction[];
-    onShowDetails: (contactID: string) => void;
+    onDetails: (contactID: string) => void;
+    onEdit: (props: ContactEditProps) => void;
+    onDelete: (props: ContactDeleteProps) => void;
 }
 
-const ContactsWidgetContainer = ({ onClose, onCompose, onLock, customActions, onShowDetails }: Props) => {
+const ContactsWidgetContainer = ({ onClose, onCompose, onLock, customActions, onDetails, onEdit, onDelete }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [userKeysList, loadingUserKeys] = useUserKeys();
@@ -134,31 +136,42 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onLock, customActions, on
         onClose();
     };
 
-    const handleDetails = (contactID: string) => {
-        // createModal(<ContactDetailsModal contactID={contactID} onMailTo={onMailTo} />);
-        onShowDetails(contactID);
-        // onClose();
-    };
+    // const handleDetails = (contactID: string) => {
+    //     // createModal(<ContactDetailsModal contactID={contactID} onMailTo={onMailTo} />);
+    //     onShowDetails(contactID);
+    //     // onClose();
+    // };
 
     const handleDelete = () => {
         const deleteAll = selectedIDs.length === contacts.length;
-        createModal(
-            <ContactDeleteModal
-                contactIDs={selectedIDs}
-                deleteAll={deleteAll}
-                onDelete={() => {
-                    if (selectedIDs.length === filteredContacts.length) {
-                        setSearch('');
-                    }
-                    handleCheckAll(false);
-                }}
-            />
-        );
+        // createModal(
+        //     <ContactDeleteModal
+        //         contactIDs={selectedIDs}
+        //         deleteAll={deleteAll}
+        //         onDelete={() => {
+        //             if (selectedIDs.length === filteredContacts.length) {
+        //                 setSearch('');
+        //             }
+        //             handleCheckAll(false);
+        //         }}
+        //     />
+        // );
+        onDelete({
+            contactIDs: selectedIDs,
+            deleteAll,
+            onDelete: () => {
+                if (selectedIDs.length === filteredContacts.length) {
+                    setSearch('');
+                }
+                handleCheckAll(false);
+            },
+        });
         onClose();
     };
 
     const handleCreate = () => {
-        createModal(<ContactModal />);
+        // createModal(<ContactEditModal />);
+        onEdit({});
         onClose();
     };
 
@@ -244,7 +257,7 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onLock, customActions, on
                         isDesktop={false}
                         checkedIDs={checkedIDs}
                         onCheck={handleCheck}
-                        onClick={handleDetails}
+                        onClick={onDetails}
                         activateDrag={false}
                     />
                 ) : null}

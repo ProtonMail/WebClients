@@ -2,10 +2,10 @@ import { c } from 'ttag';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
-import { ContactEmail, ContactGroup, ContactProperties, ContactProperty } from '@proton/shared/lib/interfaces/contacts';
+import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import ContactViewProperty from './ContactViewProperty';
 import { ContactViewProperties } from './ContactViewProperties';
-import ContactEmailSettingsModal from '../../modals/ContactEmailSettingsModal';
+import { ContactEmailSettingsProps } from '../../modals/ContactEmailSettingsModal';
 import { Button, Icon, Tooltip, Copy } from '../../../../components';
 import { useUser, useModals, useNotifications } from '../../../../hooks';
 import ContactGroupDropdown from '../../ContactGroupDropdown';
@@ -21,7 +21,8 @@ interface Props {
     ownAddresses: string[];
     userKeysList: DecryptedKey[];
     contactID: string;
-    properties: ContactProperties;
+    // properties: ContactProperties;
+    onEmailSettings: (props: ContactEmailSettingsProps) => void;
 }
 
 const ContactViewEmails = ({
@@ -33,13 +34,14 @@ const ContactViewEmails = ({
     ownAddresses,
     userKeysList,
     contactID,
-    properties,
+    // properties,
+    onEmailSettings,
 }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
 
-    const emails = getSortedProperties(vCardContact.email || []);
+    const emails = getSortedProperties(vCardContact, 'email');
 
     if (emails.length === 0) {
         return null;
@@ -55,18 +57,23 @@ const ContactViewEmails = ({
                         contactEmail.LabelIDs.map((ID) => contactGroupsMap[ID]).filter(Boolean)) ||
                     [];
                 const isOwnAddress = [...ownAddresses].includes(email.value);
-                const emailProperty = properties.find((property) => {
-                    return property.field === 'email' && property.value === email.value;
-                }) as ContactProperty;
+                // const emailProperty = properties.find((property) => {
+                //     return property.field === 'email' && property.value === email.value;
+                // }) as ContactProperty;
+
+                // const handleSettings = () => {
+                //     createModal(
+                //         <ContactEmailSettingsModal
+                //             userKeysList={userKeysList}
+                //             contactID={contactID}
+                //             emailProperty={emailProperty}
+                //             properties={properties}
+                //         />
+                //     );
+                // };
+
                 const handleSettings = () => {
-                    createModal(
-                        <ContactEmailSettingsModal
-                            userKeysList={userKeysList}
-                            contactID={contactID}
-                            emailProperty={emailProperty}
-                            properties={properties}
-                        />
-                    );
+                    onEmailSettings({ contactID, vCardContact, emailProperty: email, userKeysList });
                 };
 
                 return (
