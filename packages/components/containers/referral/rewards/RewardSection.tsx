@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { classnames, Loader, SettingsSectionWide } from '@proton/components';
+import { Loader, SettingsSectionWide, Card } from '@proton/components';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
 import RewardsProgress from './RewardsProgress';
@@ -15,26 +17,40 @@ const RewardSection = () => {
     } = useReferralInvitesContext();
 
     const dedupReferrals = getDeduplicatedReferrals(referrals, invitedReferrals);
+    const appName = getAppName(APPS.PROTONMAIL);
+    const plusPlanName = PLAN_NAMES[PLANS.PLUS];
 
     const showRewardSection = rewards > 0 || total > 0;
+    const reachedRewardLimit = rewards === rewardsLimit && total > 0;
+
+    if (loadingRewards || loadingReferrals) {
+        return <Loader />;
+    }
 
     return (
         <SettingsSectionWide>
-            <p className="color-weak">{c('Description')
-                .t`Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.`}</p>
-
-            {loadingRewards ? (
-                <Loader />
+            {reachedRewardLimit ? (
+                <Card className="text-center mb2">
+                    <strong>{c('Description')
+                        .t`Congratulations! You've earned the maximum of ${rewardsLimit} free months of ${appName} ${plusPlanName}`}</strong>
+                    <br />
+                    {c('Description').t`You can continue to  invite friends, but you wont be able to earn more credits`}
+                </Card>
             ) : (
-                <div className={classnames([showRewardSection && 'border-bottom pb1', 'mb4'])}>
-                    {showRewardSection ? (
-                        <RewardsProgress rewardsLimit={rewardsLimit} rewards={rewards} />
-                    ) : (
-                        <p className="color-weak">{c('Description').t`Track your referral link activities here.`}</p>
-                    )}
+                <p className="color-weak">{c('Description')
+                    .t`Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.`}</p>
+            )}
+
+            {showRewardSection && (
+                <div className="border-bottom pb1 mb4">
+                    <RewardsProgress rewardsLimit={rewardsLimit} rewards={rewards} />
                 </div>
             )}
-            <RewardsTable referrals={dedupReferrals} loading={loadingReferrals} />
+            <RewardsTable
+                referrals={dedupReferrals}
+                hasReachedRewardLimit={reachedRewardLimit}
+                loading={loadingReferrals}
+            />
         </SettingsSectionWide>
     );
 };

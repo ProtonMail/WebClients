@@ -42,6 +42,8 @@ export interface Referral {
     RewardMonths: number | null;
     State: ReferralState;
     InvoiceID: number | null;
+    /** The number of months user subscribed. If monthly will be 1. If yearly will be 12 */
+    ReferredUserSubscriptionCycle: number | null;
 }
 
 export interface ReferralStatus {
