@@ -11,9 +11,10 @@ import { Loader } from '../../../../components';
 interface Props {
     loading: boolean;
     referrals: Referral[];
+    hasReachedRewardLimit: boolean;
 }
 
-const RewardsTable = ({ loading, referrals }: Props) => {
+const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
     if (loading) {
         return <Loader />;
     }
@@ -34,7 +35,11 @@ const RewardsTable = ({ loading, referrals }: Props) => {
                                     <UserCell key={`${referral.ReferralID}-date`} referral={referral} />,
                                     <DateCell key={`${referral.ReferralID}-date`} referral={referral} />,
                                     <ActivityCell key={`${referral.ReferralID}-activity`} referral={referral} />,
-                                    <RewardCell key={`${referral.ReferralID}-reward`} referral={referral} />,
+                                    <RewardCell
+                                        key={`${referral.ReferralID}-reward`}
+                                        referral={referral}
+                                        hasReachedRewardLimit={hasReachedRewardLimit}
+                                    />,
                                 ]}
                             />
                         ))}
