@@ -138,6 +138,10 @@ const SignupContainer = ({ match, history, onLogin }) => {
         setModel(model);
     };
 
+    const handleCaptcha = async (verificationToken) => {
+        await signup(model, { verificationToken });
+    };
+
     const handlePayment = async (model, paymentParameters = {}) => {
         const paymentDetails = await makePayment(model, paymentParameters);
         await withCreateLoading(
@@ -241,6 +245,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
                                     model={model}
                                     allowedMethods={signupAvailability.allowedMethods}
                                     onVerify={(...rest) => withCreateLoading(handleVerification(...rest))}
+                                    onCaptcha={handleCaptcha}
                                     requestCode={requestCode}
                                 >
                                     {selectedPlanComponent}
