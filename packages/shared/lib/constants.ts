@@ -700,6 +700,7 @@ export enum TOKEN_TYPES {
     INVITE = 'invite',
     COUPON = 'coupon',
     PAYMENT = 'payment',
+    CAPTCHA = 'captcha',
 }
 
 export enum MAILBOX_LABEL_IDS {
