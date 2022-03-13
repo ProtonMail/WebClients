@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Row, useLoading, Radio, Label, Field, useMyLocation } from '@proton/components';
+import { Row, useLoading, Radio, Label, Field, Loader, useMyLocation } from '@proton/components';
 import { c } from 'ttag';
+import Captcha from '@proton/components/containers/api/humanVerification/Captcha';
 import { TOKEN_TYPES } from '@proton/shared/lib/constants';
+
 import VerificationEmailInput from './VerificationEmailInput';
 import VerificationPhoneInput from './VerificationPhoneInput';
 
 const VERIFICATION_METHOD = {
     EMAIL: TOKEN_TYPES.EMAIL,
     SMS: TOKEN_TYPES.SMS,
+    CAPTCHA: TOKEN_TYPES.CAPTCHA,
 };
 
-const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
+const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit, onCaptcha }) => {
     const [myLocation, loadingMyLocation] = useMyLocation();
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
@@ -25,6 +28,10 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
         withLoading(onSubmit({ Type: VERIFICATION_METHOD.EMAIL, Destination: { Address } }));
     const handleSendSMSCode = (Phone) =>
         withLoading(onSubmit({ Type: VERIFICATION_METHOD.SMS, Destination: { Phone } }));
+
+    const handleCaptcha = (token) => {
+        withLoading(onCaptcha({ TokenType: VERIFICATION_METHOD.CAPTCHA, Token: token }));
+    };
 
     const handleSelectMethod = (method) => () => setMethod(method);
 
@@ -47,10 +54,18 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
                             ) : null}
                             {isMethodAllowed(VERIFICATION_METHOD.SMS) && (
                                 <Radio
+                                    className="mr1"
                                     name="verificationMethod"
                                     checked={method === VERIFICATION_METHOD.SMS}
                                     onChange={handleSelectMethod(VERIFICATION_METHOD.SMS)}
                                 >{c('Option').t`SMS`}</Radio>
+                            )}
+                            {isMethodAllowed(VERIFICATION_METHOD.CAPTCHA) && (
+                                <Radio
+                                    name="verificationMethod"
+                                    checked={method === VERIFICATION_METHOD.CAPTCHA}
+                                    onChange={handleSelectMethod(VERIFICATION_METHOD.CAPTCHA)}
+                                >{c('Option').t`Captcha`}</Radio>
                             )}
                         </div>
                         <div>
@@ -68,6 +83,15 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
                                     defaultCountry={defaultCountry}
                                 />
                             )}
+                            {method === VERIFICATION_METHOD.CAPTCHA && (
+                                <>
+                                    {loading ? (
+                                        <Loader size="medium" />
+                                    ) : (
+                                        <Captcha token="signup" onSubmit={handleCaptcha} />
+                                    )}
+                                </>
+                            )}
                         </div>
                     </Field>
                 </Row>
@@ -80,6 +104,7 @@ VerificationMethodForm.propTypes = {
     defaultEmail: PropTypes.string.isRequired,
     allowedMethods: PropTypes.arrayOf(PropTypes.string).isRequired,
     onSubmit: PropTypes.func.isRequired,
+    onCaptcha: PropTypes.func.isRequired,
 };
 
 export default VerificationMethodForm;
