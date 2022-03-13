@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import VerificationForm from './VerificationForm/VerificationForm';
 import LoginPanel from '../LoginPanel';
 
-const VerificationStep = ({ onVerify, requestCode, allowedMethods, model, children }) => {
+const VerificationStep = ({ onVerify, onCaptcha, requestCode, allowedMethods, model, children }) => {
     const handleSubmit = async (code, params) => {
         const newEmail = params.Destination.Address;
 
@@ -28,6 +28,7 @@ const VerificationStep = ({ onVerify, requestCode, allowedMethods, model, childr
                         defaultEmail={model.email}
                         onRequestCode={requestCode}
                         onSubmit={handleSubmit}
+                        onCaptcha={onCaptcha}
                     />
                     <LoginPanel />
                 </div>
@@ -43,6 +44,7 @@ VerificationStep.propTypes = {
     }).isRequired,
     allowedMethods: PropTypes.arrayOf(PropTypes.string).isRequired,
     onVerify: PropTypes.func.isRequired,
+    onCaptcha: PropTypes.func.isRequired,
     requestCode: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
 };
