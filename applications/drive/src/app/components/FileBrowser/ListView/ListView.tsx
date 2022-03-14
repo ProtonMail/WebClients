@@ -39,7 +39,6 @@ type ListItemData = {
     type: FileBrowserLayouts;
     isPreview?: boolean;
     isDesktop?: boolean;
-    secondaryActionActive?: boolean;
     getDragMoveControls?: (item: FileBrowserItem) => DragMoveControls;
     ItemContextMenu?: React.FunctionComponent<ItemContextMenuProps>;
 };
@@ -60,7 +59,6 @@ const ListItemRow = ({ index, style, data }: ListItemRowProps) => {
         isPreview,
         type,
         selectItem,
-        secondaryActionActive,
         getDragMoveControls,
         isDesktop,
         ItemContextMenu,
@@ -90,7 +88,6 @@ const ListItemRow = ({ index, style, data }: ListItemRowProps) => {
             onClick={onItemClick}
             columns={columns}
             selectItem={selectItem}
-            secondaryActionActive={secondaryActionActive}
             dragMoveControls={getDragMoveControls?.(item)}
             isPreview={isPreview}
             ItemContextMenu={ItemContextMenu}
@@ -144,16 +141,10 @@ const ListView = <T extends SortField>({
     const containerRef = React.useRef<HTMLDivElement>(null);
     const rect = useElementRect(containerRef, buffer);
 
-    const {
-        secondaryActionActive,
-        isContextMenuOpen,
-        closeContextMenu,
-        contextMenuPosition,
-        handleContextMenu,
-        openContextMenu,
-    } = useFileBrowserView({
-        clearSelections,
-    });
+    const { isContextMenuOpen, closeContextMenu, contextMenuPosition, handleContextMenu, openContextMenu } =
+        useFileBrowserView({
+            clearSelections,
+        });
     const { isDesktop } = useActiveBreakpoint();
     const itemCount = loading ? contents.length + 1 : contents.length;
 
@@ -209,7 +200,6 @@ const ListView = <T extends SortField>({
                             isPreview,
                             type,
                             selectItem,
-                            secondaryActionActive,
                             getDragMoveControls,
                             ItemContextMenu,
                         }}
