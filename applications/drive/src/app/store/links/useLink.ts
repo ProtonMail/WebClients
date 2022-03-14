@@ -27,7 +27,19 @@ export default function useLink() {
 
     const debouncedRequest = useDebouncedRequest();
     const fetchLink = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<EncryptedLink> => {
-        const { Link } = await debouncedRequest<LinkMetaResult>(queryGetLink(shareId, linkId), abortSignal);
+        const { Link } = await debouncedRequest<LinkMetaResult>(
+            {
+                ...queryGetLink(shareId, linkId),
+                // Ignore HTTP errors (e.g. "Not Found", "Unprocessable Entity"
+                // etc). Not every `fetchLink` call relates to a user action
+                // (it might be a helper function for a background job). Hence,
+                // there are potential cases when displaying such messages will
+                // confuse the user. Every higher-level caller should handle it
+                //based on the context.
+                silence: true,
+            },
+            abortSignal
+        );
         return linkMetaToEncryptedLink(Link);
     };
 
