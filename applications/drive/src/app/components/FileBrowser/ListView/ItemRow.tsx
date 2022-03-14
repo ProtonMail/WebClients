@@ -36,7 +36,6 @@ const ItemRow = ({
     onShiftClick,
     columns,
     selectItem,
-    secondaryActionActive,
     dragMoveControls,
     isPreview,
     ItemContextMenu,
@@ -110,7 +109,6 @@ const ItemRow = ({
                 aria-disabled={item.Disabled}
                 className={classnames([
                     'file-browser-list-item flex user-select-none opacity-on-hover-container',
-                    (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) && 'bg-strong',
                     (dragging || item.Disabled) && 'opacity-50',
                 ])}
@@ -245,14 +243,7 @@ export default memo(ItemRow, (a, b) => {
         return true;
     }
 
-    const cheapPropsToCheck: (keyof ItemProps)[] = [
-        'shareId',
-        'secondaryActionActive',
-        'style',
-        'onToggleSelect',
-        'onShiftClick',
-        'onClick',
-    ];
+    const cheapPropsToCheck: (keyof ItemProps)[] = ['shareId', 'style', 'onToggleSelect', 'onShiftClick', 'onClick'];
     const cheapPropsEqual = isEquivalent(pick(a, cheapPropsToCheck), pick(b, cheapPropsToCheck));
 
     if (

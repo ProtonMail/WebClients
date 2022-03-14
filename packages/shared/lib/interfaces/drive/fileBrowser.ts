@@ -62,7 +62,6 @@ export interface ItemProps {
     onShiftClick?: (item: string) => void;
     onClick?: (item: FileBrowserItem) => void;
     columns: ItemRowColumns[];
-    secondaryActionActive?: boolean;
     dragMoveControls?: DragMoveControls;
     isPreview?: boolean;
     ItemContextMenu?: React.FunctionComponent<ItemContextMenuProps>;
