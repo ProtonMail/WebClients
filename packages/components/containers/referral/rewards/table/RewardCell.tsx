@@ -25,8 +25,9 @@ const RewardCell = ({ referral, hasReachedRewardLimit }: Props) => {
             if (!hasReachedRewardLimit) {
                 /*
                  * translator : We are in a table cell.
-                 * A user referee have signed up or completed a subscription
-                 * We show the reward user would be allowed to get.
+                 * A user referee have signed up or completed a subscription.
+                 * "Credits pending" means a variable number of reward. Can be 0, 1 or 3.
+                 * And at this stage we have no variables allowing us to know the amount.
                  */
                 reward = c('Label').t`Credits pending`;
                 textColor = 'warning';
