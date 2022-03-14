@@ -6,9 +6,12 @@
 	font-weight: 200 700;
 	font-style: oblique -14deg 0deg;
 
-	// Specific features for Arizona font
-	// This line has to be here inside the font-face declaration to not be applied on any other fallback font
-	font-feature-settings: 'ss02', 'ss03', 'ss04';
+	/*
+	 * Specific features for Arizona font
+	 * This line has to be here inside the font-face declaration to not be applied on any other fallback font
+	 * Edit: we remove this line as Dinamo studio has define those settings by default for us.
+	 */
+	// font-feature-settings: 'ss02', 'ss03', 'ss04';
 
 	font-display: swap;
 	src: url(../../assets/fonts/ABCArizonaSansVariable.woff2) format('woff2-variations'),
