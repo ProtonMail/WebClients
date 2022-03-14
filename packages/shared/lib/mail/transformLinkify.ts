@@ -1,14 +1,17 @@
 import LinkifyIt from 'linkify-it';
-import { htmlEntities } from '../string';
 
 const linkifyInstance = new LinkifyIt();
 
-// Reference Angular/src/helpers/linkifyHelper.js
+const htmlEntities = (str = '') => {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+};
 
 /**
- * Auto link content.
+ * Convert plain text content with links to content with html links
+ * Input : `hello http://www.protonmail.com`
+ * Output : `hello <a target="_blank" rel="noreferrer nofollow noopener" href="http://protonmail.com">http://protonmail.com</a>`
  */
-export const transformLinkify = (content = '') => {
+export const transformLinkify = (content = '', target = '_blank', rel = 'noreferrer nofollow noopener') => {
     const matches = linkifyInstance.match(content);
 
     if (!matches) {
@@ -20,10 +23,10 @@ export const transformLinkify = (content = '') => {
         if (last < match.index) {
             result.push(htmlEntities(content.slice(last, match.index)));
         }
-        result.push('<a target="_blank" rel="noreferrer nofollow noopener" href="');
-        result.push(htmlEntities(match.url));
+        result.push(`<a target="${target}" rel="${rel}" href="`);
+        result.push(match.url);
         result.push('">');
-        result.push(htmlEntities(match.text));
+        result.push(match.text);
         result.push('</a>');
 
         last = match.lastIndex;

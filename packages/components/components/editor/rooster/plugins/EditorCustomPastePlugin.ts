@@ -1,8 +1,8 @@
 /* eslint-disable class-methods-use-this */
 import { BeforePasteEvent, EditorPlugin, IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
 import { wrap } from 'roosterjs-editor-dom';
+import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 
-import { linkify } from '../helpers/linkify';
 import { EMBEDDABLE_TYPES } from '../../constants';
 
 /**
@@ -90,7 +90,7 @@ class EditorCustomPastePlugin implements EditorPlugin {
                 .replace(/\r/g, '')
                 .replace(/ {2}/g, ' ' + NBSP_HTML);
             const span = document.createElement('span');
-            span.innerHTML = linkify(line);
+            span.innerHTML = transformLinkify(line);
 
             // There are 3 scenarios:
             // 1. Single line: Paste as it is
