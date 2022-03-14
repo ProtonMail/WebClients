@@ -353,6 +353,7 @@ const MessageView = (
                         toggleOriginalMessage={toggleOriginalMessage}
                         onMessageReady={onMessageReady}
                         highlightKeywords={highlightKeywords}
+                        parentMessageRef={elementRef}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
                 </>
