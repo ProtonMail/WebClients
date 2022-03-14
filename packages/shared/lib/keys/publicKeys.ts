@@ -5,6 +5,7 @@ import { canonizeEmailByGuess, canonizeInternalEmail } from '../helpers/email';
 import { toBitMap } from '../helpers/object';
 import { ApiKeysConfig, ContactPublicKeyModel, ProcessedApiKey, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
 import { hasBit } from '../helpers/bitset';
+import { getKeyHasFlagsToEncrypt } from './keyFlags';
 
 const { TYPE_INTERNAL } = RECIPIENT_TYPES;
 
@@ -21,7 +22,7 @@ export const getIsInternalUser = ({ RecipientType }: ApiKeysConfig): boolean => 
  * Test if no key is enabled
  */
 export const isDisabledUser = (config: ApiKeysConfig): boolean =>
-    getIsInternalUser(config) && !config.publicKeys.some(({ flags }) => hasBit(flags, KEY_FLAG.FLAG_NOT_OBSOLETE));
+    getIsInternalUser(config) && config.publicKeys.every(({ flags }) => !getKeyHasFlagsToEncrypt(flags));
 
 export const getEmailMismatchWarning = (publicKey: OpenPGPKey, emailAddress: string, isInternal: boolean): string[] => {
     const canonicalEmail = isInternal ? canonizeInternalEmail(emailAddress) : canonizeEmailByGuess(emailAddress);
