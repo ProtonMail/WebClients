@@ -426,23 +426,7 @@
 	&--is-maximized {
 		@include respond-to($breakpoint-medium-landscape, 'min') {
 			.message-attachmentList-item-container {
-				inline-size: 33%;
-
-				&:first-child,
-				&:nth-child(2),
-				&:nth-child(3) {
-					margin-block-start: 0;
-				}
-				&:nth-child(even) {
-					padding-inline-start: 0;
-				}
-				&:nth-child(odd) {
-					padding-inline-end: 0;
-				}
-				&:nth-child(3n-1),
-				&:nth-child(3n) {
-					padding-inline-start: 1em;
-				}
+				inline-size: calc((100% / 3) - (1em / 3));
 			}
 		}
 	}

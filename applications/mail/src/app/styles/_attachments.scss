@@ -44,8 +44,6 @@
 }
 
 .message-attachmentList-item-container {
-	margin-block-start: 0.5em;
-	margin-inline-end: 0.5em;
 	max-inline-size: calc(50% - 0.5em); // max 2 per line in case of very long filenames
 }
 
