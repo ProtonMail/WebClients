@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 import { useEffect, useState, useMemo } from 'react';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
+import { hasToSkipProxy } from '../../helpers/message/messageRemotes';
 
 export interface Tracker {
     name: string;
@@ -71,6 +72,11 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
 
     const { trackers, numberOfTrackers } = useMemo(() => getTrackers(message), [message]);
 
+    const hasFailLoadSomeImgThroughProxy =
+        message.messageImages?.hasRemoteImages &&
+        (message.messageImages.showRemoteImages || true) &&
+        hasToSkipProxy(message.messageImages?.images);
+
     /*
      * If email protection is OFF and we do not load the image automatically, the user is aware about the need of protection.
      * From our side, we want to inform him that he can also turn on protection mode in the settings.
@@ -78,33 +84,37 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
     const needsMoreProtection = !hasProtection && !hasShowImage;
 
     useEffect(() => {
-        let title;
-        let modalText;
+        let nextTitle;
+        let nextModalText;
 
         if (needsMoreProtection) {
-            title = c('Info').t`Email tracker protection is disabled`;
-            modalText = c('Info')
+            nextTitle = c('Info').t`Email tracker protection is disabled`;
+            nextModalText = c('Info')
                 .t`Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.`;
         } else if (hasProtection && numberOfTrackers === 0) {
-            title = c('Info').t`No email trackers found`;
-            modalText = c('Info')
+            nextTitle = hasFailLoadSomeImgThroughProxy
+                ? c('Info').t`No trackers found, but some images could not be loaded with tracking protection`
+                : c('Info').t`No email trackers found`;
+            nextModalText = c('Info')
                 .t`Email trackers can violate your privacy. Proton did not find any trackers on this message.`;
         } else {
-            title = c('Info').ngettext(
+            nextTitle = c('Info').ngettext(
                 msgid`${numberOfTrackers} email tracker blocked`,
                 `${numberOfTrackers} email trackers blocked`,
                 numberOfTrackers
             );
-            modalText = c('Info').ngettext(
+            nextModalText = c('Info').ngettext(
                 msgid`Email trackers can violate your privacy. Proton found and blocked ${numberOfTrackers} tracker.`,
                 `Email trackers can violate your privacy. Proton found and blocked ${numberOfTrackers} trackers.`,
                 numberOfTrackers
             );
         }
 
-        setTitle(title);
-        setModalText(modalText);
-    }, [numberOfTrackers, needsMoreProtection, hasProtection, isDetails]);
+        if (nextTitle !== title || nextModalText !== modalText) {
+            setTitle(nextTitle);
+            setModalText(nextModalText);
+        }
+    }, [numberOfTrackers, needsMoreProtection, hasProtection, isDetails, hasFailLoadSomeImgThroughProxy]);
 
     return { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title, modalText, trackers };
 };
