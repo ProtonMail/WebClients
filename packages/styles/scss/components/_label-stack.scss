@@ -1,9 +1,10 @@
 .label-stack {
 	--item-wide: 10em;
-	--item-narrow: 1.25em;
+	--item-narrow: 1.5em;
 	--item-scale: 0.7;
 
-	font-weight: var(--font-weight-normal); // Overrides when unread email context
+	font-size: em(12);
+	font-weight: var(--font-weight-semibold); // Overrides when unread email context
 
 	&.max-w100 {
 		--item-wide: 100%;
@@ -12,7 +13,7 @@
 	&-item,
 	&-overflow-count {
 		border-radius: 1em;
-		line-height: 1;
+		line-height: 1.5;
 	}
 
 	&-item {
@@ -28,17 +29,31 @@
 		&-button {
 			// values are "magic ones" for optically
 			// centering best as we could to Fit ALL cases (emoji/lowercase/etc.)
-			padding-block: em(1) em(2.4);
-			padding-inline: 0.5em;
+			// padding-block: em(1, 12) em(2.4, 12);
+			padding-inline: em(8, 12);
 			text-align: start;
 		}
 
 		&-delete {
 			margin-inline-end: 0.5em;
+			padding: 1px;
+
+			&:hover {
+				background: rgb(0 0 0 / 0.1);
+				border-radius: 2px;
+			}
 
 			& &-icon {
 				display: block;
 			}
+		}
+
+		&:hover {
+			background-color: var(--hover, var(--background-strong));
+		}
+
+		&:active {
+			background-color: var(--active, var(--background-strong));
 		}
 	}
 
@@ -57,13 +72,6 @@
 
 	&:not(.is-stacked) {
 		margin: -0.125em;
-
-		.label-stack-item {
-			&:hover,
-			&:focus-within {
-				box-shadow: var(--shadow-norm);
-			}
-		}
 	}
 
 	&.is-stacked {
@@ -116,7 +124,7 @@
 			&:hover,
 			&:focus-within {
 				.label-stack-item {
-					// Avoid gitch effect on first-child
+					// Avoid glitch effect on first-child
 					&:first-child:not(:hover):not(:focus-within) {
 						--button-opacity: 0;
 						max-inline-size: var(--item-narrow);
