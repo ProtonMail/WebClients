@@ -181,9 +181,9 @@ export const getSupportedTimezone = (tzid: string): string | undefined => {
         }
         // It might be a globally unique timezone identifier, whose specification is not addressed by the RFC.
         // We try to match it with one of our supported list by brute force. We should fall here rarely
-        const lowerCaseTzid = tzid.toLowerCase();
+        const lowerCaseStrippedTzid = strippedTzid.toLowerCase();
         const supportedTimezone = SUPPORTED_TIMEZONES_LIST.find((supportedTzid) =>
-            lowerCaseTzid.includes(supportedTzid.toLowerCase())
+            lowerCaseStrippedTzid.includes(supportedTzid.toLowerCase())
         );
         if (supportedTimezone) {
             return supportedTimezone;
@@ -193,7 +193,7 @@ export const getSupportedTimezone = (tzid: string): string | undefined => {
         // some alias names have overlap (e.g. GB-Eire and Eire). To find the longest match, we sort them by decreasing length
         const sortedAlias = Object.keys(aliasMap).sort((a: string, b: string) => b.length - a.length);
         for (const alias of sortedAlias) {
-            if (lowerCaseTzid.includes(alias.toLowerCase())) {
+            if (lowerCaseStrippedTzid.includes(alias.toLowerCase())) {
                 return aliasMap[alias];
             }
         }
