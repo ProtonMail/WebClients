@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import {
     Transfer,
@@ -88,13 +88,20 @@ function useStatsHistory(transfers: Transfer[], getTransferProgresses: () => Tra
 
         setStatsHistory((prev) => {
             const lastStats = (id: string) => prev[0]?.stats[id] || {};
+
+            // With a lot of uploads the interval is not called in precise
+            // time and to compute correct speed we need to have accurate
+            // difference from the last check.
+            const lastTimestamp = prev[0]?.timestamp || new Date();
+            const intervalSinceLastCheck = timestamp.getTime() - lastTimestamp.getTime();
+
             const stats = Object.entries(transferProgresses).reduce(
                 (stats, [id, progress]) => ({
                     ...stats,
                     [id]: {
-                        // get speed snapshot based on bytes downloaded since last update
+                        // get speed snapshot based on bytes uploaded/downloaded since last update
                         speed: lastStats(id).active
-                            ? (transferProgresses[id] - lastStats(id).progress) * (1000 / PROGRESS_UPDATE_INTERVAL)
+                            ? (transferProgresses[id] - lastStats(id).progress) * (1000 / intervalSinceLastCheck)
                             : 0,
                         active: getTransfer(id)?.state === TransferState.Progress,
                         progress,
@@ -107,23 +114,44 @@ function useStatsHistory(transfers: Transfer[], getTransferProgresses: () => Tra
         });
     };
 
-    useEffect(() => {
-        updateStats();
+    const runUpdateStatsJob = useRunPeriodicJobOnce(updateStats, PROGRESS_UPDATE_INTERVAL);
 
+    useEffect(() => {
         const transfersInProgress = transfers.filter(isTransferProgress);
         if (!transfersInProgress.length) {
             return;
         }
 
-        const int = setInterval(updateStats, PROGRESS_UPDATE_INTERVAL);
+        const stop = runUpdateStatsJob();
         return () => {
             // When transfer is paused, progress is updated a bit later.
             // Therefore we need to update stats even few ms after nothing
             // is in progress.
-            setTimeout(updateStats, PROGRESS_UPDATE_INTERVAL);
-            clearInterval(int);
+            setTimeout(stop, PROGRESS_UPDATE_INTERVAL);
         };
     }, [transfers]);
 
     return statsHistory;
+}
+
+function useRunPeriodicJobOnce(job: () => void, interval: number): () => () => void {
+    // The job will be running until there is any caller requesting it.
+    const numOfCallers = useRef(0);
+
+    return () => {
+        numOfCallers.current++;
+        if (numOfCallers.current === 1) {
+            const timer = setInterval(() => {
+                if (numOfCallers.current === 0) {
+                    clearInterval(timer);
+                    return;
+                }
+                job();
+            }, interval);
+            job();
+        }
+        return () => {
+            numOfCallers.current--;
+        };
+    };
 }
