@@ -33,7 +33,7 @@ export const getMailAppRoutes = ({
         header: MAIL_APP_NAME,
         routes: {
             general: <SectionConfig>{
-                text: c('Title').t`General`,
+                text: c('Title').t`Messages and composing`,
                 to: '/general',
                 icon: 'grid',
                 subsections: [
@@ -43,8 +43,16 @@ export const getMailAppRoutes = ({
                         available: getShowPmMeSection(user, addresses),
                     },
                     {
+                        text: c('Title').t`General`,
+                        id: 'general',
+                    },
+                    {
                         text: c('Title').t`Messages`,
                         id: 'messages',
+                    },
+                    {
+                        text: c('Title').t`Composing`,
+                        id: 'composing',
                     },
                 ],
             },
@@ -87,10 +95,6 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`Layout`,
                         id: 'layout',
-                    },
-                    {
-                        text: c('Title').t`Other`,
-                        id: 'other',
                     },
                 ],
             },

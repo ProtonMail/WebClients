@@ -1,44 +1,38 @@
 import { c } from 'ttag';
 import {
-    updateViewMode,
-    updateStickyLabels,
     updateDraftType,
     updateRightToLeft,
     updateFontFace,
     updateFontSize,
 } from '@proton/shared/lib/api/mailSettings';
-import { VIEW_MODE, MIME_TYPES, RIGHT_TO_LEFT, STICKY_LABELS } from '@proton/shared/lib/constants';
+import { MIME_TYPES, RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
 
-import { Label, Info } from '../../components';
+import { Info, Label } from '../../components';
 import { useEventManager, useMailSettings, useNotifications, useApi, useLoading } from '../../hooks';
 import DraftTypeSelect from './DraftTypeSelect';
 import TextDirectionSelect from './TextDirectionSelect';
-import ViewModeToggle from './ViewModeToggle';
-import StickyLabelsToggle from './StickyLabelsToggle';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import FontFaceSelect from './FontFaceSelect';
 import FontSizeSelect from './FontSizeSelect';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/constants';
+import DelaySendSecondsSelect from '../messages/DelaySendSecondsSelect';
 
-const AppearanceOtherSection = () => {
+const MessagesOtherSection = () => {
     const api = useApi();
     const [
         {
-            ViewMode = 0,
-            StickyLabels = 0,
             DraftMIMEType = MIME_TYPES.DEFAULT,
             RightToLeft = 0,
             FontFace = DEFAULT_FONT_FACE,
             FontSize = DEFAULT_FONT_SIZE,
+            DelaySendSeconds = 10,
         } = {},
     ] = useMailSettings();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
 
-    const [loadingViewMode, withLoadingViewMode] = useLoading();
-    const [loadingStickyLabels, withLoadingStickyLabels] = useLoading();
     const [loadingDraftType, withLoadingDraftType] = useLoading();
     const [loadingRightToLeft, withLoadingRightToLeft] = useLoading();
     const [loadingFontFace, withLoadingFontFace] = useLoading();
@@ -46,23 +40,8 @@ const AppearanceOtherSection = () => {
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
-    const handleToggleStickyLabels = async (value: number) => {
-        await api(updateStickyLabels(value));
-        await call();
-        notifyPreferenceSaved();
-    };
-
     const handleChangeDraftType = async (value: MIME_TYPES) => {
         await api(updateDraftType(value));
-        await call();
-        notifyPreferenceSaved();
-    };
-
-    const handleChangeViewMode = async (mode: VIEW_MODE) => {
-        if (mode === VIEW_MODE.SINGLE) {
-            await api(updateStickyLabels(STICKY_LABELS.OFF));
-        }
-        await api(updateViewMode(mode));
         await call();
         notifyPreferenceSaved();
     };
@@ -87,50 +66,6 @@ const AppearanceOtherSection = () => {
 
     return (
         <>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="viewMode" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Conversation grouping`}</span>
-                        <Info
-                            title={c('Tooltip')
-                                .t`Group emails in the same conversation together in your Inbox or display them separately.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-
-                <SettingsLayoutRight className="pt0-5">
-                    <ViewModeToggle
-                        id="viewMode"
-                        viewMode={ViewMode}
-                        loading={loadingViewMode}
-                        onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
-                        data-testid="appearance:conversation-group-toggle"
-                    />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="stickyLabelsToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Use sticky labels`}</span>
-                        <Info
-                            title={c('Tooltip')
-                                .t`When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
-                    <StickyLabelsToggle
-                        id="stickyLabelsToggle"
-                        stickyLabels={StickyLabels}
-                        loading={loadingStickyLabels}
-                        onToggle={(value) => withLoadingStickyLabels(handleToggleStickyLabels(value))}
-                        data-testid="appearance:sticky-labels-toggle"
-                        disabled={ViewMode !== VIEW_MODE.GROUP}
-                    />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <Label htmlFor="draftType" className="text-semibold">
@@ -190,8 +125,23 @@ const AppearanceOtherSection = () => {
                     </div>
                 </SettingsLayoutRight>
             </SettingsLayout>
+
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="delaySendSecondsSelect" className="text-semibold">
+                        <span className="mr0-5">{c('Label').t`Undo send`}</span>
+                        <Info
+                            title={c('Tooltip')
+                                .t`This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.`}
+                        />
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight>
+                    <DelaySendSecondsSelect id="delaySendSecondsSelect" delaySendSeconds={DelaySendSeconds} />
+                </SettingsLayoutRight>
+            </SettingsLayout>
         </>
     );
 };
 
-export default AppearanceOtherSection;
+export default MessagesOtherSection;
