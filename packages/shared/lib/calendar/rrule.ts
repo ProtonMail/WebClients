@@ -14,6 +14,7 @@ import {
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
     VcalDaysKeys,
+    VcalRruleFreqValue,
     VcalRruleProperty,
     VcalRrulePropertyValue,
     VcalVeventComponent,
@@ -53,11 +54,16 @@ export const getDayAndSetpos = (byday?: string, bysetpos?: number) => {
     return result;
 };
 
-export const getRruleValue = (rrule: VcalRruleProperty | undefined) => {
+export const getRruleValue = (rrule?: VcalRruleProperty) => {
     if (!rrule) {
         return;
     }
     return { ...rrule.value };
+};
+
+const getSupportedFreq = (freq: VcalRruleFreqValue): freq is 'DAILY' | 'WEEKLY' | 'MONTHLY' | 'YEARLY' => {
+    const supportedFreqs = ['DAILY', 'WEEKLY', 'MONTHLY', 'YEARLY'];
+    return freq ? supportedFreqs.includes(freq) : false;
 };
 
 export const getSupportedRruleProperties = (rrule: VcalRrulePropertyValue, isInvitation = false) => {
@@ -214,10 +220,18 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isIn
     if (!rruleProperty) {
         return false;
     }
-    if (getHasUnsupportedProperties(rruleProperty, isInvitation)) {
+    const hasUnsupportedProperties = getHasUnsupportedProperties(rruleProperty, isInvitation);
+    if (hasUnsupportedProperties) {
         return false;
     }
     const { freq, interval = 1, count, until, byday, bysetpos, bymonthday, bymonth, byyearday } = rruleProperty;
+    const supportedFreq = getSupportedFreq(freq);
+    if (!supportedFreq) {
+        return false;
+    }
+    if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
+        return false;
+    }
     if (count) {
         if (count > (isInvitation ? FREQUENCY_COUNT_MAX_INVITATION : FREQUENCY_COUNT_MAX)) {
             return false;
@@ -234,20 +248,20 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isIn
         }
     }
     if (freq === 'DAILY') {
-        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
-            return false;
+        if (isInvitation) {
+            return !hasUnsupportedProperties;
         }
         return true;
     }
     if (freq === 'WEEKLY') {
-        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
-            return false;
+        if (isInvitation) {
+            return !hasUnsupportedProperties;
         }
         return true;
     }
     if (freq === 'MONTHLY') {
-        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
-            return false;
+        if (isInvitation) {
+            return !hasUnsupportedProperties;
         }
         if (isLongArray(byday) || isLongArray(bysetpos) || isLongArray(bymonthday)) {
             return false;
@@ -263,16 +277,13 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isIn
         return true;
     }
     if (freq === 'YEARLY') {
-        if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
-            return false;
-        }
         if (isInvitation) {
             if (bymonthday && !bymonth) {
                 // These RRULEs are problematic as ICAL.js does not expand them properly.
                 // The API will reject them, so we want to block them as well
                 return false;
             }
-            return true;
+            return !hasUnsupportedProperties;
         }
         if (isLongArray(bymonthday) || isLongArray(bymonth) || isLongArray(byyearday)) {
             return false;
