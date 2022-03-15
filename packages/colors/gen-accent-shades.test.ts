@@ -10,18 +10,18 @@ describe('genAccentShades', () => {
 
         expect(output.map(getOriginal)).toEqual([
             { h: 240, s: 1, l: 0.75 },
-            { h: 234, s: 0.9, l: 0.65 },
-            { h: 232, s: 0.9, l: 0.58 },
+            { h: 240, s: 0.95, l: 0.65 },
+            { h: 240, s: 0.95, l: 0.58 },
         ]);
     });
 
     it("doesn't allow values to drop below 0", () => {
-        const output = genAccentShades(tinycolor({ h: 5, s: 5, l: 5 }));
+        const output = genAccentShades(tinycolor({ h: 100, s: 0.01, l: 0.01 }));
 
         expect(output.map(getOriginal)).toEqual([
-            { h: 5, s: 5, l: 5 },
-            { h: 0, s: 0, l: 0 },
-            { h: 0, s: 0, l: 0 },
+            { h: 100, s: 0.01, l: 0.01 },
+            { h: 100, s: 0, l: 0 },
+            { h: 100, s: 0, l: 0 },
         ]);
     });
 });
