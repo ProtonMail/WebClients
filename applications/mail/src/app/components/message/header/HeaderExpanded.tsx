@@ -232,7 +232,7 @@ const HeaderExpanded = ({
     return (
         <div
             className={classnames([
-                'message-header mx1-25 message-header-expanded',
+                'message-header px1-25 message-header-expanded',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 !messageLoaded && 'is-loading',
                 showDetails ? 'message-header-expanded--with-details' : 'message-header-expanded--without-details',
