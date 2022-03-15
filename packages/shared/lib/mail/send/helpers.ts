@@ -5,7 +5,7 @@ import { AttachmentDirect } from '../../interfaces/mail/crypto';
 /**
  * Remove '; name=' and '; filename=' values
  */
-const extractContentValue = (value = '') => {
+export const extractContentValue = (value = '') => {
     const semicolonIndex = value.indexOf(';');
     if (semicolonIndex === -1) {
         return value;
