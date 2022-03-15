@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { APP_NAMES, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { Address as tsAddress, UserType } from '@proton/shared/lib/interfaces';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { queryAddresses } from '@proton/shared/lib/api/addresses';
@@ -23,7 +23,6 @@ import {
 import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
 
 import BackButton from '../public/BackButton';
-import { getToAppName } from '../public/helper';
 import LoginForm from './LoginForm';
 import Header from '../public/Header';
 import Content from '../public/Content';
@@ -38,11 +37,12 @@ import GenerateInternalAddressStep, { InternalAddressGeneration } from './Genera
 interface Props {
     onLogin: OnLoginCallback;
     shouldSetupInternalAddress?: boolean;
-    toApp?: APP_NAMES;
+    toAppName: string;
+    showContinueTo?: boolean;
     onBack?: () => void;
 }
 
-const LoginContainer = ({ onLogin, onBack, toApp, shouldSetupInternalAddress }: Props) => {
+const LoginContainer = ({ onLogin, onBack, toAppName, showContinueTo, shouldSetupInternalAddress }: Props) => {
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
 
@@ -122,7 +122,6 @@ const LoginContainer = ({ onLogin, onBack, toApp, shouldSetupInternalAddress }: 
         }
     };
 
-    const toAppName = getToAppName(toApp);
     const mailAppName = getAppName(APPS.PROTONMAIL);
 
     const cache = cacheRef.current;
@@ -145,6 +144,7 @@ const LoginContainer = ({ onLogin, onBack, toApp, shouldSetupInternalAddress }: 
                     />
                     <Content>
                         <LoginForm
+                            signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                             defaultUsername={previousUsernameRef.current}
                             onSubmit={async ({ username, password, payload, persistent }) => {
                                 return handleLogin({
