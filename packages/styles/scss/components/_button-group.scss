@@ -105,6 +105,13 @@
 		&.button-for-icon {
 			padding: em(6);
 		}
+
+		&[disabled],
+		&.is-disabled {
+			&:not([aria-busy='true']) {
+				background-color: var(--button-default-background-color, transparent);
+			}
+		}
 	}
 
 	// small
