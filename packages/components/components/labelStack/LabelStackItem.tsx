@@ -1,6 +1,10 @@
 import { MouseEvent } from 'react';
 import { c } from 'ttag';
+import tinycolor from 'tinycolor2';
+
 import { COLORS } from '@proton/shared/lib/calendar/constants';
+import { genAccentShades } from '@proton/colors';
+
 import { Dropdown, DropdownMenu, DropdownMenuButton } from '../dropdown';
 import { LabelDescription } from './LabelStack';
 import { usePopperAnchor } from '../popper';
@@ -39,13 +43,17 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
         }
     };
 
+    const [base, hover, active] = genAccentShades(tinycolor(label.color)).map((c) => c.toHexString());
+
     return (
         <li
             className="label-stack-item flex flex-row flex-align-items-center flex-justify-start flex-nowrap"
             style={
                 label.color
                     ? {
-                          '--background': label.color,
+                          '--background': base,
+                          '--hover': hover,
+                          '--active': active,
                           // TODO: Use white for now, re-introduce the readability calculation as soon as possible
                           '--foreground': COLORS.WHITE,
                       }
