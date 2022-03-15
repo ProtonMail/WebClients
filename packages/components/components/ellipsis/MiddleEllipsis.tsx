@@ -56,7 +56,7 @@ const MiddleEllipsis = ({
             <span
                 aria-label={text}
                 title={displayTitle ? text : undefined}
-                className={classnames(['inline-flex flex-nowrap mw100', className])}
+                className={classnames(['inline-flex flex-nowrap max-w100', className])}
                 dir={direction}
                 {...rest}
             >

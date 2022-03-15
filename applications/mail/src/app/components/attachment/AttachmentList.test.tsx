@@ -18,7 +18,6 @@ const props = {
     primaryAction: AttachmentAction.Download,
     secondaryAction: AttachmentAction.Remove,
     collapsable: true,
-    showDownloadAll: false,
     onRemoveAttachment: jest.fn(),
     onRemoveUpload: jest.fn(),
 };
