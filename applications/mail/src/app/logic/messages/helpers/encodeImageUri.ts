@@ -1,5 +1,6 @@
 const encodeImageUri = (url: string) => {
-    return encodeURI(decodeURI(url));
+    // Only replace spaces for the moment
+    return url.trim().replaceAll(' ', '%20');
 };
 
 export default encodeImageUri;
