@@ -1,4 +1,4 @@
-import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
@@ -403,6 +403,85 @@ END:VCALENDAR`;
                 icsFileName: 'test.ics',
             })
         ).resolves.not.toThrow();
+    });
+
+    test('should reformat break lines properly', async () => {
+        const invitation = `BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20220111
+DTEND;VALUE=DATE:20220112
+DTSTAMP:20210108T113223Z
+ORGANIZER:mailto:orgo@protonmail.com
+UID:case5544646879321797797898799
+X-MICROSOFT-CDO-OWNERAPPTID:-1089749046
+ATTENDEE;CN=att1@protonmail.com;CUTYPE=INDIVIDUAL;EMAIL=att1@protonmail.com;RSVP=TRUE;PARTSTAT=NEEDS-ACTION:/aMjk2MDIzMDQ4Mjk2MDI
+zMIZjbeHD-pCEmJU6loV23jx6n2nXhXA9yXmtoE4a87979dmv46466/principal/
+ATTENDEE;CN=att2@pm.me;CUTYPE=INDIVIDUAL;EMAIL=att2@pm.me;RSVP=TRUE;PARTSTAT=NEEDS-ACTION:/aMjk2MDIzMDQ4Mjk2MDI
+zMIZjbeHD-pCEmJU6loV23jx6n2nXhXA9yXmtoE4ad7879mv67/principal/
+CREATED:20210108T113222Z
+DESCRIPTION:Extracting attendee
+LAST-MODIFIED:20210108T113222Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Attendees - 6 invited apple 2
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR`;
+        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+        const message = { Time: Math.round(Date.now() / 1000) } as Message;
+        expect(
+            await getSupportedEventInvitation({
+                vcalComponent: parsedInvitation,
+                message,
+                icsBinaryString: invitation,
+                icsFileName: 'test.ics',
+            })
+        ).toMatchObject({
+            method: 'REQUEST',
+            vevent: {
+                component: 'vevent',
+                uid: { value: 'case5544646879321797797898799' },
+                dtstamp: {
+                    value: { year: 2021, month: 1, day: 8, hours: 11, minutes: 32, seconds: 23, isUTC: true },
+                },
+                dtstart: {
+                    value: { year: 2022, month: 1, day: 11 },
+                    parameters: { type: 'date' },
+                },
+                summary: { value: 'Attendees - 6 invited apple 2' },
+                description: { value: 'Extracting attendee' },
+                sequence: { value: 0 },
+                organizer: { value: 'mailto:orgo@protonmail.com' },
+                attendee: [
+                    {
+                        value: 'mailto:att1@protonmail.com',
+                        parameters: {
+                            cn: 'att1@protonmail.com',
+                            rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                            partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+                        },
+                    },
+                    {
+                        value: 'mailto:att2@pm.me',
+                        parameters: {
+                            cn: 'att2@pm.me',
+                            rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                            partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+                        },
+                    },
+                ],
+            },
+            vtimezone: parsedInvitation.components?.find((component) => getIsTimezoneComponent(component)),
+            originalVcalInvitation: parsedInvitation,
+            originalUniqueIdentifier: 'case5544646879321797797898799',
+            hasMultipleVevents: false,
+            fileName: 'test.ics',
+        });
     });
 });
 
