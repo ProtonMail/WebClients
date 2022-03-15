@@ -5,11 +5,12 @@ import {
     useAddresses,
     ThemesSection,
     LayoutsSection,
-    AppearanceOtherSection,
+    MessagesOtherSection,
     IdentitySection,
     AddressesSection,
     PmMeSection,
     MessagesSection,
+    MessagesGeneralSection,
     FoldersSection,
     LabelsSection,
     FiltersSection,
@@ -59,7 +60,9 @@ const MailSettingsRouter = ({
                 ) : (
                     <PrivateMainSettingsArea location={location} config={general}>
                         <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
+                        <MessagesGeneralSection />
                         <MessagesSection />
+                        <MessagesOtherSection />
                     </PrivateMainSettingsArea>
                 )}
             </Route>
@@ -74,7 +77,6 @@ const MailSettingsRouter = ({
                 <PrivateMainSettingsArea location={location} config={appearance}>
                     <ThemesSection />
                     <LayoutsSection />
-                    <AppearanceOtherSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, folder)}>
