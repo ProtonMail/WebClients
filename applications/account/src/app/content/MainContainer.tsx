@@ -18,6 +18,7 @@ import {
     useCalendarSubscribeFeature,
     useFeatures,
     useIsDataRecoveryAvailable,
+    useNewDomainOptIn,
     useOrganization,
     useRecoveryNotification,
     useToggle,
@@ -84,6 +85,7 @@ const MainContainer = () => {
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = features.some(({ loading }) => loading) || loadingDataRecovery;
     const recoveryNotification = useRecoveryNotification(false);
+    const newDomain = useNewDomainOptIn();
 
     const routes = getRoutes({
         user,
@@ -95,6 +97,7 @@ const MainContainer = () => {
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
         isDataRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
+        newDomain,
     });
 
     useEffect(() => {
@@ -180,7 +183,7 @@ const MainContainer = () => {
                 </Route>
                 <Route path={`/${mailSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <MailSettingsRouter mailAppRoutes={routes.mail} redirect={redirect} />
+                        <MailSettingsRouter newDomain={newDomain} mailAppRoutes={routes.mail} redirect={redirect} />
                     </Suspense>
                 </Route>
                 <Route path={`/${calendarSlug}`}>
