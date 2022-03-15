@@ -446,7 +446,12 @@ export const sendIndexingMetrics = async (api: Api, userID: string) => {
         return;
     }
 
-    const { totalItems: numMessagesIndexed, isRefreshed, numPauses, timestamps, originalEstimate } = progressBlob;
+    const { totalItems, isRefreshed, numPauses, timestamps, originalEstimate } = progressBlob;
+    // There have been cases of broken metrics due to change to variables' name. The following is a temporary
+    // change to read the number of total items indexed also in the old (pre-library) format.
+    const { totalMessages } = progressBlob as any;
+    const numMessagesIndexed = totalItems || totalMessages || 0;
+
     const { indexTime, totalInterruptions } = estimateIndexingDuration(timestamps);
 
     return sendESMetrics(api, 'index', {
