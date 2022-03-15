@@ -63,6 +63,7 @@ const dummyCalendarKeyID = 'calendar-key-id';
 const dummyEventID = 'event-id';
 const dummySharedEventID = 'shared-event-id';
 const dummyPassphraseID = 'passphrase-id';
+const dummyFileName = 'invite.ics';
 
 const dummyAddressKeyPromise = generateAddressKeys(dummyUserName, dummyUserEmailAddress);
 const dummyCalendarKeysAndPassphrasePromise = generateCalendarKeysAndPassphrase(dummyAddressKeyPromise);
@@ -70,11 +71,9 @@ const dummyCalendarKeysAndPassphrasePromise = generateCalendarKeysAndPassphrase(
 const getSetup = async ({
     userEmailAddress = dummyUserEmailAddress,
     senderEmailAddress = dummySenderEmailAddress,
-    ics,
-    filename = 'invite.ics',
+    attachments,
     method,
     emailSubject = 'A new invitation',
-    attachmentID = dummyAttachmentID,
     userAddressKey,
     userPrimaryAddressID = dummyUserPrimaryAddressID,
     userCalendars = [],
@@ -83,16 +82,14 @@ const getSetup = async ({
     eventCalendarID,
     eventID = dummyEventID,
     sharedEventID = dummySharedEventID,
-    vevents = [],
+    veventsApi = [],
     memberID = dummyMemberID,
 }: {
     userEmailAddress?: string;
     senderEmailAddress?: string;
-    ics: string;
-    filename?: string;
+    attachments: { filename: string; ics: string; attachmentID: string }[];
     method?: ICAL_METHOD;
     emailSubject?: string;
-    attachmentID?: string;
     userAddressKey?: GeneratedKey;
     userPrimaryAddressID?: string;
     userCalendars: Calendar[];
@@ -101,21 +98,30 @@ const getSetup = async ({
     eventCalendarID?: string;
     eventID?: string;
     sharedEventID?: string;
-    vevents?: VcalVeventComponent[];
+    veventsApi?: VcalVeventComponent[];
     memberID?: string;
 }) => {
     const addressKey = userAddressKey || (await dummyAddressKeyPromise);
     const { calendarKey, passphrase } = await dummyCalendarKeysAndPassphrasePromise;
-    const inviteAttachment = new File([new Blob([ics])], filename, {
-        type: `text/calendar; method=${method}`,
-    });
-    const attachmentPackets = await encryptAttachment(ics, inviteAttachment, false, addressKey.publicKeys, []);
-    const concatenatedPackets = concatArrays(
-        [attachmentPackets.data, attachmentPackets.keys, attachmentPackets.signature].filter(isTruthy)
+    const encryptedAttachments = await Promise.all(
+        attachments.map(async ({ attachmentID, filename, ics }) => {
+            const inviteAttachment = new File([new Blob([ics])], filename, {
+                type: `text/calendar; method=${method}`,
+            });
+            const attachmentPackets = await encryptAttachment(ics, inviteAttachment, false, addressKey.publicKeys, []);
+            const concatenatedPackets = concatArrays(
+                [attachmentPackets.data, attachmentPackets.keys, attachmentPackets.signature].filter(isTruthy)
+            );
+            // Mock API calls to get attachment
+            addApiMock(`mail/v4/attachments/${attachmentID}`, () => concatenatedPackets);
+            return {
+                attachmentID,
+                filename,
+                ics,
+                attachmentPackets,
+            };
+        })
     );
-
-    // Mock API calls to get attachment
-    addApiMock(`mail/v4/attachments/${attachmentID}`, () => concatenatedPackets);
 
     // Mock calendar API calls
     addApiMock('calendar/v1', () => ({
@@ -161,7 +167,7 @@ const getSetup = async ({
 
     // mock call to get calendar events
     const events = await Promise.all(
-        vevents.map((eventComponent) =>
+        veventsApi.map((eventComponent) =>
             generateApiCalendarEvent({
                 eventComponent,
                 author: userEmailAddress,
@@ -192,14 +198,12 @@ const getSetup = async ({
             AddressID: userPrimaryAddressID,
             Subject: emailSubject,
             Time: new Date().getTime() / 1000,
-            Attachments: [
-                {
-                    ID: attachmentID,
-                    Name: filename,
-                    KeyPackets: uint8ArrayToBase64String(attachmentPackets.keys),
-                    MIMEType: 'text/calendar',
-                },
-            ],
+            Attachments: encryptedAttachments.map(({ attachmentID, filename, attachmentPackets }) => ({
+                ID: attachmentID,
+                Name: filename,
+                KeyPackets: uint8ArrayToBase64String(attachmentPackets.keys),
+                MIMEType: 'text/calendar',
+            })),
         },
     } as MessageStateWithData;
 };
@@ -265,7 +269,7 @@ END:VCALENDAR`;
         };
 
         const message = await getSetup({
-            ics,
+            attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
             method: ICAL_METHOD.REQUEST,
             userCalendars: [defaultCalendar],
             userCalendarSettings: dummyCalendarUserSettings,
@@ -385,11 +389,11 @@ END:VCALENDAR`;
         };
 
         const message = await getSetup({
-            ics,
+            attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
             method: ICAL_METHOD.REQUEST,
             userCalendars: [defaultCalendar],
             userCalendarSettings: dummyCalendarUserSettings,
-            vevents: [eventComponent],
+            veventsApi: [eventComponent],
             eventCalendarID: dummyCalendarID,
         });
         await render(<ExtraEvents message={message} />, false);
@@ -406,5 +410,99 @@ END:VCALENDAR`;
         // test buttons
         expect(screen.queryByText('Attending?')).toBeInTheDocument();
         expect(screen.queryByTitle('Change my answer')).toHaveTextContent("Yes, I'll attend");
+    });
+
+    it('should use "unsupported event" text for import PUBLISH', async () => {
+        // constants
+        const dummyUID = 'testUID@example.domain';
+        const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+
+        // ics with unsupported time zone
+        const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:REQUEST
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Walk on Mars
+UID:${dummyUID}
+DTSTART;TZID=Mars/Olympus:20220310T114500
+ORGANIZER;CN=ORGO:mailto:${dummySenderEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummyToken}:mailto:${dummyUserEmailAddress}
+DTSTAMP:20210917T133417Z
+END:VEVENT
+END:VCALENDAR`;
+        const defaultCalendar = {
+            ID: dummyCalendarID,
+            Name: dummyCalendarName,
+            Description: '',
+            Display: CalendarDisplay.HIDDEN,
+            Color: LABEL_COLORS[1],
+            Flags: CALENDAR_FLAGS.ACTIVE,
+            Type: CALENDAR_TYPE.PERSONAL,
+        };
+
+        const message = await getSetup({
+            attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+            method: ICAL_METHOD.REQUEST,
+            userCalendars: [defaultCalendar],
+            userCalendarSettings: dummyCalendarUserSettings,
+            veventsApi: [],
+            eventCalendarID: dummyCalendarID,
+        });
+        await render(<ExtraEvents message={message} />, false);
+
+        expect(screen.queryByText('Unsupported event'));
+    });
+
+    it('should not duplicate error banners', async () => {
+        // constants
+        const dummyUID = 'testUID@example.domain';
+        const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+
+        // ics with unsupported time zone
+        const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:REQUEST
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Walk on Mars
+UID:${dummyUID}
+DTSTART;TZID=Mars/Olympus:20220310T114500
+ORGANIZER;CN=ORGO:mailto:${dummySenderEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummyToken}:mailto:${dummyUserEmailAddress}
+DTSTAMP:20210917T133417Z
+END:VEVENT
+END:VCALENDAR`;
+        const defaultCalendar = {
+            ID: dummyCalendarID,
+            Name: dummyCalendarName,
+            Description: '',
+            Display: CalendarDisplay.HIDDEN,
+            Color: LABEL_COLORS[1],
+            Flags: CALENDAR_FLAGS.ACTIVE,
+            Type: CALENDAR_TYPE.PERSONAL,
+        };
+
+        const message = await getSetup({
+            attachments: [
+                { attachmentID: 'attachment-id-1', filename: 'invite.ics', ics },
+                { attachmentID: 'attachment-id-2', filename: 'calendar.ics', ics },
+            ],
+            method: ICAL_METHOD.REQUEST,
+            userCalendars: [defaultCalendar],
+            userCalendarSettings: dummyCalendarUserSettings,
+            veventsApi: [],
+            eventCalendarID: dummyCalendarID,
+        });
+        await render(<ExtraEvents message={message} />, false);
+
+        // test single banner
+        expect(await screen.findAllByText('Unsupported invitation')).toHaveLength(1);
     });
 });
