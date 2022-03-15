@@ -308,6 +308,7 @@ const MessageView = (
                 'message-container m0-5 mb1 outline-none relative',
                 expanded && 'is-opened',
                 hasFocus && 'is-focused',
+                showFooter && 'has-attachments',
             ])}
             style={{ '--index': conversationIndex * 2 }}
             data-testid="message-view"
