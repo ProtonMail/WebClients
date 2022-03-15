@@ -1,5 +1,5 @@
 import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 import { getUnixTime } from 'date-fns';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
@@ -19,6 +19,7 @@ import {
     useGetCalendars,
     useIsMounted,
     useGetAddressKeys,
+    useMailSettings,
 } from '@proton/components';
 import { Calendar, CalendarEventWithMetadata, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { getEvent } from '@proton/shared/lib/api/calendars';
@@ -37,6 +38,7 @@ import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
 import getPaginatedEventsByUID from '@proton/shared/lib/calendar/integration/getPaginatedEventsByUID';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
 import EventReminderBanner from './EventReminderBanner';
@@ -56,6 +58,9 @@ interface EmailReminderWidgetProps {
 }
 
 const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
+    const [mailSettings] = useMailSettings();
+    const eventReminderRef = useRef<HTMLDivElement>(null);
+
     const calendarIdHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Calendarid');
     const eventIdHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Eventid');
     const occurrenceHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Occurrence');
@@ -83,6 +88,8 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const isMounted = useIsMounted();
 
     const messageHasDecryptionError = !!errors?.decryption?.length;
+
+    const { modal: linkModal } = useLinkHandler(eventReminderRef, mailSettings);
 
     useEffect(() => {
         void (async () => {
@@ -345,7 +352,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const labelClassName = 'inline-flex pt0-25';
 
     return (
-        <div className="calendar-widget">
+        <div className="calendar-widget" ref={eventReminderRef}>
             <EventReminderBanner
                 startDate={startDate}
                 endDate={endDate}
@@ -392,6 +399,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     </div>
                 </div>
             )}
+            {linkModal}
         </div>
     );
 };

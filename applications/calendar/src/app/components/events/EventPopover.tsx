@@ -10,7 +10,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Calendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import {
     Alert,
     Badge,
@@ -73,6 +73,7 @@ const EventPopover = ({
     isNarrow,
     displayNameEmailMap,
 }: Props) => {
+    const popoverEventContentRef = useRef<HTMLDivElement>(null);
     const [loadingAction, withLoadingAction] = useLoading();
 
     const targetEventData = targetEvent?.data || {};
@@ -275,13 +276,14 @@ const EventPopover = ({
                     {!!frequencyString && <div className="color-weak">{frequencyString}</div>}
                 </div>
             </PopoverHeader>
-            <div className="scroll-if-needed mb1">
+            <div className="scroll-if-needed mb1" ref={popoverEventContentRef}>
                 <PopoverEventContent
                     key={targetEvent.id}
                     calendar={calendarData}
                     model={model}
                     formatTime={formatTime}
                     displayNameEmailMap={displayNameEmailMap}
+                    popoverEventContentRef={popoverEventContentRef}
                 />
             </div>
             {!isSubscribedCalendar && (

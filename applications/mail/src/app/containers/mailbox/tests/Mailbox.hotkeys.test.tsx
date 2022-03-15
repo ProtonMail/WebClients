@@ -1,15 +1,7 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { fireEvent } from '@testing-library/react';
-import {
-    clearAll,
-    assertFocus,
-    assertCheck,
-    getHistory,
-    addApiMock,
-    tick,
-    getModal,
-} from '../../../helpers/test/helper';
+import { clearAll, assertFocus, assertCheck, getHistory, addApiMock, tick } from '../../../helpers/test/helper';
 import MailboxContainer from '../MailboxContainer';
 import { getElements, props, setup as generalSetup, SetupArgs } from './Mailbox.test.helpers';
 
@@ -186,7 +178,7 @@ describe('Mailbox hotkeys', () => {
 
         const conversations = getElements(20, MAILBOX_LABEL_IDS.TRASH);
 
-        const { down, space, a, i, s, star, t, ctrlBackspace } = await setup({
+        const { down, space, a, i, s, star, t, ctrlBackspace, getByTestId } = await setup({
             labelID: MAILBOX_LABEL_IDS.TRASH,
             conversations,
         });
@@ -234,8 +226,8 @@ describe('Mailbox hotkeys', () => {
         expect(labelSpy).toHaveBeenCalledTimes(callTimes);
 
         ctrlBackspace();
-        const { submit } = getModal();
-        fireEvent.click(submit as HTMLButtonElement);
+        const button = await getByTestId('permanent-delete-modal:submit');
+        fireEvent.click(button as HTMLButtonElement);
         await tick();
 
         expect(deleteSpy).toHaveBeenCalled();
