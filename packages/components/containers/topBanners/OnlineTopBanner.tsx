@@ -9,7 +9,7 @@ import useApiStatus from '../../hooks/useApiStatus';
 import useApi from '../../hooks/useApi';
 import { useDebounceInput } from '../../components';
 
-const OFFLINE_TIMEOUT = 2500;
+const OFFLINE_TIMEOUT = 5000;
 
 const OnlineTopBanner = () => {
     const { apiUnreachable, offline } = useApiStatus();
@@ -21,16 +21,16 @@ const OnlineTopBanner = () => {
     const oldRef = useRef(safeOnlineStatus);
     const [backOnline, setBackOnline] = useState(false);
 
-    const handlePing = () => {
-        // Ping can only be used to resolve if the client can establish a connection to the API.
-        api(ping()).catch(noop);
-    };
-
     useEffect(() => {
         if (oldRef.current === safeOnlineStatus) {
             return;
         }
         oldRef.current = safeOnlineStatus;
+
+        const handlePing = () => {
+            // Ping can only be used to resolve if the client can establish a connection to the API.
+            api(ping()).catch(noop);
+        };
 
         if (!safeOnlineStatus) {
             const handle = window.setInterval(() => {
