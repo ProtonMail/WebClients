@@ -4,23 +4,24 @@ import { isEdge, isIE11, openNewTab } from '@proton/shared/lib/helpers/browser';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import { useApi, useEventManager } from '../../hooks';
-import { ConfirmModal } from '../modal';
 import { Button } from '../button';
-import { Alert } from '../alert';
 import { Href } from '../link';
 import { Checkbox } from '../input';
 import { Label } from '../label';
+import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../modalTwo';
+import { Form } from '../form';
 
-interface Props {
-    onClose: () => void;
+interface Props extends ModalProps {
     link?: string;
     isOutside?: boolean;
 }
 
-const LinkConfirmationModal = ({ onClose, link = '', isOutside = false, ...rest }: Props) => {
+const LinkConfirmationModal = ({ link = '', isOutside = false, ...rest }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [dontAskAgain, setDontAskAgain] = useState(false);
+
+    const { onClose } = rest;
 
     // https://jira.protontech.ch/browse/SEC-574
     const linkToShow = rtlSanitize(link);
@@ -42,18 +43,39 @@ const LinkConfirmationModal = ({ onClose, link = '', isOutside = false, ...rest 
             await api(updateConfirmLink(0));
             await call();
         }
+
+        onClose?.();
     };
 
-    // Not really ellegant but the least bad solution I found to please TS
-    const additionalModalProps = { small: false };
-
     return (
-        <ConfirmModal
-            onConfirm={handleConfirm}
-            onClose={onClose}
-            title={c('Title').t`Link confirmation`}
-            confirm={
-                // translator: this string is only for blind people, it will be vocalized: confirm opening of link https://link.com
+        <ModalTwo size="large" as={Form} onSubmit={handleConfirm} {...rest}>
+            <ModalTwoHeader title={c('Title').t`Link confirmation`} />
+            <ModalTwoContent>
+                {`${c('Info').t`You are about to open another browser tab and visit:`} `}
+                <span className="text-bold text-break">{linkToShow}</span>
+
+                {punyCodeLink && (
+                    <>
+                        {`${punyCodeLinkText} `}
+                        <Href
+                            url="https://protonmail.com/support/knowledge-base/homograph-attacks/"
+                            title="What are homograph attacks?"
+                        >
+                            {c('Info').t`Learn more`}
+                        </Href>
+                    </>
+                )}
+
+                {!isOutside && (
+                    <Label className="flex">
+                        <Checkbox checked={dontAskAgain} onChange={() => setDontAskAgain(!dontAskAgain)} />
+                        {c('Label').t`Do not ask again`}
+                    </Label>
+                )}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                {/* translator: this string is only for blind people, it will be vocalized: confirm opening of link https://link.com */}
                 <Button
                     color="norm"
                     type="submit"
@@ -62,34 +84,8 @@ const LinkConfirmationModal = ({ onClose, link = '', isOutside = false, ...rest 
                 >
                     {c('Action').t`Confirm`}
                 </Button>
-            }
-            {...rest}
-            {...additionalModalProps}
-        >
-            <Alert className="mb1 text-break" type="warning">
-                {`${c('Info').t`You are about to open another browser tab and visit:`} `}
-                <span className="text-bold">{linkToShow}</span>
-            </Alert>
-
-            {punyCodeLink && (
-                <Alert className="mb1" type="warning">
-                    {`${punyCodeLinkText} `}
-                    <Href
-                        url="https://protonmail.com/support/knowledge-base/homograph-attacks/"
-                        title="What are homograph attacks?"
-                    >
-                        {c('Info').t`Learn more`}
-                    </Href>
-                </Alert>
-            )}
-
-            {!isOutside && (
-                <Label className="flex">
-                    <Checkbox checked={dontAskAgain} onChange={() => setDontAskAgain(!dontAskAgain)} />
-                    {c('Label').t`Do not ask again`}
-                </Label>
-            )}
-        </ConfirmModal>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

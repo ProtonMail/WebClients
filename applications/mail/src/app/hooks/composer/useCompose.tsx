@@ -10,6 +10,11 @@ import {
     useApi,
     useSettingsLink,
     useEventManager,
+    useModalState,
+    Href,
+    AlertModal,
+    ErrorButton,
+    Button,
 } from '@proton/components';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 import { forceSend } from '@proton/shared/lib/api/messages';
@@ -70,7 +75,26 @@ export const useCompose = (
     const getLocalID = useGetLocalID();
     const getMessage = useGetMessage();
 
-    return useHandler(async (composeArgs: ComposeArgs) => {
+    const [storageCapacityModalProps, setStorageCapacityModalOpen] = useModalState();
+
+    const storageCapacityModal = (
+        <AlertModal
+            title={c('Title').t`Storage capacity warning`}
+            buttons={[
+                <ErrorButton onClick={() => goToSettings('/dashboard')}>{c('Action').t`Upgrade`}</ErrorButton>,
+                <Button onClick={storageCapacityModalProps.onClose}>{c('Action').t`Close`}</Button>,
+            ]}
+            {...storageCapacityModalProps}
+        >
+            {c('Info')
+                .t`You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.`}
+            <br />
+            <Href href="https://protonmail.com/support/knowledge-base/increase-my-storage-space/">{c('Link')
+                .t`Learn more`}</Href>
+        </AlertModal>
+    );
+
+    const handleCompose = useHandler(async (composeArgs: ComposeArgs) => {
         const user = await getUser();
 
         const activeAddresses = addresses.filter((address) => !isDirtyAddress(address));
@@ -92,23 +116,7 @@ export const useCompose = (
         const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
 
         if (!Number.isNaN(spacePercentage) && spacePercentage >= 100) {
-            createModal(
-                <ConfirmModal
-                    title={c('Title').t`Storage capacity warning`}
-                    confirm={c('Action').t`Upgrade`}
-                    cancel={c('Action').t`Close`}
-                    onConfirm={() => {
-                        goToSettings('/dashboard');
-                    }}
-                >
-                    <Alert
-                        className="mb1"
-                        learnMore="https://protonmail.com/support/knowledge-base/increase-my-storage-space/"
-                        type="warning"
-                    >{c('Info')
-                        .t`You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.`}</Alert>
-                </ConfirmModal>
-            );
+            setStorageCapacityModalOpen(true);
             return;
         }
 
@@ -184,4 +192,6 @@ export const useCompose = (
             focusComposer(newMessageID);
         }
     });
+
+    return { handleCompose, storageCapacityModal };
 };
