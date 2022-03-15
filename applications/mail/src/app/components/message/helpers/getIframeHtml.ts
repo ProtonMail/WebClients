@@ -1,5 +1,5 @@
 import svg from '@proton/styles/assets/img/icons/email-sprite-icons.svg';
-import { MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_PRINT_ID } from '../constants';
+import { MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_PRINT_HEADER_ID, MESSAGE_IFRAME_PRINT_FOOTER_ID } from '../constants';
 
 import cssStyles from '../MessageIframe.raw.scss';
 
@@ -7,7 +7,7 @@ const getIframeHtml = (emailContent: string, messageHead = '', isPlainText: bool
     // Plain text needs content needs to have no spaces in order to be correctly displayed
     if (isPlainText) {
         const emailHead = `<head><style>${themeCSSVariables}</style><style>${cssStyles}</style>${messageHead}</head>`;
-        const emailBody = `<body><div id="${MESSAGE_IFRAME_ROOT_ID}" class="proton-plain-text"><div id="${MESSAGE_IFRAME_PRINT_ID}"></div>${emailContent}</div></body>`;
+        const emailBody = `<body><div id="${MESSAGE_IFRAME_ROOT_ID}" class="proton-plain-text"><div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>${emailContent}</div></body>`;
 
         return `<html>${emailHead}${emailBody}</html>`;
     }
@@ -28,10 +28,11 @@ const getIframeHtml = (emailContent: string, messageHead = '', isPlainText: bool
         <body>
         ${svg}
         <div id="${MESSAGE_IFRAME_ROOT_ID}">
-          <div id="${MESSAGE_IFRAME_PRINT_ID}"></div>
+          <div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>
           <div style="display: flex !important; width: 100% !important;">
-            <div style="width: 100% !important">${emailContent}</div>
+          <div style="width: 100% !important">${emailContent}</div>
           </div>
+          <div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}"></div>
         </div>
         </body>
       </html>

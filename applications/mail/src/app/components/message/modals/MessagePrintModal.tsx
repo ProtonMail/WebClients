@@ -1,9 +1,7 @@
-import { hasAttachments } from '@proton/shared/lib/mail/messages';
 import { RefObject, useEffect, useRef } from 'react';
 import { FormModal } from '@proton/components';
 import { c } from 'ttag';
 import MessageBody from '../MessageBody';
-import MessageFooter from '../MessageFooter';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 
@@ -58,7 +56,6 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
                     onIframeReady={handleIframeReady}
                 />
             </MailboxContainerContextProvider>
-            {hasAttachments(message.data) ? <MessageFooter message={message} showActions={false} /> : null}
         </FormModal>
     );
 };

@@ -1,6 +1,7 @@
 import { RefObject, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { c } from 'ttag';
+import { hasAttachments } from '@proton/shared/lib/mail/messages';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { classnames, Tooltip, Icon } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -10,12 +11,13 @@ import useInitIframeContent from './hooks/useInitIframeContent';
 import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
 import { locateHead } from '../../helpers/message/messageHead';
 import useIframeShowBlockquote from './hooks/useIframeShowBlockquote';
-import { MESSAGE_IFRAME_PRINT_ID } from './constants';
+import { MESSAGE_IFRAME_PRINT_FOOTER_ID, MESSAGE_IFRAME_PRINT_HEADER_ID } from './constants';
 import MessagePrintHeader from './MessagePrintHeader';
 import MessageBodyImages from './MessageBodyImages';
 import useIframeOffset from './hooks/useIframeOffset';
 import useObserveIframeHeight from './hooks/useObserveIframeHeight';
 import getIframeSandboxAttributes from './helpers/getIframeSandboxAttributes';
+import MessagePrintFooter from './MessagePrintFooter';
 
 interface Props {
     iframeRef: RefObject<HTMLIFrameElement>;
@@ -57,6 +59,7 @@ const MessageBodyIframe = ({
     parentMessageRef,
 }: Props) => {
     const messageHead = locateHead(message.messageDocument?.document);
+    const hasAttachment = hasAttachments(message.data);
 
     const { isResizing } = useMailboxContainerContext();
 
@@ -79,7 +82,8 @@ const MessageBodyIframe = ({
         onBlockquoteToggle,
     });
     const iframeOffset = useIframeOffset(iframeRef);
-    const iframePrintDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_ID);
+    const iframePrintHeaderDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_HEADER_ID);
+    const iframePrintFooterDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_FOOTER_ID);
 
     useLinkHandler(iframeRootDivRef, mailSettings, {
         onMailTo,
@@ -145,8 +149,12 @@ const MessageBodyIframe = ({
                     iframeToggleDiv
                 )}
             {isPrint &&
-                iframePrintDiv &&
-                createPortal(<MessagePrintHeader message={message} labelID={labelID} />, iframePrintDiv)}
+                iframePrintHeaderDiv &&
+                createPortal(<MessagePrintHeader message={message} labelID={labelID} />, iframePrintHeaderDiv)}
+            {hasAttachment &&
+                isPrint &&
+                iframePrintFooterDiv &&
+                createPortal(<MessagePrintFooter message={message} />, iframePrintFooterDiv)}
         </>
     );
 };
