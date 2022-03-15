@@ -25,6 +25,7 @@ import {
     EmailPrivacySection,
     ImportExportAppSection,
     PrivateMainSettingsArea,
+    NewDomainSection,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
@@ -34,9 +35,11 @@ import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';
 const MailSettingsRouter = ({
     mailAppRoutes,
     redirect,
+    newDomain,
 }: {
     mailAppRoutes: ReturnType<typeof getMailAppRoutes>;
     redirect: ReactNode;
+    newDomain: string;
 }) => {
     const { path } = useRouteMatch();
     const [addresses, loadingAddresses] = useAddresses();
@@ -60,6 +63,7 @@ const MailSettingsRouter = ({
             </Route>
             <Route path={getSectionPath(path, identity)}>
                 <PrivateMainSettingsArea location={location} config={identity}>
+                    <NewDomainSection domain={newDomain} />
                     <IdentitySection />
                     <AddressesSection isOnlySelf />
                 </PrivateMainSettingsArea>

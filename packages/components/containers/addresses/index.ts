@@ -5,3 +5,6 @@ export { default as AddressesSection } from './AddressesSection';
 export { default as IdentitySection } from './IdentitySection';
 export { default as AddressesWithUser } from './AddressesWithUser';
 export { default as AddressesWithMembers } from './AddressesWithMembers';
+export { default as NewDomainSection } from './NewDomainSection';
+export { default as useNewDomainOptIn } from './useNewDomainOptIn';
+export * from './newDomainHelper';
