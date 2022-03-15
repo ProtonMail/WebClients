@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { Alert, ButtonLike, SettingsLink } from '../../components';
 import { useOrganization } from '../../hooks';
@@ -9,6 +10,19 @@ interface Props {
 
 const AddressesSection = ({ onClose }: Props) => {
     const [organization] = useOrganization();
+
+    if (!organization?.HasKeys) {
+        return (
+            <div className="mb1">
+                <ButtonLike
+                    as={SettingsLink}
+                    onClick={() => onClose?.()}
+                    path="/identity-addresses#addresses"
+                    app={APPS.PROTONMAIL}
+                >{c('Action').t`Add address`}</ButtonLike>
+            </div>
+        );
+    }
 
     if (organization?.MaxMembers > 1) {
         return (
