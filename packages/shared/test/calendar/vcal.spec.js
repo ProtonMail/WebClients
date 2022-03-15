@@ -4,6 +4,7 @@ import {
     serialize,
     getMillisecondsFromTriggerString,
     parseWithErrors,
+    reformatLineBreaks,
 } from '../../lib/calendar/vcal';
 import { WEEK, DAY, HOUR, MINUTE, SECOND } from '../../lib/constants';
 
@@ -1136,5 +1137,82 @@ END:VEVENT`;
         expect(getMillisecondsFromTriggerString('-P1D')).toEqual(-DAY);
         expect(getMillisecondsFromTriggerString('-PT2H34M12S')).toEqual(-2 * HOUR - 34 * MINUTE - 12 * SECOND);
         expect(getMillisecondsFromTriggerString('P2W1DT1S')).toEqual(2 * WEEK + DAY + SECOND);
+    });
+});
+
+describe('reformatLineBreaks', () => {
+    it('should reformat line breaks with RFC 7896 properties', () => {
+        const vcal = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Office Holidays Ltd.//EN
+X-WR-CALNAME:United Kingdom Holidays
+X-WR-CALDESC:Public Holidays in United Kingdom. Provided by http://www.officeholidays.com
+REFRESH-INTERVAL;VALUE=DURATION:PT48H
+X-PUBLISHED-TTL:PT48H
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VEVENT
+CLASS:PUBLIC
+UID:2022-01-04GB-SCT1027lieuregion@www.officeholidays.com
+CREATED:20220109T153551Z
+DESCRIPTION: This additional days holiday for New Year in the UK is observed only in Scotland
+\\n\\nScotland\\n\\nInformation provided by www.officeholidays.com
+URL:https://www.officeholidays.com/holidays/united-kingdom/scotland/day-after-new-years-day
+DTSTART;VALUE=DATE:20220104
+DTEND;VALUE=DATE:20220105
+DTSTAMP:20080101T000000Z
+LOCATION:Scotland
+PRIORITY:5
+LAST-MODIFIED:20191229T000000Z
+SEQUENCE:1
+SUMMARY;LANGUAGE=en-us:Day after New Year's Day (in lieu) (Regional Holiday)
+TRANSP:OPAQUE
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MS-OLK-ALLOWEXTERNCHECK:TRUE
+X-MS-OLK-AUTOFILLLOCATION:FALSE
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
+X-MS-OLK-CONFTYPE:0
+END:VEVENT
+END:VCALENDAR`;
+        expect(reformatLineBreaks(vcal)).toEqual(`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Office Holidays Ltd.//EN
+X-WR-CALNAME:United Kingdom Holidays
+X-WR-CALDESC:Public Holidays in United Kingdom. Provided by http://www.officeholidays.com
+REFRESH-INTERVAL;VALUE=DURATION:PT48H
+X-PUBLISHED-TTL:PT48H
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VEVENT
+CLASS:PUBLIC
+UID:2022-01-04GB-SCT1027lieuregion@www.officeholidays.com
+CREATED:20220109T153551Z
+DESCRIPTION: This additional days holiday for New Year in the UK is observed only in Scotland
+ \\n\\nScotland\\n\\nInformation provided by www.officeholidays.com
+URL:https://www.officeholidays.com/holidays/united-kingdom/scotland/day-after-new-years-day
+DTSTART;VALUE=DATE:20220104
+DTEND;VALUE=DATE:20220105
+DTSTAMP:20080101T000000Z
+LOCATION:Scotland
+PRIORITY:5
+LAST-MODIFIED:20191229T000000Z
+SEQUENCE:1
+SUMMARY;LANGUAGE=en-us:Day after New Year's Day (in lieu) (Regional Holiday)
+TRANSP:OPAQUE
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MS-OLK-ALLOWEXTERNCHECK:TRUE
+X-MS-OLK-AUTOFILLLOCATION:FALSE
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
+X-MS-OLK-CONFTYPE:0
+END:VEVENT
+END:VCALENDAR`);
     });
 });
