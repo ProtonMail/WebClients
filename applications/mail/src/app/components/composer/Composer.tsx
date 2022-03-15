@@ -503,7 +503,12 @@ const Composer = (
         handleNoAttachments,
     });
 
-    const { loadingScheduleCount, handleScheduleSendModal, handleScheduleSend } = useScheduleSend({
+    const {
+        loadingScheduleCount,
+        handleScheduleSendModal,
+        handleScheduleSend,
+        modal: waitBeforeScheduleModal,
+    } = useScheduleSend({
         modelMessage: modelMessage as MessageStateWithData,
         setInnerModal,
         ComposerInnerModal: ComposerInnerModalStates,
@@ -616,6 +621,7 @@ const Composer = (
                     onChangeFlag={handleChangeFlag}
                 />
             </div>
+            {waitBeforeScheduleModal}
         </div>
     );
 };

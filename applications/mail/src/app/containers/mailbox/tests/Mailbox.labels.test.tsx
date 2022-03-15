@@ -2,7 +2,7 @@ import { fireEvent, Matcher } from '@testing-library/dom';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Element } from '../../../models/element';
-import { clearAll, addApiMock, waitForSpyCall, getModal } from '../../../helpers/test/helper';
+import { clearAll, addApiMock, waitForSpyCall } from '../../../helpers/test/helper';
 import { setup, labels, folders, sendEvent } from './Mailbox.test.helpers';
 
 const [label1, label2, label3, label4] = labels;
@@ -256,10 +256,8 @@ describe('Mailbox labels actions', () => {
             const deleteButton = getByTestId('toolbar:deletepermanently');
             fireEvent.click(deleteButton);
 
-            const { submit } = getModal();
-            if (submit) {
-                fireEvent.click(submit);
-            }
+            const submitButton = getByTestId('permanent-delete-modal:submit');
+            fireEvent.click(submitButton);
 
             await waitForSpyCall(deleteRequestSpy);
         };

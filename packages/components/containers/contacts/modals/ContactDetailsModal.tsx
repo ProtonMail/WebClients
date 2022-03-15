@@ -32,7 +32,7 @@ const ContactDetailsModal = ({ contactID, onClose = noop, onMailTo, ...rest }: P
     const modalRef = useRef<HTMLDivElement>(null);
     const modalContentRef = useRef<HTMLDivElement>(null);
 
-    useLinkHandler(modalContentRef, mailSettings, { onMailTo });
+    const { modal: linkModal } = useLinkHandler(modalContentRef, mailSettings, { onMailTo });
 
     const [{ properties }] = useContactProperties({ contact, userKeysList });
 
@@ -86,6 +86,7 @@ const ContactDetailsModal = ({ contactID, onClose = noop, onMailTo, ...rest }: P
                         isModal
                     />
                 </div>
+                {linkModal}
             </ErrorBoundary>
         </FormModal>
     );

@@ -18,7 +18,7 @@ interface Props {
 const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
     const [loading, withLoading] = useLoading();
     const [labels = []] = useLabels();
-    const emptyLabel = useEmptyLabel();
+    const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const displayEmpty =
@@ -64,6 +64,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
                 data-testid="toolbar:empty-folder"
                 icon={<Icon name="broom" alt={title} />}
             />
+            {deleteAllModal}
         </>
     );
 };

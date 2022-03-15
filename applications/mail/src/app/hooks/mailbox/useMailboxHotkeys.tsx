@@ -90,7 +90,7 @@ export const useMailboxHotkeys = (
     const moveToFolder = useMoveToFolder();
     const star = useStar();
     const markAs = useMarkAs();
-    const permanentDelete = usePermanentDelete(labelID);
+    const { handleDelete: permanentDelete, modal: permanentDeleteModal } = usePermanentDelete(labelID);
 
     // Disable selection shortcut in row mode when consulting an message
     // If no element is selected, it means that the user is on the message list, where we want the shortcut to be enabled
@@ -445,5 +445,5 @@ export const useMailboxHotkeys = (
 
     useHotkeys(elementRef, shortcutHandlers);
 
-    return { elementRef, labelDropdownToggleRef, moveDropdownToggleRef };
+    return { elementRef, labelDropdownToggleRef, moveDropdownToggleRef, permanentDeleteModal };
 };

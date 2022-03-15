@@ -12,7 +12,7 @@ interface Props {
 const DeleteButton = ({ labelID = '', selectedIDs = [] }: Props) => {
     const [loading, withLoading] = useLoading();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
-    const permanentDelete = usePermanentDelete(labelID);
+    const { handleDelete: permanentDelete, modal: deleteModal } = usePermanentDelete(labelID);
 
     const handleDelete = async () => {
         await permanentDelete(selectedIDs);
@@ -29,13 +29,16 @@ const DeleteButton = ({ labelID = '', selectedIDs = [] }: Props) => {
     );
 
     return (
-        <ToolbarButton
-            title={titleDelete}
-            onClick={() => withLoading(handleDelete())}
-            disabled={loading || !selectedIDs.length}
-            data-testid="toolbar:deletepermanently"
-            icon={<Icon name="circle-xmark" alt={c('Action').t`Delete permanently`} />}
-        />
+        <>
+            <ToolbarButton
+                title={titleDelete}
+                onClick={() => withLoading(handleDelete())}
+                disabled={loading || !selectedIDs.length}
+                data-testid="toolbar:deletepermanently"
+                icon={<Icon name="circle-xmark" alt={c('Action').t`Delete permanently`} />}
+            />
+            {deleteModal}
+        </>
     );
 };
 
