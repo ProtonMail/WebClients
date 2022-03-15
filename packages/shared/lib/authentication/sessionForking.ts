@@ -18,6 +18,7 @@ import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { FORK_TYPE } from './ForkInterface';
 import { persistSession, resumeSession } from './persistedSessionHelper';
 import { getUser } from '../api/user';
+import { OAuthForkResponse, postOAuthFork } from '../api/oauth';
 import { getKey } from './cryptoHelper';
 
 interface ForkState {
@@ -42,6 +43,31 @@ export const requestFork = (fromApp: APP_NAMES, localID?: number, type?: FORK_TY
     sessionStorage.setItem(`f${state}`, JSON.stringify(forkStateData));
 
     return replaceUrl(getAppHref(`${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, APPS.PROTONACCOUNT));
+};
+export interface OAuthProduceForkParameters {
+    clientID: string;
+    oaSession: string;
+}
+
+interface ProduceOAuthForkArguments extends OAuthProduceForkParameters {
+    api: Api;
+    UID: string;
+}
+
+export const produceOAuthFork = async ({ api, UID, oaSession, clientID }: ProduceOAuthForkArguments) => {
+    const {
+        Data: { RedirectUri },
+    } = await api<{ Data: OAuthForkResponse }>(
+        withUIDHeaders(
+            UID,
+            postOAuthFork({
+                ClientID: clientID,
+                OaSession: oaSession,
+            })
+        )
+    );
+
+    return replaceUrl(RedirectUri);
 };
 
 export interface ProduceForkParameters {

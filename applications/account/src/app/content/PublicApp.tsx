@@ -5,7 +5,7 @@ import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
 import { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
-import { produceFork, ProduceForkParameters } from '@proton/shared/lib/authentication/sessionForking';
+import { produceFork, produceOAuthFork } from '@proton/shared/lib/authentication/sessionForking';
 import {
     APPS,
     APPS_CONFIGURATION,
@@ -23,10 +23,14 @@ import { getAppHref, getInvoicesPathname } from '@proton/shared/lib/apps/helper'
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { UserType } from '@proton/shared/lib/interfaces';
+import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { getOAuthLastAccess, OAuthLastAccess } from '@proton/shared/lib/api/oauth';
 
+import { ActiveSessionData, ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import AccountPublicApp from './AccountPublicApp';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import SwitchAccountContainer, { getSearchParams as getSwitchSearchParams } from '../public/SwitchAccountContainer';
+import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
 import SignupContainer, { getSearchParams as getSignupSearchParams } from '../signup/SignupContainer';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
@@ -34,6 +38,7 @@ import LoginContainer from '../login/LoginContainer';
 import Layout from '../public/Layout';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import ValidateRecoveryEmailContainer from '../public/ValidateRecoveryEmailContainer';
+import { getToAppName } from '../public/helper';
 
 const getPathFromLocation = (location: H.Location) => {
     return [location.pathname, location.search, location.hash].join('');
@@ -78,8 +83,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
     const api = useApi();
-    const [forkState, setForkState] = useState<ProduceForkParameters | undefined>();
-    const [activeSessions, setActiveSessions] = useState<LocalSessionResponse[] | undefined>();
+    const [forkState, setForkState] = useState<ActiveSessionData>();
+    const [confirmForkData, setConfirmForkState] = useState<Extract<ProduceForkData, { type: SSOType.oauth }>>();
+    const [activeSessions, setActiveSessions] = useState<LocalSessionResponse[]>();
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
     useClearPaidCookie();
@@ -124,11 +130,36 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     });
 
     // Either another app wants to fork, or a specific route is requested on this app
-    const maybeTargetApp = forkState?.app || localRedirect?.toApp || toTargetService;
+    const maybeTargetApp =
+        (forkState?.type === SSOType.internal && forkState.payload?.app) || localRedirect?.toApp || toTargetService;
     // Require internal setup if an app is specified
     const shouldSetupInternalAddress = maybeTargetApp && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(maybeTargetApp);
     // Or just default
     const toApp = maybeTargetApp || DEFAULT_APP;
+    const toOAuthName =
+        forkState?.type === SSOType.oauth
+            ? forkState.payload.clientInfo.Name
+            : confirmForkData?.payload.clientInfo.Name;
+    const toAppName = toOAuthName || getToAppName(toApp);
+
+    const handleProduceFork = async (data: ProduceForkData) => {
+        if (data.type === SSOType.internal) {
+            return produceFork({ api, ...data.payload });
+        }
+
+        if (data.type === SSOType.oauth) {
+            const {
+                Access: { Accepted },
+            } = await api<{ Access: OAuthLastAccess }>(
+                withUIDHeaders(data.payload.UID, getOAuthLastAccess(data.payload.clientID))
+            );
+            if (Accepted) {
+                return produceOAuthFork({ api, ...data.payload });
+            }
+            setConfirmForkState(data);
+            history.replace(SSO_PATHS.OAUTH_CONFIRM_FORK);
+        }
+    };
 
     const handleLogin = async (args: OnLoginCallbackArguments) => {
         const { keyPassword, UID, User, LocalID, persistent } = args;
@@ -140,9 +171,15 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             });
         }
         if (forkState) {
-            const type = args.flow === 'signup' ? FORK_TYPE.SIGNUP : undefined;
-            await produceFork({ api, UID, keyPassword, ...forkState, persistent, type });
-            return;
+            if (forkState.type === SSOType.oauth) {
+                await handleProduceFork({ type: SSOType.oauth, payload: { ...forkState.payload, UID } });
+                return;
+            }
+            if (forkState.type === SSOType.internal) {
+                const type = args.flow === 'signup' ? FORK_TYPE.SIGNUP : undefined;
+                await produceFork({ api, UID, keyPassword, ...forkState.payload, persistent, type });
+                return;
+            }
         }
         // Special case for external users to redirect to VPN until more apps are supported
         if (User.Type === UserType.EXTERNAL && !shouldSetupInternalAddress) {
@@ -162,7 +199,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         return replaceUrl(getAppHref(`${pathname}${search}`, toApp, LocalID));
     };
 
-    const handleActiveSessionsFork = (newForkState: ProduceForkParameters, { sessions }: GetActiveSessionsResult) => {
+    const handleActiveSessionsFork = (newForkState: ActiveSessionData, { sessions }: GetActiveSessionsResult) => {
         ignoreAutoRef.current = true;
 
         setForkState(newForkState);
@@ -186,6 +223,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 SSO_PATHS.RESET_PASSWORD,
                 SSO_PATHS.FORGOT_USERNAME,
                 SSO_PATHS.INVITE,
+                SSO_PATHS.OAUTH_CONFIRM_FORK,
             ].includes(location.pathname as any)
         ) {
             setActiveSessions(sessions);
@@ -241,8 +279,21 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 <Route path="/verify-email">
                     <ValidateRecoveryEmailContainer />
                 </Route>
+                <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>
+                    <SSOForkProducer
+                        type={SSOType.oauth}
+                        onProduceFork={handleProduceFork}
+                        onInvalidFork={handleInvalidFork}
+                        onActiveSessions={handleActiveSessionsFork}
+                    />
+                </Route>
                 <Route path={SSO_PATHS.AUTHORIZE}>
-                    <SSOForkProducer onInvalidFork={handleInvalidFork} onActiveSessions={handleActiveSessionsFork} />
+                    <SSOForkProducer
+                        type={SSOType.internal}
+                        onProduceFork={handleProduceFork}
+                        onInvalidFork={handleInvalidFork}
+                        onActiveSessions={handleActiveSessionsFork}
+                    />
                 </Route>
                 <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
                     <SignupInviteContainer
@@ -266,10 +317,28 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                             <ForceRefreshContext.Provider value={refresh}>
                                 <Layout toApp={toApp}>
                                     <Switch location={location}>
+                                        {confirmForkData && (
+                                            <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
+                                                <OAuthConfirmForkContainer
+                                                    name={toAppName}
+                                                    image={confirmForkData.payload.clientInfo.Logo}
+                                                    onConfirm={() => {
+                                                        return produceOAuthFork({
+                                                            api,
+                                                            ...confirmForkData.payload,
+                                                        });
+                                                    }}
+                                                    onCancel={() => {
+                                                        setForkState(undefined);
+                                                        setConfirmForkState(undefined);
+                                                    }}
+                                                />
+                                            </Route>
+                                        )}
                                         <Route path={SSO_PATHS.SWITCH}>
                                             <SwitchAccountContainer
                                                 activeSessions={activeSessions}
-                                                toApp={toApp}
+                                                toAppName={toAppName}
                                                 onLogin={handleLogin}
                                                 onSignOut={handleSignOut}
                                                 onSignOutAll={handleSignOutAll}
@@ -279,6 +348,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                         <Route path={SSO_PATHS.SIGNUP}>
                                             <SignupContainer
                                                 toApp={toApp}
+                                                toAppName={toAppName}
                                                 onLogin={handleLogin}
                                                 onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
                                                 signupParameters={signupSearchParams}
@@ -292,7 +362,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                         </Route>
                                         <Route path={SSO_PATHS.LOGIN}>
                                             <LoginContainer
-                                                toApp={toApp}
+                                                toAppName={toAppName}
+                                                showContinueTo={!!toOAuthName}
                                                 shouldSetupInternalAddress={shouldSetupInternalAddress}
                                                 onLogin={handleLogin}
                                                 onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}

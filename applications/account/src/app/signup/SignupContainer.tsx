@@ -208,11 +208,12 @@ const getCardPayment = async ({
 interface Props {
     onLogin: OnLoginCallback;
     toApp?: APP_NAMES;
+    toAppName?: string;
     onBack?: () => void;
     signupParameters?: ReturnType<typeof getSearchParams>;
 }
 
-const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) => {
+const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBack, signupParameters }: Props) => {
     const api = useApi();
     const location = useLocation<{ invite?: InviteData }>();
     const history = useHistory();
@@ -509,7 +510,6 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         throw new Error('Missing dependencies');
     }
 
-    const toAppName = getToAppName(toApp);
     const hasAppExternalSignup = externalSignupFeature.feature?.Value && getHasAppExternalSignup(toApp);
 
     const defaultCountry = myLocation?.Country?.toUpperCase();
