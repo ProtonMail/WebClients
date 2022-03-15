@@ -407,7 +407,15 @@ END:VCALENDAR`;
 });
 
 describe('getSupportedEventInvitation should guess a timezone to localize floating dates', () => {
-    const generateVcalSetup = (xWrTimezone = '', vtimezonesTzids: string[] = []) => {
+    const generateVcalSetup = ({
+        method = ICAL_METHOD.REQUEST,
+        xWrTimezone = '',
+        vtimezonesTzids = [],
+    }: {
+        method?: ICAL_METHOD;
+        xWrTimezone?: string;
+        vtimezonesTzids?: string[];
+    }) => {
         const xWrTimezoneString = xWrTimezone ? `X-WR-TIMEZONE:${xWrTimezone}` : '';
         const vtimezonesString = vtimezonesTzids
             .map(
@@ -419,7 +427,7 @@ END:VTIMEZONE`
         const vcal = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 VERSION:2.0
-METHOD:REQUEST
+METHOD:${method}
 ${xWrTimezoneString}
 ${vtimezonesString}
 BEGIN:VEVENT
@@ -486,28 +494,55 @@ END:VCALENDAR`;
 
     test('when there is both x-wr-timezone and single vtimezone (use x-wr-timezone)', async () => {
         const { vevent } =
-            (await getSupportedEventInvitation(generateVcalSetup('Europe/Brussels', ['America/New_York']))) || {};
+            (await getSupportedEventInvitation(
+                generateVcalSetup({
+                    xWrTimezone: 'Europe/Brussels',
+                    vtimezonesTzids: ['America/New_York'],
+                })
+            )) || {};
         expect(vevent).toEqual(localizedVevent('Europe/Brussels'));
     });
 
     test('when there is a single vtimezone and no x-wr-timezone', async () => {
-        const { vevent } = (await getSupportedEventInvitation(generateVcalSetup('', ['Europe/Vilnius']))) || {};
+        const { vevent } =
+            (await getSupportedEventInvitation(
+                generateVcalSetup({
+                    vtimezonesTzids: ['Europe/Vilnius'],
+                })
+            )) || {};
         expect(vevent).toEqual(localizedVevent('Europe/Vilnius'));
     });
 
     test('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
         await expect(
-            getSupportedEventInvitation(generateVcalSetup('Moon/Tranquility', ['Europe/Vilnius']))
-        ).rejects.toThrowError('Unsupported invitation');
+            getSupportedEventInvitation(
+                generateVcalSetup({
+                    method: ICAL_METHOD.REPLY,
+                    xWrTimezone: 'Moon/Tranquility',
+                    vtimezonesTzids: ['Europe/Vilnius'],
+                })
+            )
+        ).rejects.toThrowError('Unsupported response');
     });
 
     test('when there is no vtimezone nor x-wr-timezone (reject unsupported event)', async () => {
-        await expect(getSupportedEventInvitation(generateVcalSetup())).rejects.toThrowError('Unsupported invitation');
+        await expect(
+            getSupportedEventInvitation(
+                generateVcalSetup({
+                    method: ICAL_METHOD.CANCEL,
+                })
+            )
+        ).rejects.toThrowError('Unsupported invitation');
     });
 
     test('when there is no x-wr-timezone and more than one vtimezone (reject unsupported event)', async () => {
         await expect(
-            getSupportedEventInvitation(generateVcalSetup('', ['Europe/Vilnius', 'America/New_York']))
-        ).rejects.toThrowError('Unsupported invitation');
+            getSupportedEventInvitation(
+                generateVcalSetup({
+                    method: ICAL_METHOD.COUNTER,
+                    vtimezonesTzids: ['Europe/Vilnius', 'America/New_York'],
+                })
+            )
+        ).rejects.toThrowError('Unsupported response');
     });
 });
