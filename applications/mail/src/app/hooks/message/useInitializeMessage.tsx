@@ -6,6 +6,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
 import { PayloadAction } from '@reduxjs/toolkit';
+import { extractContentValue } from '@proton/shared/lib/mail/send/helpers';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
@@ -92,11 +93,22 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 dataChanges = { ...dataChanges, MIMEType: decryption.mimetype };
             }
             const mimeAttachments = decryption.attachments || [];
+
+            // Get Pure Mime Attachments to prevent display of embedded images in the attachment list
+            const pureMimeAttachments = mimeAttachments.filter(({ Headers }) => {
+                // If the attachment disposition is inline and has the header content-id it's an embedded image
+                if (Headers) {
+                    const contentDisposition = extractContentValue(Headers['content-disposition']);
+                    return Headers && !(contentDisposition === 'inline') && !('content-id' in Headers);
+                }
+                return true;
+            });
+
             const allAttachments = [...getData().Attachments, ...mimeAttachments];
             dataChanges = {
                 ...dataChanges,
                 Attachments: allAttachments,
-                NumAttachments: getData().NumAttachments + mimeAttachments.length,
+                NumAttachments: getData().NumAttachments + pureMimeAttachments.length,
             };
 
             if (decryption.errors) {
