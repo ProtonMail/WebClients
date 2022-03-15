@@ -5,7 +5,7 @@ import DelinquentTopBanner from './DelinquentTopBanner';
 import StorageLimitTopBanner from './StorageLimitTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
 import SubUserTopBanner from './SubUserTopBanner';
-import DeskopNotificationTopBanner from './DeskopNotificationTopBanner';
+import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
 import TimeOutOfSyncTopBanner from './TimeOutOfSyncTopBanner';
 import ReferralTopBanner from './ReferralTopBanner';
 
@@ -22,7 +22,7 @@ const TopBanners = ({ children }: Props) => {
             <StorageLimitTopBanner />
             <BadAppVersionBanner />
             <SubUserTopBanner />
-            <DeskopNotificationTopBanner />
+            <DesktopNotificationTopBanner />
             <ReferralTopBanner />
             {children}
         </>
