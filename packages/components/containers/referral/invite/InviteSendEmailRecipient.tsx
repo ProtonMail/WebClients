@@ -15,7 +15,7 @@ interface Props {
 const getErrorMessage = (emailAddress: string) => {
     const appName = getAppName(APPS.PROTONMAIL);
     if (isProtonAddress(emailAddress)) {
-        return c('Info').t`${emailAddress} is a ${appName} address`;
+        return c('Info').t`You cannot refer ${appName} users`;
     }
     return c('Info').t`${emailAddress} is invalid`;
 };
