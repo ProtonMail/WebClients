@@ -64,7 +64,7 @@ export const handleEarlyAccessDesynchronization = ({
             setCurrentRetries(currentRetries + 1);
             updateVersionCookie(targetEnvironment, earlyAccessScope);
             window.location.reload();
-        }
+        };
     }
 
     removeCurrentRetries();
