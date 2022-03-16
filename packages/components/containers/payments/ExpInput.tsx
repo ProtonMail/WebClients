@@ -1,11 +1,11 @@
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
-import Input, { Props as InputProps } from '../../components/input/Input';
+import Input, { InputTwoProps } from '../../components/v2/input/Input';
 
 const isValidMonth = (m: string) => !m || (isNumber(m) && m.length <= 2);
 const isValidYear = (y: string) => !y || (isNumber(y) && y.length <= 4);
 
-interface Props extends Omit<InputProps, 'onChange'> {
+interface Props extends Omit<InputTwoProps, 'onChange' | 'onValue'> {
     month: string;
     year: string;
     onChange: (value: { month: string; year: string }) => void;

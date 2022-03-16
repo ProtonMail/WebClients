@@ -16,15 +16,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { unary } from '@proton/shared/lib/helpers/function';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 
-import {
-    Alert,
-    Button,
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '../../../components';
+import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import {
     useApi,
     useConfig,
@@ -191,13 +183,14 @@ const SubscriptionModal = ({
         }
     };
 
-    const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
-        amount: model.step === SUBSCRIPTION_STEPS.CHECKOUT ? checkResult?.AmountDue || 0 : 0, // Define amount only in the payment step to generate payment tokens
-        currency: checkResult?.Currency || DEFAULT_CURRENCY,
-        onPay(params) {
-            return withLoading(handleSubscribe(params));
-        },
-    });
+    const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
+        usePayment({
+            amount: model.step === SUBSCRIPTION_STEPS.CHECKOUT ? checkResult?.AmountDue || 0 : 0, // Define amount only in the payment step to generate payment tokens
+            currency: checkResult?.Currency || DEFAULT_CURRENCY,
+            onPay(params) {
+                return withLoading(handleSubscribe(params));
+            },
+        });
 
     const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<void> => {
         const copyNewModel = { ...newModel };
@@ -330,6 +323,9 @@ const SubscriptionModal = ({
             ])}
             onSubmit={(e: FormEvent) => {
                 e.preventDefault();
+                if (!handleCardSubmit()) {
+                    return;
+                }
                 withLoading(handleCheckout());
             }}
             onClose={onClose}
@@ -397,16 +393,15 @@ const SubscriptionModal = ({
                                             card={card}
                                             onMethod={setMethod}
                                             onCard={setCard}
-                                            errors={errors}
+                                            cardErrors={cardErrors}
                                         />
                                     </>
                                 ) : (
                                     <>
-                                        <Alert className="mb1">{c('Info')
-                                            .t`No payment is required at this time.`}</Alert>
+                                        <div className="mb1">{c('Info').t`No payment is required at this time.`}</div>
                                         {checkResult?.Credit && creditsRemaining ? (
-                                            <Alert className="mb1">{c('Info')
-                                                .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</Alert>
+                                            <div className="mb1">{c('Info')
+                                                .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
                                         ) : null}
                                     </>
                                 )}
