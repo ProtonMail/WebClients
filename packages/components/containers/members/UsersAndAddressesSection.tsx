@@ -39,7 +39,6 @@ import useDomainsAddresses from '../../hooks/useDomainsAddresses';
 import Avatar from '../../components/avatar';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
-import './UsersAndAddressesSection.scss';
 import { AddressModal } from '../addresses';
 import EditMemberModal from './EditMemberModal';
 import DeleteMemberModal from './DeleteMemberModal';
@@ -180,6 +179,7 @@ const UsersAndAddressesSection = () => {
                     </span>
                 </>
             ),
+            className: 'w15',
         },
         {
             node: (
@@ -200,9 +200,8 @@ const UsersAndAddressesSection = () => {
                     >{c('Title header for members table').t`Features`}</span>
                 </>
             ),
-            className: 'no-mobile',
         },
-        { node: c('Title').t`Action` },
+        { node: c('Title').t`Action`, className: 'w18' },
     ].map(({ node, className = '' }, i) => {
         return (
             <TableCell key={i.toString()} className={className} type="header">
@@ -243,7 +242,7 @@ const UsersAndAddressesSection = () => {
                 >
                     {c('Action').t`Add user`}
                 </Button>
-                <div className="flex-item-fluid mb1 mr1">
+                <div className="mb1 mr1">
                     <Button
                         shape="outline"
                         disabled={
@@ -255,7 +254,7 @@ const UsersAndAddressesSection = () => {
                         {c('Action').t`Add address`}
                     </Button>
                 </div>
-                <div className="on-mobile-w100">
+                <div className="mlauto on-tablet-ml0 on-tablet-w100">
                     <SearchInput
                         onChange={handleSearch}
                         placeholder={c('Placeholder').t`Search users`}
@@ -264,7 +263,7 @@ const UsersAndAddressesSection = () => {
                     />
                 </div>
             </Block>
-            <Table className="simple-table--has-actions members-table">
+            <Table className="simple-table--has-actions no-tablet no-mobile">
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
@@ -274,30 +273,27 @@ const UsersAndAddressesSection = () => {
                         return (
                             <TableRow
                                 key={member.ID}
-                                className="on-mobile-hide-td4 pt1 pb1"
+                                className="py1"
                                 cells={[
-                                    <span
-                                        className="pt1 pb1 text-ellipsis max-w100 inline-block flex flex-nowrap flex-align-items-start"
-                                        title={member.Name}
-                                    >
-                                        <Avatar className="mr1">{getInitials(member.Name)}</Avatar>
+                                    <span className="py1 flex flex-nowrap flex-align-items-center" title={member.Name}>
+                                        <Avatar className="mr1 flex-item-noshrink">{getInitials(member.Name)}</Avatar>
                                         <div>
-                                            <span className="block">{member.Name}</span>
+                                            <span className="block text-ellipsis flex-item-fluid">{member.Name}</span>
                                             {Boolean(member.Private) && (
                                                 <Badge type="light">{c('Private Member').t`private`}</Badge>
                                             )}
                                         </div>
                                     </span>,
-                                    <span className="pt1 pb1 inline-block">
+                                    <span className="py1 pr1 text-cut max-w100">
                                         <MemberRole member={member} />
                                     </span>,
-                                    <span className="pt1 pb1 inline-block max-w15e">
+                                    <span className="py1">
                                         <MemberAddresses addresses={memberAddresses} />
                                     </span>,
-                                    <span className="pt1 pb1 inline-block">
+                                    <span className="py1">
                                         <MemberFeatures member={member} />
                                     </span>,
-                                    <span className="pt1 pb1 inline-block">
+                                    <span className="py1">
                                         <MemberActions
                                             onEdit={handleEditUser}
                                             onDelete={handleDeleteUser}
@@ -315,16 +311,16 @@ const UsersAndAddressesSection = () => {
                 </TableBody>
             </Table>
 
-            <div className="members-table-mobile">
+            <div className="no-desktop">
                 {membersSelected.map((member) => {
                     const memberAddresses = (memberAddressesMap && memberAddressesMap[member.ID]) || [];
 
                     return (
-                        <div key={member.ID} className="pt1 pb1 border-bottom">
-                            <div className="flex mb1-5">
-                                <span style={{ '--min-width-custom': `100px` }} className="text-bold min-w-custom mr1">
+                        <div key={member.ID} className="py1 border-bottom">
+                            <div className="flex-no-min-children flex-nowrap mb1-5 auto-tiny-mobile">
+                                <div className="text-bold min-w7e mr1">
                                     {c('Title header for members table').t`Name`}
-                                </span>
+                                </div>
                                 <div>
                                     <span className="block">{member.Name}</span>
                                     {Boolean(member.Private) && (
@@ -332,26 +328,27 @@ const UsersAndAddressesSection = () => {
                                     )}
                                 </div>
                             </div>
-                            <div className="flex mb1-5">
-                                <span style={{ '--min-width-custom': `100px` }} className="text-bold min-w-custom mr1">
+                            <div className="flex-no-min-children flex-nowrap mb1-5 auto-tiny-mobile">
+                                <div className="text-bold min-w7e mr1">
                                     <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
                                     <span className="no-mobile">
                                         <Info url="https://protonmail.com/support/knowledge-base/member-roles/" />
                                     </span>
-                                </span>
-                                <MemberRole member={member} />
+                                </div>
+                                <div className="flex-item-fluid">
+                                    <MemberRole member={member} />
+                                </div>
                             </div>
-                            <div className="flex mb1-5">
-                                <span style={{ '--min-width-custom': `100px` }} className="text-bold min-w-custom mr1">
-                                    <span
-                                        className="text-ellipsis inline-block align-bottom max-w100"
-                                        title={c('Title header for members table').t`Addresses`}
-                                    >{c('Title header for members table').t`Addresses`}</span>
-                                </span>
-                                <MemberAddresses addresses={memberAddresses} />
+                            <div className="flex-no-min-children flex-nowrap mb1-5 auto-tiny-mobile">
+                                <div className="text-bold min-w7e mr1">
+                                    {c('Title header for members table').t`Addresses`}
+                                </div>
+                                <div className="flex-item-fluid text-ellipsis">
+                                    <MemberAddresses addresses={memberAddresses} />
+                                </div>
                             </div>
-                            <div className="flex mb1-5">
-                                <div style={{ '--min-width-custom': `100px` }} className="text-bold min-w-custom mr1">
+                            <div className="flex-no-min-children flex-nowrap mb1-5 auto-tiny-mobile">
+                                <div className="text-bold min-w7e mr1">
                                     <span
                                         className="text-ellipsis inline-block align-bottom max-w100"
                                         title={c('Title header for members table').t`Features`}
@@ -361,8 +358,8 @@ const UsersAndAddressesSection = () => {
                                     <MemberFeatures member={member} />
                                 </div>
                             </div>
-                            <div className="flex mb1-5">
-                                <span style={{ '--min-width-custom': `100px` }} className="min-w-custom mr1" />
+                            <div className="flex-no-min-children flex-nowrap mb1-5 auto-tiny-mobile">
+                                <div className="min-w14e mr1" />
                                 <MemberActions
                                     onEdit={handleEditUser}
                                     onDelete={handleDeleteUser}
