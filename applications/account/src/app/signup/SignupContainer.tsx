@@ -38,7 +38,6 @@ import { handleSetupAddress, handleSetupKeys } from '@proton/shared/lib/keys';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { getUser } from '@proton/shared/lib/api/user';
 import {
-    Alert,
     Button,
     ChallengeResult,
     FeatureCode,
@@ -263,7 +262,8 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
     const {
         card,
         setCard,
-        errors: paymentErrors,
+        handleCardSubmit,
+        cardErrors,
         method,
         setMethod,
         parameters: paymentParameters,
@@ -871,7 +871,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                             name="payment-form"
                             onSubmit={(event) => {
                                 event.preventDefault();
-                                if (method === PAYMENT_METHOD_TYPES.CARD && !canPay) {
+                                if (!handleCardSubmit()) {
                                     return;
                                 }
                                 withLoading(handleFinalizeSignup()).catch(noop);
@@ -892,11 +892,11 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                                                 card={card}
                                                 onMethod={setMethod}
                                                 onCard={setCard}
-                                                errors={paymentErrors}
+                                                cardErrors={cardErrors}
                                             />
                                         ) : (
-                                            <Alert className="mb1">{c('Info')
-                                                .t`No payment is required at this time.`}</Alert>
+                                            <div className="mb1">{c('Info')
+                                                .t`No payment is required at this time.`}</div>
                                         )}
                                     </div>
                                 </div>

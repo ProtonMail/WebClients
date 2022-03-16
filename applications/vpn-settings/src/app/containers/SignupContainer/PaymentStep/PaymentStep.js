@@ -17,13 +17,14 @@ import LoginPanel from '../LoginPanel';
 
 const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
     const [loading, withLoading] = useLoading();
-    const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
-        amount: paymentAmount,
-        currency: model.currency,
-        onPay(params) {
-            withLoading(onPay(model, params));
-        },
-    });
+    const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
+        usePayment({
+            amount: paymentAmount,
+            currency: model.currency,
+            onPay(params) {
+                withLoading(onPay(model, params));
+            },
+        });
 
     return (
         <div className="pt2 mb2">
@@ -41,7 +42,7 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                         card={card}
                         onMethod={setMethod}
                         onCard={setCard}
-                        errors={errors}
+                        cardErrors={cardErrors}
                         paypal={paypal}
                         paypalCredit={paypalCredit}
                     >
@@ -50,14 +51,17 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                                 <PrimaryButton
                                     loading={loading}
                                     disabled={!canPay}
-                                    onClick={() =>
+                                    onClick={() => {
+                                        if (!handleCardSubmit()) {
+                                            return;
+                                        }
                                         withLoading(
                                             onPay(model, {
                                                 ...parameters,
                                                 type: PAYMENT_METHOD_TYPES.CARD,
                                             })
-                                        )
-                                    }
+                                        );
+                                    }}
                                 >{c('Action').t`Confirm payment`}</PrimaryButton>
                             </Field>
                         )}
