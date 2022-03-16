@@ -27,6 +27,8 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import ExpirationTimeDatePicker from './ExpirationTimeDatePicker';
 
+const MAX_CUSTOM_PASSWORD_LENGTH = 50;
+
 interface Props {
     itemName: string;
     itemType: LinkType;
@@ -94,8 +96,15 @@ function GeneratedLinkState({
             (!passwordToggledOn && customPassword)
     );
 
+    const isPasswordInvalid = password.length > MAX_CUSTOM_PASSWORD_LENGTH;
+    const isFormInvalid = isPasswordInvalid;
+
     const isSaveDisabled =
-        !isFormDirty || deleting || (passwordToggledOn && !password) || (expirationToggledOn && !expiration);
+        !isFormDirty ||
+        deleting ||
+        (passwordToggledOn && !password) ||
+        (expirationToggledOn && !expiration) ||
+        isFormInvalid;
 
     const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
@@ -231,12 +240,16 @@ function GeneratedLinkState({
                                                 as={PasswordInputTwo}
                                                 data-testid="sharing-modal-password"
                                                 labelContainerClassName="sr-only"
-                                                assistContainerClassName="sr-only"
                                                 label={c('Label').t`Password`}
                                                 disabled={saving}
-                                                maxLength={50}
                                                 value={password}
-                                                onChange={handleChangePassword}
+                                                error={
+                                                    isPasswordInvalid &&
+                                                    c('Info')
+                                                        .t`Only ${MAX_CUSTOM_PASSWORD_LENGTH} characters is allowed`
+                                                }
+                                                assistiveText={`${password.length}/${MAX_CUSTOM_PASSWORD_LENGTH}`}
+                                                onInput={handleChangePassword}
                                             />
                                         </>
                                     )}
