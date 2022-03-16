@@ -89,7 +89,9 @@ function useFileViewNavigation(useNavigation: boolean, shareId: string, parentLi
     const { getCachedChildren, loadChildren } = useLinksListing();
 
     const abortSignal = useAbortSignal([shareId, parentLinkId]);
-    const [children, isDecrypting] = parentLinkId ? getCachedChildren(abortSignal, shareId, parentLinkId) : [[], false];
+    const { links: children, isDecrypting } = parentLinkId
+        ? getCachedChildren(abortSignal, shareId, parentLinkId)
+        : { links: [], isDecrypting: false };
     const cachedChildren = useMemoArrayNoMatterTheOrder(children);
     const { sort } = useUserSettings();
     const { sortedList } = useControlledSorting(useNavigation ? cachedChildren : [], sort, async () => {});
