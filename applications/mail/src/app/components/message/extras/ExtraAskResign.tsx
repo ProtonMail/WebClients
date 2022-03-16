@@ -21,11 +21,11 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
 
     const [contactID, setContactID] = useState<string>('');
 
-    const [contactResignModalProps, setContactResignModalOpen] = useModalState();
+    const [contactResignModalProps, setContactResignModalOpen, render] = useModalState();
 
     const contactEmail = useMemo(() => getContactEmail(contactsMap, Address), [contactsMap, Address]);
 
-    const senderName = message?.Sender?.Name || ''; // No optional in translations
+    const senderName = message?.Sender?.Name || message?.Sender?.Address; // No optional in translations
 
     if (senderVerified || !senderPinnedKeys?.length) {
         return null;
@@ -63,19 +63,21 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
                 >{c('Action').t`Verify`}</Button>
             </span>
 
-            <ContactResignModal
-                title={c('Title').t`Trust pinned keys?`}
-                submit={c('Action').t`Trust`}
-                onResign={onResignContact}
-                contacts={[{ contactID }]}
-                {...contactResignModalProps}
-            >
-                {c('Info')
-                    .t`When you enabled trusted keys for ${senderName}, the public keys were added to the contact details.`}
-                <br />
-                {c('Info')
-                    .t`There has been an error with the signature used to verify the contact details, which may be the result of a password reset.`}
-            </ContactResignModal>
+            {render && (
+                <ContactResignModal
+                    title={c('Title').t`Trust pinned keys?`}
+                    submit={c('Action').t`Trust`}
+                    onResign={onResignContact}
+                    contacts={[{ contactID }]}
+                    {...contactResignModalProps}
+                >
+                    {c('Info')
+                        .t`When you enabled trusted keys for ${senderName}, the public keys were added to the contact details.`}
+                    <br />
+                    {c('Info')
+                        .t`There has been an error with the signature used to verify the contact details, which may be the result of a password reset.`}
+                </ContactResignModal>
+            )}
         </div>
     );
 };
