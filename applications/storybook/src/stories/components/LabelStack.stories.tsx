@@ -42,12 +42,17 @@ const labelListWithHandlers = labelList.map((label) => ({
 
 export const Basic = () => <LabelStack labels={labelList} />;
 
-export const Stacked = () => <LabelStack labels={labelList} isStacked />;
-
-export const Max = () => <LabelStack labels={labelList} maxNumber={5} />;
-
-export const Dropdown = () => <LabelStack labels={labelList} showDropDown />;
-
 export const Clickable = () => <LabelStack labels={labelListWithHandlers} />;
 
 export const WithDelete = () => <LabelStack labels={labelListWithHandlers} showDelete />;
+
+export const Stacked = () => (
+    <div className="flex flex-justify-space-between">
+        <LabelStack labels={labelList} isStacked leftToRight />
+        <LabelStack labels={labelList} isStacked />
+    </div>
+);
+
+export const Max = () => <LabelStack labels={labelList} maxNumber={5} />;
+
+export const Dropdown = () => <LabelStack labels={labelListWithHandlers} showDropDown />;

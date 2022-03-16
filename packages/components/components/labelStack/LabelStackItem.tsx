@@ -2,7 +2,6 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 import tinycolor from 'tinycolor2';
 
-import { COLORS } from '@proton/shared/lib/calendar/constants';
 import { genAccentShades } from '@proton/colors';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton } from '../dropdown';
@@ -47,15 +46,13 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
 
     return (
         <li
-            className="label-stack-item flex flex-row flex-align-items-center flex-justify-start flex-nowrap"
+            className="label-stack-item flex flex-row flex-align-items-stretch flex-justify-start flex-nowrap"
             style={
                 label.color
                     ? {
-                          '--background': base,
-                          '--hover': hover,
-                          '--active': active,
-                          // TODO: Use white for now, re-introduce the readability calculation as soon as possible
-                          '--foreground': COLORS.WHITE,
+                          '--label-bg': base,
+                          '--label-bg-hover': hover,
+                          '--label-bg-active': active,
                       }
                     : undefined
             }
@@ -63,23 +60,23 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
             {label.onClick ? (
                 <button
                     type="button"
-                    className="label-stack-item-button text-ellipsis"
+                    className="label-stack-item-inner label-stack-item-button text-ellipsis"
                     onClick={(e) => handleLabelClick(e)}
                     title={label.title}
                     ref={anchorRef}
                 >
-                    <span className="label-stack-item-button-text">{label.name}</span>
+                    <span className="label-stack-item-text">{label.name}</span>
                 </button>
             ) : (
-                <span className="label-stack-item-button text-ellipsis" title={label.title}>
-                    <span className="label-stack-item-button-text">{label.name}</span>
+                <span className="label-stack-item-inner text-ellipsis" title={label.title}>
+                    <span className="label-stack-item-text">{label.name}</span>
                 </span>
             )}
 
             {showDelete && (
                 <button
                     type="button"
-                    className="label-stack-item-delete flex-item-noshrink"
+                    className=" label-stack-item-button label-stack-item-delete flex-item-noshrink"
                     onClick={label.onDelete}
                     title={`${c('Action').t`Remove`} ${label.title}`}
                 >
@@ -90,21 +87,22 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
             {showDropdown && (
                 <Dropdown anchorRef={anchorRef} isOpen={isOpen} originalPlacement="bottom" onClose={close}>
                     <DropdownMenu>
-                        <DropdownMenuButton className="text-left flex flex-nowrap" onClick={(e) => handleLabelOpen(e)}>
-                            <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Go to label`}</span>
+                        <DropdownMenuButton
+                            className="text-left "
+                            onClick={(e) => handleLabelOpen(e)}
+                            title={`${c('Action').t`Go to label`} ${label.title}`}
+                        >
+                            {c('Action').t`Go to label`}
                         </DropdownMenuButton>
+                        {label.onDelete && <hr className="my0-25" aria-hidden="true" />}
                         {label.onDelete && (
-                            <>
-                                <hr className="my0-5" />
-
-                                <DropdownMenuButton
-                                    className="text-left flex flex-nowrap"
-                                    onClick={(e) => handleLabelRemove(e)}
-                                    title={`${c('Action').t`Remove`} ${label.title}`}
-                                >
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Remove`}</span>
-                                </DropdownMenuButton>
-                            </>
+                            <DropdownMenuButton
+                                className="text-left"
+                                onClick={(e) => handleLabelRemove(e)}
+                                title={`${c('Action').t`Remove`} ${label.title}`}
+                            >
+                                {c('Action').t`Remove`}
+                            </DropdownMenuButton>
                         )}
                     </DropdownMenu>
                 </Dropdown>
