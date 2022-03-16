@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { classnames, useCombinedRefs, useHotkeys } from '@proton/components';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { highlightNode } from '@proton/encrypted-search/lib/esHighlight';
-import { HighlightMetadata } from '@proton/encrypted-search';
+import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 
 interface Props {
     label?: ReactNode;
@@ -15,8 +15,6 @@ interface Props {
     icon?: ReactNode;
     isLoading?: boolean;
     isNarrow?: boolean;
-    highlightKeywords?: boolean;
-    highlightMetadata?: HighlightMetadata;
     dropdownContent?: ReactNode;
     dropdrownAnchorRef: RefObject<HTMLButtonElement>;
     dropdownToggle?: () => void;
@@ -36,8 +34,6 @@ const RecipientItemLayout = ({
     icon,
     isLoading = false,
     isNarrow,
-    highlightKeywords = false,
-    highlightMetadata,
     dropdownContent,
     dropdrownAnchorRef,
     dropdownToggle,
@@ -46,11 +42,17 @@ const RecipientItemLayout = ({
     showDropdown = true,
     isOutside = false,
 }: Props) => {
+    // When displaying messages sent as Encrypted Outside, this component is used
+    // almost in isolation, specifically without the usual mail app (and authenticated
+    // routes) around it. This means that useEncryptedSearchContext will not return
+    // the usual encrypted search context but its default value, where each function
+    // is mocked. Since highlightMetadata and shouldHighlight are irrelevant in that
+    // scenario, the mocked version is enough and prevents the component from crashing
+    const { highlightMetadata, shouldHighlight } = useEncryptedSearchContext();
+
     const rootRef = useRef<HTMLSpanElement>(null);
-    const highlightedLabel =
-        !!label && highlightKeywords && highlightMetadata ? highlightNode(label, highlightMetadata) : label;
-    const highlightedAddress =
-        !!address && highlightKeywords && highlightMetadata ? highlightNode(address, highlightMetadata) : address;
+    const highlightedLabel = !!label && shouldHighlight() ? highlightNode(label, highlightMetadata) : label;
+    const highlightedAddress = !!address && shouldHighlight() ? highlightNode(address, highlightMetadata) : address;
 
     const combinedRef = useCombinedRefs(dropdrownAnchorRef, rootRef);
 

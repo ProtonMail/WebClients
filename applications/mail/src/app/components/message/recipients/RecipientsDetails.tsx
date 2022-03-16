@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import { HighlightMetadata } from '@proton/encrypted-search';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientType from './RecipientType';
 import RecipientItem from './RecipientItem';
@@ -11,8 +10,6 @@ interface Props {
     message: MessageState;
     mapStatusIcons?: MapStatusIcons;
     isLoading: boolean;
-    highlightKeywords?: boolean;
-    highlightMetadata?: HighlightMetadata;
     isDetailsModal?: boolean;
     showDropdown?: boolean;
     isOutside?: boolean;
@@ -22,8 +19,6 @@ const RecipientsDetails = ({
     message,
     mapStatusIcons,
     isLoading,
-    highlightKeywords = false,
-    highlightMetadata,
     isDetailsModal = false,
     showDropdown,
     isOutside,
@@ -39,8 +34,6 @@ const RecipientsDetails = ({
                     list={ToList}
                     mapStatusIcons={mapStatusIcons}
                     isLoading={isLoading}
-                    highlightKeywords={highlightKeywords}
-                    highlightMetadata={highlightMetadata}
                     showDropdown={showDropdown}
                 />
             ) : (
@@ -56,8 +49,6 @@ const RecipientsDetails = ({
                     list={CCList}
                     mapStatusIcons={mapStatusIcons}
                     isLoading={isLoading}
-                    highlightKeywords={highlightKeywords}
-                    highlightMetadata={highlightMetadata}
                     showDropdown={showDropdown}
                 />
             ) : (
@@ -73,8 +64,6 @@ const RecipientsDetails = ({
                     list={BCCList}
                     mapStatusIcons={mapStatusIcons}
                     isLoading={isLoading}
-                    highlightKeywords={highlightKeywords}
-                    highlightMetadata={highlightMetadata}
                     showDropdown={showDropdown}
                 />
             ) : (
@@ -84,13 +73,7 @@ const RecipientsDetails = ({
     );
 
     const undisclosedRecipientsItem = (
-        <RecipientItem
-            recipientOrGroup={{}}
-            isLoading={isLoading}
-            showDropdown={showDropdown}
-            highlightMetadata={highlightMetadata}
-            isOutside={isOutside}
-        />
+        <RecipientItem recipientOrGroup={{}} isLoading={isLoading} showDropdown={showDropdown} isOutside={isOutside} />
     );
 
     return (

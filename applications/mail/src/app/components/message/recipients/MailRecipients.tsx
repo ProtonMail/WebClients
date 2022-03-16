@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { classnames, Icon, Button } from '@proton/components';
 
-import { HighlightMetadata } from '@proton/encrypted-search';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientsDetails from './RecipientsDetails';
@@ -13,8 +12,6 @@ interface Props {
     message: MessageState;
     mapStatusIcons?: MapStatusIcons;
     isLoading: boolean;
-    highlightKeywords?: boolean;
-    highlightMetadata?: HighlightMetadata;
     expanded: boolean;
     toggleDetails: () => void;
     recipientsOrGroup: RecipientOrGroup[];
@@ -25,8 +22,6 @@ const MailRecipients = ({
     message,
     mapStatusIcons,
     isLoading,
-    highlightKeywords = false,
-    highlightMetadata,
     expanded,
     toggleDetails,
     recipientsOrGroup,
@@ -47,15 +42,11 @@ const MailRecipients = ({
                     message={message}
                     isLoading={isLoading}
                     mapStatusIcons={mapStatusIcons}
-                    highlightKeywords={highlightKeywords}
-                    highlightMetadata={highlightMetadata}
                     isOutside={isOutside}
                 />
             ) : (
                 <RecipientSimple
                     isLoading={isLoading}
-                    highlightKeywords={highlightKeywords}
-                    highlightMetadata={highlightMetadata}
                     recipientsOrGroup={recipientsOrGroup}
                     showAddress={false}
                     isOutside={isOutside}
