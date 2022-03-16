@@ -15,6 +15,7 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     Button,
+    Form,
 } from '@proton/components';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { resignCards } from '@proton/shared/lib/contacts/resign';
@@ -174,18 +175,24 @@ const ContactResignModal = ({
             )}
         </>
     ) : (
-        c('Info').t`Do you want to re-sign the contact details?`
+        <div>{c('Info').t`Do you want to re-sign the contact details?`}</div>
     );
 
     return (
-        <ModalTwo size="large" {...rest} onSubmit={() => withLoadingResign(handleSubmit())} onClose={handleClose}>
+        <ModalTwo
+            size="large"
+            as={Form}
+            {...rest}
+            onSubmit={() => withLoadingResign(handleSubmit())}
+            onClose={handleClose}
+        >
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
                 {children}
                 {content}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button>{c('Action').t`Cancel`}</Button>
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
                 <PrimaryButton
                     disabled={loadingContacts}
                     loading={loadingResign}

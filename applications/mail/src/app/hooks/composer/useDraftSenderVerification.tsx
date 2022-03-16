@@ -15,9 +15,9 @@ export const useDraftSenderVerification = ({ onChange }: Props) => {
     const [addresses] = useAddresses();
     const [defaultEmail, setDefaultEmail] = useState<string>('');
 
-    const [senderChangedModalProps, setSenderChangedModalOpen] = useModalState();
+    const [senderChangedModalProps, setSenderChangedModalOpen, render] = useModalState();
 
-    const modal = (
+    const modal = render && (
         <AlertModal
             title={c('Title').t`Sender changed`}
             buttons={[<Button color="norm" onClick={senderChangedModalProps.onClose}>{c('Action').t`OK`}</Button>]}

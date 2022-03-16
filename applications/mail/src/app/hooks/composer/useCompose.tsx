@@ -2,9 +2,6 @@ import { c, msgid } from 'ttag';
 import {
     useHandler,
     useNotifications,
-    useModals,
-    ConfirmModal,
-    Alert,
     useAddresses,
     useGetUser,
     useApi,
@@ -69,7 +66,6 @@ export const useCompose = (
     const getUser = useGetUser();
     const [addresses = []] = useAddresses();
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const dispatch = useDispatch();
     const { createDraft, sendingFromDefaultAddressModal } = useDraft();
     const goToSettings = useSettingsLink();
