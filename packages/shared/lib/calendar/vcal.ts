@@ -347,20 +347,33 @@ const getNaiveLines = (vcal = '', separator = '\r\n') => {
 /**
  * Naively try to reformat badly formatted line breaks in a vcalendar string
  */
-const reformatLineBreaks = (vcal = '') => {
+export const reformatLineBreaks = (vcal = '') => {
     // try to guess the line separator of the ics (some providers use '\n' instead of the RFC-compliant '\r\n')
     const separator = vcal.includes('\r\n') ? '\r\n' : '\n';
     const lines = getNaiveLines(vcal, separator);
     return lines.reduce((acc, line) => {
-        // extract the vcal field in this line through a regex
-        const fieldMatch = line.match(/^(\w+-?\w*)(?::|;)/);
-        if (!fieldMatch) {
+        // extract naively the vcal field in this line
+        const splitByParamsLine = line.split(';');
+        let field = '';
+        if (splitByParamsLine.length > 1) {
+            field = splitByParamsLine[0];
+        } else {
+            const splitByValue = line.split(':');
+            if (splitByValue.length > 1) {
+                field = splitByValue[0];
+            }
+        }
+        if (!field) {
             // if not a field line, it should be folded
             return `${acc}${separator} ${line}`;
         }
         // make sure we did not get a false positive for the field line
-        const field = fieldMatch[1].toLowerCase();
-        if (PROPERTIES.has(field) || field.startsWith('x-') || ['begin', 'end'].includes(field)) {
+        const lowerCaseField = field.toLowerCase();
+        if (
+            PROPERTIES.has(lowerCaseField) ||
+            lowerCaseField.startsWith('x-') ||
+            ['begin', 'end'].includes(lowerCaseField)
+        ) {
             // field lines should not be folded
             return acc ? `${acc}${separator}${line}` : line;
         }
@@ -383,13 +396,16 @@ export const parseWithErrors = (
         }
         return fromIcalComponentWithErrors(new ICAL.Component(ICAL.parse(vcal)));
     } catch (e: any) {
+        const message = e.message.toLowerCase();
         // try to recover from line break errors
-        if (e.message.toLowerCase().includes('invalid line (no token ";" or ":")') && retryLineBreaks) {
+        const couldBeLineBreakError =
+            message.includes('missing parameter value') || message.includes('invalid line (no token ";" or ":")');
+        if (couldBeLineBreakError && retryLineBreaks) {
             const reformattedVcal = reformatLineBreaks(vcal);
             return parseWithErrors(reformattedVcal, { ...retry, retryLineBreaks: false });
         }
         // try to recover from enclosing errors
-        if (e.message.toLowerCase().includes('invalid ical body') && retryEnclosing) {
+        if (message.includes('invalid ical body') && retryEnclosing) {
             const reformattedVcal = reformatVcalEnclosing(vcal);
             return parseWithErrors(reformattedVcal, { ...retry, retryEnclosing: false });
         }

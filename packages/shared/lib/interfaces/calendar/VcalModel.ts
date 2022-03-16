@@ -129,6 +129,21 @@ interface VcalDurationProperty {
     value: VcalDurationValue;
 }
 
+interface VcalURIProperty {
+    value: string;
+    params: { type: 'uri' };
+}
+
+interface VcalBinaryProperty {
+    value: string;
+    params: {
+        type: 'binary';
+        encoding: 'base64';
+    };
+}
+
+type VcalImageProperty = VcalURIProperty | VcalBinaryProperty;
+
 export interface VcalValarmComponent<T = VcalTriggerProperty> {
     component: 'valarm';
     action: VcalStringProperty;
@@ -292,4 +307,16 @@ export interface VcalVcalendar {
     calscale?: VcalStringProperty;
     method?: VcalStringProperty;
     'x-wr-timezone'?: VcalStringProperty;
+    // RFC 7986
+    name?: VcalStringProperty;
+    description?: VcalStringProperty;
+    uid?: VcalStringProperty;
+    url?: VcalStringProperty;
+    'last-modified'?: VcalDateTimeProperty;
+    categories?: VcalStringWithParamsProperty[];
+    'refresh-interval'?: VcalDurationProperty;
+    source?: VcalURIProperty;
+    color?: VcalStringProperty;
+    image?: VcalImageProperty;
+    conference?: VcalURIProperty;
 }
