@@ -23,7 +23,7 @@ const FilesRecoveryState = ({ onRecovery, onClose, recovering }: Props) => {
 
     return (
         <>
-            <ModalTwoHeader title={c('Title').t`File recovery process`} disabled={recovering} />
+            <ModalTwoHeader title={c('Title').t`File recovery process`} closeButtonProps={{ disabled: recovering }} />
             <ModalTwoContent>
                 <InnerModal>
                     <div className="p1 flex w100">
