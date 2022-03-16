@@ -35,11 +35,12 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
         createNotification({ text: c('Success').t`Invoice paid` });
     };
 
-    const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
-        amount: AmountDue,
-        currency: Currency,
-        onPay: handleSubmit,
-    });
+    const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
+        usePayment({
+            amount: AmountDue,
+            currency: Currency,
+            onPay: handleSubmit,
+        });
 
     const submit =
         method === PAYMENT_METHOD_TYPES.PAYPAL ? (
@@ -50,7 +51,12 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
 
     return (
         <FormModal
-            onSubmit={() => withLoading(handleSubmit(parameters))}
+            onSubmit={() => {
+                if (!handleCardSubmit()) {
+                    return;
+                }
+                withLoading(handleSubmit(parameters));
+            }}
             loading={loading}
             close={c('Action').t`Close`}
             submit={submit}
@@ -100,7 +106,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
                             card={card}
                             onMethod={setMethod}
                             onCard={setCard}
-                            errors={errors}
+                            cardErrors={cardErrors}
                         />
                     ) : null}
                 </>

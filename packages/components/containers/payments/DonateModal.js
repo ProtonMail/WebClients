@@ -42,11 +42,12 @@ const DonateModal = ({ ...rest }) => {
         });
     };
 
-    const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
-        amount: debouncedAmount,
-        currency,
-        onPay: handleSubmit,
-    });
+    const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
+        usePayment({
+            amount: debouncedAmount,
+            currency,
+            onPay: handleSubmit,
+        });
 
     const submit =
         debouncedAmount >= MIN_DONATION_AMOUNT ? (
@@ -61,7 +62,12 @@ const DonateModal = ({ ...rest }) => {
     return (
         <FormModal
             className="donate-modal"
-            onSubmit={() => withLoading(handleSubmit(parameters))}
+            onSubmit={() => {
+                if (!handleCardSubmit()) {
+                    return;
+                }
+                withLoading(handleSubmit(parameters));
+            }}
             loading={loading}
             title={c('Title').t`Make a donation`}
             submit={submit}
@@ -83,7 +89,7 @@ const DonateModal = ({ ...rest }) => {
                 card={card}
                 onMethod={setMethod}
                 onCard={setCard}
-                errors={errors}
+                cardErrors={cardErrors}
                 paypal={paypal}
                 paypalCredit={paypalCredit}
                 noMaxWidth

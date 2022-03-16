@@ -56,11 +56,12 @@ const CreditsModal = (props: Props) => {
         createNotification({ text: c('Success').t`Credits added` });
     };
 
-    const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
-        amount: debouncedAmount,
-        currency,
-        onPay: handleSubmit,
-    });
+    const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
+        usePayment({
+            amount: debouncedAmount,
+            currency,
+            onPay: handleSubmit,
+        });
 
     const submit =
         debouncedAmount >= MIN_CREDIT_AMOUNT ? (
@@ -76,7 +77,12 @@ const CreditsModal = (props: Props) => {
         <FormModal
             className="credits-modal"
             type="small"
-            onSubmit={() => withLoading(handleSubmit(parameters))}
+            onSubmit={() => {
+                if (!handleCardSubmit()) {
+                    return;
+                }
+                withLoading(handleSubmit(parameters));
+            }}
             loading={loading}
             submit={submit}
             close={c('Action').t`Close`}
@@ -108,7 +114,7 @@ const CreditsModal = (props: Props) => {
                 card={card}
                 onMethod={setMethod}
                 onCard={setCard}
-                errors={errors}
+                cardErrors={cardErrors}
                 paypal={paypal}
                 paypalCredit={paypalCredit}
                 noMaxWidth
