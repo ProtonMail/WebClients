@@ -8,6 +8,7 @@
 	box-shadow: var(--shadow-lifted);
 	color: var(--text-norm);
 	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+	background: var(--background-norm);
 
 	@include respond-to($breakpoint-tiny, 'height') {
 		max-height: 100%;
@@ -51,6 +52,7 @@
 		color: var(--text-norm);
 		transition: inherit;
 		height: 100%;
+		margin-block-start: -0.5em;
 	}
 
 	&--minimized &-list,
@@ -131,6 +133,16 @@
 				margin-inline-start: 0.5em;
 			}
 		}
+		.transfers-manager-list-item-controls-button {
+			opacity: 0;
+			will-change: opacity;
+		}
+
+		&:hover {
+			.transfers-manager-list-item-controls-button {
+				opacity: 1;
+			}
+		}
 	}
 
 	&-toolbar {
@@ -148,5 +160,10 @@
 		column-gap: 1em;
 		align-items: center;
 		block-size: 2em;
+	}
+
+	&-header-buttons {
+		position: absolute;
+		inset-inline-end: 0;
 	}
 }
