@@ -66,6 +66,7 @@ export enum FeatureCode {
     PaymentsDisabled = 'PaymentsDisabled',
     DriveSearchEnabled = 'DriveSearchEnabled',
     MailServiceWorker = 'MailServiceWorker',
+    NewDomainOptIn = 'NewDomainOptIn',
 }
 
 export interface FeaturesContextValue {

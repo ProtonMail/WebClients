@@ -1,5 +1,5 @@
 import { useState, useEffect, ReactNode, useCallback, forwardRef, Ref } from 'react';
-import { PrivateAppContainer, TopBanners } from '@proton/components';
+import { PrivateAppContainer, NewDomainTopBanner, TopBanners } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useHistory, useLocation } from 'react-router-dom';
 import MailHeader from '../header/MailHeader';
@@ -33,7 +33,11 @@ const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }:
         setExpand(false);
     }, [location.pathname, location.hash]);
 
-    const top = <TopBanners />;
+    const top = (
+        <TopBanners>
+            <NewDomainTopBanner />
+        </TopBanners>
+    );
 
     const header = (
         <MailHeader
