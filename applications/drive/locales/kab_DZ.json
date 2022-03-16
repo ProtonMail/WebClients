@@ -3256,6 +3256,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Aql-ak.kem teqqneḍ s yisem ${ user.Name } (${ user.Email }) yerna anekcum-ik.im yettwagdel."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
@@ -4347,9 +4350,6 @@
       "Filter groups": [
         "Sti igrawen"
       ],
-      "Gift code": [
-        "Tangalt n usefk"
-      ],
       "Image URL": [
         "URL n tugna"
       ],
@@ -4367,6 +4367,9 @@
       ],
       "OS version": [
         "Lqem n unagraw n wammud"
+      ],
+      "Password": [
+        ""
       ],
       "Please describe the problem and include any error messages": [
         "Ttxil glem-d ugur sakin seddu-d akk iznan n tuccḍa"
@@ -4780,9 +4783,6 @@
       "Amount due": [
         "Tallayt ara txelseḍ"
       ],
-      "Apply gift code": [
-        "Snes tangalt n usefk"
-      ],
       "Back": [
         "Ar deffir"
       ],
@@ -5043,9 +5043,6 @@
       "Other names": [
         "Ismawen-nniḍen"
       ],
-      "Payment details": [
-        "Talqayt n lexlas"
-      ],
       "Payment verification": [
         "Asenqed n uxelleṣ"
       ],
@@ -5151,8 +5148,17 @@
       "Subtotal": [
         "Adasemday"
       ],
+      "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The link does not exist": [
+        ""
+      ],
       "The link either does not exist or has expired": [
         "Aseɣwen u ryelli ara neɣ ahat yemmut"
+      ],
+      "The link failed to be loaded": [
+        ""
       ],
       "Total (monthly)": [
         "Amatu(monthly)"

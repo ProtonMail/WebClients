@@ -3307,6 +3307,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Sunteți conectat(ă) cu ${ user.Name } (${ user.Email }) și aveți acces restricționat."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Puteți și să îmbinați calendarele importate cu calendarele Proton existente."
       ],
@@ -4429,9 +4432,6 @@
       "Filter groups": [
         "Filtrare grupuri"
       ],
-      "Gift code": [
-        "Cod cadou"
-      ],
       "Image URL": [
         "URL imagine"
       ],
@@ -4449,6 +4449,9 @@
       ],
       "OS version": [
         "Versiune sistem de operare"
+      ],
+      "Password": [
+        "Parola"
       ],
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare ce apar"
@@ -4870,9 +4873,6 @@
       "Amount due": [
         "Suma datorată"
       ],
-      "Apply gift code": [
-        "Aplicare cod cadou"
-      ],
       "Back": [
         "Înapoi"
       ],
@@ -5135,9 +5135,6 @@
       "Other names": [
         "Alte nume"
       ],
-      "Payment details": [
-        "Detalii plată"
-      ],
       "Payment verification": [
         "Verificare plată"
       ],
@@ -5243,8 +5240,17 @@
       "Subtotal": [
         "Subtotal"
       ],
+      "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The link does not exist": [
+        ""
+      ],
       "The link either does not exist or has expired": [
         "Legătura nu există sau a expirat"
+      ],
+      "The link failed to be loaded": [
+        ""
       ],
       "Total (monthly)": [
         "Total (lunar)"

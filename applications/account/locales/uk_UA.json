@@ -828,7 +828,7 @@
         "Ні, дякую"
       ],
       "Try free for 30 days": [
-        ""
+        "Спробуйте безплатно протягом 30 днів"
       ]
     },
     "Action to select a title for the bug report modal": {
@@ -2351,6 +2351,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        ""
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
@@ -2689,7 +2692,7 @@
         "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями Proton"
       ],
       "Missing key packet": [
-        ""
+        "Відсутній пакунок ключів"
       ],
       "Name does not match": [
         ""
@@ -4102,7 +4105,7 @@
         "+${ organization.BonusVPN } з'єднань для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)"
       ],
       "1. Invite friends to Proton": [
-        ""
+        "1. Запрошуйте друзів до Proton"
       ],
       "2. They try ${ appName } ${ planName }": [
         ""
@@ -4334,9 +4337,6 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Поширюючи всі подробиці про подію з цього календаря, ви погоджуєтеся надати доступ для Proton до зашифрованої інформації цього календаря."
-      ],
-      "Cancel trial": [
-        ""
       ],
       "Center": [
         "По центру"
@@ -4734,8 +4734,11 @@
       "Internet connection restored.": [
         "З'єднання з Інтернетом відновлено."
       ],
+      "Invite successfully sent": [
+        "Запрошення успішно відправлено"
+      ],
       "Invited via email": [
-        ""
+        "Запрошено електронною поштою"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Здається, деякі з ваших даних зашифровано та заблоковано."
@@ -4750,7 +4753,7 @@
         "Просто підтвердьте свій вибір, а ми зробимо решту."
       ],
       "Just send them your personal referral link.": [
-        ""
+        "Просто надішліть їм ваше особисте реферальне посилання."
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Тримайте ці записи у вашому DNS стільки часу, скільки хочете використовувати DKIM."
@@ -4813,7 +4816,7 @@
         "Mail.ru читає ваші особисті дані, щоб забезпечити доступ для рекламодавців, російських державних агенцій та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        ""
+        "Переконайтеся, що ви запам'ятали пароль для входу та розшифрування пошти. ${ boldAlert } Ми рекомендуємо спочатку додати ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ _switchButton }."
@@ -4928,6 +4931,9 @@
       ],
       "Other options": [
         "Інші варіанти"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а ваш обліковий запис буде вимкнено."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Застарілий файл відновлення; оновіть для гарантії доступу до своїх даних"
@@ -5083,7 +5089,7 @@
         "Фали відновлення були видалені"
       ],
       "recovery method": [
-        ""
+        "спосіб відновлення"
       ],
       "Recovery phrase copied to clipboard": [
         "Фразу відновлення скопійовано до буфера обміну"
@@ -5099,6 +5105,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Фраза відновлення не пов'язана з жодним застарілим ключем."
+      ],
+      "Referral link copied to your clipboard": [
+        "Реферальне посилання успішно скопійовано до буферу обміну"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
@@ -5127,6 +5136,9 @@
       "Screenshot(s) attached": [
         "Знімки екрана додано"
       ],
+      "See all plans": [
+        "Переглянути всі тарифні плани"
+      ],
       "Select a service provider to start": [
         "Виберіть постачальника послуг, щоб розпочати"
       ],
@@ -5152,13 +5164,13 @@
         "Встановити фразу відновлення"
       ],
       "Show original message": [
-        ""
+        "Показати оригінальне повідомлення"
       ],
       "Signed up": [
         ""
       ],
       "Signed up via your link": [
-        ""
+        "Підписався через ваше посилання"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
@@ -5178,8 +5190,8 @@
       "Storage GB": [
         "ГБ сховища"
       ],
-      "Sucessfully sent invites": [
-        ""
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Простір сховища спільний для пошти, календаря та диска."
       ],
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену е-пошти"
@@ -5304,6 +5316,9 @@
       "to continue to ${ toAppName }": [
         "щоб продовжити в ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Щоб продовжувати використовувати ${ appName } з функціями Premium, оберіть опції передплати та оплати."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Щоб розшифрувати й переглядати свої дані, вам необхідний файл відновлення."
       ],
@@ -5378,6 +5393,9 @@
       ],
       "Update recovery phrase": [
         "Оновити фразу відновлення"
+      ],
+      "Upgrade now": [
+        "Покращити зараз"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Передплатіть тарифний план ${ PLAN_NAMES[PLANS.VISIONARY] } або ${ PLAN_NAMES[PLANS.PROFESSIONAL] }, щоб розпочати."
@@ -5681,6 +5699,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -6801,6 +6822,9 @@
       "VPN connections": [
         "VPN-з’єднання"
       ],
+      "Waiting for subscription": [
+        ""
+      ],
       "Want to add": [
         "Хочете додати"
       ],
@@ -6850,7 +6874,7 @@
         ""
       ],
       "Your reward": [
-        ""
+        "Ваша винагорода"
       ],
       "ZIP": [
         "Поштовий індекс"
@@ -7920,7 +7944,7 @@
         "Опишіть проблему та додайте повідомлення про помилки"
       ],
       "Please insert link first": [
-        ""
+        "Спочатку вставте посилання"
       ],
       "Postal code": [
         "Поштовий індекс"
@@ -8303,16 +8327,16 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Отримайте до 18 місяців ${ appName } ${ planName } безплатно"
       ],
       "Invite friends and earn rewards!": [
         "Запрошуйте друзів та отримуйте винагороди!"
       ],
       "No more missed appointments": [
-        ""
+        "Більше жодних пропущених зустрічей"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "Зі сповіщеннями електронної пошти, ви вирішуєте, про які події буде надіслано сповіщення й коли."
       ]
     },
     "State": {
@@ -8646,7 +8670,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         ""
       ],
       "${ appName } customization": [
@@ -8920,7 +8944,7 @@
         "Видалити ${ domain.DomainName }"
       ],
       "Delete ${ email }": [
-        ""
+        "Видалити ${ email }"
       ],
       "Delete ${ filter.Name }": [
         "Видалити ${ filter.Name }"
@@ -9058,7 +9082,7 @@
         "Подарунковий код"
       ],
       "How does it work?": [
-        ""
+        "Як це працює?"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -9238,7 +9262,7 @@
         "Запросити друга"
       ],
       "Referral tracker": [
-        ""
+        "Реферальний трекер"
       ],
       "Remove calendar": [
         "Вилучити календар"
@@ -9262,7 +9286,7 @@
         "Відновити права адміністратора"
       ],
       "Secure email based in Switzerland": [
-        ""
+        "Захищена електронна пошта, що розташована у Швейцарії"
       ],
       "Security": [
         "Безпека"
@@ -9382,7 +9406,7 @@
         "Всього (щомісячно)"
       ],
       "Try the best of ProtonMail for free": [
-        ""
+        "Спробуйте найкраще з ProtonMail безплатно"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
@@ -9418,7 +9442,7 @@
         "Що нового"
       ],
       "Your account’s usage": [
-        ""
+        "Використання вашого облікового запису"
       ],
       "Your calendar link": [
         "Посилання на ваш календар"
@@ -9436,7 +9460,7 @@
         "Ваш стан відновлення"
       ],
       "You’ve been invited to try ${ mailAppName }": [
-        ""
+        "Вас було запрошено спробувати ${ mailAppName }"
       ],
       "ZIP / postal code": [
         "Поштовий індекс"

@@ -1425,7 +1425,7 @@
         "Svalbard et Jan Mayen"
       ],
       "Swaziland": [
-        "Swaziland"
+        "Eswatini"
       ],
       "Sweden": [
         "Suède"
@@ -2073,9 +2073,6 @@
       "By leaving now, changes may not be saved": [
         "En quittant maintenant, les modifications peuvent ne pas être enregistrées"
       ],
-      "Cancel trial": [
-        "Annuler l'essai"
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur « Demander un nouveau code » pour qu'un nouveau code de vérification soit envoyé à ${ strong }. Si cette adresse électronique est incorrecte, cliquez sur « Modifier » pour la corriger."
       ],
@@ -2087,12 +2084,6 @@
       ],
       "Connections": [
         "Connexions"
-      ],
-      "Continue with ${ planName }": [
-        "Continuer avec ${ planName }"
-      ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        "Continuez avec ${ planName } aujourd'hui pour éviter que votre accès soit désactivé à la fin de votre essai."
       ],
       "Creating your account": [
         "Création de votre compte"
@@ -2298,6 +2289,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Lorsque vous cliquerez sur « Rétrograder », quelques minutes pourront être nécessaires pour passer à un abonnement gratuit. "
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
+      ],
       "P2P": [
         "P2P"
       ],
@@ -2392,6 +2386,9 @@
       "Screenshot(s) attached": [
         "Capture(s) d’écran jointe(s)"
       ],
+      "See all plans": [
+        "Voir tous les abonnements"
+      ],
       "Server is currently down": [
         "Ce serveur est actuellement indisponible"
       ],
@@ -2407,14 +2404,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Puisque vous êtes un utilisateur fidèle, votre compte dispose de fonctionnalités supplémentaires activées."
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Commencez avec 500 Mo et débloquez plus d'espace de stockage au fur et à mesure. L'espace de stockage est partagé entre Mail, Calendar et Drive."
-      ],
       "Starter VPN service with P2P support.": [
         "Service VPN pour débuter avec prise en charge du P2P."
       ],
       "Storage GB": [
         "Stockage (en Go)"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "L'espace de stockage est partagé entre Mail, Calendar et Drive."
       ],
       "Support for 1 custom email domain": [
         "Prise en charge d'un nom de domaine personnalisé"
@@ -2464,6 +2461,9 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Cet assistant activera l'authentification à deux facteurs (A2F/2FA) sur votre compte Proton. L'authentification à deux facteurs rendra votre compte Proton plus sécurisé. Nous vous recommandons donc de l'activer."
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ appName } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."
       ],
@@ -2505,6 +2505,9 @@
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
+      ],
+      "Upgrade now": [
+        "Passer à l'offre supérieure maintenant"
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilisez les identifiants suivants lorsque vous vous connectez à des serveurs ProtonVPN sans application. Quelques exemples de cas d'utilisation : Tunnelblick sur macOS, OpenVPN sur GNU/Linux."
@@ -2632,9 +2635,6 @@
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Votre compte Proton existant peut être utilisé pour accéder à tous les services Proton. Veuillez vous connecter avec ${ email }"
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        "Votre essai gratuit de ${ appName } ${ planName } expirera le ${ formattedTrialExpirationDate }."
-      ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Vos informations de paiement sont protégées par le chiffrement TLS et les lois suisses"
       ],
@@ -2652,6 +2652,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Veuillez contacter le support Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Votre essai se termine le ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -2802,9 +2805,6 @@
       ],
       "BTC amount:": [
         "Montant BTC :"
-      ],
-      "Cancel": [
-        "Annuler"
       ],
       "Card holder": [
         "Titulaire de la carte"
@@ -2988,9 +2988,6 @@
       ],
       "Select your country": [
         "Sélectionnez votre pays"
-      ],
-      "Submit": [
-        "Soumettre"
       ],
       "Subtotal": [
         "Sous-total"
@@ -3363,6 +3360,9 @@
     "Option": {
       "Android": [
         "Android"
+      ],
+      "Captcha": [
+        "Captcha"
       ],
       "Country configs": [
         "Paramètres pays"
@@ -3895,7 +3895,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         "Essai de ${ appName } ${ planName }"
       ],
       "${ appName } customization": [

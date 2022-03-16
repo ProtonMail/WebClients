@@ -84,7 +84,7 @@
         "Sluiten"
       ],
       "Close event popover": [
-        "Gebeurtenis popover sluiten"
+        "Afspraak popover sluiten"
       ],
       "Close modal": [
         "Venster sluiten"
@@ -200,7 +200,7 @@
         "Krijg verificatiecode"
       ],
       "Go to label": [
-        ""
+        "Ga naar label"
       ],
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
@@ -593,7 +593,7 @@
         "Leeg ICS-bestand"
       ],
       "Invalid event": [
-        "Ongeldige gebeurtenis"
+        "Ongeldige afspraak"
       ],
       "Invalid ICS file": [
         "Ongeldig ICS-bestand"
@@ -605,7 +605,7 @@
         "Niet-ondersteunde agendacomponent"
       ],
       "Unsupported event": [
-        "Niet-ondersteunde gebeurtenis"
+        "Niet-ondersteunde afspraak"
       ]
     },
     "Attendee role": {
@@ -1937,19 +1937,19 @@
         "Annulering van een afspraak op ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Annulering van een gebeurtenis die begint op ${ formattedStart }"
+        "Annulering van een afspraak die begint op ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
         "Uitnodiging voor een afspraak op ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Uitnodiging voor een gebeurtenis die begint op ${ formattedStart }"
+        "Uitnodiging voor een afspraak die begint op ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Update voor een afspraak op ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "Update voor een gebeurtenis die begint op ${ formattedStart }"
+        "Update voor een afspraak die begint op ${ formattedStart }"
       ]
     },
     "Error": {
@@ -1994,7 +1994,7 @@
         "Primaire kalendersleutel is niet gedecodeerd"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kan geen nieuwe kalenders maken voor alle geïmporteerde kalenders vanwege de limiet voor persoonlijke kalenders."
+        "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda."
       ],
       "Cancellation failed to be sent": [
         "Annulering kon niet worden verzonden"
@@ -2068,7 +2068,7 @@
         "Ongeldig e-mailadres"
       ],
       "Invalid link to the event": [
-        "Ongeldige link naar de gebeurtenis"
+        "Ongeldige link naar de afspraak"
       ],
       "Invalid name": [
         "Ongeldige naam"
@@ -2089,14 +2089,14 @@
         "Het is enkel mogelijk om afspraken te verplaatsen tussen ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty": [
-        "Label naam mag niet leeg zijn"
+        "Labelnaam mag niet leeg zijn"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
         "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton agenda's"
       ],
       "Missing key packet": [
-        ""
+        "Ontbrekend sleutelpakket"
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
@@ -2326,7 +2326,7 @@
         "Eindtijd valt buiten de grenzen"
       ],
       "Event": [
-        "Gebeurtenis"
+        "Afspraak"
       ],
       "Event validation failed": [
         "Validatie van afspraak mislukt"
@@ -2338,7 +2338,7 @@
         "Informatie over vrije tijd"
       ],
       "Invalid event": [
-        "Ongeldige gebeurtenis"
+        "Ongeldige afspraak"
       ],
       "Journal entry": [
         "Logboek-item"
@@ -2371,7 +2371,7 @@
         "Oorspronkelijke terugkerende afspraak kan niet worden gevonden"
       ],
       "Recurring event has no occurrences": [
-        "Terugkerende gebeurtenis heeft geen voorvallen"
+        "Terugkerende afspraak heeft geen voorvallen"
       ],
       "Recurring rule not supported": [
         "Herhalingsvoorwaarde niet ondersteund"
@@ -2392,7 +2392,7 @@
         "Onbekend"
       ],
       "Unsupported event": [
-        "Niet-ondersteunde gebeurtenis"
+        "Niet-ondersteunde afspraak"
       ]
     },
     "Error message": {
@@ -2484,7 +2484,7 @@
         "Deze afspraak kon niet aan uw agenda worden toegevoegd. Er werd geen antwoord verstuurd"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Deze gebeurtenis kon niet worden bijgewerkt in uw agenda. Er werd geen antwoord verstuurd"
+        "Deze afspraak kon niet worden bijgewerkt in uw agenda. Er werd geen antwoord verstuurd"
       ],
       "Unexpected error": [
         "Onverwachte fout"
@@ -2524,7 +2524,7 @@
         "nee"
       ],
       "pending": [
-        ""
+        "in wachtrij"
       ],
       "yes": [
         "ja"
@@ -2722,7 +2722,7 @@
         "Er kan geen contact worden geïmporteerd. Klik voor meer informatie"
       ],
       "No event can be imported. Expand for details.": [
-        "Er kan geen gebeurtenis worden geïmporteerd. Uitvouwen voor details."
+        "Er kan geen afspraak worden geïmporteerd. Uitvouwen voor details."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Een deel van je agendainhoud wordt niet ondersteund en zal niet worden geïmporteerd."
@@ -2845,7 +2845,7 @@
         "Een uitnodiging zal worden verzonden aan toegevoegde deelnemers."
       ],
       "An invitation will be sent to the event participants.": [
-        "Een uitnodiging zal worden verzonden naar de deelnemers van de gebeurtenissen."
+        "Een uitnodiging zal worden verzonden naar de deelnemers van de afspraken."
       ],
       "and": [
         "en"
@@ -3116,8 +3116,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Sommige antwoorden op voorvallen die eerder zijn bijgewerkt door de organisator zullen verloren gaan."
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Start met 500 MB en ontgrendel meer opslag na verloop van tijd. Opslagruimte is gedeeld tussen Mail, Calendar en Drive."
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Opslagruimte is gedeeld voor Mail, Agenda en Drive."
       ],
       "Support for 1 custom email domain": [
         "Ondersteuning voor 1 aangepast e-mail domein"
@@ -3141,7 +3141,7 @@
         "De organisator kon niet op de hoogte worden gebracht dat u uw antwoord wijzigde:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "De organisator heeft enkele van de gebeurtenissen in deze serie bijgewerkt. Het wijzigen van de kalender wordt nog niet ondersteund voor dit type terugkerende afspraken."
+        "De organisator heeft enkele van de afspraken in deze serie bijgewerkt. Het wijzigen van de agenda wordt nog niet ondersteund voor dit type terugkerende afspraken."
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
         "De organisator van deze afspraak wordt op de hoogte gebracht dat u de uitnodiging afwijst. Wilt u deze afspraak verwijderen?"
@@ -3198,7 +3198,7 @@
         "Onbeperkt aantal berichten"
       ],
       "Update recurring event": [
-        "Terugkerende gebeurtenis updaten"
+        "Terugkerende afspraak updaten"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Upgrade vandaag om geen van volgende ${ appName } ${ planName } voordelen te verliezen."
@@ -3243,7 +3243,7 @@
         "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
       "Would you like to update all events in this series?": [
-        "Wilt u alle gebeurtenissen in deze serie bijwerken?"
+        "Wilt u alle afspraken in deze serie bijwerken?"
       ],
       "Would you like to update this event?": [
         "Wilt u deze afspraak bijwerken?"
@@ -3273,7 +3273,7 @@
         "U hebt uw sleutels opnieuw geactiveerd. Afspraken gekoppeld aan de volgende kalenders kunnen nu gedecodeerd worden."
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "U hebt uw wachtwoord opnieuw ingesteld en gebeurtenissen gekoppeld aan de volgende agenda's konden niet worden gedecodeerd.\nAlle gedeelde agendakoppelingen die u eerder hebt gemaakt, werken niet meer.\nAlle actieve geabonneerde agenda's zullen na een paar minuten weer synchroniseren."
+        "U hebt uw wachtwoord opnieuw ingesteld en afspraken gekoppeld aan de volgende agenda's konden niet worden gedecodeerd.\nAlle gedeelde agendakoppelingen die u eerder hebt gemaakt, werken niet meer.\nAlle actieve geabonneerde agenda's zullen na een paar minuten weer synchroniseren."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft ${ spaceDisplayed }% van uw opslagcapaciteit bereikt. ${ freeUpMessage } ${ upgradeLink }"
@@ -3285,22 +3285,22 @@
         "U zal alle wijzigingen kwijtraken."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
-        "U zult alle gebeurtenissen in deze serie bijwerken. Toegevoegd en verwijderde deelnemers zullen op de hoogte worden gebracht."
+        "U zult alle afspraken in deze serie bijwerken. Toegevoegd en verwijderde deelnemers zullen op de hoogte worden gebracht."
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "U zal alle gebeurtenissen in deze serie bijwerken. Een uitnodiging zal worden verzonden naar de deelnemers van het evenement."
+        "U zal alle afspraken in deze serie bijwerken. Een uitnodiging zal worden verzonden naar de deelnemers van het evenement."
       ],
       "You will update all the events in this series. Existent and added participants will be notified.": [
-        "U zal alle gebeurtenissen in deze serie bijwerken. Bestaande en toegevoegde deelnemers zullen op de hoogte worden gesteld."
+        "U zal alle afspraken in deze serie bijwerken. Bestaande en toegevoegde deelnemers zullen op de hoogte worden gesteld."
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "U zult alle gebeurtenissen in deze serie bijwerken. Bestaande en verwijderde deelnemers zullen op de hoogte worden gebracht."
+        "U zult alle afspraken in deze serie bijwerken. Bestaande en verwijderde deelnemers zullen op de hoogte worden gebracht."
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "U zult alle gebeurtenissen in deze serie bijwerken. Bestaande en verwijderde deelnemers zullen hiervan op de hoogte worden gesteld."
+        "U zult alle afspraken in deze serie bijwerken. Bestaande en verwijderde deelnemers zullen hiervan op de hoogte worden gesteld."
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
-        "U zult alle gebeurtenissen in deze serie bijwerken. Verwijderde deelnemers zullen hiervan op de hoogte worden gebracht."
+        "U zult alle afspraken in deze serie bijwerken. Verwijderde deelnemers zullen hiervan op de hoogte worden gebracht."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang is beperkt. ${ payInvoiceLink }"
@@ -3400,9 +3400,6 @@
       "Calendars": [
         "Agenda's"
       ],
-      "Cancel": [
-        "Annuleer"
-      ],
       "Category": [
         "Categorie"
       ],
@@ -3470,7 +3467,7 @@
         "Eindigt"
       ],
       "Event title": [
-        "Gebeurtenis titel"
+        "Afspraak titel"
       ],
       "Export contacts": [
         "Contactpersonen exporteren"
@@ -3598,9 +3595,6 @@
       ],
       "Street address": [
         "Straatnaam"
-      ],
-      "Submit": [
-        "Versturen"
       ],
       "System information": [
         "Systeeminformatie"
@@ -3943,7 +3937,7 @@
     },
     "Notification when": {
       "at time of event": [
-        "op tijdstip van gebeurtenis"
+        "op tijdstip van afspraak"
       ],
       "day before": [
         "dag ervoor",
@@ -4238,6 +4232,9 @@
       ],
       "OS version": [
         "Versie besturingssysteem"
+      ],
+      "Password": [
+        "Wachtwoord"
       ],
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem en voeg alle foutmeldingen toe"
@@ -4681,7 +4678,7 @@
         "Kies hoeveel keer deze afspraak zich herhaalt"
       ],
       "Choose how often this event repeats": [
-        "Kies hoe vaak deze gebeurtenis herhaalt"
+        "Kies hoe vaak deze afspraak herhaalt"
       ],
       "Clearing data": [
         "Gegevens aan het wissen"
@@ -4779,7 +4776,7 @@
         "Afspraak gedurende de hele dag"
       ],
       "Event is happening on defined time slot": [
-        "De gebeurtenis gebeurt op een gedefinieerde tijdsperiode"
+        "De afspraak gebeurt op een gedefinieerde tijdsperiode"
       ],
       "Exporting contacts": [
         "Contactpersonen exporteren"
@@ -4794,14 +4791,14 @@
         "Groepen"
       ],
       "Hide time zones for event start and end times": [
-        "Tijdzones verbergen voor start- en eindtijden van gebeurtenis"
+        "Tijdzones verbergen voor start- en eindtijden van afspraak"
       ],
       "Human verification": [
         "Persoonsverificatie"
       ],
       "Import as simple event?": [
-        "Importeren als eenvoudige gebeurtenis?",
-        "Importeren als eenvoudige gebeurtenissen?"
+        "Importeren als eenvoudige afspraak?",
+        "Importeren als eenvoudige afspraken?"
       ],
       "Import contacts": [
         "Contactpersonen importeren"
@@ -4903,7 +4900,7 @@
         "Frequentie interval afspraak selecteren"
       ],
       "Select event start date": [
-        "Startdatum van de gebeurtenis"
+        "Startdatum van de afspraak"
       ],
       "Select event start time": [
         "Selecteer begintijd van afspraak"
@@ -4957,7 +4954,7 @@
         "Afspraak bijwerken"
       ],
       "Update recurring event": [
-        "Terugkerende gebeurtenis updaten"
+        "Terugkerende afspraak updaten"
       ],
       "Upgrade required": [
         "Upgrade vereist"

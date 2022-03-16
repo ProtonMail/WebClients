@@ -855,9 +855,6 @@
       "Try another method": [
         "Andere methode proberen"
       ],
-      "Turn on auto-load": [
-        "Auto-laden inschakelen"
-      ],
       "Turn on tracker protection": [
         "Zet tracker beveiliging aan"
       ],
@@ -1069,7 +1066,7 @@
         "Leeg ICS-bestand"
       ],
       "Invalid event": [
-        "Ongeldige gebeurtenis"
+        "Ongeldige afspraak"
       ],
       "Invalid ICS file": [
         "Ongeldig ICS-bestand"
@@ -1081,7 +1078,7 @@
         "Niet-ondersteunde agendacomponent"
       ],
       "Unsupported event": [
-        "Niet-ondersteunde gebeurtenis"
+        "Niet-ondersteunde afspraak"
       ]
     },
     "Attachment radio advanced search": {
@@ -1496,16 +1493,16 @@
         "Afspraakherplanning wordt momenteel niet ondersteund"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        "Dit antwoord kan niet worden toegevoegd aan ${ calendarAppName } , omdat we alleen antwoorden op alle gebeurtenissen van een serie ondersteunen op dit moment"
+        "Dit antwoord kan niet worden toegevoegd aan ${ calendarAppName } , omdat we alleen antwoorden op alle afspraken van een serie ondersteunen op dit moment"
       ],
       "This event has been canceled.": [
-        "Dit evenement is geannuleerd."
+        "Deze afspraak is geannuleerd."
       ],
       "This event has been updated.": [
         "Dit event werd geüpdatet."
       ],
       "This invitation is out of date. The event has been canceled.": [
-        "Deze uitnodiging is verouderd. Het evenement is geannuleerd."
+        "Deze uitnodiging is verouderd. De afspraak is geannuleerd."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Deze uitnodiging is verouderd. De afspraak is verwijderd."
@@ -1545,7 +1542,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "Agenda kon niet ontcijferd worden"
+        "Agenda kon niet ontsleuteld worden"
       ],
       "Calendar is syncing": [
         "De agenda wordt gesynchroniseerd"
@@ -2700,11 +2697,11 @@
         "Het evenement is morgen"
       ],
       "Event starting now": [
-        "Het evenement begint nu"
+        "De afspraak begint nu"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
         "Gebeurtenis start in één minuut",
-        "Gebeurtenis start in ${ minutesUntilEvent } minuten"
+        "Afspraak start in ${ minutesUntilEvent } minuten"
       ],
       "Event starts tomorrow": [
         "Het evenement begint morgen"
@@ -2712,10 +2709,10 @@
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        "Gebeurtenisgegevens zijn gecodeerd. Meld u opnieuw aan om Agenda te herstellen en uw gegevens te decoderen. ${ learnMoreLink }"
+        "Afspraakgegevens zijn gecodeerd. Meld u opnieuw aan om Agenda te herstellen en uw gegevens te decoderen. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
-        "De details van de gebeurtenis kunnen niet worden ontcijferd. ${ whyNotLink }"
+        "De details van de afspraak kunnen niet worden ontcijferd. ${ whyNotLink }"
       ]
     },
     "Email reminder error": {
@@ -2758,7 +2755,7 @@
     },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } voor <${ email }>. U kunt een andere sleutel toevoegen of de encryptie voor dit contact uitschakelen om het probleem op te lossen."
+        "${ error.message } voor <${ email }>. U kunt een andere sleutel toevoegen of de versleuteling voor dit contact uitschakelen om het probleem op te lossen."
       ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
@@ -2909,7 +2906,7 @@
         "Verwerkingsfout in bericht."
       ],
       "Missing key packet": [
-        ""
+        "Ontbrekend sleutelpakket"
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
@@ -2969,10 +2966,10 @@
         "Voorkeuren konnen niet opgeslagen worden"
       ],
       "Primary address key is not decrypted": [
-        "Primaire adressleutel is niet gedecodeerd"
+        "Primaire adressleutel is niet ontsleuteld"
       ],
       "Primary address key is not decrypted.": [
-        "Primaire adressleutel is niet gedecodeerd."
+        "Primaire adressleutel is niet ontsleuteld."
       ],
       "Public key could not be trusted": [
         "De openbare sleutel is niet vertrouwd"
@@ -3012,7 +3009,7 @@
         "Sommige labelnamen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Sommige van uw labelnamen overschrijden de ProtonMail's maximum tekenlimiet. Pas de import aan om deze namen te bewerken."
+        "Sommige labelnamen overschrijden de maximum tekenlimiet. Pas de import aan om deze namen te bewerken."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
@@ -3061,10 +3058,10 @@
         "Deze labelnaam is niet beschikbaar. Gelieve een andere naam te kiezen"
       ],
       "This message has already been sent": [
-        "Dit bericht is al verstuurd"
+        "Dit bericht is al verzonden"
       ],
       "This message has already been sent. A new draft has been saved.": [
-        "Dit bericht is al verzonden. Er is een nieuw ontwerp opgeslagen."
+        "Dit bericht is al verzonden. Er is een nieuw concept opgeslagen."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
@@ -3091,8 +3088,8 @@
         "U kunt geen vCards van meer dan 10 contacten verzenden"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "U kunt niet meer dan één componistenvenster tegelijk openen",
-        "U kunt niet meer dan ${ maxActiveComposer } componistenvensters tegelijk openen"
+        "U kunt niet meer dan één opstelvenster tegelijk openen",
+        "U kunt niet meer dan ${ maxActiveComposer } opstelvensters tegelijk openen"
       ],
       "You did not provide a file.": [
         "U heeft geen bestand geselecteerd."
@@ -3200,7 +3197,7 @@
         "Informatie over vrije tijd"
       ],
       "Invalid event": [
-        "Ongeldige gebeurtenis"
+        "Ongeldige afspraak"
       ],
       "Journal entry": [
         "Logboek-item"
@@ -3233,7 +3230,7 @@
         "Oorspronkelijke terugkerende afspraak kan niet worden gevonden"
       ],
       "Recurring event has no occurrences": [
-        "Terugkerende gebeurtenis heeft geen voorvallen"
+        "Terugkerende afspraak heeft geen voorvallen"
       ],
       "Recurring rule not supported": [
         "Herhalingsvoorwaarde niet ondersteund"
@@ -3248,7 +3245,7 @@
         "To-do item"
       ],
       "Unsupported event": [
-        "Niet-ondersteunde gebeurtenis"
+        "Niet-ondersteunde afspraak"
       ]
     },
     "Error message": {
@@ -3297,7 +3294,7 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Bijgevoegd ICS-bestand kon niet worden gedecodeerd"
+        "Bijgevoegd ICS-bestand kon niet worden ontsleuteld"
       ],
       "Attached ICS file could not be read": [
         "Bijgevoegd ICS-bestand kon niet worden gelezen"
@@ -3312,7 +3309,7 @@
         "Deze afspraak kon niet aan uw agenda worden toegevoegd. Er werd geen antwoord verstuurd"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Deze gebeurtenis kon niet worden bijgewerkt in uw agenda. Er werd geen antwoord verstuurd"
+        "Deze afspraak kon niet worden bijgewerkt in uw agenda. Er werd geen antwoord verstuurd"
       ],
       "Unexpected error": [
         "Onverwachte fout"
@@ -3474,7 +3471,7 @@
         "Verloopt vandaag"
       ],
       "Only ${ days } day left": [
-        "Nog maar één",
+        "Nog maar één dag",
         "Nog maar ${ days } dagen"
       ]
     },
@@ -3691,7 +3688,7 @@
         "${ calendarsToBeMerged } samengevoegde agenda's"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } samengevoegde agenda's",
+        "${ calendarsToBeMergedCount } samengevoegde agenda",
         "${ calendarsToBeMergedCount } samengevoegde agenda's"
       ],
       "${ contactEmailsLength } Member": [
@@ -3824,7 +3821,7 @@
         "5 GB opslag"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Een herstelzin is een van de veiligste manieren om de toegang tot uw account te beveiligen. U kunt het gebruiken om toegang te krijgen tot uw account en uw gecodeerde gegevens te herstellen als u ooit uw wachtwoord vergeet."
+        "Een herstelzin is een van de veiligste manieren om de toegang tot uw account te beveiligen. U kunt het gebruiken om toegang te krijgen tot uw account en uw versleutelde gegevens te herstellen als u ooit uw wachtwoord vergeet."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Een verzoek om u uit te schrijven voor deze mailinglijst wordt verzonden naar de afzender van de nieuwsbrief en wordt automatisch verwerkt."
@@ -4045,14 +4042,14 @@
         "E-mailadres"
       ],
       "Email tracker protection is disabled": [
-        "E-mail tracker bescherming is uitgeschakeld"
+        "E-mailtracker bescherming is uitgeschakeld"
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
         "E-mailtrackers kunnen uw privacy schenden. Proton heeft geen trackers op dit bericht gevonden."
       ],
       "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "Email trackers kunnen uw privacy schenden. Proton heeft ${ numberOfTrackers } tracker gevonden en geblokkeerd.",
-        "Email trackers kunnen uw privacy schenden. Proton heeft ${ numberOfTrackers } trackers gevonden en geblokkeerd."
+        "E-mailtrackers kunnen uw privacy schenden. Proton heeft ${ numberOfTrackers } tracker gevonden en geblokkeerd.",
+        "E-mailtrackers kunnen uw privacy schenden. Proton heeft ${ numberOfTrackers } trackers gevonden en geblokkeerd."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "E-mailtrackers kunnen uw privacy schenden. Schakel bescherming tegen trackers in om te voorkomen dat afzenders weten of en wanneer u een bericht hebt geopend."
@@ -4403,7 +4400,7 @@
         "Ontvanger: "
       ],
       "Recovery phrase copied to clipboard": [
-        "Herstel zin gekopieerd naar klembord"
+        "Herstelzin gekopieerd naar klembord"
       ],
       "Recovery phrase downloaded": [
         "Herstelzin gedownload"
@@ -4490,7 +4487,7 @@
         "Sorry, dit bericht bestaat niet of is al verlopen"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Opslagruimte is gedeeld voor Mail, Calendar en Drive."
       ],
       "Store and share files securely with Proton Drive.": [
         "Veilig bestanden opslaan en delen met Proton Drive."
@@ -4772,8 +4769,8 @@
       "You are about to open another browser tab and visit:": [
         "U staat het punt om een nieuw tabblad te openen en de volgende locatie te bezoeken:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "U bent momenteel aangemeld als ${ user.Name } (${ user.Email }) en hebt beperkte toegang."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "U kunt het als bijlage toevoegen of het inline in uw e-mail tonen."
@@ -5194,9 +5191,6 @@
       "Calendars": [
         "Agenda's"
       ],
-      "Cancel": [
-        "Annuleren"
-      ],
       "Carbon Copy": [
         "CC"
       ],
@@ -5315,7 +5309,7 @@
         "Labellen als"
       ],
       "Label messages as": [
-        "Berichten labellen als"
+        "Berichten labelen als"
       ],
       "Last 12 months only": [
         "Alleen afgelopen 12 maanden"
@@ -5448,9 +5442,6 @@
       ],
       "Street address": [
         "Adres"
-      ],
-      "Submit": [
-        "Versturen"
       ],
       "System information": [
         "Systeeminformatie"
@@ -5701,7 +5692,7 @@
         "Voorwaarden"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Dit ICS-bestand bevat meer dan één gebeurtenis. Download het en importeer de gebeurtenissen in ${ calendarAppName }"
+        "Dit ICS-bestand bevat meer dan één afspraak. Download het en importeer de afspraken in ${ calendarAppName }"
       ],
       "Trash": [
         "Prullenbak"
@@ -5713,7 +5704,7 @@
         "Account upgraden"
       ],
       "You need to activate your calendar keys to add this event": [
-        "U moet uw agendasleutels activeren om dit evenement toe te voegen"
+        "U moet uw agendasleutels activeren om dize afspraak toe te voegen"
       ],
       "You need to activate your calendar keys to answer this invitation": [
         "U moet uw agendasleutels activeren om deze uitnodiging te beantwoorden"
@@ -5731,7 +5722,7 @@
         "U moet uw sleutels opnieuw activeren om deze uitnodiging te beheren"
       ],
       "You need to reactivate your keys to see the updated event": [
-        "U moet uw sleutels opnieuw activeren om de bijgewerkte gebeurtenis te zien"
+        "U moet uw sleutels opnieuw activeren om de bijgewerkte afspraak te zien"
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "U moet uw sleutels opnieuw activeren om de bijgewerkte uitnodiging te zien"
@@ -5750,7 +5741,7 @@
         "Aantal aangemaakte agenda's: ${ createdCalendars } van de ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
-        "Nieuwe kalenders maken"
+        "Nieuwe agenda's maken"
       ],
       "Gathering your data": [
         "Verzamelen van uw gegevens"

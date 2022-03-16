@@ -2319,6 +2319,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "¡Enhorabuena! Has ganado el máximo de meses gratis de ${ rewardsLimit } de ${ appName } ${ plusPlanName }"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se haya completado, puedes cerrar esta ventana."
       ],
@@ -4223,9 +4226,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Al compartir los detalles completos de este calendario, aceptas conceder a Proton acceso a la información cifrada de este calendario."
       ],
-      "Cancel trial": [
-        ""
-      ],
       "Center": [
         "Centrar"
       ],
@@ -4616,6 +4616,9 @@
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
       ],
+      "Invite successfully sent": [
+        ""
+      ],
       "Invited via email": [
         ""
       ],
@@ -4811,6 +4814,9 @@
       "Other options": [
         ""
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Archivo de recuperación obsoleto; actualícelo para garantizar el acceso a sus datos"
       ],
@@ -4980,6 +4986,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase de recuperación no debe estar asociada a contraseñas anteriores."
       ],
+      "Referral link copied to your clipboard": [
+        ""
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
@@ -5006,6 +5015,9 @@
       ],
       "Screenshot(s) attached": [
         "Captura(s) de pantalla adjuntada(s)"
+      ],
+      "See all plans": [
+        ""
       ],
       "Select a service provider to start": [
         "Selecciona un proveedor de servicios para empezar"
@@ -5058,7 +5070,7 @@
       "Storage GB": [
         "GB de almacenamiento"
       ],
-      "Sucessfully sent invites": [
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -5184,6 +5196,9 @@
       "to continue to ${ toAppName }": [
         "para continuar a ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Para desencriptar y ver sus correos electrónicos y otros datos, necesitas un archivo de recuperación."
       ],
@@ -5258,6 +5273,9 @@
       ],
       "Update recovery phrase": [
         "Actualizar frase de recuperación"
+      ],
+      "Upgrade now": [
+        ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Actualiza a un plan ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } para empezar."
@@ -5561,6 +5579,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tu suscripción está gestionada por Mozilla. Por favor, contacta con el soporte de Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        ""
       ]
     },
     "info": {
@@ -6668,6 +6689,9 @@
       ],
       "VPN connections": [
         "Conexiones VPN"
+      ],
+      "Waiting for subscription": [
+        "A la espera de la suscripción"
       ],
       "Want to add": [
         "Quiero añadir"
@@ -8488,7 +8512,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         ""
       ],
       "${ appName } customization": [

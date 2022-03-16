@@ -2096,7 +2096,7 @@
         "Mescle ao menos ${ calendarToFixCount } calendários com um calendário Proton existente"
       ],
       "Missing key packet": [
-        ""
+        "Pacote de chave ausente"
       ],
       "Missing signature": [
         "Assinatura ausente"
@@ -3116,8 +3116,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algumas das suas respostas a ocorrências previamente atualizadas pelo organizador serão perdidas."
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Inicie com 500 MB e desbloqueie mais armazenamento pelo caminho. Espaço de armazenamento é compartilhando em conjunto com Mail, Calendar e Drive."
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Espaço de armazenamento é compartilhado em conjunto com o E-mail, Calendário e Drive."
       ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
@@ -3282,7 +3282,7 @@
         "Você atingiu 100% da sua capacidade de armazenamento. Você não pode enviar ou receber novos e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
-        "Você irá perder todas as alterações não salvas."
+        "Você perderá todas as alterações não salvas."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
         "Você vai atualizar todos os eventos desta série. Os participantes adicionados e removidos serão notificados."
@@ -3399,9 +3399,6 @@
       ],
       "Calendars": [
         "Calendários"
-      ],
-      "Cancel": [
-        "Cancelar"
       ],
       "Category": [
         "Categoria"
@@ -3598,9 +3595,6 @@
       ],
       "Street address": [
         "Endereço"
-      ],
-      "Submit": [
-        "Enviar"
       ],
       "System information": [
         "Informações do sistema"
@@ -4238,6 +4232,9 @@
       ],
       "OS version": [
         "Versão do SO"
+      ],
+      "Password": [
+        "Senha"
       ],
       "Please describe the problem and include any error messages": [
         "Por favor, descreva o problema e inclua quaisquer mensagens de erro"

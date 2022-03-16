@@ -855,9 +855,6 @@
       "Try another method": [
         "Másik módszer"
       ],
-      "Turn on auto-load": [
-        "Automatikus töltés bekapcsolása"
-      ],
       "Turn on tracker protection": [
         ""
       ],
@@ -2909,7 +2906,7 @@
         "Üzenet feldolgozási hiba."
       ],
       "Missing key packet": [
-        ""
+        "Hiányzó kulcs csomag"
       ],
       "Missing signature": [
         "Hiányzó aláírás"
@@ -4490,7 +4487,7 @@
         ""
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "A tárhely megosztott az Email, a Naptár és a Felhőtárhely közt."
       ],
       "Store and share files securely with Proton Drive.": [
         ""
@@ -4772,8 +4769,8 @@
       "You are about to open another browser tab and visit:": [
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve, hozzáférése korlátozott."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         ""
@@ -5194,9 +5191,6 @@
       "Calendars": [
         ""
       ],
-      "Cancel": [
-        "Mégsem"
-      ],
       "Carbon Copy": [
         "Másolat"
       ],
@@ -5448,9 +5442,6 @@
       ],
       "Street address": [
         "Utca, házszám"
-      ],
-      "Submit": [
-        "Küldés"
       ],
       "System information": [
         "Rendszer információk"

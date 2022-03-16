@@ -3256,6 +3256,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email }) og har begrænset adgang."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
       ],
@@ -4347,9 +4350,6 @@
       "Filter groups": [
         "Filtrér grupper"
       ],
-      "Gift code": [
-        "Gavekode"
-      ],
       "Image URL": [
         "Billed-URL"
       ],
@@ -4367,6 +4367,9 @@
       ],
       "OS version": [
         "OS-version"
+      ],
+      "Password": [
+        ""
       ],
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og medtag evt. fejlmeddelelser"
@@ -4780,9 +4783,6 @@
       "Amount due": [
         "Forfaldent beløb"
       ],
-      "Apply gift code": [
-        "Tilføj gavekode"
-      ],
       "Back": [
         "Tilbage"
       ],
@@ -5043,9 +5043,6 @@
       "Other names": [
         "Andre navne"
       ],
-      "Payment details": [
-        "Betalingsdetaljer"
-      ],
       "Payment verification": [
         "Betalingsbekræftelse"
       ],
@@ -5151,8 +5148,17 @@
       "Subtotal": [
         "Subtotal"
       ],
+      "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The link does not exist": [
+        ""
+      ],
       "The link either does not exist or has expired": [
         "Linket findes enten ikke eller er udløbet"
+      ],
+      "The link failed to be loaded": [
+        ""
       ],
       "Total (monthly)": [
         "Total (månedlig)"

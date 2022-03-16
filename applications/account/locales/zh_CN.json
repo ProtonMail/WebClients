@@ -2303,6 +2303,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        ""
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
@@ -4167,9 +4170,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "分享此日历的完整活动详情，即表示您同意授权 Proton 访问此日历的加密信息。"
       ],
-      "Cancel trial": [
-        "退出体验期"
-      ],
       "Center": [
         "中央"
       ],
@@ -4557,6 +4557,9 @@
       "Internet connection restored.": [
         "互联网连接已恢复。"
       ],
+      "Invite successfully sent": [
+        "邀请函已成功发送"
+      ],
       "Invited via email": [
         "已发送邀请邮件"
       ],
@@ -4752,6 +4755,9 @@
       "Other options": [
         "其他选项"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "恢复文件已过时，请更新以确保能访问您的数据"
       ],
@@ -4920,6 +4926,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "恢复密语与任何过时的密钥不相关。"
       ],
+      "Referral link copied to your clipboard": [
+        "邀请链接已复制"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或 ${ link } 来解决。"
       ],
@@ -4946,6 +4955,9 @@
       ],
       "Screenshot(s) attached": [
         "已添加截图"
+      ],
+      "See all plans": [
+        ""
       ],
       "Select a service provider to start": [
         "请选择一个服务提供商并开始导入"
@@ -4998,8 +5010,8 @@
       "Storage GB": [
         "存储空间 GB"
       ],
-      "Sucessfully sent invites": [
-        "已成功发送邀请"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "邮箱、日历、网盘均共用同一存储空间。"
       ],
       "Support for 1 custom email domain": [
         "支持 1 个自有域名"
@@ -5124,6 +5136,9 @@
       "to continue to ${ toAppName }": [
         "即可使用 ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "要解密并查看您的邮件和其他数据，您需要提供恢复文件。"
       ],
@@ -5198,6 +5213,9 @@
       ],
       "Update recovery phrase": [
         "更新恢复密语"
+      ],
+      "Upgrade now": [
+        ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 计划以开始使用。"
@@ -5501,6 +5519,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的账户是由 Mozilla 管理的，请联系 Mozilla 获取帮助。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        ""
       ]
     },
     "info": {
@@ -6602,6 +6623,9 @@
       ],
       "VPN connections": [
         "VPN 连接数"
+      ],
+      "Waiting for subscription": [
+        ""
       ],
       "Want to add": [
         "类型"
@@ -8409,8 +8433,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        "${ appName } ${ planName } 免费体验"
+      "${ appName } ${ planName } Trial": [
+        ""
       ],
       "${ appName } customization": [
         "自定义 ${ appName }"

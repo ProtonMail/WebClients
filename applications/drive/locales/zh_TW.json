@@ -3205,6 +3205,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "您目前已登入為 ${ user.Name } (${ user.Email })，且帳戶存取受限。"
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "您目前已登入為 ${ user.Name } (${ user.Email })。"
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "您亦可將匯入的行事曆與現有的 Proton 行事曆合併。"
       ],
@@ -4265,9 +4268,6 @@
       "Filter groups": [
         "篩選群組"
       ],
-      "Gift code": [
-        "禮品代碼"
-      ],
       "Image URL": [
         "圖片 URL"
       ],
@@ -4285,6 +4285,9 @@
       ],
       "OS version": [
         "作業系統版本"
+      ],
+      "Password": [
+        "密碼"
       ],
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有)"
@@ -4690,9 +4693,6 @@
       "Amount due": [
         "應付金額"
       ],
-      "Apply gift code": [
-        "套用禮品代碼"
-      ],
       "Back": [
         "返回"
       ],
@@ -4951,9 +4951,6 @@
       "Other names": [
         "其他名稱"
       ],
-      "Payment details": [
-        "付款詳情"
-      ],
       "Payment verification": [
         "付款驗證"
       ],
@@ -5059,8 +5056,17 @@
       "Subtotal": [
         "小計"
       ],
+      "The file or folder failed to be downloaded": [
+        "檔案或資料夾下載失敗"
+      ],
+      "The link does not exist": [
+        "連結不存在"
+      ],
       "The link either does not exist or has expired": [
         "連結不存在或已失效"
+      ],
+      "The link failed to be loaded": [
+        "連結載入失敗"
       ],
       "Total (monthly)": [
         "總計 (每月)"

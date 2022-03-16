@@ -3256,6 +3256,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız ve erişiminiz kısıtlı."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Ayrıca içe aktarılan takvimleri var olan Proton takvimleriyle birleştirebilirsiniz."
       ],
@@ -3875,7 +3878,7 @@
         "Otomatik yanıtlayıcı"
       ],
       "Catch-All email": [
-        "Tümünü toplayan e-posta"
+        "Tümünü yakalayan e-posta"
       ],
       "Contact groups": [
         "Kişi grupları"
@@ -4347,9 +4350,6 @@
       "Filter groups": [
         "Grupları süz"
       ],
-      "Gift code": [
-        "Hediye kodu"
-      ],
       "Image URL": [
         "Görsel adresi"
       ],
@@ -4367,6 +4367,9 @@
       ],
       "OS version": [
         "İşletim sistemi sürümü"
+      ],
+      "Password": [
+        "Parola"
       ],
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
@@ -4780,9 +4783,6 @@
       "Amount due": [
         "Ödenecek tutar"
       ],
-      "Apply gift code": [
-        "Hediye kodunu uygula"
-      ],
       "Back": [
         "Geri"
       ],
@@ -5043,9 +5043,6 @@
       "Other names": [
         "Diğer adlar"
       ],
-      "Payment details": [
-        "Ödeme ayrıntıları"
-      ],
       "Payment verification": [
         "Ödeme doğrulama"
       ],
@@ -5151,8 +5148,17 @@
       "Subtotal": [
         "Ara toplam"
       ],
+      "The file or folder failed to be downloaded": [
+        "Dosya ya da klasör indirilemedi"
+      ],
+      "The link does not exist": [
+        "Bağlantı bulunamadı"
+      ],
       "The link either does not exist or has expired": [
         "Bağlantı bulunamadı ya da geçerlilik süresi geçmiş"
+      ],
+      "The link failed to be loaded": [
+        "Bağlantı yüklenemedi"
       ],
       "Total (monthly)": [
         "Toplam (aylık)"
