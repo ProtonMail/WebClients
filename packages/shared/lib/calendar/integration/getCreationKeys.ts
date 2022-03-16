@@ -1,13 +1,16 @@
 import { c } from 'ttag';
-import { hasBit } from '../../helpers/bitset';
 import { readSessionKeys } from '../deserialize';
-import { splitKeys, getPrimaryKey } from '../../keys';
-import { CalendarEvent, DecryptedCalendarKey, CalendarKeyFlags } from '../../interfaces/calendar';
+import { getPrimaryKey } from '../../keys';
+import { CalendarEvent, DecryptedCalendarKey } from '../../interfaces/calendar';
 import { DecryptedKey } from '../../interfaces';
+import { getCalendarEventDecryptionKeys } from '../keys/getCalendarEventDecryptionKeys';
+import { toSessionKey } from '../../keys/sessionKey';
+import { getPrimaryCalendarKey } from '../../keys/calendarKeys';
 
 interface GetCreationKeysArguments {
     calendarEvent?: CalendarEvent;
-    addressKeys: DecryptedKey[];
+    newAddressKeys: DecryptedKey[];
+    oldAddressKeys?: DecryptedKey[];
     newCalendarKeys: DecryptedCalendarKey[];
     oldCalendarKeys?: DecryptedCalendarKey[];
     decryptedSharedKeyPacket?: string;
@@ -15,28 +18,36 @@ interface GetCreationKeysArguments {
 
 export const getCreationKeys = async ({
     calendarEvent,
-    addressKeys,
+    newAddressKeys,
+    oldAddressKeys,
     newCalendarKeys,
     oldCalendarKeys,
     decryptedSharedKeyPacket,
 }: GetCreationKeysArguments) => {
-    const primaryAddressKey = getPrimaryKey(addressKeys);
+    const primaryAddressKey = getPrimaryKey(newAddressKeys);
     const primaryPrivateAddressKey = primaryAddressKey ? primaryAddressKey.privateKey : undefined;
     if (!primaryPrivateAddressKey) {
         throw new Error(c('Error').t`Address primary private key not found`);
     }
+    const { publicKey: primaryPublicCalendarKey } = getPrimaryCalendarKey(newCalendarKeys);
 
-    const { privateKey: primaryPrivateCalendarKey, publicKey: primaryPublicCalendarKey } =
-        newCalendarKeys.find(({ Key: { Flags } }) => hasBit(Flags, CalendarKeyFlags.PRIMARY)) || {};
-    if (!primaryPrivateCalendarKey || !primaryPublicCalendarKey) {
-        throw new Error(c('Error').t`Calendar primary private key is not decrypted`);
+    if (!calendarEvent) {
+        return {
+            publicKey: primaryPublicCalendarKey,
+            privateKey: primaryPrivateAddressKey,
+            sharedSessionKey: decryptedSharedKeyPacket ? toSessionKey(decryptedSharedKeyPacket) : undefined,
+        };
     }
 
-    const decryptionKeys = oldCalendarKeys || newCalendarKeys;
+    const privateKeys = await getCalendarEventDecryptionKeys({
+        calendarEvent,
+        addressKeys: oldAddressKeys,
+        calendarKeys: oldCalendarKeys || newCalendarKeys,
+    });
 
     const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
         calendarEvent,
-        ...splitKeys(decryptionKeys),
+        privateKeys,
         decryptedSharedKeyPacket,
     });
 

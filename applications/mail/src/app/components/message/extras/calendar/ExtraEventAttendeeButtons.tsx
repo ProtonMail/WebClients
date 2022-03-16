@@ -35,6 +35,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         calendarData,
         pmData,
         singleEditData,
+        reencryptionData,
         isProtonInvite,
         isReinvite,
         error,
@@ -67,7 +68,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         });
     };
     const handleSuccess = useCallback(
-        ({ savedEvent, savedVevent, savedVcalAttendee }: SavedInviteData) => {
+        ({ savedEvent, savedVevent, savedVcalAttendee }: SavedInviteData, retryReencrypt?: boolean) => {
             if (!attendee) {
                 throw new Error('Missing attendee');
             }
@@ -84,13 +85,17 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
                 attendee: savedAttendee,
                 organizer,
             };
-            setModel({
+            const newModel = {
                 ...omit(model, ['error', 'reinviteEventID']),
                 invitationApi: invitationApiToSave,
                 hideSummary: true,
                 hideLink: false,
                 updateAction: UPDATE_ACTION.NONE,
-            });
+            };
+            if (!retryReencrypt) {
+                delete newModel.reencryptionData;
+            }
+            setModel(newModel);
         },
         [invitationApi, attendee, organizer]
     );
@@ -173,6 +178,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         calendarData,
         pmData: isProtonInvite || (pmData && isReinvite) ? pmData : undefined,
         singleEditData,
+        reencryptionData,
         onEmailSuccess: handleEmailSuccess,
         onCreateEventSuccess: handleCreateEventSuccess,
         onUpdateEventSuccess: handleUpdateEventSuccess,
@@ -197,10 +203,15 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
                 return withLoadingRetry(wait(0));
             }
             if (!isUpdate) {
-                return retryCreateEvent(partstat, !!isProtonInvite);
+                return retryCreateEvent({ partstat, isProtonInvite: !!isProtonInvite });
             }
             if (timestamp !== undefined) {
-                return retryUpdateEvent(partstat, timestamp, !!isProtonInvite);
+                return retryUpdateEvent({
+                    partstat,
+                    timestamp,
+                    isProtonInvite: !!isProtonInvite,
+                    calendarEvent: invitationApi?.calendarEvent,
+                });
             }
             return withLoadingRetry(wait(0));
         };

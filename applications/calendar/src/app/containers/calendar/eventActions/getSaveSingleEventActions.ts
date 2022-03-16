@@ -1,12 +1,12 @@
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getUpdatedInviteVevent } from '@proton/shared/lib/calendar/integration/invite';
-import { getSharedEventIDAndSessionKey } from '@proton/shared/lib/calendar/veventHelper';
+import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
 import { unary } from '@proton/shared/lib/helpers/function';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address, SimpleMap } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
+import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { OpenPGPKey } from 'pmcrypto';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
@@ -14,6 +14,7 @@ import {
     CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
     InviteActions,
+    ReencryptInviteActionData,
     SendIcsActionData,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
@@ -39,13 +40,17 @@ interface SaveEventHelperArguments {
     selfAddress?: Address;
     inviteActions: InviteActions;
     onSaveConfirmation: OnSaveConfirmationCb;
-    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
-    sendIcs: (data: SendIcsActionData) => Promise<{
+    getCalendarKeys: GetCalendarKeys;
+    sendIcs: (
+        data: SendIcsActionData,
+        calendarID?: string
+    ) => Promise<{
         veventComponent?: VcalVeventComponent;
         inviteActions: InviteActions;
         timestamp: number;
         sendPreferencesMap: SimpleMap<SendPreferences>;
     }>;
+    reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
     onDuplicateAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
@@ -63,6 +68,7 @@ const getSaveSingleEventActions = async ({
     getCalendarKeys,
     onSaveConfirmation,
     sendIcs,
+    reencryptSharedEvent,
     onSendPrefsErrors,
     onDuplicateAttendees,
     handleSyncActions,
@@ -159,17 +165,21 @@ const getSaveSingleEventActions = async ({
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
+                reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
                 sendIcs,
+                reencryptSharedEvent,
             });
         }
         if (!oldEvent.IsOrganizer) {
-            // the attendee edits notifications. We must do it through the updatePartstat route
+            // the attendee edits notifications. We must do it through the updatePersonalPart route
             return getUpdatePersonalPartActions({
                 eventComponent: newVeventComponent,
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
+                reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
                 inviteActions,
+                reencryptSharedEvent,
             });
         }
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
@@ -257,7 +267,7 @@ const getSaveSingleEventActions = async ({
         const createIntermediateOperation = getCreateSyncOperation({
             veventComponent: omit(updatedVeventComponent, ['attendee']),
         });
-        const multiSyncIntermediateActions = [
+        const syncIntermediateActions = [
             {
                 calendarID: newCalendarID,
                 addressID: newAddressID,
@@ -273,29 +283,33 @@ const getSaveSingleEventActions = async ({
                     },
                 ],
             },
-        ] = await handleSyncActions(multiSyncIntermediateActions);
+        ] = await handleSyncActions(syncIntermediateActions);
         intermediateEvent = Event;
         if (!intermediateEvent) {
             throw new Error('Failed to generate intermediate event');
         }
-        const { sharedEventID, sharedSessionKey } = await getSharedEventIDAndSessionKey({
+        const sharedSessionKey = await getBase64SharedSessionKey({
             calendarEvent: intermediateEvent,
             getCalendarKeys,
         });
-        if (sharedEventID && sharedSessionKey) {
-            updatedInviteActions.sharedEventID = sharedEventID;
+        if (sharedSessionKey) {
+            updatedInviteActions.sharedEventID = intermediateEvent.SharedEventID;
             updatedInviteActions.sharedSessionKey = sharedSessionKey;
         }
         const {
             veventComponent: finalVeventComponent,
             inviteActions: finalInviteActions,
             sendPreferencesMap,
-        } = await sendIcs({
-            inviteActions: updatedInviteActions,
-            vevent: updatedVeventComponent,
-            cancelVevent: oldVeventComponent,
-            noCheck: true,
-        });
+        } = await sendIcs(
+            {
+                inviteActions: updatedInviteActions,
+                vevent: updatedVeventComponent,
+                cancelVevent: oldVeventComponent,
+                noCheckSendPrefs: true,
+            },
+            // we pass the calendarID here as we want to call the event manager in case the operation fails
+            newCalendarID
+        );
         if (finalVeventComponent) {
             updatedVeventComponent = finalVeventComponent;
             updatedInviteActions = finalInviteActions;

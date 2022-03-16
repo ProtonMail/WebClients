@@ -1,5 +1,4 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
-import { AES256 } from '../constants';
 import { getIsAddressDisabled } from '../helpers/address';
 import { canonizeInternalEmail } from '../helpers/email';
 import { base64StringToUint8Array } from '../helpers/encoding';
@@ -26,8 +25,9 @@ import {
 import { unwrap } from './helper';
 import { parse } from './vcal';
 import { getAttendeePartstat, getIsEventComponent } from './vcalHelper';
+import { toSessionKey } from '../keys/sessionKey';
 
-export const readSessionKey = (KeyPacket?: Nullable<string>, privateKeys?: OpenPGPKey | OpenPGPKey[]) => {
+export const readSessionKey = (KeyPacket: Nullable<string>, privateKeys?: OpenPGPKey | OpenPGPKey[]) => {
     if (!KeyPacket || !privateKeys) {
         return;
     }
@@ -38,18 +38,18 @@ export const readSessionKey = (KeyPacket?: Nullable<string>, privateKeys?: OpenP
  * Read the session keys.
  */
 export const readSessionKeys = async ({
-    decryptedSharedKeyPacket,
     calendarEvent,
+    decryptedSharedKeyPacket,
     privateKeys,
 }: {
+    calendarEvent: CalendarEvent;
     decryptedSharedKeyPacket?: string;
-    calendarEvent?: CalendarEvent;
     privateKeys?: OpenPGPKey | OpenPGPKey[];
 }) => {
     const sharedsessionKeyPromise = decryptedSharedKeyPacket
-        ? Promise.resolve({ algorithm: AES256, data: base64StringToUint8Array(decryptedSharedKeyPacket) })
-        : readSessionKey(calendarEvent?.SharedKeyPacket, privateKeys);
-    const calendarSessionKeyPromise = readSessionKey(calendarEvent?.CalendarKeyPacket, privateKeys);
+        ? Promise.resolve(toSessionKey(decryptedSharedKeyPacket))
+        : readSessionKey(calendarEvent.AddressKeyPacket || calendarEvent.SharedKeyPacket, privateKeys);
+    const calendarSessionKeyPromise = readSessionKey(calendarEvent.CalendarKeyPacket, privateKeys);
     return Promise.all([sharedsessionKeyPromise, calendarSessionKeyPromise]);
 };
 
@@ -63,6 +63,7 @@ interface ReadCalendarEventArguments {
     sharedSessionKey?: SessionKey;
     calendarSessionKey?: SessionKey;
     addresses: Address[];
+    encryptingAddressID?: string;
 }
 
 export const getSelfAddressData = ({
@@ -171,6 +172,7 @@ export const readCalendarEvent = async ({
     sharedSessionKey,
     calendarSessionKey,
     addresses,
+    encryptingAddressID,
 }: ReadCalendarEventArguments) => {
     const decryptedEventsResults = await Promise.all([
         Promise.all(SharedEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey))),
@@ -214,7 +216,12 @@ export const readCalendarEvent = async ({
         attendees: veventAttendees,
         addresses,
     });
-    return { veventComponent: veventWithAttendees, verificationStatus, selfAddressData };
+    const encryptionData = {
+        encryptingAddressID,
+        sharedSessionKey,
+        calendarSessionKey,
+    };
+    return { veventComponent: veventWithAttendees, verificationStatus, selfAddressData, encryptionData };
 };
 
 export const readPersonalPart = async (

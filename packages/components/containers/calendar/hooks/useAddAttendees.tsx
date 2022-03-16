@@ -13,7 +13,7 @@ import {
 } from '@proton/shared/lib/calendar/integration/invite';
 import { createCalendarEvent, getHasSharedEventContent } from '@proton/shared/lib/calendar/serialize';
 import { prodId } from '@proton/shared/lib/calendar/vcalConfig';
-import { getSharedEventIDAndSessionKey, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { getBase64SharedSessionKey, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import {
@@ -30,6 +30,7 @@ import { useCallback } from 'react';
 import {
     useAddresses,
     useApi,
+    useGetAddressKeys,
     useGetCalendarInfo,
     useGetCalendarUserSettings,
     useGetEncryptionPreferences,
@@ -43,6 +44,7 @@ import useSendIcs from '../../../hooks/useSendIcs';
 const useAddAttendees = () => {
     const api = useApi();
     const [addresses] = useAddresses();
+    const getAddressKeys = useGetAddressKeys();
     const getMailSettings = useGetMailSettings();
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const getEncryptionPreferences = useGetEncryptionPreferences();
@@ -69,12 +71,7 @@ const useAddAttendees = () => {
             if ((eventComponent.attendee?.length || 0) > 100) {
                 throw new AddAttendeeError(ADD_EVENT_ERROR_TYPE.TOO_MANY_PARTICIPANTS);
             }
-            const {
-                addressID,
-                memberID,
-                decryptedCalendarKeys: calendarKeys,
-                addressKeys,
-            } = await getCalendarInfo(calendarEvent.CalendarID);
+            const { addressID, memberID, calendarKeys, addressKeys } = await getCalendarInfo(calendarEvent.CalendarID);
             const selfAddress = addresses.find(({ ID }) => ID === addressID);
             if (!selfAddress) {
                 throw new Error("Cannot add attendees to events you don't organize");
@@ -106,16 +103,17 @@ const useAddAttendees = () => {
                 const currentTimestamp = +serverTime();
                 const veventWithDtstamp = withDtstamp(omit(pmVevent, ['dtstamp']), currentTimestamp);
                 const vtimezones = await generateVtimezonesComponents(pmVevent, getVTimezonesMap);
-                const { sharedEventID, sharedSessionKey } = await getSharedEventIDAndSessionKey({
+                const sharedSessionKey = await getBase64SharedSessionKey({
                     calendarEvent,
                     calendarKeys,
+                    getAddressKeys,
                 });
-                if (!sharedEventID || !sharedSessionKey) {
-                    throw new Error('Failed to get shared event data');
+                if (!sharedSessionKey) {
+                    throw new Error('Failed to retrieve shared session key');
                 }
                 const inviteVevent = {
                     ...veventWithDtstamp,
-                    'x-pm-shared-event-id': { value: sharedEventID },
+                    'x-pm-shared-event-id': { value: calendarEvent.SharedEventID },
                     'x-pm-session-key': { value: sharedSessionKey },
                 };
                 const inviteIcs = createInviteIcs({
@@ -152,7 +150,11 @@ const useAddAttendees = () => {
                 eventComponent: pmVevent,
                 isCreateEvent: false,
                 isSwitchCalendar: false,
-                ...(await getCreationKeys({ calendarEvent, addressKeys, newCalendarKeys: calendarKeys })),
+                ...(await getCreationKeys({
+                    calendarEvent,
+                    newAddressKeys: addressKeys,
+                    newCalendarKeys: calendarKeys,
+                })),
             });
             if (!getHasSharedEventContent(data)) {
                 throw new Error('Missing shared data');
