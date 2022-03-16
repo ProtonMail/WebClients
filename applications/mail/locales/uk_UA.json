@@ -522,7 +522,7 @@
         "Більше"
       ],
       "More details about ${ title }": [
-        ""
+        "Більше подробиць про ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
@@ -862,9 +862,6 @@
       ],
       "Try another method": [
         "Спробувати інший спосіб"
-      ],
-      "Turn on auto-load": [
-        ""
       ],
       "Turn on tracker protection": [
         "Увімкнути захист від стеження"
@@ -2924,7 +2921,7 @@
         "Мітка не може бути без назви"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Перевищено максимальну кількість вкладень (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем Proton",
@@ -2939,7 +2936,7 @@
         "Помилка обробки повідомлення."
       ],
       "Missing key packet": [
-        ""
+        "Відсутній пакунок ключів"
       ],
       "Missing signature": [
         "Відсутній підпис"
@@ -4224,13 +4221,13 @@
         "Завершується"
       ],
       "Expires in ${ formattedDelay }": [
-        ""
+        "Термін дії завершується ${ formattedDelay }"
       ],
       "Expires in ${ formattedDelayShort }": [
-        ""
+        "Термін дії завершується ${ formattedDelayShort }"
       ],
       "Expires in less than ${ formattedDelayShort }": [
-        ""
+        "Термін дії завершується менше ніж за ${ formattedDelayShort }"
       ],
       "Expires soon": [
         "Скоро завершується"
@@ -4383,7 +4380,7 @@
         "Керувати мітками"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Перевищено максимальну кількість вкладень (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
       ],
       "members": [
         "учасники"
@@ -4632,7 +4629,7 @@
         "Перепрошуємо, цього повідомлення не існує, або термін його дії завершився"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Простір сховища спільний для пошти, календаря та диска."
       ],
       "Store and share files securely with Proton Drive.": [
         "Безпечно зберігайте та обмінюйтесь файлами за допомогою Proton Drive."
@@ -4916,8 +4913,8 @@
       "You are about to open another browser tab and visit:": [
         "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Ви зараз увійшли як ${ user.Name } (${ user.Email }) і маєте обмежений доступ."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Ви можете додати його як вкладення, або показати в тілі листа."
@@ -5358,9 +5355,6 @@
       "Calendars": [
         "Календарі"
       ],
-      "Cancel": [
-        "Скасувати"
-      ],
       "Carbon Copy": [
         "Копія"
       ],
@@ -5612,9 +5606,6 @@
       ],
       "Street address": [
         "Вулиця"
-      ],
-      "Submit": [
-        "Відправити"
       ],
       "System information": [
         "Інформація про систему"
@@ -6357,7 +6348,7 @@
         "Опишіть проблему та додайте повідомлення про помилку"
       ],
       "Please insert link first": [
-        ""
+        "Спочатку вставте посилання"
       ],
       "Proton username": [
         "Ім'я користувача Proton"
@@ -7368,13 +7359,13 @@
         "Об'єднання контактів"
       ],
       "Message details": [
-        ""
+        "Подробиці повідомлення"
       ],
       "Message list": [
         "Список повідомлень"
       ],
       "Message will expire": [
-        ""
+        "Термін дії повідомлення завершиться"
       ],
       "More": [
         "Більше"

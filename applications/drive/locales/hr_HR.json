@@ -3307,6 +3307,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Trenutno ste prijavljeni kao${ user.Name } (${ user.Email }) i imate ograničen pristup."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
@@ -4429,9 +4432,6 @@
       "Filter groups": [
         "Filtrirajte grupe"
       ],
-      "Gift code": [
-        "Darovni kôd"
-      ],
       "Image URL": [
         "URL slike"
       ],
@@ -4449,6 +4449,9 @@
       ],
       "OS version": [
         "Verzija OS-a"
+      ],
+      "Password": [
+        ""
       ],
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
@@ -4870,9 +4873,6 @@
       "Amount due": [
         "Dospjeli iznos"
       ],
-      "Apply gift code": [
-        "Primijeni darovni kôd"
-      ],
       "Back": [
         "Natrag"
       ],
@@ -5135,9 +5135,6 @@
       "Other names": [
         "Ostali nazivi"
       ],
-      "Payment details": [
-        "Detalji o plaćanju"
-      ],
       "Payment verification": [
         "Potvrda plaćanja"
       ],
@@ -5243,8 +5240,17 @@
       "Subtotal": [
         "Suma stavki"
       ],
+      "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The link does not exist": [
+        ""
+      ],
       "The link either does not exist or has expired": [
         "Poveznica ne postoji ili je istekla"
+      ],
+      "The link failed to be loaded": [
+        ""
       ],
       "Total (monthly)": [
         "Ukupno (mjesečno)"

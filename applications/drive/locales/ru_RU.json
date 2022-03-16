@@ -246,13 +246,13 @@
         "Получить проверочный код"
       ],
       "Go to label": [
-        ""
+        "Перейти к ярлыку"
       ],
       "Go to panel ${ index }": [
         "Перейти к панели ${ index }"
       ],
       "Go to parent": [
-        ""
+        "На уровень выше"
       ],
       "Go to settings": [
         "Открыть настройки"
@@ -438,7 +438,7 @@
         "Поиск"
       ],
       "Search drive": [
-        ""
+        "Искать в Drive"
       ],
       "Select all": [
         "Выделить всё"
@@ -540,7 +540,7 @@
         "Улучшить"
       ],
       "Upload anyway": [
-        ""
+        "Все равно загрузить"
       ],
       "Upload file": [
         "Загрузить файл"
@@ -1988,7 +1988,7 @@
         "Объединить по крайней мере ${ calendarToFixCount } календарь(ей) с существующим календарем Proton"
       ],
       "Missing key packet": [
-        ""
+        "Отсутствует пакет ключей"
       ],
       "Missing signature": [
         "Подпись отсутствует"
@@ -2060,7 +2060,7 @@
         "Время запроса истекло"
       ],
       "Search failed": [
-        ""
+        "Поиск не дал результатов"
       ],
       "Signature not verified": [
         "Подпись не проверена"
@@ -2669,7 +2669,7 @@
         "Вы уверены, что хотите очистить корзину и безвозвратно удалить все элементы?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        ""
+        "Вы уверены, что хотите навсегда удалить \"${ itemName }\" из корзины?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы уверены, что хотите безвозвратно удалить выбранные элементы из корзины?"
@@ -2714,13 +2714,13 @@
         "Очистить данные"
       ],
       "Clear encrypted search data": [
-        ""
+        "Очистить зашифрованные данные поиска"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        ""
+        "Очистка данных браузера очистит поисковый индекс на этом устройстве. При использовании функции поиска все файлы необходимо будет заново проиндексировать."
       ],
       "Clears browser data related to the encrypted search.": [
-        ""
+        "Очищает данные браузера, связанные с зашифрованным поиском."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты недействителен, выберите «Изменить» и обновите его."
@@ -2765,13 +2765,13 @@
         "Создавайте ссылки и делитесь файлами с другими."
       ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
+        "Создайте до 20 пользовательских календарей. Кроме того, добавьте до 5 календарей друзей, родственников, коллег и организаций."
       ],
       "Create your first folder and start moving your files.": [
         "Создайте свою первую папку и начните загружать ваши файлы."
       ],
       "Creating": [
-        ""
+        "Создание"
       ],
       "Creating link to file": [
         "Создание ссылки на файл"
@@ -2861,7 +2861,7 @@
         "Освободите место или свяжитесь с вашим администратором."
       ],
       "Free VPN on a single device": [
-        ""
+        "Бесплатная VPN на одном устройстве"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Полнофункциональный VPN со скоростью до 10 Гбит/с."
@@ -2909,7 +2909,7 @@
         "Включено"
       ],
       "Indexing search results…": [
-        ""
+        "Индексирование результатов поиска…"
       ],
       "Inherited from parent folder": [
         "Унаследовано от родительской папки"
@@ -3131,7 +3131,7 @@
         "Снимки экрана прикреплены"
       ],
       "Search cannot be enabled in this browser": [
-        ""
+        "Поиск не может быть включен в этом браузере"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Выберите загруженный файл или папку и создайте ссылку на них."
@@ -3173,7 +3173,7 @@
         "ГБ хранилища"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Место используют Mail, Calendar и Drive."
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
@@ -3269,7 +3269,7 @@
         "Корзина"
       ],
       "Try different keywords": [
-        ""
+        "Попробуйте разные ключевые слова"
       ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, меток и фильтров"
@@ -3284,7 +3284,7 @@
         "Неподдерживаемый файл"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "Улучшите сегодня и сохраните доступ к Почте и Календарю с приоритетом конфиденциальности для ваших повседневных коммуникационных потребностей."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Улучшите сегодня, чтобы не потерять следующие преимущества: ${ appName } ${ planName }."
@@ -3357,6 +3357,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email }), и Ваш доступ ограничен."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Вы также можете объединить импортированные календари с существующими календарями Proton."
@@ -4106,37 +4109,37 @@
         "\"${ name }\" успешно создано"
       ],
       "\"${ name }\" deleted permanently from trash": [
-        ""
+        "\"${ name }\" безвозвратно удалено из корзины"
       ],
       "\"${ name }\" failed to be created": [
-        ""
+        "Не удалось создать \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        ""
+        "\"${ name }\" не удалось окончательно удалить из корзины"
       ],
       "\"${ name }\" failed to be moved": [
-        ""
+        "Не удалось переместить \"${ name }\""
       ],
       "\"${ name }\" failed to be moved to trash": [
-        ""
+        "Не удалось переместить в корзину \"${ name }\""
       ],
       "\"${ name }\" failed to be restored from trash": [
-        ""
+        "Не удалось восстановить из корзины \"${ name }\""
       ],
       "\"${ name }\" moved to trash": [
-        ""
+        "\"${ name }\" перемещено в корзину"
       ],
       "\"${ name }\" restored from trash": [
-        ""
+        "\"${ name }\" восстановлено из корзины"
       ],
       "\"${ name }\" successfully moved": [
-        ""
+        "\"${ name }\" успешно перемещено"
       ],
       "\"${ newName }\" failed to be renamed": [
-        ""
+        "Не удалось переименовать \"${ newName }\""
       ],
       "\"${ newName }\" renamed successfully": [
-        ""
+        "\"${ newName }\" успешно переименовано"
       ],
       "${ count } item failed to be decrypted": [
         "${ count } элемент не удалось расшифровать",
@@ -4181,64 +4184,64 @@
         "${ movedLinksCount } папок успешно перемещено"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfItems } элемент окончательно удален из корзины",
+        "${ numberOfItems } элемента окончательно удалены из корзины",
+        "${ numberOfItems } элементов окончательно удалены из корзины",
+        "${ numberOfItems } элементов окончательно удалены из корзины"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfItems } элемент не удалось окончательно удалить из корзины",
+        "${ numberOfItems } элемента не удалось окончательно удалить из корзины",
+        "${ numberOfItems } элементов не удалось окончательно удалить из корзины",
+        "${ numberOfItems } элементов не удалось окончательно удалить из корзины"
       ],
       "${ numberOfItems } item failed to be moved": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfItems } элемент не удалось переместить",
+        "${ numberOfItems } элемента не удалось переместить",
+        "${ numberOfItems } элементов не удалось переместить",
+        "${ numberOfItems } элементов не удалось переместить"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfItems } элемент не удалось переместить в корзину",
+        "${ numberOfItems } элемента не удалось переместить в корзину",
+        "${ numberOfItems } элементов не удалось переместить в корзину",
+        "${ numberOfItems } элементов не удалось переместить в корзину"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfItems } элемент не удалось восстановить из корзины",
+        "${ numberOfItems } элемента не удалось восстановить из корзины",
+        "${ numberOfItems } элементов не удалось восстановить из корзины",
+        "${ numberOfItems } элементов не удалось восстановить из корзины"
       ],
       "${ numberOfItems } item moved to trash": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfItems } элемент перемещен в корзину",
+        "${ numberOfItems } элемента перемещено в корзину",
+        "${ numberOfItems } элементов перемещено в корзину",
+        "${ numberOfItems } элементов перемещено в корзину"
       ],
       "${ numberOfItems } item restored from trash": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfItems } элемент восстановлен из корзины",
+        "${ numberOfItems } элемента восстановлены из корзины",
+        "${ numberOfItems } элемента восстановлены из корзины",
+        "${ numberOfItems } элемента восстановлены из корзины"
       ],
       "${ numberOfItems } item successfully moved": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfItems } элемент успешно перемещен",
+        "${ numberOfItems } элемента успешно перемещены",
+        "${ numberOfItems } элемента успешно перемещены",
+        "${ numberOfItems } элемента успешно перемещены"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfItems } ссылку на ваш элемент не удалось удалить",
+        "${ numberOfItems } ссылки на ваши элементы не удалось удалить",
+        "${ numberOfItems } ссылок на ваши элементы не удалось удалить",
+        "${ numberOfItems } ссылок на ваши элементы не удалось удалить"
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfItems } ссылка на ваш элемент была удалена",
+        "${ numberOfItems } ссылки на ваши элементы были удалены",
+        "${ numberOfItems } ссылок на ваши элементы были удалены",
+        "${ numberOfItems } ссылок на ваши элементы были удалены"
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } файл восстановлен из корзины",
@@ -4277,7 +4280,7 @@
         "Группа контактов обновлена"
       ],
       "Encrypted search activated": [
-        ""
+        "Зашифрованный поиск активирован"
       ],
       "Failed to download files: ${ err }": [
         "Не удалось скачать файлы: ${ err }"
@@ -4352,16 +4355,16 @@
         "Не удалось загрузить подпапку"
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        ""
+        "Не удалось удалить ссылку на \"${ name }\""
       ],
       "The link to \"${ name }\" was deleted": [
-        ""
+        "Ссылка на \"${ name }\" была удалена"
       ],
       "The link to your item failed to be deleted": [
-        ""
+        "Не удалось удалить ссылку на ваш элемент"
       ],
       "The link to your item was deleted": [
-        ""
+        "Ссылка на ваш элемент удалена"
       ],
       "Trash failed to be emptied": [
         "Не удалось очистить корзину"
@@ -4370,7 +4373,7 @@
         "Ваши старые файлы будут удалены в течение 72 часов"
       ],
       "Your settings failed to be saved": [
-        ""
+        "Не удалось сохранить настройки"
       ],
       "Your settings have been changed successfully": [
         "Ваши настройки были успешно изменены"
@@ -4511,9 +4514,6 @@
       "Filter groups": [
         "Фильтр групп"
       ],
-      "Gift code": [
-        "Подарочный код"
-      ],
       "Image URL": [
         "URL изображения"
       ],
@@ -4531,6 +4531,9 @@
       ],
       "OS version": [
         "Версия ОС"
+      ],
+      "Password": [
+        "Пароль"
       ],
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
@@ -4960,9 +4963,6 @@
       "Amount due": [
         "К оплате"
       ],
-      "Apply gift code": [
-        "Применить подарочный код"
-      ],
       "Back": [
         "Назад"
       ],
@@ -5227,9 +5227,6 @@
       "Other names": [
         "Другие имена"
       ],
-      "Payment details": [
-        "Подробности платежа"
-      ],
       "Payment verification": [
         "Проверка платежа"
       ],
@@ -5240,7 +5237,7 @@
         "Сбой проверки PayPal"
       ],
       "Performance might be affected": [
-        ""
+        "Это может отразиться на производительности"
       ],
       "Phone numbers": [
         "Телефонные номера"
@@ -5279,10 +5276,10 @@
         "Восстановить файлы"
       ],
       "Search results": [
-        ""
+        "Результаты поиска"
       ],
       "Searching…": [
-        ""
+        "Поиск…"
       ],
       "Select a theme": [
         "Выбор темы"
@@ -5335,8 +5332,17 @@
       "Subtotal": [
         "Подитог"
       ],
+      "The file or folder failed to be downloaded": [
+        "Не удалось скачать файл или папку"
+      ],
+      "The link does not exist": [
+        "Ссылка не существует"
+      ],
       "The link either does not exist or has expired": [
         "Ссылка не существует или просрочена"
+      ],
+      "The link failed to be loaded": [
+        "Не удалось скачать ссылку"
       ],
       "Total (monthly)": [
         "Всего (ежемесячно)"

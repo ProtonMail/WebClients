@@ -3256,6 +3256,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         ""
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
@@ -4347,9 +4350,6 @@
       "Filter groups": [
         ""
       ],
-      "Gift code": [
-        ""
-      ],
       "Image URL": [
         ""
       ],
@@ -4366,6 +4366,9 @@
         ""
       ],
       "OS version": [
+        ""
+      ],
+      "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
@@ -4780,9 +4783,6 @@
       "Amount due": [
         ""
       ],
-      "Apply gift code": [
-        ""
-      ],
       "Back": [
         ""
       ],
@@ -5043,9 +5043,6 @@
       "Other names": [
         ""
       ],
-      "Payment details": [
-        ""
-      ],
       "Payment verification": [
         ""
       ],
@@ -5151,7 +5148,16 @@
       "Subtotal": [
         ""
       ],
+      "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The link does not exist": [
+        ""
+      ],
       "The link either does not exist or has expired": [
+        ""
+      ],
+      "The link failed to be loaded": [
         ""
       ],
       "Total (monthly)": [

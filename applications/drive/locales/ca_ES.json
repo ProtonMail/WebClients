@@ -3256,6 +3256,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Actualment esteu registrat com a ${ user.Name } (${ user.Email }) i té accés restringit."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
@@ -4347,9 +4350,6 @@
       "Filter groups": [
         "Filtrar grups"
       ],
-      "Gift code": [
-        "Codi de regal"
-      ],
       "Image URL": [
         "URL de la imatge"
       ],
@@ -4367,6 +4367,9 @@
       ],
       "OS version": [
         "Versió de Sistema Operatiu"
+      ],
+      "Password": [
+        ""
       ],
       "Please describe the problem and include any error messages": [
         "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
@@ -4780,9 +4783,6 @@
       "Amount due": [
         "Import degut"
       ],
-      "Apply gift code": [
-        "Aplicar el codi regal"
-      ],
       "Back": [
         "Torna"
       ],
@@ -5043,9 +5043,6 @@
       "Other names": [
         "Altres noms"
       ],
-      "Payment details": [
-        "Detalls de pagament"
-      ],
       "Payment verification": [
         "Verificació de pagament"
       ],
@@ -5151,8 +5148,17 @@
       "Subtotal": [
         "Subtotal"
       ],
+      "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The link does not exist": [
+        ""
+      ],
       "The link either does not exist or has expired": [
         "L’enllaç no existeix o bé ha caducat"
+      ],
+      "The link failed to be loaded": [
+        ""
       ],
       "Total (monthly)": [
         "Total (mensual)"

@@ -2335,6 +2335,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        ""
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje i uvoz kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
       ],
@@ -4279,9 +4282,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Dijeljenjem cjelokupnih detalja događaja ovog kalendara, prihvaćate odobriti Protonu pristup šifriranim podacima ovog kalendara."
       ],
-      "Cancel trial": [
-        ""
-      ],
       "Center": [
         "Sredina"
       ],
@@ -4675,6 +4675,9 @@
       "Internet connection restored.": [
         "Uspostavljena je internetska veza."
       ],
+      "Invite successfully sent": [
+        ""
+      ],
       "Invited via email": [
         ""
       ],
@@ -4870,6 +4873,9 @@
       "Other options": [
         ""
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         ""
       ],
@@ -5040,6 +5046,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         ""
       ],
+      "Referral link copied to your clipboard": [
+        ""
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
@@ -5066,6 +5075,9 @@
       ],
       "Screenshot(s) attached": [
         "Snimka(e) zaslona su pridodane"
+      ],
+      "See all plans": [
+        ""
       ],
       "Select a service provider to start": [
         ""
@@ -5118,7 +5130,7 @@
       "Storage GB": [
         "Prostor za pohranu GB"
       ],
-      "Sucessfully sent invites": [
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -5244,6 +5256,9 @@
       "to continue to ${ toAppName }": [
         "za nastavak u ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         ""
       ],
@@ -5317,6 +5332,9 @@
         ""
       ],
       "Update recovery phrase": [
+        ""
+      ],
+      "Upgrade now": [
         ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
@@ -5621,6 +5639,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vašom pretplatom upravlja Mozilla. Molimo kontaktirajte Mozilla podršku."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        ""
       ]
     },
     "info": {
@@ -6734,6 +6755,9 @@
       ],
       "VPN connections": [
         "VPN veze"
+      ],
+      "Waiting for subscription": [
+        ""
       ],
       "Want to add": [
         "Želite dodati"
@@ -8567,7 +8591,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         ""
       ],
       "${ appName } customization": [

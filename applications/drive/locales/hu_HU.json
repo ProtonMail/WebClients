@@ -242,7 +242,7 @@
         "Ellenőrző kód küldése"
       ],
       "Go to label": [
-        ""
+        "Címkéhez ugrás"
       ],
       "Go to panel ${ index }": [
         "Váltás: ${ index }"
@@ -536,7 +536,7 @@
         "Csomagváltás"
       ],
       "Upload anyway": [
-        ""
+        "Feltöltés mindenképpen"
       ],
       "Upload file": [
         "Fájl feltöltése"
@@ -1964,7 +1964,7 @@
         ""
       ],
       "Missing key packet": [
-        ""
+        "Hiányzó kulcs csomag"
       ],
       "Missing signature": [
         "Hiányzó aláírás"
@@ -2677,7 +2677,7 @@
         "Hozza létre első mappáját és helyezze el benne a fájljait."
       ],
       "Creating": [
-        ""
+        "Létrehozás"
       ],
       "Creating link to file": [
         "A fájl linkjének létrehozása"
@@ -3255,6 +3255,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve, hozzáférése korlátozott."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         ""
@@ -4347,9 +4350,6 @@
       "Filter groups": [
         "Csoportok szűrése"
       ],
-      "Gift code": [
-        "Ajándék kód"
-      ],
       "Image URL": [
         "Kép URL"
       ],
@@ -4367,6 +4367,9 @@
       ],
       "OS version": [
         "Operációs rendszer verzió"
+      ],
+      "Password": [
+        "Jelszó"
       ],
       "Please describe the problem and include any error messages": [
         "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
@@ -4780,9 +4783,6 @@
       "Amount due": [
         "Esedékes összeg"
       ],
-      "Apply gift code": [
-        "Ajándék kód hozzáadása"
-      ],
       "Back": [
         "Vissza"
       ],
@@ -5043,9 +5043,6 @@
       "Other names": [
         "További nevek"
       ],
-      "Payment details": [
-        "Fizetés részletei"
-      ],
       "Payment verification": [
         "Fizetés ellenőrzése"
       ],
@@ -5056,7 +5053,7 @@
         "A PayPal ellenőrzés sikertelen"
       ],
       "Performance might be affected": [
-        ""
+        "Hatással lehet a teljesítményre"
       ],
       "Phone numbers": [
         "Telefonszámok"
@@ -5151,8 +5148,17 @@
       "Subtotal": [
         "Részösszeg"
       ],
+      "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The link does not exist": [
+        ""
+      ],
       "The link either does not exist or has expired": [
         "A hivatkozás nem létezik vagy leját"
+      ],
+      "The link failed to be loaded": [
+        ""
       ],
       "Total (monthly)": [
         "Összesen (havonta)"

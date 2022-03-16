@@ -537,28 +537,28 @@
         "${ title } začalo včera v ${ formattedHour }"
       ],
       "${ title } starts at ${ formattedHour }": [
-        ""
+        "${ title } začíná v(ve) ${ formattedHour }"
       ],
       "${ title } starts now": [
         "${ title } začíná právě teď"
       ],
       "${ title } starts on ${ _formattedDate2 }": [
-        ""
+        "${ title } začíná ${ _formattedDate2 }"
       ],
       "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        ""
+        "${ title } začíná ${ _formattedDate2 } v(ve) ${ formattedHour }"
       ],
       "${ title } starts on ${ _formattedDate3 }": [
-        ""
+        "${ title } začíná ${ _formattedDate3 }"
       ],
       "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        ""
+        "${ title } začíná ${ _formattedDate3 } v(ve) ${ formattedHour }"
       ],
       "${ title } starts on ${ _formattedDateWithoutTime }": [
-        ""
+        "${ title } začíná ${ _formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
-        ""
+        "${ title } začíná ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } začíná dnes"
@@ -567,7 +567,7 @@
         "${ title } začne zítra"
       ],
       "${ title } starts tomorrow at ${ formattedHour }": [
-        ""
+        "${ title } začíná zítra v(ve) ${ formattedHour }"
       ]
     },
     "Alert": {
@@ -575,7 +575,7 @@
         "Pokud teď odejdete, některé kontakty nebudou naimportovány"
       ],
       "By leaving now, some events may not be imported": [
-        ""
+        "Pokud teď odejdete, některé události nebudou naimportovány"
       ],
       "By leaving now, you will lose your event.": [
         ""
@@ -861,7 +861,7 @@
         "Odkaz na kalendář není přístupný"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Odkaz na kalendář je momentálně nedostupný"
       ],
       "Failed to sync calendar": [
         "Synchronizace kalendáře selhala"
@@ -1610,7 +1610,7 @@
         "Jihoafrická republika"
       ],
       "South Georgia and the South Sandwich Islands": [
-        ""
+        "Jižní Georgie a Jižní Sandwichovy ostrovy"
       ],
       "South Korea": [
         "Jižní Korea"
@@ -1970,10 +1970,10 @@
     },
     "Error": {
       "${ _list } doesn't have an email address": [
-        "",
-        "",
-        "",
-        ""
+        "${ _list } nemá e-mailovou adresu",
+        "Některé kontakty nemají e-mailovou adresu: ${ _list }",
+        "Některé kontakty nemají e-mailovou adresu: ${ _list }",
+        "Některé kontakty nemají e-mailovou adresu: ${ _list }"
       ],
       "${ _list2 } has no contacts": [
         "${ _list2 } neobsahuje žádné kontakty",
@@ -1982,10 +1982,10 @@
         "Některé skupiny neobsahují žádné kontakty: ${ _list2 }"
       ],
       "${ list } doesn't have a valid email address": [
-        "",
-        "",
-        "",
-        ""
+        "${ list } nemá platnou e-mailovou adresu",
+        "Některé kontakty nemají platnou e-mailovou adresu: ${ list }",
+        "Některé kontakty nemají platnou e-mailovou adresu: ${ list }",
+        "Některé kontakty nemají platnou e-mailovou adresu: ${ list }"
       ],
       "${ list } has invalid emails": [
         "${ list } má neplatné emaily",
@@ -2126,7 +2126,7 @@
         "Sloučit nejméně ${ calendarToFixCount } kalendářů s existujícími Proton kalendáři"
       ],
       "Missing key packet": [
-        ""
+        "Chybějící klíčový paket"
       ],
       "Missing signature": [
         "Podpis není nastaven"
@@ -2177,10 +2177,10 @@
         "Nejprve prosím vytvořte adresu."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        "",
-        "",
-        ""
+        "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty."
       ],
       "Preferences could not be saved": [
         "Preference nelze uložit"
@@ -2272,34 +2272,34 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
+        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Jsou povoleny pouze formáty souborů ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "Došlo k chybě při nahrávání souboru. Nebyl vybrán žádný soubor."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo k neočekávané chybě. Import musí být restartován."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událostí."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        ""
+        "Váš soubor ${ formattedFilename } má neplatnou metodu a nelze jej importovat."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "Váš soubor ${ formattedFilename } nemá žádné události pro import."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "Váš soubor ${ formattedFilename } je prázdný."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        ""
+        "Váš soubor ${ formattedFilename } není kalendář."
       ]
     },
     "Error importing contact": {
@@ -2359,7 +2359,7 @@
         "Šifrování selhalo"
       ],
       "End time out of bounds": [
-        ""
+        "Čas ukončení mimo hranice"
       ],
       "Event": [
         "Událost"
@@ -2368,10 +2368,10 @@
         "Ověření události se nezdařilo"
       ],
       "Floating times not supported": [
-        ""
+        "Plovoucí časy nejsou podporovány"
       ],
       "Free-busy time information": [
-        ""
+        "Volno-zaneprázdněn informace o čase"
       ],
       "Invalid event": [
         "Neplatná událost"
@@ -2401,10 +2401,10 @@
         "Ne-Gregoriánský"
       ],
       "Notification out of bounds": [
-        ""
+        "Upozornění mimo hranice"
       ],
       "Original recurring event could not be found": [
-        ""
+        "Původní opakující se událost nebyla nalezena"
       ],
       "Recurring event has no occurrences": [
         "Opakující se událost nemá žádné výskyty"
@@ -2413,7 +2413,7 @@
         "Pravidlo opakování není podporováno"
       ],
       "Start time out of bounds": [
-        ""
+        "Čas zahájení mimo hranice"
       ],
       "Timezone": [
         "Časové pásmo"
@@ -2422,7 +2422,7 @@
         "Časové pásmo není podporováno"
       ],
       "To-do entry": [
-        ""
+        "Zadání úkolu"
       ],
       "Unknown": [
         "Neznámé"
@@ -2507,7 +2507,7 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        ""
+        "Přiložený ICS soubor nelze dešifrovat"
       ],
       "Attached ICS file could not be read": [
         "Přiložený soubor ICS se nepodařilo přečíst"
@@ -2519,10 +2519,10 @@
         "Neplatná odpověď"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "Událost nelze přidat do kalendáře. Nebyla odeslána žádná odpověď"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Událost nelze v kalendáři aktualizovat. Nebyla odeslána žádná odpověď"
       ],
       "Unexpected error": [
         "Neočekávaná chyba"
@@ -2534,19 +2534,19 @@
         "Nepodporovaná odpověď"
       ],
       "We could not cancel the event in your calendar": [
-        ""
+        "Nepodařilo se nám zrušit událost ve Vašem kalendáři"
       ],
       "We could not retrieve the event from your calendar": [
-        ""
+        "Nepodařilo se nám načíst událost z Vašeho kalendáře"
       ],
       "We could not update the event in your calendar": [
-        ""
+        "Nepodařilo se nám aktualizovat událost ve Vašem kalendáři"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
+        "Vaše odpověď byla odeslána, ale událost nemohla být přidána do kalendáře"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
+        "Odpověď byla odeslána, ale událost nemohla být aktualizována ve vašem kalendáři"
       ]
     },
     "Event popover close button": {
@@ -2562,7 +2562,7 @@
         "ne"
       ],
       "pending": [
-        ""
+        "čekající"
       ],
       "yes": [
         "ano"
@@ -2589,7 +2589,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } byl aktualizován"
       ]
     },
     "Group": {
@@ -2653,37 +2653,37 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ totalImported }/${ totalToImport } událost zašifrována a přidána do kalendáře",
+        "${ totalImported }/${ totalToImport } události zašifrovány a přidány do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "",
-        "",
-        "",
-        ""
+        "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } událostí byla úspěšně importována.",
+        "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } událostí byla úspěšně importována.",
+        "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } událostí byla úspěšně importována.",
+        "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } událostí byla úspěšně importována."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "",
-        "",
-        "",
-        ""
+        "Nastal problém při šifrování a editaci události. Událost nemůže být importována.",
+        "Nastal problém při šifrování a editaci událostí. Události nemůžou být importovány.",
+        "Nastal problém při šifrování a editaci událostí. Události nemůžou být importovány.",
+        "Nastal problém při šifrování a editaci událostí. Události nemůžou být importovány."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifrování a přidávaní kontaktů: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        ""
+        "Šifrování a přidávání událostí do Vašeho kalendáře: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        "",
-        "",
-        "",
-        ""
+        "Událost byla úspěšně importována. Importovaná událost se nyní objeví ve vašem kalendáři.",
+        "Události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři.",
+        "Události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři.",
+        "Události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        ""
+        "Prosíme nezavírejte kartu před dokončením importu."
       ]
     },
     "Import calendar warning": {
@@ -2699,19 +2699,19 @@
         "Importované pozvánky naleznete v ${ CALENDAR_APP_NAME } jako prosté události bez podrobností o organizátorech a účastnících. Pro získání účastníků a aktualizace o události požádejte organizátory o pozvání přes vaší Proton e-mailovou adresu."
       ],
       "This file contains an event invitation:": [
-        "",
-        "",
-        "",
-        ""
+        "Tento soubor obsahuje pozvánku na událost:",
+        "Tento soubor obsahuje pozvánky na událost:",
+        "Tento soubor obsahuje pozvánky na událost:",
+        "Tento soubor obsahuje pozvánky na událost:"
       ],
       "This file contains an invitation response:": [
-        "",
-        "",
-        "",
-        ""
+        "Tento soubor obsahuje odpověď na pozvánku:",
+        "Tento soubor obsahuje odpověď na pozvánky:",
+        "Tento soubor obsahuje odpověď na pozvánky:",
+        "Tento soubor obsahuje odpověď na pozvánky:"
       ],
       "This file contains some data that we cannot import:": [
-        ""
+        "Tento soubor obsahuje některá data, která nemůžeme importovat:"
       ]
     },
     "Import contact": {
@@ -2767,7 +2767,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "v dalším kroku je potřeba vybrat všechna oprávnění"
       ]
     },
     "Import warning": {
@@ -2775,19 +2775,19 @@
         "${ totalContactsDiscarded } mimo ${ totalContacts } kontakty nebudou nahrané. Klikněte pro detaily"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "",
-        "",
-        "",
-        ""
+        "Nebyla importována ${ totalEventsDiscarded } událost z celkem ${ totalEvents }. Rozbalte pro více detailů.",
+        "Nebyly importovány ${ totalEventsDiscarded } události z celkem ${ totalEvents }. Rozbalte pro více detailů.",
+        "Nebylo importováno ${ totalEventsDiscarded } událostí z celkem ${ totalEvents }. Rozbalte pro více detailů.",
+        "Nebylo importováno ${ totalEventsDiscarded } událostí z celkem ${ totalEvents }. Rozbalte pro více detailů."
       ],
       "No contact can be imported. Click for details": [
         "Žádný kontakt nemůže být importován. Klikněte pro více informací"
       ],
       "No event can be imported. Expand for details.": [
-        ""
+        "Událost nemůže být importována. Klikněte pro detaily."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        ""
+        "Část obsahu kalendáře není podporován a nebude naimportován."
       ]
     },
     "Info": {
@@ -2801,25 +2801,25 @@
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
       "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        ""
+        "${ calendarAppName } byl přidán do Proton suite. Rádi bychom slyšeli, co si myslíte!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nový kalendář",
+        "${ calendarsToBeCreatedCount } nové kalendáře",
+        "${ calendarsToBeCreatedCount } nových kalendářů",
+        "${ calendarsToBeCreatedCount } nových kalendářů"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMerged } sloučený kalendář",
+        "${ calendarsToBeMerged } sloučené kalendáře",
+        "${ calendarsToBeMerged } sloučených kalendářů",
+        "${ calendarsToBeMerged } sloučených kalendářů"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMergedCount } sloučený kalendář",
+        "${ calendarsToBeMergedCount } sloučené kalendáře",
+        "${ calendarsToBeMergedCount } sloučených kalendářů",
+        "${ calendarsToBeMergedCount } sloučených kalendářů"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } člen",
@@ -2867,22 +2867,22 @@
         "${ numContacts } kontaktů"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedFoldersCount } vybraná složka",
+        "${ selectedFoldersCount } vybrané složky",
+        "${ selectedFoldersCount } vybraných složek",
+        "${ selectedFoldersCount } vybraných složek"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedFoldersCount } vybraný štítek",
+        "${ selectedFoldersCount } vybrané štítky",
+        "${ selectedFoldersCount } vybraných štítků",
+        "${ selectedFoldersCount } vybraných štítků"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt byl úspěšně aktualizován.",
@@ -2906,19 +2906,19 @@
         ""
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        ""
+        "Účastníkům události bude zaslán e-mail o zrušení události. Chcete smazat všechny události v této sérii?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        ""
+        "Účastníkům události bude zaslán e-mail o zrušení. Opravdu chcete tuto událost smazat?"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
-        ""
+        "Přidaní a odebraní účastníci budou informováni o všech událostech této řady."
       ],
       "Added and removed participants will be notified.": [
-        ""
+        "Přidaní a odebraní účastníci budou upozorněni."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ověření adresy pomocí důvěryhodného klíče je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejnému klíči, který může být použit pro odesílání."
@@ -2945,7 +2945,7 @@
         "a"
       ],
       "At most 100 participants are allowed per invitation": [
-        ""
+        "Na jednu pozvánku je povoleno maximálně 100 účastníků"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na helso? Můžeme Vám pomoci vyčistit šifrovaná data od všech šifrovaných kontaktů s tímto klíčem a v tomto procesu zavřete upozornění."
@@ -2966,10 +2966,10 @@
         "Pokračovat s ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Vytvořit ${ calendarsToBeCreated } nový kalendář",
+        "Vytvořit ${ calendarsToBeCreated } nové kalendáře",
+        "Vytvořit ${ calendarsToBeCreated } nových kalendářů",
+        "Vytvořit ${ calendarsToBeCreated } nových kalendářů"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a složky, které chcete importovat."
@@ -2984,7 +2984,7 @@
         "Vytvořit v"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "Podporovány jsou soubory CSV z aplikace Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací stejně jako formáty vCard 3.1 a 4.0 (kódování UTF-8)."
       ],
       "Custom": [
         "Vlastní"
@@ -3017,13 +3017,13 @@
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
       ],
       "Existent and added participants will be notified.": [
-        ""
+        "Existující a přidaní účastníci budou upozorněni."
       ],
       "Existent and removed participants will be notified.": [
-        ""
+        "Existující a odebraní účastníci budou upozorněni."
       ],
       "Existent, added and removed participants will be notified.": [
-        ""
+        "Existující, přidaní a odebraní účastníci budou upozorněni."
       ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
@@ -3053,10 +3053,10 @@
         "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendáře",
+        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů"
       ],
       "Import from": [
         "Importovat z"
@@ -3134,16 +3134,16 @@
         "Nebyly nalezeny žádné výsledky"
       ],
       "None of the participants can be notified about your changes:": [
-        ""
+        "Žádný z účastníků nemůže být o vašich změnách informován:"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Žádný z nahraných klíčů není platný pro šifrování. Šifrování bylo automaticky deaktivováno."
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        ""
+        "Výskyt dříve aktualizovaný organizátorem bude zachován, ale některé vaše odpovědi budou ztraceny."
       ],
       "Occurrences previously updated by the organizer will be kept.": [
-        ""
+        "Dříve aktualizované výskyty organizátorem budou zachovány."
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
@@ -3214,8 +3214,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         ""
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Začněte s 500 MB a postupně odemykejte další úložiště. Úložný prostor je sdílený v aplikacích Pošta, Kalendář a Disk."
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Úložný prostor je sdílen mezi aplikacemi Pošta, Kalendář a Disk."
       ],
       "Support for 1 custom email domain": [
         "Podpora 1 vlastní e-mailové domény"
@@ -3227,31 +3227,31 @@
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
       ],
       "The following participants cannot be notified about your changes:": [
-        ""
+        "Následující účastníci nemohou být o vašich změnách informováni:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
-        ""
+        "Organizátor nemůže být upozorněn, že jste pozvánku odmítli:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
-        ""
+        "Organizátor nemůže být upozorněn na to, že chcete změnit svou odpověď:"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        ""
+        "Organizátor nemohl být informován o tom, že jste změnili odpověď:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        ""
+        "Organizátor aktualizoval některé události v této sérii. Pro tento typ opakujících se událostí není zatím změna kalendáře podporována."
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        ""
+        "Organizátor této události bude informován o tom, že jste pozvání odmítli. Chcete tuto událost smazat?"
       ],
       "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        ""
+        "Organizátor této události nebude informován o tom, že jste pozvánku odmítli, protože z pozvané adresy nelze odesílat e-maily. Chcete tuto událost přesto smazat?"
       ],
       "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        ""
+        "Organizátor této série událostí bude informován o tom, že jste pozvání odmítli. Chcete smazat všechny události v této sérii?"
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        ""
+        "Organizátor této série událostí nebude upozorněn o odmítnutí pozvánky, jelikož z pozvané adresy nemůžete posílat e-maily. Chtěli byste přesto smazat všechny události v této sérii?"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet byl zablokován kvůli možnému porušení pravidel."
@@ -3263,13 +3263,13 @@
         "Tato událost byla aktualizována organizátorem. Chcete změnit svoji odpověď pouze pro tento výskyt v této sérii?"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
-        ""
+        "Tato událost byla aktualizována organizátorem. Chcete tuto událost smazat?"
       ],
       "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        ""
+        "Tato událost byla aktualizována. Organizátor bude informován o tom, že jste pozvánku odmítli. Chcete tuto událost smazat?"
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        ""
+        "Tato událost byla aktualizována. Organizátor nebude informován o tom, že jste pozvánku odmítli, protože z pozvané adresy nelze odesílat e-maily. Chcete tuto událost přesto smazat?"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
@@ -3305,7 +3305,7 @@
         "Po dokončení importu Vás budeme informovat."
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "Zašleme nový ověřovací kód na ${ strong }"
       ],
       "Week": [
         "Týden"
@@ -3326,10 +3326,10 @@
         "Chtěli byste přesto pokračovat?"
       ],
       "Would you like to delete all the events in this series?": [
-        ""
+        "Chcete smazat všechny události v této řadě?"
       ],
       "Would you like to delete the event anyway?": [
-        ""
+        "Chcete událost přesto smazat?"
       ],
       "Would you like to delete this event?": [
         "Chcete smazat tuto událost?"
@@ -3338,10 +3338,10 @@
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "Chcete obdržet nový ověřovací kód?"
       ],
       "Would you like to update all events in this series?": [
-        ""
+        "Chcete aktualizovat všechny události v této řadě?"
       ],
       "Would you like to update this event?": [
         "Chcete aktualizovat tuto událost?"
@@ -3383,22 +3383,22 @@
         "Ztratíte všechny neuložené změny."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
-        ""
+        "Zaktualizujete všechny události v této řadě. Přidaní i odebraní účastníci budou informováni."
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
         ""
       ],
       "You will update all the events in this series. Existent and added participants will be notified.": [
-        ""
+        "Zaktualizujete všechny události v této řadě. Existující i přidaní účastníci budou informováni."
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        ""
+        "Zaktualizujete všechny události v této řadě. Existující i odebraní účastníci budou informováni."
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        ""
+        "Zaktualizujete všechny události v této sérii. Stávající, přidaní i odebraní účastníci budou informováni."
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
-        ""
+        "Zaktualizujete všechny události v této řadě. Odebraní účastníci budou informováni."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup byl omezen. ${ payInvoiceLink }"
@@ -3407,10 +3407,10 @@
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        ""
+        "Vaše adresa je deaktivována. Účastníkům události nelze zaslat e-mail o zrušení. Chcete i přesto smazat všechny události této série?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        ""
+        "Vaše adresa je deaktivována. Účastníkům události nelze zaslat e-mail o zrušení. Chcete tuto událost i přesto smazat?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
@@ -3419,7 +3419,7 @@
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
       "Your events will be encrypted and then saved.": [
-        ""
+        "Vaše události budou zašifrovány a uloženy."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
@@ -3463,7 +3463,7 @@
     },
     "Label": {
       "(Temporarily unavailable. Please check back later.)": [
-        ""
+        "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
       "0 - Not likely": [
         "0 - Nepravděpodobně"
@@ -3497,9 +3497,6 @@
       ],
       "Calendars": [
         "Kalendáře"
-      ],
-      "Cancel": [
-        "Zrušit"
       ],
       "Category": [
         "Kategorie"
@@ -3601,7 +3598,7 @@
         "Interval pro import"
       ],
       "Import to email address": [
-        ""
+        "Importovat na e-mailovou adresu"
       ],
       "Import to:": [
         "Importovat do:"
@@ -3699,9 +3696,6 @@
       "Street address": [
         "Ulice"
       ],
-      "Submit": [
-        "Odeslat"
-      ],
       "System information": [
         "Systémové informace"
       ],
@@ -3761,7 +3755,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } byl vytvořen"
       ]
     },
     "Link": {
@@ -3801,7 +3795,7 @@
         "Téměř hotovo"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        ""
+        "Počet vytvořených kalendářů: ${ createdCalendars } z ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Vytváření nových kalendářů"
@@ -3810,7 +3804,7 @@
         "Shromažďují vaše data"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Shromažďujeme vaše údaje od vašeho poskytovatele"
       ],
       "Your import is starting": [
         "Váš import byl zahájen"
@@ -3818,16 +3812,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Importovat všehcny zprávy z ${ selectedLabelsCount } štítku z ${ totalLabelsCount } od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všehcny zprávy z ${ selectedLabelsCount } štítků z ${ totalLabelsCount } od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všehcny zprávy z ${ selectedLabelsCount } štítků z ${ totalLabelsCount } od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všehcny zprávy z ${ selectedLabelsCount } štítků z ${ totalLabelsCount } od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Importovat všechny zprávy z ${ totalLabelsCount } štítku z ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -4192,7 +4186,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Vezměte prosím na vědomí, že ${ boldNextStep } požaduje aplikace pro zahájení importu."
       ]
     },
     "Onboarding Proton": {
@@ -4397,6 +4391,9 @@
       "OS version": [
         "Verze OS"
       ],
+      "Password": [
+        "Heslo"
+      ],
       "Please describe the problem and include any error messages": [
         "Popište prosím problém a přiložte všechny chybové zprávy"
       ],
@@ -4536,17 +4533,17 @@
         "URL kalendáře"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
+        "K odběru externího nebo veřejného kalendáře a jeho aktualizacím zadejte jeho URL adresu. Jeho verze ke čtení bude přidána do Odebíraných kalendářů.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        ""
+        "Zjistěte, jak získat odkaz na soukromý kalendář."
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
+        "Pomocí tohoto odkazu Google zveřejní kalendář, k jehož odběru se přihlašujete"
       ],
       "This link might be wrong": [
         "Tento odkaz může být chybný"
@@ -4978,10 +4975,10 @@
         "Captcha"
       ],
       "Import as simple event?": [
-        "",
-        "",
-        "",
-        ""
+        "Importovat jako jednoduchou událost?",
+        "Importovat jako jednoduché události?",
+        "Importovat jako jednoduché události?",
+        "Importovat jako jednoduché události?"
       ],
       "Import contacts": [
         "Importovat kontakty"
@@ -5176,7 +5173,7 @@
         "Digitální podpis emailů pomáhá ověřit, že jsou zprávy zaslány od Vás"
       ],
       "Each imported email will have this label": [
-        ""
+        "Každý importovaný e-mail bude mít tento štítek"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Šifrování emailů posiluje emailový podpis, aby Vaše zprávy byly ověřeny"
@@ -5191,10 +5188,10 @@
         "Vyberte PGP schéma, které bude použito při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Systémové podsložky se v ProtonMailu zobrazí jako samostatné složky"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "Import bude zahájen nejnovějšími zprávami."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Nahrajte veřejný klíč, aby bylo umožněno posílání end-to-end šifrování emailů k tomuto emailu"
@@ -5248,7 +5245,7 @@
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton sloučí všechny složky se stejným názvem. Chcete-li tomu zabránit, změňte názvy před importem."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Reporty nejsou šifrovány end-to-end metodou, neposílejte žádné citlivé informace."
@@ -5257,13 +5254,13 @@
         "Některé kontakty vykazují chybu při spojení. Prosím, zkontrolujte je individuálně"
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "Kontaktní údaje jsou poškozeny a nelze je zobrazit."
       ],
       "The contact failed to load.": [
         "Kontakt selhal v načtení."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Nastavení data, a času v zařízení není synchronizováno. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Dešifrování šifrovacího obsahu selhalo."
@@ -5278,10 +5275,10 @@
         "Tato funkce vyžaduje placený Proton účet"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Bohužel nejsme v tuto chvíli online. Prosím popište váš problém ve formuláři níže. Podíváme se na něj a spojíme se s vámi, když budeme zpátky online."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Ztratíte všechna dosud provedená přizpůsobení."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná zkušební verze končí ${ textDate }. ${ action }"

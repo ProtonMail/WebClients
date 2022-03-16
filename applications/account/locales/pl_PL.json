@@ -2351,6 +2351,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "Gratulacje! Przyznano maksymalną liczbę ${ rewardsLimit } darmowych miesięcy planu ${ appName } ${ plusPlanName }"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
@@ -4335,9 +4338,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Udostępniając wszystkie szczegóły wydarzenia w kalendarzu, akceptujesz przyznanie dostępu usłudze Proton do zaszyfrowanych danych kalendarza."
       ],
-      "Cancel trial": [
-        "Anuluj wersję próbną"
-      ],
       "Center": [
         "Wyśrodkuj"
       ],
@@ -4734,6 +4734,9 @@
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
       ],
+      "Invite successfully sent": [
+        "Zaproszenie zostało wysłane"
+      ],
       "Invited via email": [
         "Zaproszony przez wiadomość"
       ],
@@ -4929,6 +4932,9 @@
       "Other options": [
         "Inne opcje"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie, dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Plik odzyskiwania jest nieaktualny. Zaktualizuj go, aby uzyskać dostęp do danych"
       ],
@@ -5100,6 +5106,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Hasło odzyskiwania nie jest powiązane z żadnym starym kluczem."
       ],
+      "Referral link copied to your clipboard": [
+        "Link polecający został skopiowany do schowka"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
@@ -5126,6 +5135,9 @@
       ],
       "Screenshot(s) attached": [
         "Zrzuty ekranu zostały dołączone"
+      ],
+      "See all plans": [
+        "Zobacz wszystkie plany"
       ],
       "Select a service provider to start": [
         "Aby rozpocząć, wybierz dostawcę usługi"
@@ -5178,8 +5190,8 @@
       "Storage GB": [
         "Przestrzeń dyskowa (GB)"
       ],
-      "Sucessfully sent invites": [
-        "Zaproszenia zostały wysłane"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy pocztą, kalendarzem i dyskiem."
       ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny"
@@ -5304,6 +5316,9 @@
       "to continue to ${ toAppName }": [
         "i przejdź do aplikacji ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ appName } z funkcjami premium."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Aby odszyfrować wiadomości i inne dane, będziesz potrzebować pliku odzyskiwania."
       ],
@@ -5378,6 +5393,9 @@
       ],
       "Update recovery phrase": [
         "Zaktualizuj hasło odzyskiwania"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Rozpocznij od ulepszenia planu do wersji ${ PLAN_NAMES[PLANS.PROFESSIONAL] } lub ${ PLAN_NAMES[PLANS.VISIONARY] }."
@@ -5681,6 +5699,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Wersja próbna zakończy się w dniu ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -6800,6 +6821,9 @@
       ],
       "VPN connections": [
         "Połączenia VPN"
+      ],
+      "Waiting for subscription": [
+        "Oczekiwanie na subskrypcję"
       ],
       "Want to add": [
         "Co chcesz dodać"
@@ -8646,7 +8670,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         "Wersja próbna planu ${ appName } ${ planName }"
       ],
       "${ appName } customization": [

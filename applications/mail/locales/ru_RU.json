@@ -863,9 +863,6 @@
       "Try another method": [
         "Попробуйте другой способ"
       ],
-      "Turn on auto-load": [
-        "Включить автозагрузку"
-      ],
       "Turn on tracker protection": [
         "Включите защиту от трекеров"
       ],
@@ -2939,7 +2936,7 @@
         "Ошибка обработки сообщения."
       ],
       "Missing key packet": [
-        ""
+        "Отсутствует пакет ключей"
       ],
       "Missing signature": [
         "Подпись отсутствует"
@@ -4632,7 +4629,7 @@
         "Извините, это сообщение не существует или срок его действия уже истек"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Место хранения используется почтой, календарем и диском."
       ],
       "Store and share files securely with Proton Drive.": [
         "Безопасное хранение и обмен файлами с помощью Proton Drive."
@@ -4916,8 +4913,8 @@
       "You are about to open another browser tab and visit:": [
         "Вы собираетесь открыть другую вкладку браузера и посетить:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "В настоящее время вы вошли как ${ user.Name } (${ user.Email }), и Ваш доступ ограничен."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Вы можете добавить его в качестве вложения или встроить в тело письма."
@@ -5358,9 +5355,6 @@
       "Calendars": [
         "Календари"
       ],
-      "Cancel": [
-        "Отменить"
-      ],
       "Carbon Copy": [
         "Копия"
       ],
@@ -5612,9 +5606,6 @@
       ],
       "Street address": [
         "Адрес"
-      ],
-      "Submit": [
-        "Отправить"
       ],
       "System information": [
         "Сведения о системе"
