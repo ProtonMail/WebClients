@@ -22,7 +22,7 @@ export default function useSharedLinksView(shareId: string) {
     const [isLoading, withLoading] = useLoading(true);
 
     const linksListing = useLinksListing();
-    const [sharedLinks, isDecrypting] = linksListing.getCachedSharedByLink(abortSignal, shareId);
+    const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedByLink(abortSignal, shareId);
     const cachedSharedLinks = useMemoArrayNoMatterTheOrder(sharedLinks);
 
     const { layout } = useUserSettings();

@@ -69,7 +69,7 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
 
     const syncTreeWithCache = useCallback(
         (item: TreeItem): TreeItem => {
-            const [allChildren] = getCachedChildren(abortSignal, shareId, item.link.linkId);
+            const { links: allChildren } = getCachedChildren(abortSignal, shareId, item.link.linkId);
             const children = allChildren.filter((link) => !foldersOnly || link.type === LinkType.FOLDER);
             if (!children) {
                 item.children = [];

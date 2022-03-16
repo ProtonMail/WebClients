@@ -63,8 +63,8 @@ export default function useUploadHelper() {
 
     const getLinkByName = async (abortSignal: AbortSignal, shareId: string, parentLinkID: string, name: string) => {
         await loadChildren(abortSignal, shareId, parentLinkID);
-        const [children] = getCachedChildren(abortSignal, shareId, parentLinkID);
-        return children?.find((link) => link.name === name);
+        const { links } = getCachedChildren(abortSignal, shareId, parentLinkID);
+        return links?.find((link) => link.name === name);
     };
 
     return {
