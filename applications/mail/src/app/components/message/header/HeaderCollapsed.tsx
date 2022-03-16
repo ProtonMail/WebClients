@@ -19,7 +19,6 @@ import { Breakpoints } from '../../../models/utils';
 import RecipientItem from '../recipients/RecipientItem';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { useExpiration } from '../../../hooks/useExpiration';
-import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 
 interface Props {
     labelID: string;
@@ -30,7 +29,6 @@ interface Props {
     isUnreadMessage: boolean;
     onExpand: () => void;
     breakpoints: Breakpoints;
-    highlightKeywords?: boolean;
 }
 
 const HeaderCollapsed = ({
@@ -42,9 +40,7 @@ const HeaderCollapsed = ({
     isUnreadMessage,
     onExpand,
     breakpoints,
-    highlightKeywords = false,
 }: Props) => {
-    const { highlightMetadata } = useEncryptedSearchContext();
     const { lessThanTwoHours } = useExpiration(message);
 
     const handleClick = (event: MouseEvent) => {
@@ -79,8 +75,6 @@ const HeaderCollapsed = ({
                     recipientOrGroup={{ recipient: message.data?.Sender }}
                     showAddress={false}
                     isLoading={!messageLoaded}
-                    highlightKeywords={highlightKeywords}
-                    highlightMetadata={highlightMetadata}
                     showDropdown={false}
                 />
 

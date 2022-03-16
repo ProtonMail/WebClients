@@ -21,7 +21,6 @@ interface Props {
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
-    highlightKeywords?: boolean;
 }
 
 const MessageOnlyView = ({
@@ -34,7 +33,6 @@ const MessageOnlyView = ({
     onMessageReady,
     columnLayout,
     isComposerOpened,
-    highlightKeywords = false,
 }: Props) => {
     const [labels = []] = useLabels();
 
@@ -87,7 +85,6 @@ const MessageOnlyView = ({
                 className={classnames([hidden && 'hidden'])}
                 loading={!messageLoaded}
                 element={message.data}
-                highlightKeywords={highlightKeywords}
                 hasScrollShadow={hasScrollShadow}
             />
             <Scroll setHasScrollShadow={setHasScrollShadow}>
@@ -112,7 +109,6 @@ const MessageOnlyView = ({
                         onMessageReady={onMessageReady}
                         columnLayout={columnLayout}
                         isComposerOpened={isComposerOpened}
-                        highlightKeywords={highlightKeywords}
                     />
                 </div>
             </Scroll>

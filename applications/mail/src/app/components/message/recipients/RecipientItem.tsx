@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { OpenPGPKey } from 'pmcrypto';
 
-import { HighlightMetadata } from '@proton/encrypted-search';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
 
@@ -24,8 +23,6 @@ interface Props {
     signingPublicKey?: OpenPGPKey;
     attachedPublicKey?: OpenPGPKey;
     isNarrow?: boolean;
-    highlightKeywords?: boolean;
-    highlightMetadata?: HighlightMetadata;
     showDropdown?: boolean;
     isOutside?: boolean;
 }
@@ -41,8 +38,6 @@ const RecipientItem = ({
     signingPublicKey,
     attachedPublicKey,
     isNarrow,
-    highlightKeywords = false,
-    highlightMetadata,
     showDropdown,
     isOutside = false,
 }: Props) => {
@@ -55,7 +50,6 @@ const RecipientItem = ({
                 isLoading
                 showAddress={showAddress}
                 showDropdown={showDropdown}
-                highlightMetadata={highlightMetadata}
                 isOutside={isOutside}
             />
         );
@@ -67,8 +61,6 @@ const RecipientItem = ({
                 group={recipientOrGroup.group}
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}
-                highlightKeywords={highlightKeywords}
-                highlightMetadata={highlightMetadata}
                 showDropdown={showDropdown}
             />
         );
@@ -87,8 +79,6 @@ const RecipientItem = ({
                     signingPublicKey={signingPublicKey}
                     attachedPublicKey={attachedPublicKey}
                     isNarrow={isNarrow}
-                    highlightKeywords={highlightKeywords}
-                    highlightMetadata={highlightMetadata}
                     showDropdown={showDropdown}
                     isOutside={isOutside}
                 />

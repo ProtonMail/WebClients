@@ -11,7 +11,6 @@ import {
     useNotifications,
 } from '@proton/components';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { HighlightMetadata } from '@proton/encrypted-search';
 import { RecipientGroup } from '../../../models/address';
 import RecipientItemLayout from './RecipientItemLayout';
 import GroupModal from '../modals/GroupModal';
@@ -26,21 +25,11 @@ interface Props {
     group: RecipientGroup;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
-    highlightKeywords?: boolean;
-    highlightMetadata?: HighlightMetadata;
     showDropdown?: boolean;
     isOutside?: boolean;
 }
 
-const RecipientItemGroup = ({
-    group,
-    mapStatusIcons,
-    globalIcon,
-    highlightKeywords = false,
-    highlightMetadata,
-    showDropdown,
-    isOutside,
-}: Props) => {
+const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showDropdown, isOutside }: Props) => {
     const { getGroupLabel, getRecipientLabel } = useRecipientLabel();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -93,8 +82,6 @@ const RecipientItemGroup = ({
         <RecipientItemLayout
             label={label}
             title={`${labelText} ${addresses}`}
-            highlightKeywords={highlightKeywords}
-            highlightMetadata={highlightMetadata}
             showDropdown={showDropdown}
             dropdrownAnchorRef={anchorRef}
             dropdownToggle={toggle}
