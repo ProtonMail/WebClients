@@ -2303,6 +2303,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        ""
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
@@ -4167,9 +4170,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "このカレンダーの完全なイベント詳細を共有することで、このカレンダーの暗号化された情報へのProtonのアクセスを許可することになります。"
       ],
-      "Cancel trial": [
-        "トライアルをキャンセル"
-      ],
       "Center": [
         "中央揃え"
       ],
@@ -4557,6 +4557,9 @@
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
       ],
+      "Invite successfully sent": [
+        ""
+      ],
       "Invited via email": [
         "メール経由の招待"
       ],
@@ -4752,6 +4755,9 @@
       "Other options": [
         "その他のオプション"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "古い回復ファイルです。アップデートして確実にデータにアクセスできるようにします"
       ],
@@ -4920,6 +4926,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         ""
       ],
+      "Referral link copied to your clipboard": [
+        ""
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
       ],
@@ -4946,6 +4955,9 @@
       ],
       "Screenshot(s) attached": [
         "スクリーンショットが添付されました"
+      ],
+      "See all plans": [
+        ""
       ],
       "Select a service provider to start": [
         "サービスプロバイダーを選択して開始"
@@ -4998,8 +5010,8 @@
       "Storage GB": [
         "ストレージ GB"
       ],
-      "Sucessfully sent invites": [
-        "招待は正常に送信されました"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
       ],
       "Support for 1 custom email domain": [
         "1 つの独自メールドメインをサポート"
@@ -5124,6 +5136,9 @@
       "to continue to ${ toAppName }": [
         "サインイン後 ${ toAppName } を開きます"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "メールなどのデータを復号するには、回復ファイルが必要です。"
       ],
@@ -5198,6 +5213,9 @@
       ],
       "Update recovery phrase": [
         "回復フレーズを更新"
+      ],
+      "Upgrade now": [
+        ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "この機能を利用するには ${ PLAN_NAMES[PLANS.VISIONARY] } または ${ PLAN_NAMES[PLANS.PROFESSIONAL] } プランにアップグレードしてください。"
@@ -5501,6 +5519,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        ""
       ]
     },
     "info": {
@@ -6603,6 +6624,9 @@
       "VPN connections": [
         "VPN 接続"
       ],
+      "Waiting for subscription": [
+        ""
+      ],
       "Want to add": [
         ""
       ],
@@ -7701,7 +7725,7 @@
         "Proton ユーザー名"
       ],
       "Search settings": [
-        "検索設定"
+        "設定の検索"
       ],
       "Search users": [
         "ユーザーを検索"
@@ -7984,7 +8008,7 @@
         "プライバシーが保護される環境に、簡単かつ確実に移行する。"
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        ""
+        "1 つのメッセージに複数のラベルを付けることはできますが、1 つのメッセージを複数のフォルダーに入れることはできません。フォルダーやラベルを並び替えるには、ドラッグ＆ドロップしてください。"
       ]
     },
     "Settings section title": {
@@ -8409,8 +8433,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        "${ appName } ${ planName } トライアル"
+      "${ appName } ${ planName } Trial": [
+        ""
       ],
       "${ appName } customization": [
         "${ appName } のカスタマイズ"

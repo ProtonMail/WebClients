@@ -416,7 +416,7 @@
         "${ BRAND_NAME } ${ currentPlanName } tarifemi koru"
       ],
       "label emails as": [
-        "e-postaları etiketle"
+        "e-postalar şöyle etiketlensin"
       ],
       "Loading verification": [
         "Doğrulama yükleniyor"
@@ -425,7 +425,7 @@
         "Varsayılan olarak işaretle"
       ],
       "mark emails as": [
-        "e-postaları şöyle işaretle"
+        "e-postalar şöyle işaretlensin"
       ],
       "More": [
         "Diğer"
@@ -434,7 +434,7 @@
         "Ayrıntılı bilgi: ${ safeTitle }"
       ],
       "move emails to": [
-        "e-postaları şuraya taşı"
+        "e-postalar şuraya taşınsın"
       ],
       "Move to Allow List": [
         "İzin verilenler listesine taşı"
@@ -467,7 +467,7 @@
         "Gezinmeyi aç"
       ],
       "Ordered list": [
-        "Sıralanmış liste"
+        "Numaralı liste"
       ],
       "Organization": [
         "Kuruluş"
@@ -626,7 +626,7 @@
         "Varsayılan olarak ayarla"
       ],
       "Set catch-all": [
-        "Tümünü topla ayarla"
+        "Tümünü yakalayan ayarla"
       ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
@@ -644,7 +644,7 @@
         "Klasörleri göster"
       ],
       "Show info": [
-        "Bilgileri göster"
+        "Bilgileri görüntüle"
       ],
       "Show labels": [
         "Etiketleri göster"
@@ -728,7 +728,7 @@
         "Verilerin kilidini aç"
       ],
       "Unordered list": [
-        "Sıralanmamış liste"
+        "İmli liste"
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
@@ -1321,34 +1321,34 @@
     },
     "Condition for custom filter": {
       "begins with": [
-        "şununla başlayan"
+        "şununla başlıyorsa"
       ],
       "contains": [
-        "şunu içeren"
+        "şunu içeriyorsa"
       ],
       "does not begin with": [
-        "şununla başlamayan"
+        "şununla başlamıyorsa"
       ],
       "does not contain": [
-        "şunu içermeyen"
+        "şunu içermiyorsa"
       ],
       "does not end with": [
-        "şununla bitmeyen"
+        "şununla bitmiyorsa"
       ],
       "does not match": [
-        "şununla eşleşmeyen"
+        "şununla eşleşmiyorsa"
       ],
       "ends with": [
-        "şunanla biten"
+        "şununla bitiyorsa"
       ],
       "is exactly": [
-        "tam şu olan"
+        "şununla aynıysa"
       ],
       "is not": [
-        "şu olmayan"
+        "şu değilse"
       ],
       "matches": [
-        "şununla eşleşen"
+        "şununla eşleşiyorsa"
       ]
     },
     "Confirm": {
@@ -2252,7 +2252,7 @@
     },
     "Credits": {
       "Unused credits": [
-        "Kullanılmamış kredi"
+        "Kalan kredi"
       ]
     },
     "Daily recurring event, frequency": {
@@ -2319,6 +2319,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "Tebrikler! En yüksek hediye sınırı olan ${ rewardsLimit } ay ücretsiz ${ appName } ${ plusPlanName } kazandınız"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
@@ -3282,7 +3285,7 @@
         "okunmuş"
       ],
       "starred": [
-        "yıldızlanmış"
+        "yıldızlı"
       ]
     },
     "FilterSettings": {
@@ -3977,10 +3980,10 @@
         "(${ memberCount } üye)"
       ],
       "(Filter if ALL of the following conditions are met)": [
-        "(Aşağıdaki koşulların TÜMÜ karşılandığında süzülsün)"
+        "(Aşağıdaki koşulların TÜMÜ karşılandığında süzülür)"
       ],
       "(Filter if ANY of the following conditions are met)": [
-        "(Aşağıdaki koşullardan HERHANGİ BİRİ karşılandığında süzülsün)"
+        "(Aşağıdaki koşullardan BİRİ karşılandığında süzülür)"
       ],
       "(Mail + VPN)": [
         "(Posta + VPN)"
@@ -4152,19 +4155,19 @@
         "Bu kullanıcının yönetici yetkilerini kaldırmak istediğinize emin misiniz?"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "Otomatik yanıtlama, her ay seçilmiş başlangıç ve bitiş saatleri arasında etkinleştiriliyor."
+        "Otomatik yanıt, her ay seçilmiş başlangıç ve bitiş saatleri arasında etkinleştirilir."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "Otomatik yanıtlama, her hafta seçilmiş başlangıç ​​ve bitiş saatleri arasında etkinleştiriliyor."
+        "Otomatik yanıt, her hafta seçilmiş başlangıç ​​ve bitiş saatleri arasında etkinleştirilir."
       ],
       "Auto-reply is active from the start time to the end time.": [
-        "Otomatik yanıtlama, başlangıç ​​saatinden bitiş saatine kadar etkinleştiriliyor."
+        "Otomatik yanıt, başlangıç ​​saati ile bitiş saati arasında etkinleştirilir."
       ],
       "Auto-reply is active until you turn it off.": [
         "Otomatik yanıtlama siz kapatana kadar etkin."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Otomatik yanıtlama, haftanın seçilmiş günlerinde seçilmiş saatler arasında etkinleştiriliyor."
+        "Otomatik yanıt, haftanın seçilmiş günlerinde seçilmiş saatler arasında etkinleştirilir."
       ],
       "Available on macOS, Windows, and Linux.": [
         "MacOS, Windows ve Linux üzerinde kullanılabilir."
@@ -4222,9 +4225,6 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Bu takvimin tüm etkinlik ayrıntılarını paylaşarak, bu takvimin şifrelenmiş bilgilerine Proton tarafından erişilmesine izin vermiş olursunuz."
-      ],
-      "Cancel trial": [
-        "Denemeyi iptal et"
       ],
       "Center": [
         "Ortaya hizala"
@@ -4294,7 +4294,7 @@
         "Günlük, özel"
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Özel süzgeçler, alınan ve gönderilen tüm e-postalarda çalışır. Süzgeçler doğrudan Sieve programlama dili ile oluşturulup düzenlenebilir."
+        "Özel süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Süzgeçler doğrudan Sieve programlama dili ile oluşturulup düzenlenebilir."
       ],
       "Custom monthly": [
         "Aylık, özel"
@@ -4430,10 +4430,10 @@
         "Günlük kayıtları alınamadı."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Süzgeçler, alınan ve gönderilen tüm e-postalarda çalışır. Her süzgeçte en az bir ad ve geçerli bir Sieve komut dosyası bulunmalıdır."
+        "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve geçerli bir Sieve komut dosyası bulunmalıdır."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Süzgeçler, alınan ve gönderilen tüm e-postalarda çalışır. Her süzgeçte en az bir ad ve bir koşul ve işlem bulunmalıdır."
+        "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve bir koşul ve işlem bulunmalıdır."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Aileler ve küçük ekipler için; Posta ve VPN hizmetleri sağlar."
@@ -4502,7 +4502,7 @@
         "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
       ],
       "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "ProtonMail üzerinde kullandığınız özel bir etki alanınız varsa, etki alanınıza geçersiz bir e-posta adresiyle (yazım hataları gibi) gönderilen iletileri alacak bir tümünü toplayan e-posta adresi ayarlayabilirsiniz."
+        "ProtonMail üzerinde kullandığınız özel bir etki alanınız varsa, etki alanınıza geçersiz bir e-posta adresiyle (yazım hataları gibi) gönderilen iletileri alacak bir tümünü yakalayan e-posta adresi ayarlayabilirsiniz."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hediye kodunuz varsa, indiriminizi almak için aşağıya yazın."
@@ -4615,6 +4615,9 @@
       ],
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
+      ],
+      "Invite successfully sent": [
+        "Davet gönderildi"
       ],
       "Invited via email": [
         "E-posta ile davet edildi"
@@ -4811,6 +4814,9 @@
       "Other options": [
         "Diğer seçenekler"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Kurtarma dosyası eski olabilir. Verilerinize erişebileceğinizden emin olmak için güncelleyin"
       ],
@@ -4980,6 +4986,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Kurtarma ifadesi süresi geçmiş herhangi bir anahtarla ilişkili değil."
       ],
+      "Referral link copied to your clipboard": [
+        "Öneri bağlantısı panonuza kopyalandı"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
@@ -5006,6 +5015,9 @@
       ],
       "Screenshot(s) attached": [
         "Ekran görüntüsü eklendi"
+      ],
+      "See all plans": [
+        "Tüm tarifelere bakın"
       ],
       "Select a service provider to start": [
         "Başlamak için bir hizmet sağlayıcı seçin"
@@ -5058,8 +5070,8 @@
       "Storage GB": [
         "GB olarak depolama"
       ],
-      "Sucessfully sent invites": [
-        "Davetler gönderildi"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
       ],
       "Support for 1 custom email domain": [
         "1 özel e-posta etki alanı desteği"
@@ -5184,6 +5196,9 @@
       "to continue to ${ toAppName }": [
         "${ toAppName } uygulamasına devam etmek için"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "${ appName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "E-postalarınızın ve diğer verilerinizin şifresini çözmek ve görüntülemek için bir kurtarma dosyanız olmalıdır."
       ],
@@ -5259,6 +5274,9 @@
       "Update recovery phrase": [
         "Kurtarma ifadesini güncelle"
       ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Başlamak için bir ${ PLAN_NAMES[PLANS.VISIONARY] } ya da ${ PLAN_NAMES[PLANS.PROFESSIONAL] } tarifesine yükseltin."
       ],
@@ -5281,7 +5299,7 @@
         "Adres bağlantısı"
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Kişilere ofis dışında olduğunuzu veya başka bir şekilde yanıt veremeyeceğinizi bildirmek için otomatik yanıtları kullanın."
+        "Otomatik yanıtları kullanarak, göndericilere ofis dışında olduğunuzu ya da başka bir nedenle yanıt veremeyeceğinizi bildirebilirsiniz."
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "ProtonVPN sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: macOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
@@ -5561,6 +5579,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "info": {
@@ -5783,13 +5804,13 @@
         "Gelen kutusuna git"
       ],
       "Go to Sent": [
-        "Gönderilmişlere git"
+        "Gönderilmiş kutusuna git"
       ],
       "Go to Spam": [
         "İstenmeyen kutusuna git"
       ],
       "Go to Starred": [
-        "Yıldızlanmışlara git"
+        "Yıldızlı kutusuna git"
       ],
       "Go to Trash": [
         "Çöp kutusuna git"
@@ -5798,10 +5819,10 @@
         "Bağlantı ekle"
       ],
       "Jump to first": [
-        "Birinciye git"
+        "En başa git"
       ],
       "Jump to last": [
-        "Sonuncuya git"
+        "En sona git"
       ],
       "Label as...": [
         "Etiketle..."
@@ -6034,7 +6055,7 @@
         "Ve"
       ],
       "ANY": [
-        "HERHANGİ BİRİ"
+        "BİRİ"
       ],
       "App password": [
         "Uygulama parolası"
@@ -6163,7 +6184,7 @@
         "CVV kodu"
       ],
       "Daily email notifications": [
-        "E-psotalar günlük olarak bildirilsin"
+        "E-postalar günlük olarak bildirilsin"
       ],
       "Date": [
         "Tarih"
@@ -6250,13 +6271,13 @@
         "Bitiş tarihi"
       ],
       "End day of month": [
-        "Ayın son günü"
+        "Ayın bitiş günü"
       ],
       "End time": [
         "Bitiş saati"
       ],
       "End weekday": [
-        "Hafta sonu"
+        "Hafta bitiş günü"
       ],
       "Enter organization name to confirm": [
         "Onaylamak için kuruluş adını yazın"
@@ -6382,13 +6403,13 @@
         "Etiket yönetimi"
       ],
       "Mark as": [
-        "Şöyle işaretle"
+        "Şöyle işaretlensin"
       ],
       "Message": [
         "İleti"
       ],
       "Move to": [
-        "Şuraya taşı"
+        "Şuraya taşınsın"
       ],
       "Name": [
         "Ad"
@@ -6541,7 +6562,7 @@
         "Ülkenizi seçin"
       ],
       "Send auto-reply": [
-        "Otomatik yanıt gönder"
+        "Otomatik yanıtlansın"
       ],
       "Send invitations in": [
         "Davet dili"
@@ -6559,19 +6580,19 @@
         "İmza"
       ],
       "Starred": [
-        "Yıldızlanmış"
+        "Yıldızlı"
       ],
       "Start date": [
         "Başlangıç tarihi"
       ],
       "Start day of month": [
-        "Ayın ilk günü"
+        "Ayın başlangıç günü"
       ],
       "Start time": [
         "Başlangıç saati"
       ],
       "Start weekday": [
-        "Hafta başı"
+        "Hafta başlangıç günü"
       ],
       "Statement": [
         "Değerlendirme"
@@ -6586,19 +6607,19 @@
         "Sistem bilgileri"
       ],
       "The email was sent ${ attachment }": [
-        "Bu e-posta ${ attachment } gönderildi"
+        "Gönderilen e-postada ${ attachment }"
       ],
       "the email was sent ${ attachment }": [
-        "e-posta ${ attachment } gönderdi"
+        "gönderilen e-postada ${ attachment }"
       ],
       "The email was sent ${ attachmentStrong }": [
         "E-posta gönderildi ${ attachmentStrong }"
       ],
       "the email was sent ${ label }": [
-        "e-posta ${ label } gönderdi"
+        "gönderilen e-postada ${ label }"
       ],
       "Then": [
-        "Sonra"
+        "Önce"
       ],
       "Time format": [
         "Saat biçimi"
@@ -6668,6 +6689,9 @@
       ],
       "VPN connections": [
         "VPN bağlantıları"
+      ],
+      "Waiting for subscription": [
+        "Abone olunması bekleniyor"
       ],
       "Want to add": [
         "Eklemek ister misiniz"
@@ -6989,7 +7013,7 @@
         "Otomatik yanıtlayıcı"
       ],
       "Catch-All email": [
-        "Tümünü toplayan e-posta"
+        "Tümünü yakalayan e-posta"
       ],
       "Contact groups": [
         "Kişi grupları"
@@ -7112,7 +7136,7 @@
         "Özel bir e-posta adresi etki alanı ayarlayın (siz@sirketiniz.com gibi). Bu işlemi yalnızca birkaç dakikada yapabilirsiniz ve yardımcımız tüm süreç boyunca size rehberlik eder."
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        "Tüm adresleri toplama özelliğini ve ücretli özellikleri kullanmak için aboneliğinizi ${ PLAN_NAMES[PLANS.VISIONARY] } ya da ${ PLAN_NAMES[PLANS.PROFESSIONAL] } tarifesine yükseltin"
+        "Tüm adresleri yakalayın e-posta adresi özelliğini ve ücretli özellikleri kullanmak için aboneliğinizi ${ PLAN_NAMES[PLANS.VISIONARY] } ya da ${ PLAN_NAMES[PLANS.PROFESSIONAL] } tarifesine yükseltin"
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
         "Özel etki alanlarını ve ücretli özellikleri kullanmak için aboneliğinizi herhangi bir ücretli tarifeye yükseltin"
@@ -7537,7 +7561,7 @@
         "Yeni grup oluştur"
       ],
       "Fixed duration": [
-        "Sabit süre"
+        "Sabit süreli"
       ],
       "Free server configs": [
         "Ücretsiz sunucu yapılandırmaları"
@@ -7585,13 +7609,13 @@
         "Düz metin"
       ],
       "Repeat daily": [
-        "Günlük yinelensin"
+        "Günlük yinelenen"
       ],
       "Repeat monthly": [
-        "Aylık yinelensin"
+        "Aylık yinelenen"
       ],
       "Repeat weekly": [
-        "Haftalık yinelensin"
+        "Haftalık yinelenen"
       ],
       "Right to Left": [
         "Sağdan sola"
@@ -8263,7 +8287,7 @@
         "İçe aktarma iptal ediliyor"
       ],
       "Catch-all address updated": [
-        "Tümünü topla adresi güncellendi"
+        "Tümünü yakalayan adres güncellendi"
       ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
@@ -8488,7 +8512,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         "${ appName } ${ planName } deneme"
       ],
       "${ appName } customization": [
@@ -8642,10 +8666,10 @@
         "Kart doğrulama işlemi sürüyor"
       ],
       "Catch-All address": [
-        "Tümünü topla adresi"
+        "Tümünü yakalayan adres"
       ],
       "Catch-all address": [
-        "Tümünü topla adresi"
+        "Tümünü yakalayan adres"
       ],
       "Change login password": [
         "Oturum açma parolasını değiştir"
@@ -8801,7 +8825,7 @@
         "Görüntülenecek ad ve imza"
       ],
       "Domain names": [
-        "Etki alanı adları"
+        "Etki alanları"
       ],
       "Don't show again?": [
         "Bir daha gösterilmesin mi?"
@@ -8828,7 +8852,7 @@
         "Süzgeci düzenle"
       ],
       "Edit Sieve filter": [
-        "Sieve süzgecini düzenle"
+        "Sieve kodunu düzenle"
       ],
       "Edit user": [
         "Kullanıcıyı düzenle"
@@ -8937,7 +8961,7 @@
         "${ PRODUCT_NAMES.EASY_SWITCH } ile içe aktar"
       ],
       "Import-Export app": [
-        "İçe-dışa aktarma uygulaması"
+        "İçe/dışa aktarma uygulaması"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
@@ -9177,7 +9201,7 @@
         "Etiketler alfabetik olarak sıralansın"
       ],
       "Spam filters": [
-        "İstenmeyen süzgeçleri"
+        "İstenmeyen e-posta süzgeçleri"
       ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
@@ -9325,7 +9349,7 @@
         "Adresler"
       ],
       "Catch-All": [
-        "Tümünü topla"
+        "Tümünü yakalayan"
       ],
       "Status": [
         "Durum"

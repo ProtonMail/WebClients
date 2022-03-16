@@ -968,7 +968,7 @@
     },
     "Auto import invitations setting": {
       "Add invitations to calendar and mark as pending": [
-        ""
+        "Aggiungi inviti al calendario e contrassegna come in attesa"
       ]
     },
     "Autoresponse": {
@@ -2319,6 +2319,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "Congratulazioni! Hai guadagnato il massimo di ${ rewardsLimit } mesi gratuiti di ${ appName } ${ plusPlanName }"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
       ],
@@ -2649,7 +2652,7 @@
         "Unisci almeno ${ calendarToFixCount } calendari con calendari Proton esistenti"
       ],
       "Missing key packet": [
-        ""
+        "Pacchetto chiavi mancante"
       ],
       "Name does not match": [
         "Il nome non corrisponde"
@@ -4223,9 +4226,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Condividendo i dettagli dell'evento completi di questo calendario, accetti di concedere a Proton l'accesso a queste informazioni crittografate del calendario."
       ],
-      "Cancel trial": [
-        "Annulla prova"
-      ],
       "Center": [
         "Centra"
       ],
@@ -4616,6 +4616,9 @@
       "Internet connection restored.": [
         "Connessione Internet ripristinata."
       ],
+      "Invite successfully sent": [
+        "Invito inviato con successo"
+      ],
       "Invited via email": [
         "Invitato via email"
       ],
@@ -4811,6 +4814,9 @@
       "Other options": [
         "Altre opzioni"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà eventualmente disabilitato."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "File di ripristino obsoleto; aggiornare per garantire l'accesso ai tuoi dati"
       ],
@@ -4980,6 +4986,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase di ripristino non è associata a chiavi obsolete."
       ],
+      "Referral link copied to your clipboard": [
+        "Link di riferimento copiato negli appunti"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."
       ],
@@ -5006,6 +5015,9 @@
       ],
       "Screenshot(s) attached": [
         "Screenshot allegato/i"
+      ],
+      "See all plans": [
+        "Visualizza tutti i piani"
       ],
       "Select a service provider to start": [
         "Seleziona un fornitore di servizi per iniziare"
@@ -5058,8 +5070,8 @@
       "Storage GB": [
         "Archivio GB"
       ],
-      "Sucessfully sent invites": [
-        "Inviti inviati con successo"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Lo spazio di archiviazione è condiviso tra Mail, Calendar e Drive."
       ],
       "Support for 1 custom email domain": [
         "Supporto per 1 dominio di posta elettronica personalizzato"
@@ -5184,6 +5196,9 @@
       "to continue to ${ toAppName }": [
         "continua su ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ appName } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Per decrittografare e visualizzare le tue e-mail e altri dati, hai bisogno di un file di ripristino."
       ],
@@ -5258,6 +5273,9 @@
       ],
       "Update recovery phrase": [
         "Aggiorna frase di recupero"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Passa ad un piano ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } per iniziare."
@@ -5467,7 +5485,7 @@
         "Hai raggiunto il 100% della tua capacità di archiviazione. Non puoi inviare o ricevere nuove email. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        ""
+        "Devi ancora rispondere agli inviti affinché l'host possa vedere la tua risposta."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "${ loseAllData } nel tuo account ${ BRAND_NAME } . Per ripristinarlo, dovrai inserire la tua vecchia password."
@@ -5561,6 +5579,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La tua sottoscrizione è gestita da Mozilla. Per favore, contatta il supporto di Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -6544,7 +6565,7 @@
         "Invia risposta automatica"
       ],
       "Send invitations in": [
-        ""
+        "Invia gli inviti in"
       ],
       "Show secondary time zone": [
         "Mostra fuso orario secondario"
@@ -6668,6 +6689,9 @@
       ],
       "VPN connections": [
         "Connessioni VPN"
+      ],
+      "Waiting for subscription": [
+        "In attesa di abbonamento"
       ],
       "Want to add": [
         "Vuoi aggiungere"
@@ -8488,8 +8512,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        "prova ${ appName } ${ planName }"
+      "${ appName } ${ planName } Trial": [
+        "Prova ${ appName } ${ planName }"
       ],
       "${ appName } customization": [
         "Personalizzazione di ${ appName }"

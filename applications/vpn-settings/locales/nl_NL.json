@@ -2073,9 +2073,6 @@
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
-      "Cancel trial": [
-        "Proefversie annuleren"
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -2087,12 +2084,6 @@
       ],
       "Connections": [
         "Verbindingen"
-      ],
-      "Continue with ${ planName }": [
-        "Ga door met ${ planName }"
-      ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        "Ga vandaag door met ${ planName } om te vermijden dat toegang uitgeschakeld wordt op het einde van uw proefversie."
       ],
       "Creating your account": [
         "Account aan het aanmaken"
@@ -2298,6 +2289,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Zodra u op \"Downgrade\" klikt, kan het enkele minuten duren om uw account te downgraden naar een gratis abonnement. "
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal toegang tot uw account beperkt worden en zal uw account na verloop van tijd worden uitgeschakeld."
+      ],
       "P2P": [
         "P2P"
       ],
@@ -2392,6 +2386,9 @@
       "Screenshot(s) attached": [
         "Schermafdruk(ken) bijgevoegd"
       ],
+      "See all plans": [
+        "Bekijk alle abonnementen"
+      ],
       "Server is currently down": [
         "Server is momenteel offline"
       ],
@@ -2407,14 +2404,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Start met 500 MB en ontgrendel meer opslag na verloop van tijd. Opslagruimte is gedeeld tussen Mail, Calendar en Drive."
-      ],
       "Starter VPN service with P2P support.": [
         "Starter VPN-service met P2P-ondersteuning."
       ],
       "Storage GB": [
         "Opslag GB"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Opslagruimte is gedeeld voor Mail, Agenda en Drive."
       ],
       "Support for 1 custom email domain": [
         "Ondersteuning voor 1 aangepast e-mail domein"
@@ -2464,6 +2461,9 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw Proton account. Tweestapsverificatie zal uw Proton account veiliger maken en daarom raden we aan om het in te schakelen."
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Om ${ appName } te blijven gebruiken met premium functies, kies dan uw abonnement en betalingsmethode."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
@@ -2505,6 +2505,9 @@
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gebruik de volgende inloggegevens bij het verbinden met ProtonVPN servers zonder toepassing. Voorbeelden gebruiken gevallen zoals: Tunnelblick on macOS, OpenVPN op GNU/Linux."
@@ -2632,9 +2635,6 @@
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Uw bestaande Proton account kan gebruikt worden voor alle Proton diensten. Log in met ${ email }"
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        "Uw gratis ${ appName } ${ planName } proefversie zal eindigen op ${ formattedTrialExpirationDate }."
-      ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Uw betalingsgegevens worden beschermd met TLS versleuteling en de Zwitserse wetgeving"
       ],
@@ -2652,6 +2652,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -2802,9 +2805,6 @@
       ],
       "BTC amount:": [
         "BTC bedrag:"
-      ],
-      "Cancel": [
-        "Annuleren"
       ],
       "Card holder": [
         "Kaarthouder"
@@ -2988,9 +2988,6 @@
       ],
       "Select your country": [
         "Selecteer uw land"
-      ],
-      "Submit": [
-        "Versturen"
       ],
       "Subtotal": [
         "Subtotaal"
@@ -3363,6 +3360,9 @@
     "Option": {
       "Android": [
         "Android"
+      ],
+      "Captcha": [
+        "Captcha"
       ],
       "Country configs": [
         "Land configuraties"
@@ -3751,7 +3751,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "Annuleren"
+        "Annuleer"
       ],
       "Email address has been verified.": [
         "E-mailadres werd geverifieerd."
@@ -3895,8 +3895,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        "${ appName } ${ planName } proefversie"
+      "${ appName } ${ planName } Trial": [
+        "${ appName } ${ planName } Proefversie"
       ],
       "${ appName } customization": [
         "${ appName } aanpassingen"

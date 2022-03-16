@@ -2335,6 +2335,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "Felicitări! Ați câștigat maximul de ${ rewardsLimit } luni gratuite de ${ appName } ${ plusPlanName }"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
@@ -4279,9 +4282,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Partajând toate detaliile evenimentului din acest calendar, sunteți de acord să permiteți accesul Proton la aceste informații criptate din calendar."
       ],
-      "Cancel trial": [
-        "Anulare perioadă de încercare"
-      ],
       "Center": [
         "Centrare"
       ],
@@ -4675,6 +4675,9 @@
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
       ],
+      "Invite successfully sent": [
+        "Invitație trimisă cu succes"
+      ],
       "Invited via email": [
         "Invitat prin e-mail"
       ],
@@ -4870,6 +4873,9 @@
       "Other options": [
         "Alte opțiuni"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Fișier de recuperare învechit. Actualizați-l pentru a vă asigura accesul la date."
       ],
@@ -5040,6 +5046,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Fraza de recuperare nu este asociată cu nicio cheie învechită."
       ],
+      "Referral link copied to your clipboard": [
+        "Legătura de recomandare a fost copiată în memorie."
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
@@ -5066,6 +5075,9 @@
       ],
       "Screenshot(s) attached": [
         "Capturi de ecran adăugate"
+      ],
+      "See all plans": [
+        "Toate planurile"
       ],
       "Select a service provider to start": [
         "Selectați un furnizor de servicii pentru a începe"
@@ -5118,8 +5130,8 @@
       "Storage GB": [
         "GB stocare"
       ],
-      "Sucessfully sent invites": [
-        "Invitații trimise cu succes."
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Spațiul de stocare este partajat între Mail, Calendar și Drive."
       ],
       "Support for 1 custom email domain": [
         "Suport pentru un domeniu de e-mail personal"
@@ -5244,6 +5256,9 @@
       "to continue to ${ toAppName }": [
         "pentru a continua cu ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ appName } cu funcțiile premium, alegeți tipul de abonamnet și opțiunea de plată."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Pentru a decripta și vedea mesajele și alte date aveți nevoie de un fișier de recuperare."
       ],
@@ -5318,6 +5333,9 @@
       ],
       "Update recovery phrase": [
         "Actualizare frază de recuperare"
+      ],
+      "Upgrade now": [
+        "Migrare acum"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Migraţi la planul ${ PLAN_NAMES[PLANS.PROFESSIONAL] } sau ${ PLAN_NAMES[PLANS.VISIONARY] } sau pentru a începe."
@@ -5621,6 +5639,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -6734,6 +6755,9 @@
       ],
       "VPN connections": [
         "Conexiuni VPN"
+      ],
+      "Waiting for subscription": [
+        "În așteptare pentru abonament"
       ],
       "Want to add": [
         "Doriți să adăugați"
@@ -8567,7 +8591,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         "Încercare ${ appName } ${ planName }"
       ],
       "${ appName } customization": [

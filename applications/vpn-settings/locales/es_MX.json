@@ -2073,9 +2073,6 @@
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
       ],
-      "Cancel trial": [
-        "Cancelar prueba"
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si esta dirección es incorrecta, haga clic en \"Editar\" para corregirla."
       ],
@@ -2087,12 +2084,6 @@
       ],
       "Connections": [
         "Conexiones"
-      ],
-      "Continue with ${ planName }": [
-        "Continuar con ${ planName }"
-      ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        "Continúe con ${ planName } hoy y evite perder el acceso al final de su prueba."
       ],
       "Creating your account": [
         "Creando su cuenta"
@@ -2298,6 +2289,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Una vez que haga clic en \"Degradar\", puede tardar unos minutos en degradar su cuenta a un plan gratuito. "
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
       "P2P": [
         "P2P"
       ],
@@ -2392,6 +2386,9 @@
       "Screenshot(s) attached": [
         "Captura(s) añadidas(s)"
       ],
+      "See all plans": [
+        "Ver todos los planes"
+      ],
       "Server is currently down": [
         "El servidor está actualmente caído"
       ],
@@ -2407,14 +2404,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, su cuenta tiene habilitadas funciones adicionales."
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Comience con 500 MB y desbloquee más almacenamiento. El espacio de almacenamiento es compartido a través de Correo, Calendario y Drive."
-      ],
       "Starter VPN service with P2P support.": [
         "Servicio inicial de VPN con soporte P2P."
       ],
       "Storage GB": [
         "Almacenamiento GB"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "El espacio de almacenamiento se comparte entre el Correo, Calendario y Drive."
       ],
       "Support for 1 custom email domain": [
         "Soporte para 1 dominio de correo personalizado"
@@ -2464,6 +2461,9 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Este asistente le permitirá habilitar la autenticación de dos factores (2FA) en su cuenta de Proton. La auténticación de dos factores hará su cuenta más segura por lo que le recomendamos habilitarla."
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ appName } con funciones premium, elija una suscripción y opciones de pago."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
@@ -2505,6 +2505,9 @@
       ],
       "Unsupported file": [
         "Archivo no soportado"
+      ],
+      "Upgrade now": [
+        "Actualizar ahora"
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use las siguientes credenciales al conectarse a servidores ProtonVPN sin aplicación. Por ejemplo: Tunnelblick en macOS, OpenVPN en GNU/Linux."
@@ -2632,9 +2635,6 @@
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Su cuenta de Proton existente puede ser usada para acceder a todos los servicios de Proton. Por favor, inicie sesión con ${ email }"
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        "Su prueba gratuita de ${ appName } ${ planName } terminará en ${ formattedTrialExpirationDate }."
-      ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Su información de pago está protegida con cifrado TLS y las leyes de Suiza"
       ],
@@ -2652,6 +2652,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Su suscripción es gestionada por Mozilla. Contacte con el soporte de Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -2802,9 +2805,6 @@
       ],
       "BTC amount:": [
         "Cantidad BTC:"
-      ],
-      "Cancel": [
-        "Cancelar"
       ],
       "Card holder": [
         "Titular de la tarjeta"
@@ -2988,9 +2988,6 @@
       ],
       "Select your country": [
         "Seleccione su país"
-      ],
-      "Submit": [
-        "Enviar"
       ],
       "Subtotal": [
         "Subtotal"
@@ -3363,6 +3360,9 @@
     "Option": {
       "Android": [
         "Android"
+      ],
+      "Captcha": [
+        "Captcha"
       ],
       "Country configs": [
         "Ajustes de país"
@@ -3895,8 +3895,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        "prueba de ${ appName } ${ planName }"
+      "${ appName } ${ planName } Trial": [
+        "Prueba de ${ appName } ${ planName }"
       ],
       "${ appName } customization": [
         "Personalización de ${ appName }"

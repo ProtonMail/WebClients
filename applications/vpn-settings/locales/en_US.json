@@ -2073,9 +2073,6 @@
       "By leaving now, changes may not be saved": [
         ""
       ],
-      "Cancel trial": [
-        ""
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         ""
       ],
@@ -2086,12 +2083,6 @@
         ""
       ],
       "Connections": [
-        ""
-      ],
-      "Continue with ${ planName }": [
-        ""
-      ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
         ""
       ],
       "Creating your account": [
@@ -2298,6 +2289,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         ""
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
       "P2P": [
         ""
       ],
@@ -2392,6 +2386,9 @@
       "Screenshot(s) attached": [
         ""
       ],
+      "See all plans": [
+        ""
+      ],
       "Server is currently down": [
         ""
       ],
@@ -2407,13 +2404,13 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         ""
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
-      ],
       "Starter VPN service with P2P support.": [
         ""
       ],
       "Storage GB": [
+        ""
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -2464,6 +2461,9 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         ""
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
       "To fight spam and abuse, please verify you are human.": [
         ""
       ],
@@ -2504,6 +2504,9 @@
         ""
       ],
       "Unsupported file": [
+        ""
+      ],
+      "Upgrade now": [
         ""
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
@@ -2632,9 +2635,6 @@
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         ""
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
-      ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         ""
       ],
@@ -2651,6 +2651,9 @@
         ""
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
+        ""
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
         ""
       ]
     },
@@ -2801,9 +2804,6 @@
         ""
       ],
       "BTC amount:": [
-        ""
-      ],
-      "Cancel": [
         ""
       ],
       "Card holder": [
@@ -2987,9 +2987,6 @@
         ""
       ],
       "Select your country": [
-        ""
-      ],
-      "Submit": [
         ""
       ],
       "Subtotal": [
@@ -3362,6 +3359,9 @@
     },
     "Option": {
       "Android": [
+        ""
+      ],
+      "Captcha": [
         ""
       ],
       "Country configs": [
@@ -3895,7 +3895,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         ""
       ],
       "${ appName } customization": [

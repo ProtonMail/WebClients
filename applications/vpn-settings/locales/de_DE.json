@@ -2073,9 +2073,6 @@
       "By leaving now, changes may not be saved": [
         "Durch das Verlassen werden Änderungen möglicherweise nicht gespeichert."
       ],
-      "Cancel trial": [
-        "Testversion abbrechen"
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche E-Mail-Adresse ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
       ],
@@ -2087,12 +2084,6 @@
       ],
       "Connections": [
         "Verbindungen"
-      ],
-      "Continue with ${ planName }": [
-        "Fahre mit ${ planName } fort"
-      ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        "Fahre noch heute mit ${ planName } fort, um zu vermeiden, dass dein Zugang am Ende der Testversion deaktiviert wird."
       ],
       "Creating your account": [
         "Konto wird erstellt"
@@ -2298,6 +2289,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Sobald Sie auf „Zurückstufen” klicken, kann es einige Minuten dauern, bis Ihr Konto auf ein kostenfreies Paket herabgestuft wird. "
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt, was eventuell dazu führt, dass dein Konto deaktiviert wird."
+      ],
       "P2P": [
         "P2P"
       ],
@@ -2392,6 +2386,9 @@
       "Screenshot(s) attached": [
         "Bildschirmfoto(s) hinzugefügt"
       ],
+      "See all plans": [
+        "Alle Abonnements anzeigen"
+      ],
       "Server is currently down": [
         "Der Server ist derzeit nicht erreichbar"
       ],
@@ -2407,14 +2404,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da Sie ein treuer Benutzer sind, wurden Ihrem Konto zusätzliche Funktionen hinzugefügt."
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Beginne mit 500 MB und entsperre nach und nach mehr Speicherplatz. Der Speicherplatz wird von Mail, Calendar und Drive gemeinsam genutzt."
-      ],
       "Starter VPN service with P2P support.": [
         "Einsteiger-VPN-Dienst mit P2P-Unterstützung."
       ],
       "Storage GB": [
         "Speicherplatz (GB)"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Der Speicherplatz wird von Mail, Calendar und Drive gemeinsam genutzt."
       ],
       "Support for 1 custom email domain": [
         "Unterstützung für 1 individuelle E-Mail-Domain"
@@ -2464,6 +2461,9 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Dieser Assistent aktiviert die Zwei-Faktor-Authentifizierung (2FA) auf Ihrem Proton-Konto. Zwei-Faktor-Authentifizierung wird Ihr Proton-Konto sicherer machen, daher empfehlen wir Ihnen, diese zu aktivieren."
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Um ${ appName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
       ],
@@ -2505,6 +2505,9 @@
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Verwenden Sie die folgenden Anmeldedaten, wenn Sie sich ohne Anwendung mit ProtonVPN-Servern verbinden möchten. Beispiele für Anwendungsfälle sind: „Tunnelblick” unter macOS, „OpenVPN” unter GNU/Linux."
@@ -2632,9 +2635,6 @@
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Ihr bestehendes Proton‐Konto kann für die Anmeldung an allen Proton‐Diensten genutzt werden. Bitte melden Sie sich mit ${ email } an."
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        "Deine kostenlose ${ appName } ${ planName } Testversion endet am ${ formattedTrialExpirationDate }."
-      ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Ihre Zahlungsinformationen sind durch TLS‐Verschlüsselung und Schweizer Gesetzen geschützt"
       ],
@@ -2652,6 +2652,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ihr Abonnement wird von Mozilla verwaltet. Bitte kontaktieren Sie den Mozilla‐Kundendienst."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -2802,9 +2805,6 @@
       ],
       "BTC amount:": [
         "Betrag in Bitcoin:"
-      ],
-      "Cancel": [
-        "Abbrechen"
       ],
       "Card holder": [
         "Karteninhaber"
@@ -2988,9 +2988,6 @@
       ],
       "Select your country": [
         "Ihr Land auswählen"
-      ],
-      "Submit": [
-        "Absenden"
       ],
       "Subtotal": [
         "Zwischensumme"
@@ -3363,6 +3360,9 @@
     "Option": {
       "Android": [
         "Android"
+      ],
+      "Captcha": [
+        "Captcha"
       ],
       "Country configs": [
         "Länderkonfigurationen"
@@ -3895,7 +3895,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         "${ appName } ${ planName } Testversion"
       ],
       "${ appName } customization": [

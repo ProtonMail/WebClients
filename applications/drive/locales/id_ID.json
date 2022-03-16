@@ -534,7 +534,7 @@
         "Tingkatkan"
       ],
       "Upload anyway": [
-        ""
+        "Tetap unggah"
       ],
       "Upload file": [
         "Unggah berkas"
@@ -1952,7 +1952,7 @@
         "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender-kalender Proton yang telah ada sebelumnya"
       ],
       "Missing key packet": [
-        ""
+        "Paket kunci hilang"
       ],
       "Missing signature": [
         "Tanda tangan hilang"
@@ -2630,7 +2630,7 @@
         "Buat folder pertama Anda dan pindahkan berkas Anda."
       ],
       "Creating": [
-        ""
+        "Membuat"
       ],
       "Creating link to file": [
         "Membuat tautan untuk berkas"
@@ -3204,6 +3204,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Anda saat ini sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Anda juga dapat menggabungkan kalender-kalender yang Anda impor dengan kalender-kalender Proton yang telah ada sebelumnya."
@@ -4265,9 +4268,6 @@
       "Filter groups": [
         "Filter grup"
       ],
-      "Gift code": [
-        "Kode hadiah"
-      ],
       "Image URL": [
         "URL gambar"
       ],
@@ -4285,6 +4285,9 @@
       ],
       "OS version": [
         "Versi sistem operasi"
+      ],
+      "Password": [
+        "Kata Sandi"
       ],
       "Please describe the problem and include any error messages": [
         "Mohon uraikan masalah dan sertakan pesan galat apapun"
@@ -4690,9 +4693,6 @@
       "Amount due": [
         "Jumlah jatuh tempo"
       ],
-      "Apply gift code": [
-        "Gunakan kode hadiah"
-      ],
       "Back": [
         "Kembali"
       ],
@@ -4951,9 +4951,6 @@
       "Other names": [
         "Nama lain"
       ],
-      "Payment details": [
-        "Rincian pembayaran"
-      ],
       "Payment verification": [
         "Verifikasi pembayaran"
       ],
@@ -4964,7 +4961,7 @@
         "Verifikasi PayPal gagal"
       ],
       "Performance might be affected": [
-        ""
+        "Performa mungkin akan terdampak"
       ],
       "Phone numbers": [
         "Nomor telepon"
@@ -5059,8 +5056,17 @@
       "Subtotal": [
         "Subtotal"
       ],
+      "The file or folder failed to be downloaded": [
+        "Berkas atau folder ini gagal diunduh"
+      ],
+      "The link does not exist": [
+        "Tautan tidak ada"
+      ],
       "The link either does not exist or has expired": [
         "Tautan tidak ada atau telah kadaluwarsa"
+      ],
+      "The link failed to be loaded": [
+        "Tautan gagal dimuat"
       ],
       "Total (monthly)": [
         "Total (perbulan)"
