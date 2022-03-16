@@ -220,13 +220,6 @@ export interface ESSearchingHelpers<ESItem, ESCiphertext, ESSearchParameters> {
     getTimePoint: (item: ESItem | ESCiphertext) => [number, number];
 
     /**
-     * Estimate the size of a plaintext item
-     * @param esItem The item of which the size needs to be estimated
-     * @returns The estimated size in bytes
-     */
-    sizeOfESItem: (esItem: ESItem) => number;
-
-    /**
      * Return the time interval inside the search parameters when specified by
      * the user as a search filter.
      * This callback is optional: if not provided, the time interval is always undefined as if the user
