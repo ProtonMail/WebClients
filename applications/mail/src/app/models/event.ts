@@ -2,7 +2,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import { Address, GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
+import { Address, ChecklistKey } from '@proton/shared/lib/interfaces';
 import { Conversation } from './conversation';
 
 interface EventType {
@@ -46,7 +46,7 @@ export interface AddressEvent extends EventType {
 }
 
 export interface ChecklistEvent extends EventType {
-    CompletedItem: GetStartedChecklistKey;
+    CompletedItem: ChecklistKey;
 }
 
 export type ElementEvent = ConversationEvent | MessageEvent;
