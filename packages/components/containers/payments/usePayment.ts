@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
 import usePayPal from './usePayPal';
@@ -14,10 +14,17 @@ interface Props {
     onPay: (data: PaymentParameters) => void;
 }
 
+const hasToken = (parameters: PaymentParameters): boolean => {
+    const { Payment } = parameters;
+    const { Details } = Payment || {};
+    const { Token = '' } = (Details as any) || {};
+    return !!Token;
+};
+
 const usePayment = ({ amount, currency, onPay }: Props) => {
-    const { card, setCard, errors, isValid } = useCard();
+    const { card, setCard, errors: cardErrors, isValid } = useCard();
     const [method, setMethod] = useState<PAYMENT_METHOD_TYPE | undefined>();
-    const [parameters, setParameters] = useState<PaymentParameters>({});
+    const [cardSubmitted, setCardSubmitted] = useState(false);
     const isPayPalActive = method === PAYPAL;
 
     const paypal = usePayPal({
@@ -34,11 +41,30 @@ const usePayment = ({ amount, currency, onPay }: Props) => {
         onPay,
     });
 
-    const hasToken = (): boolean => {
-        const { Payment } = parameters;
-        const { Details } = Payment || {};
-        const { Token = '' } = (Details as any) || {};
-        return !!Token;
+    const paymentParameters = useMemo((): PaymentParameters => {
+        if (!method) {
+            return {};
+        }
+
+        if (![CARD, PAYPAL, CASH, BITCOIN].includes(method as any)) {
+            return { PaymentMethodID: method };
+        }
+
+        if (method === CARD) {
+            return { Payment: { Type: CARD, Details: toDetails(card) } };
+        }
+
+        return {};
+    }, [method, card]);
+
+    const handleCardSubmit = () => {
+        if (method === CARD) {
+            setCardSubmitted(true);
+        }
+        if (method === CARD && !isValid) {
+            return false;
+        }
+        return true;
     };
 
     const canPay = () => {
@@ -55,35 +81,12 @@ const usePayment = ({ amount, currency, onPay }: Props) => {
             return false;
         }
 
-        if (method === CARD && !isValid) {
-            return false;
-        }
-
-        if (method === PAYPAL && !hasToken()) {
+        if (method === PAYPAL && !hasToken(paymentParameters)) {
             return false;
         }
 
         return true;
     };
-
-    useEffect(() => {
-        if (!method) {
-            return;
-        }
-
-        if (![CARD, PAYPAL, CASH, BITCOIN].includes(method as any)) {
-            setParameters({ PaymentMethodID: method });
-        }
-
-        if (method === CARD) {
-            setParameters({ Payment: { Type: CARD, Details: toDetails(card) } });
-        }
-
-        // Reset parameters when switching methods
-        if ([PAYPAL, CASH, BITCOIN].includes(method as any)) {
-            setParameters({});
-        }
-    }, [method, card]);
 
     useEffect(() => {
         paypal.clear();
@@ -98,11 +101,11 @@ const usePayment = ({ amount, currency, onPay }: Props) => {
         paypalCredit,
         card,
         setCard,
-        errors,
+        handleCardSubmit,
+        cardErrors: cardSubmitted ? cardErrors : {},
         method,
         setMethod,
-        parameters,
-        setParameters,
+        parameters: paymentParameters,
         canPay: canPay(),
     };
 };

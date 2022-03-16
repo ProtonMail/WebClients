@@ -35,7 +35,7 @@ interface Props {
     paypalCredit: any;
     card: CardModel;
     onCard: (key: string, value: string) => void;
-    errors: any;
+    cardErrors: Partial<CardModel>;
     noMaxWidth?: boolean;
 }
 
@@ -51,7 +51,7 @@ const Payment = ({
     onMethod,
     card,
     onCard,
-    errors,
+    cardErrors,
     noMaxWidth = false,
 }: Props) => {
     const { paymentMethods, options, loading } = useMethods({ amount, coupon, flow: type });
@@ -137,7 +137,7 @@ const Payment = ({
                     <h2 className="text-2xl text-bold">{c('Title').t`Payment details`}</h2>
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
-                            <CreditCard card={card} errors={errors} onChange={onCard} />
+                            <CreditCard card={card} errors={cardErrors} onChange={onCard} />
                             <Alert3DS />
                         </>
                     )}
