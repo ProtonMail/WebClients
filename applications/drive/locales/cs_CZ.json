@@ -2771,7 +2771,7 @@
         "Vytvořte si Váš první soubor a začněte stěhovat své složky."
       ],
       "Creating": [
-        ""
+        "Vytváření"
       ],
       "Creating link to file": [
         "Vytvářím odkazový řádek k souboru"
@@ -3357,6 +3357,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email }) a máte omezený přístup."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Importované kalendáře můžete také sloučit s existujícími Proton kalendáři."
@@ -4511,9 +4514,6 @@
       "Filter groups": [
         "Filtrovat skupiny"
       ],
-      "Gift code": [
-        "Dárkový kód"
-      ],
       "Image URL": [
         "URL adresa obrázku"
       ],
@@ -4531,6 +4531,9 @@
       ],
       "OS version": [
         "Verze operačního systému"
+      ],
+      "Password": [
+        "Heslo"
       ],
       "Please describe the problem and include any error messages": [
         "Popište prosím problém a přiložte všechny chybové zprávy"
@@ -4960,9 +4963,6 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
-      "Apply gift code": [
-        "Použít dárkový kód"
-      ],
       "Back": [
         "Zpět"
       ],
@@ -5227,9 +5227,6 @@
       "Other names": [
         "Ostatní jména"
       ],
-      "Payment details": [
-        "Platební údaje"
-      ],
       "Payment verification": [
         "Ověřování platby"
       ],
@@ -5335,8 +5332,17 @@
       "Subtotal": [
         "Mezisoučet"
       ],
+      "The file or folder failed to be downloaded": [
+        "Soubor nebo složku se nepodařilo stáhnout"
+      ],
+      "The link does not exist": [
+        "Odkaz neexistuje"
+      ],
       "The link either does not exist or has expired": [
         "Odkaz buď neexistuje, nebo jeho platnost vypršela"
+      ],
+      "The link failed to be loaded": [
+        "Odkaz se nepodařilo načíst"
       ],
       "Total (monthly)": [
         "Celkem (měsíčně)"

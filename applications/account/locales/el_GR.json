@@ -356,7 +356,7 @@
         "Απόκτηση κωδικού επαλήθευσης"
       ],
       "Go to label": [
-        ""
+        "Μετάβαση στην ετικέτα"
       ],
       "Go to panel ${ index }": [
         "Μεταβείτε στο πίνακα ελέγχου ${ index }"
@@ -968,7 +968,7 @@
     },
     "Auto import invitations setting": {
       "Add invitations to calendar and mark as pending": [
-        ""
+        "Προσθήκη προσκλήσεων στο ημερολόγιο και σήμανση σε εκκρεμότητα"
       ]
     },
     "Autoresponse": {
@@ -2223,6 +2223,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        ""
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Η διαδικασία μπορεί να πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
@@ -2556,7 +2559,7 @@
         ""
       ],
       "Name does not match": [
-        ""
+        "Το όνομα δεν ταιριάζει"
       ],
       "Name on card required": [
         "Απαιτείται το όνομα κατόχου της κάρτας"
@@ -3765,7 +3768,7 @@
     },
     "Info": {
       "${ appName } ${ planName } credits earned": [
-        ""
+        "${ appName } ${ planName } πιστώσεις κερδήθηκαν"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } χρειάζεται την άδειά σας για να ${ enableDesktopNotifications }."
@@ -3789,10 +3792,10 @@
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
       "${ emailAddress } is a ${ appName } address": [
-        ""
+        "Η ${ emailAddress } είναι διεύθυνση του ${ appName }"
       ],
       "${ emailAddress } is invalid": [
-        ""
+        "Η ${ emailAddress } είναι μη έγκυρη"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Δωρεάν"
@@ -3828,7 +3831,7 @@
         "${ numContacts } επαφές"
       ],
       "${ planName } plan": [
-        ""
+        "${ planName } πλάνο"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } φάκελος βρέθηκε",
@@ -3839,7 +3842,7 @@
         "${ providerFoldersNumLocalized } ετικέτες βρέθηκαν στο Gmail"
       ],
       "${ rewards } of ${ rewardsLimit } months": [
-        ""
+        "${ rewards } από ${ rewardsLimit } μήνες"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } στη συνδρομή σας με αλλαγή σε ${ annualBilling }"
@@ -3900,22 +3903,22 @@
         "+${ organization.BonusVPN } συνδέσεις για το ProtonVPN (σας επιτρέπει να συνδέσετε περισσότερες συσκευές στο VPN)"
       ],
       "1. Invite friends to Proton": [
-        ""
+        "1. Προσκαλέστε φίλους στο Proton"
       ],
       "2. They try ${ appName } ${ planName }": [
-        ""
+        "2. Έπειτα δοκιμάστε ${ appName } ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Εφαρμόζεται 20% έκπτωση για τη συνδρομή σας, με το κουπόνι ${ code }"
       ],
       "3. You earn credits": [
-        ""
+        "3. Κερδίζετε πιστώσεις"
       ],
       "30 days money-back guarantee.": [
         "Εγγύηση Επιστροφής Χρημάτων εντός 30 ημερών."
       ],
       "5 email addresses": [
-        ""
+        "5 διευθύνσεις email"
       ],
       "5 GB storage": [
         "5 GB αποθηκευτικός χώρος"
@@ -4127,9 +4130,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Με την κοινή χρήση των πλήρους λεπτομερειών συμβάντος αυτού του ημερολογίου, αποδέχεστε να παραχωρήσετε στο Proton πρόσβαση στις κρυπτογραφημένες πληροφορίες αυτού του ημερολογίου."
       ],
-      "Cancel trial": [
-        ""
-      ],
       "Center": [
         "Κέντρο"
       ],
@@ -4155,10 +4155,10 @@
         "Συνέχεια οπωσδήποτε;"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Συνέχεια με ${ planName }"
       ],
       "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        ""
+        "Συνεχίστε με ${ planName } σήμερα για να αποφύγετε τις ανακλήσεις προσβάσεων στη λήξη της δοκιμή σας."
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Δημιουργήστε ${ calendarsToBeCreated } νέο ημερολόγιο",
@@ -4268,7 +4268,7 @@
         "Κάθε πρόσθετη σύνδεση μπορεί να ανατεθεί σε χρήστες στον οργανισμό σας."
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
-        ""
+        "Κερδήθηκαν ${ rewards } από ${ rewardsLimit } ${ appName } ${ planName } μήνες."
       ],
       "Edit label": [
         "Επεξεργασία ετικέτας"
@@ -4325,7 +4325,7 @@
         "Εισάγετε τον αριθμό τηλεφώνου ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        ""
+        "Οι προσκλήσεις συμβάντων και τα RSVP θα αποσταλλούν σε αυτή τη γλώσσα."
       ],
       "Expired": [
         "Ληγμένο"
@@ -4520,8 +4520,11 @@
       "Internet connection restored.": [
         "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
       ],
+      "Invite successfully sent": [
+        "Επιτυχής αποστολή πρόσκλησης"
+      ],
       "Invited via email": [
-        ""
+        "Προσκλήθηκε μέσω email"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Φαίνεται πως μερικά από τα δεδομένα σας είναι κρυπτογραφημένα και κλειδωμένα."
@@ -4530,13 +4533,13 @@
         "είναι υποχρεωτικό"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        ""
+        "Χρησιμοποιώ το ${ appName } και σκεφτόμουν ότι θα σου αρέσει. Είναι μια ασφαλής υπηρεσία email που προστατεύει την ιδιωτικότητά σου. Εγγράψου χρησιμοποιώντας αυτόν τον σύνδεσμο για να πάρεις δωρεάν 1 μήνα: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
       ],
       "Just send them your personal referral link.": [
-        ""
+        "Απλώς αποστείλετε τους τον προσωπικό σας σύνδεσμο παραπομπής."
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Διατηρήστε αυτές τις εγγραφές στο DNS σας για όσο διάστημα θέλετε να χρησιμοποιήσετε το DKIM."
@@ -4715,6 +4718,9 @@
       "Other options": [
         "Άλλες επιλογές"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Απαρχαιωμένο αρχείο ανάκτησης. Ενημερώστε για να διασφαλίσετε πρόσβαση στα δεδομένα σας"
       ],
@@ -4728,10 +4734,10 @@
         "P2P"
       ],
       "Paid for a 12 months plan": [
-        ""
+        "Πλήρωσε για 12μηνο πλάνο"
       ],
       "Paid for a monthly plan": [
-        ""
+        "Πλήρωσε για μηνιαίο πλάνο"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Η πληρωμή μπορεί να πάρει μερικά λεπτά προκειμένου να επαληθευτεί πλήρως."
@@ -4815,7 +4821,7 @@
         "Proton Calendar"
       ],
       "Proton can't help you recover any lost passwords.": [
-        ""
+        "Το Proton δεν μπορεί να σας βοηθήσει να ανακτήσετε τυχόν χαμένους κωδικούς."
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Η Proton διέκοψε μια εισαγωγή επειδή έχασε τη σύνδεση με την άλλη υπηρεσία παροχής ηλεκτρονικού ταχυδρομείου. Παρακαλώ επανασύνδεσε."
@@ -4849,7 +4855,7 @@
         "Απαιτείται ProtonVPN Plus ή Visionary για τη λειτουργία Secure Core."
       ],
       "Public link invite": [
-        ""
+        "Πρόσκληση δημόσιου σύνδεσμου"
       ],
       "purchase additional storage": [
         "αγοράσετε πρόσθετο χώρου αποθήκευσης"
@@ -4867,7 +4873,7 @@
         "Τα αρχεία ανάκτησης ακυρώθηκαν"
       ],
       "recovery method": [
-        ""
+        "μέθοδο ανάκτησης"
       ],
       "Recovery phrase copied to clipboard": [
         "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
@@ -4883,6 +4889,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Η φράση ανάκτησης δεν σχετίζεται με κάποιο παρωχημένο κλειδί."
+      ],
+      "Referral link copied to your clipboard": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
@@ -4911,6 +4920,9 @@
       "Screenshot(s) attached": [
         "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
       ],
+      "See all plans": [
+        ""
+      ],
       "Select a service provider to start": [
         "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
       ],
@@ -4936,10 +4948,10 @@
         "Ορισμός φράσης ανάκτησης"
       ],
       "Show original message": [
-        ""
+        "Προβολή αρχικού μηνύματος"
       ],
       "Signed up": [
-        ""
+        "Εγγράφηκε"
       ],
       "Signed up via your link": [
         "Εγγραφή μέσω του συνδέσμου σας"
@@ -4954,7 +4966,7 @@
         "Το SPF χρησιμοποιείται για να καθορίσετε ποιος μπορεί να στείλει μηνύματα ηλεκτρονικού ταχυδρομείου για το domain, γι 'αυτό συνιστούμε να συμπεριλάβετε το ProtonMail στην εγγραφή SPF σας. Προσθέστε την ακόλουθη εγγραφή TXT στο DNS σας. Αυτό μπορεί να γίνει συνήθως στον πίνακα ελέγχου του καταχωρητή ονομάτων domain σας."
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Ξεκινήστε με 500MB και ξεκλειδώστε παραπάνω χώρο στην πορεία. Ο αποθηκευτικός χώρος μοιράζεται μεταξύ του Ταχυδρομείου, Ημερολογίου και του Δίσκου."
       ],
       "Starter VPN service with P2P support.": [
         "Εκκίνηση υπηρεσίας VPN με υποστήριξη P2P."
@@ -4962,11 +4974,11 @@
       "Storage GB": [
         "Αποθήκευση GB"
       ],
-      "Sucessfully sent invites": [
-        "Επιτυχημένη αποστολή προσκλήσεων"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        ""
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Υποστήριξη για 1 παραμετροποιημένο τομέα email"
       ],
       "support team": [
         "ομάδα υποστήριξης"
@@ -5011,7 +5023,7 @@
         "Αυτά τα αρχεία διαμόρφωσης σας επιτρέπουν να επιλέξετε με ποιον διακομιστή ProtonVPN συνδέεστε όταν χρησιμοποιείτε μια εφαρμογή VPN τρίτων ή ρυθμίζετε μια σύνδεση VPN σε έναν δρομολογητή."
       ],
       "This 30-day free trial is not available any other way.": [
-        ""
+        "Η δωρεάν δοκιμή 30-ημερών δεν είναι διαθέσιμη με κανέναν άλλον τρόπο."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
@@ -5088,6 +5100,9 @@
       "to continue to ${ toAppName }": [
         "για συνέχιση στο ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Για να αποκρυπτογραφήσετε και να δείτε τα email και άλλα δεδομένα, χρειάζεστε ένα αρχείο ανάκτησης."
       ],
@@ -5149,10 +5164,10 @@
         "Εφόσον δεν εξέλθετε του λογαριασμού σας, ούτε αλλάξετε τον κωδικό πρόσβασής σας, η συνεδρία σας θα παραμείνει ενεργή. Οι συνεδρίες λήγουν μετά από 60 ημέρες αδράνειας."
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
       ],
       "Unlimited messages": [
-        ""
+        "Aπεριόριστα μηνύματα"
       ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
@@ -5162,6 +5177,9 @@
       ],
       "Update recovery phrase": [
         "Ενημέρωση φράσης ανάκτησης"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Αναβαθμήστε σε ${ PLAN_NAMES[PLANS.VISIONARY] } ή ${ PLAN_NAMES[PLANS.PROFESSIONAL] } πλάνο για να ξεκινήσετε."
@@ -5173,7 +5191,7 @@
         "Αναβαθμίστε σε ένα πλάνο επί πληρωμή για να ξεκλειδώσετε την υποστήριξη IMAP / SMTP μέσω του ProtonMail Bridge."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ appName } ${ planName }."
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -5191,7 +5209,7 @@
         "Χρησιμοποιήστε τα ακόλουθα διαπιστευτήρια κατά τη σύνδεση σε διακομιστές ProtonVPN χωρίς εφαρμογή. Παραδείγματα περιπτώσεων χρήσης περιλαμβάνουν: Tunnelblick σε macOS, OpenVPN σε GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Χρησιμοποιήστε τον δικό σας τομέα στις διευθύνσεις email, π.χ., you@yourname.com"
       ],
       "Users": [
         "Χρήστες"
@@ -5266,7 +5284,7 @@
         "Όταν οι ειδοποιήσεις είναι ενεργοποιημένες, θα στείλουμε μια ειδοποίηση στη διεύθυνση ανάκτησης / ειδοποίησης όταν θα έχετε νέα μηνύματα στον λογαριασμό σας στο ProtonMail."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
-        ""
+        "Μόλις εγγράφονται σε ένα πλάνο επί πληρωμή, 1 έως 3 μήνες του ${ appName } ${ planName } θα πιστωθούν στο λογαριασμό σας."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Κατά την ανανέωση της συνδρομής σας, θα χρησιμοποιηθούν τυχόν διαθέσιμες πιστώσεις πριν σας χρεώσουμε με τον παραπάνω τρόπο πληρωμής."
@@ -5329,7 +5347,7 @@
         "Μπορείτε να χρησιμοποιήσετε τα ακόλουθα διαπιστευτήρια για να συνδεθείτε σε έναν διακομιστή ProtonVPN χρησιμοποιώντας τρίτο, ανοιχτό πηγαίο VPN app, όπως το Tunnelblick για macOS ή OpenVPN για GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        ""
+        "Δεν μπορείτε να αποστέλλετε περισσότερα από ${ emailSendLimitNumber } προσκλήσεις email για τις επόμενες 24 ώρες"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Δεν μπορείτε να χρησιμοποιήσετε τα διαπιστευτήρια OpenVPN / IKEv2 για να συνδεθείτε σε εφαρμογές της ProtonVPN ή στον πίνακα ελέγχου της ProtonVPN. ${ learnMore }"
@@ -5371,7 +5389,7 @@
         "Φτάσατε στο 100% της χωρητικότητας αποθήκευσης. Δεν μπορείτε να στείλετε ή να λάβετε νέα μηνύματα ηλεκτρονικού ταχυδρομείου. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        ""
+        "Χρειάζεται ακόμα να απαντήσετε στις προσκλήσεις για να βλέπει ο διοργανωτής τις απαντήσεις σας."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Θα ${ loseAllData } στον ${ BRAND_NAME } λογαριασμό σας. Για να το επαναφέρετε, θα πρέπει να εισάγετε τον παλιό κωδικό πρόσβασης σας."
@@ -5425,7 +5443,7 @@
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
       ],
       "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
+        "Η δωρεάν ${ appName } ${ planName } δοκιμή σας θα λήξει στις ${ formattedTrialExpirationDate }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Η εισαγωγή σας από το ${ delayedImport.Account } καθυστερεί προσωρινά."
@@ -5465,6 +5483,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        ""
       ]
     },
     "info": {
@@ -5699,7 +5720,7 @@
         "Μετάβαση στα Διαγραμμένα"
       ],
       "Insert link": [
-        ""
+        "Εισαγωγή συνδέσμου"
       ],
       "Jump to first": [
         "Μετάβαση στην πρώτη"
@@ -5902,7 +5923,7 @@
         "Ενέργειες"
       ],
       "Activity": [
-        ""
+        "Δραστηριότητα"
       ],
       "Address": [
         "Διεύθυνση"
@@ -6070,7 +6091,7 @@
         "Καθημερινές ειδοποιήσεις E-mail"
       ],
       "Date": [
-        ""
+        "Ημερομηνία"
       ],
       "Date format": [
         "Μορφή ημερομηνίας"
@@ -6448,7 +6469,7 @@
         "Αποστολή αυτόματης απάντησης"
       ],
       "Send invitations in": [
-        ""
+        "Αποστολή προσκλήσεων στα"
       ],
       "Show secondary time zone": [
         "Εμφάνιση δευτερεύουσας ζώνης ώρας"
@@ -6573,6 +6594,9 @@
       "VPN connections": [
         "Συνδέσεις VPN"
       ],
+      "Waiting for subscription": [
+        ""
+      ],
       "Want to add": [
         "Θέλω να προσθέσω"
       ],
@@ -6622,7 +6646,7 @@
         ""
       ],
       "Your reward": [
-        ""
+        "Η επιβράβευσή σας"
       ],
       "ZIP": [
         "T.K"
@@ -7672,7 +7696,7 @@
         "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
       ],
       "Please insert link first": [
-        ""
+        "Παρακαλούμε εισάγετε πρώτα τον σύνδεσμο"
       ],
       "Postal code": [
         "Ταχυδρομικός κώδικας"
@@ -8059,7 +8083,7 @@
         ""
       ],
       "No more missed appointments": [
-        ""
+        "Όχι άλλα χαμένα ραντεβού"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         ""
@@ -8392,7 +8416,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         ""
       ],
       "${ appName } customization": [
@@ -8666,7 +8690,7 @@
         "Διαγραφή ${ domain.DomainName }"
       ],
       "Delete ${ email }": [
-        ""
+        "Διαγραφή ${ email }"
       ],
       "Delete ${ filter.Name }": [
         "Διαγραφή ${ filter.Name }"
@@ -8696,7 +8720,7 @@
         "Διαγραφή χρήστη"
       ],
       "Disable ${ email }": [
-        ""
+        "Απενεργοποίηση ${ email }"
       ],
       "Disable two-factor authentication": [
         "Απενεργοποίηση ελέγχου ταυτότητας δύο παραγόντων"
@@ -8804,7 +8828,7 @@
         "Κωδικός δώρου"
       ],
       "How does it work?": [
-        ""
+        "Πώς λειτουργεί;"
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"

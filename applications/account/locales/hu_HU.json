@@ -968,7 +968,7 @@
     },
     "Auto import invitations setting": {
       "Add invitations to calendar and mark as pending": [
-        ""
+        "Adja a meghívókat a naptárhoz és állítsa be őket függőnek"
       ]
     },
     "Autoresponse": {
@@ -2319,6 +2319,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "Gratulálunk! Elérte a maximum ${ rewardsLimit } ingyen ingyen hónapot ebből: ${ appName } ${ plusPlanName }"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
@@ -2649,7 +2652,7 @@
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal"
       ],
       "Missing key packet": [
-        ""
+        "Hiányzó kulcs csomag"
       ],
       "Name does not match": [
         "Név nem egyezik"
@@ -4223,9 +4226,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "A naptár teljes esemény részletekkel való megosztásakor elfogadja, hogy elérést biztosít a Proton számára a naptár titkosított tartalmához."
       ],
-      "Cancel trial": [
-        ""
-      ],
       "Center": [
         "Középre"
       ],
@@ -4421,7 +4421,7 @@
         "Írja be a helyreállítási telefonszámát és elküldjük a felhasználónevét vagy e-mail címét."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        ""
+        "Esemény meghívók és jelentkezések ezen a nyelven kerülnek elküldésre."
       ],
       "Expired": [
         "Lejárt"
@@ -4615,6 +4615,9 @@
       ],
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
+      ],
+      "Invite successfully sent": [
+        "Meghívó sikeresen elküldve"
       ],
       "Invited via email": [
         "Meghívva e-mail által"
@@ -4811,6 +4814,9 @@
       "Other options": [
         "Egyéb opciók"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférés korlátozva lesz, és a fiókja végül törölve lesz."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Elavult helyreállítási fájl; frissítse, hogy bizonyosan elérhesse adatait"
       ],
@@ -4980,6 +4986,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "A helyreállító jelmondat nem kapcsolható egyetlen elavult kulcshoz sem."
       ],
+      "Referral link copied to your clipboard": [
+        "Ajánló link kimásolva a vágólapra"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
       ],
@@ -5006,6 +5015,9 @@
       ],
       "Screenshot(s) attached": [
         "Képernyőkép(ek) csatolva"
+      ],
+      "See all plans": [
+        "Az összes csomag megtekintése"
       ],
       "Select a service provider to start": [
         "Válaszon ki egy szolgáltatót a kezdéshez"
@@ -5058,8 +5070,8 @@
       "Storage GB": [
         "Tárhely GB"
       ],
-      "Sucessfully sent invites": [
-        "Sikeres meghívás"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "A tárhely megosztott az Email, a Naptár és a Felhőtárhely közt."
       ],
       "Support for 1 custom email domain": [
         "Támogasson egy 1 egyedi email domain névért"
@@ -5184,6 +5196,9 @@
       "to continue to ${ toAppName }": [
         "alkalmazás: ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ appName } használatát prémium funkciókkal, válassza ki a feliratkozási csomagját és a fizetési módját."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "A visszafejtéshez, az e-mailek és egyéb adatok megjelenítéséhez, helyreállító fájlra van szüksége."
       ],
@@ -5258,6 +5273,9 @@
       ],
       "Update recovery phrase": [
         "Helyreállító jelmondat frissítése"
+      ],
+      "Upgrade now": [
+        "Frissítés most"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Váltson a ${ PLAN_NAMES[PLANS.VISIONARY] } vagy ${ PLAN_NAMES[PLANS.PROFESSIONAL] } csomagra az induláshoz."
@@ -5467,7 +5485,7 @@
         "Teljesen megtelt a tárhelye. Nem küldhet vagy fogadhat új e-maileket. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        ""
+        "Még válaszolnia kell a meghívókra, hogy a házigazda lássa a válaszát."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "A ${ BRAND_NAME } fiókban ${ loseAllData }. A helyreállításhoz meg kell adnia a régi jelszavát."
@@ -5561,6 +5579,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaverzió lejár: ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -6544,7 +6565,7 @@
         "Automatikus válasz küldése"
       ],
       "Send invitations in": [
-        ""
+        "Meghívó elküldése"
       ],
       "Show secondary time zone": [
         "Másodlagos időzóna megjelenítése"
@@ -6668,6 +6689,9 @@
       ],
       "VPN connections": [
         "VPN kapcsolatok"
+      ],
+      "Waiting for subscription": [
+        "Várakozás feliratkozásra"
       ],
       "Want to add": [
         "Hozzáadás:"
@@ -8488,8 +8512,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        "${ appName } ${ planName } próba"
+      "${ appName } ${ planName } Trial": [
+        "${ appName } ${ planName } Próba"
       ],
       "${ appName } customization": [
         "${ appName } testreszabása"

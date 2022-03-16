@@ -240,7 +240,7 @@
         "検証コードを取得"
       ],
       "Go to label": [
-        ""
+        "ラベルへ移動"
       ],
       "Go to panel ${ index }": [
         "パネル ${ index } へ移動"
@@ -534,7 +534,7 @@
         "アップグレード"
       ],
       "Upload anyway": [
-        ""
+        "とにかくアップロード"
       ],
       "Upload file": [
         "ファイルをアップロード"
@@ -2537,7 +2537,7 @@
         "選択されたアイテムをごみ箱から完全に削除してよろしいですか?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        ""
+        "${ appName } はエンドツーエンド暗号化を利用しているため、あなたのファイルにアクセスしたり、復号したりできません。パスワードをリセットしたあとにドライブのロックを解除するには、以下の手順に従う必要があります:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "2 年ごとに ${ billedPrice } のお支払い"
@@ -2630,7 +2630,7 @@
         "フォルダーを作成すると、そこにファイルを移動できるようになります。"
       ],
       "Creating": [
-        ""
+        "作成中"
       ],
       "Creating link to file": [
         "ファイルへのリンクを作成中"
@@ -3204,6 +3204,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "現在 ${ user.Name } (${ user.Email }) としてサインインしていてアクセスが制限されています。"
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "存在する Proton カレンダーにインポートしたカレンダーを結合することもできます。"
@@ -4265,9 +4268,6 @@
       "Filter groups": [
         "グループの検索"
       ],
-      "Gift code": [
-        "ギフトコード"
-      ],
       "Image URL": [
         "画像の URL"
       ],
@@ -4285,6 +4285,9 @@
       ],
       "OS version": [
         "OS のバージョン"
+      ],
+      "Password": [
+        "パスワード"
       ],
       "Please describe the problem and include any error messages": [
         "問題について、エラーメッセージ等も含めてご記入下さい"
@@ -4690,9 +4693,6 @@
       "Amount due": [
         "支払い総額"
       ],
-      "Apply gift code": [
-        "ギフトコードを使用"
-      ],
       "Back": [
         "戻る"
       ],
@@ -4951,9 +4951,6 @@
       "Other names": [
         "別名"
       ],
-      "Payment details": [
-        "支払い情報"
-      ],
       "Payment verification": [
         "支払いの検証"
       ],
@@ -4964,7 +4961,7 @@
         "PayPal 認証に失敗しました。"
       ],
       "Performance might be affected": [
-        ""
+        "パフォーマンスに影響します"
       ],
       "Phone numbers": [
         "電話番号"
@@ -5059,8 +5056,17 @@
       "Subtotal": [
         "小計"
       ],
+      "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The link does not exist": [
+        ""
+      ],
       "The link either does not exist or has expired": [
         "リンクが存在しないか有効期限が切れています"
+      ],
+      "The link failed to be loaded": [
+        ""
       ],
       "Total (monthly)": [
         "合計 (月額換算)"

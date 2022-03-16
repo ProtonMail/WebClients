@@ -855,9 +855,6 @@
       "Try another method": [
         "Eine andere Methode ausprobieren"
       ],
-      "Turn on auto-load": [
-        "Automatisches laden einschalten"
-      ],
       "Turn on tracker protection": [
         "Tracker-Schutz aktivieren"
       ],
@@ -4490,7 +4487,7 @@
         "Entschuldige, diese Nachricht existiert nicht oder ist bereits abgelaufen"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Der Speicherplatz wird von Mail, Calendar und Drive gemeinsam genutzt."
       ],
       "Store and share files securely with Proton Drive.": [
         "Speichern und teilen Sie Dateien sicher mit Proton Drive."
@@ -4772,8 +4769,8 @@
       "You are about to open another browser tab and visit:": [
         "Sie öffnen nun eine neuen Tab in Ihrem Browser und besuchen:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet und hast nur eingeschränkten Zugang."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Du kannst es als Anhang hinzufügen oder eingebettet in den Text deiner Nachricht anzeigen."
@@ -5194,9 +5191,6 @@
       "Calendars": [
         "Kalender"
       ],
-      "Cancel": [
-        "Abbrechen"
-      ],
       "Carbon Copy": [
         "Kopie"
       ],
@@ -5448,9 +5442,6 @@
       ],
       "Street address": [
         "Straße und Hausnummer"
-      ],
-      "Submit": [
-        "Senden"
       ],
       "System information": [
         "Systeminformationen"

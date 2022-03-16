@@ -246,7 +246,7 @@
         "Отримати код підтвердження"
       ],
       "Go to label": [
-        ""
+        "Перейти до мітки"
       ],
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
@@ -540,7 +540,7 @@
         "Покращити"
       ],
       "Upload anyway": [
-        ""
+        "Все одно вивантажити"
       ],
       "Upload file": [
         "Вивантажити файл"
@@ -1988,7 +1988,7 @@
         "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями Proton"
       ],
       "Missing key packet": [
-        ""
+        "Відсутній пакунок ключів"
       ],
       "Missing signature": [
         "Відсутній підпис"
@@ -2060,7 +2060,7 @@
         "Час очікування запиту завершився"
       ],
       "Search failed": [
-        ""
+        "Не вдалося знайти"
       ],
       "Signature not verified": [
         "Підпис не перевірено"
@@ -2669,7 +2669,7 @@
         "Ви впевнені, що хочете спорожнити смітник та остаточно видалити всі елементи?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        ""
+        "Ви дійсно хочете остаточно видалити ${ itemName } зі смітника?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Ви дійсно бажаєте остаточно видалити вибрані елементи зі смітника?"
@@ -2714,13 +2714,13 @@
         "Очистити дані"
       ],
       "Clear encrypted search data": [
-        ""
+        "Очистити зашифровані дані пошуку"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        ""
+        "Очищення даних браузера очистить пошуковий індекс на цьому пристрої. Всі файли буде потрібно проіндексувати знову при використанні функції пошуку."
       ],
       "Clears browser data related to the encrypted search.": [
-        ""
+        "Очищає дані браузера, пов'язані з зашифрованим пошуком."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо ця адреса е-пошти неправильна, натисніть \"Змінити\" для її виправлення."
@@ -2771,7 +2771,7 @@
         "Створіть свою першу теку та почніть переміщувати свої файли."
       ],
       "Creating": [
-        ""
+        "Створення"
       ],
       "Creating link to file": [
         "Створення посилання на файл"
@@ -2909,7 +2909,7 @@
         "Включено"
       ],
       "Indexing search results…": [
-        ""
+        "Індексування результатів пошуку…"
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -3131,7 +3131,7 @@
         "Знімки екрана додано"
       ],
       "Search cannot be enabled in this browser": [
-        ""
+        "Неможливо увімкнути пошук у цьому браузері"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Виберіть вивантажений файл або теку та створіть посилання на них."
@@ -3269,7 +3269,7 @@
         "Смітник"
       ],
       "Try different keywords": [
-        ""
+        "Спробуйте різні ключові слова"
       ],
       "Unlimited folders, labels, and filters": [
         "Необмежена кількість тек, міток і фільтрів"
@@ -3357,6 +3357,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Ви зараз увійшли як ${ user.Name } (${ user.Email }) і маєте обмежений доступ."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
@@ -4109,7 +4112,7 @@
         "\"${ name }\" видалено зі смітника остаточно"
       ],
       "\"${ name }\" failed to be created": [
-        ""
+        "\"${ name }\" не вдалося створити"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         ""
@@ -4277,7 +4280,7 @@
         "Групу контактів оновлено"
       ],
       "Encrypted search activated": [
-        ""
+        "Зашифрований пошук активовано"
       ],
       "Failed to download files: ${ err }": [
         "Не вдалося завантажити файли: ${ err }"
@@ -4358,10 +4361,10 @@
         ""
       ],
       "The link to your item failed to be deleted": [
-        ""
+        "Не вдалося видалити посилання на ваш елемент"
       ],
       "The link to your item was deleted": [
-        ""
+        "Посилання на ваш елемент було видалено"
       ],
       "Trash failed to be emptied": [
         "Не вдалося спорожнити смітник"
@@ -4370,7 +4373,7 @@
         "Ваші старі файли будуть видалені протягом 72 годин"
       ],
       "Your settings failed to be saved": [
-        ""
+        "Ваші налаштування не вдалося зберегти"
       ],
       "Your settings have been changed successfully": [
         "Ваші налаштування успішно змінено"
@@ -4511,9 +4514,6 @@
       "Filter groups": [
         "Фільтр груп"
       ],
-      "Gift code": [
-        "Подарунковий код"
-      ],
       "Image URL": [
         "URL-адреса зображення"
       ],
@@ -4531,6 +4531,9 @@
       ],
       "OS version": [
         "Версія ОС"
+      ],
+      "Password": [
+        "Пароль"
       ],
       "Please describe the problem and include any error messages": [
         "Опишіть проблему та додайте повідомлення про помилки"
@@ -4960,9 +4963,6 @@
       "Amount due": [
         "До сплати"
       ],
-      "Apply gift code": [
-        "Застосувати подарунковий код"
-      ],
       "Back": [
         "Назад"
       ],
@@ -5227,9 +5227,6 @@
       "Other names": [
         "Інші імена"
       ],
-      "Payment details": [
-        "Подробиці платежу"
-      ],
       "Payment verification": [
         "Перевірка платежу"
       ],
@@ -5240,7 +5237,7 @@
         "Не вдалося пройти перевірку PayPal"
       ],
       "Performance might be affected": [
-        ""
+        "Продуктивність може постраждати"
       ],
       "Phone numbers": [
         "Номери телефонів"
@@ -5282,7 +5279,7 @@
         "Результати пошуку"
       ],
       "Searching…": [
-        ""
+        "Пошук…"
       ],
       "Select a theme": [
         "Вибрати тему"
@@ -5335,8 +5332,17 @@
       "Subtotal": [
         "Попередній підсумок"
       ],
+      "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The link does not exist": [
+        ""
+      ],
       "The link either does not exist or has expired": [
         "Посилання або не існує або не чинне"
+      ],
+      "The link failed to be loaded": [
+        ""
       ],
       "Total (monthly)": [
         "Всього (щомісячно)"

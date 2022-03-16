@@ -536,7 +536,7 @@
         "Aufrüsten"
       ],
       "Upload anyway": [
-        ""
+        "Trotzdem hochladen"
       ],
       "Upload file": [
         "Datei hochladen"
@@ -2677,7 +2677,7 @@
         "Erstellen Sie Ihren ersten Ordner und beginnen Sie mit dem Verschieben Ihrer Dateien."
       ],
       "Creating": [
-        ""
+        "Wird erstellt"
       ],
       "Creating link to file": [
         "Link zur Datei wird erstellt"
@@ -3255,6 +3255,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Sie sind derzeit als „${ user.Name }” (${ user.Email }) angemeldet und haben nur eingeschränkten Zugang."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Sie können zudem importierte Kalender mit bestehenden Proton-Kalendern zusammenführen."
@@ -4347,9 +4350,6 @@
       "Filter groups": [
         "Gruppen filtern"
       ],
-      "Gift code": [
-        "Geschenkgutschein"
-      ],
       "Image URL": [
         "Bild-URL"
       ],
@@ -4367,6 +4367,9 @@
       ],
       "OS version": [
         "Version des Betriebssystems"
+      ],
+      "Password": [
+        "Passwort"
       ],
       "Please describe the problem and include any error messages": [
         "Bitte beschreiben Sie das Problem und fügen Sie alle Fehlermeldungen hinzu"
@@ -4780,9 +4783,6 @@
       "Amount due": [
         "Fälliger Betrag"
       ],
-      "Apply gift code": [
-        "Geschenkgutschein einlösen"
-      ],
       "Back": [
         "Zurück"
       ],
@@ -5043,9 +5043,6 @@
       "Other names": [
         "Weitere Namen"
       ],
-      "Payment details": [
-        "Zahlungsdetails"
-      ],
       "Payment verification": [
         "Zahlungsbestätigung"
       ],
@@ -5056,7 +5053,7 @@
         "PayPal-Verifizierung fehlgeschlagen"
       ],
       "Performance might be affected": [
-        ""
+        "Die Leistung kann beeinträchtigt werden"
       ],
       "Phone numbers": [
         "Telefonnummern"
@@ -5151,8 +5148,17 @@
       "Subtotal": [
         "Zwischensumme"
       ],
+      "The file or folder failed to be downloaded": [
+        "Die Datei oder der Ordner konnte nicht heruntergeladen werden"
+      ],
+      "The link does not exist": [
+        "Der Link existiert nicht"
+      ],
       "The link either does not exist or has expired": [
         "Der Link existiert entweder nicht oder ist abgelaufen"
+      ],
+      "The link failed to be loaded": [
+        "Der Link konnte nicht geladen werden"
       ],
       "Total (monthly)": [
         "Gesamt (monatlich)"

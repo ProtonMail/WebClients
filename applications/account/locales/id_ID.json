@@ -959,7 +959,7 @@
     },
     "Auto import invitations setting": {
       "Add invitations to calendar and mark as pending": [
-        ""
+        "Tambah undangan ke kalender dan tandai sebagai menunggu balasan"
       ]
     },
     "Autoresponse": {
@@ -2303,6 +2303,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "Selamat! Anda telah memperoleh hadiah berupa langganan ${ appName } ${ plusPlanName } gratis selama ${ rewardsLimit } bulan"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mengenkripsi dan mengimpor kontak... Ini perlu beberapa menit. Jika proses sudah selesai, Anda dapat menutup jendela ini."
       ],
@@ -2629,7 +2632,7 @@
         "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender-kalender Proton yang telah ada sebelumnya"
       ],
       "Missing key packet": [
-        ""
+        "Paket kunci hilang"
       ],
       "Name does not match": [
         "Nama tidak cocok"
@@ -4167,9 +4170,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Dengan berbagi detail acara keseluruhan dari kalender ini, Anda menerima untuk mengizinkan Proton untuk mengakses informasi terenkripsi kalender ini."
       ],
-      "Cancel trial": [
-        "Batalkan uji coba"
-      ],
       "Center": [
         "Tengah"
       ],
@@ -4363,7 +4363,7 @@
         "Masukkan nomor telepon pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        ""
+        "Undangan dan permintaan konfirmasi kehadiran acara (RSVP) akan terkirim dalam bahasa ini."
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -4556,6 +4556,9 @@
       ],
       "Internet connection restored.": [
         "Koneksi internet telah pulih."
+      ],
+      "Invite successfully sent": [
+        "Undangan berhasil terkirim"
       ],
       "Invited via email": [
         "Diundang via email"
@@ -4752,6 +4755,9 @@
       "Other options": [
         "Pilihan lainnya"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Berkas pemulihan telah kedaluwarsa; harap perbarui agar data-data Anda selalu dapat diakses"
       ],
@@ -4920,6 +4926,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Frasa pemulihan tidak terhubung dengan kunci yang telah kedaluwarsa."
       ],
+      "Referral link copied to your clipboard": [
+        "Tautan rujukan disalin ke clipboard"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
@@ -4946,6 +4955,9 @@
       ],
       "Screenshot(s) attached": [
         "Tangkapan layar terlampir"
+      ],
+      "See all plans": [
+        "Lihat seluruh paket"
       ],
       "Select a service provider to start": [
         "Pilih layanan email yang Anda gunakan untuk memulai"
@@ -4998,8 +5010,8 @@
       "Storage GB": [
         "Penyimpanan GB"
       ],
-      "Sucessfully sent invites": [
-        "Undangan berhasil terkirim"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Kuota penyimpanan diperuntukkan bagi Mail, Calendar, dan Drive secara bersamaan."
       ],
       "Support for 1 custom email domain": [
         "Dukungan 1 alamat email dengan domain khusus"
@@ -5124,6 +5136,9 @@
       "to continue to ${ toAppName }": [
         "untuk melanjutkan ke ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ appName } beserta fitur-fitur premium lainnya, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Untuk dapat mendekripsi dan mengakses email-email Anda kembali setelahnya, Anda akan butuh berkas keamanan."
       ],
@@ -5198,6 +5213,9 @@
       ],
       "Update recovery phrase": [
         "Perbarui frasa pemulihan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Tingkatkan jenis akun Anda ke ${ PLAN_NAMES[PLANS.VISIONARY] } atau ${ PLAN_NAMES[PLANS.PROFESSIONAL] } untuk dapat memulai."
@@ -5407,7 +5425,7 @@
         "Kapasitas penyimpanan Anda mencapai 100%. Anda tidak dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        ""
+        "Anda tetap harus membalas undangan ini agar pihak penyelenggara acara dapat melihat respon Anda."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Anda akan ${ loseAllData } di akun ${ BRAND_NAME } Anda. Untuk memulihkannya, masukkan kata sandi lama Anda."
@@ -5501,6 +5519,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Harap hubungi dukungan Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -5908,7 +5929,7 @@
         "${ monthsRewarded } bulan tersedia dalam bentuk saldo"
       ],
       "${ monthsRewarded } month pending": [
-        "${ monthsRewarded } bulan sedang menunggu untuk dicairkan"
+        "${ monthsRewarded } bulan menunggu untuk dicairkan"
       ],
       "${ n } VPN connection available": [
         "${ n } koneksi VPN tersedia"
@@ -6602,6 +6623,9 @@
       ],
       "VPN connections": [
         "Koneksi VPN"
+      ],
+      "Waiting for subscription": [
+        "Menanti langganan"
       ],
       "Want to add": [
         "Menambahkan"
@@ -8409,7 +8433,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         "Uji coba ${ appName } ${ planName }"
       ],
       "${ appName } customization": [
