@@ -191,10 +191,11 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
         if ([MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE, MODES.CHANGE_ONE_PASSWORD_MODE].includes(mode)) {
             if (isSubUser) {
                 return {
-                    title: c('Title').t`Change password for ${Name} (${Email})`,
+                    title: c('Title').t`Change password`,
                     description: (
                         <div className="mb1">
-                            {c('Info').t`Enter your own password (as organization admin) and this user's new password.`}
+                            {c('Info')
+                                .t`Enter your own password (as organization admin) and new password for this user ${Name} (${Email}).`}
                         </div>
                     ),
                     labels: {

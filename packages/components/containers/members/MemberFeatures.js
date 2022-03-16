@@ -6,8 +6,6 @@ import { Icon } from '../../components';
 const MemberFeatures = ({ member }) => {
     const { UsedSpace, MaxSpace, MaxVPN } = member;
 
-    const connectionsPluralized = `${c('Max VPN Connections').ngettext(msgid`Connection`, `Connections`, MaxVPN)}`;
-
     return (
         <>
             <span className="mb0-5 flex flex-nowrap">
@@ -23,7 +21,7 @@ const MemberFeatures = ({ member }) => {
                     <Icon name="brand-proton-vpn" />
                 </span>
                 <span className="flex-item-fluid pl0-25">
-                    {MaxVPN} {c('Feature').t`VPN ${connectionsPluralized}`}
+                    {c('Feature').ngettext(msgid`${MaxVPN} VPN connection`, `${MaxVPN} VPN connections`, MaxVPN)}
                 </span>
             </span>
         </>
