@@ -1,6 +1,6 @@
 import { debounce } from '@proton/shared/lib/helpers/function';
 import { useCallback, useRef } from 'react';
-import { BeforePasteEvent, IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
+import { IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
 import { useIsMounted } from '../../../../hooks';
 import { SetEditorToolbarConfig } from '../../interface';
 
@@ -22,10 +22,9 @@ interface Props {
     placeholder: string | undefined;
     setToolbarConfig: SetEditorToolbarConfig;
     onChange: ((value: string) => void) | undefined;
-    onBeforePaste: ((event: BeforePasteEvent) => void) | undefined;
 }
 
-const useOnEditorChange = ({ placeholder, setToolbarConfig, onChange, onBeforePaste }: Props) => {
+const useOnEditorChange = ({ placeholder, setToolbarConfig, onChange }: Props) => {
     const isPlaceholderVisibleRef = useRef(!!placeholder);
     const isMountedCallback = useIsMounted();
 
@@ -57,10 +56,6 @@ const useOnEditorChange = ({ placeholder, setToolbarConfig, onChange, onBeforePa
                 isPlaceholderVisibleRef.current = false;
                 editor.setContent('');
                 return;
-            }
-
-            if (eventType === PluginEventType.BeforePaste) {
-                onBeforePaste?.(editorEvent);
             }
 
             if (EVENTS_TO_TRIGGER_ONCHANGE.includes(editorEvent.eventType)) {
