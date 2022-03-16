@@ -1,7 +1,14 @@
 import { Location } from 'history';
 import { OpenPGPKey } from 'pmcrypto';
 
-import { AesGcmCiphertext, ESHelpers, ESEvent, getES, normaliseKeyword, testKeywords } from '@proton/encrypted-search';
+import {
+    AesGcmCiphertext,
+    ESHelpers,
+    ESEvent,
+    esStorageHelpers,
+    normalizeKeyword,
+    testKeywords,
+} from '@proton/encrypted-search';
 import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { Api, User } from '@proton/shared/lib/interfaces';
@@ -49,6 +56,7 @@ export const useESHelpers = ({
         const items = await linkMapGenerator.next();
         return items.value || [];
     };
+    const { getES } = esStorageHelpers();
 
     const fetchESItem = async (itemId: IDBValidKey, itemMetadata?: ESLink): Promise<ESLink | undefined> => {
         if (itemMetadata) {
@@ -100,7 +108,7 @@ export const useESHelpers = ({
         const keyword = extractSearchParameters(location);
         return {
             isSearch: !!keyword,
-            esSearchParams: { normalisedKeywords: !keyword ? undefined : normaliseKeyword(keyword) },
+            esSearchParams: { normalisedKeywords: !keyword ? undefined : normalizeKeyword(keyword) },
             page: 0,
         };
     };

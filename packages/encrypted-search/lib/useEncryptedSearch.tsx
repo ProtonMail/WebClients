@@ -27,18 +27,13 @@ import {
     addESTimestamp,
     canUseES,
     deleteESDB,
-    esSentryReport,
     getES,
-    getESTotal,
     getNumItemsDB,
     increaseNumPauses,
-    indexKeyExists,
-    isDBReadyAfterBuilding,
     removeES,
     removeESFlags,
     setES,
     setESCurrent,
-    wasIndexingDone,
 } from './esUtils';
 import { buildDB, decryptIndexKey, getIndexKey, initializeDB, sendIndexingMetrics } from './esBuild';
 import { cacheDB, findItemIndex, refreshESCache } from './esCache';
@@ -46,6 +41,7 @@ import { checkIsDBLimited, correctDecryptionErrors, syncMessageEvents } from './
 import { hybridSearch, sendSearchingMetrics, uncachedSearch } from './esSearch';
 import { highlightJSX, insertMarks } from './esHighlight';
 import { requestPersistence } from './esUtils';
+import { esSentryReport, getESTotal, indexKeyExists, isDBReadyAfterBuilding, wasIndexingDone } from './esHelpers';
 
 interface Props<ESItemMetadata, ESItem, ESSearchParameters, ESItemChanges, ESCiphertext> {
     storeName: string;
@@ -120,7 +116,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Delete localStorage blobs and IDB
+     * Wipe all local data related to ES, both from IndexedDB and local storage
      */
     const esDelete = async (inputUserID?: string) => {
         abortIndexingRef.current.abort();
@@ -151,14 +147,26 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Give access to progress made during operations
+     * @returns a reference object to two values related to an IndexedDB operation status.
+     * The first number in the returned list is the current number of items processed while
+     * the second is the total number of items to process. It is useful to show a progress bar.
      */
     const getProgressRecorderRef = () => {
         return progressRecorderRef;
     };
 
     /**
-     * Report the status of IndexedDB
+     * @returns an object containing boolean variables descrbing the status of the library,
+     * which is useful to determine specific UI in certain occasions. The status contains
+     * the following variables.
+     * @var dbExists whether an instance of IndexedDB exists
+     * @var isBuilding whether indexing is ongoing
+     * @var isDBLimited whether IndexedDB has fewer than the total amount of items
+     * @var esEnabled whether ES is enabled (in case a fallback to server-side search exists)
+     * @var isRefreshing whether a refresh of IndexedDB (when correcting decryption errors) is ongoing
+     * @var isSearchPartial whether the current search only has partial results. It happens when IndexedDB does not fit in cache
+     * @var isSearching whether a search is ongoing
+     * @var isCaching whether caching is ongoing
      */
     const getESDBStatus = () => {
         const {
@@ -189,7 +197,8 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Once encrypted search is active, allow to switch back to server-side metadata search
+     * Deactivates ES. This does not remove anything, and the database keeps being synced.
+     * It is used to switch ES temporarily off in cases when server side search is available.
      */
     const toggleEncryptedSearch = () => {
         const currentOption = esStatus.esEnabled;
@@ -223,7 +232,8 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Cache IndexedDB
+     * Start the caching routine, i.e. fetching and decrypting as many items from the ES
+     * database as possible to be stored in memory for quick access
      */
     const cacheIndexedDB = async () => {
         const { esEnabled, dbExists, cachedIndexKey, isCaching } = esStatus;
@@ -454,7 +464,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Pause a running indexig
+     * Pause the currently ongoing indexing process, if any
      */
     const pauseIndexing = async () => {
         abortIndexingRef.current.abort();
@@ -474,7 +484,12 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Resume an existing indexing operation or start one anew
+     * Start indexing for the first time or resume it after the user paused it. It optionally accepts
+     * an object with two properties.
+     * @param notify specifies whether any pop-up banner will be displayed to the user indicating success
+     * or failure of the indexing process
+     * @param isRefreshed is only used to be forward to the metrics route for statistical purposes.
+     * Whenever the user manually starts indexing, the latter shouldn't be specified (and defaults to false).
      */
     const resumeIndexing: ResumeIndexing = async ({ notify, isRefreshed } = { notify: true, isRefreshed: false }) => {
         const isResumed = getES.Pause(userID);
@@ -819,7 +834,10 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Perform a new encrypted search or increment an existing one
+     * Run a new encrypted search or increment an existing one (the difference is handled internally).
+     * @param setResultsList a callback that will be given the items to show, i.e. those found as search
+     * results, and that should handle the UI part of displaying them to the users
+     * @returns a boolean indicating the success of the search
      */
     const encryptedSearch: EncryptedSearch<ESItem> = async (setResultsList) => {
         const { dbExists, esEnabled, isSearchPartial } = esStatus;
@@ -850,7 +868,9 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Check whether to highlight keywords upon opening a result of any search (both server-side and encrypted)
+     * @returns whether some conditions to apply highlighting are met, i.e. whether a search is
+     * on and there are keywords. For example in cases where the user only specifies filters
+     * and not keywords, this function returns false
      */
     const shouldHighlight = () => {
         const { isSearch, esSearchParams } = parseSearchParams(history.location);
@@ -864,7 +884,13 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Highlight keywords in body. Return a string with the new body
+     * Insert the <mark></mark> highlighting markdown in a string and returns a string containing it,
+     * which then needs to be displayed in the UI. Note that the keywords to highlight are extracted
+     * directly with the parseSearchParams callback
+     * @param content the string where to insert the markdown
+     * @param setAutoScroll whether to insert the data-auto-scroll attribute to the first istance of
+     * the inserted mark tags. The UI should automatically scroll, if possible, to said first tag
+     * @returns the string containing the markdown
      */
     const highlightString: HighlightString = (content, setAutoScroll) => {
         const { esSearchParams } = parseSearchParams(history.location);
@@ -877,8 +903,15 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Highlight keywords, which should be parsed directly from URL within this function, in metadata.
-     * Return the JSX element to be rendered
+     * Inserts the <mark></mark> highlighting markdown in a string and returns directly the JSX node
+     * to be used in React
+     * @param metadata the string where to insert the markdown
+     * @param isBold specifies whether the text should also be bolded (e.g. in some headers)
+     * @param trim specifies whether to substitute the initial portion of the string by an ellipsis
+     * if it's too long
+     * @returns an object containing two properties: numOccurrences is the total number of times the
+     * markdown tag has been added to the given string, while resultJSX is the actual React node to be
+     * displayed
      */
     const highlightMetadata: HighlightMetadata = (metadata, isBold, trim) => {
         const { esSearchParams } = parseSearchParams(history.location);
@@ -894,7 +927,8 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Check whether an item is part of the current search results
+     * @returns whether a given item, specified by its ID, is part of the currently shown search results or not.
+     * It returns false if a search is not happening on going
      */
     const isSearchResult = (ID: string) => {
         const { dbExists, esEnabled, permanentResults } = esStatus;
@@ -915,7 +949,9 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * React to an event happening
+     * Process events (according to the provided callbacks). It should be used in whatever event handling
+     * system the product uses to correctly sync the ES database.
+     * @param event a single event containing a change to the items stored in the ES database
      */
     const handleEvent = async (event: ESEvent<ESItemChanges>) => {
         const { dbExists, cachedIndexKey } = esStatus;
@@ -939,6 +975,11 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
         void addSyncing(() => catchUpFromEvent(indexKey, event));
     };
 
+    /**
+     * Run some initial checks on the status of ES. This must be the first function that
+     * the EncryptedSearchProvider runs, as it checks for new events, continues indexing in
+     * case a previous one was started, checks whether the index key is still accessible
+     */
     const initializeES = async () => {
         // Run whatever custom initialization is needed by the product, potentially
         // returning whether to start a silent indexing
