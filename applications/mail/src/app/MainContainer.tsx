@@ -13,7 +13,7 @@ import ComposerContainer from './containers/ComposerContainer';
 import PageContainer from './containers/PageContainer';
 import { MAIN_ROUTE_PATH } from './constants';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
-import GetStartedChecklistProvider from './containers/GetStartedChecklistProvider';
+import { ChecklistsProvider } from './containers/checklists';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { store } from './logic/store';
 
@@ -64,7 +64,7 @@ const MainContainer = () => {
         <ReduxProvider store={store}>
             <EncryptedSearchProvider>
                 <MailContentRefProvider mailContentRef={mailContentRef}>
-                    <GetStartedChecklistProvider>
+                    <ChecklistsProvider>
                         <ComposerContainer breakpoints={breakpoints}>
                             {({ isComposerOpened }) => (
                                 <>
@@ -84,7 +84,7 @@ const MainContainer = () => {
                                 </>
                             )}
                         </ComposerContainer>
-                    </GetStartedChecklistProvider>
+                    </ChecklistsProvider>
                 </MailContentRefProvider>
             </EncryptedSearchProvider>
         </ReduxProvider>
