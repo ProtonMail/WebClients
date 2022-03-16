@@ -24,6 +24,7 @@ interface Props {
     initialContent?: string;
     mailSettings?: MailSettings;
     showModalLink: (props: ModalLinkProps) => void;
+    onPasteImage: (image: File) => void;
 }
 
 const useInitRooster = ({
@@ -34,6 +35,7 @@ const useInitRooster = ({
     showModalLink,
     onFocus,
     mailSettings,
+    onPasteImage,
 }: Props) => {
     const editorRef = useRef<IEditor>();
     const isMounted = useIsMounted();
@@ -90,6 +92,7 @@ const useInitRooster = ({
             showModalLink,
             iframeRef,
             mailSettings,
+            onPasteImage,
         });
 
         // Prevent setState execution in case component is unmounted
