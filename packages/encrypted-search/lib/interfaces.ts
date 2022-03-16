@@ -64,7 +64,7 @@ export interface ESCache<ESItem> {
 /**
  * Base type for metrics on encrypted search
  */
-export interface ESMetrics {
+interface ESMetrics {
     indexSize: number;
     // Note: the metrics dashboard expects a variable called "numMessagesIndexed" but
     // it doesn't make too much sense in general to talk about "messages"

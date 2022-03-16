@@ -2,7 +2,7 @@ import { ReactNode, RefObject, useRef } from 'react';
 import { c } from 'ttag';
 import { classnames, useCombinedRefs, useHotkeys } from '@proton/components';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
-import { highlightNode } from '@proton/encrypted-search/lib/esHighlight';
+import { highlightNode } from '@proton/encrypted-search';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 
 interface Props {

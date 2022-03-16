@@ -1,10 +1,11 @@
 import { IDBPDatabase, openDB, deleteDB } from 'idb';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
-import { ESProgressBlob } from './interfaces';
+import { Api } from '@proton/shared/lib/interfaces';
+import { ESIndexMetrics, ESProgressBlob, ESSearchMetrics } from './interfaces';
 import { ES_MAX_PARALLEL_ITEMS } from './constants';
+import { apiHelper, indexKeyExists } from './esHelpers';
 
 /**
  * Helpers to work with ES blobs in localStorage
@@ -85,28 +86,6 @@ export const createESDB = (
     });
 
 /**
- * Helper to send ES-related sentry reports
- */
-export const esSentryReport = (errorMessage: string, extra?: any) => {
-    captureMessage(`[EncryptedSearch] ${errorMessage}`, { extra });
-};
-
-/**
- * Check whether the index key exists
- */
-export const indexKeyExists = (userID: string) => !!getES.Key(userID);
-
-/**
- * Check whether a previously started indexing process has terminated successfully
- */
-export const isDBReadyAfterBuilding = (userID: string) => !getES.Progress(userID);
-
-/**
- * Check whether a key exists and the corresponding indexing process has terminated successfully
- */
-export const wasIndexingDone = (userID: string) => indexKeyExists(userID) && isDBReadyAfterBuilding(userID);
-
-/**
  * Fetch the oldest item from IDB
  */
 export const getOldestItem = async (esDB: IDBPDatabase, storeName: string, indexName: string) => {
@@ -132,20 +111,6 @@ export const getOldestTimePoint = async <ESCiphertext>(
     if (oldestMessage) {
         return getTimePoint(oldestMessage);
     }
-};
-
-/**
- * Fetch Time of the oldest item from IDB, eventually corrected by a given factor
- */
-export const getOldestTime = async <ESCiphertext>(
-    userID: string,
-    storeName: string,
-    indexName: string,
-    getTimePoint: (item: ESCiphertext) => [number, number],
-    correctionFactor?: number
-) => {
-    const timePoint = await getOldestTimePoint<ESCiphertext>(userID, storeName, indexName, getTimePoint);
-    return timePoint ? timePoint[0] * (correctionFactor || 1) : 0;
 };
 
 /**
@@ -175,29 +140,9 @@ export const getNumItemsDB = async (userID: string, storeName: string) => {
 };
 
 /**
- * Fetch the number of items in the account when indexing had started, i.e.
- * excluding those that have changed since then
- */
-export const getESTotal = (userID: string) => {
-    return getES.Progress(userID)?.totalItems || 0;
-};
-
-/**
- * Fetch the indexing progress from BuildProgress
- */
-export const getESCurrentProgress = (userID: string) => {
-    const progressBlob = getES.Progress(userID);
-    if (!progressBlob) {
-        return 0;
-    }
-    const { currentItems, totalItems } = progressBlob;
-    return Math.ceil(((currentItems || 0) / totalItems) * 100);
-};
-
-/**
  * Overwrites the BuildProgress blob in localStorage
  */
-export const setESProgress = (userID: string, newProperties: Partial<ESProgressBlob>) => {
+const setESProgress = (userID: string, newProperties: Partial<ESProgressBlob>) => {
     const progressBlob = getES.Progress(userID);
     if (!progressBlob) {
         return;
@@ -320,4 +265,21 @@ export const requestPersistence = async () => {
  */
 export const deferSending = async () => {
     await wait(1000 * Math.floor(180 * Math.random() + 1));
+};
+
+/**
+ * Send metrics about encrypted search
+ */
+export const sendESMetrics = async (api: Api, Title: string, Data: ESSearchMetrics | ESIndexMetrics) => {
+    await deferSending();
+    return apiHelper<{ Code: number }>(
+        api,
+        undefined,
+        {
+            method: 'post',
+            url: 'metrics',
+            data: { Log: 'encrypted_search', Title, Data },
+        },
+        'metrics'
+    );
 };

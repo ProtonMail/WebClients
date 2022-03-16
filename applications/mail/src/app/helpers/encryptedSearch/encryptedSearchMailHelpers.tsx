@@ -5,11 +5,11 @@ import {
     ESEvent,
     ESHelpers,
     ES_MAX_PARALLEL_ITEMS,
-    getES,
     apiHelper,
     esSentryReport,
     indexKeyExists,
     testKeywords,
+    esStorageHelpers,
 } from '@proton/encrypted-search';
 import { Api, LabelCount, Recipient, UserModel } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -21,7 +21,7 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import { ESItemChangesMail, ESMessage, NormalisedSearchParams, StoredCiphertext } from '../../models/encryptedSearch';
+import { ESItemChangesMail, ESMessage, NormalizedSearchParams, StoredCiphertext } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 import { queryEvents } from './esAPI';
 import { fetchMessage } from './esBuild';
@@ -52,7 +52,7 @@ export const getESHelpers = ({
     welcomeFlags,
     getESFeature,
     updateSpotlightES,
-}: Props): ESHelpers<Message, ESMessage, NormalisedSearchParams, ESItemChangesMail, StoredCiphertext> => {
+}: Props): ESHelpers<Message, ESMessage, NormalizedSearchParams, ESItemChangesMail, StoredCiphertext> => {
     const { ID: userID } = user;
 
     const fetchESItem = (itemID: string, itemMetadata?: Message, abortSignal?: AbortSignal) =>
@@ -88,10 +88,10 @@ export const getESHelpers = ({
         return result?.Messages;
     };
 
-    const preFilter = (storedCiphertext: StoredCiphertext, esSearchParams: NormalisedSearchParams) =>
+    const preFilter = (storedCiphertext: StoredCiphertext, esSearchParams: NormalizedSearchParams) =>
         storedCiphertext.LabelIDs.includes(esSearchParams.labelID);
 
-    const applySearch = (esSearchParams: NormalisedSearchParams, itemToSearch: ESMessage) => {
+    const applySearch = (esSearchParams: NormalizedSearchParams, itemToSearch: ESMessage) => {
         const { Sender } = itemToSearch;
 
         const transformRecipients = (recipients: Recipient[]) => [
@@ -106,8 +106,8 @@ export const getESHelpers = ({
             return false;
         }
 
-        const { normalisedKeywords } = esSearchParams;
-        if (!normalisedKeywords) {
+        const { normalizedKeywords } = esSearchParams;
+        if (!normalizedKeywords) {
             return true;
         }
 
@@ -117,10 +117,10 @@ export const getESHelpers = ({
             removeDiacritics(string.toLocaleLowerCase())
         );
 
-        return testKeywords(normalisedKeywords, stringsToSearch);
+        return testKeywords(normalizedKeywords, stringsToSearch);
     };
 
-    const checkIsReverse = (esSearchParams: NormalisedSearchParams) => esSearchParams.sort.desc;
+    const checkIsReverse = (esSearchParams: NormalizedSearchParams) => esSearchParams.sort.desc;
 
     const getTotalItems = async () => {
         const messageCounts = await getMessageCounts();
@@ -144,16 +144,16 @@ export const getESHelpers = ({
         };
     };
 
-    const getDecryptionErrorParams = (): NormalisedSearchParams => {
+    const getDecryptionErrorParams = (): NormalizedSearchParams => {
         return {
             ...normaliseSearchParams({}, '5'),
             decryptionError: true,
         };
     };
 
-    const getKeywords = (esSearchParams: NormalisedSearchParams) => esSearchParams.normalisedKeywords;
+    const getKeywords = (esSearchParams: NormalizedSearchParams) => esSearchParams.normalizedKeywords;
 
-    const getSearchInterval = (esSearchParams?: NormalisedSearchParams) => ({
+    const getSearchInterval = (esSearchParams?: NormalizedSearchParams) => ({
         begin: esSearchParams?.begin,
         end: esSearchParams?.end,
     });
@@ -203,6 +203,7 @@ export const getESHelpers = ({
         shouldRefresh: boolean;
         eventToStore: string | undefined;
     }> => {
+        const { getES } = esStorageHelpers();
         const storedEventID = getES.Event(userID);
         if (!storedEventID) {
             throw new Error('Event ID from local storage not found');
