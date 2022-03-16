@@ -18,7 +18,7 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
     const [isLoading, withLoading] = useLoading(true);
 
     const linksListing = useLinksListing();
-    const [children, isDecrypting] = linksListing.getCachedChildren(abortSignal, shareId, linkId);
+    const { links: children, isDecrypting } = linksListing.getCachedChildren(abortSignal, shareId, linkId);
     const cachedChildren = useMemoArrayNoMatterTheOrder(children);
 
     const { layout, sort, changeSort } = useUserSettings();
