@@ -3,11 +3,11 @@ import { Alert, BasicModal, Button } from '@proton/components';
 
 interface Props {
     onClose: () => void;
-    duplicateAttendees: string[][];
+    equivalentAttendees: string[][];
     isOpen: boolean;
 }
 
-const DuplicateAttendeesModal = ({ onClose, duplicateAttendees, isOpen }: Props) => {
+const EquivalentAttendeesModal = ({ onClose, equivalentAttendees, isOpen }: Props) => {
     return (
         <BasicModal
             title={c('Title').t`You have invited participants with equivalent emails`}
@@ -17,7 +17,7 @@ const DuplicateAttendeesModal = ({ onClose, duplicateAttendees, isOpen }: Props)
             onClose={onClose}
         >
             <p>{c('Info').t`Please remove the duplicates and try again.`}</p>
-            {duplicateAttendees.map((group) => (
+            {equivalentAttendees.map((group) => (
                 <Alert className="mb1" type="warning" key={group.join('')}>
                     {group.map((email) => (
                         <p className="text-ellipsis" key={email} title={email}>
@@ -30,4 +30,4 @@ const DuplicateAttendeesModal = ({ onClose, duplicateAttendees, isOpen }: Props)
     );
 };
 
-export default DuplicateAttendeesModal;
+export default EquivalentAttendeesModal;
