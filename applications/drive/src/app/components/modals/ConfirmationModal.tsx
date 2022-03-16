@@ -61,7 +61,7 @@ export const ConfirmationModal = ({
             size={size}
             {...rest}
         >
-            <ModalTwoHeader disabled={isLoading} title={title} />
+            <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={title} />
             <ModalTwoContent>
                 <Alert className="mb1" type="error">
                     {children}

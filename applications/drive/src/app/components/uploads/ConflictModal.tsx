@@ -171,7 +171,7 @@ export default function ConflictModal({
                 <Button type="button" onClick={closeAndCancel}>
                     {c('Action').t`Cancel all uploads`}
                 </Button>
-                <PrimaryButton type="submit">{c('Action').t`Create`}</PrimaryButton>
+                <PrimaryButton type="submit">{c('Action').t`Continue`}</PrimaryButton>
             </ModalTwoFooter>
         </ModalTwo>
     );

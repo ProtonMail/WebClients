@@ -273,7 +273,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
                 e.preventDefault();
                 handleClose();
             }}
-            disableCloseOnEscape={!saving && !deleting}
+            disableCloseOnEscape={saving || deleting}
             size="large"
             {...rest}
         >
