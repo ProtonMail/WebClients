@@ -52,7 +52,7 @@ interface SaveEventHelperArguments {
     }>;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
-    onDuplicateAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
+    onEquivalentAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }
 const getSaveSingleEventActions = async ({
@@ -70,7 +70,7 @@ const getSaveSingleEventActions = async ({
     sendIcs,
     reencryptSharedEvent,
     onSendPrefsErrors,
-    onDuplicateAttendees,
+    onEquivalentAttendees,
     handleSyncActions,
 }: SaveEventHelperArguments): Promise<{
     multiSyncActions: SyncEventActionOperations[];
@@ -92,7 +92,7 @@ const getSaveSingleEventActions = async ({
     const isUpdateEvent = !!oldEvent;
     const isSwitchCalendar = isUpdateEvent && oldCalendarID !== newCalendarID;
 
-    await onDuplicateAttendees(newVeventComponent, inviteActions);
+    await onEquivalentAttendees(newVeventComponent, inviteActions);
 
     if (isSwitchCalendar) {
         if (!oldEvent || !oldVeventComponent) {

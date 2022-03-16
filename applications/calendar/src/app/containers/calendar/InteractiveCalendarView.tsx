@@ -160,7 +160,7 @@ import {
     TimeGridRef,
 } from './interface';
 import { getInitialTargetEventData } from './targetEventHelper';
-import DuplicateAttendeesModal from './confirmationModals/DuplicateAttendeesModal';
+import EquivalentAttendeesModal from './confirmationModals/EquivalentAttendeesModal';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
     if (!isAllDay) {
@@ -200,8 +200,8 @@ type ModalsMap = {
     editSingleConfirmModal: ModalWithProps<{
         inviteActions: InviteActions;
     }>;
-    duplicateAttendeeModal: ModalWithProps<{
-        duplicateAttendees: string[][];
+    equivalentAttendeesModal: ModalWithProps<{
+        equivalentAttendees: string[][];
     }>;
     deleteRecurringConfirmModal: ModalWithProps<{
         inviteActions: InviteActions;
@@ -287,7 +287,7 @@ const InteractiveCalendarView = ({
         confirmModal: { isOpen: false },
         editRecurringConfirmModal: { isOpen: false },
         editSingleConfirmModal: { isOpen: false },
-        duplicateAttendeeModal: { isOpen: false },
+        equivalentAttendeesModal: { isOpen: false },
         deleteConfirmModal: { isOpen: false },
         deleteRecurringConfirmModal: { isOpen: false },
         sendWithErrorsConfirmationModal: { isOpen: false },
@@ -299,7 +299,7 @@ const InteractiveCalendarView = ({
         sendWithErrorsConfirmationModal,
         deleteConfirmModal,
         deleteRecurringConfirmModal,
-        duplicateAttendeeModal,
+        equivalentAttendeesModal,
         confirmModal,
         editRecurringConfirmModal,
         editSingleConfirmModal,
@@ -1145,13 +1145,13 @@ const InteractiveCalendarView = ({
         }
     };
 
-    const handleDuplicateAttendees = async (duplicateAttendees: string[][]) => {
+    const handleEquivalentAttendees = async (equivalentAttendees: string[][]) => {
         return new Promise<void>((_resolve, reject) => {
             confirm.current = { resolve: _resolve, reject };
-            updateModal('duplicateAttendeeModal', {
+            updateModal('equivalentAttendeesModal', {
                 isOpen: true,
                 props: {
-                    duplicateAttendees,
+                    equivalentAttendees,
                 },
             });
         });
@@ -1181,7 +1181,7 @@ const InteractiveCalendarView = ({
                 isDuplicatingEvent,
                 api,
                 onSaveConfirmation: handleSaveConfirmation,
-                onDuplicateAttendees: handleDuplicateAttendees,
+                onEquivalentAttendees: handleEquivalentAttendees,
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
                 getCalendarKeys,
@@ -1495,13 +1495,13 @@ const InteractiveCalendarView = ({
                     }}
                 />
             )}
-            {!!duplicateAttendeeModal.props && (
-                <DuplicateAttendeesModal
-                    isOpen={duplicateAttendeeModal.isOpen}
-                    {...duplicateAttendeeModal.props}
+            {!!equivalentAttendeesModal.props && (
+                <EquivalentAttendeesModal
+                    isOpen={equivalentAttendeesModal.isOpen}
+                    {...equivalentAttendeesModal.props}
                     onClose={() => {
                         confirm.current?.reject();
-                        closeModal('duplicateAttendeeModal');
+                        closeModal('equivalentAttendeesModal');
                     }}
                 />
             )}
