@@ -142,7 +142,7 @@ describe('getSupportedTimezone', () => {
     });
 
     it('should return undefined for unknown timezones', () => {
-        const unknown = ['Chamorro Standard Time'];
+        const unknown = ['Chamorro Standard Time', '(UTC+01:00) Bruxelles, Copenhague, Madrid, Paris'];
         const results = unknown.map((tzid) => getSupportedTimezone(tzid));
         const expected = unknown.map(() => undefined);
         expect(results).toEqual(expected);
