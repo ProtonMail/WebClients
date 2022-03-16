@@ -16,7 +16,9 @@ import {
     CalendarSettings,
     Participant,
     VcalAttendeeProperty,
+    VcalComponentKeys,
     VcalOrganizerProperty,
+    VcalStringProperty,
     VcalValarmComponent,
     VcalVcalendar,
     VcalVeventComponent,
@@ -44,6 +46,7 @@ import {
     getSequence,
 } from '../vcalHelper';
 import { getIsEventCancelled, withDtstamp, withSummary } from '../veventHelper';
+import { getSupportedStringValue } from '../icsSurgery/vcal';
 
 export const getParticipantHasAddressID = (
     participant: Participant
@@ -500,11 +503,15 @@ export const getHasUpdatedInviteData = ({
     }
     const hasUpdatedDateTimes =
         hasModifiedDateTimes !== undefined ? hasModifiedDateTimes : getHasModifiedDateTimes(newVevent, oldVevent);
-    const hasUpdatedTitle = newVevent.summary?.value !== oldVevent.summary?.value;
-    const hasUpdatedDescription = newVevent.description?.value !== oldVevent.description?.value;
-    const hasUpdatedLocation = newVevent.location?.value !== oldVevent.location?.value;
+
+    const keys: VcalComponentKeys[] = ['summary', 'description', 'location'];
+    const hasUpdatedTitleDescriptionOrLocation = keys.some(
+        (key) =>
+            getSupportedStringValue(newVevent[key] as VcalStringProperty) !==
+            getSupportedStringValue(oldVevent[key] as VcalStringProperty)
+    );
     const hasUpdatedRrule = !getIsRruleEqual(newVevent.rrule, oldVevent.rrule);
-    return hasUpdatedDateTimes || hasUpdatedTitle || hasUpdatedDescription || hasUpdatedLocation || hasUpdatedRrule;
+    return hasUpdatedDateTimes || hasUpdatedTitleDescriptionOrLocation || hasUpdatedRrule;
 };
 
 export const getUpdatedInviteVevent = (

@@ -1,5 +1,5 @@
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { InviteActions } from '../../../interfaces/Invite';
+import { InviteActions, ReencryptInviteActionData } from '../../../interfaces/Invite';
 
 export const getUpdatePersonalPartOperation = ({
     eventComponent,
@@ -23,19 +23,27 @@ export const getUpdatePersonalPartOperation = ({
     };
 };
 
-export const getUpdatePersonalPartActions = ({
+export const getUpdatePersonalPartActions = async ({
     eventComponent,
     event,
     memberID,
     addressID,
+    reencryptionCalendarID,
     inviteActions,
+    reencryptSharedEvent,
 }: {
     eventComponent: VcalVeventComponent;
     event: CalendarEvent;
     memberID: string;
     addressID: string;
+    reencryptionCalendarID?: string;
     inviteActions: InviteActions;
+    reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
 }) => {
+    // Re-encrypt shared event first if needed
+    if (reencryptionCalendarID) {
+        await reencryptSharedEvent({ calendarEvent: event, calendarID: reencryptionCalendarID });
+    }
     const updatePersonalPartAction = getUpdatePersonalPartOperation({
         eventComponent,
         event,

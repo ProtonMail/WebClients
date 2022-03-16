@@ -17,13 +17,22 @@ import { ENCRYPTION_TYPES, ENCRYPTION_CONFIGS } from '../constants';
 import { normalize } from '../helpers/string';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 import { Address, EncryptionConfig } from '../interfaces';
-import { DecryptedCalendarKey, CalendarKey as tsKey, Member } from '../interfaces/calendar';
+import { DecryptedCalendarKey, CalendarKey as tsKey, Member, CalendarKeyFlags } from '../interfaces/calendar';
 import isTruthy from '../helpers/isTruthy';
 import { CalendarSetupData } from '../interfaces/calendar/Api';
+import { hasBit } from '../helpers/bitset';
 
 export const generatePassphrase = () => {
     const value = getRandomValues(new Uint8Array(32));
     return uint8ArrayToBase64String(value);
+};
+
+export const getPrimaryCalendarKey = (calendarKeys: DecryptedCalendarKey[]) => {
+    const primaryKey = calendarKeys.find(({ Key: { Flags } }) => hasBit(Flags, CalendarKeyFlags.PRIMARY));
+    if (!primaryKey) {
+        throw new Error('Calendar primary key not found');
+    }
+    return primaryKey;
 };
 
 /**

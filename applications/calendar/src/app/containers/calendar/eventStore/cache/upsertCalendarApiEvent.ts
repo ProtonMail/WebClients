@@ -19,6 +19,8 @@ const FIELDS_TO_KEEP = [
     'CalendarKeyPacket',
     'CalendarEvents',
     'SharedKeyPacket',
+    'AddressKeyPacket',
+    'AddressID',
     'SharedEvents',
     'PersonalEvents',
     'AttendeesEvents',

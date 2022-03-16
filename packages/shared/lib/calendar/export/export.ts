@@ -13,11 +13,12 @@ import {
     VcalVeventComponent,
 } from '../../interfaces/calendar';
 import { CalendarExportEventsQuery } from '../../interfaces/calendar/Api';
+import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 import { GetCalendarEventPersonal } from '../../interfaces/hooks/GetCalendarEventPersonal';
 import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
-import { splitKeys } from '../../keys';
 import { withNormalizedAuthors } from '../author';
 import { readCalendarEvent, readSessionKeys } from '../deserialize';
+import { getCalendarEventDecryptionKeys } from '../keys/getCalendarEventDecryptionKeys';
 import { fromRruleString } from '../vcal';
 import { getTimezonedFrequencyString } from '../integration/getFrequencyString';
 import { getDateProperty } from '../vcalConverter';
@@ -106,12 +107,14 @@ const decryptEvent = async ({
     defaultTzid,
     weekStartsOn,
     addresses,
+    getAddressKeys,
     getCalendarKeys,
     getCalendarEventPersonal,
     memberID,
 }: {
     event: CalendarEventWithMetadata;
     addresses: Address[];
+    getAddressKeys: GetAddressKeys;
     getCalendarKeys: GetCalendarKeys;
     getCalendarEventPersonal: GetCalendarEventPersonal;
     memberID: string;
@@ -119,8 +122,12 @@ const decryptEvent = async ({
     defaultTzid: string;
 }) => {
     const defaultParams = { event, defaultTzid, weekStartsOn };
-    const [calendarKeys, eventPersonalMap] = await Promise.all([
-        getCalendarKeys(event.CalendarID),
+    const [eventDecryptionKeys, eventPersonalMap] = await Promise.all([
+        getCalendarEventDecryptionKeys({
+            calendarEvent: event,
+            getAddressKeys,
+            getCalendarKeys,
+        }),
         getCalendarEventPersonal(event),
     ]);
 
@@ -130,20 +137,23 @@ const decryptEvent = async ({
 
         const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
             calendarEvent: event,
-            ...splitKeys(calendarKeys),
+            privateKeys: eventDecryptionKeys,
         });
 
+        const { IsOrganizer, SharedEvents, CalendarEvents, AttendeesEvents, Attendees, AddressKeyPacket, AddressID } =
+            event;
         const { veventComponent } = await readCalendarEvent({
-            isOrganizer: !!event.IsOrganizer,
+            isOrganizer: !!IsOrganizer,
             event: {
-                SharedEvents: withNormalizedAuthors(event.SharedEvents),
-                CalendarEvents: withNormalizedAuthors(event.CalendarEvents),
-                AttendeesEvents: withNormalizedAuthors(event.AttendeesEvents),
-                Attendees: event.Attendees,
+                SharedEvents: withNormalizedAuthors(SharedEvents),
+                CalendarEvents: withNormalizedAuthors(CalendarEvents),
+                AttendeesEvents: withNormalizedAuthors(AttendeesEvents),
+                Attendees: Attendees,
             },
             sharedSessionKey,
             calendarSessionKey,
             addresses,
+            encryptingAddressID: AddressKeyPacket && AddressID ? AddressID : undefined,
         });
         const veventWithAlarmsAndSummary: VcalVeventComponent = {
             ...valarms,
@@ -164,6 +174,7 @@ const decryptEvent = async ({
 interface ProcessData {
     calendarID: string;
     addresses: Address[];
+    getAddressKeys: GetAddressKeys;
     getCalendarKeys: GetCalendarKeys;
     getCalendarEventPersonal: GetCalendarEventPersonal;
     api: Api;
@@ -188,6 +199,7 @@ export const processInBatches = async ({
     getCalendarEventPersonal,
     totalToProcess,
     memberID,
+    getAddressKeys,
     getCalendarKeys,
     weekStartsOn,
     defaultTzid,
@@ -235,6 +247,7 @@ export const processInBatches = async ({
                     defaultTzid,
                     weekStartsOn,
                     addresses,
+                    getAddressKeys,
                     getCalendarKeys,
                     getCalendarEventPersonal,
                     memberID,

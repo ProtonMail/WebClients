@@ -58,6 +58,7 @@ import {
     VcalVeventComponent,
     VcalVtimezoneComponent,
     VcalXOrIanaComponent,
+    CalendarEventEncryptionData,
 } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -118,6 +119,7 @@ export interface InvitationModel {
     hideLink?: boolean;
     calendarData?: CalendarWidgetData;
     singleEditData?: CalendarEventWithMetadata[];
+    reencryptionData?: Required<Pick<CalendarEventEncryptionData, 'encryptingAddressID' | 'sharedSessionKey'>>;
     pmData?: PmInviteData;
     invitationIcs?: RequireSome<EventInvitation, 'method'>;
     invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;

@@ -1,12 +1,13 @@
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
-import { getSharedEventIDAndSessionKey } from '@proton/shared/lib/calendar/veventHelper';
+import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { DELETE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
-import { useGetCalendarKeys } from '@proton/components';
+import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 
 import { getEventDeletedText, getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
 import { EventOldData } from '../../../interfaces/EventData';
@@ -110,7 +111,8 @@ interface Arguments {
     onDeleteConfirmation: OnDeleteConfirmationCb;
     api: Api;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
-    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
+    getAddressKeys: GetAddressKeys;
+    getCalendarKeys: GetCalendarKeys;
     getEventDecrypted: GetDecryptedEventCb;
     inviteActions: InviteActions;
     sendIcs: (
@@ -127,6 +129,7 @@ const getDeleteEventActions = async ({
     api,
     getEventDecrypted,
     getCalendarBootstrap,
+    getAddressKeys,
     getCalendarKeys,
     inviteActions,
     sendIcs,
@@ -149,13 +152,14 @@ const getDeleteEventActions = async ({
         eventResult: eventReadResult?.result,
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
-    const { sharedEventID, sharedSessionKey } = await getSharedEventIDAndSessionKey({
+    const sharedSessionKey = await getBase64SharedSessionKey({
         calendarEvent: oldEventData,
+        getAddressKeys,
         getCalendarKeys,
     });
     const inviteActionsWithSharedData = {
         ...inviteActions,
-        sharedEventID,
+        sharedEventID: oldEventData.SharedEventID,
         sharedSessionKey,
     };
 

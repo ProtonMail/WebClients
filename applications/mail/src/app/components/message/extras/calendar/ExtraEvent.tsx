@@ -130,6 +130,7 @@ const ExtraEvent = ({
             let calendarData;
             let hasDecryptionError;
             let singleEditData;
+            let reencryptionData;
             let reinviteEventID;
             let isPartyCrasher = isPartyCrasherIcs;
             const supportedInvitationIcs = invitationIcs;
@@ -141,6 +142,7 @@ const ExtraEvent = ({
                     calendarData: calData,
                     calendarEvent,
                     singleEditData: singleData,
+                    reencryptionData: reencryptData,
                     hasDecryptionError: hasDecryptError,
                     supportedRecurrenceId,
                 } = await fetchEventInvitation({
@@ -159,6 +161,7 @@ const ExtraEvent = ({
                 invitationApi = invitation;
                 calendarData = calData;
                 singleEditData = singleData;
+                reencryptionData = reencryptData;
                 hasDecryptionError = hasDecryptError;
                 const isOutdated = getIsInvitationOutdated({ invitationIcs, invitationApi, isOrganizerMode });
                 const isFromFuture = getIsInvitationFromFuture({ invitationIcs, invitationApi, isOrganizerMode });
@@ -202,6 +205,7 @@ const ExtraEvent = ({
                         reinviteEventID,
                         calendarData,
                         singleEditData,
+                        reencryptionData,
                         hasDecryptionError,
                         isPartyCrasher,
                     });
@@ -270,6 +274,7 @@ const ExtraEvent = ({
                         parentInvitationApi,
                         calendarData,
                         singleEditData,
+                        reencryptionData,
                         timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now()),
                         isOutdated,
                         isFromFuture,
