@@ -93,7 +93,7 @@ const HeaderMoreDropdown = ({
 
     const [messageDetailsModalProps, setMessageDetailsModalOpen] = useModalState();
     const [messageHeaderModalProps, setMessageHeaderModalOpen] = useModalState();
-    const [messagePrintModalProps, setMessagePrintModalOpen] = useModalState();
+    const [messagePrintModalProps, setMessagePrintModalOpen, renderPrintModal] = useModalState();
     const [messagePhishingModalProps, setMessagePhishingModalOpen] = useModalState();
     const [messagePermanentDeleteModalProps, setMessagePermanentDeleteModalOpen] = useModalState();
 
@@ -409,11 +409,13 @@ const HeaderMoreDropdown = ({
                 {...messageDetailsModalProps}
             />
             <MessageHeadersModal message={message.data} {...messageHeaderModalProps} />
-            <MessagePrintModal
-                message={message as MessageStateWithData}
-                labelID={labelID}
-                {...messagePrintModalProps}
-            />
+            {renderPrintModal && (
+                <MessagePrintModal
+                    message={message as MessageStateWithData}
+                    labelID={labelID}
+                    {...messagePrintModalProps}
+                />
+            )}
             <MessagePhishingModal message={message} onBack={onBack} {...messagePhishingModalProps} />
             <MessagePermanentDeleteModal message={message} {...messagePermanentDeleteModalProps} />
         </>
