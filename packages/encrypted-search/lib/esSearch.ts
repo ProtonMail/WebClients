@@ -4,6 +4,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { Api } from '@proton/shared/lib/interfaces/Api';
 import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import {
+    deferSending,
     esSentryReport,
     getES,
     getMostRecentTime,
@@ -648,9 +649,6 @@ export const sendSearchingMetrics = async (
     // it doesn't make too much sense in general to talk about "messages"
     const numMessagesIndexed = await getNumItemsDB(userID, storeName);
 
-    // Random number of seconds between 1 second and 3 minutes, expressed in milliseconds
-    await wait(1000 * Math.floor(180 * Math.random() + 1));
-
     return sendESMetrics(api, 'search', {
         indexSize: getES.Size(userID),
         numMessagesIndexed,
@@ -667,8 +665,7 @@ export const sendSearchingMetrics = async (
 export const sendSlowSearchReport = async (userID: string, storeName: string) => {
     const numMessagesIndexed = await getNumItemsDB(userID, storeName);
 
-    // Random number of seconds between 1 second and 3 minutes, expressed in milliseconds
-    await wait(1000 * Math.floor(180 * Math.random() + 1));
+    await deferSending();
 
     esSentryReport('Search is taking too long, showing warning banner', { numMessagesIndexed });
 };
