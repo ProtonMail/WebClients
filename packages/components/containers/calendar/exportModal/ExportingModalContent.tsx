@@ -18,6 +18,7 @@ import {
     useGetCalendarInfo,
     useApi,
     useGetAddresses,
+    useGetAddressKeys,
     useGetCalendarKeys,
     useGetCalendarUserSettings,
 } from '../../../hooks';
@@ -32,6 +33,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const getAddresses = useGetAddresses();
     const getCalendarInfo = useGetCalendarInfo();
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
+    const getAddressKeys = useGetAddressKeys();
     const getCalendarKeys = useGetCalendarKeys();
     const getCalendarUserSettings = useGetCalendarUserSettings();
 
@@ -90,6 +92,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     api: apiWithAbort,
                     signal,
                     onProgress: handleExportProgress,
+                    getAddressKeys,
                     getCalendarKeys,
                     getCalendarEventPersonal,
                     memberID,

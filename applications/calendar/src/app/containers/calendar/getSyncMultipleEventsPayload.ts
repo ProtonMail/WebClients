@@ -1,3 +1,4 @@
+import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import {
@@ -16,7 +17,6 @@ import {
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { useGetAddressKeys } from '@proton/components';
-import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { OpenPGPKey } from 'pmcrypto';
 
 export enum SyncOperationTypes {
@@ -154,7 +154,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
             const { veventComponent } = operation.data;
 
             const newCalendarKeys = calendarKeysMap[calendarID];
-            const addressKeys = addressKeysMap[addressID];
+            const newAddressKeys = addressKeysMap[addressID];
 
             const permissionData = {
                 Permissions: DEFAULT_ATTENDEE_PERMISSIONS,
@@ -168,7 +168,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     isCreateEvent: true,
                     isSwitchCalendar: false,
                     addedAttendeesPublicKeysMap,
-                    ...(await getCreationKeys({ addressKeys, newCalendarKeys })),
+                    ...(await getCreationKeys({ newAddressKeys, newCalendarKeys })),
                 });
 
                 const dataComplete = {
@@ -188,10 +188,15 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
 
             if (getIsUpdateSyncOperation(operation)) {
                 const { calendarEvent, removedAttendeesEmails, addedAttendeesPublicKeysMap } = operation.data;
+                const {
+                    CalendarID: oldCalendarID,
+                    AddressID: oldAddressID,
+                    SharedEventID: oldSharedEventID,
+                } = calendarEvent;
 
-                const oldCalendarID = calendarEvent.CalendarID;
                 const isSwitchCalendar = oldCalendarID !== calendarID;
 
+                const oldAddressKeys = oldAddressID ? await getAddressKeys(oldAddressID) : undefined;
                 const oldCalendarKeys = isSwitchCalendar && oldCalendarID ? calendarKeysMap[oldCalendarID] : undefined;
 
                 const data = await createCalendarEvent({
@@ -201,7 +206,13 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     isCreateEvent: false,
                     isSwitchCalendar,
                     isInvitation: !calendarEvent.IsOrganizer,
-                    ...(await getCreationKeys({ calendarEvent, addressKeys, newCalendarKeys, oldCalendarKeys })),
+                    ...(await getCreationKeys({
+                        calendarEvent,
+                        newAddressKeys,
+                        oldAddressKeys,
+                        newCalendarKeys,
+                        oldCalendarKeys,
+                    })),
                 });
                 const isOrganizerData = { IsOrganizer: operation.data.calendarEvent.IsOrganizer };
 
@@ -220,7 +231,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                             ...dataComplete,
                             SourceCalendarID: oldCalendarID,
                             UID: veventComponent.uid.value,
-                            SharedEventID: calendarEvent.SharedEventID,
+                            SharedEventID: oldSharedEventID,
                         },
                     };
                 }

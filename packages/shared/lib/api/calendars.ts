@@ -2,6 +2,7 @@ import { Attendee, CalendarSettings, CalendarUserSettings } from '../interfaces/
 import {
     CalendarCreateArguments,
     CalendarCreateData,
+    CalendarCreateEventBlobData,
     CalendarEventsQuery,
     CalendarExportEventsQuery,
     CalendarKeysResetData,
@@ -187,6 +188,16 @@ export const updateAttendeePartstat = (
     data: Pick<Attendee, 'Status' | 'UpdateTime'>
 ) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/${eventID}/attendees/${attendeeID}`,
+    method: 'put',
+    data,
+});
+
+export const upgradeP2PInvite = (
+    calendarID: string,
+    eventID: string,
+    data: Pick<CalendarCreateEventBlobData, 'SharedKeyPacket'>
+) => ({
+    url: `${CALENDAR_V1}/${calendarID}/events/${eventID}/upgrade`,
     method: 'put',
     data,
 });

@@ -283,9 +283,6 @@ export const getSendIcsAction =
         if (!getIsAddressActive(selfAddress)) {
             throw new Error('Cannot send from an inactive address');
         }
-        if (!sharedEventID || !sharedSessionKey) {
-            throw new Error('Missing shared event data');
-        }
         const addressID = selfAddress.ID;
         const from = { Address: selfAddress.Email, Name: selfAddress.DisplayName || selfAddress.Email };
         const hasAddedAttendees = !!addedAttendees?.length;
@@ -295,6 +292,9 @@ export const getSendIcsAction =
             try {
                 if (!vevent) {
                     throw new Error('Cannot build invite ics without the event component');
+                }
+                if (!sharedEventID || !sharedSessionKey) {
+                    throw new Error('Missing shared event data');
                 }
                 const { attendee: attendees } = vevent;
                 const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
@@ -535,6 +535,9 @@ export const getSendIcsAction =
                 if (!cancelVevent) {
                     throw new Error('Cannot cancel invite ics without the old event component');
                 }
+                if (!sharedEventID) {
+                    throw new Error('Missing shared event id');
+                }
                 const { attendee: attendees } = cancelVevent;
                 if (!attendees?.length) {
                     throw new Error('Cannot build cancel ics without attendees');
@@ -544,7 +547,6 @@ export const getSendIcsAction =
                 const pmCancelVevent = withIncrementedSequence({
                     ...cancelVevent,
                     'x-pm-shared-event-id': { value: sharedEventID },
-                    'x-pm-session-key': { value: sharedSessionKey },
                 });
                 const cancelIcs = createInviteIcs({
                     method: ICAL_METHOD.CANCEL,
@@ -597,11 +599,7 @@ export const getSendIcsAction =
 
                 const organizerEmail = getAttendeeEmail(organizer);
                 const selfAttendeeWithPartstat = withPartstat(selfAttendee, partstat);
-                const pmVevent = {
-                    ...vevent,
-                    'x-pm-shared-event-id': { value: sharedEventID },
-                    'x-pm-session-key': { value: sharedSessionKey },
-                };
+                const pmVevent = { ...vevent };
                 if (isProtonProtonInvite) {
                     pmVevent['x-pm-proton-reply'] = { value: 'true', parameters: { type: 'boolean' } };
                 }

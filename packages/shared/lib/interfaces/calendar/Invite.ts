@@ -2,15 +2,31 @@ import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '../../calendar/constan
 import { DecryptedKey } from '../Key';
 import { Calendar, CalendarSettings } from './Calendar';
 import { DecryptedCalendarKey } from './CalendarKey';
-import { CalendarEventWithMetadata } from './Event';
+import { CalendarEvent, CalendarEventWithMetadata } from './Event';
 import { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from './VcalModel';
 
 export interface PartstatActions {
     accept: () => Promise<void>;
     acceptTentatively: () => Promise<void>;
     decline: () => Promise<void>;
-    retryCreateEvent: (partstat: ICAL_ATTENDEE_STATUS, isProtonInvite: boolean) => Promise<void>;
-    retryUpdateEvent: (partstat: ICAL_ATTENDEE_STATUS, timestamp: number, isProtonInvite: boolean) => Promise<void>;
+    retryCreateEvent: ({
+        partstat,
+        isProtonInvite,
+    }: {
+        partstat: ICAL_ATTENDEE_STATUS;
+        isProtonInvite: boolean;
+    }) => Promise<void>;
+    retryUpdateEvent: ({
+        partstat,
+        timestamp,
+        isProtonInvite,
+        calendarEvent,
+    }: {
+        partstat: ICAL_ATTENDEE_STATUS;
+        timestamp: number;
+        isProtonInvite: boolean;
+        calendarEvent?: CalendarEvent;
+    }) => Promise<void>;
 }
 
 export interface CalendarWidgetData {

@@ -70,13 +70,13 @@ export const decryptCard = async (
     dataToDecrypt: Uint8Array,
     signature: string | null,
     publicKeys: OpenPGPKey | OpenPGPKey[],
-    sessionKey?: SessionKey
+    sessionKey: SessionKey
 ) => {
     const { data: decryptedData, verified } = await decryptMessage({
         message: await getMessage(dataToDecrypt),
         publicKeys,
         signature: signature ? await getSignature(signature) : undefined,
-        sessionKeys: sessionKey ? [sessionKey] : undefined,
+        sessionKeys: [sessionKey],
     });
     const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
     const verificationStatus = getEventVerificationStatus(verified, hasPublicKeys);
@@ -98,6 +98,9 @@ export const decryptAndVerifyCalendarEvent = (
         return Promise.resolve({ data: Data, verificationStatus: EVENT_VERIFICATION_STATUS.NOT_VERIFIED });
     }
     if (Type === CALENDAR_CARD_TYPE.ENCRYPTED) {
+        if (!sessionKey) {
+            throw new Error('Cannot decrypt without session key');
+        }
         return decryptCard(base64StringToUint8Array(Data), Signature, [], sessionKey);
     }
     if (Type === CALENDAR_CARD_TYPE.SIGNED) {
@@ -109,6 +112,9 @@ export const decryptAndVerifyCalendarEvent = (
     if (Type === CALENDAR_CARD_TYPE.ENCRYPTED_AND_SIGNED) {
         if (!Signature) {
             throw new Error('Encrypted and signed card is missing signature');
+        }
+        if (!sessionKey) {
+            throw new Error('Cannot decrypt without session key');
         }
         return decryptCard(base64StringToUint8Array(Data), Signature, publicKeys, sessionKey);
     }

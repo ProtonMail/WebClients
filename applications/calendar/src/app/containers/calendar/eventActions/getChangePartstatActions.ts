@@ -7,6 +7,7 @@ import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interface
 import { serverTime } from 'pmcrypto';
 import {
     InviteActions,
+    ReencryptInviteActionData,
     SendIcsActionData,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
@@ -100,9 +101,11 @@ interface ChangePartstaActionsArguments {
     event: CalendarEvent;
     memberID: string;
     addressID: string;
+    reencryptionCalendarID?: string;
     sendIcs: (
         data: SendIcsActionData
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
+    reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
 }
 const getChangePartstatActions = async ({
     inviteActions,
@@ -110,7 +113,9 @@ const getChangePartstatActions = async ({
     event,
     memberID,
     addressID,
+    reencryptionCalendarID,
     sendIcs,
+    reencryptSharedEvent,
 }: ChangePartstaActionsArguments): Promise<{
     inviteActions: InviteActions;
     multiSyncActions: SyncEventActionOperations[];
@@ -119,6 +124,11 @@ const getChangePartstatActions = async ({
     sendActions?: SendIcsActionData[];
 }> => {
     const { partstat, isProtonProtonInvite } = inviteActions;
+    // Re-encrypt shared event first if needed
+    if (reencryptionCalendarID) {
+        await reencryptSharedEvent({ calendarEvent: event, calendarID: reencryptionCalendarID });
+    }
+
     if (!partstat) {
         throw new Error('Cannot update participation status without new answer');
     }
@@ -145,6 +155,7 @@ const getChangePartstatActions = async ({
         addressID,
         partstat,
     });
+
     return {
         inviteActions,
         multiSyncActions: [],
