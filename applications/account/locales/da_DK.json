@@ -2319,6 +2319,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        ""
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
@@ -4223,9 +4226,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Ved at dele alle detaljer om begivenheden i denne kalender, accepterer du at give Proton adgang til denne kalenders krypterede oplysninger."
       ],
-      "Cancel trial": [
-        ""
-      ],
       "Center": [
         "Centrér"
       ],
@@ -4616,6 +4616,9 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
+      "Invite successfully sent": [
+        ""
+      ],
       "Invited via email": [
         ""
       ],
@@ -4811,6 +4814,9 @@
       "Other options": [
         ""
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Forældet gendannelsesfil; opdater for at sikre adgang til dine data"
       ],
@@ -4980,6 +4986,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Gendannelsessætning er ikke tilknyttet nogen forældede nøgler."
       ],
+      "Referral link copied to your clipboard": [
+        ""
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
@@ -5006,6 +5015,9 @@
       ],
       "Screenshot(s) attached": [
         "Screenshot(s) vedhæftet"
+      ],
+      "See all plans": [
+        ""
       ],
       "Select a service provider to start": [
         "Vælg en tjenesteudbyder for at starte"
@@ -5058,7 +5070,7 @@
       "Storage GB": [
         "Lager GB"
       ],
-      "Sucessfully sent invites": [
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -5184,6 +5196,9 @@
       "to continue to ${ toAppName }": [
         "for at fortsætte til ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "For at dekryptere og se dine e-mails og andre data skal du bruge en gendannelsesfil."
       ],
@@ -5258,6 +5273,9 @@
       ],
       "Update recovery phrase": [
         "Opdater gendannelsessætning"
+      ],
+      "Upgrade now": [
+        ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Opgrader til et ${ PLAN_NAMES[PLANS.VISIONARY] } eller ${ PLAN_NAMES[PLANS.PROFESSIONAL] } abonnement for at komme i gang."
@@ -5561,6 +5579,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        ""
       ]
     },
     "info": {
@@ -6668,6 +6689,9 @@
       ],
       "VPN connections": [
         "VPN-forbindelser"
+      ],
+      "Waiting for subscription": [
+        ""
       ],
       "Want to add": [
         "Ønsker at tilføje"
@@ -8488,7 +8512,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         ""
       ],
       "${ appName } customization": [

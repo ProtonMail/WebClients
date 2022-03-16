@@ -986,7 +986,7 @@
     },
     "Auto import invitations setting": {
       "Add invitations to calendar and mark as pending": [
-        ""
+        "Přidat pozvánky do kalendáře a označit jako čekající"
       ]
     },
     "Autoresponse": {
@@ -2351,6 +2351,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "Blahopřejeme! Získali ste maximálního počtu ${ rewardsLimit } měsíců zdarma ${ appName } ${ plusPlanName }"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
@@ -4335,9 +4338,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Sdílením úplných údajů o události tohoto kalendáře souhlasíte s udělením přístupu Protonu k šifrovaným informacím tohoto kalendáře."
       ],
-      "Cancel trial": [
-        "Zrušit zkušební verzi"
-      ],
       "Center": [
         "Zarovnat na střed"
       ],
@@ -4734,6 +4734,9 @@
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
       ],
+      "Invite successfully sent": [
+        "Pozvánka byla úspěšně odeslána"
+      ],
       "Invited via email": [
         "Pozván e-mailem"
       ],
@@ -4929,6 +4932,9 @@
       "Other options": [
         "Další volby"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec zablokován."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Zastaralý obnovovací soubor; aktualizujte, abyste zajistili přístup k vašim údajům"
       ],
@@ -5100,6 +5106,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Fráze pro obnovení není spojena s žádnými zastaralými klíči."
       ],
+      "Referral link copied to your clipboard": [
+        "Odkaz byl zkopírován"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
@@ -5126,6 +5135,9 @@
       ],
       "Screenshot(s) attached": [
         "Snímek/snímky byly připojeny"
+      ],
+      "See all plans": [
+        "Zobrazit všechny předplatné"
       ],
       "Select a service provider to start": [
         "Vyberte poskytovatele služeb a začněte"
@@ -5178,8 +5190,8 @@
       "Storage GB": [
         "Úložiště"
       ],
-      "Sucessfully sent invites": [
-        "Úspěšně odeslané pozvánky"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Úložný prostor je sdílen mezi aplikacemi Mail, Calendar a Drive."
       ],
       "Support for 1 custom email domain": [
         "Podpora 1 vlastní e-mailové domény"
@@ -5304,6 +5316,9 @@
       "to continue to ${ toAppName }": [
         "pokračovat do ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ appName } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "K dešifrování a zobrazení e-mailů a dalších dat potřebujete soubor pro obnovení."
       ],
@@ -5378,6 +5393,9 @@
       ],
       "Update recovery phrase": [
         "Aktualizovat obnovovací frázi"
+      ],
+      "Upgrade now": [
+        "Upgradovat nyní"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Pro začátek přejděte na plán ${ PLAN_NAMES[PLANS.VISIONARY] }, nebo ${ PLAN_NAMES[PLANS.PROFESSIONAL]}."
@@ -5681,6 +5699,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -6676,7 +6697,7 @@
         "Poslat automatickou odpověď"
       ],
       "Send invitations in": [
-        ""
+        "Poslat pozvánky v"
       ],
       "Show secondary time zone": [
         "Zobrazit sekundární časové pásmo"
@@ -6800,6 +6821,9 @@
       ],
       "VPN connections": [
         "VPN připojení"
+      ],
+      "Waiting for subscription": [
+        "Čekání na předplatné"
       ],
       "Want to add": [
         "Chci přidat"
@@ -8646,8 +8670,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        "${ appName } ${ planName } zkušební verze"
+      "${ appName } ${ planName } Trial": [
+        "Zkušební verze ${ appName } s předplatným ${ planName }"
       ],
       "${ appName } customization": [
         "${ appName } přizpůsobení"

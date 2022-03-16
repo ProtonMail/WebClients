@@ -87,7 +87,7 @@
         "Εφαρμογή"
       ],
       "Archive": [
-        ""
+        "Αρχειοθετημένα"
       ],
       "Attachment": [
         "Συνημμένο"
@@ -350,7 +350,7 @@
         "Μετάβαση στην πρώτη σελίδα"
       ],
       "Go to label": [
-        ""
+        "Μετάβαση στην ετικέτα"
       ],
       "Go to last page": [
         "Μετάβαση στην τελευταία σελίδα"
@@ -456,7 +456,7 @@
         "Φόρτωση"
       ],
       "Load embedded images": [
-        ""
+        "Φόρτωση ενσωματωμένων εικόνων"
       ],
       "Load image": [
         "Φόρτωση εικόνας"
@@ -516,7 +516,7 @@
         "Περισσότερα"
       ],
       "More details about ${ title }": [
-        ""
+        "Επιπλέον λεπτομέρειες για το ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
@@ -645,7 +645,7 @@
         "Επανασυνδεθείτε"
       ],
       "Read receipt sent": [
-        ""
+        "Έγινε αποστολή αποδεικτικού ανάγνωσης"
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
@@ -738,7 +738,7 @@
         "αποστολή μηνύματος αυτόματης απάντησης"
       ],
       "Send read receipt": [
-        ""
+        "Αποστολή αποδεικτικού ανάγνωσης"
       ],
       "Set": [
         "Ορισμός"
@@ -807,7 +807,7 @@
         ""
       ],
       "Star": [
-        ""
+        "Προσθήκη αστεριού"
       ],
       "Start import": [
         "Έναρξη εισαγωγής"
@@ -855,9 +855,6 @@
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
       ],
-      "Turn on auto-load": [
-        ""
-      ],
       "Turn on tracker protection": [
         "Ενεργοποίηση προστασίας από ιχνηλάτες"
       ],
@@ -877,13 +874,13 @@
         "Μη ταξινομημένη λίστα"
       ],
       "Unstar": [
-        ""
+        "Αφαίρεση αστεριού"
       ],
       "Unsubscribe": [
         "Απεγγραφή"
       ],
       "Unsubscribe from mailing list": [
-        ""
+        "Απεγγραφή από λίστα αλληλογραφίας"
       ],
       "Unsubscribing": [
         "Διαγραφή"
@@ -940,7 +937,7 @@
         "Προβολή Headers"
       ],
       "View HTML": [
-        ""
+        "Προβολή HTML"
       ],
       "View invoice": [
         "Προβολή τιμολογίου"
@@ -2764,7 +2761,7 @@
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
       "A problem occurred, please try again": [
-        "Παρουσιάστηκε πρόβλημα, παρακαλούμε δοκιμάστε ξανά"
+        "Προέκυψε πρόβλημα, παρακαλούμε δοκιμάστε ξανά"
       ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
@@ -2896,7 +2893,7 @@
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Υπέρβαση μέγιστου αριθμού συνημμένων (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
@@ -3952,7 +3949,7 @@
         "Επιβεβαίωση αναφοράς ηλεκτρονικού \"ψαρέματος\" (Phishing)"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Συνέχεια με ${ planName }"
       ],
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
@@ -4099,7 +4096,7 @@
         ""
       ],
       "Expires soon": [
-        ""
+        "Λήγει σύντομα"
       ],
       "file attached": [
         "συνημμένο αρχείο",
@@ -4241,7 +4238,7 @@
         "Διαχείρηση των ετικετών σας"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Υπέρβαση μέγιστου αριθμού συνημμένων (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
       ],
       "members": [
         "μέλη"
@@ -4772,8 +4769,8 @@
       "You are about to open another browser tab and visit:": [
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Αυτήν τη στιγμή είστε συνδεδεμένοι ως χρήστης ${ user.Name } (${ user.Email }) και έχετε περιορισμένη πρόσβαση."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         ""
@@ -4998,7 +4995,7 @@
         "Μετάβαση στα Διαγραμμένα"
       ],
       "Insert link": [
-        ""
+        "Εισαγωγή συνδέσμου"
       ],
       "Jump to first": [
         "Μετάβαση στην πρώτη"
@@ -5177,7 +5174,7 @@
         "Αυτόματη αποθήκευση επαφών"
       ],
       "BCC": [
-        ""
+        "Κρυφή Κοιν."
       ],
       "Blind Carbon Copy": [
         "Κρυφή Κοινοποίηση"
@@ -5194,9 +5191,6 @@
       "Calendars": [
         "Ημερολόγια"
       ],
-      "Cancel": [
-        "Ακύρωση"
-      ],
       "Carbon Copy": [
         "Κοινοποίηση"
       ],
@@ -5204,7 +5198,7 @@
         "Κατηγορία"
       ],
       "CC": [
-        ""
+        "Κοιν."
       ],
       "City": [
         "Πόλη"
@@ -5448,9 +5442,6 @@
       ],
       "Street address": [
         "Οδός"
-      ],
-      "Submit": [
-        "Υποβολή"
       ],
       "System information": [
         "Πληροφορίες Συστήματος"
@@ -6183,7 +6174,7 @@
         "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
       ],
       "Please insert link first": [
-        ""
+        "Παρακαλούμε εισάγετε πρώτα τον σύνδεσμο"
       ],
       "Proton username": [
         "Όνομα χρήστη Proton"
@@ -7106,7 +7097,7 @@
         "Συγχώνευση Επαφών"
       ],
       "Message details": [
-        ""
+        "Λεπτομέρειες μηνύματος"
       ],
       "Message list": [
         "Λίστα μηνυμάτων"
@@ -7190,7 +7181,7 @@
         "Λείπει ο παραλήπτης"
       ],
       "Recipients": [
-        ""
+        "Παραλήπτες"
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
@@ -7235,7 +7226,7 @@
         "Αποστολή χωρίς λήξη;"
       ],
       "Sender": [
-        ""
+        "Αποστολέας"
       ],
       "Sender changed": [
         "Ο αποστολέας άλλαξε"

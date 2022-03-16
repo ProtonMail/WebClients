@@ -447,7 +447,7 @@
         "Etiketle..."
       ],
       "label emails as": [
-        "e-postaları etiketle"
+        "e-postalar şöyle etiketlensin"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -486,7 +486,7 @@
         "Okunmamış olarak işaretle"
       ],
       "mark emails as": [
-        "e-postaları şöyle işaretle"
+        "e-postalar şöyle işaretlensin"
       ],
       "Mark for deletion": [
         "Silinecek olarak işaretle"
@@ -600,7 +600,7 @@
         "Mağazayı aç"
       ],
       "Ordered list": [
-        "Sıralanmış liste"
+        "Numaralı liste"
       ],
       "Page ${ pageNumber }": [
         "${ pageNumber }. sayfa"
@@ -855,9 +855,6 @@
       "Try another method": [
         "Başka bir yöntem deneyin"
       ],
-      "Turn on auto-load": [
-        "Otomatik yüklemeyi aç"
-      ],
       "Turn on tracker protection": [
         "İzleme korumasını aç"
       ],
@@ -874,7 +871,7 @@
         "Silinecek işaretini kaldır"
       ],
       "Unordered list": [
-        "Sıralanmamış liste"
+        "İmli liste"
       ],
       "Unstar": [
         "Yıldızı kaldır"
@@ -1621,34 +1618,34 @@
     },
     "Condition for custom filter": {
       "begins with": [
-        "şununla başlayan"
+        "şununla başlıyorsa"
       ],
       "contains": [
-        "şunu içeren"
+        "şunu içeriyorsa"
       ],
       "does not begin with": [
-        "şununla başlamayan"
+        "şununla başlamıyorsa"
       ],
       "does not contain": [
-        "şunu içermeyen"
+        "şunu içermiyorsa"
       ],
       "does not end with": [
-        "şununla bitmeyen"
+        "şununla bitmiyorsa"
       ],
       "does not match": [
-        "şununla eşleşmeyen"
+        "şununla eşleşmiyorsa"
       ],
       "ends with": [
-        "şunanla biten"
+        "şununla bitiyorsa"
       ],
       "is exactly": [
-        "tam olarak şu olan"
+        "şununla aynıysa"
       ],
       "is not": [
-        "şu olmayan"
+        "şu değilse"
       ],
       "matches": [
-        "şununla eşleşen"
+        "şununla eşleşiyorsa"
       ]
     },
     "Confirm modal title": {
@@ -2519,7 +2516,7 @@
         "Şuna göre süz"
       ],
       "Next": [
-        "Sonraki"
+        "İleri"
       ],
       "Recipient": [
         "Alıcı"
@@ -3806,10 +3803,10 @@
         "(${ memberCount } üye)"
       ],
       "(Filter if ALL of the following conditions are met)": [
-        "(Aşağıdaki koşulların TÜMÜ karşılandığında süzülsün)"
+        "(Aşağıdaki koşulların TÜMÜ karşılandığında süzülür)"
       ],
       "(Filter if ANY of the following conditions are met)": [
-        "(Aşağıdaki koşullardan HERHANGİ BİRİ karşılandığında süzülsün)"
+        "(Aşağıdaki koşullardan BİRİ karşılandığında süzülür)"
       ],
       "(No Recipient)": [
         "(Alıcı yok)"
@@ -4106,10 +4103,10 @@
         "dosya eklendi"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Süzgeçler, alınan ve gönderilen tüm e-postalarda çalışır. Her süzgeçte en az bir ad ve geçerli bir Sieve komut dosyası bulunmalıdır."
+        "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve geçerli bir Sieve komut dosyası bulunmalıdır."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Süzgeçler, alınan ve gönderilen tüm e-postalarda çalışır. Her süzgeçte en az bir ad ve bir koşul ve işlem bulunmalıdır."
+        "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve geçerli bir Sieve komut dosyası bulunmalıdır."
       ],
       "For increased security, activate 2FA.": [
         "Güvenliği arttırmak için 2 aşamalı kimlik doğrulamayı açın."
@@ -4632,7 +4629,7 @@
         "Bu ileti yarın ${ formattedTime } saatinde geçersiz olacak"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
-        "Bu ortak anahtar, bu adrese gönderilen e-postaların otomatik olarak şifrelenmesi için kullanılacak."
+        "Bu herkese açık anahtar, bu adrese gönderilen e-postaların otomatik olarak şifrelenmesi için kullanılacak."
       ],
       "This sender's public key has not been trusted yet.": [
         "Henüz bu göndericinin herkese açık anahtarına güvenilmemiş."
@@ -4772,8 +4769,8 @@
       "You are about to open another browser tab and visit:": [
         "Şu adresi ziyaret etmek için başka bir tarayıcı sekmesi açmak üzeresiniz:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız ve erişiminiz kısıtlı."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Dosya olarak ekleyebilir ya da e-postanızın içeriğinde satır arasında görüntüleyebilirsiniz."
@@ -4986,13 +4983,13 @@
         "Gelen kutusuna git"
       ],
       "Go to Sent": [
-        "Gönderilmişlere git"
+        "Gönderilmiş kutusuna git"
       ],
       "Go to Spam": [
         "İstenmeyen kutusuna git"
       ],
       "Go to Starred": [
-        "Yıldızlılara git"
+        "Yıldızlı kutusuna git"
       ],
       "Go to Trash": [
         "Çöp kutusuna git"
@@ -5001,10 +4998,10 @@
         "Bağlantı ekle"
       ],
       "Jump to first": [
-        "Birinciye git"
+        "En başa git"
       ],
       "Jump to last": [
-        "Sonuncuya git"
+        "En sona git"
       ],
       "Label as...": [
         "Etiketle..."
@@ -5168,7 +5165,7 @@
         "Ve"
       ],
       "ANY": [
-        "HERHANGİ BİRİ"
+        "BİRİ"
       ],
       "Attachments": [
         "Ek dosyalar"
@@ -5193,9 +5190,6 @@
       ],
       "Calendars": [
         "Takvimler"
-      ],
-      "Cancel": [
-        "İptal"
       ],
       "Carbon Copy": [
         "Kopya"
@@ -5312,7 +5306,7 @@
         "Anahtar sözcük"
       ],
       "Label as": [
-        "Etiketle"
+        "Şöyle etiketlensin"
       ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
@@ -5342,13 +5336,13 @@
         "Adreslerimi yönet"
       ],
       "Mark as": [
-        "Şöyle işaretle"
+        "Şöyle işaretlensin"
       ],
       "Message password": [
         "İleti parolası"
       ],
       "Move to": [
-        "Şuraya taşı"
+        "Şuraya taşınsın"
       ],
       "Name": [
         "Ad"
@@ -5429,7 +5423,7 @@
         "Posta kutunuzun varsayılan olarak nasıl görüneceğini seçin."
       ],
       "Send auto-reply": [
-        "Otomatik yanıt gönder"
+        "Otomatik yanıtlansın"
       ],
       "Sender": [
         "Gönderici"
@@ -5441,7 +5435,7 @@
         "Boyut:"
       ],
       "Starred": [
-        "Yıldızlanmış"
+        "Yıldızlı"
       ],
       "Statement": [
         "Değerlendirme"
@@ -5449,26 +5443,23 @@
       "Street address": [
         "Sokak adresi"
       ],
-      "Submit": [
-        "Gönder"
-      ],
       "System information": [
         "Sistem bilgileri"
       ],
       "The email was sent ${ attachment }": [
-        "E-posta ${ attachment } gönderildi"
+        "Gönderilen e-postada ${ attachment }"
       ],
       "the email was sent ${ attachment }": [
-        "bu e-posta ${ attachment } gönderildi"
+        "gönderilen e-postada ${ attachment }"
       ],
       "The email was sent ${ attachmentStrong }": [
-        "E-posta ${ attachmentStrong } gönderildi"
+        "Gönderilen e-postada ${ attachmentStrong }"
       ],
       "the email was sent ${ label }": [
-        "bu e-posta ${ label } gönderildi"
+        "gönderilen e-postada ${ label }"
       ],
       "Then": [
-        "Sonra"
+        "Önce"
       ],
       "Time": [
         "Saat"
@@ -6089,7 +6080,7 @@
         "Varsayılan klasörler"
       ],
       "Move to...": [
-        "Şuraya taşı..."
+        "Taşı..."
       ]
     },
     "Option group label": {

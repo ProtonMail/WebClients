@@ -2103,9 +2103,6 @@
       "By leaving now, changes may not be saved": [
         "Если выйти сейчас, изменения могут не сохраниться"
       ],
-      "Cancel trial": [
-        "Отменить пробный период"
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, то выберите \"Изменить\" для обновления."
       ],
@@ -2117,12 +2114,6 @@
       ],
       "Connections": [
         "Подключения"
-      ],
-      "Continue with ${ planName }": [
-        "Продолжить с ${ planName }"
-      ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        "Продолжайте использовать ${ planName } сегодня, чтобы избежать отключения доступа в конце пробного периода."
       ],
       "Creating your account": [
         "Создание учетной записи"
@@ -2328,6 +2319,9 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "После нажатия на «Понизить» может потребоваться несколько минут, чтобы перевести вашу учетную запись на бесплатный план. "
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к учетной записи будет ограничен, и впоследствии учётная запись будет отключена."
+      ],
       "P2P": [
         "P2P"
       ],
@@ -2424,6 +2418,9 @@
       "Screenshot(s) attached": [
         "Снимки экрана прикреплены"
       ],
+      "See all plans": [
+        "Посмотреть все тарифы"
+      ],
       "Server is currently down": [
         "Сервер сейчас не работает"
       ],
@@ -2439,14 +2436,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Вы постоянный пользователь, поэтому вам доступны дополнительные функции."
       ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Начните с 500 МБ и постепенно увеличивайте доступное место. Этот объем будет использоваться для Почты, Календаря и Диска."
-      ],
       "Starter VPN service with P2P support.": [
         "Сервис VPN начального уровня с поддержкой P2P."
       ],
       "Storage GB": [
         "Хранилище Гбайт"
+      ],
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Место используют Mail, Calendar и Drive."
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
@@ -2496,6 +2493,9 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Этот мастер поможет включить двухфакторную аутентификацию (2ФА) для вашей учётной записи Proton. Мы рекомендуем включать двухфакторную аутентификацию, т. к. она повышает безопасность учётной записи."
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ appName } с платными функциями, выберите подписку и способ оплаты."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
@@ -2537,6 +2537,9 @@
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Используйте следующие учётные данные, когда подключаетесь к ProtonVPN через сторонние приложения, например, Tunnelblick на MacOS или OpenVPN на GNU/Linux."
@@ -2664,9 +2667,6 @@
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
         "Ваш аккаунт Proton может быть использован для доступа ко всем сервисам Proton. Пожалуйста, войдите с ${ email }"
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        "Ваша бесплатная пробная версия ${ appName } ${ planName } закончится ${ formattedTrialExpirationDate }."
-      ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Ваши платежные данные защищены шифрованием TLS и законами Швейцарии"
       ],
@@ -2684,6 +2684,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -2842,9 +2845,6 @@
       ],
       "BTC amount:": [
         "Сумма BTC:"
-      ],
-      "Cancel": [
-        "Отмена"
       ],
       "Card holder": [
         "Владелец карты"
@@ -3028,9 +3028,6 @@
       ],
       "Select your country": [
         "Выберите вашу страну"
-      ],
-      "Submit": [
-        "Отправить"
       ],
       "Subtotal": [
         "Подытог"
@@ -3246,7 +3243,7 @@
         "Группы контактов"
       ],
       "Custom domains": [
-        "Пользовательские домены"
+        "Свои домены"
       ],
       "Custom filters": [
         "Настраиваемые фильтры"
@@ -3403,6 +3400,9 @@
     "Option": {
       "Android": [
         "Android"
+      ],
+      "Captcha": [
+        "Captcha"
       ],
       "Country configs": [
         "Конфигурации стран"
@@ -3669,7 +3669,7 @@
         "Встроенный блокировщик рекламы (NetShield)"
       ],
       "Custom domains": [
-        "Пользовательские домены"
+        "Свои домены"
       ],
       "Early access to new products": [
         "Ранний доступ к новым продуктам"
@@ -3937,8 +3937,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        "Пробная версия ${ appName } ${ planName }"
+      "${ appName } ${ planName } Trial": [
+        "${ appName } ${ planName } Пробная версия"
       ],
       "${ appName } customization": [
         "Настройка ${ appName }"
@@ -4397,7 +4397,7 @@
         "Чтобы отправлять письма, используйте адрес формата username@pm.me"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Используйте собственные пользовательские доменные адреса электронной почты, например, you@yourname.com"
+        "Используйте ваши собственные доменны в адресах электронной почты, например, you@yourname.com"
       ],
       "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
         "Имя пользователя, которое используется для всех сервисов Proton. Это также может быть использовано позже для создания безопасной учетной записи ProtonMail."
@@ -4456,7 +4456,7 @@
         "Юрисдикция"
       ],
       "Kill Switch / Always-on VPN": [
-        "Аварийный стоп / Постоянная VPN"
+        "Kill Switch / Постоянный VPN"
       ],
       "Languages supported": [
         "Поддерживаемые языки"

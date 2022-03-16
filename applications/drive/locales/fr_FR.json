@@ -1646,7 +1646,7 @@
         "Svalbard et Jan Mayen"
       ],
       "Swaziland": [
-        "Swaziland"
+        "Eswatini"
       ],
       "Sweden": [
         "Suède"
@@ -1964,7 +1964,7 @@
         "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers Proton existants"
       ],
       "Missing key packet": [
-        ""
+        "Paquet de clé manquant"
       ],
       "Missing signature": [
         "Signature manquante"
@@ -2677,7 +2677,7 @@
         "Créez votre premier dossier et commencez à importer vos fichiers."
       ],
       "Creating": [
-        ""
+        "Création"
       ],
       "Creating link to file": [
         "Création du lien vers le fichier"
@@ -3255,6 +3255,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email }) et avez un accès restreint."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
@@ -4347,9 +4350,6 @@
       "Filter groups": [
         "Filtrer les groupes"
       ],
-      "Gift code": [
-        "Code cadeau"
-      ],
       "Image URL": [
         "URL de l'image"
       ],
@@ -4367,6 +4367,9 @@
       ],
       "OS version": [
         "Version du système d'exploitation"
+      ],
+      "Password": [
+        "Mot de passe"
       ],
       "Please describe the problem and include any error messages": [
         "Veuillez décrire le problème et inclure tous les messages d'erreur"
@@ -4780,9 +4783,6 @@
       "Amount due": [
         "Montant à payer"
       ],
-      "Apply gift code": [
-        "Appliquer le code cadeau"
-      ],
       "Back": [
         "Retour"
       ],
@@ -5043,9 +5043,6 @@
       "Other names": [
         "Autres noms"
       ],
-      "Payment details": [
-        "Informations de paiement"
-      ],
       "Payment verification": [
         "Vérification du paiement"
       ],
@@ -5056,7 +5053,7 @@
         "La vérification PayPal a échoué"
       ],
       "Performance might be affected": [
-        "Cela peut affecter les performances"
+        "Ceci peut affecter les performances"
       ],
       "Phone numbers": [
         "Numéros de téléphone"
@@ -5151,8 +5148,17 @@
       "Subtotal": [
         "Sous-total"
       ],
+      "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The link does not exist": [
+        ""
+      ],
       "The link either does not exist or has expired": [
         "Le lien n'existe pas ou a expiré"
+      ],
+      "The link failed to be loaded": [
+        ""
       ],
       "Total (monthly)": [
         "Total (mensuel)"

@@ -2319,6 +2319,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        ""
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
@@ -4223,9 +4226,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Ao partilhar todos os detalhes de evento desta agenda, aceita conceder acesso ao Proton à informação encriptada nesta agenda."
       ],
-      "Cancel trial": [
-        ""
-      ],
       "Center": [
         "Centrar"
       ],
@@ -4616,6 +4616,9 @@
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
+      "Invite successfully sent": [
+        ""
+      ],
       "Invited via email": [
         ""
       ],
@@ -4811,6 +4814,9 @@
       "Other options": [
         ""
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         ""
       ],
@@ -4980,6 +4986,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         ""
       ],
+      "Referral link copied to your clipboard": [
+        ""
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
@@ -5006,6 +5015,9 @@
       ],
       "Screenshot(s) attached": [
         "Capturas de ecrã anexadas"
+      ],
+      "See all plans": [
+        ""
       ],
       "Select a service provider to start": [
         ""
@@ -5058,7 +5070,7 @@
       "Storage GB": [
         "Armazenamento GB"
       ],
-      "Sucessfully sent invites": [
+      "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -5184,6 +5196,9 @@
       "to continue to ${ toAppName }": [
         "para continuar para ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         ""
       ],
@@ -5257,6 +5272,9 @@
         ""
       ],
       "Update recovery phrase": [
+        ""
+      ],
+      "Upgrade now": [
         ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
@@ -5561,6 +5579,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Por favor contacte o suporte da Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        ""
       ]
     },
     "info": {
@@ -6668,6 +6689,9 @@
       ],
       "VPN connections": [
         "Ligações VPN"
+      ],
+      "Waiting for subscription": [
+        ""
       ],
       "Want to add": [
         "Quer adicionar"
@@ -8488,7 +8512,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         ""
       ],
       "${ appName } customization": [

@@ -2319,6 +2319,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "¡Felicitaciones! Ha ganado el máximo de ${ rewardsLimit } meses gratuitos de ${ appName } ${ plusPlanName }"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
@@ -4223,9 +4226,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Al compartir los detalles completos de este calendario, acepta conceder a Proton acceso a la información cifrada de este calendario."
       ],
-      "Cancel trial": [
-        "Cancelar prueba"
-      ],
       "Center": [
         "Centrar"
       ],
@@ -4616,6 +4616,9 @@
       "Internet connection restored.": [
         "Conexión a internet restaurada."
       ],
+      "Invite successfully sent": [
+        "Invitación enviada con éxito"
+      ],
       "Invited via email": [
         "Invitado mediante correo"
       ],
@@ -4722,7 +4725,7 @@
         "Nuevo"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
-        "¿Nuevo en ${ BRAND_NAME }? ${ signupLink }"
+        "¿Primera vez en ${ BRAND_NAME }? ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "A continuación, deberá iniciar sesión en su cuenta de Google y permitirnos acceder a sus datos."
@@ -4810,6 +4813,9 @@
       ],
       "Other options": [
         "Otras opciones"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Archivo de recuperación desactualizado; actualícelo para garantizar el acceso a sus datos"
@@ -4980,6 +4986,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase de recuperación no está asociada con ninguna clave desactualizada."
       ],
+      "Referral link copied to your clipboard": [
+        "Enlace de referencia copiado al portapapeles"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
@@ -5006,6 +5015,9 @@
       ],
       "Screenshot(s) attached": [
         "Captura(s) añadidas(s)"
+      ],
+      "See all plans": [
+        "Ver todos los planes"
       ],
       "Select a service provider to start": [
         "Seleccione un proveedor de servicios para comenzar"
@@ -5058,8 +5070,8 @@
       "Storage GB": [
         "Almacenamiento GB"
       ],
-      "Sucessfully sent invites": [
-        "Invitaciones enviadas con éxito"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "El espacio de almacenamiento se comparte entre el Correo, Calendario y Drive."
       ],
       "Support for 1 custom email domain": [
         "Soporte para 1 dominio de correo personalizado"
@@ -5184,6 +5196,9 @@
       "to continue to ${ toAppName }": [
         "para continuar a ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ appName } con funciones premium, elija una suscripción y opciones de pago."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Para descifrar y ver sus correos y otros datos, necesita un archivo de recuperación."
       ],
@@ -5258,6 +5273,9 @@
       ],
       "Update recovery phrase": [
         "Actualizar frase de recuperación"
+      ],
+      "Upgrade now": [
+        "Actualizar ahora"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Actualice a un plan ${PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } para empezar."
@@ -5561,6 +5579,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Su suscripción es gestionada por Mozilla. Contacte con el soporte de Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -6668,6 +6689,9 @@
       ],
       "VPN connections": [
         "Conexiones VPN"
+      ],
+      "Waiting for subscription": [
+        "Esperando la suscripción"
       ],
       "Want to add": [
         "Quiero añadir"
@@ -8488,8 +8512,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        "prueba de ${ appName } ${ planName }"
+      "${ appName } ${ planName } Trial": [
+        "Prueba de ${ appName } ${ planName }"
       ],
       "${ appName } customization": [
         "Personalización de ${ appName }"

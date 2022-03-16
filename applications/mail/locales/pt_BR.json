@@ -465,7 +465,7 @@
         "Carregar mais"
       ],
       "Load unprotected": [
-        ""
+        "Carregar desprotegido"
       ],
       "Loading${ ellipsis }": [
         "Carregando${ ellipsis }"
@@ -516,7 +516,7 @@
         "Mais"
       ],
       "More details about ${ title }": [
-        ""
+        "Mais detalhes sobre ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
@@ -807,7 +807,7 @@
         "Algumas imagens não puderam ser carregadas com proteção contra rastreamento"
       ],
       "Star": [
-        ""
+        "Favorito"
       ],
       "Start import": [
         "Iniciar importação"
@@ -855,9 +855,6 @@
       "Try another method": [
         "Tentar outro método"
       ],
-      "Turn on auto-load": [
-        ""
-      ],
       "Turn on tracker protection": [
         "Ative proteção contra rastreadores"
       ],
@@ -883,7 +880,7 @@
         "Cancelar inscrição"
       ],
       "Unsubscribe from mailing list": [
-        ""
+        "Cancelar inscrição da lista de e-mails"
       ],
       "Unsubscribing": [
         "Cancelamento da inscrição"
@@ -952,7 +949,7 @@
         "Visualizar mensagem"
       ],
       "View message details": [
-        ""
+        "Ver detalhes da mensagem"
       ],
       "View recipients": [
         "Visualizar destinatários"
@@ -2896,7 +2893,7 @@
         "O nome do marcador não pode ser vazio"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Número máximo de anexos (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) excedido."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Mescle ao menos ${ calendarToFixCount } calendário com um calendário Proton existente",
@@ -2909,7 +2906,7 @@
         "Erro no processamento da mensagem."
       ],
       "Missing key packet": [
-        ""
+        "Pacote de chave ausente"
       ],
       "Missing signature": [
         "Assinatura ausente"
@@ -4090,13 +4087,13 @@
         "Expira"
       ],
       "Expires in ${ formattedDelay }": [
-        ""
+        "Expira em ${ formattedDelay }"
       ],
       "Expires in ${ formattedDelayShort }": [
-        ""
+        "Expira em ${ formattedDelayShort }"
       ],
       "Expires in less than ${ formattedDelayShort }": [
-        ""
+        "Expira em menos de ${ formattedDelayShort }"
       ],
       "Expires soon": [
         "Expira em breve"
@@ -4241,7 +4238,7 @@
         "Gerenciar seus marcadores"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Número máximo de anexos (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) excedido."
       ],
       "members": [
         "membros"
@@ -4707,7 +4704,7 @@
         "Atualize para usar ProtonMail com clientes de desktop de terceiros."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Atualize hoje para evitar perder os seguintes benefícios do ${ appName } ${ planName }."
       ],
       "Upload picture": [
         "Carregar imagem"
@@ -4772,8 +4769,8 @@
       "You are about to open another browser tab and visit:": [
         "Você está prestes a abrir outra guia do navegador e visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Você está atualmente logado como ${ user.Name } (${ user.Email }) e tem acesso restrito."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Você está atualmente iniciado sessão como ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Você pode adicioná-la como anexo ou exibi-la no corpo do e-mail."
@@ -5194,9 +5191,6 @@
       "Calendars": [
         "Calendários"
       ],
-      "Cancel": [
-        "Cancelar"
-      ],
       "Carbon Copy": [
         "Com cópia"
       ],
@@ -5449,9 +5443,6 @@
       "Street address": [
         "Endereço"
       ],
-      "Submit": [
-        "Enviar"
-      ],
       "System information": [
         "Informações do sistema"
       ],
@@ -5650,7 +5641,7 @@
         "Gerenciar seus marcadores"
       ],
       "More about recovery": [
-        ""
+        "Mais sobre recuperação"
       ],
       "Open in ${ calendarAppName }": [
         "Abrir em ${ calendarAppName }"
@@ -6496,10 +6487,10 @@
     },
     "Status": {
       "Unsubscribed from mailing list": [
-        ""
+        "Cancelando inscrição na lista de e-mails"
       ],
       "Unsubscribing from mailing list...": [
-        ""
+        "Cancelando inscrição na lista de e-mails..."
       ]
     },
     "Step in filter modal": {
@@ -7019,7 +7010,7 @@
         "Endereços de e-mail"
       ],
       "Email composer": [
-        ""
+        "Compositor de e-mail"
       ],
       "Email content": [
         "Conteúdo de e-mail"
@@ -7106,13 +7097,13 @@
         "Mesclando contatos"
       ],
       "Message details": [
-        ""
+        "Detalhes da mensagem"
       ],
       "Message list": [
         "Lista de mensagens"
       ],
       "Message will expire": [
-        ""
+        "A mensagem irá expirar"
       ],
       "More": [
         "Mais"
@@ -7305,7 +7296,7 @@
         "O que há de novo"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Sua avaliação gratuita termina em breve, em ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {

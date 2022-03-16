@@ -986,7 +986,7 @@
     },
     "Auto import invitations setting": {
       "Add invitations to calendar and mark as pending": [
-        ""
+        "Добавляйте приглашения в календарь и отмечайте их как ожидающие рассмотрения"
       ]
     },
     "Autoresponse": {
@@ -1218,7 +1218,7 @@
         "Добавить ссылку в нижний колонтитул вашей электронной почты"
       ],
       "Continue using ProtonMail.": [
-        ""
+        "Продолжить использование ProtonMail."
       ],
       "Copy": [
         "Копировать"
@@ -2351,11 +2351,14 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "Поздравляем! Вы заработали максимальное количество ${ rewardsLimit } бесплатных месяцев ${ appName } ${ plusPlanName }"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идёт шифрование и импортирование контактов, и это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
       "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        ""
+        "Получите до 3 месяцев ${ mailAppName } Plus бесплатно за каждого друга, подписавшегося на ${ mailAppName }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
@@ -2689,7 +2692,7 @@
         "Объединить по крайней мере ${ calendarToFixCount } календарь(ей) с существующим календарем Proton"
       ],
       "Missing key packet": [
-        ""
+        "Отсутствует пакет ключей"
       ],
       "Name does not match": [
         "Имя не совпадает"
@@ -3931,7 +3934,7 @@
     },
     "Info": {
       "${ appName } ${ planName } credits earned": [
-        ""
+        "${ appName } ${ planName } кредитов получено"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
@@ -4027,7 +4030,7 @@
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков"
       ],
       "${ rewards } of ${ rewardsLimit } months": [
-        ""
+        "${ rewards } из ${ rewardsLimit } месяцев"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } для вашей подписки, перейдя на ${ annualBilling }"
@@ -4111,7 +4114,7 @@
         "К вашей подписке купоном ${ code } применена скидка 20%"
       ],
       "3. You earn credits": [
-        ""
+        "3. Вы получаете кредиты"
       ],
       "30 days money-back guarantee.": [
         "Гарантия возврата денег в течение 30 дней."
@@ -4335,9 +4338,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Поделившись полной информацией о событии этого календаря, вы соглашаетесь предоставить Proton доступ к зашифрованной информации этого календаря."
       ],
-      "Cancel trial": [
-        "Отменить пробный период"
-      ],
       "Center": [
         "Центрировать"
       ],
@@ -4480,7 +4480,7 @@
         "Каждое дополнительное соединение может быть назначено пользователям вашей организации."
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
-        ""
+        "Получено ${ rewards } из ${ rewardsLimit } ${ appName } ${ planName } месяцев."
       ],
       "Edit label": [
         "Изменить ярлык"
@@ -4537,7 +4537,7 @@
         "Введите свой резервный номер телефона для восстановления, и мы отправим вам имя вашего пользователя или адрес электронной почты."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        ""
+        "Приглашения на мероприятие и RSVP будут отправлены на этом языке."
       ],
       "Expired": [
         "Истёк"
@@ -4734,8 +4734,11 @@
       "Internet connection restored.": [
         "Соединение с интернет восстановлено."
       ],
+      "Invite successfully sent": [
+        "Приглашение успешно отправлено"
+      ],
       "Invited via email": [
-        ""
+        "Приглашено по электронной почте"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Похоже, что некоторые ваши данные зашифрованы и заблокированы."
@@ -4858,7 +4861,7 @@
         "У контакта нет ключей шифрования"
       ],
       "No credit card required": [
-        ""
+        "Кредитная карточка не требуется"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Не установлен метод восстановления данных, вы рискуете потерять доступ к своим данным"
@@ -4929,6 +4932,9 @@
       "Other options": [
         "Другие возможности"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае, доступ к учётной записи будет ограничен, и впоследствии учётная запись будет отключена."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Устаревший файл восстановления; обновите его, чтобы обеспечить доступ к данным"
       ],
@@ -4945,7 +4951,7 @@
         "Оплачен тариф на 12 месяцев"
       ],
       "Paid for a monthly plan": [
-        ""
+        "Оплачен тариф на месяц"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Полная проверка платежа может занять несколько минут."
@@ -5100,6 +5106,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Фраза восстановления не связана ни с одним устаревшим ключем."
       ],
+      "Referral link copied to your clipboard": [
+        "Реферальная ссылка скопирована"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большинство проблем."
       ],
@@ -5127,6 +5136,9 @@
       "Screenshot(s) attached": [
         "Снимок(ки) экрана во вложении"
       ],
+      "See all plans": [
+        "Посмотреть все тарифы"
+      ],
       "Select a service provider to start": [
         "Выберите поставщика услуг для начала работы"
       ],
@@ -5134,7 +5146,7 @@
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
+        "Отправлено с помощью <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> защищенной почты."
       ],
       "Server is currently down": [
         "Сервер сейчас не работает"
@@ -5178,8 +5190,8 @@
       "Storage GB": [
         "Хранилище Гбайт"
       ],
-      "Sucessfully sent invites": [
-        "Успешно отправленные приглашения"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Место хранения используется почтой, календарем и диском."
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
@@ -5304,6 +5316,9 @@
       "to continue to ${ toAppName }": [
         "чтобы продолжить в ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ appName } с платными функциями, выберите подписку и способ оплаты."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Для расшифровки и просмотра писем и других данных необходим файл восстановления."
       ],
@@ -5378,6 +5393,9 @@
       ],
       "Update recovery phrase": [
         "Обновить фразу для восстановления"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Перейдите на план ${ PLAN_NAMES[PLANS.VISIONARY] } или ${ PLAN_NAMES[PLANS.PROFESSIONAL] }, чтобы начать."
@@ -5587,7 +5605,7 @@
         "Вы использовали 100% доступного места. Вы не можете отправлять или получать новые сообщения. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        ""
+        "Вам по-прежнему нужно отвечать на приглашения, чтобы приглашающая сторона увидела ваш ответ."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Вы ${ loseAllData } для учетной записи ${ BRAND_NAME }. Для восстановления доступа, вам нужно будет ввести свой старый пароль."
@@ -5681,6 +5699,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -5694,7 +5715,7 @@
         "Ключ ${ fingerprint } уже был загружен"
       ],
       "Track your referral link activities here": [
-        ""
+        "Отслеживайте активность ваших реферальных ссылок здесь"
       ]
     },
     "Info - folder colouring feature": {
@@ -6085,16 +6106,16 @@
         " и ${ l }"
       ],
       "${ monthsRewarded } month credited": [
-        "",
-        "",
-        "",
-        ""
+        "${ monthsRewarded } месяц начислен",
+        "${ monthsRewarded } месяца начислено",
+        "${ monthsRewarded } месяцев начислено",
+        "${ monthsRewarded } месяцев начислено"
       ],
       "${ monthsRewarded } month pending": [
-        "",
-        "",
-        "",
-        ""
+        "${ monthsRewarded } месяц ожидания",
+        "${ monthsRewarded } месяца ожидания",
+        "${ monthsRewarded } месяцев ожидания",
+        "${ monthsRewarded } месяцев ожидания"
       ],
       "${ n } VPN connection available": [
         "${ n } VPN-соединение доступно",
@@ -6676,7 +6697,7 @@
         "Отправить автоответ"
       ],
       "Send invitations in": [
-        ""
+        "Отправить приглашение через"
       ],
       "Show secondary time zone": [
         "Отображать дополнительный часовой пояс"
@@ -6800,6 +6821,9 @@
       ],
       "VPN connections": [
         "Подключения к VPN"
+      ],
+      "Waiting for subscription": [
+        "Ожидание подписки"
       ],
       "Want to add": [
         "Хотите добавить"
@@ -7055,7 +7079,7 @@
         "Условия использования"
       ],
       "Terms and conditions": [
-        ""
+        "Условия и положения"
       ],
       "Upgrade": [
         "Улучшить тариф"
@@ -8306,7 +8330,7 @@
         "Получите до 18 месяцев ${ appName } ${ planName } бесплатно"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "Приглашайте друзей и получайте вознаграждения!"
       ],
       "No more missed appointments": [
         "Больше никаких пропущенных встреч"
@@ -8646,8 +8670,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        "${ appName } ${ planName } пробная версия"
+      "${ appName } ${ planName } Trial": [
+        "Пробная версия ${ appName } ${ planName }"
       ],
       "${ appName } customization": [
         "${ appName } настройка"
@@ -9052,7 +9076,7 @@
         "Перейдите на ProtonVPN Plus для доступа ко всем серверам"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Получите до 18 месяцев ${ appName } ${ planName } бесплатно"
       ],
       "Gift code": [
         "Подарочный код"
@@ -9238,7 +9262,7 @@
         "Порекомендуйте другу"
       ],
       "Referral tracker": [
-        ""
+        "Отслеживание рефералов"
       ],
       "Remove calendar": [
         "Удалить календарь"
@@ -9262,7 +9286,7 @@
         "Восстановить права администратора"
       ],
       "Secure email based in Switzerland": [
-        ""
+        "Безопасная почта, находящаяся в Швейцарии"
       ],
       "Security": [
         "Безопасность"
@@ -9382,7 +9406,7 @@
         "Итого (в месяц)"
       ],
       "Try the best of ProtonMail for free": [
-        ""
+        "Попробуйте лучшее из ProtonMail бесплатно"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
@@ -9427,7 +9451,7 @@
         "Текущий тариф"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"
       ],
       "Your plan": [
         "Ваш тариф"
@@ -9436,7 +9460,7 @@
         "Ваше состояние восстановления"
       ],
       "You’ve been invited to try ${ mailAppName }": [
-        ""
+        "Вас пригласили попробовать ${ mailAppName }"
       ],
       "ZIP / postal code": [
         "Почтовый индекс"
@@ -9601,7 +9625,7 @@
         "Задать схему отображения по умолчанию для Входящих."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        ""
+        "Устанавливает следующий нижний колонтитул в отправляемых вами электронных письмах: ${ signature }. Ссылка указывает на вашу реферальную ссылку. Нижний колонтитул будет отображаться под вашей подписью. Вы можете персонализировать свою подпись в настройках любое время."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Подписи, произведённые данным ключом, считаются недействительными, и этот ключ не может быть использован для шифрования"
@@ -9952,7 +9976,7 @@
         "Пожалуйста, обратите внимание, что при выборе этого способа оплаты тип вашей учётной записи не может быть изменен сразу. Мы обновим вашу учётную запись после подтверждения оплаты."
       ],
       "Please provide at least one recipient": [
-        ""
+        "Пожалуйста, укажите хотя бы одного получателя"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton объединит все папки с одинаковым именем. Чтобы избежать этого, измените имена перед импортом."
@@ -9988,7 +10012,7 @@
         "Вы больше не увидите в списке эту запись об импорте."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Ваша бесплатная пробная версия заканчивается ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Ваш файл восстановления устарел. Он не сможет восстановить новые данные, если вы снова сбросите учетную запись."
