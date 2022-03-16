@@ -1,7 +1,7 @@
 import creditCardType from 'credit-card-type';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
-import Input, { Props as InputProps } from '../../components/input/Input';
+import Input, { InputTwoProps } from '../../components/v2/input/Input';
 import { Icon } from '../../components';
 
 const banks = require.context('@proton/styles/assets/img/credit-card-icons', true, /.svg$/);
@@ -32,7 +32,7 @@ const withGaps = (value = '', gaps: number[] = []) => {
     }, '');
 };
 
-interface Props extends Omit<InputProps, 'value' | 'onChange'> {
+interface Props extends Omit<InputTwoProps, 'value' | 'onChange' | 'onValue'> {
     value: string;
     onChange: (value: string) => void;
 }
@@ -49,6 +49,7 @@ const CardNumberInput = ({ value, onChange, ...rest }: Props) => {
             name="cardnumber"
             placeholder="0000 0000 0000 0000"
             maxLength={23}
+            className="pl0"
             onChange={({ target }) => {
                 const val = target.value.replace(/\s/g, '');
                 if (isValidNumber(val)) {
@@ -56,11 +57,11 @@ const CardNumberInput = ({ value, onChange, ...rest }: Props) => {
                 }
             }}
             value={valueWithGaps}
-            icon={
+            prefix={
                 value && bankIcon ? (
-                    <img src={bankIcon} className="mauto" title={niceType} alt={niceType} width="20" />
+                    <img src={bankIcon} className="ml0-5" title={niceType} alt={niceType} width="20" />
                 ) : (
-                    <Icon className="mauto" name="credit-card" />
+                    <Icon className="ml0-5" name="credit-card" />
                 )
             }
             {...rest}
