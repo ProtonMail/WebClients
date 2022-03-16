@@ -1,25 +1,23 @@
 import { IDBPDatabase } from 'idb';
 import { decryptMessage as pmcryptoDecryptMessage, getMessage as pmcryptoGetMessage, encryptMessage } from 'pmcrypto';
-import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { AesKeyGenParams, ES_MAX_CONCURRENT, KeyUsages, OPENPGP_REFRESH_CUTOFF } from './constants';
-import { AesGcmCiphertext, ESIndexingHelpers, ESIndexingState, GetUserKeys } from './interfaces';
+import { AesGcmCiphertext, ESIndexingHelpers, GetUserKeys } from './interfaces';
 import {
     addESTimestamp,
     createESDB,
     deleteESDB,
-    esSentryReport,
     getES,
     getOldestItem,
     openESDB,
     refreshOpenpgp,
     removeES,
+    sendESMetrics,
     setES,
-    setOriginalEstimate,
     updateSizeIDB,
 } from './esUtils';
-import { sendESMetrics } from './esAPI';
+import { esSentryReport } from './esHelpers';
 import { sizeOfESItem } from './esCache';
 
 /**
@@ -272,7 +270,7 @@ export const buildDB = async <ESItemMetadata, ESItem, ESCiphertext>(
 /**
  * Store an existing index key to local storage
  */
-export const storeIndexKey = async (indexKey: CryptoKey, userID: string, getUserKeys: GetUserKeys) => {
+const storeIndexKey = async (indexKey: CryptoKey, userID: string, getUserKeys: GetUserKeys) => {
     const userKeysList = await getUserKeys();
     const primaryUserKey = userKeysList[0];
     const keyToEncrypt = await crypto.subtle.exportKey('jwk', indexKey);
@@ -373,38 +371,6 @@ export const initializeDB = async (
         ...result,
         indexKey,
     };
-};
-
-/**
- * Compute the estimated time remaining of indexing
- */
-export const estimateIndexingProgress = (
-    userID: string,
-    esProgress: number,
-    esTotal: number,
-    endTime: number,
-    esState: ESIndexingState
-) => {
-    let estimatedMinutes = 0;
-    let currentProgressValue = 0;
-
-    if (esTotal !== 0 && endTime !== esState.startTime && esProgress !== esState.esPrevProgress) {
-        const remainingMessages = esTotal - esProgress;
-
-        setOriginalEstimate(
-            userID,
-            Math.floor(
-                (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingMessages) / SECOND
-            )
-        );
-
-        estimatedMinutes = Math.ceil(
-            (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingMessages) / MINUTE
-        );
-        currentProgressValue = Math.ceil((esProgress / esTotal) * 100);
-    }
-
-    return { estimatedMinutes, currentProgressValue };
 };
 
 /**

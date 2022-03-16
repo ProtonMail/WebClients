@@ -1,74 +1,11 @@
 import { startOfDay, sub } from 'date-fns';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Api } from '@proton/shared/lib/interfaces/Api';
-import { removeDiacritics } from '@proton/shared/lib/helpers/string';
-import {
-    deferSending,
-    esSentryReport,
-    getES,
-    getMostRecentTime,
-    getNumItemsDB,
-    getOldestTime,
-    openESDB,
-    roundMilliseconds,
-} from './esUtils';
+import { getES, getMostRecentTime, getNumItemsDB, openESDB, roundMilliseconds, sendESMetrics } from './esUtils';
 import { getIndexKey } from './esBuild';
-import { sendESMetrics } from './esAPI';
 import { ESCache, ESSearchingHelpers, ESStoredItem, GetUserKeys } from './interfaces';
 import { AesKeyGenParams, ES_MAX_ITEMS_PER_BATCH, ES_EXTRA_RESULTS_LIMIT } from './constants';
-
-/**
- * Normalise keyword
- */
-export const normaliseKeyword = (keyword: string) => {
-    const trimmedKeyword = removeDiacritics(keyword.trim().toLocaleLowerCase());
-    const quotesIndexes: number[] = [];
-
-    let index = 0;
-    while (index !== -1) {
-        index = trimmedKeyword.indexOf(`"`, index);
-        if (index !== -1) {
-            quotesIndexes.push(index);
-            index++;
-        }
-    }
-
-    const normalisedKeywords: string[] = [];
-    let previousIndex = -1;
-    for (let index = 0; index < quotesIndexes.length; index++) {
-        const keyword = trimmedKeyword.slice(previousIndex + 1, quotesIndexes[index]);
-
-        if (index % 2 === 1) {
-            // If the user placed quotes, we want to keep everything inside as a single block
-            normalisedKeywords.push(keyword);
-        } else {
-            // Otherwise we split by whitespace
-            normalisedKeywords.push(...keyword.split(' '));
-        }
-
-        previousIndex = quotesIndexes[index];
-    }
-
-    normalisedKeywords.push(...trimmedKeyword.slice(quotesIndexes[quotesIndexes.length - 1] + 1).split(' '));
-
-    return normalisedKeywords.filter(isTruthy);
-};
-
-/**
- * Check if keywords are in the content or metadata of an item
- */
-export const testKeywords = (normalisedKeywords: string[], stringsToSearch: string[]) => {
-    let result = true;
-    let index = 0;
-    while (result && index !== normalisedKeywords.length) {
-        const keyword = normalisedKeywords[index];
-        result = result && stringsToSearch.some((string) => string.includes(keyword));
-        index++;
-    }
-
-    return result;
-};
+import { getOldestTime } from './esHelpers';
 
 /**
  * Decrypt encrypted object from IndexedDB
@@ -143,7 +80,7 @@ export const updateBatchTimeBound = (batchTimeBound: IDBKeyRange, searchTimeBoun
  * Set the initial time range to fetch data from IDB for uncached search in chronological order. This
  * is the equivalent of initializeTimeBounds for uncached search)
  */
-export const initializeLowerBound = async <ESCiphertext>(
+const initializeLowerBound = async <ESCiphertext>(
     userID: string,
     storeName: string,
     indexName: string,
@@ -169,7 +106,7 @@ export const initializeLowerBound = async <ESCiphertext>(
  * different times, for uncached search in chronological order. This is the equivalent of updateBatchTimeBound
  * for uncached search
  */
-export const updateBatchLowerBound = (lastTimePoint: [number, number]) => IDBKeyRange.lowerBound(lastTimePoint, true);
+const updateBatchLowerBound = (lastTimePoint: [number, number]) => IDBKeyRange.lowerBound(lastTimePoint, true);
 
 /**
  * Check whether an uncached search in reverse chronological order should end because of exceeded time bounds
@@ -181,14 +118,14 @@ export const checkEndSearchReverse = (batchTimeBound: IDBKeyRange, searchTimeBou
 /**
  * Check whether an uncached search in chronological order should end because of exceeded time bounds
  */
-export const checkEndSearchChrono = (lastTimePoint: [number, number], searchTimeBound: IDBKeyRange) => {
+const checkEndSearchChrono = (lastTimePoint: [number, number], searchTimeBound: IDBKeyRange) => {
     return lastTimePoint[0] > searchTimeBound.upper[0];
 };
 
 /**
  * Perfom an uncached search, i.e. with data being retrieved directly from IDB, in descending order
  */
-export const uncachedSearchDesc = async <ESItem, ESCiphertext, ESSearchParameters>(
+const uncachedSearchDesc = async <ESItem, ESCiphertext, ESSearchParameters>(
     userID: string,
     indexKey: CryptoKey,
     esSearchParams: ESSearchParameters,
@@ -284,7 +221,7 @@ export const uncachedSearchDesc = async <ESItem, ESCiphertext, ESSearchParameter
 /**
  * Perfom an uncached search, i.e. with data being retrieved directly from IDB, in ascending order
  */
-export const uncachedSearchAsc = async <ESItem, ESCiphertext, ESSearchParameters>(
+const uncachedSearchAsc = async <ESItem, ESCiphertext, ESSearchParameters>(
     userID: string,
     indexKey: CryptoKey,
     esSearchParams: ESSearchParameters,
@@ -421,7 +358,7 @@ export const uncachedSearch = async <ESItem, ESCiphertext, ESSearchParameters>(
 /**
  * Perfom an cached search, i.e. over the given items only
  */
-export const cachedSearch = <ESItem, ESSearchParameters>(
+const cachedSearch = <ESItem, ESSearchParameters>(
     esCache: ESItem[],
     esSearchParams: ESSearchParameters,
     abortSearchingRef: React.MutableRefObject<AbortController>,
@@ -448,7 +385,7 @@ export const cachedSearch = <ESItem, ESSearchParameters>(
  * also return the first time point from where to start the uncached search and potentially adjusted
  * search parameters that take into account the new time boundaries
  */
-export const checkCacheTimespan = <ESItem, ESSearchParameters>(
+const checkCacheTimespan = <ESItem, ESSearchParameters>(
     esSearchParams: ESSearchParameters,
     esCache: ESItem[],
     getTimePoint: (item: ESItem) => [number, number],
@@ -657,15 +594,4 @@ export const sendSearchingMetrics = async (
         isFirstSearch,
         isCacheLimited,
     });
-};
-
-/**
- * Send a sentry report for when ES is too slow
- */
-export const sendSlowSearchReport = async (userID: string, storeName: string) => {
-    const numMessagesIndexed = await getNumItemsDB(userID, storeName);
-
-    await deferSending();
-
-    esSentryReport('Search is taking too long, showing warning banner', { numMessagesIndexed });
 };

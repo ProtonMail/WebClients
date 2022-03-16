@@ -11,7 +11,7 @@ import {
 import { hasLabel, isFilter, isSearch, isUnread, sort as sortElements } from '../../helpers/elements';
 import { RootState } from '../store';
 import { ElementsStateParams } from './elementsTypes';
-import { ESMessage, NormalisedSearchParams } from '../../models/encryptedSearch';
+import { ESMessage, NormalizedSearchParams } from '../../models/encryptedSearch';
 import { getTotal } from './helpers/elementTotal';
 import { expectedPageLength } from '../../helpers/paging';
 import { SearchParameters } from '../../models/tools';
@@ -33,7 +33,7 @@ const currentSearch = (_: RootState, { search }: { search: SearchParameters }) =
 const currentParams = (_: RootState, { params }: { params: ElementsStateParams }) => params;
 const currentESDBStatus = (
     _: RootState,
-    { esDBStatus }: { esDBStatus: ESDBStatus<ESMessage, NormalisedSearchParams> }
+    { esDBStatus }: { esDBStatus: ESDBStatus<ESMessage, NormalizedSearchParams> }
 ) => esDBStatus;
 const currentCounts = (_: RootState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
 
