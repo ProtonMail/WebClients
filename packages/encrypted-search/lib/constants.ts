@@ -1,3 +1,5 @@
+import { EncryptedSearchFunctions } from './interfaces';
+
 /**
  * Number of batches of items to process during indexing before
  * refreshing openpgp workers. This is done to address some memory
@@ -71,6 +73,23 @@ export const defaultESCache = {
     cacheSize: 0,
     isCacheLimited: true,
     isCacheReady: false,
+};
+
+export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
+    encryptedSearch: async () => false,
+    highlightString: () => '',
+    highlightMetadata: () => ({ numOccurrences: 0, resultJSX: null as any }),
+    resumeIndexing: async () => {},
+    handleEvent: async () => {},
+    isSearchResult: () => false,
+    esDelete: async () => {},
+    getESDBStatus: () => ({ ...defaultESStatus, isCacheLimited: defaultESCache.isCacheLimited }),
+    getProgressRecorderRef: () => null as any,
+    shouldHighlight: () => false,
+    initializeES: async () => {},
+    pauseIndexing: async () => {},
+    cacheIndexedDB: async () => {},
+    toggleEncryptedSearch: () => {},
 };
 
 export const defaultESIndexingState = {

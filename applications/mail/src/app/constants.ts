@@ -1,5 +1,7 @@
+import { defaultESContext } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
+import { EncryptedSearchFunctionsMail } from './models/encryptedSearch';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 
@@ -118,6 +120,7 @@ export const DRAG_ADDRESS_SIZE_KEY = 'drag-address-size';
 
 export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
 
+// ES constants
 export const storeName = 'messages';
 export const indexName = 'byTime';
 export const primaryKeyName = 'ID';
@@ -152,6 +155,13 @@ export const localisedForwardFlags = [
 export const defaultESMailStatus = {
     dropdownOpened: false,
     temporaryToggleOff: false,
+};
+export const defaultESContextMail: EncryptedSearchFunctionsMail = {
+    ...defaultESContext,
+    openDropdown: () => {},
+    closeDropdown: () => {},
+    setTemporaryToggleOff: () => {},
+    getESDBStatus: () => ({ ...defaultESContext.getESDBStatus(), ...defaultESMailStatus }),
 };
 
 export const WELCOME_PANE_OPTIONS_URLS = {
