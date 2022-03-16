@@ -95,7 +95,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
             size="large"
             as="form"
         >
-            <ModalTwoHeader title={modalContents.title} disabled={loading} />
+            <ModalTwoHeader title={modalContents.title} closeButtonProps={{ disabled: loading }} />
             {!rootFolder || !rootFolder.isLoaded ? (
                 <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
             ) : (

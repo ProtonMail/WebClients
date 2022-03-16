@@ -186,7 +186,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...rest }: Props) 
             }}
             {...rest}
         >
-            <ModalTwoHeader title={modalContents.title} disabled={loading} />
+            <ModalTwoHeader title={modalContents.title} closeButtonProps={{ disabled: loading }} />
             {!rootFolder || !rootFolder.isLoaded ? (
                 <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
             ) : (

@@ -74,7 +74,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
             size="large"
             {...rest}
         >
-            <ModalTwoHeader disabled={loading} title={c('Title').t`Create a new folder`} />
+            <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={c('Title').t`Create a new folder`} />
             <ModalTwoContent>
                 <Row className="mt1 mb1">
                     <Label>{c('Label').t`Folder name`}</Label>

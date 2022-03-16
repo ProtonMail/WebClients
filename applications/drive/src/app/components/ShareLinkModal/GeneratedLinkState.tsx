@@ -164,7 +164,7 @@ function GeneratedLinkState({
 
     return (
         <>
-            <ModalTwoHeader title={c('Title').t`Share via link`} disabled={saving || deleting} />
+            <ModalTwoHeader title={c('Title').t`Share via link`} closeButtonProps={{ disabled: saving || deleting }} />
             <ModalTwoContent>
                 <div ref={contentRef}>
                     <p>{c('Info').jt`Your secure, shareable link for ${boldNameText}:`}</p>

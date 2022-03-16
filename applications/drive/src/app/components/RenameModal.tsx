@@ -79,7 +79,7 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
             {...rest}
         >
             <ModalTwoHeader
-                disabled={loading}
+                closeButtonProps={{ disabled: loading }}
                 title={isFolder ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
             />
             <ModalTwoContent>
@@ -106,7 +106,7 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
                     {c('Action').t`Cancel`}
                 </Button>
                 <PrimaryButton type="submit" disabled={loading}>
-                    {c('Action').t`Delete`}
+                    {c('Action').t`Rename`}
                 </PrimaryButton>
             </ModalTwoFooter>
         </ModalTwo>
