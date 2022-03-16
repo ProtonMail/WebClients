@@ -1,7 +1,31 @@
 import { ES_MAX_CACHE } from './constants';
-import { ESCache, ESSearchingHelpers } from './interfaces';
+import { ESCache } from './interfaces';
 import { checkEndSearchReverse, decryptFromDB, initializeTimeBounds, updateBatchTimeBound } from './esSearch';
 import { getNumItemsDB, openESDB } from './esUtils';
+
+/**
+ * Estimate the size of a ESItem object in memory
+ */
+export const sizeOfESItem = (value: any): number => {
+    if (typeof value === 'boolean') {
+        return 4;
+    } else if (typeof value === 'string') {
+        return value.length * 2;
+    } else if (typeof value === 'number') {
+        return 8;
+    } else if (Array.isArray(value)) {
+        return value.map(sizeOfESItem).reduce((p, c) => p + c, 0);
+    } else if (value === null) {
+        // This is to avoid the "typeof null === 'object'" bug
+        return 0;
+    } else if (typeof value === 'object') {
+        // Note that object keys are ignored as this function is already an
+        // over-estimate of the actual memory footprint
+        return sizeOfESItem(Object.values(value));
+    }
+    // Only 'undefined' type should reach this point
+    return 0;
+};
 
 /**
  * Check whether the cache is limited
@@ -18,10 +42,7 @@ export const checkIsCacheLimited = async <ESItem>(
 /**
  * Remove extra items from cache
  */
-export const trimCache = <ESItem>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
-    sizeOfESItem: (esItem: ESItem) => number
-) => {
+export const trimCache = <ESItem>(esCacheRef: React.MutableRefObject<ESCache<ESItem>>) => {
     let rollingSize = 0;
     for (let index = 0; index < esCacheRef.current.esCache.length; index++) {
         if (rollingSize >= ES_MAX_CACHE) {
@@ -48,17 +69,15 @@ export const sortCachedItems =
 /**
  * Cache IndexedDB
  */
-export const cacheDB = async <ESItem, ESCiphertext, ESSearchParameters>(
+export const cacheDB = async <ESItem, ESCiphertext>(
     indexKey: CryptoKey,
     userID: string,
     esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
     storeName: string,
     indexName: string,
-    esSearchingHelpers: ESSearchingHelpers<ESItem, ESCiphertext, ESSearchParameters>,
+    getTimePoint: (item: ESItem | ESCiphertext) => [number, number],
     inputTimeBound?: [number, number]
 ) => {
-    const { getTimePoint, sizeOfESItem } = esSearchingHelpers;
-
     const initialTimeBounds = await initializeTimeBounds<ESCiphertext>(
         userID,
         storeName,
@@ -99,7 +118,7 @@ export const cacheDB = async <ESItem, ESCiphertext, ESSearchParameters>(
     esCacheRef.current.esCache.sort(sortCachedItems<ESItem>(getTimePoint));
     // Since batches are processed as a whole, trimming is necessery to make sure the cache
     // size limit is not exceeded by too much
-    trimCache<ESItem>(esCacheRef, sizeOfESItem);
+    trimCache<ESItem>(esCacheRef);
     esCacheRef.current.isCacheLimited = await checkIsCacheLimited<ESItem>(userID, esCacheRef, storeName);
 };
 
@@ -122,7 +141,6 @@ export const checkAddToCache = <ESItem>(
 export const addToESCache = <ESItem>(
     itemToCache: ESItem,
     esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
-    sizeOfESItem: (esItem: ESItem) => number,
     getTimePoint: (item: ESItem) => [number, number],
     itemSize?: number
 ) => {
@@ -161,7 +179,6 @@ export const findItemIndex = <ESItem>(
 export const removeFromESCache = <ESItem>(
     itemToRemove: string,
     esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
-    sizeOfESItem: (esItem: ESItem) => number,
     getIDStoredItem: (storedItem: ESItem) => string,
     messageSize?: number
 ) => {
@@ -181,7 +198,6 @@ export const removeFromESCache = <ESItem>(
 export const replaceInESCache = <ESItem>(
     itemToCache: ESItem,
     esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
-    sizeOfESItem: (esItem: ESItem) => number,
     getIDStoredItem: (storedItem: ESItem) => string,
     getTimePoint: (item: ESItem) => [number, number],
     isDraftUpdate: boolean,
@@ -204,15 +220,14 @@ export const replaceInESCache = <ESItem>(
 /**
  * Add more messages to a limited cache in case many were removed
  */
-export const refreshESCache = async <ESItem, ESCiphertext, ESSearchParameters>(
+export const refreshESCache = async <ESItem, ESCiphertext>(
     indexKey: CryptoKey,
     userID: string,
     esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
     storeName: string,
     indexName: string,
-    esSearchingHelpers: ESSearchingHelpers<ESItem, ESCiphertext, ESSearchParameters>
+    getTimePoint: (item: ESItem | ESCiphertext) => [number, number]
 ) => {
-    const { getTimePoint } = esSearchingHelpers;
     const { cacheSize, isCacheReady } = esCacheRef.current;
     const isCachePartial = await checkIsCacheLimited(userID, esCacheRef, storeName);
 
@@ -221,13 +236,13 @@ export const refreshESCache = async <ESItem, ESCiphertext, ESSearchParameters>(
     if (cacheSize < ES_MAX_CACHE && isCachePartial && isCacheReady) {
         // The last item is assumed to be the oldest one
         const esTimeBound = getTimePoint(esCacheRef.current.esCache[esCacheRef.current.esCache.length - 1]);
-        await cacheDB<ESItem, ESCiphertext, ESSearchParameters>(
+        await cacheDB<ESItem, ESCiphertext>(
             indexKey,
             userID,
             esCacheRef,
             storeName,
             indexName,
-            esSearchingHelpers,
+            getTimePoint,
             esTimeBound
         );
     }

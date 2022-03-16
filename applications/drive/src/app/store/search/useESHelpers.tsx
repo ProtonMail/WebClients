@@ -158,30 +158,6 @@ export const useESHelpers = ({
         };
     };
 
-    const sizeOfESItem = (esItem: ESLink) => {
-        let bytes = 0;
-        let key: keyof typeof esItem;
-
-        for (key in esItem) {
-            if (Object.prototype.hasOwnProperty.call(esItem, key)) {
-                const value = esItem[key];
-                if (!value) {
-                    continue;
-                }
-
-                bytes += key.length * 2;
-
-                if (typeof value === 'string') {
-                    bytes += value.length * 2;
-                } else if (typeof value === 'number') {
-                    bytes += 8;
-                }
-            }
-        }
-
-        return bytes;
-    };
-
     const getTimePoint = (item: ESLink | StoredCiphertextDrive): [number, number] => {
         return [item.createTime, item.order];
     };
@@ -193,7 +169,6 @@ export const useESHelpers = ({
         queryItemsMetadata,
         applySearch,
         getTimePoint,
-        sizeOfESItem,
         getTotalItems: (() => {
             let total: number;
             return async () => {
