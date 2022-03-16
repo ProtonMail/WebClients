@@ -29,7 +29,8 @@ export default function useDownload() {
 
     const getChildren = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<DecryptedLink[]> => {
         await loadChildren(abortSignal, shareId, linkId);
-        return getCachedChildren(abortSignal, shareId, linkId)[0];
+        const { links } = getCachedChildren(abortSignal, shareId, linkId);
+        return links;
     };
 
     const getBlocks = async (

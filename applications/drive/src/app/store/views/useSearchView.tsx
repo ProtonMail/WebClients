@@ -61,7 +61,7 @@ export default function useSearchView(shareId: string, query: string) {
 
     const abortSignal = useAbortSignal([shareId, query]);
     const linksListing = useLinksListing();
-    const [links, isDecrypting] = linksListing.getCachedLinks(abortSignal, query, shareId, sortedSearchResultIds);
+    const { links, isDecrypting } = linksListing.getCachedLinks(abortSignal, query, shareId, sortedSearchResultIds);
     const cachedLinks = useMemoArrayNoMatterTheOrder(links);
 
     // For now we don't show trashed items in search results. We index them

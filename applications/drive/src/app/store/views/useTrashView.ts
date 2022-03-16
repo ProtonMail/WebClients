@@ -22,7 +22,7 @@ export default function useTrashView(shareId: string) {
     const [isLoading, withLoading] = useLoading(true);
 
     const linksListing = useLinksListing();
-    const [trashedLinks, isDecrypting] = linksListing.getCachedTrashed(abortSignal, shareId);
+    const { links: trashedLinks, isDecrypting } = linksListing.getCachedTrashed(abortSignal, shareId);
     const cachedTrashedLinks = useMemoArrayNoMatterTheOrder(trashedLinks);
 
     const { layout } = useUserSettings();
