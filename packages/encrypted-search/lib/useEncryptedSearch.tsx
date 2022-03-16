@@ -547,9 +547,8 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
             await requestPersistence();
         }
 
-        const totalMessages = getESTotal(userID);
-        const mailboxEmpty = totalMessages === 0;
-        recordProgress(await getNumItemsDB(userID, storeName), totalMessages);
+        const totalItems = getESTotal(userID);
+        recordProgress(await getNumItemsDB(userID, storeName), totalItems);
 
         setESStatus((esStatus) => {
             return {
@@ -558,14 +557,14 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
             };
         });
 
-        let success = mailboxEmpty;
+        let success = totalItems === 0;
         while (!success) {
             const currentMessages = await getNumItemsDB(userID, storeName);
-            recordProgress(currentMessages, totalMessages);
+            recordProgress(currentMessages, totalItems);
             const recordProgressLocal = (progress: number) => {
                 const newProgress = currentMessages + progress;
                 setESCurrent(userID, newProgress);
-                recordProgress(newProgress, totalMessages);
+                recordProgress(newProgress, totalItems);
             };
 
             success = await buildDB<ESItemMetadata, ESItem, ESCiphertext>(
@@ -589,10 +588,13 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
                 return dbCorruptError();
             }
 
-            await wait(2 * SECOND);
+            // In case the procedure failed, wait some time before re-starting
+            if (!success) {
+                await wait(2 * SECOND);
+            }
         }
 
-        await sendIndexingMetrics(api, userID);
+        void sendIndexingMetrics(api, userID);
 
         // Finalise IndexedDB building by catching up with new items
         setESStatus((esStatus) => {

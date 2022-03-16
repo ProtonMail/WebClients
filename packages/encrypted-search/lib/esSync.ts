@@ -14,8 +14,8 @@ import { encryptToDB } from './esBuild';
  */
 export const checkIsDBLimited = async (userID: string, storeName: string, getTotalItems: () => Promise<number>) => {
     const count = await getNumItemsDB(userID, storeName);
-    const totalMessages = await getTotalItems();
-    return count < totalMessages;
+    const totalItems = await getTotalItems();
+    return count < totalItems;
 };
 
 /**
