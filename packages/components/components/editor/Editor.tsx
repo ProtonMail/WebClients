@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { BeforePasteEvent } from 'roosterjs-editor-types';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
@@ -7,7 +6,7 @@ import { classnames } from '../../helpers';
 
 import EditorToolbar from './toolbar/Toolbar';
 import { EditorActions, EditorMetadata } from './interface';
-import { EDITOR_DEFAULT_METADATA, EMBEDDABLE_TYPES } from './constants';
+import { EDITOR_DEFAULT_METADATA } from './constants';
 import useToolbarConfig from './hooks/useToolbarConfig';
 import useModalDefaultFont from './hooks/useModalDefaultFont';
 import useModalImage from './hooks/useModalImage';
@@ -69,26 +68,13 @@ const Editor = ({
         onAddAttachments,
     });
 
-    const handleBeforePaste = useCallback(
-        (event: BeforePasteEvent) => {
-            // Skip if no image support
-            if (!metadata.supportImages) {
-                return;
-            }
-
-            const { image } = event.clipboardData;
-            if (image) {
-                // we replace pasted content by empty string
-                event.fragment.textContent = '';
-                // Check if image type is supported
-                const isSupportedFileType = EMBEDDABLE_TYPES.includes(image.type);
-                if (isSupportedFileType && onAddAttachments) {
-                    // Then show modal
-                    onAddAttachments([event.clipboardData.image]);
-                }
+    const onPasteImage = useCallback(
+        (imageFile: File) => {
+            if (metadata.supportImages) {
+                onAddAttachments?.([imageFile]);
             }
         },
-        [onAddAttachments]
+        [onAddAttachments, metadata.supportImages]
     );
 
     return (
@@ -120,10 +106,10 @@ const Editor = ({
                         showBlockquoteToggle={showBlockquoteToggle}
                         onBlockquoteToggleClick={onBlockquoteToggleClick}
                         setToolbarConfig={setToolbarConfig}
-                        onBeforePaste={handleBeforePaste}
                         showModalLink={showModalLink}
                         onFocus={onFocus}
                         mailSettings={mailSettings}
+                        onPasteImage={onPasteImage}
                     />
                 )}
             </div>
