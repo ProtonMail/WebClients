@@ -62,7 +62,7 @@ export default class ArchiveGenerator {
                 promises.push(
                     this.writer.write({
                         directory: true,
-                        name,
+                        name: name.slice(1), // Windows doesn't like leading root slash.
                         // lastModified: new Date(),
                     })
                 );
@@ -70,7 +70,7 @@ export default class ArchiveGenerator {
                 const name = this.adjustFilePath(link.parentPath, link.name);
                 promises.push(
                     this.writer.write({
-                        name,
+                        name: name.slice(1), // Windows doesn't like leading root slash.
                         // lastModified: new Date(),
                         stream: () => link.stream,
                     })
