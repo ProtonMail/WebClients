@@ -1673,11 +1673,12 @@ const InteractiveCalendarView = ({
                                               delete tmpData.rest['recurrence-id'];
                                           }
 
+                                          delete tmpData.uid;
                                           tmpData.attendees.forEach((attendee) => {
                                               attendee.partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
+                                              // attendee tokens should not be duplicated as the UID has changed
+                                              delete attendee.token;
                                           });
-
-                                          delete tmpData.uid;
 
                                           handleCreateEvent({
                                               attendees: undefined,
