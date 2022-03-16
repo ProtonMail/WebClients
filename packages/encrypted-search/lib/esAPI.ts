@@ -2,7 +2,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces/Api';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getIsOfflineError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { addESTimestamp, esSentryReport } from './esUtils';
+import { addESTimestamp, deferSending, esSentryReport } from './esUtils';
 import { ESIndexMetrics, ESSearchMetrics } from './interfaces';
 
 // Error message codes that trigger a retry
@@ -66,6 +66,7 @@ export const apiHelper = async <T>(
  * Send metrics about encrypted search
  */
 export const sendESMetrics = async (api: Api, Title: string, Data: ESSearchMetrics | ESIndexMetrics) => {
+    await deferSending();
     return apiHelper<{ Code: number }>(
         api,
         undefined,

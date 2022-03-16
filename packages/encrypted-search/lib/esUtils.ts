@@ -314,3 +314,10 @@ export const requestPersistence = async () => {
         await window.navigator.storage.persist();
     }
 };
+
+/**
+ * Delay an operation by a random number of seconds between 1 second and 3 minutes, expressed in milliseconds
+ */
+export const deferSending = async () => {
+    await wait(1000 * Math.floor(180 * Math.random() + 1));
+};
