@@ -97,7 +97,10 @@ describe('useLinksListing', () => {
             { Page: 0, Sort: 'CreateTime', Desc: 0 },
             { Page: 1, Sort: 'CreateTime', Desc: 0 },
         ]);
-        expect(hook.current.getCachedChildren(abortSignal, 'shareId', 'parentLinkId')).toMatchObject([LINKS, false]);
+        expect(hook.current.getCachedChildren(abortSignal, 'shareId', 'parentLinkId')).toMatchObject({
+            links: LINKS,
+            isDecrypting: false,
+        });
         // Check decrypt calls - all links were decrypted.
         expect(mockDecrypt.mock.calls.map(([, , { linkId }]) => linkId)).toMatchObject(
             LINKS.map(({ linkId }) => linkId)
@@ -122,7 +125,10 @@ describe('useLinksListing', () => {
             { Page: 0, Sort: 'CreateTime', Desc: 0 },
             { Page: 0, Sort: 'CreateTime', Desc: 1 },
         ]);
-        expect(hook.current.getCachedChildren(abortSignal, 'shareId', 'parentLinkId')).toMatchObject([links, false]);
+        expect(hook.current.getCachedChildren(abortSignal, 'shareId', 'parentLinkId')).toMatchObject({
+            links,
+            isDecrypting: false,
+        });
         // Check decrypt calls - the second call returned the same links, no need to decrypt them twice.
         expect(mockDecrypt.mock.calls.map(([, , { linkId }]) => linkId)).toMatchObject(
             links.map(({ linkId }) => linkId)
@@ -138,7 +144,10 @@ describe('useLinksListing', () => {
         });
         // Check fetch calls - first call fetched all, no need to call the second.
         expect(mockRequst).toBeCalledTimes(1);
-        expect(hook.current.getCachedChildren(abortSignal, 'shareId', 'parentLinkId')).toMatchObject([links, false]);
+        expect(hook.current.getCachedChildren(abortSignal, 'shareId', 'parentLinkId')).toMatchObject({
+            links,
+            isDecrypting: false,
+        });
     });
 
     it('loads the whole folder', async () => {
