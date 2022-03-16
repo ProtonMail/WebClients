@@ -75,7 +75,7 @@ const MessageBody = ({
     const loadingMode = !messageLoaded;
     const contentMode = !encryptedMode && !sourceMode && bodyLoaded;
     const contentModeShow = contentMode && isIframeContentSet && !hasDarkStylesLoading;
-    const placeholderMode = loadingMode || decryptingMode || !contentModeShow;
+    const placeholderMode = (loadingMode || decryptingMode || !contentModeShow) && !sourceMode;
     const isBlockquote = blockquote !== '';
     const showButton = !forceBlockquote && isBlockquote;
     const showBlockquote = forceBlockquote || originalMessageMode || hasDarkStylesLoading;
