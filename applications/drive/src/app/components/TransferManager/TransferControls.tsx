@@ -53,7 +53,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
             onClick: () => transferControls.cancel(transfer, type),
             title: isFinished ? removeText : cancelText,
             disabled: isFinalizing,
-            iconName: isFinished ? 'brush' : 'xmark',
+            iconName: isFinished ? 'broom' : 'xmark',
         });
 
         return buttons;
