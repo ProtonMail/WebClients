@@ -40,7 +40,7 @@ import getRecurringSaveType from './getRecurringSaveType';
 import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
 import getSaveRecurringEventActions from './getSaveRecurringEventActions';
 import getSaveSingleEventActions from './getSaveSingleEventActions';
-import { getDuplicateAttendeesSend, getUpdatedSaveInviteActions } from './inviteActions';
+import { getEquivalentAttendeesSend, getUpdatedSaveInviteActions } from './inviteActions';
 import { getOriginalEvent } from './recurringHelper';
 import { withVeventSequence } from './sequence';
 
@@ -53,7 +53,7 @@ const getSaveSingleEventActionsHelper = async ({
     reencryptSharedEvent,
     onSendPrefsErrors,
     inviteActions,
-    onDuplicateAttendees,
+    onEquivalentAttendees,
     handleSyncActions,
 }: {
     newEditEventData: EventNewData;
@@ -71,7 +71,7 @@ const getSaveSingleEventActionsHelper = async ({
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
     onSaveConfirmation: OnSaveConfirmationCb;
-    onDuplicateAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
+    onEquivalentAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     inviteActions: InviteActions;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }) => {
@@ -103,7 +103,7 @@ const getSaveSingleEventActionsHelper = async ({
         sendIcs,
         reencryptSharedEvent,
         onSendPrefsErrors,
-        onDuplicateAttendees,
+        onEquivalentAttendees,
         handleSyncActions,
     });
     const successText = getSingleEventText(oldEditEventData, newEditEventData, saveInviteActions);
@@ -126,7 +126,7 @@ interface Arguments {
     inviteActions: InviteActions;
     isDuplicatingEvent: boolean;
     onSaveConfirmation: OnSaveConfirmationCb;
-    onDuplicateAttendees: (attendees: string[][]) => Promise<void>;
+    onEquivalentAttendees: (attendees: string[][]) => Promise<void>;
     api: Api;
     getEventDecrypted: GetDecryptedEventCb;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
@@ -154,7 +154,7 @@ const getSaveEventActions = async ({
     inviteActions,
     isDuplicatingEvent,
     onSaveConfirmation,
-    onDuplicateAttendees,
+    onEquivalentAttendees,
     api,
     getEventDecrypted,
     getCalendarBootstrap,
@@ -206,10 +206,10 @@ const getSaveEventActions = async ({
     }
     // Handle duplicate attendees if any
     const newVeventComponent = await withPmAttendees(modelVeventComponent, getCanonicalEmailsMap);
-    const handleDuplicateAttendees = async (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
-        const duplicateAttendees = getDuplicateAttendeesSend(vevent, inviteActions);
-        if (duplicateAttendees) {
-            await onDuplicateAttendees(duplicateAttendees);
+    const handleEquivalentAttendees = async (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
+        const equivalentAttendees = getEquivalentAttendeesSend(vevent, inviteActions);
+        if (equivalentAttendees) {
+            await onEquivalentAttendees(equivalentAttendees);
         }
     };
 
@@ -248,7 +248,7 @@ const getSaveEventActions = async ({
             onSaveConfirmation,
             sendIcs,
             reencryptSharedEvent,
-            onDuplicateAttendees: handleDuplicateAttendees,
+            onEquivalentAttendees: handleEquivalentAttendees,
             onSendPrefsErrors,
             handleSyncActions,
         });
@@ -302,7 +302,7 @@ const getSaveEventActions = async ({
             sendIcs,
             reencryptSharedEvent,
             inviteActions: inviteActionsWithSelfAddress,
-            onDuplicateAttendees: handleDuplicateAttendees,
+            onEquivalentAttendees: handleEquivalentAttendees,
             onSendPrefsErrors,
             handleSyncActions,
         });
@@ -321,7 +321,7 @@ const getSaveEventActions = async ({
             sendIcs,
             reencryptSharedEvent,
             inviteActions: inviteActionsWithSelfAddress,
-            onDuplicateAttendees: handleDuplicateAttendees,
+            onEquivalentAttendees: handleEquivalentAttendees,
             onSendPrefsErrors,
             handleSyncActions,
         });
@@ -364,7 +364,7 @@ const getSaveEventActions = async ({
     const isSendInviteType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(
         updatedSaveInviteActions.type
     );
-    await handleDuplicateAttendees(newEditEventData.veventComponent, updatedSaveInviteActions);
+    await handleEquivalentAttendees(newEditEventData.veventComponent, updatedSaveInviteActions);
     const hasAttendees = getHasAttendees(newEditEventData.veventComponent);
 
     const { type: saveType, inviteActions: updatedInviteActions } = await getRecurringSaveType({
