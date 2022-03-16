@@ -968,7 +968,7 @@
     },
     "Auto import invitations setting": {
       "Add invitations to calendar and mark as pending": [
-        ""
+        "Ajouter des invitations au calendrier et les marquer comme en attente"
       ]
     },
     "Autoresponse": {
@@ -2319,6 +2319,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        ""
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts... Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pouvez fermer cette boîte de dialogue."
       ],
@@ -4223,9 +4226,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "En partageant les détails complets de l'événement de ce calendrier, vous acceptez d'accorder à Proton l'accès à l'information chiffrée de ce calendrier."
       ],
-      "Cancel trial": [
-        "Annuler l'essai"
-      ],
       "Center": [
         "Centrer"
       ],
@@ -4421,7 +4421,7 @@
         "Entrez votre numéro de téléphone de récupération et nous vous enverrons votre nom d’utilisateur·rice ou votre adresse courriel."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        ""
+        "Les invitations à l'événement et les RSVP seront envoyées dans cette langue."
       ],
       "Expired": [
         "Expiré"
@@ -4615,6 +4615,9 @@
       ],
       "Internet connection restored.": [
         "Connexion Internet rétablie."
+      ],
+      "Invite successfully sent": [
+        "Invitation correctement envoyée"
       ],
       "Invited via email": [
         "Invité par courriel"
@@ -4811,6 +4814,9 @@
       "Other options": [
         "Autres options"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Fichier de récupération obsolète; mettez à jour pour garantir l'accès à vos données"
       ],
@@ -4980,6 +4986,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "La phrase de récupération n'est associée à aucune des clés obsolètes."
       ],
+      "Referral link copied to your clipboard": [
+        "Lien de parrainage copié dans votre presse-papiers"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
       ],
@@ -5006,6 +5015,9 @@
       ],
       "Screenshot(s) attached": [
         "Capture(s) d'écran jointe(s)"
+      ],
+      "See all plans": [
+        "Voir tous les abonnements"
       ],
       "Select a service provider to start": [
         "Sélectionnez un fournisseur de services pour commencer"
@@ -5058,8 +5070,8 @@
       "Storage GB": [
         "Stockage (en Go)"
       ],
-      "Sucessfully sent invites": [
-        "Invitations correctement envoyées"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "L'espace de stockage est partagé entre Mail, Calendar et Drive."
       ],
       "Support for 1 custom email domain": [
         "Prise en charge d'un nom de domaine personnalisé"
@@ -5184,6 +5196,9 @@
       "to continue to ${ toAppName }": [
         "pour continuer vers ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ appName } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Pour déchiffrer et afficher vos courriels et autres données, vous avez besoin d'un fichier de récupération."
       ],
@@ -5258,6 +5273,9 @@
       ],
       "Update recovery phrase": [
         "Mettre à jour la phrase de récupération"
+      ],
+      "Upgrade now": [
+        "Passer à l'offre supérieure maintenant"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Passez à une offre ${ PLAN_NAMES[PLANS.VISIONARY] } ou ${ PLAN_NAMES[PLANS.PROFESSIONAL] } pour commencer."
@@ -5467,7 +5485,7 @@
         "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux courriels. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        ""
+        "Vous devez encore répondre aux invitations pour que l'organisateur voie votre réponse."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Vous allez ${ loseAllData } dans votre compte ${ BRAND_NAME }. Pour le restaurer, vous devrez saisir votre ancien mot de passe."
@@ -5561,6 +5579,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Veuillez contacter l'assistance Mozilla."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Votre essai se termine le ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -6544,7 +6565,7 @@
         "Envoyer une réponse automatique"
       ],
       "Send invitations in": [
-        ""
+        "Envoyer les invitations en"
       ],
       "Show secondary time zone": [
         "Afficher le fuseau horaire secondaire"
@@ -6668,6 +6689,9 @@
       ],
       "VPN connections": [
         "Connexions VPN"
+      ],
+      "Waiting for subscription": [
+        ""
       ],
       "Want to add": [
         "À ajouter"
@@ -8488,7 +8512,7 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
+      "${ appName } ${ planName } Trial": [
         "Essai de ${ appName } ${ planName }"
       ],
       "${ appName } customization": [

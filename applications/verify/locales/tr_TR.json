@@ -930,7 +930,7 @@
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Yeni bir doğrulama kodu almak için ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+        "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
       ],
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
@@ -946,9 +946,6 @@
       ]
     },
     "Label": {
-      "Cancel": [
-        "İptal"
-      ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
@@ -967,9 +964,6 @@
       "Reveal password": [
         "Parolayı göster"
       ],
-      "Submit": [
-        "Gönder"
-      ],
       "Verification code": [
         "Doğrulama kodu"
       ]
@@ -980,6 +974,11 @@
       ],
       "Request an invite": [
         "Bir davet iste"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Parola"
       ]
     },
     "Success": {

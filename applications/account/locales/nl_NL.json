@@ -951,7 +951,7 @@
         "Leeg ICS-bestand"
       ],
       "Invalid event": [
-        "Ongeldige gebeurtenis"
+        "Ongeldige afspraak"
       ],
       "Invalid ICS file": [
         "Ongeldig ICS-bestand"
@@ -963,12 +963,12 @@
         "Niet-ondersteunde agendacomponent"
       ],
       "Unsupported event": [
-        "Niet-ondersteunde gebeurtenis"
+        "Niet-ondersteunde afspraak"
       ]
     },
     "Auto import invitations setting": {
       "Add invitations to calendar and mark as pending": [
-        ""
+        "Voeg uitnodigingen toe aan uw agenda en markeer als wachtend"
       ]
     },
     "Autoresponse": {
@@ -1226,7 +1226,7 @@
         "Meerdere agenda's"
       ],
       "Recurring events": [
-        "Terugkerende gebeurtenissen"
+        "Terugkerende afspraken"
       ],
       "Share Calendar via link": [
         "Agenda delen via link"
@@ -2319,6 +2319,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maanden ${ appName } ${ plusPlanName } verdiend"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
@@ -2649,7 +2652,7 @@
         "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton agenda's"
       ],
       "Missing key packet": [
-        ""
+        "Ontbrekend sleutelpakket"
       ],
       "Name does not match": [
         "Naam komt niet overeen"
@@ -2985,7 +2988,7 @@
         "Informatie over vrije tijd"
       ],
       "Invalid event": [
-        "Ongeldige gebeurtenis"
+        "Ongeldige afspraak"
       ],
       "Journal entry": [
         "Logboek-item"
@@ -3018,7 +3021,7 @@
         "Oorspronkelijke terugkerende afspraak kan niet worden gevonden"
       ],
       "Recurring event has no occurrences": [
-        "Terugkerende gebeurtenis heeft geen voorvallen"
+        "Terugkerende afspraken heeft geen voorvallen"
       ],
       "Recurring rule not supported": [
         "Herhalingsvoorwaarde niet ondersteund"
@@ -3039,7 +3042,7 @@
         "Onbekend"
       ],
       "Unsupported event": [
-        "Niet-ondersteunde gebeurtenis"
+        "Niet-ondersteunde afspraak"
       ]
     },
     "Error message": {
@@ -3086,10 +3089,10 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "Gebeurtenis @ ${ timeString }"
+        "Afspraak @ ${ timeString }"
       ],
       "Event from ${ timeString }, ${ rruleString }": [
-        "Gebeurtenis van ${ timeString }, ${ rruleString }"
+        "Afspraak van ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -3106,7 +3109,7 @@
         "Ongeldige reactie"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "Deze gebeurtenis kon niet aan uw agenda worden toegevoegd. Er werd geen antwoord verstuurd"
+        "Deze afspraak kon niet aan uw agenda worden toegevoegd. Er werd geen antwoord verstuurd"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Deze afspraak kon niet worden bijgewerkt in je agenda. Er werd geen antwoord verstuurd"
@@ -3143,8 +3146,8 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } gebeurtenis geëxporteerd",
-        "${ totalProcessed }/${ totalToProcess } gebeurtenissen geëxporteerd"
+        "${ totalProcessed }/${ totalToProcess } afspraak geëxporteerd",
+        "${ totalProcessed }/${ totalToProcess } afspraken geëxporteerd"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Agenda succesvol geëxporteerd. U kunt nu het ICS-bestand opslaan."
@@ -3159,10 +3162,10 @@
         "Als gevolg van een wachtwoordreset konden sommige van uw evenementen niet worden gedecodeerd en geëxporteerd."
       ],
       "Error decrypting event": [
-        "Fout bij decoderen gebeurtenis"
+        "Fout bij decoderen afspraak"
       ],
       "Learn how to restore encrypted events with old password": [
-        "Leer hoe u versleutelde gebeurtenissen kunt herstellen met uw oude wachtwoord"
+        "Leer hoe u versleutelde afspraken kunt herstellen met uw oude wachtwoord"
       ],
       "Loading events": [
         "Afspraken worden geladen"
@@ -3171,7 +3174,7 @@
         "Geen van de afspraken konden worden geëxporteerd."
       ],
       "Password reset - event cannot be decrypted": [
-        "Wachtwoord opnieuw instellen - gebeurtenis kan niet worden gedecodeerd"
+        "Wachtwoord opnieuw instellen - afspraak kan niet worden gedecodeerd"
       ],
       "Password reset - multiple events cannot be decrypted": [
         "Wachtwoord opnieuw instellen - meerdere afspraken kunnen niet worden gedecodeerd"
@@ -3186,7 +3189,7 @@
         "De internetverbinding werd onderbroken, waardoor het exportproces mislukt. Probeer het opnieuw."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "U kunt een ICS-bestand van de succesvol geëxporteerde gebeurtenissen opslaan."
+        "U kunt een ICS-bestand van de succesvol geëxporteerde afspraken opslaan."
       ]
     },
     "Feature": {
@@ -3853,7 +3856,7 @@
         "Er kan geen contact worden geïmporteerd. Klik voor meer informatie"
       ],
       "No event can be imported. Expand for details.": [
-        "Er kan geen gebeurtenis worden geïmporteerd. Uitvouwen voor details."
+        "Er kan geen afspraak worden geïmporteerd. Uitvouwen voor details."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Een deel van je agendainhoud wordt niet ondersteund en zal niet worden geïmporteerd."
@@ -4223,9 +4226,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Door de volledige agendadetails van deze kalender te delen, gaat u akkoord om Proton toegang te verlenen tot versleutelde informatie van deze agenda."
       ],
-      "Cancel trial": [
-        "Proefversie annuleren"
-      ],
       "Center": [
         "Centreren"
       ],
@@ -4421,7 +4421,7 @@
         "Voer uw herstel-telefoonnummer in en wij sturen u uw gebruikersnaam of e-mailadres."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        ""
+        "Afspraakuitnodigingen en RSVPs zullen worden verstuurd in deze taal."
       ],
       "Expired": [
         "Verlopen"
@@ -4615,6 +4615,9 @@
       ],
       "Internet connection restored.": [
         "Internetverbinding hersteld."
+      ],
+      "Invite successfully sent": [
+        "Uitnodiging succesvol verzonden"
       ],
       "Invited via email": [
         "Uitgenodigd via e-mail"
@@ -4811,6 +4814,9 @@
       "Other options": [
         "Andere opties"
       ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Verouderd herstelbestand; werk het bij om toegang tot uw gegevens te garanderen"
       ],
@@ -4980,6 +4986,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Herstelzin is niet geassocieerd met een verouderde sleutel."
       ],
+      "Referral link copied to your clipboard": [
+        "Doorverwijslink gekopieerd naar het klembord"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
       ],
@@ -5006,6 +5015,9 @@
       ],
       "Screenshot(s) attached": [
         "Schermafbeelding(en) toegevoegd"
+      ],
+      "See all plans": [
+        "Bekijk alle abonnementen"
       ],
       "Select a service provider to start": [
         "Selecteer een dienstverlener om te beginnen"
@@ -5058,8 +5070,8 @@
       "Storage GB": [
         "Opslag GB"
       ],
-      "Sucessfully sent invites": [
-        "Uitnodigingen succesvol verstuurd"
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "Opslagruimte is gedeeld voor Mail, Calendar en Drive."
       ],
       "Support for 1 custom email domain": [
         "Ondersteuning voor 1 aangepast e-mail domein"
@@ -5184,6 +5196,9 @@
       "to continue to ${ toAppName }": [
         "om door te gaan naar ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "Om ${ appName } te blijven gebruiken met premium functies, kies dan uw abonnement en betalingsmethode."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Om uw e-mails en andere gegevens te decoderen en bekijken, heeft u een herstelbestand nodig."
       ],
@@ -5258,6 +5273,9 @@
       ],
       "Update recovery phrase": [
         "Herstelzin bijwerken"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Upgrade naar een ${ PLAN_NAMES[PLANS.VISIONARY] } of ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan om te beginnen."
@@ -5467,7 +5485,7 @@
         "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        ""
+        "U moet nog steeds reageren op uitnodigingen om de host uw reactie te laten zien."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "U zult ${ loseAllData } m.b.t. uw ${ BRAND_NAME } account. Om dit te herstellen moet u uw oude wachtwoord invoeren."
@@ -5561,6 +5579,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -6544,7 +6565,7 @@
         "Automatisch antwoord versturen"
       ],
       "Send invitations in": [
-        ""
+        "Stuur uitnodigingen in het"
       ],
       "Show secondary time zone": [
         "Toon secundaire tijdzone"
@@ -6668,6 +6689,9 @@
       ],
       "VPN connections": [
         "VPN-verbindingen"
+      ],
+      "Waiting for subscription": [
+        "Wachten op abonnement"
       ],
       "Want to add": [
         "Toevoegen"
@@ -7365,7 +7389,7 @@
     },
     "Notification when": {
       "at time of event": [
-        "op tijdstip van gebeurtenis"
+        "op tijdstip van afspraak"
       ],
       "day before": [
         "dag ervoor",
@@ -8421,7 +8445,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Details over gebeurtenissen die niet konden worden geëxporteerd"
+        "Details over afspraken die niet konden worden geëxporteerd"
       ]
     },
     "Tab in domain modal": {
@@ -8488,8 +8512,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        "${ appName } ${ planName } proefversie"
+      "${ appName } ${ planName } Trial": [
+        "${ appName } ${ planName } Proefversie"
       ],
       "${ appName } customization": [
         "${ appName } aanpassingen"
@@ -8915,8 +8939,8 @@
         "Importeren"
       ],
       "Import as simple event?": [
-        "Importeren als eenvoudige gebeurtenis?",
-        "Importeren als eenvoudige gebeurtenissen?"
+        "Importeren als eenvoudige afspraak?",
+        "Importeren als eenvoudige afspraken?"
       ],
       "Import contacts": [
         "Contactpersonen importeren"

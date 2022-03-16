@@ -356,7 +356,7 @@
         "取得驗證碼"
       ],
       "Go to label": [
-        ""
+        "跳至標籤"
       ],
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
@@ -503,7 +503,7 @@
         "恢復資料"
       ],
       "Refer a friend": [
-        ""
+        "介紹朋友"
       ],
       "Refresh status": [
         "重新整理狀態"
@@ -825,10 +825,10 @@
     },
     "Action in trial plan": {
       "No, thanks": [
-        ""
+        "不用了，謝謝"
       ],
       "Try free for 30 days": [
-        ""
+        "免費試用 30 天"
       ]
     },
     "Action to select a title for the bug report modal": {
@@ -959,7 +959,7 @@
     },
     "Auto import invitations setting": {
       "Add invitations to calendar and mark as pending": [
-        ""
+        "將邀請新增到行事曆中並標記為待辦中"
       ]
     },
     "Autoresponse": {
@@ -1188,22 +1188,22 @@
     },
     "Button": {
       "Add link to your email footer": [
-        ""
+        "將連結新增到您的電子郵件註腳"
       ],
       "Continue using ProtonMail.": [
-        ""
+        "繼續使用 ProtonMail。"
       ],
       "Copy": [
-        ""
+        "複製"
       ],
       "Invite": [
-        ""
+        "邀請"
       ],
       "Send": [
-        ""
+        "傳送"
       ],
       "Tweet": [
-        ""
+        "Tweet"
       ]
     },
     "Calendar feature": {
@@ -2303,11 +2303,14 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+        "恭喜！您已賺取上限 ${ rewardsLimit } 個月免費 ${ appName } ${ plusPlanName }"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 這可能需時數分鐘。當過程完成時，您可以關閉此方塊。"
       ],
       "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        ""
+        "每位好友訂閱 ${ mailAppName }，即免費取得最多 3 個月 ${ mailAppName } Plus。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含群組。請複閱這些群組該如何匯入。"
@@ -2316,10 +2319,10 @@
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        ""
+        "追蹤多少人按下您的連結、註冊，並成為付費訂閱者。看著您的免費月份增長。"
       ],
       "Track your referral link activities here.": [
-        ""
+        "在此追蹤您的推介連結活動。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -2629,7 +2632,7 @@
         "請至少將 ${ calendarToFixCount } 個行事曆與現存的 Proton calendar 合併"
       ],
       "Missing key packet": [
-        ""
+        "缺少金鑰封包"
       ],
       "Name does not match": [
         "名稱不相符"
@@ -3826,7 +3829,7 @@
     },
     "Info": {
       "${ appName } ${ planName } credits earned": [
-        ""
+        "${ appName } ${ planName } 儲值已賺取"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的權限以 ${ enableDesktopNotifications }。"
@@ -3847,10 +3850,10 @@
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
       "${ emailAddress } is a ${ appName } address": [
-        ""
+        "${ emailAddress } 是 ${ appName } 電子郵件地址"
       ],
       "${ emailAddress } is invalid": [
-        ""
+        "${ emailAddress } 無效"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } 免費版"
@@ -3880,7 +3883,7 @@
         "${ numContacts } 位聯絡人"
       ],
       "${ planName } plan": [
-        ""
+        "${ planName } 方案"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
@@ -3889,7 +3892,7 @@
         "在 Gmail 中找到 ${ providerFoldersNumLocalized } 個標籤"
       ],
       "${ rewards } of ${ rewardsLimit } months": [
-        ""
+        "${ rewards } 個月，最多 ${ rewardsLimit } 個月"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "改用${ annualBilling }，您的訂閱即可${ save20 }"
@@ -3922,7 +3925,7 @@
         "${ vpnAppName } 免費版"
       ],
       "(${ memberCount } member)": [
-        ""
+        "(${ memberCount } 位成員)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(篩選須符合下列「全部」條件)"
@@ -3943,25 +3946,25 @@
         "+${ organization.BonusVPN } 個 ProtonVPN 連線（讓您可以將更多裝置連上 VPN）"
       ],
       "1. Invite friends to Proton": [
-        ""
+        "一、邀請好友到 Proton"
       ],
       "2. They try ${ appName } ${ planName }": [
-        ""
+        "二、讓他們試試看 ${ appName } ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用 20% 折扣"
       ],
       "3. You earn credits": [
-        ""
+        "三、您賺取儲值"
       ],
       "30 days money-back guarantee.": [
         "30 天退款保證"
       ],
       "5 email addresses": [
-        ""
+        "5 個電子郵件地址"
       ],
       "5 GB storage": [
-        ""
+        "5 GB 儲存空間"
       ],
       "A free and uncensored Internet should be available to all.": [
         "每一個人都該可使用免費而不受審查的網際網路。"
@@ -4167,9 +4170,6 @@
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "當共享此行事曆的完整事件詳情時，您同意授予 Proton 存取此行事曆中的加密資訊。"
       ],
-      "Cancel trial": [
-        ""
-      ],
       "Center": [
         "置中"
       ],
@@ -4195,10 +4195,10 @@
         "是否仍要繼續?"
       ],
       "Continue with ${ planName }": [
-        ""
+        "繼續使用 ${ planName }"
       ],
       "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        ""
+        "立刻繼續使用 ${ planName }，以避免在結束試用時存取權被停用。"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "建立 ${ calendarsToBeCreated } 個新增行事曆"
@@ -4306,7 +4306,7 @@
         "每一額外連線可指派給您的組織中的使用者。"
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
-        ""
+        "已賺取 ${ rewards } 個月，最多 ${ rewardsLimit } 個月 ${ appName } ${ planName }。"
       ],
       "Edit label": [
         "編輯標籤"
@@ -4363,7 +4363,7 @@
         "請輸入您的備援電話號碼，我們將向您發送您的使用者名稱或電子郵件地址。"
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        ""
+        "活動邀請與回覆函將會以此設定語言寄送。"
       ],
       "Expired": [
         "已過期"
@@ -4557,8 +4557,11 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
+      "Invite successfully sent": [
+        "邀請已成功傳送"
+      ],
       "Invited via email": [
-        ""
+        "透過 email 邀請"
       ],
       "It appears some of your data is encrypted and locked.": [
         "您的某些資料似乎已被加密和鎖定。"
@@ -4567,13 +4570,13 @@
         "有件至關重要的事"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        ""
+        "我在用 ${ appName }，覺得還蠻不錯的。它是一個安全電子郵件服務，可以保障到您的隱私。用這條連結註冊，還有 1 個月免費喔：${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選取，我們就會處理餘下一切。"
       ],
       "Just send them your personal referral link.": [
-        ""
+        "只需將您的個人推介連結傳送給他們即可。"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "請在您的 DNS 一直保留這些記錄，直到您不欲再使用 DKIM 為止。"
@@ -4636,7 +4639,7 @@
         "Mail.ru 讀取您的個人資料以供給廣告商、俄國政府機構及其他第三方。為更好保障隱私，請建立一個安全的電子郵件地址。"
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        ""
+        "確定您記住密碼以登入與解密電子郵件。${ boldAlert } 我們建議您先新增 ${ recoveryLink }。"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。又或者，${ _switchButton }。"
@@ -4681,7 +4684,7 @@
         "聯絡人沒有加密金鑰"
       ],
       "No credit card required": [
-        ""
+        "無需信用卡"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "沒有設定任何資料還原方法，您有可能會無法存取您的資料"
@@ -4750,7 +4753,10 @@
         "您的組織中還有其他系統管理員，您有責任告知他們新密碼。"
       ],
       "Other options": [
-        ""
+        "其他選項"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "帳戶救援檔案已過時，更新以確保您可以存取您的資料"
@@ -4765,10 +4771,10 @@
         "P2P"
       ],
       "Paid for a 12 months plan": [
-        ""
+        "以12個月方案付費"
       ],
       "Paid for a monthly plan": [
-        ""
+        "以每月方案付費"
       ],
       "Payment can take a few minutes to fully verify.": [
         "付款或需時數分鐘才驗證完成。"
@@ -4846,13 +4852,13 @@
         "預覽"
       ],
       "Priority support": [
-        ""
+        "優先支援"
       ],
       "Proton Calendar": [
-        ""
+        "Proton 行事曆"
       ],
       "Proton can't help you recover any lost passwords.": [
-        ""
+        "Proton 無法協助您復原任何遺失的密碼。"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton 暫停了一項匯入，因為與您另一個電子郵件提供者的連線已中斷。請重新連線。"
@@ -4885,7 +4891,7 @@
         "Secure Core 功能需要 ProtonVPN Plus 或 Visionary。"
       ],
       "Public link invite": [
-        ""
+        "公開的連結邀請"
       ],
       "purchase additional storage": [
         "購買額外的儲存空間"
@@ -4903,7 +4909,7 @@
         "帳戶救援金鑰已被作廢"
       ],
       "recovery method": [
-        ""
+        "備援方法"
       ],
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
@@ -4919,6 +4925,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "復原短語並未關聯到任何過期的金鑰。"
+      ],
+      "Referral link copied to your clipboard": [
+        "推介連結已複製到您的剪貼簿"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
@@ -4947,6 +4956,9 @@
       "Screenshot(s) attached": [
         "已附加的螢幕截圖"
       ],
+      "See all plans": [
+        "檢視所有方案"
+      ],
       "Select a service provider to start": [
         "選取您的服務提供者以開始"
       ],
@@ -4954,7 +4966,7 @@
         "選取哪一個行事曆要匯入。我們將建立對應匯入行事曆的新行事曆，直到20個為限。"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
+        "以 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電子郵件送出。"
       ],
       "Server is currently down": [
         "伺服器目前離線中"
@@ -4975,10 +4987,10 @@
         "顯示原始郵件"
       ],
       "Signed up": [
-        ""
+        "註冊"
       ],
       "Signed up via your link": [
-        ""
+        "透過您的連結註冊"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支持，您的帳號已啟用額外的功能。"
@@ -4990,7 +5002,7 @@
         "SPF 是用來指定誰獲允許代表網域寄送電子郵件，因此我們強烈建議在您的 SPF 記錄中包含 ProtonMail。請在您的 DNS 中新增以下 TXT 記錄。這通常可在您的網域名稱註冊機構的控制台完成。"
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "最少500 MB，並持續解鎖更多儲存空間。電子郵件、行事曆、雲端硬碟共用這些儲存空間。"
       ],
       "Starter VPN service with P2P support.": [
         "初階 VPN 服務，搭配 P2P 支援。"
@@ -4998,8 +5010,8 @@
       "Storage GB": [
         "儲存空間 GB"
       ],
-      "Sucessfully sent invites": [
-        ""
+      "Storage space is shared across Mail, Calendar, and Drive.": [
+        "儲存空間在郵件、行事曆與雲端硬碟間共享。"
       ],
       "Support for 1 custom email domain": [
         "支援 1 個自訂電子郵件網域"
@@ -5047,7 +5059,7 @@
         "這些組態設定檔讓您選擇在使用第三方 VPN 應用程式或在路由器上設立 VPN 連線時，您要連線到哪一個 ProtonVPN 伺服器。"
       ],
       "This 30-day free trial is not available any other way.": [
-        ""
+        "此 30 天免費試用算是友情份上，千金不換喔。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能有違政策，因此已被暫停使用。"
@@ -5124,6 +5136,9 @@
       "to continue to ${ toAppName }": [
         "繼續使用 ${ toAppName }"
       ],
+      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ appName }，請選擇您的訂閱與付款選項。"
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "為解密您的郵件與其他資料，需要帳戶救援檔案"
       ],
@@ -5185,10 +5200,10 @@
         "除非您登出您的帳號或更改您的密碼，您的工作階段將保持使用。工作階段閒置 60 天後逾期。"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "無限的資料夾、標籤與過濾條件"
       ],
       "Unlimited messages": [
-        ""
+        "無限制的郵件"
       ],
       "Unsupported file": [
         "不支援的檔案"
@@ -5198,6 +5213,9 @@
       ],
       "Update recovery phrase": [
         "更新還原短語"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "升級至 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 方案以開始使用。"
@@ -5209,7 +5227,7 @@
         "升級至付費方案以透過 ProtonMail Bridge 解鎖 IMAP/SMTP 支援。"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "現在就升級，以免錯失 ${ appName } ${ planName } 福利。"
       ],
       "Upload picture": [
         "上載圖片"
@@ -5227,7 +5245,7 @@
         "若非以應用程式連接 ProtonVPN 伺服器，請使用下列認證。範例用處包括：macOS 上的 Tunnelblick、GNU/Linux 上的 OpenVPN。"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "使用自訂的電子郵件地址，像是：you@yourname.com"
       ],
       "Users": [
         "使用者"
@@ -5302,7 +5320,7 @@
         "啟用通知後，如果您的 ProtonMail 帳號中有新郵件，我們將向您的備援/通知電子郵件地址傳送提示。"
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
-        ""
+        "當他們訂閱付費方案時，您的帳號將獲得 1 至 3 個月 ${ appName } ${ planName } 儲值。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "當您的訂閱續期時，我們會先在可用的餘額中扣除，才會以上面的付款方法扣款。"
@@ -5365,7 +5383,7 @@
         "您可使用以下認證以第三方、開放原始碼的 VPN 應用程式 (諸如 macOS 上的 Tunnelblick 或 GNU/Linux 上的 OpenVPN) 連線到 ProtonVPN 伺服器。"
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        ""
+        "您在未來 24 小時內不得傳送超過 ${ emailSendLimitNumber } 個電子郵件邀請"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "您不能使用 OpenVPN / IKEv2 認證登入 ProtonVPN 應用程式或 ProtonVPN 儀表板。${ learnMore }"
@@ -5407,7 +5425,7 @@
         "您的儲存空間容量已達到 100%。您不能傳送或接收新的電子郵件。${ freeUpMessage }${ upgradeLink }"
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        ""
+        "您仍需回覆邀請以便主辦者看見您的回覆。"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "您將會 ${ loseAllData } 在您的 ${ BRAND_NAME } 帳號。要復原，您將需要輸入您的舊密碼。"
@@ -5461,7 +5479,7 @@
         "您的電子郵件只會用於此一次驗證。"
       ],
       "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
+        "您的免費 ${ appName } ${ planName } 試用期將於 ${ formattedTrialExpirationDate } 結束。"
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "您從匯入 ${ delayedImport.Account } 的操作被暫時推遲。"
@@ -5501,6 +5519,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂閱是由 Mozilla 管理。請聯絡 Mozilla 支援。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的試用期結束於 ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -5514,7 +5535,7 @@
         "金鑰 ${ fingerprint } 已上傳"
       ],
       "Track your referral link activities here": [
-        ""
+        "在此追蹤您的推介連結活動"
       ]
     },
     "Info - folder colouring feature": {
@@ -5735,7 +5756,7 @@
         "前往垃圾桶"
       ],
       "Insert link": [
-        ""
+        "插入連結"
       ],
       "Jump to first": [
         "跳到第一個"
@@ -5905,10 +5926,10 @@
         " 且 ${ l }"
       ],
       "${ monthsRewarded } month credited": [
-        ""
+        "${ monthsRewarded } 個月已儲值"
       ],
       "${ monthsRewarded } month pending": [
-        ""
+        "${ monthsRewarded } 個月籌措中"
       ],
       "${ n } VPN connection available": [
         "${ n } 個 VPN 連線可用"
@@ -5932,7 +5953,7 @@
         "動作"
       ],
       "Activity": [
-        ""
+        "啟用"
       ],
       "Address": [
         "電子郵件地址"
@@ -6100,7 +6121,7 @@
         "每日電子郵件通知"
       ],
       "Date": [
-        ""
+        "日期"
       ],
       "Date format": [
         "日期格式"
@@ -6265,7 +6286,7 @@
         "時間間隔"
       ],
       "Invite via email": [
-        ""
+        "透過 email 邀請"
       ],
       "Keep me signed in": [
         "保持登入"
@@ -6478,7 +6499,7 @@
         "發送自動回覆"
       ],
       "Send invitations in": [
-        ""
+        "送出邀請"
       ],
       "Show secondary time zone": [
         "顯示次要時區"
@@ -6603,6 +6624,9 @@
       "VPN connections": [
         "VPN 連線"
       ],
+      "Waiting for subscription": [
+        "正等候訂閱"
+      ],
       "Want to add": [
         "新增類型"
       ],
@@ -6649,7 +6673,7 @@
         "您的密碼（管理員）"
       ],
       "Your referral link": [
-        ""
+        "您的推薦連結"
       ],
       "Your reward": [
         "你的報酬"
@@ -6857,7 +6881,7 @@
         "條款"
       ],
       "Terms and conditions": [
-        ""
+        "條款及細則"
       ],
       "Upgrade": [
         "升級"
@@ -6929,7 +6953,7 @@
         "聯絡人群組"
       ],
       "Custom domains": [
-        ""
+        "自訂網域"
       ],
       "Custom filters": [
         "自訂篩選器"
@@ -7049,7 +7073,7 @@
         "升級至任何付費方案以使用自訂網域或解鎖進階功能"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "您的免費試用已結束。很快就會停用對您帳號的存取權。${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7692,7 +7716,7 @@
         "請描述問題並附上相關的錯誤訊息 (如有的話)"
       ],
       "Please insert link first": [
-        ""
+        "請先插入連結"
       ],
       "Postal code": [
         "郵遞區號"
@@ -7791,7 +7815,7 @@
         "內置廣告封鎖程式 (NetShield)"
       ],
       "Custom domains": [
-        ""
+        "自訂網域"
       ],
       "Early access to new products": [
         "搶鮮體驗新產品"
@@ -8072,10 +8096,10 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "免費取得最多18個月的 ${ appName } ${ planName }"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "邀請朋友並賺取獎勵！"
       ],
       "No more missed appointments": [
         "無其他遺漏的預定"
@@ -8145,7 +8169,7 @@
     },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "隱私為先的郵件與行事曆解決方案，適合您的日常通訊需要。"
       ]
     },
     "Success": {
@@ -8409,8 +8433,8 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } trial": [
-        ""
+      "${ appName } ${ planName } Trial": [
+        "${ appName } ${ planName } 試用"
       ],
       "${ appName } customization": [
         "${ appName } 自訂化"
@@ -8815,13 +8839,13 @@
         "取得 ProtonVPN Plus 以存取所有伺服器"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "免費取得最多18個月的 ${ appName } ${ planName }"
       ],
       "Gift code": [
         "禮品代碼"
       ],
       "How does it work?": [
-        ""
+        "那是如何運作的？"
       ],
       "Human verification": [
         "真人驗證"
@@ -8995,10 +9019,10 @@
         "帳戶救援檔案"
       ],
       "Refer a friend": [
-        ""
+        "介紹朋友"
       ],
       "Referral tracker": [
-        ""
+        "推介追蹤"
       ],
       "Remove calendar": [
         "移除日曆"
@@ -9022,7 +9046,7 @@
         "恢復系統管理員權限"
       ],
       "Secure email based in Switzerland": [
-        ""
+        "總部設於瑞士的安全電子郵件"
       ],
       "Security": [
         "安全性"
@@ -9142,7 +9166,7 @@
         "總計 (每月)"
       ],
       "Try the best of ProtonMail for free": [
-        ""
+        "免費試用 ProtonMail 的至高至好"
       ],
       "Two-factor authentication": [
         "兩步驟驗證"
@@ -9178,7 +9202,7 @@
         "最近更新"
       ],
       "Your account’s usage": [
-        ""
+        "您帳號的使用情況"
       ],
       "Your calendar link": [
         "您的行事曆連結"
@@ -9187,7 +9211,7 @@
         "您目前的方案"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "您的免費使用將要結束，將於 ${ formattedEndDate } 結束"
       ],
       "Your plan": [
         "您的方案"
@@ -9196,7 +9220,7 @@
         "你的復原狀態"
       ],
       "You’ve been invited to try ${ mailAppName }": [
-        ""
+        "您已獲邀試用 ${ mailAppName }"
       ],
       "ZIP / postal code": [
         "郵編 / 郵政代碼"
@@ -9361,7 +9385,7 @@
         "設定您的收件匣的預設版面配置。"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        ""
+        "在您傳送的電子郵件中設定以下註腳：${ signature }當中的連結指向您的推介連結。註腳將置於您的簽名之下。您可隨時在設定中個人化您的簽名。"
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "此金鑰產生的簽章被視作無效，不能用於加密"
@@ -9694,7 +9718,7 @@
         "請注意：選取此付款方法時，您的帳號無法立即升級。付款一俟結算完成，我們就會升級您的帳號。"
       ],
       "Please provide at least one recipient": [
-        ""
+        "請輸入最少一位收件者"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 將會合併所有相同名稱的資料夾。為了避免這種狀況，請在匯入前變更名稱。"
@@ -9730,7 +9754,7 @@
         "您在清單中將再也看不見此匯入記錄。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "您的免費試用將於 ${ textDate } 結束。${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "您的帳戶救援檔案已過時，若您再次重置您的帳戶，該復原檔案將無法還原新的資料。"

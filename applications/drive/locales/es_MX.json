@@ -3256,6 +3256,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Actualmente está conectado como ${ user.Name } (${ user.Email }) y tiene acceso restringido."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Actualmente inició sesión como ${ user.Name } (${ user.Email })."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "También puede fusionar calendarios importados con calendarios de Proton existentes."
       ],
@@ -4347,9 +4350,6 @@
       "Filter groups": [
         "Filtrar grupos"
       ],
-      "Gift code": [
-        "Código de regalo"
-      ],
       "Image URL": [
         "URL de la imagen"
       ],
@@ -4367,6 +4367,9 @@
       ],
       "OS version": [
         "Versión del sistema operativo"
+      ],
+      "Password": [
+        "Contraseña"
       ],
       "Please describe the problem and include any error messages": [
         "Describa el problema e incluya cualquier mensaje de error"
@@ -4780,9 +4783,6 @@
       "Amount due": [
         "Monto adeudado"
       ],
-      "Apply gift code": [
-        "Aplicar código de regalo"
-      ],
       "Back": [
         "Atrás"
       ],
@@ -5043,9 +5043,6 @@
       "Other names": [
         "Otros nombres"
       ],
-      "Payment details": [
-        "Detalles del pago"
-      ],
       "Payment verification": [
         "Verificación de pago"
       ],
@@ -5151,8 +5148,17 @@
       "Subtotal": [
         "Subtotal"
       ],
+      "The file or folder failed to be downloaded": [
+        "Error al descargar el archivo o la carpeta"
+      ],
+      "The link does not exist": [
+        "El enlace no existe"
+      ],
       "The link either does not exist or has expired": [
         "El enlace no existe o ha expirado"
+      ],
+      "The link failed to be loaded": [
+        "Error al cargar el enlace"
       ],
       "Total (monthly)": [
         "Total (mensual)"

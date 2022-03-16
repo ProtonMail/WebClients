@@ -248,7 +248,7 @@
         "Ir para o painel ${ index }"
       ],
       "Go to parent": [
-        ""
+        "Ir para Enviados"
       ],
       "Go to settings": [
         "Ir para configurações"
@@ -1964,7 +1964,7 @@
         "Mescle ao menos ${ calendarToFixCount } calendários com calendários Proton existente"
       ],
       "Missing key packet": [
-        ""
+        "Pacote de chave ausente"
       ],
       "Missing signature": [
         "Assinatura ausente"
@@ -2577,7 +2577,7 @@
         "Você tem certeza que deseja esvaziar a Lixeira e excluir permanentemente todos os itens?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        ""
+        "Tem certeza de que deseja excluir permanentemente \"${ itemName }\" da lixeira?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Você tem certeza de que deseja excluir permanentemente os itens selecionados da lixeira?"
@@ -2625,10 +2625,10 @@
         "Limpar dados de pesquisa criptografado"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        ""
+        "Limpar os dados do navegador limpará o índice de pesquisa neste dispositivo. Todos os arquivos precisariam ser reindexados novamente ao usar a funcionalidade de pesquisa."
       ],
       "Clears browser data related to the encrypted search.": [
-        ""
+        "Limpa os dados do navegador relacionados à pesquisa criptografada."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse email estiver incorreto, clique em \"Editar\" para corrigir isso."
@@ -2671,7 +2671,7 @@
         "Crie links e compartilhe seus arquivos com outros."
       ],
       "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
+        "Crie até 20 calendários personalizados. Além disso, adicione até 5 calendários de amigos, familiares, colegas e organizações."
       ],
       "Create your first folder and start moving your files.": [
         "Crie sua primeira pasta e comece a mover seus arquivos."
@@ -3167,7 +3167,7 @@
         "Lixeira"
       ],
       "Try different keywords": [
-        ""
+        "Tente palavras-chave diferentes"
       ],
       "Unlimited folders, labels, and filters": [
         "Pastas ilimitadas, marcadores e filtros"
@@ -3182,7 +3182,7 @@
         "Arquivo não suportado"
       ],
       "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "Atualize hoje e mantenha o acesso à solução de email e calendário que prioriza a privacidade para as suas necessidades diárias de comunicação."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Faça o upgrade para evitar de perder os seguintes beneficios de ${ appName } ${ planName }."
@@ -3255,6 +3255,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Você está atualmente logado como ${ user.Name } (${ user.Email }) e tem acesso restrito."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Você está atualmente iniciado sessão como ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Você pode mesclar calendários importados com calendários Proton existentes."
@@ -3843,7 +3846,7 @@
         "Quase lá"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        ""
+        "Quantidade de calendários criados: ${ createdCalendars } de ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Criando novos calendários"
@@ -3995,7 +3998,7 @@
     },
     "Notification": {
       "\"${ name }\" created successfully": [
-        ""
+        "\"${ name }\" criado com sucesso"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" excluído permanentemente da lixeira"
@@ -4004,7 +4007,7 @@
         "\"${ name }\" falhou ao ser criado"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        ""
+        "\"${ name }\" falhou ao ser excluído permanentemente da lixeira"
       ],
       "\"${ name }\" failed to be moved": [
         "\"${ name }\" falhou ao ser movido"
@@ -4013,7 +4016,7 @@
         "\"${ name }\" falhou ao ser movido para a lixeira"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        ""
+        "Falha ao restaurar \"${ name }\" da lixeira"
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para a lixeira"
@@ -4071,8 +4074,8 @@
         "${ numberOfItems } itens falharam ao serem movidos"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "",
-        ""
+        "${ numberOfItems } item falhou ao ser movido para a lixeira",
+        "${ numberOfItems } itens não foram movidos para a lixeira"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
         "",
@@ -4149,7 +4152,7 @@
         "Arquivo ou pasta sem nome"
       ],
       "Link failed to be loaded": [
-        ""
+        "Falha ao carregar o link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Mover ${ itemsToMoveCount } arquivo",
@@ -4176,19 +4179,19 @@
         "Mover ${ movingCount } itens"
       ],
       "Next page failed to be loaded": [
-        ""
+        "Não foi possível carregar a próxima página"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Não há espaço suficiente para fazer upload de ${ formattedTotal }"
       ],
       "Root folder failed to be loaded": [
-        ""
+        "Falha ao carregar a pasta raiz"
       ],
       "Subfolder failed to be loaded": [
         "Subpasta falhou ao ser carregada"
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        ""
+        "O link para \"${ name }\" falhou ao ser excluído"
       ],
       "The link to \"${ name }\" was deleted": [
         "O link para \"${ name }\" foi excluído"
@@ -4200,7 +4203,7 @@
         "O link para seu item foi excluído"
       ],
       "Trash failed to be emptied": [
-        ""
+        "Falha ao esvaziar a lixeira"
       ],
       "Your old files will be deleted in 72 hours": [
         "Seus arquivos antigos serão excluídos em 72 horas"
@@ -4347,9 +4350,6 @@
       "Filter groups": [
         "Filtrar grupos"
       ],
-      "Gift code": [
-        "Código do vale-presente"
-      ],
       "Image URL": [
         "URL da imagem"
       ],
@@ -4367,6 +4367,9 @@
       ],
       "OS version": [
         "Versão do sistema operacional"
+      ],
+      "Password": [
+        "Senha"
       ],
       "Please describe the problem and include any error messages": [
         "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
@@ -4780,9 +4783,6 @@
       "Amount due": [
         "Valor a pagar"
       ],
-      "Apply gift code": [
-        "Aplicar código de vale-presente"
-      ],
       "Back": [
         "Voltar"
       ],
@@ -5043,9 +5043,6 @@
       "Other names": [
         "Outros nomes"
       ],
-      "Payment details": [
-        "Detalhes do pagamento"
-      ],
       "Payment verification": [
         "Verificação de pagamento"
       ],
@@ -5151,8 +5148,17 @@
       "Subtotal": [
         "Subtotal"
       ],
+      "The file or folder failed to be downloaded": [
+        "Falha ao baixar o arquivo ou a pasta"
+      ],
+      "The link does not exist": [
+        "O link não existe"
+      ],
       "The link either does not exist or has expired": [
         "O link não existe ou já expirou"
+      ],
+      "The link failed to be loaded": [
+        ""
       ],
       "Total (monthly)": [
         "Total (mensal)"

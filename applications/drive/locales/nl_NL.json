@@ -242,7 +242,7 @@
         "Krijg verificatie code"
       ],
       "Go to label": [
-        ""
+        "Ga naar label"
       ],
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
@@ -536,7 +536,7 @@
         "Upgraden"
       ],
       "Upload anyway": [
-        ""
+        "Toch uploaden"
       ],
       "Upload file": [
         "Bestand uploaden"
@@ -848,7 +848,7 @@
         "Meerdere agenda's"
       ],
       "Recurring events": [
-        "Terugkerende gebeurtenissen"
+        "Terugkerende afspraken"
       ],
       "Share Calendar via link": [
         "Agenda delen via link"
@@ -1964,7 +1964,7 @@
         "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton agenda's"
       ],
       "Missing key packet": [
-        ""
+        "Ontbrekend sleutelpakket"
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
@@ -2677,7 +2677,7 @@
         "Maak uw eerste map aan en begin uw bestanden te verplaatsen."
       ],
       "Creating": [
-        ""
+        "Aanmaken"
       ],
       "Creating link to file": [
         "Link naar bestand maken"
@@ -3255,6 +3255,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email }) en heeft beperkte toegang."
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "U kunt geïmporteerde kalenders ook samenvoegen met bestaande Proton-agenda's."
@@ -4347,9 +4350,6 @@
       "Filter groups": [
         "Groepen filteren"
       ],
-      "Gift code": [
-        "Geschenkcode"
-      ],
       "Image URL": [
         "Afbeeldings-URL"
       ],
@@ -4367,6 +4367,9 @@
       ],
       "OS version": [
         "Versie besturingssysteem"
+      ],
+      "Password": [
+        "Wachtwoord"
       ],
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem en voeg alle foutmeldingen toe"
@@ -4780,9 +4783,6 @@
       "Amount due": [
         "Verschuldigd bedrag"
       ],
-      "Apply gift code": [
-        "Geschenkcode toepassen"
-      ],
       "Back": [
         "Vorige"
       ],
@@ -5043,9 +5043,6 @@
       "Other names": [
         "Andere namen"
       ],
-      "Payment details": [
-        "Betalingsgegevens"
-      ],
       "Payment verification": [
         "Betalingsverificatie"
       ],
@@ -5056,7 +5053,7 @@
         "PayPal verificatie mislukt"
       ],
       "Performance might be affected": [
-        ""
+        "Prestaties kunnen beïnvloedt zijn"
       ],
       "Phone numbers": [
         "Telefoonnummers"
@@ -5151,8 +5148,17 @@
       "Subtotal": [
         "Subtotaal"
       ],
+      "The file or folder failed to be downloaded": [
+        "Het bestand of de map kon niet worden gedownload"
+      ],
+      "The link does not exist": [
+        "De link bestaat niet"
+      ],
       "The link either does not exist or has expired": [
         "De link bestaat niet of is verlopen"
+      ],
+      "The link failed to be loaded": [
+        "De link kon niet worden geladen"
       ],
       "Total (monthly)": [
         "Totaal (maandelijks)"
