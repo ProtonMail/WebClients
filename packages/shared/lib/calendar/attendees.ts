@@ -234,7 +234,7 @@ export const withPmAttendees = async (
     };
 };
 
-export const getDuplicateAttendees = (attendees?: VcalAttendeeProperty[]) => {
+export const getEquivalentAttendees = (attendees?: VcalAttendeeProperty[]) => {
     if (!attendees?.length) {
         return;
     }
@@ -243,11 +243,11 @@ export const getDuplicateAttendees = (attendees?: VcalAttendeeProperty[]) => {
             token: attendee.parameters['x-pm-token'],
             email: getAttendeeEmail(attendee),
         }));
-        const duplicateAttendees = groupWith((a, b) => a.token === b.token, attendeesWithToken).map((group) =>
+        const equivalentAttendees = groupWith((a, b) => a.token === b.token, attendeesWithToken).map((group) =>
             group.map(({ email }) => email)
         );
-        return duplicateAttendees.length < attendees.length
-            ? duplicateAttendees.filter((group) => group.length > 1)
+        return equivalentAttendees.length < attendees.length
+            ? equivalentAttendees.filter((group) => group.length > 1)
             : undefined;
     }
     // not all attendees have token, so we're gonna canonize emails and compare based on that
@@ -256,12 +256,12 @@ export const getDuplicateAttendees = (attendees?: VcalAttendeeProperty[]) => {
         const canonicalEmail = canonizeEmailByGuess(email);
         return { email, canonicalEmail };
     });
-    const duplicateAttendees = groupWith(
+    const equivalentAttendees = groupWith(
         (a, b) => a.canonicalEmail === b.canonicalEmail,
         attendeesWithCanonicalEmail
     ).map((group) => group.map(({ email }) => email));
-    return duplicateAttendees.length < attendees.length
-        ? duplicateAttendees.filter((group) => group.length > 1)
+    return equivalentAttendees.length < attendees.length
+        ? equivalentAttendees.filter((group) => group.length > 1)
         : undefined;
 };
 
