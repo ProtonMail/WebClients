@@ -1,4 +1,5 @@
 import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
+import { c } from 'ttag';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
 import { unique } from '@proton/shared/lib/helpers/array';
@@ -14,7 +15,7 @@ import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/
 import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
 import { getFeatures } from '@proton/shared/lib/api/features';
 
-import { useApi, useCache, useConfig, useErrorHandler } from '../../hooks';
+import { useApi, useCache, useConfig } from '../../hooks';
 
 import {
     CalendarModelEventManagerProvider,
@@ -27,6 +28,9 @@ import { ModalsChildren } from '../modals';
 import { ThemeInjector } from '../themes';
 import { DensityInjector } from '../layouts';
 import { ContactProvider } from '../contacts';
+import { Feature, FeatureCode, FeaturesProvider } from '../features';
+import { useAppLink } from '../../components';
+import { handleEarlyAccessDesynchronization } from '../../helpers/earlyAccessDesynchronization';
 
 import loadEventID from './loadEventID';
 import LoaderPage from './LoaderPage';
@@ -34,9 +38,7 @@ import StandardLoadErrorPage from './StandardLoadErrorPage';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import StorageListener from './StorageListener';
 import DelinquentContainer from './DelinquentContainer';
-import { Feature, FeatureCode, FeaturesProvider } from '../features';
-import { useAppLink } from '../../components';
-import { handleEarlyAccessDesynchronization } from '../../helpers/earlyAccessDesynchronization';
+import { clearAutomaticErrorRefresh, handleAutomaticErrorRefresh } from './errorRefresh';
 
 interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     locales?: TtagLocaleMap;
@@ -74,7 +76,6 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const cache = useCache();
-    const errorHandler = useErrorHandler();
     const appRef = useRef<FunctionComponent | null>(null);
     const hasDelinquentBlockRef = useRef(false);
     const appLink = useAppLink();
@@ -140,17 +141,26 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                 if (shouldSetupInternalAddress) {
                     appLink(`/setup-internal-address?app=${APP_NAME}`, APPS.PROTONACCOUNT);
                 } else {
+                    clearAutomaticErrorRefresh();
                     setLoading(false);
                 }
             })
-            .catch((e) => {
-                if (getIs401Error(e)) {
+            .catch((error) => {
+                if (getIs401Error(error)) {
                     return onLogout();
                 }
-                errorHandler(e);
-                setError({
-                    message: getApiErrorMessage(e),
-                });
+
+                const handleError = (error: any) => {
+                    if (handleAutomaticErrorRefresh(error)) {
+                        return;
+                    }
+                    setError({
+                        message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                    });
+                };
+
+                // We add an arbitrary timeout in notifying about the error to avoid cancelled requests due to page navigations.
+                setTimeout(() => handleError(error), 2500);
             });
 
         return () => {

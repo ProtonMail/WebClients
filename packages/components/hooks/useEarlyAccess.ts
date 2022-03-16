@@ -68,6 +68,11 @@ export const updateVersionCookie = (
     deleteCookie('Version');
 };
 
+export const deleteVersionCookies = () => {
+    deleteCookie('Version');
+    deleteCookie('Tag');
+};
+
 const useEarlyAccess = () => {
     const api = useApi();
     const earlyAccessScope = useFeature(FeatureCode.EarlyAccessScope);
