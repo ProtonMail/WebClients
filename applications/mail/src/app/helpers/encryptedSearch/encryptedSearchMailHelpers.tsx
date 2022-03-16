@@ -26,7 +26,6 @@ import { ESItemChangesMail, ESMessage, NormalisedSearchParams, StoredCiphertext 
 import { Event } from '../../models/event';
 import { queryEvents } from './esAPI';
 import { fetchMessage } from './esBuild';
-import { sizeOfCachedMessage } from './esCache';
 import { normaliseSearchParams, shouldOnlySortResults, testMetadata } from './esSearch';
 import { getTotalMessages, parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
 import { convertEventType } from './esSync';
@@ -302,7 +301,6 @@ export const getESHelpers = ({
         shouldOnlySortResults,
         getTimePoint,
         getSearchInterval,
-        sizeOfESItem: sizeOfCachedMessage,
         getTotalItems,
         updateESItem,
         getDecryptionErrorParams,
