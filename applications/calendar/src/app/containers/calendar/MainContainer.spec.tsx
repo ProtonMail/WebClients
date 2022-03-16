@@ -544,7 +544,7 @@ describe('MainContainer', () => {
                 handleSyncActions: expect.any(Function),
                 inviteActions: { selfAddress: undefined, type: 4 },
                 isDuplicatingEvent: false,
-                onDuplicateAttendees: expect.any(Function),
+                onEquivalentAttendees: expect.any(Function),
                 onSaveConfirmation: expect.any(Function),
                 onSendPrefsErrors: expect.any(Function),
                 sendIcs: expect.any(Function),
