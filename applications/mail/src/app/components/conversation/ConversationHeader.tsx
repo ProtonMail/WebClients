@@ -6,7 +6,7 @@ import { Element } from '../../models/element';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 interface Props {
-    className: string;
+    className?: string;
     loading: boolean;
     element?: Element;
     hasScrollShadow?: boolean;

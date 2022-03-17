@@ -87,9 +87,9 @@ const MessageOnlyView = ({
                 element={message.data}
                 hasScrollShadow={hasScrollShadow}
             />
-            <Scroll setHasScrollShadow={setHasScrollShadow}>
+            <Scroll className={classnames([hidden && 'hidden'])} setHasScrollShadow={setHasScrollShadow}>
                 <div
-                    className={classnames(['flex-item-fluid pt1 pr1 pl1 max-w100 outline-none', hidden && 'hidden'])}
+                    className="flex-item-fluid pt1 pr1 pl1 max-w100 outline-none"
                     ref={messageContainerRef}
                     tabIndex={-1}
                 >
