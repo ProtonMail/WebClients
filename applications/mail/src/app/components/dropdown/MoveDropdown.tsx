@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import {
-    LabelModal,
     SearchInput,
     useFolders,
-    useModals,
     Mark,
     Tooltip,
     useLoading,
@@ -12,6 +10,7 @@ import {
     FolderIcon,
     Icon,
     Button,
+    useModalState,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -19,6 +18,7 @@ import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
@@ -61,13 +61,14 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const [uid] = useState(generateUID('move-dropdown'));
 
     const [loading, withLoading] = useLoading();
-    const { createModal } = useModals();
     const [folders = []] = useFolders();
     const [search, updateSearch] = useState('');
     const [containFocus, setContainFocus] = useState(true);
     const normSearch = normalize(search, true);
     const getElementsFromIDs = useGetElementsFromIDs();
     const moveToFolder = useMoveToFolder();
+
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
@@ -113,7 +114,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
 
     const handleCreate = () => {
         setContainFocus(false);
-        createModal(<LabelModal type="folder" onClose={() => setContainFocus(true)} />);
+        setEditLabelModalOpen(true);
     };
 
     // The dropdown is several times in the view, native html ids has to be different each time
@@ -140,6 +141,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                         <Icon name="folder" /> +
                     </Button>
                 </Tooltip>
+                <EditLabelModal type="folder" onCloseCustomAction={() => setContainFocus(true)} {...editLabelProps} />
             </div>
             <div className="m1 mb0">
                 <SearchInput

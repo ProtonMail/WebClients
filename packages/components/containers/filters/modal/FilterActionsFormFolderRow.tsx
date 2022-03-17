@@ -2,11 +2,10 @@ import { Fragment, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
-import { Button, Select, Icon } from '../../../components';
-import { useModals } from '../../../hooks';
+import { Button, Select, Icon, useModalState } from '../../../components';
 import { classnames } from '../../../helpers';
 
-import EditLabelModal from '../../labels/modals/EditLabelModal';
+import EditLabelModal, { LabelModel } from '../../labels/modals/EditLabelModal';
 
 import { Actions } from '../interfaces';
 import { getDefaultFolders } from '../constants';
@@ -47,7 +46,6 @@ const reducer = (acc: SelectOption[] = [], folder: FolderWithSubFolders, level =
 };
 
 const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateActions }: Props) => {
-    const { createModal } = useModals();
     const treeview = buildTreeview(folders);
 
     const reducedFolders = treeview.reduce<SelectOption[]>((acc, folder) => {
@@ -59,6 +57,8 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
 
     const { moveTo } = actions;
     const { isOpen } = moveTo;
+
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     const handleChangeModel = (payload: Partial<ChangePayload>) => {
         handleUpdateActions({
@@ -73,13 +73,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
         handleChangeModel({ isOpen: !isOpen });
     };
 
-    const handleCreateFolder = async () => {
-        const folder: Folder = await new Promise((resolve, reject) => {
-            createModal(
-                <EditLabelModal onAdd={resolve as () => undefined} onClose={reject as () => undefined} type="folder" />
-            );
-        });
-
+    const handleCreateFolder = (folder: LabelModel) => {
         handleChangeModel({ folder: folder.Path });
     };
 
@@ -144,9 +138,10 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                                 handleChangeModel({ folder: value })
                             }
                         />
-                        <Button shape="outline" className="mt1" onClick={handleCreateFolder}>
+                        <Button shape="outline" className="mt1" onClick={() => setEditLabelModalOpen(true)}>
                             {c('Action').t`Create folder`}
                         </Button>
+                        <EditLabelModal {...editLabelProps} onAdd={handleCreateFolder} type="folder" />
                     </div>
                 ) : (
                     renderClosed()
