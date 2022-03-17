@@ -1,17 +1,21 @@
 import { c } from 'ttag';
 import { AlertModal, Button, ModalProps } from '@proton/components';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
-interface Props extends ModalProps {
-    esDelete: () => void;
-}
-
-const ClearBrowserDataModal = ({ esDelete, ...rest }: Props) => {
+const ClearBrowserDataModal = (rest: ModalProps) => {
     const { onClose } = rest;
+    const { esDelete } = useEncryptedSearchContext();
+
+    const handleClear = () => {
+        void esDelete();
+        onClose?.();
+    };
+
     return (
         <AlertModal
             title={c('Info').t`Disable message content search`}
             buttons={[
-                <Button color="norm" onClick={esDelete}>{c('Info').t`Clear data`}</Button>,
+                <Button color="norm" onClick={handleClear}>{c('Info').t`Clear data`}</Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
