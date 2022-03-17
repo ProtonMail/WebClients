@@ -2,11 +2,19 @@ import { Location, History } from 'history';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 import { getOldestTime } from '@proton/encrypted-search';
-import { extractSearchParameters, filterFromUrl, pageFromUrl, setSortInUrl, sortFromUrl } from '../mailboxUrl';
-import { isSearch } from '../elements';
+import {
+    extractSearchParameters,
+    filterFromUrl,
+    getParamsFromPathname,
+    pageFromUrl,
+    setSortInUrl,
+    sortFromUrl,
+} from '../mailboxUrl';
+import { isSearch as checkIsSearch } from '../elements';
 import { StoredCiphertext } from '../../models/encryptedSearch';
-import { indexName, storeName } from '../../constants';
+import { indexName, LABEL_IDS_TO_HUMAN, storeName } from '../../constants';
 import { getTimePoint } from './encryptedSearchMailHelpers';
+import { normaliseSearchParams } from './esSearch';
 
 /**
  * Read the current total amount of messages
@@ -16,16 +24,45 @@ export const getTotalMessages = async (messageCounts: LabelCount[]) => {
 };
 
 /**
+ * Determine the label ID of the folders specified in the URL
+ */
+const getLabelID = (location: Location) => {
+    const { params } = getParamsFromPathname(location.pathname);
+    const { labelID: humanLabelID } = params;
+
+    let labelID = '';
+    let label: keyof typeof LABEL_IDS_TO_HUMAN;
+    for (label in LABEL_IDS_TO_HUMAN) {
+        if (humanLabelID === (LABEL_IDS_TO_HUMAN[label] as any)) {
+            labelID = label;
+        }
+    }
+
+    if (labelID === '') {
+        labelID = humanLabelID;
+    }
+
+    return labelID;
+};
+
+/**
  * Parse search parameters from URL
  */
 export const parseSearchParams = (location: Location) => {
     const searchParameters = extractSearchParameters(location);
+    const isSearch = checkIsSearch(searchParameters);
+
     return {
-        filterParameter: filterFromUrl(location),
-        sortParameter: sortFromUrl(location),
-        isSearch: isSearch(searchParameters),
+        isSearch,
         page: pageFromUrl(location),
-        searchParameters,
+        esSearchParams: isSearch
+            ? normaliseSearchParams(
+                  searchParameters,
+                  getLabelID(location),
+                  filterFromUrl(location),
+                  sortFromUrl(location)
+              )
+            : undefined,
     };
 };
 

@@ -147,9 +147,8 @@ export const syncMessageEvents = async <ESItem, ESItemMetadata, ESItemChanges, E
     userID: string,
     esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
     permanentResults: ESItem[],
-    isSearch: boolean,
     indexKey: CryptoKey,
-    esSearchParams: ESSearchParameters,
+    esSearchParams: ESSearchParameters | undefined,
     storeName: string,
     indexName: string,
     esSyncingHelpers: ESSyncingHelpers<ESItemMetadata, ESItem, ESItemChanges, ESCiphertext, ESSearchParameters>,
@@ -212,7 +211,7 @@ export const syncMessageEvents = async <ESItem, ESItemMetadata, ESItemChanges, E
                 updateSizeIDB(userID, -size);
 
                 const resultIndex = findItemIndex(ID, permanentResults, getItemID);
-                if (isSearch && resultIndex !== -1) {
+                if (!!esSearchParams && resultIndex !== -1) {
                     updatePermanentResults({ resultIndex });
                 }
             }
@@ -241,7 +240,7 @@ export const syncMessageEvents = async <ESItem, ESItemMetadata, ESItemChanges, E
                 updateSizeIDB(userID, size);
                 addToESCache(itemToCache, esCacheRef, getTimePoint, size);
 
-                if (isSearch && applySearch(esSearchParams, itemToCache)) {
+                if (!!esSearchParams && applySearch(esSearchParams, itemToCache)) {
                     updatePermanentResults({ itemToCache });
                 }
             }
@@ -305,7 +304,7 @@ export const syncMessageEvents = async <ESItem, ESItemMetadata, ESItemChanges, E
                 //   - if the old item was part of the search and the new one still is, update it;
                 //   - if the old item was part of the search and the new one shouldn't be, delete it;
                 //   - if the old item wasn't part of the search and the new one should be, add it;
-                if (isSearch) {
+                if (!!esSearchParams) {
                     if (applySearch(esSearchParams, oldItem)) {
                         const resultIndex = findItemIndex(ID, permanentResults, getItemID);
 

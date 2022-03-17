@@ -1,4 +1,4 @@
-import { Location } from 'history';
+import { History } from 'history';
 import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import {
     AesGcmCiphertext,
@@ -28,8 +28,6 @@ import { fetchMessage } from './esBuild';
 import { normaliseSearchParams, shouldOnlySortResults, testMetadata } from './esSearch';
 import { getTotalMessages, parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
 import { convertEventType } from './esSync';
-import { LABEL_IDS_TO_HUMAN } from '../../constants';
-import { getParamsFromPathname } from '../mailboxUrl';
 
 interface Props {
     getMessageKeys: GetMessageKeys;
@@ -39,6 +37,7 @@ interface Props {
     welcomeFlags: WelcomeFlagsState;
     getESFeature: <V = any>() => Promise<Feature<V>>;
     updateSpotlightES: <V = any>(value: V) => Promise<Feature<V>>;
+    history: History;
 }
 
 export const getTimePoint = (item: ESMessage | StoredCiphertext) => [item.Time, item.Order] as [number, number];
@@ -52,6 +51,7 @@ export const getESHelpers = ({
     welcomeFlags,
     getESFeature,
     updateSpotlightES,
+    history,
 }: Props): ESHelpers<Message, ESMessage, NormalizedSearchParams, ESItemChangesMail, StoredCiphertext> => {
     const { ID: userID } = user;
 
@@ -158,35 +158,11 @@ export const getESHelpers = ({
         end: esSearchParams?.end,
     });
 
-    const getLabelID = (location: Location) => {
-        const { params } = getParamsFromPathname(location.pathname);
-        const { labelID: humanLabelID } = params;
-
-        let labelID = '';
-        let label: keyof typeof LABEL_IDS_TO_HUMAN;
-        for (label in LABEL_IDS_TO_HUMAN) {
-            if (humanLabelID === (LABEL_IDS_TO_HUMAN[label] as any)) {
-                labelID = label;
-            }
-        }
-
-        if (labelID === '') {
-            labelID = humanLabelID;
-        }
-
-        return labelID;
-    };
-
-    const parseSearchParams = (location: Location) => {
-        const { isSearch, searchParameters, filterParameter, sortParameter } = parseSearchParamsMail(location);
+    const getSearchParams = () => {
+        const { isSearch, esSearchParams } = parseSearchParamsMail(history.location);
         return {
             isSearch,
-            esSearchParams: normaliseSearchParams(
-                searchParameters,
-                getLabelID(location),
-                filterParameter,
-                sortParameter
-            ),
+            esSearchParams,
         };
     };
 
@@ -287,8 +263,8 @@ export const getESHelpers = ({
         updateESItem,
         getDecryptionErrorParams,
         getKeywords,
-        parseSearchParams,
-        resetSort,
+        getSearchParams,
+        resetSort: () => resetSort(history),
         getPreviousEventID,
         getEventFromLS,
         indexNewUser,
