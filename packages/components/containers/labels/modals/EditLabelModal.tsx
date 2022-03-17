@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from '@proton/shared/lib/constants';
@@ -8,29 +8,38 @@ import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import { FormModal } from '../../../components';
+import {
+    Button,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    useFormErrors,
+} from '../../../components';
 import { useEventManager, useLoading, useApi, useNotifications } from '../../../hooks';
 import NewLabelForm from '../NewLabelForm';
 
-interface ModalModel extends Pick<Folder | Label, 'Name' | 'Color' | 'Type'> {
+export interface LabelModel extends Pick<Folder | Label, 'Name' | 'Color' | 'Type'> {
     ID?: string;
     ParentID?: string | number;
     Notify?: number;
     Expanded?: number;
     Order?: number;
+    Path?: string;
 }
 
-interface Props {
+interface Props extends ModalProps {
     type?: 'label' | 'folder';
-    label?: ModalModel;
+    label?: LabelModel;
     mode?: 'create' | 'edition' | 'checkAvailable';
-    onAdd?: (label: ModalModel) => void;
-    onEdit?: (label: ModalModel) => void;
-    onCheckAvailable?: (label: ModalModel) => void;
-    onClose?: () => void;
+    onAdd?: (label: LabelModel) => void;
+    onEdit?: (label: LabelModel) => void;
+    onCheckAvailable?: (label: LabelModel) => void;
+    onCloseCustomAction?: () => void;
 }
 
-const prepareLabel = (label: ModalModel) => {
+const prepareLabel = (label: LabelModel) => {
     if (label.ParentID === ROOT_FOLDER) {
         return omit(label, ['ParentID']);
     }
@@ -43,16 +52,19 @@ const EditLabelModal = ({
     onAdd = noop,
     onEdit = noop,
     onCheckAvailable = noop,
-    onClose = noop,
     type = 'label',
-    ...props
+    onCloseCustomAction,
+    ...rest
 }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
     const [loading, withLoading] = useLoading();
+    const { validator, onFormSubmit } = useFormErrors();
 
-    const [model, setModel] = useState<ModalModel>(
+    const { onClose } = rest;
+
+    const [model, setModel] = useState<LabelModel>(
         label || {
             Name: '',
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
@@ -62,17 +74,34 @@ const EditLabelModal = ({
         }
     );
 
-    const create = async (label: ModalModel) => {
+    useEffect(() => {
+        setModel(
+            label || {
+                Name: '',
+                Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+                Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
+                ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
+                Notify: type === 'folder' ? 1 : 0,
+            }
+        );
+    }, [type]);
+
+    const handleClose = () => {
+        onCloseCustomAction?.();
+        onClose?.();
+    };
+
+    const create = async (label: LabelModel) => {
         const { Label } = await api(createLabel(prepareLabel(label)));
         await call();
         createNotification({
             text: c('label/folder notification').t`${Label.Name} created`,
         });
         onAdd(Label);
-        onClose();
+        handleClose();
     };
 
-    const update = async (label: ModalModel) => {
+    const update = async (label: LabelModel) => {
         if (label.ID) {
             const { Label } = await api(updateLabel(label.ID, prepareLabel(label)));
             await call();
@@ -81,16 +110,20 @@ const EditLabelModal = ({
             });
             onEdit(Label);
         }
-        onClose();
+        handleClose();
     };
 
-    const checkIsAvailable = async (label: ModalModel) => {
+    const checkIsAvailable = async (label: LabelModel) => {
         await api(checkLabelAvailability(label));
         onCheckAvailable(model);
-        onClose();
+        handleClose();
     };
 
     const handleSubmit = async () => {
+        if (!onFormSubmit()) {
+            return;
+        }
+
         switch (mode) {
             case 'create':
                 await withLoading(create(model));
@@ -113,10 +146,10 @@ const EditLabelModal = ({
         });
     };
 
-    const handleChangeName = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    const handleChangeName = (value: string) => {
         setModel({
             ...model,
-            Name: target.value,
+            Name: value,
         });
     };
 
@@ -143,22 +176,23 @@ const EditLabelModal = ({
     };
 
     return (
-        <FormModal
-            submit={c('Action').t`Save`}
-            onSubmit={handleSubmit}
-            loading={loading}
-            title={getTitle()}
-            onClose={onClose}
-            {...props}
-        >
-            <NewLabelForm
-                label={model}
-                onChangeName={handleChangeName}
-                onChangeColor={handleChangeColor}
-                onChangeParentID={handleChangeParentID}
-                onChangeNotify={handleChangeNotify}
-            />
-        </FormModal>
+        <ModalTwo size="large" {...rest}>
+            <ModalTwoHeader title={getTitle()} />
+            <ModalTwoContent>
+                <NewLabelForm
+                    label={model}
+                    onChangeName={handleChangeName}
+                    onChangeColor={handleChangeColor}
+                    onChangeParentID={handleChangeParentID}
+                    onChangeNotify={handleChangeNotify}
+                    validator={validator}
+                />
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" loading={loading} onClick={handleSubmit}>{c('Action').t`Save`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
