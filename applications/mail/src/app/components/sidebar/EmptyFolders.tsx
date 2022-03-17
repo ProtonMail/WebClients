@@ -5,24 +5,24 @@ import {
     SidebarListItemButton,
     SidebarListItemContentIcon,
     SidebarListItemContent,
-    LabelModal,
-    useModals,
+    useModalState,
 } from '@proton/components';
+import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 
 interface Props {
     onFocus: () => void;
 }
 
 const EmptyFolders = ({ onFocus }: Props) => {
-    const { createModal } = useModals();
-
-    const handleClick = () => {
-        createModal(<LabelModal type="folder" />);
-    };
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     return (
         <SidebarListItem>
-            <SidebarListItemButton onFocus={onFocus} data-shortcut-target="add-folder" onClick={handleClick}>
+            <SidebarListItemButton
+                onFocus={onFocus}
+                data-shortcut-target="add-folder"
+                onClick={() => setEditLabelModalOpen(true)}
+            >
                 <SidebarListItemContent
                     right={<SidebarListItemContentIcon name="plus" color="white" />}
                     title={c('Title').t`Create a new folder`}
@@ -30,6 +30,7 @@ const EmptyFolders = ({ onFocus }: Props) => {
                     {c('Link').t`Add folder`}
                 </SidebarListItemContent>
             </SidebarListItemButton>
+            <EditLabelModal type="folder" {...editLabelProps} />
         </SidebarListItem>
     );
 };

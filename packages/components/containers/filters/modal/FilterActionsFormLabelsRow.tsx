@@ -2,11 +2,10 @@ import { Fragment } from 'react';
 import { c } from 'ttag';
 
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { Checkbox, Button, Icon, LabelStack } from '../../../components';
+import { Checkbox, Button, Icon, LabelStack, useModalState } from '../../../components';
 import { classnames } from '../../../helpers';
-import { useModals } from '../../../hooks';
 
-import EditLabelModal from '../../labels/modals/EditLabelModal';
+import EditLabelModal, { LabelModel } from '../../labels/modals/EditLabelModal';
 
 import { Actions } from '../interfaces';
 
@@ -23,9 +22,10 @@ type ChangePayload = {
 };
 
 const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, labels }: Props) => {
-    const { createModal } = useModals();
     const { labelAs } = actions;
     const { isOpen } = labelAs;
+
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     const handleChangeModel = (payload: Partial<ChangePayload>) => {
         handleUpdateActions({
@@ -40,13 +40,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
         handleChangeModel({ isOpen: !isOpen });
     };
 
-    const handleCreateLabel = async () => {
-        const label: Label = await new Promise((resolve, reject) => {
-            createModal(
-                <EditLabelModal onAdd={resolve as () => undefined} onClose={reject as () => undefined} type="label" />
-            );
-        });
-
+    const handleCreateLabel = (label: LabelModel) => {
         handleChangeModel({ labels: [...labelAs.labels, label.Name] });
     };
 
@@ -125,9 +119,10 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                 <div className="pt0-5 mb1">{c('Label').t`No label found`}</div>
                             )}
                         </div>
-                        <Button shape="outline" className="mt0" onClick={handleCreateLabel}>
+                        <Button shape="outline" className="mt0" onClick={() => setEditLabelModalOpen(true)}>
                             {c('Action').t`Create label`}
                         </Button>
+                        <EditLabelModal {...editLabelProps} onAdd={handleCreateLabel} type="label" />
                     </>
                 ) : (
                     <div className="mt0-5">{renderClosed()}</div>
