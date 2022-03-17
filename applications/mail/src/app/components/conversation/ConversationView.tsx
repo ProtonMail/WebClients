@@ -145,9 +145,13 @@ const ConversationView = ({
                 element={conversation}
                 hasScrollShadow={hasScrollShadow}
             />
-            <Scroll setHasScrollShadow={setHasScrollShadow} customContainerRef={containerRef}>
+            <Scroll
+                className={classnames([hidden && 'hidden'])}
+                setHasScrollShadow={setHasScrollShadow}
+                customContainerRef={containerRef}
+            >
                 <div ref={wrapperRef} className="flex-item-fluid pt1 pr1 pl1 w100">
-                    <div className={classnames(['outline-none', hidden && 'hidden'])} ref={elementRef} tabIndex={-1}>
+                    <div className="outline-none" ref={elementRef} tabIndex={-1}>
                         {showMessagesError ? (
                             <ConversationErrorBanner errors={conversationState?.errors} onRetry={handleRetry} />
                         ) : null}
