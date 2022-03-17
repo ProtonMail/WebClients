@@ -10,7 +10,7 @@ import {
     ICAL_METHOD,
     SETTINGS_VIEW,
 } from '@proton/shared/lib/calendar/constants';
-import { API_CODES, APPS, LABEL_COLORS } from '@proton/shared/lib/constants';
+import { API_CODES, APPS, ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -273,7 +273,7 @@ END:VCALENDAR`;
                     Email: dummyUserEmailAddress,
                     Permissions: 127,
                     AddressID: dummyUserPrimaryAddressID,
-                    Color: LABEL_COLORS[1],
+                    Color: ACCENT_COLORS[1],
                     Display: CalendarDisplay.HIDDEN,
                     CalendarID: dummyCalendarID,
                 },
@@ -402,7 +402,7 @@ END:VCALENDAR`;
                     Email: dummyUserEmailAddress,
                     Permissions: 127,
                     AddressID: dummyUserPrimaryAddressID,
-                    Color: LABEL_COLORS[1],
+                    Color: ACCENT_COLORS[1],
                     Display: CalendarDisplay.HIDDEN,
                     CalendarID: dummyCalendarID,
                 },
@@ -467,7 +467,7 @@ END:VCALENDAR`;
                     Email: dummyUserEmailAddress,
                     Permissions: 127,
                     AddressID: dummyUserPrimaryAddressID,
-                    Color: LABEL_COLORS[1],
+                    Color: ACCENT_COLORS[1],
                     Display: CalendarDisplay.HIDDEN,
                     CalendarID: dummyCalendarID,
                 },
@@ -521,7 +521,7 @@ END:VCALENDAR`;
                     Email: dummyUserEmailAddress,
                     Permissions: 127,
                     AddressID: dummyUserPrimaryAddressID,
-                    Color: LABEL_COLORS[1],
+                    Color: ACCENT_COLORS[1],
                     Display: CalendarDisplay.HIDDEN,
                     CalendarID: dummyCalendarID,
                 },

@@ -19,19 +19,11 @@ const ToolbarColorsDropdown = ({ fontColor, bgColor, setFontColor, setBgColor }:
     const tabs = [
         {
             title: c('Info').t`Text color`,
-            content: (
-                <>
-                    <ColorSelector selected={fontColor} onChange={setFontColor} colors={FONT_COLORS} />
-                </>
-            ),
+            content: <ColorSelector selected={fontColor} onChange={setFontColor} colors={FONT_COLORS} />,
         },
         {
             title: c('Info').t`Background color`,
-            content: (
-                <>
-                    <ColorSelector selected={bgColor} onChange={setBgColor} colors={FONT_COLORS} />
-                </>
-            ),
+            content: <ColorSelector selected={bgColor} onChange={setBgColor} colors={FONT_COLORS} />,
         },
     ];
 
