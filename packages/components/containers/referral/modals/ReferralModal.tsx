@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import emptyMailboxSvg from '@proton/styles/assets/img/placeholders/empty-mailbox.svg';
+import emptyMailboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
 import {
     Button,
     FeatureCode,

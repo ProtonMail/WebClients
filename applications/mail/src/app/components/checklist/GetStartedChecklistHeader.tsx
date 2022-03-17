@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Button, Icon, Progress, classnames } from '@proton/components';
-import gift from '@proton/styles/assets/img/get-started/gift.svg';
+import gift from '@proton/styles/assets/img/illustrations/gift.svg';
 
 interface GetStartedChecklistHeaderInterface {
     numberOfCompletedItems: number;

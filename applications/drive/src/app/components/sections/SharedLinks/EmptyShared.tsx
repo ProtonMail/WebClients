@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { PrimaryButton, EmptyViewContainer } from '@proton/components';
 
-import noLinksSvg from '@proton/styles/assets/img/placeholders/file-share.svg';
+import noLinksSvg from '@proton/styles/assets/img/illustrations/file-share.svg';
 
 import useOpenModal from '../../useOpenModal';
 

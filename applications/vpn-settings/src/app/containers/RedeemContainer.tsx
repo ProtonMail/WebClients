@@ -1,17 +1,20 @@
 import { c } from 'ttag';
-import { ProminentContainer, Title, useAppTitle } from '@proton/components';
-import './RedeemContainer.scss';
 
-import GadgetImage from '@proton/styles/assets/img/pv-images/redeem/gadgets.png';
-import SwissBasedIcon from '@proton/styles/assets/img/pv-images/redeem/swiss_based.svg';
-import SecureCoreIcon from '@proton/styles/assets/img/pv-images/redeem/secure_core.svg';
-import NoLogsIcon from '@proton/styles/assets/img/pv-images/redeem/no_logs.svg';
-import KillSwitchIcon from '@proton/styles/assets/img/pv-images/redeem/kill_switch.svg';
-import DNSIcon from '@proton/styles/assets/img/pv-images/redeem/dns.svg';
-import EncryptionIcon from '@proton/styles/assets/img/pv-images/redeem/encryption.svg';
+import { ProminentContainer, Title, useAppTitle } from '@proton/components';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import GadgetImage from '@proton/styles/assets/img/vpn/redeem/gadgets.png';
+import SwissBasedIcon from '@proton/styles/assets/img/vpn/redeem/swiss_based.svg';
+import SecureCoreIcon from '@proton/styles/assets/img/vpn/redeem/secure_core.svg';
+import NoLogsIcon from '@proton/styles/assets/img/vpn/redeem/no_logs.svg';
+import KillSwitchIcon from '@proton/styles/assets/img/vpn/redeem/kill_switch.svg';
+import DNSIcon from '@proton/styles/assets/img/vpn/redeem/dns.svg';
+import EncryptionIcon from '@proton/styles/assets/img/vpn/redeem/encryption.svg';
+
+
 import PublicHeader2 from '../components/layout/PublicHeader2';
 import RedeemCouponForm from '../components/sections/redeem/RedeemCouponForm';
+
+import './RedeemContainer.scss';
 
 const RedeemContainer = ({ history }: { history: any }) => {
     useAppTitle(c('Title').t`Redeem coupon`);

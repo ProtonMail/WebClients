@@ -14,7 +14,7 @@ import {
     FeatureCode,
     useSpotlightShow,
 } from '@proton/components';
-import giftSvg from '@proton/styles/assets/img/get-started/gift.svg';
+import giftSvg from '@proton/styles/assets/img/illustrations/gift.svg';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
