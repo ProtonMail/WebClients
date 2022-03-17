@@ -1,3 +1,15 @@
+## Release: 4.0.9 — Mar 30, 2022
+
+### Improvements
+
+-   Improve the visibility of today indicator
+-   Improve calendar creation
+
+### Fixes
+
+-   Improve support for invalid ICS formats that other providers use (officeholidays.com)
+-   Fix wrong conversion of some localized time zones that Microsoft Exchange 2010 uses
+
 ## Release: 4.0.8 — Feb 9, 2022
 
 ### New features
@@ -25,7 +37,7 @@
 
 -   Improve the browser print rendering of calendar
 -   Differentiate invitation emails with calendar icons in the mailbox
--   Extend supported timezone formats (Bluejeans, Mozilla and others using globally defined time zone registries)
+-   Extend supported time zone formats (Bluejeans, Mozilla and others using globally defined time zone registries)
 -   Support certain ICS formats that would result in the error "File does not have the right format" when trying to import them
 -   Better handling of large ICS files import
 -   Minor UI and accessibility improvements
