@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, ConfirmModal, Icon, useApi, useEventManager, useModals, useNotifications } from '@proton/components';
+import { AlertModal, Button, Icon, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { c } from 'ttag';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
@@ -22,7 +22,8 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     const [nowDate, setNowDate] = useState(() => Date.now());
 
     const onCompose = useOnCompose();
-    const { createModal } = useModals();
+
+    const [editScheduleModalProps, setEditScheduleModalOpen] = useModalState();
 
     const isScheduledMessage = isScheduled(message.data);
 
@@ -51,23 +52,6 @@ const ExtraScheduledMessage = ({ message }: Props) => {
             text: c('Message notification').t`Scheduling cancelled. Message has been moved to Drafts.`,
         });
         onCompose({ existingDraft: message, fromUndo: false });
-    };
-
-    const handleEditScheduled = () => {
-        createModal(
-            <ConfirmModal
-                onConfirm={handleUnscheduleMessage}
-                title={c('Confirm modal title').t`Edit and reschedule`}
-                cancel={c('Action').t`Cancel`}
-                confirm={
-                    <Button color="norm" type="submit" data-testid="message:modal-edit-draft-button">{c('Action')
-                        .t`Edit draft`}</Button>
-                }
-            >
-                {c('Info')
-                    .t`This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.`}
-            </ConfirmModal>
-        );
     };
 
     const getScheduleBannerMessage = () => {
@@ -111,11 +95,27 @@ const ExtraScheduledMessage = ({ message }: Props) => {
                     <Button
                         size="small"
                         className="on-mobile-w100 py0-25"
-                        onClick={handleEditScheduled}
+                        onClick={() => setEditScheduleModalOpen(true)}
                         data-testid="message:schedule-banner-edit-button"
                     >{c('Action').t`Edit`}</Button>
                 </span>
             ) : null}
+
+            <AlertModal
+                title={c('Confirm modal title').t`Edit and reschedule`}
+                buttons={[
+                    <Button
+                        color="norm"
+                        onClick={handleUnscheduleMessage}
+                        data-testid="message:modal-edit-draft-button"
+                    >{c('Action').t`Edit draft`}</Button>,
+                    <Button onClick={editScheduleModalProps.onClose}>{c('Action').t`Cancel`}</Button>,
+                ]}
+                {...editScheduleModalProps}
+            >
+                {c('Info')
+                    .t`This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.`}
+            </AlertModal>
         </div>
     );
 };

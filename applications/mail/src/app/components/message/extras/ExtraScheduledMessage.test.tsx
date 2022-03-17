@@ -3,11 +3,11 @@ import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { addHours, addSeconds } from 'date-fns';
 import { fireEvent } from '@testing-library/dom';
-import { act, getByText as getByTextDefault } from '@testing-library/react';
+import { act } from '@testing-library/react';
 import { render } from '../../../helpers/test/render';
 import ExtraScheduledMessage from './ExtraScheduledMessage';
 import { formatDateToHuman } from '../../../helpers/date';
-import { addApiMock, clearAll, getModal } from '../../../helpers/test/helper';
+import { addApiMock, clearAll } from '../../../helpers/test/helper';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
 const getMessage = (sendingDate: Date) => {
@@ -99,10 +99,8 @@ describe('Scheduled messages banner', () => {
         // Edit the scheduled message
         fireEvent.click(editButton);
 
-        // Unschedule modal opens
-        const { modal } = getModal();
-        getByTextDefault(modal, 'Edit and reschedule');
-        const editDraftButton = getByTextDefault(modal, 'Edit draft');
+        getByText('Edit and reschedule');
+        const editDraftButton = getByText('Edit draft');
 
         await act(async () => {
             // Unschedule the message
