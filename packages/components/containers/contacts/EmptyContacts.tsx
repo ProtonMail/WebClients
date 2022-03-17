@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import noContactsImg from '@proton/styles/assets/img/illustrations/empty-address-book.svg';
+import noContactsImg from '@proton/styles/assets/img/illustrations/no-contacts.svg';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import { Button } from '../../components';
