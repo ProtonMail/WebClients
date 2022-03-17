@@ -54,7 +54,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
     const oldLabelIDRef = useRef<string>(MAILBOX_LABEL_IDS.INBOX);
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const { cacheIndexedDB, getESDBStatus, esDelete } = useEncryptedSearchContext();
+    const { cacheIndexedDB, getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
 
     const onCompose = useOnCompose();
@@ -204,7 +204,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
             <MailDensityModal {...mailDensityProps} />
             <MailComposerModeModal {...mailComposerModeProps} />
             <MailDefaultHandlerModal {...mailDefaultHandlerProps} />
-            <ClearBrowserDataModal {...clearBrowserDataProps} esDelete={esDelete} />
+            <ClearBrowserDataModal {...clearBrowserDataProps} />
         </>
     );
 };
