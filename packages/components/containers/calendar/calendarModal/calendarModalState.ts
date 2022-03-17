@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { LABEL_COLORS } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
@@ -62,7 +62,7 @@ export const getDefaultModel = (): CalendarViewModelFull => {
         name: '',
         members: [],
         description: '',
-        color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+        color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
         display: true,
         addressID: '',
         addressOptions: [],

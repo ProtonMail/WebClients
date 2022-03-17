@@ -9,7 +9,7 @@ import { getPrimaryKey } from '../../keys';
 
 import { getActiveAddresses } from '../../helpers/address';
 import { DEFAULT_CALENDAR } from '../constants';
-import { LABEL_COLORS } from '../../constants';
+import { ACCENT_COLORS } from '../../constants';
 import { randomIntFromInterval } from '../../helpers/function';
 
 interface Args {
@@ -33,7 +33,7 @@ const setupCalendarHelper = async ({ addresses, api, getAddressKeys }: Args) => 
     const { Calendar } = await api<{ Calendar: CalendarWithMembers }>(
         createCalendar({
             Name: DEFAULT_CALENDAR.name,
-            Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+            Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
             Description: DEFAULT_CALENDAR.description,
             Display: 1,
             AddressID: addressID,
