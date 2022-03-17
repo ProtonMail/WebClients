@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
-import envelopSvg from '@proton/styles/assets/img/placeholders/welcome-pane.svg';
+import envelopSvg from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
 import { Alert } from '../../components';
 import { useConfig } from '../../hooks';
 

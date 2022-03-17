@@ -10,7 +10,7 @@ import {
     ModalTwoFooter,
 } from '@proton/components';
 
-import keyAndFileSvg from '@proton/styles/assets/img/placeholders/file-recovery.svg';
+import keyAndFileSvg from '@proton/styles/assets/img/illustrations/file-recovery.svg';
 
 interface Props {
     onRecovery: () => void;

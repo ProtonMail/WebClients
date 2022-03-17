@@ -19,10 +19,10 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { capitalize } from '@proton/shared/lib/helpers/string';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import envelope from '@proton/styles/assets/img/placeholders/welcome-pane.svg';
-import mobileMailApp from '@proton/styles/assets/img/placeholders/app-teaser.svg';
-import appStore from '@proton/styles/assets/img/shared/app-store.svg';
-import playStore from '@proton/styles/assets/img/shared/play-store.svg';
+import envelope from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
+import mobileMailApp from '@proton/styles/assets/img/illustrations/app-teaser.svg';
+import appStore from '@proton/styles/assets/img/illustrations/app-store.svg';
+import playStore from '@proton/styles/assets/img/illustrations/play-store.svg';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 import WelcomePaneBanner from './WelcomePaneBanner';

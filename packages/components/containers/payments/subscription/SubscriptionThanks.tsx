@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 import { APPS, PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import mailThanksSvg from '@proton/styles/assets/img/pm-images/thank-you-mail.svg';
-import vpnThanksSvg from '@proton/styles/assets/img/pv-images/thank-you-vpn.svg';
-import appStoreSvg from '@proton/styles/assets/img/shared/app-store.svg';
-import playStoreSvg from '@proton/styles/assets/img/shared/play-store.svg';
+import mailThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-mail.svg';
+import vpnThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-vpn.svg';
+import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
+import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
 import { PrimaryButton, Href } from '../../../components';
 import { useConfig } from '../../../hooks';
 
