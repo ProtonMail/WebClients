@@ -64,14 +64,11 @@
 }
 
 .editor-toolbar-dropdown .color-selector-container {
-	max-inline-size: rem(210);
+	max-inline-size: em((28 * 7) + (8 * 6)); // items + gaps
 }
 
 .editor-toolbar-dropdown .color-selector-item {
-	block-size: rem(28);
-	inline-size: rem(28);
-	margin-block: 0 rem(2);
-	margin-inline: 0 rem(2);
+	font-size: 0.7em; // Decrease size rom 40px to 28px
 }
 
 .editor--disabled::after {

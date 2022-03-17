@@ -1,4 +1,4 @@
-import { APPS, BASE_SIZE, LABEL_COLORS } from '../constants';
+import { APPS, BASE_SIZE, ACCENT_COLORS } from '../constants';
 import { getAppName } from '../apps/helper';
 
 export const CALENDAR_APP_NAME = getAppName(APPS.PROTONCALENDAR);
@@ -164,7 +164,7 @@ export const ICAL_MIME_TYPE = 'text/calendar';
 
 export const DEFAULT_CALENDAR = {
     name: 'My calendar',
-    color: LABEL_COLORS[0],
+    color: ACCENT_COLORS[0],
     description: '',
 };
 

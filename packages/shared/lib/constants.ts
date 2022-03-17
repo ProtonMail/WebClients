@@ -499,7 +499,7 @@ export enum LABEL_EXCLUSIVE {
     LABEL = 0,
 }
 
-export const LABEL_COLORS = [
+export const ACCENT_COLORS = [
     '#8080FF',
     '#EC3E7C',
     '#DB60D6',

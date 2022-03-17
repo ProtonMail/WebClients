@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
-import { LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS, ROOT_FOLDER, LABEL_TYPE } from '@proton/shared/lib/constants';
 import { randomIntFromInterval, noop } from '@proton/shared/lib/helpers/function';
 import { create as createLabel, updateLabel, checkLabelAvailability } from '@proton/shared/lib/api/labels';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -67,7 +67,7 @@ const EditLabelModal = ({
     const [model, setModel] = useState<LabelModel>(
         label || {
             Name: '',
-            Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+            Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
             Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
             ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
             Notify: type === 'folder' ? 1 : 0,
@@ -78,7 +78,7 @@ const EditLabelModal = ({
         setModel(
             label || {
                 Name: '',
-                Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+                Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
                 Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
                 ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
                 Notify: type === 'folder' ? 1 : 0,

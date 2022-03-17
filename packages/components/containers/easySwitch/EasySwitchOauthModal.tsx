@@ -38,7 +38,7 @@ import {
     EasySwitchFeatureFlag,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { PRODUCT_NAMES, LABEL_COLORS } from '@proton/shared/lib/constants';
+import { PRODUCT_NAMES, ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { noop, randomIntFromInterval } from '@proton/shared/lib/helpers/function';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
@@ -209,7 +209,7 @@ const EasySwitchOauthModal = ({
                 const { Calendar } = await api(
                     createCalendar({
                         Name,
-                        Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+                        Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
                         Description: '',
                         Display: 1,
                         AddressID: addressID,

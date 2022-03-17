@@ -1,64 +1,67 @@
 .color-selector {
 	&-container {
+		display: flex;
+		flex-flow: row wrap;
+		gap: em(8);
+
 		@include respond-to($breakpoint-small, 'min') {
-			max-inline-size: 13em;
+			max-inline-size: em((40 * 5) + (8 * 4)); // items + gaps
+			box-sizing: content-box;
 		}
+	}
+
+	&-input[type='radio'] {
+		position: absolute;
+		opacity: 0;
 	}
 
 	&-item {
 		position: relative;
-		display: inline-block;
-		block-size: 2.5em;
-		inline-size: 2.5em;
-		border-radius: 50%;
-		padding: 0;
-		margin: 0.125em;
+		display: flex;
+		block-size: em(40);
+		inline-size: em(40);
 		overflow: hidden;
+		border-radius: 50%;
+		background-color: var(--color-selector-base);
 		cursor: pointer;
+		transition: 0.15s easing(easeOutQuint);
 
-		&-mask {
+		&::before {
+			content: '';
 			position: absolute;
-			display: inline-flex;
-			justify-content: center;
-			align-items: center;
 			inset: 0;
 			border-radius: 50%;
-			z-index: 2;
-			background: currentColor;
-			border: 2px solid var(--background-norm);
-			pointer-events: none;
-			transition: border 0.1s ease-out;
+			z-index: 1;
+			border: em(4) solid transparent;
+			transition: inherit;
 		}
 
-		&.is-selected &-mask {
-			border: 3px solid rgb(0 0 0 / 0.2);
+		&::after {
+			content: '';
+			display: block;
+			inline-size: em(16);
+			block-size: em(16);
+			border-radius: 50%;
+			margin: auto;
+			background-color: transparent;
+			transition: inherit;
 		}
 
-		svg {
-			opacity: 0;
-			color: white;
-			display: inline-block;
-			transition: opacity 0.1s linear;
+		&:hover,
+		&:focus-within {
+			&::before {
+				border-color: var(--color-selector-strong);
+			}
 		}
 
-		&:hover svg {
-			opacity: 0.75;
-		}
+		&.is-selected {
+			&::before {
+				border-color: var(--color-selector-intense);
+			}
 
-		&.is-selected svg {
-			opacity: 1;
+			&::after {
+				background-color: white;
+			}
 		}
-	}
-
-	&-input-color[type='radio'] {
-		position: absolute;
-		z-index: 1;
-		inset-block-start: 0;
-		inset-inline-start: 0;
-		inline-size: 100%;
-		block-size: 100%;
-		opacity: 0;
-		margin: 0;
-		cursor: pointer;
 	}
 }
