@@ -500,36 +500,18 @@ export enum LABEL_EXCLUSIVE {
 }
 
 export const LABEL_COLORS = [
-    '#7272a7',
-    '#8989ac',
-
-    '#cf5858',
-    '#cf7e7e',
-
-    '#c26cc7',
-    '#c793ca',
-
-    '#7569d1',
-    '#9b94d1',
-
-    '#69a9d1',
-    '#a8c4d5',
-
-    '#5ec7b7',
-    '#97c9c1',
-
-    '#72bb75',
-    '#9db99f',
-
-    '#c3d261',
-    '#c6cd97',
-
-    '#e6c04c',
-    '#e7d292',
-
-    '#e6984c',
-    '#dfb286',
+    '#8080FF',
+    '#EC3E7C',
+    '#DB60D6',
+    '#415DF0',
+    '#179FD9',
+    '#1DA583',
+    '#3CBB3A',
+    '#B4A40E',
+    '#936D58',
+    '#F78400',
 ];
+
 export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
 
 export const DARK_MODE_CLASS = 'isDarkMode';
