@@ -79,6 +79,7 @@ type DoneMessage = {
     blockTokens: BlockToken[];
     signature: string;
     signatureAddress: string;
+    xattr: string;
 };
 
 type NetworkErrorMessage = {
@@ -107,7 +108,7 @@ type WorkerEvent = {
 interface WorkerControllerHandlers {
     createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlock?: ThumbnailRequestBlock) => void;
     onProgress: (increment: number) => void;
-    finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string) => void;
+    finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string, xattr: string) => void;
     onNetworkError: (error: string) => void;
     onError: (error: string) => void;
     onCancel: () => void;
@@ -202,12 +203,13 @@ export class UploadWorker {
         } as ProgressMessage);
     }
 
-    postDone(blockTokens: BlockToken[], signature: string, signatureAddress: string) {
+    postDone(blockTokens: BlockToken[], signature: string, signatureAddress: string, xattr: string) {
         this.worker.postMessage({
             command: 'done',
             blockTokens,
             signature,
             signatureAddress,
+            xattr,
         } as DoneMessage);
     }
 
@@ -251,7 +253,7 @@ export class UploadWorkerController {
                     onProgress(data.increment);
                     break;
                 case 'done':
-                    finalize(data.blockTokens, data.signature, data.signatureAddress);
+                    finalize(data.blockTokens, data.signature, data.signatureAddress, data.xattr);
                     break;
                 case 'network_error':
                     onNetworkError(data.error);
