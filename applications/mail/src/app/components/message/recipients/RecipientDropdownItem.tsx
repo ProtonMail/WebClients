@@ -14,9 +14,12 @@ const RecipientDropdownItem = ({ label, recipient, closeDropdown }: Props) => {
     const initial = getInitials(label);
     const { createNotification } = useNotifications();
 
-    // Contact might not have a Name and by default we put the Address.
-    // In this case we don't want to display the Address field twice
-    const hasName = recipient.Name !== '' && recipient.Name !== recipient.Address;
+    // Label value can contain :
+    //  - Contact Name if the recipient is a contact, or Recipient Name or Recipient Address on PM
+    //  - Recipient Name or Recipient Address on EO
+    // Recipient might not have a Name or a Contact Name, and by default we put the Address
+    // In this case, we don't want to display the Address field twice
+    const hasName = label !== '' && label !== recipient.Address;
 
     const handleCopyEmail = () => {
         createNotification({
@@ -38,8 +41,8 @@ const RecipientDropdownItem = ({ label, recipient, closeDropdown }: Props) => {
                 <span className="mauto">{initial}</span>
             </span>
             <div className="flex flex-column flex-item-fluid px0-5">
-                <span className="text-ellipsis" title={recipient.Name || recipient.Address}>
-                    {recipient.Name || recipient.Address}
+                <span className="text-ellipsis" title={label}>
+                    {label}
                 </span>
                 {hasName && <span className="color-weak text-ellipsis">{`<${recipient.Address}>`}</span>}
             </div>
