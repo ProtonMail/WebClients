@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Row, useLoading, Radio, Label, Field, Loader, useMyLocation } from '@proton/components';
+import { Row, useLoading, Radio, Label, Field, Loader } from '@proton/components';
 import { c } from 'ttag';
 import Captcha from '@proton/components/containers/api/humanVerification/Captcha';
 import { TOKEN_TYPES } from '@proton/shared/lib/constants';
@@ -14,10 +14,7 @@ const VERIFICATION_METHOD = {
     CAPTCHA: TOKEN_TYPES.CAPTCHA,
 };
 
-const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit, onCaptcha }) => {
-    const [myLocation, loadingMyLocation] = useMyLocation();
-    const defaultCountry = myLocation?.Country?.toUpperCase();
-
+const VerificationMethodForm = ({ defaultCountry, defaultEmail, allowedMethods, onSubmit, onCaptcha }) => {
     const isMethodAllowed = (method) => allowedMethods.includes(method);
     const defaultMethod = Object.values(VERIFICATION_METHOD).find(isMethodAllowed);
 
@@ -76,7 +73,7 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit, onCapt
                                     onSendClick={handleSendEmailCode}
                                 />
                             )}
-                            {method === VERIFICATION_METHOD.SMS && !loadingMyLocation && (
+                            {method === VERIFICATION_METHOD.SMS && (
                                 <VerificationPhoneInput
                                     loading={loading}
                                     onSendClick={handleSendSMSCode}
@@ -102,6 +99,7 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit, onCapt
 
 VerificationMethodForm.propTypes = {
     defaultEmail: PropTypes.string.isRequired,
+    defaultCountry: PropTypes.string,
     allowedMethods: PropTypes.arrayOf(PropTypes.string).isRequired,
     onSubmit: PropTypes.func.isRequired,
     onCaptcha: PropTypes.func.isRequired,

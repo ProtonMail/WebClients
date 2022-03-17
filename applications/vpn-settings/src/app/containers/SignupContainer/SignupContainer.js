@@ -1,6 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader, useApi } from '@proton/components';
+import {
+    Button,
+    Title,
+    useLoading,
+    TextLoader,
+    VpnLogo,
+    Href,
+    FullLoader,
+    useApi,
+    useMyLocation,
+} from '@proton/components';
 import { c } from 'ttag';
 import { BLACK_FRIDAY, CYCLE } from '@proton/shared/lib/constants';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -33,6 +43,8 @@ const SignupContainer = ({ match, history, onLogin }) => {
     const couponCode = searchParams.get('coupon');
     const currency = searchParams.get('currency');
     const billingCycle = Number(searchParams.get('billing'));
+    const [myLocation] = useMyLocation();
+    const defaultCountry = myLocation?.Country?.toUpperCase();
 
     const historyState = history.location.state || {};
     const preSelectedPlan = searchParams.get('plan') || historyState.preSelectedPlan;
@@ -242,6 +254,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
                             )}
                             {signupState === SignupState.Verification && (
                                 <VerificationStep
+                                    defaultCountry={defaultCountry}
                                     model={model}
                                     allowedMethods={signupAvailability.allowedMethods}
                                     onVerify={(...rest) => withCreateLoading(handleVerification(...rest))}
