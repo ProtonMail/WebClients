@@ -1,4 +1,3 @@
-import { Location, History } from 'history';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 
@@ -289,22 +288,20 @@ export interface ESHelpers<ESItemMetadata, ESItem, ESSearchParameters, ESItemCha
         ESSearchingHelpers<ESItem, ESCiphertext, ESSearchParameters>,
         ESSyncingHelpers<ESItemMetadata, ESItem, ESItemChanges, ESCiphertext, ESSearchParameters> {
     /**
-     * Extract search parameters, current page (if applicable) and whether it's a search from URL
-     * @param location The history location object
-     * @returns @param isSearch Whether the URL is in "search mode"
-     * @returns @param esSearchParams The search parameters extracted from the URL
+     * Get whether there is a search happening and its search parameters
+     * @returns @param isSearch Whether the app is on a search page
+     * @returns @param esSearchParams The search parameters
      */
-    parseSearchParams: (location: Location) => {
+    getSearchParams: () => {
         isSearch: boolean;
-        esSearchParams: ESSearchParameters;
+        esSearchParams: ESSearchParameters | undefined;
     };
 
     /**
      * Resert the sorting to inverse chronological order, since ES does not support other orders
      * This callback is optional: if not provided, sorting is never reset
-     * @param The history object to reset the URL to remove any sorting filters
      */
-    resetSort?: (history: History) => void;
+    resetSort?: () => void;
 
     /**
      * New users, i.e. those logging in for the first time (to whom the welcome flow is shown) have
@@ -379,7 +376,15 @@ export interface ESDBStatus<ESItem, ESSearchParameters>
  * Type of functions
  */
 export type GetUserKeys = () => Promise<DecryptedKey[]>;
-export type EncryptedSearch<ESItem> = (setResultsList: ESSetResultsList<ESItem>) => Promise<boolean>;
+export type EncryptedSearch<ESItem> = (
+    setResultsList: ESSetResultsList<ESItem>,
+    minimumItems?: number
+) => Promise<boolean>;
+export type EncryptedSearchExecution<ESItem, ESSearchParameters> = (
+    setResultsList: ESSetResultsList<ESItem>,
+    esSearchParams: ESSearchParameters,
+    minimumItems: number | undefined
+) => Promise<boolean>;
 export type HighlightString = (content: string, setAutoScroll: boolean) => string;
 export type HighlightMetadata = (
     metadata: string,
@@ -396,6 +401,9 @@ export interface EncryptedSearchFunctions<ESItem, ESSearchParameters, ESItemChan
      * Run a new encrypted search or increment an existing one (the difference is handled internally).
      * @param setResultsList a callback that will be given the items to show, i.e. those found as search
      * results, and that should handle the UI part of displaying them to the users
+     * @param minimumItems is the optional smallest number of items that the search is expected to produce.
+     * If specified this parameter instructs the search to try finding at least this number of items from disk,
+     * both in case of a new search with limited cache and in case of an incremented search
      * @returns a boolean indicating the success of the search
      */
     encryptedSearch: EncryptedSearch<ESItem>;
@@ -403,7 +411,7 @@ export interface EncryptedSearchFunctions<ESItem, ESSearchParameters, ESItemChan
     /**
      * Insert the <mark></mark> highlighting markdown in a string and returns a string containing it,
      * which then needs to be displayed in the UI. Note that the keywords to highlight are extracted
-     * directly with the parseSearchParams callback
+     * directly with the getSearchParams callback
      * @param content the string where to insert the markdown
      * @param setAutoScroll whether to insert the data-auto-scroll attribute to the first istance of
      * the inserted mark tags. The UI should automatically scroll, if possible, to said first tag

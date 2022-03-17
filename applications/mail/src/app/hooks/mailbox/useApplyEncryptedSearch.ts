@@ -1,19 +1,26 @@
 import { c } from 'ttag';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { useApi, useNotifications } from '@proton/components';
 import { useEffect } from 'react';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
-import { manualPending, load as loadAction, manualFulfilled, addESResults } from '../../logic/elements/elementsActions';
-import { ESSetsElementsCache } from '../../models/encryptedSearch';
+import {
+    manualPending,
+    load as loadAction,
+    manualFulfilled,
+    addESResults,
+    updatePage,
+} from '../../logic/elements/elementsActions';
+import { Element } from '../../models/element';
 import { RootState } from '../../logic/store';
 import {
     isES as isESSelector,
-    shouldLoadMoreES as shouldLoadMoreESSelector,
+    messagesToLoadMoreES as messagesToLoadMoreESSelector,
     shouldSendRequest as shouldSendRequestSelector,
-    shouldUpdatePage as shouldUpdatePageSelector,
 } from '../../logic/elements/elementsSelectors';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
+import { parseSearchParams } from '../../helpers/encryptedSearch/esUtils';
 
 interface EncryptedSearchParams {
     conversationMode: boolean;
@@ -34,6 +41,7 @@ export const useApplyEncryptedSearch = ({
     filter,
     onPage,
 }: EncryptedSearchParams) => {
+    const history = useHistory();
     const api = useApi();
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
@@ -46,13 +54,12 @@ export const useApplyEncryptedSearch = ({
 
     const isES = useSelector((state: RootState) => isESSelector(state, { search, esDBStatus }));
     const shouldSendRequest = useSelector((state: RootState) => shouldSendRequestSelector(state, { page, params }));
-    const shouldUpdatePage = useSelector((state: RootState) => shouldUpdatePageSelector(state, { page }));
-    const shouldLoadMoreES = useSelector((state: RootState) =>
-        shouldLoadMoreESSelector(state, { page, search, esDBStatus })
+    const messagesToLoadMoreES = useSelector((state: RootState) =>
+        messagesToLoadMoreESSelector(state, { page, search, esDBStatus })
     );
 
-    const setEncryptedSearchResults: ESSetsElementsCache = (elements) => {
-        dispatch(addESResults({ elements, page }));
+    const setEncryptedSearchResults = (elements: Element[]) => {
+        dispatch(addESResults({ elements, page: parseSearchParams(history.location).page }));
     };
 
     const executeSearch = async () => {
@@ -90,11 +97,12 @@ export const useApplyEncryptedSearch = ({
         if (shouldSendRequest && isSearch(search)) {
             void executeSearch();
         }
-        if (isES && (shouldUpdatePage || shouldLoadMoreES)) {
-            if (shouldLoadMoreES) {
-                dispatch(manualPending());
-            }
-            void encryptedSearch(setEncryptedSearchResults);
+        if (isES && messagesToLoadMoreES !== 0) {
+            // We navigate directly to the requested page first, because it is always guaranteed
+            // to contain some messages, either because it's an already full intermediate page or
+            // beacause it's the partial last page available
+            dispatch(updatePage(parseSearchParams(history.location).page));
+            void encryptedSearch(setEncryptedSearchResults, messagesToLoadMoreES);
         }
-    }, [shouldSendRequest, shouldUpdatePage, shouldLoadMoreES, search]);
+    }, [shouldSendRequest, messagesToLoadMoreES, search]);
 };

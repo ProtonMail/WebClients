@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -9,14 +8,15 @@ import useUser from '@proton/components/hooks/useUser';
 import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import {
     EncryptedSearch,
+    EncryptedSearchExecution,
     EncryptedSearchFunctions,
     ESCache,
     ESDBStatus,
     ESEvent,
     ESHelpers,
-    ESSetResultsList,
     ESStatus,
     HighlightMetadata,
     HighlightString,
@@ -80,7 +80,6 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     esHelpers: inputESHelpers,
     successMessage,
 }: Props<ESItemMetadata, ESItem, ESSearchParameters, ESItemChanges, ESCiphertext>) => {
-    const history = useHistory();
     const getUserKeys = useGetUserKeys();
     const api = useApi();
     const [user] = useUser();
@@ -90,8 +89,8 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
         ...defaultESHelpers,
         ...inputESHelpers,
     };
-    const { parseSearchParams } = esHelpers;
-    const { isSearch } = parseSearchParams(history.location);
+    const { getSearchParams } = esHelpers;
+    const { isSearch } = getSearchParams();
 
     // Keep a state of search results to update in case of new events
     // and information on the status of IndexedDB
@@ -197,6 +196,23 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
+     * Reset to default only the parameters of ESStatus that are related to a search
+     */
+    const resetSearchStatus = (
+        esStatus: ESStatus<ESItem, ESSearchParameters>
+    ): ESStatus<ESItem, ESSearchParameters> => {
+        return {
+            ...esStatus,
+            permanentResults: defaultESStatus.permanentResults,
+            setResultsList: defaultESStatus.setResultsList,
+            lastTimePoint: defaultESStatus.lastTimePoint,
+            previousESSearchParams: defaultESStatus.previousESSearchParams,
+            isSearchPartial: defaultESStatus.isSearchPartial,
+            isSearching: defaultESStatus.isSearching,
+        };
+    };
+
+    /**
      * Deactivates ES. This does not remove anything, and the database keeps being synced.
      * It is used to switch ES temporarily off in cases when server side search is available.
      */
@@ -216,9 +232,9 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
         } else {
             // Every time ES is enabled, we reset sorting to avoid carrying on with SIZE sorting in
             // case it was previously used. SIZE sorting is not supported by ES
-            const { isSearch } = parseSearchParams(history.location);
+            const { isSearch } = getSearchParams();
             if (isSearch) {
-                esHelpers.resetSort(history);
+                esHelpers.resetSort();
             }
             setES.Enabled(userID);
         }
@@ -333,14 +349,13 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
         }
 
         const { permanentResults, setResultsList } = esStatus;
-        const { isSearch, esSearchParams } = parseSearchParams(history.location);
+        const { esSearchParams } = getSearchParams();
 
         const searchChanged = await syncMessageEvents(
             Items,
             userID,
             esCacheRef,
             permanentResults,
-            isSearch,
             indexKey,
             esSearchParams,
             storeName,
@@ -660,7 +675,11 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     /**
      * Execute an encrypted search
      */
-    const newEncryptedSearch: EncryptedSearch<ESItem> = async (setResultsList) => {
+    const newEncryptedSearch: EncryptedSearchExecution<ESItem, ESSearchParameters> = async (
+        setResultsList,
+        esSearchParams,
+        minimumItems
+    ) => {
         const t1 = performance.now();
         const {
             previousESSearchParams,
@@ -682,8 +701,6 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
         if (!isCaching && !esCacheRef.current.isCacheReady) {
             void cacheIndexedDB();
         }
-
-        const { esSearchParams } = parseSearchParams(history.location);
 
         // In case only sorting changed, for complete searches it doesn't make sense to perform a new search
         if (!wasSearchPartial && previousESSearchParams) {
@@ -727,7 +744,8 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
                 abortSearchingRef,
                 storeName,
                 indexName,
-                esHelpers
+                esHelpers,
+                minimumItems
             ));
         } catch (error: any) {
             esSentryReport('encryptedSearch: hybridSearch', { error });
@@ -748,7 +766,6 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
                     setResultsList: setResultsList,
                     lastTimePoint,
                     previousESSearchParams: esSearchParams,
-                    page: 0,
                     isSearchPartial,
                     isSearching: false,
                 };
@@ -771,25 +788,21 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     };
 
     /**
-     * Increase the number of results in case the cache is limited as the user changes page
+     * Increase the number of results in order to reach at least the next multiple of ES_EXTRA_RESULTS_LIMIT,
+     * in case the cache is limited and the user wishes more
      */
-    const incrementSearch = async (setResultsList: ESSetResultsList<ESItem>) => {
-        const { permanentResults, lastTimePoint, isSearchPartial, cachedIndexKey } = esStatus;
+    const incrementSearch: EncryptedSearchExecution<ESItem, ESSearchParameters> = async (
+        setResultsList,
+        esSearchParams,
+        minimumItems
+    ) => {
+        const { permanentResults, lastTimePoint, cachedIndexKey } = esStatus;
 
-        const lastFilledPage = Math.ceil(permanentResults.length / ES_EXTRA_RESULTS_LIMIT) - 1;
-
-        const { isSearch, esSearchParams } = parseSearchParams(history.location);
-        if (!isSearch || !isSearchPartial) {
-            return;
-        }
-
-        const neededResults = ES_EXTRA_RESULTS_LIMIT * (lastFilledPage + 2);
-        let itemLimit = 0;
-        if (permanentResults.length < neededResults) {
-            itemLimit = neededResults - permanentResults.length + ES_EXTRA_RESULTS_LIMIT;
-        } else {
-            return;
-        }
+        const extraItems = Math.max(
+            ES_EXTRA_RESULTS_LIMIT * Math.ceil(permanentResults.length / ES_EXTRA_RESULTS_LIMIT) -
+                permanentResults.length,
+            minimumItems || 0
+        );
 
         setESStatus((esStatus) => {
             return {
@@ -800,7 +813,8 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
 
         const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
         if (!indexKey) {
-            return dbCorruptError();
+            await dbCorruptError();
+            return false;
         }
 
         const searchOutput = await uncachedSearch<ESItem, ESCiphertext, ESSearchParameters>(
@@ -810,7 +824,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
             storeName,
             indexName,
             esHelpers,
-            itemLimit,
+            extraItems,
             undefined,
             lastTimePoint,
             abortSearchingRef
@@ -831,40 +845,49 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
             });
             setResultsList(permanentResults);
         }
+
+        return true;
     };
 
     /**
-     * Run a new encrypted search or increment an existing one (the difference is handled internally).
+     * Perform a new encrypted search or increment an existing one.
      * @param setResultsList a callback that will be given the items to show, i.e. those found as search
      * results, and that should handle the UI part of displaying them to the users
+     * @param minimumItems is optional and refers to the smallest number of items that the search is
+     * expected to produce. If specified this parameter instructs the search to try finding at least
+     * this number of items from disk both when performing a new search with limited cache and when
+     * incrementing an existing partial search
      * @returns a boolean indicating the success of the search
      */
-    const encryptedSearch: EncryptedSearch<ESItem> = async (setResultsList) => {
-        const { dbExists, esEnabled, isSearchPartial } = esStatus;
+    const encryptedSearch: EncryptedSearch<ESItem> = async (setResultsList, minimumItems) => {
+        const { dbExists, esEnabled, isSearchPartial, previousESSearchParams } = esStatus;
 
         // In these cases no ES should be performed
         if (!dbExists || !esEnabled) {
             return false;
         }
 
-        const { isCacheLimited } = esCacheRef.current;
-        const shouldIncrementSearch = isSearchPartial && isCacheLimited;
+        const { isSearch, esSearchParams } = getSearchParams();
+        if (!isSearch || !esSearchParams) {
+            return false;
+        }
 
-        if (shouldIncrementSearch && !abortSearchingRef.current.signal.aborted) {
-            return incrementSearch(setResultsList).then(() => true);
+        const { isCacheLimited } = esCacheRef.current;
+        if (
+            isSearchPartial &&
+            isCacheLimited &&
+            previousESSearchParams &&
+            isDeepEqual(esSearchParams, previousESSearchParams) &&
+            !abortSearchingRef.current.signal.aborted
+        ) {
+            return incrementSearch(setResultsList, previousESSearchParams, minimumItems);
         }
 
         // Prevent old searches from interfering with newer ones
         abortSearchingRef.current.abort();
-        setESStatus((esStatus) => {
-            return {
-                ...esStatus,
-                isSearching: false,
-                isSearchPartial: false,
-            };
-        });
+        setESStatus((esStatus) => resetSearchStatus(esStatus));
 
-        return newEncryptedSearch(setResultsList);
+        return newEncryptedSearch(setResultsList, esSearchParams, minimumItems);
     };
 
     /**
@@ -873,8 +896,8 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
      * and not keywords, this function returns false
      */
     const shouldHighlight = () => {
-        const { isSearch, esSearchParams } = parseSearchParams(history.location);
-        if (!isSearch) {
+        const { isSearch, esSearchParams } = getSearchParams();
+        if (!isSearch || !esSearchParams) {
             return false;
         }
 
@@ -893,7 +916,11 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
      * @returns the string containing the markdown
      */
     const highlightString: HighlightString = (content, setAutoScroll) => {
-        const { esSearchParams } = parseSearchParams(history.location);
+        const { esSearchParams } = getSearchParams();
+        if (!esSearchParams) {
+            return content;
+        }
+
         const keywords = esHelpers.getKeywords(esSearchParams);
         if (!keywords) {
             return content;
@@ -914,13 +941,19 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
      * displayed
      */
     const highlightMetadata: HighlightMetadata = (metadata, isBold, trim) => {
-        const { esSearchParams } = parseSearchParams(history.location);
+        const noData = {
+            numOccurrences: 0,
+            resultJSX: <span>{metadata}</span>,
+        };
+
+        const { esSearchParams } = getSearchParams();
+        if (!esSearchParams) {
+            return noData;
+        }
+
         const keywords = esHelpers.getKeywords(esSearchParams);
         if (!keywords) {
-            return {
-                numOccurrences: 0,
-                resultJSX: <span>{metadata}</span>,
-            };
+            return noData;
         }
 
         return highlightJSX(metadata, keywords, isBold, trim);
@@ -932,7 +965,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
      */
     const isSearchResult = (ID: string) => {
         const { dbExists, esEnabled, permanentResults } = esStatus;
-        const { isSearch } = parseSearchParams(history.location);
+        const { isSearch } = getSearchParams();
         if (!(dbExists && esEnabled && isSearch)) {
             return false;
         }
@@ -1049,17 +1082,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
     useEffect(() => {
         if (!isSearch) {
             abortSearchingRef.current.abort();
-            setESStatus((esStatus) => {
-                return {
-                    ...esStatus,
-                    permanentResults: defaultESStatus.permanentResults,
-                    setResultsList: defaultESStatus.setResultsList,
-                    lastTimePoint: defaultESStatus.lastTimePoint,
-                    previousESSearchParams: defaultESStatus.previousESSearchParams,
-                    isSearchPartial: defaultESStatus.isSearchPartial,
-                    isSearching: defaultESStatus.isSearching,
-                };
-            });
+            setESStatus((esStatus) => resetSearchStatus(esStatus));
         }
     }, [isSearch]);
 

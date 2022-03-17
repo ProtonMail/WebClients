@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import {
     FeatureCode,
@@ -43,7 +43,7 @@ interface Props {
 }
 
 const EncryptedSearchProvider = ({ children }: Props) => {
-    const location = useLocation();
+    const history = useHistory();
     const getMessageKeys = useGetMessageKeys();
     const getMessageCounts = useGetMessageCounts();
     const api = useApi();
@@ -53,7 +53,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         FeatureCode.EnabledEncryptedSearch,
         FeatureCode.SpotlightEncryptedSearch,
     ]);
-    const { isSearch, page } = parseSearchParams(location);
+    const { isSearch, page } = parseSearchParams(history.location);
 
     const [esMailStatus, setESMailStatus] = useState<ESDBStatusMail>(defaultESMailStatus);
     // Allow to track changes in page to set the elements list accordingly
@@ -67,6 +67,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         welcomeFlags,
         getESFeature,
         updateSpotlightES,
+        history,
     });
 
     const {

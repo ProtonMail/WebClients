@@ -1,4 +1,4 @@
-import { Location } from 'history';
+import { useHistory } from 'react-router-dom';
 import { OpenPGPKey } from 'pmcrypto';
 
 import {
@@ -46,6 +46,8 @@ export const useESHelpers = ({
     getSharePrivateKey,
     getLinkPrivateKey,
 }: Props): ESHelpers<ESLink, ESLink, ESDriveSearchParams, ESItemChangesDrive, StoredCiphertextDrive> => {
+    const history = useHistory();
+
     const userID = user.ID;
     const queryItemsMetadata = async (storedItem?: StoredCiphertextDrive) => {
         if (!linkMapGenerator || storedItem === undefined) {
@@ -104,12 +106,11 @@ export const useESHelpers = ({
         return testKeywords(normalisedKeywords, [removeDiacritics(itemToSearch.decryptedName.toLocaleLowerCase())]);
     };
 
-    const parseSearchParams = (location: Location) => {
-        const keyword = extractSearchParameters(location);
+    const getSearchParams = () => {
+        const keyword = extractSearchParameters(history.location);
         return {
             isSearch: !!keyword,
-            esSearchParams: { normalisedKeywords: !keyword ? undefined : normalizeKeyword(keyword) },
-            page: 0,
+            esSearchParams: keyword ? { normalisedKeywords: normalizeKeyword(keyword) } : undefined,
         };
     };
 
@@ -190,7 +191,7 @@ export const useESHelpers = ({
             return esItemMetadata;
         },
         getKeywords: (esSearchParams: ESDriveSearchParams) => esSearchParams.normalisedKeywords,
-        parseSearchParams,
+        getSearchParams,
         getPreviousEventID,
         getEventFromLS,
     };
