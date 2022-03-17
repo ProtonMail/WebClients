@@ -2,6 +2,8 @@ import TurndownService from 'turndown';
 
 import { identity } from '@proton/shared/lib/helpers/function';
 
+const EMPTY_LINE_KEEPER = '%%%PROTON-EMPTY-LINE%%%';
+
 /**
  * Transform HTML to text
  * Append lines before the content if it starts with a Signature
@@ -17,17 +19,14 @@ export const toText = (html: string, convertImages = false) => {
     const replaceBreakLine = {
         filter: 'br',
         replacement(content: string, node: HTMLElement) {
-            // It matches the new line of a signature
-            if (node.parentElement?.nodeName === 'DIV' && node.parentElement.childElementCount === 1) {
-                return !node.parentElement.textContent ? '\n\n' : '\n';
-            }
-
             // ex <li>monique<br></li>
             if (node.parentElement?.lastChild === node && node.parentElement.textContent) {
                 return node.parentElement.nodeName !== 'LI' ? '\n' : '';
             }
 
-            return '\n\n';
+            // Turndown remove multiple empty lines by default
+            // So we use special anchors on each line break to for keeping all lines
+            return `${EMPTY_LINE_KEEPER}\n`;
         },
     } as TurndownService.Rule;
 
@@ -74,7 +73,11 @@ export const toText = (html: string, convertImages = false) => {
      */
     turndownService.escape = identity;
 
-    const output = turndownService.turndown(html);
+    let output = turndownService.turndown(html);
+
+    // Remove anchors to meant to keep empty lines
+    const emptyLineRegex = new RegExp(EMPTY_LINE_KEEPER, 'gi');
+    output = output.replace(emptyLineRegex, '');
 
     return output;
 };
