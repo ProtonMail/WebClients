@@ -29,6 +29,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         ContentEdit,
         Paste,
         HyperLink,
+        ImageEdit,
         Editor,
         createSnapshots,
         addSnapshot,
@@ -44,6 +45,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         new ContentEdit(),
         new Paste(),
         new HyperLink(),
+        new ImageEdit({ preserveRatio: true, minWidth: 20, minHeight: 20, borderColor: '#5064b6' }),
         new EditorEventListener(options.onEditorEvent),
         new EditorCustomPastePlugin(options.onPasteImage),
     ];
