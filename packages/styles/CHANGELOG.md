@@ -738,7 +738,7 @@
 -   added react dedicated styles (and notes/documentation about them)
 -   added `lh-standard` class (standard `line-height`)
 -   added `$list-max-width-em` feature (needed for composer)
--   added flags files in `assets/img/shared/flags`
+-   added flags files in `assets/img/illustrations/flags`
 -   added `pv-indicator` css file (and notes/documentation about `pv-styles`)
 -   added `.underline-hover` helper
 

@@ -1,7 +1,7 @@
 import { ReactNode, MouseEvent } from 'react';
 import { c } from 'ttag';
-import noContactsImg from '@proton/styles/assets/img/placeholders/empty-address-book.svg';
-import noResultsImg from '@proton/styles/assets/img/placeholders/empty-search.svg';
+import noContactsImg from '@proton/styles/assets/img/illustrations/empty-address-book.svg';
+import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import { useModals, InlineLinkButton } from '@proton/components';
 
 import { IllustrationPlaceholder } from '../../illustration';

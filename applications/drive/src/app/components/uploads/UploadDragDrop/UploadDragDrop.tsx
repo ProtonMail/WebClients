@@ -3,7 +3,7 @@ import * as React from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
-import dragdropImageSvg from '@proton/styles/assets/img/placeholders/drag-and-drop.svg';
+import dragdropImageSvg from '@proton/styles/assets/img/illustrations/drag-and-drop.svg';
 
 import { useUpload } from '../../../store';
 import { UploadFileList } from '../../../store/uploads/interface';

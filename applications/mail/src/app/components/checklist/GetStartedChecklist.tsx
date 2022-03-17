@@ -4,7 +4,7 @@ import { ButtonLike, ChecklistItem, Countdown, SettingsLink, useApi, Loader, cla
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import gift from '@proton/styles/assets/img/get-started/gift.svg';
+import gift from '@proton/styles/assets/img/illustrations/gift.svg';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 
 import { useGetStartedChecklist } from '../../containers/checklists';

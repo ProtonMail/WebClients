@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { EmptyViewContainer, PrimaryButton } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import noResultSearchSvg from '@proton/styles/assets/img/placeholders/empty-search.svg';
+import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 
 import { useSearchControl } from '../../../store';
 

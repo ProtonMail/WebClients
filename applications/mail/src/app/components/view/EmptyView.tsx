@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import noResultSearchSvg from '@proton/styles/assets/img/placeholders/empty-search.svg';
-import noResultInboxSvg from '@proton/styles/assets/img/placeholders/empty-mailbox.svg';
+import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
+import noResultInboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
 import { Button, EmptyViewContainer } from '@proton/components';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../constants';

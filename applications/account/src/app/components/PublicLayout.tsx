@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { c } from 'ttag';
-import protonLogoSvg from '@proton/styles/assets/img/shared/proton-logo.svg';
+import protonLogoSvg from '@proton/styles/assets/img/illustrations/proton-logo.svg';
 
 import PublicContainer from './PublicContainer';
 import './PublicLayout.scss';
