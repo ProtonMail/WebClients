@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import VerificationMethodForm from './VerificationMethodForm/VerificationMethodForm';
 import VerificationCodeForm from './VerificationCodeForm/VerificationCodeForm';
 
-const VerificationForm = ({ defaultEmail, allowedMethods, onRequestCode, onSubmit, onCaptcha }) => {
+const VerificationForm = ({ defaultCountry, defaultEmail, allowedMethods, onRequestCode, onSubmit, onCaptcha }) => {
     const { createNotification } = useNotifications();
     const [params, setParams] = useState(null);
 
@@ -29,6 +29,7 @@ const VerificationForm = ({ defaultEmail, allowedMethods, onRequestCode, onSubmi
     if (!params) {
         return (
             <VerificationMethodForm
+                defaultCountry={defaultCountry}
                 defaultEmail={defaultEmail}
                 allowedMethods={allowedMethods}
                 onSubmit={handleRequestCode}
@@ -52,6 +53,7 @@ VerificationForm.propTypes = {
     onCaptcha: PropTypes.func.isRequired,
     onRequestCode: PropTypes.func.isRequired,
     defaultEmail: PropTypes.string.isRequired,
+    defaultCountry: PropTypes.string,
     allowedMethods: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
