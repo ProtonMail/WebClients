@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import {
     ContactModal,
@@ -7,6 +7,7 @@ import {
     Icon,
     useModals,
     usePopperAnchor,
+    useModalState,
 } from '@proton/components';
 import { OpenPGPKey } from 'pmcrypto';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
@@ -57,10 +58,22 @@ const MailRecipientItemSingle = ({
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
 
+    const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen] = useModalState();
+
     const { ContactID } = getContactEmail(contactsMap, recipient.Address) || {};
     const label = getRecipientLabel(recipient, true);
 
     const showTrustPublicKey = !!signingPublicKey || !!attachedPublicKey;
+
+    const contact = useMemo<ContactWithBePinnedPublicKey>(() => {
+        return {
+            emailAddress: recipient.Address || '',
+            name: label,
+            contactID: ContactID,
+            isInternal: true,
+            bePinnedPublicKey: (signingPublicKey as OpenPGPKey) || (attachedPublicKey as OpenPGPKey),
+        };
+    }, [recipient, label, ContactID, signingPublicKey, attachedPublicKey]);
 
     const handleCompose = (event: MouseEvent) => {
         event.stopPropagation();
@@ -91,16 +104,7 @@ const MailRecipientItemSingle = ({
 
     const handleClickTrust = (event: MouseEvent) => {
         event.stopPropagation();
-
-        const contact: ContactWithBePinnedPublicKey = {
-            emailAddress: recipient.Address || '',
-            name: label,
-            contactID: ContactID,
-            isInternal: true,
-            bePinnedPublicKey: (signingPublicKey as OpenPGPKey) || (attachedPublicKey as OpenPGPKey),
-        };
-
-        createModal(<TrustPublicKeyModal contact={contact} />);
+        setTrustPublicKeyModalOpen(true);
     };
 
     const customDropdownActions = (
@@ -132,6 +136,7 @@ const MailRecipientItemSingle = ({
     );
 
     return (
+        <>
         <RecipientItemSingle
             message={message}
             recipient={recipient}
@@ -149,7 +154,9 @@ const MailRecipientItemSingle = ({
             isOpen={isOpen}
             isOutside={isOutside}
         />
-    );
+    <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />
+        </>
+);
 };
 
 export default MailRecipientItemSingle;

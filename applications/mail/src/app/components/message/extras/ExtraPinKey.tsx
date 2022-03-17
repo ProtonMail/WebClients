@@ -6,18 +6,19 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { isInternal } from '@proton/shared/lib/mail/messages';
 import { useMemo } from 'react';
+import { OpenPGPKey } from 'pmcrypto';
 import {
     Button,
     classnames,
+    Href,
     Icon,
     InlineLinkButton,
-    LearnMore,
     useAddresses,
     useApi,
     useEventManager,
     useLoading,
     useMailSettings,
-    useModals,
+    useModalState,
     useNotifications,
 } from '@proton/components';
 import { c } from 'ttag';
@@ -118,10 +119,11 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
     const [loadingDisablePromptPin, withLoadingDisablePromptPin] = useLoading();
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const contactsMap = useContactsMap();
+
+    const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen] = useModalState();
 
     const senderAddress = message?.Sender.Address;
     const name = message?.Sender.Name;
@@ -157,6 +159,16 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
         (pinKey) => pinKey.armor() === bePinnedPublicKey?.armor()
     );
 
+    const contact = useMemo<ContactWithBePinnedPublicKey>(() => {
+        return {
+            emailAddress: senderAddress || '',
+            name,
+            contactID,
+            isInternal: isSenderInternal,
+            bePinnedPublicKey: bePinnedPublicKey || ({} as OpenPGPKey),
+        };
+    }, [senderAddress, name, contactID, isSenderInternal, bePinnedPublicKey]);
+
     if (promptKeyPinningType === undefined || signingPublicKeyAlreadyPinned) {
         return null;
     }
@@ -170,14 +182,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
         if (loading || !bePinnedPublicKey || !senderAddress) {
             return;
         }
-        const contact: ContactWithBePinnedPublicKey = {
-            emailAddress: senderAddress,
-            name,
-            contactID,
-            isInternal: isSenderInternal,
-            bePinnedPublicKey,
-        };
-        createModal(<TrustPublicKeyModal contact={contact} />);
+        setTrustPublicKeyModalOpen(true);
     };
 
     return (
@@ -191,22 +196,24 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                 <Icon name="circle-exclamation-filled" className="mt0-5 mr0-5 flex-item-noshrink color-danger" />
                 <div>
                     <span className="pr0-5 flex flex-item-fluid mt0-25">
-                        <span className="mr0-25">{getBannerMessage(promptKeyPinningType)}</span>
-                        {promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
-                            <InlineLinkButton
-                                className="color-inherit text-underline"
-                                disabled={loadingDisablePromptPin}
-                                onClick={() => withLoadingDisablePromptPin(handleDisablePromptPin())}
-                            >
-                                {c('Action').t`Never show`}
-                            </InlineLinkButton>
-                        ) : (
-                            <LearnMore
-                                className="color-inherit"
-                                url="https://protonmail.com/support/knowledge-base/address-verification/"
-                            />
-                        )}
-                    </span>
+                        <span className='mr0-25'>{getBannerMessage(promptKeyPinningType)}</span>
+                    {promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
+                        <InlineLinkButton
+                            className="color-inherit text-underline"
+                            disabled={loadingDisablePromptPin}
+                            onClick={() => withLoadingDisablePromptPin(handleDisablePromptPin())}
+                        >
+                            {c('Action').t`Never show`}
+                        </InlineLinkButton>
+                    ) : (
+                        <Href
+                            className="color-inherit"
+                            href="https://protonmail.com/support/knowledge-base/address-verification/"
+                        >
+                            {c('Link').t`Learn more`}
+                        </Href>
+                    )}
+                </span>
                 </div>
             </div>
             <span className="flex-align-items-start flex-item-noshrink on-mobile-w100 pt0-1">
@@ -214,6 +221,8 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                     {c('Action').t`Trust key`}
                 </Button>
             </span>
+
+            <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />
         </div>
     );
 };
