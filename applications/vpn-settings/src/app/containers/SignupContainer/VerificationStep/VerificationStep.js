@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import VerificationForm from './VerificationForm/VerificationForm';
 import LoginPanel from '../LoginPanel';
 
-const VerificationStep = ({ onVerify, onCaptcha, requestCode, allowedMethods, model, children }) => {
+const VerificationStep = ({ defaultCountry, onVerify, onCaptcha, requestCode, allowedMethods, model, children }) => {
     const handleSubmit = async (code, params) => {
         const newEmail = params.Destination.Address;
 
@@ -24,6 +24,7 @@ const VerificationStep = ({ onVerify, onCaptcha, requestCode, allowedMethods, mo
                     <Alert className="mb1">{c('Info')
                         .t`To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.`}</Alert>
                     <VerificationForm
+                        defaultCountry={defaultCountry}
                         allowedMethods={allowedMethods}
                         defaultEmail={model.email}
                         onRequestCode={requestCode}
@@ -46,6 +47,7 @@ VerificationStep.propTypes = {
     onVerify: PropTypes.func.isRequired,
     onCaptcha: PropTypes.func.isRequired,
     requestCode: PropTypes.func.isRequired,
+    defaultCountry: PropTypes.string,
     children: PropTypes.node.isRequired,
 };
 
