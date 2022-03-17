@@ -41,7 +41,7 @@ export interface UploadCallbacks {
         fileBlocks: FileRequestBlock[],
         thumbnailBlock?: ThumbnailRequestBlock
     ) => Promise<{ fileLinks: Link[]; thumbnailLink?: Link }>;
-    finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string) => Promise<void>;
+    finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string, xattr: string) => Promise<void>;
     onError?: (error: Error) => void;
 }
 
