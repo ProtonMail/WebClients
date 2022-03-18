@@ -78,7 +78,7 @@ export const useMessageHotkeys = (
     const filterDropdownToggleRef = useRef<() => void>(noop);
 
     const markAs = useMarkAs();
-    const { moveToFolder, moveScheduledModal } = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal, moveAllModal } = useMoveToFolder();
     const star = useStar();
 
     const onCompose = useOnCompose();
@@ -325,5 +325,6 @@ export const useMessageHotkeys = (
         moveDropdownToggleRef,
         filterDropdownToggleRef,
         moveScheduledModal,
+        moveAllModal,
     };
 };

@@ -67,7 +67,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const [containFocus, setContainFocus] = useState(true);
     const normSearch = normalize(search, true);
     const getElementsFromIDs = useGetElementsFromIDs();
-    const { moveToFolder, moveScheduledModal } = useMoveToFolder(setContainFocus);
+    const { moveToFolder, moveScheduledModal, moveAllModal } = useMoveToFolder(setContainFocus);
 
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
@@ -192,6 +192,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 </ul>
             </div>
             {moveScheduledModal}
+            {moveAllModal}
         </>
     );
 };
