@@ -8,6 +8,7 @@ import {
     UploadCallbacks,
     UploadFileControls,
     UploadFileProgressCallbacks,
+    FileKeys,
     FileRequestBlock,
     ThumbnailRequestBlock,
     BlockToken,
@@ -15,7 +16,7 @@ import {
 
 export function initUploadFileWorker(
     file: File,
-    { initialize, createBlockLinks, finalize, onError }: UploadCallbacks
+    { initialize, createFileRevision, createBlockLinks, finalize, onError }: UploadCallbacks
 ): UploadFileControls {
     const abortController = new AbortController();
     let workerApi: UploadWorkerController;
@@ -28,22 +29,37 @@ export function initUploadFileWorker(
     const start = async ({ onInit, onProgress, onNetworkError, onFinalize }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Lets start creating
         // revision on API and making thumbnail a bit sooner.
-        const setupPromise = mimeTypePromise.then(async (mimeType) => {
-            return Promise.all([
-                initialize(abortController.signal, mimeType).then((fileRevision) => {
-                    onInit?.(mimeType, fileRevision.fileName);
-                    return fileRevision;
-                }),
-                makeThumbnail(mimeType, file).catch((err) => {
-                    traceError(err);
-                    return undefined;
-                }),
-            ]);
+        const thumbnailDataPromise = mimeTypePromise.then(async (mimeType) => {
+            return makeThumbnail(mimeType, file).catch((err) => {
+                traceError(err);
+                return undefined;
+            });
         });
 
         return new Promise<void>((resolve, reject) => {
             const worker = new Worker(new URL('./worker/worker.ts', import.meta.url));
             workerApi = new UploadWorkerController(worker, {
+                keysGenerated: (keys: FileKeys) => {
+                    mimeTypePromise
+                        .then(async (mimeType) => {
+                            return createFileRevision(abortController.signal, mimeType, keys).then(
+                                async (fileRevision) => {
+                                    onInit?.(mimeType, fileRevision.fileName);
+                                    return thumbnailDataPromise.then((thumbnailData) => {
+                                        workerApi.postStart(
+                                            file,
+                                            thumbnailData,
+                                            fileRevision.address.privateKey,
+                                            fileRevision.address.email,
+                                            fileRevision.privateKey,
+                                            fileRevision.sessionKey
+                                        );
+                                    });
+                                }
+                            );
+                        })
+                        .catch(reject);
+                },
                 createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlock?: ThumbnailRequestBlock) => {
                     createBlockLinks(abortController.signal, fileBlocks, thumbnailBlock)
                         .then(({ fileLinks, thumbnailLink }) => workerApi.postCreatedBlocks(fileLinks, thumbnailLink))
@@ -67,16 +83,9 @@ export function initUploadFileWorker(
                 },
             });
 
-            setupPromise
-                .then(([fileRevision, thumbnailData]) => {
-                    workerApi.postStart(
-                        file,
-                        thumbnailData,
-                        fileRevision.address.privateKey,
-                        fileRevision.address.email,
-                        fileRevision.privateKey,
-                        fileRevision.sessionKey
-                    );
+            initialize(abortController.signal)
+                .then(({ addressPrivateKey, parentPrivateKey }) => {
+                    workerApi.postGenerateKeys(addressPrivateKey, parentPrivateKey);
                 })
                 .catch(reject);
         });

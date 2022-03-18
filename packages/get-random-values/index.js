@@ -6,12 +6,8 @@ const getRandomValues = (buf) => {
     return buf;
   }
 
-  if (window.crypto && window.crypto.getRandomValues) {
-    return window.crypto.getRandomValues(buf);
-  }
-
-  if (window.msCrypto && window.msCrypto.getRandomValues) {
-    return window.msCrypto.getRandomValues(buf);
+  if (typeof crypto !== 'undefined') {
+    return crypto.getRandomValues(buf);
   }
 
   throw new Error('No secure random number generator available.');

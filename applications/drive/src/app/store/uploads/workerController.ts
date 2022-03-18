@@ -3,6 +3,7 @@ import * as openpgp from 'openpgp';
 import { OpenPGPKey, SessionKey, updateServerTime, serverTime } from 'pmcrypto';
 
 import {
+    FileKeys,
     EncryptedBlock,
     EncryptedThumbnailBlock,
     FileRequestBlock,
@@ -11,6 +12,13 @@ import {
     BlockToken,
 } from './interface';
 import { getErrorString } from './utils';
+
+type GenerateKeysMessage = {
+    command: 'generate_keys';
+    addressPrivateKey: Uint8Array;
+    parentPrivateKey: Uint8Array;
+    pmcryptoTime: Date;
+};
 
 type StartMessage = {
     command: 'start';
@@ -42,7 +50,7 @@ type ResumeMessage = {
  * the main thread to the upload web worker.
  */
 type WorkerControllerEvent = {
-    data: StartMessage | CreatedBlocksMessage | PauseMessage | ResumeMessage;
+    data: GenerateKeysMessage | StartMessage | CreatedBlocksMessage | PauseMessage | ResumeMessage;
 };
 
 /**
@@ -50,6 +58,7 @@ type WorkerControllerEvent = {
  * web worker to messages from the main thread defined in WorkerControllerEvent.
  */
 interface WorkerHandlers {
+    generateKeys: (addressPrivateKey: OpenPGPKey, parentPrivateKey: OpenPGPKey) => void;
     start: (
         file: File,
         thumbnailData: Uint8Array | undefined,
@@ -62,6 +71,17 @@ interface WorkerHandlers {
     pause: () => void;
     resume: () => void;
 }
+
+type KeysGeneratedMessage = {
+    command: 'keys_generated';
+    nodeKey: string;
+    nodePassphrase: string;
+    nodePassphraseSignature: string;
+    contentKeyPacket: string;
+    contentKeyPacketSignature: string;
+    privateKey: Uint8Array;
+    sessionKey: SessionKey;
+};
 
 type CreateBlockMessage = {
     command: 'create_blocks';
@@ -97,7 +117,13 @@ type ErrorMessage = {
  * web worker to the main thread.
  */
 type WorkerEvent = {
-    data: CreateBlockMessage | ProgressMessage | DoneMessage | NetworkErrorMessage | ErrorMessage;
+    data:
+        | KeysGeneratedMessage
+        | CreateBlockMessage
+        | ProgressMessage
+        | DoneMessage
+        | NetworkErrorMessage
+        | ErrorMessage;
 };
 
 /**
@@ -106,6 +132,7 @@ type WorkerEvent = {
  * WorkerEvent.
  */
 interface WorkerControllerHandlers {
+    keysGenerated: (keys: FileKeys) => void;
     createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlock?: ThumbnailRequestBlock) => void;
     onProgress: (increment: number) => void;
     finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string, xattr: string) => void;
@@ -133,10 +160,19 @@ async function readOpenPGPKey(binaryKey: Uint8Array): Promise<OpenPGPKey> {
 export class UploadWorker {
     worker: Worker;
 
-    constructor(worker: Worker, { start, createdBlocks, pause, resume }: WorkerHandlers) {
+    constructor(worker: Worker, { generateKeys, start, createdBlocks, pause, resume }: WorkerHandlers) {
         this.worker = worker;
         worker.addEventListener('message', ({ data }: WorkerControllerEvent) => {
             switch (data.command) {
+                case 'generate_keys':
+                    (async (data) => {
+                        const addressPrivateKey = await readOpenPGPKey(data.addressPrivateKey);
+                        const parentPrivateKey = await readOpenPGPKey(data.parentPrivateKey);
+                        generateKeys(addressPrivateKey, parentPrivateKey);
+                    })(data).catch((err) => {
+                        this.postError(err);
+                    });
+                    break;
                 case 'start':
                     (async (data) => {
                         const addressPrivateKey = await readOpenPGPKey(data.addressPrivateKey);
@@ -176,6 +212,14 @@ export class UploadWorker {
             event.preventDefault();
             this.postError(event.reason);
         });
+    }
+
+    postKeysGenerated(keys: FileKeys) {
+        this.worker.postMessage({
+            command: 'keys_generated',
+            ...keys,
+            privateKey: keys.privateKey.toPacketlist().write(),
+        } as KeysGeneratedMessage);
     }
 
     postCreateBlocks(fileBlocks: EncryptedBlock[], encryptedThumbnailBlock?: EncryptedThumbnailBlock) {
@@ -240,12 +284,36 @@ export class UploadWorkerController {
 
     constructor(
         worker: Worker,
-        { createBlocks, onProgress, finalize, onNetworkError, onError, onCancel }: WorkerControllerHandlers
+        {
+            keysGenerated,
+            createBlocks,
+            onProgress,
+            finalize,
+            onNetworkError,
+            onError,
+            onCancel,
+        }: WorkerControllerHandlers
     ) {
         this.worker = worker;
         this.onCancel = onCancel;
         worker.addEventListener('message', ({ data }: WorkerEvent) => {
             switch (data.command) {
+                case 'keys_generated':
+                    (async (data) => {
+                        const privateKey = await readOpenPGPKey(data.privateKey);
+                        keysGenerated({
+                            nodeKey: data.nodeKey,
+                            nodePassphrase: data.nodePassphrase,
+                            nodePassphraseSignature: data.nodePassphraseSignature,
+                            contentKeyPacket: data.contentKeyPacket,
+                            contentKeyPacketSignature: data.contentKeyPacketSignature,
+                            privateKey,
+                            sessionKey: data.sessionKey,
+                        });
+                    })(data).catch((err) => {
+                        onError(err);
+                    });
+                    break;
                 case 'create_blocks':
                     createBlocks(data.fileBlocks, data.thumbnailBlock);
                     break;
@@ -277,6 +345,16 @@ export class UploadWorkerController {
 
     cancel() {
         this.onCancel();
+    }
+
+    postGenerateKeys(addressPrivateKey: OpenPGPKey, parentPrivateKey: OpenPGPKey) {
+        const pmcryptoTime = serverTime();
+        this.worker.postMessage({
+            command: 'generate_keys',
+            addressPrivateKey: addressPrivateKey.toPacketlist().write(),
+            parentPrivateKey: parentPrivateKey.toPacketlist().write(),
+            pmcryptoTime,
+        } as GenerateKeysMessage);
     }
 
     postStart(
