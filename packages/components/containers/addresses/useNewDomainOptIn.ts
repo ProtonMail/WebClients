@@ -4,7 +4,8 @@ import { useApi } from '../../hooks';
 
 const useNewDomainOptIn = () => {
     const api = useApi();
-    const [domain, setDomain] = useState('');
+    const state = useState('');
+    const [, setDomain] = state;
 
     useEffect(() => {
         api<{ Domain: string }>({ url: 'domains/optin', method: 'get', silence: true })
@@ -14,7 +15,7 @@ const useNewDomainOptIn = () => {
             .catch(noop);
     }, []);
 
-    return domain;
+    return state;
 };
 
 export default useNewDomainOptIn;
