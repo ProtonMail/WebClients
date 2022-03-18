@@ -146,8 +146,8 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
         void preventLeave(
             controls
                 .start()
-                .then(({ folderId }) => {
-                    queue.updateWithData(nextFolderUpload.id, TransferState.Done, { folderId });
+                .then(({ folderId, folderName }) => {
+                    queue.updateWithData(nextFolderUpload.id, TransferState.Done, { folderId, name: folderName });
                 })
                 .catch((error) => {
                     if (isTransferCancelError(error)) {
