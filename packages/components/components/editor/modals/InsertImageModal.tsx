@@ -1,5 +1,7 @@
-import { useState, ChangeEvent, useEffect } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
+
+import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 
 import { generateUID } from '../../../helpers';
 import { Button, PrimaryButton } from '../../button';
@@ -26,24 +28,18 @@ interface Props {
 const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) => {
     const [uid] = useState(generateUID('editor-image-modal'));
     const [imageSrc, setImageSrc] = useState<string>();
-    const [imageState, setImageState] = useState(ImageState.Initial);
 
-    const handleSuccess = () => setImageState(ImageState.Ok);
-    const handleError = () => setImageState(ImageState.Error);
-
-    // Check if the image url is valid
-    const checkImageUrl = (url: string) => {
-        const image = new Image();
-        image.onload = () => handleSuccess();
-        image.onerror = () => handleError();
-        image.src = url;
-    };
-
-    useEffect(() => {
-        if (imageSrc) {
-            checkImageUrl(imageSrc);
+    const imageState = (() => {
+        if (!imageSrc) {
+            return ImageState.Initial;
+        } else {
+            if (isValidHttpUrl(imageSrc)) {
+                return ImageState.Ok;
+            } else {
+                return ImageState.Error;
+            }
         }
-    }, [imageSrc]);
+    })();
 
     const handleChange = async (event: ChangeEvent<HTMLInputElement>) => {
         setImageSrc(event.target.value);

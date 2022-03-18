@@ -36,25 +36,33 @@ const ContactImageSummary = ({ photo, name }: Props) => {
         if (!photo || !shouldShow) {
             return;
         }
-        const resize = async () => {
-            const { src, width, height } = await toImage(photo);
 
-            if (width <= CONTACT_IMG_SIZE && height <= CONTACT_IMG_SIZE) {
-                setImage({ src, width, height, isSmall: true });
-                return;
+        const resize = async () => {
+            try {
+                const { src, width, height } = await toImage(photo);
+
+                if (width <= CONTACT_IMG_SIZE && height <= CONTACT_IMG_SIZE) {
+                    setImage({ src, width, height, isSmall: true });
+                    return;
+                }
+
+                const resized = await resizeImage({
+                    original: photo,
+                    maxWidth: CONTACT_IMG_SIZE,
+                    maxHeight: CONTACT_IMG_SIZE,
+                    bigResize: true,
+                });
+
+                setImage({ src: resized });
+            } catch (e) {
+                setImage({ src: photo });
+                throw new Error('Get image failed');
             }
-            const resized = await resizeImage({
-                original: photo,
-                maxWidth: CONTACT_IMG_SIZE,
-                maxHeight: CONTACT_IMG_SIZE,
-                bigResize: true,
-            });
-            setImage({ src: resized });
         };
         // if resize fails (e.g. toImage will throw if the requested resource hasn't specified a CORS policy),
         // fallback to the original src
         void withLoadingResize(resize().catch(noop));
-    }, [photo, shouldShow, showAnyway]);
+    }, [photo, shouldShow]);
 
     if (!photo) {
         return (
