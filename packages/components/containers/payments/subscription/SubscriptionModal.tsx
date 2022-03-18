@@ -52,7 +52,7 @@ interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     currency?: Currency;
     planIDs?: PlanIDs;
     coupon?: string | null;
-    disableBackButton?: boolean;
+    disablePlanSelection?: boolean;
     defaultAudience?: Audience;
 }
 
@@ -88,7 +88,7 @@ const SubscriptionModal = ({
     coupon,
     planIDs = {},
     onClose,
-    disableBackButton,
+    disablePlanSelection,
     defaultAudience = Audience.B2C,
     ...rest
 }: Props) => {
@@ -481,7 +481,8 @@ const SubscriptionModal = ({
                 )}
                 {model.step === SUBSCRIPTION_STEPS.THANKS && <SubscriptionThanks method={method} onClose={onClose} />}
             </ModalTwoContent>
-            {disableBackButton || backStep === undefined ? null : (
+            {(disablePlanSelection && backStep === SUBSCRIPTION_STEPS.PLAN_SELECTION) ||
+            backStep === undefined ? null : (
                 <ModalTwoFooter>
                     <Button
                         onClick={() => {

@@ -73,7 +73,7 @@ const SubscriptionPanel = ({
     const handleCustomizeSubscription = () =>
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
-            disableBackButton: true,
+            disablePlanSelection: true,
         });
     const handleExplorePlans = () =>
         openSubscriptionModal({
@@ -82,7 +82,7 @@ const SubscriptionPanel = ({
     const handleEditPayment = () =>
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
-            disableBackButton: true,
+            disablePlanSelection: true,
         });
 
     if (!user.canPay) {

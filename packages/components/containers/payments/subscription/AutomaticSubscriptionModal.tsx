@@ -38,7 +38,7 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
         cycle: parsedCycle || subscription.Cycle || DEFAULT_CYCLE,
         currency: parsedCurrency || subscription.Currency || plans[0].Currency,
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
-        disableBackButton: edit === 'disable',
+        disablePlanSelection: edit === 'disable',
     };
 };
 
@@ -57,7 +57,7 @@ const AutomaticSubscriptionModal = () => {
             return;
         }
 
-        const { plan, currency, cycle, coupon, step, disableBackButton } = getParameters(
+        const { plan, currency, cycle, coupon, step, disablePlanSelection } = getParameters(
             location.search,
             plans,
             subscription
@@ -74,7 +74,7 @@ const AutomaticSubscriptionModal = () => {
             cycle,
             coupon,
             step,
-            disableBackButton,
+            disablePlanSelection,
         });
     }, [loadingPlans, loadingSubscription, loadingModal, location.search]);
 
