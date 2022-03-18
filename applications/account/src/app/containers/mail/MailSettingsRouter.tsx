@@ -36,10 +36,12 @@ const MailSettingsRouter = ({
     mailAppRoutes,
     redirect,
     newDomain,
+    setNewDomain,
 }: {
     mailAppRoutes: ReturnType<typeof getMailAppRoutes>;
     redirect: ReactNode;
     newDomain: string;
+    setNewDomain: (value: string) => void;
 }) => {
     const { path } = useRouteMatch();
     const [addresses, loadingAddresses] = useAddresses();
@@ -63,7 +65,7 @@ const MailSettingsRouter = ({
             </Route>
             <Route path={getSectionPath(path, identity)}>
                 <PrivateMainSettingsArea location={location} config={identity}>
-                    <NewDomainSection domain={newDomain} />
+                    <NewDomainSection domain={newDomain} onDone={() => setNewDomain('')} />
                     <IdentitySection />
                     <AddressesSection isOnlySelf />
                 </PrivateMainSettingsArea>

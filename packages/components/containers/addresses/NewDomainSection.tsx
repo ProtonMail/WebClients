@@ -18,7 +18,6 @@ import {
     useNotifications,
 } from '../../hooks';
 import { SettingsSectionWide } from '../account';
-import { getShowNewDomainSection } from './newDomainHelper';
 
 interface SuccessModalProps extends Omit<AlertModalProps, 'title' | 'buttons' | 'children'> {
     domain: string;
@@ -26,7 +25,13 @@ interface SuccessModalProps extends Omit<AlertModalProps, 'title' | 'buttons' | 
     onSetAsDefault: () => void;
 }
 
-const SuccessModal = ({ domain, addressToCreate, onSetAsDefault, ...rest }: SuccessModalProps) => {
+const SuccessModal = ({
+    domain,
+    addressToCreate: addressToCreateString,
+    onSetAsDefault,
+    ...rest
+}: SuccessModalProps) => {
+    const addressToCreate = <b key="address">{addressToCreateString}</b>;
     return (
         <AlertModal
             title={
@@ -45,10 +50,10 @@ const SuccessModal = ({ domain, addressToCreate, onSetAsDefault, ...rest }: Succ
             ]}
             {...rest}
         >
-            <div className="mb1">
+            <div className="mb1 text-break">
                 {
                     // translator: The variable here is the new address for the user. For example "Want to set me@example.com as your default email for sending messages?"
-                    c('Info').t`Want to set ${addressToCreate} as your default email for sending messages?`
+                    c('Info').jt`Want to set ${addressToCreate} as your default email for sending messages?`
                 }
             </div>
             <div>
@@ -58,7 +63,7 @@ const SuccessModal = ({ domain, addressToCreate, onSetAsDefault, ...rest }: Succ
     );
 };
 
-const NewDomainSection = ({ domain }: { domain: string }) => {
+const NewDomainSection = ({ domain, onDone }: { domain: string; onDone: () => void }) => {
     const [user] = useUser();
     const { call } = useEventManager();
     const [addresses] = useAddresses();
@@ -94,6 +99,7 @@ const NewDomainSection = ({ domain }: { domain: string }) => {
             encryptionConfig: ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
             onUpdate: noop,
         });
+        await call();
         setCreatedAddress(Address);
         createNotification({
             // translator: The variable here is the new address for the user. For example "me@example.com is now active"
@@ -119,26 +125,25 @@ const NewDomainSection = ({ domain }: { domain: string }) => {
                     addressToCreate={addressToCreate}
                     onSetAsDefault={handleSetAsDefault}
                     {...successModal}
+                    onExit={onDone}
                 />
             )}
-            {!createdAddress && getShowNewDomainSection({ user, domain }) ? (
-                <SettingsSectionWide>
-                    <p>
-                        {
-                            // translator: The variable here is the new domain. For example "Our new example.com domain is a convenient option for sending and receiving emails. You'll still be able to use your original protonmail.com address."
-                            c('Info')
-                                .t`Our new ${domain} domain is a convenient option for sending and receiving emails. You'll still be able to use your original protonmail.com address.`
-                        }
-                    </p>
+            <SettingsSectionWide>
+                <p>
+                    {
+                        // translator: The variable here is the new domain. For example "Our new example.com domain is a convenient option for sending and receiving emails. You'll still be able to use your original protonmail.com address."
+                        c('Info')
+                            .t`Our new ${domain} domain is a convenient option for sending and receiving emails. You'll still be able to use your original protonmail.com address.`
+                    }
+                </p>
 
-                    <Button color="norm" loading={loading} onClick={() => withLoading(handleCreateAddress())}>
-                        {
-                            // translator: The variable here is the new address for the user. For example "Activate me@example.com"
-                            c('Action').t`Activate ${addressToCreate}`
-                        }
-                    </Button>
-                </SettingsSectionWide>
-            ) : null}
+                <Button color="norm" loading={loading} onClick={() => withLoading(handleCreateAddress())}>
+                    {
+                        // translator: The variable here is the new address for the user. For example "Activate me@example.com"
+                        c('Action').t`Activate ${addressToCreate}`
+                    }
+                </Button>
+            </SettingsSectionWide>
         </>
     );
 };
