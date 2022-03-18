@@ -31,12 +31,17 @@ const ESSlowToolbar = () => {
     );
 
     return (
-        <div className="bg-weak rounded m1 px1 py0-5 flex flex-wrap flex-justify-start flex-align-items-center">
-            <Icon name="magnifying-glass" className="mr0-5" />
-            {
-                // translator: sentence appears when a message content search takes too long . Complete sentence example: "Search taking too long? <Refine it> or <exclude message content> from this search session.
-                c('Info').jt`Search taking too long? ${dropdownButton} or ${toggleOffButton} from this search session.`
-            }
+        <div className="bg-weak rounded m1 px1 py0-5 flex flex-nowrap">
+            <div className="flex-item-noshrink">
+                <Icon name="magnifying-glass" className="mr0-5" />
+            </div>
+            <div className="flex-item-fluid pl0-25">
+                {
+                    // translator: sentence appears when a message content search takes too long . Complete sentence example: "Search taking too long? <Refine it> or <exclude message content> from this search session.
+                    c('Info')
+                        .jt`Search taking too long? ${dropdownButton} or ${toggleOffButton} from this search session.`
+                }
+            </div>
         </div>
     );
 };
