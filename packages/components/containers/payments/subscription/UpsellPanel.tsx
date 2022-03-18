@@ -48,7 +48,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
             openSubscriptionModal({
                 plan: PLANS.MAIL,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                disableBackButton: true,
+                disablePlanSelection: true,
             });
         const handleExplorePlans = () =>
             openSubscriptionModal({
@@ -129,7 +129,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                 cycle,
                 plan: PLANS.VPN,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                disableBackButton: true,
+                disablePlanSelection: true,
             });
         const maxVpn = 10;
         return (
@@ -191,7 +191,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                 cycle,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                disableBackButton: true,
+                disablePlanSelection: true,
             });
         return (
             <div className="border rounded px2 py1-5 pt0-5">
@@ -257,7 +257,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                 cycle,
                 plan: PLANS.BUNDLE_PRO,
                 step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
-                disableBackButton: true,
+                disablePlanSelection: true,
             });
         return (
             <div className="border rounded px2 py1-5 pt0-5">

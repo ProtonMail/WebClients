@@ -21,7 +21,7 @@ interface OpenCallbackProps {
     cycle?: Cycle;
     currency?: Currency;
     coupon?: string;
-    disableBackButton?: boolean;
+    disablePlanSelection?: boolean;
 }
 
 export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;
@@ -49,7 +49,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
         currency?: Currency;
         cycle?: Cycle;
         coupon?: string;
-        disableBackButton?: boolean;
+        disablePlanSelection?: boolean;
     } | null>(null);
 
     const loading = Boolean(loadingSubscription || loadingPlans);
@@ -76,7 +76,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                         cycle,
                         coupon,
                         defaultAudience,
-                        disableBackButton,
+                        disablePlanSelection,
                     }) => {
                         if (loading || render) {
                             return;
@@ -96,7 +96,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                                 defaultAudience || (plan && getIsB2BPlan(plan)) || getHasB2BPlan(subscription)
                                     ? Audience.B2B
                                     : Audience.B2C,
-                            disableBackButton,
+                            disablePlanSelection,
                         };
                         setModalState(true);
                     },
