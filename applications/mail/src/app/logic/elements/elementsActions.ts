@@ -115,13 +115,6 @@ export const pollTaskRunning = createAsyncThunk<
         }, TASK_RUNNING_POLLING_INTERVAL);
     }
 
-    console.log('pollTaskRunning', {
-        currentLabels,
-        finishedLabels,
-        newLabels,
-        timeoutID,
-    });
-
     return { newLabels, timeoutID };
 });
 
@@ -140,8 +133,6 @@ export const moveAll = createAsyncThunk<
     timeoutID = setTimeout(() => {
         void dispatch(pollTaskRunning({ api, call }));
     }, TASK_RUNNING_POLLING_INTERVAL);
-
-    console.log('moveAll', { LabelID: SourceLabelID, timeoutID });
 
     return { LabelID: SourceLabelID, timeoutID };
 });

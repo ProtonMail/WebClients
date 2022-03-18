@@ -188,7 +188,7 @@ const List = (
                         labelID={labelID}
                     />
                     {showESSlowToolbar && <ESSlowToolbar />}
-                    {showTaskRunningBanner && <TaskRunningBanner />}
+                    {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt1'} />}
                     {elements.length === 0 ? (
                         <EmptyView labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />
                     ) : (
