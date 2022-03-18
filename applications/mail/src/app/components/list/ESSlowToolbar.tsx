@@ -1,6 +1,6 @@
 import { memo, useMemo } from 'react';
 import { c } from 'ttag';
-import { InlineLinkButton, useUser } from '@proton/components';
+import { Icon, InlineLinkButton, useUser } from '@proton/components';
 import { sendSlowSearchReport } from '@proton/encrypted-search';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { storeName } from '../../constants';
@@ -31,7 +31,8 @@ const ESSlowToolbar = () => {
     );
 
     return (
-        <div className="sticky-top bg-norm border-bottom border-weak p0-5 flex flex-wrap flex-justify-center">
+        <div className="bg-weak rounded m1 px1 py0-5 flex flex-wrap flex-justify-start flex-align-items-center">
+            <Icon name="magnifying-glass" className="mr0-5" />
             {
                 // translator: sentence appears when a message content search takes too long . Complete sentence example: "Search taking too long? <Refine it> or <exclude message content> from this search session.
                 c('Info').jt`Search taking too long? ${dropdownButton} or ${toggleOffButton} from this search session.`

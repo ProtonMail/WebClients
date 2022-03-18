@@ -17,10 +17,11 @@ import { Element } from '../models/element';
 import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
 import { Conversation } from '../models/conversation';
-import { backendActionFinished, backendActionStarted, moveAll } from '../logic/elements/elementsActions';
+import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
 import MoveAllButton from '../components/notifications/MoveAllButton';
 import { isLabel } from '../helpers/labels';
 import MoveScheduledModal from '../components/message/modals/MoveScheduledModal';
+import { useMoveAll } from './useMoveAll';
 
 const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -289,6 +290,8 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const dispatch = useDispatch();
     let canUndo = true; // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
+    const { moveAll, modal: moveAllModal } = useMoveAll();
+
     const [moveScheduledModal, handleShowModal] = useModalTwo(MoveScheduledModal);
 
     /*
@@ -425,9 +428,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
                 const suggestMoveAll = elements.length === PAGE_SIZE && folderID === TRASH;
 
-                const handleMoveAll = suggestMoveAll
-                    ? () => dispatch(moveAll({ api, call, SourceLabelID: fromLabelID, DestinationLabelID: TRASH }))
-                    : undefined;
+                const handleMoveAll = suggestMoveAll ? () => moveAll(fromLabelID) : undefined;
 
                 const moveAllButton = handleMoveAll ? (
                     <MoveAllButton
@@ -454,7 +455,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
         [labels]
     );
 
-    return { moveToFolder, moveScheduledModal };
+    return { moveToFolder, moveScheduledModal, moveAllModal };
 };
 
 export const useStar = () => {

@@ -1,9 +1,20 @@
 import { c } from 'ttag';
+import { Icon, classnames } from '@proton/components';
 
-const TaskRunningBanner = () => {
+interface Props {
+    className?: string;
+}
+
+const TaskRunningBanner = ({ className }: Props) => {
     return (
-        <div className="sticky-top bg-norm border-bottom border-weak p0-5 flex flex-wrap flex-justify-center">
-            {c('Info').t`A long task running on your messages. They may move around during that time.`}
+        <div
+            className={classnames([
+                'bg-weak rounded mx1 mb1 px1 py0-5 flex flex-wrap flex-justify-start flex-align-items-center',
+                className,
+            ])}
+        >
+            <Icon name="clock" className="mr0-5" />
+            {c('Info').t`Moving a large amount of messages. This may take a while.`}
         </div>
     );
 };

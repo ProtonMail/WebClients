@@ -271,33 +271,39 @@ const MailboxContainer = ({
 
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
-    const { elementRef, labelDropdownToggleRef, moveDropdownToggleRef, moveScheduledModal, permanentDeleteModal } =
-        useMailboxHotkeys(
-            {
-                labelID,
-                elementID,
-                messageID,
-                elementIDs,
-                checkedIDs,
-                selectedIDs,
-                focusIndex,
-                columnLayout,
-                isMessageOpening,
-                location,
-            },
-            {
-                focusOnLastMessage,
-                getFocusedId,
-                handleBack,
-                handleCheck,
-                handleCheckOnlyOne,
-                handleCheckRange,
-                handleElement,
-                handleFilter,
-                handleCheckAll,
-                setFocusIndex,
-            }
-        );
+    const {
+        elementRef,
+        labelDropdownToggleRef,
+        moveDropdownToggleRef,
+        moveScheduledModal,
+        moveAllModal,
+        permanentDeleteModal,
+    } = useMailboxHotkeys(
+        {
+            labelID,
+            elementID,
+            messageID,
+            elementIDs,
+            checkedIDs,
+            selectedIDs,
+            focusIndex,
+            columnLayout,
+            isMessageOpening,
+            location,
+        },
+        {
+            focusOnLastMessage,
+            getFocusedId,
+            handleBack,
+            handleCheck,
+            handleCheckOnlyOne,
+            handleCheckRange,
+            handleElement,
+            handleFilter,
+            handleCheckAll,
+            setFocusIndex,
+        }
+    );
 
     return (
         <MailboxContainerContextProvider
@@ -433,6 +439,7 @@ const MailboxContainer = ({
             </div>
             {permanentDeleteModal}
             {moveScheduledModal}
+            {moveAllModal}
             {deleteModal}
             {mailContextMenuFeature?.Value ? (
                 <ItemContextMenu
