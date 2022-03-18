@@ -1,7 +1,7 @@
 import { getCalendars } from '@proton/shared/lib/models/calendarsModel';
 import { FormEvent, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
-import { APP_NAMES, APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { APP_NAMES, APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
@@ -45,6 +45,7 @@ import PlanCustomization from './PlanCustomization';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import SubscriptionCycleSelector from './SubscriptionCycleSelector';
 import MemberDowngradeModal from '../MemberDowngradeModal';
+import PlanLossWarningModal from './PlanLossWarningModal';
 
 interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     step?: SUBSCRIPTION_STEPS;
@@ -164,7 +165,31 @@ const SubscriptionModal = ({
         createNotification({ text: c('Success').t`You have successfully unsubscribed` });
     };
 
+    const handlePlanWarnings = async (planIDs: PlanIDs) => {
+        const currentPlan = subscription?.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN);
+        const currentPlanName = currentPlan?.Name;
+        const newPlanName = Object.keys(planIDs).find((planName) =>
+            plans.find((plan) => plan.Type === PLAN_TYPES.PLAN && plan.Name === planName)
+        );
+        if (currentPlanName !== newPlanName && subscription?.CouponCode?.startsWith('MIGRATION')) {
+            await new Promise<void>((resolve, reject) => {
+                createModal(<PlanLossWarningModal onClose={reject} onConfirm={resolve} />);
+            });
+        }
+        if (currentPlanName === PLANS.NEW_VISIONARY && currentPlanName !== newPlanName) {
+            await new Promise<void>((resolve, reject) => {
+                createModal(<PlanLossWarningModal type="visionary" onClose={reject} onConfirm={resolve} />);
+            });
+        }
+    };
+
     const handleSubscribe = async (params = {}) => {
+        try {
+            await handlePlanWarnings(model.planIDs);
+        } catch (e) {
+            return;
+        }
+
         if (!hasPlanIDs(model.planIDs)) {
             return handleUnsubscribe();
         }
