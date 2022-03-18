@@ -21,7 +21,7 @@ import { Dispatch, SetStateAction, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { DynamicProgress } from '../../../components';
-import { useApi, useBeforeUnload, useGetCalendarInfo, useCalendarEmailNotificationsFeature } from '../../../hooks';
+import { useApi, useBeforeUnload, useGetCalendarInfo } from '../../../hooks';
 
 interface Props {
     model: ImportCalendarModel;
@@ -31,7 +31,6 @@ interface Props {
 const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
     const getCalendarInfo = useGetCalendarInfo();
-    const enabledEmailNotifications = useCalendarEmailNotificationsFeature();
 
     useBeforeUnload(c('Alert').t`By leaving now, some events may not be imported`);
 
@@ -72,9 +71,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 // add calendar alarms to invitations
                 const vevents =
                     model.method !== ICAL_METHOD.PUBLISH
-                        ? model.eventsParsed.map((vevent) =>
-                              getEventWithCalendarAlarms(vevent, calendarSettings, enabledEmailNotifications)
-                          )
+                        ? model.eventsParsed.map((vevent) => getEventWithCalendarAlarms(vevent, calendarSettings))
                         : [...model.eventsParsed];
                 const { withoutRecurrenceId, withRecurrenceId } = splitByRecurrenceId(vevents);
                 const processData = {

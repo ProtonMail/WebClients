@@ -18,7 +18,7 @@ import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { onlyDragFiles, Button, BasicModal } from '../../../components';
 
-import { useApi, useEventManager, useCalendarEmailNotificationsFeature } from '../../../hooks';
+import { useApi, useEventManager } from '../../../hooks';
 
 import AttachingModalContent from './AttachingModalContent';
 import ImportingModalContent from './ImportingModalContent';
@@ -51,7 +51,6 @@ const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClos
     const { call } = useEventManager();
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
     const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
-    const enabledEmailNotifications = useCalendarEmailNotificationsFeature();
 
     const handleFiles = (files: File[]) => {
         const [file] = files;
@@ -133,7 +132,6 @@ const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClos
                             method,
                             calscale,
                             xWrTimezone,
-                            enabledEmailNotifications,
                         })
                     );
                     const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(errors);

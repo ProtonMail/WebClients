@@ -44,7 +44,6 @@ export enum FeatureCode {
     ScheduledSend = 'ScheduledSend',
     SpotlightScheduledSend = 'SpotlightScheduledSend',
     ExternalSignup = 'ExternalSignup',
-    CalendarEmailNotification = 'CalendarEmailNotification',
     CalendarInviteLocale = 'CalendarInviteLocale',
     CalendarAutoImportInvite = 'CalendarAutoImportInvite',
     SeenMnemonicPrompt = 'SeenMnemonicPrompt',

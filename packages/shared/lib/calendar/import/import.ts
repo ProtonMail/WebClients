@@ -130,7 +130,6 @@ interface GetSupportedEventArgs {
     formatOptions?: FormatOptions;
     calendarTzid?: string;
     guessTzid?: string;
-    enabledEmailNotifications?: boolean;
 }
 export const extractSupportedEvent = async ({
     method,
@@ -139,7 +138,6 @@ export const extractSupportedEvent = async ({
     formatOptions,
     calendarTzid,
     guessTzid,
-    enabledEmailNotifications,
 }: GetSupportedEventArgs) => {
     const componentId = getComponentIdentifier(vcalComponent, formatOptions);
     const isInvitation = method !== ICAL_METHOD.PUBLISH;
@@ -181,7 +179,6 @@ export const extractSupportedEvent = async ({
         isEventInvitation: false,
         generatedHashUid: generateHashUid,
         componentId,
-        enabledEmailNotifications,
     });
 };
 
@@ -191,14 +188,12 @@ export const getSupportedEvents = async ({
     formatOptions,
     calscale,
     xWrTimezone,
-    enabledEmailNotifications,
 }: {
     components: VcalCalendarComponentOrError[];
     method: ICAL_METHOD;
     formatOptions?: FormatOptions;
     calscale?: string;
     xWrTimezone?: string;
-    enabledEmailNotifications?: boolean;
 }) => {
     if (calscale && calscale.toLowerCase() !== 'gregorian') {
         return [new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NON_GREGORIAN, 'vcalendar', '')];
@@ -216,7 +211,6 @@ export const getSupportedEvents = async ({
                     hasXWrTimezone,
                     formatOptions,
                     guessTzid,
-                    enabledEmailNotifications,
                 });
                 return supportedEvent;
             } catch (e: any) {
