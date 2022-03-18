@@ -60,6 +60,7 @@ const mergeAddons = (
 export const formatPlans = (plans: Plan[] = []) => {
     return plans.reduce<
         Partial<{
+            plan: Plan;
             mailPlan: Plan;
             vpnPlan: Plan;
             domainAddon: Plan;
@@ -82,14 +83,15 @@ export const formatPlans = (plans: Plan[] = []) => {
             if (hasBit(plan.Services, VPN)) {
                 acc.vpnPlan = plan;
             }
+            acc.plan = plan;
             return acc;
         }
 
         if (plan.Type === ADDON) {
-            if (plan.Name === ADDON_NAMES.DOMAIN) {
+            if (plan.Name.startsWith('1domain')) {
                 acc.domainAddon = mergeAddons(acc.domainAddon, plan);
             }
-            if (plan.Name === ADDON_NAMES.MEMBER) {
+            if (plan.Name.startsWith('1member')) {
                 acc.memberAddon = mergeAddons(acc.memberAddon, plan);
             }
             if (plan.Name === ADDON_NAMES.VPN) {
