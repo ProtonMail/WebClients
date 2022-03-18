@@ -8,6 +8,7 @@ import { Dropdown, DropdownMenu, DropdownMenuButton } from '../dropdown';
 import { LabelDescription } from './LabelStack';
 import { usePopperAnchor } from '../popper';
 import { Icon } from '../icon';
+import { classnames } from '../../helpers';
 
 interface Props {
     label: LabelDescription;
@@ -60,7 +61,10 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
             {label.onClick ? (
                 <button
                     type="button"
-                    className="label-stack-item-inner label-stack-item-button text-ellipsis"
+                    className={classnames([
+                        'label-stack-item-inner label-stack-item-button text-ellipsis',
+                        showDelete && 'with-delete',
+                    ])}
                     onClick={(e) => handleLabelClick(e)}
                     title={label.title}
                     ref={anchorRef}
@@ -76,7 +80,7 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
             {showDelete && (
                 <button
                     type="button"
-                    className=" label-stack-item-button label-stack-item-delete flex-item-noshrink"
+                    className="label-stack-item-delete label-stack-item-button flex-item-noshrink"
                     onClick={label.onDelete}
                     title={`${c('Action').t`Remove`} ${label.title}`}
                 >
