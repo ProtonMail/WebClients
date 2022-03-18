@@ -182,15 +182,13 @@ export const resize = async (fileImage: File, maxSize: number) => {
  * Prepare image source to be display
  */
 export const formatImage = (value = '') => {
-    if (!value) {
-        return value;
-    }
-
-    if (REGEX_IMAGE_EXTENSION.test(value)) {
-        return value;
-    }
-
-    if (value.startsWith('data:')) {
+    if (
+        !value ||
+        REGEX_IMAGE_EXTENSION.test(value) ||
+        value.startsWith('data:') ||
+        value.startsWith('http://') ||
+        value.startsWith('https://')
+    ) {
         return value;
     }
 
