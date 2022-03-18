@@ -26,7 +26,7 @@ export interface UploadFileProgressCallbacks {
 }
 
 export interface UploadFolderControls {
-    start: () => Promise<{ folderId: string }>;
+    start: () => Promise<{ folderId: string; folderName: string }>;
     cancel: () => void;
 }
 
