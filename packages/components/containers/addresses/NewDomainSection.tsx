@@ -63,7 +63,12 @@ const SuccessModal = ({
     );
 };
 
-const NewDomainSection = ({ domain, onDone }: { domain: string; onDone: () => void }) => {
+interface Props {
+    domain: string;
+    onDone: () => void;
+}
+
+const NewDomainSection = ({ domain, onDone }: Props) => {
     const [user] = useUser();
     const { call } = useEventManager();
     const [addresses] = useAddresses();
