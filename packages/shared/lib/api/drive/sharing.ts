@@ -1,4 +1,4 @@
-import { CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
+import { AbuseReportPayload, CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
 
 export const queryInitSRPHandshake = (token: string) => {
     return {
@@ -94,5 +94,13 @@ export const queryDeleteMultipleSharedLinks = (shareId: string, shareUrlIds: str
         data: {
             ShareURLIDs: shareUrlIds,
         },
+    };
+};
+
+export const querySubmitAbuseReport = (data: AbuseReportPayload) => {
+    return {
+        method: 'post',
+        url: 'drive/report/url',
+        data,
     };
 };
