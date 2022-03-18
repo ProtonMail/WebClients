@@ -61,7 +61,6 @@ interface Props {
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
     userSettings: UserSettings;
-    enabledEmailNotifications: boolean;
     getAddressKeys: GetAddressKeys;
     getCalendarInfo: GetCalendarInfo;
     getCalendarEventRaw: GetCalendarEventRaw;
@@ -78,7 +77,6 @@ const ExtraEvent = ({
     contactEmails,
     ownAddresses,
     userSettings,
-    enabledEmailNotifications,
     getAddressKeys,
     getCalendarInfo,
     getCalendarEventRaw,
@@ -239,7 +237,6 @@ const ExtraEvent = ({
                     contactEmails,
                     ownAddresses,
                     overwrite: !!hasDecryptionError,
-                    enabledEmailNotifications,
                 });
                 const newInvitationApi = updatedInvitationApi || invitationApi;
                 const isOutdated =

@@ -146,7 +146,7 @@ jest.mock('@proton/components/hooks/useGetCalendarBootstrap', () => ({
                     },
                     {
                         Type: 0,
-                        Trigger: '-PT17M',
+                        Trigger: '-PT13M',
                     },
                 ],
                 DefaultFullDayNotifications: [
@@ -156,7 +156,7 @@ jest.mock('@proton/components/hooks/useGetCalendarBootstrap', () => ({
                     },
                     {
                         Type: 0,
-                        Trigger: '-PT17H',
+                        Trigger: '-PT13H',
                     },
                 ],
             },
@@ -425,24 +425,32 @@ describe('MainContainer', () => {
                 fireEvent.click(screen.getByText(/New event/));
             });
 
-            const getRemoveNotification = () => screen.queryByText(/Remove this notification/);
+            const getRemoveNotification = () => screen.queryAllByText(/Remove this notification/);
             const getAddNotification = () => screen.getByText(/Add notification/);
-            const notificationNumberInput = () => screen.getByTitle(/Choose a number/) as HTMLInputElement;
-            const notificationDropdown = () =>
-                screen.getByTitle(/Select when you want this notification to be sent/) as HTMLButtonElement;
+            const notificationNumberInput = () => screen.getAllByTitle(/Choose a number/) as HTMLInputElement[];
+            const notificationTypeDropdown = () =>
+                screen.getAllByTitle(/Select the way to send this notification/) as HTMLButtonElement[];
+            const notificationTimeDropdown = () =>
+                screen.getAllByTitle(/Select when you want this notification to be sent/) as HTMLButtonElement[];
 
-            expect(notificationNumberInput().value).toBe('17');
-            expect(notificationDropdown().textContent).toBe(`minutes before`);
+            expect(notificationNumberInput()[0].value).toBe('17');
+            expect(notificationNumberInput()[1].value).toBe('13');
+            expect(notificationTypeDropdown()[0].textContent).toBe(`notification`);
+            expect(notificationTypeDropdown()[1].textContent).toBe(`email`);
+            expect(notificationTimeDropdown()[0].textContent).toBe(`minutes before`);
+            expect(notificationTimeDropdown()[1].textContent).toBe(`minutes before`);
 
-            fireEvent.click(getRemoveNotification()!);
+            fireEvent.click(getRemoveNotification()[0]);
+            fireEvent.click(getRemoveNotification()[0]);
 
-            expect(getRemoveNotification()).not.toBeInTheDocument();
+            expect(getRemoveNotification()).toHaveLength(0);
 
             fireEvent.click(getAddNotification());
 
-            expect(getRemoveNotification()).toBeInTheDocument();
-            expect(notificationNumberInput().value).toBe('15');
-            expect(notificationDropdown().textContent).toBe(`minutes before`);
+            expect(getRemoveNotification()).toHaveLength(1);
+            expect(notificationNumberInput()[0].value).toBe('15');
+            expect(notificationTypeDropdown()[0].textContent).toBe(`notification`);
+            expect(notificationTimeDropdown()[0].textContent).toBe(`minutes before`);
 
             const descriptionTextarea = screen.getByTitle(
                 /Add more information related to this event/
@@ -624,6 +632,15 @@ describe('MainContainer', () => {
                                 value: 1,
                                 when: '-',
                             },
+                            {
+                                at: new Date(2000, 0, 1, 11, 0, 0),
+                                id: expect.stringContaining('notification-'),
+                                isAllDay: true,
+                                type: 0,
+                                unit: 2,
+                                value: 1,
+                                when: '-',
+                            },
                         ],
                         hasTouchedNotifications: { fullDay: false, partDay: true },
                         hasTouchedRrule: false,
@@ -703,6 +720,15 @@ describe('MainContainer', () => {
                                 value: 1,
                                 when: '-',
                             },
+                            {
+                                at: new Date(2000, 0, 1, 11, 0, 0),
+                                id: expect.stringContaining('notification-'),
+                                isAllDay: true,
+                                type: 0,
+                                unit: 2,
+                                value: 1,
+                                when: '-',
+                            },
                         ],
                         hasTouchedNotifications: { fullDay: false, partDay: false },
                         hasTouchedRrule: false,
@@ -720,6 +746,14 @@ describe('MainContainer', () => {
                                 type: 1,
                                 unit: 4,
                                 value: 17,
+                                when: '-',
+                            },
+                            {
+                                id: expect.stringContaining('notification-'),
+                                isAllDay: false,
+                                type: 0,
+                                unit: 4,
+                                value: 13,
                                 when: '-',
                             },
                         ],

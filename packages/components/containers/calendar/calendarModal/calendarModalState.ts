@@ -19,21 +19,18 @@ import {
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS,
 } from '@proton/shared/lib/calendar/notificationDefaults';
-import { getDeviceNotifications } from '@proton/shared/lib/calendar/notificationModel';
 
 interface GetCalendarModelArguments {
     Calendar: Calendar;
     CalendarSettings: CalendarSettings;
     Addresses: Address[];
     AddressID: string;
-    emailNotificationsEnabled?: boolean;
 }
 export const getCalendarModel = ({
     Calendar,
     CalendarSettings,
     Addresses,
     AddressID,
-    emailNotificationsEnabled,
 }: GetCalendarModelArguments): Partial<CalendarViewModelFull> => {
     const {
         DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
@@ -41,8 +38,8 @@ export const getCalendarModel = ({
         DefaultEventDuration = DEFAULT_EVENT_DURATION,
     } = CalendarSettings;
 
-    const partDayNotifications = emailNotificationsEnabled ? notificationsToModel(DefaultPartDayNotifications, false) : getDeviceNotifications(notificationsToModel(DefaultPartDayNotifications, false));
-    const fullDayNotifications = emailNotificationsEnabled ? notificationsToModel(DefaultFullDayNotifications, true) : getDeviceNotifications(notificationsToModel(DefaultFullDayNotifications, true));
+    const partDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
+    const fullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
 
     return {
         calendarID: Calendar.ID,
@@ -59,7 +56,7 @@ export const getCalendarModel = ({
     };
 };
 
-export const getDefaultModel = (emailNotificationsEnabled?: boolean): CalendarViewModelFull => {
+export const getDefaultModel = (): CalendarViewModelFull => {
     return {
         calendarID: '',
         name: '',
@@ -71,8 +68,8 @@ export const getDefaultModel = (emailNotificationsEnabled?: boolean): CalendarVi
         duration: DEFAULT_EVENT_DURATION,
         defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
-        partDayNotifications: emailNotificationsEnabled ? notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false) : getDeviceNotifications(notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false)),
-        fullDayNotifications: emailNotificationsEnabled ? notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true) : getDeviceNotifications(notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true)),
+        partDayNotifications: notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false),
+        fullDayNotifications: notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true),
         type: CALENDAR_TYPE.PERSONAL,
     };
 };
