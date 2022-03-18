@@ -38,6 +38,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
     if (getHasLegacyPlans(subscription)) {
         return null;
     }
+
     // Trial upsell
     if (isTrial(subscription)) {
         const mailPlanName = PLAN_NAMES[PLANS.MAIL];
@@ -111,17 +112,21 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         );
     }
 
+    const cycle = CYCLE.TWO_YEARS;
+
+    const vpnPlanName = PLAN_NAMES[PLANS.VPN];
+    const vpnPlan = plans.find(({ Name }) => Name === PLANS.VPN);
     // VPN app only upsell
-    if (user.isFree && isVpnApp) {
-        const vpn = PLAN_NAMES[PLANS.VPN];
-        const plan = plans.find(({ Name }) => Name === PLANS.VPN);
+    if (user.isFree && isVpnApp && vpnPlan) {
+        const plan = vpnPlan;
         const price = (
             <Price key="plan-price" currency={DEFAULT_CURRENCY} suffix={c('new_plans: Plan frequency').t`/month`}>
-                {(plan?.Pricing[CYCLE.TWO_YEARS] || 0) / CYCLE.TWO_YEARS}
+                {(plan.Pricing[cycle] || 0) / cycle}
             </Price>
         );
         const handleUpgrade = () =>
             openSubscriptionModal({
+                cycle,
                 plan: PLANS.VPN,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disableBackButton: true,
@@ -130,7 +135,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         return (
             <div className="border rounded px2 py1-5 pt0-5">
                 <h3>
-                    <strong>{c('new_plans: Title').t`Upgrade to ${vpn}`}</strong>
+                    <strong>{c('new_plans: Title').t`Upgrade to ${vpnPlanName}`}</strong>
                 </h3>
                 <p>{c('new_plans: Info')
                     .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`}</p>
@@ -167,21 +172,23 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         );
     }
 
+    const bundlePlanName = PLAN_NAMES[PLANS.BUNDLE];
+    const bundlePlan = plans.find(({ Name }) => Name === PLANS.BUNDLE);
     // Bundle upsell
-    if (user.isFree || hasMail(subscription) || hasDrive(subscription) || hasVPN(subscription)) {
-        const bundle = PLAN_NAMES[PLANS.BUNDLE];
-        const plan = plans.find(({ Name }) => Name === PLANS.BUNDLE);
+    if ((user.isFree || hasMail(subscription) || hasDrive(subscription) || hasVPN(subscription)) && bundlePlan) {
+        const plan = bundlePlan;
         const price = (
             <Price
                 key="plan-price"
                 currency={subscription?.Currency || DEFAULT_CURRENCY}
                 suffix={c('new_plans: Plan frequency').t`/month`}
             >
-                {(plan?.Pricing[CYCLE.TWO_YEARS] || 0) / CYCLE.TWO_YEARS}
+                {(plan.Pricing[cycle] || 0) / cycle}
             </Price>
         );
         const handleUpgrade = () =>
             openSubscriptionModal({
+                cycle,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disableBackButton: true,
@@ -189,7 +196,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         return (
             <div className="border rounded px2 py1-5 pt0-5">
                 <h3>
-                    <strong>{c('new_plans: Title').t`Upgrade to ${bundle}`}</strong>
+                    <strong>{c('new_plans: Title').t`Upgrade to ${bundlePlanName}`}</strong>
                 </h3>
                 <p className="color-weak">{c('new_plans: Info')
                     .t`Upgrade to the ultimate privacy pack and access all premium Proton services.`}</p>
@@ -231,21 +238,23 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         );
     }
 
+    const businessPlanName = PLAN_NAMES[PLANS.BUNDLE_PRO];
+    const businessPlan = plans.find(({ Name }) => Name === PLANS.BUNDLE_PRO);
     // Mail pro upsell
-    if (hasMailPro(subscription)) {
-        const business = PLAN_NAMES[PLANS.BUNDLE_PRO];
-        const plan = plans.find(({ Name }) => Name === PLANS.BUNDLE_PRO);
+    if (hasMailPro(subscription) && businessPlan) {
+        const plan = businessPlan;
         const price = (
             <Price
                 key="plan-price"
                 currency={subscription?.Currency || DEFAULT_CURRENCY}
                 suffix={c('new_plans: Plan frequency').t`/month`}
             >
-                {(plan?.Pricing[CYCLE.TWO_YEARS] || 0) / CYCLE.TWO_YEARS}
+                {(plan.Pricing[cycle] || 0) / cycle}
             </Price>
         );
         const handleUpgrade = () =>
             openSubscriptionModal({
+                cycle,
                 plan: PLANS.BUNDLE_PRO,
                 step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
                 disableBackButton: true,
@@ -253,7 +262,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         return (
             <div className="border rounded px2 py1-5 pt0-5">
                 <h3>
-                    <strong>{c('new_plans: Title').t`Upgrade to ${business}`}</strong>
+                    <strong>{c('new_plans: Title').t`Upgrade to ${businessPlanName}`}</strong>
                 </h3>
                 <p className="color-weak">{c('new_plans: Info')
                     .t`The ultimate privacy pack with access to all premium Proton services.`}</p>
