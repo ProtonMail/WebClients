@@ -28,6 +28,10 @@
 		&-inner {
 			padding-inline: em(8, 12);
 			text-align: start;
+
+			&.with-delete {
+				padding-inline-end: em(4, 12);
+			}
 		}
 
 		&-inner:not(#{&}-button) &-text {
