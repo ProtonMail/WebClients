@@ -49,6 +49,9 @@ export interface Upload {
     state: TransferState;
     startDate: Date;
     error?: Error;
+
+    files?: Upload[];
+    folders?: Upload[];
 }
 
 export interface DownloadInfo {

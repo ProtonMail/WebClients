@@ -1,7 +1,7 @@
 import { useLoading } from '@proton/components';
 import { c } from 'ttag';
 
-import { TransferType } from '@proton/shared/lib/interfaces/drive/transfer';
+import { TransferType, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
 import {
     isTransferPaused,
     isTransferFinished,
@@ -22,6 +22,24 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
 
     const isPauseResumeAvailable = isTransferOngoing(transfer);
     const isRestartAvailable = isFailed;
+
+    const isTransferWithChildrenFinished = (upload: Upload) => {
+        if (!isTransferFinished(upload)) {
+            return false;
+        }
+        if (upload.files?.some((transfer) => !isTransferFinished(transfer))) {
+            return false;
+        }
+        if (upload.folders?.some((transfer) => !isTransferWithChildrenFinished(transfer))) {
+            return false;
+        }
+        return true;
+    };
+    // Do not show clear button for uploading folders which still have any
+    // children in progress as that would lead to some edge cases that
+    // parent with its children is removed from transfer manager but some
+    // ongoing transfers are still finishing up.
+    const isClearAvailable = type === TransferType.Download || isTransferWithChildrenFinished(transfer as Upload);
 
     const pauseText = type === TransferType.Download ? c('Action').t`Pause download` : c('Action').t`Pause upload`;
     const resumeText = type === TransferType.Download ? c('Action').t`Resume download` : c('Action').t`Resume upload`;
@@ -49,12 +67,14 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
             });
         }
 
-        buttons.push({
-            onClick: () => transferControls.cancel(transfer, type),
-            title: isFinished ? removeText : cancelText,
-            disabled: isFinalizing,
-            iconName: isFinished ? 'broom' : 'xmark',
-        });
+        if (isClearAvailable) {
+            buttons.push({
+                onClick: () => transferControls.cancel(transfer, type),
+                title: isFinished ? removeText : cancelText,
+                disabled: isFinalizing,
+                iconName: isFinished ? 'broom' : 'xmark',
+            });
+        }
 
         return buttons;
     };
