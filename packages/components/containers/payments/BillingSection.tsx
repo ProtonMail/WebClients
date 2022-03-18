@@ -52,7 +52,8 @@ const BillingSection = () => {
     }
 
     const { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd } = subscription;
-    const { mailPlan, vpnPlan, addressAddon, domainAddon, memberAddon, vpnAddon, spaceAddon } = formatPlans(Plans);
+    const { plan, mailPlan, vpnPlan, addressAddon, domainAddon, memberAddon, vpnAddon, spaceAddon } =
+        formatPlans(Plans);
     const subTotal = unique(Plans.map(({ Name }) => Name)).reduce((acc, planName) => {
         return acc + getMonthlyBaseAmount(planName as PLANS, plans, subscription);
     }, 0);
@@ -64,9 +65,117 @@ const BillingSection = () => {
     const priceLabelClassName = 'flex-item-fluid';
     const weakRowClassName = classnames([priceRowClassName, 'color-weak']);
 
+    const addons = (
+        <>
+            {memberAddon ? (
+                <div className={weakRowClassName}>
+                    <div className={priceLabelClassName}>
+                        +{' '}
+                        {c('Addon unit for subscription').ngettext(
+                            msgid`${memberAddon.MaxMembers} user`,
+                            `${memberAddon.MaxMembers} users`,
+                            memberAddon.MaxMembers
+                        )}
+                    </div>
+                    <div className="text-right">
+                        <PlanPrice
+                            amount={getMonthlyBaseAmount(memberAddon.Name, plans, subscription)}
+                            currency={Currency}
+                            cycle={MONTHLY}
+                        />
+                    </div>
+                </div>
+            ) : null}
+            {addressAddon ? (
+                <div className={weakRowClassName}>
+                    <div className={priceLabelClassName}>
+                        +{' '}
+                        {c('Addon unit for subscription').ngettext(
+                            msgid`${addressAddon.MaxAddresses} address`,
+                            `${addressAddon.MaxAddresses} addresses`,
+                            addressAddon.MaxAddresses
+                        )}
+                    </div>
+                    <div className="text-right">
+                        <PlanPrice
+                            amount={getMonthlyBaseAmount(addressAddon.Name, plans, subscription)}
+                            currency={Currency}
+                            cycle={MONTHLY}
+                        />
+                    </div>
+                </div>
+            ) : null}
+            {spaceAddon ? (
+                <div className={weakRowClassName}>
+                    <div className={priceLabelClassName}>
+                        + {humanSize(spaceAddon.MaxSpace)} {c('Label').t`extra storage`}
+                    </div>
+                    <div className="text-right">
+                        <PlanPrice
+                            amount={getMonthlyBaseAmount(spaceAddon.Name, plans, subscription)}
+                            currency={Currency}
+                            cycle={MONTHLY}
+                        />
+                    </div>
+                </div>
+            ) : null}
+            {spaceBonus ? (
+                <div className={weakRowClassName}>
+                    <div className={priceLabelClassName}>
+                        + {humanSize(spaceBonus)} {c('Label').t`bonus storage`}
+                    </div>
+                    <div className="text-right">
+                        <PlanPrice amount={0} currency={Currency} cycle={MONTHLY} />
+                    </div>
+                </div>
+            ) : null}
+            {domainAddon ? (
+                <div className={weakRowClassName}>
+                    <div className={priceLabelClassName}>
+                        +{' '}
+                        {c('Addon unit for subscription').ngettext(
+                            msgid`${domainAddon.MaxDomains} domain`,
+                            `${domainAddon.MaxDomains} domains`,
+                            domainAddon.MaxDomains
+                        )}
+                    </div>
+                    <div className="text-right">
+                        <PlanPrice
+                            amount={getMonthlyBaseAmount(domainAddon.Name, plans, subscription)}
+                            currency={Currency}
+                            cycle={MONTHLY}
+                        />
+                    </div>
+                </div>
+            ) : null}
+        </>
+    );
+
+    const hasLegacyPlans = getHasLegacyPlans(subscription);
+
     return (
         <SettingsSection>
-            {hasPaidMail ? (
+            {!hasLegacyPlans && plan ? (
+                <div className="border-bottom on-mobile-pb1">
+                    {mailPlan ? (
+                        <div className={classnames([priceRowClassName, 'text-bold'])}>
+                            <div className={priceLabelClassName}>
+                                {getHasLegacyPlans(subscription) ? mailAppName : null}{' '}
+                                {PLAN_NAMES[plan.Name as keyof typeof PLAN_NAMES]}
+                            </div>
+                            <div className="text-right">
+                                <PlanPrice
+                                    amount={getMonthlyBaseAmount(plan.Name, plans, subscription)}
+                                    currency={Currency}
+                                    cycle={MONTHLY}
+                                />
+                            </div>
+                        </div>
+                    ) : null}
+                    {addons}
+                </div>
+            ) : null}
+            {hasLegacyPlans && hasPaidMail ? (
                 <div className="border-bottom on-mobile-pb1">
                     {mailPlan ? (
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
@@ -83,90 +192,10 @@ const BillingSection = () => {
                             </div>
                         </div>
                     ) : null}
-                    {memberAddon ? (
-                        <div className={weakRowClassName}>
-                            <div className={priceLabelClassName}>
-                                +{' '}
-                                {c('Addon unit for subscription').ngettext(
-                                    msgid`${memberAddon.MaxMembers} user`,
-                                    `${memberAddon.MaxMembers} users`,
-                                    memberAddon.MaxMembers
-                                )}
-                            </div>
-                            <div className="text-right">
-                                <PlanPrice
-                                    amount={getMonthlyBaseAmount(memberAddon.Name, plans, subscription)}
-                                    currency={Currency}
-                                    cycle={MONTHLY}
-                                />
-                            </div>
-                        </div>
-                    ) : null}
-                    {addressAddon ? (
-                        <div className={weakRowClassName}>
-                            <div className={priceLabelClassName}>
-                                +{' '}
-                                {c('Addon unit for subscription').ngettext(
-                                    msgid`${addressAddon.MaxAddresses} address`,
-                                    `${addressAddon.MaxAddresses} addresses`,
-                                    addressAddon.MaxAddresses
-                                )}
-                            </div>
-                            <div className="text-right">
-                                <PlanPrice
-                                    amount={getMonthlyBaseAmount(addressAddon.Name, plans, subscription)}
-                                    currency={Currency}
-                                    cycle={MONTHLY}
-                                />
-                            </div>
-                        </div>
-                    ) : null}
-                    {spaceAddon ? (
-                        <div className={weakRowClassName}>
-                            <div className={priceLabelClassName}>
-                                + {humanSize(spaceAddon.MaxSpace)} {c('Label').t`extra storage`}
-                            </div>
-                            <div className="text-right">
-                                <PlanPrice
-                                    amount={getMonthlyBaseAmount(spaceAddon.Name, plans, subscription)}
-                                    currency={Currency}
-                                    cycle={MONTHLY}
-                                />
-                            </div>
-                        </div>
-                    ) : null}
-                    {spaceBonus ? (
-                        <div className={weakRowClassName}>
-                            <div className={priceLabelClassName}>
-                                + {humanSize(spaceBonus)} {c('Label').t`bonus storage`}
-                            </div>
-                            <div className="text-right">
-                                <PlanPrice amount={0} currency={Currency} cycle={MONTHLY} />
-                            </div>
-                        </div>
-                    ) : null}
-                    {domainAddon ? (
-                        <div className={weakRowClassName}>
-                            <div className={priceLabelClassName}>
-                                +{' '}
-                                {c('Addon unit for subscription').ngettext(
-                                    msgid`${domainAddon.MaxDomains} domain`,
-                                    `${domainAddon.MaxDomains} domains`,
-                                    domainAddon.MaxDomains
-                                )}
-                            </div>
-                            <div className="text-right">
-                                <PlanPrice
-                                    amount={getMonthlyBaseAmount(domainAddon.Name, plans, subscription)}
-                                    currency={Currency}
-                                    cycle={MONTHLY}
-                                />
-                            </div>
-                        </div>
-                    ) : null}
+                    {addons}
                 </div>
             ) : null}
-            {hasPaidVpn && !hasVisionary(subscription) ? (
+            {hasLegacyPlans && hasPaidVpn && !hasVisionary(subscription) ? (
                 <div className="border-bottom pt1 on-mobile-pb1">
                     {vpnPlan ? (
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
