@@ -1,6 +1,6 @@
 import { Download, TransferType, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { isTransferPaused, isTransferFinished } from '../../utils/transfer';
+import { isTransferPaused } from '../../utils/transfer';
 import { useDownload, useUpload } from '../../store';
 
 function useTransferControls() {
@@ -9,16 +9,19 @@ function useTransferControls() {
 
     const cancel = (transfer: Download | Upload, type: TransferType) => {
         if (type === TransferType.Download) {
-            if (isTransferFinished(transfer)) {
-                return removeDownloads(transfer.id);
-            }
             return cancelDownloads(transfer.id);
         }
         if (type === TransferType.Upload) {
-            if (isTransferFinished(transfer)) {
-                return removeUploads(transfer.id);
-            }
             return cancelUploads(transfer.id);
+        }
+    };
+
+    const remove = (transfer: Download | Upload, type: TransferType) => {
+        if (type === TransferType.Download) {
+            return removeDownloads(transfer.id);
+        }
+        if (type === TransferType.Upload) {
+            return removeUploads(transfer.id);
         }
     };
 
@@ -69,6 +72,7 @@ function useTransferControls() {
 
     return {
         cancel,
+        remove,
         restart,
         togglePause,
         pauseTransfers,
