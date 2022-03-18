@@ -170,10 +170,8 @@
 	}
 
 	.button-group-solid-#{$color} {
-		.button-group-item {
-			&.is-selected {
-				background-color: var(--#{dash-join($group, $color, 'major-2')});
-			}
+		.button-group-item.is-selected:not([disabled], .is-disabled) {
+			background-color: var(--#{dash-join($group, $color, 'major-2')});
 		}
 	}
 
@@ -187,11 +185,9 @@
 
 	.button-group-outline-#{$color},
 	.button-group-ghost-#{$color} {
-		.button-group-item {
-			&.is-selected {
-				background-color: var(--#{dash-join($group, if($color == 'weak', 'norm', $color))});
-				color: var(--#{dash-join($group, if($color == 'weak', 'norm', $color), 'contrast')});
-			}
+		.button-group-item.is-selected:not([disabled], .is-disabled) {
+			background-color: var(--#{dash-join($group, if($color == 'weak', 'norm', $color))});
+			color: var(--#{dash-join($group, if($color == 'weak', 'norm', $color), 'contrast')});
 		}
 	}
 }
