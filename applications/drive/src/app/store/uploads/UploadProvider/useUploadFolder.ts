@@ -11,6 +11,7 @@ import useUploadHelper from './useUploadHelper';
 interface Folder {
     isNewFolder: boolean;
     folderId: string;
+    folderName: string;
 }
 
 export default function useUploadFolder() {
@@ -30,6 +31,7 @@ export default function useUploadFolder() {
         return {
             folderId,
             isNewFolder: true,
+            folderName,
         };
     };
 
@@ -50,6 +52,7 @@ export default function useUploadFolder() {
         return {
             folderId: link.linkId,
             isNewFolder: false,
+            folderName,
         };
     };
 
