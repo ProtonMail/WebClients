@@ -138,6 +138,13 @@ function useRunPeriodicJobOnce(job: () => void, interval: number): () => () => v
     // The job will be running until there is any caller requesting it.
     const numOfCallers = useRef(0);
 
+    // Make reference to latest callback to always call the newest one.
+    // Probably cleaner solution is to clear the timer and start the new
+    // one with new callback, but that is harder to guarantee it will be
+    // called in specified interval.
+    const jobRef = useRef(job);
+    jobRef.current = job;
+
     return () => {
         numOfCallers.current++;
         if (numOfCallers.current === 1) {
@@ -146,9 +153,9 @@ function useRunPeriodicJobOnce(job: () => void, interval: number): () => () => v
                     clearInterval(timer);
                     return;
                 }
-                job();
+                jobRef.current();
             }, interval);
-            job();
+            jobRef.current();
         }
         return () => {
             numOfCallers.current--;
