@@ -205,9 +205,6 @@ const MessageView = (
             // Should be prevented before, but as an extra security...
             if (!isDraft(message.data)) {
                 setExpanded(true);
-                if (!columnLayout) {
-                    elementRef.current?.parentElement?.focus();
-                }
             }
         },
     }));
