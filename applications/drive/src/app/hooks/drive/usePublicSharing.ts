@@ -15,6 +15,7 @@ import {
     querySharedURLChildren,
     querySharedURLFileRevision,
     querySharedURLInformation,
+    querySubmitAbuseReport,
 } from '@proton/shared/lib/api/drive/sharing';
 
 import { DecryptedLink, EncryptedLink } from '../../store';
@@ -33,6 +34,7 @@ export interface SharedURLInfoDecrypted {
     name: SharedURLInfo['Name'];
     size: SharedURLInfo['Size'];
     thumbnailURLInfo: ThumbnailURLInfo;
+    nodePassphrase: string;
 }
 
 export const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
@@ -85,6 +87,7 @@ function usePublicSharing() {
         await publicSession.fetchSessionInfo(token, password, handshakeInfo);
     };
 
+    // wrong return type
     const getSharedURLInfo = async (token: string, password: string): Promise<SharedURLInfoDecrypted> => {
         const { Token: payload } = await api<{ Token: SharedURLInfo }>(
             publicSession.queryWithSessionInfo({
@@ -123,12 +126,13 @@ function usePublicSharing() {
         }
 
         return {
-            name,
-            mimeType: payload.MIMEType,
-            size: payload.Size,
             expirationTime: payload.ExpirationTime,
             linkID: payload.LinkID,
             linkType: payload.LinkType,
+            mimeType: payload.MIMEType,
+            name,
+            nodePassphrase,
+            size: payload.Size,
             thumbnailURLInfo: {
                 BareURL: payload.ThumbnailURLInfo.BareURL,
                 Token: payload.ThumbnailURLInfo.Token,
@@ -280,12 +284,32 @@ function usePublicSharing() {
         });
     };
 
+    const submitAbuseReport = async (params: {
+        abuseCategory: string;
+        reporterEmail?: string;
+        reporterMessage?: string;
+        password?: string;
+        shareURL: string;
+        nodePassphrase: string;
+    }): Promise<void> => {
+        return api(
+            querySubmitAbuseReport({
+                ShareURL: params.shareURL,
+                Password: params.password,
+                AbuseCategory: params.abuseCategory,
+                ReporterEmail: params.reporterEmail,
+                ReporterMessage: params.reporterMessage,
+                ResourcePassphrase: params.nodePassphrase,
+            })
+        );
+    };
     return {
         getSharedURLInfo,
         initDownload,
         downloadThumbnail,
         initHandshake: publicSession.init,
         initSession: publicSession.fetchSessionInfo,
+        submitAbuseReport,
     };
 }
 

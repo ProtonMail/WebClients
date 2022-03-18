@@ -1,4 +1,4 @@
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import { SessionKey } from 'pmcrypto';
 import { AuthVersion } from '../../authentication/interface';
 import { DriveFileBlock } from './file';
 import { LinkType } from './link';
@@ -119,17 +119,6 @@ export interface ThumbnailURLInfo {
     Token: string;
 }
 
-export interface SharedLinkInfo {
-    Name: string;
-    Size: number;
-    MIMEType: string;
-    ExpirationTime: number | null;
-    NodeKey: OpenPGPKey;
-    SessionKey: SessionKey;
-    Blocks: DriveFileBlock[];
-    ThumbnailURLInfo: ThumbnailURLInfo;
-}
-
 export interface SharedURLSessionKeyPayload {
     sharePasswordSalt: string;
     shareSessionKey: SessionKey;
@@ -144,4 +133,13 @@ export enum SharedURLFlags {
     // removed when all old shares are cancelled.
     CustomPassword = 1,
     GeneratedPasswordIncluded,
+}
+
+export interface AbuseReportPayload {
+    ShareURL: string;
+    Password?: string;
+    AbuseCategory: string;
+    ReporterEmail?: string;
+    ReporterMessage?: string;
+    ResourcePassphrase: string;
 }
