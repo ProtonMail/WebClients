@@ -85,7 +85,7 @@ const MainContainer = () => {
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = features.some(({ loading }) => loading) || loadingDataRecovery;
     const recoveryNotification = useRecoveryNotification(false);
-    const newDomain = useNewDomainOptIn();
+    const [newDomain, setNewDomain] = useNewDomainOptIn();
 
     const routes = getRoutes({
         user,
@@ -183,7 +183,12 @@ const MainContainer = () => {
                 </Route>
                 <Route path={`/${mailSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <MailSettingsRouter newDomain={newDomain} mailAppRoutes={routes.mail} redirect={redirect} />
+                        <MailSettingsRouter
+                            newDomain={newDomain}
+                            setNewDomain={setNewDomain}
+                            mailAppRoutes={routes.mail}
+                            redirect={redirect}
+                        />
                     </Suspense>
                 </Route>
                 <Route path={`/${calendarSlug}`}>

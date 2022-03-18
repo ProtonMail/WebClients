@@ -11,7 +11,7 @@ import TopBanner from './TopBanner';
 
 const NewDomainTopBanner = () => {
     const [user] = useUser();
-    const Domain = useNewDomainOptIn();
+    const [Domain] = useNewDomainOptIn();
     const show = getShowNewDomainSection({ user, domain: Domain });
 
     const { feature: newDomainOptIn, update: setNewDomainOptIn } = useFeature<boolean>(FeatureCode.NewDomainOptIn);
