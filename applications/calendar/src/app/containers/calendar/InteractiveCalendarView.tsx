@@ -61,7 +61,6 @@ import {
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useNotifications,
-    useCalendarEmailNotificationsFeature,
     Dropzone,
     onlyDragFiles,
     classnames,
@@ -334,8 +333,6 @@ const InteractiveCalendarView = ({
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
     const getSendIcsPreferencesMap = useGetMapSendIcsPreferences();
 
-    const emailNotificationsEnabled = useCalendarEmailNotificationsFeature();
-
     const getEventDecrypted = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
         return Promise.all([
             getCalendarEventRaw(eventData),
@@ -458,7 +455,6 @@ const InteractiveCalendarView = ({
             isAllDay,
             tzid,
             attendees,
-            emailNotificationsEnabled,
         });
     };
 
@@ -477,12 +473,10 @@ const InteractiveCalendarView = ({
     const getUpdateModel = ({
         viewEventData: { calendarData, eventData, eventReadResult, eventRecurrence },
         duplicateFromDisabledCalendarData,
-        emailNotificationsEnabled,
         partstat,
     }: {
         viewEventData: CalendarViewEventData;
         duplicateFromDisabledCalendarData?: { calendar: Calendar };
-        emailNotificationsEnabled?: boolean;
         partstat?: ICAL_ATTENDEE_STATUS;
     }): EventModel | undefined => {
         if (
@@ -516,7 +510,6 @@ const InteractiveCalendarView = ({
             isAllDay: false,
             verificationStatus,
             tzid,
-            emailNotificationsEnabled,
         });
 
         const originalOrOccurrenceEvent = eventRecurrence
@@ -539,7 +532,7 @@ const InteractiveCalendarView = ({
         if (partstat) {
             return {
                 ...createResult,
-                ...modifyEventModelPartstat(eventResult, partstat, CalendarSettings, emailNotificationsEnabled),
+                ...modifyEventModelPartstat(eventResult, partstat, CalendarSettings),
             };
         }
         return {
@@ -590,7 +583,7 @@ const InteractiveCalendarView = ({
                 }
 
                 if (!newTemporaryModel) {
-                    newTemporaryModel = getUpdateModel({ viewEventData: event.data, emailNotificationsEnabled });
+                    newTemporaryModel = getUpdateModel({ viewEventData: event.data });
                     if (!newTemporaryModel) {
                         isAllowedToMoveEvent = false;
                         return;
@@ -1417,7 +1410,6 @@ const InteractiveCalendarView = ({
         const newTemporaryModel = getUpdateModel({
             viewEventData,
             duplicateFromDisabledCalendarData,
-            emailNotificationsEnabled,
         });
 
         if (!newTemporaryModel) {
@@ -1701,7 +1693,6 @@ const InteractiveCalendarView = ({
                                 }
                                 const newTemporaryModel = getUpdateModel({
                                     viewEventData: targetEvent.data,
-                                    emailNotificationsEnabled,
                                     partstat,
                                 });
                                 if (!newTemporaryModel) {

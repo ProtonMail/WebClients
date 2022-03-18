@@ -458,7 +458,6 @@ interface UpdateEventInvitationArgs {
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
     overwrite: boolean;
-    enabledEmailNotifications: boolean;
 }
 export const updateEventInvitation = async ({
     isOrganizerMode,
@@ -474,7 +473,6 @@ export const updateEventInvitation = async ({
     contactEmails,
     ownAddresses,
     overwrite,
-    enabledEmailNotifications,
 }: UpdateEventInvitationArgs): Promise<{
     action: UPDATE_ACTION;
     invitation?: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>;
@@ -618,7 +616,6 @@ export const updateEventInvitation = async ({
                         partstat: partstatIcs,
                         calendarSettings: calendarData.calendarSettings,
                         oldPartstat: partstatApi,
-                        enabledEmailNotifications,
                     })
                 );
                 const updatedPmVevent = await withPmAttendees(updatedVevent, getCanonicalEmailsMap, true);
@@ -691,7 +688,6 @@ export const updateEventInvitation = async ({
                     vevent: getInvitedEventWithAlarms({
                         vevent: updatedVevent,
                         partstat: ICAL_ATTENDEE_STATUS.DECLINED,
-                        enabledEmailNotifications,
                     }),
                     calendarData,
                     createSingleEdit,
@@ -744,7 +740,6 @@ export const createCalendarEventFromInvitation = async ({
     calendarData,
     pmData,
     overwrite,
-    enabledEmailNotifications,
 }: {
     vevent: VcalVeventComponent;
     vcalAttendee: VcalAttendeeProperty;
@@ -754,7 +749,6 @@ export const createCalendarEventFromInvitation = async ({
     api: Api;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
     overwrite: boolean;
-    enabledEmailNotifications: boolean;
 }) => {
     const { calendar, memberID, addressKeys, calendarKeys, calendarSettings } = calendarData || {};
     if (!calendar || !memberID || !addressKeys || !calendarKeys || !calendarSettings) {
@@ -769,7 +763,7 @@ export const createCalendarEventFromInvitation = async ({
         },
     };
     // add alarms to event if necessary
-    const veventToSave = getInvitedEventWithAlarms({ vevent, partstat, calendarSettings, enabledEmailNotifications });
+    const veventToSave = getInvitedEventWithAlarms({ vevent, partstat, calendarSettings });
     const { index: attendeeIndex } = findAttendee(getAttendeeEmail(vcalAttendee), veventToSave.attendee);
     if (!veventToSave.attendee || attendeeIndex === undefined || attendeeIndex === -1) {
         throw new Error('Missing data for creating calendar event from invitation');
@@ -853,7 +847,6 @@ export const updatePartstatFromInvitation = async ({
     calendarData,
     singleEditData,
     api,
-    enabledEmailNotifications,
 }: {
     veventApi: VcalVeventComponent;
     calendarEvent: CalendarEvent;
@@ -866,7 +859,6 @@ export const updatePartstatFromInvitation = async ({
     calendarData?: CalendarWidgetData;
     singleEditData?: CalendarEventWithMetadata[];
     api: Api;
-    enabledEmailNotifications: boolean;
 }) => {
     const { calendar, memberID, addressKeys, calendarSettings } = calendarData || {};
     const primaryAddressKey = getPrimaryKey(addressKeys);
@@ -945,7 +937,6 @@ export const updatePartstatFromInvitation = async ({
         partstat,
         calendarSettings,
         oldPartstat,
-        enabledEmailNotifications,
     });
     try {
         const personalData = await createPersonalEvent({
