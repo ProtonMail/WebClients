@@ -46,7 +46,7 @@ const SuccessModal = ({
                         rest.onClose?.();
                     }}
                 >{c('Action').t`Set as default`}</Button>,
-                <Button onClick={rest.onClose}>{c('Action').t`No thanks`}</Button>,
+                <Button onClick={rest.onClose}>{c('Action').t`No, thanks`}</Button>,
             ]}
             {...rest}
         >
