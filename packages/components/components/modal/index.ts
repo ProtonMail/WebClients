@@ -1,7 +1,6 @@
 export { default as DialogModal } from './Dialog';
 export { default as ContentModal } from './Content';
 export { default as InnerModal } from './Inner';
-export { default as InputModal } from './Input';
 export { default as HeaderModal } from './Header';
 export { default as TitleModal } from './Title';
 export { default as BackButtonModal } from './BackButton';
