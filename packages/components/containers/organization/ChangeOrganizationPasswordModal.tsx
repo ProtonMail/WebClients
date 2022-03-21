@@ -1,22 +1,22 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
 import { getBackupKeyData } from '@proton/shared/lib/keys';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { OpenPGPKey } from 'pmcrypto';
+import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import {
     Alert,
-    Field,
     Form,
-    Label,
+    InputFieldTwo,
     ModalProps,
     ModalTwo as Modal,
     ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
-    PasswordInput,
-    Row,
+    PasswordInputTwo,
     Button,
+    useFormErrors,
 } from '../../components';
 import { useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
 import AuthModal from '../password/AuthModal';
@@ -31,15 +31,10 @@ const ChangeOrganizationPasswordModal = ({ hasOtherAdmins, organizationKey, onCl
     const [loading, withLoading] = useLoading();
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [confirmError, setConfirmError] = useState('');
     const { createNotification } = useNotifications();
+    const { validator, onFormSubmit } = useFormErrors();
 
     const handleSubmit = async () => {
-        if (confirmPassword !== newPassword) {
-            return setConfirmError(c('Error').t`Passwords do not match`);
-        }
-        setConfirmError('');
-
         const { backupKeySalt, backupArmoredPrivateKey } = await getBackupKeyData({
             backupPassword: newPassword,
             organizationKey,
@@ -62,7 +57,17 @@ const ChangeOrganizationPasswordModal = ({ hasOtherAdmins, organizationKey, onCl
     const handleClose = loading ? noop : onClose;
 
     return (
-        <Modal as={Form} onSubmit={() => withLoading(handleSubmit())} onClose={handleClose} {...rest}>
+        <Modal
+            as={Form}
+            onSubmit={() => {
+                if (!onFormSubmit()) {
+                    return;
+                }
+                void withLoading(handleSubmit());
+            }}
+            onClose={handleClose}
+            {...rest}
+        >
             <ModalHeader title={c('Title').t`Change organization password`} />
             <ModalContent>
                 {hasOtherAdmins && (
@@ -77,36 +82,32 @@ const ChangeOrganizationPasswordModal = ({ hasOtherAdmins, organizationKey, onCl
                     <br />
                     {c('Info').t`Save your password somewhere safe.`}
                 </Alert>
-                <Row>
-                    <Label htmlFor="organizationPassword">{c('Label').t`New organization password`}</Label>
-                    <Field>
-                        <PasswordInput
-                            id="organizationPassword"
-                            value={newPassword}
-                            onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setNewPassword(value)}
-                            error={confirmError}
-                            placeholder={c('Placeholder').t`Password`}
-                            autoComplete="new-password"
-                            required
-                        />
-                    </Field>
-                </Row>
-                <Row>
-                    <Label htmlFor="confirmPassword">{c('Label').t`Confirm organization password`}</Label>
-                    <Field>
-                        <PasswordInput
-                            id="confirmPassword"
-                            value={confirmPassword}
-                            onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
-                                setConfirmPassword(value)
-                            }
-                            error={confirmError}
-                            placeholder={c('Placeholder').t`Confirm`}
-                            autoComplete="new-password"
-                            required
-                        />
-                    </Field>
-                </Row>
+
+                <InputFieldTwo
+                    id="organizationPassword"
+                    as={PasswordInputTwo}
+                    label={c('Label').t`New organization password`}
+                    placeholder={c('Placeholder').t`Password`}
+                    value={newPassword}
+                    onValue={setNewPassword}
+                    error={validator([passwordLengthValidator(newPassword)])}
+                    autoComplete="new-password"
+                    autoFocus
+                />
+
+                <InputFieldTwo
+                    id="confirmPassword"
+                    as={PasswordInputTwo}
+                    label={c('Label').t`Confirm organization password`}
+                    placeholder={c('Placeholder').t`Confirm`}
+                    value={confirmPassword}
+                    onValue={setConfirmPassword}
+                    error={validator([
+                        passwordLengthValidator(newPassword),
+                        confirmPasswordValidator(newPassword, confirmPassword),
+                    ])}
+                    autoComplete="new-password"
+                />
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose} disabled={loading}>
