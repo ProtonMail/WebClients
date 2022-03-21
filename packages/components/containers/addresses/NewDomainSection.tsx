@@ -1,5 +1,6 @@
 import { setupAddress, orderAddress } from '@proton/shared/lib/api/addresses';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS, DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
 import { unique } from '@proton/shared/lib/helpers/array';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -79,6 +80,7 @@ const NewDomainSection = ({ domain, onDone }: Props) => {
     const [loading, withLoading] = useLoading();
     const [createdAddress, setCreatedAddress] = useState<Address | null>(null);
     const [successModal, setSuccessModalOpen, renderSuccessModal] = useModalState();
+    const protonMailAppName = getAppName(APPS.PROTONMAIL);
 
     const { Name } = user;
     const addressToCreate = `${Name}@${domain}`;
@@ -136,9 +138,9 @@ const NewDomainSection = ({ domain, onDone }: Props) => {
             <SettingsSectionWide>
                 <p>
                     {
-                        // translator: The variable here is the new domain. For example "Our new example.com domain is a convenient option for sending and receiving emails. You'll still be able to use your original protonmail.com address."
+                        // translator: The 1st variable here is the new domain, the 2nd is the app name. For example "Our new example.com domain is a convenient option for sending and receiving emails. You'll still be able to use your original ProtonMail address."
                         c('Info')
-                            .t`Our new ${domain} domain is a convenient option for sending and receiving emails. You'll still be able to use your original protonmail.com address.`
+                            .t`Our new ${domain} domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${protonMailAppName} address.`
                     }
                 </p>
 
