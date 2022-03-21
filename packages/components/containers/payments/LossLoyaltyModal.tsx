@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 import { Organization } from '@proton/shared/lib/interfaces';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Alert, ConfirmModal, ConfirmModalProps, ErrorButton, Paragraph } from '../../components';
 
@@ -26,8 +27,8 @@ const LossLoyaltyModal = ({ organization, ...rest }: Props) => {
                     {organization.BonusVPN ? (
                         <li>
                             {c('Info').ngettext(
-                                msgid`+${organization.BonusVPN} connection for ProtonVPN (allows you to connect more devices to VPN)`,
-                                `+${organization.BonusVPN} connections for ProtonVPN (allows you to connect more devices to VPN)`,
+                                msgid`+${organization.BonusVPN} connection for ${VPN_APP_NAME} (allows you to connect more devices to VPN)`,
+                                `+${organization.BonusVPN} connections for ${VPN_APP_NAME} (allows you to connect more devices to VPN)`,
                                 organization.BonusVPN
                             )}
                         </li>
