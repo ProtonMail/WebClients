@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { c } from 'ttag';
 
 import { queryInvoices, getInvoice } from '@proton/shared/lib/api/payments';
-import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE } from '@proton/shared/lib/constants';
+import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import {
@@ -69,7 +69,7 @@ const InvoicesSection = () => {
         createModal(<InvoiceTextModal />);
     };
 
-    const getFilename = (invoice) => `${c('Title for PDF file').t`ProtonMail invoice`} ${invoice.ID}.pdf`;
+    const getFilename = (invoice) => `${c('Title for PDF file').t`${MAIL_APP_NAME} invoice`} ${invoice.ID}.pdf`;
 
     const handleDownload = async (invoice) => {
         const buffer = await api(getInvoice(invoice.ID));

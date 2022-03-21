@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { ImportStatus, ImportError } from '@proton/shared/lib/interfaces/EasySwitch';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Badge, Tooltip, Icon, Progress } from '../../../components';
 
@@ -27,7 +28,7 @@ const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
                         </Tooltip>
                     )}
                     {errorCode === ImportError.ERROR_CODE_QUOTA_LIMIT && (
-                        <Tooltip title={c('Tooltip').t`Your ProtonMail inbox is almost full`}>
+                        <Tooltip title={c('Tooltip').t`Your ${MAIL_APP_NAME} inbox is almost full`}>
                             <Icon name="triangle-exclamation-filled" />
                         </Tooltip>
                     )}

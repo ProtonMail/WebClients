@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { updateCatchAll } from '@proton/shared/lib/api/domains';
-import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { Checkbox } from '../../components';
 import { useApiWithoutResult, useNotifications, useOrganization } from '../../hooks';
 
@@ -27,7 +27,7 @@ const AddressCatchAll = ({ address, domain, onChange }) => {
             event.stopPropagation();
             createNotification({
                 type: 'info',
-                text: c('Warning').t`This feature is only available for ProtonMail Professional plans or higher`,
+                text: c('Warning').t`This feature is only available for ${MAIL_APP_NAME} Professional plans or higher`,
             });
         }
     };

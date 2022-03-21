@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys';
-import { isSSOMode } from '@proton/shared/lib/constants';
+import { isSSOMode, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
 import { noop } from '@proton/shared/lib/helpers/function';
@@ -467,7 +467,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                 description: (
                     <div className="mb1">
                         {c('Info')
-                            .t`ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.`}
+                            .t`${MAIL_APP_NAME} can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.`}
                     </div>
                 ),
                 onSubmit,

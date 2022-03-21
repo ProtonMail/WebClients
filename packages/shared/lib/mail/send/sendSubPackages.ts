@@ -10,7 +10,7 @@ const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
 const { SEND_PM, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME, SEND_CLEAR_MIME } = PACKAGE_TYPE;
 
 /**
- * Package for a ProtonMail user.
+ * Package for a Proton Mail user.
  */
 const sendPM = async ({ publicKeys }: Pick<SendPreferences, 'publicKeys'>, attachments: Attachment[] = []) => ({
     Type: SEND_PM,

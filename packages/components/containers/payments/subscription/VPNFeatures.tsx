@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { Plan, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
 import { FREE_VPN_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -104,7 +104,7 @@ const getFeatures = (
             name: 'visionary',
             label: c('VPN feature').t`${mailAppName} Visionary`,
             tooltip: c('Tooltip')
-                .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.`,
+                .t`Get access to all the paid features for both ProtonVPN and ${MAIL_APP_NAME} (the encrypted email service that millions use to protect their data) with one plan.`,
             free: EmDash,
             [PLANS.VPNBASIC]: EmDash,
             [PLANS.VPNPLUS]: EmDash,

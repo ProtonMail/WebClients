@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
 import { Alert, Row, Label, Input, Field } from '../../components';
 
 const DomainSection = ({ domain, onChange }) => {
@@ -16,7 +18,8 @@ const DomainSection = ({ domain, onChange }) => {
     return (
         <>
             <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/custom-domains/">
-                {c('Label for adding a new custom domain').t`Add a domain that you own to your ProtonMail account.`}
+                {c('Label for adding a new custom domain')
+                    .t`Add a domain that you own to your ${MAIL_APP_NAME} account.`}
             </Alert>
             <Row>
                 <Label htmlFor="domainName">{c('Label').t`Domain name`}</Label>

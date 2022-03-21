@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ButtonLike, SettingsLink } from '../../components';
 
@@ -19,7 +20,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
                         learnMoreUrl="https://protonmail.com/support/knowledge-base/pm-me-addresses/"
                     >
                         {c('Info')
-                            .t`Add a @pm.me email address to your account. This simple, shorter domain stands for "ProtonMail me" or "Private Message me."`}
+                            .t`Add a @pm.me email address to your account. This simple, shorter domain stands for "${MAIL_APP_NAME} me" or "Private Message me."`}
                     </SettingsParagraph>
                     <PmMeButton />
                 </>

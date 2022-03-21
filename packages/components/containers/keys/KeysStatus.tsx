@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { Badge } from '../../components';
 import { KeyStatus } from './shared/interface';
 
@@ -7,7 +8,7 @@ const KeysStatus = ({ isPrimary, isDecrypted, isCompromised, isObsolete, isAddre
     const list = [
         isPrimary &&
             ({
-                tooltip: c('Tooltip').t`ProtonMail users will use this key by default for sending`,
+                tooltip: c('Tooltip').t`${MAIL_APP_NAME} users will use this key by default for sending`,
                 title: c('Key state badge').t`Primary`,
                 type: 'primary',
             } as const),

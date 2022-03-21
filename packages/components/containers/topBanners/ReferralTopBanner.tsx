@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { fromUnixTime, format } from 'date-fns';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { isTrial, isTrialExpired, willTrialExpire } from '@proton/shared/lib/helpers/subscription';
 import { useSubscription, useConfig } from '../../hooks';
@@ -24,7 +24,7 @@ const ReferralTopBanner = () => {
     const trial = isTrial(subscription);
     const willExpire = willTrialExpire(subscription);
     const isExpired = isTrialExpired(subscription);
-    const textAction = c('Button').t`Continue using ProtonMail.`;
+    const textAction = c('Button').t`Continue using ${MAIL_APP_NAME}.`;
     const action = (
         <SettingsLink key="continue" className="color-inherit" path="/dashboard?plan=plus">
             {textAction}

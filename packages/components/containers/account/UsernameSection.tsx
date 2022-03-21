@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Label, Row, Field, Href } from '../../components';
 import { useUser, useConfig } from '../../hooks';
@@ -20,14 +20,14 @@ const UsernameSection = () => {
                     </Row>
                 ) : null}
                 <Row>
-                    <Label>{c('Label').t`ProtonMail address`}</Label>
+                    <Label>{c('Label').t`${MAIL_APP_NAME} address`}</Label>
                     <Field className="pt0-5">
                         {Email ? (
                             <strong>{Email}</strong>
                         ) : (
                             <Href
                                 url="https://mail.protonmail.com/login"
-                                title={c('Info').t`Log in to ProtonMail to activate your address`}
+                                title={c('Info').t`Log in to ${MAIL_APP_NAME} to activate your address`}
                             >{c('Link').t`Not activated`}</Href>
                         )}
                     </Field>
