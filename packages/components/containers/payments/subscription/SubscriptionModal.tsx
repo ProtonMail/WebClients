@@ -391,7 +391,7 @@ const SubscriptionModal = ({
                             </div>
                         </div>
                         <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
-                            <div className="subscriptionCheckout-container">
+                            <div className="subscriptionCheckout-container sticky-top">
                                 <SubscriptionCheckoutLocal
                                     submit={
                                         <Button
@@ -469,7 +469,7 @@ const SubscriptionModal = ({
                             </div>
                         </div>
                         <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
-                            <div className="subscriptionCheckout-container">
+                            <div className="subscriptionCheckout-container sticky-top">
                                 <SubscriptionCheckout
                                     submit={
                                         <SubscriptionSubmitButton
