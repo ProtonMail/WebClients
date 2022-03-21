@@ -1,4 +1,4 @@
-import { logError } from '../../utils';
+import { reportError } from '../../utils';
 import { LinkType } from '../../links';
 import {
     LinkDownload,
@@ -31,7 +31,10 @@ export default function initDownloadLinks(links: LinkDownload[], callbacks: Down
             .then(() => {
                 callbacks.onFinish?.();
             })
-            .catch(logError);
+            .catch((err) => {
+                callbacks.onError?.(err);
+                archiveGenerator.cancel();
+            });
         return archiveGenerator.stream;
     };
 
@@ -68,7 +71,7 @@ function loadTotalSize(
             const size = sizes.reduce((a, b) => a + b, 0);
             onInit?.(size);
         })
-        .catch(logError);
+        .catch(reportError);
 }
 
 async function* iterateAllLinks(
