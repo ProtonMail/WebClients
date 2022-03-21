@@ -34,7 +34,7 @@ const RewardSection = () => {
                     <strong>{c('Description')
                         .t`Congratulations! You've earned the maximum of ${rewardsLimit} free months of ${appName} ${plusPlanName}`}</strong>
                     <br />
-                    {c('Description').t`You can continue to  invite friends, but you wont be able to earn more credits`}
+                    {c('Description').t`You can continue to invite friends, but you wont be able to earn more credits`}
                 </Card>
             ) : (
                 <p className="color-weak">{c('Description')
