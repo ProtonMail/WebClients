@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { c } from 'ttag';
-import { PLANS, APP_NAMES, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+
+import { PLANS, APP_NAMES, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useActiveBreakpoint } from '../../../hooks';
 import { MailFeature, VPNFeature, CalendarFeature, DriveFeature, PlanLabel } from './interface';
@@ -22,7 +23,7 @@ const Features = ({ appName, onSelect, planLabels, features, activeTab, onSetAct
     const { icon, name } = APPS_CONFIGURATION[appName];
 
     // translator: <ProtonDrive> (beta)
-    const displayName = `${name} ${name === 'ProtonDrive' ? c('info').t`(beta)` : ''}`;
+    const displayName = `${name} ${name === DRIVE_APP_NAME ? c('info').t`(beta)` : ''}`;
 
     if (isNarrow) {
         return (
