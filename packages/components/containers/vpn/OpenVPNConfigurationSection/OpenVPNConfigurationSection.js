@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { queryVPNLogicalServerInfo, getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { groupWith } from '@proton/shared/lib/helpers/array';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { PLANS, SORT_DIRECTION, VPN_HOSTNAME } from '@proton/shared/lib/constants';
+import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 
 import {
     Href,
@@ -118,7 +118,7 @@ const OpenVPNConfigurationSection = () => {
         <>
             <SettingsParagraph>
                 {c('Info')
-                    .t`These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.
+                    .t`These configuration files let you choose which ${VPN_APP_NAME} server you connect to when using a third-party VPN app or setting up a VPN connection on a router.
                 `}
             </SettingsParagraph>
             <h3 className="mt2">{c('Title').t`1. Select platform`}</h3>
@@ -216,7 +216,7 @@ const OpenVPNConfigurationSection = () => {
                         {isUpgradeRequiredForSecureCore() && (
                             <SettingsParagraph>
                                 <span className="block">{c('Info')
-                                    .t`ProtonVPN Plus or Visionary required for Secure Core feature.`}</span>
+                                    .t`${VPN_APP_NAME} Plus or Visionary required for Secure Core feature.`}</span>
                                 <SettingsLink path="/dashboard">{c('Link').t`Learn more`}</SettingsLink>
                             </SettingsParagraph>
                         )}
@@ -238,7 +238,7 @@ const OpenVPNConfigurationSection = () => {
                         </SettingsParagraph>
                         {isUpgradeRequiredForCountries() && (
                             <SettingsParagraph learnMoreUrl={`https://${VPN_HOSTNAME}/dashboard`}>{c('Info')
-                                .t`ProtonVPN Basic, Plus or Visionary required for Country level connection.`}</SettingsParagraph>
+                                .t`${VPN_APP_NAME} Basic, Plus or Visionary required for Country level connection.`}</SettingsParagraph>
                         )}
                         <ConfigsTable
                             category={CATEGORY.COUNTRY}
@@ -291,7 +291,7 @@ const OpenVPNConfigurationSection = () => {
                 {!loadingPlans && (userVPN.PlanName === 'trial' || !hasPaidVpn) ? (
                     <div className="border p2 text-center">
                         <h3 className="color-primary mt0 mb1">{c('Title')
-                            .t`Get ProtonVPN Plus to access all servers`}</h3>
+                            .t`Get ${VPN_APP_NAME} Plus to access all servers`}</h3>
                         <ul className="unstyled inline-flex mt0 mb2 on-mobile-flex-column">
                             <li className="flex flex-nowrap flex-align-items-center mr1">
                                 <Icon name="check" className="color-success mr0-5" />
@@ -331,7 +331,7 @@ const OpenVPNConfigurationSection = () => {
                         </ul>
                         <div>
                             <ButtonLike as={SettingsLink} color="norm" path="/dashboard?plan=vpnplus">{c('Action')
-                                .t`Get ProtonVPN Plus`}</ButtonLike>
+                                .t`Get ${VPN_APP_NAME} Plus`}</ButtonLike>
                         </div>
                     </div>
                 ) : null}

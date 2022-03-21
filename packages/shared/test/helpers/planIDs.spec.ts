@@ -242,7 +242,7 @@ describe('switchPlan', () => {
         });
     });
 
-    it('should keep ProtonVPN Plus if already selected when selecting ProtonMail Professional', () => {
+    it('should keep Proton VPN Plus if already selected when selecting ProtonMail Professional', () => {
         const result = switchPlan({
             planIDs: { [PLANS.VPNPLUS]: 1 },
             plans: MOCK_PLANS,
@@ -255,7 +255,7 @@ describe('switchPlan', () => {
         });
     });
 
-    it('should keep the ProtonVPN Basic plan when selecting ProtonMail Professional', () => {
+    it('should keep the Proton VPN Basic plan when selecting ProtonMail Professional', () => {
         const organization = {
             UsedVPN: 2,
             MaxVPN: 2,
@@ -273,7 +273,7 @@ describe('switchPlan', () => {
         });
     });
 
-    it('should keep the ProtonVPN Basic plan and Mail plan when selecting ProtonMail Professional', () => {
+    it('should keep the Proton VPN Basic plan and Mail plan when selecting ProtonMail Professional', () => {
         const organization = {
             UsedVPN: 2,
             MaxVPN: 2,
@@ -291,7 +291,7 @@ describe('switchPlan', () => {
         });
     });
 
-    it('should keep the ProtonVPN Plus plan when selecting ProtonMail Professional', () => {
+    it('should keep the Proton VPN Plus plan when selecting ProtonMail Professional', () => {
         expect(
             switchPlan({
                 planIDs: { [PLANS.PLUS]: 1, [PLANS.VPNPLUS]: 1 },

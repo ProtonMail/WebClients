@@ -1,4 +1,4 @@
-import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { Href, Button, Loader } from '../../components';
 import { useAddresses, useConfig, useSubscription } from '../../hooks';
@@ -28,7 +28,7 @@ const DeleteSection = () => {
         return (
             <SettingsParagraph>
                 {c('Info')
-                    .jt`Your ProtonVPN and ${MAIL_APP_NAME} accounts are linked. To delete them both, please log in at ${loginLink} and delete your account there.`}
+                    .jt`Your ${VPN_APP_NAME} and ${MAIL_APP_NAME} accounts are linked. To delete them both, please log in at ${loginLink} and delete your account there.`}
             </SettingsParagraph>
         );
     }

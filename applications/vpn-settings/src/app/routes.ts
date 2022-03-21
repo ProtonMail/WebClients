@@ -1,6 +1,7 @@
+import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { c } from 'ttag';
+import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 export const getRoutes = (user: UserModel) => {
     return {
@@ -89,7 +90,7 @@ export const getRoutes = (user: UserModel) => {
             icon: 'arrow-down-to-rectangle',
             subsections: [
                 {
-                    text: c('Title').t`ProtonVPN clients`,
+                    text: c('Title').t`${VPN_APP_NAME} clients`,
                     id: 'protonvpn-clients',
                 },
                 {

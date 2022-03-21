@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import { APPS, APPS_CONFIGURATION, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { SectionConfig } from '@proton/components';
 
 export const getVpnAppRoutes = () => {
@@ -16,7 +16,7 @@ export const getVpnAppRoutes = () => {
                         id: 'upgrade',
                     },
                     {
-                        text: c('Title').t`ProtonVPN`,
+                        text: c('Title').t`${VPN_APP_NAME}`,
                         id: 'protonvpn-clients',
                     },
                 ],
