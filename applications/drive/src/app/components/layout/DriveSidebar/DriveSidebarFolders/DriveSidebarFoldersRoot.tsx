@@ -34,7 +34,7 @@ export default function DriveSidebarFoldersRoot({ path, shareId, linkId, rootFol
             {isLoading ? (
                 <Loader className="ml0-5 drive-sidebar--icon inline" />
             ) : (
-                rootFolder.children && (
+                rootFolder.children.length > 0 && (
                     <ExpandButton
                         className="ml0-5 flex-item-noshrink"
                         expanded={rootFolder.isExpanded}
