@@ -621,7 +621,7 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
 
     const subscriptionCheckout = (
         <div className="subscriptionCheckout-column bg-weak on-mobile-w100">
-            <div className="subscriptionCheckout-container">
+            <div className="subscriptionCheckout-container sticky-top">
                 <SubscriptionCheckout
                     submit={
                         model.step === CUSTOMISATION ? (
