@@ -73,7 +73,6 @@ const MainContainer = () => {
         FeatureCode.CalendarInviteLocale,
         FeatureCode.CalendarAutoImportInvite,
         FeatureCode.ReferralProgram,
-        FeatureCode.CalendarEmailNotification,
         FeatureCode.CalendarSubscription,
         FeatureCode.PaymentsDisabled,
     ]);

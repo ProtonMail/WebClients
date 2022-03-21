@@ -94,7 +94,7 @@ describe('getSupportedAlarm', () => {
             },
         };
 
-        expect(getSupportedAlarm(emailAlarm, dtstartPartDay, true)).toEqual(emailExpected);
+        expect(getSupportedAlarm(emailAlarm, dtstartPartDay)).toEqual(emailExpected);
         expect(getSupportedAlarm(displayAlarm, dtstartPartDay)).toEqual(displayExpected);
     });
 

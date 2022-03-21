@@ -176,7 +176,6 @@ export const getSupportedEvent = ({
     componentId = '',
     isEventInvitation,
     generatedHashUid = false,
-    enabledEmailNotifications,
 }: {
     method?: ICAL_METHOD;
     vcalVeventComponent: VcalVeventComponent;
@@ -186,7 +185,6 @@ export const getSupportedEvent = ({
     componentId?: string;
     isEventInvitation?: boolean;
     generatedHashUid?: boolean;
-    enabledEmailNotifications?: boolean;
 }): VcalVeventComponent => {
     const isPublish = method === ICAL_METHOD.PUBLISH;
     const isInvitation = isEventInvitation && !isPublish;
@@ -419,7 +417,7 @@ export const getSupportedEvent = ({
 
             if (!isEventInvitation && isPublish) {
                 const alarms = components?.filter(({ component }) => component === 'valarm') || [];
-                const supportedAlarms = getSupportedAlarms(alarms, dtstart, enabledEmailNotifications);
+                const supportedAlarms = getSupportedAlarms(alarms, dtstart);
                 const dedupedAlarms = dedupeAlarmsWithNormalizedTriggers(supportedAlarms);
 
                 if (dedupedAlarms.length) {

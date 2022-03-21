@@ -17,17 +17,8 @@ import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 
 import { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
-import { HTMLAttributes, useRef } from 'react';
-import {
-    Alert,
-    classnames,
-    Input,
-    Notifications,
-    TextArea,
-    useCalendarEmailNotificationsFeature,
-    MemoizedIconRow as IconRow,
-} from '@proton/components';
-import { isEmailNotification } from '@proton/shared/lib/calendar/alarms';
+import { HTMLAttributes } from 'react';
+import { Alert, classnames, Input, Notifications, TextArea, MemoizedIconRow as IconRow } from '@proton/components';
 
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import createHandlers from './eventForm/createPropFactory';
@@ -99,12 +90,6 @@ const EventForm = ({
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
     const showNotifications = canAddNotifications || notifications.length;
     const isOrganizerDisabled = !isSubscribedCalendar && isOrganizer && !isSelfAddressActive;
-    // email notification editing needs to be possible for events that initially have them
-    // and since the model is updated onChange, the ref makes sure it is possible even if you
-    // delete the only email notification
-    const emailNotificationsEnabled = useRef(
-        useCalendarEmailNotificationsFeature() || notifications.some(isEmailNotification)
-    ).current;
 
     const dateRow = isMinimal ? (
         <MiniDateTimeRows
@@ -205,7 +190,7 @@ const EventForm = ({
         <IconRow id={NOTIFICATION_INPUT_ID} icon="bell" title={c('Label').t`Notifications`}>
             {isAllDay ? (
                 <Notifications
-                    hasType={emailNotificationsEnabled}
+                    hasType
                     {...{
                         errors,
                         canAdd: canAddNotifications,
@@ -225,7 +210,7 @@ const EventForm = ({
                 />
             ) : (
                 <Notifications
-                    hasType={emailNotificationsEnabled}
+                    hasType
                     {...{
                         errors,
                         canAdd: canAddNotifications,
@@ -288,7 +273,6 @@ const EventForm = ({
                 model={model}
                 setModel={setModel}
                 isCreateEvent={isCreateEvent}
-                emailNotificationsEnabled={emailNotificationsEnabled}
                 isDuplicating={isDuplicating}
             />
         </IconRow>

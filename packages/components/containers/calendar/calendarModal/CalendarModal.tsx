@@ -25,7 +25,7 @@ import {
     Button,
 } from '../../../components';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
-import { useLoading, useCalendarEmailNotificationsFeature } from '../../../hooks';
+import { useLoading } from '../../../hooks';
 import Notifications from '../notifications/Notifications';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
@@ -62,8 +62,7 @@ export const CalendarModal = ({
     const [error, setError] = useState(false);
     const [calendar, setCalendar] = useState(initialCalendar);
 
-    const emailNotificationsEnabled = useCalendarEmailNotificationsFeature();
-    const [model, setModel] = useState(() => getDefaultModel(emailNotificationsEnabled));
+    const [model, setModel] = useState(() => getDefaultModel());
 
     const addressText = useMemo(() => {
         const option = model.addressOptions.find(({ value: ID }) => ID === model.addressID);
@@ -287,7 +286,7 @@ export const CalendarModal = ({
                                                 as={Notifications}
                                                 label={c('Label').t`Default notifications`}
                                                 data-test-id="create-calendar/event-settings:default-notification"
-                                                hasType={emailNotificationsEnabled}
+                                                hasType
                                                 notifications={model.partDayNotifications}
                                                 canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
                                                 defaultNotification={model.defaultPartDayNotification}
@@ -303,7 +302,7 @@ export const CalendarModal = ({
                                                 as={Notifications}
                                                 label={c('Label').t`Default full day notifications`}
                                                 data-test-id="create-calendar/event-settings:default-full-day-notification"
-                                                hasType={emailNotificationsEnabled}
+                                                hasType
                                                 notifications={model.fullDayNotifications}
                                                 canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
                                                 defaultNotification={model.defaultFullDayNotification}
