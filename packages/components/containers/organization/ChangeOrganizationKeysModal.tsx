@@ -9,7 +9,21 @@ import {
     getReEncryptedPublicMemberTokensPayloadV2,
 } from '@proton/shared/lib/keys';
 import { CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
-import { FormModal, Alert, Row, Label, Field, PasswordInput } from '../../components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import {
+    Alert,
+    Field,
+    Label,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    PasswordInput,
+    Row,
+    Button,
+    Form,
+} from '../../components';
 import {
     useEventManager,
     useLoading,
@@ -24,8 +38,7 @@ import AuthModal from '../password/AuthModal';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 
-interface Props {
-    onClose?: () => void;
+interface Props extends ModalProps {
     hasOtherAdmins: boolean;
     publicMembers: Member[];
     organizationKey: CachedOrganizationKey;
@@ -114,10 +127,9 @@ const ChangeOrganizationKeysModal = ({
         onClose?.();
     };
 
-    const { section, ...modalProps } = (() => {
+    const { section, submitText, onSubmit } = (() => {
         if (step === 0) {
             return {
-                submit: c('Action').t`Next`,
                 section: (
                     <>
                         <Alert className="mb1">{c('Info')
@@ -125,6 +137,7 @@ const ChangeOrganizationKeysModal = ({
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
                     </>
                 ),
+                submitText: c('Action').t`Next`,
                 onSubmit() {
                     next();
                 },
@@ -133,8 +146,6 @@ const ChangeOrganizationKeysModal = ({
 
         if (step === 1) {
             return {
-                close: c('Action').t`Back`,
-                onClose: previous,
                 section: (
                     <>
                         {hasOtherAdmins && (
@@ -182,8 +193,9 @@ const ChangeOrganizationKeysModal = ({
                         </Alert>
                     </>
                 ),
+                submitText: c('Action').t`Save`,
                 onSubmit() {
-                    withLoading(handleSubmit());
+                    void withLoading(handleSubmit());
                 },
             };
         }
@@ -191,18 +203,32 @@ const ChangeOrganizationKeysModal = ({
         throw new Error('Unknown step');
     })();
 
+    const handleClose = loading ? noop : onClose;
+
     return (
-        <FormModal
-            title={mode === 'reset' ? c('Title').t`Reset organization keys` : c('Title').t`Change organization keys`}
-            close={c('Action').t`Close`}
-            submit={c('Action').t`Save`}
-            onClose={onClose}
-            loading={loading}
-            {...modalProps}
-            {...rest}
-        >
-            {section}
-        </FormModal>
+        <Modal as={Form} onSubmit={onSubmit} onClose={handleClose} {...rest}>
+            <ModalHeader
+                title={
+                    mode === 'reset' ? c('Title').t`Reset organization keys` : c('Title').t`Change organization keys`
+                }
+            />
+            <ModalContent>{section}</ModalContent>
+            <ModalFooter>
+                {step ? (
+                    <Button onClick={previous} disabled={loading}>
+                        {c('Action').t`Back`}
+                    </Button>
+                ) : (
+                    <Button onClick={handleClose} disabled={loading}>
+                        {c('Action').t`Close`}
+                    </Button>
+                )}
+
+                <Button loading={loading} type="submit" color="norm">
+                    {submitText}
+                </Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 
