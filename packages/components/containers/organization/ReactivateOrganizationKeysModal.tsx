@@ -5,16 +5,30 @@ import { encryptPrivateKey } from 'pmcrypto';
 import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shared/lib/api/organization';
 import { OrganizationModel } from '@proton/shared/lib/models';
 import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
-import { FormModal, LearnMore, Alert, Row, Label, Field, PasswordInput, Button } from '../../components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import {
+    Alert,
+    Button,
+    Field,
+    Form,
+    Href,
+    Label,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    PasswordInput,
+    Row,
+} from '../../components';
 import { useCache, useLoading, useNotifications, useAuthentication, useEventManager, useApi } from '../../hooks';
 
-interface Props {
-    onClose?: () => void;
+interface Props extends ModalProps {
     mode: 'reactivate' | 'activate';
     onResetKeys?: () => void;
 }
 
-const ReactivateOrganizationKeysModal = ({ onClose, onResetKeys, mode, ...rest }: Props) => {
+const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }: Props) => {
     const cache = useCache();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -39,7 +53,9 @@ const ReactivateOrganizationKeysModal = ({ onClose, onResetKeys, mode, ...rest }
 
         if (mode === 'reactivate') {
             const learnMore = (
-                <LearnMore key={1} url="https://protonmail.com/support/knowledge-base/restore-administrator/" />
+                <Href key={1} url="https://protonmail.com/support/knowledge-base/restore-administrator/">
+                    {c('Link').t`Learn more`}
+                </Href>
             );
             return {
                 title: c('Title').t`Restore administrator privileges`,
@@ -79,11 +95,45 @@ const ReactivateOrganizationKeysModal = ({ onClose, onResetKeys, mode, ...rest }
         }
     };
 
+    const handleClose = loading ? noop : onClose;
+
     return (
-        <FormModal
-            title={title}
-            close={c('Action').t`Close`}
-            submit={
+        <Modal
+            as={Form}
+            onSubmit={() => {
+                void withLoading(handleSubmit());
+            }}
+            onClose={handleClose}
+            {...rest}
+        >
+            <ModalHeader title={title} />
+            <ModalContent>
+                <div className="mb1">{message}</div>
+                <Row>
+                    <Label htmlFor="organizationPassword">{c('Label').t`Organization password`}</Label>
+                    <Field>
+                        <PasswordInput
+                            id="organizationPassword"
+                            value={backupPassword}
+                            onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
+                                setBackupPassword(value)
+                            }
+                            error={error}
+                            placeholder={c('Placeholder').t`Password`}
+                            autoComplete="off"
+                            autoFocus
+                            required
+                        />
+                    </Field>
+                </Row>
+                <Alert className="mb1" type="warning">
+                    {warning}
+                </Alert>
+            </ModalContent>
+            <ModalFooter>
+                <Button onClick={handleClose} disabled={loading}>
+                    {c('Action').t`Close`}
+                </Button>
                 <div>
                     {onResetKeys && (
                         <Button
@@ -94,35 +144,12 @@ const ReactivateOrganizationKeysModal = ({ onClose, onResetKeys, mode, ...rest }
                             }}
                         >{c('Action').t`Reset keys`}</Button>
                     )}
-                    <Button color="norm" loading={loading} onClick={() => withLoading(handleSubmit())}>{c('Action')
-                        .t`Submit`}</Button>
+                    <Button loading={loading} type="submit" color="norm">
+                        {c('Action').t`Save`}
+                    </Button>
                 </div>
-            }
-            onClose={onClose}
-            loading={loading}
-            onSubmit={() => withLoading(handleSubmit())}
-            {...rest}
-        >
-            <Alert className="mb1">{message}</Alert>
-            <Row>
-                <Label htmlFor="organizationPassword">{c('Label').t`Organization password`}</Label>
-                <Field>
-                    <PasswordInput
-                        id="organizationPassword"
-                        value={backupPassword}
-                        onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setBackupPassword(value)}
-                        error={error}
-                        placeholder={c('Placeholder').t`Password`}
-                        autoComplete="off"
-                        autoFocus
-                        required
-                    />
-                </Field>
-            </Row>
-            <Alert className="mb1" type="warning">
-                {warning}
-            </Alert>
-        </FormModal>
+            </ModalFooter>
+        </Modal>
     );
 };
 
