@@ -100,8 +100,16 @@ const Dropdown = ({
         updatePositionOnDOMChange,
     });
 
+    /*
+     * It seems that inputs of type radio trigger a synthetic click event when navigating them via keyboard.
+     * For the use-case where we want to auto-close the dropdown but not close the dropdown
+     * when navigating radio inputs inside of the dropdown, we can verify clientX & ClientY of the MouseEvent
+     * as the synthetically generated click event contains 0 for these value.
+     */
     const handleClickContent = (event: ReactMouseEvent<HTMLDivElement>) => {
-        if (autoClose) {
+        const isRealClick = event.clientX !== 0 && event.clientY !== 0;
+
+        if (isRealClick && autoClose) {
             onClose(event);
         }
     };
