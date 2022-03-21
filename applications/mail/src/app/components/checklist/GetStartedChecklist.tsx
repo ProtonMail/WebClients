@@ -12,15 +12,13 @@ import GetStartedChecklistHeader from './GetStartedChecklistHeader';
 
 import './GetStartedChecklist.scss';
 
-const totalGBStorageAfterCompletion = 1;
-
 /*
  * This component is separated out so that a "seen" request can be sent
  * at the moment that it mounts. This wouldn't be possible if it was part
  * of the larger checklist component as it is only rendered conditionally,
  * mainly when the checklist is complete.
  */
-const GetStartedChecklistComplete = () => {
+const GetStartedChecklistComplete = ({ rewardInGb }: { rewardInGb: number }) => {
     const api = useApi();
 
     useEffect(() => {
@@ -34,7 +32,7 @@ const GetStartedChecklistComplete = () => {
             <p className="color-weak mt0-5 mb1-5">
                 <span className="get-started_completion-text inline-block">
                     {c('Get started checklist completion')
-                        .t`We've increased the total storage of your account to ${totalGBStorageAfterCompletion} GB. Get additional storage and unlock premium features today.`}
+                        .t`We've increased the total storage of your account to ${rewardInGb} GB. Get additional storage and unlock premium features today.`}
                 </span>
             </p>
             <ButtonLike
@@ -57,7 +55,7 @@ interface GetStartedChecklistProps {
 }
 
 const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: GetStartedChecklistProps) => {
-    const { expires, checklist, loading } = useGetStartedChecklist();
+    const { expires, checklist, loading, rewardInGb } = useGetStartedChecklist();
 
     const checklistItems = [
         {
@@ -100,7 +98,7 @@ const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: Ge
     }
 
     if (checklistItems.every(({ complete }) => complete)) {
-        return <GetStartedChecklistComplete />;
+        return <GetStartedChecklistComplete rewardInGb={rewardInGb} />;
     }
 
     const { length: totalNumberOfItems } = checklistItems;
@@ -132,7 +130,7 @@ const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: Ge
             <div className="flex">
                 <div className="text-bold">
                     {c('Get started checklist incentive')
-                        .t`Complete all steps and get a total of ${totalGBStorageAfterCompletion} GB on your account`}
+                        .t`Complete all steps and get a total of ${rewardInGb} GB on your account`}
                 </div>
             </div>
             <div>
