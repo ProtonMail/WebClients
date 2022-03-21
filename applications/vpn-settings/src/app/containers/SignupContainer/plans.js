@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { PLANS, PLAN_TYPES, CYCLE } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_TYPES, CYCLE, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { Info } from '@proton/components';
 
 import freePlanSvg from '@proton/styles/assets/img/pv-images/plans/free.svg';
@@ -229,7 +229,7 @@ const getPlanFeatures = (plan, maxConnections, countries, serversCount) => {
                     />
                 </>,
                 <>
-                    <span className="mr0-5">ProtonDrive</span>
+                    <span className="mr0-5">{DRIVE_APP_NAME}</span>
                     <span className="text-success">{c('Price').t`FREE`}</span>
                 </>,
             ],
