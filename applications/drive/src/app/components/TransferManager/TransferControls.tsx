@@ -56,6 +56,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 disabled: pauseInProgress,
                 title: isTransferPaused(transfer) ? resumeText : pauseText,
                 iconName: isTransferPaused(transfer) ? 'play' : 'pause',
+                actionType: isTransferPaused(transfer) ? 'play' : 'pause',
             });
         }
 
@@ -64,6 +65,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 onClick: () => transferControls.restart(transfer, type),
                 title: restartText,
                 iconName: 'arrow-rotate-right',
+                actionType: 'restart',
             });
         }
 
@@ -73,6 +75,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 title: isFinished ? removeText : cancelText,
                 disabled: isFinalizing,
                 iconName: isFinished ? 'broom' : 'xmark',
+                actionType: isFinished ? 'clear' : 'cancel',
             });
         }
 
