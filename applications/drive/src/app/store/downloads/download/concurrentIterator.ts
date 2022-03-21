@@ -85,8 +85,8 @@ export default class ConcurrentIterator {
     }
 
     cancel() {
-        this.paused = false; // To unpause waits and terminate operation.
         this.canceled = true;
+        this.paused = false; // To unpause waits and terminate operation.
         this.fileControlers.forEach((controls) => controls.cancel());
     }
 }

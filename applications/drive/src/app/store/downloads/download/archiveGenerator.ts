@@ -4,7 +4,6 @@ import { Writer as ZipWriter } from '@transcend-io/conflux';
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { reportError } from '../../utils';
 import { LinkType, splitLinkName, adjustName, adjustWindowsLinkName } from '../../links';
 import { StartedNestedLinkDownload } from './interface';
 
@@ -78,11 +77,9 @@ export default class ArchiveGenerator {
             }
         }
         if (!this.canceled) {
-            Promise.all(promises)
-                .then(() => {
-                    this.writer.close();
-                })
-                .catch(reportError);
+            await Promise.all(promises).then(() => {
+                this.writer.close();
+            });
         }
     }
 
