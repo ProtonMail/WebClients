@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import VPNClientCard from './VPNClientCard';
 import { DropdownMenuLink, Copy } from '../../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
@@ -32,7 +33,7 @@ const ProtonVPNClientsSection = () => {
         <SettingsSectionWide>
             <SettingsParagraph>
                 {c('Info')
-                    .t`To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.`}
+                    .t`To secure your internet connection, download and install the ${VPN_APP_NAME} application for your device and connect to a ${VPN_APP_NAME} server.`}
             </SettingsParagraph>
             <div className="flex on-mobile-flex-column">
                 <VPNClientCard

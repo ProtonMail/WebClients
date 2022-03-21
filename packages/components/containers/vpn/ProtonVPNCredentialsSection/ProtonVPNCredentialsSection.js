@@ -1,4 +1,4 @@
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 
 import { Row, Label, Field, Alert, Href } from '../../../components';
@@ -11,7 +11,7 @@ const ProtonVPNCredentialsSection = () => {
 
     const downloadLink = (
         <Href key="link" className="mr0-5" url="https://protonvpn.com/download">{c('Link')
-            .t`ProtonVPN native clients`}</Href>
+            .t`${VPN_APP_NAME} native clients`}</Href>
     );
 
     return (

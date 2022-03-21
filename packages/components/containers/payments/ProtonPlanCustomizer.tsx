@@ -14,6 +14,7 @@ import {
     GIGA,
     PLAN_NAMES,
     MAIL_APP_NAME,
+    VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { range } from '@proton/shared/lib/helpers/array';
 import { switchPlan, getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
@@ -195,10 +196,10 @@ const ProtonPlanCustomizer = ({
             {service === PLAN_SERVICES.VPN && planIDs[plansNameMap[PLANS.VPNPLUS].ID] ? (
                 <p>
                     {c('Info').ngettext(
-                        msgid`ProtonVPN ${PLAN_NAMES[PLANS.VPNPLUS]} includes ${
+                        msgid`${VPN_APP_NAME} ${PLAN_NAMES[PLANS.VPNPLUS]} includes ${
                             plansNameMap[PLANS.VPNPLUS].MaxVPN
                         } VPN connection.`,
-                        `ProtonVPN ${PLAN_NAMES[PLANS.VPNPLUS]} includes ${
+                        `${VPN_APP_NAME} ${PLAN_NAMES[PLANS.VPNPLUS]} includes ${
                             plansNameMap[PLANS.VPNPLUS].MaxVPN
                         } VPN connections.`,
                         plansNameMap[PLANS.VPNPLUS].MaxVPN
