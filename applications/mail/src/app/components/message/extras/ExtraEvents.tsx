@@ -30,7 +30,6 @@ import {
     useLoading,
     useUser,
     useUserSettings,
-    useCalendarEmailNotificationsFeature,
     useGetCalendarInfo,
     useGetCalendarEventRaw,
 } from '@proton/components';
@@ -69,7 +68,6 @@ const ExtraEvents = ({ message }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const getCalendarUserSettings = useGetCalendarUserSettings();
-    const enabledEmailNotifications = useCalendarEmailNotificationsFeature();
     const getCalendarInfo = useGetCalendarInfo();
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
@@ -256,7 +254,6 @@ const ExtraEvents = ({ message }: Props) => {
                         contactEmails={contactEmails}
                         ownAddresses={addresses}
                         userSettings={userSettings}
-                        enabledEmailNotifications={enabledEmailNotifications}
                         getAddressKeys={getAddressKeys}
                         getCalendarInfo={getCalendarInfo}
                         getCalendarEventRaw={getCalendarEventRaw}
