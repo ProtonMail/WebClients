@@ -232,25 +232,17 @@ export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = 
     return { index, attendee };
 };
 
-export const getEventWithCalendarAlarms = (
-    vevent: VcalVeventComponent,
-    calendarSettings: CalendarSettings,
-    enabledEmailNotifications = false
-) => {
+export const getEventWithCalendarAlarms = (vevent: VcalVeventComponent, calendarSettings: CalendarSettings) => {
     const { components } = vevent;
     const isAllDay = getIsAllDay(vevent);
     const notifications = isAllDay
         ? calendarSettings.DefaultFullDayNotifications
         : calendarSettings.DefaultPartDayNotifications;
-    const valarmComponents = notifications
-        .filter(({ Type }) => {
-            return enabledEmailNotifications || Type !== SETTINGS_NOTIFICATION_TYPE.EMAIL;
-        })
-        .map<VcalValarmComponent>(({ Trigger, Type }) => ({
-            component: 'valarm',
-            action: { value: Type === SETTINGS_NOTIFICATION_TYPE.EMAIL ? 'EMAIL' : 'DISPLAY' },
-            trigger: { value: fromTriggerString(Trigger) },
-        }));
+    const valarmComponents = notifications.map<VcalValarmComponent>(({ Trigger, Type }) => ({
+        component: 'valarm',
+        action: { value: Type === SETTINGS_NOTIFICATION_TYPE.EMAIL ? 'EMAIL' : 'DISPLAY' },
+        trigger: { value: fromTriggerString(Trigger) },
+    }));
 
     return {
         ...vevent,
@@ -263,13 +255,11 @@ export const getInvitedEventWithAlarms = ({
     partstat,
     calendarSettings,
     oldPartstat,
-    enabledEmailNotifications,
 }: {
     vevent: VcalVeventComponent;
     partstat: ICAL_ATTENDEE_STATUS;
     calendarSettings?: CalendarSettings;
     oldPartstat?: ICAL_ATTENDEE_STATUS;
-    enabledEmailNotifications?: boolean;
 }) => {
     const { components } = vevent;
     const otherComponents = components?.filter((component) => !getIsAlarmComponent(component));
@@ -294,7 +284,7 @@ export const getInvitedEventWithAlarms = ({
         throw new Error('Cannot retrieve calendar default notifications');
     }
 
-    return getEventWithCalendarAlarms(vevent, calendarSettings, enabledEmailNotifications);
+    return getEventWithCalendarAlarms(vevent, calendarSettings);
 };
 
 export const getSelfAttendeeToken = (vevent?: VcalVeventComponent, addresses: Address[] = []) => {

@@ -30,7 +30,6 @@ import {
     Member as tsMember,
     SelfAddressData,
 } from '@proton/shared/lib/interfaces/calendar';
-import { getDeviceNotifications } from '@proton/shared/lib/calendar/notificationModel';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
@@ -44,22 +43,15 @@ import { propertiesToNotificationModel } from './propertiesToNotificationModel';
 
 import { getDateTimeState } from './time';
 
-export const getNotificationModels = (
-    {
-        DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
-        DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
-    },
-    emailNotificationsEnabled?: boolean
-) => {
+export const getNotificationModels = ({
+    DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
+    DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
+}) => {
     return {
         defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
-        partDayNotifications: emailNotificationsEnabled
-            ? notificationsToModel(DefaultPartDayNotifications, false)
-            : getDeviceNotifications(notificationsToModel(DefaultPartDayNotifications, false)),
-        fullDayNotifications: emailNotificationsEnabled
-            ? notificationsToModel(DefaultFullDayNotifications, true)
-            : getDeviceNotifications(notificationsToModel(DefaultFullDayNotifications, true)),
+        partDayNotifications: notificationsToModel(DefaultPartDayNotifications, false),
+        fullDayNotifications: notificationsToModel(DefaultFullDayNotifications, true),
     };
 };
 
@@ -156,7 +148,6 @@ interface GetInitialModelArguments {
     verificationStatus?: EVENT_VERIFICATION_STATUS;
     tzid: string;
     attendees?: AttendeeModel[];
-    emailNotificationsEnabled?: boolean;
 }
 
 export const getInitialModel = ({
@@ -172,12 +163,11 @@ export const getInitialModel = ({
     verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
     tzid,
     attendees = [],
-    emailNotificationsEnabled,
 }: GetInitialModelArguments): EventModel => {
     const { DefaultEventDuration: defaultEventDuration = DEFAULT_EVENT_DURATION } = CalendarSettings;
     const dateTimeModel = getInitialDateTimeModel(initialDate, defaultEventDuration, tzid);
     const frequencyModel = getInitialFrequencyModel(dateTimeModel.start.date);
-    const notificationModel = getNotificationModels(CalendarSettings, emailNotificationsEnabled);
+    const notificationModel = getNotificationModels(CalendarSettings);
     const memberModel = getInitialMemberModel(Addresses, Members, Member, Address);
     const calendarsModel = getCalendarsModel(Calendar, Calendars);
 
