@@ -1,3 +1,21 @@
+## Release 4.0.19 - Apr 06, 2022
+
+### Improvements
+
+-   Updated the UI of specific modals
+
+### Bug fixes
+
+-   Fixed an issue where the focus of the message would be lost when clicking on the email body, causing keyboard shortcuts not to function
+-   Fixed an issue where the print preview would not include the list of email attachments
+-   Fixed an issue where on some rare occasions, embedded images would not be displayed even though they are mentioned in the attachment list (only for PGP-encrypted messages)
+-   Fixed an issue where pressing "Enter" after typing a contact name within the contact group modal would submit the form instead of selecting the contact name from the autocomplete list
+-   Fixed an issue where after pasting particular html attributes in the composer would the pasted attributes would appear ignored
+-   Fixed an issue where vertical space between the message body and the signature would be missing in the composer after switching to plain text within the composer
+-   Fixed an issue where some empty placeholders would be displayed if viewing a message as HTML
+-   Fixed an issue where pasting content from Microsoft Office (including Excel) would result in pasting an inline image
+-   Fixed an issue where a "Remote content could not be downloaded" message would be displayed for remote images, where the URL is encoded twice
+
 ## Release 4.0.18 - Mar 23, 2022
 
 ### Improvements
