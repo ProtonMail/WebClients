@@ -9,7 +9,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { WELCOME_PANE_OPTIONS_URLS } from '../../constants';
 
@@ -299,7 +299,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
         },
         {
             id: 19,
-            text: c('Info').t`Store and share files securely with Proton Drive.`,
+            text: c('Info').t`Store and share files securely with ${DRIVE_APP_NAME}.`,
             cta: (
                 <SettingsLink
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}

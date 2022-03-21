@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { c } from 'ttag';
+
 import { Button, Dropdown, Loader } from '@proton/components';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+
 import './SearchDropdown.scss';
 
 interface Props {
@@ -34,7 +37,7 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                         </div>
                         <p className="mb0">
                             {c('Info')
-                                .t`To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.`}
+                                .t`To enable trully private search ${DRIVE_APP_NAME} needs to index your files locally. You can still use ${DRIVE_APP_NAME} normally - we’ll let you know when indexing is done.`}
                         </p>
                     </div>
                     <div className="flex flex-justify-end mt1">

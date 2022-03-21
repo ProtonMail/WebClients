@@ -14,14 +14,10 @@ const DriveOnboardingModalNoAccess = (props: any) => {
     return (
         <OnboardingModal setWelcomeFlags={false} showGenericSteps={false} hideDisplayName {...props}>
             {() => (
-                <OnboardingStep
-                    close={null}
-                    submit={c('Onboarding Proton Drive Action').t`Upgrade account`}
-                    onSubmit={handleBack}
-                >
+                <OnboardingStep close={null} submit={c('Onboarding Action').t`Upgrade account`} onSubmit={handleBack}>
                     <OnboardingContent
-                        title={c('Onboarding Proton Drive Title').t`Upgrade to access ${appName}`}
-                        description={c('Onboarding Proton Drive Info')
+                        title={c('Onboarding Title').t`Upgrade to access ${appName}`}
+                        description={c('Onboarding Info')
                             .t`${appName} is currently in early access and only available to users with a paid plan.`}
                         img={<img src={onboardingWelcome} alt={appName} />}
                     />

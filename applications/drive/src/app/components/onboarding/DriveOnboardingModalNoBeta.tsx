@@ -14,14 +14,14 @@ const DriveOnboardingModalNoBeta = (props: any) => {
             {() => (
                 <OnboardingStep
                     close={null}
-                    submit={c('Onboarding Proton Drive Action').t`Enable Beta Access`}
+                    submit={c('Onboarding Action').t`Enable Beta Access`}
                     onSubmit={() => {
                         createModal(<EarlyAccessModal />);
                     }}
                 >
                     <OnboardingContent
-                        title={c('Onboarding Proton Drive Title').t`${appName} is in Beta`}
-                        description={c('Onboarding Proton Drive Info')
+                        title={c('Onboarding Title').t`${appName} is in Beta`}
+                        description={c('Onboarding Info')
                             .t`${appName} is currently only available if you enable Beta Access.`}
                         img={<img src={onboardingWelcome} alt={appName} />}
                     />

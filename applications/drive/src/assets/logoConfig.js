@@ -1,9 +1,9 @@
 module.exports = {
     logo: 'src/assets/protondrive.svg',
     favicons: {
-        appName: 'ProtonDrive',
+        appName: 'Proton Drive',
         appDescription:
-            'ProtonDrive allows you to securely store and share your sensitive documents and access them anywhere.',
+            'Proton Drive allows you to securely store and share your sensitive documents and access them anywhere.',
         developerName: 'Proton AG',
         developerURL: 'https://github.com/ProtonMail/WebClients',
         background: '#1c223d',
