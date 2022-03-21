@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect, useState, useMemo } from 'react';
 import { c } from 'ttag';
 
-import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from '@proton/shared/lib/constants';
+import { ADDRESS_STATUS, MAIL_APP_NAME, RECEIVE_ADDRESS, SEND_ADDRESS } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
 
 import { Select, Loader, Info } from '../../components';
@@ -82,7 +82,7 @@ const IdentitySection = () => {
                                 className="text-semibold"
                                 data-testid="settings:identity-section:signature-toggle-label"
                             >
-                                <span className="mr0-5">{c('Label').t`ProtonMail footer`}</span>
+                                <span className="mr0-5">{c('Label').t`${MAIL_APP_NAME} footer`}</span>
                                 <Info title={c('Info').t`Let your contacts know you care about their privacy.`} />
                             </label>
                         </SettingsLayoutLeft>

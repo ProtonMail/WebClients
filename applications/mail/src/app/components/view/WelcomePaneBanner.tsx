@@ -9,7 +9,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { WELCOME_PANE_OPTIONS_URLS } from '../../constants';
 
@@ -121,7 +121,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
         },
         {
             id: 5,
-            text: c('Info').t`Upgrade to use ProtonMail with third-party desktop clients.`,
+            text: c('Info').t`Upgrade to use ${MAIL_APP_NAME} with third-party desktop clients.`,
             cta: (
                 <SettingsLink
                     path={WELCOME_PANE_OPTIONS_URLS.plansSelection}
@@ -239,7 +239,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
         },
         {
             id: 14,
-            text: c('Info').t`ProtonMail can protect your business as well.`,
+            text: c('Info').t`${MAIL_APP_NAME} can protect your business as well.`,
             cta: (
                 <Href
                     url={WELCOME_PANE_OPTIONS_URLS.protonBusiness}

@@ -1,4 +1,7 @@
 import { c } from 'ttag';
+
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
 import { Alert, Label, Table, TableHeader, TableBody, TableRow } from '../../components';
 
 const MXSection = () => {
@@ -7,7 +10,7 @@ const MXSection = () => {
         <>
             <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/dns-records/">
                 {c('Info')
-                    .t`Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.`}
+                    .t`Before you can receive emails for your custom domain addresses at ${MAIL_APP_NAME}, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>
             <Label>{c('Label')
                 .t`Please add the following MX record. Note, DNS records can take several hours to update.`}</Label>
@@ -26,7 +29,8 @@ const MXSection = () => {
                 </TableBody>
             </Table>
             <Alert className="mb1">
-                {c('Info').t`Delete any other MX records or make sure ProtonMail's Priority is the lowest number.`}
+                {c('Info')
+                    .t`Delete any other MX records or make sure ${MAIL_APP_NAME}'s Priority is the lowest number.`}
                 <br />
                 {c('Info')
                     .jt`If this domain is currently receiving emails, select the ${boldAddresses} tab and add all active email addresses before changing the MX record to ensure a smooth transition.`}

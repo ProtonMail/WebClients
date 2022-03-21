@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { Organization } from '@proton/shared/lib/interfaces';
-import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { hasMailProfessional, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 
@@ -31,7 +31,7 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
             <SettingsSectionWide>
                 <SettingsParagraph>
                     {c('Info')
-                        .t`ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.`}
+                        .t`${MAIL_APP_NAME} lets you create email addresses for other people. This is perfect for businesses, families, or groups.`}
                 </SettingsParagraph>
 
                 <UpgradeBanner>
@@ -48,7 +48,7 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
             <>
                 <SettingsParagraph>
                     {c('Info')
-                        .t`Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). `}
+                        .t`Create email addresses for other people, manage ${MAIL_APP_NAME} for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). `}
                 </SettingsParagraph>
                 <ButtonLike color="norm" as={SettingsLink} path="/domain-names" app={APPS.PROTONMAIL}>
                     {c('Action').t`Add domain`}

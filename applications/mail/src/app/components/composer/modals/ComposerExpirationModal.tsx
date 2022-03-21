@@ -1,13 +1,16 @@
+import { c, msgid } from 'ttag';
 import { useState, ChangeEvent } from 'react';
 import { useDispatch } from 'react-redux';
-import { c, msgid } from 'ttag';
+
 import { Href, generateUID, useNotifications } from '@proton/components';
 import { range } from '@proton/shared/lib/helpers/array';
-import ComposerInnerModal from './ComposerInnerModal';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
 import { MAX_EXPIRATION_TIME } from '../../../constants';
-import { MessageChange } from '../Composer';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
+import { MessageChange } from '../Composer';
+import ComposerInnerModal from './ComposerInnerModal';
 
 // expiresIn value is in seconds and default is 7 days
 const ONE_WEEK = 3600 * 24 * 7;
@@ -106,7 +109,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         >
             <p className="mt0 color-weak">
                 {c('Info')
-                    .t`If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.`}
+                    .t`If you are sending this message to a non ${MAIL_APP_NAME} user, please be sure to set a password for your message.`}
                 <br />
                 <Href url="https://protonmail.com/support/knowledge-base/expiration/">{c('Info').t`Learn more`}</Href>
             </p>

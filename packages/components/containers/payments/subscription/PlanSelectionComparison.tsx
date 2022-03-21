@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { c } from 'ttag';
-import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { Organization, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
 import { Button, Icon } from '../../../components';
@@ -62,7 +62,7 @@ const PlanSelectionComparison = ({ service, onChangePlanIDs, plans, planNamesMap
                         <p className="text-sm mt0 mb1 color-weak">
                             **{' '}
                             {c('Info concerning plan features')
-                                .t`ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.`}
+                                .t`${MAIL_APP_NAME} cannot be used for mass emailing or spamming. Legitimate emails are unlimited.`}
                         </p>
                     </>
                 ) : null}

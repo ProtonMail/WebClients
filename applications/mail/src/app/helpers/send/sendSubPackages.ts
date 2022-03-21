@@ -16,7 +16,7 @@ const getSignatureFlag = ({ sign }: Pick<SendPreferences, 'sign'>, message: Mess
     sign && getAttachments(message).every(({ Signature }) => Signature) ? SIGNATURES_ATTACHMENTS : SIGNATURES_NONE;
 
 /**
- * Package for a ProtonMail user.
+ * Package for a Proton Mail user.
  */
 const sendPM = async (sendPrefs: SendPreferences, message: Message) => ({
     Type: SEND_PM,
@@ -25,7 +25,7 @@ const sendPM = async (sendPrefs: SendPreferences, message: Message) => ({
 });
 
 /**
- * Package for a outside user using ProtonMail encryption
+ * Package for a outside user using Proton Mail encryption
  */
 const sendPMEncryptedOutside = async (message: Message, api: Api) => {
     try {

@@ -19,7 +19,14 @@ import { ContactProperties, ContactProperty } from '@proton/shared/lib/interface
 import { AddContactsApiResponses } from '@proton/shared/lib/interfaces/contacts/Import';
 
 import { VCARD_KEY_FIELDS, CATEGORIES } from '@proton/shared/lib/contacts/constants';
-import { API_CODES, CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
+import {
+    API_CODES,
+    CONTACT_MIME_TYPES,
+    MAIL_APP_NAME,
+    MIME_TYPES,
+    MIME_TYPES_MORE,
+    PGP_SCHEMES,
+} from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import ContactMIMETypeSelect from '../ContactMIMETypeSelect';
@@ -236,12 +243,12 @@ const ContactEmailSettingsModal = ({
                     ) : hasPGPInline ? (
                         <Alert className="mb1">
                             {c('Info')
-                                .t`PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.`}
+                                .t`PGP/Inline is only compatible with Plain Text format. Please note that ${MAIL_APP_NAME} always signs encrypted messages.`}
                         </Alert>
                     ) : (
                         <Alert className="mb1">
                             {c('Info')
-                                .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages`}
+                                .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ${MAIL_APP_NAME} always signs encrypted messages`}
                         </Alert>
                     )}
                     <Row>

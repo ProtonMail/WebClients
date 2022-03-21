@@ -13,6 +13,7 @@ import {
     MAX_VPN_ADDON,
     GIGA,
     PLAN_NAMES,
+    MAIL_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { range } from '@proton/shared/lib/helpers/array';
 import { switchPlan, getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
@@ -186,7 +187,7 @@ const ProtonPlanCustomizer = ({
             <h2 className="text-2xl text-bold">{c('Title').t`${appName} customization`}</h2>
             {service === PLAN_SERVICES.MAIL && planIDs[plansNameMap[PLANS.PLUS].ID] ? (
                 <p>
-                    {c('Info').t`ProtonMail Plus is limited to one user and starts with 5 GB of storage.`}
+                    {c('Info').t`${MAIL_APP_NAME} Plus is limited to one user and starts with 5 GB of storage.`}
                     <br />
                     {c('Info').jt`Switch to ${professionalPlan} to add more users.`}
                 </p>

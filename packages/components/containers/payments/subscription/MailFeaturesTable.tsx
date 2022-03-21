@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { PLANS } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { Currency, Cycle } from '@proton/shared/lib/interfaces';
 
 import { Loader } from '../../../components';
@@ -196,7 +196,7 @@ const MailFeaturesTable = ({ cycle, currency }: Props) => {
             <p className="text-sm mt1 mb0">
                 **{' '}
                 {c('Info concerning plan features')
-                    .t`ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.`}
+                    .t`${MAIL_APP_NAME} cannot be used for mass emailing or spamming. Legitimate emails are unlimited.`}
             </p>
         </>
     );

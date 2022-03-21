@@ -1,3 +1,4 @@
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 
 import { Row, Label, Field, Alert, Href } from '../../../components';
@@ -26,7 +27,7 @@ const ProtonVPNCredentialsSection = () => {
             <Row>
                 <Label>{c('Label').t`Password`}</Label>
                 <Field className="mt0-5">
-                    <strong>{c('Info').t`Same as ProtonMail login password`}</strong>
+                    <strong>{c('Info').t`Same as ${MAIL_APP_NAME} login password`}</strong>
                 </Field>
             </Row>
         </>
