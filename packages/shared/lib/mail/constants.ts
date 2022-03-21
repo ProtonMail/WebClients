@@ -1,7 +1,7 @@
 export const MESSAGE_FLAGS = {
     FLAG_RECEIVED: 1, // whether a message is received
     FLAG_SENT: 2, // whether a message is sent
-    FLAG_INTERNAL: 4, // whether the message is between ProtonMail recipients
+    FLAG_INTERNAL: 4, // whether the message is between Proton Mail recipients
     FLAG_E2E: 8, // whether the message is end-to-end encrypted
     FLAG_AUTO: 16, // whether the message is an autoresponse
     FLAG_REPLIED: 32, // whether the message is replied to

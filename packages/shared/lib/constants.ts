@@ -24,6 +24,12 @@ export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
 export const USERNAME_PLACEHOLDER = 'john.doe';
 
 export const BRAND_NAME = 'Proton';
+export const MAIL_APP_NAME = 'ProtonMail';
+export const CALENDAR_APP_NAME = 'ProtonCalendar';
+export const DRIVE_APP_NAME = 'ProtonDrive';
+export const VPN_APP_NAME = 'ProtonVPN';
+export const ACCOUNT_APP_NAME = 'Proton Account';
+export const VERIFY_APP_NAME = 'ProtonVerify';
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -40,7 +46,7 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONACCOUNT]: {
         publicPath: '',
         subdomain: 'account',
-        name: 'Proton Account',
+        name: ACCOUNT_APP_NAME,
         bareName: 'Account',
         clientID: 'web-account',
         icon: 'brand-proton-account',
@@ -49,7 +55,7 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONACCOUNTLITE]: {
         publicPath: '',
         subdomain: 'account',
-        name: 'Proton Account',
+        name: ACCOUNT_APP_NAME,
         bareName: 'Account',
         clientID: 'web-account-lite',
         icon: 'brand-proton-account',
@@ -58,7 +64,7 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONMAIL]: {
         publicPath: '',
         subdomain: 'mail',
-        name: 'ProtonMail',
+        name: MAIL_APP_NAME,
         bareName: 'Mail',
         clientID: 'web-mail',
         icon: 'brand-proton-mail',
@@ -76,7 +82,7 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONDRIVE]: {
         publicPath: '/drive',
         subdomain: 'drive',
-        name: 'ProtonDrive',
+        name: DRIVE_APP_NAME,
         bareName: 'Drive',
         clientID: 'web-drive',
         icon: 'brand-proton-drive',
@@ -85,7 +91,7 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONCALENDAR]: {
         publicPath: '/calendar',
         subdomain: 'calendar',
-        name: 'ProtonCalendar',
+        name: CALENDAR_APP_NAME,
         bareName: 'Calendar',
         clientID: 'web-calendar',
         icon: 'brand-proton-calendar',
@@ -94,7 +100,7 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONVPN_SETTINGS]: {
         publicPath: '',
         subdomain: '',
-        name: 'ProtonVPN',
+        name: VPN_APP_NAME,
         bareName: 'VPN',
         clientID: 'web-vpn-settings',
         icon: 'brand-proton-vpn',
@@ -112,7 +118,7 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONVERIFICATION]: {
         publicPath: '',
         subdomain: 'verify',
-        name: 'ProtonVerify',
+        name: VERIFY_APP_NAME,
         bareName: 'Verify',
         clientID: 'web-verify',
         icon: '',

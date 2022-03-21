@@ -17,6 +17,7 @@ import {
     COUPON_CODES,
     APPS,
     PLAN_NAMES,
+    MAIL_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { checkSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { c } from 'ttag';
@@ -816,7 +817,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             {step === TRIAL_PLAN && (
                 <>
                     <Header
-                        title={c('Title').t`Try the best of ProtonMail for free`}
+                        title={c('Title').t`Try the best of ${MAIL_APP_NAME} for free`}
                         left={<BackButton onClick={handleBack} />}
                     />
                     <Content>

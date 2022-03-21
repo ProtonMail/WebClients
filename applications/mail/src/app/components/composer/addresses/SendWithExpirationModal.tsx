@@ -1,5 +1,7 @@
-import { Alert, classnames, FormModal, Href } from '@proton/components';
 import { c, msgid } from 'ttag';
+
+import { Alert, classnames, FormModal, Href } from '@proton/components';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
     emails: string[];
@@ -23,7 +25,7 @@ const SendWithExpirationModal = ({ emails, onSubmit, onClose, ...rest }: Props) 
         >
             <Alert className="mb1">
                 {c('Info')
-                    .t`Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.`}
+                    .t`Message expiration works out-of-the-box when sending emails to other ${MAIL_APP_NAME} users. To send expiring emails to non-${BRAND_NAME} users, please cancel and add password protection to your email.`}
                 <br />
                 <Href url="https://protonmail.com/support/knowledge-base/expiration/">{c('Info').t`Learn more`}</Href>
             </Alert>

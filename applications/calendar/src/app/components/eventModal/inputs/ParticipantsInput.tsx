@@ -51,7 +51,7 @@ const ParticipantsInput = ({
     const ownNormalizedEmails = useMemo(
         () =>
             addresses
-                // For custom domains, ProtonMail allows to have multiple sub-users with the same email address
+                // For custom domains, Proton Mail allows to have multiple sub-users with the same email address
                 // as long as only one of them is enabled. This poses problems when a sub-user
                 // with a disabled address wants to send email to the same address enabled in another sub-user.
                 // Because of this case, it's better to consider disabled addresses as non self,
