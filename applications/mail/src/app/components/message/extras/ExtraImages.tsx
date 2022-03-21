@@ -82,7 +82,7 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
         <div className="bg-norm rounded border p0-5 mb0-85 flex flex-nowrap on-mobile-flex-column">
             <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
                 <Icon name="image" className="mt0-5 flex-item-noshrink" />
-                <span className="pl0-5 pr0-5 mt0-25">{text}</span>
+                <span className="pl0-5 pr0-5 flex flex-item-fluid mt0-25 flex-align-items-center">{text}</span>
             </div>
             <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt0-1">
                 <Tooltip title={tooltip}>
