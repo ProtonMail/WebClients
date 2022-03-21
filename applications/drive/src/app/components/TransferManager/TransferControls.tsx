@@ -22,7 +22,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
 
     const isPauseResumeAvailable = isTransferOngoing(transfer);
     const isRestartAvailable = isFailed;
-
+    const isCancelAvailable = !isFinalizing && !isFinished;
     const isTransferWithChildrenFinished = (upload: Upload) => {
         if (!isTransferFinished(upload)) {
             return false;
@@ -39,7 +39,8 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
     // children in progress as that would lead to some edge cases that
     // parent with its children is removed from transfer manager but some
     // ongoing transfers are still finishing up.
-    const isClearAvailable = type === TransferType.Download || isTransferWithChildrenFinished(transfer as Upload);
+    const isClearAvailable =
+        isFinished && (type === TransferType.Download || isTransferWithChildrenFinished(transfer as Upload));
 
     const pauseText = type === TransferType.Download ? c('Action').t`Pause download` : c('Action').t`Pause upload`;
     const resumeText = type === TransferType.Download ? c('Action').t`Resume download` : c('Action').t`Resume upload`;
@@ -71,11 +72,21 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
 
         if (isClearAvailable) {
             buttons.push({
-                onClick: () => transferControls.cancel(transfer, type),
-                title: isFinished ? removeText : cancelText,
+                onClick: () => transferControls.remove(transfer, type),
+                title: removeText,
                 disabled: isFinalizing,
-                iconName: isFinished ? 'broom' : 'xmark',
-                actionType: isFinished ? 'clear' : 'cancel',
+                iconName: 'broom',
+                actionType: 'clear',
+            });
+        }
+
+        if (isCancelAvailable) {
+            buttons.push({
+                onClick: () => transferControls.cancel(transfer, type),
+                title: cancelText,
+                disabled: isFinalizing,
+                iconName: 'xmark',
+                actionType: 'cancel',
             });
         }
 
