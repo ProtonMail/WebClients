@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { encryptPrivateKey } from 'pmcrypto';
 
@@ -6,20 +6,20 @@ import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shar
 import { OrganizationModel } from '@proton/shared/lib/models';
 import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import {
     Alert,
     Button,
-    Field,
     Form,
     Href,
-    Label,
     ModalProps,
     ModalTwo as Modal,
     ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
-    PasswordInput,
-    Row,
+    useFormErrors,
+    InputFieldTwo,
+    PasswordInputTwo,
 } from '../../components';
 import { useCache, useLoading, useNotifications, useAuthentication, useEventManager, useApi } from '../../hooks';
 
@@ -34,6 +34,7 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
     const { call } = useEventManager();
     const authentication = useAuthentication();
     const api = useApi();
+    const { validator, onFormSubmit } = useFormErrors();
 
     const [loading, withLoading] = useLoading();
     const [backupPassword, setBackupPassword] = useState('');
@@ -101,6 +102,9 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
         <Modal
             as={Form}
             onSubmit={() => {
+                if (!onFormSubmit()) {
+                    return;
+                }
                 void withLoading(handleSubmit());
             }}
             onClose={handleClose}
@@ -109,26 +113,20 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
             <ModalHeader title={title} />
             <ModalContent>
                 <div className="mb1">{message}</div>
-                <Row>
-                    <Label htmlFor="organizationPassword">{c('Label').t`Organization password`}</Label>
-                    <Field>
-                        <PasswordInput
-                            id="organizationPassword"
-                            value={backupPassword}
-                            onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
-                                setBackupPassword(value)
-                            }
-                            error={error}
-                            placeholder={c('Placeholder').t`Password`}
-                            autoComplete="off"
-                            autoFocus
-                            required
-                        />
-                    </Field>
-                </Row>
                 <Alert className="mb1" type="warning">
                     {warning}
                 </Alert>
+                <InputFieldTwo
+                    id="organizationPassword"
+                    as={PasswordInputTwo}
+                    label={c('Label').t`Organization password`}
+                    placeholder={c('Placeholder').t`Password`}
+                    value={backupPassword}
+                    onValue={setBackupPassword}
+                    error={validator([requiredValidator(backupPassword), error])}
+                    autoComplete="off"
+                    autoFocus
+                />
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose} disabled={loading}>
