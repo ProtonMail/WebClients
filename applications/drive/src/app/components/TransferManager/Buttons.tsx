@@ -7,7 +7,7 @@ const Buttons = ({ className, buttons, id }: TransfersManagerButtonsProps) => {
 
     return (
         <div className={elClassName} id={id}>
-            {buttons.map(({ disabled, onClick, title, actionType, iconName }) => (
+            {buttons.map(({ disabled, onClick, title, testId, iconName }) => (
                 <Tooltip title={title} key={title}>
                     <Button
                         icon
@@ -15,7 +15,7 @@ const Buttons = ({ className, buttons, id }: TransfersManagerButtonsProps) => {
                         disabled={disabled}
                         onClick={onClick}
                         className="transfers-manager-list-item-controls-button on-rtl-mirror"
-                        data-testid={actionType ? `drive-transfers-manager:toolbar-button-${actionType}` : undefined}
+                        data-testid={testId ? testId : undefined}
                     >
                         <Icon size={12} name={iconName} />
                     </Button>
