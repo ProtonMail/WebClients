@@ -1,12 +1,24 @@
+import { parseISO } from 'date-fns';
+import { ImportContactError } from '../../lib/contacts/errors/ImportContactError';
 import {
     extractContactImportCategories,
     getContactId,
     getImportCategories,
     getSupportedContact,
 } from '../../lib/contacts/helpers/import';
+import { fromVCardProperties, getVCardProperties } from '../../lib/contacts/properties';
 import { extractVcards } from '../../lib/contacts/vcard';
 import { toCRLF } from '../../lib/helpers/string';
-import { ContactMetadata, ContactProperties, EncryptedContact, ImportedContact } from '../../lib/interfaces/contacts';
+import { ContactMetadata, EncryptedContact, ImportedContact } from '../../lib/interfaces/contacts';
+import { VCardContact, VCardProperty } from '../../lib/interfaces/contacts/VCard';
+
+const excludeUids = (contact: VCardContact | ImportContactError) => {
+    if (contact instanceof ImportContactError) {
+        return undefined;
+    }
+    const properties = getVCardProperties(contact).map(({ uid, ...property }) => property);
+    return fromVCardProperties(properties as VCardProperty[]);
+};
 
 describe('import', () => {
     describe('extract vcards', () => {
@@ -240,72 +252,34 @@ END:VCARD`)
     });
 
     describe('getSupportedContacts', () => {
-        const getExpectedProperties = (withLineBreaks = false) => {
-            return [
-                {
-                    field: 'version',
-                    value: '4.0',
-                    pref: undefined,
-                    group: undefined,
-                    type: undefined,
-                },
-                {
-                    field: 'adr',
-                    value: ['', '', withLineBreaks ? 'street with line breaks' : 'street', 'city', '', '00000', 'FR'],
-                    pref: 1,
-                    group: undefined,
-                    type: undefined,
-                },
-                {
-                    field: 'org',
-                    value: ['company'],
-                    pref: undefined,
-                    group: undefined,
-                    type: undefined,
-                },
-                {
-                    field: 'bday',
-                    value: '1999-01-01',
-                    pref: undefined,
-                    group: undefined,
-                    type: undefined,
-                },
-                {
-                    field: 'note',
-                    value: 'Notes',
-                    pref: undefined,
-                    group: undefined,
-                    type: undefined,
-                },
-                {
-                    field: 'tel',
-                    value: '00 00000000',
-                    pref: 1,
-                    group: undefined,
-                    type: undefined,
-                },
-                {
-                    field: 'title',
-                    value: 'title',
-                    pref: undefined,
-                    group: undefined,
-                    type: undefined,
-                },
-                {
-                    field: 'fn',
-                    value: 'Name',
-                    pref: 1,
-                    group: undefined,
-                    type: undefined,
-                },
-                {
-                    field: 'email',
-                    value: 'email1@protonmail.com',
-                    pref: 1,
-                    group: 'item1',
-                    type: undefined,
-                },
-            ] as ContactProperties;
+        const getExpectedProperties = (withLineBreaks = false): VCardContact => {
+            return {
+                fn: [{ field: 'fn', value: 'Name', params: { pref: '1' }, uid: '' }],
+                version: { field: 'version', value: '4.0', uid: '' },
+                adr: [
+                    {
+                        field: 'adr',
+                        value: {
+                            postOfficeBox: '',
+                            extendedAddress: '',
+                            streetAddress: withLineBreaks ? 'street with line breaks' : 'street',
+                            locality: 'city',
+                            region: '',
+                            postalCode: '00000',
+                            country: 'FR',
+                        },
+                        uid: '',
+                    },
+                ],
+                org: [{ field: 'org', value: ['company'], uid: '' }],
+                bday: { field: 'bday', value: { date: parseISO('1999-01-01') }, uid: '' },
+                note: [{ field: 'note', value: 'Notes', uid: '' }],
+                email: [
+                    { field: 'email', value: 'email1@protonmail.com', params: { pref: '1' }, group: 'item1', uid: '' },
+                ],
+                tel: [{ field: 'tel', value: '00 00000000', params: { pref: '1' }, uid: '' }],
+                title: [{ field: 'title', value: 'title', uid: '' }],
+            };
         };
 
         it('should import normal vCard correctly', () => {
@@ -325,7 +299,7 @@ END:VCARD`;
 
             const contact = getSupportedContact(vCard);
 
-            expect(contact).toEqual(expected);
+            expect(excludeUids(contact)).toEqual(excludeUids(expected));
         });
 
         it('should import vCard with address containing \\r\\n correctly', () => {
@@ -345,7 +319,7 @@ END:VCARD`;
 
             const contact = getSupportedContact(vCard);
 
-            expect(contact).toEqual(expected);
+            expect(excludeUids(contact)).toEqual(excludeUids(expected));
         });
 
         it('should import vCard with address containing \\\\n correctly', () => {
@@ -365,7 +339,7 @@ END:VCARD`;
 
             const contact = getSupportedContact(vCard);
 
-            expect(contact).toEqual(expected);
+            expect(excludeUids(contact)).toEqual(excludeUids(expected));
         });
     });
 
@@ -376,33 +350,16 @@ BDAY:19990101
 ANNIVERSARY:19990101
 END:VCARD`;
 
-        const expected = [
-            {
-                field: 'version',
-                value: '4.0',
-                pref: undefined,
-                group: undefined,
-                type: undefined,
-            },
-            {
-                field: 'bday',
-                value: '1999-01-01',
-                pref: undefined,
-                group: undefined,
-                type: undefined,
-            },
-            {
-                field: 'anniversary',
-                value: '1999-01-01',
-                pref: undefined,
-                group: undefined,
-                type: undefined,
-            },
-        ] as ContactProperties;
+        const expected: VCardContact = {
+            fn: [],
+            version: { field: 'version', value: '4.0', uid: '' },
+            bday: { field: 'bday', value: { date: parseISO('1999-01-01') }, uid: '' },
+            anniversary: { field: 'anniversary', value: { date: parseISO('1999-01-01') }, uid: '' },
+        };
 
         const contact = getSupportedContact(vCard);
 
-        expect(contact).toEqual(expected);
+        expect(excludeUids(contact)).toEqual(excludeUids(expected));
     });
 
     it('should import BDAY and ANNIVERSARY with text format', () => {
@@ -412,32 +369,15 @@ BDAY;VALUE=text:bidet
 ANNIVERSARY;VALUE=text:annie
 END:VCARD`;
 
-        const expected = [
-            {
-                field: 'version',
-                value: '4.0',
-                pref: undefined,
-                group: undefined,
-                type: undefined,
-            },
-            {
-                field: 'bday',
-                value: 'bidet',
-                pref: undefined,
-                group: undefined,
-                type: undefined,
-            },
-            {
-                field: 'anniversary',
-                value: 'annie',
-                pref: undefined,
-                group: undefined,
-                type: undefined,
-            },
-        ] as ContactProperties;
+        const expected: VCardContact = {
+            fn: [],
+            version: { field: 'version', value: '4.0', uid: '' },
+            bday: { field: 'bday', value: { text: 'bidet' }, params: { type: 'text' }, uid: '' },
+            anniversary: { field: 'anniversary', value: { text: 'annie' }, params: { type: 'text' }, uid: '' },
+        };
 
         const contact = getSupportedContact(vCard);
 
-        expect(contact).toEqual(expected);
+        expect(excludeUids(contact)).toEqual(excludeUids(expected));
     });
 });

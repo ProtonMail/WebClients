@@ -17,7 +17,7 @@ const SPECIAL_CHARACTER_REGEX = /🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼/gi;
 export const unescapeVcardValue = (value = '', extended = false) => {
     // If we do map(unescapeValue) we still want the default unescape
     const reg = extended !== true ? UNESCAPE_REGEX : UNESCAPE_EXTENDED_REGEX;
-    return value.replace(reg, (val) => val.substr(1));
+    return value.replace(reg, (val) => val.substring(1));
 };
 
 /**

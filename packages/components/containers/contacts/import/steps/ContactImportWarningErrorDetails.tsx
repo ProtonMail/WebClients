@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 
-import { Details, Summary, Bordered } from '../../../components';
+import { Details, Summary, Bordered } from '../../../../components';
 
 const ErrorDetail = ({ error, ...rest }: { error: ImportContactError }) => {
     const { contactId } = error;
@@ -19,7 +19,7 @@ interface Props {
     errors: ImportContactError[];
 }
 
-const ErrorDetails = ({ errors, summary = c('Info on errors').t`Click for details` }: Props) => {
+const ContactImportWarningErrorDetails = ({ errors, summary = c('Info on errors').t`Click for details` }: Props) => {
     if (!errors.length) {
         return null;
     }
@@ -35,4 +35,4 @@ const ErrorDetails = ({ errors, summary = c('Info on errors').t`Click for detail
     );
 };
 
-export default ErrorDetails;
+export default ContactImportWarningErrorDetails;

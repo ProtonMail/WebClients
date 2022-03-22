@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { Button, Loader, Tooltip } from '../../../components';
-import { useContacts, useModals, useUserKeys } from '../../../hooks';
-import { SettingsSection, SettingsParagraph } from '../../account';
+import { Button, Loader, Tooltip } from '../../../../components';
+import { useContacts, useModals, useUserKeys } from '../../../../hooks';
+import { SettingsSection, SettingsParagraph } from '../../../account';
 
-import ExportModal from './ExportModal';
+import ExportModal from '../../modals/ExportModal';
 
 const ExportSection = () => {
     const [contacts, loadingContacts] = useContacts();

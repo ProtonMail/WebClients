@@ -49,9 +49,8 @@ export const haveCategories = (vcardContacts: ContactProperties[]) => {
 /**
  * Extract categories from a vCard contact
  */
-export const getContactCategories = (properties: ContactProperties) => {
-    return properties
-        .filter(({ field }) => field === 'categories')
+export const getContactCategories = (contact: VCardContact) => {
+    return (contact.categories || [])
         .map(({ value, group }) => {
             if (Array.isArray(value)) {
                 return group
@@ -212,18 +211,16 @@ export const getPreferredValue = (properties: ContactProperties, field: string) 
 /**
  * Extract emails from a vCard contact
  */
-export const getContactEmails = (properties: ContactProperties) => {
-    return addGroup(properties)
-        .filter(({ field }) => field === 'email')
-        .map(({ value, group }) => {
-            if (!group) {
-                throw new Error('Email properties should have a group');
-            }
-            return {
-                email: getStringContactValue(value),
-                group,
-            };
-        });
+export const getContactEmails = (contact: VCardContact) => {
+    return (contact.email || []).map(({ value, group }) => {
+        if (!group) {
+            throw new Error('Email properties should have a group');
+        }
+        return {
+            email: getStringContactValue(value),
+            group,
+        };
+    });
 };
 
 export const createContactPropertyUid = () => generateUID(UID_PREFIX);

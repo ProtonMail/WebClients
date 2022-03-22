@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Info } from '../../../components';
-import { useMailSettings } from '../../../hooks';
-import SettingsLayout from '../../account/SettingsLayout';
-import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../../account/SettingsLayoutRight';
+import { Info } from '../../../../components';
+import { useMailSettings } from '../../../../hooks';
+import SettingsLayout from '../../../account/SettingsLayout';
+import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../../../account/SettingsLayoutRight';
 
-import { AutoSaveContactsToggle } from '../../general';
+import { AutoSaveContactsToggle } from '../../../general';
 
 const ContactsSection = () => {
     const [mailSettings] = useMailSettings();

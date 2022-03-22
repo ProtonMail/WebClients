@@ -5,7 +5,7 @@ import { InputTwo } from '../../../../components';
 import { generateUID } from '../../../../helpers';
 
 interface Props {
-    vCardProperty: VCardProperty<VCardAddress[]>;
+    vCardProperty: VCardProperty<VCardAddress>;
     onChange: (vCardProperty: VCardProperty) => void;
 }
 const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
@@ -14,10 +14,10 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
     const handleChange =
         (part: keyof VCardAddress) =>
         ({ target }: ChangeEvent<HTMLInputElement>) => {
-            onChange({ ...vCardProperty, value: [{ ...vCardProperty.value[0], [part]: target.value }] });
+            onChange({ ...vCardProperty, value: [{ ...vCardProperty.value, [part]: target.value }] });
         };
 
-    const address = vCardProperty.value[0];
+    const address = vCardProperty.value;
 
     return (
         <>

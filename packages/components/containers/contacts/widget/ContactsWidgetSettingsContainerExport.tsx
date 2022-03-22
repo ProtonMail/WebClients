@@ -1,13 +1,6 @@
 import { c } from 'ttag';
-
 import { Label, PrimaryButton, Tooltip } from '@proton/components';
-import { useContacts, useModals, useUserKeys } from '@proton/components/hooks';
-
-import ExportContactsModal from '../modals/ExportContactsModal';
-
-interface Props {
-    onExportButtonClick?: () => void;
-}
+import { useContacts } from '@proton/components/hooks';
 
 interface ExportButtonProps {
     onClick?: () => void;
@@ -15,26 +8,18 @@ interface ExportButtonProps {
 }
 
 const ExportButton = ({ onClick, hasNoContacts }: ExportButtonProps) => {
-    const [userKeysList, loadingUserKeys] = useUserKeys();
-    const { createModal } = useModals();
-
     return (
-        <PrimaryButton
-            disabled={loadingUserKeys || hasNoContacts}
-            id="export-contacts-button"
-            onClick={() => {
-                createModal(<ExportContactsModal userKeysList={userKeysList} />);
-                if (onClick !== undefined) {
-                    onClick();
-                }
-            }}
-        >
+        <PrimaryButton disabled={hasNoContacts} id="export-contacts-button" onClick={onClick}>
             {c('Action').t`Export contacts`}
         </PrimaryButton>
     );
 };
 
-const ContactsWidgetSettingsContainerExport = ({ onExportButtonClick }: Props) => {
+interface Props {
+    onExport?: () => void;
+}
+
+const ContactsWidgetSettingsContainerExport = ({ onExport }: Props) => {
     const [contacts] = useContacts();
     const hasNoContacts = !contacts?.length;
 
@@ -50,11 +35,11 @@ const ContactsWidgetSettingsContainerExport = ({ onExportButtonClick }: Props) =
             {hasNoContacts ? (
                 <Tooltip title={c('Tooltip').t`You do not have any contacts to export`}>
                     <span className="inline-block">
-                        <ExportButton onClick={onExportButtonClick} hasNoContacts={hasNoContacts} />
+                        <ExportButton onClick={onExport} hasNoContacts={hasNoContacts} />
                     </span>
                 </Tooltip>
             ) : (
-                <ExportButton onClick={onExportButtonClick} hasNoContacts={hasNoContacts} />
+                <ExportButton onClick={onExport} hasNoContacts={hasNoContacts} />
             )}
         </>
     );

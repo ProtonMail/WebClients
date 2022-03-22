@@ -7,7 +7,6 @@ import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
 import { useContactGroups, useAddresses, useUserKeys, useMailSettings } from '../../../hooks';
 import useContactList from '../useContactList';
 import useContact from '../useContact';
-import useContactProperties from '../deprecated/useContactProperties';
 import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';
 import { Button } from '../../../components/button';
@@ -42,9 +41,13 @@ const ContactDetailsModal = ({ contactID, onMailTo, onEdit, onDelete, onEmailSet
 
     const { modal: linkModal } = useLinkHandler(modalRef, mailSettings, { onMailTo });
 
-    const [{ properties }, onReload] = useContactProperties({ contact, userKeysList });
-
-    const { vCardContact, isLoading: loadingVCard, errors, isVerified } = useVCardContact({ contact, userKeysList });
+    const {
+        vCardContact,
+        isLoading: loadingVCard,
+        errors,
+        isVerified,
+        onReload,
+    } = useVCardContact({ contact, userKeysList });
 
     // Close the modal on a click on a mailto, useLinkHandler will open the composer
     useEffect(() => {
@@ -69,7 +72,7 @@ const ContactDetailsModal = ({ contactID, onMailTo, onEdit, onDelete, onEmailSet
         onClose?.();
     };
 
-    const handleExport = () => singleExport(properties || []);
+    const handleExport = () => singleExport(vCardContact as VCardContact);
 
     const ownAddresses = useMemo(() => addresses.map(({ Email }) => Email), [addresses]);
     const contactGroupsMap = useMemo(() => toMap(contactGroups), [contactGroups]);

@@ -1,3 +1,4 @@
+import { isValid, parseISO } from 'date-fns';
 import isTruthy from '@proton/utils/isTruthy';
 import capitalize from '@proton/utils/capitalize';
 import { normalize } from '../../helpers/string';
@@ -10,6 +11,7 @@ import {
     PreVcardsProperty,
 } from '../../interfaces/contacts/Import';
 import { getStringContactValue } from '../properties';
+import { icalValueToInternalAddress } from '../vcard';
 
 // See './csv.ts' for the definition of pre-vCard and pre-vCards contact
 
@@ -585,6 +587,12 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
 const getFirstValue = (preVcards: PreVcardProperty[]): string =>
     getStringContactValue(preVcards[0].checked ? preVcards[0].value : '');
 
+const getDateValue = (preVcards: PreVcardProperty[]) => {
+    const text = getFirstValue(preVcards);
+    const date = parseISO(text);
+    return isValid(date) ? { date } : { text };
+};
+
 /**
  * This object contains the functions that must be used when combining pre-vCard properties into
  * vCard ones. The keys correspond to the field of the pre-vCards to be combined.
@@ -610,7 +618,8 @@ export const combine: Combine = {
                 propertyADR[combineIndex || 0] = value;
             }
         });
-        return propertyADR;
+
+        return [icalValueToInternalAddress(propertyADR)];
     },
     org(preVcards: PreVcardsProperty) {
         const propertyORG: string[] = new Array(2).fill('');
@@ -619,7 +628,7 @@ export const combine: Combine = {
                 propertyORG[combineIndex || 0] = getStringContactValue(value);
             }
         });
-        return propertyORG.filter(Boolean).join(';');
+        return propertyORG.filter(Boolean);
     },
     categories(preVcards: PreVcardsProperty) {
         // we can get several categories separated by ';'
@@ -628,13 +637,15 @@ export const combine: Combine = {
     email: getFirstValue,
     tel: getFirstValue,
     photo: getFirstValue,
-    bday: getFirstValue,
-    anniversary: getFirstValue,
+    bday: getDateValue,
+    anniversary: getDateValue,
     title: getFirstValue,
     role: getFirstValue,
     note: getFirstValue,
     url: getFirstValue,
-    gender: getFirstValue,
+    gender(preVcards: PreVcardsProperty) {
+        return { text: getFirstValue(preVcards) };
+    },
     lang: getFirstValue,
     tz: getFirstValue,
     geo: getFirstValue,
