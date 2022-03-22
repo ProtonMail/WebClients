@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import { Button } from '../../../components';
-import { useModals, useUser } from '../../../hooks';
+import { Button } from '../../../../components';
+import { useModals, useUser } from '../../../../hooks';
 
-import { SettingsSection, SettingsParagraph } from '../../account';
-import ContactGroupModal from '../modals/ContactGroupModal';
-import ContactGroupsTable from '../ContactGroupsTable';
-import ContactUpgradeModal from '../ContactUpgradeModal';
+import { SettingsSection, SettingsParagraph } from '../../../account';
+import ContactGroupModal from '../../modals/ContactGroupModal';
+import ContactGroupsTable from '../../ContactGroupsTable';
+import ContactUpgradeModal from '../../ContactUpgradeModal';
 
 const ContactGroupsSection = () => {
     const { createModal } = useModals();

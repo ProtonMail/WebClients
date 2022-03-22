@@ -3,40 +3,34 @@ import { c } from 'ttag';
 import { format } from 'date-fns';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import noop from '@proton/utils/noop';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/export';
 
-import { FormModal, Button, PrimaryButton, Alert, DynamicProgress } from '../../../components';
-import { useContacts, useApi } from '../../../hooks';
+import {
+    Button,
+    Alert,
+    DynamicProgress,
+    ModalTwo,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalProps,
+} from '../../../components';
+import { useContacts, useApi, useUserKeys } from '../../../hooks';
 
 const DOWNLOAD_FILENAME = 'protonContacts';
 
-interface FooterProps {
-    loading: boolean;
-}
-
-const ExportFooter = ({ loading }: FooterProps) => {
-    return (
-        <>
-            <Button type="reset">{c('Action').t`Cancel`}</Button>
-            <PrimaryButton loading={loading} type="submit">
-                {c('Action').t`Save`}
-            </PrimaryButton>
-        </>
-    );
-};
-
-interface Props {
+export interface ContactExportingProps {
     contactGroupID?: string;
-    userKeysList: DecryptedKey[];
     onSave?: () => void;
-    onClose?: () => void;
 }
 
-const ExportContactsModal = ({ contactGroupID: LabelID, userKeysList, onSave = noop, ...rest }: Props) => {
+type Props = ContactExportingProps & ModalProps;
+
+const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, ...rest }: Props) => {
     const api = useApi();
     const [contacts = [], loadingContacts] = useContacts() as [Contact[], boolean, Error];
+    const [userKeysList, loadingUserKeys] = useUserKeys();
 
     const [contactsExported, addSuccess] = useState<string[]>([]);
     const [contactsNotExported, addError] = useState<string[]>([]);
@@ -54,7 +48,7 @@ const ExportContactsModal = ({ contactGroupID: LabelID, userKeysList, onSave = n
     };
 
     useEffect(() => {
-        if (loadingContacts) {
+        if (loadingContacts || loadingUserKeys) {
             return;
         }
 
@@ -78,7 +72,7 @@ const ExportContactsModal = ({ contactGroupID: LabelID, userKeysList, onSave = n
         return () => {
             abortController.abort();
         };
-    }, [loadingContacts]);
+    }, [loadingContacts, loadingUserKeys]);
 
     const success = contactsNotExported.length !== countContacts;
     const loading = loadingContacts || contactsExported.length + contactsNotExported.length !== countContacts;
@@ -89,27 +83,30 @@ const ExportContactsModal = ({ contactGroupID: LabelID, userKeysList, onSave = n
             : c('Progress bar description').t`No contacts exported.`;
 
     return (
-        <FormModal
-            title={c('Title').t`Exporting contacts`}
-            onSubmit={() => handleSave(contactsExported)}
-            footer={ExportFooter({ loading })}
-            loading={loadingContacts}
-            {...rest}
-        >
-            <Alert className="mb1">
-                {c('Description')
-                    .t`Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.`}
-            </Alert>
-            <DynamicProgress
-                id="progress-export-contacts"
-                loading={loading}
-                value={contactsExported.length + contactsNotExported.length}
-                max={countContacts}
-                success={success}
-                display={loadingContacts ? '' : display}
-            />
-        </FormModal>
+        <ModalTwo {...rest}>
+            <ModalTwoHeader title={c('Title').t`Exporting contacts`} />
+            <ModalTwoContent>
+                <Alert className="mb1">
+                    {c('Description')
+                        .t`Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.`}
+                </Alert>
+                <DynamicProgress
+                    id="progress-export-contacts"
+                    loading={loading}
+                    value={contactsExported.length + contactsNotExported.length}
+                    max={countContacts}
+                    success={success}
+                    display={loadingContacts ? '' : display}
+                />
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" loading={loading} onClick={() => handleSave(contactsExported)}>
+                    {c('Action').t`Save`}
+                </Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
-export default ExportContactsModal;
+export default ContactExportingModal;

@@ -29,6 +29,8 @@ import { ImportProvider } from '../../components/easySwitch/ProviderCard';
 import { FeatureCode } from '../features';
 
 import { ImportModal as ImportCalendarModal } from '../calendar/importModal';
+import { useModalTwo } from '../../components/modalTwo/useModalTwo';
+import ContactImportModal from '../contacts/import/ContactImportModal';
 
 const { GOOGLE, OUTLOOK, YAHOO, OTHER } = ImportProvider;
 
@@ -90,6 +92,8 @@ const AccountEasySwitchSection = () => {
         }
     };
 
+    const [importContactModal, onImportContact] = useModalTwo<void, void>(ContactImportModal, false);
+
     const canImportCalendars = !!personalActiveCalendars.length;
 
     const handleIMAPClick = (provider?: NON_OAUTH_PROVIDER) =>
@@ -98,6 +102,7 @@ const AccountEasySwitchSection = () => {
                 isLoading={loadingCalendars || loadingCalendarUserSettings}
                 canImportCalendars={canImportCalendars}
                 onOpenCalendarModal={onOpenCalendarModal}
+                onImportContact={onImportContact}
                 addresses={addresses}
                 provider={provider}
                 featureMap={easySwitchFeatureValue}
@@ -116,6 +121,9 @@ const AccountEasySwitchSection = () => {
                     calendars={activeCalendars}
                 />
             )}
+
+            {importContactModal}
+
             <SettingsParagraph>
                 {c('Info')
                     .t`Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.`}

@@ -2,10 +2,8 @@ import { ReactNode, MouseEvent } from 'react';
 import { c } from 'ttag';
 import noContactsImg from '@proton/styles/assets/img/illustrations/no-contacts.svg';
 import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
-import { useModals, InlineLinkButton } from '@proton/components';
-
+import { InlineLinkButton } from '@proton/components';
 import { IllustrationPlaceholder } from '../../illustration';
-import ImportModal from '../import/ImportModal';
 
 export enum EmptyType {
     All,
@@ -17,11 +15,10 @@ interface Props {
     type: EmptyType | undefined;
     onClearSearch: (event: MouseEvent) => void;
     onCreate: () => void;
-    onClose?: () => void;
+    onImport: () => void;
 }
 
-const ContactsWidgetPlaceholder = ({ type, onClearSearch, onCreate, onClose }: Props) => {
-    const { createModal } = useModals();
+const ContactsWidgetPlaceholder = ({ type, onClearSearch, onImport, onCreate }: Props) => {
     let imgUrl: string;
     let actions: ReactNode;
 
@@ -59,15 +56,7 @@ const ContactsWidgetPlaceholder = ({ type, onClearSearch, onCreate, onClose }: P
                 <InlineLinkButton key="add-contact" onClick={onCreate}>{c('Action').t`Add contact`}</InlineLinkButton>
             );
             const importContact = (
-                <InlineLinkButton
-                    key="import"
-                    onClick={() => {
-                        createModal(<ImportModal />);
-                        if (onClose) {
-                            onClose();
-                        }
-                    }}
-                >
+                <InlineLinkButton key="import" onClick={onImport}>
                     {c('Action').t`import`}
                 </InlineLinkButton>
             );

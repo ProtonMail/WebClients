@@ -5,17 +5,13 @@ import { useAddresses, useFeature, useModals, useUser } from '../../../hooks';
 import { FeatureCode } from '../../features';
 import { GoogleButton, Loader, PrimaryButton } from '../../../components';
 import { EasySwitchOauthModal } from '../../easySwitch';
-import ImportModal from '../import/ImportModal';
 
 interface Props {
-    onImportButtonClick?: () => void;
+    onImport: () => void;
     easySwitchSource?: EASY_SWITCH_SOURCE;
 }
 
-const ImportCsvContactButton = ({
-    easySwitchSource = EASY_SWITCH_SOURCE.IMPORT_CONTACTS_BUTTON,
-    onImportButtonClick,
-}: Props) => {
+const ImportCsvContactButton = ({ easySwitchSource = EASY_SWITCH_SOURCE.IMPORT_CONTACTS_BUTTON, onImport }: Props) => {
     const { createModal } = useModals();
     const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
@@ -23,13 +19,6 @@ const ImportCsvContactButton = ({
     const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
     const easySwitchFeatureLoading = easySwitchFeature.loading;
     const easySwitchFeatureValue = easySwitchFeature.feature?.Value;
-
-    const handleClick = () => {
-        createModal(<ImportModal />);
-        if (onImportButtonClick !== undefined) {
-            onImportButtonClick();
-        }
-    };
 
     const isLoading = loadingUser || loadingAddresses || easySwitchFeatureLoading;
 
@@ -57,7 +46,7 @@ const ImportCsvContactButton = ({
                     className="mr1 mb0-5"
                 />
             )}
-            <PrimaryButton className="mb0-5" id="import-contacts-button" disabled={disabled} onClick={handleClick}>
+            <PrimaryButton className="mb0-5" id="import-contacts-button" disabled={disabled} onClick={onImport}>
                 {c('Action').t`Import from .csv or vCard`}
             </PrimaryButton>
         </>

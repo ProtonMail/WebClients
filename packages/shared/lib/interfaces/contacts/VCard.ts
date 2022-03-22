@@ -88,4 +88,5 @@ export interface VCardContact {
     'x-pm-sign'?: VCardProperty<boolean>[];
     'x-pm-scheme'?: VCardProperty<PGP_SCHEMES>[];
     'x-pm-mimetype'?: VCardProperty<MimeTypeVcard>[];
+    version?: VCardProperty<string>;
 }

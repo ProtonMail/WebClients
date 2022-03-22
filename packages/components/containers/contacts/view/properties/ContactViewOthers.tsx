@@ -1,4 +1,4 @@
-import { format } from 'date-fns';
+import { format, isValid } from 'date-fns';
 import { VCardContact, VCardDateOrText, VCardGenderValue } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
@@ -42,13 +42,13 @@ const ContactViewOthers = ({ vCardContact, isSignatureVerified = false }: Props)
                         }
                         if (['bday', 'anniversary'].includes(field)) {
                             const dateOrText = value as VCardDateOrText;
-                            if (dateOrText.date) {
+                            if (dateOrText.date && isValid(dateOrText.date)) {
                                 return format(dateOrText.date, 'PP', { locale: dateLocale });
                             }
                             if (dateOrText.text) {
                                 return dateOrText.text;
                             }
-                            return value;
+                            return null;
                         }
                         if (field === 'gender') {
                             const genderValue = value as VCardGenderValue;

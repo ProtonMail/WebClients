@@ -1,10 +1,9 @@
 import { PreVcardsProperty } from '@proton/shared/lib/interfaces/contacts/Import';
-import { toVcard } from '@proton/shared/lib/contacts/helpers/csv';
-
-import { Checkbox } from '../../../components';
-
-import SelectImportField from './SelectImportField';
-import SelectImportType from './SelectImportType';
+import { toVCard } from '@proton/shared/lib/contacts/helpers/csv';
+import { display as getDisplay } from '@proton/shared/lib/contacts/helpers/csvFormat';
+import { Checkbox } from '../../../../components';
+import ContactImportCsvSelectField from './ContactImportCsvSelectField';
+import ContactImportCsvSelectType from './ContactImportCsvSelectType';
 
 interface Props {
     preVcards: PreVcardsProperty;
@@ -12,8 +11,10 @@ interface Props {
     onChangeField: (field: string) => void;
     onChangeType: (type: string) => void;
 }
-const ImportCsvTableRows = ({ preVcards, onToggle, onChangeField, onChangeType }: Props) => {
-    const { field, type, display } = toVcard(preVcards) || {};
+
+const ContactImportCsvTableRows = ({ preVcards, onToggle, onChangeField, onChangeType }: Props) => {
+    const { field, params } = toVCard(preVcards) || {};
+    const display = preVcards[0]?.custom ? getDisplay.custom(preVcards) : getDisplay[field as string](preVcards);
 
     if (field === 'n' || field === 'categories') {
         // Do not display N or CATEGORIES vcard fields since they cannot be edited from the contact modal
@@ -32,9 +33,13 @@ const ImportCsvTableRows = ({ preVcards, onToggle, onChangeField, onChangeType }
                         <>
                             <td rowSpan={preVcards.length}>
                                 <div className="flex">
-                                    <SelectImportField value={field} onChangeField={onChangeField} />
-                                    {type !== undefined ? (
-                                        <SelectImportType field={field} value={type} onChangeType={onChangeType} />
+                                    <ContactImportCsvSelectField value={field} onChangeField={onChangeField} />
+                                    {params?.type !== undefined ? (
+                                        <ContactImportCsvSelectType
+                                            field={field}
+                                            value={params.type}
+                                            onChangeType={onChangeType}
+                                        />
                                     ) : null}
                                 </div>
                             </td>
@@ -49,4 +54,4 @@ const ImportCsvTableRows = ({ preVcards, onToggle, onChangeField, onChangeType }
     );
 };
 
-export default ImportCsvTableRows;
+export default ContactImportCsvTableRows;

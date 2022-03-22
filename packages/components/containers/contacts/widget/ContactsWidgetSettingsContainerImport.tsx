@@ -4,10 +4,10 @@ import ImportCsvContactButton from '@proton/components/containers/contacts/widge
 import { EASY_SWITCH_SOURCE } from '@proton/shared/lib/interfaces/EasySwitch';
 
 interface Props {
-    onImportButtonClick?: () => void;
+    onImport: () => void;
 }
 
-const ContactsWidgetSettingsContainerImport = ({ onImportButtonClick }: Props) => (
+const ContactsWidgetSettingsContainerImport = ({ onImport }: Props) => (
     <>
         <Label htmlFor="import-contacts-button" className="text-semibold">
             <span role="heading" aria-level={2}>{c('Label').t`Import contacts`}</span>
@@ -18,10 +18,7 @@ const ContactsWidgetSettingsContainerImport = ({ onImportButtonClick }: Props) =
                 .t`CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.`}
         </p>
 
-        <ImportCsvContactButton
-            easySwitchSource={EASY_SWITCH_SOURCE.CONTACTS_WIDGET_SETTINGS}
-            onImportButtonClick={onImportButtonClick}
-        />
+        <ImportCsvContactButton easySwitchSource={EASY_SWITCH_SOURCE.CONTACTS_WIDGET_SETTINGS} onImport={onImport} />
     </>
 );
 

@@ -9,7 +9,6 @@ import { FormModal } from '../../components';
 import { useModals } from '../../hooks';
 
 import ImportMailModal from './mail/modals/ImportMailModal';
-import ImportContactsModal from '../contacts/import/ImportModal';
 
 import YahooMailInstructions from '../../components/easySwitch/instructions/yahoo/YahooMailInstructions';
 import YahooCalendarInstructions from '../../components/easySwitch/instructions/yahoo/YahooCalendarInstructions';
@@ -29,6 +28,7 @@ interface Props {
     provider: NON_OAUTH_PROVIDER;
     importType: ImportType;
     onOpenCalendarModal: () => void;
+    onImportContact: () => void;
 }
 
 const { DEFAULT, YAHOO, OUTLOOK } = NON_OAUTH_PROVIDER;
@@ -39,6 +39,7 @@ const EasySwitchInstructionsModal = ({
     importType,
     provider,
     onOpenCalendarModal,
+    onImportContact,
     ...rest
 }: Props) => {
     const { createModal } = useModals();
@@ -92,7 +93,7 @@ const EasySwitchInstructionsModal = ({
             onOpenCalendarModal();
         }
         if (importType === ImportType.CONTACTS) {
-            createModal(<ImportContactsModal />);
+            onImportContact();
         }
 
         onClose();

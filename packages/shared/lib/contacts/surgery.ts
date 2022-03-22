@@ -1,10 +1,13 @@
+import { isValid } from 'date-fns';
 import isTruthy from '../helpers/isTruthy';
 import { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import {
     compareVCardPropertyByPref,
     createContactPropertyUid,
     FIELDS_WITH_PREF,
+    fromVCardProperties,
     generateNewGroupName,
+    getVCardProperties,
 } from './properties';
 
 export const prepareForEdition = (vCardContact: VCardContact) => {
@@ -26,7 +29,20 @@ export const prepareForEdition = (vCardContact: VCardContact) => {
 };
 
 export const prepareForSaving = (vCardContact: VCardContact) => {
-    const result = { ...vCardContact };
+    const properties = getVCardProperties(vCardContact);
+    const newProperties = properties.filter((property) => {
+        if (property.field === 'adr') {
+            return Object.values(property.value).some(isTruthy);
+        }
+        if (property.field === 'bday' || property.field === 'aniversary') {
+            return property.value.text || (property.value.date && isValid(property.value.date));
+        }
+        if (property.field === 'gender') {
+            return isTruthy(property.value?.text);
+        }
+        return isTruthy(property.value);
+    });
+    const result = fromVCardProperties(newProperties);
 
     if (result.categories) {
         // Array-valued categories pose problems to ICAL (even though a vcard with CATEGORIES:ONE,TWO
@@ -58,7 +74,9 @@ export const prepareForSaving = (vCardContact: VCardContact) => {
             if (property.group) {
                 return property;
             } else {
-                return { ...property, group: generateNewGroupName(existingGroups) };
+                const group = generateNewGroupName(existingGroups);
+                existingGroups.push(group);
+                return { ...property, group };
             }
         });
     }

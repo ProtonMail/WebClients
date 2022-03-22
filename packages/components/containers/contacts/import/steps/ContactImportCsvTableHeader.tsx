@@ -1,6 +1,5 @@
 import { c } from 'ttag';
-
-import { TableCell, Button, Icon } from '../../../components';
+import { TableCell, Button, Icon } from '../../../../components';
 
 interface Props {
     disabledPrevious: boolean;
@@ -9,7 +8,13 @@ interface Props {
     onNext: () => void;
 }
 
-const ImportCsvTableHeader = ({ disabledPrevious = true, disabledNext = true, onPrevious, onNext, ...rest }: Props) => {
+const ContactImportCsvTableHeader = ({
+    disabledPrevious = true,
+    disabledNext = true,
+    onPrevious,
+    onNext,
+    ...rest
+}: Props) => {
     return (
         <thead {...rest}>
             <tr>
@@ -36,4 +41,4 @@ const ImportCsvTableHeader = ({ disabledPrevious = true, disabledNext = true, on
     );
 };
 
-export default ImportCsvTableHeader;
+export default ContactImportCsvTableHeader;

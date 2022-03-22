@@ -3,10 +3,20 @@ import isTruthy from '@proton/utils/isTruthy';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactGroup, IMPORT_GROUPS_ACTION, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts';
-import { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 import { c, msgid } from 'ttag';
-
-import { Alert, SelectTwo, Option, Input } from '../../../components';
+import {
+    Alert,
+    SelectTwo,
+    Option,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    Button,
+    InputTwo,
+} from '../../../../components';
+import { useApi, useEventManager } from '../../../../hooks';
+import { submitCategories } from '../encryptAndSubmit';
 
 interface SelectGroupActionProps {
     action: IMPORT_GROUPS_ACTION;
@@ -14,6 +24,7 @@ interface SelectGroupActionProps {
     canMerge: boolean;
     onChange: (action: IMPORT_GROUPS_ACTION, index: number) => void;
 }
+
 const SelectGroupAction = ({ action, index, canMerge, onChange }: SelectGroupActionProps) => {
     const actionOptions = [
         canMerge && { text: c('Option').t`Add to existing group`, value: IMPORT_GROUPS_ACTION.MERGE },
@@ -46,6 +57,7 @@ interface SelectGroupProps {
     onChangeTargetName: (targetName: string, index: number) => void;
     onError: (error: string, index: number) => void;
 }
+
 const SelectGroup = ({
     targetGroup,
     targetName,
@@ -79,13 +91,13 @@ const SelectGroup = ({
 
     if (action === IMPORT_GROUPS_ACTION.CREATE) {
         return (
-            <Input
+            <InputTwo
                 id="contact-group-create"
                 placeholder={c('Placeholder').t`Name`}
                 maxLength={100}
                 title={c('Title').t`Add contact group name`}
                 error={error}
-                isSubmitted={!!error}
+                disabled={!!error}
                 value={targetName}
                 onChange={handleChangeGroupName}
             />
@@ -112,9 +124,18 @@ const SelectGroup = ({
 interface Props {
     model: ImportContactsModel;
     setModel: Dispatch<SetStateAction<ImportContactsModel>>;
+    onClose?: () => void;
 }
-const ImportGroupsModalContent = ({ model, setModel }: Props) => {
+
+const ContactImportGroups = ({ model, setModel, onClose }: Props) => {
+    const api = useApi();
+    const { call } = useEventManager();
+
     const { categories } = model;
+
+    const cannotSave = categories.some(
+        ({ error, action, targetName }) => !!error || (action === IMPORT_GROUPS_ACTION.CREATE && !targetName)
+    );
 
     const handleChangeAction = (action: IMPORT_GROUPS_ACTION, index: number) => {
         setModel((model) => ({
@@ -127,6 +148,7 @@ const ImportGroupsModalContent = ({ model, setModel }: Props) => {
             }),
         }));
     };
+
     const handleChangeTargetGroup = (targetGroup: ContactGroup, index: number) => {
         setModel((model) => ({
             ...model,
@@ -138,6 +160,7 @@ const ImportGroupsModalContent = ({ model, setModel }: Props) => {
             }),
         }));
     };
+
     const handleChangeTargetName = (targetName: string, index: number) => {
         setModel((model) => ({
             ...model,
@@ -149,6 +172,7 @@ const ImportGroupsModalContent = ({ model, setModel }: Props) => {
             }),
         }));
     };
+
     const handleSetError = (error: string, index: number) => {
         setModel((model) => ({
             ...model,
@@ -159,6 +183,16 @@ const ImportGroupsModalContent = ({ model, setModel }: Props) => {
                 return { ...category, error };
             }),
         }));
+    };
+
+    const handleSubmit = async (event: FormEvent) => {
+        event.preventDefault();
+
+        setModel((model) => ({ ...model, loading: true }));
+        await submitCategories(model.categories, api);
+        await call();
+        setModel((model) => ({ ...model, loading: false }));
+        onClose?.();
     };
 
     const rows = categories.map(({ name, totalContacts, action, targetGroup, targetName, error }, index) => {
@@ -202,14 +236,23 @@ const ImportGroupsModalContent = ({ model, setModel }: Props) => {
     });
 
     return (
-        <>
-            <Alert className="mb1">
-                {c('Description')
-                    .t`It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.`}
-            </Alert>
-            {rows}
-        </>
+        <form className="modal-two-dialog-container h100" onSubmit={handleSubmit}>
+            <ModalTwoHeader title={c('Title').t`Warning`} />
+            <ModalTwoContent>
+                <Alert className="mb1">
+                    {c('Description')
+                        .t`It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.`}
+                </Alert>
+                {rows}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" disabled={cannotSave} loading={model.loading} type="submit">
+                    {c('Action').t`Save`}
+                </Button>
+            </ModalTwoFooter>
+        </form>
     );
 };
 
-export default ImportGroupsModalContent;
+export default ContactImportGroups;
