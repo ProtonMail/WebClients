@@ -24,9 +24,19 @@ interface Props {
     onDetails: (contactID: string) => void;
     onEdit: (props: ContactEditProps) => void;
     onDelete: (props: ContactDeleteProps) => void;
+    onImport: () => void;
 }
 
-const ContactsWidgetContainer = ({ onClose, onCompose, onLock, customActions, onDetails, onEdit, onDelete }: Props) => {
+const ContactsWidgetContainer = ({
+    onClose,
+    onCompose,
+    onLock,
+    customActions,
+    onDetails,
+    onEdit,
+    onDelete,
+    onImport,
+}: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [userKeysList, loadingUserKeys] = useUserKeys();
@@ -170,8 +180,12 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onLock, customActions, on
     };
 
     const handleCreate = () => {
-        // createModal(<ContactEditModal />);
         onEdit({});
+        onClose();
+    };
+
+    const handleImport = () => {
+        onImport();
         onClose();
     };
 
@@ -244,7 +258,7 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onLock, customActions, on
                         type={contactsLength ? EmptyType.Search : EmptyType.All}
                         onClearSearch={handleClearSearch}
                         onCreate={handleCreate}
-                        onClose={onClose}
+                        onImport={handleImport}
                     />
                 ) : null}
                 {showList ? (

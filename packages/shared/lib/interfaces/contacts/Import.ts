@@ -1,5 +1,5 @@
-import { ContactCard, ContactGroup, ContactProperties, ContactProperty, ContactValue } from './Contact';
-import { VCardKey } from './VCard';
+import { ContactCard, ContactGroup, ContactProperty, ContactValue } from './Contact';
+import { VCardContact, VCardKey } from './VCard';
 import { ImportContactError } from '../../contacts/errors/ImportContactError';
 import { ImportFatalError } from '../../contacts/errors/ImportFatalError';
 import { ImportFileError } from '../../contacts/errors/ImportFileError';
@@ -12,7 +12,6 @@ export enum IMPORT_STEPS {
     IMPORTING,
     SUMMARY,
     IMPORT_GROUPS,
-    FINISHED,
 }
 
 export enum IMPORT_GROUPS_ACTION {
@@ -53,7 +52,7 @@ export interface ImportContactsModel {
     fileAttached?: File;
     extension?: ACCEPTED_EXTENSIONS;
     preVcardsContacts?: PreVcardsContact[];
-    parsedVcardContacts: ContactProperties[];
+    parsedVcardContacts: VCardContact[];
     importedContacts: ImportedContact[];
     totalEncrypted: number;
     totalImported: number;
@@ -81,7 +80,7 @@ export interface ImportedContact {
 }
 
 export interface Combine {
-    [key: string]: (preVcards: PreVcardsProperty) => ContactValue;
+    [key: string]: (preVcards: PreVcardsProperty) => any;
 }
 
 export interface Display {

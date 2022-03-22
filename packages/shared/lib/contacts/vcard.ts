@@ -178,10 +178,9 @@ export const icalValueToInternalValue = (name: string, type: string, property: a
         return getMimeTypeVcard(value as string);
     }
     if (Array.isArray(value)) {
-        return value;
-    }
-    if (typeof value === 'string' || type === 'integer') {
-        return value;
+        return value.map((value) => {
+            return value;
+        });
     }
     if (isDateType(type)) {
         return parseISO(value);
@@ -225,7 +224,7 @@ const parseIcalProperty = (property: any, vCardContact: VCardContact) => {
         value,
         uid: createContactPropertyUid(),
         ...(Object.keys(params).length && { params }),
-        group,
+        ...(group ? { group } : {}),
     };
 
     if (!isMultiValue(name)) {
@@ -264,12 +263,12 @@ export const internalValueToIcalValue = (name: string, type: string | undefined,
         if (dateValue?.date && isValidDate(dateValue.date)) {
             return formatISO(dateValue.date, { representation: 'date' });
         } else {
-            return dateValue.text;
+            return dateValue.text || '';
         }
     }
     if (name === 'gender') {
         const genderValue = value as VCardGenderValue;
-        return genderValue.text;
+        return genderValue.text || '';
     }
     return value;
 };

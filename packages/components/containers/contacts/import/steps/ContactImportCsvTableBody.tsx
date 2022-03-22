@@ -1,6 +1,5 @@
 import { PreVcardsContact } from '@proton/shared/lib/interfaces/contacts/Import';
-
-import ImportCsvTableRows from './ImportCsvTableRows';
+import ContactImportCsvTableRows from './ContactImportCsvTableRows';
 
 interface Props {
     contact?: PreVcardsContact;
@@ -8,12 +7,12 @@ interface Props {
     onChangeField: (groupIndex: number) => (field: string) => void;
     onChangeType: (groupIndex: number) => (type: string) => void;
 }
-const ImportCsvTableBody = ({ contact, onToggle, onChangeField, onChangeType }: Props) => {
+const ContactImportCsvTableBody = ({ contact, onToggle, onChangeField, onChangeType }: Props) => {
     return (
         <tbody>
             {contact &&
                 contact.map((preVcards, i) => (
-                    <ImportCsvTableRows
+                    <ContactImportCsvTableRows
                         key={`${preVcards[0].header}${i.toString()}`}
                         preVcards={preVcards}
                         onToggle={onToggle(i)}
@@ -25,4 +24,4 @@ const ImportCsvTableBody = ({ contact, onToggle, onChangeField, onChangeType }: 
     );
 };
 
-export default ImportCsvTableBody;
+export default ContactImportCsvTableBody;

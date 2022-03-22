@@ -1,6 +1,5 @@
 import { useEffect, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
-
 import {
     EncryptedContact,
     ImportedContact,
@@ -11,22 +10,33 @@ import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { OVERWRITE, CATEGORIES } from '@proton/shared/lib/contacts/constants';
 import { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
-
-import { useApi, useBeforeUnload, useGetUserKeys } from '../../../hooks';
-import { Alert, DynamicProgress } from '../../../components';
-
-import { extractTotals, processContactsInBatches } from './encryptAndSubmit';
+import { useApi, useBeforeUnload, useGetUserKeys, useEventManager } from '../../../../hooks';
+import {
+    Alert,
+    DynamicProgress,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    Button,
+} from '../../../../components';
+import { extractTotals, processContactsInBatches } from '../encryptAndSubmit';
 
 interface Props {
     model: ImportContactsModel;
     setModel: Dispatch<SetStateAction<ImportContactsModel>>;
-    onFinish: (contacts: ImportedContact[]) => Promise<void>;
+    onClose?: () => void;
 }
-const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
+const ContactImporting = ({ model, setModel, onClose }: Props) => {
     const api = useApi();
+    const { call } = useEventManager();
     const getUserKeys = useGetUserKeys();
 
     useBeforeUnload(c('Alert').t`By leaving now, some contacts may not be imported`);
+
+    const handleFinish = async (importedContacts: ImportedContact[]) => {
+        setModel((model) => ({ ...model, importedContacts, step: IMPORT_STEPS.SUMMARY }));
+        await call();
+    };
 
     useEffect(() => {
         // Prepare api for allowing cancellation in the middle of the import
@@ -76,7 +86,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 if (signal.aborted) {
                     return;
                 }
-                void onFinish(importedContacts);
+                void handleFinish(importedContacts);
             } catch (error: any) {
                 setModelWithAbort(() => ({
                     step: IMPORT_STEPS.ATTACHING,
@@ -92,7 +102,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 if (signal.aborted) {
                     return;
                 }
-                void onFinish([]);
+                void handleFinish([]);
             }
         };
 
@@ -107,19 +117,28 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
 
     return (
         <>
-            <Alert className="mb1">
-                {c('Description')
-                    .t`Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.`}
-            </Alert>
-            <DynamicProgress
-                id="progress-import-contacts"
-                value={totalProcessed}
-                display={c('Import calendar').t`Encrypting and adding contacts: ${totalImported}/${totalToImport}`}
-                max={totalToProcess}
-                loading
-            />
+            <ModalTwoHeader title={c('Title').t`Import contacts`} />
+            <ModalTwoContent>
+                <Alert className="mb1">
+                    {c('Description')
+                        .t`Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.`}
+                </Alert>
+                <DynamicProgress
+                    id="progress-import-contacts"
+                    value={totalProcessed}
+                    display={c('Import calendar').t`Encrypting and adding contacts: ${totalImported}/${totalToImport}`}
+                    max={totalToProcess}
+                    loading
+                />
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" disabled type="submit">
+                    {c('Action').t`Continue`}
+                </Button>
+            </ModalTwoFooter>
         </>
     );
 };
 
-export default ImportingModalContent;
+export default ContactImporting;

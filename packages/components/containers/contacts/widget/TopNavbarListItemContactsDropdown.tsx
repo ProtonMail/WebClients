@@ -14,6 +14,9 @@ import { CONTACT_WIDGET_TABS, CustomAction } from './types';
 import { useContactModals } from '../hooks/useContactModals';
 
 import './ContactsWidget.scss';
+import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
+import ContactImportModal from '../import/ContactImportModal';
+import ContactExportingModal from '../modals/ContactExportingModal';
 
 const TopNavbarListItemContactsButton = forwardRef(
     (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
@@ -45,6 +48,8 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
     const [lock, setLock] = useState(false);
 
     const { modals, onDetails, onEdit, onDelete } = useContactModals({ onMailTo });
+    const [importModal, onImport] = useModalTwo<void, void>(ContactImportModal, false);
+    const [exportModal, onExport] = useModalTwo<void, void>(ContactExportingModal, false);
 
     const actionIncludes = (tab: CONTACT_WIDGET_TABS) => (customAction: CustomAction) =>
         customAction.tabs.includes(tab);
@@ -115,6 +120,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
                                     onDetails={handleDetails}
                                     onEdit={onEdit}
                                     onDelete={onDelete}
+                                    onImport={onImport}
                                 />
                             ),
                         },
@@ -124,13 +130,20 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
                                 <ContactsWidgetGroupsContainer
                                     onClose={handleClose}
                                     onCompose={onCompose}
+                                    onImport={onImport}
                                     customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.GROUPS))}
                                 />
                             ),
                         },
                         {
                             title: c('Title').t`Settings`,
-                            content: <ContactsWidgetSettingsContainer onClose={handleClose} />,
+                            content: (
+                                <ContactsWidgetSettingsContainer
+                                    onImport={onImport}
+                                    onExport={onExport}
+                                    onClose={handleClose}
+                                />
+                            ),
                         },
                     ]}
                     value={tabIndex}
@@ -138,6 +151,8 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
                 />
             </Dropdown>
             {modals}
+            {importModal}
+            {exportModal}
         </>
     );
 };

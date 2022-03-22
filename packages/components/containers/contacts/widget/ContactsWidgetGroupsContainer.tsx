@@ -27,10 +27,11 @@ import { CustomAction } from './types';
 interface Props {
     onClose: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
+    onImport: () => void;
     customActions: CustomAction[];
 }
 
-const ContactsWidgetGroupsContainer = ({ onClose, onCompose, customActions }: Props) => {
+const ContactsWidgetGroupsContainer = ({ onClose, onCompose, onImport, customActions }: Props) => {
     const [userSettings, loadingUserSettings] = useUserSettings();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -154,6 +155,11 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose, customActions }: Pr
         onClose();
     };
 
+    const handleImport = () => {
+        onImport();
+        onClose();
+    };
+
     const groupCounts = filteredGroups.length;
 
     const loading = loadingGroups || loadingContactEmails || loadingUserSettings;
@@ -202,6 +208,7 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose, customActions }: Pr
                         type={groups.length ? EmptyType.Search : EmptyType.AllGroups}
                         onClearSearch={handleClearSearch}
                         onCreate={handleCreate}
+                        onImport={handleImport}
                     />
                 ) : null}
                 {showList ? (

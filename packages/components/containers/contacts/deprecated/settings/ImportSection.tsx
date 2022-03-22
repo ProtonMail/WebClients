@@ -1,15 +1,15 @@
 import { c } from 'ttag';
 
-import { Button } from '../../../components';
-import { useModals, useUser } from '../../../hooks';
-import { SettingsSection, SettingsParagraph } from '../../account';
+import { Button } from '../../../../components';
+import { useModals, useUser } from '../../../../hooks';
+import { SettingsSection, SettingsParagraph } from '../../../account';
 
-import ImportModal from '../import/ImportModal';
+import ContactImportModal from '../../import/ContactImportModal';
 
 const ImportSection = () => {
     const { createModal } = useModals();
     const [user, loadingUser] = useUser();
-    const handleImport = () => createModal(<ImportModal />);
+    const handleImport = () => createModal(<ContactImportModal />);
 
     return (
         <SettingsSection>

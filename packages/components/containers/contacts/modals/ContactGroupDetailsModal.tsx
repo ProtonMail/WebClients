@@ -11,7 +11,7 @@ import ContactGroupTable from '../ContactGroupTable';
 import ContactUpgradeModal from '../ContactUpgradeModal';
 import ContactGroupDeleteModal from './ContactGroupDeleteModal';
 import ContactGroupModal from './ContactGroupModal';
-import ExportModal from '../settings/ExportModal';
+import ExportModal from './ExportModal';
 
 interface Props {
     contactGroupID: string;
