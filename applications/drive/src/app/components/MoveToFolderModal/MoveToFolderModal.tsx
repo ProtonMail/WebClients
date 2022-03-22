@@ -98,7 +98,15 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...rest }: Props) 
             itemsToMoveCount
         ),
     };
-    const moveIsDisabled = !selectedFolder || itemsToMove.includes(selectedFolder);
+
+    const moveIsDisabled =
+        !selectedFolder ||
+        selectedItems.some((item) =>
+            [
+                item.LinkID, // Moving folder to its own folder is not possible.
+                item.ParentLinkID, // Moving item to the same location is no-op.
+            ].includes(selectedFolder)
+        );
 
     let modalContents = {
         title: selectMessageForItemList(
