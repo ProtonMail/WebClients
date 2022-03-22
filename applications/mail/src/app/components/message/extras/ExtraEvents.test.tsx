@@ -1,6 +1,8 @@
-import { screen } from '@testing-library/react';
+import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { concatArrays } from 'pmcrypto';
+
+import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import {
@@ -40,6 +42,17 @@ import {
 } from '../../../helpers/test/helper';
 import ExtraEvents from './ExtraEvents';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import * as inviteApi from '../../../helpers/calendar/inviteApi';
+
+jest.mock('@proton/components/hooks/useSendIcs', () => {
+    return {
+        __esModule: true,
+        default: jest.fn(() => () => Promise.resolve(undefined)),
+    };
+});
+jest.mock('@proton/components/hooks/useGetVtimezonesMap');
+
+const nextYear = new Date().getFullYear() + 1;
 
 const dummyUserName = 'test';
 const dummyUserEmailAddress = 'test@pm.me';
@@ -75,7 +88,7 @@ const getSetup = async ({
     userEmailAddress = dummyUserEmailAddress,
     senderEmailAddress = dummySenderEmailAddress,
     attachments,
-    method,
+    methodInMimeType,
     emailSubject = 'A new invitation',
     userAddressKey,
     userPrimaryAddressID = dummyUserPrimaryAddressID,
@@ -87,11 +100,13 @@ const getSetup = async ({
     sharedEventID = dummySharedEventID,
     veventsApi = [],
     memberID = dummyMemberID,
+    alternativeCalendarKeysAndPassphrasePromise,
+    alternativeAddressKeyPromise,
 }: {
     userEmailAddress?: string;
     senderEmailAddress?: string;
     attachments: { filename: string; ics: string; attachmentID: string }[];
-    method?: ICAL_METHOD;
+    methodInMimeType?: ICAL_METHOD;
     emailSubject?: string;
     userAddressKey?: GeneratedKey;
     userPrimaryAddressID?: string;
@@ -103,14 +118,23 @@ const getSetup = async ({
     sharedEventID?: string;
     veventsApi?: VcalVeventComponent[];
     memberID?: string;
+    alternativeCalendarKeysAndPassphrasePromise?: ReturnType<typeof generateCalendarKeysAndPassphrase>;
+    alternativeAddressKeyPromise?: ReturnType<typeof generateAddressKeys>;
 }) => {
     const addressKey = userAddressKey || (await dummyAddressKeyPromise);
+    const alternativeAddressKey = await alternativeAddressKeyPromise;
     const { calendarKey, passphrase } = await dummyCalendarKeysAndPassphrasePromise;
+    const { calendarKey: alternativeCalendarKey } = (await alternativeCalendarKeysAndPassphrasePromise) || {};
     const encryptedAttachments = await Promise.all(
         attachments.map(async ({ attachmentID, filename, ics }) => {
-            const inviteAttachment = new File([new Blob([ics])], filename, {
-                type: `text/calendar; method=${method}`,
-            });
+            let mimeType = 'text/calendar';
+
+            if (methodInMimeType) {
+                mimeType += `; method=${methodInMimeType}`;
+            }
+
+            const inviteAttachment = new File([new Blob([ics])], filename, { type: mimeType });
+
             const attachmentPackets = await encryptAttachment(ics, inviteAttachment, false, addressKey.publicKeys, []);
             const concatenatedPackets = concatArrays(
                 [attachmentPackets.data, attachmentPackets.keys, attachmentPackets.signature].filter(isTruthy)
@@ -135,6 +159,9 @@ const getSetup = async ({
     }));
     const bootstrapCalendarID = eventCalendarID || defaultCalendarID;
     if (bootstrapCalendarID) {
+        addApiMock(`calendar/v1/${bootstrapCalendarID}/events/${eventID}/upgrade`, () => ({
+            Calendars: userCalendars,
+        }));
         addApiMock(`calendar/v1/${bootstrapCalendarID}/bootstrap`, () => ({
             Keys: [
                 {
@@ -164,7 +191,19 @@ const getSetup = async ({
                     Permissions: 1,
                 },
             ],
-            CalendarSettings: userCalendarSettings,
+            CalendarSettings: {
+                CalendarID: dummyCalendarKeyID,
+                DefaultEventDuration: 30,
+                DefaultFullDayNotifications: [
+                    { Trigger: '-PT17H', Type: 1 },
+                    { Trigger: '-PT17H', Type: 0 },
+                ],
+                DefaultPartDayNotifications: [
+                    { Trigger: '-PT17M', Type: 1 },
+                    { Trigger: '-PT17M', Type: 0 },
+                ],
+                ID: dummyCalendarKeyID,
+            },
         }));
     }
 
@@ -175,8 +214,8 @@ const getSetup = async ({
                 eventComponent,
                 author: userEmailAddress,
                 memberID,
-                publicKey: calendarKey.publicKeys[0],
-                privateKey: addressKey.privateKeys[0],
+                publicKey: alternativeCalendarKey?.publicKeys[0] || calendarKey.publicKeys[0],
+                privateKey: alternativeAddressKey?.privateKeys[0] || addressKey.privateKeys[0],
                 eventID,
                 sharedEventID,
                 calendarID: dummyCalendarID,
@@ -207,11 +246,18 @@ const getSetup = async ({
                 KeyPackets: uint8ArrayToBase64String(attachmentPackets.keys),
                 MIMEType: 'text/calendar',
             })),
+            ParsedHeaders: {
+                'X-Original-To': userEmailAddress,
+            },
         },
-    } as MessageStateWithData;
+    } as unknown as MessageStateWithData;
 };
 
 describe('ICS widget', () => {
+    beforeEach(() => {
+        jest.spyOn(inviteApi, 'createCalendarEventFromInvitation');
+    });
+
     afterEach(clearAll);
 
     it('should display the expected fields for the "new invitation" happy case', async () => {
@@ -282,14 +328,14 @@ END:VCALENDAR`;
 
         const message = await getSetup({
             attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-            method: ICAL_METHOD.REQUEST,
+            methodInMimeType: ICAL_METHOD.REQUEST,
             userCalendars: [defaultCalendar],
             userCalendarSettings: dummyCalendarUserSettings,
         });
         await render(<ExtraEvents message={message} />, false);
 
         // test event title
-        expect(screen.queryByText('Walk on the moon')).toBeInTheDocument();
+        expect(screen.getByText('Walk on the moon')).toBeInTheDocument();
 
         // test event date
         /**
@@ -297,36 +343,26 @@ END:VCALENDAR`;
          * machine that runs the code. So here we just check that the date header is present. See
          * dedicated tests of the date header component for tests of the text displayed.
          */
-        expect(screen.queryByTestId('extra-event-date-header')).toBeInTheDocument();
+        expect(screen.getByTestId('extra-event-date-header')).toBeInTheDocument();
 
         // test event warning
-        expect(screen.queryByText('Event already ended')).toBeInTheDocument();
+        expect(screen.getByText('Event already ended')).toBeInTheDocument();
 
         // test link
         expect(screen.queryByText(`Open in ${getAppName(APPS.PROTONCALENDAR)}`)).not.toBeInTheDocument();
 
         // test buttons
-        expect(screen.queryByText('Attending?')).toBeInTheDocument();
-        expect(screen.queryByTitle("Yes, I'll attend")).toHaveTextContent('Yes');
-        expect(screen.getByText('Yes').closest('button')).toHaveAttribute(
-            'title',
-            expect.stringMatching("Yes, I'll attend")
-        );
-        expect(screen.getByText('Maybe').closest('button')).toHaveAttribute(
-            'title',
-            expect.stringMatching("Maybe I'll attend")
-        );
-        expect(screen.getByText('No').closest('button')).toHaveAttribute(
-            'title',
-            expect.stringMatching("No, I won't attend")
-        );
+        expect(screen.getByText(/Attending?/)).toBeInTheDocument();
+        expect(screen.getByText(/Yes/, { selector: 'button' })).toBeInTheDocument();
+        expect(screen.getByText(/Maybe/, { selector: 'button' })).toBeInTheDocument();
+        expect(screen.getByText(/No/, { selector: 'button' })).toBeInTheDocument();
 
         // test calendar
-        expect(screen.queryByText(dummyCalendarName)).toBeInTheDocument();
+        expect(screen.getByText(dummyCalendarName)).toBeInTheDocument();
 
         // test organizer
-        expect(screen.queryByText('Organizer:')).toBeInTheDocument();
-        const organizerElement = screen.queryByTitle(dummySenderEmailAddress);
+        expect(screen.getByText('Organizer:')).toBeInTheDocument();
+        const organizerElement = screen.getByTitle(dummySenderEmailAddress);
         expect(organizerElement).toHaveAttribute('href', expect.stringMatching(`mailto:${dummySenderEmailAddress}`));
         expect(organizerElement).toHaveTextContent(dummySenderEmailAddress);
 
@@ -334,9 +370,9 @@ END:VCALENDAR`;
         const showAttendeesButton = screen.getByText('Show');
         expect(screen.queryByText(new RegExp(dummyUserEmailAddress))).not.toBeInTheDocument();
         userEvent.click(showAttendeesButton);
-        expect(screen.queryByText('Show less')).toBeInTheDocument();
-        expect(screen.queryByText(new RegExp(anotherEmailAddress))).toBeInTheDocument();
-        const selfAttendeeElement = screen.queryByTitle(`You <${dummyUserEmailAddress}>`);
+        expect(screen.getByText('Show less')).toBeInTheDocument();
+        expect(screen.getByText(new RegExp(anotherEmailAddress))).toBeInTheDocument();
+        const selfAttendeeElement = screen.getByTitle(`You <${dummyUserEmailAddress}>`);
         expect(selfAttendeeElement).toHaveTextContent(`You <${dummyUserEmailAddress}>`);
         expect(selfAttendeeElement).toHaveAttribute('href', expect.stringMatching(`mailto:${dummyUserEmailAddress}`));
     });
@@ -411,7 +447,7 @@ END:VCALENDAR`;
 
         const message = await getSetup({
             attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-            method: ICAL_METHOD.REQUEST,
+            methodInMimeType: ICAL_METHOD.REQUEST,
             userCalendars: [defaultCalendar],
             userCalendarSettings: dummyCalendarUserSettings,
             veventsApi: [eventComponent],
@@ -420,20 +456,23 @@ END:VCALENDAR`;
         await render(<ExtraEvents message={message} />, false);
 
         // test event title
-        expect(screen.queryByText('Walk on Mars')).toBeInTheDocument();
+        expect(screen.getByText('Walk on Mars')).toBeInTheDocument();
 
         // test event warning
-        expect(screen.queryByText('Event already ended')).toBeInTheDocument();
+        expect(screen.getByText('Event already ended')).toBeInTheDocument();
 
         // test link
-        expect(screen.queryByText(`Open in ${getAppName(APPS.PROTONCALENDAR)}`)).toBeInTheDocument();
+        expect(screen.getByText(`Open in ${getAppName(APPS.PROTONCALENDAR)}`)).toBeInTheDocument();
 
         // test buttons
-        expect(screen.queryByText('Attending?')).toBeInTheDocument();
-        expect(screen.queryByTitle('Change my answer')).toHaveTextContent("Yes, I'll attend");
+        expect(screen.getByText('Attending?')).toBeInTheDocument();
+        expect(screen.getByTitle('Change my answer')).toHaveTextContent("Yes, I'll attend");
+
+        // test summary
+        expect(screen.getByText(/You already accepted this invitation./)).toBeInTheDocument();
     });
 
-    it('should use "unsupported event" text for import PUBLISH', async () => {
+    it('should show the correct UI for an unsupported ics with import PUBLISH', async () => {
         // constants
         const dummyUID = 'testUID@example.domain';
         const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
@@ -442,7 +481,7 @@ END:VCALENDAR`;
         const ics = `BEGIN:VCALENDAR
 PRODID:-//Proton AG//WebCalendar 4.5.0//EN
 VERSION:2.0
-METHOD:REQUEST
+METHOD:PUBLISH
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 SEQUENCE:1
@@ -476,7 +515,6 @@ END:VCALENDAR`;
 
         const message = await getSetup({
             attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-            method: ICAL_METHOD.REQUEST,
             userCalendars: [defaultCalendar],
             userCalendarSettings: dummyCalendarUserSettings,
             veventsApi: [],
@@ -484,7 +522,8 @@ END:VCALENDAR`;
         });
         await render(<ExtraEvents message={message} />, false);
 
-        expect(screen.queryByText('Unsupported event'));
+        expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
+        expect(screen.getByText('Unsupported event')).toBeInTheDocument();
     });
 
     it('should not duplicate error banners', async () => {
@@ -533,7 +572,6 @@ END:VCALENDAR`;
                 { attachmentID: 'attachment-id-1', filename: 'invite.ics', ics },
                 { attachmentID: 'attachment-id-2', filename: 'calendar.ics', ics },
             ],
-            method: ICAL_METHOD.REQUEST,
             userCalendars: [defaultCalendar],
             userCalendarSettings: dummyCalendarUserSettings,
             veventsApi: [],
@@ -542,6 +580,584 @@ END:VCALENDAR`;
         await render(<ExtraEvents message={message} />, false);
 
         // test single banner
-        expect(await screen.findAllByText('Unsupported invitation')).toHaveLength(1);
+        expect(screen.getAllByText('Unsupported invitation')).toHaveLength(1);
+    });
+
+    describe('organizer mode', () => {
+        it('method=reply: displays the correct UI for the case with no calendars', async () => {
+            const dummyUID = 'testUID@example.domain';
+            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+
+            const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:REPLY
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Walk on Mars
+UID:${dummyUID}
+DTSTART;VALUE=DATE:${nextYear}0920
+ORGANIZER;CN=ORGO:mailto:${dummyUserEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummyToken}:mailto:${dummyUserEmailAddress}
+DTSTAMP:20100917T133417Z
+END:VEVENT
+END:VCALENDAR`;
+            const message = await getSetup({
+                attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                userCalendars: [],
+                userCalendarSettings: dummyCalendarUserSettings,
+                veventsApi: [],
+                eventCalendarID: dummyCalendarID,
+                userEmailAddress: dummyUserEmailAddress,
+                senderEmailAddress: dummyUserEmailAddress,
+            });
+
+            await render(<ExtraEvents message={message} />, false);
+
+            expect(screen.getByText(/This response is out of date. You have no calendars./)).toBeInTheDocument();
+        });
+
+        it('method=counter: decryption error', async () => {
+            const alternativeCalendarKeysAndPassphrasePromise =
+                generateCalendarKeysAndPassphrase(dummyAddressKeyPromise);
+
+            const dummyUID = 'testUID@example.domain';
+            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummySenderEmailAddress), dummyUID);
+
+            const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:COUNTER
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Walk on Mars
+UID:${dummyUID}
+DTSTART;VALUE=DATE:${nextYear}0920
+ORGANIZER;CN=ORGO:mailto:${dummyUserEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=ACCEPTED;X-PM-TOKEN=${dummyToken}:mailto:${dummySenderEmailAddress}
+DTSTAMP:20211013T144456Z
+DTSTAMP:20210917T133417Z
+END:VEVENT
+END:VCALENDAR`;
+            const defaultCalendar = {
+                ID: dummyCalendarID,
+                Name: dummyCalendarName,
+                Description: '',
+                Display: CalendarDisplay.HIDDEN,
+                Color: LABEL_COLORS[1],
+                Flags: CALENDAR_FLAGS.ACTIVE,
+                Type: CALENDAR_TYPE.PERSONAL,
+            };
+
+            // random event not matching ICS (doesn't matter for the decryption error case)
+            const eventComponent: VcalVeventComponent = {
+                component: 'vevent',
+                uid: { value: dummyUID },
+                sequence: { value: 1 },
+                dtstart: {
+                    value: { year: 2021, month: 9, day: 20 },
+                    parameters: { type: 'date' },
+                },
+                dtstamp: {
+                    value: { year: 2021, month: 9, day: 17, hours: 13, minutes: 34, seconds: 17, isUTC: true },
+                },
+                organizer: {
+                    value: `mailto:${dummyUserEmailAddress}`,
+                    parameters: {
+                        cn: 'ORGO',
+                    },
+                },
+                attendee: [
+                    {
+                        value: `mailto:${dummySenderEmailAddress}`,
+                        parameters: {
+                            'x-pm-token': dummyToken,
+                            partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
+                            rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                        },
+                    },
+                ],
+            };
+
+            const message = await getSetup({
+                attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                methodInMimeType: ICAL_METHOD.REQUEST,
+                userCalendars: [defaultCalendar],
+                userCalendarSettings: dummyCalendarUserSettings,
+                veventsApi: [eventComponent],
+                eventCalendarID: dummyCalendarID,
+                alternativeCalendarKeysAndPassphrasePromise,
+            });
+
+            await render(<ExtraEvents message={message} />, false);
+
+            expect(
+                screen.getByText(
+                    `${dummySenderEmailAddress} accepted your invitation and proposed a new time for this event.`
+                )
+            ).toBeInTheDocument();
+        });
+
+        it('no event in db already exists', async () => {
+            const dummyUID = 'testUID@example.domain';
+            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+
+            const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:REPLY
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Walk on Mars
+UID:${dummyUID}
+DTSTART;VALUE=DATE:${nextYear}0920
+ORGANIZER;CN=ORGO:mailto:${dummyUserEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummyToken}:mailto:${dummyUserEmailAddress}
+DTSTAMP:20211013T144456Z
+DTSTAMP:20210917T133417Z
+END:VEVENT
+END:VCALENDAR`;
+            const defaultCalendar = {
+                ID: dummyCalendarID,
+                Name: dummyCalendarName,
+                Description: '',
+                Display: CalendarDisplay.HIDDEN,
+                Color: LABEL_COLORS[1],
+                Flags: CALENDAR_FLAGS.ACTIVE,
+                Type: CALENDAR_TYPE.PERSONAL,
+            };
+
+            const message = await getSetup({
+                attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                userCalendars: [defaultCalendar],
+                userCalendarSettings: dummyCalendarUserSettings,
+                veventsApi: [],
+                eventCalendarID: dummyCalendarID,
+                userEmailAddress: dummyUserEmailAddress,
+                senderEmailAddress: dummyUserEmailAddress,
+            });
+
+            await render(<ExtraEvents message={message} />, false);
+
+            expect(
+                screen.getByText(/This response is out of date. The event does not exist in your calendar anymore./)
+            ).toBeInTheDocument();
+        });
+
+        it('method=refresh from future', async () => {
+            const dummyUID = 'testUID@example.domain';
+            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummySenderEmailAddress), dummyUID);
+
+            const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:REFRESH
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SEQUENCE:3
+STATUS:CONFIRMED
+SUMMARY:Walk on Mars
+UID:${dummyUID}
+DTSTART;VALUE=DATE:${nextYear}0920
+ORGANIZER;CN=ORGO:mailto:${dummyUserEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummyToken}:mailto:${dummySenderEmailAddress}
+DTSTAMP:${nextYear}1013T144456Z
+END:VEVENT
+END:VCALENDAR`;
+            const defaultCalendar = {
+                ID: dummyCalendarID,
+                Name: dummyCalendarName,
+                Description: '',
+                Display: CalendarDisplay.HIDDEN,
+                Color: LABEL_COLORS[1],
+                Flags: CALENDAR_FLAGS.ACTIVE,
+                Type: CALENDAR_TYPE.PERSONAL,
+            };
+
+            const eventComponent: VcalVeventComponent = {
+                component: 'vevent',
+                uid: { value: dummyUID },
+                sequence: { value: 1 },
+                dtstart: {
+                    value: { year: nextYear, month: 9, day: 20 },
+                    parameters: { type: 'date' },
+                },
+                dtstamp: {
+                    value: { year: nextYear, month: 9, day: 17, hours: 13, minutes: 34, seconds: 17, isUTC: true },
+                },
+                organizer: {
+                    value: `mailto:${dummySenderEmailAddress}`,
+                    parameters: {
+                        cn: 'ORGO',
+                    },
+                },
+                attendee: [
+                    {
+                        value: `mailto:${dummyUserEmailAddress}`,
+                        parameters: {
+                            'x-pm-token': dummyToken,
+                            partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
+                            rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                        },
+                    },
+                ],
+            };
+
+            const message = await getSetup({
+                attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                userCalendars: [defaultCalendar],
+                userCalendarSettings: dummyCalendarUserSettings,
+                veventsApi: [eventComponent],
+                eventCalendarID: dummyCalendarID,
+            });
+
+            await render(<ExtraEvents message={message} />, false);
+
+            expect(
+                screen.getByText(
+                    `${dummySenderEmailAddress} asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.`
+                )
+            ).toBeInTheDocument();
+        });
+
+        it('method=reply outdated', async () => {
+            const dummyUID = 'testUID@example.domain';
+            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummySenderEmailAddress), dummyUID);
+
+            const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:REPLY
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Walk on Mars
+UID:${dummyUID}
+DTSTART;VALUE=DATE:${nextYear}0920
+ORGANIZER;CN=ORGO:mailto:${dummyUserEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=ACCEPTED;X-PM-TOKEN=${dummyToken}:mailto:${dummySenderEmailAddress}
+DTSTAMP:${nextYear}1013T144456Z
+END:VEVENT
+END:VCALENDAR`;
+            const defaultCalendar = {
+                ID: dummyCalendarID,
+                Name: dummyCalendarName,
+                Description: '',
+                Display: CalendarDisplay.HIDDEN,
+                Color: LABEL_COLORS[1],
+                Flags: CALENDAR_FLAGS.ACTIVE,
+                Type: CALENDAR_TYPE.PERSONAL,
+            };
+
+            const eventComponent: VcalVeventComponent = {
+                component: 'vevent',
+                uid: { value: dummyUID },
+                sequence: { value: 2 },
+                dtstart: {
+                    value: { year: nextYear, month: 9, day: 20 },
+                    parameters: { type: 'date' },
+                },
+                dtstamp: {
+                    value: { year: nextYear, month: 9, day: 17, hours: 13, minutes: 34, seconds: 17, isUTC: true },
+                },
+                organizer: {
+                    value: `mailto:${dummyUserEmailAddress}`,
+                    parameters: {
+                        cn: 'ORGO',
+                    },
+                },
+                attendee: [
+                    {
+                        value: `mailto:${dummySenderEmailAddress}`,
+                        parameters: {
+                            'x-pm-token': dummyToken,
+                            partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
+                            rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                        },
+                    },
+                ],
+            };
+
+            const message = await getSetup({
+                attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                userCalendars: [defaultCalendar],
+                userCalendarSettings: dummyCalendarUserSettings,
+                veventsApi: [eventComponent],
+                eventCalendarID: dummyCalendarID,
+            });
+
+            await render(<ExtraEvents message={message} />, false);
+
+            expect(
+                screen.getByText(`${dummySenderEmailAddress} had previously accepted your invitation.`)
+            ).toBeInTheDocument();
+        });
+    });
+
+    describe('attendee mode', () => {
+        it('shows the correct UI for an outdated invitation', async () => {
+            const dummyUID = 'testUID@example.domain';
+            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+
+            const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:REQUEST
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Walk on Mars
+UID:${dummyUID}
+DTSTART;VALUE=DATE:20100920
+ORGANIZER;CN=ORGO:mailto:${dummySenderEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummyToken}:mailto:${dummyUserEmailAddress}
+DTSTAMP:20100917T133417Z
+END:VEVENT
+END:VCALENDAR`;
+            const eventComponent: VcalVeventComponent = {
+                component: 'vevent',
+                uid: { value: dummyUID },
+                sequence: { value: 1 },
+                dtstart: {
+                    value: { year: 2021, month: 9, day: 20 },
+                    parameters: { type: 'date' },
+                },
+                dtstamp: {
+                    // The event was updated in the DB with respect to the invite. Notice DTSTAMP has changed with respect to the ics.
+                    value: { year: 2021, month: 9, day: 17, hours: 13, minutes: 34, seconds: 17, isUTC: true },
+                },
+                organizer: {
+                    value: `mailto:${dummySenderEmailAddress}`,
+                    parameters: {
+                        cn: 'ORGO',
+                    },
+                },
+                attendee: [
+                    {
+                        value: `mailto:${dummyUserEmailAddress}`,
+                        parameters: {
+                            'x-pm-token': dummyToken,
+                            partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
+                            rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                        },
+                    },
+                ],
+            };
+            const defaultCalendar = {
+                ID: dummyCalendarID,
+                Name: dummyCalendarName,
+                Description: '',
+                Display: CalendarDisplay.HIDDEN,
+                Color: LABEL_COLORS[1],
+                Flags: CALENDAR_FLAGS.ACTIVE,
+                Type: CALENDAR_TYPE.PERSONAL,
+            };
+
+            const message = await getSetup({
+                attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                userCalendars: [defaultCalendar],
+                userCalendarSettings: dummyCalendarUserSettings,
+                veventsApi: [eventComponent],
+                eventCalendarID: dummyCalendarID,
+            });
+
+            await render(<ExtraEvents message={message} />, false);
+
+            expect(screen.getByText(/This invitation is out of date. The event has been updated./)).toBeInTheDocument();
+        });
+
+        it('does not display a summary when responding to an invitation', async () => {
+            const dummyUID = 'testUID@example.domain';
+            const anotherEmailAddress = 'another@protonmail.ch';
+            const [dummyToken, anotherToken] = await Promise.all(
+                [dummyUserEmailAddress, anotherEmailAddress].map((address) =>
+                    generateAttendeeToken(canonizeInternalEmail(address), dummyUID)
+                )
+            );
+
+            const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.6.1//EN
+VERSION:2.0
+METHOD:REQUEST
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Zurich
+LAST-MODIFIED:20210410T122212Z
+X-LIC-LOCATION:Europe/Zurich
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Walk on the moon
+UID:${dummyUID}
+DESCRIPTION:Recommended by Matthieu
+DTSTART;TZID=Europe/Zurich:20221018T110000
+DTEND;TZID=Europe/Zurich:20221018T120000
+ORGANIZER;CN=${dummySenderEmailAddress}:mailto:${dummySenderEmailAddress}
+ATTENDEE;CN=TEST;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-
+ TOKEN=${dummyToken}:mailto:${dummyUserEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=
+ ${anotherToken}:mailto:${anotherEmailAddress}
+DTSTAMP:20211013T144456Z
+X-PM-SHARED-EVENT-ID:CDr63-NYMQl8L_dbp9qzbaSXmb9e6L8shmaxZfF3hWz9vVD3FX0j4l
+ kmct4zKnoOX7KgYBPbcZFccjIsD34lAZXTuO99T1XXd7WE8B36T7s=
+X-PM-SESSION-KEY:IAhhZBd+KXKPm95M2QRJK7WgGHovpnVdJZb2mMoiwMM=
+END:VEVENT
+END:VCALENDAR`;
+            const savedAttendee = {
+                value: `mailto:${dummyUserEmailAddress}`,
+                parameters: {
+                    cn: 'test',
+                    'x-pm-token': dummyToken,
+                    partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
+                    rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                },
+            };
+            const savedVevent: VcalVeventComponent = {
+                component: 'vevent',
+                uid: { value: dummyUID },
+                sequence: { value: 0 },
+                dtstart: {
+                    value: { year: 2022, month: 10, day: 18, hours: 11, minutes: 0, seconds: 0, isUTC: false },
+                    parameters: { tzid: 'Europe/Zurich' },
+                },
+                dtend: {
+                    value: { year: 2022, month: 10, day: 18, hours: 12, minutes: 0, seconds: 0, isUTC: false },
+                    parameters: { tzid: 'Europe/Zurich' },
+                },
+                dtstamp: {
+                    value: { year: 2021, month: 10, day: 13, hours: 14, minutes: 44, seconds: 56, isUTC: true },
+                },
+                organizer: {
+                    value: `mailto:${dummySenderEmailAddress}`,
+                    parameters: {
+                        cn: dummySenderEmailAddress,
+                    },
+                },
+                attendee: [
+                    savedAttendee,
+                    {
+                        value: `mailto:${anotherEmailAddress}`,
+                        parameters: {
+                            cn: anotherEmailAddress,
+                            'x-pm-token': anotherToken,
+                            partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+                            rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                        },
+                    },
+                ],
+            };
+            const savedEvent = await generateApiCalendarEvent({
+                eventComponent: savedVevent,
+                author: dummyUserEmailAddress,
+                memberID: dummyMemberID,
+                publicKey: (await dummyCalendarKeysAndPassphrasePromise).calendarKey.publicKeys[0],
+                privateKey: (await dummyAddressKeyPromise).privateKeys[0],
+                eventID: dummyEventID,
+                sharedEventID:
+                    'CDr63-NYMQl8L_dbp9qzbaSXmb9e6L8shmaxZfF3hWz9vVD3FX0j4lkmct4zKnoOX7KgYBPbcZFccjIsD34lAZXTuO99T1XXd7WE8B36T7s=',
+                calendarID: dummyCalendarID,
+            });
+            const defaultCalendar = {
+                ID: dummyCalendarID,
+                Name: dummyCalendarName,
+                Description: '',
+                Display: CalendarDisplay.HIDDEN,
+                Color: LABEL_COLORS[1],
+                Flags: CALENDAR_FLAGS.ACTIVE,
+                Type: CALENDAR_TYPE.PERSONAL,
+            };
+
+            // @ts-ignore
+            inviteApi.createCalendarEventFromInvitation.mockReturnValueOnce(
+                Promise.resolve({ savedEvent, savedVevent, savedAttendee })
+            );
+            // @ts-ignore
+            useGetVtimezonesMap.mockReturnValueOnce(() =>
+                Promise.resolve({
+                    'Europe/Zurich': { vtimezone: {}, vtimezoneString: '' },
+                })
+            );
+
+            const message = await getSetup({
+                attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                userCalendars: [defaultCalendar],
+                userCalendarSettings: dummyCalendarUserSettings,
+            });
+
+            await render(<ExtraEvents message={message} />, false);
+
+            userEvent.click(screen.getByTitle(`Yes, I'll attend`));
+
+            await waitForElementToBeRemoved(() => screen.getByText(/Loading/));
+
+            expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
+        });
+
+        it('should show the correct UI for a supported ics with import PUBLISH', async () => {
+            // constants
+            const dummyUID = 'testUID@example.domain';
+            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+
+            const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:PUBLISH
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Walk on Mars
+UID:${dummyUID}
+DTSTART;TZID=Europe/Zurich:20220310T114500
+ORGANIZER;CN=ORGO:mailto:${dummySenderEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummyToken}:mailto:${dummyUserEmailAddress}
+DTSTAMP:20210917T133417Z
+END:VEVENT
+END:VCALENDAR`;
+            const defaultCalendar = {
+                ID: dummyCalendarID,
+                Name: dummyCalendarName,
+                Description: '',
+                Display: CalendarDisplay.HIDDEN,
+                Color: LABEL_COLORS[1],
+                Flags: CALENDAR_FLAGS.ACTIVE,
+                Type: CALENDAR_TYPE.PERSONAL,
+            };
+
+            const message = await getSetup({
+                attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                userCalendars: [defaultCalendar],
+                userCalendarSettings: dummyCalendarUserSettings,
+                veventsApi: [],
+                eventCalendarID: dummyCalendarID,
+            });
+
+            await render(<ExtraEvents message={message} />, false);
+
+            expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
+        });
     });
 });

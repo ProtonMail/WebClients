@@ -733,7 +733,7 @@ export const deleteCalendarEventFromInvitation = ({
     calendarData: Required<CalendarWidgetData>;
     api: Api;
 }) => {
-    void api<SyncMultipleApiResponse>(
+    return api<SyncMultipleApiResponse>(
         syncMultipleEvents(calendarData.calendar.ID, {
             MemberID: calendarData.memberID,
             Events: [{ ID: calendarEventID }],
