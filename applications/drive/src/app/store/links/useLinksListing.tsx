@@ -143,7 +143,6 @@ export function useLinksListingProvider() {
 
         if (result.errors.length) {
             showAggregatedErrorNotification(result.errors, (errors: any[]) => {
-                errors.forEach(console.warn);
                 const count = errors.length;
                 return c('Notification').ngettext(
                     msgid`${count} item failed to be decrypted`,
@@ -218,7 +217,6 @@ export function useLinksListingProvider() {
                 return !fetchMeta.isEverythingFetched;
             })
             .catch((err) => {
-                console.warn(err);
                 showErrorNotification(err, c('Notification').t`Next page failed to be loaded`);
                 // Very probably the next page is still there, but to not cause
                 // inifinite loop requesting next page, lets return false.
@@ -509,12 +507,13 @@ export function useLinksListingProvider() {
         (
             abortSignal: AbortSignal,
             shareId: string,
-            parentLinkId: string
+            parentLinkId: string,
+            foldersOnly: boolean = false
         ): { links: DecryptedLink[]; isDecrypting: boolean } => {
             return getCachedLinksHelper(
                 abortSignal,
                 shareId,
-                linksState.getChildren(shareId, parentLinkId),
+                linksState.getChildren(shareId, parentLinkId, foldersOnly),
                 getShareFetchState(shareId).folders[parentLinkId]?.all
             );
         },
