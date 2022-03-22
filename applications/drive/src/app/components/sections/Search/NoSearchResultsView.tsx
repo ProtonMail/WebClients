@@ -14,7 +14,7 @@ export const NoSearchResultsView = () => {
             <EmptyViewContainer imageProps={{ src: noResultSearchSvg, alt: c('Info').t`Enable Drive Search` }}>
                 <h3 className="text-bold">{c('Title').t`Enable Drive Search`}</h3>
                 <p>{c('Info')
-                    .t`To enable trully private search ${DRIVE_APP_NAME} needs to index your files locally.`}</p>
+                    .t`To enable truly private search ${DRIVE_APP_NAME} needs to index your files locally.`}</p>
                 <div className="flex flex-justify-center">
                     <PrimaryButton
                         size="large"
