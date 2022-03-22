@@ -31,7 +31,7 @@ import {
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 
 import { Nullable } from '@proton/shared/lib/interfaces';
-import { getMostReadableColor } from '../../helpers/color';
+import { COLORS } from '@proton/shared/lib/calendar/constants';
 
 export interface CalendarSidebarListItemsProps {
     calendars?: VisualCalendar[] | SubscribedCalendar[];
@@ -78,7 +78,7 @@ const CalendarSidebarListItems = ({
         const left = (
             <Checkbox
                 className="mr0-25 flex-item-noshrink"
-                color={getMostReadableColor(Color)}
+                color={COLORS.WHITE}
                 backgroundColor={Display ? Color : 'transparent'}
                 borderColor={Color}
                 checked={!!Display}
