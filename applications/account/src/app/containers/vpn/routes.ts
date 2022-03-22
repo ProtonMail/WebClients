@@ -16,7 +16,7 @@ export const getVpnAppRoutes = () => {
                         id: 'upgrade',
                     },
                     {
-                        text: c('Title').t`${VPN_APP_NAME}`,
+                        text: VPN_APP_NAME,
                         id: 'protonvpn-clients',
                     },
                 ],
