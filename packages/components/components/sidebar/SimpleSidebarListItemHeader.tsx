@@ -58,13 +58,13 @@ const SimpleSidebarListItemHeader = ({
                     onFocus={() => onFocus(id || '')}
                     data-shortcut-target={id}
                 >
-                    <span className="mr0-5 text-sm">{text}</span>
                     {hasCaret && (
                         <Icon
                             name="angle-down"
-                            className={classnames(['navigation-icon--expand', toggle && 'rotateX-180'])}
+                            className={classnames(['navigation-icon--expand', !toggle && 'rotateZ-270'])}
                         />
                     )}
+                    <span className="ml0-5 text-sm">{text}</span>
                 </button>
                 {right}
             </div>
