@@ -119,7 +119,7 @@ describe('Composer hotkeys', () => {
 
         ctrlShftE();
 
-        getByText('Encrypt for non-ProtonMail users');
+        getByText('Encrypt for non-Proton users');
     });
 
     it('should open encryption modal on meta + shift + X', async () => {
