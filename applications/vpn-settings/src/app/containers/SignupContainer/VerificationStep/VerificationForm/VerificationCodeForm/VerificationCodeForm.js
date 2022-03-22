@@ -14,14 +14,16 @@ import {
 import { c } from 'ttag';
 import ResendCodeModal from './ResendCodeModal';
 
-const VerificationCodeForm = ({ onSubmit, onResend, onBack, destination }) => {
+const VerificationCodeForm = ({ notices, onSubmit, onResend, onBack, destination }) => {
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
     const [code, setCode] = useState('');
     const destinationText = <strong key="destination">{destination.Address || destination.Phone}</strong>;
 
     const handleResend = () => {
-        createModal(<ResendCodeModal onBack={onBack} onResend={onResend} destination={destination} />);
+        createModal(
+            <ResendCodeModal notices={notices} onBack={onBack} onResend={onResend} destination={destination} />
+        );
     };
 
     const handleSubmit = (e) => {
@@ -30,6 +32,8 @@ const VerificationCodeForm = ({ onSubmit, onResend, onBack, destination }) => {
     };
 
     const handleChangeCode = ({ target }) => setCode(target.value);
+    // translator: spam folder" is put in bold in the sentence "please check your spam folder"
+    const spamFolder = <strong key="spam-folder">{c('Info').t`spam folder`}</strong>;
 
     return (
         <div>
@@ -37,7 +41,10 @@ const VerificationCodeForm = ({ onSubmit, onResend, onBack, destination }) => {
             <Alert className="mb1">
                 <div>{c('Info').jt`Enter the verification code that was sent to ${destinationText}.`}</div>
                 {destination.Address ? (
-                    <div>{c('Info').t`If you don't find the email in your inbox, please check your spam folder.`}</div>
+                    <div>{
+                        // translator: spamFolder is just "spam folder" in bold
+                        c('Info').jt`If you don't find the email in your inbox, please check your ${spamFolder}.`
+                    }</div>
                 ) : null}
             </Alert>
             <form onSubmit={handleSubmit}>
@@ -76,6 +83,7 @@ VerificationCodeForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     onResend: PropTypes.func.isRequired,
     onBack: PropTypes.func.isRequired,
+    notices: PropTypes.element,
     destination: PropTypes.shape({
         Phone: PropTypes.string,
         Address: PropTypes.string,

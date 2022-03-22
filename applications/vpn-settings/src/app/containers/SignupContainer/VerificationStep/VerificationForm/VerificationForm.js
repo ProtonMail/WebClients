@@ -38,8 +38,19 @@ const VerificationForm = ({ defaultCountry, defaultEmail, allowedMethods, onRequ
         );
     }
 
+    // translator: "spam folder" is put in bold in the sentence "please check your spam folder"
+    const spamFolder = <strong key="resend-spam-folder">{c('Info').t`spam folder`}</strong>;
+
     return (
         <VerificationCodeForm
+            notices={
+                params.Destination.Address ? (
+                    <p>{
+                        // translator: spamFolder is just "spam folder" in bold
+                        c('Info').jt`Please make sure to check your ${spamFolder}.`
+                    }</p>
+                ) : null
+            }
             destination={params.Destination}
             onSubmit={handleSubmitCode}
             onBack={handleBack}
