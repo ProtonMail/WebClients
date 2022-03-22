@@ -1565,7 +1565,6 @@ const InteractiveCalendarView = ({
                 weekdays={weekdays}
                 timeGridViewRef={timeGridViewRef}
                 isScrollDisabled={isScrollDisabled}
-                isDropzoneHovered={isDropzoneHovered}
             />
             <Popover
                 containerEl={document.body}
