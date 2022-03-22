@@ -64,6 +64,7 @@ export enum FeatureCode {
     SpotlightEmailNotifications = 'SpotlightEmailNotifications',
     PaymentsDisabled = 'PaymentsDisabled',
     DriveSearchEnabled = 'DriveSearchEnabled',
+    DriveSearchSpotlight = 'DriveSearchSpotlight',
     MailServiceWorker = 'MailServiceWorker',
     NewDomainOptIn = 'NewDomainOptIn',
 }

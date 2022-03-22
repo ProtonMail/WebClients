@@ -38,6 +38,7 @@ export interface SpotlightProps {
      */
     anchorRef?: RefObject<HTMLElement>;
     style?: CSSProperties;
+    className?: string;
 }
 
 const Spotlight = ({
@@ -50,6 +51,7 @@ const Spotlight = ({
     hasClose = true,
     anchorRef: inputAnchorRef,
     style = {},
+    className,
 }: SpotlightProps) => {
     const [uid] = useState(generateUID('spotlight'));
 
@@ -119,6 +121,7 @@ const Spotlight = ({
                         isClosing && 'is-spotlight-out',
                         type && 'spotlight--with-illustration',
                         !showSideRadius && 'spotlight--no-side-radius',
+                        className,
                     ])}
                     onAnimationEnd={handleAnimationEnd}
                 >
