@@ -7,7 +7,7 @@
 
 ### Fixes
 
--   Improve support for invalid ICS formats that other providers use (officeholidays.com)
+-   Improve support for invalid ICS formats that other providers sometimes use (Office Holidays Ltd.)
 -   Fix wrong conversion of some localized time zones that Microsoft Exchange 2010 uses
 
 ## Release: 4.0.8 — Feb 9, 2022
