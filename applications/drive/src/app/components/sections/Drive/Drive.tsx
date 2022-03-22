@@ -11,6 +11,7 @@ import { mapDecryptedLinksToChildren } from '../helpers';
 import EmptyFolder from './EmptyFolder';
 import FolderContextMenu from './FolderContextMenu';
 import DriveItemContextMenu from './DriveItemContextMenu';
+import useOpenModal from '../../useOpenModal';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -24,6 +25,7 @@ function Drive({ activeFolder, folderView }: Props) {
     const { layout, folderName, items, sortParams, setSorting, selectionControls, isLoading } = folderView;
     const { clearSelections, selectedItems, toggleSelectItem, toggleAllSelected, toggleRange, selectItem } =
         selectionControls;
+    const { openPreview } = useOpenModal();
 
     const selectedItems2 = mapDecryptedLinksToChildren(selectedItems);
     const contents = mapDecryptedLinksToChildren(items);
@@ -33,6 +35,10 @@ function Drive({ activeFolder, folderView }: Props) {
     const handleClick = useCallback(
         async (item: FileBrowserItem) => {
             document.getSelection()?.removeAllRanges();
+            if (item.IsFile) {
+                openPreview(shareId, item);
+                return;
+            }
             navigateToLink(shareId, item.LinkID, item.IsFile);
         },
         [navigateToLink, shareId]

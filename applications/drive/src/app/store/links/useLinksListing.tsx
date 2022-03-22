@@ -551,6 +551,14 @@ export function useLinksListingProvider() {
         [linksState.getChildren]
     );
 
+    const getCachedChildrenCount = useCallback(
+        (shareId: string, parentLinkId: string): number => {
+            const links = linksState.getChildren(shareId, parentLinkId);
+            return links.length;
+        },
+        [linksState.getChildren]
+    );
+
     const getCachedTrashed = useCallback(
         (abortSignal: AbortSignal, shareId: string): { links: DecryptedLink[]; isDecrypting: boolean } => {
             return getCachedLinksHelper(
@@ -595,6 +603,7 @@ export function useLinksListingProvider() {
         loadLinksSharedByLink,
         loadLinks,
         getCachedChildren,
+        getCachedChildrenCount,
         getCachedTrashed,
         getCachedSharedByLink,
         getCachedLinks,
