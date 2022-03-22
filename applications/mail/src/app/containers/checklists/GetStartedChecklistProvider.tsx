@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext, useState } from 'react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import * as sessionStorage from '@proton/shared/lib/helpers/sessionStorage';
-import useChecklist from './useChecklist';
+import useChecklist, { GetStartedChecklistApiResponse } from './useChecklist';
 
 const GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY = 'GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY';
 
@@ -16,6 +16,7 @@ interface GetStartedChecklistContextValue {
     dismissed: boolean;
     handleDismiss: () => void;
     checklist: ChecklistApiResponse['Items'];
+    rewardInGb: GetStartedChecklistApiResponse['RewardInGB'];
     expires: Date;
 }
 
@@ -24,7 +25,7 @@ const GetStartedChecklistContext = createContext<GetStartedChecklistContextValue
 );
 
 const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
-    const [checklist, loadingChecklist] = useChecklist('get-started');
+    const [checklist, loadingChecklist] = useChecklist('get-started') as [GetStartedChecklistApiResponse, boolean];
 
     const [dismissed, setDismissed] = useState(() =>
         JSON.parse(sessionStorage.getItem(GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY) || JSON.stringify(false))
@@ -38,6 +39,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const context = {
         loading: loadingChecklist,
         checklist: checklist.Items,
+        rewardInGb: checklist.RewardInGB,
         expires: addDays(fromUnixTime(checklist.CreatedAt), 30),
         dismissed,
         handleDismiss,

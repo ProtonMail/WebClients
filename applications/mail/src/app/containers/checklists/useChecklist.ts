@@ -6,14 +6,24 @@ import { useEffect, useState } from 'react';
 import { Event } from '../../models/event';
 
 interface ChecklistApiResponse {
+    Code: number;
     Items: ChecklistKey[];
     CreatedAt: number;
+    ExpiresAt: number;
 }
 
+export interface GetStartedChecklistApiResponse extends ChecklistApiResponse {
+    RewardInGB: number;
+}
+
+export type Checklist = ChecklistApiResponse | GetStartedChecklistApiResponse;
+
 const useChecklist = (id: ChecklistId) => {
-    const [checklist, setChecklist] = useState<ChecklistApiResponse>({
-        Items: [],
+    const [checklist, setChecklist] = useState<Checklist>({
+        Code: 0,
+        Items: [] as ChecklistKey[],
         CreatedAt: 0,
+        ExpiresAt: 0,
     });
 
     const [userSettings] = useUserSettings();
@@ -23,7 +33,7 @@ const useChecklist = (id: ChecklistId) => {
 
     useEffect(() => {
         if (userSettings.Checklists?.includes(id)) {
-            void withLoading(api<{ Items: ChecklistKey[]; CreatedAt: number }>(getChecklist(id)).then(setChecklist));
+            void withLoading(api<Checklist>(getChecklist(id)).then(setChecklist));
         }
 
         const unsubscribe = subscribe(({ Checklist }: Event) => {
