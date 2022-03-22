@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { useNotifications } from '@proton/components';
 
-import { DecryptedLink, LinkType, useLink, useLinksListing } from '../links';
+import { DecryptedLink, useLink, useLinksListing } from '../links';
 import { useShare } from '../shares';
 import { useErrorHandler } from '../utils';
 import { useAbortSignal } from './utils';
@@ -34,7 +34,7 @@ export function useFolderTree(shareId: string, options?: FolderTreeOptions) {
 /**
  * useTree provides data for complete tree view of the provided share.
  */
-export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly }: TreeOptions) {
+export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly = false }: TreeOptions) {
     const { createNotification } = useNotifications();
     const { showErrorNotification } = useErrorHandler();
     const { getShare } = useShare();
@@ -69,8 +69,17 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
 
     const syncTreeWithCache = useCallback(
         (item: TreeItem): TreeItem => {
-            const { links: allChildren } = getCachedChildren(abortSignal, shareId, item.link.linkId);
-            const children = allChildren.filter((link) => !foldersOnly || link.type === LinkType.FOLDER);
+            // Sync with cache only expanded part of the tree so we don't have
+            // to keep in sync everything in the cache as that would need to
+            // make sure have everyting up to date and decrypted. If user don't
+            // need it, lets not waste valuable CPU time on it. But do it only
+            // for children - lets keep root folder always up to date, as we
+            // preload root everytime and the main expand button depends on it.
+            if (!item.isExpanded && item.link.parentLinkId) {
+                return item;
+            }
+
+            const { links: children } = getCachedChildren(abortSignal, shareId, item.link.linkId, foldersOnly);
             if (!children) {
                 item.children = [];
             } else {
