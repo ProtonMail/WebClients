@@ -388,19 +388,6 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                 password,
             });
 
-            const addresses = username
-                ? await handleSetupAddress({ api: authApi.api, domains, username })
-                : await getAllAddresses(authApi.api);
-
-            const keyPassword = addresses.length
-                ? await handleSetupKeys({
-                      api: authApi.api,
-                      addresses,
-                      password,
-                      hasAddressKeyMigrationGeneration: true,
-                  })
-                : undefined;
-
             if (hasPlanIDs(planIDs)) {
                 const paymentProps = isReferred
                     ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
@@ -415,6 +402,19 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                     })
                 );
             }
+
+            const addresses = username
+                ? await handleSetupAddress({ api: authApi.api, domains, username })
+                : await getAllAddresses(authApi.api);
+
+            const keyPassword = addresses.length
+                ? await handleSetupKeys({
+                      api: authApi.api,
+                      addresses,
+                      password,
+                      hasAddressKeyMigrationGeneration: true,
+                  })
+                : undefined;
 
             const authResponse = authApi.getAuthResponse();
             const User = await authApi.api<{ User: tsUser }>(getUser()).then(({ User }) => User);
