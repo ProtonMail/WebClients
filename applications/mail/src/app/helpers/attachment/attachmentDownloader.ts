@@ -73,7 +73,7 @@ export const generateDownload = async (download: Download /* , message: MessageE
     //     return;
     // }
 
-    downloadFile(new Blob([download.data], { type: download.attachment.MIMEType }), download.attachment.Name);
+    downloadFile(new Blob([download.data], { type: 'application/octet-stream' }), download.attachment.Name);
 };
 
 /**
