@@ -22,8 +22,8 @@ html,
 	position: fixed;
 	inset: 0;
 	// Static because css variables can't be reached on that components
-	background: #1c223d;
-	color: white;
+	background: var(--background-norm, #1c223d);
+	color: var(--text-norm, white);
 }
 
 .app-noscript {
