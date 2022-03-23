@@ -1,17 +1,19 @@
 import { RefObject, useCallback, useEffect } from 'react';
 
 const useIframeDispatchEvents = (
-    initStatus: 'start' | 'base_content' | 'done',
-    iframeRef: RefObject<HTMLIFrameElement>
+    startListening: boolean,
+    iframeRef: RefObject<HTMLIFrameElement>,
+    onFocus?: () => void
 ) => {
     const bubbleEventCallback = useCallback(() => {
         document.dispatchEvent(new CustomEvent('dropdownclose'));
+        onFocus?.();
     }, []);
 
     useEffect(() => {
         const emailContentRoot = iframeRef.current?.contentWindow?.document.body;
 
-        if (initStatus !== 'done' || !emailContentRoot) {
+        if (startListening === false || !emailContentRoot) {
             return;
         }
 
@@ -22,7 +24,7 @@ const useIframeDispatchEvents = (
             emailContentRoot.removeEventListener('focus', bubbleEventCallback);
             emailContentRoot.removeEventListener('click', bubbleEventCallback);
         };
-    }, [initStatus]);
+    }, [startListening]);
 };
 
 export default useIframeDispatchEvents;
