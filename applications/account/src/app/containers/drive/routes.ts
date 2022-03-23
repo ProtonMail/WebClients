@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
-import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 export const getDriveAppRoutes = () => {
     return <const>{
-        header: APPS_CONFIGURATION[APPS.PROTONDRIVE].name,
+        header: DRIVE_APP_NAME,
         routes: {
             general: <SectionConfig>{
                 text: c('Title').t`General`,
