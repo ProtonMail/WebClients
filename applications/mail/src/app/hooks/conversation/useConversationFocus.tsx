@@ -1,9 +1,14 @@
-import { useCallback, useEffect, useState } from 'react';
+import { FocusEvent, RefObject, useCallback, useEffect, useState } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import useClickOutsideFocusedMessage from './useClickOutsideFocusedMessage';
 
 export const useConversationFocus = (messages: Message[]) => {
     const [focusIndex, setFocusIndex] = useState<number>();
     const [nextScrollTo, setNextScrollTo] = useState(false);
+
+    useClickOutsideFocusedMessage(focusIndex ? messages[focusIndex]?.ID : undefined, () => {
+        setFocusIndex(undefined);
+    });
 
     const getFocusedId = useCallback(
         () => (focusIndex !== undefined ? messages[focusIndex] : undefined)?.ID,
@@ -12,11 +17,21 @@ export const useConversationFocus = (messages: Message[]) => {
 
     const handleFocus = useCallback(
         (index: number | undefined, scrollTo = false) => {
-            if (index === focusIndex) {
-                return;
-            }
             setFocusIndex(index);
-            setNextScrollTo(scrollTo);
+            if (index === focusIndex) {
+                setNextScrollTo(scrollTo);
+            }
+        },
+        [focusIndex]
+    );
+
+    const handleBlur = useCallback(
+        (event: FocusEvent<HTMLElement>, messageRef: RefObject<HTMLElement>) => {
+            // Check if relatedTarget is inside message ref. If not remove focus
+            // WARNING : relatedTarget returns null when clicking on iframe
+            if (event.relatedTarget && !messageRef.current?.contains(event.relatedTarget)) {
+                setFocusIndex(undefined);
+            }
         },
         [focusIndex]
     );
@@ -35,5 +50,5 @@ export const useConversationFocus = (messages: Message[]) => {
         }
     }, [focusIndex]);
 
-    return { focusIndex, handleFocus, getFocusedId };
+    return { focusIndex, handleFocus, handleBlur, getFocusedId };
 };
