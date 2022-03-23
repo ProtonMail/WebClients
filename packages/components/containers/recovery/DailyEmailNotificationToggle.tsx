@@ -40,7 +40,7 @@ export const DailyEmailNotificationToggleLabel = () => (
         <Info
             url="https://protonmail.com/blog/notification-emails/"
             title={c('Info')
-                .t`When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ${MAIL_APP_NAME} account.`}
+                .t`When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${MAIL_APP_NAME} account.`}
         />
     </label>
 );
