@@ -15,7 +15,7 @@
 	box-shadow: var(--shadow-lifted);
 	color: var(--text-norm);
 
-	transition: 0.15s easing(easeOutQuint);
+	transition: 0.15s easing(easeOutQuint), transform 0s;
 
 	transform: translateX(var(--composer-drag-offset));
 
