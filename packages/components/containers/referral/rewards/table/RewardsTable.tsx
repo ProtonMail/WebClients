@@ -9,7 +9,7 @@ import UserCell from './UserCell';
 import { Loader } from '../../../../components';
 
 interface Props {
-    loading: boolean;
+    loading?: boolean;
     referrals: Referral[];
     hasReachedRewardLimit: boolean;
 }
