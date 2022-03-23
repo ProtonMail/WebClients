@@ -49,6 +49,8 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
         type === TransferType.Download ? c('Action').t`Restart download` : c('Action').t`Restart upload`;
     const removeText = c('Action').t`Remove from this list`;
 
+    const testIdPrefix = 'drive-transfers-manager:item-controls-';
+
     const getButtons = () => {
         const buttons: TransferManagerButtonProps[] = [];
         if (isPauseResumeAvailable) {
@@ -57,7 +59,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 disabled: pauseInProgress,
                 title: isTransferPaused(transfer) ? resumeText : pauseText,
                 iconName: isTransferPaused(transfer) ? 'play' : 'pause',
-                actionType: isTransferPaused(transfer) ? 'play' : 'pause',
+                testId: testIdPrefix + (isTransferPaused(transfer) ? 'play' : 'pause'),
             });
         }
 
@@ -66,7 +68,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 onClick: () => transferControls.restart(transfer, type),
                 title: restartText,
                 iconName: 'arrow-rotate-right',
-                actionType: 'restart',
+                testId: testIdPrefix + 'restart',
             });
         }
 
@@ -76,7 +78,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 title: removeText,
                 disabled: isFinalizing,
                 iconName: 'broom',
-                actionType: 'clear',
+                testId: testIdPrefix + 'clear',
             });
         }
 
@@ -86,7 +88,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 title: cancelText,
                 disabled: isFinalizing,
                 iconName: 'xmark',
-                actionType: 'cancel',
+                testId: testIdPrefix + 'cancel',
             });
         }
 

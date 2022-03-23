@@ -17,7 +17,7 @@ export interface TransferProps<T extends TransferType> {
 
 export interface TransferManagerButtonProps {
     disabled?: boolean;
-    actionType?: string;
+    testId?: string;
     title: string;
     onClick: () => void;
     iconName: string;
