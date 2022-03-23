@@ -1045,9 +1045,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "",
-        ""
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } kész",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } kész"
       ]
     },
     "Apps dropdown": {
@@ -1101,8 +1101,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ProtonMail, a Proton Calendar és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ${ mailAppName }, ${ calendarAppName }, és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
@@ -2778,9 +2778,6 @@
       "Calendar limit reached": [
         "Elérte a naptárak maximális számát"
       ],
-      "Calendar primary private key is not decrypted": [
-        "A naptár elsődleges privát kulcsa nincs visszafejtve"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nem lehetséges minden importált naptárhoz egy új naptár létrehozása, a személyes naptár korlátok miatt."
       ],
@@ -3453,7 +3450,7 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         ""
       ],
       "You're all set!": [
@@ -3461,7 +3458,7 @@
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
         ""
       ],
       "Expires soon": [
@@ -3831,6 +3828,9 @@
       ],
       "Activation in progress": [
         ""
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        "Adja a(z) ${ addressToCreate } címet a fiókjához ingyen korlátozott ideig."
       ],
       "Add image URL": [
         "Kép URL megadása"
@@ -4662,7 +4662,7 @@
         ""
       ],
       "Unlimited folders, labels, and filters": [
-        "Korlátlan számú mappák, címkék és filterek"
+        "Korlátlan számú mappa, címke és szűrő"
       ],
       "Unlimited messages": [
         "Korlátlan számú üzenet"
@@ -4715,10 +4715,10 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use keyboard shortcuts to manage your email faster.": [
-        ""
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        "Használja a(z) ${ calendarAppName } alkalmazást, hogy titkosítva tartsa napirendjét."
       ],
-      "Use Proton Calendar to keep your agenda private.": [
+      "Use keyboard shortcuts to manage your email faster.": [
         ""
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
@@ -4770,7 +4770,7 @@
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         ""
@@ -5574,6 +5574,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Aktiválás"
+      ],
       "Add folder": [
         "Új mappa"
       ],
@@ -6089,6 +6092,20 @@
       ],
       "Merge with calendar": [
         ""
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        "Mobil alkalmazás beszerzése"
+      ],
+      "Import contacts or emails": [
+        "Importája kapcsolatait vagy emailjeit"
+      ],
+      "Send a message": [
+        "Üzenet küldése"
+      ],
+      "Set up a recovery method": [
+        "Helyreállítási mód hozzáadása"
       ]
     },
     "Participant name": {

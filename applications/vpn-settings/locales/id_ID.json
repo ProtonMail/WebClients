@@ -2112,8 +2112,8 @@
       "Enter your login password to confirm your identity.": [
         "Masukkan kata sandi masuk Anda untuk mengkonfirmasi identitas Anda."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Masukkan kata sandi Anda (sebagai admin organisasi) dan kata sandi baru pengguna ini."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Masukkan kata sandi Anda (selaku admin organisasi) dan kata sandi baru untuk pengguna ${ Name } (${ Email })."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Masukkan alamat surel pemulihan Anda, dan kami akan mengirim nama pengguna Anda. (Biasanya ini alamat surel yang Anda isikan saat mendaftar.)"
@@ -2159,6 +2159,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami melalui ${ contactLink }."
+      ],
+      "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
+        "Jika Anda tidak menemukan email tersebut di kotak masuk Anda, mohon cek ${ spamFolder }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
@@ -2289,6 +2292,9 @@
       "Plan upgrade required": [
         "Memerlukan peningkatan paket berlangganan"
       ],
+      "Please make sure to check your ${ spamFolder }.": [
+        "Mohon pastikan mengecek ${ spamFolder } Anda."
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Harap diperhatikan dengan mengklik tombol Konfirmasi, akun anda akan memiliki kredit ${ creditsRemaining } yang tersisa."
       ],
@@ -2387,6 +2393,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Karena Anda pengguna setia, akun Anda memiliki fitur tambahan yang diaktifkan."
+      ],
+      "spam folder": [
+        "folder spam"
       ],
       "Starter VPN service with P2P support.": [
         "Layanan VPN permulaan dengan dukungan P2P."
@@ -2547,8 +2556,8 @@
       "You already have a free account": [
         "Anda sudah memiliki akun gratis"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
       "You are saving 20% with an annual plan": [
         "Anda menghemat 20% dengan berlangganan paket tahunan"
@@ -2683,6 +2692,9 @@
       "Billed": [
         "Tertagih"
       ],
+      "Cancelled": [
+        "Dibatalkan"
+      ],
       "Paid": [
         "Lunas"
       ],
@@ -2691,9 +2703,6 @@
       ],
       "Void": [
         "Batal"
-      ],
-      "Writeoff": [
-        "Hapus buku"
       ]
     },
     "Invoice type display as badge": {
@@ -3957,9 +3966,6 @@
       ],
       "Change password": [
         "Ubah sandi"
-      ],
-      "Change password for ${ Name } (${ Email })": [
-        "Ubah kata sandi untuk ${ Name } (${ Email })"
       ],
       "Checking invitation parameters": [
         "Memeriksa parameter undangan"

@@ -37,6 +37,9 @@
       "Activate": [
         "启用"
       ],
+      "Activate ${ addressToCreate }": [
+        ""
+      ],
       "Activate ${ Name }@pm.me": [
         "激活 ${ Name }@pm.me"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "否"
+      ],
+      "No, thanks": [
+        ""
       ],
       "OK": [
         "好"
@@ -3171,6 +3177,9 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        ""
+      ],
       "Access to all countries": [
         "解说全部线路"
       ],
@@ -3828,6 +3837,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        ""
+      ],
       "${ appName } ${ planName } credits earned": [
         "${ appName } ${ planName } 奖励体验期"
       ],
@@ -3848,9 +3860,6 @@
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 个合并日历"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "${ emailAddress } 已经是 ${ appName } 地址了"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 无效"
@@ -4350,8 +4359,8 @@
       "Enter your login password to confirm your identity.": [
         "输入您的登录密码以验证身份。"
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "输入您自己的密码（组织管理员）和此用户的新密码。"
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        ""
       ],
       "Enter your Proton account email address or username.": [
         "请输入您的 Proton 账户邮箱地址或用户名。"
@@ -4558,7 +4567,7 @@
         "互联网连接已恢复。"
       ],
       "Invite successfully sent": [
-        "邀请函已成功发送"
+        ""
       ],
       "Invited via email": [
         "已发送邀请邮件"
@@ -4758,6 +4767,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "恢复文件已过时，请更新以确保能访问您的数据"
       ],
@@ -4770,8 +4782,8 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "已开通年费账户"
+      "Paid for a ${ rewardMonths } month plan": [
+        ""
       ],
       "Paid for a monthly plan": [
         "已开通月费账户"
@@ -5265,6 +5277,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } 套装，适合家庭和小企业。"
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        ""
+      ],
       "Warning:": [
         "警告："
       ],
@@ -5352,6 +5367,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "您已登录 ${ user.Name }（${ user.Email }），并且权限有限。"
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "您也可以将导入日历与现有 Proton 日历合并。"
       ],
@@ -5384,6 +5402,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "未来 24 小时内您最多只能发送 ${ emailSendLimitNumber } 封邀请邮件"
+      ],
+      "You cannot refer ${ appName } users": [
+        ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "您不能使用 OpenVPN / IKEv2 凭证登录 ProtonVPN 客户端或 ProtonVPN 总览。${ learnMore }"
@@ -5441,6 +5462,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "即使您关闭浏览器也不会退出账户。"
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        ""
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。要使用 ${ toAppName }，请先创建账户。"
@@ -5601,6 +5625,9 @@
       "Billed": [
         "Billed"
       ],
+      "Cancelled": [
+        ""
+      ],
       "Paid": [
         "已支付"
       ],
@@ -5609,9 +5636,6 @@
       ],
       "Void": [
         "作废"
-      ],
-      "Writeoff": [
-        "注销"
       ]
     },
     "Invoice type display as badge": {
@@ -8712,11 +8736,11 @@
       "Delete ${ filter.Name }": [
         "删除 ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "删除 ${ Name } 文件夹"
+      "Delete ${ label.Name } folder": [
+        ""
       ],
-      "Delete ${ Name } label": [
-        "删除 ${ Name } 标签"
+      "Delete ${ label.Name } label": [
+        ""
       ],
       "Delete account": [
         "删除账户"
@@ -9200,6 +9224,9 @@
       ],
       "What's new": [
         "更新内容"
+      ],
+      "Your ${ domain } address is active": [
+        ""
       ],
       "Your account’s usage": [
         "您的账户使用情况"

@@ -37,6 +37,9 @@
       "Activate": [
         "Ενεργοποίηση"
       ],
+      "Activate ${ addressToCreate }": [
+        ""
+      ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "Όχι"
+      ],
+      "No, thanks": [
+        ""
       ],
       "OK": [
         "ΟΚ"
@@ -3097,6 +3103,10 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "",
+        ""
+      ],
       "Access to all countries": [
         "Πρόσβαση σε όλες τις χώρες"
       ],
@@ -3767,6 +3777,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        ""
+      ],
       "${ appName } ${ planName } credits earned": [
         "${ appName } ${ planName } πιστώσεις κερδήθηκαν"
       ],
@@ -3790,9 +3803,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "Η ${ emailAddress } είναι διεύθυνση του ${ appName }"
       ],
       "${ emailAddress } is invalid": [
         "Η ${ emailAddress } είναι μη έγκυρη"
@@ -4312,8 +4322,8 @@
       "Enter your login password to confirm your identity.": [
         "Πληκτρολογήστε τον κωδικό πρόσβασης για να επιβεβαιώσετε την ταυτότητα σας."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Εισάγετε τον δικό σας κωδικό πρόσβασης (ως διαχειριστής οργανισμού) και τον νέο κωδικό πρόσβασης αυτού του χρήστη."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        ""
       ],
       "Enter your Proton account email address or username.": [
         "Εισάγετε τη διεύθυνση email ή το όνομα χρήστη του Proton λογαριασμού σας."
@@ -4521,7 +4531,8 @@
         "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
       ],
       "Invite successfully sent": [
-        "Επιτυχής αποστολή πρόσκλησης"
+        "",
+        ""
       ],
       "Invited via email": [
         "Προσκλήθηκε μέσω email"
@@ -4721,6 +4732,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Απαρχαιωμένο αρχείο ανάκτησης. Ενημερώστε για να διασφαλίσετε πρόσβαση στα δεδομένα σας"
       ],
@@ -4733,8 +4747,9 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "Πλήρωσε για 12μηνο πλάνο"
+      "Paid for a ${ rewardMonths } month plan": [
+        "",
+        ""
       ],
       "Paid for a monthly plan": [
         "Πλήρωσε για μηνιαίο πλάνο"
@@ -5229,6 +5244,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } πακέτο για οικογένειες και μικρές επιχειρήσεις."
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        ""
+      ],
       "Warning:": [
         "Προειδοποίηση:"
       ],
@@ -5316,6 +5334,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Αυτήν τη στιγμή είστε συνδεδεμένοι ως χρήστης ${ user.Name } (${ user.Email }) και έχετε περιορισμένη πρόσβαση."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του Proton."
       ],
@@ -5348,6 +5369,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Δεν μπορείτε να αποστέλλετε περισσότερα από ${ emailSendLimitNumber } προσκλήσεις email για τις επόμενες 24 ώρες"
+      ],
+      "You cannot refer ${ appName } users": [
+        ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Δεν μπορείτε να χρησιμοποιήσετε τα διαπιστευτήρια OpenVPN / IKEv2 για να συνδεθείτε σε εφαρμογές της ProtonVPN ή στον πίνακα ελέγχου της ProtonVPN. ${ learnMore }"
@@ -5405,6 +5429,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Η είσοδός σας θα διατηρηθεί ακόμα και μετά το κλείσιμο του περιηγητή."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        ""
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ο λογαριασμός σας ${ BRAND_NAME } συνδέεται με ${ externalEmailAddress }. Για να χρησιμοποιήσετε ${ toAppName }, παρακαλώ δημιουργήστε μια διεύθυνση."
@@ -5565,6 +5592,9 @@
       "Billed": [
         "Χρεωμένο"
       ],
+      "Cancelled": [
+        ""
+      ],
       "Paid": [
         "Πληρωμένο"
       ],
@@ -5573,9 +5603,6 @@
       ],
       "Void": [
         "Κενό"
-      ],
-      "Writeoff": [
-        "Γραφήματα"
       ]
     },
     "Invoice type display as badge": {
@@ -8695,11 +8722,11 @@
       "Delete ${ filter.Name }": [
         "Διαγραφή ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "Διαγραφή ${ Name } φακέλου"
+      "Delete ${ label.Name } folder": [
+        ""
       ],
-      "Delete ${ Name } label": [
-        "Διαγραφή ${ Name } ετικέτας"
+      "Delete ${ label.Name } label": [
+        ""
       ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -9184,6 +9211,9 @@
       ],
       "What's new": [
         "Τι νέο υπάρχει"
+      ],
+      "Your ${ domain } address is active": [
+        ""
       ],
       "Your account’s usage": [
         ""

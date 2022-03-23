@@ -1041,8 +1041,8 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } telah dituntaskan"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } telah dituntaskan"
       ]
     },
     "Apps dropdown": {
@@ -1096,8 +1096,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Akses Beta memperbolehkan Anda menggunakan versi beta dari ProtonMail, Proton Calendar, dan Proton Drive sebelum mereka dirilis ke publik. Ini berarti Anda dapat menjadi yang pertama untuk mencoba produk baru, mendapatkan pembaruan terbaru, dan menggunakan fitur-fitur terbaru."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Akses Beta memungkinkan Anda untuk menggunakan versi beta ${ mailAppName }, ${ calendarAppName }, dan Proton Drive sebelum produk-produk ini dirilis secara publik. Dengan Akses Beta, Anda berkesempatan menjadi orang pertama yang mencoba berbagai produk, pembaruan, dan fitur terbaru kami."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
@@ -2767,9 +2767,6 @@
       "Calendar limit reached": [
         "Batas kalender tercapai"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Kunci pribadi utama kalender tidak didekripsi"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Tidak dapat membuat kalendar baru dari kalender-kalender yang diimpor karena batas jumlah kalender maksimal telah tercapai."
       ],
@@ -3432,16 +3429,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "Kami telah menambah kuota penyimpanan Anda menjadi ${ totalGBStorageAfterCompletion } GB. Dapatkan kuota penyimpanan yang jauh lebih besar dan berbagai fitur premium lainnya sekarang juga."
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "Anda kini sudah siap!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "Selesaikan seluruh langkah-langkah yang tertera dan dapatkan total kuota penyimpanan sebesar ${ totalGBStorageAfterCompletion } GB pada akun Anda"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "Akan segera kedaluwarsa"
@@ -3775,6 +3772,9 @@
       ],
       "Activation in progress": [
         "Aktivasi sedang dalam proses"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        "Tambahkan ${ addressToCreate } ke akun Anda secara gratis, hanya untuk waktu terbatas."
       ],
       "Add image URL": [
         "Sisipkan gambar melalui URL"
@@ -4643,11 +4643,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        "Gunakan ${ calendarAppName } untuk menjaga agar agenda Anda tetap privat."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Gunakan pintasan kibor untuk mempersingkat waktu."
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Gunakan Proton Calendar agar agenda Anda senantiasa bersifat pribadi."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Gunakan perangkat bergerak Anda, pindai kode QR ini atau kunjungi ${ link }."
@@ -5492,6 +5492,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Aktifkan"
+      ],
       "Add folder": [
         "Tambah folder"
       ],
@@ -6002,6 +6005,20 @@
       ],
       "Merge with calendar": [
         "Gabungkan dengan kalender"
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        "Dapatkan aplikasi mobile"
+      ],
+      "Import contacts or emails": [
+        "Impor kontak atau email"
+      ],
+      "Send a message": [
+        "Kirim pesan"
+      ],
+      "Set up a recovery method": [
+        "Tentukan metode pemulihan"
       ]
     },
     "Participant name": {

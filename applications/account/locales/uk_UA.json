@@ -37,6 +37,9 @@
       "Activate": [
         "Активувати"
       ],
+      "Activate ${ addressToCreate }": [
+        "Активувати ${ addressToCreate }"
+      ],
       "Activate ${ Name }@pm.me": [
         "Активувати ${ Name }@pm.me"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "Ні"
+      ],
+      "No, thanks": [
+        "Ні, дякую"
       ],
       "OK": [
         "Гаразд"
@@ -3237,6 +3243,12 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "Access to all countries": [
         "Доступ до всіх країн"
       ],
@@ -3933,6 +3945,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        ""
+      ],
       "${ appName } ${ planName } credits earned": [
         ""
       ],
@@ -3962,9 +3977,6 @@
         "${ calendarsToBeMergedCount } об'єднані календарі",
         "${ calendarsToBeMergedCount } об'єднаних календарів",
         "${ calendarsToBeMergedCount } об'єднаних календарів"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        ""
       ],
       "${ emailAddress } is invalid": [
         ""
@@ -4108,13 +4120,13 @@
         "1. Запрошуйте друзів до Proton"
       ],
       "2. They try ${ appName } ${ planName }": [
-        ""
+        "Вони пробують ${ appName } ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "До вашої передплати застосовано знижку 20% з купоном ${ code }"
       ],
       "3. You earn credits": [
-        ""
+        "Ви заробили бонуси"
       ],
       "30 days money-back guarantee.": [
         "Гарантія повернення коштів протягом 30 днів."
@@ -4524,8 +4536,8 @@
       "Enter your login password to confirm your identity.": [
         "Введіть пароль входу, щоб підтвердити вашу особу."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Введіть власний пароль (як адміністратор організації) і новий пароль цього користувача."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Введіть власний пароль (як адміністратор організації) та новий пароль для користувача ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Уведіть свою адресу е-пошти Proton або ім'я користувача."
@@ -4537,7 +4549,7 @@
         "Введіть свій резервний номер телефону і ми надішлемо вам ваше ім'я користувача або адресу електронної пошти."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        ""
+        "Запрошення на події та RSVPs будуть надіслані цією мовою."
       ],
       "Expired": [
         "Протерміновано"
@@ -4735,7 +4747,10 @@
         "З'єднання з Інтернетом відновлено."
       ],
       "Invite successfully sent": [
-        "Запрошення успішно відправлено"
+        "Запрошення успішно відправлено",
+        "Запрошення успішно відправлено",
+        "Запрошень успішно відправлено",
+        "Запрошень успішно відправлено"
       ],
       "Invited via email": [
         "Запрошено електронною поштою"
@@ -4861,7 +4876,7 @@
         "Немає ключів шифрування контакту"
       ],
       "No credit card required": [
-        ""
+        "Кредитна картка не потрібна"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Немає налаштованого способу відновлення даних. Ви ризикуєте втратити доступ до своїх даних"
@@ -4935,6 +4950,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В іншому випадку доступ до вашого облікового запису буде обмежено, а ваш обліковий запис буде вимкнено."
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        "Наш новий домен ${ domain } — це зручний варіант для надсилання та отримання електронних листів. Ви все одно зможете використовувати вашу оригінальну адресу ${ protonMailAppName }."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Застарілий файл відновлення; оновіть для гарантії доступу до своїх даних"
       ],
@@ -4947,7 +4965,10 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
+      "Paid for a ${ rewardMonths } month plan": [
+        "",
+        "",
+        "",
         ""
       ],
       "Paid for a monthly plan": [
@@ -5170,7 +5191,7 @@
         ""
       ],
       "Signed up via your link": [
-        "Підписався через ваше посилання"
+        "Реєструється за вашим посиланням"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
@@ -5239,7 +5260,7 @@
         "Ці файли конфігурації дають змогу обрати сервер ProtonVPN, з яким ви з'єднуєтесь при використанні сторонньої програми VPN чи налаштованому VPN-з'єднанні маршрутизатора."
       ],
       "This 30-day free trial is not available any other way.": [
-        ""
+        "Ця 30-денна пробна версія більше не доступна жодним чином."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
@@ -5445,6 +5466,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Комплект VPN + ${ mailAppName } для родин та малого бізнесу."
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        ""
+      ],
       "Warning:": [
         "Попередження:"
       ],
@@ -5532,6 +5556,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Ви зараз увійшли як ${ user.Name } (${ user.Email }) і маєте обмежений доступ."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
       ],
@@ -5563,6 +5590,9 @@
         "Ви можете використовувати такі облікові дані для з'єднання з сервером ProtonVPN через сторонні програми з відкритим кодом, наприклад, Tunnelblick для macOS чи OpenVPN для GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        ""
+      ],
+      "You cannot refer ${ appName } users": [
         ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
@@ -5605,7 +5635,7 @@
         "Ви досягли 100% свого обсягу сховища. Ви не можете надсилати чи отримувати нові повідомлення. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        ""
+        "Вам досі потрібно прийняти запрошення від організатора, щоб він міг побачити вашу відповідь."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Ви ${ loseAllData } у вашому обліковому записі ${ BRAND_NAME }. Щоб відновити його, вам потрібно буде ввести свій старий пароль."
@@ -5621,6 +5651,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Сеанс буде активним навіть після закриття браузера."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        ""
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }. Для використання ${ toAppName }, створіть адресу."
@@ -5781,6 +5814,9 @@
       "Billed": [
         "Рахунок виставлено"
       ],
+      "Cancelled": [
+        "Скасовано"
+      ],
       "Paid": [
         "Сплачено"
       ],
@@ -5789,9 +5825,6 @@
       ],
       "Void": [
         "Анульовано"
-      ],
-      "Writeoff": [
-        "Списання"
       ]
     },
     "Invoice type display as badge": {
@@ -7079,7 +7112,7 @@
         "Умови"
       ],
       "Terms and conditions": [
-        ""
+        "Положення й умови"
       ],
       "Upgrade": [
         "Покращити"
@@ -8671,7 +8704,7 @@
     },
     "Title": {
       "${ appName } ${ planName } Trial": [
-        ""
+        "Пробна версія ${ appName } ${ planName }"
       ],
       "${ appName } customization": [
         "Налаштування ${ appName }"
@@ -8949,11 +8982,11 @@
       "Delete ${ filter.Name }": [
         "Видалити ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "Видалити теку ${ Name }"
+      "Delete ${ label.Name } folder": [
+        "Видалити теку ${ label.Name }"
       ],
-      "Delete ${ Name } label": [
-        "Видалити мітку ${ Name }"
+      "Delete ${ label.Name } label": [
+        "Видалити мітку ${ label.Name }"
       ],
       "Delete account": [
         "Видалити обліковий запис"
@@ -8974,7 +9007,7 @@
         "Видалити користувача"
       ],
       "Disable ${ email }": [
-        ""
+        "Dbvryenb ${ email }"
       ],
       "Disable two-factor authentication": [
         "Вимкнути двоетапну перевірку"
@@ -9076,7 +9109,7 @@
         "Отримайте ProtonVPN Plus для доступу до всіх серверів"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Отримайте до 18 місяців ${ appName } ${ planName } безплатно"
       ],
       "Gift code": [
         "Подарунковий код"
@@ -9440,6 +9473,9 @@
       ],
       "What's new": [
         "Що нового"
+      ],
+      "Your ${ domain } address is active": [
+        ""
       ],
       "Your account’s usage": [
         "Використання вашого облікового запису"

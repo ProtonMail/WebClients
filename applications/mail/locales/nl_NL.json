@@ -1045,9 +1045,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } voltooid",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } voltooid"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } voltooid",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } voltooid"
       ]
     },
     "Apps dropdown": {
@@ -1101,8 +1101,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Bèta-toegang laat u de bèta versie van ProtonMail, Proton Calendar, en Proton Drive gebruiken voordat ze aan het publiek worden vrijgegeven. Dit betekent dat u de eerste bent om nieuwe producten uit te proberen, nieuwe updates te krijgen en nieuwe functies te gebruiken."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Bèta toegang laat u gebruikmaken van de bètaversie van ${ mailAppName }, ${ calendarAppName } en Proton Drive voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
@@ -2767,7 +2767,7 @@
         "Primaire adressleutel is niet gevonden"
       ],
       "Attachments are limited to 25 MB": [
-        "Het limiet voor de grootte van bijlagen is 25 MB"
+        "De limiet van bijlagen is 25 MB"
       ],
       "Authentication canceled.": [
         "Authenticatie geannuleerd."
@@ -2777,9 +2777,6 @@
       ],
       "Calendar limit reached": [
         "Agendalimiet bereikt"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Primaire agendasleutel is niet gedecodeerd"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda's."
@@ -3089,7 +3086,7 @@
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "U kunt niet meer dan één opstelvenster tegelijk openen",
-        "U kunt niet meer dan ${ maxActiveComposer } opstelvensters tegelijk openen"
+        "U kunt niet meer dan ${ maxActiveComposer } componistenvensters tegelijk openen"
       ],
       "You did not provide a file.": [
         "U heeft geen bestand geselecteerd."
@@ -3453,16 +3450,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "We hebben de totale opslagruimte van uw account verhoogd naar ${ totalGBStorageAfterCompletion } GB. Krijg vandaag nog extra opslagruimte en ontgrendel premium functies."
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "U bent er helemaal klaar voor!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "Voltooi alle stappen en krijg een totaal van ${ totalGBStorageAfterCompletion } GB op uw account"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "Verloopt binnenkort"
@@ -3831,6 +3828,9 @@
       ],
       "Activation in progress": [
         "Activatie in voortgang"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        "Voeg ${ addressToCreate } gratis toe aan uw account, slechts voor een beperkte tijd beschikbaar."
       ],
       "Add image URL": [
         "Voeg URL van afbeelding toe"
@@ -4472,7 +4472,7 @@
         "Sessie verlopen"
       ],
       "Set a recovery phrase": [
-        "Stel een herstel zin in"
+        "Stel een herstelzin in"
       ],
       "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         "Stel ProtonMail in als uw standaard e-mailapplicatie voor deze browser. ProtonMail wordt automatisch geopend wanneer u op een e-maillink klikt."
@@ -4715,11 +4715,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        "Gebruik ${ calendarAppName } om uw agenda privé te houden."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Gebruik sneltoetsen om uw e-mails sneller te beheren."
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Gebruik Proton Calendar om uw agenda privé te houden."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Met uw mobiele apparaat, scan deze QR-Code of bezoek ${ link }."
@@ -5574,6 +5574,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Activeren"
+      ],
       "Add folder": [
         "Map toevoegen"
       ],
@@ -6089,6 +6092,20 @@
       ],
       "Merge with calendar": [
         "Samenvoegen met agenda"
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        "Download de mobiele app"
+      ],
+      "Import contacts or emails": [
+        "Contacten of e-mails importeren"
+      ],
+      "Send a message": [
+        "Verzend een bericht"
+      ],
+      "Set up a recovery method": [
+        "Een herstelmethode instellen"
       ]
     },
     "Participant name": {

@@ -1004,7 +1004,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        ""
+        "今すぐ退出することで、いくつかの連絡先がインポートされない可能性があります"
       ]
     },
     "Alt": {
@@ -1041,8 +1041,8 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } 完了"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -1096,8 +1096,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "ベータ版アクセスでは、ProtonMail、Proton Calendar、Proton Drive のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
@@ -2600,7 +2600,7 @@
         "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        ""
+        "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
@@ -2767,11 +2767,8 @@
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
       ],
-      "Calendar primary private key is not decrypted": [
-        "カレンダーのプライマリー秘密鍵が復号されていません"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
       ],
       "Choose a date in the future.": [
         "未来の日付を入力してください。"
@@ -2801,7 +2798,7 @@
         "メールアドレス ${ email } が見つかりませんでした。"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        ""
+        "復号エラー: 暗号化されたメッセージのコンテンツ復号に失敗しました。"
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         ""
@@ -2999,7 +2996,7 @@
         "Proton はメッセージを復号できません。すべてのキーがアクティブか確認してください。"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        ""
+        "いくつかの添付ファイルは復号できませんでした。\n関連するプライベートキーを持っている場合は、GnuPG などのプログラムを使ってファイルを復号できます。"
       ],
       "The folder name is too long. Please choose a different name.": [
         "フォルダー名が長すぎます。別の名前を選択してください。"
@@ -3297,7 +3294,7 @@
         "サポートされていない招待です"
       ],
       "Unsupported response": [
-        ""
+        "未対応のレスポンスです"
       ],
       "We could not cancel the event in your calendar": [
         ""
@@ -3309,7 +3306,7 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
+        "回答は送信されましたが、イベントをカレンダーに追加できませんでした"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         ""
@@ -3432,16 +3429,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "アカウントの合計ストレージ容量が ${ totalGBStorageAfterCompletion } GB に増加しました。いますぐ追加のストレージとプレミアム機能を手に入れましょう。"
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "すべて成し遂げました!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "すべてのステップを達成すると、合計 ${ totalGBStorageAfterCompletion } GB がアカウントに追加されます"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "もうすぐ期限切れになります"
@@ -3585,7 +3582,7 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        ""
+        "${ totalImported }/${ totalToImport } 件の連絡先が暗号化され、連絡先リストに追加されました"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
@@ -3608,7 +3605,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        ""
+        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先のインポートに成功しました。"
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
@@ -3637,7 +3634,7 @@
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        ""
+        "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
       ],
       "No contact can be imported. Click for details": [
         "連絡先をインポートすることはできません。詳細はクリックしてください"
@@ -3775,6 +3772,9 @@
       ],
       "Activation in progress": [
         "アクティベーションが進行中です"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        ""
       ],
       "Add image URL": [
         "追加する画像のURL"
@@ -4287,7 +4287,7 @@
         "安全に保ってください。これはパスワードをリセットしたときに、アカウントにアクセスしたりデータを復元するのに使われます。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        ""
+        "グループに割り当てられたアドレスは削除されません。"
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
@@ -4371,7 +4371,7 @@
         "スクリーンショットが添付されました"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        ""
+        "検索時間が長すぎますか? 検索セッションから ${ dropdownButton } か ${ toggleOffButton } してください。"
       ],
       "Seems like you are all caught up for now": [
         "現在、確認すべきメッセージはありません"
@@ -4632,7 +4632,7 @@
         "アップグレードしてサードパーティのデスクトップクライアントで ProtonMail を使用します。"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "次の ${ appName } ${ planName } 特典を失わないために今すぐアップグレードしてください。"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -4643,11 +4643,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        ""
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "キーボードショートカットを使ってメールを素早く管理します。"
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Proton Calender を利用して予定をプライベートに管理します。"
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         ""
@@ -5492,6 +5492,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        ""
+      ],
       "Add folder": [
         "フォルダーを追加"
       ],
@@ -5535,7 +5538,7 @@
         ""
       ],
       "Enable your address to answer this invitation.": [
-        ""
+        "あなたのアドレスで招待の回答できるようにします。"
       ],
       "Folders": [
         "フォルダ"
@@ -6004,6 +6007,20 @@
         "カレンダーと結合"
       ]
     },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
+        ""
+      ]
+    },
     "Participant name": {
       "You": [
         "あなた"
@@ -6136,10 +6153,10 @@
         "${ countContacts } 件のうち ${ contactsExported.length } 件の連絡先が正常にエクスポートされました。"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        ""
+        "${ totalBeDeleted } 件のうち ${ model.deleted.length } 件の連絡先が正常に削除されました。"
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        ""
+        "${ totalBeMerged } 件のうち ${ model.submitted.length } 件の連絡先が正常に統合されました。"
       ],
       "No contacts exported.": [
         "連絡先はエクスポートされていません。"
@@ -6375,7 +6392,7 @@
         "友だちを招待して報酬を手に入れよう!"
       ],
       "Message Content Search": [
-        ""
+        "メッセージの内容を検索"
       ],
       "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
         "安全にスケジュール、ファイル、そしてオンライン生活を管理しましょう! すべての Proton サービスはここにあります。"
@@ -6384,7 +6401,7 @@
         "あなたのプライバシーを保護するために、Proton はこのメッセージのメールトラッカーをブロックしました"
       ],
       "You can now schedule your messages to be sent later": [
-        ""
+        "あとでメッセージを送信するようスケジュールしました"
       ],
       "You can now search the content of your encrypted emails.": [
         "暗号化されたメールの内容の検索ができるようになりました。"

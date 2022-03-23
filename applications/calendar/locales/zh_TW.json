@@ -612,8 +612,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "測試版體驗讓您可以在釋出到公眾前使用 ProtonMail、Proton Calendar 與 Proton Drive 的測試版。這代表了您會是第一個嘗試新產品、取得新的更新以及使用新功能的人。"
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "測試版體驗讓您可以在釋出到公眾前使用 ${ mailAppName }、${ calendarAppName } 與 Proton Drive 的測試版。這代表了您會是第一個嘗試新產品、取得新的更新以及使用新功能的人。"
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "如果您遇到了問題，您還是可以停用測試版體驗。"
@@ -1978,9 +1978,6 @@
       "Calendar limit reached": [
         "行事曆數目已達上限"
       ],
-      "Calendar primary private key is not decrypted": [
-        "行事曆主要私密金鑰並未解密"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
       ],
@@ -3205,8 +3202,8 @@
       "You are about to open another browser tab and visit:": [
         "您即將開啟另一瀏覽器索引標籤並造訪："
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "您目前已登入為 ${ user.Name } (${ user.Email })，帳號的存取受限。"
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "您目前已登入為 ${ user.Name } (${ user.Email })。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "您亦可將匯入的行事曆與現有的 Proton 行事曆合併。"
@@ -3964,6 +3961,20 @@
         "需要注意的是 ${ boldNextStep } 以開始您的匯入程序。"
       ]
     },
+    "Onboarding": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        "行事曆是您活著的印記。使用 ${ appName } 保持您的生活保密與私密。"
+      ],
+      "Import events": [
+        "匯入事件"
+      ],
+      "Meet your new encrypted calendar": [
+        "迎接您全新的加密行事曆"
+      ],
+      "Start using ${ appName }": [
+        "開始使用 ${ appName }"
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "選擇一個顯示名稱"
@@ -3994,20 +4005,6 @@
       ],
       "You can change this anytime in your settings.": [
         "您可以隨時在設定中變更。"
-      ]
-    },
-    "Onboarding ProtonCalendar": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "行事曆是您活著的印記。使用 ${ appName } 保持您的生活保密與私密。"
-      ],
-      "Import events": [
-        "匯入事件"
-      ],
-      "Meet your new encrypted calendar": [
-        "迎接您全新的加密行事曆"
-      ],
-      "Start using ${ appName }": [
-        "開始使用 ${ appName }"
       ]
     },
     "Option": {

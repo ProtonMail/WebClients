@@ -108,7 +108,7 @@
         "Kopya, Gizli kopya"
       ],
       "CC BCC": [
-        "CC BCC"
+        "Kopya Gizli Kopya"
       ],
       "Change page": [
         "Sayfayı değiştir"
@@ -1045,9 +1045,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } tamamlandı",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } tamamlandı"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } tamamlandı",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } tamamlandı"
       ]
     },
     "Apps dropdown": {
@@ -1101,8 +1101,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta erişimi, ProtonMail, Proton Calendar ve Proton Drive beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta erişimi, ${ mailAppName }, ${ calendarAppName } ve Proton Drive beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
@@ -2778,9 +2778,6 @@
       "Calendar limit reached": [
         "Takvim sınırına ulaşıldı"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Takvim birincil kişisel anahtarının şifresi çözülemedi"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kişisel takvim sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler oluşturulamıyor."
       ],
@@ -3453,16 +3450,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "Hesabınızın toplam depolama alanını ${ totalGBStorageAfterCompletion } GB yaptık. Bugün ek depolama alanı alın ve ücretli özelliklerin kilidini açın."
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "Her şey tamam!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "Tüm adımları tamamlayın ve hesabınızın depolama alanını ${ totalGBStorageAfterCompletion } GB yapın"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "Yakında geçersiz olacak"
@@ -3831,6 +3828,9 @@
       ],
       "Activation in progress": [
         "Etkinleştirme sürüyor"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        "Hesabınıza ücretsiz ${ addressToCreate } ekleyin. Bu kampanya sınırlı bir süre için geçerlidir."
       ],
       "Add image URL": [
         "Adresten görsel ekle"
@@ -4638,7 +4638,7 @@
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle kontrol etmemiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
+        "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan kişi şifreleme anahtarını yeniden etkinleştirmeniz gerekir. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
@@ -4715,11 +4715,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "Adres: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        "Takviminizi kişisel tutmak için ${ calendarAppName } kullanın."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "E-postanızı daha hızlı yönetmek için tuş takımı kısayollarını kullanın."
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Günlüğünüzü gizli tutmak için Proton Calendar kullanın."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Mobil aygıtınızı kullanarak, bu karekodu tarayın veya ${ link } adresine gidin."
@@ -5183,7 +5183,7 @@
         "Tarayıcı"
       ],
       "Browser version": [
-        "Tarayıcı Sürümü"
+        "Tarayıcı sürümü"
       ],
       "Calendar": [
         "Takvim"
@@ -5574,6 +5574,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Etkinleştir"
+      ],
       "Add folder": [
         "Klasör ekle"
       ],
@@ -6089,6 +6092,20 @@
       ],
       "Merge with calendar": [
         "Takvim ile birleştir"
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        "Mobil uygulamayı edinin"
+      ],
+      "Import contacts or emails": [
+        "Kişileri veya e-postaları içe aktarın"
+      ],
+      "Send a message": [
+        "Bir ileti gönderin"
+      ],
+      "Set up a recovery method": [
+        "Bir kurtarma yöntemi ayarlayın"
       ]
     },
     "Participant name": {
@@ -6992,7 +7009,7 @@
         "İletiyi sil"
       ],
       "Deleting contacts": [
-        "Kişileri silme"
+        "Kişileri sil"
       ],
       "Edit contact": [
         "Kişiyi düzenle"
@@ -7674,7 +7691,7 @@
         "${ interval } yılda bir, ${ untilString }"
       ],
       "Yearly": [
-        "Yıllık"
+        "Yılda bir"
       ],
       "Yearly, ${ timesString }": [
         "Yılda bir, ${ timesString }"

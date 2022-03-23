@@ -1041,8 +1041,8 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } 已完成"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -1096,8 +1096,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "开启测试版功能后您将使用 ProtonMail、Proton Calendar 和 Proton Drive 未正式发布的公测版本，可以抢先体验新产品和新功能。"
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "如果使用过程中遇到问题，您可以随时关闭该选项。"
@@ -2767,9 +2767,6 @@
       "Calendar limit reached": [
         "日历数量达到上限"
       ],
-      "Calendar primary private key is not decrypted": [
-        "日历主密钥未解密。"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "由于个人日历限制，无法为所有导入的日历创建新日历。"
       ],
@@ -3432,16 +3429,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "我们已将您的存储空间升至 ${ totalGBStorageAfterCompletion } GB。您还可以升级账户，从而获得更大的存储空间和更高级的功能。"
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "一切就绪！"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "完成所有步骤即可将存储空间升至 ${ totalGBStorageAfterCompletion } GB"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "即将过期"
@@ -3775,6 +3772,9 @@
       ],
       "Activation in progress": [
         "正在进行激活"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        ""
       ],
       "Add image URL": [
         "添加图片地址"
@@ -4643,11 +4643,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "网址：${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        ""
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用键盘快捷键让邮件操作更加迅捷。"
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "使用 Proton Calendar 守护您的日程隐私。"
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "使用移动设备扫描此二维码或打开 ${ link }。"
@@ -5492,6 +5492,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        ""
+      ],
       "Add folder": [
         "添加文件夹"
       ],
@@ -6002,6 +6005,20 @@
       ],
       "Merge with calendar": [
         "与日历合并"
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
+        ""
       ]
     },
     "Participant name": {
