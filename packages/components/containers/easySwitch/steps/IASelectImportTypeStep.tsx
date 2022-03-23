@@ -23,6 +23,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Checkbox, Icon, Label as FormLabel, LabelStack, UnderlineButton } from '../../../components';
 import { useModals } from '../../../hooks';
@@ -324,7 +325,7 @@ const IASelectImportTypeStep = ({
                                         {mailErrors.includes(MailImportPayloadError.LABEL_NAMES_TOO_LONG) && (
                                             <div className="mb1">
                                                 {c('Error')
-                                                    .t`Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.`}
+                                                    .t`Some of your label names exceed ${MAIL_APP_NAME}'s maximum character limit. Please customize the import to edit these names.`}
                                             </div>
                                         )}
 

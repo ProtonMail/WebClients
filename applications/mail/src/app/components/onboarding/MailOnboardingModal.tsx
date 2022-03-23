@@ -35,11 +35,11 @@ const MailOnboardingModal = (props: any) => {
                                 img={
                                     <img
                                         src={onboardingMailWelcome}
-                                        alt={c('Onboarding ProtonMail').t`Meet your encrypted mailbox`}
+                                        alt={c('Onboarding').t`Meet your encrypted mailbox`}
                                     />
                                 }
-                                title={c('Onboarding ProtonMail').t`Meet your encrypted mailbox`}
-                                description={c('Onboarding ProtonMail')
+                                title={c('Onboarding').t`Meet your encrypted mailbox`}
+                                description={c('Onboarding')
                                     .t`${appName} is now more modern and customizable while still protecting your data with advanced encryption.`}
                             />
                         </OnboardingStep>
@@ -48,8 +48,8 @@ const MailOnboardingModal = (props: any) => {
                     usedMailMobileAppFeature === undefined || usedMailMobileAppFeature.Value || user.isFree ? null : (
                         <OnboardingStep submit={c('Onboarding').t`Next`} onSubmit={onNext} close={null}>
                             <OnboardingContent
-                                title={c('Onboarding ProtonMail').t`Get the ${appName} mobile app`}
-                                description={c('Onboarding ProtonMail').t`Available on iOS and Android.`}
+                                title={c('Onboarding').t`Get the ${appName} mobile app`}
+                                description={c('Onboarding').t`Available on iOS and Android.`}
                             >
                                 <div className="text-center">
                                     <QRCode value="https://pm.me/app?type=qr" size={200} />
@@ -74,11 +74,11 @@ const MailOnboardingModal = (props: any) => {
                                 img={
                                     <img
                                         src={onboardingImportAssistant}
-                                        alt={c('Onboarding ProtonMail').t`Import your messages`}
+                                        alt={c('Onboarding').t`Import your messages`}
                                     />
                                 }
-                                title={c('Onboarding ProtonMail').t`Import your messages`}
-                                description={c('Onboarding ProtonMail')
+                                title={c('Onboarding').t`Import your messages`}
+                                description={c('Onboarding')
                                     .t`Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.`}
                             />
                         </OnboardingStep>

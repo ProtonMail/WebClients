@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 import { MailSettings, ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
-import { CONTACT_PGP_SCHEMES, MIME_TYPES_MORE } from '@proton/shared/lib/constants';
+import { BRAND_NAME, CONTACT_PGP_SCHEMES, MIME_TYPES_MORE } from '@proton/shared/lib/constants';
 
 import { useNotifications } from '../../hooks';
 import SelectKeyFiles from '../keys/shared/SelectKeyFiles';
@@ -83,7 +83,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
             {!hasApiKeys && (
                 <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">
                     {c('Info')
-                        .t`Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.`}
+                        .t`Setting up PGP allows you to send end-to-end encrypted emails with a non-${BRAND_NAME} user that uses a PGP compatible service.`}
                 </Alert>
             )}
             {!!model.publicKeys.pinnedKeys.length && askForPinning && (
@@ -104,7 +104,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
             {!hasApiKeys && !model.sign && (
                 <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">{c(
                     'Info'
-                ).t`Only change these settings if you are using PGP with non-ProtonMail recipients.`}</Alert>
+                ).t`Only change these settings if you are using PGP with non-${BRAND_NAME} recipients.`}</Alert>
             )}
             {model.isPGPExternalWithoutWKDKeys && noPinnedKeyCanSend && (
                 <Alert

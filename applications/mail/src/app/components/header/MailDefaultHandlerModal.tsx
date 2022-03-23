@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 import { AlertModal, Button, ModalProps } from '@proton/components';
 import { Href } from '@proton/components/components/link';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
 import { registerMailToProtocolHandler } from '../../helpers/url';
 
 const MailDefaultHandlerModal = (props: ModalProps) => {
@@ -22,7 +24,7 @@ const MailDefaultHandlerModal = (props: ModalProps) => {
             {...props}
         >
             <span>{c('Info')
-                .t`Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.`}</span>
+                .t`Set ${MAIL_APP_NAME} as your default email application for this browser. ${MAIL_APP_NAME} will open automatically when you click an email link.`}</span>
             <Href
                 className="ml0-5"
                 url="https://protonmail.com/support/knowledge-base/set-default-email-handler/"

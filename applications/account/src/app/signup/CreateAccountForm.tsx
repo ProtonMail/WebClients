@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import * as React from 'react';
+import { useEffect, useRef, useState, KeyboardEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
+
 import {
     Button,
     Challenge,
@@ -26,6 +26,7 @@ import {
     confirmPasswordValidator,
     getMinPasswordLengthMessage,
 } from '@proton/shared/lib/helpers/formValidators';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { HumanApi } from './helpers/humanApi';
 import InsecureEmailInfo from './InsecureEmailInfo';
@@ -155,7 +156,7 @@ const CreateAccountForm = ({
                     setUsernameError('');
                     setUsername(value);
                 }}
-                onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
                     if (e.key === 'Enter') {
                         // formRef.submit does not trigger handler
                         handleSubmit();
@@ -178,7 +179,7 @@ const CreateAccountForm = ({
                     setEmailError('');
                     setEmail(value);
                 }}
-                onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
                     if (e.key === 'Enter') {
                         handleSubmit();
                     }
@@ -245,7 +246,7 @@ const CreateAccountForm = ({
                             }}
                         >
                             {signupType === 'email'
-                                ? c('Action').t`Create a secure ProtonMail address instead`
+                                ? c('Action').t`Create a secure ${MAIL_APP_NAME} address instead`
                                 : c('Action').t`Use your current email address instead`}
                         </UnderlineButton>
                     </div>

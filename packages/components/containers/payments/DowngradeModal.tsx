@@ -1,7 +1,9 @@
 import { c } from 'ttag';
-import { PLAN_SERVICES } from '@proton/shared/lib/constants';
+
+import { MAIL_APP_NAME, PLAN_SERVICES, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { UserModel } from '@proton/shared/lib/interfaces';
+
 import { ConfirmModal, Alert } from '../../components';
 
 interface Props {
@@ -26,18 +28,19 @@ const DowngradeModal = ({ user, ...rest }: Props) => {
             <Alert className="mb1" type="error">
                 {hasBundle
                     ? c('Info')
-                          .t`If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.`
+                          .t`If you proceed with the downgrade, you will lose access to ${MAIL_APP_NAME} and ${VPN_APP_NAME} paid features.`
                     : hasMail
                     ? c('Info')
-                          .t`If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.`
-                    : c('Info').t`If you proceed with the downgrade, you will lose access to ProtonVPN paid features.`}
+                          .t`If you proceed with the downgrade, you will lose access to ${MAIL_APP_NAME} paid features, including additional storage and filters.`
+                    : c('Info')
+                          .t`If you proceed with the downgrade, you will lose access to ${VPN_APP_NAME} paid features.`}
             </Alert>
             <Alert className="mb1" type="warning">
                 {[
                     hasMail &&
                         c('Info')
-                            .t`You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.`,
-                    hasVpn && c('Info').t`Downgrading will terminate any connections to paid ProtonVPN servers.`,
+                            .t`You must disable or remove any additional ${MAIL_APP_NAME} users, addresses, and custom domains before you can downgrade.`,
+                    hasVpn && c('Info').t`Downgrading will terminate any connections to paid ${VPN_APP_NAME} servers.`,
                 ]
                     .filter(Boolean)
                     .join(' ')}

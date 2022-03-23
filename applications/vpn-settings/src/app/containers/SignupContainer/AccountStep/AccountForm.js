@@ -145,7 +145,7 @@ const AccountForm = ({ model, onSubmit }) => {
                         <span className="mr0-5">{c('Label').t`Username`}</span>
                         <Info
                             title={c('Tooltip')
-                                .t`Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.`}
+                                .t`Username which is used for all Proton services. This can also be used later to create a secure ${MAIL_APP_NAME} account.`}
                         />
                     </Label>
                     <Field className="wauto flex-item-fluid">

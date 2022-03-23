@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
@@ -155,7 +155,7 @@ const DangerForm = ({ onSubmit, isVPN }: { onSubmit: () => Promise<void>; isVPN:
                 type="warning"
                 learnMore="https://protonmail.com/support/knowledge-base/updating-your-login-password/"
             >{c('Info')
-                .jt`Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${hereLink}.`}</Alert>
+                .jt`Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${MAIL_APP_NAME} credentials, do NOT reset. You can log in with them ${hereLink}.`}</Alert>
             <Alert className="mb1" type="warning">{c('Info').t`ALL YOUR DATA WILL BE LOST!`}</Alert>
             <Label htmlFor="danger" className="sr-only">
                 {c('Label').t`Danger`}

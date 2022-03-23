@@ -12,13 +12,13 @@ const DriveOnboardingModal = (props: any) => {
         <OnboardingModal {...props}>
             {({ onNext }: OnboardingStepRenderCallback) => (
                 <OnboardingStep
-                    submit={c('Onboarding Proton Drive Action').t`Start using ${appName}`}
+                    submit={c('Onboarding Action').t`Start using ${appName}`}
                     onSubmit={onNext}
                     close={null}
                 >
                     <OnboardingContent
-                        title={c('Onboarding Proton Drive Title').t`Meet your new secure file storage`}
-                        description={c('Onboarding Proton Drive Info')
+                        title={c('Onboarding Title').t`Meet your new secure file storage`}
+                        description={c('Onboarding Info')
                             .t`Protect all your files with end-to-end encryption. Use ${appName} to store and share your files securely.`}
                         img={<img src={onboardingWelcome} alt={appName} />}
                     />

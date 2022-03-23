@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 import { UserModel, UserSettings, Organization, Subscription, Plan } from '@proton/shared/lib/interfaces';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import { PLAN_SERVICES, APPS, PLANS } from '@proton/shared/lib/constants';
+import { PLAN_SERVICES, APPS, PLANS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 
@@ -69,11 +69,11 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                         <ul className="unstyled mt0 mb0">
                             <li className="flex flex-nowrap flex-align-items-center">
                                 <Icon name="brand-proton-vpn" className="mr0-5 flex-item-noshrink" />
-                                <span className="flex-item-fluid">{getPlanTitle(vpnPlan, 'ProtonVPN')}</span>
+                                <span className="flex-item-fluid">{getPlanTitle(vpnPlan, VPN_APP_NAME)}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center">
                                 <Icon name="brand-proton-mail" className="mr0-5 flex-item-noshrink" />
-                                <span className="flex-item-fluid">{getPlanTitle(mailPlan, 'ProtonMail')}</span>
+                                <span className="flex-item-fluid">{getPlanTitle(mailPlan, MAIL_APP_NAME)}</span>
                             </li>
                         </ul>
                     )}
@@ -122,7 +122,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                         <li className="flex flex-nowrap flex-align-items-center">
                             <Icon name="brand-proton-mail" className="mr0-5 flex-item-noshrink" />
                             <SettingsLink path="/general" app={APPS.PROTONMAIL}>
-                                {c('Link').t`ProtonMail settings`}
+                                {c('Link').t`${MAIL_APP_NAME} settings`}
                             </SettingsLink>
                         </li>
                         <li className="flex flex-nowrap flex-align-items-center">
