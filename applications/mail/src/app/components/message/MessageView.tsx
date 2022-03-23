@@ -350,6 +350,7 @@ const MessageView = (
                         originalMessageMode={originalMessageMode}
                         toggleOriginalMessage={toggleOriginalMessage}
                         onMessageReady={onMessageReady}
+                        onFocusIframe={handleFocus}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
                 </>
