@@ -37,6 +37,9 @@
       "Activate": [
         "Aktifkan"
       ],
+      "Activate ${ addressToCreate }": [
+        "Aktifkan ${ addressToCreate }"
+      ],
       "Activate ${ Name }@pm.me": [
         "Aktifkan ${ Name }@pm.me"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "Tidak"
+      ],
+      "No, thanks": [
+        "Tidak, terima kasih"
       ],
       "OK": [
         "OK"
@@ -3171,6 +3177,9 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } koneksi VPN"
+      ],
       "Access to all countries": [
         "Akses ke semua negara"
       ],
@@ -3828,6 +3837,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } telah aktif"
+      ],
       "${ appName } ${ planName } credits earned": [
         "Saldo ${ appName } ${ planName } yang diperoleh"
       ],
@@ -3848,9 +3860,6 @@
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } kalender yang tergabung"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "${ emailAddress } merupakan alamat ${ appName }"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } tidak valid"
@@ -4350,8 +4359,8 @@
       "Enter your login password to confirm your identity.": [
         "Masukkan kata sandi masuk Anda untuk mengkonfirmasi identitas Anda."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Masukkan kata sandi Anda (sebagai admin organisasi) dan kata sandi baru pengguna ini."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Masukkan kata sandi Anda (selaku admin organisasi) dan kata sandi baru untuk pengguna ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Masukkan alamat email atau nama pengguna akun Proton Anda."
@@ -4558,7 +4567,7 @@
         "Koneksi internet telah pulih."
       ],
       "Invite successfully sent": [
-        "Undangan berhasil terkirim"
+        "Undangan berhasil dikirimkan"
       ],
       "Invited via email": [
         "Diundang via email"
@@ -4758,6 +4767,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        "Domain ${ domain } baru kami merupakan solusi yang nyaman bagi Anda untuk mengirim dan menerima email. Anda akan tetap dapat menggunakan alamat ${ protonMailAppName } asli Anda."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Berkas pemulihan telah kedaluwarsa; harap perbarui agar data-data Anda selalu dapat diakses"
       ],
@@ -4770,8 +4782,8 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "Terbayar dalam bentuk paket berlangganan 12 bulan"
+      "Paid for a ${ rewardMonths } month plan": [
+        "Telah dibayar untuk paket ${ rewardMonths } bulan"
       ],
       "Paid for a monthly plan": [
         "Terbayar dalam bentuk paket berlangganan bulanan"
@@ -5265,6 +5277,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Bundel VPN + ${ mailAppName } untuk keluarga dan bisnis kecil."
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        "Apakah Anda ingin menetapkan ${ addressToCreate } sebagai alamat default Anda untuk mengirim email?"
+      ],
       "Warning:": [
         "Peringatan:"
       ],
@@ -5352,6 +5367,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Anda juga dapat menggabungkan kalender-kalender yang Anda impor dengan kalender-kalender Proton yang telah ada sebelumnya."
       ],
@@ -5384,6 +5402,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Anda tidak dapat mengirim lebih dari ${ emailSendLimitNumber } email undangan untuk 24 jam ke depan"
+      ],
+      "You cannot refer ${ appName } users": [
+        "Anda tidak dapat mengirim rujukan kepada para pengguna ${ appName }"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Anda tidak dapat menggunakan kredensial OpenVPN / IKEv2 untuk masuk ke aplikasi ProtonVPN atau dasbor ProtonVPN. ${ learnMore }"
@@ -5441,6 +5462,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Anda akan tetap masuk bahkan setelah Anda menutup browser."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        "Anda akan tetap dapat mengirim dan menerima email dengan alamat-alamat email yang telah Anda miliki sebelumnya."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Akun ${ BRAND_NAME } Anda dikaitkan dengan ${ externalEmailAddress }. Untuk menggunakan ${ toAppName }, harap buat alamat email."
@@ -5601,6 +5625,9 @@
       "Billed": [
         "Tertagih"
       ],
+      "Cancelled": [
+        "Dibatalkan"
+      ],
       "Paid": [
         "Lunas"
       ],
@@ -5609,9 +5636,6 @@
       ],
       "Void": [
         "Batal"
-      ],
-      "Writeoff": [
-        "Penghapusan"
       ]
     },
     "Invoice type display as badge": {
@@ -8712,11 +8736,11 @@
       "Delete ${ filter.Name }": [
         "Hapus ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "Hapus ${ Name } folder"
+      "Delete ${ label.Name } folder": [
+        "Hapus ${ label.Name } folder"
       ],
-      "Delete ${ Name } label": [
-        "Hapus ${ Name } label"
+      "Delete ${ label.Name } label": [
+        "Hapus ${ label.Name } label"
       ],
       "Delete account": [
         "Hapus akun"
@@ -9200,6 +9224,9 @@
       ],
       "What's new": [
         "Apa yang baru"
+      ],
+      "Your ${ domain } address is active": [
+        "Alamat ${ domain } Anda aktif"
       ],
       "Your account’s usage": [
         "Penggunaan akun Anda"

@@ -37,6 +37,9 @@
       "Activate": [
         "有効化"
       ],
+      "Activate ${ addressToCreate }": [
+        "${ addressToCreate } を有効化"
+      ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me を有効化"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "いいえ"
+      ],
+      "No, thanks": [
+        ""
       ],
       "OK": [
         "OK"
@@ -923,7 +929,7 @@
     },
     "alert": {
       "The key for your address is now being deleted.": [
-        ""
+        "あなたのアドレスのキーは削除されます。"
       ]
     },
     "Apps dropdown": {
@@ -1343,7 +1349,7 @@
     },
     "Confirm": {
       "Are you sure you want to delete this key without backing it up?": [
-        ""
+        "バックアップをしないでこのキーを削除してよろしいですか?"
       ],
       "Are you sure you want to permanently delete this key?": [
         "この鍵を完全に削除してよろしいですか？"
@@ -3171,6 +3177,9 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        ""
+      ],
       "Access to all countries": [
         "すべての国にアクセス"
       ],
@@ -3439,7 +3448,7 @@
         ""
       ],
       "Please don't close the tab before the importing process is finished.": [
-        ""
+        "インポートが完了するまでタブを閉じないでください。"
       ]
     },
     "Import calendar warning": {
@@ -3708,7 +3717,7 @@
         "管理"
       ],
       "Publish a calendar": [
-        ""
+        "カレンダーを発行"
       ]
     },
     "Import instructions link": {
@@ -3762,7 +3771,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        ""
+        "プライベートキーをインポートしてよろしいですか? 安全でない環境で生成されたキーや流出したキーを使うと、メールのセキュリティに影響します。\n\nプライベートキーに関連付けられたパブリックキーは公開されたキーサーバーで利用可能になります。キーに本名などの個人情報が含まれていて公開したくない場合は、キーぽインポートする前に編集してください。"
       ]
     },
     "Import provider": {
@@ -3828,6 +3837,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } は現在アクティブです"
+      ],
       "${ appName } ${ planName } credits earned": [
         ""
       ],
@@ -3848,9 +3860,6 @@
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "${ emailAddress } は ${ appName } のアドレスです"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } は無効です"
@@ -4350,8 +4359,8 @@
       "Enter your login password to confirm your identity.": [
         "本人確認のため、ログインパスワードを入力してください:"
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "(組織管理者としての) 自分のパスワードとこのユーザーの新しいパスワードを入力してください。"
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        ""
       ],
       "Enter your Proton account email address or username.": [
         "Proton アカウントのメールアドレスまたはユーザー名を入力してください。"
@@ -4513,7 +4522,7 @@
         "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントへのアクセスが永久に失われます。"
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        ""
+        "重要: レジストラによっては (他のレジストラーで要求する) 終了期限付きCNAMEの値が使えません。もしあなたが使用しているレジストラで CNAME レコードが使えない場合、各 CNAME の期限を削除して再度試してみてください。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -4558,7 +4567,7 @@
         "インターネット接続が回復しました。"
       ],
       "Invite successfully sent": [
-        ""
+        "招待は正常に送信されました"
       ],
       "Invited via email": [
         "メール経由の招待"
@@ -4758,6 +4767,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "古い回復ファイルです。アップデートして確実にデータにアクセスできるようにします"
       ],
@@ -4770,8 +4782,8 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "12 か月プランに課金"
+      "Paid for a ${ rewardMonths } month plan": [
+        ""
       ],
       "Paid for a monthly plan": [
         "月額プランに課金"
@@ -4804,7 +4816,7 @@
         "安全に保ってください。これはパスワードをリセットしたときに、アカウントにアクセスしたりデータを復元するのに使われます。"
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        ""
+        "アドレスを削除すると、このアドレスでメールを送受信できなくなります。"
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         ""
@@ -4957,7 +4969,7 @@
         "スクリーンショットが添付されました"
       ],
       "See all plans": [
-        ""
+        "すべてのプランを見る"
       ],
       "Select a service provider to start": [
         "サービスプロバイダーを選択して開始"
@@ -5002,7 +5014,7 @@
         "SPF は送信元のドメインを明示するために使用されます。そのため、SPF レコードに ProtonMail を含めることを強く推奨します。次の TXT レコードを DNS に追加してください。これは通常、ドメイン名登録のコントロールパネルから設定できます。"
       ],
       "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "500 MB のストレージが利用でき、途中でさらにストレージを入手できます。ストレージ容量は、Mail、Calender、Drive で共有されます。"
       ],
       "Starter VPN service with P2P support.": [
         "P2P対応のStarter VPNサービス。"
@@ -5080,13 +5092,13 @@
         ""
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
-        ""
+        "これは以前保存した回復ファイルまたは暗号キーです。"
       ],
       "This is an encryption key you may have previously saved.": [
-        ""
+        "これは以前保存した暗号キーです。"
       ],
       "This is the password you used before the password reset.": [
-        ""
+        "これは以前パスワードリセットに使ったパスワードです。"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
@@ -5095,7 +5107,7 @@
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
       ],
       "This phone number will only be used for recovery purposes.": [
-        ""
+        "この電話番号は回復目的のためだけに使用されます。"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
@@ -5149,7 +5161,7 @@
         "メールなどのデータを復号するには、回復フレーズが必要です。"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        ""
+        "パスワードのリセット後に復号してロックされたデータを表示するには、回復手段を選択します。"
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "アカウントに確実にアクセスし続けるには、アカウントの回復手段を設定します"
@@ -5215,7 +5227,7 @@
         "回復フレーズを更新"
       ],
       "Upgrade now": [
-        ""
+        "今すぐアップグレード"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "この機能を利用するには ${ PLAN_NAMES[PLANS.VISIONARY] } または ${ PLAN_NAMES[PLANS.PROFESSIONAL] } プランにアップグレードしてください。"
@@ -5264,6 +5276,9 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "家族と小さなビジネス向けの VPN と ${ mailAppName } バンドル"
+      ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        ""
       ],
       "Warning:": [
         "警告:"
@@ -5352,6 +5367,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "現在 ${ user.Name } (${ user.Email }) としてサインインしていてアクセスが制限されています。"
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "存在する Proton カレンダーにインポートしたカレンダーを結合することもできます。"
       ],
@@ -5385,6 +5403,9 @@
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         ""
       ],
+      "You cannot refer ${ appName } users": [
+        ""
+      ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "OpenVPN / IKEv2 認証情報で、ProtonVPN アプリケーションや ProtonVPN ダッシュボードにログインすることはできません。 ${ learnMore }"
       ],
@@ -5416,7 +5437,7 @@
         "イベントを .ics からインポートするには、アクティブなパーソナルカレンダーが必要です。"
       ],
       "You need to have an active personal calendar to import your events.": [
-        ""
+        "イベントをインポートするには、アクティブなパーソナルカレンダーが必要です。"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量の ${ spaceDisplayed }% に達しました。${ freeUpMessage } ${ upgradeLink }"
@@ -5441,6 +5462,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "ブラウザーを閉じてもサインインしたままでいられます。"
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        ""
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "あなたの ${ BRAND_NAME } アカウントは ${ externalEmailAddress } に関連付けされています。${ toAppName } を使うには、アドレスを作成してください。"
@@ -5601,6 +5625,9 @@
       "Billed": [
         "請求済み"
       ],
+      "Cancelled": [
+        ""
+      ],
       "Paid": [
         "支払い済み"
       ],
@@ -5609,9 +5636,6 @@
       ],
       "Void": [
         "無効"
-      ],
-      "Writeoff": [
-        "取り消し"
       ]
     },
     "Invoice type display as badge": {
@@ -5651,7 +5675,7 @@
         "既に同じ暗号化アルゴリズムのキーが存在します。ほかのキーを生成するとアカウントの読み込みが遅くなる原因になります。続行してよろしいですか?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        ""
+        "同じ暗号化アルゴリズムを持つ鍵が、このアドレスに対してすでにアクティブです。別の鍵を生成すると、アカウントの読み込みが遅くなり、この鍵を削除すると問題が発生する可能性があります。古い鍵が侵害されために新しい鍵を生成している場合は、侵害された鍵をマークしてください。続行しますか?"
       ],
       "Generate key": [
         "鍵の生成"
@@ -5666,7 +5690,7 @@
         ""
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        ""
+        "現在の鍵が侵害されたと思われる場合は、新しい暗号鍵を生成できます。"
       ]
     },
     "Key state badge": {
@@ -8159,7 +8183,7 @@
         ""
       ],
       "This link might be wrong": [
-        ""
+        "リンクが間違っています"
       ]
     },
     "Subscribed calendar section description": {
@@ -8434,7 +8458,7 @@
     },
     "Title": {
       "${ appName } ${ planName } Trial": [
-        ""
+        "${ appName } ${ planName } トライアル"
       ],
       "${ appName } customization": [
         "${ appName } のカスタマイズ"
@@ -8712,11 +8736,11 @@
       "Delete ${ filter.Name }": [
         "${ filter.Name } を削除"
       ],
-      "Delete ${ Name } folder": [
-        "${ Name } フォルダーを削除"
+      "Delete ${ label.Name } folder": [
+        ""
       ],
-      "Delete ${ Name } label": [
-        "${ Name } ラベルを削除"
+      "Delete ${ label.Name } label": [
+        ""
       ],
       "Delete account": [
         "アカウントの削除"
@@ -9200,6 +9224,9 @@
       ],
       "What's new": [
         "更新情報"
+      ],
+      "Your ${ domain } address is active": [
+        "${ domain } アドレスはアクティブです"
       ],
       "Your account’s usage": [
         "アカウントの使用率"

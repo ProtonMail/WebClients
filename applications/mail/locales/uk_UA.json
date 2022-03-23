@@ -1053,11 +1053,11 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } виконано",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } виконано",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } виконано",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } виконано"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано"
       ]
     },
     "Apps dropdown": {
@@ -1111,8 +1111,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Бета-доступ дозволяє вам користуватися тестовою версією ProtonMail, Proton Calendar та Proton Drive до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Бета-доступ дає вам змогу користуватися тестовою версією ${ mailAppName }, ${ calendarAppName } і Proton Drive до того, як вони будуть випущені для загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "При виникненні проблем, ви завжди можете вимкнути бета-доступ."
@@ -2800,9 +2800,6 @@
       "Calendar limit reached": [
         "Досягнуто ліміту календарів"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Основний приватний ключ календаря не зашифрований"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Не вдалося створити нові календарі для всіх імпортованих календарів через обмеження особистого календаря."
       ],
@@ -3495,16 +3492,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "Ми збільшили загальний обсяг сховища вашого облікового запису до ${ totalGBStorageAfterCompletion } ГБ. Отримайте додатковий обсяг та доступ до можливостей преміум."
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "Все готово!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "Завершіть усі кроки та отримайте всього ${ totalGBStorageAfterCompletion } ГБ для свого облікового запису"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "Скоро завершується"
@@ -3943,6 +3940,9 @@
       ],
       "Activation in progress": [
         "Триває активація"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        "Додайте ${ addressToCreate } до свого облікового запису безплатно. Лише на обмежений проміжок часу."
       ],
       "Add image URL": [
         "Додати URL-адресу зображення"
@@ -4859,11 +4859,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        "Використовуйте ${ calendarAppName }, щоб зберігати приватність своїх планів."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Користуйтесь комбінаціями клавіш для ефективнішої роботи з поштою."
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Користуйтеся Proton Calendar, щоб зберігати свої події приватними."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Скануйте цей QR-код за допомогою свого мобільного пристрою, або відвідайте ${ link }."
@@ -4914,7 +4914,7 @@
         "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Наразі ви ввійшли як ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Ви можете додати його як вкладення, або показати в тілі листа."
@@ -5738,6 +5738,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Активувати"
+      ],
       "Add folder": [
         "Додати теку"
       ],
@@ -6263,6 +6266,20 @@
       ],
       "Merge with calendar": [
         "Об'єднати з календарем"
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        "Отримати мобільну програму"
+      ],
+      "Import contacts or emails": [
+        "Імпорт контактів чи е-пошти"
+      ],
+      "Send a message": [
+        "Надіслати повідомлення"
+      ],
+      "Set up a recovery method": [
+        "Встановити спосіб відновлення"
       ]
     },
     "Participant name": {

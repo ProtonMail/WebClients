@@ -37,6 +37,9 @@
       "Activate": [
         ""
       ],
+      "Activate ${ addressToCreate }": [
+        ""
+      ],
       "Activate ${ Name }@pm.me": [
         ""
       ],
@@ -452,6 +455,9 @@
         ""
       ],
       "No": [
+        ""
+      ],
+      "No, thanks": [
         ""
       ],
       "OK": [
@@ -3193,6 +3199,10 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "",
+        ""
+      ],
       "Access to all countries": [
         ""
       ],
@@ -3863,6 +3873,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        ""
+      ],
       "${ appName } ${ planName } credits earned": [
         ""
       ],
@@ -3885,9 +3898,6 @@
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "",
-        ""
-      ],
-      "${ emailAddress } is a ${ appName } address": [
         ""
       ],
       "${ emailAddress } is invalid": [
@@ -4408,7 +4418,7 @@
       "Enter your login password to confirm your identity.": [
         ""
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
         ""
       ],
       "Enter your Proton account email address or username.": [
@@ -4617,6 +4627,7 @@
         ""
       ],
       "Invite successfully sent": [
+        "",
         ""
       ],
       "Invited via email": [
@@ -4817,6 +4828,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         ""
       ],
@@ -4829,7 +4843,8 @@
       "P2P": [
         ""
       ],
-      "Paid for a 12 months plan": [
+      "Paid for a ${ rewardMonths } month plan": [
+        "",
         ""
       ],
       "Paid for a monthly plan": [
@@ -5325,6 +5340,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         ""
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        ""
+      ],
       "Warning:": [
         ""
       ],
@@ -5412,6 +5430,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         ""
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
@@ -5443,6 +5464,9 @@
         ""
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        ""
+      ],
+      "You cannot refer ${ appName } users": [
         ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
@@ -5500,6 +5524,9 @@
         ""
       ],
       "You'll stay signed in even after you close the browser.": [
+        ""
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
         ""
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
@@ -5661,6 +5688,9 @@
       "Billed": [
         ""
       ],
+      "Cancelled": [
+        ""
+      ],
       "Paid": [
         ""
       ],
@@ -5668,9 +5698,6 @@
         ""
       ],
       "Void": [
-        ""
-      ],
-      "Writeoff": [
         ""
       ]
     },
@@ -8791,10 +8818,10 @@
       "Delete ${ filter.Name }": [
         ""
       ],
-      "Delete ${ Name } folder": [
+      "Delete ${ label.Name } folder": [
         ""
       ],
-      "Delete ${ Name } label": [
+      "Delete ${ label.Name } label": [
         ""
       ],
       "Delete account": [
@@ -9279,6 +9306,9 @@
         ""
       ],
       "What's new": [
+        ""
+      ],
+      "Your ${ domain } address is active": [
         ""
       ],
       "Your account’s usage": [

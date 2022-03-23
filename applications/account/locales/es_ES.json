@@ -37,6 +37,9 @@
       "Activate": [
         "Activar"
       ],
+      "Activate ${ addressToCreate }": [
+        "Activar ${ addressToCreate }"
+      ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
       ],
@@ -356,7 +359,7 @@
         "Obtener código de verificación"
       ],
       "Go to label": [
-        ""
+        "Vaya a la etiqueta"
       ],
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
@@ -453,6 +456,9 @@
       ],
       "No": [
         "No"
+      ],
+      "No, thanks": [
+        "No, gracias"
       ],
       "OK": [
         "OK"
@@ -3193,6 +3199,10 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } Conexión VPN",
+        "${ MaxVPN } Conexiones VPN"
+      ],
       "Access to all countries": [
         "Acceso a todos los países"
       ],
@@ -3863,6 +3873,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } está ahora activo"
+      ],
       "${ appName } ${ planName } credits earned": [
         ""
       ],
@@ -3886,9 +3899,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendario combinado",
         "${ calendarsToBeMergedCount } calendarios combinados"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        ""
       ],
       "${ emailAddress } is invalid": [
         ""
@@ -4014,10 +4024,10 @@
         "Garantía de reembolso de 30 días."
       ],
       "5 email addresses": [
-        ""
+        "5 direcciones de correo electrónico"
       ],
       "5 GB storage": [
-        ""
+        "5 GB de almacenamiento"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Una Internet libre y sin censura debería estar disponible para todos."
@@ -4408,8 +4418,8 @@
       "Enter your login password to confirm your identity.": [
         "Introduce tu contraseña de inicio de sesión para confirmar tu identidad."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Introduce tu propia contraseña (como administrador de la organización) y la nueva contraseña de este usuario."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Introduzca su propia contraseña (como administrador de la organización) y la nueva contraseña para este usuario ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Introduzca la dirección de correo electrónico o el nombre de usuario de su cuenta Proton."
@@ -4617,10 +4627,11 @@
         "Se ha restablecido la conexión a Internet."
       ],
       "Invite successfully sent": [
-        ""
+        "Invitación enviada con éxito",
+        "Invitaciones enviadas con éxito"
       ],
       "Invited via email": [
-        ""
+        "Invitado por correo electrónico"
       ],
       "It appears some of your data is encrypted and locked.": [
         ""
@@ -4817,6 +4828,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        "Nuestro nuevo dominio ${ domain } es una opción conveniente para enviar y recibir correos electrónicos. Podrás seguir utilizando tu dirección original ${ protonMailAppName }."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Archivo de recuperación obsoleto; actualícelo para garantizar el acceso a sus datos"
       ],
@@ -4829,11 +4843,12 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        ""
+      "Paid for a ${ rewardMonths } month plan": [
+        "Pagado por un plan mensual de ${ rewardMonths }",
+        "Pagado por un plan de ${ rewardMonths } meses"
       ],
       "Paid for a monthly plan": [
-        ""
+        "Pagado por un plan mensual"
       ],
       "Payment can take a few minutes to fully verify.": [
         "El pago puede tardar unos minutos en ser verificado por completo."
@@ -4951,7 +4966,7 @@
         "Se requiere de ProtonVPN Plus o Visionary para tener Secure Core."
       ],
       "Public link invite": [
-        ""
+        "Invitación de enlace público"
       ],
       "purchase additional storage": [
         "comprar almacenamiento adicional"
@@ -5263,7 +5278,7 @@
         ""
       ],
       "Unlimited messages": [
-        ""
+        "Mensajes ilimitados"
       ],
       "Unsupported file": [
         "Archivo no soportado"
@@ -5324,6 +5339,9 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Paquete VPN + ${ mailAppName } para familias y pequeñas empresas."
+      ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        "¿Quieres establecer ${ addressToCreate } como tu correo electrónico por defecto para enviar mensajes?"
       ],
       "Warning:": [
         "Advertencia:"
@@ -5412,6 +5430,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Actualmente estás conectado como ${ user.Name } (${ user.Email }) y tienes acceso restringido."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Actualmente has iniciado sesión como ${ user.Name } (${ user.Email })."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Puede fusionar calendarios importados con calendarios existentes en Proton."
       ],
@@ -5443,6 +5464,9 @@
         "Puede utilizar las siguientes credenciales para conectarte a un servidor ProtonVPN mediante una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        ""
+      ],
+      "You cannot refer ${ appName } users": [
         ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
@@ -5501,6 +5525,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Seguirás conectado incluso después de cerrar el navegador."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        ""
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Tu cuenta de ${ BRAND_NAME } está asociada con ${ externalEmailAddress }. Para utilizar ${ toAppName }, por favor crea una dirección."
@@ -5661,6 +5688,9 @@
       "Billed": [
         "Facturada"
       ],
+      "Cancelled": [
+        "Cancelado"
+      ],
       "Paid": [
         "Pagada"
       ],
@@ -5669,9 +5699,6 @@
       ],
       "Void": [
         "Nula"
-      ],
-      "Writeoff": [
-        "Cancelación"
       ]
     },
     "Invoice type display as badge": {
@@ -6019,7 +6046,7 @@
         "Acciones"
       ],
       "Activity": [
-        ""
+        "Actividad"
       ],
       "Address": [
         "Dirección"
@@ -6352,7 +6379,7 @@
         "Intervalo"
       ],
       "Invite via email": [
-        ""
+        "Invitar por correo electrónico"
       ],
       "Keep me signed in": [
         "Mantener mi sesión iniciada"
@@ -6947,7 +6974,7 @@
         "Términos"
       ],
       "Terms and conditions": [
-        ""
+        "Términos y condiciones"
       ],
       "Upgrade": [
         "Mejorar"
@@ -7792,7 +7819,7 @@
         "Describe el problema e incluye cualquier mensaje de error"
       ],
       "Please insert link first": [
-        ""
+        "Por favor, inserte el enlace primero"
       ],
       "Postal code": [
         "Código postal"
@@ -8791,11 +8818,11 @@
       "Delete ${ filter.Name }": [
         "Eliminar ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "Eliminar la carpeta ${ Name }"
+      "Delete ${ label.Name } folder": [
+        "Eliminar la carpeta ${ label.Name }"
       ],
-      "Delete ${ Name } label": [
-        "Eliminar la etiqueta ${ Name }"
+      "Delete ${ label.Name } label": [
+        "Eliminar la etiqueta ${ label.Name }"
       ],
       "Delete account": [
         "Eliminar cuenta"
@@ -9099,7 +9126,7 @@
         "Archivo de recuperación"
       ],
       "Refer a friend": [
-        ""
+        "Recomendar a un amigo"
       ],
       "Referral tracker": [
         ""
@@ -9280,6 +9307,9 @@
       ],
       "What's new": [
         "Novedades"
+      ],
+      "Your ${ domain } address is active": [
+        "Su dirección de ${ domain } está activo"
       ],
       "Your account’s usage": [
         ""

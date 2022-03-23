@@ -87,7 +87,7 @@
         "Aplicar"
       ],
       "Archive": [
-        ""
+        "Archivar"
       ],
       "Attachment": [
         "Adjunto"
@@ -293,7 +293,7 @@
         "Editar número de teléfono"
       ],
       "Edit sign-in details": [
-        ""
+        "Editar datos de inicio de sesión"
       ],
       "Email settings": [
         "Ajustes del correo electrónico"
@@ -350,7 +350,7 @@
         "Ir a la primera página"
       ],
       "Go to label": [
-        ""
+        "Ir a la etiqueta"
       ],
       "Go to last page": [
         "Ir a la última página"
@@ -456,7 +456,7 @@
         "Cargar"
       ],
       "Load embedded images": [
-        ""
+        "Cargar imágenes incrustadas"
       ],
       "Load image": [
         "Cargar imagen"
@@ -597,7 +597,7 @@
         "Abrir la navegación"
       ],
       "Open shop": [
-        ""
+        "Abrir tienda"
       ],
       "Ordered list": [
         "Lista ordenada"
@@ -645,13 +645,13 @@
         "Volver a firmar"
       ],
       "Read receipt sent": [
-        ""
+        "Confirmación de lectura enviada"
       ],
       "Recover data": [
         "Recuperar datos"
       ],
       "Refer a friend": [
-        ""
+        "Recomendar a un amigo"
       ],
       "Refine it": [
         "Refinar"
@@ -807,7 +807,7 @@
         "Algunas de las imágenes no han podido ser cargadas con la protección de rastreo"
       ],
       "Star": [
-        ""
+        "Destacar"
       ],
       "Start import": [
         "Iniciar importación"
@@ -874,13 +874,13 @@
         "Lista desordenada"
       ],
       "Unstar": [
-        ""
+        "No destacar"
       ],
       "Unsubscribe": [
         "Desuscribirse"
       ],
       "Unsubscribe from mailing list": [
-        ""
+        "Darse de baja de la lista de correo"
       ],
       "Unsubscribing": [
         "Cancelando suscripción"
@@ -937,7 +937,7 @@
         "Ver encabezados"
       ],
       "View HTML": [
-        ""
+        "Ver HTML"
       ],
       "View invoice": [
         "Ver factura"
@@ -949,7 +949,7 @@
         "Ver mensaje"
       ],
       "View message details": [
-        ""
+        "Ver detalles del mensaje"
       ],
       "View recipients": [
         "Ver destinatarios"
@@ -1045,9 +1045,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } completado",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } completados"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } completo",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } completos"
       ]
     },
     "Apps dropdown": {
@@ -1101,8 +1101,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "El acceso beta te permite utilizar la versión beta de ProtonMail, Proton Calendar y Proton Drive antes de que se liberen al público. Esto significa que puedes ser el primero en probar nuevos productos, obtener nuevas actualizaciones y utilizar nuevas funciones."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "El acceso a la versión beta le permite utilizar la versión beta de ${ mailAppName }, ${ calendarAppName } y Proton Drive antes de que se pongan a disposición del público. Esto significa que puede ser el primero en probar nuevos productos, obtener nuevas actualizaciones y utilizar nuevas funciones."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si encuentras problemas, siempre puedes deshabilitar el acceso beta."
@@ -1746,37 +1746,37 @@
         ""
       ],
       "Afghanistan": [
-        ""
+        "Afganistán"
       ],
       "Albania": [
-        ""
+        "Albania"
       ],
       "Algeria": [
         "Argelia"
       ],
       "American Samoa": [
-        ""
+        "Samoa Americana"
       ],
       "Andorra": [
-        ""
+        "Andorra"
       ],
       "Angola": [
-        ""
+        "Angola"
       ],
       "Anguilla": [
-        ""
+        "Anguila"
       ],
       "Antarctica": [
-        ""
+        "Antártida"
       ],
       "Antigua and Barbuda": [
-        ""
+        "Antigua y Barbuda"
       ],
       "Argentina": [
-        ""
+        "Argentina"
       ],
       "Armenia": [
-        ""
+        "Armenia"
       ],
       "Aruba": [
         "Aruba"
@@ -1785,10 +1785,10 @@
         ""
       ],
       "Australia": [
-        ""
+        "Australia"
       ],
       "Austria": [
-        ""
+        "Austria"
       ],
       "Azerbaijan": [
         "Azerbaiyán"
@@ -1842,7 +1842,7 @@
         "Brasil"
       ],
       "British Indian Ocean Territory": [
-        ""
+        "Territorio Británico del Océano Índico"
       ],
       "Brunei Darussalam": [
         "Brunéi"
@@ -1914,7 +1914,7 @@
         "Côte d'Ivoire"
       ],
       "Croatia": [
-        ""
+        "Croacia"
       ],
       "Cuba": [
         "Cuba"
@@ -1944,22 +1944,22 @@
         "Ecuador"
       ],
       "Egypt": [
-        ""
+        "Egipto"
       ],
       "El Salvador": [
-        ""
+        "El Salvador"
       ],
       "Equatorial Guinea": [
-        ""
+        "Guinea Ecuatorial"
       ],
       "Eritrea": [
         ""
       ],
       "Estonia": [
-        ""
+        "Estonia"
       ],
       "Ethiopia": [
-        ""
+        "Etiopía"
       ],
       "Falkland Islands": [
         ""
@@ -1971,13 +1971,13 @@
         ""
       ],
       "Fiji": [
-        ""
+        "Fiyi"
       ],
       "Finland": [
-        ""
+        "Finlandia"
       ],
       "France": [
-        ""
+        "Francia"
       ],
       "French Guiana": [
         ""
@@ -1986,31 +1986,31 @@
         ""
       ],
       "French Southern Territories": [
-        ""
+        "Territorios Australes Franceses"
       ],
       "Gabon": [
-        ""
+        "Gabón"
       ],
       "Gambia": [
-        ""
+        "Gambia"
       ],
       "Georgia": [
-        ""
+        "Georgia"
       ],
       "Germany": [
         "Alemania"
       ],
       "Ghana": [
-        ""
+        "Ghana"
       ],
       "Gibraltar": [
-        ""
+        "Gibraltar"
       ],
       "Greece": [
-        ""
+        "Grecia"
       ],
       "Greenland": [
-        ""
+        "Groenlandia"
       ],
       "Grenada": [
         ""
@@ -2022,13 +2022,13 @@
         ""
       ],
       "Guatemala": [
-        ""
+        "Guatemala"
       ],
       "Guernsey": [
         ""
       ],
       "Guinea": [
-        ""
+        "Guinea"
       ],
       "Guinea-Bissau": [
         ""
@@ -2037,7 +2037,7 @@
         ""
       ],
       "Haiti": [
-        ""
+        "Haití"
       ],
       "Heard Island and McDonald Islands": [
         ""
@@ -2046,55 +2046,55 @@
         ""
       ],
       "Honduras": [
-        ""
+        "Honduras"
       ],
       "Hong Kong": [
-        ""
+        "Hong Kong"
       ],
       "Hungary": [
-        ""
+        "Hungria"
       ],
       "Iceland": [
-        ""
+        "Islandia"
       ],
       "India": [
-        ""
+        "India"
       ],
       "Indonesia": [
-        ""
+        "Indonesia"
       ],
       "International": [
         "Internacional"
       ],
       "Iran": [
-        ""
+        "Irán"
       ],
       "Iraq": [
-        ""
+        "Iraq"
       ],
       "Ireland": [
-        ""
+        "Irlanda"
       ],
       "Isle of Man": [
         ""
       ],
       "Israel": [
-        ""
+        "Israel"
       ],
       "Italy": [
-        ""
+        "Italia"
       ],
       "Jamaica": [
-        ""
+        "Jamaica"
       ],
       "Japan": [
         "Japón"
       ],
       "Jersey": [
-        ""
+        "Jersey"
       ],
       "Jordan": [
-        ""
+        "Jordania"
       ],
       "Kazakhstan": [
         "Kazajistán"
@@ -2208,25 +2208,25 @@
         ""
       ],
       "Nepal": [
-        ""
+        "Nepal"
       ],
       "Netherlands": [
-        ""
+        "Países Bajos"
       ],
       "New Caledonia": [
         "Nueva Caledonia"
       ],
       "New Zealand": [
-        ""
+        "Nueva Zelanda"
       ],
       "Nicaragua": [
-        ""
+        "Nicaragua"
       ],
       "Niger": [
         "República del Níger"
       ],
       "Nigeria": [
-        ""
+        "Nigeria"
       ],
       "Niue": [
         ""
@@ -2244,46 +2244,46 @@
         "Islas Marianas del Norte"
       ],
       "Norway": [
-        ""
+        "Noruega"
       ],
       "Oman": [
         ""
       ],
       "Pakistan": [
-        ""
+        "Pakistán"
       ],
       "Palau": [
         ""
       ],
       "Palestine": [
-        ""
+        "Palestina"
       ],
       "Panama": [
-        ""
+        "Panamá"
       ],
       "Papua New Guinea": [
         ""
       ],
       "Paraguay": [
-        ""
+        "Paraguay"
       ],
       "Peru": [
-        ""
+        "Perú"
       ],
       "Philippines": [
-        ""
+        "Filipinas"
       ],
       "Pitcairn": [
         ""
       ],
       "Poland": [
-        ""
+        "Polonia"
       ],
       "Portugal": [
-        ""
+        "Portugal"
       ],
       "Puerto Rico": [
-        ""
+        "Puerto Rico"
       ],
       "Qatar": [
         ""
@@ -2292,10 +2292,10 @@
         ""
       ],
       "Romania": [
-        ""
+        "Rumanía"
       ],
       "Russia": [
-        ""
+        "Rusia"
       ],
       "Rwanda": [
         ""
@@ -2325,43 +2325,43 @@
         "Samoa"
       ],
       "San Marino": [
-        ""
+        "San Marino"
       ],
       "Sao Tome and Principe": [
         ""
       ],
       "Saudi Arabia": [
-        ""
+        "Arabia Saudita"
       ],
       "Senegal": [
-        ""
+        "Senegal"
       ],
       "Serbia": [
-        ""
+        "Serbia"
       ],
       "Seychelles": [
         ""
       ],
       "Sierra Leone": [
-        ""
+        "Sierra Leona"
       ],
       "Singapore": [
-        ""
+        "Singapur"
       ],
       "Sint Maarten": [
         ""
       ],
       "Slovakia": [
-        ""
+        "Eslovaquia"
       ],
       "Slovenia": [
-        ""
+        "Eslovenia"
       ],
       "Solomon Islands": [
-        ""
+        "Islas Solomon"
       ],
       "Somalia": [
-        ""
+        "Somalia"
       ],
       "South Africa": [
         "Sudáfrica"
@@ -2376,16 +2376,16 @@
         ""
       ],
       "South Sudan": [
-        ""
+        "Sudán del Sur"
       ],
       "Spain": [
-        ""
+        "España"
       ],
       "Sri Lanka": [
         "Sri Lanka"
       ],
       "Sudan": [
-        ""
+        "Sudán"
       ],
       "Suriname": [
         ""
@@ -2397,7 +2397,7 @@
         "Eswatini"
       ],
       "Sweden": [
-        ""
+        "Suecia"
       ],
       "Switzerland": [
         "Suiza"
@@ -2457,10 +2457,10 @@
         "Ucrania"
       ],
       "United Arab Emirates": [
-        ""
+        "Emiratos Árabes Unidos"
       ],
       "United Kingdom": [
-        ""
+        "Reino Unido"
       ],
       "United States": [
         "Estados Unidos"
@@ -2484,10 +2484,10 @@
         "Vietnam"
       ],
       "Virgin Islands, British": [
-        ""
+        "Islas Vírgenes Británicas"
       ],
       "Virgin Islands, U.S.": [
-        ""
+        "Islas Vírgenes de los Estados Unidos."
       ],
       "Wallis and Futuna": [
         "Wallis y Futuna"
@@ -2778,9 +2778,6 @@
       "Calendar limit reached": [
         "Se ha alcanzado el límite del calendario"
       ],
-      "Calendar primary private key is not decrypted": [
-        "La clave privada principal del calendario no está descifrada"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "No se pueden crear nuevos calendarios para todos los calendarios importados debido al límite de calendarios personales."
       ],
@@ -2872,10 +2869,10 @@
         "La subida de la imagen ha fallado"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "Credenciales incorrectas. Por favor, inténtelo de nuevo."
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "Contraseña del buzón incorrecta. Por favor, intenta de nuevo."
       ],
       "Invalid expiration time": [
         "Tiempo de caducidad inválido"
@@ -3453,16 +3450,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "Hemos incrementado la capacidad de almacenamiento total de tu cuenta a ${ totalGBStorageAfterCompletion } GB. Consigue aún más espacio y desbloquea ya las características prémium."
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "¡Ya está todo listo!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "Completa todos los pasos y consigue un total de ${ totalGBStorageAfterCompletion } GB en tu cuenta."
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "Expira pronto"
@@ -3815,10 +3812,10 @@
         "/mes."
       ],
       "5 email addresses": [
-        ""
+        "5 direcciones de correo"
       ],
       "5 GB storage": [
-        ""
+        "5 GB de almacenamiento"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Una frase de recuperación es una de las maneras más seguras de proteger el acceso a su cuenta. Puede utilizarla para acceder a su cuenta y recuperar sus datos cifrados si es que olvida la contraseña."
@@ -3831,6 +3828,9 @@
       ],
       "Activation in progress": [
         "Activación en proceso"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        "Añade ${ addressToCreate } a tu cuenta de forma gratuita, solo por tiempo limitado."
       ],
       "Add image URL": [
         "Agregar URL de imagen"
@@ -3996,10 +3996,10 @@
         "Días"
       ],
       "Decrypt message": [
-        ""
+        "Descifrar el mensaje"
       ],
       "Default email application": [
-        ""
+        "Aplicación de correo electrónico predeterminada"
       ],
       "Disable message content search": [
         ""
@@ -4084,7 +4084,7 @@
         "Tiempo de expiración"
       ],
       "Expires": [
-        ""
+        "Expira"
       ],
       "Expires in ${ formattedDelay }": [
         ""
@@ -4096,7 +4096,7 @@
         ""
       ],
       "Expires soon": [
-        ""
+        "Expira pronto"
       ],
       "file attached": [
         "archivo adjunto",
@@ -4124,7 +4124,7 @@
         "De"
       ],
       "Get more storage and premium features.": [
-        ""
+        "Consigue más almacenamiento y funciones premium."
       ],
       "Group assignment applied": [
         "Asignación de grupo aplicada"
@@ -4181,7 +4181,7 @@
         ""
       ],
       "Indexing paused": [
-        ""
+        "Indexación pausada"
       ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
@@ -4310,7 +4310,7 @@
         "Ninguna etiqueta seleccionada"
       ],
       "No more results found": [
-        ""
+        "No se han encontrado más resultados"
       ],
       "No preview available": [
         "Vista previa no disponible"
@@ -4334,7 +4334,7 @@
         "Cambia estos ajustes sólo si estás usando PGP con destinatarios que no sean de ProtonMail."
       ],
       "Other options": [
-        ""
+        "Otras opciones"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nuestro sistema ha marcado este mensaje como un intento de suplantación de identidad. Por favor, comprueba que es legítimo."
@@ -4385,7 +4385,7 @@
         "Imprimir correo electrónico"
       ],
       "Priority support": [
-        ""
+        "Soporte prioritario"
       ],
       "Proton Calendar": [
         ""
@@ -4545,7 +4545,7 @@
         "La verificación de ${ contactNames } ha fallado: los contactos no están firmados correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebes volver a firmar los contactos para enviar un mensaje a ${ contactAddresses } o editar los contactos."
       ],
       "Themes can give your inbox a new look.": [
-        ""
+        "Los temas pueden darle un estilo nuevo a tu bandeja de entrada."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Se ha producido un error con la firma utilizada para verificar los datos del contacto, que pueden ser el resultado de un restablecimiento de contraseña."
@@ -4662,10 +4662,10 @@
         ""
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Carpetas, etiquetas y filtros ilimitados"
       ],
       "Unlimited messages": [
-        ""
+        "Mensajes ilimitados"
       ],
       "Unsupported file": [
         "Fichero no soportado"
@@ -4715,11 +4715,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL：${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        "Utilice ${ calendarAppName } para mantener su agenda privada."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         ""
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Use Proton Calendar para mantener su agenda privada."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Utilizando tu dispositivo móvil, escanea este código QR o visita ${ link }."
@@ -4761,7 +4761,7 @@
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "¿Desearía recibir un código de verificación nuevo?"
       ],
       "Yearly": [
         "Anual"
@@ -4770,7 +4770,7 @@
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Actualmente has iniciado sesión como ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         ""
@@ -4828,7 +4828,7 @@
         "Has alcanzado el 100% de tu capacidad de almacenamiento. Considera en liberar algo de espacio o mejorar tu cuenta con espacio de almacenamiento adicional para redactar mensajes nuevos."
       ],
       "You have reached the maximum number of 5 replies.": [
-        ""
+        "Has alcanzado el número máximo de 5 respuestas."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Has alcanzado el${ spaceDisplayed }% de tu capacidad de almacenamiento. Libera algo de espacio o añade más espacio de almacenamiento.${ freeUpMessage } ${ upgradeLink }"
@@ -4995,7 +4995,7 @@
         "Ir a la Papelera"
       ],
       "Insert link": [
-        ""
+        "Insertar enlace"
       ],
       "Jump to first": [
         "Ir al primero"
@@ -5132,7 +5132,7 @@
         " y ${ l }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        ""
+        "(No disponible temporalmente. Vuelva a comprobarlo más tarde.)"
       ],
       "Actions": [
         "Acciones"
@@ -5297,7 +5297,7 @@
         "Intervalo de importación"
       ],
       "Import to email address": [
-        ""
+        "Importar a la dirección de correo electrónico"
       ],
       "Keyboard shortcuts": [
         "Atajos de teclado"
@@ -5574,6 +5574,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Activar"
+      ],
       "Add folder": [
         "Añadir carpeta"
       ],
@@ -6091,6 +6094,20 @@
         "Combinar con el calendario"
       ]
     },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        "Obtener la aplicación móvil"
+      ],
+      "Import contacts or emails": [
+        "Importar contactos o correos electrónicos"
+      ],
+      "Send a message": [
+        "Enviar un mensaje"
+      ],
+      "Set up a recovery method": [
+        "Establecer un método de recuperación"
+      ]
+    },
     "Participant name": {
       "You": [
         "Tú"
@@ -6174,7 +6191,7 @@
         "Por favor, describe el problema e incluye cualquier mensaje de error"
       ],
       "Please insert link first": [
-        ""
+        "Por favor, inserte el enlace primero"
       ],
       "Proton username": [
         "Nombre de usuario de Proton"
@@ -6509,7 +6526,7 @@
     },
     "Storage": {
       "Get extra storage for free": [
-        ""
+        "Obtenga almacenamiento adicional de forma gratuita"
       ],
       "Release notes": [
         "Notas de la versión"
@@ -7097,7 +7114,7 @@
         "Combinando contactos"
       ],
       "Message details": [
-        ""
+        "Detalles del mensaje"
       ],
       "Message list": [
         "Lista de mensajes"

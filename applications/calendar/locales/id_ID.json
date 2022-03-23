@@ -612,8 +612,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Akses Beta memperbolehkan Anda menggunakan versi beta dari ProtonMail, Proton Calendar, dan Proton Drive sebelum mereka dirilis ke publik. Ini berarti Anda dapat menjadi yang pertama untuk mencoba produk baru, mendapatkan pembaruan terbaru, dan menggunakan fitur-fitur terbaru."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Jika Anda menemui masalah/isu, Anda dapat selalu menonaktifkan Akses Beta."
@@ -1978,9 +1978,6 @@
       "Calendar limit reached": [
         ""
       ],
-      "Calendar primary private key is not decrypted": [
-        "Kunci pribadi utama kalender tidak didekripsi"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
@@ -3205,8 +3202,8 @@
       "You are about to open another browser tab and visit:": [
         "Anda akan membuka tab peramban lain dan mengunjungi:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         ""
@@ -3964,6 +3961,20 @@
         ""
       ]
     },
+    "Onboarding": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Pilih nama tampilan"
@@ -3994,20 +4005,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Anda dapat mengubah ini kapanpun di pengaturan Anda."
-      ]
-    },
-    "Onboarding ProtonCalendar": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
-      ],
-      "Import events": [
-        ""
-      ],
-      "Meet your new encrypted calendar": [
-        ""
-      ],
-      "Start using ${ appName }": [
-        ""
       ]
     },
     "Option": {

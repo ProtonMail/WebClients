@@ -2127,8 +2127,8 @@
       "Enter your login password to confirm your identity.": [
         "Geben Sie zur Bestätigung Ihrer Identität Ihr Anmeldepasswort ein."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Geben Sie Ihr eigenes Passwort (das des Organisationsadmins) und das neue Passwort dieses Benutzers ein."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Gib dein eigenes Passwort (als Organisationsadministrator) und ein neues Passwort für den Benutzer ${ Name } (${ Email }) ein."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Geben Sie Ihre E-Mail-Adresse für die Wiederherstellung ein und wir senden Ihnen Ihre(n) Benutzernamen zu. (Dies ist in der Regel die E-Mail-Adresse, die Sie bei der Anmeldung angegeben haben.)"
@@ -2174,6 +2174,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Wenn Sie glauben, dass dies ungerechtfertigt ist, kontaktieren Sie uns bitte ${ contactLink }."
+      ],
+      "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
+        "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen ${ spamFolder }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Sollten Sie die E-Mail nicht in Ihrem Posteingang vorfinden, überprüfen Sie bitte Ihren Spam-Ordner."
@@ -2304,6 +2307,9 @@
       "Plan upgrade required": [
         "Paketaufrüstung erforderlich"
       ],
+      "Please make sure to check your ${ spamFolder }.": [
+        "Bitte überprüfe deinen ${ spamFolder }."
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben."
       ],
@@ -2403,6 +2409,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da Sie ein treuer Benutzer sind, wurden Ihrem Konto zusätzliche Funktionen hinzugefügt."
+      ],
+      "spam folder": [
+        "Spam-Ordner"
       ],
       "Starter VPN service with P2P support.": [
         "Einsteiger-VPN-Dienst mit P2P-Unterstützung."
@@ -2563,8 +2572,8 @@
       "You already have a free account": [
         "Sie verfügen bereits über ein kostenloses Konto"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Sie sind derzeit als „${ user.Name }” (${ user.Email }) angemeldet und haben nur eingeschränkten Zugang."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Du bist derzeit als ${ user.Name } (${ user.Email }) angemeldet."
       ],
       "You are saving 20% with an annual plan": [
         "Sie sparen 20 % mit einem jährlichen Abonnement"
@@ -2699,6 +2708,9 @@
       "Billed": [
         "Abgerechnet"
       ],
+      "Cancelled": [
+        "Abgebrochen"
+      ],
       "Paid": [
         "Bezahlt"
       ],
@@ -2707,9 +2719,6 @@
       ],
       "Void": [
         "Ungültig"
-      ],
-      "Writeoff": [
-        "Ausbuchung"
       ]
     },
     "Invoice type display as badge": {
@@ -3978,9 +3987,6 @@
       ],
       "Change password": [
         "Passwort ändern"
-      ],
-      "Change password for ${ Name } (${ Email })": [
-        "Passwort für ${ Name } (${ Email }) ändern"
       ],
       "Checking invitation parameters": [
         "Einladungsparameter werden überprüft"

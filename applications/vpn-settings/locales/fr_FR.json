@@ -2127,8 +2127,8 @@
       "Enter your login password to confirm your identity.": [
         "Saisissez votre mot de passe pour confirmer votre identité."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Saisissez votre propre mot de passe (en tant qu'administrateur de l'organisation) et le nouveau mot de passe de cet utilisateur."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation) et un nouveau mot de passe pour cet utilisateur ${ Name } (${ Email })."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Saisissez votre adresse électronique de récupération, et nous vous enverrons votre ou vos nom(s) d'utilisateur (c'est généralement l'adresse que vous avez fournie lors de votre inscription)."
@@ -2174,6 +2174,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
+      ],
+      "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
+        ""
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boîte de réception, veuillez vérifier votre dossier indésirables."
@@ -2304,6 +2307,9 @@
       "Plan upgrade required": [
         "Offre supérieure requise"
       ],
+      "Please make sure to check your ${ spamFolder }.": [
+        ""
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédits restants."
       ],
@@ -2403,6 +2409,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Puisque vous êtes un utilisateur fidèle, votre compte dispose de fonctionnalités supplémentaires activées."
+      ],
+      "spam folder": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "Service VPN pour débuter avec prise en charge du P2P."
@@ -2563,8 +2572,8 @@
       "You already have a free account": [
         "Vous avez déjà un compte gratuit"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email }) et avez un accès restreint."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email })."
       ],
       "You are saving 20% with an annual plan": [
         "Vous économisez 20 % avec un abonnement annuel"
@@ -2699,6 +2708,9 @@
       "Billed": [
         "Facturé"
       ],
+      "Cancelled": [
+        "Annulé"
+      ],
       "Paid": [
         "Payé"
       ],
@@ -2707,9 +2719,6 @@
       ],
       "Void": [
         "Annulée"
-      ],
-      "Writeoff": [
-        "Effacée"
       ]
     },
     "Invoice type display as badge": {
@@ -3978,9 +3987,6 @@
       ],
       "Change password": [
         "Changer le mot de passe"
-      ],
-      "Change password for ${ Name } (${ Email })": [
-        "Changer le mot de passe pour ${ Name } (${ Email })"
       ],
       "Checking invitation parameters": [
         "Vérification des paramètres d'invitation"
