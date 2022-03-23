@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 import { format } from 'date-fns';
-import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES, APPS } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     hasMailPro,
     hasMail,
@@ -107,7 +107,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                 ).t`Upgrade now`}</Button>
                 <Button onClick={handleExplorePlans} size="large" color="norm" shape="ghost" fullWidth>{c(
                     'new_plans: Action'
-                ).t`Explore all Proton plans`}</Button>
+                ).t`Explore all ${BRAND_NAME} plans`}</Button>
             </div>
         );
     }

@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
-import { AutoReplyDuration, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { AutoReplyDuration, BRAND_NAME, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
 
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 import {
@@ -201,7 +201,7 @@ const AutoReplySection = () => {
                 isEnabled && renderForm()
             ) : (
                 <UpgradeBanner className="mt2">
-                    {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and Proton for Business.`}
+                    {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}
         </SettingsSectionWide>
