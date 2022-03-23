@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
 import { useConfig, useDocumentTitle } from '../../hooks';
-import { FullLoader, ProminentContainer, TextLoader } from '../../components';
+import { ProminentContainer, TextLoader } from '../../components';
+import { classnames } from '../../helpers';
+
 
 interface Props {
     text?: string;
@@ -19,8 +22,14 @@ const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
     return (
         <ProminentContainer>
             <div className="absolute-center text-center">
-                <FullLoader className={loaderClassName} size={200} />
-                <TextLoader>{textToDisplay}</TextLoader>
+                <div>
+                    <img
+                        className={classnames(['w10e', loaderClassName])}
+                        src={protonSpinner}
+                        alt={c('Info').t`Proton loading spinner`}
+                    />
+                </div>
+                <TextLoader className="color-weak">{textToDisplay}</TextLoader>
             </div>
         </ProminentContainer>
     );
