@@ -38,6 +38,7 @@ interface Props {
     onMailTo?: (src: string) => void;
     isOutside?: boolean;
     mailSettings?: MailSettings;
+    onFocus?: () => void;
 }
 
 const MessageBodyIframe = ({
@@ -57,6 +58,7 @@ const MessageBodyIframe = ({
     onMailTo,
     isOutside,
     mailSettings,
+    onFocus,
 }: Props) => {
     const messageHead = locateHead(message.messageDocument?.document);
     const hasAttachment = hasAttachments(message.data);
@@ -92,7 +94,7 @@ const MessageBodyIframe = ({
         isPhishingAttempt: hasBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_PHISHING_AUTO),
     });
 
-    useIframeDispatchEvents(initStatus, iframeRef);
+    useIframeDispatchEvents(initStatus === 'done', iframeRef, onFocus);
 
     useObserveIframeHeight(initStatus === 'done', iframeRef);
 

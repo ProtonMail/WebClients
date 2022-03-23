@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useLabels, classnames, useHotkeys, Scroll } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -10,6 +10,7 @@ import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import ConversationHeader from '../conversation/ConversationHeader';
 import { Breakpoints } from '../../models/utils';
+import useClickOutsideFocusedMessage from '../../hooks/conversation/useClickOutsideFocusedMessage';
 
 interface Props {
     hidden: boolean;
@@ -36,6 +37,8 @@ const MessageOnlyView = ({
 }: Props) => {
     const [labels = []] = useLabels();
 
+    const [isMessageFocused, setIsMessageFocused] = useState(false);
+    const [isMessageReady, setIsMessageReady] = useState(false);
     const { message, messageLoaded, bodyLoaded } = useMessage(messageID);
     const load = useLoadMessage(message.data || ({ ID: messageID } as Message));
 
@@ -59,23 +62,53 @@ const MessageOnlyView = ({
             (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                const element =
-                    (document.querySelector(
-                        '[data-shortcut-target="item-container"][data-shortcut-target-selected="true"]'
-                    ) as HTMLElement) ||
-                    (document.querySelector('[data-shortcut-target="item-container"]') as HTMLElement);
-                element?.focus();
+
+                const element = document.querySelector('[data-shortcut-target="navigation-link inbox"]') as HTMLElement;
+                if (element) {
+                    element.focus();
+                    setIsMessageFocused(false);
+                }
             },
         ],
     ]);
 
     const messageRef = useRef<MessageViewRef>(null);
 
+    useClickOutsideFocusedMessage(messageID, () => {
+        setIsMessageFocused(false);
+    });
+    const handleBlurCallback = () => {
+        setIsMessageFocused(false);
+    };
+    const handleFocusCallback = () => {
+        setIsMessageFocused(true);
+    };
+
+    const handleMessageReadyCallback = () => {
+        setIsMessageReady(true);
+        onMessageReady();
+    };
+
     useEffect(() => {
         if (!isDraft(message.data)) {
             messageRef?.current?.expand();
         }
+
+        return () => {
+            setIsMessageReady(false);
+        };
     }, [messageID]);
+
+    useEffect(() => {
+        if (messageID && isMessageReady) {
+            const selector = `[data-shortcut-target="message-container"][data-message-id="${messageID}"]`;
+
+            const element = document.querySelector(selector) as HTMLElement;
+
+            element?.focus();
+            setIsMessageFocused(true);
+        }
+    }, [messageID, isMessageReady]);
 
     return (
         <>
@@ -103,9 +136,12 @@ const MessageOnlyView = ({
                         mailSettings={mailSettings}
                         onBack={onBack}
                         breakpoints={breakpoints}
-                        onMessageReady={onMessageReady}
+                        onMessageReady={handleMessageReadyCallback}
                         columnLayout={columnLayout}
                         isComposerOpened={isComposerOpened}
+                        onBlur={handleBlurCallback}
+                        onFocus={handleFocusCallback}
+                        hasFocus={isMessageFocused}
                     />
                 </div>
             </Scroll>
