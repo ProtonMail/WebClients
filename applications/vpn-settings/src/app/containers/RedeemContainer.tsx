@@ -9,6 +9,7 @@ import NoLogsIcon from '@proton/styles/assets/img/pv-images/redeem/no_logs.svg';
 import KillSwitchIcon from '@proton/styles/assets/img/pv-images/redeem/kill_switch.svg';
 import DNSIcon from '@proton/styles/assets/img/pv-images/redeem/dns.svg';
 import EncryptionIcon from '@proton/styles/assets/img/pv-images/redeem/encryption.svg';
+import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import PublicHeader2 from '../components/layout/PublicHeader2';
 import RedeemCouponForm from '../components/sections/redeem/RedeemCouponForm';
 
@@ -29,7 +30,7 @@ const RedeemContainer = ({ history }: { history: any }) => {
                         <div className="col center no-mobile no-tablet">
                             <img
                                 src={GadgetImage}
-                                alt={c('Image alt').t`Laptop & smartphone shown connected to ProtonVPN network.`}
+                                alt={c('Image alt').t`Laptop & smartphone shown connected to ${VPN_APP_NAME} network.`}
                             />
                         </div>
                     </div>

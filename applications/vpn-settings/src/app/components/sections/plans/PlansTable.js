@@ -11,7 +11,14 @@ import {
     useToggle,
 } from '@proton/components';
 import { c } from 'ttag';
-import { PLANS, PLAN_SERVICES, DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE } from '@proton/shared/lib/constants';
+import {
+    PLANS,
+    PLAN_SERVICES,
+    DEFAULT_CURRENCY,
+    DEFAULT_CYCLE,
+    CYCLE,
+    MAIL_APP_NAME,
+} from '@proton/shared/lib/constants';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 
 import PlanPrice from './PlanPrice';
@@ -328,8 +335,8 @@ const PlansTable = ({
                 {state ? (
                     <tr>
                         <th scope="row" className="simple-table-row-th text-left bg-weak">
-                            <span className="mr0-5">ProtonMail Visionary</span>
-                            <Info title={c('Tooltip').t`Includes ProtonMail encrypted email with all features`} />
+                            <span className="mr0-5">{MAIL_APP_NAME} Visionary</span>
+                            <Info title={c('Tooltip').t`Includes ${MAIL_APP_NAME} encrypted email with all features`} />
                         </th>
                         <td className="text-center">
                             <Icon name="xmark" />

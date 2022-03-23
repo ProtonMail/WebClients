@@ -11,6 +11,7 @@ import {
     useFormErrors,
 } from '@proton/components';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ComposerInnerModal from './ComposerInnerModal';
 import { MessageChange } from '../Composer';
@@ -101,13 +102,13 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
 
     return (
         <ComposerInnerModal
-            title={c('Info').t`Encrypt for non-ProtonMail users`}
+            title={c('Info').t`Encrypt for non-${BRAND_NAME} users`}
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
             <p className="mt0 mb1 color-weak">
                 {c('Info')
-                    .t`Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.`}
+                    .t`Encrypted messages to non-${BRAND_NAME} recipients will expire in 28 days unless a shorter expiration time is set.`}
                 <br />
                 <Href url="https://protonmail.com/support/knowledge-base/encrypt-for-outside-users/">
                     {c('Info').t`Learn more`}

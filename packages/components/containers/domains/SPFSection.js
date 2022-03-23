@@ -1,4 +1,7 @@
 import { c } from 'ttag';
+
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
 import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy } from '../../components';
 import { useNotifications } from '../../hooks';
 
@@ -12,7 +15,7 @@ const SPFSection = () => {
         <>
             <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
                 {c('Info')
-                    .t`SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.`}
+                    .t`SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${MAIL_APP_NAME} in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>
             <Label>{c('Label')
                 .t`Please add the following TXT record. Note, DNS records can take several hours to update.`}</Label>

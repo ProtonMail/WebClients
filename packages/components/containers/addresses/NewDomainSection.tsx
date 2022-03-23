@@ -138,7 +138,7 @@ const NewDomainSection = ({ domain, onDone }: Props) => {
             <SettingsSectionWide>
                 <p>
                     {
-                        // translator: The 1st variable here is the new domain, the 2nd is the app name. For example "Our new example.com domain is a convenient option for sending and receiving emails. You'll still be able to use your original ProtonMail address."
+                        // translator: The 1st variable here is the new domain, the 2nd is the app name. For example "Our new example.com domain is a convenient option for sending and receiving emails. You'll still be able to use your original Proton Mail address."
                         c('Info')
                             .t`Our new ${domain} domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${protonMailAppName} address.`
                     }

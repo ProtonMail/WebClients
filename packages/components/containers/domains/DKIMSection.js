@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { DKIM_STATE } from '@proton/shared/lib/constants';
+import { DKIM_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { Alert, Table, TableHeader, TableBody, TableRow, TableCell, Copy } from '../../components';
 import { useNotifications } from '../../hooks';
 
@@ -15,7 +15,7 @@ const DKIMSection = ({ domain }) => {
         <>
             <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
                 {c('Info')
-                    .t`ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.`}
+                    .t`${MAIL_APP_NAME} supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>
             {State === DKIM_STATE.DKIM_STATE_ERROR && (
                 <Alert className="mb1" type="error">

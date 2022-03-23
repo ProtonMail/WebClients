@@ -13,7 +13,7 @@ export const getProtonMailSignature = ({
     const link =
         isReferralProgramLinkEnabled && referralProgramUserLink ? referralProgramUserLink : 'https://protonmail.com/';
 
-    // translator: full sentence is: "Sent with ProtonMail secure email"
+    // translator: full sentence is: "Sent with Proton Mail secure email"
     const signature = c('Info').t`Sent with <a href="${link}" target="_blank">${
         APPS_CONFIGURATION[APPS.PROTONMAIL].name
     }</a> secure email.`;

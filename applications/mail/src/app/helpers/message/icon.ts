@@ -1,4 +1,4 @@
-import { PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -153,8 +153,8 @@ export const getSentStatusIcon = ({
                           encryptions.length
                       )
                     : c('Sent email icon').ngettext(
-                          msgid`Sent by ProtonMail with zero-access encryption to verified recipient`,
-                          `Sent by ProtonMail with zero-access encryption to verified recipients`,
+                          msgid`Sent by ${MAIL_APP_NAME} with zero-access encryption to verified recipient`,
+                          `Sent by ${MAIL_APP_NAME} with zero-access encryption to verified recipients`,
                           encryptions.length
                       );
             return {
@@ -172,7 +172,7 @@ export const getSentStatusIcon = ({
                 text:
                     contentEncryption === END_TO_END
                         ? c('Sent email icon').t`Sent by you with end-to-end encryption`
-                        : c('Sent email icon').t`Sent by ProtonMail with zero-access encryption`,
+                        : c('Sent email icon').t`Sent by ${MAIL_APP_NAME} with zero-access encryption`,
             };
         }
         return {
@@ -203,7 +203,7 @@ export const getSentStatusIcon = ({
             text:
                 contentEncryption === END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted to PGP recipient`
-                    : c('Sent email icon').t`Encrypted by ProtonMail to PGP recipient`,
+                    : c('Sent email icon').t`Encrypted by ${MAIL_APP_NAME} to PGP recipient`,
         };
     }
     if (
@@ -217,7 +217,7 @@ export const getSentStatusIcon = ({
             text:
                 contentEncryption === END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted to verified PGP recipient`
-                    : c('Sent email icon').t`Encrypted by ProtonMail to verified PGP recipient`,
+                    : c('Sent email icon').t`Encrypted by ${MAIL_APP_NAME} to verified PGP recipient`,
         };
     }
     if (authentication === PGP_EO && encryption === PGP_EO) {
@@ -228,7 +228,7 @@ export const getSentStatusIcon = ({
             text:
                 contentEncryption === END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted`
-                    : c('Sent email icon').t`Encrypted by ProtonMail`,
+                    : c('Sent email icon').t`Encrypted by ${MAIL_APP_NAME}`,
         };
     }
     if (encryption === PGP_PM && [NONE, PGP_PM].includes(authentication)) {
@@ -239,7 +239,7 @@ export const getSentStatusIcon = ({
             text:
                 contentEncryption === END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted`
-                    : c('Sent email icon').t`Encrypted by ProtonMail`,
+                    : c('Sent email icon').t`Encrypted by ${MAIL_APP_NAME}`,
         };
     }
     if (encryption === PGP_PM_PINNED && [NONE, PGP_PM].includes(authentication)) {
@@ -250,7 +250,7 @@ export const getSentStatusIcon = ({
             text:
                 contentEncryption === END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted to verified recipient`
-                    : c('Sent email icon').t`Encrypted by ProtonMail to verified recipient`,
+                    : c('Sent email icon').t`Encrypted by ${MAIL_APP_NAME} to verified recipient`,
         };
     }
 };
@@ -347,7 +347,7 @@ export const getReceivedStatusIcon = (
             return {
                 ...result,
                 fill: PLAIN,
-                text: c('Received email icon').t`Sent by ProtonMail with zero-access encryption`,
+                text: c('Received email icon').t`Sent by ${MAIL_APP_NAME} with zero-access encryption`,
             };
         }
     }

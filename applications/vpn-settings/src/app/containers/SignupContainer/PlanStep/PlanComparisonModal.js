@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { DialogModal, HeaderModal, InnerModal, usePlans } from '@proton/components';
 import { c } from 'ttag';
-import { CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
+import { CYCLE, CURRENCIES, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import PlansTable from '../../../components/sections/plans/PlansTable';
 
@@ -16,7 +16,7 @@ const PlanComparisonModal = ({ modalTitleID = 'modalTitle', onClose, defaultCycl
     return (
         <DialogModal onClose={onClose} className="modal--wider" {...rest}>
             <HeaderModal hasClose modalTitleID={modalTitleID} onClose={onClose}>
-                {c('Title').t`ProtonVPN plan comparison`}
+                {c('Title').t`${VPN_APP_NAME} plan comparison`}
             </HeaderModal>
             <div className="modal-content">
                 <InnerModal>

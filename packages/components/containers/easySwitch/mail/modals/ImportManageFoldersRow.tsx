@@ -4,10 +4,10 @@ import { c } from 'ttag';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailImportDestinationFolder, ImportedMailFolder } from '@proton/shared/lib/interfaces/EasySwitch';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { classnames } from '../../../../helpers';
 import { Tooltip, Icon, Checkbox, InlineLinkButton, Input, LabelStack } from '../../../../components';
-
 import {
     CheckedFoldersMap,
     DisabledFoldersMap,
@@ -17,7 +17,6 @@ import {
     EditModeMap,
     LabelsMap,
 } from '../interfaces';
-
 import { escapeSlashes, unescapeSlashes, splitEscaped, nameAlreadyExists } from '../helpers';
 
 const SYSTEM_FOLDERS = Object.values(MailImportDestinationFolder) as string[];
@@ -441,7 +440,9 @@ const ImportManageFoldersRow = ({
                 )}
 
                 {isSystemSubfolder && !mergeWarning && (
-                    <Tooltip title={c('Tooltip').t`System subfolders will show up as separate folders in ProtonMail`}>
+                    <Tooltip
+                        title={c('Tooltip').t`System subfolders will show up as separate folders in ${MAIL_APP_NAME}`}
+                    >
                         <Icon tabIndex={-1} name="circle-info" />
                     </Tooltip>
                 )}
