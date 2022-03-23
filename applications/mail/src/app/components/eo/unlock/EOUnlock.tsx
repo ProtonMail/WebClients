@@ -3,6 +3,7 @@ import { useRouteMatch } from 'react-router';
 import { c } from 'ttag';
 
 import { Href, Loader } from '@proton/components';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import MessageDecryptForm from './MessageDecryptForm';
 import { EOUrlParams } from '../../../helpers/eo/eoUrl';
@@ -35,7 +36,7 @@ const EOUnlock = ({ setSessionStorage }: Props) => {
         <main className="ui-standard color-norm bg-norm relative no-scroll w100 max-w100 center eo-layout mw30r">
             <div className="eo-layout-header">
                 <h1 className="eo-layout-title text-center mt1 mb0-5">
-                    <strong>{isError ? c('Title').t`Error` : c('Title').t`ProtonMail`}</strong>
+                    <strong>{isError ? c('Title').t`Error` : MAIL_APP_NAME}</strong>
                 </h1>
             </div>
             <div className="eo-layout-main-content">

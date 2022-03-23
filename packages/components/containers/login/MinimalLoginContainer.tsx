@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
+import { EMAIL_PLACEHOLDER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useApi, useErrorHandler, useLoading, useNotifications } from '../../hooks';
 import { FullLoader, Input, Label, UnderlineButton, PasswordInput, PrimaryButton } from '../../components';
@@ -174,7 +174,7 @@ const LoginForm = ({
                         }}
                     />
                 )}
-                <Label htmlFor="login">{c('Label').t`Username or ProtonMail address`}</Label>
+                <Label htmlFor="login">{c('Label').t`Username or ${MAIL_APP_NAME} address`}</Label>
                 <div className="mb1">
                     <Input
                         type="text"
@@ -183,7 +183,7 @@ const LoginForm = ({
                         autoFocus
                         autoCapitalize="off"
                         autoCorrect="off"
-                        title={c('Title').t`Enter your username or ProtonMail email address`}
+                        title={c('Title').t`Enter your username or ${MAIL_APP_NAME} email address`}
                         id="login"
                         placeholder={EMAIL_PLACEHOLDER}
                         required

@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { Info, Toggle } from '../../components';
 import { useApi, useLoading, useMailSettings, useEventManager, useNotifications } from '../../hooks';
 
@@ -36,7 +37,7 @@ const AddressVerificationSection = () => {
                         <Info
                             url="https://protonmail.com/support/knowledge-base/address-verification/"
                             title={c('Tooltip prompt to trust keys')
-                                .t`When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.`}
+                                .t`When receiving an email from another ${MAIL_APP_NAME} user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.`}
                         />
                     </label>
                 </SettingsLayoutLeft>

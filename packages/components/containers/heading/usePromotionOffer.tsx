@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { isProductPayer } from '@proton/shared/lib/helpers/blackfriday';
 import { LatestSubscription } from '@proton/shared/lib/interfaces';
-import { APPS, BLACK_FRIDAY, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { APPS, BLACK_FRIDAY, CYCLE, MAIL_APP_NAME, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
@@ -92,8 +92,8 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
                   {
                       name:
                           APP_NAME === APPS.PROTONVPN_SETTINGS
-                              ? 'ProtonVPN Plus + ProtonMail Plus'
-                              : 'ProtonMail Plus + ProtonVPN Plus',
+                              ? `${VPN_APP_NAME} Plus + ${MAIL_APP_NAME} Plus`
+                              : `${MAIL_APP_NAME} Plus + ${VPN_APP_NAME} Plus`,
                       cycle: CYCLE.TWO_YEARS,
                       plan: [PLANS.PLUS, PLANS.VPNPLUS].join('_'),
                       planIDs: {

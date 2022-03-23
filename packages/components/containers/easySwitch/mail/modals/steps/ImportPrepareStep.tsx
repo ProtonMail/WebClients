@@ -12,6 +12,7 @@ import {
     CustomFieldsBitmap,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useFolders, useUser, useModals, useLabels } from '../../../../../hooks';
 import {
@@ -256,9 +257,9 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                 <Alert className="mb1 mt1" type="error">
                     {isLabelMapping
                         ? c('Error')
-                              .t`Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.`
+                              .t`Some of your label names exceed ${MAIL_APP_NAME}'s maximum character limit. Please customize the import to edit these names.`
                         : c('Error')
-                              .t`Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.`}
+                              .t`Some of your folder names exceed ${MAIL_APP_NAME}'s maximum character limit. Please customize the import to edit these names.`}
                 </Alert>
             )}
 

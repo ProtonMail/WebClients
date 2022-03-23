@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { updateAttachPublicKey, updatePGPScheme, updateSign } from '@proton/shared/lib/api/mailSettings';
 
 import { Info, Toggle, AlertModal, Button, useModalState, AlertModalProps } from '../../components';
@@ -94,7 +94,7 @@ const ExternalPGPSettingsSection = () => {
                 />
             )}
             <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">
-                {c('Info').t`Only change these settings if you are using PGP with non-ProtonMail recipients.`}
+                {c('Info').t`Only change these settings if you are using PGP with non-${BRAND_NAME} recipients.`}
             </SettingsParagraph>
 
             <SettingsLayout>
@@ -153,7 +153,7 @@ const ExternalPGPSettingsSection = () => {
                         <Info
                             url="https://protonmail.com/support/knowledge-base/pgp-mime-pgp-inline/"
                             title={c('Tooltip default pgp scheme')
-                                .t`Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more`}
+                                .t`Select the default PGP settings used to sign or encrypt messages with non-${BRAND_NAME} PGP users. Note that Inline PGP forces plain text messages. Learn more`}
                         />
                     </label>
                 </SettingsLayoutLeft>

@@ -1,3 +1,4 @@
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { useState, useEffect, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
@@ -143,13 +144,13 @@ const ProtonMailBridgeSection = () => {
                 learnMoreUrl={hasPaidMail ? 'https://protonmail.com/bridge/' : undefined}
             >
                 {c('Info')
-                    .t`You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.`}
+                    .t`You can use ${MAIL_APP_NAME} with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.`}
             </SettingsParagraph>
             {hasPaidMail ? (
                 <div className="mt2 bridge-grid">{bridgeClients.map(renderBox)}</div>
             ) : (
                 <UpgradeBanner>
-                    {c('Info').t`Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.`}
+                    {c('Info').t`Upgrade to a paid plan to unlock IMAP/SMTP support through ${MAIL_APP_NAME} Bridge.`}
                 </UpgradeBanner>
             )}
         </SettingsSectionWide>

@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { PLANS, PLAN_TYPES, CYCLE } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_TYPES, CYCLE, DRIVE_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { Info } from '@proton/components';
 
 import freePlanSvg from '@proton/styles/assets/img/pv-images/plans/free.svg';
@@ -166,10 +166,10 @@ const getPlanFeatures = (plan, maxConnections, countries, serversCount) => {
             features: [
                 c('Plan feature').t`All ${PLAN_NAMES[PLAN.PLUS]} plan features`,
                 <>
-                    <span className="mr0-5">{c('Plan Feature').t`ProtonMail Visionary account`}</span>
+                    <span className="mr0-5">{c('Plan Feature').t`${MAIL_APP_NAME} Visionary account`}</span>
                     <Info
                         title={c('Info')
-                            .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.`}
+                            .t`Get access to all the paid features for both ${VPN_APP_NAME} and ${MAIL_APP_NAME} (the encrypted email service that millions use to protect their data) with one plan.`}
                         url="https://protonmail.com"
                     />
                 </>,
@@ -221,15 +221,15 @@ const getPlanFeatures = (plan, maxConnections, countries, serversCount) => {
                     />
                 </>,
                 <>
-                    <span className="mr0-5">{c('Plan Feature').t`ProtonMail Plus account`}</span>
+                    <span className="mr0-5">{c('Plan Feature').t`${MAIL_APP_NAME} Plus account`}</span>
                     <Info
                         title={c('Info')
-                            .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.`}
+                            .t`Get access to all the paid features for both ${VPN_APP_NAME} and ${MAIL_APP_NAME} (the encrypted email service that millions use to protect their data) with one plan.`}
                         url="https://protonmail.com"
                     />
                 </>,
                 <>
-                    <span className="mr0-5">ProtonDrive</span>
+                    <span className="mr0-5">{DRIVE_APP_NAME}</span>
                     <span className="text-success">{c('Price').t`FREE`}</span>
                 </>,
             ],

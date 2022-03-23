@@ -10,6 +10,7 @@ import {
     isSent,
     isSentEncrypted,
 } from '@proton/shared/lib/mail/messages';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 const I18N = {
     pm: [
@@ -49,8 +50,8 @@ const I18N = {
         // gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ],
     auto: [
-        c('Message encryption status').t`Sent by ProtonMail with zero access encryption`,
-        // gettextCatalog.getString('Sent by ProtonMail with zero access encryption', null, 'Message encryption status')
+        c('Message encryption status').t`Sent by ${MAIL_APP_NAME} with zero access encryption`,
+        // gettextCatalog.getString('Sent by Proton Mail with zero access encryption', null, 'Message encryption status')
     ],
     sentClear: [
         c('Message encryption status').t`Stored with zero access encryption`,

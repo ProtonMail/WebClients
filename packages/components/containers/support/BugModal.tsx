@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { reportBug } from '@proton/shared/lib/api/reports';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { omit } from '@proton/shared/lib/helpers/object';
 
@@ -197,7 +197,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
         if (mode === 'chat-unavailable') {
             return (
                 <Alert className="mb1" type="warning">{c('Warning')
-                    .t`Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.`}</Alert>
+                    .t`Live chat is a premium feature available only to those with paid ${VPN_APP_NAME} plans. Please open a ticket instead.`}</Alert>
             );
         }
 
