@@ -183,12 +183,16 @@ const ProtonPlanCustomizer = ({
             .t`Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.`,
     } as const;
 
+    const mailPlus = `${MAIL_APP_NAME} Plus`;
+    const vpnPlus = `${VPN_APP_NAME} ${PLAN_NAMES[PLANS.VPNPLUS]}`;
+    const maxVpn = plansNameMap[PLANS.VPNPLUS].MaxVPN;
+
     return (
         <div className={classnames(['plan-customiser', className])} {...rest}>
             <h2 className="text-2xl text-bold">{c('Title').t`${appName} customization`}</h2>
             {service === PLAN_SERVICES.MAIL && planIDs[plansNameMap[PLANS.PLUS].ID] ? (
                 <p>
-                    {c('Info').t`${MAIL_APP_NAME} Plus is limited to one user and starts with 5 GB of storage.`}
+                    {c('Info').t`${mailPlus} is limited to one user and starts with 5 GB of storage.`}
                     <br />
                     {c('Info').jt`Switch to ${professionalPlan} to add more users.`}
                 </p>
@@ -196,13 +200,9 @@ const ProtonPlanCustomizer = ({
             {service === PLAN_SERVICES.VPN && planIDs[plansNameMap[PLANS.VPNPLUS].ID] ? (
                 <p>
                     {c('Info').ngettext(
-                        msgid`${VPN_APP_NAME} ${PLAN_NAMES[PLANS.VPNPLUS]} includes ${
-                            plansNameMap[PLANS.VPNPLUS].MaxVPN
-                        } VPN connection.`,
-                        `${VPN_APP_NAME} ${PLAN_NAMES[PLANS.VPNPLUS]} includes ${
-                            plansNameMap[PLANS.VPNPLUS].MaxVPN
-                        } VPN connections.`,
-                        plansNameMap[PLANS.VPNPLUS].MaxVPN
+                        msgid`${vpnPlus} includes ${maxVpn} VPN connection.`,
+                        `${vpnPlus} includes ${maxVpn} VPN connections.`,
+                        maxVpn
                     )}
                     <br />
                     {planIDs[plansNameMap[PLANS.PROFESSIONAL].ID]
