@@ -114,6 +114,10 @@ const OpenVPNConfigurationSection = () => {
 
     const plusVpnConnections = plans?.find(({ Name }) => Name === PLANS.VPNPLUS)?.MaxVPN;
 
+    const vpnPlus = `${VPN_APP_NAME} Plus`;
+    const vpnBasic = `${VPN_APP_NAME} Basic`;
+    const visionary = 'Visionary';
+
     return (
         <>
             <SettingsParagraph>
@@ -216,7 +220,7 @@ const OpenVPNConfigurationSection = () => {
                         {isUpgradeRequiredForSecureCore() && (
                             <SettingsParagraph>
                                 <span className="block">{c('Info')
-                                    .t`${VPN_APP_NAME} Plus or Visionary required for Secure Core feature.`}</span>
+                                    .t`${vpnPlus} or ${visionary} required for Secure Core feature.`}</span>
                                 <SettingsLink path="/dashboard">{c('Link').t`Learn more`}</SettingsLink>
                             </SettingsParagraph>
                         )}
@@ -238,7 +242,7 @@ const OpenVPNConfigurationSection = () => {
                         </SettingsParagraph>
                         {isUpgradeRequiredForCountries() && (
                             <SettingsParagraph learnMoreUrl={`https://${VPN_HOSTNAME}/dashboard`}>{c('Info')
-                                .t`${VPN_APP_NAME} Basic, Plus or Visionary required for Country level connection.`}</SettingsParagraph>
+                                .t`${vpnBasic}, ${vpnPlus} or ${visionary} required for Country level connection.`}</SettingsParagraph>
                         )}
                         <ConfigsTable
                             category={CATEGORY.COUNTRY}
@@ -290,8 +294,7 @@ const OpenVPNConfigurationSection = () => {
                 </div>
                 {!loadingPlans && (userVPN.PlanName === 'trial' || !hasPaidVpn) ? (
                     <div className="border p2 text-center">
-                        <h3 className="color-primary mt0 mb1">{c('Title')
-                            .t`Get ${VPN_APP_NAME} Plus to access all servers`}</h3>
+                        <h3 className="color-primary mt0 mb1">{c('Title').t`Get ${vpnPlus} to access all servers`}</h3>
                         <ul className="unstyled inline-flex mt0 mb2 on-mobile-flex-column">
                             <li className="flex flex-nowrap flex-align-items-center mr1">
                                 <Icon name="check" className="color-success mr0-5" />
@@ -330,8 +333,9 @@ const OpenVPNConfigurationSection = () => {
                             </li>
                         </ul>
                         <div>
-                            <ButtonLike as={SettingsLink} color="norm" path="/dashboard?plan=vpnplus">{c('Action')
-                                .t`Get ${VPN_APP_NAME} Plus`}</ButtonLike>
+                            <ButtonLike as={SettingsLink} color="norm" path={`/dashboard?plan=${PLANS.VPNPLUS}`}>
+                                {c('Action').t`Get ${vpnPlus}`}
+                            </ButtonLike>
                         </div>
                     </div>
                 ) : null}
