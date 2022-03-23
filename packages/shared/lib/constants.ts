@@ -24,12 +24,12 @@ export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
 export const USERNAME_PLACEHOLDER = 'john.doe';
 
 export const BRAND_NAME = 'Proton';
-export const MAIL_APP_NAME = 'ProtonMail';
-export const CALENDAR_APP_NAME = 'ProtonCalendar';
-export const DRIVE_APP_NAME = 'ProtonDrive';
-export const VPN_APP_NAME = 'ProtonVPN';
+export const MAIL_APP_NAME = 'Proton Mail';
+export const CALENDAR_APP_NAME = 'Proton Calendar';
+export const DRIVE_APP_NAME = 'Proton Drive';
+export const VPN_APP_NAME = 'Proton VPN';
 export const ACCOUNT_APP_NAME = 'Proton Account';
-export const VERIFY_APP_NAME = 'ProtonVerify';
+export const VERIFY_APP_NAME = 'Proton Verify';
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
