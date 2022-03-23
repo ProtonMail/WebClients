@@ -3,7 +3,7 @@ import { InputTwo } from '@proton/components';
 import ccIcon from '@proton/styles/assets/img/credit-card-icons/cc-master.svg';
 import { getTitle } from '../../helpers/title';
 
-import mdx from './InputTwo.mdx';
+import mdx from './Input.mdx';
 
 export default {
     component: InputTwo,
