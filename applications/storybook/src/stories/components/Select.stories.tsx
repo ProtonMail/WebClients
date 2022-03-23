@@ -14,20 +14,27 @@ export default {
     },
 };
 
-export const Basic = ({ ...args }) => {
+export const Playground = ({ ...args }) => {
     const [value, setValue] = useState('ant');
 
     return (
-        <SelectTwo value={value} onChange={({ value: v }) => setValue(v)} {...args}>
+        <SelectTwo {...args} value={value} onChange={({ value: v }) => setValue(v)}>
             <Option title="Ant" value="ant" />
             <Option title="Zebra" value="zebra" />
         </SelectTwo>
     );
 };
+Playground.args = {};
 
-Basic.args = {
-    placeholder: 'Animal',
-    clearSearchAfter: 500,
+export const Basic = () => {
+    const [value, setValue] = useState('ant');
+
+    return (
+        <SelectTwo value={value} onValue={setValue}>
+            <Option title="Ant" value="ant" />
+            <Option title="Zebra" value="zebra" />
+        </SelectTwo>
+    );
 };
 
 export const ControlledOpenState = () => {
