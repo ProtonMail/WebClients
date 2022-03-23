@@ -1,20 +1,11 @@
-import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { Audience, Currency, Cycle } from '@proton/shared/lib/interfaces';
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/shared/lib/constants';
 
 import { classnames } from '../../../helpers';
 import { Badge, Icon, Price, PrimaryButton } from '../../../components';
 
 import SelectPlan from './SelectPlan';
-
-export interface PlanCardFeature {
-    icon?: ReactNode;
-    content: ReactNode;
-    className?: string;
-    info?: ReactNode;
-    notIncluded?: boolean;
-}
 
 interface Props {
     target: Audience;
@@ -69,21 +60,6 @@ const PlanCard = ({
 }: Props) => {
     const badgeMultiUser = planName === PLANS.FAMILY ? <Badge type="success">{c('Badge').t`5 users`}</Badge> : null;
 
-    const vpnRegularPrice = <Price currency={currency}>{699}</Price>; // hardcoded until we have a way to get it.
-    const vpnRegularPriceInfo =
-        planName === PLANS.VPN
-            ? // translator: full sentence is: Billed annually. <Regular price €xxx.> Other billing cycles available at checkout.
-              c('Info').jt`Regular price ${vpnRegularPrice}.`
-            : ``;
-
-    const footerNotesFree = c('Info').t`* No credit card required.`;
-    // translator: full sentence is (the part in the variable might be empty in some cases): Billed annually. <Regular price €xxx.> Other billing cycles available at checkout.
-    const footerNotesYear = c('Info')
-        .jt`* Billed annually. ${vpnRegularPriceInfo} Other billing cycles available at checkout.`;
-    // translator: full sentence is (the part in the variable might be empty in some cases): Billed every 2 years. <Regular price €xxx.> Other billing cycles available at checkout.
-    const footerNotesTwoYears = c('Info')
-        .jt`Billed every 2 years. ${vpnRegularPriceInfo} Other billing cycles available at checkout.`;
-
     return (
         <>
             <div
@@ -124,7 +100,7 @@ const PlanCard = ({
                     ) : (
                         <Price currency={currency}>{price / cycle}</Price>
                     )}
-                    <span className="color-weak ml1">{getCycleUnit(planName)} *</span>
+                    <span className="color-weak ml1">{getCycleUnit(planName)}</span>
                 </div>
 
                 <PrimaryButton
@@ -135,26 +111,7 @@ const PlanCard = ({
                 >
                     {action}
                 </PrimaryButton>
-                <div className="flex flex-column flex-nowrap flex-item-fluid-auto mt0-5">
-                    {features}
-                    <div className="pt1 mtauto pb1">
-                        {planName === PLANS.FREE ? (
-                            <p className="text-sm mt0 plan-selection-additionnal-mentions color-weak">
-                                {footerNotesFree}
-                            </p>
-                        ) : null}
-                        {cycle === CYCLE.YEARLY && planName !== PLANS.FREE ? (
-                            <p className="text-sm mt0 plan-selection-additionnal-mentions color-weak">
-                                {footerNotesYear}
-                            </p>
-                        ) : null}
-                        {cycle === CYCLE.TWO_YEARS && planName !== PLANS.FREE ? (
-                            <p className="text-sm mt0 plan-selection-additionnal-mentions color-weak">
-                                {footerNotesTwoYears}
-                            </p>
-                        ) : null}
-                    </div>
-                </div>
+                <div className="flex flex-column flex-nowrap flex-item-fluid-auto mt0-5">{features}</div>
             </div>
         </>
     );
