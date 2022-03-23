@@ -2127,8 +2127,8 @@
       "Enter your login password to confirm your identity.": [
         "Insira a senha de início de sessão para confirmar a sua identidade."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Insira a sua senha (como administrador da organização) e a nova senha deste utilizador."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        ""
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Insira o seu email de recuperação e enviar-lhe-emos o seu nome de utilizador (é habitualmente o email que forneceu durante o registo inicial)."
@@ -2174,6 +2174,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
+      ],
+      "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
+        ""
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontra o email na sua caixa de entrada, veja na pasta de spam."
@@ -2304,6 +2307,9 @@
       "Plan upgrade required": [
         "Requerida actualização do plano"
       ],
+      "Please make sure to check your ${ spamFolder }.": [
+        ""
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Ao clicar no botão Confirmar, a sua conta será creditada com ${ creditsRemaining }."
       ],
@@ -2403,6 +2409,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
+      ],
+      "spam folder": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "Serviço de VPN para principiantes com suporte a P2P."
@@ -2563,8 +2572,8 @@
       "You already have a free account": [
         "Já tem uma conta gratuita"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Tem actualmente sessão iniciada como ${ user.Name } (${ user.Email }) e tem acesso restrito."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You are saving 20% with an annual plan": [
         "Está a poupar 20% com um plano anual"
@@ -2699,6 +2708,9 @@
       "Billed": [
         "Facturado"
       ],
+      "Cancelled": [
+        ""
+      ],
       "Paid": [
         "Paga"
       ],
@@ -2707,9 +2719,6 @@
       ],
       "Void": [
         "Anulada"
-      ],
-      "Writeoff": [
-        "Apagada"
       ]
     },
     "Invoice type display as badge": {
@@ -3978,9 +3987,6 @@
       ],
       "Change password": [
         "Alterar senha"
-      ],
-      "Change password for ${ Name } (${ Email })": [
-        "Alterar senha para ${ Name } (${ Email })"
       ],
       "Checking invitation parameters": [
         "A verificar parâmetros do convite"

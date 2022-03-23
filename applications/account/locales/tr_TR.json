@@ -37,6 +37,9 @@
       "Activate": [
         "Etkinleştir"
       ],
+      "Activate ${ addressToCreate }": [
+        "${ addressToCreate }@ adresini etkinleştir"
+      ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me adresini etkinleştir"
       ],
@@ -454,6 +457,9 @@
       "No": [
         "Hayır"
       ],
+      "No, thanks": [
+        "Hayır, teşekkürler"
+      ],
       "OK": [
         "Tamam"
       ],
@@ -671,7 +677,7 @@
         "Tüm hesapların oturumunu kapat"
       ],
       "Sign out from": [
-        "Oturumu kapatılacak hesap"
+        "Şu hesabın oturumunu kapat"
       ],
       "Signing in": [
         "Oturum açılıyor"
@@ -3193,6 +3199,10 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN bağlantısı",
+        "${ MaxVPN } VPN bağlantısı"
+      ],
       "Access to all countries": [
         "Tüm ülkelere erişim"
       ],
@@ -3863,6 +3873,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } kullanıma hazır"
+      ],
       "${ appName } ${ planName } credits earned": [
         "${ appName } ${ planName } ödülü kazandınız"
       ],
@@ -3886,9 +3899,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } birleştirilmiş takvim",
         "${ calendarsToBeMergedCount } birleştirilmiş takvim"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "${ emailAddress } bir ${ appName } adresidir"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
@@ -4047,7 +4057,7 @@
         "Hesap güncellendi"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ProtonMail gönder\" veya \"Bana özel ileti gönder\" şeklinde anlamlandırılabilir"
+        "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ProtonMail gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
       ],
       "Add a recovery email address": [
         "Bir kurtarma e-postası adresi ekle"
@@ -4408,8 +4418,8 @@
       "Enter your login password to confirm your identity.": [
         "Kimliğinizi doğrulamak için oturum açma parolanızı yazın."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Kendi parolanızı (kuruluş yöneticisi olarak) ve bu kullanıcının yeni parolasını yazın."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Kendi parolanızı (kuruluş yöneticisi olarak) ve ${ Name } (${ Email }) kullanıcısı için yeni parolayı yazın."
       ],
       "Enter your Proton account email address or username.": [
         "Proton hesabınızın e-posta adresini ya da kullanıcı adını yazın."
@@ -4617,6 +4627,7 @@
         "İnternet bağlantısı yeniden kuruldu."
       ],
       "Invite successfully sent": [
+        "Davet gönderildi",
         "Davet gönderildi"
       ],
       "Invited via email": [
@@ -4817,6 +4828,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        "Yeni ${ domain } etki alanımız, e-posta göndermek ve almak için kolaylık sağlar. Özgün ${ protonMailAppName } adresinizi kullanmayı sürdürebilirsiniz."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Kurtarma dosyası eski olabilir. Verilerinize erişebileceğinizden emin olmak için güncelleyin"
       ],
@@ -4829,8 +4843,9 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "12 aylık bir tarife ödedi"
+      "Paid for a ${ rewardMonths } month plan": [
+        "${ rewardMonths } aylık tarife için ödeme yapıldı",
+        "${ rewardMonths } aylık tarife için ödeme yapıldı"
       ],
       "Paid for a monthly plan": [
         "Bir aylık tarife ödemesi yaptı"
@@ -5325,6 +5340,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Aileler ve küçük işletmeler için VPN + ${ mailAppName } paketi."
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        "${ addressToCreate } adresini ileti göndermek için varsayılan olarak ayarlamak ister misiniz?"
+      ],
       "Warning:": [
         "Uyarı:"
       ],
@@ -5412,6 +5430,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız ve erişiminiz kısıtlı."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Ayrıca içe aktarılan takvimleri var olan Proton takvimleriyle birleştirebilirsiniz."
       ],
@@ -5444,6 +5465,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz"
+      ],
+      "You cannot refer ${ appName } users": [
+        "${ appName } kullanıcılarını kaynak gösteremezsiniz"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "ProtonVPN uygulamalarında ya da ProtonVPN kontrol panosunda oturum açmak için OpenVPN / IKEv2 kimlik doğrulama bilgilerini kullanamazsınız. ${ learnMore }"
@@ -5501,6 +5525,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Web tarayıcıyı kapattıktan sonra bile oturumunuz açık kalır."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        "Var olan e-posta adreslerinizle e-posta gönderip almayı sürdürebilirsiniz."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilidir. Lütfen ${ toAppName } kullanabilmek için bir adres oluşturun."
@@ -5661,6 +5688,9 @@
       "Billed": [
         "Faturalanmış"
       ],
+      "Cancelled": [
+        "İptal edildi"
+      ],
       "Paid": [
         "Ödenmiş"
       ],
@@ -5669,9 +5699,6 @@
       ],
       "Void": [
         "Geçersiz"
-      ],
-      "Writeoff": [
-        "Vazgeçilmiş"
       ]
     },
     "Invoice type display as badge": {
@@ -6070,7 +6097,7 @@
         "Otomatik yanıt"
       ],
       "Auto-detect primary time zone": [
-        "Birinci saat dilimi otomatik algılansın"
+        "Birincil saat dilimi otomatik algılansın"
       ],
       "Auto-load embedded images": [
         "Gömülü görseller otomatik yüklensin"
@@ -6385,7 +6412,7 @@
         "Yalnızca son ay"
       ],
       "Link confirmation": [
-        "Bağlantı onayı"
+        "Bağlantı onayı istensin"
       ],
       "Login password": [
         "Oturum açma parolası"
@@ -6568,7 +6595,7 @@
         "Davet dili"
       ],
       "Show secondary time zone": [
-        "İkinci saat dilimi görüntülensin"
+        "İkincil saat dilimi görüntülensin"
       ],
       "Show week numbers": [
         "Hafta numaraları görüntülensin"
@@ -6652,7 +6679,7 @@
         "İki parola kipi"
       ],
       "Undo send": [
-        "Göndermeyi geri al"
+        "Göndermeyi geri alma süresi"
       ],
       "Upload 1 or more encryption keys": [
         "1 ya da birkaç şifreleme anahtarı yükleyin"
@@ -7338,7 +7365,7 @@
     },
     "Navigation": {
       "Back to Calendar": [
-        "Takvim uygulamasına dön"
+        "Calendar uygulamasına dön"
       ],
       "Back to Drive": [
         "Drive uygulamasına dön"
@@ -8359,7 +8386,7 @@
         "Tercih kaydedildi"
       ],
       "Premium address created": [
-        "Öncelikli hesap oluşturuldu"
+        "Ücretli hesap oluşturuldu"
       ],
       "Resuming import": [
         "İçe aktarma sürdürülüyor"
@@ -8791,11 +8818,11 @@
       "Delete ${ filter.Name }": [
         "${ filter.Name } sil"
       ],
-      "Delete ${ Name } folder": [
-        "${ Name } klasörünü sil"
+      "Delete ${ label.Name } folder": [
+        "${ label.Name } klasörünü sil"
       ],
-      "Delete ${ Name } label": [
-        "${ Name } etiketini sil"
+      "Delete ${ label.Name } label": [
+        "${ label.Name } etiketini sil"
       ],
       "Delete account": [
         "Hesabı sil"
@@ -9281,6 +9308,9 @@
       "What's new": [
         "Yenilikler"
       ],
+      "Your ${ domain } address is active": [
+        "${ domain } adresiniz kullanıma hazır"
+      ],
       "Your account’s usage": [
         "Hesap kullanımınız"
       ],
@@ -9737,7 +9767,7 @@
         "Coğrafi olarak engellenmiş içeriğe erişin (Netflix, YouTube, vb.)"
       ],
       "Higher speed servers (up to 10Gbps)": [
-        "Daha yüksek hızlı sunucular (10Gb/sn hıza kadar)"
+        "Daha yüksek hızlı sunucular kullanın (10Gb/sn hıza kadar)"
       ],
       "Unlock advanced VPN features": [
         "Gelişmiş VPN özelliklerine erişin"
@@ -10090,7 +10120,7 @@
         "${ interval } yılda bir, ${ untilString }"
       ],
       "Yearly": [
-        "Yıllık"
+        "Yılda bir"
       ],
       "Yearly, ${ timesString }": [
         "Yılda bir, ${ timesString }"

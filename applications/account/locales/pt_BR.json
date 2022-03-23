@@ -37,6 +37,9 @@
       "Activate": [
         "Ativar"
       ],
+      "Activate ${ addressToCreate }": [
+        "Ativar ${ addressToCreate }"
+      ],
       "Activate ${ Name }@pm.me": [
         "Ativar ${ Name }@pm.me"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "Não"
+      ],
+      "No, thanks": [
+        "Não, obrigado"
       ],
       "OK": [
         "OK"
@@ -2320,7 +2326,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
-        ""
+        "Parabéns! Você ganhou um máximo de ${ rewardsLimit } meses gratuitos de ${ appName } ${ plusPlanName }"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
@@ -3193,6 +3199,10 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } conexão VPN",
+        "${ MaxVPN } conexões VPN"
+      ],
       "Access to all countries": [
         "Acesso a todos os países"
       ],
@@ -3863,6 +3873,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } agora está ativo"
+      ],
       "${ appName } ${ planName } credits earned": [
         "${ appName } ${ planName } créditos ganhos"
       ],
@@ -3886,9 +3899,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendário mesclado",
         "${ calendarsToBeMergedCount } calendários mesclados"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "${ emailAddress } é um endereço ${ appName }"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } é inválido"
@@ -4182,7 +4192,7 @@
         "Navegação básica e ações permanecem disponíveis, independentemente dos atalhos de teclado estarem ativos ou não nas configurações."
       ],
       "Basic, Plus or Visionary subscription required": [
-        "É necessária a assinatura Básica, Plus ou Visionária"
+        "É necessária a assinatura Basic, Plus ou Visionary"
       ],
       "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Antes de poder receber e-mails do seus endereços de domínio personalizados no ProtonMail, você precisa adicionar os registros MX ao seu DNS. Isso normalmente pode ser feito no painel de controle de seu registrador de nomes de domínio."
@@ -4408,8 +4418,8 @@
       "Enter your login password to confirm your identity.": [
         "Digite sua senha de inicio de sessão para confirmar sua identidade."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Digite sua própria senha (como administrador da organização) e a nova senha desse usuário."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Insira sua própria senha (como administrador da organização) e a nova senha para o usuário ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta Proton."
@@ -4617,7 +4627,8 @@
         "Conexão com a internet restaurada."
       ],
       "Invite successfully sent": [
-        "Convite enviado com sucesso"
+        "Convite enviado com sucesso",
+        "Convites enviados com sucesso"
       ],
       "Invited via email": [
         "Convidado através do e-mail"
@@ -4817,6 +4828,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e, eventualmente, sua conta será desativada."
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        "Nosso novo domínio ${ domain } é uma opção conveniente para enviar e receber e-mails. Você ainda poderá usar seu endereço original ${ protonMailAppName }."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Arquivo de recuperação desatualizado. Atualize para garantir acesso aos seus dados"
       ],
@@ -4829,8 +4843,9 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "Pago por um plano de 12 meses"
+      "Paid for a ${ rewardMonths } month plan": [
+        "Pagou o plano de ${ rewardMonths } mês",
+        "Pagou o plano de ${ rewardMonths } meses"
       ],
       "Paid for a monthly plan": [
         "Pago para o plano mensal"
@@ -4945,7 +4960,7 @@
         "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } inclui ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } conexões VPN."
       ],
       "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "É necessário o ProtonVPN Básico, Plus ou Visionary para se conectar ao nível do país."
+        "É necessário o ProtonVPN Basic, Plus ou Visionary para se conectar ao nível do país."
       ],
       "ProtonVPN Plus or Visionary required for Secure Core feature.": [
         "É necessário o plano ProtonVPN Plus ou Visionary para usar o recurso Secure Core."
@@ -5325,6 +5340,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Pacote VPN + ${ mailAppName } para famílias e pequenas empresas."
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        "Quer definir ${ addressToCreate } como seu e-mail padrão para enviar mensagens?"
+      ],
       "Warning:": [
         "Aviso:"
       ],
@@ -5412,6 +5430,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Você está atualmente logado como ${ user.Name } (${ user.Email }) e tem acesso restrito."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Você está atualmente iniciado sessão como ${ user.Name } (${ user.Email })."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Você pode mesclar calendários importados com calendários Proton existentes."
       ],
@@ -5444,6 +5465,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Você não pode enviar mais de ${ emailSendLimitNumber } convites por endereço eletrônico nas próximas 24 horas"
+      ],
+      "You cannot refer ${ appName } users": [
+        "Você não pode indicar usuários de ${ appName }"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Não é possível utilizar as credenciais do OpenVPN/IKEv2 para fazer login nos aplicativos do ProtonVPN ou no painel do ProtonVPN. ${ learnMore }"
@@ -5501,6 +5525,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Você permanecerá conectado mesmo depois de fechar o navegador."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        "Você ainda poderá enviar e receber mensagens com seu(s) endereço(s) de e-mail existente(s)."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }. Para usar o ${ toAppName }, por favor, crie um endereço."
@@ -5661,6 +5688,9 @@
       "Billed": [
         "Faturado"
       ],
+      "Cancelled": [
+        "Cancelado"
+      ],
       "Paid": [
         "Pago"
       ],
@@ -5669,9 +5699,6 @@
       ],
       "Void": [
         "Vazio"
-      ],
-      "Writeoff": [
-        "Cancelamento"
       ]
     },
     "Invoice type display as badge": {
@@ -6691,7 +6718,7 @@
         "Conexões VPN"
       ],
       "Waiting for subscription": [
-        ""
+        "Esperando pela assinatura"
       ],
       "Want to add": [
         "Quero adicionar"
@@ -8791,11 +8818,11 @@
       "Delete ${ filter.Name }": [
         "Excluir ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "Excluir ${ Name } pasta"
+      "Delete ${ label.Name } folder": [
+        "Exclua a pasta ${ label.Name }"
       ],
-      "Delete ${ Name } label": [
-        "Excluir ${ Name } etiqueta"
+      "Delete ${ label.Name } label": [
+        "Excluir etiqueta ${ label.Name }"
       ],
       "Delete account": [
         "Excluir conta"
@@ -9280,6 +9307,9 @@
       ],
       "What's new": [
         "O que há de novo"
+      ],
+      "Your ${ domain } address is active": [
+        "Seu endereço ${ domain } está ativo"
       ],
       "Your account’s usage": [
         "Uso da sua conta"

@@ -37,6 +37,9 @@
       "Activate": [
         "Активировать"
       ],
+      "Activate ${ addressToCreate }": [
+        "Активировать ${ addressToCreate }"
+      ],
       "Activate ${ Name }@pm.me": [
         "Активировать ${ Name }@pm.me"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "Нет"
+      ],
+      "No, thanks": [
+        ""
       ],
       "OK": [
         "OK"
@@ -3237,6 +3243,12 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } подключение к VPN",
+        "${ MaxVPN } подключения к VPN",
+        "${ MaxVPN } подключений к VPN",
+        "${ MaxVPN } подключений к VPN"
+      ],
       "Access to all countries": [
         "Доступ ко всем странам"
       ],
@@ -3933,6 +3945,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } теперь активен"
+      ],
       "${ appName } ${ planName } credits earned": [
         "${ appName } ${ planName } кредитов получено"
       ],
@@ -3962,9 +3977,6 @@
         "${ calendarsToBeMergedCount } объединенных календарей",
         "${ calendarsToBeMergedCount } объединенных календарей",
         "${ calendarsToBeMergedCount } объединенный(х) календарь(я,ей)"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "${ emailAddress } является адресом ${ appName }"
       ],
       "${ emailAddress } is invalid": [
         "Адрес ${ emailAddress } недопустимый"
@@ -4524,8 +4536,8 @@
       "Enter your login password to confirm your identity.": [
         "Для подтверждения своей личности введите пароль для входа."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Введите свой собственный пароль (администратора организации) и новый пароль этого пользователя."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Введите свой собственный пароль (как администратора организации) и новый пароль для этого пользователя ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Введите эл. адрес Вашей учётной записи или имя пользователя Proton."
@@ -4735,7 +4747,10 @@
         "Соединение с интернет восстановлено."
       ],
       "Invite successfully sent": [
-        "Приглашение успешно отправлено"
+        "Приглашение успешно отправлено",
+        "Приглашения успешно отправлено",
+        "Приглашений успешно отправлено",
+        "Приглашений успешно отправлено"
       ],
       "Invited via email": [
         "Приглашено по электронной почте"
@@ -4935,6 +4950,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В противном случае, доступ к учётной записи будет ограничен, и впоследствии учётная запись будет отключена."
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        "Наш новый домен ${ domain } - это удобный вариант для отправки и получения электронной почты. Вы по-прежнему сможете использовать свой первоначальный адрес ${ protonMailAppName }."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Устаревший файл восстановления; обновите его, чтобы обеспечить доступ к данным"
       ],
@@ -4947,8 +4965,11 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "Оплачен тариф на 12 месяцев"
+      "Paid for a ${ rewardMonths } month plan": [
+        "Оплачен ${ rewardMonths } месячный тариф",
+        "Оплачено ${ rewardMonths } месячных тарифов",
+        "Оплачено ${ rewardMonths } месячных тарифов",
+        "Оплачено ${ rewardMonths } месячных тарифов"
       ],
       "Paid for a monthly plan": [
         "Оплачен тариф на месяц"
@@ -5445,6 +5466,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Пакет VPN + ${ mailAppName } для семей и малых предприятий."
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        "Хотите установить ${ addressToCreate } в качестве электронной почты по умолчанию для отправки сообщений?"
+      ],
       "Warning:": [
         "Предупреждение:"
       ],
@@ -5532,6 +5556,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email }), и Ваш доступ ограничен."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Вы также можете объединить импортированные календари с существующими календарями Proton."
       ],
@@ -5564,6 +5591,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Вы не можете отправить более ${ emailSendLimitNumber } приглашений по электронной почте в течение следующих 24 часов"
+      ],
+      "You cannot refer ${ appName } users": [
+        "Вы не можете привлечь пользователей ${ appName }"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Вы не можете использовать учетные данные OpenVPN / IKEv2 в приложениях ProtonVPN или для входа в панель управления ProtonVPN. ${ learnMore }"
@@ -5621,6 +5651,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Вы сохраните авторизацию даже после закрытия браузера."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        "Вы по-прежнему сможете отправлять и получать почту, используя существующий адрес (адреса) электронной почты."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ваша учетная запись для ${ BRAND_NAME } связана с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, пожалуйста, создайте адрес."
@@ -5781,6 +5814,9 @@
       "Billed": [
         "Счёт выставлен"
       ],
+      "Cancelled": [
+        "Отменено"
+      ],
       "Paid": [
         "Оплачено"
       ],
@@ -5789,9 +5825,6 @@
       ],
       "Void": [
         "Аннулирован"
-      ],
-      "Writeoff": [
-        "Списание"
       ]
     },
     "Invoice type display as badge": {
@@ -8949,11 +8982,11 @@
       "Delete ${ filter.Name }": [
         "Удалить ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "Удалить папку ${ Name }"
+      "Delete ${ label.Name } folder": [
+        "Удалить папку ${ label.Name }"
       ],
-      "Delete ${ Name } label": [
-        "Удалить метку ${ Name }"
+      "Delete ${ label.Name } label": [
+        "Удалить метку ${ label.Name }"
       ],
       "Delete account": [
         "Удалить учётную запись"
@@ -9440,6 +9473,9 @@
       ],
       "What's new": [
         "Что нового"
+      ],
+      "Your ${ domain } address is active": [
+        "Ваш адрес ${ domain } активен"
       ],
       "Your account’s usage": [
         "Использование вашего аккаунта"

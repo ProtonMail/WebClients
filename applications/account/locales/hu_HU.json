@@ -37,6 +37,9 @@
       "Activate": [
         "Aktiválás"
       ],
+      "Activate ${ addressToCreate }": [
+        "${ addressToCreate } aktiválása"
+      ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktiválása"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "Nem"
+      ],
+      "No, thanks": [
+        ""
       ],
       "OK": [
         "OK"
@@ -2326,7 +2332,7 @@
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
       "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        "Szerezzen 3 hónapnyi ${ mailAppName } Plus-t ingyen minden barátért, aki feliratkozik a(z) ${ mailAppName }-ra."
+        "Szerezzen 3 hónapnyi ${ mailAppName } Plus-t ingyen minden barátért, aki előfizet a ${ mailAppName }-re."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Az importálás alatt álló fájl csoportokat is tartalmaz. Határozza meg, hogyan kerüljenek importálásra a csoportok."
@@ -2339,7 +2345,7 @@
         "Kövesse hány ember kattint a linkjére, iratkozik fel és lesz fizető felhasználó. Kövesse, ahogy gyűlnek ingyenes hónapjai."
       ],
       "Track your referral link activities here.": [
-        "Kövesse ajánló linkjei tevékenységét itt."
+        "Itt figyelemmel követheti az ajánló hivatkozásait."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Eseményeket iCal formátumból (ICS fájl) tud importálni.\nA fájl maximális mérete ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és maximum ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmazhat. Nagyobb fájl importálásához, kisebb darabokra kell vágnia."
@@ -3193,6 +3199,10 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN kapcsolat",
+        "${ MaxVPN } VPN kapcsolatok"
+      ],
       "Access to all countries": [
         "Hozzáférés az összes országhoz"
       ],
@@ -3863,6 +3873,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } aktív"
+      ],
       "${ appName } ${ planName } credits earned": [
         "${ appName } ${ planName } krediteket szerzett"
       ],
@@ -3886,9 +3899,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } egyesített naptár",
         "${ calendarsToBeMergedCount } egyesített naptár"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "${ emailAddress } egy ${ appName } cím"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } érvénytelen"
@@ -4408,8 +4418,8 @@
       "Enter your login password to confirm your identity.": [
         "Írja be a bejelentkezési jelszavát az azonosításhoz."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Adja meg a saját (szervezeti adminisztrátor) jelszavát és a felhasználó új jelszavát."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Írja be saját jelszavát (a szervezet adminjaként) és az új jelszót ennek a felhasználónak ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Írja be a Proton fiókjához tartozó e-mail címet vagy felhasználónevet."
@@ -4617,7 +4627,8 @@
         "Internet kapcsolat helyreállt."
       ],
       "Invite successfully sent": [
-        "Meghívó sikeresen elküldve"
+        "Meghívó sikeresen elküldve",
+        "Meghívók sikeresen elküldve"
       ],
       "Invited via email": [
         "Meghívva e-mail által"
@@ -4817,6 +4828,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Máskülönben a fiókjához való hozzáférés korlátozva lesz, és a fiókja végül törölve lesz."
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Elavult helyreállítási fájl; frissítse, hogy bizonyosan elérhesse adatait"
       ],
@@ -4829,8 +4843,9 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "Előfizetett egy 12 hónapos csomagra"
+      "Paid for a ${ rewardMonths } month plan": [
+        "${ rewardMonths } hónapos csomag fizetve",
+        "${ rewardMonths } hónapos csomag fizetve"
       ],
       "Paid for a monthly plan": [
         "Előfizetett egy hónapos csomagra"
@@ -5305,7 +5320,7 @@
         "Használja az alábbi adatokat, amikor a ProtonVPN szerverekhez az alkalmazás nélkül csatlakozik. Például: Tunnelblick MacOS-en, vagy OpenVPN GNU/Linux-on."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Használja a saját egyedi email domain cím neveit, mint például on@azonneve.com"
+        "Használja a saját egyedi email domain neveit, pl. on@azonneve.com"
       ],
       "Users": [
         "Felhasználók"
@@ -5324,6 +5339,9 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } csomag, családoknak és kisvállalkozásoknak."
+      ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        "Kívánja a(z) ${ addressToCreate } címet beállítani alap email-címének üzenetküldéshez?"
       ],
       "Warning:": [
         "Figyelem:"
@@ -5412,6 +5430,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve, hozzáférése korlátozott."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Az importált naptárokat összefűzheti meglévő Proton naptáraival is."
       ],
@@ -5444,6 +5465,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Nem küldhet több, mint ${ emailSendLimitNumber } e-mail meghívót a következő 24 óráig"
+      ],
+      "You cannot refer ${ appName } users": [
+        "Nem ajánljhat ${ appName } felhasználókat"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Nem használhatja az OpenVPN / IKEv2 bejelentkezési adatokat a ProtonVPN alkalmazásokban való bejelentkezéshez vagy a ProtonVPN vezérlőpulthoz. ${ learnMore }"
@@ -5501,6 +5525,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Bejelentkezve marad, a böngésző bezárása után is."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        "Továbbra is képes lesz leveleket küldeni és fogadni a létező email-címeivel."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "A ${ BRAND_NAME } fiókja ${ externalEmailAddress } címhez kapcsolódik. A ${ toAppName } használatához hozzon létre egy címet."
@@ -5661,6 +5688,9 @@
       "Billed": [
         "Számlázva"
       ],
+      "Cancelled": [
+        "Megszakítva"
+      ],
       "Paid": [
         "Fizetve"
       ],
@@ -5669,9 +5699,6 @@
       ],
       "Void": [
         "Sztornó"
-      ],
-      "Writeoff": [
-        "Leírt"
       ]
     },
     "Invoice type display as badge": {
@@ -8791,11 +8818,11 @@
       "Delete ${ filter.Name }": [
         "${ filter.Name } törlése"
       ],
-      "Delete ${ Name } folder": [
-        "${ Name } mappa törlése"
+      "Delete ${ label.Name } folder": [
+        "${ label.Name } mappa törlése"
       ],
-      "Delete ${ Name } label": [
-        "${ Name } címke törlése"
+      "Delete ${ label.Name } label": [
+        "${ label.Name } címke törlése"
       ],
       "Delete account": [
         "Fiók törlése"
@@ -9280,6 +9307,9 @@
       ],
       "What's new": [
         "Újdonságok"
+      ],
+      "Your ${ domain } address is active": [
+        "${ domain } címe aktív"
       ],
       "Your account’s usage": [
         ""

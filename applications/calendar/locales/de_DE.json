@@ -614,8 +614,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Mit dem Beta-Zugang kannst du die Beta-Version von ProtonMail, Proton Calendar und Proton Drive nutzen, bevor sie für die Öffentlichkeit freigegeben werden. Dies bedeutet, dass du als Erstes neue Produkte ausprobieren, neue Aktualisierungen erhalten und neue Funktionen nutzen kannst."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Mit dem Beta-Zugang kannst du die Beta-Version von ${ mailAppName }, ${ calendarAppName } und Proton Drive nutzen, bevor sie für die Öffentlichkeit freigegeben werden. Dies bedeutet, dass du als Erster neue Produkte ausprobieren, neue Aktualisierungen erhalten und neue Funktionen nutzen kannst."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Wenn Probleme auftreten, kannst du den Beta-Zugang jederzeit deaktivieren."
@@ -1990,9 +1990,6 @@
       "Calendar limit reached": [
         "Max. Anzahl von Kalendern erreicht"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Privater Hauptschlüssel des Kalenders wird nicht entschlüsselt"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Es können keine neuen Kalender für alle zu importierenden Kalender erstellt werden, da die Anzahl der persönlichen Kalender beschränkt ist."
       ],
@@ -3254,8 +3251,8 @@
       "You are about to open another browser tab and visit:": [
         "Es wird nun ein neuer Tab im Browser geöffnet und folgende Adresse aufgerufen:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet und hast nur eingeschränkten Zugang."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Du bist derzeit als ${ user.Name } (${ user.Email }) angemeldet."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Du kannst zudem importierte Kalender mit bestehenden Proton-Kalendern zusammenführen."
@@ -4039,6 +4036,20 @@
         "Bitte beachte, dass ${ boldNextStep } ausgewählt werden müssen, um den Import zu starten."
       ]
     },
+    "Onboarding": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        "Ein Kalender ist eine Aufzeichnung deines Lebens. Halte dein Leben sicher und vertraulich mit ${ appName }."
+      ],
+      "Import events": [
+        "Termine importieren"
+      ],
+      "Meet your new encrypted calendar": [
+        "Lerne deinen neuen verschlüsselten Kalender kennen"
+      ],
+      "Start using ${ appName }": [
+        "Beginne, ${ appName } zu verwenden"
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Anzeigenamen wählen"
@@ -4069,20 +4080,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Dies kann jederzeit in deinen Einstellungen geändert werden."
-      ]
-    },
-    "Onboarding ProtonCalendar": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "Ein Kalender ist eine Aufzeichnung deines Lebens. Halte dein Leben sicher und vertraulich mit ${ appName }."
-      ],
-      "Import events": [
-        "Termine importieren"
-      ],
-      "Meet your new encrypted calendar": [
-        "Lerne deinen neuen verschlüsselten Kalender kennen"
-      ],
-      "Start using ${ appName }": [
-        "Beginne, ${ appName } zu verwenden"
       ]
     },
     "Option": {

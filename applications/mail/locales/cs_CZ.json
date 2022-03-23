@@ -1053,11 +1053,11 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } kompletní",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } kompletní",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } kompletní",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } kompletní"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončena",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno"
       ]
     },
     "Apps dropdown": {
@@ -1111,8 +1111,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta přístup povoluje využívat ProtonMail verzi beta, Proton Kalendář a Proton Disk a to ještě předtím, než jsou dostupné pro veřejnost. V tomto případě to znamená, že jste první kdo má možnost používat nový produkt, nové aktualizace a také nové funkce."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta Access vám umožní používat beta verze aplikací ${ mailAppName }, ${ calendarAppName } a Proton Drive před jejich zveřejněním. To znamená, že můžete jako první vyzkoušet nové produkty, získat nové aktualizace a používat nové funkce."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Jestliže zaznamenáte problémy, vždy můžete deaktivovat Beta Přístup."
@@ -2800,9 +2800,6 @@
       "Calendar limit reached": [
         "Dosažen limit kalendáře"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Primární soukromý klíč kalendáře nenalezen"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
       ],
@@ -3495,16 +3492,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "Zvýšili jsme celkové úložiště vašeho účtu na ${ totalGBStorageAfterCompletion }. GB. Získejte další úložiště a odemkněte prémiové funkce ještě dnes."
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "Vše je připraveno!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "Dokončete všechny kroky a získejte celkem ${ totalGBStorageAfterCompletion } GB na svém účtu"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "Vyprši za"
@@ -3943,6 +3940,9 @@
       ],
       "Activation in progress": [
         "Aktivace probíhá"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        "Přidejte si ${ addressToCreate } k vašemu účtu zdarma, pouze po omezenou dobu."
       ],
       "Add image URL": [
         "Přidat URL obrázku"
@@ -4859,11 +4859,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        "Chcete-li udržet svou agendu v soukromí, použijte ${ calendarAppName }."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Použijte klávesové zkratky pro rychlejší správu Vašeho e-mailu."
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Používejte Proton Kalendář, aby jste udrželi svá data v soukromí."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Svým mobilním zařízením naskenujte QR kód nebo navštivte odkaz ${ link }."
@@ -5738,6 +5738,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Aktivovat"
+      ],
       "Add folder": [
         "Přidat složku"
       ],
@@ -6263,6 +6266,20 @@
       ],
       "Merge with calendar": [
         "Sloučit s kalendářem"
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        "Získat mobilní aplikaci"
+      ],
+      "Import contacts or emails": [
+        "Import kontaktů nebo emailů"
+      ],
+      "Send a message": [
+        "Odeslat zprávu"
+      ],
+      "Set up a recovery method": [
+        "Nastavit metodu obnovení"
       ]
     },
     "Participant name": {

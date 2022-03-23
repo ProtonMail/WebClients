@@ -614,8 +614,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Η Beta Πρόσβαση σας επιτρέπει να χρησιμοποιήσετε την έκδοση beta του ProtonMail, του Proton Ημερολογίου και του Proton Drive πριν κυκλοφορήσουν στο κοινό. Αυτό σημαίνει ότι μπορείτε να είστε οι πρώτοι που θα δοκιμάσετε νέα προϊόντα, θα λάβετε νέες ενημερώσεις και θα χρησιμοποιήσετε νέες δυνατότητες."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Εάν αντιμετωπίσετε προβλήματα, μπορείτε πάντα να απενεργοποιήσετε την Πρόσβαση Beta."
@@ -1990,9 +1990,6 @@
       "Calendar limit reached": [
         "Εξάντληση ορίου ημερολογίων"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Το πρωτεύον ιδιωτικό κλειδί ημερολογίου δεν είναι αποκρυπτογραφημένο"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Δεν είναι δυνατή η δημιουργία νέων ημερολογίων για όλα τα εισαγόμενα ημερολόγια λόγω του προσωπικού ορίου συνολικών ημερολογίων."
       ],
@@ -3254,8 +3251,8 @@
       "You are about to open another browser tab and visit:": [
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Αυτήν τη στιγμή είστε συνδεδεμένοι ως χρήστης ${ user.Name } (${ user.Email }) και έχετε περιορισμένη πρόσβαση."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του Proton."
@@ -4039,6 +4036,20 @@
         ""
       ]
     },
+    "Onboarding": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Επιλέξτε ένα εμφανιζόμενο όνομα"
@@ -4069,20 +4080,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
-      ]
-    },
-    "Onboarding ProtonCalendar": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "Ένα ημερολόγιο είναι μια καταγραφή της ζωής σας. Κρατήστε τη ζωή σας διασφαλισμένη και απόρρητη με το ${ appName }."
-      ],
-      "Import events": [
-        "Εισαγωγή εκδηλώσεων"
-      ],
-      "Meet your new encrypted calendar": [
-        "Υποδεχτείτε το νέο σας κρυπτογραφημένο ημερολόγιο"
-      ],
-      "Start using ${ appName }": [
-        "Αρχίστε τη χρήση του ${ appName }"
       ]
     },
     "Option": {
