@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 import { APPS, MAIL_APP_NAME, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { Plan, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
 import { FREE_VPN_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
@@ -17,8 +16,6 @@ const getFeatures = (
     planNamesMap: { [key: string]: Plan },
     serversCount: VPNServers
 ): VPNFeature[] => {
-    const mailAppName = getAppName(APPS.PROTONMAIL);
-
     return [
         {
             name: 'connections',
@@ -102,7 +99,7 @@ const getFeatures = (
         },
         {
             name: 'visionary',
-            label: c('VPN feature').t`${mailAppName} Visionary`,
+            label: `${MAIL_APP_NAME} Visionary`,
             tooltip: c('Tooltip')
                 .t`Get access to all the paid features for both ${VPN_APP_NAME} and ${MAIL_APP_NAME} (the encrypted email service that millions use to protect their data) with one plan.`,
             free: EmDash,

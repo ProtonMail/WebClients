@@ -1,10 +1,10 @@
 import { c } from 'ttag';
-import { APPS, APPS_CONFIGURATION, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { SectionConfig } from '@proton/components';
 
 export const getVpnAppRoutes = () => {
     return <const>{
-        header: APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS].name,
+        header: VPN_APP_NAME,
         routes: {
             downloads: <SectionConfig>{
                 text: c('Title').t`VPN apps`,
