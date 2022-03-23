@@ -36,6 +36,9 @@ const getPlanFeatures = (plan, maxConnections, countries, serversCount) => {
     const primeVideo = <b key={3}>{c('Prime Video').t`Prime Video`}</b>;
     const many = <b key={4}>{c('Many Others').t`and many others`}</b>;
 
+    const mailVisionary = `${MAIL_APP_NAME} Visionary`;
+    const mailPlus = `${MAIL_APP_NAME} Plus`;
+
     return {
         [PLAN.FREE]: {
             image: <img width={13} src={freePlanSvg} alt={`${PLAN_NAMES[PLAN.FREE]} plan`} />,
@@ -166,7 +169,7 @@ const getPlanFeatures = (plan, maxConnections, countries, serversCount) => {
             features: [
                 c('Plan feature').t`All ${PLAN_NAMES[PLAN.PLUS]} plan features`,
                 <>
-                    <span className="mr0-5">{c('Plan Feature').t`${MAIL_APP_NAME} Visionary account`}</span>
+                    <span className="mr0-5">{c('Plan Feature').t`${mailVisionary} account`}</span>
                     <Info
                         title={c('Info')
                             .t`Get access to all the paid features for both ${VPN_APP_NAME} and ${MAIL_APP_NAME} (the encrypted email service that millions use to protect their data) with one plan.`}
@@ -221,7 +224,7 @@ const getPlanFeatures = (plan, maxConnections, countries, serversCount) => {
                     />
                 </>,
                 <>
-                    <span className="mr0-5">{c('Plan Feature').t`${MAIL_APP_NAME} Plus account`}</span>
+                    <span className="mr0-5">{c('Plan Feature').t`${mailPlus} account`}</span>
                     <Info
                         title={c('Info')
                             .t`Get access to all the paid features for both ${VPN_APP_NAME} and ${MAIL_APP_NAME} (the encrypted email service that millions use to protect their data) with one plan.`}
