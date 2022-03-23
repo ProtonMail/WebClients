@@ -35,7 +35,7 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
                 </SettingsParagraph>
 
                 <UpgradeBanner free={hasFree(subscription)} audience={Audience.B2B}>{c('new_plans: upgrade')
-                    .t`Included with all Proton for Business plans.`}</UpgradeBanner>
+                    .t`Included with all ${BRAND_NAME} for Business plans.`}</UpgradeBanner>
             </SettingsSectionWide>
         );
     }
