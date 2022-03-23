@@ -146,18 +146,20 @@ a:active {
 .proton-embedded:not([width]):not([style*='width'])[src] {
 	min-inline-size: 0;
 }
-.protonmail_quote {
+
+blockquote.protonmail_quote {
 	padding-block: 0.2em;
 	padding-inline: 1.2em 0;
 	border-color: #657ee4;
 	border-inline-start-width: 3px;
 	border-inline-start-style: solid;
-	&[type='cite'] {
-		border-inline-start: 0;
-		padding-inline-start: 0;
-	}
 }
-.protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote {
+blockquote.protonmail_quote
+	blockquote.protonmail_quote
+	blockquote.protonmail_quote
+	blockquote.protonmail_quote
+	blockquote.protonmail_quote
+	blockquote.protonmail_quote {
 	padding-inline: 0;
 	border-inline-start-width: 0;
 }
