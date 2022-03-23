@@ -210,6 +210,37 @@ describe('useLink', () => {
         expect(mockRequst).not.toBeCalled();
     });
 
+    it('loads link thumbnail with expired cached link thumbnail info', async () => {
+        mockRequst.mockReturnValue({
+            ThumbnailBareURL: 'bareUrl',
+            ThumbnailToken: 'token2', // Requested new non-expired token.
+        });
+        const downloadCallbackMock = jest
+            .fn()
+            .mockImplementation((url: string, token: string) =>
+                token === 'token' ? Promise.reject('token expired') : Promise.resolve(undefined)
+            );
+        mockLinksState.getLink.mockReturnValue({
+            decrypted: {
+                name: 'name',
+                hasThumbnail: true,
+                activeRevision: {
+                    thumbnail: {
+                        bareUrl: 'bareUrl',
+                        token: 'token', // Expired token.
+                    },
+                },
+            },
+        });
+        await act(async () => {
+            await hook.current.loadLinkThumbnail(abortSignal, 'shareId', 'linkId', downloadCallbackMock);
+        });
+        expect(downloadCallbackMock).toBeCalledWith('bareUrl', 'token'); // First attempted with expired token.
+        expect(mockRequst).toBeCalledTimes(1); // Then requested the new token.
+        expect(downloadCallbackMock).toBeCalledWith('bareUrl', 'token2'); // And the new one used for final download.
+        expect(mockLinksState.setCachedThumbnail).toBeCalledWith('shareId', 'linkId', expect.any(String));
+    });
+
     it('loads link thumbnail with its url on API', async () => {
         mockRequst.mockReturnValue({
             ThumbnailBareURL: 'bareUrl',
