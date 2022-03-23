@@ -37,6 +37,9 @@
       "Activate": [
         "Activare"
       ],
+      "Activate ${ addressToCreate }": [
+        "Activați ${ addressToCreate }"
+      ],
       "Activate ${ Name }@pm.me": [
         "Activare ${ Name }@pm.me"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "Nu"
+      ],
+      "No, thanks": [
+        "Nu, mulțumesc"
       ],
       "OK": [
         "OK"
@@ -3215,6 +3221,11 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } conexiune VPN",
+        "${ MaxVPN } conexiuni VPN",
+        "${ MaxVPN } de conexiuni VPN"
+      ],
       "Access to all countries": [
         "Acces la toate ţările"
       ],
@@ -3898,6 +3909,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } este acum activă"
+      ],
       "${ appName } ${ planName } credits earned": [
         "Credite câștigate ${ appName } ${ planName }"
       ],
@@ -3924,9 +3938,6 @@
         "Un calendar îmbinat",
         "${ calendarsToBeMergedCount } calendare îmbinate",
         "${ calendarsToBeMergedCount } de calendare îmbinate"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "${ emailAddress } este o adresă ${ appName }"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } nu este validă"
@@ -4466,8 +4477,8 @@
       "Enter your login password to confirm your identity.": [
         "Introduceți parola de conectare pentru a vă confirma identitatea."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Introduceți parola proprie (ca administrator al organizației) și parola nouă a acestui utilizator."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Introduceți propria parolă (ca administrator al organizației) și noua parolă pentru acest utilizator ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Introduceți adresa de e-mail sau numele de utilizator al contului Proton."
@@ -4676,7 +4687,9 @@
         "Conexiunea la internet a revenit."
       ],
       "Invite successfully sent": [
-        "Invitație trimisă cu succes"
+        "Invitație trimisă cu succes",
+        "Invitații trimise cu succes",
+        "De invitații trimise cu succes"
       ],
       "Invited via email": [
         "Invitat prin e-mail"
@@ -4876,6 +4889,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        "Noul nostru domeniu ${ domain } este o opțiune convenabilă pentru trimiterea și primirea de e-mailuri. Veți putea folosi în continuare adresa originală ${ protonMailAppName }."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Fișier de recuperare învechit. Actualizați-l pentru a vă asigura accesul la date."
       ],
@@ -4888,8 +4904,10 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "Plătit pentru un plan de 12 luni"
+      "Paid for a ${ rewardMonths } month plan": [
+        "Plătit pentru un plan de ${ rewardMonths } lună",
+        "Plătit pentru un plan de ${ rewardMonths } luni",
+        "Plătit pentru ${ rewardMonths } luni de plan"
       ],
       "Paid for a monthly plan": [
         "Plătit pentru un plan lunar"
@@ -5385,6 +5403,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } pachet pentru familii și întreprinderi mici."
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        "Doriți să setați ${ addressToCreate } ca e-mail implicit pentru trimiterea de mesaje?"
+      ],
       "Warning:": [
         "Avertizare:"
       ],
@@ -5472,6 +5493,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Sunteți conectat(ă) cu ${ user.Name } (${ user.Email }) și aveți acces restricționat."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Sunteți conectat în prezent ca ${ user.Name } (${ user.Email })."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Puteți și să îmbinați calendarele importate cu calendarele Proton existente."
       ],
@@ -5504,6 +5528,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Nu puteți trimite mai mult de ${ emailSendLimitNumber } invitații pentru următoarele 24 de ore."
+      ],
+      "You cannot refer ${ appName } users": [
+        "Nu puteți referi utilizatorii ${ appName }"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Nu puteți utiliza acreditările OpenVPN / IKEv2 pentru a vă conecta la aplicațiile ProtonVPN sau la panoul general al ProtonVPN. ${ learnMore }"
@@ -5561,6 +5588,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Conexiunea va rămâne activă chiar și după ce închideți navigatorul."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        "Veți putea în continuare să trimiteți și să primiți mesaje cu adresa (adresele) de e-mail existentă."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Acest cont ${ BRAND_NAME } este asociat cu ${ externalEmailAddress }. Pentru a utiliza ${ toAppName }, trebuie să creați o adresă."
@@ -5721,6 +5751,9 @@
       "Billed": [
         "Facturată"
       ],
+      "Cancelled": [
+        "Anulat"
+      ],
       "Paid": [
         "Plătită"
       ],
@@ -5729,9 +5762,6 @@
       ],
       "Void": [
         "Nulă"
-      ],
-      "Writeoff": [
-        "Anulată"
       ]
     },
     "Invoice type display as badge": {
@@ -8870,11 +8900,11 @@
       "Delete ${ filter.Name }": [
         "Ștergere ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "Ștergere folder ${ Name }"
+      "Delete ${ label.Name } folder": [
+        "Ștergere folder ${ label.Name }"
       ],
-      "Delete ${ Name } label": [
-        "Ștergere eticheta ${ Name }"
+      "Delete ${ label.Name } label": [
+        "Ștergere eticheta ${ label.Name }"
       ],
       "Delete account": [
         "Ștergere cont"
@@ -9360,6 +9390,9 @@
       ],
       "What's new": [
         "Ce este nou"
+      ],
+      "Your ${ domain } address is active": [
+        "Adresa dumneavoastră ${ domain } este activă"
       ],
       "Your account’s usage": [
         "Utilizare cont"

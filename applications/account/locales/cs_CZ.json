@@ -37,6 +37,9 @@
       "Activate": [
         "Aktivovat"
       ],
+      "Activate ${ addressToCreate }": [
+        "Aktivovat ${ addressToCreate }"
+      ],
       "Activate ${ Name }@pm.me": [
         "Aktivovat ${ Name }@pm.me"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "Ne"
+      ],
+      "No, thanks": [
+        "Ne, děkuji"
       ],
       "OK": [
         "OK"
@@ -3237,6 +3243,12 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN připojení",
+        "${ MaxVPN } VPN připojení",
+        "${ MaxVPN } VPN připojení",
+        "${ MaxVPN } VPN připojení"
+      ],
       "Access to all countries": [
         "Přístup ke všem zemím"
       ],
@@ -3933,6 +3945,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } je nyní aktivní"
+      ],
       "${ appName } ${ planName } credits earned": [
         "${ appName } ${ planName } získaných kreditů"
       ],
@@ -3962,9 +3977,6 @@
         "${ calendarsToBeMergedCount } sloučené kalendáře",
         "${ calendarsToBeMergedCount } sloučených kalendářů",
         "${ calendarsToBeMergedCount } sloučených kalendářů"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "${ emailAddress } je ${ appName } adresa"
       ],
       "${ emailAddress } is invalid": [
         "{ emailAddress } není platná e-mailová adresa"
@@ -4524,8 +4536,8 @@
       "Enter your login password to confirm your identity.": [
         "Zadejte své přihlašovací heslo k potvrzení Vaší totožnosti."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Zadejte své vlastní heslo (jako správce organizace) a nové heslo tohoto uživatele."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Zadejte své vlastní heslo (jako správce organizace) a nové heslo pro tohoto uživatele ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Zadejte Vaši e -mailovou adresu nebo uživatelské jméno svého účtu Proton."
@@ -4735,7 +4747,10 @@
         "Připojení k internetu obnoveno."
       ],
       "Invite successfully sent": [
-        "Pozvánka byla úspěšně odeslána"
+        "Pozvánka byla úspěšně odeslána",
+        "Pozvánky byla úspěšně odeslány",
+        "Pozvánky byla úspěšně odeslány",
+        "Pozvánky byla úspěšně odeslány"
       ],
       "Invited via email": [
         "Pozván e-mailem"
@@ -4935,6 +4950,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec zablokován."
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        "Naše nová doména ${ domain } je vhodnou možností pro odesílání a přijímání e-mailů. Stále budete moci používat svou původní adresu ${ protonMailAppName }."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Zastaralý obnovovací soubor; aktualizujte, abyste zajistili přístup k vašim údajům"
       ],
@@ -4947,8 +4965,11 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "Zaplaceno za 12měsíční plán"
+      "Paid for a ${ rewardMonths } month plan": [
+        "Zaplaceno za ${ rewardMonths } měsíční plán",
+        "Zaplaceno za ${ rewardMonths } měsíční plány",
+        "Zaplaceno za ${ rewardMonths } měsíčních plánů",
+        "Zaplaceno za ${ rewardMonths } měsíčních plánů"
       ],
       "Paid for a monthly plan": [
         "Zaplaceno za měsíční plán"
@@ -5445,6 +5466,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } balíček pro rodiny a malé podniky."
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        "Chcete nastavit ${ addressToCreate } jako výchozí e-mail pro odesílání zpráv?"
+      ],
       "Warning:": [
         "Upozornění:"
       ],
@@ -5532,6 +5556,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email }) a máte omezený přístup."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Importované kalendáře můžete také sloučit s existujícími Proton kalendáři."
       ],
@@ -5564,6 +5591,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailových pozvánek"
+      ],
+      "You cannot refer ${ appName } users": [
+        "Nelze odkazovat na ${ appName } uživatelů"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Přihlašovací údaje OpenVPN / IKEv2 nelze použít pro přihlášení do aplikací ProtonVPN nebo ovládacího panelu ProtonVPN. ${ learnMore }"
@@ -5621,6 +5651,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Zůstanete přihlášeni i po uzavření prohlížeče."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        "Stále budete moci odesílat a přijímat poštu pomocí své stávající e-mailové adresy (svých stávajících e-mailových adres)."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Váš účet ${ BRAND_NAME } je spojen s ${ externalEmailAddress }. Chcete-li použít ${ toAppName }, vytvořte prosím adresu."
@@ -5781,6 +5814,9 @@
       "Billed": [
         "Zaúčtováno"
       ],
+      "Cancelled": [
+        "Zrušeno"
+      ],
       "Paid": [
         "Zaplaceno"
       ],
@@ -5789,9 +5825,6 @@
       ],
       "Void": [
         "Neplatné"
-      ],
-      "Writeoff": [
-        "Odpis z účtu"
       ]
     },
     "Invoice type display as badge": {
@@ -8949,11 +8982,11 @@
       "Delete ${ filter.Name }": [
         "Smazat ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "Smazat ${ Name } složku"
+      "Delete ${ label.Name } folder": [
+        "Smazat ${ label.Name } složku"
       ],
-      "Delete ${ Name } label": [
-        "Smazat ${ Name } štítek"
+      "Delete ${ label.Name } label": [
+        "Smazat ${ label.Name } štítek"
       ],
       "Delete account": [
         "Smazat účet"
@@ -9440,6 +9473,9 @@
       ],
       "What's new": [
         "Co je nového"
+      ],
+      "Your ${ domain } address is active": [
+        "Vaše ${ domain } adresa je aktivní"
       ],
       "Your account’s usage": [
         "Využití vašeho účtu"

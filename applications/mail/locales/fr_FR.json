@@ -1045,9 +1045,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complété",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complétés"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } complété",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } complétés"
       ]
     },
     "Apps dropdown": {
@@ -1101,8 +1101,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'accès à la version bêta vous permet d'utiliser la version bêta de ProtonMail, de Proton Calendar et de Proton Drive avant qu'ils ne soient disponibles au public. Ceci signifie que vous pouvez être le premier à essayer de nouveaux produits, à obtenir de nouvelles mises à jour et à utiliser de nouvelles fonctionnalités."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "L'accès à la version bêta vous permet d'utiliser la version bêta de ${ mailAppName }, ${ calendarAppName } et Proton Drive avant qu'ils ne soient rendus publics. Cela signifie que vous pouvez être le premier à essayer de nouveaux produits, à obtenir de nouvelles mises à jour et à utiliser de nouvelles fonctionnalités."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
@@ -2778,9 +2778,6 @@
       "Calendar limit reached": [
         "Limite de calendriers atteinte"
       ],
-      "Calendar primary private key is not decrypted": [
-        "La clé privée principale du calendrier n'est pas déchiffrée"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Impossible de créer de nouveaux calendriers pour tous les calendriers importés en raison de la limite des calendriers personnels."
       ],
@@ -3453,16 +3450,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "Nous avons augmenté l'espace de stockage total de votre compte à ${ totalGBStorageAfterCompletion } Go. Obtenez un espace de stockage supplémentaire et débloquez des fonctionnalités haut de gamme dès aujourd'hui."
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "Vous avez tout configuré !"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "Terminez toutes les étapes et obtenez un total de ${ totalGBStorageAfterCompletion } Go sur votre compte"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "Expire bientôt"
@@ -3831,6 +3828,9 @@
       ],
       "Activation in progress": [
         "Activation en cours"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        "Ajoutez ${ addressToCreate } à votre compte gratuitement, pour une durée limitée uniquement."
       ],
       "Add image URL": [
         "Ajouter l'URL de l'image"
@@ -4715,11 +4715,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL : ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        "Utilisez ${ calendarAppName } pour garder votre agenda privé."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilisez les raccourcis clavier pour gérer vos messages plus rapidement."
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Utilisez Proton Calendar pour garder votre agenda privé."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Avec votre appareil mobile, scannez ce QR-Code ou visitez ${ link }."
@@ -4770,7 +4770,7 @@
         "Vous êtes sur le point d'ouvrir un autre onglet de navigateur et de visiter :"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Vous pouvez l'ajouter en pièce jointe ou l'afficher en ligne dans le corps de votre courrier."
@@ -5574,6 +5574,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Activer"
+      ],
       "Add folder": [
         "Ajouter un dossier"
       ],
@@ -6089,6 +6092,20 @@
       ],
       "Merge with calendar": [
         "Fusionner avec le calendrier"
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        "Obtenir l'application mobile"
+      ],
+      "Import contacts or emails": [
+        "Importer des contacts ou des messages"
+      ],
+      "Send a message": [
+        "Envoyer un message"
+      ],
+      "Set up a recovery method": [
+        "Définir une méthode de récupération"
       ]
     },
     "Participant name": {

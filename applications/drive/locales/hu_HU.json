@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } éves fizetésre váltással"
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } bevezető"
       ],
@@ -47,9 +44,6 @@
       "Add to group": [
         "Hozzáadás a csoporthoz"
       ],
-      "annual billing": [
-        "éves számlázás"
-      ],
       "Apply": [
         "Alkalmazás"
       ],
@@ -62,14 +56,14 @@
       "Cancel": [
         "Mégsem"
       ],
+      "Cancel all": [
+        "Mindegyik törlése"
+      ],
       "Cancel all uploads": [
         ""
       ],
       "Cancel download": [
         "Letöltés megszakítása"
-      ],
-      "Cancel transfers": [
-        ""
       ],
       "Cancel upload": [
         "Feltöltés megszakítása"
@@ -115,9 +109,6 @@
       ],
       "Collapse folder": [
         ""
-      ],
-      "Compare all features": [
-        "Összes jellemző összehasonlítása"
       ],
       "Compose": [
         "Levélírás"
@@ -217,6 +208,9 @@
       "enable desktop notifications": [
         "asztali értesítések engedélyezése"
       ],
+      "Enable Drive Search": [
+        "Felhőtárban Keresés Engedélyezése"
+      ],
       "Expand folder": [
         ""
       ],
@@ -283,9 +277,6 @@
       "Load image": [
         "Kép betöltése"
       ],
-      "Loading verification": [
-        "Ellenőrzés folyamatban"
-      ],
       "Log in": [
         "Bejelentkezés"
       ],
@@ -334,17 +325,14 @@
       "OK": [
         "OK"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "${ CALENDAR_APP_NAME } beállításainak megnyitása"
-      ],
       "Open navigation": [
         "Navigáció megnyitása"
       ],
+      "Pause all": [
+        "Az összes szüneteltetése"
+      ],
       "Pause download": [
         "Letöltés szüneteltetése"
-      ],
-      "Pause transfers": [
-        ""
       ],
       "Pause upload": [
         "Feltöltés szüneteltetése"
@@ -382,14 +370,8 @@
       "Remove": [
         "Eltávolítás"
       ],
-      "Remove bonuses": [
-        "Kedvezmények törlése"
-      ],
       "Remove from this list": [
         "Eltávolítás a listából"
-      ],
-      "Remove gift code": [
-        "Ajándék kód törlése"
       ],
       "Rename": [
         "Átnevezés"
@@ -406,11 +388,11 @@
       "Reset zoom": [
         "Nagyítás alaphelyzetbe"
       ],
+      "Restart all": [
+        "Mindegyik újraindítása"
+      ],
       "Restart download": [
         "Letöltés újraindítása"
-      ],
-      "Restart transfers": [
-        ""
       ],
       "Restart upload": [
         "Feltöltés újraindítása"
@@ -418,11 +400,11 @@
       "Restore from trash": [
         "Visszaállítás a Lomtárból"
       ],
+      "Resume all": [
+        "Mind Folytatása"
+      ],
       "Resume download": [
         "Letöltés folytatása"
-      ],
-      "Resume transfers": [
-        ""
       ],
       "Resume upload": [
         "Feltöltés folytatása"
@@ -508,9 +490,6 @@
       "Trust": [
         "Megjelölés megbízhatóként"
       ],
-      "Try again": [
-        "Próbálja újra"
-      ],
       "Try another method": [
         "Másik módszer"
       ],
@@ -549,12 +528,6 @@
       ],
       "Use ${ label } theme": [
         "${ label } téma használata"
-      ],
-      "Use a different card": [
-        "Másik bankkártya használata"
-      ],
-      "Use a different payment method": [
-        "Más fizetési mód választása"
       ],
       "Use for sending": [
         "Használja küldéshez"
@@ -603,27 +576,6 @@
         "Még nincsenek csoportok."
       ]
     },
-    "Addon": {
-      "+ ${ addresses } email address": [
-        "+ ${ addresses } email cím",
-        "+ ${ addresses } email cím"
-      ],
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } saját domain név",
-        "+ ${ domains } saját domain név"
-      ],
-      "+ ${ members } user": [
-        "+ ${ members } felhasználó",
-        "+ ${ members } felhasználó"
-      ],
-      "+ ${ storage } storage": [
-        "+ ${ storage } tárhely"
-      ],
-      "+ ${ vpn } connection": [
-        "+ ${ vpn } kapcsolódás",
-        "+ ${ vpn } kapcsolódás"
-      ]
-    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "A folyamat megszakítása esetén, bizonyos névjegyek nem kerülnek importálásra"
@@ -641,28 +593,11 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ProtonMail, a Proton Calendar és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ${ mailAppName }, ${ calendarAppName }, és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
-      ]
-    },
-    "Billing cycle option": {
-      "Annually": [
-        "Évente"
-      ],
-      "Annually SAVE 20%": [
-        "Éves KEDVEZMÉNY 20%"
-      ],
-      "Monthly": [
-        "Havi"
-      ],
-      "Two years SAVE 33%": [
-        "Kétéves KEDVEZMÉNY 33%"
-      ],
-      "Two-year": [
-        "Kétévente"
       ]
     },
     "blackfriday Action": {
@@ -837,31 +772,6 @@
         "ProtonMail használatának folytatása."
       ]
     },
-    "Calendar feature": {
-      "Calendar import": [
-        "Naptár importálása"
-      ],
-      "Invitations": [
-        "Meghívók"
-      ],
-      "Multiple calendars": [
-        "Több naptár"
-      ],
-      "Recurring events": [
-        "Ismétlődő események"
-      ],
-      "Share Calendar via link": [
-        "Naptár megosztása hivatkozással"
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        "20 db felhasználónként"
-      ],
-      "20 / user *": [
-        "20 db felhasználónként *"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         ""
@@ -981,16 +891,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } nap",
-        "${ days } nap"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } hónap",
-        "${ monthsWithYears } hónap"
       ]
     },
     "Country name": {
@@ -1810,22 +1710,6 @@
         "A CSV fájl az alábbi mezőket tartalmazza. Válassza ki, hogy melyeket szeretné importálni."
       ]
     },
-    "Disney": {
-      "Disney+": [
-        "Disney+"
-      ]
-    },
-    "Drive feature": {
-      "Access via Web": [
-        "Elérés weben keresztül"
-      ],
-      "Share files via link": [
-        "Fájlok megosztása hivatkozással"
-      ],
-      "Upload / download files": [
-        "Fájlok fel- és letöltése"
-      ]
-    },
     "Early Access Disabled": {
       "Off": [
         ""
@@ -1842,12 +1726,6 @@
       ],
       "A problem occurred, please try again": [
         "Hiba történt, próbálja meg újra"
-      ],
-      "Amount above the maximum.": [
-        "Túl magas összeg."
-      ],
-      "Amount below minimum.": [
-        "Túl alacsony összeg."
       ],
       "Authentication canceled.": [
         "Hitelesítés megszakítva."
@@ -1873,9 +1751,6 @@
       "Could not find address ${ email }.": [
         "A(z) ${ email } e-mail cím nem található."
       ],
-      "Could not generate file keys": [
-        ""
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "",
         ""
@@ -1892,9 +1767,6 @@
       ],
       "Enter 6 digits": [
         "6 számjegyet írjon be"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Hiba a Bitcoin API-ra csatlakozás közben."
       ],
       "Failed to download a file": [
         ""
@@ -1935,20 +1807,8 @@
       "Incorrect password. Please try again.": [
         "Hibás jelszó. Próbálja meg újra."
       ],
-      "Invalid ${ name } code": [
-        "Érvénytelen ${ name } kód"
-      ],
-      "Invalid card number": [
-        "Érvénytelen kártyaszám"
-      ],
-      "Invalid expiration date": [
-        "Érvénytelen lejárati dátum"
-      ],
       "Invalid name": [
         "Érvénytelen név"
-      ],
-      "Invalid postal code": [
-        "Érvénytelen irányítószám"
       ],
       "Invalid public key file": [
         "Érvénytelen nyilvános kulcs fájl"
@@ -1969,9 +1829,6 @@
       "Missing signature": [
         "Hiányzó aláírás"
       ],
-      "Name on card required": [
-        "Kártyára írt név megadása kötelező"
-      ],
       "No data to import": [
         ""
       ],
@@ -1989,23 +1846,8 @@
         "Az egyik csoportban nincsenek névjegyek: ${ noContactGroupList }",
         "Néhány csoportban nincsenek névjegyek: ${ noContactGroupList } "
       ],
-      "Organization not recognized. Try again.": [
-        ""
-      ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek meg"
-      ],
-      "Payment process cancelled": [
-        "A fizetés folyamata megszakítva"
-      ],
-      "Payment process consumed": [
-        "Fizetési folyamat befejezve"
-      ],
-      "Payment process failed": [
-        "Fizetés sikertelen"
-      ],
-      "Payment process not supported": [
-        "Fizetési folyamat nem támogatott"
       ],
       "Please activate your content search again": [
         "Aktiválja újra az üzenetek tartalmában való keresést"
@@ -2022,9 +1864,6 @@
       ],
       "Primary address key is not decrypted.": [
         ""
-      ],
-      "Process aborted": [
-        "A folyamat megszakítva"
       ],
       "Request timed out": [
         ""
@@ -2053,23 +1892,11 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
-      ],
       "The folder name is too long. Please choose a different name.": [
         ""
       ],
       "The label name is too long. Please choose a different name.": [
         ""
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Legalább ${ _price } kredit feltöltése szükséges"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "A legkisebb küldhető adomány: ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Legalacsonyabb elfogadható összeg: ${ _price2 }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         ""
@@ -2115,9 +1942,6 @@
       ],
       "Unknown error": [
         "Ismeretlen hiba"
-      ],
-      "Unknown payment token status": [
-        "Ismeretlen fizetési token állapot"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nem küldhet üzenetet több mint 100 címzettnek"
@@ -2230,11 +2054,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
-      ]
-    },
-    "Free price": {
-      "Free": [
-        "Ingyenes"
       ]
     },
     "Group": {
@@ -2433,12 +2252,6 @@
         "${ groupCounts } csoport található",
         "${ groupCounts } csoport található"
       ],
-      "${ mailAppName } Free": [
-        "${ mailAppName } Ingyenes"
-      ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional egy felhasználóval indul, és minden további felhasználó 5GB tárhellyel valamint 5 e-mail címmel adódik hozzá a szervezethez."
-      ],
       "${ namesWithoutLast } and ${ nameOfLast }": [
         "${ namesWithoutLast } és ${ nameOfLast }"
       ],
@@ -2453,15 +2266,6 @@
       "${ pausedCount } paused": [
         "",
         ""
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } az ${ annualBilling } váltással"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } az e-mail és VPN szolgáltatásokon az e-mail előfizetés hozzáadásával."
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } a VPN és az e-mail szolgáltatásokon a VPN előfizetés hozzáadásával."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "",
@@ -2485,31 +2289,9 @@
       "${ uploadName } already exists in this location.": [
         ""
       ],
-      "${ vpnAppName } Free": [
-        "${ vpnAppName } Ingyenes"
-      ],
       "(${ memberCount } member)": [
         "",
         ""
-      ],
-      "(Mail + VPN)": [
-        "(E-mail + VPN)"
-      ],
-      "* Customizable features": [
-        "* Testreszabható szolgáltatások"
-      ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bónusz tárterület"
-      ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ProtonVPN kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
-        "+${ organization.BonusVPN } ProtonVPN kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% kedvezmény érvényesítve a kuponnal: ${ code }"
-      ],
-      "30 days money-back guarantee.": [
-        "30 napos pénz-visszafizetési garancia."
       ],
       "5 email addresses": [
         "5 e-mail cím"
@@ -2517,35 +2299,17 @@
       "5 GB storage": [
         "5 GB tárhely"
       ],
-      "A free and uncensored Internet should be available to all.": [
-        "A szabad és cenzúramentes internet mindenkinek elérhető kellene legyen."
-      ],
       "A number will be added to the filename": [
         ""
       ],
       "A number will be added to the folder name": [
         ""
       ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Hozzáférés blokkolt tartalomhoz, mint például közösségi oldalak, hírek, Wikipedia, YouTube és sok más, bárhol is tartózkodik."
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Nézze a TV előfizetéseit, mint ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, bárhol is van."
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "A fiók hozzáférése rendezetlen számla miatt korlátozva lett. Kérjük lépjen kapcsolatba az adminisztrátorral."
       ],
-      "Account successfully updated": [
-        "A fiók sikeresen frissítve"
-      ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "Adjon hozzá további címeket a fiókjához, mint például felhasznalonev2@protonmail.com"
-      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Cím hitelesítés a megbízható kulcsokkal engedélyezve van ehhez a címhez. A küldéshez a címzett nyilvános kulcsát megbízhatóként kell megjelölnie."
-      ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "A Bitcoin fizetés után, kövesse a lenti utasításokat a nagyobb csomagra váltáshoz."
       ],
       "All (${ totalFoldersCount } folder)": [
         "",
@@ -2554,12 +2318,6 @@
       "All (${ totalFoldersCount } label)": [
         "",
         ""
-      ],
-      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Lehetővé teszi, hogy a ${ mailAppName } címén saját domain névvel fogadjon e-maileket, pl. john.smith@example.com"
-      ],
-      "Amount below minimum (${ amount }).": [
-        "Az összeg a minimum alatt. (${ amount })."
       ],
       "An active recovery file": [
         ""
@@ -2584,30 +2342,6 @@
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "${ billedPrice } számlázva kétévente"
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "${ billedPrice } számlázva évente"
-      ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Számlázva a jelenlegi számlázási periódusának végén (megújul: ${ renewalDate })"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "A Bitcoin tranzakciók visszaigazolása időbe telhet (akár 24 órába). Amint a visszaigazolás megtörténik, jóváírjuk a fiókján. A tranzakció megerősítését követően fizetheti a számláit a jóváírt összeggel."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Az előfizetésre a 2018. évi Black Friday akció került alkalmazásra"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Az előfizetésre a 2019. évi Black Friday akció került alkalmazásra"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "A 2020. évi Black Friday új előfizetési akció került alkalmazásra"
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
       ],
       "Canceled": [
         "Megszakítva"
@@ -2670,9 +2404,6 @@
       "Create links and share your files with others.": [
         "Hozzon létre linkeket, így ossza meg a fájljait másokkal."
       ],
-      "Create up to 20 custom calendars. On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Hozzon létre akár 20 egyedi naptárt. Ezen kívül hozzáadhat 5 naptárt barátaitól, családjától, kollégáitól vagy cégcsoportjaitól is."
-      ],
       "Create your first folder and start moving your files.": [
         "Hozza létre első mappáját és helyezze el benne a fájljait."
       ],
@@ -2695,12 +2426,6 @@
         "",
         ""
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Az előfizetésre érvényes árengedmény a kuponnal ${ code }"
-      ],
-      "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Töltse le a kedvenc alkalmazását, így a biztonságot bárhova magával viheti."
-      ],
       "Downloaded": [
         "Letöltve"
       ],
@@ -2716,8 +2441,8 @@
       "Duplicate key updated": [
         "Duplikált kulcs frissítve"
       ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "Minden további kapcsolat hozzárendelhető a szervezetben lévő felhasználókhoz."
+      "Enable Drive Search": [
+        "Felhőtárban Keresés Engedélyezése"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
@@ -2743,32 +2468,11 @@
       "Folder will not be uploaded": [
         ""
       ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "Családoknak és kisebb csoportoknak, a levelezést és VPN-t is tartalmazza."
-      ],
-      "For getting started with private and secure emailing.": [
-        "Az elinduláshoz a biztonságos és privát e-mailezésben."
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Magánszemélyeknek, akik egy fejlett védelemmel rendelkező, teljes értékű levelező fiókot szeretnének."
-      ],
-      "For professionals that need secure business communications.": [
-        "Üzleti felhasználóknak, akik ki szeretnék használni a biztonságos kommunikáció előnyeit."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
-      ],
       "Free up some space or add more storage space.": [
         "Szabadítson fel helyet vagy vásároljon több területet."
       ],
       "Free up some space or contact your administrator.": [
         "Szabadítson fel területet vagy írjon az adminisztrátornak."
-      ],
-      "Free VPN on a single device": [
-        "Ingyenes VPN egy eszközön"
-      ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "Teljes VPN csomag, akár 10Gbps sebességgel."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Nyissa meg a Saját fájlokat és töltsön fel néhány fájlt."
@@ -2806,9 +2510,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
-      ],
-      "Included": [
-        "Tartalmazza"
       ],
       "Indexing search results…": [
         "Keresési eredmények indexelése…"
@@ -2897,9 +2598,6 @@
       "No group found": [
         "Nem található csoport"
       ],
-      "No payment is required at this time.": [
-        "Jelenleg nincs fizetendő számla."
-      ],
       "No preview available": [
         "Előnézet nem érhető el"
       ],
@@ -2909,20 +2607,17 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         ""
       ],
-      "Not customizable": [
-        "Nem módosítható"
-      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         ""
-      ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "A felhasználókhoz rendelhető összes VPN kapcsolat száma. Minden eszköznek egy VPN kapcsolatra van szüksége."
       ],
       "of": [
         "/"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
         ""
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Csak ${ MAX_CUSTOM_PASSWORD_LENGTH } számú karakter engedélyezett"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ezeket a beállításokat csak akkor változtassa meg, ha nem ProtonMail címzettekkel használ PGP titkosítást."
@@ -2939,12 +2634,6 @@
       "Paused": [
         "Felfüggesztve"
       ],
-      "Payment can take a few minutes to fully verify.": [
-        "A kifizetés ellenőrzése néhány percet is igénybe vehet."
-      ],
-      "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Fizetés adatait TLS titkosítással védjük. Svájci adatvédelmi törvények vonatkoznak rá."
-      ],
       "Permanently delete all files in your drive": [
         ""
       ],
@@ -2960,26 +2649,8 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ez a folyamat eltarthat egy ideig, a névjegyzék méretétől függően."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "A megerősítés gombra kattintva a fiókban ${ creditsRemaining } kredit marad."
-      ],
       "Please select the folders you would like to import:": [
         ""
-      ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Kérjük, próbálja újra, válasszon más fizetési módot vagy kérjen segítséget a bankjától."
-      ],
-      "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Kérjük, próbálja újra, válasszon más fizetési módot vagy kérjen segítséget a PayPaltól."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Ellenőrizze a fizetést a megnyílt új böngészőfülön."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Ellenőrizze a bankkártyát a megnyílt új böngészőfülön."
-      ],
-      "Please verify the payment in the new tab.": [
-        "Ellenőrizze a fizetést az új ablakban."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Folyamatban van az olyan névjegyek keresése, amelyeket újra aláírhat az elsődleges titkosítás kulccsal."
@@ -3005,13 +2676,6 @@
       "Proton Calendar": [
         "Proton Calendar"
       ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "A ProtonMail Plus egy felhasználóra van korlátozva és 5GB tárhellyel indul."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN kapcsolatot tartalmaz.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN kapcsolatot tartalmaz."
-      ],
       "Queued": [
         "Sorba állítva"
       ],
@@ -3020,12 +2684,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
-      ],
-      "Save 20%": [
-        "20% kedvezményt"
-      ],
-      "Save extra 20%": [
-        "Takarítson meg további 20%-ot"
       ],
       "Screenshot(s) attached": [
         "Képernyőkép(ek) csatolva"
@@ -3054,23 +2712,11 @@
       "Share files with links": [
         "Fájlok megosztása linkekkel"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
-      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         ""
       ],
       "Something went wrong, please try again later.": [
         "Hiba történt. Kérjük, próbálkozzon később."
-      ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Kezdjen 500 MB-tal és oldjon fel nagyobb tárhelyet útközben. A tárhely meg van osztva a Levelezés, a Naptár és a Felhőtárhely között."
-      ],
-      "Starter VPN service with P2P support.": [
-        "Alap VPN csomag, P2P támogatással."
-      ],
-      "Storage GB": [
-        "Tárhely GB"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
         "A tárhely megosztott az Email, a Naptár és a Felhőtárhely közt."
@@ -3080,15 +2726,6 @@
       ],
       "support team": [
         "ügyfélszolgálat"
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "Váltson ${ professionalPlan } csomagra további kapcsolatok hozzáadásához."
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "Váltson ${ professionalPlan } csomagra további felhasználók hozzáadásához."
-      ],
-      "Thank you for supporting our mission.": [
-        "Köszönjük, hogy támogatja céljaink elérését."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Az alkalmazásnak helyben kell visszafejtenie a névjegyeket az exportáláshoz. A folyamat végén egy VCF fájl fog létrejönni, amelyet letölthet."
@@ -3123,9 +2760,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "",
         ""
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Ez lehetővé teszi, hogy a Proton előfizetését PayPallal fizesse. Most átirányítjuk a PayPalhoz egy új böngészőfülön. Amennyiben letiltotta a felugró ablakokat, kérjük engedélyezze a folytatához."
       ],
       "This will overwrite the existing file": [
         ""
@@ -3181,9 +2815,6 @@
       "Unsupported file": [
         "Nem támogatott fájltípus"
       ],
-      "Upgrade today and keep access to the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Frissítsen még ma, hogy továbbra is hozzáférést kaphasson a magánéletét előtérben tartó Email és Naptár megoldásokhoz a mindennapi kommunikációjához."
-      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Frissítsen ma, hogy elkerülje az alábbi ${ appName } ${ planName } előnyök elvesztését."
       ],
@@ -3195,30 +2826,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Fájlok százainak egyszerre való feltöltése fennakadásokat okozhat."
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Használja a saját egyedi email domain neveit, pl. on@azonneve.com"
-      ],
-      "Users": [
-        "Felhasználók"
-      ],
-      "Verification can take a few minutes.": [
-        "Az ellenőrzés néhány percet is igénybe vehet."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Az ellenőrzés egy új böngészőfülön fog megnyílni. Kérjük engedélyezze a felugró ablakokat."
-      ],
-      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Az ellenőrzés meg fog nyitni egy új böngészőfület. Kérjük engedélyezze a felugró ablakokat. Nem fog fizetés történni. A kártya ellenőrzéséhez felhasznált összeg azonnal visszatérítésre kerül."
-      ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "VPN + ${ mailAppName } csomag, családoknak és kisvállalkozásoknak."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "3D Secure kódot használunk a kifizetések védelme érdekében."
-      ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "A tranzakció befejezéséhez átirányítjuk a PayPalhoz egy új böngészőfülön. Kérjük engedélyezze a felugró ablakokat."
       ],
       "We'll notify you when the import is done.": [
         ""
@@ -3253,11 +2860,8 @@
       "You are about to open another browser tab and visit:": [
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve, hozzáférése korlátozott."
-      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         ""
@@ -3271,44 +2875,20 @@
       "You cannot undo this action.": [
         "Ez a művelet nem vonható vissza."
       ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Ahhoz, hogy felvehesse fizetési módként, a PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát. Ha ezek egyike sincs, kattintson a lentebbi gombra."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Teljesen megtelt a tárhelye. Nem küldhet vagy fogadhat új e-maileket. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "A kifizetés ellenőrzéséhez átirányítjuk a bankjához."
-      ],
       "You will lose all unsaved changes.": [
         "A nem mentett módosítások el fognak veszni."
-      ],
-      "You will soon be redirected to PayPal to verify your payment.": [
-        "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése korlátozásra került. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "A fiókja frissítés alatt, ez akár 30 másodpercig is eltarthat."
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "A fiókját frissítjük, mihelyst megérkezik a befizetés."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Biztonsági okokból a bankja megköveteli a 3-D Secure biztonsági ellenőrzést."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -3359,24 +2939,6 @@
         "A biztonságos, megosztható hivatkozás ehhez: ${ boldNameText }:"
       ]
     },
-    "info": {
-      "(beta)": [
-        "(béta)"
-      ]
-    },
-    "Info concerning plan features": {
-      "Customizable features": [
-        "Testreszabható szolgáltatások"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "A ProtonMail nem használható tömeges levélküldésre és levélszemét küldésre. A szabályos levelek száma nincs korlátozva."
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kérjük, vegye fel velünk a kapcsolatot a ${ email } címen, hogy segíthessünk a készpénzes fizetésben."
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "Kattintson a részletekért"
@@ -3385,11 +2947,6 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Több névjegy is megegyezik. ${ mergeAction }"
-      ]
-    },
-    "information": {
-      "Included": [
-        "Tartalmazza"
       ]
     },
     "Key badge": {
@@ -3422,9 +2979,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
-      "Active": [
-        "Aktív"
-      ],
       "Add email address": [
         "E-mail cím hozzáadása"
       ],
@@ -3434,16 +2988,10 @@
       "Add to group": [
         "Hozzáadás a csoporthoz"
       ],
-      "All": [
-        "Mind"
-      ],
       "Apply to all duplicated files": [
         ""
       ],
       "Apply to all duplicated folders": [
-        ""
-      ],
-      "Apply to selection": [
         ""
       ],
       "Audio file": [
@@ -3458,26 +3006,8 @@
       "Browser version": [
         "Böngésző verziója"
       ],
-      "BTC address:": [
-        "BTC azonosító:"
-      ],
-      "BTC amount:": [
-        "BTC összeg:"
-      ],
       "Calendars": [
         ""
-      ],
-      "Cancel": [
-        "Mégsem"
-      ],
-      "Card holder": [
-        "Kártyabirtokos"
-      ],
-      "Card number": [
-        "Kártyaszám"
-      ],
-      "Cash": [
-        "Készpénz"
       ],
       "Category": [
         "Kategória"
@@ -3486,9 +3016,6 @@
         "Település"
       ],
       "Code is 6 digits without spaces": [
-        ""
-      ],
-      "Completed": [
         ""
       ],
       "Contacts": [
@@ -3502,9 +3029,6 @@
       ],
       "Created": [
         ""
-      ],
-      "CVV code": [
-        "CVV kód"
       ],
       "Delete drive?": [
         "",
@@ -3531,11 +3055,11 @@
       "Enable Beta Access": [
         "Béta hozzáférés engedélyezése"
       ],
+      "Enabling Drive Search": [
+        "Felhőtárban Keresés Engedélyezése"
+      ],
       "Encrypt emails": [
         "Üzenetek titkosítása"
-      ],
-      "Enter organization name to confirm": [
-        ""
       ],
       "Expired": [
         "Lejárt"
@@ -3543,17 +3067,11 @@
       "Expires": [
         "Lejárat"
       ],
-      "Expiry date": [
-        "Lejárati dátum"
-      ],
       "Export contacts": [
         "Névjegyek exportálása"
       ],
       "Extended address": [
         "Bővebb cím"
-      ],
-      "Failed": [
-        "Sikertelen"
       ],
       "File": [
         "Fájl"
@@ -3624,9 +3142,6 @@
       "Name": [
         ""
       ],
-      "Name on card": [
-        "Kártyán megjelenített név"
-      ],
       "Never": [
         "Soha"
       ],
@@ -3642,9 +3157,6 @@
       "Password": [
         "Jelszó"
       ],
-      "Payer": [
-        "Teherviselő"
-      ],
       "PGP scheme": [
         ""
       ],
@@ -3656,9 +3168,6 @@
       ],
       "Postal code": [
         "Irányítószám"
-      ],
-      "Proration": [
-        "Arányosítás"
       ],
       "Protect with password": [
         "Jelszavas védelem"
@@ -3684,12 +3193,6 @@
       "Reveal password": [
         "Jelszó felfedése"
       ],
-      "Select a method": [
-        "Válasszon fizetési módot"
-      ],
-      "Select your country": [
-        "Válassza ki az országot"
-      ],
       "Set expiration date": [
         "Lejárati dátum beállítása"
       ],
@@ -3708,9 +3211,6 @@
       "Street address": [
         "Utca, házszám"
       ],
-      "Submit": [
-        "Küldés"
-      ],
       "System information": [
         "Rendszer információk"
       ],
@@ -3722,12 +3222,6 @@
       ],
       "To: ${ emailAddress }": [
         ""
-      ],
-      "Total": [
-        "Összesen"
-      ],
-      "Total (${ countdown })": [
-        "Összesen (${ countdown })"
       ],
       "Two-factor authentication code": [
         "Kétlépcsős hitelesítő kód"
@@ -3767,9 +3261,6 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         ""
-      ],
-      "ZIP": [
-        "Irányítószám"
       ]
     },
     "Label for contact group color": {
@@ -3807,14 +3298,8 @@
       ]
     },
     "Link": {
-      "Add a gift code": [
-        "Ajándék kód hozzáadása"
-      ],
       "clearing your browser cache": [
         "böngésző gyorsítótárának ürítése"
-      ],
-      "click here": [
-        "kattintson ide"
       ],
       "Go to subscription plans": [
         "Előfizetési csomagok megnyitása"
@@ -3861,87 +3346,6 @@
         ""
       ]
     },
-    "Mail feature": {
-      "0.5 GB": [
-        "0.5 GB"
-      ],
-      "20 GB": [
-        "20 GB"
-      ],
-      "Address verification": [
-        "Cím ellenőrzése"
-      ],
-      "Addresses": [
-        "Címek"
-      ],
-      "Autoresponder": [
-        "Automatikus válasz"
-      ],
-      "Catch-All email": [
-        "Gyűjtő e-mail"
-      ],
-      "Contact groups": [
-        "Névjegy csoportok"
-      ],
-      "Custom domains": [
-        "Saját domain nevek"
-      ],
-      "Custom filters": [
-        "Saját szűrők"
-      ],
-      "Encrypted contacts": [
-        "Titkosított névjegyek"
-      ],
-      "Folders / labels": [
-        "Mappák / címkék"
-      ],
-      "IMAP / SMTP": [
-        "IMAP / SMTP"
-      ],
-      "Limited": [
-        "Korlátozott"
-      ],
-      "Messages per day": [
-        "Üzenetek naponta"
-      ],
-      "Multi-user support": [
-        "Többfelhasználós lehetőség"
-      ],
-      "Priority": [
-        "Prioritás"
-      ],
-      "Storage": [
-        "Tárhely"
-      ],
-      "Support": [
-        "Ügyfélszolgálat"
-      ],
-      "Use @pm.me address": [
-        "@pm.me cím használata"
-      ],
-      "Users": [
-        "Felhasználó"
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        "5 GB *"
-      ],
-      "5 GB / user *": [
-        "5 GB felhasználónként *"
-      ],
-      "Unlimited": [
-        "Korlátlan"
-      ],
-      "Unlimited **": [
-        "Korlátlan **"
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        "5 db felhasználónként *"
-      ]
-    },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
@@ -3949,16 +3353,6 @@
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
-        ""
-      ]
-    },
-    "Many Others": {
-      "and many others": [
-        "és még sok más"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         ""
       ]
     },
@@ -3978,11 +3372,6 @@
       ],
       "Plain text": [
         "Egyszerű szöveg"
-      ]
-    },
-    "Netflix": {
-      "Netflix": [
-        "Netflix"
       ]
     },
     "New Label form": {
@@ -4037,30 +3426,6 @@
         "",
         ""
       ],
-      "${ deletedItemsCount } file deleted permanently from trash": [
-        "${ deletedItemsCount } fájl véglegesen törölve a lomtárból",
-        "${ deletedItemsCount } fájl véglegesen törölve a lomtárból"
-      ],
-      "${ deletedItemsCount } folder deleted permanently from trash": [
-        "${ deletedItemsCount } mappa véglegesen törölve a lomtárból",
-        "${ deletedItemsCount } mappa véglegesen törölve a lomtárból"
-      ],
-      "${ failedCount } link to your file failed to be deleted": [
-        "",
-        ""
-      ],
-      "${ failedMovesCount } file failed to be moved": [
-        "${ failedMovesCount } fájl áthelyezése nem sikerült",
-        "${ failedMovesCount } fájl áthelyezése nem sikerült"
-      ],
-      "${ failedMovesCount } folder failed to be moved": [
-        "${ failedMovesCount } mappa áthelyezése nem sikerült",
-        "${ failedMovesCount } mappa áthelyezése nem sikerült"
-      ],
-      "${ movedLinksCount } folder successfully moved": [
-        "${ movedLinksCount } mappa sikeresen áthelyezve",
-        "${ movedLinksCount } mappa sikeresen áthelyezve"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elem véglegesen törölve a lomtárból",
         "${ numberOfItems } elem véglegesen törölve a lomtárból"
@@ -4101,27 +3466,8 @@
         "${ numberOfItems } hivatkozás a fájlra törlésre került",
         "${ numberOfItems } hivatkozás a fájlra törlésre került"
       ],
-      "${ restoredItemsCount } file restored from trash": [
-        "${ restoredItemsCount } fájl visszaállítva a lomtárból",
-        "${ restoredItemsCount } fájl visszaállítva a lomtárból"
-      ],
-      "${ restoredItemsCount } folder restored from trash": [
-        "${ restoredItemsCount } mappa visszaállítva a lomtárból",
-        "${ restoredItemsCount } mappa visszaállítva a lomtárból"
-      ],
-      "${ trashedLinksCount } file moved to trash": [
-        "${ trashedLinksCount } fájl áthelyezve a lomtárba",
-        "${ trashedLinksCount } fájl áthelyezve a lomtárba"
-      ],
-      "${ trashedLinksCount } folder moved to trash": [
-        "${ trashedLinksCount } mappa áthelyezve a lomtárba",
-        "${ trashedLinksCount } mappa áthelyezve a lomtárba"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Minden elem hamarosan törlésre fog kerülni a Lomtárban"
-      ],
-      "An item with the name \"${ name }\" already exists in the current folder": [
-        "Már létezik ilyen nevű elem az aktuális mappában: \"${ name }\""
       ],
       "Contact group created": [
         "Névjegy csoport létrehozva"
@@ -4307,17 +3653,6 @@
         ""
       ]
     },
-    "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
-      "New credit/debit card": [
-        "Új bankkártya"
-      ],
-      "PayPal": [
-        "PayPal"
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         ""
@@ -4374,9 +3709,6 @@
       "Please describe the problem and include any error messages": [
         "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
       ],
-      "Postal code": [
-        "Irányítószám"
-      ],
       "Proton username": [
         "Proton felhasználónév"
       ],
@@ -4388,112 +3720,11 @@
       ],
       "Start typing an email address": [
         "Kezdjen el írni egy e-mail címet"
-      ],
-      "ZIP": [
-        "Irányítószám"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "Név"
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        "0.5 GB tárhely"
-      ],
-      "1 - 5000 users *": [
-        "1 - 5000 felhasználó *"
-      ],
-      "1 address": [
-        "1 cím"
-      ],
-      "1 user": [
-        "1 felhasználó"
-      ],
-      "20 GB storage": [
-        "20 GB tárhely"
-      ],
-      "200 folders / labels": [
-        "200 mappa / címke"
-      ],
-      "3 folders / labels": [
-        "3 mappa / címke"
-      ],
-      "5 addresses": [
-        "5 cím"
-      ],
-      "5 addresses / user": [
-        "5 cím felhasználónként"
-      ],
-      "5 GB storage *": [
-        "5 GB tárhely *"
-      ],
-      "5 GB storage / user": [
-        "5 GB tárhely felhasználónként"
-      ],
-      "50 addresses": [
-        "50 cím"
-      ],
-      "6 users": [
-        "6 felhasználó"
-      ],
-      "Access blocked content": [
-        "Hozzáférés blokkolt tartalomhoz"
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        "${ driveAppName } (béta) használata"
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Minden a ${ PLAN_NAMES[PLANS.VPNPLUS] } csomagból"
-      ],
-      "Built-in Adblocker (NetShield)": [
-        "Beépített reklámblokkoló (NetShield)"
-      ],
-      "Custom domains": [
-        "Saját domain nevek"
-      ],
-      "Early access to new products": [
-        "Korai hozzáférés új termékekhez"
-      ],
-      "High speed": [
-        "Nagy sebesség"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Legnagyobb sebesség (10 Gbps-ig)"
-      ],
-      "Includes 6 user accounts": [
-        "6 felhasználói fiókot tartalmaz"
-      ],
-      "Includes Proton Visionary": [
-        "Tartalmazza a Proton Visionary csomagot"
-      ],
-      "Medium speed": [
-        "Közepes sebesség"
-      ],
-      "Secure Core servers": [
-        "Secure Core szerverek"
-      ],
-      "Streaming service support": [
-        "Videó szolgáltatások támogatása"
-      ],
-      "Unlimited folders / labels": [
-        "Korlátlan mappa és címke"
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        "(jelenlegi csomag)"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Ingyenes"
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
-        "Prime Videó"
       ]
     },
     "Progress bar description": {
@@ -4580,12 +3811,6 @@
       ]
     },
     "Success": {
-      "\"${ name }\" created successfully": [
-        ""
-      ],
-      "${ nameElement } renamed successfully": [
-        "${ nameElement } sikeresen átnevezve"
-      ],
       "Address copied to clipboard": [
         "Cím a vágólapra másolva"
       ],
@@ -4632,9 +3857,6 @@
       ],
       "Verification successful": [
         "Sikeres ellenőrzés"
-      ],
-      "You have successfully unsubscribed": [
-        "Sikeresen leiratkozott"
       ]
     },
     "Suffix for price": {
@@ -4751,18 +3973,15 @@
       "# of accesses": [
         "Elérések száma"
       ],
-      "${ appName } customization": [
-        "${ appName } testreszabása"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } tag",
         "${ emailsCount } tag"
       ],
-      "3-D Secure verification failed": [
-        "A 3D Secure biztonsági ellenőrzés sikertelen"
-      ],
       "Account suspended": [
         "Fiók felfüggesztve"
+      ],
+      "Active": [
+        "Aktív"
       ],
       "Add contact group name": [
         "Adjon nevet a névjegy csoportnak"
@@ -4780,8 +3999,8 @@
       "Addresses": [
         "Címek"
       ],
-      "Amount due": [
-        "Esedékes összeg"
+      "All": [
+        "Mind"
       ],
       "Back": [
         "Vissza"
@@ -4789,29 +4008,17 @@
       "Beta Access": [
         "Béta hozzáférés"
       ],
-      "Billing cycle": [
-        "Számlázási ciklus"
-      ],
       "Cancel all active transfers": [
         "Minden folyamatban lévő átvitel megszakítása"
-      ],
-      "Card verification": [
-        "Bankkártya ellenőrzés"
-      ],
-      "Card verification in progress": [
-        "Bankkártya ellenőrzése folyamatban"
       ],
       "Change layout": [
         "Elrendezés módosítása"
       ],
-      "Checkout": [
-        "Fizetés"
-      ],
       "Clearing data": [
         "Adatok törlése"
       ],
-      "Confirm loss of Proton bonuses": [
-        "Proton kedvezmények elvesztésének megerősítése"
+      "Completed": [
+        "Kész"
       ],
       "Contact details": [
         ""
@@ -4837,9 +4044,6 @@
       "Currency": [
         "Pénznem"
       ],
-      "Current plan": [
-        "Jelenlegi csomag"
-      ],
       "Customize and confirm": [
         ""
       ],
@@ -4848,9 +4052,6 @@
       ],
       "Customize your mail import": [
         ""
-      ],
-      "Customize your plan": [
-        "Csomag testreszabása"
       ],
       "Date": [
         "Dátum"
@@ -4866,9 +4067,6 @@
       "Delete ${ Name }": [
         "${ Name } törlése"
       ],
-      "Delete organization?": [
-        ""
-      ],
       "Delete permanently": [
         "Végleges törlés"
       ],
@@ -4880,9 +4078,6 @@
       ],
       "Discard changes?": [
         "Módosítások elvetése?"
-      ],
-      "Downgrade account": [
-        ""
       ],
       "Download canceled": [
         ""
@@ -4929,6 +4124,9 @@
       "Empty trash": [
         "Lomtár kiürítése"
       ],
+      "Enable Drive Search": [
+        "Felhőtárban Keresés Engedélyezése"
+      ],
       "Enter password to download": [
         ""
       ],
@@ -4938,11 +4136,11 @@
       "Enter your username or ProtonMail email address": [
         "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
       ],
-      "Error": [
-        "Hiba"
-      ],
       "Exporting contacts": [
         "Névjegyek exportálása"
+      ],
+      "Failed": [
+        "Sikertelen"
       ],
       "File details": [
         "Fájl adatok"
@@ -4958,9 +4156,6 @@
       ],
       "Folders details": [
         ""
-      ],
-      "Gift code": [
-        "Ajándék kód"
       ],
       "Groups": [
         "Csoportok"
@@ -5013,9 +4208,6 @@
       "Name": [
         "Név"
       ],
-      "Network error": [
-        "Hálózati hiba"
-      ],
       "No results found": [
         "Nincs találat"
       ],
@@ -5043,29 +4235,11 @@
       "Other names": [
         "További nevek"
       ],
-      "Payment verification": [
-        "Fizetés ellenőrzése"
-      ],
-      "Payment verification in progress": [
-        "Fizetés ellenőrzése folyamatban"
-      ],
-      "PayPal verification failed": [
-        "A PayPal ellenőrzés sikertelen"
-      ],
       "Performance might be affected": [
         "Hatással lehet a teljesítményre"
       ],
       "Phone numbers": [
         "Telefonszámok"
-      ],
-      "Plan summary": [
-        "Csomag összefoglaló"
-      ],
-      "Processing": [
-        "Feldolgozás"
-      ],
-      "Processing...": [
-        "Folyamatban..."
       ],
       "Re-sign all contacts": [
         "Az összes névjegy ismételt aláírása"
@@ -5093,6 +4267,9 @@
       ],
       "Search results": [
         "Keresés találatai"
+      ],
+      "Search results: ${ searchView.numberOfResults } found": [
+        "Keresés eredményei: ${ searchView.numberOfResults } találat"
       ],
       "Searching…": [
         "Keresés…"
@@ -5145,23 +4322,17 @@
       "Stop sharing with everyone?": [
         "Megszakítja a mindenkivel való megosztást?"
       ],
-      "Subtotal": [
-        "Részösszeg"
-      ],
       "The file or folder failed to be downloaded": [
-        ""
+        "A fájlt vagy mappát nem sikerült letölteni"
       ],
       "The link does not exist": [
-        ""
+        "A link nem létezik"
       ],
       "The link either does not exist or has expired": [
         "A hivatkozás nem létezik vagy leját"
       ],
       "The link failed to be loaded": [
-        ""
-      ],
-      "Total (monthly)": [
-        "Összesen (havonta)"
+        "A linket nem sikerült letölteni"
       ],
       "Total size": [
         "Teljes méret"
@@ -5171,9 +4342,6 @@
       ],
       "Type": [
         "Típus"
-      ],
-      "Unsupported browser": [
-        "Nem támogatott böngésző"
       ],
       "Upgrade required": [
         "Nagyobb csomag szükséges"
@@ -5210,9 +4378,6 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ formattedEndDate }"
-      ],
-      "ZIP / postal code": [
-        "Irányítószám"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -5221,26 +4386,11 @@
       ]
     },
     "Tooltip": {
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Hozzáférés a földrajzilag blokkolt tartalmakhoz (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube stb.), bárhol is tartózkodik."
-      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatikus beállítás esetén, a szerkesztőben használt módban kerülnek elküldésre a levelek. Egyszerű szöveg esetén, ennek a partnernek, az összes üzenet egyszerű szöveggé alakul az elküldéskor."
       ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Hozzon létre több címet a fiókjához pl. masiknev@protonmail.com"
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "A VPN elleni támadásokkal szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat."
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Az üzenetek digitális aláírása teszi ellenőrizhetővé, hogy az üzenetet valóban ön küldte"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Éves fizetés kedvezménye jóváírásra került"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Kétéves fizetés kedvezménye jóváírásra került"
       ],
       "Each imported email will have this label": [
         ""
@@ -5254,35 +4404,8 @@
       "Encrypted data with verified digital signature": [
         "Titkosított adat, ellenőrzött digitális aláírással"
       ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Szerezzen elérést mind a ${ vpnAppName }, mind a ${ mailAppName } (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Szerezzen elérést mind a ProtonVPN, mind a ProtonMail (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Levelezzen a saját domain nevén a ${ mailAppName } segítségével pl. kovacs.janos@example.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Levelezzen a saját domain nevén a ProtonMaillel pl. kovacs.janos@example.com"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "A több-felhasználós lehetőség csak a legalább 2 felhasználót tartalmazó csomagokban érhető el"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "A NetShield megvédi eszközeit és felgyorsítja a böngészés sebességét, a reklámok, követők és kártevő szoftverek letiltásával."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül."
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Támogatja a fájlmegosztási protokollokat, mint például a BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
         ""
@@ -5292,15 +4415,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Töltsön fel egy nyilvános kulcsot, hogy erre a címre lehetővé tegye végpontok közt titkosított üzenetek küldését"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Használjon több címet / nevet a fiókjához pl. masiknev@protonmail.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Használja a személyes felhasználónév@pm.me címét levelek küldésére"
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Használja a saját egyedi email domain címeit, pl. on@azonneve.com"
       ],
       "You do not have any contacts to export": [
         "Önnek nincs exportálható névjegye"
@@ -5340,123 +4454,6 @@
         ""
       ]
     },
-    "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
-      "30-days money-back guarantee": [
-        "30 napos pénz-visszafizetési garancia"
-      ],
-      "Access blocked content": [
-        "Hozzáférés a blokkolt tartalomhoz"
-      ],
-      "Adblocker (NetShield)": [
-        "Reklámblokkoló (NetShield)"
-      ],
-      "Custom connection profiles": [
-        "Egyéni kapcsolódási profilok"
-      ],
-      "DNS leak prevention": [
-        "DNS szivárgás elleni védelem"
-      ],
-      "Full Disk Encryption on Servers": [
-        "Teljes lemez titkosítás a szervereken"
-      ],
-      "Jurisdiction": [
-        "Illetékesség"
-      ],
-      "Kill Switch / Always-on VPN": [
-        "Kill Switch és mindig bekapcsolt VPN"
-      ],
-      "Languages supported": [
-        "Támogatott nyelvek"
-      ],
-      "Locations/Countries": [
-        "Helyek/Országok"
-      ],
-      "Open Source & audited apps": [
-        "Nyílt forrású és auditált alkalmazások"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        "Perfect Forward Secrecy (PFS)"
-      ],
-      "Platforms supported": [
-        "Támogatott platformok"
-      ],
-      "Router support": [
-        "Router támogatás"
-      ],
-      "Secure Core servers": [
-        "Secure Core szerverek"
-      ],
-      "Speed": [
-        "Sebesség"
-      ],
-      "Split tunneling": [
-        "Osztott alagút"
-      ],
-      "Streaming service support": [
-        "Videó szolgáltatások támogatása"
-      ],
-      "Strict no-logs policy": [
-        "Szigorú nincs-naplózás irányelv"
-      ],
-      "Tor over VPN": [
-        "Tor VPN-en"
-      ],
-      "User data monetization": [
-        "Felhasználói adatok pénzzé tétele"
-      ],
-      "Volume/bandwidth cap": [
-        "Sávszélesség korlát"
-      ],
-      "VPN Connections": [
-        "VPN kapcsolatok"
-      ],
-      "VPN servers": [
-        "VPN szerverek"
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        "(csak Android és Windows)"
-      ],
-      "High": [
-        "Gyors"
-      ],
-      "Highest (up to 10 Gbps)": [
-        "Leggyorsabb (10 Gbps-ig)"
-      ],
-      "Medium": [
-        "Közepes"
-      ],
-      "None": [
-        "Egyik sem"
-      ],
-      "Switzerland": [
-        "Svájc"
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection": [
-        "",
-        ""
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
-      ]
-    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Biztos, hogy véglegesen töröl ${ count } névjegy csoportot?",
@@ -5480,9 +4477,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Ha ezt a fizetési módot választja, akkor az összeget nem tudjuk automatikusan jóváírni. Számláját frissítjük, amint a befizetés megérkezett."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         ""

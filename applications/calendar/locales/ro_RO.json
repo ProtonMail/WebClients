@@ -616,8 +616,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "„Accesul la Beta” vă permite să utilizați versiunea beta a ProtonMail, Proton Calendar și Proton Drive înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
@@ -2002,9 +2002,6 @@
       "Calendar limit reached": [
         "Limita de calendare a fost atinsă."
       ],
-      "Calendar primary private key is not decrypted": [
-        "Cheia privată primară a calendarului nu este decriptată."
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
       ],
@@ -3303,8 +3300,8 @@
       "You are about to open another browser tab and visit:": [
         "Se va deschide o nouă filă în navigator cu adresa:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "V-ați conectat cu ${ user.Name } (${ user.Email }) și aveți acces restricționat."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Puteți și să îmbinați calendarele importate cu calendarele Proton existente."
@@ -4114,6 +4111,20 @@
         "Rețineți că ${ boldNextStep } solicitate de către aplicație pentru a începe importarea."
       ]
     },
+    "Onboarding": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Alegeți un nume de afișat"
@@ -4144,20 +4155,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Puteți modifica oricând aceasta în setări."
-      ]
-    },
-    "Onboarding ProtonCalendar": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "Un calendar este o înregistrare a vieții personale. Păstrați-vă viața în siguranță și privată cu ${ appName }."
-      ],
-      "Import events": [
-        "Importare evenimente"
-      ],
-      "Meet your new encrypted calendar": [
-        "Priviți noul calendar criptat"
-      ],
-      "Start using ${ appName }": [
-        "Începeți să utilizați ${ appName }"
       ]
     },
     "Option": {

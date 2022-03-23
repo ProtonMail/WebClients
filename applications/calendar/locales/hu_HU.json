@@ -614,8 +614,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ProtonMail, a Proton Calendar és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
@@ -1990,9 +1990,6 @@
       "Calendar limit reached": [
         "Elérte a naptárak maximális számát"
       ],
-      "Calendar primary private key is not decrypted": [
-        "A naptár elsődleges titkosító kulcsa nincs visszafejtve"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nem lehetséges minden importált naptárhoz egy új naptár létrehozása, a személyes naptár korlátok miatt."
       ],
@@ -3254,8 +3251,8 @@
       "You are about to open another browser tab and visit:": [
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve, hozzáférése korlátozott."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Az importált naptárokat összefűzheti meglévő Proton naptáraival is."
@@ -4039,6 +4036,20 @@
         "Az importlás elindításához ${ boldNextStep } melyet az alkalmazás kér."
       ]
     },
+    "Onboarding": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Válasszon egy megjelenített nevet"
@@ -4069,20 +4080,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Ezt a beállításoknál bármikor megváltoztathatja."
-      ]
-    },
-    "Onboarding ProtonCalendar": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "Egy naptár az életének egy lenyomata. Kezelje bizalmasan a magánszféráját a ${ appName } segítségével."
-      ],
-      "Import events": [
-        "Események importálása"
-      ],
-      "Meet your new encrypted calendar": [
-        "Íme az új titkosított naptára"
-      ],
-      "Start using ${ appName }": [
-        "${ appName } használatának megkezdése"
       ]
     },
     "Option": {

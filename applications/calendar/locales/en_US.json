@@ -614,7 +614,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -1990,9 +1990,6 @@
       "Calendar limit reached": [
         ""
       ],
-      "Calendar primary private key is not decrypted": [
-        ""
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
@@ -3254,7 +3251,7 @@
       "You are about to open another browser tab and visit:": [
         ""
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
@@ -4039,6 +4036,20 @@
         ""
       ]
     },
+    "Onboarding": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         ""
@@ -4068,20 +4079,6 @@
         ""
       ],
       "You can change this anytime in your settings.": [
-        ""
-      ]
-    },
-    "Onboarding ProtonCalendar": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
-      ],
-      "Import events": [
-        ""
-      ],
-      "Meet your new encrypted calendar": [
-        ""
-      ],
-      "Start using ${ appName }": [
         ""
       ]
     },

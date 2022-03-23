@@ -1045,9 +1045,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } udført",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } udført"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        "",
+        ""
       ]
     },
     "Apps dropdown": {
@@ -1101,8 +1101,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-adgang giver dig mulighed for at bruge betaversionen af ProtonMail, Proton Calendar, og Proton Drive, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
@@ -1277,7 +1277,7 @@
     },
     "Button": {
       "Continue using ProtonMail.": [
-        ""
+        "Fortsæt med at bruge ProtonMail."
       ]
     },
     "Calendar attachment tooltip": {
@@ -2778,9 +2778,6 @@
       "Calendar limit reached": [
         "Kalendergrænse nået"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Kalenders primære private nøgle er ikke dekrypteret"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan ikke oprette nye kalendere for alle importerede kalendere på grund af begrænsningen for personlige kalendere."
       ],
@@ -3453,16 +3450,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "Vi har øget den samlede lagerplads for din konto til ${ totalGBStorageAfterCompletion } GB. Få ekstra lagerplads, og lås op for premium-funktioner i dag."
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "Så er du klar!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "Gennemfør alle trin og få i alt ${ totalGBStorageAfterCompletion } GB på din konto"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "Udløber snart"
@@ -3815,10 +3812,10 @@
         "/måned."
       ],
       "5 email addresses": [
-        ""
+        "5 e-mailadresser"
       ],
       "5 GB storage": [
-        ""
+        "5 GB lagerplads"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "En gendannelsessætning er en af de sikreste måder at beskytte adgangen til din konto. Du kan bruge den til at få adgang til din konto og gendanne dine krypterede data, hvis du nogensinde glemmer din adgangskode."
@@ -3831,6 +3828,9 @@
       ],
       "Activation in progress": [
         "Aktivering i gang"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        ""
       ],
       "Add image URL": [
         "Tilføj billed-URL"
@@ -4487,7 +4487,7 @@
         "Beklager, denne besked findes ikke eller er allerede udløbet"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Lagerplads deles på tværs af Mail, Calendar og Drive."
       ],
       "Store and share files securely with Proton Drive.": [
         "Gem og del filer sikkert med Proton Drive."
@@ -4662,10 +4662,10 @@
         "Slå til for at søge i indholdet af dine beskeder"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Ubegrænsede mapper / etiketter / filtre"
       ],
       "Unlimited messages": [
-        ""
+        "Ubegrænset antal beskeder"
       ],
       "Unsupported file": [
         "Ikke-understøttet fil"
@@ -4715,11 +4715,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        ""
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Brug tastaturgenveje for at håndtere dine e-mails hurtigere."
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Brug Proton Calendar til at holde dine aftaler private."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Skan QR-koden eller besøg ${ link } ved hjælp af din mobilenhed."
@@ -5174,7 +5174,7 @@
         "Gem automatisk kontakter"
       ],
       "BCC": [
-        ""
+        "BCC"
       ],
       "Blind Carbon Copy": [
         "Blind karbonkopi"
@@ -5198,7 +5198,7 @@
         "Kategori"
       ],
       "CC": [
-        ""
+        "CC"
       ],
       "City": [
         "By"
@@ -5574,6 +5574,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Aktivér"
+      ],
       "Add folder": [
         "Tilføj mappe"
       ],
@@ -6091,6 +6094,20 @@
         "Flet med kalender"
       ]
     },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        "Hent mobilapp"
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
+        ""
+      ]
+    },
     "Participant name": {
       "You": [
         "Dig"
@@ -6174,7 +6191,7 @@
         "Beskriv problemet og medtag evt. fejlmeddelelser"
       ],
       "Please insert link first": [
-        ""
+        "Indsæt link først"
       ],
       "Proton username": [
         "Protonbrugernavn"
@@ -6467,7 +6484,7 @@
         ""
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "Inviter venner, og optjen belønninger!"
       ],
       "Message Content Search": [
         "Søgning efter beskedindhold"
@@ -7443,7 +7460,7 @@
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

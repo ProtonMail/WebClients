@@ -2142,8 +2142,8 @@
       "Enter your login password to confirm your identity.": [
         "Unesite vašu lozinku za potvrdu identiteta."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Unesite vašu lozinku (kao administrator organizacije) i novu lozinku za ovog korisnika."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        ""
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Unesite svoju adresu e-pošte za oporavak i poslat ćemo vam vaše korisničko ime(na). (To je obično adresa e-pošte koju ste naveli tijekom registracije.)"
@@ -2189,6 +2189,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
+      ],
+      "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
+        ""
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
@@ -2319,6 +2322,9 @@
       "Plan upgrade required": [
         "Potrebna je nadogradnja plana"
       ],
+      "Please make sure to check your ${ spamFolder }.": [
+        ""
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Imajte na umu da nakon pritiska na dugme Potvrdi, na vašem računu će ostati ${ creditsRemaining } kredita."
       ],
@@ -2419,6 +2425,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
+      ],
+      "spam folder": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "Početna VPN usluga s P2P podrškom."
@@ -2579,8 +2588,8 @@
       "You already have a free account": [
         "Već imate besplatan račun"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Trenutno ste prijavljeni kao${ user.Name } (${ user.Email }) i imate ograničen pristup."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You are saving 20% with an annual plan": [
         "Uštedite 20% s godišnjim planom naplate"
@@ -2715,6 +2724,9 @@
       "Billed": [
         "Naplaćeno"
       ],
+      "Cancelled": [
+        ""
+      ],
       "Paid": [
         "Plaćeno"
       ],
@@ -2723,9 +2735,6 @@
       ],
       "Void": [
         "Nevažeće"
-      ],
-      "Writeoff": [
-        "Otpisano"
       ]
     },
     "Invoice type display as badge": {
@@ -3999,9 +4008,6 @@
       ],
       "Change password": [
         "Promjena lozinke"
-      ],
-      "Change password for ${ Name } (${ Email })": [
-        "Promijeni lozinku za ${ Name } (${ Email })"
       ],
       "Checking invitation parameters": [
         "Provjeravane parametara pozivnice"
