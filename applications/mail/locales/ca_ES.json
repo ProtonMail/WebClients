@@ -1045,9 +1045,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } completats",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } completats"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        "",
+        ""
       ]
     },
     "Apps dropdown": {
@@ -1101,8 +1101,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'accés Beta us permet utilitzar la versió Beta de ProtonMail, Proton Calendar i Proton Drive abans de que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
@@ -2778,9 +2778,6 @@
       "Calendar limit reached": [
         "Límit de calendari assolit"
       ],
-      "Calendar primary private key is not decrypted": [
-        "La clau privada primària del calendari no està desxifrada"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "No es poden crear calendaris nous per a tots els importats a causa del límit del calendari personal."
       ],
@@ -3453,16 +3450,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "Us hem augmentat l'emmagatzematge del compte a ${ totalGBStorageAfterCompletion } GB. Obteniu espai addicional i desbloquegeu característiques prèmium ara."
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "Ja ho teniu tot llest!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "Completeu totes les passes i obtingueu un total de ${ totalGBStorageAfterCompletion } GB al vostre compte"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "Caduca aviat"
@@ -3831,6 +3828,9 @@
       ],
       "Activation in progress": [
         "Activació en procés"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        ""
       ],
       "Add image URL": [
         "Afegir URL de la imatge"
@@ -4715,11 +4715,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        ""
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilitzeu dreceres de teclat per gestionar el vostre correu electrònic més ràpidament."
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Utilitzeu Proton Calendar per mantenir la vostra agenda privada."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Utilitzant el vostre dispositiu mòbil, escanegeu aquest codi QR o visiteu ${ link }."
@@ -5574,6 +5574,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        ""
+      ],
       "Add folder": [
         "Afegir carpeta"
       ],
@@ -6089,6 +6092,20 @@
       ],
       "Merge with calendar": [
         "Combinar amb el calendari"
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
+        ""
       ]
     },
     "Participant name": {

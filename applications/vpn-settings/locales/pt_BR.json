@@ -2035,7 +2035,7 @@
         "Valor abaixo do mínimo (${ amount })."
       ],
       "Basic, Plus or Visionary subscription required": [
-        "É necessária a assinatura Básica, Plus ou Visionária"
+        "É necessária a assinatura Basic, Plus ou Visionary"
       ],
       "billed as ${ billedPrice }": [
         "faturado como ${ billedPrice }"
@@ -2127,8 +2127,8 @@
       "Enter your login password to confirm your identity.": [
         "Digite sua senha de inicio de sessão para confirmar sua identidade."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Digite sua própria senha (como administrador da organização) e a nova senha deste usuário."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Insira sua própria senha (como administrador da organização) e a nova senha para o usuário ${ Name } (${ Email })."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Digite seu endereço de e-mail de recuperação e enviaremos seu(s) nome(s) de usuário(s). (Geralmente, esse é o endereço de e-mail que você forneceu durante o registro.)"
@@ -2174,6 +2174,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se você acredita que seja um erro, por favor entre em contato conosco ${ contactLink }."
+      ],
+      "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
+        "Se você não encontrar o e-mail na caixa de entrada, por favor verifique a ${ spamFolder }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
@@ -2304,6 +2307,9 @@
       "Plan upgrade required": [
         "Upgrade de plano requerido"
       ],
+      "Please make sure to check your ${ spamFolder }.": [
+        "Por favor, verifique a sua ${ spamFolder }."
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Por favor, note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
@@ -2326,7 +2332,7 @@
         "Por favor, finalize o pagamento na nova guia."
       ],
       "Plus or Visionary subscription required": [
-        "É necessária a assinatura Plus ou Visionária"
+        "É necessária a assinatura Plus ou Visionary"
       ],
       "Preview": [
         "Visualizar"
@@ -2351,10 +2357,10 @@
         "O ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } inclui ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } conexões de VPN."
       ],
       "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "O ProtonVPN Basic, Plus ou Visionário é necessário para conexão ao nível do país."
+        "O ProtonVPN Basic, Plus ou Visionary é necessário para conexão ao nível do país."
       ],
       "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "É necessário o plano ProtonVPN Plus ou Visionário para usar o recurso Secure Core."
+        "É necessário o plano ProtonVPN Plus ou Visionary para usar o recurso Secure Core."
       ],
       "read our two-factor authentication Guide first": [
         "leia nosso guia de autenticação de dois fatores primeiro"
@@ -2403,6 +2409,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
+      ],
+      "spam folder": [
+        "pasta de spam"
       ],
       "Starter VPN service with P2P support.": [
         "Serviço Starter VPN com suporte a P2P."
@@ -2563,8 +2572,8 @@
       "You already have a free account": [
         "Você já possui uma conta gratuita"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Você está atualmente logado como ${ user.Name } (${ user.Email }) e tem acesso restrito."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Você está atualmente iniciado sessão como ${ user.Name } (${ user.Email })."
       ],
       "You are saving 20% with an annual plan": [
         "Você está economizando 20% com um plano anual"
@@ -2699,6 +2708,9 @@
       "Billed": [
         "Faturado"
       ],
+      "Cancelled": [
+        "Cancelado"
+      ],
       "Paid": [
         "Pago"
       ],
@@ -2707,9 +2719,6 @@
       ],
       "Void": [
         "Vazio"
-      ],
-      "Writeoff": [
-        "Anular"
       ]
     },
     "Invoice type display as badge": {
@@ -3694,7 +3703,7 @@
         "Conta do ProtonMail Plus"
       ],
       "ProtonMail Visionary account": [
-        "Conta ProtonMail Visionário"
+        "Conta ProtonMail Visionary"
       ],
       "Streaming service support": [
         "Suporte de serviço de streaming"
@@ -3741,7 +3750,7 @@
         "Gratuito"
       ],
       "FREE": [
-        "GRATUITO"
+        "FREE"
       ]
     },
     "Prime Video": {
@@ -3978,9 +3987,6 @@
       ],
       "Change password": [
         "Alterar senha"
-      ],
-      "Change password for ${ Name } (${ Email })": [
-        "Alterar a senha para ${ Name } (${ Email })"
       ],
       "Checking invitation parameters": [
         "Verificando parâmetros do convite"

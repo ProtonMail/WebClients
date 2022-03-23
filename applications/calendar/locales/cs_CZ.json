@@ -618,8 +618,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta přístup povoluje využívat ProtonMail verzi beta, Proton Kalendář a Proton Disk a to ještě předtím, než jsou dostupné pro veřejnost. V tomto případě to znamená, že jste první kdo má možnost používat nový produkt, nové aktualizace a také nové funkce."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta Access vám umožní používat beta verze aplikací ${ mailAppName }, ${ calendarAppName } a Proton Drive před jejich zveřejněním. To znamená, že můžete jako první vyzkoušet nové produkty, získat nové aktualizace a používat nové funkce."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Jestliže zaznamenáte problémy, vždy můžete deaktivovat Beta Přístup."
@@ -2014,9 +2014,6 @@
       "Calendar limit reached": [
         "Dosažen limit kalendářů"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Primární soukromý klíč kalendáře není dešifrován"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
       ],
@@ -3352,8 +3349,8 @@
       "You are about to open another browser tab and visit:": [
         "Chystáte se otevřít další záložku prohlížeče a navštívit odkaz:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email }) a máte omezený přístup."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Importované kalendáře můžete také sloučit s existujícími Proton kalendáři."
@@ -4189,6 +4186,20 @@
         "Vezměte prosím na vědomí, že ${ boldNextStep } požaduje aplikace pro zahájení importu."
       ]
     },
+    "Onboarding": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        "Kalendář je záznamem vašeho života. Udržujte svůj život v bezpečí a soukromí pomocí ${ appName }."
+      ],
+      "Import events": [
+        "Import událostí"
+      ],
+      "Meet your new encrypted calendar": [
+        "Seznamte se se svým novým šifrovaným kalendářem"
+      ],
+      "Start using ${ appName }": [
+        "Začněte používat ${ appName }"
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Vyber zobrazení jména"
@@ -4219,20 +4230,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Toto můžete později změnit v nastavení."
-      ]
-    },
-    "Onboarding ProtonCalendar": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
-      ],
-      "Import events": [
-        "Import události"
-      ],
-      "Meet your new encrypted calendar": [
-        "Seznamte se se svým novým šifrovaným kalendářem"
-      ],
-      "Start using ${ appName }": [
-        "Začněte používat ${ appName }"
       ]
     },
     "Option": {

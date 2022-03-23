@@ -2157,8 +2157,8 @@
       "Enter your login password to confirm your identity.": [
         "Для подтверждения своей личности введите пароль для входа."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Введите свой собственный пароль (администратора организации) и новый пароль этого пользователя."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Введите свой собственный пароль (как администратора организации) и новый пароль для пользователя ${ Name } (${ Email })."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Введите свой резервный адрес электронной почты, и мы отправим вам имя вашего пользователя. (Обычно это тот адрес, который вы давали при регистрации.)"
@@ -2204,6 +2204,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
+      ],
+      "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
+        ""
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" - проверьте, не попало ли оно в папку «спам»."
@@ -2334,6 +2337,9 @@
       "Plan upgrade required": [
         "Требуется улучшение плана"
       ],
+      "Please make sure to check your ${ spamFolder }.": [
+        ""
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Пожалуйста, учтите, что после нажатия на кнопку Подтвердить в аккаунте останется ${ creditsRemaining } кредитов."
       ],
@@ -2435,6 +2441,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Вы постоянный пользователь, поэтому вам доступны дополнительные функции."
+      ],
+      "spam folder": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "Сервис VPN начального уровня с поддержкой P2P."
@@ -2545,7 +2554,7 @@
         "Используйте следующие учётные данные, когда подключаетесь к ProtonVPN через сторонние приложения, например, Tunnelblick на MacOS или OpenVPN на GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Используйте собственные пользовательские доменные адреса электронной почты, например, you@yourname.com"
+        "Используйте адреса эл. почты со своим собственным почтовым доменом, например, you@yourname.com"
       ],
       "Users": [
         "Пользователи"
@@ -2595,8 +2604,8 @@
       "You already have a free account": [
         "У вас уже есть бесплатный аккаунт"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "В настоящее время вы вошли как ${ user.Name } (${ user.Email }), и Ваш доступ ограничен."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
       ],
       "You are saving 20% with an annual plan": [
         "Вы экономите 20% с годовом планом"
@@ -2731,6 +2740,9 @@
       "Billed": [
         "Счёт выставлен"
       ],
+      "Cancelled": [
+        "Отменено"
+      ],
       "Paid": [
         "Оплачено"
       ],
@@ -2739,9 +2751,6 @@
       ],
       "Void": [
         "Аннулирован"
-      ],
-      "Writeoff": [
-        "Списание"
       ]
     },
     "Invoice type display as badge": {
@@ -3938,7 +3947,7 @@
     },
     "Title": {
       "${ appName } ${ planName } Trial": [
-        "${ appName } ${ planName } Пробная версия"
+        "Пробная версия ${ appName } ${ planName }"
       ],
       "${ appName } customization": [
         "Настройка ${ appName }"
@@ -4020,9 +4029,6 @@
       ],
       "Change password": [
         "Изменение пароля"
-      ],
-      "Change password for ${ Name } (${ Email })": [
-        "Изменить пароль для ${ Name } (${ Email })"
       ],
       "Checking invitation parameters": [
         "Проверка параметров приглашения"
@@ -4543,7 +4549,7 @@
         "${ n } сервер",
         "${ n }+ сервера",
         "${ n }+ серверов",
-        "${ n }+ серверов"
+        "${ n }+ сервера"
       ],
       "${ n } VPN connection": [
         "${ n } подключение к VPN",

@@ -2127,7 +2127,7 @@
       "Enter your login password to confirm your identity.": [
         ""
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
         ""
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
@@ -2173,6 +2173,9 @@
         ""
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
+        ""
+      ],
+      "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
         ""
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
@@ -2304,6 +2307,9 @@
       "Plan upgrade required": [
         ""
       ],
+      "Please make sure to check your ${ spamFolder }.": [
+        ""
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         ""
       ],
@@ -2402,6 +2408,9 @@
         ""
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "spam folder": [
         ""
       ],
       "Starter VPN service with P2P support.": [
@@ -2563,7 +2572,7 @@
       "You already have a free account": [
         ""
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         ""
       ],
       "You are saving 20% with an annual plan": [
@@ -2699,6 +2708,9 @@
       "Billed": [
         ""
       ],
+      "Cancelled": [
+        ""
+      ],
       "Paid": [
         ""
       ],
@@ -2706,9 +2718,6 @@
         ""
       ],
       "Void": [
-        ""
-      ],
-      "Writeoff": [
         ""
       ]
     },
@@ -3977,9 +3986,6 @@
         ""
       ],
       "Change password": [
-        ""
-      ],
-      "Change password for ${ Name } (${ Email })": [
         ""
       ],
       "Checking invitation parameters": [

@@ -1049,10 +1049,10 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } finalizată",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } finalizate",
-        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } finalizate"
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } complet",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } complete",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } complete"
       ]
     },
     "Apps dropdown": {
@@ -1106,8 +1106,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "„Accesul la Beta” vă permite să utilizați versiunea beta a ProtonMail, Proton Calendar și Proton Drive înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta Access vă permite să utilizați versiunea beta a ${ mailAppName }, ${ calendarAppName } și Proton Drive înainte ca acestea să fie lansate pentru public. Acest lucru înseamnă că puteți fi primul care va încerca noile produse, va primi noi actualizări și va utiliza noi caracteristici."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
@@ -2789,9 +2789,6 @@
       "Calendar limit reached": [
         "Limita de calendare a fost atinsă."
       ],
-      "Calendar primary private key is not decrypted": [
-        "Cheia privată primară a calendarului nu este decriptată"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
       ],
@@ -3474,16 +3471,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "S-a mărit spațiul de stocare total al contului la ${ totalGBStorageAfterCompletion } GB. Obțineți spațiu de stocare suplimentar și deblocați caracteristicile premium astăzi."
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "Sunteți gata!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "Completați toți pașii și obțineți un total de ${ totalGBStorageAfterCompletion } GB în contul personal"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "Expiră în curând"
@@ -3887,6 +3884,9 @@
       ],
       "Activation in progress": [
         "Activare în curs"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        "Adăugați ${ addressToCreate } la contul dumneavoastră gratuit, doar pentru o perioadă limitată de timp."
       ],
       "Add image URL": [
         "Adăugare URL imagine"
@@ -4787,11 +4787,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        "Utilizați ${ calendarAppName } pentru a vă păstra agenda privată."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilizați combinaţiile de taste pentru a vă gestiona mai rapid mesajele."
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Utilizați Proton Calendar pentru a vă păstra agenda privată."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Folosind dispozitivul mobil, scanați acest cod QR sau vizitați ${ link }."
@@ -4842,7 +4842,7 @@
         "Se va deschide o nouă filă în navigator cu adresa:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Sunteți conectat în prezent ca ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Puteți să o adăugați ca atașament sau să o afișați înclusă în corpul mesajului."
@@ -5656,6 +5656,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Activare"
+      ],
       "Add folder": [
         "Adăugare folder"
       ],
@@ -6176,6 +6179,20 @@
       ],
       "Merge with calendar": [
         "Îmbinare cu calendarul"
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        "Obțineți aplicația mobilă"
+      ],
+      "Import contacts or emails": [
+        "Importați contacte sau e-mailuri"
+      ],
+      "Send a message": [
+        "Trimiteți un mesaj"
+      ],
+      "Set up a recovery method": [
+        "Configurați o metodă de recuperare"
       ]
     },
     "Participant name": {

@@ -37,6 +37,9 @@
       "Activate": [
         "Activeren"
       ],
+      "Activate ${ addressToCreate }": [
+        "Activeer ${ addressToCreate }"
+      ],
       "Activate ${ Name }@pm.me": [
         "Activeer ${ Name }@pm.me"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "Nee"
+      ],
+      "No, thanks": [
+        "Nee, bedankt"
       ],
       "OK": [
         "OK"
@@ -3193,6 +3199,10 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN-verbinding",
+        "${ MaxVPN } VPN-verbindingen"
+      ],
       "Access to all countries": [
         "Toegang tot alle landen"
       ],
@@ -3863,8 +3873,11 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } is nu actief"
+      ],
       "${ appName } ${ planName } credits earned": [
-        ""
+        "${ appName } ${ planName } tegoed verdiend"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -3886,9 +3899,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } samengevoegde agenda",
         "${ calendarsToBeMergedCount } samengevoegde agenda's"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "${ emailAddress } is een ${ appName } adres"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } is ongeldig"
@@ -4050,7 +4060,7 @@
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige kortere domein staat voor \"ProtonMail me\" of \"Private Message me.\""
       ],
       "Add a recovery email address": [
-        "Voeg een herstel e-mailadres toe"
+        "Voeg een herstel-e-mailadres toe"
       ],
       "Add a recovery phone number": [
         "Een telefoonnummer voor herstel toevoegen"
@@ -4408,8 +4418,8 @@
       "Enter your login password to confirm your identity.": [
         "Voer uw wachtwoord in om uw identiteit te bevestigen."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Voer uw eigen wachtwoord in (als organisatie admin) en het nieuwe wachtwoord van deze gebruiker."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder) en het nieuwe wachtwoord voor deze gebruiker: ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw Proton-account in."
@@ -4617,7 +4627,8 @@
         "Internetverbinding hersteld."
       ],
       "Invite successfully sent": [
-        "Uitnodiging succesvol verzonden"
+        "Uitnodiging succesvol verzonden",
+        "Uitnodigingen succesvol verzonden"
       ],
       "Invited via email": [
         "Uitgenodigd via e-mail"
@@ -4629,7 +4640,7 @@
         "het is noodzakelijk"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        "Ik ben ${ appName } aan het gebruiken en dacht dat het misschien iets voor jou zou kunnen zijn. Het is een beveiligde e-maildienst dat je privacy beschermt. Registreer je met deze link om 1 maand gratis te krijgen: ${ referrerLink }"
+        "Ik ben ${ appName } aan het gebruiken en dacht dat het misschien iets voor u zou kunnen zijn. Het is een beveiligde e-maildienst die uw privacy beschermt. Registreer u met deze link om 1 maand gratis te krijgen: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
@@ -4817,6 +4828,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        "Onze nieuwe ${ domain }-domein is een handige optie voor het verzenden en ontvangen van e-mails. U zal nog steeds uw originele ${ protonMailAppName } adres kunnen gebruiken."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Verouderd herstelbestand; werk het bij om toegang tot uw gegevens te garanderen"
       ],
@@ -4829,8 +4843,9 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "Betaald voor een abonnement van 12 maanden"
+      "Paid for a ${ rewardMonths } month plan": [
+        "Betaald voor een ${ rewardMonths } maand abonnement",
+        "Betaald voor een ${ rewardMonths } maanden abonnement"
       ],
       "Paid for a monthly plan": [
         "Betaald voor een maandelijks abonnement"
@@ -5325,6 +5340,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName }-bundel voor families en kleine bedrijven."
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        "Wilt u ${ addressToCreate } instellen als uw standaard e-mail voor het verzenden van berichten?"
+      ],
       "Warning:": [
         "Waarschuwing:"
       ],
@@ -5412,6 +5430,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email }) en hebt beperkte toegang."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "U kunt geïmporteerde kalenders ook samenvoegen met bestaande Proton-agenda's."
       ],
@@ -5444,6 +5465,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "U kan niet meer dan ${ emailSendLimitNumber } e-mailuitnodigingen versturen voor de komende 24 uur"
+      ],
+      "You cannot refer ${ appName } users": [
+        "U kan geen ${ appName }-gebruikers doorverwijzen"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Gebruik de OpenVPN / IKEv2 inloggegevens niet in de ProtonVPN applicaties of op het ProtonVPN dashboard. ${ learnMore }"
@@ -5501,6 +5525,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "U zult ingelogd blijven, zelfs als u de browser sluit."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        "U zal nog steeds e-mails kunnen verzenden en ontvangen met uw huidige e-mailadres(sen)."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Uw ${ BRAND_NAME }-account is gekoppeld aan ${ externalEmailAddress }. Maak een adres aan om ${ toAppName } te gebruiken."
@@ -5661,6 +5688,9 @@
       "Billed": [
         "Gefactureerd"
       ],
+      "Cancelled": [
+        "Geannuleerd"
+      ],
       "Paid": [
         "Betaald"
       ],
@@ -5669,9 +5699,6 @@
       ],
       "Void": [
         "Ongeldig"
-      ],
-      "Writeoff": [
-        "Schrijven"
       ]
     },
     "Invoice type display as badge": {
@@ -8791,11 +8818,11 @@
       "Delete ${ filter.Name }": [
         "Verwijder ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "Verwijder ${ Name } map"
+      "Delete ${ label.Name } folder": [
+        "Verwijder ${ label.Name } map"
       ],
-      "Delete ${ Name } label": [
-        "Verwijder ${ Name } label"
+      "Delete ${ label.Name } label": [
+        "Verwijder ${ label.Name } label"
       ],
       "Delete account": [
         "Account verwijderen"
@@ -9281,6 +9308,9 @@
       "What's new": [
         "Wat is er nieuw"
       ],
+      "Your ${ domain } address is active": [
+        "Uw ${ domain }-adres is actief"
+      ],
       "Your account’s usage": [
         ""
       ],
@@ -9291,7 +9321,7 @@
         "Uw huidige abonnement"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"
       ],
       "Your plan": [
         "Uw abonnement"

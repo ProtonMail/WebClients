@@ -614,8 +614,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Anekcum Biṭa ad k•kem-yeǧǧ ad tesqedceḍ lqem Biṭa n ProtonMail, Proton Calendar, akked Proton Drive send ad d-ffɣen i uzayez. Ayagi yebɣa ad d-yini tzemreḍ ad tiliḍ d amezwaru ara isqedcen ifarisen, ad teṭṭfeḍ ileqman imaynuten, yerna ad tesqedceḍ tiwuriwin timaynutin."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
@@ -1990,9 +1990,6 @@
       "Calendar limit reached": [
         ""
       ],
-      "Calendar primary private key is not decrypted": [
-        "Tasarut tagejdant n uwitay ur tettwawgelhen ara"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
@@ -3254,8 +3251,8 @@
       "You are about to open another browser tab and visit:": [
         "Atan ad teldiḍ iccer-nniḍen n iminig sakin ad terzuḍ ɣer:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Aql-ak.kem teqqneḍ s yisem ${ user.Name } (${ user.Email }) yerna anekcum-ik.im yettwagdel."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         ""
@@ -4039,6 +4036,20 @@
         ""
       ]
     },
+    "Onboarding": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Fren isem ara d-yettwaseknen"
@@ -4069,20 +4080,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Tzemreḍ ad tbeddeleḍ aya melmi tebɣiḍ deg yiɣewwaren."
-      ]
-    },
-    "Onboarding ProtonCalendar": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
-      ],
-      "Import events": [
-        ""
-      ],
-      "Meet your new encrypted calendar": [
-        ""
-      ],
-      "Start using ${ appName }": [
-        ""
       ]
     },
     "Option": {

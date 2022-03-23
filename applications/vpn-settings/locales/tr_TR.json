@@ -2127,8 +2127,8 @@
       "Enter your login password to confirm your identity.": [
         "Kimliğinizi doğrulamak için oturum açma parolanızı yazın."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Kendi parolanızı (kuruluş yöneticisi olarak) ve bu kullanıcının yeni parolasını yazın."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Kendi parolanızı (kuruluş yöneticisi olarak) ve ${ Name } (${ Email }) kullanıcısı için yeni parolayı yazın."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Kurtarma e-posta adresinizi yazın. Size kullanıcı adlarınızı gönderelim. (Kullanıcı adı genellikle hesap açarken verdiğiniz e-posta adresidir.)"
@@ -2174,6 +2174,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
+      ],
+      "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
+        "E-postayı gelen kutunuzda göremezseniz, ${ spamFolder } içine bakmayı unutmayın."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı gelen kutunuzda göremezseniz, istenmeyenler kutusuna bakmayı unutmayın."
@@ -2304,6 +2307,9 @@
       "Plan upgrade required": [
         "Tarifenin yükseltilmesi gerekli"
       ],
+      "Please make sure to check your ${ spamFolder }.": [
+        "Lütfen ${ spamFolder } içine baktığınızdan emin olun."
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
       ],
@@ -2403,6 +2409,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
+      ],
+      "spam folder": [
+        "istenmeyen kutusu"
       ],
       "Starter VPN service with P2P support.": [
         "P2P destekleyen ​​başlangıç VPN hizmeti."
@@ -2563,8 +2572,8 @@
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız ve erişiminiz kısıtlı."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
       ],
       "You are saving 20% with an annual plan": [
         "Yıllık tarife kullanarak %20 indirim alıyorsunuz"
@@ -2699,6 +2708,9 @@
       "Billed": [
         "Faturalanmış"
       ],
+      "Cancelled": [
+        "İptal edildi"
+      ],
       "Paid": [
         "Ödenmiş"
       ],
@@ -2707,9 +2719,6 @@
       ],
       "Void": [
         "Geçersiz"
-      ],
-      "Writeoff": [
-        "Vazgeçilmiş"
       ]
     },
     "Invoice type display as badge": {
@@ -3979,9 +3988,6 @@
       "Change password": [
         "Parolayı değiştir"
       ],
-      "Change password for ${ Name } (${ Email })": [
-        "${ Name } (${ Email }) parolasını değiştir"
-      ],
       "Checking invitation parameters": [
         "Davet parametreleri denetleniyor"
       ],
@@ -4513,7 +4519,7 @@
         "Coğrafi olarak engellenmiş içeriğe erişin (Netflix, YouTube, vb.)"
       ],
       "Higher speed servers (up to 10Gbps)": [
-        "Daha yüksek hızlı sunucular (10Gb/sn hıza kadar)"
+        "Daha yüksek hızlı sunucular kullanın (10Gb/sn hıza kadar)"
       ],
       "Unlock advanced VPN features": [
         "Gelişmiş VPN özelliklerine erişin"
