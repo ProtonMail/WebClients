@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { SelectTwo, Option, Icon } from '@proton/components';
+import { SelectTwo, Option, Icon, InputFieldTwo } from '@proton/components';
 import { getTitle } from '../../helpers/title';
 
 import mdx from './Select.mdx';
@@ -108,5 +108,15 @@ export const WithComplexValues = () => {
                 <Option title={option.name} value={option} />
             ))}
         </SelectTwo>
+    );
+};
+
+export const AsInputField = () => {
+    return (
+        <InputFieldTwo as={SelectTwo} label="Select" placeholder="Placeholder">
+            <Option title="one" value="one" />
+            <Option title="two" value="two" />
+            <Option title="three" value="three" />
+        </InputFieldTwo>
     );
 };
