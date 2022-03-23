@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { PLAN_NAMES, PLANS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { PLAN_NAMES, PLANS, MAIL_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
 import { SettingsSectionWide, SettingsParagraph, UpgradeBanner } from '../account';
 import { useUser } from '../../hooks';
 
@@ -18,7 +18,7 @@ const CatchAllSection = () => {
             </SettingsParagraph>
             {!hasPermission && (
                 <UpgradeBanner>
-                    {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and Proton for Business.`}
+                    {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}
         </SettingsSectionWide>

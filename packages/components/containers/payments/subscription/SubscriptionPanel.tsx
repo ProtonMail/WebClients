@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { PLANS, PLAN_NAMES, APPS, DEFAULT_CURRENCY, CYCLE } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES, APPS, DEFAULT_CURRENCY, CYCLE, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getHasB2BPlan, getPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
 import {
     Subscription,
@@ -275,7 +275,7 @@ const SubscriptionPanel = ({
             ) : null}
             {user.canPay ? (
                 <Button onClick={handleExplorePlans} size="large" color="norm" shape="ghost" fullWidth>{c('Action')
-                    .t`Explore other Proton plans`}</Button>
+                    .t`Explore other ${BRAND_NAME} plans`}</Button>
             ) : null}
         </div>
     );
