@@ -50,6 +50,8 @@ const HeaderButton = ({ entries, className }: HeaderButtonProps) => {
      */
     const shouldDisplayResume = entries.length !== 0 && areAllActiveTransfersPaused && !hasOnlyInactiveTransfers;
 
+    const testIdPrefix = 'drive-transfers-manager:header-controls-';
+
     const buttons: TransferManagerButtonProps[] = [
         {
             onClick: () => {
@@ -63,7 +65,7 @@ const HeaderButton = ({ entries, className }: HeaderButtonProps) => {
             disabled: hasOnlyInactiveTransfers,
             title: shouldDisplayResume ? c('Action').t`Resume all` : c('Action').t`Pause all`,
             iconName: shouldDisplayResume ? 'play' : 'pause',
-            actionType: shouldDisplayResume ? 'play' : 'pause',
+            testId: testIdPrefix + (shouldDisplayResume ? 'play' : 'pause'),
         },
         {
             onClick: () => {
@@ -75,7 +77,7 @@ const HeaderButton = ({ entries, className }: HeaderButtonProps) => {
             disabled: entries.map(extractTransferFromEntry).every(isInvalidForCancellation),
             title: c('Action').t`Cancel all`,
             iconName: 'xmark',
-            actionType: 'cancel',
+            testId: testIdPrefix + 'cancel',
         },
         {
             onClick: () => {
@@ -92,7 +94,7 @@ const HeaderButton = ({ entries, className }: HeaderButtonProps) => {
             disabled: !entries.map(extractTransferFromEntry).some(isTransferFailed),
             title: c('Action').t`Restart all`,
             iconName: 'arrow-rotate-right',
-            actionType: 'restart',
+            testId: testIdPrefix + 'restart',
         },
     ];
 
