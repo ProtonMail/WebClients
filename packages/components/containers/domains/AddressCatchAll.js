@@ -21,13 +21,15 @@ const AddressCatchAll = ({ address, domain, onChange }) => {
         createNotification({ text: c('Success').t`Catch-all address updated` });
     };
 
+    const mailProfessional = `${MAIL_APP_NAME} Professional`;
+
     const handleClick = (event) => {
         if (!hasCatchAllSupport) {
             event.preventDefault();
             event.stopPropagation();
             createNotification({
                 type: 'info',
-                text: c('Warning').t`This feature is only available for ${MAIL_APP_NAME} Professional plans or higher`,
+                text: c('Warning').t`This feature is only available for ${mailProfessional} plans or higher`,
             });
         }
     };

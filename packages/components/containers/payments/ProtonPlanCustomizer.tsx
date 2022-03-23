@@ -184,6 +184,7 @@ const ProtonPlanCustomizer = ({
     } as const;
 
     const mailPlus = `${MAIL_APP_NAME} Plus`;
+    const mailProfessional = `${MAIL_APP_NAME} Professional`;
     const vpnPlus = `${VPN_APP_NAME} ${PLAN_NAMES[PLANS.VPNPLUS]}`;
     const maxVpn = plansNameMap[PLANS.VPNPLUS].MaxVPN;
 
@@ -212,7 +213,7 @@ const ProtonPlanCustomizer = ({
             ) : null}
             {service === PLAN_SERVICES.MAIL && planIDs[plansNameMap[PLANS.PROFESSIONAL].ID] ? (
                 <p>{c('Info')
-                    .t`${mailAppName} Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.`}</p>
+                    .t`${mailProfessional} starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.`}</p>
             ) : null}
             {addonsToShow.map((addonName) => {
                 const addon = plansNameMap[addonName];

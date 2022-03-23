@@ -44,12 +44,13 @@ const DiscountBadge = ({ code }: Props) => {
         );
     }
 
+    const vpnPlus = `${vpnAppName} Plus`;
     if (code === BLACK_FRIDAY.COUPON_CODE) {
         return (
             <Badge
                 type="success"
                 tooltip={c('blackfriday: VPNspecialoffer Badge popup')
-                    .t`${vpnAppName} Plus Special Offer 2021 discount has been applied`}
+                    .t`${vpnPlus} Special Offer 2021 discount has been applied`}
             >
                 {c('blackfriday: VPNspecialoffer Promo title, need to be short').t`Special offer`}
             </Badge>
