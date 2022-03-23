@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { SectionConfig, getShowNewDomainSection } from '@proton/components';
 import { Address, Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
-import { ADDRESS_TYPE, APPS, APPS_CONFIGURATION, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 export const getHasPmMeAddress = (addresses: Address[]) => {
     return addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
@@ -30,7 +30,7 @@ export const getMailAppRoutes = ({
 }) => {
     const hasOrganization = !!organization?.HasKeys;
     return <const>{
-        header: APPS_CONFIGURATION[APPS.PROTONMAIL].name,
+        header: MAIL_APP_NAME,
         routes: {
             general: <SectionConfig>{
                 text: c('Title').t`General`,

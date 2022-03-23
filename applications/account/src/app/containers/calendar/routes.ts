@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
-import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
 export const getCalendarAppRoutes = (hasSubscribedCalendars: boolean, showInvitationSettings: boolean) => {
     return <const>{
-        header: APPS_CONFIGURATION[APPS.PROTONCALENDAR].name,
+        header: CALENDAR_APP_NAME,
         routes: {
             general: <SectionConfig>{
                 text: c('Link').t`General`,
