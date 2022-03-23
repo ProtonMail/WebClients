@@ -1045,7 +1045,7 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "",
         ""
       ]
@@ -1101,8 +1101,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Η Beta Πρόσβαση σας επιτρέπει να χρησιμοποιήσετε την έκδοση beta του ProtonMail, του Proton Ημερολογίου και του Proton Drive πριν κυκλοφορήσουν στο κοινό. Αυτό σημαίνει ότι μπορείτε να είστε οι πρώτοι που θα δοκιμάσετε νέα προϊόντα, θα λάβετε νέες ενημερώσεις και θα χρησιμοποιήσετε νέες δυνατότητες."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Εάν αντιμετωπίσετε προβλήματα, μπορείτε πάντα να απενεργοποιήσετε την Πρόσβαση Beta."
@@ -2778,9 +2778,6 @@
       "Calendar limit reached": [
         "Εξάντληση ορίου ημερολογίων"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Το πρωτεύον ιδιωτικό κλειδί ημερολογίου δεν είναι αποκρυπτογραφημένο"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Δεν είναι δυνατή η δημιουργία νέων ημερολογίων για όλα τα εισαγόμενα ημερολόγια λόγω του προσωπικού ορίου συνολικών ημερολογίων."
       ],
@@ -3453,16 +3450,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "Αυξήσαμε τον συνολικό αποθηκευτικό χώρο του λογαριασμού σας στα ${ totalGBStorageAfterCompletion } GB. Αποκτήστε πρόσθετο χώρο και ξεκλειδώστε προνομιακά χαρακτηριστικά σήμερα."
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
+        ""
       ],
       "You're all set!": [
         "Είστε έτοιμοι!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "Κάντε όλα τα βήματα και αποκτήστε συνολικά ${ totalGBStorageAfterCompletion } GB στον λογαριασμό σας"
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        ""
       ],
       "Expires soon": [
         "Λήγει σύντομα"
@@ -3831,6 +3828,9 @@
       ],
       "Activation in progress": [
         "Ενεργοποίηση σε εξέλιξη"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        ""
       ],
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
@@ -4715,11 +4715,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        ""
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Χρησιμοποιήστε συντομεύσεις πληκτρολογίου για να διαχειριστείτε το ηλεκτρονικό ταχυδρομείο σας γρηγορότερα."
-      ],
-      "Use Proton Calendar to keep your agenda private.": [
-        "Χρησιμοποιήστε το Proton Ημερολόγιο για να διατηρήσετε την ατζέντα σας ιδιωτική."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Χρησιμοποιώντας την κινητή συσκευή σας, σαρώστε αυτόν τον κωδικό QR ή επισκεφθείτε το σύνδεσμο ${ link }."
@@ -5574,6 +5574,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        ""
+      ],
       "Add folder": [
         "Προσθήκη φακέλου"
       ],
@@ -6089,6 +6092,20 @@
       ],
       "Merge with calendar": [
         "Συγχώνευση με ημερολόγιο"
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
+        ""
       ]
     },
     "Participant name": {

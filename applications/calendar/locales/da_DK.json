@@ -614,8 +614,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-adgang giver dig mulighed for at bruge betaversionen af ProtonMail, Proton Calendar, og Proton Drive, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
@@ -1990,9 +1990,6 @@
       "Calendar limit reached": [
         "Kalendergrænse nået"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Kalenders primære private nøgle er ikke dekrypteret"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan ikke oprette nye kalendere for alle importerede kalendere på grund af begrænsningen for personlige kalendere."
       ],
@@ -3254,8 +3251,8 @@
       "You are about to open another browser tab and visit:": [
         "Du er ved at åbne en ny browserfane og besøge:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email }) og har begrænset adgang."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
@@ -4039,6 +4036,20 @@
         "Bemærk at ${ boldNextStep } som applikationen anmoder om, for at starte din import."
       ]
     },
+    "Onboarding": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Vælg et visningsnavn"
@@ -4069,20 +4080,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Du kan altid ændre dette i dine indstillingerne."
-      ]
-    },
-    "Onboarding ProtonCalendar": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "En kalender er en registrering af dit liv. Hold dit liv sikkert og privat med ${ appName }."
-      ],
-      "Import events": [
-        "Importer begivenheder"
-      ],
-      "Meet your new encrypted calendar": [
-        "Mød din nye krypterede kalender"
-      ],
-      "Start using ${ appName }": [
-        "Begynd at bruge ${ appName }"
       ]
     },
     "Option": {

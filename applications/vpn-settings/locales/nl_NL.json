@@ -2127,8 +2127,8 @@
       "Enter your login password to confirm your identity.": [
         "Voer uw wachtwoord in om uw identiteit te bevestigen."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Voer uw eigen wachtwoord in (als organisatie admin) en het nieuwe wachtwoord van deze gebruiker."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder) en het nieuwe wachtwoord voor deze gebruiker: ${ Name } (${ Email })."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Voer uw herstel e-mailadres in, en we sturen u uw gebruikersnaam(namen). (Dit is meestal het e-mailadres dat u hebt opgegeven tijdens aanmelding.)"
@@ -2174,6 +2174,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
+      ],
+      "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
+        "Als u de mail niet kunt vinden in uw inbox, check dan eerst de ${ spamFolder }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
@@ -2304,6 +2307,9 @@
       "Plan upgrade required": [
         "Abonnement upgrade vereist"
       ],
+      "Please make sure to check your ${ spamFolder }.": [
+        "Kijk je ${ spamFolder } na."
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
       ],
@@ -2404,6 +2410,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
+      "spam folder": [
+        "spammap"
+      ],
       "Starter VPN service with P2P support.": [
         "Starter VPN-service met P2P-ondersteuning."
       ],
@@ -2411,7 +2420,7 @@
         "Opslag GB"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Opslagruimte is gedeeld voor Mail, Agenda en Drive."
+        "Opslagruimte is gedeeld voor Mail, Calendar en Drive."
       ],
       "Support for 1 custom email domain": [
         "Ondersteuning voor 1 aangepast e-mail domein"
@@ -2563,8 +2572,8 @@
       "You already have a free account": [
         "U heeft al een gratis account"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "U bent momenteel aangemeld als ${ user.Name } (${ user.Email }) en hebt beperkte toegang."
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
       "You are saving 20% with an annual plan": [
         "U bespaart 20% met een jaarlijks abonnement"
@@ -2699,6 +2708,9 @@
       "Billed": [
         "Gefactureerd"
       ],
+      "Cancelled": [
+        "Geannuleerd"
+      ],
       "Paid": [
         "Betaald"
       ],
@@ -2707,9 +2719,6 @@
       ],
       "Void": [
         "Ongeldig"
-      ],
-      "Writeoff": [
-        "Schrijven"
       ]
     },
     "Invoice type display as badge": {
@@ -3978,9 +3987,6 @@
       ],
       "Change password": [
         "Wijzig wachtwoord"
-      ],
-      "Change password for ${ Name } (${ Email })": [
-        "Wachtwoord wijzigen voor ${ Name } (${ Email })"
       ],
       "Checking invitation parameters": [
         "Uitnodigingsparameters controleren"

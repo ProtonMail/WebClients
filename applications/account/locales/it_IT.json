@@ -37,6 +37,9 @@
       "Activate": [
         "Attiva"
       ],
+      "Activate ${ addressToCreate }": [
+        "Attiva ${ addressToCreate }"
+      ],
       "Activate ${ Name }@pm.me": [
         "Attiva ${ Name }@pm.me"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "No"
+      ],
+      "No, thanks": [
+        "No, grazie"
       ],
       "OK": [
         "OK"
@@ -3193,6 +3199,10 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } connessione VPN",
+        "${ MaxVPN } connessioni VPN"
+      ],
       "Access to all countries": [
         "Accesso a tutti i paesi"
       ],
@@ -3863,6 +3873,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } è ora attivo"
+      ],
       "${ appName } ${ planName } credits earned": [
         "${ appName } ${ planName } crediti guadagnati"
       ],
@@ -3886,9 +3899,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendario unito",
         "${ calendarsToBeMergedCount } calendari uniti"
-      ],
-      "${ emailAddress } is a ${ appName } address": [
-        "${ emailAddress } è un indirizzo ${ appName }"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } non è valido"
@@ -4408,8 +4418,8 @@
       "Enter your login password to confirm your identity.": [
         "Inserisci la tua password di accesso per confermare la tua identità."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Inserisci la tua password (come amministratore dell'organizzazione) e la nuova password dell'utente."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        "Inserisci la tua password (come amministratore dell'organizzazione) e la nuova password per questo utente ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Inserisci l'indirizzo email o il nome utente del tuo account Proton."
@@ -4617,7 +4627,8 @@
         "Connessione Internet ripristinata."
       ],
       "Invite successfully sent": [
-        "Invito inviato con successo"
+        "Invito inviato con successo",
+        "Inviti inviati con successo"
       ],
       "Invited via email": [
         "Invitato via email"
@@ -4817,6 +4828,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà eventualmente disabilitato."
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        "Il nostro nuovo dominio ${ domain } è un'opzione conveniente per inviare e ricevere email. Potrai comunque utilizzare il tuo indirizzo originale ${ protonMailAppName }."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "File di ripristino obsoleto; aggiornare per garantire l'accesso ai tuoi dati"
       ],
@@ -4829,8 +4843,9 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
-        "Pagato per un piano di 12 mesi"
+      "Paid for a ${ rewardMonths } month plan": [
+        "Pagato per un piano di ${ rewardMonths } mese",
+        "Pagato per un piano di ${ rewardMonths } mesi"
       ],
       "Paid for a monthly plan": [
         "Pagato per un piano mensile"
@@ -5325,6 +5340,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Pacchetto VPN + ${ mailAppName } per famiglie e piccole imprese."
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        "Vuoi impostare ${ addressToCreate } come email predefinita per l'invio di messaggi?"
+      ],
       "Warning:": [
         "Attenzione:"
       ],
@@ -5412,6 +5430,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email }) e hai un accesso limitato."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email })."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Puoi anche unire i calendari importati con i calendari Proton esistenti."
       ],
@@ -5444,6 +5465,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Non puoi inviare più di ${ emailSendLimitNumber } inviti email per le prossime 24 ore"
+      ],
+      "You cannot refer ${ appName } users": [
+        "Non puoi fare riferimento a utenti ${ appName }"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Non puoi utilizzare le credenziali OpenVPN / IKEv2 per accedere alle applicazioni ProtonVPN o al pannello di controllo ProtonVPN. ${ learnMore }"
@@ -5501,6 +5525,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Rimarrai connesso anche dopo aver chiuso il browser."
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        "Potrai comunque inviare e ricevere posta con i tuoi indirizzi email esistenti."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Il tuo account ${ BRAND_NAME } è associato a ${ externalEmailAddress }. Per usare ${ toAppName }, crea un indirizzo."
@@ -5661,6 +5688,9 @@
       "Billed": [
         "Fatturato"
       ],
+      "Cancelled": [
+        "Annullato"
+      ],
       "Paid": [
         "Pagato"
       ],
@@ -5669,9 +5699,6 @@
       ],
       "Void": [
         "Nullo"
-      ],
-      "Writeoff": [
-        "Cancellazione"
       ]
     },
     "Invoice type display as badge": {
@@ -8791,11 +8818,11 @@
       "Delete ${ filter.Name }": [
         "Elimina ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "Elimina la cartella ${ Name }"
+      "Delete ${ label.Name } folder": [
+        "Elimina la cartella ${ label.Name }"
       ],
-      "Delete ${ Name } label": [
-        "Elimina l'etichetta ${ Name }"
+      "Delete ${ label.Name } label": [
+        "Elimina l'etichetta ${ label.Name }"
       ],
       "Delete account": [
         "Elimina account"
@@ -9280,6 +9307,9 @@
       ],
       "What's new": [
         "Cosa c'è di nuovo"
+      ],
+      "Your ${ domain } address is active": [
+        "Il tuo indirizzo ${ domain } è attivo"
       ],
       "Your account’s usage": [
         "L'utilizzo del tuo account"

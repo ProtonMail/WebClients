@@ -1049,7 +1049,7 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "",
         "",
         ""
@@ -1106,8 +1106,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta pristup vam omogućava upotrebu beta verzije ProtonMail, Proton Calendar i Proton Drive aplikacija prije nego što budu dostupne za javnost. To znači da možete prvi isprobati nove proizvode, dobiti nova ažuriranja i koristiti nove značajke."
+      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ako naiđete na probleme, uvijek možete onemogućiti beta pristup."
@@ -2789,9 +2789,6 @@
       "Calendar limit reached": [
         ""
       ],
-      "Calendar primary private key is not decrypted": [
-        "Primarni, privatni ključ kalendara nije dešifriran"
-      ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
@@ -3474,7 +3471,7 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
+      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         ""
       ],
       "You're all set!": [
@@ -3482,7 +3479,7 @@
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
         ""
       ],
       "Expires soon": [
@@ -3887,6 +3884,9 @@
       ],
       "Activation in progress": [
         "Aktiviranje u tijeku"
+      ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        ""
       ],
       "Add image URL": [
         "Dodajte URL slike"
@@ -4787,10 +4787,10 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use keyboard shortcuts to manage your email faster.": [
+      "Use ${ calendarAppName } to keep your agenda private.": [
         ""
       ],
-      "Use Proton Calendar to keep your agenda private.": [
+      "Use keyboard shortcuts to manage your email faster.": [
         ""
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
@@ -5656,6 +5656,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        ""
+      ],
       "Add folder": [
         "Dodaj mapu"
       ],
@@ -6175,6 +6178,20 @@
         ""
       ],
       "Merge with calendar": [
+        ""
+      ]
+    },
+    "Paid user checklist item": {
+      "Get mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
         ""
       ]
     },

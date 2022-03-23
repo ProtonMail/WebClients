@@ -37,6 +37,9 @@
       "Activate": [
         "Aktiviraj"
       ],
+      "Activate ${ addressToCreate }": [
+        ""
+      ],
       "Activate ${ Name }@pm.me": [
         "Aktiviraj ${ Name }@pm.me"
       ],
@@ -453,6 +456,9 @@
       ],
       "No": [
         "Ne"
+      ],
+      "No, thanks": [
+        ""
       ],
       "OK": [
         "U redu"
@@ -3215,6 +3221,11 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "",
+        "",
+        ""
+      ],
       "Access to all countries": [
         "Pristup svim državama"
       ],
@@ -3898,6 +3909,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        ""
+      ],
       "${ appName } ${ planName } credits earned": [
         ""
       ],
@@ -3923,9 +3937,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "",
         "",
-        ""
-      ],
-      "${ emailAddress } is a ${ appName } address": [
         ""
       ],
       "${ emailAddress } is invalid": [
@@ -4466,8 +4477,8 @@
       "Enter your login password to confirm your identity.": [
         "Unesite vašu lozinku za potvrdu identiteta."
       ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Unesite vašu lozinku (kao administrator organizacije) i novu lozinku za ovog korisnika."
+      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
+        ""
       ],
       "Enter your Proton account email address or username.": [
         ""
@@ -4676,6 +4687,8 @@
         "Uspostavljena je internetska veza."
       ],
       "Invite successfully sent": [
+        "",
+        "",
         ""
       ],
       "Invited via email": [
@@ -4876,6 +4889,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        ""
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         ""
       ],
@@ -4888,7 +4904,9 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a 12 months plan": [
+      "Paid for a ${ rewardMonths } month plan": [
+        "",
+        "",
         ""
       ],
       "Paid for a monthly plan": [
@@ -5385,6 +5403,9 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } paket za obitelji i male tvrtke."
       ],
+      "Want to set ${ addressToCreate } as your default email for sending messages?": [
+        ""
+      ],
       "Warning:": [
         ""
       ],
@@ -5472,6 +5493,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Trenutno ste prijavljeni kao${ user.Name } (${ user.Email }) i imate ograničen pristup."
       ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        ""
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
@@ -5503,6 +5527,9 @@
         "Možete koristiti sljedeće vjerodajnice za povezivanje s ProtonVPN poslužiteljem pomoću nezavisnih VPN aplikacija otvorenog kôda, poput Tunnelblick za macOS ili OpenVPN za GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        ""
+      ],
+      "You cannot refer ${ appName } users": [
         ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
@@ -5560,6 +5587,9 @@
         ""
       ],
       "You'll stay signed in even after you close the browser.": [
+        ""
+      ],
+      "You'll still be able to send and receive mail with your existing email address(es).": [
         ""
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
@@ -5721,6 +5751,9 @@
       "Billed": [
         "Naplaćeno"
       ],
+      "Cancelled": [
+        ""
+      ],
       "Paid": [
         "Plaćeno"
       ],
@@ -5729,9 +5762,6 @@
       ],
       "Void": [
         "Nevažeće"
-      ],
-      "Writeoff": [
-        "Otpisano"
       ]
     },
     "Invoice type display as badge": {
@@ -8870,11 +8900,11 @@
       "Delete ${ filter.Name }": [
         "Izbriši ${ filter.Name }"
       ],
-      "Delete ${ Name } folder": [
-        "Izbriši ${ Name } mapu"
+      "Delete ${ label.Name } folder": [
+        ""
       ],
-      "Delete ${ Name } label": [
-        "Izbriši ${ Name } oznaku"
+      "Delete ${ label.Name } label": [
+        ""
       ],
       "Delete account": [
         "Ukloni račun"
@@ -9360,6 +9390,9 @@
       ],
       "What's new": [
         "Što je novo"
+      ],
+      "Your ${ domain } address is active": [
+        ""
       ],
       "Your account’s usage": [
         ""
