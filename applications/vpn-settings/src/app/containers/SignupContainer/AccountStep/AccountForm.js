@@ -28,6 +28,7 @@ import {
     emailValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 const AccountForm = ({ model, onSubmit }) => {
     const [challengeLoading, setChallengeLoading] = useState(true);
