@@ -48,7 +48,7 @@ export const updatePMSignature = (PMSignature: number) => ({
 });
 
 export const updatePMSignatureReferralLink = (PMSignatureReferralLink: 0 | 1) => ({
-    url: '/mail/v4/settings/pmsignature-referral',
+    url: 'mail/v4/settings/pmsignature-referral',
     method: 'put',
     data: { PMSignatureReferralLink },
 });
