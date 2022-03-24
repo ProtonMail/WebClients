@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { FocusEvent, RefObject, useCallback, useEffect, useState } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export const useConversationFocus = (messages: Message[]) => {
@@ -12,11 +12,21 @@ export const useConversationFocus = (messages: Message[]) => {
 
     const handleFocus = useCallback(
         (index: number | undefined, scrollTo = false) => {
-            if (index === focusIndex) {
-                return;
-            }
             setFocusIndex(index);
-            setNextScrollTo(scrollTo);
+            if (index === focusIndex) {
+                setNextScrollTo(scrollTo);
+            }
+        },
+        [focusIndex]
+    );
+
+    const handleBlur = useCallback(
+        (event: FocusEvent<HTMLElement>, messageRef: RefObject<HTMLElement>) => {
+            // Check if relatedTarget is inside message ref. If not remove focus
+            // WARNING : relatedTarget returns null when clicking on iframe
+            if (event.relatedTarget && !messageRef.current?.contains(event.relatedTarget)) {
+                setFocusIndex(undefined);
+            }
         },
         [focusIndex]
     );
@@ -35,5 +45,5 @@ export const useConversationFocus = (messages: Message[]) => {
         }
     }, [focusIndex]);
 
-    return { focusIndex, handleFocus, getFocusedId };
+    return { focusIndex, handleFocus, handleBlur, getFocusedId };
 };
