@@ -19,7 +19,7 @@ const ColorSelector = ({ selected, onChange, className, colors = ACCENT_COLORS }
 
     return (
         <ul className={classnames(['color-selector-container unstyled', className])}>
-            {colors.map((color, index) => {
+            {colors.map((color) => {
                 const isSelected = selected?.toLowerCase() === color?.toLowerCase();
 
                 const [base, hover, selectedColor] = genAccentShades(tinycolor(color)).map((c) => c.toHexString());
@@ -44,7 +44,7 @@ const ColorSelector = ({ selected, onChange, className, colors = ACCENT_COLORS }
                                 data-test-id={`color-selector:${color}`}
                                 aria-labelledby={`Color ${color}`}
                                 onChange={() => onChange(color)}
-                                autoFocus={index === 0}
+                                autoFocus={isSelected}
                             />
                             <span className="sr-only">{base}</span>
                         </label>
