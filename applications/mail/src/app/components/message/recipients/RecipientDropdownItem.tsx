@@ -3,13 +3,6 @@ import { Copy, useNotifications } from '@proton/components';
 import { c } from 'ttag';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
-const getCopyValue = (recipient: Recipient) => {
-    if (recipient.Name) {
-        return `${recipient.Name} <${recipient.Address}>`;
-    }
-    return recipient.Address;
-};
-
 interface Props {
     label: string;
     recipient: Recipient;
@@ -33,8 +26,6 @@ const RecipientDropdownItem = ({ label, recipient, closeDropdown }: Props) => {
         closeDropdown();
     };
 
-    const copyValue = getCopyValue(recipient);
-
     return (
         <div className="flex flex-nowrap flex-align-items-center opacity-on-hover-container p0-5">
             <span className="item-icon flex flex-item-noshrink rounded mx0-5" aria-hidden="true">
@@ -47,7 +38,7 @@ const RecipientDropdownItem = ({ label, recipient, closeDropdown }: Props) => {
                 {hasName && <span className="color-weak text-ellipsis">{recipient.Address}</span>}
             </div>
             <Copy
-                value={copyValue}
+                value={recipient.Address}
                 className="opacity-on-hover mr0-5 flex-item-noshrink"
                 onCopy={handleCopyEmail}
                 tooltipText={c('Action').t`Copy email to clipboard`}
