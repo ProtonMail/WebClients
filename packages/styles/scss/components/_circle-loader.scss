@@ -34,19 +34,19 @@
 			}
 		}
 	}
-}
 
-/*
-.loader-small {
-	Small is the default
-}
-*/
-.loader-medium {
-	--stroke-width: 1.5;
-	font-size: em(32);
-}
+	/*
+	&.is-small {
+		Small is the default
+	}
+	*/
+	&.is-medium {
+		--stroke-width: 1.5;
+		font-size: em(32);
+	}
 
-.loader-big {
-	--stroke-width: 1;
-	font-size: em(48);
+	&.is-big {
+		--stroke-width: 1;
+		font-size: em(48);
+	}
 }

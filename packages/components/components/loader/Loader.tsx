@@ -1,15 +1,14 @@
-import { classnames } from '../../helpers';
-import CircleLoader from './CircleLoader';
+import CircleLoader, { Size } from './CircleLoader';
 
 interface Props {
-    size?: 'small' | 'medium' | 'big';
+    size?: Size;
     className?: string;
 }
 
-const Loader = ({ size = 'small', className = 'center flex mb2 mt2' }: Props) => {
+const Loader = ({ size = 'small', className = 'center flex my2' }: Props) => {
     return (
         <div className={className}>
-            <CircleLoader className={classnames(['mauto', `loader-${size}`])} />
+            <CircleLoader className="mauto" size={size} />
         </div>
     );
 };
