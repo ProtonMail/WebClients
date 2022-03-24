@@ -165,7 +165,7 @@ const AttachmentItem = ({
                         </span>
                         <span className="message-attachmentSecondaryAction-download flex">
                             {loading ? (
-                                <CircleLoader className="icon-16p mauto" />
+                                <CircleLoader className="mauto" size="small" />
                             ) : (
                                 <Icon name={actionIcon[secondaryAction]} className="mauto" alt={secondaryActionTitle} />
                             )}

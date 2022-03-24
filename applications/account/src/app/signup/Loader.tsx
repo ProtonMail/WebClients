@@ -1,7 +1,7 @@
-import { FullLoader } from '@proton/components';
+import { CircleLoader } from '@proton/components';
 
 const Loader = () => {
-    return <FullLoader className="color-primary" size={100} />;
+    return <CircleLoader className="color-primary" size="big" />;
 };
 
 export default Loader;

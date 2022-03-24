@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { FormModal, FullLoader, Button, Price, Info, Href } from '../../../components';
+import { FormModal, Button, Price, Info, Href, CircleLoader } from '../../../components';
 import { useLoading, useApi } from '../../../hooks';
 import { classnames } from '../../../helpers';
 import { EligibleOffer } from '../interface';
@@ -209,7 +209,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
         >
             {loading ? (
                 <div className="text-center">
-                    <FullLoader size={50} className="center flex mb2" />
+                    <CircleLoader size="big" className="center flex mb2" />
                 </div>
             ) : (
                 <>

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Label, Field, Info, FullLoader } from '@proton/components';
+import { Label, Field, Info, CircleLoader } from '@proton/components';
 import { useContacts, useMailSettings } from '@proton/components/hooks';
 
 import AutoSaveContactsToggle from '../../general/AutoSaveContactsToggle';
@@ -22,7 +22,7 @@ const ContactsWidgetSettingsContainer = ({ onClose }: Props) => {
         <>
             {loading ? (
                 <div className="flex h100 pb2">
-                    <FullLoader className="mauto color-primary" />
+                    <CircleLoader className="mauto color-primary" size="big" />
                 </div>
             ) : (
                 <div className="pl2 pr2 pt1 pb1 scroll-if-needed h100">

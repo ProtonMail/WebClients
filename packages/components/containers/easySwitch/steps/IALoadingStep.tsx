@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Loader, FullLoader, TextLoader } from '../../../components';
+import { Loader, TextLoader } from '../../../components';
 
 interface Props {
     calendarsToBeCreated: number;
@@ -57,7 +57,7 @@ const IALoadingStep = ({
 
     return (
         <div className="p1 text-center w100">
-            <FullLoader size={100} className="mb1" />
+            <Loader size="big" className="mb1" />
             {contentRenderer()}
         </div>
     );
