@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Toggle, useLoading } from '@proton/components';
+import { InputFieldTwo, Toggle, useLoading } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getTitle } from '../../helpers/title';
 
@@ -55,4 +55,10 @@ export const Disabled = () => {
             <Toggle id="toggle-disabled-checked" checked disabled />
         </>
     );
+};
+
+export const AsInputField = () => {
+    const [checked, setChecked] = useState(false);
+
+    return <InputFieldTwo as={Toggle} label="Toggle" checked={checked} onChange={() => setChecked(!checked)} />;
 };
