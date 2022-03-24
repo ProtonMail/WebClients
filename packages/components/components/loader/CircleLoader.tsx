@@ -2,10 +2,13 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 import { classnames, generateUID } from '../../helpers';
 
+export type Size = 'small' | 'medium' | 'big';
+
 interface Props {
+    size?: Size;
     className?: string;
 }
-const CircleLoader = ({ className }: Props) => {
+const CircleLoader = ({ size, className }: Props) => {
     const uid = generateUID('circle-loader');
     const loaderCircle = useRef<SVGCircleElement>(null);
 
@@ -13,7 +16,7 @@ const CircleLoader = ({ className }: Props) => {
         <>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={classnames(['circle-loader', className])}
+                className={classnames(['circle-loader', size && `is-${size}`, className])}
                 viewBox="0 0 16 16"
                 style={{ '--total-length': loaderCircle.current?.getTotalLength() }}
             >
