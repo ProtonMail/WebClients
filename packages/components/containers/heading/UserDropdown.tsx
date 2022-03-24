@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { addDays, fromUnixTime } from 'date-fns';
 import { useLocation } from 'react-router';
 import { c } from 'ttag';
 import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, PLAN_SERVICES, SSO_PATHS } from '@proton/shared/lib/constants';
@@ -50,6 +51,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const { Name: organizationName } = organization || {};
     const [user] = useUser();
     const location = useLocation();
+    const [subscription] = useSubscription();
     const [userSettings] = useUserSettings();
     const [redDotReferral, setRedDotReferral] = useState(false);
     const { Email, DisplayName, Name } = user;
@@ -62,13 +64,16 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
 
     const recoveryNotification = useRecoveryNotification(true);
     const { feature: referralProgramFeature } = useFeature(FeatureCode.ReferralProgram);
+
+    const subscriptionStartedThirtyDaysAgo =
+        !!subscription?.PeriodStart && new Date() > addDays(fromUnixTime(subscription.PeriodStart), 30);
     const {
         show: showSpotlight,
         onDisplayed: onDisplayedSpotlight,
         onClose: onCloseSpotlight,
     } = useSpotlightOnFeature(
         FeatureCode.ReferralProgramSpotlight,
-        !!referralProgramFeature?.Value && !!userSettings?.Referral?.Eligible
+        !!referralProgramFeature?.Value && !!userSettings?.Referral?.Eligible && subscriptionStartedThirtyDaysAgo
     );
     const { createNotification } = useNotifications();
     const handleCopyEmail = () => {
@@ -96,7 +101,6 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
 
     const { MAIL, VPN } = PLAN_SERVICES;
     const { PROTONVPN_SETTINGS } = APPS;
-    const [subscription] = useSubscription();
 
     let planName;
 
