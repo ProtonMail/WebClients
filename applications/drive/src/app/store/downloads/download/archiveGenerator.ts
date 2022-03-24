@@ -121,6 +121,7 @@ export default class ArchiveGenerator {
             ) {
                 return deduplicate(index + 1);
             }
+            this.includedFiles.push({ path: parentPath, name: adjustedName });
             return `${parentPath}/${adjustedName}`;
         };
         return deduplicate();
