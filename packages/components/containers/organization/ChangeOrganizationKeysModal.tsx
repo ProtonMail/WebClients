@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { updateOrganizationKeysLegacy, updateOrganizationKeysV2 } from '@proton/shared/lib/api/organization';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
@@ -9,7 +9,21 @@ import {
     getReEncryptedPublicMemberTokensPayloadV2,
 } from '@proton/shared/lib/keys';
 import { CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
-import { FormModal, Alert, Row, Label, Field, PasswordInput } from '../../components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
+import {
+    Alert,
+    InputFieldTwo,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    PasswordInputTwo,
+    Button,
+    Form,
+    useFormErrors,
+} from '../../components';
 import {
     useEventManager,
     useLoading,
@@ -24,8 +38,7 @@ import AuthModal from '../password/AuthModal';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 
-interface Props {
-    onClose?: () => void;
+interface Props extends ModalProps {
     hasOtherAdmins: boolean;
     publicMembers: Member[];
     organizationKey: CachedOrganizationKey;
@@ -45,21 +58,16 @@ const ChangeOrganizationKeysModal = ({
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const authentication = useAuthentication();
+    const { validator, onFormSubmit } = useFormErrors();
 
     const getAddresses = useGetAddresses();
     const { step, next, previous } = useStep();
     const [loading, withLoading] = useLoading();
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [confirmError, setConfirmError] = useState('');
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
 
     const handleSubmit = async () => {
-        if (confirmPassword !== newPassword) {
-            return setConfirmError(c('Error').t`Passwords do not match`);
-        }
-        setConfirmError('');
-
         const { privateKey, privateKeyArmored, backupKeySalt, backupArmoredPrivateKey } =
             await generateOrganizationKeys({
                 keyPassword: authentication.getPassword(),
@@ -114,17 +122,19 @@ const ChangeOrganizationKeysModal = ({
         onClose?.();
     };
 
-    const { section, ...modalProps } = (() => {
+    const { section, submitText, onSubmit } = (() => {
         if (step === 0) {
             return {
-                submit: c('Action').t`Next`,
                 section: (
                     <>
-                        <Alert className="mb1">{c('Info')
-                            .t`This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.`}</Alert>
+                        <div className="mb1">
+                            {c('Info')
+                                .t`This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.`}
+                        </div>
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
                     </>
                 ),
+                submitText: c('Action').t`Next`,
                 onSubmit() {
                     next();
                 },
@@ -133,46 +143,12 @@ const ChangeOrganizationKeysModal = ({
 
         if (step === 1) {
             return {
-                close: c('Action').t`Back`,
-                onClose: previous,
                 section: (
                     <>
                         {hasOtherAdmins && (
                             <Alert className="mb1">{c('Info')
                                 .t`Other administrators exist in your organization, you are responsible for communicating the new password to them.`}</Alert>
                         )}
-                        <Row>
-                            <Label htmlFor="organizationPassword">{c('Label').t`New organization password`}</Label>
-                            <Field>
-                                <PasswordInput
-                                    id="organizationPassword"
-                                    value={newPassword}
-                                    onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
-                                        setNewPassword(value)
-                                    }
-                                    error={confirmError}
-                                    placeholder={c('Placeholder').t`Password`}
-                                    autoComplete="new-password"
-                                    required
-                                />
-                            </Field>
-                        </Row>
-                        <Row>
-                            <Label htmlFor="confirmPassword">{c('Label').t`Confirm organization password`}</Label>
-                            <Field>
-                                <PasswordInput
-                                    id="confirmPassword"
-                                    value={confirmPassword}
-                                    onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
-                                        setConfirmPassword(value)
-                                    }
-                                    error={confirmError}
-                                    placeholder={c('Placeholder').t`Confirm`}
-                                    autoComplete="new-password"
-                                    required
-                                />
-                            </Field>
-                        </Row>
                         <Alert className="mb1" type="warning">
                             {c('Info')
                                 .t`Do NOT forget this password. If you forget it, you will not be able to manage your organization.`}
@@ -180,10 +156,41 @@ const ChangeOrganizationKeysModal = ({
                             {c('Info')
                                 .t`Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.`}
                         </Alert>
+
+                        <InputFieldTwo
+                            id="organizationPassword"
+                            as={PasswordInputTwo}
+                            label={c('Label').t`New organization password`}
+                            placeholder={c('Placeholder').t`Password`}
+                            value={newPassword}
+                            onValue={setNewPassword}
+                            error={validator([passwordLengthValidator(newPassword)])}
+                            autoComplete="new-password"
+                            autoFocus
+                        />
+
+                        <InputFieldTwo
+                            id="confirmPassword"
+                            as={PasswordInputTwo}
+                            label={c('Label').t`Confirm organization password`}
+                            placeholder={c('Placeholder').t`Confirm`}
+                            value={confirmPassword}
+                            onValue={setConfirmPassword}
+                            error={validator([
+                                passwordLengthValidator(newPassword),
+                                confirmPasswordValidator(newPassword, confirmPassword),
+                            ])}
+                            autoComplete="new-password"
+                        />
                     </>
                 ),
+                submitText: c('Action').t`Save`,
                 onSubmit() {
-                    withLoading(handleSubmit());
+                    if (!onFormSubmit()) {
+                        return;
+                    }
+
+                    void withLoading(handleSubmit());
                 },
             };
         }
@@ -191,18 +198,32 @@ const ChangeOrganizationKeysModal = ({
         throw new Error('Unknown step');
     })();
 
+    const handleClose = loading ? noop : onClose;
+
     return (
-        <FormModal
-            title={mode === 'reset' ? c('Title').t`Reset organization keys` : c('Title').t`Change organization keys`}
-            close={c('Action').t`Close`}
-            submit={c('Action').t`Save`}
-            onClose={onClose}
-            loading={loading}
-            {...modalProps}
-            {...rest}
-        >
-            {section}
-        </FormModal>
+        <Modal as={Form} onSubmit={onSubmit} onClose={handleClose} {...rest}>
+            <ModalHeader
+                title={
+                    mode === 'reset' ? c('Title').t`Reset organization keys` : c('Title').t`Change organization keys`
+                }
+            />
+            <ModalContent>{section}</ModalContent>
+            <ModalFooter>
+                {step ? (
+                    <Button onClick={previous} disabled={loading}>
+                        {c('Action').t`Back`}
+                    </Button>
+                ) : (
+                    <Button onClick={handleClose} disabled={loading}>
+                        {c('Action').t`Close`}
+                    </Button>
+                )}
+
+                <Button loading={loading} type="submit" color="norm">
+                    {submitText}
+                </Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 
