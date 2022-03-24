@@ -308,7 +308,7 @@ describe('icon', () => {
             expect(icon).toEqual(undefined);
         });
 
-        it('should return a green plain lock for messages sent by ProtonMail encrypted but not authenticated to PGP recipient', () => {
+        it('should return a green plain lock for messages sent by Proton Mail encrypted but not authenticated to PGP recipient', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=none',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-inline',
@@ -319,7 +319,7 @@ describe('icon', () => {
                 colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Encrypted by ProtonMail to PGP recipient',
+                text: 'Encrypted by Proton Mail to PGP recipient',
             });
         });
 
@@ -338,7 +338,7 @@ describe('icon', () => {
             });
         });
 
-        it('should return a blue lock with check-mark for messages sent by you encrypted to a ProtonMail recipient with pinned keys', () => {
+        it('should return a blue lock with check-mark for messages sent by you encrypted to a Proton Mail recipient with pinned keys', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-pm',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-pm-pinned',
@@ -368,7 +368,7 @@ describe('icon', () => {
             });
         });
 
-        it('should return a blue plain lock for messages sent by you encrypted and authenticated to ProtonMail recipient', () => {
+        it('should return a blue plain lock for messages sent by you encrypted and authenticated to Proton Mail recipient', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-pm',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-pm',
@@ -383,7 +383,7 @@ describe('icon', () => {
             });
         });
 
-        it('should return a blue plain lock for messages sent by Protonmail encrypted and authenticated to ProtonMail recipient', () => {
+        it('should return a blue plain lock for messages sent by Proton Mail encrypted and authenticated to Proton Mail recipient', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-pm',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-pm',
@@ -394,11 +394,11 @@ describe('icon', () => {
                 colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Encrypted by ProtonMail',
+                text: 'Encrypted by Proton Mail',
             });
         });
 
-        it('should return a blue lock with check mark for messages sent by ProtonMail encrypted and authenticated to ProtonMail recipient with pinned keys', () => {
+        it('should return a blue lock with check mark for messages sent by Proton Mail encrypted and authenticated to Proton Mail recipient with pinned keys', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-pm',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-pm-pinned',
@@ -409,11 +409,11 @@ describe('icon', () => {
                 colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'Encrypted by ProtonMail to verified recipient',
+                text: 'Encrypted by Proton Mail to verified recipient',
             });
         });
 
-        it('should return a green plain lock for messages sent by ProtonMail encrypted and authenticated to PGP recipient with pinned keys', () => {
+        it('should return a green plain lock for messages sent by Proton Mail encrypted and authenticated to PGP recipient with pinned keys', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-mime',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-mime-pinned',
@@ -424,7 +424,7 @@ describe('icon', () => {
                 colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'Encrypted by ProtonMail to verified PGP recipient',
+                text: 'Encrypted by Proton Mail to verified PGP recipient',
             });
         });
 
@@ -498,7 +498,7 @@ describe('icon', () => {
                 colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'Sent by ProtonMail with zero-access encryption to verified recipients',
+                text: 'Sent by Proton Mail with zero-access encryption to verified recipients',
             });
         });
 
@@ -528,7 +528,7 @@ describe('icon', () => {
                 colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Sent by ProtonMail with zero-access encryption',
+                text: 'Sent by Proton Mail with zero-access encryption',
             });
         });
 
@@ -592,7 +592,7 @@ describe('icon', () => {
     describe('getReceivedStatusIcon', () => {
         it.each`
             origin        | encryption       | pinnedKeys    | verificationStatus    | colorClassName     | iconName                                | text
-            ${'internal'} | ${'on-delivery'} | ${[]}         | ${NOT_VERIFIED}       | ${'color-info'}    | ${'lock-filled'}                        | ${'Sent by ProtonMail with zero-access encryption'}
+            ${'internal'} | ${'on-delivery'} | ${[]}         | ${NOT_VERIFIED}       | ${'color-info'}    | ${'lock-filled'}                        | ${'Sent by Proton Mail with zero-access encryption'}
             ${'internal'} | ${'end-to-end'}  | ${[]}         | ${NOT_SIGNED}         | ${'color-info'}    | ${'lock-filled'}                        | ${'End-to-end encrypted message'}
             ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${NOT_SIGNED}         | ${'color-info'}    | ${'lock-triangle-exclamation-filled'}   | ${'Sender could not be verified: Message not signed'}
             ${'internal'} | ${'end-to-end'}  | ${[]}         | ${NOT_VERIFIED}       | ${'color-info'}    | ${'lock-filled'}                        | ${'End-to-end encrypted and signed message'}
