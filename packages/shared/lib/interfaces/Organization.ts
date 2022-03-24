@@ -13,8 +13,8 @@ export interface Organization {
     MaxSpace: number;
     MaxMembers: number;
     MaxVPN: number;
-    Features: number; // bits, 1 = catch-all addresses
-    Flags: number; // bits, 1 = loyalty
+    Features: number; // bits: 1 = catch-all addresses
+    Flags: number; // bits: 1 = loyalty, 2 = covid, 64 = dissident, 128 = proton
     UsedDomains: number;
     UsedAddresses: number;
     UsedSpace: number;
