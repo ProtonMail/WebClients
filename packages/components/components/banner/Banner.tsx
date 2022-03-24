@@ -32,7 +32,7 @@ const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor,
             return null;
         }
 
-        return <Icon name={icon} className={classnames(['mr0-75 flex-item-noshrink', `color-${iconColor}`])} />;
+        return <Icon name={icon} className={classnames(['mr0-75 ml0-2 flex-item-noshrink', `color-${iconColor}`])} />;
     };
 
     return (

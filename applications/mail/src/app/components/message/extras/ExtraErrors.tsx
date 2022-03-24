@@ -58,16 +58,23 @@ const ExtraErrors = ({ message }: Props) => {
                         data-testid="errors-banner"
                     >
                         <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
-                            <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-5 color-danger" />
+                            <Icon
+                                name="circle-exclamation-filled"
+                                className="flex-item-noshrink mt0-5 ml0-2 color-danger"
+                            />
                             <span className="mt0-25 pl0-5 pr0-5 flex-item-fluid">
                                 {getTranslations(errorType, alreadyTried)}
                             </span>
                         </div>
                         {showReload && (
                             <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100">
-                                <Button size="small" className="on-mobile-w100 py0-25" onClick={handleReload}>{c(
-                                    'Action'
-                                ).t`Try again`}</Button>
+                                <Button
+                                    size="small"
+                                    color="weak"
+                                    shape="solid"
+                                    className="on-mobile-w100 py0-25"
+                                    onClick={handleReload}
+                                >{c('Action').t`Try again`}</Button>
                             </span>
                         )}
                         {showKeysLink && (
