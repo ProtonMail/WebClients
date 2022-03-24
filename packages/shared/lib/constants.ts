@@ -501,15 +501,15 @@ export enum LABEL_EXCLUSIVE {
 
 export const ACCENT_COLORS = [
     '#8080FF',
-    '#EC3E7C',
     '#DB60D6',
+    '#EC3E7C',
+    '#F78400',
+    '#936D58',
     '#415DF0',
     '#179FD9',
     '#1DA583',
     '#3CBB3A',
     '#B4A40E',
-    '#936D58',
-    '#F78400',
 ];
 
 export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
