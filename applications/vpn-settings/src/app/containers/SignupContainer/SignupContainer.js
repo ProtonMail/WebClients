@@ -7,9 +7,9 @@ import {
     TextLoader,
     VpnLogo,
     Href,
-    FullLoader,
     useApi,
     useMyLocation,
+    CircleLoader,
 } from '@proton/components';
 import { c } from 'ttag';
 import { BLACK_FRIDAY, CYCLE } from '@proton/shared/lib/constants';
@@ -230,7 +230,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
 
                     {isLoading || creatingAccount ? (
                         <div className="text-center mt2">
-                            <FullLoader className="color-primary" size={200} />
+                            <CircleLoader className="color-primary" size="big" />
                             <TextLoader>
                                 {isLoading ? c('Info').t`Loading` : c('Info').t`Creating your account`}
                             </TextLoader>

@@ -5,7 +5,7 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 
-import { FullLoader, SearchInput } from '../../../components';
+import { CircleLoader, SearchInput } from '../../../components';
 import {
     useContactEmails,
     useContactGroups,
@@ -194,7 +194,7 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose, customActions }: Pr
             <div className="flex-item-fluid w100">
                 {loading ? (
                     <div className="flex h100">
-                        <FullLoader className="mauto color-primary" />
+                        <CircleLoader className="mauto color-primary" size="big" />
                     </div>
                 ) : null}
                 {showPlaceholder ? (

@@ -22,8 +22,8 @@ import {
     Alert,
     Tooltip,
     InlineLinkButton,
-    FullLoader,
     TextLoader,
+    CircleLoader,
 } from '../../../../../components';
 
 import { ImportMailModalModel } from '../../interfaces';
@@ -206,7 +206,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
     if (!modalModel.importID || foldersLoading || userLoading || labelsLoading) {
         return (
             <div className="p1 text-center w100">
-                <FullLoader size={100} />
+                <CircleLoader size="big" />
                 <TextLoader>{c('Loading info').t`Connecting to your email provider`}</TextLoader>
             </div>
         );

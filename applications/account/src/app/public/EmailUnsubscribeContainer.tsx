@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
-import { FullLoader, GenericError, useApi, useLoading, useNotifications } from '@proton/components';
+import { CircleLoader, GenericError, useApi, useLoading, useNotifications } from '@proton/components';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getNewsExternal, updateNewsExternal } from '@proton/shared/lib/api/settings';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
@@ -124,7 +124,7 @@ const EmailUnsubscribeContainer = () => {
         if (news === null) {
             return (
                 <div className="absolute-center text-center">
-                    <FullLoader size={200} />
+                    <CircleLoader size="big" />
                 </div>
             );
         }
