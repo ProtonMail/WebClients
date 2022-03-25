@@ -1,9 +1,9 @@
 import { ReadableStream } from 'web-streams-polyfill';
-import { OpenPGPKey, SessionKey, VERIFICATION_STATUS } from 'pmcrypto';
+import { OpenPGPKey, SessionKey } from 'pmcrypto';
 
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 
-import { DecryptedLink, LinkType } from '../links';
+import { DecryptedLink, LinkType, SignatureIssues } from '../links';
 
 export interface LinkDownload {
     type: LinkType;
@@ -13,6 +13,8 @@ export interface LinkDownload {
     name: string;
     mimeType: string;
     size: number;
+    signatureAddress: string;
+    signatureIssues?: SignatureIssues;
 
     buffer?: Uint8Array[];
 }
@@ -58,10 +60,17 @@ export type DownloadCallbacks = DownloadEventCallbacks & DownloadBaseCallbacks;
 
 export type OnInitCallback = (size: number) => void;
 type OnProgressCallback = (bytes: number) => void;
-type OnSignatureIssueCallback = (status: VERIFICATION_STATUS) => Promise<void>;
+export type OnSignatureIssueCallback = (
+    abortSignal: AbortSignal,
+    link: LinkDownload,
+    signatureIssues: SignatureIssues
+) => Promise<void>;
 type OnErrorCallback = (err: any) => void;
 
-export type ChildrenLinkMeta = Pick<DecryptedLink, 'type' | 'linkId' | 'name' | 'mimeType' | 'size'>;
+export type ChildrenLinkMeta = Pick<
+    DecryptedLink,
+    'type' | 'linkId' | 'name' | 'mimeType' | 'size' | 'signatureAddress' | 'signatureIssues'
+>;
 export type GetChildrenCallback = (
     abortSignal: AbortSignal,
     shareId: string,
@@ -81,3 +90,23 @@ export type DecryptFileKeys = {
     sessionKeys?: SessionKey;
     addressPublicKeys: OpenPGPKey[];
 };
+
+export type DownloadSignatureIssueModal = React.FunctionComponent<DownloadSignatureIssueModalProps>;
+
+interface DownloadSignatureIssueModalProps {
+    isFile: boolean;
+    name: string;
+    downloadName: string;
+    signatureAddress?: string;
+    signatureIssues: SignatureIssues;
+    apply: (strategy: TransferSignatureIssueStrategy, all: boolean) => void;
+    cancelAll: () => void;
+}
+
+export enum TransferSignatureIssueStrategy {
+    Abort = 'abort',
+    Continue = 'continue',
+    // Following strategies are not used yet.
+    DeleteFile = 'delete',
+    ResignFile = 'resign',
+}

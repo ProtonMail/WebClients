@@ -1,4 +1,5 @@
 import { ReadableStream } from 'web-streams-polyfill';
+import { VERIFICATION_STATUS } from 'pmcrypto';
 
 import { orderBy, areUint8Arrays } from '@proton/shared/lib/helpers/array';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
@@ -15,16 +16,11 @@ import { MAX_RETRIES_BEFORE_FAIL, MAX_DOWNLOADING_BLOCKS, TIME_TO_RESET_RETRIES 
 import { DownloadStreamControls, DownloadCallbacks } from '../interface';
 import downloadBlock from './downloadBlock';
 
-export type StreamTransformer = (
-    abortSignal: AbortSignal,
-    stream: ReadableStream<Uint8Array>,
-    EncSignature: string
-) => Promise<ReadableStream<Uint8Array>>;
-
 export type DownloadBlocksCallbacks = Omit<
     DownloadCallbacks,
     'getBlocks' | 'onInit' | 'onSignatureIssue' | 'getChildren' | 'getKeys'
 > & {
+    checkFileSignatures?: (abortSignal: AbortSignal) => Promise<void>;
     getBlocks: (
         abortSignal: AbortSignal,
         pagination: {
@@ -32,7 +28,15 @@ export type DownloadBlocksCallbacks = Omit<
             PageSize: number;
         }
     ) => Promise<DriveFileBlock[] | Uint8Array[]>;
-    transformBlockStream?: StreamTransformer;
+    transformBlockStream?: (
+        abortSignal: AbortSignal,
+        stream: ReadableStream<Uint8Array>,
+        EncSignature: string
+    ) => Promise<{
+        data: ReadableStream<Uint8Array>;
+        verifiedPromise: Promise<VERIFICATION_STATUS>;
+    }>;
+    checkBlockSignature?: (abortSignal: AbortSignal, verifiedPromise: Promise<VERIFICATION_STATUS>) => Promise<void>;
 };
 
 /**
@@ -42,7 +46,16 @@ export type DownloadBlocksCallbacks = Omit<
  * How the download itself starts, see start function inside.
  */
 export default function initDownloadBlocks(
-    { getBlocks, transformBlockStream, onProgress, onError, onNetworkError, onFinish }: DownloadBlocksCallbacks,
+    {
+        checkFileSignatures,
+        getBlocks,
+        transformBlockStream,
+        checkBlockSignature,
+        onProgress,
+        onError,
+        onNetworkError,
+        onFinish,
+    }: DownloadBlocksCallbacks,
     downloadBlockCallback = downloadBlock
 ) {
     const fileStream = new ObserverStream();
@@ -201,9 +214,12 @@ export default function initDownloadBlocks(
                         const rawContentStream = blockStream.pipeThrough(progressStream);
 
                         // Decrypt the file block content using streaming decryption
-                        const transformedContentStream = transformBlockStream
+                        const { data: transformedContentStream, verifiedPromise } = transformBlockStream
                             ? await transformBlockStream(abortController.signal, rawContentStream, EncSignature || '')
-                            : rawContentStream;
+                            : {
+                                  data: rawContentStream,
+                                  verifiedPromise: Promise.resolve(VERIFICATION_STATUS.SIGNED_AND_VALID),
+                              };
 
                         await untilStreamEnd(transformedContentStream, async (data) => {
                             if (abortController.signal.aborted) {
@@ -216,6 +232,7 @@ export default function initDownloadBlocks(
                                 buffers.set(Index, { done: false, chunks: [data] });
                             }
                         });
+                        await checkBlockSignature?.(abortController.signal, verifiedPromise);
 
                         const currentBuffer = buffers.get(Index);
 
@@ -306,6 +323,8 @@ export default function initDownloadBlocks(
         };
 
         const run = async () => {
+            await checkFileSignatures?.(abortController.signal);
+
             // Downloads initial page
             if (!(await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE }))) {
                 return;

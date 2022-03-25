@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import { RouteComponentProps, useLocation } from 'react-router-dom';
 
 import { FilePreview, NavigationControl, useModals } from '@proton/components';
@@ -11,6 +11,8 @@ import useNavigate from '../hooks/drive/useNavigate';
 import { mapDecryptedLinksToChildren } from '../components/sections/helpers';
 import DetailsModal from '../components/DetailsModal';
 import ShareLinkModal from '../components/ShareLinkModal/ShareLinkModal';
+import { SignatureAlertBody } from '../components/SignatureAlert';
+import SignatureIcon from '../components/SignatureIcon';
 
 // TODO: ideally not use here
 import useSearchResults from '../store/search/useSearchResults';
@@ -104,6 +106,30 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         createModal(<ShareLinkModal shareId={shareId} item={item} />);
     }, [shareId, link]);
 
+    const signatureStatus = useMemo(() => {
+        if (!link) {
+            return;
+        }
+
+        const [item] = mapDecryptedLinksToChildren([link]);
+        return <SignatureIcon item={item} className="ml0-5 color-danger" />;
+    }, [link]);
+
+    const signatureConfirmation = useMemo(() => {
+        if (!link?.signatureIssues?.blocks) {
+            return;
+        }
+
+        return (
+            <SignatureAlertBody
+                signatureIssues={link.signatureIssues}
+                signatureAddress={link.signatureAddress}
+                isFile={link.type === LinkType.FILE}
+                name={link.name}
+            />
+        );
+    }, [link]);
+
     const rootRef = useRef<HTMLDivElement>(null);
 
     return (
@@ -131,6 +157,8 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
                     />
                 )
             }
+            signatureStatus={signatureStatus}
+            signatureConfirmation={signatureConfirmation}
         />
     );
 }
