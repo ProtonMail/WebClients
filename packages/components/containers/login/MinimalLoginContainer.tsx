@@ -140,7 +140,7 @@ const LoginForm = ({
         <>
             {challengeLoading && (
                 <div className="text-center">
-                    <CircleLoader className="color-primary" size="big" />
+                    <CircleLoader className="color-primary" size="large" />
                 </div>
             )}
             <form

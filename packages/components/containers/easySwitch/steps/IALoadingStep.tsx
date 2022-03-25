@@ -57,7 +57,7 @@ const IALoadingStep = ({
 
     return (
         <div className="p1 text-center w100">
-            <Loader size="big" className="mb1" />
+            <Loader size="large" className="mb1" />
             {contentRenderer()}
         </div>
     );
