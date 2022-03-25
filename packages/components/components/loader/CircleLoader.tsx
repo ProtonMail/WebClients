@@ -16,7 +16,13 @@ const CircleLoader = ({ size, className }: Props) => {
 
     useLayoutEffect(() => {
         if (loaderCircle.current) {
-            setTotalLength(loaderCircle.current.getTotalLength?.() || 0);
+            try {
+                setTotalLength(loaderCircle.current.getTotalLength?.() || 0);
+            } catch (e: any) {
+                // This throws if the element is not rendered, as in if a parent has visibility-hidden :/
+                // TODO: Find a better option
+                return;
+            }
         }
     }, [loaderCircle.current]);
 
