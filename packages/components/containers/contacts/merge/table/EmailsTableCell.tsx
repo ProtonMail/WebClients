@@ -1,4 +1,4 @@
-import { classnames } from '../../../helpers';
+import { classnames } from '../../../../helpers';
 
 interface Props {
     emails: string[];

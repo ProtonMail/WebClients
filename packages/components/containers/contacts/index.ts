@@ -4,7 +4,7 @@ export { default as ContactGroupModal } from './modals/ContactGroupModal';
 export { default as ContactListModal } from './modals/ContactListModal';
 export { default as ContactDetailsModal } from './view/ContactDetailsModal';
 export { default as ContactExportingModal } from './modals/ContactExportingModal';
-export { default as MergeModal } from './merge/MergeModal';
+export { default as MergeModal } from './merge/ContactMergeModal';
 export { default as ContactView } from './view/ContactView';
 export { default as ContactViewErrors } from './view/ContactViewErrors';
 export { default as ContactPgpSettings } from './ContactPgpSettings';

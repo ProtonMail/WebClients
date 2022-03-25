@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import ContactViewProperty from './ContactViewProperty';
 import { ContactViewProperties } from './ContactViewProperties';
@@ -19,9 +18,7 @@ interface Props {
     contactEmails: ContactEmail[];
     contactGroupsMap?: { [contactGroupID: string]: ContactGroup };
     ownAddresses: string[];
-    userKeysList: DecryptedKey[];
     contactID: string;
-    // properties: ContactProperties;
     onEmailSettings: (props: ContactEmailSettingsProps) => void;
 }
 
@@ -32,9 +29,7 @@ const ContactViewEmails = ({
     contactEmails,
     contactGroupsMap,
     ownAddresses,
-    userKeysList,
     contactID,
-    // properties,
     onEmailSettings,
 }: Props) => {
     const [{ hasPaidMail }] = useUser();
@@ -57,23 +52,9 @@ const ContactViewEmails = ({
                         contactEmail.LabelIDs.map((ID) => contactGroupsMap[ID]).filter(Boolean)) ||
                     [];
                 const isOwnAddress = [...ownAddresses].includes(email.value);
-                // const emailProperty = properties.find((property) => {
-                //     return property.field === 'email' && property.value === email.value;
-                // }) as ContactProperty;
-
-                // const handleSettings = () => {
-                //     createModal(
-                //         <ContactEmailSettingsModal
-                //             userKeysList={userKeysList}
-                //             contactID={contactID}
-                //             emailProperty={emailProperty}
-                //             properties={properties}
-                //         />
-                //     );
-                // };
 
                 const handleSettings = () => {
-                    onEmailSettings({ contactID, vCardContact, emailProperty: email, userKeysList });
+                    onEmailSettings({ contactID, vCardContact, emailProperty: email });
                 };
 
                 return (

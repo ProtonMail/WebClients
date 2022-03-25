@@ -1,5 +1,5 @@
-import { Checkbox } from '../../../components';
-import { classnames } from '../../../helpers';
+import { Checkbox } from '../../../../components';
+import { classnames } from '../../../../helpers';
 
 interface Props {
     contactID: string;

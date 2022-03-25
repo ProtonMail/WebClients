@@ -1,10 +1,20 @@
 import unique from '@proton/utils/unique';
 import { normalize } from '../../helpers/string';
-import { ContactProperties, ContactValue } from '../../interfaces/contacts';
 import { FormattedContact } from '../../interfaces/contacts/FormattedContact';
-
 import { ONE_OR_MORE_MUST_BE_PRESENT, ONE_OR_MORE_MAY_BE_PRESENT, PROPERTIES, isCustomField } from '../vcard';
-import { hasPref, generateNewGroupName, getStringContactValue } from '../properties';
+import {
+    hasPref,
+    generateNewGroupName,
+    getStringContactValue,
+    getVCardProperties,
+    fromVCardProperties,
+} from '../properties';
+import { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
+
+const getPref = (params: { [key: string]: string | undefined } | undefined) => {
+    const numValue = Number(params?.pref || '');
+    return isNaN(numValue) ? 0 : numValue;
+};
 
 /**
  * Given an array of keys and an object storing an index for each key,
@@ -125,14 +135,13 @@ export const extractMergeable = (contacts: FormattedContact[] = []) => {
  * In the latter case, return the new value in the object
  * @dev  Normalize strings in all fields but EMAIL
  */
-
 export const extractNewValue = (
-    value: ContactValue,
+    value: any,
     field: string,
-    mergedValues: ContactValue[] = []
-): { isNewValue: boolean; newValue: ContactValue | undefined } => {
+    mergedValues: any[] = []
+): { isNewValue: boolean; newValue: any | undefined } => {
     //  the fields n and adr have to be treated separately since they are array-valued
-    if (['adr', 'n', 'org'].includes(field)) {
+    if (['n', 'org'].includes(field)) {
         // value is an array in this case, whose elements can be strings or arrays of strings
 
         // compare with merged values. Normalize all strings
@@ -166,6 +175,30 @@ export const extractNewValue = (
         const isNew = !isNotRepeatedValue.length;
         return { isNewValue: isNew, newValue: isNew ? value : undefined };
     }
+    if (field === 'adr') {
+        const isNew =
+            mergedValues.filter((mergedValue) => {
+                return Object.keys(value).every((key) => normalize(value[key]) === normalize(mergedValue[key]));
+            }).length === 0;
+        return { isNewValue: isNew, newValue: isNew ? value : undefined };
+    }
+    if (['bday', 'anniversary'].includes(field)) {
+        const isNew =
+            mergedValues.filter((mergedValue) => {
+                return (
+                    normalize(value.text) === normalize(mergedValue.text) &&
+                    value.date?.getTime?.() === mergedValue.date?.getTime?.()
+                );
+            }).length === 0;
+        return { isNewValue: isNew, newValue: isNew ? value : undefined };
+    }
+    if (field === 'gender') {
+        const isNew =
+            mergedValues.filter((mergedValue) => {
+                return normalize(value.text) === normalize(mergedValue.text) && value.gender === mergedValue.gender;
+            }).length === 0;
+        return { isNewValue: isNew, newValue: isNew ? value : undefined };
+    }
     // for the other fields, value is a string, and mergedValues an array of strings
     // for EMAIL field, do not normalize, only trim
     if (field === 'email') {
@@ -174,6 +207,7 @@ export const extractNewValue = (
             .includes(getStringContactValue(value).trim());
         return { isNewValue: isNew, newValue: isNew ? value : undefined };
     }
+
     // for the rest of the fields, normalize strings
     const isNew = !mergedValues
         .map((c) => normalize(getStringContactValue(c)))
@@ -183,37 +217,38 @@ export const extractNewValue = (
 
 /**
  * Merge a list of contacts. The contacts must be ordered in terms of preference.
- * @param contacts   Each contact is a list of properties [{ pref, field, group, type, value }]
- *
+ * @param contacts Each contact is a list of properties [{ pref, field, group, type, value }]
  * @return The merged contact
  */
-export const merge = (contacts: ContactProperties[] = []) => {
+export const merge = (contacts: VCardContact[] = []): VCardContact => {
     if (!contacts.length) {
-        return [];
+        return { fn: [] };
     }
 
-    const { mergedContact } = contacts.reduce<{
-        mergedContact: ContactProperties;
-        mergedProperties: { [field: string]: ContactValue[] };
+    const contactsProperties = contacts.map((contact) => getVCardProperties(contact));
+
+    const { mergedContact } = contactsProperties.reduce<{
+        mergedContact: VCardProperty[];
+        mergedProperties: { [field: string]: any[] };
         mergedPropertiesPrefs: { [field: string]: number[] };
         mergedGroups: { [email: string]: string };
     }>(
-        (acc, contact, index) => {
+        (acc, contactProperties, index) => {
             const { mergedContact, mergedProperties, mergedPropertiesPrefs, mergedGroups } = acc;
             if (index === 0) {
                 // merged contact inherits all properties from the first contact
-                mergedContact.push(...contact);
+                mergedContact.push(...contactProperties);
                 // keep track of merged properties with respective prefs and merged groups
-                for (const { pref, field, value, group } of contact) {
+                for (const { field, value, group, params } of contactProperties) {
                     if (!mergedProperties[field]) {
                         mergedProperties[field] = [value];
                         if (hasPref(field)) {
-                            mergedPropertiesPrefs[field] = [pref as number];
+                            mergedPropertiesPrefs[field] = [getPref(params)];
                         }
                     } else {
                         mergedProperties[field].push(value);
                         if (hasPref(field)) {
-                            mergedPropertiesPrefs[field].push(pref as number);
+                            mergedPropertiesPrefs[field].push(getPref(params));
                         }
                     }
                     // email and groups are in one-to-one correspondence
@@ -226,7 +261,7 @@ export const merge = (contacts: ContactProperties[] = []) => {
 
                 // but first prepare to change repeated groups
                 // extract groups in contact to be merged
-                const groups = contact
+                const groups = contactProperties
                     .filter(({ field }) => field === 'email')
                     .map(({ value, group }) => ({ email: value, group }));
                 // establish how groups should be changed
@@ -242,15 +277,15 @@ export const merge = (contacts: ContactProperties[] = []) => {
                     return acc;
                 }, {});
 
-                for (const property of contact) {
-                    const { pref, field, group, value } = property;
+                for (const property of contactProperties) {
+                    const { field, group, value, params } = property;
                     const newGroup = group ? changeGroup[group] : group;
                     if (!mergedProperties[field]) {
                         // an unseen property is directly merged
-                        mergedContact.push({ ...property, pref, group: newGroup });
+                        mergedContact.push({ ...property, params, group: newGroup });
                         mergedProperties[field] = [value];
                         if (hasPref(field)) {
-                            mergedPropertiesPrefs[field] = [pref as number];
+                            mergedPropertiesPrefs[field] = [getPref(params)];
                         }
                         if (newGroup && field === 'email') {
                             mergedGroups[value as string] = newGroup;
@@ -271,11 +306,14 @@ export const merge = (contacts: ContactProperties[] = []) => {
                         if (isNewValue && canAdd) {
                             mergedContact.push({
                                 ...property,
-                                pref: newPref,
-                                value: newValue as ContactValue,
+                                value: newValue,
                                 group: newGroup,
+                                params: {
+                                    ...property.params,
+                                    pref: String(newPref),
+                                },
                             });
-                            mergedProperties[field].push(newValue as ContactValue);
+                            mergedProperties[field].push(newValue);
                             if (hasPref(field)) {
                                 mergedPropertiesPrefs[field] = [newPref as number];
                             }
@@ -296,5 +334,5 @@ export const merge = (contacts: ContactProperties[] = []) => {
         }
     );
 
-    return mergedContact;
+    return fromVCardProperties(mergedContact);
 };
