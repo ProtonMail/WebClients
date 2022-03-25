@@ -85,12 +85,12 @@ const TOTPForm = ({
                     autoFocus
                     autoCapitalize="off"
                     autoCorrect="off"
+                    autoComplete="one-time-code"
                     id="twoFa"
                     required
                     value={totp}
                     className="w100"
                     placeholder="123456"
-                    autoComplete="one-time-code"
                     onChange={loading ? noop : ({ target: { value } }) => setTotp(value)}
                     data-cy-login="TOTP"
                 />
