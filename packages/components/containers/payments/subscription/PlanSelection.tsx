@@ -81,7 +81,7 @@ const PlanSelection = ({
     ].filter(isTruthy);
 
     const isSignupMode = mode === 'signup';
-    const features = getAllFeatures(vpnCountries, vpnServers);
+    const features = getAllFeatures(plansMap, vpnCountries, vpnServers);
 
     const renderPlanCard = (plan: Plan, audience: Audience) => {
         const isFree = plan.ID === PLANS.FREE;
