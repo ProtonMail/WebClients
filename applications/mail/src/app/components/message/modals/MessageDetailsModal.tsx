@@ -180,7 +180,9 @@ const MessageDetailsModal = ({ labelID, message, messageViewIcons, mailSettings,
                         <RecipientItem recipientOrGroup={{ recipient: sender }} isLoading={!messageLoaded} />
                     </div>
                 )}
-                <RecipientsDetails message={message} isLoading={!messageLoaded} isDetailsModal={true} />
+                <div className="message-detail-modal-container">
+                    <RecipientsDetails message={message} isLoading={!messageLoaded} isDetailsModal={true} />
+                </div>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button className="mlauto" color="norm" onClick={onClose}>{c('Action').t`Close`}</Button>
