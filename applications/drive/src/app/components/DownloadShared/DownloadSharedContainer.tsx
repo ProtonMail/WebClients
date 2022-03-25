@@ -282,7 +282,7 @@ const DownloadSharedContainer = () => {
                     <div className="color-weak flex flex-item-noshrink flex-justify-self-end flex-align-items-end on-mobile-pt1">
                         <div className="text-center opacity-50 mb0-5 mt0-5">
                             {shouldRenderReportButton() && (
-                                <ReportAbuseButton linkInfo={linkInfo!} password={sharedURLPassword} />
+                                <ReportAbuseButton linkInfo={linkInfo!} password={sharedURLPassword || urlPassword} />
                             )}
                         </div>
                     </div>
