@@ -150,7 +150,6 @@ const SubscriptionPanel = ({
     };
 
     const getDefault = () => {
-        const maxVpn = 10; // The 10 is hard coded because it cannot be "allocated" per user.
         return (
             <StrippedList>
                 <StrippedItem icon="check">
@@ -187,41 +186,62 @@ const SubscriptionPanel = ({
                     },
                     {
                         icon: 'check',
-                        text:
-                            MaxCalendars === 1
-                                ? c('Subscription attribute').ngettext(
-                                      msgid`${UsedCalendars} calendar`,
-                                      `${UsedCalendars} calendars`,
-                                      UsedCalendars
-                                  )
-                                : MaxMembers > 1
-                                ? c('Subscription attribute').ngettext(
-                                      msgid`${MAX_CALENDARS_PER_USER} calendar per user`,
-                                      `${MAX_CALENDARS_PER_USER} calendars per user`,
-                                      MAX_CALENDARS_PER_USER
-                                  )
-                                : c('Subscription attribute').ngettext(
-                                      msgid`${UsedCalendars} of ${MaxCalendars} calendar`,
-                                      `${UsedCalendars} of ${MaxCalendars} calendars`,
-                                      MaxCalendars
-                                  ),
+                        text: (() => {
+                            if (MaxCalendars === 1) {
+                                return c('Subscription attribute').ngettext(
+                                    msgid`${UsedCalendars} calendar`,
+                                    `${UsedCalendars} calendars`,
+                                    UsedCalendars
+                                );
+                            }
+                            if (MaxMembers > 1) {
+                                return c('Subscription attribute').ngettext(
+                                    msgid`${MAX_CALENDARS_PER_USER} calendar per user`,
+                                    `${MAX_CALENDARS_PER_USER} calendars per user`,
+                                    MAX_CALENDARS_PER_USER
+                                );
+                            }
+                            return c('Subscription attribute').ngettext(
+                                msgid`${UsedCalendars} of ${MaxCalendars} calendar`,
+                                `${UsedCalendars} of ${MaxCalendars} calendars`,
+                                MaxCalendars
+                            );
+                        })(),
                     },
                     {
                         icon: 'check',
-                        text:
-                            user.hasPaidVpn && MaxMembers > 1
-                                ? c('Subscription attribute').ngettext(
-                                      msgid`${maxVpn} high-speed VPN connection per user`,
-                                      `${maxVpn} high-speed VPN connections per user`,
-                                      maxVpn
-                                  )
-                                : user.hasPaidVpn
-                                ? c('Subscription attribute').ngettext(
-                                      msgid`${maxVpn} high-speed VPN connection`,
-                                      `${maxVpn} high-speed VPN connections`,
-                                      maxVpn
-                                  )
-                                : c('Subscription attribute').t`1 VPN connection`,
+                        text: (() => {
+                            if (user.hasPaidVpn) {
+                                const maxVpn = 10; // The 10 is hard coded because it cannot be "allocated" per user.
+                                if (MaxMembers > 1) {
+                                    return c('Subscription attribute').ngettext(
+                                        msgid`${maxVpn} high-speed VPN connection per user`,
+                                        `${maxVpn} high-speed VPN connections per user`,
+                                        maxVpn
+                                    );
+                                }
+                                return c('Subscription attribute').ngettext(
+                                    msgid`${maxVpn} high-speed VPN connection`,
+                                    `${maxVpn} high-speed VPN connections`,
+                                    maxVpn
+                                );
+                            }
+                            {
+                                const maxVpn = 1;
+                                if (MaxMembers > 1) {
+                                    return c('Subscription attribute').ngettext(
+                                        msgid`${maxVpn} VPN connection per user`,
+                                        `${maxVpn} VPN connections per user`,
+                                        maxVpn
+                                    );
+                                }
+                                return c('Subscription attribute').ngettext(
+                                    msgid`${maxVpn} VPN connection`,
+                                    `${maxVpn} VPN connections`,
+                                    maxVpn
+                                );
+                            }
+                        })(),
                     },
                 ]
                     .filter(isTruthy)
