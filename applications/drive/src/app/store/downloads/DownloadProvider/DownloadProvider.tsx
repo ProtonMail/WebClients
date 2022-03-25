@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { TransferProgresses } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { LinkDownload } from '../interface';
+import { LinkDownload, DownloadSignatureIssueModal } from '../interface';
 import { Download, UpdateFilter } from './interface';
 import useDownload from './useDownloadProvider';
 
@@ -22,7 +22,13 @@ interface DownloadProviderState {
 
 const DownloadContext = createContext<DownloadProviderState | null>(null);
 
-export const DownloadProvider = ({ children }: { children: React.ReactNode }) => {
+export const DownloadProvider = ({
+    DownloadSignatureIssueModal,
+    children,
+}: {
+    DownloadSignatureIssueModal: DownloadSignatureIssueModal;
+    children: React.ReactNode;
+}) => {
     const {
         downloads,
         hasDownloads,
@@ -34,7 +40,7 @@ export const DownloadProvider = ({ children }: { children: React.ReactNode }) =>
         restartDownloads,
         removeDownloads,
         clearDownloads,
-    } = useDownload();
+    } = useDownload(DownloadSignatureIssueModal);
 
     return (
         <DownloadContext.Provider

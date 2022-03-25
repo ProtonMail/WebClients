@@ -70,6 +70,7 @@ const DownloadSharedContainer = () => {
             size: linkType === LinkType.FILE ? size : 0,
             shareId: '',
             linkId: linkID,
+            signatureAddress: '',
         };
 
         const controls = publicSharing.initDownload(

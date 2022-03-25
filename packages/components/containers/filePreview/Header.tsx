@@ -14,6 +14,7 @@ interface Props {
     name?: string;
     mimeType?: string;
     sharedStatus?: SharedStatus;
+    signatureStatus?: ReactNode;
     onClose?: () => void;
     onSave?: () => void;
     onDetail?: () => void;
@@ -21,12 +22,23 @@ interface Props {
     children?: ReactNode;
 }
 
-const Header = ({ mimeType, name, sharedStatus, onClose, onSave, onDetail, onShare, children }: Props) => {
+const Header = ({
+    mimeType,
+    name,
+    sharedStatus,
+    signatureStatus,
+    onClose,
+    onSave,
+    onDetail,
+    onShare,
+    children,
+}: Props) => {
     return (
         <div className="flex flex-justify-space-between flex-align-items-center p2 relative">
             <div className="file-preview-filename flex flex-align-items-center flex-nowrap">
                 {mimeType && <FileIcon mimeType={mimeType} className="mr0-5" />}
                 <FileNameDisplay text={name} />
+                {signatureStatus}
             </div>
             {children}
             <div className="flex flex-align-items-center">

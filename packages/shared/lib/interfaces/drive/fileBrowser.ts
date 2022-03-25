@@ -1,3 +1,4 @@
+import { VERIFICATION_STATUS } from 'pmcrypto';
 import React from 'react';
 import { SORT_DIRECTION } from '../../constants';
 import { LinkType, SharedUrlInfo } from './link';
@@ -37,6 +38,10 @@ export interface FileBrowserItem {
     // of any request and not filled automatically. To get this value, use
     // `loadLinkThumbnail` from `useDrive`.
     CachedThumbnailURL?: string;
+    SignatureAddress: string;
+    SignatureIssues?: {
+        [location: string]: VERIFICATION_STATUS;
+    };
 }
 
 export type ItemRowColumns =

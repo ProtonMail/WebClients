@@ -228,6 +228,7 @@ describe('trasfer utils', () => {
             UrlsExpired: false,
             Type: 2,
             HasThumbnail: false,
+            SignatureAddress: 'address',
         };
         expect(getMetaForTransfer(fileBrowserItem)).toEqual(trasferMeta);
     });

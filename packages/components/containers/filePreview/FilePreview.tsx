@@ -1,5 +1,5 @@
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
-import { forwardRef, ReactNode, Ref, useRef } from 'react';
+import { forwardRef, ReactNode, Ref, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { isSupportedImage, isSupportedVideo, isSupportedText, isPDF } from '@proton/shared/lib/helpers/mimetype';
 import Header, { SharedStatus } from './Header';
@@ -9,6 +9,7 @@ import TextPreview from './TextPreview';
 import VideoPreview from './VideoPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import PDFPreview from './PDFPreview';
+import SignatureIssue from './SignatureIssue';
 import { useCombinedRefs, useHotkeys } from '../../hooks';
 import { useFocusTrap } from '../../components';
 
@@ -20,6 +21,8 @@ interface Props {
     navigationControls?: ReactNode;
     contents?: Uint8Array[];
     sharedStatus?: SharedStatus;
+    signatureStatus?: ReactNode;
+    signatureConfirmation?: ReactNode;
     onClose?: () => void;
     onSave?: () => void;
     onDetail?: () => void;
@@ -35,6 +38,8 @@ const FilePreview = (
         loading,
         navigationControls,
         sharedStatus,
+        signatureStatus,
+        signatureConfirmation,
         onClose,
         onSave,
         onDetail,
@@ -47,6 +52,7 @@ const FilePreview = (
     const focusTrapProps = useFocusTrap({
         rootRef,
     });
+    const [forcePreview, setForcePreview] = useState(false);
 
     useHotkeys(rootRef, [
         [
@@ -59,6 +65,12 @@ const FilePreview = (
     ]);
 
     const renderPreview = () => {
+        if (signatureConfirmation && !forcePreview) {
+            return (
+                <SignatureIssue signatureConfirmation={signatureConfirmation} onClick={() => setForcePreview(true)} />
+            );
+        }
+
         if (!mimeType || !isPreviewAvailable(mimeType, fileSize)) {
             return (
                 <div className="file-preview-container">
@@ -91,6 +103,7 @@ const FilePreview = (
                 mimeType={mimeType}
                 name={fileName}
                 sharedStatus={sharedStatus}
+                signatureStatus={signatureStatus}
                 onClose={onClose}
                 onSave={onSave}
                 onDetail={onDetail}

@@ -1,7 +1,7 @@
 import { enums } from 'openpgp';
-import { encryptMessage, OpenPGPKey } from 'pmcrypto';
+import { encryptMessage, OpenPGPKey, VERIFICATION_STATUS } from 'pmcrypto';
 
-import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
+import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 interface ExtendedAttributes {
@@ -72,10 +72,18 @@ async function encryptExtendedAttributes(
 
 export async function decryptExtendedAttributes(
     encryptedXAttr: string,
-    nodePrivateKey: OpenPGPKey
-): Promise<ParsedExtendedAttributes> {
-    const xattrString = await decryptUnsigned({ armoredMessage: encryptedXAttr, privateKey: nodePrivateKey });
-    return parseExtendedAttributes(xattrString);
+    nodePrivateKey: OpenPGPKey,
+    addressPublicKey: OpenPGPKey | OpenPGPKey[]
+): Promise<{ xattrs: ParsedExtendedAttributes; verified: VERIFICATION_STATUS }> {
+    const { data: xattrString, verified } = await decryptSigned({
+        armoredMessage: encryptedXAttr,
+        privateKey: nodePrivateKey,
+        publicKey: addressPublicKey,
+    });
+    return {
+        xattrs: parseExtendedAttributes(xattrString),
+        verified,
+    };
 }
 
 export function parseExtendedAttributes(xattrString: string) {

@@ -1,12 +1,13 @@
 import { ReactNode, useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { Row, ModalTwo, ModalTwoFooter, Button, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import { useLoading, Row, ModalTwo, ModalTwoFooter, Button, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { useShareUrl } from '../store';
+import { SignatureIssues, useActions, useShareUrl } from '../store';
 import { formatAccessCount } from '../utils/formatters';
+import { useModal } from '../hooks/util/useModal';
 import UserNameCell from './FileBrowser/ListView/Cells/UserNameCell';
 import LocationCell from './FileBrowser/ListView/Cells/LocationCell';
 import DescriptiveTypeCell from './FileBrowser/ListView/Cells/DescriptiveTypeCell';
@@ -14,7 +15,7 @@ import TimeCell from './FileBrowser/ListView/Cells/TimeCell';
 import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
 import NameCell from './FileBrowser/ListView/Cells/NameCell';
 import MIMETypeCell from './FileBrowser/ListView/Cells/MIMETypeCell';
-import { useModal } from '../hooks/util/useModal';
+import SignatureAlert from './SignatureAlert';
 
 interface Props {
     shareId: string;
@@ -44,31 +45,51 @@ const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
     const isShared = item.SharedUrl && !item.UrlsExpired ? c('Info').t`Yes` : c('Info').t`No`;
     const { isOpen, onClose: handleModalClose } = useModal(onClose);
 
+    const { checkLinkSignatures } = useActions();
+    const [signatureIssues, setSignatureIssues] = useState<SignatureIssues>();
+    const [loadingSignatureIssues, withLoadingSignatureIssues] = useLoading();
+
     const { loadShareUrlNumberOfAccesses } = useShareUrl();
     const [numberOfAccesses, setNumberOfAccesses] = useState<number>();
-    const [loadingNumberOfAccesses, setLoadingNumberOfAccesses] = useState(false);
+    const [loadingNumberOfAccesses, withLoadingNumberOfAccesses] = useLoading();
+
+    useEffect(() => {
+        const abortController = new AbortController();
+        withLoadingSignatureIssues(
+            checkLinkSignatures(abortController.signal, shareId, item.LinkID).then(setSignatureIssues)
+        );
+        return () => {
+            abortController.abort();
+        };
+    }, [shareId, item.LinkID]);
 
     useEffect(() => {
         if (!item.ShareUrlShareID) {
             return;
         }
         const abortController = new AbortController();
-        setLoadingNumberOfAccesses(true);
-        loadShareUrlNumberOfAccesses(abortController.signal, shareId, item.LinkID)
-            .then(setNumberOfAccesses)
-            .catch(console.error)
-            .finally(() => {
-                setLoadingNumberOfAccesses(false);
-            });
+        withLoadingNumberOfAccesses(
+            loadShareUrlNumberOfAccesses(abortController.signal, shareId, item.LinkID)
+                .then(setNumberOfAccesses)
+                .catch(console.error)
+        );
         return () => {
             abortController.abort();
         };
-    }, [item.ShareUrlShareID]);
+    }, [shareId, item.LinkID, item.ShareUrlShareID]);
 
     return (
         <ModalTwo onClose={handleModalClose} open={isOpen} {...rest} size="large">
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
+                <SignatureAlert
+                    loading={loadingSignatureIssues}
+                    signatureIssues={signatureIssues}
+                    signatureAddress={item.SignatureAddress}
+                    isFile={item.Type === LinkType.FILE}
+                    name={item.Name}
+                    className="mb1"
+                />
                 <DetailsRow label={c('Title').t`Name`}>
                     <NameCell name={item.Name} />
                 </DetailsRow>

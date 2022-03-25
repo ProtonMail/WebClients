@@ -17,6 +17,7 @@ import { DriveProvider, useDriveEventManager, useDefaultShare, useSearchControl 
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import TransferManager from '../components/TransferManager/TransferManager';
 import ConflictModal from '../components/uploads/ConflictModal';
+import SignatureIssueModal from '../components/SignatureIssueModal';
 import DriveWindow from '../components/layout/DriveWindow';
 import FolderContainer from './FolderContainer';
 import NoAccessContainer from './NoAccessContainer';
@@ -135,7 +136,7 @@ const InitContainer = () => {
 const MainContainer = () => {
     return (
         <LocationErrorBoundary>
-            <DriveProvider UploadConflictModal={ConflictModal}>
+            <DriveProvider DownloadSignatureIssueModal={SignatureIssueModal} UploadConflictModal={ConflictModal}>
                 <InitContainer />
             </DriveProvider>
         </LocationErrorBoundary>

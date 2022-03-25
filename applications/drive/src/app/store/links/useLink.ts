@@ -1,12 +1,12 @@
 import { c } from 'ttag';
-import { OpenPGPKey, SessionKey, decryptPrivateKey as pmcryptoDecryptPrivateKey } from 'pmcrypto';
+import { OpenPGPKey, SessionKey, decryptPrivateKey as pmcryptoDecryptPrivateKey, VERIFICATION_STATUS } from 'pmcrypto';
 
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import { queryGetLink } from '@proton/shared/lib/api/drive/link';
 import { DriveFileRevisionThumbnailResult } from '@proton/shared/lib/interfaces/drive/file';
 import { LinkMetaResult } from '@proton/shared/lib/interfaces/drive/link';
-import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
+import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
 import { useDebouncedFunction } from '../utils';
@@ -16,7 +16,7 @@ import { useShare } from '../shares';
 import useLinksKeys from './useLinksKeys';
 import useLinksState from './useLinksState';
 import { decryptExtendedAttributes } from './extendedAttributes';
-import { EncryptedLink, DecryptedLink } from './interface';
+import { EncryptedLink, DecryptedLink, SignatureIssues, SignatureIssueLocation } from './interface';
 import { isDecryptedLinkSame } from './link';
 
 export default function useLink() {
@@ -75,6 +75,26 @@ export function useLinkInner(
 ) {
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
+
+    const handleSignatureCheck = (
+        shareId: string,
+        encryptedLink: EncryptedLink,
+        location: SignatureIssueLocation,
+        verified: VERIFICATION_STATUS
+    ) => {
+        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+            const signatureIssues: SignatureIssues = {};
+            signatureIssues[location] = verified;
+            linksState.setLinks(shareId, [
+                {
+                    encrypted: {
+                        ...encryptedLink,
+                        signatureIssues,
+                    },
+                },
+            ]);
+        }
+    };
 
     /**
      * debouncedFunctionDecorator wraps original callback with debouncedFunction
@@ -137,12 +157,19 @@ export function useLinkInner(
                 parentPrivateKeyPromise,
                 getVerificationKey(encryptedLink.signatureAddress),
             ]);
-            const { decryptedPassphrase, sessionKey: passphraseSessionKey } = await decryptPassphrase({
+            const {
+                decryptedPassphrase,
+                sessionKey: passphraseSessionKey,
+                verified,
+            } = await decryptPassphrase({
                 armoredPassphrase: encryptedLink.nodePassphrase,
                 armoredSignature: encryptedLink.nodePassphraseSignature,
                 privateKeys: [parentPrivateKey],
                 publicKeys: addressPublicKey,
+                validateSignature: false,
             });
+
+            handleSignatureCheck(shareId, encryptedLink, 'passphrase', verified);
 
             linksKeys.setPassphrase(shareId, linkId, decryptedPassphrase);
             linksKeys.setPassphraseSessionKey(shareId, linkId, passphraseSessionKey);
@@ -208,9 +235,9 @@ export function useLinkInner(
     const getLinkHashKey = debouncedFunctionDecorator(
         'getLinkHashKey',
         async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<string> => {
-            let hashKey = linksKeys.getHashKey(shareId, linkId);
-            if (hashKey) {
-                return hashKey;
+            let cachedHashKey = linksKeys.getHashKey(shareId, linkId);
+            if (cachedHashKey) {
+                return cachedHashKey;
             }
 
             const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
@@ -219,11 +246,26 @@ export function useLinkInner(
                 throw new Error('Hash key is available only in folder context');
             }
 
-            const privateKey = await getLinkPrivateKey(abortSignal, shareId, linkId);
-            hashKey = await decryptUnsigned({
+            const [privateKey, addressPrivateKey] = await Promise.all([
+                getLinkPrivateKey(abortSignal, shareId, linkId),
+                getVerificationKey(encryptedLink.signatureAddress),
+            ]);
+            // In the past we had misunderstanding what key is used to sign
+            // hash key. Originally it meant to be node key, which web used
+            // for all links besides the root one, where address key was
+            // used instead. Similarly, iOS or Android used address key for
+            // all links. Latest versions should use node key in all cases
+            // but we accept also address key. Its still signed with valid
+            // key. In future we might re-sign bad links so we can get rid
+            // of this.
+            const publicKey = [privateKey, ...addressPrivateKey];
+            const { data: hashKey, verified } = await decryptSigned({
                 armoredMessage: encryptedLink.nodeHashKey,
                 privateKey,
+                publicKey,
             });
+
+            handleSignatureCheck(shareId, encryptedLink, 'hash', verified);
 
             linksKeys.setHashKey(shareId, linkId, hashKey);
             return hashKey;
@@ -241,26 +283,55 @@ export function useLinkInner(
     ): Promise<DecryptedLink> => {
         return debouncedFunction(
             async (abortSignal: AbortSignal): Promise<DecryptedLink> => {
-                const parentPrivateKey = encryptedLink.parentLinkId
-                    ? await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId)
-                    : await getSharePrivateKey(abortSignal, shareId);
-
                 const namePromise = !encryptedLink.parentLinkId
-                    ? c('Title').t`My files`
-                    : decryptUnsigned({ armoredMessage: encryptedLink.name, privateKey: parentPrivateKey });
-                const fileModifyTimePromise = !encryptedLink.xAttr
-                    ? encryptedLink.metaDataModifyTime
-                    : getLinkPrivateKey(abortSignal, shareId, encryptedLink.linkId)
-                          .then((privateKey) => decryptExtendedAttributes(encryptedLink.xAttr, privateKey))
-                          .then((xattr) => xattr.Common.ModificationTime || encryptedLink.metaDataModifyTime);
+                    ? { name: c('Title').t`My files`, nameVerified: VERIFICATION_STATUS.SIGNED_AND_VALID }
+                    : decryptSigned({
+                          armoredMessage: encryptedLink.name,
+                          privateKey: await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId),
+                          publicKey: await getVerificationKey(encryptedLink.signatureAddress),
+                      }).then(({ data, verified }) => ({ name: data, nameVerified: verified }));
 
-                const [name, fileModifyTime] = await Promise.all([namePromise, fileModifyTimePromise]);
+                const fileModifyTimePromise = !encryptedLink.xAttr
+                    ? {
+                          fileModifyTime: encryptedLink.metaDataModifyTime,
+                          fileModifyTimeVerified: VERIFICATION_STATUS.SIGNED_AND_VALID,
+                      }
+                    : getLinkPrivateKey(abortSignal, shareId, encryptedLink.linkId)
+                          .then(async (privateKey) =>
+                              decryptExtendedAttributes(
+                                  encryptedLink.xAttr,
+                                  privateKey,
+                                  // Files have signature address on the revision.
+                                  // Folders have signature address on the link itself.
+                                  await getVerificationKey(
+                                      encryptedLink.activeRevision?.signatureAddress || encryptedLink.signatureAddress
+                                  )
+                              )
+                          )
+                          .then(({ xattrs, verified }) => ({
+                              fileModifyTime: xattrs.Common.ModificationTime || encryptedLink.metaDataModifyTime,
+                              fileModifyTimeVerified: verified,
+                          }));
+
+                const [{ name, nameVerified }, { fileModifyTime, fileModifyTimeVerified }] = await Promise.all([
+                    namePromise,
+                    fileModifyTimePromise,
+                ]);
+
+                const signatureIssues: SignatureIssues = {};
+                if (nameVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    signatureIssues.name = nameVerified;
+                }
+                if (fileModifyTimeVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    signatureIssues.xattrs = fileModifyTimeVerified;
+                }
 
                 return {
                     ...encryptedLink,
                     encryptedName: encryptedLink.name,
                     name: name,
                     fileModifyTime: fileModifyTime,
+                    signatureIssues: Object.keys(signatureIssues).length > 0 ? signatureIssues : undefined,
                 };
             },
             ['decryptLink', shareId, encryptedLink.linkId],
@@ -323,7 +394,10 @@ export function useLinkInner(
         abortSignal: AbortSignal,
         shareId: string,
         linkId: string,
-        downloadCallback: (downloadUrl: string, downloadToken: string) => Promise<Uint8Array[]>
+        downloadCallback: (
+            downloadUrl: string,
+            downloadToken: string
+        ) => Promise<{ contents: Promise<Uint8Array[]>; verifiedPromise: Promise<VERIFICATION_STATUS> }>
     ): Promise<string | undefined> => {
         const link = await getLink(abortSignal, shareId, linkId);
         if (link.cachedThumbnailUrl || !link.hasThumbnail || !link.activeRevision) {
@@ -348,9 +422,17 @@ export function useLinkInner(
         };
 
         const loadThumbnailUrl = async (downloadUrl: string, downloadToken: string): Promise<string> => {
-            const data = await downloadCallback(downloadUrl, downloadToken);
+            const { contents, verifiedPromise } = await downloadCallback(downloadUrl, downloadToken);
+            const data = await contents;
             const url = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
             linksState.setCachedThumbnail(shareId, linkId, url);
+
+            const cachedLink = linksState.getLink(shareId, linkId);
+            if (cachedLink) {
+                const verified = await verifiedPromise;
+                handleSignatureCheck(shareId, cachedLink.encrypted, 'thumbnail', verified);
+            }
+
             return url;
         };
 
@@ -380,6 +462,23 @@ export function useLinkInner(
         }
     };
 
+    const setSignatureIssues = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        linkId: string,
+        signatureIssues: SignatureIssues
+    ) => {
+        const link = await getEncryptedLink(abortSignal, shareId, linkId);
+        linksState.setLinks(shareId, [
+            {
+                encrypted: {
+                    ...link,
+                    signatureIssues,
+                },
+            },
+        ]);
+    };
+
     return {
         getLinkPassphraseAndSessionKey,
         getLinkPrivateKey,
@@ -389,5 +488,6 @@ export function useLinkInner(
         getLink,
         loadFreshLink,
         loadLinkThumbnail,
+        setSignatureIssues,
     };
 }

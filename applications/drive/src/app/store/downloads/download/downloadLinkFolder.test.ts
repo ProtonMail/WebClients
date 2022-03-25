@@ -1,6 +1,6 @@
 import { LinkType } from '../../links';
 
-import { ChildrenLinkMeta } from '../interface';
+import { LinkDownload, ChildrenLinkMeta } from '../interface';
 import { FolderTreeLoader } from './downloadLinkFolder';
 
 type Tree = {
@@ -83,19 +83,22 @@ function makeChildrenLinkMeta(linkId: string, size?: number): ChildrenLinkMeta {
         name: linkId,
         mimeType: size !== undefined ? 'text/plain' : 'Folder',
         size: size || 0,
+        signatureAddress: 'address',
     };
 }
 
 describe('FolderTreeLoader', () => {
+    const linkDownload = { shareId: 'shareId', linkId: 'linkId' } as LinkDownload;
+
     it('calculates size', async () => {
         const folderTreeLoader = new FolderTreeLoader();
-        const promise = folderTreeLoader.load('shareId', 'linkId', stubGetChildren);
+        const promise = folderTreeLoader.load(linkDownload, stubGetChildren);
         await expect(promise).resolves.toBe(expectedTotalSize);
     });
 
     it('iterates all childs', async () => {
         const folderTreeLoader = new FolderTreeLoader();
-        void folderTreeLoader.load('shareId', 'linkId', stubGetChildren);
+        void folderTreeLoader.load(linkDownload, stubGetChildren);
         const items = [];
         for await (const item of folderTreeLoader.iterateAllChildren()) {
             items.push(item);
