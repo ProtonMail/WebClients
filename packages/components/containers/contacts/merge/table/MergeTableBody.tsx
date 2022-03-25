@@ -1,8 +1,7 @@
 import { ComponentProps } from 'react';
 import { c } from 'ttag';
 import { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
-
-import { OrderableTableBody, OrderableTableRow, TableRow, DropdownActions } from '../../../components';
+import { OrderableTableBody, OrderableTableRow, TableRow, DropdownActions } from '../../../../components';
 import NameTableCell from './NameTableCell';
 import EmailsTableCell from './EmailsTableCell';
 

@@ -5,8 +5,7 @@ import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { CircleLoader, SearchInput } from '@proton/components';
-import { useApi, useModals, useNotifications, useUser, useUserKeys, useUserSettings } from '@proton/components/hooks';
-import MergeModal from '../merge/MergeModal';
+import { useApi, useNotifications, useUser, useUserKeys, useUserSettings } from '@proton/components/hooks';
 import ContactsList from '../ContactsList';
 import useContactList from '../useContactList';
 import ContactsWidgetToolbar from './ContactsWidgetToolbar';
@@ -15,6 +14,7 @@ import { ContactEditProps } from '../edit/ContactEditModal';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
 import MergeContactBanner from '../widget/MergeContactBanner';
 import { CustomAction } from './types';
+import { ContactMergeProps } from '../merge/ContactMergeModal';
 
 interface Props {
     onClose: () => void;
@@ -25,6 +25,7 @@ interface Props {
     onEdit: (props: ContactEditProps) => void;
     onDelete: (props: ContactDeleteProps) => void;
     onImport: () => void;
+    onMerge: (props: ContactMergeProps) => void;
 }
 
 const ContactsWidgetContainer = ({
@@ -36,12 +37,11 @@ const ContactsWidgetContainer = ({
     onEdit,
     onDelete,
     onImport,
+    onMerge,
 }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const [userKeysList, loadingUserKeys] = useUserKeys();
     const [userKeys] = useUserKeys();
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const api = useApi();
 
@@ -146,26 +146,8 @@ const ContactsWidgetContainer = ({
         onClose();
     };
 
-    // const handleDetails = (contactID: string) => {
-    //     // createModal(<ContactDetailsModal contactID={contactID} onMailTo={onMailTo} />);
-    //     onShowDetails(contactID);
-    //     // onClose();
-    // };
-
     const handleDelete = () => {
         const deleteAll = selectedIDs.length === contacts.length;
-        // createModal(
-        //     <ContactDeleteModal
-        //         contactIDs={selectedIDs}
-        //         deleteAll={deleteAll}
-        //         onDelete={() => {
-        //             if (selectedIDs.length === filteredContacts.length) {
-        //                 setSearch('');
-        //             }
-        //             handleCheckAll(false);
-        //         }}
-        //     />
-        // );
         onDelete({
             contactIDs: selectedIDs,
             deleteAll,
@@ -193,19 +175,15 @@ const ContactsWidgetContainer = ({
         const selectedContacts = formattedContacts.filter((contact) => selectedIDs.includes(contact.ID));
         const contacts = mergeContactsDetected ? mergeableContacts : [selectedContacts];
 
-        createModal(
-            <MergeModal
-                contacts={contacts}
-                userKeysList={userKeysList}
-                onMerged={() => handleCheckAll(false)} // Unselect all contacts
-            />
-        );
+        const onMerged = () => handleCheckAll(false);
+        onMerge({ contacts, onMerged });
+        onClose();
     };
 
     const contactsCount = formattedContacts.length;
     const contactsLength = contacts ? contacts.length : 0;
 
-    const loading = loadingContacts || loadingUser || loadingUserSettings || loadingUserKeys;
+    const loading = loadingContacts || loadingUser || loadingUserSettings;
     const showPlaceholder = !loading && !contactsCount;
     const showList = !loading && !showPlaceholder;
 

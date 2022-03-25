@@ -1,21 +1,24 @@
-import { useState, useEffect, useMemo, ComponentProps } from 'react';
-import { c } from 'ttag';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { useState, useEffect, useMemo } from 'react';
 import { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
-
-import { FormModal, Button, PrimaryButton } from '../../../components';
+import { ModalProps, ModalTwo } from '../../../components';
 import { useEventManager } from '../../../hooks';
+import ContactMergeTableContent from './ContactMergeTableContent';
+import ContactMergingContent from './ContactMergingContent';
+import { ContactMergePreviewModalProps } from './ContactMergePreviewModal';
 
-import MergeModalContent from './MergeModalContent';
-import MergingModalContent from './MergingModalContent';
-
-interface Props extends ComponentProps<typeof FormModal> {
+export interface ContactMergeProps {
     contacts: ContactFormatted[][];
-    userKeysList: DecryptedKey[];
     onMerged: () => void;
 }
 
-const MergeModal = ({ contacts, userKeysList, onMerged, ...rest }: Props) => {
+export interface ContactMergeModalProps {
+    onMergeDetails: (contactID: string) => void;
+    onMergePreview: (props: ContactMergePreviewModalProps) => void;
+}
+
+type Props = ContactMergeProps & ContactMergeModalProps & ModalProps;
+
+const ContactMergeModal = ({ contacts, onMerged, onMergeDetails, onMergePreview, ...rest }: Props) => {
     const { call } = useEventManager();
 
     const [isMerging, setIsMerging] = useState(false);
@@ -38,7 +41,7 @@ const MergeModal = ({ contacts, userKeysList, onMerged, ...rest }: Props) => {
         // close the modal if all contacts have been merged from preview
         if (!orderedContacts.flat().length) {
             onMerged?.();
-            rest.onClose();
+            rest.onClose?.();
         }
     }, [orderedContacts]);
 
@@ -76,75 +79,49 @@ const MergeModal = ({ contacts, userKeysList, onMerged, ...rest }: Props) => {
         [orderedContacts, isChecked, beDeleted]
     );
 
-    const { content, ...modalProps } = (() => {
-        const isDeleteOnly = totalBeMerged <= 0 && totalBeDeleted > 0;
+    const handleStartMerge = () => {
+        setIsMerging(true);
+    };
 
-        // Display table with mergeable contacts
-        if (!isMerging) {
-            const submit = isDeleteOnly ? (
-                <PrimaryButton type="submit">{c('Action').t`Continue`}</PrimaryButton>
-            ) : (
-                <PrimaryButton type="submit" disabled={!totalBeMerged} data-testid="merge-model-merge-button">{c(
-                    'Action'
-                ).t`Merge`}</PrimaryButton>
-            );
+    const handleMergingFinish = async () => {
+        await call();
+        setMergeFinished(true);
+    };
 
-            const handleSubmit = () => setIsMerging(true);
+    const handleMerged = () => {
+        onMerged?.();
+        rest.onClose?.();
+    };
 
-            return {
-                title: c('Title').t`Merge contacts`,
-                content: (
-                    <MergeModalContent
-                        userKeysList={userKeysList}
-                        model={model}
-                        updateModel={setModel}
-                        beMergedModel={beMergedModel}
-                        beDeletedModel={beDeletedModel}
-                    />
-                ),
-                submit,
-                onSubmit: handleSubmit,
-                ...rest,
-            };
-        }
-
-        // Display progress bar while merging contacts
-        const close = !mergeFinished && <Button type="reset">{c('Action').t`Cancel`}</Button>;
-        const submit = (
-            <PrimaryButton type="submit" loading={!mergeFinished} data-testid="merge-model:close-button">
-                {c('Action').t`Close`}
-            </PrimaryButton>
-        );
-
-        const handleFinish = async () => {
-            await call();
-            setMergeFinished(true);
-        };
-
-        return {
-            title: isDeleteOnly ? c('Title').t`Deleting contacts` : c('Title').t`Merging contacts`,
-            hasClose: false,
-            content: (
-                <MergingModalContent
-                    userKeysList={userKeysList}
+    return (
+        <ModalTwo {...rest}>
+            {isMerging ? (
+                <ContactMergingContent
+                    mergeFinished={mergeFinished}
+                    onFinish={handleMergingFinish}
+                    onMerged={handleMerged}
+                    onClose={rest.onClose}
                     beMergedModel={beMergedModel}
                     beDeletedModel={beDeletedModel}
                     totalBeMerged={totalBeMerged}
                     totalBeDeleted={totalBeDeleted}
-                    onFinish={handleFinish}
                 />
-            ),
-            close,
-            submit,
-            onSubmit: () => {
-                onMerged?.();
-                rest.onClose();
-            },
-            ...rest,
-        };
-    })();
-
-    return <FormModal {...modalProps}>{content}</FormModal>;
+            ) : (
+                <ContactMergeTableContent
+                    model={model}
+                    updateModel={setModel}
+                    onSubmit={handleStartMerge}
+                    onClose={rest.onClose}
+                    beMergedModel={beMergedModel}
+                    beDeletedModel={beDeletedModel}
+                    totalBeMerged={totalBeMerged}
+                    totalBeDeleted={totalBeDeleted}
+                    onMergeDetails={onMergeDetails}
+                    onMergePreview={onMergePreview}
+                />
+            )}
+        </ModalTwo>
+    );
 };
 
-export default MergeModal;
+export default ContactMergeModal;

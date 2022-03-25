@@ -1,9 +1,9 @@
 import { render, waitFor } from '@testing-library/react';
-import { prepareContact } from '@proton/shared/lib/contacts/encrypt';
-import MergingModalContent from './MergingModalContent';
+import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
+import ContactMergingContent from './ContactMergingContent';
 import useApi from '../../../hooks/useApi';
 
-const encrypt = prepareContact as jest.Mock;
+const encrypt = prepareVCardContact as jest.Mock;
 
 jest.mock('../../../hooks/useApi', () => {
     const apiMock = jest.fn(({ url, method }) => {
@@ -22,30 +22,45 @@ jest.mock('../../../hooks/useApi', () => {
     return () => apiMock;
 });
 
+jest.mock('../../../hooks/useUserKeys', () => {
+    return {
+        useUserKeys: () => [[]],
+    };
+});
+
 jest.mock('@proton/shared/lib/contacts/decrypt', () => {
     return {
-        prepareContact: jest.fn(({ ID }) => {
-            return Promise.resolve({ properties: [{ field: 'nickname', value: ID }], errors: [] });
+        prepareVCardContact: jest.fn(({ ID }) => {
+            return Promise.resolve({ vCardContact: { nickname: [{ field: 'nickname', value: ID }] }, errors: [] });
         }),
     };
 });
 
 jest.mock('@proton/shared/lib/contacts/encrypt', () => {
     return {
-        prepareContact: jest.fn(() => {
+        prepareVCardContact: jest.fn(() => {
             return Promise.resolve({ Cards: ['something encrypted'] });
         }),
     };
 });
 
-describe('MergingModalContent', () => {
+window.ResizeObserver =
+    window.ResizeObserver ||
+    jest.fn().mockImplementation(() => ({
+        disconnect: jest.fn(),
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+    }));
+
+describe('ContactMergingContent', () => {
     const id1 = 'id1';
     const id2 = 'id2';
 
     it('should perform a simple merge', async () => {
         render(
-            <MergingModalContent
-                userKeysList={[]}
+            <ContactMergingContent
+                // userKeysList={[]}
+                mergeFinished={false}
                 beMergedModel={{ [id1]: [id1, id2] }}
                 beDeletedModel={{}}
                 totalBeMerged={1}
@@ -61,10 +76,11 @@ describe('MergingModalContent', () => {
         });
 
         const encryptedProps = encrypt.mock.calls[0][0];
-        expect(encryptedProps[0].field).toBe('nickname');
-        expect(encryptedProps[0].value).toBe(id1);
-        expect(encryptedProps[1].field).toBe('nickname');
-        expect(encryptedProps[1].value).toBe(id2);
+
+        expect(encryptedProps.nickname[0].field).toBe('nickname');
+        expect(encryptedProps.nickname[0].value).toBe(id1);
+        expect(encryptedProps.nickname[1].field).toBe('nickname');
+        expect(encryptedProps.nickname[1].value).toBe(id2);
 
         const updateCall = apiMock.mock.calls[2];
         expect(updateCall[0].data.Contacts[0].Cards[0]).toBe('something encrypted');
