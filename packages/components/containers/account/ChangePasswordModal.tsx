@@ -542,6 +542,9 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                     id="totp"
                     label={c('Label').t`Two-factor authentication code`}
                     value={inputs.totp}
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    autoComplete="one-time-code"
                     placeholder={c('Placeholder').t`Two-factor authentication code`}
                     onValue={(value: string) => {
                         setPartialInput({ totp: value });

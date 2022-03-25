@@ -247,6 +247,8 @@ const DeleteAccountModal = (props: Props) => {
                         rootClassName="mt0-5"
                         label={c('Label').t`Two-factor authentication code`}
                         placeholder={c('Placeholder').t`Two-factor authentication code`}
+                        autoCapitalize="off"
+                        autoCorrect="off"
                         autoComplete="one-time-code"
                         value={model.twoFa}
                         onValue={(value: string) => setModel({ ...model, twoFa: value })}
