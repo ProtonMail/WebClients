@@ -5,7 +5,6 @@ import { c, msgid } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LockedVolumeResolveMethod } from './interfaces';
-import { useModal } from '../../../hooks/util/useModal';
 
 const appName = getAppName(APPS.PROTONDRIVE);
 
@@ -14,6 +13,7 @@ interface Props {
     onClose?: () => void;
     onSubmit?: (type: LockedVolumeResolveMethod) => void;
     volumeCount: number;
+    open?: boolean;
 }
 
 const OptionLabel = ({ title, info }: { title: string; info: string }) => {
@@ -27,17 +27,10 @@ const OptionLabel = ({ title, info }: { title: string; info: string }) => {
 
 const BrElement = <br />;
 
-const KeyReactivationModal = ({
-    onClose = noop,
-    onSubmit = noop,
-    defaultResolveMethod,
-    volumeCount,
-    ...rest
-}: Props) => {
+const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, defaultResolveMethod, volumeCount, open }: Props) => {
     const [radioGroupValue, setRadioGroupValue] = useState<number>(
         defaultResolveMethod || LockedVolumeResolveMethod.ReactivateKeys
     );
-    const { isOpen, onClose: handleClose } = useModal(onClose);
 
     const handleChange = (payload: LockedVolumeResolveMethod) => {
         setRadioGroupValue(payload);
@@ -83,15 +76,14 @@ const KeyReactivationModal = ({
 
     return (
         <ModalTwo
-            onClose={handleClose}
-            onReset={handleClose}
+            onClose={onClose}
+            onReset={onClose}
             onSubmit={(e: any) => {
                 e.preventDefault();
                 onSubmit(radioGroupValue);
             }}
             size="small"
-            open={isOpen}
-            {...rest}
+            open={open}
             as="form"
         >
             <ModalTwoHeader title={c('Action').t`Drive Locked`} />
