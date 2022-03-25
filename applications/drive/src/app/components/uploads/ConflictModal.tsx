@@ -14,7 +14,6 @@ import {
 } from '@proton/components';
 
 import { TransferConflictStrategy } from '../../store/uploads/interface';
-import { useModal } from '../../hooks/util/useModal';
 
 export interface ConflictModalProps {
     name: string;
@@ -36,6 +35,7 @@ export interface ConflictModalProps {
     mode?: 'alert';
     submitProps?: any;
     closeProps?: any;
+    open?: boolean;
 }
 
 export default function ConflictModal({
@@ -45,13 +45,12 @@ export default function ConflictModal({
     apply,
     cancelAll,
     onClose,
-    ...rest
+    open,
 }: ConflictModalProps) {
     const [strategy, setStrategy] = useState(
         isFolder ? TransferConflictStrategy.Merge : TransferConflictStrategy.Rename
     );
     const [applyAll, setApplyAll] = useState(false);
-    const { isOpen, onClose: handleClose } = useModal(onClose);
 
     const uploadName = (
         <strong className="text-break" key="filename">
@@ -62,16 +61,16 @@ export default function ConflictModal({
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         apply(strategy, applyAll);
-        handleClose?.();
+        onClose?.();
     };
 
     const closeAndCancel = () => {
-        handleClose();
+        onClose?.();
         cancelAll();
     };
 
     return (
-        <ModalTwo as="form" onClose={closeAndCancel} onSubmit={handleSubmit} open={isOpen} size="small" {...rest}>
+        <ModalTwo as="form" onClose={closeAndCancel} onSubmit={handleSubmit} open={open} size="small">
             <ModalTwoHeader
                 title={isFolder ? c('Title').t`Duplicate folder found` : c('Title').t`Duplicate file found`}
             />

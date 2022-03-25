@@ -12,7 +12,6 @@ import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { useModal } from '../../../hooks/util/useModal';
 
 const appName = getAppName(APPS.PROTONDRIVE);
 
@@ -20,12 +19,12 @@ interface Props {
     onClose?: () => void;
     onBack?: () => void;
     onSubmit?: () => void;
+    open?: boolean;
 }
 
-const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, onBack, ...rest }: Props) => {
-    const { isOpen, onClose: handleClose } = useModal(onClose);
+const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, onBack, open }: Props) => {
     return (
-        <ModalTwo onClose={handleClose} size="small" {...rest} open={isOpen}>
+        <ModalTwo onClose={onClose} size="small" open={open}>
             <ModalTwoHeader title={c('Label').t`Unlock drive`} />
             <ModalTwoContent onSubmit={() => onSubmit()}>
                 <p>{c('Info').t`Because ${appName} is end-to-end encrypted, we cannot access
@@ -52,7 +51,7 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, onBack
                     path="/encryption-keys?action=reactivate#addresses"
                     app={APPS.PROTONMAIL}
                     data-testid="drive-key-reactivations-options:continue"
-                    onClick={handleClose}
+                    onClick={onClose}
                 >
                     {c('Action').t`Continue`}
                 </ButtonLike>
