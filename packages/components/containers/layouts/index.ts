@@ -5,4 +5,4 @@ export { default as LayoutsSection } from './LayoutsSection';
 export { default as ViewLayoutCards } from './ViewLayoutCards';
 export { default as ComposerModeCards } from './ComposerModeCards';
 export { default as DensityInjector } from './DensityInjector';
-export { default as AppearanceOtherSection } from './AppearanceOtherSection';
+export { default as MessagesOtherSection } from './MessagesOtherSection';

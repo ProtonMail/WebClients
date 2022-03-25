@@ -1,46 +1,61 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
-import { APPS, SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { SHOW_IMAGES, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/constants';
+import { updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
 
-import { Info, Button, useModalState, SettingsLink } from '../../components';
-import { useFeature, useMailSettings, useUser } from '../../hooks';
+import { Info } from '../../components';
+import { useApi, useEventManager, useFeature, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import EmbeddedToggle from './EmbeddedToggle';
 import ShowMovedToggle from './ShowMovedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
-import DelaySendSecondsSelect from './DelaySendSecondsSelect';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import { FeatureCode } from '../features';
 import { RemoteToggle } from '../emailPrivacy';
-import ShortcutsToggle from '../general/ShortcutsToggle';
-import { MailShortcutsModal } from '../mail';
-import {
-    DailyEmailNotificationToggleInput,
-    DailyEmailNotificationToggleLabel,
-} from '../recovery/DailyEmailNotificationToggle';
+import ViewModeToggle from '../layouts/ViewModeToggle';
+import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
 
 const { EMBEDDED } = SHOW_IMAGES;
 
 const MessagesSection = () => {
-    const [{ ShowImages = EMBEDDED, ConfirmLink = 1, DelaySendSeconds = 10, Shortcuts = 0 } = {}] = useMailSettings();
+    const [{ ViewMode = 0, StickyLabels = 0, ShowImages = EMBEDDED, ConfirmLink = 1, Shortcuts = 0 } = {}] =
+        useMailSettings();
     const [, setShortcuts] = useState(Shortcuts);
-    const [user, userLoading] = useUser();
     const [showImages, setShowImages] = useState(ShowImages);
     const handleChange = (newValue: number) => setShowImages(newValue);
     const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
+    const { createNotification } = useNotifications();
+    const { call } = useEventManager();
+    const api = useApi();
 
-    const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
+    const [loadingViewMode, withLoadingViewMode] = useLoading();
+    const [loadingStickyLabels, withLoadingStickyLabels] = useLoading();
 
     const handleChangeShowImage = (newValue: number) => setShowImages(newValue);
+
+    const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
     // Handle updates from the Event Manager.
     useEffect(() => {
         setShortcuts(Shortcuts);
     }, [Shortcuts]);
 
-    const showDailyEmailNotificationSection = !userLoading && !user.isSubUser && user.isPrivate;
+    const handleToggleStickyLabels = async (value: number) => {
+        await api(updateStickyLabels(value));
+        await call();
+        notifyPreferenceSaved();
+    };
+
+    const handleChangeViewMode = async (mode: VIEW_MODE) => {
+        if (mode === VIEW_MODE.SINGLE) {
+            await api(updateStickyLabels(STICKY_LABELS.OFF));
+        }
+        await api(updateViewMode(mode));
+        await call();
+        notifyPreferenceSaved();
+    };
 
     return (
         <>
@@ -93,7 +108,7 @@ const MessagesSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="requestLinkConfirmationToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Link confirmation`}</span>
+                        <span className="mr0-5">{c('Label').t`Confirm link URLs`}</span>
                         <Info
                             title={c('Tooltip')
                                 .t`When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.`}
@@ -104,50 +119,50 @@ const MessagesSection = () => {
                     <RequestLinkConfirmationToggle confirmLink={ConfirmLink} id="requestLinkConfirmationToggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
+
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="delaySendSecondsSelect" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Undo send`}</span>
+                    <label htmlFor="viewMode" className="text-semibold">
+                        <span className="mr0-5">{c('Label').t`Conversation grouping`}</span>
                         <Info
                             title={c('Tooltip')
-                                .t`This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.`}
+                                .t`Group emails in the same conversation together in your Inbox or display them separately.`}
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight>
-                    <DelaySendSecondsSelect id="delaySendSecondsSelect" delaySendSeconds={DelaySendSeconds} />
+
+                <SettingsLayoutRight className="pt0-5">
+                    <ViewModeToggle
+                        id="viewMode"
+                        viewMode={ViewMode}
+                        loading={loadingViewMode}
+                        onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
+                        data-testid="appearance:conversation-group-toggle"
+                    />
                 </SettingsLayoutRight>
             </SettingsLayout>
+
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="shortcutsToggle" className="text-semibold">
-                        {c('Title').t`Enable keyboard shortcuts`}
+                    <label htmlFor="stickyLabelsToggle" className="text-semibold">
+                        <span className="mr0-5">{c('Label').t`Sticky labels`}</span>
+                        <Info
+                            title={c('Tooltip')
+                                .t`When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.`}
+                        />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="flex flex-item-fluid flex-align-items-center">
-                    <ShortcutsToggle className="mr1" id="shortcutsToggle" />
-                    <Button
-                        shape="outline"
-                        onClick={() => setMailShortcutsModalOpen(true)}
-                        className="flex-item-noshrink flex-item-nogrow"
-                    >
-                        {c('Action').t`Show shortcuts`}
-                    </Button>
+                <SettingsLayoutRight className="pt0-5">
+                    <StickyLabelsToggle
+                        id="stickyLabelsToggle"
+                        stickyLabels={StickyLabels}
+                        loading={loadingStickyLabels}
+                        onToggle={(value) => withLoadingStickyLabels(handleToggleStickyLabels(value))}
+                        data-testid="appearance:sticky-labels-toggle"
+                        disabled={ViewMode !== VIEW_MODE.GROUP}
+                    />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            {showDailyEmailNotificationSection && (
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <DailyEmailNotificationToggleLabel />
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="pt0-5">
-                        <DailyEmailNotificationToggleInput />
-                        <SettingsLink className="ml0-5" path="/recovery" app={APPS.PROTONMAIL}>{c('Link')
-                            .t`Set email address`}</SettingsLink>
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-            )}
-            <MailShortcutsModal {...mailShortcutsProps} />
         </>
     );
 };
