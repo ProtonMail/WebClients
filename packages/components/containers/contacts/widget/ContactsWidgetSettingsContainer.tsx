@@ -22,7 +22,7 @@ const ContactsWidgetSettingsContainer = ({ onClose }: Props) => {
         <>
             {loading ? (
                 <div className="flex h100 pb2">
-                    <CircleLoader className="mauto color-primary" size="big" />
+                    <CircleLoader className="mauto color-primary" size="large" />
                 </div>
             ) : (
                 <div className="pl2 pr2 pt1 pb1 scroll-if-needed h100">

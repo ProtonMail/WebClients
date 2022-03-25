@@ -124,7 +124,7 @@ const EmailUnsubscribeContainer = () => {
         if (news === null) {
             return (
                 <div className="absolute-center text-center">
-                    <CircleLoader size="big" />
+                    <CircleLoader size="large" />
                 </div>
             );
         }

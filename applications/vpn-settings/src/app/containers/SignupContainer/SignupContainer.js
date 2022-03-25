@@ -230,7 +230,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
 
                     {isLoading || creatingAccount ? (
                         <div className="text-center mt2">
-                            <CircleLoader className="color-primary" size="big" />
+                            <CircleLoader className="color-primary" size="large" />
                             <TextLoader>
                                 {isLoading ? c('Info').t`Loading` : c('Info').t`Creating your account`}
                             </TextLoader>

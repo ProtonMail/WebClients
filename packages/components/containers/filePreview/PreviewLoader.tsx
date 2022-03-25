@@ -5,7 +5,7 @@ const PreviewLoader = () => {
     return (
         <div className="file-preview-container">
             <div className="absolute-center text-center w100">
-                <CircleLoader size="big" />
+                <CircleLoader size="large" />
                 <TextLoader>{c('Info').t`Loading preview`}</TextLoader>
             </div>
         </div>
