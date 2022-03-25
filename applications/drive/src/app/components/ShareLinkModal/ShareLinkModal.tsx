@@ -19,7 +19,6 @@ import {
 import ModalContentLoader from '../ModalContentLoader';
 import GeneratedLinkState from './GeneratedLinkState';
 import ErrorState from './ErrorState';
-import { useModal } from '../../hooks/util/useModal';
 
 const getLoadingMessage = (item: FileBrowserItem) => {
     if (item.SharedUrl) {
@@ -44,6 +43,7 @@ interface Props {
     modalTitleID?: string;
     item: FileBrowserItem;
     shareId: string;
+    open?: boolean;
 }
 
 enum ShareLinkModalState {
@@ -51,7 +51,7 @@ enum ShareLinkModalState {
     GeneratedLink,
 }
 
-function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, item, ...rest }: Props) {
+function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, item, open }: Props) {
     const [modalState, setModalState] = useState(ShareLinkModalState.Loading);
     const [isSharingFormDirty, setIsSharingFormDirty] = useState(false);
     const [deleting, withDeleting] = useLoading(false);
@@ -70,7 +70,6 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
     const { loadOrCreateShareUrl, updateShareUrl, deleteShareUrl } = useShareUrl();
     const { createNotification } = useNotifications();
     const { openConfirmModal } = useConfirm();
-    const { isOpen, onClose: closeModal } = useModal(onClose);
 
     useEffect(() => {
         if (shareUrlInfo?.ShareURL.ShareID) {
@@ -181,7 +180,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
             createNotification({
                 text: c('Notification').t`The link to your item was deleted`,
             });
-            closeModal?.();
+            onClose?.();
         };
 
         openConfirmModal({
@@ -205,7 +204,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
 
     const handleClose = () => {
         if (!isSharingFormDirty) {
-            closeModal?.();
+            onClose?.();
             return;
         }
 
@@ -213,7 +212,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
             title: c('Title').t`Discard changes?`,
             confirm: c('Title').t`Discard`,
             message: c('Info').t`You will lose all unsaved changes.`,
-            onConfirm: async () => closeModal?.(),
+            onConfirm: async () => onClose?.(),
             canUndo: true,
         });
     };
@@ -231,9 +230,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         }
 
         if (error || !shareUrlInfo || !item || !url) {
-            return (
-                <ErrorState modalTitleID={modalTitleID} onClose={closeModal} error={error} isCreationError={!item} />
-            );
+            return <ErrorState modalTitleID={modalTitleID} onClose={onClose} error={error} isCreationError={!item} />;
         }
 
         if (modalState === ShareLinkModalState.GeneratedLink) {
@@ -267,7 +264,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
     return (
         <ModalTwo
             as="form"
-            open={isOpen}
+            open={open}
             onClose={handleClose}
             onReset={(e: any) => {
                 e.preventDefault();
@@ -275,7 +272,6 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
             }}
             disableCloseOnEscape={saving || deleting}
             size="large"
-            {...rest}
         >
             {renderModalState()}
         </ModalTwo>
