@@ -1,7 +1,6 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { logError } from '../../utils';
 import { LinkType } from '../../links';
 import { WAIT_TIME } from '../constants';
 import {
@@ -35,7 +34,10 @@ export default function initDownloadLinkFolder(
             .then((size) => {
                 callbacks.onInit?.(size);
             })
-            .catch(logError);
+            .catch((err) => {
+                callbacks.onError?.(err);
+                archiveGenerator.cancel();
+            });
         const childrenIterator = folderLoader.iterateAllChildren();
         const linksWithStreamsIterator = concurrentIterator.iterate(childrenIterator, callbacks);
         archiveGenerator
@@ -43,7 +45,10 @@ export default function initDownloadLinkFolder(
             .then(() => {
                 callbacks.onFinish?.();
             })
-            .catch(logError);
+            .catch((err) => {
+                callbacks.onError?.(err);
+                archiveGenerator.cancel();
+            });
         return archiveGenerator.stream;
     };
 
