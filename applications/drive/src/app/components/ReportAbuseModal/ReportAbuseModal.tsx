@@ -1,15 +1,13 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 
+import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { noop } from '@proton/shared/lib/helpers/function';
 import {
     SelectTwo,
     useLoading,
     useNotifications,
     Option,
-    Label,
-    Field,
-    InputTwo,
     TextAreaTwo,
     ModalTwo,
     ModalTwoHeader,
@@ -17,30 +15,13 @@ import {
     ModalTwoFooter,
     PrimaryButton,
     Button,
+    InputFieldTwo,
+    useFormErrors,
+    Form,
 } from '@proton/components';
+
 import { FileCard } from './FileCard';
-import { SharedURLInfoDecrypted } from '../../hooks/drive/usePublicSharing';
-
-interface Props {
-    onClose?: () => void;
-    linkInfo: SharedURLInfoDecrypted;
-    password?: string;
-    onSubmit: (params: {
-        abuseCategory: string;
-        reporterEmail?: string;
-        reporterMessage?: string;
-        password?: string;
-        shareURL: string;
-        nodePassphrase: string;
-    }) => Promise<void>;
-}
-
-type AbuseCateroryType = 'spam' | 'copyright' | 'child-abuse' | 'stolen-data' | 'malware' | 'other';
-
-interface AbuseCategory {
-    type: AbuseCateroryType;
-    text: string;
-}
+import { AbuseCategory, AbuseCateroryType, AbuseFormProps } from './types';
 
 const ABUSE_CATEGORIES: AbuseCategory[] = [
     {
@@ -69,43 +50,40 @@ const ABUSE_CATEGORIES: AbuseCategory[] = [
     },
 ];
 
-const ReportAbuseModal = ({ onClose = noop, linkInfo, password, onSubmit, ...rest }: Props) => {
+const CATEGORIES_WITH_EMAIL_VERIFICATION: AbuseCateroryType[] = ['copyright', 'stolen-data'];
+
+const ReportAbuseModal = ({ onClose = noop, linkInfo, password, onSubmit, open }: AbuseFormProps) => {
     const [submitting, withSubmitting] = useLoading();
     const { createNotification } = useNotifications();
 
-    const [email, setEmail] = useState<string>();
-    const [comment, setComment] = useState<string>();
-    const [category, setCategory] = useState<AbuseCategory | null>(null);
+    const { validator, onFormSubmit } = useFormErrors();
+    const [model, setModel] = useState(() => {
+        return {
+            Category: null as null | AbuseCateroryType,
+            Email: '',
+            Comment: '',
+        };
+    });
 
     const INFO_TEXT = c('Info').t`Use this form to notify us of inappropriate, illegal,
     or otherwise malicious shared files. You are about to report:`;
 
-    const TEXTAREA_PLACEHOLDER = c('Label').t`Please provide full \
-    details to help us take appropriate action`;
+    const TEXTAREA_PLACEHOLDER = c('Label').t`Please provide full details to help us take appropriate action`;
 
-    const handleEmailChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-        setEmail(target.value);
+    const handleChange = (key: keyof typeof model) => {
+        return (value: any) => setModel({ ...model, [key]: value });
     };
 
-    const handleCommentChange = ({ target }: ChangeEvent<HTMLTextAreaElement>) => {
-        setComment(target.value);
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (category === null) {
-            createNotification({
-                text: c('Error').t`Category field is required`,
-                type: 'error',
-            });
+    const handleSubmit = async () => {
+        if (!onFormSubmit()) {
             return;
         }
 
         try {
             await onSubmit({
-                reporterEmail: email,
-                reporterMessage: comment,
-                abuseCategory: category!.type,
+                reporterEmail: model.Email,
+                reporterMessage: model.Comment,
+                abuseCategory: model.Category!,
                 shareURL: window.location.href,
                 password,
                 nodePassphrase: linkInfo.nodePassphrase,
@@ -118,66 +96,74 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, password, onSubmit, ...res
         }
     };
 
-    const hasRequiredInputFields = Boolean(
-        category && (category.type === 'copyright' || category.type === 'stolen-data')
-    );
+    const requiresAdditionalValidation =
+        CATEGORIES_WITH_EMAIL_VERIFICATION.includes(model.Category!) && model.Category !== null;
+    const emailValidation = requiresAdditionalValidation ? validator([emailValidator(model.Email)]) : null;
+    const commentValidation = requiresAdditionalValidation ? validator([requiredValidator(model.Comment)]) : null;
 
     return (
         <ModalTwo
             size="small"
-            as="form"
-            onSubmit={(e: React.FormEvent) => withSubmitting(handleSubmit(e)).catch(noop)}
+            as={Form}
+            onSubmit={() => withSubmitting(handleSubmit()).catch(noop)}
             onClose={onClose}
             onReset={onClose}
-            {...rest}
+            open={open}
         >
             <ModalTwoHeader title={c('Action').t`Submit report`} />
             <ModalTwoContent>
                 <p className="mt0">{INFO_TEXT}</p>
                 <FileCard linkInfo={linkInfo} className="mb1" />
-                <Field className="w100 mb1">
-                    <Label className="mb0-5 block">{c('Label').t`Category`}</Label>
-                    <SelectTwo
+                <div className="mb0-5">
+                    <InputFieldTwo
                         aria-required
+                        as={SelectTwo}
                         autoFocus
-                        value={category}
-                        onChange={({ value }) => setCategory(value)}
+                        disabled={submitting}
+                        error={validator([requiredValidator(model.Category)])}
+                        id="Category"
+                        label={c('Label').t`Category`}
+                        onValue={handleChange('Category')}
                         placeholder={c('Label').t`Select type of abuse`}
+                        value={model.Category}
                     >
                         {ABUSE_CATEGORIES.map((option) => (
-                            <Option title={option.text} value={option} key={option.type} />
+                            <Option title={option.text} value={option.type} key={option.type} />
                         ))}
-                    </SelectTwo>
-                </Field>
-                <Field className="w100 mb1">
-                    <Label className="mb0-5 block">{c('Label').t`Email`}</Label>
-                    <InputTwo
-                        id="link-name"
-                        value={email}
-                        type="email"
-                        placeholder={c('Placeholder').t`Enter your email address`}
+                    </InputFieldTwo>
+                </div>
+                <div className="mb0-5">
+                    <InputFieldTwo
                         data-testid="report-abuse-email"
-                        onChange={handleEmailChange}
-                        required={hasRequiredInputFields}
+                        disabled={submitting}
+                        error={emailValidation}
+                        id="LinkName"
+                        label={c('Label').t`Email`}
+                        onValue={handleChange('Email')}
+                        placeholder={c('Placeholder').t`Enter your email address`}
+                        type="email"
+                        value={model.Email}
                     />
-                </Field>
-                <Field className="w100 mb2">
-                    <Label className="mb0-5 block">{c('Label').t`Comment`}</Label>
-                    <TextAreaTwo
-                        rows={2}
-                        className="field w100 field-pristine"
+                </div>
+                <div className="mb0-5">
+                    <InputFieldTwo
+                        as={TextAreaTwo}
+                        disabled={submitting}
+                        error={commentValidation}
+                        id="Comment"
+                        label={c('Label').t`Comment`}
+                        onValue={handleChange('Comment')}
                         placeholder={TEXTAREA_PLACEHOLDER}
-                        value={comment}
-                        onChange={handleCommentChange}
-                        required={hasRequiredInputFields}
+                        rows={2}
+                        value={model.Comment}
                     />
-                </Field>
+                </div>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button color="weak" type="reset" disabled={submitting} onClick={onClose}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton type="submit" disabled={submitting} onClick={handleSubmit}>
+                <PrimaryButton type="submit" loading={submitting}>
                     {c('Action').t`Submit`}
                 </PrimaryButton>
             </ModalTwoFooter>
