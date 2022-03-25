@@ -9,6 +9,7 @@ interface Props extends Omit<PriceProps, 'suffix' | 'children'> {
     amount?: number;
     cycle?: Cycle;
     currency?: Currency;
+    suffix?: string;
 }
 
 const PlanPrice = ({
@@ -16,10 +17,11 @@ const PlanPrice = ({
     amount = 0,
     cycle = DEFAULT_CYCLE,
     currency = DEFAULT_CURRENCY,
+    suffix,
     ...rest
 }: Props) => {
     return (
-        <Price currency={currency} suffix={c('Suffix').t`per month`} {...rest}>
+        <Price currency={currency} suffix={suffix || c('Suffix').t`per month`} {...rest}>
             {(quantity * amount) / cycle}
         </Price>
     );
