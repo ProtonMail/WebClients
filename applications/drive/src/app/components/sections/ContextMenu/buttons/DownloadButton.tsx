@@ -23,6 +23,8 @@ const DownloadButton = ({ shareId, items, close }: Props) => {
                 name: item.Name,
                 mimeType: item.MIMEType,
                 size: item.Size,
+                signatureAddress: item.SignatureAddress,
+                signatureIssues: item.SignatureIssues,
             }))
         );
     };

@@ -67,6 +67,28 @@ export const adjustName = (index: number, namePart: string, extension?: string) 
     return [newNamePart, extension].filter(isTruthy).join('.');
 };
 
+/**
+ * isEncryptedLinkSame returns whether the encrypted content and keys are
+ * the same, so we might clear signature issues and try decryption again,
+ * for example.
+ */
+export function isEncryptedLinkSame(original: EncryptedLink, newLink: EncryptedLink): boolean {
+    return (
+        original.nodeKey === newLink.nodeKey &&
+        original.nodePassphrase === newLink.nodePassphrase &&
+        original.nodePassphraseSignature === newLink.nodePassphraseSignature &&
+        original.nodeHashKey === newLink.nodeHashKey &&
+        original.contentKeyPacket === newLink.contentKeyPacket &&
+        original.signatureAddress === newLink.signatureAddress &&
+        isDecryptedLinkSame(original, newLink)
+    );
+}
+
+/**
+ * isDecryptedLinkSame returns whether the encrypted content (not keys) is
+ * the same and thus we can say decrypted content is also the same, so we
+ * might skip decryption if we already have decrypted content, for example.
+ */
 export function isDecryptedLinkSame(original: EncryptedLink, newLink: EncryptedLink): boolean {
     return (
         original.parentLinkId === newLink.parentLinkId &&

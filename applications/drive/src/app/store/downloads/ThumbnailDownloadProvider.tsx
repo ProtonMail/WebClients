@@ -67,29 +67,24 @@ export const ThumbnailsDownloadProvider = ({ children }: any) => {
         const ac = new AbortController();
         controls.current[downloadId] = ac;
 
-        return loadLinkThumbnail(
-            ac.signal,
-            shareId,
-            linkId,
-            async (downloadUrl: string, downloadToken: string): Promise<Uint8Array[]> => {
-                const { contents, abortController } = await downloadThumbnail(
-                    ac.signal,
-                    shareId,
-                    linkId,
-                    downloadUrl,
-                    downloadToken
-                );
+        return loadLinkThumbnail(ac.signal, shareId, linkId, async (downloadUrl: string, downloadToken: string) => {
+            const { contents, abortController, verifiedPromise } = await downloadThumbnail(
+                ac.signal,
+                shareId,
+                linkId,
+                downloadUrl,
+                downloadToken
+            );
 
-                ac.signal.addEventListener('abort', () => {
-                    abortController.abort();
-                });
-                if (ac.signal.aborted) {
-                    abortController.abort();
-                }
-
-                return contents;
+            ac.signal.addEventListener('abort', () => {
+                abortController.abort();
+            });
+            if (ac.signal.aborted) {
+                abortController.abort();
             }
-        )
+
+            return { contents, verifiedPromise };
+        })
             .catch(logError)
             .finally(() => {
                 delete controls.current[downloadId];

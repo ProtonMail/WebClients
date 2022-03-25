@@ -5,6 +5,7 @@ import { textToClipboard, isSafari } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import useConfirm from '../../hooks/util/useConfirm';
+import { useDownload } from '../downloads';
 import { useLinkActions, useLinksActions } from '../links';
 import { useShareUrl } from '../shares';
 import { useErrorHandler } from '../utils';
@@ -26,6 +27,7 @@ export default function useAction() {
         createDeletedItemsNotifications,
         createDeletedSharedLinksNotifications,
     } = useListNotifications();
+    const { checkFirstBlockSignature } = useDownload();
     const link = useLinkActions();
     const links = useLinksActions();
     const shareUrl = useShareUrl();
@@ -82,6 +84,27 @@ export default function useAction() {
                 );
                 throw e;
             });
+    };
+
+    const checkLinkSignatures = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
+        const [metaSignatureIssues, blockSignatureIssue] = await Promise.all([
+            link.checkLinkMetaSignatures(abortSignal, shareId, linkId),
+            // To avoid the need to download the whole file we assume that
+            // either all blocks fail, or none, at least in most cases. So it
+            // should be enough to check only the first block. During download
+            // we check every single block, so user is still protected.
+            checkFirstBlockSignature(abortSignal, shareId, linkId),
+        ]).catch((e) => {
+            showErrorNotification(e, <span>{c('Notification').t`Item failed to be verified`}</span>);
+            throw e;
+        });
+        if (!metaSignatureIssues && !blockSignatureIssue) {
+            return;
+        }
+        return {
+            ...metaSignatureIssues,
+            ...blockSignatureIssue,
+        };
     };
 
     const moveLinks = async (
@@ -266,6 +289,7 @@ export default function useAction() {
     return {
         createFolder,
         renameLink,
+        checkLinkSignatures,
         moveLinks,
         trashLinks,
         restoreLinks,

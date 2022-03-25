@@ -45,7 +45,8 @@ const CollapsingBreadcrumbs = ({ breadcrumbs }: Props) => {
     return (
         <ul className="collapsing-breadcrumbs unstyled">
             {groupedBreadcrumbs.map((group, i, arr) => {
-                const { key, text, highlighted, ...breadcrumbProps } = group instanceof Array ? group[0] : group;
+                const { key, text, richText, highlighted, ...breadcrumbProps } =
+                    group instanceof Array ? group[0] : group;
                 const isLast = i === arr.length - 1;
 
                 // Don't group single breadcrumbs, that would look stupid
@@ -54,8 +55,12 @@ const CollapsingBreadcrumbs = ({ breadcrumbs }: Props) => {
                         {group instanceof Array && group.length > 1 ? (
                             <CollapsedBreadcrumbs breadcrumbs={group} />
                         ) : (
-                            <Breadcrumb {...omit(breadcrumbProps, ['collapsedText'])} active={isLast || highlighted}>
-                                {text}
+                            <Breadcrumb
+                                title={text}
+                                {...omit(breadcrumbProps, ['collapsedText'])}
+                                active={isLast || highlighted}
+                            >
+                                {richText || text}
                             </Breadcrumb>
                         )}
                         {!isLast && (

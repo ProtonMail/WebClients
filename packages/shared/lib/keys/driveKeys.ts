@@ -64,6 +64,19 @@ interface UnsignedDecryptionPayload {
     privateKey: OpenPGPKey | OpenPGPKey[];
 }
 
+interface SignedDecryptionPayload extends UnsignedDecryptionPayload {
+    publicKey: OpenPGPKey | OpenPGPKey[];
+}
+
+export const decryptSigned = async ({ armoredMessage, privateKey, publicKey }: SignedDecryptionPayload) => {
+    const { data, verified } = await decryptMessage({
+        message: await getMessage(armoredMessage),
+        privateKeys: privateKey,
+        publicKeys: publicKey,
+    });
+    return { data, verified };
+};
+
 /**
  * Decrypts unsigned armored message, in the context of drive it's share's passphrase and folder's contents.
  */

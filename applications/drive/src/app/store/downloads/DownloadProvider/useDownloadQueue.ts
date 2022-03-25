@@ -47,7 +47,7 @@ export default function useDownloadQueue() {
         (
             idOrFilter: UpdateFilter,
             newStateOrCallback: UpdateState,
-            { size, error }: UpdateData = {},
+            { size, error, signatureIssueLink, signatureStatus }: UpdateData = {},
             callback?: UpdateCallback
         ) => {
             const filter = convertFilterToFunction(idOrFilter);
@@ -65,6 +65,8 @@ export default function useDownloadQueue() {
                         download.meta.size = size;
                     }
                     download.error = error;
+                    download.signatureIssueLink = signatureIssueLink;
+                    download.signatureStatus = signatureStatus;
                 }
                 return download;
             };

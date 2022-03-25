@@ -28,6 +28,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL): EncryptedLi
             ? {
                   id: link.FileProperties.ActiveRevision.ID,
                   size: link.FileProperties.ActiveRevision.Size,
+                  signatureAddress: link.FileProperties.ActiveRevision.SignatureAddress,
                   thumbnail: link.FileProperties.ActiveRevision.ThumbnailURLInfo
                       ? {
                             bareUrl: link.FileProperties.ActiveRevision.ThumbnailURLInfo.BareURL,
