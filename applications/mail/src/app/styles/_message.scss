@@ -279,6 +279,11 @@
 			z-index: 2;
 		}
 	}
+
+	// only for message details, recipient should take full width
+	.message-detail-modal-container & {
+		width: 100%;
+	}
 }
 
 // container from/CC/BCC
