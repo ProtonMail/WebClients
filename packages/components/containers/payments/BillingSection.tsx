@@ -1,7 +1,13 @@
 import { c, msgid } from 'ttag';
 import { PLAN_NAMES, CYCLE, APPS, PLANS } from '@proton/shared/lib/constants';
 import { unique } from '@proton/shared/lib/helpers/array';
-import { getHasLegacyPlans, getMonthlyBaseAmount, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import {
+    getHasB2BPlan,
+    getHasLegacyPlans,
+    getMonthlyBaseAmount,
+    hasVisionary,
+} from '@proton/shared/lib/helpers/subscription';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { Cycle } from '@proton/shared/lib/interfaces';
@@ -17,6 +23,19 @@ import PlanPrice from './subscription/PlanPrice';
 import CycleDiscountBadge from './CycleDiscountBadge';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
+
+const getCycleText = (cycle: Cycle) => {
+    if (cycle === MONTHLY) {
+        return c('Billing cycle').t`1 month`;
+    }
+    if (cycle === YEARLY) {
+        return c('Billing cycle').t`12 months`;
+    }
+    if (cycle === TWO_YEARS) {
+        return c('Billing cycle').t`24 months`;
+    }
+    return '';
+};
 
 const getBillingText = (cycle: Cycle, periodEnd: number) => {
     const formattedEndTime = <Time key="time-text">{periodEnd}</Time>;
@@ -60,6 +79,7 @@ const BillingSection = () => {
     const discount = Amount / Cycle - subTotal;
     const spaceBonus = organization?.BonusSpace;
     const vpnBonus = organization?.BonusVPN;
+    const maxUsers = organization?.MaxMembers;
 
     const priceRowClassName = 'flex w100 mb1';
     const priceLabelClassName = 'flex-item-fluid';
@@ -152,6 +172,13 @@ const BillingSection = () => {
     );
 
     const hasLegacyPlans = getHasLegacyPlans(subscription);
+    const hasB2BPlan = getHasB2BPlan(subscription);
+    const cycleText = getCycleText(Cycle);
+
+    const usersText =
+        hasB2BPlan && maxUsers
+            ? c('Title').ngettext(msgid`${maxUsers} user`, `${maxUsers} users`, maxUsers)
+            : undefined;
 
     return (
         <SettingsSection>
@@ -160,14 +187,16 @@ const BillingSection = () => {
                     {mailPlan ? (
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>
-                                {getHasLegacyPlans(subscription) ? mailAppName : null}{' '}
-                                {PLAN_NAMES[plan.Name as keyof typeof PLAN_NAMES]}
+                                {[PLAN_NAMES[plan.Name as keyof typeof PLAN_NAMES], usersText, cycleText]
+                                    .filter(isTruthy)
+                                    .join(' - ')}
                             </div>
                             <div className="text-right">
                                 <PlanPrice
                                     amount={getMonthlyBaseAmount(plan.Name, plans, subscription)}
                                     currency={Currency}
                                     cycle={MONTHLY}
+                                    suffix={hasB2BPlan ? c('Suffix').t`per user / month` : undefined}
                                 />
                             </div>
                         </div>
@@ -180,8 +209,7 @@ const BillingSection = () => {
                     {mailPlan ? (
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>
-                                {getHasLegacyPlans(subscription) ? mailAppName : null}{' '}
-                                {PLAN_NAMES[mailPlan.Name as keyof typeof PLAN_NAMES]}
+                                {`${mailAppName} ${PLAN_NAMES[mailPlan.Name as keyof typeof PLAN_NAMES]}`}
                             </div>
                             <div className="text-right">
                                 <PlanPrice
@@ -200,8 +228,7 @@ const BillingSection = () => {
                     {vpnPlan ? (
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>
-                                {getHasLegacyPlans(subscription) ? vpnAppName : null}{' '}
-                                {PLAN_NAMES[vpnPlan.Name as keyof typeof PLAN_NAMES]}
+                                {`${vpnAppName} ${PLAN_NAMES[vpnPlan.Name as keyof typeof PLAN_NAMES]}`}
                             </div>
                             <div className="text-right">
                                 <PlanPrice
