@@ -1,7 +1,9 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react';
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from 'react';
 import { HistoricThemeTypes, PROTON_THEMES_MAP, ThemeMigrationMap, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { APPS } from '@proton/shared/lib/constants';
+import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
+import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 
 import { useConfig } from '../../hooks';
 
@@ -38,10 +40,24 @@ const getThemeMigration = (theme: ThemeTypes | HistoricThemeTypes): ThemeTypes |
     return getThemeMigration(migration);
 };
 
+const THEME_COOKIE_NAME = 'Theme';
+
+const storedTheme = getCookie(THEME_COOKIE_NAME);
+
 const ThemeProvider = ({ children }: Props) => {
     const { APP_NAME } = useConfig();
 
-    const [theme, setTheme] = useState<ThemeTypes>(ThemeTypes.Default);
+    const [theme, setTheme] = useState<ThemeTypes>(storedTheme ? Number(storedTheme) : ThemeTypes.Default);
+
+    useEffect(() => {
+        setCookie({
+            cookieName: THEME_COOKIE_NAME,
+            cookieValue: String(theme),
+            cookieDomain: getSecondLevelDomain(window.location.hostname),
+            path: '/',
+            expirationDate: 'max',
+        });
+    }, [theme]);
 
     let computedTheme = getThemeMigration(theme) || ThemeTypes.Default;
 
