@@ -7,7 +7,6 @@ import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser
 
 import { SignatureIssues, useActions, useShareUrl } from '../store';
 import { formatAccessCount } from '../utils/formatters';
-import { useModal } from '../hooks/util/useModal';
 import UserNameCell from './FileBrowser/ListView/Cells/UserNameCell';
 import LocationCell from './FileBrowser/ListView/Cells/LocationCell';
 import DescriptiveTypeCell from './FileBrowser/ListView/Cells/DescriptiveTypeCell';
@@ -21,6 +20,7 @@ interface Props {
     shareId: string;
     item: FileBrowserItem;
     onClose?: () => void;
+    open?: boolean;
 }
 
 interface RowProps {
@@ -39,11 +39,10 @@ const DetailsRow = ({ label, children }: RowProps) => {
     );
 };
 
-const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
+const DetailsModal = ({ shareId, item, onClose, open }: Props) => {
     const isFile = item.Type === LinkType.FILE;
     const title = isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
     const isShared = item.SharedUrl && !item.UrlsExpired ? c('Info').t`Yes` : c('Info').t`No`;
-    const { isOpen, onClose: handleModalClose } = useModal(onClose);
 
     const { checkLinkSignatures } = useActions();
     const [signatureIssues, setSignatureIssues] = useState<SignatureIssues>();
@@ -79,7 +78,7 @@ const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
     }, [shareId, item.LinkID, item.ShareUrlShareID]);
 
     return (
-        <ModalTwo onClose={handleModalClose} open={isOpen} {...rest} size="large">
+        <ModalTwo onClose={onClose} open={open} size="large">
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
                 <SignatureAlert
@@ -124,7 +123,7 @@ const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={handleModalClose}>{c('Action').t`Close`}</Button>
+                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

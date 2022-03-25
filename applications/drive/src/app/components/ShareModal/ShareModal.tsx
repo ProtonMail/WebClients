@@ -11,9 +11,10 @@ interface Props {
     shareId: string;
     item: FileBrowserItem;
     onClose?: () => void;
+    open?: boolean;
 }
 
-function ShareModal({ shareId, item, onClose, ...rest }: Props) {
+function ShareModal({ shareId, item, onClose, open }: Props) {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
     const [shareInfo, setShareInfo] = useState<string>();
@@ -51,7 +52,7 @@ function ShareModal({ shareId, item, onClose, ...rest }: Props) {
     };
 
     return (
-        <ModalTwo onClose={onClose} {...rest}>
+        <ModalTwo onClose={onClose} open={open}>
             <ModalTwoHeader title={c('Title').t`Manage share`} />
             <ModalTwoContent>{renderModalState()}</ModalTwoContent>
         </ModalTwo>
