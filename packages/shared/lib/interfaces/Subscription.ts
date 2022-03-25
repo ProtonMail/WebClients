@@ -12,6 +12,7 @@ export interface Pricing {
 export type MaxKeys = 'MaxDomains' | 'MaxAddresses' | 'MaxSpace' | 'MaxMembers' | 'MaxVPN' | 'MaxTier';
 
 export type Quantity = number;
+
 export interface Plan {
     ID: string;
     Type: PLAN_TYPES;
@@ -23,6 +24,7 @@ export interface Plan {
     MaxDomains: number;
     MaxAddresses: number;
     MaxSpace: number;
+    MaxCalendars: number;
     MaxMembers: number;
     MaxVPN: number;
     MaxTier: number;
@@ -49,17 +51,13 @@ export interface SubscriptionModel extends Subscription {
     isManagedByMozilla: boolean;
 }
 
-export type PlanIDs = Partial<
-    {
-        [planName in PLANS | ADDON_NAMES]: Quantity;
-    }
->;
+export type PlanIDs = Partial<{
+    [planName in PLANS | ADDON_NAMES]: Quantity;
+}>;
 
-export type PlansMap = Partial<
-    {
-        [planName in PLANS | ADDON_NAMES]: Plan;
-    }
->;
+export type PlansMap = Partial<{
+    [planName in PLANS | ADDON_NAMES]: Plan;
+}>;
 
 export interface Additions {
     [ADDON_NAMES.ADDRESS]?: number;
