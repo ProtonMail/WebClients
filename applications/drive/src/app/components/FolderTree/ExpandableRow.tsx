@@ -40,7 +40,11 @@ const ExpandableRow = ({
     return (
         <>
             <tr
-                className={classnames(['folder-tree-list-item cursor-pointer', isSelected && 'bg-strong'])}
+                className={classnames([
+                    'folder-tree-list-item',
+                    !isDisabled && 'cursor-pointer',
+                    isSelected && 'bg-strong',
+                ])}
                 onClick={handleSelect}
             >
                 <td style={paddingElement} className="flex flex-align-items-center flex-nowrap m0 pl-custom">
