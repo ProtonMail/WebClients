@@ -1,19 +1,19 @@
-import { useState, ReactNode } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 
 import {
     useLoading,
     PrimaryButton,
-    DialogModal,
-    HeaderModal,
-    ContentModal,
     InnerModal,
-    FooterModal,
     UnderlineButton,
     useModals,
     useActiveBreakpoint,
     Button,
     Icon,
+    ModalTwoHeader,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
 } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
@@ -23,6 +23,7 @@ import { selectMessageForItemList } from '../sections/helpers';
 import CreateFolderModal from '../CreateFolderModal';
 import ModalContentLoader from '../ModalContentLoader';
 import { DecryptedLink, TreeItem, useFolderTree, useActions } from '../../store';
+import { useModal } from '../../hooks/util/useModal';
 
 interface Props {
     shareId: string;
@@ -34,6 +35,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...rest }: Props) 
     const { createModal } = useModals();
     const { moveLinks } = useActions();
     const { rootFolder, expand, toggleExpand } = useFolderTree(shareId, { rootExpanded: true });
+    const { isOpen, onClose: handleModalClose } = useModal(onClose);
 
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
@@ -78,7 +80,6 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...rest }: Props) 
         );
     };
 
-    const modalTitleID = 'MoveToFolderId';
     const itemsToMove = selectedItems.map((item) => item.LinkID);
     const itemsToMoveCount = itemsToMove.length;
     const messages = {
@@ -123,7 +124,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...rest }: Props) 
             />
         ),
         footer: (
-            <FooterModal>
+            <ModalTwoFooter>
                 <div className="flex flex-justify-space-between w100 flex-nowrap">
                     {isNarrow ? (
                         <Button
@@ -151,7 +152,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...rest }: Props) 
                         </PrimaryButton>
                     </div>
                 </div>
-            </FooterModal>
+            </ModalTwoFooter>
         ) as ReactNode,
     };
 
@@ -171,26 +172,32 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...rest }: Props) 
     }
 
     return (
-        <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
-            <HeaderModal modalTitleID={modalTitleID} hasClose={!loading} onClose={onClose}>
-                {modalContents.title}
-            </HeaderModal>
+        <ModalTwo
+            onClose={handleModalClose}
+            open={isOpen}
+            size="large"
+            as="form"
+            onSubmit={(e: React.FormEvent) => {
+                e.preventDefault();
+                withLoading(handleSubmit()).catch(console.error);
+            }}
+            onReset={() => {
+                handleModalClose?.();
+            }}
+            {...rest}
+        >
+            <ModalTwoHeader title={modalContents.title} closeButtonProps={{ disabled: loading }} />
             {!rootFolder || !rootFolder.isLoaded ? (
                 <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
             ) : (
-                <ContentModal
-                    onSubmit={() => {
-                        withLoading(handleSubmit()).catch(console.error);
-                    }}
-                    onReset={() => {
-                        onClose?.();
-                    }}
-                >
-                    <InnerModal>{modalContents.content}</InnerModal>
+                <>
+                    <ModalTwoContent>
+                        <InnerModal>{modalContents.content}</InnerModal>
+                    </ModalTwoContent>
                     {modalContents.footer}
-                </ContentModal>
+                </>
             )}
-        </DialogModal>
+        </ModalTwo>
     );
 };
 

@@ -1,6 +1,14 @@
 import { c } from 'ttag';
 
-import { HeaderModal, InnerModal, FooterModal, Button, Alert, PrimaryButton } from '@proton/components';
+import {
+    InnerModal,
+    Button,
+    Alert,
+    PrimaryButton,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+} from '@proton/components';
 
 import keyAndFileSvg from '@proton/styles/assets/img/placeholders/file-recovery.svg';
 
@@ -11,15 +19,12 @@ interface Props {
 }
 
 const FilesRecoveryState = ({ onRecovery, onClose, recovering }: Props) => {
-    const modalTitleID = 'files-recovery-modal';
     const title = c('Title').t`Restore your files`;
 
     return (
         <>
-            <HeaderModal hasClose={!recovering} modalTitleID={modalTitleID} onClose={onClose}>
-                {c('Title').t`File recovery process`}
-            </HeaderModal>
-            <div className="modal-content">
+            <ModalTwoHeader title={c('Title').t`File recovery process`} closeButtonProps={{ disabled: recovering }} />
+            <ModalTwoContent>
                 <InnerModal>
                     <div className="p1 flex w100">
                         <img src={keyAndFileSvg} alt={title} className="w50 mauto" />
@@ -29,16 +34,16 @@ const FilesRecoveryState = ({ onRecovery, onClose, recovering }: Props) => {
                         <div>{c('Info').jt`Recovery process might take some time.`}</div>
                     </Alert>
                 </InnerModal>
-                <FooterModal>
-                    <div className="flex flex-justify-space-between w100 flex-nowrap">
-                        <Button disabled={recovering} autoFocus className="min-w7e" onClick={onClose}>{c('Action')
-                            .t`Cancel`}</Button>
-                        <PrimaryButton loading={recovering} className="min-w7e" onClick={onRecovery}>
-                            {c('Action').t`Start recovering`}
-                        </PrimaryButton>
-                    </div>
-                </FooterModal>
-            </div>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <div className="flex flex-justify-space-between w100 flex-nowrap">
+                    <Button disabled={recovering} autoFocus className="min-w7e" onClick={onClose}>{c('Action')
+                        .t`Cancel`}</Button>
+                    <PrimaryButton loading={recovering} className="min-w7e" onClick={onRecovery}>
+                        {c('Action').t`Start recovering`}
+                    </PrimaryButton>
+                </div>
+            </ModalTwoFooter>
         </>
     );
 };
