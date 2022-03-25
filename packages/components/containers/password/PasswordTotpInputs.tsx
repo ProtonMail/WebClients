@@ -34,6 +34,9 @@ const PasswordTotpInputs = ({ password, setPassword, passwordError, totp, setTot
                 <InputFieldTwo
                     required
                     autoFocus={!setPassword}
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    autoComplete="one-time-code"
                     id="totp"
                     value={totp}
                     error={totpError}
