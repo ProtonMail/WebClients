@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { classnames } from '../../helpers';
 import { Icon } from '../icon';
-import { Button } from '../button';
+import { Button, ButtonProps } from '../button';
 import { Tooltip } from '../tooltip';
 import { Vr } from '../vr';
 import { ModalContext } from './Modal';
@@ -25,9 +25,13 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
      *
      */
     actions?: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element];
+    /**
+     * Props forwarded to the close Button component
+     */
+    closeButtonProps?: ButtonProps;
 }
 
-const ModalHeader = ({ title, subline, actions, ...rest }: ModalHeaderProps) => {
+const ModalHeader = ({ title, subline, actions, closeButtonProps, ...rest }: ModalHeaderProps) => {
     const { id, onClose, size } = useContext(ModalContext);
 
     const [firstAction, secondAction] = Array.isArray(actions) ? actions : [actions];
@@ -65,7 +69,7 @@ const ModalHeader = ({ title, subline, actions, ...rest }: ModalHeaderProps) => 
                 )}
 
                 <Tooltip title={c('Action').t`Close modal`}>
-                    <Button className="flex-item-noshrink" icon shape="ghost" onClick={onClose}>
+                    <Button className="flex-item-noshrink" icon shape="ghost" onClick={onClose} {...closeButtonProps}>
                         <Icon className="modal-close-icon" name="xmark" />
                     </Button>
                 </Tooltip>

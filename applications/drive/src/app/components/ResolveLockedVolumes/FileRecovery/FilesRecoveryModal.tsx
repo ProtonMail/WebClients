@@ -1,17 +1,17 @@
 import { c } from 'ttag';
 
-import { DialogModal, useLoading, useNotifications } from '@proton/components';
+import { ModalTwo, useLoading, useNotifications } from '@proton/components';
 
 import { useLockedVolume } from '../../../store';
 import FilesRecoveryState from './FilesRecoveryState';
+import { useModal } from '../../../hooks/util/useModal';
 
 interface Props {
     onClose?: () => void;
 }
 
 const FilesRecoveryModal = ({ onClose, ...rest }: Props) => {
-    const modalTitleID = 'files-recovery-modal';
-
+    const { isOpen, onClose: handleClose } = useModal();
     const { restoreVolumes } = useLockedVolume();
     const [recovering, withRecovering] = useLoading();
     const { createNotification } = useNotifications();
@@ -31,9 +31,9 @@ const FilesRecoveryModal = ({ onClose, ...rest }: Props) => {
     };
 
     return (
-        <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
+        <ModalTwo onClose={handleClose} open={isOpen} {...rest}>
             <FilesRecoveryState recovering={recovering} onRecovery={handleRecoveryClick} onClose={onClose} />
-        </DialogModal>
+        </ModalTwo>
     );
 };
 

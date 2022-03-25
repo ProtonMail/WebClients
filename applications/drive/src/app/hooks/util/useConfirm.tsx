@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { useModals, Alert, ConfirmModal, ErrorButton } from '@proton/components';
+import { ModalSize, useModals } from '@proton/components';
+import { ConfirmationModal } from '../../components/modals/ConfirmationModal';
 
 const useConfirm = () => {
     const { createModal } = useModals();
@@ -12,13 +13,15 @@ const useConfirm = () => {
         onConfirm,
         title,
         canUndo = false,
+        size,
     }: {
         title: string;
         confirm: string;
         message: string;
-        onConfirm: () => any;
+        onConfirm: () => Promise<any>;
         onCancel?: () => any;
         canUndo?: boolean;
+        size?: ModalSize;
     }) => {
         const content = (
             <>
@@ -29,17 +32,9 @@ const useConfirm = () => {
         );
 
         createModal(
-            <ConfirmModal
-                small={false}
-                title={title}
-                confirm={<ErrorButton type="submit">{confirm}</ErrorButton>}
-                onConfirm={onConfirm}
-                onClose={onCancel}
-            >
-                <Alert className="mb1" type="error">
-                    {content}
-                </Alert>
-            </ConfirmModal>
+            <ConfirmationModal title={title} submitText={confirm} size={size} onSubmit={onConfirm} onClose={onCancel}>
+                {content}
+            </ConfirmationModal>
         );
     };
 
