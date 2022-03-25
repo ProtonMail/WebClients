@@ -254,8 +254,15 @@ export const parseToVCard = (vcard: string): VCardContact => {
 
 export const internalValueToIcalValue = (name: string, type: string | undefined, value: any) => {
     if (name === 'adr') {
-        const [{ postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country }] =
-            value as VCardAddress[];
+        const {
+            postOfficeBox = '',
+            extendedAddress = '',
+            streetAddress = '',
+            locality = '',
+            region = '',
+            postalCode = '',
+            country = '',
+        } = value as VCardAddress;
         return [[postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country]];
     }
     if (name === 'bday' || name === 'anniversary') {

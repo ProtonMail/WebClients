@@ -5,22 +5,17 @@ import { getContact, addContacts, deleteContacts } from '@proton/shared/lib/api/
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import chunk from '@proton/utils/chunk';
-import { prepareContact as decrypt } from '@proton/shared/lib/contacts/decrypt';
-import { prepareContact as encrypt } from '@proton/shared/lib/contacts/encrypt';
+import { prepareVCardContact as decrypt } from '@proton/shared/lib/contacts/decrypt';
+import { prepareVCardContact as encrypt } from '@proton/shared/lib/contacts/encrypt';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { API_SAFE_INTERVAL, ADD_CONTACTS_MAX_SIZE, OVERWRITE, CATEGORIES } from '@proton/shared/lib/contacts/constants';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
-import {
-    Contact as ContactType,
-    ContactProperties,
-    SimpleEncryptedContact,
-} from '@proton/shared/lib/interfaces/contacts';
-import { merge } from '@proton/shared/lib/contacts/helpers/merge';
+import { Contact as ContactType, SimpleEncryptedContact } from '@proton/shared/lib/interfaces/contacts';
 import { splitEncryptedContacts } from '@proton/shared/lib/contacts/helpers/import';
 import { combineProgress } from '@proton/shared/lib/contacts/helpers/progress';
-
-import { Alert, DynamicProgress } from '../../../components';
-import { useApi, useLoading } from '../../../hooks';
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { merge } from '@proton/shared/lib/contacts/helpers/merge';
+import { Alert, Button, DynamicProgress, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { useApi, useLoading, useUserKeys } from '../../../hooks';
 
 const { OVERWRITE_CONTACT } = OVERWRITE;
 const { INCLUDE, IGNORE } = CATEGORIES;
@@ -29,26 +24,31 @@ const { SINGLE_SUCCESS } = API_CODES;
 type Signal = { signal: AbortSignal };
 
 interface Props {
-    userKeysList: DecryptedKey[];
-    alreadyMerged?: ContactProperties;
+    alreadyMerged?: VCardContact;
+    mergeFinished: boolean;
+    onFinish: () => void;
+    onMerged?: () => void;
+    onClose?: () => void;
     beMergedModel: { [ID: string]: string[] };
     beDeletedModel: { [ID: string]: string };
     totalBeMerged: number;
     totalBeDeleted: number;
-    onFinish: () => void;
 }
 
-const MergingModalContent = ({
-    userKeysList,
+const ContactMergingContent = ({
     alreadyMerged,
+    mergeFinished,
+    onFinish,
+    onMerged,
+    onClose,
     beMergedModel = {},
     beDeletedModel = {},
     totalBeMerged = 0,
     totalBeDeleted = 0,
-    onFinish,
 }: Props) => {
     const api = useApi();
-    const { privateKeys, publicKeys } = useMemo(() => splitKeys(userKeysList), []);
+    const [userKeysList] = useUserKeys();
+    const { privateKeys, publicKeys } = useMemo(() => splitKeys(userKeysList), [userKeysList]);
 
     const [loading, withLoading] = useLoading(true);
     const [model, setModel] = useState<{
@@ -65,6 +65,8 @@ const MergingModalContent = ({
         deleted: [],
     });
 
+    const isDeleteOnly = totalBeMerged <= 0 && totalBeDeleted > 0;
+
     useEffect(() => {
         // Prepare api for allowing cancellation in the middle of the merge
         const abortController = new AbortController();
@@ -74,19 +76,19 @@ const MergingModalContent = ({
         /**
          * Get a contact from its ID and decrypt it. Return contact as a list of properties
          */
-        const getDecryptedContact = async (ID: string, { signal }: Signal): Promise<ContactProperties> => {
+        const getDecryptedContact = async (ID: string, { signal }: Signal): Promise<VCardContact> => {
             if (signal.aborted) {
-                return [];
+                return { fn: [] };
             }
             const { Contact } = await apiWithAbort<{ Contact: ContactType }>(getContact(ID));
-            const { properties, errors: contactErrors } = await decrypt(Contact, {
+            const { vCardContact, errors: contactErrors } = await decrypt(Contact, {
                 privateKeys,
                 publicKeys,
             });
             if (contactErrors.length) {
                 throw new Error(`Error decrypting contact ${ID}`);
             }
-            return properties;
+            return vCardContact;
         };
 
         /**
@@ -153,7 +155,7 @@ const MergingModalContent = ({
                             mergedAndEncrypted: [...model.mergedAndEncrypted, ...groupIDs],
                         }));
                     }
-                } catch {
+                } catch (error) {
                     if (!signal.aborted) {
                         setModel((model) => ({
                             ...model,
@@ -285,41 +287,52 @@ const MergingModalContent = ({
 
     const progressMessage = c('Progress bar description').t`Progress: ${combinedProgress}%`;
 
-    const endMessage =
-        successDelete && !successMerge
-            ? c('Progress bar description').ngettext(
-                  msgid`${model.deleted.length} out of ${totalBeDeleted} contact successfully deleted.`,
-                  `${model.deleted.length} out of ${totalBeDeleted} contacts successfully deleted.`,
-                  totalBeDeleted
-              )
-            : successMerge
-            ? c('Progress bar description').ngettext(
-                  msgid`${model.submitted.length} out of ${totalBeMerged} contact successfully merged.`,
-                  `${model.submitted.length} out of ${totalBeMerged} contacts successfully merged.`,
-                  totalBeMerged
-              )
-            : c('Progress bar description').t`No contacts merged.`;
+    let endMessage;
+    if (successDelete && !successMerge) {
+        endMessage = c('Progress bar description').ngettext(
+            msgid`${model.deleted.length} out of ${totalBeDeleted} contact successfully deleted.`,
+            `${model.deleted.length} out of ${totalBeDeleted} contacts successfully deleted.`,
+            totalBeDeleted
+        );
+    } else if (successMerge) {
+        endMessage = c('Progress bar description').ngettext(
+            msgid`${model.submitted.length} out of ${totalBeMerged} contact successfully merged.`,
+            `${model.submitted.length} out of ${totalBeMerged} contacts successfully merged.`,
+            totalBeMerged
+        );
+    } else {
+        endMessage = c('Progress bar description').t`No contacts merged.`;
+    }
 
     return (
         <>
-            <Alert className="mb1">
-                {totalBeMerged > 0
-                    ? c('Description')
-                          .t`Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.`
-                    : c('Description')
-                          .t`Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.`}
-            </Alert>
-            <DynamicProgress
-                id="progress-merge-contacts"
-                loading={loading}
-                value={combinedProgress}
-                max={100}
-                success={successMerge || successDelete}
-                display={loading ? progressMessage : endMessage}
-                data-testid="merge-model:progress-merge-contacts"
-            />
+            <ModalTwoHeader title={isDeleteOnly ? c('Title').t`Deleting contacts` : c('Title').t`Merging contacts`} />
+            <ModalTwoContent>
+                <Alert className="mb1">
+                    {totalBeMerged > 0
+                        ? c('Description')
+                              .t`Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.`
+                        : c('Description')
+                              .t`Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.`}
+                </Alert>
+                <DynamicProgress
+                    id="progress-merge-contacts"
+                    loading={loading}
+                    value={combinedProgress}
+                    max={100}
+                    success={successMerge || successDelete}
+                    display={loading ? progressMessage : endMessage}
+                    data-testid="merge-model:progress-merge-contacts"
+                />
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                {!mergeFinished && <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>}
+                <Button color="norm" loading={!mergeFinished} onClick={onMerged} data-testid="merge-model:close-button">
+                    {c('Action').t`Close`}
+                </Button>
+            </ModalTwoFooter>
         </>
     );
 };
 
-export default MergingModalContent;
+export default ContactMergingContent;

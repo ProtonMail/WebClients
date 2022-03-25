@@ -17,6 +17,7 @@ import './ContactsWidget.scss';
 import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
 import ContactImportModal from '../import/ContactImportModal';
 import ContactExportingModal from '../modals/ContactExportingModal';
+import { useContactMergeModals } from '../hooks/useContactMergeModals';
 
 const TopNavbarListItemContactsButton = forwardRef(
     (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
@@ -50,6 +51,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
     const { modals, onDetails, onEdit, onDelete } = useContactModals({ onMailTo });
     const [importModal, onImport] = useModalTwo<void, void>(ContactImportModal, false);
     const [exportModal, onExport] = useModalTwo<void, void>(ContactExportingModal, false);
+    const { modals: mergeModals, onMerge } = useContactMergeModals();
 
     const actionIncludes = (tab: CONTACT_WIDGET_TABS) => (customAction: CustomAction) =>
         customAction.tabs.includes(tab);
@@ -121,6 +123,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
                                     onEdit={onEdit}
                                     onDelete={onDelete}
                                     onImport={onImport}
+                                    onMerge={onMerge}
                                 />
                             ),
                         },
@@ -153,6 +156,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
             {modals}
             {importModal}
             {exportModal}
+            {mergeModals}
         </>
     );
 };

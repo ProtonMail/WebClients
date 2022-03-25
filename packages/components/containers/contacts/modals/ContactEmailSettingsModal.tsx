@@ -15,10 +15,10 @@ import {
     getVerifyingKeys,
 } from '@proton/shared/lib/keys/publicKeys';
 import uniqueBy from '@proton/utils/uniqueBy';
-import { DecryptedKey, ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
+import { getKeyInfoFromProperties, getMimeTypeVcard, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
+import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { VCARD_KEY_FIELDS } from '@proton/shared/lib/contacts/constants';
 import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
-import { getKeyInfoFromProperties, getMimeTypeVcard, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import ContactMIMETypeSelect from '../ContactMIMETypeSelect';
 import ContactPgpSettings from '../ContactPgpSettings';
@@ -42,7 +42,6 @@ import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
 const { PGP_INLINE } = PGP_SCHEMES;
 
 export interface ContactEmailSettingsProps {
-    userKeysList: DecryptedKey[];
     contactID: string;
     vCardContact: VCardContact;
     emailProperty: VCardProperty<string>;
@@ -51,7 +50,7 @@ export interface ContactEmailSettingsProps {
 
 type Props = ContactEmailSettingsProps & ModalProps;
 
-const ContactEmailSettingsModal = ({ userKeysList, contactID, vCardContact, emailProperty, ...rest }: Props) => {
+const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...rest }: Props) => {
     const { value: emailAddressValue, group: emailGroup } = emailProperty;
     const emailAddress = emailAddressValue as string;
 

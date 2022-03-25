@@ -18,6 +18,7 @@ import { Loader } from '../../../components';
 import { ContactEditProps } from '../edit/ContactEditModal';
 import { ContactDeleteProps } from '../modals/ContactDeleteModal';
 import { ContactEmailSettingsProps } from '../modals/ContactEmailSettingsModal';
+
 export interface ContactDetailsProps {
     contactID: string;
     onMailTo?: (src: string) => void;
@@ -103,7 +104,6 @@ const ContactDetailsModal = ({ contactID, onMailTo, onEdit, onDelete, onEmailSet
                                 contactEmails={contactEmailsMap[contactID] as ContactEmail[]}
                                 contactGroupsMap={contactGroupsMap}
                                 ownAddresses={ownAddresses}
-                                userKeysList={userKeysList}
                                 errors={errors}
                                 isSignatureVerified={isVerified}
                                 onDelete={handleDelete}
