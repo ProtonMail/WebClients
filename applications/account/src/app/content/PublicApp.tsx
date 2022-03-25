@@ -38,6 +38,7 @@ import LoginContainer from '../login/LoginContainer';
 import Layout from '../public/Layout';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import ValidateRecoveryEmailContainer from '../public/ValidateRecoveryEmailContainer';
+import Unauthenticated from './Unauthenticated';
 import { getToAppName } from '../public/helper';
 
 const getPathFromLocation = (location: H.Location) => {
@@ -275,10 +276,14 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             <ModalsChildren />
             <Switch>
                 <Route path="/unsubscribe/:subscriptions">
-                    <EmailUnsubscribeContainer />
+                    <Unauthenticated>
+                        <EmailUnsubscribeContainer />
+                    </Unauthenticated>
                 </Route>
                 <Route path="/verify-email">
-                    <ValidateRecoveryEmailContainer />
+                    <Unauthenticated>
+                        <ValidateRecoveryEmailContainer />
+                    </Unauthenticated>
                 </Route>
                 <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>
                     <SSOForkProducer
@@ -317,61 +322,63 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         <FeaturesProvider>
                             <ForceRefreshContext.Provider value={refresh}>
                                 <Layout toApp={toApp}>
-                                    <Switch location={location}>
-                                        {confirmForkData && (
-                                            <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
-                                                <OAuthConfirmForkContainer
-                                                    name={toAppName}
-                                                    image={confirmForkData.payload.clientInfo.Logo}
-                                                    onConfirm={() => {
-                                                        return produceOAuthFork({
-                                                            api,
-                                                            ...confirmForkData.payload,
-                                                        });
-                                                    }}
-                                                    onCancel={() => {
-                                                        setForkState(undefined);
-                                                        setConfirmForkState(undefined);
-                                                    }}
+                                    <Unauthenticated>
+                                        <Switch location={location}>
+                                            {confirmForkData && (
+                                                <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
+                                                    <OAuthConfirmForkContainer
+                                                        name={toAppName}
+                                                        image={confirmForkData.payload.clientInfo.Logo}
+                                                        onConfirm={() => {
+                                                            return produceOAuthFork({
+                                                                api,
+                                                                ...confirmForkData.payload,
+                                                            });
+                                                        }}
+                                                        onCancel={() => {
+                                                            setForkState(undefined);
+                                                            setConfirmForkState(undefined);
+                                                        }}
+                                                    />
+                                                </Route>
+                                            )}
+                                            <Route path={SSO_PATHS.SWITCH}>
+                                                <SwitchAccountContainer
+                                                    activeSessions={activeSessions}
+                                                    toAppName={toAppName}
+                                                    onLogin={handleLogin}
+                                                    onSignOut={handleSignOut}
+                                                    onSignOutAll={handleSignOutAll}
+                                                    onAddAccount={handleAddAccount}
                                                 />
                                             </Route>
-                                        )}
-                                        <Route path={SSO_PATHS.SWITCH}>
-                                            <SwitchAccountContainer
-                                                activeSessions={activeSessions}
-                                                toAppName={toAppName}
-                                                onLogin={handleLogin}
-                                                onSignOut={handleSignOut}
-                                                onSignOutAll={handleSignOutAll}
-                                                onAddAccount={handleAddAccount}
-                                            />
-                                        </Route>
-                                        <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
-                                            <SignupContainer
-                                                toApp={toApp}
-                                                toAppName={toAppName}
-                                                onLogin={handleLogin}
-                                                onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
-                                                signupParameters={signupSearchParams}
-                                            />
-                                        </Route>
-                                        <Route path={SSO_PATHS.RESET_PASSWORD}>
-                                            <ResetPasswordContainer onLogin={handleLogin} />
-                                        </Route>
-                                        <Route path={SSO_PATHS.FORGOT_USERNAME}>
-                                            <ForgotUsernameContainer />
-                                        </Route>
-                                        <Route path={SSO_PATHS.LOGIN}>
-                                            <LoginContainer
-                                                toAppName={toAppName}
-                                                showContinueTo={!!toOAuthName}
-                                                shouldSetupInternalAddress={shouldSetupInternalAddress}
-                                                onLogin={handleLogin}
-                                                onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
-                                            />
-                                        </Route>
-                                        <Redirect to={SSO_PATHS.LOGIN} />
-                                    </Switch>
+                                            <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
+                                                <SignupContainer
+                                                    toApp={toApp}
+                                                    toAppName={toAppName}
+                                                    onLogin={handleLogin}
+                                                    onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
+                                                    signupParameters={signupSearchParams}
+                                                />
+                                            </Route>
+                                            <Route path={SSO_PATHS.RESET_PASSWORD}>
+                                                <ResetPasswordContainer onLogin={handleLogin} />
+                                            </Route>
+                                            <Route path={SSO_PATHS.FORGOT_USERNAME}>
+                                                <ForgotUsernameContainer />
+                                            </Route>
+                                            <Route path={SSO_PATHS.LOGIN}>
+                                                <LoginContainer
+                                                    toAppName={toAppName}
+                                                    showContinueTo={!!toOAuthName}
+                                                    shouldSetupInternalAddress={shouldSetupInternalAddress}
+                                                    onLogin={handleLogin}
+                                                    onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
+                                                />
+                                            </Route>
+                                            <Redirect to={SSO_PATHS.LOGIN} />
+                                        </Switch>
+                                    </Unauthenticated>
                                 </Layout>
                             </ForceRefreshContext.Provider>
                         </FeaturesProvider>
