@@ -15,8 +15,6 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { useModal } from '../../../hooks/util/useModal';
-
 const appName = getAppName(APPS.PROTONDRIVE);
 
 interface Props {
@@ -24,12 +22,12 @@ interface Props {
     onBack?: () => void;
     onSubmit: () => Promise<unknown>;
     volumeCount: number;
+    open?: boolean;
 }
 
-const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, volumeCount, ...rest }: Props) => {
+const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, volumeCount, open }: Props) => {
     const [isChecked, setIsChecked] = useState(false);
     const [isLoading, withLoading] = useLoading();
-    const { isOpen, onClose: handleClose } = useModal(onClose);
 
     const modalTitle = c('Label').ngettext(msgid`Delete drive?`, `Delete drives?`, volumeCount);
 
@@ -49,13 +47,12 @@ const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, vol
     };
     return (
         <ModalTwo
-            onClose={handleClose}
-            open={isOpen}
+            onClose={onClose}
+            open={open}
             size="small"
             as="form"
             disableCloseOnEscape={isLoading}
             onSubmit={handleSubmit}
-            {...rest}
         >
             <ModalTwoHeader title={modalTitle} />
             <ModalTwoContent>
@@ -71,7 +68,7 @@ const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, vol
                 <Button type="button" onClick={onBack}>
                     {c('Action').t`Back`}
                 </Button>
-                <Button color="danger" type="submit" disabled={!isChecked || isLoading}>
+                <Button color="danger" type="submit" disabled={!isChecked} loading={isLoading}>
                     {c('Action').t`Delete`}
                 </Button>
             </ModalTwoFooter>

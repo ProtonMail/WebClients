@@ -23,19 +23,18 @@ import { selectMessageForItemList } from '../sections/helpers';
 import CreateFolderModal from '../CreateFolderModal';
 import ModalContentLoader from '../ModalContentLoader';
 import { DecryptedLink, TreeItem, useFolderTree, useActions } from '../../store';
-import { useModal } from '../../hooks/util/useModal';
 
 interface Props {
     shareId: string;
     selectedItems: FileBrowserItem[];
     onClose?: () => void;
+    open?: boolean;
 }
 
-const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...rest }: Props) => {
+const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => {
     const { createModal } = useModals();
     const { moveLinks } = useActions();
     const { rootFolder, expand, toggleExpand } = useFolderTree(shareId, { rootExpanded: true });
-    const { isOpen, onClose: handleModalClose } = useModal(onClose);
 
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
@@ -173,8 +172,8 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...rest }: Props) 
 
     return (
         <ModalTwo
-            onClose={handleModalClose}
-            open={isOpen}
+            onClose={onClose}
+            open={open}
             size="large"
             as="form"
             onSubmit={(e: React.FormEvent) => {
@@ -182,9 +181,8 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...rest }: Props) 
                 withLoading(handleSubmit()).catch(console.error);
             }}
             onReset={() => {
-                handleModalClose?.();
+                onClose?.();
             }}
-            {...rest}
         >
             <ModalTwoHeader title={modalContents.title} closeButtonProps={{ disabled: loading }} />
             {!rootFolder || !rootFolder.isLoaded ? (

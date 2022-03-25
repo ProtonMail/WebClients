@@ -11,7 +11,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
-import { useModal } from '../../hooks/util/useModal';
 
 export interface ConfirmationModalProps {
     onClose?: () => void;
@@ -23,6 +22,7 @@ export interface ConfirmationModalProps {
     loading?: boolean;
     className?: string;
     size?: ModalSize;
+    open?: boolean;
 }
 
 export const ConfirmationModal = ({
@@ -34,9 +34,8 @@ export const ConfirmationModal = ({
     onSubmit,
     size = 'large',
     children,
-    ...rest
+    open,
 }: ConfirmationModalProps) => {
-    const { isOpen, onClose: handleClose } = useModal(onClose);
     const [submitLoading, setSubmitLoading] = useState(false);
 
     const isLoading = loading || submitLoading;
@@ -47,19 +46,18 @@ export const ConfirmationModal = ({
             await onSubmit();
             setSubmitLoading(false);
         }
-        handleClose();
+        onClose?.();
     };
 
     return (
         <ModalTwo
             as="form"
             disableCloseOnEscape={loading}
-            onClose={handleClose}
-            onReset={handleClose}
+            onClose={onClose}
+            onReset={onClose}
             onSubmit={handleSubmit}
-            open={isOpen}
+            open={open}
             size={size}
-            {...rest}
         >
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={title} />
             <ModalTwoContent>
@@ -71,7 +69,7 @@ export const ConfirmationModal = ({
                 <Button type="reset" onClick={onClose} disabled={isLoading}>
                     {cancelText}
                 </Button>
-                <ErrorButton type="submit" disabled={isLoading}>
+                <ErrorButton type="submit" loading={isLoading}>
                     {submitText}
                 </ErrorButton>
             </ModalTwoFooter>

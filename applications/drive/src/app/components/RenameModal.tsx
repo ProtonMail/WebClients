@@ -20,20 +20,19 @@ import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 
 import { useActions, validateLinkNameField, formatLinkName, splitLinkName } from '../store';
-import { useModal } from '../hooks/util/useModal';
 
 interface Props {
     shareId: string;
     onClose?: () => void;
     item: FileBrowserItem;
+    open?: boolean;
 }
 
-const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
+const RenameModal = ({ shareId, item, onClose, open }: Props) => {
     const { renameLink } = useActions();
     const [name, setName] = useState(item.Name);
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);
-    const { isOpen, onClose: handleClose } = useModal(onClose);
 
     const selectNamePart = (e: FocusEvent<HTMLInputElement>) => {
         if (autofocusDone) {
@@ -62,7 +61,7 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
         setName(formattedName);
 
         await renameLink(new AbortController().signal, shareId, item.LinkID, formattedName);
-        handleClose?.();
+        onClose?.();
     };
 
     const isFolder = item.Type === LinkType.FOLDER;
@@ -72,11 +71,10 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
         <ModalTwo
             as="form"
             disableCloseOnEscape={loading}
-            onClose={handleClose}
+            onClose={onClose}
             onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e)).catch(noop)}
-            open={isOpen}
+            open={open}
             size="large"
-            {...rest}
         >
             <ModalTwoHeader
                 closeButtonProps={{ disabled: loading }}
@@ -102,10 +100,10 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
                 </Row>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button type="button" onClick={handleClose}>
+                <Button type="button" onClick={onClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton type="submit" disabled={loading}>
+                <PrimaryButton type="submit" loading={loading}>
                     {c('Action').t`Rename`}
                 </PrimaryButton>
             </ModalTwoFooter>

@@ -19,20 +19,19 @@ import FolderTree from '../FolderTree/FolderTree';
 import { mapDecryptedLinksToChildren } from '../sections/helpers';
 import HasNoFilesToShare from './HasNoFilesToShare';
 import ModalContentLoader from '../ModalContentLoader';
-import { useModal } from '../../hooks/util/useModal';
 
 interface Props {
     shareId: string;
     onClose?: () => void;
+    open?: boolean;
 }
 
-const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
+const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
     const { rootFolder, toggleExpand } = useTree(shareId, { rootExpanded: true });
 
     const [loading, withLoading] = useLoading();
     const [selectedFile, setSelectedFile] = useState<FileBrowserItem>();
     const { openLinkSharing } = useOpenModal();
-    const { isOpen, onClose: handleClose } = useModal(onClose);
 
     const onSelect = async (link: DecryptedLink) => {
         if (!loading) {
@@ -84,14 +83,13 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
 
     return (
         <ModalTwo
-            open={isOpen}
-            onReset={handleClose}
-            onClose={handleClose}
+            open={open}
+            onReset={onClose}
+            onClose={onClose}
             onSubmit={(e: any) => {
                 e.preventDefault();
                 withLoading(handleSubmit()).catch(console.error);
             }}
-            {...rest}
             size="large"
             as="form"
         >
