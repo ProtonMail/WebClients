@@ -19,20 +19,19 @@ import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 
 import { useActions, validateLinkNameField, formatLinkName } from '../store';
 import useActiveShare from '../hooks/drive/useActiveShare';
-import { useModal } from '../hooks/util/useModal';
 
 interface Props {
     onClose?: () => void;
     onCreateDone?: (folderId: string) => void;
     folder?: { shareId: string; linkId: string };
+    open?: boolean;
 }
 
-const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) => {
+const CreateFolderModal = ({ onClose, folder, onCreateDone, open }: Props) => {
     const { activeFolder } = useActiveShare();
     const { createFolder } = useActions();
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
-    const { isOpen, onClose: handleClose } = useModal(onClose);
 
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
         setFolderName(formatLinkName(target.value));
@@ -59,7 +58,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
             formattedName
         );
         onCreateDone?.(folderId);
-        handleClose?.();
+        onClose?.();
     };
 
     const validationError = validateLinkNameField(folderName);
@@ -68,11 +67,10 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
         <ModalTwo
             as="form"
             disableCloseOnEscape={loading}
-            onClose={handleClose}
+            onClose={onClose}
             onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e)).catch(noop)}
-            open={isOpen}
+            open={open}
             size="large"
-            {...rest}
         >
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={c('Title').t`Create a new folder`} />
             <ModalTwoContent>
@@ -94,10 +92,10 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
                 </Row>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button type="button" onClick={handleClose}>
+                <Button type="button" onClick={onClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton type="submit" disabled={loading}>
+                <PrimaryButton type="submit" loading={loading}>
                     {c('Action').t`Create`}
                 </PrimaryButton>
             </ModalTwoFooter>

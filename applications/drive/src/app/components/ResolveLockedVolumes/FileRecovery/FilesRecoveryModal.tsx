@@ -4,14 +4,13 @@ import { ModalTwo, useLoading, useNotifications } from '@proton/components';
 
 import { useLockedVolume } from '../../../store';
 import FilesRecoveryState from './FilesRecoveryState';
-import { useModal } from '../../../hooks/util/useModal';
 
 interface Props {
     onClose?: () => void;
+    open?: boolean;
 }
 
-const FilesRecoveryModal = ({ onClose, ...rest }: Props) => {
-    const { isOpen, onClose: handleClose } = useModal();
+const FilesRecoveryModal = ({ onClose, open }: Props) => {
     const { restoreVolumes } = useLockedVolume();
     const [recovering, withRecovering] = useLoading();
     const { createNotification } = useNotifications();
@@ -31,7 +30,7 @@ const FilesRecoveryModal = ({ onClose, ...rest }: Props) => {
     };
 
     return (
-        <ModalTwo onClose={handleClose} open={isOpen} {...rest}>
+        <ModalTwo onClose={onClose} open={open}>
             <FilesRecoveryState recovering={recovering} onRecovery={handleRecoveryClick} onClose={onClose} />
         </ModalTwo>
     );

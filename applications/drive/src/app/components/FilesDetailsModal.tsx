@@ -14,15 +14,14 @@ import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser
 
 import { LinkType } from '../store';
 import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
-import { useModal } from '../hooks/util/useModal';
 
 interface Props {
     selectedItems: FileBrowserItem[];
     onClose?: () => void;
+    open?: boolean;
 }
 
-const FilesDetailsModal = ({ selectedItems, onClose, ...rest }: Props) => {
-    const { isOpen, onClose: handleClose } = useModal(onClose);
+const FilesDetailsModal = ({ selectedItems, onClose, open }: Props) => {
     const size = selectedItems.reduce((sum, current) => sum + current.Size, 0);
 
     const hasFile = selectedItems.some(({ Type }) => Type === LinkType.FILE);
@@ -41,7 +40,7 @@ const FilesDetailsModal = ({ selectedItems, onClose, ...rest }: Props) => {
         : c('Title').t`Number of folders`;
 
     return (
-        <ModalTwo onClose={handleClose} open={isOpen} {...rest} size="large">
+        <ModalTwo onClose={onClose} open={open} size="large">
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
                 <Row>
@@ -60,7 +59,7 @@ const FilesDetailsModal = ({ selectedItems, onClose, ...rest }: Props) => {
                 </Row>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={handleClose}>{c('Action').t`Close`}</Button>
+                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
