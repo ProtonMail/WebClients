@@ -206,7 +206,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
     if (!modalModel.importID || foldersLoading || userLoading || labelsLoading) {
         return (
             <div className="p1 text-center w100">
-                <CircleLoader size="big" />
+                <CircleLoader size="large" />
                 <TextLoader>{c('Loading info').t`Connecting to your email provider`}</TextLoader>
             </div>
         );

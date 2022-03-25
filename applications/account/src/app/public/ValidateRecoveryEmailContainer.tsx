@@ -40,7 +40,7 @@ const ValidateRecoveryEmailContainer = () => {
         <main className="main-area">
             {loading ? (
                 <div className="absolute-center text-center">
-                    <CircleLoader size="big" />
+                    <CircleLoader size="large" />
                 </div>
             ) : (
                 <PublicLayout

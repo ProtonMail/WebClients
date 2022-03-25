@@ -126,7 +126,7 @@ const AccountForm = ({ model, onSubmit }) => {
         <>
             {challengeLoading ? (
                 <div className="text-center mb2">
-                    <CircleLoader className="color-primary" size="big" />
+                    <CircleLoader className="color-primary" size="large" />
                 </div>
             ) : null}
             <form

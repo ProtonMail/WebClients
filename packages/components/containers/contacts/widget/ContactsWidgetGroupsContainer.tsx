@@ -194,7 +194,7 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose, customActions }: Pr
             <div className="flex-item-fluid w100">
                 {loading ? (
                     <div className="flex h100">
-                        <CircleLoader className="mauto color-primary" size="big" />
+                        <CircleLoader className="mauto color-primary" size="large" />
                     </div>
                 ) : null}
                 {showPlaceholder ? (

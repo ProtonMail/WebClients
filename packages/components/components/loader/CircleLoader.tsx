@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { classnames, generateUID } from '../../helpers';
 
-export type Size = 'small' | 'medium' | 'big';
+export type Size = 'small' | 'medium' | 'large';
 
 interface Props {
     size?: Size;
