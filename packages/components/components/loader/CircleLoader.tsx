@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { classnames, generateUID } from '../../helpers';
 
@@ -8,9 +8,17 @@ interface Props {
     size?: Size;
     className?: string;
 }
+
 const CircleLoader = ({ size, className }: Props) => {
     const uid = generateUID('circle-loader');
     const loaderCircle = useRef<SVGCircleElement>(null);
+    const [totalLength, setTotalLength] = useState(0);
+
+    useLayoutEffect(() => {
+        if (loaderCircle.current) {
+            setTotalLength(loaderCircle.current.getTotalLength?.() || 0);
+        }
+    }, [loaderCircle.current]);
 
     return (
         <>
@@ -18,7 +26,7 @@ const CircleLoader = ({ size, className }: Props) => {
                 xmlns="http://www.w3.org/2000/svg"
                 className={classnames(['circle-loader', size && `is-${size}`, className])}
                 viewBox="0 0 16 16"
-                style={{ '--total-length': loaderCircle.current?.getTotalLength() }}
+                style={{ '--total-length': totalLength }}
             >
                 <defs>
                     <circle ref={loaderCircle} id={uid} cx="8" cy="8" r="7" />
