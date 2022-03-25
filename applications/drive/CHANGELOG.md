@@ -1,3 +1,23 @@
+# [4.0.0-beta.26] - 2022-04-06
+
+## Added
+
+-   Transfer Manager includes uploading folders
+-   Signature validation is reported with option to continue
+
+## Improved
+
+-   Upload performance of many small files
+-   UI tweaks
+
+## Fixed
+
+-   Downloaded zip archive can be extracted using Windows built-in zip extractor
+-   Allowed space in custom password for shared link
+-   Validation of custom password for shared link
+-   Stuck downloads in initial or pending state
+-   Loading thumbnails
+
 # [4.0.0-beta.25] - 2022-03-09
 
 ## Added
