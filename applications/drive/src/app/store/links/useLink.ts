@@ -330,25 +330,54 @@ export function useLinkInner(
             return link.cachedThumbnailUrl;
         }
 
-        let downloadUrl = link.activeRevision.thumbnail?.bareUrl;
-        let downloadToken = link.activeRevision.thumbnail?.token;
-        if (!downloadUrl || !downloadToken) {
+        let downloadInfo = {
+            isFresh: false,
+            downloadUrl: link.activeRevision.thumbnail?.bareUrl,
+            downloadToken: link.activeRevision.thumbnail?.token,
+        };
+
+        const loadDownloadUrl = async (activeRevisionId: string) => {
             const res = (await debouncedRequest(
-                queryFileRevisionThumbnail(shareId, linkId, link.activeRevision.id)
+                queryFileRevisionThumbnail(shareId, linkId, activeRevisionId)
             )) as DriveFileRevisionThumbnailResult;
-            downloadUrl = res.ThumbnailBareURL;
-            downloadToken = res.ThumbnailToken;
+            return {
+                isFresh: true,
+                downloadUrl: res.ThumbnailBareURL,
+                downloadToken: res.ThumbnailToken,
+            };
+        };
+
+        const loadThumbnailUrl = async (downloadUrl: string, downloadToken: string): Promise<string> => {
+            const data = await downloadCallback(downloadUrl, downloadToken);
+            const url = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
+            linksState.setCachedThumbnail(shareId, linkId, url);
+            return url;
+        };
+
+        if (!downloadInfo.downloadUrl || !downloadInfo.downloadToken) {
+            downloadInfo = await loadDownloadUrl(link.activeRevision.id);
         }
 
-        if (!downloadUrl || !downloadToken) {
+        if (!downloadInfo.downloadUrl || !downloadInfo.downloadToken) {
             return;
         }
 
-        const data = await downloadCallback(downloadUrl, downloadToken);
-        const url = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
-
-        linksState.setCachedThumbnail(shareId, linkId, url);
-        return url;
+        try {
+            return await loadThumbnailUrl(downloadInfo.downloadUrl, downloadInfo.downloadToken);
+        } catch (err) {
+            // Download URL and token can be expired if we used cached version.
+            // We get thumbnail info with the link, but if user don't scroll
+            // to the item before cached version expires, we need to try again
+            // with a loading the new URL and token.
+            if (downloadInfo.isFresh) {
+                throw err;
+            }
+            downloadInfo = await loadDownloadUrl(link.activeRevision.id);
+            if (!downloadInfo.downloadUrl || !downloadInfo.downloadToken) {
+                return;
+            }
+            return await loadThumbnailUrl(downloadInfo.downloadUrl, downloadInfo.downloadToken);
+        }
     };
 
     return {
