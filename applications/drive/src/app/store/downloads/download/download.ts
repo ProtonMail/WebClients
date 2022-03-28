@@ -1,7 +1,6 @@
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { LinkType } from '../../links';
 import fileSaver from '../fileSaver/fileSaver';
 import { LinkDownload, DownloadCallbacks, DownloadControls, DownloadStreamControls } from '../interface';
 import initDownloadLinks from './downloadLinks';
@@ -80,7 +79,7 @@ export function initDownloadStream(links: LinkDownload[], callbacks: DownloadCal
 function getControls(links: LinkDownload[], callbacks: DownloadCallbacks): DownloadStreamControls {
     if (links.length === 1) {
         const link = links[0];
-        if (link.type === LinkType.FILE) {
+        if (link.isFile) {
             return initDownloadLinkFile(link, callbacks);
         }
         return initDownloadLinkFolder(link, callbacks);

@@ -1,10 +1,11 @@
 import { useRef, useCallback, useState } from 'react';
+import { msgid, c } from 'ttag';
+
 import { usePopperAnchor, useDragMove } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { msgid, c } from 'ttag';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import { FileBrowserItem, DragMoveControls } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+
 import { selectMessageForItemList } from '../sections/helpers';
 
 const DOUBLE_CLICK_MS = 500;
@@ -39,7 +40,6 @@ function useFileBrowserItem<T extends HTMLElement>({
         format: CUSTOM_DATA_FORMAT,
         formatter: JSON.stringify,
     });
-    const isFolder = item.Type === LinkType.FOLDER;
     const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
     const isDraggingSelected = selectedItems.some(({ LinkID }) => LinkID === item.LinkID);
     const dragMoveItems = isDraggingSelected ? selectedItems : [item];
@@ -56,11 +56,13 @@ function useFileBrowserItem<T extends HTMLElement>({
     };
 
     const moveText = selectMessageForItemList(
-        dragMoveItems.map((item) => item.Type),
+        dragMoveItems.map((item) => item.IsFile),
         texts
     );
 
-    const iconText = `${isFolder ? c('Label').t`Folder` : `${c('Label').t`File`} - ${item.MIMEType}`} - ${item.Name}`;
+    const iconText = `${!item.IsFile ? c('Label').t`Folder` : `${c('Label').t`File`} - ${item.MIMEType}`} - ${
+        item.Name
+    }`;
 
     const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (item.Disabled ? undefined : fn);
 
@@ -231,7 +233,7 @@ function useFileBrowserItem<T extends HTMLElement>({
     const draggable = dragMoveControls && !item.Disabled;
 
     return {
-        isFolder,
+        isFolder: !item.IsFile,
         iconText,
         dragMoveItems,
         dragMove,

@@ -5,7 +5,7 @@ import { SortConfig } from '@proton/components/hooks/useSortedList';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { logError } from '../../utils';
-import { LinkShareUrl, LinkType } from '../../links/interface';
+import { LinkShareUrl } from '../../links/interface';
 
 type SortField =
     | 'name'
@@ -24,7 +24,7 @@ interface SortParams<T extends SortField = SortField> {
 }
 
 interface LinkSortFields {
-    type: LinkType;
+    isFile: boolean;
     name: string;
     mimeType: string;
     size: number;
@@ -85,14 +85,14 @@ function sortParamsToSortConfig({ sortField, sortOrder: direction }: SortParams)
     const configs: {
         [key in SortField]: SortConfig<LinkSortFields>[];
     } = {
-        name: [{ key: 'type', direction: SORT_DIRECTION.ASC }, getNameSortConfig(direction)],
-        mimeType: [{ key: 'mimeType', direction }, { key: 'type', direction }, getNameSortConfig()],
+        name: [{ key: 'isFile', direction: SORT_DIRECTION.ASC }, getNameSortConfig(direction)],
+        mimeType: [{ key: 'mimeType', direction }, { key: 'isFile', direction }, getNameSortConfig()],
         metaDataModifyTime: [{ key: 'metaDataModifyTime', direction }, getNameSortConfig()],
         fileModifyTime: [{ key: 'fileModifyTime', direction }, getNameSortConfig()],
-        size: [{ key: 'type', direction }, { key: 'size', direction }, getNameSortConfig()],
-        linkCreateTime: [getShareLinkCreatedSortConfig(direction), { key: 'type', direction }, getNameSortConfig()],
-        linkExpireTime: [getShareLinkExpiresSortConfig(direction), { key: 'type', direction }, getNameSortConfig()],
-        numAccesses: [getShareLinkNumAccessesSortConfig(direction), { key: 'type', direction }, getNameSortConfig()],
+        size: [{ key: 'isFile', direction }, { key: 'size', direction }, getNameSortConfig()],
+        linkCreateTime: [getShareLinkCreatedSortConfig(direction), { key: 'isFile', direction }, getNameSortConfig()],
+        linkExpireTime: [getShareLinkExpiresSortConfig(direction), { key: 'isFile', direction }, getNameSortConfig()],
+        numAccesses: [getShareLinkNumAccessesSortConfig(direction), { key: 'isFile', direction }, getNameSortConfig()],
         trashed: [{ key: 'trashed', direction }, getNameSortConfig()],
     };
     return configs[sortField];

@@ -1,14 +1,13 @@
 import { c } from 'ttag';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { getMimeTypeDescription } from '../../../sections/helpers';
 
 interface Props {
     mimeType: string;
-    linkType: LinkType;
+    isFile: boolean;
 }
 
-const DescriptiveTypeCell = ({ mimeType, linkType }: Props) => {
-    const type = linkType === LinkType.FILE ? getMimeTypeDescription(mimeType) : c('Label').t`Folder`;
+const DescriptiveTypeCell = ({ mimeType, isFile }: Props) => {
+    const type = isFile ? getMimeTypeDescription(mimeType) : c('Label').t`Folder`;
 
     return (
         <div key="Type" title={type} className="text-ellipsis">

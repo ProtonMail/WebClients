@@ -10,7 +10,6 @@ import {
     DropdownMenuButton,
     ToolbarButton,
 } from '@proton/components';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { MEMBER_SHARING_ENABLED } from '@proton/shared/lib/drive/constants';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
@@ -29,7 +28,7 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
         useToolbarActions();
     const { trashLinks } = useActions();
 
-    const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
+    const hasFoldersSelected = selectedItems.some((item) => !item.IsFile);
     const isMultiSelect = selectedItems.length > 1;
     const hasShare = !!selectedItems[0]?.ShareUrlShareID;
     const hasSharedLink = !!selectedItems[0]?.SharedUrl;
@@ -90,7 +89,7 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
                         parentLinkId: item.ParentLinkID,
                         linkId: item.LinkID,
                         name: item.Name,
-                        type: item.Type,
+                        isFile: item.IsFile,
                     }))
                 ),
         },

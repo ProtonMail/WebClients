@@ -23,7 +23,7 @@ import { logError } from '../../utils';
 import { useDebouncedRequest } from '../../api';
 import { useDriveCrypto } from '../../crypto';
 import { useDriveEventManager } from '../../events';
-import { DecryptedLink, LinkType, useLink, useLinksActions, ValidationError, validateLinkName } from '../../links';
+import { DecryptedLink, useLink, useLinksActions, ValidationError, validateLinkName } from '../../links';
 import { MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import {
     TransferConflictStrategy,
@@ -171,7 +171,7 @@ export default function useUploadFile() {
             }
 
             checkSignal(abortSignal, file.name);
-            if (link.type === LinkType.FOLDER) {
+            if (!link.isFile) {
                 const parentHashKey = await getLinkHashKey(abortSignal, shareId, parentId);
                 if (!parentHashKey) {
                     throw Error(c('Error').t`The original file has missing hash key`);

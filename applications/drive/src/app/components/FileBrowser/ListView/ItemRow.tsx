@@ -15,7 +15,6 @@ import { isEquivalent, pick } from '@proton/shared/lib/helpers/object';
 import { shallowEqual } from '@proton/shared/lib/helpers/array';
 import { c } from 'ttag';
 import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useThumbnailsDownload } from '../../../store';
 import { formatAccessCount } from '../../../utils/formatters';
@@ -145,11 +144,7 @@ const ItemRow = ({
                             className="file-browser-list-item--thumbnail flex-item-noshrink mr0-5"
                         />
                     ) : (
-                        <FileIcon
-                            mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
-                            alt={iconText}
-                            className="mr0-5"
-                        />
+                        <FileIcon mimeType={item.IsFile ? item.MIMEType : 'Folder'} alt={iconText} className="mr0-5" />
                     )}
                     <SignatureIcon item={item} className="mr0-5 flex-item-noshrink" />
                     <NameCell name={item.Name} />
