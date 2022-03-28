@@ -6,7 +6,6 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { TransferMeta, TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import { isTransferPending, isTransferFinished } from '../../../utils/transfer';
-import { LinkType } from '../../links';
 import { LinkDownload } from '../interface';
 import {
     Download,
@@ -153,7 +152,7 @@ function generateAlreadyDownloadingError(links: LinkDownload[]): string {
         return c('Error').t`File selection is already downloading`;
     }
     const { name } = links[0];
-    if (links[0].type === LinkType.FOLDER) {
+    if (!links[0].isFile) {
         return c('Error').t`Folder "${name}" is already downloading`;
     }
     return c('Error').t`File "${name}" is already downloading`;
@@ -172,7 +171,7 @@ function generateDownload(links: LinkDownload[]): Download {
 function generateDownloadMeta(links: LinkDownload[]): TransferMeta {
     if (links.length === 1) {
         const link = links[0];
-        if (link.type === LinkType.FILE) {
+        if (link.isFile) {
             return {
                 filename: link.name,
                 mimeType: link.mimeType,

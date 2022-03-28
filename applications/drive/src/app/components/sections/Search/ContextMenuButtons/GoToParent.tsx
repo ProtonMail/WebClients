@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
-
 import useNavigate from '../../../../hooks/drive/useNavigate';
 import { ContextMenuButton } from '../../ContextMenu';
 
@@ -19,7 +17,7 @@ export default function GoToParent({ shareId, parentLinkId, close }: Props) {
             testId="go-to-parent"
             icon="folder"
             name={c('Action').t`Go to parent`}
-            action={() => navigateToLink(shareId, parentLinkId, LinkType.FOLDER)}
+            action={() => navigateToLink(shareId, parentLinkId, false)}
             close={close}
         />
     );

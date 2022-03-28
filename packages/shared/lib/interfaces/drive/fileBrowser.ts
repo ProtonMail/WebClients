@@ -1,7 +1,7 @@
 import { VERIFICATION_STATUS } from 'pmcrypto';
 import React from 'react';
 import { SORT_DIRECTION } from '../../constants';
-import { LinkType, SharedUrlInfo } from './link';
+import { SharedUrlInfo } from './link';
 import { LayoutSetting } from './userSettings';
 
 export interface DragMoveControls {
@@ -17,7 +17,7 @@ export interface DragMoveControls {
 export interface FileBrowserItem {
     Name: string;
     LinkID: string;
-    Type: LinkType;
+    IsFile: boolean;
     CreateTime: number;
     ModifyTime: number;
     RealModifyTime: number;

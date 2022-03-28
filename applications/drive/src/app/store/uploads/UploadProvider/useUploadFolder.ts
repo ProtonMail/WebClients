@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
-import { LinkType, useLinkActions, useLinksActions } from '../../links';
+import { useLinkActions, useLinksActions } from '../../links';
 import { TransferConflictStrategy, UploadFolderControls } from '../interface';
 import { ConflictStrategyHandler } from './interface';
 import useUploadHelper from './useUploadHelper';
@@ -45,7 +45,7 @@ export default function useUploadFolder() {
         if (!link) {
             throw Error(c('Error').t`The original folder not found`);
         }
-        if (link.type !== LinkType.FOLDER) {
+        if (link.isFile) {
             throw Error(c('Error').t`File cannot be merged with folder`);
         }
         checkSignal(abortSignal, folderName);
@@ -90,7 +90,7 @@ export default function useUploadFolder() {
             }
 
             const link = await getLinkByName(abortSignal, shareId, parentId, folderName);
-            const originalIsFolder = link ? link.type === LinkType.FOLDER : false;
+            const originalIsFolder = link ? !link.isFile : false;
             checkSignal(abortSignal, folderName);
             const conflictStrategy = await getFolderConflictStrategy(abortSignal, originalIsFolder);
             if (conflictStrategy === TransferConflictStrategy.Rename) {

@@ -2,7 +2,6 @@ import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import { RouteComponentProps, useLocation } from 'react-router-dom';
 
 import { FilePreview, NavigationControl, useModals } from '@proton/components';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { STATUS_CODE } from '@proton/shared/lib/drive/constants';
 
 import { DecryptedLink, useFileView } from '../store';
@@ -75,14 +74,14 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
             }
         }
         if (link?.parentLinkId) {
-            navigateToLink(shareId, link.parentLinkId, LinkType.FOLDER);
+            navigateToLink(shareId, link.parentLinkId, false);
         }
     }, [link?.parentLinkId, shareId, referer]);
 
     const onOpen = useCallback(
         (linkId: string | undefined) => {
             if (linkId) {
-                navigateToLink(shareId, linkId, LinkType.FILE);
+                navigateToLink(shareId, linkId, true);
             }
         },
         [shareId]
@@ -124,7 +123,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
             <SignatureAlertBody
                 signatureIssues={link.signatureIssues}
                 signatureAddress={link.signatureAddress}
-                isFile={link.type === LinkType.FILE}
+                isFile={link.isFile}
                 name={link.name}
             />
         );

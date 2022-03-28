@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useTrashView } from '../../../store';
 import useNavigate from '../../../hooks/drive/useNavigate';
@@ -30,11 +29,11 @@ function Trash({ shareId, trashView }: Props) {
     const handleClick = useCallback(
         async (item: FileBrowserItem) => {
             // Trashed folders are not possible to browse.
-            if (item.Type === LinkType.FOLDER) {
+            if (!item.IsFile) {
                 return;
             }
             document.getSelection()?.removeAllRanges();
-            navigateToLink(shareId, item.LinkID, item.Type);
+            navigateToLink(shareId, item.LinkID, item.IsFile);
         },
         [navigateToLink, shareId]
     );

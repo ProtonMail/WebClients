@@ -4,7 +4,7 @@ import { Writer as ZipWriter } from '@transcend-io/conflux';
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { LinkType, splitLinkName, adjustName, adjustWindowsLinkName } from '../../links';
+import { splitLinkName, adjustName, adjustWindowsLinkName } from '../../links';
 import { StartedNestedLinkDownload } from './interface';
 
 function getPathString(path: string[]): string {
@@ -56,22 +56,22 @@ export default class ArchiveGenerator {
             if (this.canceled) {
                 return;
             }
-            if (link.type === LinkType.FOLDER) {
-                const name = this.adjustFolderPath(link.parentPath, link.name);
-                promises.push(
-                    this.writer.write({
-                        directory: true,
-                        name: name.slice(1), // Windows doesn't like leading root slash.
-                        // lastModified: new Date(),
-                    })
-                );
-            } else {
+            if (link.isFile) {
                 const name = this.adjustFilePath(link.parentPath, link.name);
                 promises.push(
                     this.writer.write({
                         name: name.slice(1), // Windows doesn't like leading root slash.
                         // lastModified: new Date(),
                         stream: () => link.stream,
+                    })
+                );
+            } else {
+                const name = this.adjustFolderPath(link.parentPath, link.name);
+                promises.push(
+                    this.writer.write({
+                        directory: true,
+                        name: name.slice(1), // Windows doesn't like leading root slash.
+                        // lastModified: new Date(),
                     })
                 );
             }

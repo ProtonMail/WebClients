@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { generateUID } from '@proton/components';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { toLinkURLType } from '../../components/sections/helpers';
 
 interface NavigationEvenListener {
@@ -24,8 +23,8 @@ function useNavigate() {
     };
 
     const navigateToLink = useCallback(
-        (shareId: string, linkId: string, type: LinkType) => {
-            pushToHistory(`/${shareId}/${toLinkURLType(type)}/${linkId}?r=${location.pathname}`);
+        (shareId: string, linkId: string, isFile: boolean) => {
+            pushToHistory(`/${shareId}/${toLinkURLType(isFile)}/${linkId}?r=${location.pathname}`);
         },
         [history, location.pathname]
     );

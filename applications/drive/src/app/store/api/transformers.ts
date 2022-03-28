@@ -1,5 +1,5 @@
 import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
-import { LinkMeta, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
+import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import { ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
 import { isMainShare } from '@proton/shared/lib/drive/utils/share';
@@ -20,7 +20,11 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL): EncryptedLi
     return {
         linkId: link.LinkID,
         parentLinkId: link.ParentLinkID,
-        type: link.Type,
+        // API recognises only file and folder at this moment. In the future,
+        // it might include hard- and soft-links, but still, for our case we
+        // will differenciate only between files and folders, so we can convert
+        // to simple boolean property.
+        isFile: link.Type === LinkType.FILE,
         name: link.Name,
         mimeType: link.MIMEType,
         size: link.Size,

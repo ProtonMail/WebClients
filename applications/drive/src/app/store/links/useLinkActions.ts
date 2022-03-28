@@ -14,7 +14,6 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import { useDebouncedRequest } from '../api';
 import { useDriveCrypto } from '../crypto';
 import { useDriveEventManager } from '../events';
-import { LinkType } from './interface';
 import useLink from './useLink';
 import { ecryptFolderExtendedAttributes } from './extendedAttributes';
 import { validateLinkName, ValidationError } from './validation';
@@ -137,7 +136,7 @@ export default function useLinkActions() {
             // Decrypts passphrase.
             getLinkPrivateKey(abortSignal, shareId, linkId),
         ]);
-        if (link.type === LinkType.FOLDER) {
+        if (!link.isFile) {
             await getLinkHashKey(abortSignal, shareId, linkId);
         }
         // Get latest link with signature updates.
