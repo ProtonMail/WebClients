@@ -259,7 +259,7 @@ const ComposerActions = ({
                             className="button button-for-icon composer-more-dropdown"
                             content={
                                 <Icon
-                                    name="ellipsis"
+                                    name="three-dots-horizontal"
                                     alt={titleMoreOptions}
                                     className={classnames([isExpiration && 'color-primary'])}
                                 />
@@ -274,7 +274,7 @@ const ComposerActions = ({
                                 disabled={lock}
                                 data-testid="composer:expiration-button"
                             >
-                                <Icon name="hourglass-empty" className="mt0-25" />
+                                <Icon name="hourglass" className="mt0-25" />
                                 <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action')
                                     .t`Set expiration time`}</span>
                             </DropdownMenuButton>

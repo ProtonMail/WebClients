@@ -58,7 +58,7 @@ const ExpandableRow = ({
                                 toggleExpand(link.linkId);
                             }}
                         >
-                            <Icon size={12} name="angle-down" className={isExpanded ? 'rotateX-180' : undefined} />
+                            <Icon size={12} name="chevron-down" className={isExpanded ? 'rotateX-180' : undefined} />
                         </Button>
                     </div>
                     <div
@@ -71,7 +71,7 @@ const ExpandableRow = ({
                     {isSelected && (
                         <div className="folder-tree-list-item-selected flex flex-item-noshrink">
                             <span className="inline-flex bg-primary rounded-50 folder-tree-list-item-selected-check">
-                                <Icon name="check" className="p0-25" size={16} />
+                                <Icon name="checkmark" className="p0-25" size={16} />
                             </span>
                         </div>
                     )}

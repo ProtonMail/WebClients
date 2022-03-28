@@ -216,7 +216,7 @@ const AttachmentList = ({
                                 className="ml0-5"
                                 loading={showLoader}
                             >
-                                <Icon name="arrow-down-to-rectangle" alt={c('Download attachments').t`Download all`} />
+                                <Icon name="arrow-down-line" alt={c('Download attachments').t`Download all`} />
                             </Button>
                         </Tooltip>
                     </div>

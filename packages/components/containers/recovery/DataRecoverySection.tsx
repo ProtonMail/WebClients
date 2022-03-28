@@ -97,7 +97,7 @@ const DataRecoverySection = () => {
                     <>
                         {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
                             <p className="color-danger">
-                                <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" size={14} />
+                                <Icon className="mr0-5 float-left mt0-25" name="exclamation-circle-filled" size={14} />
                                 {c('Warning')
                                     .t`Your recovery phrase is outdated. It can't recover new data if you reset your account again.`}
                             </p>
@@ -165,7 +165,7 @@ const DataRecoverySection = () => {
                     <>
                         {hasOutdatedRecoveryFile && (
                             <p className="color-danger">
-                                <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" size={14} />
+                                <Icon className="mr0-5 float-left mt0-25" name="exclamation-circle-filled" size={14} />
                                 {c('Warning')
                                     .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}
                             </p>

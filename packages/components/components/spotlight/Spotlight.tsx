@@ -139,7 +139,7 @@ const Spotlight = ({
                             title={closeText}
                             onClick={close}
                         >
-                            <Icon name="xmark" alt={closeText} />
+                            <Icon name="cross" alt={closeText} />
                         </Button>
                     )}
                 </div>

@@ -154,7 +154,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                                 <div className="mb1">
                                     <Icon
                                         className="color-danger mr0-5 float-left mt0-25"
-                                        name="circle-exclamation-filled"
+                                        name="exclamation-circle-filled"
                                         size={14}
                                     />
                                     {warningText} {recommendRecoveryPhraseText}
@@ -185,7 +185,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                                 <div className="mb1">
                                     <Icon
                                         className="color-danger mr0-5 float-left mt0-25"
-                                        name="circle-exclamation-filled"
+                                        name="exclamation-circle-filled"
                                         size={14}
                                     />
                                     {warningText} {recommendRecoveryPhraseText}

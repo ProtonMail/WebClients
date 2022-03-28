@@ -8,7 +8,7 @@ export default function LinkError({ error }: { error: string }) {
                 style={{ '--height-custom': '9em' }}
                 className="flex h-custom flex-column flex-align-items-center flex-justify-center w100 mt2 mb1"
             >
-                <Icon name="circle-exclamation" size={110} className="fill-primary" />
+                <Icon name="exclamation-circle" size={110} className="fill-primary" />
             </div>
         </>
     );

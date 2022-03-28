@@ -71,7 +71,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onClose = noop, ...rest }: P
         >
             <div className="flex flex-no-min-children flex-item-fluid">
                 <h4 className="mb1 flex flex-align-items-center flex-item-fluid">
-                    <Icon className="mr0-5" name="user-group" />
+                    <Icon className="mr0-5" name="users" />
                     <span>
                         {c('Title').ngettext(msgid`${emailsCount} member`, `${emailsCount} members`, emailsCount)}
                     </span>
@@ -86,7 +86,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onClose = noop, ...rest }: P
                             disabled={loading}
                             className="inline-flex ml0-5"
                         >
-                            <Icon name="arrow-up-from-screen" alt={c('Action').t`Export contact group`} />
+                            <Icon name="arrow-up-from-square" alt={c('Action').t`Export contact group`} />
                         </Button>
                     </Tooltip>
                     <Tooltip title={c('Action').t`Delete`}>

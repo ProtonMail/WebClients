@@ -59,7 +59,7 @@ const ExtraErrors = ({ message }: Props) => {
                     >
                         <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
                             <Icon
-                                name="circle-exclamation-filled"
+                                name="exclamation-circle-filled"
                                 className="flex-item-noshrink mt0-4 ml0-2 color-danger"
                             />
                             <span className="pl0-5 mt0-2 pr0-5 flex-item-fluid">

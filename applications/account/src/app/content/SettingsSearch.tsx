@@ -125,7 +125,7 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
                 <InputTwo
                     {...inputProps}
                     placeholder={c('Placeholder').t`Search settings`}
-                    prefix={<Icon className="ml0-5" name="magnifying-glass" />}
+                    prefix={<Icon className="ml0-5" name="magnifier" />}
                     className="pl0"
                     ref={inputRef}
                     containerRef={containerRef}

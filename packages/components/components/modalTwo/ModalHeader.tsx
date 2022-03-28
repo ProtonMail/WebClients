@@ -70,7 +70,7 @@ const ModalHeader = ({ title, subline, actions, closeButtonProps, ...rest }: Mod
 
                 <Tooltip title={c('Action').t`Close modal`}>
                     <Button className="flex-item-noshrink" icon shape="ghost" onClick={onClose} {...closeButtonProps}>
-                        <Icon className="modal-close-icon" name="xmark" />
+                        <Icon className="modal-close-icon" name="cross-big" />
                     </Button>
                 </Tooltip>
             </div>

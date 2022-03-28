@@ -34,8 +34,8 @@ const ImportReportRow = ({ report }: Props) => {
     const importTypeIcon = (
         {
             [ImportType.MAIL]: 'envelope',
-            [ImportType.CALENDAR]: 'calendar-days',
-            [ImportType.CONTACTS]: 'user-group',
+            [ImportType.CALENDAR]: 'calendar-grid',
+            [ImportType.CONTACTS]: 'users',
         } as const
     )[Product];
 

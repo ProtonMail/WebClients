@@ -19,7 +19,7 @@ const LoginSupportDropdown = () => {
                     to="/reset-password"
                     className="dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration text-left"
                 >
-                    <Icon name="circle-user" className="mr0-5" />
+                    <Icon name="user-circle" className="mr0-5" />
                     {c('Link').t`Reset password`}
                 </Link>
                 <Link
@@ -34,7 +34,7 @@ const LoginSupportDropdown = () => {
                     target="_blank"
                     className="text-left"
                 >
-                    <Icon name="messages" className="mr0-5" />
+                    <Icon name="speech-bubble" className="mr0-5" />
                     {c('Link').t`Common sign in issues`}
                 </DropdownMenuLink>
                 <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>

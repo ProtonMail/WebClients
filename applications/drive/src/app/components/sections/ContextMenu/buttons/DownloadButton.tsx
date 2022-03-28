@@ -32,7 +32,7 @@ const DownloadButton = ({ shareId, items, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Download`}
-            icon="arrow-down-to-rectangle"
+            icon="arrow-down-line"
             testId="context-menu-download"
             action={onClick}
             close={close}

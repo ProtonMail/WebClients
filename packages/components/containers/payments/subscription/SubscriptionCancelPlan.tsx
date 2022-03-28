@@ -27,7 +27,7 @@ const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Pro
                         return (
                             <li key={content?.toString()} className="flex flex-nowrap mb0-5">
                                 <span className={classnames(['flex-item-noshrink mr1', downgrade && 'color-weak'])}>
-                                    {downgrade ? '-' : <Icon name="check" className="color-primary" />}
+                                    {downgrade ? '-' : <Icon name="checkmark" className="color-primary" />}
                                 </span>
                                 <span className={classnames(['mr0-25', downgrade && 'text-strike color-weak'])}>
                                     {content}

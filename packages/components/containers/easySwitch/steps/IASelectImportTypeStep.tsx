@@ -309,7 +309,7 @@ const IASelectImportTypeStep = ({
                             {mailErrors.length > 0 ? (
                                 <div className="flex color-danger">
                                     <Icon
-                                        name="circle-exclamation-filled"
+                                        name="exclamation-circle-filled"
                                         className="mr0-5 flex-nowrap"
                                         style={{ marginTop: 4 }}
                                     />
@@ -447,7 +447,7 @@ const IASelectImportTypeStep = ({
                         <>
                             {payloadErrors.includes(CalendarImportPayloadError.MAX_CALENDARS_LIMIT_REACHED) ? (
                                 <div className="flex color-danger">
-                                    <Icon name="circle-exclamation-filled" className="flex-align-self-center mr0-5" />
+                                    <Icon name="exclamation-circle-filled" className="flex-align-self-center mr0-5" />
                                     {c('Error').t`Calendar limit reached`}
                                 </div>
                             ) : (

@@ -223,7 +223,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         return (
             <Banner
                 backgroundColor={BannerBackgroundColor.DANGER}
-                icon="triangle-exclamation"
+                icon="exclamation-circle"
                 action={
                     <span className="flex-item-noshrink flex">
                         <InlineLinkButton onClick={handleRetry} className="text-underline color-inherit">

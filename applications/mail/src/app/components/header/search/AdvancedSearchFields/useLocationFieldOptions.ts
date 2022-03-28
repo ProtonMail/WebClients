@@ -114,7 +114,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
             value: ARCHIVE,
             text: getLabelIDsToI18N()[ARCHIVE],
             url: STANDARD_FOLDERS[ARCHIVE].to,
-            icon: 'box-archive',
+            icon: 'archive-box',
         },
         { value: SPAM, text: getLabelIDsToI18N()[SPAM], url: STANDARD_FOLDERS[SPAM].to, icon: 'fire' },
         { value: TRASH, text: getLabelIDsToI18N()[TRASH], url: STANDARD_FOLDERS[TRASH].to, icon: 'trash' },

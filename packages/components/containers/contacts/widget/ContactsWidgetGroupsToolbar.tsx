@@ -98,7 +98,7 @@ const ContactsWidgetGroupsToolbar = ({
                     onClick={onCreate}
                     data-testid="contacts:add-contact-group"
                 >
-                    <Icon name="user-group-plus" alt={c('Action').t`Add new group`} />
+                    <Icon name="users-plus" alt={c('Action').t`Add new group`} />
                 </Button>
             </Tooltip>
         </div>

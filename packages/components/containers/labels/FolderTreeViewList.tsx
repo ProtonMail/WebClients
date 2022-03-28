@@ -25,7 +25,7 @@ const Header = ({ isNarrow }: HeaderProps) => {
     return (
         <div className="flex flex-nowrap w100 border-bottom pb0-5">
             <span className="text-bold flex-item-fluid">
-                {isNarrow ? null : <Icon name="arrows-up-down-left-right" className="mr1" />}
+                {isNarrow ? null : <Icon name="arrows-cross" className="mr1" />}
                 {c('Header').t`Folders`}
             </span>
             <span className="text-bold w10e no-mobile">{c('Header').t`Notifications`}</span>
@@ -146,7 +146,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                     <div className="treeview-item-name flex flex-nowrap flex-align-items-center flex-item-fluid">
                                         {isNarrow ? null : (
                                             <Icon
-                                                name="align-justify"
+                                                name="text-align-justify"
                                                 className="mr1 flex-item-noshrink cursor-row-resize"
                                             />
                                         )}

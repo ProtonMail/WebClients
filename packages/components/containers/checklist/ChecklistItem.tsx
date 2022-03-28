@@ -1,9 +1,9 @@
-import { Icon, IconProps, classnames } from '@proton/components';
+import { Icon, IconName, classnames } from '@proton/components';
 
 import './ChecklistItem.scss';
 
 interface ChecklistItemProps {
-    icon: IconProps['name'];
+    icon: IconName;
     text: string;
     complete: boolean;
     onClick: () => void;
@@ -23,10 +23,10 @@ const ChecklistItem = ({ icon, text, complete, onClick }: ChecklistItemProps) =>
 
     const listItemContent = (
         <>
-            <Icon className={mainIconClassName} name={complete ? 'check' : icon} />
+            <Icon className={mainIconClassName} name={complete ? 'checkmark' : icon} />
             <span>
                 <span className="mr1">{text}</span>
-                {!complete && <Icon className="rotateZ-270" size={12} name="angle-down" />}
+                {!complete && <Icon size={12} name="chevron-right" />}
             </span>
         </>
     );

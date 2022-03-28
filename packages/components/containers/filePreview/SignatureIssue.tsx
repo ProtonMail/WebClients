@@ -19,7 +19,7 @@ const SignatureIssue = ({
             <div className="absolute-center w100">
                 <div className={classnames(['mlauto mrauto', isNarrow ? 'w300p' : 'w500p'])}>
                     <div className="text-center">
-                        <Icon name="lock-triangle-exclamation-filled" size={60} className="color-danger" />
+                        <Icon name="lock-exclamation-filled" size={60} className="color-danger" />
                     </div>
                     <div className="mt1 mb2">{signatureConfirmation}</div>
                 </div>

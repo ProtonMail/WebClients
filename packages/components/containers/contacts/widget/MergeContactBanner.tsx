@@ -14,7 +14,7 @@ const MergeContactBanner = ({ onMerge }: Props) => {
 
     return (
         <div className="pl2 pr2 pt1 pb1 bg-weak flex flex-items-align-center flex-nowrap border-bottom">
-            <Icon name="merge" className="mr0-5" />
+            <Icon name="users-merge" className="mr0-5" />
             <span>{c('Info, no need for singular').jt`Multiple contacts look identical. ${mergeAction}`}</span>
         </div>
     );

@@ -241,7 +241,7 @@ const HeaderExpanded = ({
                     <span className="inline-flex">
                         <ItemLocation element={message.data} labelID={labelID} />
                         <ItemAttachmentIcon
-                            icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
+                            icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                             onClick={handleAttachmentIconClick}
                             element={message.data}
                             className="mr0-5"
@@ -285,7 +285,7 @@ const HeaderExpanded = ({
                                 <span className="inline-flex">
                                     <ItemLocation element={message.data} labelID={labelID} />
                                     <ItemAttachmentIcon
-                                        icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
+                                        icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                                         onClick={handleAttachmentIconClick}
                                         element={message.data}
                                         className="mr0-5"
@@ -436,11 +436,7 @@ const HeaderExpanded = ({
                                 onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                                 data-testid="message-view:reply"
                             >
-                                <Icon
-                                    name="arrow-up-and-left-big"
-                                    className="on-rtl-mirror"
-                                    alt={c('Title').t`Reply`}
-                                />
+                                <Icon name="arrow-up-and-left" className="on-rtl-mirror" alt={c('Title').t`Reply`} />
                             </Button>
                         </Tooltip>
                         <Tooltip title={titleReplyAll}>
@@ -451,7 +447,7 @@ const HeaderExpanded = ({
                                 data-testid="message-view:reply-all"
                             >
                                 <Icon
-                                    name="arrow-up-and-left-double-big"
+                                    name="arrows-up-and-left"
                                     className="on-rtl-mirror"
                                     alt={c('Title').t`Reply all`}
                                 />
@@ -464,7 +460,7 @@ const HeaderExpanded = ({
                                 onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                                 data-testid="message-view:forward"
                             >
-                                <Icon name="arrow-right-big" className="on-rtl-mirror" alt={c('Title').t`Forward`} />
+                                <Icon name="arrow-right" className="on-rtl-mirror" alt={c('Title').t`Forward`} />
                             </Button>
                         </Tooltip>
                     </ButtonGroup>

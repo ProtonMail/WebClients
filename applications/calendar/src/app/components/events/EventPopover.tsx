@@ -179,7 +179,7 @@ const EventPopover = ({
                 icon
                 size="small"
             >
-                <Icon name="copy" />
+                <Icon name="squares" />
             </ButtonLike>
         </Tooltip>
     );

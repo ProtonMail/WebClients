@@ -27,7 +27,7 @@ const FOLDER_ICONS = {
     [MailImportDestinationFolder.ALL_SENT]: 'paper-plane',
     [MailImportDestinationFolder.TRASH]: 'trash',
     [MailImportDestinationFolder.SPAM]: 'fire',
-    [MailImportDestinationFolder.ARCHIVE]: 'box-archive',
+    [MailImportDestinationFolder.ARCHIVE]: 'archive-box',
     [MailImportDestinationFolder.SENT]: 'paper-plane',
     [MailImportDestinationFolder.DRAFTS]: 'file-lines',
     [MailImportDestinationFolder.STARRED]: 'star',
@@ -253,7 +253,7 @@ const ImportManageFoldersRow = ({
                 <Tooltip title={error} type="error">
                     <Icon
                         tabIndex={-1}
-                        name="circle-info"
+                        name="info-circle"
                         className="color-danger inline-flex flex-align-self-center flex-item-noshrink"
                     />
                 </Tooltip>
@@ -345,13 +345,13 @@ const ImportManageFoldersRow = ({
                 <>
                     {nameTooLongError && (
                         <Tooltip title={ERRORS.nameTooLongError} type="error">
-                            <Icon tabIndex={-1} name="circle-info" className="color-danger" />
+                            <Icon tabIndex={-1} name="info-circle" className="color-danger" />
                         </Tooltip>
                     )}
 
                     {!checked && nameAlreadyExistsError && !nameTooLongError && (
                         <Tooltip title={ERRORS.nameAlreadyExistsError} type="error">
-                            <Icon tabIndex={-1} name="circle-info" className="color-danger" />
+                            <Icon tabIndex={-1} name="info-circle" className="color-danger" />
                         </Tooltip>
                     )}
                 </>
@@ -423,19 +423,19 @@ const ImportManageFoldersRow = ({
             <>
                 {nameTooLongError && (
                     <Tooltip title={ERRORS.nameTooLongError} type="error">
-                        <Icon tabIndex={-1} name="circle-info" className="color-danger" />
+                        <Icon tabIndex={-1} name="info-circle" className="color-danger" />
                     </Tooltip>
                 )}
 
                 {nameAlreadyExistsError && !nameTooLongError && (
                     <Tooltip title={ERRORS.nameAlreadyExistsError} type="error">
-                        <Icon tabIndex={-1} name="circle-info" className="color-danger" />
+                        <Icon tabIndex={-1} name="info-circle" className="color-danger" />
                     </Tooltip>
                 )}
 
                 {mergeWarning && (
                     <Tooltip title={WARNINGS.mergeWarning} type="warning">
-                        <Icon tabIndex={-1} name="circle-info" className="color-warning" />
+                        <Icon tabIndex={-1} name="info-circle" className="color-warning" />
                     </Tooltip>
                 )}
 
@@ -443,7 +443,7 @@ const ImportManageFoldersRow = ({
                     <Tooltip
                         title={c('Tooltip').t`System subfolders will show up as separate folders in ${MAIL_APP_NAME}`}
                     >
-                        <Icon tabIndex={-1} name="circle-info" />
+                        <Icon tabIndex={-1} name="info-circle" />
                     </Tooltip>
                 )}
             </>

@@ -78,7 +78,7 @@ const TVContainer = () => {
                     <h2>{c('Title').t`Device connected!`}</h2>
                     <div className="flex flex-justify-center mt2 mb2">
                         <span className="inline-flex bg-success rounded-50 p2">
-                            <Icon name="check" size={60} />
+                            <Icon name="checkmark" size={60} />
                         </span>
                     </div>
                 </>

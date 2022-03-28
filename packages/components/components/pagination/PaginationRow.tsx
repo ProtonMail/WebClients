@@ -48,7 +48,7 @@ const PaginationRow = ({
                     onClick={() => onStart()}
                     data-testid="pagination-row:go-to-first-page"
                 >
-                    <Icon name="angles-left" className="block" alt={c('Action').t`Go to first page`} />
+                    <Icon name="chevrons-left" className="block" alt={c('Action').t`Go to first page`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Go to previous page`}>
@@ -58,7 +58,7 @@ const PaginationRow = ({
                     onClick={() => onPrevious()}
                     data-testid="pagination-row:go-to-previous-page"
                 >
-                    <Icon name="angle-down" className="block rotateZ-90" alt={c('Action').t`Go to previous page`} />
+                    <Icon name="chevron-left" className="block" alt={c('Action').t`Go to previous page`} />
                 </Button>
             </Tooltip>
             {pages.map((pageNumber) => {
@@ -86,7 +86,7 @@ const PaginationRow = ({
                     onClick={() => onNext()}
                     data-testid="pagination-row:go-to-next-page"
                 >
-                    <Icon name="angle-down" className="block rotateZ-270" alt={c('Action').t`Go to next page`} />
+                    <Icon name="chevron-right" className="block" alt={c('Action').t`Go to next page`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Go to last page`}>
@@ -96,7 +96,7 @@ const PaginationRow = ({
                     onClick={() => onEnd()}
                     data-testid="pagination-row:go-to-last-page"
                 >
-                    <Icon name="angles-left" className="block mirror" alt={c('Action').t`Go to last page`} />
+                    <Icon name="chevrons-right" className="block" alt={c('Action').t`Go to last page`} />
                 </Button>
             </Tooltip>
         </ButtonGroup>

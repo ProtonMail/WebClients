@@ -9,7 +9,7 @@ export const getCalendarAppRoutes = (hasSubscribedCalendars: boolean, showInvita
             general: <SectionConfig>{
                 text: c('Link').t`General`,
                 to: '/general',
-                icon: 'grid',
+                icon: 'grid-2',
                 subsections: [
                     {
                         text: c('Title').t`Time zone`,
@@ -33,7 +33,7 @@ export const getCalendarAppRoutes = (hasSubscribedCalendars: boolean, showInvita
             calendars: <SectionConfig>{
                 text: c('Link').t`Calendars`,
                 to: '/calendars',
-                icon: 'calendar-days',
+                icon: 'calendar-grid',
                 subsections: [
                     {
                         text: c('Title').t`My calendars`,

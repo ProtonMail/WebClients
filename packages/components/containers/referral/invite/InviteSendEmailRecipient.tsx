@@ -34,7 +34,7 @@ const InviteSendEmailRecipient = ({ recipient, onDeleteRecipient, isValid }: Pro
             >
                 <span className="text-no-wrap pr0-5 text-ellipsis">{recipient.Address}</span>
                 <span className="cursor-pointer" onClick={onDeleteRecipient}>
-                    <Icon name="xmark" />
+                    <Icon name="cross" />
                 </span>
             </div>
         </Tooltip>

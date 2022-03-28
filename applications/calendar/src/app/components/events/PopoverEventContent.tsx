@@ -192,7 +192,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
     const eventDetailsContent = (
         <>
             {sanitizedLocation ? (
-                <IconRow labelClassName={labelClassName} title={c('Label').t`Location`} icon="map-marker">
+                <IconRow labelClassName={labelClassName} title={c('Label').t`Location`} icon="map-pin">
                     <span
                         className="text-hyphens scroll-if-needed"
                         dangerouslySetInnerHTML={{ __html: sanitizedLocation }}
@@ -255,7 +255,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                 </IconRow>
             ) : null}
             {htmlString ? (
-                <IconRow labelClassName={labelClassName} title={c('Label').t`Description`} icon="align-left">
+                <IconRow labelClassName={labelClassName} title={c('Label').t`Description`} icon="text-align-left">
                     <div
                         className="text-break mt0 mb0 text-pre-wrap"
                         dangerouslySetInnerHTML={{ __html: htmlString }}

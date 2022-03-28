@@ -71,7 +71,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                             onClick={handleAll(true)}
                             data-testid="toolbar:select-all"
                         >
-                            <Icon name="check-triple" className="mr0-5" />
+                            <Icon name="checkmark-triple" className="mr0-5" />
                             {c('Action').t`Select All`}
                         </DropdownMenuButton>
                         <DropdownMenuButton

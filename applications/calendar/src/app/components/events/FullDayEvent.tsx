@@ -81,7 +81,7 @@ const FullDayEvent = ({
                 />
             ) : null}
 
-            {isOutsideStart ? <Icon name="angle-down" size={12} className="flex-item-noshrink rotateZ-90" /> : null}
+            {isOutsideStart ? <Icon name="chevron-left" size={12} className="flex-item-noshrink" /> : null}
 
             {eventReadError ? <Icon name="lock-filled" className="calendar-dayeventcell-lock-icon" /> : null}
 
@@ -90,7 +90,7 @@ const FullDayEvent = ({
                 <span className="calendar-dayeventcell-title">{titleString}</span>
             </span>
 
-            {isOutsideEnd ? <Icon name="angle-down" size={12} className="flex-item-noshrink rotateZ-270" /> : null}
+            {isOutsideEnd ? <Icon name="chevron-right" size={12} className="flex-item-noshrink" /> : null}
         </div>
     );
 
