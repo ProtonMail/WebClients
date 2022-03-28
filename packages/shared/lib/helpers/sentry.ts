@@ -72,7 +72,7 @@ function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DS
             'UploadConflictError', // User uploading the same file again in Drive.
             'UploadUserError', // Upload error on user's side in Drive.
             'ChunkLoadError', // WebPack loading source code.
-            'ResizeObserver loop limit exceeded', // Chromium bug https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
+            /ResizeObserver loop/, // Chromium bug https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
         ],
     });
 
