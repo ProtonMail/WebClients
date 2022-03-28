@@ -44,11 +44,11 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
         await moveLinks(
             new AbortController().signal,
             shareId,
-            selectedItems.map(({ ParentLinkID, LinkID, Name, Type }) => ({
+            selectedItems.map(({ ParentLinkID, LinkID, Name, IsFile }) => ({
                 parentLinkId: ParentLinkID,
                 linkId: LinkID,
                 name: Name,
-                type: Type,
+                isFile: IsFile,
             })),
             parentFolderId
         );
@@ -110,7 +110,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
 
     let modalContents = {
         title: selectMessageForItemList(
-            selectedItems.map((item) => item.Type),
+            selectedItems.map((item) => item.IsFile),
             messages
         ),
         content: rootFolder && (

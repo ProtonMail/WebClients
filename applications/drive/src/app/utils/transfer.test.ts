@@ -226,7 +226,7 @@ describe('trasfer utils', () => {
             Size: trasferMeta.size || 0,
             Trashed: null,
             UrlsExpired: false,
-            Type: 2,
+            IsFile: false,
             HasThumbnail: false,
             SignatureAddress: 'address',
         };

@@ -1,5 +1,3 @@
-import { LinkType } from '../../links';
-
 import { LinkDownload, ChildrenLinkMeta } from '../interface';
 import { FolderTreeLoader } from './downloadLinkFolder';
 
@@ -78,7 +76,7 @@ function getSubtree(linkId: string, tree: Tree): Tree | undefined {
 
 function makeChildrenLinkMeta(linkId: string, size?: number): ChildrenLinkMeta {
     return {
-        type: size !== undefined ? LinkType.FILE : LinkType.FOLDER,
+        isFile: size !== undefined,
         linkId,
         name: linkId,
         mimeType: size !== undefined ? 'text/plain' : 'Folder',

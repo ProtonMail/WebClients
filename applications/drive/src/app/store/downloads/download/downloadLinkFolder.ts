@@ -1,7 +1,6 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { LinkType } from '../../links';
 import { WAIT_TIME } from '../constants';
 import {
     LinkDownload,
@@ -111,7 +110,7 @@ export class FolderTreeLoader {
             ...this.links,
             ...children.map((link) => ({
                 parentPath: parent,
-                type: link.type,
+                isFile: link.isFile,
                 shareId,
                 linkId: link.linkId,
                 name: link.name,
@@ -123,7 +122,7 @@ export class FolderTreeLoader {
         ];
         return Promise.all(
             children.map(async (item: ChildrenLinkMeta) => {
-                if (item.type === LinkType.FOLDER) {
+                if (!item.isFile) {
                     return this.loadHelper({ ...item, shareId }, getChildren, onSignatureIssue, [...parent, item.name]);
                 }
                 return item.size;

@@ -5,7 +5,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { useDriveEventManager, DriveEvents } from '../events';
 import { isEncryptedLinkSame, isDecryptedLinkSame } from './link';
-import { EncryptedLink, DecryptedLink, LinkShareUrl, LinkType, SignatureIssues } from './interface';
+import { EncryptedLink, DecryptedLink, LinkShareUrl, SignatureIssues } from './interface';
 
 export type LinksState = {
     [shareId: string]: {
@@ -82,7 +82,7 @@ export function useLinksStateProvider() {
             return childrenLinkIds
                 .map((linkId) => state[shareId].links[linkId])
                 .filter(isTruthy)
-                .filter((link) => !foldersOnly || link.encrypted.type === LinkType.FOLDER);
+                .filter((link) => !foldersOnly || !link.encrypted.isFile);
         },
         [state]
     );

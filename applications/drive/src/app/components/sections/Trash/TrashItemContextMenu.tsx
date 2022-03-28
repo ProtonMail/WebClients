@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 
 import { ContextMenu } from '@proton/components';
 
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ItemContextMenuProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { PreviewButton, DownloadButton, DetailsButton } from '../ContextMenu';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ContextMenuButtons';
@@ -19,11 +18,8 @@ const TrashItemContextMenu = ({
     close,
 }: ItemContextMenuProps) => {
     const hasPreviewAvailable =
-        selectedItems.length === 1 &&
-        item.Type === LinkType.FILE &&
-        item.MIMEType &&
-        isPreviewAvailable(item.MIMEType, item.Size);
-    const hasDownloadAvailable = !selectedItems.some((item) => item.Type === LinkType.FOLDER);
+        selectedItems.length === 1 && item.IsFile && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
+    const hasDownloadAvailable = !selectedItems.some((item) => !item.IsFile);
 
     useEffect(() => {
         if (position) {

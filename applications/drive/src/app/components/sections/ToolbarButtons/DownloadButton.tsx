@@ -18,7 +18,7 @@ const DownloadButton = ({ shareId, selectedItems, disabledFolders }: Props) => {
     const onClick = () => {
         void download(
             selectedItems.map((item) => ({
-                type: item.Type,
+                isFile: item.IsFile,
                 shareId,
                 linkId: item.LinkID,
                 name: item.Name,

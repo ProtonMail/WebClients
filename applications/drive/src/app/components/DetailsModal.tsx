@@ -2,7 +2,6 @@ import { ReactNode, useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useLoading, Row, ModalTwo, ModalTwoFooter, Button, ModalTwoContent, ModalTwoHeader } from '@proton/components';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { SignatureIssues, useActions, useShareUrl } from '../store';
@@ -40,8 +39,7 @@ const DetailsRow = ({ label, children }: RowProps) => {
 };
 
 const DetailsModal = ({ shareId, item, onClose, open }: Props) => {
-    const isFile = item.Type === LinkType.FILE;
-    const title = isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
+    const title = item.IsFile ? c('Title').t`File details` : c('Title').t`Folder details`;
     const isShared = item.SharedUrl && !item.UrlsExpired ? c('Info').t`Yes` : c('Info').t`No`;
 
     const { checkLinkSignatures } = useActions();
@@ -85,7 +83,7 @@ const DetailsModal = ({ shareId, item, onClose, open }: Props) => {
                     loading={loadingSignatureIssues}
                     signatureIssues={signatureIssues}
                     signatureAddress={item.SignatureAddress}
-                    isFile={item.Type === LinkType.FILE}
+                    isFile={item.IsFile}
                     name={item.Name}
                     className="mb1"
                 />
@@ -104,10 +102,10 @@ const DetailsModal = ({ shareId, item, onClose, open }: Props) => {
                 <DetailsRow label={c('Title').t`Modified`}>
                     <TimeCell time={item.RealModifyTime} />
                 </DetailsRow>
-                {isFile && (
+                {item.IsFile && (
                     <>
                         <DetailsRow label={c('Title').t`Type`}>
-                            <DescriptiveTypeCell mimeType={item.MIMEType} linkType={item.Type} />
+                            <DescriptiveTypeCell mimeType={item.MIMEType} isFile={item.IsFile} />
                         </DetailsRow>
                         <DetailsRow label={c('Title').t`MIME type`}>
                             <MIMETypeCell mimeType={item.MIMEType} />

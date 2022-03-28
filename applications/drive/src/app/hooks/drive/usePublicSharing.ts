@@ -67,7 +67,7 @@ function usePublicSharing() {
 
     const getSessionKey = async (link: EncryptedLink, nodeKey: OpenPGPKey) => {
         // Folder links are no provided with ContentKeyPacket
-        if (link.type !== LinkType.FILE || !link.contentKeyPacket) {
+        if (!link.isFile || !link.contentKeyPacket) {
             return undefined;
         }
         const blockKeys = base64StringToUint8Array(link.contentKeyPacket);

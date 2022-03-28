@@ -3,18 +3,18 @@ import { c } from 'ttag';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { LinkURLType, fileDescriptions } from '@proton/shared/lib/drive/constants';
 
-import { DecryptedLink, LinkType } from '../../store';
+import { DecryptedLink } from '../../store';
 
 export const selectMessageForItemList = (
-    types: LinkType[],
+    isFiles: boolean[],
     messages: {
         allFiles: string;
         allFolders: string;
         mixed: string;
     }
 ) => {
-    const allFiles = types.every((type) => type === LinkType.FILE);
-    const allFolders = types.every((type) => type === LinkType.FOLDER);
+    const allFiles = isFiles.every((isFile) => isFile);
+    const allFolders = isFiles.every((isFile) => !isFile);
     const message = (allFiles && messages.allFiles) || (allFolders && messages.allFolders) || messages.mixed;
 
     return message;
@@ -27,7 +27,7 @@ export const mapDecryptedLinksToChildren = (decryptedLinks: DecryptedLink[]): Fi
     return decryptedLinks.map((link) => ({
         Name: link.name,
         LinkID: link.linkId,
-        Type: link.type,
+        IsFile: link.isFile,
         CreateTime: link.createTime,
         ModifyTime: link.metaDataModifyTime,
         RealModifyTime: link.fileModifyTime,
@@ -55,17 +55,8 @@ export const mapDecryptedLinksToChildren = (decryptedLinks: DecryptedLink[]): Fi
     }));
 };
 
-export const toLinkURLType = (type: LinkType) => {
-    const linkType = {
-        [LinkType.FILE]: LinkURLType.FILE,
-        [LinkType.FOLDER]: LinkURLType.FOLDER,
-    }[type];
-
-    if (!linkType) {
-        throw new Error(`Type ${type} is unexpected, must be integer representing link type`);
-    }
-
-    return linkType;
+export const toLinkURLType = (isFile: boolean) => {
+    return isFile ? LinkURLType.FILE : LinkURLType.FOLDER;
 };
 
 export const getMimeTypeDescription = (mimeType: string) => {

@@ -16,7 +16,7 @@ export default function useOpenModal() {
     const { createModal } = useModals();
 
     const openPreview = (shareId: string, item: FileBrowserItem) => {
-        navigateToLink(shareId, item.LinkID, item.Type);
+        navigateToLink(shareId, item.LinkID, item.IsFile);
     };
 
     const openCreateFolder = async () => {

@@ -15,7 +15,6 @@ import {
     PrimaryButton,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 
@@ -40,7 +39,7 @@ const RenameModal = ({ shareId, item, onClose, open }: Props) => {
         }
         setAutofocusDone(true);
         const [namePart] = splitLinkName(item.Name);
-        if (!namePart || item.Type === LinkType.FOLDER) {
+        if (!namePart || !item.IsFile) {
             return e.target.select();
         }
         e.target.setSelectionRange(0, namePart.length);
@@ -64,7 +63,6 @@ const RenameModal = ({ shareId, item, onClose, open }: Props) => {
         onClose?.();
     };
 
-    const isFolder = item.Type === LinkType.FOLDER;
     const validationError = validateLinkNameField(name);
 
     return (
@@ -78,11 +76,11 @@ const RenameModal = ({ shareId, item, onClose, open }: Props) => {
         >
             <ModalTwoHeader
                 closeButtonProps={{ disabled: loading }}
-                title={isFolder ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
+                title={!item.IsFile ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
             />
             <ModalTwoContent>
                 <Row className="mt1 mb1">
-                    <Label>{isFolder ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
+                    <Label>{!item.IsFile ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
                     <Field>
                         <InputTwo
                             id="link-name"
