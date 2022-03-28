@@ -4,7 +4,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import useConfig from './useConfig';
 import useDocumentTitle from './useDocumentTitle';
 
-const useAppTitle = (title: string, maybeAppName?: string) => {
+const useAppTitle = (title?: string, maybeAppName?: string) => {
     const { APP_NAME } = useConfig();
 
     const memoedTitle = useMemo(() => {
