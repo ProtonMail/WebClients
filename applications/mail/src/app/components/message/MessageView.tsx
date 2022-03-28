@@ -350,7 +350,6 @@ const MessageView = (
                         originalMessageMode={originalMessageMode}
                         toggleOriginalMessage={toggleOriginalMessage}
                         onMessageReady={onMessageReady}
-                        parentMessageRef={elementRef}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
                 </>
