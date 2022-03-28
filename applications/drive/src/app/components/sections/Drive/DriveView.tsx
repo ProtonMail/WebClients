@@ -1,6 +1,4 @@
-import { c } from 'ttag';
-
-import { Toolbar, PrivateMainArea, useAppTitle } from '@proton/components';
+import { Toolbar, PrivateMainArea } from '@proton/components';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 
 import { useFolderView } from '../../../store';
@@ -15,7 +13,6 @@ export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; lin
 
 function DriveView() {
     const { activeFolder } = useActiveShare();
-    useAppTitle(c('Title').t`My files`);
 
     const folderView = useFolderView(activeFolder);
     const selectedItems = mapDecryptedLinksToChildren(folderView.selectionControls.selectedItems);
