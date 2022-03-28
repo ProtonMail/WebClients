@@ -9,7 +9,7 @@ export const getDriveAppRoutes = () => {
             general: <SectionConfig>{
                 text: c('Title').t`General`,
                 to: '/general',
-                icon: 'grid',
+                icon: 'grid-2',
                 subsections: [
                     {
                         text: c('Title').t`Theme`,

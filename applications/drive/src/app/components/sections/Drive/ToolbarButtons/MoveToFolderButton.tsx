@@ -16,7 +16,7 @@ const MoveToFolderButton = ({ shareId, selectedItems }: Props) => {
     return (
         <ToolbarButton
             title={c('Action').t`Move to folder`}
-            icon={<Icon name="arrows-up-down-left-right" />}
+            icon={<Icon name="arrows-cross" />}
             onClick={() => openMoveToFolder(shareId, selectedItems)}
             data-testid="toolbar-move"
         />

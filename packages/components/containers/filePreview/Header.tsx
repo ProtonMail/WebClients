@@ -44,7 +44,7 @@ const Header = ({
             <div className="flex flex-align-items-center">
                 {onSave && (
                     <Button icon shape="ghost" title={c('Action').t`Download`} onClick={onSave} className="ml0-5">
-                        <Icon name="arrow-down-to-rectangle" size={20} alt={c('Action').t`Download`} />
+                        <Icon name="arrow-down-line" size={20} alt={c('Action').t`Download`} />
                     </Button>
                 )}
                 {onDetail && (
@@ -55,7 +55,7 @@ const Header = ({
                         onClick={onDetail}
                         className="ml0-5 no-mobile"
                     >
-                        <Icon name="circle-info" size={20} alt={c('Action').t`Details`} />
+                        <Icon name="info-circle" size={20} alt={c('Action').t`Details`} />
                     </Button>
                 )}
                 {onShare && (
@@ -76,7 +76,7 @@ const Header = ({
                 )}
                 {onClose && (
                     <Button icon shape="ghost" title={c('Action').t`Close`} onClick={onClose} className="ml0-5">
-                        <Icon name="xmark" size={20} alt={c('Action').t`Close`} />
+                        <Icon name="cross" size={20} alt={c('Action').t`Close`} />
                     </Button>
                 )}
             </div>

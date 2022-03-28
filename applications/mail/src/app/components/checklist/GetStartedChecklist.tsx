@@ -62,7 +62,7 @@ const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: Ge
             {
                 key: ChecklistKey.Import,
                 text: c('Get started checklist item').t`Import contacts or emails`,
-                icon: 'arrow-down-to-screen',
+                icon: 'arrow-down-to-square',
             },
             {
                 key: ChecklistKey.SendMessage,

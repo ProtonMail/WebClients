@@ -39,7 +39,7 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
         <Option value={address.Email} title={address.Email} key={address.Email}>
             <span className="inline-flex flex-nowrap flex-row flex-align-items-center max-w100">
                 <span className="text-ellipsis">{address.Email}</span>
-                <Icon name="angle-down" className="select--inline-caret-option flex-item-noshrink ml0-5" />
+                <Icon name="chevron-down" className="select--inline-caret-option flex-item-noshrink ml0-5" />
             </span>
         </Option>
     ));

@@ -179,13 +179,13 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
                     aria-expanded={!minimized}
                     aria-controls="transfer-manager"
                 >
-                    <Icon className={classnames(['mauto', minimized && 'rotateX-180'])} name="minimize" />
+                    <Icon className={classnames(['mauto', minimized && 'rotateX-180'])} name="low-dash" />
                     <span className="sr-only">{minMaxTitle}</span>
                 </Button>
             </Tooltip>
             <Tooltip title={closeTitle}>
                 <Button icon type="button" shape="ghost" onClick={onClose}>
-                    <Icon className="mauto" name="xmark" alt={closeTitle} />
+                    <Icon className="mauto" name="cross" alt={closeTitle} />
                 </Button>
             </Tooltip>
         </div>

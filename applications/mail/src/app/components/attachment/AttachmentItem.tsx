@@ -107,9 +107,9 @@ const AttachmentItem = ({
     };
 
     const actionIcon = {
-        [AttachmentAction.Download]: 'arrow-down-to-rectangle',
-        [AttachmentAction.Preview]: 'arrow-up-right-and-arrow-down-left-from-center',
-        [AttachmentAction.Remove]: 'xmark',
+        [AttachmentAction.Download]: 'arrow-down-line',
+        [AttachmentAction.Preview]: 'arrows-from-center',
+        [AttachmentAction.Remove]: 'cross',
     } as const;
 
     return (

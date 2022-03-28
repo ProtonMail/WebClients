@@ -315,7 +315,7 @@ const ExtraEvent = ({
         return (
             <Banner
                 backgroundColor={BannerBackgroundColor.DANGER}
-                icon="triangle-exclamation"
+                icon="exclamation-circle"
                 action={
                     canTryAgain && (
                         <span className="flex-item-noshrink flex">

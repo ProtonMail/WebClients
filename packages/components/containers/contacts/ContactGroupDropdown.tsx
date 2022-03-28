@@ -185,7 +185,7 @@ const ContactGroupDropdown = ({
                                 className="flex flex-align-items-center"
                                 data-prevent-arrow-navigation
                             >
-                                <Icon name="user-group" /> +
+                                <Icon name="users" /> +
                             </Button>
                         </Tooltip>
                     </div>
@@ -236,7 +236,7 @@ const ContactGroupDropdown = ({
                         ) : null}
                         {!filteredContactGroups.length && keyword ? (
                             <div className="w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1">
-                                <Icon name="triangle-exclamation" className="mr0-5" />
+                                <Icon name="exclamation-circle" className="mr0-5" />
                                 {c('Info').t`No group found`}
                             </div>
                         ) : null}

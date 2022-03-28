@@ -87,7 +87,7 @@ const MoveButtons = ({
             onClick={() => withLoading(handleMove(ARCHIVE))}
             disabled={!selectedIDs.length}
             data-testid="toolbar:movetoarchive"
-            icon={<Icon name="box-archive" alt={c('Action').t`Move to archive`} />}
+            icon={<Icon name="archive-box" alt={c('Action').t`Move to archive`} />}
         />
     );
 

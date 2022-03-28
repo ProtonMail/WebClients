@@ -102,17 +102,17 @@ const DownloadSharedInfo = ({
             case TransferStatePublic.Done:
                 contents.title = i18nDict.transferTitleDone;
                 contents.info = i18nDict.transferInfoDone;
-                contents.content = <Icon name="circle-check" size={100} className="fill-primary" />;
+                contents.content = <Icon name="checkmark-circle" size={100} className="fill-primary" />;
                 break;
             case TransferStatePublic.Error:
                 contents.title = i18nDict.transferTitleError;
                 contents.info = i18nDict.transferInfoError;
-                contents.content = <Icon name="circle-exclamation" size={100} className="fill-primary" />;
+                contents.content = <Icon name="exclamation-circle" size={100} className="fill-primary" />;
                 break;
             case TransferStatePublic.Canceled:
                 contents.title = i18nDict.transferTitleCancelled;
                 contents.info = i18nDict.transferInfoCancelled;
-                contents.content = <Icon name="xmark" size={100} className="fill-primary" />;
+                contents.content = <Icon name="cross" size={100} className="fill-primary" />;
                 break;
             default:
                 // This should be prevented by type check and is not supposed to happen

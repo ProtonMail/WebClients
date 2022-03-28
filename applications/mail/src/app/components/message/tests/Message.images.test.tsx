@@ -230,7 +230,7 @@ describe('Message images', () => {
         const placeholder = iframeRerendered.querySelector('.proton-image-placeholder') as HTMLImageElement;
 
         expect(placeholder).not.toBe(null);
-        assertIcon(placeholder.querySelector('svg'), 'circle-xmark');
+        assertIcon(placeholder.querySelector('svg'), 'cross-circle');
 
         getByText('Load unprotected', { exact: false });
 

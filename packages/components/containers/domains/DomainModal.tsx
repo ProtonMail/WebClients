@@ -79,7 +79,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                         title={c('Tooltip')
                             .t`We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.`}
                     >
-                        <RoundedIcon className="mr0-5" key="dkim-icon" type="error" name="xmark" />
+                        <RoundedIcon className="mr0-5" key="dkim-icon" type="error" name="cross" />
                     </Tooltip>
                 );
             }
@@ -87,7 +87,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
             case DKIM_STATE_GOOD: {
                 return (
                     <Tooltip title={c('Tooltip').t`Your DKIM signing is working.`}>
-                        <RoundedIcon className="mr0-5" key="dkim-icon" type="success" name="check" />
+                        <RoundedIcon className="mr0-5" key="dkim-icon" type="success" name="checkmark" />
                     </Tooltip>
                 );
             }
@@ -98,7 +98,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                         title={c('Tooltip')
                             .t`We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.`}
                     >
-                        <Icon size={24} className="mr0-5" name="triangle-exclamation-filled" />
+                        <Icon size={24} className="mr0-5" name="exclamation-circle-filled" />
                     </Tooltip>
                 );
             }
@@ -125,7 +125,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="domain-icon"
                 type={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'success' : 'error'}
-                name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'check' : 'xmark'}
+                name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'checkmark' : 'cross'}
             />
         ),
         !domainModel.VerifyState || domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT ? null : (
@@ -133,7 +133,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="verify-icon"
                 type={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'success' : 'error'}
-                name={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'check' : 'xmark'}
+                name={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'checkmark' : 'cross'}
             />
         ),
         !domainModel.MxState || domainModel.MxState === MX_STATE.MX_STATE_DEFAULT ? null : (
@@ -141,7 +141,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="mx-icon"
                 type={domainModel.MxState === MX_STATE.MX_STATE_GOOD ? 'success' : 'error'}
-                name={domainModel.MxState === MX_STATE.MX_STATE_GOOD ? 'check' : 'xmark'}
+                name={domainModel.MxState === MX_STATE.MX_STATE_GOOD ? 'checkmark' : 'cross'}
             />
         ),
         !domainModel.SpfState || domainModel.SpfState === SPF_STATE.SPF_STATE_DEFAULT ? null : (
@@ -149,7 +149,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="spf-icon"
                 type={domainModel.SpfState === SPF_STATE.SPF_STATE_GOOD ? 'success' : 'error'}
-                name={domainModel.SpfState === SPF_STATE.SPF_STATE_GOOD ? 'check' : 'xmark'}
+                name={domainModel.SpfState === SPF_STATE.SPF_STATE_GOOD ? 'checkmark' : 'cross'}
             />
         ),
         [DKIM_STATE.DKIM_STATE_ERROR, DKIM_STATE.DKIM_STATE_GOOD, DKIM_STATE.DKIM_STATE_WARNING].includes(
@@ -162,7 +162,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="dmarc-icon"
                 type={domainModel.DmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'success' : 'error'}
-                name={domainModel.DmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'check' : 'xmark'}
+                name={domainModel.DmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'checkmark' : 'cross'}
             />
         ),
         domainAddresses.length ? (
@@ -170,7 +170,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="addresses-icon"
                 type="success"
-                name="check"
+                name="checkmark"
             />
         ) : null,
     ];

@@ -74,12 +74,12 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                 </IconRow>
             )}
             {!!trimmedLocation && (
-                <IconRow title={c('Label').t`Location`} icon="map-marker" labelClassName="inline-flex pt0-25">
+                <IconRow title={c('Label').t`Location`} icon="map-pin" labelClassName="inline-flex pt0-25">
                     <span dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }} />
                 </IconRow>
             )}
             {!!participantsList.length && (
-                <IconRow title={c('Label').t`Participants`} icon="user-group" labelClassName="inline-flex pt0-25">
+                <IconRow title={c('Label').t`Participants`} icon="users" labelClassName="inline-flex pt0-25">
                     <ExtraEventParticipants list={participantsList} />
                 </IconRow>
             )}

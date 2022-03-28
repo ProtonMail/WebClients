@@ -128,7 +128,7 @@ export const Adornments = () => {
             <InputFieldTwo
                 label="Input with prefix icon"
                 className="pl0"
-                prefix={<Icon className="ml0-5" name="magnifying-glass" />}
+                prefix={<Icon className="ml0-5" name="magnifier" />}
             />
             <InputFieldTwo
                 label="Input with prefix text"

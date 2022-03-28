@@ -21,7 +21,7 @@ const TopNavbarListItemContactsButton = forwardRef(
                 ref={ref}
                 as="button"
                 type="button"
-                icon={<Icon name="user-group" />}
+                icon={<Icon name="users" />}
                 text={c('Header').t`Contacts`}
             />
         );

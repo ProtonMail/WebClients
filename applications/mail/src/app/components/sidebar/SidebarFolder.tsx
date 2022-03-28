@@ -60,7 +60,7 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount, e
                             }}
                         >
                             <Icon
-                                name="angle-down"
+                                name="chevron-down"
                                 className={classnames([
                                     'navigation-icon navigation-icon--expand',
                                     !folder.Expanded && 'rotateZ-270',

@@ -49,7 +49,7 @@ export const APPS_CONFIGURATION = {
         name: ACCOUNT_APP_NAME,
         bareName: 'Account',
         clientID: 'web-account',
-        icon: 'brand-proton-account',
+        icon: 'brand-proton',
         settingsSlug: 'account',
     },
     [APPS.PROTONACCOUNTLITE]: {
@@ -58,7 +58,7 @@ export const APPS_CONFIGURATION = {
         name: ACCOUNT_APP_NAME,
         bareName: 'Account',
         clientID: 'web-account-lite',
-        icon: 'brand-proton-account',
+        icon: 'brand-proton',
         settingsSlug: 'account',
     },
     [APPS.PROTONMAIL]: {
@@ -76,7 +76,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonContacts',
         bareName: 'Contacts',
         clientID: 'web-contacts',
-        icon: 'brand-proton-mail',
+        icon: 'brand-proton',
         settingsSlug: 'contacts',
     },
     [APPS.PROTONDRIVE]: {
@@ -112,7 +112,7 @@ export const APPS_CONFIGURATION = {
         name: '',
         bareName: 'Admin',
         clientID: 'web-admin',
-        icon: 'brand-proton-mail',
+        icon: 'brand-proton',
         settingsSlug: '',
     },
     [APPS.PROTONVERIFICATION]: {
@@ -121,7 +121,7 @@ export const APPS_CONFIGURATION = {
         name: VERIFY_APP_NAME,
         bareName: 'Verify',
         clientID: 'web-verify',
-        icon: 'brand-proton-mail',
+        icon: 'brand-proton',
         settingsSlug: '',
     },
 } as const;

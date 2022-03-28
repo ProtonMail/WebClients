@@ -32,7 +32,7 @@ const SubscriptionOption = ({ name, title, price, description, features = [], on
                         key={index}
                     >
                         <Icon
-                            name="check"
+                            name="checkmark"
                             size={16}
                             className="mr1 flex-item-noshrink on-rtl-mirror"
                             style={{ color: 'var(--primary)' }}

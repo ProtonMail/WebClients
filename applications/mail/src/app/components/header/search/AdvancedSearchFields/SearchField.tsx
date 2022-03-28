@@ -24,7 +24,7 @@ const SearchField = ({ onSubmit, onChange, value, showEncryptedSearch, showSearc
             />
             {showSearchIcon && (
                 <Button className="searchbox-search-button" onClick={onSubmit} shape="ghost" color="weak" icon>
-                    <Icon name="magnifying-glass" alt={c('action').t`Search messages`} />
+                    <Icon name="magnifier" alt={c('action').t`Search messages`} />
                 </Button>
             )}
         </Label>
