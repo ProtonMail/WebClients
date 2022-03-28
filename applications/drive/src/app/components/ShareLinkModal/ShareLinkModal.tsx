@@ -5,7 +5,6 @@ import { ModalTwo, useLoading, useNotifications } from '@proton/components';
 import { SharedURLSessionKeyPayload, ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import useConfirm from '../../hooks/util/useConfirm';
 import {
@@ -22,12 +21,10 @@ import ErrorState from './ErrorState';
 
 const getLoadingMessage = (item: FileBrowserItem) => {
     if (item.SharedUrl) {
-        return item.Type === LinkType.FILE
-            ? c('Info').t`Preparing link to file`
-            : c('Info').t`Preparing link to folder`;
+        return item.IsFile ? c('Info').t`Preparing link to file` : c('Info').t`Preparing link to folder`;
     }
 
-    return item.Type === LinkType.FILE ? c('Info').t`Creating link to file` : c('Info').t`Creating link to folder`;
+    return item.IsFile ? c('Info').t`Creating link to file` : c('Info').t`Creating link to folder`;
 };
 
 const getConfirmationMessage = (isFile: boolean) => {
@@ -167,8 +164,6 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         setExpirationToggledOn((expirationToggledOn) => !expirationToggledOn);
     };
 
-    const isFile = item.Type === LinkType.FILE;
-
     const handleDeleteLinkClick = () => {
         if (!shareUrlInfo) {
             return;
@@ -186,7 +181,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         openConfirmModal({
             title: c('Title').t`Stop sharing with everyone?`,
             confirm: c('Action').t`Stop sharing`,
-            message: getConfirmationMessage(isFile),
+            message: getConfirmationMessage(item.IsFile),
             canUndo: true,
             onConfirm: () =>
                 withDeleting(deleteLink()).catch(() => {
@@ -243,7 +238,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
                     passwordToggledOn={passwordToggledOn}
                     expirationToggledOn={expirationToggledOn}
                     itemName={item.Name}
-                    itemType={item.Type}
+                    isFile={item.IsFile}
                     onClose={handleClose}
                     onIncludePasswordToggle={handleToggleIncludePassword}
                     onIncludeExpirationTimeToogle={handleToggleIncludeExpirationTime}

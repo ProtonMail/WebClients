@@ -1,6 +1,5 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
-import { LinkType } from '../../links';
 import { LinkDownload } from '../interface';
 
 export type NestedLinkDownload = LinkDownload & {
@@ -9,12 +8,12 @@ export type NestedLinkDownload = LinkDownload & {
 
 export type StartedNestedLinkDownload =
     | {
-          type: LinkType.FOLDER;
+          isFile: false;
           name: string;
           parentPath: string[];
       }
     | {
-          type: LinkType.FILE;
+          isFile: true;
           name: string;
           parentPath: string[];
           stream: ReadableStream<Uint8Array>;

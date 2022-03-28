@@ -3,10 +3,10 @@ import { OpenPGPKey, SessionKey } from 'pmcrypto';
 
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 
-import { DecryptedLink, LinkType, SignatureIssues } from '../links';
+import { DecryptedLink, SignatureIssues } from '../links';
 
 export interface LinkDownload {
-    type: LinkType;
+    isFile: boolean;
     shareId: string;
     linkId: string;
 
@@ -69,7 +69,7 @@ type OnErrorCallback = (err: any) => void;
 
 export type ChildrenLinkMeta = Pick<
     DecryptedLink,
-    'type' | 'linkId' | 'name' | 'mimeType' | 'size' | 'signatureAddress' | 'signatureIssues'
+    'isFile' | 'linkId' | 'name' | 'mimeType' | 'size' | 'signatureAddress' | 'signatureIssues'
 >;
 export type GetChildrenCallback = (
     abortSignal: AbortSignal,

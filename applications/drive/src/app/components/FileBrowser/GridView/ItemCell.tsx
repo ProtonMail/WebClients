@@ -3,7 +3,6 @@ import * as React from 'react';
 import { c } from 'ttag';
 
 import { Button, Icon, FileIcon, Checkbox, classnames, DragMoveContainer, FileNameDisplay } from '@proton/components';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { useThumbnailsDownload } from '../../../store';
@@ -98,11 +97,7 @@ function ItemCell({
                             alt={iconText}
                         />
                     ) : (
-                        <FileIcon
-                            size={48}
-                            mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
-                            alt={iconText}
-                        />
+                        <FileIcon size={48} mimeType={item.IsFile ? item.MIMEType : 'Folder'} alt={iconText} />
                     )}
                 </div>
                 <div

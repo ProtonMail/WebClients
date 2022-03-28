@@ -6,7 +6,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { SearchSortField } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { useUserSettings } from '../settings';
-import { LinkType, useLinksListing } from '../links';
+import { useLinksListing } from '../links';
 import { useSearchResults } from '../search';
 import { reportError } from '../utils';
 import { useMemoArrayNoMatterTheOrder, useAbortSignal, useSelection, useSorting, useSortingWithDefault } from './utils';
@@ -39,7 +39,7 @@ export default function useSearchView(shareId: string, query: string) {
     const searchResults = useMemo(() => {
         return cachedResults.map((esLink) => ({
             linkId: esLink.linkId,
-            type: esLink.MIMEType === 'Folder' ? LinkType.FOLDER : LinkType.FILE,
+            isFile: esLink.MIMEType !== 'Folder',
             name: esLink.decryptedName,
             mimeType: esLink.MIMEType,
             size: esLink.size,

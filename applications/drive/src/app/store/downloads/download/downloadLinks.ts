@@ -1,5 +1,4 @@
 import { reportError } from '../../utils';
-import { LinkType } from '../../links';
 import {
     LinkDownload,
     DownloadCallbacks,
@@ -58,7 +57,7 @@ function loadTotalSize(
     onSignatureIssue?: OnSignatureIssueCallback
 ) {
     const sizePromises = links.map(async (link) => {
-        if (link.type === LinkType.FILE) {
+        if (link.isFile) {
             return link.size;
         }
         const folderLoader = new FolderTreeLoader();
@@ -83,7 +82,7 @@ async function* iterateAllLinks(
             parentPath: [],
             ...link,
         };
-        if (link.type === LinkType.FOLDER) {
+        if (!link.isFile) {
             const f = folderLoaders.get(link.shareId + link.linkId) as FolderTreeLoader;
             for await (const childLink of f.iterateAllChildren()) {
                 yield {

@@ -2,18 +2,17 @@ import { renderHook, act } from '@testing-library/react-hooks';
 
 import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { LinkType } from '../../links';
 import { LinkDownload } from '../interface';
 import { Download, UpdateCallback, UpdateData, UpdateFilter, UpdateState } from './interface';
 import useDownloadQueue from './useDownloadQueue';
 
-function makeDownloadLink(name: string, type = LinkType.FILE): LinkDownload {
+function makeDownloadLink(name: string, isFile = true): LinkDownload {
     return {
-        type,
+        isFile,
         shareId: 'shareId',
         linkId: name,
         name,
-        mimeType: type === LinkType.FILE ? 'text/plain' : 'Folder',
+        mimeType: isFile ? 'text/plain' : 'Folder',
         size: 1234,
         signatureAddress: 'address',
     };
@@ -45,8 +44,8 @@ describe('useDownloadQueue', () => {
 
         await act(async () => {
             await hook.current.add([makeDownloadLink('file.txt')]);
-            await hook.current.add([makeDownloadLink('folder', LinkType.FOLDER)]);
-            await hook.current.add([makeDownloadLink('file.txt'), makeDownloadLink('folder', LinkType.FOLDER)]);
+            await hook.current.add([makeDownloadLink('folder', false)]);
+            await hook.current.add([makeDownloadLink('file.txt'), makeDownloadLink('folder', false)]);
         });
 
         fileTransferId = hook.current.downloads[0].id;
@@ -63,17 +62,14 @@ describe('useDownloadQueue', () => {
 
     it('adding same folder transfer fails', async () => {
         await act(async () => {
-            const promise = hook.current.add([makeDownloadLink('folder', LinkType.FOLDER)]);
+            const promise = hook.current.add([makeDownloadLink('folder', false)]);
             await expect(promise).rejects.toThrowError('Folder "folder" is already downloading');
         });
     });
 
     it('adding same files transfer fails', async () => {
         await act(async () => {
-            const promise = hook.current.add([
-                makeDownloadLink('file.txt'),
-                makeDownloadLink('folder', LinkType.FOLDER),
-            ]);
+            const promise = hook.current.add([makeDownloadLink('file.txt'), makeDownloadLink('folder', false)]);
             await expect(promise).rejects.toThrowError('File selection is already downloading');
         });
     });
