@@ -2,13 +2,14 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { RouteComponentProps, Route } from 'react-router';
 
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
+import { useAppTitle } from '@proton/components';
 
 import DriveView, { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
 import useNavigate from '../hooks/drive/useNavigate';
 import useActiveShare, { DriveFolder } from '../hooks/drive/useActiveShare';
 import PreviewContainer from './PreviewContainer';
-
 import { useDefaultShare } from '../store';
+import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
 
 export default function FolderContainer({ match }: RouteComponentProps<DriveSectionRouteProps>) {
     const { navigateToRoot } = useNavigate();
@@ -16,6 +17,7 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
     const lastFolderPromise = useRef<Promise<DriveFolder | undefined>>();
     const [, setError] = useState();
     const { getDefaultShare } = useDefaultShare();
+    useFolderContainerTitle({ params: match.params, setAppTitle: useAppTitle });
 
     const hasValidLinkType = (type: string) => {
         return type === LinkURLType.FILE || type === LinkURLType.FOLDER;

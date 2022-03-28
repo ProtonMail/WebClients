@@ -1,4 +1,4 @@
-import { StandardPrivateApp, LoaderPage, useAppTitle } from '@proton/components';
+import { StandardPrivateApp, LoaderPage } from '@proton/components';
 import {
     UserModel,
     UserSettingsModel,
@@ -21,7 +21,6 @@ interface Props {
 
 const PrivateAppInner = ({ onLogout, locales }: Props) => {
     const { loadUserSettings } = useUserSettings();
-    useAppTitle('');
 
     return (
         <StandardPrivateApp
