@@ -1,5 +1,14 @@
 import { useEffect, useState } from 'react';
-import { AlertModal, Button, Icon, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import {
+    AlertModal,
+    Button,
+    Icon,
+    useApi,
+    useEventManager,
+    useModalState,
+    useNotifications,
+    classnames,
+} from '@proton/components';
 import { c } from 'ttag';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
@@ -87,11 +96,13 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     };
 
     return (
-        <div className="bg-info rounded p0-5 mb0-85 flex flex-nowrap" data-testid="message:schedule-banner">
-            <Icon name="clock" className="mt0-5 ml0-2 flex-item-noshrink" />
-            <span className="pl0-5 pr0-5 flex-item-fluid mt0-25">{getScheduleBannerMessage()}</span>
+        <div className="bg-info rounded px0-5 py0-25 mb0-85 flex flex-nowrap" data-testid="message:schedule-banner">
+            <Icon name="clock" className="mt0-4 ml0-2 flex-item-noshrink" />
+            <span className={classnames(['pl0-5 pr0-5 flex-item-fluid mt0-25', isScheduleSentShortly && 'mb0-25'])}>
+                {getScheduleBannerMessage()}
+            </span>
             {!isScheduleSentShortly ? (
-                <span className="flex-item-noshrink flex-align-items-start flex">
+                <span className="flex-item-noshrink flex-align-items-start flex color-norm">
                     <Button
                         size="small"
                         color="weak"
