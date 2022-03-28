@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useSearchView } from '../../../store';
 import useNavigate from '../../../hooks/drive/useNavigate';
@@ -28,11 +27,11 @@ export const Search = ({ shareId, searchView }: Props) => {
 
     const handleClick = useCallback(
         async (item: FileBrowserItem) => {
-            if (item.Type === LinkType.FOLDER) {
+            if (!item.IsFile) {
                 return;
             }
             document.getSelection()?.removeAllRanges();
-            navigateToLink(shareId, item.LinkID, item.Type);
+            navigateToLink(shareId, item.LinkID, item.IsFile);
         },
         [navigateToLink, shareId]
     );

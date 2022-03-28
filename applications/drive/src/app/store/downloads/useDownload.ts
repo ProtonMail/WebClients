@@ -6,7 +6,7 @@ import { queryFileRevision } from '@proton/shared/lib/api/drive/files';
 import { streamToBuffer } from '../../utils/stream';
 import { useDebouncedRequest } from '../api';
 import { useDriveCrypto } from '../crypto';
-import { DecryptedLink, LinkType, SignatureIssues, useLink, useLinksListing } from '../links';
+import { DecryptedLink, SignatureIssues, useLink, useLinksListing } from '../links';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
 import downloadThumbnailPure from './download/downloadThumbnail';
@@ -44,7 +44,7 @@ export default function useDownload() {
         let link = await getLink(abortSignal, shareId, linkId);
         const revisionId = link.activeRevision?.id;
         if (!revisionId) {
-            throw new Error(`Invalid link metadata, expected File (${LinkType.FILE}), got ${link.type}`);
+            throw new Error(`Invalid link metadata, expected file`);
         }
 
         const { Revision } = await debouncedRequest<DriveFileRevisionResult>({
@@ -123,7 +123,7 @@ export default function useDownload() {
 
     const checkFirstBlockSignature = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
         const link = await getLink(abortSignal, shareId, linkId);
-        if (link.type === LinkType.FOLDER) {
+        if (!link.isFile) {
             return;
         }
         return new Promise<SignatureIssues | undefined>((resolve, reject) => {

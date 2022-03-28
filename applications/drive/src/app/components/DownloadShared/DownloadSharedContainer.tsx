@@ -64,7 +64,7 @@ const DownloadSharedContainer = () => {
         const { name, mimeType, linkID, size, linkType } = linkInfo;
 
         const transferListItem = {
-            type: linkType,
+            isFile: linkType === LinkType.FILE,
             name,
             mimeType: linkType === LinkType.FILE ? mimeType : SupportedMimeTypes.zip,
             size: linkType === LinkType.FILE ? size : 0,

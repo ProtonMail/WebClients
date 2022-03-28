@@ -2,7 +2,6 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { useEffect } from 'react';
 
 import { ContextMenu, ContextSeparator } from '@proton/components';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ItemContextMenuProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import {
@@ -28,7 +27,7 @@ const DriveItemContextMenu = ({
     close,
 }: ItemContextMenuProps) => {
     const isOnlyOneItem = selectedItems.length === 1;
-    const isOnlyOneFileItem = isOnlyOneItem && item.Type === LinkType.FILE;
+    const isOnlyOneFileItem = isOnlyOneItem && item.IsFile;
     const hasPreviewAvailable = isOnlyOneFileItem && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
     const hasLink = isOnlyOneItem && item.SharedUrl && !item.UrlsExpired && !item.Trashed;
 

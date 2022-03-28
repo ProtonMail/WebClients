@@ -3,7 +3,6 @@ import { c } from 'ttag';
 
 import { CollapsingBreadcrumbs, useNotifications } from '@proton/components';
 import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { DriveFolder } from '../hooks/drive/useActiveShare';
 import useNavigate from '../hooks/drive/useNavigate';
@@ -55,7 +54,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                         onClick:
                             linkId === activeFolder.linkId
                                 ? undefined
-                                : () => navigateToLink(activeFolder.shareId, linkId, LinkType.FOLDER),
+                                : () => navigateToLink(activeFolder.shareId, linkId, false),
                         onDragLeave: () => {
                             setDropTarget(undefined);
                         },

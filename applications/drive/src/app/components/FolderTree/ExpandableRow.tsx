@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 
 import { Icon, Button, classnames, TableRowBusy, FileIcon, FileNameDisplay } from '@proton/components';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { DecryptedLink } from '../../store';
 
@@ -51,7 +50,7 @@ const ExpandableRow = ({
                     <div className="folder-tree-list-item-expand flex-item-noshrink relative">
                         <Button
                             disabled={isDisabled}
-                            style={{ visibility: link.type === LinkType.FILE ? 'hidden' : 'visible' }}
+                            style={{ visibility: link.isFile ? 'hidden' : 'visible' }}
                             className="folder-tree-list-item-expand-button increase-click-surface"
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -66,10 +65,7 @@ const ExpandableRow = ({
                         key="Name"
                         className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w100"
                     >
-                        <FileIcon
-                            mimeType={link.type === LinkType.FOLDER ? 'Folder' : link.mimeType}
-                            className="mr0-5"
-                        />
+                        <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr0-5" />
                         <FileNameDisplay text={link.name} />
                     </div>
                     {isSelected && (

@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 
 import { ContextMenu } from '@proton/components';
 
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ItemContextMenuProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { DetailsButton, DownloadButton, PreviewButton, RenameButton, ShareLinkButton } from '../ContextMenu';
 import { StopSharingButton } from './ContextMenuButtons';
@@ -20,7 +19,7 @@ const SharedLinksItemContextMenu = ({
 }: ItemContextMenuProps) => {
     const isOnlyOneItem = selectedItems.length === 1;
     const hasPreviewAvailable =
-        isOnlyOneItem && item.Type === LinkType.FILE && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
+        isOnlyOneItem && item.IsFile && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
 
     useEffect(() => {
         if (position) {

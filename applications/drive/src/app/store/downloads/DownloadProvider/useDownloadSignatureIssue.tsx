@@ -5,7 +5,7 @@ import { TransferCancel, TransferState } from '@proton/shared/lib/interfaces/dri
 
 import { waitUntil } from '../../../utils/async';
 import { isTransferActive, isTransferSignatureIssue } from '../../../utils/transfer';
-import { LinkType, SignatureIssues } from '../../links';
+import { SignatureIssues } from '../../links';
 import { LinkDownload, TransferSignatureIssueStrategy, DownloadSignatureIssueModal } from '../interface';
 import { Download, UpdateFilter, UpdateState, UpdateData } from './interface';
 
@@ -152,7 +152,7 @@ export default function useUploadConflict(
 
         const { download, link } = signatureIssues[0];
         openSignatureIssueModal(download.id, link.linkId, {
-            isFile: link.type === LinkType.FILE,
+            isFile: link.isFile,
             name: link.name,
             downloadName: download.meta.filename,
             signatureIssues: link.signatureIssues as SignatureIssues,

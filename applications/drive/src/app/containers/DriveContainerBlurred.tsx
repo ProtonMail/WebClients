@@ -15,7 +15,6 @@ import {
 import { noop } from '@proton/shared/lib/helpers/function';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
 import { DriveHeader } from '../components/layout/DriveHeader';
@@ -89,7 +88,7 @@ const DriveContainerBlurred = () => {
                                 RealModifyTime: Date.now() / 1000,
                                 Trashed: null,
                                 Size: 1024 * 1024,
-                                Type: LinkType.FOLDER,
+                                IsFile: false,
                                 UrlsExpired: false,
                                 HasThumbnail: false,
                                 SignatureAddress: 'dummy',
@@ -104,7 +103,7 @@ const DriveContainerBlurred = () => {
                                 RealModifyTime: Date.now() / 1000,
                                 Trashed: null,
                                 Size: 1024 * 1024,
-                                Type: LinkType.FILE,
+                                IsFile: true,
                                 UrlsExpired: false,
                                 HasThumbnail: false,
                                 SignatureAddress: 'dummy',

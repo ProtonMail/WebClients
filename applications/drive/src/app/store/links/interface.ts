@@ -1,10 +1,5 @@
 import { VERIFICATION_STATUS } from 'pmcrypto';
 
-export enum LinkType {
-    FOLDER = 1,
-    FILE = 2,
-}
-
 /**
  * Link should not be used directly. It is general set of attributes
  * commont for both EncryptedLink and DecryptedLink.
@@ -12,7 +7,7 @@ export enum LinkType {
 interface Link {
     linkId: string;
     parentLinkId: string;
-    type: LinkType;
+    isFile: boolean;
     name: string;
     mimeType: string;
     size: number;
