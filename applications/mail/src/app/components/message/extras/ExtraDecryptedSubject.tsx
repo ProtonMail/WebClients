@@ -12,16 +12,19 @@ const ExtraDecryptedSubject = ({ message }: Props) => {
     }
 
     return (
-        <div className="bg-norm rounded border p0-5 mb0-85 flex flex-nowrap" data-testid="encrypted-subject-banner">
+        <div
+            className="bg-norm rounded border px0-5 py0-3 mb0-85 flex flex-nowrap"
+            data-testid="encrypted-subject-banner"
+        >
             <div className="flex">
                 <Tooltip title={c('Info').t`Subject is end-to-end encrypted`}>
                     <Icon
                         name="lock"
-                        className="mt0-5 mr0-5 ml0-2 flex-item-noshrink"
+                        className="mt0-3 mr0-5 ml0-2 flex-item-noshrink"
                         alt={c('Info').t`Subject is end-to-end encrypted`}
                     />
                 </Tooltip>
-                <div className="mr0-5 mt0-25 flex-item-fluid pb0-25">
+                <div className="mr0-5 mt0-1 flex-item-fluid pb0-25">
                     {c('Info').t`Subject:`} {message.decryption?.decryptedSubject}
                 </div>
             </div>
