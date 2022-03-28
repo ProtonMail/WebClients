@@ -2,12 +2,10 @@ import { RefObject, useCallback, useEffect } from 'react';
 
 const useIframeDispatchEvents = (
     initStatus: 'start' | 'base_content' | 'done',
-    iframeRef: RefObject<HTMLIFrameElement>,
-    parentMessageRef?: RefObject<HTMLElement>
+    iframeRef: RefObject<HTMLIFrameElement>
 ) => {
     const bubbleEventCallback = useCallback(() => {
         document.dispatchEvent(new CustomEvent('dropdownclose'));
-        parentMessageRef?.current?.focus();
     }, []);
 
     useEffect(() => {
