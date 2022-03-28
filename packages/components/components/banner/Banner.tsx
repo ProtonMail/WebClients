@@ -36,7 +36,9 @@ const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor,
     };
 
     return (
-        <div className={`bg-${backgroundColor} rounded p0-5 mb0-75 flex flex-align-items-center flex-nowrap border`}>
+        <div
+            className={`bg-${backgroundColor} rounded px0-5 py0-25 mb0-75 flex flex-align-items-center flex-nowrap border`}
+        >
             {getIcon()}
             <span className={classnames([!!action && 'mr1'])}>{children}</span>
             {action}
