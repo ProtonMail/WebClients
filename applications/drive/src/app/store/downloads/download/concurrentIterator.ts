@@ -2,7 +2,6 @@ import { generateUID } from '@proton/components';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { waitUntil } from '../../../utils/async';
-import { LinkType } from '../../links';
 import { MAX_DOWNLOADING_BLOCKS_LOAD, MAX_DOWNLOADING_FILES_LOAD } from '../constants';
 import { DownloadStreamControls, DownloadCallbacks } from '../interface';
 import { NestedLinkDownload, StartedNestedLinkDownload } from './interface';
@@ -40,7 +39,7 @@ export default class ConcurrentIterator {
                 return;
             }
 
-            if (link.type === LinkType.FOLDER) {
+            if (!link.isFile) {
                 yield link as StartedNestedLinkDownload;
             } else {
                 await waitUntil(

@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useGlobalLoader } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { LinkType, LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem, DragMoveControls } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 
@@ -21,33 +20,31 @@ export default function useDriveDragMove(
     const [activeDropTarget, setActiveDropTarget] = useState<FileBrowserItem>();
     const dragEnterCounter = useRef(0);
 
-    const getHandleItemDrop =
-        <T extends FileBrowserItem | LinkMeta>(newParentLinkId: string) =>
-        async (e: React.DragEvent) => {
-            let toMove: T[];
-            try {
-                toMove = JSON.parse(e.dataTransfer.getData(CUSTOM_DATA_FORMAT));
-            } catch (err: any) {
-                // Data should be set by useFileBrowserItem when drag starts.
-                // If the data transfer was not available or the move was so
-                // fast that the data were not set yet, we should ignore the
-                // event.
-                console.warn('Could not finish move operation due to', err);
-                return;
-            }
-            const toMoveInfo = toMove.map(({ ParentLinkID, LinkID, Name, Type }) => ({
-                parentLinkId: ParentLinkID,
-                linkId: LinkID,
-                name: Name,
-                type: Type,
-            }));
-            dragEnterCounter.current = 0;
+    const getHandleItemDrop = (newParentLinkId: string) => async (e: React.DragEvent) => {
+        let toMove: FileBrowserItem[];
+        try {
+            toMove = JSON.parse(e.dataTransfer.getData(CUSTOM_DATA_FORMAT));
+        } catch (err: any) {
+            // Data should be set by useFileBrowserItem when drag starts.
+            // If the data transfer was not available or the move was so
+            // fast that the data were not set yet, we should ignore the
+            // event.
+            console.warn('Could not finish move operation due to', err);
+            return;
+        }
+        const toMoveInfo = toMove.map(({ ParentLinkID, LinkID, Name, IsFile }) => ({
+            parentLinkId: ParentLinkID,
+            linkId: LinkID,
+            name: Name,
+            isFile: IsFile,
+        }));
+        dragEnterCounter.current = 0;
 
-            clearSelections();
-            setActiveDropTarget(undefined);
+        clearSelections();
+        setActiveDropTarget(undefined);
 
-            await withGlobalLoader(moveLinks(new AbortController().signal, shareId, toMoveInfo, newParentLinkId));
-        };
+        await withGlobalLoader(moveLinks(new AbortController().signal, shareId, toMoveInfo, newParentLinkId));
+    };
 
     const getDragMoveControls = (item: FileBrowserItem): DragMoveControls => {
         const dragging = allDragging.some(({ LinkID }) => LinkID === item.LinkID);
@@ -57,8 +54,7 @@ export default function useDriveDragMove(
                 : setAllDragging([]);
 
         const isActiveDropTarget = activeDropTarget?.LinkID === item.LinkID;
-        const availableTarget =
-            item.Type === LinkType.FOLDER && allDragging.every(({ LinkID }) => item.LinkID !== LinkID);
+        const availableTarget = !item.IsFile && allDragging.every(({ LinkID }) => item.LinkID !== LinkID);
         const handleDrop = getHandleItemDrop(item.LinkID);
 
         const handleDragOver = (e: React.DragEvent<HTMLTableRowElement>) => {

@@ -29,7 +29,7 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
     const handleClick = useCallback(
         async (item: FileBrowserItem) => {
             document.getSelection()?.removeAllRanges();
-            navigateToLink(shareId, item.LinkID, item.Type);
+            navigateToLink(shareId, item.LinkID, item.IsFile);
         },
         [navigateToLink, shareId]
     );

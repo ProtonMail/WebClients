@@ -28,7 +28,7 @@ const RestoreFromTrashButton = ({ shareId, selectedItems }: Props) => {
                             parentLinkId: item.ParentLinkID,
                             linkId: item.LinkID,
                             name: item.Name,
-                            type: item.Type,
+                            isFile: item.IsFile,
                         }))
                     )
                 )

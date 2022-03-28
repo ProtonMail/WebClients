@@ -22,7 +22,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
 } from '@proton/components';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import ExpirationTimeDatePicker from './ExpirationTimeDatePicker';
 
@@ -30,7 +29,7 @@ const MAX_CUSTOM_PASSWORD_LENGTH = 50;
 
 interface Props {
     itemName: string;
-    itemType: LinkType;
+    isFile: boolean;
     initialExpiration: number | null;
     url: string;
     passwordToggledOn: boolean;
@@ -62,7 +61,7 @@ const getPasswordProtectedSharingInfoMessage = (isFile: boolean) => {
 
 function GeneratedLinkState({
     itemName,
-    itemType,
+    isFile,
     initialExpiration,
     url,
     customPassword,
@@ -160,7 +159,6 @@ function GeneratedLinkState({
     );
 
     const passwordTooltipText = isValidForPasswordRemoval ? PASSWORD_TOGGLE_DISABLE_REASON : null;
-    const isFile = itemType === LinkType.FILE;
 
     return (
         <>
@@ -220,24 +218,22 @@ function GeneratedLinkState({
                             <div className="flex-no-min-children flex-item-fluid on-mobile-mb0-5 inputform-icon-container-empty on-mobile-min-h0">
                                 {passwordToggledOn && (
                                     <>
-                                    <InputFieldTwo
-                                        id="sharing-modal-password"
-                                        as={PasswordInputTwo}
-                                        data-testid="sharing-modal-password"
-                                        labelContainerClassName="sr-only"
-                                        label={c('Label').t`Password`}
-                                        disabled={saving}
-                                        value={password}
-                                        error={
-                                            isPasswordInvalid &&
-                                            c('Info')
-                                                .t`Only ${MAX_CUSTOM_PASSWORD_LENGTH} characters is allowed`
-                                        }
-                                        assistiveText={`${password.length}/${MAX_CUSTOM_PASSWORD_LENGTH}`}
-                                        onInput={handleChangePassword}
-                                    />
-                                </>
-
+                                        <InputFieldTwo
+                                            id="sharing-modal-password"
+                                            as={PasswordInputTwo}
+                                            data-testid="sharing-modal-password"
+                                            labelContainerClassName="sr-only"
+                                            label={c('Label').t`Password`}
+                                            disabled={saving}
+                                            value={password}
+                                            error={
+                                                isPasswordInvalid &&
+                                                c('Info').t`Only ${MAX_CUSTOM_PASSWORD_LENGTH} characters is allowed`
+                                            }
+                                            assistiveText={`${password.length}/${MAX_CUSTOM_PASSWORD_LENGTH}`}
+                                            onInput={handleChangePassword}
+                                        />
+                                    </>
                                 )}
                             </div>
                         </div>

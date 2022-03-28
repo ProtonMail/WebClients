@@ -3,7 +3,6 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import { FILE_CHUNK_SIZE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { LinkType } from '../../links';
 import { LinkDownload } from '../interface';
 import { Download } from './interface';
 import useDownloadControl from './useDownloadControl';
@@ -24,7 +23,7 @@ function makeDownload(id: string, state: TransferState, links: LinkDownload[], s
 
 function makeDownloadLink(name: string, size = 2 * FILE_CHUNK_SIZE): LinkDownload {
     return {
-        type: LinkType.FILE,
+        isFile: true,
         shareId: 'shareId',
         linkId: 'linkId',
         name,

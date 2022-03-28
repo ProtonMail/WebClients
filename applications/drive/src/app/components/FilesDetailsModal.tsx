@@ -12,7 +12,6 @@ import {
 } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { LinkType } from '../store';
 import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
 
 interface Props {
@@ -24,8 +23,8 @@ interface Props {
 const FilesDetailsModal = ({ selectedItems, onClose, open }: Props) => {
     const size = selectedItems.reduce((sum, current) => sum + current.Size, 0);
 
-    const hasFile = selectedItems.some(({ Type }) => Type === LinkType.FILE);
-    const hasFolder = selectedItems.some(({ Type }) => Type === LinkType.FOLDER);
+    const hasFile = selectedItems.some(({ IsFile }) => IsFile);
+    const hasFolder = selectedItems.some(({ IsFile }) => !IsFile);
     const hasBoth = hasFile && hasFolder;
 
     const title = hasBoth
