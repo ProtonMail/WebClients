@@ -24,7 +24,7 @@ const ShareButton = ({ shareId, item, close }: Props) => {
     return (
         <ContextMenuButton
             name={hasShare ? c('Action').t`Share options` : c('Action').t`Share`}
-            icon="user-group"
+            icon="users"
             testId="context-menu-share"
             action={() => openSharing(shareId, item)}
             close={close}

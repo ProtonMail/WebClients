@@ -53,8 +53,7 @@
 		}
 
 		&-delete {
-			padding-inline-start: em(2, 12);
-			padding-inline-end: em(4, 12);
+			padding-inline: 0 em(2, 12);
 
 			& &-icon {
 				display: block;

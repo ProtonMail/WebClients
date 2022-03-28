@@ -62,7 +62,7 @@ const MailRecipients = ({
                         aria-controls="message-recipients" // hack to get proper styles AND proper vocalization
                     >
                         <Icon
-                            name="angle-down"
+                            name="chevron-down"
                             className={classnames(['navigation-icon--expand', expanded && 'rotateX-180'])}
                             alt={titleAction}
                         />

@@ -25,7 +25,7 @@ const DetailsButton = ({ shareId, items, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Details`}
-            icon="circle-info"
+            icon="info-circle"
             testId="context-menu-details"
             action={action}
             close={close}

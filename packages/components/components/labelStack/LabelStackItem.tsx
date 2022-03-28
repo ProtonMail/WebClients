@@ -84,7 +84,7 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
                     onClick={label.onDelete}
                     title={`${c('Action').t`Remove`} ${label.title}`}
                 >
-                    <Icon name="xmark" size={12} className="label-stack-item-delete-icon" alt={c('Action').t`Remove`} />
+                    <Icon name="cross-small" className="label-stack-item-delete-icon" alt={c('Action').t`Remove`} />
                 </button>
             )}
 

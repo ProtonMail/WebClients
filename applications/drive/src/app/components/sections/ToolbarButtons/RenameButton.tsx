@@ -21,7 +21,7 @@ const RenameButton = ({ shareId, selectedItems }: Props) => {
     return (
         <ToolbarButton
             title={c('Action').t`Rename`}
-            icon={<Icon name="note-pen" />}
+            icon={<Icon name="pen-square" />}
             onClick={() => openRename(shareId, selectedItems[0])}
             data-testid="toolbar-rename"
         />

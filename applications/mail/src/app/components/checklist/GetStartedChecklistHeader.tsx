@@ -42,7 +42,7 @@ const GetStartedChecklistHeader = ({
                 {onDismiss && (
                     <div className="pl1">
                         <Button icon shape="ghost" onClick={onDismiss}>
-                            <Icon name="xmark" size={12} alt={c('Action').t`Dismiss get started checklist`} />
+                            <Icon name="cross" size={12} alt={c('Action').t`Dismiss get started checklist`} />
                         </Button>
                     </div>
                 )}

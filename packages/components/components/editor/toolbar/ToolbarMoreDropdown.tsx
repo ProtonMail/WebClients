@@ -31,14 +31,17 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                     onClick={config.unorderedList.toggle}
                 >
                     <Icon
-                        name="check"
+                        name="checkmark"
                         className={classnames(['mt0-25', getClassname(config.unorderedList.isActive)])}
                     />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Unordered list`}</span>
-                    <Icon name="list" className="mt0-25 mr0-5" />
+                    <Icon name="list-bullets" className="mt0-25 mr0-5" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton key={13} className="text-left flex flex-nowrap" onClick={config.orderedList.toggle}>
-                    <Icon name="check" className={classnames(['mt0-25', getClassname(config.orderedList.isActive)])} />
+                    <Icon
+                        name="checkmark"
+                        className={classnames(['mt0-25', getClassname(config.orderedList.isActive)])}
+                    />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Ordered list`}</span>
                     <Icon name="list-numbers" className="mt0-25 mr0-5" />
                 </DropdownMenuButton>,
@@ -48,27 +51,27 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                     className="text-left flex flex-nowrap"
                     onClick={() => config.alignment.setValue(Alignment.Left)}
                 >
-                    <Icon name="check" className={classnames(['mt0-25', 'visibility-hidden'])} />
+                    <Icon name="checkmark" className={classnames(['mt0-25', 'visibility-hidden'])} />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Align left`}</span>
-                    <Icon name="align-left" className="mt0-25 mr0-5" />
+                    <Icon name="text-align-left" className="mt0-25 mr0-5" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={9}
                     className="text-left flex flex-nowrap"
                     onClick={() => config.alignment.setValue(Alignment.Center)}
                 >
-                    <Icon name="check" className={classnames(['mt0-25', 'visibility-hidden'])} />
+                    <Icon name="checkmark" className={classnames(['mt0-25', 'visibility-hidden'])} />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Align center`}</span>
-                    <Icon name="align-center" className="mt0-25 mr0-5" />
+                    <Icon name="text-align-center" className="mt0-25 mr0-5" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={10}
                     className="text-left flex flex-nowrap"
                     onClick={() => config.alignment.setValue(Alignment.Center)}
                 >
-                    <Icon name="check" className={classnames(['mt0-25', 'visibility-hidden'])} />
+                    <Icon name="checkmark" className={classnames(['mt0-25', 'visibility-hidden'])} />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Align right`}</span>
-                    <Icon name="align-right" className="mt0-25 mr0-5" />
+                    <Icon name="text-align-right" className="mt0-25 mr0-5" />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-2" />,
                 <DropdownMenuButton
@@ -76,16 +79,19 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                     className="text-left flex flex-nowrap"
                     onClick={() => config.blockquote.toggle}
                 >
-                    <Icon name="check" className={classnames(['mt0-25', getClassname(config.blockquote.isActive)])} />
+                    <Icon
+                        name="checkmark"
+                        className={classnames(['mt0-25', getClassname(config.blockquote.isActive)])}
+                    />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Quote`}</span>
-                    <Icon name="quote-right" className="mt0-25 mr0-5" />
+                    <Icon name="text-quote" className="mt0-25 mr0-5" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={15}
                     className="text-left flex flex-nowrap"
                     onClick={() => config.link.showModal}
                 >
-                    <Icon name="check" className={classnames(['mt0-25', 'visibility-hidden'])} />
+                    <Icon name="checkmark" className={classnames(['mt0-25', 'visibility-hidden'])} />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Insert link`}</span>
                     <Icon name="link" className="mt0-25 mr0-5" />
                 </DropdownMenuButton>,
@@ -94,7 +100,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                     className="text-left flex flex-nowrap"
                     onClick={() => config.formatting.clear}
                 >
-                    <Icon name="check" className={classnames(['mt0-25', 'visibility-hidden'])} />
+                    <Icon name="checkmark" className={classnames(['mt0-25', 'visibility-hidden'])} />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Clear all formatting`}</span>
                     <Icon name="eraser" className="mt0-25 mr0-5" />
                 </DropdownMenuButton>,
@@ -105,7 +111,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                         className="text-left flex flex-nowrap"
                         onClick={() => config.image.showModal}
                     >
-                        <Icon name="check" className={classnames(['mt0-25', 'visibility-hidden'])} />
+                        <Icon name="checkmark" className={classnames(['mt0-25', 'visibility-hidden'])} />
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Insert image`}</span>
                         <Icon name="file-image" className="mt0-25 mr0-5" />
                     </DropdownMenuButton>,
@@ -122,7 +128,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                         onClick={() => config.textDirection.setValue(Direction.LeftToRight)}
                     >
                         <Icon
-                            name="check"
+                            name="checkmark"
                             className={classnames([
                                 'mt0-25',
                                 getClassname(metadata.rightToLeft === Direction.LeftToRight),
@@ -136,7 +142,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                         onClick={() => config.textDirection.setValue(Direction.RightToLeft)}
                     >
                         <Icon
-                            name="check"
+                            name="checkmark"
                             className={classnames([
                                 'mt0-25',
                                 getClassname(metadata.rightToLeft === Direction.RightToLeft),
@@ -157,7 +163,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                     }}
                     data-testid="editor-to-html"
                 >
-                    <Icon name="check" className={classnames(['mt0-25', getClassname(!metadata.isPlainText)])} />
+                    <Icon name="checkmark" className={classnames(['mt0-25', getClassname(!metadata.isPlainText)])} />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Normal`}</span>
                 </DropdownMenuButton>,
                 <DropdownMenuButton
@@ -170,7 +176,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                     }}
                     data-testid="editor-to-plaintext"
                 >
-                    <Icon name="check" className={classnames(['mt0-25', getClassname(metadata.isPlainText)])} />
+                    <Icon name="checkmark" className={classnames(['mt0-25', getClassname(metadata.isPlainText)])} />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Plain text`}</span>
                 </DropdownMenuButton>,
             ]}

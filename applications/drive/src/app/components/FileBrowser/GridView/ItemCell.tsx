@@ -127,7 +127,7 @@ function ItemCell({
                         ])}
                         {...optionsHandlers}
                     >
-                        <Icon name="ellipsis-vertical" alt={c('Action').t`More options`} />
+                        <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
                     </Button>
                 </div>
             </div>

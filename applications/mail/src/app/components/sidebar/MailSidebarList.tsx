@@ -302,7 +302,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     <>
                         <SidebarItem
                             {...getCommonProps(MAILBOX_LABEL_IDS.ARCHIVE)}
-                            icon="box-archive"
+                            icon="archive-box"
                             text={c('Link').t`Archive`}
                             shortcutText="[G] [A]"
                             isFolder
@@ -362,7 +362,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                                 <SidebarListItemHeaderLink
                                     to="/mail/folders-labels"
                                     toApp={APPS.PROTONACCOUNT}
-                                    icon="gear"
+                                    icon="cog-wheel"
                                     title={c('Info').t`Manage your folders`}
                                     info={c('Link').t`Manage your folders`}
                                     target="_self"
@@ -407,7 +407,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                                 <SidebarListItemHeaderLink
                                     to="/mail/folders-labels"
                                     toApp={APPS.PROTONACCOUNT}
-                                    icon="gear"
+                                    icon="cog-wheel"
                                     title={c('Info').t`Manage your labels`}
                                     info={c('Link').t`Manage your labels`}
                                     target="_self"

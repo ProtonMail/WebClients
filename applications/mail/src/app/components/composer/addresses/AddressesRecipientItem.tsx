@@ -206,7 +206,7 @@ const AddressesRecipientItem = ({
                         onClick={handleRemove}
                         data-testid={`remove-address-button-${recipient.Address}`}
                     >
-                        <Icon name="xmark" size={12} className="mauto" />
+                        <Icon name="cross" size={12} className="mauto" />
                         <span className="sr-only">{c('Action').t`Remove`}</span>
                     </button>
                 </Tooltip>
@@ -222,7 +222,7 @@ const AddressesRecipientItem = ({
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={handleCopy}
                     >
-                        <Icon name="copy" className="mr0-5 mt0-25" />
+                        <Icon name="squares" className="mr0-5 mt0-25" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy address`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
@@ -254,7 +254,7 @@ const AddressesRecipientItem = ({
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >
-                        <Icon name="circle-xmark" className="mr0-5 mt0-25" />
+                        <Icon name="cross-circle" className="mr0-5 mt0-25" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>

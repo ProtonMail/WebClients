@@ -8,7 +8,7 @@ export const getRoutes = (user: UserModel) => {
         dashboard: <SectionConfig>{
             text: c('Title').t`Dashboard`,
             to: '/dashboard',
-            icon: 'grid',
+            icon: 'grid-2',
             available: user.canPay,
             subsections: [
                 {
@@ -43,7 +43,7 @@ export const getRoutes = (user: UserModel) => {
         general: <SectionConfig>{
             text: c('Title').t`General`,
             to: '/general',
-            icon: 'sliders',
+            icon: 'cog-wheel',
             subsections: [
                 {
                     text: c('Title').t`Language`,
@@ -54,7 +54,7 @@ export const getRoutes = (user: UserModel) => {
         account: <SectionConfig>{
             text: c('Title').t`Account`,
             to: '/account',
-            icon: 'circle-user',
+            icon: 'user-circle',
             subsections: [
                 {
                     text: c('Title').t`Username`,
@@ -87,7 +87,7 @@ export const getRoutes = (user: UserModel) => {
         downloads: <SectionConfig>{
             text: c('Title').t`Downloads`,
             to: '/downloads',
-            icon: 'arrow-down-to-rectangle',
+            icon: 'arrow-down-line',
             subsections: [
                 {
                     text: c('Title').t`${VPN_APP_NAME} clients`,

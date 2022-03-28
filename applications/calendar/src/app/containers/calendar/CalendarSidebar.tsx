@@ -142,7 +142,7 @@ const CalendarSidebar = ({
                 toApp={APPS.PROTONACCOUNT}
                 to="/calendar/calendars"
                 target="_self"
-                icon="gear"
+                icon="cog-wheel"
                 info={c('Link').t`Calendars`}
             />
         </Tooltip>

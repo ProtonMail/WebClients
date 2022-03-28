@@ -218,7 +218,7 @@ const ItemRow = ({
                         className={contextMenu.isOpen ? 'file-browser--options-focus' : 'opacity-on-hover-only-desktop'}
                         {...optionsHandlers}
                     >
-                        <Icon name="ellipsis-vertical" alt={c('Action').t`More options`} />
+                        <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
                     </Button>
                 </TableCell>
             </TableRow>

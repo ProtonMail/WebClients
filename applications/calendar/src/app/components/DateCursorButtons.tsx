@@ -48,7 +48,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 title={todayTitle}
                 onClick={onToday}
             >
-                <Icon name="calendar-day" className="flex-item-noshrink mtauto mbauto toolbar-icon" />
+                <Icon name="calendar-today" className="flex-item-noshrink mtauto mbauto toolbar-icon" />
                 <span className="ml0-5 mtauto mbauto no-mobile">{c('Action').t`Today`}</span>
             </button>
             <span className="toolbar-separator flex-item-noshrink" />
@@ -59,7 +59,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 title={previous}
                 onClick={onPrev}
             >
-                <Icon name="angle-down" className="mauto toolbar-icon rotateZ-90" />
+                <Icon name="chevron-left" className="mauto toolbar-icon" />
                 <span className="sr-only">{previous}</span>
             </button>
             <button
@@ -69,7 +69,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 title={next}
                 onClick={onNext}
             >
-                <Icon name="angle-down" className="mauto toolbar-icon rotateZ-270" />
+                <Icon name="chevron-right" className="mauto toolbar-icon" />
                 <span className="sr-only">{next}</span>
             </button>
             <span className="toolbar-separator flex-item-noshrink" />

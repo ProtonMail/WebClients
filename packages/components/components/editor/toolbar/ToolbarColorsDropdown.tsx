@@ -30,7 +30,7 @@ const ToolbarColorsDropdown = ({ fontColor, bgColor, setFontColor, setBgColor }:
     return (
         <ToolbarDropdown
             noMaxSize
-            content={<Icon name="color" alt={c('Action').t`Color`} />}
+            content={<Icon name="circle-half-filled" alt={c('Action').t`Color`} />}
             className="flex-item-noshrink"
             title={c('Action').t`Color`}
         >

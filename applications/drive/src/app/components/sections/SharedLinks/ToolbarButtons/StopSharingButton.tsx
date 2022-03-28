@@ -21,7 +21,7 @@ const StopSharingButton = ({ shareId, selectedItems }: Props) => {
     return (
         <ToolbarButton
             title={c('Action').t`Stop sharing`}
-            icon={<Icon name="link-broken" />}
+            icon={<Icon name="link-slash" />}
             onClick={() =>
                 stopSharingLinks(
                     new AbortController().signal,

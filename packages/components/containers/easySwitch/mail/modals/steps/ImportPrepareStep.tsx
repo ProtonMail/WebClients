@@ -193,7 +193,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
     if (modalModel.errorCode === IMPORT_ERROR.IMAP_CONNECTION_ERROR) {
         return (
             <div className="p1 text-center w100 color-danger">
-                <Icon name="triangle-exclamation" size={60} />
+                <Icon name="exclamation-circle" size={60} />
                 <div className="mt0-5 mlauto mrauto mb0-5 max-w30e">
                     {c('Error').t`We were unable to connect to your service provider.`}
                     <br />
@@ -284,7 +284,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
 
             <div className="pb1 mb1 border-bottom">
                 <div className="mb1 flex flex-align-items-center">
-                    <Icon className="mr0-5" name="mailbox" />
+                    <Icon className="mr0-5" name="inbox" />
                     {c('Info').t`Import mailbox`}
                 </div>
 
@@ -337,7 +337,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                             }
                             originalPlacement="right"
                         >
-                            <Icon className="ml0-5" name="triangle-exclamation-filled" size={18} />
+                            <Icon className="ml0-5" name="exclamation-circle-filled" size={18} />
                         </Tooltip>
                     )}
                 </div>
@@ -372,7 +372,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                             }
                             originalPlacement="right"
                         >
-                            <Icon name="triangle-exclamation-filled" size={20} className="ml0-5" />
+                            <Icon name="exclamation-circle-filled" size={20} className="ml0-5" />
                         </Tooltip>
                     )}
                     {isCustom && (

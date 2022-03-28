@@ -129,7 +129,7 @@ const CalendarSidebarListItems = ({
                                     size="small"
                                     className="calendar-sidebar-list-item-action opacity-on-hover flex-item-noshrink no-mobile"
                                     loading={actionsDisabled}
-                                    content={<Icon name="ellipsis" />}
+                                    content={<Icon name="three-dots-horizontal" />}
                                 >
                                     <DropdownMenu>
                                         <DropdownMenuButton

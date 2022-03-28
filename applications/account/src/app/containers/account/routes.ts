@@ -23,7 +23,7 @@ export const getAccountAppRoutes = ({
             dashboard: <SectionConfig>{
                 text: c('Title').t`Dashboard`,
                 to: '/dashboard',
-                icon: 'grid',
+                icon: 'grid-2',
                 available: isFree || canPay || !isMember || (isPaid && canPay),
                 subsections: [
                     {
@@ -145,7 +145,7 @@ export const getAccountAppRoutes = ({
                 description: c('Description')
                     .t`Get up to 3 months of ${mailPlus} for free for every friend who subscribes to ${MAIL_APP_NAME}.`,
                 to: '/referral',
-                icon: 'gift-card',
+                icon: 'gift',
                 available: !!isReferralProgramEnabled,
                 subsections: [
                     {
@@ -160,7 +160,7 @@ export const getAccountAppRoutes = ({
             easySwitch: <SectionConfig>{
                 text: c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
                 to: '/easy-switch',
-                icon: 'arrow-down-to-screen',
+                icon: 'arrow-down-to-square',
                 description: c('Settings description').t`Make the move to privacy. Effortlessly and securely.`,
                 subsections: [
                     {

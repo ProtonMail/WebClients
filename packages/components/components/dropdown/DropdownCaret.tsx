@@ -7,7 +7,7 @@ interface Props {
     size?: IconSize;
 }
 const DropdownCaret = ({ className, isOpen, size = 12 }: Props) => {
-    return <Icon className={classnames([isOpen && 'rotateX-180', className])} size={size} name="angle-down" />;
+    return <Icon className={classnames([isOpen && 'rotateX-180', className])} size={size} name="chevron-down" />;
 };
 
 export default DropdownCaret;

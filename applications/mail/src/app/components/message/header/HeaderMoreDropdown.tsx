@@ -255,7 +255,9 @@ const HeaderMoreDropdown = ({
                     disabled={!messageLoaded}
                     autoClose
                     title={c('Title').t`More`}
-                    content={<Icon name="ellipsis" className="caret-like" alt={c('Title').t`More options`} />}
+                    content={
+                        <Icon name="three-dots-horizontal" className="caret-like" alt={c('Title').t`More options`} />
+                    }
                     additionalDropdowns={additionalDropdowns}
                     data-testid="message-header-expanded:more-dropdown"
                     noMaxHeight
@@ -266,7 +268,7 @@ const HeaderMoreDropdown = ({
                         return (
                             <DropdownMenu>
                                 <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleStar}>
-                                    <Icon name={isStarred ? 'star-remove' : 'star'} className="mr0-5 mt0-25" />
+                                    <Icon name={isStarred ? 'star-slash' : 'star'} className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{staringText}</span>
                                 </DropdownMenuButton>
 
@@ -276,7 +278,7 @@ const HeaderMoreDropdown = ({
                                     className="text-left flex flex-nowrap"
                                     onClick={handleMove(ARCHIVE, fromFolderID)}
                                 >
-                                    <Icon name="box-archive" className="mr0-5 mt0-25" />
+                                    <Icon name="archive-box" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Archive`}</span>
                                 </DropdownMenuButton>
                                 {isNarrow && (
@@ -330,7 +332,7 @@ const HeaderMoreDropdown = ({
                                         className="text-left flex flex-nowrap"
                                         onClick={() => setMessagePermanentDeleteModalOpen(true)}
                                     >
-                                        <Icon name="circle-xmark" className="mr0-5 mt0-25" />
+                                        <Icon name="cross-circle" className="mr0-5 mt0-25" />
                                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Delete`}</span>
                                     </DropdownMenuButton>
                                 ) : null}
@@ -338,7 +340,7 @@ const HeaderMoreDropdown = ({
                                 <hr className="my0-5" />
 
                                 <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleExport}>
-                                    <Icon name="arrow-up-from-screen" className="mr0-5 mt0-25" />
+                                    <Icon name="arrow-up-from-square" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Export`}</span>
                                 </DropdownMenuButton>
                                 <DropdownMenuButton
@@ -355,7 +357,7 @@ const HeaderMoreDropdown = ({
                                     className="text-left flex flex-nowrap"
                                     onClick={() => setMessageDetailsModalOpen(true)}
                                 >
-                                    <Icon name="list" className="mr0-5 mt0-25" />
+                                    <Icon name="list-bullets" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                         .t`View message details`}</span>
                                 </DropdownMenuButton>

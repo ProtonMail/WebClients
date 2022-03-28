@@ -186,7 +186,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     return (
         <div className="rounded border px0-5 py0-25 mb0-85 flex flex-nowrap flex-justify-space-between on-mobile-flex-column bg-norm">
             <div className="flex flex-nowrap pr1 on-mobile-mb0-5">
-                <Icon name="circle-exclamation-filled" className="mt0-4 mr0-5 ml0-2 flex-item-noshrink color-danger" />
+                <Icon name="exclamation-circle-filled" className="mt0-4 mr0-5 ml0-2 flex-item-noshrink color-danger" />
                 <div>
                     <span className="pr0-5 flex flex-item-fluid mt0-25">
                         <span className="mr0-25">{getBannerMessage(promptKeyPinningType)}</span>

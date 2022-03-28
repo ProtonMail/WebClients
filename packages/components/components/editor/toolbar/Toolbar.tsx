@@ -72,7 +72,7 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
                     title={c('Action').t`Bold`}
                     tabIndex={-1}
                 >
-                    <Icon name="bold" className="mauto" alt={c('Action').t`Bold`} />
+                    <Icon name="text-bold" className="mauto" alt={c('Action').t`Bold`} />
                 </ToolbarButton>
                 <ToolbarButton
                     onClick={config.italic.toggle}
@@ -81,7 +81,7 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
                     title={c('Action').t`Italic`}
                     tabIndex={-1}
                 >
-                    <Icon name="italic" className="mauto" alt={c('Action').t`Italic`} />
+                    <Icon name="text-italic" className="mauto" alt={c('Action').t`Italic`} />
                 </ToolbarButton>
                 <ToolbarButton
                     onClick={config.underline.toggle}
@@ -90,7 +90,7 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
                     title={c('Action').t`Underline`}
                     tabIndex={-1}
                 >
-                    <Icon name="underline" className="mauto" alt={c('Action').t`Underline`} />
+                    <Icon name="text-underline" className="mauto" alt={c('Action').t`Underline`} />
                 </ToolbarButton>
             </>
             {!isNarrow ? (
@@ -102,7 +102,7 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
                         title={c('Action').t`Unordered list`}
                         tabIndex={-1}
                     >
-                        <Icon name="list" className="mauto on-rtl-mirror" alt={c('Action').t`Unordered list`} />
+                        <Icon name="list-bullets" className="mauto on-rtl-mirror" alt={c('Action').t`Unordered list`} />
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.orderedList.toggle}
@@ -123,7 +123,7 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
                         title={c('Action').t`Quote`}
                         tabIndex={-1}
                     >
-                        <Icon name="quote-right" className="mauto" alt={c('Action').t`Quote`} />
+                        <Icon name="text-quote" className="mauto" alt={c('Action').t`Quote`} />
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.link.showModal}

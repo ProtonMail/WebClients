@@ -28,7 +28,7 @@ const initialBridgeClients: BridgeClient[] = [
     },
     {
         id: 'apple',
-        icon: 'brand-macos',
+        icon: 'brand-apple',
         platform: 'macOS',
         versionFile: 'version_darwin.json',
         version: 'Latest',

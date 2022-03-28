@@ -292,7 +292,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                             <span className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
                                 {c('Header').t`Get help`}
                                 <span className="flex on-rtl-mirror ml1">
-                                    <Icon className="rotateZ-270" name="angle-down" />
+                                    <Icon name="chevron-right" />
                                 </span>
                             </span>
                         }
@@ -350,7 +350,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                         data-testid="userdropdown:link:shop"
                     >
                         {c('Action').t`${BRAND_NAME} shop`}
-                        <Icon className="ml1 on-rtl-mirror" name="arrow-up-right-from-square" />
+                        <Icon className="ml1 on-rtl-mirror" name="arrow-out-square" />
                     </DropdownMenuLink>
 
                     <hr className="my0-5" />
