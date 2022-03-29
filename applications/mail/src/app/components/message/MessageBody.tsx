@@ -95,7 +95,7 @@ const MessageBody = ({
 
     useEffect(() => {
         if (contentModeShow && !!content && highlightBody) {
-            const el = iframeRef.current?.querySelector('[data-auto-scroll]') as HTMLElement;
+            const el = iframeRef.current?.contentDocument?.querySelector('[data-auto-scroll]') as HTMLElement;
             scrollIntoView(el, { block: 'center', behavior: 'smooth' });
         }
     }, [contentModeShow, content, highlightBody]);
