@@ -6,6 +6,7 @@ import {
     ENCRYPTION_CONFIGS,
     GIGA,
     MEMBER_ROLE,
+    VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import {
     checkMemberAddressAvailability,
@@ -38,7 +39,6 @@ import {
 } from '../../components';
 
 import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
-import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 
 const FIVE_GIGA = 5 * GIGA;
@@ -56,7 +56,9 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
     const api = useApi();
     const getAddresses = useGetAddresses();
     const storageRange = getStorageRange({}, organization);
-    const vpnRange = getVPNRange({}, organization);
+
+    const hasVPN = !!organization.MaxVPN;
+
     const [model, setModel] = useState({
         name: '',
         private: false,
@@ -65,7 +67,7 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
         confirm: '',
         address: '',
         domain: domains[0].DomainName,
-        vpn: vpnRange[0],
+        vpn: hasVPN && organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS,
         storage: Math.min(storageRange[1], FIVE_GIGA),
     });
 
@@ -73,8 +75,6 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
     const [submitting, withLoading] = useLoading();
 
     const { validator, onFormSubmit } = useFormErrors();
-
-    const hasVPN = !!organization.MaxVPN;
 
     const domainOptions = domains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
@@ -96,7 +96,7 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
                 Name: model.name,
                 Private: +model.private,
                 MaxSpace: +model.storage,
-                MaxVPN: model.vpn,
+                MaxVPN: model.vpn ? VPN_CONNECTIONS : 0,
             }),
         });
 
@@ -257,9 +257,15 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
                 </div>
 
                 {hasVPN ? (
-                    <div className="mb1-5">
-                        <div className="text-semibold mb0-25">{c('Label').t`VPN connections`}</div>
-                        <MemberVPNSelector value={model.vpn} step={1} range={vpnRange} onChange={handleChange('vpn')} />
+                    <div className="flex flex-align-center mb1-5">
+                        <label className="text-semibold mr1" htmlFor="vpn-toggle">
+                            {c('Label for new member').t`VPN connections`}
+                        </label>
+                        <Toggle
+                            id="vpn-toggle"
+                            checked={model.vpn}
+                            onChange={({ target }) => handleChange('vpn')(target.checked)}
+                        />
                     </div>
                 ) : null}
 

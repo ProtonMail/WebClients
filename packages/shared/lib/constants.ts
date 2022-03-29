@@ -461,6 +461,8 @@ export const COVID_VISIONARY_BONUS_STORAGE = 10 * GIGA;
 
 export const DEFAULT_CYCLE = 24;
 
+export const VPN_CONNECTIONS = 10;
+
 export enum CYCLE {
     MONTHLY = 1,
     YEARLY = 12,

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import { GIGA, DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
+import { GIGA, DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { range } from '@proton/shared/lib/helpers/array';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import {
@@ -8,7 +8,7 @@ import {
     updateOrganizationKeysLegacy,
     updateOrganizationKeysV2,
 } from '@proton/shared/lib/api/organization';
-import { updateVPN, updateQuota } from '@proton/shared/lib/api/members';
+import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { noop } from '@proton/shared/lib/helpers/function';
 import {
     passwordLengthValidator,
@@ -52,7 +52,6 @@ enum STEPS {
     KEYS,
     PASSWORD,
     STORAGE,
-    VPN,
 }
 
 const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
@@ -65,17 +64,15 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const [members = []] = useMembers();
     const [loading, withLoading] = useLoading();
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
-    const [{ MaxSpace, MaxVPN }] = useOrganization();
+    const [{ MaxSpace }] = useOrganization();
     const [step, setStep] = useState<STEPS>(STEPS.NAME);
     const storageOptions = range(0, MaxSpace, GIGA).map((value) => ({ text: `${humanSize(value, 'GB')}`, value }));
-    const vpnOptions = range(0, MaxVPN).map((value) => ({ text: value, value }));
     const [{ hasPaidVpn }] = useUser();
     const [model, setModel] = useState({
         name: '',
         password: '',
         confirm: '',
         storage: Math.min(storageOptions[storageOptions.length - 1].value ?? 0, 5 * GIGA),
-        vpn: Math.min(vpnOptions[vpnOptions.length - 1]?.value ?? 0, 3),
     });
     const { validator, onFormSubmit, reset } = useFormErrors();
 
@@ -102,7 +99,13 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     />
                 ),
                 async onSubmit() {
-                    await api(updateOrganizationName(model.name));
+                    if (!currentMemberID) {
+                        throw new Error('Missing member id');
+                    }
+                    // NOTE: By default the admin gets allocated all of the VPN connections. Here we artificially set the admin to the default value
+                    // So that other users can get connections allocated.
+                    await (hasPaidVpn && api(updateVPN(currentMemberID, VPN_CONNECTIONS)));
+                    await Promise.all([api(updateOrganizationName(model.name))]);
                     setStep(STEPS.KEYS);
                 },
             };
@@ -233,48 +236,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     }
                     await api(updateQuota(currentMemberID, +model.storage));
 
-                    if (hasPaidVpn) {
-                        setStep(STEPS.VPN);
-                        return;
-                    }
-
                     await call();
-                    createNotification({ text: c('Success').t`Organization activated` });
-                    onClose?.();
-                },
-            };
-        }
-
-        if (step === STEPS.VPN) {
-            return {
-                title: c('Title').t`Allocate VPN connections`,
-                section: (
-                    <>
-                        <div className="mb1">
-                            {c('Info')
-                                .t`Currently all available VPN connections are allocated to the administrator account. Please select the number of connections you want to reserve for additional users.`}
-                        </div>
-                        <InputFieldTwo
-                            id="vpn"
-                            as={SelectTwo}
-                            label={c('Label').t`VPN Connections`}
-                            value={model.vpn}
-                            onValue={handleChange('vpn')}
-                            error={validator([requiredValidator(model.vpn)])}
-                        >
-                            {vpnOptions.map(({ value, text }) => (
-                                <Option key={value} value={value} title={`${text}`} />
-                            ))}
-                        </InputFieldTwo>
-                    </>
-                ),
-                async onSubmit() {
-                    if (!currentMemberID) {
-                        throw new Error('Missing member id');
-                    }
-                    await api(updateVPN(currentMemberID, +model.vpn));
-                    await call();
-
                     createNotification({ text: c('Success').t`Organization activated` });
                     onClose?.();
                 },
