@@ -38,7 +38,7 @@ const VerifySection = ({ domain }) => {
                                     className="flex-item-noshrink mr0-5"
                                     value={domain.VerifyCode}
                                 />{' '}
-                                <code className="text-ellipsis" title={domain.VerifyCode}>
+                                <code className="text-ellipsis lh-rg" title={domain.VerifyCode}>
                                     {domain.VerifyCode}
                                 </code>
                             </div>,
