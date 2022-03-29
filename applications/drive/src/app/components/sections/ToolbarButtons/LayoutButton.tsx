@@ -10,7 +10,7 @@ const LayoutButton = () => {
     const { layout, changeLayout } = useUserSettings();
 
     const handleClick = (e: any) => {
-        changeLayout(layout === LayoutSetting.Grid ? LayoutSetting.List : LayoutSetting.Grid);
+        void changeLayout(layout === LayoutSetting.Grid ? LayoutSetting.List : LayoutSetting.Grid);
 
         // Show notification after ten clicks.
         if (e.detail === 10) {
