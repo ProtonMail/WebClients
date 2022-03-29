@@ -251,7 +251,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                             >
                                 <Icon
                                     name="circle-filled"
-                                    size={12}
+                                    size={16}
                                     color={Color}
                                     className="flex-item-noshrink relative ml0-25 mr0-5"
                                     onClick={handleClickIcon(ID)}
