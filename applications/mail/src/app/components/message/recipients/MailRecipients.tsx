@@ -45,12 +45,7 @@ const MailRecipients = ({
                     isOutside={isOutside}
                 />
             ) : (
-                <RecipientSimple
-                    isLoading={isLoading}
-                    recipientsOrGroup={recipientsOrGroup}
-                    showAddress={false}
-                    isOutside={isOutside}
-                />
+                <RecipientSimple isLoading={isLoading} recipientsOrGroup={recipientsOrGroup} isOutside={isOutside} />
             )}
             {!isLoading && (
                 <div className="flex-item-noshrink flex mlauto">

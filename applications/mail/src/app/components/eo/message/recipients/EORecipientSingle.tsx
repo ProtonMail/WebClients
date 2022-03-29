@@ -5,21 +5,23 @@ import RecipientItemSingle from '../../../message/recipients/RecipientItemSingle
 
 interface Props {
     recipient: Recipient;
-    showAddress?: boolean;
+    isRecipient?: boolean;
+    isExpanded?: boolean;
 }
 
-const EORecipientSingle = ({ recipient, showAddress = true }: Props) => {
+const EORecipientSingle = ({ recipient, isRecipient, isExpanded }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
         <RecipientItemSingle
             recipient={recipient}
-            showAddress={showAddress}
             anchorRef={anchorRef}
             isOpen={isOpen}
             toggle={toggle}
             close={close}
             isOutside
+            isRecipient={isRecipient}
+            isExpanded={isExpanded}
         />
     );
 };

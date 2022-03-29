@@ -17,14 +17,15 @@ interface Props {
     recipientOrGroup: RecipientOrGroup;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
-    showAddress?: boolean;
-    showLockIcon?: boolean;
     isLoading: boolean;
     signingPublicKey?: OpenPGPKey;
     attachedPublicKey?: OpenPGPKey;
     isNarrow?: boolean;
     showDropdown?: boolean;
     isOutside?: boolean;
+    hideAddress?: boolean;
+    isRecipient?: boolean;
+    isExpanded?: boolean;
 }
 
 const RecipientItem = ({
@@ -32,26 +33,21 @@ const RecipientItem = ({
     recipientOrGroup,
     mapStatusIcons,
     globalIcon,
-    showAddress = true,
-    showLockIcon = true,
     isLoading,
     signingPublicKey,
     attachedPublicKey,
     isNarrow,
     showDropdown,
     isOutside = false,
+    hideAddress,
+    isRecipient,
+    isExpanded,
 }: Props) => {
     const ref = useRef<HTMLButtonElement>(null);
 
     if (isLoading) {
         return (
-            <RecipientItemLayout
-                dropdrownAnchorRef={ref}
-                isLoading
-                showAddress={showAddress}
-                showDropdown={showDropdown}
-                isOutside={isOutside}
-            />
+            <RecipientItemLayout dropdrownAnchorRef={ref} isLoading showDropdown={showDropdown} isOutside={isOutside} />
         );
     }
 
@@ -74,17 +70,24 @@ const RecipientItem = ({
                     recipient={recipientOrGroup.recipient as Recipient}
                     mapStatusIcons={mapStatusIcons}
                     globalIcon={globalIcon}
-                    showAddress={showAddress}
-                    showLockIcon={showLockIcon}
                     signingPublicKey={signingPublicKey}
                     attachedPublicKey={attachedPublicKey}
                     isNarrow={isNarrow}
                     showDropdown={showDropdown}
                     isOutside={isOutside}
+                    hideAddress={hideAddress}
+                    isRecipient={isRecipient}
+                    isExpanded={isExpanded}
                 />
             );
         }
-        return <EORecipientSingle recipient={recipientOrGroup.recipient as Recipient} showAddress={showAddress} />;
+        return (
+            <EORecipientSingle
+                recipient={recipientOrGroup.recipient as Recipient}
+                isRecipient={isRecipient}
+                isExpanded={isExpanded}
+            />
+        );
     }
 
     // Undisclosed Recipient

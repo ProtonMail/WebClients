@@ -41,7 +41,6 @@ import HeaderDropdown from './HeaderDropdown';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
 import RecipientItem from '../recipients/RecipientItem';
 import { Breakpoints } from '../../../models/utils';
-import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { isSelfAddress } from '../../../helpers/addresses';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../../constants';
@@ -165,6 +164,7 @@ const HeaderExpanded = ({
             signingPublicKey={showPinPublicKey ? message.verification?.signingPublicKey : undefined}
             attachedPublicKey={showPinPublicKey ? message.verification?.attachedPublicKeys?.[0] : undefined}
             isNarrow={isNarrow}
+            globalIcon={messageViewIcons.globalIcon}
         />
     );
 
@@ -234,7 +234,6 @@ const HeaderExpanded = ({
             data-testid={`message-header-expanded:${message.data?.Subject}`}
         >
             <span className="absolute message-header-security-icons flex flex-row flex-nowrap">
-                {messageLoaded && <EncryptionStatusIcon {...messageViewIcons.globalIcon} className="ml0-25" />}
                 {feature?.Value && <ItemSpyTrackerIcon message={message} className="ml0-25" />}
             </span>
             {isNarrow && messageLoaded && (
