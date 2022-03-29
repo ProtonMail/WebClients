@@ -3,7 +3,6 @@ import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces/Api';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getIsOfflineError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
@@ -12,6 +11,7 @@ import {
     getES,
     getNumItemsDB,
     getOldestTimePoint,
+    normalizeString,
     removeES,
     setES,
     setOriginalEstimate,
@@ -180,7 +180,7 @@ export const highlightNode = (node: ReactNode, highlightMetadata: HighlightMetad
  * @returns the array of normalised keywords to be searched
  */
 export const normalizeKeyword = (keyword: string) => {
-    const trimmedKeyword = removeDiacritics(keyword.trim().toLocaleLowerCase());
+    const trimmedKeyword = normalizeString(keyword);
     const quotesIndexes: number[] = [];
 
     let index = 0;
@@ -221,11 +221,12 @@ export const normalizeKeyword = (keyword: string) => {
  * @returns whether all keywords can be found in at least one given string
  */
 export const testKeywords = (normalizedKeywords: string[], stringsToSearch: string[]) => {
+    const normalizedStrings = stringsToSearch.map((str) => normalizeString(str));
     let result = true;
     let index = 0;
     while (result && index !== normalizedKeywords.length) {
         const keyword = normalizedKeywords[index];
-        result = result && stringsToSearch.some((string) => string.includes(keyword));
+        result = result && normalizedStrings.some((string) => string.includes(keyword));
         index++;
     }
 
