@@ -103,15 +103,13 @@ $padding-inline-start-link: rem(20) !default;
 
 /* items counters */
 .navigation-counter-item {
+	padding-inline: 0.5em;
+	border-radius: var(--border-radius-full);
 	background: var(--navigation-item-count-background-color);
-	color: var(--navigation-item-count-text-color);
-	font-size: rem(11);
-	padding-block: rem(2) 0; // em value for top gives non rounded value, so rem
-	padding-inline: 0.4em;
-	border-radius: rem(11);
-	line-height: 1;
-	block-size: rem(16);
+	font-size: em(11);
+	line-height: em(16, 11);
 	font-variant: tabular-nums;
+	color: var(--navigation-item-count-text-color);
 
 	&--transparent {
 		background: transparent;
