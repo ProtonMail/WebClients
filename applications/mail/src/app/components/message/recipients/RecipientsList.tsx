@@ -21,6 +21,8 @@ const RecipientsList = ({ recipientsOrGroup, mapStatusIcons, isLoading, showDrop
                     isLoading={isLoading}
                     showDropdown={showDropdown}
                     isOutside={isOutside}
+                    isRecipient={true}
+                    isExpanded={true}
                 />
             ))}
         </>

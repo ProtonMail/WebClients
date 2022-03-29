@@ -27,13 +27,14 @@ interface Props {
     recipient: Recipient;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
-    showAddress?: boolean;
-    showLockIcon?: boolean;
     signingPublicKey?: OpenPGPKey;
     attachedPublicKey?: OpenPGPKey;
     isNarrow?: boolean;
     showDropdown?: boolean;
     isOutside?: boolean;
+    hideAddress?: boolean;
+    isRecipient?: boolean;
+    isExpanded?: boolean;
 }
 
 const MailRecipientItemSingle = ({
@@ -41,13 +42,14 @@ const MailRecipientItemSingle = ({
     recipient,
     mapStatusIcons,
     globalIcon,
-    showAddress = true,
-    showLockIcon = true,
     signingPublicKey,
     attachedPublicKey,
     isNarrow,
     showDropdown,
     isOutside,
+    hideAddress,
+    isRecipient,
+    isExpanded,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
@@ -142,8 +144,6 @@ const MailRecipientItemSingle = ({
                 recipient={recipient}
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}
-                showAddress={showAddress}
-                showLockIcon={showLockIcon}
                 isNarrow={isNarrow}
                 showDropdown={showDropdown}
                 actualLabel={label}
@@ -153,6 +153,9 @@ const MailRecipientItemSingle = ({
                 close={close}
                 isOpen={isOpen}
                 isOutside={isOutside}
+                hideAddress={hideAddress}
+                isRecipient={isRecipient}
+                isExpanded={isExpanded}
             />
             <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />
         </>
