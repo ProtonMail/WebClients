@@ -8,17 +8,15 @@ const useOnline = () => {
     const [onlineStatus, setOnlineStatus] = useState(getOnlineStatus());
 
     useEffect(() => {
-        const goOnline = () => setOnlineStatus(true);
-        const goOffline = () => setOnlineStatus(false);
-
-        setOnlineStatus(getOnlineStatus());
-
-        window.addEventListener('online', goOnline);
-        window.addEventListener('offline', goOffline);
-
+        const handleOnlineStatus = () => {
+            setOnlineStatus(getOnlineStatus());
+        };
+        handleOnlineStatus();
+        window.addEventListener('online', handleOnlineStatus);
+        window.addEventListener('offline', handleOnlineStatus);
         return () => {
-            window.removeEventListener('online', goOnline);
-            window.removeEventListener('offline', goOffline);
+            window.removeEventListener('online', handleOnlineStatus);
+            window.removeEventListener('offline', handleOnlineStatus);
         };
     }, []);
 
