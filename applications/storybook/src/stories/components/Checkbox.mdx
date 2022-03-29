@@ -1,11 +1,17 @@
-import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from "@storybook/addon-docs";
+import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 
 # Checkbox
 
-<Canvas>
+Checkboxes allow the user to select one or more items from a set.
+
+<Canvas withSource="open">
     <Story id="components-checkbox--basic" />
 </Canvas>
 
-<Primary />
+### InputField
 
-<ArgsTable story={PRIMARY_STORY} />
+The Checkbox component can be uses as an [input for InputField](/docs/components-inputfield--basic#custom-elements).
+
+<Canvas>
+    <Story id="components-checkbox--as-input-field" />
+</Canvas>
