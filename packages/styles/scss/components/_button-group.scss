@@ -106,6 +106,10 @@
 			padding: em(6);
 		}
 
+		&[aria-expanded='true']:not([aria-controls]) {
+			border-color: transparent;
+		}
+
 		&[disabled],
 		&.is-disabled {
 			&:not([aria-busy='true']) {
