@@ -50,6 +50,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     const [mailSettings] = useMailSettings();
     const [displayFolders, toggleFolders] = useLocalState(true, `${user.ID}-display-folders`);
     const [displayLabels, toggleLabels] = useLocalState(true, `${user.ID}-display-labels`);
+    const [displayMoreItems, toggleDisplayMoreItems] = useLocalState(true, `${user.ID}-display-more-items`);
     const [labels] = useLabels();
     const [folders, loadingFolders] = useFolders();
     const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
@@ -129,10 +130,8 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
             'scheduled',
             'sent',
             'starred',
-            'archive',
-            'spam',
-            'trash',
-            'allmail',
+            'toggle-more-items',
+            displayMoreItems && ['archive', 'spam', 'trash', 'allmail'],
             'toggle-folders',
             displayFolders && foldersArray,
             'toggle-labels',
@@ -291,42 +290,54 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     id="starred"
                     onFocus={setFocusedItem}
                 />
-                <SidebarItem
-                    {...getCommonProps(MAILBOX_LABEL_IDS.ARCHIVE)}
-                    icon="box-archive"
-                    text={c('Link').t`Archive`}
-                    shortcutText="[G] [A]"
-                    isFolder
-                    id="archive"
+                <SimpleSidebarListItemHeader
+                    toggle={displayMoreItems}
+                    onToggle={(display: boolean) => toggleDisplayMoreItems(display)}
+                    text={c('Link').t`More`}
+                    title={c('Link').t`More`}
+                    id="toggle-more-items"
                     onFocus={setFocusedItem}
                 />
-                <SidebarItem
-                    {...getCommonProps(MAILBOX_LABEL_IDS.SPAM)}
-                    icon="fire"
-                    text={c('Link').t`Spam`}
-                    shortcutText="[G] [S]"
-                    isFolder
-                    id="spam"
-                    onFocus={setFocusedItem}
-                />
-                <SidebarItem
-                    {...getCommonProps(MAILBOX_LABEL_IDS.TRASH)}
-                    icon="trash"
-                    text={c('Link').t`Trash`}
-                    shortcutText="[G] [T]"
-                    isFolder
-                    id="trash"
-                    onFocus={setFocusedItem}
-                />
-                <SidebarItem
-                    {...getCommonProps(MAILBOX_LABEL_IDS.ALL_MAIL)}
-                    icon="envelopes"
-                    text={c('Link').t`All mail`}
-                    shortcutText="[G] [M]"
-                    isFolder
-                    id="allmail"
-                    onFocus={setFocusedItem}
-                />
+                {displayMoreItems && (
+                    <>
+                        <SidebarItem
+                            {...getCommonProps(MAILBOX_LABEL_IDS.ARCHIVE)}
+                            icon="box-archive"
+                            text={c('Link').t`Archive`}
+                            shortcutText="[G] [A]"
+                            isFolder
+                            id="archive"
+                            onFocus={setFocusedItem}
+                        />
+                        <SidebarItem
+                            {...getCommonProps(MAILBOX_LABEL_IDS.SPAM)}
+                            icon="fire"
+                            text={c('Link').t`Spam`}
+                            shortcutText="[G] [S]"
+                            isFolder
+                            id="spam"
+                            onFocus={setFocusedItem}
+                        />
+                        <SidebarItem
+                            {...getCommonProps(MAILBOX_LABEL_IDS.TRASH)}
+                            icon="trash"
+                            text={c('Link').t`Trash`}
+                            shortcutText="[G] [T]"
+                            isFolder
+                            id="trash"
+                            onFocus={setFocusedItem}
+                        />
+                        <SidebarItem
+                            {...getCommonProps(MAILBOX_LABEL_IDS.ALL_MAIL)}
+                            icon="envelopes"
+                            text={c('Link').t`All mail`}
+                            shortcutText="[G] [M]"
+                            isFolder
+                            id="allmail"
+                            onFocus={setFocusedItem}
+                        />
+                    </>
+                )}
                 <SimpleSidebarListItemHeader
                     toggle={displayFolders}
                     onToggle={(display: boolean) => toggleFolders(display)}
