@@ -48,6 +48,12 @@ export const ES_MAX_CACHE = 600000000; // 600 MB
 export const ES_MAX_ITEMS_PER_BATCH = 1000;
 export const ES_TEMPORARY_ERRORS = [408, 429, 502, 503];
 
+/**
+ * Regular expression used to find and/or remove diacritics for the purpose of
+ * searching and highlighting text. It matches all combining characters
+ */
+export const DIACRITICS_REGEXP = /\p{Mark}/gu;
+
 export const AesKeyGenParams: AesKeyGenParams = { name: 'AES-GCM', length: 128 };
 export const KeyUsages: KeyUsage[] = ['encrypt', `decrypt`];
 
