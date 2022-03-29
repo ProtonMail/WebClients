@@ -11,6 +11,8 @@ const useOnline = () => {
         const goOnline = () => setOnlineStatus(true);
         const goOffline = () => setOnlineStatus(false);
 
+        setOnlineStatus(getOnlineStatus());
+
         window.addEventListener('online', goOnline);
         window.addEventListener('offline', goOffline);
 
