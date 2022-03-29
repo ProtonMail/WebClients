@@ -52,7 +52,7 @@ const DetailsModal = ({ shareId, item, onClose, open }: Props) => {
 
     useEffect(() => {
         const abortController = new AbortController();
-        withLoadingSignatureIssues(
+        void withLoadingSignatureIssues(
             checkLinkSignatures(abortController.signal, shareId, item.LinkID).then(setSignatureIssues)
         );
         return () => {
@@ -65,7 +65,7 @@ const DetailsModal = ({ shareId, item, onClose, open }: Props) => {
             return;
         }
         const abortController = new AbortController();
-        withLoadingNumberOfAccesses(
+        void withLoadingNumberOfAccesses(
             loadShareUrlNumberOfAccesses(abortController.signal, shareId, item.LinkID)
                 .then(setNumberOfAccesses)
                 .catch(console.error)

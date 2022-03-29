@@ -28,7 +28,7 @@ export const SearchField = () => {
     }, []);
 
     const handleFocus = () => {
-        prepareSearchData(() => indexingDropdownControl.open());
+        void prepareSearchData(() => indexingDropdownControl.open());
     };
 
     useEffect(() => {

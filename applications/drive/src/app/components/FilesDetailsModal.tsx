@@ -27,16 +27,12 @@ const FilesDetailsModal = ({ selectedItems, onClose, open }: Props) => {
     const hasFolder = selectedItems.some(({ IsFile }) => !IsFile);
     const hasBoth = hasFile && hasFolder;
 
-    const title = hasBoth
-        ? c('Title').t`Items details`
-        : hasFile
-        ? c('Title').t`Files details`
-        : c('Title').t`Folders details`;
-    const labelCount = hasBoth
-        ? c('Title').t`Number of items`
-        : hasFile
-        ? c('Title').t`Number of files`
-        : c('Title').t`Number of folders`;
+    let title = c('Title').t`Items details`;
+    let labelCount = c('Title').t`Number of items`;
+    if (!hasBoth) {
+        title = hasFile ? c('Title').t`Files details` : c('Title').t`Folders details`;
+        labelCount = hasFile ? c('Title').t`Number of files` : c('Title').t`Number of folders`;
+    }
 
     return (
         <ModalTwo onClose={onClose} open={open} size="large">
