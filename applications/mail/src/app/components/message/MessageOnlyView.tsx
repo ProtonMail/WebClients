@@ -85,11 +85,7 @@ const MessageOnlyView = ({
                 element={message.data}
             />
             <Scroll className={classnames([hidden && 'hidden'])}>
-                <div
-                    className="flex-item-fluid pt1 pr1 pl1 max-w100 outline-none"
-                    ref={messageContainerRef}
-                    tabIndex={-1}
-                >
+                <div className="flex-item-fluid px1 max-w100 outline-none" ref={messageContainerRef} tabIndex={-1}>
                     <MessageView
                         // Break the reuse of the MessageView accross multiple message
                         // Solve a lot of reuse issues, reproduce the same as in conversation mode with a map on conversation messages
