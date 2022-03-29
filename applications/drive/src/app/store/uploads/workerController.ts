@@ -28,7 +28,6 @@ type StartMessage = {
     addressEmail: string;
     privateKey: Uint8Array;
     sessionKey: SessionKey;
-    pmcryptoTime: Date;
 };
 
 type CreatedBlocksMessage = {
@@ -166,6 +165,7 @@ export class UploadWorker {
             switch (data.command) {
                 case 'generate_keys':
                     (async (data) => {
+                        updateServerTime(data.pmcryptoTime);
                         const addressPrivateKey = await readOpenPGPKey(data.addressPrivateKey);
                         const parentPrivateKey = await readOpenPGPKey(data.parentPrivateKey);
                         generateKeys(addressPrivateKey, parentPrivateKey);
@@ -177,7 +177,6 @@ export class UploadWorker {
                     (async (data) => {
                         const addressPrivateKey = await readOpenPGPKey(data.addressPrivateKey);
                         const privateKey = await readOpenPGPKey(data.privateKey);
-                        updateServerTime(data.pmcryptoTime);
                         start(
                             data.file,
                             data.thumbnailData,
@@ -365,7 +364,6 @@ export class UploadWorkerController {
         privateKey: OpenPGPKey,
         sessionKey: SessionKey
     ) {
-        const pmcryptoTime = serverTime();
         this.worker.postMessage({
             command: 'start',
             file,
@@ -374,7 +372,6 @@ export class UploadWorkerController {
             addressEmail,
             privateKey: privateKey.toPacketlist().write(),
             sessionKey,
-            pmcryptoTime,
         } as StartMessage);
     }
 
