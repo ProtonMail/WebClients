@@ -121,6 +121,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
         abortIndexingRef.current.abort();
         abortSearchingRef.current.abort();
         const uID = inputUserID || userID;
+        esCacheRef.current = { ...defaultESCache };
         removeESFlags(uID);
         setESStatus(() => defaultESStatus);
         return deleteESDB(uID);

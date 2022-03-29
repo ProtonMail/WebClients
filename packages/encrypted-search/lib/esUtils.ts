@@ -4,7 +4,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { Api } from '@proton/shared/lib/interfaces';
 import { ESIndexMetrics, ESProgressBlob, ESSearchMetrics } from './interfaces';
-import { ES_MAX_PARALLEL_ITEMS } from './constants';
+import { DIACRITICS_REGEXP, ES_MAX_PARALLEL_ITEMS } from './constants';
 import { apiHelper, indexKeyExists } from './esHelpers';
 
 /**
@@ -283,3 +283,9 @@ export const sendESMetrics = async (api: Api, Title: string, Data: ESSearchMetri
         'metrics'
     );
 };
+
+/**
+ * Remove diacritics and apply other transforms to the NFKD decomposed string
+ */
+export const normalizeString = (str: string, format: 'NFD' | 'NFKD' = 'NFKD') =>
+    str.toLocaleLowerCase().normalize(format).replace(DIACRITICS_REGEXP, '');

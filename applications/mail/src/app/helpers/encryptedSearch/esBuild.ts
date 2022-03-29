@@ -39,7 +39,12 @@ const cleanText = (text: string, removeQuote: boolean) => {
         content = noQuoteContent;
     }
 
-    return toText(content);
+    // Introduce new lines after every div, because the toText function joins
+    // the content of consecutive divs together and this might introduce
+    // unwanted matches. Then remove redundant consecutive new lines
+    return toText(content.replaceAll('</div>', '</div><br>'))
+        .replace(/\n{2,}/g, '\n')
+        .trim();
 };
 
 /**
