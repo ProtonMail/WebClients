@@ -141,7 +141,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                 return acc;
             }, {});
 
-            const Title = [!isVpn && '[V4]', `[${Client}] Bug [${location.pathname}]`, model.Title]
+            const Title = [!isVpn && '[V5]', `[${Client}] Bug [${location.pathname}]`, model.Title]
                 .filter(Boolean)
                 .join(' ');
 
