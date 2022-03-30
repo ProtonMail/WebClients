@@ -178,11 +178,11 @@
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
+      "Get ${ vpnPlus }": [
+        "Krijg ${ vpnPlus }"
+      ],
       "Get a new password": [
         "Krijg een nieuw wachtwoord"
-      ],
-      "Get ProtonVPN Plus": [
-        "Krijg ProtonVPN Plus"
       ],
       "Get started": [
         "Aan de slag"
@@ -330,6 +330,9 @@
       ],
       "Show info": [
         "Toon informatie"
+      ],
+      "Show preview": [
+        ""
       ],
       "Sign out": [
         "Uitloggen"
@@ -689,13 +692,13 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Blijf ProtonMail gebruiken."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Blijf ${ MAIL_APP_NAME } gebruiken."
       ]
     },
     "Calendar feature": {
       "Calendar import": [
-        "Kalender importeren"
+        "Agenda importeren"
       ],
       "Invitations": [
         "Uitnodigingen"
@@ -1573,7 +1576,7 @@
         "Mijn reden staat er niet bij, graag commentaar"
       ],
       "Streaming service unsupported": [
-        "Streaming service niet ondersteund"
+        "Streamingdienst niet ondersteund"
       ],
       "Subscription is too expensive": [
         "Abonnement is te duur"
@@ -1894,7 +1897,7 @@
         "Snelheid"
       ],
       "Streaming service support": [
-        "Streaming service ondersteuning"
+        "Streamingdienst ondersteuning"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -1924,8 +1927,8 @@
       "Kill switch to prevent IP exposure": [
         "Kill switch om IP-blootstelling te voorkomen"
       ],
-      "Laptop & smartphone shown connected to ProtonVPN network.": [
-        "Laptop & smartphone toont aangesloten te zijn op het ProtonVPN netwerk."
+      "Laptop & smartphone shown connected to ${ VPN_APP_NAME } network.": [
+        "Laptop & smartphone toont aangesloten te zijn op het ${ VPN_APP_NAME }-netwerk."
       ],
       "No logs": [
         "Geen logboeken"
@@ -1944,11 +1947,17 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat beide het inlog en mailbox wachtwoord vervangt. Om te schakelen naar een enkel wachtwoord, vul het enkele wachtwoord naar keuze in en klik op opslaan."
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } Free"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional begint met één gebruiker en elke gebruiker voegt 5 GB en 5 e-mailadressen toe aan de pool van de organisatie."
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        "${ mailPlus } is beperkt tot één gebruiker en begint met 5 GB aan opslag."
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "${ mailProfessional } begint met één gebruiker en met elke extra gebruiker worden 5 GB en 5 e-mailadressen aan de organisatiegroep toegevoegd."
       ],
       "${ number } city": [
         "${ number } stad",
@@ -1973,6 +1982,16 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Free"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        "${ vpnBasic }, ${ vpnPlus } of ${ visionary } vereist om te kunnen verbinden via een specifiek land."
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "${ vpnPlus } beschikt over ${ maxVpn } VPN-verbinding.",
+        "${ vpnPlus } beschikt over ${ maxVpn } VPN-verbindingen."
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        "${ vpnPlus } of ${ visionary } vereist voor Secure Core functies."
+      ],
       "(Mail + VPN)": [
         "(Mail + VPN)"
       ],
@@ -1982,9 +2001,9 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } verbinding voor ProtonVPN (stelt u in staat meer apparaten aan VPN te verbinden)",
-        "+${ organization.BonusVPN } verbindingen voor ProtonVPN (stelt u in staat meer apparaten aan VPN te verbinden)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
+        "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% korting toegepast op uw abonnement met coupon ${ code }"
@@ -2097,8 +2116,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Vergeet dit wachtwoord NIET. Als u het vergeet kunt u niet meer inloggen of uw berichten ontsleutelen."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Gebruik de OpenVPN / IKEv2 inloggegevens niet in ProtonVPN applicaties of op het ProtonVPN dashboard. ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Gebruik de OpenVPN / IKEv2 inloggegevens niet in ${ VPN_APP_NAME } applicaties of op het ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "Domains": [
         "Domeinen"
@@ -2106,8 +2125,8 @@
       "Done! We sent a code to ${ destination }": [
         "Klaar! We hebben een code verzonden naar ${ destination }"
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "Downgraden zal alle verbindingen naar betaalde ProtonVPN-servers beëindigen."
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar je gaat."
@@ -2160,14 +2179,14 @@
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Volledige VPN met snelheid tot 10 Gbps."
       ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Krijg toegang tot alle betaalde functies voor zowel ProtonVPN als ProtonMail (de versleutelde e-maildienst die miljoenen gebruiken om hun gegevens te beschermen) met één abonnement."
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Krijg toegang tot alle betaalde functies voor zowel ${ VPN_APP_NAME } als ${ MAIL_APP_NAME } (de versleutelde e-maildienst die miljoenen mensen gebruiken om hun gegevens te beschermen) met één abonnement."
       ],
       "here": [
         "hier"
       ],
-      "If you are a ProtonMail user you can use your Proton account to log in to ProtonVPN.": [
-        "Als u een ProtonMail gebruiker bent kunt u uw Proton account gebruiken om in te loggen bij ProtonVPN."
+      "If you are a ${ MAIL_APP_NAME } user you can use your Proton account to log in to ${ VPN_APP_NAME }.": [
+        "Als u een ${ MAIL_APP_NAME }-gebruikt bent dan kan u uw Proton-account gebruiken om aan te melden bij ${ VPN_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
@@ -2190,14 +2209,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Als u uw tweestapsverificatie-apparaat kwijtraakt, kunnen deze codes worden gebruikt in plaats van de 6-cijferige tweestapsverificatiecode om in te loggen op uw account. Elke code kan slechts één keer worden gebruikt."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ProtonMail en ProtonVPN."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Als u doorgaat met de downgrade, verliest u de toegang tot betaalde functies van ProtonMail, waaronder extra opslag en filters."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "Als u doorgaat met de downgrade, verliest u de toegang tot betaalde functies van ${ MAIL_APP_NAME }, waaronder extra opslag en filters."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Als u doorgaat met de downgrade, verliest u toegang tot de betaalde functies van ProtonVPN."
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ VPN_APP_NAME }."
       ],
       "If you remember your old password later, you can recover your existing messages.": [
         "Als u uw oude wachtwoord later nog herinnert, kunt u uw bestaande berichten herstellen."
@@ -2244,8 +2263,8 @@
       "Keep this password safe, it cannot be recovered.": [
         "Houd dit wachtwoord veilig, het kan niet worden hersteld."
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Meer informatie over hoe u zich kunt aanmelden bij ProtonVPN met VPN-applicaties via apps van derden."
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Meer informatie over hoe u zich kunt aanmelden bij ${ VPN_APP_NAME } met VPN-applicaties via apps van derden."
       ],
       "Loading": [
         "Laden"
@@ -2256,8 +2275,8 @@
       "Loading preview": [
         "Voorbeeld laden"
       ],
-      "Log in to ProtonMail to activate your address": [
-        "Log in op ProtonMail om uw e-mailadres te activeren"
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
+        "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren"
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
         "Vergeet niet het wachtwoord voor het inloggen en ontsleutelen van e-mails. ${ boldAlert }. We raden u het toevoegen van ${ recoveryLink } eerst aan."
@@ -2346,22 +2365,6 @@
       "Proton can't help you recover any lost passwords.": [
         "Proton kan u niet helpen bij het herstellen van verloren wachtwoorden."
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "U kunt ook ProtonMail met een enkel wachtwoord gebruiken dat zowel het inlog als mailbox wachtwoord vervangt. Om te schakelen naar een enkel wachtwoord, vul het enkel wachtwoord naar keuze in en klik op opslaan."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus is beperkt tot één gebruiker en begint met 5 GB aan opslag."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } omvat ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-verbinding.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } omvat ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-verbindingen."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "ProtonVPN Basic, Plus of Visionary vereist voor de verbinden met een geselecteerd land."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "ProtonVPN Plus of Visionary vereist voor Secure Core functie."
-      ],
       "read our two-factor authentication Guide first": [
         "eerst de instructies over tweestapsverificatie (2FA) te lezen"
       ],
@@ -2371,8 +2374,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
       ],
-      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "Het resetten van uw wachtwoord zal uw encryptiesleutels resetten voor alle Proton gerelateerde diensten (Mail en VPN). U kunt uw bestaande berichten niet lezen. Als u uw ProtonMail inloggegevens kent, reset dan NIET. U kunt zich aanmelden met hen ${ hereLink }."
+      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        "Het resetten van uw wachtwoord zal uw encryptiesleutels resetten voor alle Proton gerelateerde diensten (Mail en VPN). U kunt uw bestaande berichten niet lezen. Als u uw ${ MAIL_APP_NAME } inloggegevens kent, reset dan NIET. U kunt zich aanmelden met hen ${ hereLink }."
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Stuur uw internetverkeer met één klik door via het Tor-netwerk."
@@ -2440,8 +2443,8 @@
       "Thank you for supporting our mission.": [
         "Bedankt voor uw steun aan onze missie."
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Deze configuratiebestanden laten u kiezen met welke ProtonVPN-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Deze configuratiebestanden laten u kiezen met welke ${ VPN_APP_NAME }-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
@@ -2482,8 +2485,8 @@
       "To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.": [
         "Om misbruik te voorkomen, bevestig dat u een mens bent. Sluit dit tabblad niet totdat u het account heeft geverifieerd."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Om uw internetverbinding te beveiligen, installeert u de ProtonVPN-applicatie op uw apparaat en maakt u verbinding met een ProtonVPN-server."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        "Om uw internetverbinding te beveiligen, installeert u de ${ VPN_APP_NAME }-applicatie op uw apparaat en maakt u verbinding met een ${ VPN_APP_NAME }-server."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Waardeer uw account op met 'credits' die u kunt gebruiken om een aanvullend abonnement af te sluiten of uw huidige abonnement te vernieuwen. U krijgt één 'credit' voor elke ${ i18nCurrency } die u gebruikt."
@@ -2518,8 +2521,8 @@
       "Upgrade now": [
         "Upgrade nu"
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Gebruik de volgende inloggegevens bij het verbinden met ProtonVPN servers zonder toepassing. Voorbeelden gebruiken gevallen zoals: Tunnelblick on macOS, OpenVPN op GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Gebruik de volgende inloggegevens bij het verbinden met ${ VPN_APP_NAME } servers zonder toepassing. Voorbeelden gebruiken gevallen zoals: Tunnelblick on macOS, OpenVPN op GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Gebruik uw eigen aangepast domein e-mailadressen, zoals jij@jouwnaam.com"
@@ -2542,8 +2545,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Waarschuwing: verwijdering is permanent. Dit verwijdert ook de toegang tot alle verbonden diensten en verwijdert al uw contacten."
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "We raden u aan om officiële ProtonVPN-applicaties te gebruiken waar mogelijk."
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        "We raden u aan om officiële ${ VPN_APP_NAME }-applicaties te gebruiken waar mogelijk."
       ],
       "We use 3-D Secure to protect your payments.": [
         "We gebruiken 3-D Secure om je betalingen te beschermen."
@@ -2587,17 +2590,17 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "U kunt slechts één chat-instantie tegelijk open hebben. Sluit eerdere gesprekken voordat u een nieuw gesprek begint."
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "U kunt de volgende inloggegevens gebruiken om met een ProtonVPN-server te verbinden met een externe VPN-app, zoals Tunnelblick voor macOS of OpenVPN voor GNU/Linux."
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "U kunt de volgende inloggegevens gebruiken om met een ${ VPN_APP_NAME }-server te verbinden met een externe VPN-app, zoals Tunnelblick voor macOS of OpenVPN voor GNU/Linux."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Gebruik de OpenVPN / IKEv2 inloggegevens niet in de ProtonVPN applicaties of op het ProtonVPN dashboard. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Gebruik de OpenVPN / IKEv2 inloggegevens niet in de ${ VPN_APP_NAME } applicaties of op het ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "U moet alle extra ProtonMail-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "U moet een creditcard of een bankrekening gekoppeld hebben aan uw PayPal-account om deze toe te voegen als betaalmethode."
@@ -2619,6 +2622,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
+      ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        "Uw ${ VPN_APP_NAME } en ${ MAIL_APP_NAME } accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang is beperkt. ${ payInvoiceLink }"
@@ -2656,9 +2662,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
       ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Uw ProtonVPN en ProtonMail accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
-      ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
       ],
@@ -2672,11 +2675,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        "${ MAIL_APP_NAME } kan niet voor massa e-mails of spam worden gebruikt. Legitieme e-mails zijn onbeperkt."
+      ],
       "Customizable features": [
         "Aanpasbare functies"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail kan niet voor massa e-mails of spam worden gebruikt. Legitieme e-mails zijn onbeperkt."
       ]
     },
     "Info for cash payment method": {
@@ -2754,6 +2757,9 @@
       ]
     },
     "Label": {
+      "${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME }-adres"
+      ],
       "${ n } VPN connection available": [
         "${ n } VPN-verbinding beschikbaar",
         "${ n } VPN-verbindingen beschikbaar"
@@ -2983,9 +2989,6 @@
       "Proton username": [
         "Proton gebruikersnaam"
       ],
-      "ProtonMail address": [
-        "ProtonMail e-mailadres"
-      ],
       "Recovery email address": [
         "E-mailadres voor herstel"
       ],
@@ -3040,8 +3043,8 @@
       "Username": [
         "Gebruikersnaam"
       ],
-      "Username or ProtonMail address": [
-        "Gebruikersnaam of ProtonMail e-mailadres"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Gebruikersnaam of ${ MAIL_APP_NAME }-adres"
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } van de ${ humanMaxSpace } gebruikt"
@@ -3342,7 +3345,7 @@
         "Configureer uw organisatie, koppel uw domeinnaam, en maak accounts aan om ervoor te zorgen dat alle leden van uw organisatie beveiligd zijn."
       ],
       "Discover all Proton services": [
-        "Ontdek alle Proton services"
+        "Ontdek alle Proton-diensten"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
         "Onze missie is om een internet te bouwen waar u controle hebt over uw gegevens en uw privacy. We hebben onlangs Proton bijgewerkt - welkom op het veilige internet."
@@ -3354,7 +3357,7 @@
         "Stel uw organisatie in"
       ],
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dit is wat mensen zien wanneer u hen een e-mail stuurt, hen uitnodigt voor een evenement, of een bestand met hen deelt."
+        "Dit is wat mensen zien wanneer u hen een e-mail stuurt, hen uitnodigt voor een afspraak, of een bestand met hen deelt."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Gebruik de app-selector in de linkerbovenhoek om toegang te krijgen tot andere Proton diensten, waaronder VPN, Calendar en Drive."
@@ -3644,7 +3647,7 @@
         "Vroegtijdige toegang tot de nieuwste producten"
       ],
       "High speed": [
-        "Hoge Snelheid"
+        "Hoge snelheid"
       ],
       "Highest speed (up to 10 Gbps)": [
         "Hoogste snelheid (tot 10 Gbps)"
@@ -3671,7 +3674,7 @@
         "Secure Core VPN"
       ],
       "Streaming service support": [
-        "Streaming service ondersteuning"
+        "Streamingdienst ondersteuning"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -3681,6 +3684,12 @@
       ]
     },
     "Plan Feature": {
+      "${ mailPlus } account": [
+        "${ mailPlus }-account"
+      ],
+      "${ mailVisionary } account": [
+        "${ mailVisionary }-account"
+      ],
       "All advanced security features": [
         "Alle geavanceerde beveiligingsfuncties"
       ],
@@ -3699,14 +3708,8 @@
       "Medium speed": [
         "Gemiddelde snelheid"
       ],
-      "ProtonMail Plus account": [
-        "ProtonMail Plus account"
-      ],
-      "ProtonMail Visionary account": [
-        "ProtonMail Visionary account"
-      ],
       "Streaming service support": [
-        "Streaming service ondersteuning"
+        "Streamingdienst ondersteuning"
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
@@ -3913,6 +3916,12 @@
       "${ title } plan details": [
         "${ title } abonnement details"
       ],
+      "${ VPN_APP_NAME } clients": [
+        ""
+      ],
+      "${ VPN_APP_NAME } plan comparison": [
+        "${ VPN_APP_NAME }-abonnement vergelijken"
+      ],
       "1. Select platform": [
         "Selecteer platform"
       ],
@@ -4066,8 +4075,8 @@
       "Enter your password": [
         "Voer uw wachtwoord in"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Voer uw gebruikersnaam in of uw ${ MAIL_APP_NAME } e-mailadres"
       ],
       "Error": [
         "Fout"
@@ -4078,8 +4087,8 @@
       "General": [
         "Algemeen"
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Gebruik ProtonVPN Plus om toegang te krijgen tot alle servers"
+      "Get ${ vpnPlus } to access all servers": [
+        "Neem ${ vpnPlus } om toegang te krijgen tot alle servers"
       ],
       "Gift code": [
         "Geschenkcode"
@@ -4173,12 +4182,6 @@
       ],
       "Processing...": [
         "Wordt verwerkt..."
-      ],
-      "ProtonVPN clients": [
-        "ProtonVPN-clients"
-      ],
-      "ProtonVPN plan comparison": [
-        "ProtonVPN abonnement vergelijking"
       ],
       "Provide payment details": [
         "Geef uw betalingsgegevens op"
@@ -4301,8 +4304,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "ProtonMail factuur"
+      "${ MAIL_APP_NAME } invoice": [
+        "${ MAIL_APP_NAME } factuur"
       ]
     },
     "Tooltip": {
@@ -4321,11 +4324,11 @@
       "Discount applied for two-year billing cycle": [
         "Korting toegepast voor tweejaarlijkse factureringscyclus"
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Krijg toegang tot alle betaalde functies voor zowel ${ VPN_APP_NAME } als ${ MAIL_APP_NAME } (de versleutelde e-maildienst die miljoenen mensen gebruiken om hun gegevens te beschermen) met één abonnement."
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Krijg toegang tot alle betaalde functies voor zowel ${ vpnAppName } als ${ mailAppName } (de versleutelde e-maildienst die miljoenen mensen gebruiken om hun gegevens te beschermen) met één abonnement."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Krijg toegang tot alle betaalde functies voor zowel ProtonVPN als ProtonMail (de versleutelde e-maildienst die miljoenen gebruiken om hun gegevens te beschermen) met één abonnement."
       ],
       "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
         "Als u uw wachtwoord vergeet, heeft u geen toegang meer tot uw account of uw gegevens. Sla deze op een veilige plaats op."
@@ -4333,8 +4336,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een cadeaucode heeft gekocht of een cadeaucode heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
-      "Includes ProtonMail encrypted email with all features": [
-        "Bevat ProtonMail versleutelde e-mail met alle functies"
+      "Includes ${ MAIL_APP_NAME } encrypted email with all features": [
+        "Bevat ${ MAIL_APP_NAME } versleutelde e-mail met alle functies"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Ondersteuning voor meerdere gebruikers is alleen van toepassing op abonnementen met 2 of meer gebruikers"
@@ -4363,8 +4366,8 @@
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Gebruik uw eigen aangepast domein e-mailadressen, zoals jij@jouwnaam.com"
       ],
-      "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
-        "Gebruikersnaam gebruikt voor alle Proton diensten. Deze kan later ook gebruikt worden om een veilig ProtonMail account aan te maken."
+      "Username which is used for all Proton services. This can also be used later to create a secure ${ MAIL_APP_NAME } account.": [
+        "Gebruikersnaam gebruikt voor alle Proton diensten. Deze kan later ook gebruikt worden om een veilig ${ MAIL_APP_NAME }-account aan te maken."
       ],
       "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
         "Uw e-mailadres wordt niet gedeeld met derden en wordt alleen gebruikt voor herstel en accountgerelateerde vragen of communicatie."
@@ -4393,9 +4396,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
       "30-days money-back guarantee": [
         "30 dagen geld-terug-garantie"
       ],
@@ -4451,7 +4451,7 @@
         "Split tunneling"
       ],
       "Streaming service support": [
-        "Streaming service ondersteuning"
+        "Streamingdienst ondersteuning"
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
@@ -4567,8 +4567,8 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Door dit telefoonnummer te verwijderen, kunt u uw account niet meer herstellen."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ProtonVPN abonnementen. Gelieve in plaats daarvan een ticket te openen."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ${ VPN_APP_NAME } abonnementen. Gelieve in plaats daarvan een ticket te openen."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Houd er rekening mee dat door deze betaalmethode te kiezen je account niet onmiddellijk kan worden bijgewerkt. We zullen je account bijwerken zodra de betaling is gewist."

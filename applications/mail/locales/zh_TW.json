@@ -21,7 +21,7 @@
         "新增"
       ],
       "Add address": [
-        "新增電子郵件地址"
+        "新增地址"
       ],
       "Add condition": [
         "新增條件"
@@ -180,7 +180,7 @@
         "繼續"
       ],
       "Continue with Google": [
-        "使用 Google 繼續"
+        "繼續以 Google 帳戶登入"
       ],
       "Contract composer": [
         "縮小撰寫器"
@@ -189,7 +189,7 @@
         "複製郵件地址"
       ],
       "Copy addresses": [
-        "複製郵件地址"
+        "複製電子郵件地址"
       ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
@@ -360,7 +360,7 @@
         "前往第 ${ page } 頁"
       ],
       "Go to panel ${ index }": [
-        "到面板 ${ index }"
+        "前往面板 ${ index }"
       ],
       "Go to previous page": [
         "前往上一頁"
@@ -456,7 +456,7 @@
         ""
       ],
       "Load image": [
-        "載入影像"
+        "載入圖片"
       ],
       "Load more": [
         "載入更多"
@@ -525,7 +525,7 @@
         "將電子郵件移動到"
       ],
       "Move to": [
-        "移動到"
+        "移至"
       ],
       "Move to archive": [
         "移至「封存」"
@@ -564,7 +564,7 @@
         "下一封郵件"
       ],
       "Next month": [
-        "下一個月"
+        "下個月"
       ],
       "Next page": [
         "下一頁"
@@ -654,7 +654,7 @@
         "重組"
       ],
       "refresh the page": [
-        "更新頁面"
+        "重新整理此頁面"
       ],
       "Refresh the page": [
         "重新整理此頁面"
@@ -787,6 +787,9 @@
       ],
       "Show more search options": [
         "顯示更多搜尋選項"
+      ],
+      "Show preview": [
+        ""
       ],
       "Sign out": [
         "登出"
@@ -1096,7 +1099,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -1271,7 +1274,7 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ]
     },
@@ -2511,7 +2514,7 @@
         "篩選"
       ],
       "Next": [
-        "下一個"
+        "下一步"
       ],
       "Recipient": [
         "收件人"
@@ -2986,8 +2989,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分標籤名稱無法使用。請自訂匯入內容以編輯該等名稱。"
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "部分標籤名稱超出 ProtonMail 的字數上限。請自訂匯入內容以編輯該等名稱。"
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
@@ -3398,16 +3401,16 @@
         "全部"
       ],
       "Hide moved message": [
-        "隱藏已移動郵件"
+        "隱藏已移動的郵件"
       ],
       "Read": [
         "已讀"
       ],
       "Show moved message": [
-        "顯示已移動郵件"
+        "顯示已移動的郵件"
       ],
       "Unread": [
-        "尚未讀取"
+        "未讀"
       ]
     },
     "Filter preview": {
@@ -3682,6 +3685,9 @@
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        ""
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封郵件無法移動。"
@@ -3992,11 +3998,11 @@
       "embedded image": [
         "內嵌圖片"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "為非 ProtonMail 使用者加密"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        ""
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "傳送給非 ProtonMail 收件者的加密訊息會在28天內過期，除非已設置較短有效期限。"
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送 ${ destinationText }，請在下方輸入。"
@@ -4076,8 +4082,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在建立帳戶時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "若您打算傳送此訊息至一位非 ProtonMail 使用者，請緊記設定訊息密碼。"
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        ""
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
@@ -4178,8 +4184,8 @@
       "Merged": [
         "合併的"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "訊息到期日毋需額外操作，即可在寄送電子郵件給其他 ProtonMail 使用者時使用。如要傳送限時電子郵件給非 ProtonMail 使用者，請先取消並為您的電子郵件新增密碼保護。"
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        ""
       ],
       "Message headers": [
         "郵件標頭"
@@ -4259,8 +4265,8 @@
       "of": [
         "，共"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "只有當您使用 PGP 寄送給非 ProtonMail 收件人時，才需修改這些設定。"
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        ""
       ],
       "Other options": [
         ""
@@ -4268,11 +4274,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "「PGP/內嵌」僅與「純文字」格式相容。請注意：ProtonMail 一律簽署所有加密郵件。"
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        ""
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "「PGP/MIME」自動使用目前撰寫器模式傳送郵件。請注意：ProtonMail 一律簽署所有加密郵件。"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        ""
       ],
       "Phone number": [
         "電話號碼"
@@ -4321,9 +4327,6 @@
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 不會透過濫用隱私來賺錢。"
-      ],
-      "ProtonMail can protect your business as well.": [
-        "ProtonMail 也能保護您的業務。"
       ],
       "Recipient: ": [
         "收件人："
@@ -4400,14 +4403,14 @@
       "Session timed out": [
         "工作階段已逾時"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        ""
+      ],
       "Set a recovery phrase": [
         "設定還原短語"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "將 ProtonMail 設為您的瀏覽器預設郵件應用程式。當您點擊電郵地址時，ProtonMail 將會自動開啟。"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ProtonMail 使用者傳送端對端加密的電子郵件。"
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        ""
       ],
       "Show original message": [
         "顯示原始訊息"
@@ -4418,8 +4421,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
-      "Store and share files securely with Proton Drive.": [
-        "使用 Proton Drive 安全的儲存及分享檔案。"
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Subject": [
         "主題"
@@ -4628,8 +4631,8 @@
       "Upgrade to support privacy and get more features.": [
         "升級以支援隱私並取得更多功能。"
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "升級以將 ProtonMail 與第三方桌面客戶端一起使用。"
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "現在就升級，以免錯失 ${ appName } ${ planName } 福利。"
@@ -4718,8 +4721,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電子郵件訊息送達此資料夾時收到通知。"
       ],
-      "You can use ProtonVPN for free today.": [
-        "今天您能夠免費使用 ProtonVPN 。"
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        ""
       ],
       "You cannot reply from the invited address.": [
         "您無法從獲邀的電子郵件地址回覆。"
@@ -5400,8 +5403,8 @@
       "Upload picture": [
         "上載圖片"
       ],
-      "Username or ProtonMail address": [
-        "使用者名稱或 ProtonMail 電子郵件地址"
+      "Username or ${ MAIL_APP_NAME } address": [
+        ""
       ],
       "Verification code": [
         "驗證碼"
@@ -5485,7 +5488,7 @@
     },
     "Layout mode": {
       "Column": [
-        "行"
+        "欄"
       ],
       "Row": [
         "列"
@@ -5915,8 +5918,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        ""
+      ],
+      "Available on iOS and Android.": [
+        ""
+      ],
+      "Get the ${ appName } mobile app": [
+        ""
+      ],
+      "Import your messages": [
+        ""
+      ],
+      "Meet your encrypted mailbox": [
+        ""
+      ],
       "Next": [
-        "下一個"
+        "下一步"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -5949,26 +5970,6 @@
       ],
       "You can change this anytime in your settings.": [
         "您隨時都可以在設定中變更。"
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } 現在更顯現代風格，各式自訂更上層樓，卻依舊以進階加密保護您的資料。"
-      ],
-      "Available on iOS and Android.": [
-        "iOS 和 Android 皆適用。"
-      ],
-      "Get the ${ appName } mobile app": [
-        "取得 ${ appName } 行動應用程式"
-      ],
-      "Import your messages": [
-        "匯入您的郵件"
-      ],
-      "Meet your encrypted mailbox": [
-        "迎接您的加密郵件信箱"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "我們的 [匯入助理] 快速轉移您所有的電子郵件到您新的加密郵件信箱。"
       ]
     },
     "Option": {
@@ -6012,13 +6013,13 @@
         "取得手機 App"
       ],
       "Import contacts or emails": [
-        ""
+        "匯入聯絡人或郵件"
       ],
       "Send a message": [
-        ""
+        "傳送郵件"
       ],
       "Set up a recovery method": [
-        ""
+        "設定備援方法"
       ]
     },
     "Participant name": {
@@ -6228,8 +6229,8 @@
       "PGP-signed message. Sender verification failed": [
         "經 PGP 簽署的郵件。寄件人驗證失敗"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "由 ProtonMail 以零存取加密傳送"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
       "Stored with zero-access encryption": [
         "以零存取加密儲存"
@@ -6304,17 +6305,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "經 ProtonMail 加密"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        ""
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "經 ProtonMail 加密寄送 PGP 收件人"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "經 ProtonMail 加密寄送已驗證 PGP 收件人"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "經 ProtonMail 加密寄送已驗證收件人"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        ""
       ],
       "End-to-end encrypted": [
         "經端對端加密"
@@ -6331,11 +6332,11 @@
       "PGP-signed": [
         "經 PGP 簽署"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "由 ProtonMail 以零存取加密傳送"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "由 ProtonMail 以零存取加密傳送到已驗證收件人"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        ""
       ],
       "Sent by you with end-to-end encryption": [
         "由您以端對端加密傳送"
@@ -6466,13 +6467,13 @@
         "${ elementsCount } 個會話已標記為未讀。"
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } 則對話已移動到 ${ folderName }，並將寄件人新增至允許清單。"
+        "${ elementsCount } 個會話已移至 ${ folderName }，並將寄件人新增至允許清單。"
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } 個會話已移動到 ${ folderName }。"
+        "${ elementsCount } 個會話已移至 ${ folderName }。"
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } 個會話已移動到垃圾郵件，並將寄件人新增到封鎖清單中。"
+        "${ elementsCount } 個會話已移至垃圾郵件，並將寄件人新增到封鎖清單中。"
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 個會話已移除 ${ labelName } 標籤。"
@@ -6541,13 +6542,13 @@
         "會話已標記為未讀。"
       ],
       "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "對話已移動到 ${ folderName }，並將寄件人新增至允許清單。"
+        "會話已移至 ${ folderName }，並將寄件人新增至允許清單。"
       ],
       "Conversation moved to ${ folderName }.": [
-        "會話已移動到 ${ folderName }。"
+        "會話已至 ${ folderName }。"
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "會話已移動到垃圾郵件，並將寄件人新增到封鎖清單中。"
+        "會話已移至垃圾郵件，並將寄件人新增到封鎖清單中。"
       ],
       "Conversation removed from ${ labelName }.": [
         "${ labelName } 標籤已從此會話撕下"
@@ -6916,8 +6917,8 @@
       "Enter your password": [
         "請輸入您的密碼"
       ],
-      "Enter your username or ProtonMail email address": [
-        "請輸入您的使用者名稱或 ProtonMail 電子郵件地址"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        ""
       ],
       "Error": [
         "錯誤"
@@ -7050,9 +7051,6 @@
       ],
       "Previous message": [
         "上一封郵件"
-      ],
-      "ProtonMail": [
-        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "重新簽署所有聯絡人"
@@ -7211,8 +7209,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇向特定使用者簽署時，所需使用的簽章或PGP 方案。請注意 PGP/inline 模式將強制使用純文字郵件格式。"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "系統子資料夾將在 ProtonMail 中顯示成獨立資料夾。"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        ""
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
@@ -7281,7 +7279,7 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "若您忘記密碼，則沒辦法重新啟用您的金鑰。我們可幫助您關閉提示橫幅，然而在此過程中，您將永久失去所有經過該金鑰加密的資料。"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [

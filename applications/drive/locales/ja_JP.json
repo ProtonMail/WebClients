@@ -57,7 +57,10 @@
         "キャンセル"
       ],
       "Cancel all": [
-        ""
+        "すべてキャンセル"
+      ],
+      "Cancel all downloads": [
+        "すべてのダウンロードをキャンセル"
       ],
       "Cancel all uploads": [
         "すべてのアップロードをキャンセル"
@@ -206,9 +209,6 @@
       "enable desktop notifications": [
         "デスクトップ通知を有効化する"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Expand folder": [
         "フォルダーを展開"
       ],
@@ -272,6 +272,9 @@
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
       ],
+      "Learn more": [
+        "詳細"
+      ],
       "Load image": [
         "画像を読み込む"
       ],
@@ -327,7 +330,7 @@
         "ナビゲーションを開く"
       ],
       "Pause all": [
-        ""
+        "すべてポーズ"
       ],
       "Pause download": [
         "ダウンロードを一時停止"
@@ -387,7 +390,7 @@
         "倍率をリセット"
       ],
       "Restart all": [
-        ""
+        "すべて再スタート"
       ],
       "Restart download": [
         "ダウンロードを再度開始"
@@ -399,7 +402,7 @@
         "ごみ箱から復元"
       ],
       "Resume all": [
-        ""
+        "すべてレジューム"
       ],
       "Resume download": [
         "ダウンロードを再開"
@@ -429,7 +432,7 @@
         "ファイルを共有"
       ],
       "Share item": [
-        "アイテムをシェア"
+        "アイテムを共有"
       ],
       "Share options": [
         "共有オプション"
@@ -451,6 +454,9 @@
       ],
       "Show labels": [
         "ラベルを表示"
+      ],
+      "Show preview": [
+        "プレビューを表示"
       ],
       "Sign out": [
         "サインアウト"
@@ -504,7 +510,7 @@
         "信頼しない"
       ],
       "Update recovery file": [
-        "リカバリーファイルを更新"
+        "回復ファイルを更新"
       ],
       "Update recovery phrase": [
         "リカバリーフレーズを更新"
@@ -591,8 +597,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "ベータ版アクセスでは、${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
@@ -766,8 +772,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "ProtonMail を使って続行。"
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } を使って続行します。"
       ]
     },
     "Calendar status": {
@@ -1690,7 +1696,7 @@
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
+        "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } 件までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
@@ -1749,10 +1755,10 @@
         "${ email } というメールアドレスが見つかりませんでした。"
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        ""
+        "${ calendarToFixCount } 件のカレンダーの選択を解除"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        ""
+        "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
       ],
       "Email address invalid": [
         "無効なメールアドレスです"
@@ -1815,10 +1821,10 @@
         "ラベル名は空欄にできません"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        ""
+        "${ calendarToFixCount } 件のカレンダーを既存の Proton カレンダーに結合します"
       ],
       "Missing key packet": [
-        ""
+        "キーパケットが利用できません"
       ],
       "Missing signature": [
         "署名がありません"
@@ -1877,8 +1883,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "ラベル名の中に ProtonMail の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
@@ -1890,7 +1896,7 @@
         "このラベル名は利用できません。別の名前を選択してください"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        ""
+        "元のファイルの新しいリビジョンのアップロードは完了していません。再度お試しください。"
       ],
       "The original file has missing active revision": [
         ""
@@ -2077,7 +2083,7 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        ""
+        "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         ""
@@ -2151,7 +2157,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "次のステップで必要なすべての権限を選択します"
       ]
     },
     "Import warning": {
@@ -2308,10 +2314,13 @@
         "キャンセル"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "パスワードを覚えていませんか？ この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
+        "パスワードを覚えていませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "${ max } のうち ${ progress } の連絡先を確認しています..."
+      ],
+      "Checking signatures": [
+        "署名をチェック中"
       ],
       "Clear data": [
         "データをクリア"
@@ -2385,6 +2394,15 @@
       "Delete drive": [
         "ドライブを削除"
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        "デジタル署名が検証されました。このファイルは ${ emailAddress } によって安全にアップロードされました。"
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        "デジタル署名が検証されました。このフォルダーは ${ emailAddress } によって安全にアップロードされました。"
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        ""
+      ],
       "Downloaded": [
         "ダウンロード完了"
       ],
@@ -2400,9 +2418,6 @@
       "Duplicate key updated": [
         "重複したキーはアップデートされました"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
@@ -2415,6 +2430,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "セキュアリンクを開くのに失敗しました。理由: ${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "ファイルの署名が正しくありません。${ emailAddress } がアップロードした ${ fileName } を検証できませんでした。"
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "ファイルの署名が正しくありません。誰が ${ fileName } をアップロードしたか検証できませんでした。"
+      ],
       "File will not be uploaded": [
         "ファイルはアップロードされません"
       ],
@@ -2423,6 +2444,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "フォルダーの中身を 1 つのフォルダーに結合します"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "フォルダーの署名が正しくありません。${ emailAddress } がアップロードした ${ fileName } を検証できませんでした。"
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "フォルダーの署名が正しくありません。誰が ${ fileName } をアップロードしたか検証できませんでした。"
       ],
       "Folder will not be uploaded": [
         "フォルダーはアップロードされません"
@@ -2575,10 +2602,10 @@
         ""
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        ""
+        "${ MAX_CUSTOM_PASSWORD_LENGTH } 文字まで利用できます"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "PGP を利用している ProtonMail 以外の宛先がある場合にのみ、これらの設定を変更してください。"
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
       ],
       "Only the people with the link and the password can access this file.": [
         "リンクとパスワードを知っている人のみがファイルにアクセスすることができます。"
@@ -2595,14 +2622,14 @@
       "Permanently delete all files in your drive": [
         "ドライブからすべてのファイルを完全に削除"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline はプレーンテキスト形式としか互換性がありません。 ProtonMail は暗号化されたメッセージに常に署名することに注意してください。"
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIMEは自動的に現在の書式を使用してメッセージを送信します。ProtonMailは暗号化されたメッセージに常に署名することに注意してください。"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIMEは自動的に現在の書式を使用してメッセージを送信します。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        ""
+        "グループに割り当てられたアドレスは削除されません。"
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
@@ -2664,11 +2691,17 @@
       "Session timed out": [
         "セッションがタイムアウトしました"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "PGP を設定すると、PGP 対応のサービスを使用する ProtonMail 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "PGP を設定すると、PGP 対応のサービスを使用する ${ BRAND_NAME } 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
       ],
       "Share files with links": [
         "リンクでファイルを共有"
+      ],
+      "Signature check will be ignored": [
+        "署名確認は無視されました"
+      ],
+      "Signature issue": [
+        "署名の問題"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "いくつかのファイルにはアクセスできません。ファイルへのアクセスを復元します。${ StartRecoveryButton }"
@@ -2685,8 +2718,14 @@
       "support team": [
         "サポートチーム"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "アプリケーションは、エクスポートする前に連絡先をローカルで復号化する必要があります。 プロセスの終了時に、VCFファイルが生成され、ダウンロードすることができます。"
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
       ],
       "There are no files yet": [
         "まだファイルがありません"
@@ -2713,10 +2752,10 @@
         "このリンクは永久に無効化され、このリンクを知っている人は今後あなたのファイルにアクセスできません。ファイルを再度共有した場合、新しいリンクが作成されます。"
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        ""
+        "このリンクは永久に無効化され、このリンクを知っている人は今後あなたのフォルダーにアクセスできません。フォルダーを再度共有した場合、新しいリンクが作成されます。"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        ""
+        "リンクが削除され、リンクを持つすべての人のファイルやフォルダーへのアクセスが削除されます。"
       ],
       "This will overwrite the existing file": [
         "存在するファイルを上書きします"
@@ -2724,11 +2763,11 @@
       "This will overwrite the existing folder": [
         "存在するフォルダーを上書きします"
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        ""
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
@@ -2784,6 +2823,12 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "同時にたくさんのファイルをアップロードするとパフォーマンスが低下する可能性があります。"
       ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "${ emailAddress } がアップロードした ${ fileName } を検証できませんでした。"
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        "誰が ${ fileName } をアップロードしたか検証できませんでした。"
+      ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
       ],
@@ -2818,7 +2863,7 @@
         "別のタブで下記リンクを開こうとしています:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "現在 ${ user.Name } (${ user.Email }) でサインインしています。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "存在する Proton カレンダーにインポートしたカレンダーを結合することもできます。"
@@ -2906,6 +2951,26 @@
         "重複した連絡先が存在しているようです。${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        "ファイル属性"
+      ],
+      "file data": [
+        "ファイルデータ"
+      ],
+      "keys": [
+        "キー"
+      ],
+      "name": [
+        "名前"
+      ],
+      "name hash": [
+        "名前ハッシュ"
+      ],
+      "thumbnail": [
+        "サムネイル"
+      ]
+    },
     "Key badge": {
       "Expired": [
         "有効期限切れ"
@@ -2928,7 +2993,7 @@
     },
     "Label": {
       "# of accesses": [
-        ""
+        "アクセス数"
       ],
       "(Expired)": [
         "(有効期限切れ)"
@@ -2951,6 +3016,9 @@
       "Apply to all duplicated folders": [
         "すべての重複したフォルダーに適用"
       ],
+      "Apply to all unverified items": [
+        ""
+      ],
       "Audio file": [
         "音声ファイル"
       ],
@@ -2965,6 +3033,9 @@
       ],
       "Calendars": [
         "カレンダー"
+      ],
+      "Cancel download": [
+        "ダウンロードをキャンセル"
       ],
       "Category": [
         "カテゴリー"
@@ -2999,6 +3070,9 @@
       "Do not ask again": [
         "今後表示しない"
       ],
+      "Download anyway": [
+        "とにかくダウンロード"
+      ],
       "Email address": [
         "メールアドレス"
       ],
@@ -3012,7 +3086,7 @@
         "ベータ版アクセスを有効にする"
       ],
       "Enabling Drive Search": [
-        ""
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "メールを暗号化"
@@ -3203,8 +3277,8 @@
       "Upload picture": [
         "写真をアップロード"
       ],
-      "Username or ProtonMail address": [
-        "ユーザー名または ProtonMail アドレス"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "ユーザー名または ${ MAIL_APP_NAME } アドレス"
       ],
       "Verification code": [
         "検証コード"
@@ -3439,6 +3513,9 @@
       "File or folder is missing a name": [
         "ファイルまたはフォルダーが存在しません"
       ],
+      "Item failed to be verified": [
+        "アイテムの検証に失敗しました"
+      ],
       "Link failed to be loaded": [
         "リンクの読み込みに失敗しました"
       ],
@@ -3502,6 +3579,28 @@
         ""
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        "ベータ版アクセスを有効化"
+      ],
+      "Start using ${ appName }": [
+        "${ appName } を使ってみる"
+      ],
+      "Upgrade account": [
+        "アカウントをアップグレード"
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        "${ appName } は現在早期アクセスで有料プランのみが利用できます。"
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        "${ appName } はベータアクセスを有効にしている場合のみ利用できます。"
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        "エンドツーエンド暗号化ですべてのファイルを保護します。${ appName } を使ってファイルを安全に保管、共有できます。"
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "表示名を選択"
@@ -3534,29 +3633,7 @@
         "この設定はいつでも変更できます。"
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "ベータ版アクセスを有効にする"
-      ],
-      "Start using ${ appName }": [
-        "${ appName } の使用を開始する"
-      ],
-      "Upgrade account": [
-        "アカウントをアップグレード"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } は現在早期アクセスで有料プランのみが利用できます。"
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } はベータアクセスを有効にしている場合のみ利用できます。"
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "エンドツーエンド暗号化ですべてのファイルを保護します。${ appName } を使ってファイルを安全に保管、共有できます。"
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
         "${ appName } はベータ版です"
       ],
@@ -3727,7 +3804,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "${ appName } ${ planName } が最大 18 か月無料"
       ],
       "Invite friends and earn rewards!": [
         "友だちを招待して報酬を手に入れよう!"
@@ -3910,7 +3987,7 @@
         "アカウントが停止されました"
       ],
       "Active": [
-        ""
+        "アクティブ"
       ],
       "Add contact group name": [
         "連絡先グループの名前を追加"
@@ -3928,7 +4005,7 @@
         "アドレス"
       ],
       "All": [
-        ""
+        "すべて"
       ],
       "Back": [
         "戻る"
@@ -3946,7 +4023,7 @@
         "データをクリアしています"
       ],
       "Completed": [
-        ""
+        "完了"
       ],
       "Contact details": [
         "連絡先の詳細"
@@ -4003,7 +4080,7 @@
         "破棄"
       ],
       "Discard changes?": [
-        "変更を破棄してよろしいですか？"
+        "変更を破棄しますか?"
       ],
       "Download canceled": [
         "ダウンロードをキャンセルしました"
@@ -4013,6 +4090,12 @@
       ],
       "Download failed": [
         "ダウンロードに失敗しました"
+      ],
+      "Download unverified file?": [
+        "未検証のファイルをダウンロードしますか?"
+      ],
+      "Download unverified folder?": [
+        "未検証のフォルダーをダウンロードしますか?"
       ],
       "Downloading": [
         "ダウンロード中"
@@ -4051,7 +4134,7 @@
         "ごみ箱を空にする"
       ],
       "Enable Drive Search": [
-        ""
+        "Enable drive search"
       ],
       "Enter password to download": [
         "パスワードを入力してダウンロード"
@@ -4059,14 +4142,14 @@
       "Enter your password": [
         "パスワードを入力してください"
       ],
-      "Enter your username or ProtonMail email address": [
-        "ユーザー名または ProtonMail アドレスを入力してください"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "ユーザー名または ${ MAIL_APP_NAME } メールアドレスを入力"
       ],
       "Exporting contacts": [
         "連絡先のエクスポート中"
       ],
       "Failed": [
-        ""
+        "失敗"
       ],
       "File details": [
         "ファイルの詳細"
@@ -4195,7 +4278,7 @@
         "検索結果"
       ],
       "Search results: ${ searchView.numberOfResults } found": [
-        ""
+        "検索結果: ${ searchView.numberOfResults } 見つかりました"
       ],
       "Searching…": [
         "検索中…"
@@ -4246,19 +4329,25 @@
         "共有を停止"
       ],
       "Stop sharing with everyone?": [
-        "共有を停止してよろしいですか？"
+        "共有を停止してよろしいですか?"
       ],
       "The file or folder failed to be downloaded": [
-        ""
+        "ファイルまたはフォルダーのダウンロードは失敗しました"
       ],
       "The link does not exist": [
-        ""
+        "このリンクは存在しません"
       ],
       "The link either does not exist or has expired": [
         "リンクが存在しないか有効期限が切れています"
       ],
       "The link failed to be loaded": [
-        ""
+        "リンクの読み込みに失敗しました"
+      ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "ファイルが利用できないか、無効な署名です。メニュー (⋮) に移動し、詳細の情報を表示します。"
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "フォルダーが利用できないか、無効な署名です。メニュー (⋮) に移動し、詳細の情報を表示します。"
       ],
       "Total size": [
         "合計サイズ"
@@ -4333,7 +4422,7 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用されるPGPの方式を選択してください。PGP/Inlineはプレーンテキストのメッセージでしか使用できない事に注意してください。"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         ""
       ],
       "The import will start with the most recent messages.": [
@@ -4398,8 +4487,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "パスワードを覚えていない場合は、鍵を再度有効にすることはできません。 わたしたちはアラートバナーを解除するお手伝いはできますが、その鍵で暗号化されたすべてのデータへのアクセスを永久に失うことになります。"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "ライブチャットは ${ VPN_APP_NAME } の有料プラン専用のプレミアム機能です。利用するにはチケットをオープンしてください。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"
@@ -4429,7 +4518,7 @@
         "この操作は元に戻せません。続行するには、単語${ boldDanger } を入力してください。"
       ],
       "This feature requires a paid Proton account": [
-        "この機能は有料のProtonアカウントが必要です。"
+        "この機能は有料の Proton アカウントが必要です"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "現在オンラインではありません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"

@@ -794,6 +794,9 @@
       "Show more search options": [
         "Mai multe opțiuni de căutare"
       ],
+      "Show preview": [
+        "Previzualizare spectacol"
+      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -1106,8 +1109,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta Access vă permite să utilizați versiunea beta a ${ mailAppName }, ${ calendarAppName } și Proton Drive înainte ca acestea să fie lansate pentru public. Acest lucru înseamnă că puteți fi primul care va încerca noile produse, va primi noi actualizări și va utiliza noi caracteristici."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta Access vă permite să utilizați versiunea beta a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME } înainte ca acestea să fie lansate pentru public. Acest lucru înseamnă că puteți fi primul care va încerca noile produse, va primi noi actualizări și va utiliza noi caracteristici."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
@@ -1281,8 +1284,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Continuare utilizare ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Continuați să utilizați ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -3024,8 +3027,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Unele nume de etichete nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Unele nume de etichete depășesc limita maximă admisă de caractere din ProtonMail. Modificați opțiunile de importare pentru a edita aceste nume."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Unele dintre numele etichetelor dumneavoastră depășesc limita maximă de caractere a lui ${ MAIL_APP_NAME }. Vă rugăm să personalizați importul pentru a edita aceste nume."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
@@ -3472,7 +3475,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Am mărit spațiul de stocare total al contului tău la ${ rewardInGb } GB. Obțineți spațiu de stocare suplimentar și deblocați caracteristici premium astăzi."
       ],
       "You're all set!": [
         "Sunteți gata!"
@@ -3480,7 +3483,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Completați toți pașii și primiți un total de ${ rewardInGb } GB în contul dumneavoastră"
       ],
       "Expires soon": [
         "Expiră în curând"
@@ -3756,6 +3759,9 @@
         "S-a găsit un grup",
         "S-au găsit ${ groupCounts } grupuri",
         "S-au găsit ${ groupCounts } de grupuri"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME } vă poate proteja și afacerea."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "Un mesaj nu a putut fi mutat.",
@@ -4124,11 +4130,11 @@
         "imagini încorporate",
         "de imagini încorporate"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "Criptare pentru utilizatorii non-ProtonMail"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        "Criptare pentru utilizatorii care nu sunt ${ BRAND_NAME }"
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Mesajele criptate către destinatarii din afara ProtonMail expiră în 28 de zile, dacă nu e setată o perioadă mai scurtă."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        "Mesajele criptate către destinatarii care nu sunt ${ BRAND_NAME } vor expira în 28 de zile, cu excepția cazului în care se stabilește un termen de expirare mai scurt."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -4216,8 +4222,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Dacă trimiteți acest mesaj unui utilizator non ProtonMail, asigurați-vă că ați setat o parolă pentru mesajul dvs."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        "Dacă trimiteți acest mesaj unui utilizator care nu este ${ MAIL_APP_NAME }, vă rugăm să vă asigurați că ați setat o parolă pentru mesaj."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
@@ -4320,8 +4326,8 @@
       "Merged": [
         "Îmbinat"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "Expirarea mesajului funcționează de la sine când trimiteți mesaje către alți utilizatori ProtonMail. Pentru a trimite mesaje cu expirare utilizatorilor care nu sunt în ProtonMail, anulați și adăugați protecția cu parolă la mesaj."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "Expirarea mesajelor funcționează în mod normal atunci când trimiteți e-mailuri către alți utilizatori ${ MAIL_APP_NAME }. Pentru a trimite e-mailuri care expiră către alți utilizatori decât ${ BRAND_NAME }, vă rugăm să anulați și să adăugați protecție prin parolă la e-mail."
       ],
       "Message headers": [
         "Antete mesaj"
@@ -4401,8 +4407,8 @@
       "of": [
         "din"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt ${ BRAND_NAME }."
       ],
       "Other options": [
         "Alte opțiuni"
@@ -4410,11 +4416,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/integrat este compatibil doar cu formatul de text simplu. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline este compatibil numai cu formatul Plain Text. Vă rugăm să rețineți că ${ MAIL_APP_NAME } semnează întotdeauna mesajele criptate."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME trimite automat mesajul folosind modul de compoziție curent. Rețineți că ${ MAIL_APP_NAME } semnează întotdeauna mesajele criptate"
       ],
       "Phone number": [
         "Număr de telefon"
@@ -4463,9 +4469,6 @@
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nu face bani abuzând de viața privată."
-      ],
-      "ProtonMail can protect your business as well.": [
-        "ProtonMail vă poate proteja și afacerea."
       ],
       "Recipient: ": [
         "Destinatar: "
@@ -4542,14 +4545,14 @@
       "Session timed out": [
         "Sesiunea a expirat"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest browser. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe un link de e-mail."
+      ],
       "Set a recovery phrase": [
         "Setați o frază de recuperare"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Setare ProtonMail ca aplicaţie implicită de e-mail pentru acest navigator. ProtonMail se va deschide automat când faceţi clic pe o legătură de e-mail."
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ProtonMail care folosește un serviciu PGP compatibil."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Configurarea PGP vă permite să trimiteți e-mailuri criptate de la un capăt la altul cu un utilizator care nu este ${ BRAND_NAME } și care utilizează un serviciu compatibil PGP."
       ],
       "Show original message": [
         "Afișare mesaj original"
@@ -4560,8 +4563,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         "Spațiul de stocare este partajat între Mail, Calendar și Drive."
       ],
-      "Store and share files securely with Proton Drive.": [
-        "Stocați și partajați fișiere în siguranță cu Proton Drive."
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        "Stocați și partajați fișiere în siguranță cu ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Subiect"
@@ -4772,8 +4775,8 @@
       "Upgrade to support privacy and get more features.": [
         "Treceţi la alt plan pentru a beneficia de confidențialitate și a obține mai multe funcții."
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Treceţi la alt plan pentru a utiliza ProtonMail cu clienți desktop de la terți."
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        "Actualizați pentru a utiliza ${ MAIL_APP_NAME } cu clienți desktop terți."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Faceți upgrade astăzi pentru a evita pierderea beneficiilor din ${ appName } ${ planName }."
@@ -4862,8 +4865,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
       ],
-      "You can use ProtonVPN for free today.": [
-        "Puteți utiliza ProtonVPN gratuit astăzi."
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        "Puteți utiliza ${ VPN_APP_NAME } gratuit astăzi."
       ],
       "You cannot reply from the invited address.": [
         "Nu puteți răspunde de la adresa invitată."
@@ -5564,8 +5567,8 @@
       "Upload picture": [
         "Încărcare imagine"
       ],
-      "Username or ProtonMail address": [
-        "Nume de utilizator sau e-mail ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Nume de utilizator sau adresa ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -6089,8 +6092,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        "${ appName } este acum mai modern și personalizabil, protejându-vă în același timp datele prin criptare avansată."
+      ],
+      "Available on iOS and Android.": [
+        "Disponibilă pe iOS și Android."
+      ],
+      "Get the ${ appName } mobile app": [
+        "Obține aplicația mobilă ${ appName }"
+      ],
+      "Import your messages": [
+        "Importați-vă mesajele"
+      ],
+      "Meet your encrypted mailbox": [
+        "Începeți să folosiți cutia poștală criptată"
+      ],
       "Next": [
         "Înainte"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        "Programul „Import Asistant” vă poate transfera rapid toate mesajele către noua adresă de e-mail criptată."
       ]
     },
     "Onboarding Proton": {
@@ -6123,26 +6144,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Puteți modifica oricând aceasta în setări."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } este acum mai modern și personalizabil, protejându-vă în același timp datele prin criptare avansată."
-      ],
-      "Available on iOS and Android.": [
-        "Disponibilă pe iOS și Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Obțineți aplicația mobilă ${ appName }"
-      ],
-      "Import your messages": [
-        "Importați-vă mesajele"
-      ],
-      "Meet your encrypted mailbox": [
-        "Începeți să folosiți cutia poștală criptată"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Programul „Import Asistant” vă poate transfera rapid toate mesajele către noua adresă de e-mail criptată."
       ]
     },
     "Option": {
@@ -6406,8 +6407,8 @@
       "PGP-signed message. Sender verification failed": [
         "Mesaj semnat cu PGP. Verificarea expeditorului a eșuat."
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Trimis de ProtonMail cu criptare cu acces zero"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero"
       ],
       "Stored with zero-access encryption": [
         "Stocat criptat cu acces exclusiv personal"
@@ -6490,17 +6491,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "Criptat de ProtonMail"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "Criptat de ${ MAIL_APP_NAME }"
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "Criptat de către ProtonMail către destinatar cu PGP"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "Criptat de ${ MAIL_APP_NAME } către destinatarul PGP"
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "Criptat de ProtonMail către destinatar cu PGP verificat"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Criptat de ${ MAIL_APP_NAME } către un destinatar PGP verificat"
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "Criptat de ProtonMail către destinatar verificat"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "Criptat de ${ MAIL_APP_NAME } către destinatarul verificat"
       ],
       "End-to-end encrypted": [
         "Criptat în ambele părți"
@@ -6517,13 +6518,13 @@
       "PGP-signed": [
         "Semnat PGP"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Trimis de ProtonMail cu criptare cu acces zero"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero"
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "Trimis de ProtonMail cu criptare cu acces zero către destinatar verificat",
-        "Trimis de ProtonMail cu criptare cu acces zero către destinatari verificați",
-        "Trimis de ProtonMail cu criptare cu acces zero către destinatari verificați"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero către un destinatar verificat",
+        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero către destinatarii verificați",
+        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero către destinatarii verificați"
       ],
       "Sent by you with end-to-end encryption": [
         "Trimis de dvs. cu criptare în ambele părți"
@@ -7178,8 +7179,8 @@
       "Enter your password": [
         "Introduceţi parola"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Introduceți numele dumneavoastră de utilizator sau adresa de e-mail ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Eroare"
@@ -7312,9 +7313,6 @@
       ],
       "Previous message": [
         "Mesajul anterior"
-      ],
-      "ProtonMail": [
-        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Resemnare toate contactele"
@@ -7475,8 +7473,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Subfolderele de sistem vor fi afișate ca foldere separate în ProtonMail."
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
@@ -7551,8 +7549,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Discuția live este o funcție premium disponibilă doar pentru cei care au planuri ProtonVPN cu plată. În schimb, vă rugăm să deschideți un tichet."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Chat-ul live este o funcție premium disponibilă numai pentru cei care au planuri ${ VPN_APP_NAME } plătite. În schimb, vă rugăm să deschideți un tichet."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."

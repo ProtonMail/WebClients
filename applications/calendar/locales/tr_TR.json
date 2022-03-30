@@ -614,8 +614,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta erişimi, ${ mailAppName }, ${ calendarAppName } ve Proton Drive beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta erişimi, ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
@@ -789,8 +789,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "ProtonMail kullanmayı sürdürün."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ]
     },
     "Calendar invite buttons label": {
@@ -2173,8 +2173,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Bazı etiket adlarınız ProtonMail tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -2584,8 +2584,8 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } öneri bulundu. Gezinmek için tuş takımını kullanın.",
-        "${ items.length } öneri bulundu. Gezinmek için tuş takımını kullanın."
+        "${ items.length } öneri bulundu. Gezinmek için klavyeyi kullanın.",
+        "${ items.length } öneri bulundu. Gezinmek için klavyeyi kullanın."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Oturum açtıktan sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
@@ -3044,17 +3044,17 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Düzenleyici tarafından daha önce güncellenen etkinlikler tutulacak."
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Bu ayarları yalnızca ProtonMail dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
       ],
       "Other options": [
         "Diğer seçenekler"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ProtonMail uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ProtonMail tarafından imzalandığını unutmayın"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ${ MAIL_APP_NAME } tarafından imzalandığını unutmayın"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Lütfen bu gruba atanan adreslerin SİLİNEMEYECEĞİNİ unutmayın."
@@ -3107,8 +3107,8 @@
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ProtonMail kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Düzenleyici tarafından daha önce güncellenmiş etkinliklere verdiğiniz yanıtlardan bazıları kaybolacak."
@@ -3608,8 +3608,8 @@
       "URL": [
         "İnternet adresi"
       ],
-      "Username or ProtonMail address": [
-        "Kullanıcı adı ya da ProtonMail adresi"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Kullanıcı adı ya da ${ MAIL_APP_NAME } adresi"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -4763,8 +4763,8 @@
       "Enter your password": [
         "Parolanızı yazın"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Kullanıcı adınızı veya ProtonMail e-posta adresinizi yazın"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Kullanıcı adınızı ya da ${ MAIL_APP_NAME } e-posta adresinizi yazın"
       ],
       "Error": [
         "Hata"
@@ -5004,8 +5004,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Sistem alt klasörleri ProtonMail üzerinde ayrı klasörler olarak görünecek"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
@@ -5052,8 +5052,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Canlı sohbet yalnızca ücretli ProtonVPN tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Canlı sohbet yalnızca ücretli ${ VPN_APP_NAME } tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
