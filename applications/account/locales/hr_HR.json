@@ -214,8 +214,8 @@
       "Copy link": [
         "Kopiraj poveznicu"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Umjesto toga stvorite sigurnu ProtonMail adresu"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        ""
       ],
       "Create address": [
         "Stvori adresu"
@@ -349,8 +349,8 @@
       "Generate recovery phrase": [
         ""
       ],
-      "Get ProtonVPN Plus": [
-        "Nabavite ProtonVPN Plus"
+      "Get ${ vpnPlus }": [
+        ""
       ],
       "Get started": [
         "Započnite"
@@ -661,8 +661,8 @@
       "Show more": [
         "Prikaži više"
       ],
-      "Show shortcuts": [
-        "Prikaži prečace"
+      "Show preview": [
+        ""
       ],
       "sign in": [
         "prijava"
@@ -776,7 +776,7 @@
         "Koristi kôd dvofaktorske autentikacije"
       ],
       "Use your current email address instead": [
-        "Upotrijebite trenutnu adresu e-pošte"
+        ""
       ],
       "Use “${ label }” setting": [
         "Koristi “${ label }” postavku"
@@ -1214,7 +1214,7 @@
       "Add link to your email footer": [
         ""
       ],
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ],
       "Copy": [
@@ -2347,7 +2347,7 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje i uvoz kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
       ],
-      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
+      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
         ""
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
@@ -2361,7 +2361,7 @@
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         ""
       ],
-      "Track your referral link activities here.": [
+      "You can continue to invite friends, but you wont be able to earn more credits": [
         ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
@@ -2559,9 +2559,6 @@
       ],
       "Calendar limit reached": [
         ""
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Primarni, privatni ključ kalendara nije dešifriran"
       ],
       "Can't check username, try again later": [
         "Ne uspješna provjera korisničkog imena, pokušajte ponovo kasnije"
@@ -2787,14 +2784,14 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Neki nazivi vaših mapa nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
       ],
-      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Neki nazivi vaših mapa premašuju ProtonMailovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Neki nazivi vaših oznaka premašuju ProtonMailovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
@@ -3245,9 +3242,6 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent podrška (P2P)"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "VPN ${ connectionsPluralized }"
       ]
     },
     "file size format": {
@@ -3942,11 +3936,23 @@
       "${ emailAddress } is invalid": [
         ""
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        ""
+      ],
+      "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
+        ""
+      ],
+      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        ""
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } Free"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional započinje s jednim korisnikom, a svaki korisnik dodaje 5 GB i 5 adresa e-pošte u skup organizacije."
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
       ],
       "${ n } address": [
         "${ n } adresa",
@@ -4037,6 +4043,17 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Free"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        ""
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "",
+        "",
+        ""
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        ""
+      ],
       "(${ memberCount } member)": [
         "",
         "",
@@ -4057,10 +4074,10 @@
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } veza za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)",
-        "+${ organization.BonusVPN } veze za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)",
-        "+${ organization.BonusVPN } veza za ProtonVPN (omogućuje vam da povežete još više uređaja na VPN)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "",
+        "",
+        ""
       ],
       "1. Invite friends to Proton": [
         ""
@@ -4110,8 +4127,8 @@
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Dodajte @pm.me adresu e-pošte na vaš račun. Ova jednostavna, kratka domena znači \"ProtonMail me\" ili \"Private Message me.\""
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        ""
       ],
       "Add a recovery email address": [
         ""
@@ -4251,8 +4268,8 @@
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus ili Visionary pretplata je potrebna"
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Prije nego li možete primati e-poštu od svojih adresa e-pošte od vaših prilagođenih domena na ProtonMailu, morate dodati sljedeće MX zapise u svoj DNS. To se obično može obaviti u upravljačkoj ploči registrara vaše domene."
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        ""
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Da biste mogli početi slati i primati e-poštu s vaših novih adresa -pošte, morate za njih stvoriti ključeve za šifriranje."
@@ -4320,9 +4337,6 @@
       "Continue with ${ planName }": [
         ""
       ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        ""
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
         "",
@@ -4340,8 +4354,8 @@
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Stvaranje i upravljanje pod-računima te dodjeljivanje im adrese e-pošte vaše prilagođene domene."
       ],
-      "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        ""
       ],
       "Create in": [
         ""
@@ -4379,8 +4393,8 @@
       "Data locked": [
         ""
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Uklonite sve druge MX zapise ili provjerite da li je prioritetni broj ProtonMaila najniži."
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        ""
       ],
       "Delete link?": [
         "Izbrisati poveznicu?"
@@ -4394,8 +4408,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NEMOJTE zaboraviti ovu lozinku. Ako je zaboravite, nećete se moći upravljati vašom organizacijom."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Ne koristite OpenVPN / IKEv2 vjerodajnice u ProtonVPN aplikacijama ili na nadzornoj ploči ProtonVPN. ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        ""
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Želite li opozvati sve ostale sesije osim trenutne?"
@@ -4414,8 +4428,8 @@
       "Done! We sent a code to ${ destination }.": [
         ""
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "Snižavanje statusa prekida sve veze s plaćenim ProtonVPN poslužiteljima."
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        ""
       ],
       "Download recovery file": [
         ""
@@ -4570,8 +4584,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Ako imate prilagođenu domenu s ProtonMailom, možete postaviti dohvati-sve adresu e-pošte koja će primati poruke poslane na vašu domenu, ali za ne važeću adresu e-poštu (npr. greška u nazivu)."
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        ""
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Ako imate darovni kôd, unesite ga ispod za primjenu popusta."
@@ -4591,14 +4605,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Ukoliko izgubite svoj uređaj za dvofaktorsku autentikaciju, ovi kôdovi se mogu upotrijebiti umjesto 6-znamenkastog kôda dvofaktorske autentikacije da bi se prijavili na vaš račun. Svaki kôd može se upotrijebiti samo jednom."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ProtonMail i ProtonVPN značajkama."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        ""
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Ako nastavite s snižavanjem statusa, izgubiti će te pristup plaćenim značajkama ProtonMail-a, uključujući dodatni prostor za pohranu i filtre."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        ""
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ProtonVPN značajkama."
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        ""
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         ""
@@ -4721,8 +4735,8 @@
       "Large imports can take several days.": [
         ""
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Saznajte više kako se prijaviti na ProtonVPN s ostalim VPN aplikacijama trećih strana."
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        ""
       ],
       "Learn more": [
         "Saznajte više"
@@ -4757,7 +4771,7 @@
       "Loading preview": [
         "Učitavanje pregleda"
       ],
-      "Log in to ProtonMail to activate your address": [
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
         ""
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
@@ -4868,8 +4882,8 @@
       "One account for all Proton services": [
         "Jedan račun za sve Proton usluge"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        ""
       ],
       "Only you can see the labels.": [
         "Samo vi možete vidjeti oznake."
@@ -5005,29 +5019,6 @@
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton će pokušati nastaviti uvoz čim vaš davatelj usluga e-pošte resetira ${ bandwithLimitLink } na vašem računu. Ne trebate ništa raditi. Ako otkažete uvoz, nećete ga moći nastaviti i morat će te početi ispočetka."
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMail se također može koristiti s jednom lozinkom koja zamjenjuje lozinku za prijavu i za sandučić e-pošte. Da biste se prebacili na način rada s jednom lozinkom, unesite jednu lozinku koju želite koristiti i pritisnite Spremi."
-      ],
-      "ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        "ProtonMail vam omogućuje stvaranje adresa e-pošte za druge ljude. Ovo je savršeno za tvrtke, obitelji ili grupe."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus je ograničen na jednog korisnika i započinje s 5 GB prostora za pohranu."
-      ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail podržava DKIM potpisivanje za prilagođene domene. Da biste koristili DKIM autentikaciju, dodajte sljedeći CNAME zapis u postavke svog DNS-a za ovu domenu. To se obično može obaviti na upravljačkoj ploči registrara domene."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } sadrži ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN vezu.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } sadrži ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN veze.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } sadrži ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN veza."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Za povezivanje na razini zemlje potreban je ProtonVPN Basic, Plus ili Visionary."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "ProtonVPN Plus ili Visionary potrebni su za Secure Core značajku."
-      ],
       "Public link invite": [
         ""
       ],
@@ -5136,10 +5127,7 @@
       "Some keys successfully reactivated": [
         ""
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF se koristi za određivanje kome je dopušteno slanje e-pošte za domenu, stoga preporučujemo da dodate ProtonMail u svoj SPF zapis. Dodajte sljedeći TXT zapis u svoj DNS. To se obično može obaviti na upravljačkoj ploči registrara vaše domene."
-      ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         ""
       ],
       "Starter VPN service with P2P support.": [
@@ -5193,8 +5181,8 @@
       "The name will be visible to your users while they are logged in.": [
         "Naziv će biti vidljiv vašim korisnicima dok su prijavljeni."
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Ove konfiguracijske datoteke omogućuju vam odabir s kojim će te se ProtonVPN poslužiteljem povezati kada upotrebljavate VPN aplikacije trećih strana ili postavljate VPN vezu na routeru."
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        ""
       ],
       "This 30-day free trial is not available any other way.": [
         ""
@@ -5301,8 +5289,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         ""
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Da biste osigurali internetsku vezu, preuzmite i instalirajte ProtonVPN aplikaciju za vaš uređaj i povežite se s ProtonVPN poslužiteljem."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        ""
       ],
       "To use ${ toAppName }, please create an address.": [
         ""
@@ -5361,8 +5349,8 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         ""
       ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Nadogradite na plaćeni plan za otključavanje podrške za IMAP/SMTP putem ProtonMail Bridgea."
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
@@ -5379,8 +5367,8 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Pomoću automatskih odgovora obavijestite kontakte da ste izvan ureda ili da ne možete odgovoriti."
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Koristite sljedeće vjerodajnice za spajanje na ProtonVPN poslužitelje bez aplikacije. Na primjer: Tunnelblick na MacOS-u, OpenVPN na GNU/Linuxu."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        ""
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         ""
@@ -5412,8 +5400,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         ""
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Savjetujemo vas da koristite službene ProtonVPN aplikacije kada je god moguće."
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        ""
       ],
       "We recommend using your recovery phrase instead.": [
         ""
@@ -5457,8 +5445,8 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kad je onemogućeno, ovo spriječava učitavanje slikovnih datoteka na vašem uređaju bez vašeg znanja.\t"
       ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Ako su obavijesti omogućene, poslat ćemo vam upozorenje na adresu e-pošte za oporavak/obavijesti ako imate nove poruke na ProtonMail računu."
+      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
+        ""
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         ""
@@ -5490,9 +5478,6 @@
       "You are about to open another browser tab and visit:": [
         "Otvoriti će te još jednu karticu preglednika i posjetiti:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Trenutno ste prijavljeni kao${ user.Name } (${ user.Email }) i imate ograničen pristup."
-      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         ""
       ],
@@ -5520,11 +5505,11 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
       ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "ProtonMail možete koristiti sa bilo kojim desktop klijentom za e-poštu koji podržava IMAP/SMTP, uključujući Outlook, Apple Mail i Thunderbird."
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        ""
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Možete koristiti sljedeće vjerodajnice za povezivanje s ProtonVPN poslužiteljem pomoću nezavisnih VPN aplikacija otvorenog kôda, poput Tunnelblick za macOS ili OpenVPN za GNU/Linux."
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        ""
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         ""
@@ -5532,8 +5517,8 @@
       "You cannot refer ${ appName } users": [
         ""
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Ne možete koristiti OpenVPN / IKEv2 vjerodajnice za prijavu u ProtonVPN aplikacijama ili na nadzornoj ploči ProtonVPN. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        ""
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Vi niste postavili metodu za oporavak, stoga je oporavak računa nemogućen u slučaju da zaboravite lozinku. Želite nastaviti bez načina za oporavak?"
@@ -5544,8 +5529,8 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Morate aktivirati privatni ključ organizacije, pomoću rezervne lozinke ključa organizacije koju vam je dao administrator organizacije."
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "Morate onemogućiti ili ukloniti sve dodatne korisnike ProtonMail-a, adrese i prilagođene domene prije nego što možete sniziti status."
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Morate imati kreditnu karticu ili bankovni račun povezan sa vašim PayPal računom kako biste ga mogli dodati kao način plaćanja."
@@ -5595,6 +5580,9 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Vaš ${ BRAND_NAME } račun je povezan s ${ externalEmailAddress }. Za korištenje ${ toAppName }}, stvorite adresu e-pošte."
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        ""
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš pristup je ograničen. ${ payInvoiceLink }"
       ],
@@ -5628,9 +5616,6 @@
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
-      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         ""
       ],
@@ -5654,9 +5639,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
-      ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Vaši ProtonVPN i ProtonMail računi su povezani. Da biste ih izbrisali, prijavite se u ${ loginLink } i tamo Izbrišite svoj račun."
       ],
       "Your recovery email address:": [
         "Vaša adresa e-pošte za oporavak:"
@@ -5694,11 +5676,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        ""
+      ],
       "Customizable features": [
         "Prilagodljive značajke"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail se ne može koristiti za masovno slanje e-pošte ili slanje neželjene pošte. Legitimne poruke e-pošte su neograničene."
       ]
     },
     "Info for cash payment method": {
@@ -6075,12 +6057,13 @@
       " and ${ l }": [
         " i ${ l }"
       ],
-      "${ monthsRewarded } month credited": [
-        "",
-        "",
+      "${ MAIL_APP_NAME } address": [
         ""
       ],
-      "${ monthsRewarded } month pending": [
+      "${ MAIL_APP_NAME } footer": [
+        ""
+      ],
+      "${ monthsRewarded } month credited": [
         "",
         "",
         ""
@@ -6192,9 +6175,6 @@
       "Calendars": [
         ""
       ],
-      "Cancel": [
-        "Poništi"
-      ],
       "Card holder": [
         "Vlasnik kartice"
       ],
@@ -6231,6 +6211,9 @@
       "Conditions": [
         "Uvjeti"
       ],
+      "Confirm link URLs": [
+        ""
+      ],
       "Confirm login password": [
         "Potvrdi lozinku za prijavu"
       ],
@@ -6266,6 +6249,9 @@
       ],
       "Country": [
         "Država"
+      ],
+      "Credits pending": [
+        ""
       ],
       "Credits used": [
         "Iskorišteni kredit"
@@ -6480,9 +6466,6 @@
       "Last month only": [
         "Samo posljednji mjesec"
       ],
-      "Link confirmation": [
-        "Potvrda poveznice"
-      ],
       "Login password": [
         "Lozinka za prijavu"
       ],
@@ -6621,12 +6604,6 @@
       "Proton username": [
         "Proton korisničko ime"
       ],
-      "ProtonMail address": [
-        ""
-      ],
-      "ProtonMail footer": [
-        "ProtonMail podnožje"
-      ],
       "Read": [
         "Pročitano"
       ],
@@ -6693,8 +6670,8 @@
       "Statement": [
         "Izjava"
       ],
-      "Submit": [
-        "Pošalji"
+      "Sticky labels": [
+        ""
       ],
       "Subtotal": [
         "Suma stavki"
@@ -6761,9 +6738,6 @@
       ],
       "Use folder colors": [
         "Koristi boje mapa"
-      ],
-      "Use sticky labels": [
-        "Koristi ljepljive oznake"
       ],
       "User": [
         "Korisnik"
@@ -6853,8 +6827,8 @@
       ]
     },
     "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Dodajte domenu koju posjedujete na vaš ProtonMail račun."
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        ""
       ]
     },
     "Label for domain modal": {
@@ -7199,13 +7173,6 @@
     "Many Others": {
       "and many others": [
         "i mnogo drugih"
-      ]
-    },
-    "Max VPN Connections": {
-      "Connection": [
-        "Veza",
-        "Veze",
-        "Veza"
       ]
     },
     "Member action": {
@@ -8630,6 +8597,9 @@
       "${ appName } Keyboard Shortcuts": [
         "${ appName } tipkovni prečaci"
       ],
+      "${ MAIL_APP_NAME } Bridge": [
+        ""
+      ],
       "(highly recommended)": [
         "(preporučeno)"
       ],
@@ -8798,9 +8768,6 @@
       "Change password": [
         "Promjena lozinke"
       ],
-      "Change password for ${ Name } (${ Email })": [
-        "Promijeni lozinku za ${ Name } (${ Email })"
-      ],
       "Change role": [
         "Promjeni ulogu"
       ],
@@ -8812,6 +8779,9 @@
       ],
       "Clear": [
         "Očisti"
+      ],
+      "Composing": [
+        ""
       ],
       "Confirm address": [
         "Potvrdite adresu e-pošte"
@@ -8981,9 +8951,6 @@
       "Email subscriptions": [
         "Pretplate e-pošte"
       ],
-      "Enable keyboard shortcuts": [
-        "Omogući tipkovne prečace"
-      ],
       "Encryption and keys": [
         ""
       ],
@@ -9023,8 +8990,8 @@
       "Generate new recovery phrase?": [
         ""
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Nabavite ProtonVPN Plus za pristup svim poslužiteljima"
+      "Get ${ vpnPlus } to access all servers": [
+        ""
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
@@ -9082,6 +9049,9 @@
       "Invoices": [
         "Fakture"
       ],
+      "Keyboard shortcuts": [
+        ""
+      ],
       "Labels": [
         "Oznake"
       ],
@@ -9099,6 +9069,9 @@
       ],
       "Messages": [
         "Poruke"
+      ],
+      "Messages and composing": [
+        ""
       ],
       "Multi-user support": [
         "Višekorisnička podrška"
@@ -9138,9 +9111,6 @@
       ],
       "Organization and keys": [
         ""
-      ],
-      "Other": [
-        "Ostalo"
       ],
       "Password": [
         "Lozinka"
@@ -9189,12 +9159,6 @@
       ],
       "Proton Logo": [
         "Proton Logo"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonVPN": [
-        "ProtonVPN"
       ],
       "Reconnect your account": [
         "Ponovno povežite vaš račun"
@@ -9355,7 +9319,7 @@
       "Total (monthly)": [
         "Ukupno (mjesečno)"
       ],
-      "Try the best of ProtonMail for free": [
+      "Try the best of ${ MAIL_APP_NAME } for free": [
         ""
       ],
       "Two-factor authentication": [
@@ -9436,8 +9400,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "ProtonMail faktura"
+      "${ MAIL_APP_NAME } invoice": [
+        ""
       ]
     },
     "Title header": {
@@ -9502,6 +9466,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        ""
+      ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Pristupite geo-blokiranom sadržaju (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube itd.) bez obzira gdje se nalazite."
       ],
@@ -9541,11 +9508,11 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Omogućavanjem naprednih zapisa, IP adresa za svaki događaj će se spremati u sigurnosne zapise."
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Pristup svim plaćenim značajkama za ${ vpnAppName } i ${ mailAppName } (šifriranu uslugu e-pošte koji milijuni koriste za zaštitu svojih podataka) s jednim planom."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Pristup svim plaćenim značajkama za ProtonVPN i ProtonMail (šifriranu uslugu e-pošte koji milijuni koriste za zaštitu svojih podataka) s jednim planom."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupirajte e-poštu u istom razgovoru u pristigloj pošti ili ih prikažite zasebno."
@@ -9561,9 +9528,6 @@
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield štiti vaš uređaj i ubrzava pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "ProtonMail korisnici će koristiti ovaj ključ kao zadani, za slanje"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Preusmjerite sav svoj internetski promet kroz Tor mrežu jednim klikom."
@@ -9586,8 +9550,8 @@
       "Support for file sharing protocols such as BitTorrent.": [
         "Podrška za protokole za dijeljenje datoteka poput BitTorrent."
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Podmape sustava prikazat će se kao zasebne mape u ProtonMailu"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        ""
       ],
       "The import will start with the most recent messages.": [
         "Uvoz će započeti s najnovijim porukama."
@@ -9634,14 +9598,14 @@
       "You have locally decrypted this key": [
         "Lokalno ste dešifrirali ovaj ključ"
       ],
+      "Your ${ MAIL_APP_NAME } inbox is almost full": [
+        ""
+      ],
       "Your DKIM signing is working.": [
         "Vaše DKIM potpisivanje radi."
       ],
       "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
         "Vaš je vanjski račun možda dosegao ograničenje propusnosti od 24 sata. Proton će pokušati nastaviti uvoz što je prije moguće."
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "Vaša ProtonMail pristigla pošta je skoro puna"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -9650,13 +9614,13 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Odaberite zadane PGP postavke koje se koriste za potpisivanje ili šifriranje poruka s PGP korisnicima koji ne koriste ProtonMail. Imajte na umu da Inline PGP nameće obične tekstualne poruke. Saznajte više"
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        ""
       ]
     },
     "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Kad primate e-poštu od drugog korisnika ProtonMaila koji u vašim kontaktima nema pouzdane ključeve, natpis će vas pitati želite li omogućiti pouzdane ključeve."
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        ""
       ]
     },
     "Tooltip sign external messages": {
@@ -9727,9 +9691,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
       "30-days money-back guarantee": [
         "Povrat novca do 30 dana"
       ],
@@ -9916,7 +9877,7 @@
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "Ako otkažete ovaj uvoz, nećete ga moći nastaviti. Proton je sačuvao sav napredak na vašem računu. Ipak otkazati?"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
@@ -9937,8 +9898,8 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         ""
       ],
-      "This feature is only available for ProtonMail Professional plans or higher": [
-        "Ova je značajka dostupna samo za ProtonMail Professional planove ili više"
+      "This feature is only available for ${ mailProfessional } plans or higher": [
+        ""
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Ovaj uvoz može premašiti kapacitet prostora za pohranu koji je trenutno dostupan na vašem Proton računu. Razmislite o prilagodbi uvoza."

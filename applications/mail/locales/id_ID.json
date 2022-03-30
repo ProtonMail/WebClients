@@ -788,6 +788,9 @@
       "Show more search options": [
         "Tampilkan lebih banyak opsi pencarian"
       ],
+      "Show preview": [
+        "Tampilkan pratinjau"
+      ],
       "Sign out": [
         "Keluar"
       ],
@@ -1096,8 +1099,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Akses Beta memungkinkan Anda untuk menggunakan versi beta ${ mailAppName }, ${ calendarAppName }, dan Proton Drive sebelum produk-produk ini dirilis secara publik. Dengan Akses Beta, Anda berkesempatan menjadi orang pertama yang mencoba berbagai produk, pembaruan, dan fitur terbaru kami."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Akses Beta memungkinkan Anda untuk menggunakan versi beta dari ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } sebelum produk-produk ini dirilis secara publik. Dengan Akses Beta, Anda berkesempatan menjadi orang pertama yang mencoba berbagai produk, pembaruan, dan fitur terbaru kami."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
@@ -1271,8 +1274,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Lanjut menggunakan ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Lanjut dengan ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -2986,8 +2989,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Terjadi suatu kesalahan, silakan ${ refresh } untuk dapat melanjutkan. Apabila Anda terus-menerus menjumpai pesan ini, harap hubungi ${ supportTeam } kami."
@@ -3430,7 +3433,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Kami telah meningkatkan kuota penyimpanan Anda menjadi ${ rewardInGb } GB. Dapatkan kuota penyimpanan yang jauh lebih besar dan berbagai fitur premium lainnya sekarang juga."
       ],
       "You're all set!": [
         "Anda kini sudah siap!"
@@ -3438,7 +3441,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Selesaikan seluruh langkah yang tertera dan dapatkan total kuota penyimpanan sebesar ${ rewardInGb } GB pada akun Anda"
       ],
       "Expires soon": [
         "Akan segera kedaluwarsa"
@@ -3660,19 +3663,19 @@
         "${ contactEmailsLength } Anggota"
       ],
       "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
+        "${ contactName } memilki lebih dari satu alamat email. Silakan pilih alamat-alamat email mana saja yang akan ditambahkan ke dalam ${ groupsEnumeration }."
       ],
       "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
+        "${ contactName } memilki lebih dari satu alamat email. Silakan pilih alamat-alamat email mana saja yang akan ditambahkan ke dalam grup ini."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontak ditemukan"
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
+        "${ contactsEnumeration } memilki lebih dari satu alamat email. Silakan pilih alamat-alamat email mana saja yang akan ditambahkan ke dalam ${ groupsEnumeration }."
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
+        "${ contactsEnumeration } memilki lebih dari satu alamat email. Silakan pilih alamat-alamat email mana saja yang akan ditambahkan ke dalam grup ini."
       ],
       "${ count } unread message": [
         "${ count } pesan yang belum dibaca"
@@ -3682,6 +3685,9 @@
       ],
       "${ groupCounts } group found": [
         "ditemukan ${ groupCounts } grup"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME } juga dapat digunakan untuk melindungi bisnis Anda."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } pesan tidak dapat dipindahkan."
@@ -3992,11 +3998,11 @@
       "embedded image": [
         "gambar yang tersemat"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "Enkripsi untuk pengguna non-ProtonMail"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        "Enkripsi pesan untuk pengguna non-${ BRAND_NAME }"
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Pesan terenkripsi ke penerima non-ProtonMail akan habis dalam 28 hari kecuali waktu kadaluarsa yang lebih pendek diatur."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        "Pesan terenkripsi yang dikirim ke pengguna non-${ BRAND_NAME } akan terhapus dengan sendirinya dalam 28 hari kecuali apabila Anda mengatur waktu kedaluwarsa yang lebih singkat."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
@@ -4076,8 +4082,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Jika Anda mengirim pesan ini ke bukan pengguna ProtonMail, mohon pastikan untuk mengatur kata sandi untuk pesan Anda."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        "Apabila Anda hendak mengirim pesan ini ke pengguna non-${ MAIL_APP_NAME }, mohon pastikan Anda telah mengatur kata sandi untuk pesan Anda."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jika Anda yakin ini adalah kesalahan, harap hubungi kami ${ contactLink }."
@@ -4178,8 +4184,8 @@
       "Merged": [
         "Tergabung"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "Pesan kedaluwarsa langsung bekerja ketika mengirim surel ke pengguna ProtonMail lain. Untuk mengirim surel yang dapat kedaluwarsa ke pengguna non-ProtonMail, mohon batalkan dan tambahkan proteksi kata sandi ke surel Anda."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "Mekanisme kedaluwarsa pesan akan langsung aktif pada saat email terkirim ke pengguna ${ MAIL_APP_NAME } lain. Untuk dapat mengirim email yang dapat kedaluwarsa kepada pengguna non-${ BRAND_NAME }, mohon batalkan pengiriman dan tambahkan kata sandi ke email Anda."
       ],
       "Message headers": [
         "Header pesan"
@@ -4259,8 +4265,8 @@
       "of": [
         "dari"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ubah pengaturan ini jika Anda menggunakan PGP dengan bukan pengguna ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Kami menyarankan Anda untuk mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
       ],
       "Other options": [
         "Pilihan lainnya"
@@ -4268,11 +4274,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistem kami menandai pesan ini sebagai phishing. Mohon periksa keabsahan pesan."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline hanya kompatibel dengan format Teks Polos. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "Enkripsi PGP/Inline hanya dapat dibubuhkan pada pesan yang ditulis dalam format Plain Text. Mohon dicatat bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME mengirim pesan dengan mode tulis ini secara otomatis. Mohon dicatat, ProtonMail selalu menandatangi pesan terenkripsi"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "Enkripsi PGP/MIME akan mengirim pesan dengan format yang sesuai dengan mode komposer saat ini secara otomatis. Mohon dicatat bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi"
       ],
       "Phone number": [
         "Nomor telepon"
@@ -4321,9 +4327,6 @@
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton tidak meraup keuntungan dengan cara melanggar privasi."
-      ],
-      "ProtonMail can protect your business as well.": [
-        "ProtonMail juga melindungi bisnis Anda."
       ],
       "Recipient: ": [
         "Penerima: "
@@ -4377,7 +4380,7 @@
         "Untuk saat ini sepertinya semuanya sudah terbaca"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Pilih format email yang akan Anda gunakan setiap kali Anda mengirim email ke alamat ini."
+        "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
@@ -4400,14 +4403,14 @@
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Tentukan ${ MAIL_APP_NAME } sebagai aplikasi email default untuk browser ini. ${ MAIL_APP_NAME } akan terbuka secara otomatis ketika Anda mengklik tautan email."
+      ],
       "Set a recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Tentukan ProtonMail sebagai aplikasi email default untuk browser ini. ProtonMail akan terbuka secara otomatis ketika Anda mengeklik tautan email."
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "PGP memungkinkan Anda mengirim surel terenkripsi ke penerima non-ProtonMail yang memiliki fitur PGP."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara end-to-end dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
       "Show original message": [
         "Tampilkan pesan asli"
@@ -4418,8 +4421,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         "Kuota penyimpanan diperuntukkan bagi Mail, Calendar, dan Drive secara bersamaan."
       ],
-      "Store and share files securely with Proton Drive.": [
-        "Simpan dan bagi berkas dengan aman menggunakan Proton Drive."
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        "Simpan dan bagikan berbagai macam berkas secara aman dengan ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Subjek"
@@ -4628,8 +4631,8 @@
       "Upgrade to support privacy and get more features.": [
         "Tingkatkan jenis akun Anda untuk mendukung privasi dan memperoleh lebih banyak fitur."
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Tingkatkan jenis akun Anda untuk dapat mengakses ProtonMail melalui klien desktop terpisah."
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        "Tingkatkan jenis akun Anda untuk dapat mengakses ${ MAIL_APP_NAME } melalui klien desktop terpisah milik pihak ketiga."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ appName } ${ planName } berikut."
@@ -4718,14 +4721,14 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
-      "You can use ProtonVPN for free today.": [
-        "Anda dapat menggunakan ProtonVPN secara gratis mulai dari saat ini juga."
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        "Anda dapat menggunakan ${ VPN_APP_NAME } secara gratis mulai sekarang juga."
       ],
       "You cannot reply from the invited address.": [
         "Anda tidak dapat membalas dari alamat yang diundang."
       ],
       "You do not have any messages here": [
-        "Anda tidak memiliki pesan di sini"
+        "Anda tidak memiliki pesan apapun di sini"
       ],
       "You have ${ totalLabel } in your inbox.": [
         "Anda mempunyai ${ totalLabel } di kotak masuk Anda."
@@ -5400,8 +5403,8 @@
       "Upload picture": [
         "Unggah gambar"
       ],
-      "Username or ProtonMail address": [
-        "Nama pengguna atau alamat ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Nama pengguna atau alamat ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Kode verifikasi"
@@ -5529,10 +5532,10 @@
         "Aktifkan alamat email yang ditautkan pada salah satu kalender Anda."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Aktifkan alamat surel yang ditautkan ke kalender nonaktif untuk membatalkan acara."
+        "Aktifkan alamat email yang ditautkan ke kalender nonaktif untuk membatalkan acara."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Aktifkan alamat surel yang ditautkan ke kalender nonaktif untuk memodifikasi jawaban Anda."
+        "Aktifkan alamat email yang ditautkan ke kalender nonaktif untuk mengubah jawaban Anda."
       ],
       "Enable your address again to modify your answer.": [
         "Aktifkan lagi alamat Anda untuk memodifikasi jawaban Anda."
@@ -5571,7 +5574,7 @@
         "Buka acara yang diperbarui di ${ calendarAppName }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Atau Anda dapat menghapus salah satu kalender Anda dan buat baru yang ditautkan ke alamat surel aktif."
+        "Atau Anda juga dapat menghapus salah satu kalender yang telah ada dan membuat kalender baru yang ditautkan ke alamat email yang aktif."
       ],
       "Outbox": [
         "Kotak keluar"
@@ -5915,8 +5918,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        "${ appName } kini hadir lebih modern, lebih dapat disesuaikan, dan lebih melindungi data Anda dengan teknologi enkripsi mutakhir."
+      ],
+      "Available on iOS and Android.": [
+        "Tersedia di iOS dan Android."
+      ],
+      "Get the ${ appName } mobile app": [
+        "Dapatkan aplikasi mobile ${ appName }"
+      ],
+      "Import your messages": [
+        "Impor pesan Anda"
+      ],
+      "Meet your encrypted mailbox": [
+        "Temui kotak surat terenkripsi Anda"
+      ],
       "Next": [
         "Selanjutnya"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        "Fitur Import Assistant kami dapat secara cepat memindahkan seluruh email lama Anda ke kotak surat terenkripsi Anda yang baru."
       ]
     },
     "Onboarding Proton": {
@@ -5949,26 +5970,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Anda dapat mengubah ini kapanpun di pengaturan Anda."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } kini lebih modern dan bisa disesuaikan dengan tetap melindungi data Anda dengan enkripsi canggih."
-      ],
-      "Available on iOS and Android.": [
-        "Tersedia di iOS dan Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Dapatkan aplikasi ${ appName }"
-      ],
-      "Import your messages": [
-        "Impor pesan Anda"
-      ],
-      "Meet your encrypted mailbox": [
-        "Temui kotak surat terenkripsi Anda"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Import Assistant kami secara cepat memindahkan seluruh surel Anda ke kotak surat terenkripsi Anda yang baru."
       ]
     },
     "Option": {
@@ -6228,8 +6229,8 @@
       "PGP-signed message. Sender verification failed": [
         "Pesan tertandatangani PGP. Verifikasi pengirim gagal"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Dikirim oleh ProtonMail dengan enkripsi akses nol"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Dikirim oleh ${ MAIL_APP_NAME } dengan teknologi enkripsi zero-access"
       ],
       "Stored with zero-access encryption": [
         "Disimpan dengan enkripsi akses nol"
@@ -6259,7 +6260,7 @@
     },
     "Search - no results": {
       "No messages found": [
-        "Pesan tidak ditemukan"
+        "Tidak ada pesan yang ditemukan"
       ],
       "No messages scheduled": [
         "Tidak ada pesan yang terjadwal"
@@ -6283,10 +6284,10 @@
         "Apakah Anda tetap ingin mengirim email ini?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Kami telah mendeteksi kesalahan. Surel Anda tidak dapat dikirim ke alamat surel manapun kerena alasan berikut:"
+        "Kami telah mendeteksi adanya kesalahan. Email Anda tidak akan dapat terkirim ke alamat yang Anda tuju atas alasan-alasan berikut:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Kami telah mendeteksi beberapa kesalahan. Surel Anda tidak dapat dikirim ke satu atau lebih alamat surel kerena alasan berikut:"
+        "Kami telah mendeteksi adanya kesalahan. Email Anda tidak akan dapat terkirim ke satu atau lebih alamat yang Anda tuju atas alasan-alasan berikut:"
       ]
     },
     "Send email with warnings": {
@@ -6304,17 +6305,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "Dienkripsi oleh ProtonMail"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "Dienkripsi oleh ${ MAIL_APP_NAME }"
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "Dienkripsi oleh ProtonMail untuk penerima PGP"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "Dienkripsi oleh ${ MAIL_APP_NAME } untuk penerima pesan yang terenkripsi PGP"
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "Dienkripsi oleh ProtonMail untuk penerima PGP terverifikasi"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Dienkripsi oleh ${ MAIL_APP_NAME } untuk penerima PGP yang telah terverifikasi"
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "Dienkripsi oleh ProtonMail untuk penerima terverifikasi"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "Dienkripsi oleh ${ MAIL_APP_NAME } untuk penerima pesan yang telah terverifikasi"
       ],
       "End-to-end encrypted": [
         "Dienkripsi end-to-end"
@@ -6331,11 +6332,11 @@
       "PGP-signed": [
         "Ditandatangani PGP"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Dikirim oleh ProtonMail dengan enkripsi akses nol"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Dikirim oleh ${ MAIL_APP_NAME } dengan teknologi enkripsi zero-access"
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "Dikirim oleh ProtonMail dengan enkripsi akses nol untuk penerima terverifikasi"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Dikirim oleh ${ MAIL_APP_NAME } dengan teknologi enkripsi zero-access untuk penerima yang telah terverifikasi"
       ],
       "Sent by you with end-to-end encryption": [
         "Dikirim oleh Anda dengan enkripsi end-to-end"
@@ -6916,8 +6917,8 @@
       "Enter your password": [
         "Masukkan kata sandi Anda"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Masukkan nama pengguna atau alamat email ProtonMail Anda"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Masukkan nama pengguna atau alamat email ${ MAIL_APP_NAME } Anda"
       ],
       "Error": [
         "Kesalahan"
@@ -7050,9 +7051,6 @@
       ],
       "Previous message": [
         "Pesan sebelumnya"
-      ],
-      "ProtonMail": [
-        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Menandatangani ulang semua kontak"
@@ -7211,8 +7209,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Sub-folder milik sistem akan muncul sebagai folder terpisah di ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan-pesan Anda yang paling baru."
@@ -7281,8 +7279,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton akan secara otomatis menggabungkan folder-folder yang memiliki nama yang sama. Untuk menghindari hal ini, silahkan ubah nama-nama folder yang ada sebelum Anda mengimpor."

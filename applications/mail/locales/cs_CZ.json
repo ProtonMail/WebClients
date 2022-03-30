@@ -797,6 +797,9 @@
       "Show more search options": [
         "Zobrazit další možnosti vyhledávání"
       ],
+      "Show preview": [
+        "Zobrazit náhled"
+      ],
       "Sign out": [
         "Odhlásit se"
       ],
@@ -1111,8 +1114,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta Access vám umožní používat beta verze aplikací ${ mailAppName }, ${ calendarAppName } a Proton Drive před jejich zveřejněním. To znamená, že můžete jako první vyzkoušet nové produkty, získat nové aktualizace a používat nové funkce."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta přístup vám umožní používat beta verze aplikací ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME } před jejich zveřejněním. To znamená, že můžete jako první vyzkoušet nové produkty, získat nové aktualizace a používat nové funkce."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Jestliže zaznamenáte problémy, vždy můžete deaktivovat Beta Přístup."
@@ -1286,8 +1289,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Pokračovat v používání ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Pokračovat s ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -3043,8 +3046,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků nejsou k dispozici. Přizpůsobte prosím import a upravte tyto názvy."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ProtonMail. Přizpůsobte prosím import a upravte tyto názvy."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybě, prosíme, načtěte stránku ${ refresh }. Pokud stále vidíte tuto chybu, kontaktujte naši ${ supportTeam }."
@@ -3493,7 +3496,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Zvýšili jsme celkové úložiště vašeho účtu na ${ rewardInGb }. GB. Získejte další úložiště a odemkněte prémiové funkce ještě dnes."
       ],
       "You're all set!": [
         "Vše je připraveno!"
@@ -3501,7 +3504,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Dokončete všechny kroky a získejte celkem ${ rewardInGb } GB na svém účtu"
       ],
       "Expires soon": [
         "Vyprši za"
@@ -3793,6 +3796,9 @@
         "${ groupCounts } skupiny nalezeny",
         "${ groupCounts } skupin nalezeno",
         "${ groupCounts } skupin nalezeno"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        ""
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } zpráva nemohla být přesunuta.",
@@ -4190,11 +4196,11 @@
         "vložených obrázků",
         "vložených obrázků"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "Šifrování pro uživatele, kteří nepoužívají ProtonMail"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        ""
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Šifrované zprávy příjemcům, kteří nevyužívají ProtonMail vyprší platnost po 28 dnech, pokud není nastavena kratší doba expirace."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        "Šifrované zprávy příjemcům, kteří nevyužívají ${ BRAND_NAME } vyprší platnost po 28 dnech, pokud není nastavena kratší doba expirace."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
@@ -4286,8 +4292,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Pokud odesíláte tuto zprávu uživatelům mimo ProtonMail, prosím nezapomeňte nastavit heslo Vaší zprávy."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        "Pokud příjemce této zprávy nevyužívá ${ MAIL_APP_NAME } ujistěte se, že nastavíte heslo."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
@@ -4391,8 +4397,8 @@
       "Merged": [
         "Sloučený"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "Expirace zprávy funguje mimo schránku když jsou zasílané další e-mailové zprávy uživatelům služby ProtonMail. Pro zaslání expirovaných e-mailů pro uživatelé, kteří nepoužívají službu ProtonMail, prosím přerušte a přidejte heslo ochrany k Vašemu e-mailu."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "Expirace zprávy funguje mimo schránku když jsou zasílané další emailové zprávy uživatelům služby ${ MAIL_APP_NAME }. Pro zaslání expirovaných emailů pro uživatelé, kteří nepoužívají službu ${ BRAND_NAME }, prosím přerušte a přidejte heslo ochrany k Vašemu emailu."
       ],
       "Message headers": [
         "Hlavička zprávy"
@@ -4472,8 +4478,8 @@
       "of": [
         "z"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
       ],
       "Other options": [
         "Další volby"
@@ -4481,11 +4487,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil tuto zprávu jako pokus o phishing. Potvrďte prosím, že se jedná o legitimní zprávu."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy"
       ],
       "Phone number": [
         "Telefonní číslo"
@@ -4534,9 +4540,6 @@
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nevydělává peníze zneužitím soukromí."
-      ],
-      "ProtonMail can protect your business as well.": [
-        "ProtonMail může chránit i Váš podnikání."
       ],
       "Recipient: ": [
         "Příjemce: "
@@ -4613,14 +4616,14 @@
       "Session timed out": [
         "Relace vypršela"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Nastavit ${ MAIL_APP_NAME } jako výchozí emailovou aplikaci pro tento prohlížeč. ${ MAIL_APP_NAME } bude automaticky spuštěn po kliknutí na emailový odkaz."
+      ],
       "Set a recovery phrase": [
         "Nastavit obnovovací frázi"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Nastavit ProtonMail jako výchozí e-mailovou aplikaci pro tento prohlížeč. ProtonMail bude automaticky spuštěn po kliknutí na e-mailový odkaz."
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované e-mailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ${ BRAND_NAME } a používají kompatibilní PGP službu."
       ],
       "Show original message": [
         "Zobrazit původní zprávu"
@@ -4631,8 +4634,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         "Úložný prostor je sdílen mezi aplikacemi Mail, Calendar a Drive."
       ],
-      "Store and share files securely with Proton Drive.": [
-        "Ukládejte a sdílejte soubory bezpečně s Proton Drive."
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Subject": [
         "Předmět"
@@ -4844,8 +4847,8 @@
       "Upgrade to support privacy and get more features.": [
         "Vylepšete pro podporu soukromí a získání více funkcí."
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Vylepšete pro použití ProtonMailu s ostatními desktopovými klienty."
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        "Vylepšete tím, že ${ MAIL_APP_NAME } propojíte s třetí stranou plochy počítače."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ appName } ${ planName }."
@@ -4934,8 +4937,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
-      "You can use ProtonVPN for free today.": [
-        "Dnes můžete používat ProtonVPN zcela zdarma."
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        ""
       ],
       "You cannot reply from the invited address.": [
         "Nemůžete odpovídat na pozvané adresy."
@@ -5646,8 +5649,8 @@
       "Upload picture": [
         "Nahrát obrázek"
       ],
-      "Username or ProtonMail address": [
-        "Uživatelské jméno nebo e-mailová adresa ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Uživatelské jméno nebo adresa ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Ověřovací kód"
@@ -6176,8 +6179,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        "${ appName } je více moderní a přizpůsobitelné zatím co chrání Vaše data s pokročilým šifrováním."
+      ],
+      "Available on iOS and Android.": [
+        "K dispozici pro iOS a Android."
+      ],
+      "Get the ${ appName } mobile app": [
+        "Získat mobilní aplikaci ${ appName }"
+      ],
+      "Import your messages": [
+        "Importovat zprávy"
+      ],
+      "Meet your encrypted mailbox": [
+        "Poznej svou šifrovací poštovní schránku"
+      ],
       "Next": [
         "Další"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        "Import Assistant rychle přenese všechny zprávy do nové zašifrované poštovní schránky."
       ]
     },
     "Onboarding Proton": {
@@ -6210,26 +6231,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Toto můžete později změnit v nastavení."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } je více moderní a přizpůsobitelné zatím co chrání Vaše data s pokročilým šifrováním."
-      ],
-      "Available on iOS and Android.": [
-        "K dispozici pro iOS a Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Získejte ${ appName } mobilní aplikaci"
-      ],
-      "Import your messages": [
-        "Importovat zprávy"
-      ],
-      "Meet your encrypted mailbox": [
-        "Poznej svou šifrovací poštovní schránku"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Import Assistant rychle přenese všechny zprávy do nové zašifrované poštovní schránky."
       ]
     },
     "Option": {
@@ -6495,8 +6496,8 @@
       "PGP-signed message. Sender verification failed": [
         "PGP-podepsaná zpráva. Ověření odesílatele se nepodařilo"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Odesláno službou ProtonMail s žádným přístupem šifrování"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
       "Stored with zero-access encryption": [
         "Uloženo s žádným přístupem šifrování"
@@ -6583,17 +6584,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "Šifrováno Proton|Mailem"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        ""
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "Šifrování službou ProtonMail PGP příjemce"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "Šifrování službou ProtonMail pro ověření PGP příjemce"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "Šifrování službou ProtonMail pro ověření příjemce"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        ""
       ],
       "End-to-end encrypted": [
         "End-to-end šifrováno"
@@ -6610,14 +6611,14 @@
       "PGP-signed": [
         "Podepsané pomocí PGP"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Odesláno službou ProtonMail s žádným přístupem šifrování"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "Posláno službou ProtonMail s žádným přístupem, šifrování příjemce ověřeno",
-        "Posláno službou ProtonMail s žádným přístupem, šifrování příjemců ověřeno",
-        "Posláno službou ProtonMail s žádným přístupem, šifrování příjemců ověřeno",
-        "Posláno službou ProtonMail s žádným přístupem, šifrování příjemců ověřeno"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "",
+        "",
+        "",
+        ""
       ],
       "Sent by you with end-to-end encryption": [
         "Odesláno Vámi s end-to-end šifrováním"
@@ -7309,8 +7310,8 @@
       "Enter your password": [
         "Zadejte Vaše heslo"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Zadejte vaše uživatelské jméno nebo e-mailovou adresu ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Zadejte své uživatelské jméno nebo e-mailovou adresu ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Chyba"
@@ -7443,9 +7444,6 @@
       ],
       "Previous message": [
         "Předchozí zpráva"
-      ],
-      "ProtonMail": [
-        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Znovu podepsat všechny kontakty"
@@ -7607,8 +7605,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Systémové podsložky se v ProtonMailu zobrazí jako samostatné složky"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
       ],
       "The import will start with the most recent messages.": [
         "Import bude začínat s nejnovějšími zprávami."
@@ -7686,8 +7684,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jestliže si nepamatujete heslo, není možné znovu aktivovat Váš klíč. Můžeme zrušit výstražnou zprávu, ale tím trvale ztratíte přístup ke všem šifrovaným datům tímto klíčem."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } plány. Prosím otevřete ticket."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proto sloučí všechny složky se stejnými názvy. Pokud si to nepřejete, změňte názvy před importem."

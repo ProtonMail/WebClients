@@ -214,8 +214,8 @@
       "Copy link": [
         "Salin tautan"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Buat alamat ProtonMail yang aman"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Buat alamat email aman ${ MAIL_APP_NAME }"
       ],
       "Create address": [
         "Buat alamat"
@@ -349,8 +349,8 @@
       "Generate recovery phrase": [
         "Buat frasa pemulihan"
       ],
-      "Get ProtonVPN Plus": [
-        "Dapatkan ProtonVPN Plus"
+      "Get ${ vpnPlus }": [
+        "Dapatkan ${ vpnPlus }"
       ],
       "Get started": [
         "Mulai"
@@ -661,8 +661,8 @@
       "Show more": [
         "Tampilkan lebih banyak"
       ],
-      "Show shortcuts": [
-        "Tampilkan pintasan"
+      "Show preview": [
+        "Tampilkan pratinjau"
       ],
       "sign in": [
         "masuk"
@@ -776,7 +776,7 @@
         "Gunakan kode otentikasi dua faktor"
       ],
       "Use your current email address instead": [
-        "Gunakan alamat email Anda saat ini sebagai gantinya"
+        "Gunakan alamat email Anda saat ini"
       ],
       "Use “${ label }” setting": [
         "Gunakan pengaturan \"${ label }\""
@@ -1196,8 +1196,8 @@
       "Add link to your email footer": [
         "Tambahkan tautan pada footer email Anda"
       ],
-      "Continue using ProtonMail.": [
-        "Lanjut menggunakan ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Lanjut dengan ${ MAIL_APP_NAME }."
       ],
       "Copy": [
         "Salin"
@@ -2315,8 +2315,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mengenkripsi dan mengimpor kontak... Ini perlu beberapa menit. Jika proses sudah selesai, Anda dapat menutup jendela ini."
       ],
-      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        "Dapatkan hingga 3 bulan ${ mailAppName } Plus secara cuma-cuma untuk setiap teman Anda yang berlangganan ke ${ mailAppName }."
+      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
+        "Dapatkan hingga 3 bulan ${ mailPlus } secara cuma-cuma untuk setiap teman Anda yang berlangganan ke ${ MAIL_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor berisi beberapa grup. Mohon tinjau ulang bagaimana grup ini harus diimpor."
@@ -2327,8 +2327,8 @@
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Lacak berapa jumlah orang yang telah mengklik tautan Anda, mendaftar, dan menjadi pengguna berbayar. Saksikan jumlah bulan gratis yang Anda miliki bertambah seiring waktu."
       ],
-      "Track your referral link activities here.": [
-        "Lacak aktivitas tautan rujukan Anda di sini."
+      "You can continue to invite friends, but you wont be able to earn more credits": [
+        "Anda tetap dapat mengundang lebih banyak teman, namun Anda tidak akan lagi dapat memperoleh saldo tambahan"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan memiliki sampai ${ MAX_IMPORT_EVENTS_STRING } acara. Jika berkas Anda lebih besar, mohon pisahkan menjadi berkas yang lebih kecil."
@@ -2525,9 +2525,6 @@
       ],
       "Calendar limit reached": [
         "Batas kalender tercapai"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Kunci pribadi utama kalender tidak didekripsi"
       ],
       "Can't check username, try again later": [
         "Gagal periksa nama pengguna. Coba lagi nanti"
@@ -2745,14 +2742,14 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
-      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Sebagian nama folder Anda melebihi batas karakter maksimal ProtonMail. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sebagian nama folder Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Sebagian nama label Anda melebihi batas karakter maksimal ProtonMail. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Terjadi kesalahan, mohon ${ refresh } ntuk melanjutkan. Jika Anda masih melihat pesan kesalahan ini, silakan hubungi ${ supportTeam } kami."
@@ -3197,9 +3194,6 @@
       ],
       "Torrenting support (P2P)": [
         "Mendukung torrent (P2P)"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "${ connectionsPluralized } VPN"
       ]
     },
     "file size format": {
@@ -3864,11 +3858,23 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } tidak valid"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } juga mendukung penggunaan kata sandi tunggal yang dapat digunakan baik untuk masuk ataupun untuk mengakses kotak pesan Anda. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang hendak Anda gunakan dan klik Simpan."
+      ],
+      "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
+        "${ MAIL_APP_NAME } memungkinkan Anda untuk dapat membuat alamat email bagi orang lain. Hal ini sempurna untuk bisnis, keluarga, ataupun grup."
+      ],
+      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "${ MAIL_APP_NAME } mendukung penandatanganan DKIM untuk domain khusus. Untuk menggunakan autentikasi DKIM, mohon tambahkan data CNAME berikut ke pengaturan DNS Anda pada domain ini. Tindakan ini pada umumnya dapat dilakukan melalui panel kontrol registrar nama domain Anda."
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } Gratis"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional dimulai dengan satu pengguna, dan setiap pengguna menambahkan 5 GB dan 5 alamat email ke kumpulan organisasi."
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        "${ mailPlus } terbatas untuk satu pengguna dengan kuota penyimpanan awal 5 GB."
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "${ mailProfessional } dimulai dengan satu pengguna, di mana setiap pengguna barunya akan memberikan kuota 5 GB dan 5 alamat email tambahan bagi organisasi Anda."
       ],
       "${ n } address": [
         "${ n } alamat"
@@ -3933,6 +3939,15 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Gratis"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        "Paket ${ vpnBasic }, ${ vpnPlus }, atau ${ visionary } dibutuhkan untuk dapat membuka sambungan tingkat negara."
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "${ vpnPlus } meliputi ${ maxVpn } koneksi VPN."
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        "Paket ${ vpnPlus } atau ${ visionary } dibutuhkan untuk dapat mengakses fitur Secure Core."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
       ],
@@ -3951,8 +3966,8 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus penyimpanan"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } koneksi ProtonVPN (Anda bisa menyambungkan lebih banyak perangkat ke VPN)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (yang memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN dalam satu waktu)"
       ],
       "1. Invite friends to Proton": [
         "1. Undang teman ke Proton"
@@ -4002,8 +4017,8 @@
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Buat akun Anda menjadi lebih berwarna dengan alamat email khusus yang berakhiran @pm.me. Alamat email yang sederhana dan mudah diingat ini merupakan kependekan dari \"ProtonMail me\" atau \"Private Message me.\""
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        "Buat akun Anda menjadi lebih berwarna dengan alamat email khusus yang berakhiran @pm.me. Alamat email yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
       ],
       "Add a recovery email address": [
         "Tambahkan alamat email pemulihan"
@@ -4137,8 +4152,8 @@
       "Basic, Plus or Visionary subscription required": [
         "Dibutuhkan langganan Basic, Plus atau Visionary"
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Sebelum Anda dapat menerima email untuk alamat domain kustom Anda di ProtonMail, Anda perlu menambahkan MX record berikut ke DNS Anda. Ini biasanya dapat dilakukan di panel kontrol pendaftar nama domain Anda."
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Sebelum Anda dapat menerima email pada alamat domain khusus ${ MAIL_APP_NAME } Anda, Anda harus terlebih dahulu menambahkan data MX berikut ke DNS Anda. Hal ini pada umumnya dapat dilakukan melalui panel kontrol registrar nama domain Anda."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Sebelum Anda dapat mulai mengirim dan menerima email dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
@@ -4206,9 +4221,6 @@
       "Continue with ${ planName }": [
         "Lanjut dengan ${ planName }"
       ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        "Lanjutkan dengan ${ planName } sekarang juga agar akses menuju akun Anda tidak dinonaktifkan setelah masa uji coba Anda berakhir."
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Buat ${ calendarsToBeCreated } kalender baru"
       ],
@@ -4224,8 +4236,8 @@
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Buat dan kelola sub-akun dan tetapkan untuk mereka alamat email di domain kustom Anda."
       ],
-      "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "Buat alamat email untuk orang lain dan gunakan ${ MAIL_APP_NAME } untuk mengelola bisnis, sekolah, atau grup Anda. Mulailah dengan menambahkan nama organisasi dan domain khusus milik Anda (mis. @yourcompany.com). "
       ],
       "Create in": [
         "Buat di"
@@ -4263,8 +4275,8 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Hapus data MX lainnya atau pastikan Prioritas ProtonMail adalah angka terendah."
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Hapus rekaman data MX lainnya atau pastikan Proritas ${ MAIL_APP_NAME } berada pada tingkatan terendah."
       ],
       "Delete link?": [
         "Hapus tautan?"
@@ -4278,8 +4290,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "JANGAN melupakan kata sandi ini. Jika Anda lupa, Anda tidak akan dapat mengelola organisasi Anda."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Jangan menggunakan kredensial OpenVPN / IKEv2 di aplikasi ProtonVPN atau di dasbor ProtonVPN. ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Jangan gunakan informasi kredensial OpenVPN / IKEv2 pada aplikasi ${ VPN_APP_NAME } atau dasbor ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Apakah Anda ingin mencabut semua sesi lain kecuali sesi ini?"
@@ -4296,8 +4308,8 @@
       "Done! We sent a code to ${ destination }.": [
         "Berhasil! Kami telah mengirimkan kode Anda ke ${ destination }."
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "Proses penurunan akun akan mematikan koneksi apapun ke server ProtonVPN berbayar."
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "Proses penurunan akun akan memutus seluruh sambungan ke server ${ VPN_APP_NAME } berbayar."
       ],
       "Download recovery file": [
         "Unduh berkas pemulihan"
@@ -4452,8 +4464,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Jika Anda memiliki domain kustom dengan ProtonMail, Anda dapat menyetel alamat surel catch-all yang akan menerima pesan yang dikirim ke domain Anda namun ke alamat surel yang tidak valid (misal, salah ketik)."
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "Apabila Anda memiliki domain ${ MAIL_APP_NAME } khusus, Anda dapat mengatur alamat email catch-all yang akan menampung seluruh pesan yang dikirim ke alamat yang tidak valid pada domain Anda (cth. karena salah ketik)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Apabila Anda memiliki kode hadiah yang valid, masukkan kode tersebut pada kolom di bawah ini untuk mendapatkan diskon Anda."
@@ -4473,14 +4485,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Jika Anda kehilangan perangkat berkemampuan dua-faktor, kode ini dapat menggantikan kode 6 digit otentikasi dua faktor untuk masuk ke akun Anda. Setiap kode hanya dapat digunakan sekali."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Jika Anda menyetujui penurunan akun, Anda akan kehilangan akses ke fitur-fitur ProtonMail dan ProtonVPN berbayar."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Jika Anda menyetujui penurunan akun, Anda akan kehilangan akses ke fitur ProtonMail berbayar, termasuk tambahan penyimpanan dan filter."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ MAIL_APP_NAME }, termasuk kuota penyimpanan dan filter pencarian tambahan."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Jika Anda menyetujui penurunan akun, Anda akan kehilangan akses ke fitur ProtonVPN berbayar."
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Apabila Anda baru saja mengatur ulang kata sandi Anda, Anda dapat menggunakan metode pemulihan untuk membuka kunci data Anda"
@@ -4599,8 +4611,8 @@
       "Large imports can take several days.": [
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Pelajari cara untuk masuk ke ProtonVPN dengan aplikasi VPN pihak ketiga."
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Pelajari cara untuk dapat masuk ke ${ VPN_APP_NAME } dengan aplikasi VPN milik pihak ketiga."
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -4635,8 +4647,8 @@
       "Loading preview": [
         "Memuat pratinjau"
       ],
-      "Log in to ProtonMail to activate your address": [
-        "Masuk ke ProtonMail untuk mengaktifkan alamat email Anda"
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
+        "Masuk ke ${ MAIL_APP_NAME } untuk mengaktifkan alamat Anda"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Log mencakup upaya otentikasi untuk semua layanan Proton yang menggunakan kredensial ProtonMail Anda."
@@ -4746,8 +4758,8 @@
       "One account for all Proton services": [
         "Satu akun untuk semua layanan Proton"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ubah pengaturan ini jika Anda menggunakan PGP dengan penerima di luar ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Kami menyarankan Anda untuk mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
         "Hanya Anda yang dapat melihat label."
@@ -4881,27 +4893,6 @@
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton akan mencoba melanjutkan impor sesegera mungkin saat layanan surel Anda mengatur ulang ${ bandwithLimitLink } akun. Anda tidak perlu melakukan apapun. Jika Anda membatalkan impor, Anda tidak akan dapat melanjutkannya dan Anda harus mengulanginya dari awal."
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMail juga bisa digunakan dengan kata sandi tunggal yang menggantikan kata sandi untuk masuk dan kotak pesan. Untuk beralih ke mode kata sandi tunggal, masukkan satu kata sandi yang ingin Anda gunakan dan klik Simpan."
-      ],
-      "ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        "ProtonMail memungkinkan Anda untuk membuat alamat email bagi orang lain. Hal ini sempurna untuk bisnis, keluarga, ataupun grup."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus terbatas untuk satu pengguna dengan kuota penyimpanan awal 5 GB."
-      ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail mendukung penandatanganan DKIM untuk domain khusus. Untuk menggunakan autentikasi DKIM, tambahkan data CNAME berikut ke pengaturan DNS untuk domain ini. Ini biasanya dapat dilakukan di panel kontrol registrar nama domain Anda."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } termasuk ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } koneksi VPN."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Paket ProtonVPN Basic, Plus atau Visionary dibutuhkan untuk dapat membuka sambungan tingkat negara."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Diperlukan paket ProtonVPN Plus atau Visionary untuk fitur Secure Core."
-      ],
       "Public link invite": [
         "Tautan undangan publik"
       ],
@@ -5010,11 +5001,8 @@
       "Some keys successfully reactivated": [
         "Sebagian kunci berhasil diaktifkan kembali"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF digunakan untuk menentukan siapa yang diizinkan mengirim email untuk domain tersebut, jadi kami sangat menyarankan untuk menyertakan ProtonMail dalam data SPF Anda. Harap tambahkan record TXT berikut ke DNS Anda. Ini biasanya dapat dilakukan di panel kontrol pendaftar nama domain Anda."
-      ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Mulai dari 500 MB dan dapatkan kuota penyimpanan tambahan seiring waktu. Kuota penyimpanan ini akan diperuntukkan bagi Mail, Calendar, dan Drive secara bersamaan."
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Berhubung SPF digunakan untuk menentukan siapa-siapa saja yang dapat mengirim email pada domain ini, kami sangat menyarankan Anda untuk menyertakan ${ MAIL_APP_NAME } dalam data SPF Anda. Mohon tambahkan informasi TXT berikut ke dalam DNS Anda. Hal ini pada umumnya dapat dilakukan melalui panel kontrol registrar nama domain Anda."
       ],
       "Starter VPN service with P2P support.": [
         "Layanan VPN pengantar dengan dukungan P2P."
@@ -5067,8 +5055,8 @@
       "The name will be visible to your users while they are logged in.": [
         "Nama akan terlihat pada pengguna Anda ketika mereka masuk."
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Berkas konfigurasi ini memungkinkan Anda memilih server ProtonVPN mana yang ingin Anda sambungkan saat menggunakan aplikasi VPN pihak ketiga atau menyiapkan koneksi VPN di router."
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Berkas konfigurasi ini memungkinkan Anda untuk memilih server ${ VPN_APP_NAME } mana yang akan tersambung pada saat Anda menggunakan aplikasi VPN milik pihak ketiga atau menyiapkan koneksi VPN pada router."
       ],
       "This 30-day free trial is not available any other way.": [
         "Masa uji coba gratis 30 hari ini tidak dapat diperoleh dengan cara lainnya."
@@ -5175,8 +5163,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ProtonVPN untuk perangkat Anda dan sambungkan ke server ProtonVPN."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        "Untuk mengamankan koneksi internet Anda, unduh dan pasang aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan sambungkan ke server ${ VPN_APP_NAME }."
       ],
       "To use ${ toAppName }, please create an address.": [
         "Untuk dapat menggunakan ${ toAppName }, mohon buat alamat terlebih dahulu."
@@ -5235,8 +5223,8 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "Tingkatkan akun Anda ke ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] }, atau ${ PLAN_NAMES[PLANS.PLUS] } agar Anda dapat membalas email-email yang masuk secara otomatis di kala Anda sedang tidak berada di kantor."
       ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Tingkatkan jenis akun Anda ke akun berbayar untuk dapat memanfaatkan dukungan IMAP/SMTP melalui ProtonMail Bridge."
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
+        "Tingkatkan jenis akun Anda ke akun berbayar untuk dapat memanfaatkan dukungan IMAP/SMTP melalui ${ MAIL_APP_NAME } Bridge."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ appName } ${ planName } berikut."
@@ -5253,8 +5241,8 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Gunakan pesan balasan otomatis untuk memberitahu kontak-kontak Anda bahwa Anda sedang tidak berada di kantor atau sedang tidak dapat menanggapi email-email yang masuk."
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Gunakan kredensial berikut saat menghubungkan ke server ProtonVPN tanpa aplikasi. Contoh kasus penggunaan termasuk: Tunnelblick di macOS, OpenVPN di GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } tanpa aplikasi. Beberapa contoh situasi yang demikian meliputi: Tunnelblick di macOS, OpenVPN di GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
@@ -5286,8 +5274,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Peringatan: penghapusan bersifat permanen. Hal ini juga menghapus akses ke semua layanan yang terhubung dan menghapus semua kontak Anda."
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Kami menyarankan Anda untuk menggunakan aplikasi ProtonVPN resmi apabila memungkinkan."
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        "Kami menyarankan Anda untuk menggunakan aplikasi resmi ${ VPN_APP_NAME } apabila memungkinkan."
       ],
       "We recommend using your recovery phrase instead.": [
         "Kami menyarankan Anda untuk menggunakan frasa pemulihan."
@@ -5331,8 +5319,8 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Ketika dinonaktifkan, opsi ini akan mencegah gambar-gambar yang ada untuk dapat dimuat pada perangkat Anda tanpa Anda ketahui."
       ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Saat pemberitahuan diaktifkan, kami akan mengirimkan peringatan ke alamat pemulihan/pemberitahuan Anda jika Anda memiliki pesan baru di akun ProtonMail Anda."
+      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
+        "Pada saat notifikasi diaktifkan, kami akan mengirimkan peringatan ke alamat email pemulihan Anda setiap kali terdapat pesan baru yang masuk ke akun ${ MAIL_APP_NAME } Anda."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         "Pada saat mereka berlangganan ke paket berbayar, Anda akan memperoleh saldo ${ appName } ${ planName } selama 1 hingga 3 bulan."
@@ -5364,9 +5352,6 @@
       "You are about to open another browser tab and visit:": [
         "Anda akan membuka tab peramban lain dan mengunjungi:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
-      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
@@ -5394,11 +5379,11 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan pada saat ada email baru yang masuk ke folder ini."
       ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Anda dapat menggunakan ProtonMail dengan klien email desktop manapun yang mendukung IMAP/SMTP, termasuk Outlook, Apple Mail, dan Thunderbird."
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Anda dapat menggunakan ${ MAIL_APP_NAME } dengan klien email desktop manapun yang mendukung IMAP/SMTP, termasuk Outlook, Apple Mail, dan Thunderbird."
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Anda dapat menggunakan kredensial-kredensial berikut untuk dapat tersambung ke server ProtonVPN melalui aplikasi-aplikasi VPN open source milik pihak ketiga, semisal Tunnerblick untuk macOS atau OpenVPN untuk GNU/Linux."
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Anda dapat menggunakan informasi kredensial berikut untuk dapat tersambung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Anda tidak dapat mengirim lebih dari ${ emailSendLimitNumber } email undangan untuk 24 jam ke depan"
@@ -5406,8 +5391,8 @@
       "You cannot refer ${ appName } users": [
         "Anda tidak dapat mengirim rujukan kepada para pengguna ${ appName }"
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Anda tidak dapat menggunakan kredensial OpenVPN / IKEv2 untuk masuk ke aplikasi ProtonVPN atau dasbor ProtonVPN. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Anda tidak dapat menggunakan informasi kredensial OpenVPN / IKEv2 untuk masuk ke aplikasi ${ VPN_APP_NAME } atau dasbor ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Anda tidak mengatur sebuah metode pemulihan sehingga pemulihan akun tidak mungkin dilakukan jika Anda lupa kata sandi Anda. Lanjutkan tanpa metode pemulihan?"
@@ -5418,8 +5403,8 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Anda harus mengaktifkan kunci pribadi organisasi Anda dengan kata sandi kunci organisasi cadangan yang diberikan oleh administrator organisasi."
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "Anda harus menonaktifkan atau menghapus pengguna ProtonMail, alamat, dan domain khusus tambahan sebelum Anda menurunkan akun."
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Akun PayPal Anda harus terhubung ke kartu kredit atau rekening bank agar bisa ditambahkan sebagai metode pembayaran."
@@ -5469,6 +5454,9 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Akun ${ BRAND_NAME } Anda dikaitkan dengan ${ externalEmailAddress }. Untuk menggunakan ${ toAppName }, harap buat alamat email."
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        "Akun ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } Anda saling terhubung antar satu sama lain. Untuk menghapus keduanya, harap masuk ke ${ loginLink } dan hapus akun Anda di sana."
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
       ],
@@ -5502,9 +5490,6 @@
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan digunakan untuk verifikasi satu kali ini."
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        "Masa uji coba ${ appName } ${ planName } Anda akan berakhir pada ${ formattedTrialExpirationDate }."
-      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Proses impor Anda dari ${ delayedImport.Account } ditunda sementara."
       ],
@@ -5528,9 +5513,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
-      ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Akun ProtonVPN dan ProtonMail Anda saling terkait. Untuk menghapus keduanya, harap masuk ke ${ loginLink } dan hapus akun Anda di sana."
       ],
       "Your recovery email address:": [
         "Alamat email pemulihan Anda:"
@@ -5568,11 +5550,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        "${ MAIL_APP_NAME } tidak dapat digunakan untuk mengirimkan email massal atau spam. Meskipun demikian, kami tidak membatasi pengiriman email yang sah."
+      ],
       "Customizable features": [
         "Fitur yang dapat disesuaikan"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail tidak dapat digunakan untuk mengirim spam atau email massal. Email yang sah tidak dibatasi."
       ]
     },
     "Info for cash payment method": {
@@ -5949,11 +5931,14 @@
       " and ${ l }": [
         " dan ${ l }"
       ],
+      "${ MAIL_APP_NAME } address": [
+        "Alamat ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } footer": [
+        "Footer ${ MAIL_APP_NAME }"
+      ],
       "${ monthsRewarded } month credited": [
         "${ monthsRewarded } bulan tersedia dalam bentuk saldo"
-      ],
-      "${ monthsRewarded } month pending": [
-        "${ monthsRewarded } bulan menunggu untuk dicairkan"
       ],
       "${ n } VPN connection available": [
         "${ n } koneksi VPN tersedia"
@@ -6054,9 +6039,6 @@
       "Calendars": [
         "Kalender"
       ],
-      "Cancel": [
-        "Batal"
-      ],
       "Card holder": [
         "Pemegang kartu"
       ],
@@ -6093,6 +6075,9 @@
       "Conditions": [
         "Syarat"
       ],
+      "Confirm link URLs": [
+        "Konfirmasi URL tautan"
+      ],
       "Confirm login password": [
         "Konfirmasi kata sandi untuk masuk"
       ],
@@ -6128,6 +6113,9 @@
       ],
       "Country": [
         "Negara"
+      ],
+      "Credits pending": [
+        "Saldo yang belum diklaim"
       ],
       "Credits used": [
         "Saldo digunakan"
@@ -6342,9 +6330,6 @@
       "Last month only": [
         "Hanya sebulan terakhir"
       ],
-      "Link confirmation": [
-        "Konfirmasi tautan"
-      ],
       "Login password": [
         "Kata sandi masuk"
       ],
@@ -6483,12 +6468,6 @@
       "Proton username": [
         "Nama Pengguna Proton"
       ],
-      "ProtonMail address": [
-        "Alamat ProtonMail"
-      ],
-      "ProtonMail footer": [
-        "Footer ProtonMail"
-      ],
       "Read": [
         "Telah dibaca"
       ],
@@ -6555,8 +6534,8 @@
       "Statement": [
         "Pernyataan"
       ],
-      "Submit": [
-        "Kirim"
+      "Sticky labels": [
+        "Label lekat"
       ],
       "Subtotal": [
         "Subtotal"
@@ -6623,9 +6602,6 @@
       ],
       "Use folder colors": [
         "Gunakan folder berwarna"
-      ],
-      "Use sticky labels": [
-        "Gunakan label lekat"
       ],
       "User": [
         "Pengguna"
@@ -6715,8 +6691,8 @@
       ]
     },
     "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Tambahkan domain yang Anda miliki ke akun ProtonMail Anda."
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Tambahkan domain yang Anda miliki ke akun ${ MAIL_APP_NAME } Anda."
       ]
     },
     "Label for domain modal": {
@@ -7057,11 +7033,6 @@
     "Many Others": {
       "and many others": [
         "dan masih banyak lagi"
-      ]
-    },
-    "Max VPN Connections": {
-      "Connection": [
-        "Sambungan"
       ]
     },
     "Member action": {
@@ -8466,6 +8437,9 @@
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Pintasan Papan Ketik"
       ],
+      "${ MAIL_APP_NAME } Bridge": [
+        "Bridge ${ MAIL_APP_NAME }"
+      ],
       "(highly recommended)": [
         "(sangat direkomendasikan)"
       ],
@@ -8634,9 +8608,6 @@
       "Change password": [
         "Ubah kata sandi"
       ],
-      "Change password for ${ Name } (${ Email })": [
-        "Ubah sandi untuk ${ Name } (${ Email })"
-      ],
       "Change role": [
         "Ubah peran"
       ],
@@ -8648,6 +8619,9 @@
       ],
       "Clear": [
         "Bersihkan"
+      ],
+      "Composing": [
+        "Penulisan"
       ],
       "Confirm address": [
         "Konfirmasi alamat"
@@ -8817,9 +8791,6 @@
       "Email subscriptions": [
         "Email berlangganan"
       ],
-      "Enable keyboard shortcuts": [
-        "Aktifkan pintasan papan ketik"
-      ],
       "Encryption and keys": [
         "Enkripsi dan kunci"
       ],
@@ -8859,8 +8830,8 @@
       "Generate new recovery phrase?": [
         "Buat frasa pemulihan baru?"
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Dapatkan ProtonVPN Plus untuk mengakses semua server"
+      "Get ${ vpnPlus } to access all servers": [
+        "Dapatkan ${ vpnPlus } untuk mengakses seluruh server"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Dapatkan langganan ${ appName } ${ planName } hingga 18 bulan secara cuma-cuma"
@@ -8916,6 +8887,9 @@
       "Invoices": [
         "Tagihan"
       ],
+      "Keyboard shortcuts": [
+        "Pintasan keyboard"
+      ],
       "Labels": [
         "Label"
       ],
@@ -8933,6 +8907,9 @@
       ],
       "Messages": [
         "Pesan"
+      ],
+      "Messages and composing": [
+        "Pesan dan penulisan"
       ],
       "Multi-user support": [
         "Dukungan multi-pengguna"
@@ -8972,9 +8949,6 @@
       ],
       "Organization and keys": [
         "Organisasi dan kunci"
-      ],
-      "Other": [
-        "Lainnya"
       ],
       "Password": [
         "Kata Sandi"
@@ -9023,12 +8997,6 @@
       ],
       "Proton Logo": [
         "Logo Proton"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonVPN": [
-        "ProtonVPN"
       ],
       "Reconnect your account": [
         "Sambung kembali akun Anda"
@@ -9189,8 +9157,8 @@
       "Total (monthly)": [
         "Total (perbulan)"
       ],
-      "Try the best of ProtonMail for free": [
-        "Jajaki berbagai fitur unggulan ProtonMail secara cuma-cuma"
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Nikmati berbagai fitur unggulan ${ MAIL_APP_NAME } secara gratis"
       ],
       "Two-factor authentication": [
         "Otentikasi dua faktor"
@@ -9270,8 +9238,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "Tagihan ProtonMail"
+      "${ MAIL_APP_NAME } invoice": [
+        "Tagihan ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -9336,6 +9304,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        "Para pengguna ${ MAIL_APP_NAME } akan menggunakan kunci enkripsi ini dalam proses pengiriman secara default"
+      ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Akses konten yang diblokir per negara (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, dll) di mana saja."
       ],
@@ -9375,11 +9346,11 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Mengaktifkan catatan lanjut merekam alamat IP untuk setiap kejadian di catatan keamanan."
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Dapatkan akses ke seluruh fitur berbayar ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } (layanan email terenkripsi yang digunakan jutaan orang untuk melindungi data mereka) dalam satu paket."
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Dapatkan akses ke semua fitur berbayar untuk ${ vpnAppName } dan ${ mailAppName } (layanan email terenkripsi yang digunakan jutaan orang untuk melindungi data mereka) dengan satu paket."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Dapatkan akses ke semua fitur berbayar untuk ProtonVPN dan ProtonMail (layanan email terenkripsi yang digunakan jutaan orang untuk melindungi data mereka) dengan satu paket."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Tentukan apakah email-email yang terhubung pada suatu rantai percakapan akan dikelompokkan sebagai satu atau ditampilkan secara terpisah pada Kotak Masuk Anda."
@@ -9395,9 +9366,6 @@
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan malware."
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "Pengguna ProtonMail akan memakai kunci ini secara bawaan untuk mengirim"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik."
@@ -9420,8 +9388,8 @@
       "Support for file sharing protocols such as BitTorrent.": [
         "Mendukung protokol berbagi berkas seperti BitTorrent."
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Sub-folder milik sistem akan muncul sebagai folder terpisah di ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Import akan dimulai dengan pesan terbaru."
@@ -9468,14 +9436,14 @@
       "You have locally decrypted this key": [
         "Anda mendekripsi kunci ini secara lokal"
       ],
+      "Your ${ MAIL_APP_NAME } inbox is almost full": [
+        "Kotak masuk ${ MAIL_APP_NAME } Anda hampir penuh"
+      ],
       "Your DKIM signing is working.": [
         "Penandatanganan DKIM anda berfungsi."
       ],
       "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
         "Akun eksternal Anda mungkin mencapai batas bandwidth 24 jam. Proton akan mencoba melanjutkan impor sesegera mungkin."
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "Kotak masuk ProtonMail Anda hampir penuh"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -9484,13 +9452,13 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Pilih pengaturan PGP standar yang digunakan untuk menandatangani atau mengenkripsi pesan dengan pengguna PGP non-ProtonMail. Perhatikan bahwa PGP Inline memaksa untuk pesan teks biasa. Pelajari lebih lanjut"
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Pilih pengaturan PGP default yang akan digunakan untuk menandatangani atau mengenkripsi pesan yang diperuntukkan bagi para pengguna non-${ BRAND_NAME }. Mohon diperhatikan bahwa pengaturan PGP Inline akan mengubah pesan yang akan dikirim ke dalam format plain text secara paksa. Pelajari lebih lanjut"
       ]
     },
     "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Saat menerima email dari pengguna ProtonMail lain yang tidak memiliki kunci terpercaya dalam kontak Anda, sebuah layar banner akan bertanya apakah Anda ingin mengaktifkan kunci terpercaya."
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Pada saat Anda menerima email dari pengguna ${ MAIL_APP_NAME } lain yang tidak memiliki kunci terpercaya dalam kontak Anda, sebuah layar akan muncul dan menanyakan apakah Anda ingin mengaktifkan kunci terpercaya."
       ]
     },
     "Tooltip sign external messages": {
@@ -9555,9 +9523,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "Visioner ${ mailAppName }"
-      ],
       "30-days money-back guarantee": [
         "Jaminan 30 hari uang kembali"
       ],
@@ -9738,8 +9703,8 @@
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "Jika Anda membatalkan impor ini, Anda tidak dapat melanjutkannya. Proton menyimpan semua proses di akun Anda. Batalkan?"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Harap diperhatikan dengan memilih metode pembayaran ini, akun anda tidak dapat segera ditingkatkan. Kami akan memperbarui akun anda setelah pembayaran sah."
@@ -9759,8 +9724,8 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan tanggal dan waktu saat ini. ${ learnMore }"
       ],
-      "This feature is only available for ProtonMail Professional plans or higher": [
-        "Fitur ini hanya tersedia untuk ProtonMail Professional atau lebih tinggi"
+      "This feature is only available for ${ mailProfessional } plans or higher": [
+        "Fitur ini hanya tersedia untuk para pengguna ${ mailProfessional } atau lebih tinggi"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Impor ini mungkin akan menghabiskan kapasitas penyimpanan akun Proton Anda. Harap sesuaikan kebutuhan impor Anda."

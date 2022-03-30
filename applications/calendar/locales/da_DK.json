@@ -200,7 +200,7 @@
         "Få bekræftelseskode"
       ],
       "Go to label": [
-        ""
+        "Gå til etikette"
       ],
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
@@ -326,7 +326,7 @@
         "Gendan data"
       ],
       "Refer a friend": [
-        ""
+        "Henvis en ven"
       ],
       "refresh the page": [
         "genopfrisk siden"
@@ -614,8 +614,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta-adgang giver dig mulighed for at bruge betaversionen af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
@@ -789,8 +789,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        ""
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar invite buttons label": {
@@ -2093,7 +2093,7 @@
         "Flet mindst ${ calendarToFixCount } kalendere med eksisterende Proton-kalendere"
       ],
       "Missing key packet": [
-        ""
+        "Manglende nøglepakke"
       ],
       "Missing signature": [
         "Manglende signatur"
@@ -2173,8 +2173,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Nogle af dine etikettenavne overskrider ProtonMail's maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
@@ -2521,7 +2521,7 @@
         "nej"
       ],
       "pending": [
-        ""
+        "afventende"
       ],
       "yes": [
         "ja"
@@ -2804,7 +2804,7 @@
         "(${ memberCount } medlemmer)"
       ],
       "5 email addresses": [
-        ""
+        "5 e-mailadresser"
       ],
       "5 GB storage": [
         "5 GB lagerplads"
@@ -2866,7 +2866,7 @@
         "Luk denne skærm for at afslutte."
       ],
       "Continue with ${ planName }": [
-        ""
+        "Fortsæt med ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Opret ${ calendarsToBeCreated } ny kalender",
@@ -3044,17 +3044,17 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Forekomster som arrangøren tidligere har opdateret vil blive opbevaret."
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ændr kun disse indstillinger, hvis du benytter PGP med ikke-ProtonMail-modtagere."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
       ],
       "Other options": [
-        ""
+        "Andre muligheder"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ProtonMail altid signerer krypterede beskeder."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ProtonMail altid signerer krypterede beskeder"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
@@ -3081,10 +3081,10 @@
         "Primær"
       ],
       "Priority support": [
-        ""
+        "Prioriteret support"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
@@ -3107,17 +3107,17 @@
       "Session timed out": [
         "Session er udløbet"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail bruger, der benytter en PGP-kompatibel tjeneste."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Nogle af dine svar på forekomster, som arrangøren tidligere har opdateret, vil gå tabt."
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Lagerplads deles på tværs af Mail, Calendar og Drive."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Mulighed for 1 brugerdefineret e-mail-domæne"
       ],
       "support team": [
         "supportteam"
@@ -3189,16 +3189,16 @@
         "For at bruge adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Ubegrænsede mapper, etiketter og filtre"
       ],
       "Unlimited messages": [
-        ""
+        "Ubegrænset antal beskeder"
       ],
       "Update recurring event": [
         "Opdater tilbagevendende begivenhed"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Opgrader i dag for at undgå at miste følgende ${ appName } ${ planName } fordele."
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
@@ -3252,7 +3252,7 @@
         "Du er ved at åbne en ny browserfane og besøge:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
@@ -3608,8 +3608,8 @@
       "URL": [
         "URL"
       ],
-      "Username or ProtonMail address": [
-        "Brugernavn eller ProtonMail-adresse"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Brugernavn eller ${ MAIL_APP_NAME }-adresse"
       ],
       "Verification code": [
         "Bekræftelseskode"
@@ -3725,7 +3725,7 @@
         "Sv:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Din gratis prøveperiode er afsluttet. Adgang til din konto vil snart blive deaktiveret. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4038,16 +4038,16 @@
     },
     "Onboarding": {
       "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
+        "En kalender er en registrering af dit liv. Hold dit liv sikkert og privat med ${ appName }."
       ],
       "Import events": [
-        ""
+        "Importer begivenheder"
       ],
       "Meet your new encrypted calendar": [
-        ""
+        "Mød din nye krypterede kalender"
       ],
       "Start using ${ appName }": [
-        ""
+        "Begynd at bruge ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -4231,7 +4231,7 @@
         "OS-version"
       ],
       "Password": [
-        ""
+        "Adgangskode"
       ],
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og inkludér evt. fejlmeddelelser"
@@ -4340,16 +4340,16 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Få op til 18 måneder med ${ appName } ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "Inviter venner, og optjen belønninger!"
       ],
       "No more missed appointments": [
-        ""
+        "Ikke flere glemte aftaler"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "Med e-mail-meddelelser bestemmer du selv, hvilke begivenheder du vil have besked om og hvornår."
       ]
     },
     "Storage": {
@@ -4763,8 +4763,8 @@
       "Enter your password": [
         "Indtast din adgangskode"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Indtast dit brugernavn eller ProtonMail e-mailadresse"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Indtast dit brugernavn eller ${ MAIL_APP_NAME } e-mailadresse"
       ],
       "Error": [
         "Fejl"
@@ -4969,7 +4969,7 @@
         "Du har inviteret deltagere med tilsvarende e-mails"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5004,8 +5004,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk at PGP/Inline gennemtvinger beskeder i simpel tekst"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Systemundermapper vil blive vist som separate mapper i ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
@@ -5052,8 +5052,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Hvis du ikke kan huske din adgangskode, er det umuligt at genaktivere din nøgle. Vi kan hjælpe dig med at afvise advarselsbanneret, men i processen vil du permanent miste adgang til alle de data, der er krypteret med den nøgle."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Live chat er en premium-funktion, der kun er tilgængelig for dem, der har betalte ${ VPN_APP_NAME }-abonnementer. Åbn venligst en sag i stedet."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton vil sammenflette alle mapper med det samme navn. For at undgå dette, skal du ændre navnene før importen."
@@ -5092,7 +5092,7 @@
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

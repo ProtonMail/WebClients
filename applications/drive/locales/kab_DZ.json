@@ -59,6 +59,9 @@
       "Cancel all": [
         ""
       ],
+      "Cancel all downloads": [
+        ""
+      ],
       "Cancel all uploads": [
         "Sefsex akk isaliyen"
       ],
@@ -208,9 +211,6 @@
       "enable desktop notifications": [
         "rmed talɣutin n tnarit"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Expand folder": [
         ""
       ],
@@ -272,6 +272,9 @@
         "Kter"
       ],
       "Import from .csv or vCard": [
+        ""
+      ],
+      "Learn more": [
         ""
       ],
       "Load image": [
@@ -454,6 +457,9 @@
       "Show labels": [
         ""
       ],
+      "Show preview": [
+        ""
+      ],
       "Sign out": [
         "Ffeɣ"
       ],
@@ -593,7 +599,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -768,7 +774,7 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ]
     },
@@ -1886,8 +1892,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Kra n yismawen n tebzimin-inek·inem ulac-iten. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Kra n yismawen n tebzimin ɛeddan talast tafellayt n yisekkilen n ProtonMail. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
@@ -2294,10 +2300,10 @@
         ""
       ],
       "5 email addresses": [
-        ""
+        "5 n tansiwin n yimayl"
       ],
       "5 GB storage": [
-        ""
+        "5 GAṬ n weḥraz"
       ],
       "A number will be added to the filename": [
         "Ad yernu umḍan ɣer yisem n ufaylu"
@@ -2352,6 +2358,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Anadi ɣef yinermisen ${ progress } seg ${ max }..."
       ],
+      "Checking signatures": [
+        ""
+      ],
       "Clear data": [
         ""
       ],
@@ -2383,7 +2392,7 @@
         ""
       ],
       "Continue with ${ planName }": [
-        ""
+        "Kemmel s ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
@@ -2426,6 +2435,15 @@
         "",
         ""
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        ""
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        ""
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        ""
+      ],
       "Downloaded": [
         "Yettusader"
       ],
@@ -2441,9 +2459,6 @@
       "Duplicate key updated": [
         "Sisleg tasarut yettwaleqqmen"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
       ],
@@ -2456,6 +2471,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Tuccḍa deg ulday n useɣwen aɣellsan. Tamentilt d: ${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
+      ],
       "File will not be uploaded": [
         "Afaylu ur d-yettali ara"
       ],
@@ -2464,6 +2485,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "Igburen n ukaram ad zdin deg yiwen n ukaram"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
       ],
       "Folder will not be uploaded": [
         "Akaram ur d-yettali ara"
@@ -2578,7 +2605,7 @@
         "Ugur n uẓeṭṭa"
       ],
       "New": [
-        ""
+        "Amaynut"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -2619,8 +2646,8 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur nesseqdac ara ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        ""
       ],
       "Only the people with the link and the password can access this file.": [
         "Anagar imdanen i yesɛan aseɣwen d wawal uffir i izemren ad kecmen ɣer ufaylu-a."
@@ -2629,7 +2656,7 @@
         ""
       ],
       "Other options": [
-        ""
+        "Ugar n iɣewwaṛen"
       ],
       "Paused": [
         "Tarist"
@@ -2637,11 +2664,11 @@
       "Permanently delete all files in your drive": [
         ""
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline yemṣada kan akked umasal aḍris. Ttxil-k ẓer d akken ProtonMail ittezmil dayem iznan iwgelhanen."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        ""
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME yettazen izen s wudem awurman s useqdec n uskar amiran n tsuddest. Ttxil-k ẓer d akken ProtonMail yettezmil dayem iznan iwgelhanen"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ttxil-k·m ẓer belli tansiwin yettunefken i ugraw-a ur ttwakkasent ara."
@@ -2674,7 +2701,7 @@
         ""
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Queued": [
         "Yettwarna ar udras"
@@ -2706,11 +2733,17 @@
       "Session timed out": [
         ""
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Asesteb n PGP ad ak·am-imudd tisirag i wakken ad tazneḍ imaylen yettwawgelhen seg yixef ɣer yixef i useqdac ur nesɛi ara Protonmail i iseqdacen ameẓlu yemṣadan d PGP."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        ""
       ],
       "Share files with links": [
         "Bḍu ifuyla s yisɣewnen"
+      ],
+      "Signature check will be ignored": [
+        ""
+      ],
+      "Signature issue": [
+        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         ""
@@ -2727,8 +2760,14 @@
       "support team": [
         "tarbaɛt n tallalt"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Asnas-a yesra ad ikkes awgelhen s wudem adidgan i yinermisen-ik send ad d-banen. Ɣer taggara n ukala, afaylu VCF ad ilal, sakin ad tizmireḍ ad t-id-sadreḍ."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
       ],
       "There are no files yet": [
         "Ulac ɛad ifuyla"
@@ -2767,11 +2806,11 @@
       "This will overwrite the existing folder": [
         "Aya ad d-yeglu s tira ɣef ukaram yellan"
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        ""
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
@@ -2826,6 +2865,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Asili n tmiḍa n yifuyla ɣef tikkelt yezmer ad iḍur tamellit."
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        ""
       ],
       "We'll notify you when the import is done.": [
         ""
@@ -2949,6 +2994,26 @@
         "Aṭas n yinermisen ttaken acbi. ${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        ""
+      ],
+      "file data": [
+        ""
+      ],
+      "keys": [
+        ""
+      ],
+      "name": [
+        ""
+      ],
+      "name hash": [
+        ""
+      ],
+      "thumbnail": [
+        ""
+      ]
+    },
     "Key badge": {
       "Expired": [
         "Ifut"
@@ -2994,6 +3059,9 @@
       "Apply to all duplicated folders": [
         "Snes ɣef yikaramen usligen merra"
       ],
+      "Apply to all unverified items": [
+        ""
+      ],
       "Audio file": [
         "Afaylu ameslaw"
       ],
@@ -3007,6 +3075,9 @@
         "Lqem n yiminig"
       ],
       "Calendars": [
+        ""
+      ],
+      "Cancel download": [
         ""
       ],
       "Category": [
@@ -3043,6 +3114,9 @@
       "Do not ask again": [
         "Ur steqsay ara tikkelt-nniḍen"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Email address": [
         "Tansa imayl"
       ],
@@ -3056,7 +3130,7 @@
         "Sermed anekcum Biṭa"
       ],
       "Enabling Drive Search": [
-        ""
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "Wgelhen imaylen"
@@ -3247,8 +3321,8 @@
       "Upload picture": [
         "Sali-d tugna"
       ],
-      "Username or ProtonMail address": [
-        "Isem n useqdac neɣ tansa imayl n ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        ""
       ],
       "Verification code": [
         "Tangalt n usenqed"
@@ -3497,6 +3571,9 @@
       "File or folder is missing a name": [
         ""
       ],
+      "Item failed to be verified": [
+        ""
+      ],
       "Link failed to be loaded": [
         ""
       ],
@@ -3566,6 +3643,28 @@
         ""
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ],
+      "Upgrade account": [
+        ""
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        ""
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        ""
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Fren isem ara d-yettwaseknen"
@@ -3598,37 +3697,15 @@
         "Tzemreḍ ad tbeddeleḍ aya melmi tebɣiḍ deg yiɣewwaren."
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "Sermed anekcum Biṭa"
-      ],
-      "Start using ${ appName }": [
-        "Bdu aseqdec n  ${ appName }"
-      ],
-      "Upgrade account": [
-        "Sali aswir n umiḍan"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } d anekcum uzwir yerna yella kan i yiseqdacen s lexlaṣ."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } yella kan mi ara tremdeḍ anekcum Beta."
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Mmesten ifuyla-k•m s uwgelhen seg yixef ɣer yixef. Seqdec ${ appName } akken ad teskelseḍ rnu ad tebḍuḍ ifuyla-k•m s wudem aɣellsan."
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
-        "${ appName } ha-t-an deg Beta"
+        ""
       ],
       "Meet your new secure file storage": [
-        "Issin aḥraz-inek•inem aɣelsan"
+        ""
       ],
       "Upgrade to access ${ appName }": [
-        "Leqqem ɣer unekcum ${ appName }"
+        ""
       ]
     },
     "Option": {
@@ -4088,6 +4165,12 @@
       "Download failed": [
         "Asider yecceḍ"
       ],
+      "Download unverified file?": [
+        ""
+      ],
+      "Download unverified folder?": [
+        ""
+      ],
       "Downloading": [
         "Asider"
       ],
@@ -4125,7 +4208,7 @@
         "Silem iḍumman"
       ],
       "Enable Drive Search": [
-        ""
+        "Enable drive search"
       ],
       "Enter password to download": [
         ""
@@ -4133,8 +4216,8 @@
       "Enter your password": [
         "Sekcem awal-ik.im uffir"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Sekcem isem n useqdac neɣ tansa umayl n ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        ""
       ],
       "Exporting contacts": [
         "Kter inermisen"
@@ -4334,6 +4417,12 @@
       "The link failed to be loaded": [
         ""
       ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
       "Total size": [
         "Tiddi tuɣridt"
       ],
@@ -4407,7 +4496,7 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Fren aneggaf PGP ara yettusqedcen deg uzmel neɣ deg uwgelhen ɣer useqdac-nniḍen. Ẓer belli PGP/Inline ittḥettim ɣef yiznan amasal aḍris"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         ""
       ],
       "The import will start with the most recent messages.": [
@@ -4475,8 +4564,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ma yella ur tecfiḍ ara ɣef wawal uffir inek•m, tzemreḍ ad talseḍ asermed n tsarut-inek•m. Nezmer ad k•m-nɛiwen akken ad tzeggeleḍ taḥacit n ulɣu maca deg ukala ad tesṛuḥeḍ akk isefka ittuwglehnen s tsarut-agi."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Adiwenni srid d tamahilt premium yellan kan i yiɣawasen ProtonVPN n lexlaṣ. Ma ulac aɣilif, ldi atiki deg ubdil."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         ""

@@ -59,6 +59,9 @@
       "Cancel all": [
         "Batalkan semua"
       ],
+      "Cancel all downloads": [
+        "Batalkan seluruh unduhan"
+      ],
       "Cancel all uploads": [
         "Batalkan semua unggahan"
       ],
@@ -206,9 +209,6 @@
       "enable desktop notifications": [
         "aktifkan notifikasi desktop"
       ],
-      "Enable Drive Search": [
-        "Aktifkan Drive Search"
-      ],
       "Expand folder": [
         "Lebarkan folder"
       ],
@@ -271,6 +271,9 @@
       ],
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
       ],
       "Load image": [
         "Muat gambar"
@@ -452,6 +455,9 @@
       "Show labels": [
         "Tampilkan label"
       ],
+      "Show preview": [
+        "Tampilkan pratinjau"
+      ],
       "Sign out": [
         "Keluar"
       ],
@@ -591,11 +597,11 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Akses Beta memungkinkan Anda untuk menggunakan versi beta ${ mailAppName }, ${ calendarAppName }, dan Proton Drive sebelum produk-produk ini dirilis secara publik. Dengan Akses Beta, Anda berkesempatan menjadi orang pertama yang mencoba berbagai produk, pembaruan, dan fitur terbaru kami."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Akses Beta memungkinkan Anda untuk menggunakan versi beta dari ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } sebelum produk-produk ini dirilis secara publik. Dengan Akses Beta, Anda berkesempatan menjadi orang pertama yang mencoba berbagai produk, pembaruan, dan fitur terbaru kami."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
-        "Jika Anda menemui masalah/isu, Anda dapat selalu menonaktifkan Akses Beta."
+        "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
       ]
     },
     "blackfriday Action": {
@@ -766,8 +772,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Lanjut menggunakan ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Lanjut dengan ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar status": {
@@ -1877,8 +1883,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
@@ -2313,6 +2319,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Memeriksa kontak ${ progress } dari ${ max }..."
       ],
+      "Checking signatures": [
+        "Memeriksa tanda tangan"
+      ],
       "Clear data": [
         "Hapus data"
       ],
@@ -2385,6 +2394,15 @@
       "Delete drive": [
         "Hapus drive"
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        "Tanda tangan digital berhasil diverifikasi. Berkas ini diunggah secara aman oleh ${ emailAddress }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        "Tanda tangan digital berhasil diverifikasi. Folder ini diunggah secara aman oleh ${ emailAddress }."
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        "Unduhan ${ downloadFileName } akan dibatalkan"
+      ],
       "Downloaded": [
         "Diunduh"
       ],
@@ -2400,9 +2418,6 @@
       "Duplicate key updated": [
         "Kunci ganda diperbarui"
       ],
-      "Enable Drive Search": [
-        "Aktifkan Drive Search"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
       ],
@@ -2415,6 +2430,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Gagal membuka tautan terenkripsi. Sebab: ${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Berkas ini tidak ditandatangani. Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "Berkas ini tidak ditandatangani. Kami tidak dapat memverifikasi siapa yang mengunggah ${ fileName }."
+      ],
       "File will not be uploaded": [
         "Berkas tidak akan diunggah"
       ],
@@ -2423,6 +2444,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "Konten folder akan digabungkan jadi satu folder"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Folder ini tidak ditandatangani. Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "Folder ini tidak ditandatangani. Kami tidak dapat memverifikasi siapa yang mengunggah ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Folder tidak akan diunggah"
@@ -2577,8 +2604,8 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         "Kata sandi tidak boleh melebihi ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Hanya ubah pengaturan ini jika Anda menggunakan PGP dengan penerima bukan ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Kami menyarankan Anda untuk mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
       ],
       "Only the people with the link and the password can access this file.": [
         "Hanya orang yang memiliki tautan dan kata sandi yang dapat mengakses berkas ini."
@@ -2595,11 +2622,11 @@
       "Permanently delete all files in your drive": [
         "Hapus berkas-berkas yang ada pada drive milik Anda secara permanen"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline hanya kompatibel dengan format Teks Polos. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "Enkripsi PGP/Inline hanya dapat dibubuhkan pada pesan yang ditulis dalam format Plain Text. Mohon dicatat bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME mengirim pesan dengan mode tulis ini secara otomatis. Mohon dicatat, ProtonMail selalu menandatangi pesan terenkripsi"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "Enkripsi PGP/MIME akan mengirim pesan dengan format yang sesuai dengan mode komposer saat ini secara otomatis. Mohon dicatat bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Harap diperhatikan, alamat yang ditugaskan di grup ini TIDAK akan dihapus."
@@ -2664,11 +2691,17 @@
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara end-to-end dengan para pengguna layanan email lainnya yang juga mendukung PGP."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara end-to-end dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
       "Share files with links": [
         "Berbagi berkas dengan tautan"
+      ],
+      "Signature check will be ignored": [
+        "Proses verifikasi tanda tangan akan diabaikan"
+      ],
+      "Signature issue": [
+        "Masalah tanda tangan"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Beberapa berkas Anda tidak lagi dapat diakses. Pulihkan akses ke berkas Anda. ${ StartRecoveryButton }"
@@ -2685,8 +2718,14 @@
       "support team": [
         "tim dukungan"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon hanya buka berkas/folder berikut apabila Anda mempercayai sumbernya."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "Berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon hanya buka berkas/folder apabila Anda mempercayai sumbernya."
       ],
       "There are no files yet": [
         "Tidak ada berkas"
@@ -2724,11 +2763,11 @@
       "This will overwrite the existing folder": [
         "Tindakan ini akan menimpa folder yang sudah ada"
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Untuk mewujudkan pencarian yang sepenuhnya privat, ${ DRIVE_APP_NAME } harus terlebih dahulu mengindeks berkas-berkas Anda secara lokal."
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Untuk mewujudkan pencarian yang sepenuhnya privat, ${ DRIVE_APP_NAME } harus terlebihdahulu mengindeks berkas-berkas Anda secara lokal. Anda akan tetap dapat menggunakan ${ DRIVE_APP_NAME } seperti biasa - kami akan memberitahu Anda ketika proses ini telah selesai."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
@@ -2783,6 +2822,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        "Kami tidak dapat memverifikasi siapa yang mengunggah ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         "Kami akan memberitahukan Anda ketika proses impor telah selesai."
@@ -2906,6 +2951,26 @@
         "Beberapa kontak terlihat mirip. ${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        "atribut berkas"
+      ],
+      "file data": [
+        "data berkas"
+      ],
+      "keys": [
+        "kunci"
+      ],
+      "name": [
+        "nama"
+      ],
+      "name hash": [
+        "hash nama"
+      ],
+      "thumbnail": [
+        "thumbnail"
+      ]
+    },
     "Key badge": {
       "Expired": [
         "Kedaluwarsa"
@@ -2951,6 +3016,9 @@
       "Apply to all duplicated folders": [
         "Terapka ke semua folder duplikat"
       ],
+      "Apply to all unverified items": [
+        "Terapkan ke seluruh item yang tidak terverifikasi"
+      ],
       "Audio file": [
         "Berkas audio"
       ],
@@ -2965,6 +3033,9 @@
       ],
       "Calendars": [
         "Kalender"
+      ],
+      "Cancel download": [
+        "Batalkan unduhan"
       ],
       "Category": [
         "Kategori"
@@ -2999,6 +3070,9 @@
       "Do not ask again": [
         "Jangan tanyakan lagi"
       ],
+      "Download anyway": [
+        "Tetap unduh"
+      ],
       "Email address": [
         "Alamat surel"
       ],
@@ -3012,7 +3086,7 @@
         "Aktifkan Akses Beta"
       ],
       "Enabling Drive Search": [
-        "Mengaktifkan Drive Search"
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "Enkripsi surel"
@@ -3203,8 +3277,8 @@
       "Upload picture": [
         "Unggah gambar"
       ],
-      "Username or ProtonMail address": [
-        "Nama pengguna atau alamat ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Nama pengguna atau alamat ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Kode verifikasi"
@@ -3439,6 +3513,9 @@
       "File or folder is missing a name": [
         "Berkas atau folder belum dinamai"
       ],
+      "Item failed to be verified": [
+        "Item gagal diverifikasi"
+      ],
       "Link failed to be loaded": [
         "Gagal memuat tautan"
       ],
@@ -3502,6 +3579,28 @@
         "Harap diingat bahwa Anda harus ${ boldNextStep } untuk dapat memulai proses impor."
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        "Aktifkan Akses Beta"
+      ],
+      "Start using ${ appName }": [
+        "Mulai gunakan ${ appName }"
+      ],
+      "Upgrade account": [
+        "Tingkatkan akun"
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        "${ appName } saat ini sedang berada dalam tahapan early access dan hanya tersedia untuk pengguna berbayar."
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        "${ appName } saat ini hanya tersedia apabila Anda mengaktifkan Akses Beta."
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        "Lindungi seluruh berkas Anda dengan enkripsi end-to-end. Gunakan ${ appName } untuk menyimpan dan membagikan berkas Anda dengan aman."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Pilih nama tampilan"
@@ -3534,34 +3633,12 @@
         "Anda dapat mengubah ini kapanpun di pengaturan Anda."
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "Aktifkan Akses Beta"
-      ],
-      "Start using ${ appName }": [
-        "Mulai gunakan ${ appName }"
-      ],
-      "Upgrade account": [
-        "Tingkatkan akun"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } saat ini dalam masa akses dini dan hanya tersedia untuk pengguna paket berbayar."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } saat ini hanya tersedia jika Anda mengaktifkan Akses Beta."
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Lindungi seluruh berkas Anda dengan enkripsi end-to-end. Gunakan ${ appName } untuk menyimpan dan berbagi berkas Anda dengan aman."
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
         "${ appName } sedang dalam versi Beta"
       ],
       "Meet your new secure file storage": [
-        "Sambut penyimpanan berkas aman Anda yang baru"
+        "Sambut media penyimpanan berkas aman Anda yang baru"
       ],
       "Upgrade to access ${ appName }": [
         "Tingkatkan akun Anda untuk dapat mengakses ${ appName }"
@@ -4014,6 +4091,12 @@
       "Download failed": [
         "Unduhan gagal"
       ],
+      "Download unverified file?": [
+        "Unduh berkas yang tidak terverifikasi?"
+      ],
+      "Download unverified folder?": [
+        "Unduh folder yang tidak terverifikasi?"
+      ],
       "Downloading": [
         "Sedang mengunduh"
       ],
@@ -4051,7 +4134,7 @@
         "Kosongkan sampah"
       ],
       "Enable Drive Search": [
-        "Aktifkan Drive Search"
+        "Enable drive search"
       ],
       "Enter password to download": [
         "Masukkan kata sandi untuk mengunduh"
@@ -4059,8 +4142,8 @@
       "Enter your password": [
         "Masukkan sandi Anda"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Masukkan nama pengguna atau alamat email ProtonMail Anda"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Masukkan nama pengguna atau alamat email ${ MAIL_APP_NAME } Anda"
       ],
       "Exporting contacts": [
         "Mengekspor kontak"
@@ -4260,6 +4343,12 @@
       "The link failed to be loaded": [
         "Tautan gagal dimuat"
       ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "Berkas ini tidak ditandatangani atau memiliki tanda tangan yang tidak valid. Kunjungi Menu (⋮) → Details untuk informasi lebih lanjut."
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "Folder ini tidak ditandatangani atau memiliki tanda tangan yang tidak valid. Kunjungi Menu (⋮) → Details untuk informasi lebih lanjut."
+      ],
       "Total size": [
         "Ukuran total"
       ],
@@ -4333,8 +4422,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Sub-folder milik sistem akan muncul sebagai folder terpisah di ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan-pesan Anda yang paling baru."
@@ -4398,8 +4487,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Apabila Anda tidak ingat kata sandi Anda, maka Anda tidak dapat mengaktifkan ulang kunci yang ada. Kami dapat membantu Anda untuk menyelesaikan masalah ini, namun dalam prosesnya Anda akan kehilangan akses ke data-data yang terenkripsi dengan kunci tersebut secara permanen."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton akan secara otomatis menggabungkan folder-folder yang memiliki nama yang sama. Untuk menghindari hal ini, silahkan ubah nama-nama folder yang ada sebelum Anda mengimpor."

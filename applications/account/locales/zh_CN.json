@@ -214,8 +214,8 @@
       "Copy link": [
         "复制链接"
       ],
-      "Create a secure ProtonMail address instead": [
-        "创建一个安全的ProtonMail 地址"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        ""
       ],
       "Create address": [
         "创建地址"
@@ -349,8 +349,8 @@
       "Generate recovery phrase": [
         "生成恢复密语"
       ],
-      "Get ProtonVPN Plus": [
-        "开通 ProtonVPN 高级版"
+      "Get ${ vpnPlus }": [
+        ""
       ],
       "Get started": [
         "入门"
@@ -661,8 +661,8 @@
       "Show more": [
         "显示更多"
       ],
-      "Show shortcuts": [
-        "显示快捷键"
+      "Show preview": [
+        ""
       ],
       "sign in": [
         "登录"
@@ -776,7 +776,7 @@
         "使用双重验证码"
       ],
       "Use your current email address instead": [
-        "改用您当前的电子邮件地址"
+        ""
       ],
       "Use “${ label }” setting": [
         "使用 \"${ label }\" 设置"
@@ -1196,8 +1196,8 @@
       "Add link to your email footer": [
         "将链接加入邮件来源标识中"
       ],
-      "Continue using ProtonMail.": [
-        "继续使用 ProtonMail。"
+      "Continue using ${ MAIL_APP_NAME }.": [
+        ""
       ],
       "Copy": [
         "复制"
@@ -2315,8 +2315,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
-      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        "每邀请一位好友开通 ${ mailAppName } 最高可得 3 个月 ${ mailAppName } 增强版免费体验期。"
+      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
+        ""
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
@@ -2327,8 +2327,8 @@
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "在这里可以查询点击了您的邀请链接、注册以及开通付费账户的人数，亲眼目睹您的免费体验期逐步延长。"
       ],
-      "Track your referral link activities here.": [
-        "您的邀请链接动态将显示在这里。"
+      "You can continue to invite friends, but you wont be able to earn more credits": [
+        ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（.ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出此限，请将其拆分成较小的文件。"
@@ -2525,9 +2525,6 @@
       ],
       "Calendar limit reached": [
         "日历数量达到上限"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "日历主密钥未解密。"
       ],
       "Can't check username, try again later": [
         "无法检查用户名，请稍后再试"
@@ -2745,14 +2742,14 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "部分文件夹名称不可用，请自定导入内容并予以更改。"
       ],
-      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "部分文件夹名称超过了 ProtonMail 的长度限制，请自定导入内容并予以更改。"
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分标签名称不可用，请自定导入内容并予以更改。"
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "部分标签名称超过了 ProtonMail 的长度限制，请自定导入内容并予以更改。"
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
@@ -3197,9 +3194,6 @@
       ],
       "Torrenting support (P2P)": [
         "支持 BT 下载 (P2P)"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "VPN ${ connectionsPluralized }"
       ]
     },
     "file size format": {
@@ -3864,11 +3858,23 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } 无效"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        ""
+      ],
+      "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
+        ""
+      ],
+      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        ""
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } 免费版"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional 最低一个用户，每添加一个用户，会为组织添加 5GB 空间和 5 个电子邮箱别名。"
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
       ],
       "${ n } address": [
         "${ n } 个地址"
@@ -3933,6 +3939,15 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } 免费版"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        ""
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        ""
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        ""
+      ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
@@ -3951,8 +3966,8 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } 台设备可接入 ProtonVPN"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        ""
       ],
       "1. Invite friends to Proton": [
         "1. 邀请好友注册 Proton"
@@ -4002,8 +4017,8 @@
       "Account successfully updated": [
         "账户已成功更新"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ProtonMail me 或者 Private Message me。"
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        ""
       ],
       "Add a recovery email address": [
         "添加密保邮箱"
@@ -4137,8 +4152,8 @@
       "Basic, Plus or Visionary subscription required": [
         "需要 Basic、Plus 或 Visionary 订阅方案"
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "您需要先将下列 MX 记录添加到 DNS 中，才能通过自有域名收取 ProtonMail 邮件。此操作通常可以在域名注册商网站上完成。"
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        ""
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "使用新地址收发邮件前，您需要先为其创建密钥。"
@@ -4206,9 +4221,6 @@
       "Continue with ${ planName }": [
         "升级至 ${ planName } 并继续"
       ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        "请从速开通 ${ planName }，以免体验期结束后账户被停用。"
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "新建 ${ calendarsToBeCreated } 个日历"
       ],
@@ -4224,8 +4236,8 @@
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "使用您自己的域名创建并管理电子邮箱子账户。"
       ],
-      "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        ""
       ],
       "Create in": [
         "在此创建"
@@ -4263,8 +4275,8 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "删除其他 MX 记录，或者确保 ProtonMail 的优先级数字最小。"
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        ""
       ],
       "Delete link?": [
         "要删除链接吗？"
@@ -4278,8 +4290,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "不要忘记这个密码：如果您忘记了这个密码，您将无法管理您的机构。"
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "不要在 ProtonVPN 客户端或 ProtonVPN 总览上使用 OpenVPN / IKEv2 凭证。${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        ""
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "确定要让本机以外的所有设备退出此账户吗？"
@@ -4296,8 +4308,8 @@
       "Done! We sent a code to ${ destination }.": [
         "搞定！我们向 ${ destination } 发送了一个验证码。"
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "降级将导致与收费 ProtonVPN 服务器的所有连接断开。"
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        ""
       ],
       "Download recovery file": [
         "下载恢复文件"
@@ -4452,8 +4464,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "您可以为自有域名设置一个替补邮箱。如果由于发件人不慎输错等原因，某封邮件的收件地址在该域名中尚未分配，此邮件就将由替补邮箱代收。"
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        ""
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "如果您有礼品码，可以在此处使用。"
@@ -4473,14 +4485,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "若双重验证设备丢失，您可以使用这些代码代替验证码登录账户。每段代码只能使用一次。"
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "降级后您将不能再使用 ProtonMail 和 ProtonVPN 的收费功能。"
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        ""
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "降级后您将不能使用 ProtonMail 的收费功能，包括额外的存储空间和筛选规则。"
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        ""
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "降级后您将不能使用 ProtonVPN 的收费功能。"
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        ""
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "如果您近期重置了您的密码，您可以使用数据恢复手段解锁您的数据。"
@@ -4599,8 +4611,8 @@
       "Large imports can take several days.": [
         "大批量的导入可能需要几天才能完成。"
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "了解如何使用第三方 VPN 客户端登录到 ProtonVPN。"
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        ""
       ],
       "Learn more": [
         "了解详情"
@@ -4635,8 +4647,8 @@
       "Loading preview": [
         "正在载入预览"
       ],
-      "Log in to ProtonMail to activate your address": [
-        "登录 ProtonMail 激活您的邮箱地址"
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
+        ""
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "试图使用您的 Proton 账户登录任何 Proton 产品的操作都会被记录。"
@@ -4746,8 +4758,8 @@
       "One account for all Proton services": [
         "一个账户即可登录所有 Proton 服务"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "只有在与 ProtonMail 以外的邮箱使用 PGP 通讯时才应更改下列选项。"
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        ""
       ],
       "Only you can see the labels.": [
         "标签只对您可见。"
@@ -4881,27 +4893,6 @@
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "一旦您的电子邮件提供商重置了您账户的 ${ bandwithLimitLink }，Proton 将会尝试恢复导入。您不需要做任何事情。如果您取消导入，您将无法恢复导入，您需要重新开始。"
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMail 也允许只用一个密码代替登录和邮箱密码。输入您要使用的密码并点击保存即可转为单密码模式。"
-      ],
-      "ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        "ProtonMail 允许您为其他人创建电子邮件地址，这非常适合企业、家庭、或社会组织。"
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus 仅限一名用户使用，5 GB 存储空间起步。"
-      ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail 支持对自有域名予以 DKIM 数字签名。在您的域名 DNS 中加入下面的 CNAME 记录即可使用 DKIM，通常可以在域名注册商网站上设置。"
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } 最多允许 ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } 台设备同时连接。"
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "开通 ProtonVPN 普通版、增强版或尊享版方可连接指定国家。"
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "安全核心功能需升级为 ProtonVPN 专业版或尊享版。"
-      ],
       "Public link invite": [
         ""
       ],
@@ -5010,11 +5001,8 @@
       "Some keys successfully reactivated": [
         "已成功重新激活某些密钥"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF 用于指定谁有权为该域名发送邮件，因此我们强烈建议将 ProtonMail 加入 SPF 信息中。请在 DNS 中添加下面的 TXT 记录，通常可以在您的域名注册商网站上设置。"
-      ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "存储空间从 500 MB 开始逐步扩大。邮箱、日历、网盘均共用同一存储空间。"
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        ""
       ],
       "Starter VPN service with P2P support.": [
         "支持 P2P 的入门级 VPN 服务。"
@@ -5067,8 +5055,8 @@
       "The name will be visible to your users while they are logged in.": [
         "您的用户登录后即可看到机构名称。"
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "使用第三方 VPN 客户端或在路由器上设置 VPN 连接时，可通过这些配置文件选择连接到哪个 ProtonVPN 服务器。"
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        ""
       ],
       "This 30-day free trial is not available any other way.": [
         "免费试用 30 天，机会绝无仅有。"
@@ -5175,8 +5163,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "要想继续，请选择一种账户恢复方法用于验证请求。"
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "若想提高上网安全性，请为您的设备安装 ProtonVPN 应用程序并连接到 ProtonVPN 服务器。"
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        ""
       ],
       "To use ${ toAppName }, please create an address.": [
         "创建一个地址以使用${ toAppName }。"
@@ -5235,8 +5223,8 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "开通 ${ PLAN_NAMES[PLANS.VISIONARY] }、${ PLAN_NAMES[PLANS.PROFESSIONAL] } 或 ${ PLAN_NAMES[PLANS.PLUS] } 账户即可使用自动回复功能。"
       ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "开通付费账户即可借助 ProtonMail Bridge 使用 IMAP/SMTP 邮件客户端。"
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "立即升级账户即可继续享有下列 ${ appName } ${ planName } 权益。"
@@ -5253,8 +5241,8 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "使用自动回复通知对方您不在办公室或暂时无法回复。"
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "在没有客户端时，请使用以下凭证连接到 ProtonVPN 服务器。示例包括：macOS 下的 Tunnelblick, GNU/Linux 下的 OpenVPN。"
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        ""
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "在邮箱地址中使用您自己的域名（如 you@yourname.com）"
@@ -5286,8 +5274,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "警告：这是永久性删除，同时也会移除所有已连接服务的访问权限并删除您的所有联系人。"
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "我们建议您尽可能使用官方 ProtonVPN 客户端。"
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        ""
       ],
       "We recommend using your recovery phrase instead.": [
         "我们建议您改为使用恢复密语。"
@@ -5331,8 +5319,8 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "关闭后可防止在您不知情的情况下显示图像。"
       ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "开启通知后，您可在密保/通知邮箱中得知 ProtonMail 收到的新邮件。"
+      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
+        ""
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         "好友开通付费账户后，您的 ${ appName } ${ planName } 账户等级也将延长 1 至 3 个月。"
@@ -5364,9 +5352,6 @@
       "You are about to open another browser tab and visit:": [
         "您即将在新标签页中打开："
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "您已登录 ${ user.Name }（${ user.Email }），并且权限有限。"
-      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         ""
       ],
@@ -5394,11 +5379,11 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便此文件夹有新邮件时收到提醒。"
       ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "您可以通过 Outlook、Apple Mail、Thunderbird 等任何支持 IMAP/SMTP 的邮件客户端使用 ProtonMail。"
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        ""
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "您可以使用以下凭证通过第三方开源 VPN 客户端连接到 ProtonVPN 服务器，例如 macOS 下的 Tunnelblick 或 GNU/Linux 下的 OpenVPN。"
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        ""
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "未来 24 小时内您最多只能发送 ${ emailSendLimitNumber } 封邀请邮件"
@@ -5406,8 +5391,8 @@
       "You cannot refer ${ appName } users": [
         ""
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "您不能使用 OpenVPN / IKEv2 凭证登录 ProtonVPN 客户端或 ProtonVPN 总览。${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        ""
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
@@ -5418,8 +5403,8 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "您需要使用机构管理员提供给您的备份机构密码激活您的机构私钥。"
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "降级前需要停用或移除所有额外的 ProtonMail 用户、地址和自有域名。"
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "您的 PayPal 账户需要绑定信用卡或银行账户才能作为支付方式。"
@@ -5469,6 +5454,9 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。要使用 ${ toAppName }，请先创建账户。"
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        ""
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，因此功能已受限。${ payInvoiceLink }"
       ],
@@ -5502,9 +5490,6 @@
       "Your email will only be used for this one-time verification.": [
         "您的电子邮件将仅用于此一次性验证。"
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        "您的 ${ appName } ${ planName } 免费体验期将于 ${ formattedTrialExpirationDate } 结束。"
-      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "您的 ${ delayedImport.Account } 导入被暂时推迟。"
       ],
@@ -5528,9 +5513,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的Proton账户现已欠费停用。请付清逾期账单以继续使用您的账户。"
-      ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "您的 ProtonVPN 和 ProtonMail 账户是绑定在一起的，前往 ${ loginLink } 登录后可将其一起删除。"
       ],
       "Your recovery email address:": [
         "您的密保邮箱："
@@ -5568,11 +5550,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        ""
+      ],
       "Customizable features": [
         "可以根据需求自行调整"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail 不允许发送垃圾邮件或大规模群发邮件，合理的邮件没有数量限制。"
       ]
     },
     "Info for cash payment method": {
@@ -5949,11 +5931,14 @@
       " and ${ l }": [
         "、${ l }"
       ],
+      "${ MAIL_APP_NAME } address": [
+        ""
+      ],
+      "${ MAIL_APP_NAME } footer": [
+        ""
+      ],
       "${ monthsRewarded } month credited": [
         "已奖励 ${ monthsRewarded } 个月"
-      ],
-      "${ monthsRewarded } month pending": [
-        "将奖励 ${ monthsRewarded } 个月"
       ],
       "${ n } VPN connection available": [
         "可同时连接 ${ n } 台设备"
@@ -6054,9 +6039,6 @@
       "Calendars": [
         "日历"
       ],
-      "Cancel": [
-        "取消"
-      ],
       "Card holder": [
         "持卡人"
       ],
@@ -6093,6 +6075,9 @@
       "Conditions": [
         "条件"
       ],
+      "Confirm link URLs": [
+        ""
+      ],
       "Confirm login password": [
         "确认登录密码"
       ],
@@ -6128,6 +6113,9 @@
       ],
       "Country": [
         "国家"
+      ],
+      "Credits pending": [
+        ""
       ],
       "Credits used": [
         "扣除余额"
@@ -6342,9 +6330,6 @@
       "Last month only": [
         "仅上个月"
       ],
-      "Link confirmation": [
-        "打开链接前提示"
-      ],
       "Login password": [
         "登录密码"
       ],
@@ -6483,12 +6468,6 @@
       "Proton username": [
         "Proton 用户名"
       ],
-      "ProtonMail address": [
-        "ProtonMail 地址"
-      ],
-      "ProtonMail footer": [
-        "ProtonMail 标识"
-      ],
       "Read": [
         "已读"
       ],
@@ -6555,8 +6534,8 @@
       "Statement": [
         "要求"
       ],
-      "Submit": [
-        "提交"
+      "Sticky labels": [
+        ""
       ],
       "Subtotal": [
         "小计"
@@ -6623,9 +6602,6 @@
       ],
       "Use folder colors": [
         "使用文件夹颜色"
-      ],
-      "Use sticky labels": [
-        "自动加标签"
       ],
       "User": [
         "用户"
@@ -6715,8 +6691,8 @@
       ]
     },
     "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "向 ProtonMail 账户中添加您自己的域名。"
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        ""
       ]
     },
     "Label for domain modal": {
@@ -7057,11 +7033,6 @@
     "Many Others": {
       "and many others": [
         "- 等等"
-      ]
-    },
-    "Max VPN Connections": {
-      "Connection": [
-        "连接数"
       ]
     },
     "Member action": {
@@ -8466,6 +8437,9 @@
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 快捷键"
       ],
+      "${ MAIL_APP_NAME } Bridge": [
+        ""
+      ],
       "(highly recommended)": [
         "（强烈推荐）"
       ],
@@ -8634,9 +8608,6 @@
       "Change password": [
         "更改密码"
       ],
-      "Change password for ${ Name } (${ Email })": [
-        "更改 ${ Name } (${ Email } ) 的密码"
-      ],
       "Change role": [
         "更改角色"
       ],
@@ -8648,6 +8619,9 @@
       ],
       "Clear": [
         "清除"
+      ],
+      "Composing": [
+        ""
       ],
       "Confirm address": [
         "确认地址"
@@ -8817,9 +8791,6 @@
       "Email subscriptions": [
         "邮件订阅"
       ],
-      "Enable keyboard shortcuts": [
-        "启用快捷键"
-      ],
       "Encryption and keys": [
         "加密与密钥"
       ],
@@ -8859,8 +8830,8 @@
       "Generate new recovery phrase?": [
         "生成新的恢复密语吗?"
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "获取 ProtonVPN Plus 以访问所有服务器"
+      "Get ${ vpnPlus } to access all servers": [
+        ""
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "免费获得最长 18 个月的 ${ appName } ${ planName } 使用权"
@@ -8916,6 +8887,9 @@
       "Invoices": [
         "账单"
       ],
+      "Keyboard shortcuts": [
+        ""
+      ],
       "Labels": [
         "标签"
       ],
@@ -8933,6 +8907,9 @@
       ],
       "Messages": [
         "邮件"
+      ],
+      "Messages and composing": [
+        ""
       ],
       "Multi-user support": [
         "多用户功能"
@@ -8972,9 +8949,6 @@
       ],
       "Organization and keys": [
         "机构和密钥"
-      ],
-      "Other": [
-        "其他"
       ],
       "Password": [
         "密码"
@@ -9023,12 +8997,6 @@
       ],
       "Proton Logo": [
         "Proton标志"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonVPN": [
-        "ProtonVPN"
       ],
       "Reconnect your account": [
         "重新连接账户"
@@ -9189,8 +9157,8 @@
       "Total (monthly)": [
         "合计（每月）"
       ],
-      "Try the best of ProtonMail for free": [
-        "免费体验 ProtonMail 的最佳功能"
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        ""
       ],
       "Two-factor authentication": [
         "双重验证"
@@ -9270,8 +9238,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "ProtonMail 账单"
+      "${ MAIL_APP_NAME } invoice": [
+        ""
       ]
     },
     "Title header": {
@@ -9336,6 +9304,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        ""
+      ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "无论身在何方，Netflix、Amazon Prime、BBC iPlayer、Wikipedia、Facebook、YouTube 均触手可及。"
       ],
@@ -9375,11 +9346,11 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "详细日志会记录触发各事件的 IP 地址。"
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "同时享用 ${ vpnAppName } 和 ${ mailAppName }（拥有数百万用户的加密邮箱服务）的所有收费功能。"
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "同时享用 ProtonVPN 和 ProtonMail（拥有数百万用户的加密邮箱服务）的所有收费功能。"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "在收件箱中将同一对话中的电子邮件组合在一起或单独显示"
@@ -9395,9 +9366,6 @@
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield 保护您的设备，并可通过屏蔽广告、追踪器和恶意软件加速您的浏览。"
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "ProtonMail 用户默认使用这个密钥发送邮件"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "实现一键通过 Tor 网络通信。"
@@ -9420,8 +9388,8 @@
       "Support for file sharing protocols such as BitTorrent.": [
         "支持例如 BitTorrent 的文件分享协议。"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "系统子文件夹将在 ProtonMail 中显示为单独的文件夹"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        ""
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
@@ -9468,14 +9436,14 @@
       "You have locally decrypted this key": [
         "您已在本机解密此密钥"
       ],
+      "Your ${ MAIL_APP_NAME } inbox is almost full": [
+        ""
+      ],
       "Your DKIM signing is working.": [
         "您的 DKIM 签名机制已就绪。"
       ],
       "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
         "您的外部帐户可能已达到24小时带宽上限。Proton将尽快恢复导入。"
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "您的 ProtonMail 收件箱几乎已满"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -9484,13 +9452,13 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "选择面向非 ProtonMail 用户加密与数字签名的 PGP 格式。注意：PGP/Inline 只能用于发送纯文本邮件。"
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        ""
       ]
     },
     "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "收到其他 ProtonMail 用户发来的邮件时，若尚未信任其密钥，则询问是否予以信任。"
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        ""
       ]
     },
     "Tooltip sign external messages": {
@@ -9555,9 +9523,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } 尊享版"
-      ],
       "30-days money-back guarantee": [
         "30 天内可退款"
       ],
@@ -9738,7 +9703,7 @@
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "取消导入后您将无法恢复当前进度，但已导入的内容会正常保存。确定要取消吗？"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
@@ -9759,8 +9724,8 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "您设备上的日期和时间设置未同步。${ learnMore }"
       ],
-      "This feature is only available for ProtonMail Professional plans or higher": [
-        "此功能仅限 ProtonMail 专业版及以上套餐使用"
+      "This feature is only available for ${ mailProfessional } plans or higher": [
+        ""
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "此次导入可能会耗尽您的 Proton 账户存储空间，请考虑缩减导入内容。"

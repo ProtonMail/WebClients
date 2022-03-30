@@ -794,6 +794,9 @@
       "Show more search options": [
         "Prikaži više opcija pretraživanja"
       ],
+      "Show preview": [
+        ""
+      ],
       "Sign out": [
         "Odjava"
       ],
@@ -1106,7 +1109,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -1281,7 +1284,7 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ]
     },
@@ -3024,7 +3027,7 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         ""
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
@@ -3757,6 +3760,9 @@
         "${ groupCounts } grupe pronađene",
         "${ groupCounts } grupa pronađeno"
       ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        ""
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } poruka se nije mogla premjestiti.",
         "${ messagesNotAuthorizedToMove } poruke se nije moglo premjestiti.",
@@ -4124,11 +4130,11 @@
         "ugrađenih slika",
         "ugrađenih slika"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "Šifriraj za korisnike koji nisu na ProtonMailu"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        ""
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Šifrirane poruke poslane primateljima koji nisu na ProtonMailu istječu za 28 dana, osim ako nije postavljeno kraće vrijeme isteka."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
@@ -4216,8 +4222,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Ako ovu poruku šaljete korisniku koji ne koristi ProtonMail, svakako postavite lozinku za svoju poruku."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        ""
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
@@ -4320,8 +4326,8 @@
       "Merged": [
         ""
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "Istek poruka radi po zadanom prilikom slanja e-pošte drugim korisnicima ProtonMaila. Za slanje e-poruka koje istječu, korisnicima koji nisu korisnici ProtonMail-a, molimo otkažite i dodajte zaštitu lozinkom za svoju e-poštu."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        ""
       ],
       "Message headers": [
         "Zaglavlja poruke"
@@ -4401,8 +4407,8 @@
       "of": [
         "od"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        ""
       ],
       "Other options": [
         ""
@@ -4410,11 +4416,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Naš je sustav ovu e-poruku označio kao pokušaj krađe identiteta. Molimo provjerite je li legitimna poruka."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline je kompatibilan samo s običnim tekstualnim oblikom. Imajte na umu da ProtonMail uvijek potpisuje šifrirane poruke."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        ""
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatski šalje poruku koristeći trenutni način rada prozora za novu poruku. Imajte na umu da ProtonMail uvijek potpisuje šifrirane poruke"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        ""
       ],
       "Phone number": [
         "Broj telefona"
@@ -4462,9 +4468,6 @@
         ""
       ],
       "Proton doesn't make money by abusing privacy.": [
-        ""
-      ],
-      "ProtonMail can protect your business as well.": [
         ""
       ],
       "Recipient: ": [
@@ -4542,14 +4545,14 @@
       "Session timed out": [
         ""
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        ""
+      ],
       "Set a recovery phrase": [
         ""
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         ""
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ProtonMaila, ali koriste PGP kompatibilne usluge."
       ],
       "Show original message": [
         "Prikaži originalnu poruku"
@@ -4560,7 +4563,7 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
-      "Store and share files securely with Proton Drive.": [
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Subject": [
@@ -4772,7 +4775,7 @@
       "Upgrade to support privacy and get more features.": [
         ""
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         ""
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
@@ -4862,7 +4865,7 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
       ],
-      "You can use ProtonVPN for free today.": [
+      "You can use ${ VPN_APP_NAME } for free today.": [
         ""
       ],
       "You cannot reply from the invited address.": [
@@ -5564,8 +5567,8 @@
       "Upload picture": [
         "Učitaj sliku"
       ],
-      "Username or ProtonMail address": [
-        "Korisničko ime ili ProtonMail adresa"
+      "Username or ${ MAIL_APP_NAME } address": [
+        ""
       ],
       "Verification code": [
         "Kôd za provjeru"
@@ -6089,8 +6092,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        ""
+      ],
+      "Available on iOS and Android.": [
+        ""
+      ],
+      "Get the ${ appName } mobile app": [
+        ""
+      ],
+      "Import your messages": [
+        ""
+      ],
+      "Meet your encrypted mailbox": [
+        ""
+      ],
       "Next": [
         "Sljedeće"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -6123,26 +6144,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Možete promijeniti bilo kada u vašim postavkama."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } sada je moderniji i prilagodljiviji, a istovremeno štiti vaše podatke naprednim šifriranjem."
-      ],
-      "Available on iOS and Android.": [
-        "Dostupno na iOS i Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Nabavite ${ appName } mobilnu aplikaciju"
-      ],
-      "Import your messages": [
-        "Uvoz vaših poruka"
-      ],
-      "Meet your encrypted mailbox": [
-        "Upoznajte vaš šifrirani poštanski sandučić"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Naš Import Assistant brzo prenosi svu vašu e-poštu u vaš novi šifrirani poštanski sandučić."
       ]
     },
     "Option": {
@@ -6406,8 +6407,8 @@
       "PGP-signed message. Sender verification failed": [
         "Poruka s PGP potpisom. Provjera pošiljatelja nije uspjela"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Poslano putem ProtonMaila s šifriranjem nultog pristupa"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
       "Stored with zero-access encryption": [
         "Spremljeno s šifriranjem nultog pristupa"
@@ -6490,17 +6491,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "Šifrirao ProtonMail"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        ""
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "Šifrira ProtonMail za PGP primatelja"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "Šifrira ProtonMail za provjerenog PGP primatelja"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "Šifrira ProtonMail za provjerenog primatelja"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        ""
       ],
       "End-to-end encrypted": [
         "End-to-End šifriranje"
@@ -6517,13 +6518,13 @@
       "PGP-signed": [
         "PGP potpisano"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Poslano putem ProtonMaila s šifriranjem nultog pristupa"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "Poslano putem ProtonMaila s šifriranjem nultog pristupa za pouzdanog primatelja",
-        "Poslano putem ProtonMaila s šifriranjem nultog pristupa za pouzdane primatelje",
-        "Poslano putem ProtonMaila s šifriranjem nultog pristupa za pouzdane primatelje"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "",
+        "",
+        ""
       ],
       "Sent by you with end-to-end encryption": [
         "Poslano koristeći end-to-end šifriranje"
@@ -7178,8 +7179,8 @@
       "Enter your password": [
         "Unesite vašu lozinku"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        ""
       ],
       "Error": [
         "Pogreška"
@@ -7312,9 +7313,6 @@
       ],
       "Previous message": [
         "Prethodna e-poruka"
-      ],
-      "ProtonMail": [
-        ""
       ],
       "Re-sign all contacts": [
         "Ponovno potpiši sve kontakte"
@@ -7475,7 +7473,7 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Odaberite PGP shemu koja će se koristiti prilikom potpisivanja ili šifriranja korisniku. Imajte na umu da PGP/Inline prisilno šalje obične tekstualne poruke"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         ""
       ],
       "The import will start with the most recent messages.": [
@@ -7551,7 +7549,7 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ako ste zaboravili lozinku, nemoguće je ponovno aktivirati vaš ključ. Možemo vam pomoći da odbacite natpis upozorenja, ali tijekom postupka trajno ćete izgubiti pristup svim podacima šifriranim tim ključem."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [

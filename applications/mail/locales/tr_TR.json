@@ -302,7 +302,7 @@
         "Etkinleştir"
       ],
       "enable desktop notifications": [
-        "masaüstü bildirimlerini etkinleştir"
+        "masaüstü bildirimlerini etkinleştirmek"
       ],
       "Encryption": [
         "Şifrele"
@@ -438,7 +438,7 @@
         "Yatık"
       ],
       "Keyboard shortcuts": [
-        "Tuş takımı kısayolları"
+        "Klavye kısayolları"
       ],
       "Label as": [
         "Etiketle"
@@ -528,7 +528,7 @@
         "e-postaları şuraya taşı"
       ],
       "Move to": [
-        "Şuraya taşı"
+        "Şuraya taşınsın"
       ],
       "Move to archive": [
         "Arşive taşı"
@@ -546,7 +546,7 @@
         "Çöpe at"
       ],
       "Move to...": [
-        "Şuraya taşı..."
+        "Taşı..."
       ],
       "Need help?": [
         "Yardım gerekiyor mu?"
@@ -791,6 +791,9 @@
       "Show more search options": [
         "Daha fazla arama seçeneği göster"
       ],
+      "Show preview": [
+        "Ön izlemeyi göster"
+      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -913,7 +916,7 @@
         "Gönderim için kullan"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
-        "Fareyi ya da tuş takımındaki sağ ve sol ok tuşlarını kullanarak görünümün boyutunu değiştirebilirsiniz."
+        "Fareyi ya da klavyedeki sağ ve sol ok tuşlarını kullanarak görünümün boyutunu değiştirebilirsiniz."
       ],
       "Use “${ label }” setting": [
         "\"${ label }\" ayarı kullanılsın"
@@ -1101,8 +1104,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta erişimi, ${ mailAppName }, ${ calendarAppName } ve Proton Drive beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta erişimi, ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
@@ -1276,8 +1279,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "ProtonMail kullanmayı sürdürün."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ]
     },
     "Calendar attachment tooltip": {
@@ -3005,8 +3008,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Bazı etiket adlarınız ProtonMail tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -3451,7 +3454,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Hesabınızın toplam depolama alanını ${ rewardInGb } GB yaptık. Bugün ek depolama alanı alın ve ücretli özelliklere erişin."
       ],
       "You're all set!": [
         "Her şey tamam!"
@@ -3459,7 +3462,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Tüm adımları tamamlayın ve hesabınızın depolama alanınızı ${ rewardInGb } GB yapın"
       ],
       "Expires soon": [
         "Yakında geçersiz olacak"
@@ -3561,8 +3564,8 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } öneri bulundu, gezinmek için tuş takımını kullanın.",
-        "${ items.length } öneri bulundu, gezinmek için tuş takımını kullanın."
+        "${ items.length } öneri bulundu, gezinmek için klavyeyi kullanın.",
+        "${ items.length } öneri bulundu, gezinmek için klavyeyi kullanın."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Girişten sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
@@ -3719,6 +3722,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME }, kuruluşunuzu da koruyabilir."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } ileti taşınamadı.",
@@ -3910,7 +3916,7 @@
         "İsviçre merkezli, tüm dünyada kullanılabilir"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Temel gezinme ve işlemler, ayarlardaki tuş takımı kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
+        "Temel gezinme ve işlemler, ayarlardaki klavye kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
       ],
       "Body: ": [
         "İçerik: "
@@ -4058,11 +4064,11 @@
         "gömülmüş görsel",
         "gömülmüş görsel"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "ProtonMail kullanıcısı olmayanlar için şifreleme"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        "${ BRAND_NAME } kullanmayan kişiler için şifrele"
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "ProtonMail kullanmayan alıcılara gönderilen şifrelenmiş iletiler, daha kısa bir süre belirtilmedikçe 28 gün sonra geçersiz olur."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        "${ BRAND_NAME } kullanmayan alıcılara gönderilen şifrelenmiş iletiler, daha kısa bir süre belirtilmedikçe 28 gün sonra geçersiz olur."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
@@ -4146,8 +4152,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Bu iletiyi ProtonMail kullanmayan bir kişiye gönderiyorsanız, iletiniz için bir parola ayarladığınızdan emin olun."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        "Bu iletiyi ${ MAIL_APP_NAME } kullanmayan bir kişiye gönderiyorsanız, iletiniz için bir parola ayarladığınızdan emin olun."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
@@ -4249,8 +4255,8 @@
       "Merged": [
         "Birleştirilmiş"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "Süreli iletiler diğer ProtonMail kullanıcılarına e-posta gönderirken sorunsuz kullanılabilir. ProtonMail kullanmayan kişilere geçerlilik süresi olan e-postalar göndermek için lütfen işlemi iptal edip e-postanıza parola koruması ekleyin."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "Süreli iletiler diğer ${ MAIL_APP_NAME } kullanıcılarına e-posta gönderirken sorunsuz kullanılabilir. ${ BRAND_NAME } kullanmayan kişilere geçerlilik süresi olan e-postalar göndermek için lütfen işlemi iptal edip e-postanıza parola koruması ekleyin."
       ],
       "Message headers": [
         "İleti üst bilgileri"
@@ -4330,8 +4336,8 @@
       "of": [
         "/"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Bu ayarları yalnızca ProtonMail dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
       ],
       "Other options": [
         "Diğer seçenekler"
@@ -4339,11 +4345,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemimiz bu iletiyi bir kimlik avı girişimi olarak işaretledi. Lütfen göründüğü gibi olup olmadığını kontrol edin."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ProtonMail uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ProtonMail tarafından imzalandığını unutmayın"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ${ MAIL_APP_NAME } tarafından imzalandığını unutmayın"
       ],
       "Phone number": [
         "Telefon numarası"
@@ -4392,9 +4398,6 @@
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton kişisel güvenliğinizi ihlal ederek para kazanmaz."
-      ],
-      "ProtonMail can protect your business as well.": [
-        "ProtonMail, işinizi de koruyabilir."
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -4471,14 +4474,14 @@
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Bu tarayıcı için varsayılan e-posta uygulamasını ${ MAIL_APP_NAME } yapabilirsiniz. Bir e-posta bağlantısına tıkladığınızda otomatik olarak ${ MAIL_APP_NAME } açılır."
+      ],
       "Set a recovery phrase": [
         "Bir kurtarma ifadesi ayarla"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Bu tarayıcı için varsayılan e-posta uygulamasını ProtonMail yapabilirsiniz. Bir e-posta bağlantısına tıkladığınızda otomatik olarak ProtonMail açılır."
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ProtonMail kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
       "Show original message": [
         "Özgün iletiyi göster"
@@ -4489,8 +4492,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
       ],
-      "Store and share files securely with Proton Drive.": [
-        "Proton Drive ile dosyalarınızı güvenle depolayın ve paylaşın."
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        "${ DRIVE_APP_NAME } ile dosyaları güvenli bir şekilde saklayın ve paylaşın."
       ],
       "Subject": [
         "Konu"
@@ -4700,8 +4703,8 @@
       "Upgrade to support privacy and get more features.": [
         "Kişisel gizliliği desteklemek ve daha fazla özellikten yararlanmak için yükseltin."
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Üçüncü taraf masaüstü uygulamaları ile ProtonMail kullanmak için yükseltin."
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        "Üçüncü taraf masaüstü uygulamaları ile ${ MAIL_APP_NAME } kullanmak için yükseltin."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "${ appName } ${ planName } fırsatlarını kaçırmamak için hesabınızı bugün yükseltin."
@@ -4719,7 +4722,7 @@
         "Takviminizi kişisel tutmak için ${ calendarAppName } kullanın."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
-        "E-postanızı daha hızlı yönetmek için tuş takımı kısayollarını kullanın."
+        "E-postanızı daha hızlı yönetmek için klavye kısayollarını kullanın."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Mobil aygıtınızı kullanarak, bu karekodu tarayın veya ${ link } adresine gidin."
@@ -4790,14 +4793,14 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
       ],
-      "You can use ProtonVPN for free today.": [
-        "Bugün ücretsiz ProtonVPN kullanmaya başlayabilirsiniz."
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        "${ VPN_APP_NAME } uygulamasını bugün ücretsiz olarak kullanabilirsiniz."
       ],
       "You cannot reply from the invited address.": [
         "Davet edilen adresten yanıtlayamazsınız."
       ],
       "You do not have any messages here": [
-        "Burada herhangi bir iletiniz yok"
+        "Burada herhangi bir ileti yok"
       ],
       "You have ${ totalLabel } in your inbox.": [
         "Gelen kutunuzda ${ totalLabel } mevcut."
@@ -4806,16 +4809,16 @@
         "Gelen kutunuzda ${ unreadsLabel } var."
       ],
       "You have **${ count } conversation** stored in this folder": [
-        "Bu klasörde kayıtlı **${ count } yazışma** var",
-        "Bu klasörde kayıtlı **${ count } yazışma** var"
+        "Bu klasörde **${ count } yazışma** var",
+        "Bu klasörde **${ count } yazışma** var"
       ],
       "You have **${ count } conversation** tagged with this label": [
         "Bu etiketi taşıyan **${ count } yazışmanız** var",
         "Bu etiketi taşıyan **${ count } yazışmanız** var"
       ],
       "You have **${ count } message** stored in this folder": [
-        "Bu klasörde kayıtlı **${ count } ileti** var",
-        "Bu klasörde kayıtlı **${ count } ileti** var"
+        "Bu klasörde **${ count } ileti** var",
+        "Bu klasörde **${ count } ileti** var"
       ],
       "You have **${ count } message** tagged with this label": [
         "Bu etiketi taşıyan **${ count } iletiniz** var",
@@ -5040,7 +5043,7 @@
         "Çöpe at"
       ],
       "Move to...": [
-        "Şuraya taşı..."
+        "Taşı..."
       ],
       "Move up": [
         "Yukarı git"
@@ -5300,7 +5303,7 @@
         "E-posta adresi içine aktar"
       ],
       "Keyboard shortcuts": [
-        "Tuş takımı kısayolları"
+        "Klavye kısayolları"
       ],
       "Keyword": [
         "Anahtar sözcük"
@@ -5482,8 +5485,8 @@
       "Upload picture": [
         "Görsel yükle"
       ],
-      "Username or ProtonMail address": [
-        "Kullanıcı adı ya da ProtonMail adresi"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Kullanıcı adı ya da ${ MAIL_APP_NAME } adresi"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -6002,8 +6005,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        "${ appName } verilerinizi gelişmiş şifreleme ile korumaya devam ederken daha modern ve özelleştirilebilir oldu."
+      ],
+      "Available on iOS and Android.": [
+        "iOS ve Android ile kullanılabilir."
+      ],
+      "Get the ${ appName } mobile app": [
+        "${ appName } mobil uygulamasını alın"
+      ],
+      "Import your messages": [
+        "İletilerinizi içe aktarın"
+      ],
+      "Meet your encrypted mailbox": [
+        "Şifrelenmiş posta kutunuzla tanışın"
+      ],
       "Next": [
         "Sonraki"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        "İçe aktarma yardımcımız, tüm e-postalarınızı şifrelenmiş posta kutunuza hızlıca aktarır."
       ]
     },
     "Onboarding Proton": {
@@ -6036,26 +6057,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Bunu istediğiniz zaman ayarlarınızdan değiştirebilirsiniz."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } verilerinizi gelişmiş şifreleme ile korumaya devam ederken daha modern ve özelleştirilebilir oldu."
-      ],
-      "Available on iOS and Android.": [
-        "iOS ve Android ile kullanılabilir."
-      ],
-      "Get the ${ appName } mobile app": [
-        "${ appName } mobil uygulamasını alın"
-      ],
-      "Import your messages": [
-        "İletilerinizi içe aktarın"
-      ],
-      "Meet your encrypted mailbox": [
-        "Şifrelenmiş posta kutunuzla tanışın"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "İçe aktarma yardımcımız, tüm e-postalarınızı şifrelenmiş posta kutunuza hızlıca aktarır."
       ]
     },
     "Option": {
@@ -6317,8 +6318,8 @@
       "PGP-signed message. Sender verification failed": [
         "PGP ile imzalanmış ileti. Gönderici doğrulanamadı"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "ProtonMail tarafından sıfır erişim şifrelemesi ile gönderildi"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "${ MAIL_APP_NAME } tarafından sıfır erişim şifrelemesi ile gönderildi"
       ],
       "Stored with zero-access encryption": [
         "Sıfır erişim şifrelemesiyle kaydedildi"
@@ -6397,17 +6398,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "ProtonMail tarafından şifrelenmiş"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } tarafından şifrelenmiş"
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "PGP alıcısına ProtonMail tarafından şifrelenmiş"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "PGP alıcısına ${ MAIL_APP_NAME } tarafından şifrelenmiş"
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "Doğrulanmış PGP alıcısına ProtonMail tarafından şifrelenmiş"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Doğrulanmış PGP alıcısına ${ MAIL_APP_NAME } tarafından şifrelenmiş"
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "Doğrulanmış alıcıya ProtonMail tarafından şifrelenmiş"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "Doğrulanmış alıcıya ${ MAIL_APP_NAME } tarafından şifrelenmiş"
       ],
       "End-to-end encrypted": [
         "Uçtan uca şifrelenmiş"
@@ -6424,12 +6425,12 @@
       "PGP-signed": [
         "PGP ile imzalanmış"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "ProtonMail tarafından sıfır erişim şifrelemesi ile gönderildi"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "${ MAIL_APP_NAME } tarafından sıfır erişim şifrelemesi ile gönderildi"
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "ProtonMail tarafından doğrulanmış alıcıya sıfır erişim şifrelemesi ile gönderildi",
-        "ProtonMail tarafından doğrulanmış alıcıya sıfır erişim şifrelemesi ile gönderildi"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "${ MAIL_APP_NAME } tarafından doğrulanmış alıcıya sıfır erişim şifrelemesi ile gönderildi",
+        "${ MAIL_APP_NAME } tarafından doğrulanmış alıcıya sıfır erişim şifrelemesi ile gönderildi"
       ],
       "Sent by you with end-to-end encryption": [
         "Sizin tarafınızdan uçtan uca şifreleme ile gönderildi"
@@ -6681,7 +6682,7 @@
         "Klasör temizlendi"
       ],
       "Keyboard shortcuts preferences updated": [
-        "Tuş takımı kısayol tercihleri güncellendi"
+        "Klavye kısayol tercihleri güncellendi"
       ],
       "Label cleared": [
         "Etiket temizlendi"
@@ -6864,7 +6865,7 @@
     },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
-        "${ appName } tuş takımı kısayolları"
+        "${ appName } klavye kısayolları"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } üye",
@@ -7047,8 +7048,8 @@
       "Enter your password": [
         "Parolanızı yazın"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Kullanıcı adınızı ya da ProtonMail e-posta adresinizi yazın"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Kullanıcı adınızı ya da ${ MAIL_APP_NAME } e-posta adresinizi yazın"
       ],
       "Error": [
         "Hata"
@@ -7181,9 +7182,6 @@
       ],
       "Previous message": [
         "Önceki ileti"
-      ],
-      "ProtonMail": [
-        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Tüm kişileri yeniden imzala"
@@ -7343,8 +7341,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Sistem alt klasörleri ProtonMail üzerinde ayrı klasörler olarak görünecek"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
@@ -7416,8 +7414,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Canlı sohbet yalnızca ücretli ProtonVPN tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Canlı sohbet yalnızca ücretli ${ VPN_APP_NAME } tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
