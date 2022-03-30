@@ -13,8 +13,6 @@ interface Props {
     recipient: Recipient;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
-    showAddress?: boolean;
-    showLockIcon?: boolean;
     isNarrow?: boolean;
     showDropdown?: boolean;
     actualLabel?: string;
@@ -24,6 +22,9 @@ interface Props {
     toggle: () => void;
     close: () => void;
     isOutside?: boolean;
+    hideAddress?: boolean;
+    isRecipient?: boolean;
+    isExpanded?: boolean;
 }
 
 const RecipientItemSingle = ({
@@ -31,8 +32,6 @@ const RecipientItemSingle = ({
     recipient,
     mapStatusIcons,
     globalIcon,
-    showAddress = true,
-    showLockIcon = true,
     isNarrow,
     showDropdown,
     actualLabel,
@@ -42,6 +41,9 @@ const RecipientItemSingle = ({
     toggle,
     close,
     isOutside,
+    hideAddress = false,
+    isRecipient = false,
+    isExpanded = false,
 }: Props) => {
     const [uid] = useState(generateUID('dropdown-recipient'));
 
@@ -49,32 +51,31 @@ const RecipientItemSingle = ({
 
     const icon = globalIcon || (mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined);
 
-    // We don't want to show the address in the collapsed mode unless the recipient Name = recipient Address
-    // In this case, we want to display the Address only
-    const actualShowAddress = showAddress ? showAddress : label === recipient.Address;
+    // We don't want to show the address:
+    // - If recipient has no name (in that case name = address)
+    // - In mail recipients on collapsed mode
+    // - In the collapsed message header
+    const showAddress =
+        (isExpanded && label !== recipient.Address) || (!isRecipient && !hideAddress && label !== recipient.Address);
 
     // If the message is has been forwarded, replied or replied all we want to display an icon
     const isActionLabel = message?.data?.IsForwarded || message?.data?.IsReplied || message?.data?.IsRepliedAll;
-
-    const canDisplayName = label !== recipient.Address;
 
     return (
         <RecipientItemLayout
             label={label}
             itemActionIcon={<ItemAction element={message?.data} />}
             labelHasIcon={!!isActionLabel}
-            showAddress={actualShowAddress}
-            address={recipient.Address}
+            showAddress={showAddress}
+            address={`<${recipient.Address}>`}
             title={`${label} <${recipient.Address}>`}
             icon={
-                showLockIcon &&
                 icon && (
-                    <span className="inline-flex ml0-25 flex-item-noshrink message-recipient-item-lockIcon">
+                    <span className="inline-flex flex-item-noshrink message-recipient-item-lockIcon mr0-25">
                         <EncryptionStatusIcon {...icon} />
                     </span>
                 )
             }
-            canDisplayName={canDisplayName}
             isNarrow={isNarrow}
             showDropdown={showDropdown}
             dropdrownAnchorRef={anchorRef}
@@ -96,6 +97,7 @@ const RecipientItemSingle = ({
                 </Dropdown>
             }
             isOutside={isOutside}
+            isRecipient={isRecipient}
         />
     );
 };
