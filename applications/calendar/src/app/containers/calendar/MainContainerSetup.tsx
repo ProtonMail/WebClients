@@ -2,7 +2,6 @@ import { getDefaultTzid } from '@proton/shared/lib/calendar/getSettings';
 import { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import {
-    ReferralModalContainer,
     useActiveBreakpoint,
     useCalendarsInfoListener,
     useCalendarUserSettings,
@@ -28,6 +27,7 @@ import CalendarContainer from './CalendarContainer';
 import AlarmContainer from '../alarms/AlarmContainer';
 import EventActionContainer from './EventActionContainer';
 import { EventTargetAction } from './interface';
+import CalendarStartupModals from './CalendarStartupModals';
 
 interface Props {
     calendars: VisualCalendar[];
@@ -71,7 +71,7 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
 
     return (
         <>
-            <ReferralModalContainer />
+            <CalendarStartupModals />
             <Switch>
                 <Route path="/event">
                     <EventActionContainer

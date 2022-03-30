@@ -8,7 +8,6 @@ import {
     useLoading,
     useWelcomeFlags,
     useEarlyAccess,
-    ReferralModalContainer,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
@@ -25,6 +24,7 @@ import OnboardingContainer from './OnboardingContainer';
 import SharedURLsContainer from './SharedLinksContainer';
 import TrashContainer from './TrashContainer';
 import { SearchContainer } from './SearchContainer';
+import DriveStartupModals from './DriveStartupModals';
 
 enum ERROR_TYPES {
     STANDARD,
@@ -117,7 +117,7 @@ const InitContainer = () => {
 
     return (
         <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
-            <ReferralModalContainer />
+            <DriveStartupModals />
             <ModalsChildren />
             <TransferManager />
             <DriveWindow>
