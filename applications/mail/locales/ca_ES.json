@@ -791,6 +791,9 @@
       "Show more search options": [
         "Mostrar més opcions de cerca"
       ],
+      "Show preview": [
+        ""
+      ],
       "Sign out": [
         "Tancar la sessió"
       ],
@@ -1101,7 +1104,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -1276,7 +1279,7 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ]
     },
@@ -3005,8 +3008,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms d'etiqueta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Alguns dels vostres noms d'etiquetes superen el límit de caràcters màxim de ProtonMail. Personalitzeu la importació per tal d'editar-ne els noms."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
@@ -3720,6 +3723,9 @@
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
       ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        ""
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } missatge no s'ha pogut moure.",
         "${ messagesNotAuthorizedToMove } missatges no s'han pogut moure."
@@ -4058,11 +4064,11 @@
         "imatge integrade",
         "imatges integrades"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "Xifrar per a usuaris que no siguin de ProtonMail"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        ""
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Els missatges xifrats a destinataris sense ProtonMail expiraran al cap de 28 dies, llevat que s'estableixi un temps d'expiració més curt."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
@@ -4146,8 +4152,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Si esteu enviant aquest missatge a un usuari que no sigui ProtonMail, assegureu-vos d'establir una contrasenya per al vostre missatge."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        ""
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
@@ -4249,8 +4255,8 @@
       "Merged": [
         "Combinats"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "La caducitat del missatge funciona automàticament quan s'envien correus electrònics a altres usuaris de ProtonMail. Per enviar correus electrònics que caduquin a usuaris que no siguin de ProtonMail, cancel·leu i afegiu la protecció de contrasenya al correu electrònic."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        ""
       ],
       "Message headers": [
         "Capçaleres del missatge"
@@ -4330,8 +4336,8 @@
       "of": [
         "de"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Canvieu aquestes funcions únicament si esteu emprant PGP amb destinataris sense ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        ""
       ],
       "Other options": [
         "Altres opcions"
@@ -4339,11 +4345,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "El nostre sistema ha marcat aquest missatge com un intent de suplantació d'identitat. Comproveu que sigui legítim."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/En línia només és compatible amb text sense format. Tingues en compte que ProtonMail sempre signa els missatges xifrats."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        ""
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME envia automàticament el missatge utilitzant el mode actual de l'editor. Tingues en compte que ProtonMail sempre signa els missatges xifrats"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        ""
       ],
       "Phone number": [
         "Número de telèfon"
@@ -4392,9 +4398,6 @@
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton no guanya diners abusant de la privacitat."
-      ],
-      "ProtonMail can protect your business as well.": [
-        "ProtonMail també pot protegir el vostre negoci."
       ],
       "Recipient: ": [
         "Destinatari: "
@@ -4471,14 +4474,14 @@
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        ""
+      ],
       "Set a recovery phrase": [
         "Establir una frase de recuperació"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Establir ProtonMail com a l'aplicació de correu electrònic predeterminada per aquest navegador. ProtonMail s'obrirà automàticament quan cliqueu un enllaç de correu electrònic."
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ProtonMail i que utilitza un servei compatible amb PGP."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        ""
       ],
       "Show original message": [
         "Mostra el missatge original"
@@ -4489,8 +4492,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
-      "Store and share files securely with Proton Drive.": [
-        "Emmagatzemeu i compartiu fitxers de forma segura amb Proton Drive."
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Subject": [
         "Assumpte"
@@ -4700,8 +4703,8 @@
       "Upgrade to support privacy and get more features.": [
         "Actualitzeu per donar suport a la privacitat i obtenir més funcionalitats."
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Actualitzeu per utilitzar ProtonMail amb clients d'escriptori de tercers."
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
@@ -4790,8 +4793,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
       ],
-      "You can use ProtonVPN for free today.": [
-        "Podeu utilitzar ProtonVPN gratuïtament avui."
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        ""
       ],
       "You cannot reply from the invited address.": [
         "No podeu contestar des de l'adreça convidada."
@@ -5482,8 +5485,8 @@
       "Upload picture": [
         "Carregar imatge"
       ],
-      "Username or ProtonMail address": [
-        "Nom d'usuari o adreça ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        ""
       ],
       "Verification code": [
         "Codi de verificació"
@@ -6002,8 +6005,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        ""
+      ],
+      "Available on iOS and Android.": [
+        ""
+      ],
+      "Get the ${ appName } mobile app": [
+        ""
+      ],
+      "Import your messages": [
+        ""
+      ],
+      "Meet your encrypted mailbox": [
+        ""
+      ],
       "Next": [
         "Següent"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -6036,26 +6057,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Podeu canviar-ho en qualsevol moment a les preferències."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } és ara més modern i personalitzable tot mantenint la protecció de les vostres dades amb xifratge avançat."
-      ],
-      "Available on iOS and Android.": [
-        "Disponible per iOS i Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Obteniu l'aplicació mòbil de ${ appName }"
-      ],
-      "Import your messages": [
-        "Importeu els vostres missatges"
-      ],
-      "Meet your encrypted mailbox": [
-        "Conegueu la vostra bústia de correu xifrada"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Import Assistant transfereix ràpidament els vostres correus electrònics a la vostra nova bústia de correu xifrada."
       ]
     },
     "Option": {
@@ -6317,8 +6318,8 @@
       "PGP-signed message. Sender verification failed": [
         "Missatge signat PGP. Ha fallat la verificació del remitent"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Enviat per ProtonMail amb xifrat d'accés zero"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
       "Stored with zero-access encryption": [
         "Emmagatzemat amb xifratge d'accés zero"
@@ -6397,17 +6398,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "Xifrat per ProtonMail"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        ""
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "Xifrat per ProtonMail a un destinatari PGP"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "Xifrat per ProtonMail a un destinatari PGP verificat"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "Xifrat per ProtonMail a un destinatari verificat"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        ""
       ],
       "End-to-end encrypted": [
         "Xifrat d'extrem a extrem"
@@ -6424,12 +6425,12 @@
       "PGP-signed": [
         "Signat amb PGP"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Enviat per ProtonMail amb xifrat d'accés zero"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "Enviat per ProtonMail amb xifrat d'accés zero a un destinatari verificat",
-        "Enviat per ProtonMail amb xifrat d'accés zero a destinataris verificats"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "",
+        ""
       ],
       "Sent by you with end-to-end encryption": [
         "Enviat per vós amb xifrat d'extrem a extrem"
@@ -7047,8 +7048,8 @@
       "Enter your password": [
         "Introdueix la teva contrasenya"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Introduïu el vostre nom d'usuari o adreça de correu electrònic ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        ""
       ],
       "Error": [
         "Error"
@@ -7181,9 +7182,6 @@
       ],
       "Previous message": [
         "Missatge anterior"
-      ],
-      "ProtonMail": [
-        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Tornant a signar tots els contactes"
@@ -7343,8 +7341,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Les subcarpetes del sistema es mostraran com a carpetes independents a ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        ""
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
@@ -7416,8 +7414,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si no recordeu la vostra contrasenya és impossible reactivar la vostra clau. Us podem ajudar a desactivar l'alerta però en el procés perdreu permanentment l'accés a totes les dades xifrades amb aquesta clau."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ProtonVPN. En comptes d'això, obriu una incidència."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton combinarà totes les carpetes amb el mateix nom. Per evitar-ho, canvieu els noms abans d’importar-los."

@@ -178,11 +178,11 @@
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştir"
       ],
+      "Get ${ vpnPlus }": [
+        "${ vpnPlus } alın"
+      ],
       "Get a new password": [
         "Yeni bir parola al"
-      ],
-      "Get ProtonVPN Plus": [
-        "ProtonVPN Plus edinin"
       ],
       "Get started": [
         "Başlayalım"
@@ -330,6 +330,9 @@
       ],
       "Show info": [
         "Bilgileri göster"
+      ],
+      "Show preview": [
+        "Ön izlemeyi göster"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -689,8 +692,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "ProtonMail kullanmayı sürdürün."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ]
     },
     "Calendar feature": {
@@ -1924,8 +1927,8 @@
       "Kill switch to prevent IP exposure": [
         "IP adresinin açığa çıkmasını önlemek için Bağlantı kesici"
       ],
-      "Laptop & smartphone shown connected to ProtonVPN network.": [
-        "ProtonVPN ağına bağlı dizüstü bilgisayar ve akıllı telefonları görün."
+      "Laptop & smartphone shown connected to ${ VPN_APP_NAME } network.": [
+        "${ VPN_APP_NAME } ağına bağlı dizüstü bilgisayar ve akıllı telefonları görün."
       ],
       "No logs": [
         "Kayıt tutmaz"
@@ -1944,11 +1947,17 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME }, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } ücretsiz"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional bir kullanıcıyla başlar ve her kullanıcı kuruluşun havuzuna 5 GB ve 5 e-posta adresi ekler."
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        "${ mailPlus }, bir kullanıcıyla sınırlıdır ve 5 GB depolama alanından başlar."
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "${ mailProfessional } bir kullanıcıyla başlar ve her kullanıcı kuruluşun havuzuna 5 GB ve 5 e-posta adresi ekler."
       ],
       "${ number } city": [
         "${ number } il",
@@ -1973,6 +1982,16 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } ücretsiz"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        "Ülke düzeyinde bağlantı için ${ vpnBasic }, ${ vpnPlus } ya da ${ visionary } tarifesi gereklidir."
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "${ vpnPlus } tarifesinde ${ maxVpn } VPN bağlantısı bulunur.",
+        "${ vpnPlus } tarifesinde ${ maxVpn } VPN bağlantısı bulunur."
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        "Secure Core özelliği için ${ vpnPlus } ya da ${ visionary } tarifesi gereklidir."
+      ],
       "(Mail + VPN)": [
         "(Mail + VPN)"
       ],
@@ -1982,9 +2001,9 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ödül depolama alanı"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
-        "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
@@ -2097,8 +2116,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, iletileriniz için oturum açamaz ya da şifrelerini çözemezsiniz."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "ProtonVPN uygulamalarında veya ProtonVPN kontrol panosunda OpenVPN / IKEv2 kimlik doğrulama bilgilerini kullanmayın. ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "${ VPN_APP_NAME } uygulamalarında veya ${ VPN_APP_NAME } panosunda OpenVPN / IKEv2 kimlik doğrulama bilgilerini kullanmayın. ${ learnMore }"
       ],
       "Domains": [
         "Etki alanı sayısı"
@@ -2106,8 +2125,8 @@
       "Done! We sent a code to ${ destination }": [
         "Bitti! ${ destination } adresine bir kod gönderdik"
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "Tarifenizi düşürdüğünüzde, ücretli ProtonVPN sunucularına yapılan bağlantılar kesilecek."
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Kullanmak istediğiniz uygulamayı indirin ve kişisel gizliliğinizi gittiğiniz her yere götürün."
@@ -2160,14 +2179,14 @@
       "Full-featured VPN with speed up to 10 Gbps.": [
         "10 Gb/sn hıza ulaşan tam özellikli VPN."
       ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tek bir tarife ile tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerini kullanın."
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Tek tarifeyle tüm ücretli ${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
       ],
       "here": [
         "buraya"
       ],
-      "If you are a ProtonMail user you can use your Proton account to log in to ProtonVPN.": [
-        "Zaten bir ProtonMail kullanıcısıysanız, ProtonVPN ile oturum açmak için Proton hesabınızı kullanabilirsiniz."
+      "If you are a ${ MAIL_APP_NAME } user you can use your Proton account to log in to ${ VPN_APP_NAME }.": [
+        "Zaten bir ${ MAIL_APP_NAME } kullanıcısıysanız, ${ VPN_APP_NAME } oturumu açmak için Proton hesabınızı kullanabilirsiniz."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -2190,14 +2209,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "İki aşamalı kimlik doğrulaması aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki aşamalı kimlik doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Tarifenizi düşürdüğünüzde, ücretli ProtonMail ve ProtonVPN özelliklerini kullanamayacaksınız."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Tarifenizi düşürdüğünüzde, ek depolama alanı ve süzgeçler gibi ücretli ProtonMail özelliklerini kullanamayacaksınız."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "Tarifenizi düşürdüğünüzde, ek depolama alanı ve süzgeçler gibi ücretli ${ MAIL_APP_NAME } özelliklerini kullanamayacaksınız."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Tarifenizi düşürdüğünüzde, ücretli ProtonVPN özelliklerini kullanamayacaksınız."
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
       ],
       "If you remember your old password later, you can recover your existing messages.": [
         "Daha sonra eski parolanızı hatırlarsanız, var olan iletilerinizi kurtarabilirsiniz."
@@ -2244,8 +2263,8 @@
       "Keep this password safe, it cannot be recovered.": [
         "Bu parolayı güvende tutun, daha sonra kurtarılamaz."
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Üçüncü taraf VPN uygulamalarında ProtonVPN oturumunu nasıl açabileceğinizi öğrenin."
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Üçüncü taraf VPN uygulamalarında ${ VPN_APP_NAME } oturumunu nasıl açabileceğinizi öğrenin."
       ],
       "Loading": [
         "Yükleniyor"
@@ -2256,8 +2275,8 @@
       "Loading preview": [
         "Ön izleme yükleniyor"
       ],
-      "Log in to ProtonMail to activate your address": [
-        "Adresinizi etkinleştirmek için ProtonMail oturumu açın"
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
+        "Adresinizi etkinleştirmek için ${ MAIL_APP_NAME } oturumu açın"
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
         "Oturum açmak ve e-posta şifresini çözmek için kullandığınız parolayı hatırlayacağınızdan emin olun. ${ boldAlert }. Öncelikle bir ${ recoveryLink } eklemenizi öneririz."
@@ -2346,22 +2365,6 @@
       "Proton can't help you recover any lost passwords.": [
         "Proton kaybolan parolaları kurtarmanıza yardımcı olamaz."
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMail, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus, bir kullanıcıyla sınırlıdır ve 5 GB depolama alanından başlar."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] }, ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN bağlantısı sunar.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] }, ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN bağlantısı sunar."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Ülke düzeyinde bağlantı için ProtonVPN Basic, Plus ya da Visionary tarifesi gereklidir."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Secure Core özelliği için ProtonVPN Plus ya da Visionary tarifesi gereklidir."
-      ],
       "read our two-factor authentication Guide first": [
         "önce iki aşamalı kimlik doğrulama rehberimizi okuyun"
       ],
@@ -2371,8 +2374,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
-      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "Parola sıfırlama işlemi, Proton ile ilgili tüm hizmetler (Posta ve VPN) için şifreleme anahtarlarınızı sıfırlar. Var olan iletilerinizi okuyamayacaksınız. ProtonMail kimlik doğrulama bilgilerinizi biliyorsanız, SIFIRLAMAYIN. O bilgiler ile oturum açabilirsiniz ${ hereLink }."
+      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        "Parola sıfırlama işlemi, Proton ile ilgili tüm hizmetler (Posta ve VPN) için şifreleme anahtarlarınızı sıfırlar. Var olan iletilerinizi okuyamayacaksınız. ${ MAIL_APP_NAME } kimlik doğrulama bilgilerinizi biliyorsanız, SIFIRLAMAYIN. O bilgiler ile oturum açabilirsiniz ${ hereLink }."
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin."
@@ -2440,8 +2443,8 @@
       "Thank you for supporting our mission.": [
         "Misyonumuza destek olduğunuz için teşekkür ederiz."
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ProtonVPN sunucusunu seçmenizi sağlar."
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ${ VPN_APP_NAME } sunucusunu seçmenizi sağlar."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
@@ -2482,8 +2485,8 @@
       "To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.": [
         "Kötüye kullanımı önlemek için lütfen insan olduğunuzu doğrulayın. Lütfen hesabınızı doğrulayana kadar bu sekmeyi kapatmayın."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "İnternet bağlantınızı güvenli kılmak için aygıtınıza ProtonVPN uygulamasını indirip kurun ve bir ProtonVPN sunucusuna bağlanın."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        "İnternet bağlantınızı güvence altına almak için cihazınıza ${ VPN_APP_NAME } uygulamasını indirip yükleyin ve bir ${ VPN_APP_NAME } sunucusuna bağlanın."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Hesabınızla yeni bir tarifeye abone olmak ya da geçerli tarifenizi yenilemek için kullanabileceğiniz krediler ekleyin. Bir kredi için ${ i18nCurrency } ödersiniz."
@@ -2518,8 +2521,8 @@
       "Upgrade now": [
         "Şimdi yükselt"
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "ProtonVPN sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: MacOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "${ VPN_APP_NAME } sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: macOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
@@ -2542,8 +2545,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Uyarı: Silme işlemi kalıcıdır. Bu işlem ayrıca, tüm bağlı hizmetlere erişimi keser ve tüm kişilerinizi siler."
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Olabildiğince resmi ProtonVPN uygulamalarını kullanmanızı öneririz."
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        "Olabildiğince resmi ${ VPN_APP_NAME } uygulamalarını kullanmanızı öneririz."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz."
@@ -2587,17 +2590,17 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Aynı anda yalnızca bir sohbet kopyası açabilirsiniz. Lütfen yeni bir konuşma başlatmadan önce önceki konuşmaları kapatın."
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Bir ProtonVPN sunucusuna MacOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bağlanmak için şu kimlik doğrulama bilgilerini kullanabilirsiniz."
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Bir ${ VPN_APP_NAME } sunucusuna macOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bağlanmak için şu kimlik doğrulama bilgilerini kullanabilirsiniz."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "ProtonVPN uygulamalarında ya da ProtonVPN kontrol panosunda oturum açmak için OpenVPN / IKEv2 kimlik doğrulama bilgilerini kullanamazsınız. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "${ VPN_APP_NAME } uygulamalarında ya da ${ VPN_APP_NAME } panosunda oturum açmak için OpenVPN / IKEv2 kimlik bilgilerini kullanamazsınız. ${ learnMore }"
       ],
       "You have no saved payment methods.": [
         "Kayıtlı bir ödeme yönteminiz yok."
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "Tarifenizi düşürmeden önce, ek ProtonMail kullanıcılarını, adreslerini ve özel etki alanlarını devre dışı bırakmalı ya da silmelisiniz."
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "Tarifenizi düşürmeden önce, ek ${ MAIL_APP_NAME } kullanıcılarını, adreslerini ve özel etki alanlarını devre dışı bırakmalı ya da silmelisiniz."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ödeme yöntemi olarak eklemek için, PayPal hesabınızla bağlantılı bir kredi kartı ya da banka hesabı olmalıdır."
@@ -2619,6 +2622,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
+      ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz kısıtlandı. ${ payInvoiceLink }"
@@ -2656,9 +2662,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
       ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "ProtonVPN ve ProtonMail hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
-      ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
       ],
@@ -2672,11 +2675,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        "${ MAIL_APP_NAME }, toplu veya istenmeyen e-postalar göndermek için kullanılamaz. Normal e-posta gönderimi sınırsızdır."
+      ],
       "Customizable features": [
         "Değiştirilebilecek özellikler"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail, toplu veya istenmeyen e-postalar göndermek için kullanılamaz. Normal e-posta gönderimi sınırsızdır."
       ]
     },
     "Info for cash payment method": {
@@ -2754,6 +2757,9 @@
       ]
     },
     "Label": {
+      "${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } adresi"
+      ],
       "${ n } VPN connection available": [
         "${ n } VPN bağlantısı kullanılabilir",
         "${ n } VPN bağlantısı kullanılabilir"
@@ -2983,9 +2989,6 @@
       "Proton username": [
         "Proton kullanıcı adı"
       ],
-      "ProtonMail address": [
-        "ProtonMail adresi"
-      ],
       "Recovery email address": [
         "Kurtarma e-posta adresi"
       ],
@@ -3040,8 +3043,8 @@
       "Username": [
         "Kullanıcı adı"
       ],
-      "Username or ProtonMail address": [
-        "Kullanıcı adı ya da ProtonMail adresi"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Kullanıcı adı ya da ${ MAIL_APP_NAME } adresi"
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanMaxSpace } / ${ humanUsedSpace } kullanılıyor"
@@ -3681,6 +3684,12 @@
       ]
     },
     "Plan Feature": {
+      "${ mailPlus } account": [
+        "${ mailPlus } hesabı"
+      ],
+      "${ mailVisionary } account": [
+        "${ mailVisionary } hesabı"
+      ],
       "All advanced security features": [
         "Tüm gelişmiş güvenlik özellikleri"
       ],
@@ -3698,12 +3707,6 @@
       ],
       "Medium speed": [
         "Orta hız"
-      ],
-      "ProtonMail Plus account": [
-        "ProtonMail Plus hesabı"
-      ],
-      "ProtonMail Visionary account": [
-        "ProtonMail Visionary hesabı"
       ],
       "Streaming service support": [
         "Yayın akışı hizmeti desteği"
@@ -3913,6 +3916,12 @@
       "${ title } plan details": [
         "${ title } tarifesi ayrıntıları"
       ],
+      "${ VPN_APP_NAME } clients": [
+        "${ VPN_APP_NAME } istemcileri"
+      ],
+      "${ VPN_APP_NAME } plan comparison": [
+        "${ VPN_APP_NAME } tarifelerini karşılaştırın"
+      ],
       "1. Select platform": [
         "1. Platform seçin"
       ],
@@ -4066,8 +4075,8 @@
       "Enter your password": [
         "Parolanızı yazın"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Kullanıcı adınızı ya da ProtonMail e-posta adresinizi yazın"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Kullanıcı adınızı ya da ${ MAIL_APP_NAME } e-posta adresinizi yazın"
       ],
       "Error": [
         "Hata"
@@ -4078,8 +4087,8 @@
       "General": [
         "Genel"
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Tüm sunuculara erişmek için ProtonVPN Plus tarifesine geçin"
+      "Get ${ vpnPlus } to access all servers": [
+        "Tüm sunuculara erişmek için ${ vpnPlus } edinin"
       ],
       "Gift code": [
         "Hediye kodu"
@@ -4173,12 +4182,6 @@
       ],
       "Processing...": [
         "İşleniyor..."
-      ],
-      "ProtonVPN clients": [
-        "ProtonVPN istemcileri"
-      ],
-      "ProtonVPN plan comparison": [
-        "ProtonVPN tarifeleri karşılaştırması"
       ],
       "Provide payment details": [
         "Ödeme bilgilerini verin"
@@ -4301,8 +4304,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "ProtonMail faturası"
+      "${ MAIL_APP_NAME } invoice": [
+        "${ MAIL_APP_NAME } faturası"
       ]
     },
     "Tooltip": {
@@ -4321,11 +4324,11 @@
       "Discount applied for two-year billing cycle": [
         "İki yıllık fatura dönemine uygulanan indirim"
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Tek tarifeyle tüm ücretli ${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Tek tarifeyle tüm ücretli ${ vpnAppName } ve ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tek tarifeyle tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
       ],
       "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
         "Parolanızı unutursanız, hesabınıza veya verilerinize erişemezsiniz. Lütfen güvenli bir yerde tutun."
@@ -4333,8 +4336,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
-      "Includes ProtonMail encrypted email with all features": [
-        "Tüm özellikleri ile ProtonMail şifrelenmiş e-posta bulunur"
+      "Includes ${ MAIL_APP_NAME } encrypted email with all features": [
+        "Tüm özellikleri ile ${ MAIL_APP_NAME } şifrelenmiş e-posta bulunur"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Çok kullanıcı desteği yalnızca 2 veya daha fazla kullanıcılı tarifeler için geçerlidir"
@@ -4363,8 +4366,8 @@
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
       ],
-      "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
-        "Tüm Proton hizmetleri için kullanılan kullanıcı adı. Bu ad, daha sonra güvenli bir ProtonMail hesabı açmak için de kullanılabilir."
+      "Username which is used for all Proton services. This can also be used later to create a secure ${ MAIL_APP_NAME } account.": [
+        "Tüm Proton hizmetleri için kullanılan kullanıcı adı. Bu ad, daha sonra güvenli bir ${ MAIL_APP_NAME } hesabı açmak için de kullanılabilir."
       ],
       "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
         "E-posta adresiniz üçüncü taraflarla paylaşılmaz. Yalnızca kurtarma, hesapla ilgili sorular ve iletişim için kullanılır."
@@ -4393,9 +4396,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
       "30-days money-back guarantee": [
         "30 gün ücret iade garantisi"
       ],
@@ -4567,8 +4567,8 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Bu telefon numarasını sildikten sonra hesabınızı kurtaramazsınız."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Canlı sohbet yalnızca ücretli ProtonVPN tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Canlı sohbet yalnızca ücretli ${ VPN_APP_NAME } tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."

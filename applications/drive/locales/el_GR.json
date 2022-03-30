@@ -57,7 +57,10 @@
         "Ακύρωση"
       ],
       "Cancel all": [
-        ""
+        "Ακύρωση όλων"
+      ],
+      "Cancel all downloads": [
+        "Ακύρωση όλων των λήψεων"
       ],
       "Cancel all uploads": [
         "Ακύρωση κάθε ανεβάσματος"
@@ -208,9 +211,6 @@
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Expand folder": [
         "Ανάπτυξη φακέλου"
       ],
@@ -274,6 +274,9 @@
       "Import from .csv or vCard": [
         "Εισαγωγή από αρχείο .csv ή vCard"
       ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
       "Load image": [
         "Φόρτωση εικόνας"
       ],
@@ -329,7 +332,7 @@
         "Άνοιγμα μενού πλοήγησης"
       ],
       "Pause all": [
-        ""
+        "Παύση όλων"
       ],
       "Pause download": [
         "Παύση λήψης"
@@ -389,7 +392,7 @@
         "Επαναφορά μεγέθυνσης"
       ],
       "Restart all": [
-        ""
+        "Επανεκκίνηση όλων"
       ],
       "Restart download": [
         "Επανεκκίνηση λήψης"
@@ -453,6 +456,9 @@
       ],
       "Show labels": [
         "Εμφάνιση ετικετών"
+      ],
+      "Show preview": [
+        "Εμφάνιση προεπισκόπησης"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -593,7 +599,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -768,7 +774,7 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ]
     },
@@ -1886,8 +1892,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Ορισμένα από τα ονόματα ετικετών σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Ορισμένα από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ProtonMail. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Κάποια από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
@@ -2332,7 +2338,7 @@
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στο φάκελο."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά όλα τα διαγραμμένα στοιχεία;"
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά όλα τα διαγραμμένα στοιχεία;"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά το διαγραμμένο \"${ itemName }\";"
@@ -2351,6 +2357,9 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Έλεγχος επαφής ${ progress } από ${ max }..."
+      ],
+      "Checking signatures": [
+        "Έλεγχος υπογραφών"
       ],
       "Clear data": [
         "Εκκαθάριση δεδομένων"
@@ -2374,7 +2383,7 @@
         "Κλείστε αυτήν την οθόνη για έξοδο."
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Κλείνωντας το διαχειριστή μεταφορών, θα ακυρώσει όλες τις ενεργές μεταφορές, είστε σίγουροι;"
+        "Το κλείσιμο του διαχειριστή μεταφορών θα ακυρώσει όλες τις ενεργές μεταφορές. Είστε βέβαιοι;"
       ],
       "Conflict": [
         "Διένεξη"
@@ -2426,6 +2435,15 @@
         "Διαγραφή αρχειοθήκης",
         "Διαγραφή αρχειοθηκών"
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο ανέβηκε διασφαλισμένα από ${ emailAddress }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος ανέβηκε διασφαλισμένα από ${ emailAddress }."
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        "Η λήψη του ${ downloadFileName } θα ματαιωθεί"
+      ],
       "Downloaded": [
         "Ελήφθησαν"
       ],
@@ -2441,9 +2459,6 @@
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
       ],
@@ -2456,6 +2471,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Αποτυχία ανοίγματος ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } ανέβηκε από ${ emailAddress }."
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος ανέβασε το ${ fileName }."
+      ],
       "File will not be uploaded": [
         "Το αρχείο δεν θα ανεβεί"
       ],
@@ -2464,6 +2485,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "Τα περιεχόμενα των φακέλων θα συγχωνευθούν σε έναν μοναδικό φάκελο"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Ο φάκελος στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι ο ${ fileName } ανέβηκε από ${ emailAddress }."
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "Ο φάκελος στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος ανέβασε τον ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Ο φάκελος δεν θα ανεβεί"
@@ -2617,10 +2644,10 @@
         "Μία από τις κρυπτογραφημένες αρχειοθήκες σας είναι κλειδωμένη. Αυτό πιθανότατα οφείλεται σε μια πρόσφατη επαναφορά κωδικού πρόσβασης.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        ""
+        "Επιτρέπονται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρες"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες που δεν ανήκουν στο ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
       ],
       "Only the people with the link and the password can access this file.": [
         "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
@@ -2637,11 +2664,11 @@
       "Permanently delete all files in your drive": [
         "Οριστική διαγραφή όλων των αρχείων στην αρχειοθήκη σας"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "Το PGP / Inline είναι συμβατό μόνο με τη μορφή απλού κειμένου. Παρακαλούμε σημειώστε ότι το ProtonMail πάντα υπογράφει κρυπτογραφημένα μηνύματα."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "Το PGP/Inline είναι συμβατό μόνο με τη μορφή Σκέτου Κειμένου. Παρακαλούμε σημειώστε ότι το ${ MAIL_APP_NAME } πάντα υπογράφει κρυπτογραφημένα μηνύματα."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "Το PGP / MIME στέλνει αυτόματα το μήνυμα χρησιμοποιώντας την τρέχουσα λειτουργία σύνθεσης. Σημειώστε ότι το ProtonMail πάντα υπογράφει κρυπτογραφημένα μηνύματα"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "Το PGP/MIME στέλνει αυτόματα το μήνυμα χρησιμοποιώντας την τρέχουσα λειτουργία συντάκτη. Παρακαλούμε σημειώστε ότι το ${ MAIL_APP_NAME } πάντα υπογράφει κρυπτογραφημένα μηνύματα"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
@@ -2706,11 +2733,17 @@
       "Session timed out": [
         "Λήξη χρόνου συνεδρίας"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Ρυθμίζοντας το PGP, σάς επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε έναν χρήστη που δεν ανήκει στο ProtonMail αλλά όμως χρησιμοποιεί και ο ίδιος PGP."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Η ρύθμιση PGP επιτρέπει την αποστολή μηνυμάτων κρυπτογραφημένων από άκρο σε άκρο σε χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
       ],
       "Share files with links": [
         "Κοινή χρήση αρχείων με συνδέσμους"
+      ],
+      "Signature check will be ignored": [
+        "Ο έλεγχος υπογραφής θα αγνοηθεί"
+      ],
+      "Signature issue": [
+        "Πρόβλημα υπογραφής"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Κάποια από τα αρχεία σας δεν είναι πλέον προσβάσιμα. Αποκαταστήστε την πρόσβαση στα αρχεία σας. ${ StartRecoveryButton }"
@@ -2727,8 +2760,14 @@
       "support team": [
         "ομάδα υποστήριξης"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
       ],
       "There are no files yet": [
         "Δεν υπάρχουν ακόμη αρχεία"
@@ -2767,11 +2806,11 @@
       "This will overwrite the existing folder": [
         "Αυτή η εγγραφή θα διαγράψει τον φάκελο που ήδη υπάρχει"
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        ""
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
@@ -2827,6 +2866,12 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Το ανέβασμα εκατοντάδων αρχείων με τη μία ενδέχεται να μειώσει τις επιδόσεις."
       ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } ανέβηκε από ${ emailAddress }."
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ποιος ανέβασε το ${ fileName }."
+      ],
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
       ],
@@ -2861,7 +2906,7 @@
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του Proton."
@@ -2949,6 +2994,26 @@
         "Πολλαπλές επαφές φαίνονται ίδιες. ${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        "ιδιότητες αρχείου"
+      ],
+      "file data": [
+        "δεδομένα αρχείου"
+      ],
+      "keys": [
+        "κλειδιά"
+      ],
+      "name": [
+        "όνομα"
+      ],
+      "name hash": [
+        ""
+      ],
+      "thumbnail": [
+        "μικρογραφία"
+      ]
+    },
     "Key badge": {
       "Expired": [
         "Έχει λήξει"
@@ -2994,6 +3059,9 @@
       "Apply to all duplicated folders": [
         "Εφαρμογή σε όλους τους ομώνυμους φακέλους"
       ],
+      "Apply to all unverified items": [
+        "Εφαρμογή σε όλα τα μη επαληθευμένα στοιχεία"
+      ],
       "Audio file": [
         "Αρχείο ήχου"
       ],
@@ -3008,6 +3076,9 @@
       ],
       "Calendars": [
         "Ημερολόγια"
+      ],
+      "Cancel download": [
+        "Ακύρωση λήψης"
       ],
       "Category": [
         "Κατηγορία"
@@ -3043,6 +3114,9 @@
       "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
       ],
+      "Download anyway": [
+        "Λήψη οπωσδήποτε"
+      ],
       "Email address": [
         "Διεύθυνση email"
       ],
@@ -3056,7 +3130,7 @@
         "Ενεργοποίηση πρόσβασης Beta"
       ],
       "Enabling Drive Search": [
-        ""
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
@@ -3247,8 +3321,8 @@
       "Upload picture": [
         "Ανέβασμα εικόνας"
       ],
-      "Username or ProtonMail address": [
-        "Όνομα χρήστη ή διεύθυνση ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Όνομα χρήστη ή διεύθυνση ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
@@ -3497,6 +3571,9 @@
       "File or folder is missing a name": [
         "Το αρχείο ή ο φάκελος στερείται ονόματος"
       ],
+      "Item failed to be verified": [
+        "Αποτυχία επαλήθευσης στοιχείου"
+      ],
       "Link failed to be loaded": [
         "Ο σύνδεσμος απέτυχε να φορτώσει"
       ],
@@ -3566,6 +3643,28 @@
         "Παρακαλώ σημειώστε ότι ${ boldNextStep } που ζητά η εφαρμογή για να ξεκινήσετε την εισαγωγή."
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        "Ενεργοποίηση Πρόσβασης Beta"
+      ],
+      "Start using ${ appName }": [
+        "Έναρξη χρήσης του ${ appName }"
+      ],
+      "Upgrade account": [
+        "Αναβάθμιση λογαριασμού"
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        ""
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        "Η ${ appName } είναι διαθέσιμη προς το παρόν μόνο εάν ενεργοποιήσετε την Πρόσβαση Beta."
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        "Προστατέψτε όλα τα αρχεία σας με κρυπτογράφηση από άκρο σε άκρο. Χρησιμοποιήστε την ${ appName } για διασφαλισμένη αποθήκευση και κοινοποίηση των αρχείων σας."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Επιλέξτε ένα εμφανιζόμενο όνομα"
@@ -3598,31 +3697,9 @@
         "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "Ενεργοποίηση πρόσβασης Beta"
-      ],
-      "Start using ${ appName }": [
-        "Ξεκινήστε να χρησιμοποιείτε το ${ appName }"
-      ],
-      "Upgrade account": [
-        "Αναβάθμιση λογαριασμού"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "Το ${ appName } βρίσκεται σε πρώιμη πρόσβαση και διατίθεται μόνο σε χρήστες πακέτου επί πληρωμή."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } είναι διαθέσιμη προς το παρόν μόνο εάν ενεργοποιήσετε την Πρόσβαση Beta."
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Προστατέψτε όλα τα αρχεία σας με κρυπτογράφηση από άκρο σε άκρο. Χρησιμοποιήστε το ${ appName } για να αποθηκεύσετε και να μοιραστείτε τα αρχεία σας με ασφάλεια."
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
-        "${ appName } είναι σε Beta"
+        "Το ${ appName } βρίσκεται σε Beta"
       ],
       "Meet your new secure file storage": [
         "Υποδεχθείτε τη νέα σας διασφαλισμένη αρχειοθήκη"
@@ -3981,7 +4058,7 @@
         "Ο λογαριασμός έχει ανασταλεί"
       ],
       "Active": [
-        ""
+        "Ενεργά"
       ],
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
@@ -4000,7 +4077,7 @@
         "Διευθύνσεις"
       ],
       "All": [
-        ""
+        "Όλα"
       ],
       "Back": [
         "Πίσω"
@@ -4018,7 +4095,7 @@
         "Εκκαθάριση δεδομένων"
       ],
       "Completed": [
-        ""
+        "Ολοκληρωμένα"
       ],
       "Contact details": [
         "Στοιχεία επαφής"
@@ -4088,6 +4165,12 @@
       "Download failed": [
         "Η λήψη απέτυχε"
       ],
+      "Download unverified file?": [
+        "Λήψη μη επαληθευμένου αρχείου;"
+      ],
+      "Download unverified folder?": [
+        "Λήψη μη επαληθευμένου φακέλου;"
+      ],
       "Downloading": [
         "Λήψη"
       ],
@@ -4125,7 +4208,7 @@
         "Εκκαθάριση Διαγραμμένων"
       ],
       "Enable Drive Search": [
-        ""
+        "Enable drive search"
       ],
       "Enter password to download": [
         "Εισάγετε τον κωδικό για λήψη"
@@ -4133,14 +4216,14 @@
       "Enter your password": [
         "Εισάγετε τον κωδικό σας"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Εισάγετε το όνομα χρήστη σας ή τη διεύθυνσή σας ${ MAIL_APP_NAME }"
       ],
       "Exporting contacts": [
         "Γίνεται εξαγωγή επαφών"
       ],
       "Failed": [
-        ""
+        "Αποτυχημένα"
       ],
       "File details": [
         "Λεπτομέρειες αρχείου"
@@ -4269,7 +4352,7 @@
         "Αποτελέσματα αναζήτησης"
       ],
       "Search results: ${ searchView.numberOfResults } found": [
-        ""
+        "Αποτελέσματα αναζήτησης: βρέθηκαν ${ searchView.numberOfResults }"
       ],
       "Searching…": [
         "Γίνεται αναζήτηση…"
@@ -4323,16 +4406,22 @@
         "Διακοπή κοινοποίησης σε όλους;"
       ],
       "The file or folder failed to be downloaded": [
-        ""
+        "Αποτυχία λήψης του αρχείου ή φακέλου"
       ],
       "The link does not exist": [
-        ""
+        "Ο σύνδεσμος δεν υπάρχει"
       ],
       "The link either does not exist or has expired": [
         "Ο σύνδεσμος είτε δεν υπάρχει είτε έχει λήξει"
       ],
       "The link failed to be loaded": [
-        ""
+        "Αποτυχία φόρτωσης συνδέσμου"
+      ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "Αυτό το αρχείο έχει απούσα ή μη έγκυρη υπογραφή. Για πληροφορίες, μεταβείτε στο Μενού (⋮) → Λεπτομέρειες."
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "Αυτός ο φάκελος έχει απούσα ή μη έγκυρη υπογραφή. Για πληροφορίες, μεταβείτε στο Μενού (⋮) → Λεπτομέρειες."
       ],
       "Total size": [
         "Συνολικό μέγεθος"
@@ -4407,8 +4496,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP για χρήση στην υπογραφή και κρυπτογράφηση προς έναν χρήστη. Σημειώστε ότι το ενσωματωμένο PGP επιβάλει μηνύματα απλού κειμένου"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Οι υποφάκελοι συστήματος θα εμφανιστούν ως ξεχωριστοί φάκελοι στο ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
@@ -4456,12 +4545,12 @@
     },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } ομάδα επαφής;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } ομάδες επαφών;"
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδα επαφών;",
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδες επαφών;"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφές;"
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } επαφή;",
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } επαφές;"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την ομάδα επαφών;"
@@ -4475,7 +4564,7 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [

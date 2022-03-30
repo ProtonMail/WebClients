@@ -791,6 +791,9 @@
       "Show more search options": [
         "Sken ugar n textiṛiyin n unadi"
       ],
+      "Show preview": [
+        ""
+      ],
       "Sign out": [
         "Ffeɣ"
       ],
@@ -1101,7 +1104,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -1276,7 +1279,7 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ]
     },
@@ -1746,55 +1749,55 @@
         ""
       ],
       "Afghanistan": [
-        ""
+        "Afɣanistan"
       ],
       "Albania": [
-        ""
+        "Albanya"
       ],
       "Algeria": [
-        ""
+        "Lezzayer"
       ],
       "American Samoa": [
-        ""
+        "Samwa Tamarikanit"
       ],
       "Andorra": [
         ""
       ],
       "Angola": [
-        ""
+        "Angula"
       ],
       "Anguilla": [
-        ""
+        "Angiya"
       ],
       "Antarctica": [
-        ""
+        "Antaṛktic"
       ],
       "Antigua and Barbuda": [
-        ""
+        "Antiga d Barbuda"
       ],
       "Argentina": [
-        ""
+        "Aṛjuntin"
       ],
       "Armenia": [
-        ""
+        "Aṛminya"
       ],
       "Aruba": [
-        ""
+        "Aruba"
       ],
       "Ascension Island": [
         ""
       ],
       "Australia": [
-        ""
+        "Ustṛalya"
       ],
       "Austria": [
-        ""
+        "Ustriya"
       ],
       "Azerbaijan": [
         ""
       ],
       "Bahamas": [
-        ""
+        "Bahamas"
       ],
       "Bahrain": [
         ""
@@ -1809,7 +1812,7 @@
         ""
       ],
       "Belgium": [
-        ""
+        "Biljik"
       ],
       "Belize": [
         ""
@@ -1821,7 +1824,7 @@
         ""
       ],
       "Bhutan": [
-        ""
+        "Bhutan"
       ],
       "Bolivia": [
         ""
@@ -1839,7 +1842,7 @@
         ""
       ],
       "Brazil": [
-        ""
+        "Brizil"
       ],
       "British Indian Ocean Territory": [
         ""
@@ -1851,7 +1854,7 @@
         ""
       ],
       "Burkina Faso": [
-        ""
+        "Burkina Fasu"
       ],
       "Burma": [
         ""
@@ -1866,7 +1869,7 @@
         ""
       ],
       "Canada": [
-        ""
+        "Kanada"
       ],
       "Cape Verde": [
         ""
@@ -1899,7 +1902,7 @@
         ""
       ],
       "Congo": [
-        ""
+        "Kungu"
       ],
       "Congo, Democratic Republic of the": [
         ""
@@ -1977,25 +1980,25 @@
         ""
       ],
       "France": [
-        ""
+        "Fransa"
       ],
       "French Guiana": [
-        ""
+        "Γana tafransist"
       ],
       "French Polynesia": [
-        ""
+        "Pulinizya Tafṛansist"
       ],
       "French Southern Territories": [
         ""
       ],
       "Gabon": [
-        ""
+        "Gabun"
       ],
       "Gambia": [
         ""
       ],
       "Georgia": [
-        ""
+        "Jyuṛjya"
       ],
       "Germany": [
         ""
@@ -2013,7 +2016,7 @@
         ""
       ],
       "Grenada": [
-        ""
+        "Grinada"
       ],
       "Guadeloupe": [
         ""
@@ -2055,10 +2058,10 @@
         ""
       ],
       "Iceland": [
-        ""
+        "Island"
       ],
       "India": [
-        ""
+        "Lhend"
       ],
       "Indonesia": [
         ""
@@ -2067,22 +2070,22 @@
         "Agraɣlan"
       ],
       "Iran": [
-        ""
+        "Iran"
       ],
       "Iraq": [
-        ""
+        "Ɛiraq"
       ],
       "Ireland": [
-        ""
+        "Irland"
       ],
       "Isle of Man": [
         ""
       ],
       "Israel": [
-        ""
+        "Izrayil"
       ],
       "Italy": [
-        ""
+        "Ṭelyan"
       ],
       "Jamaica": [
         ""
@@ -2091,7 +2094,7 @@
         ""
       ],
       "Jersey": [
-        ""
+        "Jiṛzi"
       ],
       "Jordan": [
         ""
@@ -2118,28 +2121,28 @@
         ""
       ],
       "Latvia": [
-        ""
+        "Litunya"
       ],
       "Lebanon": [
-        ""
+        "Lubnan"
       ],
       "Lesotho": [
-        ""
+        "Lizuṭu"
       ],
       "Liberia": [
-        ""
+        "Libirya"
       ],
       "Libya": [
-        ""
+        "Libya"
       ],
       "Liechtenstein": [
-        ""
+        "Lictencṭayn"
       ],
       "Lithuania": [
-        ""
+        "Litwanya"
       ],
       "Luxembourg": [
-        ""
+        "Luksamburg"
       ],
       "Macao": [
         ""
@@ -2181,22 +2184,22 @@
         ""
       ],
       "Moldova": [
-        ""
+        "Muldavya"
       ],
       "Monaco": [
-        ""
+        "Munaku"
       ],
       "Mongolia": [
         ""
       ],
       "Montenegro": [
-        ""
+        "Muntinigru"
       ],
       "Montserrat": [
         ""
       ],
       "Morocco": [
-        ""
+        "Merruk"
       ],
       "Mozambique": [
         ""
@@ -2259,7 +2262,7 @@
         ""
       ],
       "Panama": [
-        ""
+        "Panama"
       ],
       "Papua New Guinea": [
         ""
@@ -2268,7 +2271,7 @@
         ""
       ],
       "Peru": [
-        ""
+        "Piru"
       ],
       "Philippines": [
         ""
@@ -2310,7 +2313,7 @@
         ""
       ],
       "Saint Lucia": [
-        ""
+        "Sant Lusi"
       ],
       "Saint Martin (French Part)": [
         ""
@@ -2331,7 +2334,7 @@
         ""
       ],
       "Saudi Arabia": [
-        ""
+        "Suɛudiya Taɛrabt"
       ],
       "Senegal": [
         ""
@@ -2340,13 +2343,13 @@
         ""
       ],
       "Seychelles": [
-        ""
+        "Sicil"
       ],
       "Sierra Leone": [
         ""
       ],
       "Singapore": [
-        ""
+        "Singapur"
       ],
       "Sint Maarten": [
         ""
@@ -2358,7 +2361,7 @@
         ""
       ],
       "Solomon Islands": [
-        ""
+        "Tigzirin n Sulumun"
       ],
       "Somalia": [
         ""
@@ -2382,10 +2385,10 @@
         ""
       ],
       "Sri Lanka": [
-        ""
+        "Sri Lanka"
       ],
       "Sudan": [
-        ""
+        "Sudan"
       ],
       "Suriname": [
         ""
@@ -2397,7 +2400,7 @@
         "Eswatini"
       ],
       "Sweden": [
-        ""
+        "Sswid"
       ],
       "Switzerland": [
         ""
@@ -2406,13 +2409,13 @@
         ""
       ],
       "Taiwan": [
-        ""
+        "Taywan"
       ],
       "Tajikistan": [
         ""
       ],
       "Tanzania": [
-        ""
+        "Tanẓanya"
       ],
       "Thailand": [
         ""
@@ -2451,16 +2454,16 @@
         ""
       ],
       "Uganda": [
-        ""
+        "Uganda"
       ],
       "Ukraine": [
-        ""
+        "Ukran"
       ],
       "United Arab Emirates": [
         ""
       ],
       "United Kingdom": [
-        ""
+        "Tagelda Yedduklen"
       ],
       "United States": [
         ""
@@ -2481,7 +2484,7 @@
         ""
       ],
       "Vietnam": [
-        ""
+        "Vyiṭnam"
       ],
       "Virgin Islands, British": [
         ""
@@ -3005,8 +3008,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Kra n yismawen n tebzimin-inek·inem ulac-iten. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Kra n yismawen n tebzimin ɛeddan talast tafellayt n yisekkilen n ProtonMail. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
@@ -3720,6 +3723,9 @@
         "${ groupCounts } n ugraw yettwafen",
         "${ groupCounts } n yigrawen yettwafen"
       ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        ""
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } izen ulamek ad yettusenkez.",
         "${ messagesNotAuthorizedToMove } iznan ulamek ad ttwasnekzen."
@@ -3949,7 +3955,7 @@
         "Sentem aneqqis n ukellex"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Kemmel s ${ planName }"
       ],
       "Copied to clipboard": [
         "Nɣel ɣer tecfawt"
@@ -4058,11 +4064,11 @@
         "tugna tusliɣt",
         "tugniwin tusliɣin"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "Wgelhen i useqdac ur yesɛin ara ProtonMail"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        ""
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Iznan iwgelhanen i yiɣerwaḍen ur yesseqdacen ara ProtonMail ad mten di 28 n wussan, arama kan tanzagt nniḍen wezzilen tettwammel."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
@@ -4146,8 +4152,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Ma tewglehneḍ izen-agi i useqdac ur nelli ara di ProtonMail, ttxil-k sbadu awal n uɛeddi i yizen-inek."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        ""
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ma yella tumneḍ tagi d tuccḍa, ttxil-k·m nermes-aɣ-a ${ contactLink }."
@@ -4249,8 +4255,8 @@
       "Merged": [
         "Ttusmezdin"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "Keffu n yiznan yewjed i useqdec mi ara ttwaznen yimaylen ɣer yiseqdacen-nniḍen n ProtonMail. I tuzna n yimaylen yemmuten ɣer yiseqdacen ur neswi ara ProtonMail, ttxil-k·m sefsex syen rnu ammesten s wawal uffir ɣer yimaul-ik·im."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        ""
       ],
       "Message headers": [
         "Inixfan n yizen"
@@ -4330,20 +4336,20 @@
       "of": [
         "si"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur nesseqdac ara ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        ""
       ],
       "Other options": [
-        ""
+        "Ugar n iɣewwaṛen"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Anagraw-nneɣ yecreḍ izen-agi am uneɛruḍ n ukellex. Ttxil-k m senqed belli izen-agi iṣeḥḥa."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline yemṣada kan akked umasal aḍris. Ttxil-k ẓer d akken ProtonMail ittezmil dayem iznan iwgelhanen."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        ""
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME yettazen izen s wudem awurman s useqdec n uskar amiran n tsuddest. Ttxil-k ẓer d akken ProtonMail yettezmil dayem iznan iwgelhanen"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        ""
       ],
       "Phone number": [
         "Uṭṭun n tiliɣri"
@@ -4388,13 +4394,10 @@
         ""
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Ur d-ixeddem ara Proton idrimen s uttɛeddi ɣef tbaḍnit."
-      ],
-      "ProtonMail can protect your business as well.": [
-        "ProtonMail yezmer ad yemmesten tarmist-ik·im daɣen."
       ],
       "Recipient: ": [
         "Aɣerwaḍ: "
@@ -4471,14 +4474,14 @@
       "Session timed out": [
         ""
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        ""
+      ],
       "Set a recovery phrase": [
         "Sbadu tafyirt n tririt"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         ""
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Asesteb n PGP ad ak·am-imudd tisirag i wakken ad tazneḍ imaylen yettwawgelhen seg yixef ɣer yixef i useqdac ur nesɛi ara Protonmail i iseqdacen ameẓlu yemṣadan d PGP."
       ],
       "Show original message": [
         "Sken izen anaṣli"
@@ -4489,8 +4492,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
-      "Store and share files securely with Proton Drive.": [
-        "Sekles tebḍuḍ ifuyla s wudem aɣellsan akked Proton Drive."
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Subject": [
         "Asentel"
@@ -4700,8 +4703,8 @@
       "Upgrade to support privacy and get more features.": [
         "Sali ɣer lqem unnig akken ad tɛawneḍ tabaḍnit yerna ad tesɛuḍ ugar n tmahilin."
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Sali ɣer lqem unnig akken ad tesqedceḍ ProtonMail s yiseɣẓanen n yimsaɣen n uḥric wis kraḍ."
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
@@ -4790,8 +4793,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Tzemreḍ ad tremdeḍ ilɣuyen i wakken ad teṭṭfeḍ alɣu mi ara d-awwḍen yiznan imaynuten deg ukaram-a."
       ],
-      "You can use ProtonVPN for free today.": [
-        "Tzemreḍ ad tesqedceḍ ProtonVPN baṭel ass-a."
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        ""
       ],
       "You cannot reply from the invited address.": [
         "Ur tezmireḍ ara ad terreḍ seg yimayl n uncad."
@@ -5147,7 +5150,7 @@
         "Rnu ɣer ugraw"
       ],
       "Address": [
-        ""
+        "Tansa"
       ],
       "ALL": [
         "AKK"
@@ -5210,7 +5213,7 @@
         "Tiwtilin"
       ],
       "Confirm password": [
-        ""
+        "Sentem awal uffir"
       ],
       "Contacts": [
         "Inermisen"
@@ -5369,7 +5372,7 @@
         "Neɣ"
       ],
       "Participants": [
-        ""
+        "Imttekkiyen"
       ],
       "Password": [
         "Awal uffir"
@@ -5482,8 +5485,8 @@
       "Upload picture": [
         "Sali-d tugna"
       ],
-      "Username or ProtonMail address": [
-        "Isem n useqdac neɣ tansa n ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        ""
       ],
       "Verification code": [
         "Tangalt n usenqed"
@@ -5575,7 +5578,7 @@
     },
     "Link": {
       "Activate": [
-        ""
+        "Sermed"
       ],
       "Add folder": [
         "Rnu akaram"
@@ -6002,8 +6005,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        ""
+      ],
+      "Available on iOS and Android.": [
+        ""
+      ],
+      "Get the ${ appName } mobile app": [
+        ""
+      ],
+      "Import your messages": [
+        ""
+      ],
+      "Meet your encrypted mailbox": [
+        ""
+      ],
       "Next": [
         "Γer zdat"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -6036,26 +6057,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Tzemreḍ ad tbeddeleḍ aya melmi tebɣiḍ deg yiɣewwaren."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } tura d atrar ugar, d win yettusaganen yerna yettmestin isefka-inek·inem s uwgelhen anaẓi."
-      ],
-      "Available on iOS and Android.": [
-        "Yewjed di iOS akked Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Awi asnqs aziraz ${ appName }"
-      ],
-      "Import your messages": [
-        "Kter iznan-inek•inem"
-      ],
-      "Meet your encrypted mailbox": [
-        "Wlil d tnaka-k•m n urmas yettwawgelhen"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Tallelt-nneɣ n ukter tessawaḍ s tɣawla imaylen-ik•im ɣer tnaka-k•m n urmas tamaynut yettwawgelhen."
       ]
     },
     "Option": {
@@ -6134,7 +6135,7 @@
         "Lqem n yiminig"
       ],
       "Confirm password": [
-        ""
+        "Sentem awal uffir"
       ],
       "e.g. Julia Smith": [
         "md. Julia Smith"
@@ -6203,7 +6204,7 @@
         "Nadi ɣef yisem neɣ imayl"
       ],
       "Search Messages": [
-        ""
+        "Nadi iznan"
       ],
       "Search messages": [
         "Nadi deg iznan"
@@ -6317,8 +6318,8 @@
       "PGP-signed message. Sender verification failed": [
         "Izen yettuzmel s PGP. Asenqed n umazan yecceḍ"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Yettwazen s ProtonMail s uwgelhen ilem n wadduf"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
       "Stored with zero-access encryption": [
         "Yettwaḥrez s uwgelhen ilem n unekcum"
@@ -6397,17 +6398,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "Yettwawegelhen sɣur ProtonMail"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        ""
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "Yettwawgelhen sɣur ProtonMail ɣer uɣerwaḍ PGP"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "Yettwawegelhen sɣur ProtonMail ɣer uɣerwaḍ PGP yettusneqden"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "Yettwawegelhen sɣur ProtonMail ɣer uɣerwaḍ yettusneqden"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        ""
       ],
       "End-to-end encrypted": [
         "Awgelhen si tazwara ar tagara"
@@ -6424,12 +6425,12 @@
       "PGP-signed": [
         "Yettuzmel s PGP"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Yettwazen s ProtonMail s uwgelhen ilem n wadduf"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "Yettwazen s ProtonMail s uwgelhen ilem n u nekcum i usenqed n uɣerwaḍ",
-        "Yettwazen s ProtonMail s uwgelhen ilem n unekcum i usenqed n yiɣerwaḍen"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "",
+        ""
       ],
       "Sent by you with end-to-end encryption": [
         "Tuzneḍ-t s yiman-ik s uwgelhen seg yixef ɣer yixef"
@@ -7047,8 +7048,8 @@
       "Enter your password": [
         "Sekcem awal-ik uffir"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Sekcem isem-inek·inem n useqdac neɣ tansa n yimayl"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        ""
       ],
       "Error": [
         "Tuccḍa"
@@ -7181,9 +7182,6 @@
       ],
       "Previous message": [
         "Izen yezrin"
-      ],
-      "ProtonMail": [
-        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Tulsa n uzmel n yinermisen meṛṛa"
@@ -7343,8 +7341,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Fren aneggaf PGP ara yettusqedcen deg uzmel neɣ deg uwgelhen ɣer useqdac-nniḍen. Ẓer belli PGP/Inline ittḥettim ɣef yiznan amasal aḍris"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Idukaramen n unagraw ad ttwabeqqeḍen s talɣa n yikaramen iberzen di ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        ""
       ],
       "The import will start with the most recent messages.": [
         "Aktar ad yebdu seg yiznan n melmi kan."
@@ -7416,8 +7414,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ma yella ur tecfiḍ ara ɣef wawal uffir inek•m, tzemreḍ ad talseḍ asermed n tsarut-inek•m. Nezmer ad k•m-nɛiwen akken ad tzeggeleḍ taḥacit n ulɣu maca deg ukala ad tesṛuḥeḍ akk isefka ittuwglehnen s tsarut-agi."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Adiwenni srid d tamahilt premium yellan kan i yiɣawasen ProtonVPN n lexlaṣ. Ma ulac aɣilif, ldi atiki deg ubdil."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         ""

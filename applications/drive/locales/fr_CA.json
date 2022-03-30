@@ -59,6 +59,9 @@
       "Cancel all": [
         "Tout annuler"
       ],
+      "Cancel all downloads": [
+        ""
+      ],
       "Cancel all uploads": [
         "Annuler tous les téléversements"
       ],
@@ -208,9 +211,6 @@
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Expand folder": [
         "Agrandir le dossier"
       ],
@@ -273,6 +273,9 @@
       ],
       "Import from .csv or vCard": [
         "Importer depuis un .csv ou une vCard"
+      ],
+      "Learn more": [
+        ""
       ],
       "Load image": [
         "Charger l'image"
@@ -454,6 +457,9 @@
       "Show labels": [
         "Afficher les labels"
       ],
+      "Show preview": [
+        ""
+      ],
       "Sign out": [
         "Se déconnecter"
       ],
@@ -593,7 +599,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -768,8 +774,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Continuer à utiliser ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        ""
       ]
     },
     "Calendar status": {
@@ -1886,8 +1892,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ProtonMail. Veuillez personnaliser l'importation pour modifier ces noms."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur est survenue, veuillez ${ refresh } pour continuer. Si vous voyez toujours ce message d'erreur, veuillez contacter notre ${ supportTeam }."
@@ -2352,6 +2358,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Vérification des contacts: ${ progress } de ${ max }..."
       ],
+      "Checking signatures": [
+        ""
+      ],
       "Clear data": [
         "Effacer les données"
       ],
@@ -2426,6 +2435,15 @@
         "Supprimer le disque",
         "Supprimer les disques"
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        ""
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        ""
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        ""
+      ],
       "Downloaded": [
         "Téléchargé"
       ],
@@ -2441,9 +2459,6 @@
       "Duplicate key updated": [
         "Clé dupliquée mise à jour"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
@@ -2456,6 +2471,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Échec de l'ouverture d'un lien sécurisé. La raison est: ${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
+      ],
       "File will not be uploaded": [
         "Le fichier ne sera pas téléversé"
       ],
@@ -2464,6 +2485,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "Le contenu du dossier sera fusionné dans un dossier unique"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
       ],
       "Folder will not be uploaded": [
         "Le dossier ne sera pas téléversé"
@@ -2619,8 +2646,8 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ne changez ces paramètres que si vous utilisez PGP avec des destinataires qui ne sont pas sur ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        ""
       ],
       "Only the people with the link and the password can access this file.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce fichier."
@@ -2637,11 +2664,11 @@
       "Permanently delete all files in your drive": [
         "Supprimez définitivement tous les fichiers de votre disque"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ProtonMail signe toujours les messages chiffrés."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        ""
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ProtonMail signe toujours les messages chiffrés"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
@@ -2706,11 +2733,17 @@
       "Session timed out": [
         "Session expirée"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "La configuration de PGP vous permet d'envoyer des courriels chiffrés de bout en bout à un utilisateur qui n'utilise pas ProtonMail et qui utilise un service compatible PGP."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        ""
       ],
       "Share files with links": [
         "Partager des fichiers avec des liens"
+      ],
+      "Signature check will be ignored": [
+        ""
+      ],
+      "Signature issue": [
+        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Certains de vos fichiers ne sont plus accessibles. Restaurez l'accès à vos fichiers. ${ StartRecoveryButton }"
@@ -2727,8 +2760,14 @@
       "support team": [
         "équipe d'assistance"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "L'application a besoin de déchiffrer localement vos contacts avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
       ],
       "There are no files yet": [
         "Il n'y a pas encore de fichiers"
@@ -2767,11 +2806,11 @@
       "This will overwrite the existing folder": [
         "Ceci va écraser le dossier existant"
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        ""
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les pourriels et les abus, veuillez prouver que vous êtes humain."
@@ -2826,6 +2865,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Le téléversement de centaines de fichiers en même temps peut avoir un impact sur les performances."
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        ""
       ],
       "We'll notify you when the import is done.": [
         "Nous vous informerons lorsque l'importation sera terminée."
@@ -2949,6 +2994,26 @@
         "Plusieurs contacts semblent identiques. ${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        ""
+      ],
+      "file data": [
+        ""
+      ],
+      "keys": [
+        ""
+      ],
+      "name": [
+        ""
+      ],
+      "name hash": [
+        ""
+      ],
+      "thumbnail": [
+        ""
+      ]
+    },
     "Key badge": {
       "Expired": [
         "Expirée"
@@ -2994,6 +3059,9 @@
       "Apply to all duplicated folders": [
         "Appliquer à tous les dossiers dupliqués"
       ],
+      "Apply to all unverified items": [
+        ""
+      ],
       "Audio file": [
         "Fichier audio"
       ],
@@ -3008,6 +3076,9 @@
       ],
       "Calendars": [
         "Calendriers"
+      ],
+      "Cancel download": [
+        ""
       ],
       "Category": [
         "Catégorie"
@@ -3043,6 +3114,9 @@
       "Do not ask again": [
         "Ne plus demander"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Email address": [
         "Adresse courriel"
       ],
@@ -3056,7 +3130,7 @@
         "Activer l'accès à la version bêta"
       ],
       "Enabling Drive Search": [
-        ""
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "Chiffrer les courriels"
@@ -3247,8 +3321,8 @@
       "Upload picture": [
         "Téléverser une image"
       ],
-      "Username or ProtonMail address": [
-        "Nom d'utilisateur ou adresse ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        ""
       ],
       "Verification code": [
         "Code de vérification"
@@ -3497,6 +3571,9 @@
       "File or folder is missing a name": [
         "Il manque un nom au fichier ou au dossier"
       ],
+      "Item failed to be verified": [
+        ""
+      ],
       "Link failed to be loaded": [
         "Le lien n'a pas pu être chargé"
       ],
@@ -3566,6 +3643,28 @@
         "Veuillez noter qu'${ boldNextStep } demandées par l'application pour commencer votre importation."
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ],
+      "Upgrade account": [
+        ""
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        ""
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        ""
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Choisissez un nom d'affichage"
@@ -3598,37 +3697,15 @@
         "Vous pouvez modifier cela à tout moment dans vos paramètres."
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "Activer l'accès à la version bêta"
-      ],
-      "Start using ${ appName }": [
-        "Commencer à utiliser ${ appName }"
-      ],
-      "Upgrade account": [
-        "Changer d'offre"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } est actuellement en accès anticipé et n'est disponible que pour les utilisateur·rice·s avec une offre payante."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } n'est actuellement disponible que si vous activez l'accès à la bêta."
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Protégez tous vos fichiers avec un chiffrement de bout en bout. Utilisez ${ appName } pour stocker et partager vos fichiers en toute sécurité."
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
-        "${ appName } est en bêta"
+        ""
       ],
       "Meet your new secure file storage": [
-        "Découvrez votre nouveau stockage sécurisé"
+        ""
       ],
       "Upgrade to access ${ appName }": [
-        "Passez à l’offre supérieure pour accéder à ${ appName }"
+        ""
       ]
     },
     "Option": {
@@ -4088,6 +4165,12 @@
       "Download failed": [
         "Échec du téléchargement"
       ],
+      "Download unverified file?": [
+        ""
+      ],
+      "Download unverified folder?": [
+        ""
+      ],
       "Downloading": [
         "Téléchargement en cours"
       ],
@@ -4125,7 +4208,7 @@
         "Vider la corbeille"
       ],
       "Enable Drive Search": [
-        ""
+        "Enable drive search"
       ],
       "Enter password to download": [
         "Saisissez le mot de passe pour télécharger"
@@ -4133,8 +4216,8 @@
       "Enter your password": [
         "Saisissez votre mot de passe"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Saisissez votre nom d'utilisateur ou votre adresse électronique ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        ""
       ],
       "Exporting contacts": [
         "Exportation des contacts"
@@ -4334,6 +4417,12 @@
       "The link failed to be loaded": [
         "Le lien n'a pas pu être chargé"
       ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
       "Total size": [
         "Taille totale"
       ],
@@ -4407,8 +4496,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        ""
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
@@ -4475,7 +4564,7 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d'alerte, mais dans le processus vous perdrez définitivement l'accès à toutes les données chiffrées avec cette clé."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [

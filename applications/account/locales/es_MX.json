@@ -214,8 +214,8 @@
       "Copy link": [
         "Copiar enlace"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Crear una dirección segura de ProtonMail en su lugar"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Cree una dirección segura de ${ MAIL_APP_NAME } en su lugar"
       ],
       "Create address": [
         "Crear dirección"
@@ -349,8 +349,8 @@
       "Generate recovery phrase": [
         "Generar frase de recuperación"
       ],
-      "Get ProtonVPN Plus": [
-        "Obtener ProtonVPN Plus"
+      "Get ${ vpnPlus }": [
+        "Obtener ${ vpnPlus }"
       ],
       "Get started": [
         "Comenzar"
@@ -661,8 +661,8 @@
       "Show more": [
         "Mostrar más"
       ],
-      "Show shortcuts": [
-        "Mostrar atajos"
+      "Show preview": [
+        "Vista previa"
       ],
       "sign in": [
         "inicie sesión"
@@ -1205,8 +1205,8 @@
       "Add link to your email footer": [
         "Añadir enlace al pie de su correo"
       ],
-      "Continue using ProtonMail.": [
-        "Continuar usando ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Continuar usando ${ MAIL_APP_NAME }."
       ],
       "Copy": [
         "Copiar"
@@ -2331,8 +2331,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
-      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        "Obtenga hasta 3 meses de ${ mailAppName } Plus gratis por cada amigo que se suscriba a ${ mailAppName }."
+      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
+        "Obtenga hasta 3 meses de ${ mailPlus } gratis por cada amigo que se suscriba a ${ MAIL_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que está importando contiene algunos grupos. Revise cómo deben importarse estos grupos."
@@ -2344,8 +2344,8 @@
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Revise cuántas personas hacen clic en su enlace, se registran y se convierten en suscriptores de pago. Mire cómo se acumulan sus meses gratis."
       ],
-      "Track your referral link activities here.": [
-        "Haga un seguimiento de las actividades de su enlace de referencia aquí."
+      "You can continue to invite friends, but you wont be able to earn more credits": [
+        "Puede seguir invitando amigos, pero no podrá ganar más créditos"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi su archivo es más grande, debe dividirlo en archivos más pequeños."
@@ -2542,9 +2542,6 @@
       ],
       "Calendar limit reached": [
         "Límite del calendario alcanzado"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "La clave privada principal del calendario no está descifrada"
       ],
       "Can't check username, try again later": [
         "No se puede comprobar el nombre de usuario, intente de nuevo más tarde"
@@ -2766,14 +2763,14 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Algunos de los nombres de las carpetas no están disponibles. Personalice la importación para editar estos nombres."
       ],
-      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Algunos de los nombres de sus carpetas exceden el límite máximo de caracteres de ProtonMail. Personalice la importación para editar estos nombres."
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Algunos de los nombres de las etiquetas no están disponibles. Personalice la importación para editar estos nombres."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Algunos de los nombres de sus etiquetas exceden el límite máximo de caracteres de ProtonMail. Personalice la importación para editar estos nombres."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, por favor contacte a nuestro ${ supportTeam }."
@@ -3221,9 +3218,6 @@
       ],
       "Torrenting support (P2P)": [
         "Soporte de torrent (P2P)"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "VPN ${ connectionsPluralized }"
       ]
     },
     "file size format": {
@@ -3903,11 +3897,23 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } es inválida"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } puede también usarse con una sola contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la del buzón. Para cambiar al modo de una sola contraseña, ingrese la única contraseña que desea usar y haga clic en guardar."
+      ],
+      "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
+        "${ MAIL_APP_NAME } le permite crear direcciones de correo para otras personas. Esto es perfecto para empresas, familias o grupos."
+      ],
+      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "${ MAIL_APP_NAME } soporta DKIM para dominios personalizados. Para usar la autenticación DKIM, añada el siguiente registro CNAME en los ajustes DNS para este dominio. Esto puede hacerse generalmente en el panel de control de su registrador de nombres de dominio."
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } gratis"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional empieza con un usuario, y cada usuario añade 5 GB y 5 direcciones de correo al grupo de la organización."
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        "${ mailPlus } está limitado a un usuario y comienza con 5 GB de almacenamiento."
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "${ mailProfessional } comienza con un usuario, cada usuario añade 5 GB y 5 direcciones a la cuota de la organización."
       ],
       "${ n } address": [
         "${ n } dirección",
@@ -3985,6 +3991,16 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } gratis"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        "Se requiere de ${ vpnBasic }, ${ vpnPlus } or ${ visionary } para la conexión a nivel país."
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "${ vpnPlus } incluye ${ maxVpn } conexión VPN.",
+        "${ vpnPlus } incluye ${ maxVpn } conexiones VPN."
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        "Se requiere ${ vpnPlus } o ${ visionary } para la función de Secure Core."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } miembro)",
         "(${ memberCount } miembros)"
@@ -4004,9 +4020,9 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } almacenamiento adicional"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } conexión para ProtonVPN (le permite conectar más dispositivos a la VPN)",
-        "+${ organization.BonusVPN } conexiones para ProtonVPN (le permite conectar más dispositivos a la VPN)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "Más de ${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)",
+        "Más de ${ organization.BonusVPN } conexiones para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)"
       ],
       "1. Invite friends to Proton": [
         "1. Invite amigos a Proton"
@@ -4056,8 +4072,8 @@
       "Account successfully updated": [
         "Cuenta actualizada con éxito"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Añada una dirección de correo electrónico @pm.me a su cuenta. Este dominio simple y más corto significa \"ProtonMail\" o \"Mensaje Privado.\""
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        "Añada una dirección de correo @pm.me a su cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME }\" o \"Mensaje privado\" en inglés."
       ],
       "Add a recovery email address": [
         "Añadir una dirección de correo de recuperación"
@@ -4194,8 +4210,8 @@
       "Basic, Plus or Visionary subscription required": [
         "Se requiere suscripción Basic, Plus o Visionary"
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Antes de poder recibir correos para sus direcciones de dominio personalizadas en ProtonMail, debe añadir los siguientes registros MX a su DNS. Esto se puede hacer normalmente en el panel de control de su registrador de nombres de dominio."
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Antes de poder recibir correos electrónicos para sus direcciones de dominio personalizadas en ${ MAIL_APP_NAME } , debe añadir los siguientes registros MX a su DNS. Esto se puede hacer normalmente en el panel de control de su registrador de nombres de dominio."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de que pueda enviar y recibir mensajes desde sus direcciones nuevas, necesita crear las claves de cifrado para ellas."
@@ -4263,9 +4279,6 @@
       "Continue with ${ planName }": [
         "Continuar con ${ planName }"
       ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        "Continúe con ${ planName } hoy y evite perder el acceso al final de su prueba."
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } calendario nuevo",
         "Crear ${ calendarsToBeCreated } calendarios nuevos"
@@ -4282,8 +4295,8 @@
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Cree y administre subcuentas y asígneles direcciones de correo en su dominio personalizado."
       ],
-      "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "Cree direcciones de correo electrónico para otras personas, administre ${ MAIL_APP_NAME } para una empresa, escuela o grupo. Comience añadiendo el nombre de su organización y el dominio personalizado (por ejemplo, @suempresa.com). "
       ],
       "Create in": [
         "Crear en"
@@ -4321,8 +4334,8 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Elimine todos los registros de MX o asegúrese de que la prioridad de ProtonMail es el número más bajo."
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Elimine cualquier otro registro MX o asegúrese de que la Prioridad de ${ MAIL_APP_NAME } sea el número más bajo."
       ],
       "Delete link?": [
         "¿Eliminar enlace?"
@@ -4336,8 +4349,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NO olvide esta contraseña. Si la olvida, no podrá administrar su organización."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "No use las credenciales OpenVPN / IKEv2 en aplicaciones ProtonVPN o en el panel de control de ProtonVPN. ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "No use las credenciales de OpenVPN/IKEv2 en las aplicaciones de ${ VPN_APP_NAME } ni en el panel de control de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "¿Desea revocar todas las demás sesiones y mantener la actual?"
@@ -4355,8 +4368,8 @@
       "Done! We sent a code to ${ destination }.": [
         "¡Listo! Le enviamos un código a ${ destination }."
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "La degradación terminará con cualquier conexión a los servidores de pago de ProtonVPN."
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "Al darse de baja finalizará cualquier conexión a servidores de pago de ${ VPN_APP_NAME }."
       ],
       "Download recovery file": [
         "Descargar archivo de recuperación"
@@ -4511,8 +4524,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentra el correo electrónico en su buzón, revise en la carpeta de spam."
       ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Si tiene un dominio personalizado con ProtonMail, puede establecer una dirección de correo catch-all que recibirá mensajes enviados a otras direcciones inexistentes en su dominio (p. ej., errores ortográficos)."
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "Si tiene un dominio personalizado con ${ MAIL_APP_NAME }, puede configurar una dirección de correo general que recibirá los mensajes enviados a su dominio pero a una dirección de correo no válida (por ejemplo, errores tipográficos)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Si tiene un código de regalo, ingréselo abajo para aplicar el descuento."
@@ -4532,14 +4545,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Si pierde su dispositivo habilitado para dos factores, estos códigos pueden usarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en su cuenta. Cada código solo se puede usar una vez."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Si continúa con la degradación, perderá el acceso a las funciones de pago de ProtonMail y ProtonVPN."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Si continúa con la degradación, perderá el acceso a las funciones de pago de ProtonMail, incluyendo almacenamiento adicional y filtros."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ MAIL_APP_NAME }, incluyendo filtros y almacenamiento adicionales."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Si continúa con la degradación, perderá el acceso a las funciones de pago de ProtonVPN."
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Si restableció su contraseña recientemente, puede usar un método de recuperación para desbloquear sus datos"
@@ -4660,8 +4673,8 @@
       "Large imports can take several days.": [
         "Las importaciones grandes pueden tardar varios días."
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Aprenda cómo iniciar sesión en ProtonVPN con aplicaciones VPN de terceros."
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Aprenda cómo iniciar sesión en ${ VPN_APP_NAME } con aplicaciones VPN de terceros."
       ],
       "Learn more": [
         "Más información"
@@ -4696,8 +4709,8 @@
       "Loading preview": [
         "Cargando vista previa"
       ],
-      "Log in to ProtonMail to activate your address": [
-        "Inicie sesión en ProtonMail para activar su dirección"
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
+        "Inicie sesión en ${ MAIL_APP_NAME } para activar su dirección"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Los registros incluyen intentos de autenticación de todos los servicios que usan sus credenciales de ProtonMail."
@@ -4807,8 +4820,8 @@
       "One account for all Proton services": [
         "Una cuenta para todos los servicios de Proton"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Solo cambie estos ajustes si está utilizando PGP con remitentes fuera de ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Solo cambie estos ajustes si está usando PGP con destinatarios que no son de ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
         "Solo usted puede ver las etiquetas."
@@ -4943,28 +4956,6 @@
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton intentará reanudar la importación tan pronto como su proveedor de correo restablezca el ${ bandwithLimitLink } de su cuenta. No necesita hacer nada. Si cancela la importación, no podrá reanudarla y tendrá que empezar de nuevo."
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMail puede también usarse con una única contraseña que reemplaza tanto a la contraseña de inicio de sesión como la del buzón. Para cambiar al modo de una contraseña, ingrese la única contraseña que desea utilizar y haga clic en guardar."
-      ],
-      "ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        "ProtonMail le permite crear direcciones para otras personas. Esto es perfecto para negocios, familias o grupos."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus está limitado a un usuario y empieza con 5 GB de almacenamiento."
-      ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail soporta DKIM para dominios personalizados. Para usar la autenticación DKIM, añada el siguiente registro CNAME en los ajustes DNS para este dominio. Esto puede hacerse generalmente en el panel de control de su registrador de nombres de dominio."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } incluye ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } conexión VPN.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } incluye ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } conexiones VPN."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Se requiere de ProtonVPN Basic, Plus o Visionary para tener conexión a nivel de país."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Se requiere de ProtonVPN Plus o Visionary para tener Secure Core."
-      ],
       "Public link invite": [
         "Enlace de invitación público"
       ],
@@ -5073,11 +5064,8 @@
       "Some keys successfully reactivated": [
         "Algunas claves fueron reactivadas con éxito"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF es usado para especificar quién está autorizado para enviar correos para el dominio, así que le recomendamos incluir a ProtonMail en su registro de SPF. Añada el siguiente registro TXT en su registro DNS. Esto se puede hacer normalmente en el panel de control de su registrador de nombres de dominio."
-      ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Comience con 500 MB y desbloquee más almacenamiento. El espacio de almacenamiento es compartido a través de Correo, Calendario y Drive."
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "SPF es usado para especificar quién está autorizado para enviar correos para el dominio, así que le recomendamos incluir a ${ MAIL_APP_NAME } en su registro de SPF. Añada el siguiente registro TXT en su registro DNS. Esto se puede hacer normalmente en el panel de control de su registrador de nombres de dominio."
       ],
       "Starter VPN service with P2P support.": [
         "Servicio inicial de VPN con soporte P2P."
@@ -5130,8 +5118,8 @@
       "The name will be visible to your users while they are logged in.": [
         "El nombre será visible para sus usuarios mientras estén conectados."
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Estos archivos de configuración le permiten elegir a qué servidor de ProtonVPN se conecta cuando usa una aplicación VPN de terceros o al configurar una conexión VPN en un enrutador."
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Estos archivos de configuración le permiten elegir a qué servidor de ${ VPN_APP_NAME } se conecta cuando usa una aplicación VPN de terceros o configura una conexión VPN en un enrutador."
       ],
       "This 30-day free trial is not available any other way.": [
         "Esta prueba gratuita de 30 días no está disponible de ninguna otra manera."
@@ -5238,8 +5226,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para continuar, seleccione un método de recuperación de cuenta para que podamos verificar la solicitud."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Para asegurar su conexión a Internet, descargue e instale la aplicación ProtonVPN para su dispositivo y conéctese a un servidor ProtonVPN."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        "Para proteger su conexión a Internet, descargue e instale la aplicación de ${ VPN_APP_NAME } para su dispositivo y conéctese a un servidor de ${ VPN_APP_NAME }."
       ],
       "To use ${ toAppName }, please create an address.": [
         "Para usar ${ toAppName }, cree una dirección."
@@ -5298,8 +5286,8 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "Actualice a un plan ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } o ${ PLAN_NAMES[PLANS.PLUS] } para habilitar las respuestas automáticas para cuando esté fuera de la oficina."
       ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Actualice a un plan de pago para desbloquear el soporte IMAP/SMTP mediante ProtonMail Bridge."
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
+        "Actualice a un plan pago para desbloquear la compatibilidad con IMAP/SMTP a través de ${ MAIL_APP_NAME } Bridge."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Actualice hoy y evite perder los beneficios de ${ appName } ${ planName }."
@@ -5316,8 +5304,8 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Use respuestas automáticas para informar a los contactos que está fuera de la oficina o que de otro modo no puede responder."
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use las siguientes credenciales al conectarse a servidores ProtonVPN sin aplicación. Por ejemplo: Tunnelblick en macOS, OpenVPN en GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Use las siguientes credenciales cuando se conecte a servidores de ${ VPN_APP_NAME } sin aplicación. Ejemplos de casos de uso incluyen: Tunnelblick en macOS, OpenVPN en GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use sus propias direcciones de dominio de correo personalizadas, por ejemplo, usted@sunombre.com"
@@ -5349,8 +5337,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Advertencia: la eliminación es permanente. Esto también elimina el acceso a todos los servicios conectados y elimina todos sus contactos."
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Le aconsejamos que use aplicaciones oficiales de ProtonVPN cuando sea posible."
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        "Le aconsejamos usar las aplicaciones oficiales de ${ VPN_APP_NAME } cuando sea posible."
       ],
       "We recommend using your recovery phrase instead.": [
         "Recomendamos usar su frase de recuperación en su lugar."
@@ -5394,8 +5382,8 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Cuando está deshabilitado, esto evita que todos los archivos de imagen se carguen en su dispositivo sin su conocimiento.\t"
       ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Cuando las notificaciones están habilitadas, enviaremos una alerta a su dirección de recuperación/notificación cuando tenga mensajes nuevos en su cuenta de ProtonMail."
+      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
+        "Cuando las notificaciones están habilitadas, le enviaremos una alerta a su dirección de correo de recuperación si tiene mensajes nuevos en su cuenta de ${ MAIL_APP_NAME }."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         "Cuando se suscriben a un plan de pago, de 1 a 3 meses de ${ appName } ${ planName } serán acreditados a su cuenta."
@@ -5427,9 +5415,6 @@
       "You are about to open another browser tab and visit:": [
         "Está a punto de abrir otra pestaña del navegador y visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Actualmente está conectado como ${ user.Name } (${ user.Email }) y tiene acceso restringido."
-      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualmente inició sesión como ${ user.Name } (${ user.Email })."
       ],
@@ -5457,11 +5442,11 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puede activar las notificaciones para recibir alertas cuando lleguen mensajes nuevos a esta carpeta."
       ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Puede usar ProtonMail con cualquier cliente de escritorio que soporte IMAP/SMTP, incluyendo Outlook, Apple Mail y Thunderbird."
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Puede usar ${ MAIL_APP_NAME } con cualquier cliente de correo electrónico de escritorio que admita IMAP/SMTP, incluidos Outlook, Apple Mail y Thunderbird."
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Puede usar las siguientes credenciales para conectarse a un servidor ProtonVPN mediante una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Puede usar las siguientes credenciales para conectarse a un servidor de ${ VPN_APP_NAME } usando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "No puede enviar más de ${ emailSendLimitNumber } invitaciones de correo en las siguientes 24 horas"
@@ -5469,8 +5454,8 @@
       "You cannot refer ${ appName } users": [
         "No puede referir usuarios de ${ appName }"
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "No puede usar las credenciales OpenVPN / IKEv2 para iniciar sesión en las aplicaciones ProtonVPN o en el panel de control de ProtonVPN. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "No puede usar las credenciales de OpenVPN/IKEv2 para iniciar sesión en las aplicaciones de ${ VPN_APP_NAME } o en el panel de control de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No definió un método de recuperación por lo que la recuperación de cuentas es imposible si olvida su contraseña. ¿Proceder sin método de recuperación?"
@@ -5481,8 +5466,8 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Debe activar la clave privada de su organización con la copia de seguridad suministrada por el administrador de la organización."
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "Debe deshabilitar o eliminar cualquier usuario adicional de ProtonMail, direcciones y dominios personalizados antes de poder degradar."
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "Debe deshabilitar o eliminar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada con su cuenta de PayPal para añadirla como método de pago."
@@ -5532,6 +5517,9 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Su cuenta de ${ BRAND_NAME } está asociada con ${ externalEmailAddress }. Para usar ${ toAppName }, cree una dirección."
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        "Sus cuentas de ${ VPN_APP_NAME } y ${ MAIL_APP_NAME } están vinculadas. Para eliminarlas a ambas, inicie sesión en ${ loginLink } y elimine su cuenta allí."
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Su cuenta tiene al menos una factura vencida. Su acceso ha sido restringido. ${ payInvoiceLink }"
       ],
@@ -5565,9 +5553,6 @@
       "Your email will only be used for this one-time verification.": [
         "Su correo electrónico sólo se usará para esta verificación única."
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        "Su prueba gratuita de ${ appName } ${ planName } terminará en ${ formattedTrialExpirationDate }."
-      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Su importación desde ${ delayedImport.Account } está retrasada temporalmente."
       ],
@@ -5591,9 +5576,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Su cuenta de Proton está actualmente bloqueada. Para continuar usando su cuenta, por favor pague cualquier factura atrasada."
-      ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Sus cuentas ProtonVPN y ProtonMail están vinculadas. Para eliminarlas, inicie sesión en ${ loginLink } y elimine su cuenta allí."
       ],
       "Your recovery email address:": [
         "Su dirección de correo de recuperación:"
@@ -5631,11 +5613,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        "${ MAIL_APP_NAME } no puede usarse para enviar correos masivos o spam. Los correos legítimos son ilimitados."
+      ],
       "Customizable features": [
         "Funciones personalizables"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail no puede utilizarse para el envío masivo de correos. Los correos legítimos son ilimitados."
       ]
     },
     "Info for cash payment method": {
@@ -6012,13 +5994,15 @@
       " and ${ l }": [
         " y ${ l }"
       ],
+      "${ MAIL_APP_NAME } address": [
+        "Dirección de ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } footer": [
+        "Pie de ${ MAIL_APP_NAME }"
+      ],
       "${ monthsRewarded } month credited": [
         "${ monthsRewarded } mes acreditado",
         "${ monthsRewarded } meses acreditados"
-      ],
-      "${ monthsRewarded } month pending": [
-        "${ monthsRewarded } mes pendiente",
-        "${ monthsRewarded } meses pendientes"
       ],
       "${ n } VPN connection available": [
         "${ n } conexión VPN disponible",
@@ -6123,9 +6107,6 @@
       "Calendars": [
         "Calendarios"
       ],
-      "Cancel": [
-        "Cancelar"
-      ],
       "Card holder": [
         "Titular de la tarjeta"
       ],
@@ -6162,6 +6143,9 @@
       "Conditions": [
         "Condiciones"
       ],
+      "Confirm link URLs": [
+        "Confirmar enlaces URL"
+      ],
       "Confirm login password": [
         "Confirmar contraseña de inicio de sesión"
       ],
@@ -6197,6 +6181,9 @@
       ],
       "Country": [
         "País"
+      ],
+      "Credits pending": [
+        "Créditos pendientes"
       ],
       "Credits used": [
         "Créditos usados"
@@ -6411,9 +6398,6 @@
       "Last month only": [
         "Solo el último mes"
       ],
-      "Link confirmation": [
-        "Confirmación de enlace"
-      ],
       "Login password": [
         "Contraseña de inicio de sesión"
       ],
@@ -6552,12 +6536,6 @@
       "Proton username": [
         "Nombre de usuario de Proton"
       ],
-      "ProtonMail address": [
-        "Dirección de ProtonMail"
-      ],
-      "ProtonMail footer": [
-        "Pie de página - ProtonMail"
-      ],
       "Read": [
         "Leído"
       ],
@@ -6624,8 +6602,8 @@
       "Statement": [
         "Declaración"
       ],
-      "Submit": [
-        "Enviar"
+      "Sticky labels": [
+        "Etiquetas adhesivas"
       ],
       "Subtotal": [
         "Subtotal"
@@ -6692,9 +6670,6 @@
       ],
       "Use folder colors": [
         "Usar colores de carpeta"
-      ],
-      "Use sticky labels": [
-        "Usar etiquetas fijas"
       ],
       "User": [
         "Usuario"
@@ -6784,8 +6759,8 @@
       ]
     },
     "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Añada un dominio propio a su cuenta de ProtonMail."
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Añada un dominio que posea a su cuenta de ${ MAIL_APP_NAME }."
       ]
     },
     "Label for domain modal": {
@@ -7128,12 +7103,6 @@
     "Many Others": {
       "and many others": [
         "y muchos otros"
-      ]
-    },
-    "Max VPN Connections": {
-      "Connection": [
-        "Conexión",
-        "Conexiones"
       ]
     },
     "Member action": {
@@ -8548,6 +8517,9 @@
       "${ appName } Keyboard Shortcuts": [
         "Atajos de teclado de ${ appName }"
       ],
+      "${ MAIL_APP_NAME } Bridge": [
+        "${ MAIL_APP_NAME } Bridge"
+      ],
       "(highly recommended)": [
         "(altamente recomendado)"
       ],
@@ -8716,9 +8688,6 @@
       "Change password": [
         "Cambiar contraseña"
       ],
-      "Change password for ${ Name } (${ Email })": [
-        "Cambiar contraseña para ${ Name } (${ Email })"
-      ],
       "Change role": [
         "Cambiar rol"
       ],
@@ -8730,6 +8699,9 @@
       ],
       "Clear": [
         "Borrar"
+      ],
+      "Composing": [
+        "Redactar"
       ],
       "Confirm address": [
         "Confirmar dirección"
@@ -8899,9 +8871,6 @@
       "Email subscriptions": [
         "Suscripciones de correo"
       ],
-      "Enable keyboard shortcuts": [
-        "Habilitar atajos de teclado"
-      ],
       "Encryption and keys": [
         "Cifrado y claves"
       ],
@@ -8941,8 +8910,8 @@
       "Generate new recovery phrase?": [
         "¿Generar frase de recuperación nueva?"
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Obtenga ProtonVPN Plus para acceder a todos los servidores"
+      "Get ${ vpnPlus } to access all servers": [
+        "Obtenga ${ vpnPlus } para acceder a todos los servidores"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Obtenga hasta 18 meses de ${ appName } ${ planName } gratis"
@@ -8999,6 +8968,9 @@
       "Invoices": [
         "Facturas"
       ],
+      "Keyboard shortcuts": [
+        "Atajos de teclado"
+      ],
       "Labels": [
         "Etiquetas"
       ],
@@ -9016,6 +8988,9 @@
       ],
       "Messages": [
         "Mensajes"
+      ],
+      "Messages and composing": [
+        "Mensajes y redacción"
       ],
       "Multi-user support": [
         "Soporte multi usuario"
@@ -9055,9 +9030,6 @@
       ],
       "Organization and keys": [
         "Organización y claves"
-      ],
-      "Other": [
-        "Otro"
       ],
       "Password": [
         "Contraseña"
@@ -9106,12 +9078,6 @@
       ],
       "Proton Logo": [
         "Logo de Proton"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonVPN": [
-        "ProtonVPN"
       ],
       "Reconnect your account": [
         "Reconectar su cuenta"
@@ -9272,8 +9238,8 @@
       "Total (monthly)": [
         "Total (mensual)"
       ],
-      "Try the best of ProtonMail for free": [
-        "Pruebe lo mejor de ProtonMail gratis"
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Pruebe lo mejor de ${ MAIL_APP_NAME } gratis"
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
@@ -9353,8 +9319,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "Factura de ProtonMail"
+      "${ MAIL_APP_NAME } invoice": [
+        "Factura de ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -9419,6 +9385,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        "Los usuarios de ${ MAIL_APP_NAME } usarán esta clave por defecto para enviar"
+      ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Acceda al contenido geobloqueado (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) sin importar dónde se encuentre."
       ],
@@ -9458,11 +9427,11 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Al habilitar el registro avanzado, registra la dirección IP para cada evento en el registro de seguridad."
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Obtenga acceso a todas las funciones de pago para ${ VPN_APP_NAME } y ${ MAIL_APP_NAME } (el servicio de correo electrónico cifrado que millones usan para proteger sus datos) con un solo plan."
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Obtenga acceso a todas las funciones de pago de ${ vpnAppName } y ${ mailAppName } (el servicio de correo electrónico cifrado que millones usan para proteger sus datos) con un plan."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obtenga acceso a todas las funciones de pago de ProtonVPN y ProtonMail (el servicio de correo electrónico cifrado que millones utilizan para proteger sus datos) con un solo plan."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupa correos electrónicos en la misma conversación juntos en su bandeja de entrada o los muestra por separado."
@@ -9478,9 +9447,6 @@
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield protege su dispositivo y acelera la navegación bloqueando anuncios, rastreadores y malware."
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "Los usuarios de ProtonMail usarán esta clave por defecto para enviar"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Envíe todo su tráfico de Internet a través de la red Tor con un solo clic."
@@ -9503,8 +9469,8 @@
       "Support for file sharing protocols such as BitTorrent.": [
         "Soporte para protocolos de intercambio de archivos como BitTorrent."
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Las subcarpetas del sistema se mostrarán como carpetas separadas en ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Las subcarpetas del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "La importación empezará con los mensajes más recientes."
@@ -9551,14 +9517,14 @@
       "You have locally decrypted this key": [
         "Ha descifrado localmente esta clave"
       ],
+      "Your ${ MAIL_APP_NAME } inbox is almost full": [
+        "Su buzón de ${ MAIL_APP_NAME } está casi lleno"
+      ],
       "Your DKIM signing is working.": [
         "Su firma DKIM está funcionando."
       ],
       "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
         "Su cuenta externa puede haber alcanzado su límite de ancho de banda de 24 horas. Proton intentará reanudar la importación tan pronto como sea posible."
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "Su buzón de ProtonMail está casi lleno"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -9567,13 +9533,13 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Seleccione la configuración PGP predeterminada usada para firmar o cifrar mensajes con usuarios fuera de ProtonMail. Tome en cuenta que PGP en línea fuerza mensajes de texto plano. Más información."
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Seleccione la configuración por defecto de PGP usada para firmar o cifrar mensajes con usuarios de PGP que no sean de ${ BRAND_NAME }. Tome en cuenta que Inline PGP fuerza los mensajes de texto sin formato. Más información"
       ]
     },
     "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Al recibir un correo electrónico de otro usuario de ProtonMail que no tiene claves de confianza en sus contactos, un aviso le preguntará si desea habilitar las claves de confianza."
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Cuando reciba un correo de otro usuario de ${ MAIL_APP_NAME } que no tenga claves de confianza en sus contactos, un aviso le preguntará si desea habilitar las claves de confianza."
       ]
     },
     "Tooltip sign external messages": {
@@ -9641,9 +9607,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
       "30-days money-back guarantee": [
         "Garantía de devolución de dinero de 30 días"
       ],
@@ -9827,8 +9790,8 @@
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "Si cancela esta importación, no podrá reanudarla. Proton guardó todo el progreso en su cuenta. ¿Cancelar de todos modos?"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "El chat en vivo es una función premium disponible solo para aquellos con planes de pago de ProtonVPN. En su lugar, abra una solicitud."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "El chat en vivo es una función premium disponible solo para aquellos con planes de pago de ${ VPN_APP_NAME }. Abra un ticket en su lugar."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Tome en cuenta que al elegir este método de pago su cuenta no será mejorada inmediatamente. Actualizaremos su cuenta una vez que el pago se haya completado."
@@ -9848,8 +9811,8 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Los ajustes de fecha y hora en su dispositivo están desactualizados. ${ learnMore }"
       ],
-      "This feature is only available for ProtonMail Professional plans or higher": [
-        "Esta función solo está disponible para el plan Professional y superiores"
+      "This feature is only available for ${ mailProfessional } plans or higher": [
+        "Esta función solo está disponible para el plan ${ mailProfessional } o superior"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Esta importación puede exceder la capacidad de almacenamiento disponible actualmente en su cuenta Proton. Considere personalizar su importación."

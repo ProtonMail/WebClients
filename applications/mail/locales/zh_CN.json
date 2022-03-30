@@ -87,7 +87,7 @@
         "应用"
       ],
       "Archive": [
-        ""
+        "存档"
       ],
       "Attachment": [
         "上传为附件"
@@ -453,7 +453,7 @@
         "加载"
       ],
       "Load embedded images": [
-        ""
+        "加载嵌入图像"
       ],
       "Load image": [
         "加载图片"
@@ -513,7 +513,7 @@
         "更多"
       ],
       "More details about ${ title }": [
-        ""
+        "${ title } 详情"
       ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
@@ -642,13 +642,13 @@
         "重新签名"
       ],
       "Read receipt sent": [
-        ""
+        "回执已发送"
       ],
       "Recover data": [
         "恢复数据"
       ],
       "Refer a friend": [
-        ""
+        "邀请好友"
       ],
       "Refine it": [
         "缩小搜索范围"
@@ -735,7 +735,7 @@
         "自动回复"
       ],
       "Send read receipt": [
-        ""
+        "发送回执"
       ],
       "Set": [
         "设置"
@@ -788,6 +788,9 @@
       "Show more search options": [
         "展开搜索选项"
       ],
+      "Show preview": [
+        ""
+      ],
       "Sign out": [
         "退出"
       ],
@@ -804,7 +807,7 @@
         "跟踪保护下某些图像无法加载"
       ],
       "Star": [
-        ""
+        "星标"
       ],
       "Start import": [
         "开始导入"
@@ -870,13 +873,13 @@
         "无标号列表"
       ],
       "Unstar": [
-        ""
+        "取消星标"
       ],
       "Unsubscribe": [
         "取消订阅"
       ],
       "Unsubscribe from mailing list": [
-        ""
+        "退订邮件"
       ],
       "Unsubscribing": [
         "正在退订"
@@ -933,7 +936,7 @@
         "查看邮件头信息"
       ],
       "View HTML": [
-        ""
+        "查看 HTML 代码"
       ],
       "View invoice": [
         "查看账单"
@@ -945,7 +948,7 @@
         "查看邮件"
       ],
       "View message details": [
-        ""
+        "查看邮件详细信息"
       ],
       "View recipients": [
         "查看收件人"
@@ -1042,7 +1045,7 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        ""
+        "已完成 ${ numberOfCompletedItems }/${ totalNumberOfItems }"
       ]
     },
     "Apps dropdown": {
@@ -1096,8 +1099,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "开启测试版功能后您将使用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 未正式发布的公测版本，可以抢先体验新产品和新功能。"
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "如果使用过程中遇到问题，您可以随时关闭该选项。"
@@ -1271,8 +1274,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        ""
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "继续使用 ${ MAIL_APP_NAME }。"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2876,7 +2879,7 @@
         "标签名称不能为空"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "最多只能有 ${ EO_REPLY_NUM_ATTACHMENTS_LIMIT } 个附件。"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
@@ -2888,7 +2891,7 @@
         "邮件处理错误。"
       ],
       "Missing key packet": [
-        ""
+        "缺少密钥数据包"
       ],
       "Missing signature": [
         "缺少签名"
@@ -2986,8 +2989,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分标签名称不可用，请自定导入内容并予以更改。"
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "部分标签名称超出了 ProtonMail 的长度限制，请自定导入内容并予以更改。"
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "部分标签名称超过了 ${ MAIL_APP_NAME } 的长度限制，请自定导入内容并予以更改。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
@@ -3430,7 +3433,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "我们已将您的存储空间升至 ${ rewardInGb } GB。您还可以升级账户，从而获得更大的存储空间和更高级的功能。"
       ],
       "You're all set!": [
         "一切就绪！"
@@ -3438,7 +3441,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "完成所有步骤即可将存储空间升至 ${ rewardInGb } GB"
       ],
       "Expires soon": [
         "即将过期"
@@ -3683,6 +3686,9 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
       ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "您的商务邮件也可以交由 ${ MAIL_APP_NAME } 保护。"
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封邮件无法移动。"
       ],
@@ -3756,10 +3762,10 @@
         "/月。"
       ],
       "5 email addresses": [
-        ""
+        "5 个邮箱地址"
       ],
       "5 GB storage": [
-        ""
+        "5 GB 存储空间"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "“恢复密语”是保护账户访问权限的最安全方法之一。如果您忘记了密码，您可以用它来访问账户并恢复加密数据。"
@@ -3888,7 +3894,7 @@
         "确认钓鱼报告"
       ],
       "Continue with ${ planName }": [
-        ""
+        "升级至 ${ planName } 并继续"
       ],
       "Copied to clipboard": [
         "已复制到剪贴板"
@@ -3992,11 +3998,11 @@
       "embedded image": [
         "张嵌入图像"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "为非 ProtonMail 用户加密"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        "为非 ${ BRAND_NAME } 用户加密"
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "向非 ProtonMail 邮箱发送的加密邮件 28 天内有效，您也可以设置更短的有效期。"
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        "向非 ${ BRAND_NAME } 邮箱发送的加密邮件 28 天内有效，您也可以设置更短的有效期。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -4017,19 +4023,19 @@
         "邮件有效期"
       ],
       "Expires": [
-        ""
+        "含有效期"
       ],
       "Expires in ${ formattedDelay }": [
-        ""
+        "${ formattedDelay } 后过期"
       ],
       "Expires in ${ formattedDelayShort }": [
-        ""
+        "${ formattedDelayShort } 后过期"
       ],
       "Expires in less than ${ formattedDelayShort }": [
-        ""
+        "${ formattedDelayShort } 内过期"
       ],
       "Expires soon": [
-        ""
+        "即将过期"
       ],
       "file attached": [
         "个附件"
@@ -4076,8 +4082,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "若您要将此邮件发给非 ProtonMail 用户，请务必设置邮件密码。"
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        "若您要将此邮件发给非 ${ MAIL_APP_NAME } 用户，请务必设置邮件密码。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "如有异议，请点击${ contactLink }联系我们。"
@@ -4167,7 +4173,7 @@
         "管理您的标签"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "最多只能有 ${ EO_REPLY_NUM_ATTACHMENTS_LIMIT } 个附件。"
       ],
       "members": [
         "成员"
@@ -4178,8 +4184,8 @@
       "Merged": [
         "已合并"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "当向其他ProtonMail用户发送邮件时，邮件过期的功能是开箱即用的。如果要向非ProtonMail用户发送过期邮件，请取消并在邮件中添加密码保护。"
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "向其他 ${ MAIL_APP_NAME } 用户发送的邮件可以直接设置有效期，如需对非 ${ BRAND_NAME } 用户设置邮件有效期，请先取消操作并为该邮件设置密码保护。"
       ],
       "Message headers": [
         "邮件标头"
@@ -4259,20 +4265,20 @@
       "of": [
         "，共"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "只有在与非 ProtonMail 用户使用 PGP 通讯时才应更改下列选项。"
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
       ],
       "Other options": [
-        ""
+        "其他选项"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "我们的系统已将此邮件认定为欺诈邮件，请确认其内容真实性。"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline 只能用于纯文本邮件。请注意 ProtonMail 会对所有加密邮件予以数字签名。"
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline 只能用于纯文本邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME 可使用编辑器中指定的格式发送邮件。请注意 ProtonMail 会对所有加密邮件予以数字签名。"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME 可使用编辑器中指定的格式发送邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
       ],
       "Phone number": [
         "电话号码"
@@ -4314,16 +4320,13 @@
         "打印邮件"
       ],
       "Priority support": [
-        ""
+        "优先享受客服"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 不会通过滥用用户隐私来赚钱。"
-      ],
-      "ProtonMail can protect your business as well.": [
-        "您的商务邮件也可以交由 ProtonMail 保护。"
       ],
       "Recipient: ": [
         "收件人："
@@ -4392,7 +4395,7 @@
         "从 @pm.me 地址发送邮件需要付费。您的邮件仍将从您的首选地址 ${ email } 发送。"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
+        "通过 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全邮箱发送。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
@@ -4400,14 +4403,14 @@
       "Session timed out": [
         "会话超时"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "将 ${ MAIL_APP_NAME } 设为此浏览器的默认邮件应用后，点击 mailto: 邮箱链接可自动跳转至 ${ MAIL_APP_NAME }。"
+      ],
       "Set a recovery phrase": [
         "设置恢复密语"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "将 ProtonMail 设为此浏览器的默认电子邮件应用程序。这样当您下次点击邮件链接时，ProtonMail 将会自动打开。"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "设置 PGP 后，您就可以向 ProtonMail 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "设置 PGP 后，您就可以向 ${ BRAND_NAME } 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
       ],
       "Show original message": [
         "显示原始邮件"
@@ -4416,10 +4419,10 @@
         "对不起，此邮件不存在或已过期"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "邮箱、日历、网盘均共用同一存储空间。"
       ],
-      "Store and share files securely with Proton Drive.": [
-        "使用 Proton Drive 安全地存储和共享文件。"
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        "使用 ${ DRIVE_APP_NAME } 可以安全地存储、分享文件。"
       ],
       "Subject": [
         "主题"
@@ -4434,7 +4437,7 @@
         "主题："
       ],
       "Support for 1 custom email domain": [
-        ""
+        "支持 1 个自有域名"
       ],
       "Support privacy by upgrading for": [
         "升级账户支持我们的隐私保护事业，仅需"
@@ -4590,10 +4593,10 @@
         "开启以搜索您的邮件全文"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "文件夹、标签、筛选规则不限量"
       ],
       "Unlimited messages": [
-        ""
+        "每日发送邮件不限量"
       ],
       "Unsupported file": [
         "不支持文件"
@@ -4628,11 +4631,11 @@
       "Upgrade to support privacy and get more features.": [
         "升级账户不仅可以支持我们的隐私保护事业，还能解锁更多功能。"
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "开通付费账户即可通过第三方客户端使用 ProtonMail。"
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        "开通付费账户即可通过第三方客户端使用 ${ MAIL_APP_NAME }。"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "立即升级账户即可继续享有下列 ${ appName } ${ planName } 权益。"
       ],
       "Upload picture": [
         "上传图片"
@@ -4644,7 +4647,7 @@
         "网址：${ unsubscribeMethods.HttpClient }"
       ],
       "Use ${ calendarAppName } to keep your agenda private.": [
-        ""
+        "使用 ${ calendarAppName } 守护您的日程隐私。"
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用键盘快捷键让邮件操作更加迅捷。"
@@ -4698,7 +4701,7 @@
         "您即将在新标签页中打开："
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "您可以将其添加为附件或在邮件正文中内嵌显示。"
@@ -4718,8 +4721,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
       ],
-      "You can use ProtonVPN for free today.": [
-        "您现在就可以免费使用 ProtonVPN。"
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        "您现在就可以免费使用 ${ VPN_APP_NAME }。"
       ],
       "You cannot reply from the invited address.": [
         "您无法通过受邀地址进行回复。"
@@ -4913,7 +4916,7 @@
         "转至废件箱"
       ],
       "Insert link": [
-        ""
+        "插入链接"
       ],
       "Jump to first": [
         "选择第一项"
@@ -5092,7 +5095,7 @@
         "自动保存联系人"
       ],
       "BCC": [
-        ""
+        "密送"
       ],
       "Blind Carbon Copy": [
         "密送"
@@ -5116,7 +5119,7 @@
         "类别"
       ],
       "CC": [
-        ""
+        "抄送"
       ],
       "City": [
         "城市"
@@ -5400,8 +5403,8 @@
       "Upload picture": [
         "上传图片"
       ],
-      "Username or ProtonMail address": [
-        "用户名或 ProtonMail 地址"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "用户名或 ${ MAIL_APP_NAME } 邮箱地址"
       ],
       "Verification code": [
         "验证码"
@@ -5493,7 +5496,7 @@
     },
     "Link": {
       "Activate": [
-        ""
+        "激活"
       ],
       "Add folder": [
         "添加文件夹"
@@ -5562,7 +5565,7 @@
         "管理标签"
       ],
       "More about recovery": [
-        ""
+        "详细了解账户恢复"
       ],
       "Open in ${ calendarAppName }": [
         "在 ${ calendarAppName } 中打开"
@@ -5716,7 +5719,7 @@
         "回复："
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "您的免费体验期已结束，账户即将停用。${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -5915,8 +5918,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        "${ appName } 的现代化和可定制程度现已大幅提高，并将继续通过高等级加密技术保障您的数据安全。"
+      ],
+      "Available on iOS and Android.": [
+        "支持 iOS 与 Android 设备。"
+      ],
+      "Get the ${ appName } mobile app": [
+        "下载 ${ appName } 移动应用"
+      ],
+      "Import your messages": [
+        "导入您已有的邮件"
+      ],
+      "Meet your encrypted mailbox": [
+        "欢迎进入您的加密邮箱"
+      ],
       "Next": [
         "下一步"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        "我们的导入助手能够迅速将您的所有邮件转移至加密邮箱中。"
       ]
     },
     "Onboarding Proton": {
@@ -5949,26 +5970,6 @@
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改。"
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } 的现代化和可定制程度现已大幅提高，并将继续通过高等级加密技术保障您的数据安全。"
-      ],
-      "Available on iOS and Android.": [
-        "支持 iOS 与 Android。"
-      ],
-      "Get the ${ appName } mobile app": [
-        "下载 ${ appName } 移动应用"
-      ],
-      "Import your messages": [
-        "导入您已有的邮件"
-      ],
-      "Meet your encrypted mailbox": [
-        "这就是您的加密邮箱"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "我们的导入助手能够迅速将您的所有邮件转移至加密邮箱中。"
       ]
     },
     "Option": {
@@ -6009,13 +6010,13 @@
     },
     "Paid user checklist item": {
       "Get mobile app": [
-        ""
+        "下载移动端应用"
       ],
       "Import contacts or emails": [
-        ""
+        "导入通讯录或邮件"
       ],
       "Send a message": [
-        ""
+        "发送邮件"
       ],
       "Set up a recovery method": [
         ""
@@ -6104,7 +6105,7 @@
         "请说明您的问题，并附上看到的所有错误提示"
       ],
       "Please insert link first": [
-        ""
+        "请先输入链接内容"
       ],
       "Proton username": [
         "Proton 用户名"
@@ -6228,8 +6229,8 @@
       "PGP-signed message. Sender verification failed": [
         "PGP 签名邮件，发件人验证失败"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "由 ProtonMail 通过全封闭加密发送"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "由 ${ MAIL_APP_NAME } 通过全封闭加密发送"
       ],
       "Stored with zero-access encryption": [
         "全封闭加密存储"
@@ -6304,17 +6305,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "由 ProtonMail 加密"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "由 ${ MAIL_APP_NAME } 加密"
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "由 ProtonMail 加密发往 PGP 收件人"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "由 ${ MAIL_APP_NAME } 加密发往 PGP 收件人"
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "由 ProtonMail 加密发往已验证的 PGP 收件人"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "由 ${ MAIL_APP_NAME } 加密发往已验证的 PGP 收件人"
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "由 ProtonMail 加密发往已验证的收件人"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "由 ${ MAIL_APP_NAME } 加密发往已验证的收件人"
       ],
       "End-to-end encrypted": [
         "已端到端加密"
@@ -6331,11 +6332,11 @@
       "PGP-signed": [
         "已 PGP 签名"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "由 ProtonMail 通过全封闭加密发送"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "由 ${ MAIL_APP_NAME } 通过全封闭加密发送"
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "由 ProtonMail 通过全封闭加密发往已验证的收件人"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "由 ${ MAIL_APP_NAME } 通过全封闭加密发往已验证的收件人"
       ],
       "Sent by you with end-to-end encryption": [
         "由您通过端到端加密发送"
@@ -6386,10 +6387,10 @@
         "探索所有 Proton 服务"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "免费获得最长 18 个月的 ${ appName } ${ planName } 使用权"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "邀请好友注册赢取奖励！"
       ],
       "Message Content Search": [
         "邮件全文搜索"
@@ -6409,10 +6410,10 @@
     },
     "Status": {
       "Unsubscribed from mailing list": [
-        ""
+        "邮件已退订"
       ],
       "Unsubscribing from mailing list...": [
-        ""
+        "正在退订邮件..."
       ]
     },
     "Step in filter modal": {
@@ -6916,8 +6917,8 @@
       "Enter your password": [
         "输入密码"
       ],
-      "Enter your username or ProtonMail email address": [
-        "输入用户名或 ProtonMail 邮箱"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "输入用户名或 ${ MAIL_APP_NAME } 邮箱地址"
       ],
       "Error": [
         "失败"
@@ -6983,13 +6984,13 @@
         "合并联系人"
       ],
       "Message details": [
-        ""
+        "邮件详细信息"
       ],
       "Message list": [
         "邮件列表"
       ],
       "Message will expire": [
-        ""
+        "此邮件已设置有效期"
       ],
       "More": [
         "更多"
@@ -7051,9 +7052,6 @@
       "Previous message": [
         "上一封邮件"
       ],
-      "ProtonMail": [
-        "ProtonMail"
-      ],
       "Re-sign all contacts": [
         "重新签署所有联系人"
       ],
@@ -7067,7 +7065,7 @@
         "未填写收件人"
       ],
       "Recipients": [
-        ""
+        "收件人"
       ],
       "Recover data": [
         "恢复数据"
@@ -7112,7 +7110,7 @@
         "发送永久有效的邮件？"
       ],
       "Sender": [
-        ""
+        "发件人"
       ],
       "Sender changed": [
         "发件地址已更改"
@@ -7211,8 +7209,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "系统子文件夹将在 ProtonMail 中显示为单独的文件夹"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        ""
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
@@ -7281,7 +7279,7 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
@@ -7324,7 +7322,7 @@
         "当前的导入设置将无法恢复。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "您的免费体验期将于 ${ textDate } 结束。${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

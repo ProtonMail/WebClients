@@ -791,6 +791,9 @@
       "Show more search options": [
         "Εμφάνιση περισσότερων επιλογών αναζήτησης"
       ],
+      "Show preview": [
+        "Εμφάνιση προεπισκόπησης"
+      ],
       "Sign out": [
         "Αποσύνδεση"
       ],
@@ -1046,8 +1049,8 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "",
-        ""
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } ολοκληρώθηκε",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } ολοκληρώθηκαν"
       ]
     },
     "Apps dropdown": {
@@ -1101,7 +1104,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -1276,7 +1279,7 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ]
     },
@@ -3005,8 +3008,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Ορισμένα από τα ονόματα ετικετών σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Ορισμένα από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ProtonMail. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Κάποια από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
@@ -3451,7 +3454,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Αυξήσαμε τον συνολικό αποθηκευτικό χώρο του λογαριασμού σας στα ${ rewardInGb } GB. Αποκτήστε πρόσθετο χώρο και ξεκλειδώστε προνομιακά χαρακτηριστικά σήμερα."
       ],
       "You're all set!": [
         "Είστε έτοιμοι!"
@@ -3459,7 +3462,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Ολοκληρώστε όλα τα βήματα και αποκτήστε συνολικά ${ rewardInGb } GB στον λογαριασμό σας"
       ],
       "Expires soon": [
         "Λήγει σύντομα"
@@ -3720,6 +3723,9 @@
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
       ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "Το ${ MAIL_APP_NAME } μπορεί επίσης να προστατέψει την επιχείρησή σας."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } μήνυμα δεν μπόρεσε να μετακινηθεί.",
         "${ messagesNotAuthorizedToMove } μηνύματα δεν μπόρεσαν να μετακινηθούν."
@@ -3830,7 +3836,7 @@
         "Ενεργοποίηση σε εξέλιξη"
       ],
       "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        ""
+        "Προσθήκη της διεύθυνσης ${ addressToCreate } στον λογαριασμό σας δωρεάν, μόνο για περιορισμένο χρόνο."
       ],
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
@@ -3871,34 +3877,34 @@
         "και"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        "Είστε σίγουροι ότι θέλετε να διαγράψετε όλα τα μηνύματα σε αυτόν τον φάκελο;"
+        "Θέλετε σίγουρα να διαγράψετε όλα τα μηνύματα σε αυτόν τον φάκελο;"
       ],
       "Are you sure you want to delete all messages with this label?": [
-        "Είστε σίγουροι ότι θέλετε να διαγράψετε όλα τα μηνύματα με αυτή την ετικέτα;"
+        "Θέλετε σίγουρα να διαγράψετε όλα τα μηνύματα με αυτή την ετικέτα;"
       ],
       "Are you sure you want to discard your changes?": [
         "Είστε βέβαιοι ότι θέλετε να απορρίψετε τις αλλαγές σας;"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } συζήτηση;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } σηζητήσεις;"
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } συνομιλία;",
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } συνομιλίες;"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } πρόχειρο;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } πρόχειρα;"
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } πρόχειρο;",
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } πρόχειρα;"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } μήνυμα;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } μηνύματα;"
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } μήνυμα;",
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } μηνύματα;"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "Είστε σίγουροι πως θέλετε να διαγράψετε οριστικά αυτή τη συζήτηση;"
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά αυτήν τη συνομιλία;"
       ],
       "Are you sure you want to permanently delete this draft?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτό το πρόχειρο;"
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά αυτό το πρόχειρο;"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτό το μήνυμα;"
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά αυτό το μήνυμα;"
       ],
       "Attach public key": [
         "Επισύναψη δημοσίου κλειδιού"
@@ -4058,11 +4064,11 @@
         "ενσωματωμένη εικόνα",
         "ενσωματωμένες εικόνες"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "Κρυπτογράφηση για χρήστες που δεν είναι στο ProtonMail"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        "Κρυπτογράφηση για χρήστες εκτός ${ BRAND_NAME }"
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Τα κρυπτογραφημένα μηνύματα σε παραλήπτες εκτός ProtonMail θα λήξουν σε 28 ημέρες εκτός εάν έχει οριστεί μικρότερος χρόνος εκπνοής."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        "Τα κρυπτογραφημένα μηνύματα σε παραλήπτες εκτός ${ BRAND_NAME } θα λήγουν σε 28 ημέρες, εκτός αν έχει οριστεί μικρότερος χρόνος λήξης."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
@@ -4146,8 +4152,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Αν στέλνετε αυτό το μήνυμα σε κάποιον χρήστη που δεν χρησιμοποιεί ProtonMail, βεβαιωθείτε ότι έχετε ορίσει κωδικό πρόσβασης για το μήνυμά σας."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        "Αν στέλνετε αυτό το μήνυμα σε χρήστη εκτός ${ MAIL_APP_NAME }, παρακαλούμε βεβαιωθείτε ότι έχετε ορίσει κωδικό πρόσβασης για αυτό."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
@@ -4249,8 +4255,8 @@
       "Merged": [
         "Συγχωνευμένα"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "Η λήξη μηνυμάτων λειτουργεί εκτός πλαισίου κατά την αποστολή μηνυμάτων σε άλλους χρήστες του ProtonMail. Για να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου που λήγουν σε μη-χρήστες ProtonMail, παρακαλούμε να ακυρώσετε και να προσθέσετε προστασία με κωδικό πρόσβασης στο email σας."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        ""
       ],
       "Message headers": [
         "Headers μηνύματος"
@@ -4330,8 +4336,8 @@
       "of": [
         "από"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες που δεν ανήκουν στο ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
       ],
       "Other options": [
         "Άλλες επιλογές"
@@ -4339,11 +4345,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Το σύστημά μας επισήμανε αυτό το μήνυμα ως απόπειρα ηλεκτρονικού ψαρέματος. Ελέγξτε ότι είναι νόμιμο."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "Το PGP / Inline είναι συμβατό μόνο με τη μορφή απλού κειμένου. Παρακαλούμε σημειώστε ότι το ProtonMail πάντα υπογράφει κρυπτογραφημένα μηνύματα."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "Το PGP/Inline είναι συμβατό μόνο με τη μορφή Σκέτου Κειμένου. Παρακαλούμε σημειώστε ότι το ${ MAIL_APP_NAME } πάντα υπογράφει κρυπτογραφημένα μηνύματα."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "Το PGP / MIME στέλνει αυτόματα το μήνυμα χρησιμοποιώντας την τρέχουσα λειτουργία σύνθεσης. Σημειώστε ότι το ProtonMail πάντα υπογράφει κρυπτογραφημένα μηνύματα"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "Το PGP/MIME στέλνει αυτόματα το μήνυμα χρησιμοποιώντας την τρέχουσα λειτουργία συντάκτη. Παρακαλούμε σημειώστε ότι το ${ MAIL_APP_NAME } πάντα υπογράφει κρυπτογραφημένα μηνύματα"
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
@@ -4392,9 +4398,6 @@
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Το Proton δε βγάζει λεφτά κάνοντας κατάχρηση απόρρητου."
-      ],
-      "ProtonMail can protect your business as well.": [
-        "Το ProtonMail μπορεί επίσης να προστατεύσει την επιχείρησή σας."
       ],
       "Recipient: ": [
         "Παραλήπτης: "
@@ -4471,14 +4474,14 @@
       "Session timed out": [
         "Λήξη χρόνου συνεδρίας"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        ""
+      ],
       "Set a recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Ορισμός του ProtonMail ως προεπιλεγμένης εφαρμογής αλληλογραφίας αυτού του περιηγητή. Το κλικ σε σύνδεσμο αλληλογραφίας θα ανοίγει αυτόματα το ProtonMail."
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Ρυθμίζοντας το PGP, σάς επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε έναν χρήστη που δεν ανήκει στο ProtonMail αλλά όμως χρησιμοποιεί και ο ίδιος PGP."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Η ρύθμιση PGP επιτρέπει την αποστολή μηνυμάτων κρυπτογραφημένων από άκρο σε άκρο σε χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
       ],
       "Show original message": [
         "Εμφάνιση αρχικού μηνύματος"
@@ -4489,8 +4492,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         ""
       ],
-      "Store and share files securely with Proton Drive.": [
-        "Αποθηκεύστε και μοιραστείτε αρχεία με ασφάλεια με το Proton Drive."
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        "Διασφαλισμένη αποθήκευση και κοινοποίηση των αρχείων σας με την ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Θέμα"
@@ -4700,8 +4703,8 @@
       "Upgrade to support privacy and get more features.": [
         "Αναβαθμίστε για να υποστηρίξετε το απόρρητο και να αποκτήσετε περισσότερες δυνατότητες."
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Αναβαθμίστε για να χρησιμοποιήσετε το ProtonMail με πελάτες τρίτου επιτραπέζιου υπολογιστή."
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
@@ -4770,7 +4773,7 @@
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         ""
@@ -4790,8 +4793,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
       ],
-      "You can use ProtonVPN for free today.": [
-        "Μπορείτε να χρησιμοποιήσετε το ProtonVPN δωρεάν σήμερα."
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        "Μπορείτε να χρησιμοποιήσετε το ${ VPN_APP_NAME } δωρεάν σήμερα."
       ],
       "You cannot reply from the invited address.": [
         "Δεν μπορείτε να απαντήσετε από την προσκεκλημένη διεύθυνση."
@@ -5482,8 +5485,8 @@
       "Upload picture": [
         "Ανέβασμα εικόνας"
       ],
-      "Username or ProtonMail address": [
-        "Όνομα χρήστη ή διεύθυνση ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Όνομα χρήστη ή διεύθυνση ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
@@ -5575,7 +5578,7 @@
     },
     "Link": {
       "Activate": [
-        ""
+        "Ενεργοποίηση"
       ],
       "Add folder": [
         "Προσθήκη φακέλου"
@@ -6002,8 +6005,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        "Το ${ appName } είναι τώρα πιο σύγχρονο και προσαρμόσιμο, εξακολουθώντας να προστατεύει τα δεδομένα σας με προηγμένη κρυπτογράφηση."
+      ],
+      "Available on iOS and Android.": [
+        "Διαθέσιμο για iOS και Android."
+      ],
+      "Get the ${ appName } mobile app": [
+        "Αποκτήστε την εφαρμογή ${ appName } για κινητά"
+      ],
+      "Import your messages": [
+        "Εισαγωγή των μηνυμάτων σας"
+      ],
+      "Meet your encrypted mailbox": [
+        "Γνωρίστε την κρυπτογραφημένη θυρίδα σας"
+      ],
       "Next": [
         "Επόμενο"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        "Ο Βοηθός Eισαγωγής μεταφέρει γρήγορα όλα τα μηνύματά σας στη νέα κρυπτογραφημένη θυρίδα σας."
       ]
     },
     "Onboarding Proton": {
@@ -6036,26 +6057,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } είναι τώρα πιο σύγχρονη και προσαρμόσιμη, προστατεύοντας παράλληλα τα δεδομένα σας με προηγμένη κρυπτογράφηση."
-      ],
-      "Available on iOS and Android.": [
-        "Διατίθεται σε iOS και Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Αποκτήστε την εφαρμογή ${ appName } για κινητά"
-      ],
-      "Import your messages": [
-        "Εισαγωγή των μηνυμάτων σας"
-      ],
-      "Meet your encrypted mailbox": [
-        "Γνωρίστε την κρυπτογραφημένη θυρίδα σας"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Ο Βοηθός Eισαγωγής μεταφέρει γρήγορα όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου σας στο νέο κρυπτογραφημένο γραμματοκιβώτιό σας."
       ]
     },
     "Option": {
@@ -6096,16 +6097,16 @@
     },
     "Paid user checklist item": {
       "Get mobile app": [
-        ""
+        "Λήψη εφαρμογής για κινητά"
       ],
       "Import contacts or emails": [
-        ""
+        "Εισαγωγή επαφών ή μηνυμάτων"
       ],
       "Send a message": [
-        ""
+        "Αποστολή μηνύματος"
       ],
       "Set up a recovery method": [
-        ""
+        "Ορισμός μεθόδου ανάκτησης"
       ]
     },
     "Participant name": {
@@ -6317,8 +6318,8 @@
       "PGP-signed message. Sender verification failed": [
         "Μήνυμα υπογεγραμμένο PGP. Αποτυχία επαλήθευσης αποστολέα"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Στάλθηκε από το ProtonMail με κρυπτογράφηση μηδενικής πρόσβασης"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Σταλμένο από ${ MAIL_APP_NAME } με κρυπτογράφηση μηδενικής πρόσβασης"
       ],
       "Stored with zero-access encryption": [
         "Αποθηκεύτηκε με κρυπτογράφηση μηδενικής πρόσβασης"
@@ -6397,17 +6398,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "Κρυπτογραφήθηκε από ProtonMail"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "Κρυπτογραφημένο από ${ MAIL_APP_NAME }"
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "Κρυπτογραφήθηκε από το ProtonMail στον παραλήπτη PGP"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "Κρυπτογραφημένο από ${ MAIL_APP_NAME } προς παραλήπτη PGP"
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "Κρυπτογραφήθηκε από το ProtonMail για επαληθευμένο παραλήπτη PGP"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Κρυπτογραφημένο από ${ MAIL_APP_NAME } προς επαληθευμένο παραλήπτη PGP"
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "Κρυπτογραφήθηκε από το ProtonMail για επαληθευμένο παραλήπτη"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "Κρυπτογραφημένο από ${ MAIL_APP_NAME } προς επαληθευμένο παραλήπτη"
       ],
       "End-to-end encrypted": [
         "Κρυπτογραφημένο από άκρο σε άκρο"
@@ -6424,12 +6425,12 @@
       "PGP-signed": [
         "Υπογεγραμμένο με PGP"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Στάλθηκε από το ProtonMail με κρυπτογράφηση μηδενικής πρόσβασης"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Σταλμένο από ${ MAIL_APP_NAME } με κρυπτογράφηση μηδενικής πρόσβασης"
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "Στάλθηκε από το ProtonMail με κρυπτογράφηση μηδενικής πρόσβασης στον επαληθευμένο παραλήπτη",
-        "Αποστολή μέσω ProtonMail με κρυπτογράφηση μηδενικής πρόσβασης σε επαληθευμένους παραλήπτες"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Σταλμένο από ${ MAIL_APP_NAME } με κρυπτογράφηση μηδενικής πρόσβασης προς επαληθευμένο παραλήπτη",
+        "Σταλμένο από ${ MAIL_APP_NAME } με κρυπτογράφηση μηδενικής πρόσβασης προς επαληθευμένους παραλήπτες"
       ],
       "Sent by you with end-to-end encryption": [
         "Στάλθηκε από εσάς με κρυπτογράφηση από άκρο σε άκρο"
@@ -7047,8 +7048,8 @@
       "Enter your password": [
         "Εισάγετε τον κωδικό σας"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Εισάγετε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Εισάγετε το όνομα χρήστη σας ή τη διεύθυνσή σας ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Σφάλμα"
@@ -7181,9 +7182,6 @@
       ],
       "Previous message": [
         "Προηγούμενο Μήνυμα"
-      ],
-      "ProtonMail": [
-        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Επανυπογραφή όλων των επαφών"
@@ -7343,8 +7341,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Οι υποφάκελοι συστήματος θα εμφανιστούν ως ξεχωριστοί φάκελοι στο ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
@@ -7397,8 +7395,8 @@
     },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } ομάδα επαφής;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } ομάδες επαφών;"
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδα επαφών;",
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδες επαφών;"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
@@ -7416,7 +7414,7 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [

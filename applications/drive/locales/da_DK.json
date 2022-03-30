@@ -59,6 +59,9 @@
       "Cancel all": [
         ""
       ],
+      "Cancel all downloads": [
+        ""
+      ],
       "Cancel all uploads": [
         "Annullér alle uploads"
       ],
@@ -208,9 +211,6 @@
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Expand folder": [
         "Udvid mappe"
       ],
@@ -273,6 +273,9 @@
       ],
       "Import from .csv or vCard": [
         "Importer fra .csv eller vCard"
+      ],
+      "Learn more": [
+        ""
       ],
       "Load image": [
         "Indlæs billede"
@@ -454,6 +457,9 @@
       "Show labels": [
         "Vis etiketter"
       ],
+      "Show preview": [
+        ""
+      ],
       "Sign out": [
         "Log ud"
       ],
@@ -593,7 +599,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -768,7 +774,7 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ]
     },
@@ -1725,7 +1731,7 @@
         "En gruppe med dette navn findes allerede"
       ],
       "A problem occurred, please try again": [
-        ""
+        "Der opstod et problem. Prøv venligst igen"
       ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
@@ -1746,7 +1752,7 @@
         "Kontaktsignatur ikke bekræftet"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "Indholdssøgning kan ikke aktiveres i denne browser. Afslut privat browsing eller brug en anden browser."
       ],
       "Could not find address ${ email }.": [
         "Kunne ikke finde adresse ${ email }."
@@ -1824,7 +1830,7 @@
         "Flet mindst ${ calendarToFixCount } kalendere med eksisterende Proton-kalendere"
       ],
       "Missing key packet": [
-        ""
+        "Manglende nøglepakke"
       ],
       "Missing signature": [
         "Manglende signatur"
@@ -1850,7 +1856,7 @@
         "Adgangskoder matcher ikke"
       ],
       "Please activate your content search again": [
-        ""
+        "Aktiver venligst din indholdssøgning igen"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
@@ -1869,7 +1875,7 @@
         "Forespørgsel fik timeout"
       ],
       "Search failed": [
-        ""
+        "Søgning mislykkedes"
       ],
       "Signature not verified": [
         "Signatur ikke bekræftet"
@@ -1886,8 +1892,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Nogle af dine etikettenavne overskrider ProtonMail's maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du stadig denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
@@ -2294,10 +2300,10 @@
         "(${ memberCount } medlemmer)"
       ],
       "5 email addresses": [
-        ""
+        "5 e-mailadresser"
       ],
       "5 GB storage": [
-        ""
+        "5 GB lagerplads"
       ],
       "A number will be added to the filename": [
         "Et nummer vil blive tilføjet filnavnet"
@@ -2335,10 +2341,10 @@
         "Er du sikker på, at du vil tømme papirkurven og slette alt indholdet permanent?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        ""
+        "Er du sikker på, at du vil slette \"${ itemName }\" permanent fra papirkurv?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        ""
+        "Er du sikker på, at du ønsker at slette de valgte emner permanent fra papirkurven?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Fordi ${ appName } er end-to-end krypteret, kan vi ikke få adgang til eller dekryptere dine filer for dig. For at låse dit drev op efter en nulstilling af adgangskode, skal du have en af følgende:"
@@ -2351,6 +2357,9 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
+      ],
+      "Checking signatures": [
+        ""
       ],
       "Clear data": [
         ""
@@ -2383,7 +2392,7 @@
         "Fortsæt med at bruge ${ appName } og lås op for drev senere"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Fortsæt med ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Opret ${ calendarsToBeCreated } ny kalender",
@@ -2426,6 +2435,15 @@
         "Slet drev",
         "Slet drev"
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        ""
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        ""
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        ""
+      ],
       "Downloaded": [
         "Downloadet"
       ],
@@ -2441,9 +2459,6 @@
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
       ],
@@ -2456,6 +2471,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Kunne ikke åbne et sikkert link. Årsagen er: ${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
+      ],
       "File will not be uploaded": [
         "Fil vil ikke blive uploadet"
       ],
@@ -2464,6 +2485,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "Mappeindhold vil blive flettet sammen til én enkelt mappe"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
       ],
       "Folder will not be uploaded": [
         "Mappen vil ikke blive uploadet"
@@ -2619,8 +2646,8 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ændr kun disse indstillinger, hvis du benytter PGP med ikke-ProtonMail-modtagere."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
       ],
       "Only the people with the link and the password can access this file.": [
         "Kun personer med linket og adgangskoden kan få adgang til denne fil."
@@ -2629,7 +2656,7 @@
         "Kun personer med linket og adgangskoden kan få adgang til denne mappe."
       ],
       "Other options": [
-        ""
+        "Andre muligheder"
       ],
       "Paused": [
         "Sat på pause"
@@ -2637,11 +2664,11 @@
       "Permanently delete all files in your drive": [
         "Slet alle filer på dit drev permanent"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ProtonMail altid signerer krypterede beskeder."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ProtonMail altid signerer krypterede beskeder"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
@@ -2671,10 +2698,10 @@
         "Primær"
       ],
       "Priority support": [
-        ""
+        "Prioriteret support"
       ],
       "Proton Calendar": [
-        ""
+        "Proton Calendar"
       ],
       "Queued": [
         "Sat i kø"
@@ -2706,11 +2733,17 @@
       "Session timed out": [
         "Session er udløbet"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail-bruger, der benytter en PGP-kompatibel tjeneste."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
       ],
       "Share files with links": [
         "Del filer med links"
+      ],
+      "Signature check will be ignored": [
+        ""
+      ],
+      "Signature issue": [
+        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Nogle af dine filer er ikke længere tilgængelige. Gendan adgangen til dine filer. ${ StartRecoveryButton }"
@@ -2719,16 +2752,22 @@
         "Noget gik galt. Prøv igen senere."
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "Lagerplads deles på tværs af Mail, Calendar og Drive."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Understøttelse af 1 brugerdefineret e-mail-domæne"
       ],
       "support team": [
         "supportteam"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade denne."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
       ],
       "There are no files yet": [
         "Der er ingen filer endnu"
@@ -2767,11 +2806,11 @@
       "This will overwrite the existing folder": [
         "Dette vil overskrive den eksisterende mappe"
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        ""
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
@@ -2804,10 +2843,10 @@
         ""
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Ubegrænsede mapper, etiketter og filtre"
       ],
       "Unlimited messages": [
-        ""
+        "Ubegrænset antal beskeder"
       ],
       "Unlock drive to recover files": [
         "Lås drev op for at gendanne filer"
@@ -2816,7 +2855,7 @@
         "Ikke-understøttet fil"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Opgrader i dag for at undgå at miste følgende ${ appName } ${ planName } fordele."
       ],
       "Uploaded": [
         "Uploadet"
@@ -2826,6 +2865,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Upload af hundredvis af filer på én gang kan have en effekt på ydeevnen."
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        ""
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
@@ -2861,7 +2906,7 @@
         "Du er ved at åbne en ny browserfane og besøge:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
@@ -2949,6 +2994,26 @@
         "Flere kontakter ser identiske ud. ${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        ""
+      ],
+      "file data": [
+        ""
+      ],
+      "keys": [
+        ""
+      ],
+      "name": [
+        ""
+      ],
+      "name hash": [
+        ""
+      ],
+      "thumbnail": [
+        ""
+      ]
+    },
     "Key badge": {
       "Expired": [
         "Udløbet"
@@ -2994,6 +3059,9 @@
       "Apply to all duplicated folders": [
         "Anvend på alle dubletmapper"
       ],
+      "Apply to all unverified items": [
+        ""
+      ],
       "Audio file": [
         "Lydfil"
       ],
@@ -3008,6 +3076,9 @@
       ],
       "Calendars": [
         "Kalendere"
+      ],
+      "Cancel download": [
+        ""
       ],
       "Category": [
         "Kategori"
@@ -3043,6 +3114,9 @@
       "Do not ask again": [
         "Spørg ikke igen"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Email address": [
         "E-mailadresse"
       ],
@@ -3056,7 +3130,7 @@
         "Aktivér beta-adgang"
       ],
       "Enabling Drive Search": [
-        ""
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "Kryptér e-mails"
@@ -3247,8 +3321,8 @@
       "Upload picture": [
         "Upload billed"
       ],
-      "Username or ProtonMail address": [
-        "Brugernavn eller ProtonMail-adresse"
+      "Username or ${ MAIL_APP_NAME } address": [
+        ""
       ],
       "Verification code": [
         "Bekræftelseskode"
@@ -3497,6 +3571,9 @@
       "File or folder is missing a name": [
         "Der mangler et navn på en fil eller mappe"
       ],
+      "Item failed to be verified": [
+        ""
+      ],
       "Link failed to be loaded": [
         "Link kunne ikke indlæses"
       ],
@@ -3566,6 +3643,28 @@
         "Bemærk at ${ boldNextStep } som applikationen anmoder om, for at starte din import."
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ],
+      "Upgrade account": [
+        ""
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        ""
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        ""
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Vælg et visningsnavn"
@@ -3598,37 +3697,15 @@
         "Du kan altid ændre dette i dine indstillingerne."
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "Aktivér Beta-adgang"
-      ],
-      "Start using ${ appName }": [
-        "Begynd at bruge ${ appName }"
-      ],
-      "Upgrade account": [
-        "Opgradér konto"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } er i øjeblikket i 'tidlig adgang' og er kun tilgængelig for brugere med et betalt abonnement."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } er i øjeblikket kun tilgængelig, hvis du aktiverer Beta-adgang."
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Beskyt alle dine filer med end-to-end-kryptering. Brug ${ appName } til at gemme og dele dine filer sikkert."
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
-        "${ appName } er i Beta"
+        ""
       ],
       "Meet your new secure file storage": [
-        "Mød dit nye sikre fillager"
+        ""
       ],
       "Upgrade to access ${ appName }": [
-        "Opgrader for at få adgang til ${ appName }"
+        ""
       ]
     },
     "Option": {
@@ -4088,6 +4165,12 @@
       "Download failed": [
         "Download mislykkedes"
       ],
+      "Download unverified file?": [
+        ""
+      ],
+      "Download unverified folder?": [
+        ""
+      ],
       "Downloading": [
         "Downloader"
       ],
@@ -4125,7 +4208,7 @@
         "Tøm Papirkurv"
       ],
       "Enable Drive Search": [
-        ""
+        "Enable drive search"
       ],
       "Enter password to download": [
         "Indtast adgangskode for at downloade"
@@ -4133,8 +4216,8 @@
       "Enter your password": [
         "Indtast din adgangskode"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Indtast dit brugernavn eller ProtonMail e-mailadresse"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        ""
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
@@ -4334,6 +4417,12 @@
       "The link failed to be loaded": [
         ""
       ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
       "Total size": [
         "Samlet størrelse"
       ],
@@ -4407,8 +4496,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk at PGP/Inline gennemtvinger beskeder i simpel tekst"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Systemundermapper vil blive vist som separate mapper i ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        ""
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
@@ -4475,7 +4564,7 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Hvis du ikke kan huske din adgangskode, er det umuligt at genaktivere din nøgle. Vi kan hjælpe dig med at afvise advarselsbanneret, men i processen vil du permanent miste adgang til alle de data, der er krypteret med den nøgle."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [

@@ -214,8 +214,8 @@
       "Copy link": [
         "リンクをコピー"
       ],
-      "Create a secure ProtonMail address instead": [
-        "代わりに安全な ProtonMail アドレスを作成"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        ""
       ],
       "Create address": [
         "アドレスの作成"
@@ -349,8 +349,8 @@
       "Generate recovery phrase": [
         "回復フレーズを生成"
       ],
-      "Get ProtonVPN Plus": [
-        "ProtonVPN Plus を入手"
+      "Get ${ vpnPlus }": [
+        "${ vpnPlus } を入手"
       ],
       "Get started": [
         "はじめましょう"
@@ -458,7 +458,7 @@
         "いいえ"
       ],
       "No, thanks": [
-        ""
+        "いいえ"
       ],
       "OK": [
         "OK"
@@ -512,7 +512,7 @@
         "友達を招待"
       ],
       "Refresh status": [
-        "ステータスを更新"
+        "状態を更新"
       ],
       "Refresh the page": [
         "ページを更新"
@@ -629,7 +629,7 @@
         "ユーザー名を送信"
       ],
       "Set as default": [
-        "既定に設定"
+        "既定にする"
       ],
       "Set catch-all": [
         "Catch-All の設定"
@@ -661,8 +661,8 @@
       "Show more": [
         "さらに表示"
       ],
-      "Show shortcuts": [
-        "ショートカットを表示"
+      "Show preview": [
+        "プレビューを表示"
       ],
       "sign in": [
         "サインイン"
@@ -743,7 +743,7 @@
         "更新"
       ],
       "Update recovery file": [
-        "リカバリーファイルを更新"
+        "回復ファイルを更新"
       ],
       "Update recovery phrase": [
         "回復フレーズを更新"
@@ -890,7 +890,7 @@
         "紛失した鍵の生成"
       ],
       "Make default": [
-        "既定に設定"
+        "既定にする"
       ],
       "Saving": [
         "保存しています"
@@ -901,7 +901,7 @@
         "有効"
       ],
       "Default": [
-        "デフォルト"
+        "既定"
       ],
       "Disabled": [
         "無効"
@@ -915,7 +915,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        ""
+        "今すぐ退出することで、いくつかの連絡先がインポートされない可能性があります"
       ],
       "By leaving now, some events may not be imported": [
         "今すぐ退出することで、いくつかのイベントがインポートされない可能性があります"
@@ -1196,8 +1196,8 @@
       "Add link to your email footer": [
         "リンクをメールフッターに追加"
       ],
-      "Continue using ProtonMail.": [
-        "ProtonMail を使って続行。"
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } を使って続行します。"
       ],
       "Copy": [
         "コピー"
@@ -2315,19 +2315,19 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
-      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
+      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
         ""
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         ""
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "ファイルの最大容量は ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } 件までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
+        "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } 件までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         ""
       ],
-      "Track your referral link activities here.": [
+      "You can continue to invite friends, but you wont be able to earn more credits": [
         ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
@@ -2526,14 +2526,11 @@
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
       ],
-      "Calendar primary private key is not decrypted": [
-        "カレンダーのプライマリー秘密鍵が復号されていません"
-      ],
       "Can't check username, try again later": [
         "ユーザー名を確認できません。後ほどお試しください。"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
       ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
@@ -2548,7 +2545,7 @@
         ""
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        ""
+        "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
       ],
       "Domain not available, try again later": [
         "ドメインが利用できません。後でもう一度お試しください。"
@@ -2635,7 +2632,7 @@
         "ラベル名は空欄にできません"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        ""
+        "${ calendarToFixCount } 件のカレンダーを既存の Proton カレンダーに結合します"
       ],
       "Missing key packet": [
         ""
@@ -2716,7 +2713,7 @@
         "再認証を行い、権限が正しく設定されていることを確認してください。"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
-        ""
+        "マルチユーザー対応が必要な場合、Visionaryプランまたは、1ユーザー以上を追加してProfessionalプランにアップグレードしてください"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "複数ユーザーで利用する場合はPROFESSIONALプランもしくは、VISIONARYプランにアップグレードしてください。"
@@ -2745,14 +2742,14 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "フォルダ名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
-      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "フォルダー名の中に ProtonMail の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "ラベル名の中に ProtonMail の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
@@ -2821,7 +2818,7 @@
         "アップロードされたファイルは有効な秘密鍵ではありません。確認してから再度お試しください。"
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        ""
+        "アップロードされたファイルは有効でないプライベートキーです。検証してから再度お試しください。"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "検証に失敗しました。一時間程経ってからもう一度試してください。"
@@ -2871,7 +2868,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
@@ -2952,7 +2949,7 @@
         ""
       ],
       "Element": [
-        ""
+        "要素"
       ],
       "Encryption failed": [
         "暗号化に失敗しました"
@@ -2967,7 +2964,7 @@
         "イベントの検証に失敗しました"
       ],
       "Floating times not supported": [
-        ""
+        "浮動時間はサポートされていません"
       ],
       "Free-busy time information": [
         ""
@@ -3047,7 +3044,7 @@
         "${ refresh } または接続を確認してください。"
       ],
       "Please ${ signIn } to update your email subscription preferences.": [
-        ""
+        "${ signIn } してメールサブスクリプション設定を更新してください"
       ],
       "There was a problem connecting to Proton.": [
         "Proton への接続に問題がありました。"
@@ -3109,13 +3106,13 @@
         "未対応のレスポンスです"
       ],
       "We could not cancel the event in your calendar": [
-        ""
+        "カレンダーのイベントをキャンセルすることができませんでした"
       ],
       "We could not retrieve the event from your calendar": [
         ""
       ],
       "We could not update the event in your calendar": [
-        ""
+        "カレンダーのイベントを更新することができませんでした"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         ""
@@ -3178,7 +3175,7 @@
     },
     "Feature": {
       "${ MaxVPN } VPN connection": [
-        ""
+        "${ MaxVPN } VPN 接続"
       ],
       "Access to all countries": [
         "すべての国にアクセス"
@@ -3197,9 +3194,6 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent 対応 (P2P)"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "VPN ${ connectionsPluralized }"
       ]
     },
     "file size format": {
@@ -3279,7 +3273,7 @@
         ""
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        ""
+        "送信者ごとに迷惑メールのルールを適用します。許可リストにあるアドレスやドメインからのメッセージは常に受信トレイに送られ、ブロックリストにあるアドレスやドメインからのメッセージは常に迷惑メールフォルダーに送られます。メッセージを迷惑メールとしてマークすると、そのアドレスはブロックリストに追加されます。メッセージを迷惑メールではないとしてマークすると、そのアドレスは許可リストに追加されます。"
       ],
       "Search in Allow List and Block List": [
         "許可リストとブロックリストを検索"
@@ -3405,7 +3399,7 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        ""
+        "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         ""
@@ -3436,7 +3430,7 @@
         ""
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        ""
+        "イベントの暗号化と追加中にエラーが発生しました。イベントをインポートできませんでした。"
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
@@ -3445,7 +3439,7 @@
         "カレンダーへのイベントの暗号化と追加: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        ""
+        "イベントは正常にインポートされました。インポートされたイベントはカレンダーに表示されます。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "インポートが完了するまでタブを閉じないでください。"
@@ -3453,7 +3447,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        ""
+        "${ CALENDAR_APP_NAME } は現在、特定のタイプや詳細、フォーマットをサポートしていません。"
       ],
       "vCard versions < 3.0": [
         "vCard バージョン3.0以前"
@@ -3655,28 +3649,28 @@
         "Outlook ${ outlookContactsLink } を開く"
       ],
       "Select ${ boldExportContacts } and choose which contacts to export": [
-        ""
+        "${ boldExportContacts } を選択し、どの連絡先をエクスポートするか選びます"
       ],
       "Select ${ boldExportCSV }": [
         "${ boldExportCSV } を選択"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink } が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink } が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        ""
+        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業を開始する前にダウンロード済ませてください。"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "連絡先を Proton にインポートするには、${ knowledgeBaseLink } が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "連絡先を Proton にインポートするには、${ knowledgeBaseLink } が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        ""
+        "連絡先を Proton にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業を開始する前にダウンロード済ませてください。"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         ""
@@ -3711,7 +3705,7 @@
         "ICS"
       ],
       "in the next step you need to select all the permissions": [
-        ""
+        "次のステップで必要なすべての権限を選択します"
       ],
       "Manage": [
         "管理"
@@ -3751,10 +3745,10 @@
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
-        ""
+        "${ boldICS } をクリックし、ファイルをダウンロードします"
       ],
       "Go to ${ calendarLink } in your Outlook.com settings": [
-        ""
+        "Outlook.com 設定から ${ calendarLink } へ移動します"
       ],
       "Go to ${ calendarViewLink } in Yahoo Mail": [
         "Yahoo Mail の ${ calendarViewLink } へ移動"
@@ -3793,7 +3787,7 @@
         "完了"
       ],
       "Delayed": [
-        ""
+        "遅延"
       ],
       "Failed": [
         "失敗"
@@ -3864,11 +3858,23 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } は無効です"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } はログイン用とメールボックス用のパスワードを 1 つに統一できます。1 つのパスワードにするには、パスワードを入力してから保存をクリックしてください。"
+      ],
+      "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
+        "${ MAIL_APP_NAME } で、他の人用のメールアドレスを作成できます。この機能は、ビジネスや家族、グループでの利用に最適です。"
+      ],
+      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "${ MAIL_APP_NAME } は独自ドメインの DKIM 署名に対応しています。 DKIM 認証を使用するには、次の CNAME レコードをこのドメインを管轄する DNS へ追加してください。これは通常、ドメイン名登録のコントロールパネルから行えます。"
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } Free"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional は 1 人のユーザーから使うことができます。1 人のユーザーを追加するごとに組織プールに 5 GB のストレージと 5 つのメールアドレスが追加されます。"
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        "${ mailPlus } は 1 人用で 5 GB のストレージから利用できます。"
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "${ mailProfessional } は 1 人のユーザーから使うことができます。1 人のユーザーを追加するごとに組織プールに 5 GB のストレージと 5 つのメールアドレスが追加されます。"
       ],
       "${ n } address": [
         "${ n } 件のアドレス"
@@ -3933,6 +3939,15 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Free"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        "国レベルで接続するには ${ vpnBasic }、${ vpnPlus }、${ visionary } が必要です。"
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "${ vpnPlus } には ${ maxVpn } の VPN 接続が含まれます。"
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        "Secure Core 機能を利用するには ${ vpnPlus } または ${ visionary } に登録する必要があります。"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } メンバー)"
       ],
@@ -3951,8 +3966,8 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } 件の ProtonVPN 接続 (より多くのデバイスを VPN に接続可能)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } 件の ${ VPN_APP_NAME } 接続 (より多くのデバイスを VPN に接続可能)"
       ],
       "1. Invite friends to Proton": [
         "1. 友達を Proton へ招待"
@@ -4002,8 +4017,8 @@
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "あなたのアカウントに@pm.meメールアドレスを追加します。このシンプルな短縮ドメインは「ProtonMail」または「Private Message me」の略です。"
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        "あなたのアカウントに @pm.me メールアドレスを追加します。このシンプルな短縮ドメインは「${ MAIL_APP_NAME } me」または「Private Message me」の略です。"
       ],
       "Add a recovery email address": [
         "回復用メールアドレスを追加"
@@ -4137,8 +4152,8 @@
       "Basic, Plus or Visionary subscription required": [
         "BASIC 、PLUS または VISIONARY プランが必要です"
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail で独自ドメイン宛のメールを受信するには、まず次の MX レコードを DNS に追加する必要があります。 これは通常、ドメイン名登録のコントロールパネルから行うことができます。"
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "${ MAIL_APP_NAME } で独自ドメイン宛のメールを受信するには、まず次の MX レコードを DNS に追加する必要があります。 これは通常、ドメイン名登録のコントロールパネルから行うことができます。"
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "新しいアドレスからメールの送受信を開始する前に、暗号化キーを作成する必要があります。"
@@ -4206,9 +4221,6 @@
       "Continue with ${ planName }": [
         "${ planName } で続行"
       ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        ""
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
       ],
@@ -4224,8 +4236,8 @@
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "サブアカウントを作成・管理し、独自ドメインのメール アドレスを割り当ててください。"
       ],
-      "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        ""
       ],
       "Create in": [
         "作成日時"
@@ -4263,8 +4275,8 @@
       "Data locked": [
         "データはロックされています"
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "他の MX レコードを削除するか、他と比較して ProtonMail の優先度が最も小さい値であることをご確認ください。"
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "他の MX レコードを削除するか、他と比較して ${ MAIL_APP_NAME } の優先度が最も小さい値であることをご確認ください。"
       ],
       "Delete link?": [
         "リンクを削除"
@@ -4278,8 +4290,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "このパスワードを紛失しないように注意してください。紛失した場合、組織を管理できなくなります。"
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "OpenVPN / IKEv2 認証情報は、ProtonVPN アプリケーションや ProtonVPN ダッシュボードでは使用できません。 ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードで OpenVPN / IKEv2 資格情報を使用しないでください。${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "現在のセッション以外のすべてのセッションを取り消しますか?"
@@ -4296,11 +4308,11 @@
       "Done! We sent a code to ${ destination }.": [
         "完了! ${ destination } にコードを送信しました!"
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "ダウングレードすると有料の ProtonVPN サーバーとの接続が終了します。"
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "ダウングレードすると、有料の ${ VPN_APP_NAME } サーバーとの接続が終了します。"
       ],
       "Download recovery file": [
-        "リカバリーファイルをダウンロード"
+        "回復ファイルをダウンロード"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
@@ -4360,16 +4372,16 @@
         "本人確認のため、ログインパスワードを入力してください:"
       ],
       "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        ""
+        "(組織管理者としての) パスワードと ${ Name } (${ Email }) 向けの新しいパスワードを入力してください。"
       ],
       "Enter your Proton account email address or username.": [
         "Proton アカウントのメールアドレスまたはユーザー名を入力してください。"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
-        ""
+        "回復用メールアドレスを入力してください。ユーザー名またはメールアドレスを送信します。"
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        ""
+        "回復用電話番号を入力してください。ユーザー名またはメールアドレスを送信します。"
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         ""
@@ -4452,7 +4464,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダを確認してください。"
       ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
         ""
       ],
       "If you have a gift code, enter it below to apply your discount.": [
@@ -4473,14 +4485,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "2 要素認証機器を紛失した場合、6 桁の2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "ダウングレードすると、ProtonMail と ProtonVPN の有料機能が使えなくなります。"
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "ダウングレードすると ${ MAIL_APP_NAME } と ${ VPN_APP_NAME } の有料機能が使えなくなります。"
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "ダウングレードを進めると、ProtonMail の追加ストレージやフィルターなどの有料機能にアクセスできなくなります。"
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "ダウングレードすると ${ MAIL_APP_NAME } の追加ストレージやフィルターなどの有料機能にアクセスできなくなります。"
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "ダウングレードすると、ProtonVPN の有料機能が使えなくなります。"
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "ダウングレードすると ${ VPN_APP_NAME } の有料機能が使えなくなります。"
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "最近パスワードをリセットのであれば、回復手段を使ってデータのロックを解除することができます"
@@ -4522,7 +4534,7 @@
         "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントへのアクセスが永久に失われます。"
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "重要: レジストラによっては (他のレジストラーで要求する) 終了期限付きCNAMEの値が使えません。もしあなたが使用しているレジストラで CNAME レコードが使えない場合、各 CNAME の期限を削除して再度試してみてください。"
+        "重要: レジストラーによっては (他のレジストラーで要求する) 終了期限付きCNAMEの値が使えません。もしあなたが使用しているレジストラで CNAME レコードが使えない場合、各 CNAME の期限を削除して再度試してみてください。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -4579,7 +4591,7 @@
         "必須です"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        ""
+        "私は ${ appName } を使用しており、あなたに気に入ってもらえると思いました。これはプライバシーを保護できる安全なメールサービスです。このリンクを使ってサインアップすると 1 か月間、無料で使うことができます。${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
@@ -4599,8 +4611,8 @@
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "サードパーティアプリケーションで ProtonVPN にログインする方法を学ぶ"
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "サードパーティアプリケーションで ${ VPN_APP_NAME } にログインする方法を学ぶ"
       ],
       "Learn more": [
         "より詳しく"
@@ -4635,8 +4647,8 @@
       "Loading preview": [
         "プレビューを読み込み中"
       ],
-      "Log in to ProtonMail to activate your address": [
-        "ProtonMail にログインしてアドレスを有効化してください"
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
+        "${ MAIL_APP_NAME } にログインしてアドレスをアクティブにします"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "ログには、あなたの Proton 認証情報を使用して行われた、全ての Proton サービスへの認証の試行が含まれます。"
@@ -4648,7 +4660,7 @@
         ""
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        ""
+        "ログインおよびメールの復号に使用するパスワードは、紛失しないようご注意ください。${ boldAlert }。初めに ${ recoveryLink } を登録することをおすすめします。"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "アカウント設定のために、２要素認証デバイスに手動でこの情報を入力してください。 ${ _switchButton }"
@@ -4678,7 +4690,7 @@
         "${ BRAND_NAME } を初めて利用する場合: ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "次のステップで Google アカウントにログインし、データへのアクセスを許可してください。"
+        "次に Google アカウントにログインし、データへのアクセスを許可します。"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "アカウントの回復手段は設定されていません。アカウントにアクセスできなくなる危険性があります。"
@@ -4732,7 +4744,7 @@
         "未設定"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "あなたのデバイスではありませんか? プライベートブラウジングウィンドウを使用してサインインし、作業が完了したらウィンドウを閉じます。${ learnMore }"
+        "自分のデバイス以外からサインインする場合はプライベートブラウジングウィンドウを使用し、作業完了後にウィンドウを閉じてください。${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "ユーザーに与えられる VPN の接続数。デバイスが接続されると1つのVPN接続が消費されます。"
@@ -4746,8 +4758,8 @@
       "One account for all Proton services": [
         "1つのアカウントで全 Proton サービスを利用可能"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "PGP を利用している ProtonMail 以外の宛先がある場合にのみ、これらの設定を変更してください。"
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
       ],
       "Only you can see the labels.": [
         "ラベルが見えるのはあなただけです。"
@@ -4765,7 +4777,7 @@
         "その他のオプション"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
       ],
       "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
         ""
@@ -4783,7 +4795,7 @@
         "P2P"
       ],
       "Paid for a ${ rewardMonths } month plan": [
-        ""
+        "${ rewardMonths } か月プランに課金"
       ],
       "Paid for a monthly plan": [
         "月額プランに課金"
@@ -4819,7 +4831,7 @@
         "アドレスを削除すると、このアドレスでメールを送受信できなくなります。"
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        ""
+        "注意: このドメインを削除することにより、このアドレスに関連付けられているすべてのアドレスは無効化されます。"
       ],
       "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
         ""
@@ -4881,27 +4893,6 @@
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Protonは、メールプロバイダーがアカウントのリセットを完了するとすぐにインポートを再開しようとします。${ bandwithLimitLink }。 何もする必要はありません。インポートをキャンセルすると再開できなくなり、やり直す必要があります。"
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMailはログイン用とメールボックス用のパスワードを１つに統一できます。１つのパスワードにするには、パスワードを入力してから保存をクリックしてください。"
-      ],
-      "ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        "ProtonMail で、他の人用のメールアドレスを作成できます。この機能は、ビジネスや家族、グループでの利用に最適です。"
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus は 1 人用で 5 GB のストレージから利用できます。"
-      ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail は独自ドメインの DKIM 署名に対応しています。 DKIM 認証を使用するには、次の CNAME レコードをこのドメインを管轄する DNS へ追加してください。これは通常、ドメイン名登録のコントロールパネルから行えます。"
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } プランには、${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN 接続が含まれます。"
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "国レベルでの接続には、ProtonVPN Basic、Plus または Visionary が必要です。"
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Secure Core 機能を利用するには、 ProtonVPN Plus または Visionary プランに登録する必要があります。"
-      ],
       "Public link invite": [
         ""
       ],
@@ -4939,7 +4930,7 @@
         ""
       ],
       "Referral link copied to your clipboard": [
-        ""
+        "招待リンクをクリップボードにコピーしました"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
@@ -4978,7 +4969,7 @@
         ""
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
+        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> から送信されました。"
       ],
       "Server is currently down": [
         "このサーバーは現在オフラインです"
@@ -5010,11 +5001,8 @@
       "Some keys successfully reactivated": [
         "いくつかの鍵は正常に再度アクティブになりました"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF は送信元のドメインを明示するために使用されます。そのため、SPF レコードに ProtonMail を含めることを強く推奨します。次の TXT レコードを DNS に追加してください。これは通常、ドメイン名登録のコントロールパネルから設定できます。"
-      ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "500 MB のストレージが利用でき、途中でさらにストレージを入手できます。ストレージ容量は、Mail、Calender、Drive で共有されます。"
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "SPF は送信元のドメインを明示するために使用されます。そのため、SPFレコードに ${ MAIL_APP_NAME } を含めることを強く推奨します。次の TXT レコードを DNS に追加してください。これは通常、ドメイン名登録のコントロールパネルから設定できます。"
       ],
       "Starter VPN service with P2P support.": [
         "P2P対応のStarter VPNサービス。"
@@ -5023,7 +5011,7 @@
         "ストレージ GB"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "ストレージ容量は Mail、Calendar、Drive で共有されます。"
       ],
       "Support for 1 custom email domain": [
         "1 つの独自メールドメインをサポート"
@@ -5062,13 +5050,13 @@
         "リストの一番上にあるものが、デフォルトのメールアドレスとして使用されます。メールアドレスを並び替えるには、ドラッグ＆ドロップしてください。"
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        ""
+        "Import-Export アプリを使うことで、ローカルなバックアップ用にメッセージをエクスポートしたり、以前のバックアップをアカウントに戻すことができます。"
       ],
       "The name will be visible to your users while they are logged in.": [
         "あなたのユーザがログインしている間は、この名前が表示されます。"
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "これらの設定ファイルは、サードパーティ製のVPNアプリを使用する際や、ルーターでVPN接続を設定する際に、どのProtonVPNサーバーに接続するかを選択するためのものです。"
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "これらの設定ファイルは、サードパーティ製の VPN アプリを使用する際や、ルーターで VPN 接続を設定する際に、どの ${ VPN_APP_NAME } サーバーに接続するかを選択するためのものです。"
       ],
       "This 30-day free trial is not available any other way.": [
         "何らかの原因で 30 日のトライアルは利用できません。"
@@ -5083,7 +5071,7 @@
         "この処理には機器により、数秒から数分を要します。"
       ],
       "This email address will only be used for recovery purposes.": [
-        ""
+        "このメールアドレスは回復目的のためだけに使用されます。"
       ],
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "この機能は高度なユーザー向けです。この鍵を削除すると、この鍵を使って暗号化したメッセージを復元することができなくなります。データ損失につながる可能性があります。"
@@ -5149,7 +5137,7 @@
         "サインイン後 ${ toAppName } を開きます"
       ],
       "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
-        ""
+        "プレミアム機能の ${ appName } を使い続けるには、サブスクリプションと支払方法を選択してください。"
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "メールなどのデータを復号するには、回復ファイルが必要です。"
@@ -5175,8 +5163,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         ""
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "インターネット接続を保護するには、ProtonVPN アプリケーションをダウンロード・インストールし、ProtonVPN サーバーに接続します。"
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        "インターネット接続を保護するには、${ VPN_APP_NAME } アプリケーションをダウンロード、インストールし、${ VPN_APP_NAME } サーバーに接続します。"
       ],
       "To use ${ toAppName }, please create an address.": [
         "${ toAppName } を利用するには、アドレスを作成します。"
@@ -5203,13 +5191,13 @@
         "２パスワードモードでは、ログイン用とメールボックスの復号用パスワードが分かれています。いくつかの状況で少しだけセキュリティ上のメリットがありますが、ほとんどのユーザーには標準のパスワードモードのご利用を推奨します。２パスワードモードに切り替えるには、まずログイン用、次にメールボックス用のパスワードを入力し、保存をクリックしてください。"
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "リカバリーファイルの署名の検証ができませんでした。サポートにお問い合わせしてください。"
+        "回復ファイルの署名の検証ができませんでした。サポートにお問い合わせください。"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         ""
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        ""
+        "アカウントからサインアウトするか、パスワードを変更しない限り、セッションはアクティブなままです。セッションは非アクティブになってから 60 日後に期限切れになります。"
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
@@ -5221,7 +5209,7 @@
         "非対応のファイル"
       ],
       "Update recovery file": [
-        "リカバリーファイルを更新"
+        "回復ファイルを更新"
       ],
       "Update recovery phrase": [
         "回復フレーズを更新"
@@ -5233,10 +5221,10 @@
         "この機能を利用するには ${ PLAN_NAMES[PLANS.VISIONARY] } または ${ PLAN_NAMES[PLANS.PROFESSIONAL] } プランにアップグレードしてください。"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
-        ""
+        "${ PLAN_NAMES[PLANS.VISIONARY] }、${ PLAN_NAMES[PLANS.PROFESSIONAL] }、${ PLAN_NAMES[PLANS.PLUS] } プランにアップグレードして、外出先での自動返信を有効にします。"
       ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "有料プランにアップグレードすることで ProtonMail Bridge を使った IMAP/SMTP サポートを利用することができます。"
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
+        "有料プランにアップグレードすることで ${ MAIL_APP_NAME } Bridge を使った IMAP/SMTP サポートを利用することができます。"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "次の ${ appName } ${ planName } 特典を失わないために今すぐアップグレードしてください。"
@@ -5251,10 +5239,10 @@
         "URLリンク"
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        ""
+        "自動返信機能を使って、外出中なことや返信ができないことを連絡先に伝えます。"
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "公式アプリケーション以外で ProtonVPN サーバーに接続する場合、次の認証情報を使用してください。例: macOS 向け Tunnelblick、GNU/Linux 向け OpenVPN"
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "アプリケーションを使用しないで ${ VPN_APP_NAME } に接続する時には、次の資格情報を使用してください。(例: macOS や GNU/Linux 上の OpenVPN)"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "独自ドメインのメールアドレス (例: you@yourname.com) を使用する"
@@ -5286,8 +5274,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "警告: 削除を取り消すことはできません。この操作により接続されているすべてのサービスへのアクセスを削除し、すべての連絡先を削除します。"
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "公式 ProtonVPN アプリケーションの使用をおすすめします。"
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        "公式の ${ VPN_APP_NAME } アプリケーションの使用をおすすめします。"
       ],
       "We recommend using your recovery phrase instead.": [
         "代わりに回復フレーズを使うことをおすすめします。"
@@ -5299,7 +5287,7 @@
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効化して続けてください。"
       ],
       "We will send a code to this phone number if you forget your password or get locked out of your account.": [
-        ""
+        "パスワードを忘れた場合やアカウントにアクセスできなくなった場合にこの電話番号にコードを送信します。"
       ],
       "We will send you a recovery link to this email address if you forget your password or get locked out of your account.": [
         ""
@@ -5331,8 +5319,8 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "無効にすると、知らないうちに画像が読み込まれることを防ぎます。"
       ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "通知を有効にすると、新着メッセージがある場合に回復/通知アドレスにアラートを送信します。"
+      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
+        "通知を有効にすると、${ MAIL_APP_NAME } アカウント内に新しいメッセージがある場合に回復メールアドレスにアラートを送信します。"
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         ""
@@ -5364,11 +5352,8 @@
       "You are about to open another browser tab and visit:": [
         "別のタブで下記リンクを開こうとしています:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "現在 ${ user.Name } (${ user.Email }) としてサインインしていてアクセスが制限されています。"
-      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "現在 ${ user.Name } (${ user.Email }) でサインインしています。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "存在する Proton カレンダーにインポートしたカレンダーを結合することもできます。"
@@ -5394,11 +5379,11 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
       ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Outlook、メール (Apple)、Thunderbird などの IMAP/SMTP をサポートするデスクトップ向けメールクライアントでも ProtonMail を使うことができます。"
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Outlook、メール (Apple)、Thunderbird などの IMAP/SMTP をサポートするデスクトップ向けメールクライアントでも ${ MAIL_APP_NAME } を使うことができます。"
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "以下の認証情報を使用することで、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティ製、オープンソースの VPN アプリで ProtonVPN サーバーに接続できます。"
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "以下の資格情報を使用することで、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティ製、オープンソースの VPN アプリで ${ VPN_APP_NAME } サーバーに接続できます。"
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         ""
@@ -5406,8 +5391,8 @@
       "You cannot refer ${ appName } users": [
         ""
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "OpenVPN / IKEv2 認証情報で、ProtonVPN アプリケーションや ProtonVPN ダッシュボードにログインすることはできません。 ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードで OpenVPN / IKEv2 資格情報を使うことはできません。${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "回復手段を設定していないため、パスワードを忘れた場合にはアカウントの復旧はできません。回復手段を設定しないまま続行しますか?"
@@ -5418,8 +5403,8 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "バックアップしてある組織用の鍵のパスワードで、組織用の秘密鍵を有効化する必要があります。"
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "ダウングレードする前に、追加の ProtonMail のユーザー名、アドレス帳、カスタムドメインを削除する必要があります。"
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "ダウングレードする前に、追加の ${ MAIL_APP_NAME } のユーザー、アドレス、独自ドメインを削除する必要があります。"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "支払い方法として PayPal を追加するには、クレジットカードまたは銀行口座が PayPal アカウントにリンクされている必要があります。"
@@ -5461,13 +5446,16 @@
         "ダウンロードした回復ファイルを使ってアカウントをリセットしたあとに暗号化されたデータを復元することはできません。"
       ],
       "You'll stay signed in even after you close the browser.": [
-        "ブラウザーを閉じてもサインインしたままでいられます。"
+        "ブラウザを閉じてもサインインを維持します。"
       ],
       "You'll still be able to send and receive mail with your existing email address(es).": [
         ""
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "あなたの ${ BRAND_NAME } アカウントは ${ externalEmailAddress } に関連付けされています。${ toAppName } を使うには、アドレスを作成してください。"
+      ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        "${ VPN_APP_NAME } と ${ MAIL_APP_NAME } のアカウントはリンクしています。両アカウントを削除するには ${ loginLink } へログインしてアカウントを削除してください。"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されています。${ payInvoiceLink }"
@@ -5502,9 +5490,6 @@
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        "無料の ${ appName } ${ planName } トライアルは ${ formattedTrialExpirationDate } に終了します。"
-      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "${ delayedImport.Account } からのインポートが一時的に遅延しています。"
       ],
@@ -5529,9 +5514,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "あなたの Proton アカウントは現在保留中です。アカウントの使用を続けたい場合は滞納した請求を支払ってください。"
       ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "あなたの ProtonVPN と ProtonMail のアカウントはリンクされています。このアカウントを削除したい場合は、${ loginLink } へログインしてアカウントを削除してください。"
-      ],
       "Your recovery email address:": [
         "回復用メールアドレス:"
       ],
@@ -5545,7 +5527,7 @@
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "info": {
@@ -5568,11 +5550,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        ""
+      ],
       "Customizable features": [
         "カスタマイズ可能な項目"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail は迷惑メールや大量メール送信には使用できません。正当なメールに制限はありません。"
       ]
     },
     "Info for cash payment method": {
@@ -5690,7 +5672,7 @@
         ""
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "現在の鍵が侵害されたと思われる場合は、新しい暗号鍵を生成できます。"
+        "現在の鍵が侵害されたと思われる場合は、新しい暗号キーを生成できます。"
       ]
     },
     "Key state badge": {
@@ -5913,7 +5895,7 @@
         "この鍵での暗号化を有効にする"
       ],
       "Enable signature verification and encryption with this key": [
-        ""
+        "この鍵での暗号化および、署名の検証を有効にします"
       ],
       "Export": [
         "エクスポート"
@@ -5949,10 +5931,13 @@
       " and ${ l }": [
         " と ${ l }"
       ],
-      "${ monthsRewarded } month credited": [
-        ""
+      "${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } アドレス"
       ],
-      "${ monthsRewarded } month pending": [
+      "${ MAIL_APP_NAME } footer": [
+        "${ MAIL_APP_NAME } フッター"
+      ],
+      "${ monthsRewarded } month credited": [
         ""
       ],
       "${ n } VPN connection available": [
@@ -5977,7 +5962,7 @@
         "操作"
       ],
       "Activity": [
-        ""
+        "アクティビティ"
       ],
       "Address": [
         "アドレス"
@@ -6054,9 +6039,6 @@
       "Calendars": [
         "カレンダー"
       ],
-      "Cancel": [
-        "キャンセル"
-      ],
       "Card holder": [
         "カード名義人"
       ],
@@ -6093,6 +6075,9 @@
       "Conditions": [
         "条件"
       ],
+      "Confirm link URLs": [
+        ""
+      ],
       "Confirm login password": [
         "ログインパスワードの確認"
       ],
@@ -6128,6 +6113,9 @@
       ],
       "Country": [
         "国名"
+      ],
+      "Credits pending": [
+        ""
       ],
       "Credits used": [
         "使用クレジット"
@@ -6283,10 +6271,10 @@
         "パスワードを非表示"
       ],
       "IF": [
-        "もし"
+        "条件"
       ],
       "If": [
-        "もし"
+        "条件"
       ],
       "Import all messages": [
         "すべてのメッセージをインポート"
@@ -6341,9 +6329,6 @@
       ],
       "Last month only": [
         "過去 1 か月のみ"
-      ],
-      "Link confirmation": [
-        "リンクの確認"
       ],
       "Login password": [
         "ログインパスワード"
@@ -6483,12 +6468,6 @@
       "Proton username": [
         "Proton ユーザー名"
       ],
-      "ProtonMail address": [
-        "ProtonMail アドレス"
-      ],
-      "ProtonMail footer": [
-        "ProtonMail のフッター"
-      ],
       "Read": [
         "既読にする"
       ],
@@ -6555,8 +6534,8 @@
       "Statement": [
         "適用状態"
       ],
-      "Submit": [
-        "送信"
+      "Sticky labels": [
+        ""
       ],
       "Subtotal": [
         "小計"
@@ -6574,7 +6553,7 @@
         "${ attachmentStrong } でメールを送信"
       ],
       "the email was sent ${ label }": [
-        ""
+        "${ label } でメールを送信"
       ],
       "Then": [
         "その後"
@@ -6624,9 +6603,6 @@
       "Use folder colors": [
         "フォルダーの色を使用"
       ],
-      "Use sticky labels": [
-        "付箋を使用"
-      ],
       "User": [
         "ユーザー"
       ],
@@ -6652,7 +6628,7 @@
         ""
       ],
       "Want to add": [
-        ""
+        "対象"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "今後の改善のため、アカウントを削除する理由をお聞かせください。"
@@ -6715,8 +6691,8 @@
       ]
     },
     "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "あなたが所有しているドメインをProtonMailアカウントに追加してください。"
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "あなたが所有しているドメインを${ MAIL_APP_NAME } アカウントに追加します。"
       ]
     },
     "Label for domain modal": {
@@ -6777,7 +6753,7 @@
     },
     "Label on payment method": {
       "Default": [
-        "デフォルト"
+        "既定"
       ],
       "Expired": [
         "有効期限切れ"
@@ -7059,11 +7035,6 @@
         "など"
       ]
     },
-    "Max VPN Connections": {
-      "Connection": [
-        "接続"
-      ]
-    },
     "Member action": {
       "Delete": [
         "削除"
@@ -7088,7 +7059,7 @@
         "2 要素認証を無効にしてよろしいですか?"
       ],
       "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        ""
+        "独自ドメインのメールアドレス (例: you@yourcompany.com) をセットアップします。ウィザードに従うことで数分で完了します。"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
         "${ PLAN_NAMES[PLANS.VISIONARY] } または ${ PLAN_NAMES[PLANS.PROFESSIONAL] } プランにアップグレードして Catch-All アドレスやプレミアム機能を使うことができます"
@@ -7097,7 +7068,7 @@
         "有料プランにアップグレードするとカスタム ドメインとプレミアム機能が利用できるようになります"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "試用は終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7954,7 +7925,7 @@
         "確認メールを送信"
       ],
       "There was a problem verifying your email address.": [
-        ""
+        "メールアドレスの検証中にエラーが発生しました。"
       ],
       "Verification email sent to ${ email.Value }": [
         "${ email.Value } あてに確認メールが送信されました"
@@ -7966,7 +7937,7 @@
         "回復メールを検証しますか?"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        ""
+        "メールアドレスを確認することでアカウントのセキュリティを向上させ、回復用の追加設定のために利用できます。"
       ],
       "You can safely close this tab.": [
         "安全にタブを閉じることができます。"
@@ -8029,10 +8000,10 @@
     },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
-        "プライバシーが保護される環境に、簡単かつ確実に移行する。"
+        "プライバシーが保護される環境に、簡単かつ確実に移行します。"
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "1 つのメッセージに複数のラベルを付けることはできますが、1 つのメッセージを複数のフォルダーに入れることはできません。フォルダーやラベルを並び替えるには、ドラッグ＆ドロップしてください。"
+        "1 つのメッセージに複数のラベルを付けることはできますが、1 つのメッセージを複数のフォルダーに入れることはできません。フォルダーやラベルを並び替えるには、ドラッグアンドドロップしてください。"
       ]
     },
     "Settings section title": {
@@ -8120,7 +8091,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "${ appName } ${ planName } が最大 18 か月無料"
       ],
       "Invite friends and earn rewards!": [
         "友だちを招待して報酬を手に入れよう!"
@@ -8175,7 +8146,7 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        ""
+        "プライベートなカレンダーリンクの取得方法についての詳細"
       ]
     },
     "Subscribed calendar extension warning": {
@@ -8466,6 +8437,9 @@
       "${ appName } Keyboard Shortcuts": [
         "${ appName } のキーボードショートカット"
       ],
+      "${ MAIL_APP_NAME } Bridge": [
+        "${ MAIL_APP_NAME } Bridge"
+      ],
       "(highly recommended)": [
         "(強く推奨)"
       ],
@@ -8634,9 +8608,6 @@
       "Change password": [
         "パスワードを変更"
       ],
-      "Change password for ${ Name } (${ Email })": [
-        "${ Name } (${ Email }) のパスワードを変更"
-      ],
       "Change role": [
         "役割の変更"
       ],
@@ -8648,6 +8619,9 @@
       ],
       "Clear": [
         "消去"
+      ],
+      "Composing": [
+        ""
       ],
       "Confirm address": [
         "アドレスの確認"
@@ -8737,10 +8711,10 @@
         "${ filter.Name } を削除"
       ],
       "Delete ${ label.Name } folder": [
-        ""
+        "${ label.Name } フォルダーを削除"
       ],
       "Delete ${ label.Name } label": [
-        ""
+        "${ label.Name } ラベルを削除"
       ],
       "Delete account": [
         "アカウントの削除"
@@ -8806,7 +8780,7 @@
         "メールアドレス"
       ],
       "Email composer": [
-        ""
+        "メール作成"
       ],
       "Email encryption keys": [
         "電子メールの暗号鍵"
@@ -8816,9 +8790,6 @@
       ],
       "Email subscriptions": [
         "メーリングリストの購読"
-      ],
-      "Enable keyboard shortcuts": [
-        "キーボードショートカットを有効にする"
       ],
       "Encryption and keys": [
         "暗号化と鍵"
@@ -8859,11 +8830,11 @@
       "Generate new recovery phrase?": [
         "新しい回復フレーズを生成しますか?"
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "すべてのサーバーに接続するために ProtonVPN Plus を入手"
+      "Get ${ vpnPlus } to access all servers": [
+        "すべてのサーバーに接続するために ${ vpnPlus } を入手"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "${ appName } ${ planName } が最大 18 か月無料"
       ],
       "Gift code": [
         "ギフトコード"
@@ -8899,7 +8870,7 @@
         "グループのインポート"
       ],
       "Import key": [
-        "鍵のインポート"
+        "キーをインポート"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } 経由でインポート"
@@ -8915,6 +8886,9 @@
       ],
       "Invoices": [
         "請求書"
+      ],
+      "Keyboard shortcuts": [
+        "キーボードショートカット"
       ],
       "Labels": [
         "ラベル"
@@ -8933,6 +8907,9 @@
       ],
       "Messages": [
         "メッセージ"
+      ],
+      "Messages and composing": [
+        ""
       ],
       "Multi-user support": [
         "複数ユーザー対応"
@@ -8972,9 +8949,6 @@
       ],
       "Organization and keys": [
         "組織と鍵"
-      ],
-      "Other": [
-        "その他"
       ],
       "Password": [
         "パスワード"
@@ -9024,12 +8998,6 @@
       "Proton Logo": [
         "Proton ロゴ"
       ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonVPN": [
-        "ProtonVPN"
-      ],
       "Reconnect your account": [
         "アカウントに再接続"
       ],
@@ -9040,7 +9008,7 @@
         "回復"
       ],
       "Recovery file": [
-        "リカバリーファイル"
+        "回復ファイル"
       ],
       "Refer a friend": [
         "友達を招待"
@@ -9189,7 +9157,7 @@
       "Total (monthly)": [
         "合計 (月額換算)"
       ],
-      "Try the best of ProtonMail for free": [
+      "Try the best of ${ MAIL_APP_NAME } for free": [
         ""
       ],
       "Two-factor authentication": [
@@ -9270,8 +9238,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "ProtonMail 請求書"
+      "${ MAIL_APP_NAME } invoice": [
+        "${ MAIL_APP_NAME } 招待"
       ]
     },
     "Title header": {
@@ -9336,6 +9304,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        "${ MAIL_APP_NAME } のユーザーは、既定でこの鍵を使用して送信します"
+      ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "どこにいてもアクセス制限があるコンテンツ (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube など) にアクセスできます。"
       ],
@@ -9375,11 +9346,11 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "詳細ログを有効にすると、セキュリティログの各イベントの IP アドレスが記録されます。"
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "1つのプランで ${ vpnAppName } と ${ mailAppName } (数百万人が自分たちのデータを保護するために使用してる暗号化電子メールサービス) 両サービスの全有料機能を利用できます。"
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "1つのプランで ProtonVPN と ProtonMail (数百万人が自分たちのデータを保護するために使用してる暗号化電子メールサービス) 両サービスの全有料機能を利用できます。"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         ""
@@ -9395,9 +9366,6 @@
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield は広告、トラッカー、マルウェアをブロックすることでデバイスを保護、ブラウジングを高速化します。"
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "ProtonMailのユーザーは、既定でこの鍵を使用して送信します"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "あなたのインターネットトラフィックを、簡単な操作で Tor 経由でのルーティングに切り替えることができます。"
@@ -9420,7 +9388,7 @@
       "Support for file sharing protocols such as BitTorrent.": [
         "BitTorrent 等のファイル共有プロトコルのサポート。"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         ""
       ],
       "The import will start with the most recent messages.": [
@@ -9451,7 +9419,7 @@
         "メールを送信するために個人のアドレス username@pm.meを使用してください"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "独自ドメインのメールアドレス (例: you@yourname.com) を使用する"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         ""
@@ -9468,14 +9436,14 @@
       "You have locally decrypted this key": [
         "復号された鍵をローカルに所持します。"
       ],
+      "Your ${ MAIL_APP_NAME } inbox is almost full": [
+        ""
+      ],
       "Your DKIM signing is working.": [
         "DKIM 署名が機能しています。"
       ],
       "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
         ""
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "ProtonMail の受信箱はもうすぐでいっぱいです"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -9484,12 +9452,12 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
         ""
       ]
     },
     "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
         ""
       ]
     },
@@ -9514,7 +9482,7 @@
         "既定のフォントとサイズを更新しました"
       ],
       "Your default font will look like following:": [
-        ""
+        "既定のフォントはこのようになります:"
       ]
     },
     "Upgrade": {
@@ -9555,9 +9523,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
       "30-days money-back guarantee": [
         "30 日返金保証"
       ],
@@ -9730,7 +9695,7 @@
         "この電話番号を削除することで、今後あなたのアカウントを回復することができなくなります。"
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        ""
+        "ログを無効にするには、ログの履歴をクリアする必要があります。ログを無効にしてよろしいですか?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         ""
@@ -9738,7 +9703,7 @@
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         ""
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
@@ -9759,8 +9724,8 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "デバイスの日時設定を同期できません。${ learnMore }"
       ],
-      "This feature is only available for ProtonMail Professional plans or higher": [
-        "この機能はProfessional プラン以上でのみご利用になれます。"
+      "This feature is only available for ${ mailProfessional } plans or higher": [
+        ""
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "このインポートは現在Protonアカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"
@@ -9784,10 +9749,10 @@
         "無料トライアルは ${ textDate } に終了します。${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "回復ファイルは古くなっています。再度アカウントをリセットすると、新しいデータを復元できません。"
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "回復フレーズは古くなっています。再度アカウントをリセットすると、新しいデータを復元できません。"
       ]
     },
     "Warning for domain modal": {

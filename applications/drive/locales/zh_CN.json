@@ -59,6 +59,9 @@
       "Cancel all": [
         ""
       ],
+      "Cancel all downloads": [
+        ""
+      ],
       "Cancel all uploads": [
         "取消所有上传"
       ],
@@ -206,9 +209,6 @@
       "enable desktop notifications": [
         "启用桌面通知"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Expand folder": [
         "展开文件夹"
       ],
@@ -271,6 +271,9 @@
       ],
       "Import from .csv or vCard": [
         "从 .csv 或 vCard 导入"
+      ],
+      "Learn more": [
+        ""
       ],
       "Load image": [
         "加载图片"
@@ -452,6 +455,9 @@
       "Show labels": [
         "显示标签"
       ],
+      "Show preview": [
+        ""
+      ],
       "Sign out": [
         "退出"
       ],
@@ -591,7 +597,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -766,7 +772,7 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ]
     },
@@ -1818,7 +1824,7 @@
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
       ],
       "Missing key packet": [
-        ""
+        "缺少密钥数据包"
       ],
       "Missing signature": [
         "缺少签名"
@@ -1877,8 +1883,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分标签名称不可用，请自定导入内容并予以更改。"
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "部分标签名称超出了 ProtonMail 的长度限制，请自定导入内容并予以更改。"
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "部分标签名称超过了 ${ MAIL_APP_NAME } 的字符长度限制，请自定导入内容并予以更改。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
@@ -2313,6 +2319,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "正在检查联系人 ${ progress } / ${ max }..."
       ],
+      "Checking signatures": [
+        ""
+      ],
       "Clear data": [
         "清除数据"
       ],
@@ -2344,7 +2353,7 @@
         "继续使用 ${ appName } 并稍后解锁网盘"
       ],
       "Continue with ${ planName }": [
-        ""
+        "继续使用 ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "新建 ${ calendarsToBeCreated } 个日历"
@@ -2385,6 +2394,15 @@
       "Delete drive": [
         "删除网盘"
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        ""
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        ""
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        ""
+      ],
       "Downloaded": [
         "已下载"
       ],
@@ -2400,9 +2418,6 @@
       "Duplicate key updated": [
         "重复的密钥已更新"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
@@ -2415,6 +2430,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "无法打开安全链接，原因是：${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
+      ],
       "File will not be uploaded": [
         "将不会上传文件"
       ],
@@ -2423,6 +2444,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "文件夹内容将合并为一个文件夹"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
       ],
       "Folder will not be uploaded": [
         "将不会上传文件夹"
@@ -2577,8 +2604,8 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "只有在与 ProtonMail 以外的邮箱使用 PGP 通讯时才应更改下列选项。"
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        ""
       ],
       "Only the people with the link and the password can access this file.": [
         "只有同时知道链接和密码的人才能访问此文件。"
@@ -2595,11 +2622,11 @@
       "Permanently delete all files in your drive": [
         "永久删除网盘中的所有文件"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline 只能用于纯文本邮件。请注意 ProtonMail 会对所有加密邮件予以数字签名。"
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline 只能用于纯文本邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME 可使用编辑器中指定的格式发送邮件。请注意 ProtonMail 会对所有加密邮件予以数字签名。"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME 可使用编辑器中指定的格式发送邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "请注意，分配给此组的地址将不会被删除。"
@@ -2664,11 +2691,17 @@
       "Session timed out": [
         "会话超时"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "设置 PGP 后，您就可以向 ProtonMail 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "设置 PGP 后，您就可以向 ${ BRAND_NAME } 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
       ],
       "Share files with links": [
         "通过链接共享文件"
+      ],
+      "Signature check will be ignored": [
+        ""
+      ],
+      "Signature issue": [
+        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您的某些文件无法再访问，请恢复对其的访问权限。${ StartRecoveryButton }"
@@ -2680,13 +2713,19 @@
         "存储空间由 Proton 邮箱、日历、和网盘共享"
       ],
       "Support for 1 custom email domain": [
-        ""
+        "支持 1 个自有域名"
       ],
       "support team": [
         "客服团队"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "应用程序需要在本地解密您的联系人，然后才能导出。 在进程结束时，将生成一个 VCF 文件，您将能够下载它。"
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
       ],
       "There are no files yet": [
         "还没有文件"
@@ -2724,11 +2763,11 @@
       "This will overwrite the existing folder": [
         "这将覆盖现有文件夹"
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        ""
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用，请验证您是人类。"
@@ -2761,7 +2800,7 @@
         "换个关键字试试"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "文件夹、标签、筛选规则不限量"
       ],
       "Unlimited messages": [
         "每日发送邮件不限量"
@@ -2773,7 +2812,7 @@
         "不支持文件"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "立即升级账户即可继续享有下列 ${ appName } ${ planName } 权益。"
       ],
       "Uploaded": [
         "已上传"
@@ -2783,6 +2822,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "一次上传数百个文件可能会影响性能。"
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        ""
       ],
       "We'll notify you when the import is done.": [
         "导入完成时我们将通知您。"
@@ -2818,7 +2863,7 @@
         "您即将在新标签页中打开："
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "您也可以将导入日历与现有 Proton 日历合并。"
@@ -2906,6 +2951,26 @@
         "多名联系人重复。${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        ""
+      ],
+      "file data": [
+        ""
+      ],
+      "keys": [
+        ""
+      ],
+      "name": [
+        ""
+      ],
+      "name hash": [
+        ""
+      ],
+      "thumbnail": [
+        ""
+      ]
+    },
     "Key badge": {
       "Expired": [
         "已失效"
@@ -2951,6 +3016,9 @@
       "Apply to all duplicated folders": [
         "应用于所有重复的文件夹"
       ],
+      "Apply to all unverified items": [
+        ""
+      ],
       "Audio file": [
         "音频文件"
       ],
@@ -2965,6 +3033,9 @@
       ],
       "Calendars": [
         "日历"
+      ],
+      "Cancel download": [
+        ""
       ],
       "Category": [
         "类别"
@@ -2999,6 +3070,9 @@
       "Do not ask again": [
         "不再询问"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Email address": [
         "邮箱地址"
       ],
@@ -3012,7 +3086,7 @@
         "启用测试版功能"
       ],
       "Enabling Drive Search": [
-        ""
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "发送加密邮件"
@@ -3203,8 +3277,8 @@
       "Upload picture": [
         "上传图片"
       ],
-      "Username or ProtonMail address": [
-        "用户名或 ProtonMail 地址"
+      "Username or ${ MAIL_APP_NAME } address": [
+        ""
       ],
       "Verification code": [
         "验证码"
@@ -3439,6 +3513,9 @@
       "File or folder is missing a name": [
         "文件或文件夹缺少名称"
       ],
+      "Item failed to be verified": [
+        ""
+      ],
       "Link failed to be loaded": [
         "链接加载失败"
       ],
@@ -3502,6 +3579,28 @@
         "请注意，下一步您需要${ boldNextStep }才能开始导入。"
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ],
+      "Upgrade account": [
+        ""
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        ""
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        ""
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "填写对外名称"
@@ -3534,37 +3633,15 @@
         "您可以随时在设置中更改。"
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "启用测试版功能"
-      ],
-      "Start using ${ appName }": [
-        "开始使用 ${ appName }"
-      ],
-      "Upgrade account": [
-        "升级账户"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } 目前尚处于抢先体验阶段，仅适用于付费用户。"
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } 当前仅在您启用了测试版功能才可用。"
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "使用端到端加密技术保护您的所有文件，使用 ${ appName } 来安全存储和共享文件。"
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
-        "${ appName } 处于测试阶段"
+        ""
       ],
       "Meet your new secure file storage": [
-        "初识您的全新安全网盘"
+        ""
       ],
       "Upgrade to access ${ appName }": [
-        "升级以使用 ${ appName }"
+        ""
       ]
     },
     "Option": {
@@ -4014,6 +4091,12 @@
       "Download failed": [
         "下载失败"
       ],
+      "Download unverified file?": [
+        ""
+      ],
+      "Download unverified folder?": [
+        ""
+      ],
       "Downloading": [
         "下載中"
       ],
@@ -4051,7 +4134,7 @@
         "清空回收站"
       ],
       "Enable Drive Search": [
-        ""
+        "Enable drive search"
       ],
       "Enter password to download": [
         "请输入密码进行下载"
@@ -4059,8 +4142,8 @@
       "Enter your password": [
         "输入您的密码"
       ],
-      "Enter your username or ProtonMail email address": [
-        "请输入用户名或 ProtonMail 邮箱"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        ""
       ],
       "Exporting contacts": [
         "导出联系人"
@@ -4260,6 +4343,12 @@
       "The link failed to be loaded": [
         ""
       ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
       "Total size": [
         "总大小"
       ],
@@ -4333,8 +4422,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "系统子文件夹将在 ProtonMail 中显示为单独的文件夹"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        ""
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
@@ -4398,7 +4487,7 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [

@@ -59,6 +59,9 @@
       "Cancel all": [
         "Anulați toate"
       ],
+      "Cancel all downloads": [
+        "Anulați toate descărcările"
+      ],
       "Cancel all uploads": [
         "Anulare toate încărcările"
       ],
@@ -210,9 +213,6 @@
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Expand folder": [
         "Extindere folder"
       ],
@@ -275,6 +275,9 @@
       ],
       "Import from .csv or vCard": [
         "Importare din .csv sau vCard"
+      ],
+      "Learn more": [
+        "Aflați mai multe"
       ],
       "Load image": [
         "Încărcare imagine"
@@ -403,7 +406,7 @@
         "Restaurare din «Gunoi»"
       ],
       "Resume all": [
-        ""
+        "Reluați toate"
       ],
       "Resume download": [
         "Reluare descărcare"
@@ -455,6 +458,9 @@
       ],
       "Show labels": [
         "Afişare etichete"
+      ],
+      "Show preview": [
+        "Previzualizare spectacol"
       ],
       "Sign out": [
         "Deconectare"
@@ -595,8 +601,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta Access vă permite să utilizați versiunea beta a ${ mailAppName }, ${ calendarAppName } și Proton Drive înainte ca acestea să fie lansate pentru public. Acest lucru înseamnă că puteți fi primul care va încerca noile produse, va primi noi actualizări și va utiliza noi caracteristici."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta Access vă permite să utilizați versiunea beta a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME } înainte ca acestea să fie lansate pentru public. Acest lucru înseamnă că puteți fi primul care va încerca noile produse, va primi noi actualizări și va utiliza noi caracteristici."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
@@ -770,8 +776,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Continuare utilizare ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Continuați să utilizați ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar status": {
@@ -1895,8 +1901,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Unele nume de etichete nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Unele nume de etichete depășesc limita maximă admisă de caractere din ProtonMail. Modificați opțiunile de importare pentru a edita aceste nume."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Unele dintre numele etichetelor dumneavoastră depășesc limita maximă de caractere a lui ${ MAIL_APP_NAME }. Vă rugăm să personalizați importul pentru a edita aceste nume."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
@@ -2391,6 +2397,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Se verifică contactul ${ progress } din ${ max }..."
       ],
+      "Checking signatures": [
+        "Verificarea semnăturilor"
+      ],
       "Clear data": [
         "Ștergere date"
       ],
@@ -2467,6 +2476,15 @@
         "Ștergere unități",
         "Ștergere unități"
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ emailAddress }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        "Semnătură digitală verificată. Acest dosar a fost încărcat în siguranță de către ${ emailAddress }."
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        "Descărcarea lui ${ downloadFileName } va fi întreruptă"
+      ],
       "Downloaded": [
         "Descărcat"
       ],
@@ -2482,9 +2500,6 @@
       "Duplicate key updated": [
         "Cheie duplicat actualizată"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
@@ -2497,6 +2512,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "A eșuat deschiderea unei legături securizate. Motivul este: ${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Lipsește semnătura fișierului. Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "Lipsește semnătura fișierului. Nu am putut verifica cine a încărcat ${ fileName }."
+      ],
       "File will not be uploaded": [
         "Fișierul nu va fi încărcat."
       ],
@@ -2505,6 +2526,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "Conținutul folderelor se va îmbina într-unul singur."
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Lipsește semnătura din dosar. Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "Lipsește semnătura din dosar. Nu am putut verifica cine a încărcat ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Folderul nu va fi încărcat."
@@ -2661,8 +2688,8 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         "Sunt permise doar ${ MAX_CUSTOM_PASSWORD_LENGTH } caractere"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt ${ BRAND_NAME }."
       ],
       "Only the people with the link and the password can access this file.": [
         "Numai persoanele care au legătura și parola pot accesa acest fișier."
@@ -2679,11 +2706,11 @@
       "Permanently delete all files in your drive": [
         "Ștergeți permanent toate fișierele din unitate"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/integrat este compatibil doar cu formatul de text simplu. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline este compatibil numai cu formatul Plain Text. Vă rugăm să rețineți că ${ MAIL_APP_NAME } semnează întotdeauna mesajele criptate."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME trimite automat mesajul folosind modul de compoziție curent. Rețineți că ${ MAIL_APP_NAME } semnează întotdeauna mesajele criptate"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
@@ -2748,11 +2775,17 @@
       "Session timed out": [
         "Sesiunea a expirat"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ProtonMail care folosește un serviciu PGP compatibil."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Configurarea PGP vă permite să trimiteți e-mailuri criptate de la un capăt la altul cu un utilizator care nu este ${ BRAND_NAME } și care utilizează un serviciu compatibil PGP."
       ],
       "Share files with links": [
         "Partajare fișiere prin legături"
+      ],
+      "Signature check will be ignored": [
+        "Verificarea semnăturii va fi ignorată"
+      ],
+      "Signature issue": [
+        "Problemă de semnătură"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Unele dintre fișiere nu mai sunt accesibile. Restaurați accesul la fișiere. ${ StartRecoveryButton }"
@@ -2769,8 +2802,14 @@
       "support team": [
         "echipa de asistență"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "Contul poate avea o cheie nouă sau este posibil ca următoarele să fi fost modificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "Este posibil ca următoarele elemente să fi fost falsificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
       ],
       "There are no files yet": [
         "Încă nu există fișiere."
@@ -2810,11 +2849,11 @@
       "This will overwrite the existing folder": [
         "Aceasta va suprascrie folderul existent."
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Pentru a permite o căutare cu adevărat privată, ${ DRIVE_APP_NAME } trebuie să vă indexeze fișierele la nivel local."
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Pentru a permite o căutare cu adevărat privată, ${ DRIVE_APP_NAME } trebuie să indexeze fișierele la nivel local. Puteți utiliza în continuare ${ DRIVE_APP_NAME } în mod normal - vă vom anunța când indexarea este finalizată."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
@@ -2869,6 +2908,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Încărcarea simultană a sute de fișiere poate avea un impact asupra performanței."
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        "Nu am putut verifica cine a încărcat ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
@@ -2992,6 +3037,26 @@
         "Mai multe contacte arată identic. ${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        "atributele fișierului"
+      ],
+      "file data": [
+        "date din fișier"
+      ],
+      "keys": [
+        "chei"
+      ],
+      "name": [
+        "numele"
+      ],
+      "name hash": [
+        "nume hașurat"
+      ],
+      "thumbnail": [
+        "thumbnail"
+      ]
+    },
     "Key badge": {
       "Expired": [
         "Expirată"
@@ -3037,6 +3102,9 @@
       "Apply to all duplicated folders": [
         "Aplicare la toate folderele duplicate"
       ],
+      "Apply to all unverified items": [
+        "Se aplică tuturor elementelor neverificate"
+      ],
       "Audio file": [
         "Fișier audio"
       ],
@@ -3051,6 +3119,9 @@
       ],
       "Calendars": [
         "Calendare"
+      ],
+      "Cancel download": [
+        "Anulare descărcare"
       ],
       "Category": [
         "Categoria"
@@ -3087,6 +3158,9 @@
       "Do not ask again": [
         "Nu mă mai întreba"
       ],
+      "Download anyway": [
+        "Descărcați oricum"
+      ],
       "Email address": [
         "Adresă e-mail"
       ],
@@ -3100,7 +3174,7 @@
         "Activare acces la Beta"
       ],
       "Enabling Drive Search": [
-        ""
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "Criptare mesaje"
@@ -3291,8 +3365,8 @@
       "Upload picture": [
         "Încărcare imagine"
       ],
-      "Username or ProtonMail address": [
-        "Nume de utilizator sau e-mail ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Nume de utilizator sau adresa ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -3555,6 +3629,9 @@
       "File or folder is missing a name": [
         "Fișier sau folder fără nume."
       ],
+      "Item failed to be verified": [
+        "Elementul nu a putut fi verificat"
+      ],
       "Link failed to be loaded": [
         "Legătura nu s-a putut încărca."
       ],
@@ -3630,6 +3707,28 @@
         "Rețineți că ${ boldNextStep } solicitate de către aplicație pentru a începe importarea."
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        "Activare acces la Beta"
+      ],
+      "Start using ${ appName }": [
+        "Începeți să utilizați ${ appName }"
+      ],
+      "Upgrade account": [
+        "Migrare cont"
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        "${ appName } se află în prezent în faza de acces timpuriu și este disponibil doar pentru utilizatorii cu un plan plătit."
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        "${ appName } este disponibilă momentan doar dacă activați accesul la versiunea Beta."
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        "Protejați-vă toate fișierele cu criptare la ambele capete. Folosiți ${ appName } pentru a stoca și distribui fișierele în siguranță."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Alegere nume afișat"
@@ -3662,29 +3761,7 @@
         "Puteți modifica oricând aceasta în setări."
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "Activare acces la Beta"
-      ],
-      "Start using ${ appName }": [
-        "Începeți să utilizați ${ appName }"
-      ],
-      "Upgrade account": [
-        "Migrare cont"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } se află în prezent în faza de acces timpuriu și este disponibilă numai pentru utilizatorii cu un plan plătit."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } este disponibilă momentan doar dacă activați accesul la versiunea Beta."
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Protejați-vă toate fișierele cu criptare la ambele capete. Folosiți ${ appName } pentru a stoca și distribui fișierele în siguranță."
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
         "${ appName } este în versiunea Beta"
       ],
@@ -4162,6 +4239,12 @@
       "Download failed": [
         "Descărcare eșuată"
       ],
+      "Download unverified file?": [
+        "Descărcați un fișier neverificat?"
+      ],
+      "Download unverified folder?": [
+        "Descărcați un dosar neverificat?"
+      ],
       "Downloading": [
         "Se descarcă"
       ],
@@ -4199,7 +4282,7 @@
         "Golire gunoi"
       ],
       "Enable Drive Search": [
-        ""
+        "Enable drive search"
       ],
       "Enter password to download": [
         "Introduceți parola pentru a descărca"
@@ -4207,8 +4290,8 @@
       "Enter your password": [
         "Introduceţi parola"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Introduceți numele dumneavoastră de utilizator sau adresa de e-mail ${ MAIL_APP_NAME }"
       ],
       "Exporting contacts": [
         "Exportare contacte"
@@ -4343,7 +4426,7 @@
         "Rezultate căutare"
       ],
       "Search results: ${ searchView.numberOfResults } found": [
-        ""
+        "Rezultatele căutării: ${ searchView.numberOfResults } găsit"
       ],
       "Searching…": [
         "Se caută…"
@@ -4407,6 +4490,12 @@
       ],
       "The link failed to be loaded": [
         "Linkul nu a putut fi încărcat"
+      ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "Acest fișier are o semnătură lipsă sau invalidă. Accesați Meniu (⋮) → Detalii pentru informații."
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "Acest dosar are o semnătură lipsă sau invalidă. Accesați Meniu (⋮) → Detalii pentru informații."
       ],
       "Total size": [
         "Mărime totală"
@@ -4481,8 +4570,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Subfolderele de sistem vor fi afișate ca foldere separate în ProtonMail."
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
@@ -4552,8 +4641,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Discuția live este o funcție premium disponibilă doar pentru cei care au planuri ProtonVPN cu plată. În schimb, vă rugăm să deschideți un tichet."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Chat-ul live este o funcție premium disponibilă numai pentru cei care au planuri ${ VPN_APP_NAME } plătite. În schimb, vă rugăm să deschideți un tichet."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."
