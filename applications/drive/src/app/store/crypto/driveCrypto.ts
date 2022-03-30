@@ -69,8 +69,7 @@ export const getOwnAddressKeysAsync = async (
     // Some characters can be changed but still be the same email.
     const ownAddress = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(email));
     if (!ownAddress) {
-        // Should never happen
-        throw new Error('Address was not found.');
+        return;
     }
     return splitKeys(await getAddressKeys(ownAddress.ID));
 };
