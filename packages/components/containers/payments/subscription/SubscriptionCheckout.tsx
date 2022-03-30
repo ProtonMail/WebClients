@@ -23,6 +23,7 @@ import {
     SubscriptionCheckResponse,
 } from '@proton/shared/lib/interfaces';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { getHasCycleDiscount } from '@proton/shared/lib/helpers/subscription';
 
 import { Info, Time } from '../../../components';
 import { useConfig } from '../../../hooks';
@@ -60,26 +61,7 @@ const getTotalBillingText = (cycle: Cycle) => {
     return '';
 };
 
-const getCycleText = (cycle: Cycle) => {
-    if (cycle === CYCLE.MONTHLY) {
-        return c('Checkout row').t`1 month`;
-    }
-    if (cycle === CYCLE.YEARLY) {
-        return c('Checkout row').t`12 months`;
-    }
-    if (cycle === CYCLE.TWO_YEARS) {
-        return c('Checkout row').t`24 months`;
-    }
-    return '';
-};
-
-const getTitle = (
-    planName: PLANS | ADDON_NAMES,
-    cycle: Cycle,
-    plansMap: PlansMap,
-    quantity: number,
-    users?: number
-) => {
+const getTitle = (planName: PLANS | ADDON_NAMES, cycle: Cycle, plansMap: PlansMap, quantity: number, users: number) => {
     if (planName.startsWith('1domain')) {
         const addon = plansMap[planName];
         const domains = quantity * (addon?.MaxDomains ?? 0);
@@ -92,15 +74,7 @@ const getTitle = (
         return c('Addon').ngettext(msgid`+ ${users} user`, `+ ${users} users`, users);
     }
 
-    const cycleText = getCycleText(cycle);
-
-    if (users !== undefined && users > 0) {
-        return [c('Checkout row').ngettext(msgid`${users} user`, `${users} users`, users), cycleText]
-            .filter(isTruthy)
-            .join(' - ');
-    }
-
-    return cycleText;
+    return c('Checkout row').ngettext(msgid`${users} user`, `${users} users`, users);
 };
 
 const CheckoutPlanIDs = ({
@@ -118,10 +92,8 @@ const CheckoutPlanIDs = ({
     isUpdating: boolean;
     additions?: Additions | null;
 }) => {
-    const plansWithMemberAddons = Object.values(MEMBER_PLAN_MAPPING);
-
     const planMap = Object.entries(planIDs).reduce<
-        Partial<{ [planName in PLANS | ADDON_NAMES]: Plan & { quantity: number; users?: number } }>
+        Partial<{ [planName in PLANS | ADDON_NAMES]: Plan & { quantity: number; users: number } }>
     >((acc, [planNameValue, quantity]) => {
         const planName = planNameValue as keyof PlansMap;
         const plan = plansMap[planName];
@@ -131,7 +103,7 @@ const CheckoutPlanIDs = ({
         acc[planName] = {
             ...plan,
             quantity,
-            ...(plansWithMemberAddons.includes(planName as any) && { users: plan.MaxMembers }),
+            users: plan.MaxMembers || 1, // or 1 for vpnplus
         };
         return acc;
     }, {});
@@ -153,7 +125,6 @@ const CheckoutPlanIDs = ({
                     targetPlan.users = targetPlan.MaxMembers;
                 }
                 targetPlan.users += plan.quantity;
-                //targetPlan.quantity += plan.quantity;
             }
         }
         return acc;
@@ -170,15 +141,18 @@ const CheckoutPlanIDs = ({
         })
         .reverse();
 
-    const rows = collection.map(({ ID, Title, Pricing, Type, Name, users, quantity }) => {
+    const rows = collection.map(({ ID, Name, Title, Pricing, Type, users, quantity }) => {
         const update = (isUpdating && additions?.[Name as ADDON_NAMES]) || 0;
         const diff = quantity - update;
         // translator: Visionary (Mail + VPN)
         const displayTitle = Title === 'Visionary' ? `${Title} ${c('Info').t`(Mail + VPN)`}` : Title;
 
+        const cycleDiscount = getHasCycleDiscount(cycle, Name, plansMap) && <CycleDiscountBadge cycle={cycle} />;
+        const title = <span className="mr0-5 pr0-5">{getTitle(Name, cycle, plansMap, diff, users)}</span>;
+
         return (
             <Fragment key={ID}>
-                {Type === PLAN_TYPES.PLAN && (
+                {(diff || update) && Type === PLAN_TYPES.PLAN && (
                     <div className="mb1">
                         <strong>{displayTitle}</strong>
                     </div>
@@ -187,10 +161,8 @@ const CheckoutPlanIDs = ({
                     <CheckoutRow
                         title={
                             <>
-                                <span className="mr0-5 pr0-5">{getTitle(Name, cycle, plansMap, diff, users)}</span>
-                                {!isUpdating && [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle) && (
-                                    <CycleDiscountBadge cycle={cycle} />
-                                )}
+                                {title}
+                                {!isUpdating && cycleDiscount}
                             </>
                         }
                         amount={isUpdating ? 0 : (diff * Pricing[cycle]) / cycle}
@@ -202,10 +174,8 @@ const CheckoutPlanIDs = ({
                     <CheckoutRow
                         title={
                             <>
-                                <span className="mr0-5 pr0-5">{getTitle(Name, cycle, plansMap, update, users)}</span>
-                                {[CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle) && (
-                                    <CycleDiscountBadge cycle={cycle} />
-                                )}
+                                {title}
+                                {cycleDiscount}
                             </>
                         }
                         amount={(update * Pricing[cycle]) / cycle}
