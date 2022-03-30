@@ -97,7 +97,7 @@ const SubscriptionModal = ({
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
         [SUBSCRIPTION_STEPS.PLAN_SELECTION]: c('Title').t`Select a plan`,
         [SUBSCRIPTION_STEPS.CUSTOMIZATION]: c('Title').t`Customize your plan`,
-        [SUBSCRIPTION_STEPS.CHECKOUT]: c('Title').t`Select a billing cycle and pay`,
+        [SUBSCRIPTION_STEPS.CHECKOUT]: c('Title').t`Select subscription and pay`,
         [SUBSCRIPTION_STEPS.UPGRADE]: '',
         [SUBSCRIPTION_STEPS.THANKS]: '',
     };
@@ -429,7 +429,7 @@ const SubscriptionModal = ({
                             <div className="mlauto mrauto max-w37e on-mobile-max-w100  ">
                                 {!isFreePlanSelected && (
                                     <>
-                                        <h2 className="text-2xl text-bold mb1">{c('Label').t`Billing cycle`}</h2>
+                                        <h2 className="text-2xl text-bold mb1">{c('Label').t`Subscription options`}</h2>
                                         <div className="mb2">
                                             <SubscriptionCycleSelector
                                                 plans={plans}
