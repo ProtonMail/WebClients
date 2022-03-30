@@ -166,8 +166,14 @@
 	.message-recipient-item-label-address {
 		margin-block-end: 0.5em;
 	}
-	.message-header-from-container .message-recipient-item-label-address {
-		margin-block-end: 0.25em; // design request to make from and to closer
+	.message-header-from-container {
+		.message-recipient-item-lockIcon {
+			vertical-align: text-bottom;
+		}
+
+		.message-recipient-item-label-address {
+			margin-block-end: 0.25em; // design request to make from and to closer
+		}
 	}
 
 	// flatten everything for ellipsis on one line (no detail view)
@@ -236,13 +242,6 @@
 		.message-recipient-item-expanded-content {
 			padding-block-start: 0.2em;
 		}
-	}
-}
-
-// special fix to remove margin if there is no name before lockIcon
-.message-recipient-item-label-address--no-name-before-lockIcon {
-	.message-recipient-item-lockIcon {
-		margin-inline-start: 0;
 	}
 }
 

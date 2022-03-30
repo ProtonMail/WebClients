@@ -9,6 +9,9 @@ interface Props {
     label?: ReactNode;
     itemActionIcon?: ReactNode;
     labelHasIcon?: boolean;
+    /**
+     * Show address except if recipient list collapsed or if recipient name = recipient email
+     */
     showAddress?: boolean;
     address?: ReactNode;
     title?: string;
@@ -19,9 +22,15 @@ interface Props {
     dropdrownAnchorRef: RefObject<HTMLButtonElement>;
     dropdownToggle?: () => void;
     isDropdownOpen?: boolean;
-    canDisplayName?: boolean;
+    /**
+     * Dropdown is shown by default, but not in the print modal
+     */
     showDropdown?: boolean;
     isOutside?: boolean;
+    /**
+     * The recipient item is not the sender
+     */
+    isRecipient?: boolean;
 }
 
 const RecipientItemLayout = ({
@@ -38,9 +47,9 @@ const RecipientItemLayout = ({
     dropdrownAnchorRef,
     dropdownToggle,
     isDropdownOpen = false,
-    canDisplayName = true,
     showDropdown = true,
     isOutside = false,
+    isRecipient = false,
 }: Props) => {
     // When displaying messages sent as Encrypted Outside, this component is used
     // almost in isolation, specifically without the usual mail app (and authenticated
@@ -86,8 +95,6 @@ const RecipientItemLayout = ({
         }
     };
 
-    const showName = canDisplayName || !showAddress;
-
     // translator: Example: More details about "Jack <email>"
     const labelMessageRecipientButton = c('Action').t`More details about ${title}`;
 
@@ -116,30 +123,26 @@ const RecipientItemLayout = ({
                     className={classnames([
                         'inline-flex flex-item-fluid flex-nowrap relative',
                         !isOutside && showDropdown && 'message-recipient-item-label-address',
-                        !showName && 'message-recipient-item-label-address--no-name-before-lockIcon',
                     ])}
                 >
                     <span className="inline-block text-ellipsis max-w100">
                         {labelHasIcon && <span className="inline-block align-sub">{itemActionIcon}</span>}
-                        {showName && (
-                            <span
-                                className={classnames([
-                                    'message-recipient-item-label',
-                                    isLoading && 'inline-block',
-                                    isNarrow && 'text-strong',
-                                ])}
-                            >
-                                {highlightedLabel}
-                            </span>
-                        )}
                         {icon}
+                        <span
+                            className={classnames([
+                                'message-recipient-item-label',
+                                isLoading && 'inline-block',
+                                isNarrow && 'text-strong',
+                            ])}
+                        >
+                            {highlightedLabel}
+                        </span>
                         {showAddress && (
                             <span
                                 className={classnames([
-                                    'message-recipient-item-address',
+                                    'message-recipient-item-address ml0-25',
                                     isLoading && 'inline-block',
-                                    canDisplayName && 'ml0-25',
-                                    showDropdown && 'color-primary',
+                                    isRecipient ? 'color-weak' : 'color-primary',
                                 ])}
                             >
                                 {highlightedAddress}

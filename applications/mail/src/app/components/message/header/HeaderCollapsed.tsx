@@ -73,9 +73,9 @@ const HeaderCollapsed = ({
                 <RecipientItem
                     message={message}
                     recipientOrGroup={{ recipient: message.data?.Sender }}
-                    showAddress={false}
                     isLoading={!messageLoaded}
                     showDropdown={false}
+                    hideAddress={true}
                 />
 
                 {messageLoaded && isDraftMessage && (
