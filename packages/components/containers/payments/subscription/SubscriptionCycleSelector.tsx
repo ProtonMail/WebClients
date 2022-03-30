@@ -1,8 +1,9 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { Plan, PlanIDs, Currency, PlansMap } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 
 import { Price, Radio } from '../../../components';
 
@@ -26,6 +27,8 @@ const SubscriptionCycleSelector = ({
     plans,
 }: Props) => {
     const cycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY];
+
+    const supportedAddons = getSupportedAddons(planIDs);
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const pricing = Object.entries(planIDs).reduce(
         (acc, [planName, quantity]) => {
@@ -33,21 +36,36 @@ const SubscriptionCycleSelector = ({
             if (!plan) {
                 return acc;
             }
-            acc[CYCLE.MONTHLY] += quantity * plan.Pricing[CYCLE.MONTHLY];
-            acc[CYCLE.YEARLY] += quantity * plan.Pricing[CYCLE.YEARLY];
-            acc[CYCLE.TWO_YEARS] += quantity * plan.Pricing[CYCLE.TWO_YEARS];
+
+            acc.all[CYCLE.MONTHLY] += quantity * plan.Pricing[CYCLE.MONTHLY];
+            acc.all[CYCLE.YEARLY] += quantity * plan.Pricing[CYCLE.YEARLY];
+            acc.all[CYCLE.TWO_YEARS] += quantity * plan.Pricing[CYCLE.TWO_YEARS];
+
+            if (plan.Type === PLAN_TYPES.PLAN) {
+                acc.plans[CYCLE.MONTHLY] += quantity * plan.Pricing[CYCLE.MONTHLY];
+                acc.plans[CYCLE.YEARLY] += quantity * plan.Pricing[CYCLE.YEARLY];
+                acc.plans[CYCLE.TWO_YEARS] += quantity * plan.Pricing[CYCLE.TWO_YEARS];
+            }
+
             return acc;
         },
-        { [CYCLE.MONTHLY]: 0, [CYCLE.YEARLY]: 0, [CYCLE.TWO_YEARS]: 0 }
+        {
+            all: { [CYCLE.MONTHLY]: 0, [CYCLE.YEARLY]: 0, [CYCLE.TWO_YEARS]: 0 },
+            plans: {
+                [CYCLE.MONTHLY]: 0,
+                [CYCLE.YEARLY]: 0,
+                [CYCLE.TWO_YEARS]: 0,
+            },
+        }
     );
 
     return (
         <ul className="unstyled m0 plan-cycle-selector">
             {cycles.map((cycle) => {
                 const isSelected = cycle === cycleSelected;
-                const total = pricing[cycle];
-                const totalPerMonth = total / cycle;
-                const discount = cycle === CYCLE.MONTHLY ? 0 : pricing[CYCLE.MONTHLY] * cycle - total;
+                const total = pricing.all[cycle];
+                const totalPerMonth = pricing.plans[cycle] / cycle;
+                const discount = cycle === CYCLE.MONTHLY ? 0 : pricing.all[CYCLE.MONTHLY] * cycle - total;
                 return (
                     <li key={`${cycle}`} className="rounded bg-norm flex flex-align-items-stretch">
                         <button
@@ -61,7 +79,13 @@ const SubscriptionCycleSelector = ({
                             aria-pressed={isSelected}
                         >
                             <div className="flex-item-noshrink" aria-hidden="true">
-                                <Radio id={`${cycle}`} name="cycleFakeField" tabIndex={-1} checked={isSelected} />
+                                <Radio
+                                    id={`${cycle}`}
+                                    name="cycleFakeField"
+                                    tabIndex={-1}
+                                    checked={isSelected}
+                                    readOnly
+                                />
                             </div>
                             <div className="flex-item-fluid pl0-5">
                                 <div className="flex flex-align-items-center">
@@ -72,24 +96,29 @@ const SubscriptionCycleSelector = ({
                                             cycle
                                         )}
                                     </strong>
-                                    <span className="color-weak flex flex-item-noshrink">
-                                        <Price
-                                            className="text-semibold"
-                                            currency={currency}
-                                            suffix={c('Suffix').t`/month`}
-                                        >
-                                            {totalPerMonth}
-                                        </Price>
-                                    </span>
-                                </div>
-                                <div className="flex flex-align-items-center">
-                                    <strong className="text-lg flex-item-fluid mr1 color-primary">
+                                    <strong className="text-lg flex-item-noshrink color-primary">
                                         {c('Subscription price').t`For`}
                                         <Price className="ml0-25" currency={currency}>
                                             {total}
                                         </Price>
                                     </strong>
-                                    <span className="color-success flex flex-item-noshrink text-semibold">
+                                </div>
+                                <div className="flex flex-align-items-center">
+                                    <span className="color-weak flex flex-item-fluid">
+                                        <Price
+                                            currency={currency}
+                                            suffix={
+                                                Object.keys(supportedAddons).some((addon) =>
+                                                    addon.startsWith('1member')
+                                                )
+                                                    ? c('Suffix').t`/user per month`
+                                                    : c('Suffix').t`/month`
+                                            }
+                                        >
+                                            {totalPerMonth}
+                                        </Price>
+                                    </span>
+                                    <span className="color-success flex flex-item-noshrink">
                                         {discount ? (
                                             <>
                                                 {c('Subscription saving').t`Save`}
