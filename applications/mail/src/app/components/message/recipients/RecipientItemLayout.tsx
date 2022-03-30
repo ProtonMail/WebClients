@@ -1,4 +1,4 @@
-import { ReactNode, RefObject, useRef } from 'react';
+import { ReactNode, RefObject, useRef, MouseEvent } from 'react';
 import { c } from 'ttag';
 import { classnames, useCombinedRefs, useHotkeys } from '@proton/components';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
@@ -79,6 +79,13 @@ const RecipientItemLayout = ({
         ],
     ]);
 
+    const handleClick = (event: MouseEvent) => {
+        if (document.getSelection()?.isCollapsed && showDropdown) {
+            event.stopPropagation();
+            dropdownToggle?.();
+        }
+    };
+
     const showName = canDisplayName || !showAddress;
 
     // translator: Example: More details about "Jack <email>"
@@ -94,12 +101,7 @@ const RecipientItemLayout = ({
             role="button"
             tabIndex={0}
             data-testid="message-header:from"
-            onClick={(e) => {
-                if (showDropdown) {
-                    e.stopPropagation();
-                    dropdownToggle?.();
-                }
-            }}
+            onClick={handleClick}
             ref={combinedRef}
             aria-label={labelMessageRecipientButton}
             aria-expanded={isDropdownOpen}
