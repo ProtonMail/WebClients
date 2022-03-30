@@ -2,12 +2,7 @@ import { c, msgid } from 'ttag';
 import { PLAN_NAMES, CYCLE, APPS, PLANS } from '@proton/shared/lib/constants';
 import { unique } from '@proton/shared/lib/helpers/array';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import {
-    getHasB2BPlan,
-    getHasLegacyPlans,
-    getMonthlyBaseAmount,
-    hasVisionary,
-} from '@proton/shared/lib/helpers/subscription';
+import { getHasB2BPlan, getHasLegacyPlans, getBaseAmount, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { Cycle } from '@proton/shared/lib/interfaces';
@@ -21,6 +16,7 @@ import { formatPlans } from './subscription/helpers';
 import DiscountBadge from './DiscountBadge';
 import PlanPrice from './subscription/PlanPrice';
 import CycleDiscountBadge from './CycleDiscountBadge';
+import Price from '../../components/price/Price';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
@@ -37,20 +33,35 @@ const getCycleText = (cycle: Cycle) => {
     return '';
 };
 
-const getBillingText = (cycle: Cycle, periodEnd: number) => {
-    const formattedEndTime = <Time key="time-text">{periodEnd}</Time>;
-
+const getBillingCycleText = (cycle: Cycle) => {
     if (cycle === MONTHLY) {
-        return c('Billing cycle').jt`Monthly billing (Renewal on ${formattedEndTime})`;
+        return c('Billing cycle').t`Billed monthly`;
     }
     if (cycle === YEARLY) {
-        return c('Billing cycle').jt`Yearly billing (Renewal on ${formattedEndTime})`;
+        return c('Billing cycle').t`Billed annually`;
     }
     if (cycle === TWO_YEARS) {
-        return c('Billing cycle').jt`2-year billing (Renewal on ${formattedEndTime})`;
+        return c('Billing cycle').t`Billed every 2 years`;
     }
+    return '';
+};
 
-    return c('Billing cycle').jt`Billing (Renewal on ${formattedEndTime})`;
+const getDueCycleText = (cycle: Cycle) => {
+    if (cycle === MONTHLY) {
+        return c('Billing cycle').t`Due monthly`;
+    }
+    if (cycle === YEARLY) {
+        return c('Billing cycle').t`Due annually`;
+    }
+    if (cycle === TWO_YEARS) {
+        return c('Billing cycle').t`Due every 2 years`;
+    }
+    return '';
+};
+
+const getRenewalText = (periodEnd: number) => {
+    const formattedEndTime = <Time key="time-text">{periodEnd}</Time>;
+    return c('Billing cycle').jt`Renews automatically on ${formattedEndTime}`;
 };
 
 const mailAppName = getAppName(APPS.PROTONMAIL);
@@ -74,9 +85,9 @@ const BillingSection = () => {
     const { plan, mailPlan, vpnPlan, addressAddon, domainAddon, memberAddon, vpnAddon, spaceAddon } =
         formatPlans(Plans);
     const subTotal = unique(Plans.map(({ Name }) => Name)).reduce((acc, planName) => {
-        return acc + getMonthlyBaseAmount(planName as PLANS, plans, subscription);
+        return acc + getBaseAmount(planName as PLANS, plans, subscription, Cycle);
     }, 0);
-    const discount = Amount / Cycle - subTotal;
+    const discount = Amount - subTotal;
     const spaceBonus = organization?.BonusSpace;
     const vpnBonus = organization?.BonusVPN;
     const maxUsers = organization?.MaxMembers;
@@ -85,9 +96,26 @@ const BillingSection = () => {
     const priceLabelClassName = 'flex-item-fluid';
     const weakRowClassName = classnames([priceRowClassName, 'color-weak']);
 
+    const cycleDiscount = [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(Cycle) && (
+        <span className="ml0-5">
+            <CycleDiscountBadge cycle={Cycle} />
+        </span>
+    );
+
+    const hasLegacyPlans = getHasLegacyPlans(subscription);
+    const hasB2BPlan = getHasB2BPlan(subscription);
+    const cycleText = getCycleText(Cycle);
+
+    const usersText =
+        hasB2BPlan && maxUsers
+            ? c('Title').ngettext(msgid`${maxUsers} user`, `${maxUsers} users`, maxUsers)
+            : undefined;
+
+    const planNameText = plan ? PLAN_NAMES[plan.Name as keyof typeof PLAN_NAMES] : '';
+
     const addons = (
         <>
-            {memberAddon ? (
+            {memberAddon && hasLegacyPlans ? (
                 <div className={weakRowClassName}>
                     <div className={priceLabelClassName}>
                         +{' '}
@@ -96,12 +124,13 @@ const BillingSection = () => {
                             `${memberAddon.MaxMembers} users`,
                             memberAddon.MaxMembers
                         )}
+                        {cycleDiscount}
                     </div>
                     <div className="text-right">
                         <PlanPrice
-                            amount={getMonthlyBaseAmount(memberAddon.Name, plans, subscription)}
+                            amount={getBaseAmount(memberAddon.Name, plans, subscription, Cycle)}
                             currency={Currency}
-                            cycle={MONTHLY}
+                            cycle={Cycle}
                         />
                     </div>
                 </div>
@@ -115,12 +144,13 @@ const BillingSection = () => {
                             `${addressAddon.MaxAddresses} addresses`,
                             addressAddon.MaxAddresses
                         )}
+                        {cycleDiscount}
                     </div>
                     <div className="text-right">
                         <PlanPrice
-                            amount={getMonthlyBaseAmount(addressAddon.Name, plans, subscription)}
+                            amount={getBaseAmount(addressAddon.Name, plans, subscription, Cycle)}
                             currency={Currency}
-                            cycle={MONTHLY}
+                            cycle={Cycle}
                         />
                     </div>
                 </div>
@@ -129,12 +159,13 @@ const BillingSection = () => {
                 <div className={weakRowClassName}>
                     <div className={priceLabelClassName}>
                         + {humanSize(spaceAddon.MaxSpace)} {c('Label').t`extra storage`}
+                        {cycleDiscount}
                     </div>
                     <div className="text-right">
                         <PlanPrice
-                            amount={getMonthlyBaseAmount(spaceAddon.Name, plans, subscription)}
+                            amount={getBaseAmount(spaceAddon.Name, plans, subscription, Cycle)}
                             currency={Currency}
-                            cycle={MONTHLY}
+                            cycle={Cycle}
                         />
                     </div>
                 </div>
@@ -145,7 +176,7 @@ const BillingSection = () => {
                         + {humanSize(spaceBonus)} {c('Label').t`bonus storage`}
                     </div>
                     <div className="text-right">
-                        <PlanPrice amount={0} currency={Currency} cycle={MONTHLY} />
+                        <PlanPrice amount={0} currency={Currency} cycle={Cycle} />
                     </div>
                 </div>
             ) : null}
@@ -158,12 +189,13 @@ const BillingSection = () => {
                             `${domainAddon.MaxDomains} domains`,
                             domainAddon.MaxDomains
                         )}
+                        {cycleDiscount}
                     </div>
                     <div className="text-right">
                         <PlanPrice
-                            amount={getMonthlyBaseAmount(domainAddon.Name, plans, subscription)}
+                            amount={getBaseAmount(domainAddon.Name, plans, subscription, Cycle)}
                             currency={Currency}
-                            cycle={MONTHLY}
+                            cycle={Cycle}
                         />
                     </div>
                 </div>
@@ -171,36 +203,27 @@ const BillingSection = () => {
         </>
     );
 
-    const hasLegacyPlans = getHasLegacyPlans(subscription);
-    const hasB2BPlan = getHasB2BPlan(subscription);
-    const cycleText = getCycleText(Cycle);
-
-    const usersText =
-        hasB2BPlan && maxUsers
-            ? c('Title').ngettext(msgid`${maxUsers} user`, `${maxUsers} users`, maxUsers)
-            : undefined;
-
     return (
         <SettingsSection>
             {!hasLegacyPlans && plan ? (
                 <div className="border-bottom on-mobile-pb1">
-                    {mailPlan ? (
-                        <div className={classnames([priceRowClassName, 'text-bold'])}>
-                            <div className={priceLabelClassName}>
-                                {[PLAN_NAMES[plan.Name as keyof typeof PLAN_NAMES], usersText, cycleText]
-                                    .filter(isTruthy)
-                                    .join(' - ')}
-                            </div>
-                            <div className="text-right">
-                                <PlanPrice
-                                    amount={getMonthlyBaseAmount(plan.Name, plans, subscription)}
-                                    currency={Currency}
-                                    cycle={MONTHLY}
-                                    suffix={hasB2BPlan ? c('Suffix').t`per user / month` : undefined}
-                                />
-                            </div>
+                    <div className={classnames([priceRowClassName, 'text-bold'])}>{planNameText}</div>
+                    <div className={weakRowClassName}>
+                        <div className={priceLabelClassName}>
+                            {[usersText, cycleText].filter(isTruthy).join(' - ')}
+                            {cycleDiscount}
                         </div>
-                    ) : null}
+                        <div className="text-right">
+                            <PlanPrice
+                                amount={
+                                    getBaseAmount(plan.Name, plans, subscription, Cycle) +
+                                    (memberAddon ? getBaseAmount(memberAddon.Name, plans, subscription, Cycle) : 0)
+                                }
+                                currency={Currency}
+                                cycle={Cycle}
+                            />
+                        </div>
+                    </div>
                     {addons}
                 </div>
             ) : null}
@@ -210,12 +233,13 @@ const BillingSection = () => {
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>
                                 {`${mailAppName} ${PLAN_NAMES[mailPlan.Name as keyof typeof PLAN_NAMES]}`}
+                                {cycleDiscount}
                             </div>
                             <div className="text-right">
                                 <PlanPrice
-                                    amount={getMonthlyBaseAmount(mailPlan.Name, plans, subscription)}
+                                    amount={getBaseAmount(mailPlan.Name, plans, subscription, Cycle)}
                                     currency={Currency}
-                                    cycle={MONTHLY}
+                                    cycle={Cycle}
                                 />
                             </div>
                         </div>
@@ -229,12 +253,13 @@ const BillingSection = () => {
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>
                                 {`${vpnAppName} ${PLAN_NAMES[vpnPlan.Name as keyof typeof PLAN_NAMES]}`}
+                                {cycleDiscount}
                             </div>
                             <div className="text-right">
                                 <PlanPrice
-                                    amount={getMonthlyBaseAmount(vpnPlan.Name, plans, subscription)}
+                                    amount={getBaseAmount(vpnPlan.Name, plans, subscription, Cycle)}
                                     currency={Currency}
-                                    cycle={MONTHLY}
+                                    cycle={Cycle}
                                 />
                             </div>
                         </div>
@@ -248,12 +273,13 @@ const BillingSection = () => {
                                     `${vpnAddon.MaxVPN} connections`,
                                     vpnAddon.MaxVPN
                                 )}
+                                {cycleDiscount}
                             </div>
                             <div className="text-right">
                                 <PlanPrice
-                                    amount={getMonthlyBaseAmount(vpnAddon.Name, plans, subscription)}
+                                    amount={getBaseAmount(vpnAddon.Name, plans, subscription, Cycle)}
                                     currency={Currency}
-                                    cycle={MONTHLY}
+                                    cycle={Cycle}
                                 />
                             </div>
                         </div>
@@ -269,50 +295,43 @@ const BillingSection = () => {
                                 )}
                             </div>
                             <div className="text-right">
-                                <PlanPrice amount={0} currency={Currency} cycle={MONTHLY} />
+                                <PlanPrice amount={0} currency={Currency} cycle={Cycle} />
                             </div>
                         </div>
                     ) : null}
                 </div>
             ) : null}
-            {CouponCode || [YEARLY, TWO_YEARS].includes(Cycle) ? (
+            {discount > 0 ? (
                 <div className="border-bottom pt1 on-mobile-pb1">
                     <div className={classnames([priceRowClassName, 'text-bold'])}>
-                        <div className={priceLabelClassName}>{c('Label').t`Subtotal`}</div>
+                        <div className={priceLabelClassName}>{getBillingCycleText(Cycle)}</div>
                         <div className="text-right">
-                            <PlanPrice amount={subTotal} currency={Currency} cycle={MONTHLY} />
+                            <Price currency={Currency}>{subTotal}</Price>
                         </div>
                     </div>
                     <div className={weakRowClassName}>
                         <div className={classnames([priceLabelClassName, 'flex flex-align-items-center'])}>
                             <div className="mr1">{c('Label').t`Discount`}</div>
                             <div className="flex flex-align-items-center">
-                                {CouponCode ? (
-                                    <>
-                                        <code>{CouponCode}</code>&nbsp;
-                                        <DiscountBadge code={CouponCode} />
-                                    </>
-                                ) : (
-                                    <CycleDiscountBadge cycle={Cycle} />
-                                )}
+                                {CouponCode && <DiscountBadge code={CouponCode} />}
                             </div>
                         </div>
                         <div className="text-right">
-                            <PlanPrice amount={discount} currency={Currency} cycle={MONTHLY} />
+                            <Price currency={Currency}>{discount}</Price>
                         </div>
                     </div>
                 </div>
             ) : null}
             <div className="pt1">
                 <div className={classnames([priceRowClassName, 'text-bold'])}>
-                    <div className={priceLabelClassName}>{c('Label').t`Total`}</div>
+                    <div className={priceLabelClassName}>{getDueCycleText(Cycle)}</div>
                     <div className="text-right">
-                        <PlanPrice amount={Amount} currency={Currency} cycle={Cycle} />
+                        <Price currency={Currency}>{Amount}</Price>
                     </div>
                 </div>
             </div>
             <div className={classnames([weakRowClassName, 'text-right mt1'])}>
-                <div className="text-right w100">{getBillingText(Cycle, PeriodEnd)}</div>
+                <div className="text-right w100">{getRenewalText(PeriodEnd)}</div>
             </div>
         </SettingsSection>
     );

@@ -75,10 +75,11 @@ export const getHasLegacyPlans = (subscription: Subscription | undefined) => {
     return subscription?.Plans?.some(({ Name }) => getIsLegacyPlan(Name));
 };
 
-export const getMonthlyBaseAmount = (
+export const getBaseAmount = (
     name: PLANS | ADDON_NAMES,
     plans: Plan[],
-    subscription: Subscription | undefined
+    subscription: Subscription | undefined,
+    cycle = CYCLE.MONTHLY
 ) => {
     const base = plans.find(({ Name }) => Name === name);
     if (!base) {
@@ -86,7 +87,7 @@ export const getMonthlyBaseAmount = (
     }
     return (subscription?.Plans || [])
         .filter(({ Name }) => Name === name)
-        .reduce((acc) => acc + base.Pricing[CYCLE.MONTHLY], 0);
+        .reduce((acc) => acc + base.Pricing[cycle], 0);
 };
 
 export const getPlanIDs = (subscription: Subscription | undefined) => {

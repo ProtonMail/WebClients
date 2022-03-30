@@ -52,10 +52,10 @@ const getTotalBillingText = (cycle: Cycle) => {
         return c('Checkout row').t`Billed monthly`;
     }
     if (cycle === CYCLE.YEARLY) {
-        return c('Checkout row').t`Billed yearly`;
+        return c('Checkout row').t`Billed annually`;
     }
     if (cycle === CYCLE.TWO_YEARS) {
-        return c('Checkout row').t`Billed 2-years`;
+        return c('Checkout row').t`Billed every 2 years`;
     }
     return '';
 };
