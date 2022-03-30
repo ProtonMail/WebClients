@@ -52,8 +52,8 @@ function useDriveCrypto() {
 
     const getVerificationKey = useCallback(
         async (email: string) => {
-            const { publicKeys } = await getOwnAddressKeysAsync(email, getAddresses, getAddressKeys);
-            return publicKeys;
+            const result = await getOwnAddressKeysAsync(email, getAddresses, getAddressKeys);
+            return result?.publicKeys || [];
         },
         [getAddresses, getAddressKeys]
     );
@@ -74,11 +74,14 @@ function useDriveCrypto() {
      * @param privateKeys keys to use, when the user is not the same who encrypted
      */
     const decryptSharePassphrase = async (meta: ShareWithKey, privateKeys?: OpenPGPKey[]) => {
-        return decryptSharePassphraseAsync(
-            meta,
-            privateKeys || (await getOwnAddressKeys(meta.creator)).privateKeys,
-            getVerificationKey
-        );
+        if (!privateKeys) {
+            const keys = await getOwnAddressKeys(meta.creator);
+            if (!keys) {
+                throw new Error('Address key was not found');
+            }
+            privateKeys = keys.privateKeys;
+        }
+        return decryptSharePassphraseAsync(meta, privateKeys, getVerificationKey);
     };
 
     return {
