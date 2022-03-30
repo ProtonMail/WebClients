@@ -1,26 +1,34 @@
 import { useCallback, useState } from 'react';
-import { UserSettingsModel } from '@proton/shared/lib/models';
+import { UserSettings } from '@proton/shared/lib/interfaces';
 import useCache from './useCache';
+
+export const WELCOME_FLAGS_CACHE_KEY = 'welcome-flags';
 
 export interface WelcomeFlagsState {
     hasGenericWelcomeStep?: boolean;
     isWelcomeFlow?: boolean;
+    isDone?: boolean;
 }
+
+export const getWelcomeFlagsValue = (userSettings: UserSettings): WelcomeFlagsState => {
+    const hasProductWelcomeStep = userSettings.WelcomeFlag === 0;
+    const hasGenericWelcomeStep = userSettings.Flags.Welcomed === 0;
+    return {
+        hasGenericWelcomeStep,
+        isWelcomeFlow: hasGenericWelcomeStep || hasProductWelcomeStep,
+        isDone: false,
+    };
+};
 
 const useWelcomeFlags = (): [WelcomeFlagsState, () => void] => {
     const cache = useCache();
     const [state, setState] = useState<WelcomeFlagsState>(() => {
-        // Assumes that user settings has been pre-loaded. Not using hook to avoid re-renders.
-        const userSettings = cache.get(UserSettingsModel.key)?.value;
-        const hasProductWelcomeStep = userSettings.WelcomeFlag === 0; // Operated directly on API side
-        const hasGenericWelcomeStep = userSettings.Flags.Welcomed === 0;
-        return {
-            hasGenericWelcomeStep,
-            isWelcomeFlow: hasGenericWelcomeStep || hasProductWelcomeStep,
-        };
+        return cache.get(WELCOME_FLAGS_CACHE_KEY) || {};
     });
     const setDone = useCallback(() => {
-        setState({});
+        const newValue: WelcomeFlagsState = { isDone: true };
+        cache.set(WELCOME_FLAGS_CACHE_KEY, newValue);
+        setState(newValue);
     }, []);
     return [state, setDone];
 };
