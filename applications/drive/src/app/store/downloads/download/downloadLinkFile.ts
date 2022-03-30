@@ -64,7 +64,7 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
         }
     };
 
-    const controls = initDownloadBlocks({
+    const controls = initDownloadBlocks(link.name, {
         ...callbacks,
         checkFileSignatures,
         getBlocks: (abortSignal, pagination) => callbacks.getBlocks(abortSignal, link.shareId, link.linkId, pagination),

@@ -193,7 +193,8 @@ export function useLinksListingProvider() {
         shareId: string,
         sorting: SortParams | undefined,
         fetchMeta: FetchMeta,
-        fetchLinks: (sorting: SortParams, page: number) => Promise<FetchResponse>
+        fetchLinks: (sorting: SortParams, page: number) => Promise<FetchResponse>,
+        showNotification = true
     ): Promise<boolean> => {
         await waitFor(() => !fetchMeta.isInProgress, { abortSignal });
         if (fetchMeta.isEverythingFetched) {
@@ -217,10 +218,23 @@ export function useLinksListingProvider() {
                 return !fetchMeta.isEverythingFetched;
             })
             .catch((err) => {
-                showErrorNotification(err, c('Notification').t`Next page failed to be loaded`);
-                // Very probably the next page is still there, but to not cause
-                // inifinite loop requesting next page, lets return false.
-                return false;
+                // If you do bigger changes around, consider this:
+                // It looked like a good idea to handle errors by showing
+                // notification here to handle all places nicely on one
+                // place without need to duplicate the code. However, for
+                // download, we need to throw exception back so it can be
+                // properly handled by transfer manager. But still, for all
+                // other places its convenient to handle here. Maybe in the
+                // future we could do another helper which would wrap the
+                // logic with notifications, similarly like we have hook
+                // useActions, to have better freedom to chose what to use.
+                if (showNotification) {
+                    showErrorNotification(err, c('Notification').t`Next page failed to be loaded`);
+                    // Very probably the next page is still there, but to not cause
+                    // inifinite loop requesting next page, lets return false.
+                    return false;
+                }
+                throw err;
             })
             .finally(() => {
                 // Make sure isInProgress is always unset, even during failure,
@@ -253,15 +267,19 @@ export function useLinksListingProvider() {
         parentLinkId: string,
         sorting: SortParams,
         page: number,
-        foldersOnly?: boolean
+        foldersOnly?: boolean,
+        showNotification = true
     ): Promise<FetchResponse> => {
         const { Links } = await debouncedRequest<LinkChildrenResult>(
-            queryFolderChildren(shareId, parentLinkId, {
-                ...sortParamsToServerSortArgs(sorting),
-                PageSize: PAGE_SIZE,
-                Page: page,
-                FoldersOnly: foldersOnly ? 1 : 0,
-            }),
+            {
+                ...queryFolderChildren(shareId, parentLinkId, {
+                    ...sortParamsToServerSortArgs(sorting),
+                    PageSize: PAGE_SIZE,
+                    Page: page,
+                    FoldersOnly: foldersOnly ? 1 : 0,
+                }),
+                silence: !showNotification,
+            },
             abortSignal
         );
         return { links: Links.map(linkMetaToEncryptedLink), parents: [] };
@@ -278,7 +296,8 @@ export function useLinksListingProvider() {
         shareId: string,
         parentLinkId: string,
         sorting?: SortParams,
-        foldersOnly?: boolean
+        foldersOnly?: boolean,
+        showNotification = true
     ): Promise<boolean> => {
         const shareState = getShareFetchState(shareId);
         let linkFetchMeta = shareState.folders[parentLinkId];
@@ -307,8 +326,17 @@ export function useLinksListingProvider() {
             sorting,
             fetchMeta,
             (sorting: SortParams, page: number) => {
-                return fetchChildrenPage(abortSignal, shareId, parentLinkId, sorting, page, foldersOnly);
-            }
+                return fetchChildrenPage(
+                    abortSignal,
+                    shareId,
+                    parentLinkId,
+                    sorting,
+                    page,
+                    foldersOnly,
+                    showNotification
+                );
+            },
+            showNotification
         );
     };
 
@@ -425,11 +453,14 @@ export function useLinksListingProvider() {
         abortSignal: AbortSignal,
         shareId: string,
         linkId: string,
-        foldersOnly?: boolean
+        foldersOnly?: boolean,
+        showNotification = true
     ): Promise<void> => {
         // undefined means keep the sorting used the last time = lets reuse what we loaded so far.
         const sorting = undefined;
-        return loadHelper(() => fetchChildrenNextPage(abortSignal, shareId, linkId, sorting, foldersOnly));
+        return loadHelper(() =>
+            fetchChildrenNextPage(abortSignal, shareId, linkId, sorting, foldersOnly, showNotification)
+        );
     };
 
     const loadTrashedLinks = async (abortSignal: AbortSignal, shareId: string): Promise<void> => {
