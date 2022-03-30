@@ -10,9 +10,10 @@ interface Props {
     amount: number;
     currency?: Currency;
     className?: string;
+    suffix?: string;
 }
 
-const CheckoutRow = ({ title, amount = 0, currency, className = '' }: Props) => {
+const CheckoutRow = ({ title, amount = 0, currency, className = '', suffix }: Props) => {
     if (amount === 0 && !currency) {
         return (
             <div className={classnames(['flex flex-nowrap flex-justify-space-between mb1', className])}>
@@ -24,7 +25,9 @@ const CheckoutRow = ({ title, amount = 0, currency, className = '' }: Props) => 
     return (
         <div className={classnames(['flex flex-nowrap flex-justify-space-between mb1', className])}>
             <div className="pr0-5">{title}</div>
-            <Price currency={currency}>{amount}</Price>
+            <Price currency={currency} suffix={suffix}>
+                {amount}
+            </Price>
         </div>
     );
 };
