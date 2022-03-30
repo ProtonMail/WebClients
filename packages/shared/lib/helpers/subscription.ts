@@ -1,6 +1,6 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES, COUPON_CODES } from '../constants';
-import { Subscription, Plan, PlanIDs } from '../interfaces';
+import { Subscription, PlanIDs, Cycle, PlansMap } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -77,11 +77,11 @@ export const getHasLegacyPlans = (subscription: Subscription | undefined) => {
 
 export const getBaseAmount = (
     name: PLANS | ADDON_NAMES,
-    plans: Plan[],
+    plansMap: PlansMap,
     subscription: Subscription | undefined,
     cycle = CYCLE.MONTHLY
 ) => {
-    const base = plans.find(({ Name }) => Name === name);
+    const base = plansMap[name];
     if (!base) {
         return 0;
     }
@@ -109,4 +109,25 @@ export const isTrialExpired = (subscription: Subscription | undefined) => {
 export const willTrialExpire = (subscription: Subscription | undefined) => {
     const now = new Date();
     return isBefore(fromUnixTime(subscription?.PeriodEnd || 0), addWeeks(now, 1));
+};
+
+export const getCycleDiscount = (cycle: Cycle, planName: PLANS | ADDON_NAMES, plansMap: PlansMap) => {
+    const pricing = plansMap[planName]?.Pricing;
+    if (!pricing) {
+        return 0;
+    }
+    const originalPrice = pricing[CYCLE.MONTHLY];
+    const normalisedPrice = pricing[cycle] / cycle;
+    const percentage = (originalPrice - normalisedPrice) / originalPrice;
+    return Math.round(percentage * 100);
+};
+
+export const getHasCycleDiscount = (cycle: Cycle, planName: PLANS | ADDON_NAMES, plansMap: PlansMap) => {
+    const pricing = plansMap[planName]?.Pricing;
+    if (!pricing) {
+        return false;
+    }
+    const originalPrice = pricing[CYCLE.MONTHLY];
+    const normalisedPrice = pricing[cycle] / cycle;
+    return normalisedPrice !== originalPrice;
 };
