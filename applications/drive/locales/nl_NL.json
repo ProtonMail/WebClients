@@ -59,6 +59,9 @@
       "Cancel all": [
         "Annuleer alle"
       ],
+      "Cancel all downloads": [
+        "Alle downloads annuleren"
+      ],
       "Cancel all uploads": [
         "Alle uploads annuleren"
       ],
@@ -208,9 +211,6 @@
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
-      "Enable Drive Search": [
-        "Drive Doorzoeken Inschakelen"
-      ],
       "Expand folder": [
         "Map uitklappen"
       ],
@@ -273,6 +273,9 @@
       ],
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
+      ],
+      "Learn more": [
+        "Meer informatie"
       ],
       "Load image": [
         "Afbeelding laden"
@@ -454,6 +457,9 @@
       "Show labels": [
         "Toon labels"
       ],
+      "Show preview": [
+        "Voorbeeld tonen"
+      ],
       "Sign out": [
         "Uitloggen"
       ],
@@ -593,8 +599,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Bèta toegang laat u gebruikmaken van de bètaversie van ${ mailAppName }, ${ calendarAppName } en Proton Drive voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Bèta toegang laat u gebruikmaken van de bètaversie van ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME } voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
@@ -768,8 +774,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Blijf ProtonMail gebruiken."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Blijf ${ MAIL_APP_NAME } gebruiken."
       ]
     },
     "Calendar status": {
@@ -1886,8 +1892,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sommige labelnamen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Sommige van uw labelnamen overschrijden de ProtonMail's maximum tekenlimiet. Pas de import aan om deze namen te bewerken."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
@@ -2352,6 +2358,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Controle van contact ${ progress } van ${ max }..."
       ],
+      "Checking signatures": [
+        "Handtekeningen controleren"
+      ],
       "Clear data": [
         "Gegevens wissen"
       ],
@@ -2426,6 +2435,15 @@
         "Verwijder drive",
         "Verwijder drives"
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        "Digitale handtekening geverifieerd. Dit bestand werd veilig geüpload door ${ emailAddress }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        "Digitale handtekening geverifieerd. Deze map werd veilig geüpload door ${ emailAddress }."
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        "Download van ${ downloadFileName } zal afgebroken worden"
+      ],
       "Downloaded": [
         "Gedownload"
       ],
@@ -2441,9 +2459,6 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
-      "Enable Drive Search": [
-        "Drive Doorzoeken Inschakelen"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
       ],
@@ -2456,6 +2471,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Handtekening van bestand ontbreekt. We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "Handtekening van bestand ontbreekt. We konden niet verifiëren wie ${ fileName } heeft geüpload."
+      ],
       "File will not be uploaded": [
         "Bestand zal niet worden geüpload"
       ],
@@ -2464,6 +2485,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "De inhoud van de mappen wordt samengevoegd tot één enkele map"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Handtekening van map ontbreekt. We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "Handtekening van map ontbreekt. We konden niet verifiëren wie ${ fileName } heeft geüpload."
       ],
       "Folder will not be uploaded": [
         "Folder zal niet worden ge-upload"
@@ -2619,8 +2646,8 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } tekens toegelaten"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Wijzig deze instellingen alleen als u PGP met niet-ProtonMail-ontvangers gebruikt."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
       ],
       "Only the people with the link and the password can access this file.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
@@ -2637,11 +2664,11 @@
       "Permanently delete all files in your drive": [
         "Verwijder permanent alle bestanden op uw schijf"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ProtonMail altijd versleutelde berichten tekent."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ProtonMail versleutelde berichten ook altijd ondertekent"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groep zijn toegewezen NIET zullen worden verwijderd."
@@ -2706,11 +2733,17 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-ProtonMail gebruiker die een PGP compatibele dienst gebruikt."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
       ],
       "Share files with links": [
         "Bestanden delen met links"
+      ],
+      "Signature check will be ignored": [
+        "Handtekeningcontrole zal genegeerd worden"
+      ],
+      "Signature issue": [
+        "Handtekening probleem"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Sommige bestanden zijn niet meer toegankelijk. Herstel de toegang tot uw bestanden. ${ StartRecoveryButton }"
@@ -2727,8 +2760,14 @@
       "support team": [
         "ondersteuningsteam"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "Het account heeft mogelijk een nieuwe sleutel of het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "Het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
       ],
       "There are no files yet": [
         "Er zijn nog geen bestanden"
@@ -2767,11 +2806,11 @@
       "This will overwrite the existing folder": [
         "Dit zal de bestaande map overschrijven"
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Om echt privé zoeken in te schakelen moet ${ DRIVE_APP_NAME } uw bestanden lokaal indexeren."
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Om echt privé zoeken in te schakelen moet ${ DRIVE_APP_NAME } uw bestanden lokaal indexeren. U kan ${ DRIVE_APP_NAME } normaal blijven gebruiken - we laten u weten wanneer het indexeren klaar is."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -2826,6 +2865,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        "We konden niet verifiëren wie ${ fileName } heeft geüpload."
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
@@ -2949,6 +2994,26 @@
         "Meerdere contacten zien er identiek uit. ${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        "bestandsattributen"
+      ],
+      "file data": [
+        "bestandsgegevens"
+      ],
+      "keys": [
+        "sleutels"
+      ],
+      "name": [
+        "naam"
+      ],
+      "name hash": [
+        "naam hash"
+      ],
+      "thumbnail": [
+        "miniatuur"
+      ]
+    },
     "Key badge": {
       "Expired": [
         "Verlopen"
@@ -2994,6 +3059,9 @@
       "Apply to all duplicated folders": [
         "Toepassen op alle gedupliceerde mappen"
       ],
+      "Apply to all unverified items": [
+        "Toepassen op alle ongeverifieerde items"
+      ],
       "Audio file": [
         "Geluidsbestand"
       ],
@@ -3008,6 +3076,9 @@
       ],
       "Calendars": [
         "Agenda's"
+      ],
+      "Cancel download": [
+        "Download annuleren"
       ],
       "Category": [
         "Categorie"
@@ -3043,6 +3114,9 @@
       "Do not ask again": [
         "Vraag niet opnieuw"
       ],
+      "Download anyway": [
+        "Toch downloaden"
+      ],
       "Email address": [
         "E-mailadres"
       ],
@@ -3056,7 +3130,7 @@
         "Bèta-toegang inschakelen"
       ],
       "Enabling Drive Search": [
-        "Drive Doorzoeken wordt ingeschakeld"
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "E-mails versleutelen"
@@ -3113,7 +3187,7 @@
         "Importeren naar e-mailadres"
       ],
       "Label messages as": [
-        "Berichten labellen als"
+        "Berichten labelen als"
       ],
       "Last 12 months only": [
         "Alleen afgelopen 12 maanden"
@@ -3146,7 +3220,7 @@
         "Nooit"
       ],
       "Notification": [
-        "Notificatie"
+        "Melding"
       ],
       "Operating system": [
         "Besturingssysteem"
@@ -3247,8 +3321,8 @@
       "Upload picture": [
         "Afbeelding uploaden"
       ],
-      "Username or ProtonMail address": [
-        "Gebruikersnaam of ProtonMail e-mailadres"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Gebruikersnaam op ${ MAIL_APP_NAME } adres"
       ],
       "Verification code": [
         "Verificatiecode"
@@ -3497,6 +3571,9 @@
       "File or folder is missing a name": [
         "Bestand of map heeft geen naam"
       ],
+      "Item failed to be verified": [
+        "Item kon niet worden geverifieerd"
+      ],
       "Link failed to be loaded": [
         "Link kon niet geladen worden"
       ],
@@ -3566,6 +3643,28 @@
         "Let er op dat u ${ boldNextStep } die worden aangevraagd door de toepassing om uw import te starten."
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        "Bèta-toegang inschakelen"
+      ],
+      "Start using ${ appName }": [
+        "Begin met ${ appName }"
+      ],
+      "Upgrade account": [
+        "Account upgraden"
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        "${ appName } is alleen beschikbaar voor betalende gebruikers met vroegtijdige toegang."
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        "${ appName } is momenteel alleen beschikbaar als je Bèta Toegang inschakelt."
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        "Bescherm al uw bestanden met end-to-end versleuteling. Gebruik ${ appName } om uw bestanden veilig op te slaan en te delen."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Kies een weergavenaam"
@@ -3598,29 +3697,7 @@
         "U kunt dit op elk gewenst moment wijzigen in uw instellingen."
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "Bèta-toegang inschakelen"
-      ],
-      "Start using ${ appName }": [
-        "Begin met ${ appName }"
-      ],
-      "Upgrade account": [
-        "Account upgraden"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } is alleen beschikbaar voor betalende gebruikers met vroegtijdige toegang."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } is momenteel alleen beschikbaar als je Bèta Toegang inschakelt."
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Bescherm al uw bestanden met end-to-end versleuteling. Gebruik ${ appName } om uw bestanden veilig op te slaan en te delen."
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
         "${ appName } is in bèta"
       ],
@@ -4088,6 +4165,12 @@
       "Download failed": [
         "Downloaden mislukt"
       ],
+      "Download unverified file?": [
+        "Ongeverifieerd bestand downloaden?"
+      ],
+      "Download unverified folder?": [
+        "Ongeverifieerde map downloaden?"
+      ],
       "Downloading": [
         "Downloaden"
       ],
@@ -4125,7 +4208,7 @@
         "Prullenbak leegmaken"
       ],
       "Enable Drive Search": [
-        "Drive Doorzoeken Inschakelen"
+        "Enable drive search"
       ],
       "Enter password to download": [
         "Voer wachtwoord in om te downloaden"
@@ -4133,8 +4216,8 @@
       "Enter your password": [
         "Voer uw wachtwoord in"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Voer uw gebruikersnaam in of uw ${ MAIL_APP_NAME } e-mailadres"
       ],
       "Exporting contacts": [
         "Contactpersonen exporteren"
@@ -4334,6 +4417,12 @@
       "The link failed to be loaded": [
         "De link kon niet worden geladen"
       ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "Het bestand heeft een ontbrekende of ongeldige handtekening. Ga naar Menu (⋮) → Details voor info."
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "De map heeft een ontbrekende of ongeldige handtekening. Ga naar Menu (⋮) → Details voor info."
+      ],
       "Total size": [
         "Totale grootte"
       ],
@@ -4407,8 +4496,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Systeemsubmappen worden weergegeven als aparte mappen in ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
@@ -4475,8 +4564,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ${ VPN_APP_NAME } abonnementen. Gelieve in plaats daarvan een ticket te openen."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."

@@ -614,7 +614,7 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
@@ -789,7 +789,7 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ]
     },
@@ -2173,7 +2173,7 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         ""
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
@@ -3044,16 +3044,16 @@
       "Occurrences previously updated by the organizer will be kept.": [
         ""
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         ""
       ],
       "Other options": [
         ""
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         ""
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
         ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
@@ -3107,7 +3107,7 @@
       "Session timed out": [
         ""
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         ""
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
@@ -3608,7 +3608,7 @@
       "URL": [
         ""
       ],
-      "Username or ProtonMail address": [
+      "Username or ${ MAIL_APP_NAME } address": [
         ""
       ],
       "Verification code": [
@@ -4763,7 +4763,7 @@
       "Enter your password": [
         ""
       ],
-      "Enter your username or ProtonMail email address": [
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
         ""
       ],
       "Error": [
@@ -5004,7 +5004,7 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         ""
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         ""
       ],
       "The import will start with the most recent messages.": [
@@ -5052,7 +5052,7 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         ""
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [

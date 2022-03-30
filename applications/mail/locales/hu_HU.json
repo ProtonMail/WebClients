@@ -791,6 +791,9 @@
       "Show more search options": [
         "További keresési beállítások megjelenítése"
       ],
+      "Show preview": [
+        "Előnézet megmutatása"
+      ],
       "Sign out": [
         "Kijelentkezés"
       ],
@@ -1101,8 +1104,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ${ mailAppName }, ${ calendarAppName }, és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
@@ -1276,8 +1279,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "ProtonMail használatának folytatása."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Folytatás ezzel: ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -3005,8 +3008,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Bizonyos címkék neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Bizonyos címkék neve túl hosszú a ProtonMailbe importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
@@ -3451,7 +3454,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Megnöveltük fiókjának teljes tárhelyét ${ rewardInGb } GB-ra. Szerezzen további tárhelyet és oldjon fel prémium funkciókat még ma."
       ],
       "You're all set!": [
         ""
@@ -3459,7 +3462,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Teljesítse az összes lépést és szerezzen összesen ${ rewardInGb } GB-ot a fiókjába"
       ],
       "Expires soon": [
         ""
@@ -3719,6 +3722,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } csoport található",
         "${ groupCounts } csoport található"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "A ${ MAIL_APP_NAME } képes megvédeni üzletét is."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át.",
@@ -4058,11 +4064,11 @@
         "beágyazott kép",
         "beágyazott kép"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "Titkosítás nem ProtonMail címzettnek"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        "Titkosítás nem-${ BRAND_NAME } felhasználóknak"
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "A nem-ProtonMail címzetteknek szóló titkosított üzenetek 28 nap után járnak le, hacsak nem ad meg egy ennél rövidebb időtartamot."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        "A nem-${ BRAND_NAME } címzetteknek szóló titkosított üzenetek 28 nap után járnak le, hacsak nem ad meg egy ennél rövidebb időtartamot."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
@@ -4146,8 +4152,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Ha ezt az üzenetet nem ProtonMail felhasználónak küldi, ne felejtsen el jelszót beállítani."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        "Ha ezt az üzenetet nem ${ MAIL_APP_NAME } felhasználónak küldi, ne felejtsen el jelszót beállítani."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
@@ -4249,8 +4255,8 @@
       "Merged": [
         "Egyesítve"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "ProtonMail felhasználóknak küldött üzeneteknél az időkorlát bármikor megadható. Külső címekre küldött üzenet esetén válassza a mégsem gombot, majd állítson be jelszó védelmet az üzenethez."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "${ MAIL_APP_NAME } felhasználóknak küldött üzeneteknél az időkorlát bármikor megadható. Nem ${ BRAND_NAME } címekre küldött üzenet esetén válassza a mégsem gombot, majd állítson be jelszó védelmet az üzenethez."
       ],
       "Message headers": [
         "Üzenet fejlécek"
@@ -4330,8 +4336,8 @@
       "of": [
         "/"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ezeket a beállításokat csak akkor változtassa meg, ha nem ProtonMail címzettekkel használ PGP titkosítást."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
       ],
       "Other options": [
         "Más opciók"
@@ -4339,11 +4345,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "A rendszerünk úgy érzékelte, hogy ez egy adathalász kísérlet. Kérjük ellenőrizze, hogy esetleg mégsem az."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ProtonMail mindig aláírja a titkosított üzeneteket."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ProtonMail mindig aláírja a titkosított üzeneteket"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket"
       ],
       "Phone number": [
         "Telefonszám"
@@ -4391,9 +4397,6 @@
         "Proton Calendar"
       ],
       "Proton doesn't make money by abusing privacy.": [
-        ""
-      ],
-      "ProtonMail can protect your business as well.": [
         ""
       ],
       "Recipient: ": [
@@ -4471,14 +4474,14 @@
       "Session timed out": [
         ""
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Állítsa be a ${ MAIL_APP_NAME }t az alapértelmezett email-alkalmazásának ebben a böngészőben. A ${ MAIL_APP_NAME } automatikusan meg fog nyílni, amikor egy email linket megnyit."
+      ],
       "Set a recovery phrase": [
         "Helyreállító jelmondat beállítása"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-ProtonMail felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
       ],
       "Show original message": [
         "Eredeti üzenet megjelenítése"
@@ -4489,8 +4492,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         "A tárhely megosztott az Email, a Naptár és a Felhőtárhely közt."
       ],
-      "Store and share files securely with Proton Drive.": [
-        ""
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        "Tároljon és osszon meg fájlokat biztonságosan a ${ DRIVE_APP_NAME }-val."
       ],
       "Subject": [
         "Tárgy"
@@ -4700,8 +4703,8 @@
       "Upgrade to support privacy and get more features.": [
         ""
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        ""
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        "Frissítsen, hogy tudja a ${ MAIL_APP_NAME }t használni harmadik féltől származó asztali kliensekkel."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Frissítsen ma, hogy elkerülje az alábbi ${ appName } ${ planName } előnyöket."
@@ -4790,8 +4793,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
       ],
-      "You can use ProtonVPN for free today.": [
-        ""
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        "Használhatja a ${ VPN_APP_NAME }-t ingyen már ma."
       ],
       "You cannot reply from the invited address.": [
         "Nem válaszolhat a meghívott címről."
@@ -5482,8 +5485,8 @@
       "Upload picture": [
         "Kép feltöltése"
       ],
-      "Username or ProtonMail address": [
-        "Felhasználónév vagy ProtonMail cím"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Felhasználónév vagy ${ MAIL_APP_NAME } email-cím"
       ],
       "Verification code": [
         "Ellenőrző kód"
@@ -6002,8 +6005,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        "${ appName } most még modernebb és testre szabhatóbb, miközben továbbra is fejlett titkosítással védi az adatait."
+      ],
+      "Available on iOS and Android.": [
+        "Android és iOS változatokban érhető el."
+      ],
+      "Get the ${ appName } mobile app": [
+        "Töltse le a ${ appName } mobil alkalmazást"
+      ],
+      "Import your messages": [
+        "Importálja az üzeneteit"
+      ],
+      "Meet your encrypted mailbox": [
+        "Ismerje meg a titkosított e-mail fiókját"
+      ],
       "Next": [
         "Következő"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        "Az Import Assistant segítségével gyorsan áthozhatja a leveleit az új titkosított e-mail fiókjába."
       ]
     },
     "Onboarding Proton": {
@@ -6036,26 +6057,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Ezt a beállításoknál bármikor megváltoztathatja."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } most mégmodernebb és testre szabhatóbb, miközben továbbra is fejlett titkosítással védi az adatait."
-      ],
-      "Available on iOS and Android.": [
-        "Android és iOS változatokban érhető el."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Töltse le a ${ appName } mobil alkalmazást"
-      ],
-      "Import your messages": [
-        "Importálja az üzeneteit"
-      ],
-      "Meet your encrypted mailbox": [
-        "Ismerje meg a titkosított e-mail fiókját"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Az Import Assistant segítségével gyorsan áthozhatja a leveleit az új titkosított e-mail fiókjába."
       ]
     },
     "Option": {
@@ -6317,8 +6318,8 @@
       "PGP-signed message. Sender verification failed": [
         "PGP aláírt üzenet. Feladó ellenőrzése sikertelen"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "A ProtonMail küldte, zéró-hozzáférés titkosítással"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "A ${ MAIL_APP_NAME } küldte, zéró-hozzáférés titkosítással"
       ],
       "Stored with zero-access encryption": [
         "Zéró-hozzáférés titkosítással tárolva"
@@ -6397,17 +6398,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "A ProtonMail által titkosítva"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "A ${ MAIL_APP_NAME } által titkosítva"
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "A ProtonMail által titkosítva, PGP címzettnek"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "A ${ MAIL_APP_NAME } titkosította PGP címzettnek"
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "A ProtonMail által titkosítva, ellenőrzött PGP címzettnek"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "A ${ MAIL_APP_NAME } által titkosítva, ellenőrzött PGP címzettnek"
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "A ProtonMail által titkosítva, ellenőrzött címzettnek"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "A ${ MAIL_APP_NAME } által titkosítva, ellenőrzött címzettnek"
       ],
       "End-to-end encrypted": [
         "Végpontok közt titkosított"
@@ -6424,12 +6425,12 @@
       "PGP-signed": [
         "PGP aláírt"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "A ProtonMail küldte, zéró-hozzáférés titkosítással"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "A ${ MAIL_APP_NAME } küldte, zéró-hozzáférés titkosítással"
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "A ProtonMail küldte, zéró-hozzáférés titkosítással, ellenőrzött címzettnek",
-        "A ProtonMail küldte, zéró-hozzáférés titkosítással, ellenőrzött címzetteknek"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "A ${ MAIL_APP_NAME } küldte, zéró-hozzáférés titkosítással, ellenőrzött címzettnek",
+        "A ${ MAIL_APP_NAME } küldte, zéró-hozzáférés titkosítással, ellenőrzött címzetteknek"
       ],
       "Sent by you with end-to-end encryption": [
         "Ön küldte, végpontok közt titkosítva"
@@ -7047,8 +7048,8 @@
       "Enter your password": [
         "Adja meg a jelszavát"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Írja be felhasználónevét vagy ${ MAIL_APP_NAME } email-címét"
       ],
       "Error": [
         "Hiba"
@@ -7181,9 +7182,6 @@
       ],
       "Previous message": [
         "Előző üzenet"
-      ],
-      "ProtonMail": [
-        ""
       ],
       "Re-sign all contacts": [
         "Az összes névjegy ismételt aláírása"
@@ -7343,8 +7341,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "A rendszer almappák külön mappákként fognak megjelenni a ${ MAIL_APP_NAME }ben"
       ],
       "The import will start with the most recent messages.": [
         ""
@@ -7416,8 +7414,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ha nem emlékszik a jelszavára, lehetetlen újraaktiválni a kulcsot. A figyelmeztetést el lehet végleg tüntetni, de ez esetben véglegesen elveszíti az ezzel a kulccsal titkosított adat elérésének lehetőségét."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Az élő csevegés egy prémium funkció, ami csak a fizetős ${ VPN_APP_NAME } csomagokban elérhető. Kérjük, nyisson egy jegyet."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         ""

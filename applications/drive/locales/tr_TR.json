@@ -59,6 +59,9 @@
       "Cancel all": [
         "Tümünü iptal et"
       ],
+      "Cancel all downloads": [
+        "Tüm indirmeleri iptal et"
+      ],
       "Cancel all uploads": [
         "Tüm yüklemeleri iptal et"
       ],
@@ -208,9 +211,6 @@
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştir"
       ],
-      "Enable Drive Search": [
-        "Drive aramasını etkinleştir"
-      ],
       "Expand folder": [
         "Klasörü genişlet"
       ],
@@ -273,6 +273,9 @@
       ],
       "Import from .csv or vCard": [
         ".csv ya da vCard dosyasından içe aktar"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
       ],
       "Load image": [
         "Görsel yükle"
@@ -454,6 +457,9 @@
       "Show labels": [
         "Etiketleri göster"
       ],
+      "Show preview": [
+        "Ön izlemeyi göster"
+      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -593,8 +599,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta erişimi, ${ mailAppName }, ${ calendarAppName } ve Proton Drive beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta erişimi, ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
@@ -768,8 +774,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "ProtonMail kullanmayı sürdürün."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ]
     },
     "Calendar status": {
@@ -1886,8 +1892,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Bazı etiket adlarınız ProtonMail tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -2086,8 +2092,8 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } öneri bulundu, gezinmek için tuş takımını kullanın.",
-        "${ items.length } öneri bulundu, gezinmek için tuş takımını kullanın."
+        "${ items.length } öneri bulundu, gezinmek için klavyeyi kullanın.",
+        "${ items.length } öneri bulundu, gezinmek için klavyeyi kullanın."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Oturum açtıktan sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
@@ -2352,6 +2358,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Kişi denetleniyor ${ progress }/${ max }..."
       ],
+      "Checking signatures": [
+        "İmzalar denetleniyor"
+      ],
       "Clear data": [
         "Verileri temizle"
       ],
@@ -2426,6 +2435,15 @@
         "Sürücüyü sil",
         "Sürücüleri sil"
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        "Sayısal imza doğrulandı. Bu dosya ${ emailAddress } tarafından güvenli şekilde yüklendi."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        "Sayısal imza doğrulandı. Bu klasör ${ emailAddress } tarafından güvenli şekilde yüklendi."
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        "${ downloadFileName } dosyasının indirilmesinden vazgeçilecek"
+      ],
       "Downloaded": [
         "İndirildi"
       ],
@@ -2441,9 +2459,6 @@
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
       ],
-      "Enable Drive Search": [
-        "Drive aramasını etkinleştir"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
@@ -2456,6 +2471,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Güvenli bağlantı açılamadı. Nedeni: ${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Dosya imzası eksik. ${ fileName } ögesini ${ emailAddress } kullanıcısının yüklediği doğrulanamadı."
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "Dosya imzası eksik. ${ fileName } ögesini kimin yüklediği doğrulanamadı."
+      ],
       "File will not be uploaded": [
         "Dosya yüklenmeyecek"
       ],
@@ -2464,6 +2485,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "Klasör içeriği tek bir klasörde birleştirilsin"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Klasör imzası eksik. ${ fileName } ögesini ${ emailAddress } kullanıcısının yüklediği doğrulanamadı."
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "Klasör imzası eksik. ${ fileName } ögesini kimin yüklediği doğrulanamadı."
       ],
       "Folder will not be uploaded": [
         "Klasör yüklenmeyecek"
@@ -2619,8 +2646,8 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Bu ayarları yalnızca ProtonMail dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
       ],
       "Only the people with the link and the password can access this file.": [
         "Bu dosyaya yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
@@ -2637,11 +2664,11 @@
       "Permanently delete all files in your drive": [
         "Sürücünüzdeki tüm dosyaları kalıcı olarak silin"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ProtonMail uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ProtonMail tarafından imzalandığını unutmayın"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ${ MAIL_APP_NAME } tarafından imzalandığını unutmayın"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Lütfen bu gruba atanan adreslerin SİLİNEMEYECEĞİNİ unutmayın."
@@ -2706,11 +2733,17 @@
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ProtonMail kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
       "Share files with links": [
         "Dosyaları bağlantı ile paylaş"
+      ],
+      "Signature check will be ignored": [
+        "İmza denetimi yok sayılacak"
+      ],
+      "Signature issue": [
+        "İmza sorunu"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Bazı dosyalarınıza artık erişilemiyor. Dosyalara yeniden erişim kazanın. ${ StartRecoveryButton }"
@@ -2727,8 +2760,14 @@
       "support team": [
         "destek ekibi"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "Hesabın yeni bir anahtarı olabilir ya da şu ögeler kurcalanmış olabilir: ${ items }. Yalnızca güveniyorsanuz açın."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "Şu ögeler kurcalanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
       ],
       "There are no files yet": [
         "Henüz bir dosya yok"
@@ -2767,11 +2806,11 @@
       "This will overwrite the existing folder": [
         "Bu işlem var olan klasörün üzerine yazacak"
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Kişisel gizliliği koruyarak arama yapabilmek için ${ DRIVE_APP_NAME } dosyalarınızı yerel dizine eklemeli."
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Kişisel gizliliği koruyarak arama yapabilmek için ${ DRIVE_APP_NAME } dosyalarınızı yerel dizine eklemeli. Bu sırada ${ DRIVE_APP_NAME } kullanmayı sürdürebilirsiniz. Dizin oluşturma işlemi tamamlandığında size bilgi vereceğiz."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -2826,6 +2865,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Yüzlerce dosyanın aynı anda yüklenmesi başarımı etkileyebilir."
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "${ emailAddress } kullanıcısının ${ fileName } ögesini yüklediği doğrulanamadı."
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        "${ fileName } dosyasını kimin yüklediği doğrulanamadı."
       ],
       "We'll notify you when the import is done.": [
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
@@ -2949,6 +2994,26 @@
         "Birden fazla kişi aynı görünüyor. ${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        "dosya öznitelikleri"
+      ],
+      "file data": [
+        "dosya verileri"
+      ],
+      "keys": [
+        "anahtarlar"
+      ],
+      "name": [
+        "ad"
+      ],
+      "name hash": [
+        "ad karması"
+      ],
+      "thumbnail": [
+        "küçük görsel"
+      ]
+    },
     "Key badge": {
       "Expired": [
         "Süresi geçmiş"
@@ -2994,6 +3059,9 @@
       "Apply to all duplicated folders": [
         "Tüm çift klasörlere uygula"
       ],
+      "Apply to all unverified items": [
+        "Tüm doğrulanmamış ögelere uygula"
+      ],
       "Audio file": [
         "Ses dosyası"
       ],
@@ -3008,6 +3076,9 @@
       ],
       "Calendars": [
         "Takvimler"
+      ],
+      "Cancel download": [
+        "İndirmeyi iptal et"
       ],
       "Category": [
         "Kategori"
@@ -3043,6 +3114,9 @@
       "Do not ask again": [
         "Bir daha sorma"
       ],
+      "Download anyway": [
+        "Yine de indir"
+      ],
       "Email address": [
         "E-posta adresi"
       ],
@@ -3056,7 +3130,7 @@
         "Beta erişimini etkinleştir"
       ],
       "Enabling Drive Search": [
-        "Drive araması etkinleştiriliyor"
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "E-postaları şifrele"
@@ -3247,8 +3321,8 @@
       "Upload picture": [
         "Görsel yükle"
       ],
-      "Username or ProtonMail address": [
-        "Kullanıcı adı ya da ProtonMail adresi"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Kullanıcı adı ya da ${ MAIL_APP_NAME } adresi"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -3497,6 +3571,9 @@
       "File or folder is missing a name": [
         "Dosya ya da klasörün adı eksik"
       ],
+      "Item failed to be verified": [
+        "Öge doğrulanamadı"
+      ],
       "Link failed to be loaded": [
         "Bağlantı yüklenemedi"
       ],
@@ -3566,6 +3643,28 @@
         "Lütfen içe aktarmayı başlatmak için uygulama tarafından ${ boldNextStep } gerektiğini unutmayın."
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        "Beta erişimini etkinleştir"
+      ],
+      "Start using ${ appName }": [
+        "${ appName } kullanmaya başlayın"
+      ],
+      "Upgrade account": [
+        "Hesabı yükselt"
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        "${ appName } şu anda yalnızca erken erişim özelliğini kullanabilen ücretli tarife kullanıcılarına açık."
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        "${ appName } uygulamasını şu anda yalnızca Beta erişimini etkinleştirerek kullanabilirsiniz."
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        "Tüm dosyalarınızı uçtan uca şifreleme ile koruyun. Dosyalarınızı güvenli bir şekilde depolamak ve paylaşmak için ${ appName } uygulamasını kullanın."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Görüntülenecek adı yazın"
@@ -3598,29 +3697,7 @@
         "Bunu istediğiniz zaman ayarlarınızdan değiştirebilirsiniz."
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "Beta erişimini etkinleştir"
-      ],
-      "Start using ${ appName }": [
-        "${ appName } kullanmaya başlayın"
-      ],
-      "Upgrade account": [
-        "Hesabı yükselt"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } şu anda yalnızca erken erişim özelliğini kullanabilen ücretli tarife kullanıcılarına açık."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } uygulamasını şu anda yalnızca Beta erişimini etkinleştirerek kullanabilirsiniz."
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Tüm dosyalarınızı uçtan uca şifreleme ile koruyun. Dosyalarınızı güvenli bir şekilde depolamak ve paylaşmak için ${ appName } uygulamasını kullanın."
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
         "${ appName } Beta aşamasında"
       ],
@@ -4088,6 +4165,12 @@
       "Download failed": [
         "İndirilemedi"
       ],
+      "Download unverified file?": [
+        "Doğrulanmamış dosya indirilsin mi?"
+      ],
+      "Download unverified folder?": [
+        "Doğrulanmamış klasör indirilsin mi?"
+      ],
       "Downloading": [
         "İndiriliyor"
       ],
@@ -4125,7 +4208,7 @@
         "Çöp kutusunu boşalt"
       ],
       "Enable Drive Search": [
-        "Drive aramasını etkinleştir"
+        "Enable drive search"
       ],
       "Enter password to download": [
         "İndirmek için parolayı yazın"
@@ -4133,8 +4216,8 @@
       "Enter your password": [
         "Parolanızı yazın"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Kullanıcı adınızı ya da ProtonMail e-posta adresinizi yazın"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Kullanıcı adınızı ya da ${ MAIL_APP_NAME } e-posta adresinizi yazın"
       ],
       "Exporting contacts": [
         "Kişileri dışa aktarma"
@@ -4334,6 +4417,12 @@
       "The link failed to be loaded": [
         "Bağlantı yüklenemedi"
       ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "Bu dosyanın imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Ayrıntılar bölümüne gidin."
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "Bu klasörün imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Ayrıntılar bölümüne gidin."
+      ],
       "Total size": [
         "Toplam boyut"
       ],
@@ -4407,8 +4496,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Sistem alt klasörleri ProtonMail üzerinde ayrı klasörler olarak görünecek"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
@@ -4475,8 +4564,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Canlı sohbet yalnızca ücretli ProtonVPN tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Canlı sohbet yalnızca ücretli ${ VPN_APP_NAME } tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."

@@ -171,7 +171,7 @@
         "確認"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "リンク ${ linkToShow } を確認"
       ],
       "Contact group": [
         "連絡先グループ"
@@ -324,7 +324,7 @@
         "連絡先のエクスポート"
       ],
       "Fewer search options": [
-        ""
+        "検索オプションを折りたたむ"
       ],
       "Filter on...": [
         "仕分け対象..."
@@ -513,7 +513,7 @@
         "その他"
       ],
       "More details about ${ title }": [
-        ""
+        "${ title } についての詳細"
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
@@ -543,7 +543,7 @@
         "ごみ箱に移動"
       ],
       "Move to...": [
-        "...に移動"
+        "移動先"
       ],
       "Need help?": [
         "お困りですか?"
@@ -693,7 +693,7 @@
         "再開"
       ],
       "Revert to original display": [
-        ""
+        "元の表示に戻す"
       ],
       "Save": [
         "保存"
@@ -702,7 +702,7 @@
         "保存中${ _ellipsis }"
       ],
       "Schedule message": [
-        ""
+        "メッセージをスケジュール"
       ],
       "Schedule send": [
         "スケジュールを送信"
@@ -711,7 +711,7 @@
         "検索"
       ],
       "Search in ${ option.text }": [
-        ""
+        "検索対象: ${ option.text }"
       ],
       "Search message content": [
         "メッセージ内容を検索"
@@ -741,7 +741,7 @@
         "設定"
       ],
       "Set as default": [
-        "既定に設定"
+        "既定にする"
       ],
       "Set expiration time": [
         "有効期限を設定"
@@ -787,6 +787,9 @@
       ],
       "Show more search options": [
         "検索オプションをもっと表示"
+      ],
+      "Show preview": [
+        "プレビューを表示"
       ],
       "Sign out": [
         "サインアウト"
@@ -876,7 +879,7 @@
         "登録解除"
       ],
       "Unsubscribe from mailing list": [
-        ""
+        "メーリングリストの登録を解除"
       ],
       "Unsubscribing": [
         "登録を解除しています"
@@ -888,7 +891,7 @@
         "更新"
       ],
       "Update recovery file": [
-        "リカバリーファイルを更新"
+        "回復ファイルを更新"
       ],
       "Update recovery phrase": [
         "リカバリーフレーズを更新"
@@ -993,10 +996,10 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        ""
+        "参加者の追加に失敗しました"
       ],
       "Invitation sent and participant added": [
-        ""
+        "招待は送信され参加者が追加されました"
       ],
       "Participant added": [
         "参加者が追加されました"
@@ -1042,7 +1045,7 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        ""
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } 完了"
       ]
     },
     "Apps dropdown": {
@@ -1096,8 +1099,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "ベータ版アクセスでは、${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
@@ -1271,8 +1274,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "ProtonMail を使って続行。"
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } を使って続行します。"
       ]
     },
     "Calendar attachment tooltip": {
@@ -1302,7 +1305,7 @@
         ""
       ],
       "${ participantName } accepted an invitation to this event.": [
-        ""
+        "${ participantName } はこのイベントの招待を承認しました。"
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         ""
@@ -1335,7 +1338,7 @@
         ""
       ],
       "${ participantName } declined an invitation to this event.": [
-        ""
+        "${ participantName } はこのイベントの招待を拒否しました。"
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         ""
@@ -1440,7 +1443,7 @@
         ""
       ],
       "${ participantName } is not in the participants list.": [
-        ""
+        "${ participantName } は招待リストにいません。"
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         ""
@@ -1458,7 +1461,7 @@
         ""
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } はこのイベントの招待を仮承認しました。"
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         ""
@@ -1509,10 +1512,10 @@
         ""
       ],
       "This response is out of date. This event has been updated.": [
-        ""
+        "レスポンスが古くなってます。このイベントは更新されました。"
       ],
       "This response is out of date. You have no calendars.": [
-        ""
+        "レスポンスが古くなってます。カレンダーがありません。"
       ],
       "You already accepted this invitation.": [
         "すでにこの招待を受け入れています。"
@@ -2597,7 +2600,7 @@
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
+        "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } 件までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
@@ -2698,7 +2701,7 @@
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        ""
+        "イベントの詳細は暗号化されています。再度サインインしてカレンダーを復元しデータを復元します。${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
         "イベントの詳細を復号できませんでした。${ whyNotLink }"
@@ -2706,7 +2709,7 @@
     },
     "Email reminder error": {
       "Event is no longer in your calendar": [
-        ""
+        "イベントはあなたのカレンダーで利用できません"
       ]
     },
     "Email reminder out of date alert": {
@@ -2804,7 +2807,7 @@
         ""
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        ""
+        "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
       ],
       "Draft could not be saved. Try again.": [
         "下書きを保存できませんでした。もう一度お試しください。"
@@ -2879,7 +2882,7 @@
         ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        ""
+        "${ calendarToFixCount } 件のカレンダーを既存の Proton カレンダーに結合します"
       ],
       "Message needs to be sent first": [
         "メッセージを最初に送信する必要があります"
@@ -2986,8 +2989,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "ラベル名の中に ProtonMail の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
@@ -3167,7 +3170,7 @@
         "イベントの検証に失敗しました"
       ],
       "Floating times not supported": [
-        ""
+        "浮動時間はサポートされていません"
       ],
       "Free-busy time information": [
         ""
@@ -3297,19 +3300,19 @@
         "未対応のレスポンスです"
       ],
       "We could not cancel the event in your calendar": [
-        ""
+        "カレンダーのイベントをキャンセルすることができませんでした"
       ],
       "We could not retrieve the event from your calendar": [
         ""
       ],
       "We could not update the event in your calendar": [
-        ""
+        "カレンダーのイベントを更新することができませんでした"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "回答は送信されましたが、イベントをカレンダーに追加できませんでした"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
+        "回答は送信されましたが、イベントをカレンダーに反映できませんでした"
       ]
     },
     "Event title": {
@@ -3358,16 +3361,16 @@
     },
     "Filter modal type": {
       "If the attachments": [
-        "添付ファイルが"
+        "添付ファイル"
       ],
       "If the recipient": [
-        "宛先が"
+        "宛先"
       ],
       "If the sender": [
-        "差出人が"
+        "差出人"
       ],
       "If the subject": [
-        "件名が"
+        "件名"
       ],
       "Select…": [
         "選択してください…"
@@ -3387,7 +3390,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } 更新されました。"
+        "${ Label.Name } は更新されました"
       ],
       "Filter ${ Filter.Name } updated": [
         "フィルター ${ Filter.Name } が更新されました"
@@ -3430,7 +3433,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "アカウントの合計ストレージ容量が ${ rewardInGb } GB に増加しました。いますぐ追加のストレージとプレミアム機能を手に入れましょう。"
       ],
       "You're all set!": [
         "すべて成し遂げました!"
@@ -3438,7 +3441,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "すべてのステップを達成すると、合計 ${ rewardInGb } GB がアカウントに追加されます"
       ],
       "Expires soon": [
         "もうすぐ期限切れになります"
@@ -3616,7 +3619,7 @@
         "現時点"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContactsは${ forNow } をサポートしていません"
+        "ProtonContacts は ${ forNow } をサポートしていません"
       ]
     },
     "Import ICS file from Mail": {
@@ -3624,12 +3627,12 @@
         "カレンダーの予定が作成されました"
       ],
       "Creating calendar event failed": [
-        ""
+        "カレンダーのイベントの作成に失敗しました"
       ]
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "次のステップで必要なすべての権限を選択します"
       ]
     },
     "Import warning": {
@@ -3682,6 +3685,9 @@
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME } はあなたのビジネスも保護します。"
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 件のメッセージを移動できませんでした。"
@@ -3795,7 +3801,7 @@
         "すべて (${ totalFoldersCount } 件のラベル)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
-        ""
+        "このフォルダーに保存されている全てのメッセージが完全に削除されます。"
       ],
       "All messages stored with this label will be permanently deleted.": [
         ""
@@ -3992,11 +3998,11 @@
       "embedded image": [
         "個の埋め込み画像"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "非 ProtonMail ユーザー宛の暗号化"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        "非 ${ BRAND_NAME } ユーザー向けの暗号化"
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "暗号化されたメッセージを ProtonMail 以外の宛先に送信する場合、特に設定しない限り有効期限は 28 日間に設定されます。"
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        "暗号化されたメッセージを非 ${ BRAND_NAME } の宛先に送信する場合、特に設定しない限り有効期限は 28 日間となります。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
@@ -4076,8 +4082,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1営業日以内に対応します。"
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "ProtonMailユーザー以外にメッセージを送信する場合、パスワードを設定してください。"
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        "非 ${ MAIL_APP_NAME } ユーザーにメッセージを送信する場合、パスワードの設定を確認してください。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
@@ -4178,7 +4184,7 @@
       "Merged": [
         "結合済み"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         ""
       ],
       "Message headers": [
@@ -4259,20 +4265,20 @@
       "of": [
         " / "
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "この設定は、メールの宛先に PGP を使用している非 ProtonMail ユーザーがいる場合にのみ変更してください。"
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
       ],
       "Other options": [
         "その他のオプション"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        ""
+        "システムはこのメッセージを迷惑メールとしてフラグを立てました。これが正当なものであるか確認してください。"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline はプレーンテキスト形式としか互換性がありません。 ProtonMail は暗号化されたメッセージに常に署名することに注意してください。"
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIMEは自動的に現在の書式を使用してメッセージを送信します。ProtonMailは暗号化されたメッセージに常に署名することに注意してください"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIMEは自動的に現在の書式を使用してメッセージを送信します。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
       ],
       "Phone number": [
         "電話番号"
@@ -4322,9 +4328,6 @@
       "Proton doesn't make money by abusing privacy.": [
         "Proton がプライバシーを悪用して資金を入手することはありません。"
       ],
-      "ProtonMail can protect your business as well.": [
-        "ProtonMail はビジネスも同様に保護します。"
-      ],
       "Recipient: ": [
         "宛先 "
       ],
@@ -4362,7 +4365,7 @@
         "下書きを保存しています…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        ""
+        "このメッセージのスケジュールされた送信はキャンセルされました。"
       ],
       "Scheduling message...": [
         "メッセージをスケジューリングしています..."
@@ -4400,14 +4403,14 @@
       "Session timed out": [
         "セッションがタイムアウトしました"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        ""
+      ],
       "Set a recovery phrase": [
         "リカバリーフレーズを設定"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "ProtonMail をブラウザー既定のメールアプリとして設定すると、メールのリンクをクリックした際に ProtonMail が自動で起動します。"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "PGP を設定すると、PGP 対応のサービスを使用する ProtonMail 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "PGP を設定すると、PGP 対応のサービスを使用する ${ BRAND_NAME } 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
       ],
       "Show original message": [
         "元のメッセージを表示"
@@ -4416,10 +4419,10 @@
         "このメッセージは存在しないか有効期限切れです。"
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+        "ストレージ容量は Mail、Calendar、Drive で共有されます。　"
       ],
-      "Store and share files securely with Proton Drive.": [
-        "Proton Drive でファイルを安全に保管、シェアします。"
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        "${ DRIVE_APP_NAME } を使用してファイルを保存、シェアしました。"
       ],
       "Subject": [
         "件名"
@@ -4512,7 +4515,7 @@
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
       ],
       "This message has been adjusted to comply with a dark background.": [
-        ""
+        "このメッセージは黒の背景に合わせるために調整されました。"
       ],
       "This message is automatically generated as a response to a previous message.": [
         "このメッセージは以前のメッセージに対する自動応答です。"
@@ -4587,7 +4590,7 @@
         "コンテンツ検索をオフにします。アクティベーション進捗は失われません。"
       ],
       "Turn on to search the content of your messages": [
-        ""
+        "メッセージの内容の検索を有効にする"
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
@@ -4605,7 +4608,7 @@
         "アップグレードして更なるアドレスを手に入れましょう。"
       ],
       "Upgrade to configure a vacation auto-responder.": [
-        ""
+        "アップデートして休暇中の自動返信を構成します"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "アップグレードしてさらなるフォルダー、フィルター、アドレスを作成します。"
@@ -4628,8 +4631,8 @@
       "Upgrade to support privacy and get more features.": [
         "さらなる機能を入手しプライバシーをサポートするためにアップグレードしてください。"
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "アップグレードしてサードパーティのデスクトップクライアントで ProtonMail を使用します。"
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        "アップグレードしてサードパーティのデスクトップクライアントで ${ MAIL_APP_NAME } を使用します。"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "次の ${ appName } ${ planName } 特典を失わないために今すぐアップグレードしてください。"
@@ -4650,7 +4653,7 @@
         "キーボードショートカットを使ってメールを素早く管理します。"
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        ""
+        "モバイル端末で利用するには、この QR コードを使うか、${ link } を参照します。"
       ],
       "Version ${ appVersion }": [
         "バージョン ${ appVersion }"
@@ -4698,7 +4701,7 @@
         "別のタブで下記リンクを開こうとしています:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "現在 ${ user.Name } (${ user.Email }) でサインインしています。"
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "添付ファイルを追加するか、メール内に直接インラインで表示させることができます。"
@@ -4718,8 +4721,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
       ],
-      "You can use ProtonVPN for free today.": [
-        "ProtonVPN を無料で使うことができます。"
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        "いますぐ ${ VPN_APP_NAME } を無料で使うことができます。"
       ],
       "You cannot reply from the invited address.": [
         "招待されたアドレスから返信することはできません。"
@@ -4737,13 +4740,13 @@
         "このフォルダー内に **${ count } 件の会話** が存在します"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        ""
+        "このラベルにタグされた **${ count } 件の会話** があります"
       ],
       "You have **${ count } message** stored in this folder": [
         "このフォルダー内に **${ count } 件のメッセージ** が存在します"
       ],
       "You have **${ count } message** tagged with this label": [
-        ""
+        "このラベルにタグされた **${ count } 件のメッセージ** があります"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "この電子メールには件名がありません。このままメッセージを送信しますか？"
@@ -4843,7 +4846,7 @@
         ""
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
-        ""
+        "次のフィンガープリントをもつプライマリーキーを信頼しますか?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         ""
@@ -5203,7 +5206,7 @@
         "もし"
       ],
       "If": [
-        "もし"
+        "条件"
       ],
       "Import all messages": [
         "すべてのメッセージをインポート"
@@ -5400,8 +5403,8 @@
       "Upload picture": [
         "写真をアップロード"
       ],
-      "Username or ProtonMail address": [
-        "ユーザー名または ProtonMail アドレス"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "ユーザー名または ${ MAIL_APP_NAME } アドレス"
       ],
       "Verification code": [
         "認証コード"
@@ -5493,7 +5496,7 @@
     },
     "Link": {
       "Activate": [
-        ""
+        "有効化"
       ],
       "Add folder": [
         "フォルダーを追加"
@@ -5517,10 +5520,10 @@
         "このイベントを追加するために新しいカレンダーを作成します"
       ],
       "Create a new calendar to answer this invitation": [
-        ""
+        "招待に回答するために新しいカレンダーを作成します"
       ],
       "Create a new calendar to manage your invitations": [
-        ""
+        "招待を巻利すために新しいカレンダーを作成します"
       ],
       "Drafts": [
         "下書き"
@@ -5628,7 +5631,7 @@
         ""
       ],
       "You need to activate your calendar keys to answer this invitation": [
-        ""
+        "この招待に回答するにはカレンダーのキーを有効にする必要があります"
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "この招待を管理するにはカレンダーの鍵を有効にする必要があります"
@@ -5726,10 +5729,10 @@
     },
     "Message image": {
       "Image did not load because the remote server’s identity certificate is invalid.": [
-        ""
+        "リモートサーバーの証明書が無効なため画像は読み込まれませんでした。"
       ],
       "Image has not been loaded in order to protect your privacy.": [
-        ""
+        "プライバシーを保護するために画像は読み込まれませんでした。"
       ]
     },
     "Message notification": {
@@ -5737,7 +5740,7 @@
         "スケジュールされた送信を取り消しました"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        ""
+        "スケジュールがキャンセルされました。メッセージは下書きに移動しました。"
       ],
       "Sending undone": [
         "送信が取り消されました"
@@ -5915,8 +5918,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        "${ appName } はさらにモダンになり高度なデータ保護を備えながらもカスタマイズすることができます。"
+      ],
+      "Available on iOS and Android.": [
+        "iOS または Android で利用可能です。"
+      ],
+      "Get the ${ appName } mobile app": [
+        "${ appName } のモバイルアプリを入手"
+      ],
+      "Import your messages": [
+        "メッセージをインポート"
+      ],
+      "Meet your encrypted mailbox": [
+        "あなたのための暗号化されたメールボックス"
+      ],
       "Next": [
         "次へ"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        "Import Assistant は簡単にメールを新しい暗号化された受信箱に転送することができます。"
       ]
     },
     "Onboarding Proton": {
@@ -5949,26 +5970,6 @@
       ],
       "You can change this anytime in your settings.": [
         "この設定はいつでも変更できます。"
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } はさらにモダンになり高度なデータ保護を備えながらもカスタマイズすることができます。"
-      ],
-      "Available on iOS and Android.": [
-        "iOS と Android でご利用いただけます。"
-      ],
-      "Get the ${ appName } mobile app": [
-        "${ appName } のモバイルアプリを入手"
-      ],
-      "Import your messages": [
-        "メッセージをインポート"
-      ],
-      "Meet your encrypted mailbox": [
-        "あなたのための暗号化されたメールボックス"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Import Assistant は簡単にメールを新しい暗号化された受信箱に転送することができます。"
       ]
     },
     "Option": {
@@ -6009,16 +6010,16 @@
     },
     "Paid user checklist item": {
       "Get mobile app": [
-        ""
+        "モバイルアプリを入手する"
       ],
       "Import contacts or emails": [
-        ""
+        "連絡先とメールをインポート"
       ],
       "Send a message": [
-        ""
+        "メッセージを送信する"
       ],
       "Set up a recovery method": [
-        ""
+        "回復手段を設定する"
       ]
     },
     "Participant name": {
@@ -6119,7 +6120,7 @@
         "メッセージを検索"
       ],
       "Search messages": [
-        "メッセージの検索"
+        "メッセージを検索"
       ],
       "Search name, email or group": [
         "名前、メール、グループを検索"
@@ -6228,8 +6229,8 @@
       "PGP-signed message. Sender verification failed": [
         "PGP 署名されたメッセージです。送信者の検証に失敗しました"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "ProtonMail によって送信された、ゼロアクセス暗号化されたメッセージ"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
       "Stored with zero-access encryption": [
         "暗号化されずに送受信されたメッセージ"
@@ -6283,10 +6284,10 @@
         "とりあえずメールを送信しますか?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        ""
+        "問題を検出しました。入力したメールアドレスにメールを送信することができません。原因:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        ""
+        "いくつかの問題を検出しました。入力したメールアドレスにメールを送信することができません。原因:"
       ]
     },
     "Send email with warnings": {
@@ -6304,17 +6305,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "ProtonMail による暗号化"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } による暗号化"
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "PGP の宛先への、ProtonMail による暗号化"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "検証済みの PGP の宛先への、ProtonMail による暗号化"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        ""
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "検証済みの宛先への、ProtonMail による暗号化"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        ""
       ],
       "End-to-end encrypted": [
         "エンドツーエンド暗号化"
@@ -6331,11 +6332,11 @@
       "PGP-signed": [
         "PGP 署名付き (暗号化なし)"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "ProtonMail によって送信された、ゼロアクセス暗号化されたメッセージ"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        ""
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "検証済みの宛先へ、ProtonMail によって送信された、ゼロアクセス暗号化されたメッセージ"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        ""
       ],
       "Sent by you with end-to-end encryption": [
         "あなたによって送信された、エンドツーエンド暗号化されたメッセージ"
@@ -6386,7 +6387,7 @@
         "全ての Proton サービスがここに"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "${ appName } ${ planName } が最大 18 か月無料"
       ],
       "Invite friends and earn rewards!": [
         "友だちを招待して報酬を手に入れよう!"
@@ -6409,10 +6410,10 @@
     },
     "Status": {
       "Unsubscribed from mailing list": [
-        ""
+        "メーリングリストから登録解除しました"
       ],
       "Unsubscribing from mailing list...": [
-        ""
+        "メーリングリストから登録を解除しています..."
       ]
     },
     "Step in filter modal": {
@@ -6586,7 +6587,7 @@
         "メッセージが削除されました"
       ],
       "Message marked as legitimate": [
-        ""
+        "メッセージを正当なもとしてマークする"
       ],
       "Message marked as read.": [
         "メッセージを既読にしました。"
@@ -6866,7 +6867,7 @@
         "${ Name } を削除"
       ],
       "Delete all messages": [
-        "すべてのメッセージを削除"
+        "全てのメッセージを削除"
       ],
       "Delete conversation": [
         "会話を削除"
@@ -6896,7 +6897,7 @@
         "メールアドレス"
       ],
       "Email composer": [
-        ""
+        "メール作成"
       ],
       "Email content": [
         "メール内容"
@@ -6916,8 +6917,8 @@
       "Enter your password": [
         "パスワードを入力してください"
       ],
-      "Enter your username or ProtonMail email address": [
-        "ユーザー名またはProtonMailアドレスを入力してください"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "ユーザー名または ${ MAIL_APP_NAME } メールアドレスを入力"
       ],
       "Error": [
         "エラー"
@@ -6974,7 +6975,7 @@
         "未読にする"
       ],
       "Mark email as legitimate": [
-        ""
+        "メールを正当なものとしてマーク"
       ],
       "Merge contacts": [
         "連絡先の統合"
@@ -6989,7 +6990,7 @@
         "メッセージリスト"
       ],
       "Message will expire": [
-        ""
+        "メッセージは期限切れです"
       ],
       "More": [
         "その他"
@@ -7051,9 +7052,6 @@
       "Previous message": [
         "前のメッセージ"
       ],
-      "ProtonMail": [
-        "ProtonMail"
-      ],
       "Re-sign all contacts": [
         "すべての連絡先を再署名する"
       ],
@@ -7091,7 +7089,7 @@
         "テーマを選択"
       ],
       "Select action to take on contact group": [
-        ""
+        "この連絡先グループで行うアクションを選択"
       ],
       "Select contact group": [
         "連絡先グループの選択"
@@ -7200,7 +7198,7 @@
         "インポートされたメールすべてにこのラベルがついています"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        ""
+        "メール暗号化は送信したメッセージの証明を手助けするためメール署名を強制します"
       ],
       "Encrypted data": [
         "暗号化されたデータ"
@@ -7211,11 +7209,11 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         ""
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "インポートは新しいメッセージから始まります。"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         ""
@@ -7246,7 +7244,7 @@
         "既定のフォントとサイズを更新しました"
       ],
       "Your default font will look like following:": [
-        ""
+        "既定のフォントはこのようになります:"
       ]
     },
     "Validation": {
@@ -7281,8 +7279,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "パスワードを覚えていない場合は、鍵を再度有効にすることはできません。 わたしたちはアラートバナーを解除するお手伝いはできますが、その鍵で暗号化されたすべてのデータへのアクセスを永久に失うことになります。"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "ライブチャットは ${ VPN_APP_NAME } の有料プラン専用のプレミアム機能です。利用するにはチケットをオープンしてください。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"

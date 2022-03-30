@@ -612,8 +612,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "測試版體驗讓您可以在釋出到公眾前使用 ${ mailAppName }、${ calendarAppName } 與 Proton Drive 的測試版。這代表了您會是第一個嘗試新產品、取得新的更新以及使用新功能的人。"
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "測試版體驗讓您可以在釋出到公眾前使用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 的測試版。這代表了您會是第一個嘗試新產品、取得新的更新以及使用新功能的人。"
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "如果您遇到了問題，您還是可以停用測試版體驗。"
@@ -787,8 +787,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "繼續使用 ProtonMail。"
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "繼續使用 ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar invite buttons label": {
@@ -2155,8 +2155,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "其中一些標籤名稱無法使用。請自訂匯入以編輯該等名稱。"
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "其中一些標籤名稱超出 ProtonMail 字元數目上限。請自訂匯入以編輯該等名稱。"
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "其中一些標籤名稱超出 ${ MAIL_APP_NAME } 的字元數目上限。請自訂匯入以編輯該等名稱。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
@@ -2995,17 +2995,17 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "召集人先前更新的事件將會保留。"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "只有當您使用 PGP 寄送給非 ProtonMail 收件人時，才需修改這些設定。"
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "只有當您使用 PGP 寄送給非 ${ BRAND_NAME } 收件人時，才需修改這些設定。"
       ],
       "Other options": [
         "其他選項"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "「PGP/內嵌」僅與「純文字」格式相容。請注意：ProtonMail 一律簽署加密的郵件。"
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "「PGP/內嵌」僅與「純文字」格式相容。請注意：${ MAIL_APP_NAME } 一律簽署加密的郵件。"
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "「PGP/MIME」自動使用目前撰寫器模式寄送郵件。請注意：ProtonMail 一律簽署加密的郵件。"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "「PGP/MIME」自動使用目前撰寫器模式寄送郵件。請注意：${ MAIL_APP_NAME } 一律簽署加密的郵件。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "請注意：指派到此群組中的電子郵件地址不會被刪除。"
@@ -3058,8 +3058,8 @@
       "Session timed out": [
         "工作階段已逾時"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ProtonMail 使用者寄送端對端加密的電子郵件。"
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ${ BRAND_NAME } 使用者寄送端對端加密的電子郵件。"
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "您對召集人先前更新的事件所作的某些回答將會遺失。"
@@ -3558,8 +3558,8 @@
       "URL": [
         "網址"
       ],
-      "Username or ProtonMail address": [
-        "使用者名稱或 ProtonMail 電子郵件地址"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "使用者名稱或 ${ MAIL_APP_NAME } 地址"
       ],
       "Verification code": [
         "驗證碼"
@@ -4674,8 +4674,8 @@
       "Enter your password": [
         "請輸入您的密碼"
       ],
-      "Enter your username or ProtonMail email address": [
-        "請輸入您的使用者名稱或 ProtonMail 電子郵件地址"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "輸入您的使用者名稱或 ${ MAIL_APP_NAME } 電子郵件地址"
       ],
       "Error": [
         "錯誤"
@@ -4914,8 +4914,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇使用者簽章或加密所使用的 PGP 配置。請注意：「PGP/內嵌」將強制純文字郵件"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "系統子資料夾將在 ProtonMail 中顯示成獨立資料夾"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "系統子資料夾將在 ${ MAIL_APP_NAME } 中顯示成獨立資料夾"
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
@@ -4959,8 +4959,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "若您記不起您的密碼，則沒辦法重新啟用您的金鑰。我們可幫助您關閉提示橫幅，然而在此過程中，您將永久失去所有以該金鑰加密的資料的存取。"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "即時聊天是一項進階功能，僅適用於付費的 ${ VPN_APP_NAME } 方案。請改為開啟議題回報。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 將會合併同一名稱的所有資料夾。若這非您所想，請先更改名稱，然後才匯入。"

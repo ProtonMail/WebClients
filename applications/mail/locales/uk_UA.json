@@ -797,6 +797,9 @@
       "Show more search options": [
         "Більше варіантів пошуку"
       ],
+      "Show preview": [
+        "Показати попередній перегляд"
+      ],
       "Sign out": [
         "Вийти"
       ],
@@ -1111,8 +1114,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Бета-доступ дає вам змогу користуватися тестовою версією ${ mailAppName }, ${ calendarAppName } і Proton Drive до того, як вони будуть випущені для загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Бета-доступ дає вам змогу користуватися тестовою версією ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME } до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "При виникненні проблем, ви завжди можете вимкнути бета-доступ."
@@ -1286,8 +1289,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Продовжити користуватися ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Продовжити за допомогою ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -3043,8 +3046,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших міток недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Назви деяких ваших міток перевищують обмеження кількості символів ProtonMail. Будь ласка, налаштуйте імпорт для зміни цих назв."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
@@ -3493,7 +3496,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Ми збільшили загальний обсяг сховища вашого облікового запису до ${ rewardInGb } ГБ. Отримайте додатковий обсяг та доступ до можливостей преміум."
       ],
       "You're all set!": [
         "Все готово!"
@@ -3501,7 +3504,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Завершіть усі кроки та отримайте всього ${ rewardInGb } ГБ для свого облікового запису"
       ],
       "Expires soon": [
         "Скоро завершується"
@@ -3793,6 +3796,9 @@
         "Знайдено ${ groupCounts } групи",
         "Знайдено ${ groupCounts } груп",
         "Знайдено ${ groupCounts } груп"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME } також може захистити ваш бізнес."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } повідомлення не вдалося перемістити.",
@@ -4190,11 +4196,11 @@
         "вбудованих зображень",
         "вбудованих зображень"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "Шифрування для користувачів поза ProtonMail"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        "Шифрувати для користувачів поза ${ BRAND_NAME }"
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Зашифровані повідомлення одержувачам поза ProtonMail чинні впродовж 28 днів якщо не встановлено коротший термін дії."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        "Зашифровані повідомлення одержувачам поза ${ BRAND_NAME } дійсні протягом 28 днів, якщо не вказано коротший термін дії."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
@@ -4286,8 +4292,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Якщо ви надсилаєте це повідомлення не користувачу ProtonMail, обов'язково встановіть для нього пароль."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        "Якщо ви надсилаєте це повідомлення користувачу поза ${ MAIL_APP_NAME }, обов'язково встановіть для нього пароль."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
@@ -4391,8 +4397,8 @@
       "Merged": [
         "Об'єднано"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "Термін дії повідомлень працює типово при надсиланні пошти не користувачам ProtonMail. Щоб надсилати повідомлення з терміном дії не користувачам ProtonMail, скасуйте це і додайте парольний захист до свого повідомлення."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "Термін дії повідомлень працює типово при надсиланні пошти не користувачам ${ MAIL_APP_NAME }. Щоб надсилати повідомлення з терміном дії не користувачам ${ BRAND_NAME }, скасуйте це і додайте парольний захист до свого повідомлення."
       ],
       "Message headers": [
         "Заголовки повідомлень"
@@ -4472,8 +4478,8 @@
       "of": [
         "з"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ${ BRAND_NAME }."
       ],
       "Other options": [
         "Інші варіанти"
@@ -4481,11 +4487,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ProtonMail завжди підписує зашифровані повідомлення."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ProtonMail завжди підписує зашифровані повідомлення"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення"
       ],
       "Phone number": [
         "Номер телефону"
@@ -4534,9 +4540,6 @@
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton не заробляє грошей на порушенні приватності."
-      ],
-      "ProtonMail can protect your business as well.": [
-        "ProtonMail також може захистити ваш бізнес."
       ],
       "Recipient: ": [
         "Отримувач: "
@@ -4613,14 +4616,14 @@
       "Session timed out": [
         "Сеанс завершився"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Встановіть ${ MAIL_APP_NAME } типовим застосунком електронної пошти для цього браузера. ${ MAIL_APP_NAME } відкриється автоматично після натискання на поштове посилання."
+      ],
       "Set a recovery phrase": [
         "Встановити фразу відновлення"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Встановіть ProtonMail типовим застосунком електронної пошти для цього браузера. ProtonMail відкриється автоматично після натискання на поштове посилання."
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ProtonMail, які використовують PGP-сумісний сервіс."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
       ],
       "Show original message": [
         "Показати оригінальне повідомлення"
@@ -4631,8 +4634,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         "Простір сховища спільний для пошти, календаря та диска."
       ],
-      "Store and share files securely with Proton Drive.": [
-        "Безпечно зберігайте та обмінюйтесь файлами за допомогою Proton Drive."
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        "Безпечно розміщуйте та діліться файлами за допомогою ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Тема"
@@ -4844,8 +4847,8 @@
       "Upgrade to support privacy and get more features.": [
         "Передплатіть тарифний план, щоб підтримати приватність та отримати більше можливостей."
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Передплатіть тарифний план, щоб використовувати ProtonMail зі сторонніми комп'ютерними клієнтами."
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        "Передплатіть тарифний план, щоб використовувати ${ MAIL_APP_NAME } зі сторонніми комп'ютерними клієнтами."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Оновіть тарифний план сьогодні, щоб уникнути втрати цих переваг ${ appName } ${ planName }."
@@ -4934,8 +4937,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
       ],
-      "You can use ProtonVPN for free today.": [
-        "Сьогодні ви можете користуватися ProtonVPN безплатно."
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        "Ви можете безплатно використовувати ${ VPN_APP_NAME } вже сьогодні."
       ],
       "You cannot reply from the invited address.": [
         "Ви не можете відповісти із запрошеної адреси."
@@ -5646,8 +5649,8 @@
       "Upload picture": [
         "Завантажити зображення"
       ],
-      "Username or ProtonMail address": [
-        "Ім'я користувача або адреса ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Ім'я користувача або адреса ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Код підтвердження"
@@ -6176,8 +6179,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        "${ appName } тепер сучасніший та гнучкіший з надійним захистом ваших даних за допомогою вдосконаленого шифрування."
+      ],
+      "Available on iOS and Android.": [
+        "Доступно на iOS та Android."
+      ],
+      "Get the ${ appName } mobile app": [
+        "Отримайте мобільний застосунок ${ appName }"
+      ],
+      "Import your messages": [
+        "Імпортуйте свої повідомлення"
+      ],
+      "Meet your encrypted mailbox": [
+        "Зустрічайте свою зашифровану поштову скриньку"
+      ],
       "Next": [
         "Далі"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        "Наш помічник з імпорту швидко перемістить усі ваші листи до нової зашифрованої поштової скриньки."
       ]
     },
     "Onboarding Proton": {
@@ -6210,26 +6231,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Ви можете змінити це будь-коли в налаштуваннях."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } тепер сучасніший та гнучкіший з надійним захистом ваших даних за допомогою вдосконаленого шифрування."
-      ],
-      "Available on iOS and Android.": [
-        "Доступний на iOS та Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Отримайте мобільну програму ${ appName }"
-      ],
-      "Import your messages": [
-        "Імпортуйте свої повідомлення"
-      ],
-      "Meet your encrypted mailbox": [
-        "Зустрічайте свою зашифровану поштову скриньку"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Наш помічник з імпорту швидко перемістить усі ваші листи до нової зашифрованої поштової скриньки."
       ]
     },
     "Option": {
@@ -6495,8 +6496,8 @@
       "PGP-signed message. Sender verification failed": [
         "PGP-підписане повідомлення. Не вдалося перевірити відправника"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Надіслано ProtonMail з повним шифруванням"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Надіслано ${ MAIL_APP_NAME } з цілковитим шифруванням"
       ],
       "Stored with zero-access encryption": [
         "Збережено з повним шифруванням"
@@ -6583,17 +6584,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "Зашифровано ProtonMail"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "Зашифровано ${ MAIL_APP_NAME }"
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "Зашифровано ProtonMail для PGP-отримувача"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "Зашифровано ${ MAIL_APP_NAME } для PGP-отримувача"
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "Зашифровано ProtonMail для перевіреного PGP-отримувача"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Зашифровано ${ MAIL_APP_NAME } для перевіреного PGP-отримувача"
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "Зашифровано ProtonMail для перевіреного отримувача"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "Зашифровано ${ MAIL_APP_NAME } для перевіреного отримувача"
       ],
       "End-to-end encrypted": [
         "Наскрізно зашифровано"
@@ -6610,14 +6611,14 @@
       "PGP-signed": [
         "Підписано PGP"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Надіслано ProtonMail з повним шифруванням"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Надіслано ${ MAIL_APP_NAME } з цілковитим шифруванням"
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "Надіслано ProtonMail з повним шифруванням перевіреному отримувачу",
-        "Надіслано ProtonMail з повним шифруванням перевіреним отримувачам",
-        "Надіслано ProtonMail з повним шифруванням перевіреним отримувачам",
-        "Надіслано ProtonMail з повним шифруванням перевіреним отримувачам"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Надіслано ${ MAIL_APP_NAME } з цілковитим шифруванням перевіреному отримувачу",
+        "Надіслано ${ MAIL_APP_NAME } з цілковитим шифруванням перевіреним отримувачам",
+        "Надіслано ${ MAIL_APP_NAME } з цілковитим шифруванням перевіреним отримувачам",
+        "Надіслано ${ MAIL_APP_NAME } з цілковитим шифруванням перевіреним отримувачам"
       ],
       "Sent by you with end-to-end encryption": [
         "Надіслано вами з наскрізним шифруванням"
@@ -7309,8 +7310,8 @@
       "Enter your password": [
         "Введіть свій пароль"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Введіть своє ім'я користувача або електронну адресу ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Введіть своє ім'я користувача або ${ MAIL_APP_NAME } адресу електронної пошти"
       ],
       "Error": [
         "Помилка"
@@ -7443,9 +7444,6 @@
       ],
       "Previous message": [
         "Попереднє повідомлення"
-      ],
-      "ProtonMail": [
-        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Повторно підписати всі контакти"
@@ -7607,8 +7605,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Системні підтеки показуватимуться окремими теками в ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Системні підтеки показуватимуться окремими теками в ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
@@ -7686,8 +7684,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Неможливо повторно активувати ваш ключ, якщо ви не пам'ятаєте свій пароль. Ми можемо допомогти вам відхилити банер з попередженням, але при цьому ви остаточно втратите доступ до всіх даних, що були зашифровані з використанням цього ключа."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Живий чат — це преміум можливість, доступна лише користувачам платних тарифних планів ${ VPN_APP_NAME }. Будь ласка, створіть запит натомість."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton об'єднає всі теки з однаковими назвами. Щоб уникнути цього, змініть їх назви перед імпортуванням."

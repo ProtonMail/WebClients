@@ -791,6 +791,9 @@
       "Show more search options": [
         "Mostrar más opciones de búsqueda"
       ],
+      "Show preview": [
+        "Vista previa"
+      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -1101,8 +1104,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "El acceso beta le permite usar la versión beta de ${ mailAppName }, ${ calendarAppName } y Proton Drive antes de que sean lanzados al público. Esto significa que puede probar productos nuevos, obtener actualizaciones nuevas y usar funciones nuevas."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "El acceso beta le permite usar la versión beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME } antes de que sean lanzados al público. Esto significa que puede probar productos nuevos, obtener actualizaciones nuevas y usar funciones nuevas."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si encuentra problemas, siempre puede deshabilitar el acceso beta."
@@ -1276,8 +1279,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Continuar usando ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Continuar usando ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -3005,8 +3008,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Algunos de los nombres de las etiquetas no están disponibles. Personalice la importación para editar estos nombres."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Algunos de los nombres de sus etiquetas exceden el límite máximo de caracteres de ProtonMail. Personalice la importación para editar estos nombres."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, por favor contacte a nuestro ${ supportTeam }."
@@ -3451,7 +3454,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Hemos aumentado el almacenamiento total de su cuenta a ${ rewardInGb } GB. Obtenga almacenamiento adicional y desbloquee funciones premium hoy."
       ],
       "You're all set!": [
         "¡Ya está todo listo!"
@@ -3459,7 +3462,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Complete todos los pasos y obtenga un total de ${ rewardInGb } GB en su cuenta"
       ],
       "Expires soon": [
         "Expira pronto"
@@ -3719,6 +3722,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME } también puede proteger su negocio."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } mensaje no pudo ser movido.",
@@ -4058,11 +4064,11 @@
         "imagen incrustada",
         "imágenes incrustadas"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "Cifrar para usuarios fuera de ProtonMail"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        "Cifrar para usuarios que no son de ${ BRAND_NAME }"
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Los mensajes cifrados a destinatarios fuera de ProtonMail expirarán en 28 días a menos que defina una fecha de expiración menor."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        "Los mensajes cifrados para destinatarios que no son de ${ BRAND_NAME } expirarán en 28 días a menos que se defina un tiempo de expiración menor."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
@@ -4146,8 +4152,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear su cuenta, solicite una invitación y responderemos dentro de un día hábil."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Si está enviando este mensaje a un usuario fuera de ProtonMail, asegúrese de definir una contraseña para el mensaje."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        "Si está enviando este mensaje a un usuario que no es de ${ MAIL_APP_NAME }, asegúrese de definir una contraseña para el mensaje."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si cree que esto es un error, contáctenos ${ contactLink }."
@@ -4249,8 +4255,8 @@
       "Merged": [
         "Fusionado"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "La expiración de mensajes está lista para usar cuando se envían correos electrónicos a otros usuarios de ProtonMail. Para enviar correos electrónicos a usuarios que no sean de ProtonMail, cancele y añada la protección de contraseña a su correo electrónico."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "La expiración del mensaje funciona de forma inmediata cuando se envían correos electrónicos a otros usuarios de ${ MAIL_APP_NAME }. Para enviar correos electrónicos que expiren a usuarios que no sean de ${ BRAND_NAME }, cancele y agregue protección con contraseña a su correo electrónico."
       ],
       "Message headers": [
         "Encabezados del mensaje"
@@ -4330,8 +4336,8 @@
       "of": [
         "de"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Solo cambie estos ajustes si está utilizando PGP con destinatarios fuera de ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Solo cambie estos ajustes si está usando PGP con destinatarios que no son de ${ BRAND_NAME }."
       ],
       "Other options": [
         "Otras opciones"
@@ -4339,11 +4345,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nuestro sistema marcó este mensaje como un intento de suplantación. Compruebe que es legítimo."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline solo es compatible con el formato de texto plano. Tome en cuenta que ProtonMail siempre firma los mensajes cifrados."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline solo es compatible con formato de texto plano. Tome en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME envía automáticamente los mensajes usando el modo de compositor actual. Tome en cuenta que ProtonMail siempre firma los mensajes cifrados"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME envía automáticamente el mensaje usando el modo de redacción actual. Tome en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
       ],
       "Phone number": [
         "Número de teléfono"
@@ -4392,9 +4398,6 @@
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton no genera dinero abusando de la privacidad."
-      ],
-      "ProtonMail can protect your business as well.": [
-        "ProtonMail también puede proteger su negocio."
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -4471,14 +4474,14 @@
       "Session timed out": [
         "Sesión agotada"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Defina a ${ MAIL_APP_NAME } como su aplicación de correo por defecto para este navegador. ${ MAIL_APP_NAME } abrirá automáticamente los enlaces de correo."
+      ],
       "Set a recovery phrase": [
         "Defina una frase de recuperación"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Configure ProtonMail como su aplicación de correo predeterminada para este navegador. ProtonMail se abrirá automáticamente cuando haga clic en un enlace de correo."
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Configurar PGP le permite enviar correos electrónicos cifrados de extremo a extremo a usuarios fuera de ProtonMail que utilizan un servicio compatible con PGP."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Los ajustes de PGP le permite enviar correos electrónicos cifrados de extremo a extremo a un usuario que no sea de ${ BRAND_NAME } y que use un servicio compatible con PGP."
       ],
       "Show original message": [
         "Mostrar mensaje original"
@@ -4489,8 +4492,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         "El espacio de almacenamiento se comparte entre el Correo, Calendario y Drive."
       ],
-      "Store and share files securely with Proton Drive.": [
-        "Almacene y comparta archivos de manera segura con Proton Drive."
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        "Almacene y comparta archivos de forma segura con ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Asunto"
@@ -4700,8 +4703,8 @@
       "Upgrade to support privacy and get more features.": [
         "Actualice para apoyar la privacidad y obtener más funciones."
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Actualice para usar ProtonMail con un cliente de escritorio de terceros."
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        "Actualice para usar ${ MAIL_APP_NAME } con clientes de escritorio de terceros."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Actualice hoy y evite perder los beneficios de ${ appName } ${ planName }."
@@ -4790,8 +4793,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puede activar las notificaciones para recibir alertas cuando lleguen mensajes nuevos a esta carpeta."
       ],
-      "You can use ProtonVPN for free today.": [
-        "Hoy puede usar ProtonVPN gratuitamente."
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        "Puede usar ${ VPN_APP_NAME } gratis hoy."
       ],
       "You cannot reply from the invited address.": [
         "No puede responder desde la dirección invitada."
@@ -5482,8 +5485,8 @@
       "Upload picture": [
         "Subir imagen"
       ],
-      "Username or ProtonMail address": [
-        "Nombre de usuario o dirección de ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Nombre de usuario o correo de ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Código de verificación"
@@ -6002,8 +6005,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        "${ appName } ahora es más moderno y personalizable mientras protege sus datos con cifrado avanzado."
+      ],
+      "Available on iOS and Android.": [
+        "Disponible en iOS y Android."
+      ],
+      "Get the ${ appName } mobile app": [
+        "Obtenga la aplicación móvil de ${ appName }"
+      ],
+      "Import your messages": [
+        "Importe sus mensajes"
+      ],
+      "Meet your encrypted mailbox": [
+        "Conozca su buzón cifrado"
+      ],
       "Next": [
         "Siguiente"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        "Nuestro Import Assistant transfiere rápidamente todos sus correos electrónicos a su buzón cifrado nuevo."
       ]
     },
     "Onboarding Proton": {
@@ -6036,26 +6057,6 @@
       ],
       "You can change this anytime in your settings.": [
         "Puede cambiar esto en cualquier momento en los ajustes."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } ahora es más moderno y personalizable mientras protege sus datos con cifrado avanzado."
-      ],
-      "Available on iOS and Android.": [
-        "Disponible en iOS y Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Obtenga la aplicación móvil de ${ appName }"
-      ],
-      "Import your messages": [
-        "Importe sus mensajes"
-      ],
-      "Meet your encrypted mailbox": [
-        "Conozca su buzón cifrado"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Nuestro Import Assistant transfiere rápidamente todos sus correos electrónicos a su buzón cifrado nuevo."
       ]
     },
     "Option": {
@@ -6317,8 +6318,8 @@
       "PGP-signed message. Sender verification failed": [
         "Mensaje firmado con PGP. Falló la verificación del remitente."
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Enviado por ProtonMail con cifrado de acceso cero"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero"
       ],
       "Stored with zero-access encryption": [
         "Almacenado con cifrado de acceso cero"
@@ -6397,17 +6398,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "Cifrado por ProtonMail"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "Cifrado por ${ MAIL_APP_NAME }"
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "Cifrado por ProtonMail al destinatario PGP"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "Cifrado por ${ MAIL_APP_NAME } a destinatario con PGP"
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "Cifrado por ProtonMail al destinatario PGP verificado"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Cifrado por ${ MAIL_APP_NAME } a destinatario con PGP verificado"
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "Cifrado por ProtonMail al destinatario verificado"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "Cifrado por ${ MAIL_APP_NAME } a destinatario verificado"
       ],
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
@@ -6424,12 +6425,12 @@
       "PGP-signed": [
         "PGP-firmado"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Enviado por ProtonMail con cifrado de acceso cero"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero"
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "Enviado por ProtonMail con cifrado de acceso cero al destinatario verificado",
-        "Enviado por ProtonMail con cifrado de acceso cero a los destinatarios verificados"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero a destinatario verificado",
+        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero a destinatarios verificados"
       ],
       "Sent by you with end-to-end encryption": [
         "Enviado por usted con cifrado de extremo a extremo"
@@ -7047,8 +7048,8 @@
       "Enter your password": [
         "Ingrese su contraseña"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Ingrese su nombre de usuario o dirección de correo de ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Ingrese su nombre de usuario o correo de ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Error"
@@ -7181,9 +7182,6 @@
       ],
       "Previous message": [
         "Mensaje anterior"
-      ],
-      "ProtonMail": [
-        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Refirmando todos los contactos"
@@ -7343,8 +7341,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/Inline obliga a mensajes de texto plano"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Las subcarpetas del sistema se mostrarán como carpetas separadas en ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Las subcarpetas del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
@@ -7416,8 +7414,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si no recuerda su contraseña, es imposible volver a activar su clave. Podemos ayudarle a descartar la alerta pero en el proceso perderá permanentemente el acceso a todos los datos cifrados con esa clave."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "El chat en vivo es una función premium disponible solo para aquellos con planes de pago de ProtonVPN. En su lugar, abra una solicitud."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "El chat en vivo es una función premium disponible solo para aquellos con planes de pago de ${ VPN_APP_NAME }. Abra un ticket en su lugar."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton fusionará todas las carpetas con el mismo nombre. Para evitarlo, cambie los nombres antes de importar."
