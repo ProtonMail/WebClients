@@ -151,11 +151,14 @@ const AdvancedSearch = ({
 
     const handleReset = () => updateModel(DEFAULT_MODEL);
 
+    const handleClear = () => {
+        // Willingly no preventDefault here, we want the form reset to happen
+        history.push(history.location.pathname);
+    };
+
     const isSearch = useMemo(() => {
         return !isDeepEqual(omit(model, ['labelID']), omit(DEFAULT_MODEL, ['labelID']));
     }, [model]);
-
-    const showAdvancedSearch = !showEncryptedSearch || showMore;
 
     return (
         <form name="advanced-search" onSubmit={handleSubmit} onReset={handleReset}>
@@ -175,6 +178,7 @@ const AdvancedSearch = ({
                         size="small"
                         disabled={!Object.keys(model).length}
                         type="reset"
+                        onClick={handleClear}
                     >
                         {c('Action').t`Clear`}
                     </Button>
@@ -190,7 +194,7 @@ const AdvancedSearch = ({
                         onChange={(nextLabelId) => updateModel({ ...model, labelID: nextLabelId })}
                     />
                 </div>
-                {showAdvancedSearch && (
+                {showMore && (
                     <>
                         <div className="mt1">
                             <Button
@@ -318,7 +322,7 @@ const AdvancedSearch = ({
                 )}
             </div>
             <div className={classnames(['py1 mx1-5 flex flex-align-items-center flex-justify-space-between'])}>
-                {showAdvancedSearch ? null : (
+                {showMore ? null : (
                     <Button
                         className="mb0-5 on-mobile-w100"
                         onClick={toggleShowMore}

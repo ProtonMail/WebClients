@@ -151,17 +151,6 @@ const EncryptedSearchField = ({ esState }: Props) => {
         </Button>
     );
 
-    // Button to show advanced search options
-    // const showMoreTitle = showMore ? c('Action').t`Show fewer search options` : c('Action').t`Show more search options`;
-    // const showMoreText = showMore ? c('Action').t`Fewer search options` : c('Action').t`More search options`;
-    // const showMoreButton = (
-    //     <div className="flex mb1">
-    //         <UnderlineButton onClick={toggleShowMore} aria-expanded={showMore} title={showMoreTitle}>
-    //             {showMoreText}
-    //         </UnderlineButton>
-    //     </div>
-    // );
-
     const handleEnableES = async () => {
         enableESModalProps.onClose();
         await resumeIndexing();
@@ -213,8 +202,6 @@ const EncryptedSearchField = ({ esState }: Props) => {
                     </span>
                 </div>
             )}
-            {/* <hr className="mt1" /> */}
-            {/* {showMoreButton} */}
         </div>
     );
 };
