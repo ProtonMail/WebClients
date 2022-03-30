@@ -614,8 +614,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'accès à la version bêta vous permet d'utiliser la version bêta de ${ mailAppName }, ${ calendarAppName } et Proton Drive avant qu'ils ne soient rendus publics. Cela signifie que vous pouvez être le premier à essayer de nouveaux produits, à obtenir de nouvelles mises à jour et à utiliser de nouvelles fonctionnalités."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        ""
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l’accès à la version bêta."
@@ -789,8 +789,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Continuer à utiliser ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Continuer à utiliser ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar invite buttons label": {
@@ -2173,8 +2173,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ProtonMail. Veuillez personnaliser l'importation pour modifier ces noms."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
@@ -3044,17 +3044,17 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Les occurrences précédemment mises à jour par l’organisateur seront conservées."
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ne changez ces paramètres que si vous utilisez PGP avec des destinataires qui ne sont pas sur ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        ""
       ],
       "Other options": [
         "Autres options"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ProtonMail signe toujours les messages chiffrés."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        ""
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ProtonMail signe toujours les messages chiffrés"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
@@ -3107,8 +3107,8 @@
       "Session timed out": [
         "Session expirée"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "La configuration de PGP vous permet d’envoyer des e-mails chiffrés de bout en bout à un utilisateur qui n’utilise pas ProtonMail, mais qui se sert d’un service compatible PGP."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        ""
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Certaines de vos réponses à des événements précédemment mis à jour par l’organisateur seront perdues."
@@ -3608,8 +3608,8 @@
       "URL": [
         "URL"
       ],
-      "Username or ProtonMail address": [
-        "Nom d’utilisateur ou adresse ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        ""
       ],
       "Verification code": [
         "Code de vérification"
@@ -4763,8 +4763,8 @@
       "Enter your password": [
         "Saisissez votre mot de passe"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Saisissez votre nom d’utilisateur ou votre adresse électronique ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        ""
       ],
       "Error": [
         "Erreur"
@@ -5004,8 +5004,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        ""
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
@@ -5052,7 +5052,7 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d’alerte, mais vous perdrez définitivement l’accès à toutes les données chiffrées avec cette clé au cours du processus."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [

@@ -791,6 +791,9 @@
       "Show more search options": [
         "Meer zoekopties weergeven"
       ],
+      "Show preview": [
+        "Voorbeeld tonen"
+      ],
       "Sign out": [
         "Uitloggen"
       ],
@@ -1101,8 +1104,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Bèta toegang laat u gebruikmaken van de bètaversie van ${ mailAppName }, ${ calendarAppName } en Proton Drive voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Bèta toegang laat u gebruikmaken van de bètaversie van ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME } voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
@@ -1276,8 +1279,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Blijf ProtonMail gebruiken."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Blijf ${ MAIL_APP_NAME } gebruiken."
       ]
     },
     "Calendar attachment tooltip": {
@@ -3005,8 +3008,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sommige labelnamen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Sommige labelnamen overschrijden de maximum tekenlimiet. Pas de import aan om deze namen te bewerken."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
@@ -3451,7 +3454,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "We hebben de totale opslagruimte van uw account verhoogd naar ${ rewardInGb } GB. Krijg vandaag nog extra opslagruimte en ontgrendel premium functies."
       ],
       "You're all set!": [
         "U bent er helemaal klaar voor!"
@@ -3459,7 +3462,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Voltooi alle stappen en krijg een totaal van ${ rewardInGb } GB op uw account"
       ],
       "Expires soon": [
         "Verloopt binnenkort"
@@ -3719,6 +3722,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
+      ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME } kan uw bedrijf ook beschermen."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
@@ -4058,11 +4064,11 @@
         "ingesloten afbeelding",
         "ingesloten afbeeldingen"
       ],
-      "Encrypt for non-ProtonMail users": [
-        "Versleutelen voor niet-ProtonMail gebruikers"
+      "Encrypt for non-${ BRAND_NAME } users": [
+        "Versleutel voor niet-${ BRAND_NAME }-gebruikers"
       ],
-      "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Versleutelde berichten naar niet-ProtonMail ontvangers zullen vervallen na 28 dagen, tenzij er een kortere verlooptijd is ingesteld."
+      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+        "Versleutelde berichten aan niet-${ BRAND_NAME }-gebruikers verlopen binnen 28 dagen, tenzij er een kortere verlooptijd ingesteld is."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
@@ -4146,8 +4152,8 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
-      "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Als u dit bericht naar een niet-Protonmail-gebruiker verzendt, zorg dan dat u een wachtwoord voor dit bericht hebt ingesteld."
+      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
+        "Als u dit bericht aan een niet-${ MAIL_APP_NAME }-gebruiker verstuurt, zorg ervoor dat er een wachtwoord ingesteld is."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
@@ -4249,8 +4255,8 @@
       "Merged": [
         "Samengevoegd"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "Berichten met een verlooptijd werken feilloos met andere ProtonMail-gebruikers. Om deze berichten te versturen aan niet-ProtonMail-gebruikers, annuleer dan en voeg een wachtwoord toe aan uw e-mail."
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "Berichten met een verlooptijd werken feilloos met andere ${ MAIL_APP_NAME }-gebruikers. Om deze berichten te versturen aan niet-${ BRAND_NAME }-gebruikers, annuleer dan en voeg een wachtwoord toe aan uw e-mail."
       ],
       "Message headers": [
         "Berichtkoppen"
@@ -4330,8 +4336,8 @@
       "of": [
         "van"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Breng alleen wijzingen aan in deze instellingen als u gebruik maakt van PGP met niet-ProtonMail-gebruikers."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
       ],
       "Other options": [
         "Andere opties"
@@ -4339,11 +4345,11 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Ons systeem heeft dit bericht gemarkeerd als phishing poging. Controleer of het legitiem is."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "U kunt PGP/Inline enkel gebruiken met platte tekst. Denk eraan dat ProtonMail versleutelde berichten ook altijd ondertekent."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ProtonMail versleutelde berichten ook altijd ondertekent"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent"
       ],
       "Phone number": [
         "Telefoonnummer"
@@ -4392,9 +4398,6 @@
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton verdient geen geld door privacy te misbruiken."
-      ],
-      "ProtonMail can protect your business as well.": [
-        "ProtonMail kan ook uw bedrijf beschermen."
       ],
       "Recipient: ": [
         "Ontvanger: "
@@ -4471,14 +4474,14 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Stel ${ MAIL_APP_NAME } in als uw standaard e-mailapplicatie voor deze browser. ${ MAIL_APP_NAME } wordt automatisch geopend wanneer u op een e-maillink klikt."
+      ],
       "Set a recovery phrase": [
         "Stel een herstelzin in"
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Stel ProtonMail in als uw standaard e-mailapplicatie voor deze browser. ProtonMail wordt automatisch geopend wanneer u op een e-maillink klikt."
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-ProtonMail gebruiker die een PGP-compatibele dienst gebruikt."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
       ],
       "Show original message": [
         "Toon origineel bericht"
@@ -4489,8 +4492,8 @@
       "Storage space is shared across Mail, Calendar, and Drive.": [
         "Opslagruimte is gedeeld voor Mail, Calendar en Drive."
       ],
-      "Store and share files securely with Proton Drive.": [
-        "Veilig bestanden opslaan en delen met Proton Drive."
+      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
+        "Bewaar en deel bestanden veilig met ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Onderwerp"
@@ -4700,8 +4703,8 @@
       "Upgrade to support privacy and get more features.": [
         "Upgrade om privacy te ondersteunen en meer functies te krijgen."
       ],
-      "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Upgrade om ProtonMail te gebruiken met desktop clients van derden."
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        "Upgrade om ${ MAIL_APP_NAME } te gebruiken met desktop clients van derden."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Upgrade vandaag om geen van volgende ${ appName } ${ planName } voordelen te verliezen."
@@ -4790,8 +4793,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
       ],
-      "You can use ProtonVPN for free today.": [
-        "U kunt ProtonVPN vandaag gratis gebruiken."
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        "U kan ${ VPN_APP_NAME } vandaag gratis gebruiken."
       ],
       "You cannot reply from the invited address.": [
         "U kunt niet antwoorden vanaf het uitgenodigde adres."
@@ -5482,8 +5485,8 @@
       "Upload picture": [
         "Afbeelding uploaden"
       ],
-      "Username or ProtonMail address": [
-        "Gebruikersnaam of ProtonMail e-mailadres"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Gebruikersnaam op ${ MAIL_APP_NAME } adres"
       ],
       "Verification code": [
         "Verificatiecode"
@@ -5707,7 +5710,7 @@
         "Account upgraden"
       ],
       "You need to activate your calendar keys to add this event": [
-        "U moet uw agendasleutels activeren om dize afspraak toe te voegen"
+        "U moet uw agendasleutels activeren om deze afspraak toe te voegen"
       ],
       "You need to activate your calendar keys to answer this invitation": [
         "U moet uw agendasleutels activeren om deze uitnodiging te beantwoorden"
@@ -6002,8 +6005,26 @@
       ]
     },
     "Onboarding": {
+      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+        "${ appName } is nu moderner en aanpasbaarder terwijl uw gegevens nog steeds beschermd worden met geavanceerde versleuteling."
+      ],
+      "Available on iOS and Android.": [
+        "Beschikbaar op iOS en Android."
+      ],
+      "Get the ${ appName } mobile app": [
+        "Download de ${ appName } mobiele app"
+      ],
+      "Import your messages": [
+        "Berichten importeren"
+      ],
+      "Meet your encrypted mailbox": [
+        "Ontmoet uw versleutelde mailbox"
+      ],
       "Next": [
         "Volgende"
+      ],
+      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+        "Onze Import Assistant verplaatst snel al uw e-mails naar uw nieuwe versleutelde mailbox."
       ]
     },
     "Onboarding Proton": {
@@ -6036,26 +6057,6 @@
       ],
       "You can change this anytime in your settings.": [
         "U kunt dit op elk gewenst moment wijzigen in uw instellingen."
-      ]
-    },
-    "Onboarding ProtonMail": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } is nu moderner en aanpasbaarder terwijl uw gegevens nog steeds beschermd worden met geavanceerde versleuteling."
-      ],
-      "Available on iOS and Android.": [
-        "Beschikbaar op iOS en Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Download de ${ appName } mobiele app"
-      ],
-      "Import your messages": [
-        "Berichten importeren"
-      ],
-      "Meet your encrypted mailbox": [
-        "Ontmoet uw versleutelde mailbox"
-      ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Onze Import Assistant verplaatst snel al uw e-mails naar uw nieuwe versleutelde mailbox."
       ]
     },
     "Option": {
@@ -6317,8 +6318,8 @@
       "PGP-signed message. Sender verification failed": [
         "PGP-ondertekend bericht. Verificatie afzender mislukt"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Verzonden door ProtonMail met zero-access-versleuteling"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Verzonden door ${ MAIL_APP_NAME } met zero-access-versleuteling"
       ],
       "Stored with zero-access encryption": [
         "Opgeslagen met zero-access-versleuteling"
@@ -6397,17 +6398,17 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ProtonMail": [
-        "Versleuteld door ProtonMail"
+      "Encrypted by ${ MAIL_APP_NAME }": [
+        "Versleuteld door ${ MAIL_APP_NAME }"
       ],
-      "Encrypted by ProtonMail to PGP recipient": [
-        "Door ProtonMail versleuteld aan ontvanger met PGP"
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "Versleuteld door ${ MAIL_APP_NAME } aan PGP-ontvanger"
       ],
-      "Encrypted by ProtonMail to verified PGP recipient": [
-        "Door ProtonMail versleuteld aan geverifieerde ontvanger met PGP"
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Versleuteld door ${ MAIL_APP_NAME } aan geverifieerde PGP-ontvanger"
       ],
-      "Encrypted by ProtonMail to verified recipient": [
-        "Door ProtonMail versleuteld aan geverifieerde ontvanger"
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "Versleuteld door ${ MAIL_APP_NAME } aan geverifieerde ontvanger"
       ],
       "End-to-end encrypted": [
         "End-to-end versleuteld"
@@ -6424,12 +6425,12 @@
       "PGP-signed": [
         "Ondertekend met PGP"
       ],
-      "Sent by ProtonMail with zero-access encryption": [
-        "Verzonden door ProtonMail met zero-access-versleuteling"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "Verzonden door ${ MAIL_APP_NAME } met zero-access-versleuteling"
       ],
-      "Sent by ProtonMail with zero-access encryption to verified recipient": [
-        "Verzonden door ProtonMail met zero-access-versleuteling aan gecontroleerde ontvanger",
-        "Verzonden door ProtonMail met zero-access-versleuteling aan gecontroleerde ontvangers"
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Verzonden door ${ MAIL_APP_NAME } met zero-access-versleuteling aan gecontroleerde ontvanger",
+        "Verzonden door ${ MAIL_APP_NAME } met zero-access-versleuteling aan gecontroleerde ontvangers"
       ],
       "Sent by you with end-to-end encryption": [
         "Door u verzonden met zero-access-versleuteling"
@@ -6499,7 +6500,7 @@
         "U kunt nu uw berichten plannen om ze later te versturen"
       ],
       "You can now search the content of your encrypted emails.": [
-        "U kunt nu de inhoud van uw gecodeerde e-mails doorzoeken."
+        "U kunt nu de inhoud van uw versleutelde e-mails doorzoeken."
       ]
     },
     "Status": {
@@ -7047,8 +7048,8 @@
       "Enter your password": [
         "Voer uw wachtwoord in"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Voer uw gebruikersnaam in of uw ${ MAIL_APP_NAME } e-mailadres"
       ],
       "Error": [
         "Fout"
@@ -7181,9 +7182,6 @@
       ],
       "Previous message": [
         "Vorig bericht"
-      ],
-      "ProtonMail": [
-        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Alle contacten opnieuw ondertekenen"
@@ -7343,8 +7341,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Systeemsubmappen worden weergegeven als aparte mappen in ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
@@ -7416,8 +7414,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ProtonVPN abonnementen. Gelieve in plaats daarvan een ticket te openen."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ${ VPN_APP_NAME } abonnementen. Gelieve in plaats daarvan een ticket te openen."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."

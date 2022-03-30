@@ -59,6 +59,9 @@
       "Cancel all": [
         "Скасувати все"
       ],
+      "Cancel all downloads": [
+        "Скасувати всі завантаження"
+      ],
       "Cancel all uploads": [
         "Скасувати всі вивантаження"
       ],
@@ -212,9 +215,6 @@
       "enable desktop notifications": [
         "увімкнути сповіщення на робочому столі"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Expand folder": [
         "Розгорнути теку"
       ],
@@ -277,6 +277,9 @@
       ],
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
+      ],
+      "Learn more": [
+        "Докладніше"
       ],
       "Load image": [
         "Завантажити зображення"
@@ -405,7 +408,7 @@
         "Відновити зі смітника"
       ],
       "Resume all": [
-        ""
+        "Відновити все"
       ],
       "Resume download": [
         "Відновити завантаження"
@@ -457,6 +460,9 @@
       ],
       "Show labels": [
         "Показати мітки"
+      ],
+      "Show preview": [
+        "Показати попередній перегляд"
       ],
       "Sign out": [
         "Вийти"
@@ -597,8 +603,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Бета-доступ дає вам змогу користуватися тестовою версією ${ mailAppName }, ${ calendarAppName } і Proton Drive до того, як вони будуть випущені для загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Бета-доступ дає вам змогу користуватися тестовою версією ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME } до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "При виникненні проблем, ви завжди можете вимкнути бета-доступ."
@@ -772,8 +778,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Продовжити користуватися ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Продовжити за допомогою ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar status": {
@@ -1904,8 +1910,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших міток недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Назви деяких ваших міток перевищують обмеження кількості символів ProtonMail. Будь ласка, налаштуйте імпорт для зміни цих назв."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
@@ -2430,6 +2436,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Перевірка контактів ${ progress } з ${ max }..."
       ],
+      "Checking signatures": [
+        "Перевірка підписів"
+      ],
       "Clear data": [
         "Очистити дані"
       ],
@@ -2508,6 +2517,15 @@
         "Видалити сховища",
         "Видалити сховища"
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        "Цифровий підпис перевірено. Цей файл безпечно вивантажено ${ emailAddress }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        "Цифровий підпис перевірено. Цю теку безпечно вивантажено ${ emailAddress }."
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        "Завантаження ${ downloadFileName } буде скасовано"
+      ],
       "Downloaded": [
         "Завантажено"
       ],
@@ -2523,9 +2541,6 @@
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
       ],
-      "Enable Drive Search": [
-        ""
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
       ],
@@ -2538,6 +2553,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Не вдалося відкрити захищене посилання. Причина: ${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
+      ],
       "File will not be uploaded": [
         "Файл не буде вивантажено"
       ],
@@ -2546,6 +2567,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "Вміст тек об’єднається в одну теку"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
       ],
       "Folder will not be uploaded": [
         "Теку не буде вивантажено"
@@ -2703,8 +2730,8 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символів"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ${ BRAND_NAME }."
       ],
       "Only the people with the link and the password can access this file.": [
         "Лише люди з посиланням та паролем можуть отримати доступ до цього файлу."
@@ -2721,11 +2748,11 @@
       "Permanently delete all files in your drive": [
         "Остаточно видалити всі файли у сховищі"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ProtonMail завжди підписує зашифровані повідомлення."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ProtonMail завжди підписує зашифровані повідомлення"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Зауважте, що адреси, призначені цій групі, не будуть видалені."
@@ -2790,11 +2817,17 @@
       "Session timed out": [
         "Сеанс завершився"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ProtonMail, які використовують PGP-сумісний сервіс."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
       ],
       "Share files with links": [
         "Поділіться файлами за допомогою посилань"
+      ],
+      "Signature check will be ignored": [
+        "Перевіркою підпису буде знехтувано"
+      ],
+      "Signature issue": [
+        "Проблема з підписом"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Деякі з ваших файлів більше не доступні. Відновіть доступ до файлів. ${ StartRecoveryButton }"
@@ -2811,8 +2844,14 @@
       "support team": [
         "командою підтримки"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Програма повинна локально розшифрувати ваші контакти для можливості їх експортування. Після завершення процесу буде згенеровано файл VCF і ви зможете його завантажити."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
       ],
       "There are no files yet": [
         "Поки що тут немає файлів"
@@ -2853,11 +2892,11 @@
       "This will overwrite the existing folder": [
         "Це перезапише наявну теку"
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Щоб увімкнути справді приватний пошук ${ DRIVE_APP_NAME } потрібно індексувати ваші файли локально."
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Для забезпечення справді приватного пошуку ${ DRIVE_APP_NAME } потрібно індексувати ваші файли локально. Ви, як і раніше, можете використовувати ${ DRIVE_APP_NAME } у звичайному режимі, а ми повідомимо вас, коли індексація буде завершена."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
@@ -2912,6 +2951,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Завантаження сотень файлів одразу може вплинути на швидкодію."
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        "Нам не вдалося перевірити хто вивантажив ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         "Ми сповістимо вас, коли імпорт буде завершено."
@@ -3035,6 +3080,26 @@
         "Деякі контакти виглядають однаково. ${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        "атрибути фалу"
+      ],
+      "file data": [
+        "дані файлу"
+      ],
+      "keys": [
+        "ключі"
+      ],
+      "name": [
+        "назва"
+      ],
+      "name hash": [
+        "хеш назви"
+      ],
+      "thumbnail": [
+        "мініатюра"
+      ]
+    },
     "Key badge": {
       "Expired": [
         "Протермінований"
@@ -3080,6 +3145,9 @@
       "Apply to all duplicated folders": [
         "Застосувати до всіх дублікатів тек"
       ],
+      "Apply to all unverified items": [
+        "Застосувати до всіх неперевірених елементів"
+      ],
       "Audio file": [
         "Звуковий файл"
       ],
@@ -3094,6 +3162,9 @@
       ],
       "Calendars": [
         "Календарі"
+      ],
+      "Cancel download": [
+        "Скасувати завантаження"
       ],
       "Category": [
         "Категорія"
@@ -3131,6 +3202,9 @@
       "Do not ask again": [
         "Не питати знову"
       ],
+      "Download anyway": [
+        "Все одно завантажити"
+      ],
       "Email address": [
         "Адрес електронної пошти"
       ],
@@ -3144,7 +3218,7 @@
         "Увімкнути бета-доступ"
       ],
       "Enabling Drive Search": [
-        ""
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "Шифрувати листи"
@@ -3335,8 +3409,8 @@
       "Upload picture": [
         "Вивантажити зображення"
       ],
-      "Username or ProtonMail address": [
-        "Ім'я користувача або адреса ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Ім'я користувача або адреса ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Код підтвердження"
@@ -3613,6 +3687,9 @@
       "File or folder is missing a name": [
         "Файл чи тека не мають назви"
       ],
+      "Item failed to be verified": [
+        "Не вдалося верифікувати елемент"
+      ],
       "Link failed to be loaded": [
         "Не вдалося завантажити посилання"
       ],
@@ -3694,6 +3771,28 @@
         "Зауважте, що ${ boldNextStep }, запитані програмою, щоб почати імпортування."
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        "Увімкнути бета-доступ"
+      ],
+      "Start using ${ appName }": [
+        "Розпочніть користуватися ${ appName }"
+      ],
+      "Upgrade account": [
+        "Оновити тарифний план облікового запису"
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        "${ appName } наразі перебуває в ранньому доступі й лише для користувачів з платним тарифним планом."
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        "${ appName } наразі доступний лише через бета-доступ."
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        "Захистіть усі свої файли наскрізним шифруванням. Користуйтеся ${ appName } , щоб безпечно зберігати свої файли."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Виберіть ім'я для показу"
@@ -3726,29 +3825,7 @@
         "Ви можете змінити це будь-коли в налаштуваннях."
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "Увімкнути бета-доступ"
-      ],
-      "Start using ${ appName }": [
-        "Розпочніть користуватися ${ appName }"
-      ],
-      "Upgrade account": [
-        "Покращити обліковий запис"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } наразі перебуває в ранньому доступі й лише для користувачів з платним тарифним планом."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } наразі доступний лише через бета-доступ."
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Захистіть усі свої файли наскрізним шифруванням. Користуйтеся ${ appName } , щоб безпечно зберігати свої файли."
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
         "${ appName } у бета-версії"
       ],
@@ -4236,6 +4313,12 @@
       "Download failed": [
         "Не вдалося завантажити"
       ],
+      "Download unverified file?": [
+        "Завантажити неперевірені файли?"
+      ],
+      "Download unverified folder?": [
+        "Завантажити неперевірену теку?"
+      ],
       "Downloading": [
         "Завантаження"
       ],
@@ -4273,7 +4356,7 @@
         "Спорожнити смітник"
       ],
       "Enable Drive Search": [
-        ""
+        "Enable drive search"
       ],
       "Enter password to download": [
         "Введіть пароль для завантаження"
@@ -4281,8 +4364,8 @@
       "Enter your password": [
         "Введіть свій пароль"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Введіть своє ім'я користувача або електронну адресу ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Введіть своє ім'я користувача або ${ MAIL_APP_NAME } адресу електронної пошти"
       ],
       "Exporting contacts": [
         "Експортування контактів"
@@ -4417,7 +4500,7 @@
         "Результати пошуку"
       ],
       "Search results: ${ searchView.numberOfResults } found": [
-        ""
+        "Результати пошуку: знайдено ${ searchView.numberOfResults }"
       ],
       "Searching…": [
         "Пошук…"
@@ -4481,6 +4564,12 @@
       ],
       "The link failed to be loaded": [
         "Не вдалося завантажити посилання"
+      ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
       ],
       "Total size": [
         "Загальний розмір"
@@ -4555,8 +4644,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Системні підтеки показуватимуться окремими теками в ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Системні підтеки показуватимуться окремими теками в ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
@@ -4629,8 +4718,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Неможливо повторно активувати ваш ключ, якщо ви не пам'ятаєте свій пароль. Ми можемо допомогти вам відхилити банер з попередженням, але при цьому ви остаточно втратите доступ до всіх даних, що були зашифровані з використанням цього ключа."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Живий чат — це преміум можливість, доступна лише користувачам платних тарифних планів ${ VPN_APP_NAME }. Будь ласка, створіть запит натомість."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton об'єднає всі теки з однаковими назвами. Щоб уникнути цього, змініть їх назви перед імпортуванням."

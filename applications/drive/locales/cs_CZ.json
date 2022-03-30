@@ -59,6 +59,9 @@
       "Cancel all": [
         "Zrušit vše"
       ],
+      "Cancel all downloads": [
+        ""
+      ],
       "Cancel all uploads": [
         "Zrušit všechna nahrávání"
       ],
@@ -212,9 +215,6 @@
       "enable desktop notifications": [
         "povolit oznámení na ploše"
       ],
-      "Enable Drive Search": [
-        "Povolit Drive Search"
-      ],
       "Expand folder": [
         "Rozbalit složku"
       ],
@@ -277,6 +277,9 @@
       ],
       "Import from .csv or vCard": [
         "Importovat z .csv nebo vCard"
+      ],
+      "Learn more": [
+        ""
       ],
       "Load image": [
         "Načíst obrázek"
@@ -458,6 +461,9 @@
       "Show labels": [
         "Zobrazit štítky"
       ],
+      "Show preview": [
+        ""
+      ],
       "Sign out": [
         "Odhlásit se"
       ],
@@ -597,8 +603,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta Access vám umožní používat beta verze aplikací ${ mailAppName }, ${ calendarAppName } a Proton Drive před jejich zveřejněním. To znamená, že můžete jako první vyzkoušet nové produkty, získat nové aktualizace a používat nové funkce."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta přístup vám umožní používat beta verze aplikací ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME } před jejich zveřejněním. To znamená, že můžete jako první vyzkoušet nové produkty, získat nové aktualizace a používat nové funkce."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Pokud narazíte na problémy, můžete přístup k betaverzi vždy deaktivovat."
@@ -772,8 +778,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Pokračovat v používání ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Pokračovat s ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar status": {
@@ -1904,8 +1910,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků nejsou k dispozici. Přizpůsobte prosím import a upravte tyto názvy."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ProtonMail. Přizpůsobte prosím import a upravte tyto názvy."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Něco se pokazilo, pro pokračování prosím ${ refresh }. Pokud se tato chybová zpráva stále zobrazuje, kontaktujte prosím náš ${ supportTeam }."
@@ -2430,6 +2436,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Vyhledávání kontaktu ${ progress } o ${ max }..."
       ],
+      "Checking signatures": [
+        ""
+      ],
       "Clear data": [
         "Vymazat data"
       ],
@@ -2508,6 +2517,15 @@
         "Odstranit disků",
         "Odstranit disků"
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        ""
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        ""
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        ""
+      ],
       "Downloaded": [
         "Stažené"
       ],
@@ -2523,9 +2541,6 @@
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
       ],
-      "Enable Drive Search": [
-        "Povolit Drive Search"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
       ],
@@ -2538,6 +2553,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Nepodařilo se otevřít zabezpečený odkaz. Důvod: ${ error }"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
+      ],
       "File will not be uploaded": [
         "Soubor nebude nahrán"
       ],
@@ -2546,6 +2567,12 @@
       ],
       "Folder contents will merge into a single folder": [
         "Obsah složky bude sloučen do jedné složky"
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        ""
       ],
       "Folder will not be uploaded": [
         "Složka nebude nahrána"
@@ -2703,8 +2730,8 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         "Je povoleno pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaků"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
       ],
       "Only the people with the link and the password can access this file.": [
         "Jenom lidé s tímto odkazovým řádkem a heslem, můžou mít přístup k tomuto souboru."
@@ -2721,11 +2748,11 @@
       "Permanently delete all files in your drive": [
         "Trvalé odstranění všech souborů na disku"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Vezměte prosím na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
@@ -2790,11 +2817,17 @@
       "Session timed out": [
         "Relace vypršela"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované e-mailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ${ BRAND_NAME } a používají kompatibilní PGP službu."
       ],
       "Share files with links": [
         "Sdílejte soubory přes s odkazovými řádky"
+      ],
+      "Signature check will be ignored": [
+        ""
+      ],
+      "Signature issue": [
+        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Některé vaše soubory již nejsou přístupné. Obnovte přístup k souborům. ${ StartRecoveryButton }"
@@ -2811,8 +2844,14 @@
       "support team": [
         "tým podpory"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
       ],
       "There are no files yet": [
         "Soubory tam ještě nejsou"
@@ -2853,11 +2892,11 @@
       "This will overwrite the existing folder": [
         "Tím se přepíše existující složka"
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Aby bylo možné povolit soukromé vyhledávání, musí ${ DRIVE_APP_NAME } indexovat vaše soubory lokálně."
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Aby bylo možné povolit soukromé vyhledávání, musí Zadejte své uživatelské jméno nebo e-mailovou adresu ${ DRIVE_APP_NAME }. indexovat vaše soubory lokálně. ${ DRIVE_APP_NAME } můžete stále normálně používat - dáme vám vědět, až bude indexace dokončena."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
@@ -2912,6 +2951,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Nahrávání stovky souboru najednou může zapříčinit dopad na výkon."
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        ""
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        ""
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
@@ -3035,6 +3080,26 @@
         "Několik kontaktů vypadá stejně. ${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        ""
+      ],
+      "file data": [
+        ""
+      ],
+      "keys": [
+        ""
+      ],
+      "name": [
+        ""
+      ],
+      "name hash": [
+        ""
+      ],
+      "thumbnail": [
+        ""
+      ]
+    },
     "Key badge": {
       "Expired": [
         "Expirováno"
@@ -3080,6 +3145,9 @@
       "Apply to all duplicated folders": [
         "Použít na všechny duplicitní složky"
       ],
+      "Apply to all unverified items": [
+        ""
+      ],
       "Audio file": [
         "Zvukový soubor"
       ],
@@ -3094,6 +3162,9 @@
       ],
       "Calendars": [
         "Kalendáře"
+      ],
+      "Cancel download": [
+        ""
       ],
       "Category": [
         "Kategorie"
@@ -3131,6 +3202,9 @@
       "Do not ask again": [
         "Příště se neptat"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Email address": [
         "E-mailová adresa"
       ],
@@ -3144,7 +3218,7 @@
         "Zapnout přístup do beta verze"
       ],
       "Enabling Drive Search": [
-        "Povolování Drive Search"
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "Šifrovat e-maily"
@@ -3335,8 +3409,8 @@
       "Upload picture": [
         "Nahrát obrázek"
       ],
-      "Username or ProtonMail address": [
-        "Uživatelské jméno nebo e-mailová adresa ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Uživatelské jméno nebo adresa ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Ověřovací kód"
@@ -3613,6 +3687,9 @@
       "File or folder is missing a name": [
         "Souboru nebo složce chybí název"
       ],
+      "Item failed to be verified": [
+        ""
+      ],
       "Link failed to be loaded": [
         "Nepodařilo se načíst odkaz"
       ],
@@ -3694,6 +3771,28 @@
         "Vezměte prosím na vědomí, že aplikace ${ boldNextStep } požadovala zahájení importu."
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        "Zapnout přístup do beta verze"
+      ],
+      "Start using ${ appName }": [
+        "Začněte používat ${ appName }"
+      ],
+      "Upgrade account": [
+        "Přejít na vyšší tarif"
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        "${ appName } je v současné době v předběžném přístupu a je k dispozici pouze uživatelům s placeným tarifem."
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        "${ appName } je v současné době k dispozici pouze v případě, že povolíte přístup do betaverze."
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        "Chraňte všechny své soubory pomocí šifrování end-to-end. Pomocí ${ appName } můžete bezpečně ukládat a sdílet své soubory."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Vyberte jméno, které chcete zobrazovat"
@@ -3726,29 +3825,7 @@
         "Toto můžete později změnit v nastavení."
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "Zapnout přístup do beta verze"
-      ],
-      "Start using ${ appName }": [
-        "Začněte užívat ${ appName }"
-      ],
-      "Upgrade account": [
-        "Upgradovat účet"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } je v současné době v předběžném přístupu a je k dispozici pouze uživatelům s placeným tarifem."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } je v současné době k dispozici pouze v případě, že povolíte přístup do betaverze."
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Chraňte všechny své soubory pomocí šifrování end-to-end. Pomocí ${ appName } můžete bezpečně ukládat a sdílet své soubory."
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
         "${ appName } je ve verzi Beta"
       ],
@@ -4236,6 +4313,12 @@
       "Download failed": [
         "Soubor se nepodařilo stáhnout"
       ],
+      "Download unverified file?": [
+        ""
+      ],
+      "Download unverified folder?": [
+        ""
+      ],
       "Downloading": [
         "Stahování"
       ],
@@ -4273,7 +4356,7 @@
         "Vysypat koš"
       ],
       "Enable Drive Search": [
-        "Povolit Drive Search"
+        "Enable drive search"
       ],
       "Enter password to download": [
         "Zadejte heslo pro stažení souboru"
@@ -4281,8 +4364,8 @@
       "Enter your password": [
         "Zadejte Vaše heslo"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Zadejte vaše uživatelské jméno nebo e-mailovou adresu ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Zadejte své uživatelské jméno nebo e-mailovou adresu ${ MAIL_APP_NAME }"
       ],
       "Exporting contacts": [
         "Exportovat kontakty"
@@ -4482,6 +4565,12 @@
       "The link failed to be loaded": [
         "Odkaz se nepodařilo načíst"
       ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
       "Total size": [
         "Celková velikost"
       ],
@@ -4555,8 +4644,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které bude použito při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Systémové podsložky se v ProtonMailu zobrazí jako samostatné složky"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
       ],
       "The import will start with the most recent messages.": [
         "Import bude zahájen nejnovějšími zprávami."
@@ -4629,8 +4718,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Pokud si heslo nepamatujete, není možné klíč znovu aktivovat. Můžeme vám pomoci zrušit výstražný banner, ale tím trvale ztratíte přístup ke všem datům zašifrovaným tímto klíčem."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } plány. Prosím otevřete ticket."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton sloučí všechny složky se stejným názvem. Chcete-li tomu zabránit, změňte názvy před importem."

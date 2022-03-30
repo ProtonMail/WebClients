@@ -614,8 +614,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Bèta toegang laat u gebruikmaken van de bètaversie van ${ mailAppName }, ${ calendarAppName } en Proton Drive voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Bèta toegang laat u gebruikmaken van de bètaversie van ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME } voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
@@ -789,8 +789,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Blijf ProtonMail gebruiken."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Blijf ${ MAIL_APP_NAME } gebruiken."
       ]
     },
     "Calendar invite buttons label": {
@@ -2173,8 +2173,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sommige labelnamen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Sommige van uw labelnamen overschrijden de ProtonMail's maximum tekenlimiet. Pas de import aan om deze namen te bewerken."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
@@ -3044,17 +3044,17 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Voorvallen die eerder zijn bijgewerkt door de organisator zullen worden bewaard."
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Wijzig deze instellingen alleen als u PGP met niet-ProtonMail-ontvangers gebruikt."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
       ],
       "Other options": [
         "Andere opties"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ProtonMail altijd versleutelde berichten tekent."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ProtonMail versleutelde berichten ook altijd ondertekent"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groep zijn toegewezen NIET zullen worden verwijderd."
@@ -3107,8 +3107,8 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-ProtonMail gebruiker die een PGP compatibele dienst gebruikt."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Sommige antwoorden op voorvallen die eerder zijn bijgewerkt door de organisator zullen verloren gaan."
@@ -3608,8 +3608,8 @@
       "URL": [
         "Website"
       ],
-      "Username or ProtonMail address": [
-        "Gebruikersnaam of ProtonMail e-mailadres"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Gebruikersnaam op ${ MAIL_APP_NAME } adres"
       ],
       "Verification code": [
         "Verificatiecode"
@@ -4763,8 +4763,8 @@
       "Enter your password": [
         "Voer uw wachtwoord in"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Voer uw gebruikersnaam in of uw ${ MAIL_APP_NAME } e-mailadres"
       ],
       "Error": [
         "Fout"
@@ -5004,8 +5004,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Systeemsubmappen worden weergegeven als aparte mappen in ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
@@ -5052,8 +5052,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ProtonVPN abonnementen. Gelieve in plaats daarvan een ticket te openen."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ${ VPN_APP_NAME } abonnementen. Gelieve in plaats daarvan een ticket te openen."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."

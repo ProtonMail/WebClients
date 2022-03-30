@@ -59,6 +59,9 @@
       "Cancel all": [
         "Mindegyik törlése"
       ],
+      "Cancel all downloads": [
+        "Összes letöltés megszakítása"
+      ],
       "Cancel all uploads": [
         ""
       ],
@@ -208,9 +211,6 @@
       "enable desktop notifications": [
         "asztali értesítések engedélyezése"
       ],
-      "Enable Drive Search": [
-        "Felhőtárban Keresés Engedélyezése"
-      ],
       "Expand folder": [
         ""
       ],
@@ -273,6 +273,9 @@
       ],
       "Import from .csv or vCard": [
         ""
+      ],
+      "Learn more": [
+        "További információk"
       ],
       "Load image": [
         "Kép betöltése"
@@ -454,6 +457,9 @@
       "Show labels": [
         ""
       ],
+      "Show preview": [
+        "Előnézet mutatása"
+      ],
       "Sign out": [
         "Kijelentkezés"
       ],
@@ -593,8 +599,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ${ mailAppName }, ${ calendarAppName }, és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
@@ -768,8 +774,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "ProtonMail használatának folytatása."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Folytatás ezzel: ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar status": {
@@ -1886,8 +1892,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         ""
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
@@ -2352,6 +2358,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Névjegy ellenőrzése ${ progress }/${ max }..."
       ],
+      "Checking signatures": [
+        "Aláírások ellenőrzése"
+      ],
       "Clear data": [
         "Adatok törlése"
       ],
@@ -2426,6 +2435,15 @@
         "",
         ""
       ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        "Digitális aláírás lellenőrizve. Ezt a fájlt biztonságosan feltöltötte ${ emailAddress }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        "Digitális aláírás lellenőrizve. Ezt a mappát biztonságosan feltöltötte ${ emailAddress }."
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        "${ downloadFileName } letöltésének megszakítása"
+      ],
       "Downloaded": [
         "Letöltve"
       ],
@@ -2441,9 +2459,6 @@
       "Duplicate key updated": [
         "Duplikált kulcs frissítve"
       ],
-      "Enable Drive Search": [
-        "Felhőtárban Keresés Engedélyezése"
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
       ],
@@ -2456,6 +2471,12 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         ""
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "A fájl aláírása hiányzik. Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "A fájl aláírása hiányzik. Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
+      ],
       "File will not be uploaded": [
         ""
       ],
@@ -2464,6 +2485,12 @@
       ],
       "Folder contents will merge into a single folder": [
         ""
+      ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "A mappa aláírása hiányzik. Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "A mappa aláírása hiányzik. Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
       ],
       "Folder will not be uploaded": [
         ""
@@ -2619,8 +2646,8 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         "Csak ${ MAX_CUSTOM_PASSWORD_LENGTH } számú karakter engedélyezett"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ezeket a beállításokat csak akkor változtassa meg, ha nem ProtonMail címzettekkel használ PGP titkosítást."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
       ],
       "Only the people with the link and the password can access this file.": [
         ""
@@ -2637,11 +2664,11 @@
       "Permanently delete all files in your drive": [
         ""
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ProtonMail mindig aláírja a titkosított üzeneteket."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ProtonMail mindig aláírja a titkosított üzeneteket"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
@@ -2706,11 +2733,17 @@
       "Session timed out": [
         ""
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-ProtonMail felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
       ],
       "Share files with links": [
         "Fájlok megosztása linkekkel"
+      ],
+      "Signature check will be ignored": [
+        "Az aláírás-ellenőrzés figyelmen kívül lesz hagyva"
+      ],
+      "Signature issue": [
+        "Probléma az aláírással"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         ""
@@ -2727,8 +2760,14 @@
       "support team": [
         "ügyfélszolgálat"
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "A fióknak, lehet, hogy új kulcs van, vagy az alábbiakkal, lehet, hogy babráltak: ${ items }. Csak akkor nyissa meg, ha megbízik benne/bennük."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Az alkalmazásnak helyben kell visszafejtenie a névjegyeket az exportáláshoz. A folyamat végén egy VCF fájl fog létrejönni, amelyet letölthet."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "Az alábbiakkal, lehet, hogy babráltak: ${ items }. Csak akkor nyissa meg, ha megbízik benne/bennük."
       ],
       "There are no files yet": [
         "Még nincsenek fájlok"
@@ -2767,11 +2806,11 @@
       "This will overwrite the existing folder": [
         ""
       ],
-      "To enable trully private search Proton Drive needs to index your files locally.": [
-        "To enable truly private search Proton Drive needs to index your files locally."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "A valóban biztonságos kereséshez a ${ DRIVE_APP_NAME }-nak helyben kell indexelnie fájljait."
       ],
-      "To enable trully private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done.": [
-        "To enable truly private search Proton Drive needs to index your files locally. You can still use Proton Drive normally - we’ll let you know when indexing is done."
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "A valóban biztonságos kereséshez a ${ DRIVE_APP_NAME }-nak helyben kell indexelnie fájljait. Továbbra is tudja a ${ DRIVE_APP_NAME }-ot használni - szólunk, ha az indexelés befejeződött."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
@@ -2826,6 +2865,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Fájlok százainak egyszerre való feltöltése fennakadásokat okozhat."
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        "Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         ""
@@ -2949,6 +2994,26 @@
         "Több névjegy is megegyezik. ${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        "fájl tulajdonságok"
+      ],
+      "file data": [
+        "fájl adatok"
+      ],
+      "keys": [
+        "kulcsok"
+      ],
+      "name": [
+        "név"
+      ],
+      "name hash": [
+        "név hash"
+      ],
+      "thumbnail": [
+        "miniatűr"
+      ]
+    },
     "Key badge": {
       "Expired": [
         "Lejárt"
@@ -2994,6 +3059,9 @@
       "Apply to all duplicated folders": [
         ""
       ],
+      "Apply to all unverified items": [
+        "Alkalmazás az összes ellenőrizetlen elemre"
+      ],
       "Audio file": [
         "Hangfájl"
       ],
@@ -3008,6 +3076,9 @@
       ],
       "Calendars": [
         ""
+      ],
+      "Cancel download": [
+        "Letöltés megszakítása"
       ],
       "Category": [
         "Kategória"
@@ -3043,6 +3114,9 @@
       "Do not ask again": [
         "Ne kérdezze újra"
       ],
+      "Download anyway": [
+        "Letöltés mindenképpen"
+      ],
       "Email address": [
         "E-mail cím"
       ],
@@ -3056,7 +3130,7 @@
         "Béta hozzáférés engedélyezése"
       ],
       "Enabling Drive Search": [
-        "Felhőtárban Keresés Engedélyezése"
+        "Enabling drive search"
       ],
       "Encrypt emails": [
         "Üzenetek titkosítása"
@@ -3247,8 +3321,8 @@
       "Upload picture": [
         "Kép feltöltése"
       ],
-      "Username or ProtonMail address": [
-        "Felhasználónév vagy ProtonMail cím"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } emailjének felhasználóneve"
       ],
       "Verification code": [
         "Ellenőrző kód"
@@ -3497,6 +3571,9 @@
       "File or folder is missing a name": [
         ""
       ],
+      "Item failed to be verified": [
+        "Az elem hitelesítése sikertelen"
+      ],
       "Link failed to be loaded": [
         ""
       ],
@@ -3566,6 +3643,28 @@
         ""
       ]
     },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        "Béta hozzáférés engedélyezése"
+      ],
+      "Start using ${ appName }": [
+        "${ appName } használatának megkezdése"
+      ],
+      "Upgrade account": [
+        "Csomag váltása"
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        "A ${ appName } jelenleg a korai hozzáférés programban érhető el, előfizetéssel rendelkező felhasználóknak."
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        "A ${ appName } jelenleg csak úgy érhető el, ha Béta hozzáférésre vált."
+      ],
+      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+        "Védje meg a fájljait végpontok közti titkosítással. Fájljai biztonságos tárolásához és megosztásához használja a ${ appName } alkalmazást."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Válasszon egy megjelenített nevet"
@@ -3598,29 +3697,7 @@
         "Ezt a beállításoknál bármikor megváltoztathatja."
       ]
     },
-    "Onboarding Proton Drive Action": {
-      "Enable Beta Access": [
-        "Béta hozzáférés engedélyezése"
-      ],
-      "Start using ${ appName }": [
-        "${ appName } használatának megkezdése"
-      ],
-      "Upgrade account": [
-        "Csomag váltása"
-      ]
-    },
-    "Onboarding Proton Drive Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "A ${ appName } jelenleg a korai hozzáférés programban érhető el, előfizetéssel rendelkező felhasználóknak."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "A ${ appName } jelenleg csak úgy érhető el, ha Béta hozzáférésre vált."
-      ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Védje meg a fájljait végpontok közti titkosítással. Fájljai biztonságos tárolásához és megosztásához használja a ${ appName } alkalmazást."
-      ]
-    },
-    "Onboarding Proton Drive Title": {
+    "Onboarding Title": {
       "${ appName } is in Beta": [
         "A ${ appName } jelenleg béta verzió"
       ],
@@ -4088,6 +4165,12 @@
       "Download failed": [
         ""
       ],
+      "Download unverified file?": [
+        "Ellenőrizetlen fájl letöltése?"
+      ],
+      "Download unverified folder?": [
+        "Ellenőrizetlen mappa letöltése?"
+      ],
       "Downloading": [
         "Letöltés"
       ],
@@ -4125,7 +4208,7 @@
         "Lomtár kiürítése"
       ],
       "Enable Drive Search": [
-        "Felhőtárban Keresés Engedélyezése"
+        "Enable drive search"
       ],
       "Enter password to download": [
         ""
@@ -4133,8 +4216,8 @@
       "Enter your password": [
         "Adja meg a jelszavát"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Írja be ${ MAIL_APP_NAME } emailjének felhasználónevét"
       ],
       "Exporting contacts": [
         "Névjegyek exportálása"
@@ -4334,6 +4417,12 @@
       "The link failed to be loaded": [
         "A linket nem sikerült letölteni"
       ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "A fájl aláírása hiányzik vagy hibás. Menjen a Menü (⋮) → Részletek fülbe további információért."
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "A mappa aláírása hiányzik vagy hibás. Menjen a Menü (⋮) → Részletek fülbe további információért."
+      ],
       "Total size": [
         "Teljes méret"
       ],
@@ -4407,8 +4496,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "A rendszer almappák külön mappákként fognak megjelenni a ${ MAIL_APP_NAME }ben"
       ],
       "The import will start with the most recent messages.": [
         ""
@@ -4475,8 +4564,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ha nem emlékszik a jelszavára, lehetetlen újraaktiválni a kulcsot. A figyelmeztetést el lehet végleg tüntetni, de ez esetben véglegesen elveszíti az ezzel a kulccsal titkosított adatai elérésének lehetőségét."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Az élő csevegés egy prémium funkció, ami csak a fizetős ${ VPN_APP_NAME } csomagokban elérhető. Kérjük, nyisson egy jegyet."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         ""

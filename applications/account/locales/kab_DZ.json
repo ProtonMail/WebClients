@@ -214,8 +214,8 @@
       "Copy link": [
         "Nɣel aseɣwen"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Rnu tansa n ProtonMail taɣellsant deg ubdil"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        ""
       ],
       "Create address": [
         "Snulfu-d tansa"
@@ -349,8 +349,8 @@
       "Generate recovery phrase": [
         "Sirrew tafyirt n tririt"
       ],
-      "Get ProtonVPN Plus": [
-        "Awi ProtonVPN Plus"
+      "Get ${ vpnPlus }": [
+        ""
       ],
       "Get started": [
         "Bdu"
@@ -661,8 +661,8 @@
       "Show more": [
         "Beqqeḍ ugar"
       ],
-      "Show shortcuts": [
-        "Sken inegzumen"
+      "Show preview": [
+        ""
       ],
       "sign in": [
         "qqen"
@@ -776,7 +776,7 @@
         "Seqdec tangalt n usesteb s snat n tarrayin"
       ],
       "Use your current email address instead": [
-        "Seqdec tansa n yimayl-ik·im amiran deg umḍiq"
+        ""
       ],
       "Use “${ label }” setting": [
         "Seqdec iɣewwaṛen n “${ label }”"
@@ -1205,7 +1205,7 @@
       "Add link to your email footer": [
         ""
       ],
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ],
       "Copy": [
@@ -2331,7 +2331,7 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Awgelhen akked tektert n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, tzemreḍ ad tmedleḍ tankult-agi n udiwenni."
       ],
-      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
+      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
         ""
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
@@ -2344,7 +2344,7 @@
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         ""
       ],
-      "Track your referral link activities here.": [
+      "You can continue to invite friends, but you wont be able to earn more credits": [
         ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
@@ -2542,9 +2542,6 @@
       ],
       "Calendar limit reached": [
         ""
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Tasarut tagejdant n uwitay ur tettwawgelhen ara"
       ],
       "Can't check username, try again later": [
         "Ur nezmir ara ad nsenqed isem n useqdac, ɛreḍ tikkelt-nniḍen"
@@ -2766,14 +2763,14 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Kra n yismawen n yikaramen-ik·im ulac-iten. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
       ],
-      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Kra n yismawen n ukaram ɛeddan talast tafellayt n yisekkilen n ProtonMail. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Kra n yismawen n tebzimin-inek·inem ulac-iten. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Kra n yismawen n tebzimin ɛeddan talast tafellayt n yisekkilen n ProtonMail. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
@@ -3221,9 +3218,6 @@
       ],
       "Torrenting support (P2P)": [
         "Tadhelt n torrent (P2P)"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "VPN ${ connectionsPluralized }"
       ]
     },
     "file size format": {
@@ -3903,11 +3897,23 @@
       "${ emailAddress } is invalid": [
         ""
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        ""
+      ],
+      "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
+        ""
+      ],
+      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        ""
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } Baṭel"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "Ad yebdu umsadur ${ mailAppName } s yiwen useqdac, yal aseqdac ad yernu 5 GAṬ akked 5 tansiwin n yimayl ɣer umsegraw n tkebbanit."
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
       ],
       "${ n } address": [
         "${ n } tansa",
@@ -3985,6 +3991,16 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Baṭel"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        ""
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "",
+        ""
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        ""
+      ],
       "(${ memberCount } member)": [
         "",
         ""
@@ -4004,9 +4020,9 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } n usekles n ubunus"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } tuqqna i ProtonVPN (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)",
-        "+${ organization.BonusVPN } tuqqniwin i ProtonVPN (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "",
+        ""
       ],
       "1. Invite friends to Proton": [
         ""
@@ -4056,8 +4072,8 @@
       "Account successfully updated": [
         "Aleqqem n umiḍan yemmed"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Rnu tansa n yimayl @pm.me ɣer umiḍan-ik·im. Taɣult-a fessusen, meẓẓiyen anamek-is d \"ProtonMail me\" neɣ \"Private Message me.\""
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        ""
       ],
       "Add a recovery email address": [
         "Rnu tansa imayl n tririt"
@@ -4194,8 +4210,8 @@
       "Basic, Plus or Visionary subscription required": [
         "Deg ujerred azadur, Plus neɣ Visionary yettusra"
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Send ad tizmireḍ ad d-tremseḍ imaylen n taɣult-ik tudmawant di ProtonMail, yessefk ad ternuḍ akalas-agi MX ar iqeddacen DNS. Ayagi yezmer ad yettwag seg ugrudem n tedbelt n umsefrak-ik n yismawen n taɣult."
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        ""
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Uqbel ad tizmireḍ ad tazneḍ neɣ ad teṭṭfeḍ imaylen s tansiwin-ik timaynutin, ilaq ad asent-id-tesnulfuḍ tisura n uwgelhen."
@@ -4263,9 +4279,6 @@
       "Continue with ${ planName }": [
         ""
       ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        ""
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Snulfu-d ${ calendarsToBeCreated } n uwitay amaynut",
         "Snulfu-d ${ calendarsToBeCreated } n yiwitayen imaynuten"
@@ -4282,8 +4295,8 @@
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Rnu udiɣ sefrek imiḍanen isnawanen sakin mudd-asen tansiwin-nsen n yimayl ɣef taɣulit-ik tudmawant."
       ],
-      "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        ""
       ],
       "Create in": [
         "Snulfu-d di"
@@ -4321,8 +4334,8 @@
       "Data locked": [
         ""
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Kkes ikalasen nniḍen MX neq ḍmen d akken amḍan n tezwart n ProtonMail d tameẓyant."
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        ""
       ],
       "Delete link?": [
         "Kkes aseɣwen?"
@@ -4336,8 +4349,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Ur Sruḥuy ara awal-agi uffir. Ma tesruḥeṭ, ur tettizmireḍ ara ad tkecmed neɣ tzemkeḍ iznan-ik."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Ur seqdac ara inekcam n OpenVPN / IKEv2 deg yisnasen n ProtonVPN neɣ ɣef tfelwit n usenqed ProtonVPN. ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        ""
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Tebɣiḍ ad tekkseḍ akk tiɣimiyin yezrin tagi?"
@@ -4355,8 +4368,8 @@
       "Done! We sent a code to ${ destination }.": [
         ""
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "Asader deg lqem ad iseḥbes akk tuqqniwin ɣer yiqeddacen s lexlaṣ n ProtonVPN."
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        ""
       ],
       "Download recovery file": [
         "Sader afaylu n tririt"
@@ -4511,8 +4524,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ma ur tufiḍ ara imayl deg tnaka n urmas, ttxil-k/m wali deg ukaram n ispamen."
       ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Ma yella tesεiḍ taɣult tudmawant s ProtonMail, tzemreḍ ad tesbaduḍ tansa n yimayl n tuṭṭfa kullec ara d-iremsen iznan yettwaznen ɣer taɣult-ik·im, maca tansa n yimayl tarameɣtut (am., ma tili tuccda deg tira)."
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        ""
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Ma yella tesεiḍ tangalt n usefk, sekcem-itt ddaw i wakken ad yettwasnas asenqes-inek·inem."
@@ -4532,14 +4545,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Ma tesruḥeḍ ibenk-ik n usesteb s snat n tarrayin, tingalin-agi zemren-t ad ttwasqedcent i tuqqna ar ulmiḍan-ik deg umdiq n tingalin n 6 n iwzilen. Yal tangalt ad tettwaseqdec kan yiwet n tikkelt."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Ma tkemmleḍ deg usader deg lqem, ad tesruḥeḍ anekcum ɣer tmahilin s lexlaṣ n ProtoMail d ProtoVPN."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        ""
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Ma tkemmleḍ deg usader n lqem, ad tesruḥeḍ anekcum ɣer tmahilin s lexlaṣ n ProtoMail, ula d aklas d yimsizdigen imernan."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        ""
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Ma tkemmleḍ deg usader n lqem, ad tesruḥeḍ anekcum ɣer tmahilin s lexlaṣ n ProtoVPN."
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        ""
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         ""
@@ -4660,8 +4673,8 @@
       "Large imports can take several days.": [
         "Tektert tameqrant tezmer ad teṭṭef aṭas n wussan."
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Issin amek ara teqqneḍ ɣer ProtonVPN s yisnasen VPN n wis kraḍ."
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        ""
       ],
       "Learn more": [
         "Issin ugar"
@@ -4696,7 +4709,7 @@
       "Loading preview": [
         "Asali n teskant"
       ],
-      "Log in to ProtonMail to activate your address": [
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
         ""
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
@@ -4807,8 +4820,8 @@
       "One account for all Proton services": [
         "Yiwen n umiḍan i meṛṛa imeẓla n Proton"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Beddel iɣewwaren-agi ma yella tseqdaceḍ PGP akked iɣerwaḍen ur nseqdac ara ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        ""
       ],
       "Only you can see the labels.": [
         "Ala kečč·kemm i izemren ad iwali tibzimin."
@@ -4943,28 +4956,6 @@
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton ad yeεreḍ ad ikemmel aktar akken kan ara iwennez usaǧǧaw n yimayl-ik·im ${ bandwithLimitLink } amiḍan-ik·im. Ur teḥwaǧeḍ ad tgeḍ kra. Ma yella tesfesxeḍ aktar-inek·inem, ur tezmireḍ ara ad t-tkemmleḍ, ilaq ad as-d-tεawdeḍ seg tazwara."
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMail yezmer daɣen ad yettwaseqdec s yiwen kan n wawal uffir ara yemselsin win n tuqqna d win n tnaka n urmas. Akken ad tuɣaleḍ ar uskar n yiwen n wawal uffir, sekcem awal uffir i tebɣid ad tesqedceḍ sakin sit ɣef Sekles."
-      ],
-      "ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        "ProtonMail ad k•kem-yeǧǧ ad d-tesnulfuḍ tansiwin imayl i yimdanen-nniḍen. Ayagi yelha i umahil, tiwaculin, neɣ igraen."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus yesεa talast ɣer yiwen useqdac, ibeddu s 5 GAṬ n uklas."
-      ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail issefrak izmulen DKIM i tɣula tudmawanin. Akken ad tesqedceḍ asesteb DKIM, rnu ma ulac aɣilif akalas-agi CNAME ar iɣewwaṛen DNS inek i taɣlut-agi. Ayagi yezmer ad yettwag deg ugalis n usenqed n taɣult-ik deg usmel anida i teskelseḍ iqem n taɣult."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN Plus ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } deg-s ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } tuqqa VPN.",
-        "ProtonVPN Plus ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } deg-s ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } tuqqniwin VPN."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "ProtonVPN, Plus neɣ Visionary yettwasra i tuqqna ɣer iqeddacen n tmura."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "ProtonVPN neɣ Visionary yesra tawuri Secure Core."
-      ],
       "Public link invite": [
         ""
       ],
@@ -5073,10 +5064,7 @@
       "Some keys successfully reactivated": [
         "Kra n tsura ulsent asermed akken iwata"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF ittuseqdac i tumla n wid izemren ad yazen imayl i taɣult, ihi, ad k-nwelleh ad tsedduḍ ProtonMail deg ukalas SPF. Akken ad teggeḍ aya, rnu akalas TXT di twila-ik DNS. Abeddel-agi yezmer ad yettwag deg ugalis n usenqed n taɣulut-ik n umsefrak n yismawen n taɣult."
-      ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         ""
       ],
       "Starter VPN service with P2P support.": [
@@ -5130,8 +5118,8 @@
       "The name will be visible to your users while they are logged in.": [
         "Isem ad d-yettban i yiseqdacen-ik•im mi ara qqnen."
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Ifuyla-agi n twila ad k•m ǧǧen ad tferneḍ anwa aqeddac n ProtonVPN iɣer ara teqqneḍ mi ara tesqedceḍ asnas VPN n wis kraḍ neɣ ad tesbaduḍ tuqqna VPN ɣef umeglay."
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        ""
       ],
       "This 30-day free trial is not available any other way.": [
         ""
@@ -5238,8 +5226,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         ""
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Akken ad terreḍ tuqqna-inek•m ɣer internet d taɣelsant, sader yerna sbedd asnas ProtonVPN i yibenk-inek sakin qqen ɣer uqeddac ProtonVPN."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        ""
       ],
       "To use ${ toAppName }, please create an address.": [
         ""
@@ -5298,8 +5286,8 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         ""
       ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Sali aswir ɣer lqem n lexlaṣ akken ad tekkseḍ asekkeṛ i tedhelt n IMAP/SMTP s ttawil n ProtonMail Bridge."
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
@@ -5316,8 +5304,8 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Seqdec tiririyin tiwurmanin i wakken ad telɣuḍ inermisen mačči deg lbiru i telliḍ neɣ ur tezmireḍ ara ad terreḍ."
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Seqdec inekcam-agi mi aran ad teqqneḍ ɣer yiqeddacen ProtonVPN s war asnas. Am useqdec deg yimedyaten-a: Tunnelblick di MacOS neɣ OpenVPN di GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        ""
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         ""
@@ -5349,8 +5337,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Γur-k·m: tukksa d timezgit. Aya ad yekkes daɣen anekcum ɣer meṛṛa imeẓla yettwaqqnen akked meṛṛa inermisen-ik·im."
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Ad k•m-nsemter akken ad tesqedceḍ isnasen unṣiben n ProtonVPN melmi tzemreḍ."
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        ""
       ],
       "We recommend using your recovery phrase instead.": [
         ""
@@ -5394,8 +5382,8 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Mi ara yettusens, aya ad issewḥel ifuyla n tugniwin ad d-alin deg yibenk-ik·im s war ma teẓriḍ."
       ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Ticki remden ilɣa, ad k-nazen tangedwit ɣer tansa-inek n ilɣa/tangedwit ticki teṭṭfeḍ-d iznan imaynutn deg umiḍan-inek ProtonMail."
+      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
+        ""
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         ""
@@ -5427,9 +5415,6 @@
       "You are about to open another browser tab and visit:": [
         "Atan ad teldiḍ iccer-nniḍen n iminig sakin ad terzuḍ ɣer:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Aql-ak.kem teqqneḍ s yisem ${ user.Name } (${ user.Email }) yerna anekcum-ik.im yettwagdel."
-      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         ""
       ],
@@ -5457,11 +5442,11 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Tzemreḍ ad tremdeḍ ilɣuyen i wakken ad teṭṭfeḍ alɣu mi ara d-awwḍen yiznan imaynuten deg ukaram-a."
       ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Tzemreḍ ad tesqedceḍ ProtonMail akked yal amsaɣ n yimayl n tnarit issefraken IMAP/SMTP, ula akked Outlook, Apple Mail d Thunderbird."
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        ""
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Tzemreḍ ad tesqedceḍ inekcam-agi n tuqqna akken ad teqqneḍ ɣer uqeddac n ProtonVPN, s useqdec n usnas VPN n wis kraḍ, n uɣbalu yeldin, akka am Tunnelblick i macOS neɣ OpenVPN i GNU/Linux."
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        ""
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         ""
@@ -5469,8 +5454,8 @@
       "You cannot refer ${ appName } users": [
         ""
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Ur tezmireḍ ara ad tesqedceḍ inekcam n tuqqna n OpenVPN / IKEv2 akken adteqqneḍ ɣer yisnasen n ProtonVPN neɣ ɣer tfelwit n tedbelt n ProtonVPN. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        ""
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ur tesbaduḍ ara tarayt n tririt, tiririt n umiḍan-inek•inem ur tezmir ara ad d-ḍru ma yella tettuḍ awal-ik•im uffir. Tebɣiḍ ad tkemmleḍ s war tarayt n tririt?"
@@ -5481,8 +5466,8 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Yessefk ad tremdeḍ tasarut-ik tusligt n tuddsa s wawal uffir n tsarut n tuddsa n usḥraz i d-yefka unedbal n tuddsa-ik."
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "Yessefk ad tessenseḍ neɣ ad tekkseḍ akk iseqdacen imernan n ProtoMail, tansiwin, d taɣulin tudmawanin send ad tessadreḍ deg lqem."
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Yessefk ad tesɛuḍ takarḍa n usmad neɣ amiḍan n tbanka yeqqnen akked umiḍan-inek/m PayPal akken ad ternuḍ tarrayt n uxelleṣ."
@@ -5532,6 +5517,9 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Amiḍan-ik·im ${ BRAND_NAME } icudd ɣer ${ externalEmailAddress }. I useqdec n ${ toAppName }, ttxil-k·m rnu tansa."
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        ""
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ad yesɛu talast. ${ payInvoiceLink }"
       ],
@@ -5565,9 +5553,6 @@
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
-      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         ""
       ],
@@ -5591,9 +5576,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Amiḍan-inek/m Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek/m, ttxil-k/m xelleṣ tifaturin yellan."
-      ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Imiḍanen-ik·im ProtonVPN d ProtonMail ttwacudden. I wakken ad ten-tekkseḍ i sin, ttxil-k·m kcem ɣer ${ loginLink } syen kkes amiḍan-ik·im dinna."
       ],
       "Your recovery email address:": [
         "Tansa-inek·inem n yimayl n tririt:"
@@ -5631,11 +5613,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        ""
+      ],
       "Customizable features": [
         "Timahilin ara ttusagnen"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail ur yettwaseqdac ara i tuzna n yimaylen s uqettun neɣ ispamen. Ulac talast di tuzna n yimaylen izerfanen."
       ]
     },
     "Info for cash payment method": {
@@ -6012,11 +5994,13 @@
       " and ${ l }": [
         " akked ${ l }"
       ],
-      "${ monthsRewarded } month credited": [
-        "",
+      "${ MAIL_APP_NAME } address": [
         ""
       ],
-      "${ monthsRewarded } month pending": [
+      "${ MAIL_APP_NAME } footer": [
+        ""
+      ],
+      "${ monthsRewarded } month credited": [
         "",
         ""
       ],
@@ -6123,9 +6107,6 @@
       "Calendars": [
         "Iwitayen"
       ],
-      "Cancel": [
-        "Sefsex"
-      ],
       "Card holder": [
         "Bab n tkarḍa"
       ],
@@ -6162,6 +6143,9 @@
       "Conditions": [
         "Tiwtilin"
       ],
+      "Confirm link URLs": [
+        ""
+      ],
       "Confirm login password": [
         "Sentem awal uffir n tuqqna"
       ],
@@ -6197,6 +6181,9 @@
       ],
       "Country": [
         "Tamurt"
+      ],
+      "Credits pending": [
+        ""
       ],
       "Credits used": [
         "Asmad yettwasqedcen"
@@ -6411,9 +6398,6 @@
       "Last month only": [
         "Ayyure-nni kan ineggura"
       ],
-      "Link confirmation": [
-        "Aseɣwen n usentem"
-      ],
       "Login password": [
         "Awal uffir n tuqqna"
       ],
@@ -6552,12 +6536,6 @@
       "Proton username": [
         "Isem n useqdac Proton"
       ],
-      "ProtonMail address": [
-        "Tansa n ProtonMail"
-      ],
-      "ProtonMail footer": [
-        "Aqerru n ProtonMail"
-      ],
       "Read": [
         "Ɣeṛ"
       ],
@@ -6624,8 +6602,8 @@
       "Statement": [
         "Tuttra"
       ],
-      "Submit": [
-        "Azen"
+      "Sticky labels": [
+        ""
       ],
       "Subtotal": [
         "Adasemday"
@@ -6692,9 +6670,6 @@
       ],
       "Use folder colors": [
         "Seqdec initen n ukaram"
-      ],
-      "Use sticky labels": [
-        "Seqdec tibzimin tiwurmanin"
       ],
       "User": [
         "Aseqdac"
@@ -6784,8 +6759,8 @@
       ]
     },
     "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Rnu taɣult i tesɛiḍ ar umiḍan-ik ProtonMail."
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        ""
       ]
     },
     "Label for domain modal": {
@@ -7128,12 +7103,6 @@
     "Many Others": {
       "and many others": [
         "d wayen-nniḍen"
-      ]
-    },
-    "Max VPN Connections": {
-      "Connection": [
-        "Tuqqna",
-        "Tuqqniwin"
       ]
     },
     "Member action": {
@@ -8548,6 +8517,9 @@
       "${ appName } Keyboard Shortcuts": [
         "${ appName } n yinegzumen n unasiw"
       ],
+      "${ MAIL_APP_NAME } Bridge": [
+        ""
+      ],
       "(highly recommended)": [
         "(yettuwelleh s waṭas)"
       ],
@@ -8716,9 +8688,6 @@
       "Change password": [
         "Snifel awal uffir"
       ],
-      "Change password for ${ Name } (${ Email })": [
-        "Beddel awal-ik uffir i ${ Name } (${ Email })"
-      ],
       "Change role": [
         "Beddel alugan"
       ],
@@ -8730,6 +8699,9 @@
       ],
       "Clear": [
         "Teṣfa"
+      ],
+      "Composing": [
+        ""
       ],
       "Confirm address": [
         "Sentem tansa"
@@ -8899,9 +8871,6 @@
       "Email subscriptions": [
         "Ijerriden s yimayl"
       ],
-      "Enable keyboard shortcuts": [
-        "Fren inegzumen n unasiw"
-      ],
       "Encryption and keys": [
         ""
       ],
@@ -8941,8 +8910,8 @@
       "Generate new recovery phrase?": [
         ""
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Awi-d ProtonVPN Plus akken ad tkecmeḍ akk iqeddacen"
+      "Get ${ vpnPlus } to access all servers": [
+        ""
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
@@ -8999,6 +8968,9 @@
       "Invoices": [
         "Tifaṭurin"
       ],
+      "Keyboard shortcuts": [
+        ""
+      ],
       "Labels": [
         "Tibzimin"
       ],
@@ -9016,6 +8988,9 @@
       ],
       "Messages": [
         "Iznan"
+      ],
+      "Messages and composing": [
+        ""
       ],
       "Multi-user support": [
         "Tallelt n ddeqs n iseqdacen"
@@ -9055,9 +9030,6 @@
       ],
       "Organization and keys": [
         "Tuddsa akked tsura"
-      ],
-      "Other": [
-        "Ayen-nniḍen"
       ],
       "Password": [
         "Awal ufir"
@@ -9106,12 +9078,6 @@
       ],
       "Proton Logo": [
         "Alugu n Proton"
-      ],
-      "ProtonMail Bridge": [
-        "Tiqenṭert ProtonMail"
-      ],
-      "ProtonVPN": [
-        "ProtonVPN"
       ],
       "Reconnect your account": [
         "Ales tuqqna ɣer umiḍan-ik·im"
@@ -9272,7 +9238,7 @@
       "Total (monthly)": [
         "Amatu(monthly)"
       ],
-      "Try the best of ProtonMail for free": [
+      "Try the best of ${ MAIL_APP_NAME } for free": [
         ""
       ],
       "Two-factor authentication": [
@@ -9353,8 +9319,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "Tafaturt ProtonMail"
+      "${ MAIL_APP_NAME } invoice": [
+        ""
       ]
     },
     "Title header": {
@@ -9419,6 +9385,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        ""
+      ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Kcem ɣer ugbur yettwagedlen sɣur timura (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, You Tube, atg) anda tebɣuḍ tiliḍ."
       ],
@@ -9458,11 +9427,11 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Armad n yiɣmisen leqqayen isseklas tansa n IP i yal tadyant deg uɣmis n tɣellist."
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Kcem ɣer tmahilin akk s lexlaṣ n ${ vpnAppName } d ${ mailAppName } i sin (ameẓlu n yimayl awgelhan i seqdacen yimelyan n yiseqdacen akken ad ḥerzen isefka-nsen) s yiwen n uɣawas."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Kcem ɣer tmahilin akk s lexlaṣ n ProtoVPN d ProtoMail i sin (ameẓlu n yimayl awgelhan i seqdacen yimelyan n yiseqdacen akken ad ḥerzen isefka-nsen) s yiwen n uɣawas."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Imaylen n ugraw deg udiwenni-nni kan akken akk deg tbewwaḍt-ik·im n yimaylen neɣ sken-iten-id yal yiwen weḥds."
@@ -9478,9 +9447,6 @@
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield ad yemmesten ibenk-inek·inem yerna ad yerr iminig-ik·im ad iteddu s zzerb s usewḥel n udellel, imakaren d yir yiseɣẓanen."
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "Iseqdacen n ProtonMail ad sqedcen tasarut-agi s lexṣas i tuzzna"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Azen timahilin-ik•im n internet s useqdec n uẓeḍḍa Tor s yiwen n usiti."
@@ -9503,8 +9469,8 @@
       "Support for file sharing protocols such as BitTorrent.": [
         "Tadhelt i yineggafen n beṭṭu n yifuyla am BitTorrent."
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Idukaramen n unagraw ad ttwabeqqeḍen s talɣa n yikaramen iberzen di ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        ""
       ],
       "The import will start with the most recent messages.": [
         "Aktar ad yebdu seg yiznan n melmi kan."
@@ -9551,14 +9517,14 @@
       "You have locally decrypted this key": [
         "Tewglehneḍ tasarut-agi s wudem adigan"
       ],
+      "Your ${ MAIL_APP_NAME } inbox is almost full": [
+        ""
+      ],
       "Your DKIM signing is working.": [
         "Azmul-inek·inem DKIM iteddu."
       ],
       "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
         "Amiḍan-ik·im azɣaray yezmer ad yessaweḍ talast n tehri-ines n 24 yisragen. Proton ad yeεreḍ ad ikemmel aktar s zzerb."
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "Tabewwaḍt-ik·im n ymayl ProtonMail qrib ad teččar"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -9567,13 +9533,13 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Fren iɣewwaren PGP imezwer yettusqedcen i usezmel neɣ i uwgelhen n yiznan akked yiseqdacen PGP ur nseqdac ara ProtonMail. Ẓer belli Inline PGP yettḥettim iznan s uḍris aččuran. Issin ugar"
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        ""
       ]
     },
     "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Mi ara d yettwaṭṭaf yimayl sɣur useqdac-nniḍen n ProtonMail ur nesεi ara tisura yettwaḍmanen deg yinermisen-ik·im, ad yili uɣarrac ara ak·am-d-isutren ma yella tebɣiḍ ad tremdeḍ tisura n uḍman."
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        ""
       ]
     },
     "Tooltip sign external messages": {
@@ -9641,9 +9607,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
       "30-days money-back guarantee": [
         "Aɣram ɣef 30 n wussan yettwaḍmen"
       ],
@@ -9827,8 +9790,8 @@
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "Ma yella tesfesxeḍ aktar-a, ur tettizmireḍ ara ad tuɣaleḍ ɣur-s. Proton iseklas akk inerniyen deg umiḍan-ik·im. Ɣas akken ad tesfesxeḍ?"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Adiwenni srid d tamahilt premium yellan kan i yiɣawasen ProtonVPN n lexlaṣ. Ma ulac aɣilif, ldi atiki deg ubdil."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        ""
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ttxil-k·m ẓer belli s ufran n tarrayt-a n uxelleṣ, amiḍan-ik·im ur nezmir ara ad t-nleqqem din din. Ad nleqqem amiḍan-ik·im akken ara yettwag uxelleṣ."
@@ -9848,8 +9811,8 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         ""
       ],
-      "This feature is only available for ProtonMail Professional plans or higher": [
-        "Tamahilt-agi tella kan i ticki n ProtonMail Professional neɣ ugar"
+      "This feature is only available for ${ mailProfessional } plans or higher": [
+        ""
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Akter-a izmer ad iεeddi tallunt n usekles i yellan akka tura deg umiḍan-inek·inem Proton. ttxil fren ayen ara tketreḍ."

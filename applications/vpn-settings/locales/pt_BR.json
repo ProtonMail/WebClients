@@ -178,11 +178,11 @@
       "enable desktop notifications": [
         "habilitar notificações na área de trabalho"
       ],
+      "Get ${ vpnPlus }": [
+        "Obter ${ vpnPlus }"
+      ],
       "Get a new password": [
         "Obter uma nova senha"
-      ],
-      "Get ProtonVPN Plus": [
-        "Obter ProtonVPN Plus"
       ],
       "Get started": [
         "Comece"
@@ -330,6 +330,9 @@
       ],
       "Show info": [
         "Mostrar informação"
+      ],
+      "Show preview": [
+        "Mostrar pré-visualização"
       ],
       "Sign out": [
         "Encerrar sessão"
@@ -689,8 +692,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Continuar usando ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Continuar usando ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar feature": {
@@ -1924,8 +1927,8 @@
       "Kill switch to prevent IP exposure": [
         "Kill switch para prevenir a exposição do IP"
       ],
-      "Laptop & smartphone shown connected to ProtonVPN network.": [
-        "Notebook e smartphone são exibidos conectados na rede ProtonVPN."
+      "Laptop & smartphone shown connected to ${ VPN_APP_NAME } network.": [
+        "Notebook e smartphone são exibidos conectados na rede ${ VPN_APP_NAME }."
       ],
       "No logs": [
         "Sem registros"
@@ -1944,11 +1947,17 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "O ${ MAIL_APP_NAME } também pode ser usado com uma única senha que substituí as senhas de acesso e da caixa de correio. Para mudar para o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } Gratuito"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional inicia com um usuário, e cada usuário adiciona 5 GB e 5 endereços de e-mail para o pool da organização."
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        "O ${ mailPlus } está limitado a um usuário e começa com 5 GB de armazenamento."
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "O ${ mailProfessional } inicia com um usuário, e cada usuário adiciona 5 GB e 5 endereços de e-mail para o pool da organização."
       ],
       "${ number } city": [
         "${ number } cidade",
@@ -1973,6 +1982,16 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Gratuito"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        "O ${ vpnBasic }, ${ vpnPlus } ou ${ visionary } é necessário para conexão ao nível do país."
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "",
+        ""
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        "É necessário o plano ${ vpnPlus } ou ${ visionary } para usar o recurso Secure Core."
+      ],
       "(Mail + VPN)": [
         "(E-mail + VPN)"
       ],
@@ -1982,9 +2001,9 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de armazenamento bônus"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } conexão para ProtonVPN (permite que você conecte mais dispositivos à VPN)",
-        "+${ organization.BonusVPN } conexões para ProtonVPN (permite que você conecte mais dispositivos à VPN)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } conexão para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos à VPN)",
+        "+${ organization.BonusVPN } conexões para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos à VPN)"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto de 20% na sua assinatura com o cupom ${ code }"
@@ -2097,8 +2116,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "NÃO se esqueça da sua senha. Se você a esquecê-la, você não será capaz de iniciar a sessão ou descriptografar suas mensagens."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Não utilize as credenciais OpenVPN / IKEv2 nos aplicativos ou no painel do ProtonVPN. ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        ""
       ],
       "Domains": [
         "Domínios"
@@ -2106,8 +2125,8 @@
       "Done! We sent a code to ${ destination }": [
         "Pronto! Enviamos um código para ${ destination }"
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "O downgrade irá encerrar qualquer conexão com servidores pagos do ProtonVPN."
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "O downgrade irá encerrar qualquer conexão com servidores pagos do ${ VPN_APP_NAME }."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
@@ -2160,14 +2179,14 @@
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa com velocidade de até 10 Gbps."
       ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obtenha acesso a todos os recursos pagos tanto do ProtonVPN quanto do ProtonMail (o serviço de e-mail criptografado que milhões de pessoas usam para proteger seus dados) com um único plano."
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Tenha acesso a todos os recursos pagos para ambos ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } (o serviço de e-mail criptografado que milhões de pessoas usam para proteger seus dados) com um único plano."
       ],
       "here": [
         "aqui"
       ],
-      "If you are a ProtonMail user you can use your Proton account to log in to ProtonVPN.": [
-        "Se você já é um usuário do ProtonMail, você pode usar sua conta Proton para entrar no ProtonVPN."
+      "If you are a ${ MAIL_APP_NAME } user you can use your Proton account to log in to ${ VPN_APP_NAME }.": [
+        ""
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
@@ -2190,14 +2209,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Se você perder seu dispositivo habilitado para dois fatores, esses códigos podem ser usados ​​em vez do código de autenticação de dois fatores de 6 dígitos para fazer login em sua conta. Cada código só pode ser usado uma vez."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Ao continuar com o downgrade, você perderá o acesso aos recursos pagos do ProtonMail e ProtonVPN."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "Ao continuar com o downgrade, você perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Ao continuar com o downgrade, você perderá acesso aos recursos pagos do ProtonMail, incluindo armazenamento adicional e filtros."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "Ao continuar com o downgrade, você perderá acesso aos recursos pagos do ${ MAIL_APP_NAME }, incluindo armazenamento adicional e filtros."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Ao continuar com o downgrade, você perderá o acesso aos recursos pagos do ProtonVPN."
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "Ao continuar com o downgrade, você perderá o acesso aos recursos pagos do ${ VPN_APP_NAME }."
       ],
       "If you remember your old password later, you can recover your existing messages.": [
         "Caso você lembre da sua senha antiga, você poderá recuperar as mensagens existentes."
@@ -2244,8 +2263,8 @@
       "Keep this password safe, it cannot be recovered.": [
         "Mantenha esta senha segura -- ela não pode ser recuperada."
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Saiba como fazer login no ProtonVPN com aplicativos de VPN de terceiros."
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Saiba como fazer login no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
       ],
       "Loading": [
         "Carregando"
@@ -2256,8 +2275,8 @@
       "Loading preview": [
         "Carregamento de visualização"
       ],
-      "Log in to ProtonMail to activate your address": [
-        "Inicie a sessão no ProtonMail para ativar seu endereço"
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
+        ""
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
         ""
@@ -2346,22 +2365,6 @@
       "Proton can't help you recover any lost passwords.": [
         "Proton não pode ajudá-lo a recuperar nenhuma senha perdida."
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "O ProtonMail também pode ser usado com uma única senha que substitui as senhas de acesso e da caixa de correio. Para mudar para o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "O ProtonMail Plus está limitado a um usuário e começa com 5 GB de armazenamento."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "O ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } inclui ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } conexão de VPN.",
-        "O ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } inclui ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } conexões de VPN."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "O ProtonVPN Basic, Plus ou Visionary é necessário para conexão ao nível do país."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "É necessário o plano ProtonVPN Plus ou Visionary para usar o recurso Secure Core."
-      ],
       "read our two-factor authentication Guide first": [
         "leia nosso guia de autenticação de dois fatores primeiro"
       ],
@@ -2371,8 +2374,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
-      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "Redefinindo sua senha irá redefinir suas chaves de criptografia para todos os serviços relacionados ao Proton (E-mail e VPN). Você não será mais capaz de ler suas mensagens existentes. Se você sabe suas credenciais do ProtonMail, NÃO redefina. Você pode entrar com elas ${ hereLink }."
+      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        "Redefinindo sua senha irá redefinir suas chaves de criptografia para todos os serviços relacionados ao Proton (E-mail e VPN). Você não será mais capaz de ler suas mensagens existentes. Se você sabe suas credenciais do ${ MAIL_APP_NAME }, NÃO redefina. Você pode entrar com elas ${ hereLink }."
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Envie todo o seu tráfego na Internet através da rede Tor com um único clique."
@@ -2440,8 +2443,8 @@
       "Thank you for supporting our mission.": [
         "Obrigado por apoiar a nossa missão."
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Estes arquivos de configuração permitem escolher qual servidor ProtonVPN será conectado ao usar um aplicativo de VPN de terceiros ou ao configurar uma conexão de VPN em um roteador."
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Estes arquivos de configuração permitem escolher qual servidor ${ VPN_APP_NAME } será conectado ao usar um aplicativo de VPN de terceiros ou ao configurar uma conexão de VPN em um roteador."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
@@ -2482,8 +2485,8 @@
       "To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.": [
         "Para evitar abusos, verifique se você é humano. Por favor, não feche esta guia até que você tenha verificado sua conta."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Para proteger a sua conexão de internet, baixe e instale o aplicativo ProtonVPN no seu dispositivo e conecte a um servidor ProtonVPN."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        "Para proteger a sua conexão de internet, baixe e instale o aplicativo ${ VPN_APP_NAME } no seu dispositivo e conecte a um servidor ${ VPN_APP_NAME }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue sua conta com créditos que podem ser utilizados para assinar um novo plano ou renovar seu plano atual. Você recebe um crédito a cada ${ i18nCurrency } gasto."
@@ -2518,8 +2521,8 @@
       "Upgrade now": [
         "Fazer upgrade agora"
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use as credenciais a seguir ao se conectar aos servidores ProtonVPN sem o aplicativo. Exemplos: Tunnelblick no macOS, OpenVPN no GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Use as credenciais a seguir ao se conectar aos servidores ${ VPN_APP_NAME } sem o aplicativo. Exemplos: Tunnelblick no macOS, OpenVPN no GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use seu próprio domínio personalizado de e-mail, por exemplo você@seunome.com"
@@ -2542,8 +2545,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Aviso: a exclusão é permanente. Isso também remove o acesso a todos os serviços conectados e exclui todos os seus contatos."
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Recomendamos usar os aplicativos oficiais do ProtonVPN quando possível."
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        "Recomendamos usar os aplicativos oficiais do ${ VPN_APP_NAME } quando possível."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Usamos o 3-D Secure para proteger os seus pagamentos."
@@ -2587,17 +2590,17 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Você só pode ter uma instância de chat aberta por vez. Feche as conversas anteriores antes de iniciar uma nova."
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Você pode usar as credenciais a seguir para se conectar a um servidor ProtonVPN usando um aplicativo de VPN de código aberto de terceiros, como Tunnelblick para macOS ou OpenVPN para GNU/Linux."
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Você pode usar as credenciais a seguir para se conectar a um servidor ${ VPN_APP_NAME } usando um aplicativo de VPN de código aberto de terceiros, como Tunnelblick para macOS ou OpenVPN para GNU/Linux."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Não é possível utilizar as credenciais do OpenVPN/IKEv2 para fazer login nos aplicativos do ProtonVPN ou no painel do ProtonVPN. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Não é possível utilizar as credenciais do OpenVPN/IKEv2 para fazer login nos aplicativos do ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You have no saved payment methods.": [
         "Você não tem uma opção de pagamento salva."
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "Você deve desativar ou remover qualquer usuário adicional do ProtonMail, endereços e domínios personalizados antes de poder fazer o downgrade."
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "Você deve desativar ou remover qualquer usuário adicional do ${ MAIL_APP_NAME }, endereços e domínios personalizados antes de poder fazer o downgrade."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal para que possa ser adicionada como método de pagamento."
@@ -2619,6 +2622,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Em breve você será redirecionado para o PayPal para verificação do pagamento."
+      ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        "Suas contas do ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicie a sessão em ${ loginLink } e exclua sua conta lá."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. Seu acesso foi restringido. ${ payInvoiceLink }"
@@ -2656,9 +2662,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Sua conta Proton está atualmente suspensa. Para continuar usando sua conta, pague as faturas pendentes."
       ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Suas contas do ProtonVPN e ProtonMail estão vinculadas. Para excluir ambas, inicie a sessão em ${ loginLink } e exclua sua conta lá."
-      ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Sua assinatura é gerenciada pela Mozilla. Por favor, entre em contato com o suporte da Mozilla."
       ],
@@ -2672,11 +2675,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        "O ${ MAIL_APP_NAME } não pode ser usado para e-mails em massa ou \"spam\". E-mails legítimos são ilimitados."
+      ],
       "Customizable features": [
         "Recursos personalizáveis"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "O ProtonMail não pode ser usado para e-mails em massa ou \"spam\". E-mails legítimos são ilimitados."
       ]
     },
     "Info for cash payment method": {
@@ -2754,6 +2757,9 @@
       ]
     },
     "Label": {
+      "${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } endereço"
+      ],
       "${ n } VPN connection available": [
         "${ n } Conexão VPN disponível",
         "${ n } Conexões VPN disponíveis"
@@ -2983,9 +2989,6 @@
       "Proton username": [
         "Nome de usuário Proton"
       ],
-      "ProtonMail address": [
-        "Endereço do ProtonMail"
-      ],
       "Recovery email address": [
         "Endereço de e-mail de recuperação"
       ],
@@ -3040,8 +3043,8 @@
       "Username": [
         "Nome de usuário"
       ],
-      "Username or ProtonMail address": [
-        "Nome de usuário ou endereço do ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Nome de usuário ou ${ MAIL_APP_NAME } endereço"
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
         "Usando ${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -3681,6 +3684,12 @@
       ]
     },
     "Plan Feature": {
+      "${ mailPlus } account": [
+        "Conta ${ mailPlus }"
+      ],
+      "${ mailVisionary } account": [
+        "Conta ${ mailVisionary }"
+      ],
       "All advanced security features": [
         "Todos os recursos avançados de segurança"
       ],
@@ -3698,12 +3707,6 @@
       ],
       "Medium speed": [
         "Velocidade média"
-      ],
-      "ProtonMail Plus account": [
-        "Conta do ProtonMail Plus"
-      ],
-      "ProtonMail Visionary account": [
-        "Conta ProtonMail Visionary"
       ],
       "Streaming service support": [
         "Suporte de serviço de streaming"
@@ -3913,6 +3916,12 @@
       "${ title } plan details": [
         "Detalhes do plano ${ title }"
       ],
+      "${ VPN_APP_NAME } clients": [
+        "${ VPN_APP_NAME } clientes"
+      ],
+      "${ VPN_APP_NAME } plan comparison": [
+        ""
+      ],
       "1. Select platform": [
         "1. Selecione a plataforma"
       ],
@@ -4066,8 +4075,8 @@
       "Enter your password": [
         "Digite sua senha"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Digite seu nome de usuário ou o endereço de e-mail do ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Insira seu nome de usuário ou endereços de e-mail${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Erro"
@@ -4078,8 +4087,8 @@
       "General": [
         "Geral"
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Obtenha o ProtonVPN Plus para acessar todos os servidores"
+      "Get ${ vpnPlus } to access all servers": [
+        "Obtenha o ${ vpnPlus } para acessar todos os servidores"
       ],
       "Gift code": [
         "Código do vale-presente"
@@ -4173,12 +4182,6 @@
       ],
       "Processing...": [
         "Processando..."
-      ],
-      "ProtonVPN clients": [
-        "Clientes ProtonVPN"
-      ],
-      "ProtonVPN plan comparison": [
-        "Comparação de plano ProtonVPN"
       ],
       "Provide payment details": [
         "Fornecer detalhes do pagamento"
@@ -4301,8 +4304,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "Fatura do ProtonMail"
+      "${ MAIL_APP_NAME } invoice": [
+        ""
       ]
     },
     "Tooltip": {
@@ -4321,11 +4324,11 @@
       "Discount applied for two-year billing cycle": [
         "Desconto aplicado para o ciclo de faturamento de dois anos"
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Tenha acesso a todos os recursos pagos para ambos ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } (o serviço de e-mail criptografado que milhões de pessoas usam para proteger seus dados) com um único plano."
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Tenha acesso a todos os recursos pagos para ambos ${ vpnAppName } e ${ mailAppName } (o serviço de e-mail criptografado que milhões de pessoas usam para proteger seus dados) com um único plano."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tenha acesso a todos os recursos pagos tanto do ProtonVPN quanto do ProtonMail (o serviço de e-mail criptografado que milhões de pessoas usam para proteger seus dados) com um único plano."
       ],
       "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
         "Se você esquecer sua senha, você não terá mais acesso à sua conta ou aos seus dados. Por favor, salve a senha em um lugar seguro."
@@ -4333,8 +4336,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um vale-presente ou recebeu um de nossa equipe de suporte, você pode inserir o código aqui."
       ],
-      "Includes ProtonMail encrypted email with all features": [
-        "Inclui o e-mail criptografado do ProtonMail com todos os recursos"
+      "Includes ${ MAIL_APP_NAME } encrypted email with all features": [
+        "Inclui o e-mail criptografado do ${ MAIL_APP_NAME } com todos os recursos"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "O suporte a múltiplos usuários só é aplicado a planos com 2 ou mais usuários"
@@ -4363,8 +4366,8 @@
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use seu próprio domínio personalizado de e-mail, por exemplo você@seunome.com"
       ],
-      "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
-        "Nome de usuário que é usado para todos os serviços da Proton. Isto também pode ser usado mais tarde para criar uma conta segura do ProtonMail."
+      "Username which is used for all Proton services. This can also be used later to create a secure ${ MAIL_APP_NAME } account.": [
+        "Nome de usuário que é usado para todos os serviços da Proton. Isto também pode ser usado mais tarde para criar uma conta segura do ${ MAIL_APP_NAME }."
       ],
       "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
         "Seu e-mail não é compartilhado com terceiros e só será usado para recuperação, perguntas e a comunicação relacionadas à conta."
@@ -4393,9 +4396,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
       "30-days money-back guarantee": [
         "Garantia de devolução do seu dinheiro por até 30 dias"
       ],
@@ -4567,8 +4567,8 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ao excluir este número de telefone, você não poderá mais recuperar sua conta."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Bate papo ao vivo é uma funcionalidade premium disponível apenas para aqueles com planos ProtonVPN pagos. Por favor, abra um chamado."
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Bate papo ao vivo é uma funcionalidade premium disponível apenas para aqueles com planos ${ VPN_APP_NAME } pagos. Por favor, abra um chamado."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."
