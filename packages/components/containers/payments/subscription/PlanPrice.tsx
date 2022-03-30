@@ -21,7 +21,7 @@ const PlanPrice = ({
     ...rest
 }: Props) => {
     return (
-        <Price currency={currency} suffix={suffix || c('Suffix').t`per month`} {...rest}>
+        <Price currency={currency} suffix={suffix || c('Suffix').t`/month`} {...rest}>
             {(quantity * amount) / cycle}
         </Price>
     );
