@@ -107,7 +107,8 @@ const MessageBodyImage = ({
 
     const errorMessage = error?.data?.Error
         ? error?.data?.Error
-        : c('Message image').t`Image did not load because the remote server’s identity certificate is invalid.`;
+        : c('Message image')
+              .t`Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.`;
 
     const placeholderTooltip = error
         ? errorMessage
