@@ -1,6 +1,10 @@
+import { c } from 'ttag';
+
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
+import { ValidationError } from '../../utils';
 import { WAIT_TIME } from '../constants';
 import {
     LinkDownload,
@@ -105,7 +109,12 @@ export class FolderTreeLoader {
         }
 
         const shareId = link.shareId;
-        const children = await getChildren(this.abortController.signal, link.shareId, link.linkId);
+        const children = await getChildren(this.abortController.signal, link.shareId, link.linkId).catch((err) => {
+            if (err?.data?.Code === RESPONSE_CODE.NOT_FOUND) {
+                err = new ValidationError(c('Info').t`Folder "${link.name}" was deleted during download`);
+            }
+            throw err;
+        });
         this.links = [
             ...this.links,
             ...children.map((link) => ({

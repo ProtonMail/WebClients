@@ -6,6 +6,7 @@ import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 
 import { streamToBuffer } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
+import { isValidationError } from '../../utils';
 import { openDownloadStream, initDownloadSW } from './download';
 
 // FileSaver provides functionality to start download to file. This class does
@@ -59,7 +60,10 @@ class FileSaver {
             downloadFile(new Blob(chunks, { type: meta.mimeType }), meta.filename);
         } catch (err: any) {
             if (!isTransferCancelError(err)) {
-                throw new Error(`File download for ${meta.filename} failed: ${err}`);
+                if (isValidationError(err)) {
+                    throw err;
+                }
+                throw new Error(`Download of ${meta.filename} failed: ${err.message || err}`);
             }
         }
     }
