@@ -2,13 +2,6 @@ import { c } from 'ttag';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from './link';
 
-export class ValidationError extends Error {
-    constructor(message: string) {
-        super(message);
-        this.name = 'ValidationError';
-    }
-}
-
 const composeValidators =
     <T>(validators: ((value: T) => string | undefined)[]) =>
     (value: T) => {

@@ -19,11 +19,11 @@ import {
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
-import { logError } from '../../utils';
+import { ValidationError, logError } from '../../utils';
 import { useDebouncedRequest } from '../../api';
 import { useDriveCrypto } from '../../crypto';
 import { useDriveEventManager } from '../../events';
-import { DecryptedLink, useLink, useLinksActions, ValidationError, validateLinkName } from '../../links';
+import { DecryptedLink, useLink, useLinksActions, validateLinkName } from '../../links';
 import { MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import {
     TransferConflictStrategy,

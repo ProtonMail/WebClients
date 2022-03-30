@@ -1,14 +1,15 @@
 import { ReactNode } from 'react';
-import { ValidationError } from 'webpack';
 
 import { useNotifications } from '@proton/components';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
+import { ValidationError, isValidationError } from './validationError';
+
 const IGNORED_ERRORS = ['AbortError', 'TransferCancel'];
 
 function isIgnoredErrorForReporting(error: any) {
-    return isIgnoredError(error) || error.name === 'ValidationError' || getIsConnectionIssue(error);
+    return isIgnoredError(error) || isValidationError(error) || getIsConnectionIssue(error);
 }
 
 export function isIgnoredError(error: any) {
@@ -55,7 +56,7 @@ export function useErrorHandler() {
             return;
         }
 
-        if (error.name === 'ValidationError') {
+        if (isValidationError(error)) {
             createNotification({
                 type: 'error',
                 text: error.message,
@@ -82,14 +83,12 @@ export function useErrorHandler() {
         }
 
         const validationErrors: ValidationError[] = Object.values(
-            nonIgnoredErrors
-                .filter((error) => error.name === 'ValidationError')
-                .reduce((acc, error) => {
-                    if (!acc[error.message]) {
-                        acc[error.message] = error;
-                    }
-                    return acc;
-                }, {} as Record<string, ValidationError>)
+            nonIgnoredErrors.filter(isValidationError).reduce((acc, error) => {
+                if (!acc[error.message]) {
+                    acc[error.message] = error;
+                }
+                return acc;
+            }, {} as Record<string, ValidationError>)
         );
 
         validationErrors.forEach((error) => {
@@ -99,7 +98,7 @@ export function useErrorHandler() {
             });
         });
 
-        const unknownErrors = nonIgnoredErrors.filter((error) => error.name !== 'ValidationError');
+        const unknownErrors = nonIgnoredErrors.filter((error) => !isValidationError(error));
 
         if (unknownErrors.length !== 0) {
             const text = getMessage(unknownErrors as [any, ...any[]]);

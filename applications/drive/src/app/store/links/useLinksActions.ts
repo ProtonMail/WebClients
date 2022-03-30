@@ -20,10 +20,10 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import { useDebouncedRequest } from '../api';
 import { useDriveCrypto } from '../crypto';
 import { useDriveEventManager } from '../events';
+import { ValidationError } from '../utils';
 import useLink from './useLink';
 import useLinks from './useLinks';
 import useLinksState from './useLinksState';
-import { ValidationError } from '.';
 
 const INVALID_REQUEST_ERROR_CODES = [RESPONSE_CODE.ALREADY_EXISTS, RESPONSE_CODE.INVALID_REQUIREMENT];
 
