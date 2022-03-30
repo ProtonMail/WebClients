@@ -13,21 +13,20 @@ import {
     DriveLogo,
     classnames,
     ProtonLogo,
+    IconSize,
 } from '@proton/components';
 
 import LanguageSelect from './LanguageSelect';
 
 import './Layout.scss';
 
-const AppLogos = ({ className }: { className: string }) => {
+const AppLogos = ({ className, size }: { className: string; size: IconSize }) => {
     return (
         <div className={className}>
-            <div className="p0-5 on-mobile-p0">
-                <MailLogo variant="glyph-only" size={70} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
-                <CalendarLogo variant="glyph-only" size={70} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
-                <VpnLogo variant="glyph-only" size={70} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
-                <DriveLogo variant="glyph-only" size={70} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
-            </div>
+            <MailLogo variant="glyph-only" size={size} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
+            <CalendarLogo variant="glyph-only" size={size} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
+            <VpnLogo variant="glyph-only" size={size} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
+            <DriveLogo variant="glyph-only" size={size} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
         </div>
     );
 };
@@ -93,7 +92,9 @@ const Layout = ({ children, hasDecoration, topRight, bottomRight, hasBackButton 
                 <div>
                     {children}
                     {hasDecoration && (
-                        <AppLogos className="flex-item-noshrink text-center p1 mt0 on-mobile-m0 on-mobile-pb0" />
+                        <div className="flex-item-noshrink text-center p1 mt0 on-mobile-m0 on-mobile-pb0">
+                            <AppLogos size={70} className="p0-5 on-mobile-p0" />
+                        </div>
                     )}
                 </div>
             </div>
