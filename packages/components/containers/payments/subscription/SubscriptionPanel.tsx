@@ -14,7 +14,7 @@ import percentage from '@proton/shared/lib/helpers/percentage';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
-import { getPlusServers } from '@proton/shared/lib/vpn/features';
+import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { useConfig } from '../../../hooks';
 import { Price, StrippedList, StrippedItem, Meter, Button } from '../../../components';
@@ -101,6 +101,10 @@ const SubscriptionPanel = ({
                     {
                         icon: 'check',
                         text: c('Subscription attribute').t`1 VPN connection`,
+                    },
+                    {
+                        icon: 'check',
+                        text: getFreeServers(vpnServers?.free_vpn, vpnCountries?.free_vpn.count),
                     },
                 ].map((item) => {
                     return (

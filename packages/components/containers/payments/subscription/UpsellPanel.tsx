@@ -1,6 +1,14 @@
 import { c, msgid } from 'ttag';
 import { format } from 'date-fns';
-import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import {
+    CYCLE,
+    DEFAULT_CURRENCY,
+    PLANS,
+    PLAN_NAMES,
+    APPS,
+    BRAND_NAME,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import {
     hasMailPro,
     hasMail,
@@ -11,6 +19,8 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import { Plan, Subscription, UserModel, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getVpnConnections } from '@proton/shared/lib/vpn/features';
 
 import { getPlusServers } from '@proton/shared/lib/vpn/features';
 import { StrippedList, StrippedItem, Button, Price } from '../../../components';
@@ -174,6 +184,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
 
     const bundlePlanName = PLAN_NAMES[PLANS.BUNDLE];
     const bundlePlan = plans.find(({ Name }) => Name === PLANS.BUNDLE);
+    const bundleStorage = humanSize(bundlePlan?.MaxSpace ?? 500, undefined, undefined, 0);
     // Bundle upsell
     if ((user.isFree || hasMail(subscription) || hasDrive(subscription) || hasVPN(subscription)) && bundlePlan) {
         const plan = bundlePlan;
@@ -204,11 +215,16 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                     {[
                         {
                             icon: 'check',
-                            text: c('new_plans: Upsell attribute').t`Boost your storage space to 500 GB total`,
+                            text: c('new_plans: Upsell attribute')
+                                .t`Boost your storage space to ${bundleStorage} total`,
                         },
                         {
                             icon: 'check',
-                            text: c('new_plans: Upsell attribute').t`Get 10 high-speed VPN connections`,
+                            text: c('new_plans: attribute').ngettext(
+                                msgid`Get ${VPN_CONNECTIONS} high-speed VPN connection`,
+                                `Get ${VPN_CONNECTIONS} high-speed VPN connections`,
+                                VPN_CONNECTIONS
+                            ),
                         },
                         {
                             icon: 'check',
@@ -240,6 +256,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
 
     const businessPlanName = PLAN_NAMES[PLANS.BUNDLE_PRO];
     const businessPlan = plans.find(({ Name }) => Name === PLANS.BUNDLE_PRO);
+    const businessStorage = humanSize(businessPlan?.MaxSpace ?? 500, undefined, undefined, 0);
     // Mail pro upsell
     if (hasMailPro(subscription) && businessPlan) {
         const plan = businessPlan;
@@ -270,7 +287,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                     {[
                         {
                             icon: 'check',
-                            text: c('new_plans: Upsell attribute').t`10 VPN connections`,
+                            text: getVpnConnections(VPN_CONNECTIONS),
                         },
                         {
                             icon: 'check',
@@ -278,7 +295,8 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                         },
                         {
                             icon: 'check',
-                            text: c('new_plans: Upsell attribute').t`500 GB storage for email and file storage`,
+                            text: c('new_plans: Upsell attribute')
+                                .t`${businessStorage} storage for email and file storage`,
                         },
                         {
                             icon: 'check',
