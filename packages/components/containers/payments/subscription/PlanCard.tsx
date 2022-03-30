@@ -34,9 +34,9 @@ const getCycleUnit = (planName: PLANS) => {
         case PLANS.DRIVE_PRO:
         case PLANS.BUNDLE_PRO:
         case PLANS.ENTERPRISE:
-            return c('Cycle').t`/ user per month`;
+            return c('Cycle').t`/user per month`;
         default:
-            return c('Cycle').t`/ month`;
+            return c('Cycle').t`/month`;
     }
 };
 
