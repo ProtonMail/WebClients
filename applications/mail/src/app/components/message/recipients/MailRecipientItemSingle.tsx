@@ -137,26 +137,26 @@ const MailRecipientItemSingle = ({
 
     return (
         <>
-        <RecipientItemSingle
-            message={message}
-            recipient={recipient}
-            mapStatusIcons={mapStatusIcons}
-            globalIcon={globalIcon}
-            showAddress={showAddress}
-            showLockIcon={showLockIcon}
-            isNarrow={isNarrow}
-            showDropdown={showDropdown}
-            actualLabel={label}
-            customDropdownActions={customDropdownActions}
-            anchorRef={anchorRef}
-            toggle={toggle}
-            close={close}
-            isOpen={isOpen}
-            isOutside={isOutside}
-        />
-    <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />
+            <RecipientItemSingle
+                message={message}
+                recipient={recipient}
+                mapStatusIcons={mapStatusIcons}
+                globalIcon={globalIcon}
+                showAddress={showAddress}
+                showLockIcon={showLockIcon}
+                isNarrow={isNarrow}
+                showDropdown={showDropdown}
+                actualLabel={label}
+                customDropdownActions={customDropdownActions}
+                anchorRef={anchorRef}
+                toggle={toggle}
+                close={close}
+                isOpen={isOpen}
+                isOutside={isOutside}
+            />
+            <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />
         </>
-);
+    );
 };
 
 export default MailRecipientItemSingle;
