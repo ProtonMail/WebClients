@@ -178,11 +178,11 @@
       "enable desktop notifications": [
         "فعا‌ل‌سازی اعلان‌های دسکتاپ"
       ],
+      "Get ${ vpnPlus }": [
+        ""
+      ],
       "Get a new password": [
         "دریافت رمزعبور جدید"
-      ],
-      "Get ProtonVPN Plus": [
-        "دریافت ProtonVPN پلاس"
       ],
       "Get started": [
         "شروع کنید"
@@ -330,6 +330,9 @@
       ],
       "Show info": [
         "نمایش اطلاعات"
+      ],
+      "Show preview": [
+        ""
       ],
       "Sign out": [
         "خروج"
@@ -689,7 +692,7 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
+      "Continue using ${ MAIL_APP_NAME }.": [
         ""
       ]
     },
@@ -1924,8 +1927,8 @@
       "Kill switch to prevent IP exposure": [
         "Kill switch برای جلوگیری از دسترسی IP"
       ],
-      "Laptop & smartphone shown connected to ProtonVPN network.": [
-        "لپ تاپ & تلفن هوشمند نشان داده شده متصل به ProtonVPN."
+      "Laptop & smartphone shown connected to ${ VPN_APP_NAME } network.": [
+        ""
       ],
       "No logs": [
         "عدم رکورد"
@@ -1944,11 +1947,17 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } به اجازهٔ شما برای ${ enableDesktopNotifications } نیاز دارد."
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        ""
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } رایگان"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } حرفه‌ای با یک کاربر شروع می‌شود و هر کاربر ۵ گیگابایت و ۵ نشانی ایمیل به مجموعهٔ سازمان اضافه می‌کند."
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
       ],
       "${ number } city": [
         "${ number } شهر",
@@ -1973,6 +1982,16 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } رایگان"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        ""
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "",
+        ""
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        ""
+      ],
       "(Mail + VPN)": [
         "(ایمیل + VPN)"
       ],
@@ -1982,9 +2001,9 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } حافظه هدیه"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } اتصال برای ProtonVPN (به شما اجازه اتصال دستگاههای بیشتری به VPN می‌دهد)",
-        "+${ organization.BonusVPN } اتصال برای ProtonVPN (به شما اجازه اتصال دستگاههای بیشتری به VPN می‌دهد)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "",
+        ""
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "۲۰٪ تخفیف به اشتراک شما با کوپن ${ code } اعمال شد"
@@ -2097,8 +2116,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "این رمز را فراموش نکنید. اگر آن را فراموش کنید، نمی‌توانید وارد شوید یا پیغام‌های خود را رمزگشایی کنید."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "از اعتبارنامه‌های IKEv2 / OpenVPN در برنامه‌های ProtonVPN یا داشبورد ProtonVPN استفاده نکنید. ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        ""
       ],
       "Domains": [
         "دامنه‌ها"
@@ -2106,8 +2125,8 @@
       "Done! We sent a code to ${ destination }": [
         "انجام شد! ما یک کد به ${ destination } فرستادیم"
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "تنزیل درجه هر گونه اتصال به سرورهای پرداختی ProtonVPN را خاتمه میدهد."
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        ""
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "اپ مورد علاقه خود را امروز بارگیری نموده و حریم خصوصی را با خود هر کجا که میروید ببرید."
@@ -2160,14 +2179,14 @@
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN کامل با حداکثر سرعت ۱۰ گیگابیت بر ثانیه."
       ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "با یک طرح به تمام امکانات پرداختی هر دوی ProtonVPN و ProtonMail (سرویس ایمیل رمز نگاری شده ای که میلیونها برای حفاظت اطلاعاتشان استفاده میکنند) دست یابید."
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
       ],
       "here": [
         "اینجا"
       ],
-      "If you are a ProtonMail user you can use your Proton account to log in to ProtonVPN.": [
-        "اگر شما یک کاربر ProtonMail هستید، می‌توانید از حساب پروتون خود برای ورود به ProtonVPN استفاده کنید."
+      "If you are a ${ MAIL_APP_NAME } user you can use your Proton account to log in to ${ VPN_APP_NAME }.": [
+        ""
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "اگر شما در ساختن حسابتان مشکل دارید، لطفاً درخواست یک دعوتنامه داده و ما در طی یک روز کاری به شما پاسخ خواهیم داد."
@@ -2190,14 +2209,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "اگر شما دستگاه دو-مرحله ای فعال شده خود را از دست دهید، این کدها می‌توانند بجای کد تأیید هویت دو-مرحله ای ۶ رقمی استفاده شوند تا به حساب خود وارد شوید. هر کد می‌تواند تنها یک بار استفاده شود."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "اگر شما با تنزیل درجه ادامه دهید، دسترسی به امکانات پرداختی ProtonMail و ProtonVPN را از دست خواهید داد."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        ""
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "اگر شما با تنزیل درجه ادامه دهید، شما دسترسی به امکانات پرداختی ProtonMail، شامل حافظه اضافی و فیلترها را از دست خواهید دید."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        ""
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "اگر شما با تنزیل درجه ادامه دهید، دسترسی به امکانات پرداختی ProtonVPN را از دست خواهید داد."
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        ""
       ],
       "If you remember your old password later, you can recover your existing messages.": [
         "اگر بعدا رمز عبور قدیمی خود را به خاطر بیاورید، می‌توانید پیام‌های موجود خود را بازیابی کنید."
@@ -2244,8 +2263,8 @@
       "Keep this password safe, it cannot be recovered.": [
         "این رمز عبور را ایمن نگه دارید، قابل بازیابی نیست."
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "چگونگی ورود به ProtonVPN با برنامه‌های VPN شخص-ثالث را بیاموزید."
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        ""
       ],
       "Loading": [
         "در حال بارگذاری"
@@ -2256,8 +2275,8 @@
       "Loading preview": [
         "در حال بارگذاری پیش‌نمایش"
       ],
-      "Log in to ProtonMail to activate your address": [
-        "برای فعال کردن آدرس خود به ProtonMail وارد شوید"
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
+        ""
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
         ""
@@ -2346,22 +2365,6 @@
       "Proton can't help you recover any lost passwords.": [
         ""
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMail همچنین میتواند با یک رمز عبور واحد استفاده شود که هر دو رمز عبور ورودی و صندوق پستی را جایگزین میکند. برای تغییر به حالت رمزعبور واحد، ابتدا رمز عبور واحد را که میخواهید وارد کرده و سپس Save را بزنید."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "طرح ProtonMail Plus محدود به یک کاربر است و با ۵ گیگابایت فضای ذخیره آغاز می‌شود."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } شامل ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } اتصال VPN است.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } شامل ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } اتصال VPN است."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "برای اتصال به هر سطحی از کشور ها ProtonVPN Basic, Visionary, Plus مورد نیاز است."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "برای استفاده از ویژگی Core Secure به طرح ProtonVPN پلاس یا رویایی نیاز دارید."
-      ],
       "read our two-factor authentication Guide first": [
         ""
       ],
@@ -2371,8 +2374,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "بازیابی صفحه یا ${ link } بطور خودکار بیشتر مسايل را حل خواهد کرد."
       ],
-      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "بازنشانی رمز عبورتان، کلیدهای رمزنگاری‌تان برای تمام سرویس‌های مربوط به پروتن (ایمیل و VPN) را بازنشانی خواهد کرد. شما قادر نخواهید بود که پیام‌های فعلی خود را بخوانید. اگر رمز عبور ProtonMail خود را میدانید، رمز عبورتان را باز نشانی نکنید. شما می‌توانید با آن‌ها وارد شوید ${ hereLink }."
+      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        ""
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "با تنها یک کلیک ترافیک اینترنت خود را از طریق شبکه Tor مسیر گذاری کنید."
@@ -2440,8 +2443,8 @@
       "Thank you for supporting our mission.": [
         "برای پشتیبانی از آرمان ما سپاسگزاریم."
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "این فایل‌های پیکربندی به شما اجازه می‌دهند که انتخاب کنید وقتی در حال استفاده از یک برنامهٔ VPN شخص-ثالث هستید یا در حال تنظیم یک اتصال VPN روی یک روتر هستید که به کدام سرور ProtonVPN متصل شوید."
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "این حساب به دلیل یک تخطی احتمالی از سیاست‌ها به تعلیق درآمده است."
@@ -2482,8 +2485,8 @@
       "To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.": [
         "برای جلوگیری از سوء استفاده، لطفاً تأیید کنید که انسان هستید. لطفاً تا زمانی که حساب خود را تأیید نکردید، این زبانه را نبندید."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "برای امن‌سازی اتصال اینترنت خود، برنامهٔ ProtonVPN را برای دستگاه خود نصب و بارگیری کنید و به یک سرور ProtonVPN متصل شوید."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        ""
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "حساب‌تان را با اعتباری که می‌توانید برای اشتراک در یک طرح جدید یا تمدید طرح فعلی استفاده کنید شارژ کنید. شما برای هر ${ i18nCurrency } که هزینه می‌کنید یک واحد اعتبار دریافت می‌کنید."
@@ -2518,8 +2521,8 @@
       "Upgrade now": [
         ""
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "از اعتبارنامه‌های زیر هنگام اتصال به سرورهای ProtonVPN بدون برنامه استفاده کنید. نمونه‌های مورد استفاده شامل: Tunnelblick در macOS و OpenVPN در GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        ""
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         ""
@@ -2542,8 +2545,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         ""
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "ما به شما توصیه می‌کنیم تا حتی‌الامکان از برنامه‌های رسمی ProtonVPN استفاده کنید."
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        ""
       ],
       "We use 3-D Secure to protect your payments.": [
         "ما از 3-D امن استفاده میکنیم تا پرداختهای شما را حفاظت کنیم."
@@ -2587,17 +2590,17 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         ""
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "شما می‌توانید از اعتبارنامه‌های زیر برای اتصال به یک سرور ProtonVPN با استفاده از یک برنامهٔ شخص-ثالث، متن‌باز مثل Tunnelblick برای macOS یا OpenVPN برای GNU/Linux استفاده کنید."
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        ""
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "شما نمی‌توانید از اعتبارنامه‌های IKEv2 / OpenVPN برای ورود به برنامه‌های ProtonVPN یا داشبورد ProtonVPN استفاده کنید. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        ""
       ],
       "You have no saved payment methods.": [
         "شما روش پرداخت ذخیره شده‌ای ندارید."
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "شما قبل از آنکه بتوانید تنزیل درجه دهید، باید هرگونه کاربران، آدرسها، و دامنه های سفارشی اضافی ProtonMail را غیرفعال یا حذف کنید."
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "شما باید یک کارت اعتباری یا حساب بانکی به حساب پی‌پل خود متصل کنید تا امکان استفاده از این روش پرداخت را داشته باشید."
@@ -2619,6 +2622,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "شما به زودی جهت تأیید پرداخت خود به پی‌پال منتقل می‌شوید."
+      ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        ""
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "حساب شما حداقل یک صورتحساب تاریخ گذشته دارد. دسترسی شما محدود شده است. ${ payInvoiceLink }"
@@ -2656,9 +2662,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "حساب پروتن شما در حال حاضر متوقف شده است. به منظور ادامه استفاده از حسابتان، لطفا صورتحساب‌های عقب افتاده را بپردازید."
       ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "حساب‌های ProtonVPN و ProtonMail شما بهم متصلند. برای پاک کردن هردوی آن‌ها، لطفا به ${ loginLink } وارد شوید و حسابتان را از آنجا پاک کنید."
-      ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "اشتراک شما توسط Mozilla اداره می شود. لطفا با پشتیبانی Mozilla تماس بگیرید."
       ],
@@ -2672,11 +2675,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        ""
+      ],
       "Customizable features": [
         "امکانات قابل تنظیم"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "حساب ProtonMail نمی‌تواند برای ارسال انبوه ایمیل یا هرزنامه استفاده شود. محدودیتی برای ارسال ایمیل‌های مشروع وجود ندارد."
       ]
     },
     "Info for cash payment method": {
@@ -2754,6 +2757,9 @@
       ]
     },
     "Label": {
+      "${ MAIL_APP_NAME } address": [
+        ""
+      ],
       "${ n } VPN connection available": [
         "${ n } اتصال وی‌پی‌ان در دسترس است",
         "${ n } اتصال وی‌پی‌ان در دسترس است"
@@ -2983,9 +2989,6 @@
       "Proton username": [
         "نام کاربری پروتن"
       ],
-      "ProtonMail address": [
-        "آدرس ProtonMail"
-      ],
       "Recovery email address": [
         ""
       ],
@@ -3040,8 +3043,8 @@
       "Username": [
         "نام کاربری"
       ],
-      "Username or ProtonMail address": [
-        "نام کاربری یا نشانی ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        ""
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
         ""
@@ -3681,6 +3684,12 @@
       ]
     },
     "Plan Feature": {
+      "${ mailPlus } account": [
+        ""
+      ],
+      "${ mailVisionary } account": [
+        ""
+      ],
       "All advanced security features": [
         "همه امکانات امنیتی پیشرفته"
       ],
@@ -3698,12 +3707,6 @@
       ],
       "Medium speed": [
         "سرعت متوسط"
-      ],
-      "ProtonMail Plus account": [
-        "حساب کاربری ProtonMail Plus"
-      ],
-      "ProtonMail Visionary account": [
-        "حساب ProtonMail رویایی"
       ],
       "Streaming service support": [
         "پشتیبانی از سرویس پخش آنلاین"
@@ -3913,6 +3916,12 @@
       "${ title } plan details": [
         "جزئیات طرح ${ title }"
       ],
+      "${ VPN_APP_NAME } clients": [
+        ""
+      ],
+      "${ VPN_APP_NAME } plan comparison": [
+        ""
+      ],
       "1. Select platform": [
         "1. انتخاب پلتفرم"
       ],
@@ -4066,8 +4075,8 @@
       "Enter your password": [
         "رمزعبورت را وارد کن"
       ],
-      "Enter your username or ProtonMail email address": [
-        "نام کاربری یا نشانی ایمیل ProtonMail خود را وارد کنید"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        ""
       ],
       "Error": [
         "خطا"
@@ -4078,8 +4087,8 @@
       "General": [
         "عمومی"
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "ProtonVPN Plus را بگیرید تا به همه سرورها دست یابید"
+      "Get ${ vpnPlus } to access all servers": [
+        ""
       ],
       "Gift code": [
         "کد هدیه"
@@ -4173,12 +4182,6 @@
       ],
       "Processing...": [
         "در حال پردازش..."
-      ],
-      "ProtonVPN clients": [
-        "نرم‌افزارهای ProtonVPN"
-      ],
-      "ProtonVPN plan comparison": [
-        "مقایسه طرح‌های ProtonVPN"
       ],
       "Provide payment details": [
         "جزئیات پرداخت را ارائه دهید"
@@ -4301,8 +4304,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "صورتحساب ProtonMail"
+      "${ MAIL_APP_NAME } invoice": [
+        ""
       ]
     },
     "Tooltip": {
@@ -4321,11 +4324,11 @@
       "Discount applied for two-year billing cycle": [
         "تخفیف پرداخت دو ساله اعمال شد"
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "با یک طرح به تمام امکانات پولی هر دوی ${ vpnAppName } و ${ mailAppName } (سرویس رایانامه رمز نگاری شده‌ای که میلیون‌ها کاربر برای حفاظت اطلاعات‌شان استفاده می‌کنند) دست یابید."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "با یک طرح به تمام امکانات پرداختی هر دوی ProtonVPN و ProtonMail (سرویس ایمیل رمز نگاری شده ای که میلیونها برای حفاظت اطلاعاتشان استفاده میکنند) دست یابید."
       ],
       "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
         "اگر رمز را فرمواش کنید، دیگر دسترسی به اطلاعات یا حساب کاربری خود ندارید. لطفا رمز را در محل امن نگه‌دارید."
@@ -4333,8 +4336,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "اگر شما کد هدیه خریده‌اید یا از تیم پشتیبانی ما دریافت کرده‌اید، می‌توانید آن را اینجا وارد کنید."
       ],
-      "Includes ProtonMail encrypted email with all features": [
-        "شامل ProtonMail با همه امکانات"
+      "Includes ${ MAIL_APP_NAME } encrypted email with all features": [
+        ""
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "پشتیبانی چند-کاربره فقط در طرح‌هایی با ۲ کاربر یا بیشتر قابل استفاده است"
@@ -4363,8 +4366,8 @@
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         ""
       ],
-      "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
-        "نام کاربری برای کلیه خدمات پروتون استفاده می شود. همچنین می توانید بعداً برای ایجاد یک حساب ایمن ProtonMail استفاده کنید."
+      "Username which is used for all Proton services. This can also be used later to create a secure ${ MAIL_APP_NAME } account.": [
+        ""
       ],
       "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
         "ایمیل شما با اشخاص ثالث به اشتراک گذاشته نمی شود و فقط برای بازیابی و سوالات مربوط به حساب یا ارتباطات مورد استفاده قرار می گیرد."
@@ -4393,9 +4396,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
       "30-days money-back guarantee": [
         "ضمانت ۳۰ روزهٔ بازگشت پول"
       ],
@@ -4567,7 +4567,7 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "با پاک کردن این شماره همراه، شما دیگر قادر به بازیابی حساب خود نخواهید بود."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [

@@ -214,8 +214,8 @@
       "Copy link": [
         "Копіювати посилання"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Створити натомість захищену адресу ProtonMail"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        ""
       ],
       "Create address": [
         "Створити адресу"
@@ -349,8 +349,8 @@
       "Generate recovery phrase": [
         "Згенерувати фразу відновлення"
       ],
-      "Get ProtonVPN Plus": [
-        "Отримати ProtonVPN Plus"
+      "Get ${ vpnPlus }": [
+        "Отримати ${ vpnPlus }"
       ],
       "Get started": [
         "Розпочнімо"
@@ -661,8 +661,8 @@
       "Show more": [
         "Розгорнути"
       ],
-      "Show shortcuts": [
-        "Показати комбінації клавіш"
+      "Show preview": [
+        "Показати попередній перегляд"
       ],
       "sign in": [
         "увійти"
@@ -1223,8 +1223,8 @@
       "Add link to your email footer": [
         ""
       ],
-      "Continue using ProtonMail.": [
-        "Продовжити користуватися ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Продовжити за допомогою ${ MAIL_APP_NAME }."
       ],
       "Copy": [
         "Копіювати"
@@ -1236,7 +1236,7 @@
         "Надіслати"
       ],
       "Tweet": [
-        ""
+        "Твітнути"
       ]
     },
     "Calendar feature": {
@@ -2363,7 +2363,7 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
-      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
+      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
         ""
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
@@ -2378,8 +2378,8 @@
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         ""
       ],
-      "Track your referral link activities here.": [
-        ""
+      "You can continue to invite friends, but you wont be able to earn more credits": [
+        "Ви можете й надалі запрошувати друзів, але ви більше не отримуватимете за це кредити"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події у форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
@@ -2577,9 +2577,6 @@
       "Calendar limit reached": [
         "Досягнуто ліміту календарів"
       ],
-      "Calendar primary private key is not decrypted": [
-        "Основний приватний ключ календаря не розшифровано"
-      ],
       "Can't check username, try again later": [
         "Не вдається перевірити ім'я користувача. Спробуйте ще раз пізніше"
       ],
@@ -2701,7 +2698,7 @@
         "Відсутній пакунок ключів"
       ],
       "Name does not match": [
-        ""
+        "Імена відрізняються"
       ],
       "Name on card required": [
         "Необхідно ввести ім'я, вказане на картці"
@@ -2808,14 +2805,14 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших тек недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
-      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Назви деяких ваших тек перевищують обмеження кількості символів ProtonMail. Будь ласка, налаштуйте імпорт для зміни цих назв."
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Назви деяких ваших тек перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших міток недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Назви деяких ваших міток перевищують обмеження кількості символів ProtonMail. Будь ласка, налаштуйте імпорт для зміни цих назв."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
@@ -3244,10 +3241,10 @@
     },
     "Feature": {
       "${ MaxVPN } VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "${ MaxVPN } VPN-з'єднання",
+        "${ MaxVPN } VPN-з'єднання",
+        "${ MaxVPN } VPN-з'єднань",
+        "${ MaxVPN } VPN-з'єднання"
       ],
       "Access to all countries": [
         "Доступ до всіх країн"
@@ -3269,9 +3266,6 @@
       ],
       "Torrenting support (P2P)": [
         "Підтримка торентів (P2P)"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "VPN ${ connectionsPluralized }"
       ]
     },
     "file size format": {
@@ -3946,7 +3940,7 @@
     },
     "Info": {
       "${ addressToCreate } is now active": [
-        ""
+        "Адреса ${ addressToCreate } тепер активна"
       ],
       "${ appName } ${ planName } credits earned": [
         ""
@@ -3979,13 +3973,25 @@
         "${ calendarsToBeMergedCount } об'єднаних календарів"
       ],
       "${ emailAddress } is invalid": [
-        ""
+        "${ emailAddress } е-пошти недійсна"
+      ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } також можна використовувати з єдиним паролем, який замінює пароль входу та пароль поштової скриньки. Щоб перемкнутись на однопарольний режим, введіть єдиний пароль, який ви бажаєте використовувати, а потім натисніть кнопку Зберегти."
+      ],
+      "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
+        "${ MAIL_APP_NAME } дає вам змогу створювати адреси електронної пошти для інших людей. Це найкраще для бізнесу, родини чи груп."
+      ],
+      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "${ MAIL_APP_NAME } підтримує підписування DKIM для власних доменів. Щоб використовувати перевірку DKIM, додайте такий запис CNAME до своїх налаштувань DNS для цього домену. Зазвичай це можна зробити на панелі керування вашого доменного реєстратора."
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Безплатно"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional починається від одного користувача, а кожен новий користувач додає 5 ГБ сховища та 5 електронних адрес до загального обсягу організації."
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        "${ mailPlus } Plus призначений для одного користувача з обсягом сховища від 5 ГБ."
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "${ mailProfessional } починається від одного користувача, а кожен новий користувач додає 5 ГБ сховища та 5 електронних адрес до загального обсягу організації."
       ],
       "${ n } address": [
         "${ n } адреса",
@@ -4027,7 +4033,7 @@
         "${ numContacts } контакти"
       ],
       "${ planName } plan": [
-        ""
+        "Тарифний план ${ planName }"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знайдено ${ providerFoldersNumLocalized } теку",
@@ -4089,11 +4095,23 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Безплатно"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        "Для вибору з'єднання на рівні країни необхідна передплата ${ vpnBasic }, ${ vpnPlus } або ${ visionary }."
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "${ vpnPlus } включає ${ maxVpn } VPN-з'єднання.",
+        "${ vpnPlus } включає ${ maxVpn } VPN-з'єднання.",
+        "${ vpnPlus } включає ${ maxVpn } VPN-з'єднань.",
+        "${ vpnPlus } включає ${ maxVpn } VPN-з'єднання."
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        "Для функції Secure Core необхідна передплата ${ vpnPlus } або ${ visionary }."
+      ],
       "(${ memberCount } member)": [
-        "",
-        "",
-        "",
-        ""
+        "(${ memberCount } учасник)",
+        "(${ memberCount } учасники)",
+        "(${ memberCount } учасників)",
+        "(${ memberCount } учасників)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Фільтрувати, якщо виконуються ВСІ зазначені умови)"
@@ -4110,11 +4128,11 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } додаткового сховища"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } з'єднання для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднання для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднань для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднань для ProtonVPN (дозволяє приєднати більше пристроїв до VPN)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
+        "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
+        "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
+        "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)"
       ],
       "1. Invite friends to Proton": [
         "1. Запрошуйте друзів до Proton"
@@ -4164,8 +4182,8 @@
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Додайте адресу @pm.me до свого облікового запису. Цей простий короткий домен означає скорочення від \"ProtonMail me\" чи \"Private Message me.\""
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        "Додайте адресу @pm.me до свого облікового запису. Цей простий короткий домен означає скорочення від «${ MAIL_APP_NAME } me» або «Private Message me.»"
       ],
       "Add a recovery email address": [
         "Додати е-пошту для відновлення доступу"
@@ -4308,8 +4326,8 @@
       "Basic, Plus or Visionary subscription required": [
         "Необхідна передплата Basic, Plus або Visionary"
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Перш ніж ви зможете отримувати електронну пошту на адреси власного домену в ProtonMail, необхідно додати такі записи MX до налаштувань DNS. Зазвичай це можна зробити на панелі керування вашого реєстратора доменних імен."
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Перш ніж ви зможете отримувати електронну пошту на адреси власного домену в ${ MAIL_APP_NAME }, необхідно додати такі записи MX до налаштувань DNS. Зазвичай це можна зробити з панелі керування вашого реєстратора доменних імен."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перш ніж ви зможете почати надсилати й отримувати електронні листи зі своїх нових адрес, необхідно створити для них ключі шифрування."
@@ -4377,9 +4395,6 @@
       "Continue with ${ planName }": [
         "Продовжити з ${ planName }"
       ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        ""
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Створити ${ calendarsToBeCreated } новий календар",
         "Створити ${ calendarsToBeCreated } нові календарі",
@@ -4398,8 +4413,8 @@
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Створюйте й керуйте підлеглими обліковими записами та призначайте їм поштові адреси у своєму власному домені."
       ],
-      "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "Створюйте електронні адреси для інших людей, керуйте ${ MAIL_APP_NAME } для бізнесу, навчального закладу чи групи. Розпочніть з додавання назви своєї організації та власного домену (наприклад, @yourcompany.com). "
       ],
       "Create in": [
         "Створити у"
@@ -4437,8 +4452,8 @@
       "Data locked": [
         "Дані заблоковано"
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Видаліть будь-які інші MX-записи або впевніться, що встановлено найнижче число пріоритету для ProtonMail."
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Видаліть будь-які інші MX-записи або впевніться, що встановлено найнижче число пріоритету ${ MAIL_APP_NAME }."
       ],
       "Delete link?": [
         "Видалити посилання?"
@@ -4452,8 +4467,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ЗАПАМ'ЯТАЙТЕ цей пароль. Якщо ви його забудете, то не зможете керувати своєю організацією."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Не використовуйте облікові дані OpenVPN / IKEv2 в програмах ProtonVPN чи на контрольній панелі ProtonVPN. ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Не використовуйте облікові дані OpenVPN / IKEv2 у застосунках ${ VPN_APP_NAME } чи на панелі керування ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Хочете відкликати всі інші сеанси, окрім поточного?"
@@ -4473,8 +4488,8 @@
       "Done! We sent a code to ${ destination }.": [
         "Готово! Ми надіслали код на ${ destination }."
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "Перехід на тарифний план нижчого рівня розірве усі з'єднання до платних серверів ProtonVPN."
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
       ],
       "Download recovery file": [
         "Завантажити файл відновлення"
@@ -4629,8 +4644,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Якщо у вас є власний домен з ProtonMail, ви можете налаштувати електронну адресу catch-all для отримання повідомлень, надісланих на ваш домен, але з неправильною адресою (наприклад, при помилці введення)."
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "Якщо у вас є власний домен з ${ MAIL_APP_NAME }, ви можете налаштувати електронну адресу catch-all для отримання повідомлень, надісланих на ваш домен, але з неправильною адресою (наприклад, за помилкового введення)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Якщо у вас є подарунковий код, введіть його внизу, щоб застосувати свою знижку."
@@ -4650,14 +4665,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Якщо ви втратите свій пристрій двоетапної перевірки, можна скористатися цими кодами замість 6-значного коду перевірки для авторизації в обліковому записі. Кожен код можна використати лише один раз."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ProtonMail та ProtonVPN."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME } та ${ VPN_APP_NAME }."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ProtonMail, включно з додатковим сховищем та фільтрами."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME }, включно з додатковим сховищем та фільтрами."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ProtonVPN."
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Якщо ви нещодавно скинули пароль, можете скористатися способом відновлення для розблокування своїх даних"
@@ -4782,8 +4797,8 @@
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Дізнайтеся, як виконати вхід в ProtonVPN через сторонні програми VPN."
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні програми VPN."
       ],
       "Learn more": [
         "Докладніше"
@@ -4818,8 +4833,8 @@
       "Loading preview": [
         "Завантаження попереднього перегляду"
       ],
-      "Log in to ProtonMail to activate your address": [
-        "Увійдіть в ProtonMail, щоб активувати вашу адресу"
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
+        ""
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Журнал містить спроби авторизації з використанням ваших облікових даних в усіх службах Proton."
@@ -4929,8 +4944,8 @@
       "One account for all Proton services": [
         "Один обліковий запис для всіх служб Proton"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
         "Тільки ви можете бачити мітки."
@@ -4972,7 +4987,7 @@
         ""
       ],
       "Paid for a monthly plan": [
-        ""
+        "Передплачено місячний тарифний план"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Повна перевірка оплати може тривати кілька хвилин."
@@ -5056,7 +5071,7 @@
         "Proton Calendar"
       ],
       "Proton can't help you recover any lost passwords.": [
-        ""
+        "Proton не може допомогти вам відновити будь-які втрачені паролі."
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton зупинив імпортування, тому що втрачено з'єднання з вашим іншим провайдером е-пошти. Будь ласка, повторіть з'єднання."
@@ -5066,30 +5081,6 @@
       ],
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton спробує відновити імпортування одразу, як провайдер вашої електронної пошти скине ${ bandwithLimitLink } вашого облікового запису. Вам не потрібно нічого робити. Якщо ви скасуєте імпортування, ви більше не зможете його продовжити й доведеться почати спочатку."
-      ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMail також можна використовувати з єдиним паролем, який замінює пароль входу та пароль поштової скриньки. Щоб перемкнутись на однопарольний режим, введіть єдиний пароль, який ви бажаєте використовувати, а потім натисніть кнопку Зберегти."
-      ],
-      "ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        "ProtonMail дозволяє вам створювати адреси електронної пошти для інших людей. Це найкраще для бізнесу, родини чи груп."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus призначений для одного користувача з обсягом сховища від 5 ГБ."
-      ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail підтримує підписування DKIM для власних доменів. Щоб використовувати перевірку DKIM, додайте такий запис CNAME до своїх налаштувань DNS для цього домену. Зазвичай це можна зробити на панелі керування вашого доменного реєстратора."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включає ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-з'єднання.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включає ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-з'єднання.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включає ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-з'єднань.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } включає ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN-з'єднань."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Для вибору з'єднання на рівні країни необхідна передплата ProtonVPN Basic, Plus або Visionary."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Для функції Secure Core необхідна передплата ProtonVPN Plus або Visionary."
       ],
       "Public link invite": [
         ""
@@ -5188,7 +5179,7 @@
         "Показати оригінальне повідомлення"
       ],
       "Signed up": [
-        ""
+        "Зареєстровано"
       ],
       "Signed up via your link": [
         "Реєструється за вашим посиланням"
@@ -5199,11 +5190,8 @@
       "Some keys successfully reactivated": [
         "Деякі ключі успішно повторно активовано"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF використовується для зазначення, кому дозволено надсилати пошту для домену, тому ми наполегливо рекомендуємо включити ProtonMail у ваш запис SPF. Додайте такий TXT запис у ваш DNS. Зазвичай це можна зробити на панелі керування вашого реєстратора доменних імен."
-      ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Почніть з 500 МБ, а потім додайте більше пам’яті. Обсяг пам’яті використовується поштою, календарем та диском."
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "У SPF вказують, кому дозволено надсилати пошту на домен. Тому ми наполегливо радимо включити ${ MAIL_APP_NAME } у свій SPF запис. Додайте такий TXT запис у ваш DNS. Зазвичай це можна зробити у панелі керування вашого реєстратора доменних імен."
       ],
       "Starter VPN service with P2P support.": [
         "Початковий рівень VPN з підтримкою P2P."
@@ -5256,8 +5244,8 @@
       "The name will be visible to your users while they are logged in.": [
         "Назва буде видимою вашим користувачам, коли вони увійшли в систему."
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Ці файли конфігурації дають змогу обрати сервер ProtonVPN, з яким ви з'єднуєтесь при використанні сторонньої програми VPN чи налаштованому VPN-з'єднанні маршрутизатора."
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Ці файли конфігурації дають змогу обрати сервер ${ VPN_APP_NAME }, з яким ви з'єднуєтесь під час користування стороннім застосунком VPN або налаштованим VPN-з'єднанням маршрутизатора."
       ],
       "This 30-day free trial is not available any other way.": [
         "Ця 30-денна пробна версія більше не доступна жодним чином."
@@ -5364,8 +5352,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ProtonVPN для вашого пристрою і під'єднайтеся до сервера ProtonVPN."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ${ VPN_APP_NAME } для вашого пристрою і під'єднайтеся до сервера ${ VPN_APP_NAME }."
       ],
       "To use ${ toAppName }, please create an address.": [
         "Щоб скористатися ${ toAppName }, створіть адресу."
@@ -5424,8 +5412,8 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "Передплатіть тарифний план ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } або ${ PLAN_NAMES[PLANS.PLUS] }, щоб увімкнути автоматичні відповіді, коли ви не можете відповісти."
       ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Передплатіть тарифний план, щоб розблокувати підтримку IMAP/SMTP через ProtonMail Bridge."
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
+        "Передплатіть тарифний план, щоб розблокувати підтримку IMAP/SMTP через ${ MAIL_APP_NAME } Bridge."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Оновіть тарифний план сьогодні, щоб уникнути втрати цих переваг ${ appName } ${ planName }."
@@ -5442,8 +5430,8 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Використовуйте автоматичні відповіді для інформування ваших контактів, що ви зараз не маєте доступу до електронної пошти і тому не можете відповісти."
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Використовуйте такі облікові дані при з'єднанні з серверами ProtonVPN без програми. Приклади використання таких з'єднань включають: Tunnelblick на macOS, OpenVPN на GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Використовуйте ці облікові дані за з'єднання з серверами ${ VPN_APP_NAME } без застосунку. Приклади використовування таких з'єднань включають: Tunnelblick на macOS, OpenVPN на GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
@@ -5475,8 +5463,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Попередження: Видалення є незворотним. Це також вилучить доступ для всіх під'єднаних служб та видалить усі ваші контакти."
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Ми рекомендуємо вам використовувати офіційні програми ProtonVPN, якщо це можливо."
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        "Ми рекомендуємо вам використовувати офіційні програми ${ VPN_APP_NAME }, якщо це можливо."
       ],
       "We recommend using your recovery phrase instead.": [
         "Радимо натомість скористатися вашою фразою відновлення."
@@ -5520,11 +5508,11 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Якщо вимкнено, це запобігатиме завантаженню файлів зображень на вашому пристрої без вашої згоди.\t"
       ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Коли сповіщення увімкнено, ми надішлемо сповіщення на вашу пов'язану адресу електронної пошти, якщо у вашій поштовій скриньці ProtonMail з'являться нові повідомлення."
+      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
+        ""
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
-        ""
+        "Коли вони передплатять тарифний план, від 1 до 3 місяців ${ appName } ${ planName } будуть зараховані вашому обліковому запису."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продовженні вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
@@ -5553,11 +5541,8 @@
       "You are about to open another browser tab and visit:": [
         "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Ви зараз увійшли як ${ user.Name } (${ user.Email }) і маєте обмежений доступ."
-      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Наразі ви ввійшли як ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
@@ -5583,20 +5568,20 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
       ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Ви можете використовувати ProtonMail з будь-яким поштовим клієнтом для комп'ютера, який підтримує IMAP/SMTP, наприклад, Outlook, Apple Mail та Thunderbird."
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Ви можете використовувати ${ MAIL_APP_NAME } з будь-яким поштовим клієнтом для комп'ютера, який підтримує IMAP/SMTP, наприклад, Outlook, Apple Mail та Thunderbird."
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Ви можете використовувати такі облікові дані для з'єднання з сервером ProtonVPN через сторонні програми з відкритим кодом, наприклад, Tunnelblick для macOS чи OpenVPN для GNU/Linux."
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Ви можете використовувати такі облікові дані для з'єднання з сервером ${ VPN_APP_NAME } через сторонні програми з відкритим кодом, наприклад, Tunnelblick для macOS чи OpenVPN для GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        ""
+        "Ви не можете надіслати більше ніж ${ emailSendLimitNumber } запрошень електронною поштою впродовж наступних 24 годин"
       ],
       "You cannot refer ${ appName } users": [
         ""
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Ви не можете використати облікові дані OpenVPN / IKEv2 для входу в програми ProtonVPN чи контрольну панель ProtonVPN. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Ви не можете використати облікові дані OpenVPN / IKEv2 для входу в застосунки ${ VPN_APP_NAME } чи панель керування ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ви не вказали спосіб відновлення, тому неможливо відновити обліковий запис при втраті пароля. Продовжити без способу відновлення?"
@@ -5607,8 +5592,8 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Ви повинні активувати свій приватний ключ організації за допомогою пароля відновлення ключа організації, який вам було надано адміністратором організації."
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "Для можливості переходу на тарифний план нижчого рівня ви повинні вилучити будь-яких додаткових користувачів ProtonMail, адреси та власні домени."
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "Для можливості переходу на тарифний план нижчого рівня ви повинні вилучити будь-яких додаткових користувачів ${ MAIL_APP_NAME }, адреси та власні домени."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "У вас повинна бути кредитна картка чи банківський рахунок, пов'язаний з вашим обліковим записом PayPal, для можливості його використання, як спосіб оплати."
@@ -5658,6 +5643,9 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }. Для використання ${ toAppName }, створіть адресу."
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        "Ваші облікові записи ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } пов'язані. Щоб видалити їх обидва, виконайте вхід у ${ loginLink } та видаліть свій обліковий запис."
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ було обмежено. ${ payInvoiceLink }"
       ],
@@ -5691,9 +5679,6 @@
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        ""
-      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Ваше імпортування з ${ delayedImport.Account } тимчасово затримано."
       ],
@@ -5717,9 +5702,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Робота вашого облікового запису Proton тимчасово призупинена. Щоб відновити роботу, будь ласка, сплатіть протерміновані рахунки."
-      ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Ваші облікові записи ProtonVPN та ProtonMail пов'язані. Щоб видалити їх обидва, виконайте вхід в ${ loginLink } та видаліть свій обліковий запис."
       ],
       "Your recovery email address:": [
         "Ваша електронна пошта для відновлення:"
@@ -5757,11 +5739,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        "${ MAIL_APP_NAME } не може використовуватися для масових розсилок або спаму. Для законних листів обмежень немає."
+      ],
       "Customizable features": [
         "Налаштовувані функції"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail не може використовуватися для масових розсилок або спаму. Для звичайних листів обмежень немає."
       ]
     },
     "Info for cash payment method": {
@@ -6138,13 +6120,13 @@
       " and ${ l }": [
         " та ${ l }"
       ],
-      "${ monthsRewarded } month credited": [
-        "",
-        "",
-        "",
+      "${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } адреса"
+      ],
+      "${ MAIL_APP_NAME } footer": [
         ""
       ],
-      "${ monthsRewarded } month pending": [
+      "${ monthsRewarded } month credited": [
         "",
         "",
         "",
@@ -6261,9 +6243,6 @@
       "Calendars": [
         "Календарі"
       ],
-      "Cancel": [
-        "Скасувати"
-      ],
       "Card holder": [
         "Власник картки"
       ],
@@ -6300,6 +6279,9 @@
       "Conditions": [
         "Умови"
       ],
+      "Confirm link URLs": [
+        ""
+      ],
       "Confirm login password": [
         "Підтвердити пароль входу"
       ],
@@ -6335,6 +6317,9 @@
       ],
       "Country": [
         "Країна"
+      ],
+      "Credits pending": [
+        ""
       ],
       "Credits used": [
         "Витрата кредитів"
@@ -6549,9 +6534,6 @@
       "Last month only": [
         "Лише останній місяць"
       ],
-      "Link confirmation": [
-        "Підтвердження посилань"
-      ],
       "Login password": [
         "Пароль входу"
       ],
@@ -6690,12 +6672,6 @@
       "Proton username": [
         "Ім'я користувача Proton"
       ],
-      "ProtonMail address": [
-        "Адреса ProtonMail"
-      ],
-      "ProtonMail footer": [
-        "Підпис ProtonMail"
-      ],
       "Read": [
         "Прочитані"
       ],
@@ -6730,7 +6706,7 @@
         "Надіслати автовідповідь"
       ],
       "Send invitations in": [
-        ""
+        "Надіслати запрошення на"
       ],
       "Show secondary time zone": [
         "Показати додатковий часовий пояс"
@@ -6762,8 +6738,8 @@
       "Statement": [
         "Відомість"
       ],
-      "Submit": [
-        "Відправити"
+      "Sticky labels": [
+        ""
       ],
       "Subtotal": [
         "Попередній підсумок"
@@ -6831,9 +6807,6 @@
       "Use folder colors": [
         "Використати кольори тек"
       ],
-      "Use sticky labels": [
-        "Використовувати липкі мітки"
-      ],
       "User": [
         "Користувач"
       ],
@@ -6856,7 +6829,7 @@
         "VPN-з’єднання"
       ],
       "Waiting for subscription": [
-        ""
+        "Очікування передплати"
       ],
       "Want to add": [
         "Хочете додати"
@@ -6904,7 +6877,7 @@
         "Новий пароль (адмін)"
       ],
       "Your referral link": [
-        ""
+        "Ваше реферальне посилання"
       ],
       "Your reward": [
         "Ваша винагорода"
@@ -6922,8 +6895,8 @@
       ]
     },
     "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Додати домен, яким ви володієте, до облікового запису ProtonMail."
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Додати домен, яким ви володієте, до облікового запису ${ MAIL_APP_NAME }."
       ]
     },
     "Label for domain modal": {
@@ -7270,14 +7243,6 @@
     "Many Others": {
       "and many others": [
         "та багато інших"
-      ]
-    },
-    "Max VPN Connections": {
-      "Connection": [
-        "З'єднання",
-        "З'єднання",
-        "З'єднань",
-        "З'єднань"
       ]
     },
     "Member action": {
@@ -8433,7 +8398,7 @@
     },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "Створена для приватності електронна пошта й календар для ваших повсякденних потреб спілкування."
       ]
     },
     "Success": {
@@ -8712,6 +8677,9 @@
       "${ appName } Keyboard Shortcuts": [
         "Комбінації клавіш ${ appName }"
       ],
+      "${ MAIL_APP_NAME } Bridge": [
+        "${ MAIL_APP_NAME } Bridge"
+      ],
       "(highly recommended)": [
         "(наполегливо рекомендується)"
       ],
@@ -8880,9 +8848,6 @@
       "Change password": [
         "Змінити пароль"
       ],
-      "Change password for ${ Name } (${ Email })": [
-        "Змінити пароль для ${ Name } (${ Email })"
-      ],
       "Change role": [
         "Змінити роль"
       ],
@@ -8894,6 +8859,9 @@
       ],
       "Clear": [
         "Очистити"
+      ],
+      "Composing": [
+        ""
       ],
       "Confirm address": [
         "Підтвердьте адресу"
@@ -9063,9 +9031,6 @@
       "Email subscriptions": [
         "Підписки електронної пошти"
       ],
-      "Enable keyboard shortcuts": [
-        "Увімкнути комбінації клавіш"
-      ],
       "Encryption and keys": [
         "Шифрування та ключі"
       ],
@@ -9105,8 +9070,8 @@
       "Generate new recovery phrase?": [
         "Згенерувати нову фразу відновлення?"
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Отримайте ProtonVPN Plus для доступу до всіх серверів"
+      "Get ${ vpnPlus } to access all servers": [
+        "Отримайте ${ vpnPlus } для доступу до всіх серверів"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Отримайте до 18 місяців ${ appName } ${ planName } безплатно"
@@ -9165,6 +9130,9 @@
       "Invoices": [
         "Рахунки"
       ],
+      "Keyboard shortcuts": [
+        "Комбінації клавіш"
+      ],
       "Labels": [
         "Мітки"
       ],
@@ -9182,6 +9150,9 @@
       ],
       "Messages": [
         "Повідомлення"
+      ],
+      "Messages and composing": [
+        ""
       ],
       "Multi-user support": [
         "Підтримка декількох користувачів"
@@ -9221,9 +9192,6 @@
       ],
       "Organization and keys": [
         "Організація та ключі"
-      ],
-      "Other": [
-        "Інше"
       ],
       "Password": [
         "Пароль"
@@ -9272,12 +9240,6 @@
       ],
       "Proton Logo": [
         "Логотип Proton"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonVPN": [
-        "ProtonVPN"
       ],
       "Reconnect your account": [
         "Повторно під'єднайте свій обліковий запис"
@@ -9438,8 +9400,8 @@
       "Total (monthly)": [
         "Всього (щомісячно)"
       ],
-      "Try the best of ProtonMail for free": [
-        "Спробуйте найкраще з ProtonMail безплатно"
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Випробуйте найкраще у ${ MAIL_APP_NAME } безплатно"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
@@ -9519,8 +9481,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "Рахунок ProtonMail"
+      "${ MAIL_APP_NAME } invoice": [
+        ""
       ]
     },
     "Title header": {
@@ -9585,6 +9547,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        "Користувачі ${ MAIL_APP_NAME } типово застосовуватимуть цей ключ для надсилання"
+      ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Доступ до вмісту, обмеженого розташуванням (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube тощо), незалежно від того, де ви знаходитесь."
       ],
@@ -9624,11 +9589,11 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Увімкнення розширеного журналу записує IP-адресу для кожної події в журналі безпеки."
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Отримайте доступ до всіх платних функцій для ${ VPN_APP_NAME } та ${ MAIL_APP_NAME } (служба зашифрованої електронної пошти, якою користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Отримайте доступ до всіх платних функцій для ${ vpnAppName } та ${ mailAppName } (зашифрований сервіс електронної пошти, яким користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Отримайте доступ до всіх платних функцій для ProtonVPN та ProtonMail (зашифрований сервіс електронної пошти, яким користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Групуйте повідомлення в одній розмові або переглядайте їх окремо."
@@ -9644,9 +9609,6 @@
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield захищає ваш пристрій та пришвидшує перегляд в Інтернеті, блокуючи рекламу, стеження та зловмисні програми."
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "Користувачі ProtonMail використовуватимуть цей ключ типово для надсилання"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Спрямовуйте свій інтернет-трафік через мережу Tor одним натисканням."
@@ -9669,8 +9631,8 @@
       "Support for file sharing protocols such as BitTorrent.": [
         "Підтримка протоколів обміну файлами, наприклад, BitTorrent."
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Системні підтеки показуватимуться як окремі теки в ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Системні підтеки показуватимуться окремими теками в ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
@@ -9717,14 +9679,14 @@
       "You have locally decrypted this key": [
         "Ви локально розшифрували цей ключ"
       ],
+      "Your ${ MAIL_APP_NAME } inbox is almost full": [
+        ""
+      ],
       "Your DKIM signing is working.": [
         "Підписування DKIM працює."
       ],
       "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
         "Схоже, ваш зовнішній обліковий запис досягнув 24-годинного обмеження пропускної здатності. Proton спробує відновити імпортування одразу, як це стане можливим."
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "Ваша поштова скринька ProtonMail майже заповнена"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -9733,13 +9695,13 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Виберіть типові налаштування PGP, що використовуються для підписування чи шифрування повідомлень для отримувачів, які використовують PGP за межами ProtonMail. Зауважте, що вбудований PGP примусово перетворює вміст повідомлень у формат звичайного тексту. Докладніше"
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Виберіть типові налаштування PGP, що використовуються для підписування чи шифрування повідомлень для отримувачів, які використовують PGP за межами ${ BRAND_NAME }. Зауважте, що вбудований PGP примусово перетворює вміст повідомлень у формат звичайного тексту. Докладніше"
       ]
     },
     "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "При отриманні листів від інших користувачів ProtonMail, які не мають довірених ключів у ваших контактах, ви побачите банер із запитом про активацію довірених ключів."
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Отримавши листи від інших користувачів ${ MAIL_APP_NAME }, які не мають довірених ключів у ваших контактах, ви побачите банер із запитом про активацію довірених ключів."
       ]
     },
     "Tooltip sign external messages": {
@@ -9813,9 +9775,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
       "30-days money-back guarantee": [
         "Гарантія повернення коштів протягом 30 днів"
       ],
@@ -10005,8 +9964,8 @@
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "Якщо ви скасуєте це імпортування, ви не зможете його продовжити. Proton зберіг перебіг процесу до вашого облікового запису. Все одно скасувати?"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Живий чат — це преміум можливість, доступна лише користувачам платних тарифних планів ${ VPN_APP_NAME }. Будь ласка, створіть запит натомість."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Зверніть увагу, що вибравши цей спосіб оплати, ваш обліковий запис не можна оновити негайно. Ми оновимо ваш обліковий запис одразу після підтвердження платежу."
@@ -10026,8 +9985,8 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Дата й час на вашому пристрої не синхронізуються. ${ learnMore }"
       ],
-      "This feature is only available for ProtonMail Professional plans or higher": [
-        "Ця функція доступна лише для тарифних планів ProtonMail Professional або вище"
+      "This feature is only available for ${ mailProfessional } plans or higher": [
+        "Ця функція доступна лише для тарифних планів ${ mailProfessional } або вище"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Цей імпорт може перевищити обсяг сховища, який зараз доступний для вашого облікового запису Proton. Розгляньте можливість налаштування вашого імпортування."

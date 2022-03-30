@@ -578,7 +578,7 @@
         "Pokud teď odejdete, některé události nebudou naimportovány"
       ],
       "By leaving now, you will lose your event.": [
-        ""
+        "Pokud nyní odejdete, přijdete o svou událost."
       ]
     },
     "Apps dropdown": {
@@ -618,8 +618,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ mailAppName }, ${ calendarAppName }, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta Access vám umožní používat beta verze aplikací ${ mailAppName }, ${ calendarAppName } a Proton Drive před jejich zveřejněním. To znamená, že můžete jako první vyzkoušet nové produkty, získat nové aktualizace a používat nové funkce."
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta přístup vám umožní používat beta verze aplikací ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME } před jejich zveřejněním. To znamená, že můžete jako první vyzkoušet nové produkty, získat nové aktualizace a používat nové funkce."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Jestliže zaznamenáte problémy, vždy můžete deaktivovat Beta Přístup."
@@ -793,8 +793,8 @@
       ]
     },
     "Button": {
-      "Continue using ProtonMail.": [
-        "Pokračovat v používání ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Pokračovat s ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar invite buttons label": {
@@ -810,10 +810,10 @@
         "${ name } odmítnul(a) vaši pozvánku"
       ],
       "${ name } hasn't answered the invitation yet": [
-        ""
+        "${ name } zatím na pozvánku neodpověděl"
       ],
       "${ name } tentatively accepted the invitation": [
-        ""
+        "${ name } pozvání předběžně přijal"
       ],
       "This event has been canceled": [
         "Tato událost byla zrušena"
@@ -1759,7 +1759,7 @@
         "Nikdy"
       ],
       "On date…": [
-        ""
+        "V den…"
       ],
       "time": [
         "čas",
@@ -1873,7 +1873,7 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        ""
+        "Událost patří do zakázaného kalendáře."
       ]
     },
     "Dropwdown action icon tooltip": {
@@ -2209,8 +2209,8 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků nejsou k dispozici. Přizpůsobte prosím import a upravte tyto názvy."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ProtonMail. Přizpůsobte prosím import a upravte tyto názvy."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Něco se pokazilo, pro pokračování prosím ${ refresh }. Pokud se tato chybová zpráva stále zobrazuje, kontaktujte prosím náš ${ supportTeam }."
@@ -2451,7 +2451,7 @@
         "Můžete také ${ refresh } nebo to zkusit později."
       ],
       "You need an active personal calendar to import events": [
-        ""
+        "Pro import událostí potřebujete aktivní osobní kalendář"
       ]
     },
     "Error notification": {
@@ -2685,7 +2685,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        ""
+        "${ CALENDAR_APP_NAME } v současné době nepodporuje některé typy, detaily a formáty událostí."
       ],
       "vCard versions < 3.0": [
         "vCard verze < 3.0"
@@ -2900,7 +2900,7 @@
         "5 GB uložiště"
       ],
       "A cancellation email will be sent to removed participants.": [
-        ""
+        "Odvolaným účastníkům bude zaslán e-mail o zrušení účasti."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
         "Účastníkům události bude zaslán e-mail o zrušení události. Chcete smazat všechny události v této sérii?"
@@ -2936,7 +2936,7 @@
         "Pozvánka bude zaslána k přidaným účastníkům."
       ],
       "An invitation will be sent to the event participants.": [
-        ""
+        "Účastníkům akce bude zaslána pozvánka."
       ],
       "and": [
         "a"
@@ -3142,17 +3142,17 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Dříve aktualizované výskyty organizátorem budou zachovány."
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
       ],
       "Other options": [
         "Další volby"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Vezměte na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
@@ -3161,7 +3161,7 @@
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
       ],
       "Please remove the duplicates and try again.": [
-        ""
+        "Odstraňte prosím duplikáty a zkuste to znovu."
       ],
       "Please select the folders you would like to import:": [
         "Vyberte složky, které chcete importovat:"
@@ -3205,11 +3205,11 @@
       "Session timed out": [
         "Relace vypršela"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Vytvořením PGP Vám umožňuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ${ BRAND_NAME } a používají kompatibilní PGP službu."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        ""
+        "Některé vaše odpovědi na události, které byly dříve aktualizovány organizátorem, budou ztraceny."
       ],
       "Storage space is shared across Mail, Calendar, and Drive.": [
         "Úložný prostor je sdílen mezi aplikacemi Pošta, Kalendář a Disk."
@@ -3359,7 +3359,7 @@
         "Zde můžete zkontrolovat průběh ${ importProgressLink }."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        ""
+        "Můžete upravovat pouze osobní vlastnosti události, protože z adresy organizátora nelze odesílat e-maily."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
@@ -3383,7 +3383,7 @@
         "Zaktualizujete všechny události v této řadě. Přidaní i odebraní účastníci budou informováni."
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        ""
+        "Všechny události v této řadě budete aktualizovat. Účastníkům události bude zaslána pozvánka."
       ],
       "You will update all the events in this series. Existent and added participants will be notified.": [
         "Zaktualizujete všechny události v této řadě. Existující i přidaní účastníci budou informováni."
@@ -3583,7 +3583,7 @@
         "Skrýt heslo"
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
+        "Jaká je pravděpodobnost, že doporučíte ${ calendarAppName } příteli nebo kolegovi?"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -3708,8 +3708,8 @@
       "URL": [
         "URL"
       ],
-      "Username or ProtonMail address": [
-        "Uživatelské jméno nebo e-mailová adresa ProtonMail"
+      "Username or ${ MAIL_APP_NAME } address": [
+        "Uživatelské jméno nebo adresa ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Ověřovací kód"
@@ -4082,10 +4082,10 @@
         "${ value } dní po"
       ],
       "${ value } day after at ${ time }": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } den po ${ time }",
+        "${ value } dny po ${ time }",
+        "${ value } dní po ${ time }",
+        "${ value } dní po ${ time }"
       ],
       "${ value } day before": [
         "${ value } den před",
@@ -4094,10 +4094,10 @@
         "${ value } dní před"
       ],
       "${ value } day before at ${ time }": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } den před ${ time }",
+        "${ value } dny před ${ time }",
+        "${ value } dní před ${ time }",
+        "${ value } dní před ${ time }"
       ],
       "${ value } hour after": [
         "${ value } hodina po",
@@ -4106,10 +4106,10 @@
         "${ value } hodin po"
       ],
       "${ value } hour after at ${ time }": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } hodina po ${ time }",
+        "${ value } hodiny po ${ time }",
+        "${ value } hodin po ${ time }",
+        "${ value } hodin po ${ time }"
       ],
       "${ value } hour before": [
         "${ value } hodina před",
@@ -4118,10 +4118,10 @@
         "${ value } hodin před"
       ],
       "${ value } hour before at ${ time }": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } hodina před ${ time }",
+        "${ value } hodiny před ${ time }",
+        "${ value } hodin před ${ time }",
+        "${ value } hodin před ${ time }"
       ],
       "${ value } minute after": [
         "${ value } minuta po",
@@ -4130,10 +4130,10 @@
         "${ value } minut po"
       ],
       "${ value } minute after at ${ time }": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } minuta před ${ time }",
+        "${ value } minuty před ${ time }",
+        "${ value } minut před ${ time }",
+        "${ value } minut před ${ time }"
       ],
       "${ value } minute before": [
         "${ value } minuta před",
@@ -4142,10 +4142,10 @@
         "${ value } minut před"
       ],
       "${ value } minute before at ${ time }": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } minuta před ${ time }",
+        "${ value } minuty před ${ time }",
+        "${ value } minut před ${ time }",
+        "${ value } minut před ${ time }"
       ],
       "${ value } week after": [
         "${ value } týden po",
@@ -4154,10 +4154,10 @@
         "${ value } týdnů po"
       ],
       "${ value } week after at ${ time }": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } týden po ${ time }",
+        "${ value } týdny po ${ time }",
+        "${ value } týdnů po ${ time }",
+        "${ value } týdnů po ${ time }"
       ],
       "${ value } week before": [
         "${ value } týden před",
@@ -4166,10 +4166,10 @@
         "${ value } týdnů před"
       ],
       "${ value } week before at ${ time }": [
-        "",
-        "",
-        "",
-        ""
+        "${ value } týden před ${ time }",
+        "${ value } týdny před ${ time }",
+        "${ value } týdnů před ${ time }",
+        "${ value } týdnů před ${ time }"
       ],
       "At time of event": [
         "V době události"
@@ -4320,7 +4320,7 @@
     },
     "Personal calendar limit reached modal body": {
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        ""
+        "Nelze vytvořit další kalendáře. Dosáhli jste maximálního počtu osobních kalendářů v rámci svého plánu."
       ]
     },
     "PGP key encryption warning": {
@@ -4548,17 +4548,17 @@
     },
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
-        ""
+        "Přihlášení k odběru kalendáře není v tuto chvíli k dispozici"
       ]
     },
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        ""
+        "Nelze přidat další kalendáře. Dosáhli jste maximálního počtu odebíraných kalendářů v rámci vašeho plánu."
       ]
     },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
-        ""
+        "Odvolaným účastníkům bude zaslán e-mail o zrušení všech akcí v této řadě."
       ],
       "Address copied to clipboard": [
         "Adresa zkopírována do schránky"
@@ -4591,16 +4591,16 @@
         "Kalendář aktualizován"
       ],
       "Cancellation sent and all events deleted": [
-        ""
+        "Zrušení odesláno a všechny události smazány"
       ],
       "Cancellation sent and event deleted": [
         "Oznámení o zrušení bylo odesláno a událost smazána"
       ],
       "Cancellation sent and participants removed": [
-        ""
+        "Zrušení odesláno a účastníci odebráni"
       ],
       "Cancellation sent and participants removed from all events": [
-        ""
+        "Zrušení odesláno a účastníci byli odebrání ze všech událostí"
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
@@ -4660,22 +4660,22 @@
         "Pozvánka byla odeslána a účastníci přidáni"
       ],
       "Invitation sent and participants added to all events": [
-        ""
+        "Pozvánka odeslána a účástníci přidání ke všem událostem"
       ],
       "Participants notified and all events updated": [
-        ""
+        "Účastníci byli obeznámeni a všechny události aktualizovány"
       ],
       "Participants notified and changes saved": [
-        ""
+        "Účastníci byli obeznámeni a změny uloženy"
       ],
       "Participants notified and event updated": [
-        ""
+        "Účastníci byli obeznámeni a událost aktualizována"
       ],
       "Participation status updated": [
         "Status účasti byl aktualizován"
       ],
       "Participation status updated for all events": [
-        ""
+        "Status účasti byl pro všechny události aktualizován"
       ],
       "Phone number copied to clipboard": [
         "Telefonní číslo zkopírováno do schránky"
@@ -4813,7 +4813,7 @@
         "Přidat název události"
       ],
       "Add more information related to this event": [
-        ""
+        "Přidat další informace týkající se této události"
       ],
       "Add participants": [
         "Přidat účastníky"
@@ -4846,7 +4846,7 @@
         "Změnit mou odpověď"
       ],
       "Choose how many times this event will repeat": [
-        ""
+        "Zvolte, kolikrát se tato událost bude opakovat"
       ],
       "Choose how often this event repeats": [
         "Vyberte jak často se tato událost opakuje"
@@ -4941,8 +4941,8 @@
       "Enter your password": [
         "Zadejte Vaše heslo"
       ],
-      "Enter your username or ProtonMail email address": [
-        "Zadejte vaše uživatelské jméno nebo e-mailovou adresu ProtonMail"
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Zadejte své uživatelské jméno nebo e-mailovou adresu ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Chyba"
@@ -4966,7 +4966,7 @@
         "Skupiny"
       ],
       "Hide time zones for event start and end times": [
-        ""
+        "Skrytí časových pásem pro časy začátku a konce události"
       ],
       "Human verification": [
         "Captcha"
@@ -5092,10 +5092,10 @@
         "Vyberte čas pro odeslání tohoto oznámení"
       ],
       "Select the time zone for the event end time": [
-        ""
+        "Výběr časového pásma pro čas ukončení události"
       ],
       "Select the time zone for the event start time": [
-        ""
+        "Výběr časového pásma pro čas zahájení události"
       ],
       "Select the way to send this notification": [
         "Vyberte způsob, jak odeslat toto oznámení"
@@ -5104,13 +5104,13 @@
         "Vyberte, co chcete importovat"
       ],
       "Select when this event will stop happening": [
-        ""
+        "Vyberte, kdy se tato událost přestane vyskytovat"
       ],
       "Select when you want this notification to be sent": [
         "Vyberte, kdy chcete, aby bylo toto oznámení odesláno"
       ],
       "Select which calendar to add this event to": [
-        ""
+        "Vyberte kalendář, do kterého chcete tuto událost přidat"
       ],
       "Send feedback": [
         "Odeslat zpětnou vazbu"
@@ -5122,7 +5122,7 @@
         "Nastavení"
       ],
       "Show time zones for event start and end times": [
-        ""
+        "Zobrazit časová pásma pro časy začátku a konce události"
       ],
       "Sign in again to continue": [
         "Chcete-li pokračovat, znovu se přihlaste"
@@ -5146,7 +5146,7 @@
         "Co je nového"
       ],
       "You have invited participants with equivalent emails": [
-        ""
+        "Pozvali jste účastníky se stejnými e-maily"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Vaše bezplatná zkušební verze brzy skončí dne ${ formattedEndDate }"
@@ -5184,8 +5184,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které bude použito při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Systémové podsložky se v ProtonMailu zobrazí jako samostatné složky"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
       ],
       "The import will start with the most recent messages.": [
         "Import bude zahájen nejnovějšími zprávami."
@@ -5238,8 +5238,8 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jestliže si nepamatujete helso, je možné znovu re-aktivovat Váš klíč. Můžeme Vám pomoci zavrhnout výstrahu vyskakovacího baneru ale v procesu permanentně ztratíte přístup na všechna šifrovaná data s tímto klíčem."
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } plány. Prosím otevřete ticket."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton sloučí všechny složky se stejným názvem. Chcete-li tomu zabránit, změňte názvy před importem."

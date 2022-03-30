@@ -214,8 +214,8 @@
       "Copy link": [
         "Hivatkozás másolása"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Inkább egy biztonságos ProtonMail cím létrehozása"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Hozzon létre egy biztonságos ${ MAIL_APP_NAME } címet inkább"
       ],
       "Create address": [
         "Cím létrehozása"
@@ -349,8 +349,8 @@
       "Generate recovery phrase": [
         "Helyreállító jelmondat létrehozása"
       ],
-      "Get ProtonVPN Plus": [
-        "ProtonVPN Plus választása"
+      "Get ${ vpnPlus }": [
+        "${ vpnPlus } választása"
       ],
       "Get started": [
         "Kezdés"
@@ -661,8 +661,8 @@
       "Show more": [
         "Több megjelenítése"
       ],
-      "Show shortcuts": [
-        "Gyorsbillentyűk megjelenítése"
+      "Show preview": [
+        "Előnézet megmutatása"
       ],
       "sign in": [
         "bejelentkezés"
@@ -1205,8 +1205,8 @@
       "Add link to your email footer": [
         ""
       ],
-      "Continue using ProtonMail.": [
-        ""
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Folytatás ezzel: ${ MAIL_APP_NAME }."
       ],
       "Copy": [
         "Másolás"
@@ -2331,8 +2331,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
-      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
-        "Szerezzen 3 hónapnyi ${ mailAppName } Plus-t ingyen minden barátért, aki előfizet a ${ mailAppName }-re."
+      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
+        "Szerezzen 3 hónapnyi ${ mailPlus } Plus-t ingyen minden barátért, aki előfizet a ${ MAIL_APP_NAME }-re."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Az importálás alatt álló fájl csoportokat is tartalmaz. Határozza meg, hogyan kerüljenek importálásra a csoportok."
@@ -2344,8 +2344,8 @@
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Kövesse hány ember kattint a linkjére, iratkozik fel és lesz fizető felhasználó. Kövesse, ahogy gyűlnek ingyenes hónapjai."
       ],
-      "Track your referral link activities here.": [
-        "Itt figyelemmel követheti az ajánló hivatkozásait."
+      "You can continue to invite friends, but you wont be able to earn more credits": [
+        "Folytathatja a barátok meghívását, de további krediteket nem fog tudni szerezni"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Eseményeket iCal formátumból (ICS fájl) tud importálni.\nA fájl maximális mérete ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és maximum ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmazhat. Nagyobb fájl importálásához, kisebb darabokra kell vágnia."
@@ -2542,9 +2542,6 @@
       ],
       "Calendar limit reached": [
         "Elérte a naptárak maximális számát"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "A naptár elsődleges titkosító kulcsa nincs visszafejtve"
       ],
       "Can't check username, try again later": [
         "Nem lehet ellenőrizni a felhasználónevet, próbálkozzon újra később"
@@ -2766,14 +2763,14 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bizonyos mappák neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
-      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Bizonyos mappák neve túl hosszú a ProtonMailbe importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Bizonyos mappák neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Bizonyos címkék neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Bizonyos címkék neve túl hosszú a ProtonMailbe importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
@@ -3221,9 +3218,6 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent támogatás (P2P)"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "VPN ${ connectionsPluralized }"
       ]
     },
     "file size format": {
@@ -3903,11 +3897,23 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } érvénytelen"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "A ${ MAIL_APP_NAME } egy-jelszavas módban is használható, amely leváltja a külön bejelentkezési és e-mail titkosítási jelszavakat. Egy-jelszavas módra váltáshoz, adja meg a kívánt jelszót, majd kattintson a Mentés gombra."
+      ],
+      "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
+        "A ${ MAIL_APP_NAME } lehetővé teszi, hogy mások számára is hozzon létre e-mail címeket. Ez nagyszerű lehetőség cégeknek, családi levelezéshez vagy csoportoknak."
+      ],
+      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "A ${ MAIL_APP_NAME } támogatja a DKIM ellenőrzést saját domainekhez. A DKIM ellenőrzéshez, vegye fel a következő CNAME rekordot a DNS beállításaiban. Ezt általában a domain név regisztrátor adminisztrálási felületén állathatja be."
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } Ingyenes"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional egy felhasználóval indul, és minden további felhasználó 5GB tárhellyel valamint 5 e-mail címmel adódik hozzá a szervezethez."
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        "A ${ mailPlus } egy felhasználóra van korlátozva és 5GB tárhellyel indul."
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "${ mailProfessional } egy felhasználóval indul és minden további felhasználó 5GB tárhellyel, 5 e-mail címmel adódik hozzá a szervezethez."
       ],
       "${ n } address": [
         "${ n } cím",
@@ -3985,6 +3991,16 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Ingyenes"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        "${ vpnBasic }, ${ vpnPlus } vagy ${ visionary } csomag szükséges az ország szintű kapcsolódáshoz."
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "A ${ vpnPlus } ${ maxVpn } VPN kapcsolatot tartalmaz.",
+        "A ${ vpnPlus } ${ maxVpn } VPN kapcsolatot tartalmaz."
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        "${ vpnPlus } vagy a ${ visionary } csomag szükséges a Secure Core szolgáltatáshoz."
+      ],
       "(${ memberCount } member)": [
         "",
         ""
@@ -4004,9 +4020,9 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bónusz tárterület"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ProtonVPN kapcsolat (lehetővé teszi több készülék csatlakoztatását a VPN-hez)",
-        "+${ organization.BonusVPN } ProtonVPN kapcsolat (lehetővé teszi több készülék csatlakoztatását a VPN-hez)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolatok (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
       ],
       "1. Invite friends to Proton": [
         "1. Barátok meghívása a Protonba"
@@ -4056,8 +4072,8 @@
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"ProtonMail nekem\" (ProtonMail me), vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal."
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"${ MAIL_APP_NAME } nekem\", vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal"
       ],
       "Add a recovery email address": [
         "Helyreállító e-mail cím hozzáadása"
@@ -4194,8 +4210,8 @@
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus vagy Visionary előfizetés szükséges"
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Mielőtt e-maileket fogadhatna a saját domain nevével a ProtonMailnél, a következő MX DNS rekordok hozzáadására van szükség. Ez általában a domain név regisztrátor kezelőfelületén történik."
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Mielőtt saját domain nevével fogadhatna e-maileket a ${ MAIL_APP_NAME }-nél, a következő DNS MX rekordok hozzáadására van szükség. Ez általában a domain név regisztrátor kezelőfelületén történik."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Mielőtt elkezdhetne küldeni és fogadni e-maileket az új címével, létre kell hoznia titkosítási kulcsokat hozzá."
@@ -4263,9 +4279,6 @@
       "Continue with ${ planName }": [
         "Folytatás ezzel: ${ planName }"
       ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        "Folytassa ezzel: ${ planName } még ma, hogy elkerülje hozzáférésének letiltását próbaidejének végén."
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Létrehozandó ${ calendarsToBeCreated } új naptár",
         "Létrehozandó ${ calendarsToBeCreated } új naptár"
@@ -4282,8 +4295,8 @@
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Hozzon létre és kezeljen al-fiókokat és rendeljen hozzájuk e-mail címeket a saját domain nevén."
       ],
-      "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "Hozzon létre e-mail címeket mások számára, vállalkozásához, iskolájához vagy egy csoporthoz is használhat ${ MAIL_APP_NAME }t. Az induláshoz adja meg a szervezet nevét és a használni kívánt domain nevet (pl. @azöncége.com). "
       ],
       "Create in": [
         "Létrehozás itt"
@@ -4321,8 +4334,8 @@
       "Data locked": [
         "Adatok zárolva"
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ProtonMail prioritása a legalacsonyabb szám."
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
       ],
       "Delete link?": [
         "Link törlése?"
@@ -4336,8 +4349,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, nem lesz képes menedzselni a szervezetét."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Ne használja az OpenVPN / IKEv2 adatokat a ProtonVPN alkalmazásban vagy a ProtonVPN vezérlőpulton. ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Ne használja az OpenVPN / IKEv2 adatokat a ${ VPN_APP_NAME } alkalmazásban vagy a ${ VPN_APP_NAME } vezérlőpulton. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Biztos, hogy az aktuálisat leszámítva, minden munkafolyamatot visszavon?"
@@ -4355,8 +4368,8 @@
       "Done! We sent a code to ${ destination }.": [
         "Kész! Elküldtük a kódot ide: ${ destination }."
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "A lemondás megszünteti a fizetett ProtonVPN szerverekkel való összes kapcsolatot."
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "A lemondás megszünteti a fizetett ${ VPN_APP_NAME } szerverekkel való összes kapcsolatot."
       ],
       "Download recovery file": [
         "Helyreállító fájl letöltése"
@@ -4511,8 +4524,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Ha saját domain névvel használja a ProtonMailt, létrehozhat egy gyűjtő e-mail címet, amelyre minden olyan levél meg fog érkezni, amelyet nem létező címre küldenek (pl. elírások)."
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "Ha saját domain névvel használja a ${ MAIL_APP_NAME }t, létrehozhat egy gyűjtő e-mail címet, amelyre minden olyan levél meg fog érkezni, amelyet nem létező címre küldenek (pl. elírások)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Ha van ajándék kódja, adja meg itt, a kedvezmény eléréséért."
@@ -4532,14 +4545,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Ha elveszti a kétlépcsős hitelesítéshez használt eszközét, ezekkel a kódokkal jelentkezhet be fiókjába a 6 számjegyű kód helyett. Minden kód csak egyszer használható."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Ha folytatja a lemondást, elveszíti a hozzáférést a ProtonMail és a ProtonVPN fizetett szolgáltatásaihoz."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ MAIL_APP_NAME } és ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Ha folytatja a lemondást, elveszíti a hozzáférést a ProtonMail fizetett szolgáltatásaihoz, beleértve a megnövelt tárhelyet és a szűrőket."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ MAIL_APP_NAME } fizetett szolgáltatásaihoz, beleértve a megnövelt tárhelyet és a szűrőket."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Ha folytatja a lemondást, elveszíti a hozzáférést a ProtonVPN fizetett szolgáltatásaihoz."
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ VPN_APP_NAME } és $ fizetett szolgáltatásaihoz."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Ha nemrégiben visszaállította a jelszavát, továbbra is hozzáférhet az adataihoz egy adat visszaállítási mód használatával"
@@ -4660,8 +4673,8 @@
       "Large imports can take several days.": [
         "Egy nagyobb importálás akár napokig is eltarthat."
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Tudjon meg többet arról, hogyan jelentkezhet be VPN alkalmazásokkal a ProtonVPN-re."
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Tudjon meg többet arról, hogyan jelentkezhet be VPN alkalmazásokkal a ${ VPN_APP_NAME }-re."
       ],
       "Learn more": [
         "További információk"
@@ -4696,8 +4709,8 @@
       "Loading preview": [
         "Előnézet betöltése"
       ],
-      "Log in to ProtonMail to activate your address": [
-        "Jelentkezzen be a ProtonMailbe a cím aktiválásához"
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
+        "Jelentkezzen be a ${ MAIL_APP_NAME }be, hogy aktiválja a címét"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "A naplók minden azonosítási kísérletet tárolnak az összes Proton szolgáltatáshoz, amelyek az ön Proton bejelentkezését használják."
@@ -4807,8 +4820,8 @@
       "One account for all Proton services": [
         "Egy fiók minden Proton szolgáltatáshoz"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ProtonMail címzettekhez."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
       ],
       "Only you can see the labels.": [
         "Csak ön láthatja a címkéket."
@@ -4943,28 +4956,6 @@
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton megpróbálja folytatni az importálást ahogy az e-mail szolgáltatója visszaállítja a fiók ${ bandwithLimitLink }-jét. Nem kell semmit csinálnia. Ha abbahagyja az importálást, nem fogja tudni folytatni és újra fog kelleni kezdenie."
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "A ProtonMail egy-jelszavas módban is használható, amely leváltja a külön bejelentkezési és e-mail titkosítási jelszavakat. Egy-jelszavas módra váltáshoz, adja meg a kívánt jelszót, majd kattintson a Mentés gombra."
-      ],
-      "ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        "A ProtonMail lehetővé teszi, hogy mások számára is hozzon létre e-mail címeket. Ez nagyszerű lehetőség cégeknek, családi levelezéshez vagy csoportoknak."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "A ProtonMail Plus egy felhasználóra van korlátozva és 5GB tárhellyel indul."
-      ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "A ProtonMail támogatja a DKIM ellenőrzést saját domainekhez. A DKIM ellenőrzéshez, vegye fel a következő CNAME rekordot a DNS beállításaiban. Ezt általában a domain név regisztrátor adminisztrálási felületén állathatja be."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN kapcsolatot tartalmaz.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN kapcsolatot tartalmaz."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "ProtonVPN Basic, Plus vagy Visionary csomag szükséges az ország szintű kapcsolódáshoz."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "ProtonVPN Plus vagy a Visionary csomag szükséges a Secure Core szolgáltatáshoz."
-      ],
       "Public link invite": [
         "Nyilvános meghívási hivatkozás"
       ],
@@ -5073,11 +5064,8 @@
       "Some keys successfully reactivated": [
         "Néhány kulcsot sikerült újraaktiválni"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Az SPF feladata, hogy meghatározza, kik küldhetnek levelet az adott domain névvel. Emiatt erősen javasolt a ProtonMail felvétele az SPF rekordba. Kérjük vegye fel a következő TXT rekordot a DNS beállításaiban. Ezt általában a domain név regisztrátor adminisztrálási felületén állathatja be."
-      ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Kezdjen 500 MB-tal és oldjon fel nagyobb tárhelyet útközben. A tárhely meg van osztva a Levelezés, a Naptár és a Felhőtárhely között."
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Az SPF feladata, hogy meghatározza, kik küldhetnek levelet az adott domain névvel. Emiatt erősen javasolt a ${ MAIL_APP_NAME } felvétele az SPF rekordba. Kérjük vegye fel a következő TXT rekordot a DNS beállításaiban. Ezt általában a domain név regisztrátor adminisztrálási felületén állathatja be."
       ],
       "Starter VPN service with P2P support.": [
         "Alap VPN csomag, P2P támogatással."
@@ -5130,8 +5118,8 @@
       "The name will be visible to your users while they are logged in.": [
         "A név látható lesz a bejelentkezett felhasználóinak."
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Ezekkel a beállítási fájlokkal egy külső VPN alkalmazással csatlakozhat a ProtonVPN-hez, vagy a routerén állíthatja be a kapcsolatot."
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Ezekkel a beállítási fájlokkal egy külső VPN alkalmazással csatlakozhat a ${ VPN_APP_NAME }-hez, vagy a routerén állíthatja be a kapcsolatot."
       ],
       "This 30-day free trial is not available any other way.": [
         "Ez a 30 napos ingyenes próbaverzió más módon nem érhető el."
@@ -5238,8 +5226,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "A folytatáshoz válasszon egy fiók helyreállítási módszert, hogy ellenőrizhessük a kérést."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Az internetkapcsolatának biztonságosabbá tételéhez, töltse le és telepítse a ProtonVPN alkalmazást és kapcsolódjon egy ProtonVPN szerverhez."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        "Az internetkapcsolatának biztonságosabbá tételéhez, töltse le és telepítse a ${ VPN_APP_NAME } alkalmazást és kapcsolódjon egy ${ VPN_APP_NAME } szerverhez."
       ],
       "To use ${ toAppName }, please create an address.": [
         "${ toAppName } használatához, hozzon létre egy címet."
@@ -5298,8 +5286,8 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "Váltson ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } vagy ${ PLAN_NAMES[PLANS.PLUS] } csomagra, hogy távolléte esetén a automatikus válaszokat küldhessen a feladóknak."
       ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Váltson előfizetéses csomagra, hogy használhassa az IMAP/SMTP elérést a ProtonMail Bridge segítségével."
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
+        "Váltson előfizetéses csomagra, hogy használhassa az IMAP/SMTP elérést a ${ MAIL_APP_NAME } Bridge segítségével."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Frissítsen ma, hogy elkerülje az alábbi ${ appName } ${ planName } előnyök elvesztését."
@@ -5316,8 +5304,8 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Használja az automatikus válasz lehetőséget, hogy értesítse kapcsolatait arról, hogy jelenleg az irodán kívül tartózkodik, vagy más okok miatt nem tud válaszolni."
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Használja az alábbi adatokat, amikor a ProtonVPN szerverekhez az alkalmazás nélkül csatlakozik. Például: Tunnelblick MacOS-en, vagy OpenVPN GNU/Linux-on."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Használja az alábbi adatokat, amikor a ${ VPN_APP_NAME } szerverekhez az alkalmazás nélkül csatlakozik. Például: Tunnelblick MacOS-en, vagy OpenVPN GNU/Linux-on."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Használja a saját egyedi email domain neveit, pl. on@azonneve.com"
@@ -5349,8 +5337,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Figyelmeztetés: a törlés végleges. Ezzel elveszti az elérését az összes kapcsolódó szolgáltatáshoz és törli minden névjegyét."
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Amikor lehetséges, javasoljuk inkább a hivatalos ProtonVPN alkalmazás használatát."
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        "Amikor lehetséges, javasoljuk inkább a hivatalos ${ VPN_APP_NAME } alkalmazás használatát."
       ],
       "We recommend using your recovery phrase instead.": [
         "Javasoljuk, hogy inkább a helyreállító mondatát használja."
@@ -5394,8 +5382,8 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le képek az eszközére."
       ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Amennyiben engedélyezi az értesítéseket, a ProtonMail fiókjába érkező új üzenetekről a helyreállítási/értesítési címén tájékoztatjuk."
+      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
+        "Amennyiben engedélyezi az értesítéseket, a ${ MAIL_APP_NAME } fiókjába érkező új üzenetekről a helyreállítási/értesítési címén tájékoztatjuk."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         "Amikor feliratkoznak egy fizetős csomagra, 1-től 3 hónapig terjedő ${ appName } ${ planName }-t írunk jóva a fiókjára."
@@ -5427,9 +5415,6 @@
       "You are about to open another browser tab and visit:": [
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve, hozzáférése korlátozott."
-      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
@@ -5457,11 +5442,11 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
       ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "A ProtonMail szolgáltatásait bármilyen e-mail kliens programmal használhatja, amik támogatják a IMAP/SMTP protokollt: ilyenek pl.: az Outlook, Apple Mail, és a Thunderbird alkalmazások."
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "A ${ MAIL_APP_NAME } szolgáltatásait bármilyen e-mail kliens programmal használhatja, amik támogatják a IMAP/SMTP protokollt: ilyenek pl.: az Outlook, Apple Mail, és a Thunderbird alkalmazások."
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Az alábbi bejelentkezéssel csatlakozhat a ProtonVPN szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Az alábbi bejelentkezéssel csatlakozhat a ${ VPN_APP_NAME } szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Nem küldhet több, mint ${ emailSendLimitNumber } e-mail meghívót a következő 24 óráig"
@@ -5469,8 +5454,8 @@
       "You cannot refer ${ appName } users": [
         "Nem ajánljhat ${ appName } felhasználókat"
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Nem használhatja az OpenVPN / IKEv2 bejelentkezési adatokat a ProtonVPN alkalmazásokban való bejelentkezéshez vagy a ProtonVPN vezérlőpulthoz. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Nem használhatja az OpenVPN / IKEv2 bejelentkezési adatokat a ${ VPN_APP_NAME } alkalmazásokban való bejelentkezéshez vagy a ${ VPN_APP_NAME } vezérlőpulthoz. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nem adott meg helyreállítási módszert. Ha elveszíti a jelszavát, így lehetetlen lesz visszaszereznie a fiók elérést. Biztos, hogy folytatja helyreállítási módszer nélkül?"
@@ -5481,8 +5466,8 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Aktiválnia kell a szervezeti titkos kulcsot, a tartalék szervezeti kulcshoz tartozó jelszóval, melyet a szervezeti adminisztrátor adhat meg."
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "A lemondás előtt le kell tiltani vagy el kell távolítani a ProtonMail további felhasználóit, címeit és a saját domain neveket."
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "A lemondás előtt le kell tiltani vagy el kell távolítani a ${ MAIL_APP_NAME } további felhasználóit, címeit és a saját domain neveket."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ahhoz, hogy felvehesse fizetési módként, a PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát."
@@ -5532,6 +5517,9 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "A ${ BRAND_NAME } fiókja ${ externalEmailAddress } címhez kapcsolódik. A ${ toAppName } használatához hozzon létre egy címet."
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        "A ${ VPN_APP_NAME } és ${ MAIL_APP_NAME } fiókok össze vannak kapcsolva. Mindkettő törléséhez lépjen be a következő címen és ott törölje a fiókokat: ${ loginLink }."
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése korlátozásra került. ${ payInvoiceLink }"
       ],
@@ -5565,9 +5553,6 @@
       "Your email will only be used for this one-time verification.": [
         "Az e-mail cím csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        "Az ingyenes ${ appName } ${ planName } próbaideje le fog járni ekkor: ${ formattedTrialExpirationDate } ."
-      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Az importálás a(z) ${ delayedImport.Account } címről átmenetileg késik."
       ],
@@ -5591,9 +5576,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
-      ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "A ProtonMail és a ProtonVPN fiókok össze vannak kapcsolva. Mindkettő törléséhez lépjen be a következő címen és ott törölje a fiókokat: ${ loginLink }."
       ],
       "Your recovery email address:": [
         "Az ön helyreállító e-mail címe:"
@@ -5631,11 +5613,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        "A ${ MAIL_APP_NAME } nem használható tömeges levélküldésre és levélszemét küldésre. A szabályos levelek száma nincs korlátozva."
+      ],
       "Customizable features": [
         "Testreszabható szolgáltatások"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "A ProtonMail nem használható tömeges levélküldésre és levélszemét küldésre. A szabályos levelek száma nincs korlátozva."
       ]
     },
     "Info for cash payment method": {
@@ -6012,11 +5994,13 @@
       " and ${ l }": [
         " és ${ l }"
       ],
-      "${ monthsRewarded } month credited": [
-        "",
-        ""
+      "${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } cím"
       ],
-      "${ monthsRewarded } month pending": [
+      "${ MAIL_APP_NAME } footer": [
+        "${ MAIL_APP_NAME } lábléc"
+      ],
+      "${ monthsRewarded } month credited": [
         "",
         ""
       ],
@@ -6123,9 +6107,6 @@
       "Calendars": [
         "Naptárak"
       ],
-      "Cancel": [
-        "Mégsem"
-      ],
       "Card holder": [
         "Kártyatulajdonos"
       ],
@@ -6162,6 +6143,9 @@
       "Conditions": [
         "Feltételek"
       ],
+      "Confirm link URLs": [
+        "Link URL-ek megerősítése"
+      ],
       "Confirm login password": [
         "Bejelentkezési jelszó megerősítése"
       ],
@@ -6197,6 +6181,9 @@
       ],
       "Country": [
         "Ország"
+      ],
+      "Credits pending": [
+        ""
       ],
       "Credits used": [
         "Felhasznált kredit"
@@ -6411,9 +6398,6 @@
       "Last month only": [
         "Csak az utolsó hónap"
       ],
-      "Link confirmation": [
-        "Link jóváhagyása"
-      ],
       "Login password": [
         "Bejelentkezési jelszó"
       ],
@@ -6552,12 +6536,6 @@
       "Proton username": [
         "Proton felhasználónév"
       ],
-      "ProtonMail address": [
-        "ProtonMail cím"
-      ],
-      "ProtonMail footer": [
-        "ProtonMail aláírás"
-      ],
       "Read": [
         "Olvasott"
       ],
@@ -6624,8 +6602,8 @@
       "Statement": [
         "Feltétel"
       ],
-      "Submit": [
-        "Küldés"
+      "Sticky labels": [
+        "Ragadós címkék"
       ],
       "Subtotal": [
         "Részösszeg"
@@ -6692,9 +6670,6 @@
       ],
       "Use folder colors": [
         "Mappa színek használata"
-      ],
-      "Use sticky labels": [
-        "Ragadós címkék használata"
       ],
       "User": [
         "Felhasználó"
@@ -6784,8 +6759,8 @@
       ]
     },
     "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Adjon hozzá saját domain nevet a ProtonMail fiókjához."
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Adjon hozzá saját domain nevet a ${ MAIL_APP_NAME } fiókjához."
       ]
     },
     "Label for domain modal": {
@@ -7128,12 +7103,6 @@
     "Many Others": {
       "and many others": [
         "és még sok más"
-      ]
-    },
-    "Max VPN Connections": {
-      "Connection": [
-        "Kapcsolódás",
-        "Kapcsolódás"
       ]
     },
     "Member action": {
@@ -8548,6 +8517,9 @@
       "${ appName } Keyboard Shortcuts": [
         "${ appName } gyorsbillentyűk"
       ],
+      "${ MAIL_APP_NAME } Bridge": [
+        "${ MAIL_APP_NAME } Bridge"
+      ],
       "(highly recommended)": [
         "(erősen javasolt)"
       ],
@@ -8716,9 +8688,6 @@
       "Change password": [
         "Jelszó megváltoztatása"
       ],
-      "Change password for ${ Name } (${ Email })": [
-        "Jelszó megváltoztatása, felhasználó: ${ Name } (${ Email })"
-      ],
       "Change role": [
         "Szerep megváltoztatása"
       ],
@@ -8730,6 +8699,9 @@
       ],
       "Clear": [
         "Törlés"
+      ],
+      "Composing": [
+        "Fogalmazás"
       ],
       "Confirm address": [
         "Cím megerősítése"
@@ -8899,9 +8871,6 @@
       "Email subscriptions": [
         "E-mail feliratkozás"
       ],
-      "Enable keyboard shortcuts": [
-        "Gyorsbillentyűk engedélyezése"
-      ],
       "Encryption and keys": [
         "Titkosítás és kulcsok"
       ],
@@ -8941,8 +8910,8 @@
       "Generate new recovery phrase?": [
         ""
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Fizessen elő ProtonVPN Plus csomagra az összes szerver használatához"
+      "Get ${ vpnPlus } to access all servers": [
+        "Fizessen elő ${ vpnPlus } csomagra az összes szerver használatához"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Szerezzen akár 18 hónapnyit ebből: ${ appName } ${ planName } ingyen"
@@ -8999,6 +8968,9 @@
       "Invoices": [
         "Számlák"
       ],
+      "Keyboard shortcuts": [
+        "Gyorsbillentyűk"
+      ],
       "Labels": [
         "Címkék"
       ],
@@ -9016,6 +8988,9 @@
       ],
       "Messages": [
         "Üzenetek"
+      ],
+      "Messages and composing": [
+        "Üzenetek és fogalmazás"
       ],
       "Multi-user support": [
         "Többfelhasználós lehetőség"
@@ -9055,9 +9030,6 @@
       ],
       "Organization and keys": [
         "Szervezet és kulcsok"
-      ],
-      "Other": [
-        "Egyéb"
       ],
       "Password": [
         "Jelszó"
@@ -9106,12 +9078,6 @@
       ],
       "Proton Logo": [
         "Proton Logó"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonVPN": [
-        "ProtonVPN"
       ],
       "Reconnect your account": [
         "Újracsatlakozás a fiókhoz"
@@ -9272,8 +9238,8 @@
       "Total (monthly)": [
         "Összesen (havonta)"
       ],
-      "Try the best of ProtonMail for free": [
-        ""
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Próbálja ki a ${ MAIL_APP_NAME } legjavát ingyen"
       ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"
@@ -9353,8 +9319,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "ProtonMail számla"
+      "${ MAIL_APP_NAME } invoice": [
+        "${ MAIL_APP_NAME } számla"
       ]
     },
     "Title header": {
@@ -9419,6 +9385,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        "A ${ MAIL_APP_NAME } felhasználók alapértelmezetten ezt a kulcsot fogják használni a küldéshez"
+      ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Hozzáférés a földrajzilag blokkolt tartalmakhoz (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube stb.), bárhol is tartózkodik."
       ],
@@ -9458,11 +9427,11 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "A részletes naplózás bekapcsolásakor az egyes műveletekhez tartozó IP címek is bekerülnek a naplóba."
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Szerezzen elérést mind a ${ VPN_APP_NAME }, mind a ${ MAIL_APP_NAME } (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Szerezzen elérést mind a ${ vpnAppName }, mind a ${ mailAppName } (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Szerezzen elérést mind a ProtonVPN, mind a ProtonMail (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "A levelező csoportosítsa az e-maileket beszélgetésenként vagy jelenítse meg külön."
@@ -9478,9 +9447,6 @@
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "A NetShield megvédi eszközeit és felgyorsítja a böngészés sebességét, a reklámok, követők és kártevő szoftverek letiltásával."
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "A ProtonMail felhasználók alapértelmezetten ezt a kulcsot fogják használni a küldéshez"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül."
@@ -9503,8 +9469,8 @@
       "Support for file sharing protocols such as BitTorrent.": [
         "Támogatja a fájlmegosztási protokollokat, mint például a BitTorrent."
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "A rendszer almappák külön mappákként fognak megjelenni a ProtonMailben"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "A rendszer almappák külön mappákként fognak megjelenni a ${ MAIL_APP_NAME }ben"
       ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
@@ -9551,14 +9517,14 @@
       "You have locally decrypted this key": [
         "Ezt a kulcsot helyileg visszafejtette"
       ],
+      "Your ${ MAIL_APP_NAME } inbox is almost full": [
+        "A ${ MAIL_APP_NAME } beérkező levelek mappája majdnem tele van"
+      ],
       "Your DKIM signing is working.": [
         "A DKIM aláírás megfelelően működik."
       ],
       "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
         "A külső fiókja nagy eséllyel elérte a 24-órás sávszélesség limitét. A Proton meg fogja próbálni folytatni az importálást amilyen gyorsan lehetséges."
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "A ProtonMail fiók közel megtelt"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -9567,13 +9533,13 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Válassza ki a nem ProtonMail PGP felhasználók számára küldött üzenetek alapértelmezett PGP titkosítási és aláírási beállításait. Az Inline PGP csak egyszerű szöveges üzenetekkel működik. További információk"
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Válassza ki a nem ${ BRAND_NAME } PGP felhasználók számára küldött üzenetek alapértelmezett PGP titkosítási és aláírási beállításait. Az Inline PGP csak egyszerű szöveges üzenetekkel működik. További információk"
       ]
     },
     "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Ha egy olyan ProtonMail felhasználótól kap levelet, akinek még nincs megbízható kulcsa a névjegyei közt, egy kérdés fog megjelenni a kulcsok megbízhatóként megjelöléséhez."
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Ha egy olyan ${ MAIL_APP_NAME } felhasználótól kap levelet, akinek még nincs megbízható kulcsa a névjegyei közt, egy kérdés fog megjelenni a kulcsok megbízhatóként megjelöléséhez."
       ]
     },
     "Tooltip sign external messages": {
@@ -9641,9 +9607,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
       "30-days money-back guarantee": [
         "30 napos pénz-visszafizetési garancia"
       ],
@@ -9827,8 +9790,8 @@
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "Ha megszakítja az importálást, nem lehet folytatni. A Proton már mentette az eddig feldolgozott adatokat a fiókjába. Megszakítja?"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "Az élő csevegés egy prémium funkció, ami csak a fizetős ${ VPN_APP_NAME } csomagokban elérhető. Kérjük, nyisson egy jegyet."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ha ezt a fizetési módot választja, akkor a csomagját nem tudjuk azonnal frissíteni. A frissítést akkor végezzük, amint a befizetés megérkezik."
@@ -9848,8 +9811,8 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Az eszközén a dátum és idő beállítása pontatlan. ${ learnMore }"
       ],
-      "This feature is only available for ProtonMail Professional plans or higher": [
-        "Ez a lehetőség csak ProtonMail Professional vagy magasabb csomagban érhető el"
+      "This feature is only available for ${ mailProfessional } plans or higher": [
+        "Ez a lehetőség csak ${ mailProfessional } vagy magasabb csomagban érhető el"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Az importálás helyigénye meghaladhatja a Proton fiókban rendelkezésre álló helyet. Fontolja meg a beállítások finomítását."

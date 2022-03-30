@@ -38,7 +38,7 @@
         "Ενεργοποίηση"
       ],
       "Activate ${ addressToCreate }": [
-        ""
+        "Ενεργοποίηση ${ addressToCreate }"
       ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
@@ -214,8 +214,8 @@
       "Copy link": [
         "Αντιγραφή συνδέσμου"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Δημιουργήστε μια ασφαλή διεύθυνση ProtonMail"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        ""
       ],
       "Create address": [
         "Δημιουργία διεύθυνσης"
@@ -349,8 +349,8 @@
       "Generate recovery phrase": [
         "Παραγωγή φράσης ανάκτησης"
       ],
-      "Get ProtonVPN Plus": [
-        "Αποκτήστε ProtonVPN Plus"
+      "Get ${ vpnPlus }": [
+        "Λήψη ${ vpnPlus }"
       ],
       "Get started": [
         "Ξεκινήστε"
@@ -458,7 +458,7 @@
         "Όχι"
       ],
       "No, thanks": [
-        ""
+        "Όχι, ευχαριστώ"
       ],
       "OK": [
         "ΟΚ"
@@ -661,8 +661,8 @@
       "Show more": [
         "Εμφάνιση περισσοτέρων"
       ],
-      "Show shortcuts": [
-        "Εμφάνιση συντομεύσεων"
+      "Show preview": [
+        "Εμφάνιση προεπισκόπησης"
       ],
       "sign in": [
         "είσοδος"
@@ -776,7 +776,7 @@
         "Χρησιμοποιήστε τον κωδικό ελέγχου ταυτότητας δύο παραγόντων (2FA)"
       ],
       "Use your current email address instead": [
-        "Εναλλακτικά, χρησιμοποιήστε την τρέχουσα διεύθυνση email σας"
+        "Εναλλακτικά, χρησιμοποιήστε την τρέχουσα διεύθυνσή σας"
       ],
       "Use “${ label }” setting": [
         "Χρησιμοποιήστε τη ρύθμιση “${ label }”"
@@ -1109,8 +1109,8 @@
       "Add link to your email footer": [
         ""
       ],
-      "Continue using ProtonMail.": [
-        "Συνεχίστε τη χρήση ProtonMail."
+      "Continue using ${ MAIL_APP_NAME }.": [
+        ""
       ],
       "Copy": [
         "Αντιγραφή"
@@ -1263,10 +1263,10 @@
     },
     "Confirm": {
       "Are you sure you want to delete this key without backing it up?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το κλειδί χωρίς να το δημιουργήσει αντίγραφο ασφαλείας;"
+        "Θέλετε σίγουρα να διαγράψετε αυτό το κλειδί χωρίς να κρατήσετε αντίγραφο ασφαλείας;"
       ],
       "Are you sure you want to permanently delete this key?": [
-        "Σίγουρα, να διαγραφεί αυτό το κλειδί, αμετάκλητα;"
+        "Θέλετε σίγουρα να διαγράψετε οριστικά αυτό το κλειδί;"
       ],
       "Do you want to export your key?": [
         "Θέλετε να εξάγετε το κλειδί σας;"
@@ -1288,7 +1288,7 @@
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν την μέθοδο πληρωμής;"
+        "Θέλετε σίγουρα να διαγράψετε αυτήν τη μέθοδο πληρωμής;"
       ]
     },
     "Confirmation title": {
@@ -2230,12 +2230,12 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
-        ""
+        "Συγχαρητήρια! Κερδίσατε το μέγιστο των ${ rewardsLimit } δωρεάν μηνών ${ appName } ${ plusPlanName }"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Η διαδικασία μπορεί να πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
-      "Get up to 3 months of ${ mailAppName } Plus for free for every friend who subscribes to ${ mailAppName }.": [
+      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
         ""
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
@@ -2248,7 +2248,7 @@
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         ""
       ],
-      "Track your referral link activities here.": [
+      "You can continue to invite friends, but you wont be able to earn more credits": [
         ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
@@ -2275,7 +2275,7 @@
     },
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "Οι subdomains «www» συνήθως δεν χρησιμοποιούνται για ηλεκτρονικό ταχυδρομείο. Είστε βέβαιοι ότι θέλετε να χρησιμοποιήσετε αυτήν την τιμή domain;"
+        "Κατά κανόνα οι υποτομείς «www» δεν χρησιμοποιούνται για ηλεκτρονικό ταχυδρομείο. Θέλετε σίγουρα να χρησιμοποιήσετε αυτήν την τιμή τομέα;"
       ]
     },
     "Downgrade account reason": {
@@ -2446,9 +2446,6 @@
       ],
       "Calendar limit reached": [
         "Εξάντληση ορίου ημερολογίων"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Το πρωτεύον ιδιωτικό κλειδί ημερολογίου δεν είναι αποκρυπτογραφημένο"
       ],
       "Can't check username, try again later": [
         "Δεν είναι δυνατός ο έλεγχος του ονόματος χρήστη, δοκιμάστε ξανά αργότερα"
@@ -2638,7 +2635,7 @@
         "Ορίστε πρώτα ένα E-mail ανάκτησης / ειδοποίησης"
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Προσπαθήστε να πραγματοποιήσετε εκ νέου έλεγχο ταυτότητας και βεβαιωθείτε ότι τα δικαιώματα έχουν οριστεί σωστά."
+        "Παρακαλούμε βεβαιωθείτε ότι τα δικαιώματα έχουν οριστεί σωστά και δοκιμάστε την ταυτοποίηση ξανά."
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
         "Παρακαλούμε αναβαθμίστε σε ένα επαγγελματικό λογαριασμό με περισσότερους από 1 χρήστες ή έναν λογαριασμό Visionary για να λάβετε υποστήριξη από πολλούς χρήστες"
@@ -2670,14 +2667,14 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Ορισμένα από τα ονόματα φακέλων σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
       ],
-      "Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Ορισμένα από τα ονόματα φακέλων σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ProtonMail. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Κάποια από τα ονόματα φακέλων σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Ορισμένα από τα ονόματα ετικετών σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
       ],
-      "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Ορισμένα από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ProtonMail. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Κάποια από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
@@ -2761,7 +2758,7 @@
         "Λανθασμένη φράση ανάκτησης. Δοκιμάστε ξανά ή χρησιμοποιήστε άλλη μέθοδο ανάκτησης."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Λάθος κωδικός επαλήθευσης. Βεβαιωθείτε ότι έχετε αντιγράψει τον κωδικό επαλήθευσης σωστά και προσπαθήστε ξανά. Μπορεί να χρειαστούν έως και 24 ώρες για να εφαρμοστούν οι αλλαγές."
+        "Λανθασμένος κωδικός επαλήθευσης. Παρακαλούμε βεβαιωθείτε ότι αντιγράψατε σωστά τον κωδικό επαλήθευσης και δοκιμάστε ξανά. Μπορεί να πάρει έως και 24 ώρες για να εφαρμοστούν οι αλλαγές."
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Έχετε χάσει την πρόσβαση στα κλειδιά της επιχείρησης σας. Χωρίς επαναφορά, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
@@ -3104,8 +3101,8 @@
     },
     "Feature": {
       "${ MaxVPN } VPN connection": [
-        "",
-        ""
+        "${ MaxVPN } σύνδεση VPN",
+        "${ MaxVPN } συνδέσεις VPN"
       ],
       "Access to all countries": [
         "Πρόσβαση σε όλες τις χώρες"
@@ -3125,9 +3122,6 @@
       ],
       "Torrenting support (P2P)": [
         "Υποστήριξη Torrenting (P2P)"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "${ connectionsPluralized } VPN"
       ]
     },
     "file size format": {
@@ -3778,10 +3772,10 @@
     },
     "Info": {
       "${ addressToCreate } is now active": [
-        ""
+        "Η διεύθυνση ${ addressToCreate } είναι τώρα ενεργή"
       ],
       "${ appName } ${ planName } credits earned": [
-        "${ appName } ${ planName } πιστώσεις κερδήθηκαν"
+        "Κερδήθηκαν πιστώσεις για ${ appName } ${ planName }"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } χρειάζεται την άδειά σας για να ${ enableDesktopNotifications }."
@@ -3807,11 +3801,23 @@
       "${ emailAddress } is invalid": [
         "Η ${ emailAddress } είναι μη έγκυρη"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης, ο οποίος αντικαθιστά τόσο τον κωδικό εισόδου όσο και τον κωδικό πρόσβασης θυρίδας. Για μετάβαση σε λειτουργία μονού κωδικού πρόσβασης, πληκτρολογήστε αυτόν που θέλετε και πατήστε Αποθήκευση."
+      ],
+      "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
+        "Το ${ MAIL_APP_NAME } επιτρέπει τη δημιουργία διευθύνσεων για άλλα άτομα. Αυτό είναι ιδανικό για επιχειρήσεις, οικογένειες ή ομάδες."
+      ],
+      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "Το ${ MAIL_APP_NAME } υποστηρίζει υπογραφές DKIM για ιδιαίτερους τομείς. Για χρήση ταυτοποίησης DKIM, παρακαλούμε προσθέστε την ακόλουθη εγγραφή CNAME στις ρυθμίσεις DNS για αυτόν τον τομέα, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
+      ],
       "${ mailAppName } Free": [
         "${ mailAppName } Δωρεάν"
       ],
-      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional ξεκινά με έναν χρήστη, και κάθε χρήστης προσθέτει 5 GB και 5 διευθύνσεις ηλεκτρονικού ταχυδρομείου στην πισίνα του οργανισμού."
+      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
+        "Το ${ mailPlus } περιορίζεται σε έναν χρήστη και ξεκινά με 5 GB αποθηκευτικού χώρου."
+      ],
+      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "Το ${ mailProfessional } ξεκινά με έναν χρήστη, και κάθε χρήστης προσθέτει 5 GB και 5 διευθύνσεις στο απόθεμα του οργανισμού."
       ],
       "${ n } address": [
         "${ n } διεύθυνση",
@@ -3889,6 +3895,16 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Δωρεάν"
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        ""
+      ],
+      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
+        "Το ${ vpnPlus } περιλαμβάνει ${ maxVpn } σύνδεση VPN.",
+        "Το ${ vpnPlus } περιλαμβάνει ${ maxVpn } συνδέσεις VPN."
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        ""
+      ],
       "(${ memberCount } member)": [
         "",
         ""
@@ -3908,9 +3924,9 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } σύνδεση για το ProtonVPN (σας επιτρέπει να συνδέσετε περισσότερες συσκευές στο VPN)",
-        "+${ organization.BonusVPN } συνδέσεις για το ProtonVPN (σας επιτρέπει να συνδέσετε περισσότερες συσκευές στο VPN)"
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } σύνδεση για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)",
+        "+${ organization.BonusVPN } συνδέσεις για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)"
       ],
       "1. Invite friends to Proton": [
         "1. Προσκαλέστε φίλους στο Proton"
@@ -3960,8 +3976,8 @@
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me στο λογαριασμό σας. Αυτός ο απλός, συντομότερος τομέας ερμηνεύεται ως \"ProtonMail me\" ή \"Private Message me\"."
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        ""
       ],
       "Add a recovery email address": [
         "Προσθήκη ηλ. διεύθυνσης ανάκτησης"
@@ -4042,31 +4058,31 @@
         "Το AOL διαβάζει τα προσωπικά σας δεδομένα προκειμένου να παρέχει πρόσβαση σε διαφημιστές και άλλα τρίτα μέρη. Για καλύτερο απόρρητο, δημιουργήστε μια ασφαλή διεύθυνση email."
       ],
       "Are you sure you want to delete this address?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτή τη διεύθυνση;"
+        "Θέλετε σίγουρα να διαγράψετε αυτήν τη διεύθυνση;"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το ημερολόγιο;"
+        "Θέλετε σίγουρα να διαγράψετε αυτό το ημερολόγιο;"
       ],
       "Are you sure you want to delete this domain?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το domain;"
+        "Θέλετε σίγουρα να διαγράψετε αυτόν τον τομέα;"
       ],
       "Are you sure you want to delete this filter?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το φίλτρο;"
+        "Θέλετε σίγουρα να διαγράψετε αυτό το φίλτρο;"
       ],
       "Are you sure you want to delete this folder? All children folders will also be deleted.": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν τον φάκελο; Θα διαγραφούν επίσης όλοι οι υποφάκελοι."
+        "Θέλετε σίγουρα να διαγράψετε αυτόν τον φάκελο; Θα διαγραφούν επίσης όλοι οι υποφάκελοι."
       ],
       "Are you sure you want to delete this label?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτή την ετικέτα;"
+        "Θέλετε σίγουρα να διαγράψετε αυτήν την ετικέτα;"
       ],
       "Are you sure you want to discard your changes?": [
-        "Είστε βέβαιοι ότι θέλετε να απορρίψετε τις αλλαγές σας;"
+        "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
       ],
       "Are you sure you want to permanently delete all your logs?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε μόνιμα όλα τα αρχεία καταγραφής;"
+        "Θέλετε σίγουρα να διαγράψετε οριστικά όλα τα αρχεία σας καταγραφής;"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "Είστε βέβαιοι ότι θέλετε να καταργήσετε τα δικαιώματα διαχειριστή από αυτόν τον χρήστη;"
+        "Θέλετε σίγουρα να αφαιρέσετε τα προνόμια διαχειριστή από αυτόν τον χρήστη;"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Η αυτόματη απάντηση είναι ενεργή κάθε μήνα μεταξύ της επιλεγμένης ώρας έναρξης και λήξης."
@@ -4098,8 +4114,8 @@
       "Basic, Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Basic, Plus ή Visionary"
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Προτού λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου για τις προσαρμοσμένες διευθύνσεις τομέων (custom domain addresses) στο ProtonMail, πρέπει να προσθέσετε τις ακόλουθες εγγραφές MX στο DNS σας. Αυτό μπορεί να γίνει συνήθως στον πίνακα ελέγχου του καταχωρητή ονομάτων τομέα σας (DNS name registrar)."
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Προτού μπορέσετε να λάβετε μηνύματα σε διευθύνσεις των ιδιαίτερών σας τομέων ${ MAIL_APP_NAME }, χρειάζεται να προσθέσετε τις ακόλουθες εγγραφές MX στον DNS σας, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
@@ -4167,9 +4183,6 @@
       "Continue with ${ planName }": [
         "Συνέχεια με ${ planName }"
       ],
-      "Continue with ${ planName } today to avoid having access disabled at the end of your trial.": [
-        "Συνεχίστε με ${ planName } σήμερα για να αποφύγετε τις ανακλήσεις προσβάσεων στη λήξη της δοκιμή σας."
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Δημιουργήστε ${ calendarsToBeCreated } νέο ημερολόγιο",
         "Δημιουργήστε ${ calendarsToBeCreated } νέα ημερολόγια"
@@ -4186,8 +4199,8 @@
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Δημιουργήστε και διαχειριστείτε τους δευτερεύοντες λογαριασμούς και αντιστοιχίστε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στον προσαρμοσμένο τομέα σας."
       ],
-      "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Connect your custom domain to create and manage ProtonMail addresses for users in your school, business, or organization."
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "Δημιουργήστε διευθύνσεις για άλλα άτομα, διαχειριστείτε το ${ MAIL_APP_NAME } για μια επιχείρηση, σχολείο ή ομάδα. Ξεκινήστε προσθέτοντας το όνομα και τον ιδιαίτερο τομέα του οργανισμού σας (π.χ. @yourcompany.com). "
       ],
       "Create in": [
         "Δημιουργία εντός"
@@ -4225,8 +4238,8 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Διαγράψτε οποιαδήποτε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ProtonMail είναι ο μικρότερος αριθμός."
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "Διαγράψτε κάθε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ${ MAIL_APP_NAME } είναι ο μικρότερος αριθμός."
       ],
       "Delete link?": [
         "Διαγραφή συνδέσμου;"
@@ -4240,8 +4253,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ΜΗΝ ξεχάσετε αυτόν τον κωδικό πρόσβασης. Αν τον ξεχάσετε, δεν θα είστε σε θέση να διαχειριστείτε τον οργανισμό σας."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Μην χρησιμοποιείτε τα διαπιστευτήρια OpenVPN / IKEv2 στις εφαρμογές ProtonVPN ή στον πίνακα ελέγχου ProtonVPN. ${ learnMore }"
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Να μη χρησιμοποιούνται διαπιστευτήρια OpenVPN / IKEv2 στις εφαρμογές ${ VPN_APP_NAME } ή στον πίνακα ελέγχου του. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Θέλετε να ανακαλέσετε όλες τις άλλες συνεδρίες εκτός από τις τρέχουσες;"
@@ -4259,8 +4272,8 @@
       "Done! We sent a code to ${ destination }.": [
         "Έγινε! Στείλαμε έναν κωδικό στο ${ destination }."
       ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ProtonVPN επί πληρωμή."
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ${ VPN_APP_NAME } επί πληρωμή."
       ],
       "Download recovery file": [
         "Κατέβασμα αρχείου ανάκτησης"
@@ -4278,7 +4291,7 @@
         "Κάθε πρόσθετη σύνδεση μπορεί να ανατεθεί σε χρήστες στον οργανισμό σας."
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
-        "Κερδήθηκαν ${ rewards } από ${ rewardsLimit } ${ appName } ${ planName } μήνες."
+        "Κερδήθηκαν ${ rewards } από ${ rewardsLimit } μήνες ${ appName } ${ planName }."
       ],
       "Edit label": [
         "Επεξεργασία ετικέτας"
@@ -4302,7 +4315,7 @@
         "Η ρύθμιση κρυπτογράφησης ενημερώθηκε"
       ],
       "Enter key manually instead": [
-        "Χειροκίνητη εισαγωγή κλειδιού"
+        "Εναλλακτικά, χειροκίνητη εισαγωγή κλειδιού"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Εισάγετε τον κωδικό που στάλθηκε στον αριθμό τηλεφώνου σας ${ phone }."
@@ -4323,7 +4336,7 @@
         "Πληκτρολογήστε τον κωδικό πρόσβασης για να επιβεβαιώσετε την ταυτότητα σας."
       ],
       "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        ""
+        "Εισάγετε τον δικό σας κωδικό πρόσβασης (ως διαχειριστής οργανισμού) και νέο κωδικό πρόσβασης για τον χρήστη ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Εισάγετε τη διεύθυνση email ή το όνομα χρήστη του Proton λογαριασμού σας."
@@ -4415,8 +4428,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
       ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Εάν έχετε έναν προσαρμοσμένο τομέα με το ProtonMail, μπορείτε να ορίσετε μια διεύθυνση ηλεκτρονικού ταχυδρομείου catch-all που θα λαμβάνει μηνύματα που αποστέλλονται στον τομέα σας αλλά σε μια μη έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου (π.χ. τυπογραφικά λάθη)."
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "Αν έχετε έναν ιδιαίτερο τομέα με το ${ MAIL_APP_NAME }, μπορείτε να ορίσετε μια διεύθυνση παραλειπομένων που θα λαμβάνει μηνύματα προς μη έγκυρες διευθύνσεις εντός του τομέα σας (π.χ. με τυπογραφικά λάθη)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Εάν έχετε κωδικό δώρου, προσθέστε τον παρακάτω ώστε να εφαρμοστεί η έκπτωσή σας."
@@ -4436,14 +4449,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Εάν χάσετε τη συσκευή σας με δύο παράγοντες, αυτοί οι κωδικοί μπορούν να χρησιμοποιηθούν αντί για τον 6-ψήφιο κωδικό ελέγχου ταυτότητας δύο παραγόντων για να συνδεθείτε στο λογαριασμό σας. Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά."
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Εάν προχωρήσετε με την υποβάθμιση, θα χάσετε την πρόσβαση σtα επί πληρωμή χαρακτηριστικά του ProtonMail και ProtonVPN."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        ""
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Εάν προχωρήσετε με την υποβάθμιση, θα χάσετε την πρόσβαση σtα επί πληρωμή χαρακτηριστικά του ProtonMail και ProtonVPN, συμπεριλαμβανομένων των πρόσθετων αποθήκευσης και φίλτρα."
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        ""
       ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Εάν προχωρήσετε με την υποβάθμιση, θα χάσετε την πρόσβαση σtα επί πληρωμή χαρακτηριστικά του ProtonVPN."
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        ""
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Εάν πρόσφατα έχετε επαναφέρει τον κωδικό σας, μπορείτε να χρησιμοποιήσετε μία μέθοδο επαναφοράς δεδομένων για να ξεκλειδώσετε τα δεδομένα σας"
@@ -4531,8 +4544,8 @@
         "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
       ],
       "Invite successfully sent": [
-        "",
-        ""
+        "Επιτυχής αποστολή πρόσκλησης",
+        "Επιτυχής αποστολή προσκλήσεων"
       ],
       "Invited via email": [
         "Προσκλήθηκε μέσω email"
@@ -4564,8 +4577,8 @@
       "Large imports can take several days.": [
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
       ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Μάθετε πώς να συνδεθείτε στο ProtonVPN με εφαρμογές VPN τρίτων."
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Μάθετε πώς να εισέρχεστε στο ${ VPN_APP_NAME } με εφαρμογές VPN τρίτων."
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -4600,8 +4613,8 @@
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
       ],
-      "Log in to ProtonMail to activate your address": [
-        "Συνδεθείτε στο ProtonMail για να ενεργοποιήσετε τη διεύθυνσή σας"
+      "Log in to ${ MAIL_APP_NAME } to activate your address": [
+        "Για ενεργοποίηση της διεύθυνσής σας, εισέλθετε στο ${ MAIL_APP_NAME }"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Τα αρχεία καταγραφής περιλαμβάνουν προσπάθειες ελέγχου ταυτότητας για όλες τις υπηρεσίες Proton που χρησιμοποιούν τα διαπιστευτήριά σας Proton."
@@ -4711,8 +4724,8 @@
       "One account for all Proton services": [
         "Ένας λογαριασμός για όλες τις υπηρεσίες Proton"
       ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες που δεν ανήκουν στο ProtonMail."
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
         "Μόνο εσύ μπορείς να δεις αυτές τις ετικέτες."
@@ -4733,16 +4746,16 @@
         ""
       ],
       "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        ""
+        "Ο νέος μας τομέας ${ domain } είναι μια βολική επιλογή για αποστολή και λήψη μηνυμάτων. Θα συνεχίσει να είναι δυνατή η χρήση της αρχικής διεύθυνσής σας ${ protonMailAppName }."
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        "Απαρχαιωμένο αρχείο ανάκτησης. Ενημερώστε για να διασφαλίσετε πρόσβαση στα δεδομένα σας"
+        "Παρωχημένο αρχείο ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε το."
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        "Απαρχαιωμένες μέθοδοι ανάκτησης. Ενημερώστε για να διασφαλίσετε πρόσβαση στα δεδομένα σας"
+        "Παρωχημένες μέθοδοι ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε τες."
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        "Απαρχαιωμένη φράση ανάκτησης. Ενημερώστε για να διασφαλίσετε πρόσβαση στα δεδομένα σας"
+        "Παρωχημένη φράση ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε τη."
       ],
       "P2P": [
         "P2P"
@@ -4847,28 +4860,6 @@
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Το Proton θα προσπαθήσει να συνεχίσει την εισαγωγή μόλις ο πάροχος email σας επαναφέρει το λογαριασμό σας ${ bandwithLimitLink }. Δεν χρειάζεται να κάνετε τίποτα. Αν ακυρώσετε την εισαγωγή σας, δεν θα είστε σε θέση να το συνεχίσετε και θα πρέπει να ξεκινήσετε από την αρχή."
       ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "Το ProtonMail μπορεί επίσης να χρησιμοποιηθεί με έναν μοναδικό κωδικό πρόσβασης ο οποίος αντικαθιστά τόσο τον κωδικό πρόσβασης όσο και τον κωδικό θυρίδας. Για να μεταβείτε σε λειτουργία ενός κωδικού πρόσβασης, πληκτρολογήστε τον κωδικό που θέλετε να χρησιμοποιήσετε και κάντε κλικ στην επιλογή Αποθήκευση."
-      ],
-      "ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        "Το ProtonMail σας επιτρέπει να δημιουργήσετε διευθύνσεις ηλεκτρονικού ταχυδρομείου για άλλα άτομα. Αυτό είναι ιδανικό για επιχειρήσεις, οικογένειες ή ομάδες."
-      ],
-      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "Το ProtonMail Plus περιορίζεται σε έναν χρήστη και ξεκινά με 5 GB αποθήκευσης."
-      ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Το ProtonMail υποστηρίζει την υπογραφή DKIM για custom domains. Για να χρησιμοποιήσετε τον έλεγχο ταυτότητας DKIM, προσθέστε την ακόλουθη εγγραφή TXT στις ρυθμίσεις DNS για αυτόν τον domain. Αυτό μπορεί να γίνει συνήθως στον πίνακα ελέγχου του καταχωρητή domain name σας."
-      ],
-      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "Το ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } περιλαμβάνει ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN σύνδεση.",
-        "Το ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } περιλαμβάνει ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN συνδέσεις."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Απαιτείται ProtonVPN Basic, Plus ή Visionary για σύνδεση σε επίπεδο χώρας."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Απαιτείται ProtonVPN Plus ή Visionary για τη λειτουργία Secure Core."
-      ],
       "Public link invite": [
         "Πρόσκληση δημόσιου σύνδεσμου"
       ],
@@ -4927,7 +4918,7 @@
         "Φυλάξτε τον κωδικό πρόσβασής σας σε ασφαλές μέρος. Κάντε κλικ στο εικονίδιο για επιβεβαίωση της ορθής πληκτρολόγησης του κωδικού σας."
       ],
       "Scan QR code instead": [
-        "Εναλλακτικά, σαρώστε τον κώδικα QR"
+        "Εναλλακτικά, σάρωση κωδικού QR"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Σαρώστε αυτόν τον κωδικό με τη συσκευή ελέγχου ταυτότητας δύο παραγόντων για να ρυθμίσετε το λογαριασμό σας. ${ switchButton }."
@@ -4977,11 +4968,8 @@
       "Some keys successfully reactivated": [
         "Κάποια κλειδιά ενεργοποιήθηκαν εκ νέου επιτυχώς"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Το SPF χρησιμοποιείται για να καθορίσετε ποιος μπορεί να στείλει μηνύματα ηλεκτρονικού ταχυδρομείου για το domain, γι 'αυτό συνιστούμε να συμπεριλάβετε το ProtonMail στην εγγραφή SPF σας. Προσθέστε την ακόλουθη εγγραφή TXT στο DNS σας. Αυτό μπορεί να γίνει συνήθως στον πίνακα ελέγχου του καταχωρητή ονομάτων domain σας."
-      ],
-      "Start with 500 MB and unlock more storage along the way. Storage space is shared across Mail, Calendar, and Drive.": [
-        "Ξεκινήστε με 500MB και ξεκλειδώστε παραπάνω χώρο στην πορεία. Ο αποθηκευτικός χώρος μοιράζεται μεταξύ του Ταχυδρομείου, Ημερολογίου και του Δίσκου."
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Το SPF χρησιμοποιείται για να καθορίσει ποιος επιτρέπεται να στείλει μηνύματα για τον τομέα, για αυτό συνιστούμε έντονα να συμπεριλάβετε το ${ MAIL_APP_NAME } στην εγγραφή σας SPF. Παρακαλούμε προσθέστε την ακόλουθη εγγραφή TXT στον DNS σας, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
       ],
       "Starter VPN service with P2P support.": [
         "Εκκίνηση υπηρεσίας VPN με υποστήριξη P2P."
@@ -5034,8 +5022,8 @@
       "The name will be visible to your users while they are logged in.": [
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
       ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Αυτά τα αρχεία διαμόρφωσης σας επιτρέπουν να επιλέξετε με ποιον διακομιστή ProtonVPN συνδέεστε όταν χρησιμοποιείτε μια εφαρμογή VPN τρίτων ή ρυθμίζετε μια σύνδεση VPN σε έναν δρομολογητή."
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Αυτά τα αρχεία παραμετροποίησης επιτρέπουν την επιλογή διακομιστή σύνδεσης ${ VPN_APP_NAME } για χρήση από εφαρμογές VPN τρίτων ή ρύθμιση σύνδεσης VPN σε δρομολογητή."
       ],
       "This 30-day free trial is not available any other way.": [
         "Η δωρεάν δοκιμή 30-ημερών δεν είναι διαθέσιμη με κανέναν άλλον τρόπο."
@@ -5142,8 +5130,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Για συνέχεια, επιλέξτε μια μέθοδο ανάκτησης λογαριασμού, ώστε να επαληθεύσουμε το αίτημα."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Για να ξεκινήσετε να διασφαλίζετε τη σύνδεση σας στο διαδίκτυο, θα πρέπει να εγκαταστήσετε την εφαρμογή ProtonVPN στη συσκευή σας και να συνδεθείτε σε ένα διακομιστή ProtonVPN."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        "Για διασφάλιση της σύνδεσής σας στο διαδίκτυο, κατεβάστε και εγκαταστήστε την εφαρμογή ${ VPN_APP_NAME } για τη συσκευή σας, και συνδεθείτε σε έναν διακομιστή ${ VPN_APP_NAME }."
       ],
       "To use ${ toAppName }, please create an address.": [
         "Για χρήση του ${ toAppName }, παρακαλούμε δημιουργήστε μια διεύθυνση."
@@ -5202,8 +5190,8 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "Αναβαθμίστε σε ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } ή ${ PLAN_NAMES[PLANS.PLUS] } πλάνο για να ενεργοποιήσετε τις αυτόματες απαντήσεις για όταν βρίσκεστε εκτός γραφείου."
       ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Αναβαθμίστε σε ένα πλάνο επί πληρωμή για να ξεκλειδώσετε την υποστήριξη IMAP / SMTP μέσω του ProtonMail Bridge."
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ appName } ${ planName }."
@@ -5220,8 +5208,8 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Χρησιμοποιήστε τις αυτόματες απαντήσεις για να ενημερώνετε τις επαφές σας ότι βρίσκεστε εκτός γραφείου ή ότι δεν μπορείτε να απαντήσετε με άλλο τρόπο."
       ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Χρησιμοποιήστε τα ακόλουθα διαπιστευτήρια κατά τη σύνδεση σε διακομιστές ProtonVPN χωρίς εφαρμογή. Παραδείγματα περιπτώσεων χρήσης περιλαμβάνουν: Tunnelblick σε macOS, OpenVPN σε GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια όταν συνδέεστε σε διακομιστές ${ VPN_APP_NAME } χωρίς εφαρμογή, όπως μέσω Tunnelblick για macOS ή OpenVPN για GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Χρησιμοποιήστε τον δικό σας τομέα στις διευθύνσεις email, π.χ., you@yourname.com"
@@ -5253,8 +5241,8 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Προειδοποίηση: Η διαγραφή είναι μόνιμη. Αυτό επίσης αφαιρεί την πρόσβαση σε όλες τις συνδεδεμένες υπηρεσίες και διαγράφει όλες τις επαφές σας."
       ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Σας συμβουλεύουμε να χρησιμοποιείτε επίσημες εφαρμογές ProtonVPN όταν είναι δυνατόν."
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        "Σας συμβουλεύουμε να χρησιμοποιείτε ει δυνατόν επίσημες εφαρμογές ${ VPN_APP_NAME }."
       ],
       "We recommend using your recovery phrase instead.": [
         "Αντί για αυτό, συνιστούμε χρήση της φράσης σας ανάκτησης."
@@ -5298,8 +5286,8 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Όταν είναι απενεργοποιημένο, εμποδίζει τη φόρτωση αρχείων εικόνας στη συσκευή σας εν αγνοία σας."
       ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Όταν οι ειδοποιήσεις είναι ενεργοποιημένες, θα στείλουμε μια ειδοποίηση στη διεύθυνση ανάκτησης / ειδοποίησης όταν θα έχετε νέα μηνύματα στον λογαριασμό σας στο ProtonMail."
+      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
+        "Εφόσον οι ειδοποιήσεις είναι ενεργοποιημένες, όταν έχετε νέα μηνύματα στον λογαριασμό σας ${ MAIL_APP_NAME } θα στέλνουμε μια ειδοποίηση στη διεύθυνσή σας ανάκτησης."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         "Μόλις εγγράφονται σε ένα πλάνο επί πληρωμή, 1 έως 3 μήνες του ${ appName } ${ planName } θα πιστωθούν στο λογαριασμό σας."
@@ -5331,11 +5319,8 @@
       "You are about to open another browser tab and visit:": [
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "Αυτήν τη στιγμή είστε συνδεδεμένοι ως χρήστης ${ user.Name } (${ user.Email }) και έχετε περιορισμένη πρόσβαση."
-      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του Proton."
@@ -5361,11 +5346,11 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις ώστε να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν τον φάκελο."
       ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Μπορείτε να χρησιμοποιήσετε το ProtonMail με οποιοδήποτε πρόγραμμα-πελάτη ηλεκτρονικού ταχυδρομείου για desktop που υποστηρίζει IMAP/SMTP, συμπεριλαμβανομένων των Outlook, Apple Mail και Thunderbird."
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Μπορείτε να χρησιμοποιήσετε το ${ MAIL_APP_NAME } με οποιονδήποτε επιτραπέζιο πελάτη ταχυδρομείου υποστηρίζει IMAP/SMTP, συμπεριλαμβανομένων των Outlook, Apple Mail και Thunderbird."
       ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Μπορείτε να χρησιμοποιήσετε τα ακόλουθα διαπιστευτήρια για να συνδεθείτε σε έναν διακομιστή ProtonVPN χρησιμοποιώντας τρίτο, ανοιχτό πηγαίο VPN app, όπως το Tunnelblick για macOS ή OpenVPN για GNU/Linux."
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Για σύνδεση σε διακομιστή ${ VPN_APP_NAME } με χρήση εφαρμογής VPN ανοικτού κώδικα τρίτων, όπως το Tunnelblick για macOS ή το OpenVPN για GNU/Linux, μπορείτε να χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Δεν μπορείτε να αποστέλλετε περισσότερα από ${ emailSendLimitNumber } προσκλήσεις email για τις επόμενες 24 ώρες"
@@ -5373,8 +5358,8 @@
       "You cannot refer ${ appName } users": [
         ""
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Δεν μπορείτε να χρησιμοποιήσετε τα διαπιστευτήρια OpenVPN / IKEv2 για να συνδεθείτε σε εφαρμογές της ProtonVPN ή στον πίνακα ελέγχου της ProtonVPN. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Δεν μπορείτε να χρησιμοποιήσετε τα διαπιστευτήρια OpenVPN / IKEv2 για να εισέλθετε σε εφαρμογές του ${ VPN_APP_NAME } ή στον πίνακα ελέγχου του. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Δεν έχετε ορίσει μία μέθοδο ανάκτησης, με αποτέλεσμα η ανάκτηση λογαριασμού να είναι αδύνατη αν ξεχάσετε τον κωδικό πρόσβασής σας. Θέλετε να συνεχίσετε χωρίς μέθοδο ανάκτησης;"
@@ -5385,8 +5370,8 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Πρέπει να ενεργοποιήσετε το ιδιωτικό κλειδί του οργανισμού σας με τον κωδικό πρόσβασης του οργανισμού δημιουργίας αντιγράφων ασφαλείας που σας έχει δοθεί από τον διαχειριστή του οργανισμού σας."
       ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "Πρέπει να απενεργοποιήσετε ή να καταργήσετε τυχόν επιπλέον χρήστες Protonmail, διευθύνσεις και προσαρμοσμένες διεύθυνση Διαδικτύου(domains) για να μπορέσετε να πραγματοποιήσετε υποβάθμιση."
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal, έτσι ώστε να την προσθέσετε ως μέθοδο πληρωμής."
@@ -5436,6 +5421,9 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ο λογαριασμός σας ${ BRAND_NAME } συνδέεται με ${ externalEmailAddress }. Για να χρησιμοποιήσετε ${ toAppName }, παρακαλώ δημιουργήστε μια διεύθυνση."
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        "Οι λογαριασμοί σας ${ VPN_APP_NAME } και ${ MAIL_APP_NAME } συνδέονται. Για να διαγράψετε και τους δύο, παρακαλούμε συνδεθείτε στο ${ loginLink } και διαγράψτε τον εκεί λογαριασμό σας."
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας έχει περιοριστεί. ${ payInvoiceLink }"
       ],
@@ -5469,9 +5457,6 @@
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
       ],
-      "Your free ${ appName } ${ planName } trial will end on ${ formattedTrialExpirationDate }.": [
-        "Η δωρεάν ${ appName } ${ planName } δοκιμή σας θα λήξει στις ${ formattedTrialExpirationDate }."
-      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Η εισαγωγή σας από το ${ delayedImport.Account } καθυστερεί προσωρινά."
       ],
@@ -5495,9 +5480,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
-      ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Οι λογαριασμοί ProtonVPN και ProtonMail συνδέονται. Για να τα διαγράψετε και τα δύο, συνδεθείτε στο ${ loginLink } και διαγράψτε το λογαριασμό σας εκεί."
       ],
       "Your recovery email address:": [
         "Η διεύθυνση email ανάκτησης:"
@@ -5535,11 +5517,11 @@
       ]
     },
     "Info concerning plan features": {
+      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        "Το ${ MAIL_APP_NAME } δεν μπορεί να χρησιμοποιηθεί για αποστολή μηνυμάτων μαζικά ή ενοχλητικά. Τα νόμιμα μηνύματα δεν έχουν περιορισμούς."
+      ],
       "Customizable features": [
         "Προσαρμοσμένες λειτουργίες"
-      ],
-      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "Το ProtonMail δεν μπορεί να χρησιμοποιηθεί για μαζική αποστολή μηνυμάτων email ή spamming. Τα αυθεντικά μηνύματα ηλεκτρονικού ταχυδρομείου είναι απεριόριστα."
       ]
     },
     "Info for cash payment method": {
@@ -5580,7 +5562,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "Για να αποφύγετε οποιαδήποτε διακοπή της υπηρεσίας λόγω μη καταβληθέντων τιμολογίων, βεβαιωθείτε ότι έχετε αποθηκεύσει τουλάχιστον 1 έγκυρη μέθοδο πληρωμής ανά πάσα στιγμή."
+        "Για την αποφυγή τυχόν διακοπής της υπηρεσίας λόγω απλήρωτων τιμολογίων, παρακαλούμε βεβαιωθείτε ότι ανά πάσα στιγμή έχετε τουλάχιστον 1 έγκυρη μέθοδο πληρωμής αποθηκευμένη."
       ]
     },
     "information": {
@@ -5593,7 +5575,7 @@
         "Χρεωμένο"
       ],
       "Cancelled": [
-        ""
+        "Ακυρωμένο"
       ],
       "Paid": [
         "Πληρωμένο"
@@ -5916,11 +5898,13 @@
       " and ${ l }": [
         " και ${ l }"
       ],
-      "${ monthsRewarded } month credited": [
-        "",
+      "${ MAIL_APP_NAME } address": [
+        "Διεύθυνση ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } footer": [
         ""
       ],
-      "${ monthsRewarded } month pending": [
+      "${ monthsRewarded } month credited": [
         "",
         ""
       ],
@@ -6027,9 +6011,6 @@
       "Calendars": [
         "Ημερολόγια"
       ],
-      "Cancel": [
-        "Ακύρωση"
-      ],
       "Card holder": [
         "Κάτοχος κάρτας"
       ],
@@ -6066,6 +6047,9 @@
       "Conditions": [
         "Προϋποθέσεις"
       ],
+      "Confirm link URLs": [
+        "Επιβεβαίωση διευθύνσεων συνδέσμων"
+      ],
       "Confirm login password": [
         "Επιβεβαίωση κωδικού σύνδεσης"
       ],
@@ -6101,6 +6085,9 @@
       ],
       "Country": [
         "Χώρα"
+      ],
+      "Credits pending": [
+        ""
       ],
       "Credits used": [
         "Χρησιμοποιημένες μονάδες"
@@ -6315,9 +6302,6 @@
       "Last month only": [
         "Τελευταίος μήνας μόνο"
       ],
-      "Link confirmation": [
-        "Επιβεβαίωση συνδέσμου"
-      ],
       "Login password": [
         "Κωδικός σύνδεσης"
       ],
@@ -6456,12 +6440,6 @@
       "Proton username": [
         "Όνομα χρήστη Proton"
       ],
-      "ProtonMail address": [
-        "Διεύθυνση ProtonMail"
-      ],
-      "ProtonMail footer": [
-        "Υποσέλιδο ProtonMail"
-      ],
       "Read": [
         "Διαβασμένα"
       ],
@@ -6528,8 +6506,8 @@
       "Statement": [
         "Δήλωση"
       ],
-      "Submit": [
-        "Υποβολή"
+      "Sticky labels": [
+        ""
       ],
       "Subtotal": [
         "Υποσύνολο"
@@ -6597,9 +6575,6 @@
       "Use folder colors": [
         "Χρήση χρωμάτων φακέλου"
       ],
-      "Use sticky labels": [
-        "Χρησιμοποιήστε sticky ετικέτες"
-      ],
       "User": [
         "Χρήστης"
       ],
@@ -6622,13 +6597,13 @@
         "Συνδέσεις VPN"
       ],
       "Waiting for subscription": [
-        ""
+        "Αναμονή για συνδρομή"
       ],
       "Want to add": [
         "Θέλω να προσθέσω"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Λυπόμαστε που φεύγετε. Εξηγήστε γιατί φεύγετε, για να μας βοηθήσετε να βελτιωθούμε."
+        "Λυπούμαστε που φεύγετε. Παρακαλούμε εξηγήστε τον λόγο, για να μας βοηθήσετε να βελτιωθούμε."
       ],
       "Week start": [
         "Έναρξη εβδομάδας"
@@ -6688,8 +6663,8 @@
       ]
     },
     "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Προσθέστε έναν τομέα που διαθέτετε στον λογαριασμό σας ProtonMail."
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Προσθέστε έναν τομέα της κατοχής σας στον λογαριασμό σας ${ MAIL_APP_NAME }."
       ]
     },
     "Label for domain modal": {
@@ -7034,12 +7009,6 @@
         "και πολλές άλλες"
       ]
     },
-    "Max VPN Connections": {
-      "Connection": [
-        "Σύνδεση",
-        "Συνδέσεις"
-      ]
-    },
     "Member action": {
       "Delete": [
         "Διαγραφή"
@@ -7061,7 +7030,7 @@
     },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
-        "Είστε βέβαιοι ότι θέλετε να απενεργοποιήσετε τον έλεγχο ταυτότητας δύο παραγόντων (2FA);"
+        "Θέλετε σίγουρα να απενεργοποιήσετε την ταυτοποίηση δύο παραγόντων;"
       ],
       "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
         "Ρύθμιση προσαρμοσμένης διεύθυνσης ηλεκτρονικού ταχυδρομείου τομέα (π.χ. you@yourcompany.com). Παίρνει μόνο λίγα λεπτά και ο οδηγός μας θα σας καθοδηγήσει κατά τη διαδικασία."
@@ -8452,6 +8421,9 @@
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Συντομεύσεις πληκτρολογίου"
       ],
+      "${ MAIL_APP_NAME } Bridge": [
+        ""
+      ],
       "(highly recommended)": [
         "(προτείνεται ιδιαίτερα)"
       ],
@@ -8564,7 +8536,7 @@
         "Είστε άνθρωπος;"
       ],
       "Are you sure you want to close?": [
-        "Είστε βέβαιοι ότι θέλετε να κλείσετε το παράθυρο;"
+        "Θέλετε σίγουρα να κλείσετε;"
       ],
       "Auto reply": [
         "Αυτόματη απάντηση"
@@ -8620,9 +8592,6 @@
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
       ],
-      "Change password for ${ Name } (${ Email })": [
-        "Αλλαγή κωδικού πρόσβασης για ${ Name } (${ Email })"
-      ],
       "Change role": [
         "Αλλαγή ρόλου"
       ],
@@ -8634,6 +8603,9 @@
       ],
       "Clear": [
         "Καθαρισμός"
+      ],
+      "Composing": [
+        "Σύνταξη"
       ],
       "Confirm address": [
         "Επιβεβαιώση διεύθυνσης"
@@ -8723,10 +8695,10 @@
         "Διαγραφή ${ filter.Name }"
       ],
       "Delete ${ label.Name } folder": [
-        ""
+        "Διαγραφή φακέλου ${ label.Name }"
       ],
       "Delete ${ label.Name } label": [
-        ""
+        "Διαγραφή ετικέτας ${ label.Name }"
       ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -8803,9 +8775,6 @@
       "Email subscriptions": [
         "Λίστες Εγγραφής E-mail"
       ],
-      "Enable keyboard shortcuts": [
-        "Ενεργοποίηση συντομεύσεων πληκτρολογίου"
-      ],
       "Encryption and keys": [
         "Κρυπτογράφηση και κλειδιά"
       ],
@@ -8845,8 +8814,8 @@
       "Generate new recovery phrase?": [
         "Παραγωγή νέας φράσης ανάκτησης;"
       ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Για πρόσβαση σε όλους τους διακομιστές, αποκτήστε το ProtonVPN Plus"
+      "Get ${ vpnPlus } to access all servers": [
+        "Για πρόσβαση σε όλους τους διακομιστές, αποκτήστε το ${ vpnPlus }"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
@@ -8903,6 +8872,9 @@
       "Invoices": [
         "Τιμολόγια"
       ],
+      "Keyboard shortcuts": [
+        "Συντομεύσεις πληκτρολογίου"
+      ],
       "Labels": [
         "Ετικέτες"
       ],
@@ -8920,6 +8892,9 @@
       ],
       "Messages": [
         "Μηνύματα"
+      ],
+      "Messages and composing": [
+        "Μηνύματα και σύνταξη"
       ],
       "Multi-user support": [
         "Υποστήριξη Πολλαπλών Χρηστών"
@@ -8959,9 +8934,6 @@
       ],
       "Organization and keys": [
         "Οργανισμός και κλειδιά"
-      ],
-      "Other": [
-        "Άλλο"
       ],
       "Password": [
         "Κωδικός"
@@ -9010,12 +8982,6 @@
       ],
       "Proton Logo": [
         "Λογότυπο Proton"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonVPN": [
-        "ProtonVPN"
       ],
       "Reconnect your account": [
         "Επανασύνδεση του λογαριασμού σας"
@@ -9176,7 +9142,7 @@
       "Total (monthly)": [
         "Συνολικά (μηνιαίως)"
       ],
-      "Try the best of ProtonMail for free": [
+      "Try the best of ${ MAIL_APP_NAME } for free": [
         ""
       ],
       "Two-factor authentication": [
@@ -9213,7 +9179,7 @@
         "Τι νέο υπάρχει"
       ],
       "Your ${ domain } address is active": [
-        ""
+        "Η διεύθυνσή σας τομέα ${ domain } είναι ενεργή"
       ],
       "Your account’s usage": [
         ""
@@ -9257,8 +9223,8 @@
       ]
     },
     "Title for PDF file": {
-      "ProtonMail invoice": [
-        "Απόδειξη ProtonMail"
+      "${ MAIL_APP_NAME } invoice": [
+        "Τιμολόγιο ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -9323,6 +9289,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        "Οι χρήστες ${ MAIL_APP_NAME } θα χρησιμοποιούν για αποστολή αυτό το κλειδί από προεπιλογή"
+      ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Αποκτήστε πρόσβαση σε γεωγραφικά αποκλεισμένο περιεχόμενο (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube κ. λπ.) όπου κι αν βρίσκεστε."
       ],
@@ -9362,11 +9331,11 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Η ενεργοποίηση προηγμένων αρχείων καταγραφής, καταγράφουν τη διεύθυνση IP για κάθε συμβάν στο αρχείο καταγραφής ασφαλείας."
       ],
+      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Αποκτήστε πρόσβαση σε όλες τις δυνατότητες επι πληρωμής, τόσο για το ${ vpnAppName } όσο και για το ${ mailAppName } (η κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πλάνο."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Αποκτήστε πρόσβαση σε όλες τις δυνατότητες επι πληρωμής, τόσο για το ProtonVPN όσο και για το ProtonMail (η κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πλάνο."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Ομαδοποιήστε τα μηνύματα της ίδιας συνομιλίας στα Εισερχόμενά σας ή εμφανίστε τα ξεχωριστά."
@@ -9382,9 +9351,6 @@
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Το NetShield προστατεύει τη συσκευή σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "Οι χρήστες ProtonMail θα χρησιμοποιήσουν αυτό το κλειδί από προεπιλογή για αποστολή"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Δρομολογήστε την κυκλοφορία σας στο Διαδίκτυο μέσω του δικτύου Tor με ένα μόνο κλικ."
@@ -9407,8 +9373,8 @@
       "Support for file sharing protocols such as BitTorrent.": [
         "Υποστήριξη για πρωτόκολλα κοινής χρήσης αρχείων όπως το BitTorrent."
       ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Οι υποφάκελοι συστήματος θα εμφανιστούν ως ξεχωριστοί φάκελοι στο ProtonMail"
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
@@ -9455,14 +9421,14 @@
       "You have locally decrypted this key": [
         "Έχετε αποκρυπτογραφήσει τοπικά αυτό το κλειδί"
       ],
+      "Your ${ MAIL_APP_NAME } inbox is almost full": [
+        "Η θυρίδα σας ${ MAIL_APP_NAME } είναι σχεδόν γεμάτη"
+      ],
       "Your DKIM signing is working.": [
         "Η υπογραφή σας DKIM λειτουργεί."
       ],
       "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
         "Ίσως ο εξωτερικός λογαριασμός σας έχει εξαντλήσει το όριό του στη μετάδοση ανά 24ωρο. Το Proton θα δοκιμάσει να συνεχίσει την εισαγωγή το συντομότερο δυνατό."
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "Η θυρίδα σας στο ProtonMail είναι σχεδόν γεμάτη"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -9471,13 +9437,13 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Επιλέξτε τις προεπιλεγμένες ρυθμίσεις PGP για χρήση στην υπογραφή και κρυπτογράφηση μηνυμάτων με χρήστες PGP εκτός ProtonMail. Σημειώστε ότι το ενσωματωμένο PGP επιβάλλει μηνύματα απλού κειμένου. Μάθετε περισσότερα"
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Επιλέξτε τις προεπιλεγμένες ρυθμίσεις PGP για χρήση στην υπογραφή και κρυπτογράφηση μηνυμάτων με χρήστες PGP εκτός ${ BRAND_NAME }. Σημειώστε ότι το Ενσωματωμένο PGP επιβάλλει μηνύματα σκέτου κειμένου. Μάθετε περισσότερα"
       ]
     },
     "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Όταν λαμβάνετε ένα email από άλλο χρήστη του ProtonMail που δεν έχει αξιόπιστα κλειδιά στις επαφές σας, ένα αναδυόμενο πλαίσιο θα σας ρωτήσει αν θέλετε να ενεργοποιήσετε τα αξιόπιστα κλειδιά."
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Όταν λαμβάνετε μήνυμα από χρήστη του ${ MAIL_APP_NAME } χωρίς αξιόπιστα κλειδιά στις επαφές σας, ένα πλαίσιο θα σας ρωτά εάν θέλετε να ενεργοποιήσετε τα αξιόπιστα κλειδιά."
       ]
     },
     "Tooltip sign external messages": {
@@ -9545,9 +9511,6 @@
       ]
     },
     "VPN feature": {
-      "${ mailAppName } Visionary": [
-        "${ mailAppName } Visionary"
-      ],
       "30-days money-back guarantee": [
         "Εγγύηση επιστροφής χρημάτων - 30 ημερών"
       ],
@@ -9702,13 +9665,13 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε τη διεύθυνση;"
+        "Θέλετε σίγουρα να διαγράψετε τη διεύθυνση;"
       ],
       "Are you sure you want to delete the phone number?": [
-        "Είστε σίγουροι ότι θέλετε να διαγράψετε τον αριθμό τηλεφώνου;"
+        "Θέλετε σίγουρα να διαγράψετε τον αριθμό τηλεφώνου;"
       ],
       "Are you sure you want to discard your import?": [
-        "Είστε βέβαιοι ότι θέλετε να απορρίψετε την εισαγωγή σας;"
+        "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Διαγράφοντας αυτή τη διεύθυνση, δεν θα μπορείτε πλέον να λαμβάνετε καθημερινές ειδοποιήσεις μέσω ηλεκτρονικού ταχυδρομείου."
@@ -9723,15 +9686,15 @@
         "Διαγράφοντας αυτό το νούμερο τηλεφώνου, δεν θα είστε πλέον σε θέση να ανακτήσετε το λογαριασμό σας."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Απενεργοποιώντας τα αρχεία καταγραφής, θα διαγράψετε επίσης ολόκληρο το ιστορικό των αρχείων καταγραφής. Είστε βέβαιοι ότι θέλετε να απενεργοποιήσετε τα αρχεία καταγραφής;"
+        "Η απενεργοποίηση των αρχείων καταγραφής θα κάνει επίσης πλήρη εκκαθάριση του καταγεγραμμένου ιστορικού σας. Θέλετε σίγουρα να απενεργοποιήσετε τα αρχεία καταγραφής;"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
-        "Απενεργοποιώντας αυτήν τη διεύθυνση, δεν θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου χρησιμοποιώντας αυτήν τη διεύθυνση και όλα τα συνδεδεμένα προϊόντα Proton θα απενεργοποιηθούν επίσης. Είστε βέβαιοι ότι θέλετε να απενεργοποιήσετε αυτήν τη διεύθυνση;"
+        "Απενεργοποιώντας αυτήν τη διεύθυνση, δεν θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα χρησιμοποιώντας την, ενώ επίσης θα απενεργοποιηθούν όλα τα συνδεδεμένα προϊόντα Proton. Θέλετε σίγουρα να απενεργοποιήσετε αυτήν τη διεύθυνση;"
       ],
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "Εάν ακυρώσετε αυτήν την εισαγωγή, δεν θα μπορέσετε να τη συνεχίσετε. Το Proton αποθήκευσε όλη την πρόοδο στον λογαριασμό σας. Ακύρωση οπωσδήποτε;"
       ],
-      "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
@@ -9752,8 +9715,8 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Οι ρυθμίσεις ημερομηνίας και ώρας στη συσκευή σας είναι εκτός συγχρονισμού. ${ learnMore }"
       ],
-      "This feature is only available for ProtonMail Professional plans or higher": [
-        "Αυτή η λειτουργία είναι διαθέσιμη μόνο για λογαριασμούς ProtonMail Professional ή υψηλότερο"
+      "This feature is only available for ${ mailProfessional } plans or higher": [
+        ""
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Αυτή η εισαγωγή ενδέχεται να υπερβαίνει τη χωρητικότητα αποθήκευσης που διατίθεται αυτήν τη στιγμή στον λογαριασμό σας Proton. Εξετάστε το ενδεχόμενο να προσαρμόσετε την εισαγωγή σας."
