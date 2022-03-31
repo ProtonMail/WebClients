@@ -6,9 +6,30 @@ import { Badge } from '../../components';
 
 interface Props {
     cycle?: Cycle;
+    discount?: number;
 }
 
-const CycleDiscountBadge = ({ cycle = CYCLE.MONTHLY }: Props) => {
+const getTooltip = (cycle: Cycle) => {
+    if (cycle === CYCLE.YEARLY) {
+        return c('Tooltip').t`Discount applied for annual billing cycle`;
+    }
+
+    if (cycle === CYCLE.TWO_YEARS) {
+        return c('Tooltip').t`Discount applied for two-year billing cycle`;
+    }
+};
+
+const CycleDiscountBadge = ({ cycle = CYCLE.MONTHLY, discount }: Props) => {
+    const tooltip = getTooltip(cycle);
+
+    if (discount) {
+        return (
+            <Badge type="success" tooltip={tooltip}>
+                -{discount}%
+            </Badge>
+        );
+    }
+
     if (cycle === CYCLE.YEARLY) {
         return (
             <Badge type="success" tooltip={c('Tooltip').t`Discount applied for annual billing cycle`}>

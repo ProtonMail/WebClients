@@ -2,10 +2,10 @@ import { c, msgid } from 'ttag';
 import { APPS, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { unique } from '@proton/shared/lib/helpers/array';
 import {
-    getHasCycleDiscount,
     getBaseAmount,
     getHasLegacyPlans,
     hasVisionary,
+    getCycleDiscount,
 } from '@proton/shared/lib/helpers/subscription';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -63,10 +63,11 @@ const BillingSection = () => {
     const weakRowClassName = classnames([priceRowClassName, 'color-weak']);
 
     const getCycleBadge = (plan: Plan) => {
-        if (getHasCycleDiscount(Cycle, plan.Name, plansMap)) {
+        const cycleDiscount = getCycleDiscount(Cycle, plan.Name, plansMap);
+        if (cycleDiscount) {
             return (
                 <span className="ml0-5">
-                    <CycleDiscountBadge cycle={Cycle} />
+                    <CycleDiscountBadge cycle={Cycle} discount={cycleDiscount} />
                 </span>
             );
         }
