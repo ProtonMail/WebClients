@@ -20,8 +20,7 @@ import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { VCARD_KEY_FIELDS } from '@proton/shared/lib/contacts/constants';
 import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-import ContactMIMETypeSelect from '../ContactMIMETypeSelect';
-import ContactPgpSettings from '../ContactPgpSettings';
+import ContactMIMETypeSelect from './ContactMIMETypeSelect';
 import { useApi, useEventManager, useNotifications, useLoading, useMailSettings } from '../../../hooks';
 import {
     Alert,
@@ -38,6 +37,7 @@ import {
     ModalTwoFooter,
 } from '../../../components';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
+import ContactPGPSettings from './ContactPGPSettings';
 
 const { PGP_INLINE } = PGP_SCHEMES;
 
@@ -300,7 +300,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                     </UnderlineButton>
                 </div>
                 {showPgpSettings && model ? (
-                    <ContactPgpSettings model={model} setModel={setModel} mailSettings={mailSettings} />
+                    <ContactPGPSettings model={model} setModel={setModel} mailSettings={mailSettings} />
                 ) : null}
             </ModalTwoContent>
             <ModalTwoFooter>

@@ -12,9 +12,9 @@ import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
 import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Badge, DropdownActions, ContactKeyWarningIcon, Table, TableBody, TableRow } from '../../components';
-import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import { classnames } from '../../helpers';
+import { Badge, DropdownActions, ContactKeyWarningIcon, Table, TableBody, TableRow } from '../../../components';
+import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
+import { classnames } from '../../../helpers';
 
 interface Props {
     model: ContactPublicKeyModel;
@@ -110,7 +110,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
     };
 
     useEffect(() => {
-        parse();
+        void parse();
     }, [model.publicKeys, model.trustedFingerprints, model.encrypt]);
 
     return (

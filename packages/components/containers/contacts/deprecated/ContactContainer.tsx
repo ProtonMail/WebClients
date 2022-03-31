@@ -1,6 +1,6 @@
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Contact, ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
-import useContact from '../useContact';
+import useContact from '../hooks/useContact';
 import ContactView from '../view/ContactView';
 import useContactProperties from './useContactProperties';
 import Loader from '../../../components/loader/Loader';

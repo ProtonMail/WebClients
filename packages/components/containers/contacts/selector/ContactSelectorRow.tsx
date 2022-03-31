@@ -2,9 +2,9 @@ import { CSSProperties, ChangeEvent } from 'react';
 
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
-import { Checkbox } from '../../components';
-import { classnames } from '../../helpers';
-import ContactGroupLabels from './group/ContactGroupLabels';
+import { Checkbox } from '../../../components';
+import { classnames } from '../../../helpers';
+import ContactGroupLabels from '../group/ContactGroupLabels';
 
 interface Props {
     style: CSSProperties;
@@ -16,7 +16,7 @@ interface Props {
     onGroupDetails: (contactGroupID: string) => void;
 }
 
-const ContactModalRow = ({
+const ContactSelectorRow = ({
     style,
     onCheck,
     contact,
@@ -70,4 +70,4 @@ const ContactModalRow = ({
     );
 };
 
-export default ContactModalRow;
+export default ContactSelectorRow;

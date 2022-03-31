@@ -1,10 +1,9 @@
-import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { PACKAGE_TYPE, PGP_SCHEMES, PGP_SCHEMES_MORE, CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { PGP_SCHEME_TEXT } from '@proton/shared/lib/contacts/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-
-import { Select } from '../../components';
+import { Option, SelectTwo } from '../../../components';
+import { SelectChangeEvent } from '../../../components/selectTwo/select';
 
 const { INLINE, MIME } = PGP_SCHEME_TEXT;
 
@@ -19,18 +18,18 @@ interface Props {
 const ContactSchemeSelect = ({ value, mailSettings, onChange }: Props) => {
     const defaultValueText = mailSettings?.PGPScheme === PACKAGE_TYPE.SEND_PGP_INLINE ? INLINE : MIME;
 
-    const options = [
-        {
-            value: PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
-            text: c('Default encryption scheme').t`Use global default (${defaultValueText})`,
-        },
-        { value: PGP_MIME, text: MIME },
-        { value: PGP_INLINE, text: INLINE },
-    ];
+    const handleChange = ({ value }: SelectChangeEvent<string>) => onChange(value as CONTACT_PGP_SCHEMES);
 
-    const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => onChange(target.value as CONTACT_PGP_SCHEMES);
-
-    return <Select options={options} value={value} onChange={handleChange} />;
+    return (
+        <SelectTwo value={value} onChange={handleChange}>
+            <Option
+                title={c('Default encryption scheme').t`Use global default (${defaultValueText})`}
+                value={PGP_SCHEMES_MORE.GLOBAL_DEFAULT}
+            />
+            <Option title={MIME} value={PGP_MIME} />
+            <Option title={INLINE} value={PGP_INLINE} />
+        </SelectTwo>
+    );
 };
 
 export default ContactSchemeSelect;

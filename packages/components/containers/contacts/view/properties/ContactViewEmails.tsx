@@ -4,7 +4,7 @@ import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import ContactViewProperty from './ContactViewProperty';
 import { ContactViewProperties } from './ContactViewProperties';
-import { ContactEmailSettingsProps } from '../../modals/ContactEmailSettingsModal';
+import { ContactEmailSettingsProps } from '../../email/ContactEmailSettingsModal';
 import { Button, Icon, Tooltip, Copy } from '../../../../components';
 import { useUser, useNotifications } from '../../../../hooks';
 import ContactGroupDropdown from '../../ContactGroupDropdown';

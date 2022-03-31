@@ -6,9 +6,9 @@ import { MailSettings, ContactPublicKeyModel } from '@proton/shared/lib/interfac
 import { BRAND_NAME, CONTACT_PGP_SCHEMES, MIME_TYPES_MORE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { useNotifications } from '../../hooks';
-import SelectKeyFiles from '../keys/shared/SelectKeyFiles';
-import { Alert, Row, Label, Info, Field, Toggle } from '../../components';
+import { useNotifications } from '../../../hooks';
+import SelectKeyFiles from '../../keys/shared/SelectKeyFiles';
+import { Alert, Row, Label, Info, Field, Toggle } from '../../../components';
 import ContactSchemeSelect from './ContactSchemeSelect';
 import ContactKeysTable from './ContactKeysTable';
 
@@ -18,7 +18,7 @@ interface Props {
     mailSettings?: MailSettings;
 }
 
-const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
+const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
     const { createNotification } = useNotifications();
 
     const hasApiKeys = !!model.publicKeys.apiKeys.length;
@@ -203,4 +203,4 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
     );
 };
 
-export default ContactPgpSettings;
+export default ContactPGPSettings;

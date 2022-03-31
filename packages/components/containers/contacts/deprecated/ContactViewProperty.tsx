@@ -16,11 +16,11 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { Copy, Button, Icon, Tooltip, RemoteImage } from '../../../components';
 import { useModals, useUser, useNotifications } from '../../../hooks';
 import { classnames } from '../../../helpers';
-import ContactLabelProperty from '../ContactLabelProperty';
+import ContactLabelProperty from '../view/ContactLabelProperty';
 import ContactUpgradeModal from '../modals/ContactUpgradeModal';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import ContactGroupLabels from '../group/ContactGroupLabels';
-import EncryptedIcon from '../EncryptedIcon';
+import EncryptedIcon from '../view/EncryptedIcon';
 
 interface Props {
     property: ContactProperty;
