@@ -113,9 +113,30 @@ const useIAMailPayload = ({
     }, {});
 
     const getDestinationLabels = ({ Source, Separator }: ImportedMailFolder) => {
+        // Source label name can contains Separators so we can't only replace Separators
+        // We're forced to identify parents to keep their names
+
+        let labelName = '';
+        let fromStart = '';
+        let currentPart = '';
+
+        Source.split(Separator).forEach((part) => {
+            fromStart = fromStart === '' ? part : fromStart + Separator + part;
+            currentPart = currentPart === '' ? part : currentPart + Separator + part;
+
+            if (folderRelationshipsMap[fromStart]) {
+                labelName = labelName === '' ? currentPart : labelName + '-' + currentPart;
+                currentPart = '';
+            }
+        });
+
+        if (currentPart) {
+            labelName = labelName === '' ? currentPart : labelName + '-' + currentPart;
+        }
+
         return [
             {
-                Name: Source.split(Separator).join('-'),
+                Name: labelName,
                 Color: labelColorMap[Source],
             },
         ];
