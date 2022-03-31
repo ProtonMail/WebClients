@@ -14,7 +14,7 @@ import {
     PlansMap,
     SubscriptionCheckResponse,
 } from '@proton/shared/lib/interfaces';
-import { getHasCycleDiscount } from '@proton/shared/lib/helpers/subscription';
+import { getCycleDiscount } from '@proton/shared/lib/helpers/subscription';
 
 import { Info, Time } from '../../../components';
 import { useConfig } from '../../../hooks';
@@ -125,8 +125,9 @@ const CheckoutPlanIDs = ({
         // translator: Visionary (Mail + VPN)
         const displayTitle = Title === 'Visionary' ? `${Title} ${c('Info').t`(Mail + VPN)`}` : Title;
 
-        const cycleDiscount = getHasCycleDiscount(cycle, Name, plansMap) && <CycleDiscountBadge cycle={cycle} />;
-        const title = <span className="mr0-5 pr0-5">{getTitle(Name, cycle, plansMap, diff, users)}</span>;
+        const cycleDiscount = getCycleDiscount(cycle, Name, plansMap);
+        const cycleDiscountBadge = cycleDiscount ? <CycleDiscountBadge cycle={cycle} discount={cycleDiscount} /> : null;
+        const title = <span className="mr0-5">{getTitle(Name, cycle, plansMap, diff, users)}</span>;
 
         return (
             <Fragment key={ID}>
@@ -140,7 +141,7 @@ const CheckoutPlanIDs = ({
                         title={
                             <>
                                 {title}
-                                {!isUpdating && cycleDiscount}
+                                {!isUpdating && cycleDiscountBadge}
                             </>
                         }
                         amount={isUpdating ? 0 : (diff * Pricing[cycle]) / cycle}
@@ -153,7 +154,7 @@ const CheckoutPlanIDs = ({
                         title={
                             <>
                                 {title}
-                                {cycleDiscount}
+                                {cycleDiscountBadge}
                             </>
                         }
                         amount={(update * Pricing[cycle]) / cycle}
