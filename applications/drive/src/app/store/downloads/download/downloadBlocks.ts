@@ -6,8 +6,8 @@ import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
-import { MAX_THREADS_PER_DOWNLOAD, STATUS_CODE, BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
-
+import { MAX_THREADS_PER_DOWNLOAD, BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
+import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { ObserverStream, untilStreamEnd } from '../../../utils/stream';
 import { waitUntil } from '../../../utils/async';
 import { isTransferCancelError } from '../../../utils/transfer';
@@ -267,7 +267,7 @@ export default function initDownloadBlocks(
                      * we need to request new blocks and restart the download
                      * from the active index
                      */
-                    if (e.status === STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
+                    if (e.status === HTTP_STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
                         console.warn(`Blocks for download might have expired. Retry num: ${numRetries}`);
                         return retryDownload(activeIndex);
                     }
