@@ -118,16 +118,9 @@ export const getCycleDiscount = (cycle: Cycle, planName: PLANS | ADDON_NAMES, pl
     }
     const originalPrice = pricing[CYCLE.MONTHLY];
     const normalisedPrice = pricing[cycle] / cycle;
+    if (normalisedPrice > originalPrice) {
+        return 0;
+    }
     const percentage = (originalPrice - normalisedPrice) / originalPrice;
     return Math.round(percentage * 100);
-};
-
-export const getHasCycleDiscount = (cycle: Cycle, planName: PLANS | ADDON_NAMES, plansMap: PlansMap) => {
-    const pricing = plansMap[planName]?.Pricing;
-    if (!pricing) {
-        return false;
-    }
-    const originalPrice = pricing[CYCLE.MONTHLY];
-    const normalisedPrice = pricing[cycle] / cycle;
-    return normalisedPrice !== originalPrice;
 };
