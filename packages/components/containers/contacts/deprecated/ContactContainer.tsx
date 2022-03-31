@@ -48,6 +48,8 @@ const ContactContainer = ({
             onEdit={() => {}}
             onExport={() => {}}
             onEmailSettings={() => {}}
+            onGroupDetails={() => {}}
+            onUpgrade={() => {}}
         />
     );
 };

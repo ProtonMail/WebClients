@@ -35,6 +35,7 @@ interface Props {
     onContactEmailChange?: (contactEmail: ContactEmailModel) => void;
     vCardContact: VCardContact;
     onChangeVCard: (vCardProperty: VCardProperty) => void;
+    onUpgrade: () => void;
 }
 
 const ContactEditProperties = (
@@ -49,6 +50,7 @@ const ContactEditProperties = (
         onContactEmailChange,
         vCardContact,
         onChangeVCard,
+        onUpgrade,
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
@@ -101,6 +103,7 @@ const ContactEditProperties = (
                 onContactEmailChange={onContactEmailChange}
                 vCardProperty={property}
                 onChangeVCard={onChangeVCard}
+                onUpgrade={onUpgrade}
             />
         ));
     }, [properties, vCardContact, onChangeVCard, onRemove, onAdd, sortable]);

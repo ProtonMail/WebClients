@@ -1,4 +1,4 @@
-import { Icon, Tooltip } from '../../components';
+import { Icon, Tooltip } from '../../../components';
 
 interface Props {
     name: string;

@@ -13,10 +13,10 @@ import { ButtonProps } from '../../components/button/Button';
 import { Button } from '../../components/button';
 import Mark from '../../components/text/Mark';
 import Checkbox from '../../components/input/Checkbox';
-import ContactGroupModal from './modals/ContactGroupModal';
-import ContactUpgradeModal from './ContactUpgradeModal';
+import ContactUpgradeModal from './modals/ContactUpgradeModal';
 import useApplyGroups from './hooks/useApplyGroups';
 import { DropdownButton } from '../../components';
+import ContactGroupModal from './group/ContactGroupEditModal';
 import './ContactGroupDropdown.scss';
 
 const UNCHECKED = 0;

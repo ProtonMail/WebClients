@@ -1,6 +1,6 @@
 export { default as ContactContainer } from './deprecated/ContactContainer';
 export { default as ContactEditModal } from './edit/ContactEditModal';
-export { default as ContactGroupModal } from './modals/ContactGroupModal';
+export { default as ContactGroupModal } from './group/ContactGroupEditModal';
 export { default as ContactListModal } from './modals/ContactListModal';
 export { default as ContactDetailsModal } from './view/ContactDetailsModal';
 export { default as ContactExportingModal } from './modals/ContactExportingModal';

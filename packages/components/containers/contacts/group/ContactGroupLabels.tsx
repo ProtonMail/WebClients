@@ -1,19 +1,15 @@
 import { MouseEvent } from 'react';
 import { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
-
-import LabelStack, { LabelDescription } from '../../components/labelStack/LabelStack';
-import { useModals } from '../../hooks';
-import ContactGroupDetailsModal from './modals/ContactGroupDetailsModal';
+import LabelStack, { LabelDescription } from '../../../components/labelStack/LabelStack';
 
 interface Props {
     contactGroups: ContactGroup[];
     isStacked?: boolean;
     className?: string;
+    onDetails: (contactGroupID: string) => void;
 }
 
-const ContactGroupLabels = ({ contactGroups, isStacked = true, className }: Props) => {
-    const { createModal } = useModals();
-
+const ContactGroupLabels = ({ contactGroups, isStacked = true, className, onDetails }: Props) => {
     const labels = contactGroups.reduce((acc: LabelDescription[], contactGroup: ContactGroup) => {
         return contactGroup
             ? [
@@ -23,7 +19,7 @@ const ContactGroupLabels = ({ contactGroups, isStacked = true, className }: Prop
                       color: contactGroup.Color,
                       title: contactGroup.Name,
                       onClick: (event: MouseEvent) => {
-                          createModal(<ContactGroupDetailsModal contactGroupID={contactGroup.ID} />);
+                          onDetails(contactGroup.ID);
                           event.stopPropagation();
                       },
                   },

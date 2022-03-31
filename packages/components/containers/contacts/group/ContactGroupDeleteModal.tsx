@@ -1,33 +1,31 @@
 import { c, msgid } from 'ttag';
-
-import noop from '@proton/utils/noop';
 import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { deleteLabels } from '@proton/shared/lib/api/labels';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
-
 import { useApi, useContactGroups, useEventManager, useLoading, useNotifications } from '../../../hooks';
-import { Alert, ErrorButton, FormModal } from '../../../components';
+import { Alert, Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '../../../components';
+import ModalFooter from '../../../components/modalTwo/ModalFooter';
 
-interface Props {
+export interface ContactGroupDeleteProps {
     groupIDs: string[];
     onDelete?: () => void;
     onClose?: () => void;
 }
 
-const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, onClose = noop, ...rest }: Props) => {
+type Props = ContactGroupDeleteProps & ModalProps;
+
+const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, ...rest }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const [groups = []] = useContactGroups();
 
-    const submit = <ErrorButton type="submit" loading={loading}>{c('Action').t`Delete`}</ErrorButton>;
-
     const handleDelete = async () => {
         const apiSuccess = allSucceded(await api(deleteLabels(groupIDs)));
         await call();
         onDelete?.();
-        onClose();
+        rest.onClose?.();
         if (!apiSuccess) {
             return createNotification({ text: c('Error').t`Some groups could not be deleted`, type: 'warning' });
         }
@@ -55,22 +53,23 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, onClose = noop, ...r
               );
 
     return (
-        <FormModal
-            title={title}
-            onSubmit={() => withLoading(handleDelete())}
-            onClose={onClose}
-            submit={submit}
-            loading={loading}
-            className="modal--smaller"
-            {...rest}
-        >
-            <Alert className="mb1" type="info">
-                {c('Info').t`Please note that addresses assigned to this group will NOT be deleted.`}
-            </Alert>
-            <Alert className="mb1" type="error">
-                {alertText}
-            </Alert>
-        </FormModal>
+        <ModalTwo size="small" {...rest}>
+            <ModalTwoHeader title={title} />
+            <ModalTwoContent>
+                <Alert className="mb1" type="info">
+                    {c('Info').t`Please note that addresses assigned to this group will NOT be deleted.`}
+                </Alert>
+                <Alert className="mb1" type="error">
+                    {alertText}
+                </Alert>
+            </ModalTwoContent>
+            <ModalFooter>
+                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="danger" onClick={() => withLoading(handleDelete())} disabled={loading}>
+                    {c('Action').t`Delete`}
+                </Button>
+            </ModalFooter>
+        </ModalTwo>
     );
 };
 

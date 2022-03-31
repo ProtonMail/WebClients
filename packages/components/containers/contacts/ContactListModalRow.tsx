@@ -4,7 +4,7 @@ import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contac
 
 import { Checkbox } from '../../components';
 import { classnames } from '../../helpers';
-import ContactGroupLabels from './ContactGroupLabels';
+import ContactGroupLabels from './group/ContactGroupLabels';
 
 interface Props {
     style: CSSProperties;
@@ -13,9 +13,18 @@ interface Props {
     checked: boolean;
     contactGroupsMap?: { [key: string]: ContactGroup };
     isNarrow: boolean;
+    onGroupDetails: (contactGroupID: string) => void;
 }
 
-const ContactModalRow = ({ style, onCheck, contact, checked, contactGroupsMap = {}, isNarrow }: Props) => {
+const ContactModalRow = ({
+    style,
+    onCheck,
+    contact,
+    checked,
+    contactGroupsMap = {},
+    isNarrow,
+    onGroupDetails,
+}: Props) => {
     const contactGroups = contact.LabelIDs.map((ID: string) => contactGroupsMap[ID]);
 
     return (
@@ -47,7 +56,11 @@ const ContactModalRow = ({ style, onCheck, contact, checked, contactGroupsMap = 
                         </div>
                         {!isNarrow && contactGroups && (
                             <div className="w33 text-right relative upper-layer">
-                                <ContactGroupLabels className="flex-justify-end" contactGroups={contactGroups} />
+                                <ContactGroupLabels
+                                    className="flex-justify-end"
+                                    contactGroups={contactGroups}
+                                    onDetails={onGroupDetails}
+                                />
                             </div>
                         )}
                     </div>

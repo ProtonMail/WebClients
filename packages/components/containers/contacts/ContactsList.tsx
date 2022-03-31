@@ -22,6 +22,7 @@ interface Props {
     checkedIDs: string[];
     onClick: (contactID: string) => void;
     activateDrag?: boolean;
+    onGroupDetails: (contactGroupID: string) => void;
 }
 
 const ContactsList = ({
@@ -35,6 +36,7 @@ const ContactsList = ({
     checkedIDs,
     onClick,
     activateDrag = true,
+    onGroupDetails,
 }: Props) => {
     const listRef = useRef<List>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
@@ -106,6 +108,7 @@ const ContactsList = ({
                                     dragged={draggedIDs.includes(contacts[index].ID)}
                                     index={index}
                                     onFocus={handleFocus}
+                                    onGroupDetails={onGroupDetails}
                                 />
                             )}
                             rowCount={contacts.length}

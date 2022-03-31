@@ -1,15 +1,13 @@
-import { useState, ChangeEvent, useMemo } from 'react';
+import { useState, ChangeEvent, useMemo, FormEvent } from 'react';
 import { c, msgid } from 'ttag';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
-import noop from '@proton/utils/noop';
 import diff from '@proton/utils/diff';
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import isTruthy from '@proton/utils/isTruthy';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import {
-    FormModal,
-    Input,
+    InputTwo,
     Row,
     Field,
     Label,
@@ -18,25 +16,25 @@ import {
     Button,
     getContactsAutocompleteItems,
     AddressesAutocompleteItem,
+    ModalProps,
+    ModalTwo,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    ModalTwoContent,
 } from '../../../components';
 import { useContactEmails, useContactGroups } from '../../../hooks';
-import ContactGroupTable from '../ContactGroupTable';
+import ContactGroupTable from './ContactGroupTable';
 import useUpdateGroup from '../useUpdateGroup';
 
-interface Props {
+export interface ContactGroupEditProps {
     contactGroupID?: string;
     selectedContactEmails?: ContactEmail[];
-    onClose?: () => void;
     onDelayedSave?: (groupID: string) => void;
 }
 
-const ContactGroupModal = ({
-    contactGroupID,
-    onClose = noop,
-    selectedContactEmails = [],
-    onDelayedSave,
-    ...rest
-}: Props) => {
+type Props = ContactGroupEditProps & ModalProps;
+
+const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onDelayedSave, ...rest }: Props) => {
     const [loading, setLoading] = useState(false);
     const [contactGroups = []] = useContactGroups();
     const [contactEmails] = useContactEmails();
@@ -103,7 +101,10 @@ const ContactGroupModal = ({
         }
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (event: FormEvent) => {
+        event.preventDefault();
+        event.stopPropagation();
+
         try {
             setLoading(true);
             const toAdd = model.contactEmails.filter(({ ID }) => isTruthy(ID));
@@ -125,7 +126,7 @@ const ContactGroupModal = ({
                 onDelayedSave,
             });
 
-            onClose();
+            rest.onClose?.();
         } catch (error: any) {
             setLoading(false);
             throw error;
@@ -135,67 +136,73 @@ const ContactGroupModal = ({
     const contactEmailsLength = model.contactEmails.length;
 
     return (
-        <FormModal
-            onSubmit={handleSubmit}
-            loading={loading}
-            submit={c('Action').t`Save`}
-            title={title}
-            onClose={onClose}
-            {...rest}
-        >
-            <Row>
-                <Label htmlFor="contactGroupName">{c('Label for contact group name').t`Name`}</Label>
-                <Field className="flex-item-fluid">
-                    <Input
-                        id="contactGroupName"
-                        placeholder={c('Placeholder for contact group name').t`Name`}
-                        value={model.name}
-                        onChange={handleChangeName}
-                    />
-                </Field>
-            </Row>
-            <Row>
-                <Label htmlFor="contactGroupColor">{c('Label for contact group color').t`Color`}</Label>
-                <Field>
-                    <ColorPicker id="contactGroupColor" color={model.color} onChange={handleChangeColor} />
-                </Field>
-            </Row>
-            {contactsAutocompleteItems.length ? (
-                <div className="flex flex-nowrap mb1 on-mobile-flex-column">
-                    <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
+        <ModalTwo size="large" as="form" onSubmit={handleSubmit} {...rest}>
+            <ModalTwoHeader title={title} />
+            <ModalTwoContent>
+                <Row>
+                    <Label htmlFor="contactGroupName">{c('Label for contact group name').t`Name`}</Label>
                     <Field className="flex-item-fluid">
-                        <Autocomplete
-                            id="contactGroupEmail"
-                            options={contactsAutocompleteItems}
-                            limit={6}
-                            value={value}
-                            onChange={setValue}
-                            getData={(value) => value.label}
-                            type="search"
-                            placeholder={c('Placeholder').t`Start typing an email address`}
-                            onSelect={handleSelect}
-                            autoComplete="off"
+                        <InputTwo
+                            id="contactGroupName"
+                            placeholder={c('Placeholder for contact group name').t`Name`}
+                            value={model.name}
+                            onChange={handleChangeName}
                         />
                     </Field>
-                    <Button className="ml1 on-mobile-ml0 on-mobile-mt0-5" onClick={handleAdd} disabled={!isValidEmail}>
-                        {c('Action').t`Add`}
-                    </Button>
-                </div>
-            ) : null}
+                </Row>
+                <Row>
+                    <Label htmlFor="contactGroupColor">{c('Label for contact group color').t`Color`}</Label>
+                    <Field>
+                        <ColorPicker id="contactGroupColor" color={model.color} onChange={handleChangeColor} />
+                    </Field>
+                </Row>
+                {contactsAutocompleteItems.length ? (
+                    <div className="flex flex-nowrap mb1 on-mobile-flex-column">
+                        <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
+                        <Field className="flex-item-fluid">
+                            <Autocomplete
+                                id="contactGroupEmail"
+                                options={contactsAutocompleteItems}
+                                limit={6}
+                                value={value}
+                                onChange={setValue}
+                                getData={(value) => value.label}
+                                type="search"
+                                placeholder={c('Placeholder').t`Start typing an email address`}
+                                onSelect={handleSelect}
+                                autoComplete="off"
+                            />
+                        </Field>
+                        <Button
+                            className="ml1 on-mobile-ml0 on-mobile-mt0-5"
+                            onClick={handleAdd}
+                            disabled={!isValidEmail}
+                        >
+                            {c('Action').t`Add`}
+                        </Button>
+                    </div>
+                ) : null}
 
-            <ContactGroupTable contactEmails={model.contactEmails} onDelete={handleDeleteEmail} />
+                <ContactGroupTable contactEmails={model.contactEmails} onDelete={handleDeleteEmail} />
 
-            {contactEmailsLength ? (
-                <div className="text-center color-weak">
-                    {c('Info').ngettext(
-                        msgid`${contactEmailsLength} Member`,
-                        `${contactEmailsLength} Members`,
-                        contactEmailsLength
-                    )}
-                </div>
-            ) : null}
-        </FormModal>
+                {contactEmailsLength ? (
+                    <div className="text-center color-weak">
+                        {c('Info').ngettext(
+                            msgid`${contactEmailsLength} Member`,
+                            `${contactEmailsLength} Members`,
+                            contactEmailsLength
+                        )}
+                    </div>
+                ) : null}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={rest.onClose}>{c('Action').t`Close`}</Button>
+                <Button color="norm" type="submit" disabled={loading}>
+                    {c('Action').t`Save`}
+                </Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
-export default ContactGroupModal;
+export default ContactGroupEditModal;
