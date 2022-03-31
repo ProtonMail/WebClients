@@ -6,10 +6,9 @@ import ContactViewProperty from './ContactViewProperty';
 import { ContactViewProperties } from './ContactViewProperties';
 import { ContactEmailSettingsProps } from '../../modals/ContactEmailSettingsModal';
 import { Button, Icon, Tooltip, Copy } from '../../../../components';
-import { useUser, useModals, useNotifications } from '../../../../hooks';
+import { useUser, useNotifications } from '../../../../hooks';
 import ContactGroupDropdown from '../../ContactGroupDropdown';
-import ContactGroupLabels from '../../ContactGroupLabels';
-import ContactUpgradeModal from '../../ContactUpgradeModal';
+import ContactGroupLabels from '../../group/ContactGroupLabels';
 
 interface Props {
     vCardContact: VCardContact;
@@ -20,6 +19,8 @@ interface Props {
     ownAddresses: string[];
     contactID: string;
     onEmailSettings: (props: ContactEmailSettingsProps) => void;
+    onGroupDetails: (contactGroupID: string) => void;
+    onUpgrade: () => void;
 }
 
 const ContactViewEmails = ({
@@ -31,9 +32,10 @@ const ContactViewEmails = ({
     ownAddresses,
     contactID,
     onEmailSettings,
+    onGroupDetails,
+    onUpgrade,
 }: Props) => {
     const [{ hasPaidMail }] = useUser();
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
 
     const emails = getSortedProperties(vCardContact, 'email');
@@ -97,11 +99,7 @@ const ContactViewEmails = ({
                                             </ContactGroupDropdown>
                                         ) : (
                                             <Tooltip title={c('Title').t`Contact group`}>
-                                                <Button
-                                                    icon
-                                                    onClick={() => createModal(<ContactUpgradeModal />)}
-                                                    className="ml0-5"
-                                                >
+                                                <Button icon onClick={onUpgrade} className="ml0-5">
                                                     <Icon name="users" alt={c('Action').t`Contact group`} />
                                                 </Button>
                                             </Tooltip>
@@ -125,6 +123,7 @@ const ContactViewEmails = ({
                                     className="max-w100"
                                     contactGroups={contactGroups}
                                     isStacked={false}
+                                    onDetails={onGroupDetails}
                                 />
                             </div>
                         )}

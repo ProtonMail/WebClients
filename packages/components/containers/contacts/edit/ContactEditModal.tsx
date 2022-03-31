@@ -30,9 +30,19 @@ export interface ContactEditProps {
     newField?: string;
 }
 
-type Props = ContactEditProps & ModalProps;
+export interface ContactEditModalProps {
+    onUpgrade: () => void;
+}
 
-const ContactEditModal = ({ contactID, vCardContact: inputVCardContact = { fn: [] }, newField, ...rest }: Props) => {
+type Props = ContactEditProps & ContactEditModalProps & ModalProps;
+
+const ContactEditModal = ({
+    contactID,
+    vCardContact: inputVCardContact = { fn: [] },
+    newField,
+    onUpgrade,
+    ...rest
+}: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
@@ -217,6 +227,7 @@ const ContactEditModal = ({ contactID, vCardContact: inputVCardContact = { fn: [
                         mainItem
                         vCardProperty={nameProperty}
                         onChangeVCard={handleChangeVCard}
+                        onUpgrade={onUpgrade}
                     />
 
                     <ContactEditProperty
@@ -227,6 +238,7 @@ const ContactEditModal = ({ contactID, vCardContact: inputVCardContact = { fn: [
                         mainItem
                         vCardProperty={photoProperty}
                         onChangeVCard={handleChangeVCard}
+                        onUpgrade={onUpgrade}
                     />
                 </div>
                 <ContactEditProperties
@@ -236,6 +248,7 @@ const ContactEditModal = ({ contactID, vCardContact: inputVCardContact = { fn: [
                     onRemove={handleRemove}
                     vCardContact={vCardContact}
                     onChangeVCard={handleChangeVCard}
+                    onUpgrade={onUpgrade}
                 />
                 <ContactEditProperties
                     field="email"
@@ -248,6 +261,7 @@ const ContactEditModal = ({ contactID, vCardContact: inputVCardContact = { fn: [
                     onContactEmailChange={handleContactEmailChange}
                     vCardContact={vCardContact}
                     onChangeVCard={handleChangeVCard}
+                    onUpgrade={onUpgrade}
                 />
                 <ContactEditProperties
                     field="tel"
@@ -258,6 +272,7 @@ const ContactEditModal = ({ contactID, vCardContact: inputVCardContact = { fn: [
                     onAdd={handleAdd('tel')}
                     vCardContact={vCardContact}
                     onChangeVCard={handleChangeVCard}
+                    onUpgrade={onUpgrade}
                 />
                 <ContactEditProperties
                     field="adr"
@@ -268,6 +283,7 @@ const ContactEditModal = ({ contactID, vCardContact: inputVCardContact = { fn: [
                     onAdd={handleAdd('adr')}
                     vCardContact={vCardContact}
                     onChangeVCard={handleChangeVCard}
+                    onUpgrade={onUpgrade}
                 />
                 <ContactEditProperties
                     isSubmitted={isSubmitted}
@@ -276,6 +292,7 @@ const ContactEditModal = ({ contactID, vCardContact: inputVCardContact = { fn: [
                     onAdd={handleAdd()}
                     vCardContact={vCardContact}
                     onChangeVCard={handleChangeVCard}
+                    onUpgrade={onUpgrade}
                 />
             </ModalTwoContent>
             <ModalTwoFooter>

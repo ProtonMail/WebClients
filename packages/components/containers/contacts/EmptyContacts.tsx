@@ -8,14 +8,15 @@ import ContactEditModal from './edit/ContactEditModal';
 
 interface Props {
     onClose?: () => void;
+    onUpgrade: () => void;
 }
 
-const EmptyContacts = ({ onClose = noop }: Props) => {
+const EmptyContacts = ({ onUpgrade, onClose = noop }: Props) => {
     const { createModal } = useModals();
     const title = c('Error message').t`No results found`;
 
     const handleClick = () => {
-        createModal(<ContactEditModal />);
+        createModal(<ContactEditModal onUpgrade={onUpgrade} />);
         onClose();
     };
 

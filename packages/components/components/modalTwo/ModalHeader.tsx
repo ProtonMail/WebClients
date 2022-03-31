@@ -10,11 +10,11 @@ import { Tooltip } from '../tooltip';
 import { ModalContext } from './Modal';
 import './ModalHeader.scss';
 
-interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'> {
+interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children' | 'title'> {
     /**
      * The title to render in the Modal header.
      */
-    title?: string;
+    title?: string | JSX.Element;
     /**
      * A subline to render below the Title.
      * Will not render unless "title" is passed as well.

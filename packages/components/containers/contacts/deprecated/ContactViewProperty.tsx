@@ -12,13 +12,14 @@ import {
     ContactGroup,
 } from '@proton/shared/lib/interfaces/contacts/Contact';
 
+import { noop } from '@proton/shared/lib/helpers/function';
 import { Copy, Button, Icon, Tooltip, RemoteImage } from '../../../components';
 import { useModals, useUser, useNotifications } from '../../../hooks';
 import { classnames } from '../../../helpers';
 import ContactLabelProperty from '../ContactLabelProperty';
-import ContactUpgradeModal from '../ContactUpgradeModal';
+import ContactUpgradeModal from '../modals/ContactUpgradeModal';
 import ContactGroupDropdown from '../ContactGroupDropdown';
-import ContactGroupLabels from '../ContactGroupLabels';
+import ContactGroupLabels from '../group/ContactGroupLabels';
 import EncryptedIcon from '../EncryptedIcon';
 
 interface Props {
@@ -153,7 +154,12 @@ const ContactViewProperty = ({
                     </span>
                     {!!contactGroups.length && (
                         <div className="mt1">
-                            <ContactGroupLabels className="max-w100" contactGroups={contactGroups} isStacked={false} />
+                            <ContactGroupLabels
+                                className="max-w100"
+                                contactGroups={contactGroups}
+                                isStacked={false}
+                                onDetails={noop}
+                            />
                         </div>
                     )}
                 </>

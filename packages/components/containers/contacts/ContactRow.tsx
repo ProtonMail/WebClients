@@ -4,7 +4,7 @@ import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { addPlus } from '@proton/shared/lib/helpers/string';
 import { classnames } from '../../helpers';
-import ContactGroupLabels from './ContactGroupLabels';
+import ContactGroupLabels from './group/ContactGroupLabels';
 import { ItemCheckbox } from '../items';
 import { Copy } from '../../components/button';
 import { useNotifications } from '../../hooks';
@@ -23,6 +23,7 @@ interface Props {
     dragged?: boolean;
     index: number;
     onFocus: (index: number) => void;
+    onGroupDetails: (contactGroupID: string) => void;
 }
 
 const ContactRow = ({
@@ -39,6 +40,7 @@ const ContactRow = ({
     dragged,
     index,
     onFocus,
+    onGroupDetails,
 }: Props) => {
     const { createNotification } = useNotifications();
     const { ID, Name, LabelIDs = [], emails = [] } = contact;
@@ -110,7 +112,11 @@ const ContactRow = ({
                     </div>
                 </div>
                 {hasPaidMail && contactGroups && (
-                    <ContactGroupLabels contactGroups={contactGroups} className="mr0-5 flex-justify-end" />
+                    <ContactGroupLabels
+                        contactGroups={contactGroups}
+                        className="mr0-5 flex-justify-end"
+                        onDetails={onGroupDetails}
+                    />
                 )}
                 {emails[0] && (
                     <Copy

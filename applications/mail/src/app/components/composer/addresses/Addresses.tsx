@@ -2,6 +2,7 @@ import { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 're
 import { ContactListModal, useModals, useToggle } from '@proton/components';
 import noop from '@proton/utils/noop';
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 import { MessageChange } from '../Composer';
@@ -28,6 +29,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
     };
 
     const { createModal } = useModals();
+    const { onUpgrade, onGroupDetails } = useContactModals({ onMailTo: noop });
 
     // Summary of selected addresses or addresses editor
     const { state: editor, set: setEditor } = useToggle(false);
@@ -79,7 +81,15 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
 
     const handleContactModal = (type: RecipientType) => async () => {
         const recipients: Recipient[] = await new Promise((resolve, reject) => {
-            createModal(<ContactListModal onSubmit={resolve} onClose={reject} inputValue={message.data?.[type]} />);
+            createModal(
+                <ContactListModal
+                    onSubmit={resolve}
+                    onClose={reject}
+                    inputValue={message.data?.[type]}
+                    onGroupDetails={onGroupDetails}
+                    onUpgrade={onUpgrade}
+                />
+            );
         });
 
         const currentRecipients = message.data && message.data[type] ? message.data[type] : [];

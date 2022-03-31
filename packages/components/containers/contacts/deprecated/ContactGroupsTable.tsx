@@ -14,10 +14,17 @@ import {
     OrderableTableBody,
     OrderableTableRow,
     ErrorButton,
-} from '../../components';
-import { useContactGroups, useContactEmails, useNotifications, useModals, useApi, useEventManager } from '../../hooks';
+} from '../../../components';
+import {
+    useContactGroups,
+    useContactEmails,
+    useNotifications,
+    useModals,
+    useApi,
+    useEventManager,
+} from '../../../hooks';
 
-import ContactGroupModal from './modals/ContactGroupModal';
+import ContactGroupModal from '../group/ContactGroupEditModal';
 import ContactGroupIcon from './ContactGroupIcon';
 
 interface Props {

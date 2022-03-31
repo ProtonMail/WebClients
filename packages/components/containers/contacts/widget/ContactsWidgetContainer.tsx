@@ -26,6 +26,7 @@ interface Props {
     onDelete: (props: ContactDeleteProps) => void;
     onImport: () => void;
     onMerge: (props: ContactMergeProps) => void;
+    onGroupDetails: (contactGroupID: string) => void;
 }
 
 const ContactsWidgetContainer = ({
@@ -38,6 +39,7 @@ const ContactsWidgetContainer = ({
     onDelete,
     onImport,
     onMerge,
+    onGroupDetails,
 }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
@@ -251,6 +253,7 @@ const ContactsWidgetContainer = ({
                         onCheck={handleCheck}
                         onClick={onDetails}
                         activateDrag={false}
+                        onGroupDetails={onGroupDetails}
                     />
                 ) : null}
             </div>
