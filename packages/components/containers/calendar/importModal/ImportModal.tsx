@@ -11,6 +11,7 @@ import {
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
 
 import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileError';
+import { APPS } from '@proton/shared/lib/constants';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Calendar, IMPORT_STEPS, ImportCalendarModel, ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
@@ -18,7 +19,8 @@ import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { onlyDragFiles, Button, BasicModal } from '../../../components';
 
-import { useApi, useEventManager } from '../../../hooks';
+import { useApi, useEventManager, useConfig } from '../../../hooks';
+import { useCalendarModelEventManager } from '../../eventManager';
 
 import AttachingModalContent from './AttachingModalContent';
 import ImportingModalContent from './ImportingModalContent';
@@ -48,7 +50,10 @@ const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
 
 const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClose, onExit }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const { APP_NAME } = useConfig();
+    const isCalendar = APP_NAME === APPS.PROTONCALENDAR;
+    const { call: coreCall } = useEventManager();
+    const { call: calendarCall } = useCalendarModelEventManager();
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
     const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
 
@@ -247,10 +252,15 @@ const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClos
                     return;
                 }
                 const { Display, ID: calendarID } = model.calendar;
+                const calls: Promise<void | void[]>[] = [];
                 if (!Display) {
                     await api(updateCalendar(calendarID, { Display: 1 }));
+                    calls.push(coreCall());
                 }
-                await call();
+                if (isCalendar) {
+                    calls.push(calendarCall([calendarID]));
+                }
+                await Promise.all(calls);
             };
 
             return {
