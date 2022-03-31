@@ -3,26 +3,30 @@ import { c } from 'ttag';
 
 import { Tooltip, ButtonLike, Icon } from '@proton/components';
 
-import { generateUID } from '../../helpers';
+import { classnames, generateUID } from '../../helpers';
+import { ButtonLikeProps } from '../button';
 
 const DEFAULT_IS_EXPANDED = true;
 
 export interface Props extends HTMLProps<HTMLDivElement> {
     defaultIsExpanded?: boolean;
-    children: ReactNode;
     headerContent: ReactNode;
     openText?: string;
     closeText?: string;
-    showButton?: boolean;
+    hideButton?: boolean;
+    disableFullWidth?: boolean;
+    buttonLikeProps?: Omit<ButtonLikeProps<'button'>, 'ariaExpanded' | 'ariaControls' | 'icon' | 'type'>;
 }
 
 const Collapsible = ({
     defaultIsExpanded = DEFAULT_IS_EXPANDED,
-    children,
     headerContent,
     openText = c('Collapsible tooltip').t`Open`,
     closeText = c('Collapsible tooltip').t`Close`,
-    showButton = true,
+    hideButton = false,
+    disableFullWidth = false,
+    buttonLikeProps = {},
+    children,
     ...rest
 }: Props) => {
     const [isExpanded, setIsExpanded] = useState<boolean>(defaultIsExpanded);
@@ -30,23 +34,33 @@ const Collapsible = ({
     const contentId = generateUID('collapsible');
     const headerId = generateUID('collapsible');
 
+    const { onClick, className: buttonClassName, ...buttonLikePropsRest } = buttonLikeProps;
+
     return (
         <div {...rest}>
             <header className="flex flex-nowrap flex-align-items-center">
-                <div id={headerId} className="flex-item-fluid">
+                <div
+                    id={headerId}
+                    className={classnames([!disableFullWidth && 'flex-item-fluid'])}
+                    onClick={() => setIsExpanded((prevState) => !prevState)}
+                >
                     {headerContent}
                 </div>
-                {showButton && (
+                {!hideButton && (
                     <Tooltip title={tooltipText}>
                         <ButtonLike
-                            className="flex flex-item-noshrink ml0-5"
-                            onClick={() => setIsExpanded((prevState) => !prevState)}
-                            icon
-                            aria-expanded={isExpanded}
-                            aria-controls={contentId}
-                            type="button"
                             shape="ghost"
                             color="weak"
+                            {...buttonLikePropsRest}
+                            aria-expanded={isExpanded}
+                            aria-controls={contentId}
+                            icon
+                            type="button"
+                            className={classnames([buttonClassName, 'flex flex-item-noshrink ml0-5'])}
+                            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+                                setIsExpanded((prevState) => !prevState);
+                                onClick?.(e);
+                            }}
                         >
                             <Icon name="angle-down" className="caret-like" />
                             <span className="sr-only">{tooltipText}</span>
