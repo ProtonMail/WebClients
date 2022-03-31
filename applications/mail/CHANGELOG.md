@@ -3,10 +3,10 @@
 ### Improvements
 
 -   Updated the UI of specific modals
+-   Improved copying behavior for senders and recipients within the message view
 
 ### Bug fixes
 
--   Fixed an issue where the focus of the message would be lost when clicking on the email body, causing keyboard shortcuts not to function
 -   Fixed an issue where the print preview would not include the list of email attachments
 -   Fixed an issue where on some rare occasions, embedded images would not be displayed even though they are mentioned in the attachment list (only for PGP-encrypted messages)
 -   Fixed an issue where pressing "Enter" after typing a contact name within the contact group modal would submit the form instead of selecting the contact name from the autocomplete list
