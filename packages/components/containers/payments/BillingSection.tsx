@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { APPS, CYCLE, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { APPS, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { unique } from '@proton/shared/lib/helpers/array';
 import {
     getHasCycleDiscount,
@@ -9,7 +9,7 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { Cycle, Plan } from '@proton/shared/lib/interfaces';
+import { Plan } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { Loader, Time } from '../../components';
@@ -22,34 +22,7 @@ import DiscountBadge from './DiscountBadge';
 import PlanPrice from './subscription/PlanPrice';
 import CycleDiscountBadge from './CycleDiscountBadge';
 import Price from '../../components/price/Price';
-
-const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
-
-const getBillingCycleText = (cycle: Cycle) => {
-    if (cycle === MONTHLY) {
-        return c('Billing cycle').t`Billed monthly`;
-    }
-    if (cycle === YEARLY) {
-        return c('Billing cycle').t`Billed annually`;
-    }
-    if (cycle === TWO_YEARS) {
-        return c('Billing cycle').t`Billed every 2 years`;
-    }
-    return '';
-};
-
-const getDueCycleText = (cycle: Cycle) => {
-    if (cycle === MONTHLY) {
-        return c('Billing cycle').t`Due monthly`;
-    }
-    if (cycle === YEARLY) {
-        return c('Billing cycle').t`Due annually`;
-    }
-    if (cycle === TWO_YEARS) {
-        return c('Billing cycle').t`Due every 2 years`;
-    }
-    return '';
-};
+import { getDueCycleText, getTotalBillingText } from './helper';
 
 const getRenewalText = (periodEnd: number) => {
     const formattedEndTime = <Time key="time-text">{periodEnd}</Time>;
@@ -80,7 +53,7 @@ const BillingSection = () => {
     const subTotal = unique(Plans.map(({ Name }) => Name)).reduce((acc, planName) => {
         return acc + getBaseAmount(planName as PLANS, plansMap, subscription, Cycle);
     }, 0);
-    const discount = Amount - subTotal;
+    const discount = subTotal - Amount;
     const spaceBonus = organization?.BonusSpace;
     const vpnBonus = organization?.BonusVPN;
     const maxUsers = organization?.MaxMembers || 1;
@@ -150,6 +123,26 @@ const BillingSection = () => {
                     </div>
                 </div>
             ) : null}
+            {domainAddon ? (
+                <div className={weakRowClassName}>
+                    <div className={priceLabelClassName}>
+                        +{' '}
+                        {c('Addon unit for subscription').ngettext(
+                            msgid`${domainAddon.MaxDomains} domain`,
+                            `${domainAddon.MaxDomains} domains`,
+                            domainAddon.MaxDomains
+                        )}
+                        {getCycleBadge(domainAddon)}
+                    </div>
+                    <div className="text-right">
+                        <PlanPrice
+                            amount={getBaseAmount(domainAddon.Name, plansMap, subscription, Cycle)}
+                            currency={Currency}
+                            cycle={Cycle}
+                        />
+                    </div>
+                </div>
+            ) : null}
             {spaceAddon ? (
                 <div className={weakRowClassName}>
                     <div className={priceLabelClassName}>
@@ -172,26 +165,6 @@ const BillingSection = () => {
                     </div>
                     <div className="text-right">
                         <PlanPrice amount={0} currency={Currency} cycle={Cycle} />
-                    </div>
-                </div>
-            ) : null}
-            {domainAddon ? (
-                <div className={weakRowClassName}>
-                    <div className={priceLabelClassName}>
-                        +{' '}
-                        {c('Addon unit for subscription').ngettext(
-                            msgid`${domainAddon.MaxDomains} domain`,
-                            `${domainAddon.MaxDomains} domains`,
-                            domainAddon.MaxDomains
-                        )}
-                        {getCycleBadge(domainAddon)}
-                    </div>
-                    <div className="text-right">
-                        <PlanPrice
-                            amount={getBaseAmount(domainAddon.Name, plansMap, subscription, Cycle)}
-                            currency={Currency}
-                            cycle={Cycle}
-                        />
                     </div>
                 </div>
             ) : null}
@@ -299,20 +272,26 @@ const BillingSection = () => {
             {discount > 0 ? (
                 <div className="border-bottom pt1 on-mobile-pb1">
                     <div className={classnames([priceRowClassName, 'text-bold'])}>
-                        <div className={priceLabelClassName}>{getBillingCycleText(Cycle)}</div>
+                        <div className={priceLabelClassName}>{getTotalBillingText(Cycle)}</div>
                         <div className="text-right">
                             <Price currency={Currency}>{subTotal}</Price>
                         </div>
                     </div>
                     <div className={weakRowClassName}>
                         <div className={classnames([priceLabelClassName, 'flex flex-align-items-center'])}>
-                            <div className="mr1">{c('Label').t`Discount`}</div>
-                            <div className="flex flex-align-items-center">
-                                {CouponCode && <DiscountBadge code={CouponCode} />}
-                            </div>
+                            {CouponCode ? (
+                                <div className="">
+                                    {c('Coupon').t`Coupon applied: ${CouponCode}`}{' '}
+                                    <DiscountBadge code={CouponCode}>
+                                        {Math.round((Math.abs(discount) / subTotal) * 100)}%
+                                    </DiscountBadge>
+                                </div>
+                            ) : (
+                                <div className="">{c('Label').t`Discount`}</div>
+                            )}
                         </div>
                         <div className="text-right">
-                            <Price currency={Currency}>{discount}</Price>
+                            <Price currency={Currency}>{-discount}</Price>
                         </div>
                     </div>
                 </div>
