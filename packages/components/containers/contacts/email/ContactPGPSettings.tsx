@@ -1,6 +1,7 @@
 import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
-import { OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
+import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 import { MailSettings, ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { BRAND_NAME, CONTACT_PGP_SCHEMES, MIME_TYPES_MORE } from '@proton/shared/lib/constants';
@@ -37,7 +38,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
      * Add / update keys to model
      * @param {Array<PublicKey>} keys
      */
-    const handleUploadKeys = async (keys: OpenPGPKey[]) => {
+    const handleUploadKeys = async (keys: ArmoredKeyWithInfo[]) => {
         if (!keys.length) {
             return createNotification({
                 type: 'error',
@@ -49,8 +50,8 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
         const encryptionCapableFingerprints = new Set(model.encryptionCapableFingerprints);
 
         await Promise.all(
-            keys.map(async (publicKey) => {
-                if (!publicKey.isPublic()) {
+            keys.map(async ({ keyIsPrivate, armoredKey }) => {
+                if (keyIsPrivate) {
                     // do not allow to upload private keys
                     createNotification({
                         type: 'error',
@@ -58,6 +59,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                     });
                     return;
                 }
+                const publicKey = await CryptoProxy.importPublicKey({ armoredKey });
                 const fingerprint = publicKey.getFingerprint();
                 const canEncrypt = await getKeyEncryptionCapableStatus(publicKey);
                 if (canEncrypt) {

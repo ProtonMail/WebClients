@@ -11,7 +11,7 @@ import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { getMnemonicReset, GetMnemonicResetData, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
-import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import noop from '@proton/utils/noop';
 import isTruthy from '@proton/utils/isTruthy';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
@@ -112,7 +112,10 @@ export const handleNewPasswordMnemonic = async ({
     const keyPassword = await computeKeyPassword(password, keySalt);
     const reEncryptedUserKeys = await Promise.all(
         decryptedUserKeys.map(async ({ ID, privateKey }) => {
-            const privateKeyArmored = await encryptPrivateKey(privateKey, keyPassword);
+            const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+                privateKey: privateKey,
+                passphrase: keyPassword,
+            });
             return {
                 ID,
                 PrivateKey: privateKeyArmored,
@@ -174,14 +177,20 @@ const handleMnemonic = async ({
         await Promise.all(
             MnemonicUserKeys.map(async ({ ID, PrivateKey, Salt }) => {
                 const keyPassword = await computeKeyPassword(randomBytes, Salt);
-                const privateKey = await decryptPrivateKey(PrivateKey, keyPassword).catch(noop);
+                const privateKey = await CryptoProxy.importPrivateKey({
+                    armoredKey: PrivateKey,
+                    passphrase: keyPassword,
+                }).catch(noop);
                 if (!privateKey) {
                     return;
                 }
+                const publicKey = await CryptoProxy.importPublicKey({
+                    binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
+                });
                 return {
                     ID,
                     privateKey,
-                    publicKey: privateKey.toPublic(),
+                    publicKey,
                 };
             })
         )

@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference } from '@proton/crypto';
 
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
@@ -39,11 +39,11 @@ describe('useKeysCache', () => {
     let keyCache: KeyCache;
 
     beforeEach(() => {
-        keyCache = createKeysCache('key' as unknown as OpenPGPKey);
+        keyCache = createKeysCache('key' as unknown as PrivateKeyReference);
     });
 
     it('caches decrypted links', async () => {
-        const { name } = await keyCache.decryptAndCacheLink(linkMock, {} as unknown as OpenPGPKey);
+        const { name } = await keyCache.decryptAndCacheLink(linkMock, {} as unknown as PrivateKeyReference);
 
         expect(name).toEqual(DECRYPTED_NAME);
         const key = keyCache.getCachedPrivateKey(linkMock.LinkID);

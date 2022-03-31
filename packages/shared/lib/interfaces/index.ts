@@ -1,3 +1,5 @@
+import type { enums } from '@proton/crypto';
+
 export * from './Address';
 export * from './Api';
 export * from './ApiEnvironmentConfig';
@@ -23,8 +25,9 @@ export * from './config';
 export * from './utils';
 
 export interface EncryptionConfig {
-    curve?: string;
-    numBits?: number;
+    type?: 'ecc' | 'rsa';
+    curve?: enums.curve;
+    rsaBits?: number;
 }
 
 export type HumanVerificationMethodType =

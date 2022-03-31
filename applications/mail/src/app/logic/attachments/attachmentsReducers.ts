@@ -1,6 +1,6 @@
 import { Draft } from 'immer';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { DecryptResultPmcrypto } from 'pmcrypto';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { AttachmentsState } from './attachmentsTypes';
 
 export const globalReset = (state: Draft<AttachmentsState>) => {
@@ -9,7 +9,7 @@ export const globalReset = (state: Draft<AttachmentsState>) => {
 
 export const setAttachment = (
     state: Draft<AttachmentsState>,
-    { payload: { ID, attachment } }: PayloadAction<{ ID: string; attachment: DecryptResultPmcrypto }>
+    { payload: { ID, attachment } }: PayloadAction<{ ID: string; attachment: WorkerDecryptionResult<Uint8Array> }>
 ) => {
     state[ID] = attachment;
 };

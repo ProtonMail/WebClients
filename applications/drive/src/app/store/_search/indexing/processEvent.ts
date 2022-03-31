@@ -1,5 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
-
+import { PrivateKeyReference } from '@proton/crypto';
 import { ESEvent, ESItemEvent } from '@proton/encrypted-search';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
@@ -18,7 +17,7 @@ export type SearchEvent = ESEvent<ESLink>;
 export default async function convertDriveEventsToSearchEvents(
     shareId: string,
     events: DriveEvents,
-    getLinkPrivateKey: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<OpenPGPKey>
+    getLinkPrivateKey: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<PrivateKeyReference>
 ): Promise<SearchEvent> {
     return {
         EventID: events.eventId,
@@ -33,7 +32,7 @@ export default async function convertDriveEventsToSearchEvents(
 async function convertDriveEventToSearchEvent(
     shareId: string,
     event: DriveEvent,
-    getLinkPrivateKey: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<OpenPGPKey>
+    getLinkPrivateKey: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<PrivateKeyReference>
 ): Promise<SearchEventItem> {
     const result: SearchEventItem = {
         ID: createItemId(shareId, event.encryptedLink.linkId),
@@ -64,7 +63,7 @@ function convertEventTypesToSearchEventAction(eventType: EVENT_TYPES): EVENT_ACT
     ])[eventType];
 }
 
-async function decryptAndGenerateSearchEvent(shareId: string, event: DriveEvent, privateKey: OpenPGPKey) {
+async function decryptAndGenerateSearchEvent(shareId: string, event: DriveEvent, privateKey: PrivateKeyReference) {
     const link = event.encryptedLink;
     const name = await decryptUnsigned({ armoredMessage: link.name, privateKey });
     const id = createItemId(shareId, link.linkId);

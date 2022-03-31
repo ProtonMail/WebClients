@@ -1,15 +1,11 @@
-import { getKeys, getMessage } from 'pmcrypto';
+import { CryptoProxy, KeyID } from '@proton/crypto';
 import { CONTACT_CARD_TYPE } from '../constants';
 import { Key } from '../interfaces';
 import { Contact } from '../interfaces/contacts';
 
-export interface KeyId {
-    equals(keyid: KeyId): boolean;
-}
-
 export interface KeyWithIds {
     key: Key;
-    ids: KeyId[];
+    ids: KeyID[];
 }
 
 /**
@@ -18,8 +14,8 @@ export interface KeyWithIds {
 export const getUserKeyIds = async (userKeys: Key[]) => {
     return Promise.all(
         userKeys.map(async (userKey) => {
-            const keys = await getKeys(userKey.PrivateKey);
-            return { key: userKey, ids: keys[0].getKeyIds() as KeyId[] } as KeyWithIds;
+            const keyInfo = await CryptoProxy.getKeyInfo({ armoredKey: userKey.PrivateKey });
+            return { key: userKey, ids: keyInfo.keyIDs } as KeyWithIds;
         })
     );
 };
@@ -40,9 +36,15 @@ export const getContactKeyIds = async (contact: Contact, fromEncryption: boolean
     return (
         await Promise.all(
             selectedCards.map(async (card) => {
-                const data = fromEncryption ? card.Data : (card.Signature as string);
-                const message = await getMessage(data);
-                return (fromEncryption ? message.getEncryptionKeyIds() : message.getSigningKeyIds()) as KeyId[];
+                const keyIDs = fromEncryption
+                    ? await CryptoProxy.getMessageInfo({ armoredMessage: card.Data }).then(
+                          ({ encryptionKeyIDs }) => encryptionKeyIDs
+                      )
+                    : await CryptoProxy.getSignatureInfo({ armoredSignature: card.Signature as string }).then(
+                          ({ signingKeyIDs }) => signingKeyIDs
+                      );
+
+                return keyIDs;
             })
         )
     ).flat();
@@ -51,10 +53,8 @@ export const getContactKeyIds = async (contact: Contact, fromEncryption: boolean
 /**
  * Return first match of the keyWithIds in the keyIds list
  */
-export const matchKeys = (keysWithIds: KeyWithIds[], keyIdsToFind: KeyId[]) => {
-    const result = keysWithIds.find(({ ids }) =>
-        ids.some((idFromKey) => keyIdsToFind.some((keyIdToFind) => idFromKey.equals(keyIdToFind)))
-    );
+export const matchKeys = (keysWithIds: KeyWithIds[], keyIdsToFind: KeyID[]) => {
+    const result = keysWithIds.find(({ ids }) => ids.some((idFromKey) => keyIdsToFind.includes(idFromKey)));
 
     return result?.key;
 };

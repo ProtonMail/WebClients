@@ -2,7 +2,7 @@ import { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { DropdownMenuButton, Icon, usePopperAnchor, useModalState, useMailSettings } from '@proton/components';
 import { useHistory } from 'react-router-dom';
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
@@ -25,8 +25,8 @@ interface Props {
     recipient: Recipient;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
-    signingPublicKey?: OpenPGPKey;
-    attachedPublicKey?: OpenPGPKey;
+    signingPublicKey?: PublicKeyReference;
+    attachedPublicKey?: PublicKeyReference;
     isNarrow?: boolean;
     showDropdown?: boolean;
     isOutside?: boolean;
@@ -74,7 +74,7 @@ const MailRecipientItemSingle = ({
             name: label,
             contactID: ContactID,
             isInternal: true,
-            bePinnedPublicKey: (signingPublicKey as OpenPGPKey) || (attachedPublicKey as OpenPGPKey),
+            bePinnedPublicKey: signingPublicKey || (attachedPublicKey as PublicKeyReference),
         };
     }, [recipient, label, ContactID, signingPublicKey, attachedPublicKey]);
 

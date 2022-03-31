@@ -4,7 +4,7 @@ import { KeyReactivationRecord, OnKeyReactivationCallback } from '@proton/shared
 import { DecryptedKey, KeySalt, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import { getMnemonicUserKeys, MnemonicKeyResponse } from '@proton/shared/lib/api/settingsMnemonic';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -69,7 +69,7 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, ...
     const mnemonicValidation = useMnemonicInputValidation(mnemonic);
 
     const [password, setPassword] = useState('');
-    const [uploadedFileKeys, setUploadedFileKeys] = useState<OpenPGPKey[]>([]);
+    const [uploadedFileKeys, setUploadedFileKeys] = useState<PrivateKeyReference[]>([]);
 
     const recoverySecrets = useRecoverySecrets();
     const recoveryFileAvailable = !!recoverySecrets.length;
@@ -133,7 +133,9 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, ...
         createNotification({ type: 'error', text: c('Error').t`Zero keys reactivated` });
     };
 
-    const handleRecoveryPhraseUserKeysReactivation = async (userKeys: { ID: string; privateKey: OpenPGPKey }[]) => {
+    const handleRecoveryPhraseUserKeysReactivation = async (
+        userKeys: { ID: string; privateKey: PrivateKeyReference }[]
+    ) => {
         const records = states
             .filter((state) => !!state.user)
             .map((keyReactivationRecordState) => {
@@ -176,7 +178,10 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, ...
                 MnemonicUserKeys.map(async ({ ID, PrivateKey, Salt }) => {
                     try {
                         const hashedPassphrase = await computeKeyPassword(randomBytes, Salt);
-                        const decryptedPrivateKey = await decryptPrivateKey(PrivateKey, hashedPassphrase);
+                        const decryptedPrivateKey = await CryptoProxy.importPrivateKey({
+                            armoredKey: PrivateKey,
+                            passphrase: hashedPassphrase,
+                        });
                         return {
                             ID,
                             privateKey: decryptedPrivateKey,

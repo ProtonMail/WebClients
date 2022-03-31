@@ -47,8 +47,8 @@ export default function useShareActions() {
         }
 
         const [PassphraseKeyPacket, NameKeyPacket] = await Promise.all([
-            getEncryptedSessionKey(passphraseSessionKey, sharePrivateKey.toPublic()).then(uint8ArrayToBase64String),
-            getEncryptedSessionKey(nameSessionKey, sharePrivateKey.toPublic()).then(uint8ArrayToBase64String),
+            getEncryptedSessionKey(passphraseSessionKey, sharePrivateKey).then(uint8ArrayToBase64String),
+            getEncryptedSessionKey(nameSessionKey, sharePrivateKey).then(uint8ArrayToBase64String),
         ]);
 
         const { Share } = await preventLeave(

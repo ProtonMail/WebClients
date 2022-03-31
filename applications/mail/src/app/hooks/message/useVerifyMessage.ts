@@ -1,4 +1,4 @@
-import { DecryptResultPmcrypto, getMatchingKey, OpenPGPSignature } from 'pmcrypto';
+import { PublicKeyReference, WorkerDecryptionResult, getMatchingSigningKey } from '@proton/crypto';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { useCallback } from 'react';
 import { useApi, useGetEncryptionPreferences } from '@proton/components';
@@ -23,12 +23,12 @@ export const useVerifyMessage = (localID: string) => {
     const getMessageKeys = useGetMessageKeys();
     const contactsMap = useContactsMap();
 
-    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
     return useCallback(
-        async (decryptedRawContent: Uint8Array = new Uint8Array(), signature?: OpenPGPSignature) => {
+        async (decryptedRawContent: Uint8Array = new Uint8Array(), signature?: Uint8Array) => {
             // Message can change during the whole sequence
             // To have the most up to date version, best is to get back to the cache version each time
             const getData = () => (getMessage(localID) as MessageStateWithData).data;
@@ -37,8 +37,8 @@ export const useVerifyMessage = (localID: string) => {
 
             let encryptionPreferences;
             let verification;
-            let signingPublicKey;
-            let attachedPublicKeys;
+            let signingPublicKey: PublicKeyReference | undefined;
+            let attachedPublicKeys: PublicKeyReference[] | undefined;
 
             try {
                 const senderAddress = getData().Sender.Address;
@@ -73,7 +73,10 @@ export const useVerifyMessage = (localID: string) => {
                 const signed = verification.verified !== VERIFICATION_STATUS.NOT_SIGNED;
                 signingPublicKey =
                     signed && verification.signature
-                        ? await getMatchingKey(verification.signature, allSenderPublicKeys)
+                        ? await getMatchingSigningKey({
+                              binarySignature: verification.signature,
+                              keys: allSenderPublicKeys,
+                          })
                         : undefined;
             } catch (error: any) {
                 if (isNetworkError(error)) {

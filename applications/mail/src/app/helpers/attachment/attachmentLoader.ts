@@ -1,16 +1,12 @@
+import { binaryStringToArray, concatArrays, decodeBase64 } from '@proton/crypto/lib/utils';
 import {
-    decryptMessage,
-    DecryptResultPmcrypto,
-    getMessage,
-    getSignature,
-    OpenPGPKey,
+    CryptoProxy,
+    PublicKeyReference,
+    WorkerDecryptionResult,
     SessionKey,
     VERIFICATION_STATUS,
-    binaryStringToArray,
-    concatArrays,
-} from 'pmcrypto';
+} from '@proton/crypto';
 import { getAttachment } from '@proton/shared/lib/api/attachments';
-import { decodeBase64 } from '@proton/shared/lib/helpers/base64';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getEOSessionKey, getSessionKey } from '@proton/shared/lib/mail/send/attachments';
@@ -23,16 +19,18 @@ export const decrypt = async (
     encryptedBinaryBuffer: ArrayBuffer,
     sessionKey: SessionKey,
     signature?: string,
-    publicKeys?: OpenPGPKey | OpenPGPKey[]
-): Promise<DecryptResultPmcrypto & { data: Uint8Array | ReadableStream<Uint8Array> }> => {
+    publicKeys?: PublicKeyReference | PublicKeyReference[]
+): Promise<WorkerDecryptionResult<Uint8Array>> => {
     const encryptedBinary = new Uint8Array(encryptedBinaryBuffer);
 
     try {
-        return await decryptMessage({
-            message: await getMessage(encryptedBinary),
+        // eslint-disable-next-line @typescript-eslint/return-await
+        return await CryptoProxy.decryptMessage({
+            // a promise is returned here, just not detected properly by TS
+            binaryMessage: encryptedBinary,
             sessionKeys: [sessionKey],
-            signature: signature ? await getSignature(signature) : undefined,
-            publicKeys,
+            armoredSignature: signature,
+            verificationKeys: publicKeys,
             format: 'binary',
         });
     } catch (err: any) {
@@ -53,7 +51,7 @@ export const getDecryptedAttachment = async (
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
     api: Api
-): Promise<DecryptResultPmcrypto> => {
+): Promise<WorkerDecryptionResult<Uint8Array>> => {
     const isOutside = messageKeys.type === 'outside';
     const encryptedBinary = await getRequest(attachment, api, messageKeys);
 
@@ -65,8 +63,10 @@ export const getDecryptedAttachment = async (
             return await decrypt(encryptedBinary, sessionKey, attachment.Signature, publicKeys);
         }
         const sessionKey = await getEOSessionKey(attachment, messageKeys.password);
-        return await decryptMessage({
-            message: await getMessage(new Uint8Array(encryptedBinary)),
+        // eslint-disable-next-line @typescript-eslint/return-await
+        return await CryptoProxy.decryptMessage({
+            // a promise is returned here, just not detected properly by TS
+            binaryMessage: new Uint8Array(encryptedBinary),
             passwords: [messageKeys.password],
             format: 'binary',
             sessionKeys: [sessionKey],
@@ -89,11 +89,11 @@ export const getAndVerify = async (
     messageKeys: MessageKeys,
     reverify = false,
     api: Api,
-    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void
-): Promise<DecryptResultPmcrypto> => {
+    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
+): Promise<WorkerDecryptionResult<Uint8Array>> => {
     const isOutside = messageKeys.type === 'outside';
-    let attachmentdata: DecryptResultPmcrypto;
+    let attachmentdata: WorkerDecryptionResult<Uint8Array>;
 
     const attachmentID = attachment.ID || '';
 
@@ -114,7 +114,7 @@ export const getAndVerify = async (
             const isMIMEAttachment = !attachment.KeyPackets;
 
             attachmentdata = isMIMEAttachment
-                ? (attachmentInState as DecryptResultPmcrypto)
+                ? (attachmentInState as WorkerDecryptionResult<Uint8Array>)
                 : await getDecryptedAttachment(attachment, verification, messageKeys, api);
         }
         onUpdateAttachment(attachmentID, attachmentdata);
@@ -130,9 +130,9 @@ export const get = (
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
     api: Api,
-    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void
-): Promise<DecryptResultPmcrypto> => {
+    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
+): Promise<WorkerDecryptionResult<Uint8Array>> => {
     const reverify = false;
     return getAndVerify(attachment, verification, messageKeys, reverify, api, getAttachment, onUpdateAttachment);
 };
@@ -141,10 +141,10 @@ export const reverify = (
     attachment: Attachment = {},
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
+    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     api: Api
-): Promise<DecryptResultPmcrypto> => {
+): Promise<WorkerDecryptionResult<Uint8Array>> => {
     const reverify = true;
     return getAndVerify(attachment, verification, messageKeys, reverify, api, getAttachment, onUpdateAttachment);
 };

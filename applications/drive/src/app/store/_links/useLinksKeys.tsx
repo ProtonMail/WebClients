@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
 type LinksKeysByShare = {
     [shareId: string]: {
@@ -12,14 +12,14 @@ type LinkKeys = FileLinkKeys & FolderLinkKeys;
 type FileLinkKeys = {
     passphrase?: string;
     passphraseSessionKey?: SessionKey;
-    privateKey?: OpenPGPKey;
+    privateKey?: PrivateKeyReference;
     sessionKey?: SessionKey;
 };
 
 type FolderLinkKeys = {
     passphrase?: string;
     passphraseSessionKey?: SessionKey;
-    privateKey?: OpenPGPKey;
+    privateKey?: PrivateKeyReference;
     hashKey?: Uint8Array;
 };
 
@@ -42,7 +42,7 @@ export class LinksKeys {
         return this.keys[shareId]?.[linkId]?.passphraseSessionKey;
     }
 
-    getPrivateKey(shareId: string, linkId: string): OpenPGPKey | undefined {
+    getPrivateKey(shareId: string, linkId: string): PrivateKeyReference | undefined {
         return this.keys[shareId]?.[linkId]?.privateKey;
     }
 
@@ -66,7 +66,7 @@ export class LinksKeys {
         });
     }
 
-    setPrivateKey(shareId: string, linkId: string, privateKey: OpenPGPKey) {
+    setPrivateKey(shareId: string, linkId: string, privateKey: PrivateKeyReference) {
         this.setKey(shareId, linkId, (keys: LinkKeys) => {
             keys.privateKey = privateKey;
         });

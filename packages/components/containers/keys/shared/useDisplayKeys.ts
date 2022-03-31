@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { algorithmInfo, getKeys, OpenPGPKey } from 'pmcrypto';
 import { Address, DecryptedKey, UserModel, Key } from '@proton/shared/lib/interfaces';
 import { getParsedSignedKeyList, getSignedKeyListMap } from '@proton/shared/lib/keys';
-import { getIsWeakKey } from '@proton/shared/lib/keys/publicKeys';
+import { PrivateKeyReference, PublicKeyReference, CryptoProxy, AlgorithmInfo } from '@proton/crypto';
 import { getDisplayKey } from './getDisplayKey';
 
 interface Props {
@@ -14,9 +13,9 @@ interface Props {
 
 interface ParsedKey {
     Key: Key;
-    privateKey?: OpenPGPKey;
+    privateKey?: PrivateKeyReference;
     fingerprint: string;
-    algorithmInfos: algorithmInfo[];
+    algorithmInfos: AlgorithmInfo[];
     isDecrypted: boolean;
     isWeak: boolean;
 }
@@ -33,16 +32,22 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
             const Keys = Address ? Address.Keys : User.Keys;
             return Promise.all(
                 Keys.map(async (Key) => {
-                    const privateKey =
+                    // A PrivateKeyReference is always a decrypted key (stored inside CryptoProxy).
+                    // If we don't already have a key reference, then we need to import the armored key as a PublicKey since we do not know
+                    // the passphrase to successfully import it as PrivateKey.
+                    // Then we set `isDecrypted` to true for PrivateKeyReferences, false for PublicKeyReferences.
+                    const maybePrivateKey: PublicKeyReference | PrivateKeyReference =
                         maybeKeys.find(({ ID }) => ID === Key.ID)?.privateKey ||
-                        (await getKeys(Key.PrivateKey).then(([r]) => r));
+                        (await CryptoProxy.importPublicKey({ armoredKey: Key.PrivateKey }));
                     return {
                         Key,
-                        fingerprint: privateKey?.getFingerprint() || '',
-                        algorithmInfos:
-                            privateKey?.getKeys().map((key) => key.getAlgorithmInfo() as algorithmInfo) || [],
-                        isDecrypted: privateKey?.isDecrypted() || false,
-                        isWeak: privateKey ? getIsWeakKey(privateKey) : false,
+                        fingerprint: maybePrivateKey?.getFingerprint() || '',
+                        algorithmInfos: [
+                            maybePrivateKey.getAlgorithmInfo(),
+                            ...maybePrivateKey.subkeys.map((key) => key.getAlgorithmInfo()),
+                        ],
+                        isDecrypted: maybePrivateKey.isPrivate(),
+                        isWeak: maybePrivateKey.isWeak(),
                     };
                 })
             );

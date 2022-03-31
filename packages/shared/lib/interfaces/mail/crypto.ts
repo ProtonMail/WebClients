@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { MIME_TYPES, PACKAGE_TYPE } from '../../constants';
 import { EncryptionPreferencesError } from '../../mail/encryptionPreferences';
 import { SimpleMap } from '../utils';
@@ -8,7 +8,7 @@ export interface SendPreferences {
     sign: boolean;
     pgpScheme: PACKAGE_TYPE;
     mimeType: MIME_TYPES;
-    publicKeys?: OpenPGPKey[];
+    publicKeys?: PublicKeyReference[];
     isPublicKeyPinned?: boolean;
     hasApiKeys: boolean;
     hasPinnedKeys: boolean;
@@ -35,7 +35,7 @@ export interface Package {
     BodyKey?: any;
     BodyKeyPacket?: string;
     Type?: PACKAGE_TYPE;
-    PublicKey?: OpenPGPKey;
+    PublicKey?: PublicKeyReference;
     AttachmentKeys?: { [AttachmentID: string]: { Key: string; Algorithm: string } };
     AttachmentKeyPackets?: { [AttachmentID: string]: string };
 }
@@ -47,7 +47,7 @@ export interface PackageDirect {
     BodyKey?: any;
     BodyKeyPacket?: string;
     Type?: PACKAGE_TYPE;
-    PublicKey?: OpenPGPKey;
+    PublicKey?: PublicKeyReference;
     Token?: string;
     EncToken?: string;
     Auth?: {

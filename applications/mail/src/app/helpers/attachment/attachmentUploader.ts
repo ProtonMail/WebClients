@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference, PrivateKeyReference } from '@proton/crypto';
 import { uploadAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
@@ -39,7 +39,12 @@ export interface UploadResult {
 /**
  * Read the file locally, and encrypt it. return the encrypted file.
  */
-export const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], privKey?: OpenPGPKey[]) => {
+export const encryptFile = async (
+    file: File,
+    inline: boolean,
+    pubKeys: PublicKeyReference[],
+    privKey?: PrivateKeyReference[]
+) => {
     if (!file) {
         throw new TypeError(c('Error').t`You did not provide a file.`);
     }
@@ -136,7 +141,7 @@ const packetToAttachment = (packet: Packets, message: MessageStateWithData) => {
 const uploadEOFile = (
     file: File,
     message: MessageStateWithData,
-    publicKeys: OpenPGPKey[],
+    publicKeys: PublicKeyReference[],
     inline: boolean
 ): Promise<{ attachment: Attachment; packets: Packets }> => {
     const getAttachment = async () => {
@@ -168,7 +173,7 @@ export const upload = (
 export const uploadEO = (
     file: File,
     message: MessageStateWithData,
-    publicKey: OpenPGPKey[],
+    publicKey: PublicKeyReference[],
     action = ATTACHMENT_ACTION.ATTACHMENT
 ) => {
     const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;

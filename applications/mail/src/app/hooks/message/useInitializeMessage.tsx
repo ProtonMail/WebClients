@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 import { useApi, useMailSettings } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useDispatch } from 'react-redux';
-import { DecryptResultPmcrypto } from 'pmcrypto';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useGetMessageKeys } from './useGetMessageKeys';
@@ -53,7 +53,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     const [mailSettings] = useMailSettings();
     const { verifyKeys } = useKeyVerification();
 
-    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 

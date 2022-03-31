@@ -1,29 +1,8 @@
-import { encodeBase64, decodeBase64 } from './base64';
+import { arrayToBinaryString, binaryStringToArray, encodeBase64, decodeBase64 } from '@proton/crypto/lib/utils';
 
-/**
- * NOTE: These functions exist in openpgp, but in order to load the application
- * without having to load openpgpjs they are added here.
- */
-export const uint8ArrayToString = (bytes: Uint8Array): string => {
-    const buffer = new Uint8Array(bytes);
-    const bs = 1 << 14;
-    const j = bytes.length;
-    const result = [];
-    for (let i = 0; i < j; i += bs) {
-        // @ts-ignore
-        // eslint-disable-next-line prefer-spread
-        result.push(String.fromCharCode.apply(String, buffer.subarray(i, i + bs < j ? i + bs : j)));
-    }
-    return result.join('');
-};
+export const uint8ArrayToString = arrayToBinaryString;
 
-export const stringToUint8Array = (str: string) => {
-    const result = new Uint8Array(str.length);
-    for (let i = 0; i < str.length; i++) {
-        result[i] = str.charCodeAt(i);
-    }
-    return result;
-};
+export const stringToUint8Array = binaryStringToArray;
 
 export const uint8ArrayToBase64String = (array: Uint8Array) => encodeBase64(uint8ArrayToString(array));
 

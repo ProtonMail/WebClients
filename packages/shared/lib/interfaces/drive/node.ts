@@ -1,6 +1,6 @@
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
 export interface NodeKeys {
-    privateKey: OpenPGPKey;
+    privateKey: PrivateKeyReference;
     sessionKey?: SessionKey;
 }

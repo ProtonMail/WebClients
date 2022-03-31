@@ -1,4 +1,4 @@
-import { VERIFICATION_STATUS } from 'pmcrypto';
+import { VERIFICATION_STATUS } from '@proton/crypto';
 
 import { TransferState, TransferMeta } from '../../../components/TransferManager/transfer';
 import { LinkDownload } from '../interface';

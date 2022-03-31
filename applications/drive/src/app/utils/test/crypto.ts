@@ -1,11 +1,7 @@
-import * as openpgp from 'openpgp';
-import { init } from 'pmcrypto/lib/pmcrypto';
-import { getKeys, generateSessionKey as realGenerateSessionKey, OpenPGPKey, SessionKey } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { Address, Key } from '@proton/shared/lib/interfaces';
 
-init(openpgp);
-
-export async function generatePrivateKey(name = 'name', email = 'name@example.com'): Promise<OpenPGPKey> {
+export async function generatePrivateKey(name = 'name', email = 'name@example.com'): Promise<PrivateKeyReference> {
     const { privateKeys } = await generateKeys(name, email);
     if (privateKeys.length !== 1) {
         throw new Error('Private key was not generated');
@@ -14,25 +10,27 @@ export async function generatePrivateKey(name = 'name', email = 'name@example.co
 }
 
 export async function generateKeys(name = 'name', email = 'name@example.com') {
-    const { publicKeyArmored, privateKeyArmored } = await openpgp.generateKey({
-        userIds: [{ name, email }],
+    const privateKey = await CryptoProxy.generateKey({
+        userIDs: [{ name, email }],
     });
-    const publicKeys = await getKeys(publicKeyArmored);
-    const privateKeys = await getKeys(privateKeyArmored);
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase: null });
+    const publicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
+    const publicKeyArmored = await CryptoProxy.exportPublicKey({ key: publicKey });
 
     return {
         name,
         email,
         publicKeyArmored,
         privateKeyArmored,
-        publicKeys,
-        privateKeys,
+        publicKeys: [publicKey],
+        privateKeys: [privateKey],
     };
 }
 
-export async function generateSessionKey(algorithm = 'aes256'): Promise<SessionKey> {
+type SessionKeyAlgorithm = Parameters<typeof CryptoProxy.generateSessionKeyForAlgorithm>[0];
+export async function generateSessionKey(algorithm: SessionKeyAlgorithm = 'aes256'): Promise<SessionKey> {
     return {
-        data: await realGenerateSessionKey(algorithm),
+        data: await CryptoProxy.generateSessionKeyForAlgorithm(algorithm),
         algorithm,
     };
 }
@@ -43,3 +41,17 @@ export const generateAddress = async (keys: Key[], email = 'test@pm.me'): Promis
         Keys: keys,
     } as Address;
 };
+
+/**
+ * Load Crypto API outside of web workers, for testing purposes.
+ */
+export async function setupCryptoProxyForTesting() {
+    // dynamic import to avoid loading the library unless required
+    const { Api: CryptoApi } = await import('@proton/crypto/lib/worker/api');
+    CryptoApi.init();
+    CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
+}
+
+export function releaseCryptoProxy() {
+    return CryptoProxy.releaseEndpoint();
+}

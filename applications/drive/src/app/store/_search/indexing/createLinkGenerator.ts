@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference } from '@proton/crypto';
 
 import { FetchShareMap } from './useFetchShareMap';
 import { LinkMapDecryptionBuffer } from './LinkDecryptionBuffer';
@@ -7,7 +7,7 @@ import { createKeysCache } from './useKeysCache';
 
 export const createLinkGenerator = (
     shareId: string,
-    rootLinkKeys: OpenPGPKey,
+    rootLinkKeys: PrivateKeyReference,
     callbacks: {
         fetchShareMap: FetchShareMap;
     }

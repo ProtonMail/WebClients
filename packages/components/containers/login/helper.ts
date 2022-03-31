@@ -1,4 +1,3 @@
-import { decryptPrivateKey } from 'pmcrypto';
 import { computeKeyPassword } from '@proton/srp';
 import { getPrimaryKeyWithSalt } from '@proton/shared/lib/keys/keys';
 import { PASSWORD_MODE } from '@proton/shared/lib/constants';
@@ -6,6 +5,7 @@ import { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import { User as tsUser } from '@proton/shared/lib/interfaces/User';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { getHasTOTPEnabled, getHasU2FEnabled } from '@proton/shared/lib/settings/twoFactor';
+import { CryptoProxy } from '@proton/crypto';
 
 export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode }: AuthResponse) => {
     return {
@@ -24,7 +24,7 @@ export const handleUnlockKey = async (User: tsUser, KeySalts: tsKeySalt[], rawKe
 
     // Support for versions without a key salt.
     const keyPassword = KeySalt ? ((await computeKeyPassword(rawKeyPassword, KeySalt)) as string) : rawKeyPassword;
-    const primaryKey = await decryptPrivateKey(PrivateKey, keyPassword);
+    const primaryKey = await CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: keyPassword });
 
     return { primaryKey, keyPassword };
 };

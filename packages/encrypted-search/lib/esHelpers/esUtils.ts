@@ -1,7 +1,5 @@
 import { IDBPDatabase, openDB, deleteDB } from 'idb';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { ESProgressBlob } from '../models';
 import { DIACRITICS_REGEXP, ES_MAX_PARALLEL_ITEMS } from '../constants';
 
@@ -306,23 +304,6 @@ export const canUseES = async (userID: string, storeName: string) => {
     const isIntact = esDB.objectStoreNames.contains(storeName);
     esDB.close();
     return isIntact;
-};
-
-/**
- * Destroy and load openpgp workers back again
- */
-export const refreshOpenpgp = async () => {
-    const { openpgp } = window as any;
-    // In case the workers are performing some operations, wait until they are done
-    const openpgpWorkers = openpgp.getWorker();
-    if (!openpgpWorkers) {
-        return;
-    }
-    while (openpgpWorkers.workers.some((worker: any) => worker.requests)) {
-        await wait(200);
-    }
-    await destroyOpenPGP();
-    await loadOpenPGP();
 };
 
 /**

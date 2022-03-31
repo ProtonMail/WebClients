@@ -1,4 +1,4 @@
-import { serverTime } from 'pmcrypto';
+import { serverTime } from '@proton/crypto';
 import noop from '@proton/utils/noop';
 import { fromUTCDate } from '../date/timezone';
 import { uint8ArrayToBase64String } from '../helpers/encoding';

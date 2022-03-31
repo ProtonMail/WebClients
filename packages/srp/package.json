@@ -12,6 +12,7 @@
         "test": "mocha '**/*.spec.ts'"
     },
     "dependencies": {
+        "@proton/crypto": "workspace:packages/crypto",
         "@proton/get-random-values": "workspace:packages/get-random-values",
         "asmcrypto.js": "^2.3.2",
         "bcryptjs": "^2.4.3"
@@ -23,12 +24,8 @@
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "eslint": "^8.19.0",
         "mocha": "^9.2.2",
-        "pmcrypto": "npm:@protontech/pmcrypto@^6.7.1",
         "prettier": "^2.7.1",
         "require-inject": "^1.4.4",
         "typescript": "^4.7.4"
-    },
-    "peerDependencies": {
-        "pmcrypto": "*"
     }
 }

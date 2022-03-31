@@ -24,7 +24,7 @@ import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { loadModels } from '@proton/shared/lib/models/helper';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { loadOpenPGP } from '@proton/shared/lib/openpgp';
+import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
 
@@ -97,7 +97,7 @@ const Setup = ({ onLogin, UID }: Props) => {
                 ]);
             });
 
-            await Promise.all([eventManagerPromise, modelsPromise, loadOpenPGP()]);
+            await Promise.all([eventManagerPromise, modelsPromise, loadCryptoWorker()]);
 
             flushSync(() => {
                 onLogin(UID);

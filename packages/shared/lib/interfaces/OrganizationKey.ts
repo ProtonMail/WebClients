@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 
 export interface OrganizationKey {
     PrivateKey?: string;
@@ -14,7 +14,7 @@ export type CachedOrganizationKey =
       }
     | {
           Key: OrganizationKey;
-          privateKey: OpenPGPKey;
-          publicKey: OpenPGPKey;
+          privateKey: PrivateKeyReference;
+          publicKey: PublicKeyReference;
           error?: undefined;
       };

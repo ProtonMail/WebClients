@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { AttachmentDirect, PackageDirect, SendPreferences } from '../../interfaces/mail/crypto';
 import { Attachment, Message } from '../../interfaces/mail/Message';
 import { RequireOnly, SimpleMap } from '../../interfaces/utils';
@@ -20,8 +20,8 @@ const generatePackages = async ({
     sendPreferencesMap: SimpleMap<SendPreferences>;
     attachments: Attachment[];
     attachmentData: { attachment: AttachmentDirect; data: string };
-    publicKeys: OpenPGPKey[];
-    privateKeys: OpenPGPKey[];
+    publicKeys: PublicKeyReference[];
+    privateKeys: PrivateKeyReference[];
 }): Promise<SimpleMap<PackageDirect>> => {
     // There are two packages to be generated for the payload.
     // The Packages in the request body, called here top-level packages

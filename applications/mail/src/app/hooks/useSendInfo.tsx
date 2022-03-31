@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } f
 import { useGetEncryptionPreferences } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { c, msgid } from 'ttag';
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -144,7 +144,7 @@ export const useUpdateRecipientSendInfo = (
                         contactID: recipient.ContactID,
                         emailAddress,
                         isInternal: encryptionPreferences.isInternal,
-                        bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey,
+                        bePinnedPublicKey: encryptionPreferences.sendKey as PublicKeyReference,
                     },
                 ];
 
@@ -272,7 +272,7 @@ export const useUpdateGroupSendInfo = (
                         contactName,
                         emailAddress,
                         isInternal: encryptionPreferences.isInternal,
-                        bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey,
+                        bePinnedPublicKey: encryptionPreferences.sendKey as PublicKeyReference,
                     },
                 };
             }
