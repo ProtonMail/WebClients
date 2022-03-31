@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 
 export enum CalendarKeyFlags {
     INACTIVE = 0,
@@ -16,8 +16,8 @@ export interface CalendarKey {
 
 export interface DecryptedCalendarKey {
     Key: CalendarKey;
-    privateKey: OpenPGPKey;
-    publicKey: OpenPGPKey;
+    privateKey: PrivateKeyReference;
+    publicKey: PublicKeyReference;
 }
 
 export interface InactiveCalendarKey {

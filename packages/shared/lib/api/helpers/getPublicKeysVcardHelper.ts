@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { CONTACT_CARD_TYPE } from '../../constants';
 import { CRYPTO_PROCESSING_TYPES } from '../../contacts/constants';
 import { readSigned } from '../../contacts/decrypt';
@@ -33,7 +33,7 @@ const getContactEmail = async (
 const getPublicKeysVcardHelper = async (
     api: Api,
     emailAddress: string,
-    publicKeys: OpenPGPKey[],
+    publicKeys: PublicKeyReference[],
     isInternal?: boolean,
     contactEmailsMap: { [email: string]: ContactEmail | undefined } = {}
 ): Promise<PinnedKeysConfig> => {

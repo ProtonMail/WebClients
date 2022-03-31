@@ -1,5 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
-
+import { PrivateKeyReference } from '@proton/crypto';
 import { HARDWARE_CONCURRENCY } from '@proton/shared/lib/drive/constants';
 import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -25,7 +24,7 @@ export class LinkMapDecryptionBuffer {
         this.keyCache = keyCache;
     }
 
-    async decryptLink(linkMeta: ShareMapLink, shareId: string, privateKey: OpenPGPKey) {
+    async decryptLink(linkMeta: ShareMapLink, shareId: string, privateKey: PrivateKeyReference) {
         const { name: decryptedName } = await this.keyCache.decryptAndCacheLink(linkMeta, privateKey);
 
         if (linkMeta.ParentLinkID && decryptedName) {

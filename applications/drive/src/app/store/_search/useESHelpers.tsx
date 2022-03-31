@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
-import { OpenPGPKey } from 'pmcrypto';
 
+import { PrivateKeyReference } from '@proton/crypto';
 import {
     AesGcmCiphertext,
     ESHelpers,
@@ -28,8 +28,8 @@ interface Props {
     shareId: Promise<string>;
     fetchShareMap: FetchShareMap;
     getLink: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<DecryptedLink>;
-    getSharePrivateKey: (abortSignal: AbortSignal, shareId: string) => Promise<OpenPGPKey>;
-    getLinkPrivateKey: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<OpenPGPKey>;
+    getSharePrivateKey: (abortSignal: AbortSignal, shareId: string) => Promise<PrivateKeyReference>;
+    getLinkPrivateKey: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<PrivateKeyReference>;
 }
 
 let linkMapGenerator: AsyncGenerator<ESLink[]>;

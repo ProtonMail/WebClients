@@ -1,5 +1,4 @@
-import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { Address, Api, DecryptedKey } from '../../interfaces';
 import { KeyImportData, OnKeyImportCallback } from './interface';
 import { getActiveKeyObject, getActiveKeys, getPrimaryFlag } from '../getActiveKeys';
@@ -17,7 +16,7 @@ export interface ImportKeysProcessV2Arguments {
     keyPassword: string;
     address: Address;
     addressKeys: DecryptedKey[];
-    userKey: OpenPGPKey;
+    userKey: PrivateKeyReference;
 }
 
 const importKeysProcessV2 = async ({
@@ -48,7 +47,10 @@ const importKeysProcessV2 = async ({
             const { privateKey } = keyImportRecord;
 
             const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
-            const privateKeyArmored = await encryptPrivateKey(privateKey, token);
+            const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+                privateKey,
+                passphrase: token,
+            });
 
             const newActiveKey = await getActiveKeyObject(privateKey, {
                 ID: 'tmp',

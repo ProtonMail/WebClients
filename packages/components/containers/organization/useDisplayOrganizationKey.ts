@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
-import { OpenPGPKey, getKeys, algorithmInfo as tsAlgorithmInfo } from 'pmcrypto';
 import { CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import { getFormattedAlgorithmName } from '@proton/shared/lib/keys';
+import { PublicKeyReference, PrivateKeyReference, CryptoProxy } from '@proton/crypto';
 
 const useDisplayOrganizationKey = (organizationKey?: CachedOrganizationKey) => {
-    const [parsedKey, setParsedKey] = useState<OpenPGPKey>();
+    const [parsedKey, setParsedKey] = useState<PublicKeyReference | PrivateKeyReference>();
 
     useEffect(() => {
-        (async () => {
+        void (async () => {
             if (!organizationKey) {
                 setParsedKey(undefined);
                 return;
@@ -17,7 +17,10 @@ const useDisplayOrganizationKey = (organizationKey?: CachedOrganizationKey) => {
                 return;
             }
             if (organizationKey.Key.PrivateKey) {
-                const [key] = await getKeys(organizationKey.Key.PrivateKey).catch(() => []);
+                // We import the key as PublicKey since importing it as PrivateKey requires knowing the passphrase to decrypt it.
+                const key = await CryptoProxy.importPublicKey({ armoredKey: organizationKey.Key.PrivateKey }).catch(
+                    () => undefined
+                );
                 setParsedKey(key);
                 return;
             }
@@ -26,9 +29,9 @@ const useDisplayOrganizationKey = (organizationKey?: CachedOrganizationKey) => {
     }, [organizationKey]);
 
     return useMemo(() => {
-        const algorithmInfo = (parsedKey?.getAlgorithmInfo() as tsAlgorithmInfo) ?? { algorithm: '' };
+        const algorithmInfo = parsedKey?.getAlgorithmInfo() ?? { algorithm: '' };
         const fingerprint = parsedKey?.getFingerprint() ?? '';
-        const isDecrypted = parsedKey?.isDecrypted() ?? false;
+        const isDecrypted = parsedKey?.isPrivate() ?? false;
         return {
             algorithm: getFormattedAlgorithmName(algorithmInfo),
             fingerprint,

@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { extractDraftMIMEType, extractScheme, extractSign } from '../api/helpers/mailSettings';
 import { CONTACT_MIME_TYPES, PGP_SCHEMES } from '../constants';
 import { ContactPublicKeyModel, MailSettings, PublicKeyModel, SelfSend } from '../interfaces';
@@ -31,11 +31,11 @@ export interface EncryptionPreferences {
     sign: boolean;
     scheme: PGP_SCHEMES;
     mimeType: CONTACT_MIME_TYPES;
-    sendKey?: OpenPGPKey;
+    sendKey?: PublicKeyReference;
     isSendKeyPinned?: boolean;
-    apiKeys: OpenPGPKey[];
-    pinnedKeys: OpenPGPKey[];
-    verifyingPinnedKeys: OpenPGPKey[];
+    apiKeys: PublicKeyReference[];
+    pinnedKeys: PublicKeyReference[];
+    verifyingPinnedKeys: PublicKeyReference[];
     isInternal: boolean;
     hasApiKeys: boolean;
     hasPinnedKeys: boolean;

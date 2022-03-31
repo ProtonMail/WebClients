@@ -1,15 +1,15 @@
-import { OpenPGPKey, signMessage } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { ActiveKey, SignedKeyList, SignedKeyListItem } from '../interfaces';
 import { SimpleMap } from '../interfaces/utils';
 
-export const getSignature = async (data: string, signingKey: OpenPGPKey) => {
-    const { signature } = await signMessage({
-        data,
-        privateKeys: [signingKey],
-        armor: true,
+export const getSignature = async (data: string, signingKey: PrivateKeyReference) => {
+    const signature = await CryptoProxy.signMessage({
+        textData: data,
+        stripTrailingSpaces: true,
+        signingKeys: [signingKey],
         detached: true,
     });
-    return `${signature}`;
+    return signature;
 };
 
 /**

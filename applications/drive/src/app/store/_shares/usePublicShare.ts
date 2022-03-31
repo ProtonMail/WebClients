@@ -1,5 +1,4 @@
-import { decryptMessage, decryptPrivateKey, getMessage } from 'pmcrypto';
-
+import { CryptoProxy } from '@proton/crypto';
 import { useApi } from '@proton/components';
 import { computeKeyPassword } from '@proton/srp';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
@@ -32,15 +31,16 @@ export default function usePublicShare() {
             silence: true,
         });
 
-        const [passphraseAsMessage, computedPassword] = await Promise.all([
-            getMessage(Token.SharePassphrase),
-            computeKeyPassword(sessionInfo.password, Token.SharePasswordSalt),
-        ]);
-        const sharePassphrase = await decryptMessage({
-            message: passphraseAsMessage,
+        const computedPassword = await computeKeyPassword(sessionInfo.password, Token.SharePasswordSalt);
+        const sharePassphrase = await CryptoProxy.decryptMessage({
+            armoredMessage: Token.SharePassphrase,
             passwords: [computedPassword],
         });
-        const sharePrivateKey = await decryptPrivateKey(Token.ShareKey, sharePassphrase.data);
+
+        const sharePrivateKey = await CryptoProxy.importPrivateKey({
+            armoredKey: Token.ShareKey,
+            passphrase: sharePassphrase.data,
+        });
         sharesKeys.set(sessionInfo.token, sharePrivateKey);
 
         setLinks(sessionInfo.token, [

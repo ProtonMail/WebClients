@@ -1,5 +1,5 @@
 import { format as formatDate, fromUnixTime, getUnixTime, isSameDay } from 'date-fns';
-import { serverTime } from 'pmcrypto';
+import { serverTime } from '@proton/crypto';
 
 type Options = Parameters<typeof formatDate>[2];
 /**

@@ -1,8 +1,8 @@
 import { IDBPDatabase } from 'idb';
-import { decryptMessage as pmcryptoDecryptMessage, getMessage as pmcryptoGetMessage, encryptMessage } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
-import { AesKeyGenParams, ES_MAX_CONCURRENT, KeyUsages, OPENPGP_REFRESH_CUTOFF } from '../constants';
+import { AesKeyGenParams, ES_MAX_CONCURRENT, KeyUsages } from '../constants';
 import { AesGcmCiphertext, ESIndexingHelpers, ESIndexingState, GetUserKeys } from '../models';
 import {
     addESTimestamp,
@@ -11,7 +11,6 @@ import {
     getES,
     getOldestItem,
     openESDB,
-    refreshOpenpgp,
     removeES,
     setES,
     setOriginalEstimate,
@@ -26,10 +25,10 @@ import { sizeOfESItem } from './esCache';
 export const decryptIndexKey = async (getUserKeys: GetUserKeys, armoredKey: string) => {
     const userKeysList = await getUserKeys();
     const primaryUserKey = userKeysList[0];
-    const decryptionResult = await pmcryptoDecryptMessage({
-        message: await pmcryptoGetMessage(armoredKey),
-        publicKeys: [primaryUserKey.publicKey],
-        privateKeys: [primaryUserKey.privateKey],
+    const decryptionResult = await CryptoProxy.decryptMessage({
+        armoredMessage: armoredKey,
+        verificationKeys: [primaryUserKey.publicKey],
+        decryptionKeys: [primaryUserKey.privateKey],
     });
 
     const { data: decryptedKey } = decryptionResult;
@@ -163,7 +162,6 @@ const storeItemsBatches = async <ESItemMetadata, ESItem, ESCiphertext>(
         return false;
     }
 
-    let batchCount = 0;
     let batchSize = 0;
     let progress = 0;
     while (resultMetadata.length) {
@@ -220,11 +218,6 @@ const storeItemsBatches = async <ESItemMetadata, ESItem, ESCiphertext>(
             return false;
         }
 
-        if (batchCount++ >= OPENPGP_REFRESH_CUTOFF) {
-            await refreshOpenpgp();
-            batchCount = 0;
-        }
-
         addESTimestamp(userID, 'step');
     }
 
@@ -274,10 +267,11 @@ const storeIndexKey = async (indexKey: CryptoKey, userID: string, getUserKeys: G
     const userKeysList = await getUserKeys();
     const primaryUserKey = userKeysList[0];
     const keyToEncrypt = await crypto.subtle.exportKey('jwk', indexKey);
-    const { data: encryptedKey } = await encryptMessage({
-        data: JSON.stringify(keyToEncrypt),
-        publicKeys: [primaryUserKey.publicKey],
-        privateKeys: [primaryUserKey.privateKey],
+    const { message: encryptedKey } = await CryptoProxy.encryptMessage({
+        textData: JSON.stringify(keyToEncrypt),
+        stripTrailingSpaces: true,
+        encryptionKeys: [primaryUserKey.publicKey],
+        signingKeys: [primaryUserKey.privateKey],
     });
     setES.Key(userID, encryptedKey);
 };

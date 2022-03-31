@@ -39,7 +39,7 @@ export const addApiContact = (contact: ContactMock, key: GeneratedKey) => {
             { field: 'email', value: contact.email, group, uid: createContactPropertyUid() },
         ];
         if (contact.pinKey) {
-            properties.push(toKeyProperty({ publicKey: contact.pinKey.publicKeys[0], group, index: 0 }));
+            properties.push(await toKeyProperty({ publicKey: contact.pinKey.publicKeys[0], group, index: 0 }));
         }
         if (contact.mimeType) {
             properties.push({

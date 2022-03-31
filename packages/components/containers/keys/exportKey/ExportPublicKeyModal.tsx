@@ -1,6 +1,6 @@
-import { getKeys, OpenPGPKey } from 'pmcrypto';
 import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { PublicKeyReference, CryptoProxy } from '@proton/crypto';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 import {
@@ -14,10 +14,10 @@ import {
 } from '../../../components';
 import { useLoading } from '../../../hooks';
 
-const handleExport = (name: string, publicKey: OpenPGPKey) => {
+const handleExport = async (name: string, publicKey: PublicKeyReference) => {
     const fingerprint = publicKey.getFingerprint();
     const filename = ['publickey.', name, '-', fingerprint, KEY_FILE_EXTENSION].join('');
-    const armoredPublicKey = publicKey.armor();
+    const armoredPublicKey = await CryptoProxy.exportPublicKey({ key: publicKey });
     const blob = new Blob([armoredPublicKey], { type: 'text/plain' });
     downloadFile(blob, filename);
 };
@@ -25,7 +25,7 @@ const handleExport = (name: string, publicKey: OpenPGPKey) => {
 interface Props extends ModalProps {
     name: string;
     fallbackPrivateKey: string;
-    publicKey?: OpenPGPKey;
+    publicKey?: PublicKeyReference;
     onSuccess?: () => void;
 }
 
@@ -34,12 +34,11 @@ const ExportPublicKeyModal = ({ name, fallbackPrivateKey, publicKey, onClose, ..
 
     const handleSubmit = async () => {
         if (publicKey) {
-            handleExport(name, publicKey);
+            await handleExport(name, publicKey);
         } else {
             // If there is no publicKey, it means the private key couldn't be decrypted, so just use whatever was received from the server
-            const [key] = await getKeys(fallbackPrivateKey);
-            const publicKey = key.toPublic();
-            handleExport(name, publicKey);
+            const fallbackPublicKey = await CryptoProxy.importPublicKey({ armoredKey: fallbackPrivateKey });
+            await handleExport(name, fallbackPublicKey);
         }
         onClose?.();
     };

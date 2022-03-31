@@ -1,4 +1,4 @@
-import { algorithmInfo } from 'pmcrypto';
+import type { AlgorithmInfo } from '@proton/crypto';
 
 import { getFormattedAlgorithmNames, getDefaultKeyFlags } from '@proton/shared/lib/keys';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
@@ -15,7 +15,7 @@ interface Arguments {
     isDecrypted: boolean;
     isLoading: boolean;
     Key: Key;
-    algorithmInfos: algorithmInfo[];
+    algorithmInfos: AlgorithmInfo[];
     signedKeyListMap: SimpleMap<SignedKeyListItem>;
     isWeak: boolean;
 }

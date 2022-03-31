@@ -1,4 +1,4 @@
-import { encryptPrivateKey } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import { Address, Api, DecryptedKey, Key } from '../../interfaces';
 import { reactivateKeyRoute } from '../../api/keys';
 import { getSignedKeyList } from '../signedKeyList';
@@ -39,7 +39,10 @@ export const reactivateKeysProcess = async ({
 
             await resetUserId(Key, reactivatedKey);
 
-            const privateKeyArmored = await encryptPrivateKey(reactivatedKey, keyPassword);
+            const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+                privateKey: reactivatedKey,
+                passphrase: keyPassword,
+            });
             const newActiveKey = await getActiveKeyObject(reactivatedKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),

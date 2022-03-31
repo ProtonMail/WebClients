@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { CONTACT_CARD_TYPE } from '../../constants';
 
 export interface ContactEmail {
@@ -43,7 +43,7 @@ export interface ContactWithBePinnedPublicKey {
     emailAddress: string;
     name?: string;
     isInternal: boolean;
-    bePinnedPublicKey: OpenPGPKey;
+    bePinnedPublicKey: PublicKeyReference;
 }
 
 export interface ContactGroup {

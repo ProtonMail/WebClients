@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
 import { getBackupKeyData } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference } from '@proton/crypto';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import {
     Alert,
@@ -23,7 +23,7 @@ import AuthModal from '../password/AuthModal';
 
 interface Props extends ModalProps {
     hasOtherAdmins: boolean;
-    organizationKey: OpenPGPKey;
+    organizationKey: PrivateKeyReference;
 }
 const ChangeOrganizationPasswordModal = ({ hasOtherAdmins, organizationKey, onClose, ...rest }: Props) => {
     const { call } = useEventManager();

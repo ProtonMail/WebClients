@@ -1,5 +1,5 @@
-import { encryptSessionKey, splitMessage, decryptSessionKey, getMessage, SessionKey, encodeUtf8 } from 'pmcrypto';
-
+import { CryptoProxy, SessionKey } from '@proton/crypto';
+import { encodeUtf8 } from '@proton/crypto/lib/utils';
 import { useApi, usePreventLeave } from '@proton/components';
 import { computeKeyPassword } from '@proton/srp';
 import { srpGetVerify } from '@proton/shared/lib/srp';
@@ -74,7 +74,8 @@ export default function useShareUrl() {
     };
 
     const decryptShareSessionKey = async (keyPacket: string | Uint8Array, password: string) => {
-        return decryptSessionKey({ message: await getMessage(keyPacket), passwords: [password] });
+        const messageType = keyPacket instanceof Uint8Array ? 'binaryMessage' : 'armoredMessage';
+        return CryptoProxy.decryptSessionKey({ [messageType]: keyPacket, passwords: [password] });
     };
 
     const decryptShareUrl = async ({
@@ -116,15 +117,13 @@ export default function useShareUrl() {
     };
 
     const encryptSymmetricSessionKey = async (sessionKey: SessionKey, password: string) => {
-        const { message } = await encryptSessionKey({
+        const symmetric = await CryptoProxy.encryptSessionKey({
             data: sessionKey.data,
             algorithm: sessionKey.algorithm,
             passwords: [password],
+            format: 'binary',
         });
-        const {
-            symmetric: [bytes],
-        } = await splitMessage(message);
-        return uint8ArrayToBase64String(bytes);
+        return uint8ArrayToBase64String(symmetric);
     };
 
     const encryptShareUrlPassword = async (decryptedPassword: string) => {

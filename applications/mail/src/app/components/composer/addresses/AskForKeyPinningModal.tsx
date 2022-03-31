@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { pinKeyUpdateContact } from '@proton/shared/lib/contacts/keyPinning';
@@ -27,8 +27,8 @@ import {
 interface Params {
     contact: RequireSome<ContactWithBePinnedPublicKey, 'contactID'>;
     api: Api;
-    publicKeys: OpenPGPKey[];
-    privateKeys: OpenPGPKey[];
+    publicKeys: PublicKeyReference[];
+    privateKeys: PrivateKeyReference[];
 }
 
 const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }: Params) => {
@@ -102,8 +102,7 @@ const AskForKeyPinningModal = ({ contacts, onNotTrust, onError, onResolve, onRej
                     totalContacts
                 )}
                 <br />
-                <Href href={getKnowledgeBaseUrl('/address-verification')}>{c('Link')
-                    .t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/address-verification')}>{c('Link').t`Learn more`}</Href>
                 <div>
                     {c('Key pinning').ngettext(
                         msgid`Do you want to trust the primary public key with the following fingerprint?`,

@@ -7,7 +7,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 
 import {
@@ -333,7 +333,7 @@ const getSaveRecurringEventActions = async ({
             method
         );
         let updatedInviteActions = inviteActions;
-        let addedAttendeesPublicKeysMap: SimpleMap<OpenPGPKey> | undefined;
+        let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
         if (isSendInviteType) {
             if (isSwitchCalendar) {
                 // Temporary hotfix to an API issue

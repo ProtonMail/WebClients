@@ -1,12 +1,11 @@
-import { encryptMessage, splitMessage, generateSessionKey, encryptSessionKey, SessionKey, OpenPGPKey } from 'pmcrypto';
-import identity from '@proton/utils/identity';
+import { CryptoProxy, SessionKey, PublicKeyReference } from '@proton/crypto';
+import isTruthy from '@proton/utils/isTruthy';
 import { Package, Packages } from '@proton/shared/lib/interfaces/mail/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 import { AES256, MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
-import { enums } from 'openpgp';
 import { arrayToBase64 } from '../base64';
 import { MessageState, PublicPrivateKey } from '../../logic/messages/messagesTypes';
 
@@ -31,19 +30,19 @@ const encryptKeyPacket = async ({
     passwords = [],
 }: {
     sessionKeys?: SessionKey[];
-    publicKeys?: OpenPGPKey[];
+    publicKeys?: PublicKeyReference[];
     passwords?: string[];
 }) =>
     Promise.all(
         sessionKeys.map(async (sessionKey) => {
-            const { message } = await encryptSessionKey({
+            const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
                 data: sessionKey.data,
                 algorithm: sessionKey.algorithm,
-                publicKeys: publicKeys.length > 0 ? publicKeys : undefined,
+                encryptionKeys: publicKeys,
                 passwords,
+                format: 'binary',
             });
-            const data = message.packets.write();
-            return arrayToBase64(data as Uint8Array);
+            return arrayToBase64(encryptedSessionKey);
         })
     );
 
@@ -66,7 +65,7 @@ const encryptAttachmentKeys = async (pack: Package, message: MessageState, attac
         const keys = await encryptKeyPacket({
             sessionKeys: attachmentKeys.map(({ SessionKey }) => SessionKey),
             passwords: isEo ? [message.data?.Password || ''] : undefined,
-            publicKeys: isEo ? undefined : [address.PublicKey as OpenPGPKey],
+            publicKeys: isEo ? undefined : [address.PublicKey as PublicKeyReference],
         });
 
         const AttachmentKeyPackets: { [AttachmentID: string]: string } = {};
@@ -92,7 +91,7 @@ const encryptAttachmentKeys = async (pack: Package, message: MessageState, attac
  */
 const generateSessionKeyHelper = async (): Promise<SessionKey> => ({
     algorithm: AES256,
-    data: await generateSessionKey(AES256),
+    data: await CryptoProxy.generateSessionKeyForAlgorithm(AES256),
 });
 
 /**
@@ -102,12 +101,12 @@ const generateSessionKeyHelper = async (): Promise<SessionKey> => ({
 const encryptBodyPackage = async (
     pack: Package,
     messageKeys: PublicPrivateKey,
-    publicKeys: OpenPGPKey[],
+    publicKeys: (PublicKeyReference | undefined)[],
     message: MessageState,
     scheduledTime?: number,
     canUseScheduledTime = false
 ) => {
-    const cleanPublicKeys = publicKeys.filter(identity);
+    const cleanPublicKeys = publicKeys.filter(isTruthy);
 
     // Always encrypt with a single private key
     const privateKeys = messageKeys.privateKeys.slice(0, 1);
@@ -124,18 +123,35 @@ const encryptBodyPackage = async (
      */
     const canUseScheduledTimeInSignature = scheduledTime && canUseScheduledTime;
 
-    const { data, sessionKey } = await encryptMessage({
-        data: pack.Body || '',
-        publicKeys: cleanPublicKeys,
-        sessionKey: cleanPublicKeys.length ? undefined : await generateSessionKeyHelper(),
-        privateKeys,
-        returnSessionKey: true,
-        compression: shouldCompress ? enums.compression.zlib : enums.compression.uncompressed,
+    const sessionKey = cleanPublicKeys.length
+        ? await CryptoProxy.generateSessionKey({ recipientKeys: cleanPublicKeys })
+        : await generateSessionKeyHelper();
+
+    const data = pack.Body || '';
+    const dataType = data instanceof Uint8Array ? 'binaryData' : 'textData';
+    // we encrypt using `sessionKey` directly instead of `encryptionKeys` so that returned message only includes
+    // symmetrically encrypted data
+    const { message: encryptedData } = await CryptoProxy.encryptMessage({
+        [dataType]: data,
+        sessionKey,
+        signingKeys: privateKeys,
         date: canUseScheduledTimeInSignature ? new Date(scheduledTime) : undefined,
+        format: 'binary',
+        compress: shouldCompress,
     });
 
-    const { asymmetric: keys, encrypted } = await splitMessage(data);
-    return { keys, encrypted, sessionKey };
+    // encrypt to each public key separetely to get separate serialized session keys
+    const encryptedSessionKeys = await Promise.all(
+        cleanPublicKeys.map((publicKey) =>
+            CryptoProxy.encryptSessionKey({
+                ...sessionKey,
+                encryptionKeys: publicKey,
+                format: 'binary',
+            })
+        )
+    );
+
+    return { keys: encryptedSessionKeys, encrypted: encryptedData, sessionKey };
 };
 
 /**
@@ -146,11 +162,11 @@ const encryptBodyPackage = async (
 const encryptDraftBodyPackage = async (
     pack: Package,
     messageKeys: PublicPrivateKey,
-    publicKeys: OpenPGPKey[],
+    publicKeys: (PublicKeyReference | undefined)[],
     scheduledTime?: number,
     canUseScheduledTime = false
 ) => {
-    const cleanPublicKeys = [...messageKeys.publicKeys, ...publicKeys].filter(identity);
+    const cleanPublicKeys = [...messageKeys.publicKeys, ...publicKeys].filter(isTruthy);
 
     // Always encrypt with a single private key
     const privateKeys = messageKeys.privateKeys.slice(0, 1);
@@ -161,27 +177,33 @@ const encryptDraftBodyPackage = async (
      */
     const canUseScheduledTimeInSignature = scheduledTime && canUseScheduledTime;
 
-    const { data, sessionKey } = await encryptMessage({
-        data: pack.Body || '',
-        publicKeys: cleanPublicKeys,
-        privateKeys,
-        returnSessionKey: true,
+    // pass both messageKeys and publicKeys to make sure the generated session key is compatible with them all
+    const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: cleanPublicKeys });
+
+    const data = pack.Body || '';
+    const dataType = data instanceof Uint8Array ? 'binaryData' : 'textData';
+    // we encrypt using `sessionKey` directly instead of `encryptionKeys` so that returned message only includes
+    // symmetrically encrypted data
+    const { message: encryptedData } = await CryptoProxy.encryptMessage({
+        [dataType]: data,
+        sessionKey,
+        signingKeys: privateKeys,
         date: canUseScheduledTimeInSignature ? new Date(scheduledTime) : undefined,
+        format: 'binary',
     });
 
-    const packets = await splitMessage(data);
+    // Encrypt to each recipient's public key separetely to get separate serialized session keys.
+    const encryptedSessionKeys = await Promise.all(
+        publicKeys.map((publicKey) =>
+            CryptoProxy.encryptSessionKey({
+                ...sessionKey,
+                encryptionKeys: publicKey,
+                format: 'binary',
+            })
+        )
+    );
 
-    const { asymmetric, encrypted } = packets;
-
-    // rebuild the data without the send keypackets
-    packets.asymmetric = packets.asymmetric.slice(0, messageKeys.publicKeys.length);
-
-    // combine message
-    // const value = concatArrays(Object.values(packets).flat() as Uint8Array[]);
-
-    // (message.data as Message).Body = await armorBytes(value);
-
-    return { keys: asymmetric.slice(messageKeys.publicKeys.length), encrypted, sessionKey };
+    return { keys: encryptedSessionKeys, encrypted: encryptedData, sessionKey };
 };
 
 /**
@@ -191,7 +213,7 @@ const encryptDraftBodyPackage = async (
 const encryptBody = async (pack: Package, messageKeys: PublicPrivateKey, message: MessageState): Promise<void> => {
     const addressKeys = Object.keys(pack.Addresses || {});
     const addresses = Object.values(pack.Addresses || {});
-    const publicKeysList = addresses.map(({ PublicKey }) => PublicKey as OpenPGPKey);
+    const publicKeysList = addresses.map(({ PublicKey }) => PublicKey);
 
     const scheduledTime = message.draftFlags?.scheduledAt ? message.draftFlags?.scheduledAt * 1000 : undefined;
 
@@ -234,8 +256,7 @@ const encryptBody = async (pack: Package, messageKeys: PublicPrivateKey, message
         pack.BodyKey = packToBase64(sessionKey);
     }
 
-    // eslint-disable-next-line prefer-destructuring
-    pack.Body = encrypted[0];
+    pack.Body = encrypted;
 };
 
 const encryptPackage = async (

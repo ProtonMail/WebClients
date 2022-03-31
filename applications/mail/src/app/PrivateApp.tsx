@@ -37,7 +37,6 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
         <StandardPrivateApp
             noModals
             fallback={false}
-            openpgpConfig={{}}
             onLogout={onLogout}
             onInit={() => {
                 // Intentionally ignoring to return promise of the timezone call to avoid blocking app start

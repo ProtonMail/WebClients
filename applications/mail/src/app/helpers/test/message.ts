@@ -1,11 +1,6 @@
-import {
-    decryptMessageLegacy as realDecryptMessageLegacy,
-    decryptMIMEMessage,
-    SessionKey,
-    OpenPGPKey,
-    encryptMessage as realEncryptMessage,
-} from 'pmcrypto';
+import { decryptMIMEMessage } from 'pmcrypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { base64ToArray, arrayToBase64 } from '../base64';
 import { generateSessionKey, encryptSessionKey, GeneratedKey } from './crypto';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
@@ -38,9 +33,11 @@ const readBlob = async (blob: Blob) =>
         fileReader.readAsArrayBuffer(blob);
     });
 
-export const decryptMessageLegacy = async (pack: any, privateKeys: OpenPGPKey[], sessionKey: SessionKey) => {
-    const decryptResult = await realDecryptMessageLegacy({
-        message: (await readBlob(pack.Body)) as any,
+export const decryptMessageLegacy = async (pack: any, privateKeys: PrivateKeyReference[], sessionKey: SessionKey) => {
+    throw new Error('unsupported; TODO lara');
+    const decryptResult = await CryptoProxy.decryptMessageLegacy({
+        // @ts-ignore todo lara
+        armoredMessage: await readBlob(pack.Body),
         messageDate: new Date(),
         privateKeys,
         sessionKeys: [sessionKey],
@@ -49,10 +46,16 @@ export const decryptMessageLegacy = async (pack: any, privateKeys: OpenPGPKey[],
     return { data: decryptResult.data, signatures: decryptResult.signatures };
 };
 
-export const decryptMessageMultipart = async (pack: any, privateKeys: OpenPGPKey[], sessionKey: SessionKey) => {
+export const decryptMessageMultipart = async (
+    pack: any,
+    privateKeys: PrivateKeyReference[],
+    sessionKey: SessionKey
+) => {
+    throw new Error('unsupported; todo lara');
     const decryptResult = await decryptMIMEMessage({
         message: (await readBlob(pack.Body)) as any,
         messageDate: new Date(),
+        // @ts-ignore todo lara
         privateKeys,
         sessionKeys: [sessionKey],
     });
@@ -63,7 +66,7 @@ export const decryptMessageMultipart = async (pack: any, privateKeys: OpenPGPKey
     return { data: bodyResult?.body, mimeType: bodyResult?.mimetype, attachments };
 };
 
-export const createAttachment = async (inputAttachment: Partial<Attachment>, publicKeys: OpenPGPKey[]) => {
+export const createAttachment = async (inputAttachment: Partial<Attachment>, publicKeys: PublicKeyReference[]) => {
     const attachment = { ...inputAttachment };
 
     const sessionKey = await generateSessionKey(publicKeys[0]);
@@ -75,12 +78,13 @@ export const createAttachment = async (inputAttachment: Partial<Attachment>, pub
 };
 
 export const encryptMessage = async (body: string, fromKeys: GeneratedKey, toKeys: GeneratedKey) => {
-    const { data } = await realEncryptMessage({
-        data: body,
-        publicKeys: [toKeys.publicKeys?.[0]],
-        privateKeys: [fromKeys.privateKeys?.[0]],
+    const { message } = await CryptoProxy.encryptMessage({
+        textData: body,
+        stripTrailingSpaces: true,
+        encryptionKeys: [toKeys.publicKeys?.[0]],
+        signingKeys: [fromKeys.privateKeys?.[0]],
     });
-    return data;
+    return message;
 };
 
 export const createEmbeddedImage = (attachment: Attachment) =>

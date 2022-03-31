@@ -1,16 +1,20 @@
-import { decryptMessage, encryptMessage, getMessage, OpenPGPKey, VERIFICATION_STATUS } from 'pmcrypto';
 import getRandomValues from '@proton/get-random-values';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
 
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 
 /**
  * Decrypts a member token with the organization private key
  */
-export const decryptMemberToken = async (token: string, privateKeys: OpenPGPKey[], publicKeys: OpenPGPKey[]) => {
-    const { data: decryptedToken, verified } = await decryptMessage({
-        message: await getMessage(token),
-        privateKeys,
-        publicKeys,
+export const decryptMemberToken = async (
+    token: string,
+    privateKeys: PrivateKeyReference[],
+    publicKeys: PublicKeyReference[]
+) => {
+    const { data: decryptedToken, verified } = await CryptoProxy.decryptMessage({
+        armoredMessage: token,
+        decryptionKeys: privateKeys,
+        verificationKeys: publicKeys,
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -32,14 +36,15 @@ export const generateMemberToken = () => {
 
 /**
  * Encrypt the member key password with a key.
- * @param token - The member key token
+ * @param token - The member key token in base64
  * @param privateKey - The key to encrypt the token with
  */
-export const encryptMemberToken = async (token: string, privateKey: OpenPGPKey) => {
-    const { data: encryptedToken } = await encryptMessage({
-        data: token,
-        publicKeys: [privateKey.toPublic()],
-        privateKeys: [privateKey],
+export const encryptMemberToken = async (token: string, privateKey: PrivateKeyReference) => {
+    const { message: encryptedToken } = await CryptoProxy.encryptMessage({
+        textData: token,
+        stripTrailingSpaces: true, // TODO lara/daniel this shouldn't matter since data is base64...?
+        encryptionKeys: [privateKey],
+        signingKeys: [privateKey],
     });
     return encryptedToken;
 };

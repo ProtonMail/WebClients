@@ -1,4 +1,4 @@
-import { decryptPrivateKey, encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import {
     EncryptionConfig,
     Address as tsAddress,
@@ -18,12 +18,12 @@ import { generateMemberAddressKey } from './organizationKeys';
 import { generateUserKey } from './userKeys';
 import { getHasMemberMigratedAddressKeys } from './keyMigration';
 
-export const getDecryptedMemberKey = async ({ Token, PrivateKey }: tsKey, organizationKey: OpenPGPKey) => {
+export const getDecryptedMemberKey = async ({ Token, PrivateKey }: tsKey, organizationKey: PrivateKeyReference) => {
     if (!Token) {
         throw new Error('Member token invalid');
     }
-    const decryptedToken = await decryptMemberToken(Token, [organizationKey], [organizationKey.toPublic()]);
-    return decryptPrivateKey(PrivateKey, decryptedToken);
+    const decryptedToken = await decryptMemberToken(Token, [organizationKey], [organizationKey]);
+    return CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: decryptedToken });
 };
 
 interface SetupMemberKeySharedArguments {
@@ -31,7 +31,7 @@ interface SetupMemberKeySharedArguments {
     member: tsMember;
     address: tsAddress;
     password: string;
-    organizationKey: OpenPGPKey;
+    organizationKey: PrivateKeyReference;
     encryptionConfig: EncryptionConfig;
 }
 
@@ -52,7 +52,10 @@ export const setupMemberKeyLegacy = async ({
     });
 
     const memberKeyToken = generateMemberToken();
-    const privateKeyArmoredOrganization = await encryptPrivateKey(privateKey, memberKeyToken);
+    const privateKeyArmoredOrganization = await CryptoProxy.exportPrivateKey({
+        privateKey,
+        passphrase: memberKeyToken,
+    });
     const organizationToken = await encryptMemberToken(memberKeyToken, organizationKey);
 
     const newActiveKey = await getActiveKeyObject(privateKey, { ID: 'tmp', primary: 1 });
@@ -107,7 +110,10 @@ export const setupMemberKeyV2 = async ({
     });
 
     const memberKeyToken = generateMemberToken();
-    const privateKeyArmoredOrganization = await encryptPrivateKey(userPrivateKey, memberKeyToken);
+    const privateKeyArmoredOrganization = await CryptoProxy.exportPrivateKey({
+        privateKey: userPrivateKey,
+        passphrase: memberKeyToken,
+    });
     const organizationToken = await encryptMemberToken(memberKeyToken, organizationKey);
 
     const { token, signature, organizationSignature, encryptedToken } = await generateAddressKeyTokens(
@@ -175,8 +181,8 @@ interface CreateMemberAddressKeysLegacyArguments {
     member: tsMember;
     memberAddress: tsAddress;
     memberAddressKeys: DecryptedKey[];
-    memberUserKey: OpenPGPKey;
-    organizationKey: OpenPGPKey;
+    memberUserKey: PrivateKeyReference;
+    organizationKey: PrivateKeyReference;
     encryptionConfig: EncryptionConfig;
 }
 
@@ -227,8 +233,8 @@ interface CreateMemberAddressKeysV2Arguments {
     member: tsMember;
     memberAddress: tsAddress;
     memberAddressKeys: DecryptedKey[];
-    memberUserKey: OpenPGPKey;
-    organizationKey: OpenPGPKey;
+    memberUserKey: PrivateKeyReference;
+    organizationKey: PrivateKeyReference;
     encryptionConfig: EncryptionConfig;
 }
 

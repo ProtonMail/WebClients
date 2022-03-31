@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { arrayToHexString, binaryStringToArray, getKeys, getSignature } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import { fromUnixTime } from 'date-fns';
 import unique from '@proton/utils/unique';
 import partition from '@proton/utils/partition';
@@ -36,25 +36,24 @@ import formatUTC from '../../date-fns-utc/format';
 import { withSummary } from '../veventHelper';
 
 export const getHasCalendarEventMatchingSigningKeys = async (event: CalendarEvent, keys: Key[]) => {
-    // OpenPGP types are broken
     const allEventSignatures = [...event.SharedEvents, ...event.CalendarEvents, ...event.AttendeesEvents].flatMap(
         (event) => (event.Signature ? [event.Signature] : [])
     );
 
-    const allSignaturesPromises = Promise.all(allEventSignatures.map((signature) => getSignature(signature)));
-    const allKeyIdsPromises = Promise.all(
-        keys.map(async (key) => {
-            const [signingKey] = await getKeys(key.PrivateKey);
-            // @ts-ignore
-            return arrayToHexString(binaryStringToArray(signingKey.getKeyId().bytes as string));
-        })
+    const allSignaturesKeyInfo = await Promise.all(
+        allEventSignatures.map((armoredSignature) => CryptoProxy.getSignatureInfo({ armoredSignature }))
     );
-    const [allSignatures, allKeyIds] = await Promise.all([allSignaturesPromises, allKeyIdsPromises]);
-    const allSignatureKeyIds: string[] = unique(
-        // @ts-ignore
-        allSignatures.flatMap((signature) => signature.packets.map(({ issuerKeyId }) => issuerKeyId.toHex()))
-    );
-    return allSignatureKeyIds.some((id) => allKeyIds.includes(id));
+    const allSigningKeyIDs = unique(allSignaturesKeyInfo.flatMap(({ signingKeyIDs }) => signingKeyIDs));
+    for (const { PrivateKey: armoredKey } of keys) {
+        const { keyIDs } = await CryptoProxy.getKeyInfo({ armoredKey });
+        const isSigningKey = keyIDs.some((keyID) => allSigningKeyIDs.includes(keyID));
+
+        if (isSigningKey) {
+            return true;
+        }
+    }
+
+    return false;
 };
 
 export interface GetErrorProps {

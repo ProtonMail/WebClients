@@ -1,4 +1,3 @@
-import { OpenPGPSignature } from 'pmcrypto';
 import isTruthy from '@proton/utils/isTruthy';
 import { SimpleMap } from '../interfaces';
 import { EncryptPartResult, SignPartResult } from '../interfaces/calendar/PartResult';
@@ -7,9 +6,6 @@ import { uint8ArrayToBase64String } from '../helpers/encoding';
 import { CALENDAR_CARD_TYPE } from './constants';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED } = CALENDAR_CARD_TYPE;
-
-// Wrong typings in openpgp.d.ts...
-export const getArmoredSignatureString = (signature: OpenPGPSignature) => signature.armor() as unknown as string;
 
 /**
  * Format the data into what the API expects.
@@ -48,12 +44,12 @@ export const formatData = ({
                       {
                           Type: SIGNED,
                           Data: sharedSignedPart.data,
-                          Signature: getArmoredSignatureString(sharedSignedPart.signature),
+                          Signature: sharedSignedPart.signature,
                       },
                       {
                           Type: ENCRYPTED_AND_SIGNED,
                           Data: uint8ArrayToBase64String(sharedEncryptedPart.dataPacket),
-                          Signature: getArmoredSignatureString(sharedEncryptedPart.signature),
+                          Signature: sharedEncryptedPart.signature,
                       },
                   ]
                 : undefined,
@@ -66,12 +62,12 @@ export const formatData = ({
                       calendarSignedPart && {
                           Type: SIGNED,
                           Data: calendarSignedPart.data,
-                          Signature: getArmoredSignatureString(calendarSignedPart.signature),
+                          Signature: calendarSignedPart.signature,
                       },
                       calendarEncryptedPart && {
                           Type: ENCRYPTED_AND_SIGNED,
                           Data: uint8ArrayToBase64String(calendarEncryptedPart.dataPacket),
-                          Signature: getArmoredSignatureString(calendarEncryptedPart.signature),
+                          Signature: calendarEncryptedPart.signature,
                       },
                   ].filter(isTruthy)
                 : undefined,
@@ -80,7 +76,7 @@ export const formatData = ({
             ? {
                   Type: SIGNED,
                   Data: personalSignedPart.data,
-                  Signature: getArmoredSignatureString(personalSignedPart.signature),
+                  Signature: personalSignedPart.signature,
               }
             : undefined,
         AttendeesEventContent: attendeesEncryptedPart
@@ -88,7 +84,7 @@ export const formatData = ({
                   {
                       Type: ENCRYPTED_AND_SIGNED,
                       Data: uint8ArrayToBase64String(attendeesEncryptedPart.dataPacket),
-                      Signature: getArmoredSignatureString(attendeesEncryptedPart.signature),
+                      Signature: attendeesEncryptedPart.signature,
                   },
               ]
             : undefined,

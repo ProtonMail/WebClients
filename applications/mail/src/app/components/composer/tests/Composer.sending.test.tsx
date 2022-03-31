@@ -1,4 +1,4 @@
-import { DecryptResultPmcrypto } from 'pmcrypto';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { MIME_TYPES, PGP_SIGN } from '@proton/shared/lib/constants';
 import { fireEvent, getByTestId } from '@testing-library/dom';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
@@ -410,7 +410,9 @@ describe('Composer sending', () => {
             });
 
             addApiKeys(false, toAddress, [toKeys]);
-            store.dispatch(addAttachment({ ID: attachment.ID as string, attachment: {} as DecryptResultPmcrypto }));
+            store.dispatch(
+                addAttachment({ ID: attachment.ID as string, attachment: {} as WorkerDecryptionResult<Uint8Array> })
+            );
 
             const sendRequest = await send(message);
 

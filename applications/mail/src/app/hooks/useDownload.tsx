@@ -5,7 +5,7 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import { useCallback } from 'react';
 import { FeatureCode, useApi, useFeature } from '@proton/components';
 import { useDispatch } from 'react-redux';
-import { DecryptResultPmcrypto } from 'pmcrypto';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import {
     Download,
     formatDownload,
@@ -43,7 +43,7 @@ export const useDownload = () => {
     const getMessageKeys = useSyncedMessageKeys();
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
-    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
@@ -92,7 +92,7 @@ export const useDownloadAll = () => {
     const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
-    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
@@ -146,7 +146,7 @@ export const usePreview = () => {
     const getMessageKeys = useSyncedMessageKeys();
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
-    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 

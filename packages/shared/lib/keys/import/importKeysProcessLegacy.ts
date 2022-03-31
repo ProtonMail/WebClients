@@ -1,4 +1,4 @@
-import { encryptPrivateKey } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import { KeyImportData, OnKeyImportCallback } from './interface';
 import { Address, Api, DecryptedKey } from '../../interfaces';
 import { getSignedKeyList } from '../signedKeyList';
@@ -26,7 +26,7 @@ const importKeysProcessLegacy = async ({
     addressKeys,
 }: ImportKeysProcessLegacyArguments) => {
     const activeKeys = await getActiveKeys(address.SignedKeyList, address.Keys, addressKeys);
-    const inactiveKeys = await getInactiveKeys(address.Keys, activeKeys);
+    const inactiveKeys = await getInactiveKeys(address.Keys, activeKeys); // TODO lara do no parse privateKey, only public one?
 
     const [keysToReactivate, keysToImport, existingKeys] = getFilteredImportRecords(
         keyImportRecords,
@@ -43,7 +43,10 @@ const importKeysProcessLegacy = async ({
     for (const keyImportRecord of keysToImport) {
         try {
             const { privateKey } = keyImportRecord;
-            const privateKeyArmored = await encryptPrivateKey(privateKey, keyPassword);
+            const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+                privateKey,
+                passphrase: keyPassword,
+            });
 
             const newActiveKey = await getActiveKeyObject(privateKey, {
                 ID: 'tmp',

@@ -1,15 +1,12 @@
 import { c } from 'ttag';
-import {
-    concatArrays,
-    decryptMessage,
-    decryptPrivateKey,
-    getMessage,
-    getSignature,
-    OpenPGPKey,
-    VERIFICATION_STATUS,
-    getMatchingKey,
-} from 'pmcrypto';
 
+import {
+    CryptoProxy,
+    getMatchingSigningKey,
+    PrivateKeyReference,
+    VERIFICATION_STATUS,
+} from '@proton/crypto';
+import { concatArrays } from '@proton/crypto/lib/utils';
 import { useAddressesKeys } from '@proton/components';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -39,7 +36,7 @@ export const getPossibleAddressPrivateKeys = (addressesKeys: ReturnType<typeof u
 };
 
 export async function decryptLockedSharePassphrase(
-    oldPrivateKey: OpenPGPKey,
+    oldPrivateKey: PrivateKeyReference,
     lockedShare: ShareWithKey
 ): Promise<string | undefined> {
     if (!lockedShare.possibleKeyPackets) {
@@ -50,15 +47,15 @@ export async function decryptLockedSharePassphrase(
         lockedShare.possibleKeyPackets.map((keyPacket) => base64StringToUint8Array(keyPacket))
     );
     const sessionKey = await getDecryptedSessionKey({
-        data: await getMessage(keyPacketsAsUnit8Array),
+        data: keyPacketsAsUnit8Array,
         privateKeys: oldPrivateKey,
     });
 
-    const { data: decryptedPassphrase, verified } = await decryptMessage({
-        message: await getMessage(lockedShare.passphrase),
-        signature: await getSignature(lockedShare.passphraseSignature),
+    const { data: decryptedPassphrase, verified } = await CryptoProxy.decryptMessage({
+        armoredMessage: lockedShare.passphrase,
+        armoredSignature: lockedShare.passphraseSignature,
         sessionKeys: sessionKey,
-        publicKeys: oldPrivateKey.toPublic(),
+        verificationKeys: oldPrivateKey,
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -71,15 +68,18 @@ export async function decryptLockedSharePassphrase(
         return;
     }
 
-    const lockedShareKey = await decryptPrivateKey(lockedShare.key, decryptedPassphrase);
+    const lockedShareKey = await CryptoProxy.importPrivateKey({
+        armoredKey: lockedShare.key,
+        passphrase: decryptedPassphrase,
+    });
     const shareSessionKey = await getDecryptedSessionKey({
-        data: await getMessage(lockedShare.rootLinkRecoveryPassphrase),
+        data: lockedShare.rootLinkRecoveryPassphrase,
         privateKeys: lockedShareKey,
     });
-    const { data: shareDecryptedPassphrase } = await decryptMessage({
-        message: await getMessage(lockedShare.rootLinkRecoveryPassphrase),
+    const { data: shareDecryptedPassphrase } = await CryptoProxy.decryptMessage({
+        armoredMessage: lockedShare.rootLinkRecoveryPassphrase,
         sessionKeys: shareSessionKey,
-        publicKeys: lockedShareKey.toPublic(),
+        verificationKeys: lockedShareKey,
     });
 
     return shareDecryptedPassphrase;
@@ -87,11 +87,13 @@ export async function decryptLockedSharePassphrase(
 
 export async function prepareVolumeForRestore(
     share: ShareWithKey,
-    addressPrivateKeys: OpenPGPKey[]
+    addressPrivateKeys: PrivateKeyReference[]
 ): Promise<LockedVolumeForRestore | undefined> {
     try {
-        const signature = await getSignature(share.passphraseSignature);
-        const matchingPrivateKey = await getMatchingKey(signature, addressPrivateKeys);
+        const matchingPrivateKey = (await getMatchingSigningKey({
+            armoredSignature: share.passphraseSignature,
+            keys: addressPrivateKeys,
+        })) as PrivateKeyReference | undefined;
 
         if (matchingPrivateKey) {
             const decryptedPassphrase = await decryptLockedSharePassphrase(matchingPrivateKey, share);

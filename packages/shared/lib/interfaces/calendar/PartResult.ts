@@ -1,11 +1,9 @@
-import { OpenPGPSignature } from 'pmcrypto';
-
 export interface EncryptPartResult {
     dataPacket: Uint8Array;
-    signature: OpenPGPSignature;
+    signature: string;
 }
 
 export interface SignPartResult {
     data: string;
-    signature: OpenPGPSignature;
+    signature: string;
 }

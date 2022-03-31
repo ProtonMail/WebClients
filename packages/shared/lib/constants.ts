@@ -1,4 +1,6 @@
 import { c } from 'ttag';
+import type { enums } from '@proton/crypto';
+import { EncryptionConfig } from './interfaces';
 
 export const DEFAULT_TIMEOUT = 30000; // default fetch timeout
 export const RETRY_DELAY_MAX = 10; // seconds
@@ -647,9 +649,9 @@ export enum ENCRYPTION_TYPES {
 
 export const DEFAULT_ENCRYPTION_CONFIG = ENCRYPTION_TYPES.CURVE25519;
 
-export const ENCRYPTION_CONFIGS = {
-    [ENCRYPTION_TYPES.CURVE25519]: { curve: 'ed25519' },
-    [ENCRYPTION_TYPES.RSA4096]: { numBits: 4096 },
+export const ENCRYPTION_CONFIGS: { [key: string]: EncryptionConfig } = {
+    [ENCRYPTION_TYPES.CURVE25519]: { type: 'ecc', curve: 'ed25519' as enums.curve }, // casting is just informational
+    [ENCRYPTION_TYPES.RSA4096]: { type: 'rsa', rsaBits: 4096 },
 };
 
 export enum KEY_FLAG {
