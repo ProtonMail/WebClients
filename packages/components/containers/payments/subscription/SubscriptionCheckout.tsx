@@ -2,15 +2,7 @@ import { Fragment, ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { compare } from '@proton/shared/lib/helpers/array';
-import {
-    ADDON_NAMES,
-    APPS,
-    BLACK_FRIDAY,
-    CYCLE,
-    MEMBER_PLAN_MAPPING,
-    PLAN_TYPES,
-    PLANS,
-} from '@proton/shared/lib/constants';
+import { ADDON_NAMES, APPS, CYCLE, MEMBER_PLAN_MAPPING, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { getTimeRemaining } from '@proton/shared/lib/date/date';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
@@ -22,7 +14,6 @@ import {
     PlansMap,
     SubscriptionCheckResponse,
 } from '@proton/shared/lib/interfaces';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { getHasCycleDiscount } from '@proton/shared/lib/helpers/subscription';
 
 import { Info, Time } from '../../../components';
@@ -33,6 +24,7 @@ import CheckoutRow from './CheckoutRow';
 import Checkout from '../Checkout';
 import PaymentGiftCode from '../PaymentGiftCode';
 import { getSubTotal } from './getSubTotal';
+import { getTotalBillingText } from '../helper';
 
 interface Props {
     submit?: ReactNode;
@@ -41,25 +33,11 @@ interface Props {
     checkResult?: Partial<SubscriptionCheckResponse>;
     currency: Currency;
     cycle: Cycle;
-    coupon?: string | null;
     gift?: string;
     onChangeCurrency: (currency: Currency) => void;
     onChangeGift?: (gift: string) => void;
     planIDs: PlanIDs;
 }
-
-const getTotalBillingText = (cycle: Cycle) => {
-    if (cycle === CYCLE.MONTHLY) {
-        return c('Checkout row').t`Billed monthly`;
-    }
-    if (cycle === CYCLE.YEARLY) {
-        return c('Checkout row').t`Billed annually`;
-    }
-    if (cycle === CYCLE.TWO_YEARS) {
-        return c('Checkout row').t`Billed every 2 years`;
-    }
-    return '';
-};
 
 const getTitle = (planName: PLANS | ADDON_NAMES, cycle: Cycle, plansMap: PlansMap, quantity: number, users: number) => {
     if (planName.startsWith('1domain')) {
@@ -217,31 +195,6 @@ const TotalPeriodEndTitle = ({ PeriodEnd }: { PeriodEnd?: number }) => {
     );
 };
 
-const DriveCheckoutRow = ({ planIDs, cycle, coupon }: { planIDs: PlanIDs; cycle: Cycle; coupon?: string | null }) => {
-    const driveAppName = getAppName(APPS.PROTONDRIVE);
-
-    const hasVisionary = !!planIDs[PLANS.VISIONARY];
-    const hasMailPlus = !!planIDs[PLANS.PLUS];
-    const hasVpnPlus = !!planIDs[PLANS.VPNPLUS];
-
-    if (
-        hasVisionary ||
-        (hasMailPlus && hasVpnPlus && cycle === CYCLE.TWO_YEARS) ||
-        (coupon === BLACK_FRIDAY.COUPON_CODE &&
-            hasMailPlus &&
-            hasVpnPlus &&
-            [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle))
-    ) {
-        return (
-            <div className="border-top pt0-5">
-                <CheckoutRow className="text-bold" title={driveAppName} amount={0} />
-            </div>
-        );
-    }
-
-    return null;
-};
-
 export const SubscriptionCheckoutLocal = ({
     loading,
     plans,
@@ -277,9 +230,9 @@ export const SubscriptionCheckoutLocal = ({
                 isUpdating={false}
                 additions={null}
             />
-            <div className="border-top pt0-5">
+            <div className="border-top pt1">
                 <CheckoutRow
-                    className="m0 text-semibold"
+                    className="text-semibold"
                     title={getTotalBillingText(cycle)}
                     amount={subTotal}
                     currency={currency}
@@ -295,7 +248,6 @@ const SubscriptionCheckout = ({
     plans = [],
     currency,
     cycle,
-    coupon,
     gift,
     onChangeCurrency,
     onChangeGift,
@@ -307,28 +259,6 @@ const SubscriptionCheckout = ({
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const isUpdating = !!checkResult.Additions; // Additions is present if the user is updating his current configuration by adding add-ons
     const plansMap = toMap(plans, 'Name');
-
-    const getQuantity = (name: PLANS | ADDON_NAMES, quantity: number) => {
-        if (isUpdating) {
-            return checkResult?.Additions?.[name as ADDON_NAMES] || 0;
-        }
-        return quantity;
-    };
-    const plansConfigurationMap = Object.entries(planIDs).reduce<PlanIDs>((acc, [planID, quantity]) => {
-        const plan = plansMap[planID as PLANS | ADDON_NAMES];
-        if (plan?.Name) {
-            acc[plan.Name] = getQuantity(plan.Name, quantity);
-        }
-        return acc;
-    }, {});
-
-    const subTotal = getSubTotal(plansConfigurationMap, plansMap, cycle) / cycle;
-
-    const total = isUpdating
-        ? (checkResult.AmountDue || 0) - (checkResult.Credit || 0)
-        : (checkResult.Amount || 0) + (checkResult.CouponDiscount || 0);
-    const monthlyTotal = ((checkResult.Amount || 0) + (checkResult.CouponDiscount || 0)) / cycle;
-    const discount = monthlyTotal - subTotal;
 
     return (
         <Checkout
@@ -345,33 +275,11 @@ const SubscriptionCheckout = ({
                 isUpdating={isUpdating}
                 additions={checkResult?.Additions}
             />
-            <DriveCheckoutRow planIDs={planIDs} cycle={cycle} coupon={coupon} />
             {checkResult.Amount ? (
                 <>
-                    {coupon ? (
-                        <div className="border-bottom mb0-5">
-                            <CheckoutRow
-                                className="m0"
-                                title={c('Title').t`Subtotal`}
-                                amount={subTotal}
-                                currency={currency}
-                            />
-                            <CheckoutRow
-                                title={
-                                    <>
-                                        <span className="mr0-5">{c('Title').t`Coupon discount`}</span>
-                                        <DiscountBadge code={coupon} />
-                                    </>
-                                }
-                                amount={discount}
-                                currency={currency}
-                                className="text-sm mt0 mb0"
-                            />
-                        </div>
-                    ) : null}
-                    <div className="border-top pt0-5">
+                    <div className="border-top pt1">
                         <CheckoutRow
-                            className="m0 text-semibold"
+                            className="text-semibold"
                             title={
                                 <>
                                     {isUpdating ? (
@@ -381,10 +289,27 @@ const SubscriptionCheckout = ({
                                     )}
                                 </>
                             }
-                            amount={total}
+                            amount={checkResult?.Amount}
                             currency={currency}
                         />
                     </div>
+                    {checkResult?.Coupon?.Code && checkResult?.CouponDiscount ? (
+                        <CheckoutRow
+                            title={
+                                <>
+                                    <span className="mr0-5">{checkResult.Coupon.Code}</span>
+                                    <DiscountBadge
+                                        code={checkResult.Coupon.Code}
+                                        description={checkResult.Coupon.Description}
+                                    >
+                                        {Math.round((Math.abs(checkResult.CouponDiscount) / checkResult.Amount) * 100)}%
+                                    </DiscountBadge>
+                                </>
+                            }
+                            amount={checkResult.CouponDiscount}
+                            currency={currency}
+                        />
+                    ) : null}
                     {checkResult.Proration || checkResult.Credit || checkResult.Gift ? (
                         <div className="border-bottom mb0-5">
                             {checkResult.Proration ? (
@@ -404,7 +329,6 @@ const SubscriptionCheckout = ({
                                     }
                                     amount={checkResult.Proration}
                                     currency={currency}
-                                    className="small mt0 mb0"
                                 />
                             ) : null}
                             {checkResult.Credit ? (
@@ -412,7 +336,6 @@ const SubscriptionCheckout = ({
                                     title={c('Title').t`Credits`}
                                     amount={checkResult.Credit}
                                     currency={currency}
-                                    className="small mt0 mb0"
                                 />
                             ) : null}
                             {checkResult.Gift ? (
@@ -420,7 +343,6 @@ const SubscriptionCheckout = ({
                                     title={c('Title').t`Gift code`}
                                     amount={checkResult.Gift}
                                     currency={currency}
-                                    className="small mt0 mb0"
                                 />
                             ) : null}
                         </div>

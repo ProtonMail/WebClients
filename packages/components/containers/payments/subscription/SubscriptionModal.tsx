@@ -491,7 +491,6 @@ const SubscriptionModal = ({
                                     cycle={model.cycle}
                                     planIDs={model.planIDs}
                                     gift={model.gift}
-                                    coupon={model.coupon}
                                     onChangeCurrency={handleChangeCurrency}
                                     onChangeGift={handleGift}
                                 />
