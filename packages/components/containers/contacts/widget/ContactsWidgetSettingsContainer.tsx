@@ -1,9 +1,7 @@
 import { c } from 'ttag';
-
 import { Label, Field, Info, CircleLoader } from '@proton/components';
 import { useContacts, useMailSettings } from '@proton/components/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-
 import AutoSaveContactsToggle from '../../general/AutoSaveContactsToggle';
 import ContactsWidgetSettingsContainerExport from './ContactsWidgetSettingsContainerExport';
 import ContactsWidgetSettingsContainerImport from './ContactsWidgetSettingsContainerImport';

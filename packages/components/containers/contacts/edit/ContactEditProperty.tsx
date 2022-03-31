@@ -4,11 +4,10 @@ import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/c
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { Button, DropdownActions, Icon, Tooltip, OrderableHandle } from '../../../components';
 import { classnames } from '../../../helpers';
-import { useModals, useUser } from '../../../hooks';
+import { useUser } from '../../../hooks';
 import ContactEditLabel from './ContactEditLabel';
 import ContactFieldProperty from './fields/ContactFieldProperty';
 import ContactGroupDropdown from '../ContactGroupDropdown';
-import ContactUpgradeModal from '../ContactUpgradeModal';
 
 interface Props {
     vCardProperty: VCardProperty;
@@ -23,6 +22,7 @@ interface Props {
     filteredTypes?: string[];
     contactEmail?: ContactEmailModel;
     onContactEmailChange?: (contactEmail: ContactEmailModel) => void;
+    onUpgrade: () => void;
 }
 
 const ContactEditProperty = (
@@ -39,13 +39,13 @@ const ContactEditProperty = (
         filteredTypes,
         contactEmail,
         onContactEmailChange,
+        onUpgrade,
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
     const { field, value } = vCardProperty;
     const canDelete = !(field === 'photo' && !value);
     const [{ hasPaidMail }] = useUser();
-    const { createModal } = useModals();
 
     const list = [];
 
@@ -146,11 +146,7 @@ const ContactEditProperty = (
                                             </ContactGroupDropdown>
                                         ) : (
                                             <Tooltip title={c('Title').t`Contact group`}>
-                                                <Button
-                                                    icon
-                                                    onClick={() => createModal(<ContactUpgradeModal />)}
-                                                    className="mr0-5"
-                                                >
+                                                <Button icon onClick={onUpgrade} className="mr0-5">
                                                     <Icon name="users" alt={c('Action').t`Contact group`} />
                                                 </Button>
                                             </Tooltip>

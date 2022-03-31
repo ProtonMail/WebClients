@@ -4,9 +4,9 @@ import { Button } from '../../../../components';
 import { useModals, useUser } from '../../../../hooks';
 
 import { SettingsSection, SettingsParagraph } from '../../../account';
-import ContactGroupModal from '../../modals/ContactGroupModal';
-import ContactGroupsTable from '../../ContactGroupsTable';
-import ContactUpgradeModal from '../../ContactUpgradeModal';
+import ContactGroupModal from '../../group/ContactGroupEditModal';
+import ContactGroupsTable from '../ContactGroupsTable';
+import ContactUpgradeModal from '../../modals/ContactUpgradeModal';
 
 const ContactGroupsSection = () => {
     const { createModal } = useModals();

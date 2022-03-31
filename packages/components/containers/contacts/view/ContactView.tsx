@@ -29,6 +29,8 @@ interface Props {
     onEdit: (newField?: string) => void;
     onEmailSettings: (props: ContactEmailSettingsProps) => void;
     onExport: () => void;
+    onGroupDetails: (contactGroupID: string) => void;
+    onUpgrade: () => void;
     isPreview?: boolean;
 }
 
@@ -45,6 +47,8 @@ const ContactView = ({
     onEdit,
     onEmailSettings,
     onExport,
+    onGroupDetails,
+    onUpgrade,
     isPreview = false,
 }: Props) => {
     const hasError = errors?.some(
@@ -80,6 +84,8 @@ const ContactView = ({
                     ownAddresses={ownAddresses}
                     contactID={contactID}
                     onEmailSettings={onEmailSettings}
+                    onGroupDetails={onGroupDetails}
+                    onUpgrade={onUpgrade}
                 />
                 <ContactViewTels vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
                 <ContactViewAdrs vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />

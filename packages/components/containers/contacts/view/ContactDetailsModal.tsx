@@ -25,11 +25,22 @@ export interface ContactDetailsProps {
     onEdit: (props: ContactEditProps) => void;
     onDelete: (props: ContactDeleteProps) => void;
     onEmailSettings: (props: ContactEmailSettingsProps) => void;
+    onGroupDetails: (contactGroupID: string) => void;
+    onUpgrade: () => void;
 }
 
 type Props = ContactDetailsProps & ModalProps;
 
-const ContactDetailsModal = ({ contactID, onMailTo, onEdit, onDelete, onEmailSettings, ...rest }: Props) => {
+const ContactDetailsModal = ({
+    contactID,
+    onMailTo,
+    onEdit,
+    onDelete,
+    onEmailSettings,
+    onGroupDetails,
+    onUpgrade,
+    ...rest
+}: Props) => {
     const { onClose } = rest;
 
     const [mailSettings] = useMailSettings();
@@ -111,6 +122,8 @@ const ContactDetailsModal = ({ contactID, onMailTo, onEdit, onDelete, onEmailSet
                                 onEdit={handleEdit}
                                 onEmailSettings={onEmailSettings}
                                 onExport={handleExport}
+                                onGroupDetails={onGroupDetails}
+                                onUpgrade={onUpgrade}
                             />
                         )}
                     </div>

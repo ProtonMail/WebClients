@@ -38,9 +38,11 @@ interface Props {
     inputValue: any;
     onSubmit: (recipients: Recipient[]) => void;
     onClose?: () => void;
+    onGroupDetails: (contactGroupID: string) => void;
+    onUpgrade: () => void;
 }
 
-const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => {
+const ContactListModal = ({ onSubmit, onClose, inputValue, onGroupDetails, onUpgrade, ...rest }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
     const searchInputRef = useRef<HTMLInputElement>(null);
@@ -186,7 +188,7 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
 
             <ModalTwoContent>
                 {!contactEmails.length ? (
-                    <EmptyContacts onClose={onClose} />
+                    <EmptyContacts onClose={onClose} onUpgrade={onUpgrade} />
                 ) : (
                     <>
                         <div className="mb0-5">
@@ -234,6 +236,7 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
                                             checked={!!checkedContactEmailMap[filteredContactEmails[index].ID]}
                                             contactGroupsMap={contactGroupsMap}
                                             isNarrow={isNarrow}
+                                            onGroupDetails={onGroupDetails}
                                         />
                                     )}
                                 />
