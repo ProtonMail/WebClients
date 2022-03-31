@@ -1,64 +1,56 @@
 import { c } from 'ttag';
 import getRandomValues from '@proton/get-random-values';
-import {
-    arrayToHexString,
-    createMessage,
-    decryptMessage,
-    encryptMessage,
-    encryptPrivateKey,
-    generateKey,
-    getMessage,
-    getSignature,
-    OpenPGPKey,
-    reformatKey,
-    signMessage,
-    VERIFICATION_STATUS,
-} from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
+import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { decryptMemberToken } from './memberToken';
 import { EncryptionConfig, KeyPair } from '../interfaces';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
 
 interface EncryptAddressKeyTokenArguments {
     token: string;
-    userKey: OpenPGPKey;
-    organizationKey?: OpenPGPKey;
+    userKey: PrivateKeyReference;
+    organizationKey?: PrivateKeyReference;
 }
 
 export const encryptAddressKeyToken = async ({ token, userKey, organizationKey }: EncryptAddressKeyTokenArguments) => {
-    const message = createMessage(token);
+    const date = serverTime(); // ensure the signed message and the encrypted one have the same creation time, otherwise verification will fail
+    const textData = token;
     const [userSignatureResult, organizationSignatureResult] = await Promise.all([
-        signMessage({
-            message,
-            privateKeys: [userKey],
+        CryptoProxy.signMessage({
+            textData, // stripTrailingSpaces: false,
+            date,
+            signingKeys: [userKey],
             detached: true,
         }),
         organizationKey
-            ? signMessage({
-                  message,
-                  privateKeys: [organizationKey],
+            ? CryptoProxy.signMessage({
+                  textData, // stripTrailingSpaces: false,
+                  date,
+                  signingKeys: [organizationKey],
                   detached: true,
               })
             : undefined,
     ]);
 
-    const { data: encryptedToken } = await encryptMessage({
-        message,
-        publicKeys: organizationKey ? [userKey.toPublic(), organizationKey.toPublic()] : [userKey.toPublic()],
+    const { message: encryptedToken } = await CryptoProxy.encryptMessage({
+        textData,
+        date,
+        encryptionKeys: organizationKey ? [userKey, organizationKey] : [userKey],
     });
 
     return {
         token,
         encryptedToken,
-        signature: userSignatureResult.signature,
-        ...(organizationSignatureResult?.signature && { organizationSignature: organizationSignatureResult.signature }),
+        signature: userSignatureResult,
+        ...(organizationSignatureResult && { organizationSignature: organizationSignatureResult }),
     };
 };
 
 interface DecryptAddressKeyTokenArguments {
     Token: string;
     Signature: string;
-    privateKeys: OpenPGPKey | OpenPGPKey[];
-    publicKeys: OpenPGPKey | OpenPGPKey[];
+    privateKeys: PrivateKeyReference | PrivateKeyReference[];
+    publicKeys: PublicKeyReference | PublicKeyReference[];
 }
 
 export const decryptAddressKeyToken = async ({
@@ -67,11 +59,11 @@ export const decryptAddressKeyToken = async ({
     privateKeys,
     publicKeys,
 }: DecryptAddressKeyTokenArguments) => {
-    const { data: decryptedToken, verified } = await decryptMessage({
-        message: await getMessage(Token),
-        signature: await getSignature(Signature),
-        privateKeys,
-        publicKeys,
+    const { data: decryptedToken, verified } = await CryptoProxy.decryptMessage({
+        armoredMessage: Token,
+        armoredSignature: Signature,
+        decryptionKeys: privateKeys,
+        verificationKeys: publicKeys,
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -95,15 +87,15 @@ interface AddressKeyOrgTokenResult extends AddressKeyTokenResult {
 }
 
 export function generateAddressKeyTokens(
-    userKey: OpenPGPKey,
-    organizationKey: OpenPGPKey
+    userKey: PrivateKeyReference,
+    organizationKey: PrivateKeyReference
 ): Promise<AddressKeyOrgTokenResult>;
 export function generateAddressKeyTokens(
-    userKey: OpenPGPKey,
-    organizationKey?: OpenPGPKey
+    userKey: PrivateKeyReference,
+    organizationKey?: PrivateKeyReference
 ): Promise<AddressKeyTokenResult>;
 
-export async function generateAddressKeyTokens(userKey: OpenPGPKey, organizationKey?: OpenPGPKey) {
+export async function generateAddressKeyTokens(userKey: PrivateKeyReference, organizationKey?: PrivateKeyReference) {
     const randomBytes = getRandomValues(new Uint8Array(32));
     const token = arrayToHexString(randomBytes);
     return encryptAddressKeyToken({ token, organizationKey, userKey });
@@ -113,8 +105,8 @@ interface GetAddressKeyTokenArguments {
     Token: string;
     Signature: string;
     organizationKey?: KeyPair;
-    privateKeys: OpenPGPKey | OpenPGPKey[];
-    publicKeys: OpenPGPKey | OpenPGPKey[];
+    privateKeys: PrivateKeyReference | PrivateKeyReference[];
+    publicKeys: PublicKeyReference | PublicKeyReference[];
 }
 
 export const getAddressKeyToken = ({
@@ -145,7 +137,7 @@ export interface ReformatAddressKeyArguments {
     email: string;
     name?: string;
     passphrase: string;
-    privateKey: OpenPGPKey;
+    privateKey: PrivateKeyReference;
 }
 
 export const reformatAddressKey = async ({
@@ -154,26 +146,22 @@ export const reformatAddressKey = async ({
     passphrase,
     privateKey: originalKey,
 }: ReformatAddressKeyArguments) => {
-    const { key: privateKey, privateKeyArmored } = await reformatKey({
-        userIds: [{ name, email }],
-        passphrase,
+    const privateKey = await CryptoProxy.reformatKey({
+        userIDs: [{ name, email }],
         privateKey: originalKey,
     });
 
-    await privateKey.decrypt(passphrase);
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase });
 
     return { privateKey, privateKeyArmored };
 };
 
 export const getEncryptedArmoredAddressKey = async (
-    privateKey: OpenPGPKey | undefined,
+    privateKey: PrivateKeyReference,
     email: string,
     newKeyPassword: string
 ) => {
-    if (!privateKey?.isDecrypted?.()) {
-        return;
-    }
-    return encryptPrivateKey(privateKey, newKeyPassword);
+    return CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase: newKeyPassword });
 };
 
 export interface GenerateAddressKeyArguments {
@@ -189,13 +177,12 @@ export const generateAddressKey = async ({
     passphrase,
     encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
 }: GenerateAddressKeyArguments) => {
-    const { key: privateKey, privateKeyArmored } = await generateKey({
-        userIds: [{ name, email }],
-        passphrase,
+    const privateKey = await CryptoProxy.generateKey({
+        userIDs: [{ name, email }],
         ...encryptionConfig,
     });
 
-    await privateKey.decrypt(passphrase);
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase });
 
     return { privateKey, privateKeyArmored };
 };

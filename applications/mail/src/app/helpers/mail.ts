@@ -1,7 +1,4 @@
-import * as PMCrypto from 'pmcrypto';
-
-// While parseMail is not defined in the pmcrypto types
-const parseMail = (PMCrypto as any).parseMail as (content: string) => Promise<any>;
+import { parseMail } from 'pmcrypto-v7/lib/message/parseMail';
 
 const toList = (v = []) => (Array.isArray(v) ? v : [v]);
 

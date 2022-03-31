@@ -16,6 +16,7 @@
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
         "@proton/colors": "workspace:^",
+        "@proton/crypto": "workspace:packages/crypto",
         "@proton/get-random-values": "workspace:packages/get-random-values",
         "@proton/srp": "workspace:packages/srp",
         "@protontech/bip39": "^1.0.2",
@@ -38,7 +39,6 @@
         "jsbi": "^4.3.0",
         "lodash": "^4.17.21",
         "papaparse": "^5.3.2",
-        "pmcrypto": "npm:@protontech/pmcrypto@^6.7.1",
         "push.js": "^1.0.12",
         "ua-parser-js": "^0.8.1",
         "web-streams-polyfill": "^3.2.1"

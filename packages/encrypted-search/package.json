@@ -12,10 +12,10 @@
     },
     "dependencies": {
         "@proton/components": "workspace:packages/components",
+        "@proton/crypto": "workspace:packages/crypto",
         "@proton/shared": "workspace:packages/shared",
         "@proton/utils": "workspace:packages/utils",
-        "idb": "^7.0.2",
-        "pmcrypto": "npm:@protontech/pmcrypto@^6.7.1"
+        "idb": "^7.0.2"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",

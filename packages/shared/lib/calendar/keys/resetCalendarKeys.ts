@@ -1,5 +1,5 @@
-import { getKeys } from 'pmcrypto';
 import { c } from 'ttag';
+import { CryptoProxy } from '@proton/crypto';
 import { useGetAddressKeys } from '@proton/components';
 import { Address, Api } from '../../interfaces';
 import { getCalendarGroupReset, queryMembers, resetCalendarGroup } from '../../api/calendars';
@@ -46,7 +46,9 @@ export const resetCalendarKeys = async ({ api, getAddressKeys, addresses }: Rese
 
             const memberPublicKeyIDs = Object.keys(MemberPublicKeys);
             const parsedMemberPublicKeys = await Promise.all(
-                memberPublicKeyIDs.map((memberID) => getKeys(MemberPublicKeys[memberID]).then(([key]) => key))
+                memberPublicKeyIDs.map((memberID) =>
+                    CryptoProxy.importPublicKey({ armoredKey: MemberPublicKeys[memberID] })
+                )
             );
             const memberPublicKeys = parsedMemberPublicKeys.reduce((acc, publicKey, i) => {
                 return {

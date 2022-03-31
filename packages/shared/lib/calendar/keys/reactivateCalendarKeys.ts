@@ -1,4 +1,4 @@
-import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import { useGetAddressKeys } from '@proton/components';
 import { Address, Api } from '../../interfaces';
 import { getAllCalendarKeys, getPassphrases, queryMembers, reactivateCalendarKey } from '../../api/calendars';
@@ -77,8 +77,14 @@ const reactivateCalendarKeys = async ({
                     privateKeys,
                     publicKeys,
                 });
-                const privateKey = await decryptPrivateKey(PrivateKey, decryptedPassphrase);
-                const armoredEncryptedKey = await encryptPrivateKey(privateKey, decryptedPrimaryPassphrase);
+                const privateKey = await await CryptoProxy.importPrivateKey({
+                    armoredKey: PrivateKey,
+                    passphrase: decryptedPassphrase,
+                });
+                const armoredEncryptedKey = await CryptoProxy.exportPrivateKey({
+                    privateKey: privateKey,
+                    passphrase: decryptedPrimaryPassphrase,
+                });
                 return await api<ReenableKeyResponse>(
                     reactivateCalendarKey(CalendarID, KeyID, { PrivateKey: armoredEncryptedKey })
                 );

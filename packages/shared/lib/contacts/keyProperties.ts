@@ -1,4 +1,5 @@
-import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64, getKeys, OpenPGPKey } from 'pmcrypto';
+import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
+import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import { PGP_SCHEMES, MIME_TYPES } from '../constants';
 import { MimeTypeVcard, PinnedKeysConfig } from '../interfaces';
@@ -27,12 +28,12 @@ export const getMimeTypeVcard = (mimeType: string): MimeTypeVcard | undefined =>
     return mimeType === MIME_TYPES.PLAINTEXT ? mimeType : undefined;
 };
 
-export const getKeyVCard = async (keyValue: string): Promise<OpenPGPKey | undefined> => {
+export const getKeyVCard = async (keyValue: string): Promise<PublicKeyReference | undefined> => {
     const [, base64 = ''] = keyValue.split(',');
     const key = binaryStringToArray(decodeBase64(base64));
 
     if (key.length) {
-        const [publicKey] = await getKeys(key);
+        const publicKey = await CryptoProxy.importPublicKey({ binaryKey: key });
         return publicKey;
     }
 };
@@ -61,7 +62,7 @@ export const getKeyInfoFromProperties = async (
 };
 
 interface VcardPublicKey {
-    publicKey: OpenPGPKey;
+    publicKey: PublicKeyReference;
     group: string;
     index: number;
 }
@@ -69,12 +70,13 @@ interface VcardPublicKey {
 /**
  * Transform a key into a vCard property
  */
-export const toKeyProperty = ({ publicKey, group, index }: VcardPublicKey): VCardProperty<string> => ({
-    field: 'key',
-    value: `data:application/pgp-keys;base64,${encodeBase64(
-        arrayToBinaryString(publicKey.toPacketlist().write() as Uint8Array)
-    )}`,
-    group,
-    params: { pref: String(index + 1) }, // order is important
-    uid: createContactPropertyUid(),
-});
+export const toKeyProperty = async ({ publicKey, group, index }: VcardPublicKey): Promise<VCardProperty<string>> => {
+    const binaryKey = await CryptoProxy.exportPublicKey({ key: publicKey, format: 'binary' });
+    return {
+        field: 'key',
+        value: `data:application/pgp-keys;base64,${encodeBase64(arrayToBinaryString(binaryKey))}`,
+        group,
+        params: { pref: String(index + 1) }, // order is important
+        uid: createContactPropertyUid(),
+    };
+}

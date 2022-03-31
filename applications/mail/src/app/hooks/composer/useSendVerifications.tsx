@@ -10,7 +10,7 @@ import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { HOUR } from '@proton/shared/lib/constants';
-import { serverTime } from 'pmcrypto/lib/serverTime';
+import { serverTime } from '@proton/crypto';
 import { languageCode, localeCode } from '@proton/shared/lib/i18n';
 import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
@@ -175,7 +175,7 @@ export const useSendVerifications = (
                         // otherwise the server might be trying to downgrade the encryption preferences maliciously.
                         const cachedSignatureTime = cachedSendInfo.contactSignatureInfo.creationTime!;
                         const lastMinuteSignatureTime = lastMinuteEncryptionPrefs.contactSignatureTimestamp!;
-                        const lastMinuteSignatureAge = Math.abs(+lastMinuteSignatureTime - serverTime());
+                        const lastMinuteSignatureAge = Math.abs(+lastMinuteSignatureTime - +serverTime());
                         if (
                             +lastMinuteSignatureTime < +cachedSignatureTime ||
                             (+lastMinuteSignatureTime !== +cachedSignatureTime && lastMinuteSignatureAge > 24 * HOUR)

@@ -1,11 +1,12 @@
-import { keyInfo } from 'pmcrypto/lib/pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { upload, ATTACHMENT_ACTION } from '../attachment/attachmentUploader';
 import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
 
-// TS Hack waiting for keyInfo to be completely typed
-type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
-type KeyInfo = ThenArg<ReturnType<typeof keyInfo>>;
+interface KeyInfoForFile {
+    fingerprint: string;
+    publicKeyArmored: string;
+}
 
 const ENCRYPTION_SIZE_SLACK = 0.2;
 
@@ -25,7 +26,7 @@ const blobEqualsAttachment = (file: File, attachment: Attachment) =>
  * Generate a blob corresponding to the public key that is passed in. The name is extracted from the message the
  * key will be attached to.
  */
-const fileFromKeyInfo = (message: MessageState, { publicKeyArmored, fingerprint }: KeyInfo) => {
+const fileFromKeyInfo = (message: MessageState, { publicKeyArmored, fingerprint }: KeyInfoForFile) => {
     const name = `publickey - ${message.data?.Sender?.Address} - 0x${fingerprint.slice(0, 8).toUpperCase()}.asc`;
     return new File([publicKeyArmored], name, { type: 'application/pgp-keys' });
 };
@@ -36,8 +37,11 @@ const fileFromKeyInfo = (message: MessageState, { publicKeyArmored, fingerprint 
 export const attachPublicKey = async (message: MessageStateWithData, messageKeys: PublicPrivateKey, uid: string) => {
     const attachments = message.data?.Attachments || [];
 
-    const privateKeys = messageKeys.privateKeys?.[0];
-    const info = await keyInfo(privateKeys.armor());
+    const privateKey = messageKeys.privateKeys?.[0];
+    const info = {
+        fingerprint: privateKey.getFingerprint(),
+        publicKeyArmored: await CryptoProxy.exportPublicKey({ key: privateKey }),
+    };
     const file = fileFromKeyInfo(message, info);
     const attachmentExists = attachments.some((attachment) => blobEqualsAttachment(file, attachment));
 

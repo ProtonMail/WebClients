@@ -1,4 +1,4 @@
-import { OpenPGPKey, SessionKey, encryptMessage } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
@@ -14,8 +14,8 @@ import ChunkFileReader from '../ChunkFileReader';
 export default async function* generateEncryptedBlocks(
     file: File,
     thumbnailData: Uint8Array | undefined,
-    addressPrivateKey: OpenPGPKey,
-    privateKey: OpenPGPKey,
+    addressPrivateKey: PrivateKeyReference,
+    privateKey: PrivateKeyReference,
     sessionKey: SessionKey
 ): AsyncGenerator<EncryptedBlock | EncryptedThumbnailBlock> {
     if (thumbnailData) {
@@ -30,18 +30,17 @@ export default async function* generateEncryptedBlocks(
 }
 
 async function encryptThumbnail(
-    addressPrivateKey: OpenPGPKey,
+    addressPrivateKey: PrivateKeyReference,
     sessionKey: SessionKey,
     thumbnail: Uint8Array
 ): Promise<EncryptedThumbnailBlock> {
-    const { message } = await encryptMessage({
-        data: thumbnail,
+    const { message: encryptedData } = await CryptoProxy.encryptMessage({
+        binaryData: thumbnail,
         sessionKey,
-        privateKeys: addressPrivateKey,
-        armor: false,
+        signingKeys: addressPrivateKey,
+        format: 'binary',
         detached: false,
     });
-    const encryptedData = message.packets.write();
     const hash = (await generateContentHash(encryptedData)).BlockHash;
     return {
         index: 0,
@@ -56,24 +55,22 @@ async function encryptThumbnail(
 async function encryptBlock(
     index: number,
     chunk: Uint8Array,
-    addressPrivateKey: OpenPGPKey,
-    privateKey: OpenPGPKey,
+    addressPrivateKey: PrivateKeyReference,
+    privateKey: PrivateKeyReference,
     sessionKey: SessionKey
 ) {
-    const { message, signature } = await encryptMessage({
-        data: chunk,
+    const { message: encryptedData, signature } = await CryptoProxy.encryptMessage({
+        binaryData: chunk,
         sessionKey,
-        privateKeys: addressPrivateKey,
-        armor: false,
+        signingKeys: addressPrivateKey,
+        format: 'binary',
         detached: true,
     });
-    const { data: encryptedSignature } = await encryptMessage({
-        data: signature.packets.write(),
+    const { message: encryptedSignature } = await CryptoProxy.encryptMessage({
+        binaryData: signature,
         sessionKey,
-        publicKeys: privateKey.toPublic(),
-        armor: true,
+        encryptionKeys: privateKey,
     });
-    const encryptedData = message.packets.write();
     const hash = (await generateContentHash(encryptedData)).BlockHash;
     return {
         index,

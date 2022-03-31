@@ -1,4 +1,4 @@
-import { getKeys, OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import unique from '@proton/utils/unique';
 import { User as tsUser, Address as tsAddress, KeyPair, SignedKeyList, DecryptedKey, Key } from '../../interfaces';
 
@@ -140,12 +140,12 @@ export const getReactivatedAddressesKeys = async ({
     });
 };
 
-export const resetUserId = async (Key: Key, reactivatedKey: OpenPGPKey) => {
+export const resetUserId = async (Key: Key, reactivatedKey: PrivateKeyReference) => {
     // Before the new key format imposed after key migration, the address and user key were the same key.
     // Users may have exported one of the two. Upon reactivation the fingerprint could match a user key
     // to the corresponding address key or vice versa. For that reason, the userids are reset to the userids
     // of the old key.
-    const [inactiveKey] = await getKeys(Key.PrivateKey);
-    // Warning: This function mutates the key.
-    reactivatedKey.users = inactiveKey.users;
+    const inactiveKey = await CryptoProxy.importPublicKey({ armoredKey: Key.PrivateKey });
+    // Warning: This function mutates the target key.
+    await CryptoProxy.replaceUserIDs({ sourceKey: inactiveKey, targetKey: reactivatedKey });
 };

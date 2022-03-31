@@ -1,4 +1,4 @@
-import { getKeys } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import getRandomString from "@proton/utils/getRandomString";
 import { KeyReactivationRequestStateData, KeyReactivationRequestState, KeyReactivationRequest } from './interface';
 
@@ -12,12 +12,11 @@ export const getInitialStates = async (initial: KeyReactivationRequest[]): Promi
             const keyStates = await Promise.all(
                 record.keysToReactivate.map(async (Key): Promise<KeyReactivationRequestStateData> => {
                     try {
-                        const [key] = await getKeys(Key.PrivateKey);
+                        const { fingerprint } = await CryptoProxy.getKeyInfo({ armoredKey: Key.PrivateKey });
                         return {
                             id: getRandomString(12),
                             Key,
-                            key,
-                            fingerprint: key.getFingerprint(),
+                            fingerprint,
                             result: undefined,
                         };
                     } catch (e: any) {

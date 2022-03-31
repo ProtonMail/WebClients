@@ -107,7 +107,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             : [...model.publicKeys?.apiKeys, ...model.publicKeys.pinnedKeys];
         const trustedKeys = allKeys.filter((publicKey) => model.trustedFingerprints.has(publicKey.getFingerprint()));
         const uniqueTrustedKeys = uniqueBy(trustedKeys, (publicKey) => publicKey.getFingerprint());
-        return uniqueTrustedKeys.map((publicKey, index) => toKeyProperty({ publicKey, group, index }));
+        return Promise.all(uniqueTrustedKeys.map((publicKey, index) => toKeyProperty({ publicKey, group, index })));
     };
 
     /**
@@ -121,7 +121,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
         const newProperties = properties.filter(({ field, group }) => {
             return !VCARD_KEY_FIELDS.includes(field) || (group && group !== emailGroup);
         });
-        newProperties.push(...getKeysProperties(emailGroup || '', model));
+        newProperties.push(...(await getKeysProperties(emailGroup || '', model)));
 
         const mimeType = getMimeTypeVcard(model.mimeType);
         if (mimeType) {

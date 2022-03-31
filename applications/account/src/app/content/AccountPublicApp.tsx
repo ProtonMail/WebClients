@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { useEffect, useState } from 'react';
 import * as React from 'react';
-import { loadOpenPGP } from '@proton/shared/lib/openpgp';
+import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadLocale, loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -42,7 +42,7 @@ const AccountPublicApp = ({ location, locales = {}, children, onActiveSessions, 
                 getClosestLocaleMatch(languageParams || languageCookie || '', locales) ||
                 getClosestLocaleCode(browserLocale, locales);
             await Promise.all([
-                loadOpenPGP(),
+                loadCryptoWorker(),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale),
             ]);

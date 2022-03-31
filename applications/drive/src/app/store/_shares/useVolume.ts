@@ -12,7 +12,7 @@ export default function useVolume() {
     const createVolume = async (): Promise<{ volumeId: string; shareId: string; linkId: string }> => {
         const { address, privateKey } = await getPrimaryAddressKey();
         const { bootstrap, folderPrivateKey } = await generateDriveBootstrap(privateKey);
-        const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey.toPublic(), folderPrivateKey);
+        const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey, folderPrivateKey);
 
         const { Volume } = await debouncedRequest<CreatedDriveVolumeResult>(
             queryCreateDriveVolume({

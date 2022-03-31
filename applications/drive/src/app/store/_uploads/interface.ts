@@ -1,5 +1,5 @@
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import React from 'react';
+import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
 export type UploadConflictModal = React.FunctionComponent<UploadConflictModalProps>;
 
@@ -32,8 +32,8 @@ export interface UploadFolderControls {
 
 export interface UploadCallbacks {
     initialize: (abortSignal: AbortSignal) => Promise<{
-        addressPrivateKey: OpenPGPKey;
-        parentPrivateKey: OpenPGPKey;
+        addressPrivateKey: PrivateKeyReference;
+        parentPrivateKey: PrivateKeyReference;
     }>;
     createFileRevision: (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => Promise<InitializedFileMeta>;
     createBlockLinks: (
@@ -55,16 +55,16 @@ export type FileKeys = {
     nodePassphraseSignature: string;
     contentKeyPacket: string;
     contentKeyPacketSignature: string;
-    privateKey: OpenPGPKey;
+    privateKey: PrivateKeyReference;
     sessionKey: SessionKey;
 };
 
 export type InitializedFileMeta = {
     fileName: string;
-    privateKey: OpenPGPKey;
+    privateKey: PrivateKeyReference;
     sessionKey: SessionKey;
     address: {
-        privateKey: OpenPGPKey;
+        privateKey: PrivateKeyReference;
         email: string;
     };
 };

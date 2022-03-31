@@ -1,6 +1,5 @@
 import { format } from 'date-fns';
 import { useCallback } from 'react';
-import { encryptMessage, OpenPGPKey } from 'pmcrypto';
 
 import { usePreventLeave, useAddressesKeys } from '@proton/components';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -8,6 +7,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import isTruthy from '@proton/utils/isTruthy';
 import { generateLookupHash, encryptPassphrase } from '@proton/shared/lib/keys/driveKeys';
 import { queryRestoreDriveVolume, queryDeleteLockedVolumes } from '@proton/shared/lib/api/drive/volume';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 
 import { useDebouncedFunction } from '../../_utils';
 import { useDebouncedRequest } from '../../_api';
@@ -84,7 +84,7 @@ export function useLockedVolumeInner({
     );
 
     const getPreparedVolumes = useCallback(
-        async (lockedUnpreparedShares: ShareWithKey[], addressPrivateKeys: OpenPGPKey[]) => {
+        async (lockedUnpreparedShares: ShareWithKey[], addressPrivateKeys: PrivateKeyReference[]) => {
             const preparedVolumes = await Promise.all(
                 lockedUnpreparedShares.map((share) => {
                     return debouncedFunction(
@@ -133,9 +133,9 @@ export function useLockedVolumeInner({
 
     const restoreVolume = async (
         parentVolumeID: string,
-        privateKey: OpenPGPKey,
+        privateKey: PrivateKeyReference,
         hashKey: Uint8Array,
-        addressKey: OpenPGPKey,
+        addressKey: PrivateKeyReference,
         address: Address,
         lockedVolumeId: string,
         lockedSharePassphraseRaw: string
@@ -150,13 +150,14 @@ export function useLockedVolumeInner({
         );
         const restoreFolderName = `Restored files ${formattedDate}`;
 
-        const [Hash, { NodePassphrase, NodePassphraseSignature }, { data: encryptedName }] = await Promise.all([
+        const [Hash, { NodePassphrase, NodePassphraseSignature }, { message: encryptedName }] = await Promise.all([
             generateLookupHash(restoreFolderName, hashKey),
             encryptPassphrase(privateKey, addressKey, lockedSharePassphraseRaw),
-            encryptMessage({
-                data: restoreFolderName,
-                publicKeys: privateKey.toPublic(),
-                privateKeys: addressKey,
+            CryptoProxy.encryptMessage({
+                textData: restoreFolderName,
+                stripTrailingSpaces: true,
+                encryptionKeys: privateKey,
+                signingKeys: addressKey,
             }),
         ]);
 

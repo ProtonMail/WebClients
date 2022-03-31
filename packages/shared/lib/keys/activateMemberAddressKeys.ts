@@ -1,4 +1,4 @@
-import { encryptPrivateKey } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import { Address, Api, DecryptedKey, UserModel as tsUserModel } from '../interfaces';
 import { MEMBER_PRIVATE } from '../constants';
 import { getSignedKeyList } from './signedKeyList';
@@ -59,7 +59,10 @@ export const activateMemberAddressKeys = async ({
         }
         if (isKeyMigrationFlow) {
             const { token, encryptedToken, signature } = await generateAddressKeyTokens(primaryUserKey);
-            const encryptedPrivateKey = await encryptPrivateKey(privateKey, token);
+            const encryptedPrivateKey = await CryptoProxy.exportPrivateKey({
+                privateKey,
+                passphrase: token,
+            });
             const SignedKeyList = await getSignedKeyList(activeKeys);
 
             await api(
@@ -72,7 +75,10 @@ export const activateMemberAddressKeys = async ({
                 })
             );
         } else {
-            const encryptedPrivateKey = await encryptPrivateKey(privateKey, keyPassword);
+            const encryptedPrivateKey = await CryptoProxy.exportPrivateKey({
+                privateKey,
+                passphrase: keyPassword,
+            });
             const SignedKeyList = await getSignedKeyList(activeKeys);
 
             await api(activateKeyRoute({ ID, PrivateKey: encryptedPrivateKey, SignedKeyList }));

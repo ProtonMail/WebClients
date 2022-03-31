@@ -1,12 +1,16 @@
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { CryptoProxy } from '@proton/crypto';
 import { KEY as USER_KEYS_CACHE_KEY } from '../../hooks/useUserKeys';
 import { CACHE_KEY as ADDRESS_KEYS_CACHE } from '../../hooks/useGetAddressKeys';
 
 const clearCachedKeys = (cachedKeys: DecryptedKey[] = []) => {
     cachedKeys.forEach?.((cachedKey) => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        cachedKey?.privateKey?.clearPrivateParams();
+        if (cachedKey?.privateKey) {
+            void CryptoProxy.clearKey({ key: cachedKey.privateKey }).catch(() => {});
+        }
+        if (cachedKey?.publicKey) {
+            void CryptoProxy.clearKey({ key: cachedKey.publicKey }).catch(() => {});
+        }
     });
 };
 

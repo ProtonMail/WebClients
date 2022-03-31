@@ -1,6 +1,7 @@
 import { ComponentType, Dispatch, ReactNode, SetStateAction, useRef } from 'react';
 import { c } from 'ttag';
-import { OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import uniqueBy from '@proton/utils/uniqueBy';
 import removeItem from '@proton/utils/removeIndex';
 
@@ -10,7 +11,7 @@ import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
 
 interface FileInputProps {
     multiple?: boolean;
-    onUpload: (keys: OpenPGPKey[]) => void;
+    onUpload: (keys: ArmoredKeyWithInfo[]) => void;
     disabled?: boolean;
     shape?: ButtonProps['shape'];
     color?: ButtonProps['color'];
@@ -18,8 +19,8 @@ interface FileInputProps {
 }
 
 interface Props {
-    uploadedKeys: OpenPGPKey[];
-    setUploadedKeys: Dispatch<SetStateAction<OpenPGPKey[]>>;
+    uploadedKeys: PrivateKeyReference[];
+    setUploadedKeys: Dispatch<SetStateAction<PrivateKeyReference[]>>;
     disabled?: boolean;
     error?: string;
     id: string;
@@ -42,12 +43,12 @@ const KeyUploadContent = ({
 }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
-    const duplicateBackupKeysRef = useRef<OpenPGPKey[]>([]);
+    const duplicateBackupKeysRef = useRef<PrivateKeyReference[]>([]);
 
-    const handleDuplicatedKeysOnUpload = (duplicatedKeys: OpenPGPKey[]) => {
+    const handleDuplicatedKeysOnUpload = (duplicatedKeys: PrivateKeyReference[]) => {
         const [first, second, third] = duplicatedKeys;
 
-        const createAlreadyUploadedNotification = (key: OpenPGPKey) => {
+        const createAlreadyUploadedNotification = (key: PrivateKeyReference) => {
             const fingerprint = key.getFingerprint();
             createNotification({
                 type: 'info',
@@ -69,7 +70,7 @@ const KeyUploadContent = ({
         }
     };
 
-    const handleUpload = (keysToUpload: OpenPGPKey[], acc: OpenPGPKey[]) => {
+    const handleUpload = (keysToUpload: ArmoredKeyWithInfo[], acc: PrivateKeyReference[]) => {
         const [currentKey, ...rest] = keysToUpload;
 
         if (keysToUpload.length === 0) {
@@ -80,14 +81,13 @@ const KeyUploadContent = ({
             return;
         }
 
-        const currentKeyFingerprint = currentKey.getFingerprint();
-        const keyAlreadyAdded = acc.find((key) => key.getFingerprint() === currentKeyFingerprint);
+        const keyAlreadyAdded = acc.find((key) => key.getFingerprint() === currentKey.fingerprint);
         if (keyAlreadyAdded) {
             handleUpload(rest, acc);
             return;
         }
 
-        const keyAlreadyInList = uploadedKeys.find((key) => key.getFingerprint() === currentKeyFingerprint);
+        const keyAlreadyInList = uploadedKeys.find((key) => key.getFingerprint() === currentKey.fingerprint);
         if (keyAlreadyInList) {
             duplicateBackupKeysRef.current.push(keyAlreadyInList);
 
@@ -95,19 +95,14 @@ const KeyUploadContent = ({
             return;
         }
 
-        const handleAddKey = (decryptedPrivateKey: OpenPGPKey) => {
+        const handleAddKey = (decryptedPrivateKey: PrivateKeyReference) => {
             const newList = [...acc, decryptedPrivateKey];
             handleUpload(rest, newList);
         };
 
-        if (currentKey.isDecrypted()) {
-            currentKey
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-ignore - validate does not exist in the openpgp typings, todo
-                .validate()
-                .then(() => {
-                    handleAddKey(currentKey);
-                })
+        if (currentKey.keyIsDecrypted) {
+            CryptoProxy.importPrivateKey({ armoredKey: currentKey.armoredKey, passphrase: null })
+                .then(handleAddKey)
                 .catch((e: Error) => {
                     createNotification({
                         type: 'error',
@@ -119,7 +114,7 @@ const KeyUploadContent = ({
 
         return createModal(
             <DecryptFileKeyModal
-                privateKey={currentKey}
+                privateKeyInfo={currentKey}
                 onSuccess={(decryptedPrivateKey) => {
                     handleAddKey(decryptedPrivateKey);
                 }}
@@ -127,12 +122,13 @@ const KeyUploadContent = ({
         );
     };
 
-    const handleUploadKeys = (keys: OpenPGPKey[]) => {
+    const handleUploadKeys = (keys: ArmoredKeyWithInfo[]) => {
         handleUpload(keys, []);
     };
 
-    const removeUploadedKey = (keyToRemove: OpenPGPKey) => {
+    const removeUploadedKey = (keyToRemove: PrivateKeyReference) => {
         const index = uploadedKeys.indexOf(keyToRemove);
+        void CryptoProxy.clearKey({ key: keyToRemove }); // erase private key material
 
         if (index === -1) {
             return;

@@ -1,5 +1,11 @@
 import { BigNumber, Modulus } from 'asmcrypto.js/dist_es8/bignum/bignum';
-import { concatArrays, arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from 'pmcrypto';
+import {
+    concatArrays,
+    arrayToBinaryString,
+    binaryStringToArray,
+    decodeBase64,
+    encodeBase64,
+} from '@proton/crypto/lib/utils';
 import getRandomValues from '@proton/get-random-values';
 
 import { expandHash, hashPassword } from './passwords';

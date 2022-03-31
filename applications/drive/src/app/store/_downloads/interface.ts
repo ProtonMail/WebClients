@@ -1,7 +1,7 @@
 import { ReadableStream } from 'web-streams-polyfill';
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
 
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
+import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 
 import { DecryptedLink, SignatureIssues } from '../_links';
 
@@ -98,9 +98,9 @@ type GetKeysCallback = (abortSignal: AbortSignal, shareId: string, linkId: strin
 
 export type Pagination = { FromBlockIndex: number; PageSize: number };
 export type DecryptFileKeys = {
-    privateKey: OpenPGPKey;
+    privateKey: PrivateKeyReference;
     sessionKeys?: SessionKey;
-    addressPublicKeys?: OpenPGPKey[];
+    addressPublicKeys?: PublicKeyReference[];
 };
 
 export type InitDownloadCallback = (

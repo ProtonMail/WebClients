@@ -10,8 +10,8 @@ import {
     reactivateKeysProcess,
 } from '@proton/shared/lib/keys';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
+import { AlgorithmInfo } from '@proton/crypto';
 
-import { algorithmInfo } from 'pmcrypto';
 import { Button, Loader, useModalState } from '../../components';
 import {
     useAddresses,
@@ -64,7 +64,7 @@ const AddressKeysSection = () => {
         loadingKeyID,
     });
 
-    const existingAlgorithms = addressKeysDisplay.reduce<algorithmInfo[]>(
+    const existingAlgorithms = addressKeysDisplay.reduce<AlgorithmInfo[]>(
         (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
         []
     );

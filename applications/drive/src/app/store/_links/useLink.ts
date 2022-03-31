@@ -1,15 +1,7 @@
 import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
-import {
-    OpenPGPKey,
-    SessionKey,
-    decryptPrivateKey as pmcryptoDecryptPrivateKey,
-    VERIFICATION_STATUS,
-    verifyMessage,
-    createMessage,
-    getSignature,
-} from 'pmcrypto';
 
+import { CryptoProxy, PrivateKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import { queryGetLink } from '@proton/shared/lib/api/drive/link';
@@ -58,7 +50,7 @@ export default function useLink() {
         linksState,
         getVerificationKey,
         getSharePrivateKey,
-        pmcryptoDecryptPrivateKey
+        CryptoProxy.importPrivateKey
     );
 }
 
@@ -80,7 +72,7 @@ export function useLinkInner(
     linksState: Pick<ReturnType<typeof useLinksState>, 'getLink' | 'setLinks' | 'setCachedThumbnail'>,
     getVerificationKey: ReturnType<typeof useDriveCrypto>['getVerificationKey'],
     getSharePrivateKey: ReturnType<typeof useShare>['getSharePrivateKey'],
-    decryptPrivateKey: typeof pmcryptoDecryptPrivateKey
+    importPrivateKey: typeof CryptoProxy.importPrivateKey // passed as arg for easier mocking when testing
 ) {
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
@@ -194,7 +186,7 @@ export function useLinkInner(
      */
     const getLinkPrivateKey = debouncedFunctionDecorator(
         'getLinkPrivateKey',
-        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<OpenPGPKey> => {
+        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<PrivateKeyReference> => {
             let privateKey = linksKeys.getPrivateKey(shareId, linkId);
             if (privateKey) {
                 return privateKey;
@@ -202,7 +194,7 @@ export function useLinkInner(
 
             const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
             const { passphrase } = await getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId);
-            privateKey = await decryptPrivateKey(encryptedLink.nodeKey, passphrase);
+            privateKey = await importPrivateKey({ armoredKey: encryptedLink.nodeKey, passphrase });
 
             linksKeys.setPrivateKey(shareId, linkId, privateKey);
             return privateKey;
@@ -235,19 +227,19 @@ export function useLinkInner(
 
             if (encryptedLink.contentKeyPacketSignature) {
                 const publicKeys = [privateKey, ...(await getVerificationKey(encryptedLink.signatureAddress))];
-                const { verified } = await verifyMessage({
-                    message: createMessage(sessionKey.data),
-                    publicKeys,
-                    signature: await getSignature(encryptedLink.contentKeyPacketSignature),
+                const { verified } = await CryptoProxy.verifyMessage({
+                    binaryData: sessionKey.data,
+                    verificationKeys: publicKeys,
+                    armoredSignature: encryptedLink.contentKeyPacketSignature,
                 });
                 // iOS signed content key instead of session key in the past.
                 // Therefore we need to check that as well until we migrate
                 // old files.
                 if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-                    const { verified: blockKeysVerified } = await verifyMessage({
-                        message: createMessage(blockKeys),
-                        publicKeys,
-                        signature: await getSignature(encryptedLink.contentKeyPacketSignature),
+                    const { verified: blockKeysVerified } = await CryptoProxy.verifyMessage({
+                        binaryData: blockKeys,
+                        verificationKeys: publicKeys,
+                        armoredSignature: encryptedLink.contentKeyPacketSignature,
                     });
                     if (blockKeysVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
                         // If even fall back solution does not succeed, report

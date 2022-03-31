@@ -1,21 +1,6 @@
 import { generatePassphrase } from '@proton/shared/lib/keys/calendarKeys';
-import * as openpgp from 'openpgp';
-import {
-    OpenPGPKey,
-    SessionKey,
-    getMessage,
-    getKeys,
-    getPreferredAlgorithm,
-    generateSessionKey as realGenerateSessionKey,
-    encryptSessionKey as realEncryptSessionKey,
-    decryptSessionKey as realDecryptSessionKey,
-    splitMessage,
-    generateKey,
-    encryptMessage,
-    createMessage,
-    armorBytes,
-} from 'pmcrypto';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, KEY_FLAG, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 
 import { addressKeysCache, resolvedRequest, cache } from './cache';
 import { addApiMock } from './api';
@@ -28,8 +13,8 @@ export interface GeneratedKey {
     email: string;
     publicKeyArmored: string;
     privateKeyArmored: string;
-    publicKeys: OpenPGPKey[];
-    privateKeys: OpenPGPKey[];
+    publicKeys: PublicKeyReference[];
+    privateKeys: PrivateKeyReference[];
 }
 
 export interface ApiKey {
@@ -68,13 +53,14 @@ export const clearApiKeys = () => {
     addApiKeysMock();
 };
 
-export const generateKeys = async (name: string, email: string): Promise<GeneratedKey> => {
-    const { publicKeyArmored, privateKeyArmored } = await openpgp.generateKey({
-        userIds: [{ name, email }],
+export const generateKeys = async (name: string, email: string, passphrase = 'passphrase'): Promise<GeneratedKey> => {
+    const privateKey = await CryptoProxy.generateKey({
+        userIDs: [{ name, email }],
     });
-    const publicKeys = await getKeys(publicKeyArmored);
-    const privateKeys = await getKeys(privateKeyArmored);
-
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase });
+    const publicKeyArmored = await CryptoProxy.exportPublicKey({ key: privateKey });
+    const publicKeys = [await CryptoProxy.importPublicKey({ armoredKey: publicKeyArmored })];
+    const privateKeys = [privateKey];
     return {
         name,
         email,
@@ -89,17 +75,18 @@ export const generateCalendarKeysAndPassphrase = async (addressKey: GeneratedKey
     const { publicKeys: addressPublicKeys, privateKeys: addressPrivateKeys } =
         addressKey instanceof Promise ? await addressKey : addressKey;
     const passphrase = generatePassphrase();
-    const { privateKeyArmored, publicKeyArmored } = await generateKey({
-        userIds: [{ name: 'Calendar key' }],
-        passphrase,
+    const privateKey = await CryptoProxy.generateKey({
+        userIDs: [{ name: 'Calendar key' }],
         ...ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
     });
-    const publicKeys = await getKeys(publicKeyArmored);
-    const privateKeys = await getKeys(privateKeyArmored);
-    const { data, signature } = await encryptMessage({
-        message: await createMessage(passphrase),
-        publicKeys: addressPublicKeys,
-        privateKeys: addressPrivateKeys,
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase });
+    const publicKeyArmored = await CryptoProxy.exportPublicKey({ key: privateKey });
+    const publicKeys = [await CryptoProxy.importPublicKey({ armoredKey: publicKeyArmored })];
+    const privateKeys = [privateKey];
+    const { message: data, signature } = await CryptoProxy.encryptMessage({
+        textData: passphrase,
+        encryptionKeys: addressPublicKeys,
+        signingKeys: addressPrivateKeys,
         detached: true,
     });
 
@@ -112,7 +99,7 @@ export const generateCalendarKeysAndPassphrase = async (addressKey: GeneratedKey
         },
         passphrase: {
             clearText: passphrase,
-            armored: await armorBytes(data),
+            armored: data,
             signature,
         },
     };
@@ -128,22 +115,25 @@ export const addKeysToAddressKeysCache = (addressID: string, key: GeneratedKey |
     addressKeysCache.set(addressID, resolvedRequest([...currentValue, ...newValue]));
 };
 
-export const encryptSessionKey = async ({ data, algorithm }: SessionKey, publicKey: OpenPGPKey) => {
-    const { message } = await realEncryptSessionKey({ data, algorithm, publicKeys: [publicKey] });
-    const { asymmetric } = await splitMessage(message);
-    return asymmetric[0];
+export const encryptSessionKey = async ({ data, algorithm }: SessionKey, publicKey: PublicKeyReference) => {
+    const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
+        data,
+        algorithm,
+        encryptionKeys: [publicKey],
+        format: 'binary',
+    });
+    return encryptedSessionKey;
 };
 
-export const generateSessionKey = async (publicKey: OpenPGPKey) => {
-    const algorithm = await getPreferredAlgorithm([publicKey]);
-    const data = await realGenerateSessionKey(algorithm);
-    return { data, algorithm } as SessionKey;
+export const generateSessionKey = async (publicKey: PublicKeyReference) => {
+    const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: publicKey });
+    return sessionKey;
 };
 
-export const decryptSessionKey = async (keyPacket: string, privateKeys: OpenPGPKey[]) => {
-    const sessionKeyMessage = await getMessage(base64ToArray(keyPacket));
-    return (await realDecryptSessionKey({
-        message: sessionKeyMessage,
-        privateKeys,
-    })) as SessionKey;
+export const decryptSessionKey = async (keyPacket: string, privateKeys: PrivateKeyReference[]) => {
+    const sessionKey = await CryptoProxy.decryptSessionKey({
+        binaryMessage: base64ToArray(keyPacket),
+        decryptionKeys: privateKeys,
+    });
+    return sessionKey as SessionKey;
 };

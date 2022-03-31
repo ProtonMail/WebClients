@@ -1,11 +1,17 @@
-import { decryptPrivateKey } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import { CachedOrganizationKey, OrganizationKey } from '../interfaces';
 
 export const getDecryptedOrganizationKey = async (OrganizationPrivateKey: string, keyPassword: string) => {
-    const privateKey = await decryptPrivateKey(OrganizationPrivateKey, keyPassword);
+    const privateKey = await CryptoProxy.importPrivateKey({
+        armoredKey: OrganizationPrivateKey,
+        passphrase: keyPassword,
+    });
+    const publicKey = await CryptoProxy.importPublicKey({
+        binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
+    });
     return {
         privateKey,
-        publicKey: privateKey.toPublic(),
+        publicKey,
     };
 };
 

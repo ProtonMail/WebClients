@@ -1,6 +1,6 @@
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import { c } from 'ttag';
 
+import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { generateLookupHash, encryptName } from '@proton/shared/lib/keys/driveKeys';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import {
@@ -45,7 +45,7 @@ interface FileRevision {
     revisionID: string;
     previousRevisionID?: string;
     sessionKey: SessionKey;
-    privateKey: OpenPGPKey;
+    privateKey: PrivateKeyReference;
     // Callbacks to control local client UIDs.
     // See useUploadClientUid for more details.
     uploadFinished: () => void;
@@ -87,7 +87,7 @@ export default function useUploadFile() {
                 getLinkPrivateKey(abortSignal, shareId, parentId),
             ]);
 
-            const Name = await encryptName(filename, parentPrivateKey.toPublic(), addressKeyInfo.privateKey);
+            const Name = await encryptName(filename, parentPrivateKey, addressKeyInfo.privateKey);
 
             checkSignal(abortSignal, filename);
 

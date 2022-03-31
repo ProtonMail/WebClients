@@ -6,7 +6,7 @@ import unique from '@proton/utils/unique';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { loadModels } from '@proton/shared/lib/models/helper';
-import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
+import { loadCryptoWorker, destroyCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { Model } from '@proton/shared/lib/interfaces/Model';
 import { User, UserSettings, UserType } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -48,7 +48,6 @@ interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     onInit?: () => void;
     onLogout: () => void;
     fallback?: ReactNode;
-    openpgpConfig?: any;
     preloadModels?: M[];
     eventModels?: EvtM[];
     noModals?: boolean;
@@ -63,7 +62,6 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     onLogout,
     onInit,
     fallback,
-    openpgpConfig,
     preloadModels = [],
     eventModels = [],
     noModals = false,
@@ -141,7 +139,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                 eventManagerPromise,
                 setupPromise,
                 onInit?.(),
-                loadOpenPGP(openpgpConfig),
+                loadCryptoWorker(),
                 appPromise,
             ]).catch((error) => {
                 if (getIs401Error(error)) {
@@ -178,7 +176,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             });
 
         return () => {
-            destroyOpenPGP();
+            void destroyCryptoWorker();
         };
     }, []);
 
