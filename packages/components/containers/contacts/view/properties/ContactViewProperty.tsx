@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { classnames } from '../../../../helpers';
-import ContactLabelProperty from '../../ContactLabelProperty';
-import EncryptedIcon from '../../EncryptedIcon';
+import ContactLabelProperty from '../ContactLabelProperty';
+import EncryptedIcon from '../EncryptedIcon';
 
 interface Props {
     field: string;

@@ -1,16 +1,16 @@
 import { c } from 'ttag';
 
 import { Button, Loader, Tooltip } from '../../../../components';
-import { useContacts, useModals, useUserKeys } from '../../../../hooks';
+import { useContacts, useModals } from '../../../../hooks';
 import { SettingsSection, SettingsParagraph } from '../../../account';
 
-import ExportModal from '../../modals/ExportModal';
+import ExportModal from '../../modals/ContactExportingModal';
 
 const ExportSection = () => {
     const [contacts, loadingContacts] = useContacts();
     const { createModal } = useModals();
-    const [userKeysList, loadingUserKeys] = useUserKeys();
-    const handleExport = () => createModal(<ExportModal userKeysList={userKeysList} />);
+    // const [userKeysList, loadingUserKeys] = useUserKeys();
+    const handleExport = () => createModal(<ExportModal />);
 
     const hasNoContacts = !contacts?.length;
 
@@ -22,7 +22,7 @@ const ExportSection = () => {
 
     return (
         <SettingsSection>
-            {loadingContacts || loadingUserKeys ? (
+            {loadingContacts ? (
                 <Loader />
             ) : (
                 <>

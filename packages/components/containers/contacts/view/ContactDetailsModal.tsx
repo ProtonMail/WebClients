@@ -5,8 +5,8 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
 import { useContactGroups, useAddresses, useUserKeys, useMailSettings } from '../../../hooks';
-import useContactList from '../useContactList';
-import useContact from '../useContact';
+import useContactList from '../hooks/useContactList';
+import useContact from '../hooks/useContact';
 import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';
 import { Button } from '../../../components/button';
@@ -17,7 +17,7 @@ import ContactView from './ContactView';
 import { Loader } from '../../../components';
 import { ContactEditProps } from '../edit/ContactEditModal';
 import { ContactDeleteProps } from '../modals/ContactDeleteModal';
-import { ContactEmailSettingsProps } from '../modals/ContactEmailSettingsModal';
+import { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
 
 export interface ContactDetailsProps {
     contactID: string;

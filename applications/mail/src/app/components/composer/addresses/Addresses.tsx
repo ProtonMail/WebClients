@@ -1,8 +1,10 @@
 import { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 'react';
-import { ContactListModal, useModals, useToggle } from '@proton/components';
 import noop from '@proton/utils/noop';
+import { ContactSelectorModal, useToggle } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { ContactSelectorProps } from '@proton/components/containers/contacts/selector/ContactSelectorModal';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 import { MessageChange } from '../Composer';
@@ -28,8 +30,10 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         cc: ccFocusRef,
     };
 
-    const { createModal } = useModals();
     const { onUpgrade, onGroupDetails } = useContactModals({ onMailTo: noop });
+    const [contactSelectorModal, showContactSelector] = useModalTwo<ContactSelectorProps, Recipient[]>(
+        ContactSelectorModal
+    );
 
     // Summary of selected addresses or addresses editor
     const { state: editor, set: setEditor } = useToggle(false);
@@ -80,16 +84,10 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
     );
 
     const handleContactModal = (type: RecipientType) => async () => {
-        const recipients: Recipient[] = await new Promise((resolve, reject) => {
-            createModal(
-                <ContactListModal
-                    onSubmit={resolve}
-                    onClose={reject}
-                    inputValue={message.data?.[type]}
-                    onGroupDetails={onGroupDetails}
-                    onUpgrade={onUpgrade}
-                />
-            );
+        const recipients = await showContactSelector({
+            inputValue: message.data?.[type],
+            onGroupDetails,
+            onUpgrade,
         });
 
         const currentRecipients = message.data && message.data[type] ? message.data[type] : [];
@@ -99,25 +97,30 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         onChange({ data: { [type]: [...currentNonContacts, ...recipients] } });
     };
 
-    return editor ? (
-        <AddressesEditor
-            message={message}
-            messageSendInfo={messageSendInfo}
-            onChange={onChange}
-            expanded={expanded}
-            toggleExpanded={handleToggleExpanded}
-            inputFocusRefs={inputFocusRefs}
-            handleContactModal={handleContactModal}
-        />
-    ) : (
-        <AddressesSummary
-            message={message.data}
-            disabled={disabled}
-            mapSendInfo={messageSendInfo.mapSendInfo}
-            onFocus={handleFocus}
-            toggleExpanded={handleToggleExpanded}
-            handleContactModal={handleContactModal}
-        />
+    return (
+        <>
+            {editor ? (
+                <AddressesEditor
+                    message={message}
+                    messageSendInfo={messageSendInfo}
+                    onChange={onChange}
+                    expanded={expanded}
+                    toggleExpanded={handleToggleExpanded}
+                    inputFocusRefs={inputFocusRefs}
+                    handleContactModal={handleContactModal}
+                />
+            ) : (
+                <AddressesSummary
+                    message={message.data}
+                    disabled={disabled}
+                    mapSendInfo={messageSendInfo.mapSendInfo}
+                    onFocus={handleFocus}
+                    toggleExpanded={handleToggleExpanded}
+                    handleContactModal={handleContactModal}
+                />
+            )}
+            {contactSelectorModal}
+        </>
     );
 };
 

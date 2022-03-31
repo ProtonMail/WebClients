@@ -6,7 +6,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 import { Button, Loader, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useAddresses, useContactGroups } from '../../../hooks';
-import useContactList from '../useContactList';
+import useContactList from '../hooks/useContactList';
 import ContactView from '../view/ContactView';
 
 interface Props {

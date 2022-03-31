@@ -3,8 +3,8 @@ import { c, msgid } from 'ttag';
 import isTruthy from '@proton/utils/isTruthy';
 import { Checkbox, Icon, Button, Tooltip } from '../../../components';
 import { CustomAction } from './types';
-import useContactList from '../useContactList';
 import ContactGroupDropdown from '../ContactGroupDropdown';
+import useContactList from '../hooks/useContactList';
 
 interface Props {
     allChecked: boolean;

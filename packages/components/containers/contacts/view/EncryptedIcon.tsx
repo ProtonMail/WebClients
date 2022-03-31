@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon, Tooltip } from '../../components';
+import { Icon, Tooltip } from '../../../components';
 
 interface Props {
     isSignatureVerified: boolean;

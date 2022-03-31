@@ -12,7 +12,7 @@ import ContactViewEmails from './properties/ContactViewEmails';
 import ContactViewTels from './properties/ContactViewTels';
 import ContactViewAdrs from './properties/ContactViewAdrs';
 import ContactViewOthers from './properties/ContactViewOthers';
-import { ContactEmailSettingsProps } from '../modals/ContactEmailSettingsModal';
+import { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
 
 import './ContactView.scss';
 

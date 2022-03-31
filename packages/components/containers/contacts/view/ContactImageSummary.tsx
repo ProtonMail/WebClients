@@ -7,8 +7,8 @@ import noop from '@proton/utils/noop';
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 
-import { Icon, Loader } from '../../components';
-import { useLoading, useMailSettings } from '../../hooks';
+import { Icon, Loader } from '../../../components';
+import { useLoading, useMailSettings } from '../../../hooks';
 
 interface Props {
     photo: string;

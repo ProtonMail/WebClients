@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 
-import { classnames } from '../../helpers';
+import { classnames } from '../../../helpers';
 
 interface Props extends HTMLAttributes<HTMLLabelElement> {
     field: string;

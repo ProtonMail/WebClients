@@ -6,10 +6,10 @@ import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import ContactRow from './ContactRow';
-import { useItemsDraggable } from '../items';
-import { classnames } from '../../helpers';
-import { useContactFocus } from '../../hooks/useContactFocus';
-import { useContactHotkeys } from '../../hooks/useContactHotkeys';
+import { useItemsDraggable } from '../../items';
+import { classnames } from '../../../helpers';
+import { useContactFocus } from '../../../hooks/useContactFocus';
+import { useContactHotkeys } from '../../../hooks/useContactHotkeys';
 
 interface Props {
     contacts: ContactFormatted[];

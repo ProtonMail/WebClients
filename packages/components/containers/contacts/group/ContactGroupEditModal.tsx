@@ -24,7 +24,7 @@ import {
 } from '../../../components';
 import { useContactEmails, useContactGroups } from '../../../hooks';
 import ContactGroupTable from './ContactGroupTable';
-import useUpdateGroup from '../useUpdateGroup';
+import useUpdateGroup from '../hooks/useUpdateGroup';
 
 export interface ContactGroupEditProps {
     contactGroupID?: string;

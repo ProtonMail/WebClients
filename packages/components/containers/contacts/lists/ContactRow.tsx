@@ -3,11 +3,11 @@ import { c } from 'ttag';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { addPlus } from '@proton/shared/lib/helpers/string';
-import { classnames } from '../../helpers';
-import ContactGroupLabels from './group/ContactGroupLabels';
-import { ItemCheckbox } from '../items';
-import { Copy } from '../../components/button';
-import { useNotifications } from '../../hooks';
+import { classnames } from '../../../helpers';
+import ContactGroupLabels from '../group/ContactGroupLabels';
+import { ItemCheckbox } from '../../items';
+import { Copy } from '../../../components/button';
+import { useNotifications } from '../../../hooks';
 
 interface Props {
     checked: boolean;

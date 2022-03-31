@@ -2,7 +2,7 @@ import { getOtherInformationFields, getAllTypes } from '@proton/shared/lib/helpe
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { Label, Option, SelectTwo } from '../../../components';
 import { SelectChangeEvent } from '../../../components/selectTwo/select';
-import ContactLabelProperty from '../ContactLabelProperty';
+import ContactLabelProperty from '../view/ContactLabelProperty';
 
 interface Props {
     vCardProperty: VCardProperty;

@@ -2,9 +2,9 @@ import { useContext, useCallback } from 'react';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 
-import { useApi, useCachedModelResult } from '../../hooks';
+import { useApi, useCachedModelResult } from '../../../hooks';
 
-import ContactProviderContext from './ContactProviderContext';
+import ContactProviderContext from '../ContactProviderContext';
 
 const useContact = (contactID: string) => {
     const cache = useContext(ContactProviderContext);

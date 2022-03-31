@@ -1,32 +1,29 @@
-import { useState, ChangeEvent, useEffect, useRef } from 'react';
+import { useState, ChangeEvent, useEffect, FormEvent, useRef } from 'react';
 import { c, msgid } from 'ttag';
-
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
-
 import {
     Checkbox,
     SearchInput,
-    PrimaryButton,
     ModalTwo,
-    Form,
-    ModalTwoContent,
     ModalTwoHeader,
     ModalTwoFooter,
     Button,
+    ModalTwoContent,
+    ModalProps,
+    Form,
 } from '../../../components';
 import { useActiveBreakpoint, useUserSettings, useContactEmailsSortedByName } from '../../../hooks';
-import ContactList from '../ContactList';
-import ContactListModalRow from '../ContactListModalRow';
-import EmptyContacts from '../EmptyContacts';
-import EmptyResults from '../EmptyResults';
-
+import ContactSelectorList from './ContactSelectorList';
+import ContactSelectorRow from './ContactSelectorRow';
+import ContactSelectorEmptyContacts from './ContactSelectorEmptyContacts';
+import ContactSelectorEmptyResults from './ContactSelectorEmptyResults';
 import { useContactGroups } from '../../../hooks/useCategories';
 import { classnames } from '../../../helpers';
 
-import './ContactListModal.scss';
+import './ContactSelectorModal.scss';
 
 const convertContactToRecipient = ({ Name, ContactID, Email }: ContactEmail) => ({
     Name,
@@ -34,15 +31,21 @@ const convertContactToRecipient = ({ Name, ContactID, Email }: ContactEmail) => 
     Address: Email,
 });
 
-interface Props {
+export interface ContactSelectorProps {
     inputValue: any;
-    onSubmit: (recipients: Recipient[]) => void;
-    onClose?: () => void;
+    // onSubmit: (recipients: Recipient[]) => void;
     onGroupDetails: (contactGroupID: string) => void;
     onUpgrade: () => void;
 }
 
-const ContactListModal = ({ onSubmit, onClose, inputValue, onGroupDetails, onUpgrade, ...rest }: Props) => {
+interface ContactSelectorResolver {
+    onResolve: (recipients: Recipient[]) => void;
+    onReject: () => void;
+}
+
+type Props = ContactSelectorProps & ContactSelectorResolver & ModalProps;
+
+const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails, onUpgrade, ...rest }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
     const searchInputRef = useRef<HTMLInputElement>(null);
@@ -161,9 +164,12 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, onGroupDetails, onUpg
 
     const handleSearchValue = (value: string) => setSearchValue(value);
 
-    const handleSubmit = () => {
-        onSubmit(checkedContactEmails.map(convertContactToRecipient));
-        onClose?.();
+    const handleSubmit = (event: FormEvent) => {
+        event.stopPropagation();
+        event.preventDefault();
+
+        onResolve(checkedContactEmails.map(convertContactToRecipient));
+        rest.onClose?.();
     };
 
     const actionText =
@@ -176,19 +182,11 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, onGroupDetails, onUpg
               );
 
     return (
-        <ModalTwo
-            as={Form}
-            onClose={onClose}
-            onSubmit={handleSubmit}
-            size="large"
-            data-testid="modal:contactlist"
-            {...rest}
-        >
+        <ModalTwo size="large" as={Form} onSubmit={handleSubmit} data-testid="modal:contactlist" {...rest}>
             <ModalTwoHeader title={c('Title').t`Insert contacts`} />
-
             <ModalTwoContent>
                 {!contactEmails.length ? (
-                    <EmptyContacts onClose={onClose} onUpgrade={onUpgrade} />
+                    <ContactSelectorEmptyContacts onClose={rest.onClose} onUpgrade={onUpgrade} />
                 ) : (
                     <>
                         <div className="mb0-5">
@@ -223,12 +221,12 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, onGroupDetails, onUpg
                                         </div>
                                     </div>
                                 )}
-                                <ContactList
+                                <ContactSelectorList
                                     rowCount={filteredContactEmails.length}
                                     userSettings={userSettings}
                                     className={classnames([isNarrow && 'mt1'])}
                                     rowRenderer={({ index, style }) => (
-                                        <ContactListModalRow
+                                        <ContactSelectorRow
                                             onCheck={handleCheck}
                                             style={style}
                                             key={filteredContactEmails[index].ID}
@@ -242,23 +240,23 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, onGroupDetails, onUpg
                                 />
                             </>
                         ) : (
-                            <EmptyResults onClearSearch={handleClearSearch} query={searchValue} />
+                            <ContactSelectorEmptyResults onClearSearch={handleClearSearch} query={searchValue} />
                         )}
                     </>
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button type="button" onClick={onClose} disabled={loading}>
+                <Button type="button" onClick={rest.onClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
                 {contactEmails.length ? (
-                    <PrimaryButton loading={loading} type="submit" disabled={!totalChecked}>
+                    <Button color="norm" loading={loading} type="submit" disabled={!totalChecked}>
                         {actionText}
-                    </PrimaryButton>
+                    </Button>
                 ) : null}
             </ModalTwoFooter>
         </ModalTwo>
     );
 };
 
-export default ContactListModal;
+export default ContactSelectorModal;
