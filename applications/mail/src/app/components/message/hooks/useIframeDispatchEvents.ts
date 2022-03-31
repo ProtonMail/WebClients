@@ -1,13 +1,29 @@
+import { cloneEvent, isKeyboardEvent } from '@proton/shared/lib/helpers/events';
+import { isValidShortcut } from '@proton/shared/lib/shortcuts/helpers';
+import { actionShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import { RefObject, useCallback, useEffect } from 'react';
+
+const IFRAME_EVENTS_LIST: Event['type'][] = ['focus', 'keydown', 'click'];
 
 const useIframeDispatchEvents = (
     startListening: boolean,
     iframeRef: RefObject<HTMLIFrameElement>,
     onFocus?: () => void
 ) => {
-    const bubbleEventCallback = useCallback(() => {
-        document.dispatchEvent(new CustomEvent('dropdownclose'));
-        onFocus?.();
+    const bubbleEventCallback = useCallback((event: Event) => {
+        if (['click', 'focus'].includes(event.type)) {
+            document.dispatchEvent(new CustomEvent('dropdownclose'));
+            onFocus?.();
+        }
+
+        if (isKeyboardEvent(event)) {
+            Object.values(actionShortcuts).forEach((shortcut) => {
+                if (isValidShortcut(shortcut, event)) {
+                    const clonedEvent = cloneEvent(event);
+                    iframeRef.current?.dispatchEvent(clonedEvent);
+                }
+            });
+        }
     }, []);
 
     useEffect(() => {
@@ -17,12 +33,14 @@ const useIframeDispatchEvents = (
             return;
         }
 
-        emailContentRoot.addEventListener('focus', bubbleEventCallback);
-        emailContentRoot.addEventListener('click', bubbleEventCallback);
+        IFRAME_EVENTS_LIST.forEach((eventName) => {
+            emailContentRoot.addEventListener(eventName, bubbleEventCallback);
+        });
 
         return () => {
-            emailContentRoot.removeEventListener('focus', bubbleEventCallback);
-            emailContentRoot.removeEventListener('click', bubbleEventCallback);
+            IFRAME_EVENTS_LIST.forEach((eventName) => {
+                emailContentRoot.removeEventListener(eventName, bubbleEventCallback);
+            });
         };
     }, [startListening]);
 };
