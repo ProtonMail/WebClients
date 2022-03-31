@@ -12,7 +12,8 @@ import {
     PrivateMainArea,
 } from '@proton/components';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
-import { RESPONSE_CODE, STATUS_CODE } from '@proton/shared/lib/drive/constants';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
 import useActiveShare from '../hooks/drive/useActiveShare';
 
@@ -45,13 +46,13 @@ const AppErrorBoundary = ({ children }: Props) => {
         }
 
         if (error instanceof ApiError) {
-            if (error.status === STATUS_CODE.INTERNAL_SERVER_ERROR) {
+            if (error.status === HTTP_STATUS_CODE.INTERNAL_SERVER_ERROR) {
                 return <InternalServerError />;
             }
-            if (error.status === STATUS_CODE.NOT_FOUND || error.data.Code === RESPONSE_CODE.INVALID_ID) {
+            if (error.status === HTTP_STATUS_CODE.NOT_FOUND || error.data.Code === RESPONSE_CODE.INVALID_ID) {
                 return <NotFoundError />;
             }
-            if (error.status === STATUS_CODE.FORBIDDEN) {
+            if (error.status === HTTP_STATUS_CODE.FORBIDDEN) {
                 return <AccessDeniedError />;
             }
         }

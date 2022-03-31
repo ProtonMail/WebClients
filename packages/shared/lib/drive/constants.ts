@@ -78,15 +78,6 @@ export enum EXPIRATION_DAYS {
     NINETY = '90',
 }
 
-export enum STATUS_CODE {
-    OK = 200,
-    BAD_REQUEST = 400,
-    FORBIDDEN = 403,
-    NOT_FOUND = 404,
-    UNPROCESSABLE_ENTITY = 422,
-    INTERNAL_SERVER_ERROR = 500,
-}
-
 export enum RESPONSE_CODE {
     SUCCESS = 1000,
     NOT_ALLOWED = 2011,
