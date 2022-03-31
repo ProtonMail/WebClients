@@ -14,7 +14,7 @@ import {
 } from '@proton/shared/lib/contacts/properties';
 import { Button, Icon, IconName, OrderableContainer, OrderableElement } from '../../../components';
 import ContactEditProperty from './ContactEditProperty';
-import EncryptedIcon from '../EncryptedIcon';
+import EncryptedIcon from '../view/EncryptedIcon';
 
 const ICONS: { [key: string]: IconName } = {
     fn: 'user',

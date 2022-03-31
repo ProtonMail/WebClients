@@ -5,7 +5,7 @@ import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { Button, Icon, Tooltip } from '../../../components';
 import { classnames } from '../../../helpers';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
-import ContactImageSummary from '../ContactImageSummary';
+import ContactImageSummary from './ContactImageSummary';
 
 import './ContactSummary.scss';
 

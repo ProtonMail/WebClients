@@ -5,7 +5,7 @@ import ContactGroupDeleteModal, { ContactGroupDeleteProps } from '../group/Conta
 import ContactGroupDetailsModal, { ContactGroupDetailsProps } from '../group/ContactGroupDetailsModal';
 import ContactGroupEditModal, { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import ContactDeleteModal, { ContactDeleteProps } from '../modals/ContactDeleteModal';
-import ContactEmailSettingsModal, { ContactEmailSettingsProps } from '../modals/ContactEmailSettingsModal';
+import ContactEmailSettingsModal, { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
 import ContactDetailsModal, { ContactDetailsProps } from '../view/ContactDetailsModal';
 import ContactExportingModal, { ContactExportingProps } from '../modals/ContactExportingModal';
 import ContactUpgradeModal from '../modals/ContactUpgradeModal';

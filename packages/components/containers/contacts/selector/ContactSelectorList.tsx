@@ -2,7 +2,7 @@ import { useRef, CSSProperties, ReactNode } from 'react';
 import { List, AutoSizer } from 'react-virtualized';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
-import { classnames } from '../../helpers';
+import { classnames } from '../../../helpers';
 
 interface Props {
     rowCount: number;
@@ -13,7 +13,7 @@ interface Props {
     className?: string;
 }
 
-const ContactsList = ({
+const ContactSelectorList = ({
     rowCount,
     contactRowHeightComfort = 54,
     contactRowHeightCompact = 46,
@@ -44,4 +44,4 @@ const ContactsList = ({
     );
 };
 
-export default ContactsList;
+export default ContactSelectorList;

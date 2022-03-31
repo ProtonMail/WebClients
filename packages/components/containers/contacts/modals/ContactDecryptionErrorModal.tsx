@@ -8,7 +8,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { Alert, Copy, FormModal, UnderlineButton, useSettingsLink } from '../../../components';
 import { useModals, useNotifications, useUser } from '../../../hooks';
 import ContactClearDataConfirmModal from './ContactClearDataConfirmModal';
-import useContact from '../useContact';
+import useContact from '../hooks/useContact';
 
 interface Props {
     contactID: string;

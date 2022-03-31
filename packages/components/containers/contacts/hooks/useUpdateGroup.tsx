@@ -5,7 +5,7 @@ import { createContactGroup, updateLabel } from '@proton/shared/lib/api/labels';
 import { addContacts, labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
 import { prepareContacts } from '@proton/shared/lib/contacts/encrypt';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
-import { useApi, useEventManager, useNotifications, useUserKeys } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useUserKeys } from '../../../hooks';
 
 export type UpdateGroupOptions = {
     groupID: string | undefined;

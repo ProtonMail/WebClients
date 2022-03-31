@@ -7,7 +7,7 @@ import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 import { CircleLoader, SearchInput } from '../../../components';
 import { useContactEmails, useContactGroups, useNotifications, useUser, useUserSettings } from '../../../hooks';
 import ContactsWidgetGroupsToolbar from './ContactsWidgetGroupsToolbar';
-import ContactsGroupsList from '../ContactsGroupsList';
+import ContactsGroupsList from '../lists/ContactsGroupsList';
 import { useItemsSelection } from '../../items';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
