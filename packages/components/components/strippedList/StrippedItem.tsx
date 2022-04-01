@@ -1,7 +1,7 @@
-import Icon from '../icon/Icon';
+import Icon, { IconName } from '../icon/Icon';
 
 interface StrippedItemProps {
-    icon: string;
+    icon: IconName;
     children: React.ReactNode;
 }
 

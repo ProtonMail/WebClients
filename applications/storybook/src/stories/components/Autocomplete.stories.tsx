@@ -9,6 +9,7 @@ import {
     useAutocompleteFilter,
     Marks,
     Icon,
+    IconName,
 } from '@proton/components';
 import { getTitle } from '../../helpers/title';
 
@@ -72,7 +73,7 @@ export const Complex = () => {
 interface ServiceOption {
     value: string;
     label: string;
-    icon: string;
+    icon: IconName;
 }
 
 export const Custom = () => {
@@ -80,7 +81,7 @@ export const Custom = () => {
     const containerRef = useRef<HTMLInputElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const options = ['reddit', 'twitter', 'yahoo', 'youtube'].map((service) => {
+    const options = (['brand-android', 'brand-apple', 'brand-chrome', 'brand-linux'] as const).map((service) => {
         return {
             value: service,
             label: service.charAt(0).toUpperCase() + service.slice(1),

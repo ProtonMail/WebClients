@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import {
     AutocompleteList,
     Icon,
+    IconName,
     InputTwo,
     Marks,
     Option,
@@ -28,7 +29,7 @@ interface Props {
 
 interface SearchOption {
     value: string;
-    icon: string;
+    icon: IconName;
     to: string;
     in: string[];
 }

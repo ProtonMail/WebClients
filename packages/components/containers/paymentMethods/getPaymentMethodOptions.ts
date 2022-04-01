@@ -8,6 +8,8 @@ import {
 } from '@proton/shared/lib/constants';
 import { PaymentMethod, PaymentMethodStatus } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+
+import { IconName } from '../../components';
 import { PaymentMethodData, PaymentMethodFlows } from './interface';
 
 const getMethod = (paymentMethod: PaymentMethod) => {
@@ -21,7 +23,7 @@ const getMethod = (paymentMethod: PaymentMethod) => {
     }
 };
 
-const getIcon = (paymentMethod: PaymentMethod) => {
+const getIcon = (paymentMethod: PaymentMethod): IconName | undefined => {
     if (
         paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL ||
         paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
@@ -40,7 +42,6 @@ const getIcon = (paymentMethod: PaymentMethod) => {
                 return 'credit-card';
         }
     }
-    return '';
 };
 
 interface Props {
@@ -93,14 +94,14 @@ export const getPaymentMethodOptions = ({
                 };
             }),
         paymentMethodsStatus?.Card && {
-            icon: 'credit-card',
+            icon: 'credit-card' as const,
             value: PAYMENT_METHOD_TYPES.CARD,
             text: c('Payment method option').t`New credit/debit card`,
         },
         paymentMethodsStatus?.Paypal &&
             !alreadyHavePayPal &&
             (isPaypalAmountValid || isInvoice) && {
-                icon: 'brand-paypal',
+                icon: 'brand-paypal' as const,
                 text: c('Payment method option').t`PayPal`,
                 value: PAYMENT_METHOD_TYPES.PAYPAL,
             },
@@ -109,14 +110,14 @@ export const getPaymentMethodOptions = ({
             !isHumanVerification &&
             coupon !== BLACK_FRIDAY.COUPON_CODE &&
             amount >= MIN_BITCOIN_AMOUNT && {
-                icon: 'brand-bitcoin',
+                icon: 'brand-bitcoin' as const,
                 text: c('Payment method option').t`Bitcoin`,
                 value: PAYMENT_METHOD_TYPES.BITCOIN,
             },
         !isSignup &&
             !isHumanVerification &&
             coupon !== BLACK_FRIDAY.COUPON_CODE && {
-                icon: 'money-bills',
+                icon: 'money-bills' as const,
                 text: c('Label').t`Cash`,
                 value: PAYMENT_METHOD_TYPES.CASH,
             },

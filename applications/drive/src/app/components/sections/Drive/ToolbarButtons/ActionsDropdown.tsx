@@ -7,6 +7,7 @@ import {
     Dropdown,
     DropdownMenu,
     Icon,
+    IconName,
     DropdownMenuButton,
     ToolbarButton,
 } from '@proton/components';
@@ -33,7 +34,13 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
     const hasShare = !!selectedItems[0]?.ShareUrlShareID;
     const hasSharedLink = !!selectedItems[0]?.SharedUrl;
 
-    const menuItems = [
+    const menuItems: {
+        hidden: boolean;
+        name: string;
+        icon: IconName;
+        testId: string;
+        action: () => void;
+    }[] = [
         {
             hidden: isMultiSelect || !MEMBER_SHARING_ENABLED,
             name: hasShare ? c('Action').t`Share options` : c('Action').t`Share`,

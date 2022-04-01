@@ -30,30 +30,26 @@ const ImportReportRow = ({ report }: Props) => {
                 return null;
         }
     };
-    const importTypeIcon = () => {
-        switch (Product) {
-            case ImportType.MAIL:
-                return 'envelope';
-            case ImportType.CALENDAR:
-                return 'calendar-days';
-            case ImportType.CONTACTS:
-                return 'user-group';
-            default:
-                return '';
-        }
-    };
+
+    const importTypeIcon = (
+        {
+            [ImportType.MAIL]: 'envelope',
+            [ImportType.CALENDAR]: 'calendar-days',
+            [ImportType.CONTACTS]: 'user-group',
+        } as const
+    )[Product];
 
     const cells = [
         <div key="email" className="flex">
             <div className="flex-item-noshrink mr0-5 no-mobile">
-                <Icon name={importTypeIcon()} className="color-weak" />
+                <Icon name={importTypeIcon} className="color-weak" />
             </div>
             <div className="flex-item-fluid">
                 <div className="w100 text-ellipsis" title={Account}>
                     {Account}
                 </div>
                 <div className="flex color-weak">
-                    <Icon name={importTypeIcon()} className="flex-align-self-center mr0-5 no-desktop no-tablet" />
+                    <Icon name={importTypeIcon} className="flex-align-self-center mr0-5 no-desktop no-tablet" />
                     {importType()}
                 </div>
                 <div className="no-desktop no-tablet">
