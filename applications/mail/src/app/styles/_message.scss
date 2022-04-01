@@ -225,9 +225,11 @@
 
 .message-recipient-expanded {
 	.container-to {
+		margin-block-start: 0.1em;
 		padding-block-start: 0.2em;
 	}
 	.message-recipient-item-expanded-content {
+		margin-block-start: 0.1em;
 		display: flex;
 		flex-direction: column;
 	}
