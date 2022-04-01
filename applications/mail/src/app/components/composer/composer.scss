@@ -236,6 +236,9 @@
 			margin-inline-start: 0;
 			padding-block: 1px 0;
 		}
+		.composer-to-ccbcc-buttons {
+			padding-block-start: 0.4em; // to avoid shifts
+		}
 	}
 
 	// remove left padding on mobile to align properly everything
