@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { useLoading, LoaderPage, Icon, usePreventLeave, useNotifications } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SRPHandshakeInfo, TransferStatePublic } from '@proton/shared/lib/interfaces/drive/sharing';
-import { STATUS_CODE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../../store';
@@ -122,7 +122,7 @@ const DownloadSharedContainer = () => {
 
         setLinkInfo(null);
 
-        if (apiError.status === STATUS_CODE.NOT_FOUND || apiError.code === ERROR_CODE_INVALID_TOKEN) {
+        if (apiError.status === HTTP_STATUS_CODE.NOT_FOUND || apiError.code === ERROR_CODE_INVALID_TOKEN) {
             setError(c('Title').t`The link either does not exist or has expired`);
             return;
         }

@@ -10,6 +10,8 @@ import { getSignedKeyList } from '../signedKeyList';
 import { generateAddressKeyTokens } from '../addressKeys';
 import { getActiveKeyObject, getActiveKeys, getPrimaryFlag, getReactivatedKeyFlag } from '../getActiveKeys';
 import { SimpleMap } from '../../interfaces/utils';
+import { getApiError } from '../../api/helpers/apiErrorHelper';
+import { HTTP_STATUS_CODE } from '../../constants';
 
 interface ReactivateUserKeysArguments {
     addressRecordsInV2Format: KeyReactivationRecord[];
@@ -104,6 +106,11 @@ export const reactivateUserKeys = async ({
             });
         } catch (e: any) {
             onReactivation(id, e);
+            const { status } = getApiError(e);
+            if (status === HTTP_STATUS_CODE.FORBIDDEN) {
+                // The password prompt has been cancelled. No need to attempt to reactivate the other keys.
+                break;
+            }
         }
     }
 

@@ -1,6 +1,7 @@
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { serializeFormData } from '@proton/shared/lib/fetch/helpers';
-import { STATUS_CODE, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
 import { MAX_UPLOAD_JOBS, MAX_RETRIES_BEFORE_FAIL } from '../constants';
 import { UploadingBlock } from './interface';
@@ -93,7 +94,7 @@ async function uploadBlock(
             return uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback, 0);
         }
 
-        if (err.statusCode !== STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
+        if (err.statusCode !== HTTP_STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
             console.warn(`Failed block #${block.index} upload. Retry num: ${numRetries}`);
             return uploadBlock(
                 block,
@@ -144,7 +145,7 @@ async function uploadBlockData(
         signal.addEventListener('abort', listener);
 
         xhr.onload = async () => {
-            if (xhr.status >= STATUS_CODE.OK && xhr.status < STATUS_CODE.BAD_REQUEST) {
+            if (xhr.status >= HTTP_STATUS_CODE.OK && xhr.status < HTTP_STATUS_CODE.BAD_REQUEST) {
                 resolve();
             } else {
                 reject(new XHRError(xhr.response?.Error || xhr.statusText, xhr.response?.Code, xhr.status));
