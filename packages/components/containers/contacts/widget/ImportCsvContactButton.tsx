@@ -54,10 +54,10 @@ const ImportCsvContactButton = ({
                         );
                     }}
                     disabled={disabled}
-                    className="mr1"
+                    className="mr1 mb0-5"
                 />
             )}
-            <PrimaryButton id="import-contacts-button" disabled={disabled} onClick={handleClick}>
+            <PrimaryButton className="mb0-5" id="import-contacts-button" disabled={disabled} onClick={handleClick}>
                 {c('Action').t`Import from .csv or vCard`}
             </PrimaryButton>
         </>
