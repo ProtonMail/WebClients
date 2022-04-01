@@ -102,22 +102,24 @@ const MessagesOtherSection = () => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="fontFace" className="text-semibold">
+                    <label htmlFor="fontFace" id="label-composer-default-font-size" className="text-semibold">
                         {c('Label').t`Composer default font/size`}
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="flex flex-row flex-justify-space-between">
-                    <div>
+                <SettingsLayoutRight className="settings-layout-right-fixed-size flex flex-row">
+                    <div className="flex-item-fluid pr0-5">
                         <FontFaceSelect
                             id="fontFace"
+                            aria-describedby="label-composer-default-font-size"
                             fontFace={FontFace || DEFAULT_FONT_FACE}
                             onChange={(value) => withLoadingFontFace(handleChangeFontFace(value))}
                             loading={loadingFontFace}
                         />
                     </div>
-                    <div>
+                    <div className="flex-item-noshrink">
                         <FontSizeSelect
                             id="fontSize"
+                            aria-describedby="label-composer-default-font-size"
                             fontSize={FontSize || DEFAULT_FONT_SIZE}
                             onChange={(value) => withLoadingFontSize(handleChangeFontSize(value))}
                             loading={loadingFontSize}
