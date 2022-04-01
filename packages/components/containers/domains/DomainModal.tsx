@@ -72,37 +72,41 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const renderDKIMIcon = () => {
         const { DKIM_STATE_ERROR, DKIM_STATE_GOOD, DKIM_STATE_WARNING } = DKIM_STATE;
 
-        let title;
-        let type: 'error' | 'success' | 'warning' | undefined;
-        let name;
-        let icon;
-
         switch (domainModel.DKIM?.State) {
-            case DKIM_STATE_ERROR:
-                title = c('Tooltip')
-                    .t`We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.`;
-                type = 'error';
-                name = 'xmark';
-                break;
-            case DKIM_STATE_GOOD:
-                title = c('Tooltip').t`Your DKIM signing is working.`;
-                type = 'success';
-                name = 'check';
-                break;
-            case DKIM_STATE_WARNING:
-                title = c('Tooltip')
-                    .t`We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.`;
-                type = 'warning';
-                icon = <Icon size={24} className="mr0-5" name="triangle-exclamation-filled" />;
-                break;
-            default:
-                break;
+            case DKIM_STATE_ERROR: {
+                return (
+                    <Tooltip
+                        title={c('Tooltip')
+                            .t`We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.`}
+                    >
+                        <RoundedIcon className="mr0-5" key="dkim-icon" type="error" name="xmark" />
+                    </Tooltip>
+                );
+            }
+
+            case DKIM_STATE_GOOD: {
+                return (
+                    <Tooltip title={c('Tooltip').t`Your DKIM signing is working.`}>
+                        <RoundedIcon className="mr0-5" key="dkim-icon" type="success" name="check" />
+                    </Tooltip>
+                );
+            }
+
+            case DKIM_STATE_WARNING: {
+                return (
+                    <Tooltip
+                        title={c('Tooltip')
+                            .t`We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.`}
+                    >
+                        <Icon size={24} className="mr0-5" name="triangle-exclamation-filled" />
+                    </Tooltip>
+                );
+            }
+
+            default: {
+                return null;
+            }
         }
-        return (
-            <Tooltip title={title}>
-                {icon || <RoundedIcon className="mr0-5" key="dkim-icon" type={type} name={name || ''} />}
-            </Tooltip>
-        );
     };
 
     const breadcrumbLabels = [

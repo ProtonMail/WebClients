@@ -58,21 +58,21 @@ export const ControlledOpenState = () => {
 };
 
 export const WithRichOptionContent = () => {
-    const [value, setValue] = useState('reddit');
+    const [value, setValue] = useState('android');
 
     return (
         <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
-            <Option title="Reddit" value="reddit">
-                <Icon name="brand-reddit" /> Reddit
+            <Option title="android" value="android">
+                <Icon name="brand-android" /> android
             </Option>
-            <Option title="Twitter" value="twitter">
-                <Icon name="brand-twitter" /> Twitter
+            <Option title="apple" value="apple">
+                <Icon name="brand-apple" /> apple
             </Option>
-            <Option title="Yahoo" value="yahoo">
-                <Icon name="brand-yahoo" /> Yahoo
+            <Option title="linux" value="linux">
+                <Icon name="brand-linux" /> linux
             </Option>
-            <Option title="Youtube" value="youtube">
-                <Icon name="brand-youtube" /> Youtube
+            <Option title="chrome" value="chrome">
+                <Icon name="brand-chrome" /> chrome
             </Option>
         </SelectTwo>
     );

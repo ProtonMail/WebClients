@@ -32,7 +32,7 @@ const PaymentMethodSelector = ({ method, lastCustomMethod, options, onChange }: 
                             checked={value === method}
                             onChange={() => onChange(value)}
                         />
-                        <Icon className="mr0-5" name={icon} />
+                        {icon && <Icon className="mr0-5" name={icon} />}
                         <span className="text-cut">{text}</span>
                     </label>
                 );

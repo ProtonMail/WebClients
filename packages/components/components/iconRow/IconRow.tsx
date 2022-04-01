@@ -1,13 +1,13 @@
-import { ReactNode } from 'react';
+import { ReactNode, ReactElement } from 'react';
 
-import { Label, Icon } from '@proton/components';
+import { Label, Icon, IconName } from '@proton/components';
 
 import { Tooltip } from '../tooltip';
 
 export interface IconRowProps {
     className?: string;
     children: ReactNode;
-    icon?: ReactNode;
+    icon?: ReactElement | IconName;
     iconColor?: string;
     iconClassName?: string;
     labelClassName?: string;

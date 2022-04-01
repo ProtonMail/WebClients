@@ -57,28 +57,30 @@ interface GetStartedChecklistProps {
 const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: GetStartedChecklistProps) => {
     const { expires, checklist, loading, rewardInGb } = useGetStartedChecklist();
 
-    const checklistItems = [
-        {
-            key: ChecklistKey.Import,
-            text: c('Get started checklist item').t`Import contacts or emails`,
-            icon: 'arrow-down-to-screen',
-        },
-        {
-            key: ChecklistKey.SendMessage,
-            text: c('Get started checklist item').t`Send a message`,
-            icon: 'paper-plane',
-        },
-        {
-            key: ChecklistKey.RecoveryMethod,
-            text: c('Get started checklist item').t`Set up a recovery method`,
-            icon: 'lock',
-        },
-        {
-            key: ChecklistKey.MobileApp,
-            text: c('Get started checklist item').t`Get mobile app`,
-            icon: 'mobile',
-        },
-    ]
+    const checklistItems = (
+        [
+            {
+                key: ChecklistKey.Import,
+                text: c('Get started checklist item').t`Import contacts or emails`,
+                icon: 'arrow-down-to-screen',
+            },
+            {
+                key: ChecklistKey.SendMessage,
+                text: c('Get started checklist item').t`Send a message`,
+                icon: 'paper-plane',
+            },
+            {
+                key: ChecklistKey.RecoveryMethod,
+                text: c('Get started checklist item').t`Set up a recovery method`,
+                icon: 'lock',
+            },
+            {
+                key: ChecklistKey.MobileApp,
+                text: c('Get started checklist item').t`Get mobile app`,
+                icon: 'mobile',
+            },
+        ] as const
+    )
         .filter(isTruthy)
         .map(({ key, ...rest }) => ({
             key,

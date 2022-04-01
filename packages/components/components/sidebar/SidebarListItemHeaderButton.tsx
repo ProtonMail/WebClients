@@ -1,8 +1,8 @@
 import { ButtonHTMLAttributes } from 'react';
-import Icon from '../icon/Icon';
+import Icon, { IconName } from '../icon/Icon';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-    icon: string;
+    icon: IconName;
     info: string;
 }
 export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props) => {

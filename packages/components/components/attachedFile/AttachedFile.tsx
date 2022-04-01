@@ -1,11 +1,11 @@
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import Icon from '../icon/Icon';
+import Icon, { IconName } from '../icon/Icon';
 import Button from '../button/Button';
 
 interface Props {
     file: File;
-    iconName: string;
+    iconName: IconName;
     className?: string;
     clear?: string;
     onClear?: () => void;
