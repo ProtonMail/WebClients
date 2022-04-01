@@ -9,7 +9,6 @@ import {
     normalizeKeyword,
     testKeywords,
 } from '@proton/encrypted-search';
-import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { Api, User } from '@proton/shared/lib/interfaces';
 import { queryEvents, queryLatestEvents } from '@proton/shared/lib/api/drive/share';
@@ -103,7 +102,7 @@ export const useESHelpers = ({
             return true;
         }
 
-        return testKeywords(normalisedKeywords, [removeDiacritics(itemToSearch.decryptedName.toLocaleLowerCase())]);
+        return testKeywords(normalisedKeywords, [itemToSearch.decryptedName]);
     };
 
     const getSearchParams = () => {

@@ -1,5 +1,5 @@
-import { removeDiacritics } from '@proton/shared/lib/helpers/string';
-import { ES_MAX_INITIAL_CHARS } from './constants';
+import { DIACRITICS_REGEXP, ES_MAX_INITIAL_CHARS } from './constants';
+import { normalizeString } from './esUtils';
 
 /**
  * Removes overlapping intervals to highlight
@@ -27,18 +27,89 @@ const sanitisePositions = (positions: [number, number][]) => {
 };
 
 /**
+ * List the indexes of all ligatures, as well as to how many
+ * characters they split to after a NFKD transformation
+ */
+const findLigatures = (text: string, nfkd: string): [number, number][] => {
+    const nfd = normalizeString(text, 'NFD');
+
+    if (nfd.length === nfkd.length) {
+        return [];
+    }
+
+    const result: [number, number][] = [];
+    for (let i = 0; i < nfd.length; i++) {
+        if (!nfkd.includes(nfd[i], i)) {
+            result.push([i, normalizeString(nfd[i], 'NFKD').length]);
+        }
+    }
+
+    return result;
+};
+
+/**
+ * List the indexes of all diacritics
+ */
+const findDiacritics = (text: string) => Array.from(text.matchAll(DIACRITICS_REGEXP), (match) => match.index!);
+
+/**
+ * Convert an index from the diacritics-free NFD string to the original one
+ */
+const nfdToText = (diacritics: number[], index: number) => {
+    for (let d = 0; d < diacritics.length; d++) {
+        if (index >= diacritics[d]) {
+            index++;
+        } else {
+            break;
+        }
+    }
+    return index;
+};
+
+/**
+ * Convert an index from the decomposed NFKD string to the potentially
+ * more compact NFD representation, both diacritics-free
+ */
+const nfkdToNFD = (ligatures: [number, number][], index: number) => {
+    for (let l = 0; l < ligatures.length; l++) {
+        if (index > ligatures[l][0]) {
+            if (index >= ligatures[l][1]) {
+                index -= ligatures[l][1] - 1;
+            } else {
+                return ligatures[l][0];
+            }
+        } else {
+            break;
+        }
+    }
+    return index;
+};
+
+/**
+ * Convert an index from the diacritics-free NFKD string to the original one
+ */
+const updateIndex = (diacritics: number[], ligatures: [number, number][], index: number) =>
+    nfdToText(diacritics, nfkdToNFD(ligatures, index));
+
+/**
  * Find occurrences of a keyword in a text
  */
 const findOccurrences = (text: string, normalizedKeywords: string[]) => {
     const positions: [number, number][] = [];
-    const searchString = removeDiacritics(text.toLocaleLowerCase());
+    const diacritics = findDiacritics(text);
+    const searchString = normalizeString(text);
+    const ligatures = findLigatures(text, searchString);
+
     for (const keyword of normalizedKeywords) {
         let finder = 0;
         let startFrom = 0;
         while (finder !== -1) {
             finder = searchString.indexOf(keyword, startFrom);
             if (finder !== -1) {
-                positions.push([finder, finder + keyword.length]);
+                positions.push([
+                    updateIndex(diacritics, ligatures, finder),
+                    updateIndex(diacritics, ligatures, finder + keyword.length),
+                ]);
                 startFrom = finder + keyword.length;
             }
         }
