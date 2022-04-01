@@ -59,7 +59,7 @@ const AddressesEditor = ({
                         dataTestId="composer:to"
                         classname="composer-editor-to"
                     />
-                    <span className="flex flex-nowrap flex-item-noshrink on-mobile-max-w33 on-tiny-mobile-max-w50 flex-align-self-start pt0-5 sticky-top">
+                    <span className="flex flex-nowrap flex-item-noshrink on-mobile-max-w33 on-tiny-mobile-max-w50 flex-align-self-start pt0-5 composer-to-ccbcc-buttons sticky-top">
                         <Button
                             color="norm"
                             shape="ghost"
