@@ -1,5 +1,5 @@
 import { forwardRef, Ref } from 'react';
-import Icon from './Icon';
+import Icon, { IconName } from './Icon';
 import { classnames } from '../../helpers';
 
 const TYPES = {
@@ -14,7 +14,7 @@ interface Props {
     type?: 'success' | 'warning' | 'error';
     title?: string;
     padding?: string;
-    name: string;
+    name: IconName;
 }
 
 const RoundedIcon = (

@@ -1,6 +1,6 @@
 import { MouseEvent, createElement } from 'react';
 import { c, msgid } from 'ttag';
-import { classnames, Icon, Tooltip } from '@proton/components';
+import { classnames, Icon, IconName, Tooltip } from '@proton/components';
 
 import { getNumAttachments } from '../../helpers/elements';
 import { Element } from '../../models/element';
@@ -9,7 +9,7 @@ interface Props {
     element?: Element;
     className?: string;
     onClick?: (e: MouseEvent) => void;
-    icon?: string;
+    icon?: IconName;
 }
 
 const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paperclip' }: Props) => {

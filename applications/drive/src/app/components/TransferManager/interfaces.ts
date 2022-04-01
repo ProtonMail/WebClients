@@ -1,3 +1,4 @@
+import { IconName } from '@proton/components';
 import { Download, TransferType, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
 
 export interface DownloadProps {
@@ -20,7 +21,7 @@ export interface TransferManagerButtonProps {
     testId?: string;
     title: string;
     onClick: () => void;
-    iconName: string;
+    iconName: IconName;
 }
 
 export interface TransfersManagerButtonsProps {

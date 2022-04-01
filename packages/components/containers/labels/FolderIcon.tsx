@@ -2,20 +2,22 @@ import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { Icon } from '../../components';
 import { useFolderColor } from '../../hooks';
-import { IconProps } from '../../components/icon/Icon';
+import { IconProps, IconName } from '../../components/icon/Icon';
 
 interface Props extends Omit<IconProps, 'name'> {
     folder: FolderWithSubFolders;
-    name?: string;
+    name?: IconName;
 }
 
-const getIconName = (isParent: boolean, color?: string, name?: string) => {
-    let iconName;
+const getIconName = (isParent: boolean, color?: string, name?: IconName) => {
+    let iconName: IconName;
+
     if (isParent) {
         iconName = color ? 'folders-filled' : 'folders';
     } else {
         iconName = color ? 'folder-filled' : name || 'folder';
     }
+
     return iconName;
 };
 

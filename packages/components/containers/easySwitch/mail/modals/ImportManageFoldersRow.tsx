@@ -26,13 +26,13 @@ const FOLDER_ICONS = {
     [MailImportDestinationFolder.ALL_DRAFTS]: 'file-lines',
     [MailImportDestinationFolder.ALL_SENT]: 'paper-plane',
     [MailImportDestinationFolder.TRASH]: 'trash',
-    [MailImportDestinationFolder.SPAM]: 'spam',
+    [MailImportDestinationFolder.SPAM]: 'fire',
     [MailImportDestinationFolder.ARCHIVE]: 'box-archive',
     [MailImportDestinationFolder.SENT]: 'paper-plane',
     [MailImportDestinationFolder.DRAFTS]: 'file-lines',
     [MailImportDestinationFolder.STARRED]: 'star',
     [MailImportDestinationFolder.ALL_MAIL]: 'envelopes',
-};
+} as const;
 
 const DIMMED_OPACITY_CLASSNAME = 'opacity-30';
 

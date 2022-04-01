@@ -17,19 +17,6 @@ import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { AttachmentAction, AttachmentHandler } from './AttachmentList';
 
-const getActionIcon = (action: AttachmentAction) => {
-    switch (action) {
-        case AttachmentAction.Download:
-            return 'arrow-down-to-rectangle';
-        case AttachmentAction.Preview:
-            return 'arrow-up-right-and-arrow-down-left-from-center';
-        case AttachmentAction.Remove:
-            return 'xmark';
-        default:
-            return '';
-    }
-};
-
 const getActionTitle = (action: AttachmentAction, attachmentName: string) => {
     switch (action) {
         case AttachmentAction.Download:
@@ -101,7 +88,6 @@ const AttachmentItem = ({
     const primaryActionTitle = getActionTitle(primaryAction, primaryTitle);
 
     const showSecondaryAction = secondaryAction !== AttachmentAction.None;
-    const secondaryActionIcon = getActionIcon(secondaryAction);
     const secondaryActionTitle = getActionTitle(secondaryAction, name);
 
     const handleAction = (primary: boolean) => () => {
@@ -119,6 +105,12 @@ const AttachmentItem = ({
 
         void withLoading(action);
     };
+
+    const actionIcon = {
+        [AttachmentAction.Download]: 'arrow-down-to-rectangle',
+        [AttachmentAction.Preview]: 'arrow-up-right-and-arrow-down-left-from-center',
+        [AttachmentAction.Remove]: 'xmark',
+    } as const;
 
     return (
         <div className="message-attachmentList-item-container" data-testid="attachment-item">
@@ -175,10 +167,7 @@ const AttachmentItem = ({
                             {loading ? (
                                 <CircleLoader className="icon-16p mauto" />
                             ) : (
-                                <>
-                                    <Icon name={secondaryActionIcon} className="mauto" />
-                                    <span className="sr-only">{secondaryActionTitle}</span>
-                                </>
+                                <Icon name={actionIcon[secondaryAction]} className="mauto" alt={secondaryActionTitle} />
                             )}
                         </span>
                     </button>

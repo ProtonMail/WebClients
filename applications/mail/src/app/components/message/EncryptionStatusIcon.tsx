@@ -38,13 +38,15 @@ const EncryptionStatusIcon = ({
     if (isDetailsModal) {
         return (
             <span className={classnames(['inline-flex flex-item-noshrink align-middle', className])}>
-                <Icon
-                    size={16}
-                    name={iconName}
-                    className={colorClassName}
-                    alt={text || ''}
-                    data-testid="encryption-icon"
-                />
+                {iconName && (
+                    <Icon
+                        size={16}
+                        name={iconName}
+                        className={colorClassName}
+                        alt={text || ''}
+                        data-testid="encryption-icon"
+                    />
+                )}
             </span>
         );
     }
@@ -53,13 +55,15 @@ const EncryptionStatusIcon = ({
         <Tooltip title={tooltip}>
             <span className={classnames(['inline-flex flex-item-noshrink align-middle', className])}>
                 <Href href={href} className="flex flex-item-noshrink mauto" tabIndex={disabled ? -1 : undefined}>
-                    <Icon
-                        size={16}
-                        name={iconName}
-                        className={colorClassName}
-                        alt={text || ''}
-                        data-testid="encryption-icon"
-                    />
+                    {iconName && (
+                        <Icon
+                            size={16}
+                            name={iconName}
+                            className={colorClassName}
+                            alt={text || ''}
+                            data-testid="encryption-icon"
+                        />
+                    )}
                 </Href>
             </span>
         </Tooltip>
