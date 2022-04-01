@@ -19,7 +19,6 @@ import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { Feature, WelcomeFlagsState } from '@proton/components';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isPaid } from '@proton/shared/lib/user/helpers';
-import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { ESItemChangesMail, ESMessage, NormalizedSearchParams, StoredCiphertext } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
@@ -113,11 +112,8 @@ export const getESHelpers = ({
 
         const { Subject, decryptedBody, decryptedSubject } = itemToSearch;
         const subject = decryptedSubject || Subject;
-        const stringsToSearch = [subject, ...recipients, ...sender, decryptedBody || ''].map((string) =>
-            removeDiacritics(string.toLocaleLowerCase())
-        );
 
-        return testKeywords(normalizedKeywords, stringsToSearch);
+        return testKeywords(normalizedKeywords, [subject, ...recipients, ...sender, decryptedBody || '']);
     };
 
     const checkIsReverse = (esSearchParams: NormalizedSearchParams) => esSearchParams.sort.desc;
