@@ -1,8 +1,8 @@
-import { DropdownMenuButton, Icon } from '@proton/components';
+import { DropdownMenuButton, Icon, IconName } from '@proton/components';
 
 interface Props {
     name: string;
-    icon: string;
+    icon: IconName;
     testId: string;
     action: () => void;
     close: () => void;

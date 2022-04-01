@@ -1,9 +1,9 @@
 import { forwardRef, Ref } from 'react';
-import Icon from '../icon/Icon';
+import Icon, { IconName } from '../icon/Icon';
 import AppLink, { Props as LinkProps } from '../link/AppLink';
 
 interface Props extends LinkProps {
-    icon: string;
+    icon: IconName;
     info: string;
 }
 export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {

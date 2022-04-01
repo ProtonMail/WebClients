@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import {
+    IconName,
     NotificationDot,
     NotificationDotColor,
     SidebarListItem,
@@ -11,7 +12,7 @@ import {
 
 interface Props {
     to: string;
-    icon: string;
+    icon: IconName;
     notification?: NotificationDotColor;
     children: React.ReactNode;
 }

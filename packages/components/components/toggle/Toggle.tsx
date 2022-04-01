@@ -1,6 +1,6 @@
 import { ChangeEvent, DetailedHTMLProps, forwardRef, InputHTMLAttributes, Ref } from 'react';
 
-import Icon from '../icon/Icon';
+import Icon, { IconName } from '../icon/Icon';
 import { classnames } from '../../helpers';
 import { CircleLoader } from '../loader';
 
@@ -17,7 +17,7 @@ const Toggle = (
             onChange(event);
         }
     };
-    const label = (name: string, condition: boolean) => {
+    const label = (name: IconName, condition: boolean) => {
         return (
             <span className="toggle-label-text" aria-hidden="true">
                 <Icon name={name} alt="" size={16} className="toggle-label-img" />

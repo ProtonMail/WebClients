@@ -9,13 +9,14 @@ import {
     DropdownMenuButton,
     Button,
     DropdownCaret,
+    IconName,
 } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { SortField, SortParams } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 export interface MenuItem<T extends SortField> {
     name: string;
-    icon: string;
+    icon: IconName;
     sortField: T;
 }
 

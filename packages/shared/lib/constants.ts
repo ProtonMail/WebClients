@@ -76,7 +76,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonContacts',
         bareName: 'Contacts',
         clientID: 'web-contacts',
-        icon: 'brand-proton-contacts',
+        icon: 'brand-proton-mail',
         settingsSlug: 'contacts',
     },
     [APPS.PROTONDRIVE]: {
@@ -112,7 +112,7 @@ export const APPS_CONFIGURATION = {
         name: '',
         bareName: 'Admin',
         clientID: 'web-admin',
-        icon: '',
+        icon: 'brand-proton-mail',
         settingsSlug: '',
     },
     [APPS.PROTONVERIFICATION]: {
@@ -121,7 +121,7 @@ export const APPS_CONFIGURATION = {
         name: VERIFY_APP_NAME,
         bareName: 'Verify',
         clientID: 'web-verify',
-        icon: '',
+        icon: 'brand-proton-mail',
         settingsSlug: '',
     },
 } as const;

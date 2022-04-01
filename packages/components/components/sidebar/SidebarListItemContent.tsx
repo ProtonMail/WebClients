@@ -1,7 +1,8 @@
 import { HTMLAttributes, ReactNode } from 'react';
+import { IconName } from '../icon';
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
-    icon?: string;
+    icon?: IconName;
     iconColor?: string;
     children?: ReactNode;
     title?: string;

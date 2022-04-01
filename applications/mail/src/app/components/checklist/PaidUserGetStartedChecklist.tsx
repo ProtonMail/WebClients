@@ -20,28 +20,30 @@ const PaidUserGetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelecti
     const api = useApi();
     const { checklist, loading } = usePaidUserChecklist();
 
-    const checklistItems = [
-        {
-            key: ChecklistKey.Import,
-            text: c('Paid user checklist item').t`Import contacts or emails`,
-            icon: 'arrow-down-to-screen',
-        },
-        {
-            key: ChecklistKey.SendMessage,
-            text: c('Paid user checklist item').t`Send a message`,
-            icon: 'paper-plane',
-        },
-        {
-            key: ChecklistKey.RecoveryMethod,
-            text: c('Paid user checklist item').t`Set up a recovery method`,
-            icon: 'lock',
-        },
-        {
-            key: ChecklistKey.MobileApp,
-            text: c('Paid user checklist item').t`Get mobile app`,
-            icon: 'mobile',
-        },
-    ]
+    const checklistItems = (
+        [
+            {
+                key: ChecklistKey.Import,
+                text: c('Paid user checklist item').t`Import contacts or emails`,
+                icon: 'arrow-down-to-screen',
+            },
+            {
+                key: ChecklistKey.SendMessage,
+                text: c('Paid user checklist item').t`Send a message`,
+                icon: 'paper-plane',
+            },
+            {
+                key: ChecklistKey.RecoveryMethod,
+                text: c('Paid user checklist item').t`Set up a recovery method`,
+                icon: 'lock',
+            },
+            {
+                key: ChecklistKey.MobileApp,
+                text: c('Paid user checklist item').t`Get mobile app`,
+                icon: 'mobile',
+            },
+        ] as const
+    )
         .filter(isTruthy)
         .map(({ key, ...rest }) => ({
             key,

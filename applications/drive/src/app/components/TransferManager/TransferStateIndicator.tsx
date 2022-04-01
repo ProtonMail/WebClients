@@ -1,4 +1,4 @@
-import { Icon, classnames, Tooltip } from '@proton/components';
+import { Icon, classnames, Tooltip, IconName } from '@proton/components';
 import { c } from 'ttag';
 import { TransferState, Upload, Download, TransferType } from '@proton/shared/lib/interfaces/drive/transfer';
 import {
@@ -29,7 +29,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
         isTransferCanceled(transfer) ||
         isTransferDone(transfer);
 
-    const statusInfo = {
+    const statuses: { [key in TransferState]: { text: string; icon?: IconName } } = {
         [TransferState.Initializing]: {
             text: c('Info').t`Initializing`,
         },
@@ -74,7 +74,9 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             text: c('Info').t`Finalizing`,
             icon: 'check',
         },
-    }[transfer.state];
+    };
+
+    const statusInfo = statuses[transfer.state];
 
     const progressTitle = type === TransferType.Download ? c('Info').t`Downloading` : c('Info').t`Uploading`;
     const transferTitle = isTransferProgress(transfer) ? progressTitle : statusInfo.text;

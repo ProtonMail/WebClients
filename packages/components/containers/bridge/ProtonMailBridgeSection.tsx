@@ -2,7 +2,7 @@ import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { useState, useEffect, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
-import { Select, Icon, ButtonLike } from '../../components';
+import { Select, Icon, ButtonLike, IconName } from '../../components';
 import { useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 
@@ -10,7 +10,7 @@ import './ProtonMailBridgeSection.scss';
 
 interface BridgeClient {
     id: string;
-    icon: string;
+    icon: IconName;
     platform: string;
     versionFile: string;
     version: string;

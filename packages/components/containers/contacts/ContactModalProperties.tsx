@@ -6,11 +6,11 @@ import { ContactPropertyChange, ContactProperties, ContactEmailModel } from '@pr
 import { EXACTLY_ONE_MAY_BE_PRESENT, PROPERTIES } from '@proton/shared/lib/contacts/vcard';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 
-import { Button, Icon, OrderableContainer, OrderableElement } from '../../components';
+import { Button, Icon, IconName, OrderableContainer, OrderableElement } from '../../components';
 import ContactModalRow from './ContactModalRow';
 import EncryptedIcon from './EncryptedIcon';
 
-const ICONS: { [key: string]: string } = {
+const ICONS: { [key: string]: IconName } = {
     fn: 'user',
     email: 'envelope',
     tel: 'phone-rotary',
@@ -134,7 +134,7 @@ const ContactModalProperties = (
             {canAdd && (
                 <div className="flex flex-nowrap flex-item-noshrink">
                     <div className="mr0-5 flex flex-align-items-center flex-item-noshrink">
-                        <Icon name="align-justify visibility-hidden" />
+                        <Icon name="align-justify" className="visibility-hidden" />
                     </div>
                     <div className="flex flex-nowrap w95">
                         <Button

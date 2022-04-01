@@ -1,6 +1,28 @@
-import Icon, { IconProps } from './Icon';
+import { forwardRef, ComponentPropsWithRef } from 'react';
 
-const nameSpaceSvg = 'mime';
+import { classnames } from '../../helpers';
+import { IconSize } from './Icon';
+
+export type MimeName =
+    | 'attachments'
+    | 'calendar'
+    | 'doc'
+    | 'folder'
+    | 'font'
+    | 'image'
+    | 'keynote'
+    | 'keytrust'
+    | 'numbers'
+    | 'pages'
+    | 'pdf'
+    | 'ppt'
+    | 'sound'
+    | 'text'
+    | 'unknown'
+    | 'video'
+    | 'xls'
+    | 'xml'
+    | 'zip';
 
 const viewboxMap = {
     sm: 16,
@@ -8,7 +30,7 @@ const viewboxMap = {
     lg: 48,
 };
 
-const getIconSize = (size: number) => {
+const getIconAsset = (size: IconSize) => {
     if (size < 20) {
         return 'sm';
     }
@@ -18,19 +40,46 @@ const getIconSize = (size: number) => {
     return 'lg';
 };
 
+export interface MimeIconProps extends ComponentPropsWithRef<'svg'> {
+    name: MimeName;
+    size?: IconSize;
+    /** If specified, renders an sr-only element for screenreaders */
+    alt?: string;
+    /** If specified, renders an inline title element */
+    title?: string;
+}
+
 /**
  * Component to render SVG file icons.
  * Use it the same way as Icon, just without need to specify name space
- * (automatically mime is used), and proper size is chosen based on the
+ * (automatically mime is used), and proper asset is chosen based on the
  * passed size parameter: mime icons have three different shapes to fit
  * any space the best way.
  */
-const MimeIcon = ({ name, size = 16, ...rest }: IconProps) => {
-    const iconSize = getIconSize(size);
-    const fullName = `${iconSize}-${name}`;
-    const viewBox = `0 0 ${viewboxMap[iconSize]} ${viewboxMap[iconSize]}`;
+const MimeIcon = forwardRef<SVGSVGElement, MimeIconProps>(
+    ({ name, size = 16, alt, title, className, ...rest }, ref) => {
+        const iconAsset = getIconAsset(size);
+        const viewBox = `0 0 ${viewboxMap[iconAsset]} ${viewboxMap[iconAsset]}`;
+        const xlinkHref = `#mime-${iconAsset}-${name}`;
 
-    return <Icon name={fullName} size={size} viewBox={viewBox} nameSpaceSvg={nameSpaceSvg} {...rest} />;
-};
+        return (
+            <>
+                <svg
+                    role="img"
+                    viewBox={viewBox}
+                    focusable="false"
+                    className={classnames([`icon-${size}p`, className])}
+                    ref={ref}
+                    {...rest}
+                >
+                    {title && <title>{title}</title>}
+                    <use xlinkHref={xlinkHref} />
+                </svg>
+
+                {alt ? <span className="sr-only">{alt}</span> : null}
+            </>
+        );
+    }
+);
 
 export default MimeIcon;
