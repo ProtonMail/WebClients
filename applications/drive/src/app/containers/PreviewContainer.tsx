@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import { RouteComponentProps, useLocation } from 'react-router-dom';
 
 import { FilePreview, NavigationControl, useModals } from '@proton/components';
-import { STATUS_CODE } from '@proton/shared/lib/drive/constants';
+import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
 import { DecryptedLink, useFileView } from '../store';
 import useActiveShare from '../hooks/drive/useActiveShare';
@@ -48,7 +48,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
 
     useEffect(() => {
         if (error) {
-            if (error.status === STATUS_CODE.NOT_FOUND) {
+            if (error.status === HTTP_STATUS_CODE.NOT_FOUND) {
                 navigateToRoot();
             } else {
                 setError(() => {
