@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -18,7 +18,7 @@ import { partition } from '@proton/shared/lib/helpers/array';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useAddresses, useCalendars, useCalendarUserSettings, useFeature, useModals, useUser } from '../../hooks';
-import { ProviderCard } from '../../components';
+import { ProviderCard, useModalState } from '../../components';
 
 import SettingsSectionWide from './SettingsSectionWide';
 import SettingsParagraph from './SettingsParagraph';
@@ -78,7 +78,7 @@ const AccountEasySwitchSection = () => {
 
     const defaultCalendar = getDefaultCalendar(personalActiveCalendars, calendarUserSettings.DefaultCalendarID);
 
-    const [isImportCalendarModalOpen, setIsImportCalendarModalOpen] = useState(false);
+    const [importCalendarModal, setIsImportCalendarModalOpen, renderImportCalendarModal] = useModalState();
 
     const onOpenCalendarModal = () => {
         if (defaultCalendar) {
@@ -104,12 +104,14 @@ const AccountEasySwitchSection = () => {
 
     return (
         <SettingsSectionWide>
-            <ImportCalendarModal
-                isOpen={isImportCalendarModalOpen}
-                defaultCalendar={defaultCalendar!}
-                calendars={activeCalendars}
-                onClose={() => setIsImportCalendarModalOpen(false)}
-            />
+            {renderImportCalendarModal && (
+                <ImportCalendarModal
+                    {...importCalendarModal}
+                    isOpen={importCalendarModal.open}
+                    defaultCalendar={defaultCalendar!}
+                    calendars={activeCalendars}
+                />
+            )}
             <SettingsParagraph>
                 {c('Info')
                     .t`Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.`}
