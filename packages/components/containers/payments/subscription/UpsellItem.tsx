@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
-import { Icon } from '../../../components';
+
+import { Icon, IconName } from '../../../components';
 
 interface UpsellItemProps {
-    icon: string;
+    icon: IconName;
     children: ReactNode;
 }
 

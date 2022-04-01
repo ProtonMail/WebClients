@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 import {
+    IconName,
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemContentIcon,
@@ -13,7 +14,7 @@ import { useDriveEventManager } from '../../../store';
 
 interface Props {
     children: React.ReactNode;
-    icon: string;
+    icon: IconName;
     isActive: boolean;
     shareId?: string;
     to: string;

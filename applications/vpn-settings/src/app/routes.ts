@@ -99,7 +99,7 @@ export const getRoutes = (user: UserModel) => {
                 },
             ],
         },
-        payments: {
+        payments: <SectionConfig>{
             text: c('Title').t`Payments`,
             to: '/payments',
             icon: 'wallet',

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { classnames } from '../../helpers';
-import { Icon } from '../icon';
+import { Icon, IconName } from '../icon';
 
 export enum BannerBackgroundColor {
     NORM = 'norm',
@@ -21,7 +21,7 @@ export enum IconColor {
 export interface BannerProps {
     backgroundColor?: BannerBackgroundColor;
     iconColor?: IconColor;
-    icon?: React.ReactNode;
+    icon?: IconName;
     action?: React.ReactNode;
     children: React.ReactNode;
 }
@@ -32,11 +32,7 @@ const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor,
             return null;
         }
 
-        if (typeof icon === 'string') {
-            return <Icon name={icon} className={classnames(['mr0-75 flex-item-noshrink', `color-${iconColor}`])} />;
-        }
-
-        return icon;
+        return <Icon name={icon} className={classnames(['mr0-75 flex-item-noshrink', `color-${iconColor}`])} />;
     };
 
     return (

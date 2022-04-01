@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import {
     Bordered,
     Icon,
+    IconName,
     Block,
     Href,
     SimpleDropdown,
@@ -15,7 +16,7 @@ import {
 interface Props {
     title: string;
     link: string;
-    icon: string;
+    icon: IconName;
     items?: ReactNode[];
 }
 
