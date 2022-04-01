@@ -37,6 +37,8 @@ const MessageOnlyView = ({
     const [labels = []] = useLabels();
 
     const [hasScrollShadow, setHasScrollShadow] = useState(false);
+    const [isMessageFocused, setIsMessageFocused] = useState(false);
+    const [isMessageReady, setIsMessageReady] = useState(false);
 
     const { message, messageLoaded, bodyLoaded } = useMessage(messageID);
     const load = useLoadMessage(message.data || ({ ID: messageID } as Message));
@@ -73,11 +75,38 @@ const MessageOnlyView = ({
 
     const messageRef = useRef<MessageViewRef>(null);
 
+    const handleBlurCallback = () => {
+        setIsMessageFocused(false);
+    };
+    const handleFocusCallback = () => {
+        setIsMessageFocused(true);
+    };
+
+    const handleMessageReadyCallback = () => {
+        setIsMessageReady(true);
+        onMessageReady();
+    };
+
     useEffect(() => {
         if (!isDraft(message.data)) {
             messageRef?.current?.expand();
         }
+
+        return () => {
+            setIsMessageReady(false);
+        };
     }, [messageID]);
+
+    useEffect(() => {
+        if (messageID && isMessageReady) {
+            const selector = `[data-shortcut-target="message-container"][data-message-id="${messageID}"]`;
+
+            const element = document.querySelector(selector) as HTMLElement;
+
+            element?.focus();
+            setIsMessageFocused(true);
+        }
+    }, [messageID, isMessageReady]);
 
     return (
         <>
@@ -106,9 +135,12 @@ const MessageOnlyView = ({
                         mailSettings={mailSettings}
                         onBack={onBack}
                         breakpoints={breakpoints}
-                        onMessageReady={onMessageReady}
+                        onMessageReady={handleMessageReadyCallback}
                         columnLayout={columnLayout}
                         isComposerOpened={isComposerOpened}
+                        onBlur={handleBlurCallback}
+                        onFocus={handleFocusCallback}
+                        hasFocus={isMessageFocused}
                     />
                 </div>
             </Scroll>
