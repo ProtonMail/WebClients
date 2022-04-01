@@ -222,21 +222,7 @@ export interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
 }
 
 const Icon = forwardRef<SVGSVGElement, IconProps>(
-    (
-        {
-            name,
-            alt,
-            title,
-            color,
-            className = '',
-            viewBox = '0 0 16 16',
-            size = 16,
-            rotate = 0,
-            nameSpaceSvg = 'ic',
-            ...rest
-        },
-        ref
-    ) => {
+    ({ name, alt, title, color, className = '', viewBox = '0 0 16 16', size = 16, rotate = 0, ...rest }, ref) => {
         const style = {
             ...(color && { color }),
             ...(rotate && { transform: `rotate(${rotate}deg)` }),
@@ -254,7 +240,7 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
                     {...rest}
                 >
                     {title ? <title>{title}</title> : null}
-                    <use xlinkHref={name.startsWith('#') ? name : `#${nameSpaceSvg}-${name}`} />
+                    <use xlinkHref={`#ic-${name}`} />
                 </svg>
                 {alt ? <span className="sr-only">{alt}</span> : null}
             </>

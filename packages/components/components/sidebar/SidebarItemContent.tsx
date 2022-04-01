@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 
-import Icon, { IconSize } from '../icon/Icon';
+import Icon, { IconName, IconSize } from '../icon/Icon';
 
 interface Props {
-    icon?: string;
+    icon?: IconName;
     iconColor?: string;
     iconSize?: IconSize;
     text?: ReactNode;

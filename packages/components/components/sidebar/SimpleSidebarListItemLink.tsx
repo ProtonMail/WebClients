@@ -3,11 +3,11 @@ import SidebarListItemContentIcon from './SidebarListItemContentIcon';
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
 import SidebarListItemLink, { Props as SidebarListItemProps } from './SidebarListItemLink';
-import { IconSize } from '../icon/Icon';
+import { IconName, IconSize } from '../icon/Icon';
 
 interface Props extends SidebarListItemProps {
     to: string;
-    icon?: string;
+    icon?: IconName;
     iconSize?: IconSize;
     iconColor?: string;
     children: ReactNode;

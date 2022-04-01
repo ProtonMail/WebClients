@@ -12,6 +12,7 @@ import {
     useHotkeys,
     useMailSettings,
     useItemsDroppable,
+    IconName,
 } from '@proton/components';
 import { useHistory } from 'react-router-dom';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -36,7 +37,7 @@ interface Props {
     currentLabelID: string;
     labelID: string;
     isFolder: boolean;
-    icon?: string;
+    icon?: IconName;
     iconSize?: IconSize;
     text: string;
     shortcutText?: string;

@@ -2,7 +2,7 @@ import { Fragment, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
-import { Button, Select, Icon, useModalState } from '../../../components';
+import { Button, Select, Icon, IconName, useModalState } from '../../../components';
 import { classnames } from '../../../helpers';
 
 import EditLabelModal, { LabelModel } from '../../labels/modals/EditLabelModal';
@@ -87,7 +87,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
         if (['archive', 'inbox', 'spam', 'trash'].includes(moveTo?.folder)) {
             selectedFolder = (
                 <span className="inline-flex flex-align-items-center mr2">
-                    <Icon name={moveTo?.folder} className="mr0-5" />
+                    <Icon name={moveTo.folder as IconName} className="mr0-5" />
                     {options.find((o) => o.value === moveTo?.folder)?.text}
                 </span>
             );

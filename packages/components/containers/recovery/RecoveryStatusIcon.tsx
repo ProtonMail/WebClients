@@ -1,4 +1,4 @@
-import Icon, { IconProps } from '../../components/icon/Icon';
+import Icon, { IconName, IconProps } from '../../components/icon/Icon';
 import { classnames } from '../../helpers';
 
 interface Props extends Omit<IconProps, 'name' | 'size'> {
@@ -6,7 +6,7 @@ interface Props extends Omit<IconProps, 'name' | 'size'> {
 }
 
 const RecoveryStatusIcon = ({ type, className, ...rest }: Props) => {
-    let config = {
+    let config: { name: IconName; className: string } = {
         name: 'circle-info-filled',
         className: 'color-info',
     };

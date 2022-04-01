@@ -11,6 +11,7 @@ import {
     Icon,
     Button,
     useModalState,
+    IconName,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -28,7 +29,7 @@ import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 
 import './MoveDropdown.scss';
 
-type FolderItem = Folder & { icon: string; level: number };
+type FolderItem = Folder & { icon: IconName; level: number };
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 

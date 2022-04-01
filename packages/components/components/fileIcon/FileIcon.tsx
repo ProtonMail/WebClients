@@ -1,62 +1,58 @@
 import { isImage, isSupportedText, isPDF, isVideo, isFont, isExcel, isICS } from '@proton/shared/lib/helpers/mimetype';
+
 import { classnames } from '../../helpers/component';
-import { IconProps } from '../icon/Icon';
-import MimeIcon from '../icon/MimeIcon';
+import MimeIcon, { MimeIconProps, MimeName } from '../icon/MimeIcon';
 
-const iconsMap: { [mimeType: string]: { name: string } } = {
-    Folder: { name: 'folder' },
+const iconsMap: { [mimeType: string]: MimeName } = {
+    Folder: 'folder',
 
-    'application/x-rar-compressed': { name: 'zip' },
-    'application/x-zip-compressed': { name: 'zip' },
-    'application/zip': { name: 'zip' },
-    'application/x-7z-compressed': { name: 'zip' }, // .7z — 7-Zip compressed file
-    'application/x-arj': { name: 'zip' }, // .arj — ARJ compressed file
-    'application/x-debian-package': { name: 'zip' }, // .deb — Debian software package file
-    'application/octet-stream': { name: 'zip' }, // .pkg
-    'application/x-redhat-package-manager': { name: 'zip' }, // .rpm
-    'application/x-rpm': { name: 'zip' }, // .rpm
-    'application/vnd.rar': { name: 'zip' }, // .rar – RAR file
-    'application/gzip': { name: 'zip' }, // .tar.gz — Tarball compressed file
-    'application/x-gzip': { name: 'zip' }, // .tar.gz — Tarball compressed file
-    'application/x-compress': { name: 'zip' }, // .z — Z compressed file
-    'application/vnd.apple.installer+xml': { name: 'zip' }, // .pkg
+    'application/x-rar-compressed': 'zip',
+    'application/x-zip-compressed': 'zip',
+    'application/zip': 'zip',
+    'application/x-7z-compressed': 'zip', // .7z — 7-Zip compressed file
+    'application/x-arj': 'zip', // .arj — ARJ compressed file
+    'application/x-debian-package': 'zip', // .deb — Debian software package file
+    'application/octet-stream': 'zip', // .pkg
+    'application/x-redhat-package-manager': 'zip', // .rpm
+    'application/x-rpm': 'zip', // .rpm
+    'application/vnd.rar': 'zip', // .rar – RAR file
+    'application/gzip': 'zip', // .tar.gz — Tarball compressed file
+    'application/x-gzip': 'zip', // .tar.gz — Tarball compressed file
+    'application/x-compress': 'zip', // .z — Z compressed file
+    'application/vnd.apple.installer+xml': 'zip', // .pkg
 
-    'application/msword': { name: 'doc' },
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document': {
-        name: 'doc',
-    },
+    'application/msword': 'doc',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'doc',
 
-    'application/vnd.ms-powerpoint': { name: 'ppt' }, // .ppt/.pps
-    'application/vnd.openxmlformats-officedocument.presentationml.presentation': {
-        name: 'ppt',
-    },
+    'application/vnd.ms-powerpoint': 'ppt', // .ppt/.pps
+    'application/vnd.openxmlformats-officedocument.presentationml.presentation': 'ppt',
 
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': { name: 'xls' }, // .xlsm - Microsoft Excel file
-    'application/vnd.oasis.opendocument.spreadsheet': { name: 'xls' }, // .ods — OpenOffice Calc spreadsheet file
-    'application/vnd.oasis.opendocument.presentation': { name: 'ppt' }, // .ods — OpenOffice Calc presentation file
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 'xls', // .xlsm - Microsoft Excel file
+    'application/vnd.oasis.opendocument.spreadsheet': 'xls', // .ods — OpenOffice Calc spreadsheet file
+    'application/vnd.oasis.opendocument.presentation': 'ppt', // .ods — OpenOffice Calc presentation file
 
-    'application/xliff+xml': { name: 'xml' },
-    'application/xml': { name: 'xml' },
-    'text/html': { name: 'xml' }, // .html/.htm
-    'application/xhtml+xml': { name: 'xml' }, // .xhtml
+    'application/xliff+xml': 'xml',
+    'application/xml': 'xml',
+    'text/html': 'xml', // .html/.htm
+    'application/xhtml+xml': 'xml', // .xhtml
 
-    'application/pgp-keys': { name: 'keytrust' },
+    'application/pgp-keys': 'keytrust',
 
-    'application/rtf': { name: 'text' },
-    'application/x-tex': { name: 'text' },
-    'application/vnd.oasis.opendocument.text': { name: 'text' },
-    'application/vnd.wordperfect': { name: 'text' },
+    'application/rtf': 'text',
+    'application/x-tex': 'text',
+    'application/vnd.oasis.opendocument.text': 'text',
+    'application/vnd.wordperfect': 'text',
 
-    'application/vnd.ms-fontobject': { name: 'font' },
-    'application/font-sfnt': { name: 'font' }, // ttf
-    'application/vnd.oasis.opendocument.formula-template': { name: 'font' }, // otf
+    'application/vnd.ms-fontobject': 'font',
+    'application/font-sfnt': 'font', // ttf
+    'application/vnd.oasis.opendocument.formula-template': 'font', // otf
 };
 
 const getIconName = (mimeType: string) => {
-    let name = 'unknown';
+    let name: MimeName = 'unknown';
 
     if (iconsMap[mimeType]) {
-        name = iconsMap[mimeType].name;
+        name = iconsMap[mimeType];
     } else if (isImage(mimeType)) {
         name = 'image';
     } else if (mimeType === 'text/xml') {
@@ -79,9 +75,8 @@ const getIconName = (mimeType: string) => {
     return name;
 };
 
-interface Props extends Omit<IconProps, 'name'> {
+interface Props extends Omit<MimeIconProps, 'name'> {
     mimeType: string;
-    className?: string;
 }
 
 /**

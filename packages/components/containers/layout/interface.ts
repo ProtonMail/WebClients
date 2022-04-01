@@ -1,5 +1,6 @@
 import * as H from 'history';
-import { NotificationDotColor } from '../../components';
+
+import { IconName, NotificationDotColor } from '../../components';
 
 export interface SettingsPropsShared {
     location: H.Location;
@@ -16,7 +17,7 @@ export interface SubSectionConfig {
 export interface SectionConfig {
     text: string;
     to: string;
-    icon: string;
+    icon: IconName;
     description?: string;
     subsections: SubSectionConfig[];
     available?: boolean;

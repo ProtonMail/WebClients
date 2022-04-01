@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { FeatureCode, useFeature, useFolders, useLabels, useMailSettings } from '@proton/components';
+import { FeatureCode, IconName, useFeature, useFolders, useLabels, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
@@ -13,7 +13,7 @@ interface ItemBase {
 }
 
 interface ItemDefaultFolder extends ItemBase {
-    icon: string;
+    icon: IconName;
     url: string;
 }
 interface ItemCustomFolder extends ItemBase {
@@ -99,7 +99,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
                       value: SCHEDULED,
                       text: getLabelIDsToI18N()[SCHEDULED],
                       url: STANDARD_FOLDERS[SCHEDULED].to,
-                      icon: 'clock',
+                      icon: 'clock' as const,
                   },
               ]
             : []),

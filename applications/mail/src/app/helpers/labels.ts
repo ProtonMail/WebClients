@@ -6,6 +6,7 @@ import { Label } from '@proton/shared/lib/interfaces/Label';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { IconName } from '@proton/components';
 import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN, getLabelIDsToI18N } from '../constants';
 import { Conversation } from '../models/conversation';
 import { getLabelIDs } from './elements';
@@ -17,7 +18,7 @@ const DEFAULT_FOLDERS = [INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, SCHEDULED, O
 export type LabelChanges = { [labelID: string]: boolean };
 
 export interface FolderInfo {
-    icon: string;
+    icon: IconName;
     name: string;
     to: string;
     color?: string;
