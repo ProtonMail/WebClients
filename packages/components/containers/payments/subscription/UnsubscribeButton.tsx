@@ -17,6 +17,7 @@ import {
     useModals,
     useEventManager,
     useOrganization,
+    usePlans,
 } from '../../../hooks';
 import LossLoyaltyModal from '../LossLoyaltyModal';
 import DowngradeModal from '../DowngradeModal';
@@ -31,6 +32,7 @@ interface Props extends Omit<ButtonProps, 'loading' | 'onClick'> {
 const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     const [user] = useUser();
     const [organization] = useOrganization();
+    const [plans] = usePlans();
     const { createNotification, hideNotification } = useNotifications();
     const { createModal } = useModals();
     const api = useApi();
@@ -78,7 +80,7 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
         }
 
         const subscriptionCancelData = await new Promise<SubscriptionCancelModel>((resolve, reject) => {
-            createModal(<SubscriptionCancelModal onSubmit={resolve} onClose={reject} />);
+            createModal(<SubscriptionCancelModal user={user} plans={plans} onSubmit={resolve} onClose={reject} />);
         });
 
         await new Promise<void>((resolve, reject) => {

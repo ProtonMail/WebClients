@@ -91,7 +91,7 @@ const PlanSelection = ({
         const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
         const planTitle = PLAN_NAMES[plan.Name as PLANS];
         const actionLabel = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
-        const shortPlan = getShortPlan(plan.Name as PLANS, vpnCountries, vpnServers);
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnCountries, vpnServers);
 
         if (!shortPlan) {
             return null;

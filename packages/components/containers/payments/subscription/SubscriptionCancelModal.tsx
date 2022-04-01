@@ -4,8 +4,10 @@ import { getDifferenceInDays } from '@proton/shared/lib/date/date';
 import { BRAND_NAME, PLANS, PLAN_NAMES, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
 import { shuffle } from '@proton/shared/lib/helpers/array';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { Plan } from '@proton/shared/lib/interfaces';
+import { Plan, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { getIsLegacyPlan } from '@proton/shared/lib/helpers/subscription';
 import {
     Alert,
     Button,
@@ -22,7 +24,7 @@ import {
     useFormErrors,
     Form,
 } from '../../../components';
-import { useConfig, useSubscription, useUser, useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
+import { useConfig, useSubscription, useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 
 import { formatPlans } from './helpers';
 import SubscriptionCancelPlan from './SubscriptionCancelPlan';
@@ -62,11 +64,12 @@ export interface SubscriptionCancelModel {
 }
 interface Props extends Omit<ModalProps, 'onSubmit'> {
     onSubmit: (model: SubscriptionCancelModel) => void;
+    plans: Plan[] | undefined;
+    user: UserModel;
 }
 
-const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
+const SubscriptionCancelModal = ({ onSubmit, onClose, plans, user, ...rest }: Props) => {
     const { APP_NAME } = useConfig();
-    const [user] = useUser();
 
     const { isPaid } = user;
 
@@ -93,11 +96,12 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
     const currentPlan = isVpnPlan ? (vpnPlan as Plan) : (mailPlan as Plan);
     const [vpnCountries] = useVPNCountriesCount();
     const [vpnServers] = useVPNServersCount();
+    const plansMap = toMap(plans, 'Name');
 
     const downgradedPlanNameKey = PLANS.FREE;
-    const downgradedPlanName = PLAN_NAMES[downgradedPlanNameKey];
-    const downgradedPlanFeatures = getShortPlan(downgradedPlanNameKey, vpnCountries, vpnServers);
-    const planFeatures = getShortPlan(currentPlan.Name as PLANS, vpnCountries, vpnServers);
+    const downgradedPlanName = [BRAND_NAME, PLAN_NAMES[downgradedPlanNameKey]].filter(isTruthy).join(' ');
+    const downgradedPlanFeatures = getShortPlan(downgradedPlanNameKey, plansMap, vpnCountries, vpnServers);
+    const planFeatures = getShortPlan(currentPlan.Name as PLANS, plansMap, vpnCountries, vpnServers);
 
     const [step, setStep] = useState<STEPS>(() => (planFeatures ? STEPS.CONFIRM : STEPS.REASON));
     const [model, setModel] = useState<SubscriptionCancelModel>({
@@ -163,20 +167,25 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
         if (step === STEPS.CONFIRM) {
             const daysRemaining = getDifferenceInDays(new Date(), new Date(PeriodEnd * 1000));
 
-            const currentPlanName = PLAN_NAMES[currentPlan.Name as PLANS];
+            const currentPlanName = [
+                getIsLegacyPlan(currentPlan.Name) ? BRAND_NAME : '',
+                PLAN_NAMES[currentPlan.Name as PLANS],
+            ]
+                .filter(isTruthy)
+                .join(' ');
 
             // translator: daysRemaining contains the number of days remaining for the current subscription eg 288 days remaining
-            const planTimeRemainingString = c('Plan time remaining').ngettext(
-                msgid`You still have ${daysRemaining} day left on your ${BRAND_NAME} ${currentPlanName} account.`,
-                `You still have ${daysRemaining} days left on your ${BRAND_NAME} ${currentPlanName} account.`,
+            const planTimeRemainingString = c('new_plans: Plan time remaining').ngettext(
+                msgid`You still have ${daysRemaining} day left on your ${currentPlanName} account.`,
+                `You still have ${daysRemaining} days left on your ${currentPlanName} account.`,
                 daysRemaining
             );
 
             // translator: will be something like "Downgrade to Proton Free" (where "Free" is the plan name)
-            const downgradeButtonString = c('Action').t`Downgrade to ${BRAND_NAME} ${downgradedPlanName}`;
+            const downgradeButtonString = c('new_plans: Action').t`Downgrade to ${downgradedPlanName}`;
 
             // translator: will be something like "Keep my Proton Plus account"
-            const keepButtonString = c('Action').t`Keep my ${BRAND_NAME} ${currentPlanName} account`;
+            const keepButtonString = c('new_plans: Action').t`Keep my ${currentPlanName} account`;
 
             return {
                 title: c('Title').t`Downgrade account`,
@@ -201,7 +210,7 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
                                 downgrade
                             />
                             <SubscriptionCancelPlan
-                                name={PLAN_NAMES[currentPlan.Name as PLANS]}
+                                name={currentPlanName}
                                 info={planFeatures?.description || ''}
                                 features={planFeatures?.features || []}
                             />
