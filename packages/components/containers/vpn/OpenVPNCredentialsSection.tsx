@@ -18,7 +18,7 @@ interface Props {
 const OpenVPNCredentialsSection = (props: Props) => {
     const [updating, withUpdating] = useLoading();
     const { result = {}, fetch: fetchUserVPN } = useUserVPN();
-    const { VPN = {} } = result;
+    const { VPN = {} } = result as any;
     const { Name = '', Password = '' } = VPN;
     const [show, setShow] = useState(false);
     const api = useApi();
