@@ -9,6 +9,7 @@ const VpnUpgradeSection = () => {
     const { result } = useUserVPN();
     const userVPN = result?.VPN;
     const planName = userVPN?.PlanName;
+    const shouldUpgrade = planName === 'vpnbasic' || planName === 'free';
     const shouldUpgrade = planName === PLANS || planName === 'vpnbasic' || planName === 'free';
     const protonVpnName = APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS].name;
 
