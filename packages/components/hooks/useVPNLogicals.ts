@@ -1,17 +1,24 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
-import { getClientVPNInfo } from '@proton/shared/lib/api/vpn';
+import { queryVPNLogicalServerInfo } from '@proton/shared/lib/api/vpn';
+import { Logical } from '../containers/vpn/Logical';
 import useApi from './useApi';
 import useCache from './useCache';
 
-const useUserVPN = () => {
+const useVPNLogicals = () => {
     const api = useApi();
     const mountedRef = useRef(true);
     const cache = useCache();
-    const [state, setState] = useState(() => ({ result: cache.get('vpn')?.result, loading: false }));
+    const [state, setState] = useState<{
+        error?: Error,
+        result?: {
+            LogicalServers: Logical[],
+        },
+        loading: boolean,
+    }>(() => ({ result: cache.get('vpn-logicals')?.result, loading: false }));
 
     const fetch = useCallback(async (maxAge = 0) => {
         try {
-            const cachedValue = cache.get('vpn');
+            const cachedValue = cache.get('vpn-logicals');
             const time = new Date().getTime();
 
             if (cachedValue?.time + maxAge >= time) {
@@ -27,10 +34,10 @@ const useUserVPN = () => {
                 return;
             }
 
-            const promise = api(getClientVPNInfo());
-            cache.set('vpn', { promise });
+            const promise = api(queryVPNLogicalServerInfo());
+            cache.set('vpn-logicals', { promise });
             const result = await promise;
-            cache.set('vpn', {
+            cache.set('vpn-logicals', {
                 result,
                 time,
             });
@@ -39,16 +46,19 @@ const useUserVPN = () => {
                 setState({ result, loading: false });
             }
         } catch (e) {
+            cache.delete('vpn');
+
             if (mountedRef.current) {
-                setState({ error: e, loading: false });
+                setState({ error: e as Error, loading: false });
             }
         }
     }, []);
 
     useEffect(() => {
-        if (!cache.has('vpn')) {
+        if (!cache.has('vpn-logicals')) {
             fetch();
         }
+
         return () => {
             mountedRef.current = false;
         };
@@ -63,4 +73,4 @@ const useUserVPN = () => {
     );
 };
 
-export default useUserVPN;
+export default useVPNLogicals;
