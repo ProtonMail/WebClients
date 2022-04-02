@@ -7,12 +7,34 @@ const useUserVPN = () => {
     const api = useApi();
     const mountedRef = useRef(true);
     const cache = useCache();
-    const [state, setState] = useState(() => ({ result: cache.get('vpn'), loading: false }));
+    const [state, setState] = useState(() => ({ result: cache.get('vpn')?.result, loading: false }));
 
-    const fetch = useCallback(async () => {
+    const fetch = useCallback(async (maxAge = 0) => {
         try {
-            const result = await api(getClientVPNInfo());
-            cache.set('vpn', result);
+            const cachedValue = cache.get('vpn');
+            const time = new Date().getTime();
+
+            if (cachedValue?.time + maxAge >= time) {
+                setState({ result: cachedValue?.result, loading: false });
+
+                return;
+            }
+
+            if (cachedValue?.promise) {
+                const result = await cachedValue?.promise;
+                setState({ result: result, loading: false });
+
+                return;
+            }
+
+            const promise = api(getClientVPNInfo());
+            cache.set('vpn', { promise });
+            const result = await promise;
+            cache.set('vpn', {
+                result,
+                time,
+            });
+
             if (mountedRef.current) {
                 setState({ result, loading: false });
             }
