@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { utils, Point } from '@noble/ed25519';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { readableTime } from '@proton/shared/lib/helpers/time';
-import { queryVPNLogicalServerInfo } from '@proton/shared/lib/api/vpn';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import OpenVPNConfigurationSection from '../OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 import {
@@ -29,7 +28,7 @@ import {
 } from '../../../components';
 import { SettingsSectionWide, SettingsParagraph } from '../../account';
 import { getObjectKeys } from '../../../helpers';
-import { useApi, useApiResult, useModals, useNotifications, useUserVPN } from '../../../hooks';
+import { useApi, useApiResult, useModals, useNotifications, useUserVPN, useVPNLogicals } from '../../../hooks';
 import { getCountryByAbbr } from '../../../helpers/countries';
 import { deleteCertificates, generateCertificate, getKey, queryVPNClientConfig } from './api';
 import { CURVE } from './curve';
@@ -214,7 +213,7 @@ const WireGuardConfigurationSection = () => {
     const [removedCertificates, setRemovedCertificates] = useState<string[]>([]);
     const [currentCertificate, setCurrentCertificate] = useState<string | undefined>();
     const [certificates, setCertificates] = useState<Certificate[]>([]);
-    const { result: vpnResult = {}, loading: vpnLoading } = useUserVPN();
+    const { result: vpnResult = { VPN: undefined }, loading: vpnLoading } = useUserVPN();
     const { VPN: userVPN = {} } = vpnResult;
     const nameInputRef = useRef<HTMLInputElement>(null);
     const { createModal } = useModals();
@@ -223,17 +222,12 @@ const WireGuardConfigurationSection = () => {
         { FeatureFlags: FeatureFlagsConfig },
         typeof queryVPNClientConfig
     >(queryVPNClientConfig, []);
-    const { loading: logicalsLoading, result: logicalsResult = { LogicalServers: [] } } = useApiResult<
-        {
-            LogicalServers: Logical[];
-        },
-        typeof queryVPNLogicalServerInfo
-    >(queryVPNLogicalServerInfo, []);
+    const { loading: logicalsLoading, result: logicalsResult = { LogicalServers: [] } } = useVPNLogicals();
     const [limit, setLimit] = useState(paginationSize);
     const { loading: certificatesLoading, result: certificatesResult, moreToLoad } = useCertificates(limit);
 
     const logicalInfoLoading = logicalsLoading || vpnLoading;
-    const maxTier = userVPN?.MaxTier || 0;
+    const maxTier = (userVPN as any)?.MaxTier || 0;
     const logicals = useMemo(
         () =>
             ((!logicalInfoLoading && logicalsResult.LogicalServers) || [])
