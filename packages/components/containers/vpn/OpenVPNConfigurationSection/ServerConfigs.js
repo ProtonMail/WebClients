@@ -19,9 +19,8 @@ const serverNameAsc = (a, b) => serverRegionAsc(a, b) || serverNumAsc(a, b);
 
 const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
     const [{ hasPaidVpn }] = useUser();
-    const { result = {}, fetch: fetchUserVPN } = useUserVPN();
-
-    const userVPN = result.VPN;
+    const { result, fetch: fetchUserVPN } = useUserVPN();
+    const userVPN = result?.VPN || {};
     const isBasicVPN = userVPN && userVPN.PlanName === PLANS.VPNBASIC;
     const isUpgradeRequired = useCallback(
         (server) => {
@@ -31,7 +30,7 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
     );
 
     useEffect(() => {
-        fetchUserVPN(60_000);
+        fetchUserVPN(30_000);
     }, [hasPaidVpn]);
 
     // Free servers at the top, then sorted by Name#ID
