@@ -9,11 +9,11 @@ const useVPNLogicals = () => {
     const mountedRef = useRef(true);
     const cache = useCache();
     const [state, setState] = useState<{
-        error?: Error,
+        error?: Error;
         result?: {
-            LogicalServers: Logical[],
-        },
-        loading: boolean,
+            LogicalServers: Logical[];
+        };
+        loading: boolean;
     }>(() => ({ result: cache.get('vpn-logicals')?.result, loading: false }));
 
     const fetch = useCallback(async (maxAge = 0) => {
@@ -29,12 +29,12 @@ const useVPNLogicals = () => {
 
             if (cachedValue?.promise) {
                 const result = await cachedValue?.promise;
-                setState({ result: result, loading: false });
+                setState({ result, loading: false });
 
                 return;
             }
 
-            const promise = api(queryVPNLogicalServerInfo());
+            const promise = api(queryVPNLogicalServerInfo()) as Promise<{ LogicalServers: Logical[] }>;
             cache.set('vpn-logicals', { promise });
             const result = await promise;
             cache.set('vpn-logicals', {
@@ -46,7 +46,7 @@ const useVPNLogicals = () => {
                 setState({ result, loading: false });
             }
         } catch (e) {
-            cache.delete('vpn');
+            cache.delete('vpn-logicals');
 
             if (mountedRef.current) {
                 setState({ error: e as Error, loading: false });

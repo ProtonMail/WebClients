@@ -44,11 +44,11 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
     const [protocol, setProtocol] = useState(PROTOCOL.UDP);
     const { request } = useApiWithoutResult(getVPNServerConfig);
     const [plans, loadingPlans] = usePlans();
-    const { loading, result = {} } = useVPNLogicals();
-    const { result: vpnResult = {}, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
+    const { loading, result = {}, fetch: fetchLogicals } = useVPNLogicals();
+    const { result: vpnResult, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
     const [{ hasPaidVpn }] = useUser();
-    const { VPN: userVPN = {} } = vpnResult;
-    const isBasicVPN = userVPN.PlanName === 'vpnbasic';
+    const userVPN = vpnResult?.VPN || {};
+    const isBasicVPN = userVPN?.PlanName === 'vpnbasic';
     const maxTier = userVPN?.MaxTier || 0;
     const [category, setCategory] = useState(CATEGORY.FREE);
     const excludeCategoryMap = excludedCategories.reduce((map, excludedCategory) => {
@@ -134,8 +134,12 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
     }, [vpnLoading]);
 
     useEffect(() => {
-        fetchUserVPN(60_000);
+        fetchUserVPN(30_000);
     }, [hasPaidVpn]);
+
+    useEffect(() => {
+        fetchLogicals(30_000);
+    }, []);
 
     const plusVpnConnections = plans?.find(({ Name }) => Name === PLANS.VPNPLUS)?.MaxVPN;
 
