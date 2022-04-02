@@ -89,7 +89,7 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
                                 {...rest}
                                 category={category}
                                 servers={group}
-                                select={select}
+                                onSelect={select}
                                 selecting={selecting}
                             />
                         </div>

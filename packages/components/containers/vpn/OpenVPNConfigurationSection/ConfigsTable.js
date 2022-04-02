@@ -66,7 +66,7 @@ export const TorIcon = () => (
 );
 
 // TODO: Add icons instead of text for p2p and tor when they are ready
-const ConfigsTable = ({ loading, servers = [], platform, protocol, category, select, selecting }) => {
+const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onSelect, selecting }) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [{ hasPaidVpn }] = useUser();
@@ -151,8 +151,8 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, sel
                                         path={`/dashboard${hasPaidVpn ? '?plan=vpnplus' : ''}`}
                                     >{c('Action').t`Upgrade`}</ButtonLike>
                                 </Tooltip>
-                            ) : select ? (
-                                <Button size="small" onClick={() => select(server)} loading={selecting}>{c('Action')
+                            ) : onSelect ? (
+                                <Button size="small" onClick={() => onSelect(server)} loading={selecting}>{c('Action')
                                     .t`Create`}</Button>
                             ) : (
                                 <DropdownActions
@@ -189,7 +189,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, sel
 };
 
 ConfigsTable.propTypes = {
-    select: PropTypes.func,
+    onSelect: PropTypes.func,
     selecting: PropTypes.bool,
     category: PropTypes.oneOf([CATEGORY.SECURE_CORE, CATEGORY.COUNTRY, CATEGORY.SERVER, CATEGORY.FREE]),
     platform: PropTypes.string,
