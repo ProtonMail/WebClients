@@ -107,16 +107,16 @@ describe('PhoneInput', () => {
     it('change country selecting from dropdown', () => {
         runTest([
             { input: '', expectation: { value: '', country: 'United States' } },
-            { select: 'Canada', expectation: { value: '', country: 'Canada' } },
+            { onSelect: 'Canada', expectation: { value: '', country: 'Canada' } },
             { input: '6', expectation: { value: '6', country: 'Canada' } },
             { input: '61', expectation: { value: '61', country: 'Canada' } },
             { input: '613', expectation: { value: '613', country: 'Canada' } },
-            { select: 'Bahamas', expectation: { value: '', country: 'Bahamas' } },
+            { onSelect: 'Bahamas', expectation: { value: '', country: 'Bahamas' } },
             { input: '6', expectation: { value: '6', country: 'Bahamas' } },
             { input: '61', expectation: { value: '61', country: 'Bahamas' } },
             { input: '613', expectation: { value: '613', country: 'Canada' } },
             { input: '631', expectation: { value: '631', country: 'United States' } },
-            { select: 'Canada', expectation: { value: '', country: 'Canada' } },
+            { onSelect: 'Canada', expectation: { value: '', country: 'Canada' } },
         ]);
     });
 

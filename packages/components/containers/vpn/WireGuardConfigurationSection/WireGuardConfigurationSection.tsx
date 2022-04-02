@@ -809,7 +809,7 @@ const WireGuardConfigurationSection = () => {
                                 <p className="my2">{c('Info').t`Or select a particular server:`}</p>
 
                                 <OpenVPNConfigurationSection
-                                    select={createWithLogical}
+                                    onSelect={createWithLogical}
                                     selecting={creating}
                                     listOnly={true}
                                     excludedCategories={[CATEGORY.COUNTRY]}
