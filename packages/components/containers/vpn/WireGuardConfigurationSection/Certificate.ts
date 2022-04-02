@@ -10,6 +10,7 @@ export interface CertificateGenerationParams {
     ExpirationTime?: number | null | undefined;
     Mode?: CertificateMode | null | undefined;
     Features?: Record<string, string | number | boolean | null> | string[];
+    Renew?: boolean;
 }
 
 export interface CertificateDeletionParams {

@@ -33,7 +33,7 @@ import { useApi, useApiResult, useModals, useNotifications, useUserVPN } from '.
 import { getCountryByAbbr } from '../../../helpers/countries';
 import { deleteCertificates, generateCertificate, getKey, queryVPNClientConfig } from './api';
 import { CURVE } from './curve';
-import { CertificateDeletionParams, CertificateDTO } from './Certificate';
+import { CertificateDeletionParams, CertificateDTO, CertificateGenerationParams } from './Certificate';
 import { KeyPair } from './KeyPair';
 import { getFlagSvg } from '../flag';
 import { Logical } from '../Logical';
@@ -320,7 +320,7 @@ const WireGuardConfigurationSection = () => {
         publicKey: string,
         deviceName?: string | null | undefined,
         features?: Record<string, string | number | boolean | null> | undefined,
-        options: Record<string, any> = {}
+        options: Partial<CertificateGenerationParams> = {}
     ): Promise<CertificateDTO> =>
         api<CertificateDTO>(
             generateCertificate({
