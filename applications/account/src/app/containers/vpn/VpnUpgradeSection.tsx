@@ -7,7 +7,7 @@ const VpnUpgradeSection = () => {
     const plusVpnConnections = plans?.find(({ Name }) => Name === PLANS.VPNPLUS)?.MaxVPN || 10;
 
     const { result } = useUserVPN();
-    const userVPN = result?.VPN || {};
+    const userVPN = result?.VPN;
     const planName = userVPN?.PlanName;
     const shouldUpgrade = planName === PLANS || planName === 'vpnbasic' || planName === 'free';
     const protonVpnName = APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS].name;
