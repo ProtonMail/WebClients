@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
-import { queryVPNLogicalServerInfo, getVPNServerConfig } from '@proton/shared/lib/api/vpn';
+import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { groupWith } from '@proton/shared/lib/helpers/array';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_HOSTNAME } from '@proton/shared/lib/constants';
@@ -18,7 +18,7 @@ import {
     RadioGroup,
     SettingsLink,
 } from '../../../components';
-import { useApiResult, useApiWithoutResult, useUser, useSortedList, useUserVPN, usePlans } from '../../../hooks';
+import { useApiWithoutResult, useUser, useSortedList, useUserVPN, usePlans, useVPNLogicals } from '../../../hooks';
 import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';
 import ServerConfigs from './ServerConfigs';
 import { isSecureCoreEnabled } from './utils';
@@ -44,7 +44,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
     const [protocol, setProtocol] = useState(PROTOCOL.UDP);
     const { request } = useApiWithoutResult(getVPNServerConfig);
     const [plans, loadingPlans] = usePlans();
-    const { loading, result = {} } = useApiResult(queryVPNLogicalServerInfo, []);
+    const { loading, result = {} } = useVPNLogicals();
     const { result: vpnResult = {}, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
     const [{ hasPaidVpn }] = useUser();
     const { VPN: userVPN = {} } = vpnResult;

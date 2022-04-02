@@ -1,3 +1,5 @@
+import useVPNLogicals from "./useVPNLogicals";
+
 export { default as useActiveBreakpoint } from './useActiveBreakpoint';
 export { default as useActiveWindow } from './useActiveWindow';
 export { default as useAddresses, useGetAddresses } from './useAddresses';
@@ -113,6 +115,7 @@ export { useUserKeys, useGetUserKeys } from './useUserKeys';
 export { default as useUserScopes } from './useUserScopes';
 export { default as useUserSettings } from './useUserSettings';
 export { default as useUserVPN } from './useUserVPN';
+export { default as useVPNLogicals } from './useVPNLogicals';
 export { default as useVPNCountriesCount } from './useVPNCountriesCount';
 export { default as useVPNServersCount } from './useVPNServersCount';
 export { default as useWelcomeFlags } from './useWelcomeFlags';
