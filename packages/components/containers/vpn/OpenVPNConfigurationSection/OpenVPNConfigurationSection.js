@@ -39,7 +39,7 @@ const PROTOCOL = {
     UDP: 'udp',
 };
 
-const OpenVPNConfigurationSection = ({ select, selecting, listOnly = false, excludedCategories = [] }) => {
+const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, excludedCategories = [] }) => {
     const [platform, setPlatform] = useState(PLATFORM.ANDROID);
     const [protocol, setProtocol] = useState(PROTOCOL.UDP);
     const { request } = useApiWithoutResult(getVPNServerConfig);
@@ -263,7 +263,7 @@ const OpenVPNConfigurationSection = ({ select, selecting, listOnly = false, excl
                             protocol={protocol}
                             loading={loading}
                             servers={secureCoreServers}
-                            select={select}
+                            onSelect={onSelect}
                             selecting={selecting}
                         />
                     </>
@@ -286,7 +286,7 @@ const OpenVPNConfigurationSection = ({ select, selecting, listOnly = false, excl
                             protocol={protocol}
                             loading={loading}
                             servers={countryServers}
-                            select={select}
+                            onSelect={onSelect}
                             selecting={selecting}
                         />
                     </>
@@ -303,7 +303,7 @@ const OpenVPNConfigurationSection = ({ select, selecting, listOnly = false, excl
                             protocol={protocol}
                             loading={loading}
                             servers={allServers}
-                            select={select}
+                            select={onSelect}
                             selecting={selecting}
                         />
                     </>
@@ -322,7 +322,7 @@ const OpenVPNConfigurationSection = ({ select, selecting, listOnly = false, excl
                             protocol={protocol}
                             loading={loading}
                             servers={freeServers}
-                            select={select}
+                            select={onSelect}
                             selecting={selecting}
                         />
                     </>
@@ -401,7 +401,7 @@ const OpenVPNConfigurationSection = ({ select, selecting, listOnly = false, excl
 };
 
 OpenVPNConfigurationSection.propTypes = {
-    select: PropTypes.func,
+    onSelect: PropTypes.func,
     selecting: PropTypes.bool,
     listOnly: PropTypes.bool,
     excludedCategories: PropTypes.arrayOf(
