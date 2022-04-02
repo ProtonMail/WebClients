@@ -5,6 +5,7 @@ import {
     OpenVPNCredentialsSection,
     PrivateMainSettingsArea,
     ProtonVPNClientsSection,
+    WireGuardConfigurationSection,
 } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 
@@ -22,7 +23,7 @@ const VpnSettingsRouter = ({
     const location = useLocation();
 
     const {
-        routes: { downloads, openvpn },
+        routes: { downloads, openvpn, wireguard },
     } = vpnAppRoutes;
 
     return (
@@ -37,6 +38,11 @@ const VpnSettingsRouter = ({
                 <PrivateMainSettingsArea location={location} config={openvpn}>
                     <OpenVPNCredentialsSection app="account" />
                     <OpenVPNConfigurationSection />
+                </PrivateMainSettingsArea>
+            </Route>
+            <Route path={getSectionPath(path, wireguard)}>
+                <PrivateMainSettingsArea location={location} config={wireguard}>
+                    <WireGuardConfigurationSection />
                 </PrivateMainSettingsArea>
             </Route>
             {redirect}

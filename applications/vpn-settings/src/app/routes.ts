@@ -97,6 +97,10 @@ export const getRoutes = (user: UserModel) => {
                     text: c('Title').t`OpenVPN configuration files`,
                     id: 'openvpn-configuration-files',
                 },
+                {
+                    text: c('Title').t`WireGuard configuration`,
+                    id: 'wireguard-configuration',
+                },
             ],
         },
         payments: <SectionConfig>{
