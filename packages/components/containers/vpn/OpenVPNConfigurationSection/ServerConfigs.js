@@ -31,7 +31,7 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
     );
 
     useEffect(() => {
-        fetchUserVPN();
+        fetchUserVPN(60_000);
     }, [hasPaidVpn]);
 
     // Free servers at the top, then sorted by Name#ID

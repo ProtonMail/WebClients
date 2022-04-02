@@ -134,7 +134,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
     }, [vpnLoading]);
 
     useEffect(() => {
-        fetchUserVPN();
+        fetchUserVPN(60_000);
     }, [hasPaidVpn]);
 
     const plusVpnConnections = plans?.find(({ Name }) => Name === PLANS.VPNPLUS)?.MaxVPN;
