@@ -49,7 +49,7 @@ const useUserVPN = () => {
 
             if (cachedValue?.promise) {
                 const result = await cachedValue?.promise;
-                setState({ result: result, loading: false });
+                setState({ result, loading: false });
 
                 return;
             }

@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useCallback, useMemo, useRef, useState } from 'react';
+import { ChangeEvent, FormEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import getRandomValues from '@proton/get-random-values';
 import { flushSync } from 'react-dom';
 import { c } from 'ttag';
@@ -213,8 +213,8 @@ const WireGuardConfigurationSection = () => {
     const [removedCertificates, setRemovedCertificates] = useState<string[]>([]);
     const [currentCertificate, setCurrentCertificate] = useState<string | undefined>();
     const [certificates, setCertificates] = useState<Certificate[]>([]);
-    const { result: vpnResult = { VPN: undefined }, loading: vpnLoading } = useUserVPN();
-    const { VPN: userVPN = {} } = vpnResult;
+    const { result, loading: vpnLoading } = useUserVPN();
+    const userVPN = result?.VPN;
     const nameInputRef = useRef<HTMLInputElement>(null);
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -222,12 +222,16 @@ const WireGuardConfigurationSection = () => {
         { FeatureFlags: FeatureFlagsConfig },
         typeof queryVPNClientConfig
     >(queryVPNClientConfig, []);
-    const { loading: logicalsLoading, result: logicalsResult = { LogicalServers: [] } } = useVPNLogicals();
+    const {
+        loading: logicalsLoading,
+        result: logicalsResult = { LogicalServers: [] },
+        fetch: fetchLogicals,
+    } = useVPNLogicals();
     const [limit, setLimit] = useState(paginationSize);
     const { loading: certificatesLoading, result: certificatesResult, moreToLoad } = useCertificates(limit);
 
     const logicalInfoLoading = logicalsLoading || vpnLoading;
-    const maxTier = (userVPN as any)?.MaxTier || 0;
+    const maxTier = userVPN?.MaxTier || 0;
     const logicals = useMemo(
         () =>
             ((!logicalInfoLoading && logicalsResult.LogicalServers) || [])
@@ -579,6 +583,10 @@ const WireGuardConfigurationSection = () => {
             normalize((certificate.name || certificate.publicKeyFingerprint) + '-' + serverName) + '.conf'
         );
     };
+
+    useEffect(() => {
+        fetchLogicals(30_000);
+    }, []);
 
     return (
         <SettingsSectionWide>
