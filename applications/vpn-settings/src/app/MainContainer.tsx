@@ -39,6 +39,7 @@ import {
     DeleteSection,
     AutomaticSubscriptionModal,
     SubscriptionModalProvider,
+    WireGuardConfigurationSection,
     useModalState,
 } from '@proton/components';
 import LiveChatZendesk, {
@@ -210,6 +211,7 @@ const MainContainer = () => {
                                 >
                                     <ProtonVPNClientsSection />
                                     <OpenVPNConfigurationSection />
+                                    <WireGuardConfigurationSection />
                                 </PrivateMainSettingsArea>
                             </Route>
                             {getIsSectionAvailable(routes.payments) && (
