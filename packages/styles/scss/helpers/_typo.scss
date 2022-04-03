@@ -1,3 +1,7 @@
+.text-monospace {
+	font-family: $font-family-monospace;
+}
+
 @if $use-other-typo-helpers==true {
 	@each $name, $size in (2xs: 9, xs: 10, sm: 12, rg: $base-font-size, lg: 16, xl: 18, 2xl: 20, 3xl: 22, 4xl: 24) {
 		.text-#{$name} {
