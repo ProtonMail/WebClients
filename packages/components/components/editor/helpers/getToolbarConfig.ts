@@ -1,11 +1,10 @@
 import { Alignment, Direction, IEditor } from 'roosterjs-editor-types';
 import { Optional } from '@proton/shared/lib/interfaces';
+
 import { DEFAULT_BACKGROUND, DEFAULT_FONT_COLOR } from '../constants';
-import { ModalDefaultFontProps } from '../hooks/useModalDefaultFont';
-import { ModalImageProps } from '../hooks/useModalImage';
-import { ModalLinkProps } from '../hooks/useModalLink';
 import { EditorMetadata } from '../interface';
 import rgbToHex from './rgbToHex';
+import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from '../hooks/interface';
 
 interface ItemToggle {
     isActive: boolean;
