@@ -8,11 +8,13 @@ import EditorToolbar from './toolbar/Toolbar';
 import { EditorActions, EditorMetadata } from './interface';
 import { EDITOR_DEFAULT_METADATA } from './constants';
 import useToolbarConfig from './hooks/useToolbarConfig';
-import useModalDefaultFont from './hooks/useModalDefaultFont';
-import useModalImage from './hooks/useModalImage';
-import useModalLink from './hooks/useModalLink';
 import RoosterEditor from './rooster/RoosterEditor';
 import PlainTextEditor from './plainTextEditor/PlainTextEditor';
+import DefaultFontModal from './modals/DefaultFontModal';
+import InsertImageModal from './modals/InsertImageModal';
+import useEditorModal from './hooks/useEditorModal';
+import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from './hooks/interface';
+import InsertLinkModal from './modals/InsertLinkModal';
 
 interface Props {
     className?: string;
@@ -56,14 +58,14 @@ const Editor = ({
      */
     const metadata: EditorMetadata = { ...EDITOR_DEFAULT_METADATA, ...metadataProp };
 
-    const showModalLink = useModalLink();
-    const showModalImage = useModalImage();
-    const showModalDefaultFont = useModalDefaultFont();
+    const modalLink = useEditorModal<ModalLinkProps>();
+    const modalImage = useEditorModal<ModalImageProps>();
+    const modalDefaultFont = useEditorModal<ModalDefaultFontProps>();
 
     const [toolbarConfig, setToolbarConfig] = useToolbarConfig({
-        showModalImage,
-        showModalLink,
-        showModalDefaultFont,
+        showModalImage: modalImage.showCallback,
+        showModalLink: modalLink.showCallback,
+        showModalDefaultFont: modalDefaultFont.showCallback,
         onChangeMetadata,
         onAddAttachments,
     });
@@ -78,49 +80,54 @@ const Editor = ({
     );
 
     return (
-        <div
-            className={classnames([
-                className,
-                simple && 'simple-editor',
-                'editor w100 h100 rounded flex flex-column-reverse flex-item-fluid',
-            ])}
-        >
+        <>
             <div
                 className={classnames([
-                    'w100 h100 flex-item-fluid flex flex-column relative',
-                    disabled && 'editor--disabled',
+                    className,
+                    simple && 'simple-editor',
+                    'editor w100 h100 rounded flex flex-column-reverse flex-item-fluid',
                 ])}
             >
-                {metadata.isPlainText ? (
-                    <PlainTextEditor
-                        onChange={onChange}
-                        placeholder={placeholder}
-                        onReady={onReady}
-                        onFocus={onFocus}
-                    />
-                ) : (
-                    <RoosterEditor
-                        placeholder={placeholder}
-                        onChange={onChange}
-                        onReady={onReady}
-                        showBlockquoteToggle={showBlockquoteToggle}
-                        onBlockquoteToggleClick={onBlockquoteToggleClick}
-                        setToolbarConfig={setToolbarConfig}
-                        showModalLink={showModalLink}
-                        onFocus={onFocus}
-                        mailSettings={mailSettings}
-                        onPasteImage={onPasteImage}
-                    />
-                )}
-            </div>
+                <div
+                    className={classnames([
+                        'w100 h100 flex-item-fluid flex flex-column relative',
+                        disabled && 'editor--disabled',
+                    ])}
+                >
+                    {metadata.isPlainText ? (
+                        <PlainTextEditor
+                            onChange={onChange}
+                            placeholder={placeholder}
+                            onReady={onReady}
+                            onFocus={onFocus}
+                        />
+                    ) : (
+                        <RoosterEditor
+                            placeholder={placeholder}
+                            onChange={onChange}
+                            onReady={onReady}
+                            showBlockquoteToggle={showBlockquoteToggle}
+                            onBlockquoteToggleClick={onBlockquoteToggleClick}
+                            setToolbarConfig={setToolbarConfig}
+                            onPasteImage={onPasteImage}
+                            showModalLink={modalLink.showCallback}
+                            onFocus={onFocus}
+                            mailSettings={mailSettings}
+                        />
+                    )}
+                </div>
 
-            <EditorToolbar
-                config={toolbarConfig}
-                metadata={metadata}
-                onChangeMetadata={onChangeMetadata}
-                mailSettings={mailSettings}
-            />
-        </div>
+                <EditorToolbar
+                    config={toolbarConfig}
+                    metadata={metadata}
+                    onChangeMetadata={onChangeMetadata}
+                    mailSettings={mailSettings}
+                />
+            </div>
+            {metadata.supportDefaultFontSelector && <DefaultFontModal {...modalDefaultFont.props} />}
+            <InsertImageModal {...modalImage.props} />
+            <InsertLinkModal {...modalLink.props} />
+        </>
     );
 };
 
