@@ -85,7 +85,7 @@ const ConversationView = ({
 
     const [hasScrollShadow, setHasScrollShadow] = useState(false);
 
-    const { focusIndex, handleFocus, getFocusedId } = useConversationFocus(messagesToShow);
+    const { focusIndex, handleFocus, handleBlur, getFocusedId } = useConversationFocus(messagesToShow);
 
     const expandMessage = (messageID: string | undefined, scrollTo = false) => {
         messageViewsRefs.current[messageID || '']?.expand();
@@ -180,6 +180,8 @@ const ConversationView = ({
                                 onBack={onBack}
                                 breakpoints={breakpoints}
                                 onFocus={handleFocus}
+                                onBlur={handleBlur}
+                                hasFocus={index === focusIndex}
                                 onMessageReady={onMessageReady}
                                 columnLayout={columnLayout}
                                 isComposerOpened={isComposerOpened}

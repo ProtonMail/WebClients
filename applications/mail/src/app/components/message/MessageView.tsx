@@ -1,4 +1,16 @@
-import { useEffect, useMemo, useRef, useState, memo, forwardRef, Ref, useImperativeHandle } from 'react';
+import {
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+    memo,
+    forwardRef,
+    Ref,
+    useImperativeHandle,
+    FocusEventHandler,
+    RefObject,
+    FocusEvent,
+} from 'react';
 import { hasAttachments, isDraft, isSent, isOutbox } from '@proton/shared/lib/mail/messages';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { classnames } from '@proton/components';
@@ -40,7 +52,9 @@ interface Props {
     conversationID?: string;
     onBack: () => void;
     breakpoints: Breakpoints;
-    onFocus?: (index: number) => void;
+    hasFocus?: boolean;
+    onFocus?: (messageId: number) => void;
+    onBlur?: (event: FocusEvent<HTMLElement>, messageRef: RefObject<HTMLElement>) => void;
     onMessageReady?: () => void;
     columnLayout?: boolean;
     isComposerOpened: boolean;
@@ -66,7 +80,9 @@ const MessageView = (
         conversationID,
         onBack,
         breakpoints,
+        hasFocus,
         onFocus = noop,
+        onBlur = noop,
         onMessageReady,
         columnLayout = false,
         isComposerOpened,
@@ -268,14 +284,7 @@ const MessageView = (
         }
     }, [hasProcessingErrors]);
 
-    const {
-        hasFocus,
-        handleFocus,
-        handleBlur,
-        labelDropdownToggleRef,
-        moveDropdownToggleRef,
-        filterDropdownToggleRef,
-    } = useMessageHotkeys(
+    const { labelDropdownToggleRef, moveDropdownToggleRef, filterDropdownToggleRef } = useMessageHotkeys(
         elementRef,
         {
             labelID,
@@ -290,7 +299,7 @@ const MessageView = (
             messageRef: elementRef,
         },
         {
-            onFocus,
+            hasFocus: !!hasFocus,
             setExpanded,
             toggleOriginalMessage,
             handleLoadRemoteImages,
@@ -298,6 +307,14 @@ const MessageView = (
             onBack,
         }
     );
+
+    const handleFocus = () => {
+        onFocus(conversationIndex);
+    };
+
+    const handleBlur: FocusEventHandler<HTMLElement> = (event) => {
+        onBlur(event, elementRef);
+    };
 
     return (
         <article
@@ -350,6 +367,7 @@ const MessageView = (
                         originalMessageMode={originalMessageMode}
                         toggleOriginalMessage={toggleOriginalMessage}
                         onMessageReady={onMessageReady}
+                        onFocusIframe={handleFocus}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
                 </>
