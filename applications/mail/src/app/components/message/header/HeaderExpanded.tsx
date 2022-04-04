@@ -262,7 +262,7 @@ const HeaderExpanded = ({
                         {isNarrow ? (
                             <span className="message-header-recipient-mobile">{from}</span>
                         ) : (
-                            <RecipientType label={c('Label').t`From`}>{from}</RecipientType>
+                            <RecipientType label={c('Label Recipient').t`From`}>{from}</RecipientType>
                         )}
                         {messageLoaded && (isOutboxMessage || isSendingMessage) && !isScheduledMessage && (
                             <span className="ml0-5 flex-item-noshrink mtauto mbauto">
