@@ -15,6 +15,7 @@ import {
     OptimisticUpdates,
     QueryParams,
     QueryResults,
+    TaskRunningInfo,
 } from './elementsTypes';
 import { Element } from '../../models/element';
 import { isMessage as testIsMessage, parseLabelIDsInEvent } from '../../helpers/elements';
@@ -64,10 +65,13 @@ export const loadPending = (
 
 export const loadFulfilled = (
     state: Draft<ElementsState>,
-    action: PayloadAction<QueryResults, string, { arg: QueryParams }>
+    action: PayloadAction<{ result: QueryResults; taskRunning: TaskRunningInfo }, string, { arg: QueryParams }>
 ) => {
     const { page, params } = action.meta.arg;
-    const { Total, Elements } = action.payload;
+    const {
+        result: { Total, Elements },
+        taskRunning,
+    } = action.payload;
 
     Object.assign(state, {
         beforeFirstLoad: false,
@@ -79,6 +83,7 @@ export const loadFulfilled = (
     });
     state.pages.push(page);
     Object.assign(state.elements, toMap(Elements, 'ID'));
+    state.taskRunning = taskRunning;
 };
 
 export const manualPending = (state: Draft<ElementsState>) => {
@@ -188,14 +193,12 @@ export const moveAllFulfilled = (
     state: Draft<ElementsState>,
     { payload: { LabelID, timeoutID } }: PayloadAction<{ LabelID: string; timeoutID: NodeJS.Timeout }>
 ) => {
-    state.taskRunning.labelIDs.push(LabelID);
+    if (!state.taskRunning.labelIDs.includes(LabelID)) {
+        state.taskRunning.labelIDs.push(LabelID);
+    }
     state.taskRunning.timeoutID = timeoutID;
 };
 
-export const pollTaskRunningFulfilled = (
-    state: Draft<ElementsState>,
-    { payload: { newLabels, timeoutID } }: PayloadAction<{ newLabels: string[]; timeoutID: NodeJS.Timeout | undefined }>
-) => {
-    state.taskRunning.labelIDs = newLabels;
-    state.taskRunning.timeoutID = timeoutID;
+export const pollTaskRunningFulfilled = (state: Draft<ElementsState>, { payload }: PayloadAction<TaskRunningInfo>) => {
+    state.taskRunning = payload;
 };
