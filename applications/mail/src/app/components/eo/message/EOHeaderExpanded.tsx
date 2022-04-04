@@ -60,7 +60,7 @@ const EOHeaderExpanded = ({
                 <span className="flex flex-item-fluid flex-nowrap mr0-5">
                     <div className={classnames(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
                         <RecipientType
-                            label={c('Label').t`From`}
+                            label={c('Label Recipient').t`From`}
                             className={classnames([
                                 'flex flex-align-items-start flex-nowrap',
                                 !messageLoaded && 'flex-item-fluid',
