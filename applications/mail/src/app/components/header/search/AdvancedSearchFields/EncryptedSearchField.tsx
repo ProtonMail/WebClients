@@ -5,7 +5,6 @@ import {
     classnames,
     Info,
     Label,
-    UnderlineButton,
     Progress,
     Toggle,
     Tooltip,
@@ -22,9 +21,8 @@ import {
     wasIndexingDone,
     esStorageHelpers,
 } from '@proton/encrypted-search';
-
-import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { formatSimpleDate } from '../../../helpers/date';
+import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
+import { formatSimpleDate } from '../../../../helpers/date';
 
 interface Props {
     showMore: boolean;
@@ -32,7 +30,7 @@ interface Props {
     esState: ESIndexingState;
 }
 
-const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
+const EncryptedSearchField = ({ esState }: Props) => {
     const [user] = useUser();
     const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch } = useEncryptedSearchContext();
     const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
@@ -91,7 +89,7 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
         />
     );
     const esHeader = indexKeyExists(user.ID) ? (
-        <Label htmlFor="es-toggle" className="text-bold p0 pr1 flex flex-item-fluid flex-align-items-center">
+        <Label htmlFor="es-toggle" className="text-bold p0 pr1 flex flex-item-fluid flex-align-items-center w100">
             {esTitle}
             {info}
         </Label>
@@ -153,24 +151,13 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
         </Button>
     );
 
-    // Button to show advanced search options
-    const showMoreTitle = showMore ? c('Action').t`Show fewer search options` : c('Action').t`Show more search options`;
-    const showMoreText = showMore ? c('Action').t`Fewer search options` : c('Action').t`More search options`;
-    const showMoreButton = (
-        <div className="flex mb1">
-            <UnderlineButton onClick={toggleShowMore} aria-expanded={showMore} title={showMoreTitle}>
-                {showMoreText}
-            </UnderlineButton>
-        </div>
-    );
-
     const handleEnableES = async () => {
         enableESModalProps.onClose();
         await resumeIndexing();
     };
 
     return (
-        <div className="pt1-5">
+        <div className="pt0">
             <div className="flex flex-column">
                 <div className="flex flex-nowrap mb0-5 flex-align-items-center">
                     {esHeader}
@@ -215,8 +202,6 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
                     </span>
                 </div>
             )}
-            <hr className="mt1" />
-            {showMoreButton}
         </div>
     );
 };
