@@ -14,9 +14,9 @@ import { Button } from '../../components/button';
 import Mark from '../../components/text/Mark';
 import Checkbox from '../../components/input/Checkbox';
 import ContactUpgradeModal from './modals/ContactUpgradeModal';
+import { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
 import { DropdownButton } from '../../components';
-import ContactGroupModal from './group/ContactGroupEditModal';
 import './ContactGroupDropdown.scss';
 
 const UNCHECKED = 0;
@@ -26,8 +26,8 @@ const INDETERMINATE = 2;
 /**
  * Build initial dropdown model
  */
-const getModel = (contactGroups: ContactGroup[] = [], contactEmails: ContactEmail[] = []) => {
-    if (!contactEmails.length || !contactGroups.length) {
+const getModel = (contactGroups: ContactGroup[] = [], contactEmails: ContactEmail[]) => {
+    if (!contactGroups.length) {
         return Object.create(null);
     }
 
@@ -35,7 +35,7 @@ const getModel = (contactGroups: ContactGroup[] = [], contactEmails: ContactEmai
         const inGroup = contactEmails.filter(({ LabelIDs = [] }) => {
             return LabelIDs.includes(ID);
         });
-        if (inGroup.length) {
+        if (inGroup) {
             acc[ID] = contactEmails.length === inGroup.length ? CHECKED : INDETERMINATE;
         } else {
             acc[ID] = UNCHECKED;
@@ -54,6 +54,7 @@ interface Props extends ButtonProps {
     onDelayedSave?: (changes: { [groupID: string]: boolean }) => void;
     onLock?: (lock: boolean) => void;
     onSuccess?: () => void;
+    onGroupEdit: (props: ContactGroupEditProps) => void;
 }
 
 const ContactGroupDropdown = ({
@@ -66,19 +67,20 @@ const ContactGroupDropdown = ({
     onDelayedSave,
     onLock: onLockWidget,
     onSuccess,
+    onGroupEdit,
     ...rest
 }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const [keyword, setKeyword] = useState('');
     const [loading, setLoading] = useState(false);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { createModal } = useModals();
     const [contactGroups = []] = useContactGroups();
     const [initialModel, setInitialModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [model, setModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [uid] = useState(generateUID('contactGroupDropdown'));
     const [lock, setLock] = useState(false);
     const applyGroups = useApplyGroups(setLock, setLoading);
+    const { createModal } = useModals();
 
     useEffect(() => onLockWidget?.(isOpen), [isOpen]);
 
@@ -107,12 +109,10 @@ const ContactGroupDropdown = ({
 
     const handleAdd = () => {
         // Should be handled differently with the delayed save, because we need to add the current email to the new group
-        createModal(
-            <ContactGroupModal
-                selectedContactEmails={contactEmails}
-                onDelayedSave={onDelayedSave ? handleCreateContactGroup : undefined}
-            />
-        );
+        onGroupEdit({
+            selectedContactEmails: contactEmails,
+            onDelayedSave: onDelayedSave ? handleCreateContactGroup : undefined,
+        });
         close();
     };
 

@@ -1,29 +1,44 @@
 import { useState, ChangeEvent, useEffect } from 'react';
 import { c, msgid } from 'ttag';
-
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-
 import isTruthy from '@proton/utils/isTruthy';
 import useContactEmails from '../../../hooks/useContactEmails';
-import { FormModal, Alert, Row, Label, Field, Checkbox } from '../../../components';
+import {
+    Alert,
+    Row,
+    Label,
+    Field,
+    Checkbox,
+    ModalProps,
+    ModalTwo,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    Button,
+} from '../../../components';
 import { useContactGroups } from '../../../hooks';
 
-interface Props {
+export interface SelectEmailsProps {
     groupIDs: string[];
     // contacts selected
     contacts: Contact[];
-    // only submit checked contactEmails (Array<Object>)
-    onSubmit: (value: ContactEmail[]) => void;
-    onClose: () => void;
     onLock?: (lock: boolean) => void;
 }
+
+interface SelectEmailsResolver {
+    // only submit checked contactEmails (Array<Object>)
+    onResolve: (value: ContactEmail[]) => void;
+    onReject: () => void;
+}
+
+type Props = SelectEmailsProps & SelectEmailsResolver & ModalProps;
 
 type CheckableContact = ContactEmail & { isChecked?: boolean };
 
 /**
  * Modal to select contact emails and add them to a contact group
  */
-const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onClose, onLock, ...rest }: Props) => {
+const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onLock, onResolve, onReject, ...rest }: Props) => {
     const [contactGroups] = useContactGroups();
     const [allContactEmails = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, any];
 
@@ -63,8 +78,8 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onClose, onLock, ...r
             });
             return acc;
         }, [] as CheckableContact[]);
-        onSubmit(toSubmit);
-        onClose?.();
+        onResolve(toSubmit);
+        rest.onClose?.();
     };
 
     const handleCheck =
@@ -110,37 +125,44 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onClose, onLock, ...r
           );
 
     return (
-        <FormModal submit={c('Action').t`Apply`} title={title} onSubmit={handleSubmit} onClose={onClose} {...rest}>
-            <Alert className="mb2">
-                {contactText}
-                <br />
-                {groupText}
-            </Alert>
-            {model
-                .filter(({ contactEmails = [] }) => contactEmails.length > 1) // Only display contact with multiple emails
-                .map(({ ID: contactID, Name, contactEmails = [] }) => {
-                    return (
-                        <Row key={contactID} className="border-bottom">
-                            {!isSingleContact && <Label className="text-semibold pt0">{Name}</Label>}
-                            <Field className="flex flex-column w100">
-                                {contactEmails.map(({ ID: contactEmailID, Email, isChecked }: CheckableContact) => {
-                                    return (
-                                        <label key={contactEmailID} className="mb1" htmlFor={contactEmailID}>
-                                            <Checkbox
-                                                id={contactEmailID}
-                                                checked={isChecked}
-                                                className="mr0-5"
-                                                onChange={handleCheck(contactID, contactEmailID)}
-                                            />
-                                            <span>{Email}</span>
-                                        </label>
-                                    );
-                                })}
-                            </Field>
-                        </Row>
-                    );
-                })}
-        </FormModal>
+        <ModalTwo {...rest}>
+            <ModalTwoHeader title={title} />
+            <ModalTwoContent>
+                <Alert className="mb1">
+                    {contactText}
+                    <br />
+                    {groupText}
+                </Alert>
+                {model
+                    .filter(({ contactEmails = [] }) => contactEmails.length > 1) // Only display contact with multiple emails
+                    .map(({ ID: contactID, Name, contactEmails = [] }) => {
+                        return (
+                            <Row key={contactID} className="border-bottom">
+                                {!isSingleContact && <Label className="text-semibold pt0">{Name}</Label>}
+                                <Field className="flex flex-column w100">
+                                    {contactEmails.map(({ ID: contactEmailID, Email, isChecked }: CheckableContact) => {
+                                        return (
+                                            <label key={contactEmailID} className="mb1" htmlFor={contactEmailID}>
+                                                <Checkbox
+                                                    id={contactEmailID}
+                                                    checked={isChecked}
+                                                    className="mr0-5"
+                                                    onChange={handleCheck(contactID, contactEmailID)}
+                                                />
+                                                <span>{Email}</span>
+                                            </label>
+                                        );
+                                    })}
+                                </Field>
+                            </Row>
+                        );
+                    })}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onReject}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" onClick={handleSubmit}>{c('Action').t`Apply`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

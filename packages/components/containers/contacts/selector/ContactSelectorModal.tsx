@@ -24,6 +24,7 @@ import { useContactGroups } from '../../../hooks/useCategories';
 import { classnames } from '../../../helpers';
 
 import './ContactSelectorModal.scss';
+import { ContactEditProps } from '../edit/ContactEditModal';
 
 const convertContactToRecipient = ({ Name, ContactID, Email }: ContactEmail) => ({
     Name,
@@ -33,9 +34,8 @@ const convertContactToRecipient = ({ Name, ContactID, Email }: ContactEmail) => 
 
 export interface ContactSelectorProps {
     inputValue: any;
-    // onSubmit: (recipients: Recipient[]) => void;
     onGroupDetails: (contactGroupID: string) => void;
-    onUpgrade: () => void;
+    onEdit: (props: ContactEditProps) => void;
 }
 
 interface ContactSelectorResolver {
@@ -45,7 +45,7 @@ interface ContactSelectorResolver {
 
 type Props = ContactSelectorProps & ContactSelectorResolver & ModalProps;
 
-const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails, onUpgrade, ...rest }: Props) => {
+const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails, onEdit, ...rest }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
     const searchInputRef = useRef<HTMLInputElement>(null);
@@ -186,7 +186,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
             <ModalTwoHeader title={c('Title').t`Insert contacts`} />
             <ModalTwoContent>
                 {!contactEmails.length ? (
-                    <ContactSelectorEmptyContacts onClose={rest.onClose} onUpgrade={onUpgrade} />
+                    <ContactSelectorEmptyContacts onClose={rest.onClose} onEdit={onEdit} />
                 ) : (
                     <>
                         <div className="mb0-5">

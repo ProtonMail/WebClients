@@ -1,16 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
-import noop from '@proton/utils/noop';
 import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { resignAllContacts } from '@proton/shared/lib/contacts/globalOperations';
-import { Alert, Button, DynamicProgress, FormModal, PrimaryButton } from '../../../components';
+import {
+    Alert,
+    Button,
+    DynamicProgress,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '../../../components';
 import { useApi, useContacts, useEventManager, useUserKeys } from '../../../hooks';
 
-interface Props {
-    onClose?: () => void;
-}
-
-const ContactResignExecutionModal = ({ onClose = noop, ...rest }: Props) => {
+const ContactResignExecutionModal = ({ ...rest }: ModalProps) => {
     const [contacts = [], loadingContacts] = useContacts() as [Contact[] | undefined, boolean, Error];
     const [userKeys] = useUserKeys();
     const api = useApi();
@@ -50,7 +54,7 @@ const ContactResignExecutionModal = ({ onClose = noop, ...rest }: Props) => {
     // Delayed closing not to leave ongoing process
     useEffect(() => {
         if (closing && !execution) {
-            onClose();
+            rest.onClose?.();
         }
     }, [closing, execution]);
 
@@ -60,36 +64,32 @@ const ContactResignExecutionModal = ({ onClose = noop, ...rest }: Props) => {
     };
 
     return (
-        <FormModal
-            title={c('Title').t`Re-signing contacts`}
-            onSubmit={onClose}
-            onClose={handleClose}
-            submit={
-                <PrimaryButton disabled={execution} type="submit">
-                    {c('Action').t`Done`}
-                </PrimaryButton>
-            }
-            close={execution ? <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button> : null}
-            {...rest}
-        >
-            <Alert className="mb1" type="info">{c('Info')
-                .t`Please wait while we look for contacts that can be re-signed with the primary encryption key.`}</Alert>
-            <DynamicProgress
-                id="clear-data-execution-progress"
-                value={progress}
-                display={
-                    execution
-                        ? c('Info').t`Checking contact ${progress} of ${max}...`
-                        : c('Info').ngettext(
-                              msgid`${updated} contact updated successfully.`,
-                              `${updated} contacts updated successfully.`,
-                              updated
-                          )
-                }
-                max={max}
-                loading={execution}
-            />
-        </FormModal>
+        <ModalTwo {...rest}>
+            <ModalTwoHeader title={c('Title').t`Re-signing contacts`} />
+            <ModalTwoContent>
+                <Alert className="mb1" type="info">{c('Info')
+                    .t`Please wait while we look for contacts that can be re-signed with the primary encryption key.`}</Alert>
+                <DynamicProgress
+                    id="clear-data-execution-progress"
+                    value={progress}
+                    display={
+                        execution
+                            ? c('Info').t`Checking contact ${progress} of ${max}...`
+                            : c('Info').ngettext(
+                                  msgid`${updated} contact updated successfully.`,
+                                  `${updated} contacts updated successfully.`,
+                                  updated
+                              )
+                    }
+                    max={max}
+                    loading={execution}
+                />
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                {execution ? <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button> : null}
+                <Button color="norm" disabled={execution} onClick={rest.onClose}>{c('Action').t`Done`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

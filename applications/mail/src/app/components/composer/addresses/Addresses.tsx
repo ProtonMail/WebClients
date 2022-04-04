@@ -30,7 +30,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         cc: ccFocusRef,
     };
 
-    const { onUpgrade, onGroupDetails } = useContactModals({ onMailTo: noop });
+    const { onEdit, onGroupDetails } = useContactModals({ onMailTo: noop });
     const [contactSelectorModal, showContactSelector] = useModalTwo<ContactSelectorProps, Recipient[]>(
         ContactSelectorModal
     );
@@ -87,7 +87,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         const recipients = await showContactSelector({
             inputValue: message.data?.[type],
             onGroupDetails,
-            onUpgrade,
+            onEdit,
         });
 
         const currentRecipients = message.data && message.data[type] ? message.data[type] : [];

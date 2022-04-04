@@ -49,7 +49,10 @@ const ContactContainer = ({
             onExport={() => {}}
             onEmailSettings={() => {}}
             onGroupDetails={() => {}}
+            onGroupEdit={() => {}}
             onUpgrade={() => {}}
+            onSignatureError={() => {}}
+            onDecryptionError={() => {}}
         />
     );
 };

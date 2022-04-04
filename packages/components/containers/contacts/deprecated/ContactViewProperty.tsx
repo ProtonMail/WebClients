@@ -97,6 +97,7 @@ const ContactViewProperty = ({
                                 className="ml0-5"
                                 contactEmails={[contactEmail]}
                                 tooltip={c('Title').t`Contact group`}
+                                onGroupEdit={() => {}}
                             >
                                 <Icon name="users" alt={c('Action').t`Contact group`} />
                             </ContactGroupDropdown>

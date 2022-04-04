@@ -9,6 +9,7 @@ import { Button, Icon, Tooltip, Copy } from '../../../../components';
 import { useUser, useNotifications } from '../../../../hooks';
 import ContactGroupDropdown from '../../ContactGroupDropdown';
 import ContactGroupLabels from '../../group/ContactGroupLabels';
+import { ContactGroupEditProps } from '../../group/ContactGroupEditModal';
 
 interface Props {
     vCardContact: VCardContact;
@@ -21,6 +22,7 @@ interface Props {
     onEmailSettings: (props: ContactEmailSettingsProps) => void;
     onGroupDetails: (contactGroupID: string) => void;
     onUpgrade: () => void;
+    onGroupEdit: (props: ContactGroupEditProps) => void;
 }
 
 const ContactViewEmails = ({
@@ -34,6 +36,7 @@ const ContactViewEmails = ({
     onEmailSettings,
     onGroupDetails,
     onUpgrade,
+    onGroupEdit,
 }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const { createNotification } = useNotifications();
@@ -94,6 +97,7 @@ const ContactViewEmails = ({
                                                 className="ml0-5"
                                                 contactEmails={[contactEmail]}
                                                 tooltip={c('Title').t`Contact group`}
+                                                onGroupEdit={onGroupEdit}
                                             >
                                                 <Icon name="users" alt={c('Action').t`Contact group`} />
                                             </ContactGroupDropdown>

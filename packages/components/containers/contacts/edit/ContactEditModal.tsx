@@ -21,6 +21,8 @@ import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwo
 import ContactEditProperty from './ContactEditProperty';
 import useApplyGroups from '../hooks/useApplyGroups';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
+import { ContactImageProps } from '../modals/ContactImageModal';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 
 const otherInformationFields = getOtherInformationFields().map(({ value }) => value);
 
@@ -32,6 +34,8 @@ export interface ContactEditProps {
 
 export interface ContactEditModalProps {
     onUpgrade: () => void;
+    onSelectImage: (props: ContactImageProps) => void;
+    onGroupEdit: (props: ContactGroupEditProps) => void;
 }
 
 type Props = ContactEditProps & ContactEditModalProps & ModalProps;
@@ -41,6 +45,8 @@ const ContactEditModal = ({
     vCardContact: inputVCardContact = { fn: [] },
     newField,
     onUpgrade,
+    onSelectImage,
+    onGroupEdit,
     ...rest
 }: Props) => {
     const { createNotification } = useNotifications();
@@ -169,7 +175,7 @@ const ContactEditModal = ({
                 if (modelContactEmail) {
                     const contactEmail = getContactEmail(modelContactEmail.Email);
                     if (contactEmail) {
-                        await applyGroups([contactEmail], modelContactEmail.changes, true);
+                        await applyGroups(contactEmail, modelContactEmail.changes, true);
                     }
                 }
             })
@@ -228,6 +234,8 @@ const ContactEditModal = ({
                         vCardProperty={nameProperty}
                         onChangeVCard={handleChangeVCard}
                         onUpgrade={onUpgrade}
+                        onSelectImage={onSelectImage}
+                        onGroupEdit={onGroupEdit}
                     />
 
                     <ContactEditProperty
@@ -239,6 +247,8 @@ const ContactEditModal = ({
                         vCardProperty={photoProperty}
                         onChangeVCard={handleChangeVCard}
                         onUpgrade={onUpgrade}
+                        onSelectImage={onSelectImage}
+                        onGroupEdit={onGroupEdit}
                     />
                 </div>
                 <ContactEditProperties
@@ -249,6 +259,8 @@ const ContactEditModal = ({
                     vCardContact={vCardContact}
                     onChangeVCard={handleChangeVCard}
                     onUpgrade={onUpgrade}
+                    onSelectImage={onSelectImage}
+                    onGroupEdit={onGroupEdit}
                 />
                 <ContactEditProperties
                     field="email"
@@ -262,6 +274,8 @@ const ContactEditModal = ({
                     vCardContact={vCardContact}
                     onChangeVCard={handleChangeVCard}
                     onUpgrade={onUpgrade}
+                    onSelectImage={onSelectImage}
+                    onGroupEdit={onGroupEdit}
                 />
                 <ContactEditProperties
                     field="tel"
@@ -273,6 +287,8 @@ const ContactEditModal = ({
                     vCardContact={vCardContact}
                     onChangeVCard={handleChangeVCard}
                     onUpgrade={onUpgrade}
+                    onSelectImage={onSelectImage}
+                    onGroupEdit={onGroupEdit}
                 />
                 <ContactEditProperties
                     field="adr"
@@ -284,6 +300,8 @@ const ContactEditModal = ({
                     vCardContact={vCardContact}
                     onChangeVCard={handleChangeVCard}
                     onUpgrade={onUpgrade}
+                    onSelectImage={onSelectImage}
+                    onGroupEdit={onGroupEdit}
                 />
                 <ContactEditProperties
                     isSubmitted={isSubmitted}
@@ -293,6 +311,8 @@ const ContactEditModal = ({
                     vCardContact={vCardContact}
                     onChangeVCard={handleChangeVCard}
                     onUpgrade={onUpgrade}
+                    onSelectImage={onSelectImage}
+                    onGroupEdit={onGroupEdit}
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
