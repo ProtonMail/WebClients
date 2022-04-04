@@ -124,26 +124,12 @@ const ContactsWidgetGroupsContainer = ({
         onClose();
     };
 
-    // const showUpgradeModal = () => createModal(<ContactUpgradeModal />);
-
     const handleDetails = (groupID: string) => {
-        // createModal(<ContactGroupDetailsModal contactGroupID={groupID} />);
         onDetails(groupID);
         onClose();
     };
 
     const handleDelete = () => {
-        // createModal(
-        //     <ContactGroupDeleteModal
-        //         groupIDs={selectedIDs}
-        //         onDelete={() => {
-        //             if (selectedIDs.length === filteredGroups.length) {
-        //                 setSearch('');
-        //             }
-        //             handleCheckAll(false);
-        //         }}
-        //     />
-        // );
         onDelete({
             groupIDs: selectedIDs,
             onDelete: () => {
@@ -158,13 +144,11 @@ const ContactsWidgetGroupsContainer = ({
 
     const handleCreate = () => {
         if (!user.hasPaidMail) {
-            // showUpgradeModal();
             onUpgrade();
             onClose();
             return;
         }
 
-        // createModal(<ContactGroupModal />);
         onEdit({});
         onClose();
     };

@@ -50,7 +50,6 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
     const { modals, onDetails, onEdit, onDelete, onExport, onGroupDetails, onGroupEdit, onGroupDelete, onUpgrade } =
         useContactModals({ onMailTo });
     const [importModal, onImport] = useModalTwo<void, void>(ContactImportModal, false);
-    // const [exportModal, onExport] = useModalTwo<void, void>(ContactExportingModal, false);
     const { modals: mergeModals, onMerge } = useContactMergeModals();
 
     const actionIncludes = (tab: CONTACT_WIDGET_TABS) => (customAction: CustomAction) =>
@@ -125,6 +124,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
                                     onImport={onImport}
                                     onMerge={onMerge}
                                     onGroupDetails={onGroupDetails}
+                                    onGroupEdit={onGroupEdit}
                                 />
                             ),
                         },

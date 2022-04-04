@@ -1,18 +1,27 @@
 import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
-import noop from '@proton/utils/noop';
 import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { Key } from '@proton/shared/lib/interfaces';
 import { dropDataEncryptedWithAKey } from '@proton/shared/lib/contacts/globalOperations';
-import { Alert, Button, DynamicProgress, FormModal, PrimaryButton } from '../../../components';
+import {
+    Alert,
+    Button,
+    DynamicProgress,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '../../../components';
 import { useApi, useContacts, useEventManager, useUserKeys } from '../../../hooks';
 
-interface Props {
+export interface ContactClearDataExecutionProps {
     errorKey: Key;
-    onClose?: () => void;
 }
 
-const ContactClearDataExecutionModal = ({ onClose = noop, errorKey, ...rest }: Props) => {
+type Props = ContactClearDataExecutionProps & ModalProps;
+
+const ContactClearDataExecutionModal = ({ errorKey, ...rest }: Props) => {
     const [contacts = [], loadingContacts] = useContacts() as [Contact[] | undefined, boolean, Error];
     const api = useApi();
     const { call } = useEventManager();
@@ -53,7 +62,7 @@ const ContactClearDataExecutionModal = ({ onClose = noop, errorKey, ...rest }: P
     // Delayed closing not to leave ongoing process
     useEffect(() => {
         if (closing && !execution) {
-            onClose();
+            rest.onClose?.();
         }
     }, [closing, execution]);
 
@@ -63,36 +72,32 @@ const ContactClearDataExecutionModal = ({ onClose = noop, errorKey, ...rest }: P
     };
 
     return (
-        <FormModal
-            title={c('Title').t`Clearing data`}
-            onSubmit={onClose}
-            onClose={handleClose}
-            submit={
-                <PrimaryButton disabled={execution} type="submit">
-                    {c('Action').t`Done`}
-                </PrimaryButton>
-            }
-            close={execution ? <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button> : null}
-            {...rest}
-        >
-            <Alert className="mb1" type="info">{c('Info')
-                .t`Please wait while we look for contacts that contain data encrypted with the inactive key.`}</Alert>
-            <DynamicProgress
-                id="clear-data-execution-progress"
-                value={progress}
-                display={
-                    execution
-                        ? c('Info').t`Checking contact ${progress} of ${max}...`
-                        : c('Info').ngettext(
-                              msgid`${updated} contact updated successfully.`,
-                              `${updated} contacts updated successfully.`,
-                              updated
-                          )
-                }
-                max={max}
-                loading={execution}
-            />
-        </FormModal>
+        <ModalTwo {...rest}>
+            <ModalTwoHeader title={c('Title').t`Clearing data`} />
+            <ModalTwoContent>
+                <Alert className="mb1" type="info">{c('Info')
+                    .t`Please wait while we look for contacts that contain data encrypted with the inactive key.`}</Alert>
+                <DynamicProgress
+                    id="clear-data-execution-progress"
+                    value={progress}
+                    display={
+                        execution
+                            ? c('Info').t`Checking contact ${progress} of ${max}...`
+                            : c('Info').ngettext(
+                                  msgid`${updated} contact updated successfully.`,
+                                  `${updated} contacts updated successfully.`,
+                                  updated
+                              )
+                    }
+                    max={max}
+                    loading={execution}
+                />
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                {execution ? <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button> : null}
+                <Button color="norm" disabled={execution} onClick={rest.onClose}>{c('Action').t`Done`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

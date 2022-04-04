@@ -5,6 +5,7 @@ import { Checkbox, Icon, Button, Tooltip } from '../../../components';
 import { CustomAction } from './types';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import useContactList from '../hooks/useContactList';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 
 interface Props {
     allChecked: boolean;
@@ -20,6 +21,7 @@ interface Props {
     onLock: (lock: boolean) => void;
     customActions: CustomAction[];
     contactList: ReturnType<typeof useContactList>;
+    onGroupEdit: (props: ContactGroupEditProps) => void;
 }
 
 const ContactsWidgetToolbar = ({
@@ -36,6 +38,7 @@ const ContactsWidgetToolbar = ({
     onLock,
     customActions,
     contactList,
+    onGroupEdit,
 }: Props) => {
     const selectedCount = selected.length;
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
@@ -119,6 +122,7 @@ const ContactsWidgetToolbar = ({
                 forToolbar
                 onLock={onLock}
                 onSuccess={() => onCheckAll(false)}
+                onGroupEdit={onGroupEdit}
             >
                 <Icon name="users" />
             </ContactGroupDropdown>

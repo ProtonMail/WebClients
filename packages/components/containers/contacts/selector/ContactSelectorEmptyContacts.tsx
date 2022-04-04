@@ -1,22 +1,19 @@
 import { c } from 'ttag';
 import noContactsImg from '@proton/styles/assets/img/illustrations/no-contacts.svg';
 import noop from '@proton/utils/noop';
-
 import { Button } from '../../../components';
-import { useModals } from '../../../hooks';
-import ContactEditModal from '../edit/ContactEditModal';
+import { ContactEditProps } from '../edit/ContactEditModal';
 
 interface Props {
     onClose?: () => void;
-    onUpgrade: () => void;
+    onEdit: (props: ContactEditProps) => void;
 }
 
-const ContactSelectorEmptyContacts = ({ onUpgrade, onClose = noop }: Props) => {
-    const { createModal } = useModals();
+const ContactSelectorEmptyContacts = ({ onEdit, onClose = noop }: Props) => {
     const title = c('Error message').t`No results found`;
 
     const handleClick = () => {
-        createModal(<ContactEditModal onUpgrade={onUpgrade} />);
+        onEdit({});
         onClose();
     };
 

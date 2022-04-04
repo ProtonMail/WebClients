@@ -9,6 +9,23 @@ import ContactEmailSettingsModal, { ContactEmailSettingsProps } from '../email/C
 import ContactDetailsModal, { ContactDetailsProps } from '../view/ContactDetailsModal';
 import ContactExportingModal, { ContactExportingProps } from '../modals/ContactExportingModal';
 import ContactUpgradeModal from '../modals/ContactUpgradeModal';
+import ContactImageModal, { ContactImageProps } from '../modals/ContactImageModal';
+import ContactSignatureErrorModal, {
+    ContactSignatureErrorModalProps,
+    ContactSignatureErrorProps,
+} from '../modals/ContactSignatureErrorModal';
+import ContactDecryptionErrorModal, {
+    ContactDecryptionErrorModalProps,
+    ContactDecryptionErrorProps,
+} from '../modals/ContactDecryptionErrorModal';
+import ContactResignExecutionModal from '../modals/ContactResignExecutionModal';
+import ContactClearDataConfirmModal, {
+    ContactClearDataConfirmModalProps,
+    ContactClearDataConfirmProps,
+} from '../modals/ContactClearDataConfirmModal';
+import ContactClearDataExecutionModal, {
+    ContactClearDataExecutionProps,
+} from '../modals/ContactClearDataExecutionModal';
 
 export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string) => void }) => {
     const [contactDetailsModal, handleShowContactDetailsModal] = useModalTwo<ContactDetailsProps, void>(
@@ -31,7 +48,7 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
         void
     >(ContactEmailSettingsModal, false);
 
-    const [contactExportModal, handleShowContactExportModal] = useModalTwo<ContactExportingProps, void>(
+    const [contactExportingModal, handleShowContactExportingModal] = useModalTwo<ContactExportingProps, void>(
         ContactExportingModal,
         false
     );
@@ -53,14 +70,74 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
 
     const [contactUpgradeModal, handleShowContactUpgradeModal] = useModalTwo<void, void>(ContactUpgradeModal, false);
 
+    const [contactImageModal, handleShowContactImageModal] = useModalTwo<ContactImageProps, void>(
+        ContactImageModal,
+        false
+    );
+
+    const [contactSignatureErrorModal, handleShowContactSignatureErrorModal] = useModalTwo<
+        ContactSignatureErrorProps & ContactSignatureErrorModalProps,
+        void
+    >(ContactSignatureErrorModal, false);
+
+    const [contactResignExecutionModal, handleShowContactResignExecutionModal] = useModalTwo<void, void>(
+        ContactResignExecutionModal,
+        false
+    );
+
+    const [contactDecryptionErrorModal, handleShowContactDecryptionErrorModal] = useModalTwo<
+        ContactDecryptionErrorProps & ContactDecryptionErrorModalProps,
+        void
+    >(ContactDecryptionErrorModal, false);
+
+    const [contactClearDataConfirmModal, handleShowContactClearDataConfirmModal] = useModalTwo<
+        ContactClearDataConfirmProps & ContactClearDataConfirmModalProps,
+        void
+    >(ContactClearDataConfirmModal, false);
+
+    const [contactClearDataExecutionModal, handleShowContactClearDataExecutionModal] = useModalTwo<
+        ContactClearDataExecutionProps,
+        void
+    >(ContactClearDataExecutionModal, false);
+
     const handleUpgrade = () => {
         void handleShowContactUpgradeModal();
+    };
+
+    const handleSelectImage = (props: ContactImageProps) => {
+        void handleShowContactImageModal(props);
+    };
+
+    const handleResign = () => {
+        void handleShowContactResignExecutionModal();
+    };
+
+    const handleSignatureError = (contactID: string) => {
+        void handleShowContactSignatureErrorModal({ contactID, onResign: handleResign });
+    };
+
+    const handleClearData = (props: ContactClearDataExecutionProps) => {
+        void handleShowContactClearDataExecutionModal(props);
+    };
+
+    const handleClearDataConfirm = (props: ContactClearDataConfirmProps) => {
+        void handleShowContactClearDataConfirmModal({ ...props, onClearData: handleClearData });
+    };
+
+    const handleDecryptionError = (contactID: string) => {
+        void handleShowContactDecryptionErrorModal({ contactID, onClearDataConfirm: handleClearDataConfirm });
+    };
+
+    const handleGroupEdit = (props: ContactGroupEditProps) => {
+        void handleShowContactGroupEditModal(props);
     };
 
     const handleEdit = (props: ContactEditProps) => {
         void handleShowContactEditModal({
             ...props,
             onUpgrade: handleUpgrade,
+            onSelectImage: handleSelectImage,
+            onGroupEdit: handleGroupEdit,
         });
     };
 
@@ -73,11 +150,7 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
     };
 
     const handleExport = (props: ContactExportingProps = {}) => {
-        void handleShowContactExportModal(props);
-    };
-
-    const handleGroupEdit = (props: ContactGroupEditProps) => {
-        void handleShowContactGroupEditModal(props);
+        void handleShowContactExportingModal(props);
     };
 
     const handleGroupDelete = (props: ContactGroupDeleteProps) => {
@@ -102,7 +175,10 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
             onDelete: handleDelete,
             onEmailSettings: handleEmailSettings,
             onGroupDetails: handleGroupDetails,
+            onGroupEdit: handleGroupEdit,
             onUpgrade: handleUpgrade,
+            onSignatureError: handleSignatureError,
+            onDecryptionError: handleDecryptionError,
         });
     };
 
@@ -112,11 +188,17 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
             {contactEditModal}
             {contactDeleteModal}
             {contactEmailSettingsModal}
-            {contactExportModal}
+            {contactExportingModal}
             {contactGroupDetailsModal}
             {contactGroupEditModal}
             {contactGroupDeleteModal}
             {contactUpgradeModal}
+            {contactImageModal}
+            {contactSignatureErrorModal}
+            {contactResignExecutionModal}
+            {contactDecryptionErrorModal}
+            {contactClearDataConfirmModal}
+            {contactClearDataExecutionModal}
         </>
     );
 
@@ -131,5 +213,7 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
         onGroupEdit: handleGroupEdit,
         onGroupDelete: handleGroupDelete,
         onUpgrade: handleUpgrade,
+        onSignatureError: handleSignatureError,
+        onDecryptionError: handleDecryptionError,
     };
 };

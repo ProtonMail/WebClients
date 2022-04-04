@@ -15,6 +15,8 @@ import {
 import { Button, Icon, IconName, OrderableContainer, OrderableElement } from '../../../components';
 import ContactEditProperty from './ContactEditProperty';
 import EncryptedIcon from '../view/EncryptedIcon';
+import { ContactImageProps } from '../modals/ContactImageModal';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 
 const ICONS: { [key: string]: IconName } = {
     fn: 'user',
@@ -36,6 +38,8 @@ interface Props {
     vCardContact: VCardContact;
     onChangeVCard: (vCardProperty: VCardProperty) => void;
     onUpgrade: () => void;
+    onSelectImage: (props: ContactImageProps) => void;
+    onGroupEdit: (props: ContactGroupEditProps) => void;
 }
 
 const ContactEditProperties = (
@@ -51,6 +55,8 @@ const ContactEditProperties = (
         vCardContact,
         onChangeVCard,
         onUpgrade,
+        onSelectImage,
+        onGroupEdit,
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
@@ -104,6 +110,8 @@ const ContactEditProperties = (
                 vCardProperty={property}
                 onChangeVCard={onChangeVCard}
                 onUpgrade={onUpgrade}
+                onSelectImage={onSelectImage}
+                onGroupEdit={onGroupEdit}
             />
         ));
     }, [properties, vCardContact, onChangeVCard, onRemove, onAdd, sortable]);

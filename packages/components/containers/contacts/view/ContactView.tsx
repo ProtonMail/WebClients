@@ -15,6 +15,7 @@ import ContactViewOthers from './properties/ContactViewOthers';
 import { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
 
 import './ContactView.scss';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 
 interface Props {
     vCardContact: VCardContact;
@@ -30,7 +31,10 @@ interface Props {
     onEmailSettings: (props: ContactEmailSettingsProps) => void;
     onExport: () => void;
     onGroupDetails: (contactGroupID: string) => void;
+    onGroupEdit: (props: ContactGroupEditProps) => void;
     onUpgrade: () => void;
+    onSignatureError: (contactID: string) => void;
+    onDecryptionError: (contactID: string) => void;
     isPreview?: boolean;
 }
 
@@ -48,7 +52,10 @@ const ContactView = ({
     onEmailSettings,
     onExport,
     onGroupDetails,
+    onGroupEdit,
     onUpgrade,
+    onSignatureError,
+    onDecryptionError,
     isPreview = false,
 }: Props) => {
     const hasError = errors?.some(
@@ -71,7 +78,14 @@ const ContactView = ({
                     isPreview={isPreview}
                     hasError={hasError}
                 />
-                <ContactViewErrors errors={errors} onReload={onReload} contactID={contactID} />
+                <ContactViewErrors
+                    errors={errors}
+                    onReload={onReload}
+                    contactID={contactID}
+                    onSignatureError={onSignatureError}
+                    onDecryptionError={onDecryptionError}
+                    isPreview={isPreview}
+                />
             </div>
             <div>
                 <ContactViewFns vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
@@ -86,6 +100,7 @@ const ContactView = ({
                     onEmailSettings={onEmailSettings}
                     onGroupDetails={onGroupDetails}
                     onUpgrade={onUpgrade}
+                    onGroupEdit={onGroupEdit}
                 />
                 <ContactViewTels vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
                 <ContactViewAdrs vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />

@@ -8,6 +8,8 @@ import { useUser } from '../../../hooks';
 import ContactEditLabel from './ContactEditLabel';
 import ContactFieldProperty from './fields/ContactFieldProperty';
 import ContactGroupDropdown from '../ContactGroupDropdown';
+import { ContactImageProps } from '../modals/ContactImageModal';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 
 interface Props {
     vCardProperty: VCardProperty;
@@ -23,6 +25,8 @@ interface Props {
     contactEmail?: ContactEmailModel;
     onContactEmailChange?: (contactEmail: ContactEmailModel) => void;
     onUpgrade: () => void;
+    onSelectImage: (props: ContactImageProps) => void;
+    onGroupEdit: (props: ContactGroupEditProps) => void;
 }
 
 const ContactEditProperty = (
@@ -40,6 +44,8 @@ const ContactEditProperty = (
         contactEmail,
         onContactEmailChange,
         onUpgrade,
+        onSelectImage,
+        onGroupEdit,
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
@@ -113,6 +119,7 @@ const ContactEditProperty = (
                             vCardProperty={vCardProperty}
                             onChangeVCard={onChangeVCard}
                             isSubmitted={isSubmitted}
+                            onSelectImage={onSelectImage}
                         />
                     </span>
                     {actionRow && (
@@ -136,11 +143,10 @@ const ContactEditProperty = (
                                                 color="weak"
                                                 shape="outline"
                                                 className="mr0-5"
-                                                contactEmails={
-                                                    (contactEmail ? [contactEmail] : []) as any as ContactEmail[]
-                                                }
+                                                contactEmails={[contactEmail as unknown as ContactEmail]}
                                                 onDelayedSave={handleUpdateContactGroups}
                                                 tooltip={c('Title').t`Contact group`}
+                                                onGroupEdit={onGroupEdit}
                                             >
                                                 <Icon name="users" alt={c('Action').t`Contact group`} />
                                             </ContactGroupDropdown>

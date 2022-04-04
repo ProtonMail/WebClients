@@ -2,20 +2,18 @@ import { c } from 'ttag';
 import { formatImage } from '@proton/shared/lib/helpers/image';
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { Button } from '../../../../components';
-import { useModals } from '../../../../hooks';
-import ContactImageModal from '../../modals/ContactImageModal';
+import { ContactImageProps } from '../../modals/ContactImageModal';
 
 interface Props {
     vCardProperty: VCardProperty<string>;
     onChange: (vCardProperty: VCardProperty) => void;
+    onSelectImage: (props: ContactImageProps) => void;
 }
 
-const ContactFieldImage = ({ vCardProperty, onChange }: Props) => {
-    const { createModal } = useModals();
-
+const ContactFieldImage = ({ vCardProperty, onChange, onSelectImage }: Props) => {
     const handleChangeImage = () => {
         const handleSubmit = (value: string) => onChange({ ...vCardProperty, value });
-        createModal(<ContactImageModal url={vCardProperty.value} onSubmit={handleSubmit} />);
+        onSelectImage({ url: vCardProperty.value, onSubmit: handleSubmit });
     };
 
     return (

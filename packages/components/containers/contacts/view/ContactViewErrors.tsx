@@ -6,9 +6,6 @@ import Icon from '../../../components/icon/Icon';
 import Href from '../../../components/link/Href';
 import { Button } from '../../../components';
 import { classnames } from '../../../helpers';
-import { useModals } from '../../../hooks';
-import ContactDecryptionErrorModal from '../modals/ContactDecryptionErrorModal';
-import ContactSignatureErrorModal from '../modals/ContactSignatureErrorModal';
 
 const { SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
 
@@ -65,11 +62,19 @@ interface Props {
     contactID: string;
     errors?: (CryptoProcessingError | Error)[];
     onReload: () => void;
+    onSignatureError: (contactID: string) => void;
+    onDecryptionError: (contactID: string) => void;
+    isPreview?: boolean;
 }
 
-const ContactViewErrors = ({ contactID, errors, onReload }: Props) => {
-    const { createModal } = useModals();
-
+const ContactViewErrors = ({
+    contactID,
+    errors,
+    onReload,
+    onSignatureError,
+    onDecryptionError,
+    isPreview = false,
+}: Props) => {
     if (!errors?.length) {
         return null;
     }
@@ -99,17 +104,17 @@ const ContactViewErrors = ({ contactID, errors, onReload }: Props) => {
 
     const buttonText = getButtonText(error.type);
 
-    const handleDescriptionErrorAction = () => {
-        createModal(<ContactDecryptionErrorModal contactID={contactID} />);
+    const handleDecryptionErrorAction = () => {
+        onDecryptionError(contactID);
     };
 
     const handleSignatureErrorAction = () => {
-        createModal(<ContactSignatureErrorModal contactID={contactID} />);
+        onSignatureError(contactID);
     };
 
     const handleAction = () => {
         if (error.type === FAIL_TO_DECRYPT) {
-            return handleDescriptionErrorAction();
+            return handleDecryptionErrorAction();
         }
         if (error.type === SIGNATURE_NOT_VERIFIED) {
             return handleSignatureErrorAction();
@@ -126,11 +131,13 @@ const ContactViewErrors = ({ contactID, errors, onReload }: Props) => {
                     'Link'
                 ).t`Learn more`}</Href>
             </span>
-            <span className="flex-item-noshrink flex">
-                <Button size="small" shape="outline" onClick={handleAction}>
-                    {buttonText}
-                </Button>
-            </span>
+            {!isPreview && (
+                <span className="flex-item-noshrink flex">
+                    <Button size="small" shape="outline" onClick={handleAction}>
+                        {buttonText}
+                    </Button>
+                </span>
+            )}
         </div>
     );
 };
