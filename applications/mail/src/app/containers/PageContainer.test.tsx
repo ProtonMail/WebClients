@@ -1,5 +1,14 @@
 import { fireEvent } from '@testing-library/dom';
-import { clearAll, render, addApiMock, assertFocus, minimalCache, addToCache, onCompose } from '../helpers/test/helper';
+import {
+    clearAll,
+    render,
+    addApiMock,
+    assertFocus,
+    minimalCache,
+    addToCache,
+    onCompose,
+    tick,
+} from '../helpers/test/helper';
 import { Breakpoints } from '../models/utils';
 import PageContainer from './PageContainer';
 
@@ -66,6 +75,8 @@ describe('PageContainer', () => {
             const { slash } = await setup();
 
             slash();
+
+            await tick();
 
             const search = document.querySelector('[data-shorcut-target="searchbox-field"]');
 
