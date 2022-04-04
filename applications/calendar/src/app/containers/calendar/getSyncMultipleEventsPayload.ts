@@ -1,22 +1,23 @@
+import { useGetAddressKeys } from '@proton/components';
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
-import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import {
-    CreateCalendarEventSyncData,
-    CreateLinkedCalendarEventsSyncData,
-    DeleteCalendarEventSyncData,
-    UpdateCalendarEventSyncData,
-} from '@proton/shared/lib/interfaces/calendar/Api';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
+import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
 import getCreationKeys from '@proton/shared/lib/calendar/integration/getCreationKeys';
 import {
     createCalendarEvent,
     getHasSharedEventContent,
     getHasSharedKeyPacket,
 } from '@proton/shared/lib/calendar/serialize';
+import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import {
+    CreateCalendarEventSyncData,
+    CreateLinkedCalendarEventsSyncData,
+    DeleteCalendarEventSyncData,
+    DELETION_REASON,
+    UpdateCalendarEventSyncData,
+} from '@proton/shared/lib/interfaces/calendar/Api';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { useGetAddressKeys } from '@proton/components';
 import { OpenPGPKey } from 'pmcrypto';
 
 export enum SyncOperationTypes {
@@ -29,6 +30,7 @@ export interface DeleteEventActionOperation {
     type: SyncOperationTypes.DELETE;
     data: {
         calendarEvent: CalendarEvent;
+        deletionReason: DELETION_REASON;
     };
 }
 export interface CreateEventActionOperation {
@@ -93,9 +95,15 @@ export const getUpdateSyncOperation = (data: {
     data,
 });
 
-export const getDeleteSyncOperation = (calendarEvent: CalendarEvent): DeleteEventActionOperation => ({
+export const getDeleteSyncOperation = (
+    calendarEvent: CalendarEvent,
+    isSwitchCalendar = false
+): DeleteEventActionOperation => ({
     type: SyncOperationTypes.DELETE,
-    data: { calendarEvent },
+    data: {
+        calendarEvent,
+        deletionReason: isSwitchCalendar ? DELETION_REASON.CHANGE_CALENDAR : DELETION_REASON.NORMAL,
+    },
 });
 
 const getRequiredKeys = ({
@@ -148,7 +156,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
             | CreateLinkedCalendarEventsSyncData
         > => {
             if (getIsDeleteSyncOperation(operation)) {
-                return { ID: operation.data.calendarEvent.ID };
+                return { ID: operation.data.calendarEvent.ID, DeletionReason: operation.data.deletionReason };
             }
 
             const { veventComponent } = operation.data;

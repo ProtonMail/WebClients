@@ -7,6 +7,11 @@ import { ACCESS_LEVEL } from './Link';
 export type CalendarCreateData = Omit<VisualCalendar, 'Flags' | 'ID' | 'Type' | 'Members'> & { URL?: string };
 export type CalendarUpdateData = Partial<Pick<Calendar, 'Name' | 'Description'>>;
 
+export enum DELETION_REASON {
+    NORMAL = 0,
+    CHANGE_CALENDAR = 1,
+}
+
 export interface CalendarCreateArguments extends CalendarCreateData {
     IsImport?: 0 | 1;
     AddressID: string;
@@ -106,6 +111,7 @@ export interface CreateCalendarEventSyncData {
 
 export interface DeleteCalendarEventSyncData {
     ID: string;
+    DeletionReason?: DELETION_REASON;
 }
 
 export interface UpdateCalendarEventSyncData {
