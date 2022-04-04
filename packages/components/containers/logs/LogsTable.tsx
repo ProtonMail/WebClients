@@ -60,7 +60,10 @@ const LogsTable = ({ logs, logAuth, loading, error }: Props) => {
                     return (
                         <TableRow key={key}>
                             <TableCell>
-                                {getIcon(Event)} {Description}
+                                <div className="flex">
+                                    <span className="flex-item-noshrink mr0-5">{getIcon(Event)}</span>
+                                    <span className="flex-item-fluid">{Description}</span>
+                                </div>
                             </TableCell>
                             {logAuth === ADVANCED && (
                                 <TableCell>
