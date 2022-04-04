@@ -6,30 +6,28 @@ import { Tooltip, ButtonLike, Icon } from '@proton/components';
 import { classnames, generateUID } from '../../helpers';
 import { ButtonLikeProps } from '../button';
 
-const DEFAULT_IS_EXPANDED = true;
-
 export interface Props extends HTMLProps<HTMLDivElement> {
-    defaultIsExpanded?: boolean;
     headerContent: ReactNode;
     openText?: string;
     closeText?: string;
+    expandByDefault?: boolean;
     hideButton?: boolean;
     disableFullWidth?: boolean;
     buttonLikeProps?: Omit<ButtonLikeProps<'button'>, 'ariaExpanded' | 'ariaControls' | 'icon' | 'type'>;
 }
 
 const Collapsible = ({
-    defaultIsExpanded = DEFAULT_IS_EXPANDED,
     headerContent,
     openText = c('Collapsible tooltip').t`Open`,
     closeText = c('Collapsible tooltip').t`Close`,
+    expandByDefault = false,
     hideButton = false,
     disableFullWidth = false,
     buttonLikeProps = {},
     children,
     ...rest
 }: Props) => {
-    const [isExpanded, setIsExpanded] = useState<boolean>(defaultIsExpanded);
+    const [isExpanded, setIsExpanded] = useState<boolean>(expandByDefault);
     const tooltipText = isExpanded ? closeText : openText;
     const contentId = generateUID('collapsible');
     const headerId = generateUID('collapsible');
