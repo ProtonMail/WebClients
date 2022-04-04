@@ -18,6 +18,7 @@ import { Loader } from '../../../components';
 import { ContactEditProps } from '../edit/ContactEditModal';
 import { ContactDeleteProps } from '../modals/ContactDeleteModal';
 import { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 
 export interface ContactDetailsProps {
     contactID: string;
@@ -26,7 +27,10 @@ export interface ContactDetailsProps {
     onDelete: (props: ContactDeleteProps) => void;
     onEmailSettings: (props: ContactEmailSettingsProps) => void;
     onGroupDetails: (contactGroupID: string) => void;
+    onGroupEdit: (props: ContactGroupEditProps) => void;
     onUpgrade: () => void;
+    onSignatureError: (contactID: string) => void;
+    onDecryptionError: (contactID: string) => void;
 }
 
 type Props = ContactDetailsProps & ModalProps;
@@ -38,7 +42,10 @@ const ContactDetailsModal = ({
     onDelete,
     onEmailSettings,
     onGroupDetails,
+    onGroupEdit,
     onUpgrade,
+    onSignatureError,
+    onDecryptionError,
     ...rest
 }: Props) => {
     const { onClose } = rest;
@@ -123,7 +130,10 @@ const ContactDetailsModal = ({
                                 onEmailSettings={onEmailSettings}
                                 onExport={handleExport}
                                 onGroupDetails={onGroupDetails}
+                                onGroupEdit={onGroupEdit}
                                 onUpgrade={onUpgrade}
+                                onSignatureError={onSignatureError}
+                                onDecryptionError={onDecryptionError}
                             />
                         )}
                     </div>

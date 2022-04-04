@@ -81,7 +81,10 @@ const ContactMergeDetailsModal = ({ contactID, ...rest }: Props) => {
                         onExport={noop}
                         onEmailSettings={noop}
                         onGroupDetails={noop}
+                        onGroupEdit={noop}
                         onUpgrade={noop}
+                        onSignatureError={noop}
+                        onDecryptionError={noop}
                     />
                 )}
             </ModalTwoContent>

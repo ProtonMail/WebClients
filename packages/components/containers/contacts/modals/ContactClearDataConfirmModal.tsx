@@ -1,53 +1,64 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import noop from '@proton/utils/noop';
 import { Key } from '@proton/shared/lib/interfaces';
-import { Alert, ErrorButton, FormModal, Input, Row } from '../../../components';
-import { useModals } from '../../../hooks';
-import ContactClearDataExecutionModal from './ContactClearDataExecutionModal';
+import {
+    Alert,
+    Button,
+    InputTwo,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    Row,
+} from '../../../components';
+import { ContactClearDataExecutionProps } from './ContactClearDataExecutionModal';
 
-interface Props {
+export interface ContactClearDataConfirmProps {
     errorKey: Key;
-    onClose?: () => void;
 }
 
-const ContactClearDataConfirmModal = ({ onClose = noop, errorKey, ...rest }: Props) => {
-    const { createModal } = useModals();
+export interface ContactClearDataConfirmModalProps {
+    onClearData: (props: ContactClearDataExecutionProps) => void;
+}
+
+type Props = ContactClearDataConfirmProps & ContactClearDataConfirmModalProps & ModalProps;
+
+const ContactClearDataConfirmModal = ({ errorKey, onClearData, ...rest }: Props) => {
     const [dangerInput, setDangerInput] = useState('');
     const dangerWord = 'DANGER';
 
     const handleSubmit = () => {
-        createModal(<ContactClearDataExecutionModal errorKey={errorKey} />);
-        onClose?.();
+        onClearData({ errorKey });
+        rest.onClose?.();
     };
 
     const boldDanger = <strong key="danger">{dangerWord}</strong>;
 
     return (
-        <FormModal
-            title={c('Title').t`Warning`}
-            onSubmit={handleSubmit}
-            onClose={onClose}
-            submit={
-                <ErrorButton disabled={dangerInput !== dangerWord} type="submit">{c('Action')
-                    .t`Clear data`}</ErrorButton>
-            }
-            {...rest}
-        >
-            <Alert className="mb1" type="info">{c('Warning')
-                .t`If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.`}</Alert>
-            <Alert className="mb1" type="error">
-                {c('Warning')
-                    .jt`This action is irreversible. Please enter the word ${boldDanger} in the field to proceed.`}
-            </Alert>
-            <Row>
-                <Input
-                    value={dangerInput}
-                    placeholder={dangerWord}
-                    onChange={(event) => setDangerInput(event.target.value)}
-                />
-            </Row>
-        </FormModal>
+        <ModalTwo {...rest}>
+            <ModalTwoHeader title={c('Title').t`Warning`} />
+            <ModalTwoContent>
+                <Alert className="mb1" type="info">{c('Warning')
+                    .t`If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.`}</Alert>
+                <Alert className="mb1" type="error">
+                    {c('Warning')
+                        .jt`This action is irreversible. Please enter the word ${boldDanger} in the field to proceed.`}
+                </Alert>
+                <Row>
+                    <InputTwo
+                        value={dangerInput}
+                        placeholder={dangerWord}
+                        onChange={(event) => setDangerInput(event.target.value)}
+                    />
+                </Row>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="danger" disabled={dangerInput !== dangerWord} onClick={handleSubmit}>{c('Action')
+                    .t`Clear data`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

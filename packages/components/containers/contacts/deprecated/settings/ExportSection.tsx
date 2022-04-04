@@ -9,7 +9,6 @@ import ExportModal from '../../modals/ContactExportingModal';
 const ExportSection = () => {
     const [contacts, loadingContacts] = useContacts();
     const { createModal } = useModals();
-    // const [userKeysList, loadingUserKeys] = useUserKeys();
     const handleExport = () => createModal(<ExportModal />);
 
     const hasNoContacts = !contacts?.length;

@@ -9,15 +9,17 @@ import ContactFieldEmail from './ContactFieldEmail';
 import ContactFieldImage from './ContactFieldImage';
 import ContactFieldNote from './ContactFieldNote';
 import ContactFieldGender from './ContactFieldGender';
+import { ContactImageProps } from '../../modals/ContactImageModal';
 
 interface Props {
     vCardProperty: VCardProperty<any>;
     onChangeVCard: (vCardProperty: VCardProperty) => void;
+    onSelectImage: (props: ContactImageProps) => void;
     isSubmitted?: boolean;
 }
 
 const ContactFieldProperty = (
-    { vCardProperty, onChangeVCard, isSubmitted = false, ...rest }: Props,
+    { vCardProperty, onChangeVCard, onSelectImage, isSubmitted = false, ...rest }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
     const { field } = vCardProperty;
@@ -43,7 +45,14 @@ const ContactFieldProperty = (
     }
 
     if (field === 'photo' || field === 'logo') {
-        return <ContactFieldImage vCardProperty={vCardProperty} onChange={onChangeVCard} {...rest} />;
+        return (
+            <ContactFieldImage
+                vCardProperty={vCardProperty}
+                onChange={onChangeVCard}
+                onSelectImage={onSelectImage}
+                {...rest}
+            />
+        );
     }
 
     if (field === 'fn') {

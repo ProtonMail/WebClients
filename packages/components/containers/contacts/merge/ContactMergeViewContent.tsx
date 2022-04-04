@@ -48,7 +48,10 @@ const ContactMergeViewContent = ({ contact, loading: loadingContact, beMergedIDs
                         onExport={noop}
                         onEmailSettings={noop}
                         onGroupDetails={noop}
+                        onGroupEdit={noop}
                         onUpgrade={noop}
+                        onSignatureError={noop}
+                        onDecryptionError={noop}
                         isPreview
                     />
                 )}

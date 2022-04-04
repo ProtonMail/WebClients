@@ -2,14 +2,12 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
-import { useApi, useContactGroups, useContacts, useEventManager, useModals, useNotifications } from '../../../hooks';
+import { useApi, useContacts, useEventManager, useModals, useNotifications } from '../../../hooks';
 import SelectEmailsModal from '../modals/SelectEmailsModal';
 
 /**
  * Collect contacts having multiple emails
  * Used for <SelectEmailsModal />
- * @param contactEmails
- * @returns result.contacts
  */
 export const collectContacts = (contactEmails: ContactEmail[] = [], contacts: Contact[]) => {
     return contactEmails.reduce(
@@ -41,7 +39,6 @@ const useApplyGroups = (onLock?: (lock: boolean) => void, setLoading?: (loading:
     const api = useApi();
     const { createModal } = useModals();
     const [contacts] = useContacts() as [Contact[], boolean, any];
-    const [groups = []] = useContactGroups();
 
     const applyGroups = useCallback(
         async (contactEmails: ContactEmail[], changes: { [groupID: string]: boolean }, preventNotification = false) => {
@@ -67,8 +64,8 @@ const useApplyGroups = (onLock?: (lock: boolean) => void, setLoading?: (loading:
                             <SelectEmailsModal
                                 groupIDs={groupIDs}
                                 contacts={collectedContacts}
-                                onSubmit={resolve}
-                                onClose={reject}
+                                onResolve={resolve}
+                                onReject={reject}
                                 onLock={onLock}
                             />
                         );
@@ -113,7 +110,7 @@ const useApplyGroups = (onLock?: (lock: boolean) => void, setLoading?: (loading:
                 createNotification({ text: c('Info').t`Group assignment applied` });
             }
         },
-        [contacts, groups]
+        [contacts]
     );
 
     return applyGroups;
