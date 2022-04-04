@@ -94,7 +94,6 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                     return (
                         <Collapsible
                             headerContent={getHeaderContent(tracker)}
-                            defaultIsExpanded={false}
                             key={tracker.name}
                             className={classnames(['border-bottom border-weak', index === 0 && 'border-top'])}
                             openText={c('Action').t`Expand URL`}
