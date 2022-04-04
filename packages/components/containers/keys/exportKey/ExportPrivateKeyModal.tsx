@@ -1,11 +1,25 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
+import { c } from 'ttag';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { OpenPGPKey, encryptPrivateKey } from 'pmcrypto';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { c } from 'ttag';
+import { passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { Alert, Row, Field, Label, PasswordInput, FormModal } from '../../../components';
-import { useModals } from '../../../hooks';
+import {
+    Alert,
+    Button,
+    Form,
+    InputFieldTwo,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    PasswordInputTwo,
+    useFormErrors,
+} from '../../../components';
+import { useLoading, useModals } from '../../../hooks';
 import UnlockModal from '../../login/UnlockModal';
 import { generateUID } from '../../../helpers';
 
@@ -17,14 +31,16 @@ const handleExport = async (name: string, privateKey: OpenPGPKey, password: stri
     downloadFile(blob, filename);
 };
 
-interface Props {
+interface Props extends ModalProps {
     name: string;
     privateKey: OpenPGPKey;
     onSuccess?: () => void;
-    onClose?: () => void;
 }
+
 const ExportPrivateKeyModal = ({ name, privateKey, onSuccess, onClose, ...rest }: Props) => {
     const { createModal } = useModals();
+    const [loading, withLoading] = useLoading();
+    const { validator, onFormSubmit } = useFormErrors();
 
     const [id] = useState(() => generateUID('exportKey'));
     const [password, setPassword] = useState('');
@@ -39,35 +55,51 @@ const ExportPrivateKeyModal = ({ name, privateKey, onSuccess, onClose, ...rest }
         onClose?.();
     };
 
+    const handleClose = loading ? noop : onClose;
+
     return (
-        <FormModal
-            title={c('Title').t`Export private key`}
-            close={c('Action').t`Close`}
-            submit={c('Action').t`Export`}
-            onClose={onClose}
-            onSubmit={handleSubmit}
+        <Modal
+            as={Form}
+            onSubmit={() => {
+                if (!onFormSubmit()) {
+                    return;
+                }
+
+                void withLoading(handleSubmit());
+            }}
+            onClose={handleClose}
             {...rest}
         >
-            <Alert className="mb1" type="warning">
-                {c('Info')
-                    .t`IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!`}
-            </Alert>
-            <Alert className="mb1">{c('Info')
-                .t`Please enter a password to encrypt your private key with before exporting.`}</Alert>
-            <Row>
-                <Label htmlFor={id}>{c('Label').t`Enter password`}</Label>
-                <Field>
-                    <PasswordInput
-                        id={id}
-                        value={password}
-                        onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setPassword(value)}
-                        placeholder={c('Placeholder').t`Password`}
-                        autoFocus
-                        required
-                    />
-                </Field>
-            </Row>
-        </FormModal>
+            <ModalHeader title={c('Title').t`Export private key`} />
+            <ModalContent>
+                <Alert className="mb1" type="warning">
+                    {c('Info')
+                        .t`IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!`}
+                </Alert>
+                <div className="mb1">{c('Info')
+                    .t`Please enter a password to encrypt your private key with before exporting.`}</div>
+
+                <InputFieldTwo
+                    id={id}
+                    as={PasswordInputTwo}
+                    label={c('Label').t`Enter password`}
+                    placeholder={c('Placeholder').t`Password`}
+                    value={password}
+                    onValue={setPassword}
+                    error={validator([passwordLengthValidator(password)])}
+                    autoFocus
+                />
+            </ModalContent>
+            <ModalFooter>
+                <Button onClick={handleClose} disabled={loading}>
+                    {c('Action').t`Close`}
+                </Button>
+
+                <Button loading={loading} type="submit" color="norm">
+                    {c('Action').t`Export`}
+                </Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 
