@@ -205,7 +205,6 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                         <Collapsible
                             openText={c('Participants expand button label').t`Expand participants list`}
                             closeText={c('Participants expand button label').t`Collapse participants list`}
-                            defaultIsExpanded={false}
                             headerContent={
                                 <div className="attendee-count">
                                     {numberOfParticipants}{' '}

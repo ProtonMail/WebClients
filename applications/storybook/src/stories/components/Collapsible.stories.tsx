@@ -27,7 +27,7 @@ Playground.argTypes = {
 };
 
 export const Basic = ({ ...args }) => (
-    <Collapsible headerContent={<h3 className="mb0">I am but a header</h3>} {...args}>
+    <Collapsible headerContent={<h3 className="mb0">I am but a header</h3>} expandByDefault {...args}>
         <p>This is the content</p>
         <p>And it&#39;s grrrrrreat!</p>
     </Collapsible>
