@@ -26,6 +26,20 @@ export const initialize = (state: Draft<MessagesState>, action: PayloadAction<Me
     state[action.payload.localID] = action.payload as any; // TS error with writing Element
 };
 
+export const reload = (state: Draft<MessagesState>, { payload: { ID } }: PayloadAction<{ ID: string }>) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState) {
+        messageState.messageDocument = undefined;
+        messageState.decryption = undefined;
+        messageState.errors = undefined;
+
+        if (messageState.data) {
+            delete messageState.data.Body;
+        }
+    }
+};
+
 export const errors = (
     state: Draft<MessagesState>,
     { payload: { ID, errors } }: PayloadAction<{ ID: string; errors: MessageErrors }>

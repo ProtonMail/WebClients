@@ -16,6 +16,8 @@ import {
 
 export const initialize = createAction<MessageState>('messages/initialize');
 
+export const reload = createAction<{ ID: string }>('messages/reload');
+
 export const errors = createAction<{ ID: string; errors: MessageErrors }>('messages/errors');
 
 export const event = createAction<MessageEvent>('messages/event');
