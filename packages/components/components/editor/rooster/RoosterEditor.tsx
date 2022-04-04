@@ -9,7 +9,7 @@ import useInitRooster from './hooks/useInitRooster';
 import BlockquoteToggle from './BlockquoteToggle';
 import useOnEditorChange from './hooks/useOnEditorChange';
 import './RoosterEditor.scss';
-import { ModalLinkProps } from '../hooks/useModalLink';
+import { ModalLinkProps } from '../hooks/interface';
 
 interface Props {
     placeholder?: string;

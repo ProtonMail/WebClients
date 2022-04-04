@@ -8,7 +8,7 @@ import { EditorActions, OnEditorEventListened } from '../../interface';
 import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID, ROOSTER_EDITOR_ID, ROOSTER_EDITOR_WRAPPER_ID } from '../../constants';
 
 import iframeCss from '../RoosterEditorIframe.raw.scss';
-import { ModalLinkProps } from '../../hooks/useModalLink';
+import { ModalLinkProps } from '../../hooks/interface';
 
 interface Props {
     /**
