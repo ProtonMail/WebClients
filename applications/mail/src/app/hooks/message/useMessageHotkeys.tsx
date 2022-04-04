@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -23,7 +23,7 @@ enum ARROW_SCROLL_DIRECTIONS {
     DOWN,
 }
 
-export interface MessageHotkeysContext {
+interface MessageHotkeysContext {
     labelID: string;
     conversationIndex: number;
     message: MessageState;
@@ -36,8 +36,8 @@ export interface MessageHotkeysContext {
     messageRef: React.RefObject<HTMLElement>;
 }
 
-export interface MessageHotkeysHandlers {
-    onFocus: (index: number) => void;
+interface MessageHotkeysHandlers {
+    hasFocus: boolean;
     setExpanded: (expanded: boolean) => void;
     toggleOriginalMessage: () => void;
     handleLoadRemoteImages: () => void;
@@ -49,7 +49,6 @@ export const useMessageHotkeys = (
     elementRef: React.RefObject<HTMLElement | undefined>,
     {
         labelID,
-        conversationIndex,
         message,
         bodyLoaded,
         expanded,
@@ -60,7 +59,7 @@ export const useMessageHotkeys = (
         messageRef,
     }: MessageHotkeysContext,
     {
-        onFocus,
+        hasFocus,
         setExpanded,
         toggleOriginalMessage,
         handleLoadRemoteImages,
@@ -82,18 +81,7 @@ export const useMessageHotkeys = (
     const moveToFolder = useMoveToFolder();
     const star = useStar();
 
-    const [hasFocus, setHasFocus] = useState(false);
-
     const onCompose = useOnCompose();
-
-    const handleFocus = () => {
-        setHasFocus(true);
-        onFocus(conversationIndex);
-    };
-
-    const handleBlur = () => {
-        setHasFocus(false);
-    };
 
     const isMessageReady = messageLoaded && bodyLoaded;
     const hotkeysEnabledAndMessageReady =
@@ -333,9 +321,6 @@ export const useMessageHotkeys = (
     });
 
     return {
-        hasFocus,
-        handleFocus,
-        handleBlur,
         labelDropdownToggleRef,
         moveDropdownToggleRef,
         filterDropdownToggleRef,

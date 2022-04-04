@@ -28,6 +28,7 @@ interface Props {
     onMessageReady?: () => void;
     isPrint?: boolean;
     onIframeReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
+    onFocusIframe?: () => void;
 }
 
 const MessageBody = ({
@@ -42,6 +43,7 @@ const MessageBody = ({
     isPrint = false,
     labelID,
     onIframeReady,
+    onFocusIframe,
 }: Props) => {
     const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -147,6 +149,7 @@ const MessageBody = ({
                         onReady={onIframeReady}
                         onMailTo={onMailTo}
                         mailSettings={mailSettings}
+                        onFocus={onFocusIframe}
                     />
                 </div>
             )}
