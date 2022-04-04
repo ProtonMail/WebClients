@@ -144,7 +144,7 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
                 ref={anchorRef}
                 aria-expanded={isOpen}
                 onClick={toggle}
-                icon={<Icon name="chevron-down" rotate={isOpen ? 180 : 0} />}
+                icon={<Icon name="chevron-down-filled" rotate={isOpen ? 180 : 0} />}
                 data-testid="actions-dropdown"
                 title={c('Title').t`Show actions`}
             />
