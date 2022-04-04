@@ -80,11 +80,13 @@ const RecipientsDetails = ({
         <div className="flex flex-column flex-align-items-start flex-item-fluid">
             {!isDetailsModal ? (
                 <>
-                    {ToList.length > 0 && <RecipientType label={c('Label').t`To`}>{toRecipientsList}</RecipientType>}
+                    {ToList.length > 0 && (
+                        <RecipientType label={c('Label Recipient').t`To`}>{toRecipientsList}</RecipientType>
+                    )}
                     {CCList.length > 0 && <RecipientType label={c('Label').t`CC`}>{ccRecipientsList}</RecipientType>}
                     {BCCList.length > 0 && <RecipientType label={c('Label').t`BCC`}>{bccRecipientsList}</RecipientType>}
                     {undisclosedRecipients && (
-                        <RecipientType label={c('Label').t`To`}>{undisclosedRecipientsItem}</RecipientType>
+                        <RecipientType label={c('Label Recipient').t`To`}>{undisclosedRecipientsItem}</RecipientType>
                     )}
                 </>
             ) : (
