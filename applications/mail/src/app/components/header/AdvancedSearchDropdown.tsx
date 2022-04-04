@@ -312,7 +312,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                             <div className="mb0-5 flex flex-justify-space-between on-mobile-flex-column">
                                 <div className="pr1 on-mobile-pr0 flex-item-fluid">
                                     <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c(
-                                        'Label'
+                                        'Label Date'
                                     ).t`From`}</Label>
                                     <DateInput
                                         placeholder={c('Placeholder').t`Start date`}
@@ -336,7 +336,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 </div>
                                 <div className="flex-item-fluid">
                                     <Label className="advanced-search-label text-semibold" htmlFor="end-date">{c(
-                                        'Label'
+                                        'Label Date'
                                     ).t`To`}</Label>
                                     <DateInput
                                         placeholder={c('Placeholder').t`End date`}
