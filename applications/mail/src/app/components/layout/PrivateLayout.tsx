@@ -1,11 +1,8 @@
 import { useState, useEffect, ReactNode, useCallback, forwardRef, Ref } from 'react';
 import { PrivateAppContainer, NewDomainTopBanner, TopBanners } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import MailHeader from '../header/MailHeader';
 import MailSidebar from '../sidebar/MailSidebar';
-import { getHumanLabelID } from '../../helpers/labels';
-import { setKeywordInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
 
 interface Props {
@@ -17,15 +14,8 @@ interface Props {
 }
 
 const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }: Props, ref: Ref<HTMLDivElement>) => {
-    const history = useHistory();
     const location = useLocation();
     const [expanded, setExpand] = useState(false);
-
-    const handleSearch = useCallback((keyword = '', labelID = MAILBOX_LABEL_IDS.ALL_MAIL as string) => {
-        history.push(
-            setKeywordInUrl({ ...history.location, hash: '', pathname: `/${getHumanLabelID(labelID)}` }, keyword)
-        );
-    }, []);
 
     const handleToggleExpand = useCallback(() => setExpand((expanded) => !expanded), []);
 
@@ -46,7 +36,6 @@ const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }:
             breakpoints={breakpoints}
             expanded={expanded}
             onToggleExpand={handleToggleExpand}
-            onSearch={handleSearch}
         />
     );
 
