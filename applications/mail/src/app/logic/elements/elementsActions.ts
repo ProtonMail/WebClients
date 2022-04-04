@@ -3,6 +3,7 @@ import noop from '@proton/utils/noop';
 import { Api } from '@proton/shared/lib/interfaces';
 import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import diff from '@proton/utils/diff';
+import unique from '@proton/utils/unique';
 import {
     ESResults,
     EventUpdates,
@@ -11,12 +12,16 @@ import {
     OptimisticUpdates,
     QueryParams,
     QueryResults,
+    TaskRunningInfo,
 } from './elementsTypes';
 import { Element } from '../../models/element';
-import { getQueryElementsParameters, queryElement, queryElements } from './helpers/elementQuery';
+import {
+    getQueryElementsParameters,
+    queryElement,
+    queryElements,
+    refreshTaskRunningTimeout,
+} from './helpers/elementQuery';
 import { RootState } from '../store';
-
-const TASK_RUNNING_POLLING_INTERVAL = 2000;
 
 export const reset = createAction<NewStateParams>('elements/reset');
 
@@ -26,18 +31,13 @@ export const retry = createAction<{ queryParameters: any; error: Error | undefin
 
 export const retryStale = createAction<{ queryParameters: any }>('elements/retry/stale');
 
-export const load = createAsyncThunk<QueryResults, QueryParams>(
+export const load = createAsyncThunk<{ result: QueryResults; taskRunning: TaskRunningInfo }, QueryParams>(
     'elements/load',
-    async (queryParams: QueryParams, { dispatch }) => {
-        const queryParameters = getQueryElementsParameters(queryParams);
+    async ({ api, call, page, params, abortController, conversationMode }: QueryParams, { dispatch, getState }) => {
+        const queryParameters = getQueryElementsParameters({ page, params });
         let result;
         try {
-            result = await queryElements(
-                queryParams.api,
-                queryParams.abortController,
-                queryParams.conversationMode,
-                queryParameters
-            );
+            result = await queryElements(api, abortController, conversationMode, queryParameters);
         } catch (error: any | undefined) {
             // Wait a couple of seconds before retrying
             setTimeout(() => {
@@ -53,7 +53,13 @@ export const load = createAsyncThunk<QueryResults, QueryParams>(
             }, 1000);
             throw error;
         }
-        return result;
+        const taskLabels = Object.keys(result.TasksRunning);
+        const taskRunning = { ...(getState() as RootState).elements.taskRunning };
+        if (taskLabels.length) {
+            taskRunning.labelIDs = unique([...taskRunning.labelIDs, ...taskLabels]);
+            taskRunning.timeoutID = refreshTaskRunningTimeout(taskRunning.labelIDs, { getState, api, dispatch, call });
+        }
+        return { result, taskRunning };
     }
 );
 
@@ -90,49 +96,36 @@ export const backendActionStarted = createAction<void>('elements/action/started'
 
 export const backendActionFinished = createAction<void>('elements/action/finished');
 
-export const pollTaskRunning = createAsyncThunk<
-    { newLabels: string[]; timeoutID: NodeJS.Timeout | undefined },
-    { api: Api; call: () => Promise<void> }
->('elements/pollTaskRunning', async ({ api, call }, { dispatch, getState }) => {
-    const currentLabels = (getState() as RootState).elements.taskRunning.labelIDs;
-    const finishedLabels = [];
+export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, { api: Api; call: () => Promise<void> }>(
+    'elements/pollTaskRunning',
+    async ({ api, call }, { dispatch, getState }) => {
+        await call();
 
-    await call();
+        const currentLabels = (getState() as RootState).elements.taskRunning.labelIDs;
+        const finishedLabels = [];
 
-    for (let label of currentLabels) {
-        const result = await api<{ TasksRunning: any }>(queryMessageMetadata({ LabelID: label } as any));
-        if (!result.TasksRunning[label]) {
-            finishedLabels.push(label);
+        for (let label of currentLabels) {
+            const result = await api<{ TasksRunning: any }>(queryMessageMetadata({ LabelID: label } as any));
+            if (!result.TasksRunning[label]) {
+                finishedLabels.push(label);
+            }
         }
+
+        const labelIDs = diff(currentLabels, finishedLabels);
+
+        const timeoutID = refreshTaskRunningTimeout(labelIDs, { getState, api, dispatch, call });
+
+        return { labelIDs, timeoutID };
     }
-
-    const newLabels = diff(currentLabels, finishedLabels);
-    let timeoutID: NodeJS.Timeout | undefined = undefined;
-
-    if (newLabels.length > 0) {
-        timeoutID = setTimeout(() => {
-            void dispatch(pollTaskRunning({ api, call }));
-        }, TASK_RUNNING_POLLING_INTERVAL);
-    }
-
-    return { newLabels, timeoutID };
-});
+);
 
 export const moveAll = createAsyncThunk<
     { LabelID: string; timeoutID: NodeJS.Timeout },
     { api: Api; call: () => Promise<void>; SourceLabelID: string; DestinationLabelID: string }
 >('elements/moveAll', async ({ api, call, SourceLabelID, DestinationLabelID }, { dispatch, getState }) => {
-    let timeoutID = (getState() as RootState).elements.taskRunning.timeoutID;
-
-    if (timeoutID !== undefined) {
-        clearTimeout(timeoutID);
-    }
-
     await api(moveAllRequest({ SourceLabelID, DestinationLabelID }));
 
-    timeoutID = setTimeout(() => {
-        void dispatch(pollTaskRunning({ api, call }));
-    }, TASK_RUNNING_POLLING_INTERVAL);
+    const timeoutID = refreshTaskRunningTimeout([SourceLabelID], { getState, api, dispatch, call });
 
-    return { LabelID: SourceLabelID, timeoutID };
+    return { LabelID: SourceLabelID, timeoutID: timeoutID as NodeJS.Timeout };
 });

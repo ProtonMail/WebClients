@@ -92,6 +92,7 @@ export interface ElementsState {
 
 export interface QueryParams {
     api: Api;
+    call: () => Promise<void>;
     abortController: AbortController | undefined;
     conversationMode: boolean;
     page: number;
@@ -103,6 +104,7 @@ export interface QueryResults {
     Total: number;
     Elements: Element[];
     Stale: number;
+    TasksRunning: { [labelID: string]: any };
 }
 
 export interface NewStateParams {
