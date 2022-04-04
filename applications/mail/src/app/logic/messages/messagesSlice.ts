@@ -11,6 +11,7 @@ import {
     resetVerification,
     applyDarkStyle,
     removeDarkStyle,
+    reload,
 } from './read/messagesReadActions';
 import { loadEmbedded, loadFakeProxy, loadRemoteDirect, loadRemoteProxy } from './images/messagesImagesActions';
 import {
@@ -37,6 +38,7 @@ import {
 } from './draft/messagesDraftActions';
 import {
     initialize as initializeReducer,
+    reload as reloadReducer,
     errors as errorsReducer,
     event as eventReducer,
     loadFulfilled,
@@ -91,6 +93,7 @@ const messagesSlice = createSlice({
         builder.addCase(globalReset, globalResetReducer);
 
         builder.addCase(initialize, initializeReducer);
+        builder.addCase(reload, reloadReducer);
         builder.addCase(errors, errorsReducer);
         builder.addCase(event, eventReducer);
         builder.addCase(load.fulfilled, loadFulfilled);
