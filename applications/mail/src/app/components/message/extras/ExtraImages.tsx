@@ -39,7 +39,7 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
     }
 
     const remoteText = couldLoadDirect
-        ? c('Action').t`Some images could not be loaded with tracking protection`
+        ? c('Action').t`No trackers found, but some images could not be loaded with tracking protection.`
         : c('Action').t`This message contains remote content.`;
 
     const embeddedText = c('Action').t`This message contains embedded images.`;
@@ -52,7 +52,11 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
         ? c('Action').t`Load embedded images`
         : c('Action').t`Load`;
 
-    const tooltipText = type === 'remote' ? c('Title').t`Load remote content` : c('Title').t`Load embedded images`;
+    const tooltipText = couldLoadDirect
+        ? c('Action').t`Images will be loaded without a proxy`
+        : type === 'remote'
+        ? c('Title').t`Load remote content`
+        : c('Title').t`Load embedded images`;
 
     const tooltip = Shortcuts ? (
         <>
@@ -71,7 +75,7 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
                     size="small"
                     className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 mb0-85 py0-25"
                 >
-                    <Icon name="image" className="flex-item-noshrink" />
+                    <Icon name={couldLoadDirect ? 'shield' : 'image'} className="flex-item-noshrink" />
                     <span className="ml0-5">{actionText}</span>
                 </Button>
             </Tooltip>
@@ -81,7 +85,7 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
     return (
         <div className="bg-norm rounded border p0-5 mb0-85 flex flex-nowrap on-mobile-flex-column">
             <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
-                <Icon name="image" className="mt0-5 flex-item-noshrink" />
+                <Icon name={couldLoadDirect ? 'shield' : 'image'} className="mt0-5 flex-item-noshrink" />
                 <span className="pl0-5 pr0-5 flex flex-item-fluid mt0-25 flex-align-items-center">{text}</span>
             </div>
             <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt0-1">
