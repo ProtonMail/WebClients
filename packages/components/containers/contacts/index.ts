@@ -1,4 +1,3 @@
-export { default as ContactContainer } from './deprecated/ContactContainer';
 export { default as ContactEditModal } from './edit/ContactEditModal';
 export { default as ContactGroupModal } from './group/ContactGroupEditModal';
 export { default as ContactSelectorModal } from './selector/ContactSelectorModal';
@@ -14,7 +13,6 @@ export { default as TopNavbarListItemContactsDropdown } from './widget/TopNavbar
 export { default as ContactsRow } from './lists/ContactRow';
 export { default as ContactsList } from './lists/ContactsList';
 export { default as useApplyGroups } from './hooks/useApplyGroups';
-export { default as ContactsSettingsExportSection } from './deprecated/settings/ExportSection';
-export { default as ContactsSettingsImportSection } from './deprecated/settings/ImportSection';
-export { default as ContactsSettingsContactsSection } from './deprecated/settings/ContactsSection';
-export { default as ContactsSettingsGroupsSection } from './deprecated/settings/ContactGroupsSection';
+export { useContactModals } from './hooks/useContactModals';
+export { ContactSelectorProps } from './selector/ContactSelectorModal';
+export { ContactEditProps } from './edit/ContactEditModal';
