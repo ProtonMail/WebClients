@@ -1,5 +1,13 @@
 @import '~@proton/styles/scss/config';
 
-.layout-card-image {
-	inline-size: rem(149);
+.layout-card {
+	&-button {
+		&#{&} {
+			background-color: transparent;
+		}
+	}
+
+	&-image {
+		inline-size: rem(149);
+	}
 }

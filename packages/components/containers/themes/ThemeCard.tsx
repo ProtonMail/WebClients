@@ -21,7 +21,7 @@ const ThemeCard = ({ label, id, src, selected, onChange, disabled }: Props) => {
             color={selected ? 'norm' : 'weak'}
             id={id}
             fullWidth
-            className={classnames([selected && 'is-active no-pointer-events text-bold'])}
+            className={classnames(['theme-card-button', selected && 'is-active no-pointer-events text-bold'])}
             aria-pressed={selected}
             onClick={onChange}
             disabled={disabled}

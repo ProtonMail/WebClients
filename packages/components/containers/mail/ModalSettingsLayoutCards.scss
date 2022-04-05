@@ -9,6 +9,10 @@
 		.layout-card-button {
 			margin: 0;
 			inline-size: 100%;
+
+			&#{&} {
+				background-color: transparent;
+			}
 		}
 		.layout-card-image {
 			inline-size: 100%;
