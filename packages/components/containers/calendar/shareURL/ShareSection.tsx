@@ -1,7 +1,7 @@
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { ComponentPropsWithoutRef, MouseEvent, useState } from 'react';
 import { c } from 'ttag';
-import { Calendar, ACCESS_LEVEL, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar, ACCESS_LEVEL, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
 
 import {
     buildLink,
@@ -37,8 +37,8 @@ type ModalsMap = {
 };
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
-    defaultCalendar?: Calendar;
-    calendars: Calendar[];
+    defaultCalendar?: VisualCalendar;
+    calendars: VisualCalendar[];
     user: UserModel;
 }
 
@@ -226,6 +226,7 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
                 </div>
             ) : (
                 <LinkTable
+                    calendars={calendars}
                     isLoadingMap={isLoadingMap}
                     linksMap={linksMap}
                     onCopyLink={handleCopyLink}

@@ -1,4 +1,4 @@
-import { Calendar } from './Calendar';
+import { VisualCalendar } from './Calendar';
 
 export enum CALENDAR_SUBSCRIPTION_STATUS {
     OK = 0,
@@ -29,7 +29,7 @@ export interface CalendarSubscription {
     URL: string;
 }
 
-export interface SubscribedCalendar extends Calendar {
+export interface SubscribedCalendar extends VisualCalendar {
     SubscriptionParameters: CalendarSubscription;
 }
 

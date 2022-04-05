@@ -17,18 +17,18 @@ import {
     ThemesSection,
     useAddresses,
     useCalendars,
-    useCalendarsKeysSettingsListener,
+    useCalendarsInfoListener,
     useCalendarUserSettings,
 } from '@proton/components';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
     getProbablyActiveCalendars,
+    getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { partition } from '@proton/shared/lib/helpers/array';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import CalendarInvitationsSection from '@proton/components/containers/calendar/settings/CalendarInvitationsSection';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
@@ -62,7 +62,7 @@ const CalendarSettingsRouter = ({
     const memoizedAddresses = useMemo(() => addresses || [], [addresses]);
 
     const [calendars, loadingCalendars] = useCalendars();
-    const memoizedCalendars = useMemo(() => calendars || [], [calendars]);
+    const memoizedCalendars = useMemo(() => getVisualCalendars(calendars || [], addresses), [calendars, addresses]);
 
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
@@ -73,16 +73,15 @@ const CalendarSettingsRouter = ({
             allCalendarIDs: memoizedCalendars.map(({ ID }) => ID),
         };
     }, [calendars]);
-    const [personalCalendars, otherCalendars] = partition<Calendar>(calendars || [], getIsPersonalCalendar);
-    const [personalActiveCalendars] = partition<Calendar>(activeCalendars, getIsPersonalCalendar);
+    const [personalCalendars, otherCalendars] = partition<VisualCalendar>(
+        memoizedCalendars || [],
+        getIsPersonalCalendar
+    );
+    const [personalActiveCalendars] = partition<VisualCalendar>(activeCalendars, getIsPersonalCalendar);
 
     const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
 
-    const activeAddresses = useMemo(() => {
-        return getActiveAddresses(memoizedAddresses);
-    }, [memoizedAddresses]);
-
-    useCalendarsKeysSettingsListener(allCalendarIDs);
+    useCalendarsInfoListener(allCalendarIDs);
 
     if (loadingAddresses || loadingCalendars || loadingCalendarUserSettings || loadingFeatures) {
         return <PrivateMainAreaLoading />;
@@ -110,14 +109,14 @@ const CalendarSettingsRouter = ({
             <Route path={getSectionPath(path, calendarsRoute)}>
                 <PrivateMainSettingsArea config={calendarsRoute} location={location}>
                     <PersonalCalendarsSection
-                        activeAddresses={activeAddresses}
+                        addresses={memoizedAddresses}
                         calendars={personalCalendars}
                         activeCalendars={personalActiveCalendars}
                         defaultCalendar={defaultCalendar}
                         user={user}
                     />
                     <SubscribedCalendarsSection
-                        activeAddresses={activeAddresses}
+                        addresses={memoizedAddresses}
                         calendars={otherCalendars}
                         user={user}
                         unavailable={calendarSubscribeUnavailable}

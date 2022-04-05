@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { ChangeEvent, DragEvent } from 'react';
 
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import {
     IMPORT_CALENDAR_FAQ_URL,
     MAX_IMPORT_EVENTS_STRING,
@@ -15,8 +15,8 @@ import { classnames } from '../../../helpers';
 
 interface Props {
     model: ImportCalendarModel;
-    calendars: Calendar[];
-    onSelectCalendar: (calendar: Calendar) => void;
+    calendars: VisualCalendar[];
+    onSelectCalendar: (calendar: VisualCalendar) => void;
     onAttach: (event: ChangeEvent<HTMLInputElement>) => void;
     onClear: () => void;
     isDropzoneHovered: boolean;

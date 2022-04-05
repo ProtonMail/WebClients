@@ -3,7 +3,7 @@ import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
 import { c } from 'ttag';
 
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { isURL } from '@proton/shared/lib/helpers/validators';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel } from '../calendarModal/calendarModalState';
 import { Href, InputFieldTwo, Loader, Button, BasicModal, Form } from '../../../components';
@@ -22,7 +22,7 @@ interface Props {
 }
 
 const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) => {
-    const [, setCalendar] = useState<Calendar | undefined>();
+    const [, setCalendar] = useState<VisualCalendar | undefined>();
     const [calendarURL, setCalendarURL] = useState('');
     const [model, setModel] = useState(() => getDefaultModel());
     const [error, setError] = useState(false);

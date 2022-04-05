@@ -1,10 +1,15 @@
-import { CalendarKey, CalendarSettings as tsCalendarSettings } from '../interfaces/calendar';
+import {
+    getIsCalendarMemberEventManagerCreate,
+    getIsCalendarMemberEventManagerDelete,
+    getIsCalendarMemberEventManagerUpdate,
+} from '../eventManager/helpers';
+import { CalendarKey, CalendarMember, CalendarSettings as tsCalendarSettings } from '../interfaces/calendar';
+import { CalendarMemberEventManager } from '../interfaces/calendar/EventManager';
 
 /**
  * Find the calendar id for an event, since it's not always returned.
  */
 const findCalendarID = (calendarBootstrapCache: Map<string, any>, cb: (value: any) => boolean) => {
-    // eslint-disable-next-line no-restricted-syntax
     for (const [calendarID, record] of calendarBootstrapCache) {
         // The old bootstrapped result
         if (record && record.value && cb(record.value)) {
@@ -14,9 +19,11 @@ const findCalendarID = (calendarBootstrapCache: Map<string, any>, cb: (value: an
 };
 
 /**
- * Assumes that the calendar bootstrap cache is never rendered with a hook.
+ * Assumes that updates to the calendar bootstrap cache do not trigger UI updates
+ * In other words, that the bootstrap is only used through callbacks but not needed to re-render UI
+ * In consequence, no setCache is invoked, the cache is mutated directly
  */
-export const updateObject = (
+export const updateBootstrapKeysAndSettings = (
     {
         CalendarKeys = [],
         CalendarSettings = [],
@@ -32,11 +39,10 @@ export const updateObject = (
     }
 
     if (CalendarSettings.length) {
-        // eslint-disable-next-line no-restricted-syntax
         for (const { ID: CalendarID, CalendarSettings: newValue } of CalendarSettings) {
             const oldRecord = calendarBootstrapCache.get(CalendarID);
             if (oldRecord && oldRecord.value) {
-                // Mutation is on purpose, since it assumes it's never rendered.
+                // Mutation on purpose
                 oldRecord.value.CalendarSettings = newValue;
             }
         }
@@ -64,6 +70,67 @@ export const updateObject = (
             });
             if (calendarID) {
                 deleteCalendarFromCache(Key.CalendarID);
+            }
+        });
+    }
+};
+
+/**
+ * Assumes that updates to the calendar bootstrap cache do not trigger UI updates
+ * In other words, that the bootstrap is only used through callbacks but not needed to re-render UI
+ * In consequence, no setCache is invoked, the cache is mutated directly
+ */
+export const updateBootstrapMembers = (
+    calendarBootstrapCache: Map<string, any>,
+    {
+        CalendarMembers = [],
+    }: {
+        CalendarMembers?: CalendarMemberEventManager[];
+    }
+) => {
+    if (!calendarBootstrapCache) {
+        return;
+    }
+
+    if (CalendarMembers.length) {
+        CalendarMembers.forEach((event) => {
+            if (getIsCalendarMemberEventManagerDelete(event)) {
+                const { ID: memberID } = event;
+                const calendarID = findCalendarID(calendarBootstrapCache, ({ Members }) => {
+                    return Members.find(({ ID }: { ID: string }) => ID === memberID);
+                });
+                if (!calendarID) {
+                    return;
+                }
+                const oldRecord = calendarBootstrapCache.get(calendarID);
+                const oldMembers = oldRecord.value.Members as CalendarMember[];
+                const memberIndex = oldMembers.findIndex(({ ID }) => memberID === ID);
+                if (memberIndex !== -1) {
+                    return;
+                }
+                // Mutation on purpose
+                oldMembers.splice(memberIndex, 1);
+            } else {
+                const { ID, Member } = event;
+                const oldRecord = calendarBootstrapCache.get(Member.CalendarID);
+                if (!oldRecord?.value) {
+                    return;
+                }
+                const oldMembers = oldRecord.value.Members as CalendarMember[];
+                const memberIndex = oldMembers.findIndex(({ ID: memberID }) => memberID === ID);
+                if (getIsCalendarMemberEventManagerCreate(event)) {
+                    if (memberIndex !== -1) {
+                        return;
+                    }
+                    // Mutation on purpose
+                    oldMembers.push(Member);
+                } else if (getIsCalendarMemberEventManagerUpdate(event)) {
+                    if (memberIndex === -1) {
+                        return;
+                    }
+                    // Mutation on purpose
+                    oldMembers.splice(memberIndex, 1, event.Member);
+                }
             }
         });
     }

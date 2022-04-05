@@ -1,6 +1,12 @@
 import { c } from 'ttag';
 import { EVENT_ACTIONS, HOUR } from '../../constants';
-import { Calendar, CALENDAR_SUBSCRIPTION_STATUS, CALENDAR_TYPE, SubscribedCalendar } from '../../interfaces/calendar';
+import {
+    Calendar,
+    CALENDAR_SUBSCRIPTION_STATUS,
+    CALENDAR_TYPE,
+    SubscribedCalendar,
+    VisualCalendar,
+} from '../../interfaces/calendar';
 import {
     CalendarSubscriptionEventManager,
     CalendarSubscriptionEventManagerCreate,
@@ -40,15 +46,17 @@ export const getIsCalendarSubscriptionEventManagerUpdate = (
     return event.Action === EVENT_ACTIONS.UPDATE;
 };
 
-export const getIsPersonalCalendar = (calendar: Calendar | SubscribedCalendar): calendar is Calendar => {
+export const getIsPersonalCalendar = (calendar: VisualCalendar | SubscribedCalendar): calendar is VisualCalendar => {
     return calendar.Type === CALENDAR_TYPE.PERSONAL;
 };
 
-export const getPersonalCalendars = (calendars: Calendar[]): Calendar[] => {
+export const getPersonalCalendars = (calendars: VisualCalendar[]): VisualCalendar[] => {
     return calendars.filter(getIsPersonalCalendar);
 };
 
-export const getIsSubscribedCalendar = (calendar: Calendar | SubscribedCalendar): calendar is SubscribedCalendar => {
+export const getIsSubscribedCalendar = (
+    calendar: Calendar | VisualCalendar | SubscribedCalendar
+): calendar is SubscribedCalendar => {
     return calendar.Type === CALENDAR_TYPE.SUBSCRIPTION;
 };
 

@@ -21,7 +21,7 @@ import {
     useGetAddressKeys,
     useMailSettings,
 } from '@proton/components';
-import { Calendar, CalendarEventWithMetadata, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar, CalendarEventWithMetadata, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { getEvent } from '@proton/shared/lib/api/calendars';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
@@ -30,7 +30,11 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { getParticipant } from '@proton/shared/lib/calendar/integration/invite';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
-import { getCalendarWithReactivatedKeys, getDoesCalendarNeedUserAction } from '@proton/shared/lib/calendar/calendar';
+import {
+    getCalendarWithReactivatedKeys,
+    getDoesCalendarNeedUserAction,
+    getVisualCalendars,
+} from '@proton/shared/lib/calendar/calendar';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import urlify from '@proton/shared/lib/calendar/urlify';
@@ -70,7 +74,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const recurrenceIdHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Recurrenceid');
 
     const [vevent, setVevent] = useState<VcalVeventComponent>();
-    const [calendar, setCalendar] = useState<Calendar>();
+    const [calendar, setCalendar] = useState<VisualCalendar>();
     const [addresses] = useAddresses();
     const [calendarEvent, setCalendarEvent] = useState<CalendarEventWithMetadata>();
 
@@ -161,7 +165,9 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     });
                 };
 
-                const [{ Event }, calendars = []] = await Promise.all([fetchEvent(), getCalendars()]);
+                const [{ Event }, calendarsWithMembers = []] = await Promise.all([fetchEvent(), getCalendars()]);
+                console.log(calendarsWithMembers[0].Members, addresses);
+                const calendars = getVisualCalendars(calendarsWithMembers, addresses);
 
                 const calendar = calendars.find(({ ID }) => ID === Event.CalendarID);
 

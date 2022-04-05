@@ -17,7 +17,7 @@ import { ENCRYPTION_TYPES, ENCRYPTION_CONFIGS } from '../constants';
 import { normalize } from '../helpers/string';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 import { Address, EncryptionConfig } from '../interfaces';
-import { DecryptedCalendarKey, CalendarKey as tsKey, Member, CalendarKeyFlags } from '../interfaces/calendar';
+import { DecryptedCalendarKey, CalendarKey as tsKey, CalendarMember, CalendarKeyFlags } from '../interfaces/calendar';
 import isTruthy from '../helpers/isTruthy';
 import { CalendarSetupData } from '../interfaces/calendar/Api';
 import { hasBit } from '../helpers/bitset';
@@ -128,7 +128,7 @@ export const decryptPassphrase = async ({
     return decryptedPassphrase as string;
 };
 
-export const getAddressesMembersMap = (Members: Member[], Addresses: Address[]) => {
+export const getAddressesMembersMap = (Members: CalendarMember[], Addresses: Address[]) => {
     return Members.reduce<{ [key: string]: Address }>((acc, Member) => {
         const Address = Addresses.find(({ Email }) => Email === Member.Email);
         if (!Address) {
@@ -170,7 +170,7 @@ export const getDecryptedCalendarKeys = async (
 /**
  * Convert a map of email -> value to the corresponding member id -> value
  */
-export const getKeysMemberMap = <T>(Members: Member[] = [], emailMap: { [key: string]: T } = {}) => {
+export const getKeysMemberMap = <T>(Members: CalendarMember[] = [], emailMap: { [key: string]: T } = {}) => {
     return Object.keys(emailMap).reduce<{ [key: string]: T }>((acc, email) => {
         const { ID: memberID } = Members.find(({ Email }) => normalize(Email) === normalize(email)) || {};
         if (!memberID) {

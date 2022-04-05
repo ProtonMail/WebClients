@@ -2,7 +2,7 @@ import { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { ACCESS_LEVEL, CalendarLink } from '@proton/shared/lib/interfaces/calendar';
+import { ACCESS_LEVEL, CalendarLink, VisualCalendar, VisualCalendarLink } from '@proton/shared/lib/interfaces/calendar';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
@@ -10,6 +10,7 @@ import { Table, TableHeader, TableBody, TableRow, Info, DropdownActions } from '
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
 
 interface Props {
+    calendars: VisualCalendar[];
     linksMap: SimpleMap<CalendarLink[]>;
     onEdit: ({ calendarID, urlID, purpose }: { calendarID: string; urlID: string; purpose: Nullable<string> }) => void;
     onCopyLink: (link: string, e: MouseEvent<HTMLButtonElement>) => void;
@@ -18,12 +19,31 @@ interface Props {
     user: UserModel;
 }
 
-const sortLinks = (links: CalendarLink[]) => [...links].sort((a, b) => a.CreateTime - b.CreateTime);
+const sortLinks = (links: VisualCalendarLink[]) => [...links].sort((a, b) => a.CreateTime - b.CreateTime);
 
-const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user }: Props) => {
-    const sortedLinks = useMemo(() => sortLinks(Object.values(linksMap).filter(isTruthy).flat()), [linksMap]);
+const LinkTable = ({ calendars, linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user }: Props) => {
+    const sortedVisualLinks = useMemo(() => {
+        const visualLinkMap = Object.entries(linksMap).reduce<SimpleMap<VisualCalendarLink[]>>(
+            (acc, [calendarID, links]) => {
+                const calendar = calendars.find(({ ID }) => ID === calendarID);
+                if (!calendar || !links) {
+                    // should not happen
+                    return acc;
+                }
+                acc[calendarID] = links.map((link) => ({
+                    ...link,
+                    calendarName: calendar.Name,
+                    color: calendar.Color,
+                }));
+                return acc;
+            },
+            {}
+        );
 
-    if (!sortedLinks.length) {
+        return sortLinks(Object.values(visualLinkMap).filter(isTruthy).flat());
+    }, [linksMap, calendars]);
+
+    if (!sortedVisualLinks.length) {
         return null;
     }
 
@@ -41,7 +61,7 @@ const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user 
                     ]}
                 />
                 <TableBody>
-                    {sortedLinks.map(
+                    {sortedVisualLinks.map(
                         ({
                             CalendarID,
                             CalendarUrlID,

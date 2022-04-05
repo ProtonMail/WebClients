@@ -1,5 +1,5 @@
 import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
-import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
+import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
 import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
 import withVeventRruleWkst from '@proton/shared/lib/calendar/rruleWkst';

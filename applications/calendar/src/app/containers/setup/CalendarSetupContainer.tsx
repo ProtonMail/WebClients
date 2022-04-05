@@ -11,14 +11,14 @@ import {
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { CalendarsModel, CalendarUserSettingsModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { setupCalendarKeys } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
 import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 
 interface Props {
     onDone: () => void;
-    calendars?: Calendar[];
+    calendars?: VisualCalendar[];
 }
 const CalendarSetupContainer = ({ onDone, calendars }: Props) => {
     const { call } = useEventManager();

@@ -1,10 +1,11 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 
 import { AlertModal, Button, useModalState } from '../../../components';
@@ -16,12 +17,12 @@ import CalendarsSection from './CalendarsSection';
 
 type ModalsMap = {
     calendarModal: ModalWithProps<{
-        activeCalendars?: Calendar[];
+        activeCalendars?: VisualCalendar[];
         defaultCalendarID?: string;
-        calendar?: Calendar;
+        calendar?: VisualCalendar;
     }>;
     exportCalendarModal: ModalWithProps<{
-        exportCalendar?: Calendar;
+        exportCalendar?: VisualCalendar;
     }>;
     deleteCalendarModal: ModalWithProps<{
         defaultCalendarWarning?: ReactNode;
@@ -31,15 +32,15 @@ type ModalsMap = {
 };
 
 export interface PersonalCalendarsSectionProps {
-    activeAddresses: Address[];
-    calendars: Calendar[];
-    activeCalendars: Calendar[];
-    defaultCalendar?: Calendar;
+    addresses: Address[];
+    calendars: VisualCalendar[];
+    activeCalendars: VisualCalendar[];
+    defaultCalendar?: VisualCalendar;
     user: UserModel;
 }
 
 const PersonalCalendarsSection = ({
-    activeAddresses,
+    addresses,
     calendars = [],
     defaultCalendar,
     activeCalendars = [],
@@ -55,6 +56,9 @@ const PersonalCalendarsSection = ({
         deleteCalendarModal: { isOpen: false },
     });
 
+    const activeAddresses = useMemo(() => {
+        return getActiveAddresses(addresses);
+    }, [addresses]);
     const [{ open: isCalendarModalOpen, onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] =
         useModalState();
     const [{ open: isExportModalOpen, onExit: onExitExportModal, ...exportModalProps }, setIsExportModalOpen] =
@@ -70,7 +74,7 @@ const PersonalCalendarsSection = ({
         });
     };
 
-    const handleEdit = (calendar: Calendar) => {
+    const handleEdit = (calendar: VisualCalendar) => {
         setIsCalendarModalOpen(true);
         updateModal('calendarModal', {
             isOpen: true,
@@ -144,7 +148,7 @@ const PersonalCalendarsSection = ({
         }
     };
 
-    const handleExport = (exportCalendar: Calendar) => {
+    const handleExport = (exportCalendar: VisualCalendar) => {
         setIsExportModalOpen(true);
         updateModal('exportCalendarModal', {
             isOpen: true,
