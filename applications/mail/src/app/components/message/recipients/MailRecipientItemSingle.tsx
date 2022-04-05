@@ -112,25 +112,34 @@ const MailRecipientItemSingle = ({
     const customDropdownActions = (
         <>
             <hr className="my0-5" />
-            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCompose}>
-                <Icon name="envelope" className="mr0-5 mt0-25" />
+            <DropdownMenuButton className="text-left flex flex-nowrap flex-align-items-center" onClick={handleCompose}>
+                <Icon name="envelope" className="mr0-5" />
                 <span className="flex-item-fluid mtauto mbauto">{c('Action').t`New message`}</span>
             </DropdownMenuButton>
             {ContactID ? (
-                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickContact}>
-                    <Icon name="user" className="mr0-5 mt0-25" />
+                <DropdownMenuButton
+                    className="text-left flex flex-nowrap flex-align-items-center"
+                    onClick={handleClickContact}
+                >
+                    <Icon name="user" className="mr0-5" />
                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View contact details`}</span>
                 </DropdownMenuButton>
             ) : (
-                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickContact}>
-                    <Icon name="user-plus" className="mr0-5 mt0-25" />
+                <DropdownMenuButton
+                    className="text-left flex flex-nowrap flex-align-items-center"
+                    onClick={handleClickContact}
+                >
+                    <Icon name="user-plus" className="mr0-5" />
                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Create new contact`}</span>
                 </DropdownMenuButton>
             )}
 
             {showTrustPublicKey && (
-                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickTrust}>
-                    <Icon name="user" className="mr0-5 mt0-25" />
+                <DropdownMenuButton
+                    className="text-left flex flex-nowrap flex-align-items-center"
+                    onClick={handleClickTrust}
+                >
+                    <Icon name="user" className="mr0-5" />
                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Trust Public Key`}</span>
                 </DropdownMenuButton>
             )}
