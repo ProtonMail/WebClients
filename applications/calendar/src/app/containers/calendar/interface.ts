@@ -1,9 +1,9 @@
 import {
     AttendeeModel,
-    Calendar,
     CalendarEvent,
     CalendarEventSharedData,
     EventModel,
+    VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import {
     DELETE_CONFIRMATION_TYPES,
@@ -24,7 +24,7 @@ export interface CalendarViewEventDataRecurring {
 }
 
 export interface CalendarViewEventData {
-    calendarData: Calendar;
+    calendarData: VisualCalendar;
     eventData?: CalendarEvent | CalendarEventSharedData;
     eventRecurrence?: CalendarViewEventDataRecurring;
     eventReadResult?: EventReadResult;

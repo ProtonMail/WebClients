@@ -28,7 +28,7 @@ import { c, msgid } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
 
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
-import { AttendeeModel, Calendar, CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { CONTACT_WIDGET_TABS, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
@@ -52,7 +52,7 @@ import getDateRangeText from '../../components/getDateRangeText';
 const localToUtcDate = (date: Date) => new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
 
 interface Props {
-    calendars?: Calendar[];
+    calendars: VisualCalendar[];
     onCreateCalendarFromSidebar?: (id: string) => void;
     isLoading?: boolean;
     isNarrow?: boolean;
@@ -79,7 +79,7 @@ interface Props {
 }
 
 const CalendarContainerView = ({
-    calendars = [],
+    calendars,
     onCreateCalendarFromSidebar,
     isLoading = false,
     isBlurred = false,
@@ -398,6 +398,8 @@ const CalendarContainerView = ({
 
     const sidebar = (
         <CalendarSidebar
+            calendars={calendars}
+            addresses={addresses}
             logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
@@ -417,7 +419,6 @@ const CalendarContainerView = ({
                     weekStartsOn={weekStartsOn}
                 />
             }
-            calendars={calendars}
         />
     );
 

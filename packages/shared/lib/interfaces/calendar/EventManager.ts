@@ -1,5 +1,13 @@
 import { EVENT_ACTIONS } from '../../constants';
-import { Calendar, CalendarAlarm, CalendarEventWithoutBlob, CalendarSubscription, CalendarUrl } from './index';
+import {
+    Calendar,
+    CalendarAlarm,
+    CalendarEventWithoutBlob,
+    CalendarMember,
+    CalendarSubscription,
+    CalendarUrl,
+    CalendarWithMembers,
+} from './index';
 
 export interface CalendarAlarmEventManagerDelete {
     ID: string;
@@ -58,6 +66,26 @@ export type CalendarSubscriptionEventManager =
     | CalendarSubscriptionEventManagerUpdate
     | CalendarSubscriptionEventManagerCreate;
 
+export interface CalendarMemberEventManagerDelete {
+    ID: string;
+    Action: EVENT_ACTIONS.DELETE;
+}
+export interface CalendarMemberEventManagerUpdate {
+    ID: string;
+    Action: EVENT_ACTIONS.UPDATE;
+    Member: CalendarMember;
+}
+export interface CalendarMemberEventManagerCreate {
+    ID: string;
+    Action: EVENT_ACTIONS.CREATE;
+    Member: CalendarMember;
+}
+
+export type CalendarMemberEventManager =
+    | CalendarMemberEventManagerDelete
+    | CalendarMemberEventManagerUpdate
+    | CalendarMemberEventManagerCreate;
+
 export interface CalendarEventManagerDelete {
     ID: string;
     Action: EVENT_ACTIONS.DELETE;
@@ -70,7 +98,7 @@ export interface CalendarEventManagerUpdate {
 export interface CalendarEventManagerCreate {
     ID: string;
     Action: EVENT_ACTIONS.CREATE;
-    Calendar: Calendar;
+    Calendar: CalendarWithMembers;
 }
 
 export interface CalendarEventsEventManagerDelete {

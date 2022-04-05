@@ -1,9 +1,9 @@
 import { Table, TableBody, TableHeader, TableRow } from '@proton/components';
 import { c } from 'ttag';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import CalendarIcon from '../../components/CalendarIcon';
 
-const CalendarTableRow = ({ Name, Color }: Calendar) => {
+const CalendarTableRow = ({ Name, Color }: VisualCalendar) => {
     return (
         <TableRow
             cells={[
@@ -19,7 +19,7 @@ const CalendarTableRow = ({ Name, Color }: Calendar) => {
 };
 
 interface Props {
-    calendars: Calendar[];
+    calendars: VisualCalendar[];
 }
 const CalendarTableRows = ({ calendars = [] }: Props) => {
     return (

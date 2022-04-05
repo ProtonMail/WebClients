@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 
 import { UserModel } from '@proton/shared/lib/interfaces';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
@@ -13,7 +13,7 @@ import CalendarsSection, { CalendarsSectionProps } from './CalendarsSection';
 
 jest.mock('../hooks/useGetCalendarsEmails', () => jest.fn(() => ({})));
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
-jest.mock('../../eventManager/calendar/useCalendarsKeysSettingsListener', () => () => ({}));
+jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
 jest.mock('../../eventManager/calendar/ModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(),
 }));
@@ -52,7 +52,7 @@ function renderComponent(props?: Partial<CalendarsSectionProps>) {
 
 describe('CalendarsSection', () => {
     it('renders properly', () => {
-        render(renderComponent({ calendars: [{ ID: '1', Name: 'calendar1' } as Calendar] }));
+        render(renderComponent({ calendars: [{ ID: '1', Name: 'calendar1' } as VisualCalendar] }));
 
         expect(screen.getByText('calendar1')).toBeInTheDocument();
         expect(screen.getByText('description')).toBeInTheDocument();

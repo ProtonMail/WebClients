@@ -6,7 +6,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { CacheProvider } from '@proton/components/containers/cache';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
-import { Calendar, CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
+import { CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsNotSyncedInfo,
@@ -62,7 +62,7 @@ const mockedGetCalendarIsNotSyncedInfo = getCalendarIsNotSyncedInfo as jest.Mock
 >;
 const mockedGetIsCalendarDisabled = getIsCalendarDisabled as jest.Mock<ReturnType<typeof getIsCalendarDisabled>>;
 
-const mockCalendar: Calendar = {
+const mockCalendar: VisualCalendar = {
     ID: 'id3',
     Name: 'calendar3',
     Description: 'description3',
@@ -70,9 +70,10 @@ const mockCalendar: Calendar = {
     Color: '#f00',
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
+    Members: [],
 };
 
-const mockCalendar2: Calendar = {
+const mockCalendar2: VisualCalendar = {
     ID: 'id2',
     Name: 'calendar2',
     Description: 'description2',
@@ -80,6 +81,7 @@ const mockCalendar2: Calendar = {
     Color: '#f00',
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
+    Members: [],
 };
 
 const getImportButton = () => screen.queryByText(/Import events/) as HTMLButtonElement;

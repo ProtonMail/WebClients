@@ -6,7 +6,7 @@ import { getCalendarGroupReset, queryMembers, resetCalendarGroup } from '../../a
 import { getPrimaryKey } from '../../keys';
 import { generateCalendarKeyPayload } from '../../keys/calendarKeys';
 import { getMemberAddressWithAdminPermissions } from '../getMemberWithAdmin';
-import { Calendar, Member } from '../../interfaces/calendar';
+import { Calendar, CalendarMember } from '../../interfaces/calendar';
 
 interface ResetCalendarKeysArguments {
     api: Api;
@@ -35,7 +35,7 @@ export const resetCalendarKeys = async ({ api, calendars, getAddressKeys, addres
 
     const calendarsResult = await Promise.all(
         ResetCalendars.map(async ({ ID: calendarID }) => {
-            const { Members = [] } = await api<{ Members: Member[] }>(queryMembers(calendarID));
+            const { Members = [] } = await api<{ Members: CalendarMember[] }>(queryMembers(calendarID));
             const { Member: selfMember, Address: selfAddress } = getMemberAddressWithAdminPermissions(
                 Members,
                 addresses

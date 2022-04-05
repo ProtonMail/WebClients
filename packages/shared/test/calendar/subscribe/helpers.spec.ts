@@ -1,6 +1,6 @@
 import { getCalendarIsNotSyncedInfo, getSyncingInfo, getNotSyncedInfo } from '../../../lib/calendar/subscribe/helpers';
 import { HOUR } from '../../../lib/constants';
-import { Calendar, CALENDAR_SUBSCRIPTION_STATUS, CALENDAR_TYPE } from '../../../lib/interfaces/calendar';
+import { CALENDAR_SUBSCRIPTION_STATUS, CALENDAR_TYPE, VisualCalendar } from '../../../lib/interfaces/calendar';
 
 const {
     OK,
@@ -44,7 +44,7 @@ describe('getCalendarIsNotSyncedInfo', () => {
         const mockDate = new Date(2020, 11, 11, 0, 0, 0);
         jasmine.clock().mockDate(mockDate);
 
-        const calendarCommon: Calendar = {
+        const calendarCommon: VisualCalendar = {
             ID: 'calendarID',
             Name: 'calendarName',
             Description: 'calendarDescription',
@@ -52,6 +52,7 @@ describe('getCalendarIsNotSyncedInfo', () => {
             Color: '#f00',
             Flags: 1,
             Type: CALENDAR_TYPE.SUBSCRIPTION,
+            Members: [],
         };
 
         const calendarSubscriptionCommon = {

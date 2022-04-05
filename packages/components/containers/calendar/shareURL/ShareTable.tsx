@@ -1,7 +1,7 @@
 import { MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
 import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
-import { Calendar, ACCESS_LEVEL, CalendarLink } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar, ACCESS_LEVEL, CalendarLink } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -21,8 +21,8 @@ import {
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 
 interface Props {
-    calendars: Calendar[];
-    defaultCalendar?: Calendar;
+    calendars: VisualCalendar[];
+    defaultCalendar?: VisualCalendar;
     linksMap: SimpleMap<CalendarLink[]>;
     onCreateLink: ({ accessLevel, calendarID }: { accessLevel: ACCESS_LEVEL; calendarID: string }) => Promise<void>;
     isLoadingCreate: boolean;

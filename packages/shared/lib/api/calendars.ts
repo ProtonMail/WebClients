@@ -1,13 +1,13 @@
 import { Attendee, CalendarSettings, CalendarUserSettings } from '../interfaces/calendar';
 import {
     CalendarCreateArguments,
-    CalendarCreateData,
     CalendarCreateEventBlobData,
     CalendarEventsQuery,
     CalendarExportEventsQuery,
     CalendarKeysResetData,
     CalendarMemberData,
     CalendarSetupData,
+    CalendarUpdateData,
     CreatePublicLinks,
     CreateSingleCalendarEventData,
     CreateSinglePersonalEventData,
@@ -94,7 +94,7 @@ export const resetCalendarGroup = (data: { CalendarKeys: CalendarKeysResetData }
     data,
 });
 
-export const updateCalendar = (calendarID: string, data: Partial<CalendarCreateData>) => ({
+export const updateCalendar = (calendarID: string, data: CalendarUpdateData) => ({
     url: `${CALENDAR_V1}/${calendarID}`,
     method: 'put',
     data,
@@ -122,7 +122,7 @@ export const addMember = (calendarID: string, data: { Members: CalendarMemberDat
     data,
 });
 
-export const updateMember = (calendarID: string, memberID: string, data: { Member: Partial<CalendarMemberData> }) => ({
+export const updateMember = (calendarID: string, memberID: string, data: Partial<CalendarMemberData>) => ({
     url: `${CALENDAR_V1}/${calendarID}/members/${memberID}`,
     method: 'put',
     data,
