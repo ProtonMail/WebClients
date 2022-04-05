@@ -12,10 +12,10 @@ export interface ThemeConfig {
 
 const config: ThemeConfig[] = [
     {
-        output: './themes/proton.theme.css',
+        output: './themes/snow.theme.css',
         files: [
             {
-                path: './themes/proton/standard-base.css',
+                path: './themes/snow/standard-base.css',
                 type: 'light',
             },
         ],
