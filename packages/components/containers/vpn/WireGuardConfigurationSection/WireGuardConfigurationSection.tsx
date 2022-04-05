@@ -591,7 +591,7 @@ const WireGuardConfigurationSection = () => {
     return (
         <SettingsSectionWide>
             <SettingsParagraph>
-                {c('Info').t`These configuration are provided to work with WireGuard routers and official clients.`}
+                {c('Info').t`These configurations are provided to work with WireGuard routers and official clients.`}
             </SettingsParagraph>
             {logicalInfoLoading || certificatesLoading ? (
                 <div aria-busy="true" className="text-center mb1">
