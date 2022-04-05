@@ -36,6 +36,17 @@ export const getVpnAppRoutes = () => {
                     },
                 ],
             },
+            wireguard: <SectionConfig>{
+                text: c('Title').t`WireGuard`,
+                to: '/WireGuard',
+                icon: 'wireguard',
+                subsections: [
+                    {
+                        text: c('Title').t`WireGuard configuration`,
+                        id: 'wireguard-configuration',
+                    },
+                ],
+            },
         },
     };
 };

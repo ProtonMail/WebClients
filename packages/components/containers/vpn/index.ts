@@ -3,3 +3,5 @@ export { default as ProtonVPNClientsSection } from './ProtonVPNClientsSection/Pr
 export { default as OpenVPNCredentialsSection } from './OpenVPNCredentialsSection';
 export { default as ProtonVPNResourcesSection } from './ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as ProtonVPNCredentialsSection } from './ProtonVPNCredentialsSection/ProtonVPNCredentialsSection';
+export { default as WireGuardConfigurationSection } from './WireGuardConfigurationSection/WireGuardConfigurationSection';
+export * from './flag';
