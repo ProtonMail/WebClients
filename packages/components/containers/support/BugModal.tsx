@@ -1,4 +1,4 @@
-import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
@@ -6,29 +6,27 @@ import { reportBug } from '@proton/shared/lib/api/reports';
 import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { omit } from '@proton/shared/lib/helpers/object';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import AttachScreenshot from './AttachScreenshot';
+import AttachScreenshot, { Screenshot } from './AttachScreenshot';
 import { getReportInfo, getClientName } from '../../helpers/report';
 import {
-    Href,
-    Info,
-    EmailInput,
-    Input,
-    TextArea,
-    Field,
-    Row,
-    Label,
-    Alert,
     Button,
-    Select,
+    Collapsible,
+    Form,
+    Href,
+    InputFieldTwo,
     ModalProps,
     ModalTwo as Modal,
     ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    Option,
+    SelectTwo,
+    TextAreaTwo,
+    useFormErrors,
 } from '../../components';
-import { useApi, useConfig, useNotifications, useToggle } from '../../hooks';
-import { OptionProps } from '../../components/select/Select';
+import { useApi, useConfig, useNotifications } from '../../hooks';
 
 export type BugModalMode = 'chat-unavailable' | 'chat-no-agents';
 
@@ -41,6 +39,8 @@ export interface Props {
     open: ModalProps['open'];
 }
 
+type OptionItem = { type: 'label'; value: string } | { type: 'option'; title: string; value: string };
+
 const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit }: Props) => {
     const api = useApi();
     const location = useLocation();
@@ -49,67 +49,68 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
     const handleClose = loading ? noop : onClose;
 
     const { APP_VERSION, CLIENT_TYPE, APP_NAME } = useConfig();
-
-    const mailTitles = [
-        { value: 'Sign in problem', text: c('Bug category').t`Sign in problem`, group: c('Group').t`Account` },
-        { value: 'Sign up problem', text: c('Bug category').t`Sign up problem`, group: c('Group').t`Account` },
-        { value: 'Payments problem', text: c('Bug category').t`Payments problem`, group: c('Group').t`Account` },
-        {
-            value: 'Custom domain problem',
-            text: c('Bug category').t`Custom domain problem`,
-            group: c('Group').t`Account`,
-        },
-        { value: 'Bridge problem', text: c('Bug category').t`Bridge problem`, group: c('Group').t`Apps` },
-        {
-            value: 'Import / export problem',
-            text: c('Bug category').t`Import / export problem`,
-            group: c('Group').t`Apps`,
-        },
-        { value: 'Connection problem', text: c('Bug category').t`Connection problem`, group: c('Group').t`Network` },
-        { value: 'Slow speed problem', text: c('Bug category').t`Slow speed problem`, group: c('Group').t`Network` },
-        { value: 'Calendar problem', text: c('Bug category').t`Calendar problem`, group: c('Group').t`Services` },
-        { value: 'Contacts problem', text: c('Bug category').t`Contacts problem`, group: c('Group').t`Services` },
-        { value: 'Drive problem', text: c('Bug category').t`Drive problem`, group: c('Group').t`Services` },
-        { value: 'Mail problem', text: c('Bug category').t`Mail problem`, group: c('Group').t`Services` },
-        { value: 'VPN problem', text: c('Bug category').t`VPN problem`, group: c('Group').t`Services` },
-        { value: 'Feature request', text: c('Bug category').t`Feature request`, group: c('Group').t`Other category` },
-        { value: 'Other', text: c('Bug category').t`Other`, group: c('Group').t`Other category` },
-    ];
-
-    const vpnTitles = [
-        { value: 'Login problem', text: c('Bug category').t`Sign in problem` },
-        { value: 'Signup problem', text: c('Bug category').t`Signup problem` },
-        { value: 'Payments problem', text: c('Bug category').t`Payments problem` },
-        { value: 'Installation problem', text: c('Bug category').t`Installation problem` },
-        { value: 'Update problem', text: c('Bug category').t`Update problem` },
-        { value: 'Application problem', text: c('Bug category').t`Application problem` },
-        { value: 'Connection problem', text: c('Bug category').t`Connection problem` },
-        { value: 'Speed problem', text: c('Bug category').t`Speed problem` },
-        { value: 'Manual setup problem', text: c('Bug category').t`Manual setup problem` },
-        { value: 'Website access problem', text: c('Bug category').t`Website access problem` },
-        { value: 'Streaming problem', text: c('Bug category').t`Streaming problem` },
-        { value: 'Feature request', text: c('Bug category').t`Feature request` },
-    ];
-
     const isVpn = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const isDrive = APP_NAME === APPS.PROTONDRIVE;
-
-    const titles = isVpn ? vpnTitles : mailTitles;
     const clearCacheLink = isVpn
         ? 'https://protonvpn.com/support/clear-browser-cache-cookies/'
         : 'https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/';
     const Client = getClientName(APP_NAME);
     const showCategory = !isDrive;
     const { createNotification } = useNotifications();
-    const options = titles.reduce<OptionProps[]>(
-        (acc, { text, value, group }: { text: string; value: string; group?: string }) => {
-            acc.push({ text, value, group });
-            return acc;
-        },
-        [{ text: c('Action to select a title for the bug report modal').t`Select`, value: '', disabled: true }]
-    );
 
-    const [model, update] = useState(() => {
+    const mailOptions: OptionItem[] = [
+        { type: 'label', value: c('Group').t`Account` },
+        { type: 'option', value: 'Sign in problem', title: c('Bug category').t`Sign in problem` },
+        { type: 'option', value: 'Sign up problem', title: c('Bug category').t`Sign up problem` },
+        { type: 'option', value: 'Payments problem', title: c('Bug category').t`Payments problem` },
+        { type: 'option', value: 'Custom domain problem', title: c('Bug category').t`Custom domain problem` },
+        { type: 'label', value: c('Group').t`Apps` },
+        { type: 'option', value: 'Bridge problem', title: c('Bug category').t`Bridge problem` },
+        { type: 'option', value: 'Import / export problem', title: c('Bug category').t`Import / export problem` },
+        { type: 'label', value: c('Group').t`Network` },
+        { type: 'option', value: 'Connection problem', title: c('Bug category').t`Connection problem` },
+        { type: 'option', value: 'Slow speed problem', title: c('Bug category').t`Slow speed problem` },
+        { type: 'label', value: c('Group').t`Services` },
+        { type: 'option', value: 'Calendar problem', title: c('Bug category').t`Calendar problem` },
+        { type: 'option', value: 'Contacts problem', title: c('Bug category').t`Contacts problem` },
+        { type: 'option', value: 'Drive problem', title: c('Bug category').t`Drive problem` },
+        { type: 'option', value: 'Mail problem', title: c('Bug category').t`Mail problem` },
+        { type: 'option', value: 'VPN problem', title: c('Bug category').t`VPN problem` },
+        { type: 'label', value: c('Group').t`Other category` },
+        { type: 'option', value: 'Feature request', title: c('Bug category').t`Feature request` },
+        { type: 'option', value: 'Other', title: c('Bug category').t`Other` },
+    ];
+
+    const vpnOptions: OptionItem[] = [
+        { type: 'option', value: 'Login problem', title: c('Bug category').t`Sign in problem` },
+        { type: 'option', value: 'Signup problem', title: c('Bug category').t`Signup problem` },
+        { type: 'option', value: 'Payments problem', title: c('Bug category').t`Payments problem` },
+        { type: 'option', value: 'Installation problem', title: c('Bug category').t`Installation problem` },
+        { type: 'option', value: 'Update problem', title: c('Bug category').t`Update problem` },
+        { type: 'option', value: 'Application problem', title: c('Bug category').t`Application problem` },
+        { type: 'option', value: 'Connection problem', title: c('Bug category').t`Connection problem` },
+        { type: 'option', value: 'Speed problem', title: c('Bug category').t`Speed problem` },
+        { type: 'option', value: 'Manual setup problem', title: c('Bug category').t`Manual setup problem` },
+        { type: 'option', value: 'Website access problem', title: c('Bug category').t`Website access problem` },
+        { type: 'option', value: 'Streaming problem', title: c('Bug category').t`Streaming problem` },
+        { type: 'option', value: 'Feature request', title: c('Bug category').t`Feature request` },
+    ];
+
+    const categoryOptions = (isVpn ? vpnOptions : mailOptions).map((item) => {
+        const { type, value } = item;
+        if (type === 'label') {
+            return (
+                <label className="text-semibold px0-5 py0-25 block" key={value}>
+                    {value}
+                </label>
+            );
+        }
+
+        const { title } = item;
+        return <Option title={title} value={value} key={value} />;
+    });
+
+    const [model, setModel] = useState(() => {
         return {
             ...getReportInfo(),
             Title: '',
@@ -118,21 +119,24 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
             Username: Username || '',
         };
     });
-    const { state: showDetails, toggle: toggleDetails } = useToggle(false);
-    const [images, setImages] = useState([]);
+    const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
+    const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
     const link = <Href key="linkClearCache" url={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
-    const handleChange =
-        (key: string) =>
-        ({ target }: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
-            update({ ...model, [key]: target.value });
 
-    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const { validator, onFormSubmit } = useFormErrors();
+    const handleChange = (key: keyof typeof model) => {
+        return (value: any) => setModel({ ...model, [key]: value });
+    };
+
+    const handleSubmit = async () => {
+        if (!onFormSubmit()) {
+            return;
+        }
 
         setLoading(true);
 
         const getParameters = () => {
-            const imageBlobs = images.reduce((acc, { name, blob }) => {
+            const screenshotBlobs = screenshots.reduce((acc: { [key: string]: Blob }, { name, blob }) => {
                 acc[name] = blob;
                 return acc;
             }, {});
@@ -142,7 +146,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                 .join(' ');
 
             return {
-                ...imageBlobs,
+                ...screenshotBlobs,
                 ...omit(model, ['OSArtificial']),
                 Client,
                 ClientVersion: APP_VERSION,
@@ -162,171 +166,156 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
 
     useEffect(() => {
         if (!model.Email && email) {
-            update({ ...model, Email: email });
+            setModel({ ...model, Email: email });
         }
     }, [email]);
 
     const OSAndOSVersionFields = (
         <>
-            <Row>
-                <Label htmlFor="OS">{c('Label').t`Operating system`}</Label>
-                <Field>
-                    <Input
-                        id="OS"
-                        value={model.OS}
-                        onChange={handleChange('OS')}
-                        placeholder={c('Placeholder').t`OS name`}
-                    />
-                </Field>
-            </Row>
-            <Row>
-                <Label htmlFor="OSVersion">{c('Label').t`Operating system version`}</Label>
-                <Field>
-                    <Input
-                        id="OSVersion"
-                        value={model.OSVersion}
-                        onChange={handleChange('OSVersion')}
-                        placeholder={c('Placeholder').t`OS version`}
-                    />
-                </Field>
-            </Row>
+            <InputFieldTwo
+                id="OS"
+                label={c('Label').t`Operating system`}
+                value={model.OS}
+                onValue={handleChange('OS')}
+                disabled={loading}
+            />
+            <InputFieldTwo
+                id="OSVersion"
+                label={c('Label').t`Operating system version`}
+                value={model.OSVersion}
+                onValue={handleChange('OSVersion')}
+                disabled={loading}
+            />
         </>
     );
 
     const modeAlert = (() => {
         if (mode === 'chat-unavailable') {
             return (
-                <Alert className="mb1" type="warning">{c('Warning')
-                    .t`Live chat is a premium feature available only to those with paid ${VPN_APP_NAME} plans. Please open a ticket instead.`}</Alert>
+                <p>
+                    {c('Warning')
+                        .t`Live chat is a premium feature available only to those with paid ${VPN_APP_NAME} plans. Please open a ticket instead.`}
+                </p>
             );
         }
 
         if (mode === 'chat-no-agents') {
             return (
-                <Alert className="mb1" type="warning">{c('Warning')
-                    .t`Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.`}</Alert>
+                <p>
+                    {c('Warning')
+                        .t`Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.`}
+                </p>
             );
         }
 
         return (
             <>
-                <Alert className="mb1">{c('Info')
-                    .jt`Refreshing the page or ${link} will automatically resolve most issues.`}</Alert>
-                <Alert className="mb1" type="warning">{c('Warning')
-                    .t`Reports are not end-to-end encrypted, please do not send any sensitive information.`}</Alert>
+                <p>
+                    {c('Info').jt`Refreshing the page or ${link} will automatically resolve most issues.`}
+                    <br />
+                    <br />
+                    {c('Warning')
+                        .t`Reports are not end-to-end encrypted, please do not send any sensitive information.`}
+                </p>
             </>
         );
     })();
 
     return (
-        <Modal as="form" size="large" open={open} onClose={handleClose} onExit={onExit} onSubmit={handleSubmit}>
+        <Modal as={Form} open={open} onClose={handleClose} onExit={onExit} onSubmit={handleSubmit}>
             <ModalHeader title={c('Title').t`Report a problem`} />
             <ModalContent>
                 {modeAlert}
                 {Username ? null : (
-                    <Row>
-                        <Label htmlFor="Username">{c('Label').t`Proton username`}</Label>
-                        <Field>
-                            <Input
-                                autoFocus
-                                id="Username"
-                                value={model.Username}
-                                onChange={handleChange('Username')}
-                                placeholder={c('Placeholder').t`Proton username`}
-                            />
-                        </Field>
-                    </Row>
+                    <InputFieldTwo
+                        autoFocus
+                        id="Username"
+                        label={c('Label').t`Proton username`}
+                        value={model.Username}
+                        onValue={handleChange('Username')}
+                        disabled={loading}
+                    />
                 )}
-                <Row>
-                    <Label htmlFor="Email">{c('Label').t`Email address`}</Label>
-                    <Field>
-                        <EmailInput
-                            id="Email"
-                            value={model.Email}
-                            onChange={handleChange('Email')}
-                            placeholder={c('Placeholder').t`A way to contact you`}
-                            required
-                        />
-                    </Field>
-                </Row>
+                <InputFieldTwo
+                    id="Email"
+                    label={c('Label').t`Email address`}
+                    placeholder={c('Placeholder').t`A way to contact you`}
+                    value={model.Email}
+                    onValue={handleChange('Email')}
+                    error={validator([requiredValidator(model.Email)])}
+                    disabled={loading}
+                />
                 {showCategory && (
-                    <Row>
-                        <Label htmlFor="Title">{c('Label').t`Category`}</Label>
-                        <Field>
-                            <Select
-                                id="Title"
-                                value={model.Title}
-                                options={options}
-                                onChange={handleChange('Title')}
-                                required
-                            />
-                        </Field>
-                    </Row>
+                    <InputFieldTwo
+                        as={SelectTwo}
+                        label={c('Label').t`Category`}
+                        placeholder={c('Placeholder').t`Select`}
+                        id="Title"
+                        value={model.Title}
+                        onValue={handleChange('Title')}
+                        error={validator([requiredValidator(model.Title)])}
+                        disabled={loading}
+                    >
+                        {categoryOptions}
+                    </InputFieldTwo>
                 )}
-                <Row>
-                    <Label htmlFor="Description">{c('Label').t`What happened?`}</Label>
-                    <Field>
-                        <TextArea
-                            id="Description"
-                            value={model.Description}
-                            onChange={handleChange('Description')}
-                            placeholder={c('Placeholder').t`Please describe the problem and include any error messages`}
-                            required
-                        />
-                    </Field>
-                </Row>
-                <Row>
-                    <Label htmlFor="Attachments">
-                        <span className="mr0-5">{c('Label, make it short please').t`Attach screenshot(s)`}</span>
-                        <Info url="https://protonmail.com/support/knowledge-base/screenshot-reporting-bugs/" />
-                    </Label>
-                    <Field className="inline-flex">
-                        <AttachScreenshot id="Attachments" onUpload={setImages} onReset={() => setImages([])} />
-                    </Field>
-                </Row>
+                <InputFieldTwo
+                    as={TextAreaTwo}
+                    id="Description"
+                    label={c('Label').t`What happened?`}
+                    placeholder={c('Placeholder').t`Please describe the problem and include any error messages`}
+                    value={model.Description}
+                    onValue={handleChange('Description')}
+                    error={validator([requiredValidator(model.Description)])}
+                    rows={5}
+                    disabled={loading}
+                />
+                <AttachScreenshot
+                    id="Attachments"
+                    screenshots={screenshots}
+                    setScreenshots={setScreenshots}
+                    uploading={uploadingScreenshots}
+                    setUploading={setUploadingScreenshots}
+                    disabled={loading}
+                />
                 {model.OSArtificial && OSAndOSVersionFields}
-                <Row>
-                    <Label>{c('Label').t`System information`}</Label>
-                    <Field className="inline-flex">
-                        <Button onClick={toggleDetails}>
-                            {showDetails ? c('Action').t`Hide info` : c('Action').t`Show info`}
-                        </Button>
-                    </Field>
-                </Row>
-                {showDetails ? (
-                    <>
+
+                <Collapsible
+                    headerContent={
+                        <div className="flex flex-align-items-center">
+                            <label className="text-semibold">{c('Label').t`System information`}</label>
+                        </div>
+                    }
+                    disableFullWidth
+                    buttonLikeProps={{
+                        size: 'small',
+                    }}
+                >
+                    <div className="mt1">
                         {!model.OSArtificial && OSAndOSVersionFields}
 
-                        <Row>
-                            <Label htmlFor="Browser">{c('Label').t`Browser`}</Label>
-                            <Field>
-                                <Input
-                                    id="Browser"
-                                    value={model.Browser}
-                                    onChange={handleChange('Browser')}
-                                    placeholder={c('Placeholder').t`Browser name`}
-                                />
-                            </Field>
-                        </Row>
-                        <Row>
-                            <Label htmlFor="BrowserVersion">{c('Label').t`Browser version`}</Label>
-                            <Field>
-                                <Input
-                                    id="BrowserVersion"
-                                    value={model.BrowserVersion}
-                                    onChange={handleChange('BrowserVersion')}
-                                    placeholder={c('Placeholder').t`Browser version`}
-                                />
-                            </Field>
-                        </Row>
-                    </>
-                ) : null}
+                        <InputFieldTwo
+                            id="Browser"
+                            label={c('Label').t`Browser`}
+                            value={model.Browser}
+                            onValue={handleChange('Browser')}
+                            disabled={loading}
+                        />
+                        <InputFieldTwo
+                            id="BrowserVersion"
+                            label={c('Label').t`Browser version`}
+                            value={model.BrowserVersion}
+                            onValue={handleChange('BrowserVersion')}
+                            disabled={loading}
+                        />
+                    </div>
+                </Collapsible>
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button loading={loading} type="submit" color="norm">
+                <Button loading={loading} disabled={uploadingScreenshots} type="submit" color="norm">
                     {c('Action').t`Submit`}
                 </Button>
             </ModalFooter>
