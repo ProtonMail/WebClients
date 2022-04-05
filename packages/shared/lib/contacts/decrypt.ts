@@ -10,11 +10,11 @@ import { c } from 'ttag';
 
 import { CONTACT_CARD_TYPE } from '../constants';
 import { KeysPair } from '../interfaces';
-import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts';
+import { Contact, ContactCard } from '../interfaces/contacts';
 import { VCardContact } from '../interfaces/contacts/VCard';
 import { CRYPTO_PROCESSING_TYPES } from './constants';
-import { mergeVCard, sanitizeProperties } from './properties';
-import { merge, parse, parseToVCard } from './vcard';
+import { mergeVCard } from './properties';
+import { parseToVCard } from './vcard';
 
 const { SUCCESS, SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
 
@@ -174,21 +174,6 @@ export const decryptContact = async (
     );
 
     return { isVerified, vcards, errors };
-};
-
-export const prepareContact = async (
-    contact: Contact,
-    { publicKeys, privateKeys }: KeysPair
-): Promise<{ properties: ContactProperties; errors: (CryptoProcessingError | Error)[]; isVerified: boolean }> => {
-    const { isVerified, vcards, errors } = await decryptContact(contact, { publicKeys, privateKeys });
-
-    try {
-        const properties = sanitizeProperties(merge(vcards.map(parse)));
-        return { properties, errors, isVerified };
-    } catch (e: any) {
-        const error = e instanceof Error ? e : new Error('Corrupted vcard data');
-        return { properties: [], errors: [error], isVerified };
-    }
 };
 
 export const prepareVCardContact = async (

@@ -58,30 +58,7 @@ export interface ContactGroup {
     Type: number;
 }
 
-export interface ContactOrGroup {
-    contact?: ContactEmail;
-    group?: ContactGroup;
-    major?: string;
-}
-
 export type ContactValue = string | (string | string[])[];
-
-export interface ContactProperty {
-    uid?: string;
-    pref?: number;
-    field: string;
-    value: ContactValue;
-    type?: string;
-    group?: string;
-}
-
-export type ContactProperties = ContactProperty[];
-
-export type ContactPropertyChange = {
-    uid?: string;
-    value: ContactValue;
-    key?: string;
-};
 
 export type ContactEmailModel = Pick<ContactEmail, 'Email' | 'ContactID' | 'LabelIDs' | 'Name'> & {
     uid: string;

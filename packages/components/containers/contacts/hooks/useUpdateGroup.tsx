@@ -1,10 +1,11 @@
 import { useCallback } from 'react';
 import { c } from 'ttag';
-import { ContactEmail, ContactProperties } from '@proton/shared/lib/interfaces/contacts';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { createContactGroup, updateLabel } from '@proton/shared/lib/api/labels';
 import { addContacts, labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
-import { prepareContacts } from '@proton/shared/lib/contacts/encrypt';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
+import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
+import { prepareVCardContacts } from '@proton/shared/lib/contacts/encrypt';
 import { useApi, useEventManager, useNotifications, useUserKeys } from '../../../hooks';
 
 export type UpdateGroupOptions = {
@@ -37,12 +38,12 @@ const useUpdateGroup = () => {
 
             // Create new contacts
             if (toCreate.length) {
-                const properties: ContactProperties[] = toCreate.map(({ Email }) => [
-                    { field: 'fn', value: Email },
-                    { field: 'email', value: Email, group: 'item1' },
-                    { field: 'categories', value: name, group: 'item1' },
-                ]);
-                const Contacts = await prepareContacts(properties, userKeysList[0]);
+                const vCardContacts = toCreate.map(({ Email }) => ({
+                    fn: [{ field: 'fn', value: Email, uid: createContactPropertyUid() }],
+                    email: [{ field: 'email', value: Email, group: 'item1', uid: createContactPropertyUid() }],
+                    categories: [{ field: 'categories', value: name, group: 'item1', uid: createContactPropertyUid() }],
+                }));
+                const Contacts = await prepareVCardContacts(vCardContacts, userKeysList[0]);
                 await api(
                     addContacts({
                         Contacts,

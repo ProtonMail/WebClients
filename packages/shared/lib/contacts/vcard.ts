@@ -4,8 +4,7 @@ import range from '@proton/utils/range';
 import { formatISO, parseISO } from 'date-fns';
 import { isValidDate } from '../date/date';
 import { readFileAsString } from '../helpers/file';
-import { ContactProperties, ContactProperty } from '../interfaces/contacts';
-import { addPref, createContactPropertyUid, getStringContactValue, hasPref, sortByPref } from './properties';
+import { createContactPropertyUid, getStringContactValue } from './properties';
 import { getValue } from './property';
 import {
     VCardAddress,
@@ -73,60 +72,6 @@ export const isDateType = (type = '') => {
 };
 
 export const isCustomField = (field = '') => field.startsWith('x-');
-
-/**
- * Parse vCard string and return contact properties model as an array
- */
-export const parse = (vcard = ''): ContactProperties => {
-    const comp = new ICAL.Component(ICAL.parse(vcard));
-    const properties = comp.getAllProperties() as any[];
-
-    // Apple AddressBook can add custom headers 'X-ABLabel' to properties that we need to take care of
-    const customHeaders = properties.reduce<{ name: string; value: string }[]>((acc, property) => {
-        if (property.name.includes('x-ablabel')) {
-            const [propertyName, propertyField]: [string, string | undefined] = property.name.split('.');
-            const field = propertyField && propertyField.length > 0 ? propertyField : propertyName;
-            const value = getValue(property, field);
-            if (typeof value === 'string') {
-                return [...acc, { name: propertyName, value }];
-            }
-            return acc;
-        }
-        return acc;
-    }, []);
-
-    const sortedProperties = properties
-        .reduce<ContactProperty[]>((acc, property) => {
-            const splitProperty = property.name.split('.');
-            const field = splitProperty[1] ? splitProperty[1] : splitProperty[0];
-            const customType = customHeaders.find((header) => header.name === splitProperty[0]);
-            const type = customType ? customType.value : property.getParameter('type');
-            const prefValue = property.getParameter('pref');
-            const pref = typeof prefValue === 'string' && hasPref(field) ? +prefValue : undefined;
-
-            // Ignore invalid field
-            if (!field) {
-                return acc;
-            }
-
-            const isCustom = isCustomField(field);
-
-            // Ignore invalid property
-            if (!isCustom && !Object.keys(PROPERTIES).includes(field)) {
-                return acc;
-            }
-
-            const group = splitProperty[1] ? splitProperty[0] : undefined;
-            const prop = { pref, field, group, type, value: getValue(property, field) };
-
-            acc.push(prop);
-
-            return acc;
-        }, [])
-        .sort(sortByPref);
-    // make sure properties that require a pref have a pref
-    return addPref(sortedProperties);
-};
 
 export const icalValueToInternalAddress = (adr: string | string[]): VCardAddress => {
     // Input sanitization
@@ -304,58 +249,6 @@ export const vCardPropertiesToICAL = (properties: VCardProperty[]) => {
     });
 
     return component;
-};
-
-/**
- * Parse contact properties to create a ICAL vcard component
- */
-export const toICAL = (properties: ContactProperties = []) => {
-    // make sure version (we enforce 4.0) is the first property; otherwise invalid vcards can be generated
-    const versionLessProperties = properties.filter(({ field }) => field !== 'version');
-
-    const comp = new ICAL.Component('vcard');
-    const versionProperty = new ICAL.Property('version');
-    versionProperty.setValue('4.0');
-    comp.addProperty(versionProperty);
-
-    return versionLessProperties.reduce((component, { field, type, pref, value, group }) => {
-        const fieldWithGroup = [group, field].filter(isTruthy).join('.');
-        const property = new ICAL.Property(fieldWithGroup);
-
-        if (['bday', 'anniversary'].includes(field) && typeof value === 'string' && !isValidDate(parseISO(value))) {
-            property.resetType('text');
-        }
-
-        property.setValue(value);
-
-        if (type) {
-            property.setParameter('type', type);
-        }
-        if (pref) {
-            property.setParameter('pref', `${pref}`);
-        }
-        component.addProperty(property);
-        return component;
-    }, comp);
-};
-
-/**
- * Merge multiple contact properties. Order matters
- */
-export const merge = (contacts: ContactProperties[] = []): ContactProperties => {
-    return contacts.reduce((acc, properties) => {
-        properties.forEach((property) => {
-            const { field } = property;
-            const { cardinality = ONE_OR_MORE_MAY_BE_PRESENT } = PROPERTIES[field] || {};
-
-            if ([ONE_OR_MORE_MUST_BE_PRESENT, ONE_OR_MORE_MAY_BE_PRESENT].includes(cardinality)) {
-                acc.push(property);
-            } else if (!acc.find(({ field: f }) => f === field)) {
-                acc.push(property);
-            }
-        });
-        return acc;
-    }, []);
 };
 
 /**

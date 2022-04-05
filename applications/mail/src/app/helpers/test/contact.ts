@@ -1,7 +1,9 @@
-import { ContactEmail, ContactProperties, Contact } from '@proton/shared/lib/interfaces/contacts';
-import { prepareCards } from '@proton/shared/lib/contacts/encrypt';
+import { ContactEmail, Contact } from '@proton/shared/lib/interfaces/contacts';
 
 import { toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
+import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { createContactPropertyUid, fromVCardProperties } from '@proton/shared/lib/contacts/properties';
+import { prepareCardsFromVCard } from '@proton/shared/lib/contacts/encrypt';
 import { addApiMock } from './api';
 import { GeneratedKey } from './crypto';
 
@@ -33,14 +35,25 @@ export const addApiContact = (contact: ContactMock, key: GeneratedKey) => {
     apiContacts.set(contact.email, contact);
     addApiMock(`contacts/v4/contacts/${contact.contactID}`, async () => {
         const group = 'group';
-        const properties: ContactProperties = [{ field: 'email', value: contact.email, group }];
+        const properties: VCardProperty<string>[] = [
+            { field: 'email', value: contact.email, group, uid: createContactPropertyUid() },
+        ];
         if (contact.pinKey) {
             properties.push(toKeyProperty({ publicKey: contact.pinKey.publicKeys[0], group, index: 0 }));
         }
         if (contact.mimeType) {
-            properties.push({ field: 'x-pm-mimetype', value: contact.mimeType, group: 'group' });
+            properties.push({
+                field: 'x-pm-mimetype',
+                value: contact.mimeType,
+                group: 'group',
+                uid: createContactPropertyUid(),
+            });
         }
-        const Cards = await prepareCards(properties, key.privateKeys, key.publicKeys);
+        const vCardContact = fromVCardProperties(properties);
+        const Cards = await prepareCardsFromVCard(vCardContact, {
+            privateKey: key.privateKeys[0],
+            publicKey: key.publicKeys[0],
+        });
         return { Contact: { ContactID: contact.contactID, Cards } as Partial<Contact> };
     });
 };
