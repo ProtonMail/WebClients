@@ -20,12 +20,19 @@ const DaysOfWeekField = ({ value = [], onChange }: Props) => {
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
-                <label className="text-semibold">{c('Label').t`Days of the week`}</label>
+                <span id="label-days-of-week" className="label text-semibold">{c('Label').t`Days of the week`}</span>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>
-                <div className="flex flex-column">
+                <div className="flex flex-column pt0-25">
                     {getFormattedWeekdays('iiii', { locale: dateLocale }).map((text, i) => (
-                        <Checkbox id={`weekday-${i}`} key={text} checked={value.includes(i)} onChange={handleChange(i)}>
+                        <Checkbox
+                            className="mb0-25"
+                            id={`weekday-${i}`}
+                            key={text}
+                            checked={value.includes(i)}
+                            onChange={handleChange(i)}
+                            aria-describedby="label-days-of-week"
+                        >
                             {text}
                         </Checkbox>
                     ))}
