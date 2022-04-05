@@ -179,6 +179,7 @@ const EditRecurringConfirmModal = ({
             <BasicModal
                 title={c('Info').t`Update recurring event`}
                 footer={<Button onClick={onClose}>{c('Action').t`Cancel`}</Button>}
+                onClose={onClose}
                 size="small"
                 isOpen={isOpen}
             >
