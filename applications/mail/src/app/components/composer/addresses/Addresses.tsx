@@ -1,10 +1,8 @@
 import { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 'react';
 import noop from '@proton/utils/noop';
-import { ContactSelectorModal, useToggle } from '@proton/components';
+import { ContactSelectorModal, useToggle, useContactModals, ContactSelectorProps } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { ContactSelectorProps } from '@proton/components/containers/contacts/selector/ContactSelectorModal';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 import { MessageChange } from '../Composer';

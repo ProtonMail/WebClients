@@ -1,4 +1,4 @@
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import { ContactEditProps } from '@proton/components';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientItem from './RecipientItem';
 import { RecipientOrGroup } from '../../../models/address';

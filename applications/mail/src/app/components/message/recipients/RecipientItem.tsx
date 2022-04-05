@@ -2,11 +2,9 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { OpenPGPKey } from 'pmcrypto';
-
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import { ContactEditProps } from '@proton/components';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
-
 import RecipientItemLayout from './RecipientItemLayout';
 import RecipientItemGroup from './RecipientItemGroup';
 import MailRecipientItemSingle from './MailRecipientItemSingle';

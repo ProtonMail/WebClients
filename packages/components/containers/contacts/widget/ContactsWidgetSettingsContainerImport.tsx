@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { Label } from '@proton/components';
-import ImportCsvContactButton from '@proton/components/containers/contacts/widget/ImportCsvContactButton';
 import { EASY_SWITCH_SOURCE } from '@proton/shared/lib/interfaces/EasySwitch';
+import ImportCsvContactButton from './ImportCsvContactButton';
 
 interface Props {
     onImport: () => void;

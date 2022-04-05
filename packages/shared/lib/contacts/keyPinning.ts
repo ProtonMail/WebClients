@@ -4,11 +4,13 @@ import isTruthy from '@proton/utils/isTruthy';
 import { CONTACT_CARD_TYPE } from '../constants';
 import { CANONIZE_SCHEME, canonizeEmail } from '../helpers/email';
 import { generateProtonWebUID } from '../helpers/uid';
-import { ContactCard, ContactProperty } from '../interfaces/contacts';
+import { ContactCard } from '../interfaces/contacts';
+import { VCardProperty } from '../interfaces/contacts/VCard';
 import { CRYPTO_PROCESSING_TYPES } from './constants';
 import { readSigned } from './decrypt';
 import { toKeyProperty } from './keyProperties';
-import { parse, toICAL } from './vcard';
+import { createContactPropertyUid, getVCardProperties } from './properties';
+import { parseToVCard, vCardPropertiesToICAL } from './vcard';
 
 /**
  * Pin a public key in a contact. Give to it the highest preference
@@ -50,14 +52,15 @@ export const pinKeyUpdateContact = async ({
     const signedVcard = readSignedCard.data;
 
     // get the key properties that correspond to the email address
-    const signedProperties = parse(signedVcard);
+    const signedVCard = parseToVCard(signedVcard);
+    const signedProperties = getVCardProperties(signedVCard);
     const emailProperty = signedProperties.find(({ field, value }) => {
         const scheme = isInternal ? CANONIZE_SCHEME.PROTON : CANONIZE_SCHEME.DEFAULT;
         return field === 'email' && canonizeEmail(value as string, scheme) === canonizeEmail(emailAddress, scheme);
     });
     const emailGroup = emailProperty?.group as string;
     const keyProperties = emailGroup
-        ? signedProperties.filter((prop): prop is Required<ContactProperty> => {
+        ? signedProperties.filter((prop) => {
               return prop.field === 'key' && prop.group === emailGroup;
           })
         : undefined;
@@ -66,7 +69,13 @@ export const pinKeyUpdateContact = async ({
     }
 
     // add the new key as the preferred one
-    const shiftedPrefKeyProperties = keyProperties.map((property) => ({ ...property, pref: property.pref + 1 }));
+    const shiftedPrefKeyProperties = keyProperties.map((property) => ({
+        ...property,
+        params: {
+            ...property.params,
+            pref: String(Number(property.params?.pref) + 1),
+        },
+    }));
     const newKeyProperties = [
         toKeyProperty({ publicKey: bePinnedPublicKey, group: emailGroup, index: 0 }),
         ...shiftedPrefKeyProperties,
@@ -77,7 +86,7 @@ export const pinKeyUpdateContact = async ({
     const newSignedProperties = [...untouchedSignedProperties, ...newKeyProperties];
 
     // sign the new properties
-    const toSignVcard = toICAL(newSignedProperties).toString();
+    const toSignVcard = vCardPropertiesToICAL(newSignedProperties).toString();
     const { signature } = await signMessage({ data: toSignVcard, privateKeys, armor: true, detached: true });
     const newSignedCard = {
         Type: CONTACT_CARD_TYPE.SIGNED,
@@ -105,16 +114,16 @@ export const pinKeyCreateContact = async ({
     bePinnedPublicKey,
     privateKeys,
 }: ParamsCreate): Promise<ContactCard[]> => {
-    const properties: ContactProperty[] = [
-        { field: 'fn', value: name || emailAddress },
-        { field: 'uid', value: generateProtonWebUID() },
-        { field: 'email', value: emailAddress, group: 'item1' },
-        !isInternal && { field: 'x-pm-encrypt', value: 'true', group: 'item1' },
-        !isInternal && { field: 'x-pm-sign', value: 'true', group: 'item1' },
+    const properties: VCardProperty[] = [
+        { field: 'fn', value: name || emailAddress, uid: createContactPropertyUid() },
+        { field: 'uid', value: generateProtonWebUID(), uid: createContactPropertyUid() },
+        { field: 'email', value: emailAddress, group: 'item1', uid: createContactPropertyUid() },
+        !isInternal && { field: 'x-pm-encrypt', value: 'true', group: 'item1', uid: createContactPropertyUid() },
+        !isInternal && { field: 'x-pm-sign', value: 'true', group: 'item1', uid: createContactPropertyUid() },
         toKeyProperty({ publicKey: bePinnedPublicKey, group: 'item1', index: 0 }),
     ].filter(isTruthy);
     // sign the properties
-    const toSignVcard = toICAL(properties).toString();
+    const toSignVcard = vCardPropertiesToICAL(properties).toString();
     const { signature } = await signMessage({ data: toSignVcard, privateKeys, armor: true, detached: true });
     const newSignedCard = {
         Type: CONTACT_CARD_TYPE.SIGNED,

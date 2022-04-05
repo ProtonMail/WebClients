@@ -1,4 +1,4 @@
-import { ContactCard, ContactGroup, ContactProperty, ContactValue } from './Contact';
+import { ContactCard, ContactGroup, ContactValue } from './Contact';
 import { VCardContact, VCardKey } from './VCard';
 import { ImportContactError } from '../../contacts/errors/ImportContactError';
 import { ImportFatalError } from '../../contacts/errors/ImportFatalError';
@@ -30,10 +30,6 @@ export type ACCEPTED_EXTENSIONS = EXTENSION.CSV | EXTENSION.VCF;
 export interface ParsedCsvContacts {
     headers: string[];
     contacts: string[][];
-}
-
-export interface ContactPropertyWithDisplay extends ContactProperty {
-    display: string;
 }
 
 export interface ImportCategories {

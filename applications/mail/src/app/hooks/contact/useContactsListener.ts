@@ -6,7 +6,7 @@ import { useEventManager, useUserKeys, useCache, useContactEmails, useContactGro
 import { Cache } from '@proton/shared/lib/helpers/cache';
 import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { readSigned } from '@proton/shared/lib/contacts/decrypt';
-import { parse } from '@proton/shared/lib/contacts/vcard';
+import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { CACHE_KEY } from '@proton/components/hooks/useGetEncryptionPreferences';
@@ -34,9 +34,8 @@ const processContactUpdate = async (
         return;
     }
     const { data: signedVcard } = await readSigned(signedCard, { publicKeys });
-    const properties = parse(signedVcard);
-    const emailProperties = properties.filter(({ field, group }) => field === 'email' && group !== undefined);
-    const emails = emailProperties.map((property) => canonizeEmail(property.value as string));
+    const vCardContact = parseToVCard(signedVcard);
+    const emails = (vCardContact.email || []).map((property) => canonizeEmail(property.value));
 
     // Looking in the EncryptionPreference cache
     const encryptionPreferenceCache = globalCache.get(CACHE_KEY) as Map<string, any>;

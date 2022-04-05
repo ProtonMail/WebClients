@@ -6,7 +6,6 @@ import { normalize } from '../../helpers/string';
 import {
     ContactGroup,
     ContactMetadata,
-    ContactProperties,
     IMPORT_GROUPS_ACTION,
     ImportCategories,
     ImportedContact,
@@ -22,7 +21,6 @@ import { VCardContact } from '../../interfaces/contacts/VCard';
 import { SimpleMap } from '../../interfaces/utils';
 import { MAX_CONTACT_ID_CHARS_DISPLAY } from '../constants';
 import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '../errors/ImportContactError';
-import { hasCategories } from '../properties';
 import { parseToVCard } from '../vcard';
 
 export const getIsAcceptedExtension = (extension: string): extension is ACCEPTED_EXTENSIONS => {
@@ -243,23 +241,6 @@ export const splitErrors = <T>(contacts: (T | ImportContactError)[]) => {
         { errors: [], rest: [] }
     );
 };
-
-/**
- * Split contacts depending on having the CATEGORIES property.
- * @param contacts
- */
-export const splitContacts = (contacts: ContactProperties[] = []) =>
-    contacts.reduce<{ withCategories: ContactProperties[]; withoutCategories: ContactProperties[] }>(
-        (acc, contact) => {
-            if (hasCategories(contact)) {
-                acc.withCategories.push(contact);
-            } else {
-                acc.withoutCategories.push(contact);
-            }
-            return acc;
-        },
-        { withCategories: [], withoutCategories: [] }
-    );
 
 /**
  * Split encrypted contacts depending on having the CATEGORIES property.

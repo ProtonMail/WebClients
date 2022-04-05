@@ -16,6 +16,7 @@ import {
     useMailSettings,
     useLoading,
     useModalState,
+    ContactEditProps,
 } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -23,7 +24,6 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
 import { getDate, isStarred as IsMessageStarred } from '../../../helpers/elements';
 import { formatFileNameDate } from '../../../helpers/date';
