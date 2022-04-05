@@ -12,15 +12,11 @@ const ThemesModal = (props: ModalProps) => {
 
     const handleThemeChange = (newThemeType: ThemeTypes) => {
         setTheme(newThemeType);
-        api(updateThemeType(newThemeType));
-    };
-
-    const handleSubmit = () => {
-        props.onClose?.();
+        void api(updateThemeType(newThemeType));
     };
 
     return (
-        <ModalTwo size="large" as="form" onSubmit={handleSubmit} {...props}>
+        <ModalTwo size="large" {...props}>
             <ModalTwoHeader title={c('Title').t`Select a theme`} />
             <ModalTwoContent>
                 <ThemeCards
