@@ -1,5 +1,5 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from 'react';
-import { HistoricThemeTypes, PROTON_THEMES_MAP, ThemeMigrationMap, ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { APPS } from '@proton/shared/lib/constants';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
@@ -9,35 +9,18 @@ import { useConfig } from '../../hooks';
 
 export const THEME_ID = 'theme-root';
 
-export const ThemeContext = createContext<[ThemeTypes, Dispatch<SetStateAction<ThemeTypes>>]>([
-    ThemeTypes.Default,
-    noop,
-]);
+export const ThemeContext = createContext<[ThemeTypes, (theme: ThemeTypes) => void]>([PROTON_DEFAULT_THEME, noop]);
 
 interface Props {
     children: ReactNode;
 }
 
-export const getThemeStyle = (themeType: ThemeTypes = ThemeTypes.Default) => {
-    return PROTON_THEMES_MAP[themeType]?.theme || PROTON_THEMES_MAP[ThemeTypes.Default].theme;
+export const getThemeStyle = (themeType: ThemeTypes = PROTON_DEFAULT_THEME) => {
+    return PROTON_THEMES_MAP[themeType]?.theme || PROTON_THEMES_MAP[PROTON_DEFAULT_THEME].theme;
 };
 
 export const useTheme = () => {
     return useContext(ThemeContext);
-};
-
-const getThemeMigration = (theme: ThemeTypes | HistoricThemeTypes): ThemeTypes | undefined => {
-    if (!(theme in HistoricThemeTypes)) {
-        return theme as ThemeTypes;
-    }
-
-    const migration = ThemeMigrationMap[theme as HistoricThemeTypes];
-
-    if (migration === undefined) {
-        return;
-    }
-
-    return getThemeMigration(migration);
 };
 
 const THEME_COOKIE_NAME = 'Theme';
@@ -47,7 +30,7 @@ const storedTheme = getCookie(THEME_COOKIE_NAME);
 const ThemeProvider = ({ children }: Props) => {
     const { APP_NAME } = useConfig();
 
-    const [theme, setTheme] = useState<ThemeTypes>(storedTheme ? Number(storedTheme) : ThemeTypes.Default);
+    const [theme, setThemeBase] = useState<ThemeTypes>(storedTheme ? Number(storedTheme) : PROTON_DEFAULT_THEME);
 
     useEffect(() => {
         setCookie({
@@ -59,16 +42,14 @@ const ThemeProvider = ({ children }: Props) => {
         });
     }, [theme]);
 
-    let computedTheme = getThemeMigration(theme) || ThemeTypes.Default;
+    const setTheme = (nextTheme: ThemeTypes) => {
+        setThemeBase(Object.values(ThemeTypes).includes(nextTheme) ? nextTheme : PROTON_DEFAULT_THEME);
+    };
 
-    if (!Object.values(ThemeTypes).includes(computedTheme)) {
-        computedTheme = ThemeTypes.Default;
-    }
-
-    const style = getThemeStyle(APP_NAME === APPS.PROTONVPN_SETTINGS ? ThemeTypes.Default : computedTheme);
+    const style = getThemeStyle(APP_NAME === APPS.PROTONVPN_SETTINGS ? PROTON_DEFAULT_THEME : theme);
 
     return (
-        <ThemeContext.Provider value={[computedTheme, setTheme]}>
+        <ThemeContext.Provider value={[theme, setTheme]}>
             <style id={THEME_ID}>{style}</style>
             {children}
         </ThemeContext.Provider>
