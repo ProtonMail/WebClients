@@ -36,7 +36,6 @@ interface Props {
     onMailTo?: (src: string) => void;
     isOutside?: boolean;
     mailSettings?: MailSettings;
-    onFocus?: () => void;
 }
 
 const MessageBodyIframe = ({
@@ -56,7 +55,6 @@ const MessageBodyIframe = ({
     onMailTo,
     isOutside,
     mailSettings,
-    onFocus,
 }: Props) => {
     const messageHead = locateHead(message.messageDocument?.document);
     const hasAttachment = hasAttachments(message.data);
@@ -91,7 +89,7 @@ const MessageBodyIframe = ({
         isOutside,
     });
 
-    useIframeDispatchEvents(initStatus === 'done', iframeRef, onFocus);
+    useIframeDispatchEvents(initStatus, iframeRef);
 
     useObserveIframeHeight(initStatus === 'done', iframeRef);
 
