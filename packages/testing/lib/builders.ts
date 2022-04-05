@@ -3,7 +3,7 @@ import * as faker from 'faker';
 
 import { Address, Key } from '@proton/shared/lib/interfaces';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { Calendar, CalendarEventWithMetadata, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar, CalendarEventWithMetadata, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -43,15 +43,30 @@ export const messageBuilder = build<Pick<Message, 'ID' | 'ParsedHeaders'>>('Mess
     },
 });
 
-export const calendarBuilder = build<Calendar>('Calendar', {
+const testEmail = 'stest1@proton.black';
+const testAdddressId = 'Lw5suur9q0eTrcp-ufF41Ar7WNj5FQQFz_iKVcCD8khv0eVLJ8MPyx9oiI1XfZJ3JVuTmpG2dgOIY2zCCrIVIw==';
+const testCalendarId = '8DqHHGgVZgEb9KJ0En3mhktAcUBNlAEfGdp5-KnBy2WedZq2Th_gBhphVfcSITxDpz914-LvghzmLf5dhOB5HQ==';
+
+export const calendarBuilder = build<VisualCalendar>('Calendar', {
     fields: {
-        ID: '8DqHHGgVZgEb9KJ0En3mhktAcUBNlAEfGdp5-KnBy2WedZq2Th_gBhphVfcSITxDpz914-LvghzmLf5dhOB5HQ==',
+        ID: testCalendarId,
         Name: 'My calendar',
         Description: '',
         Type: 0,
         Flags: CALENDAR_FLAGS.ACTIVE,
         Color: '#F00',
         Display: 1,
+        Members: [
+            {
+                ID: 'otkpEZzG--8dMXvwyLXLQWB72hhBhNGzINjH14rUDfywvOyeN01cDxDrS3Koifxf6asA7Xcwtldm0r_MCmWiAQ==',
+                Email: testEmail,
+                Permissions: 127,
+                AddressID: testAdddressId,
+                Color: '#F00',
+                Display: 1,
+                CalendarID: testCalendarId,
+            },
+        ],
     },
     traits: {
         resetNeeded: {
@@ -91,10 +106,10 @@ export const addressKeyBuilder = build<Key>('AddressKey', {
 
 export const addressBuilder = build<Address>('Address', {
     fields: {
-        ID: 'Lw5suur9q0eTrcp-ufF41Ar7WNj5FQQFz_iKVcCD8khv0eVLJ8MPyx9oiI1XfZJ3JVuTmpG2dgOIY2zCCrIVIw==',
+        ID: testAdddressId,
         DomainID: 'l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==',
-        DisplayName: 'stest1@proton.black',
-        Email: 'stest1@proton.black',
+        DisplayName: testEmail,
+        Email: testEmail,
         Keys: [],
         HasKeys: 1,
         SignedKeyList: {

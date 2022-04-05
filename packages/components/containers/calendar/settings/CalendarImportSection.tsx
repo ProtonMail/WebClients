@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 
 import { Alert, GoogleButton, Href, Loader, PrimaryButton } from '../../../components';
@@ -16,8 +16,8 @@ import { EasySwitchOauthModal } from '../../easySwitch';
 import { FeatureCode } from '../../features';
 
 interface Props {
-    defaultCalendar?: Calendar;
-    activeCalendars: Calendar[];
+    defaultCalendar?: VisualCalendar;
+    activeCalendars: VisualCalendar[];
     user: UserModel;
 }
 

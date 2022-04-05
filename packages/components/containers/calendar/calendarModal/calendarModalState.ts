@@ -3,7 +3,7 @@ import { LABEL_COLORS } from '@proton/shared/lib/constants';
 import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
-    Calendar,
+    VisualCalendar,
     CALENDAR_TYPE,
     CalendarErrors,
     CalendarSettings,
@@ -21,7 +21,7 @@ import {
 } from '@proton/shared/lib/calendar/notificationDefaults';
 
 interface GetCalendarModelArguments {
-    Calendar: Calendar;
+    Calendar: VisualCalendar;
     CalendarSettings: CalendarSettings;
     Addresses: Address[];
     AddressID: string;
@@ -60,6 +60,7 @@ export const getDefaultModel = (): CalendarViewModelFull => {
     return {
         calendarID: '',
         name: '',
+        members: [],
         description: '',
         color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
         display: true,

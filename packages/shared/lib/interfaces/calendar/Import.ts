@@ -4,7 +4,7 @@ import { ImportFatalError } from '../../calendar/import/ImportFatalError';
 import { ImportFileError } from '../../calendar/import/ImportFileError';
 import { RequireSome } from '../utils';
 import { CalendarCreateEventBlobData } from './Api';
-import { Calendar } from './Calendar';
+import { VisualCalendar } from './Calendar';
 import { SyncMultipleApiSuccessResponses } from './Event';
 import { VcalCalendarComponent, VcalVeventComponent } from './VcalModel';
 
@@ -27,7 +27,7 @@ export interface ImportCalendarModel {
     visibleErrors: ImportEventError[];
     hiddenErrors: ImportEventError[];
     failure?: ImportFatalError | ImportFileError | Error;
-    calendar: Calendar;
+    calendar: VisualCalendar;
     loading: boolean;
 }
 

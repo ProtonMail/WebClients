@@ -12,10 +12,11 @@ import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
     getProbablyActiveCalendars,
+    getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { partition } from '@proton/shared/lib/helpers/array';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useAddresses, useCalendars, useCalendarUserSettings, useFeature, useModals, useUser } from '../../hooks';
 import { ProviderCard, useModalState } from '../../components';
@@ -65,7 +66,7 @@ const AccountEasySwitchSection = () => {
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
 
-    const memoizedCalendars = useMemo(() => calendars || [], [calendars]);
+    const memoizedCalendars = useMemo(() => getVisualCalendars(calendars || [], addresses), [calendars, addresses]);
 
     const { activeCalendars } = useMemo(() => {
         return {
@@ -74,7 +75,7 @@ const AccountEasySwitchSection = () => {
         };
     }, [calendars]);
 
-    const [personalActiveCalendars] = partition<Calendar>(activeCalendars, getIsPersonalCalendar);
+    const [personalActiveCalendars] = partition<VisualCalendar>(activeCalendars, getIsPersonalCalendar);
 
     const defaultCalendar = getDefaultCalendar(personalActiveCalendars, calendarUserSettings.DefaultCalendarID);
 

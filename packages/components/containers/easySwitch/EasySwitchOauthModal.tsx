@@ -1,3 +1,4 @@
+import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
@@ -122,6 +123,7 @@ const EasySwitchOauthModal = ({
     const [labels = [], loadingLabels] = useLabels();
     const [folders = [], loadingFolders] = useFolders();
     const [calendars = [], loadingCalendars] = useCalendars();
+    const visualCalendars = getVisualCalendars(calendars, addresses);
 
     const [config, loadingConfig] = useApiEnvironmentConfig();
 
@@ -620,7 +622,7 @@ const EasySwitchOauthModal = ({
                             updateCheckedTypes={(importTypes) => setCheckedTypes(importTypes)}
                             modalModel={modalModel}
                             toEmail={addressMap[modalModel.AddressID].Email}
-                            calendars={getPersonalCalendars(calendars)}
+                            calendars={getPersonalCalendars(visualCalendars)}
                             addresses={addresses}
                             labels={labels}
                             folders={folders}

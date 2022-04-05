@@ -5,4 +5,4 @@ export {
     default as CalendarModelEventManagerProvider,
     useCalendarModelEventManager,
 } from './calendar/ModelEventManagerProvider';
-export { default as useCalendarsKeysSettingsListener } from './calendar/useCalendarsKeysSettingsListener';
+export { default as useCalendarsInfoListener } from './calendar/useCalendarsInfoListener';

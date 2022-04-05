@@ -46,7 +46,7 @@ import { unary } from '@proton/shared/lib/helpers/function';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
-    Calendar,
+    VisualCalendar,
     CalendarEventWithMetadata,
     CalendarWidgetData,
     Participant,
@@ -480,7 +480,7 @@ interface GetInitialInvitationModelArgs {
     message: MessageStateWithData;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
-    calendar?: Calendar;
+    calendar?: VisualCalendar;
     hasNoCalendars: boolean;
     canCreateCalendar: boolean;
     maxUserCalendarsDisabled: boolean;

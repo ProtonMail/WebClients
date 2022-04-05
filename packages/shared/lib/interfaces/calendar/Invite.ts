@@ -1,6 +1,6 @@
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '../../calendar/constants';
 import { DecryptedKey } from '../Key';
-import { Calendar, CalendarSettings } from './Calendar';
+import { VisualCalendar, CalendarSettings } from './Calendar';
 import { DecryptedCalendarKey } from './CalendarKey';
 import { CalendarEvent, CalendarEventWithMetadata } from './Event';
 import { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from './VcalModel';
@@ -30,7 +30,7 @@ export interface PartstatActions {
 }
 
 export interface CalendarWidgetData {
-    calendar: Calendar;
+    calendar: VisualCalendar;
     isCalendarDisabled: boolean;
     calendarNeedsUserAction: boolean;
     memberID?: string;

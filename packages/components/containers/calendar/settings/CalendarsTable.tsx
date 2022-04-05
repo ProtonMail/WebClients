@@ -5,7 +5,7 @@ import {
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { c } from 'ttag';
 import { getIsCalendarDisabled, getIsCalendarProbablyActive } from '@proton/shared/lib/calendar/calendar';
-import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 
@@ -18,13 +18,13 @@ import { classnames } from '../../../helpers';
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
 
 interface Props {
-    calendars: (Calendar | SubscribedCalendar)[];
+    calendars: (VisualCalendar | SubscribedCalendar)[];
     defaultCalendarID?: string;
     user: UserModel;
-    onEdit: (calendar: Calendar) => void;
+    onEdit: (calendar: VisualCalendar) => void;
     onSetDefault?: (id: string) => void;
     onDelete: (id: string) => void;
-    onExport?: (calendar: Calendar) => void;
+    onExport?: (calendar: VisualCalendar) => void;
     loadingMap: SimpleMap<boolean>;
     actionsDisabled: boolean;
 }
