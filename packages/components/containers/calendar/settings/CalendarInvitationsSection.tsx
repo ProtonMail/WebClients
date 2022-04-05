@@ -51,7 +51,7 @@ const CalendarInvitationsSection = ({
                         <label className="text-semibold" htmlFor="invite-locale">
                             {
                                 // translator: the full sentence will be "Send invites in [LANGUAGE]", where [LANGUAGE] is a dropdown with language options. E.g. "Send invites in [ENGLISH]"
-                                c('Label').t`Send invitations in`
+                                c('Label').t`Send in`
                             }{' '}
                             <Info
                                 buttonClass="ml0-5 inline-flex"
@@ -74,10 +74,7 @@ const CalendarInvitationsSection = ({
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <label className="text-semibold inline-block" htmlFor="auto-import-invitations">
-                            <span>
-                                {c('Auto import invitations setting')
-                                    .jt`Add invitations to calendar and mark as pending`}
-                            </span>
+                            <span>{c('Auto import invitations setting').jt`Add to calendar and mark as pending`}</span>
                             <Info
                                 buttonClass="ml0-5 inline-flex"
                                 title={c('Info')
