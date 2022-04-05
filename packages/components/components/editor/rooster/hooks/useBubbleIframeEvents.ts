@@ -1,9 +1,57 @@
+import { isMac } from '@proton/shared/lib/helpers/browser';
 import { RefObject, useCallback, useEffect } from 'react';
 import { editorShortcuts } from '@proton/shared/lib/shortcuts/mail';
-import { isValidShortcut } from '@proton/shared/lib/shortcuts/helpers';
-import { isKeyboardEvent, cloneEvent } from '@proton/shared/lib/helpers/events';
-
 import { IFRAME_EVENTS_LIST, ROOSTER_EDITOR_WRAPPER_ID } from '../../constants';
+
+const isDragEvent = (event: Event): event is DragEvent => {
+    if ('dataTransfer' in event) {
+        return true;
+    }
+    return false;
+};
+
+const isKeyboardEvent = (event: Event): event is KeyboardEvent => {
+    if ('key' in event) {
+        return true;
+    }
+    return false;
+};
+
+const assignKeyboardKeys = (customEvent: CustomEvent, event: Event) => {
+    const KEYBOARD_EVENT_RELATED_KEYS = [
+        'altKey',
+        'charCode',
+        'ctrlKey',
+        'code',
+        'key',
+        'keyCode',
+        'locale',
+        'location',
+        'metaKey',
+        'repeat',
+        'shiftKey',
+    ];
+
+    KEYBOARD_EVENT_RELATED_KEYS.forEach((key) => {
+        // @ts-expect-error
+        customEvent[key] = event[key];
+    });
+};
+
+const cloneEvent = (event: Event) => {
+    const clonedEvent = new CustomEvent(event.type, { bubbles: true });
+
+    if (isDragEvent(event)) {
+        // @ts-expect-error 'dataTransfert' key is not present in customEvent interface
+        clonedEvent.dataTransfer = event.dataTransfer;
+    }
+
+    if (isKeyboardEvent(event)) {
+        assignKeyboardKeys(clonedEvent, event);
+    }
+
+    return clonedEvent;
+};
 
 /**
  * Calls event.preventDefault on matched events
@@ -13,7 +61,28 @@ import { IFRAME_EVENTS_LIST, ROOSTER_EDITOR_WRAPPER_ID } from '../../constants';
 const preventDefaultEvents = (event: Event) => {
     if (isKeyboardEvent(event)) {
         Object.values(editorShortcuts).forEach((shortcut) => {
-            if (isValidShortcut(shortcut, event)) {
+            let isOk = shortcut.map(() => false);
+            shortcut.forEach((key, index) => {
+                const formattedKey = key.toLowerCase();
+                let ok = false;
+
+                if (formattedKey === 'meta') {
+                    ok = isMac() ? event.metaKey : event.ctrlKey;
+                }
+                if (formattedKey === 'shift') {
+                    ok = event.shiftKey;
+                }
+
+                if (formattedKey === event.key.toLowerCase()) {
+                    ok = true;
+                }
+
+                if (ok) {
+                    isOk[index] = true;
+                }
+            });
+
+            if (isOk.every((item) => item === true)) {
                 event.preventDefault();
             }
         });
