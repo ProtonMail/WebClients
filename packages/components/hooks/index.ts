@@ -113,6 +113,7 @@ export { useUserKeys, useGetUserKeys } from './useUserKeys';
 export { default as useUserScopes } from './useUserScopes';
 export { default as useUserSettings } from './useUserSettings';
 export { default as useUserVPN } from './useUserVPN';
+export { default as useVPNLogicals } from './useVPNLogicals';
 export { default as useVPNCountriesCount } from './useVPNCountriesCount';
 export { default as useVPNServersCount } from './useVPNServersCount';
 export { default as useWelcomeFlags } from './useWelcomeFlags';
