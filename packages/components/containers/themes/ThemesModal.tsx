@@ -2,11 +2,11 @@ import { c } from 'ttag';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { updateThemeType } from '@proton/shared/lib/api/settings';
 
-import { FormModal } from '../../components';
+import { ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter, Button, ModalProps } from '../../components';
 import { useApi } from '../../hooks';
 import { ThemeCards, useTheme } from '.';
 
-const ThemesModal = (props: { onClose?: () => void }) => {
+const ThemesModal = (props: ModalProps) => {
     const api = useApi();
     const [theme, setTheme] = useTheme();
 
@@ -20,17 +20,20 @@ const ThemesModal = (props: { onClose?: () => void }) => {
     };
 
     return (
-        <FormModal {...props} intermediate close={null} submit={c('Action').t`OK`} onSubmit={handleSubmit}>
-            <div className="h2 text-center mb1">{c('Title').t`Select a theme`}</div>
-            <div className="flex">
+        <ModalTwo size="large" as="form" onSubmit={handleSubmit} {...props}>
+            <ModalTwoHeader title={c('Title').t`Select a theme`} />
+            <ModalTwoContent>
                 <ThemeCards
                     className="theme-modal-list"
                     list={PROTON_THEMES}
                     themeIdentifier={theme}
                     onChange={handleThemeChange}
                 />
-            </div>
-        </FormModal>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button color="norm" className="mlauto" onClick={props.onClose}>{c('Action').t`OK`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
