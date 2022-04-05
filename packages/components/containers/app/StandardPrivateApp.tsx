@@ -128,6 +128,16 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             appRef.current = result.default;
         });
 
+        let ignoreError = false;
+        const handleUnload = () => {
+            ignoreError = true;
+        };
+        // In Firefox, navigation events cancel ongoing network requests. This triggers the error handler and error
+        // screen to be displayed. We set up a 'beforeunload' listener to detect those types of events to not
+        // unnecessarily show those errors as fatal errors, and keep showing the loader screen instead.
+        window.addEventListener('beforeunload', handleUnload);
+        const clearBeforeUnload = () => window.removeEventListener('beforeunload', handleUnload);
+
         Promise.all([eventManagerPromise, setupPromise, onInit?.(), loadOpenPGP(openpgpConfig), appPromise])
             .then(() => {
                 // The Version cookie is set on each request. This causes race-conditions between with what the client
@@ -142,6 +152,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                     appLink(`/setup-internal-address?app=${APP_NAME}`, APPS.PROTONACCOUNT);
                 } else {
                     clearAutomaticErrorRefresh();
+                    clearBeforeUnload();
                     setLoading(false);
                 }
             })
@@ -151,7 +162,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                 }
 
                 const handleError = (error: any) => {
-                    if (handleAutomaticErrorRefresh(error)) {
+                    if (handleAutomaticErrorRefresh(error) || ignoreError) {
                         return;
                     }
                     setError({
@@ -159,7 +170,8 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                     });
                 };
 
-                // We add an arbitrary timeout in notifying about the error to avoid cancelled requests due to page navigations.
+                // We add an arbitrary timeout in handling the error to avoid errors that are due to page navigations.
+                // This allows the beforeunload handler to trigger first.
                 setTimeout(() => handleError(error), 2500);
             });
 
