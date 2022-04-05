@@ -15,6 +15,7 @@
         "test:dev": "jest --watch --coverage=false"
     },
     "dependencies": {
+        "@noble/ed25519": "^1.6.0",
         "@proton/styles": "workspace:packages/styles",
         "@types/codemirror": "5.60.5",
         "@types/credit-card-type": "^7.0.0",

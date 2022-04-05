@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { memo } from 'react';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -12,10 +13,11 @@ import {
     Tooltip,
     TableCell,
     Icon,
+    Button,
     ButtonLike,
     SettingsLink,
 } from '../../../components';
-import { useApiWithoutResult, useNotifications, useUser } from '../../../hooks';
+import { useApi, useNotifications, useUser } from '../../../hooks';
 import { classnames } from '../../../helpers';
 
 import LoadIndicator from './LoadIndicator';
@@ -64,20 +66,22 @@ export const TorIcon = () => (
 );
 
 // TODO: Add icons instead of text for p2p and tor when they are ready
-const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isUpgradeRequired }) => {
-    const { request } = useApiWithoutResult(getVPNServerConfig);
+const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onSelect, selecting }) => {
+    const api = useApi();
     const { createNotification } = useNotifications();
     const [{ hasPaidVpn }] = useUser();
 
     const handleClickDownload =
         ({ ID, ExitCountry, Domain }) =>
         async () => {
-            const buffer = await request({
-                LogicalID: category === CATEGORY.COUNTRY ? undefined : ID,
-                Platform: platform,
-                Protocol: protocol,
-                Country: ExitCountry,
-            });
+            const buffer = await api(
+                getVPNServerConfig({
+                    LogicalID: category === CATEGORY.COUNTRY ? undefined : ID,
+                    Platform: platform,
+                    Protocol: protocol,
+                    Country: ExitCountry,
+                })
+            );
             const blob = new Blob([buffer], { type: 'application/x-openvpn-profile' });
             const [country, ...rest] = Domain.split('.');
             const domain = category === CATEGORY.COUNTRY ? [country.substring(0, 2), ...rest].join('.') : Domain;
@@ -131,7 +135,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                 {isP2PEnabled(server.Features) && <P2PIcon />}
                                 {isTorEnabled(server.Features) && <TorIcon />}
                             </div>,
-                            isUpgradeRequired(server) ? (
+                            server.isUpgradeRequired ? (
                                 <Tooltip
                                     key="download"
                                     title={
@@ -147,6 +151,9 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                         path={`/dashboard${hasPaidVpn ? '?plan=vpnplus' : ''}`}
                                     >{c('Action').t`Upgrade`}</ButtonLike>
                                 </Tooltip>
+                            ) : onSelect ? (
+                                <Button size="small" onClick={() => onSelect(server)} loading={selecting}>{c('Action')
+                                    .t`Create`}</Button>
                             ) : (
                                 <DropdownActions
                                     key="dropdown"
@@ -182,7 +189,8 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
 };
 
 ConfigsTable.propTypes = {
-    isUpgradeRequired: PropTypes.func.isRequired,
+    onSelect: PropTypes.func,
+    selecting: PropTypes.bool,
     category: PropTypes.oneOf([CATEGORY.SECURE_CORE, CATEGORY.COUNTRY, CATEGORY.SERVER, CATEGORY.FREE]),
     platform: PropTypes.string,
     protocol: PropTypes.string,
@@ -201,4 +209,4 @@ ConfigsTable.propTypes = {
     ),
 };
 
-export default ConfigsTable;
+export default memo(ConfigsTable);
