@@ -222,14 +222,14 @@ const AddressesRecipientItem = ({
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={handleCopy}
                     >
-                        <Icon name="squares" className="mr0-5 mt0-25" />
+                        <Icon name="squares" className="mr0-5" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy address`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={handleDoubleClick}
                     >
-                        <Icon name="pen" className="mr0-5 mt0-25" />
+                        <Icon name="pen" className="mr0-5" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Edit address`}</span>
                     </DropdownMenuButton>
                     {ContactID ? (
@@ -237,7 +237,7 @@ const AddressesRecipientItem = ({
                             className="text-left flex flex-nowrap flex-align-items-center"
                             onClick={handleClickContact}
                         >
-                            <Icon name="user" className="mr0-5 mt0-25" />
+                            <Icon name="user" className="mr0-5" />
                             <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View contact details`}</span>
                         </DropdownMenuButton>
                     ) : (
@@ -245,7 +245,7 @@ const AddressesRecipientItem = ({
                             className="text-left flex flex-nowrap flex-align-items-center"
                             onClick={handleClickContact}
                         >
-                            <Icon name="user-plus" className="mr0-5 mt0-25" />
+                            <Icon name="user-plus" className="mr0-5" />
                             <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Create new contact`}</span>
                         </DropdownMenuButton>
                     )}
@@ -254,7 +254,7 @@ const AddressesRecipientItem = ({
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >
-                        <Icon name="cross-circle" className="mr0-5 mt0-25" />
+                        <Icon name="cross-circle" className="mr0-5" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>
