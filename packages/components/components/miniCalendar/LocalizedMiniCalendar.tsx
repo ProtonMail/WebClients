@@ -8,7 +8,7 @@ import MiniCalendar, { Props as MiniCalProps } from './MiniCalendar';
 
 export type Props = MiniCalProps;
 
-const LocalizedMiniCalendar = ({ weekStartsOn, ...rest }: Props) => {
+const LocalizedMiniCalendar = ({ weekStartsOn, now, todayTitle: todayTitleProp, ...rest }: Props) => {
     const weekdaysLong = useMemo(() => {
         return getFormattedWeekdays('cccc', { locale: dateLocale });
     }, [dateLocale]);
@@ -28,6 +28,18 @@ const LocalizedMiniCalendar = ({ weekStartsOn, ...rest }: Props) => {
         [dateLocale]
     );
 
+    const todayTitle = useMemo(() => {
+        if (todayTitleProp !== undefined) {
+            return todayTitleProp;
+        }
+
+        if (!now) {
+            return c('Today icon tooltip in mini calendar').t`Today`;
+        }
+
+        return format(now, 'PP', { locale: dateLocale });
+    }, [now, dateLocale]);
+
     return (
         <MiniCalendar
             nextMonth={c('Action').t`Next month`}
@@ -37,6 +49,7 @@ const LocalizedMiniCalendar = ({ weekStartsOn, ...rest }: Props) => {
             months={months}
             weekStartsOn={weekStartsOn !== undefined ? weekStartsOn : getWeekStartsOn(dateLocale)}
             formatDay={formatDay}
+            todayTitle={todayTitle}
             {...rest}
         />
     );
