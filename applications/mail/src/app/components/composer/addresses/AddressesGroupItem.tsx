@@ -138,20 +138,23 @@ const AddressesGroupItem = ({
                 anchorRef={itemRef}
             >
                 <DropdownMenu>
-                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCopy}>
-                        <Icon name="squares" className="mr0-5 mt0-25" />
+                    <DropdownMenuButton
+                        className="text-left flex flex-nowrap flex-align-items-center"
+                        onClick={handleCopy}
+                    >
+                        <Icon name="squares" className="mr0-5" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={() => showModalCallback(true)}>
-                        <Icon name="user" className="mr0-5 mt0-25" />
+                    <DropdownMenuButton className="text-left flex flex-nowrap flex-align-items-center" onClick={() => showModalCallback(true)}>
+                        <Icon name="user" className="mr0-5" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap"
+                        className="text-left flex flex-nowrap flex-align-items-center"
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >
-                        <Icon name="cross-circle" className="mr0-5 mt0-25" />
+                        <Icon name="cross-circle" className="mr0-5" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>
