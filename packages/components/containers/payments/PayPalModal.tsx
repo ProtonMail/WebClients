@@ -4,14 +4,14 @@ import { createToken, setPaymentMethod } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
-import { Alert, Button, FormModal, Loader, PrimaryButton } from '../../components';
+import { AlertModal, ModalProps, Button } from '../../components';
 import { process } from './paymentTokenHelper';
 import { PaymentTokenResult } from './interface';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
 const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';
 
-const PayPalModal = (props: any) => {
+const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -34,7 +34,7 @@ const PayPalModal = (props: any) => {
             );
             paypalRef.current = result;
         };
-        withLoadingToken(run());
+        void withLoadingToken(run());
         return () => {
             abortRef.current?.abort();
         };
@@ -58,47 +58,48 @@ const PayPalModal = (props: any) => {
             })
         );
         await call();
-        props.onClose();
+        onClose?.();
         createNotification({ text: c('Success').t`Payment method added` });
     };
 
     return (
-        <FormModal noTitleEllipsis title={c('Title').t`Add PayPal payment method`} small footer={null} {...props}>
+        <AlertModal
+            title={c('Title').t`Add PayPal payment method`}
+            onClose={onClose}
+            buttons={[
+                <Button
+                    color="norm"
+                    loading={loading}
+                    disabled={loadingToken}
+                    onClick={() => {
+                        if (!paypalRef.current) {
+                            return;
+                        }
+                        void withLoading(handleSubmit(paypalRef.current));
+                    }}
+                >{c('Action').t`Add PayPal`}</Button>,
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
+            {...rest}
+        >
             {loading ? (
                 <>
-                    <p className="text-center">{c('Info').t`Please verify payment at the new tab which was opened.`}</p>
-                    <Loader />
-                    <p className="text-center">
-                        <Button
-                            onClick={() => {
-                                abortRef.current?.abort();
-                            }}
-                        >{c('Action').t`Cancel`}</Button>
-                    </p>
-                    <Alert className="mb1">{c('Info').t`Verification can take a few minutes.`}</Alert>
+                    <div className="mb1">{c('Info').t`Please verify payment at the new tab which was opened.`}</div>
+                    <div>{c('Info').t`Verification can take a few minutes.`}</div>
                 </>
             ) : (
                 <>
-                    <Alert className="mb1">
+                    <div className="mb1">
                         {c('Info')
                             .t`This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.`}
-                    </Alert>
-                    <div className="mb1">
-                        <PrimaryButton
-                            loading={loading || loadingToken}
-                            onClick={() => {
-                                if (!paypalRef.current) {
-                                    return;
-                                }
-                                withLoading(handleSubmit(paypalRef.current));
-                            }}
-                        >{c('Action').t`Add PayPal payment method`}</PrimaryButton>
                     </div>
-                    <Alert className="mb1">{c('Info')
-                        .t`You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.`}</Alert>
+                    <div>
+                        {c('Info')
+                            .t`You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.`}
+                    </div>
                 </>
             )}
-        </FormModal>
+        </AlertModal>
     );
 };
 
