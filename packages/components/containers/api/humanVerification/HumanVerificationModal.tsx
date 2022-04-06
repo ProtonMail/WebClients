@@ -2,21 +2,25 @@ import { useState } from 'react';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { c } from 'ttag';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import { noop } from '@proton/shared/lib/helpers/function';
 
-import { FormModal } from '../../../components';
+import {
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+} from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
 import HumanVerificationForm from './HumanVerificationForm';
 import { HumanVerificationSteps } from './interface';
 
-interface Props<T> {
+interface Props<T> extends ModalProps {
     title?: string;
     token: string;
     methods: HumanVerificationMethodType[];
     onSuccess: (data: T) => void;
     onVerify: (token: string, tokenType: HumanVerificationMethodType) => Promise<T>;
     onError: (error: any) => void;
-
-    [key: string]: any;
 }
 
 const HumanVerificationModal = <T,>({
@@ -26,6 +30,7 @@ const HumanVerificationModal = <T,>({
     onSuccess,
     onVerify,
     onError,
+    onClose = noop,
     ...rest
 }: Props<T>) => {
     const title = maybeTitle || c('Title').t`Human verification`;
@@ -41,7 +46,7 @@ const HumanVerificationModal = <T,>({
             const result = await onVerify(token, tokenType);
             createNotification({ text: c('Success').t`Verification successful` });
             onSuccess(result);
-            rest.onClose();
+            onClose();
         } catch (error: any) {
             const { data: { Code } = { Code: 0 } } = error;
 
@@ -53,7 +58,7 @@ const HumanVerificationModal = <T,>({
             // it probably means the verification succeeded, but the original request failed. So then we error out.
             if (tokenType === 'captcha' || Code !== API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
                 onError(error);
-                rest.onClose();
+                onClose();
                 return;
             }
 
@@ -62,17 +67,19 @@ const HumanVerificationModal = <T,>({
     };
 
     return (
-        <FormModal className="modal--human-verification" title={title} footer={null} {...rest}>
-            <HumanVerificationForm
-                step={step}
-                onChangeStep={setStep}
-                onSubmit={(...args) => withLoading(handleSubmit(...args))}
-                onClose={rest.onClose}
-                methods={methods}
-                token={token}
-            />
-            <div className="p1 mb2" />
-        </FormModal>
+        <Modal className="human-verification-modal" size="small" onClose={onClose} {...rest}>
+            <ModalHeader title={title} />
+            <ModalContent>
+                <HumanVerificationForm
+                    step={step}
+                    onChangeStep={setStep}
+                    onSubmit={(...args) => withLoading(handleSubmit(...args))}
+                    onClose={onClose}
+                    methods={methods}
+                    token={token}
+                />
+            </ModalContent>
+        </Modal>
     );
 };
 
