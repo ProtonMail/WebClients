@@ -310,14 +310,15 @@ END:VCALENDAR`;
         });
     });
 
-    test('should not throw without version', async () => {
+    test('should not throw without version and duration', async () => {
         const invitation = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
 BEGIN:VEVENT
 UID:test-event
 DTSTAMP:19980309T231000Z
-DTSTART;TZID=Europe/Brussels:20021231T203000
+DTSTART;VALUE=DATE:20021231
+DURATION:PT2D
 END:VEVENT
 END:VCALENDAR`;
         const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
