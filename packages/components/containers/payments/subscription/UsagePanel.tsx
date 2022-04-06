@@ -5,7 +5,12 @@ import percentage from '@proton/shared/lib/helpers/percentage';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { StrippedList, StrippedItem, Meter } from '../../../components';
+import { StrippedList, StrippedItem, Meter, IconName } from '../../../components';
+
+interface Item {
+    icon: IconName;
+    text: string;
+}
 
 interface Props {
     organization?: Organization;
@@ -27,13 +32,42 @@ const UsagePanel = ({ addresses, calendars, organization, user }: Props) => {
     const UsedCalendars = calendars?.length;
     const maxVpn = 10;
 
+    const items: (Item | false)[] = [
+        UsedAddresses !== undefined && {
+            icon: 'checkmark',
+            text: c('Subscription attribute').ngettext(
+                msgid`${UsedAddresses} address`,
+                `${UsedAddresses} addresses`,
+                UsedAddresses
+            ),
+        },
+        UsedCalendars !== undefined && {
+            icon: 'checkmark',
+            text: c('Subscription attribute').ngettext(
+                msgid`${UsedCalendars} calendar`,
+                `${UsedCalendars} calendars`,
+                UsedCalendars
+            ),
+        },
+        {
+            icon: 'checkmark',
+            text: user.hasPaidVpn
+                ? c('Subscription attribute').ngettext(
+                      msgid`${maxVpn} high-speed VPN connection`,
+                      `${maxVpn} high-speed VPN connections`,
+                      maxVpn
+                  )
+                : c('Subscription attribute').t`1 VPN connection`,
+        },
+    ];
+
     return (
         <div className="border rounded px2 py1-5 pt0-5 your-account-usage-container">
             <h3>
                 <strong>{c('new_plans: Title').t`Your account's usage`}</strong>
             </h3>
             <StrippedList>
-                <StrippedItem icon="check">
+                <StrippedItem icon="checkmark">
                     <span id="usedSpaceLabel" className="block">{c('new_plans: Label')
                         .t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                     <Meter
@@ -42,42 +76,13 @@ const UsagePanel = ({ addresses, calendars, organization, user }: Props) => {
                         value={Math.ceil(percentage(user.MaxSpace, user.UsedSpace))}
                     />
                 </StrippedItem>
-                {[
-                    UsedAddresses !== undefined && {
-                        icon: 'check',
-                        text: c('Subscription attribute').ngettext(
-                            msgid`${UsedAddresses} address`,
-                            `${UsedAddresses} addresses`,
-                            UsedAddresses
-                        ),
-                    },
-                    UsedCalendars !== undefined && {
-                        icon: 'check',
-                        text: c('Subscription attribute').ngettext(
-                            msgid`${UsedCalendars} calendar`,
-                            `${UsedCalendars} calendars`,
-                            UsedCalendars
-                        ),
-                    },
-                    {
-                        icon: 'check',
-                        text: user.hasPaidVpn
-                            ? c('Subscription attribute').ngettext(
-                                  msgid`${maxVpn} high-speed VPN connection`,
-                                  `${maxVpn} high-speed VPN connections`,
-                                  maxVpn
-                              )
-                            : c('Subscription attribute').t`1 VPN connection`,
-                    },
-                ]
-                    .filter(isTruthy)
-                    .map((item) => {
-                        return (
-                            <StrippedItem key={item.text} icon={item.icon}>
-                                {item.text}
-                            </StrippedItem>
-                        );
-                    })}
+                {items.filter(isTruthy).map((item) => {
+                    return (
+                        <StrippedItem key={item.text} icon={item.icon}>
+                            {item.text}
+                        </StrippedItem>
+                    );
+                })}
             </StrippedList>
         </div>
     );

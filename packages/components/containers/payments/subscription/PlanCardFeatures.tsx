@@ -28,10 +28,10 @@ const PlanCardFeatureList = ({ features }: FeatureListProps) => {
                                     <>🔥</>
                                 ) : feature.included ? (
                                     <span className="color-success">
-                                        <Icon size={20} name="check" />
+                                        <Icon size={20} name="checkmark" />
                                     </span>
                                 ) : (
-                                    <Icon size={16} name="xmark" className="mt0-25" />
+                                    <Icon size={16} name="cross-circle" className="mt0-25" />
                                 )}
                             </span>
                             <span className="flex-item-fluid inline-flex flex-align-items-center">
