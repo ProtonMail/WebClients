@@ -54,7 +54,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
     return (
         <div className="bg-norm rounded border p0-5 mb0-85 flex flex-nowrap on-mobile-flex-column">
             <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
-                <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-5 color-danger" />
+                <Icon name="circle-exclamation-filled" className="flex-item-noshrink ml0-2 mt0-5 color-danger" />
                 <span className="pl0-5 pr0-5 mt0-25 flex-item-fluid flex-align-self-center">
                     <span className="mr0-25">{c('Info').t`We could not verify the sender's trusted keys.`}</span>
                     <Href
@@ -66,8 +66,13 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
                 </span>
             </div>
             <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100">
-                <Button size="small" className="on-mobile-w100 py0-25" onClick={handleClick}>{c('Action')
-                    .t`Verify`}</Button>
+                <Button
+                    size="small"
+                    color="weak"
+                    shape="solid"
+                    className="on-mobile-w100 py0-25"
+                    onClick={handleClick}
+                >{c('Action').t`Verify`}</Button>
             </span>
         </div>
     );

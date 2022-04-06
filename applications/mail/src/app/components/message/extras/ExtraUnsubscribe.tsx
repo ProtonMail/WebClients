@@ -188,11 +188,10 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             <Tooltip title={c('Info').t`This message is from a mailing list.`}>
                 <Button
                     onClick={() => setUnsubscribeModalOpen(true)}
-                    size="small"
-                    className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 mb0-5 py0-25"
+                    className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 px0-5"
                     data-testid="unsubscribe-banner"
                 >
-                    <Icon name="envelope" className="flex-item-noshrink" />
+                    <Icon name="envelope" className="flex-item-noshrink ml0-2" />
                     <span className="ml0-5">
                         {isUnsubscribed(message.data)
                             ? c('Status').t`Unsubscribed from mailing list`

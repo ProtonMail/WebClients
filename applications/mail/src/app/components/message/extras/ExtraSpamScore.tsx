@@ -32,7 +32,7 @@ const ExtraSpamScore = ({ message }: Props) => {
     if (hasBit(Flags, MESSAGE_FLAGS.FLAG_DMARC_FAIL)) {
         return (
             <div className="bg-norm border rounded p0-5 mb0-85 flex flex-nowrap">
-                <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-5 color-danger" />
+                <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-5 ml0-2 color-danger" />
                 <span className="pl0-5 pr0-5 mt0-25 pb0-25 flex-item-fluid">
                     {c('Info')
                         .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!`}{' '}
@@ -58,8 +58,8 @@ const ExtraSpamScore = ({ message }: Props) => {
         };
 
         return (
-            <div className="bg-norm border rounded p0-5 mb0-5 flex flex-nowrap" data-testid="phishing-banner">
-                <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-25 color-danger" />
+            <div className="bg-norm border rounded p0-5 mb0-85 flex flex-nowrap" data-testid="phishing-banner">
+                <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-25 ml0-2 color-danger" />
                 <span className="pl0-5 pr0-5 flex-item-fluid">
                     {c('Info')
                         .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
@@ -70,6 +70,8 @@ const ExtraSpamScore = ({ message }: Props) => {
                 <span className="flex-item-noshrink flex-align-items-start flex">
                     <Button
                         size="small"
+                        color="weak"
+                        shape="solid"
                         className="on-mobile-w100 py0-25"
                         onClick={() => setSpamScoreModalOpen(true)}
                         disabled={loading}

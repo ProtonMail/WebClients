@@ -41,10 +41,9 @@ const ExtraDarkStyle = ({ message }: Props) => {
             <Button
                 onClick={handleClick}
                 data-testid="message-view:remove-dark-style"
-                size="small"
-                className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 mb0-85 py0-25"
+                className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 px0-5"
             >
-                <Icon name="color" className="flex-item-noshrink" />
+                <Icon name="color" className="flex-item-noshrink ml0-2" />
                 <span className="ml0-5">{c('Action').t`Revert to original display`}</span>
             </Button>
         </Tooltip>
