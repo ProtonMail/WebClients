@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { SelectTwo, Option, Icon } from '@proton/components';
+import { SelectTwo, Option, Icon, InputFieldTwo } from '@proton/components';
 import { getTitle } from '../../helpers/title';
 
 import mdx from './Select.mdx';
@@ -14,20 +14,27 @@ export default {
     },
 };
 
-export const Basic = ({ ...args }) => {
+export const Playground = ({ ...args }) => {
     const [value, setValue] = useState('ant');
 
     return (
-        <SelectTwo value={value} onChange={({ value: v }) => setValue(v)} {...args}>
+        <SelectTwo {...args} value={value} onChange={({ value: v }) => setValue(v)}>
             <Option title="Ant" value="ant" />
             <Option title="Zebra" value="zebra" />
         </SelectTwo>
     );
 };
+Playground.args = {};
 
-Basic.args = {
-    placeholder: 'Animal',
-    clearSearchAfter: 500,
+export const Basic = () => {
+    const [value, setValue] = useState('ant');
+
+    return (
+        <SelectTwo value={value} onValue={setValue}>
+            <Option title="Ant" value="ant" />
+            <Option title="Zebra" value="zebra" />
+        </SelectTwo>
+    );
 };
 
 export const ControlledOpenState = () => {
@@ -108,5 +115,15 @@ export const WithComplexValues = () => {
                 <Option title={option.name} value={option} />
             ))}
         </SelectTwo>
+    );
+};
+
+export const AsInputField = () => {
+    return (
+        <InputFieldTwo as={SelectTwo} label="Select" placeholder="Placeholder">
+            <Option title="one" value="one" />
+            <Option title="two" value="two" />
+            <Option title="three" value="three" />
+        </InputFieldTwo>
     );
 };
