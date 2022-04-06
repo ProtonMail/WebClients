@@ -41,14 +41,14 @@
       "Add phone number": [
         ""
       ],
-      "Add screenshot(s)": [
-        "Adicionar capturas de ecrã"
-      ],
       "Add to group": [
         "Adicionar ao grupo"
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Recuar"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Escolha um ficheiro ou arraste-o para aqui"
-      ],
-      "Clear": [
-        "Limpar"
       ],
       "Clear data": [
         "Limpar dados"
@@ -213,9 +210,6 @@
       ],
       "Hide folders": [
         ""
-      ],
-      "Hide info": [
-        "Ocultar informação"
       ],
       "Hide labels": [
         ""
@@ -379,9 +373,6 @@
       "Show folders": [
         ""
       ],
-      "Show info": [
-        "Mostrar informação"
-      ],
       "Show labels": [
         ""
       ],
@@ -480,11 +471,6 @@
       ],
       "Yes, I'll attend": [
         "Sim, estarei presente"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
       ]
     },
     "Actions message": {
@@ -1860,7 +1846,7 @@
         "O evento pertence a uma agenda desactivada."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
         ""
       ]
@@ -3083,17 +3069,11 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
       "Removed participants will be notified.": [
         "Os participantes removidos serão notificados."
-      ],
-      "Screenshot(s) attached": [
-        "Capturas de ecrã anexadas"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione o formato de correio predefinido a utilizar para este endereço electrónico."
@@ -3113,7 +3093,7 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algumas das suas respostas a ocorrências previamente actualizadas pelo organizador serão perdidas."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3382,6 +3362,9 @@
       "All day": [
         "Dia inteiro"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "Gravar contactos automaticamente"
       ],
@@ -3431,6 +3414,9 @@
         ""
       ],
       "Default notifications": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Description": [
@@ -3629,11 +3615,6 @@
     "Label for contact group name": {
       "Name": [
         "Nome"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Anexar capturas de ecrã"
       ]
     },
     "Label/folder modal": {
@@ -4197,12 +4178,6 @@
       "Add title": [
         "Adicionar título"
       ],
-      "Browser name": [
-        "Nome do navegador"
-      ],
-      "Browser version": [
-        "Versão do navegador"
-      ],
       "e.g. Julia Smith": [
         "e.g. Júlia Silva"
       ],
@@ -4224,26 +4199,20 @@
       "Name": [
         "Nome"
       ],
-      "OS name": [
-        "Nome do SO"
-      ],
-      "OS version": [
-        "Versão do SO"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
       ],
-      "Proton username": [
-        "Utilizador Proton"
-      ],
       "Search for group name": [
         "Procurar nome de grupo"
       ],
       "Search for name or email": [
         "Procurar por nome ou endereço"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Comece a escrever um endereço electrónico"

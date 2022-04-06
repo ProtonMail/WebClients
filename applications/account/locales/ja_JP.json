@@ -214,6 +214,9 @@
       "Copy link": [
         "リンクをコピー"
       ],
+      "Create": [
+        ""
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "鍵をエクスポート"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "フォント"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "電子メールにラベル付け"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "認証を読み込み中"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "レビュー"
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
       ],
       "Revoke all other sessions": [
         "他の全てのセッションを取り消す"
@@ -930,6 +945,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "あなたのアドレスのキーは削除されます。"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -2542,7 +2562,7 @@
         "${ email } というメールアドレスが見つかりませんでした。"
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        ""
+        "${ calendarToFixCount } 件のカレンダーの選択を解除"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
@@ -2635,7 +2655,7 @@
         "${ calendarToFixCount } 件のカレンダーを既存の Proton カレンダーに結合します"
       ],
       "Missing key packet": [
-        ""
+        "キーパケットが利用できません"
       ],
       "Name does not match": [
         "名前が一致しません"
@@ -2695,7 +2715,7 @@
         "組織にユーザーを追加する前に、マルチユーザー対応を有効にしてください。"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        ""
+        "続行するためにハイライトされた競合を修正してください。"
       ],
       "Please generate keys before you try to change your password": [
         "パスワードを変更する前に鍵を生成してください"
@@ -2863,7 +2883,7 @@
         "インポートできませんでした。"
       ],
       "Zero keys reactivated": [
-        ""
+        "0 個の鍵が再有効化されました"
       ]
     },
     "Error importing calendar": {
@@ -3060,6 +3080,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         ""
       ]
@@ -3993,6 +4016,9 @@
       "A free and uncensored Internet should be available to all.": [
         "すべての人が検閲がなく無制限のインターネットを利用できるべきです。"
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4389,6 +4415,9 @@
       "Expired": [
         "有効期限切れ"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "Failed to fetch logs.": [
         "ログの読み込みに失敗しました。"
       ],
@@ -4764,6 +4793,9 @@
       "Only you can see the labels.": [
         "ラベルが見えるのはあなただけです。"
       ],
+      "Or select a particular server:": [
+        ""
+      ],
       "Organization keys activated": [
         "組織用の鍵が有効になりました"
       ],
@@ -4878,9 +4910,6 @@
       "Priority support": [
         "優先的なサポート"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "パスワードを紛失した場合、Proton はアカウントへのアクセスを回復することができません。"
       ],
@@ -4924,7 +4953,7 @@
         "回復フレーズは無効化されました"
       ],
       "Recovery phrase is not associated with any keys.": [
-        ""
+        "回復フレーズはキーに関連付けられません。"
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         ""
@@ -4934,6 +4963,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
+      ],
+      "Revoke certificate ${ name }": [
+        ""
       ],
       "Right to Left": [
         "右から左"
@@ -5010,8 +5042,8 @@
       "Storage GB": [
         "ストレージ GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "ストレージ容量は Mail、Calendar、Drive で共有されます。"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ],
       "Support for 1 custom email domain": [
         "1 つの独自メールドメインをサポート"
@@ -5125,7 +5157,7 @@
         ""
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        ""
+        "すべての有効なセッションからサインアウトし、2 段階認証を無効にします。"
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "このウィザードは Proton アカウントで２要素認証を有効にします。セキュリティをより高めるため２要素認証の使用をお勧めします。"
@@ -5241,6 +5273,9 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "自動返信機能を使って、外出中なことや返信ができないことを連絡先に伝えます。"
       ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "アプリケーションを使用しないで ${ VPN_APP_NAME } に接続する時には、次の資格情報を使用してください。(例: macOS や GNU/Linux 上の OpenVPN)"
       ],
@@ -5290,7 +5325,7 @@
         "パスワードを忘れた場合やアカウントにアクセスできなくなった場合にこの電話番号にコードを送信します。"
       ],
       "We will send you a recovery link to this email address if you forget your password or get locked out of your account.": [
-        ""
+        "パスワードを忘れたり、アカウントにアクセスできなくなった際に、このメールアドレスへ回復リンクを送信します。"
       ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
@@ -5308,10 +5343,10 @@
         "週と月のビューはデスクトップにのみ適用されます。"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        ""
+        "リセットコードをアカウント回復に設定したメールアドレスに送信しました。"
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        ""
+        "リセットコードをアカウント回復に設定した電話番号に送信しました。"
       ],
       "What do you want to import from your Google account?": [
         "Google アカウントから何をインポートしますか？"
@@ -5389,7 +5424,7 @@
         ""
       ],
       "You cannot refer ${ appName } users": [
-        ""
+        "${ appName } のユーザーは招待できません"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードで OpenVPN / IKEv2 資格情報を使うことはできません。${ learnMore }"
@@ -5608,7 +5643,7 @@
         "請求済み"
       ],
       "Cancelled": [
-        ""
+        "キャンセル済み"
       ],
       "Paid": [
         "支払い済み"
@@ -6021,6 +6056,12 @@
       "Block email tracking": [
         "メールのトラッキングをブロック"
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "ボーナスストレージ"
       ],
@@ -6051,6 +6092,9 @@
       "Category": [
         "カテゴリー"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "コード"
       ],
@@ -6074,6 +6118,9 @@
       ],
       "Conditions": [
         "条件"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm link URLs": [
         ""
@@ -6173,6 +6220,9 @@
       ],
       "Description": [
         "詳細"
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "桁"
@@ -6330,6 +6380,9 @@
       "Last month only": [
         "過去 1 か月のみ"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "ログインパスワード"
       ],
@@ -6350,6 +6403,9 @@
       ],
       "Message": [
         "メッセージ"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "移動先"
@@ -6372,8 +6428,14 @@
       "New password": [
         "新しいパスワード"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "ラベルが見つかりません"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "通知"
@@ -6535,7 +6597,7 @@
         "適用状態"
       ],
       "Sticky labels": [
-        ""
+        "スティッキーラベル"
       ],
       "Subtotal": [
         "小計"
@@ -6618,6 +6680,9 @@
       "Verification code": [
         "検証コード"
       ],
+      "VPN Accelerator": [
+        ""
+      ],
       "VPN Connections": [
         "VPN 接続"
       ],
@@ -6625,7 +6690,7 @@
         "VPN 接続"
       ],
       "Waiting for subscription": [
-        ""
+        "サブスクリプション待ち"
       ],
       "Want to add": [
         "対象"
@@ -6673,7 +6738,7 @@
         "あなたのパスワード (管理者)"
       ],
       "Your referral link": [
-        ""
+        "あなたの招待リンク"
       ],
       "Your reward": [
         "報酬"
@@ -7711,7 +7776,7 @@
         "問題について、エラーメッセージ等も含めてご記入下さい"
       ],
       "Please insert link first": [
-        ""
+        "最初にリンクを挿入してください"
       ],
       "Postal code": [
         "郵便番号"
@@ -8344,6 +8409,18 @@
       "Address enabled": [
         "アドレスが有効になりました"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "フィルターが削除されました。"
       ],
@@ -8443,8 +8520,14 @@
       "(highly recommended)": [
         "(強く推奨)"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. プラットフォームを選択"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. プロトコルを選択"
@@ -8454,6 +8537,12 @@
       ],
       "3. Select config file and download": [
         "3. 設定ファイルを選択してダウンロード"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         "アカウントとパスワード"
@@ -9037,6 +9126,9 @@
       "Restore administrator privileges": [
         "管理者権限を修復"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         "スイスに拠点を置くセキュアな電子メール"
       ],
@@ -9192,6 +9284,12 @@
       ],
       "What's new": [
         "更新情報"
+      ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "Your ${ domain } address is active": [
         "${ domain } アドレスはアクティブです"
@@ -9704,7 +9802,7 @@
         ""
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "ライブチャットは ${ VPN_APP_NAME } の有料プラン専用のプレミアム機能です。利用するにはチケットをオープンしてください。"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
@@ -9731,7 +9829,7 @@
         "このインポートは現在Protonアカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "現在オンラインではありません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         ""

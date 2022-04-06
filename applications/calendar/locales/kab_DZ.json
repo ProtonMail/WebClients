@@ -41,14 +41,14 @@
       "Add phone number": [
         ""
       ],
-      "Add screenshot(s)": [
-        "Rnu tuṭṭfa(win) n ugdil"
-      ],
       "Add to group": [
         "Rnu ɣer ugraw"
       ],
       "Apply": [
         "Snes"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Ar deffir"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Fren afaylu neɣ zuɣer-it dagi"
-      ],
-      "Clear": [
-        "Sfeḍ"
       ],
       "Clear data": [
         "Sfeḍ isefka"
@@ -213,9 +210,6 @@
       ],
       "Hide folders": [
         ""
-      ],
-      "Hide info": [
-        "Ffer isallen"
       ],
       "Hide labels": [
         ""
@@ -379,9 +373,6 @@
       "Show folders": [
         ""
       ],
-      "Show info": [
-        "Zken isallen"
-      ],
       "Show labels": [
         ""
       ],
@@ -480,11 +471,6 @@
       ],
       "Yes, I'll attend": [
         "Ih, ad ttikkiɣ"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Fren"
       ]
     },
     "Actions message": {
@@ -1402,7 +1388,7 @@
         ""
       ],
       "Marshall Islands": [
-        ""
+        "Tigzirin n Marcal"
       ],
       "Martinique": [
         ""
@@ -1860,7 +1846,7 @@
         "Tadyant-a n uwitay yettusensen."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
         ""
       ]
@@ -3083,17 +3069,11 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter n ${ link } ad yefru s wudem awurman aṭas n wuguren."
       ],
       "Removed participants will be notified.": [
         "Imettekkiyen yettwakksen ad ttwalɣun."
-      ],
-      "Screenshot(s) attached": [
-        "Tuṭṭfa n ugdil tedda (ddant)"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
@@ -3113,7 +3093,7 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Kra seg tririyin-inek·inem ɣef tneḍruyin yettwaleqqmen yakan sɣur amsuddes ad ṛuḥen."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3382,6 +3362,9 @@
       "All day": [
         "Ass meṛṛa"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "Seekles inermisen s wudem awurman"
       ],
@@ -3431,6 +3414,9 @@
         ""
       ],
       "Default notifications": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Description": [
@@ -3629,11 +3615,6 @@
     "Label for contact group name": {
       "Name": [
         "Isem"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Seddu tuṭṭfa(win) n ugdil"
       ]
     },
     "Label/folder modal": {
@@ -4197,12 +4178,6 @@
       "Add title": [
         "Rnu azwel"
       ],
-      "Browser name": [
-        "Isem n iminig web"
-      ],
-      "Browser version": [
-        "Lqem n yiminig"
-      ],
       "e.g. Julia Smith": [
         "md. Julia Smith"
       ],
@@ -4224,26 +4199,20 @@
       "Name": [
         "Isem"
       ],
-      "OS name": [
-        "Isem n unagraw n wammud"
-      ],
-      "OS version": [
-        "Lqem n unagraw n wammud"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "Mudd ma ulac aɣilif aglam n wugur sakin seddu-d akk iznan n tuccḍa"
       ],
-      "Proton username": [
-        "Isem n useqdac Proton"
-      ],
       "Search for group name": [
         "Nadi isem n ugraw"
       ],
       "Search for name or email": [
         "Nadi ɣef yisem neɣ imayl"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Bdu tira n tansa n yimayl"

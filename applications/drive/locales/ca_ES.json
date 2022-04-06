@@ -38,14 +38,14 @@
       "Add phone number": [
         ""
       ],
-      "Add screenshot(s)": [
-        "Afegir captura(es) de pantalla"
-      ],
       "Add to group": [
         "Afegir al grup"
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Torna"
@@ -256,9 +256,6 @@
       "Hide folders": [
         "Amaga les carpetes"
       ],
-      "Hide info": [
-        "Amagar informació"
-      ],
       "Hide labels": [
         "Amaga les etiquetes"
       ],
@@ -451,9 +448,6 @@
       "Show folders": [
         "Mostra les carpetes"
       ],
-      "Show info": [
-        "Mostra informació"
-      ],
       "Show labels": [
         "Mostra les etiquetes"
       ],
@@ -558,11 +552,6 @@
       ],
       "Zoom out": [
         "Allunyar"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
       ]
     },
     "Actions message": {
@@ -809,6 +798,14 @@
         "Han passat més de 12 hores des de la darrera actualització"
       ],
       "Unsupported calendar format": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
         ""
       ]
     },
@@ -2700,9 +2697,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Queued": [
         "En cua"
       ],
@@ -2711,9 +2705,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
-      ],
-      "Screenshot(s) attached": [
-        "Captures de pantalla(s) adjuntes"
       ],
       "Search cannot be enabled in this browser": [
         ""
@@ -2751,7 +2742,7 @@
       "Something went wrong, please try again later.": [
         "Alguna cosa ha anat malament, siusplau, intenta-ho més tard."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3062,6 +3053,9 @@
       "Apply to all unverified items": [
         ""
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         "Fitxer d’àudio"
       ],
@@ -3099,6 +3093,9 @@
         "País"
       ],
       "Created": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Delete drive?": [
@@ -3345,11 +3342,6 @@
     "Label for contact group name": {
       "Name": [
         "Nom"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Adjunta captura(es) de pantalla"
       ]
     },
     "Label/folder modal": {
@@ -3744,12 +3736,6 @@
       "A way to contact you": [
         "Una manera de contactar amb tu"
       ],
-      "Browser name": [
-        "Nom del navegador"
-      ],
-      "Browser version": [
-        "Versió del navegador"
-      ],
       "e.g. Julia Smith": [
         "ex. Julia Smith"
       ],
@@ -3774,26 +3760,20 @@
       "New name": [
         "Nom nou"
       ],
-      "OS name": [
-        "Nom de Sistema Operatiu"
-      ],
-      "OS version": [
-        "Versió de Sistema Operatiu"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
       ],
-      "Proton username": [
-        "Nom d'usuari de Proton"
-      ],
       "Search for group name": [
         "Cercar per nom de grup"
       ],
       "Search for name or email": [
         "Cercar per nom o correu electrònic"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Comenceu a escriure una adreça de correu electrònic"

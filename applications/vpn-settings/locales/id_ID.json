@@ -55,14 +55,14 @@
       "Add PayPal payment method": [
         "Tambahkan metode pembayaran PayPal"
       ],
-      "Add screenshot(s)": [
-        "Tambah tangkapan layar"
-      ],
       "annual billing": [
         "penagihan tahunan"
       ],
       "Apply": [
         "Terapkan"
+      ],
+      "Attach screenshot(s)": [
+        "Lampirkan tangkapan layar"
       ],
       "Back": [
         "Kembali"
@@ -78,9 +78,6 @@
       ],
       "Chat with us": [
         "Mengobrol dengan kami"
-      ],
-      "Clear": [
-        "Bersihkan"
       ],
       "Close": [
         "Tutup"
@@ -114,6 +111,9 @@
       ],
       "Copy email to clipboard": [
         "Salin surel ke papan klip"
+      ],
+      "Create": [
+        "Buat"
       ],
       "Create account": [
         "Buat akun"
@@ -178,6 +178,9 @@
       "enable desktop notifications": [
         "mengaktifkan pemberitahuan desktop"
       ],
+      "Extend": [
+        "Perpanjang"
+      ],
       "Get ${ vpnPlus }": [
         "Dapatkan ${ vpnPlus }"
       ],
@@ -202,9 +205,6 @@
       "Hide additional features": [
         "Sembunyikan fitur tambahan"
       ],
-      "Hide info": [
-        "Sembunyikan info"
-      ],
       "Homepage": [
         "Beranda"
       ],
@@ -216,6 +216,9 @@
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
         "Pertahankan jenis akun ${ BRAND_NAME } ${ currentPlanName } yang saya miliki saat ini"
+      ],
+      "Load more": [
+        "Muat lebih banyak"
       ],
       "Loading verification": [
         "Memuat verifikasi"
@@ -304,6 +307,12 @@
       "Retry": [
         "Coba lagi"
       ],
+      "Revoke": [
+        "Cabut"
+      ],
+      "Revoke ${ name }": [
+        "Cabut ${ name }"
+      ],
       "Save": [
         "Simpan"
       ],
@@ -327,9 +336,6 @@
       ],
       "Show": [
         "Tampilkan"
-      ],
-      "Show info": [
-        "Tampilkan info"
       ],
       "Show preview": [
         "Tampilkan pratinjau"
@@ -434,11 +440,6 @@
         "Perkecil"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Pilih"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } alamat surel"
@@ -471,6 +472,11 @@
       ],
       "${ vpnBonus } connection": [
         "${ vpnBonus } koneksi"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        "Ini akan memutuskan semua sambungan router dan klien yang menggunakan sertifikat ini."
       ]
     },
     "Apps dropdown": {
@@ -744,6 +750,14 @@
       ],
       "Unsupported calendar format": [
         "Format kalender tidak didukung"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Tutup"
+      ],
+      "Open": [
+        "Buka"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1764,6 +1778,11 @@
         "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
       ]
     },
+    "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        "Sertifikat ${ name } tidak ditemukan atau telah dicabut"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Tidak ada gambar yang dipilih"
@@ -2007,6 +2026,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Internet yang bebas dan tanpa sensor harus tersedia untuk semua."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        "Nama yang membantu Anda mengidentifikasi di mana Anda menggunakannya sehingga dapat dengan mudah mencabut atau memperpanjangnya nanti."
+      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Akses berbagai konten yang terblokir seperti situs media sosial, portal berita, Wikipedia, YouTube, dan lain sebagainya di mana pun Anda berada."
       ],
@@ -2139,6 +2161,9 @@
       "Expired": [
         "Kedaluarsa"
       ],
+      "expires ${ expirationDate }": [
+        "kedaluwarsa ${ expirationDate }"
+      ],
       "For families and small teams; includes both Mail and VPN.": [
         "Untuk keluarga dan tim kecil; termasuk Mail dan VPN."
       ],
@@ -2164,13 +2189,13 @@
         "VPN berfitur penuh dengan kecepatan hingga 10 Gbps."
       ],
       "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
+        "Dapatkan akses ke seluruh fitur berbayar ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } (layanan email terenkripsi yang telah digunakan oleh jutaan orang untuk melindungi data mereka) dalam satu paket."
       ],
       "here": [
         "di sini"
       ],
       "If you are a ${ MAIL_APP_NAME } user you can use your Proton account to log in to ${ VPN_APP_NAME }.": [
-        ""
+        "Apabila Anda merupakan pengguna ${ MAIL_APP_NAME }, Anda dapat menggunakan akun Proton Anda untuk masuk ke ${ VPN_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan merespon dalam satu hari kerja."
@@ -2245,10 +2270,13 @@
         "Koneksi internet dipulihkan."
       ],
       "Keep this password safe, it cannot be recovered.": [
-        "Simpan kata sandi ini dengan aman, ia tidak dapat dipulihkan."
+        "Simpan kata sandi ini dengan aman karena kata sandi ini tidak dapat dipulihkan."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Pelajari cara untuk dapat masuk ke ${ VPN_APP_NAME } dengan aplikasi VPN milik pihak ketiga."
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
       ],
       "Loading": [
         "Memuat"
@@ -2294,6 +2322,9 @@
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Setelah Anda mengklik \"Turunkan\", perlu beberapa menit untuk menurunkan akun Anda ke paket Gratis. "
+      ],
+      "Or select a particular server:": [
+        "Atau pilih salah satu server berikut:"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
@@ -2343,9 +2374,6 @@
       "Priority support": [
         "Dukungan prioritas"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton tidak dapat membantu Anda memulihkan kata sandi yang hilang."
       ],
@@ -2359,7 +2387,10 @@
         "Menyegarkan halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        ""
+        "Dengan mengatur ulang kata sandi, Anda akan turut mengatur ulang seluruh kunci enkripsi pada seluruh layanan Proton (Mail dan VPN). Oleh karenanya, Anda tidak akan lagi dapat membaca pesan-pesan yang ada. Apabila Anda memiliki informasi kredensial ${ MAIL_APP_NAME } Anda, JANGAN atur ulang kata sandi Anda. Anda dapat masuk melalui ${ hereLink }."
+      ],
+      "Revoke certificate ${ name }": [
+        "Cabut sertifikat ${ name }"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik."
@@ -2375,9 +2406,6 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Pindai kode QR ini dengan perangkat otentikasi dua faktor untuk mengatur akun Anda. ${ switchButton }."
-      ],
-      "Screenshot(s) attached": [
-        "Tangkapan layar terlampir"
       ],
       "See all plans": [
         "Lihat seluruh paket"
@@ -2406,8 +2434,8 @@
       "Storage GB": [
         "Penyimpanan GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Kuota penyimpanan diperuntukkan bagi Mail, Calendar, dan Drive secara bersamaan."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
       ],
       "Support for 1 custom email domain": [
         "Dukungan 1 alamat email dengan domain khusus"
@@ -2429,6 +2457,9 @@
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Berkas konfigurasi ini memungkinkan Anda untuk memilih server ${ VPN_APP_NAME } mana yang akan tersambung pada saat Anda menggunakan aplikasi VPN milik pihak ketiga atau menyiapkan koneksi VPN pada router."
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Konfigurasi berikut dapat digunakan dengan router WireGuard dan klien-klien resmi."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
@@ -2504,6 +2535,9 @@
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        "Gunakan server terbaik berdasarkan muatan dan posisi sekarang: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } tanpa aplikasi. Beberapa contoh situasi yang demikian meliputi: Tunnelblick di macOS, OpenVPN di GNU/Linux."
@@ -2783,8 +2817,17 @@
       "Annual discount (${ discountPercentage }%)": [
         "Diskon tahunan (${ discountPercentage }%)"
       ],
+      "Attach screenshot(s)": [
+        "Lampirkan tangkapan layar"
+      ],
       "Back to:": [
         "Kembali ke:"
+      ],
+      "Block malware only": [
+        "Blokir malware saja"
+      ],
+      "Block malware, ads and trackers": [
+        "Blokir malware, iklan dan pelacak"
       ],
       "bonus storage": [
         "bonus penyimpanan"
@@ -2813,8 +2856,14 @@
       "Category": [
         "Kategori"
       ],
+      "Choose a name for the generated certificate file": [
+        "Pilih sebuah nama untuk membuat file sertifikat"
+      ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
+      ],
+      "Config to connect to ${ serverName }": [
+        "Konfigurasi untuk menghubungkan ke ${ serverName }"
       ],
       "Confirm login password": [
         "Konfirmasi sandi masuk"
@@ -2861,6 +2910,12 @@
       "Default language": [
         "Bahasa bawaan"
       ],
+      "Delete": [
+        "Hapus"
+      ],
+      "Device/certificate name": [
+        "Nama perangkat/sertifikat"
+      ],
       "Digits": [
         "Digit"
       ],
@@ -2906,11 +2961,17 @@
       "Key": [
         "Kunci"
       ],
+      "Level for NetShield blocker filtering": [
+        "Level pemfilteran pemblokir NetShield"
+      ],
       "Login password": [
         "Kata sandi masuk"
       ],
       "Mailbox password": [
         "Kata sandi kotak masuk"
+      ],
+      "Moderate NAT": [
+        "NAT Moderat"
       ],
       "Name": [
         "Nama"
@@ -2926,6 +2987,12 @@
       ],
       "New password": [
         "Kata sandi baru"
+      ],
+      "No filter": [
+        "Tidak ada filter"
+      ],
+      "Non-standard ports": [
+        "Port non-standar"
       ],
       "Old login password": [
         "Kata sandi lama untuk masuk"
@@ -3035,6 +3102,9 @@
       "Verification method": [
         "Metode verifikasi"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Kami sedih tahu kamu pergi. Tolong jelaskan mengapa kamu pergi untuk membantu kami berbenah."
       ],
@@ -3088,11 +3158,6 @@
       ],
       "Expired": [
         "Kedaluwarsa"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Lampirkan tangkapan layar"
       ]
     },
     "Link": {
@@ -3434,12 +3499,6 @@
       "Add gift code": [
         "Tambah kode hadiah"
       ],
-      "Browser name": [
-        "Nama Peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
-      ],
       "Choose a new password": [
         "Tentukan kata sandi baru"
       ],
@@ -3473,12 +3532,6 @@
       "Mailbox password": [
         "Kata sandi kotak pesan"
       ],
-      "OS name": [
-        "Nama Sistem Operasi"
-      ],
-      "OS version": [
-        "Versi Sistem Operasi"
-      ],
       "Other": [
         "Lainnya"
       ],
@@ -3491,14 +3544,14 @@
       "Postal code": [
         "Kode Pos"
       ],
-      "Proton username": [
-        "Nama Pengguna Proton"
-      ],
       "Recovery email address": [
         "Alamat email pemulihan"
       ],
       "Reset code": [
         "Set ulang kode"
+      ],
+      "Select": [
+        "Pilih"
       ],
       "Select a reason": [
         "Pilih alasan"
@@ -3849,6 +3902,20 @@
         "Anda telah berhenti berlangganan"
       ]
     },
+    "Success notification": {
+      "Certificate ${ name } revoked": [
+        "Sertifikat ${ name } dicabut"
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        "Sertifikat diperpanjang hingga ${ formattedExpirationDate }"
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        "Konfigurasi \"${ name }\" telah dibuat, ingatlah bahwa kunci pribadi tidak disimpan dan tidak akan ditampilkan lagi, Anda harus menyalin atau mengunduh konfigurasi ini."
+      ],
+      "Creating config file for ${ serverName }": [
+        "Membuat file konfigurasi untuk ${ serverName }"
+      ]
+    },
     "Suffix": {
       "/ month": [
         "/ bulan"
@@ -3901,8 +3968,14 @@
       "${ VPN_APP_NAME } plan comparison": [
         "Perbandingan jenis akun ${ VPN_APP_NAME }"
       ],
+      "1. Give a name to the config to be generated": [
+        "1. Beri nama untuk konfigurasi yang akan dibuat"
+      ],
       "1. Select platform": [
         "1. Pilih platform"
+      ],
+      "2. Select platform": [
+        "2. Pilih platform"
       ],
       "2. Select protocol": [
         "2. Pilih protokol"
@@ -3912,6 +3985,12 @@
       ],
       "3. Select config file and download": [
         "3. Pilih berkas konfigurasi dan unduh"
+      ],
+      "3. Select VPN options": [
+        "3. Pilih opsi VPN"
+      ],
+      "4. Select a server to connect to": [
+        "4. Pilih sebuah server untuk disambungkan"
       ],
       "Account": [
         "Akun"
@@ -4189,6 +4268,9 @@
       "Reset password?": [
         "Atur ulang kata sandi?"
       ],
+      "Revoke certificate": [
+        "Cabut sertifikat"
+      ],
       "Secure Core Servers": [
         "Server Secure Core"
       ],
@@ -4254,6 +4336,9 @@
       ],
       "What's new": [
         "Apa yang baru"
+      ],
+      "WireGuard configuration": [
+        "Konfigurasi WireGuard"
       ],
       "You already have a Proton account": [
         "Anda sudah memiliki akun Proton"

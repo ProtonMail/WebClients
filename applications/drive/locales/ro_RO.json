@@ -38,14 +38,14 @@
       "Add phone number": [
         "Adăugare număr de telefon"
       ],
-      "Add screenshot(s)": [
-        "Adăugare captură"
-      ],
       "Add to group": [
         "Adăugare la grup"
       ],
       "Apply": [
         "Aplicare"
+      ],
+      "Attach screenshot(s)": [
+        "Atașare capturi de ecran"
       ],
       "Back": [
         "Înapoi"
@@ -57,10 +57,10 @@
         "Anulare"
       ],
       "Cancel all": [
-        "Anulați toate"
+        "Anulare toate"
       ],
       "Cancel all downloads": [
-        "Anulați toate descărcările"
+        "Anulare toate descărcările"
       ],
       "Cancel all uploads": [
         "Anulare toate încărcările"
@@ -258,9 +258,6 @@
       "Hide folders": [
         "Ascundere foldere"
       ],
-      "Hide info": [
-        "Ascundere informații"
-      ],
       "Hide labels": [
         "Ascundere etichete"
       ],
@@ -277,7 +274,7 @@
         "Importare din .csv sau vCard"
       ],
       "Learn more": [
-        "Aflați mai multe"
+        "Detalii"
       ],
       "Load image": [
         "Încărcare imagine"
@@ -334,7 +331,7 @@
         "Deschidere navigare"
       ],
       "Pause all": [
-        "Pauză la toate"
+        "Suspendare toate"
       ],
       "Pause download": [
         "Suspendare descărcare"
@@ -394,7 +391,7 @@
         "Resetare dimensiune"
       ],
       "Restart all": [
-        "Reporniți toate"
+        "Repornire toate"
       ],
       "Restart download": [
         "Repornire descărcare"
@@ -406,7 +403,7 @@
         "Restaurare din «Gunoi»"
       ],
       "Resume all": [
-        "Reluați toate"
+        "Reluare toate"
       ],
       "Resume download": [
         "Reluare descărcare"
@@ -453,14 +450,11 @@
       "Show folders": [
         "Afișare foldere"
       ],
-      "Show info": [
-        "Afișare informații"
-      ],
       "Show labels": [
         "Afişare etichete"
       ],
       "Show preview": [
-        "Previzualizare spectacol"
+        "Afișare previzualizare"
       ],
       "Sign out": [
         "Deconectare"
@@ -562,11 +556,6 @@
         "Micșorare"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selectare"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } sau ${ importContact }."
@@ -602,7 +591,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta Access vă permite să utilizați versiunea beta a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME } înainte ca acestea să fie lansate pentru public. Acest lucru înseamnă că puteți fi primul care va încerca noile produse, va primi noi actualizări și va utiliza noi caracteristici."
+        "„Accesul la Beta” vă permite să utilizați versiunea beta a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME } înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
@@ -777,7 +766,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuați să utilizați ${ MAIL_APP_NAME }."
+        "Continuare utilizare ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar status": {
@@ -812,6 +801,14 @@
       ],
       "Unsupported calendar format": [
         "Format de calendar neacceptat."
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Închidere"
+      ],
+      "Open": [
+        "Deschidere"
       ]
     },
     "Confirm modal title": {
@@ -1902,7 +1899,7 @@
         "Unele nume de etichete nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Unele dintre numele etichetelor dumneavoastră depășesc limita maximă de caractere a lui ${ MAIL_APP_NAME }. Vă rugăm să personalizați importul pentru a edita aceste nume."
+        "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
@@ -2398,7 +2395,7 @@
         "Se verifică contactul ${ progress } din ${ max }..."
       ],
       "Checking signatures": [
-        "Verificarea semnăturilor"
+        "Se verifică semnăturile"
       ],
       "Clear data": [
         "Ștergere date"
@@ -2480,10 +2477,10 @@
         "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Semnătură digitală verificată. Acest dosar a fost încărcat în siguranță de către ${ emailAddress }."
+        "Semnătură digitală verificată. Acest folder a fost încărcat în siguranță de către ${ emailAddress }."
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        "Descărcarea lui ${ downloadFileName } va fi întreruptă"
+        "Descărcarea fișierului ${ downloadFileName } va fi întreruptă."
       ],
       "Downloaded": [
         "Descărcat"
@@ -2528,10 +2525,10 @@
         "Conținutul folderelor se va îmbina într-unul singur."
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Lipsește semnătura din dosar. Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
+        "Lipsește semnătura folderului. Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Lipsește semnătura din dosar. Nu am putut verifica cine a încărcat ${ fileName }."
+        "Lipsește semnătura folderului. Nu am putut verifica cine a încărcat ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Folderul nu va fi încărcat."
@@ -2686,10 +2683,10 @@
         "Una dintre unitățile criptate este blocată. Cel mai probabil, acest lucru se datorează unei resetări recente a parolei.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Sunt permise doar ${ MAX_CUSTOM_PASSWORD_LENGTH } caractere"
+        "Sunt permise doar ${ MAX_CUSTOM_PASSWORD_LENGTH } caractere."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt ${ BRAND_NAME }."
+        "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
       ],
       "Only the people with the link and the password can access this file.": [
         "Numai persoanele care au legătura și parola pot accesa acest fișier."
@@ -2707,10 +2704,10 @@
         "Ștergeți permanent toate fișierele din unitate"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline este compatibil numai cu formatul Plain Text. Vă rugăm să rețineți că ${ MAIL_APP_NAME } semnează întotdeauna mesajele criptate."
+        "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME trimite automat mesajul folosind modul de compoziție curent. Rețineți că ${ MAIL_APP_NAME } semnează întotdeauna mesajele criptate"
+        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
@@ -2742,9 +2739,6 @@
       "Priority support": [
         "Asistență prioritară"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "În așteptare"
       ],
@@ -2753,9 +2747,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătați pagina sau ${ link } pentru a rezolva majoritatea problemelor."
-      ],
-      "Screenshot(s) attached": [
-        "Capturi de ecran adăugate"
       ],
       "Search cannot be enabled in this browser": [
         "Căutarea nu poate fi activată în acest navigator."
@@ -2776,7 +2767,7 @@
         "Sesiunea a expirat"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Configurarea PGP vă permite să trimiteți e-mailuri criptate de la un capăt la altul cu un utilizator care nu este ${ BRAND_NAME } și care utilizează un serviciu compatibil PGP."
+        "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
       "Share files with links": [
         "Partajare fișiere prin legături"
@@ -2793,8 +2784,8 @@
       "Something went wrong, please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Spațiul de stocare este partajat între Mail, Calendar și Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, și ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Suport pentru un domeniu de e-mail personal"
@@ -2949,7 +2940,7 @@
         "Se va deschide o nouă filă în navigator cu adresa:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Sunteți conectat în prezent ca ${ user.Name } (${ user.Email })."
+        "V-ați conectat cu ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Puteți și să îmbinați calendarele importate cu calendarele Proton existente."
@@ -3039,22 +3030,22 @@
     },
     "Item": {
       "file attributes": [
-        "atributele fișierului"
+        "atribute fișier"
       ],
       "file data": [
-        "date din fișier"
+        "date fișier"
       ],
       "keys": [
         "chei"
       ],
       "name": [
-        "numele"
+        "nume"
       ],
       "name hash": [
-        "nume hașurat"
+        "hash nume"
       ],
       "thumbnail": [
-        "thumbnail"
+        "miniatură"
       ]
     },
     "Key badge": {
@@ -3105,6 +3096,9 @@
       "Apply to all unverified items": [
         "Se aplică tuturor elementelor neverificate"
       ],
+      "Attach screenshot(s)": [
+        "Atașare capturi de ecran"
+      ],
       "Audio file": [
         "Fișier audio"
       ],
@@ -3144,6 +3138,9 @@
       "Created": [
         "Creat la"
       ],
+      "Delete": [
+        "Ștergere"
+      ],
       "Delete drive?": [
         "Ștergeți unitatea?",
         "Ștergeți unitățile?",
@@ -3159,7 +3156,7 @@
         "Nu mă mai întreba"
       ],
       "Download anyway": [
-        "Descărcați oricum"
+        "Descărcare așa"
       ],
       "Email address": [
         "Adresă e-mail"
@@ -3389,11 +3386,6 @@
     "Label for contact group name": {
       "Name": [
         "Nume"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Atașare captură ecran"
       ]
     },
     "Label/folder modal": {
@@ -3630,7 +3622,7 @@
         "Fișier sau folder fără nume."
       ],
       "Item failed to be verified": [
-        "Elementul nu a putut fi verificat"
+        "Elementul nu a putut fi verificat."
       ],
       "Link failed to be loaded": [
         "Legătura nu s-a putut încărca."
@@ -3712,7 +3704,7 @@
         "Activare acces la Beta"
       ],
       "Start using ${ appName }": [
-        "Începeți să utilizați ${ appName }"
+        "Începere utilizare ${ appName }"
       ],
       "Upgrade account": [
         "Migrare cont"
@@ -3726,7 +3718,7 @@
         "${ appName } este disponibilă momentan doar dacă activați accesul la versiunea Beta."
       ],
       "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Protejați-vă toate fișierele cu criptare la ambele capete. Folosiți ${ appName } pentru a stoca și distribui fișierele în siguranță."
+        "Protejați-vă toate fișierele cu criptare în ambele părți. Folosiți ${ appName } pentru a stoca și distribui fișierele în siguranță."
       ]
     },
     "Onboarding Proton": {
@@ -3808,12 +3800,6 @@
       "A way to contact you": [
         "Modalitate de contactare"
       ],
-      "Browser name": [
-        "Nume navigator"
-      ],
-      "Browser version": [
-        "Versiune navigator"
-      ],
       "e.g. Julia Smith": [
         "ex: Iulia Sandu"
       ],
@@ -3838,26 +3824,20 @@
       "New name": [
         "Nume nou"
       ],
-      "OS name": [
-        "Sistem de operare"
-      ],
-      "OS version": [
-        "Versiune sistem de operare"
-      ],
       "Password": [
         "Parola"
       ],
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare ce apar"
       ],
-      "Proton username": [
-        "Utilizator Proton"
-      ],
       "Search for group name": [
         "Căutare nume grup"
       ],
       "Search for name or email": [
         "Căutare după nume sau e-mail"
+      ],
+      "Select": [
+        "Selectare"
       ],
       "Start typing an email address": [
         "Introduceți o adresă de e-mail"
@@ -4129,7 +4109,7 @@
         "Cont suspendat"
       ],
       "Active": [
-        "Activ"
+        "Active"
       ],
       "Add contact group name": [
         "Adăugare nume grup contacte"
@@ -4167,7 +4147,7 @@
         "Ştergere date"
       ],
       "Completed": [
-        "Finalizată"
+        "Finalizate"
       ],
       "Contact details": [
         "Detalii contact"
@@ -4243,7 +4223,7 @@
         "Descărcați un fișier neverificat?"
       ],
       "Download unverified folder?": [
-        "Descărcați un dosar neverificat?"
+        "Descărcați un folder neverificat?"
       ],
       "Downloading": [
         "Se descarcă"
@@ -4291,13 +4271,13 @@
         "Introduceţi parola"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Introduceți numele dumneavoastră de utilizator sau adresa de e-mail ${ MAIL_APP_NAME }"
+        "Introduceți-vă numele de utilizator sau adresa de e-mail ${ MAIL_APP_NAME }"
       ],
       "Exporting contacts": [
         "Exportare contacte"
       ],
       "Failed": [
-        "Eșuată"
+        "Eșuate"
       ],
       "File details": [
         "Detalii fișier"
@@ -4426,7 +4406,7 @@
         "Rezultate căutare"
       ],
       "Search results: ${ searchView.numberOfResults } found": [
-        "Rezultatele căutării: ${ searchView.numberOfResults } găsit"
+        "Rezultate căutare: s-au găsit ${ searchView.numberOfResults }"
       ],
       "Searching…": [
         "Se caută…"
@@ -4489,13 +4469,13 @@
         "Legătura nu există sau a expirat"
       ],
       "The link failed to be loaded": [
-        "Linkul nu a putut fi încărcat"
+        "Legătura nu a putut fi încărcată"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Acest fișier are o semnătură lipsă sau invalidă. Accesați Meniu (⋮) → Detalii pentru informații."
+        "Acest fișier are o semnătură lipsă sau nevalidă. Accesați Meniu (⋮) → Detalii pentru informații."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Acest dosar are o semnătură lipsă sau invalidă. Accesați Meniu (⋮) → Detalii pentru informații."
+        "Acest folder are o semnătură lipsă sau nevalidă. Accesați Meniu (⋮) → Detalii pentru informații."
       ],
       "Total size": [
         "Mărime totală"
@@ -4571,13 +4551,13 @@
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }"
+        "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate la ambele capete la această adresă."
+        "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate în ambele părți la această adresă."
       ],
       "You do not have any contacts to export": [
         "Nu aveți persoane de contact pentru exportare"
@@ -4642,7 +4622,7 @@
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Chat-ul live este o funcție premium disponibilă numai pentru cei care au planuri ${ VPN_APP_NAME } plătite. În schimb, vă rugăm să deschideți un tichet."
+        "Mesageria live este o funcție premium disponibilă numai pentru cei care au planuri ${ VPN_APP_NAME } cu plată. Puteți însă deschide un tichet de asistență."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."

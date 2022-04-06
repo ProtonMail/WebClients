@@ -214,6 +214,9 @@
       "Copy link": [
         ""
       ],
+      "Create": [
+        ""
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         ""
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         ""
       ],
@@ -419,6 +425,9 @@
         ""
       ],
       "label emails as": [
+        ""
+      ],
+      "Load more": [
         ""
       ],
       "Loading verification": [
@@ -590,6 +599,12 @@
         ""
       ],
       "Review": [
+        ""
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
         ""
       ],
       "Revoke all other sessions": [
@@ -938,6 +953,11 @@
     },
     "alert": {
       "The key for your address is now being deleted.": [
+        ""
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
         ""
       ]
     },
@@ -3081,6 +3101,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         ""
       ]
@@ -4048,6 +4071,9 @@
       "A free and uncensored Internet should be available to all.": [
         ""
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4449,6 +4475,9 @@
       "Expired": [
         ""
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "Failed to fetch logs.": [
         ""
       ],
@@ -4826,6 +4855,9 @@
       "Only you can see the labels.": [
         ""
       ],
+      "Or select a particular server:": [
+        ""
+      ],
       "Organization keys activated": [
         ""
       ],
@@ -4941,9 +4973,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Proton can't help you recover any lost passwords.": [
         ""
       ],
@@ -4996,6 +5025,9 @@
         ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        ""
+      ],
+      "Revoke certificate ${ name }": [
         ""
       ],
       "Right to Left": [
@@ -5073,7 +5105,7 @@
       "Storage GB": [
         ""
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -5302,6 +5334,9 @@
         ""
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        ""
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
         ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
@@ -6089,6 +6124,12 @@
       "Block email tracking": [
         ""
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         ""
       ],
@@ -6119,6 +6160,9 @@
       "Category": [
         ""
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         ""
       ],
@@ -6141,6 +6185,9 @@
         ""
       ],
       "Conditions": [
+        ""
+      ],
+      "Config to connect to ${ serverName }": [
         ""
       ],
       "Confirm link URLs": [
@@ -6240,6 +6287,9 @@
         ""
       ],
       "Description": [
+        ""
+      ],
+      "Device/certificate name": [
         ""
       ],
       "Digits": [
@@ -6398,6 +6448,9 @@
       "Last month only": [
         ""
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         ""
       ],
@@ -6417,6 +6470,9 @@
         ""
       ],
       "Message": [
+        ""
+      ],
+      "Moderate NAT": [
         ""
       ],
       "Move to": [
@@ -6440,7 +6496,13 @@
       "New password": [
         ""
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
+        ""
+      ],
+      "Non-standard ports": [
         ""
       ],
       "Notification": [
@@ -6684,6 +6746,9 @@
         ""
       ],
       "Verification code": [
+        ""
+      ],
+      "VPN Accelerator": [
         ""
       ],
       "VPN Connections": [
@@ -8422,6 +8487,18 @@
       "Address enabled": [
         ""
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         ""
       ],
@@ -8523,7 +8600,13 @@
       "(highly recommended)": [
         ""
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
+        ""
+      ],
+      "2. Select platform": [
         ""
       ],
       "2. Select protocol": [
@@ -8533,6 +8616,12 @@
         ""
       ],
       "3. Select config file and download": [
+        ""
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
         ""
       ],
       "Account and password": [
@@ -9118,6 +9207,9 @@
       "Restore administrator privileges": [
         ""
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         ""
       ],
@@ -9272,6 +9364,12 @@
         ""
       ],
       "What's new": [
+        ""
+      ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
         ""
       ],
       "Your ${ domain } address is active": [

@@ -214,6 +214,9 @@
       "Copy link": [
         "Salin tautan"
       ],
+      "Create": [
+        "Buat"
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         "Buat alamat email aman ${ MAIL_APP_NAME }"
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "Ekspor kunci"
       ],
+      "Extend": [
+        "Perpanjang"
+      ],
       "Font": [
         "Fon"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "labeli email sebagai"
+      ],
+      "Load more": [
+        "Muat lebih banyak"
       ],
       "Loading verification": [
         "Memuat verifikasi"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Ulas"
+      ],
+      "Revoke": [
+        "Cabut"
+      ],
+      "Revoke ${ name }": [
+        "Cabut ${ name }"
       ],
       "Revoke all other sessions": [
         "Batalkan semua sesi lainnya"
@@ -932,6 +947,11 @@
         "Kunci alamat Anda sedang dihapus."
       ]
     },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        "Ini akan memutuskan semua sambungan router dan klien yang menggunakan sertifikat ini."
+      ]
+    },
     "Apps dropdown": {
       "Go to ${ title }": [
         "Kunjungi ${ title }"
@@ -970,7 +990,7 @@
     },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
-        "Saya sedang di luar kantor dengan akses surel terbatas."
+        "Saya sedang berada di luar kantor dengan akses email yang terbatas."
       ]
     },
     "Badge for domain": {
@@ -3060,6 +3080,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        "Sertifikat ${ name } tidak ditemukan atau sudah dicabut"
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "Nama depan dan nama belakang tidak boleh dikosongkan sekaligus"
       ]
@@ -3514,7 +3537,7 @@
         "verifikasi 2 langkah telah diaktifkan di akun eksternal Anda"
       ],
       "2-step verification is enabled in your external email account": [
-        "verifikasi 2 langkah aktif di akun surel eksternal Anda"
+        "verifikasi 2 langkah telah diaktifkan pada akun email eksternal Anda"
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Jika ${ bold2StepsDisabled } (pengaturan baku Gmail), mohon pastikan:"
@@ -3577,7 +3600,7 @@
         "kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi Anda biasanya"
       ],
       "your email account requires an app password to export your data": [
-        "akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data-data Anda"
+        "akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda"
       ],
       "your email account requires one to export your data": [
         "akun surel Anda memerlukan satu untuk mengekspor data"
@@ -3993,6 +4016,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Internet yang bebas dan tanpa sensor harus tersedia untuk semua."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        "Sebuah nama untuk membantu Anda mengidentifikasi di mana Anda menggunakannya sehingga dapat dengan mudah mencabut atau memperpanjangnya nanti."
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4389,6 +4415,9 @@
       "Expired": [
         "Kedaluwarsa"
       ],
+      "expires ${ expirationDate }": [
+        "kedaluwarsa ${ expirationDate }"
+      ],
       "Failed to fetch logs.": [
         "Gagal mengambil log."
       ],
@@ -4764,6 +4793,9 @@
       "Only you can see the labels.": [
         "Hanya Anda yang dapat melihat label."
       ],
+      "Or select a particular server:": [
+        "Atau pilih salah satu server berikut:"
+      ],
       "Organization keys activated": [
         "Kunci organisasi diaktifkan"
       ],
@@ -4878,9 +4910,6 @@
       "Priority support": [
         "Dukungan prioritas"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton tidak dapat membantu Anda memulihkan kata sandi yang hilang."
       ],
@@ -4934,6 +4963,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
+      ],
+      "Revoke certificate ${ name }": [
+        "Cabut sertifikat ${ name }"
       ],
       "Right to Left": [
         "Kanan ke Kiri"
@@ -5010,8 +5042,8 @@
       "Storage GB": [
         "Penyimpanan GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Kuota penyimpanan diperuntukkan bagi Mail, Calendar, dan Drive secara bersamaan."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
       ],
       "Support for 1 custom email domain": [
         "Dukungan 1 alamat email dengan domain khusus"
@@ -5240,6 +5272,9 @@
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Gunakan pesan balasan otomatis untuk memberitahu kontak-kontak Anda bahwa Anda sedang tidak berada di kantor atau sedang tidak dapat menanggapi email-email yang masuk."
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        "Gunakan server terbaik berdasarkan muatan dan posisi saat ini: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } tanpa aplikasi. Beberapa contoh situasi yang demikian meliputi: Tunnelblick di macOS, OpenVPN di GNU/Linux."
@@ -6021,6 +6056,12 @@
       "Block email tracking": [
         "Blokir program pelacak email"
       ],
+      "Block malware only": [
+        "Blokir malware saja"
+      ],
+      "Block malware, ads and trackers": [
+        "Blokir malware, iklan dan pelacak"
+      ],
       "bonus storage": [
         "bonus penyimpanan"
       ],
@@ -6051,6 +6092,9 @@
       "Category": [
         "Kategori"
       ],
+      "Choose a name for the generated certificate file": [
+        "Pilih sebuah nama untuk file sertifikat yang dibuat"
+      ],
       "Code": [
         "Kode"
       ],
@@ -6074,6 +6118,9 @@
       ],
       "Conditions": [
         "Syarat"
+      ],
+      "Config to connect to ${ serverName }": [
+        "Konfigurasi untuk tersambung ke ${ serverName }"
       ],
       "Confirm link URLs": [
         "Konfirmasi URL tautan"
@@ -6173,6 +6220,9 @@
       ],
       "Description": [
         "Deskripsi"
+      ],
+      "Device/certificate name": [
+        "Nama perangkat/sertifikat"
       ],
       "Digits": [
         "Digit"
@@ -6330,6 +6380,9 @@
       "Last month only": [
         "Hanya sebulan terakhir"
       ],
+      "Level for NetShield blocker filtering": [
+        "Level pemfilteran pemblokir NetShield"
+      ],
       "Login password": [
         "Kata sandi masuk"
       ],
@@ -6350,6 +6403,9 @@
       ],
       "Message": [
         "Pesan"
+      ],
+      "Moderate NAT": [
+        "NAT Moderat"
       ],
       "Move to": [
         "Pindah ke"
@@ -6372,8 +6428,14 @@
       "New password": [
         "Kata sandi baru"
       ],
+      "No filter": [
+        "Tidak ada filter"
+      ],
       "No label found": [
         "Tidak ada label yang ditemukan"
+      ],
+      "Non-standard ports": [
+        "Port non-standar"
       ],
       "Notification": [
         "Pemberitahuan"
@@ -6617,6 +6679,9 @@
       ],
       "Verification code": [
         "Kode verifikasi"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "VPN Connections": [
         "Koneksi VPN"
@@ -8344,6 +8409,18 @@
       "Address enabled": [
         "Alamat diaktifkan"
       ],
+      "Certificate ${ name } revoked": [
+        "Sertifikat ${ name } dicabut"
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        "Sertifikat diperpanjang hingga ${ formattedExpirationDate }"
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        "Konfigurasi \"${ name }\" telah dibuat, ingatlah bahwa kunci privat tidak disimpan dan tidak akan ditampilkan lagi, Anda harus menyalin atau mengunduh konfigurasi ini."
+      ],
+      "Creating config file for ${ serverName }": [
+        "Membuat file konfigurasi untuk ${ serverName }"
+      ],
       "Filter removed": [
         "Filter berhasil dihapus"
       ],
@@ -8443,8 +8520,14 @@
       "(highly recommended)": [
         "(sangat direkomendasikan)"
       ],
+      "1. Give a name to the config to be generated": [
+        "1. Beri nama untuk konfigurasi yang akan dibuat"
+      ],
       "1. Select platform": [
         "1. Pilih platform"
+      ],
+      "2. Select platform": [
+        "2. Pilih platform"
       ],
       "2. Select protocol": [
         "2. Pilih protokol"
@@ -8454,6 +8537,12 @@
       ],
       "3. Select config file and download": [
         "3. Pilih berkas konfigurasi dan unduh"
+      ],
+      "3. Select VPN options": [
+        "3. Pilih opsi VPN"
+      ],
+      "4. Select a server to connect to": [
+        "4. Pilih sebuah server untuk disambungkan"
       ],
       "Account and password": [
         "Akun dan kata sandi"
@@ -9037,6 +9126,9 @@
       "Restore administrator privileges": [
         "Pulihkan hak administrator"
       ],
+      "Revoke certificate": [
+        "Cabut sertifikat"
+      ],
       "Secure email based in Switzerland": [
         "Email aman berbasis di Swiss"
       ],
@@ -9192,6 +9284,12 @@
       ],
       "What's new": [
         "Apa yang baru"
+      ],
+      "WireGuard": [
+        "WireGuard"
+      ],
+      "WireGuard configuration": [
+        "Konfigurasi WireGuard"
       ],
       "Your ${ domain } address is active": [
         "Alamat ${ domain } Anda aktif"
@@ -9554,7 +9652,7 @@
         "Lokasi/Negara"
       ],
       "Open Source & audited apps": [
-        "Aplikasi Sumber Terbuka & teraudit"
+        "Aplikasi Open Source & teraudit"
       ],
       "P2P/BitTorrent": [
         "P2P/BitTorrent"

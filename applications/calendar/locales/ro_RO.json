@@ -41,14 +41,14 @@
       "Add phone number": [
         "Adăugare număr de telefon"
       ],
-      "Add screenshot(s)": [
-        "Adăugare capturi de ecran"
-      ],
       "Add to group": [
         "Adăugare la grup"
       ],
       "Apply": [
         "Aplicare"
+      ],
+      "Attach screenshot(s)": [
+        "Atașare capturi de ecran"
       ],
       "Back": [
         "Înapoi"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Alegeți un fișier sau trageți-l aici"
-      ],
-      "Clear": [
-        "Eliminare"
       ],
       "Clear data": [
         "Ștergere date"
@@ -215,9 +212,6 @@
       ],
       "Hide folders": [
         "Ascundere foldere"
-      ],
-      "Hide info": [
-        "Ascundere informații"
       ],
       "Hide labels": [
         "Ascundere etichete"
@@ -381,9 +375,6 @@
       "Show folders": [
         "Afișare foldere"
       ],
-      "Show info": [
-        "Afișare informații"
-      ],
       "Show labels": [
         "Afişare etichete"
       ],
@@ -482,11 +473,6 @@
       ],
       "Yes, I'll attend": [
         "Da, voi participa"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selectare"
       ]
     },
     "Actions message": {
@@ -617,7 +603,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+        "„Accesul la Beta” vă permite să utilizați versiunea beta a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME } înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
@@ -792,7 +778,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Continuare utilizare ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar invite buttons label": {
@@ -1868,7 +1854,7 @@
         "Evenimentul aparține unui calendar dezactivat."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
         "Adăugare calendar"
       ]
@@ -2192,7 +2178,7 @@
         "Unele nume de etichete nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
@@ -3094,16 +3080,16 @@
         "Manifestările anterioare actualizate de organizator vor fi păstrate."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
       ],
       "Other options": [
         "Alte opțiuni"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+        "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
@@ -3132,17 +3118,11 @@
       "Priority support": [
         "Asistență prioritară"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
       "Removed participants will be notified.": [
         "Participanţii eliminaţi vor fi notificaţi."
-      ],
-      "Screenshot(s) attached": [
-        "Capturi de ecran adăugate"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
@@ -3157,13 +3137,13 @@
         "Sesiunea a expirat"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        ""
+        "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Unele dintre răspunsurile dvs. la evenimentele actualizate anterior de către organizator vor fi pierdute."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Spațiul de stocare este partajat între Mail, Calendar și Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, și ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Suport pentru un domeniu de e-mail personal"
@@ -3301,7 +3281,7 @@
         "Se va deschide o nouă filă în navigator cu adresa:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "V-ați conectat cu ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Puteți și să îmbinați calendarele importate cu calendarele Proton existente."
@@ -3431,6 +3411,9 @@
       "All day": [
         "Toată ziua"
       ],
+      "Attach screenshot(s)": [
+        "Atașare capturi de ecran"
+      ],
       "Automatically save contacts": [
         "Salvare automată contacte"
       ],
@@ -3481,6 +3464,9 @@
       ],
       "Default notifications": [
         "Notificări implicite"
+      ],
+      "Delete": [
+        "Ștergere"
       ],
       "Description": [
         "Descriere"
@@ -3659,7 +3645,7 @@
         "Adresa URL"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Nume de utilizator sau adresa ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -3679,11 +3665,6 @@
     "Label for contact group name": {
       "Name": [
         "Nume"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Atașare capturi de ecran"
       ]
     },
     "Label/folder modal": {
@@ -4113,16 +4094,16 @@
     },
     "Onboarding": {
       "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
+        "Un calendar este o înregistrare a vieții personale. Păstrați-vă viața în siguranță și privată cu ${ appName }."
       ],
       "Import events": [
-        ""
+        "Importare evenimente"
       ],
       "Meet your new encrypted calendar": [
-        ""
+        "Priviți noul calendar criptat"
       ],
       "Start using ${ appName }": [
-        ""
+        "Începeți să utilizați ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -4276,12 +4257,6 @@
       "Add title": [
         "Adăugare titlu"
       ],
-      "Browser name": [
-        "Nume navigator"
-      ],
-      "Browser version": [
-        "Versiune navigator"
-      ],
       "e.g. Julia Smith": [
         "ex: Iulia Sandu"
       ],
@@ -4303,26 +4278,20 @@
       "Name": [
         "Nume"
       ],
-      "OS name": [
-        "Sistem de operare"
-      ],
-      "OS version": [
-        "Versiune sistem de operare"
-      ],
       "Password": [
         "Parola"
       ],
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare care apar"
       ],
-      "Proton username": [
-        "Utilizator Proton"
-      ],
       "Search for group name": [
         "Căutare nume grup"
       ],
       "Search for name or email": [
         "Căutare după nume sau e-mail"
+      ],
+      "Select": [
+        "Selectare"
       ],
       "Start typing an email address": [
         "Introduceți o adresă de e-mail"
@@ -4853,7 +4822,7 @@
         "Introduceţi parola"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Introduceți-vă numele de utilizator sau adresa de e-mail ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Eroare"
@@ -5095,7 +5064,7 @@
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
@@ -5146,7 +5115,7 @@
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "Mesageria live este o funcție premium disponibilă numai pentru cei care au planuri ${ VPN_APP_NAME } cu plată. Puteți însă deschide un tichet de asistență."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."

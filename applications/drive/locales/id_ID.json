@@ -38,14 +38,14 @@
       "Add phone number": [
         "Tambah nomor telepon"
       ],
-      "Add screenshot(s)": [
-        "Tambah tangkapan layar"
-      ],
       "Add to group": [
         "Tambah ke grup"
       ],
       "Apply": [
         "Gunakan"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Kembali"
@@ -254,9 +254,6 @@
       "Hide folders": [
         "Sembunyikan folder"
       ],
-      "Hide info": [
-        "Sembunyikan info"
-      ],
       "Hide labels": [
         "Sembunyikan label"
       ],
@@ -449,9 +446,6 @@
       "Show folders": [
         "Tampilkan folder"
       ],
-      "Show info": [
-        "Tampilkan info"
-      ],
       "Show labels": [
         "Tampilkan label"
       ],
@@ -556,11 +550,6 @@
       ],
       "Zoom out": [
         "Perbesar"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Pilih"
       ]
     },
     "Actions message": {
@@ -808,6 +797,14 @@
       ],
       "Unsupported calendar format": [
         "Format kalender tidak didukung"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirm modal title": {
@@ -2658,9 +2655,6 @@
       "Priority support": [
         "Dukungan prioritas"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "Ditempatkan dalam antrian"
       ],
@@ -2669,9 +2663,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan mengatasi sebagian masalah secara otomatis."
-      ],
-      "Screenshot(s) attached": [
-        "Tangkapan layar terlampir"
       ],
       "Search cannot be enabled in this browser": [
         "Pencarian tidak dapat diaktifkan pada browser ini"
@@ -2709,8 +2700,8 @@
       "Something went wrong, please try again later.": [
         "Ada sesuatu yang salah, silakan coba lagi nanti."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Kuota penyimpanan diperuntukkan bagi Mail, Calendar, dan Drive secara bersamaan."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
       ],
       "Support for 1 custom email domain": [
         "Dukungan 1 alamat email dengan domain khusus"
@@ -3019,6 +3010,9 @@
       "Apply to all unverified items": [
         "Terapkan ke seluruh item yang tidak terverifikasi"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         "Berkas audio"
       ],
@@ -3057,6 +3051,9 @@
       ],
       "Created": [
         "Waktu Dibuat"
+      ],
+      "Delete": [
+        ""
       ],
       "Delete drive?": [
         "Hapus drive?"
@@ -3301,11 +3298,6 @@
     "Label for contact group name": {
       "Name": [
         "Nama"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Lampirkan tangkapan layar"
       ]
     },
     "Label/folder modal": {
@@ -3680,12 +3672,6 @@
       "A way to contact you": [
         "Cara menghubungi Anda"
       ],
-      "Browser name": [
-        "Nama peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
-      ],
       "e.g. Julia Smith": [
         "cth. Dewi Sartika"
       ],
@@ -3710,26 +3696,20 @@
       "New name": [
         "Nama baru"
       ],
-      "OS name": [
-        "Nama sistem operasi"
-      ],
-      "OS version": [
-        "Versi sistem operasi"
-      ],
       "Password": [
         "Kata Sandi"
       ],
       "Please describe the problem and include any error messages": [
         "Mohon uraikan masalah dan sertakan pesan galat apapun"
       ],
-      "Proton username": [
-        "Nama pengguna Proton"
-      ],
       "Search for group name": [
         "Cari nama grup"
       ],
       "Search for name or email": [
         "Cari berdasarkan nama atau email"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Mulai ketik alamat surel"

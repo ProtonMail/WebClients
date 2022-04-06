@@ -1,7 +1,7 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "es_MX"
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "es_LA"
   },
   "contexts": {
     "About": {
@@ -55,14 +55,14 @@
       "Add PayPal payment method": [
         "Añadir PayPal como método de pago"
       ],
-      "Add screenshot(s)": [
-        "Añadir captura(s)"
-      ],
       "annual billing": [
         "facturación anual"
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Volver"
@@ -78,9 +78,6 @@
       ],
       "Chat with us": [
         "Chatee con nosotros"
-      ],
-      "Clear": [
-        "Borrar"
       ],
       "Close": [
         "Cerrar"
@@ -114,6 +111,9 @@
       ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
+      ],
+      "Create": [
+        ""
       ],
       "Create account": [
         "Crear una cuenta"
@@ -178,6 +178,9 @@
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
       ],
+      "Extend": [
+        ""
+      ],
       "Get ${ vpnPlus }": [
         "Obtener ${ vpnPlus }"
       ],
@@ -202,9 +205,6 @@
       "Hide additional features": [
         "Ocultar funciones adicionales"
       ],
-      "Hide info": [
-        "Ocultar información"
-      ],
       "Homepage": [
         "Página principal"
       ],
@@ -216,6 +216,9 @@
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
         "Mantener mi cuenta ${ BRAND_NAME } ${ currentPlanName }"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Cargando verificación"
@@ -236,7 +239,7 @@
         "OK"
       ],
       "Ok": [
-        "Ok"
+        ""
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
@@ -304,6 +307,12 @@
       "Retry": [
         "Reintentar"
       ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
+      ],
       "Save": [
         "Guardar"
       ],
@@ -327,9 +336,6 @@
       ],
       "Show": [
         "Mostrar"
-      ],
-      "Show info": [
-        "Mostrar información"
       ],
       "Show preview": [
         "Vista previa"
@@ -434,52 +440,43 @@
         "Alejar"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
-        "+ ${ addresses } dirección de correo",
-        "+ ${ addresses } direcciones de correo"
+        "+ ${ addresses } dirección de correo"
       ],
       "+ ${ domains } custom domain": [
-        "+ ${ domains } dominio personalizado",
-        "+ ${ domains } dominios personalizados"
+        "+ ${ domains } dominio personalizado"
       ],
       "+ ${ members } user": [
-        "+ ${ members } usuario",
-        "+ ${ members } usuarios"
+        "+ ${ members } usuario"
       ],
       "+ ${ storage } storage": [
         "+ ${ storage } de almacenamiento"
       ],
       "+ ${ vpn } connection": [
-        "+ ${ vpn } conexión",
-        "+ ${ vpn } conexiones"
+        "+ ${ vpn } conexión"
       ]
     },
     "Addon unit for subscription": {
       "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } dirección",
-        "${ addressAddon.MaxAddresses } direcciones"
+        "${ addressAddon.MaxAddresses } dirección"
       ],
       "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } dominio",
-        "${ domainAddon.MaxDomains } dominios"
+        "${ domainAddon.MaxDomains } dominio"
       ],
       "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } usuario",
-        "${ memberAddon.MaxMembers } usuarios"
+        "${ memberAddon.MaxMembers } usuario"
       ],
       "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } conexión",
-        "${ vpnAddon.MaxVPN } conexiones"
+        "${ vpnAddon.MaxVPN } conexión"
       ],
       "${ vpnBonus } connection": [
-        "${ vpnBonus } conexión",
-        "${ vpnBonus } conexiones"
+        "${ vpnBonus } conexión"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -522,102 +519,6 @@
       ],
       "Two-year": [
         "Dos años"
-      ]
-    },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Incluye"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Precio habitual: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
-      "Most popular": [
-        "Más popular"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obtener la oferta"
-      ],
-      "Get the deal now": [
-        "Obtener la oferta ahora"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "al mes"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
-      "1 month": [
-        "Un mes"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Obtenga la oferta especial de fin de año en nuestro plan Premium VPN PLUS"
       ]
     },
     "Bug category": {
@@ -755,6 +656,14 @@
         "Formato de calendario no soportado"
       ]
     },
+    "Collapsible tooltip": {
+      "Close": [
+        "Cerrar"
+      ],
+      "Open": [
+        ""
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "¿Está seguro que desea eliminar esta forma de pago?"
@@ -767,12 +676,10 @@
     },
     "Countdown unit": {
       "${ days } day": [
-        "${ days } día",
-        "${ days } días"
+        ""
       ],
       "${ monthsWithYears } month": [
-        "${ monthsWithYears } mes",
-        "${ monthsWithYears } meses"
+        "${ monthsWithYears } mes"
       ]
     },
     "Country name": {
@@ -783,7 +690,7 @@
         "Afganistán"
       ],
       "Albania": [
-        "Albania"
+        ""
       ],
       "Algeria": [
         "Argelia"
@@ -792,10 +699,10 @@
         "Samoa Americana"
       ],
       "Andorra": [
-        "Andorra"
+        ""
       ],
       "Angola": [
-        "Angola"
+        ""
       ],
       "Anguilla": [
         "Anguila"
@@ -807,28 +714,28 @@
         "Antigua y Barbuda"
       ],
       "Argentina": [
-        "Argentina"
+        ""
       ],
       "Armenia": [
-        "Armenia"
+        ""
       ],
       "Aruba": [
-        "Aruba"
+        ""
       ],
       "Ascension Island": [
         "Isla Ascensión"
       ],
       "Australia": [
-        "Australia"
+        ""
       ],
       "Austria": [
-        "Austria"
+        ""
       ],
       "Azerbaijan": [
         "Azerbaiyán"
       ],
       "Bahamas": [
-        "Bahamas"
+        ""
       ],
       "Bahrain": [
         "Baréin"
@@ -837,7 +744,7 @@
         "Bangladés"
       ],
       "Barbados": [
-        "Barbados"
+        ""
       ],
       "Belarus": [
         "Bielorrusia"
@@ -852,13 +759,13 @@
         "Benín"
       ],
       "Bermuda": [
-        "Bermuda"
+        ""
       ],
       "Bhutan": [
         "Bután"
       ],
       "Bolivia": [
-        "Bolivia"
+        ""
       ],
       "Bonaire, Sint Eustatius and Saba": [
         "Caribe Neerlandés"
@@ -882,16 +789,16 @@
         "Brunéi"
       ],
       "Bulgaria": [
-        "Bulgaria"
+        ""
       ],
       "Burkina Faso": [
-        "Burkina Faso"
+        ""
       ],
       "Burma": [
         "Myanmar"
       ],
       "Burundi": [
-        "Burundi"
+        ""
       ],
       "Cambodia": [
         "Camboya"
@@ -912,13 +819,13 @@
         "República Centroafricana"
       ],
       "Chad": [
-        "Chad"
+        ""
       ],
       "Chile": [
-        "Chile"
+        ""
       ],
       "China": [
-        "China"
+        ""
       ],
       "Christmas Island": [
         "Isla de Navidad"
@@ -927,13 +834,13 @@
         "Islas Cocos (Keeling)"
       ],
       "Colombia": [
-        "Colombia"
+        ""
       ],
       "Comoros": [
-        "Comoros"
+        ""
       ],
       "Congo": [
-        "Congo"
+        ""
       ],
       "Congo, Democratic Republic of the": [
         "RD del Congo"
@@ -942,7 +849,7 @@
         "Islas Cook"
       ],
       "Costa Rica": [
-        "Costa Rica"
+        ""
       ],
       "Cote d'Ivoire\"": [
         "Costa de Marfil"
@@ -951,7 +858,7 @@
         "Croacia"
       ],
       "Cuba": [
-        "Cuba"
+        ""
       ],
       "Curaçao": [
         "Curazao"
@@ -969,28 +876,28 @@
         "Yibuti"
       ],
       "Dominica": [
-        "Dominica"
+        ""
       ],
       "Dominican Republic": [
         "República Dominicana"
       ],
       "Ecuador": [
-        "Ecuador"
+        ""
       ],
       "Egypt": [
         "Egipto"
       ],
       "El Salvador": [
-        "El Salvador"
+        ""
       ],
       "Equatorial Guinea": [
         "Guinea Ecuatorial"
       ],
       "Eritrea": [
-        "Eritrea"
+        ""
       ],
       "Estonia": [
-        "Estonia"
+        ""
       ],
       "Ethiopia": [
         "Etiopía"
@@ -1026,19 +933,19 @@
         "Gabón"
       ],
       "Gambia": [
-        "Gambia"
+        ""
       ],
       "Georgia": [
-        "Georgia"
+        ""
       ],
       "Germany": [
         "Alemania"
       ],
       "Ghana": [
-        "Ghana"
+        ""
       ],
       "Gibraltar": [
-        "Gibraltar"
+        ""
       ],
       "Greece": [
         "Grecia"
@@ -1053,22 +960,22 @@
         "Guadalupe"
       ],
       "Guam": [
-        "Guam"
+        ""
       ],
       "Guatemala": [
-        "Guatemala"
+        ""
       ],
       "Guernsey": [
-        "Guernsey"
+        ""
       ],
       "Guinea": [
-        "Guinea"
+        ""
       ],
       "Guinea-Bissau": [
         "Guinea-Bisáu"
       ],
       "Guyana": [
-        "Guyana"
+        ""
       ],
       "Haiti": [
         "Haití"
@@ -1080,10 +987,10 @@
         "Cd. del Vaticano"
       ],
       "Honduras": [
-        "Honduras"
+        ""
       ],
       "Hong Kong": [
-        "Hong Kong"
+        ""
       ],
       "Hungary": [
         "Hungría"
@@ -1092,10 +999,10 @@
         "Islandia"
       ],
       "India": [
-        "India"
+        ""
       ],
       "Indonesia": [
-        "Indonesia"
+        ""
       ],
       "International": [
         "Internacional"
@@ -1113,19 +1020,19 @@
         "Isla de Man"
       ],
       "Israel": [
-        "Israel"
+        ""
       ],
       "Italy": [
         "Italia"
       ],
       "Jamaica": [
-        "Jamaica"
+        ""
       ],
       "Japan": [
         "Japón"
       ],
       "Jersey": [
-        "Jersey"
+        ""
       ],
       "Jordan": [
         "Jordania"
@@ -1137,19 +1044,19 @@
         "Kenia"
       ],
       "Kiribati": [
-        "Kiribati"
+        ""
       ],
       "Kosovo": [
-        "Kosovo"
+        ""
       ],
       "Kuwait": [
-        "Kuwait"
+        ""
       ],
       "Kyrgyzstan": [
         "Kirguistán"
       ],
       "Laos": [
-        "Laos"
+        ""
       ],
       "Latvia": [
         "Letonia"
@@ -1161,13 +1068,13 @@
         "Lesoto"
       ],
       "Liberia": [
-        "Liberia"
+        ""
       ],
       "Libya": [
         "Libia"
       ],
       "Liechtenstein": [
-        "Liechtenstein"
+        ""
       ],
       "Lithuania": [
         "Lituania"
@@ -1176,13 +1083,13 @@
         "Luxemburgo"
       ],
       "Macao": [
-        "Macao"
+        ""
       ],
       "Madagascar": [
-        "Madagascar"
+        ""
       ],
       "Malawi": [
-        "Malawi"
+        ""
       ],
       "Malaysia": [
         "Malasia"
@@ -1194,7 +1101,7 @@
         "Malí"
       ],
       "Malta": [
-        "Malta"
+        ""
       ],
       "Marshall Islands": [
         "Islas Marshall"
@@ -1203,13 +1110,13 @@
         "Martinica"
       ],
       "Mauritania": [
-        "Mauritania"
+        ""
       ],
       "Mauritius": [
         "Mauricio"
       ],
       "Mayotte": [
-        "Mayotte"
+        ""
       ],
       "Mexico": [
         "México"
@@ -1221,28 +1128,28 @@
         "Mónaco"
       ],
       "Mongolia": [
-        "Mongolia"
+        ""
       ],
       "Montenegro": [
-        "Montenegro"
+        ""
       ],
       "Montserrat": [
-        "Montserrat"
+        ""
       ],
       "Morocco": [
         "Marruecos"
       ],
       "Mozambique": [
-        "Mozambique"
+        ""
       ],
       "Namibia": [
-        "Namibia"
+        ""
       ],
       "Nauru": [
-        "Nauru"
+        ""
       ],
       "Nepal": [
-        "Nepal"
+        ""
       ],
       "Netherlands": [
         "Países Bajos"
@@ -1254,16 +1161,16 @@
         "Nueva Zelanda"
       ],
       "Nicaragua": [
-        "Nicaragua"
+        ""
       ],
       "Niger": [
         "Níger"
       ],
       "Nigeria": [
-        "Nigeria"
+        ""
       ],
       "Niue": [
-        "Niue"
+        ""
       ],
       "Norfolk Island": [
         "Isla Norfolk"
@@ -1299,7 +1206,7 @@
         "Papúa Nueva Guinea"
       ],
       "Paraguay": [
-        "Paraguay"
+        ""
       ],
       "Peru": [
         "Perú"
@@ -1308,16 +1215,16 @@
         "Filipinas"
       ],
       "Pitcairn": [
-        "Pitcairn"
+        ""
       ],
       "Poland": [
         "Polonia"
       ],
       "Portugal": [
-        "Portugal"
+        ""
       ],
       "Puerto Rico": [
-        "Puerto Rico"
+        ""
       ],
       "Qatar": [
         "Catar"
@@ -1356,10 +1263,10 @@
         "San Vicente y las Granadinas"
       ],
       "Samoa": [
-        "Samoa"
+        ""
       ],
       "San Marino": [
-        "San Marino"
+        ""
       ],
       "Sao Tome and Principe": [
         "Santo Tomé y Príncipe"
@@ -1368,13 +1275,13 @@
         "Arabia Saudita"
       ],
       "Senegal": [
-        "Senegal"
+        ""
       ],
       "Serbia": [
-        "Serbia"
+        ""
       ],
       "Seychelles": [
-        "Seychelles"
+        ""
       ],
       "Sierra Leone": [
         "Sierra Leona"
@@ -1395,7 +1302,7 @@
         "Islas Salomón"
       ],
       "Somalia": [
-        "Somalia"
+        ""
       ],
       "South Africa": [
         "Sudáfrica"
@@ -1416,7 +1323,7 @@
         "España"
       ],
       "Sri Lanka": [
-        "Sri Lanka"
+        ""
       ],
       "Sudan": [
         "Sudán"
@@ -1446,7 +1353,7 @@
         "Tayikistán"
       ],
       "Tanzania": [
-        "Tanzania"
+        ""
       ],
       "Thailand": [
         "Tailandia"
@@ -1455,13 +1362,13 @@
         "Timor Oriental"
       ],
       "Togo": [
-        "Togo"
+        ""
       ],
       "Tokelau": [
-        "Tokelau"
+        ""
       ],
       "Tonga": [
-        "Tonga"
+        ""
       ],
       "Trinidad and Tobago": [
         "Trinidad y Tobago"
@@ -1482,10 +1389,10 @@
         "Islas Turcas y Caicos"
       ],
       "Tuvalu": [
-        "Tuvalu"
+        ""
       ],
       "Uganda": [
-        "Uganda"
+        ""
       ],
       "Ukraine": [
         "Ucrania"
@@ -1503,19 +1410,19 @@
         "Islas Ultramarinas Menores de Estados Unidos"
       ],
       "Uruguay": [
-        "Uruguay"
+        ""
       ],
       "Uzbekistan": [
         "Uzbekistán"
       ],
       "Vanuatu": [
-        "Vanuatu"
+        ""
       ],
       "Venezuela": [
-        "Venezuela"
+        ""
       ],
       "Vietnam": [
-        "Vietnam"
+        ""
       ],
       "Virgin Islands, British": [
         "Islas Vírgenes Británicas"
@@ -1530,10 +1437,10 @@
         "Sáhara Occidental"
       ],
       "Yemen": [
-        "Yemen"
+        ""
       ],
       "Zambia": [
-        "Zambia"
+        ""
       ],
       "Zimbabwe": [
         "Zimbabue"
@@ -1559,7 +1466,7 @@
     },
     "Disney": {
       "Disney+": [
-        "Disney+"
+        ""
       ]
     },
     "Downgrade account reason": {
@@ -1775,6 +1682,11 @@
         "También puede ${ refresh } o intentarlo más tarde."
       ]
     },
+    "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ninguna imagen seleccionada"
@@ -1785,8 +1697,7 @@
         "Acceso a todos los países"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Conexión para hasta ${ plusVpnConnections } dispositivo",
-        "Conexión para hasta ${ plusVpnConnections } dispositivos"
+        "Conexión para hasta ${ plusVpnConnections } dispositivo"
       ],
       "Fastest VPN servers": [
         "Servidores VPN más rápidos"
@@ -1841,7 +1752,7 @@
         "Cuenta"
       ],
       "Apps": [
-        "Apps"
+        "Aplicaciones"
       ],
       "Network": [
         "Red"
@@ -1905,19 +1816,19 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "CAPTCHA"
+        ""
       ],
       "Email": [
         "Correo"
       ],
       "Manual": [
-        "Manual"
+        ""
       ],
       "No verification method available": [
         "No hay un método de verificación disponible"
       ],
       "SMS": [
-        "SMS"
+        ""
       ]
     },
     "Image alt": {
@@ -1960,12 +1871,10 @@
         "${ mailProfessional } comienza con un usuario, cada usuario añade 5 GB y 5 direcciones a la cuota de la organización."
       ],
       "${ number } city": [
-        "${ number } ciudad",
-        "${ number } ciudades"
+        "${ number } ciudad"
       ],
       "${ number } server": [
-        "${ number } servidor",
-        "${ number } servidores"
+        "${ number } servidor"
       ],
       "${ planName } plan": [
         "Plan ${ planName }"
@@ -1986,8 +1895,7 @@
         "Se requiere de ${ vpnBasic }, ${ vpnPlus } or ${ visionary } para la conexión a nivel país."
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
-        "${ vpnPlus } incluye ${ maxVpn } conexión VPN.",
-        "${ vpnPlus } incluye ${ maxVpn } conexiones VPN."
+        "${ vpnPlus } incluye ${ maxVpn } conexión VPN."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "Se requiere ${ vpnPlus } o ${ visionary } para la función de Secure Core."
@@ -2002,8 +1910,7 @@
         "+${ bonusSpace } almacenamiento adicional"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "Más de ${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)",
-        "Más de ${ organization.BonusVPN } conexiones para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)"
+        "Más de ${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% de descuento aplicado a su suscripción con el cupón ${ code }"
@@ -2022,6 +1929,9 @@
       ],
       "A free and uncensored Internet should be available to all.": [
         "Una Internet libre y sin censura debería estar disponible para todos."
+      ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Acceda a contenidos bloqueados, como medios sociales, noticias, Wikipedia, YouTube, y muchos otros, sin importar dónde esté."
@@ -2155,6 +2065,9 @@
       "Expired": [
         "Expirado"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "For families and small teams; includes both Mail and VPN.": [
         "Para familias y pequeños equipos; incluye correo y VPN."
       ],
@@ -2266,6 +2179,9 @@
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Aprenda cómo iniciar sesión en ${ VPN_APP_NAME } con aplicaciones VPN de terceros."
       ],
+      "Learn more": [
+        "Más información"
+      ],
       "Loading": [
         "Cargando"
       ],
@@ -2311,11 +2227,14 @@
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Una vez que haga clic en \"Degradar\", puede tardar unos minutos en degradar su cuenta a un plan gratuito. "
       ],
+      "Or select a particular server:": [
+        ""
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
       ],
       "P2P": [
-        "P2P"
+        ""
       ],
       "Payment can take a few minutes to fully verify.": [
         "El pago puede tardar unos minutos para verificarse completamente."
@@ -2359,9 +2278,6 @@
       "Priority support": [
         "Soporte prioritario"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton no puede ayudarle a recuperar ninguna contraseña perdida."
       ],
@@ -2377,6 +2293,9 @@
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Al restablecer su contraseña, se restablecerán sus claves de cifrado para todos los servicios relacionados con Proton (Correo y VPN). No podrá leer sus mensajes existentes. Si conoce sus credenciales de ${ MAIL_APP_NAME }, NO reinicie. Puede iniciar sesión con ellas ${ hereLink }."
       ],
+      "Revoke certificate ${ name }": [
+        ""
+      ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Envía todo su tráfico de internet a través de la red Tor con un solo clic."
       ],
@@ -2391,9 +2310,6 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Escanee este código con su dispositivo de autenticación de dos factores para configurar su cuenta. ${ switchButton }."
-      ],
-      "Screenshot(s) attached": [
-        "Captura(s) añadidas(s)"
       ],
       "See all plans": [
         "Ver todos los planes"
@@ -2422,8 +2338,8 @@
       "Storage GB": [
         "Almacenamiento GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "El espacio de almacenamiento se comparte entre el Correo, Calendario y Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Support for 1 custom email domain": [
         "Soporte para 1 dominio de correo personalizado"
@@ -2445,6 +2361,9 @@
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estos archivos de configuración le permiten elegir a qué servidor de ${ VPN_APP_NAME } se conecta cuando usa una aplicación VPN de terceros o configura una conexión VPN en un enrutador."
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida por una posible violación de la política."
@@ -2492,7 +2411,7 @@
         "Recargue su cuenta con créditos que puede utilizar para suscribirse a un plan nuevo o renovar el actual. Obtiene un crédito por cada ${ i18nCurrency } gastado."
       ],
       "Tor": [
-        "Tor"
+        ""
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "La autenticación de dos factores añade una capa extra de seguridad a su cuenta en caso de que su contraseña se vea comprometida."
@@ -2507,7 +2426,7 @@
         "El modo de dos contraseñas requiere dos contraseñas: una para iniciar sesión y otra para descifrar el buzón. (Avanzado)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "El modo de dos contraseñas usa contraseñas separadas para el inicio de sesión y el descifrado del buzón. Esto proporciona un beneficio de seguridad en algunas situaciones, sin embargo, recomendamos el modo de una contraseña para la mayoría de los usuarios. Para cambiar al modo de dos contraseñas, primero defina una contraseña de inicio de sesión y luego una contraseña del buzón."
+        ""
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
@@ -2520,6 +2439,9 @@
       ],
       "Upgrade now": [
         "Actualizar ahora"
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use las siguientes credenciales cuando se conecte a servidores de ${ VPN_APP_NAME } sin aplicación. Ejemplos de casos de uso incluyen: Tunnelblick en macOS, OpenVPN en GNU/Linux."
@@ -2671,7 +2593,7 @@
     },
     "info": {
       "(beta)": [
-        "(beta)"
+        ""
       ]
     },
     "Info concerning plan features": {
@@ -2761,20 +2683,16 @@
         "Dirección de ${ MAIL_APP_NAME }"
       ],
       "${ n } VPN connection available": [
-        "${ n } conexión VPN disponible",
-        "${ n } conexiones VPN disponibles"
+        "${ n } conexión VPN disponible"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } de ${ MaxAddresses } dirección de correo",
-        "${ UsedAddresses } de ${ MaxAddresses } direcciones de correo"
+        "${ UsedAddresses } de ${ MaxAddresses } dirección de correo"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } de ${ MaxDomains } dominio personalizado",
-        "${ UsedDomains } de ${ MaxDomains } dominios personalizados"
+        "${ UsedDomains } de ${ MaxDomains } dominio personalizado"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } de ${ MaxMembers } usuario",
-        "${ UsedMembers } de ${ MaxMembers } usuarios"
+        "${ UsedMembers } de ${ MaxMembers } usuario"
       ],
       "1 month": [
         "Un mes"
@@ -2803,8 +2721,17 @@
       "Annual discount (${ discountPercentage }%)": [
         "Descuento anual (${ discountPercentage }%)"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Back to:": [
         "Volver a:"
+      ],
+      "Block malware only": [
+        "Bloquear malware solamente"
+      ],
+      "Block malware, ads and trackers": [
+        ""
       ],
       "bonus storage": [
         "almacenamiento adicional"
@@ -2833,8 +2760,14 @@
       "Category": [
         "Categoría"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm login password": [
         "Confirmar contraseña de inicio de sesión"
@@ -2881,6 +2814,12 @@
       "Default language": [
         "Idioma predeterminado"
       ],
+      "Delete": [
+        "Eliminar"
+      ],
+      "Device/certificate name": [
+        ""
+      ],
       "Digits": [
         "Dígitos"
       ],
@@ -2926,11 +2865,17 @@
       "Key": [
         "Clave"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Contraseña de inicio de sesión"
       ],
       "Mailbox password": [
         "Contraseña del buzón"
+      ],
+      "Moderate NAT": [
+        "NAT moderada"
       ],
       "Name": [
         "Nombre"
@@ -2946,6 +2891,12 @@
       ],
       "New password": [
         "Contraseña nueva"
+      ],
+      "No filter": [
+        ""
+      ],
+      "Non-standard ports": [
+        "Puertos no estándar"
       ],
       "Old login password": [
         "Contraseña anterior de inicio de sesión"
@@ -3002,19 +2953,19 @@
         "Seleccione su país"
       ],
       "Subtotal": [
-        "Subtotal"
+        ""
       ],
       "System information": [
         "Información del sistema"
       ],
       "Token": [
-        "Token"
+        ""
       ],
       "Total": [
-        "Total"
+        ""
       ],
       "Total (${ countdown })": [
-        "Total (${ countdown })"
+        ""
       ],
       "Total price": [
         "Precio total"
@@ -3055,6 +3006,9 @@
       "Verification method": [
         "Método de verificación"
       ],
+      "VPN Accelerator": [
+        ""
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos que se vaya. Por favor, indíquenos por qué se va para ayudarnos a mejorar."
       ],
@@ -3074,7 +3028,7 @@
         "Su contraseña (admin)"
       ],
       "ZIP": [
-        "ZIP"
+        "CP"
       ]
     },
     "label": {
@@ -3108,11 +3062,6 @@
       ],
       "Expired": [
         "Expirado"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Adjuntar captura(s)"
       ]
     },
     "Link": {
@@ -3165,7 +3114,7 @@
         "Política de Privacidad"
       ],
       "protonvpn.com": [
-        "protonvpn.com"
+        ""
       ],
       "Request an invite": [
         "Solicitar una invitación"
@@ -3194,10 +3143,10 @@
     },
     "Mail feature": {
       "0.5 GB": [
-        "0.5 GB"
+        ""
       ],
       "20 GB": [
-        "20 GB"
+        ""
       ],
       "Address verification": [
         "Verificación de direcciones"
@@ -3256,7 +3205,7 @@
     },
     "Mail feature option": {
       "5 GB *": [
-        "5 GB *"
+        ""
       ],
       "5 GB / user *": [
         "5 GB/usuario *"
@@ -3312,7 +3261,7 @@
         "Dólar"
       ],
       "Euro": [
-        "Euro"
+        ""
       ],
       "Swiss franc": [
         "Franco suizo"
@@ -3320,7 +3269,7 @@
     },
     "Netflix": {
       "Netflix": [
-        "Netflix"
+        ""
       ]
     },
     "Notification": {
@@ -3371,10 +3320,10 @@
     },
     "Option": {
       "Android": [
-        "Android"
+        ""
       ],
       "Captcha": [
-        "Captcha"
+        ""
       ],
       "Country configs": [
         "Ajustes de país"
@@ -3386,7 +3335,7 @@
         "Ajustes del servidor gratuito"
       ],
       "GNU/Linux": [
-        "GNU/Linux"
+        ""
       ],
       "I found another service that I like better": [
         "Encontré otro servicio que me gusta mejor"
@@ -3395,7 +3344,7 @@
         "Uso una cuenta de Proton diferente"
       ],
       "iOS": [
-        "iOS"
+        ""
       ],
       "It's missing a key feature that I need": [
         "Falta una característica clave que necesito"
@@ -3404,7 +3353,7 @@
         "Es muy costoso"
       ],
       "macOS": [
-        "macOS"
+        ""
       ],
       "My reason isn't listed": [
         "Mi motivo no está listado"
@@ -3416,19 +3365,19 @@
         "Ajustes de Secure Core"
       ],
       "SMS": [
-        "SMS"
+        ""
       ],
       "Standard server configs": [
         "Ajustes estándar del servidor"
       ],
       "TCP": [
-        "TCP"
+        ""
       ],
       "UDP": [
-        "UDP"
+        ""
       ],
       "Windows": [
-        "Windows"
+        ""
       ]
     },
     "Password": {
@@ -3438,13 +3387,13 @@
     },
     "Payment method option": {
       "Bitcoin": [
-        "Bitcoin"
+        ""
       ],
       "New credit/debit card": [
         "Tarjeta de crédito/débito nueva"
       ],
       "PayPal": [
-        "PayPal"
+        ""
       ]
     },
     "Placeholder": {
@@ -3453,12 +3402,6 @@
       ],
       "Add gift code": [
         "Añadir código de regalo"
-      ],
-      "Browser name": [
-        "Navegador"
-      ],
-      "Browser version": [
-        "Versión del navegador"
       ],
       "Choose a new password": [
         "Elija una nueva contraseña"
@@ -3493,12 +3436,6 @@
       "Mailbox password": [
         "Contraseña del buzón"
       ],
-      "OS name": [
-        "Sistema operativo"
-      ],
-      "OS version": [
-        "Versión del sistema operativo"
-      ],
       "Other": [
         "Otro"
       ],
@@ -3511,14 +3448,14 @@
       "Postal code": [
         "Código postal"
       ],
-      "Proton username": [
-        "Nombre de usuario de Proton"
-      ],
       "Recovery email address": [
         "Dirección de correo de recuperación"
       ],
       "Reset code": [
         "Restablecer código"
+      ],
+      "Select": [
+        "Seleccionar"
       ],
       "Select a reason": [
         "Seleccione un motivo"
@@ -3530,7 +3467,7 @@
         "Nombre de usuario"
       ],
       "ZIP": [
-        "ZIP"
+        "CP"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -3543,7 +3480,7 @@
         "${ mailAppName } Gratuito"
       ],
       "Free": [
-        "Free"
+        "Gratuito"
       ]
     },
     "Plan Action": {
@@ -3725,8 +3662,7 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "Aún tiene ${ daysRemaining } día disponible en la cuenta ${ BRAND_NAME } ${ currentPlanName }.",
-        "Aún tiene ${ daysRemaining } días disponibles en la cuenta ${ BRAND_NAME } ${ currentPlanName }."
+        "Aún tiene ${ daysRemaining } día disponible en la cuenta ${ BRAND_NAME } ${ currentPlanName }."
       ]
     },
     "Plan upsell": {
@@ -3758,7 +3694,7 @@
     },
     "Prime Video": {
       "Prime Video": [
-        "Prime Video"
+        ""
       ]
     },
     "Recovery Email": {
@@ -3870,6 +3806,20 @@
         "Se ha desuscrito satisfactoriamente"
       ]
     },
+    "Success notification": {
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ]
+    },
     "Suffix": {
       "/ month": [
         "/mes"
@@ -3922,8 +3872,14 @@
       "${ VPN_APP_NAME } plan comparison": [
         "Comparación de planes de ${ VPN_APP_NAME }"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Seleccionar protocolo"
@@ -3933,6 +3889,12 @@
       ],
       "3. Select config file and download": [
         "3. Seleccionar archivo de configuración y descargar"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account": [
         "Cuenta"
@@ -4085,7 +4047,7 @@
         "Nombre de usuario olvidado"
       ],
       "General": [
-        "General"
+        ""
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obtenga ${ vpnPlus } para acceder a todos los servidores"
@@ -4210,6 +4172,9 @@
       "Reset password?": [
         "¿Restablecer contraseña?"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure Core Servers": [
         "Servidores Secure Core"
       ],
@@ -4238,7 +4203,7 @@
         "Cifrado robusto"
       ],
       "Subtotal": [
-        "Subtotal"
+        ""
       ],
       "Summary": [
         "Resumen"
@@ -4275,6 +4240,9 @@
       ],
       "What's new": [
         "Novedades"
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "You already have a Proton account": [
         "Ya tiene una cuenta en Proton"
@@ -4383,8 +4351,7 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "La contraseña debe tener al menos ${ length } caracter",
-        "La contraseña debe tener al menos ${ length } caracteres"
+        "La contraseña debe tener al menos ${ length } caracter"
       ]
     },
     "VerificationType": {
@@ -4430,7 +4397,7 @@
         "Apps de código abierto y auditadas"
       ],
       "P2P/BitTorrent": [
-        "P2P/BitTorrent"
+        ""
       ],
       "Perfect Forward Secrecy (PFS)": [
         "Secreto perfecto hacia adelante (PFS)"
@@ -4492,7 +4459,7 @@
         "Suiza"
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+        ""
       ]
     },
     "VPN info": {
@@ -4502,16 +4469,13 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } servidor",
-        "${ n } servidores"
+        "${ n } servidor"
       ],
       "${ n } VPN connection": [
-        "${ n } conexión VPN",
-        "${ n } conexiones VPN"
+        "${ n } conexión VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } en ${ numberOfCountries } país",
-        "${ numberOfServers } en ${ numberOfCountries } países"
+        "${ numberOfServers } en ${ numberOfCountries } país"
       ]
     },
     "VPN upsell feature": {
@@ -4527,25 +4491,25 @@
     },
     "VPNClient": {
       "Android": [
-        "Android"
+        ""
       ],
       "Android TV": [
-        "Android TV"
+        ""
       ],
       "Chromebook": [
-        "Chromebook"
+        ""
       ],
       "GNU/Linux": [
-        "GNU/Linux"
+        ""
       ],
       "iOS": [
-        "iOS"
+        ""
       ],
       "macOS": [
-        "macOS"
+        ""
       ],
       "Windows": [
-        "Windows"
+        ""
       ]
     },
     "Warning": {
