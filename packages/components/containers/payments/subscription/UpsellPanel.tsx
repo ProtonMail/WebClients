@@ -20,7 +20,6 @@ import {
 import { Plan, Subscription, UserModel, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getVpnConnections } from '@proton/shared/lib/vpn/features';
 
 import { getPlusServers } from '@proton/shared/lib/vpn/features';
 import { StrippedList, StrippedItem, Button, Price } from '../../../components';
@@ -36,6 +35,18 @@ interface Props {
     user: UserModel;
     openSubscriptionModal: OpenSubscriptionModalCallback;
 }
+
+const getHighSpeedVPN = (connections: number) => {
+    return c('new_plans: attribute').ngettext(
+        msgid`Get ${connections} high-speed VPN connection`,
+        `Get ${connections} high-speed VPN connections`,
+        connections
+    );
+};
+
+const getUpgradeText = (planName: string) => {
+    return c('new_plans: Title').t`Upgrade to ${planName}`;
+};
 
 const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, openSubscriptionModal }: Props) => {
     const { APP_NAME } = useConfig();
@@ -145,7 +156,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         return (
             <div className="border rounded px2 py1-5 pt0-5">
                 <h3>
-                    <strong>{c('new_plans: Title').t`Upgrade to ${vpnPlanName}`}</strong>
+                    <strong>{getUpgradeText(vpnPlanName)}</strong>
                 </h3>
                 <p>{c('new_plans: Info')
                     .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`}</p>
@@ -207,7 +218,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         return (
             <div className="border rounded px2 py1-5 pt0-5">
                 <h3>
-                    <strong>{c('new_plans: Title').t`Upgrade to ${bundlePlanName}`}</strong>
+                    <strong>{getUpgradeText(bundlePlanName)}</strong>
                 </h3>
                 <p className="color-weak">{c('new_plans: Info')
                     .t`Upgrade to the ultimate privacy pack and access all premium Proton services.`}</p>
@@ -220,24 +231,20 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                         },
                         {
                             icon: 'check',
-                            text: c('new_plans: attribute').ngettext(
-                                msgid`Get ${VPN_CONNECTIONS} high-speed VPN connection`,
-                                `Get ${VPN_CONNECTIONS} high-speed VPN connections`,
-                                VPN_CONNECTIONS
-                            ),
-                        },
-                        {
-                            icon: 'check',
-                            text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
-                        },
-                        {
-                            icon: 'check',
                             text: c('new_plans: Upsell attribute')
                                 .t`Add more personalization with 15 email addresses and support for 3 custom email domains`,
                         },
                         {
                             icon: 'check',
                             text: c('new_plans: Upsell attribute').t`Create up to 20 personal calendars`,
+                        },
+                        {
+                            icon: 'check',
+                            text: getHighSpeedVPN(VPN_CONNECTIONS),
+                        },
+                        {
+                            icon: 'check',
+                            text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
                         },
                     ].map((item) => {
                         return (
@@ -279,40 +286,29 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         return (
             <div className="border rounded px2 py1-5 pt0-5">
                 <h3>
-                    <strong>{c('new_plans: Title').t`Upgrade to ${businessPlanName}`}</strong>
+                    <strong>{getUpgradeText(businessPlanName)}</strong>
                 </h3>
                 <p className="color-weak">{c('new_plans: Info')
-                    .t`The ultimate privacy pack with access to all premium Proton services.`}</p>
+                    .t`Upgrade to the business pack with access to all premium Proton services.`}</p>
                 <StrippedList>
                     {[
                         {
                             icon: 'check',
-                            text: getVpnConnections(VPN_CONNECTIONS),
+                            text: c('new_plans: Upsell attribute')
+                                .t`Boost your storage space to ${businessStorage} per user`,
                         },
                         {
                             icon: 'check',
-                            text: c('new_plans: Upsell attribute').t`Advanced VPN features`,
+                            text: c('new_plans: Upsell attribute').t`Get 5 additional email addresses`,
                         },
                         {
                             icon: 'check',
                             text: c('new_plans: Upsell attribute')
-                                .t`${businessStorage} storage for email and file storage`,
+                                .t`Cover more ground with support for 10 custom email domains`,
                         },
                         {
                             icon: 'check',
-                            text: c('new_plans: Upsell attribute').t`15 Proton email addresses`,
-                        },
-                        {
-                            icon: 'check',
-                            text: c('new_plans: Upsell attribute').t`Support for 3 custom email domains`,
-                        },
-                        {
-                            icon: 'check',
-                            text: c('new_plans: Upsell attribute').t`Up to 20 personal calendars`,
-                        },
-                        {
-                            icon: 'check',
-                            text: c('new_plans: Upsell attribute').t`Links to share calendars, files, and folders`,
+                            text: getHighSpeedVPN(VPN_CONNECTIONS),
                         },
                     ].map((item) => {
                         return (
