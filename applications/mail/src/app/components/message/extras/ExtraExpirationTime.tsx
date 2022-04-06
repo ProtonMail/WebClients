@@ -29,11 +29,10 @@ const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = 
                         as="span"
                         color={lessThanTwoHours ? 'danger' : undefined}
                         data-testid="expiration-banner"
-                        size="small"
-                        className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 mb0-85 cursor-pointer py0-25"
+                        className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 cursor-pointer px0-5"
                         onClick={() => setExpirationModalOpen(true)}
                     >
-                        <Icon name="hourglass-empty" className="flex-item-noshrink" />
+                        <Icon name="hourglass-empty" className="flex-item-noshrink ml0-2" />
                         <span className="ml0-5">{buttonMessage}</span>
                     </ButtonLike>
                 </Tooltip>

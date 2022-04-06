@@ -64,7 +64,7 @@ const HeaderExtra = ({
             {messageLoaded && received ? <ExtraEvents message={message as MessageStateWithData} /> : null}
             {isScheduledMessage && scheduledFeature?.Value ? <ExtraScheduledMessage message={message} /> : null}
 
-            <span className="inline-flex flex-row hidden-empty">
+            <span className="inline-flex flex-row on-mobile-w100 hidden-empty">
                 <ExtraExpirationTime displayAsButton message={message} />
                 <ExtraReadReceipt message={message} />
                 <ExtraUnsubscribe message={message} />
