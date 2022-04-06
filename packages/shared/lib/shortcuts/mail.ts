@@ -16,20 +16,6 @@ export const editorShortcuts: Record<string, KeyboardKeyType[]> = {
     send: ['Meta', 'Enter'],
 };
 
-export const actionShortcuts: Record<string, KeyboardKeyType[]> = {
-    newMessage: ['N'],
-    star: ['Asterisk'],
-    markAsUnread: ['U'],
-    LabelAs: ['L'],
-    createFilter: ['F'],
-    moveTo: ['M'],
-    moveToInbox: ['I'],
-    moveToArchive: ['A'],
-    moveToSpam: ['S'],
-    moveToTrash: ['T'],
-    deletePermanently: ['Meta', 'Backspace'],
-};
-
 export const getShortcuts = () => {
     const isSafari = checkIsSafari();
 
