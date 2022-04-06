@@ -25,7 +25,7 @@ import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { useConfig } from '../../../hooks';
-import { Price, StrippedList, StrippedItem, Meter, Button } from '../../../components';
+import { Price, StrippedList, StrippedItem, Meter, Button, IconName } from '../../../components';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 import {
@@ -34,6 +34,11 @@ import {
     getHighSpeedVPNConnectionsText,
     getVPNConnectionsText,
 } from '../features/vpn';
+
+interface Item {
+    icon: IconName;
+    text: string;
+}
 
 interface Props {
     user: UserModel;
@@ -111,16 +116,18 @@ const SubscriptionPanel = ({
     const getVpnAppFree = () => {
         return (
             <StrippedList>
-                {[
-                    {
-                        icon: 'check',
-                        text: getVPNConnectionsText(1),
-                    },
-                    {
-                        icon: 'check',
-                        text: getFreeServers(vpnServers?.free_vpn, vpnCountries?.free_vpn.count),
-                    },
-                ].map((item) => {
+                {(
+                    [
+                        {
+                            icon: 'checkmark',
+                            text: getVPNConnectionsText(1),
+                        } as const,
+                        {
+                            icon: 'checkmark',
+                            text: getFreeServers(vpnServers?.free_vpn, vpnCountries?.free_vpn.count),
+                        } as const,
+                    ] as Item[]
+                ).map((item) => {
                     return (
                         <StrippedItem key={item.text} icon={item.icon}>
                             {item.text}
@@ -133,30 +140,31 @@ const SubscriptionPanel = ({
 
     const getVpnPlus = () => {
         const maxVpn = 10;
+        const items: Item[] = [
+            {
+                icon: 'checkmark',
+                text: c('Subscription attribute').ngettext(
+                    msgid`High-speed VPN on ${maxVpn} device`,
+                    `High-speed VPN on ${maxVpn} devices`,
+                    maxVpn
+                ),
+            },
+            {
+                icon: 'checkmark',
+                text: c('Subscription attribute').t`Built-in ad blocker (NetShield)`,
+            },
+            {
+                icon: 'checkmark',
+                text: c('Subscription attribute').t`Access to streaming services globally`,
+            },
+            {
+                icon: 'checkmark',
+                text: getPlusServers(vpnServers?.[PLANS.VPNPLUS], vpnCountries?.[PLANS.VPNPLUS].count),
+            },
+        ];
         return (
             <StrippedList>
-                {[
-                    {
-                        icon: 'check',
-                        text: c('Subscription attribute').ngettext(
-                            msgid`High-speed VPN on ${maxVpn} device`,
-                            `High-speed VPN on ${maxVpn} devices`,
-                            maxVpn
-                        ),
-                    },
-                    {
-                        icon: 'check',
-                        text: c('Subscription attribute').t`Built-in ad blocker (NetShield)`,
-                    },
-                    {
-                        icon: 'check',
-                        text: c('Subscription attribute').t`Access to streaming services globally`,
-                    },
-                    {
-                        icon: 'check',
-                        text: getPlusServers(vpnServers?.[PLANS.VPNPLUS], vpnCountries?.[PLANS.VPNPLUS].count),
-                    },
-                ].map((item) => {
+                {items.map((item) => {
                     return (
                         <StrippedItem key={item.text} icon={item.icon}>
                             {item.text}
@@ -168,88 +176,87 @@ const SubscriptionPanel = ({
     };
 
     const getDefault = () => {
+        const items: (Item | false)[] = [
+            (MaxMembers > 1 || getHasB2BPlan(subscription)) && {
+                icon: 'checkmark',
+                text: c('Subscription attribute').ngettext(
+                    msgid`${UsedMembers} of ${MaxMembers} user`,
+                    `${UsedMembers} of ${MaxMembers} users`,
+                    MaxMembers
+                ),
+            },
+            {
+                icon: 'checkmark',
+                text:
+                    MaxAddresses === 1 && UsedAddresses === 1
+                        ? c('Subscription attribute').t`1 email address`
+                        : c('Subscription attribute').ngettext(
+                              msgid`${UsedAddresses} of ${MaxAddresses} email address`,
+                              `${UsedAddresses} of ${MaxAddresses} email addresses`,
+                              MaxAddresses
+                          ),
+            },
+            !!MaxDomains && {
+                icon: 'checkmark',
+                text: c('Subscription attribute').ngettext(
+                    msgid`${UsedDomains} of ${MaxDomains} custom domain`,
+                    `${UsedDomains} of ${MaxDomains} custom domains`,
+                    MaxDomains
+                ),
+            },
+            {
+                icon: 'checkmark',
+                text: (() => {
+                    if (MaxCalendars === 1) {
+                        return c('Subscription attribute').ngettext(
+                            msgid`${UsedCalendars} calendar`,
+                            `${UsedCalendars} calendars`,
+                            UsedCalendars
+                        );
+                    }
+                    if (MaxMembers > 1) {
+                        return c('Subscription attribute').ngettext(
+                            msgid`${MAX_CALENDARS_PER_USER} calendar per user`,
+                            `${MAX_CALENDARS_PER_USER} calendars per user`,
+                            MAX_CALENDARS_PER_USER
+                        );
+                    }
+                    return c('Subscription attribute').ngettext(
+                        msgid`${UsedCalendars} of ${MaxCalendars} calendar`,
+                        `${UsedCalendars} of ${MaxCalendars} calendars`,
+                        MaxCalendars
+                    );
+                })(),
+            },
+            {
+                icon: 'checkmark',
+                text: (() => {
+                    if (user.hasPaidVpn) {
+                        if (MaxMembers > 1) {
+                            return getB2BHighSpeedVPNConnectionsText(VPN_CONNECTIONS);
+                        }
+                        return getHighSpeedVPNConnectionsText(VPN_CONNECTIONS);
+                    }
+                    if (MaxMembers > 1) {
+                        return getB2BVPNConnectionsText(1);
+                    }
+                    return getVPNConnectionsText(1);
+                })(),
+            },
+        ];
         return (
             <StrippedList>
-                <StrippedItem icon="check">
+                <StrippedItem icon="checkmark">
                     <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                     <Meter className="mt1 mb1" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
                 </StrippedItem>
-                {[
-                    (MaxMembers > 1 || getHasB2BPlan(subscription)) && {
-                        icon: 'check',
-                        text: c('Subscription attribute').ngettext(
-                            msgid`${UsedMembers} of ${MaxMembers} user`,
-                            `${UsedMembers} of ${MaxMembers} users`,
-                            MaxMembers
-                        ),
-                    },
-                    {
-                        icon: 'check',
-                        text:
-                            MaxAddresses === 1 && UsedAddresses === 1
-                                ? c('Subscription attribute').t`1 email address`
-                                : c('Subscription attribute').ngettext(
-                                      msgid`${UsedAddresses} of ${MaxAddresses} email address`,
-                                      `${UsedAddresses} of ${MaxAddresses} email addresses`,
-                                      MaxAddresses
-                                  ),
-                    },
-                    MaxDomains && {
-                        icon: 'check',
-                        text: c('Subscription attribute').ngettext(
-                            msgid`${UsedDomains} of ${MaxDomains} custom domain`,
-                            `${UsedDomains} of ${MaxDomains} custom domains`,
-                            MaxDomains
-                        ),
-                    },
-                    {
-                        icon: 'check',
-                        text: (() => {
-                            if (MaxCalendars === 1) {
-                                return c('Subscription attribute').ngettext(
-                                    msgid`${UsedCalendars} calendar`,
-                                    `${UsedCalendars} calendars`,
-                                    UsedCalendars
-                                );
-                            }
-                            if (MaxMembers > 1) {
-                                return c('Subscription attribute').ngettext(
-                                    msgid`${MAX_CALENDARS_PER_USER} calendar per user`,
-                                    `${MAX_CALENDARS_PER_USER} calendars per user`,
-                                    MAX_CALENDARS_PER_USER
-                                );
-                            }
-                            return c('Subscription attribute').ngettext(
-                                msgid`${UsedCalendars} of ${MaxCalendars} calendar`,
-                                `${UsedCalendars} of ${MaxCalendars} calendars`,
-                                MaxCalendars
-                            );
-                        })(),
-                    },
-                    {
-                        icon: 'check',
-                        text: (() => {
-                            if (user.hasPaidVpn) {
-                                if (MaxMembers > 1) {
-                                    return getB2BHighSpeedVPNConnectionsText(VPN_CONNECTIONS);
-                                }
-                                return getHighSpeedVPNConnectionsText(VPN_CONNECTIONS);
-                            }
-                            if (MaxMembers > 1) {
-                                return getB2BVPNConnectionsText(1);
-                            }
-                            return getVPNConnectionsText(1);
-                        })(),
-                    },
-                ]
-                    .filter(isTruthy)
-                    .map((item) => {
-                        return (
-                            <StrippedItem key={item.text} icon={item.icon}>
-                                {item.text}
-                            </StrippedItem>
-                        );
-                    })}
+                {items.filter(isTruthy).map((item) => {
+                    return (
+                        <StrippedItem key={item.text} icon={item.icon}>
+                            {item.text}
+                        </StrippedItem>
+                    );
+                })}
             </StrippedList>
         );
     };
