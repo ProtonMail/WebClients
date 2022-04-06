@@ -47,17 +47,11 @@
       "Add phone number": [
         "Rnu uṭṭun n usawal"
       ],
-      "Add screenshot(s)": [
-        "Rnu tuṭṭfa(win) n ugdil"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Rnu ɣer ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Rnu ɣer ugraw"
-      ],
-      "Advanced search": [
-        "Anadi leqqayen"
       ],
       "Align center": [
         "Reyyec ɣer tlemmast"
@@ -87,6 +81,9 @@
         "Snes"
       ],
       "Archive": [
+        ""
+      ],
+      "Attach screenshot(s)": [
         ""
       ],
       "Attachment": [
@@ -325,9 +322,6 @@
       "Export contacts": [
         "Kter inermisen"
       ],
-      "Fewer search options": [
-        "Drus n textiṛiyin n unadi"
-      ],
       "Filter on...": [
         "Imsizdeg ɣef..."
       ],
@@ -388,9 +382,6 @@
       "Hide folders": [
         "Ffer ikaramen"
       ],
-      "Hide info": [
-        "Ffer isallen"
-      ],
       "Hide labels": [
         "Ffer tibzimin"
       ],
@@ -399,6 +390,9 @@
       ],
       "I have a question": [
         "Sɛiɣ asteqsi"
+      ],
+      "Images will be loaded without a proxy": [
+        ""
       ],
       "import": [
         "kter"
@@ -451,6 +445,9 @@
       ],
       "Learn more": [
         "Issin ugar"
+      ],
+      "Less search options": [
+        ""
       ],
       "Load": [
         "Sali"
@@ -574,6 +571,9 @@
       ],
       "No": [
         "Ala"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        ""
       ],
       "No, I won't attend": [
         "Ala ur ttikkiɣ ara"
@@ -770,20 +770,17 @@
       "Show details": [
         "Sken ifutas"
       ],
-      "Show fewer search options": [
-        "Sken drus n textiṛiyin n unadi"
-      ],
       "Show folders": [
         "Sken ikaramen"
-      ],
-      "Show info": [
-        "Sken isallen"
       ],
       "Show labels": [
         "Sken tibzimin"
       ],
       "Show less": [
         "Sken-d drus"
+      ],
+      "Show less search options": [
+        ""
       ],
       "Show messages": [
         "Sken iznan"
@@ -805,9 +802,6 @@
       ],
       "Skip": [
         "Zgel"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "Kra n tugniwin ulamek ara d-alint s ummesten n uḍfar"
       ],
       "Star": [
         ""
@@ -976,9 +970,9 @@
         "Semẓi"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Fren"
+    "action": {
+      "Search messages": [
+        ""
       ]
     },
     "Actions message": {
@@ -4324,6 +4318,9 @@
       "No results found": [
         "Ulac igmaḍ"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ula d yiwet seg tsura i d-yettwasulin dtameɣtut i uwgelhen. Awgelhen yettusens s wudem awurman."
       ],
@@ -4393,9 +4390,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Ur d-ixeddem ara Proton idrimen s uttɛeddi ɣef tbaḍnit."
       ],
@@ -4440,9 +4434,6 @@
       ],
       "Scheduling message...": [
         "Asɣiwes n yizen..."
-      ],
-      "Screenshot(s) attached": [
-        "Tuṭṭfa n ugdil tedda (ddant)"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         ""
@@ -4489,7 +4480,7 @@
       "Sorry, this message does not exist or has already expired": [
         "Suref-aɣ, izen-agi ur yelli ara neɣ ahat yemmut"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
@@ -5170,6 +5161,9 @@
       "ANY": [
         "Ayen yellan"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         "Ticeqqufin"
       ],
@@ -5229,6 +5223,9 @@
       ],
       "Date:": [
         "Azemz:"
+      ],
+      "Delete": [
+        ""
       ],
       "Display name": [
         "Isem ittwaseknen"
@@ -5520,6 +5517,14 @@
         "Isem"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        ""
+      ],
+      "To": [
+        ""
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Adday"
@@ -5542,11 +5547,6 @@
       ],
       "Row": [
         "Izirig"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Seddu tuṭṭfa(win) n ugdil"
       ]
     },
     "Label/folder modal": {
@@ -6128,12 +6128,6 @@
       "A way to contact you": [
         "Ttawil akken ad ken-nermes"
       ],
-      "Browser name": [
-        "Isem n iminig web"
-      ],
-      "Browser version": [
-        "Lqem n yiminig"
-      ],
       "Confirm password": [
         "Sentem awal uffir"
       ],
@@ -6176,12 +6170,6 @@
       "Name or email address": [
         "Isem neɣ tansa n imayl"
       ],
-      "OS name": [
-        "Isem n unagraw n wammud"
-      ],
-      "OS version": [
-        "Lqem n unagraw n wammud"
-      ],
       "Password": [
         "Awal ufir"
       ],
@@ -6194,23 +6182,20 @@
       "Please insert link first": [
         ""
       ],
-      "Proton username": [
-        "Isem n useqdac Proton"
-      ],
       "Search for group name": [
         "Nadi isem n ugraw"
       ],
       "Search for name or email": [
         "Nadi ɣef yisem neɣ imayl"
       ],
-      "Search Messages": [
-        "Nadi iznan"
-      ],
       "Search messages": [
         "Nadi deg iznan"
       ],
       "Search name, email or group": [
         "Nadi isem, imayl neɣ agraw"
+      ],
+      "Select": [
+        ""
       ],
       "Start date": [
         "Azemz n tazwara"

@@ -55,14 +55,14 @@
       "Add PayPal payment method": [
         "Додати спосіб оплати PayPal"
       ],
-      "Add screenshot(s)": [
-        "Додати знімки екрана"
-      ],
       "annual billing": [
         "річна передплата"
       ],
       "Apply": [
         "Застосувати"
+      ],
+      "Attach screenshot(s)": [
+        "Додати знімки екрана"
       ],
       "Back": [
         "Назад"
@@ -78,9 +78,6 @@
       ],
       "Chat with us": [
         "Чат з нами"
-      ],
-      "Clear": [
-        "Очистити"
       ],
       "Close": [
         "Закрити"
@@ -114,6 +111,9 @@
       ],
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
+      ],
+      "Create": [
+        "Створити"
       ],
       "Create account": [
         "Зареєструватися"
@@ -178,6 +178,9 @@
       "enable desktop notifications": [
         "увімкнути сповіщення стільниці"
       ],
+      "Extend": [
+        "Продовжити"
+      ],
       "Get ${ vpnPlus }": [
         "Отримати ${ vpnPlus }"
       ],
@@ -202,9 +205,6 @@
       "Hide additional features": [
         "Приховати додаткові функції"
       ],
-      "Hide info": [
-        "Приховати інформацію"
-      ],
       "Homepage": [
         "Домівка"
       ],
@@ -216,6 +216,9 @@
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
         "Залишити мою передплату ${ BRAND_NAME } ${ currentPlanName }"
+      ],
+      "Load more": [
+        "Завантажити ще"
       ],
       "Loading verification": [
         "Завантаження підтвердження"
@@ -304,6 +307,12 @@
       "Retry": [
         "Повторити спробу"
       ],
+      "Revoke": [
+        "Відкликати"
+      ],
+      "Revoke ${ name }": [
+        "Відкликати ${ name }"
+      ],
       "Save": [
         "Зберегти"
       ],
@@ -327,9 +336,6 @@
       ],
       "Show": [
         "Показати"
-      ],
-      "Show info": [
-        "Показати інформацію"
       ],
       "Show preview": [
         "Показати попередній перегляд"
@@ -434,11 +440,6 @@
         "Зменшити"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Вибрати"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } адреса електронної пошти",
@@ -498,6 +499,11 @@
         "${ vpnBonus } з'єднання",
         "${ vpnBonus } з'єднань",
         "${ vpnBonus } з'єднань"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        "Це від'єднає всі маршрутизатори та клієнти, котрі використовують цей сертифікат."
       ]
     },
     "Apps dropdown": {
@@ -771,6 +777,14 @@
       ],
       "Unsupported calendar format": [
         "Непідтримуваний формат календаря"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Закрити"
+      ],
+      "Open": [
+        "Відкрити"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1797,6 +1811,11 @@
         "Ви можете також ${ refresh }, або спробувати знову пізніше."
       ]
     },
+    "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        "Сертифікат ${ name } не знайдено або вже відкликано"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Не вибрано жодного зображення"
@@ -2055,6 +2074,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Вільний Інтернет без цензури має бути доступним для всіх."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        "Назва, яка допоможе вам визначити, де ви використовуєте його, щоб ви могли легко відкликати його або продовжити його пізніше."
+      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Отримайте доступ до заблокованого вмісту, наприклад, соціальні мережі, новини, Wikipedia, YouTube та багатьох інших, незалежно від того, де ви перебуваєте."
       ],
@@ -2187,6 +2209,9 @@
       "Expired": [
         "Протерміновано"
       ],
+      "expires ${ expirationDate }": [
+        "чинний до ${ expirationDate }"
+      ],
       "For families and small teams; includes both Mail and VPN.": [
         "Для сімей та невеликих команд; включає пошту і VPN."
       ],
@@ -2298,6 +2323,9 @@
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні програми VPN."
       ],
+      "Learn more": [
+        "Докладніше"
+      ],
       "Loading": [
         "Завантаження"
       ],
@@ -2342,6 +2370,9 @@
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Після натискання \"Перейти на нижчий тарифний план\" може пройти декілька хвилин доки застосуються зміни для переходу на безплатний план."
+      ],
+      "Or select a particular server:": [
+        "Або виберіть певний сервер:"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В іншому випадку доступ до вашого облікового запису буде обмежено, а ваш обліковий запис буде вимкнено."
@@ -2391,9 +2422,6 @@
       "Priority support": [
         "Пріоритетна підтримка"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton не може допомогти вам відновити будь-які втрачені паролі."
       ],
@@ -2409,6 +2437,9 @@
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Скидання пароля спричинить скидання ваших ключів шифрування для усіх пов'язаних служб Proton (Пошта і VPN). Ви не зможете читати ваші наявні повідомлення. Якщо ви знаєте ваші облікові дані ${ MAIL_APP_NAME }, НЕ скидайте пароль. Ви можете виконати вхід за допомогою них ${ hereLink }."
       ],
+      "Revoke certificate ${ name }": [
+        "Відкликати сертифікат ${ name }"
+      ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Спрямовуйте свій Інтернет-трафік через мережу Tor одним натисканням."
       ],
@@ -2423,9 +2454,6 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Скануйте цей код своїм пристроєм двоетапної перевірки, щоб налаштувати обліковий запис. ${ switchButton }."
-      ],
-      "Screenshot(s) attached": [
-        "Знімки екрана додано"
       ],
       "See all plans": [
         "Переглянути всі тарифні плани"
@@ -2454,8 +2482,8 @@
       "Storage GB": [
         "ГБ сховища"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Простір сховища спільний для пошти, календаря та диска."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену е-пошти"
@@ -2477,6 +2505,9 @@
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ці файли конфігурації дають змогу обрати сервер ${ VPN_APP_NAME }, з яким ви з'єднуєтесь під час користування стороннім застосунком VPN або налаштованим VPN-з'єднанням маршрутизатора."
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Ці конфігурації передбачені для роботи з маршрутизаторами WireGuard і офіційними клієнтами."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
@@ -2552,6 +2583,9 @@
       ],
       "Upgrade now": [
         "Покращити"
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Використовуйте ці облікові дані за з'єднання з серверами ${ VPN_APP_NAME } без застосунку. Приклади використовування таких з'єднань включають: Tunnelblick на macOS, OpenVPN на GNU/Linux."
@@ -2843,8 +2877,17 @@
       "Annual discount (${ discountPercentage }%)": [
         "Щорічна знижка (${ discountPercentage }%)"
       ],
+      "Attach screenshot(s)": [
+        "Додати знімки екрана"
+      ],
       "Back to:": [
         "Назад до:"
+      ],
+      "Block malware only": [
+        "Блокувати лише зловмисні програми"
+      ],
+      "Block malware, ads and trackers": [
+        "Блокувати зловмисні програми, рекламу і стеження"
       ],
       "bonus storage": [
         "бонусне сховище"
@@ -2873,8 +2916,14 @@
       "Category": [
         "Категорія"
       ],
+      "Choose a name for the generated certificate file": [
+        "Оберіть назву для згенерованого файлу сертифіката"
+      ],
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
+      ],
+      "Config to connect to ${ serverName }": [
+        "Конфігурація для з'єднання з ${ serverName }"
       ],
       "Confirm login password": [
         "Підтвердити пароль входу"
@@ -2921,6 +2970,12 @@
       "Default language": [
         "Типова мова"
       ],
+      "Delete": [
+        "Видалити"
+      ],
+      "Device/certificate name": [
+        "Назва пристрою/сертифіката"
+      ],
       "Digits": [
         "Цифри"
       ],
@@ -2966,11 +3021,17 @@
       "Key": [
         "Ключ"
       ],
+      "Level for NetShield blocker filtering": [
+        "Рівень фільтрації блокувальника NetShield"
+      ],
       "Login password": [
         "Пароль входу"
       ],
       "Mailbox password": [
         "Пароль поштової скриньки"
+      ],
+      "Moderate NAT": [
+        "Помірне NAT"
       ],
       "Name": [
         "Назва"
@@ -2986,6 +3047,12 @@
       ],
       "New password": [
         "Новий пароль"
+      ],
+      "No filter": [
+        "Не фільтрувати"
+      ],
+      "Non-standard ports": [
+        "Нестандартні порти"
       ],
       "Old login password": [
         "Старий пароль входу"
@@ -3095,6 +3162,9 @@
       "Verification method": [
         "Спосіб перевірки"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Нам шкода, що ви йдете. Будь ласка, розкажіть чому ви покидаєте нас, щоб допомогти нам вдосконалитися."
       ],
@@ -3148,11 +3218,6 @@
       ],
       "Expired": [
         "Протерміновано"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Додати знімки екрана"
       ]
     },
     "Link": {
@@ -3494,12 +3559,6 @@
       "Add gift code": [
         "Додати подарунковий код"
       ],
-      "Browser name": [
-        "Назва браузера"
-      ],
-      "Browser version": [
-        "Версія браузера"
-      ],
       "Choose a new password": [
         "Оберіть новий пароль"
       ],
@@ -3533,12 +3592,6 @@
       "Mailbox password": [
         "Пароль поштової скриньки"
       ],
-      "OS name": [
-        "Назва ОС"
-      ],
-      "OS version": [
-        "Версія ОС"
-      ],
       "Other": [
         "Інша"
       ],
@@ -3551,14 +3604,14 @@
       "Postal code": [
         "Поштовий індекс"
       ],
-      "Proton username": [
-        "Ім'я користувача Proton"
-      ],
       "Recovery email address": [
         "Електронна пошта для відновлення"
       ],
       "Reset code": [
         "Код скидання"
+      ],
+      "Select": [
+        "Вибрати"
       ],
       "Select a reason": [
         "Виберіть причину"
@@ -3912,6 +3965,20 @@
         "Ви успішно скасували передплату"
       ]
     },
+    "Success notification": {
+      "Certificate ${ name } revoked": [
+        "Сертифікат ${ name } відкликано"
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        "Сертифікат продовжено до ${ formattedExpirationDate }"
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        "Конфігурація \"${ name }\" створена, зверніть увагу, що приватний ключ не зберігається, і не буде показаний знову, ви повинні скопіювати або завантажити цю конфігурацію."
+      ],
+      "Creating config file for ${ serverName }": [
+        "Створення файлу конфігурації для ${ serverName }"
+      ]
+    },
     "Suffix": {
       "/ month": [
         "/ місяць"
@@ -3964,8 +4031,14 @@
       "${ VPN_APP_NAME } plan comparison": [
         "Порівняння тарифних планів ${ VPN_APP_NAME }"
       ],
+      "1. Give a name to the config to be generated": [
+        "1. Назвіть створювану конфігурацію"
+      ],
       "1. Select platform": [
         "1. Виберіть платформу"
+      ],
+      "2. Select platform": [
+        "2. Виберіть платформу"
       ],
       "2. Select protocol": [
         "2. Виберіть протокол"
@@ -3975,6 +4048,12 @@
       ],
       "3. Select config file and download": [
         "3. Виберіть файл конфігурації та завантажте"
+      ],
+      "3. Select VPN options": [
+        "3. Виберіть опції VPN"
+      ],
+      "4. Select a server to connect to": [
+        "4. Виберіть сервер, до якого потрібно під'єднатися"
       ],
       "Account": [
         "Обліковий запис"
@@ -4252,6 +4331,9 @@
       "Reset password?": [
         "Скинути пароль?"
       ],
+      "Revoke certificate": [
+        "Відкликати сертифікат"
+      ],
       "Secure Core Servers": [
         "Secure Core сервери"
       ],
@@ -4317,6 +4399,9 @@
       ],
       "What's new": [
         "Що нового"
+      ],
+      "WireGuard configuration": [
+        "Конфігурація WireGuard"
       ],
       "You already have a Proton account": [
         "У вас вже є обліковий запис Proton"

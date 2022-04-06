@@ -38,14 +38,14 @@
       "Add phone number": [
         "Telefon numarası ekle"
       ],
-      "Add screenshot(s)": [
-        "Ekran görüntüsü ekle"
-      ],
       "Add to group": [
         "Gruba ekle"
       ],
       "Apply": [
         "Uygula"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Geri"
@@ -256,9 +256,6 @@
       "Hide folders": [
         "Klasörleri gizle"
       ],
-      "Hide info": [
-        "Bilgileri gizle"
-      ],
       "Hide labels": [
         "Etiketleri gizle"
       ],
@@ -451,9 +448,6 @@
       "Show folders": [
         "Klasörleri göster"
       ],
-      "Show info": [
-        "Bilgileri göster"
-      ],
       "Show labels": [
         "Etiketleri göster"
       ],
@@ -558,11 +552,6 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seçin"
       ]
     },
     "Actions message": {
@@ -810,6 +799,14 @@
       ],
       "Unsupported calendar format": [
         "Takvim biçimi desteklenmiyor"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirm modal title": {
@@ -2700,9 +2697,6 @@
       "Priority support": [
         "Öncelikli destek"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "Sıraya alındı"
       ],
@@ -2711,9 +2705,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
-      ],
-      "Screenshot(s) attached": [
-        "Ekran görüntüsü eklendi"
       ],
       "Search cannot be enabled in this browser": [
         "Bu tarayıcıda arama etkinleştirilemez"
@@ -2751,8 +2742,8 @@
       "Something went wrong, please try again later.": [
         "Bir şeyler ters gitti. Lütfen bir süre sonra yeniden deneyin."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
       ],
       "Support for 1 custom email domain": [
         "1 özel e-posta etki alanı desteği"
@@ -3062,6 +3053,9 @@
       "Apply to all unverified items": [
         "Tüm doğrulanmamış ögelere uygula"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         "Ses dosyası"
       ],
@@ -3100,6 +3094,9 @@
       ],
       "Created": [
         "Oluşturulma"
+      ],
+      "Delete": [
+        ""
       ],
       "Delete drive?": [
         "Sürücü silinsin mi?",
@@ -3345,11 +3342,6 @@
     "Label for contact group name": {
       "Name": [
         "Ad"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Ekran görüntüsü ekleyin"
       ]
     },
     "Label/folder modal": {
@@ -3744,12 +3736,6 @@
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
       ],
-      "Browser name": [
-        "Web tarayıcı adı"
-      ],
-      "Browser version": [
-        "Web tarayıcı sürümü"
-      ],
       "e.g. Julia Smith": [
         "Örnekğin, Ayşe Yılmaz"
       ],
@@ -3774,26 +3760,20 @@
       "New name": [
         "Yeni ad"
       ],
-      "OS name": [
-        "İşletim sistemi adı"
-      ],
-      "OS version": [
-        "İşletim sistemi sürümü"
-      ],
       "Password": [
         "Parola"
       ],
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
       ],
-      "Proton username": [
-        "Proton kullanıcı adı"
-      ],
       "Search for group name": [
         "Grup adı ile arayın"
       ],
       "Search for name or email": [
         "Ad veya e-posta adresi ile arayın"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Bir e-posta adresi yazmaya başlayın"

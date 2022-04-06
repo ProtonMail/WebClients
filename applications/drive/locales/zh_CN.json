@@ -38,14 +38,14 @@
       "Add phone number": [
         "添加电话号码"
       ],
-      "Add screenshot(s)": [
-        "添加截图"
-      ],
       "Add to group": [
         "添加至群组"
       ],
       "Apply": [
         "应用"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "后退"
@@ -57,10 +57,10 @@
         "取消"
       ],
       "Cancel all": [
-        ""
+        "全部取消"
       ],
       "Cancel all downloads": [
-        ""
+        "取消所有下载活动"
       ],
       "Cancel all uploads": [
         "取消所有上传"
@@ -84,7 +84,7 @@
         "清除"
       ],
       "Clear browser data": [
-        ""
+        "清除浏览器数据"
       ],
       "Clear data": [
         "清除数据"
@@ -234,7 +234,7 @@
         "获取验证码"
       ],
       "Go to label": [
-        ""
+        "转至标签"
       ],
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
@@ -246,16 +246,13 @@
         "前往设置"
       ],
       "Got it": [
-        ""
+        "知道了"
       ],
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
       ],
       "Hide folders": [
         "隐藏文件夹"
-      ],
-      "Hide info": [
-        "隐藏信息"
       ],
       "Hide labels": [
         "隐藏标签"
@@ -273,7 +270,7 @@
         "从 .csv 或 vCard 导入"
       ],
       "Learn more": [
-        ""
+        "了解详情"
       ],
       "Load image": [
         "加载图片"
@@ -330,7 +327,7 @@
         "打开导航栏"
       ],
       "Pause all": [
-        ""
+        "全部暂停"
       ],
       "Pause download": [
         "暂停下载"
@@ -360,7 +357,7 @@
         "恢复数据"
       ],
       "Refer a friend": [
-        ""
+        "邀请好友"
       ],
       "refresh the page": [
         "刷新页面"
@@ -390,7 +387,7 @@
         "重置缩放"
       ],
       "Restart all": [
-        ""
+        "全部重新开始"
       ],
       "Restart download": [
         "重新开始下载"
@@ -402,7 +399,7 @@
         "从回收站恢复"
       ],
       "Resume all": [
-        ""
+        "全部恢复"
       ],
       "Resume download": [
         "恢复下载"
@@ -417,7 +414,7 @@
         "搜索"
       ],
       "Search drive": [
-        ""
+        "搜索网盘"
       ],
       "Select all": [
         "全选"
@@ -449,14 +446,11 @@
       "Show folders": [
         "显示文件夹"
       ],
-      "Show info": [
-        "显示信息"
-      ],
       "Show labels": [
         "显示标签"
       ],
       "Show preview": [
-        ""
+        "显示预览"
       ],
       "Sign out": [
         "退出"
@@ -519,7 +513,7 @@
         "升级"
       ],
       "Upload anyway": [
-        ""
+        "仍然上传"
       ],
       "Upload file": [
         "上传文件"
@@ -556,11 +550,6 @@
       ],
       "Zoom out": [
         "缩小"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "选择"
       ]
     },
     "Actions message": {
@@ -808,6 +797,14 @@
       ],
       "Unsupported calendar format": [
         "不受支持的日历格式"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirm modal title": {
@@ -2320,7 +2317,7 @@
         "正在检查联系人 ${ progress } / ${ max }..."
       ],
       "Checking signatures": [
-        ""
+        "正在检查签名"
       ],
       "Clear data": [
         "清除数据"
@@ -2377,7 +2374,7 @@
         "创建您的第一个文件夹并开始移动文件。"
       ],
       "Creating": [
-        ""
+        "正在创建"
       ],
       "Creating link to file": [
         "正在创建文件链接"
@@ -2395,10 +2392,10 @@
         "删除网盘"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        ""
+        "数字签名已验证，此文件是由 ${ emailAddress } 用户安全上传。"
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        ""
+        "数字签名已验证，此文件夹是由 ${ emailAddress } 用户安全上传。"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         ""
@@ -2658,9 +2655,6 @@
       "Priority support": [
         "优先客服支持"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "等待中"
       ],
@@ -2669,9 +2663,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或${link}来解决。"
-      ],
-      "Screenshot(s) attached": [
-        "已附加的屏幕截图"
       ],
       "Search cannot be enabled in this browser": [
         "此浏览器无法启用搜索功能"
@@ -2701,7 +2692,7 @@
         ""
       ],
       "Signature issue": [
-        ""
+        "签名问题"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您的某些文件无法再访问，请恢复对其的访问权限。${ StartRecoveryButton }"
@@ -2709,8 +2700,8 @@
       "Something went wrong, please try again later.": [
         "出错了，请稍后再试。"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "存储空间由 Proton 邮箱、日历、和网盘共享"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Support for 1 custom email domain": [
         "支持 1 个自有域名"
@@ -3017,6 +3008,9 @@
         "应用于所有重复的文件夹"
       ],
       "Apply to all unverified items": [
+        "适用于所有未验证的项目"
+      ],
+      "Attach screenshot(s)": [
         ""
       ],
       "Audio file": [
@@ -3035,7 +3029,7 @@
         "日历"
       ],
       "Cancel download": [
-        ""
+        "取消下载"
       ],
       "Category": [
         "类别"
@@ -3058,6 +3052,9 @@
       "Created": [
         "创建时间"
       ],
+      "Delete": [
+        ""
+      ],
       "Delete drive?": [
         "删除网盘?"
       ],
@@ -3071,7 +3068,7 @@
         "不再询问"
       ],
       "Download anyway": [
-        ""
+        "仍要下载"
       ],
       "Email address": [
         "邮箱地址"
@@ -3167,7 +3164,7 @@
         "合并文件夹"
       ],
       "Modified": [
-        ""
+        "已修改"
       ],
       "Name": [
         "名称"
@@ -3278,7 +3275,7 @@
         "上传图片"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "用户名或 ${ MAIL_APP_NAME } 邮箱地址"
       ],
       "Verification code": [
         "验证码"
@@ -3301,11 +3298,6 @@
     "Label for contact group name": {
       "Name": [
         "名称"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "添加截图"
       ]
     },
     "Label/folder modal": {
@@ -3680,12 +3672,6 @@
       "A way to contact you": [
         "您的联系方式"
       ],
-      "Browser name": [
-        "浏览器名称"
-      ],
-      "Browser version": [
-        "浏览器版本"
-      ],
       "e.g. Julia Smith": [
         "例如：Julia Smith"
       ],
@@ -3710,26 +3696,20 @@
       "New name": [
         "新名称"
       ],
-      "OS name": [
-        "OS 名称"
-      ],
-      "OS version": [
-        "OS 版本"
-      ],
       "Password": [
-        ""
+        "密码"
       ],
       "Please describe the problem and include any error messages": [
         "请描述问题，并附上任何错误提示"
-      ],
-      "Proton username": [
-        "Proton 用户名"
       ],
       "Search for group name": [
         "搜索群组名称"
       ],
       "Search for name or email": [
         "搜索名称或电子邮件地址"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "开始输入电子邮件地址"

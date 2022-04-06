@@ -47,17 +47,11 @@
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
       ],
-      "Add screenshot(s)": [
-        "Προσθήκη στιγμιοτύπου/ων οθόνης"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Προσθέστε στο ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
-      ],
-      "Advanced search": [
-        "Σύνθετη αναζήτηση"
       ],
       "Align center": [
         "Στοίχιση στο κέντρο"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "Αρχειοθετημένα"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Attachment": [
         "Συνημμένο"
@@ -325,9 +322,6 @@
       "Export contacts": [
         "Εξαγωγή Επαφών"
       ],
-      "Fewer search options": [
-        "Λιγότερες επιλογές αναζήτησης"
-      ],
       "Filter on...": [
         "Φιλτράρισμα σε..."
       ],
@@ -388,9 +382,6 @@
       "Hide folders": [
         "Απόκρυψη φακέλων"
       ],
-      "Hide info": [
-        "Απόκρυψη πληροφοριών"
-      ],
       "Hide labels": [
         "Απόκρυψη ετικετών"
       ],
@@ -399,6 +390,9 @@
       ],
       "I have a question": [
         "Έχω μια ερώτηση"
+      ],
+      "Images will be loaded without a proxy": [
+        ""
       ],
       "import": [
         "εισαγωγή"
@@ -451,6 +445,9 @@
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "Less search options": [
+        ""
       ],
       "Load": [
         "Φόρτωση"
@@ -574,6 +571,9 @@
       ],
       "No": [
         "Όχι"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        ""
       ],
       "No, I won't attend": [
         "Οχί, δεν θα παρευρεθώ"
@@ -770,20 +770,17 @@
       "Show details": [
         "Εμφάνιση λεπτομερειών"
       ],
-      "Show fewer search options": [
-        "Εμφάνιση λιγότερων επιλογών αναζήτησης"
-      ],
       "Show folders": [
         "Εμφάνιση φακέλων"
-      ],
-      "Show info": [
-        "Εμφάνιση πληροφοριών"
       ],
       "Show labels": [
         "Εμφάνιση ετικετών"
       ],
       "Show less": [
         "Εμφάνιση λιγότερων"
+      ],
+      "Show less search options": [
+        ""
       ],
       "Show messages": [
         "Εμφάνιση μηνυμάτων"
@@ -805,9 +802,6 @@
       ],
       "Skip": [
         "Παράλειψη"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        ""
       ],
       "Star": [
         "Προσθήκη αστεριού"
@@ -976,9 +970,9 @@
         "Σμίκρυνση"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Επιλέξτε"
+    "action": {
+      "Search messages": [
+        ""
       ]
     },
     "Actions message": {
@@ -4324,6 +4318,9 @@
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Κανένα από τα ανεβασμένα κλειδιά δεν είναι έγκυρο για κρυπτογράφηση. Η κρυπτογράφηση έχει απενεργοποιηθεί αυτόματα."
       ],
@@ -4393,9 +4390,6 @@
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Το Proton δε βγάζει λεφτά κάνοντας κατάχρηση απόρρητου."
       ],
@@ -4440,9 +4434,6 @@
       ],
       "Scheduling message...": [
         "Γίνεται προγραμματισμός μηνύματος..."
-      ],
-      "Screenshot(s) attached": [
-        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         ""
@@ -4489,7 +4480,7 @@
       "Sorry, this message does not exist or has already expired": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
@@ -5170,6 +5161,9 @@
       "ANY": [
         "ΟΠΟΙΑΔΗΠΟΤΕ"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         "Συνημμένα"
       ],
@@ -5229,6 +5223,9 @@
       ],
       "Date:": [
         "Ημερομηνία:"
+      ],
+      "Delete": [
+        ""
       ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
@@ -5520,6 +5517,14 @@
         "Όνομα"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        ""
+      ],
+      "To": [
+        ""
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Μεγιστοποιημένος"
@@ -5542,11 +5547,6 @@
       ],
       "Row": [
         "Σειρά"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Επισύναψη στιγμιοτύπου/ων οθόνης"
       ]
     },
     "Label/folder modal": {
@@ -6128,12 +6128,6 @@
       "A way to contact you": [
         "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
       ],
-      "Browser name": [
-        "Όνομα Περιηγητή (Browser)"
-      ],
-      "Browser version": [
-        "Έκδοση προγράμματος περιήγησης"
-      ],
       "Confirm password": [
         "Επιβεβαίωση κωδικού πρόσβασης"
       ],
@@ -6176,12 +6170,6 @@
       "Name or email address": [
         "Όνομα ή ηλ. διεύθυνση"
       ],
-      "OS name": [
-        "Όνομα Λειτουργικού Συστήματος (OS)"
-      ],
-      "OS version": [
-        "Έκδοση Λειτουργικού Συστήματος"
-      ],
       "Password": [
         "Κωδικός πρόσβασης"
       ],
@@ -6194,23 +6182,20 @@
       "Please insert link first": [
         "Παρακαλούμε εισάγετε πρώτα τον σύνδεσμο"
       ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
-      ],
       "Search for group name": [
         "Αναζήτηση ονόματος ομάδας"
       ],
       "Search for name or email": [
         "Αναζήτηση βάσει ονόματος ή e-mail"
       ],
-      "Search Messages": [
-        "Αναζήτηση Μηνυμάτων"
-      ],
       "Search messages": [
         "Αναζήτηση μηνυμάτων"
       ],
       "Search name, email or group": [
         "Όνομα αναζήτησης, email ή ομάδας"
+      ],
+      "Select": [
+        ""
       ],
       "Start date": [
         "Ημερομηνία Έναρξης"

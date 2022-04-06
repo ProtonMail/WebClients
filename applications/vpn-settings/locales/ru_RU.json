@@ -55,14 +55,14 @@
       "Add PayPal payment method": [
         "Добавить способ оплаты PayPal"
       ],
-      "Add screenshot(s)": [
-        "Добавить снимки экрана"
-      ],
       "annual billing": [
         "ежегодная оплата"
       ],
       "Apply": [
         "Применить"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Назад"
@@ -78,9 +78,6 @@
       ],
       "Chat with us": [
         "Поговорить с нами"
-      ],
-      "Clear": [
-        "Очистить"
       ],
       "Close": [
         "Закрыть"
@@ -114,6 +111,9 @@
       ],
       "Copy email to clipboard": [
         "Скопировать адрес эл. почты в буфер обмена"
+      ],
+      "Create": [
+        "Создать"
       ],
       "Create account": [
         "Создать учетную запись"
@@ -178,6 +178,9 @@
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
+      "Extend": [
+        "Продлить"
+      ],
       "Get ${ vpnPlus }": [
         "Получить ${ vpnPlus }"
       ],
@@ -202,9 +205,6 @@
       "Hide additional features": [
         "Скрыть дополнительные функции"
       ],
-      "Hide info": [
-        "Скрыть информацию"
-      ],
       "Homepage": [
         "Домашняя страница"
       ],
@@ -216,6 +216,9 @@
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
         "Сохранить мою учетную запись ${ BRAND_NAME } ${ currentPlanName }"
+      ],
+      "Load more": [
+        "Подробнее"
       ],
       "Loading verification": [
         "Загружается проверка"
@@ -304,6 +307,12 @@
       "Retry": [
         "Повторить"
       ],
+      "Revoke": [
+        "Отозвать"
+      ],
+      "Revoke ${ name }": [
+        "Отозвать ${ name }"
+      ],
       "Save": [
         "Сохранить"
       ],
@@ -328,11 +337,8 @@
       "Show": [
         "Показать"
       ],
-      "Show info": [
-        "Показать информацию"
-      ],
       "Show preview": [
-        "Показать предпросмотр"
+        "Предварительный просмотр"
       ],
       "Sign out": [
         "Выйти из учетной записи"
@@ -434,11 +440,6 @@
         "Отдалить"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Выбрать"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } адрес электронной почты",
@@ -498,6 +499,11 @@
         "${ vpnBonus } подключения",
         "${ vpnBonus } подключений",
         "${ vpnBonus } подключений"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -771,6 +777,14 @@
       ],
       "Unsupported calendar format": [
         "Неподдерживаемый формат календаря"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1797,6 +1811,11 @@
         "Вы также можете ${ refresh } или повторить попытку позже."
       ]
     },
+    "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Изображение не выбрано"
@@ -2055,6 +2074,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Всем должен быть доступен свободный интернет без цензуры."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        "Имя, которое поможет вам определить, где вы его используете, чтобы вы могли легко отозвать или продлить его позже."
+      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Получите доступ к заблокированному контенту, например социальным сетям, новостям, Википедии, YouTube и многому другому независимо от того, где вы находитесь."
       ],
@@ -2187,6 +2209,9 @@
       "Expired": [
         "Истек"
       ],
+      "expires ${ expirationDate }": [
+        "истекает ${ expirationDate }"
+      ],
       "For families and small teams; includes both Mail and VPN.": [
         "Для семей и небольших команд. Версия включает как почту, так и VPN."
       ],
@@ -2227,7 +2252,7 @@
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
-        "Если вы не нашли письмо в своем почтовом ящике, проверьте папку ${ spamFolder }."
+        "Если вы не нашли письмо в своем почтовом ящике, проверьте ${ spamFolder }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" - проверьте, не попало ли оно в папку «спам»."
@@ -2298,6 +2323,9 @@
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Узнайте, как пользоваться ${ VPN_APP_NAME } с помощью сторонних приложений VPN."
       ],
+      "Learn more": [
+        "Узнать больше"
+      ],
       "Loading": [
         "Загрузка"
       ],
@@ -2342,6 +2370,9 @@
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "После нажатия на «Понизить» может потребоваться несколько минут, чтобы перевести вашу учетную запись на бесплатный план. "
+      ],
+      "Or select a particular server:": [
+        "Или выберите определенный сервер:"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В противном случае доступ к учетной записи будет ограничен, и впоследствии учётная запись будет отключена."
@@ -2391,9 +2422,6 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton не может помочь вам восстановить утраченные пароли."
       ],
@@ -2409,6 +2437,9 @@
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Сброс пароля приведет к сбросу ключей шифрования для всех служб, связанных с Proton (почта и VPN). Вы не сможете прочитать существующие сообщения. Если вы знаете свои учетные данные ${ MAIL_APP_NAME }, НЕ сбрасывайте пароль. Вы можете войти с ними ${ hereLink }."
       ],
+      "Revoke certificate ${ name }": [
+        "Отозвать сертификат ${ name }"
+      ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Отправьте Ваш интернет-трафик через сеть Tor одним щелчком."
       ],
@@ -2423,9 +2454,6 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Чтобы настроить свою учётную запись, просканируйте этот код своим устройством двухфакторной аутентификации. ${ switchButton }."
-      ],
-      "Screenshot(s) attached": [
-        "Снимки экрана прикреплены"
       ],
       "See all plans": [
         "Посмотреть все тарифы"
@@ -2446,7 +2474,7 @@
         "Вы постоянный пользователь, поэтому вам доступны дополнительные функции."
       ],
       "spam folder": [
-        "папка спам"
+        "папку со спамом"
       ],
       "Starter VPN service with P2P support.": [
         "Сервис VPN начального уровня с поддержкой P2P."
@@ -2454,8 +2482,8 @@
       "Storage GB": [
         "Хранилище Гбайт"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Место используют Mail, Calendar и Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
@@ -2477,6 +2505,9 @@
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти файлы конфигурации позволяют выбрать сервер ${ VPN_APP_NAME } для подключения при использовании стороннего приложения VPN или настройки подключения к VPN на маршрутизаторе."
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был приостановлен из-за возможного нарушения политики пользования сервисом."
@@ -2552,6 +2583,9 @@
       ],
       "Upgrade now": [
         "Улучшить сейчас"
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        "Использовать лучший сервер в соответствии с текущей нагрузкой и местоположением: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Используйте следующие учетные данные для подключения к ${ VPN_APP_NAME } через сторонние приложения, например, Tunnelblick на MacOS или OpenVPN на GNU/Linux."
@@ -2843,8 +2877,17 @@
       "Annual discount (${ discountPercentage }%)": [
         "Годовая скидка (${ discountPercentage }%)"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Back to:": [
         "Назад к:"
+      ],
+      "Block malware only": [
+        "Блокировать только вредоносные программы"
+      ],
+      "Block malware, ads and trackers": [
+        ""
       ],
       "bonus storage": [
         "бонусное хранилище"
@@ -2873,8 +2916,14 @@
       "Category": [
         "Категория"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm login password": [
         "Подтвердите пароль входа"
@@ -2921,6 +2970,12 @@
       "Default language": [
         "Язык по умолчанию"
       ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Device/certificate name": [
+        ""
+      ],
       "Digits": [
         "Цифры"
       ],
@@ -2966,11 +3021,17 @@
       "Key": [
         "Ключ"
       ],
+      "Level for NetShield blocker filtering": [
+        "Уровень для фильтрации блокировщика NetShield"
+      ],
       "Login password": [
         "Пароль для входа"
       ],
       "Mailbox password": [
         "Пароль почтового ящика"
+      ],
+      "Moderate NAT": [
+        "Умеренное NAT"
       ],
       "Name": [
         "Имя"
@@ -2986,6 +3047,12 @@
       ],
       "New password": [
         "Новый пароль"
+      ],
+      "No filter": [
+        "Без фильтра"
+      ],
+      "Non-standard ports": [
+        "Нестандартные порты"
       ],
       "Old login password": [
         "Старый пароль для входа"
@@ -3084,7 +3151,7 @@
         "Имя пользователя"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        "Имя пользователя или адерс ${ MAIL_APP_NAME }"
+        "Имя пользователя или адрес ${ MAIL_APP_NAME }"
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
         "Используется ${ humanUsedSpace } из ${ humanMaxSpace }"
@@ -3094,6 +3161,9 @@
       ],
       "Verification method": [
         "Способ подтверждения"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать наш сервис."
@@ -3148,11 +3218,6 @@
       ],
       "Expired": [
         "Устарел"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Приложить снимки экрана"
       ]
     },
     "Link": {
@@ -3494,12 +3559,6 @@
       "Add gift code": [
         "Добавить подарочный код"
       ],
-      "Browser name": [
-        "Название браузера"
-      ],
-      "Browser version": [
-        "Версия браузера"
-      ],
       "Choose a new password": [
         "Задайте новый пароль"
       ],
@@ -3533,12 +3592,6 @@
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
-      "OS name": [
-        "Название ОС"
-      ],
-      "OS version": [
-        "Версия ОС"
-      ],
       "Other": [
         "Другое"
       ],
@@ -3551,14 +3604,14 @@
       "Postal code": [
         "Почтовый индекс"
       ],
-      "Proton username": [
-        "Имя пользователя Proton"
-      ],
       "Recovery email address": [
         "Электронная почта для восстановления"
       ],
       "Reset code": [
         "Код для сброса"
+      ],
+      "Select": [
+        "Выбрать"
       ],
       "Select a reason": [
         "Выберите причину"
@@ -3912,6 +3965,20 @@
         "Подписка успешно отменена"
       ]
     },
+    "Success notification": {
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ]
+    },
     "Suffix": {
       "/ month": [
         "/ месяц"
@@ -3964,8 +4031,14 @@
       "${ VPN_APP_NAME } plan comparison": [
         "Сравнение тарифов ${ VPN_APP_NAME }"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Выберите платформу"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Выберите протокол"
@@ -3975,6 +4048,12 @@
       ],
       "3. Select config file and download": [
         "3. Выберите файл конфигурации и скачайте"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account": [
         "Аккаунт"
@@ -4252,6 +4331,9 @@
       "Reset password?": [
         "Сбросить пароль?"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure Core Servers": [
         "Сервера Secure Core"
       ],
@@ -4317,6 +4399,9 @@
       ],
       "What's new": [
         "Что нового"
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "You already have a Proton account": [
         "У вас уже есть аккаунт Proton"

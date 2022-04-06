@@ -38,14 +38,14 @@
       "Add phone number": [
         "Додати номер телефону"
       ],
-      "Add screenshot(s)": [
-        "Додати знімки екрана"
-      ],
       "Add to group": [
         "Додати до групи"
       ],
       "Apply": [
         "Застосувати"
+      ],
+      "Attach screenshot(s)": [
+        "Додати знімки екрана"
       ],
       "Back": [
         "Назад"
@@ -260,9 +260,6 @@
       "Hide folders": [
         "Сховати теки"
       ],
-      "Hide info": [
-        "Сховати відомості"
-      ],
       "Hide labels": [
         "Сховати мітки"
       ],
@@ -455,9 +452,6 @@
       "Show folders": [
         "Показати теки"
       ],
-      "Show info": [
-        "Показати відомості"
-      ],
       "Show labels": [
         "Показати мітки"
       ],
@@ -562,11 +556,6 @@
       ],
       "Zoom out": [
         "Зменшити масштаб"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Вибрати"
       ]
     },
     "Actions message": {
@@ -814,6 +803,14 @@
       ],
       "Unsupported calendar format": [
         "Непідтримуваний формат календаря"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Закрити"
+      ],
+      "Open": [
+        "Відкрити"
       ]
     },
     "Confirm modal title": {
@@ -2554,10 +2551,10 @@
         "Не вдалося відкрити захищене посилання. Причина: ${ error }"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "У файлі відсутній підпис. Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "У файлі відсутній підпис. Ми не можемо перевірити хто вивантажив ${ fileName }."
       ],
       "File will not be uploaded": [
         "Файл не буде вивантажено"
@@ -2569,10 +2566,10 @@
         "Вміст тек об’єднається в одну теку"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "У теці відсутній підпис. Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "У теці відсутній підпис. Ми не можемо перевірити хто вивантажив ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Теку не буде вивантажено"
@@ -2784,9 +2781,6 @@
       "Priority support": [
         "Пріоритетна підтримка"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "Поставлено в чергу"
       ],
@@ -2795,9 +2789,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
-      ],
-      "Screenshot(s) attached": [
-        "Знімки екрана додано"
       ],
       "Search cannot be enabled in this browser": [
         "Неможливо увімкнути пошук у цьому браузері"
@@ -2835,8 +2826,8 @@
       "Something went wrong, please try again later.": [
         "Сталася помилка, повторіть спробу пізніше."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Простір сховища спільний для пошти, календаря та диска."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену е-пошти"
@@ -2845,13 +2836,13 @@
         "командою підтримки"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "Можливо, в обліковому записі є новий ключ або ці елементи підроблено: ${ items }. Відкривайте, лише якщо ви довіряєте їм."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Програма повинна локально розшифрувати ваші контакти для можливості їх експортування. Після завершення процесу буде згенеровано файл VCF і ви зможете його завантажити."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "Можливо ці елементи було підроблено: ${ items }. Відкрийте лише якщо довіряєте їм."
       ],
       "There are no files yet": [
         "Поки що тут немає файлів"
@@ -2953,7 +2944,7 @@
         "Завантаження сотень файлів одразу може вплинути на швидкодію."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
         "Нам не вдалося перевірити хто вивантажив ${ fileName }."
@@ -3148,6 +3139,9 @@
       "Apply to all unverified items": [
         "Застосувати до всіх неперевірених елементів"
       ],
+      "Attach screenshot(s)": [
+        "Додати знімки екрана"
+      ],
       "Audio file": [
         "Звуковий файл"
       ],
@@ -3186,6 +3180,9 @@
       ],
       "Created": [
         "Створено"
+      ],
+      "Delete": [
+        "Видалити"
       ],
       "Delete drive?": [
         "Видалити сховище?",
@@ -3433,11 +3430,6 @@
     "Label for contact group name": {
       "Name": [
         "Назва"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Додати знімки екрану"
       ]
     },
     "Label/folder modal": {
@@ -3872,12 +3864,6 @@
       "A way to contact you": [
         "Спосіб зв'язку з вами"
       ],
-      "Browser name": [
-        "Назва браузера"
-      ],
-      "Browser version": [
-        "Версія браузера"
-      ],
       "e.g. Julia Smith": [
         "наприклад, Джулія Сміт"
       ],
@@ -3902,26 +3888,20 @@
       "New name": [
         "Нова назва"
       ],
-      "OS name": [
-        "Назва ОС"
-      ],
-      "OS version": [
-        "Версія ОС"
-      ],
       "Password": [
         "Пароль"
       ],
       "Please describe the problem and include any error messages": [
         "Опишіть проблему та додайте повідомлення про помилки"
       ],
-      "Proton username": [
-        "Ім'я користувача Proton"
-      ],
       "Search for group name": [
         "Шукати назву групи"
       ],
       "Search for name or email": [
         "Пошук за іменем чи е-поштою"
+      ],
+      "Select": [
+        "Вибрати"
       ],
       "Start typing an email address": [
         "Почніть вводити адресу електронної пошти"
@@ -4566,10 +4546,10 @@
         "Не вдалося завантажити посилання"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "У цьому файлі відсутній або недійсний підпис. Перейдіть до Меню (⋮) → Подробиці для отримання інформації."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "У цій теці відсутній або недійсний підпис. Перейдіть до Меню (⋮) → Подробиці для отримання інформації."
       ],
       "Total size": [
         "Загальний розмір"

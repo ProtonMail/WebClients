@@ -47,17 +47,11 @@
       "Add phone number": [
         "Přidat telefonní číslo"
       ],
-      "Add screenshot(s)": [
-        "Přidat snímek(y) obrazovky"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Přidat do ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Přidat do skupiny"
-      ],
-      "Advanced search": [
-        "Rozšířené vyhledávání"
       ],
       "Align center": [
         "Zarovnat na střed"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "Archiv"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Attachment": [
         "Příloha"
@@ -329,9 +326,6 @@
       "Export contacts": [
         "Exportovat kontakty"
       ],
-      "Fewer search options": [
-        "Méně možností vyhledávání"
-      ],
       "Filter on...": [
         "Filtrovat…"
       ],
@@ -392,9 +386,6 @@
       "Hide folders": [
         "Skrýt složky"
       ],
-      "Hide info": [
-        "Skrýt informace"
-      ],
       "Hide labels": [
         "Skrýt štítky"
       ],
@@ -403,6 +394,9 @@
       ],
       "I have a question": [
         "Mám dotaz"
+      ],
+      "Images will be loaded without a proxy": [
+        ""
       ],
       "import": [
         "import"
@@ -457,6 +451,9 @@
       ],
       "Learn more": [
         "Více informací"
+      ],
+      "Less search options": [
+        ""
       ],
       "Load": [
         "Nahrát"
@@ -580,6 +577,9 @@
       ],
       "No": [
         "Ne"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        ""
       ],
       "No, I won't attend": [
         "Ne, nebudu se účastnit"
@@ -776,20 +776,17 @@
       "Show details": [
         "Zobrazit detaily"
       ],
-      "Show fewer search options": [
-        "Zobrazit méně možností ve vyhledávání"
-      ],
       "Show folders": [
         "Zobrazit složky"
-      ],
-      "Show info": [
-        "Zobrazit informace"
       ],
       "Show labels": [
         "Zobrazit štítky"
       ],
       "Show less": [
         "Zobrazit méně"
+      ],
+      "Show less search options": [
+        ""
       ],
       "Show messages": [
         "Zobrazit zprávy"
@@ -811,9 +808,6 @@
       ],
       "Skip": [
         "Přeskočit"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "Některé obrázky nebylo možné načíst s ochranou sledování"
       ],
       "Star": [
         "Označit"
@@ -984,9 +978,9 @@
         "Oddálit"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Vybrat"
+    "action": {
+      "Search messages": [
+        ""
       ]
     },
     "Actions message": {
@@ -4466,6 +4460,9 @@
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Žádný z nahraných klíčů není platný pro šifrování. Šifrování bylo automaticky deaktivováno."
       ],
@@ -4535,9 +4532,6 @@
       "Priority support": [
         "Prioritní podpora"
       ],
-      "Proton Calendar": [
-        "Proton Kalendář"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nevydělává peníze zneužitím soukromí."
       ],
@@ -4582,9 +4576,6 @@
       ],
       "Scheduling message...": [
         "Plánování zprávy..."
-      ],
-      "Screenshot(s) attached": [
-        "Snímek/snímky byly připojeny"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Trvá hledání příliš dlouho? ${ dropdownButton } nebo ${ toggleOffButton } z této relace hledání."
@@ -4631,8 +4622,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Je nám líto, tato zpráva neexistuje, nebo jí vypršela platnost"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Úložný prostor je sdílen mezi aplikacemi Mail, Calendar a Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         ""
@@ -5334,6 +5325,9 @@
       "ANY": [
         "JAKÝKOLI"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         "Přílohy"
       ],
@@ -5393,6 +5387,9 @@
       ],
       "Date:": [
         "Datum:"
+      ],
+      "Delete": [
+        ""
       ],
       "Display name": [
         "Zobrazované jméno"
@@ -5684,6 +5681,14 @@
         "Jméno"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        ""
+      ],
+      "To": [
+        ""
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Maximalizované"
@@ -5706,11 +5711,6 @@
       ],
       "Row": [
         "Řádek"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Přiložit snímek/snímky obrazovky"
       ]
     },
     "Label/folder modal": {
@@ -6302,12 +6302,6 @@
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
       ],
-      "Browser name": [
-        "Název prohlížeče"
-      ],
-      "Browser version": [
-        "Verze prohlížeče"
-      ],
       "Confirm password": [
         "Potvrdit heslo"
       ],
@@ -6350,12 +6344,6 @@
       "Name or email address": [
         "Jméno nebo e-mail"
       ],
-      "OS name": [
-        "Název OS"
-      ],
-      "OS version": [
-        "Verze OS"
-      ],
       "Password": [
         "Heslo"
       ],
@@ -6368,23 +6356,20 @@
       "Please insert link first": [
         "Nejdříve prosím vložte odkaz"
       ],
-      "Proton username": [
-        "Proton uživatelské jméno"
-      ],
       "Search for group name": [
         "Vyhledat název skupiny"
       ],
       "Search for name or email": [
         "Vyhledat jméno nebo e-mail"
       ],
-      "Search Messages": [
-        "Prohledat zprávy"
-      ],
       "Search messages": [
         "Prohledat zprávy"
       ],
       "Search name, email or group": [
         "Hledat jméno, e-mail nebo skupinu"
+      ],
+      "Select": [
+        ""
       ],
       "Start date": [
         "Počáteční datum"

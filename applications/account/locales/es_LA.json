@@ -1,7 +1,7 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "es_MX"
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "es_LA"
   },
   "contexts": {
     "Access level": {
@@ -176,7 +176,7 @@
         "Cerrar este banner"
       ],
       "Color": [
-        "Color"
+        ""
       ],
       "Compare all features": [
         "Comparar todas las funciones"
@@ -213,6 +213,9 @@
       ],
       "Copy link": [
         "Copiar enlace"
+      ],
+      "Create": [
+        ""
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         "Cree una dirección segura de ${ MAIL_APP_NAME } en su lugar"
@@ -337,6 +340,9 @@
       "Export key": [
         "Exportar clave"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "Tipo de letra"
       ],
@@ -421,6 +427,9 @@
       "label emails as": [
         "etiquetar correos como"
       ],
+      "Load more": [
+        ""
+      ],
       "Loading verification": [
         "Cargando verificación"
       ],
@@ -464,7 +473,7 @@
         "OK"
       ],
       "Ok": [
-        "Ok"
+        ""
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Revisar"
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
       ],
       "Revoke all other sessions": [
         "Revocar todas las demás sesiones"
@@ -844,45 +859,36 @@
     },
     "Addon": {
       "+ ${ addresses } email address": [
-        "+ ${ addresses } dirección de correo",
-        "+ ${ addresses } direcciones de correo"
+        "+ ${ addresses } dirección de correo"
       ],
       "+ ${ domains } custom domain": [
-        "+ ${ domains } dominio personalizado",
-        "+ ${ domains } dominios personalizados"
+        "+ ${ domains } dominio personalizado"
       ],
       "+ ${ members } user": [
-        "+ ${ members } usuario",
-        "+ ${ members } usuarios"
+        "+ ${ members } usuario"
       ],
       "+ ${ storage } storage": [
         "+ ${ storage } de almacenamiento"
       ],
       "+ ${ vpn } connection": [
-        "+ ${ vpn } conexión",
-        "+ ${ vpn } conexiones"
+        "+ ${ vpn } conexión"
       ]
     },
     "Addon unit for subscription": {
       "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } dirección",
-        "${ addressAddon.MaxAddresses } direcciones"
+        "${ addressAddon.MaxAddresses } dirección"
       ],
       "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } dominio",
-        "${ domainAddon.MaxDomains } dominios"
+        "${ domainAddon.MaxDomains } dominio"
       ],
       "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } usuario",
-        "${ memberAddon.MaxMembers } usuarios"
+        "${ memberAddon.MaxMembers } usuario"
       ],
       "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } conexión",
-        "${ vpnAddon.MaxVPN } conexiones"
+        "${ vpnAddon.MaxVPN } conexión"
       ],
       "${ vpnBonus } connection": [
-        "${ vpnBonus } conexión",
-        "${ vpnBonus } conexiones"
+        "${ vpnBonus } conexión"
       ]
     },
     "Address action": {
@@ -939,6 +945,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "La clave de su dirección está siendo eliminada."
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -1027,102 +1038,6 @@
       ],
       "Two-year": [
         "Dos años"
-      ]
-    },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Incluye"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Precio habitual: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
-      "Most popular": [
-        "Más popular"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obtener la oferta"
-      ],
-      "Get the deal now": [
-        "Obtener la oferta ahora"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "al mes"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
-      "1 month": [
-        "Un mes"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Obtenga la oferta especial de fin de año en nuestro plan Premium VPN PLUS"
       ]
     },
     "Bridge version load failed": {
@@ -1218,7 +1133,7 @@
         "Enviar"
       ],
       "Tweet": [
-        "Tweet"
+        ""
       ]
     },
     "Calendar feature": {
@@ -1256,8 +1171,7 @@
         "Ha alcanzado el número máximo de calendarios personales que puede crear dentro de su plan."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Ha alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendario suscrito.",
-        "Ha alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendarios suscritos."
+        "Ha alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendario suscrito."
       ]
     },
     "Calendar link purpose update success message": {
@@ -1471,17 +1385,15 @@
         "Trabajo"
       ],
       "Yomi": [
-        "Yomi"
+        ""
       ]
     },
     "Countdown unit": {
       "${ days } day": [
-        "${ days } día",
-        "${ days } días"
+        "${ days } día"
       ],
       "${ monthsWithYears } month": [
-        "${ monthsWithYears } mes",
-        "${ monthsWithYears } meses"
+        "${ monthsWithYears } mes"
       ]
     },
     "Country name": {
@@ -1492,7 +1404,7 @@
         "Afganistán"
       ],
       "Albania": [
-        "Albania"
+        ""
       ],
       "Algeria": [
         "Argelia"
@@ -1501,10 +1413,10 @@
         "Samoa Americana"
       ],
       "Andorra": [
-        "Andorra"
+        ""
       ],
       "Angola": [
-        "Angola"
+        ""
       ],
       "Anguilla": [
         "Anguila"
@@ -1516,28 +1428,28 @@
         "Antigua y Barbuda"
       ],
       "Argentina": [
-        "Argentina"
+        ""
       ],
       "Armenia": [
-        "Armenia"
+        ""
       ],
       "Aruba": [
-        "Aruba"
+        ""
       ],
       "Ascension Island": [
         "Isla Ascensión"
       ],
       "Australia": [
-        "Australia"
+        ""
       ],
       "Austria": [
-        "Austria"
+        ""
       ],
       "Azerbaijan": [
         "Azerbaiyán"
       ],
       "Bahamas": [
-        "Bahamas"
+        ""
       ],
       "Bahrain": [
         "Baréin"
@@ -1546,7 +1458,7 @@
         "Bangladés"
       ],
       "Barbados": [
-        "Barbados"
+        ""
       ],
       "Belarus": [
         "Bielorrusia"
@@ -1561,13 +1473,13 @@
         "Benín"
       ],
       "Bermuda": [
-        "Bermuda"
+        ""
       ],
       "Bhutan": [
         "Bután"
       ],
       "Bolivia": [
-        "Bolivia"
+        ""
       ],
       "Bonaire, Sint Eustatius and Saba": [
         "Caribe Neerlandés"
@@ -1591,16 +1503,16 @@
         "Brunéi"
       ],
       "Bulgaria": [
-        "Bulgaria"
+        ""
       ],
       "Burkina Faso": [
-        "Burkina Faso"
+        ""
       ],
       "Burma": [
         "Myanmar"
       ],
       "Burundi": [
-        "Burundi"
+        ""
       ],
       "Cambodia": [
         "Camboya"
@@ -1621,13 +1533,13 @@
         "Rep. Centroafricana"
       ],
       "Chad": [
-        "Chad"
+        ""
       ],
       "Chile": [
-        "Chile"
+        ""
       ],
       "China": [
-        "China"
+        ""
       ],
       "Christmas Island": [
         "Isla de Navidad"
@@ -1636,13 +1548,13 @@
         "Islas Cocos (Keeling)"
       ],
       "Colombia": [
-        "Colombia"
+        ""
       ],
       "Comoros": [
-        "Comoros"
+        ""
       ],
       "Congo": [
-        "Congo"
+        ""
       ],
       "Congo, Democratic Republic of the": [
         "RD del Congo"
@@ -1651,7 +1563,7 @@
         "Islas Cook"
       ],
       "Costa Rica": [
-        "Costa Rica"
+        ""
       ],
       "Cote d'Ivoire\"": [
         "Costa de Marfil"
@@ -1660,7 +1572,7 @@
         "Croacia"
       ],
       "Cuba": [
-        "Cuba"
+        ""
       ],
       "Curaçao": [
         "Curazao"
@@ -1678,28 +1590,28 @@
         "Yibuti"
       ],
       "Dominica": [
-        "Dominica"
+        ""
       ],
       "Dominican Republic": [
         "República Dominicana"
       ],
       "Ecuador": [
-        "Ecuador"
+        ""
       ],
       "Egypt": [
         "Egipto"
       ],
       "El Salvador": [
-        "El Salvador"
+        ""
       ],
       "Equatorial Guinea": [
         "Guinea Ecuatorial"
       ],
       "Eritrea": [
-        "Eritrea"
+        ""
       ],
       "Estonia": [
-        "Estonia"
+        ""
       ],
       "Ethiopia": [
         "Etiopía"
@@ -1735,19 +1647,19 @@
         "Gabón"
       ],
       "Gambia": [
-        "Gambia"
+        ""
       ],
       "Georgia": [
-        "Georgia"
+        ""
       ],
       "Germany": [
         "Alemania"
       ],
       "Ghana": [
-        "Ghana"
+        ""
       ],
       "Gibraltar": [
-        "Gibraltar"
+        ""
       ],
       "Greece": [
         "Grecia"
@@ -1762,22 +1674,22 @@
         "Guadalupe"
       ],
       "Guam": [
-        "Guam"
+        ""
       ],
       "Guatemala": [
-        "Guatemala"
+        ""
       ],
       "Guernsey": [
-        "Guernsey"
+        ""
       ],
       "Guinea": [
-        "Guinea"
+        ""
       ],
       "Guinea-Bissau": [
         "Guinea-Bisáu"
       ],
       "Guyana": [
-        "Guyana"
+        ""
       ],
       "Haiti": [
         "Haití"
@@ -1789,10 +1701,10 @@
         "Cd. del Vaticano"
       ],
       "Honduras": [
-        "Honduras"
+        ""
       ],
       "Hong Kong": [
-        "Hong Kong"
+        ""
       ],
       "Hungary": [
         "Hungría"
@@ -1801,10 +1713,10 @@
         "Islandia"
       ],
       "India": [
-        "India"
+        ""
       ],
       "Indonesia": [
-        "Indonesia"
+        ""
       ],
       "International": [
         "Internacional"
@@ -1813,7 +1725,7 @@
         "Irán"
       ],
       "Iraq": [
-        "Iraq"
+        ""
       ],
       "Ireland": [
         "Irlanda"
@@ -1822,19 +1734,19 @@
         "Isla de Man"
       ],
       "Israel": [
-        "Israel"
+        ""
       ],
       "Italy": [
         "Italia"
       ],
       "Jamaica": [
-        "Jamaica"
+        ""
       ],
       "Japan": [
         "Japón"
       ],
       "Jersey": [
-        "Jersey"
+        ""
       ],
       "Jordan": [
         "Jordania"
@@ -1846,19 +1758,19 @@
         "Kenia"
       ],
       "Kiribati": [
-        "Kiribati"
+        ""
       ],
       "Kosovo": [
-        "Kosovo"
+        ""
       ],
       "Kuwait": [
-        "Kuwait"
+        ""
       ],
       "Kyrgyzstan": [
         "Kirguistán"
       ],
       "Laos": [
-        "Laos"
+        ""
       ],
       "Latvia": [
         "Letonia"
@@ -1870,13 +1782,13 @@
         "Lesoto"
       ],
       "Liberia": [
-        "Liberia"
+        ""
       ],
       "Libya": [
         "Libia"
       ],
       "Liechtenstein": [
-        "Liechtenstein"
+        ""
       ],
       "Lithuania": [
         "Lituania"
@@ -1885,10 +1797,10 @@
         "Luxemburgo"
       ],
       "Macao": [
-        "Macao"
+        ""
       ],
       "Madagascar": [
-        "Madagascar"
+        ""
       ],
       "Malawi": [
         "Malaui"
@@ -1903,7 +1815,7 @@
         "Malí"
       ],
       "Malta": [
-        "Malta"
+        ""
       ],
       "Marshall Islands": [
         "Islas Marshall"
@@ -1912,13 +1824,13 @@
         "Martinica"
       ],
       "Mauritania": [
-        "Mauritania"
+        ""
       ],
       "Mauritius": [
         "Mauricio"
       ],
       "Mayotte": [
-        "Mayotte"
+        ""
       ],
       "Mexico": [
         "México"
@@ -1930,28 +1842,28 @@
         "Mónaco"
       ],
       "Mongolia": [
-        "Mongolia"
+        ""
       ],
       "Montenegro": [
-        "Montenegro"
+        ""
       ],
       "Montserrat": [
-        "Montserrat"
+        ""
       ],
       "Morocco": [
         "Marruecos"
       ],
       "Mozambique": [
-        "Mozambique"
+        ""
       ],
       "Namibia": [
-        "Namibia"
+        ""
       ],
       "Nauru": [
-        "Nauru"
+        ""
       ],
       "Nepal": [
-        "Nepal"
+        ""
       ],
       "Netherlands": [
         "Países Bajos"
@@ -1963,16 +1875,16 @@
         "Nueva Zelanda"
       ],
       "Nicaragua": [
-        "Nicaragua"
+        ""
       ],
       "Niger": [
         "Níger"
       ],
       "Nigeria": [
-        "Nigeria"
+        ""
       ],
       "Niue": [
-        "Niue"
+        ""
       ],
       "Norfolk Island": [
         "Isla Norfolk"
@@ -2008,7 +1920,7 @@
         "Papúa Nueva Guinea"
       ],
       "Paraguay": [
-        "Paraguay"
+        ""
       ],
       "Peru": [
         "Perú"
@@ -2017,16 +1929,16 @@
         "Filipinas"
       ],
       "Pitcairn": [
-        "Pitcairn"
+        ""
       ],
       "Poland": [
         "Polonia"
       ],
       "Portugal": [
-        "Portugal"
+        ""
       ],
       "Puerto Rico": [
-        "Puerto Rico"
+        ""
       ],
       "Qatar": [
         "Catar"
@@ -2065,10 +1977,10 @@
         "San Vicente y las Granadinas"
       ],
       "Samoa": [
-        "Samoa"
+        ""
       ],
       "San Marino": [
-        "San Marino"
+        ""
       ],
       "Sao Tome and Principe": [
         "Santo Tomé y Príncipe"
@@ -2077,13 +1989,13 @@
         "Arabia Saudita"
       ],
       "Senegal": [
-        "Senegal"
+        ""
       ],
       "Serbia": [
-        "Serbia"
+        ""
       ],
       "Seychelles": [
-        "Seychelles"
+        ""
       ],
       "Sierra Leone": [
         "Sierra Leona"
@@ -2104,7 +2016,7 @@
         "Islas Salomón"
       ],
       "Somalia": [
-        "Somalia"
+        ""
       ],
       "South Africa": [
         "Sudáfrica"
@@ -2125,7 +2037,7 @@
         "España"
       ],
       "Sri Lanka": [
-        "Sri Lanka"
+        ""
       ],
       "Sudan": [
         "Sudán"
@@ -2155,7 +2067,7 @@
         "Tayikistán"
       ],
       "Tanzania": [
-        "Tanzania"
+        ""
       ],
       "Thailand": [
         "Tailandia"
@@ -2164,13 +2076,13 @@
         "Timor Oriental"
       ],
       "Togo": [
-        "Togo"
+        ""
       ],
       "Tokelau": [
-        "Tokelau"
+        ""
       ],
       "Tonga": [
-        "Tonga"
+        ""
       ],
       "Trinidad and Tobago": [
         "Trinidad y Tobago"
@@ -2191,10 +2103,10 @@
         "Islas Turcas y Caicos"
       ],
       "Tuvalu": [
-        "Tuvalu"
+        ""
       ],
       "Uganda": [
-        "Uganda"
+        ""
       ],
       "Ukraine": [
         "Ucrania"
@@ -2212,19 +2124,19 @@
         "Islas Ultramarinas Menores de Estados Unidos"
       ],
       "Uruguay": [
-        "Uruguay"
+        ""
       ],
       "Uzbekistan": [
         "Uzbekistán"
       ],
       "Vanuatu": [
-        "Vanuatu"
+        ""
       ],
       "Venezuela": [
-        "Venezuela"
+        ""
       ],
       "Vietnam": [
-        "Vietnam"
+        ""
       ],
       "Virgin Islands, British": [
         "Islas Vírgenes Británicas"
@@ -2239,10 +2151,10 @@
         "Sahara Occidental"
       ],
       "Yemen": [
-        "Yemen"
+        ""
       ],
       "Zambia": [
-        "Zambia"
+        ""
       ],
       "Zimbabwe": [
         "Zimbabue"
@@ -2263,8 +2175,7 @@
     },
     "Daily recurring event, frequency": {
       "${ count } time": [
-        "${ count } vez",
-        "${ count } veces"
+        "${ count } vez"
       ],
       "Daily": [
         "Diariamente"
@@ -2276,16 +2187,13 @@
         "Diariamente, ${ untilString }"
       ],
       "Every ${ interval } day": [
-        "Cada ${ interval } día",
-        "Cada ${ interval } días"
+        "Cada ${ interval } día"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "Cada ${ interval } día, ${ timesString }",
-        "Cada ${ interval } días, ${ timesString }"
+        "Cada ${ interval } día, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Cada ${ interval } día, ${ untilString }",
-        "Cada ${ interval } días, ${ untilString }"
+        "Cada ${ interval } día, ${ untilString }"
       ],
       "until ${ dateString }": [
         "hasta ${ dateString }"
@@ -2338,8 +2246,7 @@
         "Parece que la lista de contactos que está importando contiene algunos grupos. Revise cómo deben importarse estos grupos."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Revise cuántas personas hacen clic en su enlace, se registran y se convierten en suscriptores de pago. Mire cómo se acumulan sus meses gratis."
@@ -2361,7 +2268,7 @@
     },
     "Disney": {
       "Disney+": [
-        "Disney+"
+        ""
       ]
     },
     "Domain label": {
@@ -2559,12 +2466,10 @@
         "No se pudo encontrar la dirección ${ email }."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deseleccionar al menos ${ calendarToFixCount } calendario",
-        "Deseleccionar al menos ${ calendarToFixCount } calendarios"
+        "Deseleccionar al menos ${ calendarToFixCount } calendario"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Deseleccionar al menos ${ calendarToFixCount } calendario o",
-        "Deseleccionar al menos ${ calendarToFixCount } calendarios o"
+        "Deseleccionar al menos ${ calendarToFixCount } calendario o"
       ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
@@ -2651,8 +2556,7 @@
         "El nombre de la etiqueta no puede estar vacío"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton",
-        "Fusionar al menos ${ calendarToFixCount } calendarios con los calendarios existentes de Proton"
+        "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton"
       ],
       "Missing key packet": [
         "Falta el paquete de claves"
@@ -2715,8 +2619,7 @@
         "Habilite el soporte multi usuario antes de añadir usuarios a su organización."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Solucione el conflicto resaltado para continuar.",
-        "Solucione los conflictos resaltados para continuar."
+        "Solucione el conflicto resaltado para continuar."
       ],
       "Please generate keys before you try to change your password": [
         "Genere claves antes de intentar cambiar su contraseña"
@@ -3081,6 +2984,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "El nombre y apellido no pueden desmarcarse al mismo tiempo"
       ]
@@ -3149,8 +3055,7 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } evento exportado",
-        "${ totalProcessed }/${ totalToProcess } eventos exportados"
+        "${ totalProcessed }/${ totalToProcess } evento exportado"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Calendario exportado con éxito. Ahora puede guardar el archivo ICS."
@@ -3197,15 +3102,13 @@
     },
     "Feature": {
       "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } conexión VPN",
-        "${ MaxVPN } conexiones VPN"
+        "${ MaxVPN } conexión VPN"
       ],
       "Access to all countries": [
         "Acceso a todos los países"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Conexión hasta para ${ plusVpnConnections } dispositivo",
-        "Conexión hasta para ${ plusVpnConnections } dispositivos"
+        "Conexión hasta para ${ plusVpnConnections } dispositivo"
       ],
       "Fastest VPN servers": [
         "Servidores VPN más rápidos"
@@ -3245,7 +3148,7 @@
         "Seleccionar una carpeta"
       ],
       "Spam": [
-        "Spam"
+        ""
       ],
       "Trash": [
         "Papelera"
@@ -3334,7 +3237,7 @@
         "Cuenta"
       ],
       "Apps": [
-        "Apps"
+        "Aplicaciones"
       ],
       "Network": [
         "Red"
@@ -3423,8 +3326,7 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Se encontró ${ items.length } sugerencia, use el teclado para navegar.",
-        "Se encontraron ${ items.length } sugerencias, use el teclado para navegar."
+        "Se encontró ${ items.length } sugerencia, use el teclado para navegar."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Use las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulse Enter para confirmar su elección, o Escape para cerrar el cuadro de sugerencias."
@@ -3432,33 +3334,30 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "CAPTCHA"
+        ""
       ],
       "Email": [
         "Correo"
       ],
       "Manual": [
-        "Manual"
+        ""
       ],
       "No verification method available": [
         "No hay un método de verificación disponible"
       ],
       "SMS": [
-        "SMS"
+        ""
       ]
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } evento cifrado y añadido a su calendario",
-        "${ totalImported }/${ totalToImport } eventos cifrados y añadidos a su calendario"
+        "${ totalImported }/${ totalToImport } evento cifrado y añadido a su calendario"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Ocurrió un error al cifrar y añadir su evento. ${ totalImported } de ${ totalToImport } evento fue importado con éxito.",
-        "Ocurrió un error al cifrar y añadir sus eventos. ${ totalImported } de ${ totalToImport } eventos fueron importados con éxito."
+        "Ocurrió un error al cifrar y añadir su evento. ${ totalImported } de ${ totalToImport } evento fue importado con éxito."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Ocurrió un error al cifrar y añadir el evento. El evento no fue importado.",
-        "Ocurrió un error al cifrar y añadir los eventos. Ningún evento fue importado."
+        "Ocurrió un error al cifrar y añadir el evento. El evento no fue importado."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Cifrando y añadiendo contactos: ${ totalImported }/${ totalToImport }"
@@ -3467,8 +3366,7 @@
         "Cifrando y añadiendo eventos a su calendario: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Evento importado con éxito. El evento importado aparecerá ahora en su calendario.",
-        "Eventos importados con éxito. Los eventos importados aparecerán ahora en su calendario."
+        "Evento importado con éxito. El evento importado aparecerá ahora en su calendario."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "No cierre la pestaña antes de que el proceso de importación haya terminado."
@@ -3487,12 +3385,10 @@
         "Las invitaciones importadas aparecen en ${ CALENDAR_APP_NAME } como eventos simples sin detalles del organizador ni del participante. Para recibir actualizaciones del evento y ver a los participantes, pida a los organizadores que lo inviten usando su dirección de correo electrónico de Proton."
       ],
       "This file contains an event invitation:": [
-        "Este archivo contiene una invitación de evento:",
-        "Este archivo contiene invitaciones de eventos:"
+        "Este archivo contiene una invitación de evento:"
       ],
       "This file contains an invitation response:": [
-        "Este archivo contiene una respuesta de invitación:",
-        "Este archivo contiene respuestas de invitaciones:"
+        "Este archivo contiene una respuesta de invitación:"
       ],
       "This file contains some data that we cannot import:": [
         "Este archivo contiene algunos datos que no podemos importar:"
@@ -3500,12 +3396,10 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contacto cifrado y añadido a su lista de contactos",
-        "${ totalImported }/${ totalToImport } contactos cifrados y añadidos a su lista de contactos"
+        "${ totalImported }/${ totalToImport } contacto cifrado y añadido a su lista de contactos"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Ocurrió un error al cifrar y añadir su contacto. No se pudo importar ningún contacto.",
-        "Ocurrió un error al cifrar y añadir sus contactos. No se pudo importar ningún contacto."
+        "Ocurrió un error al cifrar y añadir su contacto. No se pudo importar ningún contacto."
       ]
     },
     "Import contact error": {
@@ -3515,8 +3409,7 @@
     },
     "Import contact groups info": {
       "${ totalContacts } contact": [
-        "${ totalContacts } contacto",
-        "${ totalContacts } contactos"
+        "${ totalContacts } contacto"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3529,8 +3422,7 @@
         "Ocurrió un error al cifrar y añadir sus contactos. ${ totalImported } de ${ totalToImport } contactos fueron importados con éxito."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contacto importado con éxito. El contacto importado aparecerá ahora en su lista de contactos.",
-        "contactos importados con éxito. Los contactos importados aparecerán ahora en su lista de contactos."
+        "Contacto importado con éxito. El contacto importado aparecerá ahora en su lista de contactos."
       ]
     },
     "Import contacts warning": {
@@ -3638,7 +3530,7 @@
         "todas sus otras cuentas de Google"
       ],
       "CAPTCHA": [
-        "CAPTCHA"
+        ""
       ],
       "not": [
         "No"
@@ -3737,7 +3629,7 @@
         "Exportar a un archivo CSV"
       ],
       "ICS": [
-        "ICS"
+        ""
       ],
       "in the next step you need to select all the permissions": [
         "en el siguiente paso necesita seleccionar todos los permisos"
@@ -3775,7 +3667,7 @@
         "calendarios compartidos"
       ],
       "Yahoo Mail": [
-        "Yahoo Mail"
+        ""
       ]
     },
     "Import instructions step": {
@@ -3853,8 +3745,7 @@
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haga clic para más detalles"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } de ${ totalEvents } evento no será importado. Haga clic para más detalles.",
-        "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Haga clic para más detalles."
+        "${ totalEventsDiscarded } de ${ totalEvents } evento no será importado. Haga clic para más detalles."
       ],
       "No contact can be imported. Click for details": [
         "No se puede importar ningún contacto. Haga clic para más detalles"
@@ -3883,16 +3774,13 @@
         "${ calendarName } se establecerá como calendario por defecto."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } calendario nuevo",
-        "${ calendarsToBeCreatedCount } calendarios nuevos"
+        "${ calendarsToBeCreatedCount } calendario nuevo"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } calendario fusionado",
-        "${ calendarsToBeMerged } calendarios fusionados"
+        "${ calendarsToBeMerged } calendario fusionado"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } calendario fusionado",
-        "${ calendarsToBeMergedCount } calendarios fusionados"
+        "${ calendarsToBeMergedCount } calendario fusionado"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } es inválida"
@@ -3916,42 +3804,34 @@
         "${ mailProfessional } comienza con un usuario, cada usuario añade 5 GB y 5 direcciones a la cuota de la organización."
       ],
       "${ n } address": [
-        "${ n } dirección",
-        "${ n } direcciones"
+        "${ n } dirección"
       ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
         "${ none } no tiene ningún efecto en la entrega de correo electrónico, pero recomendamos ${ quarantine } para mayor seguridad."
       ],
       "${ number } city": [
-        "${ number } ciudad",
-        "${ number } ciudades"
+        "${ number } ciudad"
       ],
       "${ number } server": [
-        "${ number } servidor",
-        "${ number } servidores"
+        "${ number } servidor"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } archivo cargado es una clave privada inválida. Verifique e intente de nuevo.",
-        "${ numberOfNonPrivateKeys } archivos cargados son claves privadas inválidas. Verifique e intente de nuevo."
+        "${ numberOfNonPrivateKeys } archivo cargado es una clave privada inválida. Verifique e intente de nuevo."
       ],
       "${ numContactGroups } contact group": [
-        "${ numContactGroups } grupo de contactos",
-        "${ numContactGroups } grupos de contactos"
+        "${ numContactGroups } grupo de contactos"
       ],
       "${ numContacts } contact": [
-        "${ numContacts } contacto",
-        "${ numContacts } contactos"
+        "${ numContacts } contacto"
       ],
       "${ planName } plan": [
         "Plan ${ planName }"
       ],
       "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } carpeta encontrada",
-        "${ providerFoldersNumLocalized } carpetas encontradas"
+        "${ providerFoldersNumLocalized } carpeta encontrada"
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } etiqueta encontrada en Gmail",
-        "${ providerFoldersNumLocalized } etiquetas encontradas en Gmail"
+        "${ providerFoldersNumLocalized } etiqueta encontrada en Gmail"
       ],
       "${ rewards } of ${ rewardsLimit } months": [
         "${ rewards } de ${ rewardsLimit } meses"
@@ -3966,24 +3846,19 @@
         "${ saveExtra20 } tanto en VPN como en correo añadiendo una suscripción VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
-        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } carpeta seleccionada",
-        "${ selectedFoldersCount } carpetas seleccionadas"
+        "${ selectedFoldersCount } carpeta seleccionada"
       ],
       "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiqueta seleccionada",
-        "${ selectedFoldersCount } etiquetas seleccionadas"
+        "${ selectedFoldersCount } etiqueta seleccionada"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } carpeta seleccionada",
-        "${ selectedFoldersCountLocalized } carpetas seleccionadas"
+        "${ selectedFoldersCountLocalized } carpeta seleccionada"
       ],
       "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } etiqueta seleccionada",
-        "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
+        "${ selectedFoldersCountLocalized } etiqueta seleccionada"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Usará esta dirección de correo para iniciar sesión en los servicios de ${ BRAND_NAME }."
@@ -3995,15 +3870,13 @@
         "Se requiere de ${ vpnBasic }, ${ vpnPlus } or ${ visionary } para la conexión a nivel país."
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
-        "${ vpnPlus } incluye ${ maxVpn } conexión VPN.",
-        "${ vpnPlus } incluye ${ maxVpn } conexiones VPN."
+        "${ vpnPlus } incluye ${ maxVpn } conexión VPN."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "Se requiere ${ vpnPlus } o ${ visionary } para la función de Secure Core."
       ],
       "(${ memberCount } member)": [
-        "(${ memberCount } miembro)",
-        "(${ memberCount } miembros)"
+        "(${ memberCount } miembro)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtra si se cumplen TODAS las siguientes condiciones)"
@@ -4021,8 +3894,7 @@
         "+${ bonusSpace } almacenamiento adicional"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "Más de ${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)",
-        "Más de ${ organization.BonusVPN } conexiones para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)"
+        "Más de ${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)"
       ],
       "1. Invite friends to Proton": [
         "1. Invite amigos a Proton"
@@ -4047,6 +3919,9 @@
       ],
       "A free and uncensored Internet should be available to all.": [
         "Una Internet libre y sin censura debería estar disponible para todos."
+      ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4091,8 +3966,7 @@
         "Añadir etiqueta"
       ],
       "address": [
-        "dirección",
-        "direcciones"
+        "dirección"
       ],
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
         "La verificación de dirección es una función de seguridad avanzada. Habilítela solo si sabe lo que hace."
@@ -4113,12 +3987,10 @@
         "Alinear a la derecha"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Todo (${ totalFoldersCount } carpeta)",
-        "Todo (${ totalFoldersCount } carpetas)"
+        "Todo (${ totalFoldersCount } carpeta)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Todo (${ totalFoldersCount } etiqueta)",
-        "Todo (${ totalFoldersCount } etiquetas)"
+        "Todo (${ totalFoldersCount } etiqueta)"
       ],
       "All keys successfully reactivated": [
         "Todas las claves reactivadas con éxito"
@@ -4280,8 +4152,7 @@
         "Continuar con ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "Crear ${ calendarsToBeCreated } calendario nuevo",
-        "Crear ${ calendarsToBeCreated } calendarios nuevos"
+        "Crear ${ calendarsToBeCreated } calendario nuevo"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Cree una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las carpetas que le gustaría importar."
@@ -4356,8 +4227,7 @@
         "¿Desea revocar todas las demás sesiones y mantener la actual?"
       ],
       "domain used": [
-        "dominio usado",
-        "dominios usados"
+        "dominio usado"
       ],
       "Domains": [
         "Dominios"
@@ -4448,6 +4318,9 @@
       ],
       "Expired": [
         "Expirado"
+      ],
+      "expires ${ expirationDate }": [
+        ""
       ],
       "Failed to fetch logs.": [
         "Error el obtener los registros."
@@ -4573,8 +4446,7 @@
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendario",
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendarios"
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendario"
       ],
       "Import from": [
         "Importar desde"
@@ -4640,8 +4512,7 @@
         "Conexión a internet restaurada."
       ],
       "Invite successfully sent": [
-        "Invitación enviada con éxito",
-        "Invitaciones enviadas con éxito"
+        "Invitación enviada con éxito"
       ],
       "Invited via email": [
         "Invitado mediante correo"
@@ -4794,7 +4665,7 @@
         "No se encontraron resultados"
       ],
       "Normal": [
-        "Normal"
+        ""
       ],
       "Not a valid URL": [
         "No es una URL válida"
@@ -4826,6 +4697,9 @@
       "Only you can see the labels.": [
         "Solo usted puede ver las etiquetas."
       ],
+      "Or select a particular server:": [
+        ""
+      ],
       "Organization keys activated": [
         "Claves de la organización activadas"
       ],
@@ -4854,11 +4728,10 @@
         "Frase de recuperación desactualizada; actualícela para garantizar el acceso a sus datos"
       ],
       "P2P": [
-        "P2P"
+        ""
       ],
       "Paid for a ${ rewardMonths } month plan": [
-        "Pagó por un plan de ${ rewardMonths } mes",
-        "Pagó por un plan de ${ rewardMonths } meses"
+        "Pagó por un plan de ${ rewardMonths } mes"
       ],
       "Paid for a monthly plan": [
         "Pagó por un plan mensual"
@@ -4941,9 +4814,6 @@
       "Priority support": [
         "Soporte prioritario"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton no puede ayudarle a recuperar ninguna contraseña perdida."
       ],
@@ -4997,6 +4867,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
+      ],
+      "Revoke certificate ${ name }": [
+        ""
       ],
       "Right to Left": [
         "Derecha a izquierda"
@@ -5073,8 +4946,8 @@
       "Storage GB": [
         "Almacenamiento GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "El espacio de almacenamiento se comparte entre el Correo, Calendario y Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Support for 1 custom email domain": [
         "Soporte para 1 dominio de correo personalizado"
@@ -5236,7 +5109,7 @@
         "Recargue su cuenta con créditos que puede utilizar para suscribirse a un plan nuevo o renovar el actual. Obtiene un crédito por cada ${ i18nCurrency } gastado."
       ],
       "Tor": [
-        "Tor"
+        ""
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "La autenticación de dos factores añade una capa extra de seguridad a su cuenta en caso de que su contraseña se vea comprometida."
@@ -5303,6 +5176,9 @@
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Use respuestas automáticas para informar a los contactos que está fuera de la oficina o que de otro modo no puede responder."
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use las siguientes credenciales cuando se conecte a servidores de ${ VPN_APP_NAME } sin aplicación. Ejemplos de casos de uso incluyen: Tunnelblick en macOS, OpenVPN en GNU/Linux."
@@ -5595,7 +5471,7 @@
     },
     "info": {
       "(beta)": [
-        "(beta)"
+        ""
       ],
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
@@ -6001,24 +5877,19 @@
         "Pie de ${ MAIL_APP_NAME }"
       ],
       "${ monthsRewarded } month credited": [
-        "${ monthsRewarded } mes acreditado",
-        "${ monthsRewarded } meses acreditados"
+        "${ monthsRewarded } mes acreditado"
       ],
       "${ n } VPN connection available": [
-        "${ n } conexión VPN disponible",
-        "${ n } conexiones VPN disponibles"
+        "${ n } conexión VPN disponible"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } de ${ MaxAddresses } dirección de correo",
-        "${ UsedAddresses } de ${ MaxAddresses } direcciones de correo"
+        "${ UsedAddresses } de ${ MaxAddresses } dirección de correo"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } de ${ MaxDomains } dominio personalizado",
-        "${ UsedDomains } de ${ MaxDomains } dominios personalizados"
+        "${ UsedDomains } de ${ MaxDomains } dominio personalizado"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } de ${ MaxMembers } usuario",
-        "${ UsedMembers } de ${ MaxMembers } usuarios"
+        "${ UsedMembers } de ${ MaxMembers } usuario"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
@@ -6089,6 +5960,12 @@
       "Block email tracking": [
         "Bloquear el rastreo de correo"
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "almacenamiento adicional"
       ],
@@ -6119,6 +5996,9 @@
       "Category": [
         "Categoría"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "Código"
       ],
@@ -6126,7 +6006,7 @@
         "El código es de 6 dígitos sin espacios"
       ],
       "Color": [
-        "Color"
+        ""
       ],
       "Composer": [
         "Compositor"
@@ -6142,6 +6022,9 @@
       ],
       "Conditions": [
         "Condiciones"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm link URLs": [
         "Confirmar enlaces URL"
@@ -6241,6 +6124,9 @@
       ],
       "Description": [
         "Descripción"
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "Dígitos"
@@ -6398,6 +6284,9 @@
       "Last month only": [
         "Solo el último mes"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Contraseña de inicio de sesión"
       ],
@@ -6418,6 +6307,9 @@
       ],
       "Message": [
         "Mensaje"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "Mover a"
@@ -6440,8 +6332,14 @@
       "New password": [
         "Contraseña nueva"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "Ninguna etiqueta encontrada"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "Notificación"
@@ -6606,7 +6504,7 @@
         "Etiquetas adhesivas"
       ],
       "Subtotal": [
-        "Subtotal"
+        ""
       ],
       "System information": [
         "Información del sistema"
@@ -6642,10 +6540,10 @@
         "A: ${ PMEmailAddress }"
       ],
       "Total": [
-        "Total"
+        ""
       ],
       "Total (${ countdown })": [
-        "Total (${ countdown })"
+        ""
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
@@ -6685,6 +6583,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "VPN Accelerator": [
+        ""
       ],
       "VPN Connections": [
         "Conexiones VPN"
@@ -6747,7 +6648,7 @@
         "Su recompensa"
       ],
       "ZIP": [
-        "ZIP"
+        "CP"
       ]
     },
     "label": {
@@ -6770,7 +6671,7 @@
     },
     "Label for new member": {
       "Admin": [
-        "Admin"
+        "Administrador"
       ],
       "Private": [
         "Privado"
@@ -6832,7 +6733,7 @@
         "Maximizada"
       ],
       "Normal": [
-        "Normal"
+        ""
       ]
     },
     "Label to change density": {
@@ -6910,7 +6811,7 @@
         "¿Olvidó su usuario?"
       ],
       "General": [
-        "General"
+        ""
       ],
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
@@ -7000,10 +6901,10 @@
     },
     "Mail feature": {
       "0.5 GB": [
-        "0.5 GB"
+        ""
       ],
       "20 GB": [
-        "20 GB"
+        ""
       ],
       "Address verification": [
         "Verificación de direcciones"
@@ -7033,7 +6934,7 @@
         "Carpetas/etiquetas"
       ],
       "IMAP / SMTP": [
-        "IMAP/SMTP"
+        ""
       ],
       "Limited": [
         "Limitado"
@@ -7062,7 +6963,7 @@
     },
     "Mail feature option": {
       "5 GB *": [
-        "5 GB *"
+        ""
       ],
       "5 GB / user *": [
         "5 GB/usuario *"
@@ -7081,12 +6982,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todos los mensajes de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mail upsell feature": {
@@ -7185,7 +7084,7 @@
         "Dólar USD"
       ],
       "Euro": [
-        "Euro"
+        ""
       ],
       "Swiss franc": [
         "Franco suizo"
@@ -7193,16 +7092,13 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Cada ${ interval } mes los ${ onDayString }",
-        "Cada ${ interval } meses los ${ onDayString }"
+        "Cada ${ interval } mes los ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Cada ${ interval } mes ${ onDayString }, ${ timesString }",
-        "Cada ${ interval } meses ${ onDayString }, ${ timesString }"
+        "Cada ${ interval } mes ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Cada ${ interval } mes ${ onDayString }, ${ untilString }",
-        "Cada ${ interval } meses ${ onDayString }, ${ untilString }"
+        "Cada ${ interval } mes ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
         "Mensual los ${ onDayString }"
@@ -7345,12 +7241,12 @@
     },
     "Netflix": {
       "Netflix": [
-        "Netflix"
+        ""
       ]
     },
     "New Label form": {
       "Color": [
-        "Color"
+        ""
       ],
       "Folder name": [
         "Nombre de la carpeta"
@@ -7388,23 +7284,19 @@
         "al momento del evento"
       ],
       "day before": [
-        "día antes",
-        "días antes"
+        "día antes"
       ],
       "hour before": [
-        "hora antes",
-        "horas antes"
+        "hora antes"
       ],
       "minute before": [
-        "minuto antes",
-        "minutos antes"
+        "minuto antes"
       ],
       "on the same day": [
         "en el mismo día"
       ],
       "week before": [
-        "semana antes",
-        "semanas antes"
+        "semana antes"
       ]
     },
     "Oauth instructions": {
@@ -7542,7 +7434,7 @@
         "Añadir al grupo existente"
       ],
       "Android": [
-        "Android"
+        ""
       ],
       "Automatic (${ defaultDay })": [
         "Automático (${ defaultDay })"
@@ -7563,7 +7455,7 @@
         "Ajustes del servidor gratuito"
       ],
       "GNU/Linux": [
-        "GNU/Linux"
+        ""
       ],
       "I found another service that I like better": [
         "Encontré otro servicio que me gusta mejor"
@@ -7575,7 +7467,7 @@
         "Ignorar grupo"
       ],
       "iOS": [
-        "iOS"
+        ""
       ],
       "It's missing a key feature that I need": [
         "Falta una característica clave que necesito"
@@ -7587,7 +7479,7 @@
         "Izquierda a derecha"
       ],
       "macOS": [
-        "macOS"
+        ""
       ],
       "My reason isn't listed": [
         "Mi motivo no está listado"
@@ -7596,7 +7488,7 @@
         "No hay carpeta principal"
       ],
       "Normal": [
-        "Normal"
+        ""
       ],
       "Permanent": [
         "Permanente"
@@ -7626,13 +7518,13 @@
         "Ajustes estándar del servidor"
       ],
       "TCP": [
-        "TCP"
+        ""
       ],
       "UDP": [
-        "UDP"
+        ""
       ],
       "Windows": [
-        "Windows"
+        ""
       ]
     },
     "Option delay send seconds": {
@@ -7700,13 +7592,13 @@
     },
     "Payment method option": {
       "Bitcoin": [
-        "Bitcoin"
+        ""
       ],
       "New credit/debit card": [
         "Tarjeta de crédito/débito nueva"
       ],
       "PayPal": [
-        "PayPal"
+        ""
       ]
     },
     "PGP key warning": {
@@ -7818,7 +7710,7 @@
         "sudominio.com"
       ],
       "ZIP": [
-        "ZIP"
+        "CP"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -7831,7 +7723,7 @@
         "${ mailAppName } Gratuito"
       ],
       "Free": [
-        "Free"
+        "Gratuito"
       ]
     },
     "Plan feature": {
@@ -7924,8 +7816,7 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "Aún tiene ${ daysRemaining } día disponible en la cuenta ${ BRAND_NAME } ${ currentPlanName }.",
-        "Aún tiene ${ daysRemaining } días disponibles en la cuenta ${ BRAND_NAME } ${ currentPlanName }."
+        "Aún tiene ${ daysRemaining } día disponible en la cuenta ${ BRAND_NAME } ${ currentPlanName }."
       ]
     },
     "Price": {
@@ -7943,7 +7834,7 @@
     },
     "Prime Video": {
       "Prime Video": [
-        "Prime Video"
+        ""
       ]
     },
     "Private Member": {
@@ -8422,6 +8313,18 @@
       "Address enabled": [
         "Dirección habilitada"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "Filtro eliminado"
       ],
@@ -8494,12 +8397,10 @@
     },
     "Time unit": {
       "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
+        "${ hours } hora"
       ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "${ minutes } minuto"
       ]
     },
     "Timezone search placeholder": {
@@ -8518,13 +8419,19 @@
         "Atajos de teclado de ${ appName }"
       ],
       "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
+        ""
       ],
       "(highly recommended)": [
         "(altamente recomendado)"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Seleccionar protocolo"
@@ -8534,6 +8441,12 @@
       ],
       "3. Select config file and download": [
         "3. Seleccionar archivo de configuración y descargar"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         "Cuenta y contraseña"
@@ -8620,7 +8533,7 @@
         "Monto adeudado"
       ],
       "App": [
-        "App"
+        ""
       ],
       "Appearance": [
         "Apariencia"
@@ -8902,7 +8815,7 @@
         "Carpetas y etiquetas"
       ],
       "General": [
-        "General"
+        ""
       ],
       "Generate missing keys": [
         "Generar claves faltantes"
@@ -8929,14 +8842,13 @@
         "Identidad y direcciones"
       ],
       "IMAP/SMTP": [
-        "IMAP/SMTP"
+        ""
       ],
       "Import": [
         "Importar"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento simple?"
       ],
       "Import contacts": [
         "Importar contactos"
@@ -9020,7 +8932,7 @@
         "Abrir paginación"
       ],
       "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
+        ""
       ],
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"
@@ -9118,6 +9030,9 @@
       "Restore administrator privileges": [
         "Restaurar privilegios de administrador"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         "Correo electrónico seguro con sede en Suiza"
       ],
@@ -9212,7 +9127,7 @@
         "Calendarios suscritos"
       ],
       "Subtotal": [
-        "Subtotal"
+        ""
       ],
       "Success": [
         "Exitoso"
@@ -9273,6 +9188,12 @@
       ],
       "What's new": [
         "Novedades"
+      ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "Your ${ domain } address is active": [
         "Su dirección ${ domain } está activa"
@@ -9345,7 +9266,7 @@
         "Dirección"
       ],
       "Catch-All": [
-        "Catch-All"
+        ""
       ],
       "Status": [
         "Estado"
@@ -9568,14 +9489,12 @@
     },
     "Upgrade": {
       "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
-        "Actualice a ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } para conectar hasta ${ plusVpnConnections } dispositivo a la VPN al mismo tiempo",
-        "Actualice a ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } para conectar hasta ${ plusVpnConnections } dispositivos a la VPN al mismo tiempo"
+        "Actualice a ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } para conectar hasta ${ plusVpnConnections } dispositivo a la VPN al mismo tiempo"
       ]
     },
     "Upgrade notice": {
       "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Actualice a un plan de pago para crear hasta ${ MAX_CALENDARS_PER_USER } calendario, permitiéndole crear calendarios para el trabajo, para compartir con sus amigos y solo para usted.",
-        "Actualice a un plan de pago para crear hasta ${ MAX_CALENDARS_PER_USER } calendarios, permitiéndole crear calendarios para el trabajo, para compartir con sus amigos y solo para usted."
+        "Actualice a un plan de pago para crear hasta ${ MAX_CALENDARS_PER_USER } calendario, permitiéndole crear calendarios para el trabajo, para compartir con sus amigos y solo para usted."
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
         "Actualice a un plan de pago para compartir su calendario personal con cualquiera mediante enlace."
@@ -9583,7 +9502,7 @@
     },
     "User role": {
       "Admin": [
-        "Admin"
+        "Administrador"
       ],
       "Member": [
         "Miembro"
@@ -9594,8 +9513,7 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "La contraseña debe tener al menos ${ length } caracter",
-        "La contraseña debe tener al menos ${ length } caracteres"
+        "La contraseña debe tener al menos ${ length } caracter"
       ]
     },
     "Video control": {
@@ -9641,7 +9559,7 @@
         "Apps de código abierto y auditadas"
       ],
       "P2P/BitTorrent": [
-        "P2P/BitTorrent"
+        ""
       ],
       "Perfect Forward Secrecy (PFS)": [
         "Secreto perfecto hacia adelante (PFS)"
@@ -9703,7 +9621,7 @@
         "Suiza"
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+        ""
       ]
     },
     "VPN info": {
@@ -9713,16 +9631,13 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } servidor",
-        "${ n } servidores"
+        "${ n } servidor"
       ],
       "${ n } VPN connection": [
-        "${ n } conexión VPN",
-        "${ n } conexiones VPN"
+        "${ n } conexión VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } en ${ numberOfCountries } país",
-        "${ numberOfServers } en ${ numberOfCountries } países"
+        "${ numberOfServers } en ${ numberOfCountries } país"
       ]
     },
     "VPN upsell feature": {
@@ -9738,25 +9653,25 @@
     },
     "VPNClient": {
       "Android": [
-        "Android"
+        ""
       ],
       "Android TV": [
-        "Android TV"
+        ""
       ],
       "Chromebook": [
-        "Chromebook"
+        ""
       ],
       "GNU/Linux": [
-        "GNU/Linux"
+        ""
       ],
       "iOS": [
-        "iOS"
+        ""
       ],
       "macOS": [
-        "macOS"
+        ""
       ],
       "Windows": [
-        "Windows"
+        ""
       ]
     },
     "Warning": {
@@ -9857,112 +9772,85 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Cada ${ interval } semana los ${ multipleDaysString }",
-        "Cada ${ interval } semanas los ${ multipleDaysString }"
+        "Cada ${ interval } semana los ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Cada ${ interval } semana los ${ multipleDaysString }, ${ timesString }",
-        "Cada ${ interval } semanas los ${ multipleDaysString }, ${ timesString }"
+        "Cada ${ interval } semana los ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Cada ${ interval } semana los ${ multipleDaysString }, ${ untilString }",
-        "Cada ${ interval } semanas los ${ multipleDaysString }, ${ untilString }"
+        "Cada ${ interval } semana los ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "Cada ${ interval } semana todos los días",
-        "Cada ${ interval } semanas todos los días"
+        "Cada ${ interval } semana todos los días"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Cada ${ interval } semana todos los días, ${ timesString }",
-        "Cada ${ interval } semanas todos los días, ${ timesString }"
+        "Cada ${ interval } semana todos los días, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Cada ${ interval } semana todos los días, ${ untilString }",
-        "Cada ${ interval } semanas todos los días, ${ untilString }"
+        "Cada ${ interval } semana todos los días, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Cada ${ interval } semana los viernes",
-        "Cada ${ interval } semanas los viernes"
+        "Cada ${ interval } semana los viernes"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Cada ${ interval } semana los viernes, ${ timesString }",
-        "Cada ${ interval } semanas los viernes, ${ timesString }"
+        "Cada ${ interval } semana los viernes, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Cada ${ interval } semana los viernes, ${ untilString }",
-        "Cada ${ interval } semanas los viernes, ${ untilString }"
+        "Cada ${ interval } semana los viernes, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "Cada ${ interval } semana los lunes",
-        "Cada ${ interval } semanas los lunes"
+        "Cada ${ interval } semana los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Cada ${ interval } semana los lunes, ${ timesString }",
-        "Cada ${ interval } semanas los lunes, ${ timesString }"
+        "Cada ${ interval } semana los lunes, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Cada ${ interval } semana los lunes, ${ untilString }",
-        "Cada ${ interval } semanas los lunes, ${ untilString }"
+        "Cada ${ interval } semana los lunes, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Cada ${ interval } semana los sábados",
-        "Cada ${ interval } semanas los sábados"
+        "Cada ${ interval } semana los sábados"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Cada ${ interval } semana los sábados, ${ timesString }",
-        "Cada ${ interval } semanas los sábados, ${ timesString }"
+        "Cada ${ interval } semana los sábados, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Cada ${ interval } semana los sábados, ${ untilString }",
-        "Cada ${ interval } semanas los sábados, ${ untilString }"
+        "Cada ${ interval } semana los sábados, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "Cada ${ interval } semana los domingos",
-        "Cada ${ interval } semanas los domingos"
+        "Cada ${ interval } semana los domingos"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Cada ${ interval } semana los domingos, ${ timesString }",
-        "Cada ${ interval } semanas los domingos, ${ timesString }"
+        "Cada ${ interval } semana los domingos, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Cada ${ interval } semana los domingos, ${ untilString }",
-        "Cada ${ interval } semanas los domingos, ${ untilString }"
+        "Cada ${ interval } semana los domingos, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "Cada ${ interval } semana los jueves",
-        "Cada ${ interval } semanas los jueves"
+        "Cada ${ interval } semana los jueves"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Cada ${ interval } semana los jueves, ${ timesString }",
-        "Cada ${ interval } semanas los jueves, ${ timesString }"
+        "Cada ${ interval } semana los jueves, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Cada ${ interval } semana los jueves, ${ untilString }",
-        "Cada ${ interval } semanas los jueves, ${ untilString }"
+        "Cada ${ interval } semana los jueves, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "Cada ${ interval } semana los martes",
-        "Cada ${ interval } semanas los martes"
+        "Cada ${ interval } semana los martes"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Cada ${ interval } semana los martes, ${ timesString }",
-        "Cada ${ interval } semanas los martes, ${ timesString }"
+        "Cada ${ interval } semana los martes, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Cada ${ interval } semana los martes, ${ untilString }",
-        "Cada ${ interval } semanas los martes, ${ untilString }"
+        "Cada ${ interval } semana los martes, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "Cada ${ interval } semana los miércoles",
-        "Cada ${ interval } semanas los miércoles"
+        "Cada ${ interval } semana los miércoles"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Cada ${ interval } semana los miércoles, ${ timesString }",
-        "Cada ${ interval } semanas los miércoles, ${ timesString }"
+        "Cada ${ interval } semana los miércoles, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Cada ${ interval } semana los miércoles, ${ untilString }",
-        "Cada ${ interval } semanas los miércoles, ${ untilString }"
+        "Cada ${ interval } semana los miércoles, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Semanal los ${ multipleDaysString }"
@@ -10071,16 +9959,13 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Cada ${ interval } año",
-        "Cada ${ interval } años"
+        "Cada ${ interval } año"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Cada ${ interval } año, ${ timesString }",
-        "Cada ${ interval } años, ${ timesString }"
+        "Cada ${ interval } año, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Cada ${ interval } año, ${ untilString }",
-        "Cada ${ interval } años, ${ untilString }"
+        "Cada ${ interval } año, ${ untilString }"
       ],
       "Yearly": [
         "Anual"
