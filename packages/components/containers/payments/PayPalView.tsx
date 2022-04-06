@@ -1,13 +1,23 @@
-import PropTypes from 'prop-types';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
+import { Currency } from '@proton/shared/lib/interfaces';
 import { c } from 'ttag';
 
 import { Alert, DoNotWindowOpenAlertError, Price, Loader } from '../../components';
 import PayPalButton from './PayPalButton';
+import { PayPalHook } from './usePayPal';
+import { PaymentMethodFlows } from '../paymentMethods/interface';
 
-const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
-    if (type === 'payment' && amount < MIN_PAYPAL_AMOUNT) {
+interface Props {
+    paypal: PayPalHook;
+    paypalCredit: PayPalHook;
+    type?: PaymentMethodFlows;
+    amount: number;
+    currency: Currency;
+}
+
+const PayPalView = ({ type, amount, currency, paypal, paypalCredit }: Props) => {
+    if (amount < MIN_PAYPAL_AMOUNT) {
         return (
             <Alert className="mb1" type="error">
                 {c('Error').t`Amount below minimum.`} {`(${(<Price currency={currency}>{MIN_PAYPAL_AMOUNT}</Price>)})`}
@@ -39,54 +49,31 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
 
     return (
         <div className="p1 border rounded bg-weak mb1">
-            {paypal.loading ? (
+            {paypal.loadingVerification ? <Loader /> : null}
+            {!paypal.loadingVerification && type && ['signup', 'subscription', 'invoice', 'credit'].includes(type) ? (
                 <>
-                    <Loader />
-                    <Alert className="mb1">{c('Info').t`Please verify the payment in the new tab.`}</Alert>
-                </>
-            ) : null}
-            {!paypal.loadingVerification && ['signup', 'subscription', 'invoice', 'credit'].includes(type) ? (
-                <>
-                    <Alert className="mb1">
+                    <div className="mb1">
                         {c('Info')
                             .t`We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.`}
-                    </Alert>
-                    <Alert className="mb1">
+                    </div>
+                    <div className="mb1">
                         {c('Info')
                             .t`You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.`}
                         <br />
                         {clickHere}
-                    </Alert>
+                    </div>
                 </>
             ) : null}
-            {!paypal.loadingVerification && type === 'update' ? (
+            {type && !paypal.loadingVerification && ['donation', 'human-verification'].includes(type) ? (
                 <>
-                    <Alert className="mb1">
-                        {c('Info')
-                            .t`This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.`}
-                    </Alert>
-                    <Alert className="mb1">{c('Info')
-                        .t`You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.`}</Alert>
-                </>
-            ) : null}
-            {!paypal.loadingVerification && ['donation', 'human-verification'].includes(type) ? (
-                <>
-                    <Alert className="mb1">
+                    <div className="mb1">
                         {c('Info')
                             .t`We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.`}
-                    </Alert>
+                    </div>
                 </>
             ) : null}
         </div>
     );
-};
-
-PayPalView.propTypes = {
-    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'update', 'human-verification']),
-    amount: PropTypes.number.isRequired,
-    currency: PropTypes.string.isRequired,
-    paypal: PropTypes.object.isRequired,
-    paypalCredit: PropTypes.object.isRequired,
 };
 
 export default PayPalView;
