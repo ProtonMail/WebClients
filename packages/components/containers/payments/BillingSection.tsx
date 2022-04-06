@@ -271,40 +271,51 @@ const BillingSection = () => {
                 </div>
             ) : null}
             {discount > 0 ? (
-                <div className="border-bottom pt1 on-mobile-pb1">
+                <>
+                    <div className="border-bottom pt1 on-mobile-pb1">
+                        <div className={classnames([priceRowClassName, 'text-bold'])}>
+                            <div className={priceLabelClassName}>{getTotalBillingText(Cycle)}</div>
+                            <div className="text-right">
+                                <Price currency={Currency}>{subTotal}</Price>
+                            </div>
+                        </div>
+                        <div className={weakRowClassName}>
+                            <div className={classnames([priceLabelClassName, 'flex flex-align-items-center'])}>
+                                {CouponCode ? (
+                                    <div className="">
+                                        {c('Coupon').t`Coupon applied: ${CouponCode}`}{' '}
+                                        <DiscountBadge code={CouponCode}>
+                                            {Math.round((Math.abs(discount) / subTotal) * 100)}%
+                                        </DiscountBadge>
+                                    </div>
+                                ) : (
+                                    <div className="">{c('Label').t`Discount`}</div>
+                                )}
+                            </div>
+                            <div className="text-right">
+                                <Price currency={Currency}>{-discount}</Price>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="pt1">
+                        <div className={classnames([priceRowClassName, 'text-bold'])}>
+                            <div className={priceLabelClassName}>{getDueCycleText(Cycle)}</div>
+                            <div className="text-right">
+                                <Price currency={Currency}>{Amount}</Price>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            ) : (
+                <div className="pt1">
                     <div className={classnames([priceRowClassName, 'text-bold'])}>
                         <div className={priceLabelClassName}>{getTotalBillingText(Cycle)}</div>
                         <div className="text-right">
-                            <Price currency={Currency}>{subTotal}</Price>
-                        </div>
-                    </div>
-                    <div className={weakRowClassName}>
-                        <div className={classnames([priceLabelClassName, 'flex flex-align-items-center'])}>
-                            {CouponCode ? (
-                                <div className="">
-                                    {c('Coupon').t`Coupon applied: ${CouponCode}`}{' '}
-                                    <DiscountBadge code={CouponCode}>
-                                        {Math.round((Math.abs(discount) / subTotal) * 100)}%
-                                    </DiscountBadge>
-                                </div>
-                            ) : (
-                                <div className="">{c('Label').t`Discount`}</div>
-                            )}
-                        </div>
-                        <div className="text-right">
-                            <Price currency={Currency}>{-discount}</Price>
+                            <Price currency={Currency}>{Amount}</Price>
                         </div>
                     </div>
                 </div>
-            ) : null}
-            <div className="pt1">
-                <div className={classnames([priceRowClassName, 'text-bold'])}>
-                    <div className={priceLabelClassName}>{getDueCycleText(Cycle)}</div>
-                    <div className="text-right">
-                        <Price currency={Currency}>{Amount}</Price>
-                    </div>
-                </div>
-            </div>
+            )}
             <div className={classnames([weakRowClassName, 'text-right mt1'])}>
                 <div className="text-right w100">{getRenewalText(PeriodEnd)}</div>
             </div>
