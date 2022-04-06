@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 import envelopSvg from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
-import { Alert } from '../../components';
+import { Bordered } from '../../components';
 import { useConfig } from '../../hooks';
 
 const Cash = () => {
@@ -13,13 +13,13 @@ const Cash = () => {
     );
 
     return (
-        <div className="p1 border bg-weak mb1">
-            <Alert className="mb1">{c('Info for cash payment method')
-                .jt`Please contact us at ${email} for instructions on how to pay us with cash.`}</Alert>
+        <Bordered className="bg-weak rounded">
+            <div className="mb1">{c('Info for cash payment method')
+                .jt`Please contact us at ${email} for instructions on how to pay us with cash.`}</div>
             <div className="text-center">
                 <img src={envelopSvg} alt="" />
             </div>
-        </div>
+        </Bordered>
     );
 };
 
