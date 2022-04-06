@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { PLANS, PLAN_NAMES, APPS_CONFIGURATION, APPS } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { ButtonLike, Card, SettingsLink, SettingsSectionWide, usePlans, useUserVPN } from '@proton/components';
 
 const VpnUpgradeSection = () => {
@@ -10,23 +10,20 @@ const VpnUpgradeSection = () => {
     const userVPN = result?.VPN;
     const planName = userVPN?.PlanName;
     const shouldUpgrade = planName === 'vpnbasic' || planName === 'free';
-    const protonVpnName = APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS].name;
 
     if (loadingPlans || !shouldUpgrade) {
         return null;
     }
+
+    const vpnPlanName = `${PLAN_NAMES[PLANS.VPN]}`;
 
     return (
         <SettingsSectionWide>
             <Card className="flex flex-align-items-center">
                 <p className="m0 mr2 flex-item-fluid">
                     {c('Upgrade').ngettext(
-                        msgid`Upgrade to ${protonVpnName} ${
-                            PLAN_NAMES[PLANS.VPNPLUS]
-                        } to connect up to ${plusVpnConnections} device to the VPN at once`,
-                        `Upgrade to ${protonVpnName} ${
-                            PLAN_NAMES[PLANS.VPNPLUS]
-                        } to connect up to ${plusVpnConnections} devices to the VPN at once`,
+                        msgid`Upgrade to ${vpnPlanName} to connect up to ${plusVpnConnections} device to the VPN at once`,
+                        `Upgrade to ${vpnPlanName} to connect up to ${plusVpnConnections} devices to the VPN at once`,
                         plusVpnConnections
                     )}
                 </p>
