@@ -31,9 +31,9 @@ const ExtraSpamScore = ({ message }: Props) => {
 
     if (hasBit(Flags, MESSAGE_FLAGS.FLAG_DMARC_FAIL)) {
         return (
-            <div className="bg-norm border rounded p0-5 mb0-85 flex flex-nowrap">
-                <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-5 ml0-2 color-danger" />
-                <span className="pl0-5 pr0-5 mt0-25 pb0-25 flex-item-fluid">
+            <div className="bg-norm border rounded px0-5 py0-25 mb0-85 flex flex-nowrap">
+                <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-4 ml0-2 color-danger" />
+                <span className="pl0-5 pr0-5 pb0-25 mt0-2 flex-item-fluid">
                     {c('Info')
                         .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!`}{' '}
                     <Href
@@ -58,9 +58,9 @@ const ExtraSpamScore = ({ message }: Props) => {
         };
 
         return (
-            <div className="bg-norm border rounded p0-5 mb0-85 flex flex-nowrap" data-testid="phishing-banner">
-                <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-25 ml0-2 color-danger" />
-                <span className="pl0-5 pr0-5 flex-item-fluid">
+            <div className="bg-norm border rounded px0-5 py0-25 mb0-85 flex flex-nowrap" data-testid="phishing-banner">
+                <Icon name="circle-exclamation-filled" className="flex-item-noshrink ml0-2 mt0-4 color-danger" />
+                <span className="pl0-5 mt0-2 pr0-5 flex-item-fluid">
                     {c('Info')
                         .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
                     <Href className="pl0-5 pr0-5" url="https://protonmail.com/blog/prevent-phishing-attacks/">
