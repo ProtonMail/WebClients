@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { SettingsLink } from '../../components';
+import { Href, SettingsLink } from '../../components';
 import { useFeature, useUser } from '../../hooks';
 import { FeatureCode } from '../features';
 import { useNewDomainOptIn, getShowNewDomainSection } from '../addresses';
@@ -29,10 +29,16 @@ const NewDomainTopBanner = () => {
     const { Name } = user;
     const addressToCreate = `${Name}@${Domain}`;
 
+    const activateLink = (
+        <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>{c('Link').t`Activate`}</SettingsLink>
+    );
+
+    const learnMoreLink = <Href url="https://protonmail.com/blog/protonme-domain">{c('Info').t`learn more`}</Href>;
+
     return (
         <TopBanner className="bg-info" onClose={handleDismiss}>
             {c('Info').t`Add ${addressToCreate} to your account for free, for a limited time only.`}{' '}
-            <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>{c('Link').t`Activate`}</SettingsLink>
+            {c('Info').jt`${activateLink} or ${learnMoreLink}.`}
         </TopBanner>
     );
 };
