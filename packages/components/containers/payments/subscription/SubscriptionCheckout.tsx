@@ -24,7 +24,7 @@ import CheckoutRow from './CheckoutRow';
 import Checkout from '../Checkout';
 import PaymentGiftCode from '../PaymentGiftCode';
 import { getSubTotal } from './getSubTotal';
-import { getTotalBillingText } from '../helper';
+import { getDueCycleText, getTotalBillingText } from '../helper';
 
 interface Props {
     submit?: ReactNode;
@@ -278,41 +278,53 @@ const SubscriptionCheckout = ({
             />
             {checkResult.Amount ? (
                 <>
-                    <div className="border-top pt1">
-                        <CheckoutRow
-                            className="text-semibold"
-                            title={
-                                <>
-                                    {isUpdating ? (
-                                        <TotalPeriodEndTitle PeriodEnd={checkResult?.PeriodEnd} />
-                                    ) : (
-                                        <span className="mr0-5">{getTotalBillingText(cycle)}</span>
-                                    )}
-                                </>
-                            }
-                            amount={checkResult?.Amount}
-                            currency={currency}
-                        />
+                    <div className="mb1">
+                        <hr />
                     </div>
-                    {checkResult?.Coupon?.Code && checkResult?.CouponDiscount ? (
-                        <CheckoutRow
-                            title={
-                                <>
-                                    <span className="mr0-5">{checkResult.Coupon.Code}</span>
-                                    <DiscountBadge
-                                        code={checkResult.Coupon.Code}
-                                        description={checkResult.Coupon.Description}
-                                    >
-                                        {Math.round((Math.abs(checkResult.CouponDiscount) / checkResult.Amount) * 100)}%
-                                    </DiscountBadge>
-                                </>
-                            }
-                            amount={checkResult.CouponDiscount}
-                            currency={currency}
-                        />
+                    <CheckoutRow
+                        className="text-semibold"
+                        title={
+                            <>
+                                {isUpdating ? (
+                                    <TotalPeriodEndTitle PeriodEnd={checkResult?.PeriodEnd} />
+                                ) : (
+                                    <span className="mr0-5">{getTotalBillingText(cycle)}</span>
+                                )}
+                            </>
+                        }
+                        amount={checkResult?.Amount}
+                        currency={currency}
+                    />
+                    {checkResult && checkResult.Coupon?.Code && checkResult.CouponDiscount ? (
+                        <>
+                            <CheckoutRow
+                                title={
+                                    <>
+                                        <span className="mr0-5">{checkResult.Coupon.Code}</span>
+                                        <DiscountBadge
+                                            code={checkResult.Coupon.Code}
+                                            description={checkResult.Coupon.Description}
+                                        >
+                                            {`${Math.round(
+                                                (Math.abs(checkResult.CouponDiscount) / checkResult.Amount) * 100
+                                            )}%`}
+                                        </DiscountBadge>
+                                    </>
+                                }
+                                amount={checkResult.CouponDiscount}
+                                currency={currency}
+                            />
+                            <hr />
+                            <CheckoutRow
+                                className="text-semibold"
+                                title={<span className="mr0-5">{getDueCycleText(cycle)}</span>}
+                                amount={checkResult.Amount - Math.abs(checkResult.CouponDiscount)}
+                                currency={currency}
+                            />
+                        </>
                     ) : null}
                     {checkResult.Proration || checkResult.Credit || checkResult.Gift ? (
-                        <div className="border-bottom mb0-5">
+                        <>
                             {checkResult.Proration ? (
                                 <CheckoutRow
                                     title={
@@ -346,10 +358,13 @@ const SubscriptionCheckout = ({
                                     currency={currency}
                                 />
                             ) : null}
-                        </div>
+                        </>
                     ) : null}
                 </>
             ) : null}
+            <div className="mb1">
+                <hr />
+            </div>
             <CheckoutRow
                 title={c('Title').t`Amount due`}
                 amount={checkResult.AmountDue || 0}
