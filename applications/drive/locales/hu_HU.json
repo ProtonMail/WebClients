@@ -38,14 +38,14 @@
       "Add phone number": [
         ""
       ],
-      "Add screenshot(s)": [
-        "Képernyőkép hozzáadása"
-      ],
       "Add to group": [
         "Hozzáadás a csoporthoz"
       ],
       "Apply": [
         "Alkalmazás"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Vissza"
@@ -256,9 +256,6 @@
       "Hide folders": [
         ""
       ],
-      "Hide info": [
-        "Információ elrejtése"
-      ],
       "Hide labels": [
         ""
       ],
@@ -404,7 +401,7 @@
         "Visszaállítás a Lomtárból"
       ],
       "Resume all": [
-        "Mind Folytatása"
+        "Összes folytatása"
       ],
       "Resume download": [
         "Letöltés folytatása"
@@ -450,9 +447,6 @@
       ],
       "Show folders": [
         ""
-      ],
-      "Show info": [
-        "Információ megjelenítése"
       ],
       "Show labels": [
         ""
@@ -558,11 +552,6 @@
       ],
       "Zoom out": [
         "Távolítás"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Válasszon"
       ]
     },
     "Actions message": {
@@ -809,6 +798,14 @@
         ""
       ],
       "Unsupported calendar format": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
         ""
       ]
     },
@@ -2700,9 +2697,6 @@
       "Priority support": [
         "Elsőbbségi támogatás"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "Sorba állítva"
       ],
@@ -2711,9 +2705,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
-      ],
-      "Screenshot(s) attached": [
-        "Képernyőkép(ek) csatolva"
       ],
       "Search cannot be enabled in this browser": [
         "A keresés nem engedélyezhető ebben a böngészőben"
@@ -2751,11 +2742,11 @@
       "Something went wrong, please try again later.": [
         "Hiba történt. Kérjük, próbálkozzon később."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "A tárhely megosztott az Email, a Naptár és a Felhőtárhely közt."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "A tárhely megosztott a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } között."
       ],
       "Support for 1 custom email domain": [
-        "Támogasson egy 1 egyedi email domain névért"
+        "Egy saját e-mail domain név használata"
       ],
       "support team": [
         "ügyfélszolgálat"
@@ -3062,6 +3053,9 @@
       "Apply to all unverified items": [
         "Alkalmazás az összes ellenőrizetlen elemre"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         "Hangfájl"
       ],
@@ -3099,6 +3093,9 @@
         "Ország"
       ],
       "Created": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Delete drive?": [
@@ -3347,11 +3344,6 @@
         "Név"
       ]
     },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Képernyőkép csatolása"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         ""
@@ -3513,8 +3505,8 @@
         "${ numberOfItems } elem áthelyezése nem sikerült"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "${ numberOfItems }\" áthelyezése a lomtárba nem sikerült",
-        "${ numberOfItems }\" áthelyezése a lomtárba nem sikerült"
+        "${ numberOfItems } elem áthelyezése a lomtárba nem sikerült",
+        "${ numberOfItems } elem áthelyezése a lomtárba nem sikerült"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems } fájl visszaállítása a lomtárból nem sikerült",
@@ -3744,12 +3736,6 @@
       "A way to contact you": [
         "Kapcsolatfelvételi lehetőség"
       ],
-      "Browser name": [
-        "Böngésző neve"
-      ],
-      "Browser version": [
-        "Böngésző verziója"
-      ],
       "e.g. Julia Smith": [
         "pl. Kovács János"
       ],
@@ -3774,26 +3760,20 @@
       "New name": [
         "Új név"
       ],
-      "OS name": [
-        "Operációs rendszer neve"
-      ],
-      "OS version": [
-        "Operációs rendszer verzió"
-      ],
       "Password": [
         "Jelszó"
       ],
       "Please describe the problem and include any error messages": [
         "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
       ],
-      "Proton username": [
-        "Proton felhasználónév"
-      ],
       "Search for group name": [
         "Csoport név keresése"
       ],
       "Search for name or email": [
         "Név vagy e-mail cím keresése"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Kezdjen el írni egy e-mail címet"
@@ -3870,7 +3850,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Szerezzen akár 18 hónapnyit ebből: ${ appName } ${ planName } ingyen"
+        "Szerezzen akár 18 hónapnyi ${ appName } ${ planName } elérést ingyen"
       ],
       "Invite friends and earn rewards!": [
         ""
@@ -4349,7 +4329,7 @@
         "Fájlok helyreállítása"
       ],
       "Search results": [
-        "Keresés találatai"
+        "Keresési eredmények"
       ],
       "Search results: ${ searchView.numberOfResults } found": [
         "Keresés eredményei: ${ searchView.numberOfResults } találat"
@@ -4409,13 +4389,13 @@
         "A fájlt vagy mappát nem sikerült letölteni"
       ],
       "The link does not exist": [
-        "A link nem létezik"
+        "A hivatkozás nem létezik"
       ],
       "The link either does not exist or has expired": [
         "A hivatkozás nem létezik vagy leját"
       ],
       "The link failed to be loaded": [
-        "A linket nem sikerült letölteni"
+        "A hivatkozást nem sikerült betölteni"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A fájl aláírása hiányzik vagy hibás. Menjen a Menü (⋮) → Részletek fülbe további információért."

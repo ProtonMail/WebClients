@@ -41,14 +41,14 @@
       "Add phone number": [
         "Tilføj telefonnummer"
       ],
-      "Add screenshot(s)": [
-        "Tilføj screenshot(s)"
-      ],
       "Add to group": [
         "Føj til gruppe"
       ],
       "Apply": [
         "Anvend"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Tilbage"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Vælg en fil eller træk den hertil"
-      ],
-      "Clear": [
-        "Ryd"
       ],
       "Clear data": [
         "Ryd data"
@@ -213,9 +210,6 @@
       ],
       "Hide folders": [
         "Skjul mapper"
-      ],
-      "Hide info": [
-        "Skjul info"
       ],
       "Hide labels": [
         "Skjul etiketter"
@@ -379,9 +373,6 @@
       "Show folders": [
         "Vis mapper"
       ],
-      "Show info": [
-        "Vis info"
-      ],
       "Show labels": [
         "Vis etiketter"
       ],
@@ -480,11 +471,6 @@
       ],
       "Yes, I'll attend": [
         "Ja, jeg deltager"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Vælg"
       ]
     },
     "Actions message": {
@@ -1860,9 +1846,9 @@
         "Begivenheden hører til en deaktiveret kalender."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
-        "Tilføj kalender"
+        ""
       ]
     },
     "Duration": {
@@ -3083,17 +3069,11 @@
       "Priority support": [
         "Prioriteret support"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
       "Removed participants will be notified.": [
         "Fjernede deltagere vil blive underrettet."
-      ],
-      "Screenshot(s) attached": [
-        "Screenshot(s) vedhæftet"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
@@ -3113,8 +3093,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Nogle af dine svar på forekomster, som arrangøren tidligere har opdateret, vil gå tabt."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Lagerplads deles på tværs af Mail, Calendar og Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Mulighed for 1 brugerdefineret e-mail-domæne"
@@ -3382,6 +3362,9 @@
       "All day": [
         "Hele dagen"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "Gem automatisk kontakter"
       ],
@@ -3432,6 +3415,9 @@
       ],
       "Default notifications": [
         "Standardnotifikationer"
+      ],
+      "Delete": [
+        ""
       ],
       "Description": [
         "Beskrivelse"
@@ -3629,11 +3615,6 @@
     "Label for contact group name": {
       "Name": [
         "Navn"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Vedhæft screenshot(s)"
       ]
     },
     "Label/folder modal": {
@@ -4197,12 +4178,6 @@
       "Add title": [
         "Tilføj titel"
       ],
-      "Browser name": [
-        "Browsernavn"
-      ],
-      "Browser version": [
-        "Browserversion"
-      ],
       "e.g. Julia Smith": [
         "f.eks. Anne Jensen"
       ],
@@ -4224,26 +4199,20 @@
       "Name": [
         "Navn"
       ],
-      "OS name": [
-        "OS-navn"
-      ],
-      "OS version": [
-        "OS-version"
-      ],
       "Password": [
         "Adgangskode"
       ],
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og inkludér evt. fejlmeddelelser"
       ],
-      "Proton username": [
-        "Proton-brugernavn"
-      ],
       "Search for group name": [
         "Søg efter gruppenavn"
       ],
       "Search for name or email": [
         "Søg efter navn eller e-mail"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Begynd at indtaste en e-mailadresse"

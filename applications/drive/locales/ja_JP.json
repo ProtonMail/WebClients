@@ -38,14 +38,14 @@
       "Add phone number": [
         "電話番号を追加"
       ],
-      "Add screenshot(s)": [
-        "スクリーンショットを追加"
-      ],
       "Add to group": [
         "グループに追加"
       ],
       "Apply": [
         "適用"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "戻る"
@@ -254,9 +254,6 @@
       "Hide folders": [
         "フォルダーを隠す"
       ],
-      "Hide info": [
-        "情報を非表示"
-      ],
       "Hide labels": [
         "ラベルを隠す"
       ],
@@ -449,9 +446,6 @@
       "Show folders": [
         "フォルダーを表示"
       ],
-      "Show info": [
-        "情報を表示"
-      ],
       "Show labels": [
         "ラベルを表示"
       ],
@@ -556,11 +550,6 @@
       ],
       "Zoom out": [
         "縮小"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "選択してください"
       ]
     },
     "Actions message": {
@@ -808,6 +797,14 @@
       ],
       "Unsupported calendar format": [
         "非対応のカレンダー形式です"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirm modal title": {
@@ -2658,9 +2655,6 @@
       "Priority support": [
         "優先的なサポート"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "処理待ち"
       ],
@@ -2669,9 +2663,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
-      ],
-      "Screenshot(s) attached": [
-        "スクリーンショットが添付されました"
       ],
       "Search cannot be enabled in this browser": [
         "このブラウザーでは検索は有効にすることができません"
@@ -2709,8 +2700,8 @@
       "Something went wrong, please try again later.": [
         "問題が発生しました。再度お試しください。"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "ストレージ容量は Mail、Calendar、Drive で共有されます。　"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されています。"
       ],
       "Support for 1 custom email domain": [
         "1 つの独自メールドメインをサポート"
@@ -2779,7 +2770,7 @@
         "データを復元するには、データが作成されたときに使用された連絡先暗号化キーを再度有効にする必要があります。 したがって、キーが生成されたときに使用されたパスワードを覚えておく必要があります。"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        ""
+        "アドレスの検証を利用するには、送信で使うキーを含む 1 つ以上のパブリックキーを信頼する必要があります。これにより、暗号キーの偽装を防ぐことができます。"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "ファイル「${ name }」の転送をキャンセルしました"
@@ -3017,6 +3008,9 @@
         "すべての重複したフォルダーに適用"
       ],
       "Apply to all unverified items": [
+        "すべての未検証のアイテムに適用"
+      ],
+      "Attach screenshot(s)": [
         ""
       ],
       "Audio file": [
@@ -3057,6 +3051,9 @@
       ],
       "Created": [
         "作成日時"
+      ],
+      "Delete": [
+        ""
       ],
       "Delete drive?": [
         "ドライブを削除しますか?"
@@ -3301,11 +3298,6 @@
     "Label for contact group name": {
       "Name": [
         "名前"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "スクリーンショットの添付"
       ]
     },
     "Label/folder modal": {
@@ -3680,12 +3672,6 @@
       "A way to contact you": [
         "連絡手段"
       ],
-      "Browser name": [
-        "ブラウザの名前"
-      ],
-      "Browser version": [
-        "ブラウザのバージョン"
-      ],
       "e.g. Julia Smith": [
         "例: Julia Smith"
       ],
@@ -3710,26 +3696,20 @@
       "New name": [
         "新しい名前"
       ],
-      "OS name": [
-        "OS の名前"
-      ],
-      "OS version": [
-        "OS のバージョン"
-      ],
       "Password": [
         "パスワード"
       ],
       "Please describe the problem and include any error messages": [
         "問題について、エラーメッセージ等も含めてご記入下さい"
       ],
-      "Proton username": [
-        "Proton ユーザー名"
-      ],
       "Search for group name": [
         "グループ名で検索"
       ],
       "Search for name or email": [
         "名前またはメールアドレスで検索"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "電子メールアドレスを入力"

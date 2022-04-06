@@ -214,6 +214,9 @@
       "Copy link": [
         "Nɣel aseɣwen"
       ],
+      "Create": [
+        ""
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "Sifeḍ tasarut"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "Tasefsit"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "cṛeḍ imaylen am"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Asali n usenqed"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Cegger"
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
       ],
       "Revoke all other sessions": [
         "Ḥwi akk tiɣimiyin-nniḍen"
@@ -939,6 +954,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "Tasarut n tansa-inek·inem ha-tt-an la tettwakkas akka tura."
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -3081,6 +3101,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "Aɣara d yisem ulamek ttwaṛcamen ɣef tikkelt"
       ]
@@ -4048,6 +4071,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Internet baṭel, ur nettwagzam ara ilaq ad tili i meṛṛa imdanen."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4449,6 +4475,9 @@
       "Expired": [
         "Yemmut"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "Failed to fetch logs.": [
         "Ulamek tasleḍt n uɣmis."
       ],
@@ -4826,6 +4855,9 @@
       "Only you can see the labels.": [
         "Ala kečč·kemm i izemren ad iwali tibzimin."
       ],
+      "Or select a particular server:": [
+        ""
+      ],
       "Organization keys activated": [
         "Tisura n tuddsa remdent"
       ],
@@ -4941,9 +4973,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Proton can't help you recover any lost passwords.": [
         ""
       ],
@@ -4997,6 +5026,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter n ${ link } ad yefru s wudem awurman aṭas n wuguren."
+      ],
+      "Revoke certificate ${ name }": [
+        ""
       ],
       "Right to Left": [
         "Seg uyefus s azelmaḍ"
@@ -5073,7 +5105,7 @@
       "Storage GB": [
         "Asekles GAṬ"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -5303,6 +5335,9 @@
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Seqdec tiririyin tiwurmanin i wakken ad telɣuḍ inermisen mačči deg lbiru i telliḍ neɣ ur tezmireḍ ara ad terreḍ."
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         ""
@@ -6089,6 +6124,12 @@
       "Block email tracking": [
         "Sewḥel aḍfar n yimaylen"
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "aklas n ubunus"
       ],
@@ -6119,6 +6160,9 @@
       "Category": [
         "Taggayt"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "Tangalt"
       ],
@@ -6142,6 +6186,9 @@
       ],
       "Conditions": [
         "Tiwtilin"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm link URLs": [
         ""
@@ -6241,6 +6288,9 @@
       ],
       "Description": [
         "Aglam"
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "Izwilen"
@@ -6398,6 +6448,9 @@
       "Last month only": [
         "Ayyure-nni kan ineggura"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Awal uffir n tuqqna"
       ],
@@ -6418,6 +6471,9 @@
       ],
       "Message": [
         "Izen"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "Senkez ɣer"
@@ -6440,8 +6496,14 @@
       "New password": [
         "Awal uffir amaynut"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "Ulac tabzimt yettwafen"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "Alɣu"
@@ -6685,6 +6747,9 @@
       ],
       "Verification code": [
         "Tangalt n usenqed"
+      ],
+      "VPN Accelerator": [
+        ""
       ],
       "VPN Connections": [
         "Tuqqniwin VPN"
@@ -8422,6 +8487,18 @@
       "Address enabled": [
         "Tansa termed"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "Imsizdeg yettwakkes"
       ],
@@ -8523,8 +8600,14 @@
       "(highly recommended)": [
         "(yettuwelleh s waṭas)"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "Fren tiɣerɣert"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Fren aneggaf"
@@ -8534,6 +8617,12 @@
       ],
       "3. Select config file and download": [
         "3. Fren afaylu n twila yerna sader"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         ""
@@ -9118,6 +9207,9 @@
       "Restore administrator privileges": [
         "Err-d izerfan n unedbal"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         ""
       ],
@@ -9273,6 +9365,12 @@
       ],
       "What's new": [
         "Acu d amaynut"
+      ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "Your ${ domain } address is active": [
         ""

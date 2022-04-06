@@ -47,17 +47,11 @@
       "Add phone number": [
         "Afegir número de telèfon"
       ],
-      "Add screenshot(s)": [
-        "Afegir captura(es) de pantalla"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Afegir a ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Afegir al grup"
-      ],
-      "Advanced search": [
-        "Cerca avançada"
       ],
       "Align center": [
         "Alinea al centre"
@@ -87,6 +81,9 @@
         "Aplicar"
       ],
       "Archive": [
+        ""
+      ],
+      "Attach screenshot(s)": [
         ""
       ],
       "Attachment": [
@@ -325,9 +322,6 @@
       "Export contacts": [
         "Exportar contactes"
       ],
-      "Fewer search options": [
-        "Menys opcions de cerca"
-      ],
       "Filter on...": [
         "Filtrar per..."
       ],
@@ -388,9 +382,6 @@
       "Hide folders": [
         "Amagar carpetes"
       ],
-      "Hide info": [
-        "Amagar informació"
-      ],
       "Hide labels": [
         "Amagar etiquetes"
       ],
@@ -399,6 +390,9 @@
       ],
       "I have a question": [
         "Tinc una pregunta"
+      ],
+      "Images will be loaded without a proxy": [
+        ""
       ],
       "import": [
         "importar"
@@ -451,6 +445,9 @@
       ],
       "Learn more": [
         "Saber-ne més"
+      ],
+      "Less search options": [
+        ""
       ],
       "Load": [
         "Carregar"
@@ -574,6 +571,9 @@
       ],
       "No": [
         "No"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        ""
       ],
       "No, I won't attend": [
         "No, no hi assistiré"
@@ -770,20 +770,17 @@
       "Show details": [
         "Mostrar els detalls"
       ],
-      "Show fewer search options": [
-        "Mostrar menys opcions de cerca"
-      ],
       "Show folders": [
         "Mostrar carpetes"
-      ],
-      "Show info": [
-        "Mostra informació"
       ],
       "Show labels": [
         "Mostrar etiquetes"
       ],
       "Show less": [
         "Mostrar menys"
+      ],
+      "Show less search options": [
+        ""
       ],
       "Show messages": [
         "Mostrar missatges"
@@ -805,9 +802,6 @@
       ],
       "Skip": [
         "Ometre"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "Algunes imatges no s'han pogut carregar amb la protecció de seguiment"
       ],
       "Star": [
         ""
@@ -976,9 +970,9 @@
         "Allunyar"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
+    "action": {
+      "Search messages": [
+        ""
       ]
     },
     "Actions message": {
@@ -4324,6 +4318,9 @@
       "No results found": [
         "No s'han trobat resultats"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
       ],
@@ -4393,9 +4390,6 @@
       "Priority support": [
         "Suport prioritari"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton no guanya diners abusant de la privacitat."
       ],
@@ -4440,9 +4434,6 @@
       ],
       "Scheduling message...": [
         "Programant missatge..."
-      ],
-      "Screenshot(s) attached": [
-        "Captures de pantalla(s) adjuntes"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La cerca està trigant massa? ${ dropdownButton } o ${ toggleOffButton } d'aquesta sessió de cerca."
@@ -4489,7 +4480,7 @@
       "Sorry, this message does not exist or has already expired": [
         "Ho sentim, aquest missatge no existeix o ja ha caducat"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
@@ -5170,6 +5161,9 @@
       "ANY": [
         "CUALSEVOL"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         "Adjunts"
       ],
@@ -5229,6 +5223,9 @@
       ],
       "Date:": [
         "Data:"
+      ],
+      "Delete": [
+        ""
       ],
       "Display name": [
         "Nom a mostrar"
@@ -5520,6 +5517,14 @@
         "Nom"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        ""
+      ],
+      "To": [
+        ""
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Maximitzat"
@@ -5542,11 +5547,6 @@
       ],
       "Row": [
         "Fila"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Adjunta captura(es) de pantalla"
       ]
     },
     "Label/folder modal": {
@@ -6128,12 +6128,6 @@
       "A way to contact you": [
         "Una manera de contactar amb tu"
       ],
-      "Browser name": [
-        "Nom del navegador"
-      ],
-      "Browser version": [
-        "Versió del navegador"
-      ],
       "Confirm password": [
         "Confirmar la contrasenya"
       ],
@@ -6176,12 +6170,6 @@
       "Name or email address": [
         "Nom o adreça de correu electrònic"
       ],
-      "OS name": [
-        "Nom de Sistema Operatiu"
-      ],
-      "OS version": [
-        "Versió de Sistema Operatiu"
-      ],
       "Password": [
         "Contrasenya"
       ],
@@ -6194,23 +6182,20 @@
       "Please insert link first": [
         ""
       ],
-      "Proton username": [
-        "Nom d'usuari de Proton"
-      ],
       "Search for group name": [
         "Buscar per nom de grup"
       ],
       "Search for name or email": [
         "Cercar per nom o correu electrònic"
       ],
-      "Search Messages": [
-        "Cercar Missatges"
-      ],
       "Search messages": [
         "Cercar missatges"
       ],
       "Search name, email or group": [
         "Cerca nom, correu electrónic o grup"
+      ],
+      "Select": [
+        ""
       ],
       "Start date": [
         "Data d'inici"

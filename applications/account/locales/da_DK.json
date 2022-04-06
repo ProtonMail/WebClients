@@ -214,6 +214,9 @@
       "Copy link": [
         "Kopiér link"
       ],
+      "Create": [
+        ""
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "Eksportér nøgle"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "Skrifttype"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "giv e-mails etiketten"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Indlæser verifikation"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Gennemse"
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
       ],
       "Revoke all other sessions": [
         "Tilbagekald alle andre sessioner"
@@ -939,6 +954,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "Nøglen til din adresse bliver nu slettet."
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -3081,6 +3101,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "For- og efternavn kan ikke afmarkeres samtidig"
       ]
@@ -4048,6 +4071,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Et gratis og ucensureret internet bør være tilgængeligt for alle."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4449,6 +4475,9 @@
       "Expired": [
         "Udløbet"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
       ],
@@ -4826,6 +4855,9 @@
       "Only you can see the labels.": [
         "Kun du kan se etiketterne."
       ],
+      "Or select a particular server:": [
+        ""
+      ],
       "Organization keys activated": [
         "Organisationsnøgler aktiveret"
       ],
@@ -4941,9 +4973,6 @@
       "Priority support": [
         "Prioriteret support"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton kan ikke hjælpe dig med at gendanne mistede adgangskoder."
       ],
@@ -4997,6 +5026,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
+      ],
+      "Revoke certificate ${ name }": [
+        ""
       ],
       "Right to Left": [
         "Højre mod venstre"
@@ -5073,8 +5105,8 @@
       "Storage GB": [
         "Lager GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Lagerplads deles på tværs af Mail, Calendar og Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Support for 1 custom email domain": [
         "Understøttelse af 1 brugerdefineret e-mail-domæne"
@@ -5303,6 +5335,9 @@
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Brug følgende legitimationsoplysninger, når du opretter forbindelse til ${ VPN_APP_NAME }-servere uden applikation. Eksempler på brug omfatter: Tunnelblick på macOS, OpenVPN på GNU/Linux."
@@ -6089,6 +6124,12 @@
       "Block email tracking": [
         "Bloker sporing af e-mail"
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "bonuslagerplads"
       ],
@@ -6119,6 +6160,9 @@
       "Category": [
         "Kategori"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "Kode"
       ],
@@ -6142,6 +6186,9 @@
       ],
       "Conditions": [
         "Betingelser"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm link URLs": [
         ""
@@ -6241,6 +6288,9 @@
       ],
       "Description": [
         "Beskrivelse"
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "Cifre"
@@ -6398,6 +6448,9 @@
       "Last month only": [
         "Kun seneste måned"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Login-adgangskode"
       ],
@@ -6418,6 +6471,9 @@
       ],
       "Message": [
         "Besked"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "Flyt til"
@@ -6440,8 +6496,14 @@
       "New password": [
         "Ny adgangskode"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "Ingen etikette fundet"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "Notifikation"
@@ -6685,6 +6747,9 @@
       ],
       "Verification code": [
         "Bekræftelseskode"
+      ],
+      "VPN Accelerator": [
+        ""
       ],
       "VPN Connections": [
         "VPN-forbindelser"
@@ -8422,6 +8487,18 @@
       "Address enabled": [
         "Adresse aktiveret"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "Filter fjernet"
       ],
@@ -8523,8 +8600,14 @@
       "(highly recommended)": [
         "(stærkt anbefalet)"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Vælg platform"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Vælg protokol"
@@ -8534,6 +8617,12 @@
       ],
       "3. Select config file and download": [
         "3. Vælg konfigurationsfil og download"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         "Konto og adgangskode"
@@ -9118,6 +9207,9 @@
       "Restore administrator privileges": [
         "Gendan administratorprivilegier"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         ""
       ],
@@ -9273,6 +9365,12 @@
       ],
       "What's new": [
         "Nyheder"
+      ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "Your ${ domain } address is active": [
         ""

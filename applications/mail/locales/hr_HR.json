@@ -47,17 +47,11 @@
       "Add phone number": [
         ""
       ],
-      "Add screenshot(s)": [
-        "Dodaj snimku(e) zaslona"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Dodaj u ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Dodaj u grupu"
-      ],
-      "Advanced search": [
-        "Napredno pretraživanje"
       ],
       "Align center": [
         "Poravnaj po sredini"
@@ -87,6 +81,9 @@
         "Primijeni"
       ],
       "Archive": [
+        ""
+      ],
+      "Attach screenshot(s)": [
         ""
       ],
       "Attachment": [
@@ -327,9 +324,6 @@
       "Export contacts": [
         "Uvezi kontakte"
       ],
-      "Fewer search options": [
-        ""
-      ],
       "Filter on...": [
         "Filtar za..."
       ],
@@ -390,9 +384,6 @@
       "Hide folders": [
         ""
       ],
-      "Hide info": [
-        "Sakrij informacije"
-      ],
       "Hide labels": [
         ""
       ],
@@ -401,6 +392,9 @@
       ],
       "I have a question": [
         "Imam pitanje"
+      ],
+      "Images will be loaded without a proxy": [
+        ""
       ],
       "import": [
         "uvoz"
@@ -454,6 +448,9 @@
       ],
       "Learn more": [
         "Saznajte više"
+      ],
+      "Less search options": [
+        ""
       ],
       "Load": [
         "Učitaj"
@@ -577,6 +574,9 @@
       ],
       "No": [
         "Ne"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        ""
       ],
       "No, I won't attend": [
         "Neću prisustvovati"
@@ -773,19 +773,16 @@
       "Show details": [
         "Prikaži detalje"
       ],
-      "Show fewer search options": [
-        ""
-      ],
       "Show folders": [
         ""
-      ],
-      "Show info": [
-        "Prikaži informacije"
       ],
       "Show labels": [
         ""
       ],
       "Show less": [
+        ""
+      ],
+      "Show less search options": [
         ""
       ],
       "Show messages": [
@@ -808,9 +805,6 @@
       ],
       "Skip": [
         "Preskoči"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        ""
       ],
       "Star": [
         ""
@@ -980,9 +974,9 @@
         "Smanji"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Odaberi"
+    "action": {
+      "Search messages": [
+        ""
       ]
     },
     "Actions message": {
@@ -4395,6 +4389,9 @@
       "No results found": [
         "Nema rezultata"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         ""
       ],
@@ -4464,9 +4461,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         ""
       ],
@@ -4511,9 +4505,6 @@
       ],
       "Scheduling message...": [
         "Zakazivanje poruke..."
-      ],
-      "Screenshot(s) attached": [
-        "Snimka(e) zaslona su pridodane"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         ""
@@ -4560,7 +4551,7 @@
       "Sorry, this message does not exist or has already expired": [
         ""
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
@@ -5252,6 +5243,9 @@
       "ANY": [
         "BILO KOJI"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         "Privitci"
       ],
@@ -5311,6 +5305,9 @@
       ],
       "Date:": [
         "Datum:"
+      ],
+      "Delete": [
+        ""
       ],
       "Display name": [
         "Zaslonski naziv"
@@ -5602,6 +5599,14 @@
         "Naziv"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        ""
+      ],
+      "To": [
+        ""
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Maksimizirano"
@@ -5624,11 +5629,6 @@
       ],
       "Row": [
         "Redak"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Dodajte snimku(e) zaslona"
       ]
     },
     "Label/folder modal": {
@@ -6215,12 +6215,6 @@
       "A way to contact you": [
         "Način kako da vas kontaktiramo"
       ],
-      "Browser name": [
-        "Naziv preglednika"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
-      ],
       "Confirm password": [
         ""
       ],
@@ -6263,12 +6257,6 @@
       "Name or email address": [
         "Naziv ili adresa e-pošte"
       ],
-      "OS name": [
-        "Naziv OS-a"
-      ],
-      "OS version": [
-        "Verzija OS-a"
-      ],
       "Password": [
         "Lozinka"
       ],
@@ -6281,23 +6269,20 @@
       "Please insert link first": [
         ""
       ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
       "Search for group name": [
         "Pretraga po nazivu grupe"
       ],
       "Search for name or email": [
         "Pretraga po imenu ili adresi e-pošte"
       ],
-      "Search Messages": [
-        ""
-      ],
       "Search messages": [
         "Pretraži poruke"
       ],
       "Search name, email or group": [
         "Potražite naziv, e-poštu ili grupu"
+      ],
+      "Select": [
+        ""
       ],
       "Start date": [
         "Početni datum"

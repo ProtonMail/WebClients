@@ -55,14 +55,14 @@
       "Add PayPal payment method": [
         "PayPal ödeme yöntemi ekle"
       ],
-      "Add screenshot(s)": [
-        "Ekran görüntüsü ekle"
-      ],
       "annual billing": [
         "yıllık fatura"
       ],
       "Apply": [
         "Uygula"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Geri"
@@ -78,9 +78,6 @@
       ],
       "Chat with us": [
         "Bizimle canlı görüşün"
-      ],
-      "Clear": [
-        "Temizle"
       ],
       "Close": [
         "Kapat"
@@ -114,6 +111,9 @@
       ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
+      ],
+      "Create": [
+        ""
       ],
       "Create account": [
         "Hesap aç"
@@ -178,6 +178,9 @@
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştir"
       ],
+      "Extend": [
+        ""
+      ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } alın"
       ],
@@ -202,9 +205,6 @@
       "Hide additional features": [
         "Ek özellikleri gizle"
       ],
-      "Hide info": [
-        "Bilgileri gizle"
-      ],
       "Homepage": [
         "Ana sayfa"
       ],
@@ -216,6 +216,9 @@
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
         "${ BRAND_NAME } ${ currentPlanName } tarifemi koru"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Doğrulama yükleniyor"
@@ -304,6 +307,12 @@
       "Retry": [
         "Yeniden dene"
       ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
+      ],
       "Save": [
         "Kaydet"
       ],
@@ -327,9 +336,6 @@
       ],
       "Show": [
         "Göster"
-      ],
-      "Show info": [
-        "Bilgileri göster"
       ],
       "Show preview": [
         "Ön izlemeyi göster"
@@ -434,11 +440,6 @@
         "Uzaklaştır"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seçin"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } e-posta adresi",
@@ -480,6 +481,11 @@
       "${ vpnBonus } connection": [
         "${ vpnBonus } bağlantı",
         "${ vpnBonus } bağlantı"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -753,6 +759,14 @@
       ],
       "Unsupported calendar format": [
         "Takvim biçimi desteklenmiyor"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Kapat"
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1775,6 +1789,11 @@
         "Ayrıca sayfayı ${ refresh } ya da bir süre sonra yeniden deneyin."
       ]
     },
+    "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Herhangi bir görsel seçilmemiş"
@@ -2023,6 +2042,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Herkes intetneti özgürce ve sansürsüz olarak kullanabilmelidir."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Sosyal ağlar, haberler, Wikipedia, YouTube ve diğerleri gibi engellenen içeriğe erişin."
       ],
@@ -2155,6 +2177,9 @@
       "Expired": [
         "Süresi geçmiş"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "For families and small teams; includes both Mail and VPN.": [
         "Aileler ve küçük ekipler için; Posta ve VPN hizmetleri sağlar."
       ],
@@ -2266,6 +2291,9 @@
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Üçüncü taraf VPN uygulamalarında ${ VPN_APP_NAME } oturumunu nasıl açabileceğinizi öğrenin."
       ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
       "Loading": [
         "Yükleniyor"
       ],
@@ -2310,6 +2338,9 @@
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "\"Düşür\" üzerine tıkladığınızda, hesabınızın Free tarifesine düşürülmesi birkaç dakika sürebilir. "
+      ],
+      "Or select a particular server:": [
+        ""
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
@@ -2359,9 +2390,6 @@
       "Priority support": [
         "Öncelikli destek"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton kaybolan parolaları kurtarmanıza yardımcı olamaz."
       ],
@@ -2377,6 +2405,9 @@
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Parola sıfırlama işlemi, Proton ile ilgili tüm hizmetler (Posta ve VPN) için şifreleme anahtarlarınızı sıfırlar. Var olan iletilerinizi okuyamayacaksınız. ${ MAIL_APP_NAME } kimlik doğrulama bilgilerinizi biliyorsanız, SIFIRLAMAYIN. O bilgiler ile oturum açabilirsiniz ${ hereLink }."
       ],
+      "Revoke certificate ${ name }": [
+        ""
+      ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin."
       ],
@@ -2391,9 +2422,6 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Hesabınızı kurmak için bu kodu iki aşamalı kimlik doğrulama aygıtınızla tarayın. ${ switchButton }."
-      ],
-      "Screenshot(s) attached": [
-        "Ekran görüntüleri eklendi"
       ],
       "See all plans": [
         "Tüm tarifelere bakın"
@@ -2422,8 +2450,8 @@
       "Storage GB": [
         "GB olarak depolama"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
       ],
       "Support for 1 custom email domain": [
         "1 özel e-posta etki alanı desteği"
@@ -2445,6 +2473,9 @@
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ${ VPN_APP_NAME } sunucusunu seçmenizi sağlar."
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
@@ -2520,6 +2551,9 @@
       ],
       "Upgrade now": [
         "Şimdi yükselt"
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "${ VPN_APP_NAME } sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: macOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
@@ -2803,8 +2837,17 @@
       "Annual discount (${ discountPercentage }%)": [
         "Yıllık indirim (${ discountPercentage }%)"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Back to:": [
         "Geri dön:"
+      ],
+      "Block malware only": [
+        "Yalnızca kötü amaçlı yazılımlar engellensin"
+      ],
+      "Block malware, ads and trackers": [
+        ""
       ],
       "bonus storage": [
         "ödül depolama alanı"
@@ -2833,8 +2876,14 @@
       "Category": [
         "Kategori"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm login password": [
         "Yeni oturum açma parolası onayı"
@@ -2881,6 +2930,12 @@
       "Default language": [
         "Varsayılan dil"
       ],
+      "Delete": [
+        "Sil"
+      ],
+      "Device/certificate name": [
+        ""
+      ],
       "Digits": [
         "Hane sayısı"
       ],
@@ -2926,11 +2981,17 @@
       "Key": [
         "Anahtar"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Oturum açma parolası"
       ],
       "Mailbox password": [
         "Posta kutusu parolası"
+      ],
+      "Moderate NAT": [
+        "Ilımlı NAT"
       ],
       "Name": [
         "Ad"
@@ -2946,6 +3007,12 @@
       ],
       "New password": [
         "Yeni parola"
+      ],
+      "No filter": [
+        ""
+      ],
+      "Non-standard ports": [
+        "Standart olmayan kapı numaraları"
       ],
       "Old login password": [
         "Eski oturum açma parolası"
@@ -3055,6 +3122,9 @@
       "Verification method": [
         "Doğrulama yöntemi"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
       ],
@@ -3108,11 +3178,6 @@
       ],
       "Expired": [
         "Süresi geçmiş"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Ekran görüntüsü ekleyin"
       ]
     },
     "Link": {
@@ -3454,12 +3519,6 @@
       "Add gift code": [
         "Hediye kodu ekle"
       ],
-      "Browser name": [
-        "Web tarayıcı adı"
-      ],
-      "Browser version": [
-        "Web tarayıcı sürümü"
-      ],
       "Choose a new password": [
         "Yeni bir parola seçin"
       ],
@@ -3493,12 +3552,6 @@
       "Mailbox password": [
         "Posta kutusu parolası"
       ],
-      "OS name": [
-        "İşletim sistemi adı"
-      ],
-      "OS version": [
-        "İşletim sistemi sürümü"
-      ],
       "Other": [
         "Diğer"
       ],
@@ -3511,14 +3564,14 @@
       "Postal code": [
         "Posta kodu"
       ],
-      "Proton username": [
-        "Proton kullanıcı adı"
-      ],
       "Recovery email address": [
         "Kurtarma e-posta adresi"
       ],
       "Reset code": [
         "Sıfırlama kodu"
+      ],
+      "Select": [
+        "Seçin"
       ],
       "Select a reason": [
         "Bir neden seçin"
@@ -3870,6 +3923,20 @@
         "Abonelikten ayrıldınız"
       ]
     },
+    "Success notification": {
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ]
+    },
     "Suffix": {
       "/ month": [
         "/ ay"
@@ -3922,8 +3989,14 @@
       "${ VPN_APP_NAME } plan comparison": [
         "${ VPN_APP_NAME } tarifelerini karşılaştırın"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Platform seçin"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. İletişim kuralı seçin"
@@ -3933,6 +4006,12 @@
       ],
       "3. Select config file and download": [
         "3. Yapılandırma dosyasını seçin ve indirin"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account": [
         "Hesap"
@@ -4210,6 +4289,9 @@
       "Reset password?": [
         "Parola sıfırlansın mı?"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure Core Servers": [
         "Secure Core sunucuları"
       ],
@@ -4275,6 +4357,9 @@
       ],
       "What's new": [
         "Yenilikler"
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "You already have a Proton account": [
         "Zaten bir Proton hesabınız var"

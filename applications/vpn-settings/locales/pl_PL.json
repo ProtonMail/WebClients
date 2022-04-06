@@ -55,14 +55,14 @@
       "Add PayPal payment method": [
         "Dodaj PayPal jako metodę płatności"
       ],
-      "Add screenshot(s)": [
-        "Dodaj zrzuty ekranu"
-      ],
       "annual billing": [
         "plan roczny"
       ],
       "Apply": [
         "Zastosuj"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Wstecz"
@@ -78,9 +78,6 @@
       ],
       "Chat with us": [
         "Czatuj z nami"
-      ],
-      "Clear": [
-        "Wyczyść"
       ],
       "Close": [
         "Zamknij"
@@ -114,6 +111,9 @@
       ],
       "Copy email to clipboard": [
         "Kopiuj adres e-mail do schowka"
+      ],
+      "Create": [
+        ""
       ],
       "Create account": [
         "Utwórz konto"
@@ -178,8 +178,11 @@
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
       ],
-      "Get ${ vpnPlus }": [
+      "Extend": [
         ""
+      ],
+      "Get ${ vpnPlus }": [
+        "Wybierz plan ${ vpnPlus }"
       ],
       "Get a new password": [
         "Otrzymaj nowe hasło"
@@ -202,9 +205,6 @@
       "Hide additional features": [
         "Ukryj dodatkowe funkcje"
       ],
-      "Hide info": [
-        "Ukryj informacje"
-      ],
       "Homepage": [
         "Strona główna"
       ],
@@ -216,6 +216,9 @@
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
         "Zachowaj konto ${ BRAND_NAME } ${ currentPlanName }"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Ładowanie weryfikacji"
@@ -304,6 +307,12 @@
       "Retry": [
         "Spróbuj ponownie"
       ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
+      ],
       "Save": [
         "Zapisz"
       ],
@@ -328,11 +337,8 @@
       "Show": [
         "Pokaż"
       ],
-      "Show info": [
-        "Pokaż informacje"
-      ],
       "Show preview": [
-        ""
+        "Pokaż podgląd"
       ],
       "Sign out": [
         "Wyloguj"
@@ -434,11 +440,6 @@
         "Pomniejsz"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Wybierz"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } adres e-mail",
@@ -498,6 +499,11 @@
         "${ vpnBonus } połączenia",
         "${ vpnBonus } połączeń",
         "${ vpnBonus } połączeń"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -711,7 +717,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar feature": {
@@ -771,6 +777,14 @@
       ],
       "Unsupported calendar format": [
         "Format kalendarza jest nieobsługiwany"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Zamknij"
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1797,6 +1811,11 @@
         "${ refresh } lub spróbuj ponownie później."
       ]
     },
+    "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nie wybrano obrazu"
@@ -1952,7 +1971,7 @@
         "Funkcja Kill Switch zapobiega ujawnieniu adresu IP"
       ],
       "Laptop & smartphone shown connected to ${ VPN_APP_NAME } network.": [
-        ""
+        "Laptop i telefon podłączone do sieci ${ VPN_APP_NAME }."
       ],
       "No logs": [
         "Brak przechowywania logów"
@@ -1978,10 +1997,10 @@
         "${ mailAppName } Free"
       ],
       "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
-        ""
+        "Plan ${ mailPlus } jest ograniczony do jednego użytkownika i zawiera 5 GB przestrzeni dyskowej."
       ],
       "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
+        "Plan ${ mailProfessional } zawiera 5 GB przestrzeni dyskowej i 5 adresów e-mail za każdego użytkownika organizacji."
       ],
       "${ number } city": [
         "${ number } miasto",
@@ -2014,10 +2033,10 @@
         ""
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
-        "",
-        "",
-        "",
-        ""
+        "Plan ${ vpnPlus } zawiera ${ maxVpn } połączenie VPN.",
+        "Plan ${ vpnPlus } zawiera ${ maxVpn } połączenia VPN.",
+        "Plan ${ vpnPlus } zawiera ${ maxVpn } połączeń VPN.",
+        "Plan ${ vpnPlus } zawiera ${ maxVpn } połączeń VPN."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         ""
@@ -2032,10 +2051,10 @@
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "",
-        "",
-        "",
-        ""
+        "+${ organization.BonusVPN } połączenie ${ VPN_APP_NAME } (pozwala na podłączenie dodatkowych urządzeń do sieci VPN)",
+        "+${ organization.BonusVPN } połączenia ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)",
+        "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)",
+        "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Zniżka 20% za kupon ${ code } została wliczona do Twojej subskrypcji"
@@ -2054,6 +2073,9 @@
       ],
       "A free and uncensored Internet should be available to all.": [
         "Wszyscy powinni mieć dostęp do wolnego i niecenzurowanego Internetu."
+      ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Uzyskaj dostęp do zablokowanych treści, jak media społecznościowe, aktualności, Wikipedia, YouTube i wiele więcej, gdziekolwiek jesteś."
@@ -2187,6 +2209,9 @@
       "Expired": [
         "Wygasła"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "For families and small teams; includes both Mail and VPN.": [
         "Dla rodzin i małych zespołów. Plan zawiera pocztę i usługę VPN."
       ],
@@ -2218,7 +2243,7 @@
         "tutaj"
       ],
       "If you are a ${ MAIL_APP_NAME } user you can use your Proton account to log in to ${ VPN_APP_NAME }.": [
-        ""
+        "Jeśli jesteś użytkownikiem poczty ${ MAIL_APP_NAME }, możesz wykorzystać swoje konto Proton do zalogowania się do usługi ${ VPN_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
@@ -2242,13 +2267,13 @@
         "Jeśli zgubisz urządzenie z przypisanym uwierzytelnianiem dwustopniowym, możesz użyć poniższych kodów zapasowych, zamiast 6-cyfrowego kodu uwierzytelniającego, aby zalogować się na swoje konto. Każdy kod może zostać użyty tylko jeden raz."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        ""
+        "Po obniżeniu planu stracisz dostęp do płatnych funkcji poczty ${ MAIL_APP_NAME } i usługi ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        ""
+        "Po obniżeniu planu stracisz dostęp do płatnych funkcji poczty ${ MAIL_APP_NAME }, takich jak dodatkowa przestrzeń dyskowa i filtry."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        ""
+        "Po obniżeniu planu stracisz dostęp do płatnych funkcji usługi ${ VPN_APP_NAME }."
       ],
       "If you remember your old password later, you can recover your existing messages.": [
         "Możesz odzyskać istniejące wiadomości, jeśli pamiętasz swoje stare hasło."
@@ -2296,7 +2321,10 @@
         "Tego hasła nie można odzyskać - zachowaj je w bezpiecznym miejscu."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        ""
+        "Dowiedz się, jak zalogować do usługi ${ VPN_APP_NAME } za pomocą alternatywnych aplikacji."
+      ],
+      "Learn more": [
+        "Dowiedz się więcej"
       ],
       "Loading": [
         "Ładowanie"
@@ -2308,7 +2336,7 @@
         "Ładowanie podglądu"
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        ""
+        "Aby aktywować adres, zaloguj się do poczty ${ MAIL_APP_NAME }"
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
         "Upewnij się, że pamiętasz hasło, aby zalogować się i odszyfrować wiadomości. ${ boldAlert } Zalecamy w pierwszej kolejności dodanie ${ recoveryLink }."
@@ -2342,6 +2370,9 @@
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Po kliknięciu przycisku \"Obniż plan\" może minąć kilka minut przed zmianą planu do wersji Free. "
+      ],
+      "Or select a particular server:": [
+        ""
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "W przeciwnym razie, dostęp do konta zostanie ograniczony, a następnie wyłączony."
@@ -2391,9 +2422,6 @@
       "Priority support": [
         "Priorytetowe wsparcie"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton nie może odzyskać utraconych haseł."
       ],
@@ -2407,6 +2435,9 @@
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        ""
+      ],
+      "Revoke certificate ${ name }": [
         ""
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
@@ -2423,9 +2454,6 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Zeskanuj kod QR za pomocą aplikacji uwierzytelniania dwustopniowego. ${ switchButton }."
-      ],
-      "Screenshot(s) attached": [
-        "Zrzuty ekranu zostały dołączone"
       ],
       "See all plans": [
         "Zobacz wszystkie plany"
@@ -2454,8 +2482,8 @@
       "Storage GB": [
         "Przestrzeń dyskowa (GB)"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy pocztą, kalendarzem i dyskiem."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny"
@@ -2476,6 +2504,9 @@
         "Dziękujemy za wsparcie naszej misji."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        ""
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
         ""
       ],
       "This account has been suspended due to a potential policy violation.": [
@@ -2552,6 +2583,9 @@
       ],
       "Upgrade now": [
         "Ulepsz teraz"
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         ""
@@ -2790,7 +2824,7 @@
     },
     "Label": {
       "${ MAIL_APP_NAME } address": [
-        ""
+        "Adres ${ MAIL_APP_NAME }"
       ],
       "${ n } VPN connection available": [
         "${ n } dostępne połączenie VPN",
@@ -2843,8 +2877,17 @@
       "Annual discount (${ discountPercentage }%)": [
         "Zniżka roczna (${ discountPercentage }%)"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Back to:": [
         "Wróć do:"
+      ],
+      "Block malware only": [
+        "Zablokuj złośliwe oprogramowanie"
+      ],
+      "Block malware, ads and trackers": [
+        ""
       ],
       "bonus storage": [
         "bonusowa przestrzeń dyskowa"
@@ -2873,8 +2916,14 @@
       "Category": [
         "Kategoria"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm login password": [
         "Potwierdź hasło logowania"
@@ -2921,6 +2970,12 @@
       "Default language": [
         "Język domyślny"
       ],
+      "Delete": [
+        "Usuń"
+      ],
+      "Device/certificate name": [
+        ""
+      ],
       "Digits": [
         "Cyfry"
       ],
@@ -2966,11 +3021,17 @@
       "Key": [
         "Klucz"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Hasło logowania"
       ],
       "Mailbox password": [
         "Hasło skrzynki pocztowej"
+      ],
+      "Moderate NAT": [
+        "Umiarkowany NAT"
       ],
       "Name": [
         "Nazwa"
@@ -2986,6 +3047,12 @@
       ],
       "New password": [
         "Nowe hasło"
+      ],
+      "No filter": [
+        ""
+      ],
+      "Non-standard ports": [
+        "Niestandardowe porty"
       ],
       "Old login password": [
         "Stare hasło logowania"
@@ -3084,7 +3151,7 @@
         "Nazwa użytkownika"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Nazwa użytkownika lub adres ${ MAIL_APP_NAME }"
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
         "Używasz ${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -3094,6 +3161,9 @@
       ],
       "Verification method": [
         "Metoda weryfikacji"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Przykro nam, że odchodzisz. Wyjaśnij nam, dlaczego nas opuszczasz, aby pomóc ulepszać nasze usługi."
@@ -3148,11 +3218,6 @@
       ],
       "Expired": [
         "Wygasła"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Dołącz zrzuty ekranu"
       ]
     },
     "Link": {
@@ -3494,12 +3559,6 @@
       "Add gift code": [
         "Dodaj kod podarunkowy"
       ],
-      "Browser name": [
-        "Nazwa przeglądarki"
-      ],
-      "Browser version": [
-        "Wersja przeglądarki"
-      ],
       "Choose a new password": [
         "Wybierz nowe hasło"
       ],
@@ -3533,12 +3592,6 @@
       "Mailbox password": [
         "Hasło skrzynki pocztowej"
       ],
-      "OS name": [
-        "Nazwa systemu operacyjnego"
-      ],
-      "OS version": [
-        "Wersja systemu operacyjnego"
-      ],
       "Other": [
         "Inna"
       ],
@@ -3551,14 +3604,14 @@
       "Postal code": [
         "Kod pocztowy"
       ],
-      "Proton username": [
-        "Nazwa użytkownika Proton"
-      ],
       "Recovery email address": [
         "Adres pomocniczy"
       ],
       "Reset code": [
         "Kod resetowania"
+      ],
+      "Select": [
+        "Wybierz"
       ],
       "Select a reason": [
         "Wybierz przyczynę"
@@ -3725,10 +3778,10 @@
     },
     "Plan Feature": {
       "${ mailPlus } account": [
-        ""
+        "Konto ${ mailPlus }"
       ],
       "${ mailVisionary } account": [
-        ""
+        "Konto ${ mailVisionary }"
       ],
       "All advanced security features": [
         "Wszystkie zaawansowane funkcje bezpieczeństwa"
@@ -3912,6 +3965,20 @@
         "Subskrypcja została anulowana"
       ]
     },
+    "Success notification": {
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ]
+    },
     "Suffix": {
       "/ month": [
         "/ miesiąc"
@@ -3959,13 +4026,19 @@
         "Szczegóły planu ${ title }"
       ],
       "${ VPN_APP_NAME } clients": [
-        ""
+        "Aplikacje ${ VPN_APP_NAME }"
       ],
       "${ VPN_APP_NAME } plan comparison": [
+        "Porównanie planów ${ VPN_APP_NAME }"
+      ],
+      "1. Give a name to the config to be generated": [
         ""
       ],
       "1. Select platform": [
         "1. Wybierz platformę"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Wybierz protokół"
@@ -3975,6 +4048,12 @@
       ],
       "3. Select config file and download": [
         "3. Wybierz plik konfiguracyjny i pobierz go"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account": [
         "Konto"
@@ -4118,7 +4197,7 @@
         "Wpisz hasło"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Wpisz nazwę użytkownika lub adres ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Błąd"
@@ -4130,7 +4209,7 @@
         "Ogólne"
       ],
       "Get ${ vpnPlus } to access all servers": [
-        ""
+        "Wybierz plan ${ vpnPlus }, aby uzyskać dostęp do wszystkich serwerów"
       ],
       "Gift code": [
         "Kod podarunkowy"
@@ -4252,6 +4331,9 @@
       "Reset password?": [
         "Zresetować hasło?"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure Core Servers": [
         "Serwery Secure Core"
       ],
@@ -4318,6 +4400,9 @@
       "What's new": [
         "Co nowego"
       ],
+      "WireGuard configuration": [
+        ""
+      ],
       "You already have a Proton account": [
         "Posiadasz już konto Proton"
       ],
@@ -4347,7 +4432,7 @@
     },
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
-        ""
+        "Faktura ${ MAIL_APP_NAME }"
       ]
     },
     "Tooltip": {
@@ -4379,7 +4464,7 @@
         "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
       ],
       "Includes ${ MAIL_APP_NAME } encrypted email with all features": [
-        ""
+        "Zawiera szyfrowaną pocztę ${ MAIL_APP_NAME } ze wszystkimi funkcjami"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Obsługa wielu użytkowników jest dostępna w planach z co najmniej 2 użytkownikami"
@@ -4618,7 +4703,7 @@
         "Usuwając ten numer telefonu, stracisz możliwość odzyskiwania swojego konta."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "Czat jest funkcją premium dostępną dla płatnych planów ${ VPN_APP_NAME }. Zamiast tego zgłoś błąd."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."

@@ -38,14 +38,14 @@
       "Add phone number": [
         ""
       ],
-      "Add screenshot(s)": [
-        "Rnu tuṭṭfa(win) n ugdil"
-      ],
       "Add to group": [
         "Rnu ɣer ugraw"
       ],
       "Apply": [
         "Snes"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Ɣer deffir"
@@ -256,9 +256,6 @@
       "Hide folders": [
         ""
       ],
-      "Hide info": [
-        "Ffer isallen"
-      ],
       "Hide labels": [
         ""
       ],
@@ -451,9 +448,6 @@
       "Show folders": [
         ""
       ],
-      "Show info": [
-        "Sken isallen"
-      ],
       "Show labels": [
         ""
       ],
@@ -558,11 +552,6 @@
       ],
       "Zoom out": [
         "Semẓi"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Fren"
       ]
     },
     "Actions message": {
@@ -809,6 +798,14 @@
         "Ugar n 12 n yisragen i yezrin ɣef uleqqem aneggaru"
       ],
       "Unsupported calendar format": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
         ""
       ]
     },
@@ -2700,9 +2697,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "Yettwarna ar udras"
       ],
@@ -2711,9 +2705,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter neɣ  ${ link } ad frun tugget n wuguren s wudem awurman."
-      ],
-      "Screenshot(s) attached": [
-        "Tuṭṭfa n ugdil tedda (ddant)"
       ],
       "Search cannot be enabled in this browser": [
         ""
@@ -2751,7 +2742,7 @@
       "Something went wrong, please try again later.": [
         "Yella wayen ur nteddu ara akken iwata, ttxil-k·m ɛreḍ tikkelt-nniḍen."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3062,6 +3053,9 @@
       "Apply to all unverified items": [
         ""
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         "Afaylu ameslaw"
       ],
@@ -3099,6 +3093,9 @@
         "Tamurt"
       ],
       "Created": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Delete drive?": [
@@ -3345,11 +3342,6 @@
     "Label for contact group name": {
       "Name": [
         "Isem"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Seddu tuṭṭfa(win) n ugdil"
       ]
     },
     "Label/folder modal": {
@@ -3744,12 +3736,6 @@
       "A way to contact you": [
         "Ttawil akken ad ken-nermes"
       ],
-      "Browser name": [
-        "Isem n iminig web"
-      ],
-      "Browser version": [
-        "Lqem n yiminig"
-      ],
       "e.g. Julia Smith": [
         "md. Julia Smith"
       ],
@@ -3774,26 +3760,20 @@
       "New name": [
         "Isem amaynut"
       ],
-      "OS name": [
-        "Isem n unagraw n wammud"
-      ],
-      "OS version": [
-        "Lqem n unagraw n wammud"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "Ttxil glem-d ugur sakin seddu-d akk iznan n tuccḍa"
       ],
-      "Proton username": [
-        "Isem n useqdac Proton"
-      ],
       "Search for group name": [
         "Nadi isem n ugraw"
       ],
       "Search for name or email": [
         "Nadi ɣef yisem neɣ imayl"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Bdu tira n tansa n yimayl"

@@ -41,14 +41,14 @@
       "Add phone number": [
         "Aggiungi numero di telefono"
       ],
-      "Add screenshot(s)": [
-        "Aggiungi screenshot"
-      ],
       "Add to group": [
         "Aggiungi al gruppo"
       ],
       "Apply": [
         "Applica"
+      ],
+      "Attach screenshot(s)": [
+        "Allega screenshot"
       ],
       "Back": [
         "Indietro"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Scegli un file o trascinalo qui"
-      ],
-      "Clear": [
-        "Elimina"
       ],
       "Clear data": [
         "Cancella dati"
@@ -213,9 +210,6 @@
       ],
       "Hide folders": [
         "Nascondi cartelle"
-      ],
-      "Hide info": [
-        "Nascondi informazioni"
       ],
       "Hide labels": [
         "Nascondi etichette"
@@ -379,9 +373,6 @@
       "Show folders": [
         "Mostra cartelle"
       ],
-      "Show info": [
-        "Mostra informazioni"
-      ],
       "Show labels": [
         "Mostra etichette"
       ],
@@ -480,11 +471,6 @@
       ],
       "Yes, I'll attend": [
         "Sì, parteciperò"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleziona"
       ]
     },
     "Actions message": {
@@ -1860,7 +1846,7 @@
         "L'evento appartiene ad un calendario disabilitato."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
         "Aggiungi calendario"
       ]
@@ -3083,17 +3069,11 @@
       "Priority support": [
         "Assistenza prioritaria"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."
       ],
       "Removed participants will be notified.": [
         "I partecipanti rimossi saranno notificati."
-      ],
-      "Screenshot(s) attached": [
-        "Screenshot allegato/i"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
@@ -3113,8 +3093,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Alcune delle risposte alle occorrenze precedentemente aggiornate dall'organizzatore andranno perse."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Lo spazio di archiviazione è condiviso tra Mail, Calendar e Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Supporto per 1 dominio di posta elettronica personalizzato"
@@ -3382,6 +3362,9 @@
       "All day": [
         "Tutto il giorno"
       ],
+      "Attach screenshot(s)": [
+        "Allega screenshot"
+      ],
       "Automatically save contacts": [
         "Salvataggio automatico dei contatti"
       ],
@@ -3432,6 +3415,9 @@
       ],
       "Default notifications": [
         "Notifiche predefinite"
+      ],
+      "Delete": [
+        "Elimina"
       ],
       "Description": [
         "Descrizione"
@@ -3629,11 +3615,6 @@
     "Label for contact group name": {
       "Name": [
         "Nome"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Allega screenshot"
       ]
     },
     "Label/folder modal": {
@@ -4197,12 +4178,6 @@
       "Add title": [
         "Aggiungi titolo"
       ],
-      "Browser name": [
-        "Nome del browser"
-      ],
-      "Browser version": [
-        "Versione del browser"
-      ],
       "e.g. Julia Smith": [
         "es. Julia Smith"
       ],
@@ -4224,26 +4199,20 @@
       "Name": [
         "Nome"
       ],
-      "OS name": [
-        "Nome del sistema operativo"
-      ],
-      "OS version": [
-        "Versione del sistema operativo"
-      ],
       "Password": [
         "Password"
       ],
       "Please describe the problem and include any error messages": [
         "Per favore descrivi il problema e includi eventuali messaggi di errore"
       ],
-      "Proton username": [
-        "Nome utente di Proton"
-      ],
       "Search for group name": [
         "Cerca per nome gruppo"
       ],
       "Search for name or email": [
         "Cerca nome o email"
+      ],
+      "Select": [
+        "Seleziona"
       ],
       "Start typing an email address": [
         "Inizia a digitare un indirizzo email"

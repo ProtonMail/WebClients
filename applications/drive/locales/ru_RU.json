@@ -38,14 +38,14 @@
       "Add phone number": [
         "Добавить номер телефона"
       ],
-      "Add screenshot(s)": [
-        "Добавить снимки экрана"
-      ],
       "Add to group": [
         "Добавить в группу"
       ],
       "Apply": [
         "Применить"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Назад"
@@ -260,9 +260,6 @@
       "Hide folders": [
         "Скрыть папки"
       ],
-      "Hide info": [
-        "Скрыть информацию"
-      ],
       "Hide labels": [
         "Скрыть ярлыки"
       ],
@@ -408,7 +405,7 @@
         "Восстановить из корзины"
       ],
       "Resume all": [
-        ""
+        "Продолжить все"
       ],
       "Resume download": [
         "Возобновить скачивание"
@@ -454,9 +451,6 @@
       ],
       "Show folders": [
         "Показать папки"
-      ],
-      "Show info": [
-        "Показать информацию"
       ],
       "Show labels": [
         "Показать ярлыки"
@@ -564,11 +558,6 @@
         "Уменьшить масштаб"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Выбрать"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } или ${ importContact }."
@@ -604,7 +593,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+        "Доступ к бета-версии позволит вам использовать бета-версию ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME } до их публичного выпуска. Это означает, что вы сможете первыми опробовать новые продукты, получать обновления и использовать новые функции."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Если вы столкнетесь с проблемами, то всегда можете отключить доступ к Beta-функциям."
@@ -779,7 +768,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Продолжить, используя ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar status": {
@@ -814,6 +803,14 @@
       ],
       "Unsupported calendar format": [
         "Неподдерживаемый формат календаря"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirm modal title": {
@@ -1911,7 +1908,7 @@
         "Некоторые имена ваших ярлыков недоступны. Пожалуйста, настройте импорт для редактирования этих имен."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
@@ -2521,10 +2518,10 @@
         "ЭЦП проверена. Этот файл был безопасно загружен ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        ""
+        "ЭЦП проверена. Эта папка была безопасно загружена ${ emailAddress }."
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        ""
+        "Скачивание ${ downloadFileName } будет прервано"
       ],
       "Downloaded": [
         "Скачано"
@@ -2554,10 +2551,10 @@
         "Не удалось открыть защищенную ссылку. Причина: ${ error }"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "У файла отсутствует подпись. Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "У файла отсутствует подпись. Мы не смогли проверить, кто загрузил ${ fileName }."
       ],
       "File will not be uploaded": [
         "Файл не будет загружен"
@@ -2569,10 +2566,10 @@
         "Содержимое папки объединяется в одну папку"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "У папки отсутствует подпись. Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "У папки отсутствует подпись. Мы не смогли проверить, кто загрузил ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Папка не будет загружена"
@@ -2731,7 +2728,7 @@
         "Максимальное количество символов: ${ MAX_CUSTOM_PASSWORD_LENGTH }"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
       ],
       "Only the people with the link and the password can access this file.": [
         "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
@@ -2749,10 +2746,10 @@
         "Окончательно удалить все файлы в вашем хранилище"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+        "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
@@ -2784,9 +2781,6 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "Поставлено в очередь"
       ],
@@ -2795,9 +2789,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
-      ],
-      "Screenshot(s) attached": [
-        "Снимки экрана прикреплены"
       ],
       "Search cannot be enabled in this browser": [
         "Поиск не может быть включен в этом браузере"
@@ -2818,13 +2809,13 @@
         "Время сеанса истекло"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        ""
+        "Настройка PGP позволяет отправлять электронную почту, защифрованную сквозным метом с пользователем, не являющимся ${ BRAND_NAME }, который использует службу, совместимую с PGP."
       ],
       "Share files with links": [
         "Делитесь файлами с помощью ссылок"
       ],
       "Signature check will be ignored": [
-        ""
+        "Проверка подписи будет проигнорирована"
       ],
       "Signature issue": [
         "Проблема с подписью"
@@ -2835,8 +2826,8 @@
       "Something went wrong, please try again later.": [
         "Что-то пошло не так. Пожалуйста, повторите попытку позже."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Место используют Mail, Calendar и Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
@@ -2845,13 +2836,13 @@
         "служба поддержки"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "Учетная запись может иметь новый ключ, или могли быть взломаны следующие элементы: ${ items }. Открывайте только в том случае, если им доверяете."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Приложению необходимо расшифровать ваши контакты, прежде чем экспортировать их. В итоге будет сгенерирован VCF-файл, и вы сможете его скачать."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "Возможно, следующие элементы были взломаны: ${ items }. Открывайте их только в том случае, если вы им доверяете."
       ],
       "There are no files yet": [
         "Пока здесь пусто"
@@ -2893,10 +2884,10 @@
         "Это перезапишет существующую папку"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        ""
+        "Чтобы включить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должен индексировать ваши файлы локально."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        ""
+        "Чтобы включить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должен проиндексировать ваши файлы локально. Вы по-прежнему можете использовать ${ DRIVE_APP_NAME } в обычном режиме - мы сообщим вам, когда индексирование будет завершено."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
@@ -2953,10 +2944,10 @@
         "Загрузка сотен файлов сразу может повлиять на производительность."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "Мы не смогли проверить, кто загрузил ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
@@ -3148,6 +3139,9 @@
       "Apply to all unverified items": [
         "Применить ко всем непроверенным элементам"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         "Аудиофайл"
       ],
@@ -3186,6 +3180,9 @@
       ],
       "Created": [
         "Создано"
+      ],
+      "Delete": [
+        ""
       ],
       "Delete drive?": [
         "Удалить хранилище?",
@@ -3410,7 +3407,7 @@
         "Загрузить картинку"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Имя пользователя или адрес ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Проверочный код"
@@ -3433,11 +3430,6 @@
     "Label for contact group name": {
       "Name": [
         "Имя"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Приложить снимки экрана"
       ]
     },
     "Label/folder modal": {
@@ -3773,24 +3765,24 @@
     },
     "Onboarding Action": {
       "Enable Beta Access": [
-        ""
+        "Включить доступ к бета-версии"
       ],
       "Start using ${ appName }": [
-        ""
+        "Начните использовать ${ appName }"
       ],
       "Upgrade account": [
-        ""
+        "Улучшить аккаунт"
       ]
     },
     "Onboarding Info": {
       "${ appName } is currently in early access and only available to users with a paid plan.": [
-        ""
+        "Ранний доступ к ${ appName } можно получить только в рамках платного тарифа."
       ],
       "${ appName } is currently only available if you enable Beta Access.": [
-        ""
+        "Доступ к ${ appName } возможен, только если вы включите доступ к бета-версии."
       ],
       "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        ""
+        "Защитите свои данные, воспользовавшись сквозным шифрованием. ${ appName } позволит вам безопасно хранить файлы и делиться ими."
       ]
     },
     "Onboarding Proton": {
@@ -3827,13 +3819,13 @@
     },
     "Onboarding Title": {
       "${ appName } is in Beta": [
-        ""
+        "${ appName } в бета-версии"
       ],
       "Meet your new secure file storage": [
-        ""
+        "Представляем новую систему защищенного хранения файлов"
       ],
       "Upgrade to access ${ appName }": [
-        ""
+        "Чтобы получить доступ к ${ appName }, смените тариф"
       ]
     },
     "Option": {
@@ -3872,12 +3864,6 @@
       "A way to contact you": [
         "Способ связаться с вами"
       ],
-      "Browser name": [
-        "Название браузера"
-      ],
-      "Browser version": [
-        "Версия браузера"
-      ],
       "e.g. Julia Smith": [
         "например, Джулия Смит"
       ],
@@ -3902,26 +3888,20 @@
       "New name": [
         "Новое имя"
       ],
-      "OS name": [
-        "Название ОС"
-      ],
-      "OS version": [
-        "Версия ОС"
-      ],
       "Password": [
         "Пароль"
       ],
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
       ],
-      "Proton username": [
-        "Имя пользователя в Proton"
-      ],
       "Search for group name": [
         "Поиск по названию группы"
       ],
       "Search for name or email": [
         "Поиск имени или эл. почты"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Начните вводить адрес эл. почты"
@@ -4365,7 +4345,7 @@
         "Введите свой пароль"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Введите свое имя пользователя или адрес электронной почты ${ MAIL_APP_NAME }"
       ],
       "Exporting contacts": [
         "Экспортирование контактов"
@@ -4500,7 +4480,7 @@
         "Результаты поиска"
       ],
       "Search results: ${ searchView.numberOfResults } found": [
-        ""
+        "Результаты поиска: найдено ${ searchView.numberOfResults }"
       ],
       "Searching…": [
         "Поиск…"
@@ -4645,7 +4625,7 @@
         "Выберите схему PGP, которая будет использоваться при подписи или шифровании сообщений пользователю. Учтите, что PGP/Inline работает с неформатированным текстом."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнется с самых последних сообщений."
@@ -4719,7 +4699,7 @@
         "Если вы не помните свой пароль, повторно активировать ключ невозможно. Мы можем помочь вам отключить предупреждение, но в процессе вы навсегда потеряете доступ ко всем данным, зашифрованным с помощью этого ключа."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "Живой чат – это платная функция, доступная только для платных тарифов ${ VPN_APP_NAME }. Пожалуйста, вместо этого откройте билет."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton объединит все папки с одинаковым названием. Чтобы избежать этого, измените названия перед импортом."

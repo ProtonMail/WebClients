@@ -55,14 +55,14 @@
       "Add PayPal payment method": [
         "Voeg PayPal als betalingsmethode toe"
       ],
-      "Add screenshot(s)": [
-        "Schermafdruk(ken) toevoegen"
-      ],
       "annual billing": [
         "jaarlijkse betaling"
       ],
       "Apply": [
         "Pas toe"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Vorige"
@@ -78,9 +78,6 @@
       ],
       "Chat with us": [
         "Chat met ons"
-      ],
-      "Clear": [
-        "Wissen"
       ],
       "Close": [
         "Sluit"
@@ -114,6 +111,9 @@
       ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
+      ],
+      "Create": [
+        ""
       ],
       "Create account": [
         "Account aanmaken"
@@ -178,6 +178,9 @@
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
+      "Extend": [
+        ""
+      ],
       "Get ${ vpnPlus }": [
         "Krijg ${ vpnPlus }"
       ],
@@ -202,9 +205,6 @@
       "Hide additional features": [
         "Aanvullende functies verbergen"
       ],
-      "Hide info": [
-        "Verberg informatie"
-      ],
       "Homepage": [
         "Startpagina"
       ],
@@ -216,6 +216,9 @@
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
         "Houd mijn ${ BRAND_NAME } ${ currentPlanName } account"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Laden van verificatie"
@@ -304,6 +307,12 @@
       "Retry": [
         "Opnieuw proberen"
       ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
+      ],
       "Save": [
         "Opslaan"
       ],
@@ -328,11 +337,8 @@
       "Show": [
         "Toon"
       ],
-      "Show info": [
-        "Toon informatie"
-      ],
       "Show preview": [
-        ""
+        "Voorbeeld tonen"
       ],
       "Sign out": [
         "Uitloggen"
@@ -434,11 +440,6 @@
         "Zoom uit"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selecteer"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } e-mailadres",
@@ -480,6 +481,11 @@
       "${ vpnBonus } connection": [
         "${ vpnBonus } verbinding",
         "${ vpnBonus } verbindingen"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -753,6 +759,14 @@
       ],
       "Unsupported calendar format": [
         "Niet-ondersteunde agenda-indeling"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Sluit"
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1775,6 +1789,11 @@
         "U kunt ook ${ refresh } of probeer het later opnieuw."
       ]
     },
+    "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Geen afbeelding geselecteerd"
@@ -2023,6 +2042,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Iedereen moet kunnen beschikken over een vrij en ongecensureerd internet."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Toegang tot geblokkeerde inhoud, zoals sociale media, nieuws, Wikipedia, YouTube, en vele anderen, ongeacht waar u bent."
       ],
@@ -2155,6 +2177,9 @@
       "Expired": [
         "Verlopen"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "For families and small teams; includes both Mail and VPN.": [
         "Voor families en kleine teams; omvat zowel Mail en VPN."
       ],
@@ -2266,6 +2291,9 @@
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Meer informatie over hoe u zich kunt aanmelden bij ${ VPN_APP_NAME } met VPN-applicaties via apps van derden."
       ],
+      "Learn more": [
+        "Meer informatie"
+      ],
       "Loading": [
         "Laden"
       ],
@@ -2310,6 +2338,9 @@
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Zodra u op \"Downgrade\" klikt, kan het enkele minuten duren om uw account te downgraden naar een gratis abonnement. "
+      ],
+      "Or select a particular server:": [
+        ""
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Anders zal toegang tot uw account beperkt worden en zal uw account na verloop van tijd worden uitgeschakeld."
@@ -2359,9 +2390,6 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton kan u niet helpen bij het herstellen van verloren wachtwoorden."
       ],
@@ -2377,6 +2405,9 @@
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Het resetten van uw wachtwoord zal uw encryptiesleutels resetten voor alle Proton gerelateerde diensten (Mail en VPN). U kunt uw bestaande berichten niet lezen. Als u uw ${ MAIL_APP_NAME } inloggegevens kent, reset dan NIET. U kunt zich aanmelden met hen ${ hereLink }."
       ],
+      "Revoke certificate ${ name }": [
+        ""
+      ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Stuur uw internetverkeer met één klik door via het Tor-netwerk."
       ],
@@ -2391,9 +2422,6 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scan deze Qr-code met uw tweestapsverificatieapparaat om uw account in te stellen. ${ switchButton }."
-      ],
-      "Screenshot(s) attached": [
-        "Schermafdruk(ken) bijgevoegd"
       ],
       "See all plans": [
         "Bekijk alle abonnementen"
@@ -2422,8 +2450,8 @@
       "Storage GB": [
         "Opslag GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Opslagruimte is gedeeld voor Mail, Calendar en Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Ondersteuning voor 1 aangepast e-mail domein"
@@ -2445,6 +2473,9 @@
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Deze configuratiebestanden laten u kiezen met welke ${ VPN_APP_NAME }-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
@@ -2520,6 +2551,9 @@
       ],
       "Upgrade now": [
         "Upgrade nu"
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gebruik de volgende inloggegevens bij het verbinden met ${ VPN_APP_NAME } servers zonder toepassing. Voorbeelden gebruiken gevallen zoals: Tunnelblick on macOS, OpenVPN op GNU/Linux."
@@ -2803,8 +2837,17 @@
       "Annual discount (${ discountPercentage }%)": [
         "Jaarlijkse korting (${ discountPercentage }%)"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Back to:": [
         "Terug naar:"
+      ],
+      "Block malware only": [
+        "Alleen malware blokkeren"
+      ],
+      "Block malware, ads and trackers": [
+        ""
       ],
       "bonus storage": [
         "bonus opslag"
@@ -2833,8 +2876,14 @@
       "Category": [
         "Categorie"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm login password": [
         "Bevestig inlogwachtwoord"
@@ -2881,6 +2930,12 @@
       "Default language": [
         "Standaardtaal"
       ],
+      "Delete": [
+        "Verwijder"
+      ],
+      "Device/certificate name": [
+        ""
+      ],
       "Digits": [
         "Cijfers"
       ],
@@ -2926,11 +2981,17 @@
       "Key": [
         "Sleutel"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Inlogwachtwoord"
       ],
       "Mailbox password": [
         "Mailboxwachtwoord"
+      ],
+      "Moderate NAT": [
+        "Gemiddelde NAT"
       ],
       "Name": [
         "Naam"
@@ -2946,6 +3007,12 @@
       ],
       "New password": [
         "Nieuw wachtwoord"
+      ],
+      "No filter": [
+        ""
+      ],
+      "Non-standard ports": [
+        "Niet-standaard poorten"
       ],
       "Old login password": [
         "Oud inlogwachtwoord"
@@ -3055,6 +3122,9 @@
       "Verification method": [
         "Verificatiemethode"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "We vinden het jammer u te zien gaan. Leg uit waarom u vertrekt om ons te helpen te verbeteren."
       ],
@@ -3108,11 +3178,6 @@
       ],
       "Expired": [
         "Verlopen"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Schermafbeelding(en) toevoegen"
       ]
     },
     "Link": {
@@ -3454,12 +3519,6 @@
       "Add gift code": [
         "Voeg cadeaucode toe"
       ],
-      "Browser name": [
-        "Browsernaam"
-      ],
-      "Browser version": [
-        "Browserversie"
-      ],
       "Choose a new password": [
         "Kies een nieuw wachtwoord"
       ],
@@ -3493,12 +3552,6 @@
       "Mailbox password": [
         "Mailboxwachtwoord"
       ],
-      "OS name": [
-        "Besturingssysteem"
-      ],
-      "OS version": [
-        "Versie besturingssysteem"
-      ],
       "Other": [
         "Overige"
       ],
@@ -3511,14 +3564,14 @@
       "Postal code": [
         "Postcode"
       ],
-      "Proton username": [
-        "Proton gebruikersnaam"
-      ],
       "Recovery email address": [
         "E-mailadres voor herstel"
       ],
       "Reset code": [
         "Code resetten"
+      ],
+      "Select": [
+        "Selecteer"
       ],
       "Select a reason": [
         "Selecteer een reden"
@@ -3870,6 +3923,20 @@
         "U bent succesvol afgemeld"
       ]
     },
+    "Success notification": {
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ]
+    },
     "Suffix": {
       "/ month": [
         "/ maand"
@@ -3917,13 +3984,19 @@
         "${ title } abonnement details"
       ],
       "${ VPN_APP_NAME } clients": [
-        ""
+        "${ VPN_APP_NAME } clients"
       ],
       "${ VPN_APP_NAME } plan comparison": [
         "${ VPN_APP_NAME }-abonnement vergelijken"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "Selecteer platform"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Selecteer protocol"
@@ -3933,6 +4006,12 @@
       ],
       "3. Select config file and download": [
         "3. Selecteer configuratiebestand en download"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account": [
         "Account"
@@ -4210,6 +4289,9 @@
       "Reset password?": [
         "Wachtwoord resetten?"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure Core Servers": [
         "Secure Core Servers"
       ],
@@ -4275,6 +4357,9 @@
       ],
       "What's new": [
         "Wat is er nieuw"
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "You already have a Proton account": [
         "U heeft al een Proton account"
