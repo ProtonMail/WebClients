@@ -47,17 +47,11 @@
       "Add phone number": [
         "Додати номер телефону"
       ],
-      "Add screenshot(s)": [
-        "Додати знімки екрана"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Додати до ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Додати до групи"
-      ],
-      "Advanced search": [
-        "Розширений пошук"
       ],
       "Align center": [
         "Вирівняти по центру"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "Архівувати"
+      ],
+      "Attach screenshot(s)": [
+        "Додати знімки екрана"
       ],
       "Attachment": [
         "Вкладення"
@@ -329,9 +326,6 @@
       "Export contacts": [
         "Експортувати контакти"
       ],
-      "Fewer search options": [
-        "Менше варіантів пошуку"
-      ],
       "Filter on...": [
         "Фільтр..."
       ],
@@ -392,9 +386,6 @@
       "Hide folders": [
         "Сховати теки"
       ],
-      "Hide info": [
-        "Приховати інформацію"
-      ],
       "Hide labels": [
         "Сховати мітки"
       ],
@@ -403,6 +394,9 @@
       ],
       "I have a question": [
         "У мене є питання"
+      ],
+      "Images will be loaded without a proxy": [
+        "Зображення завантажаться без проксі"
       ],
       "import": [
         "імпортувати"
@@ -457,6 +451,9 @@
       ],
       "Learn more": [
         "Докладніше"
+      ],
+      "Less search options": [
+        "Менше варіантів пошуку"
       ],
       "Load": [
         "Завантажити"
@@ -580,6 +577,9 @@
       ],
       "No": [
         "Ні"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        "Елементів стеження не виявлено, але деякі зображення неможливо завантажити з активним захистом від стеження."
       ],
       "No, I won't attend": [
         "Не підтверджую присутність"
@@ -776,20 +776,17 @@
       "Show details": [
         "Показати подробиці"
       ],
-      "Show fewer search options": [
-        "Менше варіантів пошуку"
-      ],
       "Show folders": [
         "Показати теки"
-      ],
-      "Show info": [
-        "Показати інформацію"
       ],
       "Show labels": [
         "Показати мітки"
       ],
       "Show less": [
         "Згорнути"
+      ],
+      "Show less search options": [
+        "Менше варіантів пошуку"
       ],
       "Show messages": [
         "Показати повідомлення"
@@ -811,9 +808,6 @@
       ],
       "Skip": [
         "Пропустити"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "Деякі зображення неможливо завантажити з активним захистом від стеження"
       ],
       "Star": [
         "Позначити зірочкою"
@@ -984,9 +978,9 @@
         "Зменшити"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Обрати"
+    "action": {
+      "Search messages": [
+        "Пошук повідомлень"
       ]
     },
     "Actions message": {
@@ -4466,6 +4460,9 @@
       "No results found": [
         "Результатів не знайдено"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        "Елементів стеження не виявлено, але деякі зображення неможливо завантажити з активним захистом від стеження"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Жоден із вивантажених ключів не є дійсним для шифрування. Шифрування автоматично вимкнено."
       ],
@@ -4535,9 +4532,6 @@
       "Priority support": [
         "Пріоритетна підтримка"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton не заробляє грошей на порушенні приватності."
       ],
@@ -4582,9 +4576,6 @@
       ],
       "Scheduling message...": [
         "Планування повідомлення..."
-      ],
-      "Screenshot(s) attached": [
-        "Знімки додано"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Пошук триває надто довго? ${ dropdownButton } або ${ toggleOffButton } з цього пошукового сеансу."
@@ -4631,8 +4622,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Перепрошуємо, цього повідомлення не існує, або термін його дії завершився"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Простір сховища спільний для пошти, календаря та диска."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Безпечно розміщуйте та діліться файлами за допомогою ${ DRIVE_APP_NAME }."
@@ -5334,6 +5325,9 @@
       "ANY": [
         "БУДЬ-ЯКЕ"
       ],
+      "Attach screenshot(s)": [
+        "Додати знімки екрана"
+      ],
       "Attachments": [
         "Вкладення"
       ],
@@ -5393,6 +5387,9 @@
       ],
       "Date:": [
         "Дата:"
+      ],
+      "Delete": [
+        "Видалити"
       ],
       "Display name": [
         "Показуване ім'я"
@@ -5684,6 +5681,14 @@
         "Назва"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        "Від"
+      ],
+      "To": [
+        "Кому"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Розгорнутий"
@@ -5706,11 +5711,6 @@
       ],
       "Row": [
         "Рядок"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Додати знімки екрану"
       ]
     },
     "Label/folder modal": {
@@ -6302,12 +6302,6 @@
       "A way to contact you": [
         "Спосіб зв'язку з вами"
       ],
-      "Browser name": [
-        "Назва браузера"
-      ],
-      "Browser version": [
-        "Версія браузера"
-      ],
       "Confirm password": [
         "Підтвердити пароль"
       ],
@@ -6350,12 +6344,6 @@
       "Name or email address": [
         "Ім'я чи адреса е-пошти"
       ],
-      "OS name": [
-        "Назва ОС"
-      ],
-      "OS version": [
-        "Версія ОС"
-      ],
       "Password": [
         "Пароль"
       ],
@@ -6368,23 +6356,20 @@
       "Please insert link first": [
         "Спочатку вставте посилання"
       ],
-      "Proton username": [
-        "Ім'я користувача Proton"
-      ],
       "Search for group name": [
         "Шукати назву групи"
       ],
       "Search for name or email": [
         "Пошук за іменем чи е-поштою"
       ],
-      "Search Messages": [
-        "Шукати повідомлення"
-      ],
       "Search messages": [
         "Шукати повідомлення"
       ],
       "Search name, email or group": [
         "Пошук імені, е-пошти чи групи"
+      ],
+      "Select": [
+        "Вибрати"
       ],
       "Start date": [
         "Дата початку"

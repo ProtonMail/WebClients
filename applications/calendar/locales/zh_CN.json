@@ -12,19 +12,19 @@
         "${ BRAND_NAME } 商店"
       ],
       "Activate recovery": [
-        ""
+        "激活恢复"
       ],
       "Add": [
         "添加"
       ],
       "Add address": [
-        ""
+        "添加地址"
       ],
       "Add contact": [
         "添加联系人"
       ],
       "Add email": [
-        ""
+        "添加邮箱"
       ],
       "Add group": [
         "添加群组"
@@ -39,16 +39,16 @@
         "添加通知"
       ],
       "Add phone number": [
-        ""
-      ],
-      "Add screenshot(s)": [
-        "添加屏幕截图"
+        "添加电话号码"
       ],
       "Add to group": [
         "添加至群组"
       ],
       "Apply": [
         "应用"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "返回"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "选择一个文件或将其拖到此处"
-      ],
-      "Clear": [
-        "移除"
       ],
       "Clear data": [
         "清除数据"
@@ -102,7 +99,7 @@
         "确认"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "确认打开链接 ${ linkToShow }"
       ],
       "Contact group": [
         "联系人群组"
@@ -147,7 +144,7 @@
         "取消全选"
       ],
       "Didn't receive the code?": [
-        ""
+        "未收到验证码？"
       ],
       "Discard": [
         "舍弃"
@@ -171,7 +168,7 @@
         "编辑电话号码"
       ],
       "Edit sign-in details": [
-        ""
+        "编辑登录信息"
       ],
       "Email settings": [
         "邮件设置"
@@ -183,7 +180,7 @@
         "导出"
       ],
       "Export contact group": [
-        ""
+        "导出联系人群组"
       ],
       "Export contacts": [
         "导出联系人"
@@ -198,7 +195,7 @@
         "获取验证码"
       ],
       "Go to label": [
-        ""
+        "转至标签"
       ],
       "Go to panel ${ index }": [
         "转到面板 ${ index }"
@@ -211,9 +208,6 @@
       ],
       "Hide folders": [
         "隐藏文件夹"
-      ],
-      "Hide info": [
-        "隐藏信息"
       ],
       "Hide labels": [
         "隐藏标签"
@@ -324,7 +318,7 @@
         "恢复数据"
       ],
       "Refer a friend": [
-        ""
+        "邀请好友"
       ],
       "refresh the page": [
         "刷新页面"
@@ -366,7 +360,7 @@
         "发送​​"
       ],
       "Set recovery phrase": [
-        ""
+        "设置恢复密语"
       ],
       "Share": [
         "分享"
@@ -376,9 +370,6 @@
       ],
       "Show folders": [
         "显示文件夹"
-      ],
-      "Show info": [
-        "显示信息"
       ],
       "Show labels": [
         "显示标签"
@@ -408,7 +399,7 @@
         "开始设置"
       ],
       "Stay": [
-        ""
+        "留在此页"
       ],
       "Submit": [
         "提交"
@@ -429,7 +420,7 @@
         "更换验证方式"
       ],
       "Unlock data": [
-        ""
+        "解锁数据"
       ],
       "Unmark for deletion": [
         "取消待删除标记"
@@ -441,10 +432,10 @@
         "更改"
       ],
       "Update recovery file": [
-        ""
+        "更新恢复文件"
       ],
       "Update recovery phrase": [
-        ""
+        "更新恢复密语"
       ],
       "Upgrade": [
         "升级账户"
@@ -462,10 +453,10 @@
         "验证"
       ],
       "Verify account": [
-        ""
+        "验证账户"
       ],
       "Verify email": [
-        ""
+        "验证邮箱"
       ],
       "View": [
         "查看"
@@ -478,11 +469,6 @@
       ],
       "Yes, I'll attend": [
         "是，我将参加"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "选择"
       ]
     },
     "Actions message": {
@@ -1852,9 +1838,9 @@
         "此为已停用日历中的事件"
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
-        "新建日历"
+        ""
       ]
     },
     "Duration": {
@@ -3034,17 +3020,11 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或${link}来解决。"
       ],
       "Removed participants will be notified.": [
         "移除的参与者将收到通知"
-      ],
-      "Screenshot(s) attached": [
-        "已附加的屏幕截图"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式"
@@ -3064,7 +3044,7 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "您对先前由组织者更新过的事件的一些答复将会丢失"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3333,6 +3313,9 @@
       "All day": [
         "全天事件"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "自动保存联系人"
       ],
@@ -3382,6 +3365,9 @@
         ""
       ],
       "Default notifications": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Description": [
@@ -3579,11 +3565,6 @@
     "Label for contact group name": {
       "Name": [
         "名称"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "添加截图"
       ]
     },
     "Label/folder modal": {
@@ -4118,12 +4099,6 @@
       "Add title": [
         "添加标题"
       ],
-      "Browser name": [
-        "浏览器名称"
-      ],
-      "Browser version": [
-        "浏览器版本"
-      ],
       "e.g. Julia Smith": [
         "例如：Julia Smith"
       ],
@@ -4145,26 +4120,20 @@
       "Name": [
         "名称"
       ],
-      "OS name": [
-        "操作系统名称"
-      ],
-      "OS version": [
-        "操作系统版本"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "请描述问题并包含任何错误信息"
       ],
-      "Proton username": [
-        "Proton 用户名"
-      ],
       "Search for group name": [
         "搜索群组名称"
       ],
       "Search for name or email": [
         "搜索名称或邮箱地址"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "开始输入电子邮件地址"

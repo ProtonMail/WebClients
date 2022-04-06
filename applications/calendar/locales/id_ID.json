@@ -41,14 +41,14 @@
       "Add phone number": [
         ""
       ],
-      "Add screenshot(s)": [
-        "Tambah tangkapan layar"
-      ],
       "Add to group": [
         "Tambah ke grup"
       ],
       "Apply": [
         "Terapkan"
+      ],
+      "Attach screenshot(s)": [
+        "Lampirkan tangkapan layar"
       ],
       "Back": [
         "Kembali"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Pilih berkas atau taruh di sini"
-      ],
-      "Clear": [
-        "Bersihkan"
       ],
       "Clear data": [
         "Bersihkan data"
@@ -211,9 +208,6 @@
       ],
       "Hide folders": [
         ""
-      ],
-      "Hide info": [
-        "Sembunyikan info"
       ],
       "Hide labels": [
         ""
@@ -377,9 +371,6 @@
       "Show folders": [
         ""
       ],
-      "Show info": [
-        "Tampilkan info"
-      ],
       "Show labels": [
         ""
       ],
@@ -478,11 +469,6 @@
       ],
       "Yes, I'll attend": [
         "Ya, saya akan datang"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Pilih"
       ]
     },
     "Actions message": {
@@ -1852,7 +1838,7 @@
         ""
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
         ""
       ]
@@ -3034,17 +3020,11 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
       "Removed participants will be notified.": [
         "Peserta yang dihapus akan diberi tahu."
-      ],
-      "Screenshot(s) attached": [
-        "Tangkapan layar terlampir"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
@@ -3064,7 +3044,7 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Beberapa jawaban Anda untuk kejadian sebelumnya yang diperbarui oleh penyelenggara akan hilang."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3333,6 +3313,9 @@
       "All day": [
         "Seharian"
       ],
+      "Attach screenshot(s)": [
+        "Lampirkan tangkapan layar"
+      ],
       "Automatically save contacts": [
         "Simpan kontak secara otomatis"
       ],
@@ -3383,6 +3366,9 @@
       ],
       "Default notifications": [
         ""
+      ],
+      "Delete": [
+        "Hapus"
       ],
       "Description": [
         "Deskripsi"
@@ -3579,11 +3565,6 @@
     "Label for contact group name": {
       "Name": [
         "Nama"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Lampirkan tangkapan layar"
       ]
     },
     "Label/folder modal": {
@@ -4118,12 +4099,6 @@
       "Add title": [
         "Tambah judul"
       ],
-      "Browser name": [
-        "Nama peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
-      ],
       "e.g. Julia Smith": [
         "cth. Julia Smith"
       ],
@@ -4145,26 +4120,20 @@
       "Name": [
         "Nama"
       ],
-      "OS name": [
-        "Nama Sistem Operasi"
-      ],
-      "OS version": [
-        "Versi Sistem Operasi"
-      ],
       "Password": [
         "Kata Sandi"
       ],
       "Please describe the problem and include any error messages": [
         "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
       ],
-      "Proton username": [
-        "Nama Pengguna Proton"
-      ],
       "Search for group name": [
         "Cari nama grup"
       ],
       "Search for name or email": [
         "Cari nama atau surel"
+      ],
+      "Select": [
+        "Pilih"
       ],
       "Start typing an email address": [
         "Mulai ketik alamat surel"

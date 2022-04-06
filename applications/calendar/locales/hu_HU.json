@@ -41,14 +41,14 @@
       "Add phone number": [
         "Telefonszám hozzáadása"
       ],
-      "Add screenshot(s)": [
-        "Képernyőkép hozzáadása"
-      ],
       "Add to group": [
         "Hozzáadás csoporthoz"
       ],
       "Apply": [
         "Alkalmazás"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Vissza"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Válasszon fájlt vagy ejtse ide"
-      ],
-      "Clear": [
-        "Törlés"
       ],
       "Clear data": [
         "Adatok törlése"
@@ -213,9 +210,6 @@
       ],
       "Hide folders": [
         "Mappák elrejtése"
-      ],
-      "Hide info": [
-        "Információ elrejtése"
       ],
       "Hide labels": [
         "Címkék elrejtése"
@@ -379,9 +373,6 @@
       "Show folders": [
         "Mappák megjelenítése"
       ],
-      "Show info": [
-        "Információ megjelenítése"
-      ],
       "Show labels": [
         "Címkék megjelenítése"
       ],
@@ -480,11 +471,6 @@
       ],
       "Yes, I'll attend": [
         "Igen, ott leszek"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Kiválasztás"
       ]
     },
     "Actions message": {
@@ -1860,9 +1846,9 @@
         "Ez az esemény egy kikapcsolt naptárhoz tartozik."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
-        "Naptár hozzáadása"
+        ""
       ]
     },
     "Duration": {
@@ -3083,17 +3069,11 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy ${ link } automatikusan megoldja a legtöbb problémát."
       ],
       "Removed participants will be notified.": [
         "Az eltávolított résztvevők értesítést kapnak."
-      ],
-      "Screenshot(s) attached": [
-        "Képernyőkép(ek) csatolva"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
@@ -3113,7 +3093,7 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "A szervező által korábban frissített eseményekre adott egyes válaszai elvesznek."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3382,6 +3362,9 @@
       "All day": [
         "Egész nap"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "Névjegyek automatikus létrehozása"
       ],
@@ -3431,6 +3414,9 @@
         ""
       ],
       "Default notifications": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Description": [
@@ -3629,11 +3615,6 @@
     "Label for contact group name": {
       "Name": [
         "Név"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Képernyőkép csatolása"
       ]
     },
     "Label/folder modal": {
@@ -4197,12 +4178,6 @@
       "Add title": [
         "Cím megadása"
       ],
-      "Browser name": [
-        "Böngésző neve"
-      ],
-      "Browser version": [
-        "Böngésző verziója"
-      ],
       "e.g. Julia Smith": [
         "pl. Kovács János"
       ],
@@ -4224,26 +4199,20 @@
       "Name": [
         "Név"
       ],
-      "OS name": [
-        "Operációs rendszer neve"
-      ],
-      "OS version": [
-        "Operációs rendszer verzió"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
       ],
-      "Proton username": [
-        "Proton felhasználónév"
-      ],
       "Search for group name": [
         "Csoport név keresése"
       ],
       "Search for name or email": [
         "Név vagy e-mail cím keresése"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Kezdjen el írni egy e-mail címet"

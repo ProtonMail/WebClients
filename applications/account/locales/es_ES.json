@@ -214,6 +214,9 @@
       "Copy link": [
         "Copiar enlace"
       ],
+      "Create": [
+        "Crear"
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "Exportar clave"
       ],
+      "Extend": [
+        "Ampliar"
+      ],
       "Font": [
         "Fuente"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "etiquetar correos electrónicos como"
+      ],
+      "Load more": [
+        "Cargar más"
       ],
       "Loading verification": [
         "Cargando verificación"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Reseña"
+      ],
+      "Revoke": [
+        "Revocar"
+      ],
+      "Revoke ${ name }": [
+        "Revocar ${ name }"
       ],
       "Revoke all other sessions": [
         "Revocar las demás sesiones"
@@ -939,6 +954,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "La clave de tu dirección está siendo eliminada."
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        "Esto desconectará todos los routers y clientes que utilicen este certificado."
       ]
     },
     "Apps dropdown": {
@@ -3081,6 +3101,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        "Certificado ${ name } no encontrado o ya revocado"
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "El nombre y apellido no pueden desmarcarse al mismo tiempo"
       ]
@@ -4048,6 +4071,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Una Internet libre y sin censura debería estar disponible para todos."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4449,6 +4475,9 @@
       "Expired": [
         "Expirado"
       ],
+      "expires ${ expirationDate }": [
+        "expira ${ expirationDate }"
+      ],
       "Failed to fetch logs.": [
         "No se han podido obtener los registros."
       ],
@@ -4674,7 +4703,7 @@
         "Las importaciones grandes pueden tardar varios días."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        ""
+        "Aprende a iniciar sesión en ${ VPN_APP_NAME } con aplicaciones VPN de terceros."
       ],
       "Learn more": [
         "Más información"
@@ -4826,6 +4855,9 @@
       "Only you can see the labels.": [
         "Sólo tú puedes ver las etiquetas."
       ],
+      "Or select a particular server:": [
+        "O selecciona un servidor en particular:"
+      ],
       "Organization keys activated": [
         "Claves de la organización activadas"
       ],
@@ -4941,9 +4973,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Proton can't help you recover any lost passwords.": [
         ""
       ],
@@ -4997,6 +5026,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
+      ],
+      "Revoke certificate ${ name }": [
+        "Revocar certificado ${ name }"
       ],
       "Right to Left": [
         "Derecha a Izquierda"
@@ -5073,8 +5105,8 @@
       "Storage GB": [
         "GB de almacenamiento"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         ""
@@ -5227,7 +5259,7 @@
         "Para continuar, selecciona un método de recuperación de cuenta para que podamos verificar la solicitud."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        ""
+        "Para asegurar tu conexión a Internet, descarga e instala la aplicación ${ VPN_APP_NAME } para tu dispositivo y conéctate a un servidor ${ VPN_APP_NAME }."
       ],
       "To use ${ toAppName }, please create an address.": [
         "Para utilizar ${ toAppName }, cree una dirección."
@@ -5304,8 +5336,11 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Utiliza respuestas automáticas para informar a los contactos que estás fuera de la oficina o que de otro modo no puedes responder."
       ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        "Utilice el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        ""
+        "Utilice las siguientes credenciales cuando se conecte a servidores ${ VPN_APP_NAME } sin aplicación. Ejemplos de casos de uso incluyen: Tunnelblick en macOS, OpenVPN en GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         ""
@@ -5338,7 +5373,7 @@
         "Aviso: La eliminación es permanente. Este proceso elimina el acceso a todos los servicios y borra todos los contactos."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        ""
+        "Te aconsejamos que utilice las aplicaciones oficiales de ${ VPN_APP_NAME } siempre que sea posible."
       ],
       "We recommend using your recovery phrase instead.": [
         "Le recomendamos que utilice su frase de recuperación en su lugar."
@@ -5446,7 +5481,7 @@
         ""
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        ""
+        "Puede utilizar las siguientes credenciales para conectarse a un servidor ${ VPN_APP_NAME } utilizando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         ""
@@ -5455,7 +5490,7 @@
         ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
+        "No puede utilizar las credenciales de OpenVPN / IKEv2 para iniciar sesión en las aplicaciones de ${ VPN_APP_NAME } o en el panel de control de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No estableciste un método de recuperación por lo que la recuperación de cuentas es imposible si olvidas tu contraseña. ¿Continuar sin método de recuperación?"
@@ -6089,6 +6124,12 @@
       "Block email tracking": [
         "Bloquear el seguimiento del correo electrónico"
       ],
+      "Block malware only": [
+        "Bloquear solo el malware"
+      ],
+      "Block malware, ads and trackers": [
+        "Bloquear malware, anuncios y rastreadores"
+      ],
       "bonus storage": [
         "almacenamiento adicional"
       ],
@@ -6119,6 +6160,9 @@
       "Category": [
         "Categoría"
       ],
+      "Choose a name for the generated certificate file": [
+        "Elegir un nombre para el archivo de certificado generado"
+      ],
       "Code": [
         "Código"
       ],
@@ -6142,6 +6186,9 @@
       ],
       "Conditions": [
         "Condiciones"
+      ],
+      "Config to connect to ${ serverName }": [
+        "Configurar para conectarse a ${ serverName }"
       ],
       "Confirm link URLs": [
         "Confirmar las URL de los enlaces"
@@ -6241,6 +6288,9 @@
       ],
       "Description": [
         "Descripción"
+      ],
+      "Device/certificate name": [
+        "Nombre del dispositivo/certificado"
       ],
       "Digits": [
         "Dígitos"
@@ -6398,6 +6448,9 @@
       "Last month only": [
         "Solo el último mes"
       ],
+      "Level for NetShield blocker filtering": [
+        "Nivel de filtrado del bloqueador NetShield"
+      ],
       "Login password": [
         "Contraseña de inicio de sesión"
       ],
@@ -6418,6 +6471,9 @@
       ],
       "Message": [
         "Mensaje"
+      ],
+      "Moderate NAT": [
+        "NAT moderada"
       ],
       "Move to": [
         "Mover a"
@@ -6440,8 +6496,14 @@
       "New password": [
         "Nueva contraseña"
       ],
+      "No filter": [
+        "Sin filtro"
+      ],
       "No label found": [
         "No se ha encontrado ninguna etiqueta"
+      ],
+      "Non-standard ports": [
+        "Puertos no estándares"
       ],
       "Notification": [
         "Notificación"
@@ -6685,6 +6747,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "VPN Connections": [
         "Conexiones VPN"
@@ -8422,6 +8487,18 @@
       "Address enabled": [
         "Dirección habilitada"
       ],
+      "Certificate ${ name } revoked": [
+        "Certificado ${ name } revocado"
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        "Certificado extendido hasta ${ formattedExpirationDate }"
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        "Configuración \"${ name }\" creada, tenga en cuenta que la clave privada no se almacena y no se mostrará de nuevo, usted debe copiar o descargar esta configuración."
+      ],
+      "Creating config file for ${ serverName }": [
+        "Creando archivo de configuración para ${ serverName }"
+      ],
       "Filter removed": [
         "Filtro eliminado"
       ],
@@ -8523,8 +8600,14 @@
       "(highly recommended)": [
         "(altamente recomendado)"
       ],
+      "1. Give a name to the config to be generated": [
+        "1. Dar un nombre a la configuración que se va a generar"
+      ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
+      ],
+      "2. Select platform": [
+        "2. Seleccionar la plataforma"
       ],
       "2. Select protocol": [
         "2. Seleccionar protocolo"
@@ -8534,6 +8617,12 @@
       ],
       "3. Select config file and download": [
         "3. Seleccionar archivo de configuración y descargar"
+      ],
+      "3. Select VPN options": [
+        "3. Seleccionar las opciones de VPN"
+      ],
+      "4. Select a server to connect to": [
+        "4. Seleccionar un servidor al que conectarse"
       ],
       "Account and password": [
         "Cuenta y contraseña"
@@ -9118,6 +9207,9 @@
       "Restore administrator privileges": [
         "Restaurar los privilegios de administrador"
       ],
+      "Revoke certificate": [
+        "Revocar certificado"
+      ],
       "Secure email based in Switzerland": [
         ""
       ],
@@ -9273,6 +9365,12 @@
       ],
       "What's new": [
         "Novedades"
+      ],
+      "WireGuard": [
+        "WireGuard"
+      ],
+      "WireGuard configuration": [
+        "Configuración de WireGuard"
       ],
       "Your ${ domain } address is active": [
         "Su dirección de ${ domain } está activo"

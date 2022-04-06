@@ -47,17 +47,11 @@
       "Add phone number": [
         "Tambah nomor telepon"
       ],
-      "Add screenshot(s)": [
-        "Tambah tangkapan layar"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Tambah ke ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Tambah ke grup"
-      ],
-      "Advanced search": [
-        "Pencarian lanjutan"
       ],
       "Align center": [
         "Rata tengah"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "Arsip"
+      ],
+      "Attach screenshot(s)": [
+        "Lampirkan tangkapan layar"
       ],
       "Attachment": [
         "Lampiran"
@@ -323,9 +320,6 @@
       "Export contacts": [
         "Ekspor kontak"
       ],
-      "Fewer search options": [
-        "Opsi pencarian lebih sedikit"
-      ],
       "Filter on...": [
         "Filter pada..."
       ],
@@ -386,9 +380,6 @@
       "Hide folders": [
         "Sembunyikan folder"
       ],
-      "Hide info": [
-        "Sembunyikan info"
-      ],
       "Hide labels": [
         "Sembunyikan label"
       ],
@@ -397,6 +388,9 @@
       ],
       "I have a question": [
         "Saya memiliki sebuah pertanyaan"
+      ],
+      "Images will be loaded without a proxy": [
+        "Gambar akan dimuat tanpa proksi"
       ],
       "import": [
         "impor"
@@ -448,6 +442,9 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "Less search options": [
+        "Opsi pencarian lebih sedikit"
       ],
       "Load": [
         "Muat"
@@ -571,6 +568,9 @@
       ],
       "No": [
         "Tidak"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        "Tidak ditemukan pelacak, tetapi beberapa gambar tidak dapat dimuat menggunakan pelindung pelacak."
       ],
       "No, I won't attend": [
         "Tidak, saya tidak akan hadir"
@@ -767,20 +767,17 @@
       "Show details": [
         "Tampilkan rincian"
       ],
-      "Show fewer search options": [
-        "Tampilkan lebih sedikit opsi pencarian"
-      ],
       "Show folders": [
         "Tampilkan folder"
-      ],
-      "Show info": [
-        "Tampilkan info"
       ],
       "Show labels": [
         "Tampilkan label"
       ],
       "Show less": [
         "Tampilkan lebih sedikit"
+      ],
+      "Show less search options": [
+        "Tampilkan lebih sedikit opsi pencarian"
       ],
       "Show messages": [
         "Lihat pesan"
@@ -802,9 +799,6 @@
       ],
       "Skip": [
         "Lewati"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "Gambar-gambar tertentu tidak dapat dimuat pada saat perlindungan pelacak sedang aktif"
       ],
       "Star": [
         "Berikan tanda bintang"
@@ -972,9 +966,9 @@
         "Perkecil"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Pilih"
+    "action": {
+      "Search messages": [
+        "Cari pesan"
       ]
     },
     "Actions message": {
@@ -4253,6 +4247,9 @@
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        "Tidak ditemukan pelacak, tetapi beberapa gambar tidak dapat dimuat menggunakan pelindung pelacak"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Kunci yang diunggah tidak ada yang valid untuk enkripsi. Enkripsi secara otomatis dinonaktifkan."
       ],
@@ -4322,9 +4319,6 @@
       "Priority support": [
         "Dukungan prioritas"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton tidak meraup keuntungan dengan cara melanggar privasi."
       ],
@@ -4369,9 +4363,6 @@
       ],
       "Scheduling message...": [
         "Menjadwalkan pesan..."
-      ],
-      "Screenshot(s) attached": [
-        "Tangkapan layar terlampir"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Apakah pencarian Anda memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dalam pencarian Anda."
@@ -4418,8 +4409,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Maaf, pesan ini tidak ada atau sudah kedaluwarsa"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Kuota penyimpanan diperuntukkan bagi Mail, Calendar, dan Drive secara bersamaan."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Simpan dan bagikan berbagai macam berkas secara aman dengan ${ DRIVE_APP_NAME }."
@@ -5088,6 +5079,9 @@
       "ANY": [
         "SEMBARANG"
       ],
+      "Attach screenshot(s)": [
+        "Lampirkan tangkapan layar"
+      ],
       "Attachments": [
         "Lampiran"
       ],
@@ -5147,6 +5141,9 @@
       ],
       "Date:": [
         "Tanggal:"
+      ],
+      "Delete": [
+        "Hapus"
       ],
       "Display name": [
         "Nama tampilan"
@@ -5438,6 +5435,14 @@
         "Nama"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        "Dari"
+      ],
+      "To": [
+        "Untuk"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Dimaksimalkan"
@@ -5460,11 +5465,6 @@
       ],
       "Row": [
         "Baris"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Lampirkan tangkapan layar"
       ]
     },
     "Label/folder modal": {
@@ -6041,12 +6041,6 @@
       "A way to contact you": [
         "Cara menghubungi Anda"
       ],
-      "Browser name": [
-        "Nama Peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
-      ],
       "Confirm password": [
         "Konfirmasi kata sandi"
       ],
@@ -6089,12 +6083,6 @@
       "Name or email address": [
         "Nama atau alamat email"
       ],
-      "OS name": [
-        "Nama Sistem Operasi"
-      ],
-      "OS version": [
-        "Versi Sistem Operasi"
-      ],
       "Password": [
         "Kata sandi"
       ],
@@ -6107,23 +6095,20 @@
       "Please insert link first": [
         "Silakan sisipkan tautan terlebih dulu"
       ],
-      "Proton username": [
-        "Nama Pengguna Proton"
-      ],
       "Search for group name": [
         "Cari nama grup"
       ],
       "Search for name or email": [
         "Cari nama atau email"
       ],
-      "Search Messages": [
-        "Cari Pesan"
-      ],
       "Search messages": [
         "Cari pesan"
       ],
       "Search name, email or group": [
         "Cari nama, email, atau grup"
+      ],
+      "Select": [
+        "Pilih"
       ],
       "Start date": [
         "Tanggal mulai"

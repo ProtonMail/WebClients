@@ -47,17 +47,11 @@
       "Add phone number": [
         "Agregar número de teléfono"
       ],
-      "Add screenshot(s)": [
-        "Añadir captura(s) de pantalla"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Añadir a ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Añadir al grupo"
-      ],
-      "Advanced search": [
-        "Búsqueda avanzada"
       ],
       "Align center": [
         "Alinear al centro"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "Archivar"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Attachment": [
         "Adjunto"
@@ -325,9 +322,6 @@
       "Export contacts": [
         "Exportar contactos"
       ],
-      "Fewer search options": [
-        "Menos opciones de búsqueda"
-      ],
       "Filter on...": [
         "Filtrar por..."
       ],
@@ -388,9 +382,6 @@
       "Hide folders": [
         "Ocultar carpetas"
       ],
-      "Hide info": [
-        "Ocultar información"
-      ],
       "Hide labels": [
         "Ocultar etiquetas"
       ],
@@ -399,6 +390,9 @@
       ],
       "I have a question": [
         "Tengo una pregunta"
+      ],
+      "Images will be loaded without a proxy": [
+        "Las imágenes se cargarán sin proxy"
       ],
       "import": [
         "importar"
@@ -451,6 +445,9 @@
       ],
       "Learn more": [
         "Más información"
+      ],
+      "Less search options": [
+        "Menos opciones de búsqueda"
       ],
       "Load": [
         "Cargar"
@@ -574,6 +571,9 @@
       ],
       "No": [
         "No"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        ""
       ],
       "No, I won't attend": [
         "No, no asistiré"
@@ -770,20 +770,17 @@
       "Show details": [
         "Mostrar detalles"
       ],
-      "Show fewer search options": [
-        "Mostrar menos opciones de búsqueda"
-      ],
       "Show folders": [
         "Mostrar carpetas"
-      ],
-      "Show info": [
-        "Mostrar información"
       ],
       "Show labels": [
         "Mostrar etiquetas"
       ],
       "Show less": [
         "Mostrar menos"
+      ],
+      "Show less search options": [
+        "Mostrar menos opciones de búsqueda"
       ],
       "Show messages": [
         "Mostrar mensajes"
@@ -805,9 +802,6 @@
       ],
       "Skip": [
         "Omitir"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "Algunas de las imágenes no han podido ser cargadas con la protección de rastreo"
       ],
       "Star": [
         "Destacar"
@@ -976,9 +970,9 @@
         "Alejar"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
+    "action": {
+      "Search messages": [
+        "Buscar mensajes"
       ]
     },
     "Actions message": {
@@ -4324,6 +4318,9 @@
       "No results found": [
         "No se han encontrado resultados"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ninguna de las claves cargadas son validas para el cifrado. El cifrado se desactiva automáticamente."
       ],
@@ -4393,9 +4390,6 @@
       "Priority support": [
         "Soporte prioritario"
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton no gana dinero abusando de la privacidad."
       ],
@@ -4440,9 +4434,6 @@
       ],
       "Scheduling message...": [
         "Programando mensaje..."
-      ],
-      "Screenshot(s) attached": [
-        "Capturas de pantalla adjuntadas"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La busqueda está tardando demasiado? ${ dropdownButton } o ${ toggleOffButton } de esta sesión de busqueda."
@@ -4489,8 +4480,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Lo sentimos, este mensaje no existe o ya ha caducado"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         ""
@@ -5170,6 +5161,9 @@
       "ANY": [
         "CUALQUIERA"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         "Archivos adjuntos"
       ],
@@ -5229,6 +5223,9 @@
       ],
       "Date:": [
         "Fecha:"
+      ],
+      "Delete": [
+        ""
       ],
       "Display name": [
         "Nombre a mostrar"
@@ -5520,6 +5517,14 @@
         "Nombre"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        "De"
+      ],
+      "To": [
+        "Para"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Maximizado"
@@ -5542,11 +5547,6 @@
       ],
       "Row": [
         "Fila"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Adjuntar captura(s) de pantalla"
       ]
     },
     "Label/folder modal": {
@@ -6128,12 +6128,6 @@
       "A way to contact you": [
         "Una forma de contactar contigo"
       ],
-      "Browser name": [
-        "Nombre del navegador"
-      ],
-      "Browser version": [
-        "Versión del navegador"
-      ],
       "Confirm password": [
         "Confirmar contraseña"
       ],
@@ -6176,12 +6170,6 @@
       "Name or email address": [
         "Nombre o dirección de correo electrónico"
       ],
-      "OS name": [
-        "Sistema operativo"
-      ],
-      "OS version": [
-        "Versión del SO"
-      ],
       "Password": [
         "Contraseña"
       ],
@@ -6194,23 +6182,20 @@
       "Please insert link first": [
         "Por favor, inserte el enlace primero"
       ],
-      "Proton username": [
-        "Nombre de usuario de Proton"
-      ],
       "Search for group name": [
         "Buscar por nombre de grupo"
       ],
       "Search for name or email": [
         "Buscar por nombre o correo electrónico"
       ],
-      "Search Messages": [
-        "Buscar mensajes"
-      ],
       "Search messages": [
         "Buscar mensajes"
       ],
       "Search name, email or group": [
         "Buscar nombre, correo o grupo"
+      ],
+      "Select": [
+        ""
       ],
       "Start date": [
         "Fecha de inicio"

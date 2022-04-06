@@ -41,14 +41,14 @@
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
       ],
-      "Add screenshot(s)": [
-        "Προσθήκη στιγμιοτύπου/ων οθόνης"
-      ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
       "Apply": [
         "Εφαρμογή"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Πίσω"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Επιλέξτε ένα αρχείο ή σύρετέ το εδώ"
-      ],
-      "Clear": [
-        "Καθαρισμός"
       ],
       "Clear data": [
         "Εκκαθάριση δεδομένων"
@@ -213,9 +210,6 @@
       ],
       "Hide folders": [
         "Απόκρυψη φακέλων"
-      ],
-      "Hide info": [
-        "Απόκρυψη πληροφοριών"
       ],
       "Hide labels": [
         "Απόκρυψη ετικετών"
@@ -379,9 +373,6 @@
       "Show folders": [
         "Εμφάνιση φακέλων"
       ],
-      "Show info": [
-        "Εμφάνιση πληροφοριών"
-      ],
       "Show labels": [
         "Εμφάνιση ετικετών"
       ],
@@ -480,11 +471,6 @@
       ],
       "Yes, I'll attend": [
         "Ναι, θα παρευρεθώ"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Επιλέξτε"
       ]
     },
     "Actions message": {
@@ -1860,9 +1846,9 @@
         "Το γεγονός ανήκει σε ένα απενεργοποιημένο ημερολόγιο."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
-        "Προσθήκη ημερολογίου"
+        ""
       ]
     },
     "Duration": {
@@ -3083,17 +3069,11 @@
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
       "Removed participants will be notified.": [
         "Οι συμμετέχοντες που αφαιρέθηκαν θα ειδοποιηθούν."
-      ],
-      "Screenshot(s) attached": [
-        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
@@ -3113,7 +3093,7 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Μερικές από τις απαντήσεις σας σε περιστατικά που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα χαθούν."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3382,6 +3362,9 @@
       "All day": [
         "Όλη την ημέρα"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
       ],
@@ -3432,6 +3415,9 @@
       ],
       "Default notifications": [
         "Προεπιλεγμένες ειδοποιήσεις"
+      ],
+      "Delete": [
+        ""
       ],
       "Description": [
         "Περιγραφή"
@@ -3629,11 +3615,6 @@
     "Label for contact group name": {
       "Name": [
         "Όνομα"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Επισύναψη στιγμιοτύπου/ων οθόνης"
       ]
     },
     "Label/folder modal": {
@@ -4197,12 +4178,6 @@
       "Add title": [
         "Προσθέστε τίτλο"
       ],
-      "Browser name": [
-        "Όνομα Browser"
-      ],
-      "Browser version": [
-        "Έκδοση Browser"
-      ],
       "e.g. Julia Smith": [
         "π.χ. Julia Smith"
       ],
@@ -4224,26 +4199,20 @@
       "Name": [
         "Όνομα"
       ],
-      "OS name": [
-        "Λειτουργικό Σύστημα"
-      ],
-      "OS version": [
-        "Έκδοση Λειτουργικού"
-      ],
       "Password": [
         "Κωδικός πρόσβασης"
       ],
       "Please describe the problem and include any error messages": [
         "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
       ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
-      ],
       "Search for group name": [
         "Αναζήτηση ονόματος ομάδας"
       ],
       "Search for name or email": [
         "Αναζήτηση βάσει ονόματος ή e-mail"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Αρχίστε την πληκτρολόγηση μιας ηλ. διεύθυνσης"

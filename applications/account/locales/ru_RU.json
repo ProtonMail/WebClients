@@ -214,8 +214,11 @@
       "Copy link": [
         "Копировать ссылку"
       ],
+      "Create": [
+        "Создать"
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
-        ""
+        "Вместо этого создайте защищенный адрес ${ MAIL_APP_NAME }"
       ],
       "Create address": [
         "Создать адрес"
@@ -337,6 +340,9 @@
       "Export key": [
         "Экспортировать ключ"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "Шрифт"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "отметить письма ярлыком"
+      ],
+      "Load more": [
+        "Подробнее"
       ],
       "Loading verification": [
         "Загружается проверка"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Проверить"
+      ],
+      "Revoke": [
+        "Отозвать"
+      ],
+      "Revoke ${ name }": [
+        "Отозвать ${ name }"
       ],
       "Revoke all other sessions": [
         "Прервать все другие сессии"
@@ -957,6 +972,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "Ключ для вашего адреса удаляется."
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -2364,7 +2384,7 @@
         "Идёт шифрование и импортирование контактов, и это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
       "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        ""
+        "Получите до 3 месяцев ${ mailPlus } бесплатно за каждого друга, подписавшегося на ${ MAIL_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
@@ -2379,7 +2399,7 @@
         "Отслеживайте, сколько людей переходят по вашей ссылке, регистрируются и становятся платными подписчиками. Следите за тем, как накапливаются ваши бесплатные месяцы."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
-        ""
+        "Вы можете продолжать приглашать друзей, но не сможете заработать больше кредитов"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можете импортировать события в формате iCal (ICS файл). Размер файла не должен быть более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_EVENTS_STRING } событий. Если ваш файл больше, разделите его на меньшие файлы."
@@ -2806,7 +2826,7 @@
         "Имена некоторых ваших папок недоступны. Пожалуйста, настройте импорт, чтобы изменить эти имена."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Некоторые из ваших имен папок превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Некоторые из имен ярлыков недоступны. Пожалуйста, настройте импорт, чтобы изменить эти имена."
@@ -3123,6 +3143,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "Пометка не может быть снята одновременно с имени и фамилии"
       ]
@@ -3979,10 +4002,10 @@
         "${ MAIL_APP_NAME } можно также использовать с одним паролем, который заменяет и логин, и пароль почтового ящика. Чтобы перейти в режим единого пароля, введите единый пароль, который вы хотите использовать, и нажмите кнопку Сохранить."
       ],
       "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        ""
+        "${ MAIL_APP_NAME } позволяет создавать адреса электронной почты для других людей. Это идеально подходит для предприятий, семей или групп."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "${ MAIL_APP_NAME } поддерживает подпись DKIM для своих доменов. Чтобы использовать аутентификацию DKIM, пожалуйста, добавьте следующую запись CNAME в настройки DNS для этого домена. Обычно это можно сделать в панели управления вашего регистратора доменов."
       ],
       "${ mailAppName } Free": [
         "Бесплатная версия ${ mailAppName }"
@@ -4158,6 +4181,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Cвободный Интернет без цензуры должен быть доступен всем."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        "Имя, которое поможет вам определить, где вы его используете, чтобы вы могли легко отозвать или продлить его позже."
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4327,7 +4353,7 @@
         "Требуется подписка Basic, Plus или Visionary"
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "Прежде чем вы сможете получать электронную почту для своих доменных адресов на ${ MAIL_APP_NAME }, вам необходимо добавить следующие записи MX в ваш DNS. Обычно это можно сделать в панели управления вашего регистратора доменов."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перед тем, как начать отправлять и принимать электронную почту, для ваших новых адресов необходимо создать ключи шифрования."
@@ -4414,7 +4440,7 @@
         "Создавайте и управляйте дополнительными учетными записями, назначайте им адреса электронной почты на вашем домене."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        ""
+        "Создавайте адреса электронной почты для других людей, управляйте ${ MAIL_APP_NAME } для предприятия, школы или группы. Начните с добавления названия организации и своего домена (например, @yourcompany.com). "
       ],
       "Create in": [
         "Создать в"
@@ -4453,7 +4479,7 @@
         "Данные заблокированы"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
-        ""
+        "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
       ],
       "Delete link?": [
         "Удалить ссылку?"
@@ -4569,6 +4595,9 @@
       "Expired": [
         "Истёк"
       ],
+      "expires ${ expirationDate }": [
+        "истекает ${ expirationDate }"
+      ],
       "Failed to fetch logs.": [
         "Не удалось получить журналы."
       ],
@@ -4645,7 +4674,7 @@
         "Если сообщения нет в папке \"Входящие\" - проверьте, не попало ли оно в папку «спам»."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        ""
+        "Если у вас есть свой домен с ${ MAIL_APP_NAME }, вы можете установить адрес электронной почты catch-all, который будет получать сообщения, отправленные на ваш домен, но на недействительный адрес электронной почты (например, с опечатками)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Если у вас есть подарочный код, введите его ниже, чтобы применить скидку."
@@ -4950,6 +4979,9 @@
       "Only you can see the labels.": [
         "Только вы можете видеть метки."
       ],
+      "Or select a particular server:": [
+        "Или выберите определенный сервер:"
+      ],
       "Organization keys activated": [
         "Ключи организации активированы"
       ],
@@ -5067,9 +5099,6 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton не может помочь вам восстановить утраченные пароли."
       ],
@@ -5123,6 +5152,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большинство проблем."
+      ],
+      "Revoke certificate ${ name }": [
+        "Отозвать сертификат ${ name }"
       ],
       "Right to Left": [
         "Справа налево"
@@ -5191,7 +5223,7 @@
         "Некоторые ключи успешно реактивированы"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "SPF используется для указания того, кому разрешено отправлять электронную почту для домена, поэтому мы настоятельно рекомендуем включить ${ MAIL_APP_NAME } в вашу запись SPF. Пожалуйста, добавьте следующую запись TXT в ваш DNS. Обычно это можно сделать в панели управления вашего регистратора доменов."
       ],
       "Starter VPN service with P2P support.": [
         "Служба VPN начального уровня с поддержкой P2P."
@@ -5199,8 +5231,8 @@
       "Storage GB": [
         "Хранилище Гбайт"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Место хранения используется почтой, календарем и диском."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
@@ -5413,7 +5445,7 @@
         "Улучите до ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } или ${ PLAN_NAMES[PLANS.PLUS] } плана чтобы включить автоматические ответы, когда вас нет в офисе."
       ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
-        ""
+        "Улучшите до платного тарифа, чтобы разблокировать поддержку IMAP/SMTP через ${ MAIL_APP_NAME } Bridge."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Улучшите сегодня, чтобы не потерять следующие преимущества: ${ appName } ${ planName }."
@@ -5429,6 +5461,9 @@
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Используйте автоматические ответы для оповещения контактов, что вы находитесь вне офиса или не можете ответить."
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        "Использовать лучший сервер в соответствии с текущей нагрузкой и местоположением: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Используйте следующие учетные данные для подключения к ${ VPN_APP_NAME } через сторонние приложения, например, Tunnelblick на MacOS или OpenVPN на GNU/Linux."
@@ -5569,7 +5604,7 @@
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых писем в этой папке."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        ""
+        "Вы можете использовать ${ MAIL_APP_NAME } с любым почтовым клиентом для ПК, который поддерживает IMAP/SMTP, включая Outlook, Apple Mail и Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Вы можете использовать следующие учетные данные для подключения к серверу ${ VPN_APP_NAME } с помощью стороннего приложения VPN с открытым исходным кодом, например, Tunnelblick для macOS или OpenVPN для GNU/Linux."
@@ -6124,7 +6159,7 @@
         "Адрес ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } footer": [
-        ""
+        "Нижний колонтитул ${ MAIL_APP_NAME }"
       ],
       "${ monthsRewarded } month credited": [
         "${ monthsRewarded } месяц начислен",
@@ -6225,6 +6260,12 @@
       "Block email tracking": [
         "Блокировать отслеживание электронной почты"
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "бонусное хранилище"
       ],
@@ -6255,6 +6296,9 @@
       "Category": [
         "Категория"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "Код"
       ],
@@ -6278,6 +6322,9 @@
       ],
       "Conditions": [
         "Условия"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm link URLs": [
         "Подтвердить адреса ссылки"
@@ -6319,7 +6366,7 @@
         "Страна"
       ],
       "Credits pending": [
-        ""
+        "Кредиты на рассмотрении"
       ],
       "Credits used": [
         "Кредитов использовано"
@@ -6377,6 +6424,9 @@
       ],
       "Description": [
         "Описание"
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "Цифры"
@@ -6534,6 +6584,9 @@
       "Last month only": [
         "Только за последний месяц"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Пароль для входа"
       ],
@@ -6554,6 +6607,9 @@
       ],
       "Message": [
         "Сообщение"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "Переместить в"
@@ -6576,8 +6632,14 @@
       "New password": [
         "Новый пароль"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "Ярлыки не найдены"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "Уведомление"
@@ -6822,6 +6884,9 @@
       "Verification code": [
         "Код подтверждения"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "VPN Connections": [
         "Подключения к VPN"
       ],
@@ -6896,7 +6961,7 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
-        ""
+        "Добавьте принадлежащий вам домен к вашему аккаунту ${ MAIL_APP_NAME }."
       ]
     },
     "Label for domain modal": {
@@ -8578,6 +8643,18 @@
       "Address enabled": [
         "Адрес включён"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "Фильтр удалён"
       ],
@@ -8678,13 +8755,19 @@
         "Сочетания клавиш ${ appName }"
       ],
       "${ MAIL_APP_NAME } Bridge": [
-        ""
+        "${ MAIL_APP_NAME } Bridge"
       ],
       "(highly recommended)": [
         "(настоятельно рекомендуется)"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Выберите платформу"
+      ],
+      "2. Select platform": [
+        "2. Выберите платформу"
       ],
       "2. Select protocol": [
         "2. Выберите протокол"
@@ -8694,6 +8777,12 @@
       ],
       "3. Select config file and download": [
         "3. Выберите файл конфигурации и скачайте"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         "Аккаунт и пароль"
@@ -9280,6 +9369,9 @@
       "Restore administrator privileges": [
         "Восстановить права администратора"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         "Безопасная почта, находящаяся в Швейцарии"
       ],
@@ -9401,7 +9493,7 @@
         "Итого (в месяц)"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        ""
+        "Попробуйте лучшее из ${ MAIL_APP_NAME } бесплатно"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
@@ -9435,6 +9527,12 @@
       ],
       "What's new": [
         "Что нового"
+      ],
+      "WireGuard": [
+        "WireGuard"
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "Your ${ domain } address is active": [
         "Ваш адрес ${ domain } активен"
@@ -9548,7 +9646,7 @@
     },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        ""
+        "Пользователи ${ MAIL_APP_NAME } будут использовать этот ключ по умолчанию для отправки"
       ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Доступ к содержимому, заблокированному по географическому признаку (Netflix, Amazon Prime Video, BBC iPlayer, Википедии, Facebook, YouTube и т. д.), независимо от того, где вы находитесь."
@@ -9680,7 +9778,7 @@
         "Вы расшифровали этот ключ локально"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
-        ""
+        "Ваш почтовый ящик ${ MAIL_APP_NAME } почти заполнен"
       ],
       "Your DKIM signing is working.": [
         "Ваше подписание DKIM работает."
@@ -9696,12 +9794,12 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        ""
+        "Выберите настройки PGP по умолчанию, используемые для подписания или шифрования сообщений не пользователям ${ BRAND_NAME } PGP. Обратите внимание, что при использовании Встроенного PGP в сообщениях используется простой текст. Подробнее"
       ]
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        ""
+        "При получении электронного письма от другого пользователя ${ MAIL_APP_NAME }, у которого в контактах нет доверенных ключей, появится баннер с вопросом, хотите ли вы включить доверенные ключи."
       ]
     },
     "Tooltip sign external messages": {
@@ -9986,7 +10084,7 @@
         "Настройки даты и времени на вашем устройстве не синхронизированы. ${ learnMore }"
       ],
       "This feature is only available for ${ mailProfessional } plans or higher": [
-        ""
+        "Эта функция доступна только для тарифов ${ mailProfessional } или выше"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Этот импорт может потребовать больше места, чем доступно в настоящее время на вашем Proton-аккаунте. Пожалуйста, измените настройки импорта."

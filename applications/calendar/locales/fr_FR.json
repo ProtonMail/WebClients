@@ -41,14 +41,14 @@
       "Add phone number": [
         "Ajouter un numéro de téléphone"
       ],
-      "Add screenshot(s)": [
-        "Ajouter des captures d'écran"
-      ],
       "Add to group": [
         "Ajouter au groupe"
       ],
       "Apply": [
         "Appliquer"
+      ],
+      "Attach screenshot(s)": [
+        "Joindre une ou plusieurs captures d’écran"
       ],
       "Back": [
         "Retour"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Choisissez un fichier ou faites-le glisser ici"
-      ],
-      "Clear": [
-        "Effacer"
       ],
       "Clear data": [
         "Effacer les données"
@@ -213,9 +210,6 @@
       ],
       "Hide folders": [
         "Masquer les dossiers"
-      ],
-      "Hide info": [
-        "Masquer les informations"
       ],
       "Hide labels": [
         "Masquer les labels"
@@ -379,9 +373,6 @@
       "Show folders": [
         "Afficher les dossiers"
       ],
-      "Show info": [
-        "Afficher les informations"
-      ],
       "Show labels": [
         "Afficher les labels"
       ],
@@ -480,11 +471,6 @@
       ],
       "Yes, I'll attend": [
         "Oui, je participerai"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Sélectionner"
       ]
     },
     "Actions message": {
@@ -615,7 +601,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+        "L'accès à la version bêta vous permet d'utiliser la version bêta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME } avant qu'ils ne soient rendus publics. Cela signifie que vous pouvez être le premier à essayer de nouveaux produits, à obtenir de nouvelles mises à jour et à utiliser de nouvelles fonctionnalités."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l’accès à la version bêta."
@@ -1860,7 +1846,7 @@
         "L'événement appartient à un calendrier désactivé."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
         "Ajouter un calendrier"
       ]
@@ -2174,7 +2160,7 @@
         "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
@@ -3045,16 +3031,16 @@
         "Les occurrences précédemment mises à jour par l’organisateur seront conservées."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ${ BRAND_NAME }."
       ],
       "Other options": [
         "Autres options"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
@@ -3083,17 +3069,11 @@
       "Priority support": [
         "Assistance prioritaire"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
       ],
       "Removed participants will be notified.": [
         "Les participants supprimés seront informés."
-      ],
-      "Screenshot(s) attached": [
-        "Capture(s) d’écran jointe(s)"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l’envoi d’un courriel à cette adresse électronique."
@@ -3108,13 +3088,13 @@
         "Session expirée"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        ""
+        "La configuration de PGP vous permet d'envoyer des e-mails chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Certaines de vos réponses à des événements précédemment mis à jour par l’organisateur seront perdues."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "L'espace de stockage est partagé entre Mail, Calendar et Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Prise en charge d'un nom de domaine personnalisé"
@@ -3382,6 +3362,9 @@
       "All day": [
         "Journée entière"
       ],
+      "Attach screenshot(s)": [
+        "Joindre une ou plusieurs captures d’écran"
+      ],
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
       ],
@@ -3432,6 +3415,9 @@
       ],
       "Default notifications": [
         "Notifications par défaut"
+      ],
+      "Delete": [
+        "Supprimer"
       ],
       "Description": [
         "Description"
@@ -3609,7 +3595,7 @@
         "URL"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Nom d'utilisateur ou adresse ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Code de vérification"
@@ -3629,11 +3615,6 @@
     "Label for contact group name": {
       "Name": [
         "Nom"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Joindre une ou plusieurs captures d’écran"
       ]
     },
     "Label/folder modal": {
@@ -4197,12 +4178,6 @@
       "Add title": [
         "Ajouter un titre"
       ],
-      "Browser name": [
-        "Nom du navigateur"
-      ],
-      "Browser version": [
-        "Version du navigateur"
-      ],
       "e.g. Julia Smith": [
         "p. ex. Julia Smith"
       ],
@@ -4224,26 +4199,20 @@
       "Name": [
         "Nom"
       ],
-      "OS name": [
-        "Nom du système d’exploitation"
-      ],
-      "OS version": [
-        "Version du système d’exploitation"
-      ],
       "Password": [
         "Mot de passe"
       ],
       "Please describe the problem and include any error messages": [
         "Veuillez décrire le problème et inclure les messages d’erreur"
       ],
-      "Proton username": [
-        "Nom d’utilisateur Proton"
-      ],
       "Search for group name": [
         "Rechercher par nom de groupe"
       ],
       "Search for name or email": [
         "Rechercher par nom ou par adresse électronique"
+      ],
+      "Select": [
+        "Sélectionner"
       ],
       "Start typing an email address": [
         "Commencez à saisir une adresse électronique"
@@ -4764,7 +4733,7 @@
         "Saisissez votre mot de passe"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Saisissez votre nom d'utilisateur ou votre adresse ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Erreur"
@@ -5005,7 +4974,7 @@
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
@@ -5053,7 +5022,7 @@
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d’alerte, mais vous perdrez définitivement l’accès à toutes les données chiffrées avec cette clé au cours du processus."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "Le dialogue en ligne en temps réel est une fonctionnalité premium disponible uniquement pour les personnes disposant d’une offre ${ VPN_APP_NAME } payante. Veuillez ouvrir un ticket à la place."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton fusionnera tous les dossiers avec le même nom. Pour éviter cela, changez les noms avant l'importation."

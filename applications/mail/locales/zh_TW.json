@@ -47,17 +47,11 @@
       "Add phone number": [
         "新增電話號碼"
       ],
-      "Add screenshot(s)": [
-        "新增螢幕截圖"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "新增至 ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "新增至群組"
-      ],
-      "Advanced search": [
-        "進階搜尋"
       ],
       "Align center": [
         "置中"
@@ -87,6 +81,9 @@
         "套用"
       ],
       "Archive": [
+        ""
+      ],
+      "Attach screenshot(s)": [
         ""
       ],
       "Attachment": [
@@ -323,9 +320,6 @@
       "Export contacts": [
         "匯出聯絡人"
       ],
-      "Fewer search options": [
-        "較少搜尋選項"
-      ],
       "Filter on...": [
         "篩選..."
       ],
@@ -386,9 +380,6 @@
       "Hide folders": [
         "隱藏資料夾"
       ],
-      "Hide info": [
-        "隱藏資訊"
-      ],
       "Hide labels": [
         "隱藏標籤"
       ],
@@ -397,6 +388,9 @@
       ],
       "I have a question": [
         "我要發問"
+      ],
+      "Images will be loaded without a proxy": [
+        "圖片不會透過代理伺服器載入"
       ],
       "import": [
         "匯入"
@@ -448,6 +442,9 @@
       ],
       "Learn more": [
         "了解更多"
+      ],
+      "Less search options": [
+        ""
       ],
       "Load": [
         "載入"
@@ -571,6 +568,9 @@
       ],
       "No": [
         "否"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        ""
       ],
       "No, I won't attend": [
         "否，我不會出席"
@@ -767,20 +767,17 @@
       "Show details": [
         "顯示詳細資料"
       ],
-      "Show fewer search options": [
-        "顯示較少搜尋選項"
-      ],
       "Show folders": [
         "顯示資料夾"
-      ],
-      "Show info": [
-        "顯示資訊"
       ],
       "Show labels": [
         "顯示標籤"
       ],
       "Show less": [
         "顯示更少"
+      ],
+      "Show less search options": [
+        ""
       ],
       "Show messages": [
         "顯示郵件"
@@ -802,9 +799,6 @@
       ],
       "Skip": [
         "略過"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "跟踪保護下某些圖像無法加載"
       ],
       "Star": [
         ""
@@ -972,9 +966,9 @@
         "縮小"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "請選擇"
+    "action": {
+      "Search messages": [
+        ""
       ]
     },
     "Actions message": {
@@ -2825,7 +2819,7 @@
         "條件空白"
       ],
       "Enter 6 digits": [
-        "輸入6位數"
+        "請輸入 6 位驗證碼"
       ],
       "Enter a password": [
         "請輸入您的密碼"
@@ -2861,7 +2855,7 @@
         "登入憑證不正確。請再試一次。"
       ],
       "Incorrect mailbox password. Please try again.": [
-        "信箱密碼不正確。請再試一次。"
+        "郵箱密碼不正確。請再試一次."
       ],
       "Invalid expiration time": [
         "無效的到期時間"
@@ -3053,7 +3047,7 @@
         "已信任的密鑰用於寄送時無效"
       ],
       "Unknown error": [
-        "未知的錯誤"
+        "未知錯誤"
       ],
       "Unknown error.": [
         "未知的錯誤。"
@@ -3083,7 +3077,7 @@
         "無法解密您的電子郵件。這可能是因為密碼重設。${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
-        "您的匯入將不會處理。"
+        "將不會處理您的匯入。"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
@@ -4253,6 +4247,9 @@
       "No results found": [
         "找不到相符的結果"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有已上載的金鑰都無法用於加密。加密將會自動停用。"
       ],
@@ -4322,9 +4319,6 @@
       "Priority support": [
         "優先支援"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 不會透過濫用隱私來賺錢。"
       ],
@@ -4369,9 +4363,6 @@
       ],
       "Scheduling message...": [
         "排程傳送郵件中…"
-      ],
-      "Screenshot(s) attached": [
-        "已附加的螢幕截圖"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "搜索耗時過長? 請嘗試 ${ dropdownButton } 或 ${ toggleOffButton } 搜索結果。"
@@ -4418,7 +4409,7 @@
       "Sorry, this message does not exist or has already expired": [
         "抱歉，此訊息不存在或已過期"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
@@ -5088,6 +5079,9 @@
       "ANY": [
         "任一"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         "附件"
       ],
@@ -5147,6 +5141,9 @@
       ],
       "Date:": [
         "日期："
+      ],
+      "Delete": [
+        ""
       ],
       "Display name": [
         "顯示名稱"
@@ -5438,6 +5435,14 @@
         "名稱"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        "寄件者"
+      ],
+      "To": [
+        "收件者"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "最大化"
@@ -5460,11 +5465,6 @@
       ],
       "Row": [
         "列"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "附加螢幕截圖"
       ]
     },
     "Label/folder modal": {
@@ -6041,12 +6041,6 @@
       "A way to contact you": [
         "您的聯絡方式"
       ],
-      "Browser name": [
-        "瀏覽器名稱"
-      ],
-      "Browser version": [
-        "瀏覽器版本"
-      ],
       "Confirm password": [
         "確認密碼"
       ],
@@ -6089,12 +6083,6 @@
       "Name or email address": [
         "名稱或電子郵件地址"
       ],
-      "OS name": [
-        "作業系統名稱"
-      ],
-      "OS version": [
-        "作業系統版本"
-      ],
       "Password": [
         "密碼"
       ],
@@ -6107,23 +6095,20 @@
       "Please insert link first": [
         ""
       ],
-      "Proton username": [
-        "Proton 使用者名稱"
-      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
       "Search for name or email": [
         "搜尋名稱或電子郵件"
       ],
-      "Search Messages": [
-        "搜尋郵件"
-      ],
       "Search messages": [
         "搜尋訊息"
       ],
       "Search name, email or group": [
         "搜尋名稱、電子郵件或群組"
+      ],
+      "Select": [
+        ""
       ],
       "Start date": [
         "開始日期"

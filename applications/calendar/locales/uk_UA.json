@@ -41,14 +41,14 @@
       "Add phone number": [
         "Додати номер телефону"
       ],
-      "Add screenshot(s)": [
-        "Додати знімки екрана"
-      ],
       "Add to group": [
         "Додати до групи"
       ],
       "Apply": [
         "Застосувати"
+      ],
+      "Attach screenshot(s)": [
+        "Додати знімки екрана"
       ],
       "Back": [
         "Назад"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Виберіть файл або перетягніть його сюди"
-      ],
-      "Clear": [
-        "Очистити"
       ],
       "Clear data": [
         "Очистити дані"
@@ -217,9 +214,6 @@
       ],
       "Hide folders": [
         "Сховати теки"
-      ],
-      "Hide info": [
-        "Приховати інформацію"
       ],
       "Hide labels": [
         "Сховати мітки"
@@ -383,9 +377,6 @@
       "Show folders": [
         "Показати теки"
       ],
-      "Show info": [
-        "Показати інформацію"
-      ],
       "Show labels": [
         "Показати мітки"
       ],
@@ -484,11 +475,6 @@
       ],
       "Yes, I'll attend": [
         "Так, я долучуся"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Вибрати"
       ]
     },
     "Actions message": {
@@ -1876,7 +1862,7 @@
         "Подія з вимкненого календаря."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
         "Додати календар"
       ]
@@ -3181,17 +3167,11 @@
       "Priority support": [
         "Пріоритетна підтримка"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
       "Removed participants will be notified.": [
         "Вилучені учасники отримають сповіщення."
-      ],
-      "Screenshot(s) attached": [
-        "Знімки екрана додано"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
@@ -3211,8 +3191,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Деякі з ваших відповідей на повторювані події, раніше оновлені організатором, будуть втрачені."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Простір сховища спільний для пошти, календаря та диска."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену е-пошти"
@@ -3480,6 +3460,9 @@
       "All day": [
         "Весь день"
       ],
+      "Attach screenshot(s)": [
+        "Додати знімки екрана"
+      ],
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
       ],
@@ -3530,6 +3513,9 @@
       ],
       "Default notifications": [
         "Типові сповіщення"
+      ],
+      "Delete": [
+        "Видалити"
       ],
       "Description": [
         "Опис"
@@ -3729,11 +3715,6 @@
     "Label for contact group name": {
       "Name": [
         "Назва"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Додати знімки екрана"
       ]
     },
     "Label/folder modal": {
@@ -4355,12 +4336,6 @@
       "Add title": [
         "Додати заголовок"
       ],
-      "Browser name": [
-        "Назва браузера"
-      ],
-      "Browser version": [
-        "Версія браузера"
-      ],
       "e.g. Julia Smith": [
         "наприклад, Джулія Сміт"
       ],
@@ -4382,26 +4357,20 @@
       "Name": [
         "Назва"
       ],
-      "OS name": [
-        "Назва ОС"
-      ],
-      "OS version": [
-        "Версія ОС"
-      ],
       "Password": [
         "Пароль"
       ],
       "Please describe the problem and include any error messages": [
         "Опишіть проблему та додайте повідомлення про помилки"
       ],
-      "Proton username": [
-        "Ім'я користувача Proton"
-      ],
       "Search for group name": [
         "Шукати назву групи"
       ],
       "Search for name or email": [
         "Пошук за іменем чи е-поштою"
+      ],
+      "Select": [
+        "Вибрати"
       ],
       "Start typing an email address": [
         "Почніть вводити адресу електронної пошти"

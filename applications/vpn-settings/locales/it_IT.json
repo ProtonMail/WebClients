@@ -55,14 +55,14 @@
       "Add PayPal payment method": [
         "Aggiungi il metodo di pagamento PayPal"
       ],
-      "Add screenshot(s)": [
-        "Aggiungi screenshot"
-      ],
       "annual billing": [
         "fatturazione annuale"
       ],
       "Apply": [
         "Applica"
+      ],
+      "Attach screenshot(s)": [
+        "Allega screenshot"
       ],
       "Back": [
         "Indietro"
@@ -78,9 +78,6 @@
       ],
       "Chat with us": [
         "Chatta con noi"
-      ],
-      "Clear": [
-        "Elimina"
       ],
       "Close": [
         "Chiudi"
@@ -114,6 +111,9 @@
       ],
       "Copy email to clipboard": [
         "Copia email negli appunti"
+      ],
+      "Create": [
+        "Crea"
       ],
       "Create account": [
         "Crea account"
@@ -178,6 +178,9 @@
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
       ],
+      "Extend": [
+        "Estesa"
+      ],
       "Get ${ vpnPlus }": [
         "Ottieni ${ vpnPlus }"
       ],
@@ -202,9 +205,6 @@
       "Hide additional features": [
         "Nascondi funzionalità aggiuntive"
       ],
-      "Hide info": [
-        "Nascondi info"
-      ],
       "Homepage": [
         "Pagina iniziale"
       ],
@@ -216,6 +216,9 @@
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
         "Mantieni il mio account ${ BRAND_NAME } ${ currentPlanName }"
+      ],
+      "Load more": [
+        "Carica di più"
       ],
       "Loading verification": [
         "Caricamento verifica"
@@ -304,6 +307,12 @@
       "Retry": [
         "Riprova"
       ],
+      "Revoke": [
+        "Revoca"
+      ],
+      "Revoke ${ name }": [
+        "Revoca ${ name }"
+      ],
       "Save": [
         "Salva"
       ],
@@ -327,9 +336,6 @@
       ],
       "Show": [
         "Mostra"
-      ],
-      "Show info": [
-        "Mostra info"
       ],
       "Show preview": [
         "Mostra anteprima"
@@ -434,11 +440,6 @@
         "Zoom indietro"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selezionare"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } indirizzo email",
@@ -480,6 +481,11 @@
       "${ vpnBonus } connection": [
         "${ vpnBonus } connessione",
         "${ vpnBonus } connessioni"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        "Questo disconnetterà tutti i router e client che utilizzano questo certificato."
       ]
     },
     "Apps dropdown": {
@@ -753,6 +759,14 @@
       ],
       "Unsupported calendar format": [
         "Formato calendario non supportato"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Chiudi"
+      ],
+      "Open": [
+        "Apri"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1775,6 +1789,11 @@
         "Puoi anche ${ refresh } o riprovare più tardi."
       ]
     },
+    "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        "Certificato ${ name } non trovato o già revocato"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nessuna immagine selezionata"
@@ -2023,6 +2042,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Un Internet gratuito e non censurato dovrebbe essere disponibile per tutti."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        "Un nome che aiuti a ricordarne l'utilizzo, in modo da facilitare la revoca o l'estensione in un secondo momento."
+      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Accesso a contenuti bloccati, come social media, notizie, Wikipedia, YouTube, e molti altri, non importa dove sei."
       ],
@@ -2155,6 +2177,9 @@
       "Expired": [
         "Scaduto"
       ],
+      "expires ${ expirationDate }": [
+        "scade il ${ expirationDate }"
+      ],
       "For families and small teams; includes both Mail and VPN.": [
         "Per famiglie e piccoli team; include sia Mail che VPN."
       ],
@@ -2266,6 +2291,9 @@
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Scopri come accedere a ${ VPN_APP_NAME } con applicazioni VPN di terze parti."
       ],
+      "Learn more": [
+        "Per saperne di più"
+      ],
       "Loading": [
         "Caricamento"
       ],
@@ -2310,6 +2338,9 @@
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Una volta che clicchi su \"Downgrade\", potrebbero volerci alcuni minuti per effettuare il downgrade del tuo account su un piano gratuito. "
+      ],
+      "Or select a particular server:": [
+        "O seleziona un server specifico:"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà eventualmente disabilitato."
@@ -2359,9 +2390,6 @@
       "Priority support": [
         "Assistenza prioritaria"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton non può aiutarti a recuperare le password perse."
       ],
@@ -2377,6 +2405,9 @@
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Ripristinando la password verranno ripristinate anche le chiavi di crittografia per tutti i servizi correlati a Proton (Mail e VPN). Non sarai più in grado di leggere i messaggi esistenti. Se non conosci le credenziali di ${ MAIL_APP_NAME }, NON ripristinare. Puoi usarle per accedere ${ hereLink }."
       ],
+      "Revoke certificate ${ name }": [
+        "Revoca certificato ${ name }"
+      ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Convoglia tutto il traffico internet attraverso la rete Tor con un singolo click."
       ],
@@ -2391,9 +2422,6 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scansiona questo codice con il dispositivo di autenticazione a due fattori per impostare l'account. ${ switchButton }."
-      ],
-      "Screenshot(s) attached": [
-        "Screenshot allegato/i"
       ],
       "See all plans": [
         "Visualizza tutti i piani"
@@ -2422,8 +2450,8 @@
       "Storage GB": [
         "Archivio GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Lo spazio d'archiviazione è condiviso tra Mail, Calendario e Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Supporto per 1 dominio di posta elettronica personalizzato"
@@ -2445,6 +2473,9 @@
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Questi file di configurazione ti permettono di scegliere a quale server ${ VPN_APP_NAME } ti connetti quando utilizzi un’app VPN di terze parti o se configuri una connessione VPN su un router."
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Queste configurazioni sono fornite per funzionare con router WireGuard e client ufficiali."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
@@ -2520,6 +2551,9 @@
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        "Usa il miglior server in base al carico corrente e alla posizione: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Usa le seguenti credenziali quando ti connetti ai server ${ VPN_APP_NAME } senza applicazione. Esempi di utilizzo includono: Tunnelblick su macOS, OpenVPN su GNU/Linux."
@@ -2803,8 +2837,17 @@
       "Annual discount (${ discountPercentage }%)": [
         "Sconto annuale (${ discountPercentage }%)"
       ],
+      "Attach screenshot(s)": [
+        "Allega screenshot"
+      ],
       "Back to:": [
         "Torna a:"
+      ],
+      "Block malware only": [
+        "Blocca solo malware"
+      ],
+      "Block malware, ads and trackers": [
+        "Blocca malware, annunci e tracker"
       ],
       "bonus storage": [
         "spazio bonus"
@@ -2833,8 +2876,14 @@
       "Category": [
         "Categoria"
       ],
+      "Choose a name for the generated certificate file": [
+        "Scegli un nome per il file del certificato generato"
+      ],
       "Code is 6 digits without spaces": [
         "Il codice è di 6 cifre senza spazi"
+      ],
+      "Config to connect to ${ serverName }": [
+        "Configurazione per connettersi a ${ serverName }"
       ],
       "Confirm login password": [
         "Confermare password"
@@ -2881,6 +2930,12 @@
       "Default language": [
         "Lingua predefinita"
       ],
+      "Delete": [
+        "Elimina"
+      ],
+      "Device/certificate name": [
+        "Nome dispositivo/certificato"
+      ],
       "Digits": [
         "Cifre"
       ],
@@ -2926,11 +2981,17 @@
       "Key": [
         "Chiave"
       ],
+      "Level for NetShield blocker filtering": [
+        "Livello di filtro per NetShield"
+      ],
       "Login password": [
         "Password di accesso"
       ],
       "Mailbox password": [
         "Password della casella email"
+      ],
+      "Moderate NAT": [
+        "NAT moderato"
       ],
       "Name": [
         "Nome"
@@ -2946,6 +3007,12 @@
       ],
       "New password": [
         "Nuova password"
+      ],
+      "No filter": [
+        "Nessun filtro"
+      ],
+      "Non-standard ports": [
+        "Porte non standard"
       ],
       "Old login password": [
         "Vecchia password di accesso"
@@ -3055,6 +3122,9 @@
       "Verification method": [
         "Metodo di verifica"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Siamo spiacenti di vederti andare via. Spiegaci perché ci stai lasciando per aiutarci a migliorare."
       ],
@@ -3108,11 +3178,6 @@
       ],
       "Expired": [
         "Scaduto"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Allega screenshot"
       ]
     },
     "Link": {
@@ -3454,12 +3519,6 @@
       "Add gift code": [
         "Aggiungi codice regalo"
       ],
-      "Browser name": [
-        "Nome del browser"
-      ],
-      "Browser version": [
-        "Versione del browser"
-      ],
       "Choose a new password": [
         "Scegli una nuova password"
       ],
@@ -3493,12 +3552,6 @@
       "Mailbox password": [
         "Password della casella email"
       ],
-      "OS name": [
-        "Nome del sistema operativo"
-      ],
-      "OS version": [
-        "Versione del sistema operativo"
-      ],
       "Other": [
         "Altro"
       ],
@@ -3511,14 +3564,14 @@
       "Postal code": [
         "Codice postale"
       ],
-      "Proton username": [
-        "Nome utente di Proton"
-      ],
       "Recovery email address": [
         "Indirizzo email di recupero"
       ],
       "Reset code": [
         "Reimposta codice"
+      ],
+      "Select": [
+        "Selezionare"
       ],
       "Select a reason": [
         "Seleziona un motivo"
@@ -3870,6 +3923,20 @@
         "Abbonamento annullato con successo"
       ]
     },
+    "Success notification": {
+      "Certificate ${ name } revoked": [
+        "Certificato ${ name } revocato"
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        "Certificato esteso fino a ${ formattedExpirationDate }"
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        "Config \"${ name }\" creata, nota che la chiave privata non è memorizzata e non verrà mostrata di nuovo, dovresti copiare o scaricare questa configurazione."
+      ],
+      "Creating config file for ${ serverName }": [
+        "Creazione del file di configurazione per ${ serverName }"
+      ]
+    },
     "Suffix": {
       "/ month": [
         "/ mese"
@@ -3922,8 +3989,14 @@
       "${ VPN_APP_NAME } plan comparison": [
         "${ VPN_APP_NAME } comparazione piano"
       ],
+      "1. Give a name to the config to be generated": [
+        "1. Dai un nome alla configurazione da generare"
+      ],
       "1. Select platform": [
         "1. Seleziona piattaforma"
+      ],
+      "2. Select platform": [
+        "2. Seleziona una piattaforma"
       ],
       "2. Select protocol": [
         "2. Seleziona protocollo"
@@ -3933,6 +4006,12 @@
       ],
       "3. Select config file and download": [
         "3. Seleziona file di configurazione e scarica"
+      ],
+      "3. Select VPN options": [
+        "3. Seleziona opzioni VPN"
+      ],
+      "4. Select a server to connect to": [
+        "4. Seleziona un server a cui connettersi"
       ],
       "Account": [
         "Account"
@@ -4210,6 +4289,9 @@
       "Reset password?": [
         "Reimpostare la password?"
       ],
+      "Revoke certificate": [
+        "Revoca certificato"
+      ],
       "Secure Core Servers": [
         "Server Secure Core"
       ],
@@ -4275,6 +4357,9 @@
       ],
       "What's new": [
         "Cosa c'è di nuovo"
+      ],
+      "WireGuard configuration": [
+        "Configurazione WireGuard"
       ],
       "You already have a Proton account": [
         "Hai già un account Proton"
