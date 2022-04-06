@@ -18,6 +18,7 @@ import {
     getHasLegacyPlans,
 } from '@proton/shared/lib/helpers/subscription';
 import { Plan, Subscription, UserModel, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
+import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
@@ -222,6 +223,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
             });
+        const numberOfPersonalCalendars = MAX_CALENDARS_PER_USER;
         const items: Item[] = [
             {
                 icon: 'checkmark',
@@ -234,7 +236,11 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
             },
             {
                 icon: 'checkmark',
-                text: c('new_plans: Upsell attribute').t`Create up to 20 personal calendars`,
+                text: c('new_plans: Upsell attribute').ngettext(
+                    msgid`Create up to ${numberOfPersonalCalendars} personal calendar`,
+                    `Create up to ${numberOfPersonalCalendars} personal calendars`,
+                    numberOfPersonalCalendars
+                ),
             },
             {
                 icon: 'checkmark',
