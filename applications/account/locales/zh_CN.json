@@ -214,6 +214,9 @@
       "Copy link": [
         "复制链接"
       ],
+      "Create": [
+        ""
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "导出密钥"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "字体"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "给邮件加标签"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "正在载入验证"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "评论"
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
       ],
       "Revoke all other sessions": [
         "其余设备全部下线"
@@ -930,6 +945,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "正在删除该地址的密钥。"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -3060,6 +3080,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "姓氏和名字至少应勾选一个"
       ]
@@ -3993,6 +4016,9 @@
       "A free and uncensored Internet should be available to all.": [
         "每个人都应当享有自由的互联网，免受网络审查。"
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4389,6 +4415,9 @@
       "Expired": [
         "已过期"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "Failed to fetch logs.": [
         "获取日志失败。"
       ],
@@ -4764,6 +4793,9 @@
       "Only you can see the labels.": [
         "标签只对您可见。"
       ],
+      "Or select a particular server:": [
+        ""
+      ],
       "Organization keys activated": [
         "机构密钥已激活"
       ],
@@ -4878,9 +4910,6 @@
       "Priority support": [
         "优先享受客服"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton 没有能力帮助您找回密码。"
       ],
@@ -4934,6 +4963,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或 ${ link } 来解决。"
+      ],
+      "Revoke certificate ${ name }": [
+        ""
       ],
       "Right to Left": [
         "从右到左"
@@ -5010,8 +5042,8 @@
       "Storage GB": [
         "存储空间 GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "邮箱、日历、网盘均共用同一存储空间。"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Support for 1 custom email domain": [
         "支持 1 个自有域名"
@@ -5240,6 +5272,9 @@
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "使用自动回复通知对方您不在办公室或暂时无法回复。"
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         ""
@@ -6021,6 +6056,12 @@
       "Block email tracking": [
         "阻止电子邮件追踪"
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "奖励存储空间"
       ],
@@ -6051,6 +6092,9 @@
       "Category": [
         "类别"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "验证码"
       ],
@@ -6074,6 +6118,9 @@
       ],
       "Conditions": [
         "条件"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm link URLs": [
         ""
@@ -6173,6 +6220,9 @@
       ],
       "Description": [
         "说明："
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "验证码位数"
@@ -6330,6 +6380,9 @@
       "Last month only": [
         "仅上个月"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "登录密码"
       ],
@@ -6350,6 +6403,9 @@
       ],
       "Message": [
         "内容"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "移至"
@@ -6372,8 +6428,14 @@
       "New password": [
         "新密码"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "未找到标签"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "通知"
@@ -6617,6 +6679,9 @@
       ],
       "Verification code": [
         "验证码"
+      ],
+      "VPN Accelerator": [
+        ""
       ],
       "VPN Connections": [
         "VPN 连接数"
@@ -8344,6 +8409,18 @@
       "Address enabled": [
         "地址已启用"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "规则已删除"
       ],
@@ -8443,8 +8520,14 @@
       "(highly recommended)": [
         "（强烈推荐）"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. 选择平台"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. 选择协议"
@@ -8454,6 +8537,12 @@
       ],
       "3. Select config file and download": [
         "3. 选择配置文件并下载"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         "账户和密钥"
@@ -9037,6 +9126,9 @@
       "Restore administrator privileges": [
         "恢复管理员权限"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         "来自瑞士的加密邮箱"
       ],
@@ -9192,6 +9284,12 @@
       ],
       "What's new": [
         "更新内容"
+      ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "Your ${ domain } address is active": [
         ""

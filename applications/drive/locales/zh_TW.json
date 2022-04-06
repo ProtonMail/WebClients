@@ -38,14 +38,14 @@
       "Add phone number": [
         "新增電話號碼"
       ],
-      "Add screenshot(s)": [
-        "新增螢幕截圖"
-      ],
       "Add to group": [
         "新增至群組"
       ],
       "Apply": [
         "套用"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "返回"
@@ -254,9 +254,6 @@
       "Hide folders": [
         "隱藏資料夾"
       ],
-      "Hide info": [
-        "隱藏資訊"
-      ],
       "Hide labels": [
         "隱藏標籤"
       ],
@@ -449,9 +446,6 @@
       "Show folders": [
         "顯示資料夾"
       ],
-      "Show info": [
-        "顯示資訊"
-      ],
       "Show labels": [
         "顯示標籤"
       ],
@@ -556,11 +550,6 @@
       ],
       "Zoom out": [
         "縮小"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "請選擇"
       ]
     },
     "Actions message": {
@@ -808,6 +797,14 @@
       ],
       "Unsupported calendar format": [
         "不支援的行事曆格式"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirm modal title": {
@@ -2658,9 +2655,6 @@
       "Priority support": [
         "優先支援"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "待處理"
       ],
@@ -2669,9 +2663,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或 ${ link } 將自動解決大部分問題。"
-      ],
-      "Screenshot(s) attached": [
-        "已附加的螢幕截圖"
       ],
       "Search cannot be enabled in this browser": [
         ""
@@ -2709,7 +2700,7 @@
       "Something went wrong, please try again later.": [
         "發生錯誤，請稍後再試。"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3019,6 +3010,9 @@
       "Apply to all unverified items": [
         ""
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         "音訊檔"
       ],
@@ -3057,6 +3051,9 @@
       ],
       "Created": [
         "已建立"
+      ],
+      "Delete": [
+        ""
       ],
       "Delete drive?": [
         "刪除雲端硬碟?"
@@ -3301,11 +3298,6 @@
     "Label for contact group name": {
       "Name": [
         "名稱"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "附加螢幕截圖"
       ]
     },
     "Label/folder modal": {
@@ -3680,12 +3672,6 @@
       "A way to contact you": [
         "您的聯絡方式"
       ],
-      "Browser name": [
-        "瀏覽器名稱"
-      ],
-      "Browser version": [
-        "瀏覽器版本"
-      ],
       "e.g. Julia Smith": [
         "例如：Julia Smith"
       ],
@@ -3710,26 +3696,20 @@
       "New name": [
         "新名稱"
       ],
-      "OS name": [
-        "作業系統名稱"
-      ],
-      "OS version": [
-        "作業系統版本"
-      ],
       "Password": [
         "密碼"
       ],
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有)"
       ],
-      "Proton username": [
-        "Proton 使用者名稱"
-      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
       "Search for name or email": [
         "搜尋名稱或電子郵件"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "在此輸入一個電子郵件地址"

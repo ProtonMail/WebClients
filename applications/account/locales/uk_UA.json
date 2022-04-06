@@ -214,6 +214,9 @@
       "Copy link": [
         "Копіювати посилання"
       ],
+      "Create": [
+        ""
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "Експортувати ключ"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "Шрифт"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "позначати листи міткою"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Завантаження підтвердження"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Огляд"
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
       ],
       "Revoke all other sessions": [
         "Відкликати всі інші сеанси"
@@ -957,6 +972,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "Триває видалення ключа для вашої адреси."
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -3123,6 +3143,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "Не можна прибрати позначку одночасно з імені та прізвища"
       ]
@@ -3943,7 +3966,7 @@
         "Адреса ${ addressToCreate } тепер активна"
       ],
       "${ appName } ${ planName } credits earned": [
-        ""
+        "Зібрано кредитів ${ appName } ${ planName }"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -4048,7 +4071,7 @@
         "${ providerFoldersNumLocalized } міток знайдено в Gmail"
       ],
       "${ rewards } of ${ rewardsLimit } months": [
-        ""
+        "${ rewards } з ${ rewardsLimit } місяців"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } на вашій передплаті, перейшовши на ${ annualBilling }"
@@ -4157,6 +4180,9 @@
       ],
       "A free and uncensored Internet should be available to all.": [
         "Вільний Інтернет без цензури має бути доступним для всіх."
+      ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4507,7 +4533,7 @@
         "Кожне додаткове з'єднання може бути призначене користувачам вашої організації."
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
-        ""
+        "Зібрано ${ rewards } з ${ rewardsLimit } місяців ${ appName } ${ planName }."
       ],
       "Edit label": [
         "Змінити мітку"
@@ -4568,6 +4594,9 @@
       ],
       "Expired": [
         "Протерміновано"
+      ],
+      "expires ${ expirationDate }": [
+        ""
       ],
       "Failed to fetch logs.": [
         "Помилка отримання журналів."
@@ -4777,7 +4806,7 @@
         "це обов'язково"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        ""
+        "Я користуюся службою ${ appName } і думаю, що вам вона теж може сподобатися. Це безпечна служба електронної пошти, яка захищає вашу приватність. Зареєструйтеся за цим посиланням, щоб отримати 1 місяць користування безплатно: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
@@ -4834,7 +4863,7 @@
         "Завантаження попереднього перегляду"
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        ""
+        "Увійдіть до ${ MAIL_APP_NAME }, щоб активувати свою адресу"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Журнал містить спроби авторизації з використанням ваших облікових даних в усіх службах Proton."
@@ -4949,6 +4978,9 @@
       ],
       "Only you can see the labels.": [
         "Тільки ви можете бачити мітки."
+      ],
+      "Or select a particular server:": [
+        ""
       ],
       "Organization keys activated": [
         "Ключі організації активовано"
@@ -5067,9 +5099,6 @@
       "Priority support": [
         "Пріоритетна підтримка"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton не може допомогти вам відновити будь-які втрачені паролі."
       ],
@@ -5083,7 +5112,7 @@
         "Proton спробує відновити імпортування одразу, як провайдер вашої електронної пошти скине ${ bandwithLimitLink } вашого облікового запису. Вам не потрібно нічого робити. Якщо ви скасуєте імпортування, ви більше не зможете його продовжити й доведеться почати спочатку."
       ],
       "Public link invite": [
-        ""
+        "Запрошення загальнодоступним посиланням"
       ],
       "purchase additional storage": [
         "придбати додатковий простір"
@@ -5123,6 +5152,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
+      ],
+      "Revoke certificate ${ name }": [
+        ""
       ],
       "Right to Left": [
         "Справа наліво"
@@ -5199,8 +5231,8 @@
       "Storage GB": [
         "ГБ сховища"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Простір сховища спільний для пошти, календаря та диска."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену е-пошти"
@@ -5430,6 +5462,9 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Використовуйте автоматичні відповіді для інформування ваших контактів, що ви зараз не маєте доступу до електронної пошти і тому не можете відповісти."
       ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Використовуйте ці облікові дані за з'єднання з серверами ${ VPN_APP_NAME } без застосунку. Приклади використовування таких з'єднань включають: Tunnelblick на macOS, OpenVPN на GNU/Linux."
       ],
@@ -5455,7 +5490,7 @@
         "Комплект VPN + ${ mailAppName } для родин та малого бізнесу."
       ],
       "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        ""
+        "Бажаєте встановити ${ addressToCreate } своєю типовою адресою для надсилання повідомлень?"
       ],
       "Warning:": [
         "Попередження:"
@@ -5509,7 +5544,7 @@
         "Якщо вимкнено, це запобігатиме завантаженню файлів зображень на вашому пристрої без вашої згоди.\t"
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        ""
+        "Якщо сповіщення увімкнено, ми надсилатимемо попередження на вашу адресу електронної пошти для поновлення паролю та повідомлень, якщо на вашу поштову скриньку ${ MAIL_APP_NAME } надійдуть нові повідомлення."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         "Коли вони передплатять тарифний план, від 1 до 3 місяців ${ appName } ${ planName } будуть зараховані вашому обліковому запису."
@@ -5578,7 +5613,7 @@
         "Ви не можете надіслати більше ніж ${ emailSendLimitNumber } запрошень електронною поштою впродовж наступних 24 годин"
       ],
       "You cannot refer ${ appName } users": [
-        ""
+        "Ви не можете запрошувати користувачів ${ appName }"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Ви не можете використати облікові дані OpenVPN / IKEv2 для входу в застосунки ${ VPN_APP_NAME } чи панель керування ${ VPN_APP_NAME }. ${ learnMore }"
@@ -5638,7 +5673,7 @@
         "Сеанс буде активним навіть після закриття браузера."
       ],
       "You'll still be able to send and receive mail with your existing email address(es).": [
-        ""
+        "Ви все одно зможете надсилати та отримувати пошту за допомогою наявних адрес електронної пошти."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }. Для використання ${ toAppName }, створіть адресу."
@@ -5730,7 +5765,7 @@
         "Ключ ${ fingerprint } вже вивантажено"
       ],
       "Track your referral link activities here": [
-        ""
+        "Стежте за діями з вашими запрошувальними посиланнями тут"
       ]
     },
     "Info - folder colouring feature": {
@@ -6225,6 +6260,12 @@
       "Block email tracking": [
         "Блокувати відстеження листів"
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "бонусне сховище"
       ],
@@ -6255,6 +6296,9 @@
       "Category": [
         "Категорія"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "Код"
       ],
@@ -6279,8 +6323,11 @@
       "Conditions": [
         "Умови"
       ],
-      "Confirm link URLs": [
+      "Config to connect to ${ serverName }": [
         ""
+      ],
+      "Confirm link URLs": [
+        "Підтвердити URL-адреси посилань"
       ],
       "Confirm login password": [
         "Підтвердити пароль входу"
@@ -6319,7 +6366,7 @@
         "Країна"
       ],
       "Credits pending": [
-        ""
+        "Кредити в очікуванні"
       ],
       "Credits used": [
         "Витрата кредитів"
@@ -6377,6 +6424,9 @@
       ],
       "Description": [
         "Опис"
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "Цифри"
@@ -6534,6 +6584,9 @@
       "Last month only": [
         "Лише останній місяць"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Пароль входу"
       ],
@@ -6554,6 +6607,9 @@
       ],
       "Message": [
         "Повідомлення"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "Перемістити"
@@ -6576,8 +6632,14 @@
       "New password": [
         "Новий пароль"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "Мітку не знайдено"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "Сповіщення"
@@ -6739,7 +6801,7 @@
         "Відомість"
       ],
       "Sticky labels": [
-        ""
+        "Липкі мітки"
       ],
       "Subtotal": [
         "Попередній підсумок"
@@ -6821,6 +6883,9 @@
       ],
       "Verification code": [
         "Код підтвердження"
+      ],
+      "VPN Accelerator": [
+        ""
       ],
       "VPN Connections": [
         "VPN-з’єднання"
@@ -8578,6 +8643,18 @@
       "Address enabled": [
         "Адресу увімкнено"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "Фільтр вилучено"
       ],
@@ -8683,8 +8760,14 @@
       "(highly recommended)": [
         "(наполегливо рекомендується)"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Виберіть платформу"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Виберіть протокол"
@@ -8694,6 +8777,12 @@
       ],
       "3. Select config file and download": [
         "3. Виберіть файл конфігурації та завантажте"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         "Обліковий запис і пароль"
@@ -8861,7 +8950,7 @@
         "Очистити"
       ],
       "Composing": [
-        ""
+        "Написання"
       ],
       "Confirm address": [
         "Підтвердьте адресу"
@@ -9152,7 +9241,7 @@
         "Повідомлення"
       ],
       "Messages and composing": [
-        ""
+        "Повідомлення й написання"
       ],
       "Multi-user support": [
         "Підтримка декількох користувачів"
@@ -9279,6 +9368,9 @@
       ],
       "Restore administrator privileges": [
         "Відновити права адміністратора"
+      ],
+      "Revoke certificate": [
+        ""
       ],
       "Secure email based in Switzerland": [
         "Захищена електронна пошта, що розташована у Швейцарії"
@@ -9435,6 +9527,12 @@
       ],
       "What's new": [
         "Що нового"
+      ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "Your ${ domain } address is active": [
         ""

@@ -47,17 +47,11 @@
       "Add phone number": [
         "電話番号を追加"
       ],
-      "Add screenshot(s)": [
-        "スクリーンショットを追加"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } に追加"
       ],
       "Add to group": [
         "グループに追加"
-      ],
-      "Advanced search": [
-        "詳細検索"
       ],
       "Align center": [
         "中央揃え"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "アーカイブ"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Attachment": [
         "添付ファイル"
@@ -323,9 +320,6 @@
       "Export contacts": [
         "連絡先のエクスポート"
       ],
-      "Fewer search options": [
-        "検索オプションを折りたたむ"
-      ],
       "Filter on...": [
         "仕分け対象..."
       ],
@@ -386,9 +380,6 @@
       "Hide folders": [
         "フォルダーを隠す"
       ],
-      "Hide info": [
-        "情報を非表示"
-      ],
       "Hide labels": [
         "ラベルを隠す"
       ],
@@ -397,6 +388,9 @@
       ],
       "I have a question": [
         "サポートに質問"
+      ],
+      "Images will be loaded without a proxy": [
+        ""
       ],
       "import": [
         "インポート"
@@ -448,6 +442,9 @@
       ],
       "Learn more": [
         "より詳しく"
+      ],
+      "Less search options": [
+        "検索オプションを折りたたむ"
       ],
       "Load": [
         "読み込む"
@@ -571,6 +568,9 @@
       ],
       "No": [
         "いいえ"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        ""
       ],
       "No, I won't attend": [
         "いいえ、参加しません"
@@ -767,20 +767,17 @@
       "Show details": [
         "詳細を表示"
       ],
-      "Show fewer search options": [
-        ""
-      ],
       "Show folders": [
         "フォルダーを表示"
-      ],
-      "Show info": [
-        "情報を表示"
       ],
       "Show labels": [
         "ラベルを表示"
       ],
       "Show less": [
         "詳細を非表示"
+      ],
+      "Show less search options": [
+        ""
       ],
       "Show messages": [
         "メッセージを表示"
@@ -802,9 +799,6 @@
       ],
       "Skip": [
         "スキップ"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "いくつかの画像はトラッカー保護により読み込まれませんでした"
       ],
       "Star": [
         "星印をつける"
@@ -912,7 +906,7 @@
         "送信に使用"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
-        ""
+        "マウスを使うことで表示のサイズを変更することができます。キーボードを使っている場合は、左矢印キーと右矢印キーを使ってサイズを変更することができます。"
       ],
       "Use “${ label }” setting": [
         "「${ label }」設定を使用する"
@@ -972,9 +966,9 @@
         "縮小"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "選択してください"
+    "action": {
+      "Search messages": [
+        ""
       ]
     },
     "Actions message": {
@@ -2804,7 +2798,7 @@
         "復号エラー: 暗号化されたメッセージのコンテンツ復号に失敗しました。"
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        ""
+        "${ calendarToFixCount } 件のカレンダーの選択を解除"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
@@ -2879,7 +2873,7 @@
         "ラベル名は空欄にできません"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "添付ファイルの最大数 (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) を超えました。"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "${ calendarToFixCount } 件のカレンダーを既存の Proton カレンダーに結合します"
@@ -2891,7 +2885,7 @@
         "メッセージの処理にエラーが発生しました。"
       ],
       "Missing key packet": [
-        ""
+        "キーパケットが利用できません"
       ],
       "Missing signature": [
         "署名がありません"
@@ -2990,7 +2984,7 @@
         "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
@@ -3768,7 +3762,7 @@
         "5 GB のストレージ"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        ""
+        "回復フレーズはアカウントへのアクセスを保護するための 1 つの手段です。これを使うことでアカウントにアクセスすることができ、パスワードを忘れた場合でも暗号化されたデータを復元することができます。"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         ""
@@ -3804,7 +3798,7 @@
         "このフォルダーに保存されている全てのメッセージが完全に削除されます。"
       ],
       "All messages stored with this label will be permanently deleted.": [
-        ""
+        "このラベルがついたすべてのメッセージは完全に削除されます。"
       ],
       "All your calendars are disabled.": [
         "すべてのカレンダーが無効です。"
@@ -3951,7 +3945,7 @@
         "とにかく添付ファイルをダウンロードしますか?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
-        ""
+        "連絡先の詳細を再署名して、これらのフィンガープリントを持ったキーを信頼してよろしいですか?"
       ],
       "Do you want to re-sign the contact details?": [
         "連絡先の詳細に再署名しますか?"
@@ -3960,7 +3954,7 @@
         "お好みのアプリストアからモバイルアプリをダウンロードして、外出先でも安全に会話しましょう。"
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        ""
+        "${ esProgress } / ${ totalProgressToShow } メッセージをダウンロードしています"
       ],
       "Draft": [
         "下書き"
@@ -4032,7 +4026,7 @@
         "${ formattedDelayShort } に期限が切れます"
       ],
       "Expires in less than ${ formattedDelayShort }": [
-        ""
+        "${ formattedDelayShort } 以内に期限が切れます"
       ],
       "Expires soon": [
         "もうすぐ期限切れになります"
@@ -4173,7 +4167,7 @@
         "ラベルを管理"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "添付ファイルの最大数 (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) を超えました。"
       ],
       "members": [
         "メンバー"
@@ -4253,6 +4247,9 @@
       "No results found": [
         "該当する項目がありません"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "メモ: アップロードされたキーは暗号化に利用できます。暗号化は自動的に無効化されます。"
       ],
@@ -4322,9 +4319,6 @@
       "Priority support": [
         "優先的なサポート"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton がプライバシーを悪用して資金を入手することはありません。"
       ],
@@ -4370,9 +4364,6 @@
       "Scheduling message...": [
         "メッセージをスケジューリングしています..."
       ],
-      "Screenshot(s) attached": [
-        "スクリーンショットが添付されました"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "検索時間が長すぎますか? 検索セッションから ${ dropdownButton } か ${ toggleOffButton } してください。"
       ],
@@ -4404,7 +4395,7 @@
         "セッションがタイムアウトしました"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        ""
+        "${ MAIL_APP_NAME } をこのブラウザーの規定メールアプリケーションに設定します。メールリンクをクリックしたとき、${ MAIL_APP_NAME } が自動的に開かれます。"
       ],
       "Set a recovery phrase": [
         "リカバリーフレーズを設定"
@@ -4418,8 +4409,8 @@
       "Sorry, this message does not exist or has already expired": [
         "このメッセージは存在しないか有効期限切れです。"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "ストレージ容量は Mail、Calendar、Drive で共有されます。　"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されています。"
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "${ DRIVE_APP_NAME } を使用してファイルを保存、シェアしました。"
@@ -4470,10 +4461,10 @@
         "送信者は、開封確認を要求しています。"
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        ""
+        "${ contactName } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットことが原因です。\n${ contactAddress } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        ""
+        "${ contactNames } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットことが原因です。\n${ contactAddresses } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
       ],
       "Themes can give your inbox a new look.": [
         "テーマは受信箱を新しい見た目にします。"
@@ -4485,7 +4476,7 @@
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        ""
+        "この動作によりすべてのメッセージがダウンロードされ、ローカルで検索することが可能になります。ブラウザーのデータを削除するとこの機能は無効になります。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
@@ -4494,7 +4485,7 @@
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        ""
+        "この会話にはスケジュールされたメッセージが含まれています。このメッセージの送信はキャンセルされます。"
       ],
       "This conversation contains non-trashed messages.": [
         "この会話には、ごみ箱に入れていないメッセージが含まれています。"
@@ -4560,7 +4551,7 @@
         "このメッセージの有効期限は明日の ${ formattedTime } までです"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
-        ""
+        "このパブリックキーは自動的に、このメールアドレスへ送信するメールの暗号化に使用されます。"
       ],
       "This sender's public key has not been trusted yet.": [
         "この送信者の公開キーはまだ信頼されていません。"
@@ -4581,7 +4572,7 @@
         ""
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        ""
+        "アドレスの検証を利用するには、送信で使うキーを含む 1 つ以上のパブリックキーを信頼する必要があります。これにより、暗号キーの偽装を防ぐことができます。"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         ""
@@ -4647,7 +4638,7 @@
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use ${ calendarAppName } to keep your agenda private.": [
-        ""
+        "${ calendarAppName } を使うことで予定表をプライベートに保つことができます。"
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "キーボードショートカットを使ってメールを素早く管理します。"
@@ -4886,7 +4877,7 @@
         "下書きを破棄"
       ],
       "Expand / contract composer": [
-        ""
+        "作成画面を拡大 / 縮小"
       ],
       "Forward": [
         "転送"
@@ -4943,10 +4934,10 @@
         "下に移動"
       ],
       "Move left / collapse": [
-        ""
+        "左に移動 / 縮小"
       ],
       "Move right / expand": [
-        ""
+        "右に移動 / 拡大"
       ],
       "Move to Archive": [
         "アーカイブに移動"
@@ -5088,6 +5079,9 @@
       "ANY": [
         "いずれか"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         "添付ファイル"
       ],
@@ -5147,6 +5141,9 @@
       ],
       "Date:": [
         "日時："
+      ],
+      "Delete": [
+        ""
       ],
       "Display name": [
         "表示名"
@@ -5438,6 +5435,14 @@
         "名前"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        ""
+      ],
+      "To": [
+        ""
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "最大化"
@@ -5460,11 +5465,6 @@
       ],
       "Row": [
         "行"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "スクリーンショットを添付"
       ]
     },
     "Label/folder modal": {
@@ -5514,7 +5514,7 @@
         "ブラウザのキャッシュを消去"
       ],
       "Create a calendar linked to an active email address.": [
-        ""
+        "アクティブなメールアドレスにリンクされたカレンダーを作成します。"
       ],
       "Create a new calendar to add this event": [
         "このイベントを追加するために新しいカレンダーを作成します"
@@ -5628,7 +5628,7 @@
         "アカウントをアップグレード"
       ],
       "You need to activate your calendar keys to add this event": [
-        ""
+        "このイベントを追加するにはカレンダーのキーを有効にする必要があります"
       ],
       "You need to activate your calendar keys to answer this invitation": [
         "この招待に回答するにはカレンダーのキーを有効にする必要があります"
@@ -6041,12 +6041,6 @@
       "A way to contact you": [
         "連絡手段"
       ],
-      "Browser name": [
-        "ブラウザの名前"
-      ],
-      "Browser version": [
-        "ブラウザのバージョン"
-      ],
       "Confirm password": [
         "パスワードの確認"
       ],
@@ -6089,12 +6083,6 @@
       "Name or email address": [
         "名前またはメールアドレス"
       ],
-      "OS name": [
-        "OS の名前"
-      ],
-      "OS version": [
-        "OS のバージョン"
-      ],
       "Password": [
         "パスワード"
       ],
@@ -6105,10 +6093,7 @@
         "問題について、エラーメッセージ等も含めてご記入下さい。（英語）"
       ],
       "Please insert link first": [
-        ""
-      ],
-      "Proton username": [
-        "Proton ユーザー名"
+        "最初にリンクを挿入してください"
       ],
       "Search for group name": [
         "グループ名で検索"
@@ -6116,14 +6101,14 @@
       "Search for name or email": [
         "名前またはメールアドレスで検索"
       ],
-      "Search Messages": [
-        "メッセージを検索"
-      ],
       "Search messages": [
         "メッセージを検索"
       ],
       "Search name, email or group": [
         "名前、メール、グループを検索"
+      ],
+      "Select": [
+        ""
       ],
       "Start date": [
         "開始日"
@@ -6263,7 +6248,7 @@
         "メッセージが見つかりません"
       ],
       "No messages scheduled": [
-        ""
+        "スケジュールされているメッセージはありません"
       ],
       "No results found": [
         "該当する項目がありません"
@@ -7014,7 +6999,7 @@
         "ごみ箱に移動"
       ],
       "Moving a scheduled message": [
-        ""
+        "スケジュールされたメッセージを移動しています"
       ],
       "New message": [
         "新規メッセージ"
@@ -7104,7 +7089,7 @@
         "メールの送信"
       ],
       "Send with changed preferences?": [
-        ""
+        "変更した設定を送信しますか?"
       ],
       "Send without expiration?": [
         "期限なしで送信しますか?"
@@ -7189,10 +7174,10 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        ""
+        "「自動」はこのユーザーに送信する際の書式が、自動選択される事を示しています。「プレーンテキスト」は、常にプレーンテキストに変換されてメッセージが送信されることを示します。"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        ""
+        "デジタル署名されたメールはメッセージがあなたから送信されたことの検証に役立ちます"
       ],
       "Each imported email will have this label": [
         "インポートされたメールすべてにこのラベルがついています"
@@ -7216,7 +7201,7 @@
         "インポートは新しいメッセージから始まります。"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        ""
+        "この動作によりすべてのメッセージがダウンロードされ、ローカルで検索することが可能になります。ブラウザーのデータを削除するとこの機能は無効になります。"
       ],
       "This feature is only available for paid users": [
         "この機能は課金ユーザーのみが利用できます"
@@ -7292,7 +7277,7 @@
         ""
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        ""
+        "添付ファイルの署名の検証に失敗しました。\n添付ファイルはダウンロードできますが、改ざんされている可能性があります。"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "連絡先データが壊れているため表示できません。"

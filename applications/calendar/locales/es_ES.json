@@ -41,14 +41,14 @@
       "Add phone number": [
         "Añadir número de teléfono"
       ],
-      "Add screenshot(s)": [
-        "Añadir captura de pantalla"
-      ],
       "Add to group": [
         "Agregar al grupo"
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "Attach screenshot(s)": [
+        "Adjuntar captura(s) de pantalla"
       ],
       "Back": [
         "Atrás"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Elige un archivo o arrástralo aquí"
-      ],
-      "Clear": [
-        "Limpiar"
       ],
       "Clear data": [
         "Limpiar datos"
@@ -213,9 +210,6 @@
       ],
       "Hide folders": [
         "Ocultar carpetas"
-      ],
-      "Hide info": [
-        "Ocultar información"
       ],
       "Hide labels": [
         "Ocultar etiquetas"
@@ -379,9 +373,6 @@
       "Show folders": [
         "Mostrar carpetas"
       ],
-      "Show info": [
-        "Mostrar información"
-      ],
       "Show labels": [
         "Mostrar etiquetas"
       ],
@@ -480,11 +471,6 @@
       ],
       "Yes, I'll attend": [
         "Sí, asistiré"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
       ]
     },
     "Actions message": {
@@ -1860,7 +1846,7 @@
         ""
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
         "Añadir calendario"
       ]
@@ -2174,7 +2160,7 @@
         ""
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Algunos de sus nombres de carpeta exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Por favor, personalice la importación para editar estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ves este mensaje de error, ponte en contacto con nuestro ${ supportTeam }."
@@ -3083,17 +3069,11 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
       "Removed participants will be notified.": [
         "Se notificarán a los participantes eliminados."
-      ],
-      "Screenshot(s) attached": [
-        "Captura(s) de pantalla adjuntada(s)"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que deseas utilizar por defecto al enviar un correo electrónico a esta dirección."
@@ -3113,8 +3093,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Se perderán algunas de tus respuestas a ocurrencias previamente actualizadas por el organizador."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "El espacio de almacenamiento es compartido por Mail, Calendario, y Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         ""
@@ -3382,6 +3362,9 @@
       "All day": [
         "Todo el día"
       ],
+      "Attach screenshot(s)": [
+        "Adjuntar captura(s) de pantalla"
+      ],
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
       ],
@@ -3432,6 +3415,9 @@
       ],
       "Default notifications": [
         ""
+      ],
+      "Delete": [
+        "Eliminar"
       ],
       "Description": [
         "Descripción"
@@ -3629,11 +3615,6 @@
     "Label for contact group name": {
       "Name": [
         "Nombre"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Adjuntar captura(s) de pantalla"
       ]
     },
     "Label/folder modal": {
@@ -4197,12 +4178,6 @@
       "Add title": [
         "Añadir título"
       ],
-      "Browser name": [
-        "Nombre del navegador"
-      ],
-      "Browser version": [
-        "Versión del navegador"
-      ],
       "e.g. Julia Smith": [
         "p. ej. Julia Smith"
       ],
@@ -4224,26 +4199,20 @@
       "Name": [
         "Nombre"
       ],
-      "OS name": [
-        "Nombre del SO"
-      ],
-      "OS version": [
-        "Versión del SO"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "Por favor, describe el problema e incluye cualquier mensaje de error"
       ],
-      "Proton username": [
-        "Nombre de usuario de Proton"
-      ],
       "Search for group name": [
         "Buscar por nombre de grupo"
       ],
       "Search for name or email": [
         "Buscar por nombre o correo electrónico"
+      ],
+      "Select": [
+        "Seleccionar"
       ],
       "Start typing an email address": [
         "Empieza a escribir una dirección de correo electrónico"

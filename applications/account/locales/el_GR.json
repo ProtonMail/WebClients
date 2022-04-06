@@ -214,6 +214,9 @@
       "Copy link": [
         "Αντιγραφή συνδέσμου"
       ],
+      "Create": [
+        ""
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "Εξαγωγή κλειδιού"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "Γραμματοσειρά"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "ορίστε ετικέτα στα email ως"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Αναμονή για επαλήθευση"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Αναθεώρηση"
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
       ],
       "Revoke all other sessions": [
         "Αποσυνδεθείτε από όλες τις άλλες συνεδρίες"
@@ -939,6 +954,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "Το κλειδί για τη διεύθυνση σας διαγράφεται τώρα."
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -2985,6 +3005,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "Το όνομα και το επώνυμο δεν μπορούν να είναι απο-επιλεγμένα και τα δύο ταυτόχρονα"
       ]
@@ -3952,6 +3975,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Ένα δωρεάν και χωρίς λογοκρισία Internet θα πρέπει να είναι διαθέσιμο σε όλους."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4353,6 +4379,9 @@
       "Expired": [
         "Ληγμένο"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "Failed to fetch logs.": [
         "Αποτυχία ανάκτησης αρχείων καταγραφής."
       ],
@@ -4730,6 +4759,9 @@
       "Only you can see the labels.": [
         "Μόνο εσύ μπορείς να δεις αυτές τις ετικέτες."
       ],
+      "Or select a particular server:": [
+        ""
+      ],
       "Organization keys activated": [
         "Τα κλειδιά οργανισμού ενεργοποιήθηκαν"
       ],
@@ -4845,9 +4877,6 @@
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Το Proton δεν μπορεί να σας βοηθήσει να ανακτήσετε τυχόν χαμένους κωδικούς."
       ],
@@ -4901,6 +4930,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
+      ],
+      "Revoke certificate ${ name }": [
+        ""
       ],
       "Right to Left": [
         "Δεξιά προς τα αριστερά"
@@ -4977,7 +5009,7 @@
       "Storage GB": [
         "Αποθήκευση GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -5207,6 +5239,9 @@
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Χρησιμοποιήστε τις αυτόματες απαντήσεις για να ενημερώνετε τις επαφές σας ότι βρίσκεστε εκτός γραφείου ή ότι δεν μπορείτε να απαντήσετε με άλλο τρόπο."
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια όταν συνδέεστε σε διακομιστές ${ VPN_APP_NAME } χωρίς εφαρμογή, όπως μέσω Tunnelblick για macOS ή OpenVPN για GNU/Linux."
@@ -5993,6 +6028,12 @@
       "Block email tracking": [
         "Φραγή ιχνηλάτησης μηνυμάτων"
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "μπόνους αποθηκευτικός χώρος"
       ],
@@ -6023,6 +6064,9 @@
       "Category": [
         "Κατηγορία"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "Κωδικός"
       ],
@@ -6046,6 +6090,9 @@
       ],
       "Conditions": [
         "Προϋποθέσεις"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm link URLs": [
         "Επιβεβαίωση διευθύνσεων συνδέσμων"
@@ -6145,6 +6192,9 @@
       ],
       "Description": [
         "Περιγραφή"
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "Ψηφία"
@@ -6302,6 +6352,9 @@
       "Last month only": [
         "Τελευταίος μήνας μόνο"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Κωδικός σύνδεσης"
       ],
@@ -6322,6 +6375,9 @@
       ],
       "Message": [
         "Μήνυμα"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "Μετακίνηση σε"
@@ -6344,8 +6400,14 @@
       "New password": [
         "Νέος κωδικός"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "Ειδοποίηση"
@@ -6589,6 +6651,9 @@
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
+      ],
+      "VPN Accelerator": [
+        ""
       ],
       "VPN Connections": [
         "Συνδέσεις VPN"
@@ -8326,6 +8391,18 @@
       "Address enabled": [
         "Η διεύθυνση ενεργοποιήθηκε"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "Το φίλτρο αφαιρέθηκε"
       ],
@@ -8427,8 +8504,14 @@
       "(highly recommended)": [
         "(προτείνεται ιδιαίτερα)"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Επιλέξτε πλατφόρμα"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Επιλέξτε πρωτόκολλο"
@@ -8438,6 +8521,12 @@
       ],
       "3. Select config file and download": [
         "3. Επιλέξτε αρχείο ρυθμίσεων και λήψη"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         "Λογαριασμός και κωδικός πρόσβασης"
@@ -9022,6 +9111,9 @@
       "Restore administrator privileges": [
         "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         ""
       ],
@@ -9177,6 +9269,12 @@
       ],
       "What's new": [
         "Τι νέο υπάρχει"
+      ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "Your ${ domain } address is active": [
         "Η διεύθυνσή σας τομέα ${ domain } είναι ενεργή"

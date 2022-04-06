@@ -41,14 +41,14 @@
       "Add phone number": [
         "電話番号を追加"
       ],
-      "Add screenshot(s)": [
-        "スクリーンショットを追加"
-      ],
       "Add to group": [
         "グループに追加"
       ],
       "Apply": [
         "適用"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "戻る"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "ファイルを選択するか、ここにドラッグしてください"
-      ],
-      "Clear": [
-        "クリア"
       ],
       "Clear data": [
         "データを消去"
@@ -211,9 +208,6 @@
       ],
       "Hide folders": [
         "フォルダーを隠す"
-      ],
-      "Hide info": [
-        "情報を非表示"
       ],
       "Hide labels": [
         "ラベルを隠す"
@@ -377,9 +371,6 @@
       "Show folders": [
         "フォルダーを表示"
       ],
-      "Show info": [
-        "情報を表示"
-      ],
       "Show labels": [
         "ラベルを表示"
       ],
@@ -478,11 +469,6 @@
       ],
       "Yes, I'll attend": [
         "はい、参加します"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "選択してください"
       ]
     },
     "Actions message": {
@@ -1852,7 +1838,7 @@
         "無効なカレンダーに関連付けられたイベントです。"
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
         ""
       ]
@@ -3034,17 +3020,11 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
       ],
       "Removed participants will be notified.": [
         ""
-      ],
-      "Screenshot(s) attached": [
-        "スクリーンショットが添付されました"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
@@ -3064,7 +3044,7 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         ""
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3333,6 +3313,9 @@
       "All day": [
         "終日"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "連絡先への宛先の自動追加"
       ],
@@ -3382,6 +3365,9 @@
         ""
       ],
       "Default notifications": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Description": [
@@ -3579,11 +3565,6 @@
     "Label for contact group name": {
       "Name": [
         "名前"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "スクリーンショットの添付"
       ]
     },
     "Label/folder modal": {
@@ -4118,12 +4099,6 @@
       "Add title": [
         "タイトルを入力"
       ],
-      "Browser name": [
-        "ブラウザの名前"
-      ],
-      "Browser version": [
-        "ブラウザのバージョン"
-      ],
       "e.g. Julia Smith": [
         "例: Julia Smith"
       ],
@@ -4145,26 +4120,20 @@
       "Name": [
         "名前"
       ],
-      "OS name": [
-        "OS の名前"
-      ],
-      "OS version": [
-        "OS のバージョン"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "問題について、エラーメッセージ等も含めてご記入下さい"
       ],
-      "Proton username": [
-        "Proton ユーザー名"
-      ],
       "Search for group name": [
         "グループ名で検索"
       ],
       "Search for name or email": [
         "名前またはメールアドレスで検索"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "電子メールアドレスを入力"

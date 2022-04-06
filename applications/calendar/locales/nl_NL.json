@@ -41,14 +41,14 @@
       "Add phone number": [
         "Telefoonnummer toevoegen"
       ],
-      "Add screenshot(s)": [
-        "Screenshot(s) toevoegen"
-      ],
       "Add to group": [
         "Toevoegen aan groep"
       ],
       "Apply": [
         "Pas toe"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Terug"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Kies een bestand of sleep deze hier"
-      ],
-      "Clear": [
-        "Wissen"
       ],
       "Clear data": [
         "Gegevens wissen"
@@ -213,9 +210,6 @@
       ],
       "Hide folders": [
         "Mappen verbergen"
-      ],
-      "Hide info": [
-        "Verberg informatie"
       ],
       "Hide labels": [
         "Labels verbergen"
@@ -379,9 +373,6 @@
       "Show folders": [
         "Mappen weergeven"
       ],
-      "Show info": [
-        "Informatie tonen"
-      ],
       "Show labels": [
         "Toon labels"
       ],
@@ -480,11 +471,6 @@
       ],
       "Yes, I'll attend": [
         "Ja, ik zal aanwezig zijn"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selecteren"
       ]
     },
     "Actions message": {
@@ -1860,9 +1846,9 @@
         "De afspraak hoort bij een uitgeschakelde agenda."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
-        "Agenda toevoegen"
+        ""
       ]
     },
     "Duration": {
@@ -3083,17 +3069,11 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
       ],
       "Removed participants will be notified.": [
         "Verwijderde deelnemers zullen op de hoogte worden gebracht."
-      ],
-      "Screenshot(s) attached": [
-        "Toegevoegde screenshot(s)"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
@@ -3113,8 +3093,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Sommige antwoorden op voorvallen die eerder zijn bijgewerkt door de organisator zullen verloren gaan."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Opslagruimte is gedeeld voor Mail, Agenda en Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Ondersteuning voor 1 aangepast e-mail domein"
@@ -3382,6 +3362,9 @@
       "All day": [
         "De hele dag"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "Contacten automatisch opslaan"
       ],
@@ -3432,6 +3415,9 @@
       ],
       "Default notifications": [
         "Standaardmeldingen"
+      ],
+      "Delete": [
+        ""
       ],
       "Description": [
         "Beschrijving"
@@ -3629,11 +3615,6 @@
     "Label for contact group name": {
       "Name": [
         "Naam"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Schermafbeelding(en) toevoegen"
       ]
     },
     "Label/folder modal": {
@@ -4197,12 +4178,6 @@
       "Add title": [
         "Titel toevoegen"
       ],
-      "Browser name": [
-        "Browsernaam"
-      ],
-      "Browser version": [
-        "Browserversie"
-      ],
       "e.g. Julia Smith": [
         "bijv. Julia Smith"
       ],
@@ -4224,26 +4199,20 @@
       "Name": [
         "Naam"
       ],
-      "OS name": [
-        "Besturingssysteem"
-      ],
-      "OS version": [
-        "Versie besturingssysteem"
-      ],
       "Password": [
         "Wachtwoord"
       ],
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem en voeg alle foutmeldingen toe"
       ],
-      "Proton username": [
-        "Proton-gebruikersnaam"
-      ],
       "Search for group name": [
         "Zoeken naar groepsnaam"
       ],
       "Search for name or email": [
         "Naam of e-mail zoeken"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Voer een e-mailadres in"

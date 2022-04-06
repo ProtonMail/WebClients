@@ -47,17 +47,11 @@
       "Add phone number": [
         "Добавить номер телефона"
       ],
-      "Add screenshot(s)": [
-        "Добавить снимки экрана"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Добавить в ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Добавить в группу"
-      ],
-      "Advanced search": [
-        "Расширенный поиск"
       ],
       "Align center": [
         "Выровнять по центру"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "Архив"
+      ],
+      "Attach screenshot(s)": [
+        "Вложить снимок(ки) экрана"
       ],
       "Attachment": [
         "Вложение"
@@ -329,9 +326,6 @@
       "Export contacts": [
         "Экспортировать контакты"
       ],
-      "Fewer search options": [
-        "Меньше настроек поиска"
-      ],
       "Filter on...": [
         "Фильтр по..."
       ],
@@ -392,9 +386,6 @@
       "Hide folders": [
         "Скрыть папки"
       ],
-      "Hide info": [
-        "Скрыть информацию"
-      ],
       "Hide labels": [
         "Скрыть ярлыки"
       ],
@@ -403,6 +394,9 @@
       ],
       "I have a question": [
         "У меня есть вопрос"
+      ],
+      "Images will be loaded without a proxy": [
+        "Изображения будут загружаться без прокси-сервера"
       ],
       "import": [
         "импорт"
@@ -457,6 +451,9 @@
       ],
       "Learn more": [
         "Подробнее"
+      ],
+      "Less search options": [
+        "Меньше настроек поиска"
       ],
       "Load": [
         "Загрузить"
@@ -580,6 +577,9 @@
       ],
       "No": [
         "Нет"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        "Трекеры не найдены, но некоторые изображения не могут быть загружены при использовании защиты от отслеживания."
       ],
       "No, I won't attend": [
         "Нет, я не участвую"
@@ -776,20 +776,17 @@
       "Show details": [
         "Показать подробности"
       ],
-      "Show fewer search options": [
-        "Показать меньше настроек поиска"
-      ],
       "Show folders": [
         "Показать папки"
-      ],
-      "Show info": [
-        "Показать информацию"
       ],
       "Show labels": [
         "Показать ярлыки"
       ],
       "Show less": [
         "Меньше"
+      ],
+      "Show less search options": [
+        "Показать меньше настроек поиска"
       ],
       "Show messages": [
         "Показать сообщения"
@@ -811,9 +808,6 @@
       ],
       "Skip": [
         "Пропустить"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "Некоторые изображения не могут быть загружены с защитой от отслеживания"
       ],
       "Star": [
         "Пометить звездочкой"
@@ -984,9 +978,9 @@
         "Уменьшить масштаб"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Выбрать"
+    "action": {
+      "Search messages": [
+        "Поиск сообщений"
       ]
     },
     "Actions message": {
@@ -1290,7 +1284,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Продолжить, используя ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -3496,7 +3490,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Мы увеличили общее хранилище вашего аккаунта до ${ rewardInGb } ГБ. Получите дополнительное хранилище и откройте платные функции уже сегодня."
       ],
       "You're all set!": [
         "Все готово!"
@@ -3504,7 +3498,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Выполните все шаги и получите в общей сложности ${ rewardInGb } ГБ для вашего аккаунта"
       ],
       "Expires soon": [
         "Скоро истекает"
@@ -3798,7 +3792,7 @@
         "Найдено ${ groupCounts } группы"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        ""
+        "${ MAIL_APP_NAME } может защитить и вашу компанию."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщение.",
@@ -4197,10 +4191,10 @@
         "встроенные изображения"
       ],
       "Encrypt for non-${ BRAND_NAME } users": [
-        ""
+        "Шифровать для пользователей вне ${ BRAND_NAME }"
       ],
       "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        ""
+        "Срок действия зашифрованных сообщений для получателей вне ${ BRAND_NAME }, истекает через 28 дней, если не установлен более короткий срок действия."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
@@ -4293,7 +4287,7 @@
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
       ],
       "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        ""
+        "Если вы отправляете это сообщение пользователю вне ${ MAIL_APP_NAME }, пожалуйста, не забудьте установить пароль для вашего сообщения."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
@@ -4398,7 +4392,7 @@
         "Объединённые"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        ""
+        "Истечение срока действия сообщения работает по умолчанию при отправке писем другим пользователям ${ MAIL_APP_NAME }. Чтобы отправлять письма с истекающим сроком действия пользователям, вне ${ BRAND_NAME }, пожалуйста, отмените и добавьте защиту паролем к своей электронной почте."
       ],
       "Message headers": [
         "Заголовки сообщений"
@@ -4465,6 +4459,9 @@
       ],
       "No results found": [
         "Результаты не найдены"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        "Трекеры не найдены, но некоторые изображения не могут быть загружены при использовании защиты от отслеживания"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ни один из загруженных ключей не годиться для шифрования. Шифрование автоматически отключено."
@@ -4535,9 +4532,6 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Протон не делает деньги на нарушении конфиденциальности."
       ],
@@ -4583,9 +4577,6 @@
       "Scheduling message...": [
         "Сообщение ставится в очередь..."
       ],
-      "Screenshot(s) attached": [
-        "Снимки экрана прикреплены"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Поиск занимает слишком много времени? ${ dropdownButton } или ${ toggleOffButton } из этой поисковой сессии."
       ],
@@ -4617,7 +4608,7 @@
         "Время сеанса истекло"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        ""
+        "Установите ${ MAIL_APP_NAME } в качестве почтового приложения по умолчанию для этого браузера. Приложение ${ MAIL_APP_NAME } будет открываться автоматически при нажатии на ссылку электронной почты."
       ],
       "Set a recovery phrase": [
         "Установите фразу для восстановления"
@@ -4631,11 +4622,11 @@
       "Sorry, this message does not exist or has already expired": [
         "Извините, это сообщение не существует или срок его действия уже истек"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Место хранения используется почтой, календарем и диском."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        ""
+        "Защищенное хранение и обмен файлами с помощью ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Тема"
@@ -4848,7 +4839,7 @@
         "Обновите аккаунт чтобы поддержать конфиденциальность и получить доступ к большему количеству функций."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        ""
+        "Обновление для использования ${ MAIL_APP_NAME } со сторонними клиентами для ПК."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Улучшите сегодня, чтобы не потерять следующие преимущества: ${ appName } ${ planName }."
@@ -4938,7 +4929,7 @@
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
       ],
       "You can use ${ VPN_APP_NAME } for free today.": [
-        ""
+        "Вы можете использовать ${ VPN_APP_NAME } бесплатно уже сегодня."
       ],
       "You cannot reply from the invited address.": [
         "Вы не можете ответить с приглашенного адреса."
@@ -5334,6 +5325,9 @@
       "ANY": [
         "ЛЮБОЕ"
       ],
+      "Attach screenshot(s)": [
+        "Вложить снимок(ки) экрана"
+      ],
       "Attachments": [
         "Вложения"
       ],
@@ -5393,6 +5387,9 @@
       ],
       "Date:": [
         "Дата:"
+      ],
+      "Delete": [
+        "Удалить"
       ],
       "Display name": [
         "Отображаемое имя"
@@ -5650,7 +5647,7 @@
         "Загрузить картинку"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Имя пользователя или адрес ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Проверочный код"
@@ -5684,6 +5681,14 @@
         "Название"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        "От"
+      ],
+      "To": [
+        "Кому"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Максимизированный"
@@ -5706,11 +5711,6 @@
       ],
       "Row": [
         "Ряд"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Приложить снимки экрана"
       ]
     },
     "Label/folder modal": {
@@ -6180,13 +6180,13 @@
     },
     "Onboarding": {
       "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        ""
+        "Теперь ${ appName } стал более современным и настраиваемым, но при этом защищает ваши данные с помощью передового шифрования."
       ],
       "Available on iOS and Android.": [
         "Доступно для iOS и Android."
       ],
       "Get the ${ appName } mobile app": [
-        ""
+        "Получить мобильное приложение ${ appName }"
       ],
       "Import your messages": [
         "Импортируйте свои сообщения"
@@ -6302,12 +6302,6 @@
       "A way to contact you": [
         "Способ связаться с вами"
       ],
-      "Browser name": [
-        "Название браузера"
-      ],
-      "Browser version": [
-        "Версия браузера"
-      ],
       "Confirm password": [
         "Подтвердите пароль"
       ],
@@ -6350,12 +6344,6 @@
       "Name or email address": [
         "Имя или адрес эл. почты"
       ],
-      "OS name": [
-        "Название ОС"
-      ],
-      "OS version": [
-        "Версия ОС"
-      ],
       "Password": [
         "Пароль"
       ],
@@ -6368,23 +6356,20 @@
       "Please insert link first": [
         "Пожалуйста, сначала вставьте ссылку"
       ],
-      "Proton username": [
-        "Имя пользователя в Proton"
-      ],
       "Search for group name": [
         "Поиск по названию группы"
       ],
       "Search for name or email": [
         "Поиск имени или эл. почты"
       ],
-      "Search Messages": [
-        "Поиск сообщений"
-      ],
       "Search messages": [
         "Поиск сообщений"
       ],
       "Search name, email or group": [
         "Искать имя, адрес эл. почты или группу"
+      ],
+      "Select": [
+        "Выбрать"
       ],
       "Start date": [
         "Начиная с"
@@ -6497,7 +6482,7 @@
         "Сообщение с подписью PGP. Сбой проверки отправителя"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Отправлено ${ MAIL_APP_NAME } с шифрованием с нулевым доступом"
       ],
       "Stored with zero-access encryption": [
         "Хранится с применением мгновенного шифрования"
@@ -6585,16 +6570,16 @@
     },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
-        ""
+        "Зашифровано ${ MAIL_APP_NAME }"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
-        ""
+        "Зашифровано ${ MAIL_APP_NAME } получателю PGP"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
-        ""
+        "Зашифровано ${ MAIL_APP_NAME } для проверенного получателя PGP"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
-        ""
+        "Зашифровано ${ MAIL_APP_NAME } для проверенного получателя"
       ],
       "End-to-end encrypted": [
         "Зашифровано сквозным методом"
@@ -6612,13 +6597,13 @@
         "Подписано PGP"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Отправлено ${ MAIL_APP_NAME } с шифрованием с нулевым доступом"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "",
-        "",
-        "",
-        ""
+        "Отправлено ${ MAIL_APP_NAME } с шифрованием с нулевым доступом проверенному получателю",
+        "Отправлено ${ MAIL_APP_NAME } с шифрованием с нулевым доступом проверенным получателям",
+        "Отправлено ${ MAIL_APP_NAME } с шифрованием с нулевым доступом проверенным получателям",
+        "Отправлено ${ MAIL_APP_NAME } с шифрованием с нулевым доступом проверенным получателям"
       ],
       "Sent by you with end-to-end encryption": [
         "Отправлено вами с применением сквозного шифрования"
@@ -7606,7 +7591,7 @@
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнется с самых последних сообщений."
@@ -7685,7 +7670,7 @@
         "Если вы не помните свой пароль, повторно активировать ключ невозможно. Мы можем помочь вам отключить предупреждение, но тогда вы навсегда потеряете доступ ко всем данным, зашифрованным с помощью этого ключа."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "Живой чат – это платная функция, доступная только для платных тарифов ${ VPN_APP_NAME }. Пожалуйста, вместо этого откройте билет."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton объединит все папки с одинаковым названием. Чтобы избежать этого, измените названия перед импортом."

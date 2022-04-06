@@ -38,14 +38,14 @@
       "Add phone number": [
         ""
       ],
-      "Add screenshot(s)": [
-        "Dodaj snimku(e) zaslona"
-      ],
       "Add to group": [
         "Dodaj u grupu"
       ],
       "Apply": [
         "Primijeni"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Natrag"
@@ -258,9 +258,6 @@
       "Hide folders": [
         ""
       ],
-      "Hide info": [
-        "Sakrij informacije"
-      ],
       "Hide labels": [
         ""
       ],
@@ -453,9 +450,6 @@
       "Show folders": [
         ""
       ],
-      "Show info": [
-        "Prikaži informacije"
-      ],
       "Show labels": [
         ""
       ],
@@ -560,11 +554,6 @@
       ],
       "Zoom out": [
         "Smanji"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Odaberi"
       ]
     },
     "Actions message": {
@@ -811,6 +800,14 @@
         ""
       ],
       "Unsupported calendar format": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
         ""
       ]
     },
@@ -2742,9 +2739,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Queued": [
         "Na čekanju"
       ],
@@ -2753,9 +2747,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
-      ],
-      "Screenshot(s) attached": [
-        "Snimka(e) zaslona su pridodane"
       ],
       "Search cannot be enabled in this browser": [
         ""
@@ -2793,7 +2784,7 @@
       "Something went wrong, please try again later.": [
         "Nešto je pošlo po zlu. Pokušajte ponovno."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3105,6 +3096,9 @@
       "Apply to all unverified items": [
         ""
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         "Zvučne datoteke"
       ],
@@ -3142,6 +3136,9 @@
         "Država"
       ],
       "Created": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Delete drive?": [
@@ -3389,11 +3386,6 @@
     "Label for contact group name": {
       "Name": [
         "Naziv"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Dodajte snimku(e) zaslona"
       ]
     },
     "Label/folder modal": {
@@ -3808,12 +3800,6 @@
       "A way to contact you": [
         "Način kako da vas kontaktiramo"
       ],
-      "Browser name": [
-        "Naziv preglednika"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
-      ],
       "e.g. Julia Smith": [
         "npr. Ana Horvat"
       ],
@@ -3838,26 +3824,20 @@
       "New name": [
         "Novi naziv"
       ],
-      "OS name": [
-        "Naziv OS-a"
-      ],
-      "OS version": [
-        "Verzija OS-a"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
       ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
       "Search for group name": [
         "Pretraga po nazivu grupe"
       ],
       "Search for name or email": [
         "Pretraga po imenu ili adresi e-pošte"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Započnite pisati adresu e-pošte"

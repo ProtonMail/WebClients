@@ -38,14 +38,14 @@
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
       ],
-      "Add screenshot(s)": [
-        "Προσθήκη στιγμιοτύπου/ων οθόνης"
-      ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
       "Apply": [
         "Εφαρμογή"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Πίσω"
@@ -256,9 +256,6 @@
       "Hide folders": [
         "Απόκρυψη φακέλων"
       ],
-      "Hide info": [
-        "Απόκρυψη πληροφοριών"
-      ],
       "Hide labels": [
         "Απόκρυψη ετικετών"
       ],
@@ -451,9 +448,6 @@
       "Show folders": [
         "Εμφάνιση φακέλων"
       ],
-      "Show info": [
-        "Εμφάνιση πληροφοριών"
-      ],
       "Show labels": [
         "Εμφάνιση ετικετών"
       ],
@@ -558,11 +552,6 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Επιλέξτε"
       ]
     },
     "Actions message": {
@@ -810,6 +799,14 @@
       ],
       "Unsupported calendar format": [
         "Μη υποστηριζόμενη μορφή ημερολογίου"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirm modal title": {
@@ -2700,9 +2697,6 @@
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "Σε ουρά"
       ],
@@ -2711,9 +2705,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
-      ],
-      "Screenshot(s) attached": [
-        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
       ],
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
@@ -2751,7 +2742,7 @@
       "Something went wrong, please try again later.": [
         "Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3062,6 +3053,9 @@
       "Apply to all unverified items": [
         "Εφαρμογή σε όλα τα μη επαληθευμένα στοιχεία"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         "Αρχείο ήχου"
       ],
@@ -3100,6 +3094,9 @@
       ],
       "Created": [
         "Δημιουργήθηκε"
+      ],
+      "Delete": [
+        ""
       ],
       "Delete drive?": [
         "Διαγραφή αρχειοθήκης;",
@@ -3345,11 +3342,6 @@
     "Label for contact group name": {
       "Name": [
         "Όνομα"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Επισύναψη στιγμιοτύπου/ων οθόνης"
       ]
     },
     "Label/folder modal": {
@@ -3744,12 +3736,6 @@
       "A way to contact you": [
         "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
       ],
-      "Browser name": [
-        "Όνομα Browser"
-      ],
-      "Browser version": [
-        "Έκδοση Browser"
-      ],
       "e.g. Julia Smith": [
         "π.χ. Julia Smith"
       ],
@@ -3774,26 +3760,20 @@
       "New name": [
         "Νέο όνομα"
       ],
-      "OS name": [
-        "Όνομα Λειτουργικού Συστήματος"
-      ],
-      "OS version": [
-        "Έκδοση Λειτουργικού"
-      ],
       "Password": [
         "Κωδικός πρόσβασης"
       ],
       "Please describe the problem and include any error messages": [
         "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
       ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
-      ],
       "Search for group name": [
         "Αναζήτηση βάσει ονόματος ομάδας"
       ],
       "Search for name or email": [
         "Αναζήτηση βάσει ονόματος ή ηλ. διεύθυνσης"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Έναρξη πληκτρολόγησης διεύθυνσης ηλεκτρονικού ταχυδρομείου"

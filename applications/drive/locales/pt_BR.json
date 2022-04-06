@@ -38,14 +38,14 @@
       "Add phone number": [
         "Adicionar número de telefone"
       ],
-      "Add screenshot(s)": [
-        "Adicionar captura(s) de tela"
-      ],
       "Add to group": [
         "Adicionar ao grupo"
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "Attach screenshot(s)": [
+        "Anexar captura(s) de tela"
       ],
       "Back": [
         "Voltar"
@@ -256,9 +256,6 @@
       "Hide folders": [
         "Ocultar pastas"
       ],
-      "Hide info": [
-        "Ocultar informação"
-      ],
       "Hide labels": [
         "Ocultar marcadores"
       ],
@@ -451,9 +448,6 @@
       "Show folders": [
         "Mostrar pastas"
       ],
-      "Show info": [
-        "Mostrar informação"
-      ],
       "Show labels": [
         "Mostrar marcadores"
       ],
@@ -558,11 +552,6 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selecionar"
       ]
     },
     "Actions message": {
@@ -810,6 +799,14 @@
       ],
       "Unsupported calendar format": [
         "Formato de calendário não suportado"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Fechar"
+      ],
+      "Open": [
+        "Abrir"
       ]
     },
     "Confirm modal title": {
@@ -2700,9 +2697,6 @@
       "Priority support": [
         "Suporte prioritário"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "Na fila"
       ],
@@ -2711,9 +2705,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
-      ],
-      "Screenshot(s) attached": [
-        "Captura(s) de tela anexada"
       ],
       "Search cannot be enabled in this browser": [
         "A pesquisa não pode ser ativada nesse navegador"
@@ -2751,8 +2742,8 @@
       "Something went wrong, please try again later.": [
         "Ocorreu um erro, tente novamente mais tarde."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Espaço de armazenamento é compartilhado em conjunto com o Mail, Calendar e Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "O espaço de armazenamento é compartilhado através do ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
@@ -3062,6 +3053,9 @@
       "Apply to all unverified items": [
         ""
       ],
+      "Attach screenshot(s)": [
+        "Anexar captura(s) de tela"
+      ],
       "Audio file": [
         "Arquivo de áudio"
       ],
@@ -3100,6 +3094,9 @@
       ],
       "Created": [
         "Criado"
+      ],
+      "Delete": [
+        "Excluir"
       ],
       "Delete drive?": [
         "Excluir drive?",
@@ -3345,11 +3342,6 @@
     "Label for contact group name": {
       "Name": [
         "Nome"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Anexar captura(s) de tela"
       ]
     },
     "Label/folder modal": {
@@ -3744,12 +3736,6 @@
       "A way to contact you": [
         "Uma maneira de entrar em contato com você"
       ],
-      "Browser name": [
-        "Nome do navegador"
-      ],
-      "Browser version": [
-        "Versão do navegador"
-      ],
       "e.g. Julia Smith": [
         "ex. Jessica Sales"
       ],
@@ -3774,26 +3760,20 @@
       "New name": [
         "Novo nome"
       ],
-      "OS name": [
-        "Nome do SO"
-      ],
-      "OS version": [
-        "Versão do sistema operacional"
-      ],
       "Password": [
         "Senha"
       ],
       "Please describe the problem and include any error messages": [
         "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
       ],
-      "Proton username": [
-        "Nome de usuário Proton"
-      ],
       "Search for group name": [
         "Pesquisar nome do grupo"
       ],
       "Search for name or email": [
         "Pesquisar nome ou e-mail"
+      ],
+      "Select": [
+        "Selecionar"
       ],
       "Start typing an email address": [
         "Comece a digitar um endereço de e-mail"

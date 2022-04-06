@@ -47,16 +47,10 @@
       "Add phone number": [
         ""
       ],
-      "Add screenshot(s)": [
-        ""
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         ""
       ],
       "Add to group": [
-        ""
-      ],
-      "Advanced search": [
         ""
       ],
       "Align center": [
@@ -87,6 +81,9 @@
         ""
       ],
       "Archive": [
+        ""
+      ],
+      "Attach screenshot(s)": [
         ""
       ],
       "Attachment": [
@@ -325,9 +322,6 @@
       "Export contacts": [
         ""
       ],
-      "Fewer search options": [
-        ""
-      ],
       "Filter on...": [
         ""
       ],
@@ -388,9 +382,6 @@
       "Hide folders": [
         ""
       ],
-      "Hide info": [
-        ""
-      ],
       "Hide labels": [
         ""
       ],
@@ -398,6 +389,9 @@
         ""
       ],
       "I have a question": [
+        ""
+      ],
+      "Images will be loaded without a proxy": [
         ""
       ],
       "import": [
@@ -450,6 +444,9 @@
         ""
       ],
       "Learn more": [
+        ""
+      ],
+      "Less search options": [
         ""
       ],
       "Load": [
@@ -573,6 +570,9 @@
         ""
       ],
       "No": [
+        ""
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
         ""
       ],
       "No, I won't attend": [
@@ -770,19 +770,16 @@
       "Show details": [
         ""
       ],
-      "Show fewer search options": [
-        ""
-      ],
       "Show folders": [
-        ""
-      ],
-      "Show info": [
         ""
       ],
       "Show labels": [
         ""
       ],
       "Show less": [
+        ""
+      ],
+      "Show less search options": [
         ""
       ],
       "Show messages": [
@@ -804,9 +801,6 @@
         ""
       ],
       "Skip": [
-        ""
-      ],
-      "Some images could not be loaded with tracking protection": [
         ""
       ],
       "Star": [
@@ -976,8 +970,8 @@
         ""
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
+    "action": {
+      "Search messages": [
         ""
       ]
     },
@@ -4324,6 +4318,9 @@
       "No results found": [
         ""
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         ""
       ],
@@ -4393,9 +4390,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         ""
       ],
@@ -4439,9 +4433,6 @@
         ""
       ],
       "Scheduling message...": [
-        ""
-      ],
-      "Screenshot(s) attached": [
         ""
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
@@ -4489,7 +4480,7 @@
       "Sorry, this message does not exist or has already expired": [
         ""
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
@@ -5170,6 +5161,9 @@
       "ANY": [
         ""
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         ""
       ],
@@ -5228,6 +5222,9 @@
         ""
       ],
       "Date:": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Display name": [
@@ -5520,6 +5517,14 @@
         ""
       ]
     },
+    "Label Recipient": {
+      "From": [
+        ""
+      ],
+      "To": [
+        ""
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         ""
@@ -5541,11 +5546,6 @@
         ""
       ],
       "Row": [
-        ""
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
         ""
       ]
     },
@@ -6128,12 +6128,6 @@
       "A way to contact you": [
         ""
       ],
-      "Browser name": [
-        ""
-      ],
-      "Browser version": [
-        ""
-      ],
       "Confirm password": [
         ""
       ],
@@ -6176,12 +6170,6 @@
       "Name or email address": [
         ""
       ],
-      "OS name": [
-        ""
-      ],
-      "OS version": [
-        ""
-      ],
       "Password": [
         ""
       ],
@@ -6194,22 +6182,19 @@
       "Please insert link first": [
         ""
       ],
-      "Proton username": [
-        ""
-      ],
       "Search for group name": [
         ""
       ],
       "Search for name or email": [
         ""
       ],
-      "Search Messages": [
-        ""
-      ],
       "Search messages": [
         ""
       ],
       "Search name, email or group": [
+        ""
+      ],
+      "Select": [
         ""
       ],
       "Start date": [

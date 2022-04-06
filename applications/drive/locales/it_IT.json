@@ -38,14 +38,14 @@
       "Add phone number": [
         "Aggiungi numero di telefono"
       ],
-      "Add screenshot(s)": [
-        "Aggiungi screenshot"
-      ],
       "Add to group": [
         "Aggiungi al gruppo"
       ],
       "Apply": [
         "Applica"
+      ],
+      "Attach screenshot(s)": [
+        "Allega screenshot"
       ],
       "Back": [
         "Indietro"
@@ -256,9 +256,6 @@
       "Hide folders": [
         "Nascondi cartelle"
       ],
-      "Hide info": [
-        "Nascondi info"
-      ],
       "Hide labels": [
         "Nascondi etichette"
       ],
@@ -451,9 +448,6 @@
       "Show folders": [
         "Mostra cartelle"
       ],
-      "Show info": [
-        "Mostra info"
-      ],
       "Show labels": [
         "Mostra etichette"
       ],
@@ -558,11 +552,6 @@
       ],
       "Zoom out": [
         "Zoom indietro"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleziona"
       ]
     },
     "Actions message": {
@@ -810,6 +799,14 @@
       ],
       "Unsupported calendar format": [
         "Formato calendario non supportato"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Chiudi"
+      ],
+      "Open": [
+        "Apri"
       ]
     },
     "Confirm modal title": {
@@ -2700,9 +2697,6 @@
       "Priority support": [
         "Assistenza prioritaria"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "Accodato"
       ],
@@ -2711,9 +2705,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."
-      ],
-      "Screenshot(s) attached": [
-        "Screenshot allegato/i"
       ],
       "Search cannot be enabled in this browser": [
         "La ricerca non può essere abilitata in questo browser"
@@ -2751,8 +2742,8 @@
       "Something went wrong, please try again later.": [
         "Qualcosa è andato storto, riprova più tardi."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Lo spazio d'archiviazione è condiviso tra Mail, Calendario e Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Supporto per 1 dominio di posta elettronica personalizzato"
@@ -2767,7 +2758,7 @@
         "L'applicazione deve decifrare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "I seguenti elementi potrebbero essere stati manomessi: ${ items }}. Aprili solo se ti fidi."
+        "I seguenti elementi potrebbero essere stati manomessi: ${ items }. Aprili solo se ti fidi."
       ],
       "There are no files yet": [
         "File non ancora presenti"
@@ -3062,6 +3053,9 @@
       "Apply to all unverified items": [
         "Applica a tutti gli articoli non verificati"
       ],
+      "Attach screenshot(s)": [
+        "Allega screenshot"
+      ],
       "Audio file": [
         "File audio"
       ],
@@ -3100,6 +3094,9 @@
       ],
       "Created": [
         "Creato"
+      ],
+      "Delete": [
+        "Elimina"
       ],
       "Delete drive?": [
         "Eliminare spazio?",
@@ -3347,11 +3344,6 @@
         "Nome"
       ]
     },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Allega screenshot"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Crea cartella"
@@ -3394,7 +3386,7 @@
         "Cestino"
       ],
       "Upgrade": [
-        "Esecuzione dell'upgrade"
+        "Effettua l'upgrade"
       ],
       "Upgrade account": [
         "Effettua l'upgrade dell'account"
@@ -3744,12 +3736,6 @@
       "A way to contact you": [
         "Un modo per contattarti"
       ],
-      "Browser name": [
-        "Nome del browser"
-      ],
-      "Browser version": [
-        "Versione del browser"
-      ],
       "e.g. Julia Smith": [
         "es. Julia Smith"
       ],
@@ -3774,26 +3760,20 @@
       "New name": [
         "Nuovo nome"
       ],
-      "OS name": [
-        "Nome del sistema operativo"
-      ],
-      "OS version": [
-        "Versione del sistema operativo"
-      ],
       "Password": [
         "Password"
       ],
       "Please describe the problem and include any error messages": [
         "Per favore descrivi il problema e includi eventuali messaggi di errore"
       ],
-      "Proton username": [
-        "Nome utente di Proton"
-      ],
       "Search for group name": [
         "Cerca per nome gruppo"
       ],
       "Search for name or email": [
         "Cerca nome o email"
+      ],
+      "Select": [
+        "Seleziona"
       ],
       "Start typing an email address": [
         "Inizia a digitare un indirizzo email"

@@ -47,17 +47,11 @@
       "Add phone number": [
         "Telefon numarası ekle"
       ],
-      "Add screenshot(s)": [
-        "Ekran görüntüsü ekle"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } grubuna ekle"
       ],
       "Add to group": [
         "Gruba ekle"
-      ],
-      "Advanced search": [
-        "Gelişmiş arama"
       ],
       "Align center": [
         "Ortaya hizala"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "Arşivle"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Attachment": [
         "Ek dosya"
@@ -325,9 +322,6 @@
       "Export contacts": [
         "Kişileri dışa aktar"
       ],
-      "Fewer search options": [
-        "Daha fazla arama seçeneği"
-      ],
       "Filter on...": [
         "Şuna göre süz..."
       ],
@@ -388,9 +382,6 @@
       "Hide folders": [
         "Klasörleri gizle"
       ],
-      "Hide info": [
-        "Bilgileri gizle"
-      ],
       "Hide labels": [
         "Etiketleri gizle"
       ],
@@ -399,6 +390,9 @@
       ],
       "I have a question": [
         "Bir sorum var"
+      ],
+      "Images will be loaded without a proxy": [
+        "Görseller vekil sunucu kullanmadan yüklenecek"
       ],
       "import": [
         "içe aktar"
@@ -451,6 +445,9 @@
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
+      ],
+      "Less search options": [
+        "Daha az arama seçeneği"
       ],
       "Load": [
         "Yükle"
@@ -574,6 +571,9 @@
       ],
       "No": [
         "Hayır"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        "Herhangi bir izleyici bulunamadı. Ancak bazı görseller izleme koruması nedeniyle yüklenmeyebilir."
       ],
       "No, I won't attend": [
         "Hayır, katılmayacağım"
@@ -770,20 +770,17 @@
       "Show details": [
         "Ayrıntıları göster"
       ],
-      "Show fewer search options": [
-        "Daha az arama seçeneği göster"
-      ],
       "Show folders": [
         "Klasörleri göster"
-      ],
-      "Show info": [
-        "Bilgileri göster"
       ],
       "Show labels": [
         "Etiketleri göster"
       ],
       "Show less": [
         "Daha az göster"
+      ],
+      "Show less search options": [
+        "Daha az arama seçeneği göster"
       ],
       "Show messages": [
         "İletileri göster"
@@ -805,9 +802,6 @@
       ],
       "Skip": [
         "Atla"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "İzleme koruması nedeniyle bazı görseller yüklenemedi"
       ],
       "Star": [
         "Yıldız koy"
@@ -976,9 +970,9 @@
         "Uzaklaştır"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seçin"
+    "action": {
+      "Search messages": [
+        "İleti arama"
       ]
     },
     "Actions message": {
@@ -4324,6 +4318,9 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        "Herhangi bir izleyici bulunamadı. Ancak bazı görseller izleme koruması nedeniyle yüklenmeyebilir"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Yüklenmiş anahtarlardan hiçbiri şifreleme için geçerli değil. Şifreleme otomatik olarak devre dışı bırakıldı."
       ],
@@ -4393,9 +4390,6 @@
       "Priority support": [
         "Öncelikli destek"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton kişisel güvenliğinizi ihlal ederek para kazanmaz."
       ],
@@ -4440,9 +4434,6 @@
       ],
       "Scheduling message...": [
         "İleti zamanlanıyor..."
-      ],
-      "Screenshot(s) attached": [
-        "Ekran görüntüsü eklendi"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Arama çok uzun mu sürüyor? Bu arama oturumunu ${ dropdownButton } ya da ${ toggleOffButton }."
@@ -4489,8 +4480,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Ne yazık ki, bu ileti bulunamadı ya da süresi geçmiş"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "${ DRIVE_APP_NAME } ile dosyaları güvenli bir şekilde saklayın ve paylaşın."
@@ -5170,6 +5161,9 @@
       "ANY": [
         "BİRİ"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         "Ek dosyalar"
       ],
@@ -5229,6 +5223,9 @@
       ],
       "Date:": [
         "Tarih:"
+      ],
+      "Delete": [
+        ""
       ],
       "Display name": [
         "Görüntülenecek ad"
@@ -5520,6 +5517,14 @@
         "Ad"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        "Kimden"
+      ],
+      "To": [
+        "Kime"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Büyütülmüş"
@@ -5542,11 +5547,6 @@
       ],
       "Row": [
         "Satır"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Ekran görüntüsü ekleyin"
       ]
     },
     "Label/folder modal": {
@@ -6128,12 +6128,6 @@
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
       ],
-      "Browser name": [
-        "Web tarayıcı adı"
-      ],
-      "Browser version": [
-        "Web tarayıcı sürümü"
-      ],
       "Confirm password": [
         "Parola onayı"
       ],
@@ -6176,12 +6170,6 @@
       "Name or email address": [
         "Ad ya da e-posta adresi"
       ],
-      "OS name": [
-        "İşletim sistemi adı"
-      ],
-      "OS version": [
-        "İşletim sistemi sürümü"
-      ],
       "Password": [
         "Parola"
       ],
@@ -6194,23 +6182,20 @@
       "Please insert link first": [
         "Lütfen önce bağlantıyı ekleyin"
       ],
-      "Proton username": [
-        "Proton kullanıcı adı"
-      ],
       "Search for group name": [
         "Grup adı ile arayın"
       ],
       "Search for name or email": [
         "Ad veya e-posta adresi ile arayın"
       ],
-      "Search Messages": [
-        "İletilerde ara"
-      ],
       "Search messages": [
         "İletilerde ara"
       ],
       "Search name, email or group": [
         "Ad, e-posta ya da grup arayın"
+      ],
+      "Select": [
+        ""
       ],
       "Start date": [
         "Başlangıç tarihi"

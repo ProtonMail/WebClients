@@ -47,17 +47,11 @@
       "Add phone number": [
         "Ajouter un numéro de téléphone"
       ],
-      "Add screenshot(s)": [
-        "Ajouter une ou des capture(s) d'écran"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Ajouter à ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Ajouter au groupe"
-      ],
-      "Advanced search": [
-        "Recherche avancée"
       ],
       "Align center": [
         "Centrer"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "Archiver"
+      ],
+      "Attach screenshot(s)": [
+        "Joindre une ou plusieurs captures d’écran"
       ],
       "Attachment": [
         "Pièce jointe"
@@ -325,9 +322,6 @@
       "Export contacts": [
         "Exporter les contacts"
       ],
-      "Fewer search options": [
-        "Moins d'options de recherche"
-      ],
       "Filter on...": [
         "Filtrer sur..."
       ],
@@ -388,9 +382,6 @@
       "Hide folders": [
         "Masquer les dossiers"
       ],
-      "Hide info": [
-        "Masquer les infos"
-      ],
       "Hide labels": [
         "Masquer les labels"
       ],
@@ -399,6 +390,9 @@
       ],
       "I have a question": [
         "J’ai une question"
+      ],
+      "Images will be loaded without a proxy": [
+        "Les images seront chargées sans proxy"
       ],
       "import": [
         "importer"
@@ -451,6 +445,9 @@
       ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "Less search options": [
+        "Moins d'options de recherche"
       ],
       "Load": [
         "Charger"
@@ -574,6 +571,9 @@
       ],
       "No": [
         "Non"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées avec la protection contre le tracking."
       ],
       "No, I won't attend": [
         "Non, je ne participerai pas"
@@ -770,20 +770,17 @@
       "Show details": [
         "Afficher les détails"
       ],
-      "Show fewer search options": [
-        "Afficher moins d'options de recherche"
-      ],
       "Show folders": [
         "Afficher les dossiers"
-      ],
-      "Show info": [
-        "Afficher les infos"
       ],
       "Show labels": [
         "Afficher les labels"
       ],
       "Show less": [
         "Afficher moins"
+      ],
+      "Show less search options": [
+        "Afficher moins d'options de recherche"
       ],
       "Show messages": [
         "Afficher les messages"
@@ -805,9 +802,6 @@
       ],
       "Skip": [
         "Ignorer"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "Certaines images n'ont pas pu être chargées à cause de la protection antipistage"
       ],
       "Star": [
         "Ajouter aux favoris"
@@ -976,9 +970,9 @@
         "Zoom arrière"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Sélectionner"
+    "action": {
+      "Search messages": [
+        "Rechercher des messages"
       ]
     },
     "Actions message": {
@@ -1105,7 +1099,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+        "L'accès à la version bêta vous permet d'utiliser la version bêta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME } avant qu'ils ne soient rendus publics. Cela signifie que vous pouvez être le premier à essayer de nouveaux produits, à obtenir de nouvelles mises à jour et à utiliser de nouvelles fonctionnalités."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
@@ -3009,7 +3003,7 @@
         "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
@@ -3724,7 +3718,7 @@
         "${ groupCounts } groupes trouvés"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        ""
+        "${ MAIL_APP_NAME } peut également protéger votre entreprise."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } message n’a pas pu être déplacé.",
@@ -4068,7 +4062,7 @@
         "Chiffrer pour les utilisateurs non-${ BRAND_NAME }"
       ],
       "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        ""
+        "Les messages chiffrés aux destinataires hors ${ BRAND_NAME } expireront dans 28 jours, sauf si un délai d'expiration plus court est défini."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -4153,7 +4147,7 @@
         "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvré."
       ],
       "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        ""
+        "Si vous envoyez ce message à un utilisateur n’ayant pas ${ MAIL_APP_NAME }, veillez à définir un mot de passe pour votre message."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
@@ -4256,7 +4250,7 @@
         "Fusionné"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        ""
+        "L'expiration des messages fonctionne pour l'envoi d'e-mails à d'autres utilisateurs ${ MAIL_APP_NAME }. Pour envoyer des e-mails à durée d’expiration à des utilisateurs n’utilisant pas ${ BRAND_NAME }, veuillez annuler l’envoi et ajouter une protection par mot de passe à votre message."
       ],
       "Message headers": [
         "En-têtes du message"
@@ -4324,6 +4318,9 @@
       "No results found": [
         "Aucun résultat trouvé"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées avec la protection contre le tracking"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Aucune des clés téléchargées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
       ],
@@ -4337,7 +4334,7 @@
         "sur"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ${ BRAND_NAME }."
       ],
       "Other options": [
         "Autres options"
@@ -4346,10 +4343,10 @@
         "Notre système a marqué ce message comme étant une tentative d'hameçonnage. Veuillez vérifier qu'il est légitime."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -4392,9 +4389,6 @@
       ],
       "Priority support": [
         "Assistance prioritaire"
-      ],
-      "Proton Calendar": [
-        "Proton Calendar"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton ne gagne pas d'argent en abusant de la vie privée."
@@ -4441,9 +4435,6 @@
       "Scheduling message...": [
         "Programmation du message..."
       ],
-      "Screenshot(s) attached": [
-        "Capture(s) d’écran jointe(s)"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La recherche prend trop de temps ? ${ dropdownButton } ou ${ toggleOffButton } de cette session de recherche."
       ],
@@ -4475,13 +4466,13 @@
         "Session expirée"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        ""
+        "Définissez ${ MAIL_APP_NAME } comme application de messagerie par défaut pour ce navigateur. ${ MAIL_APP_NAME } s'ouvrira automatiquement lorsque vous cliquerez sur un lien de courrier électronique."
       ],
       "Set a recovery phrase": [
         "Créer une phrase de récupération"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        ""
+        "La configuration de PGP vous permet d'envoyer des courriels chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
       ],
       "Show original message": [
         "Afficher le message d'origine"
@@ -4489,11 +4480,11 @@
       "Sorry, this message does not exist or has already expired": [
         "Désolé, ce message n'existe pas ou a déjà expiré"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "L'espace de stockage est partagé entre Mail, Calendar et Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        ""
+        "Stockez et partagez des fichiers en toute sécurité avec ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Objet"
@@ -5170,6 +5161,9 @@
       "ANY": [
         "N’IMPORTE"
       ],
+      "Attach screenshot(s)": [
+        "Joindre une ou plusieurs captures d’écran"
+      ],
       "Attachments": [
         "Pièces jointes"
       ],
@@ -5229,6 +5223,9 @@
       ],
       "Date:": [
         "Date :"
+      ],
+      "Delete": [
+        "Supprimer"
       ],
       "Display name": [
         "Nom d'affichage"
@@ -5520,6 +5517,14 @@
         "Nom"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        "De"
+      ],
+      "To": [
+        "À"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Maximisé"
@@ -5542,11 +5547,6 @@
       ],
       "Row": [
         "Ligne"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Joindre une ou des capture(s) d'écran"
       ]
     },
     "Label/folder modal": {
@@ -6128,12 +6128,6 @@
       "A way to contact you": [
         "Un moyen de vous contacter"
       ],
-      "Browser name": [
-        "Nom du navigateur"
-      ],
-      "Browser version": [
-        "Version du navigateur"
-      ],
       "Confirm password": [
         "Confirmer le mot de passe"
       ],
@@ -6176,12 +6170,6 @@
       "Name or email address": [
         "Nom ou adresse électronique"
       ],
-      "OS name": [
-        "Nom du système d'exploitation"
-      ],
-      "OS version": [
-        "Version du système d'exploitation"
-      ],
       "Password": [
         "Mot de passe"
       ],
@@ -6194,23 +6182,20 @@
       "Please insert link first": [
         "Veuillez d'abord insérer un lien"
       ],
-      "Proton username": [
-        "Nom d'utilisateur Proton"
-      ],
       "Search for group name": [
         "Rechercher un nom de groupe"
       ],
       "Search for name or email": [
         "Rechercher par nom ou par adresse électronique"
       ],
-      "Search Messages": [
-        "Rechercher des messages"
-      ],
       "Search messages": [
         "Rechercher des messages"
       ],
       "Search name, email or group": [
         "Rechercher un nom, un e-mail ou un groupe"
+      ],
+      "Select": [
+        "Sélectionner"
       ],
       "Start date": [
         "Date de début"
@@ -6319,7 +6304,7 @@
         "Message signé par PGP. La vérification de l'expéditeur a échoué"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès"
       ],
       "Stored with zero-access encryption": [
         "Stocké avec un chiffrement zéro accès"
@@ -6402,13 +6387,13 @@
         "Chiffré par ${ MAIL_APP_NAME }"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
-        ""
+        "Chiffré par ${ MAIL_APP_NAME } vers un destinataire PGP"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
-        ""
+        "Chiffré par ${ MAIL_APP_NAME } vers un destinataire PGP vérifié"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
-        ""
+        "Chiffré par ${ MAIL_APP_NAME } vers un destinataire vérifié"
       ],
       "End-to-end encrypted": [
         "Chiffré de bout en bout"
@@ -6426,11 +6411,11 @@
         "Signé par PGP"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "",
-        ""
+        "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès vers un destinataire vérifié",
+        "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès vers des destinataires vérifiés"
       ],
       "Sent by you with end-to-end encryption": [
         "Envoyé par vous avec un chiffrement de bout en bout"

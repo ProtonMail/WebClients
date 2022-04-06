@@ -47,17 +47,11 @@
       "Add phone number": [
         "添加电话号码"
       ],
-      "Add screenshot(s)": [
-        "添加屏幕截图"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "添加到 ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "添加至群组"
-      ],
-      "Advanced search": [
-        "高级搜索"
       ],
       "Align center": [
         "居中"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "存档"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Attachment": [
         "上传为附件"
@@ -323,9 +320,6 @@
       "Export contacts": [
         "导出联系人"
       ],
-      "Fewer search options": [
-        "较少搜索选项"
-      ],
       "Filter on...": [
         "筛选依据..."
       ],
@@ -386,9 +380,6 @@
       "Hide folders": [
         "隐藏文件夹"
       ],
-      "Hide info": [
-        "隐藏信息"
-      ],
       "Hide labels": [
         "隐藏标签"
       ],
@@ -397,6 +388,9 @@
       ],
       "I have a question": [
         "我有疑问"
+      ],
+      "Images will be loaded without a proxy": [
+        ""
       ],
       "import": [
         "导入"
@@ -448,6 +442,9 @@
       ],
       "Learn more": [
         "了解详情"
+      ],
+      "Less search options": [
+        ""
       ],
       "Load": [
         "加载"
@@ -571,6 +568,9 @@
       ],
       "No": [
         "否"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        ""
       ],
       "No, I won't attend": [
         "不，我不会参加"
@@ -767,20 +767,17 @@
       "Show details": [
         "显示详情"
       ],
-      "Show fewer search options": [
-        "显示较少搜索选项"
-      ],
       "Show folders": [
         "显示文件夹"
-      ],
-      "Show info": [
-        "显示信息"
       ],
       "Show labels": [
         "显示标签"
       ],
       "Show less": [
         "显示更少"
+      ],
+      "Show less search options": [
+        ""
       ],
       "Show messages": [
         "显示邮件"
@@ -802,9 +799,6 @@
       ],
       "Skip": [
         "跳过"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "跟踪保护下某些图像无法加载"
       ],
       "Star": [
         "星标"
@@ -972,9 +966,9 @@
         "缩小"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "选择"
+    "action": {
+      "Search messages": [
+        ""
       ]
     },
     "Actions message": {
@@ -4253,6 +4247,9 @@
       "No results found": [
         "未找到结果"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有上传的密钥都不适用于加密，加密将自动禁用。"
       ],
@@ -4322,9 +4319,6 @@
       "Priority support": [
         "优先享受客服"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 不会通过滥用用户隐私来赚钱。"
       ],
@@ -4369,9 +4363,6 @@
       ],
       "Scheduling message...": [
         "定时发送邮件中..."
-      ],
-      "Screenshot(s) attached": [
-        "已添加截图"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "搜索耗时太长？试试${ dropdownButton }或${ toggleOffButton }。"
@@ -4418,8 +4409,8 @@
       "Sorry, this message does not exist or has already expired": [
         "对不起，此邮件不存在或已过期"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "邮箱、日历、网盘均共用同一存储空间。"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "使用 ${ DRIVE_APP_NAME } 可以安全地存储、分享文件。"
@@ -5088,6 +5079,9 @@
       "ANY": [
         "或"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         "附件"
       ],
@@ -5147,6 +5141,9 @@
       ],
       "Date:": [
         "日期："
+      ],
+      "Delete": [
+        ""
       ],
       "Display name": [
         "对外名称"
@@ -5438,6 +5435,14 @@
         "名称"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        ""
+      ],
+      "To": [
+        ""
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "满屏"
@@ -5460,11 +5465,6 @@
       ],
       "Row": [
         "行"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "添加截图"
       ]
     },
     "Label/folder modal": {
@@ -6041,12 +6041,6 @@
       "A way to contact you": [
         "您的联系方式"
       ],
-      "Browser name": [
-        "浏览器名称"
-      ],
-      "Browser version": [
-        "浏览器版本"
-      ],
       "Confirm password": [
         "确认密码"
       ],
@@ -6089,12 +6083,6 @@
       "Name or email address": [
         "用户名或邮箱地址"
       ],
-      "OS name": [
-        "操作系统名称"
-      ],
-      "OS version": [
-        "操作系统版本"
-      ],
       "Password": [
         "密码"
       ],
@@ -6107,23 +6095,20 @@
       "Please insert link first": [
         "请先输入链接内容"
       ],
-      "Proton username": [
-        "Proton 用户名"
-      ],
       "Search for group name": [
         "搜索群组名称"
       ],
       "Search for name or email": [
         "搜索名称或电子邮件地址"
       ],
-      "Search Messages": [
-        "搜索邮件"
-      ],
       "Search messages": [
         "搜索邮件"
       ],
       "Search name, email or group": [
         "搜索名称、电子邮件或群组"
+      ],
+      "Select": [
+        ""
       ],
       "Start date": [
         "开始日期"

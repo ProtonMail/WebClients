@@ -41,14 +41,14 @@
       "Add phone number": [
         "Telefon numarası ekle"
       ],
-      "Add screenshot(s)": [
-        "Ekran görüntüsü ekle"
-      ],
       "Add to group": [
         "Gruba ekle"
       ],
       "Apply": [
         "Uygula"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Geri"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Bir dosya seçin ya da sürükleyip buraya bırakın"
-      ],
-      "Clear": [
-        "Temizle"
       ],
       "Clear data": [
         "Verileri temizle"
@@ -213,9 +210,6 @@
       ],
       "Hide folders": [
         "Klasörleri gizle"
-      ],
-      "Hide info": [
-        "Bilgileri gizle"
       ],
       "Hide labels": [
         "Etiketleri gizle"
@@ -379,9 +373,6 @@
       "Show folders": [
         "Klasörleri göster"
       ],
-      "Show info": [
-        "Bilgileri göster"
-      ],
       "Show labels": [
         "Etiketleri göster"
       ],
@@ -480,11 +471,6 @@
       ],
       "Yes, I'll attend": [
         "Evet, katılacağım"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seçin"
       ]
     },
     "Actions message": {
@@ -1860,9 +1846,9 @@
         "Etkinlik, devre dışı bırakılmış bir takvime ait."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
-        "Takvim ekle"
+        ""
       ]
     },
     "Duration": {
@@ -3083,17 +3069,11 @@
       "Priority support": [
         "Öncelikli destek"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
       "Removed participants will be notified.": [
         "Çıkarılan katılımcılara bildirilecek."
-      ],
-      "Screenshot(s) attached": [
-        "Ekran görüntüsü eklendi"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, e-posta gönderirken varsayılan olarak kullanılmasını istediğiniz bir e-posta adresi seçin."
@@ -3113,8 +3093,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Düzenleyici tarafından daha önce güncellenmiş etkinliklere verdiğiniz yanıtlardan bazıları kaybolacak."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Depolama alanı Mail, Calendar ve Drive tarafından paylaşılır."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
       ],
       "Support for 1 custom email domain": [
         "1 özel e-posta etki alanı desteği"
@@ -3382,6 +3362,9 @@
       "All day": [
         "Tüm gün"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "Kişileri otomatik olarak kaydet"
       ],
@@ -3432,6 +3415,9 @@
       ],
       "Default notifications": [
         "Varsayılan bildirimler"
+      ],
+      "Delete": [
+        ""
       ],
       "Description": [
         "Açıklama"
@@ -3629,11 +3615,6 @@
     "Label for contact group name": {
       "Name": [
         "Ad"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Ekran görüntüleri ekle"
       ]
     },
     "Label/folder modal": {
@@ -4197,12 +4178,6 @@
       "Add title": [
         "Başlık ekleyin"
       ],
-      "Browser name": [
-        "Tarayıcı adı"
-      ],
-      "Browser version": [
-        "Tarayıcı sürümü"
-      ],
       "e.g. Julia Smith": [
         "örneğin Ayşe Kaya"
       ],
@@ -4224,26 +4199,20 @@
       "Name": [
         "Ad"
       ],
-      "OS name": [
-        "İşletim sistemi adı"
-      ],
-      "OS version": [
-        "İşletim sistemi sürümü"
-      ],
       "Password": [
         "Parola"
       ],
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
       ],
-      "Proton username": [
-        "Proton kullanıcı adı"
-      ],
       "Search for group name": [
         "Grup adı ile arayın"
       ],
       "Search for name or email": [
         "Ad veya e-posta adresi ile arayın"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Bir e-posta adresi yazmaya başlayın"

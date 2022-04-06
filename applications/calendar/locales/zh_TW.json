@@ -41,14 +41,14 @@
       "Add phone number": [
         "新增電話號碼"
       ],
-      "Add screenshot(s)": [
-        "新增螢幕截圖"
-      ],
       "Add to group": [
         "新增至群組"
       ],
       "Apply": [
         "套用"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "上一步"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "選擇檔案或拖曳到此處"
-      ],
-      "Clear": [
-        "清除"
       ],
       "Clear data": [
         "清除資料"
@@ -211,9 +208,6 @@
       ],
       "Hide folders": [
         "隱藏資料夾"
-      ],
-      "Hide info": [
-        "隱藏資訊"
       ],
       "Hide labels": [
         "隱藏標籤"
@@ -377,9 +371,6 @@
       "Show folders": [
         "顯示資料夾"
       ],
-      "Show info": [
-        "顯示資訊"
-      ],
       "Show labels": [
         "顯示標籤"
       ],
@@ -478,11 +469,6 @@
       ],
       "Yes, I'll attend": [
         "是，我會出席"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "請選擇"
       ]
     },
     "Actions message": {
@@ -1852,9 +1838,9 @@
         "此事件屬於已停用的行事曆。"
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
-        "新增行事曆"
+        ""
       ]
     },
     "Duration": {
@@ -3034,17 +3020,11 @@
       "Priority support": [
         "優先支援"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或 ${ link } 將自動解決大部分問題。"
       ],
       "Removed participants will be notified.": [
         "已移除的參與者將獲通知。"
-      ],
-      "Screenshot(s) attached": [
-        "已附加的螢幕截圖"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "當寄送電子郵件到此電子郵件地址時，預設使用選取的電子郵件格式。"
@@ -3064,8 +3044,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "您對召集人先前更新的事件所作的某些回答將會遺失。"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "儲存空間在郵件、行事曆與雲端硬碟間共享。"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "儲存空間由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 共享。"
       ],
       "Support for 1 custom email domain": [
         "支援 1 個自訂電子郵件網域"
@@ -3333,6 +3313,9 @@
       "All day": [
         "整天"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
       ],
@@ -3383,6 +3366,9 @@
       ],
       "Default notifications": [
         "預設通知"
+      ],
+      "Delete": [
+        ""
       ],
       "Description": [
         "描述"
@@ -3579,11 +3565,6 @@
     "Label for contact group name": {
       "Name": [
         "名稱"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "附加螢幕截圖"
       ]
     },
     "Label/folder modal": {
@@ -4118,12 +4099,6 @@
       "Add title": [
         "新增標題"
       ],
-      "Browser name": [
-        "瀏覽器名稱"
-      ],
-      "Browser version": [
-        "瀏覽器版本"
-      ],
       "e.g. Julia Smith": [
         "範例：衛梓祐"
       ],
@@ -4145,26 +4120,20 @@
       "Name": [
         "名稱"
       ],
-      "OS name": [
-        "作業系統名稱"
-      ],
-      "OS version": [
-        "作業系統版本"
-      ],
       "Password": [
         "密碼"
       ],
       "Please describe the problem and include any error messages": [
         "請描述問題及附上錯誤訊息"
       ],
-      "Proton username": [
-        "Proton 使用者名稱"
-      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
       "Search for name or email": [
         "搜尋姓名或電子郵件"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "在此輸入一個電子郵件地址"

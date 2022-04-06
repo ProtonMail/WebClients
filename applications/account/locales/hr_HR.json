@@ -214,6 +214,9 @@
       "Copy link": [
         "Kopiraj poveznicu"
       ],
+      "Create": [
+        ""
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "Izvezi ključ"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "Font"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "označi e-poštu kao"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Učitavanje potvrde"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Pregled"
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
       ],
       "Revoke all other sessions": [
         "Opozovi sve ostale sesije"
@@ -948,6 +963,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "Sada se briše ključ vaše adrese."
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -3102,6 +3122,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "Ime i prezime ne mogu se istovremeno odznačiti"
       ]
@@ -4103,6 +4126,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Besplatan i necenzurirani Internet trebao bi biti dostupan svima."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4509,6 +4535,9 @@
       "Expired": [
         "Isteklo"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "Failed to fetch logs.": [
         "Dohvaćanje zapisa nije uspjelo."
       ],
@@ -4888,6 +4917,9 @@
       "Only you can see the labels.": [
         "Samo vi možete vidjeti oznake."
       ],
+      "Or select a particular server:": [
+        ""
+      ],
       "Organization keys activated": [
         "Aktivirani su ključevi organizacije"
       ],
@@ -5004,9 +5036,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Proton can't help you recover any lost passwords.": [
         ""
       ],
@@ -5060,6 +5089,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
+      ],
+      "Revoke certificate ${ name }": [
+        ""
       ],
       "Right to Left": [
         "S desna na lijevo"
@@ -5136,7 +5168,7 @@
       "Storage GB": [
         "Prostor za pohranu GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -5366,6 +5398,9 @@
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Pomoću automatskih odgovora obavijestite kontakte da ste izvan ureda ili da ne možete odgovoriti."
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         ""
@@ -6157,6 +6192,12 @@
       "Block email tracking": [
         ""
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "bonus prostor za pohranu"
       ],
@@ -6187,6 +6228,9 @@
       "Category": [
         "Kategorija"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "Kôd"
       ],
@@ -6210,6 +6254,9 @@
       ],
       "Conditions": [
         "Uvjeti"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm link URLs": [
         ""
@@ -6309,6 +6356,9 @@
       ],
       "Description": [
         "Opis"
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "Znamenke"
@@ -6466,6 +6516,9 @@
       "Last month only": [
         "Samo posljednji mjesec"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Lozinka za prijavu"
       ],
@@ -6486,6 +6539,9 @@
       ],
       "Message": [
         "Poruka"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "Premjesti u"
@@ -6508,8 +6564,14 @@
       "New password": [
         "Nova lozinka"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "Nije pronađena oznaka"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "Obavijest"
@@ -6753,6 +6815,9 @@
       ],
       "Verification code": [
         "Kôd za provjeru"
+      ],
+      "VPN Accelerator": [
+        ""
       ],
       "VPN Connections": [
         "VPN veze"
@@ -8500,6 +8565,18 @@
       "Address enabled": [
         "Adresa je omogućena"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "Filtar je uklonjen"
       ],
@@ -8603,8 +8680,14 @@
       "(highly recommended)": [
         "(preporučeno)"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Odaberite platformu"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Odaberite protokol"
@@ -8614,6 +8697,12 @@
       ],
       "3. Select config file and download": [
         "3. Odaberite konfiguracijsku datoteku i preuzmite"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         ""
@@ -9199,6 +9288,9 @@
       "Restore administrator privileges": [
         "Vraćanje administratorskih ovlasti"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         ""
       ],
@@ -9354,6 +9446,12 @@
       ],
       "What's new": [
         "Što je novo"
+      ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "Your ${ domain } address is active": [
         ""

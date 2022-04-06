@@ -38,14 +38,14 @@
       "Add phone number": [
         "Añadir número de teléfono"
       ],
-      "Add screenshot(s)": [
-        "Añadir captura(s) de pantalla"
-      ],
       "Add to group": [
         "Agregar al grupo"
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Atrás"
@@ -256,9 +256,6 @@
       "Hide folders": [
         "Ocultar carpetas"
       ],
-      "Hide info": [
-        "Ocultar información"
-      ],
       "Hide labels": [
         "Ocultar etiquetas"
       ],
@@ -451,9 +448,6 @@
       "Show folders": [
         "Mostrar carpetas"
       ],
-      "Show info": [
-        "Mostrar información"
-      ],
       "Show labels": [
         "Mostrar etiquetas"
       ],
@@ -558,11 +552,6 @@
       ],
       "Zoom out": [
         "Alejar"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
       ]
     },
     "Actions message": {
@@ -809,6 +798,14 @@
         "Han pasado más de 12 horas desde la última actualización"
       ],
       "Unsupported calendar format": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
         ""
       ]
     },
@@ -2700,9 +2697,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Queued": [
         "En cola"
       ],
@@ -2711,9 +2705,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
-      ],
-      "Screenshot(s) attached": [
-        "Captura(s) de pantalla adjuntada(s)"
       ],
       "Search cannot be enabled in this browser": [
         ""
@@ -2751,8 +2742,8 @@
       "Something went wrong, please try again later.": [
         "Inténtalo de nuevo más tarde."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        ""
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         ""
@@ -3062,6 +3053,9 @@
       "Apply to all unverified items": [
         ""
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         "Archivo de audio"
       ],
@@ -3100,6 +3094,9 @@
       ],
       "Created": [
         "Creado"
+      ],
+      "Delete": [
+        ""
       ],
       "Delete drive?": [
         "",
@@ -3345,11 +3342,6 @@
     "Label for contact group name": {
       "Name": [
         "Nombre"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Adjuntar captura de pantalla"
       ]
     },
     "Label/folder modal": {
@@ -3744,12 +3736,6 @@
       "A way to contact you": [
         "Una forma de contactar contigo"
       ],
-      "Browser name": [
-        "Navegador"
-      ],
-      "Browser version": [
-        "Versión del navegador"
-      ],
       "e.g. Julia Smith": [
         "p.ej. Julia Smith"
       ],
@@ -3774,26 +3760,20 @@
       "New name": [
         "Nuevo nombre"
       ],
-      "OS name": [
-        "Sistema operativo"
-      ],
-      "OS version": [
-        "Versión del sistema operativo"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "Por favor, describe el problema e incluye cualquier mensaje de error"
       ],
-      "Proton username": [
-        "Nombre de usuario de Proton"
-      ],
       "Search for group name": [
         "Buscar por nombre de grupo"
       ],
       "Search for name or email": [
         "Buscar por nombre o correo electrónico"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico"
