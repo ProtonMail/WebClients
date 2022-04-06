@@ -292,12 +292,6 @@ export const getSupportedEvent = ({
                 }
                 throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTEND_MALFORMED, 'vevent', componentId);
             }
-            if (getIsDateOutOfBounds(supportedDtend)) {
-                if (isEventInvitation) {
-                    throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
-                }
-                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTEND_OUT_OF_BOUNDS, 'vevent', componentId);
-            }
             const startDateUTC = propertyToUTCDate(validated.dtstart);
             const endDateUTC = propertyToUTCDate(supportedDtend);
             // allow a non-RFC-compliant all-day event with DTSTART = DTEND
@@ -308,17 +302,30 @@ export const getSupportedEvent = ({
             if (eventDuration > 0) {
                 validated.dtend = supportedDtend;
             }
-        } else if (duration && isInvitation) {
-            // We won't support duration for invitations until other clients adapt
-            throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
+        } else if (duration) {
+            const dtendFromDuration = getDtendPropertyFromDuration(validated.dtstart, duration.value);
+
+            if (dtendFromDuration) {
+                validated.dtend = dtendFromDuration;
+            }
         }
+
+        if (validated.dtend && getIsDateOutOfBounds(validated.dtend)) {
+            if (isEventInvitation) {
+                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
+            }
+            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTEND_OUT_OF_BOUNDS, 'vevent', componentId);
+        }
+
         const isAllDayEnd = validated.dtend ? getIsPropertyAllDay(validated.dtend) : undefined;
+
         if (isAllDayEnd !== undefined && +isAllDayStart ^ +isAllDayEnd) {
             if (isEventInvitation) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
             }
             throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ALLDAY_INCONSISTENCY, 'vevent', componentId);
         }
+
         if (exdate) {
             if (!rrule) {
                 if (isEventInvitation) {
@@ -400,21 +407,6 @@ export const getSupportedEvent = ({
 
         // import-specific surgery
         if (!isInvitation) {
-            if (!dtend && duration) {
-                const dtendFromDuration = getDtendPropertyFromDuration(validated.dtstart, duration.value);
-
-                if (dtendFromDuration) {
-                    validated.dtend = dtendFromDuration;
-                }
-
-                if (validated.dtend && getIsDateOutOfBounds(validated.dtend)) {
-                    if (isEventInvitation) {
-                        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
-                    }
-                    throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTEND_OUT_OF_BOUNDS, 'vevent', componentId);
-                }
-            }
-
             if (!isEventInvitation && isPublish) {
                 const alarms = components?.filter(({ component }) => component === 'valarm') || [];
                 const supportedAlarms = getSupportedAlarms(alarms, dtstart);
