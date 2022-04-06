@@ -10,7 +10,18 @@ import {
 } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { FormModal, PrimaryButton, Alert, useDebounceInput } from '../../components';
+import {
+    ModalTwo,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalProps,
+    Form,
+    Button,
+    PrimaryButton,
+    Alert,
+    useDebounceInput,
+} from '../../components';
 import { useNotifications, useEventManager, useConfig, useModals, useApi, useLoading } from '../../hooks';
 
 import AmountRow from './AmountRow';
@@ -27,11 +38,7 @@ const getCurrenciesI18N = () => ({
     USD: c('Monetary unit').t`Dollar`,
 });
 
-interface Props {
-    onClose?: () => void;
-}
-
-const CreditsModal = (props: Props) => {
+const CreditsModal = (props: ModalProps) => {
     const api = useApi();
     const { APP_NAME } = useConfig();
     const { call } = useEventManager();
@@ -74,52 +81,57 @@ const CreditsModal = (props: Props) => {
         ) : null;
 
     return (
-        <FormModal
+        <ModalTwo
             className="credits-modal"
-            type="small"
+            size="large"
+            as={Form}
             onSubmit={() => {
                 if (!handleCardSubmit()) {
                     return;
                 }
                 withLoading(handleSubmit(parameters));
             }}
-            loading={loading}
-            submit={submit}
-            close={c('Action').t`Close`}
-            title={c('Title').t`Add credits`}
             {...props}
         >
-            <PaymentInfo method={method} />
-            <Alert
-                className="mb1"
-                learnMore={
-                    APP_NAME === APPS.PROTONVPN_SETTINGS
-                        ? 'https://protonvpn.com/support/vpn-credit-proration/'
-                        : 'https://protonmail.com/support/knowledge-base/credit-proration/'
-                }
-            >{c('Info')
-                .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}</Alert>
-            <AmountRow
-                method={method}
-                amount={amount}
-                onChangeAmount={setAmount}
-                currency={currency}
-                onChangeCurrency={setCurrency}
-            />
-            <Payment
-                type="credit"
-                method={method}
-                amount={debouncedAmount}
-                currency={currency}
-                card={card}
-                onMethod={setMethod}
-                onCard={setCard}
-                cardErrors={cardErrors}
-                paypal={paypal}
-                paypalCredit={paypalCredit}
-                noMaxWidth
-            />
-        </FormModal>
+            <ModalTwoHeader title={c('Title').t`Add credits`} />
+            <ModalTwoContent>
+                <PaymentInfo method={method} />
+                <Alert
+                    className="mb1"
+                    learnMore={
+                        APP_NAME === APPS.PROTONVPN_SETTINGS
+                            ? 'https://protonvpn.com/support/vpn-credit-proration/'
+                            : 'https://protonmail.com/support/knowledge-base/credit-proration/'
+                    }
+                >{c('Info')
+                    .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}</Alert>
+                <AmountRow
+                    method={method}
+                    amount={amount}
+                    onChangeAmount={setAmount}
+                    currency={currency}
+                    onChangeCurrency={setCurrency}
+                />
+                <Payment
+                    type="credit"
+                    method={method}
+                    amount={debouncedAmount}
+                    currency={currency}
+                    card={card}
+                    onMethod={setMethod}
+                    onCard={setCard}
+                    cardErrors={cardErrors}
+                    paypal={paypal}
+                    paypalCredit={paypalCredit}
+                    noMaxWidth
+                />
+            </ModalTwoContent>
+
+            <ModalTwoFooter>
+                <Button onClick={props.onClose}>{c('Action').t`Close`}</Button>
+                {submit}
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
