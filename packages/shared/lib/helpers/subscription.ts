@@ -68,11 +68,11 @@ export const getIsLegacyPlan = (planName: PLANS | ADDON_NAMES) => {
 };
 
 export const getHasB2BPlan = (subscription: Subscription | undefined) => {
-    return subscription?.Plans?.some(({ Name }) => getIsB2BPlan(Name));
+    return !!subscription?.Plans?.some(({ Name }) => getIsB2BPlan(Name));
 };
 
 export const getHasLegacyPlans = (subscription: Subscription | undefined) => {
-    return subscription?.Plans?.some(({ Name }) => getIsLegacyPlan(Name));
+    return !!subscription?.Plans?.some(({ Name }) => getIsLegacyPlan(Name));
 };
 
 export const getBaseAmount = (
