@@ -124,6 +124,7 @@ interface Params {
     mapEncryption: { [key: string]: X_PM_HEADERS };
     contentEncryption: X_PM_HEADERS;
     emailAddress?: string;
+    isImported: boolean;
 }
 
 export const getSentStatusIcon = ({
@@ -131,6 +132,7 @@ export const getSentStatusIcon = ({
     mapEncryption,
     contentEncryption,
     emailAddress,
+    isImported,
 }: Params): StatusIcon | undefined => {
     if (!emailAddress) {
         // we return the aggregated send icon in this case
@@ -176,7 +178,7 @@ export const getSentStatusIcon = ({
             };
         }
         return {
-            colorClassName: 'color-info',
+            colorClassName: isImported ? 'color-norm' : 'color-info',
             isEncrypted: true,
             fill: PLAIN,
             text: c('Sent email icon').t`Stored with zero-access encryption`,
@@ -264,9 +266,16 @@ export const getSentStatusIconInfo = (message: MessageState): MessageViewIcons =
     );
     const mapEncryption = getMapEmailHeaders(getParsedHeadersFirstValue(message.data, 'X-Pm-Recipient-Encryption'));
     const contentEncryption = getParsedHeadersFirstValue(message.data, 'X-Pm-Content-Encryption') as X_PM_HEADERS;
-    const globalIcon = getSentStatusIcon({ mapAuthentication, mapEncryption, contentEncryption });
+    const isImported = getParsedHeadersFirstValue(message.data, 'X-Pm-Origin') === 'import';
+    const globalIcon = getSentStatusIcon({ mapAuthentication, mapEncryption, contentEncryption, isImported });
     const mapStatusIcon = Object.keys(mapAuthentication).reduce<MapStatusIcons>((acc, emailAddress) => {
-        acc[emailAddress] = getSentStatusIcon({ mapAuthentication, mapEncryption, contentEncryption, emailAddress });
+        acc[emailAddress] = getSentStatusIcon({
+            mapAuthentication,
+            mapEncryption,
+            contentEncryption,
+            emailAddress,
+            isImported,
+        });
         return acc;
     }, {});
     return { globalIcon, mapStatusIcon };
