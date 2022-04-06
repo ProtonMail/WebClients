@@ -36,7 +36,7 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-floating-promises': 'warn',
         '@typescript-eslint/no-for-in-array': 'error',
-        '@typescript-eslint/no-misused-promises': 'error',
+        '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
         '@typescript-eslint/naming-convention': [
             'error',
             {
