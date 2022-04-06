@@ -2,7 +2,17 @@ import { getKeys, OpenPGPKey } from 'pmcrypto';
 import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
-import { Alert, FormModal } from '../../../components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import {
+    Form,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    Button,
+} from '../../../components';
+import { useLoading } from '../../../hooks';
 
 const handleExport = (name: string, publicKey: OpenPGPKey) => {
     const fingerprint = publicKey.getFingerprint();
@@ -12,15 +22,16 @@ const handleExport = (name: string, publicKey: OpenPGPKey) => {
     downloadFile(blob, filename);
 };
 
-interface Props {
+interface Props extends ModalProps {
     name: string;
     fallbackPrivateKey: string;
     publicKey?: OpenPGPKey;
     onSuccess?: () => void;
-    onClose?: () => void;
 }
 
 const ExportPublicKeyModal = ({ name, fallbackPrivateKey, publicKey, onClose, ...rest }: Props) => {
+    const [loading, withLoading] = useLoading();
+
     const handleSubmit = async () => {
         if (publicKey) {
             handleExport(name, publicKey);
@@ -33,20 +44,34 @@ const ExportPublicKeyModal = ({ name, fallbackPrivateKey, publicKey, onClose, ..
         onClose?.();
     };
 
+    const handleClose = loading ? noop : onClose;
+
     return (
-        <FormModal
-            title={c('Title').t`Export public key`}
-            close={c('Action').t`Close`}
-            submit={c('Action').t`Export`}
-            onClose={onClose}
-            onSubmit={handleSubmit}
+        <Modal
+            as={Form}
+            onSubmit={() => {
+                void withLoading(handleSubmit());
+            }}
+            onClose={handleClose}
             {...rest}
         >
-            <Alert className="mb1" type="info">
-                {c('Info')
-                    .t`Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!`}
-            </Alert>
-        </FormModal>
+            <ModalHeader title={c('Title').t`Export public key`} />
+            <ModalContent>
+                <div>
+                    {c('Info')
+                        .t`Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!`}
+                </div>
+            </ModalContent>
+            <ModalFooter>
+                <Button onClick={handleClose} disabled={loading}>
+                    {c('Action').t`Close`}
+                </Button>
+
+                <Button loading={loading} type="submit" color="norm">
+                    {c('Action').t`Export`}
+                </Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 
