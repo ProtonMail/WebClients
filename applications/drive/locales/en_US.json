@@ -38,13 +38,13 @@
       "Add phone number": [
         ""
       ],
-      "Add screenshot(s)": [
-        ""
-      ],
       "Add to group": [
         ""
       ],
       "Apply": [
+        ""
+      ],
+      "Attach screenshot(s)": [
         ""
       ],
       "Back": [
@@ -259,9 +259,6 @@
       "Hide folders": [
         ""
       ],
-      "Hide info": [
-        ""
-      ],
       "Hide labels": [
         ""
       ],
@@ -454,9 +451,6 @@
       "Show folders": [
         ""
       ],
-      "Show info": [
-        ""
-      ],
       "Show labels": [
         ""
       ],
@@ -560,11 +554,6 @@
         ""
       ],
       "Zoom out": [
-        ""
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
         ""
       ]
     },
@@ -812,6 +801,14 @@
         ""
       ],
       "Unsupported calendar format": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
         ""
       ]
     },
@@ -2706,9 +2703,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Queued": [
         ""
       ],
@@ -2716,9 +2710,6 @@
         ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        ""
-      ],
-      "Screenshot(s) attached": [
         ""
       ],
       "Search cannot be enabled in this browser": [
@@ -2757,7 +2748,7 @@
       "Something went wrong, please try again later.": [
         ""
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3068,6 +3059,9 @@
       "Apply to all unverified items": [
         ""
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         ""
       ],
@@ -3105,6 +3099,9 @@
         ""
       ],
       "Created": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Delete drive?": [
@@ -3350,11 +3347,6 @@
     },
     "Label for contact group name": {
       "Name": [
-        ""
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
         ""
       ]
     },
@@ -3750,12 +3742,6 @@
       "A way to contact you": [
         ""
       ],
-      "Browser name": [
-        ""
-      ],
-      "Browser version": [
-        ""
-      ],
       "e.g. Julia Smith": [
         ""
       ],
@@ -3780,25 +3766,19 @@
       "New name": [
         ""
       ],
-      "OS name": [
-        ""
-      ],
-      "OS version": [
-        ""
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         ""
       ],
-      "Proton username": [
-        ""
-      ],
       "Search for group name": [
         ""
       ],
       "Search for name or email": [
+        ""
+      ],
+      "Select": [
         ""
       ],
       "Start typing an email address": [

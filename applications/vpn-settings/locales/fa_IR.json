@@ -55,14 +55,14 @@
       "Add PayPal payment method": [
         "روش پرداخت از طریق PayPal اضافه شد"
       ],
-      "Add screenshot(s)": [
-        "افزودن تصویر(ها)"
-      ],
       "annual billing": [
         "صورت‌حساب سالانه"
       ],
       "Apply": [
         "اعمال"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "بازگشت"
@@ -78,9 +78,6 @@
       ],
       "Chat with us": [
         ""
-      ],
-      "Clear": [
-        "پاک کردن"
       ],
       "Close": [
         "بستن"
@@ -114,6 +111,9 @@
       ],
       "Copy email to clipboard": [
         "کپی ایمیل به کلیپ‌بورد"
+      ],
+      "Create": [
+        ""
       ],
       "Create account": [
         "ایجاد حساب‌کاربری"
@@ -178,6 +178,9 @@
       "enable desktop notifications": [
         "فعا‌ل‌سازی اعلان‌های دسکتاپ"
       ],
+      "Extend": [
+        ""
+      ],
       "Get ${ vpnPlus }": [
         ""
       ],
@@ -202,9 +205,6 @@
       "Hide additional features": [
         "مخفی کردن ویژگی‌های اضافی"
       ],
-      "Hide info": [
-        "پنهان کردن اطلاعات"
-      ],
       "Homepage": [
         "صفحه اصلی"
       ],
@@ -215,6 +215,9 @@
         "افزودن"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
+        ""
+      ],
+      "Load more": [
         ""
       ],
       "Loading verification": [
@@ -304,6 +307,12 @@
       "Retry": [
         "تلاش مجدد"
       ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
+      ],
       "Save": [
         "ذخیره"
       ],
@@ -327,9 +336,6 @@
       ],
       "Show": [
         "نمایش"
-      ],
-      "Show info": [
-        "نمایش اطلاعات"
       ],
       "Show preview": [
         ""
@@ -434,11 +440,6 @@
         "کوچک‌نمایی"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "انتخاب"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } نشانی ایمیل",
@@ -480,6 +481,11 @@
       "${ vpnBonus } connection": [
         "${ vpnBonus } اتصال",
         "${ vpnBonus } اتصال"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -752,6 +758,14 @@
         ""
       ],
       "Unsupported calendar format": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "بستن"
+      ],
+      "Open": [
         ""
       ]
     },
@@ -1775,6 +1789,11 @@
         "همچنین می‌توانید ${ refresh } کرده یا بعدا دوباره امتحان کنید."
       ]
     },
+    "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "هیچ تصویری انتخاب نشده"
@@ -2023,6 +2042,9 @@
       "A free and uncensored Internet should be available to all.": [
         "یک اینترنت رایگان و بدون سانسور باید در دسترس همه باشد."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "بدون توجه به جایی که هستید به محتوای مسدود شده نظیر شبکه‌های اجتماعی، اخبار، ویکیپدیا، یوتیوب و خیلی موارد دیگر دسترسی پیدا کنید."
       ],
@@ -2155,6 +2177,9 @@
       "Expired": [
         "منقضی شده"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "For families and small teams; includes both Mail and VPN.": [
         "برای خانواده‌ها و تیم‌های کوچک; شامل ایمیل و VPN."
       ],
@@ -2266,6 +2291,9 @@
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         ""
       ],
+      "Learn more": [
+        "بیشتر بدانید"
+      ],
       "Loading": [
         "در حال بارگذاری"
       ],
@@ -2310,6 +2338,9 @@
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "به محض فشردن \"تنزیل درجه\"، ممکن است چندین دقیقه طول بکشد تا حساب شما به یک طرح Free تنزیل یابد. "
+      ],
+      "Or select a particular server:": [
+        ""
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
@@ -2359,9 +2390,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Proton can't help you recover any lost passwords.": [
         ""
       ],
@@ -2375,6 +2403,9 @@
         "بازیابی صفحه یا ${ link } بطور خودکار بیشتر مسايل را حل خواهد کرد."
       ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        ""
+      ],
+      "Revoke certificate ${ name }": [
         ""
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
@@ -2391,9 +2422,6 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "برای تنظیم حساب کاربری خود، این دستگاه را با کد تأیید اعتبار دو عامل خود اسکن کنید. ${ switchButton }."
-      ],
-      "Screenshot(s) attached": [
-        "تصویر(های) صفحه پیوست شد"
       ],
       "See all plans": [
         ""
@@ -2422,7 +2450,7 @@
       "Storage GB": [
         "گیگابایت فضای ذخیره‌سازی"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -2444,6 +2472,9 @@
         "برای پشتیبانی از آرمان ما سپاسگزاریم."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        ""
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
         ""
       ],
       "This account has been suspended due to a potential policy violation.": [
@@ -2519,6 +2550,9 @@
         "فایل پشتیبانی نشده"
       ],
       "Upgrade now": [
+        ""
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
         ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
@@ -2803,8 +2837,17 @@
       "Annual discount (${ discountPercentage }%)": [
         "تخفیف سالانه (${ discountPercentage }%)"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Back to:": [
         "بازگشت به:"
+      ],
+      "Block malware only": [
+        "فقط بدافزار مسدود شود"
+      ],
+      "Block malware, ads and trackers": [
+        ""
       ],
       "bonus storage": [
         "فضای هدیه"
@@ -2833,7 +2876,13 @@
       "Category": [
         "دسته‌بندی"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code is 6 digits without spaces": [
+        ""
+      ],
+      "Config to connect to ${ serverName }": [
         ""
       ],
       "Confirm login password": [
@@ -2881,6 +2930,12 @@
       "Default language": [
         "زبان پیش‌فرض"
       ],
+      "Delete": [
+        "حذف"
+      ],
+      "Device/certificate name": [
+        ""
+      ],
       "Digits": [
         "ارقام"
       ],
@@ -2926,11 +2981,17 @@
       "Key": [
         "کلید"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "رمز عبور"
       ],
       "Mailbox password": [
         "رمزعبور صندوق پست"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Name": [
         "نام"
@@ -2946,6 +3007,12 @@
       ],
       "New password": [
         "رمز عبور جدید"
+      ],
+      "No filter": [
+        ""
+      ],
+      "Non-standard ports": [
+        "پورت‌های غیر استاندارد"
       ],
       "Old login password": [
         "رمز عبور قبلی"
@@ -3055,6 +3122,9 @@
       "Verification method": [
         "روش تأیید"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "ما از رفتن شما متاسف هستیم. لطفا توضیح دهید که چرا ترک می‌کنید تا به ما در بهتر شدن کمک کنید."
       ],
@@ -3108,11 +3178,6 @@
       ],
       "Expired": [
         "منقضی شده"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "پیوست تصویر(های) صفحه"
       ]
     },
     "Link": {
@@ -3454,12 +3519,6 @@
       "Add gift code": [
         "افزودن کد هدیه"
       ],
-      "Browser name": [
-        "نام مرورگر"
-      ],
-      "Browser version": [
-        "نگارش مرورگر"
-      ],
       "Choose a new password": [
         "یک رمز عبور جدید انتخاب کنید"
       ],
@@ -3493,12 +3552,6 @@
       "Mailbox password": [
         "رمزعبور صندوق پست"
       ],
-      "OS name": [
-        "نام سیستم‌عامل"
-      ],
-      "OS version": [
-        "نسخهٔ سیستم‌عامل"
-      ],
       "Other": [
         "سایر موارد"
       ],
@@ -3511,14 +3564,14 @@
       "Postal code": [
         "کد پستی"
       ],
-      "Proton username": [
-        "نام کاربری پروتن"
-      ],
       "Recovery email address": [
         ""
       ],
       "Reset code": [
         "بازنشانی کد"
+      ],
+      "Select": [
+        "انتخاب"
       ],
       "Select a reason": [
         "یک دلیل انتخاب کنید"
@@ -3870,6 +3923,20 @@
         "شما با موفقیت لغو اشتراک کردید"
       ]
     },
+    "Success notification": {
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ]
+    },
     "Suffix": {
       "/ month": [
         "/ ماه"
@@ -3922,8 +3989,14 @@
       "${ VPN_APP_NAME } plan comparison": [
         ""
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. انتخاب پلتفرم"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. انتخاب پروتکل"
@@ -3933,6 +4006,12 @@
       ],
       "3. Select config file and download": [
         "۳. فایل پیکربندی را انتخاب و بارگیری کنید"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account": [
         "حساب کاربری"
@@ -4210,6 +4289,9 @@
       "Reset password?": [
         ""
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure Core Servers": [
         "سرور های Secure Core"
       ],
@@ -4275,6 +4357,9 @@
       ],
       "What's new": [
         "تازه ها چیست"
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "You already have a Proton account": [
         "شما در حال حاضر یک حساب Proton دارید"

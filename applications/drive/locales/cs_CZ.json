@@ -38,14 +38,14 @@
       "Add phone number": [
         "Přidat telefonní číslo"
       ],
-      "Add screenshot(s)": [
-        "Přidat snímek(y) obrazovky"
-      ],
       "Add to group": [
         "Přidat do skupiny"
       ],
       "Apply": [
         "Použít"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Zpět"
@@ -60,7 +60,7 @@
         "Zrušit vše"
       ],
       "Cancel all downloads": [
-        ""
+        "Zrušit všechna stahování"
       ],
       "Cancel all uploads": [
         "Zrušit všechna nahrávání"
@@ -260,9 +260,6 @@
       "Hide folders": [
         "Skrýt složky"
       ],
-      "Hide info": [
-        "Skrýt informace"
-      ],
       "Hide labels": [
         "Skrýt štítky"
       ],
@@ -279,7 +276,7 @@
         "Importovat z .csv nebo vCard"
       ],
       "Learn more": [
-        ""
+        "Více informací"
       ],
       "Load image": [
         "Načíst obrázek"
@@ -455,14 +452,11 @@
       "Show folders": [
         "Zobrazit složky"
       ],
-      "Show info": [
-        "Zobrazit informace"
-      ],
       "Show labels": [
         "Zobrazit štítky"
       ],
       "Show preview": [
-        ""
+        "Zobrazit náhled"
       ],
       "Sign out": [
         "Odhlásit se"
@@ -562,11 +556,6 @@
       ],
       "Zoom out": [
         "Oddálit"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Vybrat"
       ]
     },
     "Actions message": {
@@ -814,6 +803,14 @@
       ],
       "Unsupported calendar format": [
         "Nepodporovaný formát kalendáře"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirm modal title": {
@@ -2437,7 +2434,7 @@
         "Vyhledávání kontaktu ${ progress } o ${ max }..."
       ],
       "Checking signatures": [
-        ""
+        "Ověřování podpisů"
       ],
       "Clear data": [
         "Vymazat data"
@@ -2784,9 +2781,6 @@
       "Priority support": [
         "Prioritní podpora"
       ],
-      "Proton Calendar": [
-        "Proton Kalendář"
-      ],
       "Queued": [
         "Ve frontě"
       ],
@@ -2795,9 +2789,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
-      ],
-      "Screenshot(s) attached": [
-        "Snímek/snímky byly připojeny"
       ],
       "Search cannot be enabled in this browser": [
         "V tomto prohlížeči nelze povolit vyhledávání"
@@ -2827,7 +2818,7 @@
         ""
       ],
       "Signature issue": [
-        ""
+        "Problém s podpisem"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Některé vaše soubory již nejsou přístupné. Obnovte přístup k souborům. ${ StartRecoveryButton }"
@@ -2835,8 +2826,8 @@
       "Something went wrong, please try again later.": [
         "Něco se pokazilo, prosím zkuste to později."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Úložný prostor je sdílen mezi aplikacemi Pošta, Kalendář a Disk."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Podpora 1 vlastní e-mailové domény"
@@ -3146,6 +3137,9 @@
         "Použít na všechny duplicitní složky"
       ],
       "Apply to all unverified items": [
+        "Platí pro všechny neověřené položky"
+      ],
+      "Attach screenshot(s)": [
         ""
       ],
       "Audio file": [
@@ -3164,7 +3158,7 @@
         "Kalendáře"
       ],
       "Cancel download": [
-        ""
+        "Zrušit stahování"
       ],
       "Category": [
         "Kategorie"
@@ -3187,6 +3181,9 @@
       "Created": [
         "Vytvořeno"
       ],
+      "Delete": [
+        ""
+      ],
       "Delete drive?": [
         "Smazat disk?",
         "Smazat disky?",
@@ -3203,7 +3200,7 @@
         "Příště se neptat"
       ],
       "Download anyway": [
-        ""
+        "Přesto stáhnout"
       ],
       "Email address": [
         "E-mailová adresa"
@@ -3433,11 +3430,6 @@
     "Label for contact group name": {
       "Name": [
         "Název"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Přidat snímek(y) obrazovky"
       ]
     },
     "Label/folder modal": {
@@ -3872,12 +3864,6 @@
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
       ],
-      "Browser name": [
-        "Název prohlížeče"
-      ],
-      "Browser version": [
-        "Verze prohlížeče"
-      ],
       "e.g. Julia Smith": [
         "například Julia Smith"
       ],
@@ -3902,26 +3888,20 @@
       "New name": [
         "Nový název"
       ],
-      "OS name": [
-        "Název operačního systému"
-      ],
-      "OS version": [
-        "Verze operačního systému"
-      ],
       "Password": [
         "Heslo"
       ],
       "Please describe the problem and include any error messages": [
         "Popište prosím problém a přiložte všechny chybové zprávy"
       ],
-      "Proton username": [
-        "Proton uživatelské jméno"
-      ],
       "Search for group name": [
         "Vyhledat název skupiny"
       ],
       "Search for name or email": [
         "Vyhledat jméno nebo e-mail"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Začněte psát e-mailovou adresu"

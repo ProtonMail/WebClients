@@ -47,17 +47,11 @@
       "Add phone number": [
         "Adăugare număr de telefon"
       ],
-      "Add screenshot(s)": [
-        "Adăugare captură"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Adăugare la ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Adăugare la grup"
-      ],
-      "Advanced search": [
-        "Căutare avansată"
       ],
       "Align center": [
         "Centrare"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "Arhivare"
+      ],
+      "Attach screenshot(s)": [
+        "Atașare capturi de ecran"
       ],
       "Attachment": [
         "Atașament"
@@ -327,9 +324,6 @@
       "Export contacts": [
         "Exportare contacte"
       ],
-      "Fewer search options": [
-        "Mai puține opțiuni de căutare"
-      ],
       "Filter on...": [
         "Filtrare după..."
       ],
@@ -390,9 +384,6 @@
       "Hide folders": [
         "Ascundere foldere"
       ],
-      "Hide info": [
-        "Ascundere informații"
-      ],
       "Hide labels": [
         "Ascundere etichete"
       ],
@@ -401,6 +392,9 @@
       ],
       "I have a question": [
         "Am o întrebare"
+      ],
+      "Images will be loaded without a proxy": [
+        "Imaginile vor fi încărcate fără proxy."
       ],
       "import": [
         "importare"
@@ -454,6 +448,9 @@
       ],
       "Learn more": [
         "Detalii"
+      ],
+      "Less search options": [
+        "Mai puține opțiuni de căutare"
       ],
       "Load": [
         "Încărcare"
@@ -577,6 +574,9 @@
       ],
       "No": [
         "Nu"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        "Nu s-au găsit urmăritori, dar unele imagini nu au putut fi încărcare cu protecția la urmărire activă."
       ],
       "No, I won't attend": [
         "Nu, nu voi participa"
@@ -773,20 +773,17 @@
       "Show details": [
         "Afișare detalii"
       ],
-      "Show fewer search options": [
-        "Afișare mai puține opțiuni de căutare"
-      ],
       "Show folders": [
         "Afișare foldere"
-      ],
-      "Show info": [
-        "Afișare informații"
       ],
       "Show labels": [
         "Afişare etichete"
       ],
       "Show less": [
         "Afișare mai puțin"
+      ],
+      "Show less search options": [
+        "Afișare mai puține opțiuni de căutare"
       ],
       "Show messages": [
         "Afișare mesaje"
@@ -795,7 +792,7 @@
         "Mai multe opțiuni de căutare"
       ],
       "Show preview": [
-        "Previzualizare spectacol"
+        "Afișare previzualizare"
       ],
       "Sign out": [
         "Deconectare"
@@ -808,9 +805,6 @@
       ],
       "Skip": [
         "Omitere"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "Unele imagini nu au putut fi încărcate cu protecția de urmărire"
       ],
       "Star": [
         "Marcare cu stea"
@@ -980,9 +974,9 @@
         "Micșorare"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selectare"
+    "action": {
+      "Search messages": [
+        "Căutare mesaje"
       ]
     },
     "Actions message": {
@@ -1053,9 +1047,9 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } complet",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } complete",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } complete"
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizată",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizate",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizate"
       ]
     },
     "Apps dropdown": {
@@ -1110,7 +1104,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta Access vă permite să utilizați versiunea beta a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME } înainte ca acestea să fie lansate pentru public. Acest lucru înseamnă că puteți fi primul care va încerca noile produse, va primi noi actualizări și va utiliza noi caracteristici."
+        "„Accesul la Beta” vă permite să utilizați versiunea beta a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME } înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
@@ -1285,7 +1279,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuați să utilizați ${ MAIL_APP_NAME }."
+        "Continuare utilizare ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -3028,7 +3022,7 @@
         "Unele nume de etichete nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Unele dintre numele etichetelor dumneavoastră depășesc limita maximă de caractere a lui ${ MAIL_APP_NAME }. Vă rugăm să personalizați importul pentru a edita aceste nume."
+        "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
@@ -3475,7 +3469,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Am mărit spațiul de stocare total al contului tău la ${ rewardInGb } GB. Obțineți spațiu de stocare suplimentar și deblocați caracteristici premium astăzi."
+        "V-am mărit spațiul de stocare total al contului la ${ rewardInGb } GB. Obțineți spațiu de stocare suplimentar și deblocați caracteristici premium astăzi."
       ],
       "You're all set!": [
         "Sunteți gata!"
@@ -3483,7 +3477,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Completați toți pașii și primiți un total de ${ rewardInGb } GB în contul dumneavoastră"
+        "Completați toți pașii și primiți un total de ${ rewardInGb } GB în contul personal."
       ],
       "Expires soon": [
         "Expiră în curând"
@@ -3892,7 +3886,7 @@
         "Activare în curs"
       ],
       "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Adăugați ${ addressToCreate } la contul dumneavoastră gratuit, doar pentru o perioadă limitată de timp."
+        "Adăugați ${ addressToCreate } în cont gratuit, doar pentru o perioadă limitată de timp."
       ],
       "Add image URL": [
         "Adăugare URL imagine"
@@ -4131,10 +4125,10 @@
         "de imagini încorporate"
       ],
       "Encrypt for non-${ BRAND_NAME } users": [
-        "Criptare pentru utilizatorii care nu sunt ${ BRAND_NAME }"
+        "Criptare pentru neutilizatori ai ${ BRAND_NAME }"
       ],
       "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Mesajele criptate către destinatarii care nu sunt ${ BRAND_NAME } vor expira în 28 de zile, cu excepția cazului în care se stabilește un termen de expirare mai scurt."
+        "Mesajele criptate către destinatarii care nu sunt utilizatori ai ${ BRAND_NAME } vor expira în 28 de zile, cu excepția cazului în care se stabilește un termen de expirare mai scurt."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -4223,7 +4217,7 @@
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
       "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        "Dacă trimiteți acest mesaj unui utilizator care nu este ${ MAIL_APP_NAME }, vă rugăm să vă asigurați că ați setat o parolă pentru mesaj."
+        "Dacă trimiteți acest mesaj unui destinatar care nu este utilizator al ${ MAIL_APP_NAME }, asigurați-vă că ați setat o parolă pentru mesaj."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
@@ -4327,7 +4321,7 @@
         "Îmbinat"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Expirarea mesajelor funcționează în mod normal atunci când trimiteți e-mailuri către alți utilizatori ${ MAIL_APP_NAME }. Pentru a trimite e-mailuri care expiră către alți utilizatori decât ${ BRAND_NAME }, vă rugăm să anulați și să adăugați protecție prin parolă la e-mail."
+        "Expirarea mesajelor funcționează implicit atunci când trimiteți e-mailuri către alți utilizatori ${ MAIL_APP_NAME }. Pentru a trimite e-mailuri care expiră către alți utilizatori decât ${ BRAND_NAME }, anulați și adăugați protecție cu parolă la e-mail."
       ],
       "Message headers": [
         "Antete mesaj"
@@ -4395,6 +4389,9 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        "Nu s-au găsit urmăritori, dar unele imagini nu au putut fi încărcare cu protecția la urmărire activă."
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
       ],
@@ -4408,7 +4405,7 @@
         "din"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt ${ BRAND_NAME }."
+        "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
       ],
       "Other options": [
         "Alte opțiuni"
@@ -4417,10 +4414,10 @@
         "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline este compatibil numai cu formatul Plain Text. Vă rugăm să rețineți că ${ MAIL_APP_NAME } semnează întotdeauna mesajele criptate."
+        "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME trimite automat mesajul folosind modul de compoziție curent. Rețineți că ${ MAIL_APP_NAME } semnează întotdeauna mesajele criptate"
+        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
       "Phone number": [
         "Număr de telefon"
@@ -4463,9 +4460,6 @@
       ],
       "Priority support": [
         "Asistență prioritară"
-      ],
-      "Proton Calendar": [
-        "Proton Calendar"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nu face bani abuzând de viața privată."
@@ -4512,9 +4506,6 @@
       "Scheduling message...": [
         "Se programează mesajul..."
       ],
-      "Screenshot(s) attached": [
-        "Capturi de ecran adăugate"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Căutarea durează prea mult? ${ dropdownButton } sau ${ toggleOffButton } din această sesiune de căutare."
       ],
@@ -4546,13 +4537,13 @@
         "Sesiunea a expirat"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest browser. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe un link de e-mail."
+        "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest navigaror. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură de e-mail."
       ],
       "Set a recovery phrase": [
         "Setați o frază de recuperare"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Configurarea PGP vă permite să trimiteți e-mailuri criptate de la un capăt la altul cu un utilizator care nu este ${ BRAND_NAME } și care utilizează un serviciu compatibil PGP."
+        "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
       "Show original message": [
         "Afișare mesaj original"
@@ -4560,8 +4551,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Ne pare rău, acest mesaj nu există sau a expirat deja."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Spațiul de stocare este partajat între Mail, Calendar și Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Stocați și partajați fișiere în siguranță cu ${ DRIVE_APP_NAME }."
@@ -4776,7 +4767,7 @@
         "Treceţi la alt plan pentru a beneficia de confidențialitate și a obține mai multe funcții."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Actualizați pentru a utiliza ${ MAIL_APP_NAME } cu clienți desktop terți."
+        "Treceţi la alt plan pentru a utiliza ${ MAIL_APP_NAME } cu clienți desktop de la terți."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Faceți upgrade astăzi pentru a evita pierderea beneficiilor din ${ appName } ${ planName }."
@@ -4791,7 +4782,7 @@
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use ${ calendarAppName } to keep your agenda private.": [
-        "Utilizați ${ calendarAppName } pentru a vă păstra agenda privată."
+        "Utilizați ${ calendarAppName } pentru a vă păstra agenda de programări privată."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilizați combinaţiile de taste pentru a vă gestiona mai rapid mesajele."
@@ -4845,7 +4836,7 @@
         "Se va deschide o nouă filă în navigator cu adresa:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Sunteți conectat în prezent ca ${ user.Name } (${ user.Email })."
+        "V-ați conectat cu ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Puteți să o adăugați ca atașament sau să o afișați înclusă în corpul mesajului."
@@ -5252,6 +5243,9 @@
       "ANY": [
         "ORICARE"
       ],
+      "Attach screenshot(s)": [
+        "Atașare capturi de ecran"
+      ],
       "Attachments": [
         "Atașamente"
       ],
@@ -5311,6 +5305,9 @@
       ],
       "Date:": [
         "Data:"
+      ],
+      "Delete": [
+        "Ștergere"
       ],
       "Display name": [
         "Nume afișat"
@@ -5602,6 +5599,14 @@
         "Nume"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        "De la"
+      ],
+      "To": [
+        "Către"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Maximizat"
@@ -5624,11 +5629,6 @@
       ],
       "Row": [
         "Rânduri"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Atașare captură ecran"
       ]
     },
     "Label/folder modal": {
@@ -6099,7 +6099,7 @@
         "Disponibilă pe iOS și Android."
       ],
       "Get the ${ appName } mobile app": [
-        "Obține aplicația mobilă ${ appName }"
+        "Obțineți aplicația mobilă ${ appName }"
       ],
       "Import your messages": [
         "Importați-vă mesajele"
@@ -6184,7 +6184,7 @@
     },
     "Paid user checklist item": {
       "Get mobile app": [
-        "Obțineți aplicația mobilă"
+        "Descărcați aplicația mobilă"
       ],
       "Import contacts or emails": [
         "Importați contacte sau e-mailuri"
@@ -6214,12 +6214,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Modalitate de contactare"
-      ],
-      "Browser name": [
-        "Nume navigator"
-      ],
-      "Browser version": [
-        "Versiune navigator"
       ],
       "Confirm password": [
         "Confirmare parolă"
@@ -6263,12 +6257,6 @@
       "Name or email address": [
         "Numele de utilizator sau adresa de e-mail"
       ],
-      "OS name": [
-        "Sistem de operare"
-      ],
-      "OS version": [
-        "Versiune sistem de operare"
-      ],
       "Password": [
         "Parola"
       ],
@@ -6281,23 +6269,20 @@
       "Please insert link first": [
         "Introduceți mai întâi legătura"
       ],
-      "Proton username": [
-        "Utilizator Proton"
-      ],
       "Search for group name": [
         "Căutare nume grup"
       ],
       "Search for name or email": [
         "Căutare după nume sau e-mail"
       ],
-      "Search Messages": [
-        "Căutare mesaje"
-      ],
       "Search messages": [
         "Căutare mesaje"
       ],
       "Search name, email or group": [
         "Căutare nume, e-mail sau grup"
+      ],
+      "Select": [
+        "Selectare"
       ],
       "Start date": [
         "Dată început"
@@ -6408,7 +6393,7 @@
         "Mesaj semnat cu PGP. Verificarea expeditorului a eșuat."
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero"
+        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero."
       ],
       "Stored with zero-access encryption": [
         "Stocat criptat cu acces exclusiv personal"
@@ -6492,16 +6477,16 @@
     },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
-        "Criptat de ${ MAIL_APP_NAME }"
+        "Criptat de ${ MAIL_APP_NAME }."
       ],
       "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
-        "Criptat de ${ MAIL_APP_NAME } către destinatarul PGP"
+        "Criptat de ${ MAIL_APP_NAME } către destinatar PGP."
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
-        "Criptat de ${ MAIL_APP_NAME } către un destinatar PGP verificat"
+        "Criptat de ${ MAIL_APP_NAME } către destinatar PGP verificat."
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
-        "Criptat de ${ MAIL_APP_NAME } către destinatarul verificat"
+        "Criptat de ${ MAIL_APP_NAME } către destinatar verificat."
       ],
       "End-to-end encrypted": [
         "Criptat în ambele părți"
@@ -6519,20 +6504,20 @@
         "Semnat PGP"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero"
+        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero."
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero către un destinatar verificat",
-        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero către destinatarii verificați",
-        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero către destinatarii verificați"
+        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero către un destinatar verificat.",
+        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero către destinatari verificați.",
+        "Trimis de ${ MAIL_APP_NAME } cu criptare cu acces zero către destinatari verificați."
       ],
       "Sent by you with end-to-end encryption": [
         "Trimis de dvs. cu criptare în ambele părți"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
-        "Trimis de către dvs. cu criptare în ambele părți către destinatar verificat",
-        "Trimis de către dvs. cu criptare în ambele capete către destinatari verificați",
-        "Trimis de către dvs. cu criptare în ambele capete către destinatari verificați"
+        "Trimis de către dvs. cu criptare în ambele părți către destinatar verificat.",
+        "Trimis de către dvs. cu criptare în ambele părți către destinatari verificați.",
+        "Trimis de către dvs. cu criptare în ambele părți către destinatari verificați."
       ],
       "Stored with zero-access encryption": [
         "Stocat criptat cu acces exclusiv personal"
@@ -7038,7 +7023,7 @@
         "Copie identică"
       ],
       "CC": [
-        "CI"
+        "C"
       ],
       "Change my answer": [
         "Schimbare răspuns"
@@ -7180,7 +7165,7 @@
         "Introduceţi parola"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Introduceți numele dumneavoastră de utilizator sau adresa de e-mail ${ MAIL_APP_NAME }"
+        "Introduceți-vă numele de utilizator sau adresa de e-mail ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Eroare"
@@ -7405,7 +7390,7 @@
         "Subiect lipsă"
       ],
       "To": [
-        "La"
+        "Către"
       ],
       "Trust new key?": [
         "Aveți încredere în noua cheie?",
@@ -7474,7 +7459,7 @@
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }"
+        "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
@@ -7486,7 +7471,7 @@
         "Această opțiune este valabilă doar pentru utilizatorii cu plată."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate la ambele capete la această adresă"
+        "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate în ambele părți la această adresă."
       ],
       "You do not have any contacts to export": [
         "Nu aveți persoane de contact pentru exportare"
@@ -7550,7 +7535,7 @@
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Chat-ul live este o funcție premium disponibilă numai pentru cei care au planuri ${ VPN_APP_NAME } plătite. În schimb, vă rugăm să deschideți un tichet."
+        "Mesageria live este o funcție premium disponibilă numai pentru cei care au planuri ${ VPN_APP_NAME } cu plată. Puteți însă deschide un tichet de asistență."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."

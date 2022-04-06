@@ -41,14 +41,14 @@
       "Add phone number": [
         "Přidat telefonní číslo"
       ],
-      "Add screenshot(s)": [
-        "Přidat snímek(y) obrazovky"
-      ],
       "Add to group": [
         "Přidat do skupiny"
       ],
       "Apply": [
         "Použít"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Zpět"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Vyberte soubor nebo jej sem přetáhněte"
-      ],
-      "Clear": [
-        "Vyčistit"
       ],
       "Clear data": [
         "Smazat data"
@@ -217,9 +214,6 @@
       ],
       "Hide folders": [
         "Skrýt složky"
-      ],
-      "Hide info": [
-        "Skrýt informace"
       ],
       "Hide labels": [
         "Skrýt štítky"
@@ -383,9 +377,6 @@
       "Show folders": [
         "Zobrazit složky"
       ],
-      "Show info": [
-        "Zobrazit informace"
-      ],
       "Show labels": [
         "Zobrazit štítky"
       ],
@@ -484,11 +475,6 @@
       ],
       "Yes, I'll attend": [
         "Ano, budu se účastnit"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Vybrat"
       ]
     },
     "Actions message": {
@@ -1876,9 +1862,9 @@
         "Událost patří do zakázaného kalendáře."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
-        "Přidat kalendář"
+        ""
       ]
     },
     "Duration": {
@@ -3181,17 +3167,11 @@
       "Priority support": [
         "Prioritní podpora"
       ],
-      "Proton Calendar": [
-        "Proton Kalendář"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
       "Removed participants will be notified.": [
         "Odebraní účastníci budou upozorněni."
-      ],
-      "Screenshot(s) attached": [
-        "Snímek/snímky byly připojeny"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
@@ -3211,8 +3191,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Některé vaše odpovědi na události, které byly dříve aktualizovány organizátorem, budou ztraceny."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Úložný prostor je sdílen mezi aplikacemi Pošta, Kalendář a Disk."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Podpora 1 vlastní e-mailové domény"
@@ -3480,6 +3460,9 @@
       "All day": [
         "Celý den"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
       ],
@@ -3530,6 +3513,9 @@
       ],
       "Default notifications": [
         "Výchozí upozornění"
+      ],
+      "Delete": [
+        ""
       ],
       "Description": [
         "Popis"
@@ -3729,11 +3715,6 @@
     "Label for contact group name": {
       "Name": [
         "Jméno"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Přiložit snímek/snímky obrazovky"
       ]
     },
     "Label/folder modal": {
@@ -4355,12 +4336,6 @@
       "Add title": [
         "Přidat titulek"
       ],
-      "Browser name": [
-        "Název prohlížeče"
-      ],
-      "Browser version": [
-        "Verze prohlížeče"
-      ],
       "e.g. Julia Smith": [
         "např. Julia Smith"
       ],
@@ -4382,26 +4357,20 @@
       "Name": [
         "Jméno"
       ],
-      "OS name": [
-        "Název OS"
-      ],
-      "OS version": [
-        "Verze OS"
-      ],
       "Password": [
         "Heslo"
       ],
       "Please describe the problem and include any error messages": [
         "Popište prosím problém a přiložte všechny chybové zprávy"
       ],
-      "Proton username": [
-        "Proton uživatelské jméno"
-      ],
       "Search for group name": [
         "Vyhledat název skupiny"
       ],
       "Search for name or email": [
         "Vyhledat jméno nebo e-mail"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Začněte psát e-mailovou adresu"

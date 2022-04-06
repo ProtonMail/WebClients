@@ -38,14 +38,14 @@
       "Add phone number": [
         "Telefoonnummer toevoegen"
       ],
-      "Add screenshot(s)": [
-        "Screenshot(s) toevoegen"
-      ],
       "Add to group": [
         "Toevoegen aan groep"
       ],
       "Apply": [
         "Toepassen"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Terug"
@@ -256,9 +256,6 @@
       "Hide folders": [
         "Mappen verbergen"
       ],
-      "Hide info": [
-        "Informatie verbergen"
-      ],
       "Hide labels": [
         "Labels verbergen"
       ],
@@ -451,9 +448,6 @@
       "Show folders": [
         "Mappen weergeven"
       ],
-      "Show info": [
-        "Informatie tonen"
-      ],
       "Show labels": [
         "Toon labels"
       ],
@@ -558,11 +552,6 @@
       ],
       "Zoom out": [
         "Zoom uit"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selecteer"
       ]
     },
     "Actions message": {
@@ -810,6 +799,14 @@
       ],
       "Unsupported calendar format": [
         "Niet-ondersteunde agenda-indeling"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Confirm modal title": {
@@ -2700,9 +2697,6 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "In wachtrij"
       ],
@@ -2711,9 +2705,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
-      ],
-      "Screenshot(s) attached": [
-        "Toegevoegde screenshot(s)"
       ],
       "Search cannot be enabled in this browser": [
         "Zoeken kan niet ingeschakeld worden in deze browser"
@@ -2751,8 +2742,8 @@
       "Something went wrong, please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Opslagruimte is gedeeld voor Mail, Calendar en Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Support for 1 custom email domain": [
         "Ondersteuning voor 1 aangepast e-mail domein"
@@ -3062,6 +3053,9 @@
       "Apply to all unverified items": [
         "Toepassen op alle ongeverifieerde items"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Audio file": [
         "Geluidsbestand"
       ],
@@ -3100,6 +3094,9 @@
       ],
       "Created": [
         "Aangemaakt"
+      ],
+      "Delete": [
+        ""
       ],
       "Delete drive?": [
         "Drive verwijderen?",
@@ -3345,11 +3342,6 @@
     "Label for contact group name": {
       "Name": [
         "Naam"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Schermafbeelding(en) toevoegen"
       ]
     },
     "Label/folder modal": {
@@ -3744,12 +3736,6 @@
       "A way to contact you": [
         "Een manier om contact met u op te nemen"
       ],
-      "Browser name": [
-        "Browsernaam"
-      ],
-      "Browser version": [
-        "Browserversie"
-      ],
       "e.g. Julia Smith": [
         "bijv. Julia Smith"
       ],
@@ -3774,26 +3760,20 @@
       "New name": [
         "Nieuwe naam"
       ],
-      "OS name": [
-        "Besturingssysteem"
-      ],
-      "OS version": [
-        "Versie besturingssysteem"
-      ],
       "Password": [
         "Wachtwoord"
       ],
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem en voeg alle foutmeldingen toe"
       ],
-      "Proton username": [
-        "Proton-gebruikersnaam"
-      ],
       "Search for group name": [
         "Zoeken naar groepsnaam"
       ],
       "Search for name or email": [
         "Naam of e-mail zoeken"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Voer een e-mailadres in"

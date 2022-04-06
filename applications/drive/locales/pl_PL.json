@@ -38,14 +38,14 @@
       "Add phone number": [
         "Dodaj numer telefonu"
       ],
-      "Add screenshot(s)": [
-        "Dodaj zrzuty ekranu"
-      ],
       "Add to group": [
         "Dodaj do grupy"
       ],
       "Apply": [
         "Zastosuj"
+      ],
+      "Attach screenshot(s)": [
+        "Dołącz zrzuty ekranu"
       ],
       "Back": [
         "Wstecz"
@@ -260,9 +260,6 @@
       "Hide folders": [
         "Ukryj foldery"
       ],
-      "Hide info": [
-        "Ukryj informacje"
-      ],
       "Hide labels": [
         "Ukryj etykiety"
       ],
@@ -455,9 +452,6 @@
       "Show folders": [
         "Pokaż foldery"
       ],
-      "Show info": [
-        "Pokaż informacje"
-      ],
       "Show labels": [
         "Pokaż etykiety"
       ],
@@ -562,11 +556,6 @@
       ],
       "Zoom out": [
         "Pomniejsz"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Wybierz"
       ]
     },
     "Actions message": {
@@ -814,6 +803,14 @@
       ],
       "Unsupported calendar format": [
         "Format kalendarza jest nieobsługiwany"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Zamknij"
+      ],
+      "Open": [
+        "Otwórz"
       ]
     },
     "Confirm modal title": {
@@ -2784,9 +2781,6 @@
       "Priority support": [
         "Priorytetowe wsparcie"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Queued": [
         "W kolejce"
       ],
@@ -2795,9 +2789,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
-      ],
-      "Screenshot(s) attached": [
-        "Zrzuty ekranu zostały dołączone"
       ],
       "Search cannot be enabled in this browser": [
         "Nie można włączyć wyszukiwania w tej przeglądarce"
@@ -2827,7 +2818,7 @@
         ""
       ],
       "Signature issue": [
-        ""
+        "Błąd podpisu"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Niektóre pliki nie są już dostępne. Przywróć dostęp do plików. ${ StartRecoveryButton }"
@@ -2835,8 +2826,8 @@
       "Something went wrong, please try again later.": [
         "Coś poszło nie tak. Spróbuj ponownie później."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy pocztą, kalendarzem i dyskiem."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny"
@@ -3148,6 +3139,9 @@
       "Apply to all unverified items": [
         "Zastosuj do wszystkich niezweryfikowanych elementów"
       ],
+      "Attach screenshot(s)": [
+        "Dołącz zrzuty ekranu"
+      ],
       "Audio file": [
         "Plik dźwiękowy"
       ],
@@ -3186,6 +3180,9 @@
       ],
       "Created": [
         "Utworzono"
+      ],
+      "Delete": [
+        "Usuń"
       ],
       "Delete drive?": [
         "Usunąć dysk?",
@@ -3433,11 +3430,6 @@
     "Label for contact group name": {
       "Name": [
         "Nazwa"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Dołącz zrzuty ekranu"
       ]
     },
     "Label/folder modal": {
@@ -3688,7 +3680,7 @@
         "Plik lub folder nie posiada nazwy"
       ],
       "Item failed to be verified": [
-        ""
+        "Weryfikacja elementu nie powiodła się"
       ],
       "Link failed to be loaded": [
         "Załadowanie linku nie powiodło się"
@@ -3872,12 +3864,6 @@
       "A way to contact you": [
         "Preferowana metoda kontaktu"
       ],
-      "Browser name": [
-        "Nazwa przeglądarki"
-      ],
-      "Browser version": [
-        "Wersja przeglądarki"
-      ],
       "e.g. Julia Smith": [
         "np. Julia Nowak"
       ],
@@ -3902,26 +3888,20 @@
       "New name": [
         "Nowa nazwa"
       ],
-      "OS name": [
-        "Nazwa systemu operacyjnego"
-      ],
-      "OS version": [
-        "Wersja systemu operacyjnego"
-      ],
       "Password": [
         "Hasło"
       ],
       "Please describe the problem and include any error messages": [
         "Opisz problem i dołącz wszelkie informacje o błędach"
       ],
-      "Proton username": [
-        "Nazwa użytkownika Proton"
-      ],
       "Search for group name": [
         "Szukaj nazwy grupy"
       ],
       "Search for name or email": [
         "Szukaj nazwy lub adresu e-mail"
+      ],
+      "Select": [
+        "Wybierz"
       ],
       "Start typing an email address": [
         "Wpisz adres e-mail"

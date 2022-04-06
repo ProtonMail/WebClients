@@ -41,14 +41,14 @@
       "Add phone number": [
         ""
       ],
-      "Add screenshot(s)": [
-        "Dodaj snimku(e) zaslona"
-      ],
       "Add to group": [
         "Dodaj u grupu"
       ],
       "Apply": [
         "Primijeni"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Natrag"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Odaberite datoteku ili je dovucite ovdje"
-      ],
-      "Clear": [
-        "Očisti"
       ],
       "Clear data": [
         "Izbriši podatke"
@@ -215,9 +212,6 @@
       ],
       "Hide folders": [
         ""
-      ],
-      "Hide info": [
-        "Sakrij informacije"
       ],
       "Hide labels": [
         ""
@@ -381,9 +375,6 @@
       "Show folders": [
         ""
       ],
-      "Show info": [
-        "Prikaži informacije"
-      ],
       "Show labels": [
         ""
       ],
@@ -482,11 +473,6 @@
       ],
       "Yes, I'll attend": [
         "Da, prisustvovati ću"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Odaberi"
       ]
     },
     "Actions message": {
@@ -1868,7 +1854,7 @@
         ""
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
         ""
       ]
@@ -3132,17 +3118,11 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
       "Removed participants will be notified.": [
         "Uklonjeni sudionici bit će obaviješteni."
-      ],
-      "Screenshot(s) attached": [
-        "Snimka(e) zaslona su pridodane"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
@@ -3162,7 +3142,7 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Ukloniti će se neki vaši odgovori na događaje koje je organizator prethodno ažurirao."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3431,6 +3411,9 @@
       "All day": [
         "Cijeli dan"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "Automatsko spremanje kontakata"
       ],
@@ -3480,6 +3463,9 @@
         ""
       ],
       "Default notifications": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Description": [
@@ -3679,11 +3665,6 @@
     "Label for contact group name": {
       "Name": [
         "Naziv"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Dodajte snimku(e) zaslona"
       ]
     },
     "Label/folder modal": {
@@ -4276,12 +4257,6 @@
       "Add title": [
         "Dodaj naslov"
       ],
-      "Browser name": [
-        "Naziv preglednika"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
-      ],
       "e.g. Julia Smith": [
         "npr. Ana Horvat"
       ],
@@ -4303,26 +4278,20 @@
       "Name": [
         "Naziv"
       ],
-      "OS name": [
-        "Naziv OS-a"
-      ],
-      "OS version": [
-        "Verzija OS-a"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
       ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
       "Search for group name": [
         "Pretraga po nazivu grupe"
       ],
       "Search for name or email": [
         "Pretraga po imenu ili adresi e-pošte"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Započnite pisati adresu e-pošte"

@@ -214,6 +214,9 @@
       "Copy link": [
         "Kopiuj link"
       ],
+      "Create": [
+        ""
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "Eksportuj klucz"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "Czcionka"
       ],
@@ -350,7 +356,7 @@
         "Generuj hasło odzyskiwania"
       ],
       "Get ${ vpnPlus }": [
-        ""
+        "Wybierz plan ${ vpnPlus }"
       ],
       "Get started": [
         "Rozpocznij"
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "oznacz wiadomości jako"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Ładowanie weryfikacji"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Podgląd"
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
       ],
       "Revoke all other sessions": [
         "Unieważnij pozostałe sesje"
@@ -959,6 +974,11 @@
         "Trwa usuwanie klucza adresu."
       ]
     },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
+      ]
+    },
     "Apps dropdown": {
       "Go to ${ title }": [
         "Przejdź do ${ title }"
@@ -1224,7 +1244,7 @@
         "Dodaj link do stopki wiadomości"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ],
       "Copy": [
         "Kopiuj"
@@ -3123,6 +3143,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "Pola imienia i nazwiska nie mogą zostać jednocześnie odznaczone"
       ]
@@ -4158,6 +4181,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Wszyscy powinni mieć dostęp do wolnego i niecenzurowanego Internetu."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4569,6 +4595,9 @@
       "Expired": [
         "Wygasła"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "Failed to fetch logs.": [
         "Nie udało się pobrać logów."
       ],
@@ -4834,7 +4863,7 @@
         "Ładowanie podglądu"
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Aby aktywować adres, zaloguj się do usługi ${ MAIL_APP_NAME }"
+        "Aby aktywować adres, zaloguj się do poczty ${ MAIL_APP_NAME }"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Logi obejmują próby uwierzytelniania dla wszystkich usług Proton."
@@ -4945,10 +4974,13 @@
         "Jedno konto do wszystkich usług Proton"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Zmień te ustawienia tylko, gdy używasz PGP z odbiorcami spoza ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
         "Tylko Ty możesz zobaczyć etykiety."
+      ],
+      "Or select a particular server:": [
+        ""
       ],
       "Organization keys activated": [
         "Klucze organizacji zostały aktywowane"
@@ -5067,9 +5099,6 @@
       "Priority support": [
         "Priorytetowe wsparcie"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton nie może odzyskać utraconych haseł."
       ],
@@ -5123,6 +5152,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
+      ],
+      "Revoke certificate ${ name }": [
+        ""
       ],
       "Right to Left": [
         "Od prawej do lewej"
@@ -5199,8 +5231,8 @@
       "Storage GB": [
         "Przestrzeń dyskowa (GB)"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy pocztą, kalendarzem i dyskiem."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny"
@@ -5429,6 +5461,9 @@
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Włącz autoresponder, aby poinformować kontakty, kiedy jesteś poza biurem lub nie jesteś w stanie odpowiedzieć."
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Użyj następujących danych logowania, podczas łączenia się z serwerami ${ VPN_APP_NAME } poza aplikacją. Przykładowe użycie: Tunnelblick na macOS, OpenVPN na GNU/Linuksie."
@@ -5740,7 +5775,7 @@
     },
     "Info concerning plan features": {
       "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        ""
+        "${ MAIL_APP_NAME } nie może być używany do masowej wysyłki wiadomości lub rozsyłania spamu. Normalne wiadomości są nielimitowane."
       ],
       "Customizable features": [
         "Spersonalizowane funkcje"
@@ -6121,10 +6156,10 @@
         " oraz ${ l }"
       ],
       "${ MAIL_APP_NAME } address": [
-        ""
+        "Adres ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } footer": [
-        ""
+        "Stopka ${ MAIL_APP_NAME }"
       ],
       "${ monthsRewarded } month credited": [
         "${ monthsRewarded } miesiąc przyznany",
@@ -6225,6 +6260,12 @@
       "Block email tracking": [
         "Zablokuj śledzenie wiadomości"
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "bonusowa przestrzeń dyskowa"
       ],
@@ -6255,6 +6296,9 @@
       "Category": [
         "Kategoria"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "Kod"
       ],
@@ -6278,6 +6322,9 @@
       ],
       "Conditions": [
         "Warunki"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm link URLs": [
         "Potwierdź otwieranie linku"
@@ -6377,6 +6424,9 @@
       ],
       "Description": [
         "Opis"
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "Cyfry"
@@ -6534,6 +6584,9 @@
       "Last month only": [
         "Tylko ostatni miesiąc"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Hasło logowania"
       ],
@@ -6554,6 +6607,9 @@
       ],
       "Message": [
         "Wiadomość"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "Przenieś do"
@@ -6576,8 +6632,14 @@
       "New password": [
         "Nowe hasło"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "Nie znaleziono etykiety"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "Powiadomienie"
@@ -6822,6 +6884,9 @@
       "Verification code": [
         "Kod weryfikacyjny"
       ],
+      "VPN Accelerator": [
+        ""
+      ],
       "VPN Connections": [
         "Połączenia VPN"
       ],
@@ -6896,7 +6961,7 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
-        ""
+        "Dodaj swoją domenę do konta ${ MAIL_APP_NAME }."
       ]
     },
     "Label for domain modal": {
@@ -8578,6 +8643,18 @@
       "Address enabled": [
         "Adres został włączony"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "Filtr został usunięty"
       ],
@@ -8683,8 +8760,14 @@
       "(highly recommended)": [
         "(stanowczo zalecana)"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Wybierz platformę"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Wybierz protokół"
@@ -8694,6 +8777,12 @@
       ],
       "3. Select config file and download": [
         "3. Wybierz plik konfiguracyjny i pobierz go"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         "Konto i hasło"
@@ -9280,6 +9369,9 @@
       "Restore administrator privileges": [
         "Przywróć uprawnienia administratora"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         "Bezpieczna poczta e-mail ulokowana w Szwajcarii"
       ],
@@ -9436,6 +9528,12 @@
       "What's new": [
         "Co nowego"
       ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
+        ""
+      ],
       "Your ${ domain } address is active": [
         "Adres ${ domain } jest aktywny"
       ],
@@ -9482,7 +9580,7 @@
     },
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
-        ""
+        "Faktura ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -9632,7 +9730,7 @@
         "Wsparcie dla protokołów udostępniania plików, takich jak BitTorrent."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Proces importowania rozpocznie się od najnowszych wiadomości."
@@ -9696,7 +9794,7 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        ""
+        "Wybierz domyślne ustawienia PGP, które będą używane do podpisywania i szyfrowania wiadomości dla użytkowników PGP spoza ${ BRAND_NAME }. Pamiętaj, że schemat PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu. Dowiedz się więcej"
       ]
     },
     "Tooltip prompt to trust keys": {

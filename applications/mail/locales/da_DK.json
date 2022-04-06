@@ -47,17 +47,11 @@
       "Add phone number": [
         "Tilføj telefonnummer"
       ],
-      "Add screenshot(s)": [
-        "Tilføj skærmfoto(s)"
-      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Føj til ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Føj til gruppe"
-      ],
-      "Advanced search": [
-        "Avanceret søgning"
       ],
       "Align center": [
         "Centrer"
@@ -88,6 +82,9 @@
       ],
       "Archive": [
         "Arkivér"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Attachment": [
         "Vedhæftning"
@@ -325,9 +322,6 @@
       "Export contacts": [
         "Eksportér kontakter"
       ],
-      "Fewer search options": [
-        "Færre søgemuligheder"
-      ],
       "Filter on...": [
         "Filtrer efter..."
       ],
@@ -388,9 +382,6 @@
       "Hide folders": [
         "Skjul mapper"
       ],
-      "Hide info": [
-        "Skjul info"
-      ],
       "Hide labels": [
         "Skjul etiketter"
       ],
@@ -399,6 +390,9 @@
       ],
       "I have a question": [
         "Jeg har et spørgsmål"
+      ],
+      "Images will be loaded without a proxy": [
+        ""
       ],
       "import": [
         "importér"
@@ -451,6 +445,9 @@
       ],
       "Learn more": [
         "Få mere at vide"
+      ],
+      "Less search options": [
+        ""
       ],
       "Load": [
         "Indlæs"
@@ -574,6 +571,9 @@
       ],
       "No": [
         "Nej"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection.": [
+        ""
       ],
       "No, I won't attend": [
         "Nej, jeg deltager ikke"
@@ -770,20 +770,17 @@
       "Show details": [
         "Vis detaljer"
       ],
-      "Show fewer search options": [
-        "Vis færre søgemuligheder"
-      ],
       "Show folders": [
         "Vis mapper"
-      ],
-      "Show info": [
-        "Vis info"
       ],
       "Show labels": [
         "Vis etiketter"
       ],
       "Show less": [
         "Vis mindre"
+      ],
+      "Show less search options": [
+        ""
       ],
       "Show messages": [
         "Vis beskeder"
@@ -805,9 +802,6 @@
       ],
       "Skip": [
         "Spring over"
-      ],
-      "Some images could not be loaded with tracking protection": [
-        "Nogle billeder kunne ikke indlæses med sporingsbeskyttelse"
       ],
       "Star": [
         "Markér med stjerne"
@@ -976,9 +970,9 @@
         "Zoom ud"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Vælg"
+    "action": {
+      "Search messages": [
+        ""
       ]
     },
     "Actions message": {
@@ -4324,6 +4318,9 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ingen af de uploadede nøgler er gyldige til kryptering. Kryptering er automatisk deaktiveret."
       ],
@@ -4393,9 +4390,6 @@
       "Priority support": [
         "Prioriteret support"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton tjener ikke penge ved at misbruge privatlivets fred."
       ],
@@ -4440,9 +4434,6 @@
       ],
       "Scheduling message...": [
         "Planlægger besked..."
-      ],
-      "Screenshot(s) attached": [
-        "Skærmfoto(-s) vedhæftet"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Tager søgningen for lang tid? ${ dropdownButton } eller ${ toggleOffButton } fra denne søgesession."
@@ -4489,8 +4480,8 @@
       "Sorry, this message does not exist or has already expired": [
         "Beklager, denne besked findes ikke eller er allerede udløbet"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Lagerplads deles på tværs af Mail, Calendar og Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        ""
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Gem og del filer sikkert med ${ DRIVE_APP_NAME }."
@@ -5170,6 +5161,9 @@
       "ANY": [
         "ANY"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Attachments": [
         "Vedhæftninger"
       ],
@@ -5229,6 +5223,9 @@
       ],
       "Date:": [
         "Dato:"
+      ],
+      "Delete": [
+        ""
       ],
       "Display name": [
         "Visningsnavn"
@@ -5520,6 +5517,14 @@
         "Navn"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        ""
+      ],
+      "To": [
+        ""
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Maksimeret"
@@ -5542,11 +5547,6 @@
       ],
       "Row": [
         "Række"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Vedhæft skærmfoto(s)"
       ]
     },
     "Label/folder modal": {
@@ -6128,12 +6128,6 @@
       "A way to contact you": [
         "En måde at kontakte dig på"
       ],
-      "Browser name": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Browser-version"
-      ],
       "Confirm password": [
         "Bekræft adgangskode"
       ],
@@ -6176,12 +6170,6 @@
       "Name or email address": [
         "Navn eller e-mailadresse"
       ],
-      "OS name": [
-        "Operativsystem"
-      ],
-      "OS version": [
-        "OS-version"
-      ],
       "Password": [
         "Adgangskode"
       ],
@@ -6194,23 +6182,20 @@
       "Please insert link first": [
         "Indsæt link først"
       ],
-      "Proton username": [
-        "Protonbrugernavn"
-      ],
       "Search for group name": [
         "Søg efter gruppenavn"
       ],
       "Search for name or email": [
         "Søg efter navn eller e-mail"
       ],
-      "Search Messages": [
-        "Søg i beskeder"
-      ],
       "Search messages": [
         "Søg i beskeder"
       ],
       "Search name, email or group": [
         "Søg navn, e-mail eller gruppe"
+      ],
+      "Select": [
+        ""
       ],
       "Start date": [
         "Startdato"

@@ -214,6 +214,9 @@
       "Copy link": [
         "Kopírovat odkaz"
       ],
+      "Create": [
+        ""
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "Exportovat klíč"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "Písmo"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "označit e-maily jako"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Načítání ověření"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Zkontrolovat"
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
       ],
       "Revoke all other sessions": [
         "Odhlásit ze všech ostatních relací"
@@ -957,6 +972,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "Klíč pro vaši adresu se nyní odstraňuje."
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -3123,6 +3143,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "Křestní jméno a příjmení nelze zrušit současně"
       ]
@@ -4158,6 +4181,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Svobodný a necenzurovaný internet by měl být přístupný všem."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
       ],
@@ -4468,7 +4494,7 @@
         "Heslo NEZAPOMEŇTE. Bez hesla nebudete moci spravovat svou organizaci."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
+        "Nepoužívejte pověření OpenVPN / IKEv2 v aplikacích ${ VPN_APP_NAME } ani na ovládacím panelu ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Chcete zrušit všechny ostatní relace než tu stávající?"
@@ -4568,6 +4594,9 @@
       ],
       "Expired": [
         "Platnost vypršela"
+      ],
+      "expires ${ expirationDate }": [
+        ""
       ],
       "Failed to fetch logs.": [
         "Načtení záznamů selhalo."
@@ -4950,6 +4979,9 @@
       "Only you can see the labels.": [
         "Pouze vy můžete vidět štítky."
       ],
+      "Or select a particular server:": [
+        ""
+      ],
       "Organization keys activated": [
         "Klíče organizace byly aktivovány"
       ],
@@ -5067,9 +5099,6 @@
       "Priority support": [
         "Prioritní podpora"
       ],
-      "Proton Calendar": [
-        "Proton Kalendář"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "Proton vám nemůže pomoci obnovit ztracená hesla."
       ],
@@ -5123,6 +5152,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
+      ],
+      "Revoke certificate ${ name }": [
+        ""
       ],
       "Right to Left": [
         "Zprava doleva"
@@ -5199,8 +5231,8 @@
       "Storage GB": [
         "Úložiště"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Úložný prostor je sdílen mezi aplikacemi Mail, Calendar a Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Podpora 1 vlastní e-mailové domény"
@@ -5429,6 +5461,9 @@
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Použijte automatické odpovědi k informovanosti kontaktů, že jste mimo kancelář a jinak nemůžete odpovědět."
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Při připojování k serverům ${ VPN_APP_NAME } bez aplikace použijte následující přihlašovací údaje. Příklady použití zahrnují: Tunnelblick na macOS, OpenVPN na GNU/Linux."
@@ -6225,6 +6260,12 @@
       "Block email tracking": [
         "Blokovat sledování emailů"
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "bonusové úložiště"
       ],
@@ -6255,6 +6296,9 @@
       "Category": [
         "Kategorie"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "Kód"
       ],
@@ -6278,6 +6322,9 @@
       ],
       "Conditions": [
         "Podmínky"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm link URLs": [
         ""
@@ -6377,6 +6424,9 @@
       ],
       "Description": [
         "Popis"
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "Číslice"
@@ -6534,6 +6584,9 @@
       "Last month only": [
         "Pouze minulý měsíc"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Přihlašovací heslo"
       ],
@@ -6554,6 +6607,9 @@
       ],
       "Message": [
         "Zpráva"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "Přesunout do"
@@ -6576,8 +6632,14 @@
       "New password": [
         "Nové heslo"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "Nebyl nalezen žádný štítek"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "Upozornění"
@@ -6821,6 +6883,9 @@
       ],
       "Verification code": [
         "Ověřovací kód"
+      ],
+      "VPN Accelerator": [
+        ""
       ],
       "VPN Connections": [
         "VPN připojení"
@@ -8578,6 +8643,18 @@
       "Address enabled": [
         "Adresa aktivována"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "Filtr odstraněn"
       ],
@@ -8683,8 +8760,14 @@
       "(highly recommended)": [
         "(silně doporučováno)"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Vyberte platformu"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Vyberte protokol"
@@ -8694,6 +8777,12 @@
       ],
       "3. Select config file and download": [
         "3. Vyberte konfigurační soubor a stáhněte jej"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         "Účet a heslo"
@@ -9280,6 +9369,9 @@
       "Restore administrator privileges": [
         "Obnovit oprávnění správce"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         "Bezpečný e-mail se sídlem ve Švýcarsku"
       ],
@@ -9435,6 +9527,12 @@
       ],
       "What's new": [
         "Co je nového"
+      ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "Your ${ domain } address is active": [
         "Vaše ${ domain } adresa je aktivní"

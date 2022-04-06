@@ -41,14 +41,14 @@
       "Add phone number": [
         "Добавить номер телефона"
       ],
-      "Add screenshot(s)": [
-        "Добавить снимки экрана"
-      ],
       "Add to group": [
         "Добавить в группу"
       ],
       "Apply": [
         "Применить"
+      ],
+      "Attach screenshot(s)": [
+        "Вложить снимок(ки) экрана"
       ],
       "Back": [
         "Назад"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Выберите файл или перетащите его сюда"
-      ],
-      "Clear": [
-        "Очистить"
       ],
       "Clear data": [
         "Очистить данные"
@@ -217,9 +214,6 @@
       ],
       "Hide folders": [
         "Скрыть папки"
-      ],
-      "Hide info": [
-        "Скрыть информацию"
       ],
       "Hide labels": [
         "Скрыть ярлыки"
@@ -383,9 +377,6 @@
       "Show folders": [
         "Показать папки"
       ],
-      "Show info": [
-        "Показать информацию"
-      ],
       "Show labels": [
         "Показать ярлыки"
       ],
@@ -484,11 +475,6 @@
       ],
       "Yes, I'll attend": [
         "Да, я участвую"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Выбрать"
       ]
     },
     "Actions message": {
@@ -1876,9 +1862,9 @@
         "Событие принадлежит отключенному календарю."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
-        "Добавить календарь"
+        ""
       ]
     },
     "Duration": {
@@ -3181,17 +3167,11 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
       "Removed participants will be notified.": [
         "Удаленные участники получат уведомление."
-      ],
-      "Screenshot(s) attached": [
-        "Снимки экрана прикреплены"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
@@ -3211,8 +3191,8 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Некоторые ваши ответы на события, ранее обновленные организатором, будут потеряны."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "Место используют Mail, Calendar и Drive."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
@@ -3480,6 +3460,9 @@
       "All day": [
         "Весь день"
       ],
+      "Attach screenshot(s)": [
+        "Вложить снимок(ки) экрана"
+      ],
       "Automatically save contacts": [
         "Автоматически сохранять контакты"
       ],
@@ -3530,6 +3513,9 @@
       ],
       "Default notifications": [
         "Уведомления по умолчанию"
+      ],
+      "Delete": [
+        "Удалить"
       ],
       "Description": [
         "Описание"
@@ -3729,11 +3715,6 @@
     "Label for contact group name": {
       "Name": [
         "Имя"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Приложить снимки экрана"
       ]
     },
     "Label/folder modal": {
@@ -4355,12 +4336,6 @@
       "Add title": [
         "Добавить название"
       ],
-      "Browser name": [
-        "Название браузера"
-      ],
-      "Browser version": [
-        "Версия браузера"
-      ],
       "e.g. Julia Smith": [
         "например, Джулия Смит"
       ],
@@ -4382,26 +4357,20 @@
       "Name": [
         "Имя"
       ],
-      "OS name": [
-        "Название ОС"
-      ],
-      "OS version": [
-        "Версия ОС"
-      ],
       "Password": [
         "Пароль"
       ],
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
       ],
-      "Proton username": [
-        "Имя пользователя в Proton"
-      ],
       "Search for group name": [
         "Поиск названия группы"
       ],
       "Search for name or email": [
         "Поиск имени или эл. почты"
+      ],
+      "Select": [
+        "Выбрать"
       ],
       "Start typing an email address": [
         "Начните вводить адрес эл. почты"

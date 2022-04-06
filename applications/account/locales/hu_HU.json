@@ -214,6 +214,9 @@
       "Copy link": [
         "Hivatkozás másolása"
       ],
+      "Create": [
+        ""
+      ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         "Hozzon létre egy biztonságos ${ MAIL_APP_NAME } címet inkább"
       ],
@@ -337,6 +340,9 @@
       "Export key": [
         "Kulcs exportálása"
       ],
+      "Extend": [
+        ""
+      ],
       "Font": [
         "Betűtípus"
       ],
@@ -420,6 +426,9 @@
       ],
       "label emails as": [
         "címke hozzáadása:"
+      ],
+      "Load more": [
+        ""
       ],
       "Loading verification": [
         "Ellenőrzés folyamatban"
@@ -591,6 +600,12 @@
       ],
       "Review": [
         "Áttekintés"
+      ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
       ],
       "Revoke all other sessions": [
         "Minden más munkamenet kijelentkeztetése"
@@ -939,6 +954,11 @@
     "alert": {
       "The key for your address is now being deleted.": [
         "A címéhez tartozó kulcs törlése folyamatban."
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -2038,7 +2058,7 @@
         ""
       ],
       "Russia": [
-        ""
+        "Oroszország"
       ],
       "Rwanda": [
         ""
@@ -2326,7 +2346,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
-        "Gratulálunk! Elérte a maximum ${ rewardsLimit } ingyen ingyen hónapot ebből: ${ appName } ${ plusPlanName }"
+        "Gratulálunk! Megszerezte a maximum ${ rewardsLimit } hónapnyi ingyenes ${ appName } ${ plusPlanName } elérést"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
@@ -2342,7 +2362,7 @@
         "A fájl maximum ${ MAX_IMPORT_FILE_SIZE_STRING } méretű lehet és maximum ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha a fájl nagyobb, bontsa szét több kisebbre."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        "Kövesse hány ember kattint a linkjére, iratkozik fel és lesz fizető felhasználó. Kövesse, ahogy gyűlnek ingyenes hónapjai."
+        "Kövesse hány ember kattint az ajánlójára, iratkozik fel és lesz fizető felhasználó. Kövesse, ahogy gyűlnek ingyenes hónapjai."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Folytathatja a barátok meghívását, de további krediteket nem fog tudni szerezni"
@@ -3081,6 +3101,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "A vezetéknév vagy keresztnév egyike kiválasztva kell maradjon"
       ]
@@ -3198,7 +3221,7 @@
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } VPN kapcsolat",
-        "${ MaxVPN } VPN kapcsolatok"
+        "${ MaxVPN } VPN kapcsolat"
       ],
       "Access to all countries": [
         "Hozzáférés az összes országhoz"
@@ -4028,7 +4051,7 @@
         "1. Barátok meghívása a Protonba"
       ],
       "2. They try ${ appName } ${ planName }": [
-        "2. Kipróbálják az alábbit: ${ appName } ${ planName }"
+        "2. Kipróbálják a ${ appName } ${ planName } szolgáltatást"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% kedvezmény érvényesítve a kuponnal: ${ code }"
@@ -4047,6 +4070,9 @@
       ],
       "A free and uncensored Internet should be available to all.": [
         "A szabad és cenzúramentes internet mindenkinek elérhető kellene legyen."
+      ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4387,7 +4413,7 @@
         "Minden további kapcsolat hozzárendelhető a szervezetben lévő felhasználókhoz."
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
-        "Ennyit szerzett: ${ rewards } ebből: ${ rewardsLimit } ${ appName } ${ planName } hónap."
+        "Szerzett ${ rewards } hónapot a lehetséges ${ rewardsLimit } ${ appName } ${ planName } hónapból."
       ],
       "Edit label": [
         "Címke szerkesztése"
@@ -4432,7 +4458,7 @@
         "Írja be a bejelentkezési jelszavát az azonosításhoz."
       ],
       "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Írja be saját jelszavát (a szervezet adminjaként) és az új jelszót ennek a felhasználónak ${ Name } (${ Email })."
+        "Írja be saját jelszavát (a szervezet adminisztrátoraként) és az új jelszót ennek a felhasználónak ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Írja be a Proton fiókjához tartozó e-mail címet vagy felhasználónevet."
@@ -4448,6 +4474,9 @@
       ],
       "Expired": [
         "Lejárt"
+      ],
+      "expires ${ expirationDate }": [
+        ""
       ],
       "Failed to fetch logs.": [
         "Napló betöltése sikertelen."
@@ -4653,13 +4682,13 @@
         "feltétlenül szükséges"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        "Én ezt használtam: ${ appName } és szerintem neked is tetszeni fog. Ez egy biztonságos e-mail szolgáltatás, ami védi a magánéleted. Jelentkezz rá ezen a linken, hogy kapj egy hónapnyi ingyen használatot: ${ referrerLink }"
+        "Én a ${ appName }t használom és szerintem neked is tetszeni fog. Ez egy biztonságos e-mail szolgáltatás, ami védi a magánéleted. Regisztrálj ezen a hivatkozáson, egy hónapnyi ingyenes használathoz: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
       ],
       "Just send them your personal referral link.": [
-        "Csak küldje el nekik az ön ajánló linkjét."
+        "Csak küldje el nekik az ön ajánló hivatkozását."
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Tartsa meg ezt a DNS beállítást mindaddig amíg a DKIM-et használni szeretné."
@@ -4722,7 +4751,7 @@
         "A Mail.ru olvassa az ön személyes adatait, hogy hirdetőknek, orosz kormányzati intézményeknek és más külső feleknek adja át. A személyes adatai védelme érdekében, hozza létre titkosított e-mail címét."
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Mindenképpen emlékezzen a bejelentkezési és az e-mail titkosítási jelszavaira. ${ boldAlert }. Javasoljuk, hogy előbb adjon meg az alábbit: ${ recoveryLink }."
+        "Mindenképpen emlékezzen a bejelentkezési és az e-mail titkosítási jelszavaira. ${ boldAlert }. Javasoljuk, hogy előbb állítson be egy ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Fiókjának beállításához kézileg írja be ezt a kódot a kétlépcsős hitelesítéshez használt eszközén. ${ _switchButton }."
@@ -4826,6 +4855,9 @@
       "Only you can see the labels.": [
         "Csak ön láthatja a címkéket."
       ],
+      "Or select a particular server:": [
+        ""
+      ],
       "Organization keys activated": [
         "Szervezeti kulcsok aktiválva"
       ],
@@ -4839,7 +4871,7 @@
         "Egyéb opciók"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférés korlátozva lesz, és a fiókja végül törölve lesz."
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
       ],
       "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
         ""
@@ -4861,7 +4893,7 @@
         "${ rewardMonths } hónapos csomag fizetve"
       ],
       "Paid for a monthly plan": [
-        "Előfizetett egy hónapos csomagra"
+        "Előfizetett a havidíjas csomagra"
       ],
       "Payment can take a few minutes to fully verify.": [
         "A kifizetés ellenőrzése néhány percet is igénybe vehet."
@@ -4941,9 +4973,6 @@
       "Priority support": [
         "Elsőbbségi támogatás"
       ],
-      "Proton Calendar": [
-        "Proton Calendar"
-      ],
       "Proton can't help you recover any lost passwords.": [
         "A Proton nem tud segíteni semmilyen elveszített jelszó helyreállításában."
       ],
@@ -4975,7 +5004,7 @@
         "A helyreállítási fájlok érvénytelenítésre kerültek"
       ],
       "recovery method": [
-        "helyreállítási mód"
+        "helyreállítási módot"
       ],
       "Recovery phrase copied to clipboard": [
         "A helyreállító jelmondat a vágólapra másolva"
@@ -4993,10 +5022,13 @@
         "A helyreállító jelmondat nem kapcsolható egyetlen elavult kulcshoz sem."
       ],
       "Referral link copied to your clipboard": [
-        "Ajánló link kimásolva a vágólapra"
+        "Ajánló hivatkozás kimásolva a vágólapra"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
+      ],
+      "Revoke certificate ${ name }": [
+        ""
       ],
       "Right to Left": [
         "Jobbról balra"
@@ -5073,11 +5105,11 @@
       "Storage GB": [
         "Tárhely GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
-        "A tárhely megosztott az Email, a Naptár és a Felhőtárhely közt."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "A tárhely megosztott a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } között."
       ],
       "Support for 1 custom email domain": [
-        "Támogasson egy 1 egyedi email domain névért"
+        "Egy saját domain név használata"
       ],
       "support team": [
         "ügyfélszolgálat"
@@ -5200,7 +5232,7 @@
         "alkalmazás: ${ toAppName }"
       ],
       "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ appName } használatát prémium funkciókkal, válassza ki a feliratkozási csomagját és a fizetési módját."
+        "Ahhoz, hogy tudja folytatni a ${ appName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "A visszafejtéshez, az e-mailek és egyéb adatok megjelenítéséhez, helyreállító fájlra van szüksége."
@@ -5304,6 +5336,9 @@
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
         "Használja az automatikus válasz lehetőséget, hogy értesítse kapcsolatait arról, hogy jelenleg az irodán kívül tartózkodik, vagy más okok miatt nem tud válaszolni."
       ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        ""
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Használja az alábbi adatokat, amikor a ${ VPN_APP_NAME } szerverekhez az alkalmazás nélkül csatlakozik. Például: Tunnelblick MacOS-en, vagy OpenVPN GNU/Linux-on."
       ],
@@ -5386,7 +5421,7 @@
         "Amennyiben engedélyezi az értesítéseket, a ${ MAIL_APP_NAME } fiókjába érkező új üzenetekről a helyreállítási/értesítési címén tájékoztatjuk."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
-        "Amikor feliratkoznak egy fizetős csomagra, 1-től 3 hónapig terjedő ${ appName } ${ planName }-t írunk jóva a fiókjára."
+        "Amikor feliratkoznak egy fizetős csomagra, 1-3 havi ${ appName } ${ planName } elérést írunk jóvá a fiókjára."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Az előfizetés megújításakor a meglévő krediktjeiből egyenlítjük ki a számlát, mielőtt a megadott fizetési módokat terhelnénk."
@@ -5825,7 +5860,7 @@
         "Ugrás a lomtárhoz"
       ],
       "Insert link": [
-        "Link beillesztése"
+        "Hivatkozás beillesztése"
       ],
       "Jump to first": [
         "Ugrás az elsőre"
@@ -6089,6 +6124,12 @@
       "Block email tracking": [
         "E-mail követés megakadályozása"
       ],
+      "Block malware only": [
+        ""
+      ],
+      "Block malware, ads and trackers": [
+        ""
+      ],
       "bonus storage": [
         "bónusz tárhely"
       ],
@@ -6119,6 +6160,9 @@
       "Category": [
         "Kategória"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code": [
         "Kód"
       ],
@@ -6142,6 +6186,9 @@
       ],
       "Conditions": [
         "Feltételek"
+      ],
+      "Config to connect to ${ serverName }": [
+        ""
       ],
       "Confirm link URLs": [
         "Link URL-ek megerősítése"
@@ -6183,7 +6230,7 @@
         "Ország"
       ],
       "Credits pending": [
-        ""
+        "Függőben lévő kreditek"
       ],
       "Credits used": [
         "Felhasznált kredit"
@@ -6241,6 +6288,9 @@
       ],
       "Description": [
         "Leírás"
+      ],
+      "Device/certificate name": [
+        ""
       ],
       "Digits": [
         "Számjegy"
@@ -6398,6 +6448,9 @@
       "Last month only": [
         "Csak az utolsó hónap"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Bejelentkezési jelszó"
       ],
@@ -6418,6 +6471,9 @@
       ],
       "Message": [
         "Üzenet"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Move to": [
         "Mozgatás ide"
@@ -6440,8 +6496,14 @@
       "New password": [
         "Új jelszó"
       ],
+      "No filter": [
+        ""
+      ],
       "No label found": [
         "Nem található címke"
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Notification": [
         "Értesítés"
@@ -6686,6 +6748,9 @@
       "Verification code": [
         "Ellenőrző kód"
       ],
+      "VPN Accelerator": [
+        ""
+      ],
       "VPN Connections": [
         "VPN kapcsolatok"
       ],
@@ -6741,7 +6806,7 @@
         "Jelszó (adminisztrátor)"
       ],
       "Your referral link": [
-        "Ajánló linkje"
+        "Ajánló hivatkozása"
       ],
       "Your reward": [
         "Jutalma"
@@ -7788,7 +7853,7 @@
         "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
       ],
       "Please insert link first": [
-        "Kérjük, előbb illessze be a linket"
+        "Kérjük, előbb illessze be a hivatkozást"
       ],
       "Postal code": [
         "Irányítószám"
@@ -8169,7 +8234,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Szerezzen akár 18 hónapnyit ebből: ${ appName } ${ planName } ingyen"
+        "Szerezzen akár 18 hónapnyi ${ appName } ${ planName } elérést ingyen"
       ],
       "Invite friends and earn rewards!": [
         ""
@@ -8422,6 +8487,18 @@
       "Address enabled": [
         "Cím engedélyezve"
       ],
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ],
       "Filter removed": [
         "Szűrő eltávolítva"
       ],
@@ -8523,8 +8600,14 @@
       "(highly recommended)": [
         "(erősen javasolt)"
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Platform kiválasztása"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Protokoll kiválasztása"
@@ -8534,6 +8617,12 @@
       ],
       "3. Select config file and download": [
         "3. Beállítási fájl kiválasztása és letöltése"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account and password": [
         "Fiók és jelszó"
@@ -8914,7 +9003,7 @@
         "Fizessen elő ${ vpnPlus } csomagra az összes szerver használatához"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Szerezzen akár 18 hónapnyit ebből: ${ appName } ${ planName } ingyen"
+        "Szerezzen akár 18 hónapnyi ${ appName } ${ planName } elérést ingyen"
       ],
       "Gift code": [
         "Ajándék kód"
@@ -9118,6 +9207,9 @@
       "Restore administrator privileges": [
         "Adminisztrátori jogok visszaállítása"
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         ""
       ],
@@ -9273,6 +9365,12 @@
       ],
       "What's new": [
         "Újdonságok"
+      ],
+      "WireGuard": [
+        ""
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "Your ${ domain } address is active": [
         "${ domain } címe aktív"
@@ -9461,7 +9559,7 @@
         "A levelező alapértelmezett elrendezésének beállítása."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "Beállítja az alábbi láblécet az elküldött e-mailjeiben: ${ signature } A link az ajánló linkjére mutat. A lábléc az aláírása alatt fog megjelenni. Bármikor személyre szabhatja aláírását a beállítások között."
+        "Beállítja az alábbi láblécet az elküldött e-mailjeiben: ${ signature } A hivatkozás az ajánló hivatkozására mutat. A lábléc az aláírása alatt fog megjelenni. Az aláírását személyre szabhatja a beállítások között."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Az ezzel a kulccsal készült aláírások érvénytelenként lesznek kezelve és a kulcs nem használható titkosításra"

@@ -55,14 +55,14 @@
       "Add PayPal payment method": [
         "Dodaj PayPal način plaćanja"
       ],
-      "Add screenshot(s)": [
-        "Dodaj snimku(e) zaslona"
-      ],
       "annual billing": [
         "godišnja naplata"
       ],
       "Apply": [
         "Primijeni"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Natrag"
@@ -78,9 +78,6 @@
       ],
       "Chat with us": [
         ""
-      ],
-      "Clear": [
-        "Očisti"
       ],
       "Close": [
         "Zatvori"
@@ -114,6 +111,9 @@
       ],
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
+      ],
+      "Create": [
+        ""
       ],
       "Create account": [
         "Stvori račun"
@@ -178,6 +178,9 @@
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
       ],
+      "Extend": [
+        ""
+      ],
       "Get ${ vpnPlus }": [
         ""
       ],
@@ -202,9 +205,6 @@
       "Hide additional features": [
         "Sakrij dodatne značajke"
       ],
-      "Hide info": [
-        "Sakrij informacije"
-      ],
       "Homepage": [
         "Početna stranica"
       ],
@@ -215,6 +215,9 @@
         "Povećaj"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
+        ""
+      ],
+      "Load more": [
         ""
       ],
       "Loading verification": [
@@ -304,6 +307,12 @@
       "Retry": [
         "Pokušaj ponovno"
       ],
+      "Revoke": [
+        ""
+      ],
+      "Revoke ${ name }": [
+        ""
+      ],
       "Save": [
         "Spremi"
       ],
@@ -327,9 +336,6 @@
       ],
       "Show": [
         "Prikaži"
-      ],
-      "Show info": [
-        "Prikaži informacije"
       ],
       "Show preview": [
         ""
@@ -434,11 +440,6 @@
         "Smanji"
       ]
     },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Odaberi"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } adresa e-pošte",
@@ -489,6 +490,11 @@
         "${ vpnBonus } veza",
         "${ vpnBonus } veze",
         "${ vpnBonus } veza"
+      ]
+    },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        ""
       ]
     },
     "Apps dropdown": {
@@ -761,6 +767,14 @@
         ""
       ],
       "Unsupported calendar format": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Zatvori"
+      ],
+      "Open": [
         ""
       ]
     },
@@ -1786,6 +1800,11 @@
         "Možete ${ refresh } ili pokušati ponovo kasnije."
       ]
     },
+    "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        ""
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nije odabrana nijedna slika"
@@ -2039,6 +2058,9 @@
       "A free and uncensored Internet should be available to all.": [
         "Besplatan i necenzurirani Internet trebao bi biti dostupan svima."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        ""
+      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Pristup ograničenom sadržaju, poput društvenih mreža, Wikipedije, Youtubea i mnogo drugih, bez obzira gdje se nalazite."
       ],
@@ -2171,6 +2193,9 @@
       "Expired": [
         "Isteklo"
       ],
+      "expires ${ expirationDate }": [
+        ""
+      ],
       "For families and small teams; includes both Mail and VPN.": [
         "Za obitelji i manje timove; uključuje E-poštu i VPN."
       ],
@@ -2282,6 +2307,9 @@
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         ""
       ],
+      "Learn more": [
+        "Saznajte više"
+      ],
       "Loading": [
         "Učitavanje"
       ],
@@ -2326,6 +2354,9 @@
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
         "Kada pritisnete \"Snizi status\", potrebno je par minuta da se snizi status vašeg računa na Free plan. "
+      ],
+      "Or select a particular server:": [
+        ""
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
@@ -2375,9 +2406,6 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Proton can't help you recover any lost passwords.": [
         ""
       ],
@@ -2391,6 +2419,9 @@
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        ""
+      ],
+      "Revoke certificate ${ name }": [
         ""
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
@@ -2407,9 +2438,6 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Za postavljanje računa, skenirajte ovaj kôd pomoću uređaja za dvofaktorsku autentikaciju. ${ switchButton }."
-      ],
-      "Screenshot(s) attached": [
-        "Snimke zaslona su pridodane"
       ],
       "See all plans": [
         ""
@@ -2438,7 +2466,7 @@
       "Storage GB": [
         "Prostor za pohranu GB"
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -2460,6 +2488,9 @@
         "Hvala vam što podupirete našu misiju."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        ""
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
         ""
       ],
       "This account has been suspended due to a potential policy violation.": [
@@ -2535,6 +2566,9 @@
         "Nepodržana datoteka"
       ],
       "Upgrade now": [
+        ""
+      ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
         ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
@@ -2823,8 +2857,17 @@
       "Annual discount (${ discountPercentage }%)": [
         "Godišnji popust (${ discountPercentage }%)"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Back to:": [
         "Natrag na:"
+      ],
+      "Block malware only": [
+        "Blokiraj samo zlonamjerne programe"
+      ],
+      "Block malware, ads and trackers": [
+        ""
       ],
       "bonus storage": [
         "bonus prostor za pohranu"
@@ -2853,7 +2896,13 @@
       "Category": [
         "Kategorija"
       ],
+      "Choose a name for the generated certificate file": [
+        ""
+      ],
       "Code is 6 digits without spaces": [
+        ""
+      ],
+      "Config to connect to ${ serverName }": [
         ""
       ],
       "Confirm login password": [
@@ -2901,6 +2950,12 @@
       "Default language": [
         "Zadani jezik"
       ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Device/certificate name": [
+        ""
+      ],
       "Digits": [
         "Znamenke"
       ],
@@ -2946,11 +3001,17 @@
       "Key": [
         "Ključ"
       ],
+      "Level for NetShield blocker filtering": [
+        ""
+      ],
       "Login password": [
         "Lozinka za prijavu"
       ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
+      ],
+      "Moderate NAT": [
+        ""
       ],
       "Name": [
         "Naziv"
@@ -2966,6 +3027,12 @@
       ],
       "New password": [
         "Nova lozinka"
+      ],
+      "No filter": [
+        ""
+      ],
+      "Non-standard ports": [
+        ""
       ],
       "Old login password": [
         "Stara lozinka za prijavu"
@@ -3075,6 +3142,9 @@
       "Verification method": [
         "Metoda provjere valjanosti"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Žao nam je što odlazite. Molimo vas da objasnite zašto odlazite kako bi nam pomogli da se poboljšamo."
       ],
@@ -3128,11 +3198,6 @@
       ],
       "Expired": [
         "Isteklo"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Dodajte snimku(e) zaslona"
       ]
     },
     "Link": {
@@ -3474,12 +3539,6 @@
       "Add gift code": [
         "Dodaj darovni kôd"
       ],
-      "Browser name": [
-        "Naziv preglednika"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
-      ],
       "Choose a new password": [
         "Odaberite novu lozinku"
       ],
@@ -3513,12 +3572,6 @@
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
       ],
-      "OS name": [
-        "Naziv OS-a"
-      ],
-      "OS version": [
-        "Verzija OS-a"
-      ],
       "Other": [
         "Ostalo"
       ],
@@ -3531,14 +3584,14 @@
       "Postal code": [
         "Poštanski broj"
       ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
       "Recovery email address": [
         ""
       ],
       "Reset code": [
         "Ponovo postavljanje kôda"
+      ],
+      "Select": [
+        "Odaberi"
       ],
       "Select a reason": [
         "Odaberite razlog"
@@ -3891,6 +3944,20 @@
         "Uspješno ste poništili pretplatu"
       ]
     },
+    "Success notification": {
+      "Certificate ${ name } revoked": [
+        ""
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        ""
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        ""
+      ],
+      "Creating config file for ${ serverName }": [
+        ""
+      ]
+    },
     "Suffix": {
       "/ month": [
         "/ mjesečno"
@@ -3943,8 +4010,14 @@
       "${ VPN_APP_NAME } plan comparison": [
         ""
       ],
+      "1. Give a name to the config to be generated": [
+        ""
+      ],
       "1. Select platform": [
         "1. Odaberite platformu"
+      ],
+      "2. Select platform": [
+        ""
       ],
       "2. Select protocol": [
         "2. Odaberite protokol"
@@ -3954,6 +4027,12 @@
       ],
       "3. Select config file and download": [
         "3. Odaberite konfiguracijsku datoteku i preuzmite"
+      ],
+      "3. Select VPN options": [
+        ""
+      ],
+      "4. Select a server to connect to": [
+        ""
       ],
       "Account": [
         "Korisnički račun"
@@ -4231,6 +4310,9 @@
       "Reset password?": [
         ""
       ],
+      "Revoke certificate": [
+        ""
+      ],
       "Secure Core Servers": [
         "Secure Core poslužitelji"
       ],
@@ -4296,6 +4378,9 @@
       ],
       "What's new": [
         "Što je novo"
+      ],
+      "WireGuard configuration": [
+        ""
       ],
       "You already have a Proton account": [
         "Već imate Proton račun"

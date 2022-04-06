@@ -41,14 +41,14 @@
       "Add phone number": [
         "Afegir número de telèfon"
       ],
-      "Add screenshot(s)": [
-        "Afegir captura(es) de pantalla"
-      ],
       "Add to group": [
         "Afegir al grup"
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Back": [
         "Torna"
@@ -67,9 +67,6 @@
       ],
       "Choose a file or drag it here": [
         "Trieu un fitxer o arrossegueu-lo aquí"
-      ],
-      "Clear": [
-        "Netejar"
       ],
       "Clear data": [
         "Netejar dades"
@@ -213,9 +210,6 @@
       ],
       "Hide folders": [
         "Amagar carpetes"
-      ],
-      "Hide info": [
-        "Amagar informació"
       ],
       "Hide labels": [
         "Amagar etiquetes"
@@ -379,9 +373,6 @@
       "Show folders": [
         "Mostrar carpetes"
       ],
-      "Show info": [
-        "Mostra informació"
-      ],
       "Show labels": [
         "Mostrar etiquetes"
       ],
@@ -480,11 +471,6 @@
       ],
       "Yes, I'll attend": [
         "Sí, hi assisteixo"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
       ]
     },
     "Actions message": {
@@ -1860,7 +1846,7 @@
         "L'esdeveniment pertany a un calendari deshabilitat."
       ]
     },
-    "Dropwdown action icon tooltip": {
+    "Dropdown action icon tooltip": {
       "Add calendar": [
         ""
       ]
@@ -3083,17 +3069,11 @@
       "Priority support": [
         ""
       ],
-      "Proton Calendar": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Removed participants will be notified.": [
         "Els participants eliminats sera notificats."
-      ],
-      "Screenshot(s) attached": [
-        "Captures de pantalla(s) adjuntes"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioneu el format de correu electrònic que voleu utilitzar per defecte quan envieu correus a aquesta adreça."
@@ -3113,7 +3093,7 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algunes de les vostres respostes a ocurrències prèviament actualitzades per l'organitzador es perdran."
       ],
-      "Storage space is shared across Mail, Calendar, and Drive.": [
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
       "Support for 1 custom email domain": [
@@ -3382,6 +3362,9 @@
       "All day": [
         "Tot el dia"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Automatically save contacts": [
         "Desar contactes automàticament"
       ],
@@ -3431,6 +3414,9 @@
         ""
       ],
       "Default notifications": [
+        ""
+      ],
+      "Delete": [
         ""
       ],
       "Description": [
@@ -3629,11 +3615,6 @@
     "Label for contact group name": {
       "Name": [
         "Nom"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Adjunta captura(es) de pantalla"
       ]
     },
     "Label/folder modal": {
@@ -4197,12 +4178,6 @@
       "Add title": [
         "Afegir títol"
       ],
-      "Browser name": [
-        "Nom del navegador"
-      ],
-      "Browser version": [
-        "Versió del navegador"
-      ],
       "e.g. Julia Smith": [
         "ex. Julia Smith"
       ],
@@ -4224,26 +4199,20 @@
       "Name": [
         "Nom"
       ],
-      "OS name": [
-        "Nom del SO"
-      ],
-      "OS version": [
-        "Versió de SO"
-      ],
       "Password": [
         ""
       ],
       "Please describe the problem and include any error messages": [
         "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
       ],
-      "Proton username": [
-        "Nom d'usuari de Proton"
-      ],
       "Search for group name": [
         "Cercar per nom de grup"
       ],
       "Search for name or email": [
         "Cercar per nom o correu electrònic"
+      ],
+      "Select": [
+        ""
       ],
       "Start typing an email address": [
         "Comenceu a escriure una adreça de correu electrònic"
