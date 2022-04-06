@@ -1,5 +1,13 @@
 import { c, msgid } from 'ttag';
-import { PLANS, PLAN_NAMES, APPS, DEFAULT_CURRENCY, CYCLE, BRAND_NAME } from '@proton/shared/lib/constants';
+import {
+    PLANS,
+    PLAN_NAMES,
+    APPS,
+    DEFAULT_CURRENCY,
+    CYCLE,
+    BRAND_NAME,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import { getHasB2BPlan, getPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
 import {
     Subscription,
@@ -20,6 +28,12 @@ import { useConfig } from '../../../hooks';
 import { Price, StrippedList, StrippedItem, Meter, Button } from '../../../components';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
+import {
+    getB2BHighSpeedVPNConnectionsText,
+    getB2BVPNConnectionsText,
+    getHighSpeedVPNConnectionsText,
+    getVPNConnectionsText,
+} from '../features/vpn';
 
 interface Props {
     user: UserModel;
@@ -100,7 +114,7 @@ const SubscriptionPanel = ({
                 {[
                     {
                         icon: 'check',
-                        text: c('Subscription attribute').t`1 VPN connection`,
+                        text: getVPNConnectionsText(1),
                     },
                     {
                         icon: 'check',
@@ -216,35 +230,15 @@ const SubscriptionPanel = ({
                         icon: 'check',
                         text: (() => {
                             if (user.hasPaidVpn) {
-                                const maxVpn = 10; // The 10 is hard coded because it cannot be "allocated" per user.
                                 if (MaxMembers > 1) {
-                                    return c('Subscription attribute').ngettext(
-                                        msgid`${maxVpn} high-speed VPN connection per user`,
-                                        `${maxVpn} high-speed VPN connections per user`,
-                                        maxVpn
-                                    );
+                                    return getB2BHighSpeedVPNConnectionsText(VPN_CONNECTIONS);
                                 }
-                                return c('Subscription attribute').ngettext(
-                                    msgid`${maxVpn} high-speed VPN connection`,
-                                    `${maxVpn} high-speed VPN connections`,
-                                    maxVpn
-                                );
+                                return getHighSpeedVPNConnectionsText(VPN_CONNECTIONS);
                             }
-                            {
-                                const maxVpn = 1;
-                                if (MaxMembers > 1) {
-                                    return c('Subscription attribute').ngettext(
-                                        msgid`${maxVpn} VPN connection per user`,
-                                        `${maxVpn} VPN connections per user`,
-                                        maxVpn
-                                    );
-                                }
-                                return c('Subscription attribute').ngettext(
-                                    msgid`${maxVpn} VPN connection`,
-                                    `${maxVpn} VPN connections`,
-                                    maxVpn
-                                );
+                            if (MaxMembers > 1) {
+                                return getB2BVPNConnectionsText(1);
                             }
+                            return getVPNConnectionsText(1);
                         })(),
                     },
                 ]
