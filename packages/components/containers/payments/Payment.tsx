@@ -124,8 +124,8 @@ const Payment = ({
                     noMaxWidth === false && 'max-w37e on-mobile-max-w100 ',
                 ])}
             >
-                <div className="mr1 on-mobile-mr0 border-bottom pb2">
-                    <h2 className="text-2xl text-bold mb1">{c('Label').t`Select a method`}</h2>
+                <div className="mr1 on-mobile-mr0">
+                    <h2 className="text-2xl text-bold mb1">{c('Label').t`Payment method`}</h2>
                     <PaymentMethodSelector
                         options={options}
                         method={method}
@@ -134,7 +134,6 @@ const Payment = ({
                     />
                 </div>
                 <div className="mt2">
-                    <h2 className="text-2xl text-bold mb1">{c('Title').t`Payment details`}</h2>
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <CreditCard card={card} errors={cardErrors} onChange={onCard} />
