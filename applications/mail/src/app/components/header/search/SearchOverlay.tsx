@@ -1,5 +1,4 @@
 import {
-    useState,
     useRef,
     CSSProperties,
     useLayoutEffect,
@@ -67,7 +66,6 @@ const SearchOverlay = ({
     const contentRef = useRef<HTMLDivElement>(null);
 
     const anchorRectRef = useRef<DOMRect | undefined>();
-    const [contentRect, setContentRect] = useState<DOMRect | undefined>();
 
     const focusTrapProps = useFocusTrap({ rootRef, active: isOpen && !disableFocusTrap, enableInitialFocus: false });
 
@@ -110,26 +108,16 @@ const SearchOverlay = ({
     const varPosition = {
         '--top': boundingRect?.top,
         '--left': boundingRect?.left,
-        '--width': boundingRect?.width,
     };
 
-    const varSize =
-        contentRect || anchorRectRef.current
-            ? {
-                  '--width': `${anchorRectRef.current?.width || contentRect?.width}`,
-                  '--height': `${contentRect?.height || undefined}`,
-              }
-            : {};
+    const varSize = {
+        '--width': boundingRect?.width,
+    };
 
     const handleAnimationEnd = ({ animationName }: AnimationEvent) => {
         if (animationName.includes('anime-dropdown-out') && isClosing) {
             setIsClosed();
-            setContentRect(undefined);
             onClosed?.();
-        }
-        if (animationName.includes('anime-dropdown-in') && isOpen && contentRef.current && !contentRect) {
-            const contentClientRect = contentRef.current?.getBoundingClientRect();
-            setContentRect(contentClientRect);
         }
     };
 
@@ -145,7 +133,7 @@ const SearchOverlay = ({
         <Portal>
             <div
                 ref={rootRef}
-                style={{ ...rootStyle, ...style, ...varPosition, ...varSize }}
+                style={rootStyle}
                 role="dialog"
                 className={popperClassName}
                 onAnimationEnd={handleAnimationEnd}
