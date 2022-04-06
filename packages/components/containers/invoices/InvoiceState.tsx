@@ -22,7 +22,7 @@ const getStatesI18N = (invoiceState: INVOICE_STATE) => {
         case INVOICE_STATE.BILLED:
             return c('Invoice state display as badge').t`Billed`;
         case INVOICE_STATE.WRITEOFF:
-            return c('Invoice state display as badge').t`Cancelled`;
+            return c('Invoice state display as badge').t`Gifted`;
         default:
             return '';
     }
