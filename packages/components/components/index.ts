@@ -43,7 +43,6 @@ export * from './option';
 export * from './orderable';
 export * from './orderableTable';
 export * from './pagination';
-export * from './paragraph';
 export * from './popper';
 export * from './price';
 export * from './progress';

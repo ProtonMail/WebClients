@@ -3,7 +3,7 @@ import { Organization } from '@proton/shared/lib/interfaces';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Alert, ConfirmModal, ConfirmModalProps, ErrorButton, Paragraph } from '../../components';
+import { Alert, ConfirmModal, ConfirmModalProps, ErrorButton } from '../../components';
 
 interface Props extends ConfirmModalProps {
     organization: Organization;
@@ -17,8 +17,9 @@ const LossLoyaltyModal = ({ organization, ...rest }: Props) => {
             confirm={<ErrorButton type="submit">{c('Action').t`Remove bonuses`}</ErrorButton>}
             {...rest}
         >
-            <Paragraph>{c('Info')
-                .t`Since you're a loyal user, your account has additional features enabled.`}</Paragraph>
+            <div className="mb1">
+                {c('Info').t`Since you're a loyal user, your account has additional features enabled.`}
+            </div>
             <Alert className="mb1" type="warning">
                 {c('Info')
                     .t`By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.`}

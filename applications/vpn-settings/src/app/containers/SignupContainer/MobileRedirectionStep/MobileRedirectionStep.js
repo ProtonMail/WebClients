@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { SubTitle, Href, Icon, Paragraph, ButtonLike } from '@proton/components';
+import { SubTitle, Href, Icon, ButtonLike } from '@proton/components';
 
 const MobileRedirectionStep = ({ model }) => {
     return (
         <div className="pt2 mb2 text-center">
             <SubTitle>{c('Title').t`Account created`}</SubTitle>
             <Icon name="check" className="mb2 color-success" size={100} />
-            <Paragraph className="mb2">{c('Info')
-                .t`Your account has been successfully created. Please press the "Close" button to be taken back to the app.`}</Paragraph>
+            <div className="pt1 pb1 mb2">
+                {c('Info')
+                    .t`Your account has been successfully created. Please press the "Close" button to be taken back to the app.`}
+            </div>
             <ButtonLike
                 as={Href}
                 color="norm"
