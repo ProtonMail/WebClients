@@ -68,6 +68,11 @@ jest.mock('@proton/components/hooks/useSubscribedCalendars', () => ({
     default: jest.fn(() => ({ loading: true })),
 }));
 
+jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({
+    __esModule: true,
+    default: jest.fn(() => [{ isWelcomeFlow: false }]),
+}));
+
 jest.mock('@proton/components/hooks/useUserSettings', () => () => [{}, jest.fn()]);
 
 jest.mock('@proton/components/hooks/useApi', () => ({
