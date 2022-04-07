@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useEffect, createRef, RefObject } from 'react';
+import { useState, ChangeEvent, useEffect, useRef } from 'react';
 import { c, msgid } from 'ttag';
 
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
@@ -6,7 +6,17 @@ import { normalize } from '@proton/shared/lib/helpers/string';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 
-import { Checkbox, SearchInput, PrimaryButton, FormModal } from '../../../components';
+import {
+    Checkbox,
+    SearchInput,
+    PrimaryButton,
+    ModalTwo,
+    Form,
+    ModalTwoContent,
+    ModalTwoHeader,
+    ModalTwoFooter,
+    Button,
+} from '../../../components';
 import { useActiveBreakpoint, useUserSettings, useContactEmailsSortedByName } from '../../../hooks';
 import ContactList from '../ContactList';
 import ContactListModalRow from '../ContactListModalRow';
@@ -33,7 +43,7 @@ interface Props {
 const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
-    const searchInputRef: RefObject<HTMLInputElement> = createRef();
+    const searchInputRef = useRef<HTMLInputElement>(null);
     const [contactEmails, loadingContactEmails] = useContactEmailsSortedByName();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
@@ -128,6 +138,10 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
     };
 
     useEffect(() => {
+        searchInputRef?.current?.focus();
+    }, []);
+
+    useEffect(() => {
         setLastCheckedID('');
         setFilteredContactEmails(contactEmails.filter(searchFilter));
     }, [searchValue]);
@@ -160,79 +174,87 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
               );
 
     return (
-        <FormModal
-            title={c('Title').t`Insert contacts`}
-            loading={loading}
+        <ModalTwo
+            as={Form}
+            onClose={onClose}
             onSubmit={handleSubmit}
-            submit={
-                contactEmails.length ? (
+            size="large"
+            data-testid="modal:contactlist"
+            {...rest}
+        >
+            <ModalTwoHeader title={c('Title').t`Insert contacts`} />
+
+            <ModalTwoContent>
+                {!contactEmails.length ? (
+                    <EmptyContacts onClose={onClose} />
+                ) : (
+                    <>
+                        <div className="mb0-5">
+                            <SearchInput
+                                ref={searchInputRef}
+                                value={searchValue}
+                                onChange={handleSearchValue}
+                                placeholder={c('Placeholder').t`Search name, email or group`}
+                            />
+                        </div>
+                        {filteredContactEmails.length ? (
+                            <>
+                                {!isNarrow && (
+                                    <div className="flex flex-nowrap flex-item-fluid contact-list-row p1">
+                                        <div>
+                                            <Checkbox
+                                                className="w100 h100"
+                                                checked={isAllChecked}
+                                                onChange={handleCheckAll}
+                                            />
+                                        </div>
+                                        <div className="flex flex-item-fluid flex-align-self-center">
+                                            <div className="w33 pl1">
+                                                <strong className="text-uppercase">{c('Label').t`Name`}</strong>
+                                            </div>
+                                            <div className="flex-item-fluid">
+                                                <strong className="text-uppercase">{c('Label').t`Email`}</strong>
+                                            </div>
+                                            <div className="w33 pr0-5 text-right">
+                                                <strong className="text-uppercase">{c('Label').t`Group`}</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                                <ContactList
+                                    rowCount={filteredContactEmails.length}
+                                    userSettings={userSettings}
+                                    className={classnames([isNarrow && 'mt1'])}
+                                    rowRenderer={({ index, style }) => (
+                                        <ContactListModalRow
+                                            onCheck={handleCheck}
+                                            style={style}
+                                            key={filteredContactEmails[index].ID}
+                                            contact={filteredContactEmails[index]}
+                                            checked={!!checkedContactEmailMap[filteredContactEmails[index].ID]}
+                                            contactGroupsMap={contactGroupsMap}
+                                            isNarrow={isNarrow}
+                                        />
+                                    )}
+                                />
+                            </>
+                        ) : (
+                            <EmptyResults onClearSearch={handleClearSearch} query={searchValue} />
+                        )}
+                    </>
+                )}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button type="button" onClick={onClose} disabled={loading}>
+                    {c('Action').t`Cancel`}
+                </Button>
+                {contactEmails.length ? (
                     <PrimaryButton loading={loading} type="submit" disabled={!totalChecked}>
                         {actionText}
                     </PrimaryButton>
-                ) : null
-            }
-            onClose={onClose}
-            {...rest}
-        >
-            {!contactEmails.length ? (
-                <EmptyContacts onClose={onClose} />
-            ) : (
-                <>
-                    <div className="mb0-5">
-                        <SearchInput
-                            ref={searchInputRef}
-                            value={searchValue}
-                            onChange={handleSearchValue}
-                            placeholder={c('Placeholder').t`Search name, email or group`}
-                        />
-                    </div>
-                    {filteredContactEmails.length ? (
-                        <>
-                            {!isNarrow && (
-                                <div className="flex flex-nowrap flex-item-fluid contact-list-row p1">
-                                    <div>
-                                        <Checkbox
-                                            className="w100 h100"
-                                            checked={isAllChecked}
-                                            onChange={handleCheckAll}
-                                        />
-                                    </div>
-                                    <div className="flex flex-item-fluid flex-align-self-center">
-                                        <div className="w33 pl1">
-                                            <strong className="text-uppercase">{c('Label').t`Name`}</strong>
-                                        </div>
-                                        <div className="flex-item-fluid">
-                                            <strong className="text-uppercase">{c('Label').t`Email`}</strong>
-                                        </div>
-                                        <div className="w33 pr0-5 text-right">
-                                            <strong className="text-uppercase">{c('Label').t`Group`}</strong>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                            <ContactList
-                                rowCount={filteredContactEmails.length}
-                                userSettings={userSettings}
-                                className={classnames([isNarrow && 'mt1'])}
-                                rowRenderer={({ index, style }) => (
-                                    <ContactListModalRow
-                                        onCheck={handleCheck}
-                                        style={style}
-                                        key={filteredContactEmails[index].ID}
-                                        contact={filteredContactEmails[index]}
-                                        checked={!!checkedContactEmailMap[filteredContactEmails[index].ID]}
-                                        contactGroupsMap={contactGroupsMap}
-                                        isNarrow={isNarrow}
-                                    />
-                                )}
-                            />
-                        </>
-                    ) : (
-                        <EmptyResults onClearSearch={handleClearSearch} query={searchValue} />
-                    )}
-                </>
-            )}
-        </FormModal>
+                ) : null}
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
