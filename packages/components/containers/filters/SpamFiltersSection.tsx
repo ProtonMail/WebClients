@@ -8,8 +8,8 @@ import {
 import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from '@proton/shared/lib/constants';
 import { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
 
-import { SearchInput } from '../../components';
-import { useApiResult, useApiWithoutResult, useApi, useNotifications, useModals } from '../../hooks';
+import { SearchInput, useModalState } from '../../components';
+import { useApiResult, useApiWithoutResult, useApi, useNotifications } from '../../hooks';
 
 import useSpamList from '../../hooks/useSpamList';
 import SpamListItem from './spamlist/SpamListItem';
@@ -27,9 +27,11 @@ interface SpamList {
 function SpamFiltersSection() {
     const api = useApi();
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const reqSearch = useApiWithoutResult(getIncomingDefaults);
     const { blackList, whiteList, refreshWhiteList, refreshBlackList, move, remove, search, create } = useSpamList();
+
+    const [tmpType, setTmpType] = useState<WHITE_OR_BLACK_LOCATION>(WHITELIST_LOCATION);
+    const [addToMailListModalProps, setAddToMailListModalOpen] = useModalState();
 
     const {
         result: white = {},
@@ -83,12 +85,15 @@ function SpamFiltersSection() {
         }
     };
 
-    const handleCreate = async (type: WHITE_OR_BLACK_LOCATION) => {
-        const data: IncomingDefault = await new Promise((resolve) => {
-            createModal(<AddEmailToListModal type={type} onAdd={resolve} />);
-        });
-        create(type, data);
+    const handleAddFilter = (type: WHITE_OR_BLACK_LOCATION) => {
+        setTmpType(type);
+        setAddToMailListModalOpen(true);
     };
+
+    const handleCreate = (data: IncomingDefault) => {
+        create(tmpType, data);
+    };
+
     const handleMove = async (incomingDefault: IncomingDefault) => {
         const { Email, Domain, ID, Location } = incomingDefault;
         const type = Location === WHITELIST_LOCATION ? BLACKLIST_LOCATION : WHITELIST_LOCATION;
@@ -134,7 +139,7 @@ function SpamFiltersSection() {
                     list={whiteList}
                     type={WHITELIST_LOCATION}
                     loading={loader.white}
-                    onCreate={handleCreate}
+                    onCreate={handleAddFilter}
                     onRemove={handleRemove}
                     onMove={handleMove}
                     className="mr1 mb2"
@@ -144,11 +149,12 @@ function SpamFiltersSection() {
                     type={BLACKLIST_LOCATION}
                     className="ml1 on-mobile-ml0"
                     loading={loader.black}
-                    onCreate={handleCreate}
+                    onCreate={handleAddFilter}
                     onRemove={handleRemove}
                     onMove={handleMove}
                 />
             </div>
+            <AddEmailToListModal type={tmpType} onAdd={handleCreate} {...addToMailListModalProps} />
         </SettingsSectionWide>
     );
 }

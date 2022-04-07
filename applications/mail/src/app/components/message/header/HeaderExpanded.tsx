@@ -369,8 +369,12 @@ const HeaderExpanded = ({
                                 externalToggleRef={filterDropdownToggleRef}
                                 data-testid="message-header-expanded:filter-dropdown"
                             >
-                                {({ onClose }) => (
-                                    <CustomFilterDropdown message={message.data as Message} onClose={onClose} />
+                                {({ onClose, onLock }) => (
+                                    <CustomFilterDropdown
+                                        message={message.data as Message}
+                                        onClose={onClose}
+                                        onLock={onLock}
+                                    />
                                 )}
                             </HeaderDropdown>
                             <HeaderDropdown

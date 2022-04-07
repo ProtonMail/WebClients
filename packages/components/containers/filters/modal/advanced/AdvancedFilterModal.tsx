@@ -2,16 +2,23 @@ import { useState, FormEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { checkSieveFilter, addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';
-import { noop } from '@proton/shared/lib/helpers/function';
 
 import { FILTER_VERSION } from '../../constants';
 import { Filter, StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';
 import { sieveTemplates, convertModel } from '../../utils';
 
-import { FormModal, ConfirmModal, Alert, useDebounceInput, Button } from '../../../../components';
+import {
+    useDebounceInput,
+    ModalTwo,
+    Form,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    useModalState,
+    ModalProps,
+} from '../../../../components';
 
 import {
-    useModals,
     useLoading,
     useApi,
     useFilters,
@@ -26,10 +33,10 @@ import FilterNameForm from '../FilterNameForm';
 import HeaderAdvancedFilterModal from './HeaderAdvancedFilterModal';
 import FooterAdvancedFilterModal from './FooterAdvancedFilterModal';
 import SieveForm from './SieveForm';
+import CloseFilterModal from '../CloseFilterModal';
 
-interface Props {
+interface Props extends ModalProps {
     filter?: Filter;
-    onClose?: () => void;
 }
 
 const checkNameErrors = (name: string, filters: Filter[]): string => {
@@ -53,7 +60,7 @@ const checkSieveErrors = (sieve: string, issuesLength: number): string => {
     return '';
 };
 
-const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
+const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
     const api = useApi();
     const { isNarrow } = useActiveBreakpoint();
     const [loading, withLoading] = useLoading();
@@ -61,7 +68,10 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
-    const { createModal } = useModals();
+
+    const [closeFilterModalProps, setCloseFilterModalOpen] = useModalState();
+
+    const { onClose } = rest;
 
     const isEdit = !!filter?.ID;
     const title = isEdit ? c('Title').t`Edit Sieve filter` : c('Title').t`Add Sieve filter`;
@@ -99,7 +109,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
             // Some failed request will add the filter but in disabled mode
             // So we have to refresh the list in both cases
             await call();
-            onClose();
+            onClose?.();
         }
     };
 
@@ -109,7 +119,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         createNotification({
             text: c('Filter notification').t`Filter ${Filter.Name} updated`,
         });
-        onClose();
+        onClose?.();
     };
 
     const checkSieve = async () => {
@@ -144,54 +154,50 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
 
     const handleClose = () => {
         if (model.name === initialModel.name && model.sieve === initialModel.sieve) {
-            return onClose();
+            return onClose?.();
         }
 
-        createModal(
-            <ConfirmModal
-                onConfirm={onClose}
-                title={c('Title').t`Are you sure you want to close?`}
-                confirm={<Button color="danger" type="submit">{c('Action').t`Discard`}</Button>}
-            >
-                <Alert className="mb1">{c('Info').t`All your changes will be lost.`}</Alert>
-                <Alert className="mb1" type="error">{c('Info')
-                    .t`Are you sure you want to discard your changes?`}</Alert>
-            </ConfirmModal>
-        );
+        setCloseFilterModalOpen(true);
     };
 
     return (
-        <FormModal
-            title={title}
-            loading={loading}
-            onClose={handleClose}
-            onSubmit={(event: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(event))}
-            footer={
-                <FooterAdvancedFilterModal
-                    model={model}
-                    errors={errors}
-                    onChange={setModel}
-                    onClose={handleClose}
-                    loading={loading}
-                />
-            }
-            {...rest}
-        >
-            <HeaderAdvancedFilterModal model={model} errors={errors} onChange={setModel} />
-            {model.step === StepSieve.NAME && (
-                <FilterNameForm
-                    model={model}
-                    onChange={(newModel) => setModel(newModel as AdvancedSimpleFilterModalModel)}
-                    isNarrow={isNarrow}
-                    errors={errors}
-                    loading={loading}
-                    isSieveFilter
-                />
-            )}
-            {model.step === StepSieve.SIEVE && (
-                <SieveForm model={model} onChange={setModel} userSettings={userSettings} />
-            )}
-        </FormModal>
+        <>
+            <ModalTwo
+                size="large"
+                as={Form}
+                onSubmit={(event: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(event))}
+                {...rest}
+                onClose={handleClose}
+            >
+                <ModalTwoHeader title={title} />
+                <ModalTwoContent>
+                    <HeaderAdvancedFilterModal model={model} errors={errors} onChange={setModel} />
+                    {model.step === StepSieve.NAME && (
+                        <FilterNameForm
+                            model={model}
+                            onChange={(newModel) => setModel(newModel as AdvancedSimpleFilterModalModel)}
+                            isNarrow={isNarrow}
+                            errors={errors}
+                            loading={loading}
+                            isSieveFilter
+                        />
+                    )}
+                    {model.step === StepSieve.SIEVE && (
+                        <SieveForm model={model} onChange={setModel} userSettings={userSettings} />
+                    )}
+                </ModalTwoContent>
+                <ModalTwoFooter>
+                    <FooterAdvancedFilterModal
+                        model={model}
+                        errors={errors}
+                        onChange={setModel}
+                        onClose={handleClose}
+                        loading={loading}
+                    />
+                </ModalTwoFooter>
+            </ModalTwo>
+            <CloseFilterModal {...closeFilterModalProps} handleDiscard={onClose} />
+        </>
     );
 };
 
