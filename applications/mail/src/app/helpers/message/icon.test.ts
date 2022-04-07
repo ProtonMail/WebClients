@@ -6,8 +6,14 @@ import {
 } from '@proton/shared/lib/mail/encryptionPreferences';
 import { MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { StatusIcon, STATUS_ICONS_FILLS } from '../../models/crypto';
-import { getReceivedStatusIcon, getSendStatusIcon, getSentStatusIconInfo, getStatusIconName } from './icon';
+import { StatusIcon, STATUS_ICONS_FILLS, X_PM_HEADERS } from '../../models/crypto';
+import {
+    getReceivedStatusIcon,
+    getSendStatusIcon,
+    getSentStatusIconInfo,
+    getSentStatusIcon,
+    getStatusIconName,
+} from './icon';
 import { MessageState, MessageVerification } from '../../logic/messages/messagesTypes';
 
 const { NOT_SIGNED, NOT_VERIFIED, SIGNED_AND_VALID, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
@@ -264,6 +270,19 @@ describe('icon', () => {
                 isPublicKeyPinned: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toBeUndefined();
+        });
+    });
+
+    describe('getSentStatusIcon for imported sent message', () => {
+        it('should display black padlock icon', () => {
+            const globalIcon = getSentStatusIcon({
+                mapAuthentication: {},
+                mapEncryption: {},
+                contentEncryption: X_PM_HEADERS.ON_DELIVERY,
+                emailAddress: undefined,
+                isImported: true,
+            });
+            expect(globalIcon?.colorClassName).toBe('color-norm');
         });
     });
 
