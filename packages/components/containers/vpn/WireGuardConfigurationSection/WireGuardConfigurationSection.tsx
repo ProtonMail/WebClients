@@ -28,7 +28,7 @@ import {
 } from '../../../components';
 import { SettingsSectionWide, SettingsParagraph } from '../../account';
 import { getObjectKeys } from '../../../helpers';
-import { useApi, useApiResult, useModals, useNotifications, useUserVPN, useVPNLogicals } from '../../../hooks';
+import { useApi, useApiResult, useModals, useNotifications, useUser, useUserVPN, useVPNLogicals } from '../../../hooks';
 import { getCountryByAbbr } from '../../../helpers/countries';
 import { deleteCertificates, generateCertificate, getKey, queryVPNClientConfig } from './api';
 import { CURVE } from './curve';
@@ -213,7 +213,8 @@ const WireGuardConfigurationSection = () => {
     const [removedCertificates, setRemovedCertificates] = useState<string[]>([]);
     const [currentCertificate, setCurrentCertificate] = useState<string | undefined>();
     const [certificates, setCertificates] = useState<Certificate[]>([]);
-    const { result, loading: vpnLoading } = useUserVPN();
+    const [{ hasPaidVpn }] = useUser();
+    const { result, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
     const userVPN = result?.VPN;
     const nameInputRef = useRef<HTMLInputElement>(null);
     const { createModal } = useModals();
@@ -585,8 +586,9 @@ const WireGuardConfigurationSection = () => {
     };
 
     useEffect(() => {
+        fetchUserVPN(30_000);
         fetchLogicals(30_000);
-    }, []);
+    }, [hasPaidVpn]);
 
     return (
         <SettingsSectionWide>
