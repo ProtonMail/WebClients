@@ -18,6 +18,7 @@ interface Props {
 
 const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetadata }: Props) => (
     <ToolbarDropdown
+        content={<Icon name="three-dots-horizontal" alt={c('Action').t`More`} />}
         className="flex-item-noshrink mlauto editor-toolbar-more-dropdown"
         title={c('Action').t`More`}
         data-testid="editor-toolbar-more"
