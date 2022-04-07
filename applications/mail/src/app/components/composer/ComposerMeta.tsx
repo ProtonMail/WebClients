@@ -16,6 +16,7 @@ interface Props {
     onChangeContent: (content: string, refreshContent: boolean) => void;
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
+    onEditExpiration: () => void;
 }
 
 const ComposerMeta = ({
@@ -26,6 +27,7 @@ const ComposerMeta = ({
     onChangeContent,
     addressesBlurRef,
     addressesFocusRef,
+    onEditExpiration,
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
 
@@ -78,7 +80,7 @@ const ComposerMeta = ({
                     className="field-lighter composer-meta-input-subject"
                 />
             </div>
-            <ExtraExpirationTime marginBottom message={message} />
+            <ExtraExpirationTime marginBottom message={message} onEditExpiration={onEditExpiration} />
         </div>
     );
 };
