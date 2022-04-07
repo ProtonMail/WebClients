@@ -23,7 +23,7 @@
 	position: fixed;
 	z-index: $layer-modals;
 	color: var(--text-norm);
-	animation: 0.15s ease-out both;
+	animation: 0.15s easing(easeOutCubic) both;
 
 	@include respond-to($breakpoint-small, 'max') {
 		inset: 0;
@@ -68,7 +68,7 @@
 	@include respond-to($breakpoint-small, 'min') {
 		inset-block-start: calc(var(--top) * 1px);
 		/* stylelint-disable */
-		left: calc(var(--left) * 1px); // JS provide left value only
+		inset-inline-start: calc(var(--left) * 1px); // JS provide left value only
 		/* stylelint-enable */
 		transform: scale(1);
 		border-radius: var(--border-radius-md);
