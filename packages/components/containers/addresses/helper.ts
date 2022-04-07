@@ -35,7 +35,7 @@ export const getPermissions = ({
     user: UserModel;
     organizationKey?: CachedOrganizationKey;
 }) => {
-    const { isAdmin, canPay } = user;
+    const { isAdmin, canPay, isSubUser } = user;
 
     const isSpecialAddress = Type === TYPE_ORIGINAL || Type === TYPE_PREMIUM;
 
@@ -44,9 +44,13 @@ export const getPermissions = ({
     const isDefault = addressIndex === 0;
     const isEnabled = Status === ADDRESS_STATUS.STATUS_ENABLED;
 
-    const canGenerateMember = organizationKey && isAdmin && isMemberReadable;
     const canMakeDefault = !isDefault && isEnabled;
 
+    /*
+     * Keys can be generated if the organisation key is decrypted, and you are an admin,
+     * and the member is readable, you're not an admin signed in to a readable member.
+     */
+    const canGenerateMember = organizationKey?.privateKey && isAdmin && isMemberReadable && !isSubUser;
     /*
      * Even though the user in question regarding the permissions here might be
      * the currently logged in user itself (isSelf), it's possible that they don't
@@ -54,7 +58,8 @@ export const getPermissions = ({
      * the case if the currently logged in user is a member of an org of which they
      * are not an admin of.
      */
-    const canGenerate = !HasKeys && (canGenerateMember || (isSelf && user.Private === MEMBER_PRIVATE.UNREADABLE));
+    const canGenerateSelf = isSelf && user.Private === MEMBER_PRIVATE.UNREADABLE;
+    const canGenerate = !HasKeys && (canGenerateMember || canGenerateSelf);
 
     let canDisable = isEnabled && isAdmin && !isSpecialAddress;
 
