@@ -44,16 +44,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
 
     return (
         <>
-            <DropdownButton
-                className={classnames(['border-none', 'rounded'])}
-                color="weak"
-                hasCaret
-                onClick={toggle}
-                size="small"
-                shape="solid"
-                ref={anchorRef}
-                type="button"
-            >
+            <DropdownButton color="weak" hasCaret onClick={toggle} size="small" shape="solid" ref={anchorRef}>
                 {c('Property type').t`Other`}
             </DropdownButton>
             <Dropdown
