@@ -51,7 +51,6 @@ const ToolbarDropdown = ({
                     ref={anchorRef}
                     isOpen={isOpen}
                     onClick={handleClick}
-                    hasCaret
                     disabled={disabled}
                     caretClassName="editor-toolbar-icon"
                     className={classnames([
