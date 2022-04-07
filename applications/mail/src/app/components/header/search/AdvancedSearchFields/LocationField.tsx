@@ -43,17 +43,15 @@ const LocationField = ({ value, onChange }: Props) => {
             <div className="flex flex-wrap flex-align-items-start mb0-5 flex-gap-0-5">
                 {firstOptions.map((option) => (
                     <Button
-                        className="border-none rounded"
-                        color={value === option.value ? 'norm' : 'weak'}
                         key={option.value}
                         data-testid={`location-${option.value}`}
                         onClick={() => {
                             onChange(option.value);
                         }}
+                        color={value === option.value ? 'norm' : 'weak'}
                         shape="solid"
                         size="small"
-                        type="button"
-                        aria-label={
+                        title={
                             // translator: The full sentence is "Search in All mail/Inbox/Drafts/etc." (only for blind users)
                             c('Action').t`Search in ${option.text}`
                         }
@@ -64,19 +62,15 @@ const LocationField = ({ value, onChange }: Props) => {
                 <LocationFieldDropdown onChange={onChange} value={value} />
                 {showCustomValue ? (
                     <Button
-                        className="border-none rounded align-baseline"
-                        color="norm"
+                        className="flex flex-nowrap flex-align-items-center"
                         onClick={() => onChange(ALL_MAIL)}
+                        color="norm"
                         shape="solid"
                         size="small"
-                        type="button"
+                        title={c('Action').t`Remove`}
                     >
-                        <span className="flex flex-nowrap">
-                            <span className="text-ellipsis">{customValueText}</span>
-                            <span className="flex-item-noshrink">
-                                <Icon name="xmark" className="ml0-5" size={12} title={c('Action').t`Remove`} />
-                            </span>
-                        </span>
+                        <span className="text-ellipsis">{customValueText}</span>
+                        <Icon name="xmark" className="ml0-5 flex-item-noshrink" size={12} />
                     </Button>
                 ) : null}
             </div>
