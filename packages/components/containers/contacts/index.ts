@@ -14,5 +14,3 @@ export { default as ContactsRow } from './lists/ContactRow';
 export { default as ContactsList } from './lists/ContactsList';
 export { default as useApplyGroups } from './hooks/useApplyGroups';
 export { useContactModals } from './hooks/useContactModals';
-export { ContactSelectorProps } from './selector/ContactSelectorModal';
-export { ContactEditProps } from './edit/ContactEditModal';

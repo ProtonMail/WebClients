@@ -619,7 +619,7 @@ export const combine: Combine = {
             }
         });
 
-        return [icalValueToInternalAddress(propertyADR)];
+        return icalValueToInternalAddress(propertyADR);
     },
     org(preVcards: PreVcardsProperty) {
         const propertyORG: string[] = new Array(2).fill('');
@@ -628,7 +628,7 @@ export const combine: Combine = {
                 propertyORG[combineIndex || 0] = getStringContactValue(value);
             }
         });
-        return propertyORG.filter(Boolean);
+        return propertyORG.filter(Boolean).join(';');
     },
     categories(preVcards: PreVcardsProperty) {
         // we can get several categories separated by ';'

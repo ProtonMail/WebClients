@@ -238,6 +238,10 @@ export const vCardPropertiesToICAL = (properties: VCardProperty[]) => {
         const fieldWithGroup = [group, field].filter(isTruthy).join('.');
         const property = new ICAL.Property(fieldWithGroup);
 
+        if (['bday', 'anniversary'].includes(field) && !(value.date && isValidDate(value.date))) {
+            property.resetType('text');
+        }
+
         const iCalValue = internalValueToIcalValue(field, params?.type, value);
         property.setValue(iCalValue);
 

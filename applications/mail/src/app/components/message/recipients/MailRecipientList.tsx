@@ -1,5 +1,5 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEditProps } from '@proton/components';
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientsList from './RecipientsList';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
