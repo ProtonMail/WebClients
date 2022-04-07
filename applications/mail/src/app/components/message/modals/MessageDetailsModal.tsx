@@ -11,11 +11,11 @@ import {
     ModalTwoHeader,
     useFeatures,
     useFolders,
-    ContactEditProps,
 } from '@proton/components';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import ItemDate from '../../list/ItemDate';
 import ItemLocation from '../../list/ItemLocation';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';

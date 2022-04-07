@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { classnames, Icon, Button, ContactEditProps } from '@proton/components';
+import { classnames, Icon, Button } from '@proton/components';
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientsDetails from './RecipientsDetails';

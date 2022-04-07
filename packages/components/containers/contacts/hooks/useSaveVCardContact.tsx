@@ -21,6 +21,7 @@ export const useSaveVCardContact = () => {
         async (contactID: string | undefined, vCardContact: VCardContact) => {
             const Contacts = await prepareVCardContacts([vCardContact], userKeysList[0]);
             const labels = vCardContact.categories?.length ? INCLUDE : IGNORE;
+
             const {
                 Responses: [{ Response: { Code = null } = {} }],
             } = await api<AddContactsApiResponses>(
