@@ -14,6 +14,7 @@ export const getStorageFeature = (n: number, fire?: boolean): PlanCardFeatureDef
             tooltip: c('new_plans: tooltip')
                 .t`Start with ${freeStorageSize} and unlock more storage along the way. Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}.`,
             included: true,
+            icon: 'storage',
         };
     }
     const size = humanSize(n, undefined, undefined, 0);
@@ -23,6 +24,7 @@ export const getStorageFeature = (n: number, fire?: boolean): PlanCardFeatureDef
             .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}`,
         included: true,
         fire,
+        icon: 'storage',
     };
 };
 
@@ -34,6 +36,7 @@ export const getStorageFeatureB2B = (n: number, fire?: boolean): PlanCardFeature
             .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}. Administrators can allocate different storage amounts to users in their organization`,
         included: true,
         fire,
+        icon: 'storage',
     };
 };
 
@@ -50,6 +53,7 @@ export const getDriveAppFeature = (): PlanCardFeatureDefinition => {
         featureName: c('new_plans: feature').t`${DRIVE_APP_NAME} (web beta)`,
         tooltip: c('new_plans: tooltip').t`End-to-end encrypted file storage`,
         included: true,
+        icon: 'brand-proton-drive',
     };
 };
 

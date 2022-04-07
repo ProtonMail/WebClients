@@ -9,9 +9,10 @@ import { classnames } from '../../../helpers';
 
 interface FeatureListProps {
     features: PlanCardFeatureDefinition[];
+    icon?: boolean;
 }
 
-const PlanCardFeatureList = ({ features }: FeatureListProps) => {
+const PlanCardFeatureList = ({ features, icon }: FeatureListProps) => {
     return (
         <ul className="bg-weak-odd unstyled mt1 mb2">
             {features.map((feature) => {
@@ -28,7 +29,11 @@ const PlanCardFeatureList = ({ features }: FeatureListProps) => {
                                     <>🔥</>
                                 ) : feature.included ? (
                                     <span className="color-success">
-                                        <Icon size={20} name="checkmark" />
+                                        {icon && feature.icon ? (
+                                            <Icon size={20} name={feature.icon} />
+                                        ) : (
+                                            <Icon size={20} name="checkmark" />
+                                        )}
                                     </span>
                                 ) : (
                                     <Icon size={16} name="cross-circle" className="mt0-25" />
@@ -111,12 +116,13 @@ const PlanCardFeatures = ({ planName, features, audience }: Props) => {
 
 interface PlanCardFeaturesShortProps {
     plan: ShortPlan;
+    icon?: boolean;
 }
 
-export const PlanCardFeaturesShort = ({ plan }: PlanCardFeaturesShortProps) => {
+export const PlanCardFeaturesShort = ({ plan, icon }: PlanCardFeaturesShortProps) => {
     const highlightFeatures = (
         <div>
-            <PlanCardFeatureList features={plan.features} />
+            <PlanCardFeatureList features={plan.features} icon={icon} />
         </div>
     );
     return <>{highlightFeatures}</>;

@@ -16,6 +16,7 @@ export const getNAddressesFeature = ({ n, fire }: { n: number; fire?: boolean })
         tooltip,
         included: true,
         fire,
+        icon: 'envelope',
     };
 };
 
@@ -31,6 +32,7 @@ export const getNAddressesFeatureB2B = ({ n, fire }: { n: number; fire?: boolean
         tooltip,
         included: true,
         fire,
+        icon: 'envelope',
     };
 };
 
@@ -41,12 +43,14 @@ export const getNMessagesFeature = (n: number): PlanCardFeatureDefinition => {
             tooltip: c('new_plans: tooltip')
                 .t`Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.`,
             included: true,
+            icon: 'speech-bubble',
         };
     }
     return {
         featureName: c('new_plans: feature').ngettext(msgid`${n} message per day`, `${n} messages per day`, n),
         tooltip: '',
         included: true,
+        icon: 'speech-bubble',
     };
 };
 
@@ -57,6 +61,7 @@ export const getNDomainsFeature = ({ n, fire }: { n: number; fire?: boolean }): 
             tooltip: '',
             included: false,
             fire,
+            icon: 'globe',
         };
     }
     return {
@@ -64,6 +69,7 @@ export const getNDomainsFeature = ({ n, fire }: { n: number; fire?: boolean }): 
         tooltip: c('new_plans: tooltip').t`Use your own custom email domain addresses, e.g., you@yourname.com`,
         included: true,
         fire,
+        icon: 'globe',
     };
 };
 
@@ -73,12 +79,14 @@ export const getFoldersAndLabelsFeature = (n: number): PlanCardFeatureDefinition
             featureName: c('new_plans: feature').t`Unlimited folders, labels and filters`,
             tooltip: '',
             included: true,
+            icon: 'tag',
         };
     }
     return {
         featureName: c('new_plans: feature').ngettext(msgid`${n} folder and label`, `${n} folders and labels`, n),
         tooltip: '',
         included: true,
+        icon: 'tag',
     };
 };
 
@@ -190,6 +198,7 @@ export const getContactGroupsManagement = (): PlanCardFeatureDefinition => {
         featureName: c('new_plans: feature').t`Contact groups management`,
         tooltip: '',
         included: true,
+        icon: 'users',
     };
 };
 
