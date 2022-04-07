@@ -38,6 +38,7 @@ export const getB2BHighSpeedVPNConnections = (): PlanCardFeatureDefinition => {
         featureName: getB2BHighSpeedVPNConnectionsText(VPN_CONNECTIONS),
         tooltip: '',
         included: true,
+        icon: 'brand-proton-vpn',
     };
 };
 
@@ -46,6 +47,7 @@ export const getVPNAppFeature = (): PlanCardFeatureDefinition => {
         featureName: VPN_APP_NAME,
         tooltip: c('new_plans: tooltip').t`Advanced security VPN with global network`,
         included: true,
+        icon: 'brand-proton-vpn',
     };
 };
 
@@ -93,6 +95,7 @@ export const getNetShield = (included: boolean, fire?: boolean): PlanCardFeature
             .t`Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware`,
         included,
         fire,
+        icon: 'shield',
     };
 };
 export const getSecureCore = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
@@ -102,6 +105,7 @@ export const getSecureCore = (included: boolean, fire?: boolean): PlanCardFeatur
             .t`Defends against the threat to VPN privacy by passing your internet traffic through multiple servers`,
         included,
         fire,
+        icon: 'servers',
     };
 };
 export const getTor = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
@@ -123,6 +127,7 @@ const getVPNConnectionsPerUser = (n = 0, fire?: boolean): PlanCardFeatureDefinit
             .t`One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections`,
         included: true,
         fire,
+        icon: 'brand-proton-vpn',
     };
 };
 export const getVPNConnections = (n = 0, fire?: boolean): PlanCardFeatureDefinition => {
