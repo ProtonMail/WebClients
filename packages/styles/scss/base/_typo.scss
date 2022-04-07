@@ -12,8 +12,6 @@ html {
 body {
 	color: var(--text-norm);
 	line-height: $base-line-height;
-	text-rendering: geometricPrecision;
-	-webkit-font-smoothing: antialiased;
 
 	@if $typo-unit == 'use_em' {
 		@if $root-equiv-10-px == true {
