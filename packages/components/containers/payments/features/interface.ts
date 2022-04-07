@@ -1,11 +1,13 @@
 import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
+import { IconName } from '../../../components';
 
 export interface PlanCardFeatureDefinition {
     featureName: string;
     tooltip: string;
     included: boolean;
     fire?: boolean;
+    icon?: IconName;
 }
 
 export interface PlanCardFeature {

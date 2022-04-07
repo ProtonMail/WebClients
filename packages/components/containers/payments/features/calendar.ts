@@ -63,6 +63,7 @@ export const getCalendarAppFeature = (): PlanCardFeatureDefinition => {
         featureName: CALENDAR_APP_NAME,
         tooltip: c('new_plans: tooltip').t`End-to-end encrypted calendar`,
         included: true,
+        icon: 'brand-proton-calendar',
     };
 };
 

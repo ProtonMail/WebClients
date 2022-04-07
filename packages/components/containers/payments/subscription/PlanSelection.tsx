@@ -114,7 +114,7 @@ const PlanSelection = ({
                 price={plan.Pricing[cycle]}
                 features={
                     mode === 'settings' ? (
-                        <PlanCardFeaturesShort plan={shortPlan} />
+                        <PlanCardFeaturesShort plan={shortPlan} icon />
                     ) : (
                         <PlanCardFeatures audience={audience} features={features} planName={plan.Name as PLANS} />
                     )
