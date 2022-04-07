@@ -2,7 +2,6 @@ import { ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_PRIVATE, RECEIVE_ADDRESS } from '@
 import { Address, Member, UserModel, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 
 const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM, TYPE_EXTERNAL } = ADDRESS_TYPE;
-const { READABLE } = MEMBER_PRIVATE;
 
 export const getStatus = (address: Address, i: number) => {
     const { Status, Receive, DomainID, HasKeys } = address;
@@ -25,7 +24,7 @@ export const getPermissions = ({
     member,
     address: { ID, Status, HasKeys, Type, Priority },
     addresses,
-    user: { isAdmin, canPay },
+    user,
     organizationKey,
     addressIndex,
 }: {
@@ -36,15 +35,31 @@ export const getPermissions = ({
     user: UserModel;
     organizationKey?: CachedOrganizationKey;
 }) => {
+    const { isAdmin, canPay, isSubUser } = user;
+
     const isSpecialAddress = Type === TYPE_ORIGINAL || Type === TYPE_PREMIUM;
 
     const isSelf = !member || !!member.Self;
-    const isMemberReadable = member?.Private === READABLE;
+    const isMemberReadable = member?.Private === MEMBER_PRIVATE.READABLE;
     const isDefault = addressIndex === 0;
     const isEnabled = Status === ADDRESS_STATUS.STATUS_ENABLED;
 
-    const canGenerateMember = organizationKey && isAdmin && isMemberReadable;
     const canMakeDefault = !isDefault && isEnabled;
+
+    /*
+     * Keys can be generated if the organisation key is decrypted, and you are an admin,
+     * and the member is readable, you're not an admin signed in to a readable member.
+     */
+    const canGenerateMember = organizationKey?.privateKey && isAdmin && isMemberReadable && !isSubUser;
+    /*
+     * Even though the user in question regarding the permissions here might be
+     * the currently logged in user itself (isSelf), it's possible that they don't
+     * have the necessary permission to generate their own missing keys. This is
+     * the case if the currently logged in user is a member of an org of which they
+     * are not an admin of.
+     */
+    const canGenerateSelf = isSelf && user.Private === MEMBER_PRIVATE.UNREADABLE;
+    const canGenerate = !HasKeys && (canGenerateMember || canGenerateSelf);
 
     let canDisable = isEnabled && isAdmin && !isSpecialAddress;
 
@@ -69,7 +84,7 @@ export const getPermissions = ({
 
     return {
         canMakeDefault,
-        canGenerate: !HasKeys && (canGenerateMember || isSelf),
+        canGenerate,
         canDisable,
         canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
         // Takes into account disabling permissions since it does that automatically. canPay to simulate the "payments" scope for delete route.
