@@ -94,7 +94,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
                     .t`The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.`}
             </SettingsParagraph>
 
-            {currentMember && (
+            {currentMember && !user.isSubUser && (
                 <div className="mb1 flex flex-align-self-start flex-align-items-center">
                     <div className="mr1">
                         {mustActivateOrganizationKey ? (
