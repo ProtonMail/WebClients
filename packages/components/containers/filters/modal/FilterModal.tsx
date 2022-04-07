@@ -1,12 +1,20 @@
-import { useState, useMemo, FormEvent, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { noop } from '@proton/shared/lib/helpers/function';
 import { addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
-import { FormModal, ConfirmModal, Alert, Loader, Button } from '../../../components';
+import {
+    Loader,
+    ModalTwo,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    Form,
+    useModalState,
+    ModalProps,
+} from '../../../components';
 import {
     useLoading,
     useLabels,
@@ -16,7 +24,6 @@ import {
     useFilters,
     useEventManager,
     useApiWithoutResult,
-    useModals,
 } from '../../../hooks';
 
 import HeaderFilterModal from './HeaderFilterModal';
@@ -25,6 +32,8 @@ import FilterNameForm from './FilterNameForm';
 import FilterActionsForm from './FilterActionsForm';
 import FilterConditionsForm from './FilterConditionsForm';
 import FilterPreview from './FilterPreview';
+
+import './Filtermodal.scss';
 
 import {
     SimpleFilterModalModel,
@@ -42,10 +51,11 @@ import { computeFromTree, convertModel } from '../utils';
 
 import { generateUID } from '../../../helpers';
 import { getDefaultFolders } from '../constants';
+import CloseFilterModal from './CloseFilterModal';
 
-interface Props {
+interface Props extends ModalProps {
     filter?: Filter;
-    onClose?: () => void;
+    onCloseCustomAction?: () => void;
 }
 
 const checkNameErrors = (filters: Filter[], name: string): string => {
@@ -100,7 +110,7 @@ const modelHasChanged = (a: SimpleFilterModalModel, b: SimpleFilterModalModel): 
     return false;
 };
 
-const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
+const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [filters = []] = useFilters();
     const [labels = [], loadingLabels] = useLabels();
@@ -108,8 +118,11 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
-    const { createModal } = useModals();
     const isEdit = !!filter?.ID;
+
+    const [closeFilterModalProps, setCloseFilterModalOpen] = useModalState();
+
+    const { onClose } = rest;
 
     const initializeModel = (filter?: Filter) => {
         const computedFilter = filter ? computeFromTree(filter) : {};
@@ -194,6 +207,11 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const reqCreate = useApiWithoutResult<{ Filter: Filter }>(addTreeFilter);
     const reqUpdate = useApiWithoutResult<{ Filter: Filter }>(updateFilter);
 
+    const handleCloseModal = () => {
+        onCloseCustomAction?.();
+        onClose?.();
+    };
+
     const createFilter = async (filter: Filter) => {
         try {
             const { Filter } = await reqCreate.request(filter);
@@ -204,7 +222,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
             // Some failed request will add the filter but in disabled mode
             // So we have to refresh the list in both cases
             await call();
-            onClose();
+            handleCloseModal();
         }
     };
 
@@ -214,10 +232,10 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         createNotification({
             text: c('Filter notification').t`Filter ${Filter.Name} updated`,
         });
-        onClose();
+        handleCloseModal();
     };
 
-    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         let newModel = model;
 
         // Remove images from the composer in autoreply
@@ -245,20 +263,10 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
 
     const handleClose = () => {
         if (!modelHasChanged(model, initializeModel(filter))) {
-            return onClose();
+            return handleCloseModal();
         }
 
-        createModal(
-            <ConfirmModal
-                onConfirm={onClose}
-                title={c('Title').t`Are you sure you want to close?`}
-                confirm={<Button color="danger" type="submit">{c('Action').t`Discard`}</Button>}
-            >
-                <Alert className="mb1">{c('Info').t`All your changes will be lost.`}</Alert>
-                <Alert className="mb1" type="error">{c('Info')
-                    .t`Are you sure you want to discard your changes?`}</Alert>
-            </ConfirmModal>
-        );
+        setCloseFilterModalOpen(true);
     };
 
     const renderStep = () => {
@@ -300,31 +308,37 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     }, [loadingFolders, loadingLabels]);
 
     return (
-        <FormModal
-            title={title}
-            onClose={handleClose}
-            loading={loading || loadingLabels || loadingFolders}
-            onSubmit={(event: FormEvent<HTMLFormElement>) => {
-                withLoading(handleSubmit(event));
-            }}
-            footer={
-                <FooterFilterModal
-                    model={model}
-                    errors={errors}
-                    onChange={(newModel) => setModel(newModel as SimpleFilterModalModel)}
-                    onClose={handleClose}
-                    loading={loading}
-                />
-            }
-            {...rest}
-        >
-            <HeaderFilterModal
-                model={model}
-                errors={errors}
-                onChange={(newModel) => setModel(newModel as SimpleFilterModalModel)}
-            />
-            {loadingLabels || loadingFolders ? <Loader /> : renderStep()}
-        </FormModal>
+        <>
+            <ModalTwo
+                as={Form}
+                className="mail-filter-modal"
+                onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
+                    withLoading(handleSubmit(event));
+                }}
+                {...rest}
+                onClose={handleClose}
+            >
+                <ModalTwoHeader title={title} />
+                <ModalTwoContent>
+                    <HeaderFilterModal
+                        model={model}
+                        errors={errors}
+                        onChange={(newModel) => setModel(newModel as SimpleFilterModalModel)}
+                    />
+                    {loadingLabels || loadingFolders ? <Loader /> : renderStep()}
+                </ModalTwoContent>
+                <ModalTwoFooter>
+                    <FooterFilterModal
+                        model={model}
+                        errors={errors}
+                        onChange={(newModel) => setModel(newModel as SimpleFilterModalModel)}
+                        onClose={handleClose}
+                        loading={loading}
+                    />
+                </ModalTwoFooter>
+            </ModalTwo>
+            <CloseFilterModal {...closeFilterModalProps} handleDiscard={handleCloseModal} />
+        </>
     );
 };
 
