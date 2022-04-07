@@ -37,4 +37,28 @@ html {
 	// Specific italic management for Arizona font
 	font-style: normal;
 	font-variation-settings: 'slnt' var(--font-style-normal);
+
+	/*
+	Don't use `optimizeLegibility` because it will cause performance issues (loading time) and may cause
+	important undesired behaviours on mobile devices.
+	`geometricPrecision`is sadly interpreted by `optimizeLegibility` on Firefox.
+	So in the end, we decide to not use text-rendering at all, and let browser do what it want by default.
+	https://sonneiltech.com/2020/12/manage-your-websites-legibility-using-text-rendering-and-its-alternatives/
+	https://bocoup.com/blog/text-rendering
+
+	text-rendering: geometricPrecision;
+	*/
+
+	/* stylelint-disable */
+	/*
+	Be carefull when using font-smoothing because it can cause legibility issues.
+	Better let the browser do the optimization by itself.
+	https://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
+	https://github.com/google/fonts/issues/1170
+	*/
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+
+	/* stylelint-enable */
 }
