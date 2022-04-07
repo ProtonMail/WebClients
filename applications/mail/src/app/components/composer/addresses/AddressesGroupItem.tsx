@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import {
     Icon,
     Tooltip,
-    useModals,
     classnames,
     usePopperAnchor,
     ContextMenu,
@@ -11,6 +10,7 @@ import {
     DropdownMenuButton,
     useNotifications,
     useDragOver,
+    useModalState,
 } from '@proton/components';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import AddressesGroupModal from './AddressesGroupModal';
@@ -41,13 +41,11 @@ const AddressesGroupItem = ({
     onDragEnd,
     onDragOver,
 }: Props) => {
-    const { createModal, getModal, hideModal, removeModal } = useModals();
+    const [modalProps, showModalCallback, showModal] = useModalState();
     const { createNotification } = useNotifications();
 
     const groupsWithContactsMap = useGroupsWithContactsMap();
     const { getGroupLabel } = useRecipientLabel();
-
-    const [modalID, setModalID] = useState<string | undefined>();
 
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const {
@@ -72,25 +70,6 @@ const AddressesGroupItem = ({
 
         setContextMenuPosition({ top: event.clientY, left: event.clientX });
         openContextMenu();
-    };
-
-    const handleOpenGroupModal = () => {
-        setModalID(createModal(undefined));
-    };
-
-    const handleCloseGroupModal = () => {
-        if (modalID === undefined) {
-            return;
-        }
-        hideModal(modalID);
-    };
-
-    const handleRemoveGroupModal = () => {
-        if (modalID === undefined) {
-            return;
-        }
-        removeModal(modalID);
-        setModalID(undefined);
     };
 
     const handleCopy = (event: MouseEvent<HTMLButtonElement>) => {
@@ -124,7 +103,7 @@ const AddressesGroupItem = ({
                     <Tooltip title={c('Info').t`Click to view group details`}>
                         <span
                             className="composer-addresses-item-label mtauto mbauto pl0-25 text-ellipsis pr0-5"
-                            onClick={handleOpenGroupModal}
+                            onClick={() => showModalCallback(true)}
                             onContextMenu={handleContextMenu}
                         >
                             {label}
@@ -143,15 +122,13 @@ const AddressesGroupItem = ({
                     </button>
                 </Tooltip>
             </div>
-            {modalID && (
+            {showModal && (
                 <AddressesGroupModal
                     recipientGroup={recipientGroup}
                     contacts={contactsInGroup}
                     messageSendInfo={messageSendInfo}
                     onSubmit={onChange}
-                    onClose={handleCloseGroupModal}
-                    onExit={handleRemoveGroupModal}
-                    {...getModal(modalID)}
+                    {...modalProps}
                 />
             )}
             <ContextMenu
@@ -165,7 +142,7 @@ const AddressesGroupItem = ({
                         <Icon name="copy" className="mr0-5 mt0-25" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleOpenGroupModal}>
+                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={() => showModalCallback(true)}>
                         <Icon name="user" className="mr0-5 mt0-25" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>

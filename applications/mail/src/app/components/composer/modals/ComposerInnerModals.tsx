@@ -80,6 +80,7 @@ const ComposerInnerModals = ({
                     onSubmit={() => handleCancelSend('recipient missing')}
                     displayCancel={false}
                     submit={c('Action').t`Got it`}
+                    data-testid={'composer:modal:norecipients'}
                 >
                     <p className="text-left m0">{c('Info').t`Please add at least one recipient.`}</p>
                 </ComposerInnerModal>
@@ -90,6 +91,7 @@ const ComposerInnerModals = ({
                     onCancel={() => handleCancelSend('subject missing')}
                     onSubmit={handleSendAnyway}
                     submit={c('Action').t`Send anyway`}
+                    data-testid={'composer:modal:nosubject'}
                 >
                     <p className="text-left m0">{c('Info')
                         .t`You have not given your email any subject. Do you want to send the message anyway?`}</p>

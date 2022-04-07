@@ -10,7 +10,7 @@ import loudRejection from 'loud-rejection';
 import { render } from '../../../helpers/test/render';
 import { setFeatureFlags } from '../../../helpers/test/api';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
-import { addApiKeys, clearAll, getDropdown, getModal } from '../../../helpers/test/helper';
+import { addApiKeys, clearAll, getDropdown } from '../../../helpers/test/helper';
 import Composer from '../Composer';
 import { ID, prepareMessage, props } from './Composer.test.helpers';
 
@@ -90,7 +90,7 @@ describe('Composer scheduled messages', () => {
         const scheduledSendButton = getByTestIdDefault(dropdown, 'composer:schedule-send-button');
         fireEvent.click(scheduledSendButton);
 
-        const { modal } = await getModal();
+        const modal = await getByTestId('composer:modal:norecipients');
         getByTextDefault(modal, 'Recipient missing');
     });
 
@@ -108,7 +108,7 @@ describe('Composer scheduled messages', () => {
         const scheduledSendButton = getByTestIdDefault(dropdown, 'composer:schedule-send-button');
         fireEvent.click(scheduledSendButton);
 
-        const { modal } = await getModal();
+        const modal = await getByTestId('composer:modal:nosubject');
         getByTextDefault(modal, 'Subject missing');
     });
 
