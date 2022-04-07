@@ -34,7 +34,7 @@ const UsagePanel = ({ addresses, calendars, organization, user }: Props) => {
 
     const items: (Item | false)[] = [
         UsedAddresses !== undefined && {
-            icon: 'checkmark',
+            icon: 'envelope',
             text: c('Subscription attribute').ngettext(
                 msgid`${UsedAddresses} address`,
                 `${UsedAddresses} addresses`,
@@ -42,7 +42,7 @@ const UsagePanel = ({ addresses, calendars, organization, user }: Props) => {
             ),
         },
         UsedCalendars !== undefined && {
-            icon: 'checkmark',
+            icon: 'calendar-checkmark',
             text: c('Subscription attribute').ngettext(
                 msgid`${UsedCalendars} calendar`,
                 `${UsedCalendars} calendars`,
@@ -50,7 +50,7 @@ const UsagePanel = ({ addresses, calendars, organization, user }: Props) => {
             ),
         },
         {
-            icon: 'checkmark',
+            icon: 'brand-proton-vpn',
             text: user.hasPaidVpn
                 ? c('Subscription attribute').ngettext(
                       msgid`${maxVpn} high-speed VPN connection`,
@@ -67,7 +67,7 @@ const UsagePanel = ({ addresses, calendars, organization, user }: Props) => {
                 <strong>{c('new_plans: Title').t`Your account's usage`}</strong>
             </h3>
             <StrippedList>
-                <StrippedItem icon="checkmark">
+                <StrippedItem icon="storage">
                     <span id="usedSpaceLabel" className="block">{c('new_plans: Label')
                         .t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                     <Meter

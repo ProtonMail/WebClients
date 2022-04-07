@@ -8,6 +8,7 @@ import {
     APPS,
     BRAND_NAME,
     VPN_CONNECTIONS,
+    MAIL_APP_NAME,
 } from '@proton/shared/lib/constants';
 import {
     hasMailPro,
@@ -50,6 +51,14 @@ const getHighSpeedVPN = (connections: number) => {
     );
 };
 
+const getHighSpeedVPNB2B = (connections: number) => {
+    return c('new_plans: attribute').ngettext(
+        msgid`Get ${connections} high-speed VPN connection per user`,
+        `Get ${connections} high-speed VPN connections per user`,
+        connections
+    );
+};
+
 const getUpgradeText = (planName: string) => {
     return c('new_plans: Title').t`Upgrade to ${planName}`;
 };
@@ -67,9 +76,9 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
     }
 
     // Trial upsell
-    if (isTrial(subscription)) {
+    if (isTrial(subscription) && subscription.PeriodEnd) {
         const mailPlanName = PLAN_NAMES[PLANS.MAIL];
-        const formattedTrialExpirationDate = format(subscription.PeriodEnd, 'MMMM d, y');
+        const formattedTrialExpirationDate = format(subscription.PeriodEnd || 0, 'MMMM d, y');
         const calendarAppName = getAppName(APPS.PROTONCALENDAR);
         const handleUpgrade = () =>
             openSubscriptionModal({
@@ -83,31 +92,31 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
             });
         const items: Item[] = [
             {
-                icon: 'checkmark',
+                icon: 'storage',
                 text: c('new_plans: Upsell attribute').t`15 GB total storage`,
             },
             {
-                icon: 'checkmark',
+                icon: 'envelope',
                 text: c('new_plans: Upsell attribute').t`10 email addresses/aliases`,
             },
             {
-                icon: 'checkmark',
+                icon: 'tag',
                 text: c('new_plans: Upsell attribute').t`Unlimited folders, labels, and filters`,
             },
             {
-                icon: 'checkmark',
+                icon: 'speech-bubble',
                 text: c('new_plans: Upsell attribute').t`Unlimited messages`,
             },
             {
-                icon: 'checkmark',
-                text: c('new_plans: Upsell attribute').t`Support for 1 custom email`,
+                icon: 'globe',
+                text: c('new_plans: Upsell attribute').t`Support for 1 custom email domain`,
             },
             {
-                icon: 'checkmark',
+                icon: 'life-ring',
                 text: c('new_plans: Upsell attribute').t`Priority support`,
             },
             {
-                icon: 'checkmark',
+                icon: 'brand-proton-calendar',
                 text: calendarAppName,
             },
         ];
@@ -118,7 +127,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                 </h3>
                 <h4>{c('new_plans: Info').t`Your trial ends ${formattedTrialExpirationDate}`}</h4>
                 <p className="color-weak">{c('new_plans: Info')
-                    .t`To continue to use Proton Mail with premium features, choose your subscription and payment options.`}</p>
+                    .t`To continue to use ${MAIL_APP_NAME} with premium features, choose your subscription and payment options.`}</p>
                 <p className="color-weak">{c('new_plans: Info')
                     .t`Otherwise access to your account will be limited, and your account will eventually be disabled.`}</p>
                 <StrippedList>
@@ -162,7 +171,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         const maxVpn = 10;
         const items: Item[] = [
             {
-                icon: 'checkmark',
+                icon: 'brand-proton-vpn',
                 text: c('new_plans: attribute').ngettext(
                     msgid`High-speed VPN on ${maxVpn} device`,
                     `High-speed VPN on ${maxVpn} devices`,
@@ -170,15 +179,15 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                 ),
             },
             {
-                icon: 'checkmark',
+                icon: 'shield',
                 text: c('new_plans: attribute').t`Built-in ad blocker (NetShield)`,
             },
             {
-                icon: 'checkmark',
+                icon: 'play',
                 text: c('new_plans: attribute').t`Access to streaming services globally`,
             },
             {
-                icon: 'checkmark',
+                icon: 'earth',
                 text: getPlusServers(vpnServers?.[PLANS.VPNPLUS], vpnCountries?.[PLANS.VPNPLUS].count),
             },
         ];
@@ -226,16 +235,16 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         const numberOfPersonalCalendars = MAX_CALENDARS_PER_USER;
         const items: Item[] = [
             {
-                icon: 'checkmark',
+                icon: 'storage',
                 text: c('new_plans: Upsell attribute').t`Boost your storage space to ${bundleStorage} total`,
             },
             {
-                icon: 'checkmark',
+                icon: 'checkmark-circle',
                 text: c('new_plans: Upsell attribute')
                     .t`Add more personalization with 15 email addresses and support for 3 custom email domains`,
             },
             {
-                icon: 'checkmark',
+                icon: 'calendar-checkmark',
                 text: c('new_plans: Upsell attribute').ngettext(
                     msgid`Create up to ${numberOfPersonalCalendars} personal calendar`,
                     `Create up to ${numberOfPersonalCalendars} personal calendars`,
@@ -243,11 +252,11 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                 ),
             },
             {
-                icon: 'checkmark',
+                icon: 'brand-proton-vpn',
                 text: getHighSpeedVPN(VPN_CONNECTIONS),
             },
             {
-                icon: 'checkmark',
+                icon: 'checkmark-circle',
                 text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
             },
         ];
@@ -298,20 +307,20 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
             });
         const items: Item[] = [
             {
-                icon: 'checkmark',
+                icon: 'storage',
                 text: c('new_plans: Upsell attribute').t`Boost your storage space to ${businessStorage} per user`,
             },
             {
-                icon: 'checkmark',
-                text: c('new_plans: Upsell attribute').t`Get 5 additional email addresses`,
+                icon: 'envelope',
+                text: c('new_plans: Upsell attribute').t`Get 5 additional email addresses per user`,
             },
             {
-                icon: 'checkmark',
+                icon: 'globe',
                 text: c('new_plans: Upsell attribute').t`Cover more ground with support for 10 custom email domains`,
             },
             {
-                icon: 'checkmark',
-                text: getHighSpeedVPN(VPN_CONNECTIONS),
+                icon: 'brand-proton-vpn',
+                text: getHighSpeedVPNB2B(VPN_CONNECTIONS),
             },
         ];
         return (

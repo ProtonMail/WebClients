@@ -119,11 +119,11 @@ const SubscriptionPanel = ({
                 {(
                     [
                         {
-                            icon: 'checkmark',
+                            icon: 'brand-proton-vpn',
                             text: getVPNConnectionsText(1),
                         } as const,
                         {
-                            icon: 'checkmark',
+                            icon: 'earth',
                             text: getFreeServers(vpnServers?.free_vpn, vpnCountries?.free_vpn.count),
                         } as const,
                     ] as Item[]
@@ -142,7 +142,7 @@ const SubscriptionPanel = ({
         const maxVpn = 10;
         const items: Item[] = [
             {
-                icon: 'checkmark',
+                icon: 'brand-proton-vpn',
                 text: c('Subscription attribute').ngettext(
                     msgid`High-speed VPN on ${maxVpn} device`,
                     `High-speed VPN on ${maxVpn} devices`,
@@ -150,15 +150,15 @@ const SubscriptionPanel = ({
                 ),
             },
             {
-                icon: 'checkmark',
+                icon: 'shield',
                 text: c('Subscription attribute').t`Built-in ad blocker (NetShield)`,
             },
             {
-                icon: 'checkmark',
+                icon: 'play',
                 text: c('Subscription attribute').t`Access to streaming services globally`,
             },
             {
-                icon: 'checkmark',
+                icon: 'earth',
                 text: getPlusServers(vpnServers?.[PLANS.VPNPLUS], vpnCountries?.[PLANS.VPNPLUS].count),
             },
         ];
@@ -178,7 +178,7 @@ const SubscriptionPanel = ({
     const getDefault = () => {
         const items: (Item | false)[] = [
             (MaxMembers > 1 || getHasB2BPlan(subscription)) && {
-                icon: 'checkmark',
+                icon: 'users',
                 text: c('Subscription attribute').ngettext(
                     msgid`${UsedMembers} of ${MaxMembers} user`,
                     `${UsedMembers} of ${MaxMembers} users`,
@@ -186,7 +186,7 @@ const SubscriptionPanel = ({
                 ),
             },
             {
-                icon: 'checkmark',
+                icon: 'envelope',
                 text:
                     MaxAddresses === 1 && UsedAddresses === 1
                         ? c('Subscription attribute').t`1 email address`
@@ -197,7 +197,7 @@ const SubscriptionPanel = ({
                           ),
             },
             !!MaxDomains && {
-                icon: 'checkmark',
+                icon: 'globe',
                 text: c('Subscription attribute').ngettext(
                     msgid`${UsedDomains} of ${MaxDomains} custom domain`,
                     `${UsedDomains} of ${MaxDomains} custom domains`,
@@ -205,7 +205,7 @@ const SubscriptionPanel = ({
                 ),
             },
             {
-                icon: 'checkmark',
+                icon: 'calendar-checkmark',
                 text: (() => {
                     if (MaxCalendars === 1) {
                         return c('Subscription attribute').ngettext(
@@ -229,7 +229,7 @@ const SubscriptionPanel = ({
                 })(),
             },
             {
-                icon: 'checkmark',
+                icon: 'brand-proton-vpn',
                 text: (() => {
                     if (user.hasPaidVpn) {
                         if (MaxMembers > 1) {
@@ -246,7 +246,7 @@ const SubscriptionPanel = ({
         ];
         return (
             <StrippedList>
-                <StrippedItem icon="checkmark">
+                <StrippedItem icon="storage">
                     <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                     <Meter className="mt1 mb1" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
                 </StrippedItem>
