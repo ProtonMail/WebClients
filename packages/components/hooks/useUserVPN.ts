@@ -75,9 +75,7 @@ const useUserVPN = () => {
     }, []);
 
     useEffect(() => {
-        if (!cache.has('vpn')) {
-            fetch();
-        }
+        fetch(30_000);
 
         return () => {
             mountedRef.current = false;
