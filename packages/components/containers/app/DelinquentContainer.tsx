@@ -4,7 +4,7 @@ import { ProminentContainer } from '../../components';
 const DelinquentContainer = () => {
     return (
         <ProminentContainer>
-            <DelinquentModal />
+            <DelinquentModal open />
         </ProminentContainer>
     );
 };
