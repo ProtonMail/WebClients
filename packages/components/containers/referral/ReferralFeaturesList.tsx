@@ -1,12 +1,14 @@
 import { c } from 'ttag';
 import { StrippedItem, StrippedList, Info } from '@proton/components';
 import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 const ReferralFeaturesList = () => {
+    const storageSize = humanSize(5 * 1024 ** 3, undefined, undefined, 0);
     return (
         <StrippedList>
             <StrippedItem icon="lock">
-                {c('Info').t`5 GB storage`}
+                {c('Info').t`${storageSize} storage`}
                 <Info
                     className="ml0-5"
                     title={c('Info')
