@@ -79,6 +79,9 @@
 .file-browser-list--icon-column {
 	inline-size: 48px; // To fit one small icon + spacing around.
 	max-block-size: 100%;
+	&#{&} {
+		padding-block: 0;
+	}
 }
 
 .file-browser-list-item--thumbnail {
