@@ -104,7 +104,7 @@ const getCheckedProducts = (checkedTypes: CheckedProductMap): ImportType[] =>
     }, []);
 
 const EasySwitchOauthModal = ({
-    addresses,
+    addresses = [],
     onClose = noop,
     defaultCheckedTypes = [],
     source,
