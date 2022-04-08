@@ -1,3 +1,5 @@
+import { isIE11, isSafari, isSafariMobile } from '../helpers/browser';
+
 /*
  * This is valid
  * - background:&#117;r&#108;(
@@ -8,7 +10,13 @@
 const CSS_URL = '((url|image-set)(\\(|&(#40|#x00028|lpar);))';
 const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
 
-const REGEXP_HEIGHT_POURCENTAGE = /height\s*:\s[\d.]+%/gi;
+// https://caniuse.com/js-regexp-lookbehind
+const isCompotibleWithLookbehind = [!isSafari(), !isSafariMobile(), !isIE11()].every((bool) => bool);
+
+const REGEXP_HEIGHT_POURCENTAGE = isCompotibleWithLookbehind
+    ? // eslint-disable-next-line es/no-regexp-lookbehind-assertions
+      /(?<!line-)height\s*:\s*[\d.]+%/gi
+    : /height\s*:\s[\d.]+%/gi;
 const REGEXP_POSITION_ABSOLUTE = /position\s*:\sabsolute/gi;
 
 export const escape = (string: string) => {
