@@ -62,7 +62,10 @@ const CalendarSettingsRouter = ({
     const memoizedAddresses = useMemo(() => addresses || [], [addresses]);
 
     const [calendars, loadingCalendars] = useCalendars();
-    const memoizedCalendars = useMemo(() => getVisualCalendars(calendars || [], addresses), [calendars, addresses]);
+    const memoizedCalendars = useMemo(
+        () => getVisualCalendars(calendars || [], memoizedAddresses),
+        [calendars, memoizedAddresses]
+    );
 
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
