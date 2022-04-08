@@ -19,7 +19,7 @@ import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persi
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { FeaturesProvider, ModalsChildren, SSOForkProducer, useApi, useClearPaidCookie } from '@proton/components';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { getAppHref, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { UserType } from '@proton/shared/lib/interfaces';
@@ -136,7 +136,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (User.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
                 ...args,
-                path: `${getSlugFromApp(toApp)}/payment#invoices`,
+                path: `${getSlugFromApp(toApp)}${getInvoicesPathname(toApp)}`,
             });
         }
         if (forkState) {
