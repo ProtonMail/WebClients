@@ -2,7 +2,7 @@ import { Fragment, MouseEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import * as History from 'history';
 
-import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { resumeSession, getActiveSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSession, removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
@@ -29,7 +29,6 @@ import {
     Scroll,
     classnames,
 } from '@proton/components';
-import { getToAppName } from './helper';
 import Main from './Main';
 import Header from './Header';
 import Footer from './Footer';
@@ -49,7 +48,7 @@ export const getSearchParams = (search: History.Search) => {
 
 interface Props {
     onLogin: (data: OnLoginCallbackArguments) => Promise<void>;
-    toApp?: APP_NAMES;
+    toAppName: string;
     activeSessions?: LocalSessionResponse[];
     onSignOut: (updatedActiveSessions?: LocalSessionResponse[]) => void;
     onSignOutAll: () => void;
@@ -69,7 +68,14 @@ const compareSessions = (a: LocalSessionResponse, b: LocalSessionResponse) => {
     return 0;
 };
 
-const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, onSignOut, onSignOutAll }: Props) => {
+const SwitchAccountContainer = ({
+    toAppName,
+    onLogin,
+    activeSessions,
+    onAddAccount,
+    onSignOut,
+    onSignOutAll,
+}: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
@@ -227,8 +233,6 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
             }
         );
     };
-
-    const toAppName = getToAppName(toApp);
 
     return (
         <Main>
