@@ -58,7 +58,7 @@ const ErrorDetails = ({ errors, summary = c('Info on errors').t`Click for detail
     return (
         <Details>
             <Summary>{summary}</Summary>
-            <Bordered>
+            <Bordered className="rounded">
                 {errors.map((error, i) => (
                     <ErrorDetail error={error} key={error.componentId + i.toString()} />
                 ))}
