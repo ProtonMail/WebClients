@@ -25,6 +25,7 @@ import Loader from '../signup/Loader';
 import { defaultPersistentKey } from '../public/helper';
 
 interface Props {
+    signInText?: string;
     onSubmit: (data: {
         username: string;
         password: string;
@@ -34,7 +35,7 @@ interface Props {
     defaultUsername?: string;
 }
 
-const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
+const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`Sign in` }: Props) => {
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
@@ -157,7 +158,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                     {
                         // translator: when the "sign in" button is in loading state, it gets updated to "Signing in"
-                        loading ? c('Action').t`Signing in` : c('Action').t`Sign in`
+                        loading ? c('Action').t`Signing in` : signInText
                     }
                 </Button>
                 <div className="text-center mt2">{c('Info').jt`New to ${BRAND_NAME}? ${signupLink}`}</div>
