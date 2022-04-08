@@ -112,7 +112,21 @@ $breakpoint-topnav-text-adaptation: 1320 !default; // used to display or not tex
 		&#{&} {
 			inline-size: rem(24);
 			block-size: rem(24);
+			margin-inline-end: 0;
 		}
+	}
+
+	.navigation-title {
+		// collapse for ALL without any exception
+		// equivalent of .sr-only, but impossible to extend in a breakpoint
+		border: 0;
+		clip: rect(0 0 0 0);
+		block-size: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		inline-size: 1px;
 	}
 
 	.topnav-list--four-elements .topnav-link {
