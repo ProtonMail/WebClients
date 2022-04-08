@@ -90,10 +90,11 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
             openSubscriptionModal({
                 step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             });
+        const storageSize = humanSize(15 * 1024 ** 3, undefined, undefined, 0);
         const items: Item[] = [
             {
                 icon: 'storage',
-                text: c('new_plans: Upsell attribute').t`15 GB total storage`,
+                text: c('new_plans: Upsell attribute').t`${storageSize} total storage`,
             },
             {
                 icon: 'envelope',
