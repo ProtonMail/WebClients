@@ -66,7 +66,10 @@ const AccountEasySwitchSection = () => {
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
 
-    const memoizedCalendars = useMemo(() => getVisualCalendars(calendars || [], addresses), [calendars, addresses]);
+    const memoizedCalendars = useMemo(
+        () => getVisualCalendars(calendars || [], addresses || []),
+        [calendars, addresses]
+    );
 
     const { activeCalendars } = useMemo(() => {
         return {
