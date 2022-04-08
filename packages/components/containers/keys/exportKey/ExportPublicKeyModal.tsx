@@ -64,7 +64,7 @@ const ExportPublicKeyModal = ({ name, fallbackPrivateKey, publicKey, onClose, ..
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose} disabled={loading}>
-                    {c('Action').t`Close`}
+                    {c('Action').t`Cancel`}
                 </Button>
 
                 <Button loading={loading} type="submit" color="norm">

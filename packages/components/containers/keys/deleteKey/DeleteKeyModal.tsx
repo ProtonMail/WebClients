@@ -1,132 +1,110 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
-import { Alert, FormModal, ErrorButton, Button } from '../../../components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { AlertModal, AlertModalProps, Button } from '../../../components';
+import { useLoading, useNotifications } from '../../../hooks';
 
 enum STEPS {
-    WARNING = 1,
-    EXPORT_KEY = 2,
-    DELETE_KEY = 3,
-    SUCCESS = 4,
-    CONFIRM_DELETE = 5,
+    EXPORT_KEY,
+    DELETE_KEY,
 }
 
-interface Props {
-    onClose?: () => void;
+interface Props extends Omit<AlertModalProps, 'title' | 'buttons' | 'children'> {
     fingerprint: string;
     onDelete: () => Promise<void>;
     onExport?: () => Promise<void>;
 }
 
 const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: Props) => {
-    const [step, setStep] = useState(STEPS.WARNING);
+    const [step, setStep] = useState(onExport ? STEPS.EXPORT_KEY : STEPS.DELETE_KEY);
+    const [loading, withLoading] = useLoading();
+    const { createNotification } = useNotifications();
+    const handleClose = loading ? noop : onClose;
 
-    useEffect(() => {
-        if (step !== STEPS.DELETE_KEY) {
-            return;
+    const deleteKey = async () => {
+        try {
+            await onDelete();
+            const fp = <code key="0">{fingerprint}</code>;
+            createNotification({ text: c('Notification').jt`Key with fingerprint ${fp} has been deleted.` });
+        } finally {
+            onClose?.();
         }
-        onDelete()
-            .then(() => {
-                setStep(STEPS.SUCCESS);
-            })
-            .catch(() => {
-                onClose?.();
-            });
-    }, [step]);
+    };
 
-    const { children, ...stepProps } = (() => {
-        if (step === STEPS.WARNING) {
-            return {
-                submit: <ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>,
-                onSubmit: () => {
-                    setStep(onExport ? STEPS.EXPORT_KEY : STEPS.DELETE_KEY);
-                },
-                children: (
-                    <>
-                        <Alert className="mb1">
-                            {c('Info')
-                                .t`This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.`}
-                        </Alert>
-                        <Alert className="mb1" type="error">
-                            {c('Confirm').t`Are you sure you want to permanently delete this key?`}
-                        </Alert>
-                    </>
-                ),
-            };
-        }
-
+    const stepProps: {
+        children: AlertModalProps['children'];
+        buttons: AlertModalProps['buttons'];
+        title: AlertModalProps['title'];
+    } = (() => {
         if (step === STEPS.EXPORT_KEY) {
             return {
-                title: c('Action').t`Export key`,
-                submit: c('Action').t`Export`,
-                onSubmit: async () => {
-                    await onExport?.();
-                    setStep(STEPS.DELETE_KEY);
-                },
-                close: <Button onClick={() => setStep(STEPS.CONFIRM_DELETE)}>{c('Action').t`No`}</Button>,
+                title: c('Action').t`Export key before deleting`,
                 children: (
                     <>
-                        <Alert className="mb1">
-                            {c('Alert')
-                                .t`Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.`}
-                        </Alert>
-                        <Alert className="mb1">{c('Confirm').t`Do you want to export your key?`}</Alert>
+                        <div className="mb1">{c('Info').t`Key deletion is irreversible!`}</div>
+                        <div>
+                            {c('Info')
+                                .t`You should export a backup of this key in case you need to restore data it encrypted.`}
+                        </div>
                     </>
                 ),
-            };
-        }
-
-        if (step === STEPS.CONFIRM_DELETE) {
-            return {
-                title: c('Action').t`Warning`,
-                submit: <ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>,
-                onSubmit: async () => {
-                    setStep(STEPS.DELETE_KEY);
-                },
-                close: <Button onClick={() => setStep(STEPS.EXPORT_KEY)}>{c('Action').t`No`}</Button>,
-                children: (
-                    <>
-                        <Alert className="mb1" type="error">
-                            {c('Alert').t`You will face a permanent data loss by not making a backup of your key.`}
-                        </Alert>
-                        <Alert className="mb1" type="error">
-                            {c('Confirm').t`Are you sure you want to delete this key without backing it up?`}
-                        </Alert>
-                    </>
-                ),
+                buttons: [
+                    <Button
+                        color="norm"
+                        loading={loading}
+                        onClick={async () => {
+                            await withLoading(
+                                (async () => {
+                                    await onExport?.();
+                                    await setStep(STEPS.DELETE_KEY);
+                                })()
+                            );
+                        }}
+                    >
+                        {c('Action').t`Export key`}
+                    </Button>,
+                    <Button onClick={() => setStep(STEPS.DELETE_KEY)} disabled={loading}>
+                        {c('Action').t`Delete without exporting`}
+                    </Button>,
+                    <Button onClick={handleClose} disabled={loading}>{c('Action').t`Cancel`}</Button>,
+                ],
             };
         }
 
         if (step === STEPS.DELETE_KEY) {
             return {
-                loading: true,
-                submit: <ErrorButton type="submit" loading>{c('Action').t`Delete`}</ErrorButton>,
-                children: <Alert className="mb1">{c('alert').t`The key for your address is now being deleted.`}</Alert>,
-            };
-        }
-
-        if (step === STEPS.SUCCESS) {
-            const fp = <code key="0">{fingerprint}</code>;
-            return {
-                submit: null,
-                children: <Alert className="mb1">{c('Info').jt`Key with fingerprint ${fp} has been deleted.`}</Alert>,
+                title: c('Title').t`Delete key permanently?`,
+                children: (
+                    <>
+                        <div className="mb1">
+                            {c('Info')
+                                .t`You will NOT be able to decrypt any messages, files, and other data encrypted with this key.`}
+                        </div>
+                        <div>
+                            {c('Info')
+                                .t`To avoid data loss, only delete it if you know what you’re doing or have exported a copy.`}
+                        </div>
+                    </>
+                ),
+                buttons: [
+                    <Button
+                        color="danger"
+                        loading={loading}
+                        onClick={async () => {
+                            await withLoading(deleteKey());
+                        }}
+                    >
+                        {c('Action').t`Delete permanently`}
+                    </Button>,
+                    <Button onClick={handleClose} disabled={loading}>{c('Action').t`Cancel`}</Button>,
+                ],
             };
         }
 
         throw new Error('Unsupported step');
     })();
 
-    return (
-        <FormModal
-            close={c('Action').t`Close`}
-            title={c('Title').t`Delete key`}
-            onClose={onClose}
-            onSubmit={onClose}
-            {...stepProps}
-            {...rest}
-        >
-            {children}
-        </FormModal>
-    );
+    return <AlertModal {...rest} {...stepProps} />;
 };
 
 export default DeleteKeyModal;
