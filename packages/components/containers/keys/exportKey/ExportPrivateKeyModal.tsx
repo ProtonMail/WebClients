@@ -7,7 +7,6 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import {
-    Alert,
     Button,
     Form,
     InputFieldTwo,
@@ -72,31 +71,32 @@ const ExportPrivateKeyModal = ({ name, privateKey, onSuccess, onClose, ...rest }
         >
             <ModalHeader title={c('Title').t`Export private key`} />
             <ModalContent>
-                <Alert className="mb1" type="warning">
+                <div className="mb1">
                     {c('Info')
-                        .t`IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!`}
-                </Alert>
-                <div className="mb1">{c('Info')
-                    .t`Please enter a password to encrypt your private key with before exporting.`}</div>
-
+                        .t`This will download a file containing your private key. Protect this file by encrypting it with a password.`}
+                </div>
                 <InputFieldTwo
                     id={id}
                     as={PasswordInputTwo}
-                    label={c('Label').t`Enter password`}
+                    label={c('Label').t`Create password`}
                     placeholder={c('Placeholder').t`Password`}
                     value={password}
                     onValue={setPassword}
                     error={validator([passwordLengthValidator(password)])}
                     autoFocus
                 />
+                <div>
+                    {c('Info')
+                        .t`Store this password and file in a safe place. You’ll need them again to import your key.`}
+                </div>
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose} disabled={loading}>
-                    {c('Action').t`Close`}
+                    {c('Action').t`Cancel`}
                 </Button>
 
                 <Button loading={loading} type="submit" color="norm">
-                    {c('Action').t`Export`}
+                    {c('Action').t`Encrypt and export`}
                 </Button>
             </ModalFooter>
         </Modal>
