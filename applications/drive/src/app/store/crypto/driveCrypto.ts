@@ -60,7 +60,7 @@ export const getPrimaryAddressKeysAsync = async (
     }));
 };
 
-export const getOwnAddressKeysAsync = async (
+const getOwnAddressKeys = async (
     email: string,
     getAddresses: () => Promise<Address[]>,
     getAddressKeys: (id: string) => Promise<DecryptedKey[]>
@@ -71,7 +71,32 @@ export const getOwnAddressKeysAsync = async (
     if (!ownAddress) {
         return;
     }
-    return splitKeys(await getAddressKeys(ownAddress.ID));
+    return getAddressKeys(ownAddress.ID);
+};
+
+export const getOwnAddressPrimaryKeyAsync = async (
+    email: string,
+    getAddresses: () => Promise<Address[]>,
+    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
+) => {
+    const addressKeys = await getOwnAddressKeys(email, getAddresses, getAddressKeys);
+    const { privateKey, publicKey } = getPrimaryKey(addressKeys) || {};
+
+    if (!privateKey) {
+        // Should never happen
+        throw new Error('Primary private key is not available');
+    }
+
+    return { privateKey, publicKey: publicKey || privateKey.toPublic() };
+};
+
+export const getOwnAddressKeysAsync = async (
+    email: string,
+    getAddresses: () => Promise<Address[]>,
+    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
+) => {
+    const addressKeys = await getOwnAddressKeys(email, getAddresses, getAddressKeys);
+    return addressKeys ? splitKeys(addressKeys) : undefined;
 };
 
 export const decryptSharePassphraseAsync = async (
