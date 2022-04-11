@@ -25,7 +25,7 @@ const getCurrentRetries = () => {
     return currentRetries;
 };
 
-const setCurrentRetries = (currentRetries: number) => {
+export const setCurrentRetries = (currentRetries: number) => {
     setItem(EARLY_ACCESS_DESYNCHRONIZATION_RETRIES_STORAGE_KEY, `${currentRetries}`);
 };
 
