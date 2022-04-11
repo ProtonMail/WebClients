@@ -1,3 +1,4 @@
+import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 import { OpenPGPKey, SessionKey, decryptPrivateKey as pmcryptoDecryptPrivateKey, VERIFICATION_STATUS } from 'pmcrypto';
 
@@ -265,7 +266,14 @@ export function useLinkInner(
                 publicKey,
             });
 
-            handleSignatureCheck(shareId, encryptedLink, 'hash', verified);
+            if (
+                verified === VERIFICATION_STATUS.SIGNED_AND_INVALID ||
+                // The hash was not signed until Beta 17 (DRVWEB-1219).
+                (verified === VERIFICATION_STATUS.NOT_SIGNED &&
+                    isAfter(fromUnixTime(encryptedLink.createTime), new Date(2021, 7, 1)))
+            ) {
+                handleSignatureCheck(shareId, encryptedLink, 'hash', verified);
+            }
 
             linksKeys.setHashKey(shareId, linkId, hashKey);
             return hashKey;
@@ -319,7 +327,12 @@ export function useLinkInner(
                 ]);
 
                 const signatureIssues: SignatureIssues = {};
-                if (nameVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                if (
+                    nameVerified === VERIFICATION_STATUS.SIGNED_AND_INVALID ||
+                    // The name was not signed until Beta 3 (DRVWEB-673).
+                    (nameVerified === VERIFICATION_STATUS.NOT_SIGNED &&
+                        isAfter(fromUnixTime(encryptedLink.createTime), new Date(2021, 0, 1)))
+                ) {
                     signatureIssues.name = nameVerified;
                 }
                 if (fileModifyTimeVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
