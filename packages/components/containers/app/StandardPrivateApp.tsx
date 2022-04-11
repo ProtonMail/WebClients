@@ -38,7 +38,7 @@ import StandardLoadErrorPage from './StandardLoadErrorPage';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import StorageListener from './StorageListener';
 import DelinquentContainer from './DelinquentContainer';
-import { clearAutomaticErrorRefresh, handleAutomaticErrorRefresh } from './errorRefresh';
+import { wrapUnloadError } from './errorRefresh';
 
 interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     locales?: TtagLocaleMap;
@@ -128,17 +128,23 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             appRef.current = result.default;
         });
 
-        let ignoreError = false;
-        const handleUnload = () => {
-            ignoreError = true;
+        const run = () => {
+            return Promise.all([
+                eventManagerPromise,
+                setupPromise,
+                onInit?.(),
+                loadOpenPGP(openpgpConfig),
+                appPromise,
+            ]).catch((error) => {
+                if (getIs401Error(error)) {
+                    // Trigger onLogout early, ignoring the unload wrapper
+                    onLogout();
+                }
+                throw error;
+            });
         };
-        // In Firefox, navigation events cancel ongoing network requests. This triggers the error handler and error
-        // screen to be displayed. We set up a 'beforeunload' listener to detect those types of events to not
-        // unnecessarily show those errors as fatal errors, and keep showing the loader screen instead.
-        window.addEventListener('beforeunload', handleUnload);
-        const clearBeforeUnload = () => window.removeEventListener('beforeunload', handleUnload);
 
-        Promise.all([eventManagerPromise, setupPromise, onInit?.(), loadOpenPGP(openpgpConfig), appPromise])
+        wrapUnloadError(run())
             .then(() => {
                 // The Version cookie is set on each request. This causes race-conditions between with what the client
                 // has set it to and what the API is replying with. Old API requests with old cookies may finish after
@@ -151,28 +157,16 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                 if (shouldSetupInternalAddress) {
                     appLink(`/setup-internal-address?app=${APP_NAME}`, APPS.PROTONACCOUNT);
                 } else {
-                    clearAutomaticErrorRefresh();
-                    clearBeforeUnload();
                     setLoading(false);
                 }
             })
             .catch((error) => {
                 if (getIs401Error(error)) {
-                    return onLogout();
+                    return;
                 }
-
-                const handleError = (error: any) => {
-                    if (handleAutomaticErrorRefresh(error) || ignoreError) {
-                        return;
-                    }
-                    setError({
-                        message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
-                    });
-                };
-
-                // We add an arbitrary timeout in handling the error to avoid errors that are due to page navigations.
-                // This allows the beforeunload handler to trigger first.
-                setTimeout(() => handleError(error), 2500);
+                setError({
+                    message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                });
             });
 
         return () => {
