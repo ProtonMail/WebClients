@@ -1,10 +1,17 @@
 @import '~@proton/styles/scss/config';
 
+$width-hv-modal: 730 !default;
+
 .modal--human-verification {
 	&#{&} {
 		// Specificity -_-v
 		// Just tested this value, don't change it
-		inline-size: rem(730);
-		max-inline-size: rem(730);
+		inline-size: rem($width-hv-modal);
+		max-inline-size: rem($width-hv-modal);
+
+		// below this value, we get back to normal modal
+		@include respond-to($width-hv-modal) {
+			max-width: 98%;
+		}
 	}
 }
