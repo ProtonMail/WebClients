@@ -110,7 +110,7 @@ const FilterActions = ({ loading, filter = {}, mailSettings, onFilter }: Props) 
         );
     }
     return (
-        <div>
+        <div className="flex">
             {buttons.map(({ ID, text, isActive, onClick }) => {
                 return (
                     <Button
