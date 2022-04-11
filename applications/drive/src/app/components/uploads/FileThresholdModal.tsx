@@ -1,35 +1,36 @@
-import { BasicModal, Button } from '@proton/components';
-import { useState } from 'react';
 import { c } from 'ttag';
 
+import { BasicModal, Button, PrimaryButton } from '@proton/components';
+
 type Props = {
+    open?: boolean;
+    onClose?: () => void;
     onSubmit: () => void;
     onCancel: () => void;
 };
 
-export const FileThresholdModal = ({ onSubmit, onCancel }: Props) => {
-    const [open, setOpen] = useState(true);
+export const FileThresholdModal = ({ onSubmit, onCancel, onClose, open }: Props) => {
     const handleCancel = () => {
-        setOpen(false);
         onCancel();
+        onClose?.();
     };
+
     return (
         <BasicModal
             title={c('Title').t`Performance might be affected`}
-            isOpen={open}
+            isOpen={open === undefined ? true : open}
             onClose={handleCancel}
             footer={
                 <>
                     <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
-                    <Button
-                        color="norm"
+                    <PrimaryButton
                         onClick={() => {
                             onSubmit();
-                            setOpen(false);
+                            onClose?.();
                         }}
                     >
                         {c('Action').t`Upload anyway`}
-                    </Button>
+                    </PrimaryButton>
                 </>
             }
         >

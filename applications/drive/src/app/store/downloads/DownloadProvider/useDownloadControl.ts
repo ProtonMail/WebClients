@@ -3,7 +3,7 @@ import { useCallback, useRef } from 'react';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { TransferState, TransferProgresses } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { isTransferProgress, isTransferPending } from '../../../utils/transfer';
+import { isTransferProgress, isTransferPending, isTransferFinished } from '../../../utils/transfer';
 import { DownloadControls } from '../interface';
 import { Download, UpdateFilter, UpdateState, UpdateCallback } from './interface';
 
@@ -86,9 +86,12 @@ export default function useDownloadControl(
 
     const cancelDownloads = useCallback(
         (idOrFilter: UpdateFilter) => {
-            updateWithCallback(idOrFilter, TransferState.Canceled, ({ id }) => {
-                controls.current[id]?.cancel();
-            });
+            // Do not cancel already finished transfers.
+            updateWithCallback(
+                idOrFilter,
+                ({ state }) => (isTransferFinished({ state }) ? state : TransferState.Canceled),
+                ({ state, id }) => !isTransferFinished({ state }) && controls.current[id]?.cancel()
+            );
         },
         [updateWithCallback]
     );
