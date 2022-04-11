@@ -11,8 +11,8 @@ export const NoSearchResultsView = () => {
 
     if (!hasData || isBuilding) {
         return (
-            <EmptyViewContainer imageProps={{ src: noResultSearchSvg, alt: c('Info').t`Enable Drive Search` }}>
-                <h3 className="text-bold">{c('Title').t`Enable Drive Search`}</h3>
+            <EmptyViewContainer imageProps={{ src: noResultSearchSvg, alt: c('Info').t`Enable drive search` }}>
+                <h3 className="text-bold">{c('Title').t`Enable drive search`}</h3>
                 <p>{c('Info')
                     .t`To enable truly private search ${DRIVE_APP_NAME} needs to index your files locally.`}</p>
                 <div className="flex flex-justify-center">
@@ -23,7 +23,7 @@ export const NoSearchResultsView = () => {
                         loading={isBuilding}
                         disabled={isBuilding || hasData}
                     >
-                        {c('Action').t`Enable Drive Search`}
+                        {c('Action').t`Enable drive search`}
                     </PrimaryButton>
                 </div>
             </EmptyViewContainer>
