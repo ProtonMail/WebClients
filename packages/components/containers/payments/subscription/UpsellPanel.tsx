@@ -189,7 +189,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
             },
             {
                 icon: 'earth',
-                text: getPlusServers(vpnServers?.[PLANS.VPNPLUS], vpnCountries?.[PLANS.VPNPLUS].count),
+                text: getPlusServers(vpnServers?.[PLANS.VPN], vpnCountries?.[PLANS.VPN].count),
             },
         ];
         return (
