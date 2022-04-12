@@ -70,6 +70,10 @@ class FileSaver {
         }
         return this.saveViaDownload(stream, meta);
     }
+
+    isFileTooBig(size: number) {
+        return this.useBlobFallback && size > MEMORY_DOWNLOAD_LIMIT;
+    }
 }
 
 export default new FileSaver();
