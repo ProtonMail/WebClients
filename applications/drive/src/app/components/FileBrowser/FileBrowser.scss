@@ -26,6 +26,7 @@
 .file-browser-grid-item {
 	position: relative;
 	background-color: var(--background-norm);
+	overflow: hidden;
 
 	&:hover,
 	&:focus {
