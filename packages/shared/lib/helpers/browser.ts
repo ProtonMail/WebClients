@@ -84,7 +84,15 @@ export const getActiveXObject = (name: string) => {
 export const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 export const hasAcrobatInstalled = () => !!(getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl'));
 export const hasPDFSupport = () => {
-    return 'application/pdf' in navigator.mimeTypes || (isFirefox() && isDesktop()) || isIos() || hasAcrobatInstalled();
+    // mimeTypes is deprecated in favor of pdfViewerEnabled.
+    return (
+        (navigator.mimeTypes && 'application/pdf' in navigator.mimeTypes) ||
+        // @ts-ignore
+        navigator.pdfViewerEnabled ||
+        (isFirefox() && isDesktop()) ||
+        isIos() ||
+        hasAcrobatInstalled()
+    );
 };
 export const replaceUrl = (url = '') => document.location.replace(url);
 export const redirectTo = (url = '') => replaceUrl(`${document.location.origin}${url}`);
