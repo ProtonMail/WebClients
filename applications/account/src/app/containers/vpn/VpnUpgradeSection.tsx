@@ -4,12 +4,12 @@ import { ButtonLike, Card, SettingsLink, SettingsSectionWide, usePlans, useUserV
 
 const VpnUpgradeSection = () => {
     const [plans, loadingPlans] = usePlans();
-    const plusVpnConnections = plans?.find(({ Name }) => Name === PLANS.VPNPLUS)?.MaxVPN || 10;
+    const plusVpnConnections = plans?.find(({ Name }) => Name === PLANS.VPN)?.MaxVPN || 10;
 
     const { result } = useUserVPN();
     const userVPN = result?.VPN;
     const planName = userVPN?.PlanName;
-    const shouldUpgrade = planName === 'vpnbasic' || planName === 'free';
+    const shouldUpgrade = planName === PLANS.VPNBASIC || planName === PLANS.FREE;
 
     if (loadingPlans || !shouldUpgrade) {
         return null;
@@ -19,7 +19,7 @@ const VpnUpgradeSection = () => {
 
     return (
         <SettingsSectionWide>
-            <Card className="flex flex-align-items-center">
+            <Card className="flex flex-align-items-center" rounded>
                 <p className="m0 mr2 flex-item-fluid">
                     {c('Upgrade').ngettext(
                         msgid`Upgrade to ${vpnPlanName} to connect up to ${plusVpnConnections} device to the VPN at once`,

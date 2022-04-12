@@ -8,8 +8,7 @@ import useLoading from './useLoading';
 
 const DEFAULT_RESULT: VPNServers = {
     free_vpn: 23,
-    [PLANS.VPNBASIC]: 350,
-    [PLANS.VPNPLUS]: 1200,
+    [PLANS.VPN]: 1200,
 };
 
 const useVPNServersCount = (): [VPNServers, boolean] => {
@@ -29,21 +28,18 @@ const useVPNServersCount = (): [VPNServers, boolean] => {
                 (server: { Tier: number }) => server.Tier === 1
             ).length;
 
-            const countPlusVPNServers = resultLogicalServerInfo.filter(
+            const countPaidVPNServers = resultLogicalServerInfo.filter(
                 (server: { Tier: number }) => server.Tier === 2
             ).length;
 
-            let countBasicVpnServersShow = countBasicVPNServers + countFreeVPNServers;
-            let countPlusVpnServersShow = countPlusVPNServers + countBasicVPNServers + countFreeVPNServers;
+            let countPlusVpnServersShow = countPaidVPNServers + countBasicVPNServers + countFreeVPNServers;
 
-            countBasicVpnServersShow = Math.floor(countBasicVpnServersShow / 50) * 50;
             countPlusVpnServersShow = Math.floor(countPlusVpnServersShow / 100) * 100;
 
             const updatedResult = {
                 ...DEFAULT_RESULT,
                 free_vpn: countFreeVPNServers,
-                [PLANS.VPNBASIC]: countBasicVpnServersShow,
-                [PLANS.VPNPLUS]: countPlusVpnServersShow,
+                [PLANS.VPN]: countPlusVpnServersShow,
             };
 
             setResult(updatedResult);

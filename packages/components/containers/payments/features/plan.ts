@@ -86,7 +86,7 @@ export const getMailPlan = (plan: Plan): ShortPlan => {
     };
 };
 export const getVPNPlan = (vpnCountries: VPNCountries, serversCount: VPNServers): ShortPlan => {
-    const plusServers = getPlusServers(serversCount[PLANS.VPNPLUS], vpnCountries[PLANS.VPNPLUS].count);
+    const plusServers = getPlusServers(serversCount[PLANS.VPN], vpnCountries[PLANS.VPN].count);
     return {
         plan: PLANS.VPN,
         label: '',
