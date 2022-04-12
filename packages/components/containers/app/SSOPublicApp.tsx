@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
+import { c } from 'ttag';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-import { useApi, useErrorHandler } from '../../hooks';
+import { useApi } from '../../hooks';
 import LoaderPage from './LoaderPage';
 import ModalsChildren from '../modals/Children';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
 import { ProtonLoginCallback } from './interface';
+import { wrapUnloadError } from './errorRefresh';
 
 interface Props {
     onLogin: ProtonLoginCallback;
@@ -19,7 +21,6 @@ const SSOPublicApp = ({ onLogin, onInactiveSession }: Props) => {
     const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const errorHandler = useErrorHandler();
 
     useEffect(() => {
         const run = async () => {
@@ -38,10 +39,9 @@ const SSOPublicApp = ({ onLogin, onInactiveSession }: Props) => {
                 throw e;
             }
         };
-        run().catch((e) => {
-            errorHandler(e);
+        wrapUnloadError(run()).catch((error) => {
             setError({
-                message: getApiErrorMessage(e),
+                message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
             });
         });
     }, []);

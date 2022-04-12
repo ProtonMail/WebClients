@@ -1,15 +1,17 @@
+import { c } from 'ttag';
 import { useEffect, useState } from 'react';
 import * as React from 'react';
 import { loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadLocale, loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { LoaderPage, useApi, ProtonLoginCallback, StandardLoadErrorPage, useErrorHandler } from '@proton/components';
+import { LoaderPage, useApi, ProtonLoginCallback, StandardLoadErrorPage } from '@proton/components';
 import {
     getActiveSessions,
     GetActiveSessionsResult,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -29,7 +31,6 @@ const AccountPublicApp = ({ location, locales = {}, children, onActiveSessions, 
     const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const errorHandler = useErrorHandler();
 
     useEffect(() => {
         const runGetSessions = async () => {
@@ -71,10 +72,9 @@ const AccountPublicApp = ({ location, locales = {}, children, onActiveSessions, 
             return runResumeSession(localID);
         };
 
-        run().catch((e) => {
-            errorHandler(e);
+        wrapUnloadError(run()).catch((error) => {
             setError({
-                message: getApiErrorMessage(e),
+                message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
             });
         });
     }, []);
