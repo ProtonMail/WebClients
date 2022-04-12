@@ -8,8 +8,7 @@ import useLoading from './useLoading';
 
 const DEFAULT_RESULT: VPNCountries = {
     free_vpn: { count: 4 },
-    [PLANS.VPNBASIC]: { count: 14 },
-    [PLANS.VPNPLUS]: { count: 15 },
+    [PLANS.VPN]: { count: 15 },
 };
 
 const useVPNCountriesCount = (): [VPNCountries, boolean] => {
@@ -23,8 +22,7 @@ const useVPNCountriesCount = (): [VPNCountries, boolean] => {
             const result = (
                 [
                     [0, 'free_vpn'],
-                    [1, PLANS.VPNBASIC],
-                    [2, PLANS.VPNPLUS],
+                    [2, PLANS.VPN],
                 ] as const
             ).reduce(
                 (acc, [idx, planName]) => {
@@ -37,7 +35,7 @@ const useVPNCountriesCount = (): [VPNCountries, boolean] => {
                 { ...DEFAULT_RESULT }
             );
             // This is specific for VPN Basic plan
-            result[PLANS.VPNBASIC] = { count: Math.floor(result[PLANS.VPNBASIC].count / 10) * 10 };
+            result[PLANS.VPN] = { count: Math.floor(result[PLANS.VPN].count / 10) * 10 };
             setResult(result);
         };
 

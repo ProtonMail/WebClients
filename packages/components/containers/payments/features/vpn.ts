@@ -215,7 +215,7 @@ export const getVPNDevices = (n: number): PlanCardFeatureDefinition => {
 
 export const getVPNFeatures = (vpnCountries: VPNCountries, serversCount: VPNServers): PlanCardFeature[] => {
     const freeServers = getFreeServers(serversCount.free_vpn, vpnCountries.free_vpn.count);
-    const plusServers = getPlusServers(serversCount[PLANS.VPNPLUS], vpnCountries[PLANS.VPNPLUS].count);
+    const plusServers = getPlusServers(serversCount[PLANS.VPN], vpnCountries[PLANS.VPN].count);
     return [
         {
             name: 'vpn',
