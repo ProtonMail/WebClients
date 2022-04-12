@@ -16,18 +16,10 @@ function useSearchResultsProvider() {
         setIsSearching(true);
     };
 
-    const gotResults = (results: ESLink[], isFinished: boolean) => {
-        setResults(results);
-        if (isFinished) {
-            setIsSearching(false);
-        }
-    };
-
     const runSearch = async (query: string) => {
         searchStarted(query);
         await encryptedSearch((results: ESLink[]) => {
-            const status = getESDBStatus();
-            gotResults(results, !status.isSearchPartial);
+            setResults(results);
         }).finally(() => {
             setIsSearching(false);
         });
