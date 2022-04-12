@@ -24,7 +24,7 @@ const ExtraDecryptedSubject = ({ message }: Props) => {
                         alt={c('Info').t`Subject is end-to-end encrypted`}
                     />
                 </Tooltip>
-                <div className="mr0-5 mt0-1 flex-item-fluid pb0-25">
+                <div className="mr0-5 mt0-2 flex-item-fluid pb0-25">
                     {c('Info').t`Subject:`} {message.decryption?.decryptedSubject}
                 </div>
             </div>
