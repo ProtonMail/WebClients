@@ -51,6 +51,7 @@ export * from './select';
 export * from './selectTwo';
 export * from './sidebar';
 export * from './shortcuts';
+export * from './slider';
 export * from './spotlight';
 export * from './stepDot';
 export * from './stepDots';

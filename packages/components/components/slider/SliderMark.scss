@@ -1,0 +1,13 @@
+.slider-mark {
+	width: 1px;
+	height: 12px;
+	background: black;
+	position: absolute;
+	inset-block-start: 100%;
+}
+
+.slider-mark-label {
+	inset-block-start: 100%;
+	position: absolute;
+	transform: translateX(calc(-50% + 0.5px));
+}
