@@ -10,6 +10,7 @@ import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../contai
 import getEventInformation from './getEventInformation';
 
 interface PartDayEventViewProps extends ComponentPropsWithoutRef<'div'> {
+    isTiny?: boolean;
     isSelected?: boolean;
     isUnanswered?: boolean;
     isCancelled?: boolean;
@@ -19,7 +20,7 @@ interface PartDayEventViewProps extends ComponentPropsWithoutRef<'div'> {
     children?: ReactNode;
 }
 export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps>(function PartDayEventViewComponent(
-    { isSelected, isUnanswered, isCancelled, isPast, isLoaded, className, children, ...rest }: PartDayEventViewProps,
+    { isTiny, isSelected, isUnanswered, isCancelled, isPast, isLoaded, className, children, ...rest }: PartDayEventViewProps,
     ref: Ref<HTMLDivElement>
 ) {
     return (
@@ -33,6 +34,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
                 isSelected && 'isSelected',
                 isUnanswered && 'isUnanswered',
                 isCancelled && 'isCancelled',
+                isTiny && 'calendar-eventcell--tiny',
                 className,
             ])}
             ref={ref}
@@ -44,6 +46,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
 });
 
 interface Props {
+    isTiny?: boolean;
     style: CSSProperties;
     formatTime: (date: Date) => string;
     event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
@@ -54,6 +57,7 @@ interface Props {
     isEventPartLessThanAnHour: boolean;
 }
 const PartDayEvent = ({
+    isTiny,
     style,
     formatTime,
     event,
@@ -126,6 +130,7 @@ const PartDayEvent = ({
 
     return (
         <PartDayEventView
+            isTiny={isTiny}
             style={eventStyle}
             isLoaded={!isEventReadLoading}
             isPast={!isEventReadLoading && isBeforeNow}

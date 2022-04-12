@@ -93,6 +93,17 @@
 			border-inline-start-color: var(--color-alt);
 		}
 	}
+
+	&--tiny {
+		padding-block: 0;
+
+		.calendar-eventcell-title {
+			font-weight: 500;
+			font-size: rem(11);
+			line-height: 1;
+			height: 100%;
+		}
+	}
 }
 
 @keyframes loadingEvent {
