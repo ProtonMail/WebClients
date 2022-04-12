@@ -14,6 +14,11 @@ export const withDecimalPrecision = (x: number, n: number) => {
     return Math.round(x * powerOfTen) / powerOfTen;
 };
 
+/**
+ * Makes sure a value can't leave the bounds of defined
+ * min & max values. If n is larger than max or smaller
+ * than min, returns min or max respectively.
+ */
 export const clamp = (value: number, min: number, max: number) => Math.min(Math.max(min, value), max);
 
 // Modulo with negative number support
