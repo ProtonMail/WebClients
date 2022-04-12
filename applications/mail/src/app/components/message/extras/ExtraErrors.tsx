@@ -62,7 +62,7 @@ const ExtraErrors = ({ message }: Props) => {
                                 name="exclamation-circle-filled"
                                 className="flex-item-noshrink mt0-4 ml0-2 color-danger"
                             />
-                            <span className="pl0-5 mt0-2 pr0-5 flex-item-fluid">
+                            <span className="pl0-5 mt0-25 pr0-5 flex-item-fluid">
                                 {getTranslations(errorType, alreadyTried)}
                             </span>
                         </div>
