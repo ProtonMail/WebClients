@@ -69,9 +69,18 @@ export const mergeMessages = (
     } as MessageState;
 };
 
+const getIsSelfMessage = (message: Message) => {
+    const { Sender, ToList = [], CCList = [], BCCList = [] } = message;
+
+    const isSelfToList = ToList.find((recipient) => recipient.Address === Sender.Address);
+    const isSelfCCList = CCList.find((recipient) => recipient.Address === Sender.Address);
+    const isSelfBCCList = BCCList.find((recipient) => recipient.Address === Sender.Address);
+    return isSelfToList || isSelfCCList || isSelfBCCList;
+};
+
 export const getMessagesAuthorizedToMove = (messages: Message[], destinationFolderID: string) => {
-    return messages.filter((messsage) => {
-        const { LabelIDs } = messsage;
+    return messages.filter((message) => {
+        const { LabelIDs } = message;
 
         if (
             LabelIDs.includes(DRAFTS) ||
@@ -79,7 +88,15 @@ export const getMessagesAuthorizedToMove = (messages: Message[], destinationFold
             LabelIDs.includes(SENT) ||
             LabelIDs.includes(ALL_SENT)
         ) {
-            return !([SPAM, INBOX] as string[]).includes(destinationFolderID);
+            // If the user sent the message to himself, he can move it to inbox
+            const isSelfMessage = getIsSelfMessage(message);
+
+            const excludedDestinations = [SPAM];
+            if (!isSelfMessage) {
+                excludedDestinations.push(INBOX);
+            }
+
+            return !(excludedDestinations as string[]).includes(destinationFolderID);
         }
 
         return true;
