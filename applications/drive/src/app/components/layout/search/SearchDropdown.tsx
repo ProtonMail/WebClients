@@ -33,7 +33,7 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                     <div className="flex">
                         <div className="flex">
                             <Loader className="inline-flex" />
-                            <span className="inline-flex ml1 text-bold">{c('Label').t`Enabling Drive Search`}</span>
+                            <span className="inline-flex ml1 text-bold">{c('Label').t`Enabling drive search`}</span>
                         </div>
                         <p className="mb0">
                             {c('Info')
