@@ -25,8 +25,6 @@ const OptionLabel = ({ title, info }: { title: string; info: string }) => {
     );
 };
 
-const BrElement = <br />;
-
 const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, defaultResolveMethod, volumeCount, open }: Props) => {
     const [radioGroupValue, setRadioGroupValue] = useState<number>(
         defaultResolveMethod || LockedVolumeResolveMethod.ReactivateKeys
@@ -38,9 +36,7 @@ const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, defaultResolveM
 
     const questionText = <strong>{c('Info').t`What would you like to do?`}</strong>;
     const infoText = c('Info')
-        .jt`One of your encrypted drives is locked. This is most likely due to a recent password reset.${BrElement}
-        ${BrElement}
-        ${questionText}`;
+        .jt`One of your encrypted drives is locked. This is most likely due to a recent password reset.`;
 
     const deleteDriveLabelText = c('Info').ngettext(msgid`Delete drive`, `Delete drives`, volumeCount);
 
@@ -88,7 +84,8 @@ const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, defaultResolveM
         >
             <ModalTwoHeader title={c('Action').t`Drive Locked`} />
             <ModalTwoContent onReset={noop} onSubmit={() => onSubmit(radioGroupValue)}>
-                <p className="mt0">{infoText}</p>
+                <p className="mt0 mb0-5">{infoText}</p>
+                <p className="mt0-5">{questionText}</p>
                 <RadioGroup
                     options={radioOptions}
                     value={radioGroupValue}
