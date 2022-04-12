@@ -54,7 +54,6 @@ const DriveToolbar = ({ shareId, selectedItems, showOptionsForNoSelection = true
         return (
             <>
                 <PreviewButton shareId={shareId} selectedItems={selectedItems} />
-                <ToolbarSeparator />
                 <DownloadButton shareId={shareId} selectedItems={selectedItems} />
                 {isNarrow ? (
                     <ActionsDropdown shareId={shareId} selectedItems={selectedItems} />
