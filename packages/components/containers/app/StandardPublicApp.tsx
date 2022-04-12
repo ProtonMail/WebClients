@@ -1,4 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
+import { c } from 'ttag';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -9,6 +11,7 @@ import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import ModalsChildren from '../modals/Children';
 import LoaderPage from './LoaderPage';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
+import { wrapUnloadError } from './errorRefresh';
 
 interface Props {
     locales?: TtagLocaleMap;
@@ -18,7 +21,7 @@ interface Props {
 
 const StandardPublicApp = ({ locales = {}, openpgpConfig, children }: Props) => {
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState<{ message?: string } | null>(null);
     const history = useHistory();
 
     useEffect(() => {
@@ -36,13 +39,17 @@ const StandardPublicApp = ({ locales = {}, openpgpConfig, children }: Props) => 
                 loadDateLocale(localeCode, browserLocale),
             ]);
         };
-        run()
+        wrapUnloadError(run())
             .then(() => setLoading(false))
-            .catch(() => setError(true));
+            .catch((error) => {
+                setError({
+                    message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                });
+            });
     }, []);
 
     if (error) {
-        return <StandardLoadErrorPage />;
+        return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
     if (loading) {

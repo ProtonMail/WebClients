@@ -118,10 +118,10 @@ const SetupInternalAccountContainer = () => {
             .then(() => {
                 setLoading(false);
             })
-            .catch((e) => {
-                errorHandler(e);
+            .catch((error) => {
+                errorHandler(error);
                 setError({
-                    message: getApiErrorMessage(e),
+                    message: getApiErrorMessage(error) || error?.message,
                 });
             });
     }, []);
