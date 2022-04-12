@@ -7,7 +7,7 @@ export const MB = 1024 * 1024;
 export const FOLDER_PAGE_SIZE = 150;
 export const BATCH_REQUEST_SIZE = 50;
 export const FILE_CHUNK_SIZE = 4 * MB;
-export const MEMORY_DOWNLOAD_LIMIT = (isMobile() ? 100 : 1000) * MB;
+export const MEMORY_DOWNLOAD_LIMIT = (isMobile() ? 100 : 500) * MB;
 export const HARDWARE_CONCURRENCY = (typeof window !== 'undefined' && window.navigator?.hardwareConcurrency) || 1;
 // openpgp.js creates hardwareConcurrency of web workers to do decryption.
 // Using less threads for download means we don't use available potential.
