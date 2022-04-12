@@ -11,7 +11,7 @@ import SizeCell from '../FileBrowser/ListView/Cells/SizeCell';
 
 interface Props {
     name: string;
-    size: number | null;
+    size?: number;
     MIMEType: string;
     expirationTime: number | null;
     downloadThumbnail: Promise<string | null>;
