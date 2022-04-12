@@ -1,0 +1,34 @@
+import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/addon-docs'
+
+# Slider
+
+
+
+Optional disclaimer / description / explanation / extra info of usage.
+This should be of technical nature not of design philosophy nature.
+
+<Canvas withSource="open">
+    <Story id="components-slider--basic" />
+</Canvas>
+
+## Steps
+
+The Slider is configurable to only allow values that round to a nearest "step" via the `step` property.
+If set, the thumb of the Slider won't move until the pointer that is dragging it is closer to a different
+step-point than the one where it currently is.
+
+<Canvas>
+  <Story id="components-slider--step" />
+</Canvas>
+
+## Min & Max
+
+The `min` & `max` properties allow specifying in which numeric interval the Slider should operate.
+
+<Canvas>
+  <Story id="components-slider--min-max" />
+</Canvas>
+
+## Props
+
+<ArgsTable story={PRIMARY_STORY} />
