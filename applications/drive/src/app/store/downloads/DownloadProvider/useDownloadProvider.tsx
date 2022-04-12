@@ -1,9 +1,10 @@
 import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { useNotifications, usePreventLeave } from '@proton/components';
+import { useNotifications, usePreventLeave, useModals } from '@proton/components';
 import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import DownloadIsTooBigModal from '../../../components/DownloadIsTooBigModal';
 import { isTransferCancelError, isTransferProgress } from '../../../utils/transfer';
 import { bufferToStream } from '../../../utils/stream';
 import { logError, reportError } from '../../utils';
@@ -20,6 +21,7 @@ import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 export default function useDownloadProvider(DownloadSignatureIssueModal: DownloadSignatureIssueModal) {
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
+    const { createModal } = useModals();
 
     const queue = useDownloadQueue();
     const control = useDownloadControl(queue.downloads, queue.updateWithCallback, queue.remove, queue.clear);
@@ -97,6 +99,10 @@ export default function useDownloadProvider(DownloadSignatureIssueModal: Downloa
             onInit: (size: number) => {
                 // Keep the previous state for cases when the download is paused.
                 queue.updateWithData(nextDownload.id, ({ state }) => state, { size });
+
+                if (FileSaver.isFileTooBig(size)) {
+                    createModal(<DownloadIsTooBigModal onCancel={() => control.cancelDownloads(nextDownload.id)} />);
+                }
             },
             onProgress: (increment: number) => {
                 control.updateProgress(nextDownload.id, increment);
