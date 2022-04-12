@@ -60,13 +60,15 @@ const DayEvents = ({
             const { start, end } = eventsInDay[i];
 
             const top = start / totalMinutes;
-            const height = (end - start) / totalMinutes;
+            const duration = end - start;
+            const height = duration / totalMinutes;
 
             const width = 1 / columns;
             const left = column * width;
 
             return {
                 height,
+                isTiny: duration < 30,
                 style: {
                     top: toPercent(top),
                     left: toPercent(left),
@@ -86,7 +88,7 @@ const DayEvents = ({
         const event = events[idx];
         const { start, end } = event;
 
-        const { style, height: eventHeight } = eventsLaidOut[i];
+        const { style, height: eventHeight, isTiny } = eventsLaidOut[i];
 
         const isTemporary = event.id === 'tmp';
         const isSelected = targetEventData ? event.id === targetEventData.id : false;
@@ -116,6 +118,7 @@ const DayEvents = ({
                 eventRef={eventRef}
                 isSelected={isSelected}
                 isBeforeNow={isBeforeNow}
+                isTiny={isTiny}
                 tzid={tzid}
             />
         );
