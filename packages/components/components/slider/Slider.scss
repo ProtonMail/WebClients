@@ -1,47 +1,60 @@
+@import '~@proton/styles/scss/config';
+
+$height-track: 16 !default;
+$size-track-thumb: 36 !default;
+
 .slider {
-	position: relative;
-	height: 16px;
-}
+	block-size: rem($height-track);
 
-.slider-rail {
-	position: absolute;
-	background: var(--background-strong);
-	width: 100%;
-	height: 100%;
-}
-
-.slider-track {
-	position: absolute;
-	background: var(--signal-success);
-	height: 100%;
-}
-
-.slider-thumb {
-	position: absolute;
-	height: 36px;
-	width: 36px;
-	border: 1px solid black;
-	background: white;
-	border-radius: var(--border-radius-md);
-	transform: translateX(-50%) translateY(-10px);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	// transition: .2s;
-
-	&-tooltip {
-		opacity: 0;
-		transition: 0.2s;
-		transform: scale(0);
+	&-rail,
+	&-track,
+	&-thumb {
+		position: absolute;
 	}
 
-	&:active,
-	&:focus,
-	&:hover,
-	&-dragging {
-		.slider-thumb-tooltip {
-			opacity: 1;
-			transform: scale(1);
+	&-rail {
+		background: var(--background-strong);
+		inline-size: 100%;
+		block-size: 100%;
+	}
+
+	&-track {
+		background: var(--signal-success);
+		block-size: 100%;
+	}
+
+	&-thumb {
+		block-size: rem($size-track-thumb);
+		inline-size: rem($size-track-thumb);
+		border: 1px solid black; // LATER
+		background: white; // LATER
+		border-radius: var(--border-radius-md);
+		transform: translateX(-50%) translateY(-10px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		// transition: .2s;
+
+		&-tooltip {
+			opacity: 0;
+			transition: 0.2s;
+			transform: scale(0);
+			word-break: initial;
+		}
+
+		&:active,
+		&:focus,
+		&:hover,
+		&-dragging {
+			.slider-thumb-tooltip {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+
+		&-input {
+			width: 100%;
+			height: 100%;
 		}
 	}
 }
