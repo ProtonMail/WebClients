@@ -182,6 +182,9 @@
       "Download": [
         "下載"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         "雲端硬碟已上鎖"
       ],
@@ -208,6 +211,9 @@
       ],
       "enable desktop notifications": [
         "啟用桌面通知"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         "展開資料夾"
@@ -2415,6 +2421,9 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送 ${ destinationText }，請在下方輸入。"
       ],
@@ -2658,6 +2667,9 @@
       "Queued": [
         "待處理"
       ],
+      "recommended browser": [
+        ""
+      ],
       "Recovery process might take some time.": [
         "還原過程或需時。"
       ],
@@ -2883,6 +2895,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的帳戶至少有一張逾期帳單。您的存取將受限制。${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 Proton 帳戶。"
       ],
@@ -3082,8 +3097,8 @@
       "Enable Beta Access": [
         "啟用測試版體驗"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "加密電子郵件"
@@ -3993,6 +4008,9 @@
       "Beta Access": [
         "測試版體驗"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "取消所有進行中的傳輸"
       ],
@@ -4113,8 +4131,8 @@
       "Empty trash": [
         "清空垃圾桶"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         "輸入密碼以下載"
@@ -4145,6 +4163,9 @@
       ],
       "Folders details": [
         "資料夾詳細資訊"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        ""
       ],
       "Groups": [
         "群組"
@@ -4255,9 +4276,6 @@
         "還原您的檔案"
       ],
       "Search results": [
-        ""
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
         ""
       ],
       "Searching…": [

@@ -184,6 +184,9 @@
       "Download": [
         "Herunterladen"
       ],
+      "Download anyway": [
+        "Dennoch herunterladen"
+      ],
       "Drive Locked": [
         "Laufwerk gesperrt"
       ],
@@ -210,6 +213,9 @@
       ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
+      ],
+      "Enable drive search": [
+        "Suche in Drive aktivieren"
       ],
       "Expand folder": [
         "Ordner aufklappen"
@@ -2456,6 +2462,9 @@
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
       ],
+      "Enable drive search": [
+        "Suche in Drive aktivieren"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Bitte den an ${ destinationText } gesendeten Verifizierungscode eingeben."
       ],
@@ -2641,7 +2650,7 @@
         "Eines Ihrer verschlüsselten Laufwerke ist gesperrt. Dies ist höchstwahrscheinlich auf ein kürzlich zurückgesetztes Passwort zurückzuführen.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Es sind höchstens ${ MAX_CUSTOM_PASSWORD_LENGTH } Zeichen erlaubt"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ändere diese Einstellungen nur, wenn du PGP mit Nicht-${ BRAND_NAME }-Empfängern verwendest."
@@ -2699,6 +2708,9 @@
       ],
       "Queued": [
         "in Warteschlange"
+      ],
+      "recommended browser": [
+        "empfohlenen Browsers"
       ],
       "Recovery process might take some time.": [
         "Der Wiederherstellungsprozess kann einige Zeit dauern."
@@ -2926,6 +2938,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ihr Konto hat mindestens eine überfällige Rechnung. Ihr Zugang wird in Kürze eingeschränkt werden. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        "Dein aktueller Browser unterstützt das Herunterladen großer Dateien nicht, da keine Service Worker zur Verfügung stehen. Beim Herunterladen großer Dateien kann es dazu kommen, dass der Browser einfriert oder nicht mehr reagiert. Bitte verwende die neuesten Versionen eines ${ recommendedBrowser } und versuche es erneut."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ihre Daten von ${ importedEmailAddressStrong } können nun in Ihr Proton-Konto übertragen werden."
       ],
@@ -3126,8 +3141,8 @@
       "Enable Beta Access": [
         "Beta-Zugang aktivieren"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        "Suche in Drive wird aktiviert"
       ],
       "Encrypt emails": [
         "Nachrichten verschlüsseln"
@@ -4065,6 +4080,9 @@
       "Beta Access": [
         "Beta-Zugang"
       ],
+      "Browser might run out of memory": [
+        "Dem Browser geht möglicherweise der Speicher aus"
+      ],
       "Cancel all active transfers": [
         "Alle aktiven Übertragungen abbrechen"
       ],
@@ -4187,8 +4205,8 @@
       "Empty trash": [
         "Papierkorb leeren"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        "Suche in Drive aktivieren"
       ],
       "Enter password to download": [
         "Passwort zum Herunterladen eingeben"
@@ -4219,6 +4237,10 @@
       ],
       "Folders details": [
         "Ordnerdetails"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "${ searchView.numberOfResults } Ergebnis gefunden",
+        "${ searchView.numberOfResults } Ergebnisse gefunden"
       ],
       "Groups": [
         "Gruppen"
@@ -4330,9 +4352,6 @@
       ],
       "Search results": [
         "Suchergebnisse"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Suchergebnisse: ${ searchView.numberOfResults } Vorkommen"
       ],
       "Searching…": [
         "Suche läuft…"

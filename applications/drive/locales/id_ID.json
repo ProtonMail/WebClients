@@ -45,7 +45,7 @@
         "Gunakan"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Lampirkan tangkapan layar"
       ],
       "Back": [
         "Kembali"
@@ -182,6 +182,9 @@
       "Download": [
         "Unduh"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         "Drive Terkunci"
       ],
@@ -208,6 +211,9 @@
       ],
       "enable desktop notifications": [
         "aktifkan notifikasi desktop"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         "Lebarkan folder"
@@ -801,10 +807,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Tutup"
       ],
       "Open": [
-        ""
+        "Buka"
       ]
     },
     "Confirm modal title": {
@@ -2415,6 +2421,9 @@
       "Duplicate key updated": [
         "Kunci ganda diperbarui"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
       ],
@@ -2599,7 +2608,7 @@
         "Terdapat salah satu drive milik Anda yang terkunci. Hal ini kemungkinan disebabkan oleh pengaturan ulang kata sandi yang berlangsung baru-baru ini. ${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Kata sandi tidak boleh melebihi ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Kami menyarankan Anda untuk mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
@@ -2657,6 +2666,9 @@
       ],
       "Queued": [
         "Ditempatkan dalam antrian"
+      ],
+      "recommended browser": [
+        ""
       ],
       "Recovery process might take some time.": [
         "Proses pemulihan mungkin membutuhkan waktu."
@@ -2883,6 +2895,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Data-data Anda telah siap untuk diimpor dari ${ importedEmailAddressStrong } ke akun Proton Anda."
       ],
@@ -3011,7 +3026,7 @@
         "Terapkan ke seluruh item yang tidak terverifikasi"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Lampirkan tangkapan layar"
       ],
       "Audio file": [
         "Berkas audio"
@@ -3053,7 +3068,7 @@
         "Waktu Dibuat"
       ],
       "Delete": [
-        ""
+        "Hapus"
       ],
       "Delete drive?": [
         "Hapus drive?"
@@ -3082,8 +3097,8 @@
       "Enable Beta Access": [
         "Aktifkan Akses Beta"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "Enkripsi surel"
@@ -3709,7 +3724,7 @@
         "Cari berdasarkan nama atau email"
       ],
       "Select": [
-        ""
+        "Pilih"
       ],
       "Start typing an email address": [
         "Mulai ketik alamat surel"
@@ -3993,6 +4008,9 @@
       "Beta Access": [
         "Akses Beta"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "Batalkan semua transfer yang aktif"
       ],
@@ -4113,8 +4131,8 @@
       "Empty trash": [
         "Kosongkan sampah"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         "Masukkan kata sandi untuk mengunduh"
@@ -4145,6 +4163,9 @@
       ],
       "Folders details": [
         "Rincian folder"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        ""
       ],
       "Groups": [
         "Grup"
@@ -4256,9 +4277,6 @@
       ],
       "Search results": [
         "Hasil pencarian"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Hasil pencarian: ${ searchView.numberOfResults } ditemukan"
       ],
       "Searching…": [
         "Mencari…"

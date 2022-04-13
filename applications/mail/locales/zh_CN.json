@@ -297,7 +297,7 @@
         "启用"
       ],
       "enable desktop notifications": [
-        "启用桌面通知"
+        "开启推送通知"
       ],
       "Encryption": [
         "加密"
@@ -3638,6 +3638,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        "${ activateLink }或${ learnMoreLink }。"
+      ],
       "${ addressCount } email address": [
         "${ addressCount } 个邮箱地址"
       ],
@@ -3774,7 +3777,7 @@
         "正在进行激活"
       ],
       "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        ""
+        "${ addressToCreate } 邮箱地址限时免费领取。"
       ],
       "Add image URL": [
         "添加图片地址"
@@ -4140,6 +4143,9 @@
         "大批量的导入可能需要几天才能完成。"
       ],
       "Learn more": [
+        "了解详情"
+      ],
+      "learn more": [
         "了解详情"
       ],
       "Left to Right": [
@@ -5496,7 +5502,7 @@
     },
     "Link": {
       "Activate": [
-        "激活"
+        "立即领取"
       ],
       "Add folder": [
         "添加文件夹"

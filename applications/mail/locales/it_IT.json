@@ -3666,6 +3666,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        "${ activateLink } o ${ learnMoreLink }."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } indirizzo email",
         "${ addressCount } indirizzi email"
@@ -4212,6 +4215,9 @@
       ],
       "Learn more": [
         "Per saperne di più"
+      ],
+      "learn more": [
+        "per saperne di più"
       ],
       "Left to Right": [
         "Da sinistra a destra"

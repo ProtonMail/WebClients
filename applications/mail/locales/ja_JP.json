@@ -84,7 +84,7 @@
         "アーカイブ"
       ],
       "Attach screenshot(s)": [
-        ""
+        "スクリーンショットの添付"
       ],
       "Attachment": [
         "添付ファイル"
@@ -390,7 +390,7 @@
         "サポートに質問"
       ],
       "Images will be loaded without a proxy": [
-        ""
+        "画像はプロキシーを経由しないで読み込まれました"
       ],
       "import": [
         "インポート"
@@ -570,7 +570,7 @@
         "いいえ"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        ""
+        "トラッカーは見つかりませんでしたが、いくつかの画像はトラッカー保護により読み込まれませんでした。"
       ],
       "No, I won't attend": [
         "いいえ、参加しません"
@@ -968,7 +968,7 @@
     },
     "action": {
       "Search messages": [
-        ""
+        "メッセージの検索"
       ]
     },
     "Actions message": {
@@ -1374,7 +1374,7 @@
         ""
       ],
       "${ participantName } had declined an invitation to this event.": [
-        ""
+        "${ participantName } はこのイベントの招待を拒否していました。"
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         ""
@@ -1392,7 +1392,7 @@
         ""
       ],
       "${ participantName } had previously declined your invitation.": [
-        ""
+        "${ participantName } は以前に招待を断っていました。"
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
         ""
@@ -1494,13 +1494,13 @@
         "イベントが更新されました。"
       ],
       "This invitation is out of date. The event has been canceled.": [
-        ""
+        "この招待は古くなっています。このイベントはキャンセルされました。"
       ],
       "This invitation is out of date. The event has been deleted.": [
-        ""
+        "この招待は古くなっています。このイベントは削除されました。"
       ],
       "This invitation is out of date. The event has been updated.": [
-        ""
+        "この招待は古くなっています。このイベントは更新されました。"
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         ""
@@ -2579,7 +2579,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "連絡先を復号化しています。この処理には数分かかる場合があります。処理が完了すると、すべての連絡先をエクスポートしてファイルとしてダウンロードできます。"
+        "連絡先を復号しています。この処理には数分かかる場合があります。処理が完了すると、すべての連絡先をエクスポートしてファイルとしてダウンロードできます。"
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先を削除しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
@@ -3152,7 +3152,7 @@
         "独自のタイムゾーン"
       ],
       "Edited event not supported": [
-        ""
+        "編集されたイベントはサポートされていません"
       ],
       "Encryption failed": [
         "暗号化に失敗しました"
@@ -3467,7 +3467,7 @@
         "モバイルアプリでサインインすることでアクションが完了します"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        ""
+        "モバイル端末で利用するには、この QR コードを使うか、サイトにアクセスします"
       ]
     },
     "Get started checklist item": {
@@ -3536,7 +3536,7 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        ""
+        "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         ""
@@ -3638,6 +3638,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        "${ activateLink } または ${ learnMoreLink }。"
+      ],
       "${ addressCount } email address": [
         "${ addressCount } 件のメールアドレス"
       ],
@@ -3774,7 +3777,7 @@
         "アクティベーションが進行中です"
       ],
       "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        ""
+        "${ addressToCreate } を期間限定でアカウントに無料で追加します。"
       ],
       "Add image URL": [
         "追加する画像のURL"
@@ -4142,6 +4145,9 @@
       "Learn more": [
         "より詳しく"
       ],
+      "learn more": [
+        "詳細"
+      ],
       "Left to Right": [
         "左から右"
       ],
@@ -4446,7 +4452,7 @@
         "表示用のテキスト"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "アプリケーションは、エクスポートする前に連絡先をローカルで復号化する必要があります。 プロセスの終了時に、VCFファイルが生成され、ダウンロードすることができます。"
+        "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "このページを離れると入力したデータの下書きは保存されません。"
@@ -4831,7 +4837,7 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        ""
+        "「鍵を信頼する」をクリックするとこの公開鍵をこの送信者に関連付け、このアドレスからのメールに対して暗号検証が自動的に行なわれます。"
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         ""
@@ -5080,7 +5086,7 @@
         "いずれか"
       ],
       "Attach screenshot(s)": [
-        ""
+        "スクリーンショットの添付"
       ],
       "Attachments": [
         "添付ファイル"
@@ -5143,7 +5149,7 @@
         "日時："
       ],
       "Delete": [
-        ""
+        "削除"
       ],
       "Display name": [
         "表示名"
@@ -5437,10 +5443,10 @@
     },
     "Label Recipient": {
       "From": [
-        ""
+        "差出人"
       ],
       "To": [
-        ""
+        "宛先"
       ]
     },
     "Label to change composer mode": {
@@ -5538,7 +5544,7 @@
         ""
       ],
       "Enable your address again to modify your answer.": [
-        ""
+        "再度アドレスを有効にして回答を変更します。"
       ],
       "Enable your address to answer this invitation.": [
         "あなたのアドレスで招待の回答できるようにします。"
@@ -6108,7 +6114,7 @@
         "名前、メール、グループを検索"
       ],
       "Select": [
-        ""
+        "選択"
       ],
       "Start date": [
         "開始日"
@@ -6240,7 +6246,7 @@
         "カレンダーの予定が更新されました"
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
-        ""
+        "主催者のアドレスに送信できません: ${ errorMessage }"
       ]
     },
     "Search - no results": {
