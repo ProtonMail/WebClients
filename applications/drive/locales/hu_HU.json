@@ -1777,12 +1777,6 @@
       "Enter 6 digits": [
         "6 számjegyet írjon be"
       ],
-      "Failed to download a file": [
-        ""
-      ],
-      "Failed to download a folder": [
-        ""
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
       ],
@@ -2477,6 +2471,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         ""
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "A fájl aláírása hiányzik. Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
       ],
@@ -2488,6 +2485,9 @@
       ],
       "Finalizing": [
         "Befejezés"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
       ],
       "Folder contents will merge into a single folder": [
         ""
@@ -4406,6 +4406,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "A fájlt vagy mappát nem sikerült letölteni"
+      ],
+      "The internet connection was interrupted": [
+        ""
       ],
       "The link does not exist": [
         "A hivatkozás nem létezik"

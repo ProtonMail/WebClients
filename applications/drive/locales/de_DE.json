@@ -1777,12 +1777,6 @@
       "Enter 6 digits": [
         "6 Ziffern eingeben"
       ],
-      "Failed to download a file": [
-        "Herunterladen der Datei fehlgeschlagen"
-      ],
-      "Failed to download a folder": [
-        "Herunterladen eines Ordners fehlgeschlagen"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Datei „${ item.name }” kann aufgrund des Fehlers „${ error }” nicht hochgeladen werden"
       ],
@@ -2477,6 +2471,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Sicherer Link konnte nicht geöffnet werden. Fehler: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Bei der Datei fehlt die Signatur. Wir konnten nicht verifizieren, dass ${ emailAddress } ${ fileName } hochgeladen hat."
       ],
@@ -2488,6 +2485,9 @@
       ],
       "Finalizing": [
         "Wird abgeschlossen"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
       ],
       "Folder contents will merge into a single folder": [
         "Die Inhalte der Ordner werden in einem einzigen Ordner zusammengeführt"
@@ -4406,6 +4406,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "Die Datei oder der Ordner konnte nicht heruntergeladen werden"
+      ],
+      "The internet connection was interrupted": [
+        ""
       ],
       "The link does not exist": [
         "Der Link existiert nicht"
