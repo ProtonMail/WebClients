@@ -52,9 +52,6 @@
       "Add PayPal": [
         "PayPal toevoegen"
       ],
-      "Add PayPal payment method": [
-        "Voeg PayPal als betalingsmethode toe"
-      ],
       "annual billing": [
         "jaarlijkse betaling"
       ],
@@ -62,7 +59,7 @@
         "Pas toe"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Schermafbeelding(en) toevoegen"
       ],
       "Back": [
         "Vorige"
@@ -113,7 +110,7 @@
         "E-mailadres kopiëren naar klembord"
       ],
       "Create": [
-        ""
+        "Aanmaken"
       ],
       "Create account": [
         "Account aanmaken"
@@ -179,7 +176,7 @@
         "schakel desktopmeldingen in"
       ],
       "Extend": [
-        ""
+        "Verlengen"
       ],
       "Get ${ vpnPlus }": [
         "Krijg ${ vpnPlus }"
@@ -218,7 +215,7 @@
         "Houd mijn ${ BRAND_NAME } ${ currentPlanName } account"
       ],
       "Load more": [
-        ""
+        "Laad meer"
       ],
       "Loading verification": [
         "Laden van verificatie"
@@ -308,10 +305,10 @@
         "Opnieuw proberen"
       ],
       "Revoke": [
-        ""
+        "Intrekken"
       ],
       "Revoke ${ name }": [
-        ""
+        "${ name } intrekken"
       ],
       "Save": [
         "Opslaan"
@@ -485,7 +482,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Dit zal alle routers en clients met dit certificaat loskoppelen."
       ]
     },
     "Apps dropdown": {
@@ -766,7 +763,7 @@
         "Sluit"
       ],
       "Open": [
-        ""
+        "Openen"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1791,7 +1788,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Certificaat ${ name } niet gevonden of reeds ingetrokken"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -2043,7 +2040,7 @@
         "Iedereen moet kunnen beschikken over een vrij en ongecensureerd internet."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Een naam om u te helpen identificeren waar u het gebruikt zodat u het later eenvoudig kan intrekken of verlengen."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Toegang tot geblokkeerde inhoud, zoals sociale media, nieuws, Wikipedia, YouTube, en vele anderen, ongeacht waar u bent."
@@ -2178,7 +2175,7 @@
         "Verlopen"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "vervalt ${ expirationDate }"
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Voor families en kleine teams; omvat zowel Mail en VPN."
@@ -2340,7 +2337,7 @@
         "Zodra u op \"Downgrade\" klikt, kan het enkele minuten duren om uw account te downgraden naar een gratis abonnement. "
       ],
       "Or select a particular server:": [
-        ""
+        "Of selecteer een specifieke server:"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Anders zal toegang tot uw account beperkt worden en zal uw account na verloop van tijd worden uitgeschakeld."
@@ -2406,7 +2403,7 @@
         "Het resetten van uw wachtwoord zal uw encryptiesleutels resetten voor alle Proton gerelateerde diensten (Mail en VPN). U kunt uw bestaande berichten niet lezen. Als u uw ${ MAIL_APP_NAME } inloggegevens kent, reset dan NIET. U kunt zich aanmelden met hen ${ hereLink }."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Certificaat ${ name } intrekken"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Stuur uw internetverkeer met één klik door via het Tor-netwerk."
@@ -2475,7 +2472,7 @@
         "Deze configuratiebestanden laten u kiezen met welke ${ VPN_APP_NAME }-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        ""
+        "Deze configuraties worden verstrekt om te werken met WireGuard-routers en officiële clients."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
@@ -2553,7 +2550,7 @@
         "Upgrade nu"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Gebruik de beste servers volgens de huidige belasting en positie: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gebruik de volgende inloggegevens bij het verbinden met ${ VPN_APP_NAME } servers zonder toepassing. Voorbeelden gebruiken gevallen zoals: Tunnelblick on macOS, OpenVPN op GNU/Linux."
@@ -2745,8 +2742,8 @@
       "Billed": [
         "Gefactureerd"
       ],
-      "Cancelled": [
-        "Geannuleerd"
+      "Gifted": [
+        "Geschonken"
       ],
       "Paid": [
         "Betaald"
@@ -2838,7 +2835,7 @@
         "Jaarlijkse korting (${ discountPercentage }%)"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Schermafbeelding(en) toevoegen"
       ],
       "Back to:": [
         "Terug naar:"
@@ -2847,7 +2844,7 @@
         "Alleen malware blokkeren"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Blokkeer malware, advertenties en trackers"
       ],
       "bonus storage": [
         "bonus opslag"
@@ -2877,13 +2874,13 @@
         "Categorie"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Kies een naam voor het gegenereerde certifcaatbestand"
       ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Configureer om te verbinden met ${ serverName }"
       ],
       "Confirm login password": [
         "Bevestig inlogwachtwoord"
@@ -2934,7 +2931,7 @@
         "Verwijder"
       ],
       "Device/certificate name": [
-        ""
+        "Apparaat/certificaat naam"
       ],
       "Digits": [
         "Cijfers"
@@ -2982,7 +2979,7 @@
         "Sleutel"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Niveau voor NetShield blokkeerfiltering"
       ],
       "Login password": [
         "Inlogwachtwoord"
@@ -3009,7 +3006,7 @@
         "Nieuw wachtwoord"
       ],
       "No filter": [
-        ""
+        "Geen filter"
       ],
       "Non-standard ports": [
         "Niet-standaard poorten"
@@ -3439,7 +3436,7 @@
         "Android"
       ],
       "Captcha": [
-        "Captcha"
+        "CAPTCHA"
       ],
       "Country configs": [
         "Land configuraties"
@@ -3925,16 +3922,16 @@
     },
     "Success notification": {
       "Certificate ${ name } revoked": [
-        ""
+        "Certifcaat ${ name } ingetrokken"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Certificaat verlengd tot ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Configuratie \"${ name }\" aangemaakt, merk op dat de private sleutel niet bewaard wordt en niet opnieuw getoond zal worden. Kopieer of download deze configuratie."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Configuratiebestand aanmaken voor ${ serverName }"
       ]
     },
     "Suffix": {
@@ -3990,13 +3987,13 @@
         "${ VPN_APP_NAME }-abonnement vergelijken"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Geef een naam aan de te genereren configuratie"
       ],
       "1. Select platform": [
         "Selecteer platform"
       ],
       "2. Select platform": [
-        ""
+        "2. Selecteer platform"
       ],
       "2. Select protocol": [
         "2. Selecteer protocol"
@@ -4008,10 +4005,10 @@
         "3. Selecteer configuratiebestand en download"
       ],
       "3. Select VPN options": [
-        ""
+        "3. Selecteer opties VPN"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Selecteer een server om mee te verbinden"
       ],
       "Account": [
         "Account"
@@ -4290,7 +4287,7 @@
         "Wachtwoord resetten?"
       ],
       "Revoke certificate": [
-        ""
+        "Certificaat intrekken"
       ],
       "Secure Core Servers": [
         "Secure Core Servers"
@@ -4359,7 +4356,7 @@
         "Wat is er nieuw"
       ],
       "WireGuard configuration": [
-        ""
+        "WireGuard configuratie"
       ],
       "You already have a Proton account": [
         "U heeft al een Proton account"

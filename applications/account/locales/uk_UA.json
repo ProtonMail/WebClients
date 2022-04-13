@@ -88,12 +88,6 @@
       "Add PayPal": [
         "Додати PayPal"
       ],
-      "Add PayPal payment method": [
-        "Додати спосіб оплати PayPal"
-      ],
-      "Add screenshot(s)": [
-        "Додати знімки екрана"
-      ],
       "Add sieve filter": [
         "Додати фільтр Sieve"
       ],
@@ -117,6 +111,9 @@
       ],
       "Apply": [
         "Застосувати"
+      ],
+      "Attach screenshot(s)": [
+        "Додати знімки екрана"
       ],
       "Authenticate": [
         "Автентифікація"
@@ -157,9 +154,6 @@
       "Choose a file or drag it here": [
         "Виберіть файл або перетягніть його сюди"
       ],
-      "Clear": [
-        "Очистити"
-      ],
       "Clear all formatting": [
         "Очистити форматування"
       ],
@@ -199,6 +193,9 @@
       "Continue import": [
         "Продовжити імпорт"
       ],
+      "Continue to ${ name }": [
+        "Продовжити з ${ name }"
+      ],
       "Continue with": [
         "Продовжити з"
       ],
@@ -215,10 +212,10 @@
         "Копіювати посилання"
       ],
       "Create": [
-        ""
+        "Створити"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
-        ""
+        "Натомість створити безпечну адресу ${ MAIL_APP_NAME }"
       ],
       "Create address": [
         "Створити адресу"
@@ -256,8 +253,14 @@
       "Delete link": [
         "Видалити посилання"
       ],
+      "Delete permanently": [
+        "Видалити остаточно"
+      ],
       "Delete record": [
         "Видалити запис"
+      ],
+      "Delete without exporting": [
+        "Видалити без експортування"
       ],
       "Delete your account": [
         "Видалити обліковий запис"
@@ -331,6 +334,9 @@
       "Enable multi-user support": [
         "Увімкнути підтримку декількох користувачів"
       ],
+      "Encrypt and export": [
+        "Зашифрувати й експортувати"
+      ],
       "Export": [
         "Експорт"
       ],
@@ -340,8 +346,11 @@
       "Export key": [
         "Експортувати ключ"
       ],
+      "Export key before deleting": [
+        "Експортувати ключ перед видаленням"
+      ],
       "Extend": [
-        ""
+        "Продовжити"
       ],
       "Font": [
         "Шрифт"
@@ -375,9 +384,6 @@
       ],
       "Hide folders": [
         "Приховати теки"
-      ],
-      "Hide info": [
-        "Приховати інформацію"
       ],
       "Hide labels": [
         "Приховати мітки"
@@ -428,7 +434,7 @@
         "позначати листи міткою"
       ],
       "Load more": [
-        ""
+        "Завантажити ще"
       ],
       "Loading verification": [
         "Завантаження підтвердження"
@@ -602,10 +608,10 @@
         "Огляд"
       ],
       "Revoke": [
-        ""
+        "Відкликати"
       ],
       "Revoke ${ name }": [
-        ""
+        "Відкликати ${ name }"
       ],
       "Revoke all other sessions": [
         "Відкликати всі інші сеанси"
@@ -663,9 +669,6 @@
       ],
       "Show folders": [
         "Показати теки"
-      ],
-      "Show info": [
-        "Показати інформацію"
       ],
       "Show labels": [
         "Показати мітки"
@@ -823,9 +826,6 @@
       "Void anyway": [
         "Все одно видалити"
       ],
-      "Warning": [
-        "Попередження"
-      ],
       "Wipe": [
         "Стерти"
       ],
@@ -850,11 +850,6 @@
       ],
       "Try free for 30 days": [
         "Спробуйте безплатно протягом 30 днів"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Вибрати"
       ]
     },
     "Addon": {
@@ -961,22 +956,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "Якщо ви зараз вийдете, деякі події можуть не імпортуватися"
-      ],
-      "Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.": [
-        "Видалення ваших ключів є незворотною дією. Щоб мати змогу отримання доступу до будь-якого зашифрованого цим ключем повідомлення, можливо, ви захочете зробити його резервну копію."
-      ],
-      "You will face a permanent data loss by not making a backup of your key.": [
-        "Ви остаточно втратите доступ до своїх даних, якщо не зробите резервну копію свого ключа."
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "Триває видалення ключа для вашої адреси."
       ]
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Це від'єднає всі маршрутизатори та клієнти, котрі використовують цей сертифікат."
       ]
     },
     "Apps dropdown": {
@@ -1012,7 +996,7 @@
     },
     "Auto import invitations setting": {
       "Add invitations to calendar and mark as pending": [
-        ""
+        "Додати запрошення до календаря та додати його у чергу"
       ]
     },
     "Autoresponse": {
@@ -1241,7 +1225,7 @@
     },
     "Button": {
       "Add link to your email footer": [
-        ""
+        "Додайте посилання у нижній колонтитул електронної пошти"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
@@ -1365,6 +1349,14 @@
         "Тиждень"
       ]
     },
+    "Collapsible tooltip": {
+      "Close": [
+        "Закрити"
+      ],
+      "Open": [
+        "Відкрити"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "починається з"
@@ -1395,17 +1387,6 @@
       ],
       "matches": [
         "збігається з"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to delete this key without backing it up?": [
-        "Ви дійсно хочете видалити цей ключ без резервного копіювання?"
-      ],
-      "Are you sure you want to permanently delete this key?": [
-        "Ви дійсно хочете остаточно видалити цей ключ?"
-      ],
-      "Do you want to export your key?": [
-        "Ви хочете експортувати свій ключ?"
       ]
     },
     "Confirm modal title": {
@@ -2378,13 +2359,13 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
-        ""
+        "Вітаємо! Ви зібрали максимум з ${ rewardsLimit } безплатних місяців користування ${ appName } ${ plusPlanName }"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
       "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        ""
+        "Отримайте до 3 місяців ${ mailPlus } безплатно за кожного знайомого передплатника ${ MAIL_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
@@ -2396,7 +2377,7 @@
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        ""
+        "Стежте, скільки людей натискають на ваше посилання, реєструються та стають платними передплатниками. Дивіться, як підсумовуються ваші безплатні місяці."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Ви можете й надалі запрошувати друзів, але ви більше не отримуватимете за це кредити"
@@ -3144,7 +3125,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Сертифікат ${ name } не знайдено або вже відкликано"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "Не можна прибрати позначку одночасно з імені та прізвища"
@@ -4182,7 +4163,7 @@
         "Вільний Інтернет без цензури має бути доступним для всіх."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Назва, яка допоможе вам визначити, де ви використовуєте його, щоб ви могли легко відкликати його або продовжити його пізніше."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4596,7 +4577,7 @@
         "Протерміновано"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "чинний до ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "Помилка отримання журналів."
@@ -4739,9 +4720,6 @@
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Імпортуйте свої листи, календарі та контакти з іншого сервісу на Proton. Ми допоможемо вам пройти кожен крок та зашифрувати ваші дані після переміщення. Вітаємо у світі приватності."
       ],
-      "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "ВАЖЛИВО: Завантаження ваших приватних ключів та надсилання чи збереження їх на незахищених носіях може зашкодити безпеці вашого облікового запису!"
-      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важливо: Впевніться, що ви зберегли коди відновлення. Інакше ви можете назавжди втратити доступ до свого облікового запису в разі втрати пристрою двоетапної перевірки."
       ],
@@ -4817,8 +4795,8 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Тримайте ці записи у вашому DNS стільки часу, скільки хочете використовувати DKIM."
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "Ключ з відбитком ${ fp } було видалено."
+      "Key deletion is irreversible!": [
+        "Видалення ключа незворотне!"
       ],
       "Label all imported messages as": [
         "Позначити всі імпортовані повідомлення"
@@ -4980,7 +4958,7 @@
         "Тільки ви можете бачити мітки."
       ],
       "Or select a particular server:": [
-        ""
+        "Або виберіть певний сервер:"
       ],
       "Organization keys activated": [
         "Ключі організації активовано"
@@ -5013,10 +4991,10 @@
         "P2P"
       ],
       "Paid for a ${ rewardMonths } month plan": [
-        "",
-        "",
-        "",
-        ""
+        "Передплачено на ${ rewardMonths } місяць",
+        "Передплачено на ${ rewardMonths } місяці",
+        "Передплачено на ${ rewardMonths } місяців",
+        "Передплачено на ${ rewardMonths } місяці"
       ],
       "Paid for a monthly plan": [
         "Передплачено місячний тарифний план"
@@ -5038,9 +5016,6 @@
       ],
       "Plan upgrade required": [
         "Необхідно передплатити тарифний план"
-      ],
-      "Please enter a password to encrypt your private key with before exporting.": [
-        "Введіть пароль, щоб зашифрувати свій приватний ключ перед експортом."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введіть фразу відновлення з 12 слів, пов'язану з вашим обліковим записом."
@@ -5154,7 +5129,7 @@
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Відкликати сертифікат ${ name }"
       ],
       "Right to Left": [
         "Справа наліво"
@@ -5177,14 +5152,14 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Скануйте цей код своїм пристроєм двоетапної перевірки, щоб налаштувати обліковий запис. ${ switchButton }."
       ],
-      "Screenshot(s) attached": [
-        "Знімки екрана додано"
-      ],
       "See all plans": [
         "Переглянути всі тарифні плани"
       ],
       "Select a service provider to start": [
         "Виберіть постачальника послуг, щоб розпочати"
+      ],
+      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
+        "Виберіть Продовжити з ${ name }, щоб відкрити застосунок. Це також створить обліковий запис ${ name } за допомогою адреси ${ MAIL_APP_NAME }, щоб ви могли увійти одним клацанням миші в майбутньому."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
@@ -5234,6 +5209,9 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
       ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Зберігайте цей пароль і файл у надійному місці. Вам потрібно буде знову імпортувати ваш ключ."
+      ],
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену е-пошти"
       ],
@@ -5279,6 +5257,9 @@
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ці файли конфігурації дають змогу обрати сервер ${ VPN_APP_NAME }, з яким ви з'єднуєтесь під час користування стороннім застосунком VPN або налаштованим VPN-з'єднанням маршрутизатора."
       ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Ці конфігурації передбачені для роботи з маршрутизаторами WireGuard і офіційними клієнтами."
+      ],
       "This 30-day free trial is not available any other way.": [
         "Ця 30-денна пробна версія більше не доступна жодним чином."
       ],
@@ -5293,9 +5274,6 @@
       ],
       "This email address will only be used for recovery purposes.": [
         "Ця електронна пошта буде використовуватись тільки для відновлення доступу."
-      ],
-      "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Ця функція призначена лише для досвідчених користувачів. Після видалення цього ключа ви не зможете розшифрувати будь-яке повідомлення, що було ним зашифроване. Це може спричинити втрату даних."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Це фраза з 12 слів, яку ви просили встановити."
@@ -5333,6 +5311,9 @@
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Це вимкне вашу чинну фразу відновлення. Ви не зможете скористатися нею для доступу до облікового запису чи розшифрування своїх даних."
       ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        "Це завантажить файл, що містить ваш приватний ключ. Захистіть цей файл, зашифрувавши його паролем."
+      ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Це дозволить використовувати PayPal для вашої передплати Proton. Вас буде перенаправлено до PayPal у новій вкладці браузера. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
       ],
@@ -5350,6 +5331,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Цей майстер активує двоетапну перевірку (2FA) для вашого облікового запису Proton. Це зробить ваш обліковий запис більш захищеним, тому ми рекомендуємо увімкнути її."
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "Щоб уникнути втрати даних, видаляйте його лише якщо впевнені у своїх діях або експортували копію."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Щоб підтвердити, введіть ім'я користувача, якого ви хочете видалити."
@@ -5463,7 +5447,7 @@
         "Використовуйте автоматичні відповіді для інформування ваших контактів, що ви зараз не маєте доступу до електронної пошти і тому не можете відповісти."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Використовуйте ці облікові дані за з'єднання з серверами ${ VPN_APP_NAME } без застосунку. Приклади використовування таких з'єднань включають: Tunnelblick на macOS, OpenVPN на GNU/Linux."
@@ -5654,6 +5638,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Ви досягли 100% свого обсягу сховища. Ви не можете надсилати чи отримувати нові повідомлення. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Ви повинні експортувати резервну копію цього ключа, якщо вам потрібно відновити дані, які ним зашифровані."
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         "Вам досі потрібно прийняти запрошення від організатора, щоб він міг побачити вашу відповідь."
       ],
@@ -5662,6 +5649,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Вас невдовзі буде перенаправлено до вашого банку для підтвердження платежу."
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
+        "Ви не зможете розшифрувати будь-які повідомлення, файли та інші дані, зашифровані цим ключем."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
@@ -5831,8 +5821,8 @@
       "Billed": [
         "Рахунок виставлено"
       ],
-      "Cancelled": [
-        "Скасовано"
+      "Gifted": [
+        "Подаровано"
       ],
       "Paid": [
         "Сплачено"
@@ -6159,13 +6149,13 @@
         "${ MAIL_APP_NAME } адреса"
       ],
       "${ MAIL_APP_NAME } footer": [
-        ""
+        "Колонтитул ${ MAIL_APP_NAME }"
       ],
       "${ monthsRewarded } month credited": [
-        "",
-        "",
-        "",
-        ""
+        "Нараховано ${ monthsRewarded } місяць",
+        "Нараховано ${ monthsRewarded } місяці",
+        "Нараховано ${ monthsRewarded } місяців",
+        "Нараховано ${ monthsRewarded } місяці"
       ],
       "${ n } VPN connection available": [
         "${ n } VPN-з'єднання доступне",
@@ -6248,6 +6238,9 @@
       "Attach public key": [
         "Приєднати відкритий ключ"
       ],
+      "Attach screenshot(s)": [
+        "Додати знімки екрана"
+      ],
       "Auto reply": [
         "Автовідповідь"
       ],
@@ -6261,10 +6254,10 @@
         "Блокувати відстеження листів"
       ],
       "Block malware only": [
-        ""
+        "Блокувати лише зловмисні програми"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Блокувати зловмисні програми, рекламу і стеження"
       ],
       "bonus storage": [
         "бонусне сховище"
@@ -6297,7 +6290,7 @@
         "Категорія"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Оберіть назву для згенерованого файлу сертифіката"
       ],
       "Code": [
         "Код"
@@ -6324,7 +6317,7 @@
         "Умови"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Конфігурація для з'єднання з ${ serverName }"
       ],
       "Confirm link URLs": [
         "Підтвердити URL-адреси посилань"
@@ -6364,6 +6357,9 @@
       ],
       "Country": [
         "Країна"
+      ],
+      "Create password": [
+        "Створити пароль"
       ],
       "Credits pending": [
         "Кредити в очікуванні"
@@ -6426,7 +6422,7 @@
         "Опис"
       ],
       "Device/certificate name": [
-        ""
+        "Назва пристрою/сертифіката"
       ],
       "Digits": [
         "Цифри"
@@ -6585,7 +6581,7 @@
         "Лише останній місяць"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Рівень фільтрації блокувальника NetShield"
       ],
       "Login password": [
         "Пароль входу"
@@ -6609,7 +6605,7 @@
         "Повідомлення"
       ],
       "Moderate NAT": [
-        ""
+        "Помірна NAT"
       ],
       "Move to": [
         "Перемістити"
@@ -6633,13 +6629,13 @@
         "Новий пароль"
       ],
       "No filter": [
-        ""
+        "Не фільтрувати"
       ],
       "No label found": [
         "Мітку не знайдено"
       ],
       "Non-standard ports": [
-        ""
+        "Нестандартні порти"
       ],
       "Notification": [
         "Сповіщення"
@@ -6885,7 +6881,7 @@
         "Код підтвердження"
       ],
       "VPN Accelerator": [
-        ""
+        "VPN Accelerator"
       ],
       "VPN Connections": [
         "VPN-з’єднання"
@@ -7050,11 +7046,6 @@
       ],
       "Row": [
         "Рядок"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Додати знімки екрана"
       ]
     },
     "Label/folder modal": {
@@ -7577,6 +7568,9 @@
       "A disabled address cannot be primary": [
         "Вимкнена адреса не може бути основною"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        "Ключ з відбитком ${ fp } було видалено."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Облікові дані OpenVPN / IKEv2 повторно згенеровано"
       ]
@@ -7949,12 +7943,6 @@
       "Address": [
         "Адреса"
       ],
-      "Browser name": [
-        "Назва браузера"
-      ],
-      "Browser version": [
-        "Версія браузера"
-      ],
       "Choose a name": [
         "Виберіть назву"
       ],
@@ -7988,12 +7976,6 @@
       "Name": [
         "Назва"
       ],
-      "OS name": [
-        "Назва ОС"
-      ],
-      "OS version": [
-        "Версія ОС"
-      ],
       "Other": [
         "Інше"
       ],
@@ -8012,14 +7994,14 @@
       "Postal code": [
         "Поштовий індекс"
       ],
-      "Proton username": [
-        "Ім'я користувача Proton"
-      ],
       "Search settings": [
         "Шукати налаштування"
       ],
       "Search users": [
         "Пошук користувачів"
+      ],
+      "Select": [
+        "Вибрати"
       ],
       "Select a reason": [
         "Оберіть причину"
@@ -8644,16 +8626,16 @@
         "Адресу увімкнено"
       ],
       "Certificate ${ name } revoked": [
-        ""
+        "Сертифікат ${ name } відкликано"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Сертифікат продовжено до ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Конфігурація \"${ name }\" створена, зверніть увагу, що приватний ключ не зберігається, і не буде показаний знову, ви повинні скопіювати або завантажити цю конфігурацію."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Створення файлу конфігурації для ${ serverName }"
       ],
       "Filter removed": [
         "Фільтр вилучено"
@@ -8761,13 +8743,13 @@
         "(наполегливо рекомендується)"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Назвіть створювану конфігурацію"
       ],
       "1. Select platform": [
         "1. Виберіть платформу"
       ],
       "2. Select platform": [
-        ""
+        "2. Виберіть платформу"
       ],
       "2. Select protocol": [
         "2. Виберіть протокол"
@@ -8779,10 +8761,10 @@
         "3. Виберіть файл конфігурації та завантажте"
       ],
       "3. Select VPN options": [
-        ""
+        "3. Виберіть опції VPN"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Виберіть сервер, до якого потрібно під'єднатися"
       ],
       "Account and password": [
         "Обліковий запис і пароль"
@@ -8964,6 +8946,9 @@
       "Confirm phone number": [
         "Підтвердьте номер телефону"
       ],
+      "Connect ${ name }": [
+        "Під'єднати ${ name }"
+      ],
       "Contact encryption keys": [
         "Ключі шифрування контакту"
       ],
@@ -9036,8 +9021,8 @@
       "Delete ${ email }": [
         "Видалити ${ email }"
       ],
-      "Delete ${ filter.Name }": [
-        "Видалити ${ filter.Name }"
+      "Delete ${ filterName }": [
+        "Видалити ${ filterName }"
       ],
       "Delete ${ label.Name } folder": [
         "Видалити теку ${ label.Name }"
@@ -9051,8 +9036,8 @@
       "Delete calendar": [
         "Видалити календар"
       ],
-      "Delete key": [
-        "Видалити ключ"
+      "Delete key permanently?": [
+        "Видалити ключ остаточно?"
       ],
       "Delete logs": [
         "Вилучити записи журналу"
@@ -9370,7 +9355,7 @@
         "Відновити права адміністратора"
       ],
       "Revoke certificate": [
-        ""
+        "Відкликати сертифікат"
       ],
       "Secure email based in Switzerland": [
         "Захищена електронна пошта, що розташована у Швейцарії"
@@ -9529,13 +9514,13 @@
         "Що нового"
       ],
       "WireGuard": [
-        ""
+        "WireGuard"
       ],
       "WireGuard configuration": [
-        ""
+        "Конфігурація WireGuard"
       ],
       "Your ${ domain } address is active": [
-        ""
+        "Ваша адреса ${ domain } активна"
       ],
       "Your account’s usage": [
         "Використання вашого облікового запису"
@@ -9580,7 +9565,7 @@
     },
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
-        ""
+        "Рахунок-фактура ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -9721,7 +9706,7 @@
         "Встановіть типовий макет вигляду поштової скриньки."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        ""
+        "Встановлює цей нижній колонтитул в електронних листах, який ви надсилаєте: ${ signature } Посилання вказує на реферальне посилання. Нижній колонтитул з'явиться під вашим підписом. Ви можете персоналізувати свій підпис у будь-який час у налаштуваннях."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Підписи, створені з цим ключем вважаються недійсними, а цей ключ не можна використовувати для шифрування"
@@ -9778,7 +9763,7 @@
         "Ви локально розшифрували цей ключ"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
-        ""
+        "Скринька вхідних ${ MAIL_APP_NAME } майже заповнено"
       ],
       "Your DKIM signing is working.": [
         "Підписування DKIM працює."

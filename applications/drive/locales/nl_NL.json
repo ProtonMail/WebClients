@@ -45,7 +45,7 @@
         "Toepassen"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Schermafbeelding(en) toevoegen"
       ],
       "Back": [
         "Terug"
@@ -184,6 +184,9 @@
       "Download": [
         "Downloaden"
       ],
+      "Download anyway": [
+        "Toch downloaden"
+      ],
       "Drive Locked": [
         "Drive versleuteld"
       ],
@@ -210,6 +213,9 @@
       ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
+      ],
+      "Enable drive search": [
+        "Drive doorzoeken inschakelen"
       ],
       "Expand folder": [
         "Map uitklappen"
@@ -803,10 +809,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Sluiten"
       ],
       "Open": [
-        ""
+        "Openen"
       ]
     },
     "Confirm modal title": {
@@ -2456,6 +2462,9 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
+      "Enable drive search": [
+        "Drive doorzoeken inschakelen"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
       ],
@@ -2641,7 +2650,7 @@
         "Een van uw versleutelde schijven is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoord reset. ${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } tekens toegelaten"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
@@ -2700,6 +2709,9 @@
       "Queued": [
         "In wachtrij"
       ],
+      "recommended browser": [
+        "aanbevolen browser"
+      ],
       "Recovery process might take some time.": [
         "Het herstelproces kan enige tijd in beslag nemen."
       ],
@@ -2743,7 +2755,7 @@
         "Er ging iets mis. Probeer het later nog eens."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Ondersteuning voor 1 aangepast e-mail domein"
@@ -2926,6 +2938,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw Proton account."
       ],
@@ -3054,7 +3069,7 @@
         "Toepassen op alle ongeverifieerde items"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Schermafbeelding(en) toevoegen"
       ],
       "Audio file": [
         "Geluidsbestand"
@@ -3096,7 +3111,7 @@
         "Aangemaakt"
       ],
       "Delete": [
-        ""
+        "Verwijderen"
       ],
       "Delete drive?": [
         "Drive verwijderen?",
@@ -3126,8 +3141,8 @@
       "Enable Beta Access": [
         "Bèta-toegang inschakelen"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        "Drive doorzoeken wordt ingeschakeld"
       ],
       "Encrypt emails": [
         "E-mails versleutelen"
@@ -3773,7 +3788,7 @@
         "Naam of e-mail zoeken"
       ],
       "Select": [
-        ""
+        "Selecteren"
       ],
       "Start typing an email address": [
         "Voer een e-mailadres in"
@@ -4065,6 +4080,9 @@
       "Beta Access": [
         "Bèta toegang"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "Annuleer alle actieve overschrijvingen"
       ],
@@ -4187,8 +4205,8 @@
       "Empty trash": [
         "Prullenbak leegmaken"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        "Drive doorzoeken inschakelen"
       ],
       "Enter password to download": [
         "Voer wachtwoord in om te downloaden"
@@ -4219,6 +4237,10 @@
       ],
       "Folders details": [
         "Details mappen"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "${ searchView.numberOfResults } zoekresultaat",
+        "${ searchView.numberOfResults } zoekresultaten"
       ],
       "Groups": [
         "Groepen"
@@ -4330,9 +4352,6 @@
       ],
       "Search results": [
         "Zoekresultaten"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Zoekresultaten: ${ searchView.numberOfResults } gevonden"
       ],
       "Searching…": [
         "Zoeken…"

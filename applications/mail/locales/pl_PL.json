@@ -3722,6 +3722,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        "${ activateLink } lub ${ learnMoreLink }."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } adres e-mail",
         "${ addressCount } adresy e-mail",
@@ -4221,7 +4224,7 @@
         "Wygasa"
       ],
       "Expires in ${ formattedDelay }": [
-        ""
+        "Wygasa za ${ formattedDelay }"
       ],
       "Expires in ${ formattedDelayShort }": [
         "Wygasa za ${ formattedDelayShort }"
@@ -4354,6 +4357,9 @@
       ],
       "Learn more": [
         "Dowiedz się więcej"
+      ],
+      "learn more": [
+        "dowiedz się więcej"
       ],
       "Left to Right": [
         "Od lewej do prawej"

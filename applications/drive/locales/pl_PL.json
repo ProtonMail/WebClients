@@ -60,7 +60,7 @@
         "Anuluj wszystko"
       ],
       "Cancel all downloads": [
-        ""
+        "Anuluj pobieranie"
       ],
       "Cancel all uploads": [
         "Anuluj przesyłanie"
@@ -188,6 +188,9 @@
       "Download": [
         "Pobierz"
       ],
+      "Download anyway": [
+        "Pobierz mimo to"
+      ],
       "Drive Locked": [
         "Dysk jest zablokowany"
       ],
@@ -214,6 +217,9 @@
       ],
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
+      ],
+      "Enable drive search": [
+        "Włącz wyszukiwanie dysku"
       ],
       "Expand folder": [
         "Rozwiń folder"
@@ -246,7 +252,7 @@
         "Przejdź do panelu ${ index }"
       ],
       "Go to parent": [
-        ""
+        "Przejdź do folderu nadrzędnego"
       ],
       "Go to settings": [
         "Przejdź do ustawień"
@@ -2521,7 +2527,7 @@
         "Podpis cyfrowy został zweryfikowany. Folder został bezpiecznie przesłany przez adres ${ emailAddress }."
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        ""
+        "Pobieranie pliku ${ downloadFileName } zostało przerwane"
       ],
       "Downloaded": [
         "Pobrano"
@@ -2537,6 +2543,9 @@
       ],
       "Duplicate key updated": [
         "Zduplikowany klucz został zaktualizowany"
+      ],
+      "Enable drive search": [
+        "Włącz wyszukiwanie dysku"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
@@ -2725,7 +2734,7 @@
         "Jeden z zaszyfrowanych dysków jest zablokowany. To może być spowodowane zresetowaniem hasła.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Zmień te ustawienia tylko, gdy używasz PGP z odbiorcami spoza ${ BRAND_NAME }."
@@ -2784,6 +2793,9 @@
       "Queued": [
         "W kolejce"
       ],
+      "recommended browser": [
+        "zalecanej przeglądarki"
+      ],
       "Recovery process might take some time.": [
         "Proces odzyskiwania może zająć trochę czasu."
       ],
@@ -2815,7 +2827,7 @@
         "Udostępnij pliki za pomocą linków"
       ],
       "Signature check will be ignored": [
-        ""
+        "Sprawdzanie podpisu zostanie pominięte"
       ],
       "Signature issue": [
         "Błąd podpisu"
@@ -2836,13 +2848,13 @@
         "pomocą techniczną"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "Konto może mieć nowy klucz lub poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Zanim kontakty będą mogły zostać wyeksportowane, aplikacja musi je lokalnie odszyfrować. Pod koniec procesu zostanie wygenerowany plik VCF do pobrania."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "Poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
       ],
       "There are no files yet": [
         "Nie masz tu jeszcze żadnych plików"
@@ -2983,7 +2995,7 @@
         "Masz zamiar otworzyć nową kartę przeglądarki i przejść do:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Jesteś obecnie zalogowany jako ${ user.Name } (${ user.Email })."
+        "Zalogowano jako ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Możesz również scalić importowane kalendarze z obecnymi kalendarzami Proton."
@@ -3011,6 +3023,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta zostanie wkrótce ograniczony. ${ payInvoiceLink }"
+      ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        "Twoja obecna przeglądarka nie obsługuje pobierania dużych plików z powodu niedostępności mechanizmu Service Workers. Pobieranie dużych plików może spowodować zawieszenie przeglądarki lub brak reakcji na jej działanie. Użyj najnowszych wersji ${ recommendedBrowser } i spróbuj ponownie."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta Proton."
@@ -3085,7 +3100,7 @@
         "nazwa"
       ],
       "name hash": [
-        ""
+        "kryptograficzny skrót"
       ],
       "thumbnail": [
         "podgląd"
@@ -3214,8 +3229,8 @@
       "Enable Beta Access": [
         "Włącz dostęp beta"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        "Włączanie wyszukiwania dysku"
       ],
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
@@ -4209,6 +4224,9 @@
       "Beta Access": [
         "Dostęp beta"
       ],
+      "Browser might run out of memory": [
+        "Brak pamięci przeglądarki"
+      ],
       "Cancel all active transfers": [
         "Anuluj wszystkie aktywne transfery"
       ],
@@ -4335,8 +4353,8 @@
       "Empty trash": [
         "Opróżnij kosz"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        "Włącz wyszukiwanie dysku"
       ],
       "Enter password to download": [
         "Wpisz hasło, aby kontynuować"
@@ -4367,6 +4385,12 @@
       ],
       "Folders details": [
         "Szczegóły folderów"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "Znaleziono ${ searchView.numberOfResults } wynik",
+        "Znaleziono ${ searchView.numberOfResults } wyniki",
+        "Znaleziono ${ searchView.numberOfResults } wyników",
+        "Znaleziono ${ searchView.numberOfResults } wyników"
       ],
       "Groups": [
         "Grupy"
@@ -4479,9 +4503,6 @@
       "Search results": [
         "Wyniki wyszukiwania"
       ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        ""
-      ],
       "Searching…": [
         "Wyszukiwanie…"
       ],
@@ -4546,10 +4567,10 @@
         "Załadowanie linku nie powiodło się"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "Brak podpisu lub podpis jest nieprawidłowy. Przejdź do Menu (⋮) → Szczegóły, aby dowiedzieć się więcej."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "Brak podpisu lub podpis jest nieprawidłowy. Przejdź do Menu (⋮) → Szczegóły, aby dowiedzieć się więcej."
       ],
       "Total size": [
         "Łączny rozmiar"

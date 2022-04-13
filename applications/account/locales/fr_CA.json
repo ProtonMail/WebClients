@@ -38,7 +38,7 @@
         "Activer"
       ],
       "Activate ${ addressToCreate }": [
-        ""
+        "Activer ${ addressToCreate }"
       ],
       "Activate ${ Name }@pm.me": [
         "Activer ${ Name }@pm.me"
@@ -88,12 +88,6 @@
       "Add PayPal": [
         "Ajouter PayPal"
       ],
-      "Add PayPal payment method": [
-        "Ajouter PayPal comme mode de paiement"
-      ],
-      "Add screenshot(s)": [
-        "Ajouter une ou des capture(s) d'écran"
-      ],
       "Add sieve filter": [
         "Ajouter un filtre Sieve"
       ],
@@ -117,6 +111,9 @@
       ],
       "Apply": [
         "Appliquer"
+      ],
+      "Attach screenshot(s)": [
+        "Joindre une ou plusieurs captures d’écran"
       ],
       "Authenticate": [
         "S'authentifier"
@@ -157,9 +154,6 @@
       "Choose a file or drag it here": [
         "Choisissez un fichier ou faites-le glisser ici"
       ],
-      "Clear": [
-        "Effacer"
-      ],
       "Clear all formatting": [
         "Effacer toute mise en forme"
       ],
@@ -199,6 +193,9 @@
       "Continue import": [
         "Continuer l'importation"
       ],
+      "Continue to ${ name }": [
+        "Continuer vers ${ name }"
+      ],
       "Continue with": [
         "Continuer avec"
       ],
@@ -215,10 +212,10 @@
         "Copier le lien"
       ],
       "Create": [
-        ""
+        "Créer"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
-        ""
+        "Créez plutôt une adresse sécurisée ${ MAIL_APP_NAME }"
       ],
       "Create address": [
         "Créer une adresse"
@@ -256,8 +253,14 @@
       "Delete link": [
         "Supprimer le lien"
       ],
+      "Delete permanently": [
+        "Supprimer définitivement"
+      ],
       "Delete record": [
         "Supprimer l'enregistrement"
+      ],
+      "Delete without exporting": [
+        "Supprimer sans exporter"
       ],
       "Delete your account": [
         "Supprimer votre compte"
@@ -331,6 +334,9 @@
       "Enable multi-user support": [
         "Activer le support multi-utilisateur"
       ],
+      "Encrypt and export": [
+        "Chiffrer et exporter"
+      ],
       "Export": [
         "Exporter"
       ],
@@ -340,8 +346,11 @@
       "Export key": [
         "Exporter une clé"
       ],
+      "Export key before deleting": [
+        "Exporter la clé avant de supprimer"
+      ],
       "Extend": [
-        ""
+        "Prolonger"
       ],
       "Font": [
         "Police"
@@ -356,7 +365,7 @@
         "Générer une phrase de récupération"
       ],
       "Get ${ vpnPlus }": [
-        ""
+        "Obtenir ${ vpnPlus }"
       ],
       "Get started": [
         "Commencer"
@@ -375,9 +384,6 @@
       ],
       "Hide folders": [
         "Masquer les dossiers"
-      ],
-      "Hide info": [
-        "Masquer les infos"
       ],
       "Hide labels": [
         "Masquer les labels"
@@ -428,7 +434,7 @@
         "labelliser le courriel comme"
       ],
       "Load more": [
-        ""
+        "Charger plus"
       ],
       "Loading verification": [
         "Vérification du transfert"
@@ -467,7 +473,7 @@
         "Non"
       ],
       "No, thanks": [
-        ""
+        "Non, merci"
       ],
       "OK": [
         "OK"
@@ -602,10 +608,10 @@
         "Examiner"
       ],
       "Revoke": [
-        ""
+        "Révoquer"
       ],
       "Revoke ${ name }": [
-        ""
+        "Révoquer ${ name }"
       ],
       "Revoke all other sessions": [
         "Révoquer toutes les autres sessions"
@@ -664,9 +670,6 @@
       "Show folders": [
         "Afficher les dossiers"
       ],
-      "Show info": [
-        "Afficher les infos"
-      ],
       "Show labels": [
         "Afficher les labels"
       ],
@@ -677,7 +680,7 @@
         "Afficher plus"
       ],
       "Show preview": [
-        ""
+        "Afficher un aperçu"
       ],
       "sign in": [
         "connecter"
@@ -791,7 +794,7 @@
         "Utiliser le code d'authentification à deux facteurs"
       ],
       "Use your current email address instead": [
-        ""
+        "Utilisez plutôt votre adresse courriel actuelle"
       ],
       "Use “${ label }” setting": [
         "Utiliser le paramètre « ${ label }»"
@@ -823,9 +826,6 @@
       "Void anyway": [
         "Annuler quand même"
       ],
-      "Warning": [
-        "Avertissement"
-      ],
       "Wipe": [
         "Effacer"
       ],
@@ -850,11 +850,6 @@
       ],
       "Try free for 30 days": [
         "Essayez gratuitement pendant 30 jours"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Sélectionner"
       ]
     },
     "Addon": {
@@ -943,22 +938,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "En quittant maintenant, certains événements pourraient ne pas être importés"
-      ],
-      "Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.": [
-        "Supprimer vos clés est irréversible. Afin de pouvoir accéder aux messages chiffrés avec cette clé, vous devriez effectuer une sauvegarde de cette clé pour un usage ultérieur."
-      ],
-      "You will face a permanent data loss by not making a backup of your key.": [
-        "Vous allez faire face à une perte de données définitive en ne faisant pas de sauvegarde de votre clé."
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "La clé de votre adresse est en cours de suppression."
       ]
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Cela déconnectera tous les routeurs et les clients utilisant ce certificat."
       ]
     },
     "Apps dropdown": {
@@ -1226,7 +1210,7 @@
         "Ajouter le lien dans votre signature de courriel"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Continuer à utiliser ${ MAIL_APP_NAME }."
       ],
       "Copy": [
         "Copier"
@@ -1345,6 +1329,14 @@
         "Semaine"
       ]
     },
+    "Collapsible tooltip": {
+      "Close": [
+        "Fermer"
+      ],
+      "Open": [
+        "Ouvrir"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "commence par"
@@ -1375,17 +1367,6 @@
       ],
       "matches": [
         "correspond à"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to delete this key without backing it up?": [
-        "Êtes-vous sûr·e de vouloir supprimer cette clé sans la sauvegarder?"
-      ],
-      "Are you sure you want to permanently delete this key?": [
-        "Êtes-vous sûr·e de vouloir supprimer définitivement cette clé?"
-      ],
-      "Do you want to export your key?": [
-        "Voulez-vous exporter votre clé?"
       ]
     },
     "Confirm modal title": {
@@ -2346,13 +2327,13 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
-        ""
+        "Toutes nos félicitations! Vous avez gagné le maximum de ${ rewardsLimit } mois gratuits de ${ appName } ${ plusPlanName }"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts... Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pouvez fermer cette boîte de dialogue."
       ],
       "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        ""
+        "Obtenez gratuitement jusqu'à 3 mois de ${ mailPlus } pour chaque ami souscrivant à ${ MAIL_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne certains groupes. Veuillez vérifier comment ces groupes doivent être importés."
@@ -2365,7 +2346,7 @@
         "Suivez le nombre de personnes qui cliquent sur votre lien, s'inscrivent et deviennent des abonnés payants. Regardez s'accumuler vos mois gratuits."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
-        ""
+        "Vous pouvez continuer à inviter des amis, mais vous ne pourrez plus gagner de crédits"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier .ics). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus grand, veuillez le diviser en plus petits fichiers."
@@ -2784,13 +2765,13 @@
         "Certains de vos noms de dossiers ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Certains de vos noms de dossiers dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
@@ -3102,7 +3083,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Certificat ${ name } introuvable ou déjà révoqué"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "Le prénom et le nom de famille ne peuvent pas être décochés en même temps"
@@ -3220,8 +3201,8 @@
     },
     "Feature": {
       "${ MaxVPN } VPN connection": [
-        "",
-        ""
+        "${ MaxVPN } connexion RPV",
+        "${ MaxVPN } connexions RPV"
       ],
       "Access to all countries": [
         "Accès à tous les pays"
@@ -3891,7 +3872,7 @@
     },
     "Info": {
       "${ addressToCreate } is now active": [
-        ""
+        "${ addressToCreate } est maintenant active"
       ],
       "${ appName } ${ planName } credits earned": [
         "Crédits ${ appName } ${ planName } gagnés"
@@ -3921,22 +3902,22 @@
         "${ emailAddress } n'est pas valide"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        ""
+        "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et celui de la boîte de réception. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
       "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        ""
+        "${ MAIL_APP_NAME } vous permet de créer des adresses courriel pour d'autres personnes. C'est parfait pour les entreprises, les familles ou les groupes."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "${ MAIL_APP_NAME } prend en charge les signatures DKIM pour les domaines personnalisés. Afin de pouvoir utiliser l'authentification DKIM, veuillez ajouter l'enregistrement CNAME suivant dans les paramètres DNS de votre domaine. Ceci peut généralement être réalisé depuis le panneau de contrôle du registraire de votre nom de domaine."
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Free"
       ],
       "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
-        ""
+        "${ mailPlus } est limité à un·e utilisateur·rice et commence avec 5 Go de stockage."
       ],
       "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
+        "${ mailProfessional } commence avec un·e seul·e utilisateur·rice. Chaque utilisateur·rice ajoute 5 Go et 5 adresses électroniques à la réserve de l'organisation."
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -4015,14 +3996,14 @@
         "${ vpnAppName } Free"
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        ""
+        "${ vpnBasic }, ${ vpnPlus } ou ${ visionary } sont requis pour la connexion aux serveurs de pays."
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
-        "",
-        ""
+        "${ vpnPlus } inclut ${ maxVpn } connexion RPV.",
+        "${ vpnPlus } inclut ${ maxVpn } connexions RPV."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        ""
+        "${ vpnPlus } ou ${ visionary } sont requis pour la fonctionnalité Secure Core."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
@@ -4044,8 +4025,8 @@
         "+${ bonusSpace } de stockage supplémentaire"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "",
-        ""
+        "+${ organization.BonusVPN } connexion pour ${ VPN_APP_NAME } (afin de connecter plus d'appareils au RPV)",
+        "+${ organization.BonusVPN } connexions pour ${ VPN_APP_NAME } (afin de connecter plus d'appareils au RPV)"
       ],
       "1. Invite friends to Proton": [
         "1. Invitez vos amis sur Proton"
@@ -4072,7 +4053,7 @@
         "Un Internet libre et non censuré devrait être disponible pour tous."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Un nom pour vous aider à identifier l'endroit où vous l'utilisez afin de pouvoir facilement le révoquer ou le prolonger ultérieurement."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4099,7 +4080,7 @@
         "Compte correctement mis à jour"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        ""
+        "Ajoutez une adresse électronique @pm.me à votre compte. Ce domaine simple et court signifie «${ MAIL_APP_NAME } me» ou «Private Message me» (envoyez-moi un message privé)."
       ],
       "Add a recovery email address": [
         "Ajoutez un courriel de récupération"
@@ -4237,7 +4218,7 @@
         "Abonnement Basic, Plus ou Visionay requis"
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "Avant de pouvoir recevoir des courriels sur les adresses de vos domaines personnels depuis ${ MAIL_APP_NAME }, vous devez ajouter les valeurs MX suivantes à votre DNS. Cet ajout peut généralement être fait depuis le panneau de contrôle de votre domaine sur le site de votre registraire."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Avant de pouvoir commencer à envoyer et à recevoir des courriels de vos nouvelles adresses, vous devez créer des clés de chiffrement pour celles-ci."
@@ -4322,7 +4303,7 @@
         "Créez et gérez des comptes secondaires et attribuez-leur des adresses email sur votre domaine personnalisé."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        ""
+        "Créez des adresses courriel pour d'autres personnes, gérez ${ MAIL_APP_NAME } pour une entreprise, une école ou un groupe. Commencez par ajouter le nom de votre organisation et le domaine personnalisé (par exemple @votreentreprise.com). "
       ],
       "Create in": [
         "Créer dans"
@@ -4361,7 +4342,7 @@
         "Données verrouillées"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
-        ""
+        "Supprimez les autres enregistrements MX ou assurez-vous que la priorité de ${ MAIL_APP_NAME } est le nombre le plus bas."
       ],
       "Delete link?": [
         "Supprimer le lien?"
@@ -4376,7 +4357,7 @@
         "N’oubliez PAS ce mot de passe. Si vous l’oubliez, vous ne pourrez plus gérer votre organisation."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
+        "N'utilisez pas les identifiants OpenVPN/IKEv2 dans les applications ${ VPN_APP_NAME } ou sur le tableau de bord ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Souhaitez-vous révoquer toutes les autres sessions à l'exception de celle qui est en cours?"
@@ -4395,7 +4376,7 @@
         "C'est fait! Nous avons envoyé un code à ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        ""
+        "La rétrogradation mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
       ],
       "Download recovery file": [
         "Télécharger le fichier de récupération"
@@ -4458,7 +4439,7 @@
         "Entrez votre mot de passe pour confirmer votre identité."
       ],
       "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        ""
+        "Saisissez votre propre mot de passe (en tant qu'administrateur·rice de l'organisation) et un nouveau mot de passe pour cet·te utilisateur·rice ${ Name } (${ Email })."
       ],
       "Enter your Proton account email address or username.": [
         "Saisissez l'adresse courriel de votre compte Proton ou votre nom d'utilisateur·rice."
@@ -4476,7 +4457,7 @@
         "Expiré"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "expire le ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "Impossible de récupérer les journaux."
@@ -4554,7 +4535,7 @@
         "Si vous ne trouvez pas le message dans votre boîte de réception, veuillez vérifier votre dossier indésirables."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        ""
+        "Si vous avez un domaine personnalisé avec ${ MAIL_APP_NAME }, vous pouvez définir une adresse électronique attrape-tout (catch-all) qui recevra les messages envoyés à votre domaine, mais à une adresse e-mail non valide (p. ex., en cas de faute de frappe)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Si vous avez un code cadeau, saisissez-le ci-dessous pour appliquer votre réduction."
@@ -4575,13 +4556,13 @@
         "Si vous perdez votre appareil destiné à l'authentification à deux facteurs, ces codes peuvent être utilisés pour vous connecter à votre compte en lieu et place des codes à 6 chiffres générés. Chacun de ces codes ne peut être utilisé qu'une seule fois."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        ""
+        "Si vous procédez à la rétrogradation, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        ""
+        "Si vous procédez à la rétrogradation, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME }, dont le stockage et les filtres supplémentaires."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        ""
+        "Si vous procédez à la rétrogradation, vous perdrez l'accès aux fonctionnalités payantes de ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Si vous avez récemment réinitialisé votre mot de passe, vous pouvez utiliser une méthode de récupération de données pour déverrouiller vos données"
@@ -4616,9 +4597,6 @@
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importez vos courriels, calendriers et contacts d'un autre service vers Proton. Nous vous guiderons à chaque étape et chiffrerons vos données au fur et à mesure de leur déplacement. Bienvenue dans le monde de la confidentialité."
-      ],
-      "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "IMPORTANT: le téléchargement de vos clés privées et leur envoi ou leur stockage sur des supports non sécurisés peuvent compromettre la sécurité de votre compte!"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important: veuillez vous assurer de sauvegarder les codes de récupération. Sinon, vous pouvez perdre définitivement l'accès à votre compte si vous égarez votre appareil d'authentification à deux facteurs."
@@ -4693,8 +4671,8 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Conservez cet enregistrement dans votre DNS aussi longtemps que vous souhaiterez utiliser DKIM."
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "La clé avec l'empreinte ${ fp } a été supprimée."
+      "Key deletion is irreversible!": [
+        "La suppression de clé est irréversible!"
       ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
@@ -4703,7 +4681,7 @@
         "Les importations importantes peuvent prendre plusieurs jours."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        ""
+        "Apprenez comment vous connecter à ${ VPN_APP_NAME } avec des applications RPV tierces."
       ],
       "Learn more": [
         "En savoir plus"
@@ -4739,7 +4717,7 @@
         "Chargement de l'aperçu"
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        ""
+        "Connectez-vous à ${ MAIL_APP_NAME } pour activer votre adresse"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Les journaux incluent les tentatives de connexion pour tous les services de Proton qui utilisent vos identifiants Proton."
@@ -4850,13 +4828,13 @@
         "Un seul compte pour tous les services Proton"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
         "Vous seul pouvez voir les labels."
       ],
       "Or select a particular server:": [
-        ""
+        "Ou sélectionnez un serveur particulier:"
       ],
       "Organization keys activated": [
         "Clés de l'organisation activées"
@@ -4874,7 +4852,7 @@
         "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
       ],
       "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        ""
+        "Notre nouveau domaine ${ domain } est une option pratique pour envoyer et recevoir des courriels. Vous pourrez toujours utiliser votre adresse ${ protonMailAppName } d'origine."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Fichier de récupération obsolète; mettez à jour pour garantir l'accès à vos données"
@@ -4889,8 +4867,8 @@
         "P2P"
       ],
       "Paid for a ${ rewardMonths } month plan": [
-        "",
-        ""
+        "A payé pour ${ rewardMonths } mois d'abonnement",
+        "A payé pour ${ rewardMonths } mois d'abonnement"
       ],
       "Paid for a monthly plan": [
         "Payé pour un abonnement mensuel"
@@ -4912,9 +4890,6 @@
       ],
       "Plan upgrade required": [
         "Offre supérieure requise"
-      ],
-      "Please enter a password to encrypt your private key with before exporting.": [
-        "Veuillez saisir un mot de passe pour chiffrer votre clé privée avant d'exporter."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Veuillez saisir la phrase de récupération de 12 mots associée à votre compte."
@@ -5028,7 +5003,7 @@
         "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Révoquer le certificat ${ name }"
       ],
       "Right to Left": [
         "De droite à gauche"
@@ -5051,14 +5026,14 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scannez ce code avec votre périphérique d'authentication à deux facteurs pour configurer votre compte. ${ switchButton }."
       ],
-      "Screenshot(s) attached": [
-        "Capture(s) d'écran jointe(s)"
-      ],
       "See all plans": [
         "Voir tous les abonnements"
       ],
       "Select a service provider to start": [
         "Sélectionnez un fournisseur de services pour commencer"
+      ],
+      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
+        "Sélectionnez « Se connecter à ${ name } » pour ouvrir l'application. Cela va également créer un compte ${ name } avec votre adresse ${ MAIL_APP_NAME } afin que vous puissiez vous connecter en un clic la prochaine fois."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
@@ -5097,7 +5072,7 @@
         "Certaines clés ont été correctement réactivées"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "SPF est utilisé pour spécifier qui est autorisé à envoyer des courriels depuis ce domaine. Ainsi, nous vous recommandons vivement d'inclure ${ MAIL_APP_NAME }. Pour cela, ajoutez l'enregistrement TXT suivant dans votre configuration DNS. Cette modification peut généralement être effectuée depuis le panneau de contrôle de votre domaine sur le site de votre registraire."
       ],
       "Starter VPN service with P2P support.": [
         "Service VPN pour débuter avec prise en charge du P2P."
@@ -5106,7 +5081,10 @@
         "Stockage (en Go)"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
+      ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Conservez ce mot de passe et ce fichier dans un endroit sûr. Vous en aurez à nouveau besoin pour importer votre clé."
       ],
       "Support for 1 custom email domain": [
         "Prise en charge d'un nom de domaine personnalisé"
@@ -5151,7 +5129,10 @@
         "Le nom sera visible par vos utilisateurs lorsqu'ils seront connectés."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        ""
+        "Ces fichiers de configuration vous permettent de choisir le serveur ${ VPN_APP_NAME } auquel vous vous connectez lorsque vous utilisez une application RPV tierce ou que vous configurez une connexion RPV sur un routeur."
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Ces configurations sont fournies pour fonctionner avec les routeurs WireGuard et les clients officiels."
       ],
       "This 30-day free trial is not available any other way.": [
         "L'essai gratuit de 30 jours n'est disponible nulle part ailleurs."
@@ -5167,9 +5148,6 @@
       ],
       "This email address will only be used for recovery purposes.": [
         "Cette adresse courriel sera utilisé uniquement à des fins de récupération."
-      ],
-      "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Cette fonctionnalité est réservée aux utilisateur·rice·s expérimenté·e·s. Après la suppression de cette clé, vous NE pourrez PAS déchiffrer de message chiffré avec elle. Cela peut entraîner une perte de données."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Il s'agit d'une phrase de 12 mots que vous avez été invité·e à définir."
@@ -5207,6 +5185,9 @@
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Cela désactivera votre phrase de récupération actuelle. Vous ne pourrez pas l'utiliser pour accéder à votre compte ou déchiffrer vos données."
       ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        "Cela téléchargera un fichier contenant votre clé privée. Protégez ce fichier en le chiffrant avec un mot de passe."
+      ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ceci permettra à PayPal d'être utilisé pour payer votre abonnement Proton. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de fenêtres surgissantes, veuillez les désactiver pour continuer."
       ],
@@ -5224,6 +5205,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Cet assistant activera l'authentification à deux facteurs (A2F) sur votre compte Proton. L'authentification à deux facteurs rendra votre compte Proton plus sécurisé. Nous vous recommandons donc de l'activer."
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "Pour éviter la perte de données, ne les supprimez que si vous savez ce que vous faites ou si vous avez exporté une copie."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Pour confirmer, veuillez saisir le nom de l'utilisateur que vous souhaitez supprimer."
@@ -5259,7 +5243,7 @@
         "Pour continuer, sélectionnez une méthode de récupération de compte afin que nous puissions vérifier la demande."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        ""
+        "Pour sécuriser votre connexion Internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur ${ VPN_APP_NAME }."
       ],
       "To use ${ toAppName }, please create an address.": [
         "Pour utiliser ${ toAppName }, veuillez créer une adresse."
@@ -5319,7 +5303,7 @@
         "Passez à l'offre ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } ou ${ PLAN_NAMES[PLANS.PLUS] } pour activer les réponses automatiques quand vous n'êtes pas au bureau."
       ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
-        ""
+        "Passez à une offre payante pour débloquer la prise en charge IMAP/SMTP via ${ MAIL_APP_NAME } Bridge."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Passez à l'offre supérieure dès aujourd'hui pour conserver les avantages suivants de ${ appName } ${ planName }."
@@ -5337,10 +5321,10 @@
         "Utilisez des réponses automatiques pour informer les contacts que vous êtes hors du bureau ou que vous ne pouvez pas répondre autrement."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Utilisez le meilleur serveur en fonction de la charge actuelle et de la position: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        ""
+        "Utilisez les identifiants suivants lorsque vous vous connectez à des serveurs ${ VPN_APP_NAME } sans application. Quelques exemples de cas d'utilisation: Tunnelblick sur macOS, OpenVPN sur GNU/Linux."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilisez votre propre adresse de domaine personnalisée, par exemple vous@votrenom.com"
@@ -5364,7 +5348,7 @@
         "Offre groupée RPV + ${ mailAppName } pour les familles et les petites entreprises."
       ],
       "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        ""
+        "Souhaitez-vous définir ${ addressToCreate } comme adresse courriel par défaut pour l'envoi de messages?"
       ],
       "Warning:": [
         "Attention:"
@@ -5373,7 +5357,7 @@
         "Attention: la suppression est définitive. Ceci supprime également l'accès à tous les services connectés et supprime tous vos contacts."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        ""
+        "Nous vous conseillons d'utiliser les applications officielles ${ VPN_APP_NAME } lorsque c'est possible."
       ],
       "We recommend using your recovery phrase instead.": [
         "Nous vous suggérons d'utiliser une phrase de récupération à la place."
@@ -5418,7 +5402,7 @@
         "Lorsque cette option est désactivée, ceci empêche toutes les images de se charger sur votre appareil à votre insu.\t"
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        ""
+        "Lorsque les notifications sont activées, nous envoyons une alerte sur votre adresse de récupération si vous recevez de nouveaux messages sur votre compte ${ MAIL_APP_NAME }."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         "Lorsqu'ils souscrivent à un abonnement payant, 1 à 3 mois de ${ appName } ${ planName } sera crédité sur votre compte."
@@ -5478,19 +5462,19 @@
         "Vous pouvez activer les notifications pour recevoir des alertes lorsque de nouveaux messages arrivent dans ce dossier."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        ""
+        "Vous pouvez utiliser ${ MAIL_APP_NAME } avec n'importe quel client de messagerie de bureau qui prend en charge IMAP/SMTP, y compris Outlook, Apple Mail et Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        ""
+        "Vous pouvez utiliser les identifiants suivants pour vous connecter à un serveur ${ VPN_APP_NAME } en utilisant une application RPV à code source ouvert tierce, comme Tunnelblick pour macOS ou OpenVPN pour GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Vous ne pouvez pas envoyer plus de ${ emailSendLimitNumber } courriels d'invitation pendant les 24 prochaines heures"
       ],
       "You cannot refer ${ appName } users": [
-        ""
+        "Vous ne pouvez pas parrainer les utilisateur·rice·s de ${ appName }"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
+        "Vous ne pouvez pas utiliser les identifiants OpenVPN/IKEv2 pour vous connecter aux applications ${ VPN_APP_NAME } ou au tableau de bord ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Vous n'avez pas configuré de méthode de récupération, si vous oubliez votre mot de passe la récupération du compte sera donc impossible. Voulez-vous poursuivre sans méthode de récupération?"
@@ -5502,7 +5486,7 @@
         "Vous devez activer votre clé privée d'organisation avec le mot de passe de clé d'organisation de sauvegarde fourni par l'administrateur de votre organisation."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        ""
+        "Vous devez désactiver ou supprimer vos autres utilisateur·rice·s ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir rétrograder."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Vous devez avoir une carte de crédit ou un compte bancaire lié à votre compte PayPal afin de l'ajouter comme mode de paiement."
@@ -5528,6 +5512,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux courriels. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Vous devriez exporter une sauvegarde de cette clé au cas où vous auriez besoin de restaurer des données chiffrées avec."
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         "Vous devez encore répondre aux invitations pour que l'organisateur voie votre réponse."
       ],
@@ -5536,6 +5523,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Vous serez bientôt redirigé vers votre banque pour vérifier votre paiement."
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
+        "Vous ne pourrez PAS déchiffrer les messages, fichiers et autres données chiffrés avec cette clé."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
@@ -5547,13 +5537,13 @@
         "Vous resterez connecté même après avoir fermé le navigateur."
       ],
       "You'll still be able to send and receive mail with your existing email address(es).": [
-        ""
+        "Vous pourrez toujours envoyer et recevoir des courriels avec votre ou vos adresse(s) courriel existante(s)."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Votre compte ${ BRAND_NAME } est associé à ${ externalEmailAddress }. Pour utiliser ${ toAppName }, veuillez créer une adresse."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        ""
+        "Vos comptes ${ VPN_APP_NAME } et ${ MAIL_APP_NAME } sont liés. Pour les supprimer, veuillez vous connecter à ${ loginLink } et supprimer votre compte depuis là-bas."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Votre compte possède au moins une facture impayée. Votre accès a été restreint. ${ payInvoiceLink }"
@@ -5649,7 +5639,7 @@
     },
     "Info concerning plan features": {
       "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        ""
+        "${ MAIL_APP_NAME } ne peut pas être utilisé pour du publipostage de masse ou du pollupostage. Il n'y a pas de limite d'envoi pour les messages légitimes."
       ],
       "Customizable features": [
         "Fonctionnalités personnalisables"
@@ -5705,8 +5695,8 @@
       "Billed": [
         "Facturée"
       ],
-      "Cancelled": [
-        "Annulé"
+      "Gifted": [
+        "Offert"
       ],
       "Paid": [
         "Payée"
@@ -6030,10 +6020,10 @@
         " et ${ l }"
       ],
       "${ MAIL_APP_NAME } address": [
-        ""
+        "Adresse ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } footer": [
-        ""
+        "Pied de page ${ MAIL_APP_NAME }"
       ],
       "${ monthsRewarded } month credited": [
         "${ monthsRewarded } mois crédité",
@@ -6112,6 +6102,9 @@
       "Attach public key": [
         "Joindre une clé publique"
       ],
+      "Attach screenshot(s)": [
+        "Joindre une ou plusieurs captures d’écran"
+      ],
       "Auto reply": [
         "Réponse automatique"
       ],
@@ -6125,10 +6118,10 @@
         "Bloquer le suivi des courriels"
       ],
       "Block malware only": [
-        ""
+        "Bloquez uniquement les logiciels malveillants"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Bloquez les programmes malveillants, les publicités et les traqueurs"
       ],
       "bonus storage": [
         "stockage bonus"
@@ -6161,7 +6154,7 @@
         "Catégorie"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Choisissez un nom pour le fichier de certificat à générer"
       ],
       "Code": [
         "Code"
@@ -6188,10 +6181,10 @@
         "Conditions"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Configuration pour se connecter à ${ serverName }"
       ],
       "Confirm link URLs": [
-        ""
+        "Confirmer les liens URL"
       ],
       "Confirm login password": [
         "Confirmer le mot de passe de connexion"
@@ -6229,8 +6222,11 @@
       "Country": [
         "Pays"
       ],
+      "Create password": [
+        "Créer un mot de passe"
+      ],
       "Credits pending": [
-        ""
+        "Crédits en attente"
       ],
       "Credits used": [
         "Crédits utilisés"
@@ -6290,7 +6286,7 @@
         "Description"
       ],
       "Device/certificate name": [
-        ""
+        "Nom de l'appareil/certificat"
       ],
       "Digits": [
         "Chiffres"
@@ -6449,7 +6445,7 @@
         "Seulement le dernier mois"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Niveau pour le blocage par filtrage NetShield"
       ],
       "Login password": [
         "Mot de passe de connexion"
@@ -6473,7 +6469,7 @@
         "Message"
       ],
       "Moderate NAT": [
-        ""
+        "NAT modéré"
       ],
       "Move to": [
         "Déplacer vers"
@@ -6497,13 +6493,13 @@
         "Nouveau mot de passe"
       ],
       "No filter": [
-        ""
+        "Aucun filtre"
       ],
       "No label found": [
         "Aucun label trouvé"
       ],
       "Non-standard ports": [
-        ""
+        "Ports non standards"
       ],
       "Notification": [
         "Notification"
@@ -6665,7 +6661,7 @@
         "Requête"
       ],
       "Sticky labels": [
-        ""
+        "Labels automatiques"
       ],
       "Subtotal": [
         "Sous-total"
@@ -6749,7 +6745,7 @@
         "Code de vérification"
       ],
       "VPN Accelerator": [
-        ""
+        "VPN Accelerator"
       ],
       "VPN Connections": [
         "Connexions VPN"
@@ -6825,7 +6821,7 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
-        ""
+        "Ajoutez un domaine que vous possédez à votre compte ${ MAIL_APP_NAME }."
       ]
     },
     "Label for domain modal": {
@@ -6914,11 +6910,6 @@
       ],
       "Row": [
         "Ligne"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Joindre une ou des capture(s) d'écran"
       ]
     },
     "Label/folder modal": {
@@ -7431,6 +7422,9 @@
       "A disabled address cannot be primary": [
         "Une adresse désactivée ne peut pas être principale"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        "La clé avec l'empreinte ${ fp } a été supprimée."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Identifiants OpenVPN/IKEv2 regénérés"
       ]
@@ -7795,12 +7789,6 @@
       "Address": [
         "Adresse"
       ],
-      "Browser name": [
-        "Nom du navigateur"
-      ],
-      "Browser version": [
-        "Version du navigateur"
-      ],
       "Choose a name": [
         "Choisir un nom"
       ],
@@ -7834,12 +7822,6 @@
       "Name": [
         "Nom"
       ],
-      "OS name": [
-        "Nom du système d'exploitation"
-      ],
-      "OS version": [
-        "Version du système d'exploitation"
-      ],
       "Other": [
         "Autre"
       ],
@@ -7858,14 +7840,14 @@
       "Postal code": [
         "Code postal"
       ],
-      "Proton username": [
-        "Nom d'utilisateur Proton"
-      ],
       "Search settings": [
         "Paramètres de recherche"
       ],
       "Search users": [
         "Rechercher des utilisateurs"
+      ],
+      "Select": [
+        "Sélectionner"
       ],
       "Select a reason": [
         "Sélectionnez une raison"
@@ -8488,16 +8470,16 @@
         "Adresse activée"
       ],
       "Certificate ${ name } revoked": [
-        ""
+        "Certificat ${ name } révoqué"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Certificat prolongé jusqu'au ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "La configuration « ${ name } » a été créée, veuillez noter que la clé privée n'est pas stockée et ne pourra plus être affichée à nouveau, vous devriez copier ou télécharger cette configuration."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Fichier de configuration créé pour ${ serverName }"
       ],
       "Filter removed": [
         "Filtre retiré"
@@ -8595,19 +8577,19 @@
         "Raccourcis clavier ${ appName }"
       ],
       "${ MAIL_APP_NAME } Bridge": [
-        ""
+        "${ MAIL_APP_NAME } Bridge"
       ],
       "(highly recommended)": [
         "(fortement recommandé)"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Donnez un nom à la configuration à générer"
       ],
       "1. Select platform": [
         "1. Sélectionnez la plateforme"
       ],
       "2. Select platform": [
-        ""
+        "2. Sélectionnez la plateforme"
       ],
       "2. Select protocol": [
         "2. Sélectionnez le protocole"
@@ -8619,10 +8601,10 @@
         "3. Sélectionnez le fichier de configuration et téléchargez"
       ],
       "3. Select VPN options": [
-        ""
+        "3. Sélectionnez les options RPV"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Sélectionnez le serveur auquel se connecter"
       ],
       "Account and password": [
         "Compte et mot de passe"
@@ -8790,7 +8772,7 @@
         "Effacer"
       ],
       "Composing": [
-        ""
+        "Rédaction"
       ],
       "Confirm address": [
         "Confirmer l'adresse"
@@ -8803,6 +8785,9 @@
       ],
       "Confirm phone number": [
         "Confirmation du numéro de téléphone"
+      ],
+      "Connect ${ name }": [
+        "Se connecter à ${ name }"
       ],
       "Contact encryption keys": [
         "Clés de chiffrement des contacts"
@@ -8876,14 +8861,14 @@
       "Delete ${ email }": [
         "Supprimer ${ email }"
       ],
-      "Delete ${ filter.Name }": [
-        "Supprimer ${ filter.Name }"
+      "Delete ${ filterName }": [
+        "Supprimer ${ filterName }"
       ],
       "Delete ${ label.Name } folder": [
-        ""
+        "Supprimer le dossier ${ label.Name }"
       ],
       "Delete ${ label.Name } label": [
-        ""
+        "Supprimer le label ${ label.Name }"
       ],
       "Delete account": [
         "Supprimer le compte"
@@ -8891,8 +8876,8 @@
       "Delete calendar": [
         "Supprimer le calendrier"
       ],
-      "Delete key": [
-        "Supprimer la clé"
+      "Delete key permanently?": [
+        "Supprimer la clé définitivement?"
       ],
       "Delete logs": [
         "Supprimer les journaux"
@@ -9000,7 +8985,7 @@
         "Générer une nouvelle phrase de récupération?"
       ],
       "Get ${ vpnPlus } to access all servers": [
-        ""
+        "Obtenir ${ vpnPlus } pour accéder à tous les serveurs"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Obtenez jusqu'à 18 mois de ${ appName } ${ planName } gratuitement"
@@ -9058,7 +9043,7 @@
         "Factures"
       ],
       "Keyboard shortcuts": [
-        ""
+        "Raccourcis clavier"
       ],
       "Labels": [
         "Labels"
@@ -9079,7 +9064,7 @@
         "Messages"
       ],
       "Messages and composing": [
-        ""
+        "Messages et rédaction"
       ],
       "Multi-user support": [
         "Prise en charge multiutilisateur·rice"
@@ -9208,7 +9193,7 @@
         "Restaurez les privilèges administrateur"
       ],
       "Revoke certificate": [
-        ""
+        "Révoquer le certificat"
       ],
       "Secure email based in Switzerland": [
         "Messagerie sécurisée basée en Suisse"
@@ -9331,7 +9316,7 @@
         "Total (mensuel)"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        ""
+        "Essayez le meilleur de ${ MAIL_APP_NAME } gratuitement"
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
@@ -9367,13 +9352,13 @@
         "Les nouveautés"
       ],
       "WireGuard": [
-        ""
+        "WireGuard"
       ],
       "WireGuard configuration": [
-        ""
+        "Configuration WireGuard"
       ],
       "Your ${ domain } address is active": [
-        ""
+        "Votre adresse ${ domain } est active"
       ],
       "Your account’s usage": [
         "Utilisation de votre compte"
@@ -9418,7 +9403,7 @@
     },
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
-        ""
+        "Facture ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -9484,7 +9469,7 @@
     },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        ""
+        "Les utilisateur·rice·s ${ MAIL_APP_NAME } utiliseront cette clé par défaut pour l'envoi"
       ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accédez au contenu géobloqué (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc.) quelle que soit votre localisation."
@@ -9526,7 +9511,7 @@
         "L'activation des journaux avancés enregistre l'adresse IP de chaque événement dans le journal de sécurité."
       ],
       "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
+        "Accédez à toutes les fonctionnalités payantes de ${ VPN_APP_NAME } et ${ MAIL_APP_NAME } (le service de messagerie chiffrée que des millions de personnes utilisent pour protéger leurs données) avec une seule offre."
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Accédez à toutes les fonctionnalités payantes de ${ vpnAppName } et ${ mailAppName } (le service de messagerie chiffrée que des millions de personnes utilisent pour protéger leurs données) avec une seule offre."
@@ -9568,7 +9553,7 @@
         "Prise en charge des protocoles de partage de fichiers comme BitTorrent."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
@@ -9616,7 +9601,7 @@
         "Vous avez déchiffré cette clé localement"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
-        ""
+        "Votre boîte de réception ${ MAIL_APP_NAME } est presque pleine"
       ],
       "Your DKIM signing is working.": [
         "Votre signature DKIM fonctionne."
@@ -9632,12 +9617,12 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        ""
+        "Sélectionnez les paramètres PGP par défaut utilisés pour signer ou chiffrer les messages avec les utilisateur·rice·s PGP non-${ BRAND_NAME }. Notez que Inline PGP force les messages en texte brut. En savoir plus"
       ]
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        ""
+        "Lorsque vous recevrez un message d'un·e autre utilisateur·rice ${ MAIL_APP_NAME } qui n'a pas de clés de confiance dans vos contacts, une bannière vous demandera si vous voulez activer les clés de confiance."
       ]
     },
     "Tooltip sign external messages": {
@@ -9889,7 +9874,7 @@
         "Si vous annulez cette importation, vous ne pourrez pas la reprendre. Proton a sauvegardé toute la progression dans votre compte. Annuler quand même?"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "Le dialogue en ligne en temps réel est une fonctionnalité haut de gamme disponible uniquement pour les personnes disposant d’une offre ${ VPN_APP_NAME } payante. Veuillez ouvrir un ticket à la place."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Veuillez noter qu'en choisissant ce mode de paiement, vous ne pourrez avoir accès à votre nouvelle offre immédiatement. Nous mettrons à jour votre compte une fois le paiement effectué."
@@ -9910,7 +9895,7 @@
         "Les paramètres de date et heure de votre appareil ne sont pas synchronisés. ${ learnMore }"
       ],
       "This feature is only available for ${ mailProfessional } plans or higher": [
-        ""
+        "Cette fonctionnalité n’est disponible que pour les offres ${ mailProfessional } ou supérieures"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Cette importation peut dépasser la capacité de stockage actuellement disponible dans votre compte Proton. Veuillez envisager de personnaliser votre importation."

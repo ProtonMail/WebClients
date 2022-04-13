@@ -45,7 +45,7 @@
         "Añadir participante"
       ],
       "Add phone number": [
-        "Agregar número de teléfono"
+        "Añadir número telefónico"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Añadir a ${ CALENDAR_APP_NAME }"
@@ -84,7 +84,7 @@
         "Archivar"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjuntar captura(s) de pantalla"
       ],
       "Attachment": [
         "Adjunto"
@@ -213,7 +213,7 @@
         "Descifrar"
       ],
       "Default email application": [
-        ""
+        "Aplicación de correo por defecto"
       ],
       "Delete": [
         "Eliminar"
@@ -513,7 +513,7 @@
         "Más"
       ],
       "More details about ${ title }": [
-        ""
+        "Más detalles sobre ${ title }"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
@@ -573,7 +573,7 @@
         "No"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        ""
+        "Algunas de las imágenes no pudieron ser cargadas con la protección de rastreo."
       ],
       "No, I won't attend": [
         "No, no asistiré"
@@ -591,7 +591,7 @@
         "Abrir calendario"
       ],
       "Open get started checklist modal": [
-        ""
+        "Abrir la lista de comprobación de inicio"
       ],
       "Open navigation": [
         "Abrir la navegación"
@@ -738,7 +738,7 @@
         "enviar correo de respuesta automática"
       ],
       "Send read receipt": [
-        ""
+        "Enviar acuse de recibo"
       ],
       "Set": [
         "Establecer"
@@ -789,7 +789,7 @@
         "Mostrar más opciones de búsqueda"
       ],
       "Show preview": [
-        ""
+        "Mostrar vista previa"
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -825,7 +825,7 @@
         "Cambiar de cuenta"
       ],
       "Switch to rich text": [
-        ""
+        "Cambiar a texto enriquecido"
       ],
       "Theme": [
         "Tema"
@@ -862,7 +862,7 @@
         "Deshacer"
       ],
       "Unlock data": [
-        "Desbloquear Datos"
+        "Desbloquear datos"
       ],
       "Unmark for deletion": [
         "Desmarcar para eliminar"
@@ -910,7 +910,7 @@
         "Usar para enviar"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
-        ""
+        "Usa el mouse para cambiar el tamaño de la vista. Si utilizas el teclado, puedes usar las teclas de flecha izquierda y derecha para cambiar el tamaño."
       ],
       "Use “${ label }” setting": [
         "Utilizar la configuración de \"${ label }\""
@@ -994,13 +994,13 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        ""
+        "Fallo al agregar participante"
       ],
       "Invitation sent and participant added": [
-        ""
+        "Invitación enviada y participante agregado"
       ],
       "Participant added": [
-        ""
+        "Participante añadido"
       ]
     },
     "Alert": {
@@ -1099,7 +1099,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+        "El acceso a la versión beta le permite utilizar la versión beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME } antes de que se pongan a disposición del público. Esto significa que puede ser el primero en probar nuevos productos, obtener nuevas actualizaciones y utilizar nuevas funciones."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si encuentras problemas, siempre puedes deshabilitar el acceso beta."
@@ -1274,7 +1274,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Continuar usando ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -1292,19 +1292,19 @@
         " Esta nueva propuesta horaria no coincide con los detalles de tu invitación. Por favor, verifica los detalles de la invitación en tu calendario."
       ],
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Esta respuesta no coincide con los detalles de tu invitación. Por favor, verifica los detalles de la invitación en tu calendario."
+        " Esta respuesta no coincide con los detalles de tu invitación. Verifica los detalles de la invitación en tu calendario."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } aceptó una invitación y propuso una nueva hora para una ocurrencia de este evento."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } aceptó una invitación y propuso una nueva hora para este evento."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } aceptó una invitación para una ocurrencia del evento."
       ],
       "${ participantName } accepted an invitation to this event.": [
-        ""
+        "${ participantName } aceptó una invitación a este evento."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha aceptado tu invitación y ha propuesto una hora nueva para una ocurrencia de este evento."
@@ -1328,16 +1328,16 @@
         "${ participantName } ha solicitado las últimas actualizaciones de un evento que ya no existe en tu calendario."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } rechazó una invitación y propuso una nueva hora para una ocurrencia de este evento."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } rechazó una invitación y propuso una nueva hora para este evento."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } ha rechazado la invitación a una de las citas del evento."
       ],
       "${ participantName } declined an invitation to this event.": [
-        ""
+        "${ participantName } rechazó una invitación a este evento."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha rechazado tu invitación y ha propuesto una hora nueva para una ocurrencia de este evento."
@@ -1352,16 +1352,16 @@
         "${ participantName } ha rechazado tu invitación."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } ha aceptado una invitación y propuso una nueva hora para una ocurrencia de este evento. La respuesta y la propuesta están desactualizadas."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } ha aceptado tu invitación y ha propuesto una nueva hora para este evento. La respuesta y propuesta están desactualizadas."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } había aceptado una invitación para una de las incidencias del evento."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        ""
+        "${ participantName } ha aceptado una invitación a este evento."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } ya ha aceptado tu invitación y ha propuesto una hora nueva para una ocurrencia de este evento. La respuesta y la propuesta están desactualizadas."
@@ -1373,13 +1373,13 @@
         "${ participantName } ha rechazado tu invitación y ha propuesto una nueva hora para la repetición de este evento. La respuesta y propuesta están desactulizadas."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } ha rechazado tu invitación y ha propuesto una nueva hora para este evento. La respuesta y la propuesta no están actualizadas."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } ha rechazado la invitación a una de las citas del evento."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        ""
+        "${ participantName } rechazó una invitación a este evento."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } ya ha rechazado tu invitación y ha propuesto una nueva hora para una ocurrencia de este evento. La respuesta y la propuesta no están actualizadas."
@@ -1424,16 +1424,16 @@
         "${ participantName } había propuesto una nueva hora para este evento. Esta propuesta no está actualizada. No tienes ningún calendario."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } ha aceptado provisionalmente tu invitación y ha propuesto una nueva hora para una ocurrencia de este evento. La respuesta y la propuesta no están actualizadas."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } ha aceptado provisionalmente tu invitación y ha propuesto una nueva hora para este evento. La respuesta y la propuesta no están actualizadas."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } había aceptado provisionalmente una invitación a una de las citas del evento."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } había aceptado provisionalmente una invitación a este evento."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } ha aceptado provisionalmente tu invitación y ha propuesto una nueva hora para una ocurrencia de este evento. La respuesta y la propuesta no están actualizadas."
@@ -1442,7 +1442,7 @@
         "${ participantName } ha aceptado provisionalmente tu invitación y ha propuesto una nueva hora para este evento. La respuesta y la propuesta no están actualizadas."
       ],
       "${ participantName } is not in the participants list.": [
-        ""
+        "${ participantName } no está en la lista de participantes."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } ha propuesto una nueva hora para una ocurrencia de este evento."
@@ -1451,16 +1451,16 @@
         "${ participantName } ha propuesto una nueva hora para este evento."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } aceptó tentativamente una invitación y propuso una nueva hora para una ocurrencia de este evento."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } aceptó tentativamente una invitación y propuso una nueva hora para este evento."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } aceptó tentativamente una invitación a una ocurrencia del evento."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } aceptó provisionalmente una invitación a este evento."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha aceptado provisionalmente tu invitación y ha propuesto una nueva hora para una ocurrencia de este evento."
@@ -1478,7 +1478,7 @@
         "(Asistencia opcional)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        ""
+        "Por el momento, no es posible añadir sucesos a un evento"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Se ha añadido una ocurrencia al evento ${ veventIcsTitle }"
@@ -1487,10 +1487,10 @@
         "Por el momento, la actualización de eventos no está soportada"
       ],
       "Event rescheduling is not supported for the moment": [
-        ""
+        "La reprogramación de eventos no es compatible por el momento"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        ""
+        "Esta respuesta no puede añadirse a ${ calendarAppName } ya que por el momento, solo admitimos respuestas a todos los eventos de una serie"
       ],
       "This event has been canceled.": [
         "Este evento ha sido cancelado."
@@ -1508,13 +1508,13 @@
         "La invitación está desactualizada. El evento se ha actualizado."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
-        "Esta respuesta no está actualizada. El evento ya no existe en tu calendario."
+        "Esta respuesta está desactualizada. El evento ya no existe en tu calendario."
       ],
       "This response is out of date. This event has been updated.": [
-        "Esta respuesta no está actualizada. Este evento se ha actualizado."
+        "Esta respuesta está desactualizada. Este evento se ha actualizado."
       ],
       "This response is out of date. You have no calendars.": [
-        "Esta respuesta no está actualizada. No tienes calendarios."
+        "Esta respuesta está desactualizada. No tienes calendarios."
       ],
       "You already accepted this invitation.": [
         "Has aceptado la invitación."
@@ -1539,7 +1539,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "El calendario no se ha podido descifrar"
+        "No se ha podido descifrar el calendario"
       ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
@@ -1565,7 +1565,7 @@
     },
     "Calendar widget banner": {
       "Event already ended": [
-        ""
+        "El evento ya terminó"
       ],
       "Event in progress": [
         "Evento en progreso"
@@ -1650,7 +1650,7 @@
         "Editar y reprogramar"
       ],
       "Message saved to Drafts": [
-        ""
+        "Mensaje movido a Borradores"
       ],
       "Quit import customization?": [
         "¿Quiere salir de la importación personalizada?"
@@ -1740,7 +1740,7 @@
     },
     "Country name": {
       "Abkhazia": [
-        ""
+        "Abjasia"
       ],
       "Afghanistan": [
         "Afganistán"
@@ -1779,7 +1779,7 @@
         "Aruba"
       ],
       "Ascension Island": [
-        ""
+        "Isla Ascensión"
       ],
       "Australia": [
         "Australia"
@@ -1851,7 +1851,7 @@
         "Burkina Faso"
       ],
       "Burma": [
-        ""
+        "Myanmar"
       ],
       "Burundi": [
         "Burundi"
@@ -1950,7 +1950,7 @@
         "Guinea Ecuatorial"
       ],
       "Eritrea": [
-        ""
+        "Eritrea"
       ],
       "Estonia": [
         "Estonia"
@@ -1959,13 +1959,13 @@
         "Etiopía"
       ],
       "Falkland Islands": [
-        ""
+        "Islas Malvinas"
       ],
       "Faroe Islands": [
-        ""
+        "Islas Faroe"
       ],
       "Federated States of Micronesia": [
-        ""
+        "Estados Federados de Micronesia"
       ],
       "Fiji": [
         "Fiyi"
@@ -1977,10 +1977,10 @@
         "Francia"
       ],
       "French Guiana": [
-        ""
+        "Guyana Francesa"
       ],
       "French Polynesia": [
-        ""
+        "Polinesia Francesa"
       ],
       "French Southern Territories": [
         "Territorios Australes Franceses"
@@ -2010,37 +2010,37 @@
         "Groenlandia"
       ],
       "Grenada": [
-        ""
+        "Granada"
       ],
       "Guadeloupe": [
-        ""
+        "Guadalupe"
       ],
       "Guam": [
-        ""
+        "Guam"
       ],
       "Guatemala": [
         "Guatemala"
       ],
       "Guernsey": [
-        ""
+        "Guernsey"
       ],
       "Guinea": [
         "Guinea"
       ],
       "Guinea-Bissau": [
-        ""
+        "Guinea-Bisáu"
       ],
       "Guyana": [
-        ""
+        "Guyana"
       ],
       "Haiti": [
         "Haití"
       ],
       "Heard Island and McDonald Islands": [
-        ""
+        "Islas Heard y McDonald"
       ],
       "Holy See (Vatican City State)": [
-        ""
+        "Ciudad del Vaticano"
       ],
       "Honduras": [
         "Honduras"
@@ -2049,7 +2049,7 @@
         "Hong Kong"
       ],
       "Hungary": [
-        "Hungria"
+        "Hungría"
       ],
       "Iceland": [
         "Islandia"
@@ -2067,13 +2067,13 @@
         "Irán"
       ],
       "Iraq": [
-        "Iraq"
+        "Irak"
       ],
       "Ireland": [
         "Irlanda"
       ],
       "Isle of Man": [
-        ""
+        "Isla de Man"
       ],
       "Israel": [
         "Israel"
@@ -2202,7 +2202,7 @@
         "Namibia"
       ],
       "Nauru": [
-        ""
+        "Nauru"
       ],
       "Nepal": [
         "Nepal"
@@ -2226,7 +2226,7 @@
         "Nigeria"
       ],
       "Niue": [
-        ""
+        "Niue"
       ],
       "Norfolk Island": [
         "Isla Norfolk"
@@ -2244,13 +2244,13 @@
         "Noruega"
       ],
       "Oman": [
-        ""
+        "Omán"
       ],
       "Pakistan": [
         "Pakistán"
       ],
       "Palau": [
-        ""
+        "Palaos"
       ],
       "Palestine": [
         "Palestina"
@@ -2259,7 +2259,7 @@
         "Panamá"
       ],
       "Papua New Guinea": [
-        ""
+        "Papúa Nueva Guinea"
       ],
       "Paraguay": [
         "Paraguay"
@@ -2271,7 +2271,7 @@
         "Filipinas"
       ],
       "Pitcairn": [
-        ""
+        "Pitcairn"
       ],
       "Poland": [
         "Polonia"
@@ -2283,10 +2283,10 @@
         "Puerto Rico"
       ],
       "Qatar": [
-        ""
+        "Qatar"
       ],
       "Reunion": [
-        ""
+        "Reunión"
       ],
       "Romania": [
         "Rumanía"
@@ -2295,13 +2295,13 @@
         "Rusia"
       ],
       "Rwanda": [
-        ""
+        "Ruanda"
       ],
       "Saint Barthélemy": [
         "San Bartolomé"
       ],
       "Saint Helena": [
-        ""
+        "Santa Helena"
       ],
       "Saint Kitts and Nevis": [
         "San Cristóbal y Nieves"
@@ -2313,7 +2313,7 @@
         "San Martín (parte francesa)"
       ],
       "Saint Pierre and Miquelon": [
-        ""
+        "San Pedro y Miquelón"
       ],
       "Saint Vincent and the Grenadines": [
         "San Vicente y las Granadinas"
@@ -2325,7 +2325,7 @@
         "San Marino"
       ],
       "Sao Tome and Principe": [
-        ""
+        "Santo Tomé y Príncipe"
       ],
       "Saudi Arabia": [
         "Arabia Saudita"
@@ -2337,7 +2337,7 @@
         "Serbia"
       ],
       "Seychelles": [
-        ""
+        "Seychelles"
       ],
       "Sierra Leone": [
         "Sierra Leona"
@@ -2346,7 +2346,7 @@
         "Singapur"
       ],
       "Sint Maarten": [
-        ""
+        "San Martín"
       ],
       "Slovakia": [
         "Eslovaquia"
@@ -2355,7 +2355,7 @@
         "Eslovenia"
       ],
       "Solomon Islands": [
-        "Islas Solomon"
+        "Islas Salomón"
       ],
       "Somalia": [
         "Somalia"
@@ -2364,13 +2364,13 @@
         "Sudáfrica"
       ],
       "South Georgia and the South Sandwich Islands": [
-        ""
+        "Islas Georgias del Sur y Sándwich del Sur"
       ],
       "South Korea": [
         "Corea del Sur"
       ],
       "South Ossetia": [
-        ""
+        "Osetia del Sur"
       ],
       "South Sudan": [
         "Sudán del Sur"
@@ -2385,10 +2385,10 @@
         "Sudán"
       ],
       "Suriname": [
-        ""
+        "Surinam"
       ],
       "Svalbard and Jan Mayen": [
-        ""
+        "Svalbard y Jan Mayen"
       ],
       "Swaziland": [
         "Eswatini"
@@ -2415,13 +2415,13 @@
         "Tailandia"
       ],
       "Timor-Leste": [
-        ""
+        "Timor Oriental"
       ],
       "Togo": [
         "Togo"
       ],
       "Tokelau": [
-        ""
+        "Tokelau"
       ],
       "Tonga": [
         "Tonga"
@@ -2439,7 +2439,7 @@
         "Turquía"
       ],
       "Turkmenistan": [
-        ""
+        "Turkmenistán"
       ],
       "Turks and Caicos Islands": [
         "Islas Turcas y Caicos"
@@ -2490,7 +2490,7 @@
         "Wallis y Futuna"
       ],
       "Western Sahara": [
-        ""
+        "Sahara Occidental"
       ],
       "Yemen": [
         "Yemen"
@@ -2782,7 +2782,7 @@
         "Elija una fecha en el futuro."
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "",
+        "Elija una fecha dentro del siguiente día ${ SCHEDULED_MAX_DATE_DAYS }.",
         "Elija una fecha dentro de los siguientes ${ SCHEDULED_MAX_DATE_DAYS } días."
       ],
       "Condition incomplete": [
@@ -2887,7 +2887,7 @@
         "El nombre de la etiqueta no puede estar vacío"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Máximo número de adjuntos (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) excedido."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton",
@@ -2900,7 +2900,7 @@
         "Se ha producido un error al procesar el mensaje."
       ],
       "Missing key packet": [
-        ""
+        "Falta el paquete de claves"
       ],
       "Missing signature": [
         "No se ha encontrado la firma"
@@ -2947,7 +2947,7 @@
         "Por favor activa tu búsqueda de contenido de nuevo"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
+        "Por favor, arregle el conflicto resaltado para continuar.",
         "Por favor, arregle los conflictos resaltados para continuar."
       ],
       "Please repeat the password": [
@@ -3003,7 +3003,7 @@
         "Algunos de tus nombres de etiquetas no están disponibles. Por favor, personaliza la importación para editar estos nombres."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Algunos de tus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Por favor, modifica el importe para editar estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ves este mensaje de error, ponte en contacto con nuestro ${ supportTeam }."
@@ -3082,7 +3082,7 @@
         "No puedes enviar vCards de más de 10 contactos"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "",
+        "No puedes abrir más de ${ maxActiveComposer } ventana de edición a la vez",
         "No puedes abrir más de ${ maxActiveComposer } ventanas de edición a la vez"
       ],
       "You did not provide a file.": [
@@ -3111,10 +3111,10 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Los borradores no se pueden mover a la bandeja de entrada"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Los borradores no se pueden mover a Spam"
       ],
       "Sent messages cannot be moved to Inbox": [
         "Los mensajes enviados no se pueden mover a la bandeja de entrada"
@@ -3209,7 +3209,7 @@
         "Hora inicial malformada"
       ],
       "Missing start time": [
-        "Hora inicial faltante"
+        "Falta la hora inicial"
       ],
       "No UID, title or start time": [
         "No hay UID, título, ni hora de inicio"
@@ -3283,7 +3283,7 @@
     },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
+        "No se pudo enviar la invitación a ${ email }. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -3300,10 +3300,10 @@
         "Respuesta no válida"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "No se pudo actualizar el evento en tu calendario. No se envió respuesta"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "No se pudo actualizar el evento en tu calendario. No se envió respuesta"
       ],
       "Unexpected error": [
         "Error inesperado"
@@ -3327,7 +3327,7 @@
         "Tu respuesta ha sido enviada, pero el evento no ha podido ser añadido a tu calendario"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
+        "Su respuesta fue enviada, pero el evento no pudo ser actualizado en su calendario"
       ]
     },
     "Event title": {
@@ -3433,7 +3433,7 @@
         "leído"
       ],
       "starred": [
-        "destacado"
+        "destacados"
       ]
     },
     "Font Face Default": {
@@ -3448,7 +3448,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Hemos aumentado el almacenamiento total de tu cuenta a ${ rewardInGb } GB. Consigue almacenamiento adicional y desbloquea las funciones premium hoy."
       ],
       "You're all set!": [
         "¡Ya está todo listo!"
@@ -3456,7 +3456,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Completa todos los pasos y consigue un total de ${ rewardInGb } GB en tu cuenta"
       ],
       "Expires soon": [
         "Expira pronto"
@@ -3666,6 +3666,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        "${ activateLink } o ${ learnMoreLink }."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } dirección de correo electrónico",
         "${ addressCount } direcciones de correo electrónico"
@@ -3718,7 +3721,7 @@
         "${ groupCounts } grupos encontrados"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        ""
+        "${ MAIL_APP_NAME } también puede proteger su negocio."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } mensaje no pudo ser movido.",
@@ -3812,13 +3815,13 @@
         "/mes."
       ],
       "5 email addresses": [
-        "5 direcciones de correo"
+        "5 direcciones de correo electrónico"
       ],
       "5 GB storage": [
         "5 GB de almacenamiento"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Una frase de recuperación es una de las maneras más seguras de proteger el acceso a su cuenta. Puede utilizarla para acceder a su cuenta y recuperar sus datos cifrados si es que olvida la contraseña."
+        "Una frase de recuperación es una de las formas más seguras de proteger el acceso a tu cuenta. Puedes usarla para acceder a tu cuenta y recuperar tus datos cifrados si alguna vez olvidas tu contraseña."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Se enviará una solicitud para darte de baja de esta lista de correo y se procesará automáticamente."
@@ -3928,10 +3931,10 @@
         "Limpiar datos"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        ""
+        "Al borrar los datos del navegador también se desactiva la búsqueda del contenido de los mensajes en este dispositivo. Será necesario volver a descargar todos los mensajes para buscar en ellos."
       ],
       "Clears browser data related to message content search including downloaded messages": [
-        ""
+        "Borra los datos del navegador relacionados con la búsqueda de contenido de los mensajes, incluidos los mensajes descargados"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
@@ -3943,13 +3946,13 @@
         "Haz clic para ver detalles del grupo"
       ],
       "Close this screen to exit.": [
-        "Cierre esta pantalla para salir."
+        "Cierra esta pantalla para salir."
       ],
       "Confirm phishing report": [
         "Confirmar reporte de suplantación"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Continuar con ${ planName }"
       ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
@@ -4002,7 +4005,7 @@
         "Aplicación de correo electrónico predeterminada"
       ],
       "Disable message content search": [
-        ""
+        "Desactivar la búsqueda del contenido de mensajes"
       ],
       "Do you want to download this attachment anyway?": [
         "¿Quieres descargar este fichero adjunto de todos modos?",
@@ -4059,10 +4062,10 @@
         "imágenes incrustadas"
       ],
       "Encrypt for non-${ BRAND_NAME } users": [
-        ""
+        "Cifrar para usuarios que no son de ${ BRAND_NAME }"
       ],
       "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        ""
+        "Los mensajes cifrados a destinatarios que no sean de ${ BRAND_NAME } expirarán en 28 días a menos que definas una fecha de expiración menor."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
@@ -4087,13 +4090,13 @@
         "Expira"
       ],
       "Expires in ${ formattedDelay }": [
-        ""
+        "Expira en ${ formattedDelay }"
       ],
       "Expires in ${ formattedDelayShort }": [
-        ""
+        "Expira en ${ formattedDelayShort }"
       ],
       "Expires in less than ${ formattedDelayShort }": [
-        ""
+        "Expira en menos de ${ formattedDelayShort }"
       ],
       "Expires soon": [
         "Expira pronto"
@@ -4147,7 +4150,7 @@
         "Si tienes problemas para crear tu cuenta, por favor solicita una invitación y responderemos en un día hábil."
       ],
       "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        ""
+        "Si envías este mensaje a un usuario que no es de ${ MAIL_APP_NAME }, asegúrate de establecer una contraseña para el mensaje."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si crees que esto es un error, por favor contáctanos ${ contactLink }."
@@ -4178,7 +4181,7 @@
         "Importando tus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Increase storage space starting at": [
-        ""
+        "Aumenta el espacio de almacenamiento a partir de"
       ],
       "Indexing paused": [
         "Indexación pausada"
@@ -4213,6 +4216,9 @@
       "Learn more": [
         "Más información"
       ],
+      "learn more": [
+        "más información"
+      ],
       "Left to Right": [
         "Izquierda a Derecha"
       ],
@@ -4238,7 +4244,7 @@
         "Administra tus etiquetas"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+        "Máximo número de adjuntos (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) excedido."
       ],
       "members": [
         "miembros"
@@ -4250,7 +4256,7 @@
         "Fusionado"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        ""
+        "La caducidad de los mensajes funciona de forma inmediata cuando se envían correos electrónicos a otros usuarios de ${ MAIL_APP_NAME }. Para enviar correos con caducidad a usuarios que no sean de ${ BRAND_NAME }, por favor cancele y añada la protección por contraseña a su correo electrónico."
       ],
       "Message headers": [
         "Encabezados del mensaje"
@@ -4262,13 +4268,13 @@
         "Mensaje enviado."
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "El mensaje será enviado el ${ dateString } a las ${ formattedTime }"
       ],
       "Message will be sent today at ${ formattedTime }": [
         "Este mensaje se enviará hoy a las ${ formattedTime }"
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "Este mensaje se enviará mañana a las ${ formattedTime }"
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
@@ -4292,7 +4298,7 @@
         "No hay dirección de correo electrónico"
       ],
       "No email trackers found": [
-        "No se han encontrado rastreadores de correo electrónico"
+        "No se encontraron rastreadores de correo"
       ],
       "No folder found": [
         "No se ha encontrado ninguna carpeta"
@@ -4319,7 +4325,7 @@
         "No se han encontrado resultados"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
-        ""
+        "Algunas de las imágenes no pudieron ser cargadas con la protección de rastreo"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ninguna de las claves cargadas son validas para el cifrado. El cifrado se desactiva automáticamente."
@@ -4334,7 +4340,7 @@
         "de"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Cambie esta configuración solo si utiliza PGP con destinatarios que no sean de ${ BRAND_NAME }."
       ],
       "Other options": [
         "Otras opciones"
@@ -4343,10 +4349,10 @@
         "Nuestro sistema ha marcado este mensaje como un intento de suplantación de identidad. Por favor, comprueba que es legítimo."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+        "PGP/Inline solo es compatible con el formato de texto plano. Tenga en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+        "PGP/MIME envía automáticamente el mensaje utilizando el modo de composición actual. Tenga en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados"
       ],
       "Phone number": [
         "Número de teléfono"
@@ -4358,7 +4364,7 @@
         "Por favor, añade al menos un destinatario."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Por favor, manténgalo a salvo. Lo necesitará para acceder a su cuenta y descifrar sus datos en caso de restablecimiento de contraseña."
+        "Manténla a salvo. La necesitarás para acceder a tu cuenta y descifrar tus datos en caso de un restablecimiento de contraseña."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a este grupo NO se eliminarán."
@@ -4457,7 +4463,7 @@
         "El envío de mensajes desde la dirección @pm.me es una característica de pago. Tu mensaje será enviado desde tu dirección por defecto ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
+        "Enviado con <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> correo seguro."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
@@ -4466,13 +4472,13 @@
         "El tiempo de la sesión ha expirado"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        ""
+        "Configure ${ MAIL_APP_NAME } como su aplicación de correo electrónico predeterminada para este navegador. ${ MAIL_APP_NAME } se abrirá automáticamente al hacer clic en un enlace de correo electrónico."
       ],
       "Set a recovery phrase": [
         "Configura una frase de recuperación"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        ""
+        "La configuración de PGP le permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
       ],
       "Show original message": [
         "Mostrar el mensaje original"
@@ -4484,7 +4490,7 @@
         "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        ""
+        "Almacena y comparte archivos de forma segura con ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Asunto"
@@ -4499,10 +4505,10 @@
         "Asunto: "
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Soporte para 1 dominio de correo personalizado"
       ],
       "Support privacy by upgrading for": [
-        ""
+        "Apoyar la privacidad mediante la actualización para"
       ],
       "support team": [
         "equipo de soporte"
@@ -4557,7 +4563,7 @@
         "Este navegador no admite la previsualización de documentos PDF. Por favor, descarga el archivo."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        ""
+        "Esta conversación contiene un mensaje programado. El envío de este mensaje fue cancelado."
       ],
       "This conversation contains non-trashed messages.": [
         "Esta conversación contiene mensajes no borrados."
@@ -4578,7 +4584,7 @@
         "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
       ],
       "This message has been adjusted to comply with a dark background.": [
-        ""
+        "Este mensaje ha sido ajustado para cumplir con un fondo oscuro."
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Este mensaje es generado automáticamente como respuesta a un mensaje anterior."
@@ -4596,25 +4602,25 @@
         "Este mensaje está firmado con la clave adjunta, que aún no ha sido confiada."
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        ""
+        "Este mensaje será movido a los Borradores, entonces podrá editarlo. Necesitará reprogramar cuándo será enviado."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Este mensaje será enviado el ${ dateString } a las ${ formattedTime }"
       ],
       "This message will be sent shortly": [
-        ""
+        "Este mensaje se enviará en breve"
       ],
       "This message will be sent today at ${ formattedTime }": [
-        ""
+        "Este mensaje se enviará hoy a las ${ formattedTime }"
       ],
       "This message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "Este mensaje se enviará mañana a las ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
         "Este mensaje expirará el ${ formattedDate }"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Este mensaje caducará en ${ dateString } a las ${ formattedTime }"
       ],
       "This message will expire today at ${ formattedTime }": [
         "Este mensaje expira hoy en ${ formattedTime }"
@@ -4647,13 +4653,13 @@
         "Para usar la verificación de dirección, debe confiar en una o más de las claves públicas disponibles, incluyendo la clave que deseas utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        ""
+        "Demasiados mensajes esperando a ser enviados. Por favor espere hasta que otro mensaje se envíe para programar este."
       ],
       "Turn off content search. Activation progress won't be lost.": [
-        ""
+        "Desactive la búsqueda de contenidos. El progreso de la activación no se perderá."
       ],
       "Turn on to search the content of your messages": [
-        ""
+        "Activa para buscar el contenido de sus mensajes"
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
@@ -4668,37 +4674,37 @@
         "Actualizando búsqueda de contenido de mensaje..."
       ],
       "Upgrade to add more addresses to your account.": [
-        ""
+        "Actualiza para agregar más direcciones a su cuenta."
       ],
       "Upgrade to configure a vacation auto-responder.": [
-        ""
+        "Actualizar para configurar un contestador automático de vacaciones."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        ""
+        "Actualiza para crear más carpetas, filtros y direcciones."
       ],
       "Upgrade to host emails from your own domain name.": [
-        ""
+        "Actualice para alojar correos electrónicos desde su propio nombre de dominio."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        ""
+        "Actualizar para enviar correo electrónico desde direcciones @pm.me."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        ""
+        "Actualizar para enviar correos electrónicos a grupos de contactos fácilmente."
       ],
       "Upgrade to support a privacy-first internet.": [
-        ""
+        "Actualizar para apoyar un internet que dé prioridad a la privacidad."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        ""
+        "Actualice para apoyar nuestra misión de brindar privacidad a todos."
       ],
       "Upgrade to support privacy and get more features.": [
-        ""
+        "Actualiza para apoyar la privacidad y obtener más funciones."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        ""
+        "Actualiza para usar ${ MAIL_APP_NAME } con clientes de escritorio de terceros."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Actualiza hoy para evitar perder los beneficios de ${ appName } ${ planName }."
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -4713,7 +4719,7 @@
         "Utilice ${ calendarAppName } para mantener su agenda privada."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
-        ""
+        "Usar atajos del teclado para administrar sus correos rápidamente."
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Utilizando tu dispositivo móvil, escanea este código QR o visita ${ link }."
@@ -4746,7 +4752,7 @@
         "¿Qué quieres importar de tu cuenta de Google?"
       ],
       "When do you want your message to be sent?": [
-        "¿Cuándo quieres que este mensaje sea enviado?"
+        "¿Cuándo quieres que se envíe tu mensaje?"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Cuando habilitaste las claves de confianza para ${ senderName }, las claves públicas fueron añadidas a los datos del contacto."
@@ -4767,7 +4773,7 @@
         "Actualmente has iniciado sesión como ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
-        ""
+        "Puede añadirlo como archivo adjunto o mostrarlo en línea en el cuerpo del correo."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "También puede unir calendarios importados con calendarios Proton existentes."
@@ -4785,7 +4791,7 @@
         "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
       ],
       "You can use ${ VPN_APP_NAME } for free today.": [
-        ""
+        "Puedes usar ${ VPN_APP_NAME } gratis hoy."
       ],
       "You cannot reply from the invited address.": [
         "No puedes responder desde la dirección invitada."
@@ -4847,7 +4853,7 @@
         "Has seleccionado **${ count } mensajes** con esta etiqueta"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
-        ""
+        "Ha escrito \"${ attachmentsFoundKeyword }\", pero no se ha añadido ningún archivo adjunto. ¿Quiere enviar su mensaje de todos modos?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso ha sido restringido. ${ payInvoiceLink }"
@@ -4871,7 +4877,7 @@
         "Tu frase de recuperación"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Su frase de recuperación es una serie de 12 palabras en un orden específico."
+        "Tu frase de recuperación es una serie de 12 palabras en un orden específico."
       ]
     },
     "info": {
@@ -5162,7 +5168,7 @@
         "CUALQUIERA"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjuntar captura(s) de pantalla"
       ],
       "Attachments": [
         "Archivos adjuntos"
@@ -5171,7 +5177,7 @@
         "Guardar contactos automáticamente"
       ],
       "BCC": [
-        ""
+        "CCO"
       ],
       "Blind Carbon Copy": [
         "Con copia oculta"
@@ -5195,7 +5201,7 @@
         "Categoría"
       ],
       "CC": [
-        ""
+        "CC"
       ],
       "City": [
         "Ciudad"
@@ -5225,7 +5231,7 @@
         "Fecha:"
       ],
       "Delete": [
-        ""
+        "Eliminar"
       ],
       "Display name": [
         "Nombre a mostrar"
@@ -5435,7 +5441,7 @@
         "Tamaño:"
       ],
       "Starred": [
-        "Destacado"
+        "Destacados"
       ],
       "Statement": [
         "Declaración"
@@ -5483,7 +5489,7 @@
         "Subir imagen"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Nombre de usuario o correo de ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Código de verificación"
@@ -5647,7 +5653,7 @@
         "Administra tus etiquetas"
       ],
       "More about recovery": [
-        ""
+        "Más información sobre la recuperación"
       ],
       "Open in ${ calendarAppName }": [
         "Abrir en ${ calendarAppName }"
@@ -5692,13 +5698,13 @@
         "Spam"
       ],
       "Starred": [
-        "Destacado"
+        "Destacados"
       ],
       "Terms": [
         "Términos"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
+        "Este archivo ICS contiene más de un evento. Por favor descárguelo e importe los eventos en ${ calendarAppName }"
       ],
       "Trash": [
         "Papelera"
@@ -5710,7 +5716,7 @@
         "Mejorar cuenta"
       ],
       "You need to activate your calendar keys to add this event": [
-        ""
+        "Tienes que activar las claves de tu calendario para añadir este evento"
       ],
       "You need to activate your calendar keys to answer this invitation": [
         "Necesitas habilitar las claves del calendario para responder a esta invitación"
@@ -5744,7 +5750,7 @@
         "Ya casi está"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        ""
+        "Cantidad de calendarios creados: ${ createdCalendars } de ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Creando calendarios nuevos"
@@ -5756,7 +5762,7 @@
         "Recogemos los datos de su proveedor"
       ],
       "Your import is starting": [
-        "Su importación está empezando"
+        "Tu importación está empezando"
       ]
     },
     "Mail import summary": {
@@ -5803,7 +5809,7 @@
         "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Tu periodo de prueba gratuito ha terminado. El acceso a tu cuenta será deshabilitado pronto. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -6006,25 +6012,25 @@
     },
     "Onboarding": {
       "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        ""
+        "${ appName } ahora es más moderno y personalizable mientras protege tus datos con cifrado avanzado."
       ],
       "Available on iOS and Android.": [
-        ""
+        "Disponible en iOS y Android."
       ],
       "Get the ${ appName } mobile app": [
-        ""
+        "Obtén la aplicación móvil de ${ appName }"
       ],
       "Import your messages": [
-        ""
+        "Importa tus mensajes"
       ],
       "Meet your encrypted mailbox": [
-        ""
+        "Conoce tu buzón cifrado"
       ],
       "Next": [
         "Siguiente"
       ],
       "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        ""
+        "Nuestro Asistente de Importación transfiere rápidamente todos tus correos electrónicos a tu nuevo buzón cifrado."
       ]
     },
     "Onboarding Proton": {
@@ -6195,10 +6201,10 @@
         "Buscar nombre, correo o grupo"
       ],
       "Select": [
-        ""
+        "Seleccionar"
       ],
       "Start date": [
-        "Fecha de inicio"
+        "Fecha inicial"
       ],
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico"
@@ -6304,7 +6310,7 @@
         "Mensaje firmado con PGP. La verificación del remitente ha fallado"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero"
       ],
       "Stored with zero-access encryption": [
         "Almacenado con cifrado de acceso cero"
@@ -6384,16 +6390,16 @@
     },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
-        ""
+        "Cifrado por ${ MAIL_APP_NAME }"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
-        ""
+        "Cifrado por ${ MAIL_APP_NAME } a destinatario con PGP"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
-        ""
+        "Cifrado por ${ MAIL_APP_NAME } a destinatario con PGP verificado"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
-        ""
+        "Cifrado por ${ MAIL_APP_NAME } a destinatario con PGP verificado"
       ],
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
@@ -6411,11 +6417,11 @@
         "Firmado con PGP"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso-cero"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "",
-        ""
+        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso-cero a destinatario verificado",
+        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso-cero a destinatarios verificados"
       ],
       "Sent by you with end-to-end encryption": [
         "Enviado por ti con cifrado de extremo a extremo"
@@ -6436,7 +6442,7 @@
         "Mensaje firmado con PGP. La verificación del remitente ha fallado: ${ _verificationErrorsMessage2 }"
       ],
       "Sender could not be verified: Message not signed": [
-        "El remitente ha podido ser verificado: mensaje no firmado"
+        "El remitente no ha podido ser verificado: mensaje no firmado"
       ],
       "Sender verification failed": [
         "La verificación del remitente ha fallado"
@@ -6464,19 +6470,19 @@
     },
     "Spotlight": {
       "Discover all Proton services": [
-        ""
+        "Descubre todos los servicios de Proton"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Obtén hasta 18 meses de ${ appName } ${ planName } gratuitos"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "¡Invita amigos y gana recompensas!"
       ],
       "Message Content Search": [
         "Búsqueda de contenido de los mensajes"
       ],
       "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
-        ""
+        "¡Gestiona de forma segura tu agenda, tus archivos y tu vida en línea! Abre para descubrir todos los servicios de Proton."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Para proteger su privacidad, Proton ha bloqueado los rastreadores de correo electrónico en este mensaje"
@@ -6490,10 +6496,10 @@
     },
     "Status": {
       "Unsubscribed from mailing list": [
-        ""
+        "Cancelar suscripción de la lista de correo"
       ],
       "Unsubscribing from mailing list...": [
-        ""
+        "Cancelando de la lista de correo..."
       ]
     },
     "Step in filter modal": {
@@ -6512,7 +6518,7 @@
     },
     "Storage": {
       "Get extra storage for free": [
-        "Obtenga almacenamiento adicional de forma gratuita"
+        "Obtén almacenamiento adicional gratis"
       ],
       "Release notes": [
         "Notas de la versión"
@@ -6700,7 +6706,7 @@
         "Mensaje marcado como no leído."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Mensaje movido a ${ folderName } y remitente agregado a la lista deseada."
+        "Mensaje movido a ${ folderName } y remitente añadido a la lista blanca."
       ],
       "Message moved to ${ folderName }.": [
         "Mensaje movido a ${ folderName }."
@@ -7013,7 +7019,7 @@
         "Direcciones de correo electrónico"
       ],
       "Email composer": [
-        ""
+        "Editor de correo"
       ],
       "Email content": [
         "Contenido del correo electrónico"
@@ -7025,7 +7031,7 @@
         "Ajustes de correo electrónico (${ emailAddress })"
       ],
       "Enable message content search": [
-        ""
+        "Habilitar la búsqueda de contenido de mensajes"
       ],
       "Encryption": [
         "Cifrado"
@@ -7034,7 +7040,7 @@
         "Introduce tu contraseña"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Ingresa tu nombre de usuario o su dirección de correo de ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Error"
@@ -7106,7 +7112,7 @@
         "Lista de mensajes"
       ],
       "Message will expire": [
-        ""
+        "Este mensaje va a expirar"
       ],
       "More": [
         "Más"
@@ -7130,7 +7136,7 @@
         "Mover a la papelera"
       ],
       "Moving a scheduled message": [
-        ""
+        "Mover un mensaje programado"
       ],
       "New message": [
         "Nuevo mensaje"
@@ -7142,7 +7148,7 @@
         "Siguiente mensaje"
       ],
       "No attachment found": [
-        ""
+        "No se ha encontrado ningún archivo adjunto"
       ],
       "Open actions dropdown": [
         "Abrir acciones desplegables"
@@ -7178,10 +7184,10 @@
         "Volviendo a firmar los contactos"
       ],
       "Recipient missing": [
-        ""
+        "Falta el destinatario"
       ],
       "Recipients": [
-        ""
+        "Destinatarios"
       ],
       "Recover data": [
         "Recuperar datos"
@@ -7226,13 +7232,13 @@
         "¿Enviar sin expiración?"
       ],
       "Sender": [
-        ""
+        "Remitente"
       ],
       "Sender changed": [
         "El remitente ha cambiado"
       ],
       "Sending error": [
-        ""
+        "Error de envío"
       ],
       "Sending notice": [
         "Aviso de envío"
@@ -7256,7 +7262,7 @@
         "Advertencia de capacidad de almacenamiento"
       ],
       "Subject missing": [
-        ""
+        "Falta el asunto"
       ],
       "To": [
         "Para"
@@ -7296,7 +7302,7 @@
         "Novedades"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Tu periodo de prueba gratuito acaba el ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7327,7 +7333,7 @@
         "Selecciona el esquema PGP a utilizar para firmar o cifrar a un usuario. Ten en cuenta que PGP/Inline obliga a mensajes de texto plano"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "Las subcarpetas del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
@@ -7347,21 +7353,21 @@
     },
     "Tor out of date": {
       "stable release": [
-        ""
+        "versión estable"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
+        "Esta versión de Tor Browser no es soportada. Por favor actualice a la última ${ stableRelease }"
       ]
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        "Hoy es un buen día para escribir un correo electrónico"
+        "Hoy es un buen día para escribir un correo"
       ],
       "Update default font and size": [
-        ""
+        "Actualizar la fuente y el tamaño por defecto"
       ],
       "Your default font will look like following:": [
-        ""
+        "Su fuente por defecto se verá así:"
       ]
     },
     "Validation": {
@@ -7400,7 +7406,7 @@
         "Si no recuerdas tu contraseña, es imposible volver a activar tu clave. Podemos ayudarte a desactivar la alerta pero en el proceso perderás permanentemente el acceso a todos los datos cifrados con esa clave."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "El chat en vivo es una función premium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton fusionará todas las carpetas con el mismo nombre. Para evitarlo, cambia los nombres antes de la importación."
@@ -7443,7 +7449,7 @@
         "Perderás cualquier personalización que hayas realizado hasta ahora."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Tu periodo de prueba gratuito acaba el ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

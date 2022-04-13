@@ -182,6 +182,9 @@
       "Download": [
         "Descargar"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         "Unidad bloqueada"
       ],
@@ -208,6 +211,9 @@
       ],
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         "Expandir carpeta"
@@ -2415,6 +2421,9 @@
       "Duplicate key updated": [
         "Clave duplicada actualizada"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
@@ -2599,7 +2608,7 @@
         "Una de sus unidades cifradas está bloqueada. Es muy probable que esto se deba a un restablecimiento de contraseña reciente.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres está permitido"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Solo cambie estos ajustes si está usando PGP con destinatarios que no son de ${ BRAND_NAME }."
@@ -2657,6 +2666,9 @@
       ],
       "Queued": [
         "En espera"
+      ],
+      "recommended browser": [
+        ""
       ],
       "Recovery process might take some time.": [
         "El proceso de recuperación puede llevar algún tiempo."
@@ -2883,6 +2895,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Su cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Sus datos están listos para importar desde ${ importedEmailAddressStrong } a su cuenta de Proton."
       ],
@@ -3082,8 +3097,8 @@
       "Enable Beta Access": [
         "Habilitar acceso beta"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
@@ -3993,6 +4008,9 @@
       "Beta Access": [
         "Acceso beta"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "Cancelar todas las transferencias activas"
       ],
@@ -4113,8 +4131,8 @@
       "Empty trash": [
         "Vaciar papelera"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         "Ingrese la contraseña para descargar"
@@ -4145,6 +4163,9 @@
       ],
       "Folders details": [
         "Detalles de carpetas"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        ""
       ],
       "Groups": [
         "Grupos"
@@ -4256,9 +4277,6 @@
       ],
       "Search results": [
         "Buscar resultados"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Resultados de búsqueda: ${ searchView.numberOfResults } encontrado"
       ],
       "Searching…": [
         "Buscando…"
