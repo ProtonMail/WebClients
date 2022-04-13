@@ -1777,12 +1777,6 @@
       "Enter 6 digits": [
         "Εισαγάγετε 6 ψηφία"
       ],
-      "Failed to download a file": [
-        "Αποτυχία λήψης ενός αρχείου"
-      ],
-      "Failed to download a folder": [
-        "Αποτυχία λήψης ενός φακέλου"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Αδυναμία ανεβάσματος αρχείου \"${ item.name }\", λόγω σφάλματος \"${ error }\""
       ],
@@ -2477,6 +2471,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Αποτυχία ανοίγματος ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } ανέβηκε από ${ emailAddress }."
       ],
@@ -2488,6 +2485,9 @@
       ],
       "Finalizing": [
         "Οριστικοποιείται"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
       ],
       "Folder contents will merge into a single folder": [
         "Τα περιεχόμενα των φακέλων θα συγχωνευθούν σε έναν μοναδικό φάκελο"
@@ -4406,6 +4406,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "Αποτυχία λήψης του αρχείου ή φακέλου"
+      ],
+      "The internet connection was interrupted": [
+        ""
       ],
       "The link does not exist": [
         "Ο σύνδεσμος δεν υπάρχει"

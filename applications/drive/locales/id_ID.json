@@ -1772,12 +1772,6 @@
       "Enter 6 digits": [
         "Masukan 6 digit"
       ],
-      "Failed to download a file": [
-        "Gagal mengunduh berkas"
-      ],
-      "Failed to download a folder": [
-        "Gagal mengunduh folder"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Berkas \"${ item.name }\" tidak dapat diunggah karena terdapat kesalahan \"${ error }\""
       ],
@@ -2436,6 +2430,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Gagal membuka tautan terenkripsi. Sebab: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Berkas ini tidak ditandatangani. Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
       ],
@@ -2447,6 +2444,9 @@
       ],
       "Finalizing": [
         "Finalisasi"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
       ],
       "Folder contents will merge into a single folder": [
         "Konten folder akan digabungkan jadi satu folder"
@@ -4331,6 +4331,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "Berkas atau folder ini gagal diunduh"
+      ],
+      "The internet connection was interrupted": [
+        ""
       ],
       "The link does not exist": [
         "Tautan tidak ada"

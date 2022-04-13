@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=1; plural=0;",
+    "plural-forms": "nplurals=2; plural=(n != 1);",
     "language": "es_LA"
   },
   "contexts": {
@@ -113,7 +113,7 @@
         "Aplicar"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjuntar captura(s)"
       ],
       "Authenticate": [
         "Autenticar"
@@ -194,7 +194,7 @@
         "Continuar importación"
       ],
       "Continue to ${ name }": [
-        ""
+        "Continuar con ${ name }"
       ],
       "Continue with": [
         "Continuar con"
@@ -212,7 +212,7 @@
         "Copiar enlace"
       ],
       "Create": [
-        ""
+        "Crear"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         "Cree una dirección segura de ${ MAIL_APP_NAME } en su lugar"
@@ -254,13 +254,13 @@
         "Eliminar enlace"
       ],
       "Delete permanently": [
-        ""
+        "Eliminar permanentemente"
       ],
       "Delete record": [
         "Eliminar registro"
       ],
       "Delete without exporting": [
-        ""
+        "Eliminar sin exportar"
       ],
       "Delete your account": [
         "Elimine su cuenta"
@@ -335,7 +335,7 @@
         "Habilitar soporte multi usuario"
       ],
       "Encrypt and export": [
-        ""
+        "Cifrar y exportar"
       ],
       "Export": [
         "Exportar"
@@ -347,10 +347,10 @@
         "Exportar clave"
       ],
       "Export key before deleting": [
-        ""
+        "Exporte la clave antes de eliminarla"
       ],
       "Extend": [
-        ""
+        "Ampliar"
       ],
       "Font": [
         "Tipo de letra"
@@ -434,7 +434,7 @@
         "etiquetar correos como"
       ],
       "Load more": [
-        ""
+        "Cargar más"
       ],
       "Loading verification": [
         "Cargando verificación"
@@ -608,10 +608,10 @@
         "Revisar"
       ],
       "Revoke": [
-        ""
+        "Revocar"
       ],
       "Revoke ${ name }": [
-        ""
+        "Revocar ${ name }"
       ],
       "Revoke all other sessions": [
         "Revocar todas las demás sesiones"
@@ -854,36 +854,45 @@
     },
     "Addon": {
       "+ ${ addresses } email address": [
-        "+ ${ addresses } dirección de correo"
+        "+ ${ addresses } dirección de correo",
+        "+ ${ addresses } direcciones de correo"
       ],
       "+ ${ domains } custom domain": [
+        "+ ${ domains } dominio personalizado",
         "+ ${ domains } dominio personalizado"
       ],
       "+ ${ members } user": [
+        "+ ${ members } usuario",
         "+ ${ members } usuario"
       ],
       "+ ${ storage } storage": [
         "+ ${ storage } de almacenamiento"
       ],
       "+ ${ vpn } connection": [
+        "+ ${ vpn } conexión",
         "+ ${ vpn } conexión"
       ]
     },
     "Addon unit for subscription": {
       "${ addressAddon.MaxAddresses } address": [
+        "${ addressAddon.MaxAddresses } dirección",
         "${ addressAddon.MaxAddresses } dirección"
       ],
       "${ domainAddon.MaxDomains } domain": [
+        "${ domainAddon.MaxDomains } dominio",
         "${ domainAddon.MaxDomains } dominio"
       ],
       "${ memberAddon.MaxMembers } user": [
+        "${ memberAddon.MaxMembers } usuario",
         "${ memberAddon.MaxMembers } usuario"
       ],
       "${ vpnAddon.MaxVPN } connection": [
+        "${ vpnAddon.MaxVPN } conexión",
         "${ vpnAddon.MaxVPN } conexión"
       ],
       "${ vpnBonus } connection": [
-        "${ vpnBonus } conexión"
+        "${ vpnBonus } conexión",
+        "${ vpnBonus } conexiones"
       ]
     },
     "Address action": {
@@ -933,7 +942,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Esto desconectará todos los routers y clientes que usen este certificado."
       ]
     },
     "Apps dropdown": {
@@ -1155,7 +1164,8 @@
         "Ha alcanzado el número máximo de calendarios personales que puede crear dentro de su plan."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Ha alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendario suscrito."
+        "Ha alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendario suscrito.",
+        "Ha alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendarios suscritos."
       ]
     },
     "Calendar link purpose update success message": {
@@ -1225,10 +1235,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Cerrar"
       ],
       "Open": [
-        ""
+        "Abrir"
       ]
     },
     "Condition for custom filter": {
@@ -1371,10 +1381,12 @@
     },
     "Countdown unit": {
       "${ days } day": [
+        "${ days } día",
         "${ days } día"
       ],
       "${ monthsWithYears } month": [
-        "${ monthsWithYears } mes"
+        "${ monthsWithYears } mes",
+        "${ monthsWithYears } meses"
       ]
     },
     "Country name": {
@@ -2156,6 +2168,7 @@
     },
     "Daily recurring event, frequency": {
       "${ count } time": [
+        "${ count } vez",
         "${ count } vez"
       ],
       "Daily": [
@@ -2168,12 +2181,15 @@
         "Diariamente, ${ untilString }"
       ],
       "Every ${ interval } day": [
+        "Cada ${ interval } día",
         "Cada ${ interval } día"
       ],
       "Every ${ interval } day, ${ timesString }": [
+        "Cada ${ interval } día, ${ timesString }",
         "Cada ${ interval } día, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
+        "Cada ${ interval } día, ${ untilString }",
         "Cada ${ interval } día, ${ untilString }"
       ],
       "until ${ dateString }": [
@@ -2227,7 +2243,8 @@
         "Parece que la lista de contactos que está importando contiene algunos grupos. Revise cómo deben importarse estos grupos."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños."
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Revise cuántas personas hacen clic en su enlace, se registran y se convierten en suscriptores de pago. Mire cómo se acumulan sus meses gratis."
@@ -2447,10 +2464,12 @@
         "No se pudo encontrar la dirección ${ email }."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deseleccionar al menos ${ calendarToFixCount } calendario"
+        "Deseleccionar al menos ${ calendarToFixCount } calendario",
+        "Deseleccionar al menos ${ calendarToFixCount } calendarios"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Deseleccionar al menos ${ calendarToFixCount } calendario o"
+        "Deseleccionar al menos ${ calendarToFixCount } calendario o",
+        "Deseleccionar al menos ${ calendarToFixCount } calendarios o"
       ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
@@ -2537,7 +2556,8 @@
         "El nombre de la etiqueta no puede estar vacío"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton"
+        "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton",
+        "Fusionar al menos ${ calendarToFixCount } calendarios con los calendarios existentes de Proton"
       ],
       "Missing key packet": [
         "Falta el paquete de claves"
@@ -2600,7 +2620,8 @@
         "Habilite el soporte multi usuario antes de añadir usuarios a su organización."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Solucione el conflicto resaltado para continuar."
+        "Solucione el conflicto resaltado para continuar.",
+        "Solucione los conflictos resaltados para continuar."
       ],
       "Please generate keys before you try to change your password": [
         "Genere claves antes de intentar cambiar su contraseña"
@@ -2966,7 +2987,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Certificado ${ name } no encontrado o ya revocado"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "El nombre y apellido no pueden desmarcarse al mismo tiempo"
@@ -3036,7 +3057,8 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } evento exportado"
+        "${ totalProcessed }/${ totalToProcess } evento exportado",
+        "${ totalProcessed }/${ totalToProcess } eventos exportados"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Calendario exportado con éxito. Ahora puede guardar el archivo ICS."
@@ -3083,13 +3105,15 @@
     },
     "Feature": {
       "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } conexión VPN"
+        "${ MaxVPN } conexión VPN",
+        "${ MaxVPN } conexiones VPN"
       ],
       "Access to all countries": [
         "Acceso a todos los países"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Conexión hasta para ${ plusVpnConnections } dispositivo"
+        "Conexión hasta para ${ plusVpnConnections } dispositivo",
+        "Conexión hasta para ${ plusVpnConnections } dispositivos"
       ],
       "Fastest VPN servers": [
         "Servidores VPN más rápidos"
@@ -3307,7 +3331,8 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Se encontró ${ items.length } sugerencia, use el teclado para navegar."
+        "Se encontró ${ items.length } sugerencia, use el teclado para navegar.",
+        "Se encontraron ${ items.length } sugerencias, use el teclado para navegar."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Use las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulse Enter para confirmar su elección, o Escape para cerrar el cuadro de sugerencias."
@@ -3332,13 +3357,16 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } evento cifrado y añadido a su calendario"
+        "${ totalImported }/${ totalToImport } evento cifrado y añadido a su calendario",
+        "${ totalImported }/${ totalToImport } eventos cifrados y añadidos a su calendario"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Ocurrió un error al cifrar y añadir su evento. ${ totalImported } de ${ totalToImport } evento fue importado con éxito."
+        "Ocurrió un error al cifrar y añadir su evento. ${ totalImported } de ${ totalToImport } evento fue importado con éxito.",
+        "Ocurrió un error al cifrar y añadir sus eventos. ${ totalImported } de ${ totalToImport } eventos fueron importados con éxito."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Ocurrió un error al cifrar y añadir el evento. El evento no fue importado."
+        "Ocurrió un error al cifrar y añadir el evento. El evento no fue importado.",
+        "Ocurrió un error al cifrar y añadir los eventos. Ningún evento fue importado."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Cifrando y añadiendo contactos: ${ totalImported }/${ totalToImport }"
@@ -3347,7 +3375,8 @@
         "Cifrando y añadiendo eventos a su calendario: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Evento importado con éxito. El evento importado aparecerá ahora en su calendario."
+        "Evento importado con éxito. El evento importado aparecerá ahora en su calendario.",
+        "Eventos importados con éxito. Los eventos importados aparecerán ahora en su calendario."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "No cierre la pestaña antes de que el proceso de importación haya terminado."
@@ -3366,10 +3395,12 @@
         "Las invitaciones importadas aparecen en ${ CALENDAR_APP_NAME } como eventos simples sin detalles del organizador ni del participante. Para recibir actualizaciones del evento y ver a los participantes, pida a los organizadores que lo inviten usando su dirección de correo electrónico de Proton."
       ],
       "This file contains an event invitation:": [
-        "Este archivo contiene una invitación de evento:"
+        "Este archivo contiene una invitación de evento:",
+        "Este archivo contiene invitaciones de eventos:"
       ],
       "This file contains an invitation response:": [
-        "Este archivo contiene una respuesta de invitación:"
+        "Este archivo contiene una respuesta de invitación:",
+        "Este archivo contiene respuestas de invitaciones:"
       ],
       "This file contains some data that we cannot import:": [
         "Este archivo contiene algunos datos que no podemos importar:"
@@ -3377,10 +3408,12 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contacto cifrado y añadido a su lista de contactos"
+        "${ totalImported }/${ totalToImport } contacto cifrado y añadido a su lista de contactos",
+        "${ totalImported }/${ totalToImport } contactos cifrados y añadidos a su lista de contactos"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Ocurrió un error al cifrar y añadir su contacto. No se pudo importar ningún contacto."
+        "Ocurrió un error al cifrar y añadir su contacto. No se pudo importar ningún contacto.",
+        "Ocurrió un error al cifrar y añadir sus contactos. No se pudo importar ningún contacto."
       ]
     },
     "Import contact error": {
@@ -3390,6 +3423,7 @@
     },
     "Import contact groups info": {
       "${ totalContacts } contact": [
+        "${ totalContacts } contacto",
         "${ totalContacts } contacto"
       ]
     },
@@ -3403,7 +3437,8 @@
         "Ocurrió un error al cifrar y añadir sus contactos. ${ totalImported } de ${ totalToImport } contactos fueron importados con éxito."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contacto importado con éxito. El contacto importado aparecerá ahora en su lista de contactos."
+        "Contacto importado con éxito. El contacto importado aparecerá ahora en su lista de contactos.",
+        "contactos importados con éxito. Los contactos importados aparecerán ahora en su lista de contactos."
       ]
     },
     "Import contacts warning": {
@@ -3726,7 +3761,8 @@
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haga clic para más detalles"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } de ${ totalEvents } evento no será importado. Haga clic para más detalles."
+        "${ totalEventsDiscarded } de ${ totalEvents } evento no será importado. Haga clic para más detalles.",
+        "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Haga clic para más detalles."
       ],
       "No contact can be imported. Click for details": [
         "No se puede importar ningún contacto. Haga clic para más detalles"
@@ -3755,13 +3791,16 @@
         "${ calendarName } se establecerá como calendario por defecto."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } calendario nuevo"
+        "${ calendarsToBeCreatedCount } calendario nuevo",
+        "${ calendarsToBeCreatedCount } calendarios nuevos"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } calendario fusionado"
+        "${ calendarsToBeMerged } calendario fusionado",
+        "${ calendarsToBeMerged } calendarios fusionados"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } calendario fusionado"
+        "${ calendarsToBeMergedCount } calendario fusionado",
+        "${ calendarsToBeMergedCount } calendarios fusionados"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } es inválida"
@@ -3785,34 +3824,42 @@
         "${ mailProfessional } comienza con un usuario, cada usuario añade 5 GB y 5 direcciones a la cuota de la organización."
       ],
       "${ n } address": [
+        "${ n } dirección",
         "${ n } dirección"
       ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
         "${ none } no tiene ningún efecto en la entrega de correo electrónico, pero recomendamos ${ quarantine } para mayor seguridad."
       ],
       "${ number } city": [
-        "${ number } ciudad"
+        "${ number } ciudad",
+        "${ number } ciudades"
       ],
       "${ number } server": [
-        "${ number } servidor"
+        "${ number } servidor",
+        "${ number } servidores"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } archivo cargado es una clave privada inválida. Verifique e intente de nuevo."
+        "${ numberOfNonPrivateKeys } archivo cargado es una clave privada inválida. Verifique e intente de nuevo.",
+        "${ numberOfNonPrivateKeys } archivos cargados son claves privadas inválidas. Verifique e intente de nuevo."
       ],
       "${ numContactGroups } contact group": [
-        "${ numContactGroups } grupo de contactos"
+        "${ numContactGroups } grupo de contactos",
+        "${ numContactGroups } grupos de contactos"
       ],
       "${ numContacts } contact": [
-        "${ numContacts } contacto"
+        "${ numContacts } contacto",
+        "${ numContacts } contactos"
       ],
       "${ planName } plan": [
         "Plan ${ planName }"
       ],
       "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } carpeta encontrada",
         "${ providerFoldersNumLocalized } carpeta encontrada"
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } etiqueta encontrada en Gmail"
+        "${ providerFoldersNumLocalized } etiqueta encontrada en Gmail",
+        "${ providerFoldersNumLocalized } etiquetas encontradas en Gmail"
       ],
       "${ rewards } of ${ rewardsLimit } months": [
         "${ rewards } de ${ rewardsLimit } meses"
@@ -3827,19 +3874,24 @@
         "${ saveExtra20 } tanto en VPN como en correo añadiendo una suscripción VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario"
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
       "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } carpeta seleccionada",
         "${ selectedFoldersCount } carpeta seleccionada"
       ],
       "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiqueta seleccionada"
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetas seleccionadas"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } carpeta seleccionada",
         "${ selectedFoldersCountLocalized } carpeta seleccionada"
       ],
       "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } etiqueta seleccionada"
+        "${ selectedFoldersCountLocalized } etiqueta seleccionada",
+        "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Usará esta dirección de correo para iniciar sesión en los servicios de ${ BRAND_NAME }."
@@ -3851,13 +3903,15 @@
         "Se requiere de ${ vpnBasic }, ${ vpnPlus } or ${ visionary } para la conexión a nivel país."
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
-        "${ vpnPlus } incluye ${ maxVpn } conexión VPN."
+        "${ vpnPlus } incluye ${ maxVpn } conexión VPN.",
+        "${ vpnPlus } incluye ${ maxVpn } conexiones VPN."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "Se requiere ${ vpnPlus } o ${ visionary } para la función de Secure Core."
       ],
       "(${ memberCount } member)": [
-        "(${ memberCount } miembro)"
+        "(${ memberCount } miembro)",
+        "(${ memberCount } miembros)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtra si se cumplen TODAS las siguientes condiciones)"
@@ -3875,7 +3929,8 @@
         "+${ bonusSpace } almacenamiento adicional"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "Más de ${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)"
+        "Más de ${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)",
+        "Más de ${ organization.BonusVPN } conexiones para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)"
       ],
       "1. Invite friends to Proton": [
         "1. Invite amigos a Proton"
@@ -3902,7 +3957,7 @@
         "Una Internet libre y sin censura debería estar disponible para todos."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Un nombre que le ayude a identificar dónde lo usa para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -3947,6 +4002,7 @@
         "Añadir etiqueta"
       ],
       "address": [
+        "dirección",
         "dirección"
       ],
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
@@ -3968,10 +4024,12 @@
         "Alinear a la derecha"
       ],
       "All (${ totalFoldersCount } folder)": [
+        "Todo (${ totalFoldersCount } carpeta)",
         "Todo (${ totalFoldersCount } carpeta)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Todo (${ totalFoldersCount } etiqueta)"
+        "Todo (${ totalFoldersCount } etiqueta)",
+        "Todo (${ totalFoldersCount } etiquetas)"
       ],
       "All keys successfully reactivated": [
         "Todas las claves reactivadas con éxito"
@@ -4133,7 +4191,8 @@
         "Continuar con ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "Crear ${ calendarsToBeCreated } calendario nuevo"
+        "Crear ${ calendarsToBeCreated } calendario nuevo",
+        "Crear ${ calendarsToBeCreated } calendarios nuevos"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Cree una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las carpetas que le gustaría importar."
@@ -4208,7 +4267,8 @@
         "¿Desea revocar todas las demás sesiones y mantener la actual?"
       ],
       "domain used": [
-        "dominio usado"
+        "dominio usado",
+        "dominios usados"
       ],
       "Domains": [
         "Dominios"
@@ -4301,7 +4361,7 @@
         "Expirado"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "expira el ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "Error el obtener los registros."
@@ -4427,7 +4487,8 @@
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendario"
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendario",
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendarios"
       ],
       "Import from": [
         "Importar desde"
@@ -4490,7 +4551,8 @@
         "Conexión a internet restaurada."
       ],
       "Invite successfully sent": [
-        "Invitación enviada con éxito"
+        "Invitación enviada con éxito",
+        "Invitaciones enviadas con éxito"
       ],
       "Invited via email": [
         "Invitado mediante correo"
@@ -4514,7 +4576,7 @@
         "Mantenga estos registros en su DNS durante el tiempo que desee usar DKIM."
       ],
       "Key deletion is irreversible!": [
-        ""
+        "¡La eliminación de la clave es irreversible!"
       ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
@@ -4676,7 +4738,7 @@
         "Solo usted puede ver las etiquetas."
       ],
       "Or select a particular server:": [
-        ""
+        "O seleccione un servidor en particular:"
       ],
       "Organization keys activated": [
         "Claves de la organización activadas"
@@ -4709,7 +4771,8 @@
         ""
       ],
       "Paid for a ${ rewardMonths } month plan": [
-        "Pagó por un plan de ${ rewardMonths } mes"
+        "Pagó por un plan de ${ rewardMonths } mes",
+        "Pagó por un plan de ${ rewardMonths } meses"
       ],
       "Paid for a monthly plan": [
         "Pagó por un plan mensual"
@@ -4844,7 +4907,7 @@
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Revocar certificado ${ name }"
       ],
       "Right to Left": [
         "Derecha a izquierda"
@@ -4874,7 +4937,7 @@
         "Seleccione un proveedor de servicios para comenzar"
       ],
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        ""
+        "Seleccione Continuar con ${ name } para abrir la aplicación. Esto también crea una cuenta ${ name } con su dirección ${ MAIL_APP_NAME } para que pueda iniciar sesión con un solo clic en el futuro."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleccione los calendarios que desea importar. Se creará un calendario nuevo para cada calendario importado hasta un límite de 20 calendarios."
@@ -4922,10 +4985,10 @@
         "Almacenamiento GB"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
-        ""
+        "Guarde esta contraseña en un lugar seguro. La necesitará nuevamente para importar su clave."
       ],
       "Support for 1 custom email domain": [
         "Soporte para 1 dominio de correo personalizado"
@@ -4973,7 +5036,7 @@
         "Estos archivos de configuración le permiten elegir a qué servidor de ${ VPN_APP_NAME } se conecta cuando usa una aplicación VPN de terceros o configura una conexión VPN en un enrutador."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        ""
+        "Estas configuraciones son brindadas para funcionar con ruteadores WireGuard y clientes oficiales."
       ],
       "This 30-day free trial is not available any other way.": [
         "Esta prueba gratuita de 30 días no está disponible de ninguna otra manera."
@@ -5027,7 +5090,7 @@
         "Esto desactivará su frase de recuperación actual. No podrá usarla para acceder a su cuenta o descifrar sus datos."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        ""
+        "Esto descargará un archivo que contiene su clave privada. Proteja este archivo cifrándolo con una contraseña."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Esto permitirá a PayPal ser usado para pagar su suscripción a Proton. Le redirigiremos a PayPal en una pestaña nueva del navegador. Si utiliza cualquier bloqueador emergente, desactívelo para continuar."
@@ -5048,7 +5111,7 @@
         "Este asistente le permitirá habilitar la autenticación de dos factores (2FA) en su cuenta de Proton. La autenticación de dos factores hará su cuenta más segura por lo que le recomendamos habilitarla."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        ""
+        "Para evitar la pérdida de datos, elimínelos solo si sabe lo que está haciendo o ha exportado una copia."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Para confirmar, ingrese el nombre del usuario que desea eliminar."
@@ -5162,7 +5225,7 @@
         "Use respuestas automáticas para informar a los contactos que está fuera de la oficina o que de otro modo no puede responder."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Use el mejor servidor según la carga actual y la ubicación: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use las siguientes credenciales cuando se conecte a servidores de ${ VPN_APP_NAME } sin aplicación. Ejemplos de casos de uso incluyen: Tunnelblick en macOS, OpenVPN en GNU/Linux."
@@ -5354,7 +5417,7 @@
         "Alcanzó el 100% de su capacidad de almacenamiento. No puede enviar o recibir correos electrónicos nuevos. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
-        ""
+        "Debe exportar una copia de seguridad de esta clave en caso de que necesite restaurar los datos cifrados."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Aún debe responder a las invitaciones para que el anfitrión vea su respuesta."
@@ -5366,7 +5429,7 @@
         "Pronto será redirigido a su banco para verificar su pago."
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        ""
+        "NO podrá descifrar ningún mensaje, archivo y otros datos cifrados con esta clave."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto será redirigido a PayPal para verificar su pago."
@@ -5537,7 +5600,7 @@
         "Facturada"
       ],
       "Gifted": [
-        ""
+        "Regalía"
       ],
       "Paid": [
         "Pagada"
@@ -5867,19 +5930,24 @@
         "Pie de ${ MAIL_APP_NAME }"
       ],
       "${ monthsRewarded } month credited": [
-        "${ monthsRewarded } mes acreditado"
+        "${ monthsRewarded } mes acreditado",
+        "${ monthsRewarded } meses acreditados"
       ],
       "${ n } VPN connection available": [
-        "${ n } conexión VPN disponible"
+        "${ n } conexión VPN disponible",
+        "${ n } conexiones VPN disponibles"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } de ${ MaxAddresses } dirección de correo"
+        "${ UsedAddresses } de ${ MaxAddresses } dirección de correo",
+        "${ UsedAddresses } de ${ MaxAddresses } direcciones de correo"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } de ${ MaxDomains } dominio personalizado"
+        "${ UsedDomains } de ${ MaxDomains } dominio personalizado",
+        "${ UsedDomains } de ${ MaxDomains } dominios personalizados"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } de ${ MaxMembers } usuario"
+        "${ UsedMembers } de ${ MaxMembers } usuario",
+        "${ UsedMembers } de ${ MaxMembers } usuarios"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
@@ -5939,7 +6007,7 @@
         "Adjuntar clave pública"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjuntar captura(s)"
       ],
       "Auto reply": [
         "Autorrespuesta"
@@ -5954,10 +6022,10 @@
         "Bloquear el rastreo de correo"
       ],
       "Block malware only": [
-        ""
+        "Bloquear solo malware"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Bloquear malware, anuncios y rastreadores"
       ],
       "bonus storage": [
         "almacenamiento adicional"
@@ -5990,7 +6058,7 @@
         "Categoría"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Elija un nombre para el archivo de certificado generado"
       ],
       "Code": [
         "Código"
@@ -6017,7 +6085,7 @@
         "Condiciones"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Configurar para conectarse a ${ serverName }"
       ],
       "Confirm link URLs": [
         "Confirmar enlaces URL"
@@ -6059,7 +6127,7 @@
         "País"
       ],
       "Create password": [
-        ""
+        "Crear contraseña"
       ],
       "Credits pending": [
         "Créditos pendientes"
@@ -6122,7 +6190,7 @@
         "Descripción"
       ],
       "Device/certificate name": [
-        ""
+        "Nombre del dispositivo/certificado"
       ],
       "Digits": [
         "Dígitos"
@@ -6281,7 +6349,7 @@
         "Solo el último mes"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Nivel de filtrado del bloqueador NetShield"
       ],
       "Login password": [
         "Contraseña de inicio de sesión"
@@ -6305,7 +6373,7 @@
         "Mensaje"
       ],
       "Moderate NAT": [
-        ""
+        "NAT moderada"
       ],
       "Move to": [
         "Mover a"
@@ -6329,13 +6397,13 @@
         "Contraseña nueva"
       ],
       "No filter": [
-        ""
+        "Sin filtro"
       ],
       "No label found": [
         "Ninguna etiqueta encontrada"
       ],
       "Non-standard ports": [
-        ""
+        "Puertos no estándares"
       ],
       "Notification": [
         "Notificación"
@@ -6973,10 +7041,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mail upsell feature": {
@@ -7083,12 +7153,15 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
+        "Cada ${ interval } mes los ${ onDayString }",
         "Cada ${ interval } mes los ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Cada ${ interval } mes ${ onDayString }, ${ timesString }",
         "Cada ${ interval } mes ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Cada ${ interval } mes ${ onDayString }, ${ untilString }",
         "Cada ${ interval } mes ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
@@ -7254,7 +7327,7 @@
         "Una dirección deshabilitada no puede ser principal"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
-        ""
+        "Clave con huella digital ${ fp } eliminada."
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciales OpenVPN/IKEv2 regeneradas"
@@ -7278,18 +7351,22 @@
         "al momento del evento"
       ],
       "day before": [
+        "día antes",
         "día antes"
       ],
       "hour before": [
+        "hora antes",
         "hora antes"
       ],
       "minute before": [
+        "minuto antes",
         "minuto antes"
       ],
       "on the same day": [
         "en el mismo día"
       ],
       "week before": [
+        "semana antes",
         "semana antes"
       ]
     },
@@ -7674,7 +7751,7 @@
         "Buscar usuarios"
       ],
       "Select": [
-        ""
+        "Seleccionar"
       ],
       "Select a reason": [
         "Seleccione un motivo"
@@ -7798,7 +7875,8 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "Aún tiene ${ daysRemaining } día disponible en la cuenta ${ BRAND_NAME } ${ currentPlanName }."
+        "Aún tiene ${ daysRemaining } día disponible en la cuenta ${ BRAND_NAME } ${ currentPlanName }.",
+        "Aún tiene ${ daysRemaining } días disponibles en la cuenta ${ BRAND_NAME } ${ currentPlanName }."
       ]
     },
     "Price": {
@@ -8296,16 +8374,16 @@
         "Dirección habilitada"
       ],
       "Certificate ${ name } revoked": [
-        ""
+        "Certificado ${ name } revocado"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Certificado ampliado hasta el ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Configuración \"${ name }\" creada, tome en cuenta que la clave privada no se almacena y no se mostrará de nuevo, debe copiar o descargar esta configuración."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Creando archivo de configuración para ${ serverName }"
       ],
       "Filter removed": [
         "Filtro eliminado"
@@ -8379,9 +8457,11 @@
     },
     "Time unit": {
       "${ hours } hour": [
+        "${ hours } hora",
         "${ hours } hora"
       ],
       "${ minutes } minute": [
+        "${ minutes } minuto",
         "${ minutes } minuto"
       ]
     },
@@ -8407,13 +8487,13 @@
         "(altamente recomendado)"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Dar un nombre a la configuración que se va a generar"
       ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
       ],
       "2. Select platform": [
-        ""
+        "2. Seleccionar la plataforma"
       ],
       "2. Select protocol": [
         "2. Seleccionar protocolo"
@@ -8425,10 +8505,10 @@
         "3. Seleccionar archivo de configuración y descargar"
       ],
       "3. Select VPN options": [
-        ""
+        "3. Seleccionar las opciones de VPN"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Seleccionar un servidor al que conectarse"
       ],
       "Account and password": [
         "Cuenta y contraseña"
@@ -8611,7 +8691,7 @@
         "Confirmar número de teléfono"
       ],
       "Connect ${ name }": [
-        ""
+        "Conectar ${ name }"
       ],
       "Contact encryption keys": [
         "Claves de cifrado de contacto"
@@ -8686,7 +8766,7 @@
         "Eliminar ${ email }"
       ],
       "Delete ${ filterName }": [
-        ""
+        "Eliminar ${ filterName }"
       ],
       "Delete ${ label.Name } folder": [
         "Eliminar la carpeta ${ label.Name }"
@@ -8701,7 +8781,7 @@
         "Eliminar calendario"
       ],
       "Delete key permanently?": [
-        ""
+        "¿Eliminar clave permanentemente?"
       ],
       "Delete logs": [
         "Eliminar registros"
@@ -8833,7 +8913,8 @@
         "Importar"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?"
+        "¿Importar como evento simple?",
+        "¿Importar como eventos simples?"
       ],
       "Import contacts": [
         "Importar contactos"
@@ -9016,7 +9097,7 @@
         "Restaurar privilegios de administrador"
       ],
       "Revoke certificate": [
-        ""
+        "Revocar certificado"
       ],
       "Secure email based in Switzerland": [
         "Correo electrónico seguro con sede en Suiza"
@@ -9178,7 +9259,7 @@
         ""
       ],
       "WireGuard configuration": [
-        ""
+        "Configuración de WireGuard"
       ],
       "Your ${ domain } address is active": [
         "Su dirección ${ domain } está activa"
@@ -9474,12 +9555,14 @@
     },
     "Upgrade": {
       "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
-        "Actualice a ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } para conectar hasta ${ plusVpnConnections } dispositivo a la VPN al mismo tiempo"
+        "Actualice a ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } para conectar hasta ${ plusVpnConnections } dispositivo a la VPN al mismo tiempo",
+        "Actualice a ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } para conectar hasta ${ plusVpnConnections } dispositivos a la VPN al mismo tiempo"
       ]
     },
     "Upgrade notice": {
       "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Actualice a un plan de pago para crear hasta ${ MAX_CALENDARS_PER_USER } calendario, permitiéndole crear calendarios para el trabajo, para compartir con sus amigos y solo para usted."
+        "Actualice a un plan de pago para crear hasta ${ MAX_CALENDARS_PER_USER } calendario, permitiéndole crear calendarios para el trabajo, para compartir con sus amigos y solo para usted.",
+        "Actualice a un plan de pago para crear hasta ${ MAX_CALENDARS_PER_USER } calendarios, permitiéndole crear calendarios para el trabajo, para compartir con sus amigos y solo para usted."
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
         "Actualice a un plan de pago para compartir su calendario personal con cualquiera mediante enlace."
@@ -9498,7 +9581,8 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "La contraseña debe tener al menos ${ length } caracter"
+        "La contraseña debe tener al menos ${ length } caracter",
+        "La contraseña debe tener al menos ${ length } caracteres"
       ]
     },
     "Video control": {
@@ -9616,13 +9700,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } servidor"
+        "${ n } servidor",
+        "${ n } servidores"
       ],
       "${ n } VPN connection": [
-        "${ n } conexión VPN"
+        "${ n } conexión VPN",
+        "${ n } conexiones VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } en ${ numberOfCountries } país"
+        "${ numberOfServers } en ${ numberOfCountries } país",
+        "${ numberOfServers } en ${ numberOfCountries } países"
       ]
     },
     "VPN upsell feature": {
@@ -9757,84 +9844,111 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
+        "Cada ${ interval } semana los ${ multipleDaysString }",
         "Cada ${ interval } semana los ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Cada ${ interval } semana los ${ multipleDaysString }, ${ timesString }",
         "Cada ${ interval } semana los ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Cada ${ interval } semana los ${ multipleDaysString }, ${ untilString }",
         "Cada ${ interval } semana los ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
+        "Cada ${ interval } semana todos los días",
         "Cada ${ interval } semana todos los días"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
+        "Cada ${ interval } semana todos los días, ${ timesString }",
         "Cada ${ interval } semana todos los días, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
+        "Cada ${ interval } semana todos los días, ${ untilString }",
         "Cada ${ interval } semana todos los días, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
+        "Cada ${ interval } semana los viernes",
         "Cada ${ interval } semana los viernes"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
+        "Cada ${ interval } semana los viernes, ${ timesString }",
         "Cada ${ interval } semana los viernes, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
+        "Cada ${ interval } semana los viernes, ${ untilString }",
         "Cada ${ interval } semana los viernes, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
+        "Cada ${ interval } semana los lunes",
         "Cada ${ interval } semana los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
+        "Cada ${ interval } semana los lunes, ${ timesString }",
         "Cada ${ interval } semana los lunes, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
+        "Cada ${ interval } semana los lunes, ${ untilString }",
         "Cada ${ interval } semana los lunes, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
+        "Cada ${ interval } semana los sábados",
         "Cada ${ interval } semana los sábados"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Cada ${ interval } semana los sábados, ${ timesString }",
         "Cada ${ interval } semana los sábados, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Cada ${ interval } semana los sábados, ${ untilString }",
         "Cada ${ interval } semana los sábados, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
+        "Cada ${ interval } semana los domingos",
         "Cada ${ interval } semana los domingos"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Cada ${ interval } semana los domingos, ${ timesString }",
         "Cada ${ interval } semana los domingos, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Cada ${ interval } semana los domingos, ${ untilString }",
         "Cada ${ interval } semana los domingos, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
+        "Cada ${ interval } semana los jueves",
         "Cada ${ interval } semana los jueves"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Cada ${ interval } semana los jueves, ${ timesString }",
         "Cada ${ interval } semana los jueves, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Cada ${ interval } semana los jueves, ${ untilString }",
         "Cada ${ interval } semana los jueves, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
+        "Cada ${ interval } semana los martes",
         "Cada ${ interval } semana los martes"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Cada ${ interval } semana los martes, ${ timesString }",
         "Cada ${ interval } semana los martes, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Cada ${ interval } semana los martes, ${ untilString }",
         "Cada ${ interval } semana los martes, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
+        "Cada ${ interval } semana los miércoles",
         "Cada ${ interval } semana los miércoles"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Cada ${ interval } semana los miércoles, ${ timesString }",
         "Cada ${ interval } semana los miércoles, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Cada ${ interval } semana los miércoles, ${ untilString }",
         "Cada ${ interval } semana los miércoles, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
@@ -9944,12 +10058,15 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
+        "Cada ${ interval } año",
         "Cada ${ interval } año"
       ],
       "Every ${ interval } year, ${ timesString }": [
+        "Cada ${ interval } año, ${ timesString }",
         "Cada ${ interval } año, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
+        "Cada ${ interval } año, ${ untilString }",
         "Cada ${ interval } año, ${ untilString }"
       ],
       "Yearly": [

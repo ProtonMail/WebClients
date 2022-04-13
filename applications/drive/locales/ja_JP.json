@@ -1772,12 +1772,6 @@
       "Enter 6 digits": [
         "6 桁の数字を入力"
       ],
-      "Failed to download a file": [
-        "ファイルをダウンロードできませんでした"
-      ],
-      "Failed to download a folder": [
-        "フォルダーをダウンロードできませんでした"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "エラー「${ error }」のためファイル「${ item.name }」はアップロードできませんでした。"
       ],
@@ -2436,6 +2430,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "セキュアリンクを開くのに失敗しました。理由: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "ファイルの署名が正しくありません。${ emailAddress } がアップロードした ${ fileName } を検証できませんでした。"
       ],
@@ -2447,6 +2444,9 @@
       ],
       "Finalizing": [
         "完了処理中"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
       ],
       "Folder contents will merge into a single folder": [
         "フォルダーの中身を 1 つのフォルダーに結合します"
@@ -4331,6 +4331,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "ファイルまたはフォルダーのダウンロードは失敗しました"
+      ],
+      "The internet connection was interrupted": [
+        ""
       ],
       "The link does not exist": [
         "このリンクは存在しません"
