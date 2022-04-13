@@ -1,7 +1,8 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
-import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
-import { DOWNLOAD_TIMEOUT, DOWNLOAD_RETRIES_ON_TIMEOUT } from '@proton/shared/lib/drive/constants';
+import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
+import { DOWNLOAD_TIMEOUT, DOWNLOAD_RETRIES_ON_TIMEOUT, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
 
 const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
@@ -52,6 +53,17 @@ export default async function downloadBlock(
     const response = await doFetch();
     if (!response.body) {
         throw Error(`Response has no data`);
+    }
+
+    if (response.status === HTTP_STATUS_CODE.NOT_FOUND) {
+        throw createApiError(
+            'Block not found',
+            response,
+            {},
+            {
+                Code: RESPONSE_CODE.NOT_FOUND,
+            }
+        );
     }
 
     return toPolyfillReadable(response.body) as ReadableStream<Uint8Array>;

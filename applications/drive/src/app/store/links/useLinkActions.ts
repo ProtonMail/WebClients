@@ -14,9 +14,10 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import { useDebouncedRequest } from '../api';
 import { useDriveCrypto } from '../crypto';
 import { useDriveEventManager } from '../events';
+import { ValidationError } from '../utils';
 import useLink from './useLink';
 import { ecryptFolderExtendedAttributes } from './extendedAttributes';
-import { validateLinkName, ValidationError } from './validation';
+import { validateLinkName } from './validation';
 
 /**
  * useLinkActions provides actions for manipulating with individual link.

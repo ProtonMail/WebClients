@@ -30,7 +30,7 @@ export default function useDownload() {
     const { loadChildren, getCachedChildren } = useLinksListing();
 
     const getChildren = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<DecryptedLink[]> => {
-        await loadChildren(abortSignal, shareId, linkId);
+        await loadChildren(abortSignal, shareId, linkId, false, false);
         const { links } = getCachedChildren(abortSignal, shareId, linkId);
         return links;
     };

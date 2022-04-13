@@ -72,6 +72,7 @@ describe('initDownload', () => {
 
     it('should download data from remote server using block metadata', async () => {
         const downloadControls = initDownloadBlocks(
+            'filename',
             {
                 getBlocks: async () => [
                     {
@@ -101,6 +102,7 @@ describe('initDownload', () => {
     it('should discard downloaded data and finish download on cancel', async () => {
         const promise = new Promise<void>((resolve, reject) => {
             const downloadControls = initDownloadBlocks(
+                'filename',
                 {
                     getBlocks: async () => [
                         {
@@ -123,6 +125,7 @@ describe('initDownload', () => {
     it('should download data from preloaded data buffer if provided', async () => {
         const sendData = [new Uint8Array([1, 2, 3]), new Uint8Array([4, 5, 6]), new Uint8Array([7, 8, 9])];
         const downloadControls = initDownloadBlocks(
+            'filename',
             {
                 getBlocks: async () => sendData,
             },
@@ -136,6 +139,7 @@ describe('initDownload', () => {
     it('should reuse already downloaded data after recovering from network error', async () => {
         offlineURL = 'url:2';
         const downloadControls = initDownloadBlocks(
+            'filename',
             {
                 getBlocks: async () => [
                     {
@@ -188,6 +192,7 @@ describe('initDownload', () => {
         let shouldValidateBlock = false;
 
         const downloadControls = initDownloadBlocks(
+            'filename',
             {
                 getBlocks: async () => {
                     if (shouldValidateBlock) {
@@ -226,6 +231,7 @@ describe('initDownload', () => {
         expiredURL = 'url:1';
 
         const downloadControls = initDownloadBlocks(
+            'filename',
             {
                 getBlocks: async () => {
                     if (blockRetryCount === TIME_BLOCK_EXPIRES) {
@@ -256,6 +262,7 @@ describe('initDownload', () => {
         expiredURL = 'url:1';
 
         const downloadControls = initDownloadBlocks(
+            'filename',
             {
                 getBlocks: async () => {
                     return [

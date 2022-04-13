@@ -1,17 +1,19 @@
 import { ReadableStream } from 'web-streams-polyfill';
 import { VERIFICATION_STATUS } from 'pmcrypto';
+import { c } from 'ttag';
 
 import { orderBy, areUint8Arrays } from '@proton/shared/lib/helpers/array';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
-import { MAX_THREADS_PER_DOWNLOAD, BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
+import { MAX_THREADS_PER_DOWNLOAD, BATCH_REQUEST_SIZE, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { ObserverStream, untilStreamEnd } from '../../../utils/stream';
 import { waitUntil } from '../../../utils/async';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { logError } from '../../utils';
+import { ValidationError } from '../../utils';
 import { MAX_RETRIES_BEFORE_FAIL, MAX_DOWNLOADING_BLOCKS, TIME_TO_RESET_RETRIES } from '../constants';
 import { DownloadStreamControls, DownloadCallbacks } from '../interface';
 import downloadBlock from './downloadBlock';
@@ -46,6 +48,7 @@ export type DownloadBlocksCallbacks = Omit<
  * How the download itself starts, see start function inside.
  */
 export default function initDownloadBlocks(
+    name: string,
     {
         checkFileSignatures,
         getBlocks,
@@ -164,6 +167,7 @@ export default function initDownloadBlocks(
             activeIndex = blockQueue[0].Index;
 
             const retryDownload = async (activeIndex: number) => {
+                abortController = new AbortController();
                 const newBlocks = await getBlocks(abortController.signal, {
                     FromBlockIndex: fromBlockIndex,
                     PageSize: BATCH_REQUEST_SIZE,
@@ -172,7 +176,6 @@ export default function initDownloadBlocks(
                     throw new Error('Unexpected Uint8Array block data');
                 }
                 revertProgress();
-                abortController = new AbortController();
                 blocksOrBuffer = newBlocks;
                 blocks = newBlocks;
 
@@ -294,9 +297,6 @@ export default function initDownloadBlocks(
                         return;
                     }
 
-                    if (!isTransferCancelError(e)) {
-                        fsWriter.abort(e).catch(logError);
-                    }
                     throw e;
                 }
 
@@ -355,6 +355,10 @@ export default function initDownloadBlocks(
                 onFinish?.();
             })
             .catch((err) => {
+                if (err?.data?.Code === RESPONSE_CODE.NOT_FOUND) {
+                    err = new ValidationError(c('Info').t`File "${name}" was deleted during download`);
+                }
+
                 abortController.abort();
                 fsWriter.abort(err).catch(logError);
                 onError?.(err);
