@@ -152,4 +152,6 @@ export const EDITOR_DEFAULT_METADATA: EditorMetadata = {
     isPlainText: false,
     supportRightToLeft: false,
     rightToLeft: Direction.LeftToRight,
+    blockquoteExpanded: true,
+    setBlockquoteExpanded: undefined,
 };

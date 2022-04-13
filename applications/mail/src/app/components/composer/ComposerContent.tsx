@@ -2,8 +2,8 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';
-import { classnames, EllipsisLoader } from '@proton/components';
-import { Address, MailSettings } from '@proton/shared/lib/interfaces';
+import { classnames, EditorMetadata, EllipsisLoader } from '@proton/components';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 import { isDragFile } from '../../helpers/dom';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
@@ -26,7 +26,7 @@ interface Props {
     isOutside?: boolean;
     outsideKey?: OutsideKey;
     mailSettings?: MailSettings;
-    addresses: Address[];
+    editorMetadata: EditorMetadata;
 }
 
 const ComposerContent = ({
@@ -43,7 +43,7 @@ const ComposerContent = ({
     isOutside = false,
     outsideKey,
     mailSettings,
-    addresses,
+    editorMetadata,
 }: Props) => {
     const [fileHover, setFileHover] = useState(false);
 
@@ -112,9 +112,8 @@ const ComposerContent = ({
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}
                     onRemoveAttachment={onRemoveAttachment}
-                    isOutside={isOutside}
                     mailSettings={mailSettings}
-                    addresses={addresses}
+                    editorMetadata={editorMetadata}
                 />
                 {fileHover && (
                     <div

@@ -58,6 +58,9 @@ describe('Composer switch plaintext <-> html', () => {
 
         const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
 
+        const moreOptionsButton = await findByTestId('composer:more-options-button');
+        fireEvent.click(moreOptionsButton);
+
         const toHtmlButton = await findByTestId('editor-to-html');
         fireEvent.click(toHtmlButton);
 
@@ -92,8 +95,8 @@ describe('Composer switch plaintext <-> html', () => {
 
         const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
 
-        const moreDropdown = await findByTestId('editor-toolbar-more');
-        fireEvent.click(moreDropdown);
+        const moreOptionsButton = await findByTestId('composer:more-options-button');
+        fireEvent.click(moreOptionsButton);
 
         const toHtmlButton = await findByTestId('editor-to-plaintext');
         fireEvent.click(toHtmlButton);
