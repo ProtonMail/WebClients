@@ -38,7 +38,7 @@
         "启用"
       ],
       "Activate ${ addressToCreate }": [
-        ""
+        "激活 ${ addressToCreate }"
       ],
       "Activate ${ Name }@pm.me": [
         "激活 ${ Name }@pm.me"
@@ -88,12 +88,6 @@
       "Add PayPal": [
         "添加 PayPal"
       ],
-      "Add PayPal payment method": [
-        "添加 PayPal 支付方式"
-      ],
-      "Add screenshot(s)": [
-        "添加截图"
-      ],
       "Add sieve filter": [
         "创建 Sieve 规则"
       ],
@@ -117,6 +111,9 @@
       ],
       "Apply": [
         "应用"
+      ],
+      "Attach screenshot(s)": [
+        ""
       ],
       "Authenticate": [
         "认证"
@@ -157,9 +154,6 @@
       "Choose a file or drag it here": [
         "选择文件或将其拖至此处"
       ],
-      "Clear": [
-        "清除"
-      ],
       "Clear all formatting": [
         "清除所有格式"
       ],
@@ -198,6 +192,9 @@
       ],
       "Continue import": [
         "继续导入"
+      ],
+      "Continue to ${ name }": [
+        ""
       ],
       "Continue with": [
         "切换到"
@@ -256,8 +253,14 @@
       "Delete link": [
         "删除链接"
       ],
+      "Delete permanently": [
+        ""
+      ],
       "Delete record": [
         "删除记录"
+      ],
+      "Delete without exporting": [
+        ""
       ],
       "Delete your account": [
         "删除您的账户"
@@ -326,10 +329,13 @@
         "更改登录信息"
       ],
       "enable desktop notifications": [
-        "启用桌面通知"
+        "开启推送通知"
       ],
       "Enable multi-user support": [
         "启用多用户支持"
+      ],
+      "Encrypt and export": [
+        ""
       ],
       "Export": [
         "导出"
@@ -339,6 +345,9 @@
       ],
       "Export key": [
         "导出密钥"
+      ],
+      "Export key before deleting": [
+        ""
       ],
       "Extend": [
         ""
@@ -375,9 +384,6 @@
       ],
       "Hide folders": [
         "隐藏文件夹"
-      ],
-      "Hide info": [
-        "隐藏信息"
       ],
       "Hide labels": [
         "隐藏标签"
@@ -467,7 +473,7 @@
         "否"
       ],
       "No, thanks": [
-        ""
+        "不，谢谢"
       ],
       "OK": [
         "好"
@@ -664,9 +670,6 @@
       "Show folders": [
         "显示文件夹"
       ],
-      "Show info": [
-        "显示信息"
-      ],
       "Show labels": [
         "显示标签"
       ],
@@ -755,7 +758,7 @@
         "取消订阅"
       ],
       "Update": [
-        "更新"
+        "应用"
       ],
       "Update recovery file": [
         "更新恢复文件"
@@ -823,9 +826,6 @@
       "Void anyway": [
         "仍然作废"
       ],
-      "Warning": [
-        "警告"
-      ],
       "Wipe": [
         "清除"
       ],
@@ -850,11 +850,6 @@
       ],
       "Try free for 30 days": [
         "免费试用 30 天"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "选择"
       ]
     },
     "Addon": {
@@ -934,17 +929,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "如果现在退出，某些日程可能无法导入"
-      ],
-      "Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.": [
-        "密钥一旦删除不可恢复，您可以备份密钥，这样将来仍能解密由其加密的邮件。"
-      ],
-      "You will face a permanent data loss by not making a backup of your key.": [
-        "不备份密钥会导致永久性的数据丢失。"
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "正在删除该地址的密钥。"
       ]
     },
     "Alter": {
@@ -1335,6 +1319,14 @@
         "周"
       ]
     },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "开头是"
@@ -1365,17 +1357,6 @@
       ],
       "matches": [
         "匹配"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to delete this key without backing it up?": [
-        "确定要删除此密钥并且不备份吗？"
-      ],
-      "Are you sure you want to permanently delete this key?": [
-        "确定要永久删除此密钥吗？"
-      ],
-      "Do you want to export your key?": [
-        "要导出密钥吗？"
       ]
     },
     "Confirm modal title": {
@@ -3855,7 +3836,7 @@
     },
     "Info": {
       "${ addressToCreate } is now active": [
-        ""
+        "${ addressToCreate } 已启用"
       ],
       "${ appName } ${ planName } credits earned": [
         "${ appName } ${ planName } 奖励体验期"
@@ -3894,10 +3875,10 @@
         "${ mailAppName } 免费版"
       ],
       "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
-        ""
+        "${ mailPlus } 仅限一名用户使用，5 GB 存储空间起步。"
       ],
       "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
+        "${ mailProfessional } 至少包含一位用户，在此基础上每添加一位用户，机构账户就会获得 5 GB 存储空间和 5 个邮箱地址，可以自由分配。"
       ],
       "${ n } address": [
         "${ n } 个地址"
@@ -3966,7 +3947,7 @@
         ""
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
-        ""
+        "${ vpnPlus } 允许 ${ maxVpn } 台设备同时接入 VPN。"
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         ""
@@ -4556,9 +4537,6 @@
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "若要将邮件、日历和联系人从其它电子邮箱服务中转移到Proton，我们会全程指导您的每一步操作，转移过程中会加密您的数据，欢迎走进隐私世界的大门！"
       ],
-      "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "注意：下载私钥并采用不安全的媒介传输或存储会严重威胁您的账户安全！"
-      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "注意：请务必妥善保管恢复码，否则一旦丢失双重验证设备，您可能再也无法登录此账户。"
       ],
@@ -4631,8 +4609,8 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "只要你想使用DKIM，就在DNS中保留这些记录。"
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "密钥 ${ fp } 已删除。"
+      "Key deletion is irreversible!": [
+        ""
       ],
       "Label all imported messages as": [
         "给导入的所有邮件加标签"
@@ -4812,7 +4790,7 @@
         ""
       ],
       "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        ""
+        "使用我们新推出的 ${ domain } 域名收发邮件更加方便快捷。激活后您仍可继续使用现有的 ${ protonMailAppName } 地址。"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "恢复文件已过时，请更新以确保能访问您的数据"
@@ -4849,9 +4827,6 @@
       ],
       "Plan upgrade required": [
         "需要升级套餐"
-      ],
-      "Please enter a password to encrypt your private key with before exporting.": [
-        "导出私钥前请先设置一个密码将其加密。"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "请输入与您的账户关联的 12 字恢复密语。"
@@ -4988,14 +4963,14 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "使用您的双重验证设备扫描下方二维码进行账户设置，或${ switchButton }。"
       ],
-      "Screenshot(s) attached": [
-        "已添加截图"
-      ],
       "See all plans": [
         ""
       ],
       "Select a service provider to start": [
         "请选择一个服务提供商并开始导入"
+      ],
+      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
@@ -5045,6 +5020,9 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
       ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        ""
+      ],
       "Support for 1 custom email domain": [
         "支持 1 个自有域名"
       ],
@@ -5090,6 +5068,9 @@
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         ""
       ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        ""
+      ],
       "This 30-day free trial is not available any other way.": [
         "免费试用 30 天，机会绝无仅有。"
       ],
@@ -5104,9 +5085,6 @@
       ],
       "This email address will only be used for recovery purposes.": [
         "此邮箱地址将只会用于恢复目的。"
-      ],
-      "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "此功能只适合专业用户使用。删除此密钥后，您将无法解密由其加密的所有邮件，可能导致数据丢失。"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "这是之前提示您设置的 12 字短语。"
@@ -5144,6 +5122,9 @@
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "这将禁用您当前的恢复密语，您将无法使用它来访问账户或解密数据。"
       ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        ""
+      ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "完成此操作后您就可以使用 PayPal 支付了。我们将在新标签页中为您打开 PayPal，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
@@ -5161,6 +5142,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "接下来您将为 Proton 账户开启双重验证（2FA），这将提高账户安全性，我们建议您立即开启。"
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        ""
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "如果确定要执行此操作，请再次输入您要删除的用户名称。"
@@ -5301,7 +5285,7 @@
         "VPN + ${ mailAppName } 套装，适合家庭和小企业。"
       ],
       "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        ""
+        "是否要将 ${ addressToCreate } 设为发送邮件时使用的默认地址？"
       ],
       "Warning:": [
         "警告："
@@ -5465,6 +5449,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "您已达到您的存储容量的100%。您不能收发新的电子邮件。${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        ""
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         ""
       ],
@@ -5473,6 +5460,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "即将为您转至银行网站完成验证。"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
+        ""
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即将为您转至 PayPal 确认支付。"
@@ -5484,7 +5474,7 @@
         "即使您关闭浏览器也不会退出账户。"
       ],
       "You'll still be able to send and receive mail with your existing email address(es).": [
-        ""
+        "您仍然可以通过现有的邮箱地址收发邮件。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。要使用 ${ toAppName }，请先创建账户。"
@@ -5642,7 +5632,7 @@
       "Billed": [
         "Billed"
       ],
-      "Cancelled": [
+      "Gifted": [
         ""
       ],
       "Paid": [
@@ -6044,6 +6034,9 @@
       "Attach public key": [
         "附上公钥"
       ],
+      "Attach screenshot(s)": [
+        ""
+      ],
       "Auto reply": [
         "自动回复"
       ],
@@ -6160,6 +6153,9 @@
       ],
       "Country": [
         "国家"
+      ],
+      "Create password": [
+        ""
       ],
       "Credits pending": [
         ""
@@ -6848,11 +6844,6 @@
         "行"
       ]
     },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "添加截图"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "创建文件夹"
@@ -7358,6 +7349,9 @@
       "A disabled address cannot be primary": [
         "已禁用的地址不能为主地址"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        ""
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 账号密码已重新生成"
       ]
@@ -7718,12 +7712,6 @@
       "Address": [
         "地址"
       ],
-      "Browser name": [
-        "浏览器名称"
-      ],
-      "Browser version": [
-        "浏览器版本"
-      ],
       "Choose a name": [
         "选择一个名字"
       ],
@@ -7757,12 +7745,6 @@
       "Name": [
         "名称"
       ],
-      "OS name": [
-        "OS 名称"
-      ],
-      "OS version": [
-        "OS 版本"
-      ],
       "Other": [
         "其他"
       ],
@@ -7781,14 +7763,14 @@
       "Postal code": [
         "邮政编码"
       ],
-      "Proton username": [
-        "Proton 用户名"
-      ],
       "Search settings": [
         "搜索设置"
       ],
       "Search users": [
         "搜索用户"
+      ],
+      "Select": [
+        ""
       ],
       "Select a reason": [
         "请选择原因"
@@ -8724,6 +8706,9 @@
       "Confirm phone number": [
         "确认电话号码"
       ],
+      "Connect ${ name }": [
+        ""
+      ],
       "Contact encryption keys": [
         "通讯录加密密钥"
       ],
@@ -8796,8 +8781,8 @@
       "Delete ${ email }": [
         "删除 ${ email }"
       ],
-      "Delete ${ filter.Name }": [
-        "删除 ${ filter.Name }"
+      "Delete ${ filterName }": [
+        ""
       ],
       "Delete ${ label.Name } folder": [
         ""
@@ -8811,8 +8796,8 @@
       "Delete calendar": [
         "删除日历"
       ],
-      "Delete key": [
-        "删除密钥"
+      "Delete key permanently?": [
+        ""
       ],
       "Delete logs": [
         "删除日志"
@@ -9292,7 +9277,7 @@
         ""
       ],
       "Your ${ domain } address is active": [
-        ""
+        "${ domain } 地址已激活"
       ],
       "Your account’s usage": [
         "您的账户使用情况"

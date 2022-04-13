@@ -52,9 +52,6 @@
       "Add PayPal": [
         "Añadir PayPal"
       ],
-      "Add PayPal payment method": [
-        "Añadir método de pago de PayPal"
-      ],
       "annual billing": [
         "facturación anual"
       ],
@@ -2745,8 +2742,8 @@
       "Billed": [
         "Facturado"
       ],
-      "Cancelled": [
-        "Cancelado"
+      "Gifted": [
+        ""
       ],
       "Paid": [
         "Pagado"
@@ -2803,8 +2800,8 @@
         ""
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
+        "${ UsedDomains } de ${ MaxDomains } dominio personalizado",
+        "${ UsedDomains } de ${ MaxDomains } dominios personalizados"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
         "",
@@ -3280,7 +3277,7 @@
         "Grupos de contactos"
       ],
       "Custom domains": [
-        ""
+        "Dominios personalizados"
       ],
       "Custom filters": [
         "Filtros personalizados"
@@ -3439,7 +3436,7 @@
         "Android"
       ],
       "Captcha": [
-        "Captcha"
+        "CAPTCHA"
       ],
       "Country configs": [
         "Configuraciones de País"
@@ -3694,7 +3691,7 @@
         "Bloqueador de anuncios integrado (NetShield)"
       ],
       "Custom domains": [
-        ""
+        "Dominios personalizados"
       ],
       "Early access to new products": [
         "Acceso anticipado a nuevos productos"

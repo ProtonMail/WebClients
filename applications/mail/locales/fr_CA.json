@@ -84,7 +84,7 @@
         "Archiver"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Joindre une ou plusieurs captures d’écran"
       ],
       "Attachment": [
         "Pièce jointe"
@@ -392,7 +392,7 @@
         "J'ai une question"
       ],
       "Images will be loaded without a proxy": [
-        ""
+        "Les images seront chargées sans proxy"
       ],
       "import": [
         "importer"
@@ -447,7 +447,7 @@
         "En savoir plus"
       ],
       "Less search options": [
-        ""
+        "Moins d'options de recherche"
       ],
       "Load": [
         "Charger"
@@ -573,7 +573,7 @@
         "Non"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        ""
+        "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées avec la protection contre le tracking."
       ],
       "No, I won't attend": [
         "Non, je ne participerai pas"
@@ -780,7 +780,7 @@
         "Afficher moins"
       ],
       "Show less search options": [
-        ""
+        "Afficher moins d'options de recherche"
       ],
       "Show messages": [
         "Afficher les messages"
@@ -789,7 +789,7 @@
         "Afficher plus d'options de recherche"
       ],
       "Show preview": [
-        ""
+        "Afficher un aperçu"
       ],
       "Sign out": [
         "Se déconnecter"
@@ -972,7 +972,7 @@
     },
     "action": {
       "Search messages": [
-        ""
+        "Rechercher des messages"
       ]
     },
     "Actions message": {
@@ -1043,8 +1043,8 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "",
-        ""
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } complété",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } complétés"
       ]
     },
     "Apps dropdown": {
@@ -1099,7 +1099,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+        "L'accès à la version bêta vous permet d'utiliser la version bêta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME } avant qu'elles ne soient rendues publiques. Cela signifie que vous pouvez être le premier à essayer de nouveaux produits, à obtenir de nouvelles mises à jour et à utiliser de nouvelles fonctionnalités."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
@@ -1274,7 +1274,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Continuer à utiliser ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -3003,7 +3003,7 @@
         "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur est survenue, veuillez ${ refresh } pour continuer. Si vous voyez toujours ce message d'erreur, veuillez contacter notre ${ supportTeam }."
@@ -3448,7 +3448,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Nous avons augmenté l'espace de stockage total de votre compte à ${ rewardInGb } Go. Obtenez un espace de stockage supplémentaire et débloquez des fonctionnalités haut de gamme dès aujourd'hui."
       ],
       "You're all set!": [
         "Vous avez tout fait!"
@@ -3456,7 +3456,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Complétez toutes les étapes et obtenez un total de ${ rewardInGb } Go sur votre compte"
       ],
       "Expires soon": [
         "Expire bientôt"
@@ -3666,6 +3666,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        "${ activateLink } ou ${ learnMoreLink }."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } adresse courriel",
         "${ addressCount } adresses courriel"
@@ -3718,7 +3721,7 @@
         "${ groupCounts } groupes trouvés"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        ""
+        "${ MAIL_APP_NAME } peut également protéger votre entreprise."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } message n’a pas pu être déplacé.",
@@ -4059,10 +4062,10 @@
         "images intégrées"
       ],
       "Encrypt for non-${ BRAND_NAME } users": [
-        ""
+        "Chiffrer pour les utilisateurs non-${ BRAND_NAME }"
       ],
       "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        ""
+        "Les messages chiffrés aux destinataires hors ${ BRAND_NAME } expireront dans 28 jours, sauf si un délai d'expiration plus court est défini."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -4147,7 +4150,7 @@
         "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
       ],
       "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        ""
+        "Si vous envoyez ce message à un·e utilisateur·rice n’ayant pas ${ MAIL_APP_NAME }, veillez à définir un mot de passe pour votre message."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
@@ -4213,6 +4216,9 @@
       "Learn more": [
         "En savoir plus"
       ],
+      "learn more": [
+        "en savoir plus"
+      ],
       "Left to Right": [
         "De gauche à droite"
       ],
@@ -4250,7 +4256,7 @@
         "Fusionné"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        ""
+        "L'expiration des messages fonctionne pour l'envoi de courriels à d'autres utilisateurs ${ MAIL_APP_NAME }. Pour envoyer des courriels à durée d’expiration à des utilisateurs n’utilisant pas ${ BRAND_NAME }, veuillez annuler l’envoi et ajouter une protection par mot de passe à votre message."
       ],
       "Message headers": [
         "En-têtes du message"
@@ -4319,7 +4325,7 @@
         "Aucun résultat trouvé"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
-        ""
+        "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées avec la protection contre le tracking"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Aucune des clés téléversées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
@@ -4334,7 +4340,7 @@
         "de"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ${ BRAND_NAME }."
       ],
       "Other options": [
         "Autres options"
@@ -4343,10 +4349,10 @@
         "Notre système a marqué ce message comme étant une tentative d'hameçonnage. Veuillez vérifier qu'il est légitime."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -4466,13 +4472,13 @@
         "Session expirée"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        ""
+        "Définissez ${ MAIL_APP_NAME } comme application de messagerie par défaut pour ce navigateur. ${ MAIL_APP_NAME } s'ouvrira automatiquement lorsque vous cliquerez sur un lien de courrier électronique."
       ],
       "Set a recovery phrase": [
         "Créer une phrase de récupération"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        ""
+        "La configuration de PGP vous permet d'envoyer des courriels chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
       ],
       "Show original message": [
         "Afficher le message original"
@@ -4481,10 +4487,10 @@
         "Désolé, ce message n'existe pas ou a déjà expiré"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        ""
+        "Stockez et partagez des fichiers en toute sécurité avec ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Objet"
@@ -4695,7 +4701,7 @@
         "Passez à l’offre supérieure pour soutenir la vie privée et obtenir plus de fonctionnalités."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        ""
+        "Passez à l’offre supérieure pour utiliser ${ MAIL_APP_NAME } avec des logiciels client tiers."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Passez à l'offre supérieure dès aujourd'hui pour conserver les avantages suivants de ${ appName } ${ planName }."
@@ -4710,7 +4716,7 @@
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use ${ calendarAppName } to keep your agenda private.": [
-        ""
+        "Utilisez ${ calendarAppName } pour garder votre agenda privé."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilisez les raccourcis clavier pour gérer vos messages plus rapidement."
@@ -4785,7 +4791,7 @@
         "Vous pouvez activer les notifications pour recevoir des alertes lorsque de nouveaux messages arrivent dans ce dossier."
       ],
       "You can use ${ VPN_APP_NAME } for free today.": [
-        ""
+        "Vous pouvez utiliser ${ VPN_APP_NAME } gratuitement aujourd'hui."
       ],
       "You cannot reply from the invited address.": [
         "Vous ne pouvez pas répondre à partir de l'adresse invitée."
@@ -5162,7 +5168,7 @@
         "N’IMPORTE"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Joindre une ou plusieurs captures d’écran"
       ],
       "Attachments": [
         "Pièces jointes"
@@ -5225,7 +5231,7 @@
         "Date:"
       ],
       "Delete": [
-        ""
+        "Supprimer"
       ],
       "Display name": [
         "Nom d'affichage"
@@ -5483,7 +5489,7 @@
         "Importer une image"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Nom d'utilisateur·rice ou adresse ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Code de vérification"
@@ -5519,10 +5525,10 @@
     },
     "Label Recipient": {
       "From": [
-        ""
+        "De"
       ],
       "To": [
-        ""
+        "À"
       ]
     },
     "Label to change composer mode": {
@@ -6006,25 +6012,25 @@
     },
     "Onboarding": {
       "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        ""
+        "${ appName } est maintenant plus moderne et personnalisable tout en protégeant vos données avec un chiffrement avancé."
       ],
       "Available on iOS and Android.": [
-        ""
+        "Disponible sur iOS et Android."
       ],
       "Get the ${ appName } mobile app": [
-        ""
+        "Obtenir l'application mobile ${ appName }"
       ],
       "Import your messages": [
-        ""
+        "Importer vos messages"
       ],
       "Meet your encrypted mailbox": [
-        ""
+        "Faites connaissance avec votre boîte aux lettres chiffrée"
       ],
       "Next": [
         "Suivant"
       ],
       "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        ""
+        "Notre assistant d'importation transfère rapidement tous vos courriels vers votre nouvelle boîte aux lettres chiffrée."
       ]
     },
     "Onboarding Proton": {
@@ -6097,16 +6103,16 @@
     },
     "Paid user checklist item": {
       "Get mobile app": [
-        ""
+        "Obtenir l'application mobile"
       ],
       "Import contacts or emails": [
-        ""
+        "Importer des contacts ou des courriels"
       ],
       "Send a message": [
-        ""
+        "Envoyer un message"
       ],
       "Set up a recovery method": [
-        ""
+        "Définir une méthode de récupération"
       ]
     },
     "Participant name": {
@@ -6195,7 +6201,7 @@
         "Rechercher un nom, un email ou un groupe"
       ],
       "Select": [
-        ""
+        "Sélectionner"
       ],
       "Start date": [
         "Date de début"
@@ -6304,7 +6310,7 @@
         "Message signé par PGP. La vérification de l'expéditeur·rice a échoué"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès"
       ],
       "Stored with zero-access encryption": [
         "Stocké avec un chiffrement zéro accès"
@@ -6384,16 +6390,16 @@
     },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
-        ""
+        "Chiffré par ${ MAIL_APP_NAME }"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
-        ""
+        "Chiffré par ${ MAIL_APP_NAME } vers un destinataire PGP"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
-        ""
+        "Chiffré par ${ MAIL_APP_NAME } vers un destinataire PGP vérifié"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
-        ""
+        "Chiffré par ${ MAIL_APP_NAME } vers un destinataire vérifié"
       ],
       "End-to-end encrypted": [
         "Chiffré de bout en bout"
@@ -6411,11 +6417,11 @@
         "Signé par PGP"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "",
-        ""
+        "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès vers un destinataire vérifié",
+        "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès vers des destinataires vérifiés"
       ],
       "Sent by you with end-to-end encryption": [
         "Envoyé par vous avec un chiffrement de bout en bout"
@@ -7034,7 +7040,7 @@
         "Saisissez votre mot de passe"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Saisissez votre nom d'utilisateur·rice ou votre adresse ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Erreur"
@@ -7327,7 +7333,7 @@
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
@@ -7400,7 +7406,7 @@
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d'alerte, mais dans le processus vous perdrez définitivement l'accès à toutes les données chiffrées avec cette clé."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "Le dialogue en ligne en temps réel est une fonctionnalité premium disponible uniquement pour les personnes disposant d’une offre ${ VPN_APP_NAME } payante. Veuillez ouvrir un ticket à la place."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton fusionnera tous les dossiers avec le même nom. Pour éviter cela, changez les noms avant l'importation."

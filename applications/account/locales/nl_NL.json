@@ -88,12 +88,6 @@
       "Add PayPal": [
         "PayPal toevoegen"
       ],
-      "Add PayPal payment method": [
-        "Voeg PayPal als betalingsmethode toe"
-      ],
-      "Add screenshot(s)": [
-        "Screenshot(s) toevoegen"
-      ],
       "Add sieve filter": [
         "Voeg Sieve filter toe"
       ],
@@ -117,6 +111,9 @@
       ],
       "Apply": [
         "Toepassen"
+      ],
+      "Attach screenshot(s)": [
+        "Schermafdruk(ken) toevoegen"
       ],
       "Authenticate": [
         "Authenticeren"
@@ -157,9 +154,6 @@
       "Choose a file or drag it here": [
         "Kies een bestand of sleep deze hier"
       ],
-      "Clear": [
-        "Wissen"
-      ],
       "Clear all formatting": [
         "Alle opmaak wissen"
       ],
@@ -199,6 +193,9 @@
       "Continue import": [
         "Doorgaan met importeren"
       ],
+      "Continue to ${ name }": [
+        "Doorgaan naar ${ name }"
+      ],
       "Continue with": [
         "Doorgaan met"
       ],
@@ -215,7 +212,7 @@
         "Link kopiëren"
       ],
       "Create": [
-        ""
+        "Aanmaken"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         "Maak in plaats daarvan een veilig ${ MAIL_APP_NAME }-adres"
@@ -256,8 +253,14 @@
       "Delete link": [
         "Verwijder hyperlink"
       ],
+      "Delete permanently": [
+        "Permanent verwijderen"
+      ],
       "Delete record": [
         "Record verwijderen"
+      ],
+      "Delete without exporting": [
+        "Verwijder zonder te exporteren"
       ],
       "Delete your account": [
         "Uw account verwijderen"
@@ -331,6 +334,9 @@
       "Enable multi-user support": [
         "Ondersteuning voor meerdere gebruikers inschakelen"
       ],
+      "Encrypt and export": [
+        "Versleutel en exporteer"
+      ],
       "Export": [
         "Exporteren"
       ],
@@ -340,8 +346,11 @@
       "Export key": [
         "Sleutel exporteren"
       ],
+      "Export key before deleting": [
+        "Exporteer sleutel voor verwijderen"
+      ],
       "Extend": [
-        ""
+        "Verlengen"
       ],
       "Font": [
         "Lettertype"
@@ -375,9 +384,6 @@
       ],
       "Hide folders": [
         "Mappen verbergen"
-      ],
-      "Hide info": [
-        "Informatie verbergen"
       ],
       "Hide labels": [
         "Labels verbergen"
@@ -428,7 +434,7 @@
         "e-mail labellen als"
       ],
       "Load more": [
-        ""
+        "Laad meer"
       ],
       "Loading verification": [
         "Verificatie laden"
@@ -602,10 +608,10 @@
         "Bekijken"
       ],
       "Revoke": [
-        ""
+        "Intrekken"
       ],
       "Revoke ${ name }": [
-        ""
+        "${ name } intrekken"
       ],
       "Revoke all other sessions": [
         "Alle andere sessies beëindigen"
@@ -663,9 +669,6 @@
       ],
       "Show folders": [
         "Mappen weergeven"
-      ],
-      "Show info": [
-        "Informatie tonen"
       ],
       "Show labels": [
         "Labels weergeven"
@@ -823,9 +826,6 @@
       "Void anyway": [
         "Hoe dan ook leeg"
       ],
-      "Warning": [
-        "Waarschuwing"
-      ],
       "Wipe": [
         "Wissen"
       ],
@@ -850,11 +850,6 @@
       ],
       "Try free for 30 days": [
         "Probeer gratis uit voor 30 dagen"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selecteren"
       ]
     },
     "Addon": {
@@ -943,22 +938,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "Door nu te verlaten, worden sommige afspraken mogelijk niet geïmporteerd"
-      ],
-      "Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.": [
-        "Uw sleutels verwijderen is een onherstelbare actie. U wil wellicht eerst een backup maken van deze sleutel om op een later moment berichten te bekijken die met deze sleutel versleuteld zijn."
-      ],
-      "You will face a permanent data loss by not making a backup of your key.": [
-        "U raakt uw data kwijt als u geen backup maakt van uw sleutel."
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "De sleutel van uw adres wordt nu verwijderd,"
       ]
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Dit zal alle routers en clients die dit certificaat gebruiken loskoppelen."
       ]
     },
     "Apps dropdown": {
@@ -1345,6 +1329,14 @@
         "Week"
       ]
     },
+    "Collapsible tooltip": {
+      "Close": [
+        "Sluiten"
+      ],
+      "Open": [
+        "Openen"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "begint met"
@@ -1375,17 +1367,6 @@
       ],
       "matches": [
         "komt overeen"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to delete this key without backing it up?": [
-        "Weet u zeker dat u deze sleutel wil verwijderen zonder eerst een back-up te maken?"
-      ],
-      "Are you sure you want to permanently delete this key?": [
-        "Weet u zeker dat u dit concept permanent wil verwijderen?"
-      ],
-      "Do you want to export your key?": [
-        "Wilt u de volgende openbare sleutel vertrouwen?"
       ]
     },
     "Confirm modal title": {
@@ -3102,7 +3083,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Certificaat ${ name } niet gevonden of reeds ingetrokken"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "Voor- en achternaam kunnen niet tegelijkertijd worden uitgeschakeld"
@@ -4072,7 +4053,7 @@
         "Iedereen moet kunnen beschikken over een vrij en ongecensureerd internet."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Een naam om u te helpen identificeren waar u het gebruikt zodat u het later eenvoudig kan intrekken of verlengen."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4476,7 +4457,7 @@
         "Verlopen"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "verloopt op ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "Fout bij het ophalen van logs."
@@ -4617,9 +4598,6 @@
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importeer uw e-mails, agenda's en contacten vanuit een andere dienst naar Proton. We zullen u bij elke stap leiden en uw gegevens versleutelen terwijl het wordt verplaatst. Welkom in de wereld van privacy."
       ],
-      "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "BELANGRIJK: Het downloaden van uw geheime sleutels en ze verzenden via of opslaan op onveilige media kan de veiligheid van uw account in gevaar brengen!"
-      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Belangrijk: Zorg ervoor dat u de herstelcodes opslaat. Anders kunt u permanent toegang tot uw account verliezen als u uw tweestapsverificatieapparaat kwijtraakt."
       ],
@@ -4693,8 +4671,8 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Houd deze records in uw DNS voor zolang u DKIM wilt gebruiken."
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "Sleutel met vingerafdruk ${ fp } is verwijderd."
+      "Key deletion is irreversible!": [
+        "Het verwijderen van een sleutel in onomkeerbaar!"
       ],
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
@@ -4856,7 +4834,7 @@
         "Alleen u kunt de labels zien."
       ],
       "Or select a particular server:": [
-        ""
+        "Of selecteer een specifieke server:"
       ],
       "Organization keys activated": [
         "Organisatiesleutels geactiveerd"
@@ -4871,7 +4849,7 @@
         "Andere opties"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
+        "Anders zal toegang tot uw account beperkt worden en zal uw account na verloop van tijd worden uitgeschakeld."
       ],
       "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
         "Onze nieuwe ${ domain }-domein is een handige optie voor het verzenden en ontvangen van e-mails. U zal nog steeds uw originele ${ protonMailAppName } adres kunnen gebruiken."
@@ -4912,9 +4890,6 @@
       ],
       "Plan upgrade required": [
         "Upgrade van abonnement vereist"
-      ],
-      "Please enter a password to encrypt your private key with before exporting.": [
-        "Voer een wachtwoord in voor het versleutelen van uw geheime sleutel voordat u deze exporteert."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Voer de herstelzin van 12 woorden in die bij uw account hoort."
@@ -5028,7 +5003,7 @@
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Certificaat ${ name } intrekken"
       ],
       "Right to Left": [
         "Rechts naar links"
@@ -5051,14 +5026,14 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scan deze QR-code met uw tweestapsverificatieapparaat om uw account in te stellen. ${ switchButton }."
       ],
-      "Screenshot(s) attached": [
-        "Schermafbeelding(en) toegevoegd"
-      ],
       "See all plans": [
         "Bekijk alle abonnementen"
       ],
       "Select a service provider to start": [
         "Selecteer een dienstverlener om te beginnen"
+      ],
+      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
+        "Selecteer Doorgaan naar ${ name } om de app te openen. Dit maakt ook een ${ name }-account aan met uw ${ MAIL_APP_NAME }-adres zodat u in de toekomst met één klik kunt inloggen."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
@@ -5106,7 +5081,10 @@
         "Opslag GB"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
+      ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Bewaar dit wachtwoord en het bestand op een veilige plaats. U heeft ze opnieuw nodig om uw sleutel te importeren."
       ],
       "Support for 1 custom email domain": [
         "Ondersteuning voor 1 aangepast e-mail domein"
@@ -5153,6 +5131,9 @@
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Deze configuratiebestanden laten u kiezen met welke ${ VPN_APP_NAME }-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
       ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Deze configuraties worden verstrekt om te werken met WireGuard-routers en officiële clients."
+      ],
       "This 30-day free trial is not available any other way.": [
         "Deze 30-dagen gratis proefversie is op geen enkele andere manier beschikbaar."
       ],
@@ -5167,9 +5148,6 @@
       ],
       "This email address will only be used for recovery purposes.": [
         "Dit e-mailadres zal alleen worden gebruikt voor hersteldoeleinden."
-      ],
-      "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Deze functie is alleen bedoeld voor geavanceerde gebruikers. Na het verwijderen van deze sleutel, kunt u berichten die er versleuteld mee zijn niet decoderen. Dit kan tot dataverlies leiden."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dit is een zin van 12 woorden die u moest instellen."
@@ -5207,6 +5185,9 @@
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Dit zal uw huidige herstelzin uitschakelen. U kunt deze dan niet meer gebruiken om toegang te krijgen tot uw account of om uw gegevens te ontsleutelen."
       ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        "Dit zal een bestand met jouw private key erin downloaden. Bescherm dit bestand door encriptie met een password toe te passen."
+      ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browsertabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
       ],
@@ -5224,6 +5205,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw Proton account. Tweestapsverificatie zal uw Proton account veiliger maken en daarom raden we aan om het in te schakelen."
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "Om verlies van data te voorkomen, verwijder alleen als je weet wat je doet of een kopie hebt geëxporteerd."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Om te bevestigen, voer de naam in van de gebruiker die u wilt verwijderen."
@@ -5337,7 +5321,7 @@
         "Gebruik automatische antwoorden om contactpersonen te informeren die u op kantoor bent of die anders niet kunnen reageren."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Gebruik de beste servers volgens de huidige belasting en positie: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gebruik de volgende inloggegevens bij het verbinden met ${ VPN_APP_NAME } servers zonder toepassing. Voorbeelden gebruiken gevallen zoals: Tunnelblick on macOS, OpenVPN op GNU/Linux."
@@ -5528,6 +5512,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "U exporteert best een back-up van deze sleutel voor het geval u de gegevens die het versleutelde wilt herstellen."
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         "U moet nog steeds reageren op uitnodigingen om de host uw reactie te laten zien."
       ],
@@ -5536,6 +5523,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "U wordt doorgestuurd naar uw bank om uw betaling te controleren."
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
+        "U zal berichten, bestanden en andere gegevens versleuteld met deze sleutel, niet langer kunnen ontsleutelen."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
@@ -5649,7 +5639,7 @@
     },
     "Info concerning plan features": {
       "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        ""
+        "${ MAIL_APP_NAME } kan niet voor massa e-mails of spam worden gebruikt. Legitieme e-mails zijn onbeperkt."
       ],
       "Customizable features": [
         "Aanpasbare functies"
@@ -5705,8 +5695,8 @@
       "Billed": [
         "Gefactureerd"
       ],
-      "Cancelled": [
-        "Geannuleerd"
+      "Gifted": [
+        "Geschonken"
       ],
       "Paid": [
         "Betaald"
@@ -6112,6 +6102,9 @@
       "Attach public key": [
         "Publieke sleutel bijvoegen"
       ],
+      "Attach screenshot(s)": [
+        "Schermafbeelding(en) toevoegen"
+      ],
       "Auto reply": [
         "Automatisch antwoorden"
       ],
@@ -6125,10 +6118,10 @@
         "Blokkeer e-mailtracking"
       ],
       "Block malware only": [
-        ""
+        "Alleen malware blokkeren"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Blokkeer malware, advertenties en trackers"
       ],
       "bonus storage": [
         "bonus opslag"
@@ -6161,7 +6154,7 @@
         "Categorie"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Kies een naam voor het gegenereerde certifcaatbestand"
       ],
       "Code": [
         "Code"
@@ -6188,7 +6181,7 @@
         "Voorwaarden"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Configureer om te verbinden met ${ serverName }"
       ],
       "Confirm link URLs": [
         "Bevestig link URL's"
@@ -6229,8 +6222,11 @@
       "Country": [
         "Land"
       ],
+      "Create password": [
+        "Wachtwoord aanmaken"
+      ],
       "Credits pending": [
-        ""
+        "Tegoed in afwachting"
       ],
       "Credits used": [
         "Verbruikt tegoed"
@@ -6290,7 +6286,7 @@
         "Beschrijving"
       ],
       "Device/certificate name": [
-        ""
+        "Apparaat/certificaat naam"
       ],
       "Digits": [
         "Cijfers"
@@ -6449,7 +6445,7 @@
         "Alleen vorige maand"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Niveau voor NetShield blokkeerfiltering"
       ],
       "Login password": [
         "Inlogwachtwoord"
@@ -6473,7 +6469,7 @@
         "Bericht"
       ],
       "Moderate NAT": [
-        ""
+        "Gemiddelde NAT"
       ],
       "Move to": [
         "Verplaatsen naar"
@@ -6497,13 +6493,13 @@
         "Nieuw wachtwoord"
       ],
       "No filter": [
-        ""
+        "Geen filter"
       ],
       "No label found": [
         "Geen label gevonden"
       ],
       "Non-standard ports": [
-        ""
+        "Niet-standaard poorten"
       ],
       "Notification": [
         "Melding"
@@ -6749,7 +6745,7 @@
         "Verificatiecode"
       ],
       "VPN Accelerator": [
-        ""
+        "VPN Accelerator"
       ],
       "VPN Connections": [
         "VPN-verbindingen"
@@ -6825,7 +6821,7 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
-        ""
+        "Voeg een domein toe waarvan u de eigenaar bent aan uw ${ MAIL_APP_NAME } account."
       ]
     },
     "Label for domain modal": {
@@ -6914,11 +6910,6 @@
       ],
       "Row": [
         "Rij"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Schermafbeelding(en) toevoegen"
       ]
     },
     "Label/folder modal": {
@@ -7431,6 +7422,9 @@
       "A disabled address cannot be primary": [
         "Een uitgeschakelde adres kan niet primair zijn"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        "Sleutel met vingerafdruk ${ fp } is verwijderd."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
       ]
@@ -7795,12 +7789,6 @@
       "Address": [
         "Adres"
       ],
-      "Browser name": [
-        "Browsernaam"
-      ],
-      "Browser version": [
-        "Browserversie"
-      ],
       "Choose a name": [
         "Kies een naam"
       ],
@@ -7834,12 +7822,6 @@
       "Name": [
         "Naam"
       ],
-      "OS name": [
-        "Besturingssysteem"
-      ],
-      "OS version": [
-        "Versie besturingssysteem"
-      ],
       "Other": [
         "Anders"
       ],
@@ -7858,14 +7840,14 @@
       "Postal code": [
         "Postcode"
       ],
-      "Proton username": [
-        "Proton-gebruikersnaam"
-      ],
       "Search settings": [
         "Zoekinstellingen"
       ],
       "Search users": [
         "Zoek gebruikers"
+      ],
+      "Select": [
+        "Selecteren"
       ],
       "Select a reason": [
         "Selecteer een reden"
@@ -8488,16 +8470,16 @@
         "Adres ingeschakeld"
       ],
       "Certificate ${ name } revoked": [
-        ""
+        "Certifcaat ${ name } ingetrokken"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Certificaat verlengd tot ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Configuratie \"${ name }\" aangemaakt, merk op dat de private sleutel niet bewaard wordt en niet opnieuw getoond zal worden. Kopieer of download deze configuratie."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Configuratiebestand aanmaken voor ${ serverName }"
       ],
       "Filter removed": [
         "Filter verwijderd"
@@ -8601,13 +8583,13 @@
         "(sterk aanbevolen)"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Geef een naam aan de te genereren configuratie"
       ],
       "1. Select platform": [
         "1. Platform kiezen"
       ],
       "2. Select platform": [
-        ""
+        "2. Selecteer platform"
       ],
       "2. Select protocol": [
         "2. Protocol kiezen"
@@ -8619,10 +8601,10 @@
         "3. Configuratiebestand kiezen en downloaden"
       ],
       "3. Select VPN options": [
-        ""
+        "3. Selecteer VPN-opties"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Selecteer een server om mee te verbinden"
       ],
       "Account and password": [
         "Account en wachtwoord"
@@ -8804,6 +8786,9 @@
       "Confirm phone number": [
         "Telefoonnummer bevestigen"
       ],
+      "Connect ${ name }": [
+        "Verbind ${ name }"
+      ],
       "Contact encryption keys": [
         "Contact encryptiesleutels"
       ],
@@ -8876,8 +8861,8 @@
       "Delete ${ email }": [
         "Verwijderen ${ email }"
       ],
-      "Delete ${ filter.Name }": [
-        "Verwijder ${ filter.Name }"
+      "Delete ${ filterName }": [
+        "Verwijder ${ filterName }"
       ],
       "Delete ${ label.Name } folder": [
         "Verwijder ${ label.Name } map"
@@ -8891,8 +8876,8 @@
       "Delete calendar": [
         "Agenda verwijderen"
       ],
-      "Delete key": [
-        "Sleutel verwijderen"
+      "Delete key permanently?": [
+        "Key permanent verwijderen?"
       ],
       "Delete logs": [
         "Logs wissen"
@@ -9208,7 +9193,7 @@
         "Herstel beheerdersbevoegdheden"
       ],
       "Revoke certificate": [
-        ""
+        "Certificaat intrekken"
       ],
       "Secure email based in Switzerland": [
         "Veilige e-maildienst gevestigd in Zwitserland"
@@ -9367,16 +9352,16 @@
         "Wat is er nieuw"
       ],
       "WireGuard": [
-        ""
+        "WireGuard"
       ],
       "WireGuard configuration": [
-        ""
+        "WireGuard configuratie"
       ],
       "Your ${ domain } address is active": [
         "Uw ${ domain }-adres is actief"
       ],
       "Your account’s usage": [
-        ""
+        "Verbruik van uw account"
       ],
       "Your calendar link": [
         "Uw agenda-link"
@@ -9418,7 +9403,7 @@
     },
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
-        ""
+        "${ MAIL_APP_NAME } factuur"
       ]
     },
     "Title header": {

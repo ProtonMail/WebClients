@@ -2780,10 +2780,10 @@
         "無法儲存聯絡人"
       ],
       "Contact signature could not be verified": [
-        "聯絡人簽章無法驗證"
+        "無法驗證聯絡人簽章"
       ],
       "Contact signature not verified": [
-        "聯絡人簽章未驗證"
+        "聯絡人簽章尚未驗證"
       ],
       "Contact your organization’s administrator to resolve this": [
         "請與您的組織管理員聯絡以解決此事"
@@ -2888,7 +2888,7 @@
         ""
       ],
       "Missing signature": [
-        "遺漏簽章"
+        "簽章遺失"
       ],
       "Network error: Please check your connection and try again.": [
         "網路錯誤：請檢查您的連線，然後重試。"
@@ -2966,7 +2966,7 @@
         "必須有至少一個條件"
       ],
       "Signature not verified": [
-        "簽章未驗證"
+        "簽章尚未驗證"
       ],
       "Signature verification error.": [
         "簽名驗證錯誤。"
@@ -3638,6 +3638,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        ""
+      ],
       "${ addressCount } email address": [
         "${ addressCount } 個電子郵件地址"
       ],
@@ -4141,6 +4144,9 @@
       ],
       "Learn more": [
         "了解更多"
+      ],
+      "learn more": [
+        ""
       ],
       "Left to Right": [
         "由左至右"

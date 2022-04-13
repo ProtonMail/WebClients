@@ -45,7 +45,7 @@
         "適用"
       ],
       "Attach screenshot(s)": [
-        ""
+        "スクリーンショットの添付"
       ],
       "Back": [
         "戻る"
@@ -182,6 +182,9 @@
       "Download": [
         "ダウンロード"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         "ドライブはロックされています"
       ],
@@ -208,6 +211,9 @@
       ],
       "enable desktop notifications": [
         "デスクトップ通知を有効化する"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         "フォルダーを展開"
@@ -801,10 +807,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "閉じる"
       ],
       "Open": [
-        ""
+        "開く"
       ]
     },
     "Confirm modal title": {
@@ -1678,7 +1684,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "連絡先を復号化しています。この処理には数分かかる場合があります。処理が完了すると、すべての連絡先をエクスポートしてファイルとしてダウンロードできます。"
+        "連絡先を復号しています。この処理には数分かかる場合があります。処理が完了すると、すべての連絡先をエクスポートしてファイルとしてダウンロードできます。"
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先を削除しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
@@ -2415,6 +2421,9 @@
       "Duplicate key updated": [
         "重複したキーはアップデートされました"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
@@ -2599,7 +2608,7 @@
         ""
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "${ MAX_CUSTOM_PASSWORD_LENGTH } 文字まで利用できます"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
@@ -2658,6 +2667,9 @@
       "Queued": [
         "処理待ち"
       ],
+      "recommended browser": [
+        ""
+      ],
       "Recovery process might take some time.": [
         "復元処理には少々時間がかかります。"
       ],
@@ -2713,7 +2725,7 @@
         ""
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "アプリケーションは、エクスポートする前に連絡先をローカルで復号化する必要があります。 プロセスの終了時に、VCFファイルが生成され、ダウンロードすることができます。"
+        "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         ""
@@ -2883,6 +2895,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "データは ${ importedEmailAddressStrong } から Proton アカウントにインポートできる状態です。"
       ],
@@ -3011,7 +3026,7 @@
         "すべての未検証のアイテムに適用"
       ],
       "Attach screenshot(s)": [
-        ""
+        "スクリーンショットの添付"
       ],
       "Audio file": [
         "音声ファイル"
@@ -3053,7 +3068,7 @@
         "作成日時"
       ],
       "Delete": [
-        ""
+        "削除"
       ],
       "Delete drive?": [
         "ドライブを削除しますか?"
@@ -3082,8 +3097,8 @@
       "Enable Beta Access": [
         "ベータ版アクセスを有効にする"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "メールを暗号化"
@@ -3709,7 +3724,7 @@
         "名前またはメールアドレスで検索"
       ],
       "Select": [
-        ""
+        "選択"
       ],
       "Start typing an email address": [
         "電子メールアドレスを入力"
@@ -3993,6 +4008,9 @@
       "Beta Access": [
         "ベータ版アクセス"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "現在の全ての転送処理をキャンセルする"
       ],
@@ -4113,8 +4131,8 @@
       "Empty trash": [
         "ごみ箱を空にする"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         "パスワードを入力してダウンロード"
@@ -4145,6 +4163,9 @@
       ],
       "Folders details": [
         "フォルダーの詳細"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        ""
       ],
       "Groups": [
         "グループ"
@@ -4256,9 +4277,6 @@
       ],
       "Search results": [
         "検索結果"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "検索結果: ${ searchView.numberOfResults } 見つかりました"
       ],
       "Searching…": [
         "検索中…"

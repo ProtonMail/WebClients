@@ -84,7 +84,7 @@
         "Archívum"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Képernyőkép(ek) csatolása"
       ],
       "Attachment": [
         "Melléklet"
@@ -392,7 +392,7 @@
         "Kérdésem van"
       ],
       "Images will be loaded without a proxy": [
-        ""
+        "A képek proxy nélkül lesznek betöltve"
       ],
       "import": [
         "importálás"
@@ -447,7 +447,7 @@
         "További információk"
       ],
       "Less search options": [
-        ""
+        "Kevesebb keresési beállítás"
       ],
       "Load": [
         "Betöltés"
@@ -573,7 +573,7 @@
         "Nem"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        ""
+        "Egy követőt se találtunk, de néhány képet nem lehetett betölteni követő-védelem mellett."
       ],
       "No, I won't attend": [
         "Nem, nem megyek"
@@ -780,7 +780,7 @@
         ""
       ],
       "Show less search options": [
-        ""
+        "Kevesebb keresési beállítás megjelenítése"
       ],
       "Show messages": [
         "Üzenetek megjelenítése"
@@ -972,7 +972,7 @@
     },
     "action": {
       "Search messages": [
-        ""
+        "Üzenetek keresése"
       ]
     },
     "Actions message": {
@@ -3666,6 +3666,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        "${ activateLink } vagy ${ learnMoreLink }."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } e-mail cím",
         "${ addressCount } e-mail cím"
@@ -4213,6 +4216,9 @@
       "Learn more": [
         "További információk"
       ],
+      "learn more": [
+        "további információk"
+      ],
       "Left to Right": [
         "Balról jobbra"
       ],
@@ -4319,7 +4325,7 @@
         "Nincs találat"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
-        ""
+        "Egy követőt se találtunk, de néhány képet nem lehetett betölteni követő-védelem mellett"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Az egyik feltöltött kulcs sem érvényes titkosításhoz. A titkosítás automatikusan kikapcsolt."
@@ -5162,7 +5168,7 @@
         "BÁRMELYIK"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Képernyőkép(ek) csatolása"
       ],
       "Attachments": [
         "Mellékletek"
@@ -5225,7 +5231,7 @@
         "Dátum:"
       ],
       "Delete": [
-        ""
+        "Törlés"
       ],
       "Display name": [
         "Megjelenített név"
@@ -5519,10 +5525,10 @@
     },
     "Label Recipient": {
       "From": [
-        ""
+        "Feladó"
       ],
       "To": [
-        ""
+        "Címzett"
       ]
     },
     "Label to change composer mode": {
@@ -6195,7 +6201,7 @@
         "Név, e-mail vagy csoport keresése"
       ],
       "Select": [
-        ""
+        "Kiválasztás"
       ],
       "Start date": [
         "Kezdő dátum"

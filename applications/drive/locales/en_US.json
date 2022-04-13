@@ -184,6 +184,9 @@
       "Download": [
         ""
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         ""
       ],
@@ -211,8 +214,8 @@
       "enable desktop notifications": [
         ""
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         ""
@@ -2459,8 +2462,8 @@
       "Duplicate key updated": [
         ""
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         ""
@@ -2706,6 +2709,9 @@
       "Queued": [
         ""
       ],
+      "recommended browser": [
+        ""
+      ],
       "Recovery process might take some time.": [
         ""
       ],
@@ -2932,6 +2938,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         ""
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
       ],
@@ -3132,8 +3141,8 @@
       "Enable Beta Access": [
         ""
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         ""
@@ -4071,6 +4080,9 @@
       "Beta Access": [
         ""
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         ""
       ],
@@ -4193,8 +4205,8 @@
       "Empty trash": [
         ""
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         ""
@@ -4224,6 +4236,10 @@
         ""
       ],
       "Folders details": [
+        ""
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "",
         ""
       ],
       "Groups": [
@@ -4335,9 +4351,6 @@
         ""
       ],
       "Search results": [
-        ""
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
         ""
       ],
       "Searching…": [
