@@ -1,4 +1,5 @@
 import { Direction, IEditor, PluginEvent } from 'roosterjs-editor-types';
+import { Dispatch, SetStateAction } from 'react';
 
 export { Direction as EditorTextDirection } from 'roosterjs-editor-types';
 
@@ -9,6 +10,8 @@ export interface EditorMetadata {
     isPlainText: boolean;
     supportRightToLeft: boolean;
     rightToLeft: Direction;
+    blockquoteExpanded: boolean;
+    setBlockquoteExpanded: Dispatch<SetStateAction<boolean>> | undefined;
 }
 
 /**
