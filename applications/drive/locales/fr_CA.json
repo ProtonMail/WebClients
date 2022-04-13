@@ -185,7 +185,7 @@
         "Télécharger"
       ],
       "Download anyway": [
-        ""
+        "Télécharger quand même"
       ],
       "Drive Locked": [
         "Disque verrouillé"
@@ -1777,12 +1777,6 @@
       "Enter 6 digits": [
         "Saisissez 6 chiffres"
       ],
-      "Failed to download a file": [
-        "Échec du téléchargement du fichier"
-      ],
-      "Failed to download a folder": [
-        "Échec du téléchargement du dossier"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Le fichier « ${ item.name } » ne peut pas être téléversé à cause d'une erreur « ${ error } »"
       ],
@@ -2477,6 +2471,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Échec de l'ouverture d'un lien sécurisé. La raison est: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Signature du fichier manquante. Nous n'avons pas pu vérifier que ${ emailAddress } a chargé le fichier ${ fileName }."
       ],
@@ -2488,6 +2485,9 @@
       ],
       "Finalizing": [
         "Finalisation en cours"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
       ],
       "Folder contents will merge into a single folder": [
         "Le contenu du dossier sera fusionné dans un dossier unique"
@@ -2710,7 +2710,7 @@
         "En file d'attente"
       ],
       "recommended browser": [
-        ""
+        "navigateur recommandé"
       ],
       "Recovery process might take some time.": [
         "Le processus de récupération peut prendre un certain temps."
@@ -2939,7 +2939,7 @@
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        ""
+        "Votre navigateur actuel ne prend pas en charge le téléchargement de fichiers volumineux en raison de l'indisponibilité des service workers. Le téléchargement de fichiers volumineux peut entraîner un gel ou une perte de réactivité du navigateur. Veuillez utiliser la dernière version d'un ${ recommendedBrowser } et essayer à nouveau."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vos données sont prêtes à être importées de ${ importedEmailAddressStrong } vers votre compte Proton."
@@ -4081,7 +4081,7 @@
         "Accès à la version bêta"
       ],
       "Browser might run out of memory": [
-        ""
+        "Le navigateur est peut-être à court de mémoire"
       ],
       "Cancel all active transfers": [
         "Annuler tous les transferts en cours"
@@ -4406,6 +4406,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "Ce fichier ou dossier n'a pas pu être téléchargé"
+      ],
+      "The internet connection was interrupted": [
+        ""
       ],
       "The link does not exist": [
         "Le lien n'existe pas"

@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=1; plural=0;",
+    "plural-forms": "nplurals=2; plural=(n != 1);",
     "language": "es_LA"
   },
   "contexts": {
@@ -45,7 +45,7 @@
         "Aplicar"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjuntar captura(s)"
       ],
       "Back": [
         "Atrás"
@@ -153,9 +153,11 @@
         "Eliminar"
       ],
       "Delete ${ selectedCount } contact": [
+        "Eliminar ${ selectedCount } contacto",
         "Eliminar ${ selectedCount } contacto"
       ],
       "Delete ${ selectedCount } contact group": [
+        "Eliminar ${ selectedCount } grupo de contactos",
         "Eliminar ${ selectedCount } grupo de contactos"
       ],
       "Delete contact": [
@@ -807,10 +809,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Cerrar"
       ],
       "Open": [
-        ""
+        "Abrir"
       ]
     },
     "Confirm modal title": {
@@ -1699,7 +1701,8 @@
         "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños."
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no desea combinar."
@@ -1758,10 +1761,12 @@
         "No se pudo encontrar la dirección ${ email }."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deseleccionar al menos ${ calendarToFixCount } calendario"
+        "Deseleccionar al menos ${ calendarToFixCount } calendario",
+        "Deseleccionar al menos ${ calendarToFixCount } calendarios"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Deseleccionar al menos ${ calendarToFixCount } calendario o"
+        "Deseleccionar al menos ${ calendarToFixCount } calendario o",
+        "Deseleccionar al menos ${ calendarToFixCount } calendarios o"
       ],
       "Email address invalid": [
         "Dirección de correo inválida"
@@ -1771,12 +1776,6 @@
       ],
       "Enter 6 digits": [
         "Ingrese 6 dígitos"
-      ],
-      "Failed to download a file": [
-        "Error al descargar un archivo"
-      ],
-      "Failed to download a folder": [
-        "Error al descargar una carpeta"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no puede cargarse debido a un error de \"${ error }\""
@@ -1824,7 +1823,8 @@
         "El nombre de la etiqueta no puede estar vacío"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton"
+        "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton",
+        "Fusionar al menos ${ calendarToFixCount } calendarios con los calendarios existentes de Proton"
       ],
       "Missing key packet": [
         "Falta el paquete de claves"
@@ -1842,9 +1842,11 @@
         "Número no válido"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Uno de los contactos no tiene dirección de correo: ${ noEmailsContactNamesList }"
+        "Uno de los contactos no tiene dirección de correo: ${ noEmailsContactNamesList }",
+        "Algunos contactos no tienen dirección de correo: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }"
       ],
       "Passwords do not match": [
@@ -1854,7 +1856,8 @@
         "Habilite de nuevo la búsqueda de contenido"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Solucione el conflicto resaltado para continuar."
+        "Solucione el conflicto resaltado para continuar.",
+        "Solucione los conflictos resaltados para continuar."
       ],
       "Preferences could not be saved": [
         "No se pudieron guardar las preferencias"
@@ -2086,7 +2089,8 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Se encontró ${ items.length } sugerencia, use el teclado para navegar."
+        "Se encontró ${ items.length } sugerencia, use el teclado para navegar.",
+        "Se encontraron ${ items.length } sugerencias, use el teclado para navegar."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Use las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulse Enter para confirmar su elección, o Escape para cerrar el cuadro de sugerencias."
@@ -2121,10 +2125,12 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contacto cifrado y añadido a su lista de contactos"
+        "${ totalImported }/${ totalToImport } contacto cifrado y añadido a su lista de contactos",
+        "${ totalImported }/${ totalToImport } contactos cifrados y añadidos a su lista de contactos"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Ocurrió un error al cifrar y añadir su contacto. No se pudo importar ningún contacto."
+        "Ocurrió un error al cifrar y añadir su contacto. No se pudo importar ningún contacto.",
+        "Ocurrió un error al cifrar y añadir sus contactos. No se pudo importar ningún contacto."
       ]
     },
     "Import contact error": {
@@ -2134,6 +2140,7 @@
     },
     "Import contact groups info": {
       "${ totalContacts } contact": [
+        "${ totalContacts } contacto",
         "${ totalContacts } contacto"
       ]
     },
@@ -2147,7 +2154,8 @@
         "Ocurrió un error al cifrar y añadir sus contactos. ${ totalImported } de ${ totalToImport } contactos fueron importados con éxito."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contacto importado con éxito. El contacto importado aparecerá ahora en su lista de contactos."
+        "Contacto importado con éxito. El contacto importado aparecerá ahora en su lista de contactos.",
+        "Contactos importados con éxito. Los contactos importados aparecerán ahora en su lista de contactos."
       ]
     },
     "Import contacts warning": {
@@ -2173,34 +2181,43 @@
     },
     "Info": {
       "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } descargando",
         "${ activeDownloadsCount } descargando"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } descargando (${ downloadProgress }%)",
         "${ activeDownloadsCount } descargando (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } cargando (${ uploadProgress }%)",
         "${ activeUploadsCount } cargando (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
-        "${ addressCount } dirección de correo"
+        "${ addressCount } dirección de correo",
+        "${ addressCount } direcciones de correo"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } calendario nuevo"
+        "${ calendarsToBeCreatedCount } calendario nuevo",
+        "${ calendarsToBeCreatedCount } calendarios nuevos"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } calendario fusionado"
+        "${ calendarsToBeMerged } calendario fusionado",
+        "${ calendarsToBeMerged } calendarios fusionados"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } calendario fusionado"
+        "${ calendarsToBeMergedCount } calendario fusionado",
+        "${ calendarsToBeMergedCount } calendarios fusionados"
       ],
       "${ canceledCount } canceled": [
-        "${ canceledCount } cancelada"
+        "${ canceledCount } cancelada",
+        "${ canceledCount } canceladas"
       ],
       "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } miembro"
+        "${ contactEmailsLength } miembro",
+        "${ contactEmailsLength } miembros"
       ],
       "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
         "${ contactName } contiene direcciones de correo electrónico múltiples. Seleccione cuál dirección de correo electrónico o direcciones añadir a ${ groupsEnumeration }."
@@ -2209,6 +2226,7 @@
         "${ contactName } contiene direcciones de correo electrónico múltiples. Seleccione cuál dirección de correo electrónico o direcciones añadir a este grupo."
       ],
       "${ contactsCount } contact found": [
+        "${ contactsCount } contacto encontrado",
         "${ contactsCount } contacto encontrado"
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
@@ -2218,52 +2236,65 @@
         "${ contactsEnumeration } contiene direcciones de correo electrónico múltiples. Seleccione cuál dirección de correo electrónico o direcciones añadir a este grupo."
       ],
       "${ doneCount } finished": [
-        "${ doneCount } finalizada"
+        "${ doneCount } finalizada",
+        "${ doneCount } finalizadas"
       ],
       "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } descargado"
+        "${ doneDownloadsCount } descargado",
+        "${ doneDownloadsCount } descargados"
       ],
       "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } cargado"
+        "${ doneUploadsCount } cargado",
+        "${ doneUploadsCount } cargados"
       ],
       "${ errorCount } failed": [
-        "${ errorCount } fallida"
+        "${ errorCount } fallida",
+        "${ errorCount } fallidas"
       ],
       "${ groupCounts } group found": [
+        "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupo encontrado"
       ],
       "${ namesWithoutLast } and ${ nameOfLast }": [
         "${ namesWithoutLast } y ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "${ numContactGroups } grupo de contactos"
+        "${ numContactGroups } grupo de contactos",
+        "${ numContactGroups } grupos de contactos"
       ],
       "${ numContacts } contact": [
-        "${ numContacts } contacto"
+        "${ numContacts } contacto",
+        "${ numContacts } contactos"
       ],
       "${ pausedCount } paused": [
-        "${ pausedCount } pausada"
+        "${ pausedCount } pausada",
+        "${ pausedCount } pausadas"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario"
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } carpeta seleccionada"
+        "${ selectedFoldersCount } carpeta seleccionada",
+        "${ selectedFoldersCount } carpetas seleccionadas"
       ],
       "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiqueta seleccionada"
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetas seleccionadas"
       ],
       "${ speed }/s": [
         ""
       ],
       "${ updated } contact updated successfully.": [
+        "${ updated } contacto actualizado con éxito.",
         "${ updated } contacto actualizado con éxito."
       ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } ya existe en esta ubicación."
       ],
       "(${ memberCount } member)": [
-        "(${ memberCount } miembro)"
+        "(${ memberCount } miembro)",
+        "(${ memberCount } miembros)"
       ],
       "5 email addresses": [
         "5 direcciones de correo"
@@ -2284,10 +2315,12 @@
         "La verificación de dirección con claves de confianza está habilitada para esta dirección. Para poder enviar a esta dirección, primero confíe en las claves públicas que se pueden usar para enviar."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Todo (${ totalFoldersCount } carpeta)"
+        "Todo (${ totalFoldersCount } carpeta)",
+        "Todo (${ totalFoldersCount } carpetas)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Todo (${ totalFoldersCount } etiqueta)"
+        "Todo (${ totalFoldersCount } etiqueta)",
+        "Todo (${ totalFoldersCount } etiquetas)"
       ],
       "An active recovery file": [
         "Un archivo de recuperación activo"
@@ -2359,7 +2392,8 @@
         "Continuar con ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "Crear ${ calendarsToBeCreated } calendario nuevo"
+        "Crear ${ calendarsToBeCreated } calendario nuevo",
+        "Crear ${ calendarsToBeCreated } calendarios nuevos"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Cree una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las carpetas que le gustaría importar."
@@ -2395,7 +2429,8 @@
         "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
       "Delete drive": [
-        "Eliminar unidad"
+        "Eliminar unidad",
+        "Eliminar unidades"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Este archivo fue cargado de forma segura por ${ emailAddress }."
@@ -2436,6 +2471,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Error al abrir el enlace seguro. El motivo es: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Falta la firma del archivo. No pudimos verificar que ${ emailAddress } cargó ${ fileName }."
       ],
@@ -2447,6 +2485,9 @@
       ],
       "Finalizing": [
         "Finalizando"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
       ],
       "Folder contents will merge into a single folder": [
         "El contenido de la carpeta se combinará en una sola carpeta"
@@ -2491,7 +2532,8 @@
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendario"
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendario",
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendarios"
       ],
       "Import from": [
         "Importar desde"
@@ -2713,7 +2755,7 @@
         "Algo salió mal, intente de nuevo más tarde."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Soporte para 1 dominio de correo personalizado"
@@ -2758,7 +2800,8 @@
         "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder a su carpeta. Para volver a compartir la carpeta, necesitará un enlace nuevo."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Esto eliminará el enlace y removerá el acceso a su archivo o carpeta para cualquier persona que tenga el enlace."
+        "Esto eliminará el enlace y removerá el acceso a su archivo o carpeta para cualquier persona que tenga el enlace.",
+        "Esto eliminará los enlaces y removerá el acceso a sus archivos o carpetas para cualquier persona que tenga los enlaces."
       ],
       "This will overwrite the existing file": [
         "Esto sobrescribirá el archivo existente"
@@ -3026,7 +3069,7 @@
         "Aplicar a todos los elementos no verificados"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjuntar captura(s)"
       ],
       "Audio file": [
         "Archivo de audio"
@@ -3068,10 +3111,11 @@
         "Creado"
       ],
       "Delete": [
-        ""
+        "Eliminar"
       ],
       "Delete drive?": [
-        "¿Eliminar unidad?"
+        "¿Eliminar unidad?",
+        "¿Eliminar unidades?"
       ],
       "Deleted": [
         "Eliminado"
@@ -3385,10 +3429,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -3458,37 +3504,48 @@
         "\"${ newName }\" renombrado con éxito"
       ],
       "${ count } item failed to be decrypted": [
-        "Error al descifrar ${ count } elemento"
+        "Error al descifrar ${ count } elemento",
+        "Error al descifrar ${ count } elementos"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } elemento eliminado permanentemente de la papelera"
+        "${ numberOfItems } elemento eliminado permanentemente de la papelera",
+        "${ numberOfItems } elementos eliminados permanentemente de la papelera"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Error al eliminar ${ numberOfItems } elemento permanentemente de la papelera"
+        "Error al eliminar ${ numberOfItems } elemento permanentemente de la papelera",
+        "Error al eliminar ${ numberOfItems } elementos permanentemente de la papelera"
       ],
       "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } elemento no se pudo mover"
+        "${ numberOfItems } elemento no se pudo mover",
+        "${ numberOfItems } elementos no se pudieron mover"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "Error al mover ${ numberOfItems } elemento a la papelera"
+        "Error al mover ${ numberOfItems } elemento a la papelera",
+        "Error al mover ${ numberOfItems } elementos a la papelera"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "Error al restaurar ${ numberOfItems } elemento de la papelera"
+        "Error al restaurar ${ numberOfItems } elemento de la papelera",
+        "Error al restaurar ${ numberOfItems } elementos de la papelera"
       ],
       "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } elemento movido a la papelera"
+        "${ numberOfItems } elemento movido a la papelera",
+        "${ numberOfItems } elementos movidos a la papelera"
       ],
       "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } elemento restaurado de la papelera"
+        "${ numberOfItems } elemento restaurado de la papelera",
+        "${ numberOfItems } elementos restaurados de la papelera"
       ],
       "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } elemento movido con éxito"
+        "${ numberOfItems } elemento movido con éxito",
+        "${ numberOfItems } elementos movidos con éxito"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "Error al eliminar ${ numberOfItems } enlace a su archivo"
+        "Error al eliminar ${ numberOfItems } enlace a su archivo",
+        "Error al eliminar ${ numberOfItems } enlaces a sus archivos"
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } enlace a su elemento fue eliminado"
+        "${ numberOfItems } enlace a su elemento fue eliminado",
+        "${ numberOfItems } enlaces a su elementos fueron eliminados"
       ],
       "All items will soon be permanently deleted from trash": [
         "Todos los elementos serán eliminados permanentemente de la papelera"
@@ -3512,6 +3569,7 @@
         "Error al cargar los archivos: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando",
         "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando"
       ],
       "File or folder \"${ filename }\" is already uploading": [
@@ -3527,22 +3585,28 @@
         "Error al cargar el enlace"
       ],
       "Move ${ itemsToMoveCount } file": [
-        "Mover ${ itemsToMoveCount } archivo"
+        "Mover ${ itemsToMoveCount } archivo",
+        "Mover ${ itemsToMoveCount } archivos"
       ],
       "Move ${ itemsToMoveCount } folder": [
-        "Mover ${ itemsToMoveCount } carpeta"
+        "Mover ${ itemsToMoveCount } carpeta",
+        "Mover ${ itemsToMoveCount } carpetas"
       ],
       "Move ${ itemsToMoveCount } item": [
-        "Mover ${ itemsToMoveCount } elemento"
+        "Mover ${ itemsToMoveCount } elemento",
+        "Mover ${ itemsToMoveCount } elementos"
       ],
       "Move ${ movingCount } file": [
-        "Mover ${ movingCount } archivo"
+        "Mover ${ movingCount } archivo",
+        "Mover ${ movingCount } archivos"
       ],
       "Move ${ movingCount } folder": [
-        "Mover ${ movingCount } carpeta"
+        "Mover ${ movingCount } carpeta",
+        "Mover ${ movingCount } carpetas"
       ],
       "Move ${ movingCount } item": [
-        "Mover ${ movingCount } elemento"
+        "Mover ${ movingCount } elemento",
+        "Mover ${ movingCount } elementos"
       ],
       "Next page failed to be loaded": [
         "Error al cargar la siguiente página"
@@ -3724,7 +3788,7 @@
         "Buscar por nombre o correo"
       ],
       "Select": [
-        ""
+        "Seleccionar"
       ],
       "Start typing an email address": [
         "Comience a escribir una dirección de correo"
@@ -3740,9 +3804,11 @@
         "${ contactsExported.length } de ${ countContacts } contactos fueron exportados con éxito."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito."
+        "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } de ${ totalBeMerged } contacto combinado con éxito.",
         "${ model.submitted.length } de ${ totalBeMerged } contacto combinado con éxito."
       ],
       "No contacts exported.": [
@@ -3827,9 +3893,11 @@
         "Código enviado a ${ methodTo }"
       ],
       "Contact deleted": [
+        "Contacto eliminado",
         "Contacto eliminado"
       ],
       "Contact group deleted": [
+        "Grupo de contactos eliminado",
         "Grupo de contactos eliminado"
       ],
       "Contact saved": [
@@ -3965,9 +4033,11 @@
     },
     "Time unit": {
       "${ hours } hour": [
+        "${ hours } hora",
         "${ hours } hora"
       ],
       "${ minutes } minute": [
+        "${ minutes } minuto",
         "${ minutes } minuto"
       ]
     },
@@ -3976,6 +4046,7 @@
         "No. de accesos"
       ],
       "${ emailsCount } member": [
+        "${ emailsCount } miembro",
         "${ emailsCount } miembro"
       ],
       "Account suspended": [
@@ -3988,7 +4059,8 @@
         "Añadir nombre al grupo de contactos"
       ],
       "Add to ${ groupCount } group": [
-        "Añadir a ${ groupCount } grupo"
+        "Añadir a ${ groupCount } grupo",
+        "Añadir a ${ groupCount } grupos"
       ],
       "Add to ${ groupName }": [
         "Añadir a ${ groupName }"
@@ -4060,9 +4132,11 @@
         "Fecha"
       ],
       "Delete ${ count } contact": [
+        "Eliminar ${ count } contacto",
         "Eliminar ${ count } contacto"
       ],
       "Delete ${ count } contact group": [
+        "Eliminar ${ count } grupo de contactos",
         "Eliminar ${ count } grupo de contactos"
       ],
       "Delete ${ Name }": [
@@ -4165,6 +4239,7 @@
         "Detalles de carpetas"
       ],
       "Found ${ searchView.numberOfResults } result": [
+        "",
         ""
       ],
       "Groups": [
@@ -4332,6 +4407,9 @@
       "The file or folder failed to be downloaded": [
         "Error al descargar el archivo o la carpeta"
       ],
+      "The internet connection was interrupted": [
+        ""
+      ],
       "The link does not exist": [
         "El enlace no existe"
       ],
@@ -4435,7 +4513,8 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "La contraseña debe tener al menos ${ length } caracter"
+        "La contraseña debe tener al menos ${ length } caracter",
+        "La contraseña debe tener al menos ${ length } caracteres"
       ]
     },
     "Validation Error": {
@@ -4468,10 +4547,12 @@
     },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "¿Está seguro que desea eliminar permanentemente ${ count } grupo de contactos?"
+        "¿Está seguro que desea eliminar permanentemente ${ count } grupo de contactos?",
+        "¿Está seguro que desea eliminar permanentemente ${ count } grupos de contactos?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "¿Está seguro que desea eliminar permanentemente ${ count } contacto?"
+        "¿Está seguro que desea eliminar permanentemente ${ count } contacto?",
+        "¿Está seguro que desea eliminar permanentemente ${ count } contactos?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "¿Está seguro que desea eliminar permanentemente este grupo de contactos?"
