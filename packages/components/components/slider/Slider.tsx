@@ -4,6 +4,8 @@ import {
     MouseEvent as ReactMouseEvent,
     TouchEvent as ReactTouchEvent,
     useState,
+    useLayoutEffect,
+    ChangeEvent,
 } from 'react';
 
 import { clamp } from '@proton/shared/lib/helpers/math';
@@ -11,11 +13,12 @@ import percentage from '@proton/shared/lib/helpers/percentage';
 
 import useSynchronizingState from '../../hooks/useSynchronizingState';
 import { classnames } from '../../helpers';
+import { usePrevious } from '../../hooks';
 import { Icon } from '../icon';
 import SliderMark from './SliderMark';
 import './Slider.scss';
 
-interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 'onChange'> {
+interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 'onChange' | 'onInput'> {
     /**
      * The current value of the Slider. Allows for external control of the Slider.
      */
@@ -38,16 +41,32 @@ interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 
      * moment of the thumb drag ending. (same as `<input type="range" />`)
      */
     onChange?: (value: number) => void;
+    /**
+     * Same as the onChange prop, however on input instead, defined in
+     * this context as any ongoing input to the Slider component even if
+     * not considered "ended".
+     */
+    onInput?: (value: number) => void;
 }
 
-const Slider = ({ value, min = 0, max = 100, step, onChange }: SliderProps) => {
+const Slider = ({ value, min = 0, max = 100, step, onChange, onInput, ...rest }: SliderProps) => {
     const [internalValue, setInternalValue] = useSynchronizingState(value || min);
     const [dragging, setDragging] = useState(false);
 
     const rootRef = useRef<HTMLDivElement>(null);
-    const thumbRef = useRef<HTMLButtonElement>(null);
+    const thumbRef = useRef<HTMLInputElement>(null);
 
-    const clampedInternalValue = clamp(min, max, internalValue || min);
+    const previousDragging = usePrevious(dragging);
+
+    useLayoutEffect(() => {
+        if (!previousDragging && dragging) {
+            thumbRef.current?.focus();
+        }
+    }, []);
+
+    const clampInsideInterval = (n: number) => clamp(n || min, min, max);
+
+    const clampedInternalValue = clampInsideInterval(internalValue);
 
     const interval = max - min;
 
@@ -69,12 +88,30 @@ const Slider = ({ value, min = 0, max = 100, step, onChange }: SliderProps) => {
         return min + (step ? Math.round(valueFromMouseEvent / step) * step : valueFromMouseEvent);
     };
 
-    const handleXCoordinateInput = (x: number) => {
-        const nextValue = getValueFromXCoordinate(x);
+    const handleInput = (v: number) => {
+        const clamped = clampInsideInterval(v);
 
-        if (!isNaN(Number(nextValue))) {
-            setInternalValue(nextValue);
+        if (!isNaN(Number(clamped))) {
+            setInternalValue(clamped);
+            onInput?.(clamped);
         }
+    };
+
+    const handleCommit = (v: number) => {
+        const clamped = clampInsideInterval(v);
+
+        if (!isNaN(Number(clamped))) {
+            setInternalValue(clamped);
+            onChange?.(clamped);
+        }
+    };
+
+    const handleXCoordinateInput = (x: number) => {
+        handleInput(getValueFromXCoordinate(x));
+    };
+
+    const handleXCoordinateCommit = (x: number) => {
+        handleCommit(getValueFromXCoordinate(x));
     };
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -82,13 +119,7 @@ const Slider = ({ value, min = 0, max = 100, step, onChange }: SliderProps) => {
     };
 
     const handleMouseUp = (e: MouseEvent) => {
-        handleXCoordinateInput(e.clientX);
-
-        const nextValue = getValueFromXCoordinate(e.clientX);
-
-        if (!isNaN(Number(nextValue))) {
-            onChange?.(nextValue);
-        }
+        handleXCoordinateCommit(e.clientX);
 
         document.removeEventListener('mousemove', handleMouseMove);
         document.removeEventListener('mouseup', handleMouseUp);
@@ -114,15 +145,7 @@ const Slider = ({ value, min = 0, max = 100, step, onChange }: SliderProps) => {
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
-        const xCoordinate = e.touches[0].clientX;
-
-        handleXCoordinateInput(xCoordinate);
-
-        const nextValue = getValueFromXCoordinate(xCoordinate);
-
-        if (!isNaN(Number(nextValue))) {
-            onChange?.(nextValue);
-        }
+        handleXCoordinateCommit(e.touches[0].clientX);
 
         document.removeEventListener('touchmove', handleTouchMove);
         document.removeEventListener('touchend', handleTouchEnd);
@@ -139,33 +162,60 @@ const Slider = ({ value, min = 0, max = 100, step, onChange }: SliderProps) => {
         setDragging(true);
     };
 
+    /* as in handle the onInput event of the <input /> element */
+    const handleInputInput = (e: ChangeEvent<HTMLInputElement>) => {
+        handleInput(Number(e.target.value));
+    };
+
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        handleCommit(Number(e.target.value));
+    };
+
     const valueInPercent = percentage(interval, clampedInternalValue - min);
 
+    // const styleSliderMarkMin =
+    // const sliderMarkMin = getCustomSizingClasses(styleSliderMarkMin);
+
     return (
-        <div ref={rootRef} className="slider" onMouseDown={handleMouseDown} onTouchStart={handleTouchStart}>
+        <div ref={rootRef} className="slider relative" onMouseDown={handleMouseDown} onTouchStart={handleTouchStart}>
             <div className="slider-rail" />
 
             <div style={{ width: `${valueInPercent}%` }} className="slider-track" />
 
-            <SliderMark style={{ left: 0 }}>{min}</SliderMark>
+            <SliderMark className="slider-mark-min" aria-hidden="true">
+                {min}
+            </SliderMark>
 
-            <SliderMark style={{ left: 'calc(100% - 1px)' }}>{max}</SliderMark>
+            <SliderMark className="slider-mark-max" aria-hidden="true">
+                {max}
+            </SliderMark>
 
-            <button
-                ref={thumbRef}
-                style={{ left: `${valueInPercent}%`, position: 'relative' }}
+            <span
+                style={{ left: `${valueInPercent}%` }}
                 className={classnames(['slider-thumb', dragging && 'slider-thumb-dragging'])}
                 onMouseLeave={handleMouseLeave}
             >
                 <div
-                    className="slider-thumb-tooltip tooltip tooltip--top"
-                    style={{ position: 'absolute', wordBreak: 'initial', bottom: 'calc(100% + 16px)' }}
+                    className="slider-thumb-tooltip absolute tooltip tooltip--top"
+                    style={{ bottom: 'calc(100% + 16px)' }}
                 >
                     {clampedInternalValue.toFixed(2)}
                 </div>
 
+                <input
+                    type="range"
+                    ref={thumbRef}
+                    min={min}
+                    max={max}
+                    aria-orientation="horizontal"
+                    className="sr-only slider-thumb-input"
+                    onChange={handleInputChange}
+                    onInput={handleInputInput}
+                    {...rest}
+                />
+
                 <Icon name="arrows-left-right" />
-            </button>
+            </span>
         </div>
     );
 };

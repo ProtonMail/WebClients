@@ -2,11 +2,6 @@ import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/add
 
 # Slider
 
-
-
-Optional disclaimer / description / explanation / extra info of usage.
-This should be of technical nature not of design philosophy nature.
-
 <Canvas withSource="open">
     <Story id="components-slider--basic" />
 </Canvas>
@@ -30,5 +25,7 @@ The `min` & `max` properties allow specifying in which numeric interval the Slid
 </Canvas>
 
 ## Props
+
+The Slider interface supports all additional html attributes of the `<input />` element via rest spreading.
 
 <ArgsTable story={PRIMARY_STORY} />

@@ -4,6 +4,13 @@
 	background: black;
 	position: absolute;
 	inset-block-start: 100%;
+
+	&-min {
+		inset-inline-start: 0;
+	}
+	&-max {
+		inset-inline-end: 0;
+	}
 }
 
 .slider-mark-label {
