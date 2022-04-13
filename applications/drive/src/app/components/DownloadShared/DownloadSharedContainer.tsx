@@ -11,7 +11,7 @@ import { APPS, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../../store';
-import { reportError } from '../../store/utils';
+import { reportError, isValidationError } from '../../store/utils';
 import usePublicSharing, {
     ERROR_CODE_INVALID_SRP_PARAMS,
     SharedURLInfoDecrypted,
@@ -85,7 +85,7 @@ const DownloadSharedContainer = () => {
                 onNetworkError: () => {
                     controls.cancel();
                     setTransferState(TransferStatePublic.Error);
-                    setError(c('Title').t`The file or folder failed to be downloaded`);
+                    setError(c('Title').t`The internet connection was interrupted`);
                 },
                 onProgress: (bytes) => {
                     setProgress((currentProgress) => {
@@ -105,7 +105,11 @@ const DownloadSharedContainer = () => {
                 })
                 .catch((error) => {
                     setTransferState(TransferStatePublic.Error);
-                    setError(c('Title').t`The file or folder failed to be downloaded`);
+                    setError(
+                        isValidationError(error)
+                            ? error.message
+                            : c('Title').t`The file or folder failed to be downloaded`
+                    );
                     reportError(error);
                 })
         );
