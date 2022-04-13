@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-import { c } from 'ttag';
 import { decryptMessage, decryptPrivateKey, getMessage, OpenPGPKey } from 'pmcrypto';
 
 import { computeKeyPassword } from '@proton/srp';
@@ -156,9 +155,7 @@ function usePublicSharing() {
             beforeRetryCallback: reauth.bind(undefined, token, password),
             shouldRetryBasedOnError: retryValidation,
             maxRetriesNumber: AUTH_RETRY_COUNT,
-        })().catch(() => {
-            throw new Error(c('Error').t`Failed to download a folder`);
-        });
+        })();
     };
 
     const getAllSharedUrlChildren = async (token: string, password: string, linkID: string): Promise<LinkMeta[]> => {
@@ -202,9 +199,7 @@ function usePublicSharing() {
             beforeRetryCallback: reauth.bind(undefined, token, password),
             shouldRetryBasedOnError: retryValidation,
             maxRetriesNumber: AUTH_RETRY_COUNT,
-        })().catch(() => {
-            throw new Error(c('Error').t`Failed to download a file`);
-        });
+        })();
     };
 
     const getSharedURLRevision = async (
