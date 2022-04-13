@@ -3722,6 +3722,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        "${ activateLink } или ${ learnMoreLink }."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } адрес электронной почты",
         "${ addressCount } адреса электронной почты",
@@ -4354,6 +4357,9 @@
       ],
       "Learn more": [
         "Узнать больше"
+      ],
+      "learn more": [
+        "подробнее"
       ],
       "Left to Right": [
         "Слева направо"

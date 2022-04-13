@@ -45,7 +45,7 @@
         "Použít"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Přiložit snímek/snímky obrazovky"
       ],
       "Back": [
         "Zpět"
@@ -188,6 +188,9 @@
       "Download": [
         "Stáhnout"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         "Disk uzamčen"
       ],
@@ -214,6 +217,9 @@
       ],
       "enable desktop notifications": [
         "povolit oznámení na ploše"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         "Rozbalit složku"
@@ -807,10 +813,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Zavřít"
       ],
       "Open": [
-        ""
+        "Otevřít"
       ]
     },
     "Confirm modal title": {
@@ -2538,6 +2544,9 @@
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
       ],
@@ -2725,7 +2734,7 @@
         "Jeden ze zakryprovaných disků je uzamčen. Tohle je s největší pravděpodobností kvůli nedávnému resetování hesla. ${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Je povoleno pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaků"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
@@ -2783,6 +2792,9 @@
       ],
       "Queued": [
         "Ve frontě"
+      ],
+      "recommended browser": [
+        ""
       ],
       "Recovery process might take some time.": [
         "Obnovovací proces může trvat nějakou dobu."
@@ -3012,6 +3024,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
       ],
@@ -3140,7 +3155,7 @@
         "Platí pro všechny neověřené položky"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Přiložit snímek/snímky obrazovky"
       ],
       "Audio file": [
         "Zvukový soubor"
@@ -3182,7 +3197,7 @@
         "Vytvořeno"
       ],
       "Delete": [
-        ""
+        "Odstranit"
       ],
       "Delete drive?": [
         "Smazat disk?",
@@ -3214,8 +3229,8 @@
       "Enable Beta Access": [
         "Zapnout přístup do beta verze"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "Šifrovat e-maily"
@@ -3901,7 +3916,7 @@
         "Vyhledat jméno nebo e-mail"
       ],
       "Select": [
-        ""
+        "Vybrat"
       ],
       "Start typing an email address": [
         "Začněte psát e-mailovou adresu"
@@ -4209,6 +4224,9 @@
       "Beta Access": [
         "Beta přístup"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "Zrušit všechny aktivní transfery"
       ],
@@ -4335,8 +4353,8 @@
       "Empty trash": [
         "Vysypat koš"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         "Zadejte heslo pro stažení souboru"
@@ -4367,6 +4385,12 @@
       ],
       "Folders details": [
         "Detaily složek"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "",
+        "",
+        "",
+        ""
       ],
       "Groups": [
         "Skupiny"
@@ -4478,9 +4502,6 @@
       ],
       "Search results": [
         "Výsledky vyhledávání"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Výsledky hledání: ${ searchView.numberOfResults } nalezeno"
       ],
       "Searching…": [
         "Hledání…"

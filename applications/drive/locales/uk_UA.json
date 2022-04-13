@@ -188,6 +188,9 @@
       "Download": [
         "Завантажити"
       ],
+      "Download anyway": [
+        "Усе одно завантажити"
+      ],
       "Drive Locked": [
         "Сховище заблоковано"
       ],
@@ -214,6 +217,9 @@
       ],
       "enable desktop notifications": [
         "увімкнути сповіщення на робочому столі"
+      ],
+      "Enable drive search": [
+        "Увімкнути пошук на диску"
       ],
       "Expand folder": [
         "Розгорнути теку"
@@ -2538,6 +2544,9 @@
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
       ],
+      "Enable drive search": [
+        "Увімкнути пошук на диску"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
       ],
@@ -2725,7 +2734,7 @@
         "Одне з ваших зашифрованих сховищ заблоковано. Швидше за все, це пов'язано з недавнім скиданням пароля.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символів"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ${ BRAND_NAME }."
@@ -2783,6 +2792,9 @@
       ],
       "Queued": [
         "Поставлено в чергу"
+      ],
+      "recommended browser": [
+        "рекомендований браузер"
       ],
       "Recovery process might take some time.": [
         "Процес відновлення може тривати деякий час."
@@ -3012,6 +3024,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        "Ваш поточний браузер не підтримує завантаження великих файлів через недоступність служби обробників (service workers). Завантаження великих файлів може «заморозити» браузер. Будь ласка, скористайтеся найновішими версіями ${ recommendedBrowser } та повторіть спробу."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису Proton готові."
       ],
@@ -3214,8 +3229,8 @@
       "Enable Beta Access": [
         "Увімкнути бета-доступ"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        "Увімкнення пошуку на диску"
       ],
       "Encrypt emails": [
         "Шифрувати листи"
@@ -4209,6 +4224,9 @@
       "Beta Access": [
         "Бета-доступ"
       ],
+      "Browser might run out of memory": [
+        "Браузер може вичерпати пам'ять"
+      ],
       "Cancel all active transfers": [
         "Скасувати всі активні передавання"
       ],
@@ -4335,8 +4353,8 @@
       "Empty trash": [
         "Спорожнити смітник"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        "Увімкнути пошук на диску"
       ],
       "Enter password to download": [
         "Введіть пароль для завантаження"
@@ -4367,6 +4385,12 @@
       ],
       "Folders details": [
         "Подробиці теки"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "Знайдено ${ searchView.numberOfResults } результат",
+        "Знайдено ${ searchView.numberOfResults } результати",
+        "Знайдено ${ searchView.numberOfResults } результатів",
+        "Знайдено ${ searchView.numberOfResults } результата"
       ],
       "Groups": [
         "Групи"
@@ -4478,9 +4502,6 @@
       ],
       "Search results": [
         "Результати пошуку"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Результати пошуку: знайдено ${ searchView.numberOfResults }"
       ],
       "Searching…": [
         "Пошук…"

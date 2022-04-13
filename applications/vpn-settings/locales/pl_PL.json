@@ -52,9 +52,6 @@
       "Add PayPal": [
         "Dodaj konto PayPal"
       ],
-      "Add PayPal payment method": [
-        "Dodaj PayPal jako metodę płatności"
-      ],
       "annual billing": [
         "plan roczny"
       ],
@@ -62,7 +59,7 @@
         "Zastosuj"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Dołącz zrzuty ekranu"
       ],
       "Back": [
         "Wstecz"
@@ -113,7 +110,7 @@
         "Kopiuj adres e-mail do schowka"
       ],
       "Create": [
-        ""
+        "Utwórz"
       ],
       "Create account": [
         "Utwórz konto"
@@ -179,7 +176,7 @@
         "włączyć powiadomienia na pulpicie"
       ],
       "Extend": [
-        ""
+        "Rozszerz"
       ],
       "Get ${ vpnPlus }": [
         "Wybierz plan ${ vpnPlus }"
@@ -218,7 +215,7 @@
         "Zachowaj konto ${ BRAND_NAME } ${ currentPlanName }"
       ],
       "Load more": [
-        ""
+        "Załaduj więcej"
       ],
       "Loading verification": [
         "Ładowanie weryfikacji"
@@ -308,10 +305,10 @@
         "Spróbuj ponownie"
       ],
       "Revoke": [
-        ""
+        "Unieważnij"
       ],
       "Revoke ${ name }": [
-        ""
+        "Unieważnij ${ name }"
       ],
       "Save": [
         "Zapisz"
@@ -503,7 +500,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Spowoduje to rozłączenie wszystkich routerów i klientów używających tego certyfikatu."
       ]
     },
     "Apps dropdown": {
@@ -784,7 +781,7 @@
         "Zamknij"
       ],
       "Open": [
-        ""
+        "Otwórz"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1813,7 +1810,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Certyfikat ${ name } nie został znaleziony lub został unieważniony"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -1991,7 +1988,7 @@
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        ""
+        "${ MAIL_APP_NAME } może być również używany z wykorzystaniem pojedynczego hasła, które zastępuje Twoje hasło logowania oraz skrzynki pocztowej. Aby przejść w tryb pojedynczego hasła, wpisz hasło, z którego chcesz korzystać i kliknij przycisk Zapisz."
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Free"
@@ -2030,7 +2027,7 @@
         "${ vpnAppName } Free"
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        ""
+        "Plan ${ vpnBasic }, ${ vpnPlus } lub ${ visionary } są wymagane, aby móc korzystać z połączeń przez wybrane kraje."
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
         "Plan ${ vpnPlus } zawiera ${ maxVpn } połączenie VPN.",
@@ -2039,7 +2036,7 @@
         "Plan ${ vpnPlus } zawiera ${ maxVpn } połączeń VPN."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        ""
+        "Plan ${ vpnPlus } lub ${ visionary } są wymagane, aby móc korzystać z funkcji Secure Core."
       ],
       "(Mail + VPN)": [
         "(poczta + VPN)"
@@ -2075,7 +2072,7 @@
         "Wszyscy powinni mieć dostęp do wolnego i niecenzurowanego Internetu."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Nazwa ułatwiająca identyfikację miejsca, w którym jest używany, aby można było łatwo odwołać lub przedłużyć konfigurację."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Uzyskaj dostęp do zablokowanych treści, jak media społecznościowe, aktualności, Wikipedia, YouTube i wiele więcej, gdziekolwiek jesteś."
@@ -2171,7 +2168,7 @@
         "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz mógł się zalogować ani odszyfrować wiadomości."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
+        "Nie używaj danych logowania OpenVPN / IKEv2 w aplikacjach lub pulpicie ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Domains": [
         "Domeny"
@@ -2180,7 +2177,7 @@
         "Gotowe! Kod został wysłany do ${ destination }"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        ""
+        "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
@@ -2210,7 +2207,7 @@
         "Wygasła"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "wygasa ${ expirationDate }"
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Dla rodzin i małych zespołów. Plan zawiera pocztę i usługę VPN."
@@ -2237,7 +2234,7 @@
         "W pełni funkcjonalna usługa VPN z serwerami do 10 Gb/s."
       ],
       "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
+        "Uzyskaj dostęp do wszystkich płatnych funkcji usług ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } (szyfrowanej poczty e-mail, używanej przez miliony użytkowników do ochrony danych) dzięki jednej subskrypcji."
       ],
       "here": [
         "tutaj"
@@ -2372,7 +2369,7 @@
         "Po kliknięciu przycisku \"Obniż plan\" może minąć kilka minut przed zmianą planu do wersji Free. "
       ],
       "Or select a particular server:": [
-        ""
+        "Lub wybierz serwer:"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "W przeciwnym razie, dostęp do konta zostanie ograniczony, a następnie wyłączony."
@@ -2435,10 +2432,10 @@
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        ""
+        "Zresetowanie hasła zresetuje także wszystkie klucze szyfrowania dla wszystkich usług Proton (poczta i VPN). Tym samym nie będziesz w stanie odczytać swoich wiadomości. Jeśli znasz swoje dane logowania do usługi ${ MAIL_APP_NAME }, NIE resetuj hasła. Zaloguj się za jego pomocą ${ hereLink }."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Unieważnij certyfikat ${ name }"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia."
@@ -2504,10 +2501,10 @@
         "Dziękujemy za wsparcie naszej misji."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        ""
+        "Te pliki konfiguracyjne pozwalają wybrać, z którym serwerem ${ VPN_APP_NAME } łączysz się podczas używania alternatywnych aplikacji VPN lub konfigurowania połączenia VPN na routerze."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        ""
+        "Te konfiguracje są przeznaczone do pracy z routerami WireGuard i oficjalnymi klientami."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
@@ -2549,7 +2546,7 @@
         "Aby uniknąć nieprawidłowego użycia, udowodnij, że jesteś człowiekiem. Nie zamykaj tej karty do czasu weryfikacji konta."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        ""
+        "Aby chronić swoje połączenie internetowe, pobierz oraz zainstaluj aplikację ${ VPN_APP_NAME } i połącz się z serwerem."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. 1 ${ i18nCurrency } to jeden kredyt."
@@ -2585,10 +2582,10 @@
         "Ulepsz teraz"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Użyj najlepszego serwera w zależności od obciążenia i lokalizacji: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        ""
+        "Użyj następujących danych logowania, podczas łączenia się z serwerami ${ VPN_APP_NAME } poza aplikacją. Przykładowe użycie: Tunnelblick na macOS, OpenVPN na GNU/Linuksie."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Korzystaj z adresów w niestandardowej domenie, np. ty@twojanazwa.pl"
@@ -2612,7 +2609,7 @@
         "Ostrzeżenie: Usunięcia nie możesz cofnąć. Ta czynność spowoduje również utratę dostępu do wszystkich usług i usunięcie kontaktów."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        ""
+        "Zalecamy używanie oficjalnych aplikacji ${ VPN_APP_NAME }."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Korzystamy z 3-D Secure, aby zabezpieczyć Twoje płatności."
@@ -2642,7 +2639,7 @@
         "Posiadasz już darmowe konto"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Jesteś obecnie zalogowany jako ${ user.Name } (${ user.Email })."
+        "Zalogowano jako ${ user.Name } (${ user.Email })."
       ],
       "You are saving 20% with an annual plan": [
         "Oszczędzasz 20%, decydując się na plan roczny"
@@ -2657,16 +2654,16 @@
         "Możesz otworzyć jeden czat jednocześnie. Najpierw zamknij poprzedni wątek."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        ""
+        "Możesz użyć następujących danych logowania do połączenia się z serwerem ${ VPN_APP_NAME }, używając alternatywnych aplikacji VPN, takich jak: Tunnelblick na macOS czy OpenVPN na GNU/Linuksie."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
+        "Nie możesz używać danych logowania OpenVPN / IKEv2 w aplikacjach lub pulpicie ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You have no saved payment methods.": [
         "Nie masz zapisanych metod płatności."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        ""
+        "Przed obniżeniem planu musisz wyłączyć lub usunąć dodatkowych użytkowników ${ MAIL_APP_NAME }, adresy i niestandardowe domeny."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Twoje konto PayPal musi być powiązane z kartą płatniczą lub kontem bankowym, aby dodać je jako metodę płatności."
@@ -2690,7 +2687,7 @@
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        ""
+        "Twoje konta ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } są połączone. Aby je usunąć, zaloguj się na ${ loginLink } i usuń konto."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta został ograniczony. ${ payInvoiceLink }"
@@ -2742,7 +2739,7 @@
     },
     "Info concerning plan features": {
       "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        ""
+        "${ MAIL_APP_NAME } nie może być używany do masowej wysyłki wiadomości lub rozsyłania spamu. Normalne wiadomości są nielimitowane."
       ],
       "Customizable features": [
         "Spersonalizowane funkcje"
@@ -2777,8 +2774,8 @@
       "Billed": [
         "Wystawiona"
       ],
-      "Cancelled": [
-        "Anulowana"
+      "Gifted": [
+        "Podarunek"
       ],
       "Paid": [
         "Opłacona"
@@ -2878,7 +2875,7 @@
         "Zniżka roczna (${ discountPercentage }%)"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Dołącz zrzuty ekranu"
       ],
       "Back to:": [
         "Wróć do:"
@@ -2887,7 +2884,7 @@
         "Zablokuj złośliwe oprogramowanie"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Zablokuj złośliwe oprogramowanie, reklamy i skrypty śledzące"
       ],
       "bonus storage": [
         "bonusowa przestrzeń dyskowa"
@@ -2917,13 +2914,13 @@
         "Kategoria"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Wybierz nazwę pliku dla wygenerowanego certyfikatu"
       ],
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Konfiguracja połączenia ${ serverName }"
       ],
       "Confirm login password": [
         "Potwierdź hasło logowania"
@@ -2974,7 +2971,7 @@
         "Usuń"
       ],
       "Device/certificate name": [
-        ""
+        "Nazwa urządzenia / certyfikatu"
       ],
       "Digits": [
         "Cyfry"
@@ -3022,7 +3019,7 @@
         "Klucz"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Poziom filtrów NetShield"
       ],
       "Login password": [
         "Hasło logowania"
@@ -3049,7 +3046,7 @@
         "Nowe hasło"
       ],
       "No filter": [
-        ""
+        "Brak filtrów"
       ],
       "Non-standard ports": [
         "Niestandardowe porty"
@@ -3479,7 +3476,7 @@
         "Android"
       ],
       "Captcha": [
-        "Captcha"
+        "CAPTCHA"
       ],
       "Country configs": [
         "Konfiguracje kraju"
@@ -3967,16 +3964,16 @@
     },
     "Success notification": {
       "Certificate ${ name } revoked": [
-        ""
+        "Certyfikat ${ name } został unieważniony"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Certyfikat został przedłużony do ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Konfiguracja \"${ name }\" została utworzona. Pamiętaj, że klucz prywatny nie jest przechowywany i nie zostanie pokazany ponownie. Skopiuj lub pobierz konfigurację."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Utwórz plik konfiguracyjny dla serwera ${ serverName }"
       ]
     },
     "Suffix": {
@@ -4032,13 +4029,13 @@
         "Porównanie planów ${ VPN_APP_NAME }"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Wybierz nazwę konfiguracji"
       ],
       "1. Select platform": [
         "1. Wybierz platformę"
       ],
       "2. Select platform": [
-        ""
+        "2. Wybierz platformę"
       ],
       "2. Select protocol": [
         "2. Wybierz protokół"
@@ -4050,10 +4047,10 @@
         "3. Wybierz plik konfiguracyjny i pobierz go"
       ],
       "3. Select VPN options": [
-        ""
+        "3. Wybierz opcje VPN"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Wybierz serwer"
       ],
       "Account": [
         "Konto"
@@ -4332,7 +4329,7 @@
         "Zresetować hasło?"
       ],
       "Revoke certificate": [
-        ""
+        "Unieważnij certyfikat"
       ],
       "Secure Core Servers": [
         "Serwery Secure Core"
@@ -4401,7 +4398,7 @@
         "Co nowego"
       ],
       "WireGuard configuration": [
-        ""
+        "Konfiguracja WireGuard"
       ],
       "You already have a Proton account": [
         "Posiadasz już konto Proton"
@@ -4452,7 +4449,7 @@
         "Zniżka za wykupienie planu dwuletniego została naliczona"
       ],
       "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
+        "Uzyskaj dostęp do wszystkich płatnych funkcji usług ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } (szyfrowanej poczty e-mail, używanej przez miliony użytkowników do ochrony danych) dzięki jednej subskrypcji."
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Uzyskaj dostęp do wszystkich płatnych funkcji usług ${ vpnAppName } i ${ mailAppName } (szyfrowanej poczty e-mail, używanej przez miliony użytkowników do ochrony danych) dzięki jednej subskrypcji."
@@ -4494,7 +4491,7 @@
         "Korzystaj z adresów w niestandardowej domenie, np. ty@twojanazwa.pl"
       ],
       "Username which is used for all Proton services. This can also be used later to create a secure ${ MAIL_APP_NAME } account.": [
-        ""
+        "Nazwa użytkownika dla wszystkich usług Proton. W przyszłości może być użyta do założenia bezpiecznego konta ${ MAIL_APP_NAME }."
       ],
       "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
         "Twój adres e-mail nie jest nikomu udostępniany i jest używany tylko do odzyskiwania i pytań związanych z kontem lub komunikacją."

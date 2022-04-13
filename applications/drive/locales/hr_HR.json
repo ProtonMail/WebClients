@@ -186,6 +186,9 @@
       "Download": [
         "Preuzmi"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         ""
       ],
@@ -212,6 +215,9 @@
       ],
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         ""
@@ -2497,6 +2503,9 @@
       "Duplicate key updated": [
         "Ažuriran je duplicirani ključ"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
       ],
@@ -2742,6 +2751,9 @@
       "Queued": [
         "Na čekanju"
       ],
+      "recommended browser": [
+        ""
+      ],
       "Recovery process might take some time.": [
         "Postupak oporavka može potrajati."
       ],
@@ -2969,6 +2981,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
       ],
@@ -3170,8 +3185,8 @@
       "Enable Beta Access": [
         "Omogući Beta pristup"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "Šifriraj e-poštu"
@@ -4137,6 +4152,9 @@
       "Beta Access": [
         "Beta pristup"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "Otkaži sve aktivne prijenose"
       ],
@@ -4261,8 +4279,8 @@
       "Empty trash": [
         "Isprazni otpad"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         ""
@@ -4292,6 +4310,11 @@
         "Detalji mape"
       ],
       "Folders details": [
+        ""
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "",
+        "",
         ""
       ],
       "Groups": [
@@ -4403,9 +4426,6 @@
         "Vratite vaše datoteke"
       ],
       "Search results": [
-        ""
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
         ""
       ],
       "Searching…": [

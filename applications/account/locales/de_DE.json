@@ -88,12 +88,6 @@
       "Add PayPal": [
         "Paypal hinzufügen"
       ],
-      "Add PayPal payment method": [
-        "PayPal als Zahlungsmethode hinzufügen"
-      ],
-      "Add screenshot(s)": [
-        "Bildschirmfoto(s) hinzufügen"
-      ],
       "Add sieve filter": [
         "Sieve-Filter hinzufügen"
       ],
@@ -117,6 +111,9 @@
       ],
       "Apply": [
         "Übernehmen"
+      ],
+      "Attach screenshot(s)": [
+        "Bildschirmfoto(s) anhängen"
       ],
       "Authenticate": [
         "Authentifizieren"
@@ -149,16 +146,13 @@
         "Passwort ändern"
       ],
       "Chat with us": [
-        "Chatten Sie mit uns"
+        "Chatte mit uns"
       ],
       "Check import progress": [
         "Fortschritt der Importierung prüfen"
       ],
       "Choose a file or drag it here": [
         "Datei auswählen oder hier hinein ziehen"
-      ],
-      "Clear": [
-        "Leeren"
       ],
       "Clear all formatting": [
         "Alle Formatierungen entfernen"
@@ -199,6 +193,9 @@
       "Continue import": [
         "Import fortsetzen"
       ],
+      "Continue to ${ name }": [
+        "Weiter zu ${ name }"
+      ],
       "Continue with": [
         "Fortfahren mit"
       ],
@@ -215,7 +212,7 @@
         "Link kopieren"
       ],
       "Create": [
-        ""
+        "Erstellen"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         "Erstelle stattdessen eine sichere ${ MAIL_APP_NAME }-Adresse"
@@ -256,8 +253,14 @@
       "Delete link": [
         "Link löschen"
       ],
+      "Delete permanently": [
+        "Unwiederbringlich löschen"
+      ],
       "Delete record": [
         "Eintrag löschen"
+      ],
+      "Delete without exporting": [
+        "Löschen ohne exportieren"
       ],
       "Delete your account": [
         "Konto löschen"
@@ -331,6 +334,9 @@
       "Enable multi-user support": [
         "Mehrbenutzerunterstützung aktivieren"
       ],
+      "Encrypt and export": [
+        "Verschlüsseln und exportieren"
+      ],
       "Export": [
         "Exportieren"
       ],
@@ -340,8 +346,11 @@
       "Export key": [
         "Schlüssel export."
       ],
+      "Export key before deleting": [
+        "Schlüssel vor dem Löschen exportieren"
+      ],
       "Extend": [
-        ""
+        "Erweitern"
       ],
       "Font": [
         "Font"
@@ -375,9 +384,6 @@
       ],
       "Hide folders": [
         "Ordner ausblenden"
-      ],
-      "Hide info": [
-        "Info ausblenden"
       ],
       "Hide labels": [
         "Kategorien ausblenden"
@@ -428,7 +434,7 @@
         "Nachrichten folgender Kategorie zuordnen"
       ],
       "Load more": [
-        ""
+        "Weitere laden"
       ],
       "Loading verification": [
         "Überprüfung wird geladen"
@@ -602,10 +608,10 @@
         "Überprüfen"
       ],
       "Revoke": [
-        ""
+        "Widerrufen"
       ],
       "Revoke ${ name }": [
-        ""
+        "${ name } widerrufen"
       ],
       "Revoke all other sessions": [
         "Alle anderen Sitzungen widerrufen"
@@ -663,9 +669,6 @@
       ],
       "Show folders": [
         "Ordner anzeigen"
-      ],
-      "Show info": [
-        "Info zeigen"
       ],
       "Show labels": [
         "Kategorien anzeigen"
@@ -823,9 +826,6 @@
       "Void anyway": [
         "Dennoch für ungültig erklären"
       ],
-      "Warning": [
-        "Warnhinweis"
-      ],
       "Wipe": [
         "Löschen"
       ],
@@ -850,11 +850,6 @@
       ],
       "Try free for 30 days": [
         "30 Tage lang kostenlos testen"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Auswählen"
       ]
     },
     "Addon": {
@@ -943,22 +938,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "Wenn Sie jetzt beenden, können einige Veranstaltungen nicht importiert werden."
-      ],
-      "Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.": [
-        "Das Löschen Ihrer Schlüssel ist unwiderruflich. Um auf jede damit verschlüsselte Nachricht zugreifen zu können, sollten Sie eine Sicherungskopie dieses Schlüssels zur späteren Verwendung erstellen."
-      ],
-      "You will face a permanent data loss by not making a backup of your key.": [
-        "Wenn du keine Sicherheitskopie deines Schlüssels erstellst, droht dir ein dauerhafter Datenverlust."
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "Der Schlüssel für Ihre Adresse wird nun gelöscht."
       ]
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Dadurch werden alle Router und Clients, die dieses Zertifikat verwenden, getrennt."
       ]
     },
     "Apps dropdown": {
@@ -1345,6 +1329,14 @@
         "Woche"
       ]
     },
+    "Collapsible tooltip": {
+      "Close": [
+        "Schließen"
+      ],
+      "Open": [
+        "Öffnen"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "beginnt mit"
@@ -1375,17 +1367,6 @@
       ],
       "matches": [
         "entspricht"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to delete this key without backing it up?": [
-        "Möchtest du diesen Schlüssel wirklich löschen, ohne ihn zuvor gesichert zu haben?"
-      ],
-      "Are you sure you want to permanently delete this key?": [
-        "Möchtest du diesen Schlüssel wirklich dauerhaft löschen?"
-      ],
-      "Do you want to export your key?": [
-        "Möchten Sie Ihren Schlüssel exportieren?"
       ]
     },
     "Confirm modal title": {
@@ -3102,7 +3083,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Zertifikat ${ name } nicht gefunden oder bereits widerrufen"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "Vor- und Nachname können nicht gleichzeitig deaktiviert werden"
@@ -4072,7 +4053,7 @@
         "Ein kostenloses und unzensiertes Internet sollte allen zur Verfügung stehen."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Ein Name, mit dem du erkennen kannst, wo es im Einsatz ist, damit du es später leicht widerrufen oder verlängern kannst."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4476,7 +4457,7 @@
         "Abgelaufen"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "verfällt ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "Abrufen der Protokolle fehlgeschlagen."
@@ -4617,9 +4598,6 @@
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importiere deine E-Mails, Kalender und Kontakte von einem anderen Dienst zu Proton. Wir begleiten dich bei jedem Schritt und verschlüsseln deine Daten während des Transfers. Willkommen in der Welt des Datenschutzes."
       ],
-      "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "WICHTIG: Das Herunterladen und Versenden deines privaten Schlüssels oder das Speichern auf unsicheren Medien kann die Sicherheit deines Kontos gefährden!"
-      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Wichtig: Bitte stelle sicher, dass du deine Wiederherstellungscodes speicherst. Andernfalls kannst du den Zugriff auf dein Konto dauerhaft verlieren, wenn du dein Gerät zur Zwei-Faktor-Authentifizierung verlierst."
       ],
@@ -4693,8 +4671,8 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Bewahren Sie diese Einträge in Ihrem DNS so lange auf, wie Sie DKIM verwenden möchten."
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "Schlüssel mit Fingerabdruck ${ fp } wurde gelöscht."
+      "Key deletion is irreversible!": [
+        "Das Löschen eines Schlüssels kann nicht rückgängig gemacht werden!"
       ],
       "Label all imported messages as": [
         "Alle importierten Nachrichten kennzeichnen als"
@@ -4856,7 +4834,7 @@
         "Die Kategorien sind nur für Sie sichtbar."
       ],
       "Or select a particular server:": [
-        ""
+        "Oder wähle einen bestimmten Server aus:"
       ],
       "Organization keys activated": [
         "Organisationsschlüssel aktiviert"
@@ -4912,9 +4890,6 @@
       ],
       "Plan upgrade required": [
         "Umstieg auf ein anderes Abo erforderlich"
-      ],
-      "Please enter a password to encrypt your private key with before exporting.": [
-        "Bitte gib ein Passwort ein, um deinen privaten Schlüssel vor dem Export zu verschlüsseln."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Bitte geben Sie die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit Ihrem Konto verknüpft ist."
@@ -5028,7 +5003,7 @@
         "Durch das Aktualisieren der Seite oder des ${ link } werden die meisten Probleme automatisch gelöst."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Zertifikat ${ name } widerrufen"
       ],
       "Right to Left": [
         "Von rechts nach links"
@@ -5051,14 +5026,14 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scanne diesen Code mit deinem Zwei-Faktor-Authentifizierungsgerät, um dein Konto einzurichten. ${ switchButton }."
       ],
-      "Screenshot(s) attached": [
-        "Bildschirmfoto(s) hinzugefügt"
-      ],
       "See all plans": [
         "Alle Abonnements anzeigen"
       ],
       "Select a service provider to start": [
         "Wähle einen Dienstanbieter, um anzufangen"
+      ],
+      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
+        "Wähle \"Weiter zu ${ name }\", um die App zu öffnen. Dadurch wird auch ein ${ name }-Konto mit deiner ${ MAIL_APP_NAME }-Adresse erstellt, damit du dich in Zukunft mit einem Klick anmelden kannst."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Bitte wählen Sie die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
@@ -5108,6 +5083,9 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
       ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Bewahre das Passwort und die Datei an einem sicheren Ort auf. Du benötigst sie erneut, um deinen Schlüssel zu importieren."
+      ],
       "Support for 1 custom email domain": [
         "Unterstützung für 1 individuelle E-Mail-Domain"
       ],
@@ -5153,6 +5131,9 @@
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Mit diesen Konfigurationsdateien kannst du festlegen, mit welchem ${ VPN_APP_NAME }-Server du dich verbinden möchtest, wenn du eine VPN-App eines Drittanbieters verwendest oder eine VPN-Verbindung auf einem Router einrichtest."
       ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Diese Konfigurationen sind für den Einsatz mit WireGuard-Routern und offiziellen Clients vorgesehen."
+      ],
       "This 30-day free trial is not available any other way.": [
         "Diese 30-tägige kostenlose Testversion ist auf keine andere Weise erhältlich."
       ],
@@ -5167,9 +5148,6 @@
       ],
       "This email address will only be used for recovery purposes.": [
         "Diese E-Mail-Adresse wird nur für Wiederherstellungszwecke verwendet."
-      ],
-      "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Diese Funktion ist nur für fortgeschrittene Benutzer gedacht. Nach dem Löschen dieses Schlüssels kannt du KEINE Nachricht entschlüsseln, die mit diesem Schlüssel verschlüsselt wurden. Dies kann zu Datenverlust führen."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Es handelt sich dabei um einen Satz mit 12 Wörtern, den Sie eingeben sollten."
@@ -5207,6 +5185,9 @@
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Dadurch wird Ihre aktuelle Wiederherstellungsphrase deaktiviert. Sie sind dann nicht mehr in der Lage, auf Ihr Konto zuzugreifen oder Ihre Daten zu entschlüsseln."
       ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        "Dadurch wird eine Datei heruntergeladen, die deinen privaten Schlüssel enthält. Schütze diese Datei, indem du sie mit einem Passwort verschlüsselst."
+      ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dadurch kann PayPal zur Bezahlung deines Proton-Abonnements verwendet werden. Wir werden dich in einem neuen Browser-Tab zu PayPal weiterleiten. Wenn du Popup-Blocker verwendest, deaktiviere diese bitte, bevor du fortfährst."
       ],
@@ -5224,6 +5205,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Dieser Assistent aktiviert die Zwei-Faktor-Authentifizierung (2FA) auf deinem Proton-Konto. Zwei-Faktor-Authentifizierung wird dein Proton-Konto sicherer machen, daher empfehlen wir dir, diese zu aktivieren."
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "Um Datenverluste zu vermeiden, lösche sie nur, wenn du dir sicher bist, was du tust, oder eine Kopie exportiert hast."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Zur Bestätigung geben Sie bitte den Namen des zu löschenden Benutzers ein."
@@ -5337,7 +5321,7 @@
         "Verwende automatische Antworten, um Kontakte zu informieren, dass du nicht im Büro bist oder aus anderen Gründen nicht antworten kannst."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Verwende den besten Server je nach aktueller Auslastung und Position: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Verwende die folgenden Anmeldedaten, wenn du dich ohne Anwendung mit ${ VPN_APP_NAME }-Servern verbinden möchtest. Beispiele für Anwendungsfälle sind: „Tunnelblick” unter macOS, „OpenVPN” unter GNU/Linux."
@@ -5528,6 +5512,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Sie haben 100% Ihrer Speicherkapazität aufgebraucht. Sie können keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Du solltest eine Sicherungskopie dieses Schlüssels exportieren, falls du die damit verschlüsselten Daten wiederherstellen musst."
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         "Du musst dennoch auf Einladungen antworten, damit der Gastgeber deine Antwort sehen kann."
       ],
@@ -5536,6 +5523,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Sie werden in Kürze zu Ihrer Bank weitergeleitet, um Ihre Zahlung zu bestätigen."
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
+        "Du wirst NICHT in der Lage sein, mit diesem Schlüssel verschlüsselte Nachrichten, Dateien und andere Daten zu entschlüsseln."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sie werden in Kürze zu PayPal weitergeleitet, um Ihre Zahlung zu bestätigen."
@@ -5705,8 +5695,8 @@
       "Billed": [
         "Abgerechnet"
       ],
-      "Cancelled": [
-        "Abgebrochen"
+      "Gifted": [
+        "Geschenkt"
       ],
       "Paid": [
         "Bezahlt"
@@ -6112,6 +6102,9 @@
       "Attach public key": [
         "Öffentlichen Schlüssel anhängen"
       ],
+      "Attach screenshot(s)": [
+        "Bildschirmfoto(s) anhängen"
+      ],
       "Auto reply": [
         "Automatische Antwort"
       ],
@@ -6125,10 +6118,10 @@
         "E-Mail-Tracking sperren"
       ],
       "Block malware only": [
-        ""
+        "Nur Malware sperren"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Schadsoftware, Werbung und Tracker sperren"
       ],
       "bonus storage": [
         "Zusätzlicher Speicherplatz"
@@ -6161,7 +6154,7 @@
         "Kategorie"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Wähle einen Namen für die erzeugte Zertifikatsdatei"
       ],
       "Code": [
         "Code"
@@ -6188,7 +6181,7 @@
         "Bedingungen"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Konfiguration zur Verbindung mit ${ serverName }"
       ],
       "Confirm link URLs": [
         "Bestätige die Link-URLs"
@@ -6228,6 +6221,9 @@
       ],
       "Country": [
         "Land"
+      ],
+      "Create password": [
+        "Passwort erstellen"
       ],
       "Credits pending": [
         "Gutschrift ausstehend"
@@ -6290,7 +6286,7 @@
         "Beschreibung"
       ],
       "Device/certificate name": [
-        ""
+        "Name des Geräts/Zertifikats"
       ],
       "Digits": [
         "Ziffern"
@@ -6449,7 +6445,7 @@
         "Nur den letzten Monat"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Stufe für NetShield-Blocker-Filterung"
       ],
       "Login password": [
         "Anmeldepasswort"
@@ -6473,7 +6469,7 @@
         "Nachricht"
       ],
       "Moderate NAT": [
-        ""
+        "Moderates NAT"
       ],
       "Move to": [
         "Verschieben n."
@@ -6497,13 +6493,13 @@
         "Neues Passwort"
       ],
       "No filter": [
-        ""
+        "Kein Filter"
       ],
       "No label found": [
         "Keine Kategorie gefunden"
       ],
       "Non-standard ports": [
-        ""
+        "Nicht standardisierte Ports"
       ],
       "Notification": [
         "Benachrichtigung"
@@ -6749,7 +6745,7 @@
         "Verifizierungscode"
       ],
       "VPN Accelerator": [
-        ""
+        "VPN Accelerator"
       ],
       "VPN Connections": [
         "VPN-Verbindungen"
@@ -6914,11 +6910,6 @@
       ],
       "Row": [
         "Reihe"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Bildschirmfoto(s) anhängen"
       ]
     },
     "Label/folder modal": {
@@ -7431,6 +7422,9 @@
       "A disabled address cannot be primary": [
         "Eine deaktivierte Adresse kann nicht als Hauptadresse verwendet werden"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        "Schlüssel mit dem Fingerabdruck ${ fp } wurde gelöscht."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
       ]
@@ -7795,12 +7789,6 @@
       "Address": [
         "Adresse"
       ],
-      "Browser name": [
-        "Browsername"
-      ],
-      "Browser version": [
-        "Version des Browsers"
-      ],
       "Choose a name": [
         "Namen auswählen"
       ],
@@ -7834,12 +7822,6 @@
       "Name": [
         "Name"
       ],
-      "OS name": [
-        "OS-Name"
-      ],
-      "OS version": [
-        "OS-Version"
-      ],
       "Other": [
         "Weitere"
       ],
@@ -7858,14 +7840,14 @@
       "Postal code": [
         "Postleitzahl"
       ],
-      "Proton username": [
-        "Proton‐Benutzername"
-      ],
       "Search settings": [
         "Sucheinstellungen"
       ],
       "Search users": [
         "Benutzer suchen"
+      ],
+      "Select": [
+        "Auswählen"
       ],
       "Select a reason": [
         "Grund auswählen"
@@ -8488,16 +8470,16 @@
         "Adresse aktiviert"
       ],
       "Certificate ${ name } revoked": [
-        ""
+        "Zertifikat ${ name } widerrufen"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Zertifikat verlängert bis am ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Konfiguration \"${ name }\" erstellt, beachte, dass der private Schlüssel nicht gespeichert wird und nicht mehr angezeigt wird, du solltest daher diese Konfiguration kopieren oder herunterladen."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Konfigurationsdatei für ${ serverName } wird erstellt"
       ],
       "Filter removed": [
         "Filter entfernt"
@@ -8601,13 +8583,13 @@
         "(dringend empfohlen)"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Gib der zu erstellenden Konfiguration einen Namen"
       ],
       "1. Select platform": [
         "1.) Plattform auswählen"
       ],
       "2. Select platform": [
-        ""
+        "2. Plattform auswählen"
       ],
       "2. Select protocol": [
         "2.) Protokoll auswählen"
@@ -8619,10 +8601,10 @@
         "3.) Konfigurationsdatei auswählen und herunterladen"
       ],
       "3. Select VPN options": [
-        ""
+        "3. VPN-Optionen auswählen"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Wähle einen Server aus, mit dem du dich verbinden möchtest"
       ],
       "Account and password": [
         "Konto und Passwort"
@@ -8804,6 +8786,9 @@
       "Confirm phone number": [
         "Rufnummer bestätigen"
       ],
+      "Connect ${ name }": [
+        "Verbinde ${ name }"
+      ],
       "Contact encryption keys": [
         "Verschlüsselungschlüssel des Kontakts"
       ],
@@ -8876,8 +8861,8 @@
       "Delete ${ email }": [
         "${ email } löschen"
       ],
-      "Delete ${ filter.Name }": [
-        "${ filter.Name } löschen"
+      "Delete ${ filterName }": [
+        "${ filterName } löschen"
       ],
       "Delete ${ label.Name } folder": [
         "Ordner „${ label.Name }” löschen"
@@ -8891,8 +8876,8 @@
       "Delete calendar": [
         "Kalender löschen"
       ],
-      "Delete key": [
-        "Schlüssel löschen"
+      "Delete key permanently?": [
+        "Schlüssel unwiederbringlich löschen?"
       ],
       "Delete logs": [
         "Protokolle löschen"
@@ -9024,8 +9009,8 @@
         "Importieren"
       ],
       "Import as simple event?": [
-        "Als einzelnes Ereignis importieren?",
-        "Als einzelne Ereignisse importieren?"
+        "Als einzelnen Termin importieren?",
+        "Als einzelne Termine importieren?"
       ],
       "Import contacts": [
         "Kontakte importieren"
@@ -9208,7 +9193,7 @@
         "Administrationsprivilegien wiederherstellen"
       ],
       "Revoke certificate": [
-        ""
+        "Zertifikat widerrufen"
       ],
       "Secure email based in Switzerland": [
         "Sicherer e-mail-dienst aus der Schweiz"
@@ -9367,10 +9352,10 @@
         "Was ist neu?"
       ],
       "WireGuard": [
-        ""
+        "WireGuard"
       ],
       "WireGuard configuration": [
-        ""
+        "WireGuard-Konfiguration"
       ],
       "Your ${ domain } address is active": [
         "Deine Domain ${ domain } ist aktiv"
