@@ -1,10 +1,11 @@
 import { ComponentPropsWithoutRef } from 'react';
 
 import './SliderMark.scss';
+import { classnames } from '../../helpers';
 
-const SliderMark = ({ children, ...rest }: ComponentPropsWithoutRef<'span'>) => {
+const SliderMark = ({ children, className, ...rest }: ComponentPropsWithoutRef<'span'>) => {
     return (
-        <span className="slider-mark" {...rest}>
+        <span className={classnames(['slider-mark', className])} {...rest}>
             <span className="slider-mark-label">{children}</span>
         </span>
     );

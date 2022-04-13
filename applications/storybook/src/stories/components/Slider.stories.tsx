@@ -30,7 +30,7 @@ export const Step = () => {
 
     return (
         <div className="p2">
-            <Slider step={5} value={value} onChange={setValue} />
+            <Slider step={1} value={value} onChange={setValue} />
         </div>
     );
 };
