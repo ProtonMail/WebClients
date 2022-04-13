@@ -10,6 +10,7 @@ import BlockquoteToggle from './BlockquoteToggle';
 import useOnEditorChange from './hooks/useOnEditorChange';
 import './RoosterEditor.scss';
 import { ModalLinkProps } from '../hooks/interface';
+import { classnames } from '../../../helpers';
 
 interface Props {
     placeholder?: string;
@@ -22,6 +23,7 @@ interface Props {
     mailSettings?: MailSettings;
     showModalLink: (props: ModalLinkProps) => void;
     onFocus?: () => void;
+    className?: string;
 }
 
 const RoosterEditor = ({
@@ -35,6 +37,7 @@ const RoosterEditor = ({
     showModalLink,
     onFocus,
     mailSettings,
+    className,
 }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -63,7 +66,12 @@ const RoosterEditor = ({
 
     return (
         <>
-            <div className="editor-wrapper fill w100 h100 scroll-if-needed flex-item-fluid flex flex-column relative">
+            <div
+                className={classnames([
+                    'editor-wrapper fill w100 h100 scroll-if-needed flex-item-fluid flex flex-column relative',
+                    className,
+                ])}
+            >
                 <iframe
                     ref={iframeRef}
                     title={c('Title').t`Email composer`}
