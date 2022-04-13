@@ -13,6 +13,7 @@ import {
     getPrimaryAddressAsync,
     getPrimaryAddressKeyAsync,
     getPrimaryAddressKeysAsync,
+    getOwnAddressPrimaryKeyAsync,
     getOwnAddressKeysAsync,
 } from './driveCrypto';
 
@@ -47,6 +48,19 @@ function useDriveCrypto() {
 
     const getOwnAddressKeys = useCallback(
         async (email: string) => getOwnAddressKeysAsync(email, getAddresses, getAddressKeys),
+        [getAddresses, getAddressKeys]
+    );
+
+    const getPrivatePrimaryAddressKeys = useCallback(
+        async (email: string) => getOwnAddressPrimaryKeyAsync(email, getAddresses, getAddressKeys),
+        [getAddresses, getAddressKeys]
+    );
+
+    const getPrivateAddressKeys = useCallback(
+        async (email: string) => {
+            const result = await getOwnAddressKeysAsync(email, getAddresses, getAddressKeys);
+            return result?.privateKeys || [];
+        },
         [getAddresses, getAddressKeys]
     );
 
@@ -87,6 +101,8 @@ function useDriveCrypto() {
     return {
         getPrimaryAddressKey,
         getPrimaryAddressKeys,
+        getPrivatePrimaryAddressKeys,
+        getPrivateAddressKeys,
         getVerificationKey,
         getPrimaryAddress,
         sign,
