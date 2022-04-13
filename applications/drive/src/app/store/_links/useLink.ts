@@ -1,6 +1,14 @@
 import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
-import { OpenPGPKey, SessionKey, decryptPrivateKey as pmcryptoDecryptPrivateKey, VERIFICATION_STATUS } from 'pmcrypto';
+import {
+    OpenPGPKey,
+    SessionKey,
+    decryptPrivateKey as pmcryptoDecryptPrivateKey,
+    VERIFICATION_STATUS,
+    verifyMessage,
+    createMessage,
+    getSignature,
+} from 'pmcrypto';
 
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
@@ -224,6 +232,16 @@ export function useLinkInner(
                 data: blockKeys,
                 privateKeys: privateKey,
             });
+
+            if (encryptedLink.contentKeyPacketSignature) {
+                const publicKeys = await getVerificationKey(encryptedLink.signatureAddress);
+                const { verified } = await verifyMessage({
+                    message: createMessage(sessionKey.data),
+                    publicKeys,
+                    signature: await getSignature(encryptedLink.contentKeyPacketSignature),
+                });
+                handleSignatureCheck(shareId, encryptedLink, 'contentKeyPacket', verified);
+            }
 
             linksKeys.setSessionKey(shareId, linkId, sessionKey);
             return sessionKey;
