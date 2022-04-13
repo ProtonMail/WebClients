@@ -320,6 +320,8 @@ const EditorWrapper = ({
 
     return canRenderEditor ? (
         <Editor
+            editorToolbarClassname="mb1 ml1-75 mr1-75"
+            editorClassname="pl1-75 pr1-75"
             placeholder={c('Placeholder').t`Write your message`}
             metadata={metadata}
             disabled={disabled}
@@ -331,6 +333,7 @@ const EditorWrapper = ({
             onReady={handleEditorReady}
             mailSettings={mailSettings}
             onAddAttachments={onAddAttachments}
+            isPlainText={isPlainText}
         />
     ) : null;
 };
